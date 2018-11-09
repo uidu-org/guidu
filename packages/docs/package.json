@@ -5,13 +5,16 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uidu-org/guidu.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist"],
   "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Ben C"
-  ],
+  "maintainers": ["Ben C"],
   "atlaskit": {
     "name": "Atlaskit docs",
     "team": "core"
@@ -36,5 +39,5 @@
     "react-dom": "^16.4.2",
     "react-test-renderer": "^16.3.0"
   },
-  "gitHead": "548735a14780bffcfb36f2d925ffee63bb4fdf58"
+  "gitHead": "125291d91eb5475295a78abe613c90ec09e311b7"
 }
