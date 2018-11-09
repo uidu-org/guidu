@@ -4,14 +4,15 @@
   "description": "Forms using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uidu-org/uidu-ui-kit.git"
-  },
+  "uidu:src": "src/index",
+  "repository": "github:uidu-org/guidu",
   "publishConfig": {
     "access": "public"
   },
-  "author": "",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.5",
