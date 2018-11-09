@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "",
   "license": "ISC",
   "bundlesize": [
