@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sketch-logo" transform="translate(0.000000, 3.000000)" fill-rule="nonzero">
+            <polygon id="Shape" fill="#FDB300" points="13.9354839 1.90864883 31.9354839 0 49.9354839 1.90864883 63.8709677 20.6716373 31.9354839 57.9711644 0 20.6716373"></polygon>
+            <g id="Group" transform="translate(0.000000, 20.671637)">
+                <polygon id="Shape" fill="#EA6C00" points="12.9354721 0 31.9355127 37.2995393 0 0"></polygon>
+                <polygon id="Shape" fill="#EA6C00" points="50.9354669 0 31.9354263 37.2995393 63.870939 0"></polygon>
+                <polygon id="Shape" fill="#FDAD00" points="12.9354721 0 50.9355533 0 31.9355127 37.2995393"></polygon>
+            </g>
+            <g id="Group">
+                <polygon id="Shape" fill="#FDD231" points="31.9355127 0 13.9354315 1.9086236 12.9354721 20.6716236"></polygon>
+                <polygon id="Shape" fill="#FDD231" points="31.9354146 0 49.9354958 1.9086236 50.9354552 20.6716236"></polygon>
+                <polygon id="Shape" fill="#FDAD00" points="63.8710202 20.6716236 49.9354263 1.9086236 50.9355481 20.6716236"></polygon>
+                <polygon id="Shape" fill="#FDAD00" points="0 20.6716236 13.9354315 1.9086236 12.9354721 20.6716236"></polygon>
+                <polygon id="Shape" fill="#FEEEB7" points="31.9355127 0 12.9354721 20.6716236 50.9355533 20.6716236"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

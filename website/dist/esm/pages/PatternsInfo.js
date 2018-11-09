@@ -1,0 +1,6 @@
+import React from 'react';
+import Page from '../components/Page';
+import Markdown from '../components/Markdown';
+export default function PatternsInfo() {
+  return React.createElement(Page, null, React.createElement(Markdown, null, "\n# Patterns\n\nTempor ad mollit minim mollit ex dolor sint esse sint. Laboris do veniam magna do deserunt minim est fugiat do\nproident commodo id. Cillum aliquip dolor ex in mollit Lorem exercitation. Occaecat elit duis irure eu mollit\nsit labore aliqua quis laborum. Et culpa dolore mollit culpa eiusmod nostrud velit Lorem.\n\nTempor ad mollit minim mollit ex dolor sint esse sint. Laboris do veniam magna do deserunt minim est fugiat do\nproident commodo id. Cillum aliquip dolor ex in mollit Lorem exercitation. Occaecat elit duis irure eu mollit\nsit labore aliqua quis laborum. Et culpa dolore mollit culpa eiusmod nostrud velit Lorem.\n\nTempor ad mollit minim mollit ex dolor sint esse sint. Laboris do veniam magna do deserunt minim est fugiat do\nproident commodo id. Cillum aliquip dolor ex in mollit Lorem exercitation. Occaecat elit duis irure eu mollit\nsit labore aliqua quis laborum. Et culpa dolore mollit culpa eiusmod nostrud velit Lorem.\n        "));
+}

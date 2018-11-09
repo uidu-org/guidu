@@ -1,0 +1,35 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ANIMATION_DIRECTIONS = exports.CARD_TYPES = exports.CONTAINER_NAV_STATE = exports.DESKTOP_BREAKPOINT_MIN = exports.MOBILE_BREAKPOINT_MAX = exports.TABLET_BREAKPOINT_MAX = exports.TABLET_BREAKPOINT_MIN = exports.MOBILE_NAV_HEIGHT = void 0;
+var MOBILE_NAV_HEIGHT = 54; // responsive tiers (mobile > tablet > desktop)
+
+exports.MOBILE_NAV_HEIGHT = MOBILE_NAV_HEIGHT;
+var TABLET_BREAKPOINT_MIN = 1024;
+exports.TABLET_BREAKPOINT_MIN = TABLET_BREAKPOINT_MIN;
+var TABLET_BREAKPOINT_MAX = 1240;
+exports.TABLET_BREAKPOINT_MAX = TABLET_BREAKPOINT_MAX;
+var MOBILE_BREAKPOINT_MAX = TABLET_BREAKPOINT_MIN - 1;
+exports.MOBILE_BREAKPOINT_MAX = MOBILE_BREAKPOINT_MAX;
+var DESKTOP_BREAKPOINT_MIN = TABLET_BREAKPOINT_MAX + 1;
+exports.DESKTOP_BREAKPOINT_MIN = DESKTOP_BREAKPOINT_MIN;
+var CONTAINER_NAV_STATE = {
+  closed: 1,
+  sections: 2,
+  pages: 3,
+  search: 4
+};
+exports.CONTAINER_NAV_STATE = CONTAINER_NAV_STATE;
+var CARD_TYPES = {
+  textOnly: 1,
+  imgOnly: 2,
+  textAndImg: 3
+};
+exports.CARD_TYPES = CARD_TYPES;
+var ANIMATION_DIRECTIONS = {
+  left: 1,
+  right: 2
+};
+exports.ANIMATION_DIRECTIONS = ANIMATION_DIRECTIONS;
