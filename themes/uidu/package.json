@@ -1,6 +1,6 @@
 {
   "name": "@uidu/themes-uidu",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "uidu main theme",
   "main": "index.scss",
   "repository": {
@@ -22,7 +22,7 @@
     }
   ],
   "devDependencies": {
-    "@uidu/docs": "^0.1.3"
+    "@uidu/docs": "^0.1.4"
   },
   "gitHead": "46eebdfb44813c4b7a7d4faf80faa2864b75d3c8"
 }

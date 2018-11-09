@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -52,7 +52,7 @@
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.3",
+    "@uidu/docs": "^0.1.4",
     "@uidu/forms": "^1.0.0-beta.8",
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-import": "^1.11.0",
