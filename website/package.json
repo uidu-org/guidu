@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "private": true,
   "engines": {
     "node": "^11.0.0",
@@ -22,7 +22,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@uidu/docs": "^0.1.6",
+    "@uidu/docs": "^0.1.7",
     "bolt-query": "^1.1.4",
     "chalk": "^2.1.0",
     "extract-react-types-loader": "^0.2.2",
@@ -61,10 +61,10 @@
     "@atlaskit/theme": "^6.1.1",
     "@atlaskit/tooltip": "^12.1.4",
     "@babel/runtime": "^7.0.0",
-    "@uidu/button": "^0.1.9",
-    "@uidu/checkbox": "^0.1.16",
-    "@uidu/form": "^0.1.7",
-    "@uidu/themes-uidu": "^0.1.12",
+    "@uidu/button": "^0.1.10",
+    "@uidu/checkbox": "^0.1.17",
+    "@uidu/form": "^0.1.8",
+    "@uidu/themes-uidu": "^0.1.13",
     "babel-runtime": "^6.26.0",
     "codesandboxer": "^0.6.0",
     "commonmark": "^0.28.1",
