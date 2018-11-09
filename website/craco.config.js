@@ -68,7 +68,6 @@ module.exports = {
   },
   webpack: {
     configure: (webpackConfig, { env, paths }) => {
-      console.log(webpackConfig);
       const { match } = getLoader(webpackConfig, loaderByName('babel-loader'));
 
       match.loader.include = [
