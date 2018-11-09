@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Form } from '@uidu/form';
+import { Form } from '../../form/src/index';
 import { Checkbox } from '../src/index';
 
 const GroupDiv = styled.div`

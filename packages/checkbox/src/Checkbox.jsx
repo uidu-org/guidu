@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CustomInput } from 'reactstrap';
 import styled from 'styled-components';
-import { ComponentCommon } from '@uidu/field-base';
+import { ComponentCommon, ErrorMessages } from '@uidu/field-base';
 
 import { type CheckboxProps } from './types';
 
@@ -61,6 +61,8 @@ export default class Checkbox extends Component<CheckboxProps> {
       disabled,
       label,
       value,
+      showErrors,
+      errorMessages,
     } = this.props;
 
     Object.keys(ComponentCommon.propTypes).forEach(key => {
@@ -82,7 +84,7 @@ export default class Checkbox extends Component<CheckboxProps> {
     delete inputProps.showErrors;
 
     return (
-      <CustomInput
+      <CustomInputComponent
         {...inputProps}
         innerRef={r => {
           this.checkbox = r;
@@ -94,8 +96,8 @@ export default class Checkbox extends Component<CheckboxProps> {
         label={label}
         onChange={this.changeValue}
       >
-        <div className="invalid-feedback">Example invalid feedback text</div>
-      </CustomInput>
+        {showErrors && <ErrorMessages messages={errorMessages} />}
+      </CustomInputComponent>
     );
   };
 }
