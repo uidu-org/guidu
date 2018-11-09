@@ -48,7 +48,7 @@ const BasicUsageExample = class extends PureComponent {
           onChange={this.onChange}
           name="checkbox-invalid"
           layout="elementOnly"
-          isInvalid
+          invalid
         />
         <div
           style={{
