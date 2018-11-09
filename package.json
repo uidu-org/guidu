@@ -80,7 +80,7 @@
     "start": "yarn run website:start",
     "build": "nps build",
     "dev": "nps dev",
-    "watch": "webpack --watch"
+    "deploy:staging": "netlify deploy --dir dist/ -a $NETLIFY_TOKEN -s $NETLIFY_SITE_ID_STAGING"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
