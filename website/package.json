@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": true,
   "scripts": {
     "start": "craco start --react-scripts ../../node_modules/react-scripts",
@@ -57,7 +57,7 @@
     "@atlaskit/tooltip": "^12.1.4",
     "@babel/runtime": "^7.0.0",
     "@uidu/checkbox": "^0.1.11",
-    "@uidu/themes-uidu": "^0.1.8",
+    "@uidu/themes-uidu": "^0.1.9",
     "babel-runtime": "^6.26.0",
     "codesandboxer": "^0.2.2",
     "commonmark": "^0.27.0",
