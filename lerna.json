@@ -8,5 +8,5 @@
       "conventionalCommits": true
     }
   },
-  "packages": ["packages/*", "website"]
+  "packages": ["packages/checkbox", "packages/button", "website"]
 }
