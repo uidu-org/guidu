@@ -1,7 +1,7 @@
 // @flow
 import React, { PureComponent } from 'react';
 import Button from '@atlaskit/button';
-import { Form } from '../../form/src/index';
+import { Form } from '@uidu/form';
 import { Checkbox } from '../src/index';
 
 const formTestUrl = '//httpbin.org/get';

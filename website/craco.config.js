@@ -87,6 +87,10 @@ module.exports = {
         path.resolve(__dirname, '../packages/button/src'),
         path.resolve(__dirname, '../packages/button/examples'),
         path.resolve(__dirname, '../packages/button/docs'),
+
+        path.resolve(__dirname, '../packages/field-base/src'),
+        path.resolve(__dirname, '../packages/field-base/examples'),
+        path.resolve(__dirname, '../packages/field-base/docs'),
       ];
 
       webpackConfig.resolve = {
