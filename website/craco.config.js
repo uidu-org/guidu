@@ -94,7 +94,7 @@ module.exports = {
       ];
 
       webpackConfig.resolve = {
-        mainFields: ['uidu:src', 'browser', 'main'],
+        mainFields: ['uidu:src', 'main'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       };
 

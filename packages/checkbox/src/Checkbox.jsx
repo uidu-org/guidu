@@ -84,7 +84,7 @@ export default class Checkbox extends Component<CheckboxProps> {
     delete inputProps.showErrors;
 
     return (
-      <CustomInputComponent
+      <CustomInput
         {...inputProps}
         innerRef={r => {
           this.checkbox = r;
@@ -97,7 +97,7 @@ export default class Checkbox extends Component<CheckboxProps> {
         onChange={this.changeValue}
       >
         {showErrors && <ErrorMessages messages={errorMessages} />}
-      </CustomInputComponent>
+      </CustomInput>
     );
   };
 }
