@@ -5,26 +5,15 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uidu-org/guidu.git"
-  },
+  "repository": "github:uidu-org/guidu",
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "dist",
-    "lib",
-    "styles"
+    "dist"
   ],
-  "author": "",
+  "author": "uidu",
   "license": "ISC",
-  "bundlesize": [
-    {
-      "path": "./dist/umd/*.js",
-      "maxSize": "300 kB"
-    }
-  ],
   "dependencies": {
     "antd": "^3.0.1",
     "autosize": "^4.0.0",

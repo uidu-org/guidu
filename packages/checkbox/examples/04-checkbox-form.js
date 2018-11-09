@@ -1,6 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
-import Button from '@atlaskit/button';
+import { Button } from '@uidu/button';
 import { Form } from '@uidu/form';
 import { Checkbox } from '../src/index';
 

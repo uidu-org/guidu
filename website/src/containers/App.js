@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import LayerManager from '@atlaskit/layer-manager';
 import { ModalTransition } from '@atlaskit/modal-dialog';
 import Page, { Grid, GridColumn } from '@atlaskit/page';
@@ -26,7 +26,7 @@ import Package from '../pages/Package';
 import Nav from './Nav';
 
 // eslint-disable-next-line
-injectGlobal`
+createGlobalStyle`
   #app {
     position: relative;
     width: 100%;

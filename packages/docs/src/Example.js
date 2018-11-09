@@ -1,7 +1,6 @@
 // @flow
 import React, { type ComponentType } from 'react';
 import styled from 'styled-components';
-import { colors, themed } from '@atlaskit/theme';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { Card, CardBody, CardHeader, Tooltip } from 'reactstrap';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
@@ -98,23 +97,7 @@ export default class Example extends React.Component<Props, State> {
 
 const TRANSITION_DURATION = '200ms';
 
-const exampleBackgroundColor = {
-  open: themed('state', {
-    normal: { light: colors.N30, dark: colors.N700 },
-    hover: { light: colors.N40, dark: colors.N600 },
-  }),
-  closed: themed('state', {
-    normal: { light: colors.N20, dark: colors.DN50 },
-    hover: { light: colors.N40, dark: colors.DN60 },
-  }),
-};
-const toggleColor = themed('mode', {
-  closed: { light: colors.N600, dark: colors.DN100 },
-  open: { light: colors.N600, dark: colors.DN100 },
-});
-
 const Wrapper = styled(Card)`
-  color: ${toggleColor};
   margin-top: 20px;
   transition: background-color ${TRANSITION_DURATION};
 `;
@@ -129,12 +112,7 @@ export const Toggle = styled.div`
 
 // NOTE: use of important necessary to override element targeted headings
 export const ToggleTitle = styled.h4`
-  color: ${toggleColor} !important;
   margin: 0;
 `;
 
-const Showcase = styled.div`
-  // background-color: ${colors.background};
-  // border-radius: 3px;
-  // box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-`;
+const Showcase = styled.div``;

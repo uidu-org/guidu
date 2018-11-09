@@ -2,53 +2,6 @@ const path = require('path');
 const { getLoader, loaderByName } = require('@craco/craco');
 
 module.exports = {
-  // style: {
-  //   modules: {
-  //     localIdentName: '',
-  //   },
-  //   css: {
-  //     loaderOptions: {
-  //       /* Any css-loader configuration options: https://github.com/webpack-contrib/css-loader. */
-  //     },
-  //     loaderOptions: (cssLoaderOptions, { env, paths }) => {
-  //       return cssLoaderOptions;
-  //     },
-  //   },
-  //   sass: {
-  //     loaderOptions: {
-  //       /* Any sass-loader configuration options: https://github.com/webpack-contrib/sass-loader. */
-  //     },
-  //     loaderOptions: (sassLoaderOptions, { env, paths }) => {
-  //       return sassLoaderOptions;
-  //     },
-  //   },
-  //   postcss: {
-  //     mode: 'extends' /* (default value) */ || 'file',
-  //     plugins: [],
-  //     loaderOptions: {
-  //       /* Any postcss-loader configuration options: https://github.com/postcss/postcss-loader. */
-  //     },
-  //     loaderOptions: (postcssLoaderOptions, { env, paths }) => {
-  //       return postcssLoaderOptions;
-  //     },
-  //   },
-  // },
-  // eslint: {
-  //   enable: true,
-  //   mode: 'extends' /* (default value) */ || 'file',
-  //   configure: {
-  //     /* Any eslint configuration options: https://eslint.org/docs/user-guide/configuring */
-  //   },
-  //   configure: (eslintConfig, { env, paths }) => {
-  //     return eslintConfig;
-  //   },
-  //   loaderOptions: {
-  //     /* Any eslint-loader configuration options: https://github.com/webpack-contrib/eslint-loader. */
-  //   },
-  //   loaderOptions: (eslintOptions, { env, paths }) => {
-  //     return eslintOptions;
-  //   },
-  // },
   babel: {
     plugins: [
       '@babel/plugin-transform-destructuring',
@@ -72,30 +25,19 @@ module.exports = {
 
       match.loader.include = [
         path.resolve(__dirname, 'src'),
-        path.resolve(__dirname, '../packages/checkbox/src'),
-        path.resolve(__dirname, '../packages/checkbox/examples'),
-        path.resolve(__dirname, '../packages/checkbox/docs'),
-
-        path.resolve(__dirname, '../packages/form/src'),
-        path.resolve(__dirname, '../packages/form/examples'),
-        path.resolve(__dirname, '../packages/form/docs'),
-
-        path.resolve(__dirname, '../packages/docs/src'),
-        path.resolve(__dirname, '../packages/docs/examples'),
-        path.resolve(__dirname, '../packages/docs/docs'),
-
-        path.resolve(__dirname, '../packages/button/src'),
-        path.resolve(__dirname, '../packages/button/examples'),
-        path.resolve(__dirname, '../packages/button/docs'),
-
-        path.resolve(__dirname, '../packages/field-base/src'),
-        path.resolve(__dirname, '../packages/field-base/examples'),
-        path.resolve(__dirname, '../packages/field-base/docs'),
+        path.resolve(__dirname, '../packages'),
+        path.resolve(__dirname, '../themes'),
       ];
 
+      webpackConfig.output.filename = '[name].js';
       webpackConfig.resolve = {
         mainFields: ['uidu:src', 'main'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
+        modules: [
+          path.resolve(__dirname, '../packages'),
+          path.resolve(__dirname, '../themes'),
+          'node_modules',
+        ],
       };
 
       webpackConfig.module.rules.unshift({

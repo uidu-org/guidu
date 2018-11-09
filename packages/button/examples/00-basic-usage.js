@@ -1,6 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
-import Button from '../src/index';
+import { Button } from '../src/index';
 
 const BasicUsageExample = class extends PureComponent {
   constructor(props) {
