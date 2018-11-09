@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
