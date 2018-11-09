@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CustomInput } from 'reactstrap';
 import styled from 'styled-components';
-import { ComponentCommon, ErrorMessages, Help, Row } from '@uidu/field-base';
+import { ComponentCommon } from '@uidu/field-base';
 
 import { type CheckboxProps } from './types';
 
