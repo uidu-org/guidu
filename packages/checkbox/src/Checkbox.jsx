@@ -76,9 +76,7 @@ export default class Checkbox extends Component<CheckboxProps> {
     const { help, showErrors, errorMessages, layout, id } = this.props;
     const element = this.renderElement();
 
-    if (layout === 'elementOnly') {
-      return element;
-    }
+    if (layout === 'elementOnly') return element;
 
     return (
       <Row {...this.props} htmlFor={id} fakeLabel>
