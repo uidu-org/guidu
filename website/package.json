@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "private": true,
   "engines": {
     "node": "^11.0.0",
@@ -62,9 +62,9 @@
     "@atlaskit/tooltip": "^12.1.4",
     "@babel/runtime": "^7.0.0",
     "@uidu/button": "^0.1.0",
-    "@uidu/checkbox": "^0.1.12",
+    "@uidu/checkbox": "^0.1.13",
     "@uidu/form": "^0.1.0",
-    "@uidu/themes-uidu": "^0.1.10",
+    "@uidu/themes-uidu": "^0.1.11",
     "babel-runtime": "^6.26.0",
     "codesandboxer": "^0.2.2",
     "commonmark": "^0.27.0",
