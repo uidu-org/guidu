@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": true,
   "scripts": {
     "start": "craco start --react-scripts ../../node_modules/react-scripts",
@@ -17,7 +17,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@uidu/docs": "^0.1.5",
+    "@uidu/docs": "^0.1.6",
     "bolt-query": "^1.1.4",
     "chalk": "^2.1.0",
     "extract-react-types-loader": "^0.2.2",
@@ -56,8 +56,8 @@
     "@atlaskit/theme": "^6.1.1",
     "@atlaskit/tooltip": "^12.1.4",
     "@babel/runtime": "^7.0.0",
-    "@uidu/checkbox": "^0.1.10",
-    "@uidu/themes-uidu": "^0.1.7",
+    "@uidu/checkbox": "^0.1.11",
+    "@uidu/themes-uidu": "^0.1.8",
     "babel-runtime": "^6.26.0",
     "codesandboxer": "^0.2.2",
     "commonmark": "^0.27.0",

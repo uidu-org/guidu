@@ -1,6 +1,6 @@
 {
   "name": "@uidu/radio",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,12 +23,12 @@
     }
   ],
   "dependencies": {
-    "@uidu/field-base": "^0.1.7",
+    "@uidu/field-base": "^0.1.8",
     "@uidu/forms": "^1.0.0-beta.8",
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.5"
+    "@uidu/docs": "^0.1.6"
   },
   "gitHead": "125291d91eb5475295a78abe613c90ec09e311b7"
 }

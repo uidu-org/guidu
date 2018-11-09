@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.5"
+    "@uidu/docs": "^0.1.6"
   },
   "gitHead": "125291d91eb5475295a78abe613c90ec09e311b7"
 }
