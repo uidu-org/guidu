@@ -79,8 +79,7 @@
     "website:start": "cd website && yarn start",
     "start": "yarn run website:start",
     "build": "nps build",
-    "dev": "nps dev",
-    "deploy:staging": "netlify deploy --dir dist/ -a $NETLIFY_TOKEN -s $NETLIFY_SITE_ID_STAGING"
+    "dev": "nps dev"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",

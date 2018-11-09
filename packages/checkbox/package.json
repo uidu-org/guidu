@@ -7,7 +7,7 @@
   "uidu:src": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uidu-org/uidu-ui-kit.git"
+    "url": "https://github.com/uidu-org/guidu.git"
   },
   "publishConfig": {
     "access": "public"
