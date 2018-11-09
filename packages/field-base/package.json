@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,7 +11,11 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": ["dist", "lib", "styles"],
+  "files": [
+    "dist",
+    "lib",
+    "styles"
+  ],
   "author": "",
   "license": "ISC",
   "bundlesize": [
