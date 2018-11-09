@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-uploader",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -28,7 +28,7 @@
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.4"
+    "@uidu/docs": "^0.1.5"
   },
   "gitHead": "548735a14780bffcfb36f2d925ffee63bb4fdf58"
 }

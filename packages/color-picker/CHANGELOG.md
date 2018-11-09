@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/color-picker@0.1.7...@uidu/color-picker@0.1.8) (2018-11-09)
+
+**Note:** Version bump only for package @uidu/color-picker
+
+
+
+
+
 ## [0.1.7](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/color-picker@0.1.6...@uidu/color-picker@0.1.7) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/color-picker

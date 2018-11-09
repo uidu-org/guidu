@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Forms using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,7 +19,7 @@
     "react-ladda": "^6.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.4"
+    "@uidu/docs": "^0.1.5"
   },
   "gitHead": "548735a14780bffcfb36f2d925ffee63bb4fdf58"
 }

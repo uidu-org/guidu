@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Button component for use in forms",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -27,8 +27,8 @@
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.4",
-    "@uidu/form": "^0.1.4"
+    "@uidu/docs": "^0.1.5",
+    "@uidu/form": "^0.1.5"
   },
   "gitHead": "548735a14780bffcfb36f2d925ffee63bb4fdf58"
 }
