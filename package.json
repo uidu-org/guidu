@@ -73,7 +73,7 @@
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-dev-server": "^3.1.10"
   },
-  "workspaces": ["packages/checkbox", "themes/*", "website"],
+  "workspaces": ["packages/*", "themes/*", "website"],
   "scripts": {
     "website:build": "cd website && yarn build",
     "website:start": "cd website && yarn start",

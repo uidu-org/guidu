@@ -5,8 +5,9 @@
   "version": "independent",
   "command": {
     "publish": {
-      "conventionalCommits": true
+      "conventionalCommits": true,
+      "ignoreChanges": ["*.md"]
     }
   },
-  "packages": ["packages/checkbox", "packages/button", "website"]
+  "packages": ["packages/*", "themes/*", "website"]
 }
