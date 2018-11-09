@@ -2,6 +2,11 @@
   "name": "website",
   "version": "0.1.13",
   "private": true,
+  "engines": {
+    "node": "^11.0.0",
+    "npm": "6.1.0",
+    "yarn": "^1.9.2"
+  },
   "scripts": {
     "start": "craco start --react-scripts ../../node_modules/react-scripts",
     "build": "craco build --react-scripts ../../node_modules/react-scripts",
@@ -10,12 +15,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "@uidu/docs": "^0.1.6",
     "bolt-query": "^1.1.4",
