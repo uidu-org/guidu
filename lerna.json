@@ -6,7 +6,7 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "ignoreChanges": ["*.md"]
+      "ignoreChanges": ["website", "*.md"]
     }
   },
   "packages": ["packages/*", "themes/*", "website"]

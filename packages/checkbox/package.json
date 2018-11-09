@@ -30,5 +30,6 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.0",
     "@uidu/form": "^0.1.0"
-  }
+  },
+  "gitHead": "28e75d48ba4bb2b9fd11820bdc776d48a0479148"
 }
