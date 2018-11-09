@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "private": true,
   "engines": {
     "node": "^11.0.0",
@@ -61,9 +61,9 @@
     "@atlaskit/theme": "^6.1.1",
     "@atlaskit/tooltip": "^12.1.4",
     "@babel/runtime": "^7.0.0",
-    "@uidu/button": "^0.1.0",
-    "@uidu/checkbox": "^0.1.15",
-    "@uidu/form": "^0.1.0",
+    "@uidu/button": "^0.1.9",
+    "@uidu/checkbox": "^0.1.16",
+    "@uidu/form": "^0.1.7",
     "@uidu/themes-uidu": "^0.1.12",
     "babel-runtime": "^6.26.0",
     "codesandboxer": "^0.2.2",
