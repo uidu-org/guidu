@@ -6,7 +6,7 @@
 #    that is where we will look for package.json/.nvmrc/etc not repo root!
 
 [build]
-  base    = ""
+  base    = "website"
   publish = "website/public"
   command = "yarn run website:build"
 
