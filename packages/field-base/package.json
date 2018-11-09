@@ -6,16 +6,12 @@
   "module": "dist/esm/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uidu-org/uidu-ui-kit.git"
+    "url": "https://github.com/uidu-org/guidu.git"
   },
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "dist",
-    "lib",
-    "styles"
-  ],
+  "files": ["dist", "lib", "styles"],
   "author": "",
   "license": "ISC",
   "bundlesize": [
@@ -25,7 +21,6 @@
     }
   ],
   "dependencies": {
-    "@uidu/loader": "^1.0.0-beta.3",
     "antd": "^3.0.1",
     "autosize": "^4.0.0",
     "blueimp-load-image": "^2.17.1",
