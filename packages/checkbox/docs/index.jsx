@@ -28,9 +28,9 @@ export default md`
   ${(
     <Example
       packageName="@uidu/checkbox"
-      Component={require('../examples/03-indeterminate').default}
+      Component={require('../examples/01-indeterminate').default}
       title="Indeterminate"
-      source={require('!!raw-loader!../examples/03-indeterminate')}
+      source={require('!!raw-loader!../examples/01-indeterminate')}
     />
   )}
 

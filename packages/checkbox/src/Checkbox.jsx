@@ -29,6 +29,23 @@ export default class Checkbox extends Component<CheckboxProps> {
     isIndeterminate: false,
   };
 
+  componentWillReceiveProps = nextProps => {
+    const { onSetValue, value } = this.props;
+    const isValueChanging = nextProps.value !== value;
+
+    if (isValueChanging) {
+      onSetValue(nextProps.value);
+    }
+  };
+
+  componentDidUpdate() {
+    const { isIndeterminate } = this.props;
+
+    if (this.checkbox) {
+      this.checkbox.indeterminate = !!isIndeterminate;
+    }
+  }
+
   changeValue = e => {
     const { onSetValue, onChange, name } = this.props;
     const value = e.currentTarget.checked;
@@ -36,13 +53,14 @@ export default class Checkbox extends Component<CheckboxProps> {
     onChange(name, value);
   };
 
-  renderElement = () => {
+  render = () => {
     const inputProps = Object.assign({}, this.props);
     const {
       // children,
       id,
       disabled,
       label,
+      value,
     } = this.props;
 
     Object.keys(ComponentCommon.propTypes).forEach(key => {
@@ -58,34 +76,28 @@ export default class Checkbox extends Component<CheckboxProps> {
     delete inputProps.value;
     delete inputProps.onBlur;
     delete inputProps.isPristine;
+    delete inputProps.isIndeterminate;
+    delete inputProps.isInvalid;
+    delete inputProps.defaultChecked;
     delete inputProps.showErrors;
 
     return (
-      <CustomInputComponent
+      <CustomInput
         {...inputProps}
+        innerRef={r => {
+          this.checkbox = r;
+        }}
+        checked={value}
         type="checkbox"
         disabled={disabled}
         id={id}
         label={label}
         onChange={this.changeValue}
-      />
+      >
+        <div className="invalid-feedback">Example invalid feedback text</div>
+      </CustomInput>
     );
   };
-
-  render() {
-    const { help, showErrors, errorMessages, layout, id } = this.props;
-    const element = this.renderElement();
-
-    if (layout === 'elementOnly') return element;
-
-    return (
-      <Row {...this.props} htmlFor={id} fakeLabel>
-        {element}
-        {help && <Help help={help} />}
-        {showErrors && <ErrorMessages messages={errorMessages} />}
-      </Row>
-    );
-  }
 }
 
 Checkbox.defaultProps = {

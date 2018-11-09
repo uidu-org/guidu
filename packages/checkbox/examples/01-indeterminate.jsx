@@ -1,14 +1,11 @@
 // @flow
 import React, { PureComponent } from 'react';
 import { Form } from '@uidu/form';
+
 import { Checkbox } from '../src/index';
 
-const PARENT_ID = 'PARENT';
-const CHILD_1_ID = 'CHILD1';
-const CHILD_2_ID = 'CHILD2';
-
 const getCheckedChildrenCount = checkedItems => {
-  const childItems = Object.keys(checkedItems).filter(i => i !== PARENT_ID);
+  const childItems = Object.keys(checkedItems).filter(i => i !== 'parent');
   return childItems.reduce(
     (count, i) => (checkedItems[i] ? count + 1 : count),
     0,
@@ -23,35 +20,34 @@ const getIsParentIndeterminate = checkedItems => {
 export default class IndeterminateExample extends PureComponent {
   state = {
     checkedItems: {
-      [PARENT_ID]: false,
-      [CHILD_1_ID]: false,
-      [CHILD_2_ID]: false,
+      parent: false,
+      'child-1': false,
+      'child-2': false,
     },
   };
 
-  onChange = event => {
+  onChange = (name, value) => {
     const { checkedItems } = this.state;
-    const itemValue = event.target.value;
 
-    if (itemValue === PARENT_ID) {
-      const newCheckedState = !checkedItems[PARENT_ID];
+    if (name === 'parent') {
       this.setState({
         // Set all items to the checked state of the parent
-        checkedItems: Object.keys(checkedItems).reduce(
-          (items, i) => ({ ...items, [i]: newCheckedState }),
-          {},
-        ),
+        checkedItems: {
+          parent: value,
+          'child-1': value,
+          'child-2': value,
+        },
       });
     } else {
       const newCheckedItems = {
         ...checkedItems,
-        [itemValue]: !checkedItems[itemValue],
+        [name]: !checkedItems[name],
       };
       this.setState({
+        // Set all items to the checked state of the parent
         checkedItems: {
           ...newCheckedItems,
-          // If all children would be unchecked, also uncheck the parent
-          [PARENT_ID]: getCheckedChildrenCount(newCheckedItems) > 0,
+          parent: getCheckedChildrenCount(newCheckedItems) > 0,
         },
       });
     }
@@ -68,11 +64,12 @@ export default class IndeterminateExample extends PureComponent {
           its&#39; children are checked.
         </p>
         <Checkbox
-          isChecked={checkedItems[PARENT_ID]}
+          value={checkedItems.parent}
           isIndeterminate={getIsParentIndeterminate(checkedItems)}
           onChange={this.onChange}
+          layout="elementOnly"
           label="Parent Checkbox"
-          value={PARENT_ID}
+          id="parent"
           name="parent"
         />
         <div
@@ -83,18 +80,20 @@ export default class IndeterminateExample extends PureComponent {
           }}
         >
           <Checkbox
-            isChecked={checkedItems[CHILD_1_ID]}
+            value={checkedItems['child-1']}
             onChange={this.onChange}
+            layout="elementOnly"
             label="Child Checkbox 1"
-            value={CHILD_1_ID}
+            id="child-1"
             name="child-1"
           />
           <Checkbox
-            isChecked={checkedItems[CHILD_2_ID]}
+            value={checkedItems['child-2']}
             onChange={this.onChange}
+            layout="elementOnly"
             label="Child Checkbox 2"
-            value={CHILD_2_ID}
-            name="child-1"
+            id="child-2"
+            name="child-2"
           />
         </div>
       </Form>

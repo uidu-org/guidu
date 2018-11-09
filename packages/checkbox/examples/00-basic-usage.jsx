@@ -1,7 +1,6 @@
 // @flow
 import React, { PureComponent } from 'react';
 import { Form } from '@uidu/form';
-
 import { Checkbox } from '../src/index';
 
 const BasicUsageExample = class extends PureComponent {

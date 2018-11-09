@@ -24,12 +24,10 @@
     }
   ],
   "dependencies": {
-    "@uidu/field-base": "^0.1.8",
-    "classnames": "^2.2.5"
-  },
-  "devDependencies": {
     "@uidu/docs": "^0.1.6",
-    "@uidu/form": "^0.1.6"
+    "@uidu/field-base": "^0.1.8",
+    "@uidu/form": "^0.1.6",
+    "classnames": "^2.2.5"
   },
   "gitHead": "125291d91eb5475295a78abe613c90ec09e311b7"
 }
