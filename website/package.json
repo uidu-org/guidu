@@ -10,7 +10,8 @@
   "scripts": {
     "start": "craco start --react-scripts ../../node_modules/react-scripts",
     "build": "craco build --react-scripts ../../node_modules/react-scripts",
-    "test": "craco test --react-scripts ../../node_modules/react-scripts"
+    "test": "craco test --react-scripts ../../node_modules/react-scripts",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
