@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalItem GlobalItemBase should render an InteractionStateManager 1`] = `
+.emotion-0 {
+  margin-top: 10px;
+}
+
+<div
+  className="emotion-0"
+>
+  <InteractionStateManager>
+    <unknown />
+  </InteractionStateManager>
+</div>
+`;
+
+exports[`GlobalItem GlobalItemBase should render an item wrapper with the globalItem.itemWrapper theme styles when size is large: largeItem 1`] = `
+.emotion-0 {
+  margin-top: 10px;
+}
+
+<div
+  className="emotion-0"
+>
+  <InteractionStateManager>
+    <unknown />
+  </InteractionStateManager>
+</div>
+`;
+
+exports[`GlobalItem GlobalItemBase should render an item wrapper with the globalItem.itemWrapper theme styles when size is small: smallItem 1`] = `
+.emotion-0 {
+  margin-top: 0;
+}
+
+<div
+  className="emotion-0"
+>
+  <InteractionStateManager>
+    <unknown />
+  </InteractionStateManager>
+</div>
+`;
+
+exports[`GlobalItem GlobalItemBase should render the GlobalItem primitive 1`] = `
+<WithTheme(GlobalNavigationItemPrimitive)
+  icon={[Function]}
+  isActive={false}
+  isFocused={false}
+  isHover={false}
+  label=""
+  size="large"
+  styles={[Function]}
+  theme={
+    Object {
+      "mode": Object {
+        "globalItem": [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "size": "large",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "isThrow": false,
+              "value": Object {
+                "badgeWrapper": Object {},
+                "itemBase": Object {},
+                "itemWrapper": Object {
+                  "marginTop": 10,
+                },
+              },
+            },
+          ],
+        },
+      },
+    }
+  }
+/>
+`;
+
+exports[`GlobalItem should render correctly 1`] = `
+<AnalyticsContext
+  data={
+    Object {
+      "componentName": "globalItem",
+    }
+  }
+>
+  <ForwardRef(WithAnalyticsEvents(WithTheme(GlobalItemBase)))
+    icon={[Function]}
+  />
+</AnalyticsContext>
+`;

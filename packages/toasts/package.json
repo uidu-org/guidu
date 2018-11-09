@@ -1,0 +1,48 @@
+{
+  "name": "@uidu/toasts",
+  "version": "1.0.0-beta.3",
+  "description": "Toasts for in app notifications, suggested with redux",
+  "main": "dist/uidu-toasts.js",
+  "module": "lib/index.js",
+  "jsnext:main": "lib/index.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uidu-org/uidu-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "lib",
+    "styles"
+  ],
+  "scripts": {
+    "dev": "webpack --config webpack.development.js --progress --colors --watch",
+    "build": "npm run build:es && npm run build:css",
+    "build:umd": "webpack --config webpack.production.js",
+    "build:es": "NODE_ENV=production cross-env BABEL_ENV=es babel src --out-dir lib",
+    "prebuild:css": "node-sass --include-path ../../node_modules styles/index.scss styles/index.css",
+    "build:css": "postcss --use autoprefixer --config postcss.config.js styles/index.css -o styles/index.css",
+    "lint": "eslint src/**; exit 0",
+    "lint:watch": "esw -w src/**",
+    "prepublish": "npm run build",
+    "test": "bundlesize",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages",
+    "start": "webpack-dev-server --open --config webpack.development.js --progress --colors --watch"
+  },
+  "dependencies": {
+    "react-notification": "^6.8.2",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.0"
+  }
+}

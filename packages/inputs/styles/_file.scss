@@ -1,0 +1,10 @@
+// Localize input file
+.custom-file-control {
+  &::after {
+    content: 'Choose file...';
+  }
+
+  &::before {
+    content: 'Browse';
+  }
+}

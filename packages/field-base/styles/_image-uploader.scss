@@ -1,0 +1,48 @@
+// Image uploader
+.image-uploader {
+  background-color: $image-uploader-bg-color;
+  border-radius: $border-radius;
+  cursor: move;
+  position: relative;
+
+  canvas {
+    border-radius: $border-radius;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &:hover {
+    .image-uploader-actions {
+      transform: translateY(0);
+    }
+  }
+
+  .crop {
+    background-color: transparent;
+    border: 0;
+
+    label {
+      color: $image-uploader-label-color;
+      cursor: pointer;
+      display: block;
+    }
+  }
+}
+
+.image-uploader-actions {
+  align-items: center;
+  background: $image-uploader-action-bar-bg-color;
+  border-radius: $border-radius $border-radius 0 0;
+  color: $image-uploader-action-bar-color;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: $image-uploader-action-bar-padding;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  width: 100%;
+}

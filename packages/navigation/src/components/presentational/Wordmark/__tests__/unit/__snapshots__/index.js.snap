@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Wordmark should render correctly 1`] = `
+.emotion-0 {
+  line-height: 0;
+  padding-bottom: 26px;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+
+<div
+  className="emotion-0"
+>
+  <JiraWordmark
+    iconColor="inherit"
+    iconGradientStart="inherit"
+    iconGradientStop="inherit"
+    label=""
+    size="medium"
+    textColor="currentColor"
+  />
+</div>
+`;

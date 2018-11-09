@@ -1,0 +1,32 @@
+{
+  "name": "@uidu/checkbox",
+  "version": "0.1.0",
+  "description": "Checkbox component for use in forms",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uidu-org/uidu-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": ["dist"],
+  "author": "",
+  "license": "ISC",
+  "bundlesize": [
+    {
+      "path": "./dist/umd/*.js",
+      "maxSize": "300 kB"
+    }
+  ],
+  "dependencies": {
+    "@uidu/field-base": "^1.0.0-beta.31",
+    "classnames": "^2.2.5"
+  },
+  "devDependencies": {
+    "@uidu/form": "^0.1.0",
+    "@uidu/docs": "^0.1.0"
+  }
+}

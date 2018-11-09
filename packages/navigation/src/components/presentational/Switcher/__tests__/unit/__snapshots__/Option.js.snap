@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Option should render correctly 1`] = `
+<div
+  aria-selected={false}
+  id="id"
+  innerRef={
+    Object {
+      "current": null,
+    }
+  }
+  onClick={[Function]}
+  onMouseMove={[Function]}
+  onMouseOver={[Function]}
+  role="role"
+  tabIndex={0}
+>
+  <Option
+    cx={[Function]}
+    data={
+      Object {
+        "text": "hello world",
+      }
+    }
+    getStyles={[Function]}
+    innerProps={
+      Object {
+        "aria-selected": false,
+        "id": "id",
+        "innerRef": Object {
+          "current": null,
+        },
+        "onClick": [Function],
+        "onMouseMove": [Function],
+        "onMouseOver": [Function],
+        "role": "role",
+        "tabIndex": 0,
+      }
+    }
+    innerRef={
+      Object {
+        "current": null,
+      }
+    }
+    isFocused={false}
+    isSelected={false}
+    theme={Object {}}
+  >
+    <ContentWrapper>
+      <TextWrapper>
+        hello world
+      </TextWrapper>
+    </ContentWrapper>
+  </Option>
+</div>
+`;

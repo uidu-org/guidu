@@ -1,0 +1,93 @@
+// Float Labels
+// https://github.com/tonystar/bootstrap-float-label 4.0.2
+.has-float-label {
+  display: block;
+  margin-bottom: 0;
+  position: relative;
+
+  label,
+  & > span {
+    cursor: text;
+    font-size: $float-label-font-size;
+    left: $float-label-font-size;
+    line-height: 1;
+    opacity: 1;
+    padding: 0 1px;
+    pointer-events: none;
+    position: absolute;
+    top: $float-label-position-top;
+    transition: left, opacity, top 0.2s;
+    z-index: 3;
+
+    &::after {
+      background: $float-label-bg-color;
+      content: ' ';
+      display: block;
+      height: 2px;
+      left: $float-label-line-padding;
+      position: absolute;
+      right: $float-label-line-padding;
+      top: 50%;
+      z-index: -1;
+    }
+  }
+
+  .form-control {
+    &:placeholder-shown {
+      &:not(:focus) {
+        &::placeholder {
+          opacity: 0;
+        }
+
+        & + * {
+          font-size: 1rem;
+          opacity: 0.5;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &::placeholder {
+      opacity: 1;
+      transition: left, opacity, top 0.2s;
+    }
+  }
+}
+
+.input-group {
+  .has-float-label {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    margin-bottom: 0;
+
+    .form-control {
+      border-radius: 0.25rem;
+      width: 100%;
+    }
+
+    &:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-right: 0;
+      border-top-right-radius: 0;
+
+      .form-control {
+        border-bottom-right-radius: 0;
+        border-right: 0;
+        border-top-right-radius: 0;
+      }
+    }
+
+    &:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+
+      .form-control {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+      }
+    }
+  }
+}

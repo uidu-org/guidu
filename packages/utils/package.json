@@ -1,0 +1,40 @@
+{
+  "name": "@uidu/utils",
+  "version": "1.0.0-beta.6",
+  "description": "A set of utility functions",
+  "main": "dist/uidu-utils.js",
+  "module": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uidu-org/uidu-ui-kit.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "nps build && bundlesize",
+    "lint": "eslint src/**; exit 0",
+    "lint:watch": "esw -w src/**",
+    "prepublish": "npm run build",
+    "test": "bundlesize"
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/uidu-utils.js"
+    }
+  ],
+  "author": "Andrea Vanini",
+  "license": "MIT",
+  "dependencies": {
+    "autolinker": "^1.6.0",
+    "d3-collection": "^1.0.4",
+    "query-string": "^5.0.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "nps": "^5.9.3",
+    "nps-utils": "^1.7.0"
+  }
+}

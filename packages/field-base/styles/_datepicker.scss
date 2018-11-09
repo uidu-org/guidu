@@ -1,0 +1,37 @@
+@import '~react-day-picker/lib/style';
+
+.DateRange {
+  .DayPicker-Day--selected {
+    &:not(.DayPicker-Day--start) {
+      &:not(.DayPicker-Day--end) {
+        &:not(.DayPicker-Day--outside) {
+          background-color: $date-picker-range-bg-color !important;
+          color: $date-picker-range-color !important;
+        }
+      }
+    }
+  }
+
+  .DayPicker-Day {
+    border-radius: 0 !important;
+  }
+
+  .DayPicker-Day--start {
+    border-bottom-left-radius: 50% !important;
+    border-top-left-radius: 50% !important;
+  }
+
+  .DayPicker-Day--end {
+    border-bottom-right-radius: 50% !important;
+    border-top-right-radius: 50% !important;
+  }
+}
+
+// Date Picker
+.DayPickerInput {
+  display: block;
+}
+
+.DayPickerInput-Overlay {
+  z-index: $date-picker-zindex;
+}

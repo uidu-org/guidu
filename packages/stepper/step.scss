@@ -1,0 +1,72 @@
+@import 'stylesheets/variables';
+
+.step {
+  &.disabled {
+    pointer-events: none;
+
+    .step-button {
+      .step-number {
+        background-color: $gray-100;
+      }
+
+      .step-title {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &.active {
+    .step-body {
+      font-size: $font-size-base;
+      opacity: 1;
+      padding-bottom: $spacer * 2;
+      transition: font-size 0.25s, padding 0.25s, opacity 0.5s 0.25s;
+    }
+  }
+
+  &::after {
+    background-color: $gray-200;
+    content: '';
+    height: 100%;
+    left: calc(#{$spacer * 2} - 1px);
+    position: absolute;
+    top: 32px;
+    width: 1px;
+    z-index: -1;
+  }
+}
+
+.step-button {
+  background-color: $white;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.step-number {
+  background-color: $gray-200;
+  border-radius: 0.25rem;
+  color: $white;
+  font-weight: bold;
+  height: $spacer * 2;
+  // line-height: 2rem;
+  text-align: center;
+  width: $spacer * 2;
+}
+
+.step-body {
+  // font-size: 0;
+  background-color: $white;
+  margin: 0;
+  opacity: 0;
+  padding-bottom: $spacer;
+  padding-left: $spacer;
+  padding-right: $spacer;
+  padding-top: $spacer;
+  position: relative;
+  transition: font-size 0.25s, padding 0.25s, opacity 0.5s 0.25s;
+}

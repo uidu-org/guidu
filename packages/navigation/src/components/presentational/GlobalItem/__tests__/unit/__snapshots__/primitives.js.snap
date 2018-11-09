@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GlobalNavigationItemPrimitive should render a CustomComponent when a component prop is passed 1`] = `
+.emotion-1 {
+  display: inline-block;
+}
+
+<ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Tooltip)))
+  delay={0}
+  hideTooltipOnClick={true}
+  hideTooltipOnMouseDown={true}
+  position="right"
+>
+  <div
+    className="emotion-1"
+  >
+    <MyComponent
+      className="emotion-0"
+      component={[Function]}
+      id="my-id"
+      label="my-label"
+      onClick={[Function]}
+      size="large"
+      styles={[Function]}
+    />
+  </div>
+</ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Tooltip)))>
+`;
+
+exports[`GlobalNavigationItemPrimitive should render a button when an onClick prop is passed 1`] = `
+.emotion-1 {
+  display: inline-block;
+}
+
+<ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Tooltip)))
+  delay={0}
+  hideTooltipOnClick={true}
+  hideTooltipOnMouseDown={true}
+  position="right"
+>
+  <div
+    className="emotion-1"
+  >
+    <button
+      className="emotion-0"
+      onClick={[Function]}
+    />
+  </div>
+</ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Tooltip)))>
+`;
+
+exports[`GlobalNavigationItemPrimitive should render an anchor when an href prop is passed 1`] = `
+.emotion-1 {
+  display: inline-block;
+}
+
+<ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Tooltip)))
+  delay={0}
+  hideTooltipOnClick={true}
+  hideTooltipOnMouseDown={true}
+  position="right"
+>
+  <div
+    className="emotion-1"
+  >
+    <a
+      className="emotion-0"
+      href="www.example.com"
+    />
+  </div>
+</ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Tooltip)))>
+`;

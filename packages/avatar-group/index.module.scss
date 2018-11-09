@@ -1,0 +1,70 @@
+$border-color: #fff;
+
+.member-wrapper,
+.member-avatar {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.member-wrapper {
+  overflow: hidden;
+}
+
+.wrapper {
+  left: 0;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  z-index: 1;
+}
+
+.wrapper[data-number-of-thumbnails='2'] .member-wrapper:first-child {
+  left: -25%;
+}
+
+.wrapper[data-number-of-thumbnails='2'] .member-wrapper:nth-child(2) {
+  border-left: 1px solid $border-color;
+  left: 50%;
+}
+
+.wrapper[data-number-of-thumbnails='2']
+  .member-wrapper:nth-child(2)
+  .member-avatar {
+  left: -25%;
+}
+
+.wrapper[data-number-of-thumbnails='3'] .member-wrapper:first-child {
+  left: -25%;
+}
+
+.wrapper[data-number-of-thumbnails='3'] .member-wrapper:nth-child(2),
+.wrapper[data-number-of-thumbnails='3'] .member-wrapper:nth-child(3) {
+  border-left: 1px solid $border-color;
+  height: 50%;
+  left: 50%;
+  width: 50%;
+}
+
+.wrapper[data-number-of-thumbnails='3'] .member-wrapper:nth-child(3) {
+  border-top: 1px solid $border-color;
+  top: 50%;
+}
+
+.wrapper[data-number-of-thumbnails='4'] .member-wrapper {
+  width: 50%;
+  height: 50%;
+}
+
+.wrapper[data-number-of-thumbnails='4'] .member-wrapper:nth-child(2),
+.wrapper[data-number-of-thumbnails='4'] .member-wrapper:nth-child(4) {
+  left: 50%;
+}
+
+.wrapper[data-number-of-thumbnails='4'] .member-wrapper:nth-child(3),
+.wrapper[data-number-of-thumbnails='4'] .member-wrapper:nth-child(4) {
+  top: 50%;
+}

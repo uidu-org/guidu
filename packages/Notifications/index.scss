@@ -1,0 +1,21 @@
+.notification {
+  position: relative;
+
+  &.unread {
+    background-color: #eef3f7;
+
+    &:hover {
+      background-color: #f8f9fa;
+    }
+
+    // &::after {
+    //   background-color: green;
+    //   content: '';
+    //   height: 100%;
+    //   position: absolute;
+    //   right: 0;
+    //   top: 0;
+    //   width: 3px;
+    // }
+  }
+}

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GoToItemBase Default After prop should only show on hover or active or focus 1`] = `
+<ArrowRightCircleIcon
+  primaryColor="currentColor"
+  secondaryColor="inherit"
+/>
+`;
+
+exports[`GoToItemBase Default After prop should show a spinner if the incoming view equals the 'goTo' prop of GoToItem 1`] = `
+<Spinner
+  delay={200}
+  invertColor={true}
+  isCompleting={false}
+  onComplete={[Function]}
+  size="small"
+/>
+`;
+
+exports[`GoToItemBase should render a ConnectedItem 1`] = `
+<ConnectedItem
+  after={[Function]}
+  id="another-view-item"
+  onClick={[Function]}
+  text="Another View"
+/>
+`;

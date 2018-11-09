@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortableGroup should disable pointerEvents on the group while it is being dragged over 1`] = `
+.emotion-0 {
+  min-height: 64px;
+  pointer-events: none;
+}
+
+.emotion-0 > button {
+  background: none;
+  border: none;
+  padding: none;
+}
+
+<div
+  className="emotion-0"
+  mySpecialProp="foo"
+>
+  <Group
+    hasSeparator={false}
+    heading="My group"
+    id="my-group"
+  >
+    Group children
+    <unknown />
+  </Group>
+</div>
+`;
+
+exports[`SortableGroup should render a Group component 1`] = `
+.emotion-0 {
+  min-height: 64px;
+}
+
+.emotion-0 > button {
+  background: none;
+  border: none;
+  padding: none;
+}
+
+<div
+  className="emotion-0"
+  mySpecialProp="foo"
+>
+  <Group
+    hasSeparator={false}
+    heading="My group"
+    id="my-group"
+  >
+    Group children
+    <unknown />
+  </Group>
+</div>
+`;
+
+exports[`SortableGroup should style the div wrapper with default styles and \`innerStyle\` prop 1`] = `
+.emotion-0 {
+  min-height: 64px;
+  padding-top: 400px;
+}
+
+.emotion-0 > button {
+  background: none;
+  border: none;
+  padding: none;
+}
+
+<div
+  className="emotion-0"
+  mySpecialProp="foo"
+>
+  <Group
+    hasSeparator={false}
+    heading="My group"
+    id="my-group"
+  >
+    Group children
+    <unknown />
+  </Group>
+</div>
+`;
+
+exports[`SortableGroup should wrap Group with a Droppable Component 1`] = `
+<MockDroppable
+  droppableId="my-group"
+>
+  <unknown />
+</MockDroppable>
+`;

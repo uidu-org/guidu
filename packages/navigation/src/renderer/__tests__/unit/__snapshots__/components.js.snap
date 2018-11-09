@@ -1,0 +1,209 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigation-next view renderer HeaderSection should render the HeaderSection UI component 1`] = `
+<HeaderSection
+  id="header"
+>
+  <unknown />
+</HeaderSection>
+`;
+
+exports[`navigation-next view renderer ItemsRenderer should render items correctly 1`] = `
+Array [
+  <HeaderSection
+    customComponents={
+      Object {
+        "Corgie": [Function],
+      }
+    }
+    id="headerSection"
+    items={Array []}
+    key="headerSection"
+  />,
+  <MenuSection
+    customComponents={
+      Object {
+        "Corgie": [Function],
+      }
+    }
+    id="menuSection"
+    items={Array []}
+    key="menuSection"
+  />,
+  <ConnectedItem
+    id="item"
+    index={2}
+    key="item"
+  />,
+  <BackItem
+    id="back-item"
+    index={3}
+    key="back-item"
+    text="Back"
+  />,
+  <WithNavigationUI(WithNavigationViewController(GoToItem))
+    goTo="view"
+    id="goto-item"
+    index={4}
+    key="goto-item"
+  />,
+  <ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(InlineCustom)))
+    components={
+      Object {
+        "BackItem": [Function],
+        "ContainerHeader": [Function],
+        "Debug": [Function],
+        "GoToItem": [Function],
+        "Group": [Function],
+        "GroupHeading": [Function],
+        "HeaderSection": [Function],
+        "Item": [Function],
+        "MenuSection": [Function],
+        "Section": [Function],
+        "SectionHeading": [Function],
+        "Separator": [Function],
+        "SortableContext": [Function],
+        "SortableGroup": [Function],
+        "SortableItem": [Function],
+        "Switcher": [Function],
+        "Wordmark": [Function],
+      }
+    }
+    customComponents={
+      Object {
+        "Corgie": [Function],
+      }
+    }
+    id="inlineCustom"
+    index={5}
+    key="inlineCustom"
+  />,
+  <ForwardRef(WithAnalyticsContext(WithAnalyticsEvents(Corgie)))
+    components={
+      Object {
+        "BackItem": [Function],
+        "ContainerHeader": [Function],
+        "Debug": [Function],
+        "GoToItem": [Function],
+        "Group": [Function],
+        "GroupHeading": [Function],
+        "HeaderSection": [Function],
+        "Item": [Function],
+        "MenuSection": [Function],
+        "Section": [Function],
+        "SectionHeading": [Function],
+        "Separator": [Function],
+        "SortableContext": [Function],
+        "SortableGroup": [Function],
+        "SortableItem": [Function],
+        "Switcher": [Function],
+        "Wordmark": [Function],
+      }
+    }
+    customComponents={
+      Object {
+        "Corgie": [Function],
+      }
+    }
+    id="corgie"
+    index={6}
+    key="corgie"
+  />,
+]
+`;
+
+exports[`navigation-next view renderer MenuSection should render the MenuSection UI component 1`] = `
+<MenuSection
+  alwaysShowScrollHint={false}
+  id="menu"
+>
+  <unknown />
+</MenuSection>
+`;
+
+exports[`navigation-next view renderer SortableContext should render the SortableContext UI component 1`] = `
+<SortableContext
+  id="sortable"
+  onDragEnd={[Function]}
+>
+  <ItemsRenderer
+    items={
+      Array [
+        Object {
+          "id": "sortable-group",
+          "items": Array [
+            Object {
+              "id": "backlog",
+              "text": "Backlog",
+              "type": "SortableItem",
+            },
+            Object {
+              "id": "active-sprints",
+              "text": "Active sprints",
+              "type": "SortableItem",
+            },
+            Object {
+              "id": "issues",
+              "text": "Issues",
+              "type": "SortableItem",
+            },
+          ],
+          "type": "SortableGroup",
+        },
+      ]
+    }
+  />
+</SortableContext>
+`;
+
+exports[`navigation-next view renderer SortableGroup should render the SortableGroup UI Component 1`] = `
+<SortableGroup
+  heading="Sortable Group"
+  id="sortable-group"
+>
+  <RenderBlocker
+    blockOnChange={false}
+    items={
+      Array [
+        Object {
+          "id": "backlog",
+          "text": "Backlog",
+          "type": "SortableItem",
+        },
+        Object {
+          "id": "active-sprints",
+          "text": "Active sprints",
+          "type": "SortableItem",
+        },
+        Object {
+          "id": "issues",
+          "text": "Issues",
+          "type": "SortableItem",
+        },
+      ]
+    }
+  >
+    <ItemsRenderer
+      items={
+        Array [
+          Object {
+            "id": "backlog",
+            "text": "Backlog",
+            "type": "SortableItem",
+          },
+          Object {
+            "id": "active-sprints",
+            "text": "Active sprints",
+            "type": "SortableItem",
+          },
+          Object {
+            "id": "issues",
+            "text": "Issues",
+            "type": "SortableItem",
+          },
+        ]
+      }
+    />
+  </RenderBlocker>
+</SortableGroup>
+`;

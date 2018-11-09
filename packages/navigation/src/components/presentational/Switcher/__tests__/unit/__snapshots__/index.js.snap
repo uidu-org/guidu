@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switcher should render correctly 1`] = `
+<PopupSelect
+  closeMenuOnCreate={true}
+  closeMenuOnSelect={true}
+  components={
+    Object {
+      "Control": [Function],
+      "Option": [Function],
+    }
+  }
+  filterOption={[Function]}
+  footer={null}
+  getOptionValue={[Function]}
+  isOptionSelected={[Function]}
+  maxMenuHeight={300}
+  maxMenuWidth={0}
+  minMenuWidth={0}
+  navWidth={240}
+  onClose={[Function]}
+  onOpen={[Function]}
+  options={
+    Array [
+      Object {
+        "avatar": "endeavour",
+        "id": "endeavour",
+        "pathname": "/projects/endeavour",
+        "subText": "Software project",
+        "text": "Endeavour",
+      },
+      Object {
+        "avatar": "design-system-support",
+        "id": "design-system-support",
+        "pathname": "/projects/design-system-support",
+        "subText": "Service desk project",
+        "text": "Design System Support",
+      },
+    ]
+  }
+  popperProps={Object {}}
+  searchThreshold={5}
+  styles={
+    Object {
+      "option": [Function],
+    }
+  }
+  target={
+    <NodeResolver
+      innerRef={[Function]}
+    >
+      <Target
+        isSelected={false}
+      />
+    </NodeResolver>
+  }
+/>
+`;

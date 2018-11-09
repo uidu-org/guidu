@@ -1,0 +1,8 @@
+{
+  "options": {
+    "merge-default-rules": true
+  },
+  "rules": {
+    "class-name-format": 0
+  }
+}

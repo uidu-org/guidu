@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItemPrimitiveBase should allow applying custom styles 1`] = `
+.emotion-5.emotion-5 {
+  color: itemBase-fake-color;
+}
+
+.emotion-0 {
+  color: beforeWrapper-fake-color;
+}
+
+.emotion-3 {
+  color: contentWrapper-fake-color;
+}
+
+.emotion-1 {
+  color: textWrapper-fake-color;
+}
+
+.emotion-2 {
+  color: subTextWrapper-fake-color;
+}
+
+.emotion-4 {
+  color: afterWrapper-fake-color;
+}
+
+<ComponentSwitch
+  as="div"
+  className="emotion-5"
+>
+  <div
+    className="emotion-0"
+  >
+    <BeforeOrAfterComponent
+      isActive={false}
+      isDragging={false}
+      isFocused={false}
+      isHover={false}
+      isSelected={false}
+      spacing="default"
+    />
+  </div>
+  <div
+    className="emotion-3"
+  >
+    <div
+      className="emotion-1"
+    >
+      item content
+    </div>
+    <div
+      className="emotion-2"
+    >
+      subtext
+    </div>
+  </div>
+  <div
+    className="emotion-4"
+  >
+    <BeforeOrAfterComponent
+      isActive={false}
+      isDragging={false}
+      isFocused={false}
+      isHover={false}
+      isSelected={false}
+      spacing="default"
+    />
+  </div>
+</ComponentSwitch>
+`;
