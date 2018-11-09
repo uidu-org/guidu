@@ -2,17 +2,12 @@
   "name": "@uidu/docs",
   "version": "0.1.4",
   "description": "Utilities for building documentation",
-  "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Ben C"
-  ],
+  "maintainers": ["Ben C"],
   "atlaskit": {
     "name": "Atlaskit docs",
     "team": "core"
@@ -37,5 +32,5 @@
     "react-dom": "^16.4.2",
     "react-test-renderer": "^16.3.0"
   },
-  "gitHead": "46eebdfb44813c4b7a7d4faf80faa2864b75d3c8"
+  "gitHead": "548735a14780bffcfb36f2d925ffee63bb4fdf58"
 }
