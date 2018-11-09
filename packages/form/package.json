@@ -20,5 +20,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.1"
-  }
+  },
+  "gitHead": "11943f1f67ca841155d24a2527b0140fdacd2853"
 }

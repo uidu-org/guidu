@@ -6,13 +6,9 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Ben C"
-  ],
+  "maintainers": ["Ben C"],
   "atlaskit": {
     "name": "Atlaskit docs",
     "team": "core"
