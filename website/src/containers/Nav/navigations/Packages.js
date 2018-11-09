@@ -90,11 +90,6 @@ const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
   };
 };
 
-const packagesList = {
-  to: '/packages',
-  title: 'Overview',
-};
-
 export type PackagesNavProps = {
   pathname: string,
   packages: Array,
@@ -117,7 +112,6 @@ const standardGroups = (dirs: Array<Directory>, pathname) =>
 
 export default function PackagesNav(props: PackagesNavProps) {
   const { packages, pathname } = props;
-  console.log(pathname);
   return (
     <div>
       {renderNav(packages, {

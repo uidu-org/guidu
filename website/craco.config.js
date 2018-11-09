@@ -29,6 +29,8 @@ module.exports = {
         path.resolve(__dirname, '../themes'),
       ];
 
+      webpackConfig.optimization.splitChunks.chunks.maxAsyncRequests = Infinity;
+
       webpackConfig.output.filename = '[name].js';
       webpackConfig.resolve = {
         mainFields: ['uidu:src', 'main'],
