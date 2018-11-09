@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.1.1 (2018-11-09)
+
+**Note:** Version bump only for package @uidu/form
+
+
+
+
+
 # [1.0.0-beta.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/forms@1.0.0-beta.7...@uidu/forms@1.0.0-beta.8) (2018-11-02)
 
 **Note:** Version bump only for package @uidu/forms
