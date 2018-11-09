@@ -6,18 +6,13 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Ben C"
-  ],
+  "maintainers": ["Ben C"],
   "atlaskit": {
     "name": "Atlaskit docs",
     "team": "core"
   },
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "dependencies": {
     "@atlaskit/button": "^9.0.13",
     "@atlaskit/code": "^8.0.1",
@@ -37,5 +32,6 @@
     "jest-in-case": "^1.0.2",
     "react-dom": "^16.4.2",
     "react-test-renderer": "^16.3.0"
-  }
+  },
+  "gitHead": "83234e37c58c8d06c177bd6d151b88076dc429c3"
 }
