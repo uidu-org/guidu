@@ -1,6 +1,6 @@
 {
   "name": "@uidu/date-picker",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Inputs using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -23,12 +23,12 @@
     }
   ],
   "dependencies": {
-    "@uidu/field-base": "^0.1.4",
+    "@uidu/field-base": "^0.1.5",
     "@uidu/forms": "^1.0.0-beta.8",
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.2"
+    "@uidu/docs": "^0.1.3"
   },
   "gitHead": "83234e37c58c8d06c177bd6d151b88076dc429c3"
 }
