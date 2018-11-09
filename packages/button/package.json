@@ -22,7 +22,6 @@
     }
   ],
   "dependencies": {
-    "@uidu/field-base": "^1.0.0-beta.31",
     "classnames": "^2.2.5"
   },
   "devDependencies": {
