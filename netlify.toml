@@ -6,9 +6,9 @@
 #    that is where we will look for package.json/.nvmrc/etc not repo root!
 
 [build]
-  base    = "website"
-  publish = "public"
-  command = "yarn run build"
+  base    = ""
+  publish = "website/public"
+  command = "yarn run website:build"
 
 [build.environment]
   YARN_VERSION = "1.9.2"
