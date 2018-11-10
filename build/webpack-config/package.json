@@ -4,7 +4,7 @@
     "webpack-dev": "./bin/dev.js",
     "webpack-build": "./bin/build.js"
   },
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Configurations for webpack used in Guidu",
   "main": "config/index.js",
   "scripts": {
