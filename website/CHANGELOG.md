@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [0.1.23](https://github.com/uidu-org/guidu/compare/website@0.1.22...website@0.1.23) (2018-11-10)
+
+**Note:** Version bump only for package website
+
+
+
+
+
 # @atlaskit/website
 
 ## 4.1.21

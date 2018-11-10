@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "private": true,
   "engines": {
     "node": "^11.0.0",
@@ -23,7 +23,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@uidu/docs": "^0.1.7",
+    "@uidu/docs": "^0.1.8",
     "bolt-query": "^1.1.4",
     "chalk": "^2.1.0",
     "extract-react-types-loader": "^0.2.2",
@@ -64,10 +64,10 @@
     "@babel/core": "7.1.0",
     "@babel/runtime": "^7.0.0",
     "@svgr/webpack": "2.4.1",
-    "@uidu/button": "^0.1.12",
-    "@uidu/checkbox": "^0.1.17",
-    "@uidu/form": "^0.1.8",
-    "@uidu/themes-uidu": "^0.1.13",
+    "@uidu/button": "^0.1.13",
+    "@uidu/checkbox": "^0.1.18",
+    "@uidu/form": "^0.1.9",
+    "@uidu/themes-uidu": "^0.1.14",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
     "babel-jest": "23.6.0",
