@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/uidu-org/guidu/compare/@uidu/karma-config@1.1.5...@uidu/karma-config@1.1.6) (2018-11-10)
+
+**Note:** Version bump only for package @uidu/karma-config
+
+
+
+
+
 ## [1.1.5](https://github.com/uidu-org/guidu/compare/@uidu/karma-config@1.1.4...@uidu/karma-config@1.1.5) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/karma-config
