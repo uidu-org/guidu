@@ -6,5 +6,6 @@
     "bolt": "^0.22.1",
     "globby": "^6.1.0",
     "loader-utils": "^1.1.0"
-  }
+  },
+  "gitHead": "4aaf5db2c78a2188938b54f58796e11de4bbb575"
 }
