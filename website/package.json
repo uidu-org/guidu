@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.29",
+  "version": "0.1.30",
   "private": true,
   "engines": {
     "node": "^11.0.0",
@@ -26,7 +26,7 @@
     "@uidu/docs": "^0.1.9",
     "@uidu/fs-loader": "^0.1.5",
     "@uidu/nav-info-loader": "^0.1.5",
-    "@uidu/webpack-config": "^0.1.4",
+    "@uidu/webpack-config": "^0.1.6",
     "bolt-query": "^1.1.4",
     "extract-react-types-loader": "^0.2.2",
     "netlify-cli": "^2.1.1",
