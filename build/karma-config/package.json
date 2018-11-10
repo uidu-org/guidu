@@ -1,6 +1,6 @@
 {
   "name": "@uidu/karma-config",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Configurations for karma used in Atlaskit",
   "main": "index.js",
   "scripts": {
