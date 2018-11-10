@@ -1,0 +1,38 @@
+{
+  "name": "@uidu/webpack-config",
+  "private": true,
+  "bin": {
+    "webpack-dev": "./bin/dev.js",
+    "webpack-build": "./bin/build.js"
+  },
+  "version": "2.0.4",
+  "description": "Configurations for webpack used in Guidu",
+  "main": "config/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atlassian Pty Ltd",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "babel-loader": "^8.0.2",
+    "bolt": "^0.22.1",
+    "bolt-fs-loader": "^0.0.1",
+    "chalk": "^2.1.0",
+    "changelog-md-loader": "^0.0.1",
+    "connect-history-api-fallback": "^1.5.0",
+    "css-loader": "^0.28.0",
+    "file-loader": "^1.1.11",
+    "gray-matter-loader": "^0.0.7",
+    "html-webpack-plugin": "^3.2.0",
+    "minimatch": "^3.0.4",
+    "nav-info-loader": "^0.0.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.16.1",
+    "svg-url-loader": "^2.3.0",
+    "ts-loader": "^4.4.2",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.1",
+    "webpack-bundle-analyzer": "^2.13.0",
+    "webpack-dev-server": "^3.1.4"
+  }
+}
