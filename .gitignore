@@ -1,7 +1,33 @@
-node_modules
-.DS_Store
-/build
-/coverage
-packages/*/dist
+# ignore dependency caches
+node_modules/
+
+# ignore builds
+dist
+
+# ignore generated files
+coverage/
+**/.netlify
+junit.xml
+test-reports/
+browserstack.err
+**/__image_snapshots__/
+
+# created by build-stats tool
+.data/
+
+# ignore yarn.locks generated in packages
+packages/**/**/yarn.lock
+
 website/dist
+packages/*/dist
+
+# ignore all logs
 *.log
+
+# ignore editor generated files
+.vscode
+.idea
+.iml
+
+# ignore OS generated files
+**/.DS_Store

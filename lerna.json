@@ -8,5 +8,5 @@
       "conventionalCommits": true
     }
   },
-  "packages": ["packages/**", "themes/*", "website"]
+  "packages": ["packages/**", "themes/*", "build/*", "website"]
 }

@@ -10,12 +10,14 @@
     "workspaces": [
       "packages/*/*",
       "themes/*",
+      "build/*",
       "website"
     ]
   },
   "workspaces": [
     "packages/**",
     "themes/*",
+    "build/*",
     "website"
   ],
   "scripts": {
