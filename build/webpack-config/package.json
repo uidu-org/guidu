@@ -4,7 +4,7 @@
     "webpack-dev": "./bin/dev.js",
     "webpack-build": "./bin/build.js"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Configurations for webpack used in Guidu",
   "main": "config/index.js",
   "scripts": {
@@ -13,9 +13,9 @@
   "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
   "dependencies": {
-    "@uidu/changelog-loader": "^0.1.1",
-    "@uidu/fs-loader": "^0.1.1",
-    "@uidu/nav-info-loader": "^0.1.1",
+    "@uidu/changelog-loader": "^0.1.2",
+    "@uidu/fs-loader": "^0.1.2",
+    "@uidu/nav-info-loader": "^0.1.2",
     "babel-loader": "^8.0.2",
     "bolt": "^0.22.1",
     "chalk": "^2.1.0",
