@@ -35,7 +35,6 @@
     "@atlaskit/badge": "^9.1.5",
     "@atlaskit/button": "^9.0.15",
     "@atlaskit/code": "^8.0.9",
-    "@atlaskit/css-reset": "^3.0.1",
     "@atlaskit/docs": "^5.0.8",
     "@atlaskit/dynamic-table": "^10.0.14",
     "@atlaskit/field-text": "^7.0.12",

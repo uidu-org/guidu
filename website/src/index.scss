@@ -5,14 +5,14 @@ html {
   font-size: 1rem;
 }
 
-// @include media-breakpoint-up(md) {
-//   html {
-//     font-size: 1.0625rem;
-//   }
-// }
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.0625rem;
+  }
+}
 
-// @include media-breakpoint-up(xl) {
-//   html {
-//     font-size: 1.125rem;
-//   }
-// }
+@include media-breakpoint-up(xl) {
+  html {
+    font-size: 1.125rem;
+  }
+}

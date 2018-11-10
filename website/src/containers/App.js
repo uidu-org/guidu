@@ -13,9 +13,9 @@ import Home from '../pages/Home';
 import ChangeLogExplorer from '../pages/ChangeLogExplorer';
 import Examples from '../pages/Examples';
 import FourOhFour from '../pages/FourOhFour';
-import Pattern from '../pages/Pattern';
+// import Pattern from '../pages/Pattern';
 // import PatternsInfo from '../pages/PatternsInfo';
-// import Document from '../pages/Document';
+import Document from '../pages/Document';
 import Package from '../pages/Package';
 import PackagesList from '../pages/PackagesList';
 import PackageDocument from '../pages/PackageDocument';
@@ -26,13 +26,6 @@ import Nav from './Nav';
 
 // eslint-disable-next-line
 createGlobalStyle`
-  body {
-    margin: 0;
-    font-family:
-      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-
   #app {
     position: relative;
     width: 100%;
@@ -103,6 +96,7 @@ export default class App extends Component<Props, State> {
   render() {
     const { mode } = this.state;
     const theme = () => ({ mode });
+
     return (
       <Theme values={theme}>
         <BrowserRouter>
@@ -146,20 +140,20 @@ export default class App extends Component<Props, State> {
                                 )}
                               />
                               <Route exact path="/" component={Home} />
-                              {/* <Route
+                              <Route
                                 path="/docs/:docId*"
                                 component={Document}
-                              /> */}
+                              />
                               {/* <Route
                                 path="/patterns"
                                 component={PatternsInfo}
                                 exact
                               /> */}
 
-                              <Route
+                              {/* <Route
                                 path="/patterns/:patternId*"
                                 component={Pattern}
-                              />
+                              /> */}
                               <Route
                                 path="/packages/examples"
                                 component={({ location }) => (
