@@ -5131,11 +5131,6 @@ change-emitter@^0.1.2:
   resolved "https://registry.yarnpkg.com/change-emitter/-/change-emitter-0.1.6.tgz#e8b2fe3d7f1ab7d69a32199aff91ea6931409515"
   integrity sha1-6LL+PX8at9aaMhma/5HqaTFAlRU=
 
-changelog-md-loader@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/changelog-md-loader/-/changelog-md-loader-0.0.1.tgz#eda2272dca99d37cef51f3f8df113a8c24282772"
-  integrity sha512-aPfaGqSiMqhJTe1HuOXWf58M8jJX/6ZHhYD+0PzBRx/J2zE2ZI5YXS0jTmcvQamcWsCx1E9M6tGDgIBYz+Idjg==
-
 character-entities-legacy@^1.0.0:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/character-entities-legacy/-/character-entities-legacy-1.1.2.tgz#7c6defb81648498222c9855309953d05f4d63a9c"
@@ -8210,14 +8205,7 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-extract-react-types-loader@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/extract-react-types-loader/-/extract-react-types-loader-0.2.2.tgz#463b1e3fb991e7595a42a95f0be339f5de98fe17"
-  integrity sha512-MrtmxbzHlnjBK/Wt96ZqlWooEMa5QATRQc6aLAGPjvHYbTwi5oiktftmCxKUumwQFbhVntCnsqaS1EB6lioybw==
-  dependencies:
-    extract-react-types "^0.14.2"
-
-extract-react-types@^0.14.2, extract-react-types@^0.14.4:
+extract-react-types@^0.14.4:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/extract-react-types/-/extract-react-types-0.14.4.tgz#e61624759709cd80d01c35066fa4d34e0c0c4429"
   integrity sha512-bLhCY+DiZcJIGkPl2XqaaYQH47g6IbqYQuMnoaoWXhy7UfMtysT/5/qGsdlkGL8P/KsemVpWblVoMLx07Q11YQ==
@@ -12238,7 +12226,7 @@ meow@^4.0.0:
     redent "^2.0.0"
     trim-newlines "^2.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
