@@ -1,5 +1,5 @@
 {
-  "name": "extract-react-types-loader",
+  "name": "@uidu/extract-react-types-loader",
   "version": "0.2.2",
   "main": "index.js",
   "dependencies": {

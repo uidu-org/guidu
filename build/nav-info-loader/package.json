@@ -1,5 +1,5 @@
 {
-  "name": "nav-info-loader",
+  "name": "@uidu/nav-info-loader",
   "version": "0.0.0",
   "main": "index.js",
   "private": true,

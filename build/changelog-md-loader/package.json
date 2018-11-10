@@ -1,5 +1,5 @@
 {
-  "name": "changelog-md-loader",
+  "name": "@uidu/changelog-md-loader",
   "version": "0.0.1",
   "main": "index.js",
   "dependencies": {}
