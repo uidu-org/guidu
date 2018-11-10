@@ -9,8 +9,12 @@
   },
   "scripts": {
     "start": "node ../build/webpack-config/bin/dev.js",
-    "build": "craco build --react-scripts ../../node_modules/react-scripts",
-    "test": ""
+    "build": "rm -rf dist && node --max-old-space-size=8192 ../build/webpack-config/bin/build.js",
+    "build:report": "yarn build --report",
+    "build:no-minimize": "yarn build --no-minimize",
+    "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
+    "deploy:staging": "netlify deploy --dir dist/ -a $NETLIFY_TOKEN -s $NETLIFY_SITE_ID_STAGING",
+    "deploy:production": "netlify deploy --dir dist/ -a $NETLIFY_TOKEN -s $NETLIFY_SITE_ID --prod"
   },
   "browserslist": [
     ">0.2%",

@@ -3,4 +3,5 @@ node_modules
 /build
 /coverage
 packages/*/dist
+website/dist
 *.log
