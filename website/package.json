@@ -59,7 +59,6 @@
     "@atlaskit/tag-group": "^6.0.7",
     "@atlaskit/theme": "^6.1.1",
     "@atlaskit/tooltip": "^12.1.4",
-    "@uidu/webpack-config": "^0.1.0",
     "@uidu/button": "^0.1.14",
     "@uidu/checkbox": "^0.1.19",
     "@uidu/form": "^0.1.10",

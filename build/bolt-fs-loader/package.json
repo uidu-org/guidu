@@ -1,5 +1,5 @@
 {
-  "name": "@uidu/fs-loader",
+  "name": "bolt-fs-loader",
   "version": "0.0.1",
   "main": "index.js",
   "dependencies": {
