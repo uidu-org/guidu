@@ -23,6 +23,7 @@
   ],
   "devDependencies": {
     "@uidu/docs": "^0.1.8",
+    "@babel/core": "^7.1.0",
     "bolt-query": "^1.1.4",
     "chalk": "^2.1.0",
     "extract-react-types-loader": "^0.2.2",
@@ -60,7 +61,6 @@
     "@atlaskit/tag-group": "^6.0.7",
     "@atlaskit/theme": "^6.1.1",
     "@atlaskit/tooltip": "^12.1.4",
-    "@babel/core": "7.1.0",
     "@babel/runtime": "^7.0.0",
     "@svgr/webpack": "2.4.1",
     "@uidu/button": "^0.1.13",
@@ -138,10 +138,6 @@
     "tti-polyfill": "^0.2.2",
     "uglify-js": "^3.1.7",
     "url-loader": "1.1.1",
-    "uuid": "^3.1.0",
-    "webpack": "4.19.1",
-    "webpack-dev-server": "3.1.9",
-    "webpack-manifest-plugin": "2.0.4",
-    "workbox-webpack-plugin": "3.6.3"
+    "uuid": "^3.1.0"
   }
 }

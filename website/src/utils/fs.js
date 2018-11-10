@@ -7,10 +7,7 @@ export function getDirectories(
 ): Array<Directory> {
   const dirs = [];
 
-  console.log(items);
-
   for (const item of items) {
-    console.log(item);
     if (item.type === 'dir') {
       dirs.push(item);
     }

@@ -1,4 +1,5 @@
 // @flow
+
 import React, { type ComponentType } from 'react';
 import styled from 'styled-components';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -21,6 +22,28 @@ type State = {
   isHover: boolean,
 };
 
+const TRANSITION_DURATION = '200ms';
+
+const Wrapper = styled(Card)`
+  margin-top: 20px;
+  transition: background-color ${TRANSITION_DURATION};
+`;
+
+export const Toggle = styled.div`
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  transition: color ${TRANSITION_DURATION}, fill ${TRANSITION_DURATION};
+`;
+
+// NOTE: use of important necessary to override element targeted headings
+export const ToggleTitle = styled.h4`
+  margin: 0;
+`;
+
+const Showcase = styled.div``;
+
 export default class Example extends React.Component<Props, State> {
   static defaultProps = {
     language: 'javascript',
@@ -42,6 +65,7 @@ export default class Example extends React.Component<Props, State> {
 
   render() {
     const { Component, source, language, title, packageName } = this.props;
+    console.log(Component);
     const { isHover, isSourceVisible } = this.state;
     const toggleLabel = isSourceVisible
       ? 'Hide Code Snippet'
@@ -94,25 +118,3 @@ export default class Example extends React.Component<Props, State> {
     );
   }
 }
-
-const TRANSITION_DURATION = '200ms';
-
-const Wrapper = styled(Card)`
-  margin-top: 20px;
-  transition: background-color ${TRANSITION_DURATION};
-`;
-
-export const Toggle = styled.div`
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  transition: color ${TRANSITION_DURATION}, fill ${TRANSITION_DURATION};
-`;
-
-// NOTE: use of important necessary to override element targeted headings
-export const ToggleTitle = styled.h4`
-  margin: 0;
-`;
-
-const Showcase = styled.div``;

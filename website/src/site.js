@@ -17,8 +17,6 @@ const productPackages = [
   'trello',
 ];
 
-console.log(data);
-
 const siteData: Directory = data;
 export default siteData;
 
