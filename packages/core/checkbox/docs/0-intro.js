@@ -2,8 +2,6 @@
 import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
 
-console.log(require('../examples/00-basic-usage'));
-
 export default md`
   ### Usage
 
