@@ -96,6 +96,7 @@
   "scripts": {
     "website:build": "cd website && yarn build",
     "website:start": "cd website && yarn start",
+    "website:deploy": "cd website && yarn deploy",
     "start": "yarn run website:start",
     "build": "nps build",
     "dev": "nps dev"
