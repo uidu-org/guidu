@@ -7552,7 +7552,14 @@ extglob@^2.0.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-extract-react-types@^0.14.4:
+extract-react-types-loader@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/extract-react-types-loader/-/extract-react-types-loader-0.2.2.tgz#463b1e3fb991e7595a42a95f0be339f5de98fe17"
+  integrity sha512-MrtmxbzHlnjBK/Wt96ZqlWooEMa5QATRQc6aLAGPjvHYbTwi5oiktftmCxKUumwQFbhVntCnsqaS1EB6lioybw==
+  dependencies:
+    extract-react-types "^0.14.2"
+
+extract-react-types@^0.14.2:
   version "0.14.4"
   resolved "https://registry.yarnpkg.com/extract-react-types/-/extract-react-types-0.14.4.tgz#e61624759709cd80d01c35066fa4d34e0c0c4429"
   integrity sha512-bLhCY+DiZcJIGkPl2XqaaYQH47g6IbqYQuMnoaoWXhy7UfMtysT/5/qGsdlkGL8P/KsemVpWblVoMLx07Q11YQ==

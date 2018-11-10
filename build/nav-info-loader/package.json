@@ -1,6 +1,6 @@
 {
-  "name": "nav-info-loader",
-  "version": "0.0.0",
+  "name": "@uidu/nav-info-loader",
+  "version": "0.1.0",
   "main": "index.js",
   "private": true,
   "dependencies": {

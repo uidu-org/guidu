@@ -108,7 +108,7 @@ module.exports = function createWebpackConfig(
         },
         {
           test: /NAV_DATA$/,
-          loader: require.resolve('nav-info-loader'),
+          loader: require.resolve('@uidu/nav-info-loader'),
           options: {
             /** $FlowFixMe - We have absolutely 0 idea why flow is complaining here */
             include: globs
