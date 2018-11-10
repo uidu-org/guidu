@@ -4,18 +4,22 @@
     "webpack-dev": "./bin/dev.js",
     "webpack-build": "./bin/build.js"
   },
-  "version": "0.1.4",
+  "version": "0.1.3",
   "description": "Configurations for webpack used in Guidu",
   "main": "config/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Atlassian Pty Ltd",
-  "license": "Apache-2.0",
+  "repository": "github:uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "uidu",
+  "license": "ISC",
   "dependencies": {
-    "@uidu/changelog-loader": "^0.1.4",
-    "@uidu/fs-loader": "^0.1.4",
-    "@uidu/nav-info-loader": "^0.1.4",
+    "@uidu/changelog-loader": "^0.1.3",
+    "@uidu/fs-loader": "^0.1.3",
+    "@uidu/nav-info-loader": "^0.1.3",
     "babel-loader": "^8.0.2",
     "bolt": "^0.22.1",
     "chalk": "^2.1.0",
@@ -34,5 +38,5 @@
     "webpack-bundle-analyzer": "^2.13.0",
     "webpack-dev-server": "^3.1.4"
   },
-  "gitHead": "0f2581c9b00eb6e969a9844713ca4926014c4bbf"
+  "gitHead": "4aaf5db2c78a2188938b54f58796e11de4bbb575"
 }
