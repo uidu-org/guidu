@@ -1,7 +1,6 @@
 // @flow
 import * as fs from './fs';
-
-const packagesData = [];
+import { packages as packagesData } from '../site';
 
 export default (groupId?: string, packageId?: string, exampleId?: string) => {
   const groups = fs.getDirectories(packagesData.children);

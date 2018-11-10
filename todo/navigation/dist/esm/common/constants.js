@@ -1,0 +1,9 @@
+export var transitionDuration = '0.22s';
+export var transitionDurationMs = 220;
+export var transitionTimingFunction = 'cubic-bezier(0.2, 0, 0, 1)';
+export var FLYOUT_DELAY = 350;
+export var CONTENT_NAV_WIDTH = 240;
+export var CONTENT_NAV_WIDTH_FLYOUT = 232;
+export var CONTENT_NAV_WIDTH_COLLAPSED = 20;
+export var GLOBAL_NAV_WIDTH = 64;
+export var GLOBAL_NAV_COLLAPSE_THRESHOLD = 200;

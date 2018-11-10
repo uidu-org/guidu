@@ -3,13 +3,11 @@ import React from 'react';
 import Loadable from '../components/WrappedLoader';
 import { Helmet } from 'react-helmet';
 import type { RouterMatch } from '../types';
-
+import { packages } from '../site';
 import * as fs from '../utils/fs';
 import Page, { Title } from '../components/Page';
 import FourOhFour from './FourOhFour';
 import Loading from '../components/Loading';
-
-const packages = [];
 
 type PackageDocumentProps = {
   match: RouterMatch,
@@ -37,7 +35,7 @@ export default function PackageDocument({
     <Page>
       <Helmet>
         <title>
-          {fs.titleize(pkgId)} - {fs.titleize(docId)}
+          {fs.titleize(pkgId)} - {fs.titleize(docId)} - {BASE_TITLE}
         </title>
       </Helmet>
       <Title>

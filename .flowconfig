@@ -1,11 +1,61 @@
 [ignore]
+.*/node_modules/styled-components/.*
+.*/website/dist/sandbox/.*
+.*/website/.*
+.*/docs/templates/.*
+.*/packages/bitbucket/codemod-util-shared-styles-to-theme/__fixtures__/.*
+.*/packages/elements/icon/es5/.*
+.*/node_modules/stylelint/.*
+.*/node_modules/babel-flow-types/.*
+.*/node_modules/babel-normalize-comments/.*
+.*/node_modules/extract-react-types/.*
+.*/.git/.*
+[untyped]
+.*/node_modules/react-select
 
 [include]
 
 [libs]
 
-[lints]
-
 [options]
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/bitbucket/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/confluence/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/core/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/build/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/css-packs/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/ecosystem/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/editor/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/elements/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/growth/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/home/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/identity/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/jira/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/marketplace/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/media/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/people-and-teams/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/pipelines/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/purchasing/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/search/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/service-desk/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/statuspage/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/stride/\1/src/index'
+module.name_mapper='^@atlaskit\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/trello/\1/src/index'
 
-[strict]
+module.name_mapper='\!\!style-loader\!css-loader\!.*' -> '<PROJECT_ROOT>/typings/style-loader-css-loader.js'
+module.name_mapper='\!\!raw-loader\!.*' -> '<PROJECT_ROOT>/typings/raw-loader.js'
+module.name_mapper='\!\!extract-react-types-loader\!.*' -> '<PROJECT_ROOT>/typings/extract-react-types-loader.js'
+module.name_mapper='extract-react-types' -> '<PROJECT_ROOT>/typings/extract-react-types.js'
+module.name_mapper='.*\.md' -> '<PROJECT_ROOT>/typings/md.js'
+module.name_mapper.extension='less' -> '<PROJECT_ROOT>/typings/less.js'
+
+suppress_comment=\\(.\\|\n\\)*\\$ExpectError
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$StringLitteral
+
+# Show warnings when running flow as we run flow with --max-warnings=0 to fail in CI
+include_warnings=true
+
+[lints]
+# Disable standard linting rules so we can fail on warnings caused by 'Unused suppression' only
+# 'Unused suppression' lints cannot be specifically elevated to errors - https://github.com/facebook/flow/issues/6891
+all=off

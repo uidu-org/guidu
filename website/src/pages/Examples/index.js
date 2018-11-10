@@ -20,7 +20,7 @@ import type { RouterMatch } from '../../types';
 import { getConfig } from '../../site';
 import packageResolver, { getLoaderUrl } from '../../utils/packageResolver';
 import { packageUrl } from '../../utils/url';
-import CodeSandbox from '../Package/CodeSandbox';
+// import CodeSandbox from '../Package/CodeSandbox';
 import CodeSandboxLogo from '../Package/CodeSandboxLogo';
 
 import {
@@ -158,7 +158,7 @@ class ExampleNavigation extends Component {
             content={error ? error.name : 'Deploy to CodeSandbox'}
             position="left"
           >
-            <CodeSandbox
+            {/* <CodeSandbox
               example={example}
               groupId={groupId}
               packageId={packageId}
@@ -179,7 +179,7 @@ class ExampleNavigation extends Component {
                 </NavButton>
               )}
               useNavButton
-            />
+            /> */}
           </Tooltip>
           <Tooltip
             content={`${codeIsVisible ? 'Hide' : 'Show'} source`}
@@ -385,6 +385,7 @@ export default class Examples extends React.Component<Props, State> {
         <Helmet>
           <title>
             Example - {fs.titleize(exampleId)} - {fs.titleize(packageId)} -{' '}
+            {BASE_TITLE}
           </title>
         </Helmet>
         {examples && exampleId ? (

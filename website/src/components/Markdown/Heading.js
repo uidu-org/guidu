@@ -46,7 +46,9 @@ export default class extends Component<Props, State> {
       >
         {level === 1 ? (
           <Helmet>
-            <title>{reactAddonsTextContent(children)}</title>
+            <title>
+              {reactAddonsTextContent(children)} - {BASE_TITLE}
+            </title>
           </Helmet>
         ) : (
           ''

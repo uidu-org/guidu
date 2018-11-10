@@ -18,7 +18,7 @@ import MetaData from './MetaData';
 import LatestChangelog from './LatestChangelog';
 
 import { isModuleNotFoundError } from '../../utils/errors';
-// import * as fs from '../../utils/fs';
+import * as fs from '../../utils/fs';
 import type { RouterMatch } from '../../types';
 
 import type { Logs } from '../../components/ChangeLog';
@@ -32,8 +32,12 @@ export const Title = styled.div`
   }
 `;
 
-export const Intro = styled.p``;
-
+export const Intro = styled.p`
+  color: ${colors.heading};
+  font-size: ${math.multiply(gridSize, 2)}px;
+  font-weight: 300;
+  line-height: 1.4em;
+`;
 export const ButtonGroup = styled.div`
   display: inline-flex;
   margin: 0 -2px;
@@ -90,10 +94,10 @@ function getExamplesPaths(groupId, pkgId, examples) {
   if (!res) return {};
 
   return {
-    // examplePath: `/examples/${groupId}/${pkgId}/${fs.normalize(res)}`,
-    // exampleModalPath: `/packages/${groupId}/${pkgId}/example/${fs.normalize(
-    //   res,
-    // )}`,
+    examplePath: `/examples/${groupId}/${pkgId}/${fs.normalize(res)}`,
+    exampleModalPath: `/packages/${groupId}/${pkgId}/example/${fs.normalize(
+      res,
+    )}`,
   };
 }
 
@@ -107,12 +111,11 @@ export default function LoadData({ match }) {
       </Page>
     ),
     loader: () =>
-      fetchPackageData('components', pkgId).catch(
+      fetchPackageData(groupId, pkgId).catch(
         error => console.log(error) || { error },
       ),
-    render: props => {
-      console.log(props);
-      return props.missing || props.error ? (
+    render: props =>
+      props.missing || props.error ? (
         <FourOhFour />
       ) : (
         <Package
@@ -121,8 +124,7 @@ export default function LoadData({ match }) {
           groupId={groupId}
           urlIsExactMatch={match.isExact}
         />
-      );
-    },
+      ),
   });
 
   return <Content />;
@@ -135,7 +137,6 @@ class Package extends Component<*, *> {
       groupId,
       pkgId,
       pkg,
-      pkgInfo,
       doc,
       changelog,
       examples,
@@ -146,13 +147,15 @@ class Package extends Component<*, *> {
       examples,
     );
 
-    const { title } = pkgInfo;
+    const title = fs.titleize(pkgId);
 
     return (
       <Page>
         {urlIsExactMatch && (
           <Helmet>
-            <title>{title} package</title>
+            <title>
+              {title} package - {BASE_TITLE}
+            </title>
           </Helmet>
         )}
         <Title>

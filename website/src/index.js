@@ -1,12 +1,11 @@
+// @flow
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
+import { render } from 'react-dom';
+import cssResetStyles from '@atlaskit/css-reset';
+import 'regenerator-runtime/runtime';
+import insertStyleSheetInHead from './utils/insertStyleSheetInHead';
 import App from './containers/App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+insertStyleSheetInHead(cssResetStyles);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(<App />, document.getElementById('app'));

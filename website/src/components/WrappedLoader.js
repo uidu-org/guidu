@@ -27,7 +27,7 @@ function checkMarkAndSendAnalytics() {
 
 class Wrapper extends Component {
   componentDidMount() {
-    // checkMarkAndSendAnalytics();
+    checkMarkAndSendAnalytics();
   }
   render() {
     return this.props.children;

@@ -11,7 +11,7 @@ type MetaItemProps = {
 };
 
 const MetaItem = (props: MetaItemProps) => (
-  <DI className="py-1">
+  <DI>
     <DT>{props.label}</DT>
     <DD>
       {props.href ? (
@@ -45,7 +45,7 @@ export default class MetaData extends Component<MetaDataProps> {
           label="npm"
           summary={packageName}
         />
-        <MetaItem href={packageSrc} label="Source" summary="Github" />
+        <MetaItem href={packageSrc} label="Source" summary="Bitbucket" />
         <MetaItem
           href={`https://unpkg.com/${packageName}/dist/`}
           label="Bundle"

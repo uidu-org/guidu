@@ -12,6 +12,7 @@ import { AkSearch } from '@atlaskit/quick-search';
 
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
 
+import * as fs from '../../utils/fs';
 import type { Directory } from '../../types';
 import { AtlaskitIcon } from './index';
 
@@ -26,7 +27,7 @@ const NavItem = ({ dirId, id, closeDrawer }) => (
     onClick={closeDrawer}
     href={`/packages/${dirId}/${id}`}
     linkComponent={LinkComponent}
-    text={id}
+    text={fs.titleize(id)}
   />
 );
 

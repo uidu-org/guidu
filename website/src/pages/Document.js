@@ -8,12 +8,11 @@ import Page from '../components/Page';
 import Markdown from '../components/Markdown';
 import FourOhFour from './FourOhFour';
 import Loading from '../components/Loading';
+import { docs } from '../site';
 
 type DocProps = {
   match: RouterMatch,
 };
-
-const docs = [];
 
 export default function Document({
   match: {

@@ -27,20 +27,18 @@ export function buildSubNavGroup(
   Icon: ComponentType<*>,
 ): { title?: string, items: Array<NavGroupItem> } | null {
   if (!children || !children.length) return null;
-  return children
-    .filter(item => !item.id.startsWith('_'))
-    .reduce(
-      (acc, item) => {
-        acc.items.push({
-          to: url(fs.normalize(item.id)),
-          title: fs.titleize(item.id),
-          isCompact: true,
-          icon: <CenteredIcon>•</CenteredIcon>,
-        });
-        return acc;
-      },
-      { items: [] },
-    );
+  return children.filter(item => !item.id.startsWith('_')).reduce(
+    (acc, item) => {
+      acc.items.push({
+        to: url(fs.normalize(item.id)),
+        title: fs.titleize(item.id),
+        isCompact: true,
+        icon: <CenteredIcon>•</CenteredIcon>,
+      });
+      return acc;
+    },
+    { items: [] },
+  );
 }
 
 const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
@@ -90,9 +88,14 @@ const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
   };
 };
 
+const packagesList = {
+  to: '/packages',
+  title: 'Overview',
+};
+
 export type PackagesNavProps = {
   pathname: string,
-  packages: Array,
+  packages: Directory,
 };
 
 const standardGroups = (dirs: Array<Directory>, pathname) =>
@@ -112,11 +115,16 @@ const standardGroups = (dirs: Array<Directory>, pathname) =>
 
 export default function PackagesNav(props: PackagesNavProps) {
   const { packages, pathname } = props;
+  const dirs = fs.getDirectories(packages.children);
+
   return (
     <div>
-      {renderNav(packages, {
-        pathname,
-      })}
+      {renderNav(
+        [{ items: [packagesList] }, ...standardGroups(dirs, pathname)],
+        {
+          pathname,
+        },
+      )}
     </div>
   );
 }

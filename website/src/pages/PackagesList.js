@@ -7,9 +7,7 @@ import { Helmet } from 'react-helmet';
 import { gridSize } from '@atlaskit/theme';
 import * as fs from '../utils/fs';
 import Page, { Title, Section } from '../components/Page';
-
-const packages = [];
-const getConfig = {};
+import { externalPackages as packages, getConfig } from '../site';
 
 const head = {
   cells: [
@@ -130,7 +128,7 @@ export default function PackagesList() {
   return (
     <Page width="large">
       <Helmet>
-        <title>Browse all packages</title>
+        <title>Browse all packages - {BASE_TITLE}</title>
       </Helmet>
       <Title>All Packages</Title>
       <Section>

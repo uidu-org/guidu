@@ -184,7 +184,9 @@ export default class ExamplesModal extends Component<Props, State> {
         width={640}
       >
         <Helmet>
-          <title>Changelog - {fs.titleize(pkgId)}</title>
+          <title>
+            Changelog - {fs.titleize(pkgId)} - {BASE_TITLE}
+          </title>
         </Helmet>
         <ModalBody>
           {isInvalid ? (

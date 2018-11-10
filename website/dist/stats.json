@@ -1,0 +1,687 @@
+{
+  "errors": [
+  ],
+  "warnings": [
+  ],
+  "time": 2962,
+  "outputPath": "/Users/andreavanini/Applications/guidu/website/dist",
+  "assetsByChunkName": {
+    "docs/getting-started.md": [
+      "docs/getting-started.md.js",
+      "docs/getting-started.md.js.map"
+    ],
+    "docs/getting-started.md (raw)": [
+      "docs/getting-started.md (raw).js",
+      "docs/getting-started.md (raw).js.map"
+    ],
+    "docs/guides/00-contributing.md": [
+      "docs/guides/00-contributing.md.js",
+      "docs/guides/00-contributing.md.js.map"
+    ],
+    "docs/guides/00-contributing.md (raw)": [
+      "docs/guides/00-contributing.md (raw).js",
+      "docs/guides/00-contributing.md (raw).js.map"
+    ],
+    "docs/guides/00-directory-structure.md": [
+      "docs/guides/00-directory-structure.md.js",
+      "docs/guides/00-directory-structure.md.js.map"
+    ],
+    "docs/guides/00-directory-structure.md (raw)": [
+      "docs/guides/00-directory-structure.md (raw).js",
+      "docs/guides/00-directory-structure.md (raw).js.map"
+    ],
+    "docs/guides/01-component-design.md": [
+      "docs/guides/01-component-design.md.js",
+      "docs/guides/01-component-design.md.js.map"
+    ],
+    "docs/guides/01-component-design.md (raw)": [
+      "docs/guides/01-component-design.md (raw).js",
+      "docs/guides/01-component-design.md (raw).js.map"
+    ],
+    "docs/guides/02-naming-props.md": [
+      "docs/guides/02-naming-props.md.js",
+      "docs/guides/02-naming-props.md.js.map"
+    ],
+    "docs/guides/02-naming-props.md (raw)": [
+      "docs/guides/02-naming-props.md (raw).js",
+      "docs/guides/02-naming-props.md (raw).js.map"
+    ],
+    "docs/guides/03-hoc-vs-props.md": [
+      "docs/guides/03-hoc-vs-props.md.js",
+      "docs/guides/03-hoc-vs-props.md.js.map"
+    ],
+    "docs/guides/03-hoc-vs-props.md (raw)": [
+      "docs/guides/03-hoc-vs-props.md (raw).js",
+      "docs/guides/03-hoc-vs-props.md (raw).js.map"
+    ],
+    "docs/guides/04-component-vs-pure-component.md": [
+      "docs/guides/04-component-vs-pure-component.md.js",
+      "docs/guides/04-component-vs-pure-component.md.js.map"
+    ],
+    "docs/guides/04-component-vs-pure-component.md (raw)": [
+      "docs/guides/04-component-vs-pure-component.md (raw).js",
+      "docs/guides/04-component-vs-pure-component.md (raw).js.map"
+    ],
+    "docs/guides/05-flow-typing-a-component.md": [
+      "docs/guides/05-flow-typing-a-component.md.js",
+      "docs/guides/05-flow-typing-a-component.md.js.map"
+    ],
+    "docs/guides/05-flow-typing-a-component.md (raw)": [
+      "docs/guides/05-flow-typing-a-component.md (raw).js",
+      "docs/guides/05-flow-typing-a-component.md (raw).js.map"
+    ],
+    "docs/guides/06-versioning.md": [
+      "docs/guides/06-versioning.md.js",
+      "docs/guides/06-versioning.md.js.map"
+    ],
+    "docs/guides/06-versioning.md (raw)": [
+      "docs/guides/06-versioning.md (raw).js",
+      "docs/guides/06-versioning.md (raw).js.map"
+    ],
+    "docs/guides/07-releasing-packages.md": [
+      "docs/guides/07-releasing-packages.md.js",
+      "docs/guides/07-releasing-packages.md.js.map"
+    ],
+    "docs/guides/07-releasing-packages.md (raw)": [
+      "docs/guides/07-releasing-packages.md (raw).js",
+      "docs/guides/07-releasing-packages.md (raw).js.map"
+    ],
+    "docs/guides/08-frequently-asked-questions.md": [
+      "docs/guides/08-frequently-asked-questions.md.js",
+      "docs/guides/08-frequently-asked-questions.md.js.map"
+    ],
+    "docs/guides/08-frequently-asked-questions.md (raw)": [
+      "docs/guides/08-frequently-asked-questions.md (raw).js",
+      "docs/guides/08-frequently-asked-questions.md (raw).js.map"
+    ],
+    "docs/guides/09-adding-new-icons.md": [
+      "docs/guides/09-adding-new-icons.md.js",
+      "docs/guides/09-adding-new-icons.md.js.map"
+    ],
+    "docs/guides/09-adding-new-icons.md (raw)": [
+      "docs/guides/09-adding-new-icons.md (raw).js",
+      "docs/guides/09-adding-new-icons.md (raw).js.map"
+    ],
+    "docs/guides/091-linting-styles.md": [
+      "docs/guides/091-linting-styles.md.js",
+      "docs/guides/091-linting-styles.md.js.map"
+    ],
+    "docs/guides/091-linting-styles.md (raw)": [
+      "docs/guides/091-linting-styles.md (raw).js",
+      "docs/guides/091-linting-styles.md (raw).js.map"
+    ],
+    "docs/guides/10-controlled-uncontrolled-props.md": [
+      "docs/guides/10-controlled-uncontrolled-props.md.js",
+      "docs/guides/10-controlled-uncontrolled-props.md.js.map"
+    ],
+    "docs/guides/10-controlled-uncontrolled-props.md (raw)": [
+      "docs/guides/10-controlled-uncontrolled-props.md (raw).js",
+      "docs/guides/10-controlled-uncontrolled-props.md (raw).js.map"
+    ],
+    "docs/guides/10-error-handling.md": [
+      "docs/guides/10-error-handling.md.js",
+      "docs/guides/10-error-handling.md.js.map"
+    ],
+    "docs/guides/10-error-handling.md (raw)": [
+      "docs/guides/10-error-handling.md (raw).js",
+      "docs/guides/10-error-handling.md (raw).js.map"
+    ],
+    "docs/guides/11-testing.md": [
+      "docs/guides/11-testing.md.js",
+      "docs/guides/11-testing.md.js.map"
+    ],
+    "docs/guides/11-testing.md (raw)": [
+      "docs/guides/11-testing.md (raw).js",
+      "docs/guides/11-testing.md (raw).js.map"
+    ],
+    "docs/guides/12-contribution-checklist.md": [
+      "docs/guides/12-contribution-checklist.md.js",
+      "docs/guides/12-contribution-checklist.md.js.map"
+    ],
+    "docs/guides/12-contribution-checklist.md (raw)": [
+      "docs/guides/12-contribution-checklist.md (raw).js",
+      "docs/guides/12-contribution-checklist.md (raw).js.map"
+    ],
+    "docs/guides/13-how-to-document-components.md": [
+      "docs/guides/13-how-to-document-components.md.js",
+      "docs/guides/13-how-to-document-components.md.js.map"
+    ],
+    "docs/guides/13-how-to-document-components.md (raw)": [
+      "docs/guides/13-how-to-document-components.md (raw).js",
+      "docs/guides/13-how-to-document-components.md (raw).js.map"
+    ],
+    "examples": [
+      "examples.js",
+      "examples.js.map"
+    ],
+    "main": [
+      "main.js",
+      "main.js.map"
+    ],
+    "packages/core/button/CHANGELOG.md": [
+      "packages/core/button/CHANGELOG.md.js",
+      "packages/core/button/CHANGELOG.md.js.map"
+    ],
+    "packages/core/button/CHANGELOG.md (raw)": [
+      "packages/core/button/CHANGELOG.md (raw).js",
+      "packages/core/button/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/button/docs/0-intro.js": [
+      "packages/core/button/docs/0-intro.js.js",
+      "packages/core/button/docs/0-intro.js.js.map"
+    ],
+    "packages/core/button/docs/0-intro.js (raw)": [
+      "packages/core/button/docs/0-intro.js (raw).js",
+      "packages/core/button/docs/0-intro.js (raw).js.map"
+    ],
+    "packages/core/button/examples/00-basic-usage.js": [
+      "packages/core/button/examples/00-basic-usage.js.js",
+      "packages/core/button/examples/00-basic-usage.js.js.map"
+    ],
+    "packages/core/button/examples/00-basic-usage.js (raw)": [
+      "packages/core/button/examples/00-basic-usage.js (raw).js",
+      "packages/core/button/examples/00-basic-usage.js (raw).js.map"
+    ],
+    "packages/core/button/package.json": [
+      "packages/core/button/package.json.js",
+      "packages/core/button/package.json.js.map"
+    ],
+    "packages/core/checkbox/CHANGELOG.md": [
+      "packages/core/checkbox/CHANGELOG.md.js",
+      "packages/core/checkbox/CHANGELOG.md.js.map"
+    ],
+    "packages/core/checkbox/CHANGELOG.md (raw)": [
+      "packages/core/checkbox/CHANGELOG.md (raw).js",
+      "packages/core/checkbox/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/checkbox/docs/0-intro.js": [
+      "packages/core/checkbox/docs/0-intro.js.js",
+      "packages/core/checkbox/docs/0-intro.js.js.map"
+    ],
+    "packages/core/checkbox/docs/0-intro.js (raw)": [
+      "packages/core/checkbox/docs/0-intro.js (raw).js",
+      "packages/core/checkbox/docs/0-intro.js (raw).js.map"
+    ],
+    "packages/core/checkbox/examples/04-checkbox-form.js": [
+      "packages/core/checkbox/examples/04-checkbox-form.js.js",
+      "packages/core/checkbox/examples/04-checkbox-form.js.js.map"
+    ],
+    "packages/core/checkbox/examples/04-checkbox-form.js (raw)": [
+      "packages/core/checkbox/examples/04-checkbox-form.js (raw).js",
+      "packages/core/checkbox/examples/04-checkbox-form.js (raw).js.map"
+    ],
+    "packages/core/checkbox/package.json": [
+      "packages/core/checkbox/package.json.js",
+      "packages/core/checkbox/package.json.js.map"
+    ],
+    "packages/core/color-picker/CHANGELOG.md": [
+      "packages/core/color-picker/CHANGELOG.md.js",
+      "packages/core/color-picker/CHANGELOG.md.js.map"
+    ],
+    "packages/core/color-picker/CHANGELOG.md (raw)": [
+      "packages/core/color-picker/CHANGELOG.md (raw).js",
+      "packages/core/color-picker/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/color-picker/package.json": [
+      "packages/core/color-picker/package.json.js",
+      "packages/core/color-picker/package.json.js.map"
+    ],
+    "packages/core/date-picker/CHANGELOG.md": [
+      "packages/core/date-picker/CHANGELOG.md.js",
+      "packages/core/date-picker/CHANGELOG.md.js.map"
+    ],
+    "packages/core/date-picker/CHANGELOG.md (raw)": [
+      "packages/core/date-picker/CHANGELOG.md (raw).js",
+      "packages/core/date-picker/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/date-picker/package.json": [
+      "packages/core/date-picker/package.json.js",
+      "packages/core/date-picker/package.json.js.map"
+    ],
+    "packages/core/docs/CHANGELOG.md": [
+      "packages/core/docs/CHANGELOG.md.js",
+      "packages/core/docs/CHANGELOG.md.js.map"
+    ],
+    "packages/core/docs/CHANGELOG.md (raw)": [
+      "packages/core/docs/CHANGELOG.md (raw).js",
+      "packages/core/docs/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/ErrorBoundary.js": [
+      "packages/core/docs/dist/cjs/ErrorBoundary.js.js",
+      "packages/core/docs/dist/cjs/ErrorBoundary.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/ErrorBoundary.js (raw)": [
+      "packages/core/docs/dist/cjs/ErrorBoundary.js (raw).js",
+      "packages/core/docs/dist/cjs/ErrorBoundary.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Example.js": [
+      "packages/core/docs/dist/cjs/Example.js.js",
+      "packages/core/docs/dist/cjs/Example.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Example.js (raw)": [
+      "packages/core/docs/dist/cjs/Example.js (raw).js",
+      "packages/core/docs/dist/cjs/Example.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Description.js": [
+      "packages/core/docs/dist/cjs/Props/components/Description.js.js",
+      "packages/core/docs/dist/cjs/Props/components/Description.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Description.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/components/Description.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/components/Description.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Indent.js": [
+      "packages/core/docs/dist/cjs/Props/components/Indent.js.js",
+      "packages/core/docs/dist/cjs/Props/components/Indent.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Indent.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/components/Indent.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/components/Indent.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Outline.js": [
+      "packages/core/docs/dist/cjs/Props/components/Outline.js.js",
+      "packages/core/docs/dist/cjs/Props/components/Outline.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Outline.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/components/Outline.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/components/Outline.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Required.js": [
+      "packages/core/docs/dist/cjs/Props/components/Required.js.js",
+      "packages/core/docs/dist/cjs/Props/components/Required.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Required.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/components/Required.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/components/Required.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Type.js": [
+      "packages/core/docs/dist/cjs/Props/components/Type.js.js",
+      "packages/core/docs/dist/cjs/Props/components/Type.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/Type.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/components/Type.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/components/Type.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/index.js": [
+      "packages/core/docs/dist/cjs/Props/components/index.js.js",
+      "packages/core/docs/dist/cjs/Props/components/index.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/components/index.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/components/index.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/components/index.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/index.js": [
+      "packages/core/docs/dist/cjs/Props/index.js.js",
+      "packages/core/docs/dist/cjs/Props/index.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/Props/index.js (raw)": [
+      "packages/core/docs/dist/cjs/Props/index.js (raw).js",
+      "packages/core/docs/dist/cjs/Props/index.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/code.js": [
+      "packages/core/docs/dist/cjs/code.js.js",
+      "packages/core/docs/dist/cjs/code.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/code.js (raw)": [
+      "packages/core/docs/dist/cjs/code.js (raw).js",
+      "packages/core/docs/dist/cjs/code.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/index.js": [
+      "packages/core/docs/dist/cjs/index.js.js",
+      "packages/core/docs/dist/cjs/index.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/index.js (raw)": [
+      "packages/core/docs/dist/cjs/index.js (raw).js",
+      "packages/core/docs/dist/cjs/index.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/cjs/replaceSrc.js": [
+      "packages/core/docs/dist/cjs/replaceSrc.js.js",
+      "packages/core/docs/dist/cjs/replaceSrc.js.js.map"
+    ],
+    "packages/core/docs/dist/cjs/replaceSrc.js (raw)": [
+      "packages/core/docs/dist/cjs/replaceSrc.js (raw).js",
+      "packages/core/docs/dist/cjs/replaceSrc.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/ErrorBoundary.js": [
+      "packages/core/docs/dist/esm/ErrorBoundary.js.js",
+      "packages/core/docs/dist/esm/ErrorBoundary.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/ErrorBoundary.js (raw)": [
+      "packages/core/docs/dist/esm/ErrorBoundary.js (raw).js",
+      "packages/core/docs/dist/esm/ErrorBoundary.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Example.js": [
+      "packages/core/docs/dist/esm/Example.js.js",
+      "packages/core/docs/dist/esm/Example.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Example.js (raw)": [
+      "packages/core/docs/dist/esm/Example.js (raw).js",
+      "packages/core/docs/dist/esm/Example.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Description.js": [
+      "packages/core/docs/dist/esm/Props/components/Description.js.js",
+      "packages/core/docs/dist/esm/Props/components/Description.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Description.js (raw)": [
+      "packages/core/docs/dist/esm/Props/components/Description.js (raw).js",
+      "packages/core/docs/dist/esm/Props/components/Description.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Indent.js": [
+      "packages/core/docs/dist/esm/Props/components/Indent.js.js",
+      "packages/core/docs/dist/esm/Props/components/Indent.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Indent.js (raw)": [
+      "packages/core/docs/dist/esm/Props/components/Indent.js (raw).js",
+      "packages/core/docs/dist/esm/Props/components/Indent.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Outline.js": [
+      "packages/core/docs/dist/esm/Props/components/Outline.js.js",
+      "packages/core/docs/dist/esm/Props/components/Outline.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Outline.js (raw)": [
+      "packages/core/docs/dist/esm/Props/components/Outline.js (raw).js",
+      "packages/core/docs/dist/esm/Props/components/Outline.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Required.js": [
+      "packages/core/docs/dist/esm/Props/components/Required.js.js",
+      "packages/core/docs/dist/esm/Props/components/Required.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Required.js (raw)": [
+      "packages/core/docs/dist/esm/Props/components/Required.js (raw).js",
+      "packages/core/docs/dist/esm/Props/components/Required.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Type.js": [
+      "packages/core/docs/dist/esm/Props/components/Type.js.js",
+      "packages/core/docs/dist/esm/Props/components/Type.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/Type.js (raw)": [
+      "packages/core/docs/dist/esm/Props/components/Type.js (raw).js",
+      "packages/core/docs/dist/esm/Props/components/Type.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/index.js": [
+      "packages/core/docs/dist/esm/Props/components/index.js.js",
+      "packages/core/docs/dist/esm/Props/components/index.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/components/index.js (raw)": [
+      "packages/core/docs/dist/esm/Props/components/index.js (raw).js",
+      "packages/core/docs/dist/esm/Props/components/index.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/index.js": [
+      "packages/core/docs/dist/esm/Props/index.js.js",
+      "packages/core/docs/dist/esm/Props/index.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/Props/index.js (raw)": [
+      "packages/core/docs/dist/esm/Props/index.js (raw).js",
+      "packages/core/docs/dist/esm/Props/index.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/code.js": [
+      "packages/core/docs/dist/esm/code.js.js",
+      "packages/core/docs/dist/esm/code.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/code.js (raw)": [
+      "packages/core/docs/dist/esm/code.js (raw).js",
+      "packages/core/docs/dist/esm/code.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/index.js": [
+      "packages/core/docs/dist/esm/index.js.js",
+      "packages/core/docs/dist/esm/index.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/index.js (raw)": [
+      "packages/core/docs/dist/esm/index.js (raw).js",
+      "packages/core/docs/dist/esm/index.js (raw).js.map"
+    ],
+    "packages/core/docs/dist/esm/replaceSrc.js": [
+      "packages/core/docs/dist/esm/replaceSrc.js.js",
+      "packages/core/docs/dist/esm/replaceSrc.js.js.map"
+    ],
+    "packages/core/docs/dist/esm/replaceSrc.js (raw)": [
+      "packages/core/docs/dist/esm/replaceSrc.js (raw).js",
+      "packages/core/docs/dist/esm/replaceSrc.js (raw).js.map"
+    ],
+    "packages/core/docs/package.json": [
+      "packages/core/docs/package.json.js",
+      "packages/core/docs/package.json.js.map"
+    ],
+    "packages/core/docs/src/ErrorBoundary.js": [
+      "packages/core/docs/src/ErrorBoundary.js.js",
+      "packages/core/docs/src/ErrorBoundary.js.js.map"
+    ],
+    "packages/core/docs/src/ErrorBoundary.js (raw)": [
+      "packages/core/docs/src/ErrorBoundary.js (raw).js",
+      "packages/core/docs/src/ErrorBoundary.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Example.js": [
+      "packages/core/docs/src/Example.js.js",
+      "packages/core/docs/src/Example.js.js.map"
+    ],
+    "packages/core/docs/src/Example.js (raw)": [
+      "packages/core/docs/src/Example.js (raw).js",
+      "packages/core/docs/src/Example.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/components/Description.js": [
+      "packages/core/docs/src/Props/components/Description.js.js",
+      "packages/core/docs/src/Props/components/Description.js.js.map"
+    ],
+    "packages/core/docs/src/Props/components/Description.js (raw)": [
+      "packages/core/docs/src/Props/components/Description.js (raw).js",
+      "packages/core/docs/src/Props/components/Description.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/components/Indent.js": [
+      "packages/core/docs/src/Props/components/Indent.js.js",
+      "packages/core/docs/src/Props/components/Indent.js.js.map"
+    ],
+    "packages/core/docs/src/Props/components/Indent.js (raw)": [
+      "packages/core/docs/src/Props/components/Indent.js (raw).js",
+      "packages/core/docs/src/Props/components/Indent.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/components/Outline.js": [
+      "packages/core/docs/src/Props/components/Outline.js.js",
+      "packages/core/docs/src/Props/components/Outline.js.js.map"
+    ],
+    "packages/core/docs/src/Props/components/Outline.js (raw)": [
+      "packages/core/docs/src/Props/components/Outline.js (raw).js",
+      "packages/core/docs/src/Props/components/Outline.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/components/Required.js": [
+      "packages/core/docs/src/Props/components/Required.js.js",
+      "packages/core/docs/src/Props/components/Required.js.js.map"
+    ],
+    "packages/core/docs/src/Props/components/Required.js (raw)": [
+      "packages/core/docs/src/Props/components/Required.js (raw).js",
+      "packages/core/docs/src/Props/components/Required.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/components/Type.js": [
+      "packages/core/docs/src/Props/components/Type.js.js",
+      "packages/core/docs/src/Props/components/Type.js.js.map"
+    ],
+    "packages/core/docs/src/Props/components/Type.js (raw)": [
+      "packages/core/docs/src/Props/components/Type.js (raw).js",
+      "packages/core/docs/src/Props/components/Type.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/components/index.js": [
+      "packages/core/docs/src/Props/components/index.js.js",
+      "packages/core/docs/src/Props/components/index.js.js.map"
+    ],
+    "packages/core/docs/src/Props/components/index.js (raw)": [
+      "packages/core/docs/src/Props/components/index.js (raw).js",
+      "packages/core/docs/src/Props/components/index.js (raw).js.map"
+    ],
+    "packages/core/docs/src/Props/index.js": [
+      "packages/core/docs/src/Props/index.js.js",
+      "packages/core/docs/src/Props/index.js.js.map"
+    ],
+    "packages/core/docs/src/Props/index.js (raw)": [
+      "packages/core/docs/src/Props/index.js (raw).js",
+      "packages/core/docs/src/Props/index.js (raw).js.map"
+    ],
+    "packages/core/docs/src/index.js": [
+      "packages/core/docs/src/index.js.js",
+      "packages/core/docs/src/index.js.js.map"
+    ],
+    "packages/core/docs/src/index.js (raw)": [
+      "packages/core/docs/src/index.js (raw).js",
+      "packages/core/docs/src/index.js (raw).js.map"
+    ],
+    "packages/core/docs/src/replaceSrc.js": [
+      "packages/core/docs/src/replaceSrc.js.js",
+      "packages/core/docs/src/replaceSrc.js.js.map"
+    ],
+    "packages/core/docs/src/replaceSrc.js (raw)": [
+      "packages/core/docs/src/replaceSrc.js (raw).js",
+      "packages/core/docs/src/replaceSrc.js (raw).js.map"
+    ],
+    "packages/core/field-base/CHANGELOG.md": [
+      "packages/core/field-base/CHANGELOG.md.js",
+      "packages/core/field-base/CHANGELOG.md.js.map"
+    ],
+    "packages/core/field-base/CHANGELOG.md (raw)": [
+      "packages/core/field-base/CHANGELOG.md (raw).js",
+      "packages/core/field-base/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/field-base/package.json": [
+      "packages/core/field-base/package.json.js",
+      "packages/core/field-base/package.json.js.map"
+    ],
+    "packages/core/form/CHANGELOG.md": [
+      "packages/core/form/CHANGELOG.md.js",
+      "packages/core/form/CHANGELOG.md.js.map"
+    ],
+    "packages/core/form/CHANGELOG.md (raw)": [
+      "packages/core/form/CHANGELOG.md (raw).js",
+      "packages/core/form/CHANGELOG.md (raw).js.map"
+    ],
+    "packages/core/form/package.json": [
+      "packages/core/form/package.json.js",
+      "packages/core/form/package.json.js.map"
+    ],
+    "vendors~packages/core/button/docs/0-intro.js~packages/core/button/examples/00-basic-usage.js~package~37320e34": [
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/button/examples/00-basic-usage.js~package~37320e34.js",
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/button/examples/00-basic-usage.js~package~37320e34.js.map"
+    ],
+    "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~7cd16877": [
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~7cd16877.js",
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~7cd16877.js.map"
+    ],
+    "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~7eb9d795": [
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~7eb9d795.js",
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~7eb9d795.js.map"
+    ],
+    "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~b803f423": [
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~b803f423.js",
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~b803f423.js.map"
+    ],
+    "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~bf5a27f8": [
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~bf5a27f8.js",
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~bf5a27f8.js.map"
+    ],
+    "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~d89f0ac6": [
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~d89f0ac6.js",
+      "vendors~packages/core/button/docs/0-intro.js~packages/core/checkbox/docs/0-intro.js~packages/core/do~d89f0ac6.js.map"
+    ],
+    "vendors~packages/core/checkbox/examples/04-checkbox-form.js": [
+      "vendors~packages/core/checkbox/examples/04-checkbox-form.js.js",
+      "vendors~packages/core/checkbox/examples/04-checkbox-form.js.js.map"
+    ],
+    "vendors~packages/core/docs/dist/esm/Example.js~packages/core/docs/dist/esm/index.js~packages/core/do~dadb654a": [
+      "vendors~packages/core/docs/dist/esm/Example.js~packages/core/docs/dist/esm/index.js~packages/core/do~dadb654a.js",
+      "vendors~packages/core/docs/dist/esm/Example.js~packages/core/docs/dist/esm/index.js~packages/core/do~dadb654a.js.map"
+    ]
+  },
+  "assets": [
+    {
+      "name": "examples.html",
+      "size": 1160,
+      "chunks": [
+      ],
+      "chunkNames": [
+      ],
+      "emitted": true
+    },
+    {
+      "name": "examples.js",
+      "size": 2022660,
+      "chunks": [
+        "examples"
+      ],
+      "chunkNames": [
+        "examples"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "examples.js.map",
+      "size": 2241157,
+      "chunks": [
+        "examples"
+      ],
+      "chunkNames": [
+        "examples"
+      ],
+      "emitted": true
+    },
+    {
+      "name": "favicon-dev.ico",
+      "size": 17470,
+      "chunks": [
+      ],
+      "chunkNames": [
+      ],
+      "emitted": true
+    },
+    {
+      "name": "index.html",
+      "size": 1052,
+      "chunks": [
+      ],
+      "chunkNames": [
+      ],
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 294,
+  "modules": [
+    {
+      "id": "../node_modules/css-loader/index.js?!../node_modules/postcss-loader/src/index.js?!../node_modules/sass-loader/lib/loader.js!./src/index.scss",
+      "identifier": "/Users/andreavanini/Applications/guidu/node_modules/css-loader/index.js??ref--13-1!/Users/andreavanini/Applications/guidu/node_modules/postcss-loader/src/index.js??postcss!/Users/andreavanini/Applications/guidu/node_modules/sass-loader/lib/loader.js!/Users/andreavanini/Applications/guidu/website/src/index.scss",
+      "name": "../node_modules/css-loader??ref--13-1!../node_modules/postcss-loader/src??postcss!../node_modules/sass-loader/lib/loader.js!./src/index.scss",
+      "index": 979,
+      "index2": 976,
+      "size": 243005,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        "examples"
+      ],
+      "issuer": "/Users/andreavanini/Applications/guidu/node_modules/style-loader/index.js!/Users/andreavanini/Applications/guidu/node_modules/css-loader/index.js??ref--13-1!/Users/andreavanini/Applications/guidu/node_modules/postcss-loader/src/index.js??postcss!/Users/andreavanini/Applications/guidu/node_modules/sass-loader/lib/loader.js!/Users/andreavanini/Applications/guidu/website/src/index.scss",
+      "issuerId": "./src/index.scss",
+      "issuerName": "./src/index.scss",
+      "issuerPath": [
+        {
+          "id": 1,
+          "identifier": "multi /Users/andreavanini/Applications/guidu/node_modules/webpack-dev-server/client/index.js?http://localhost:9000/ /Users/andreavanini/Applications/guidu/website/src/examples-entry.js",
+          "name": "multi ../node_modules/webpack-dev-server/client?http://localhost:9000/ ./src/examples-entry.js"
+        },
+        {
+          "id": "./src/examples-entry.js",
+          "identifier": "/Users/andreavanini/Applications/guidu/node_modules/babel-loader/lib/index.js??ref--9!/Users/andreavanini/Applications/guidu/website/src/examples-entry.js",
+          "name": "./src/examples-entry.js"
+        },
+        {
+          "id": "./src/index.scss",
+          "identifier": "/Users/andreavanini/Applications/guidu/node_modules/style-loader/index.js!/Users/andreavanini/Applications/guidu/node_modules/css-loader/index.js??ref--13-1!/Users/andreavanini/Applications/guidu/node_modules/postcss-loader/src/index.js??postcss!/Users/andreavanini/Applications/guidu/node_modules/sass-loader/lib/loader.js!/Users/andreavanini/Applications/guidu/website/src/index.scss",
+          "name": "./src/index.scss"
+        }
+      ],
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [
+      ],
+      "optimizationBailout": [
+      ]
+    }
+  ],
+  "filteredModules": 1965
+}

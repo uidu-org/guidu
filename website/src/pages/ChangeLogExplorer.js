@@ -10,13 +10,12 @@ import Loadable from '../components/WrappedLoader';
 
 import Changelog, { NoMatch } from '../components/ChangeLog';
 import Page from '../components/Page';
+import { packages } from '../site';
 import * as fs from '../utils/fs';
 import Loading from '../components/Loading';
 import { divvyChangelog } from '../utils/changelog';
 
 import type { RouterMatch } from '../types';
-
-const packages = [];
 
 /* eslint-disable react/no-unused-prop-types */
 type Props = {

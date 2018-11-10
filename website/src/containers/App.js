@@ -10,23 +10,29 @@ import Page, { Grid, GridColumn } from '@atlaskit/page';
 import { Theme } from '@atlaskit/theme';
 
 import Home from '../pages/Home';
-// import ChangeLogExplorer from '../pages/ChangeLogExplorer';
-// import Examples from '../pages/Examples';
+import ChangeLogExplorer from '../pages/ChangeLogExplorer';
+import Examples from '../pages/Examples';
 import FourOhFour from '../pages/FourOhFour';
-// import Pattern from '../pages/Pattern';
+import Pattern from '../pages/Pattern';
 // import PatternsInfo from '../pages/PatternsInfo';
 // import Document from '../pages/Document';
 import Package from '../pages/Package';
-// import PackagesList from '../pages/PackagesList';
-// import PackageDocument from '../pages/PackageDocument';
-// import ChangelogModal from '../pages/Package/ChangelogModal';
-// import ExamplesModal from '../pages/Package/ExamplesModal';
-// import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
+import PackagesList from '../pages/PackagesList';
+import PackageDocument from '../pages/PackageDocument';
+import ChangelogModal from '../pages/Package/ChangelogModal';
+import ExamplesModal from '../pages/Package/ExamplesModal';
 
 import Nav from './Nav';
 
 // eslint-disable-next-line
 createGlobalStyle`
+  body {
+    margin: 0;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
   #app {
     position: relative;
     width: 100%;
@@ -105,10 +111,10 @@ export default class App extends Component<Props, State> {
               <ScrollHandler />
             </Route>
             <Switch>
-              {/*<Route
-                              path="/examples/:groupId?/:pkgId?/:exampleId*"
-                              component={Examples}
-                            />*/}
+              <Route
+                path="/examples/:groupId?/:pkgId?/:exampleId*"
+                component={Examples}
+              />
               <Route>
                 <LayerManager>
                   <Page navigation={<Nav />}>
@@ -140,15 +146,15 @@ export default class App extends Component<Props, State> {
                                 )}
                               />
                               <Route exact path="/" component={Home} />
-                              <Route
+                              {/* <Route
                                 path="/docs/:docId*"
                                 component={Document}
-                              />
-                              {/*<Route
+                              /> */}
+                              {/* <Route
                                 path="/patterns"
                                 component={PatternsInfo}
                                 exact
-                              />
+                              /> */}
 
                               <Route
                                 path="/patterns/:patternId*"
@@ -169,10 +175,11 @@ export default class App extends Component<Props, State> {
                                 path="/packages/:groupId/:pkgId/docs/:docId"
                                 component={PackageDocument}
                               />
-                            <Route
-                              path="/packages/:groupId/:pkgId"
-                              component={Package}
-                            />
+
+                              <Route
+                                path="/packages/:groupId/:pkgId"
+                                component={Package}
+                              />
                               <Route
                                 path="/packages"
                                 component={PackagesList}
@@ -181,15 +188,10 @@ export default class App extends Component<Props, State> {
                                 path="/changelog/:groupId/:pkgId/:semver?"
                                 component={ChangeLogExplorer}
                               />
-                            */}
-                              <Route
-                                path="/packages/:pkgId"
-                                component={Package}
-                              />
                               <Route path="/error" component={FourOhFour} />
                               <Route component={FourOhFour} />
                             </Switch>
-                            {/*
+
                             <Route
                               path="/packages/:groupId/:pkgId/changelog/:semver?"
                               children={props => (
@@ -206,7 +208,6 @@ export default class App extends Component<Props, State> {
                                 </ModalTransition>
                               )}
                             />
-                          */}
                           </AppContent>
                         </GridColumn>
                       </Grid>

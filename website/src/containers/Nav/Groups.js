@@ -11,10 +11,12 @@ import PackagesNav from './navigations/Packages';
 import DocsNav from './navigations/Docs';
 import PatternsNav from './navigations/Patterns';
 
+import type { Directory } from '../../types';
+
 export type GroupsProps = {
-  docs: Array,
-  patterns: Array,
-  packages: Array,
+  docs: Directory,
+  patterns: Directory,
+  packages: Directory,
 };
 
 export type GroupsState = {

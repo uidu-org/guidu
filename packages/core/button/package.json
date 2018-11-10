@@ -1,0 +1,31 @@
+{
+  "name": "@uidu/button",
+  "version": "0.1.12",
+  "description": "Button component for use in forms",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "repository": "github:uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bundlesize": [
+    {
+      "path": "./dist/umd/*.js",
+      "maxSize": "300 kB"
+    }
+  ],
+  "dependencies": {
+    "classnames": "^2.2.5"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.7",
+    "@uidu/form": "^0.1.8"
+  },
+  "gitHead": "125291d91eb5475295a78abe613c90ec09e311b7"
+}

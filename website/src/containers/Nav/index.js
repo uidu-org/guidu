@@ -20,15 +20,11 @@ import PatternsIcon from '@atlaskit/icon/glyph/issues';
 
 import Groups from './Groups';
 import GroupDrawer from './GroupDrawer';
-// import SearchDrawer from './SearchDrawer';
+import SearchDrawer from './SearchDrawer';
+import { externalPackages as packages, docs, patterns } from '../../site';
 
 import atlaskitLogo from '../../assets/atlaskit-logo-inverted.png';
 import atlaskitLogoMonochrome from '../../assets/atlaskit-logo-monochrome.png';
-
-import packages from '../../packages';
-
-const docs = [];
-const patterns = [];
 
 type State = {
   groupDrawerOpen: boolean,
@@ -117,8 +113,6 @@ export default class Nav extends Component<{}, State> {
               <Groups docs={docs} packages={packages} patterns={patterns} />
             );
 
-            // const groups = null;
-
             return (
               <Navigation
                 isOpen={containerNavAvailable}
@@ -161,14 +155,14 @@ export default class Nav extends Component<{}, State> {
                   )
                 }
                 drawers={[
-                  // <SearchDrawer
-                  //   isOpen={searchDrawerOpen}
-                  //   closeDrawer={this.closeSearchDrawer}
-                  //   searchDrawerValue={searchDrawerValue}
-                  //   updateSearchValue={this.updateSearchValue}
-                  //   packages={packages}
-                  //   key="searchDrawer"
-                  // />,
+                  <SearchDrawer
+                    isOpen={searchDrawerOpen}
+                    closeDrawer={this.closeSearchDrawer}
+                    searchDrawerValue={searchDrawerValue}
+                    updateSearchValue={this.updateSearchValue}
+                    packages={packages}
+                    key="searchDrawer"
+                  />,
                   <GroupDrawer
                     key="groupDrawer"
                     isOpen={groupDrawerOpen}

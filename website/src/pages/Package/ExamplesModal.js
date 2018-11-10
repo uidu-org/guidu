@@ -26,7 +26,7 @@ import packageResolver, { getLoaderUrl } from '../../utils/packageResolver';
 import type { RouterMatch } from '../../types';
 import ExampleDisplay from '../../components/Examples/ExampleDisplay';
 import { getConfig } from '../../site';
-import CodeSandbox from './CodeSandbox';
+// import CodeSandbox from './CodeSandbox';
 import CodeSandboxLogo from './CodeSandboxLogo';
 
 // ==============================
@@ -206,7 +206,7 @@ const ModalHeaderComp = ({
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
       <ButtonGroup>
-        <CodeSandbox
+        {/* <CodeSandbox
           example={example}
           examples={examples}
           groupId={groupId}
@@ -226,7 +226,7 @@ const ModalHeaderComp = ({
               {error ? error.name : 'Sandbox'}
             </Button>
           )}
-        />
+        /> */}
         <Button
           iconBefore={<CodeIcon label="Toggle code snippet" />}
           onClick={onCodeToggle}
@@ -376,6 +376,7 @@ export default class ExamplesModal extends Component<Props, State> {
         <Helmet>
           <title>
             Example - {fs.titleize(exampleId)} - {fs.titleize(packageId)} -{' '}
+            {BASE_TITLE}
           </title>
         </Helmet>
         <ContentBody>

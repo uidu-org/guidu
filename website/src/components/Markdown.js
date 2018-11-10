@@ -37,7 +37,10 @@ export default function Markdown({
   return (
     <div>
       <Helmet>
-        <meta name="description" content={description} />
+        <meta
+          name="description"
+          content={description || DEFAULT_META_DESCRIPTION}
+        />
       </Helmet>
       {renderer.render(parser.parse(children))}
     </div>

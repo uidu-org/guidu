@@ -4,7 +4,7 @@ import React, { type ComponentType, type ElementRef, Component } from 'react';
 // be handled by the iframe sendApdex
 import Loadable from 'react-loadable';
 import Loading from '../Loading';
-import CodeBlock from '../Code';
+// import CodeBlock from '../Code';
 
 type Props = {
   src: string | null,
@@ -49,9 +49,10 @@ export default class ExampleDisplay extends Component<Props> {
       loader: () => props.example.contents(),
       loading: Loading,
       render(loaded) {
-        return (
-          <CodeBlock grammar="jsx" content={loaded.default} name={props.name} />
-        );
+        return null;
+        // (
+        //   <CodeBlock grammar="jsx" content={loaded.default} name={props.name} />
+        // );
       },
     });
     this.Example = () => (

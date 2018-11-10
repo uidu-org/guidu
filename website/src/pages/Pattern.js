@@ -6,8 +6,7 @@ import type { RouterMatch } from '../types';
 import Page from '../components/Page';
 import FourOhFour from './FourOhFour';
 import Loading from '../components/Loading';
-
-const patterns = [];
+import { patterns } from '../site';
 
 type Props = {
   match: RouterMatch,

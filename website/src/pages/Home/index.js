@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { gridSize, math, colors } from '@atlaskit/theme';
 import Cards from './Cards';
 import { TABLET_BREAKPOINT_MIN } from './config';
-import '../../assets/css/charlie-display-font.less';
+import '../../../public/css/charlie-display-font.less';
 
 const fonts =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
@@ -65,7 +65,7 @@ export default class HomePage extends Component {
     return (
       <HomePageWrapper>
         <Helmet>
-          <title />
+          <title>{BASE_TITLE}</title>
         </Helmet>
         <Style />
         <Title>Atlaskit</Title>
