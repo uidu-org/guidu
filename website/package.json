@@ -24,6 +24,8 @@
   ],
   "devDependencies": {
     "@uidu/docs": "^0.1.9",
+    "@uidu/fs-loader": "^0.1.0",
+    "@uidu/webpack-config": "^0.1.0",
     "bolt-query": "^1.1.4",
     "extract-react-types-loader": "^0.2.2",
     "netlify-cli": "^2.1.1",

@@ -5,7 +5,7 @@
     "webpack-dev": "./bin/dev.js",
     "webpack-build": "./bin/build.js"
   },
-  "version": "2.0.4",
+  "version": "0.1.0",
   "description": "Configurations for webpack used in Guidu",
   "main": "config/index.js",
   "scripts": {
@@ -16,9 +16,9 @@
   "dependencies": {
     "babel-loader": "^8.0.2",
     "bolt": "^0.22.1",
-    "bolt-fs-loader": "^0.0.1",
+    "@uidu/fs-loader": "^0.1.0",
     "chalk": "^2.1.0",
-    "changelog-md-loader": "^0.0.1",
+    "@uidu/changelog-loader": "^0.1.0",
     "connect-history-api-fallback": "^1.5.0",
     "css-loader": "^0.28.0",
     "file-loader": "^1.1.11",
