@@ -1,8 +1,8 @@
 // @flow
 import type { Directory } from './types';
 
-// SITE_DATA is dynamically generated at runtime by bolt-fs-loader.
-// Configuration for bolt-fs-loader is in webpack.config.js since it needs to be dynamically created
+// SITE_DATA is dynamically generated at runtime by @uidu-fs-loader.
+// Configuration for @uidu-fs-loader is in webpack.config.js since it needs to be dynamically created
 // depending on the subset of packages we want to represent on the website.
 import data from './SITE_DATA';
 import NAV_DATA from './NAV_DATA';

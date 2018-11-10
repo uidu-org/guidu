@@ -100,7 +100,7 @@ module.exports = function createWebpackConfig(
       rules: [
         {
           test: /SITE_DATA$/,
-          loader: require.resolve('bolt-fs-loader'),
+          loader: require.resolve('@uidu/fs-loader'),
           options: {
             include: [...globs, 'docs/**/*.md'].filter(Boolean),
             exclude: ['**/node_modules/**', 'packages/build/docs/**'],
@@ -130,7 +130,7 @@ module.exports = function createWebpackConfig(
         {
           test: /CHANGELOG\.md$/,
           exclude: /node_modules/,
-          loader: require.resolve('changelog-md-loader'),
+          loader: require.resolve('@uidu/changelog-loader'),
         },
         {
           test: /\.md$/,

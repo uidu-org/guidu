@@ -47,9 +47,6 @@ async function runDevServer() {
   const projectRoot = (await bolt.getProject({ cwd: process.cwd() })).dir;
   const workspaces = await bolt.getWorkspaces();
 
-  console.log(projectRoot);
-  console.log(workspaces);
-
   const filteredWorkspaces = workspacesGlob
     ? workspaces.filter(ws =>
         minimatch(ws.dir, workspacesGlob, { matchBase: true }),

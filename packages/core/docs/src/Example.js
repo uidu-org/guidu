@@ -65,7 +65,6 @@ export default class Example extends React.Component<Props, State> {
 
   render() {
     const { Component, source, language, title, packageName } = this.props;
-    console.log(Component);
     const { isHover, isSourceVisible } = this.state;
     const toggleLabel = isSourceVisible
       ? 'Hide Code Snippet'

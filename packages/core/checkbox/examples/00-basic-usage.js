@@ -27,7 +27,6 @@ const BasicUsageExample = class extends PureComponent {
           layout="elementOnly"
           id="test"
         />
-
         <Checkbox
           defaultChecked
           label="Checked by default"

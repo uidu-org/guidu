@@ -82,6 +82,7 @@ module.exports = async function boltFsLoader() {
   const files /*: Array<string> */ = await globby(patterns, {
     cwd: projectRoot,
   });
+
   const result /*: Directory */ = files.reduce((
     root /*: Directory */,
     file /*: string */,
