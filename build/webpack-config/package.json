@@ -1,6 +1,5 @@
 {
   "name": "@uidu/webpack-config",
-  "private": true,
   "bin": {
     "webpack-dev": "./bin/dev.js",
     "webpack-build": "./bin/build.js"

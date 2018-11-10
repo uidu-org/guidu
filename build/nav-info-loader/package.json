@@ -2,7 +2,6 @@
   "name": "@uidu/nav-info-loader",
   "version": "0.1.1",
   "main": "index.js",
-  "private": true,
   "dependencies": {
     "bolt": "^0.22.1",
     "globby": "^6.1.0",
