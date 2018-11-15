@@ -1,5 +1,6 @@
 // @flow
 import styled from 'styled-components';
+import { Container, Row, Col } from 'reactstrap';
 import { gridSize, math } from '@atlaskit/theme';
 
 const containerWidth = {
@@ -8,11 +9,10 @@ const containerWidth = {
   large: '980px',
 };
 
-const PageContainer = styled.main`
-  max-width: ${p =>
-    containerWidth[p.width] ? containerWidth[p.width] : containerWidth.medium};
+const PageContainer = styled(Container)`
+  //   containerWidth[p.width] ? containerWidth[p.width] : containerWidth.medium};
   margin: 2rem auto;
-  padding: 0 2rem;
+  // padding: 0 2rem;
 `;
 
 export default PageContainer;

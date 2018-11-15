@@ -2,12 +2,11 @@
 
 import React, { Component, type Node } from 'react';
 import styled from 'styled-components';
-import { Link } from '../../components/WrappedLink';
-import Loadable from '../../components/WrappedLoader';
+
 import { Helmet } from 'react-helmet';
-import { gridSize, colors, math } from '@atlaskit/theme';
-import Button from '@atlaskit/button';
-import ExamplesIcon from '@atlaskit/icon/glyph/screen';
+import { List } from 'react-feather';
+
+import Button from '@uidu/button';
 import { AtlassianIcon } from '@atlaskit/logo';
 
 import Loading from '../../components/Loading';
@@ -19,45 +18,16 @@ import LatestChangelog from './LatestChangelog';
 
 import { isModuleNotFoundError } from '../../utils/errors';
 import * as fs from '../../utils/fs';
-import type { RouterMatch } from '../../types';
+import { Link } from '../../components/WrappedLink';
+import Loadable from '../../components/WrappedLoader';
 
-import type { Logs } from '../../components/ChangeLog';
 import fetchPackageData from './utils/fsOperations';
 
-export const Title = styled.div`
-  display: flex;
+import type { RouterMatch } from '../../types';
+import type { Logs } from '../../components/ChangeLog';
 
-  h1 {
-    flex-grow: 1;
-  }
-`;
-
-export const Intro = styled.p`
-  color: ${colors.heading};
-  font-size: ${math.multiply(gridSize, 2)}px;
-  font-weight: 300;
-  line-height: 1.4em;
-`;
 export const ButtonGroup = styled.div`
   display: inline-flex;
-  margin: 0 -2px;
-
-  > * {
-    flex: 1 0 auto;
-    margin: 0 2px !important;
-  }
-`;
-
-export const Sep = styled.hr`
-  border: none;
-  border-top: 2px solid #ebecf0;
-  margin-bottom: ${math.multiply(gridSize, 1.5)}px;
-  margin-top: ${math.multiply(gridSize, 1.5)}px;
-
-  @media (min-width: 780px) {
-    margin-bottom: ${math.multiply(gridSize, 3)}px;
-    margin-top: ${math.multiply(gridSize, 3)}px;
-  }
 `;
 
 export const NoDocs = props => {
@@ -114,17 +84,19 @@ export default function LoadData({ match }) {
       fetchPackageData(groupId, pkgId).catch(
         error => console.log(error) || { error },
       ),
-    render: props =>
-      props.missing || props.error ? (
-        <FourOhFour />
-      ) : (
+    render: props => {
+      const { missing, error } = props;
+      if (missing || error) return <FourOhFour />;
+
+      return (
         <Package
           {...props}
           pkgId={pkgId}
           groupId={groupId}
           urlIsExactMatch={match.isExact}
         />
-      ),
+      );
+    },
   });
 
   return <Content />;
@@ -158,15 +130,22 @@ class Package extends Component<*, *> {
             </title>
           </Helmet>
         )}
-        <Title>
-          <h1>{title}</h1>
+        <div className="d-flex align-items-center justify-content-between">
+          <div className="mr-3">
+            <h1 className="h4">{title}</h1>
+            <p className="mb-0">{pkg.description}</p>
+          </div>
           {examplePath && (
             <ButtonGroup>
               <Button
+                className="mr-3"
+                color="light"
                 component={Link}
-                iconBefore={<ExamplesIcon label="Examples Icon" />}
-                to={examplePath}
-              />
+                to={`/packages/${groupId}/${pkgId}/changelog`}
+                withIcon
+              >
+                <List className="mr-2" /> Changelog
+              </Button>
               <Button component={Link} to={exampleModalPath}>
                 Examples
               </Button>
@@ -180,18 +159,16 @@ class Package extends Component<*, *> {
               )}
             </ButtonGroup>
           )}
-        </Title>
-        <Intro>{pkg.description}</Intro>
+        </div>
+        <hr />
         <MetaData
           packageName={pkg.name}
           packageSrc={`https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/packages/${groupId}/${pkgId}`}
-        />
-        <LatestChangelog
           changelog={changelog}
           pkgId={pkgId}
           groupId={groupId}
         />
-        <Sep />
+        <hr />
         {doc || <NoDocs name={pkgId} />}
       </Page>
     );

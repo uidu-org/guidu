@@ -16,12 +16,7 @@
     "predeploy": "yarn build",
     "deploy": "netlify deploy --dir dist/ --prod"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"],
   "devDependencies": {
     "@uidu/docs": "^0.1.10",
     "@uidu/fs-loader": "^0.1.6",

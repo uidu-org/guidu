@@ -2,7 +2,7 @@
 
 import React, { type Node } from 'react';
 import { Link } from './WrappedLink';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 
 export type LinkButtonProps = {
   to: string,

@@ -25,7 +25,6 @@
     "bolt": "^0.22.1",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "^2.1.0",
-    "clean-webpack-plugin": "^0.1.16",
     "compression-webpack-plugin": "^2.0.0",
     "connect-history-api-fallback": "^1.5.0",
     "css-loader": "^1.0.0",

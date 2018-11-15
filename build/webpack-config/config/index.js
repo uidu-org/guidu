@@ -299,8 +299,8 @@ function getPlugins(
 
     new webpack.DefinePlugin({
       WEBSITE_ENV: `"${websiteEnv}"`,
-      BASE_TITLE: `"Atlaskit by Atlassian ${!isProduction ? '- DEV' : ''}"`,
-      DEFAULT_META_DESCRIPTION: `"Atlaskit is the official component library for Atlassian's Design System."`,
+      BASE_TITLE: `"Guidù by uidu ${!isProduction ? '- DEV' : ''}"`,
+      DEFAULT_META_DESCRIPTION: `"Guidù is the official component library for uidu's Design System."`,
     }),
   ];
 

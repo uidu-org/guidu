@@ -5,7 +5,7 @@ import { ComponentCommon, ErrorMessages } from '@uidu/field-base';
 
 import { type CheckboxProps } from './types';
 
-const CustomInputComponent = styled(CustomInput)`
+const StyledCustomInput = styled(CustomInput)`
   :hover {
     .custom-control-label {
       ::before {

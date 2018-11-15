@@ -1,0 +1,35 @@
+{
+  "name": "@atlaskit/badge",
+  "version": "9.2.0",
+  "description": "A React component that indicates values",
+  "license": "Apache-2.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "atlaskit:src": "src/index.js",
+  "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/badges",
+  "sideEffects": false,
+  "files": ["dist"],
+  "author": "Atlassian Pty Ltd",
+  "maintainers": ["Raja B", "Ben C", "Ajay M"],
+  "atlaskit": {
+    "name": "Badge",
+    "team": "core"
+  },
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "dependencies": {
+    "@atlaskit/theme": "^6.1.1",
+    "@babel/runtime": "^7.0.0",
+    "babel-runtime": "^6.26.0"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "styled-components": "^3.2.6"
+  },
+  "devDependencies": {
+    "@atlaskit/build-utils": "^2.0.0",
+    "@atlaskit/docs": "^5.0.6",
+    "enzyme": "https://registry.npmjs.org/@pgleeson/enzyme/-/enzyme-3.3.7.tgz",
+    "react-dom": "^16.4.2",
+    "react-test-renderer": "^16.3.0"
+  }
+}

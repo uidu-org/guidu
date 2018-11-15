@@ -74,6 +74,7 @@
     "nps-utils": "^1.7.0",
     "prettier": "^1.8.2",
     "prop-types": "^15.6.0",
+    "react-lorem-component": "^0.13.0",
     "sass-lint": "^1.12.1",
     "typescript": "^3.1.6",
     "uglify-js": "^3.1.7"

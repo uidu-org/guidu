@@ -12,13 +12,13 @@ export default md`
   `}
 
   The Checkbox export provides for controlled & uncontrolled usage and includes the label, input & icon.
-`;
 
-// ${(
-//   <Example
-//     packageName="@uidu/button"
-//     Component={require('../examples/00-basic-usage').default}
-//     title="Basic"
-//     source={require('!!raw-loader!../examples/00-basic-usage')}
-//   />
-// )}
+  ${(
+    <Example
+      packageName="@uidu/button"
+      Component={require('../examples/00-basic-usage')}
+      title="Basic"
+      source={require('!!raw-loader!../examples/00-basic-usage')}
+    />
+  )}
+`;

@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.10",
-    "@uidu/form": "^0.1.11"
+    "@uidu/form": "^0.1.11",
+    "standard-changelog": "^2.0.6"
   },
   "gitHead": "abd9cb97451572cca68b85d6fe7f57ca2cde4831"
 }

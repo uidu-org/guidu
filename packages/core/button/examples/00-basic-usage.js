@@ -19,13 +19,27 @@ const BasicUsageExample = class extends PureComponent {
   render() {
     return (
       <div>
-        <Button color="primary">primary</Button>{' '}
-        <Button color="secondary">secondary</Button>{' '}
-        <Button color="success">success</Button>{' '}
-        <Button color="info">info</Button>{' '}
-        <Button color="warning">warning</Button>{' '}
-        <Button color="danger">danger</Button>{' '}
-        <Button color="link">link</Button>
+        <Button color="primary">
+          <span>primary</span>
+        </Button>{' '}
+        <Button color="secondary">
+          <span>secondary</span>
+        </Button>{' '}
+        <Button color="success">
+          <span>success</span>
+        </Button>{' '}
+        <Button color="info">
+          <span>info</span>
+        </Button>{' '}
+        <Button color="warning">
+          <span>warning</span>
+        </Button>{' '}
+        <Button color="danger">
+          <span>danger</span>
+        </Button>{' '}
+        <Button color="link">
+          <span>link</span>
+        </Button>
       </div>
     );
   }

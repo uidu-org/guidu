@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import { code, md, Example, Props } from '@atlaskit/docs';
+import { code, md, Example, Props } from '@uidu/docs';
 
 // The core parts of the intro page for your examples documentation are:
 // 1. A summary description

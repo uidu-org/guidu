@@ -4,6 +4,8 @@ import React, { Component, type Node } from 'react';
 import styled from 'styled-components';
 import { colors, gridSize, math } from '@atlaskit/theme';
 
+import LatestChangelog from './LatestChangelog';
+
 type MetaItemProps = {
   href?: string,
   label: Node,
@@ -45,12 +47,7 @@ export default class MetaData extends Component<MetaDataProps> {
           label="npm"
           summary={packageName}
         />
-        <MetaItem href={packageSrc} label="Source" summary="Bitbucket" />
-        <MetaItem
-          href={`https://unpkg.com/${packageName}/dist/`}
-          label="Bundle"
-          summary="unpkg.com"
-        />
+        <MetaItem href={packageSrc} label="Source" summary="Github" />
       </Meta>
     );
   }
@@ -59,12 +56,6 @@ export default class MetaData extends Component<MetaDataProps> {
 const Meta = styled.section`
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: ${math.multiply(gridSize, 3)}px;
-  padding-top: ${math.multiply(gridSize, 1.5)}px;
-
-  @media (min-width: 780px) {
-    padding-top: ${math.multiply(gridSize, 3)}px;
-  }
 `;
 
 const DI = styled.div`

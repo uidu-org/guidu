@@ -10,7 +10,7 @@ const gutter = math.multiply(gridSize, 3);
 
 const H3 = styled.h3`
   color: ${colors.N200};
-  font-size: 18px;
+  // font-size: 18px;
   font-weight: normal;
 `;
 function getVersion(str: string) {
@@ -110,6 +110,8 @@ export default class ChangeLog extends Component<Props> {
             const href = `https://bitbucket.org/atlassian/${
               v.repository
             }/commits/tag/%40atlaskit%2F${packageName}%40${v.version}`;
+
+            console.log(v.md);
             return (
               // Version is not unique enough due to untidy changelogs.
               /* eslint-disable react/no-array-index-key */

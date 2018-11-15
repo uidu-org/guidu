@@ -34,12 +34,12 @@
     "string-raw": "^1.0.1"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
     "styled-components": "^3.2.6"
   },
   "devDependencies": {
     "jest-in-case": "^1.0.2",
-    "react-dom": "^16.4.2",
     "react-test-renderer": "^16.3.0"
   },
   "gitHead": "125291d91eb5475295a78abe613c90ec09e311b7"

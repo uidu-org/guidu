@@ -3,7 +3,7 @@ import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
-  ### Usage
+  ##### Usage
 
   A checkbox element primarily for use in forms.
 
