@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.22](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.21...@uidu/themes-uidu@0.1.22) (2019-02-21)
+
+**Note:** Version bump only for package @uidu/themes-uidu
+
+
+
+
+
 ## [0.1.21](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.20...@uidu/themes-uidu@0.1.21) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu

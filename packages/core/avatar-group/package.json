@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar-group",
-  "version": "2.1.13",
+  "version": "2.1.14",
   "description": "A component to display avatars as a group, either as a stack or in a grid.",
   "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
