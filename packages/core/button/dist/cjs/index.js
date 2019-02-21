@@ -5,15 +5,15 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CheckboxGroup = exports.Checkbox = void 0;
+Object.defineProperty(exports, "Button", {
+  enumerable: true,
+  get: function get() {
+    return _Button.default;
+  }
+});
+exports.default = void 0;
 
-var _fieldBase = require("@uidu/field-base");
+var _Button = _interopRequireDefault(require("./Button"));
 
-var _Checkbox = _interopRequireDefault(require("./Checkbox"));
-
-var _CheckboxGroup = _interopRequireDefault(require("./CheckboxGroup"));
-
-var Checkbox = (0, _fieldBase.ComponentHOC)(_Checkbox.default);
-exports.Checkbox = Checkbox;
-var CheckboxGroup = (0, _fieldBase.ComponentHOC)(_CheckboxGroup.default);
-exports.CheckboxGroup = CheckboxGroup;
+var _default = _Button.default;
+exports.default = _default;

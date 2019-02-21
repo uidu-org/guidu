@@ -1,18 +1,25 @@
+// @flow
+
 module.exports = function(api) {
   api.cache(true);
 
-  const presets = ['@babel/react', '@babel/flow'];
+  console.log(api);
+
   const plugins = [
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-transform-destructuring',
     '@babel/plugin-syntax-dynamic-import',
-    ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
     'babel-plugin-add-module-exports',
   ];
 
+  const presets = ['@babel/react', '@babel/flow'];
+
   return {
+    presets,
+    plugins,
     env: {
       'production:cjs': {
         plugins: [
@@ -47,7 +54,5 @@ module.exports = function(api) {
         plugins: ['transform-dynamic-import'],
       },
     },
-    presets,
-    plugins,
   };
 };

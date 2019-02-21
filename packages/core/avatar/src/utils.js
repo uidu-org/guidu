@@ -1,4 +1,5 @@
 // @flow
+
 import { type ComponentType } from 'react';
 
 export function omit(obj: {}, ...keysToOmit: Array<string>) {

@@ -1,45 +1,34 @@
-"use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = exports.StringType = exports.TypeMeta = void 0;
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-var _theme = require("@atlaskit/theme");
-
-var Type = _styledComponents.default.span.withConfig({
-  displayName: "Type",
-  componentId: "oi9t8e-0"
-})(["\n  background-color: ", ";\n  border-radius: ", "px;\n  color: ", ";\n  display: inline-block;\n  margin: 2px 0;\n  padding: 0 0.2em;\n"], (0, _theme.themed)({
-  light: _theme.colors.P50,
-  dark: _theme.colors.P500
-}), _theme.borderRadius, (0, _theme.themed)({
-  light: _theme.colors.P500,
-  dark: _theme.colors.P50
-}));
-
-var TypeMeta = (0, _styledComponents.default)(Type).withConfig({
-  displayName: "Type__TypeMeta",
-  componentId: "oi9t8e-1"
-})(["\n  background-color: ", ";\n  color: ", ";\n"], (0, _theme.themed)({
-  light: _theme.colors.N20,
-  dark: _theme.colors.DN50
-}), _theme.colors.subtleText);
-exports.TypeMeta = TypeMeta;
-var StringType = (0, _styledComponents.default)(Type).withConfig({
-  displayName: "Type__StringType",
-  componentId: "oi9t8e-2"
-})(["\n  background-color: ", ";\n  color: ", ";\n"], (0, _theme.themed)({
-  light: _theme.colors.G50,
-  dark: _theme.colors.G500
-}), (0, _theme.themed)({
-  light: _theme.colors.G500,
-  dark: _theme.colors.G100
-}));
-exports.StringType = StringType;
-var _default = Type;
-exports.default = _default;
+import styled from 'styled-components';
+import { borderRadius, colors, themed } from '@atlaskit/theme';
+const Type = styled.span`
+  background-color: ${themed({
+  light: colors.P50,
+  dark: colors.P500
+})};
+  border-radius: ${borderRadius}px;
+  color: ${themed({
+  light: colors.P500,
+  dark: colors.P50
+})};
+  display: inline-block;
+  margin: 2px 0;
+  padding: 0 0.2em;
+`;
+export const TypeMeta = styled(Type)`
+  background-color: ${themed({
+  light: colors.N20,
+  dark: colors.DN50
+})};
+  color: ${colors.subtleText};
+`;
+export const StringType = styled(Type)`
+  background-color: ${themed({
+  light: colors.G50,
+  dark: colors.G500
+})};
+  color: ${themed({
+  light: colors.G500,
+  dark: colors.G100
+})};
+`;
+export default Type;

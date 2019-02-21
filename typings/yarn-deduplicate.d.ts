@@ -1,0 +1,1 @@
+declare module 'yarn-deduplicate';

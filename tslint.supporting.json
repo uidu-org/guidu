@@ -1,0 +1,6 @@
+{
+  "extends": ["./tslint.sources.json"],
+  "rules": {
+    "no-implicit-dependencies": [true, "dev"]
+  }
+}

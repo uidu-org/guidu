@@ -1,26 +1,15 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = replaceSrc;
-
-var _codesandboxer = require("codesandboxer");
-
-var regexString = /((?:import|export)\s*['"\`])(..\/src\/index.less)(['"\`]\s*)/;
-
-function replaceSrc(content, name) {
-  var replacedCode = content;
+import { replaceImports } from 'codesandboxer';
+const regexString = /((?:import|export)\s*['"\`])(..\/src\/index.less)(['"\`]\s*)/;
+export default function replaceSrc(content, name) {
+  let replacedCode = content;
 
   if (name === '@atlaskit/css-reset') {
-    replacedCode = replacedCode.replace(regexString, "$1".concat(name, "$3"));
+    replacedCode = replacedCode.replace(regexString, `$1${name}$3`);
   }
 
   if (name) {
-    replacedCode = (0, _codesandboxer.replaceImports)(replacedCode, [['../src', name]]);
+    replacedCode = replaceImports(replacedCode, [['../src', name]]);
   }
 
   return replacedCode;
 }
-
-module.exports = exports.default;

@@ -2,6 +2,7 @@
   "name": "@uidu/changelog-loader",
   "version": "0.1.5",
   "main": "index.js",
+  "uidu:src": "index.js",
   "repository": "github:uidu-org/guidu",
   "publishConfig": {
     "access": "public"

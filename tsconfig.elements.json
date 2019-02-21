@@ -1,0 +1,33 @@
+{
+  "extends": "./tsconfig.core.json",
+  "files": [
+    "./typings/atlaskit.d.ts",
+    "./typings/deep-equal.d.ts",
+    "./typings/deepcopy.d.ts",
+    "./typings/enzyme-react-intl.d.ts",
+    "./typings/events.d.ts",
+    "./typings/fetch-mock.d.ts",
+    "./typings/jest-in-case.d.ts",
+    "./typings/jest.frameworkSetup.d.ts",
+    "./typings/json.d.ts",
+    "./typings/lodash.debounce.d.ts",
+    "./typings/lodash.last.d.ts",
+    "./typings/lodash.matches.d.ts",
+    "./typings/lodash.merge.d.ts",
+    "./typings/lodash.sample.d.ts",
+    "./typings/node.d.ts",
+    "./typings/package.json.d.ts",
+    "./typings/pdfjs-dist.d.ts",
+    "./typings/postis.d.ts",
+    "./typings/prosemirror-markdown.d.ts",
+    "./typings/p-wait-for.d.ts",
+    "./typings/rusha.d.ts",
+    "./typings/scrollparent.d.ts",
+    "./typings/snake-case.d.ts",
+    "./typings/static-assets.d.ts",
+    "./typings/url.d.ts",
+    "./typings/url-search-params.d.ts",
+    "./typings/uuid.d.ts",
+    "./typings/webpack.d.ts"
+  ]
+}
