@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "14.1.4",
+  "version": "0.1.0",
   "description": "A component that represents a user",
   "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
@@ -17,7 +17,7 @@
     "Ben C",
     "Ajay M"
   ],
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "repository": "github:uidu-org/guidu",
   "dependencies": {
     "@atlaskit/analytics-next": "^3.0.10",
     "@atlaskit/theme": "^7.0.5",
@@ -43,5 +43,6 @@
     "atlaskit",
     "react",
     "ui"
-  ]
+  ],
+  "gitHead": "f861d9bd3654c44bf5e33c2e5c7df679dddd1196"
 }
