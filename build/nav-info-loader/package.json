@@ -1,6 +1,6 @@
 {
   "name": "@uidu/nav-info-loader",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "main": "index.js",
   "uidu:src": "index.js",
   "repository": "github:uidu-org/guidu",

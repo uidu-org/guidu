@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.33](https://github.com/uidu-org/guidu/compare/@uidu/checkbox@0.1.32...@uidu/checkbox@0.1.33) (2019-02-21)
+
+**Note:** Version bump only for package @uidu/checkbox
+
+
+
+
+
 ## [0.1.32](https://github.com/uidu-org/guidu/compare/@uidu/checkbox@0.1.31...@uidu/checkbox@0.1.32) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/checkbox

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.23](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.22...@uidu/button@0.1.23) (2019-02-21)
+
+**Note:** Version bump only for package @uidu/button
+
+
+
+
+
 ## [0.1.22](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.21...@uidu/button@0.1.22) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/button
