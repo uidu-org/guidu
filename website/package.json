@@ -1,6 +1,6 @@
 {
   "name": "website",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "engines": {
     "node": "^11.0.0",
     "npm": "6.1.0",
@@ -22,10 +22,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@uidu/docs": "^0.1.14",
-    "@uidu/fs-loader": "^0.1.10",
-    "@uidu/nav-info-loader": "^0.1.10",
-    "@uidu/webpack-config": "^0.1.11",
+    "@uidu/docs": "^0.1.15",
+    "@uidu/fs-loader": "^0.1.11",
+    "@uidu/nav-info-loader": "^0.1.11",
+    "@uidu/webpack-config": "^0.1.12",
     "bolt-query": "^1.1.4",
     "extract-react-types-loader": "^0.3.0",
     "netlify-cli": "^2.1.1",
@@ -61,10 +61,10 @@
     "@atlaskit/tag-group": "^6.0.7",
     "@atlaskit/theme": "^7.0.0",
     "@atlaskit/tooltip": "^12.1.4",
-    "@uidu/button": "^0.1.19",
-    "@uidu/checkbox": "^0.1.29",
-    "@uidu/form": "^0.1.15",
-    "@uidu/themes-uidu": "^0.1.20",
+    "@uidu/button": "^0.1.20",
+    "@uidu/checkbox": "^0.1.30",
+    "@uidu/form": "^0.1.16",
+    "@uidu/themes-uidu": "^0.1.21",
     "codesandboxer": "^1.0.1",
     "commonmark": "^0.28.1",
     "commonmark-react-renderer": "^4.3.3",
