@@ -26,7 +26,8 @@
     "website:deploy": "cd website && yarn deploy",
     "start": "yarn run website:start",
     "build": "nps build",
-    "dev": "nps dev"
+    "dev": "nps dev",
+    "changeset": "node ./build/releases/bin/build-releases.js changeset"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.0",
