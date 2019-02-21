@@ -5,7 +5,7 @@ The Avatars represent users that are collaborating within the same application. 
 ## Installation
 
 ```sh
-yarn add @uidu/avatar
+yarn add @atlaskit/avatar
 ```
 
 ## Usage

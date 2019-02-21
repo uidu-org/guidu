@@ -1,11 +1,16 @@
 // @flow
 import React from 'react';
-import { md, Example, Props } from '@uidu/docs';
+import { md, Example, Props, code } from '@atlaskit/docs';
 
 export default md`
-  The \`Presence\` component is the status dot. In most cases, you will not need to use
-  the presence component directly, as passing string values of 'presence' to \`Avatar\` will
-  use the selected presence. Presence is displayed at the bottom right of the avatar.
+
+The \`Presence\` component is the status dot. In most cases, you will not need to use
+the presence component directly, as passing string values of 'presence' to \`Avatar\` will
+use the selected presence. Presence is displayed at the bottom right of the avatar.
+
+## Usage
+
+${code`import { Presence } from '@atlaskit/avatar';`}
 
 ${(
   <Example

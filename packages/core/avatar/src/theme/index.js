@@ -1,6 +1,6 @@
 // @flow
 
-import { colors, gridSize } from '@atlaskit/theme';
+import { colors, createTheme, gridSize } from '@atlaskit/theme';
 import type { AppearanceType, PresenceType, SizeType } from '../types';
 
 type Dimensions = {
@@ -28,6 +28,25 @@ type Sizes = {
   large: number,
   xlarge: number,
   xxlarge: number,
+};
+
+type ThemeMode = 'dark' | 'light';
+
+export type ThemeProps = {
+  appearance?: AppearanceType,
+  includeBorderWidth?: boolean,
+  isLoading?: boolean,
+  presence?: PresenceType,
+  size?: SizeType,
+  mode?: ThemeMode,
+};
+
+export type ThemeTokens = {
+  backgroundColor: string,
+  borderRadius: string,
+  dimensions: Dimensions,
+  presence: Layout,
+  status: Layout,
 };
 
 const gridSizeValue: number = gridSize();
@@ -89,7 +108,7 @@ const SQUARE_ICON_OFFSET: Sizes = {
 
 function getBackgroundColor(props: {
   isLoading: boolean,
-  mode: 'dark' | 'light',
+  mode: ThemeMode,
 }): string {
   const backgroundColors = {
     light: colors.N40,
@@ -111,7 +130,10 @@ function getBorderRadius(props: {
   return borderRadius;
 }
 
-function getDimensions(props: ThemeAvatarProps): Dimensions {
+function getDimensions(props: {
+  includeBorderWidth: boolean,
+  size: SizeType,
+}): Dimensions {
   const borderWidth: number = props.includeBorderWidth
     ? BORDER_WIDTH[props.size] * 2
     : 0;
@@ -121,10 +143,15 @@ function getDimensions(props: ThemeAvatarProps): Dimensions {
   return { height, width };
 }
 
-const getPresenceLayout = ({ appearance, size }: ThemeAvatarProps): Layout => {
+const getPresenceLayout = (props: {
+  appearance: AppearanceType,
+  size: SizeType,
+}): Layout => {
   const presencePosition =
-    appearance === 'square' ? -(BORDER_WIDTH[size] * 2) : ICON_OFFSET[size];
-  const presenceSize = ICON_SIZES[size];
+    props.appearance === 'square'
+      ? -(BORDER_WIDTH[props.size] * 2)
+      : ICON_OFFSET[props.size];
+  const presenceSize = ICON_SIZES[props.size];
 
   return {
     bottom: `${presencePosition}px`,
@@ -134,10 +161,15 @@ const getPresenceLayout = ({ appearance, size }: ThemeAvatarProps): Layout => {
   };
 };
 
-const getStatusLayout = ({ appearance, size }: ThemeAvatarProps): Layout => {
+const getStatusLayout = (props: {
+  appearance: AppearanceType,
+  size: SizeType,
+}): Layout => {
   const statusPosition =
-    appearance === 'square' ? SQUARE_ICON_OFFSET[size] : ICON_OFFSET[size];
-  const statusSize = ICON_SIZES[size];
+    props.appearance === 'square'
+      ? SQUARE_ICON_OFFSET[props.size]
+      : ICON_OFFSET[props.size];
+  const statusSize = ICON_SIZES[props.size];
 
   return {
     height: `${statusSize}px`,
@@ -147,42 +179,22 @@ const getStatusLayout = ({ appearance, size }: ThemeAvatarProps): Layout => {
   };
 };
 
-type ThemeAvatarProps = {
-  appearance: AppearanceType,
-  includeBorderWidth: boolean,
-  isLoading: boolean,
-  presence: PresenceType,
-  size: SizeType,
+const propsDefaults = {
+  appearance: 'circle',
+  includeBorderWidth: false,
+  isLoading: false,
+  mode: 'light',
+  presence: 'offline',
+  size: 'xsmall',
 };
 
-export type ThemeProps = {
-  avatar?: ThemeAvatarProps => {
-    backgroundColor: string,
-    borderRadius: string,
-    dimensions: Dimensions,
-    presence: Layout,
-    status: Layout,
-  },
-  mode?: 'dark' | 'light',
-};
-
-export function theme(parent: ThemeProps): ThemeProps {
-  const mode = parent.mode || 'light';
+export const Theme = createTheme<ThemeTokens, ThemeProps>(props => {
+  const propsWithDefaults = { ...propsDefaults, ...props };
   return {
-    avatar(props) {
-      return {
-        backgroundColor: getBackgroundColor({
-          isLoading: props.isLoading,
-          mode,
-        }),
-        borderRadius: getBorderRadius(props),
-        dimensions: getDimensions(props),
-        presence: getPresenceLayout(props),
-        status: getStatusLayout(props),
-        ...(parent.avatar && parent.avatar(props)),
-      };
-    },
-    mode,
-    ...parent,
+    backgroundColor: getBackgroundColor(propsWithDefaults),
+    borderRadius: getBorderRadius(propsWithDefaults),
+    dimensions: getDimensions(propsWithDefaults),
+    presence: getPresenceLayout(propsWithDefaults),
+    status: getStatusLayout(propsWithDefaults),
   };
-}
+});

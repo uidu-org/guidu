@@ -6,11 +6,11 @@ export { default as Presence } from './components/Presence';
 export { default as Status } from './components/Status';
 export { default as Skeleton } from './components/Skeleton';
 
-export type { ThemeProps } from './theme';
-export { theme } from './theme';
-
-export type { ThemeItemType } from './theme/item';
-export { themeItem } from './theme/item';
+// Theming is currently experimental.
+export type { ThemeProps, ThemeTokens } from './theme';
+export { Theme } from './theme';
+export type { ThemeItemTokens } from './theme/item';
+export { ThemeItem } from './theme/item';
 
 // The below are exposed for use by avatarGroup
 export { AVATAR_SIZES, BORDER_WIDTH } from './styled/constants';

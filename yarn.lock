@@ -69,18 +69,6 @@
     "@babel/runtime" "^7.0.0"
     prop-types "^15.5.10"
 
-"@atlaskit/avatar-group@^2.1.10":
-  version "2.1.12"
-  resolved "https://registry.yarnpkg.com/@atlaskit/avatar-group/-/avatar-group-2.1.12.tgz#c3d061a3a2b4573cfc3c6aa97704c9d00e9db3e7"
-  integrity sha512-p+mjv0R7a6DOWsquCUsdhDdppnvIU1UiLRNc1wLTQeRskU5fkH3PtPBkN9tEt2e2hhWtHSFmVJE02FaZT7JWFg==
-  dependencies:
-    "@atlaskit/avatar" "^14.1.8"
-    "@atlaskit/dropdown-menu" "^6.1.26"
-    "@atlaskit/item" "^8.0.15"
-    "@atlaskit/theme" "^7.0.1"
-    "@atlaskit/tooltip" "^12.1.15"
-    "@babel/runtime" "^7.0.0"
-
 "@atlaskit/avatar@^14.1.8":
   version "14.1.8"
   resolved "https://registry.yarnpkg.com/@atlaskit/avatar/-/avatar-14.1.8.tgz#099dbff92e74c9474046a6ea5bb73e9c7163c2f0"
@@ -177,7 +165,7 @@
     memoize-one "^3.0.1"
     react-syntax-highlighter "^10.0.1"
 
-"@atlaskit/docs@^6.0.0", "@atlaskit/docs@^6.0.2":
+"@atlaskit/docs@^6.0.0", "@atlaskit/docs@^6.0.1", "@atlaskit/docs@^6.0.2":
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/docs/-/docs-6.0.2.tgz#f6147cb42c717276f70caab4d52e82d9624af2a5"
   integrity sha512-8ny+elxCQ9H5nS7gY/I6NKNeGEYXcQjmd2kij5Z7dlKtpf6w6/FyeBDgdjDmmczwZYPLrRB1g8svuMgBg4P9Bg==
@@ -743,7 +731,7 @@
     exenv "^1.2.2"
     prop-types "^15.5.10"
 
-"@atlaskit/toggle@^5.0.10":
+"@atlaskit/toggle@^5.0.10", "@atlaskit/toggle@^5.0.15":
   version "5.0.15"
   resolved "https://registry.yarnpkg.com/@atlaskit/toggle/-/toggle-5.0.15.tgz#0ba098115647261dab03c6417fecabf0e50a0545"
   integrity sha512-MxfChDZ4mWmom+NHAQmr+qYQwYFoiSTcd8H1mvOQz9zSECo9vPBf4xcq9bCMzBxOxVJyYw2hTusiGI5NMXe9JA==
@@ -11483,7 +11471,7 @@ meow@^4.0.0:
     redent "^2.0.0"
     trim-newlines "^2.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:

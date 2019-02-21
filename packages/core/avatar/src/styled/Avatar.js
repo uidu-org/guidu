@@ -3,14 +3,13 @@
 import React from 'react';
 import type { Node } from 'react';
 import styled from 'styled-components';
-import Theme, { withTheme } from '@atlaskit/theme';
-import { theme } from '../theme';
+import { withTheme } from '@atlaskit/theme';
+import { Theme } from '../theme';
 import { getInnerStyles } from './utils';
 
 export default (props: { children: Node, stackIndex: ?number }) => (
-  <Theme.Provider value={theme}>
-    {({ avatar }) => {
-      const { dimensions } = avatar({ ...props, includeBorderWidth: true });
+  <Theme.Consumer {...props} includeBorderWidth>
+    {({ dimensions }) => {
       return (
         <div
           style={{
@@ -25,7 +24,7 @@ export default (props: { children: Node, stackIndex: ?number }) => (
         </div>
       );
     }}
-  </Theme.Provider>
+  </Theme.Consumer>
 );
 
 // TODO this doesn't appear to be used anywhere so we should look at removing.
@@ -34,9 +33,8 @@ export const Inner = withTheme(styled.div`
 `);
 
 export const PresenceWrapper = (props: { children: Node }) => (
-  <Theme.Provider value={theme}>
-    {({ avatar }) => {
-      const { presence } = avatar(props);
+  <Theme.Consumer {...props} includeBorderWidth>
+    {({ presence }) => {
       return (
         <span
           style={{
@@ -49,18 +47,22 @@ export const PresenceWrapper = (props: { children: Node }) => (
         </span>
       );
     }}
-  </Theme.Provider>
+  </Theme.Consumer>
 );
 
 export const StatusWrapper = (props: { children: Node }) => (
-  <Theme.Provider value={theme}>
-    {({ avatar }) => {
-      const { status } = avatar(props);
+  <Theme.Consumer {...props} includeBorderWidth>
+    {({ status }) => {
       return (
-        <span style={{ position: 'absolute', ...status }}>
+        <span
+          style={{
+            position: 'absolute',
+            ...status,
+          }}
+        >
           {props.children}
         </span>
       );
     }}
-  </Theme.Provider>
+  </Theme.Consumer>
 );

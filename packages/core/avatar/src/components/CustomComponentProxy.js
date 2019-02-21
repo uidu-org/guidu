@@ -24,9 +24,7 @@ type CustomComponentProxyPropType = AvatarPropTypes & {
  * component.
  */
 
-export default class CustomComponentProxy extends Component<
-  CustomComponentProxyPropType,
-> {
+export default class CustomComponentProxy extends Component<CustomComponentProxyPropType> {
   render() {
     const {
       appearance,

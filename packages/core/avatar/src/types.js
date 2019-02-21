@@ -1,13 +1,20 @@
 // @flow
 
-import type { Node, ComponentType } from 'react';
 import type { AnalyticsEventInterface } from '@atlaskit/analytics-next';
-import type { ThemeProps } from './theme';
+import type { ThemeProp } from '@atlaskit/theme';
+import type { Node, ComponentType } from 'react';
+import type { ThemeProps, ThemeTokens } from './theme';
 
 export type AppearanceType = 'circle' | 'square';
 export type PresenceType = ('online' | 'busy' | 'focus' | 'offline') | Node;
 
-export type SizeType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+export type SizeType =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge';
 export type SupportedSizeWithAnIcon = 'small' | 'medium' | 'large' | 'xlarge';
 
 export type StatusType = ('approved' | 'declined' | 'locked') | Node;
@@ -71,7 +78,7 @@ export type AvatarPropTypesBase = {
   createAnalyticsEvent?: any,
 
   /** The theme that should be applied to the avatar. */
-  theme?: ThemeProps => ThemeProps,
+  theme?: ThemeProp<ThemeTokens, ThemeProps>,
 };
 
 export type AvatarPropTypes = AvatarPropTypesBase & {

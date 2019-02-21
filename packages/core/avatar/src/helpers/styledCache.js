@@ -7,7 +7,14 @@ import CustomComponentProxy from '../components/CustomComponentProxy';
 // This is necessary because we don't know what DOM element the custom component will render.
 export default (styles: Function) => {
   const StyledCustomComponent = withTheme(
-    styled(CustomComponentProxy)`&,&:hover,&:active,&:focus{${styles}}`,
+    styled(CustomComponentProxy)`
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        ${styles}
+      }
+    `,
   );
   const StyledButton = withTheme(styled.button`
     ${styles};

@@ -1,19 +1,13 @@
 // @flow
 
-export type ThemeItemType = {
-  avatarItem?: () => { backgroundColor?: string },
-  mode?: 'dark' | 'light',
+import { createTheme } from '@atlaskit/theme';
+
+export type ThemeItemTokens = {
+  backgroundColor: string,
 };
 
-export function themeItem(parent: ThemeItemType): ThemeItemType {
+export const ThemeItem = createTheme<ThemeItemTokens, {}>(() => {
   return {
-    avatarItem() {
-      return {
-        backgroundColor: '',
-        ...(parent.avatarItem && parent.avatarItem()),
-      };
-    },
-    mode: parent.mode || 'light',
-    ...parent,
+    backgroundColor: '',
   };
-}
+});

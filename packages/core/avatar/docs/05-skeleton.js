@@ -1,14 +1,20 @@
 // @flow
 import React from 'react';
-import { md, Example, Props } from '@uidu/docs';
+import { md, Example, Props, code } from '@atlaskit/docs';
 
 export default md`
+
+The \`Skeleton\`component is used for loading states.
+
+## Usage
+
+${code`import { Skeleton } from '@atlaskit/avatar';`}
 
 ${(
   <Example
     packageName="@atlaskit/avatar"
     Component={require('../examples/15-skeleton')}
-    title="AvatarGroup"
+    title="Skeleton"
     source={require('!!raw-loader!../examples/15-skeleton')}
   />
 )}
