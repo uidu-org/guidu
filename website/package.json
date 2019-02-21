@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "@uidu/guidu-website",
   "version": "0.1.39",
   "engines": {
     "node": "^11.0.0",
