@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Button component for use in forms",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -25,8 +25,8 @@
     "react-bootstrap": "^1.0.0-beta.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.11",
-    "@uidu/form": "^0.1.12"
+    "@uidu/docs": "^0.1.12",
+    "@uidu/form": "^0.1.13"
   },
   "gitHead": "f861d9bd3654c44bf5e33c2e5c7df679dddd1196"
 }

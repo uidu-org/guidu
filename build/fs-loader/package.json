@@ -1,6 +1,6 @@
 {
   "name": "@uidu/fs-loader",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "main": "index.js",
   "repository": "github:uidu-org/guidu",
   "publishConfig": {
