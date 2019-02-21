@@ -1,6 +1,6 @@
 {
   "name": "@uidu/docs",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Utilities for building documentation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
