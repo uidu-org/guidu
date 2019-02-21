@@ -11,12 +11,12 @@ module.exports = {
         concurrent.nps('build.pkg', 'build.babel.cjs', 'build.babel.esm'),
       ),
       pkg:
-        "lerna exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
+        "bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
       babel: {
         cjs:
-          'NODE_ENV=production BABEL_ENV=production:cjs lerna exec --ignore "@uidu/{themes-*,webpack-config,nav-info-loader,fs-loader,changelog-loader}" -- babel --verbose src -d dist/cjs --root-mode upward',
+          'NODE_ENV=production BABEL_ENV=production:cjs bolt workspaces exec --parallel --ignore "@uidu/{themes-*,webpack-config,nav-info-loader,fs-loader,changelog-loader}" -- babel src -d dist/cjs --root-mode upward',
         esm:
-          'NODE_ENV=production BABEL_ENV=production:esm lerna exec --ignore "@uidu/{themes-*,webpack-config,nav-info-loader,fs-loader,changelog-loader}" -- babel --verbose src -d dist/esm --root-mode upward',
+          'NODE_ENV=production BABEL_ENV=production:esm bolt workspaces exec --parallel --ignore "@uidu/{themes-*,webpack-config,nav-info-loader,fs-loader,changelog-loader}" -- babel src -d dist/esm --root-mode upward',
       },
     },
     flowtypes: {
