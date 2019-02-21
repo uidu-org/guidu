@@ -11,7 +11,7 @@ import CloseIcon from '@atlaskit/icon/glyph/cross';
 import ScreenIcon from '@atlaskit/icon/glyph/screen';
 import LinkIcon from '@atlaskit/icon/glyph/link';
 
-import Button, { ButtonGroup } from '@atlaskit/button';
+import Button from '@uidu/button';
 import { FlagGroup } from '@atlaskit/flag';
 import Tooltip from '@atlaskit/tooltip';
 import Modal, {
@@ -205,7 +205,7 @@ const ModalHeaderComp = ({
   <ModalHeader showKeyline={showKeyline}>
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
-      <ButtonGroup>
+      <div>
         {/* <CodeSandbox
           example={example}
           examples={examples}
@@ -259,7 +259,7 @@ const ModalHeaderComp = ({
             onClick={close}
           />
         </Tooltip>
-      </ButtonGroup>
+      </div>
     </ModalActions>
   </ModalHeader>
 );

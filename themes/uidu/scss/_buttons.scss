@@ -1,0 +1,14 @@
+.btn {
+  opacity: 0.99;
+  position: relative;
+  text-transform: uppercase;
+
+  &.btn-round {
+    border-radius: 40px;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
+}

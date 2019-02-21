@@ -2,7 +2,7 @@
 
 import React, { type Node } from 'react';
 import styled from 'styled-components';
-import { colors, Theme, themed, withTheme } from '@atlaskit/theme';
+import Theme, { colors, themed, withTheme } from '@atlaskit/theme';
 import { theme } from '../theme';
 import type { AppearanceType, SizeType } from '../types';
 
@@ -33,7 +33,7 @@ export const Slot = ({
   label,
   role,
 }: SlotProps) => (
-  <Theme theme={theme}>
+  <Theme.Provider theme={theme}>
     {({ avatar }) => {
       const { backgroundColor, borderRadius } = avatar({
         appearance,
@@ -59,7 +59,7 @@ export const Slot = ({
         />
       );
     }}
-  </Theme>
+  </Theme.Provider>
 );
 
 type SvgProps = {
@@ -76,7 +76,7 @@ export const Svg = ({
   isLoading,
   ...otherProps
 }: SvgProps) => (
-  <Theme theme={theme}>
+  <Theme.Provider theme={theme}>
     {({ avatar }) => {
       const { backgroundColor, borderRadius } = avatar({
         appearance,
@@ -97,5 +97,5 @@ export const Svg = ({
         </svg>
       );
     }}
-  </Theme>
+  </Theme.Provider>
 );

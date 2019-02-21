@@ -8,13 +8,19 @@
   "uidu:src": "src/index.js",
   "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/avatars",
   "sideEffects": false,
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "author": "Atlassian Pty Ltd",
-  "maintainers": ["Raja B", "Ben C", "Ajay M"],
+  "maintainers": [
+    "Raja B",
+    "Ben C",
+    "Ajay M"
+  ],
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "dependencies": {
     "@atlaskit/analytics-next": "^3.0.10",
-    "@atlaskit/theme": "^6.1.1",
+    "@atlaskit/theme": "^7.0.5",
     "@atlaskit/tooltip": "^12.1.4",
     "@babel/runtime": "^7.0.0"
   },
@@ -24,14 +30,18 @@
   },
   "devDependencies": {
     "@atlaskit/build-utils": "^2.0.0",
-    "@atlaskit/button": "^9.0.15",
-    "@atlaskit/docs": "^5.0.8",
+    "@atlaskit/button": "^10.1.0",
+    "@atlaskit/docs": "^6.0.2",
     "@atlaskit/field-base": "^11.0.9",
-    "@atlaskit/icon": "^14.0.2",
+    "@atlaskit/icon": "^16.0.2",
     "@atlaskit/section-message": "^1.0.10",
     "@atlaskit/toggle": "^5.0.10",
-    "enzyme": "https://registry.npmjs.org/@pgleeson/enzyme/-/enzyme-3.3.7.tgz",
+    "enzyme": "^3.9.0",
     "react-dom": "^16.4.2"
   },
-  "keywords": ["atlaskit", "react", "ui"]
+  "keywords": [
+    "atlaskit",
+    "react",
+    "ui"
+  ]
 }

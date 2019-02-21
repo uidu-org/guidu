@@ -1,0 +1,299 @@
+// @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700');
+
+// Variables
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+$black: #000;
+$light: $gray-100;
+$dark: $gray-800;
+
+// Color system
+// groups: #3891a6
+// contacts: #aba9b4
+// events: #f7cd6b
+$primary: #ec8447;
+$calls: #00cfd2;
+$contacts: #8e8e93;
+$donations: #26a69a;
+$events: #fc0;
+$grants: #f7928e;
+$forms: #fe7044;
+$stories: #ef4e6d;
+$memberships: #c5e1a5;
+$tax-returns: #6495ed;
+$conversations: #5ac8fa;
+$tasks: #5ac8fa;
+$teams: rgb(0, 122, 255);
+$templates: #5ac8fa;
+$campaigns: #42a5f5;
+// publics
+$users: #517fa4;
+$organizations: #3891a6;
+// vendors
+$social-dropbox: #0061ff;
+$social-facebook: #3b5998;
+$social-instagram: #e4405f;
+$social-linkedin: #0077b5;
+$social-twitter: #1da1f2;
+$social-whatsapp: #25d366;
+
+$theme-colors: (
+  primary: $primary,
+  calls: $calls,
+  campaigns: $campaigns,
+  contacts: $contacts,
+  conversations: $conversations,
+  donations: $donations,
+  events: $events,
+  forms: $forms,
+  grants: $grants,
+  jobs: $calls,
+  stories: $stories,
+  memberships: $memberships,
+  organizations: $organizations,
+  opportunities: $calls,
+  tasks: $tasks,
+  tax-returns: $tax-returns,
+  teams: $teams,
+  templates: $templates,
+  users: $users,
+  social-facebook: $social-facebook,
+  social-instagram: $social-instagram,
+  social-linkedin: $social-linkedin,
+  social-twitter: $social-twitter,
+  social-whatsapp: $social-whatsapp,
+);
+// Options
+
+$enable-caret: true;
+
+// Spacing
+$spacer: 1rem;
+$sizes: (
+  10: 10%,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  90: 90%,
+  100: 100%,
+);
+
+// Body
+
+// Links
+
+// Paragraphs
+
+// Grid breakpoints
+
+// Grid containers
+// $container-max-widths: (
+//   sm: 100%,
+//   md: 100%,
+//   lg: 100%,
+//   xl: 1200px,
+// );
+
+// Grid columns
+
+$grid-gutter-width: $spacer * 2;
+
+$border-width: 1px !default;
+$border-color: rgb(235, 235, 235);
+
+$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow: 0 0rem 1rem rgba($black, 0.15);
+$box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
+
+// Components
+$border-radius: 0.25rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.15rem;
+
+// Transitions
+$transition-collapse: height 0.55s ease;
+
+// Fonts
+$font-size-base: 1rem;
+$font-size-lg: ($font-size-base * 1.25);
+$font-size-sm: ($font-size-base * 0.875);
+$font-family-sans-serif: 'Avenir', 'Muli', -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family-serif: 'PT Serif', serif;
+
+$line-height-base: 1.5;
+$line-height-lg: $line-height-base;
+$line-height-sm: $line-height-base;
+
+$headings-font-weight: 500;
+$headings-font-family: inherit; // $font-family-serif;
+$small-font-size: 80%;
+
+// Tables
+$table-cell-padding: $spacer $spacer * $line-height-base;
+$table-cell-padding-sm: $spacer;
+$table-hover-bg: $gray-100;
+
+// Buttons
+$input-btn-padding-y: 0.8rem;
+$input-btn-padding-x: $spacer;
+$input-btn-line-height: $line-height-base;
+
+$input-btn-padding-y-sm: 0.375rem;
+$input-btn-padding-x-sm: $spacer;
+$input-btn-line-height-sm: $line-height-sm;
+
+$input-btn-padding-y-lg: $spacer;
+$input-btn-padding-x-lg: $spacer * 1.5;
+$input-btn-line-height-lg: $line-height-lg;
+
+$input-btn-border-width: $border-width;
+
+$btn-font-weight: 600;
+$btn-font-size: 0.8rem;
+$btn-line-height: normal;
+
+// Forms
+$form-group-margin-bottom: $spacer * 1.5;
+$input-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+$custom-file-text: (
+  en: 'Browse',
+) !default;
+
+$form-text-margin-top: 0.5rem;
+
+$input-height-border: $border-width * 2;
+$input-height-inner: ($font-size-sm * $input-btn-line-height) +
+  ($input-btn-padding-y * 2);
+$input-height: calc(#{$input-height-inner} + #{$input-height-border});
+
+$input-height-inner-sm: ($font-size-sm * $input-btn-line-height-sm) +
+  ($input-btn-padding-y-sm * 2);
+$input-height-sm: calc(#{$input-height-inner-sm} + #{$input-height-border});
+
+$input-height-inner-lg: ($font-size-sm * $input-btn-line-height-lg) +
+  ($input-btn-padding-y-lg * 2);
+$input-height-lg: calc(#{$input-height-inner-lg} + #{$input-height-border});
+
+// Form validation
+
+// Dropdowns
+$dropdown-item-padding-y: 0.5rem;
+
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+$zindex-dropdown: 1020;
+$zindex-navbar: 1010;
+$zindex-sticky: 1000;
+
+// Navs
+$nav-link-padding-y: 0.75rem;
+$nav-tabs-border-color: $gray-200;
+$nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color;
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-active-border-color: $gray-200 $gray-200 $nav-tabs-link-active-bg;
+
+// Navbar
+$navbar-padding-y: $spacer;
+$navbar-brand-font-size: $font-size-base;
+$navbar-toggler-padding-x: 0;
+
+$navbar-dark-toggler-border-color: transparent;
+$navbar-light-toggler-border-color: transparent;
+
+// Pagination
+
+// Jumbotron
+
+// Cards
+$card-spacer-y: 1rem;
+$card-spacer-x: 1.5rem;
+$card-cap-bg: $white;
+
+// Tooltips
+
+// Popovers
+
+// Badges
+$badge-padding-y: 0.5rem;
+
+// Modals
+$modal-inner-padding: $spacer * 1.5;
+$modal-header-padding: $modal-inner-padding;
+$modal-content-border-width: 0;
+$modal-header-border-width: 1px;
+$modal-backdrop-bg: rgba(45, 62, 80, 0.79);
+$modal-backdrop-opacity: 1;
+
+// Tooltips
+$tooltip-bg: $dark;
+$tooltip-opacity: 0.8;
+$tooltip-font-size: 0.8rem;
+$tooltip-border-radius: $border-radius-sm;
+$tooltip-margin: 0.25rem;
+$tooltip-arrow-width: 0.6rem;
+$tooltip-arrow-height: 0.3rem;
+$tooltip-padding-y: 0.2rem;
+$tooltip-padding-x: 0.35rem;
+
+// Alerts
+
+// Progress bars
+
+// List group
+$dt-font-weight: 500;
+$list-group-border-color: $gray-100;
+
+$list-group-hover-bg: $gray-100;
+$list-group-active-bg: $gray-100;
+$list-group-active-border-color: $border-color;
+
+$list-group-item-padding-y: $spacer;
+// $list-group-item-padding-x: $spacer * 1.5;
+
+// Image thumbnails
+
+// Figures
+
+// Breadcrumbs
+
+// Carousel
+
+// Close
+
+// Code
+
+// Exports
+:export {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  themecolors: {
+    calls: $calls;
+    campaigns: $campaigns;
+    contacts: $contacts;
+    conversations: $conversations;
+    primary: $primary;
+    donations: $donations;
+    events: $events;
+    grants: $grants;
+    forms: $forms;
+    stories: $stories;
+    memberships: $memberships;
+    tasks: $tasks;
+    tax-returns: $tax-returns;
+    teams: $teams;
+    templates: $templates;
+  }
+}

@@ -1,7 +1,7 @@
 // @flow
 
 import React, { PureComponent } from 'react';
-import { Theme } from '@atlaskit/theme';
+import Theme from '@atlaskit/theme';
 import { Slot, ShapeGroup, Svg } from '../styled/AvatarImage';
 import { theme } from '../theme';
 import type { AppearanceType, SizeType } from '../types';
@@ -20,7 +20,7 @@ export function DefaultImage({
   const rectBounds = 128;
 
   return (
-    <Theme theme={theme}>
+    <Theme.Provider value={theme}>
       {({ mode }) => {
         return (
           <Svg
@@ -54,7 +54,7 @@ export function DefaultImage({
           </Svg>
         );
       }}
-    </Theme>
+    </Theme.Provider>
   );
 }
 

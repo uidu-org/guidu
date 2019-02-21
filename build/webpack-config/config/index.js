@@ -3,7 +3,7 @@ const os = require('os');
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
@@ -59,6 +59,8 @@ module.exports = function createWebpackConfig(
     websiteDir = process.cwd(), // if not passed in, we must be in the websiteDir already
     noMinimize = false,
     report = false,
+    entry,
+    output,
   } /*: {
     globs?: Array<string>,
     websiteDir?: string,
@@ -66,6 +68,8 @@ module.exports = function createWebpackConfig(
     websiteEnv: string,
     noMinimize?: boolean,
     report?: boolean,
+    entry?: any,
+    output?: any
   }*/,
 ) {
   const isProduction = mode === 'production';
@@ -120,6 +124,7 @@ module.exports = function createWebpackConfig(
               'version',
               'description',
               'atlaskit',
+              'uidu',
               'maintainers',
               'peerDependencies',
               'devDependencies',
@@ -148,7 +153,6 @@ module.exports = function createWebpackConfig(
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
-            // babelrc: true,
             configFile: '../babel.config.js',
             rootMode: 'upward',
             envName: 'production:cjs',
@@ -156,7 +160,7 @@ module.exports = function createWebpackConfig(
         },
         {
           test: /\.(ts|tsx)?$/,
-          // exclude: /node_modules/,
+          exclude: /node_modules/,
           loader: require.resolve('ts-loader'),
           options: {
             transpileOnly: true,
@@ -247,7 +251,7 @@ module.exports = function createWebpackConfig(
       ],
     },
     resolve: {
-      mainFields: ['uidu:src', 'atlaskit:src', 'browser', 'main'],
+      mainFields: ['module', 'uidu:src', 'atlaskit:src', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
     },
     resolveLoader: {
@@ -280,7 +284,7 @@ function getPlugins(
     websiteDir,
     `public/favicon${!isProduction ? '-dev' : ''}.ico`,
   );
-  const HTMLPageTitle = `Atlaskit by Atlassian${!isProduction ? ' - DEV' : ''}`;
+  const HTMLPageTitle = `GUIdu by uidu${!isProduction ? ' - DEV' : ''}`;
   const plugins = [
     new HtmlWebpackPlugin({
       template: path.join(websiteDir, 'public/index.html.ejs'),
@@ -299,8 +303,8 @@ function getPlugins(
 
     new webpack.DefinePlugin({
       WEBSITE_ENV: `"${websiteEnv}"`,
-      BASE_TITLE: `"Guidù by uidu ${!isProduction ? '- DEV' : ''}"`,
-      DEFAULT_META_DESCRIPTION: `"Guidù is the official component library for uidu's Design System."`,
+      BASE_TITLE: `"GUIdu by uidu ${!isProduction ? '- DEV' : ''}"`,
+      DEFAULT_META_DESCRIPTION: `"GUIdu is the official component library for uidu's Design System."`,
     }),
   ];
 
@@ -336,9 +340,9 @@ function getOptimizations({ isProduction, noMinimizeFlag }) {
     // If we are in development, use all of webpack's default optimizations ("do nothing")
     return undefined;
   }
-  const uglifyPlugin = new UglifyJsPlugin({
+  const terserPlugin = new TerserPlugin({
     parallel: Math.max(os.cpus().length - 1, 1),
-    uglifyOptions: {
+    terserOptions: {
       compress: {
         // Disabling following options speeds up minimization by 20 – 30s
         // without any significant impact on a bundle size.
@@ -384,7 +388,7 @@ function getOptimizations({ isProduction, noMinimizeFlag }) {
   return {
     // There's an interesting bug in webpack where passing *any* uglify plugin, where `minimize` is
     // false, causes webpack to use its own minimizer plugin + settings.
-    minimizer: noMinimizeFlag ? undefined : [uglifyPlugin],
+    minimizer: noMinimizeFlag ? undefined : [terserPlugin],
     minimize: noMinimizeFlag ? false : true,
     splitChunks: {
       // "Maximum number of parallel requests when on-demand loading. (default in production: 5)"

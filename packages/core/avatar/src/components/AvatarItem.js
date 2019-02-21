@@ -1,6 +1,6 @@
 // @flow
 
-import { Theme } from '@atlaskit/theme';
+import Theme from '@atlaskit/theme';
 import React, {
   cloneElement,
   Component,
@@ -100,7 +100,7 @@ class AvatarItem extends Component<Props> {
     const StyledComponent: any = getStyledAvatarItem(this.props);
 
     return (
-      <Theme theme={this.props.theme}>
+      <Theme.Provider theme={this.props.theme}>
         {({ avatarItem, mode }) => {
           const { backgroundColor } = avatarItem();
 
@@ -129,7 +129,7 @@ class AvatarItem extends Component<Props> {
             </StyledComponent>
           );
         }}
-      </Theme>
+      </Theme.Provider>
     );
   }
 }

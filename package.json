@@ -47,9 +47,9 @@
     "@babel/runtime": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.0",
-    "babel-jest": "23.6.0",
+    "babel-jest": "24.1.0",
     "babel-loader": "^8.0.4",
-    "babel-plugin-named-asset-import": "^0.2.3",
+    "babel-plugin-named-asset-import": "^0.3.0",
     "babel-plugin-styled-components": "^1.8.0",
     "babel-plugin-transform-dynamic-import": "^2.1.0",
     "bundlesize": "^0.17.0",
@@ -64,9 +64,9 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.4.0",
     "faker": "^4.1.0",
-    "flow-bin": "^0.86.0",
+    "flow-bin": "^0.93.0",
     "fs-extra": "^7.0.0",
-    "jest": "23.6.0",
+    "jest": "24.1.0",
     "lerna": "^3.4.0",
     "less": "^3.8.1",
     "node-sass": "^4.5.3",
@@ -88,6 +88,6 @@
     "popper.js": "^1.14.4",
     "react": "^15.6.1 || ^16.2.0",
     "react-dom": "^15.6.1 || ^16.2.0",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^7.1.0"
   }
 }

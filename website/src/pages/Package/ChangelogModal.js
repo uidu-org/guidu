@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 
 import CloseIcon from '@atlaskit/icon/glyph/cross';
 
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { gridSize, math } from '@atlaskit/theme';
 import { FieldTextStateless as Input } from '@atlaskit/field-text';
 import Modal, { ModalHeader as OgModalHeader } from '@atlaskit/modal-dialog';

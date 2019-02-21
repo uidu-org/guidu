@@ -5,7 +5,7 @@ import { Link } from '../components/WrappedLink';
 
 import BackIcon from '@atlaskit/icon/glyph/arrow-left';
 import TextField from '@atlaskit/field-text';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Loadable from '../components/WrappedLoader';
 
 import Changelog, { NoMatch } from '../components/ChangeLog';

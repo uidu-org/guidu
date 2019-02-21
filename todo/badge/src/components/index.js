@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Theme } from '@atlaskit/theme';
+import Theme from '@atlaskit/theme';
 import { Container } from './Container';
 import { Format } from './Format';
 import { theme, type ThemeAppearance, type ThemeProps } from '../theme';
