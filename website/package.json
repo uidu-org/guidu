@@ -93,5 +93,6 @@
     "snake-case": "^2.1.0",
     "styled-components": "^4.0.3",
     "uuid": "^3.1.0"
-  }
+  },
+  "gitHead": "4a4f9dd77c2c9ef718cdd3a02705678fe674fbfb"
 }
