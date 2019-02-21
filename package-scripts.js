@@ -7,7 +7,11 @@ module.exports = {
     dev: concurrent.nps('build.babel.esm --watch'),
     build: {
       description: 'clean dist directory and run all builds',
-      default: series(concurrent.nps('build.babel.cjs', 'build.babel.esm')),
+      default: series(
+        concurrent.nps('build.pkg', 'build.babel.cjs', 'build.babel.esm'),
+      ),
+      pkg:
+        "lerna exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
       babel: {
         cjs:
           'NODE_ENV=production BABEL_ENV=production:cjs lerna exec --ignore "@uidu/{themes-*,webpack-config,nav-info-loader,fs-loader,changelog-loader}" -- babel --verbose src -d dist/cjs --root-mode upward',

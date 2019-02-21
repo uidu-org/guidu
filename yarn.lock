@@ -833,7 +833,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@^7.0.0-beta.44", "@babel/core@^7.0.0-beta.56", "@babel/core@^7.1.0":
+"@babel/core@^7.0.0-beta.56", "@babel/core@^7.1.0":
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.3.3.tgz#d090d157b7c5060d05a05acaebc048bd2b037947"
   integrity sha512-w445QGI2qd0E0GlSnq6huRZWPMmQGCp5gd5ZWS4hagn0EiwzxD5QMFkpchyusAyVC1n27OKXzQ0/88aVU9n4xQ==
@@ -1323,14 +1323,6 @@
     "@babel/helper-builder-binary-assignment-operator-visitor" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/plugin-transform-flow-comments@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-comments/-/plugin-transform-flow-comments-7.2.0.tgz#472773f66c7c3994ad5e0f99850054a7500e2c68"
-  integrity sha512-o0EyefxfyCn9GhwvXMPP6P/DKmcHDwJ5UcUussaLUDSuPOU78YOUU76u/QIucOv/1wtMdLmepWZeYvnyoOSuyw==
-  dependencies:
-    "@babel/helper-plugin-utils" "^7.0.0"
-    "@babel/plugin-syntax-flow" "^7.2.0"
-
 "@babel/plugin-transform-flow-strip-types@^7.0.0":
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-flow-strip-types/-/plugin-transform-flow-strip-types-7.2.3.tgz#e3ac2a594948454e7431c7db33e1d02d51b5cd69"
@@ -1674,7 +1666,7 @@
     globals "^11.1.0"
     lodash "^4.17.10"
 
-"@babel/traverse@^7.0.0", "@babel/traverse@^7.0.0-beta.44", "@babel/traverse@^7.1.0", "@babel/traverse@^7.1.5", "@babel/traverse@^7.2.2", "@babel/traverse@^7.2.3":
+"@babel/traverse@^7.0.0", "@babel/traverse@^7.1.0", "@babel/traverse@^7.1.5", "@babel/traverse@^7.2.2", "@babel/traverse@^7.2.3":
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.2.3.tgz#7ff50cefa9c7c0bd2d81231fdac122f3957748d8"
   integrity sha512-Z31oUD/fJvEWVR0lNZtfgvVt512ForCTNKYcJBGbPb1QZfve4WGH8Wsy7+Mev33/45fhP/hwQtvgusNdcCMgSw==
@@ -1698,7 +1690,7 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@babel/types@^7.0.0", "@babel/types@^7.0.0-beta.44", "@babel/types@^7.0.0-beta.49", "@babel/types@^7.0.0-beta.56", "@babel/types@^7.2.0", "@babel/types@^7.2.2", "@babel/types@^7.3.0", "@babel/types@^7.3.3":
+"@babel/types@^7.0.0", "@babel/types@^7.0.0-beta.49", "@babel/types@^7.0.0-beta.56", "@babel/types@^7.2.0", "@babel/types@^7.2.2", "@babel/types@^7.3.0", "@babel/types@^7.3.3":
   version "7.3.3"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.3.3.tgz#6c44d1cdac2a7625b624216657d5bc6c107ab436"
   integrity sha512-2tACZ80Wg09UnPg5uGAOUvvInaqLk3l/IAhQzlxLQOIXacr6bMsra5SH6AWw/hIDRCSbCdHP2KzSOD+cT7TzMQ==
@@ -3741,15 +3733,6 @@ babel-plugin-emotion@^9.2.11:
     source-map "^0.5.7"
     touch "^2.0.1"
 
-babel-plugin-flow-to-typescript@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-flow-to-typescript/-/babel-plugin-flow-to-typescript-0.3.0.tgz#b0351daa626069a9cf0c2aa7002774b97d3958db"
-  integrity sha512-yiaElRc5ZL7cCh9FH3/8i6YhGWj4LTNYv5mg7jXjJSW4A2fg2AGhrOVgN2PYga5VcWCxgfKVIeoKf2HYWgh1LA==
-  dependencies:
-    "@babel/core" "^7.0.0-beta.44"
-    "@babel/traverse" "^7.0.0-beta.44"
-    "@babel/types" "^7.0.0-beta.44"
-
 babel-plugin-import@^1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-import/-/babel-plugin-import-1.11.0.tgz#78ac908e6b225206babb734e19eae5f78d6d1035"
@@ -5524,6 +5507,15 @@ copy-descriptor@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/copy-descriptor/-/copy-descriptor-0.1.1.tgz#676f6eb3c39997c2ee1ac3a924fd6124748f578d"
   integrity sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
+
+copy-pkg@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/copy-pkg/-/copy-pkg-1.0.0.tgz#5cacd76014c817f771458aea58c71aee0c0b7535"
+  integrity sha1-XKzXYBTIF/dxRYrqWMca7gwLdTU=
+  dependencies:
+    meow "^3.7.0"
+    read-pkg "^2.0.0"
+    write-pkg "^3.1.0"
 
 core-js@^1.0.0:
   version "1.2.7"
