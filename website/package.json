@@ -15,6 +15,9 @@
     "predeploy": "yarn build",
     "deploy": "netlify deploy --dir dist/ --prod"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
