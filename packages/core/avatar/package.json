@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A component that represents a user",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
