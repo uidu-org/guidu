@@ -1,7 +1,6 @@
 {
   "name": "website",
   "version": "0.1.33",
-  // "private": true,
   "engines": {
     "node": "^11.0.0",
     "npm": "6.1.0",
