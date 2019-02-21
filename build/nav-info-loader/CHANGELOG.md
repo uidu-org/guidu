@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.10](https://github.com/uidu-org/guidu/compare/@uidu/nav-info-loader@0.1.9...@uidu/nav-info-loader@0.1.10) (2019-02-21)
+
+**Note:** Version bump only for package @uidu/nav-info-loader
+
+
+
+
+
 ## [0.1.9](https://github.com/uidu-org/guidu/compare/@uidu/nav-info-loader@0.1.8...@uidu/nav-info-loader@0.1.9) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/nav-info-loader

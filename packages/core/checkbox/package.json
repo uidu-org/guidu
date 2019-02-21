@@ -1,6 +1,6 @@
 {
   "name": "@uidu/checkbox",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Checkbox component for use in forms",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,12 +15,12 @@
   "author": "uidu",
   "license": "ISC",
   "dependencies": {
-    "@uidu/field-base": "^0.1.16",
+    "@uidu/field-base": "^0.1.17",
     "classnames": "^2.2.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.13",
-    "@uidu/form": "^0.1.14",
+    "@uidu/docs": "^0.1.14",
+    "@uidu/form": "^0.1.15",
     "standard-changelog": "^2.0.6"
   },
   "gitHead": "4a4f9dd77c2c9ef718cdd3a02705678fe674fbfb"
