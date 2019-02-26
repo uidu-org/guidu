@@ -1,0 +1,38 @@
+{
+  "name": "@uidu/code",
+  "version": "0.1.0",
+  "config": {
+    "access": "public"
+  },
+  "description": "Renders inline code snippets and code blocks",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "dependencies": {
+    "@uidu/theme": "^0.1.0",
+    "@babel/runtime": "^7.0.0",
+    "memoize-one": "^3.0.1",
+    "react-syntax-highlighter": "^10.0.1"
+  },
+  "devDependencies": {
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "enzyme": "^3.7.0",
+    "react-dom": "^16.4.2"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  }
+}

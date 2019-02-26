@@ -5,15 +5,15 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "repository": "github:uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "dist"
   ],
   "author": "uidu",
   "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@uidu/field-base": "^0.1.21",
     "classnames": "^2.2.5"

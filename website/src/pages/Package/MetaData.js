@@ -2,7 +2,7 @@
 
 import React, { Component, type Node } from 'react';
 import styled from 'styled-components';
-import { colors, gridSize, math } from '@atlaskit/theme';
+import { colors, gridSize, math } from '@uidu/theme';
 
 import LatestChangelog from './LatestChangelog';
 

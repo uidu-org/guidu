@@ -1,0 +1,63 @@
+{
+  "name": "@atlaskit/modal-dialog",
+  "version": "7.2.3",
+  "description": "A React component that displays content in a layer blocking the interaction with the page.",
+  "license": "Apache-2.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "atlaskit:src": "src/index.js",
+  "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/modal-dialog",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Trey S",
+    "Alex R",
+    "Peter G"
+  ],
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "dependencies": {
+    "@atlaskit/analytics-next": "^3.1.2",
+    "@atlaskit/blanket": "^7.0.12",
+    "@atlaskit/button": "^10.1.2",
+    "@atlaskit/form": "^5.1.5",
+    "@atlaskit/icon": "^16.0.0",
+    "@atlaskit/portal": "^0.1.0",
+    "@atlaskit/textfield": "^0.1.5",
+    "@atlaskit/theme": "^7.0.1",
+    "@babel/runtime": "^7.0.0",
+    "exenv": "^1.2.2",
+    "prop-types": "^15.5.10",
+    "raf-schd": "^2.1.0",
+    "react-focus-lock": "^1.11.3",
+    "react-scrolllock": "^3.0.2",
+    "react-transition-group": "^2.2.1",
+    "tiny-invariant": "^0.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "styled-components": "^3.2.6"
+  },
+  "devDependencies": {
+    "@atlaskit/avatar": "^14.1.8",
+    "@atlaskit/build-utils": "^2.0.0",
+    "@atlaskit/checkbox": "^5.0.11",
+    "@atlaskit/docs": "^6.0.1",
+    "@atlaskit/field-radio-group": "^4.0.15",
+    "@atlaskit/field-text": "^7.0.18",
+    "@atlaskit/inline-dialog": "^9.0.15",
+    "@atlaskit/select": "^7.0.0",
+    "@atlaskit/visual-regression": "^0.0.1",
+    "enzyme": "^3.7.0",
+    "react-beautiful-dnd": "^10.0.2",
+    "react-dom": "^16.4.2",
+    "react-lorem-component": "^0.12.2"
+  },
+  "keywords": [
+    "atlaskit",
+    "react",
+    "ui"
+  ]
+}

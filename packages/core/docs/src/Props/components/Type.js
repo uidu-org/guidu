@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { borderRadius, colors, themed } from '@atlaskit/theme';
+import { borderRadius, colors, themed } from '@uidu/theme';
 
 const Type = styled.span`
   background-color: ${themed({ light: colors.P50, dark: colors.P500 })};

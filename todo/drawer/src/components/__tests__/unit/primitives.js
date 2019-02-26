@@ -1,10 +1,11 @@
 // @flow
 
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import ArrowLeft from '@atlaskit/icon/glyph/arrow-left';
 
 import DrawerPrimitive from '../../primitives';
+import { Slide } from '../../transitions';
 
 const DrawerContent = () => <code>Drawer contents</code>;
 
@@ -84,5 +85,51 @@ describe('Drawer primitive', () => {
       </DrawerPrimitive>,
     );
     expect(wrapper.find(DrawerPrimitive).props().width).toBe('medium');
+  });
+
+  it('should call onClose when the icon is clicked', () => {
+    const onClose = jest.fn();
+    const props = { ...commonProps, onClose };
+    const wrapper = shallow(
+      <DrawerPrimitive {...props}>
+        <DrawerContent />
+      </DrawerPrimitive>,
+    );
+
+    const event = { target: 'button' };
+    const callsBeforeIconClick = [].concat(onClose.mock.calls);
+    wrapper.find('IconWrapper').prop('onClick')(event);
+    const callsAfterIconClick = onClose.mock.calls;
+
+    expect({ callsBeforeIconClick, callsAfterIconClick }).toEqual({
+      callsBeforeIconClick: [],
+      callsAfterIconClick: [[event]],
+    });
+  });
+
+  it('should call onCloseComplete when the Slide has exited', () => {
+    const onCloseComplete = jest.fn();
+    const props = { ...commonProps, in: true, onCloseComplete };
+    const wrapper = shallow(
+      <DrawerPrimitive {...props}>
+        <DrawerContent />
+      </DrawerPrimitive>,
+    );
+
+    const node = 'div';
+    const callsBeforeExited = [].concat(onCloseComplete.mock.calls);
+    wrapper
+      .find(Slide)
+      .props()
+      .onExited(node);
+    const callsAfterExited = onCloseComplete.mock.calls;
+
+    expect({
+      callsBeforeExited,
+      callsAfterExited,
+    }).toEqual({
+      callsBeforeExited: [],
+      callsAfterExited: [[node]],
+    });
   });
 });

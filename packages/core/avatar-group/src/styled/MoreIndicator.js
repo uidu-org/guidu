@@ -1,12 +1,8 @@
 // @flow
 
 import styled from 'styled-components';
-import { colors, themed, withTheme } from '@atlaskit/theme';
-import {
-  getBorderRadius,
-  getInnerStyles,
-  BORDER_WIDTH,
-} from '@atlaskit/avatar';
+import { colors, themed, withTheme } from '@uidu/theme';
+import { getBorderRadius, getInnerStyles, BORDER_WIDTH } from '@uidu/avatar';
 
 const EXCESS_INDICATOR_FONT_SIZE: {
   small: number,

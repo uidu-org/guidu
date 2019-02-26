@@ -4,7 +4,7 @@ import React, { Children, Component, type Node } from 'react';
 import ReactMarkdown from 'react-markdown';
 import semver from 'semver';
 import styled, { css } from 'styled-components';
-import { math, gridSize, colors, borderRadius } from '@atlaskit/theme';
+import { math, gridSize, colors, borderRadius } from '@uidu/theme';
 
 const gutter = math.multiply(gridSize, 3);
 
@@ -109,7 +109,7 @@ export default class ChangeLog extends Component<Props> {
             // In case of blank / empty changelogs, the default commit points to mk-2
             const href = `https://bitbucket.org/atlassian/${
               v.repository
-            }/commits/tag/%40atlaskit%2F${packageName}%40${v.version}`;
+            }/commits/tag/%40uidu%2F${packageName}%40${v.version}`;
 
             console.log(v.md);
             return (

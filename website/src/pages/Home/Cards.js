@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { Link } from '../../components/WrappedLink';
-import { gridSize, colors, math } from '@atlaskit/theme';
+import { gridSize, colors, math } from '@uidu/theme';
 import debounce from 'lodash.debounce';
 
 import { AtlassianIcon } from '@atlaskit/logo';
@@ -229,12 +229,12 @@ const cards = [
       'Learn how to contribute code, report issues, and review our code of conduct.',
   },
   {
-    href: 'https://bitbucket.org/atlassian/atlaskit-mk-2',
-    title: 'Atlaskit Repository',
+    href: 'https://github.com/uidu-org/guidu',
+    title: 'Guidu Repository',
     icon: () => (
       <CardIcon color={colors.Y400}>
         <CodeIcon
-          label="Atlaskit Repository"
+          label="Guidu Repository"
           primaryColor={colors.N0}
           secondaryColor={colors.Y400}
           size="small"

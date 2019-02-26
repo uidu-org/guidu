@@ -1,7 +1,7 @@
 // @flow
 import React, { type Node } from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Tooltip from '@atlaskit/tooltip';
+import Tooltip from '@uidu/tooltip';
 import Avatar from '../../Avatar';
 import AvatarImage from '../../AvatarImage';
 import Presence from '../../Presence';

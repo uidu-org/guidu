@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import { gridSize } from '@atlaskit/theme';
+import { gridSize } from '@uidu/theme';
 import { Presence } from '../src';
 
 const Container = styled.div`

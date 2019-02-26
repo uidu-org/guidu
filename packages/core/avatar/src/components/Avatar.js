@@ -6,8 +6,8 @@ import {
   withAnalyticsEvents,
   withAnalyticsContext,
   createAndFireEvent,
-} from '@atlaskit/analytics-next';
-import Tooltip from '@atlaskit/tooltip';
+} from '@uidu/analytics';
+import Tooltip from '@uidu/tooltip';
 import {
   name as packageName,
   version as packageVersion,
@@ -38,7 +38,7 @@ class Avatar extends Component<AvatarPropTypes> {
     size: 'medium',
   };
 
-  createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+  createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
   clickAnalyticsCaller = () => {
     const { createAnalyticsEvent } = this.props;

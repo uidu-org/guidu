@@ -1,0 +1,38 @@
+{
+  "name": "@uidu/section-message",
+  "version": "0.1.0",
+  "description": "A react component used to alert users of a particular screen area that needs user action",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@uidu/button": "^0.1.0",
+    "@uidu/theme": "^0.1.0",
+    "@babel/runtime": "^7.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/field-range": "^0.1.0",
+    "enzyme": "^3.7.0",
+    "enzyme-to-json": "^3.3.0",
+    "exenv": "^1.2.2",
+    "jest-in-case": "^1.0.2",
+    "react-dom": "^16.4.2",
+    "react-test-renderer": "^16.3.0"
+  }
+}

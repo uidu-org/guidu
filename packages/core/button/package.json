@@ -5,21 +5,15 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "repository": "github:uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "dist"
   ],
-  "author": "",
+  "author": "uidu",
   "license": "ISC",
-  "bundlesize": [
-    {
-      "path": "./dist/umd/*.js",
-      "maxSize": "300 kB"
-    }
-  ],
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "react-bootstrap": "^1.0.0-beta.3"

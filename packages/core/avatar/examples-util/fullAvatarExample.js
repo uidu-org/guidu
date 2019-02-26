@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { gridSize } from '@atlaskit/theme';
+import { gridSize } from '@uidu/theme';
 import Avatar from '../src';
 import { Block, Code, Note } from '../examples-util/helpers';
 import type { AppearanceType } from '../src/types';

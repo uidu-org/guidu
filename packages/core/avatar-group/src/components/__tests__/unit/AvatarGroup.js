@@ -2,7 +2,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import Avatar from '@atlaskit/avatar';
+import Avatar from '@uidu/avatar';
 import { DropdownItem } from '@atlaskit/dropdown-menu';
 import AvatarGroup from '../../AvatarGroup';
 import MoreIndicator from '../../MoreIndicator';

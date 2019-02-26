@@ -2,13 +2,13 @@
 import React, { Component } from 'react';
 import CodeSandboxer from 'react-codesandboxer';
 import { replaceImports } from 'codesandboxer';
-import { replaceSrc } from '@atlaskit/docs';
+import { replaceSrc } from '@uidu/docs';
 
 const getExampleUrl = (groupId, packageId, exampleId) =>
-  `https://bitbucket.org/atlassian/atlaskit-mk-2/raw/HEAD/packages/${groupId}/${packageId}/examples/${exampleId}`;
+  `https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${packageId}/examples/${exampleId}`;
 const getExamplePath = (groupId, packageId, exampleId) =>
   `packages/${groupId}/${packageId}/examples/${exampleId}`;
-const repoUrl = 'https://bitbucket.org/atlassian/atlaskit-mk-2';
+const repoUrl = 'https://github.com/uidu-org/guidu';
 
 const baseFiles = (groupId, packageId, exampleId) => ({
   'index.js': {

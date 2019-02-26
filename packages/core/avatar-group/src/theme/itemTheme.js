@@ -1,6 +1,6 @@
 // @flow
 import { itemThemeNamespace } from '@atlaskit/item';
-import { gridSize, math, colors } from '@atlaskit/theme';
+import { gridSize, math, colors } from '@uidu/theme';
 
 const dropdownPadding = {
   bottom: 1,

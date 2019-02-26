@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { Link } from '../components/WrappedLink';
 
 import BackIcon from '@atlaskit/icon/glyph/arrow-left';
-import TextField from '@atlaskit/field-text';
+import TextField from '@uidu/field-text';
 import Button from '@uidu/button';
 import Loadable from '../components/WrappedLoader';
 

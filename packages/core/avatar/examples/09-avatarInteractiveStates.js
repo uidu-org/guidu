@@ -56,7 +56,7 @@ export default () => (
       }
     >
       <Avatar
-        href="http://atlaskit.atlassian.com"
+        href="https://guidu.netlify.com"
         src={avatarUrl}
         size={avatarSize}
         target="_blank"

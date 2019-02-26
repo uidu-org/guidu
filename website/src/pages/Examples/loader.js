@@ -2,7 +2,7 @@
 import React, { Component, type ComponentType } from 'react';
 import { isValidElementType } from 'react-is';
 import styled from 'styled-components';
-import { colors, gridSize } from '@atlaskit/theme';
+import { colors, gridSize } from '@uidu/theme';
 import Loadable from '../../components/WrappedLoader';
 import qs from 'query-string';
 

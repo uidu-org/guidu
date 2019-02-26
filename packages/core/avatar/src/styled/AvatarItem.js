@@ -8,7 +8,7 @@ import {
   math,
   themed,
   withTheme,
-} from '@atlaskit/theme';
+} from '@uidu/theme';
 import type { AvatarClickType } from '../types';
 
 const focusBorderColor = themed({ light: colors.B200, dark: colors.B75 });

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { md, Example, Props, code } from '@atlaskit/docs';
+import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -10,11 +10,11 @@ of using this component directly.
 
 ## Usage
 
-${code`import { Status } from '@atlaskit/avatar';`}
+${code`import { Status } from '@uidu/avatar';`}
 
 ${(
   <Example
-    packageName="@atlaskit/avatar"
+    packageName="@uidu/avatar"
     Component={require('../examples/05-basicStatus')}
     title="Status"
     source={require('!!raw-loader!../examples/05-basicStatus')}

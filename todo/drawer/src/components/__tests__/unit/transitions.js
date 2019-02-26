@@ -16,7 +16,8 @@ describe('Drawer Transitions', () => {
       const { defaultStyles } = wrapper.find('TransitionHandler').props();
 
       expect(defaultStyles).toMatchObject({
-        transition: 'transform 220ms cubic-bezier(0.2, 0, 0, 1)',
+        transition:
+          'transform 220ms cubic-bezier(0.2, 0, 0, 1), width 220ms cubic-bezier(0.2, 0, 0, 1)',
         transform: 'translate3d(-100%,0,0)',
       });
     });
@@ -45,6 +46,13 @@ describe('Drawer Transitions', () => {
       const { unmountOnExit } = mount(<Slide in shouldUnmountOnExit={false} />);
 
       expect(unmountOnExit).toBeFalsy();
+    });
+
+    it('should pass onExited to the Transition', () => {
+      const onExited = jest.fn();
+      const slide = mount(<Slide in onExited={onExited} />);
+
+      expect(slide.find('Transition').props()).toMatchObject({ onExited });
     });
   });
 
@@ -83,6 +91,13 @@ describe('Drawer Transitions', () => {
       const { unmountOnExit } = wrapper.find('Transition').props();
 
       expect(unmountOnExit).toBeTruthy();
+    });
+
+    it('should pass onExited to the Transition', () => {
+      const onExited = jest.fn();
+      const fade = mount(<Fade in onExited={onExited} />);
+
+      expect(fade.find('Transition').props()).toMatchObject({ onExited });
     });
   });
 });

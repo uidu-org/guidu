@@ -13,13 +13,13 @@ import LinkIcon from '@atlaskit/icon/glyph/link';
 
 import Button from '@uidu/button';
 import { FlagGroup } from '@atlaskit/flag';
-import Tooltip from '@atlaskit/tooltip';
+import Tooltip from '@uidu/tooltip';
 import Modal, {
   ModalBody as Body,
   ModalHeader as OgModalHeader,
   ModalTitle,
 } from '@atlaskit/modal-dialog';
-import { colors, elevation, gridSize } from '@atlaskit/theme';
+import { colors, elevation, gridSize } from '@uidu/theme';
 
 import * as fs from '../../utils/fs';
 import packageResolver, { getLoaderUrl } from '../../utils/packageResolver';

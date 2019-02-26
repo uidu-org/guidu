@@ -2,7 +2,7 @@
 
 import React, { type Node } from 'react';
 import styled from 'styled-components';
-import { colors, themed, withTheme } from '@atlaskit/theme';
+import { colors, themed, withTheme } from '@uidu/theme';
 import { Theme } from '../theme';
 import type { AppearanceType, SizeType } from '../types';
 

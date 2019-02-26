@@ -3,7 +3,7 @@
 import React, { type Node } from 'react';
 import { toClass } from 'recompose';
 import styled from 'styled-components';
-import { gridSize } from '@atlaskit/theme';
+import { gridSize } from '@uidu/theme';
 import { AkNavigationItem } from '@atlaskit/navigation';
 import renderNav from './renderNav';
 import { Link } from '../../../components/WrappedLink';
@@ -53,10 +53,9 @@ const RouterLink = ({
       >
         {children}
       </Link>
-      {subNav &&
-        isSubNavExpanded(href, pathname) && (
-          <SubNavWrapper>{renderNav(subNav, { pathname })}</SubNavWrapper>
-        )}
+      {subNav && isSubNavExpanded(href, pathname) && (
+        <SubNavWrapper>{renderNav(subNav, { pathname })}</SubNavWrapper>
+      )}
     </div>
   );
 };

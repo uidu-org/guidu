@@ -102,6 +102,8 @@ export default function LoadData({ match }) {
   return <Content />;
 }
 
+console.log(Button);
+
 class Package extends Component<*, *> {
   render() {
     const {
@@ -140,13 +142,13 @@ class Package extends Component<*, *> {
               <Button
                 className="mr-3"
                 color="light"
-                component={Link}
+                as={Link}
                 to={`/packages/${groupId}/${pkgId}/changelog`}
                 withIcon
               >
-                <List className="mr-2" /> Changelog
+                <List className="mr-2" size={'1rem'} /> Changelog
               </Button>
-              <Button component={Link} to={exampleModalPath}>
+              <Button as={Link} to={exampleModalPath}>
                 Examples
               </Button>
               {pkg['atlaskit:designLink'] && (
@@ -163,7 +165,7 @@ class Package extends Component<*, *> {
         <hr />
         <MetaData
           packageName={pkg.name}
-          packageSrc={`https://bitbucket.org/atlassian/atlaskit-mk-2/src/master/packages/${groupId}/${pkgId}`}
+          packageSrc={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
           changelog={changelog}
           pkgId={pkgId}
           groupId={groupId}

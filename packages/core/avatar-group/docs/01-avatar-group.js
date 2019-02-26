@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { md, Example, Props, Prop, code } from '@atlaskit/docs';
+import { md, Example, Props, Prop, code } from '@uidu/docs';
 
 export default md`
   \`AvatarGroup\` is a wrapper around avatars designed to render a collection
@@ -24,12 +24,12 @@ export default md`
 
   ## Usage
 
-  ${code`import AvatarGroup from '@atlaskit/avatar-group';`}
+  ${code`import AvatarGroup from '@uidu/avatar-group';`}
 
 ${(
   <Example
-    packageName="@atlaskit/avatar-group"
-    Component={require('../examples/02-basicAvatarGroup').default}
+    packageName="@uidu/avatar-group"
+    Component={require('../examples/02-basicAvatarGroup')}
     title="AvatarGroup"
     source={require('!!raw-loader!../examples/02-basicAvatarGroup')}
   />
@@ -49,11 +49,11 @@ ${(
           props.typeValue.typeParams.params
         ) {
           props.typeValue.typeParams.params = [
-            { kind: 'id', name: '@atlaskit/avatar props' },
+            { kind: 'id', name: '@uidu/avatar props' },
           ];
         }
         /* eslint-enable */
-        return <Prop {...props} type="Array<@atlaskit/avatar props>" />;
+        return <Prop {...props} type="Array<@uidu/avatar props>" />;
       },
       avatar: props => {
         // Currently prett-proptypes does not have a good print type for function
@@ -67,11 +67,11 @@ ${(
           props.typeValue.typeParams.params
         ) {
           props.typeValue.typeParams.params = [
-            { kind: 'id', name: '@atlaskit/avatar' },
+            { kind: 'id', name: '@uidu/avatar' },
           ];
         }
         /* eslint-enable */
-        return <Prop {...props} defaultValue="@atlaskit/avatar" />;
+        return <Prop {...props} defaultValue="@uidu/avatar" />;
       },
     }}
   />

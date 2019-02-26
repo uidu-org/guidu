@@ -1,7 +1,7 @@
 // @flow
 import styled from 'styled-components';
 import { Container, Row, Col } from 'reactstrap';
-import { gridSize, math } from '@atlaskit/theme';
+import { gridSize, math } from '@uidu/theme';
 
 const containerWidth = {
   small: '480px',

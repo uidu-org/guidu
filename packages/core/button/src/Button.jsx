@@ -3,17 +3,18 @@ import StyledButton from 'react-bootstrap/Button';
 
 export default class Button extends PureComponent {
   render() {
+    console.log(this.props);
     const {
-      // component,
+      component,
       // appearance,
       // children,
-      // withIcon,
+      withIcon,
       ...otherProps
     } = this.props;
+
     return (
       <StyledButton
-        // className={withIcon ? 'd-flex align-items-center' : ''}
-        // tag={component || 'button'}
+        className={withIcon ? 'd-flex align-items-center' : ''}
         {...otherProps}
       />
     );

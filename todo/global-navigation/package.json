@@ -1,0 +1,58 @@
+{
+  "name": "@atlaskit/global-navigation",
+  "version": "5.7.1",
+  "description": "Global navigation component for Atlassian",
+  "main": "dist/cjs/index.js",
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "author": "Atlassian Pty Ltd",
+  "license": "Apache-2.0",
+  "atlaskit:src": "src/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@atlaskit/analytics-namespaced-context": "^2.1.5",
+    "@atlaskit/analytics-next": "^3.1.2",
+    "@atlaskit/atlassian-switcher": "^0.0.5",
+    "@atlaskit/avatar": "^14.1.8",
+    "@atlaskit/badge": "^9.2.2",
+    "@atlaskit/blanket": "^7.0.12",
+    "@atlaskit/drawer": "^2.7.1",
+    "@atlaskit/dropdown-menu": "^6.1.26",
+    "@atlaskit/icon": "^16.0.0",
+    "@atlaskit/navigation-next": "^4.2.1",
+    "@atlaskit/notification-indicator": "^4.1.2",
+    "@atlaskit/notification-log-client": "^3.1.1",
+    "@atlaskit/spinner": "^9.0.13",
+    "@atlaskit/theme": "^7.0.1",
+    "@babel/runtime": "^7.0.0",
+    "emotion": "^9.1.1",
+    "emotion-theming": "^9.0.0",
+    "prop-types": "^15.5.10",
+    "react-dom": "^16.4.2",
+    "react-transition-group": "^2.2.1",
+    "url-parse": "^1.4.3"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0"
+  },
+  "devDependencies": {
+    "@atlaskit/analytics-listeners": "^4.1.4",
+    "@atlaskit/app-switcher": "^8.0.1",
+    "@atlaskit/button": "^10.1.2",
+    "@atlaskit/docs": "^6.0.1",
+    "@atlaskit/field-base": "^11.0.15",
+    "@atlaskit/field-radio-group": "^4.0.15",
+    "@atlaskit/logo": "^9.2.6",
+    "@atlaskit/modal-dialog": "^7.2.1",
+    "@atlaskit/section-message": "^1.0.16",
+    "@atlaskit/tag": "^6.1.4",
+    "@atlaskit/toggle": "^5.0.15",
+    "@atlaskit/visual-regression": "^0.0.1",
+    "enzyme": "^3.7.0",
+    "fetch-mock": "^6.5.2",
+    "jest-in-case": "^1.0.2",
+    "react-lorem-component": "^0.12.2"
+  }
+}

@@ -1,7 +1,7 @@
 // @flow
 import styled from 'styled-components';
-import { colors, gridSize } from '@atlaskit/theme';
-import { BORDER_WIDTH } from '@atlaskit/avatar';
+import { colors, gridSize } from '@uidu/theme';
+import { BORDER_WIDTH } from '@uidu/avatar';
 
 // TODO: use math utilities within styled component
 const gutterUnitless = gridSize() / 2;

@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { md, Example, Props } from '@uidu/docs';
+import { md, Example, Props, code } from '@atlaskit/docs';
 
 export default md`
   This package exports \`Drawer\` and \`DrawerBase\` components.
@@ -8,16 +8,20 @@ export default md`
   You can wrap \`Drawer\` around any other React component to display the given
   \`children\` when the user hovers over the wrapped component.
 
+## Usage
+
+  ${code`import Drawer from '@atlaskit/drawer';`}
+
   ${(
     <Example
       packageName="@atlaskit/drawer"
       Component={require('../examples/00-basic-drawer').default}
       source={require('!!raw-loader!../examples/00-basic-drawer')}
-      title="Basic Usage"
+      title="Basic"
     />
   )}
 
-  Above is a basic example of how to define width.
+  Below is a basic example of how to define width.
 
   ${(
     <Example
@@ -50,6 +54,7 @@ export default md`
 
   ${(
     <Props
+      heading="Drawer Props"
       props={require('!!extract-react-types-loader!../src/components/index')}
     />
   )}

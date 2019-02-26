@@ -1,5 +1,98 @@
 # @atlaskit/drawer
 
+## 2.7.1
+- Updated dependencies [d7ef59d432](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d7ef59d432):
+  - @atlaskit/docs@6.0.1
+  - @atlaskit/button@10.1.2
+  - @atlaskit/dropdown-menu@6.1.26
+  - @atlaskit/item@8.0.15
+  - @atlaskit/section-message@1.0.16
+  - @atlaskit/quick-search@5.2.5
+  - @atlaskit/icon@16.0.0
+
+## 2.7.0
+- [minor] [9cfee26](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9cfee26):
+
+  - Add data-test-selector to various components to help open and close the Notification Drawer programmatically. This would support test automation
+
+## 2.6.1
+- Updated dependencies [58b84fa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/58b84fa):
+  - @atlaskit/analytics-next@3.1.2
+  - @atlaskit/blanket@7.0.12
+  - @atlaskit/button@10.1.1
+  - @atlaskit/dropdown-menu@6.1.25
+  - @atlaskit/icon@15.0.2
+  - @atlaskit/item@8.0.14
+  - @atlaskit/section-message@1.0.14
+  - @atlaskit/theme@7.0.1
+  - @atlaskit/quick-search@5.2.4
+  - @atlaskit/docs@6.0.0
+
+## 2.6.0
+- [minor] [53bf8be](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/53bf8be):
+
+  - Support onCloseComplete
+
+## 2.5.4
+- Updated dependencies [d13242d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d13242d):
+  - @atlaskit/docs@5.2.3
+  - @atlaskit/blanket@7.0.11
+  - @atlaskit/button@10.0.4
+  - @atlaskit/dropdown-menu@6.1.24
+  - @atlaskit/icon@15.0.1
+  - @atlaskit/item@8.0.13
+  - @atlaskit/section-message@1.0.13
+  - @atlaskit/quick-search@5.2.1
+  - @atlaskit/theme@7.0.0
+
+## 2.5.3
+- Updated dependencies [ab9b69c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ab9b69c):
+  - @atlaskit/docs@5.2.2
+  - @atlaskit/button@10.0.1
+  - @atlaskit/dropdown-menu@6.1.23
+  - @atlaskit/section-message@1.0.12
+  - @atlaskit/icon@15.0.0
+
+## 2.5.2
+- Updated dependencies [6998f11](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6998f11):
+  - @atlaskit/docs@5.2.1
+  - @atlaskit/analytics-next@3.1.1
+  - @atlaskit/blanket@7.0.10
+  - @atlaskit/dropdown-menu@6.1.22
+  - @atlaskit/icon@14.6.1
+  - @atlaskit/section-message@1.0.11
+  - @atlaskit/theme@6.2.1
+  - @atlaskit/button@10.0.0
+
+## 2.5.1
+- [patch] [f480bab](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/f480bab):
+
+  - Convert padding to margin to fix a scrolling issue in global-search
+
+## 2.5.0
+- [minor] [aacb208](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/aacb208):
+
+  - Export a new component, DrawerItemTheme, for theming the Drawer with the navigation item theme.
+
+## 2.4.0
+- [minor] [6746a42](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6746a42):
+
+  - Add extended width option and width transitions
+
+## 2.3.1
+- [patch] [a6e5197](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a6e5197):
+
+  - 1) Add canUseDOM to fix SSR issue in Drawer. 2) Update SSR tests in navigation-next to exclude the examples with Hash, Router or Dom
+
+## 2.3.0
+- [patch] [a637f5e](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a637f5e):
+
+  - Refine and fix some flow type errors found by fixing @atlaskit/analytics-next HOCs to allow flow to type check properly
+
+- [minor] [670597d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/670597d):
+
+  - Make `width` prop optional and default it to 'narrow'
+
 ## 2.2.0
 - [minor] [90f4995](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/90f4995):
 

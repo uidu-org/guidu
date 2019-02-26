@@ -7,7 +7,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import LayerManager from '@atlaskit/layer-manager';
 import { ModalTransition } from '@atlaskit/modal-dialog';
 import Page, { Grid, GridColumn } from '@atlaskit/page';
-import Theme from '@atlaskit/theme';
+import Theme from '@uidu/theme';
 
 import Home from '../pages/Home';
 import ChangeLogExplorer from '../pages/ChangeLogExplorer';

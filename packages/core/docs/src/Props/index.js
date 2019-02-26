@@ -1,18 +1,17 @@
 import React from 'react';
 import PrettyProps from 'pretty-proptypes';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import components from './components';
-import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import ChevronUpIcon from '@atlaskit/icon/glyph/chevron-up';
+import { ChevronDown, ChevronUp } from 'react-feather';
 
 components.Button = ({ isCollapsed, ...rest }) => {
   return (
     <Button
       iconBefore={
         isCollapsed ? (
-          <ChevronDownIcon label="expandIcon" />
+          <ChevronDown label="expandIcon" />
         ) : (
-          <ChevronUpIcon label="collapseIcon" />
+          <ChevronUp label="collapseIcon" />
         )
       }
       {...rest}

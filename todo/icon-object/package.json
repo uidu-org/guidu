@@ -1,0 +1,52 @@
+{
+  "name": "@atlaskit/icon-object",
+  "version": "3.0.3",
+  "description": "A React package that contains object icons",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "cjs/index.js",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "glyph",
+    "svgs",
+    "cjs"
+  ],
+  "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Raja B",
+    "Ben C",
+    "Ajay M"
+  ],
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "scripts": {
+    "update": "node ./build/index.js && yarn build:babel:cjs",
+    "build:babel:cjs": "NODE_ENV=production BABEL_ENV=production:cjs babel src -d cjs --root-mode=\"upward\""
+  },
+  "dependencies": {
+    "@atlaskit/theme": "^7.0.1",
+    "@babel/runtime": "^7.0.0",
+    "babel-runtime": "^6.26.0",
+    "uuid": "^3.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "styled-components": "^3.2.6"
+  },
+  "devDependencies": {
+    "@atlaskit/build-utils": "^2.0.0",
+    "@atlaskit/button": "^10.1.1",
+    "@atlaskit/docs": "^6.0.0",
+    "@atlaskit/field-text": "^7.0.18",
+    "@atlaskit/icon-build-process": "^0.1.0",
+    "@atlaskit/modal-dialog": "^7.1.1",
+    "@atlaskit/tooltip": "^12.1.13",
+    "enzyme": "^3.7.0",
+    "fs-extra": "^4.0.2",
+    "react-dom": "^16.4.2"
+  },
+  "keywords": [
+    "atlaskit",
+    "ui"
+  ]
+}

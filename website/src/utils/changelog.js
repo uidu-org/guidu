@@ -11,11 +11,9 @@ export const divvyChangelog = (changelog): Logs => {
       // well as the unreleased section.
       const match = md.match(/\d+\.\d+\.\d+/);
       // Getting the repository url
-      let repository = md.match(
-        'https://bitbucket.org/atlassian/atlaskit/commits/',
-      )
-        ? 'atlaskit'
-        : 'atlaskit-mk-2';
+      let repository = md.match('https://github.com/uidu-org/guidu/commits')
+        ? 'guidu'
+        : 'guidu';
       const version = match ? match[0] : null;
       if (!version) return all;
       return all.concat({

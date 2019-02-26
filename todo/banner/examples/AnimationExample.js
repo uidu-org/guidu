@@ -10,7 +10,7 @@ const Icon = <WarningIcon label="Warning icon" secondaryColor="inherit" />;
 
 const WarningBanner = ({ isOpen = true }: { isOpen: boolean }) => (
   <Banner icon={Icon} isOpen={isOpen} appearance="warning">
-    This is an warning banner
+    This is a warning banner
   </Banner>
 );
 

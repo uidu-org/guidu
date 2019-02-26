@@ -1,7 +1,7 @@
 // @flow
 
 import { css } from 'styled-components';
-import { colors, themed } from '@atlaskit/theme';
+import { colors, themed } from '@uidu/theme';
 import {
   AVATAR_RADIUS,
   AVATAR_SIZES,

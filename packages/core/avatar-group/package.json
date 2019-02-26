@@ -1,53 +1,41 @@
 {
   "name": "@uidu/avatar-group",
-  "version": "2.1.16",
+  "version": "0.1.0",
   "description": "A component to display avatars as a group, either as a stack or in a grid.",
-  "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "uidu:src": "src/index.js",
-  "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/avatars",
   "sideEffects": false,
   "files": [
     "dist"
   ],
-  "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Raja B",
-    "Ben C",
-    "Ajay M"
-  ],
-  "repository": "github:uidu-org/guidu",
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/avatar": "^14.1.8",
+    "@uidu/avatar": "^0.2.0",
     "@atlaskit/dropdown-menu": "^6.1.26",
     "@atlaskit/item": "^8.0.15",
-    "@atlaskit/theme": "^7.0.1",
-    "@atlaskit/tooltip": "^12.1.15",
+    "@uidu/theme": "^0.1.0",
+    "@uidu/tooltip": "^0.1.0",
     "@babel/runtime": "^7.0.0"
   },
   "peerDependencies": {
     "react": "^16.4.0",
-    "styled-components": "^3.2.6"
+    "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@atlaskit/build-utils": "^2.0.0",
-    "@atlaskit/button": "^10.1.2",
-    "@atlaskit/code": "^8.2.2",
-    "@atlaskit/docs": "^6.0.1",
-    "@atlaskit/field-base": "^11.0.14",
-    "@atlaskit/icon": "^16.0.0",
-    "@atlaskit/toggle": "^5.0.15",
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/button": "^0.1.23",
+    "@uidu/code": "^0.1.0",
+    "@uidu/docs": "^0.1.18",
+    "@uidu/field-base": "^0.1.21",
+    "@uidu/toggle": "^0.1.0",
     "enzyme": "^3.7.0",
     "react-dom": "^16.4.2"
   },
-  "keywords": [
-    "atlaskit",
-    "react",
-    "ui"
-  ],
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

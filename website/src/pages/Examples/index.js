@@ -11,8 +11,8 @@ import CodeIcon from '@atlaskit/icon/glyph/code';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import SingleSelect from '@atlaskit/single-select';
-import Tooltip from '@atlaskit/tooltip';
-import { colors } from '@atlaskit/theme';
+import Tooltip from '@uidu/tooltip';
+import { colors } from '@uidu/theme';
 
 import ExampleDisplay from '../../components/Examples/ExampleDisplay';
 import * as fs from '../../utils/fs';

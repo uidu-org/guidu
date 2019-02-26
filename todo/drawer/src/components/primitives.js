@@ -5,13 +5,14 @@ import { colors, layers, gridSize } from '@atlaskit/theme';
 import ArrowLeft from '@atlaskit/icon/glyph/arrow-left';
 
 import { Slide } from './transitions';
-import type { DrawerPrimitiveProps } from './types';
+import type { DrawerPrimitiveProps, DrawerWidth } from './types';
 
 // Misc.
 // ------------------------------
 
-const widths = {
+const widths: { [DrawerWidth]: string | number } = {
   full: '100vw',
+  extended: '95vw',
   narrow: 45 * gridSize(),
   medium: 60 * gridSize(),
   wide: 75 * gridSize(),
@@ -52,7 +53,7 @@ const Wrapper = ({
 
 const Content = props => (
   <div
-    css={{ flex: 1, paddingTop: 3 * gridSize(), overflow: 'auto' }}
+    css={{ flex: 1, marginTop: 3 * gridSize(), overflow: 'auto' }}
     {...props}
   />
 );
@@ -114,12 +115,21 @@ const IconWrapper = (props: IconWrapperProps) => (
 
 export default class DrawerPrimitive extends Component<DrawerPrimitiveProps> {
   render() {
-    const { children, icon: Icon, onClose, ...props } = this.props;
+    const {
+      children,
+      icon: Icon,
+      onClose,
+      onCloseComplete,
+      ...props
+    } = this.props;
 
     return (
-      <Slide component={Wrapper} {...props}>
+      <Slide component={Wrapper} onExited={onCloseComplete} {...props}>
         <Sidebar>
-          <IconWrapper onClick={onClose}>
+          <IconWrapper
+            onClick={onClose}
+            data-test-selector="DrawerPrimitiveSidebarCloseButton"
+          >
             {Icon ? <Icon size="large" /> : <ArrowLeft />}
           </IconWrapper>
         </Sidebar>

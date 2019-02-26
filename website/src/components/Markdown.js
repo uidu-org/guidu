@@ -4,7 +4,7 @@ import React, { type Node } from 'react';
 import { Helmet } from 'react-helmet';
 import CommonMark from 'commonmark';
 import ReactRenderer from 'commonmark-react-renderer';
-// import { AkCodeBlock, AkCode } from '@atlaskit/code';
+// import { AkCodeBlock, AkCode } from '@uidu/code';
 import Heading from './Markdown/Heading';
 
 type Props = {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors, themed } from '@atlaskit/theme';
+import { colors, themed } from '@uidu/theme';
 
 const Required = styled.span`
   color: ${themed({ light: colors.R500, dark: colors.R300 })};

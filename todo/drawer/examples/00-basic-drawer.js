@@ -17,16 +17,24 @@ export default class DrawersExample extends Component<{}, State> {
       isDrawerOpen: true,
     });
 
-  closeDrawer = () =>
+  onClose = (
+    ...args: [SyntheticMouseEvent<*> | SyntheticKeyboardEvent<*>, any]
+  ) => {
+    console.log('onClose', args);
     this.setState({
       isDrawerOpen: false,
     });
+  };
+
+  onCloseComplete = (...args: [HTMLElement]) =>
+    console.log('onCloseComplete', args);
 
   render() {
     return (
       <div css={{ padding: '2rem' }}>
         <Drawer
-          onClose={this.closeDrawer}
+          onClose={this.onClose}
+          onCloseComplete={this.onCloseComplete}
           isOpen={this.state.isDrawerOpen}
           width="wide"
         >

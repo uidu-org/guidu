@@ -1,0 +1,35 @@
+{
+  "name": "@uidu/toggle",
+  "version": "0.1.0",
+  "description": "A component to view and switch between enabled or disabled states",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@uidu/analytics": "^0.1.0",
+    "@uidu/theme": "^0.1.0",
+    "@babel/runtime": "^7.0.0",
+    "uuid": "^3.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/button": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "enzyme": "^3.7.0",
+    "react-dom": "^16.4.2"
+  }
+}

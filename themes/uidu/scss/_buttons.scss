@@ -1,14 +1,323 @@
 .btn {
+  // border-width: $border-thick;
+  // box-shadow: 0 0 0 1px rgba(50, 50, 93, 0.1),
+  //   0 2px 5px 0 rgba(50, 50, 93, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
+  //   0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  //   0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  cursor: default;
+  font-size: 0.8rem;
+  line-height: normal; // test it or remove it
   opacity: 0.99;
+  // overflow: initial;
   position: relative;
   text-transform: uppercase;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+  // padding: $padding-base-vertical $padding-base-horizontal;
+  // @include btn-styles($text-color);
+
+  // &:not(.btn-fake-input) {
+  //   &:hover,
+  //   &:focus {
+  //     // @extend .btn-fill;
+  //     @include md-box-shadow(2);
+  //   }
+  // }
+
+  // &:active,
+  // &.active,
+  // &:hover:active,
+  // .open > &.dropdown-toggle {
+  //   @include box-shadow(none);
+  // }
 
   &.btn-round {
+    // padding: $padding-base-vertical;
     border-radius: 40px;
   }
 
   &:hover {
+    // box-shadow: 0 0 0 1px rgba(50, 50, 93, 0.1),
+    //   0 2px 5px 0 rgba(50, 50, 93, 0.1), 0 3px 9px 0 rgba(50, 50, 93, 0.08),
+    //   0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
     opacity: 1;
     transform: translateY(-1px);
   }
 }
+
+@import 'ladda/css/ladda';
+
+.ladda-label {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+// // Apply the mixin to the buttons
+// .btn-primary { @include btn-styles($brand-primary); }
+// .btn-success { @include btn-styles($brand-success); }
+// .btn-info    { @include btn-styles($brand-info); }
+// .btn-warning { @include btn-styles($brand-warning); }
+// .btn-danger  { @include btn-styles($brand-danger); }
+
+// @each $app, $color in $apps {
+//   .btn-#{$app} { @include btn-styles($color); }
+// }
+
+// .btn-muted  { @include btn-styles($oc-gray-5); }
+// .btn-super-muted  { @include btn-styles($oc-gray-3); }
+
+// .btn-raised {
+//   @include md-box-shadow(2);
+// }
+
+// .btn-neutral {
+//   @include btn-styles($white, $white);
+
+//   &:active,
+//   &.active,
+//   .open > &.dropdown-toggle{
+//     background-color: $white;
+//     color: $text-color;
+//   }
+
+//   &.btn-fill,
+//   &.btn-fill:hover, &.btn-fill:hover:active,
+//   &.btn-fill:focus{
+//     color: $text-color;
+//   }
+
+//   &.btn-simple:active,
+//   &.btn-simple.active{
+//     background-color: transparent;
+//   }
+// }
+
+// .btn {
+//   &:disabled,
+//   &[disabled],
+//   &.disabled{
+//     @include opacity(.5);
+//     &:hover, &:active {
+//       @include box-shadow(none);
+//       @include opacity(.5);
+//     }
+//   }
+// }
+
+// .btn-round {
+//   // border-width: $border-thin;
+//   border-radius: 100% !important;
+//   padding: $padding-base-vertical $padding-base-horizontal;
+
+//   &.btn-icon{
+//     padding: $padding-base-vertical;
+//   }
+// }
+
+// .btn-group {
+//   &.open {
+//     .btn-simple, .btn-simple:hover, .btn-simple:active:hover, .btn-simple:active, .btn-simple:focus {
+//       border: 1px solid transparent;
+//     }
+//   }
+// }
+
+// .btn-simple {
+//   border: 1px solid transparent !important;
+//   // font-size: $font-size-medium;
+//   // padding: $padding-base-vertical $padding-base-horizontal;
+
+//   &.btn-icon {
+//     padding-left: $padding-base-vertical;
+//     padding-right: $padding-base-vertical;
+//   }
+
+//   &:hover, &:focus, &:focus:hover, &:active:hover {
+//     border-color: transparent;
+//     // color: $brand-primary;
+//   }
+// }
+
+// .file-input-browser {
+//   margin-bottom: 0;
+//   display: block;
+//   &:active, &:active:hover {
+//     .btn-fake-input, .btn-fake-input-browse {
+//       border-color: $brand-primary;
+//     }
+//   }
+// }
+
+// .btn-fake-input {
+//   width: 80% !important;
+//   color: $text-color;
+//   text-transform: none;
+//   text-align: left;
+//   border-color: $input-border;
+//   font-size: $font-size-base;
+//   font-weight: normal;
+//   &:hover, &:active, &:active:hover, &:focus, &:focus:hover {
+//     border-color: $input-border;
+//   }
+// }
+
+// .btn-fake-input-browse {
+//   width: 20% !important;
+//   border-left: 0;
+//   text-align: center;
+//   text-transform: uppercase;
+//   font-weight: $btn-font-weight;
+//   font-size: $font-size-small;
+//   padding-top: $padding-base-vertical + 2;
+//   padding-bottom: $padding-base-vertical + 2;
+//   &:hover, &:active, &:active:hover, &:focus, &:focus:hover {
+//     border-color: $input-border;
+//     background-color: $text-color;
+//     color: $white;
+//   }
+// }
+
+// .btn-lg {
+//   @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-base, $border-radius-large);
+// }
+// .btn-sm {
+//   @include btn-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $border-radius-small);
+//   line-height: $line-height-base;
+// }
+// .btn-xs {
+//   @include btn-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small - 2, $border-radius-small);
+//   line-height: $line-height-base;
+// }
+// .btn-wd {
+//   min-width: 140px;
+// }
+
+// .btn-group.select {
+//   width: 100%;
+// }
+// .btn-group.select .btn{
+//   text-align: left;
+// }
+// .btn-group.select .caret{
+//   position: absolute;
+//   top: 50%;
+//   margin-top: -1px;
+//   right: 8px;
+// }
+// .btn, .btn-group {
+//   input[type="radio"] {
+//     position: absolute;
+//     clip: rect(0, 0, 0, 0);
+//     pointer-events: none;
+//   }
+// }
+
+// .btn-radios {
+//   label.btn {
+//     margin-right: $grid-gutter-width / 4;
+//     margin-bottom: $grid-gutter-width / 4;
+//   }
+// }
+
+// // colorpicker
+// .btn-color-picker {
+//   padding: 0;
+//   width: $grid-gutter-width;
+//   height: $grid-gutter-width;
+//   margin-right: 4px;
+//   &.btn-color-picker-selected {
+//     border: 2px solid $text-color !important;
+//   }
+//   input[type="radio"] {
+//     position: absolute;
+//     clip: rect(0, 0, 0, 0);
+//     pointer-events: none;
+//   }
+// }
+
+// .btn-icon {
+//   .icon-descriptor {
+//     margin-left: 4px;
+//   }
+// }
+
+// // button with image icon
+// .btn-image-icon {
+//   $icon-width: $grid-gutter-width;
+//   position: relative;
+//   padding: ($padding-base-vertical + 1) ($padding-base-vertical + 1) $padding-base-vertical;
+//   padding-left: $icon-width - ($padding-base-vertical / 2) !important;
+//   .btn-image-icon-wrapper {
+//     position: absolute;
+//     left: 0;
+//     width: $icon-width;
+//     top: -1px;
+//     padding: 5px;
+//   }
+// }
+
+// // button yes or no
+// .btn-yes-or-no {
+//   // padding: 0;
+//   margin-right: $grid-gutter-width / 4;
+//   &.is-active {
+//     i {
+//       @include border-radius(50%);
+//       color: $white;
+//       &.icon-check {
+//         background-color: $brand-success;
+//         border: 1px solid $brand-success;
+//       }
+//       &.icon-close {
+//         background-color: $brand-danger;
+//         border: 1px solid $brand-danger;
+//       }
+//     }
+//   }
+// }
+
+// // form inline
+// @media (min-width: $screen-sm-min) {
+//   .btn-inline-with-label {
+//     margin-top: $line-height-computed + 5px;
+//   }
+// }
+
+// .btn .caret {
+//   margin-left: 2px;
+//   margin-right: 2px;
+// }
+// .btn-neutral:hover .caret {
+//   border-top-color: $text-color;
+// }
+// .btn-fill:not(.btn-neutral):hover .caret {
+//   border-top-color: $white;
+// }
+
+// /*.ink styles - the elements which will create the ripple effect. The size and position of these elements will be set by the JS code. Initially these elements will be scaled down to 0% and later animated to large fading circles on user click.*/
+.btn-ink {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  display: block;
+  position: absolute;
+  transform: scale(0);
+
+  // animation effect
+  &.animate {
+    animation: ripple 0.6s linear;
+  }
+}
+@keyframes ripple {
+  // scale the element to 250% to safely cover the entire link and fade it out
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+
+// .sharer.sharer-inline {
+//   .btn {
+//     margin: 4px;
+//   }
+// }

@@ -7,7 +7,7 @@ import Avatar, {
   type AvatarClickType,
   type AvatarPropTypes,
   type SizeType,
-} from '@atlaskit/avatar';
+} from '@uidu/avatar';
 import { Grid, Stack } from '../styled/AvatarGroup';
 import MoreIndicator from './MoreIndicator';
 import itemTheme from '../theme/itemTheme';

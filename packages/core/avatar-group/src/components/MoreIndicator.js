@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unused-prop-types, react/prop-types, react/sort-comp */
 
 import React, { Component } from 'react';
-import { withPseudoState, getProps, type SizeType } from '@atlaskit/avatar';
+import { withPseudoState, getProps, type SizeType } from '@uidu/avatar';
 import { Outer, Inner } from '../styled/MoreIndicator';
 
 export type Props = {

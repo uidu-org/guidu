@@ -1,6 +1,6 @@
 // @flow
 
-import { colors, createTheme, gridSize } from '@atlaskit/theme';
+import { colors, createTheme, gridSize } from '@uidu/theme';
 import type { AppearanceType, PresenceType, SizeType } from '../types';
 
 type Dimensions = {

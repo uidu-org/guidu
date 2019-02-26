@@ -5,9 +5,9 @@ The Avatars represent users that are collaborating within the same application. 
 ## Installation
 
 ```sh
-yarn add @atlaskit/avatar
+yarn add @uidu/avatar
 ```
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/avatar).
+Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/avatar).

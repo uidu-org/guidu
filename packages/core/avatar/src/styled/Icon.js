@@ -1,6 +1,6 @@
 // @flow
 import styled from 'styled-components';
-import { colors, withTheme } from '@atlaskit/theme';
+import { colors, withTheme } from '@uidu/theme';
 import { BORDER_WIDTH } from './constants';
 
 // set fallbacks for border color/width to protect consumers from invalid values

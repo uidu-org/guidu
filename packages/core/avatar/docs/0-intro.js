@@ -1,24 +1,9 @@
 // @flow
 import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
-import SectionMessage from '@atlaskit/section-message';
+import SectionMessage from '@uidu/section-message';
 
 export default md`
-  ${(
-    <SectionMessage appearance="warning">
-      <p>
-        <strong>
-          The previous export of `AvatarGroup` has been moved to its own package
-          `@atlaskit/avatar-group`.
-        </strong>
-      </p>
-      <p>
-        Please update your dependencies to use the @atlaskit/avatar-group
-        package.
-      </p>
-    </SectionMessage>
-  )}
-
   This package exports an number of different Avatar related components:
 
   - Avatar (Default Export)
@@ -36,7 +21,7 @@ export default md`
 
   ## Usage
 
-  ${code`import Avatar from '@atlaskit/avatar';`}
+  ${code`import Avatar from '@uidu/avatar';`}
 
   ${(
     <Example

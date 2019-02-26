@@ -1,1 +1,0 @@
-import Group from '../../presentational/Group';

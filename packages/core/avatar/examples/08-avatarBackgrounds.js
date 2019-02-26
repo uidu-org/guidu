@@ -1,7 +1,7 @@
 // @flow
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import Avatar from '../src';
 import { Code, Note } from '../examples-util/helpers';
 import nucleusImage from '../examples-util/nucleus.png';

@@ -1,7 +1,7 @@
 // @flow
 
-import type { AnalyticsEventInterface } from '@atlaskit/analytics-next';
-import type { ThemeProp } from '@atlaskit/theme';
+import type { AnalyticsEventInterface } from '@uidu/analytics';
+import type { ThemeProp } from '@uidu/theme';
 import type { Node, ComponentType } from 'react';
 import type { ThemeProps, ThemeTokens } from './theme';
 
@@ -74,7 +74,7 @@ export type AvatarPropTypesBase = {
   /** Pass target down to the anchor, if href is provided. */
   target?: '_blank' | '_self' | '_top' | '_parent',
   /** You should not be accessing this prop under any circumstances. It is
-   provided by @atlaskit/analytics-next. */
+   provided by @uidu/analytics. */
   createAnalyticsEvent?: any,
 
   /** The theme that should be applied to the avatar. */
