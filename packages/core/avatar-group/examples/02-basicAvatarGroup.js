@@ -35,6 +35,15 @@ export default () => {
           size="large"
         />
       </ExampleGroup>
+      <ExampleGroup heading="Display inline">
+        <AvatarGroup
+          appearance="inline"
+          onAvatarClick={console.log}
+          data={data}
+          // maxCount={14}
+          size="large"
+        />
+      </ExampleGroup>
     </div>
   );
 };

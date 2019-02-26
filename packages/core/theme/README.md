@@ -10,4 +10,4 @@ yarn add @uidu/theme
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/theme).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/theme).

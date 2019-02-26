@@ -16,9 +16,10 @@
     "access": "public"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.0",
     "@uidu/theme": "^0.1.0",
-    "@babel/runtime": "^7.0.0",
+    "react-switch": "^4.1.0",
     "uuid": "^3.1.0"
   },
   "peerDependencies": {

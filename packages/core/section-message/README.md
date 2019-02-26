@@ -10,4 +10,4 @@ yarn add @uidu/section-message
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/section-message).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/section-message).

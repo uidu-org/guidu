@@ -10,4 +10,4 @@ yarn add @uidu/analytics
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/analytics-next).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/analytics).

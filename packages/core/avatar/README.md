@@ -10,4 +10,4 @@ yarn add @uidu/avatar
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/avatar).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/avatar).

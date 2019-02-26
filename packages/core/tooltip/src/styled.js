@@ -7,6 +7,7 @@ const backgroundColor = themed({
   light: colors.N800,
   dark: colors.DN0,
 });
+
 const textColor = themed({
   light: colors.N0,
   dark: colors.DN600,
@@ -33,9 +34,8 @@ export const Tooltip = styled(TooltipPrimitive)`
   border-radius: ${borderRadius}px;
   box-sizing: border-box;
   color: ${textColor};
-  font-size: 12px;
+  font-size: 0.8rem;
   left: 0;
-  line-height: 1.3;
   max-width: 240px;
   padding: 2px 6px;
   top: 0;

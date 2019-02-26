@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
-import SectionMessage from '@uidu/section-message';
 
 export default md`
   This package exports an number of different Avatar related components:

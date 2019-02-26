@@ -38,7 +38,7 @@ export const Toggle = styled.div`
 `;
 
 // NOTE: use of important necessary to override element targeted headings
-export const ToggleTitle = styled.h4`
+export const ToggleTitle = styled.h5`
   margin: 0;
 `;
 
@@ -74,7 +74,7 @@ export default class Example extends React.Component<Props, State> {
     const mode = isSourceVisible ? 'open' : 'closed';
 
     return (
-      <Wrapper className="card shadow border-0 mb-4" state={state} mode={mode}>
+      <Wrapper className="card border mb-4" state={state} mode={mode}>
         <CardHeader>
           <Toggle
             ref={c => {

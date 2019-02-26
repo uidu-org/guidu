@@ -8,7 +8,7 @@ import Avatar, {
   type AvatarPropTypes,
   type SizeType,
 } from '@uidu/avatar';
-import { Grid, Stack } from '../styled/AvatarGroup';
+import { Grid, Stack, Inline } from '../styled/AvatarGroup';
 import MoreIndicator from './MoreIndicator';
 import itemTheme from '../theme/itemTheme';
 import AvatarGroupItem from './AvatarGroupItem';
@@ -16,6 +16,7 @@ import AvatarGroupItem from './AvatarGroupItem';
 const GROUP_COMPONENT = {
   grid: Grid,
   stack: Stack,
+  inline: Inline,
 };
 const MAX_COUNT = {
   grid: 11,
@@ -25,7 +26,7 @@ const MAX_COUNT = {
 type Props = {
   /** Indicates the shape of the avatar. Most avatars are circular, but square avatars
    can be used for 'container' objects. */
-  appearance: 'grid' | 'stack',
+  appearance: 'grid' | 'stack' | 'inline',
   /** Component used to render each avatar */
   avatar: ElementConfig<typeof Avatar>,
   /** The maximum number of avatars allowed in the grid */
@@ -137,7 +138,7 @@ export default class AvatarGroup extends Component<Props> {
     const Group = GROUP_COMPONENT[appearance];
 
     // Render (max - 1) avatars to leave space for moreIndicator
-    const maxAvatar = total > max ? max - 1 : max;
+    const maxAvatar = max ? (total > max ? max - 1 : max) : total;
 
     const items = data
       .slice(0, maxAvatar)

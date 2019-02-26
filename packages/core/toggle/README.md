@@ -10,4 +10,4 @@ yarn add @uidu/toggle
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/toggle).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/toggle).

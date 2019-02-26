@@ -49,14 +49,14 @@ export type Theme = {
 
 const codeContainerStyle = {
   fontFamily: codeFontFamily,
-  fontSize: '12px',
-  lineHeight: 20 / 12,
+  fontSize: '1rem',
+  // lineHeight: 20 / 12,
   padding: gridSize(),
 };
 
 const lineNumberContainerStyle = (theme: Theme) => ({
-  fontSize: `${fontSize()}px`,
-  lineHeight: 20 / 14,
+  // fontSize: `${fontSize()}px`,
+  // lineHeight: 20 / 14,
   color: theme.lineNumberColor,
   backgroundColor: theme.lineNumberBgColor,
   flexShrink: 0,
@@ -181,12 +181,12 @@ const sharedCodeStyle = (theme: Theme) => ({
 
 const codeStyle = theme => ({
   fontFamily: codeFontFamily,
-  fontSize: '12px',
+  fontSize: '.95rem',
   background: theme.backgroundColor,
   color: theme.textColor,
   borderRadius: borderRadius(),
   display: 'flex',
-  lineHeight: 20 / 12,
+  // lineHeight: 20 / 12,
   overflowX: 'auto',
   whiteSpace: 'pre',
 });

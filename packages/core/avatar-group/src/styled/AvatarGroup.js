@@ -16,7 +16,7 @@ export const Grid = styled.div`
   margin-right: -${gutter};
 
   > * {
-    margin-bottom: ${gridSize};
+    margin-bottom: ${gridSize}px;
     padding-left: ${gutter};
     padding-right: ${gutter};
   }
@@ -31,6 +31,11 @@ export const Stack = styled.div`
   > * {
     margin-right: -${props => BORDER_WIDTH[props.size] * 2 + gutterUnitless}px;
   }
+`;
+
+export const Inline = styled.div`
+  display: flex;
+  overflow-x: scroll;
 `;
 
 export function getBackgroundColor({

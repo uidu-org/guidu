@@ -22,7 +22,7 @@
     "@uidu/theme": "^0.1.0",
     "@babel/runtime": "^7.0.0",
     "flushable": "^1.0.0",
-    "react-node-resolver": "^1.0.1",
+    "react-node-resolver": "^2.0.1",
     "react-transition-group": "^2.2.1"
   },
   "peerDependencies": {

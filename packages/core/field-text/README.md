@@ -10,4 +10,4 @@ yarn add @uidu/field-text
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/field-text).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/field-text).

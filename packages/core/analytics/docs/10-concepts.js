@@ -110,7 +110,7 @@ const App = () => (
     />
   )}
 
-  There is a [withAnalyticsContext](/packages/core/analytics-next#withAnalyticsContext)
+  There is a [withAnalyticsContext](/packages/core/analytics#withAnalyticsContext)
   Higher-Order-Component alternative if you find that more convenient.
 
   <a name="creating-your-own-events"></a>

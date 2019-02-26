@@ -1,20 +1,8 @@
 // @flow
 import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
-import SectionMessage from '../src';
 
 export default md`
-  ${(
-    <SectionMessage
-      appearance="warning"
-      title="Note: @uidu/section-message is currently a developer preview."
-    >
-      Please experiment with and test this package, but be aware that the API
-      may change at any time. Use at your own risk, preferrably not in
-      production.
-    </SectionMessage>
-  )}
-
   Section messages are part of the content of a user interface, and are used to
   alert users of a particular screen area that needs user action. These
   notifications can appear within a page or dialog. They are not dismissible,

@@ -72,6 +72,7 @@ const ModalHeader = styled(OgModalHeader)`
 `;
 const ModalActions = styled.div`
   display: flex;
+  flex-wrap: nowrap;
 `;
 
 // ==============================
@@ -205,8 +206,7 @@ const ModalHeaderComp = ({
   <ModalHeader showKeyline={showKeyline}>
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
-      <div>
-        {/* <CodeSandbox
+      {/* <CodeSandbox
           example={example}
           examples={examples}
           groupId={groupId}
@@ -227,39 +227,34 @@ const ModalHeaderComp = ({
             </Button>
           )}
         /> */}
+      <Button
+        withIcon
+        onClick={onCodeToggle}
+        isSelected={displayCode}
+        title={displayCode ? 'Hide Source' : 'Show Source'}
+      >
+        <CodeIcon label="Toggle code snippet" /> Source
+      </Button>
+      <Tooltip content="Fullscreen" position="bottom">
         <Button
-          iconBefore={<CodeIcon label="Toggle code snippet" />}
-          onClick={onCodeToggle}
-          isSelected={displayCode}
-          title={displayCode ? 'Hide Source' : 'Show Source'}
+          appearance="subtle"
+          as={Link}
+          to={toExampleUrl(groupId, packageId, exampleId)}
+          withIcon
         >
-          Source
+          <ScreenIcon label="Screen Icon" />
         </Button>
-        <Tooltip content="Fullscreen" position="bottom">
-          <Button
-            appearance="subtle"
-            component={Link}
-            iconBefore={<ScreenIcon label="Screen Icon" />}
-            to={toExampleUrl(groupId, packageId, exampleId)}
-          />
-        </Tooltip>
-        <Tooltip content="Isolated View" position="bottom">
-          <Button
-            appearance="subtle"
-            component={'a'}
-            iconBefore={<LinkIcon label="Link Icon" />}
-            href={loaderUrl}
-            target={'_blank'}
-          />
-        </Tooltip>
-        <Tooltip content="Close" position="bottom">
-          <Button
-            appearance="subtle"
-            iconBefore={<CloseIcon label="Close Modal" />}
-            onClick={close}
-          />
-        </Tooltip>
-      </div>
+      </Tooltip>
+      <Tooltip content="Isolated View" position="bottom">
+        <Button appearance="subtle" href={loaderUrl} target={'_blank'} withIcon>
+          <LinkIcon label="Link Icon" />
+        </Button>
+      </Tooltip>
+      <Tooltip content="Close" position="bottom">
+        <Button appearance="subtle" onClick={close} withIcon>
+          <CloseIcon label="Close Modal" />
+        </Button>
+      </Tooltip>
     </ModalActions>
   </ModalHeader>
 );

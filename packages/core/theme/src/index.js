@@ -27,12 +27,12 @@ export const AtlasKitThemeProvider = AtlaskitThemeProvider;
   them dependent on props in the future, it wouldn't require a significant
   refactor everywhere they are being used.
 */
-export const borderRadius = () => 3;
+export const borderRadius = () => 4;
 export const gridSize = () => 8;
-export const fontSize = () => 14;
-export const fontSizeSmall = () => 11;
+export const fontSize = () => 16;
+export const fontSizeSmall = () => 14;
 export const fontFamily = () =>
-  '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+  '-apple-system, BlinkMacSystemFont, "Avenir", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
 export const codeFontFamily = () =>
   '"SFMono-Medium", "SF Mono", "Segoe UI Mono", "Roboto Mono", "Ubuntu Mono", Menlo, Consolas, Courier, monospace';
 

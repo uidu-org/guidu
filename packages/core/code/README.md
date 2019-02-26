@@ -10,4 +10,4 @@ yarn add @uidu/code
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/code).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/code).

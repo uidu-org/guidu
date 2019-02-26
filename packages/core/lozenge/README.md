@@ -13,4 +13,4 @@ yarn add @uidu/lozenge
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://guidu.netlify.compackages/core/lozenge).
+Detailed docs and example usage can be found [here](https://guidu.netlify.com/packages/core/lozenge).

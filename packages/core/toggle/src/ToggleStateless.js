@@ -1,17 +1,16 @@
 // @flow
-import uuid from 'uuid';
 import React, { Component } from 'react';
+
 import {
   withAnalyticsEvents,
   withAnalyticsContext,
   createAndFireEvent,
 } from '@uidu/analytics';
-import { X as CloseIcon, Check as ConfirmIcon } from 'react-feather';
+import Switch from 'react-switch';
 import {
   name as packageName,
   version as packageVersion,
 } from '../package.json';
-import { Handle, IconWrapper, Inner, Input, Label, Slide } from './styled';
 import defaultBaseProps from './defaultBaseProps';
 import type { StatelessProps, DefaultBaseProps } from './types';
 
@@ -40,10 +39,12 @@ class ToggleStateless extends Component<StatelessProps, State> {
     });
     this.props.onBlur(event);
   };
+
   handleFocus = (event: Event) => {
     this.setState({ isFocused: true });
     this.props.onFocus(event);
   };
+
   handleChange = (event: Event) => {
     if (this.props.isDisabled) {
       return;
@@ -61,35 +62,27 @@ class ToggleStateless extends Component<StatelessProps, State> {
       isFocused,
       size,
     };
-    const Icon = isChecked ? ConfirmIcon : CloseIcon;
-    const id = uuid();
+
+    console.log(styledProps);
 
     return (
-      <Label size={size} isDisabled={isDisabled} htmlFor={id}>
-        <Input
-          checked={isChecked}
-          disabled={isDisabled}
-          id={id}
-          name={name}
-          onBlur={this.handleBlur}
-          onChange={this.handleChange}
-          onFocus={this.handleFocus}
-          type="checkbox"
-          value={value}
-        />
-        <Slide {...styledProps}>
-          <Inner {...styledProps}>
-            <Handle isChecked={isChecked} isDisabled={isDisabled} size={size} />
-            <IconWrapper isChecked={isChecked} size={size}>
-              <Icon
-                label={label || (isChecked ? 'Uncheck' : 'Check')}
-                size={size === 'large' ? null : 'small'}
-                primaryColor="inherit"
-              />
-            </IconWrapper>
-          </Inner>
-        </Slide>
-      </Label>
+      <Switch
+        {...this.props}
+        boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+        activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        onBlur={this.handleBlur}
+        onChange={this.handleChange}
+        onFocus={this.handleFocus}
+        checked={isChecked}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        offColor="#ededed"
+        onColor="#28a745"
+        // offHandleColor="#0ff"
+        // onHandleColor="#08f"
+        height={28}
+        width={56}
+      />
     );
   }
 }

@@ -10,7 +10,7 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-  margin: 0;
+  margin-top: 0.25rem;
   ${typography.h500};
 `;
 

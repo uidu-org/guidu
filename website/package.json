@@ -25,7 +25,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@uidu/docs": "^0.1.18",
     "@uidu/fs-loader": "^0.1.14",
     "@uidu/nav-info-loader": "^0.1.14",
     "@uidu/webpack-config": "^0.1.15",

@@ -16,6 +16,10 @@ const Item = styled.div`
   max-width: 300px;
   padding: 0.6em 1em;
 
+  p {
+    margin-bottom: 0;
+  }
+
   &:hover {
     background-color: ${props => (props.inverted ? colors.B500 : colors.N20)};
   }

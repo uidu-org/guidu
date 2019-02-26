@@ -16,7 +16,7 @@
   "dependencies": {
     "@uidu/theme": "^0.1.0",
     "@babel/runtime": "^7.0.0",
-    "memoize-one": "^3.0.1",
+    "memoize-one": "^5.0.0",
     "react-syntax-highlighter": "^10.0.1"
   },
   "devDependencies": {
