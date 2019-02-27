@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import Button, { ButtonGroup } from '@uidu/button';
+import Button from '@uidu/button';
 import { ArrowUp, ArrowDown } from 'react-feather';
 import { Label } from '@uidu/field-base';
 import { ToggleStateless } from '@uidu/toggle';
@@ -10,22 +10,22 @@ import AvatarGroup from '../src';
 import { avatarUrl } from '../examples-util/data';
 
 type State = {|
-  avatarCount: number,
   avatarCountMax: number,
   gridWidth: number,
   mode: 'stack' | 'grid',
   sizeIndex: number,
   tooltipsEnabled: boolean,
+  avatars: array,
 |};
 
 export default class AvatarGroupExample extends Component<*, State> {
   state: State = {
-    avatarCount: 20,
     avatarCountMax: 11,
     gridWidth: 220,
     mode: 'stack',
     sizeIndex: 3,
     tooltipsEnabled: true,
+    avatars: [],
   };
 
   decrement = (key: string) =>
@@ -40,19 +40,17 @@ export default class AvatarGroupExample extends Component<*, State> {
     });
   };
 
+  addAvatar = () => {
+    const { sizeIndex, avatars } = this.state;
+    this.setState({
+      avatars: [...avatars, 1],
+    });
+  };
+
   render() {
-    const {
-      avatarCount,
-      avatarCountMax,
-      gridWidth,
-      mode,
-      sizeIndex,
-    } = this.state;
+    const { avatarCountMax, gridWidth, mode, sizeIndex, avatars } = this.state;
     const sizes = Object.keys(AVATAR_SIZES);
     const avatarSize = sizes[sizeIndex];
-    const stackSourceURLs = [];
-    // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < avatarCount; i++) stackSourceURLs.push(i);
 
     return (
       <div>
@@ -63,7 +61,7 @@ export default class AvatarGroupExample extends Component<*, State> {
         <div style={{ display: 'flex', marginTop: '1em' }}>
           <div style={{ flex: 1 }}>
             <h5 style={{ marginBottom: '0.5em' }}>Avatar Size: {avatarSize}</h5>
-            <ButtonGroup>
+            <div>
               <Button
                 isDisabled={avatarSize === 'small'}
                 onClick={() => this.decrement('sizeIndex')}
@@ -78,34 +76,34 @@ export default class AvatarGroupExample extends Component<*, State> {
               >
                 Larger
               </Button>
-            </ButtonGroup>
+            </div>
           </div>
           <div style={{ flex: 1 }}>
             <h5 style={{ marginBottom: '0.5em' }}>
-              Avatar Count: {avatarCount}
+              Avatar Count: {avatars.length}
             </h5>
-            <ButtonGroup>
+            <div>
               <Button
-                isDisabled={avatarCount <= 1}
-                onClick={() => this.decrement('avatarCount')}
+                isDisabled={avatars.length <= 1}
+                // onClick={() => this.remove()}
                 iconBefore={<ArrowDown size="small" label="Less" />}
               >
                 Less
               </Button>
               <Button
-                isDisabled={avatarCount >= 30}
-                onClick={() => this.increment('avatarCount')}
+                isDisabled={avatars.length >= 30}
+                onClick={() => this.addAvatar()}
                 iconBefore={<ArrowUp size="small" label="More" />}
               >
                 More
               </Button>
-            </ButtonGroup>
+            </div>
           </div>
           <div style={{ flex: 1 }}>
             <h5 style={{ marginBottom: '0.5em' }}>
               Grid Max: {avatarCountMax}
             </h5>
-            <ButtonGroup>
+            <div>
               <Button
                 isDisabled={avatarCountMax <= 1}
                 onClick={() => this.decrement('avatarCountMax')}
@@ -120,12 +118,12 @@ export default class AvatarGroupExample extends Component<*, State> {
               >
                 More
               </Button>
-            </ButtonGroup>
+            </div>
           </div>
         </div>
         <h5>Grid</h5>
         <Note>
-          Total {stackSourceURLs.length} / Max {avatarCountMax}
+          Total {avatars.length} / Max {avatarCountMax}
         </Note>
         <input
           min="200"
@@ -142,7 +140,7 @@ export default class AvatarGroupExample extends Component<*, State> {
           <AvatarGroup
             appearance="grid"
             onAvatarClick={console.log}
-            data={stackSourceURLs.map(i => ({
+            data={avatars.map(i => ({
               key: i,
               appearance: 'circle',
               enableTooltip: true,
@@ -170,10 +168,10 @@ export default class AvatarGroupExample extends Component<*, State> {
           </span>
         </div>
         <h5>Stack</h5>
-        <Note>Total {stackSourceURLs.length} / Max 5</Note>
+        <Note>Total {avatars.length} / Max 5</Note>
         <AvatarGroup
           onAvatarClick={console.log}
-          data={stackSourceURLs.map(i => ({
+          data={avatars.map(i => ({
             key: i,
             href: '#',
             name: `Stack Avatar ${i + 1}`,
@@ -195,8 +193,8 @@ export default class AvatarGroupExample extends Component<*, State> {
           <AvatarGroup
             onMoreClick={() => this.setState({ mode: 'grid' })}
             appearance={mode}
-            maxCount={mode === 'grid' ? avatarCount : 0}
-            data={stackSourceURLs.map(i => ({
+            maxCount={mode === 'grid' ? avatars.length : 0}
+            data={avatars.map(i => ({
               key: i,
               href: '#',
               name: `Stack Avatar ${i + 1}`,
@@ -224,7 +222,7 @@ export default class AvatarGroupExample extends Component<*, State> {
           <AvatarGroup
             appearance="stack"
             maxCount={5}
-            data={stackSourceURLs.map(i => ({
+            data={avatars.map(i => ({
               appearance: 'circle',
               enableTooltip: true,
               href: '#',
@@ -256,7 +254,7 @@ export default class AvatarGroupExample extends Component<*, State> {
               <AvatarGroup
                 boundariesElement="scrollParent"
                 onAvatarClick={console.log}
-                data={stackSourceURLs.slice(0, 6).map(i => ({
+                data={avatars.slice(0, 6).map(i => ({
                   href: '#',
                   key: i,
                   name: `Stack Avatar ${i + 1}`,
@@ -278,7 +276,7 @@ export default class AvatarGroupExample extends Component<*, State> {
             onChange={this.toggleTooltips}
           />
           <AvatarGroup
-            data={stackSourceURLs.map(i => ({
+            data={avatars.map(i => ({
               href: '#',
               key: i,
               name: `Stack Avatar ${i + 1}`,

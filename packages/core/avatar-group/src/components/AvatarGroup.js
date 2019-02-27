@@ -138,7 +138,7 @@ export default class AvatarGroup extends Component<Props> {
     const Group = GROUP_COMPONENT[appearance];
 
     // Render (max - 1) avatars to leave space for moreIndicator
-    const maxAvatar = max ? (total > max ? max - 1 : max) : total;
+    const maxAvatar = total > max ? max - 1 : max;
 
     const items = data
       .slice(0, maxAvatar)

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "The uidu theme framework",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,20 +18,20 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "exenv": "^1.2.2",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
+    "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/button": "^0.1.0",
-    "@uidu/docs": "^0.1.0",
-    "@uidu/lozenge": "^0.1.0",
-    "@uidu/section-message": "^0.1.0",
-    "color": "^3.0.0",
-    "enzyme": "^3.7.0",
-    "react-dom": "^16.4.2"
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/button": "^0.1.25",
+    "@uidu/docs": "^0.1.20",
+    "@uidu/lozenge": "^0.1.2",
+    "@uidu/section-message": "^0.1.2",
+    "color": "^3.1.0",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar-group",
-  "version": "0.1.0",
+  "version": "2.1.19",
   "description": "A component to display avatars as a group, either as a stack or in a grid.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -16,26 +16,26 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/avatar": "^0.2.0",
     "@atlaskit/dropdown-menu": "^6.1.26",
     "@atlaskit/item": "^8.0.15",
-    "@uidu/theme": "^0.1.0",
-    "@uidu/tooltip": "^0.1.0",
-    "@babel/runtime": "^7.0.0"
+    "@babel/runtime": "^7.0.0",
+    "@uidu/avatar": "^0.2.2",
+    "@uidu/theme": "^0.1.2",
+    "@uidu/tooltip": "^0.1.2"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
+    "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/button": "^0.1.23",
-    "@uidu/code": "^0.1.0",
-    "@uidu/docs": "^0.1.18",
-    "@uidu/field-base": "^0.1.21",
-    "@uidu/toggle": "^0.1.0",
-    "enzyme": "^3.7.0",
-    "react-dom": "^16.4.2"
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/button": "^0.1.25",
+    "@uidu/code": "^0.1.2",
+    "@uidu/docs": "^0.1.20",
+    "@uidu/field-base": "^0.1.23",
+    "@uidu/toggle": "^0.1.2",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

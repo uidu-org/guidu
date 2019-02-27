@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "0.1.19",
+  "version": "0.1.21",
   "description": "Forms using Formsy",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,12 +15,14 @@
     "access": "public"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "formsy-react": "^1.0.0",
+    "classnames": "^2.2.6",
+    "enzyme-to-json": "^3.3.5",
+    "exenv": "^1.2.2",
+    "formsy-react": "^1.1.5",
     "react-ladda": "^6.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.18"
+    "@uidu/docs": "^0.1.20"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

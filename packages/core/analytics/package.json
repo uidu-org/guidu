@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "The uidu component analytics framework",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,19 +17,19 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "babel-runtime": "^6.26.0",
-    "prop-types": "^15.5.10"
+    "prop-types": "^15.6.0"
   },
   "peerDependencies": {
-    "react": "^16.4.0"
+    "react": "^16.8.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/button": "^0.1.0",
-    "@uidu/docs": "^0.1.0",
-    "@uidu/field-text": "^0.1.0",
-    "enzyme": "^3.7.0",
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/button": "^0.1.25",
+    "@uidu/docs": "^0.1.20",
+    "@uidu/field-text": "^0.1.2",
+    "enzyme": "^3.9.0",
     "lodash.isequal": "^4.5.0",
-    "react-dom": "^16.4.2",
-    "redux": "^3.7.2"
+    "react-dom": "^16.4.0",
+    "redux": "^4.0.1"
   }
 }

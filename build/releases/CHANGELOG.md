@@ -1,5 +1,21 @@
 # @uidu/build-releases
 
+## 3.0.6
+- [patch] :
+
+  - Dist folder created
+
+## 3.0.5
+- [patch] :
+
+  - Release with build included
+- [patch] :
+
+  - Released newly created components and moved all atlaskit references to @uidu scope
+- [patch] :
+
+  - Wrong version for 3 packages
+
 ## 3.0.3
 
 - [patch][c87337f](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/c87337f):

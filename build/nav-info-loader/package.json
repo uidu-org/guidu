@@ -1,6 +1,6 @@
 {
   "name": "@uidu/nav-info-loader",
-  "version": "0.1.14",
+  "version": "0.1.16",
   "main": "index.js",
   "uidu:src": "index.js",
   "repository": "github:uidu-org/guidu",
@@ -10,9 +10,9 @@
   "author": "uidu",
   "license": "ISC",
   "dependencies": {
-    "bolt": "^0.22.1",
+    "bolt": "^0.22.6",
     "globby": "^9.0.0",
-    "loader-utils": "^1.1.0"
+    "loader-utils": "^1.2.3"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

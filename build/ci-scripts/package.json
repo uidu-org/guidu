@@ -1,0 +1,25 @@
+{
+  "name": "@uidu/ci-scripts",
+  "version": "0.1.1",
+  "private": true,
+  "description": "A collection of scripts for use in CI",
+  "main": "index.js",
+  "scripts": {
+    "stop-if-older-build": "node ./release.stop.pipeline.if.older.build.running.js",
+    "restart-stopped-build": "node ./release.restart.last.stopped.build.js"
+  },
+  "author": "Atlassian Pty Ltd",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@uidu/build-utils": "^0.1.2",
+    "adf-builder": "^3.3.0",
+    "axios": "^0.18.0",
+    "bitbucket-build-status": "^1.0.3",
+    "bolt-webpack-analyzer": "^0.0.1",
+    "chalk": "^2.4.2",
+    "npm-run": "^5.0.1",
+    "p-wait-for": "^2.0.1",
+    "s3-cli": "^0.13.0",
+    "spawndamnit": "^2.0.0"
+  }
+}

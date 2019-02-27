@@ -1,6 +1,6 @@
 {
   "name": "@uidu/badge",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A React component that indicates values",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -16,19 +16,19 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/theme": "^0.1.0",
     "@babel/runtime": "^7.0.0",
+    "@uidu/theme": "^0.1.2",
     "babel-runtime": "^6.26.0"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
+    "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/docs": "^0.1.0",
-    "enzyme": "^3.7.0",
-    "react-dom": "^16.4.2",
-    "react-test-renderer": "^16.3.0"
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/docs": "^0.1.20",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0",
+    "react-test-renderer": "^16.8.3"
   }
 }

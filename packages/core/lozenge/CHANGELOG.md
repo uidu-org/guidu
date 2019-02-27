@@ -1,5 +1,18 @@
 # @atlaskit/lozenge
 
+## 0.1.2
+- [patch] :
+
+  - Dist folder created
+
+## 0.1.1
+- [patch] :
+
+  - Release with build included
+- [patch] :
+
+  - Released newly created components and moved all atlaskit references to @uidu scope
+
 ## 6.2.4
 - Updated dependencies [58b84fa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/58b84fa):
   - @atlaskit/theme@7.0.1

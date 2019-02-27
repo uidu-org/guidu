@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.23",
+  "version": "0.1.25",
   "description": "Button component for use in forms",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,12 +15,11 @@
     "access": "public"
   },
   "dependencies": {
-    "classnames": "^2.2.5",
-    "react-bootstrap": "^1.0.0-beta.3"
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.18",
-    "@uidu/form": "^0.1.19"
+    "@uidu/docs": "^0.1.20",
+    "@uidu/form": "^0.1.21"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

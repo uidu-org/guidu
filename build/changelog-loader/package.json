@@ -1,6 +1,6 @@
 {
   "name": "@uidu/changelog-loader",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "main": "index.js",
   "uidu:src": "index.js",
   "repository": "github:uidu-org/guidu",

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/toggle",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A component to view and switch between enabled or disabled states",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,20 +17,20 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/analytics": "^0.1.0",
-    "@uidu/theme": "^0.1.0",
+    "@uidu/analytics": "^0.1.2",
+    "@uidu/theme": "^0.1.2",
     "react-switch": "^4.1.0",
-    "uuid": "^3.1.0"
+    "uuid": "^3.3.2"
   },
   "peerDependencies": {
-    "react": "^16.4.0",
+    "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/button": "^0.1.0",
-    "@uidu/docs": "^0.1.0",
-    "enzyme": "^3.7.0",
-    "react-dom": "^16.4.2"
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/button": "^0.1.25",
+    "@uidu/docs": "^0.1.20",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0"
   }
 }
