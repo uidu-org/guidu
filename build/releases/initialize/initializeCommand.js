@@ -1,11 +1,11 @@
 const path = require('path');
 const fs = require('fs-extra');
-const logger = require('@atlaskit/build-utils/logger');
+const logger = require('@uidu/build-utils/logger');
 const getChangesetBase = require('../utils/getChangesetBase');
 
 async function run({ cwd }) {
   logger.log(
-    'Thanks for choosing @atlaskit/build-releases to help manage versioning in your bolt monorepo',
+    'Thanks for choosing @uidu/build-releases to help manage versioning in your bolt monorepo',
   );
   logger.log(
     'We are going to set you up so you can start adding and consuming changesets',

@@ -5,8 +5,8 @@ import {
   askList,
   askConfirm,
   askQuestion,
-} from '@atlaskit/build-utils/cli';
-import { getChangedPackagesSinceMaster } from '@atlaskit/build-utils/packages';
+} from '@uidu/build-utils/cli';
+import { getChangedPackagesSinceMaster } from '@uidu/build-utils/packages';
 import { changesetCommand } from '../../changeset';
 import writeChangeset from '../../changeset/writeChangeset';
 
@@ -18,10 +18,10 @@ import writeChangeset from '../../changeset/writeChangeset';
       * Otherwise - normal patching rules apply
  */
 
-jest.mock('@atlaskit/build-utils/logger');
-jest.mock('@atlaskit/build-utils/cli');
-jest.mock('@atlaskit/build-utils/packages');
-jest.mock('@atlaskit/build-utils/git');
+jest.mock('@uidu/build-utils/logger');
+jest.mock('@uidu/build-utils/cli');
+jest.mock('@uidu/build-utils/packages');
+jest.mock('@uidu/build-utils/git');
 jest.mock('../../changeset/writeChangeset');
 
 // This is some sad flow hackery

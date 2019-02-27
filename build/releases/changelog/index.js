@@ -3,7 +3,7 @@ const fs = require('fs');
 const bolt = require('bolt');
 const path = require('path');
 const util = require('util');
-const logger = require('@atlaskit/build-utils/logger');
+const logger = require('@uidu/build-utils/logger');
 
 function writeFile(filePath, fileContents) {
   return util.promisify(cb => fs.writeFile(filePath, fileContents, cb))();

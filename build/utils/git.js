@@ -1,7 +1,7 @@
 const spawn = require('projector-spawn');
 const path = require('path');
 
-const parseChangesetCommit = require('@atlaskit/build-releases/changeset/parseChangesetCommit');
+const parseChangesetCommit = require('@uidu/build-releases/changeset/parseChangesetCommit');
 
 // Parses lines that are in the form 'HASH message goes here'
 const parseCommitLine = line => {

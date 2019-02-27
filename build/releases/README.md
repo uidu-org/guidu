@@ -4,14 +4,14 @@ Standalone library to help monorepos that are using bolt to bump version across 
 
 ## Core Concepts
 
-The core concept that `@atlaskit/build-releases` follows is that contributors to a mono-repo should be able to declare an intent to release, and that multiple intents should be able to be combined sensibly. Sensibly here refers to if there is one intent to release button as a 'minor' and another to release button as a 'patch', only one release will be made, at the higher of the two versions.
+The core concept that `@uidu/build-releases` follows is that contributors to a mono-repo should be able to declare an intent to release, and that multiple intents should be able to be combined sensibly. Sensibly here refers to if there is one intent to release button as a 'minor' and another to release button as a 'patch', only one release will be made, at the higher of the two versions.
 
 We are using the term `changeset` for this. A changeset is an intent to release stored as data, with tthe information we need to combine multiple changesets and coordinate releases. We also work with bolt's structure to make sure that changesets will create valid new bolt repositories after versioning has occurred.
-
 
 ## Base workflow
 
 Contributor runs:
+
 ```
 yarn build-releases changeset
 ```
@@ -32,7 +32,6 @@ yarn build-releases publish
 
 The commands are explained further below.
 
-
 ## Commands
 
 ### initialize
@@ -52,6 +51,7 @@ yarn build-releases changeset [--commit]
 This command will ask you a series of questions, first about what packages you want to release, then what version for each package, then it will ask for a summary of the entire changeset. At the final step it will show the changeset it will generate, and confirm that you want to add it.
 
 Once confirmed, the changeset will be written into two files:
+
 - `.changeset/{HASH}/changes.md` - this includes the summary message, and is safe to edit and expand on.
 - `.changeset/{HASH}/changes.json` - this is the intent to update and should not be manually edited.
 
@@ -67,9 +67,7 @@ The information in the `changes.json` will look like:
     {
       "name": "@atlaskit/global-navigation",
       "type": "patch",
-      "dependencies": [
-        "@atlaskit/analytics-listeners"
-      ]
+      "dependencies": ["@atlaskit/analytics-listeners"]
     }
   ]
 }

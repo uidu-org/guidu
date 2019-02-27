@@ -1,12 +1,12 @@
 const path = require('path');
 const bolt = require('bolt');
-const logger = require('@atlaskit/build-utils/logger');
-const git = require('@atlaskit/build-utils/git');
+const logger = require('@uidu/build-utils/logger');
+const git = require('@uidu/build-utils/git');
 const createRelease = require('./createRelease');
 const createReleaseCommit = require('./createReleaseCommit');
 const { removeFolders } = require('../utils/removeFolders');
 const updateChangelog = require('../changelog');
-const fs = require('@atlaskit/build-utils/fs');
+const fs = require('@uidu/build-utils/fs');
 const fse = require('fs-extra');
 const resolveConfig = require('../utils/resolveConfig');
 const { removeEmptyFolders } = require('../utils/removeFolders');

@@ -4,7 +4,7 @@ import fs from 'fs';
 import updateChangelog from '../../changelog';
 import { versionOptions } from '../../initialize/initial/config';
 
-jest.mock('@atlaskit/build-utils/logger');
+jest.mock('@uidu/build-utils/logger');
 
 const emptyFileChangeset = {
   releases: [
