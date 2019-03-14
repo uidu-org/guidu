@@ -1,0 +1,41 @@
+{
+  "name": "@uidu/media-store",
+  "version": "0.1.0",
+  "description": "Media Store API Web Client Library",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@types/query-string": "^6.2.0",
+    "@uidu/docs": "^0.1.20",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "chunkinator": "^2.0.5",
+    "query-string": "^6.2.0",
+    "rusha": "^0.8.13",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/fetch-mock": "^6.0.3",
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/button": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/media-card": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "fetch-mock": "^7.3.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "peerDependencies": {
+    "styled-components": "^4.0.3"
+  }
+}

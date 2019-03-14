@@ -253,6 +253,7 @@ class Tooltip extends Component<Props, State> {
       position,
       mousePosition,
       truncate,
+      className,
       component: TooltipContainer,
       tag: TargetContainer,
     } = this.props;
@@ -265,6 +266,7 @@ class Tooltip extends Component<Props, State> {
     return (
       <Fragment>
         <TargetContainer
+          className={className}
           onClick={this.handleMouseClick}
           onMouseOver={this.handleMouseOver}
           onMouseOut={this.handleMouseLeave}

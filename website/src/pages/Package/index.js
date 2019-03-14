@@ -102,8 +102,6 @@ export default function LoadData({ match }) {
   return <Content />;
 }
 
-console.log(Button);
-
 class Package extends Component<*, *> {
   render() {
     const {
@@ -142,13 +140,13 @@ class Package extends Component<*, *> {
               <Button
                 className="mr-3"
                 color="light"
-                as={Link}
+                component={Link}
                 to={`/packages/${groupId}/${pkgId}/changelog`}
                 withIcon
               >
                 <List className="mr-2" size={'1rem'} /> Changelog
               </Button>
-              <Button as={Link} to={exampleModalPath}>
+              <Button component={Link} to={exampleModalPath}>
                 Examples
               </Button>
               {pkg['atlaskit:designLink'] && (

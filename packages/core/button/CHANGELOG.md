@@ -1,1296 +1,494 @@
-# Change Log
-
-## 0.1.25
-- [patch] :
-
-  - Dist folder created
-
-## 0.1.24
-- [patch] :
-
-  - Release with build included
-- [patch] :
-
-  - Released newly created components and moved all atlaskit references to @uidu scope
-
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
-
-## [0.1.23](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.22...@uidu/button@0.1.23) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.22](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.21...@uidu/button@0.1.22) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.21](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.20...@uidu/button@0.1.21) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.20](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.19...@uidu/button@0.1.20) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.19](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.18...@uidu/button@0.1.19) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.18](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.17...@uidu/button@0.1.18) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.17](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.16...@uidu/button@0.1.17) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.16](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.15...@uidu/button@0.1.16) (2019-02-21)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.15](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.14...@uidu/button@0.1.15) (2018-11-10)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.14](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.13...@uidu/button@0.1.14) (2018-11-10)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.13](https://github.com/uidu-org/guidu/compare/@uidu/button@0.1.12...@uidu/button@0.1.13) (2018-11-10)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.12](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.11...@uidu/button@0.1.12) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.11](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.10...@uidu/button@0.1.11) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.10](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.9...@uidu/button@0.1.10) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.9](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.8...@uidu/button@0.1.9) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.7...@uidu/button@0.1.8) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.7](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.6...@uidu/button@0.1.7) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.6](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.5...@uidu/button@0.1.6) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.5](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.4...@uidu/button@0.1.5) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.4](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.3...@uidu/button@0.1.4) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.3](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.2...@uidu/button@0.1.3) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## [0.1.2](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/button@0.1.1...@uidu/button@0.1.2) (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-## 0.1.1 (2018-11-09)
-
-**Note:** Version bump only for package @uidu/button
-
-
-
-
-
-# [1.0.0-beta.31](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.30...@uidu/inputs@1.0.0-beta.31) (2018-11-02)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.30](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.29...@uidu/inputs@1.0.0-beta.30) (2018-10-25)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.29](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.28...@uidu/inputs@1.0.0-beta.29) (2018-10-20)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.28](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.27...@uidu/inputs@1.0.0-beta.28) (2018-10-15)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.27](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.26...@uidu/inputs@1.0.0-beta.27) (2018-10-12)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.26](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.25...@uidu/inputs@1.0.0-beta.26) (2018-10-12)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.25](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.24...@uidu/inputs@1.0.0-beta.25) (2018-10-12)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.24](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.23...@uidu/inputs@1.0.0-beta.24) (2018-10-09)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-# [1.0.0-beta.23](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.22...@uidu/inputs@1.0.0-beta.23) (2018-10-09)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-<a name="1.0.0-beta.22"></a>
-# [1.0.0-beta.22](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.21...@uidu/inputs@1.0.0-beta.22) (2018-10-02)
-
-**Note:** Version bump only for package @uidu/inputs
-
-
-
-
-
-<a name="1.0.0-beta.21"></a>
-# [1.0.0-beta.21](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.20...@uidu/inputs@1.0.0-beta.21) (2018-09-19)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.20"></a>
-# [1.0.0-beta.20](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.19...@uidu/inputs@1.0.0-beta.20) (2018-09-04)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.19"></a>
-# [1.0.0-beta.19](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.18...@uidu/inputs@1.0.0-beta.19) (2018-08-31)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.18"></a>
-# [1.0.0-beta.18](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.17...@uidu/inputs@1.0.0-beta.18) (2018-08-29)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.17"></a>
-# [1.0.0-beta.17](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.16...@uidu/inputs@1.0.0-beta.17) (2018-08-13)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.16"></a>
-# [1.0.0-beta.16](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.15...@uidu/inputs@1.0.0-beta.16) (2018-08-13)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.15"></a>
-# [1.0.0-beta.15](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.14...@uidu/inputs@1.0.0-beta.15) (2018-08-13)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.14"></a>
-# [1.0.0-beta.14](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.13...@uidu/inputs@1.0.0-beta.14) (2018-08-13)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.13"></a>
-# [1.0.0-beta.13](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.12...@uidu/inputs@1.0.0-beta.13) (2018-08-06)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.12"></a>
-# [1.0.0-beta.12](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.11...@uidu/inputs@1.0.0-beta.12) (2018-08-06)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.11"></a>
-# [1.0.0-beta.11](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.10...@uidu/inputs@1.0.0-beta.11) (2018-08-02)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.10"></a>
-# [1.0.0-beta.10](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.9...@uidu/inputs@1.0.0-beta.10) (2018-08-02)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.9"></a>
-# [1.0.0-beta.9](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.8...@uidu/inputs@1.0.0-beta.9) (2018-08-02)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.8"></a>
-# [1.0.0-beta.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.7...@uidu/inputs@1.0.0-beta.8) (2018-08-01)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.7"></a>
-# [1.0.0-beta.7](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.6...@uidu/inputs@1.0.0-beta.7) (2018-08-01)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.6"></a>
-# [1.0.0-beta.6](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.5...@uidu/inputs@1.0.0-beta.6) (2018-08-01)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.5"></a>
-# [1.0.0-beta.5](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.4...@uidu/inputs@1.0.0-beta.5) (2018-08-01)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.4"></a>
-# [1.0.0-beta.4](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.3...@uidu/inputs@1.0.0-beta.4) (2018-08-01)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.3"></a>
-# [1.0.0-beta.3](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.2...@uidu/inputs@1.0.0-beta.3) (2018-08-01)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.2"></a>
-# [1.0.0-beta.2](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.1...@uidu/inputs@1.0.0-beta.2) (2018-07-30)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.1"></a>
-# [1.0.0-beta.1](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@1.0.0-beta.0...@uidu/inputs@1.0.0-beta.1) (2018-07-27)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="1.0.0-beta.0"></a>
-# [1.0.0-beta.0](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.112...@uidu/inputs@1.0.0-beta.0) (2018-07-24)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.112"></a>
-## [0.9.112](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.111...@uidu/inputs@0.9.112) (2018-07-20)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.111"></a>
-## [0.9.111](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.110...@uidu/inputs@0.9.111) (2018-07-18)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.110"></a>
-## [0.9.110](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.109...@uidu/inputs@0.9.110) (2018-07-11)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.109"></a>
-## [0.9.109](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.108...@uidu/inputs@0.9.109) (2018-06-29)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.108"></a>
-## [0.9.108](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.107...@uidu/inputs@0.9.108) (2018-06-29)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.107"></a>
-## [0.9.107](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.106...@uidu/inputs@0.9.107) (2018-06-28)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.106"></a>
-## [0.9.106](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.105...@uidu/inputs@0.9.106) (2018-06-28)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.105"></a>
-## [0.9.105](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.104...@uidu/inputs@0.9.105) (2018-06-14)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.104"></a>
-## [0.9.104](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.103...@uidu/inputs@0.9.104) (2018-06-12)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.103"></a>
-## [0.9.103](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.102...@uidu/inputs@0.9.103) (2018-06-09)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.102"></a>
-## [0.9.102](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.101...@uidu/inputs@0.9.102) (2018-06-05)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.101"></a>
-## [0.9.101](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.100...@uidu/inputs@0.9.101) (2018-06-04)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.100"></a>
-## [0.9.100](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.99...@uidu/inputs@0.9.100) (2018-06-04)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.99"></a>
-## [0.9.99](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.98...@uidu/inputs@0.9.99) (2018-05-09)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.98"></a>
-## [0.9.98](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.97...@uidu/inputs@0.9.98) (2018-05-08)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.97"></a>
-## [0.9.97](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.96...@uidu/inputs@0.9.97) (2018-05-08)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.96"></a>
-## [0.9.96](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.95...@uidu/inputs@0.9.96) (2018-05-08)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.95"></a>
-## [0.9.95](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.94...@uidu/inputs@0.9.95) (2018-05-08)
-
-
-
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.94"></a>
-
-## [0.9.90](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.89...@uidu/inputs@0.9.90) (2018-04-18)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.89"></a>
-
-## [0.9.89](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.88...@uidu/inputs@0.9.89) (2018-04-18)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.88"></a>
-
-## [0.9.88](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.87...@uidu/inputs@0.9.88) (2018-04-18)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.87"></a>
-
-## [0.9.87](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.86...@uidu/inputs@0.9.87) (2018-04-18)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.86"></a>
-
-## [0.9.86](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.85...@uidu/inputs@0.9.86) (2018-04-17)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.85"></a>
-
-## [0.9.85](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.84...@uidu/inputs@0.9.85) (2018-04-17)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.84"></a>
-
-## [0.9.84](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.83...@uidu/inputs@0.9.84) (2018-04-07)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.83"></a>
-
-## [0.9.83](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.82...@uidu/inputs@0.9.83) (2018-04-05)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.82"></a>
-
-## [0.9.82](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.81...@uidu/inputs@0.9.82) (2018-04-05)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.81"></a>
-
-## [0.9.81](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.80...@uidu/inputs@0.9.81) (2018-04-05)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.80"></a>
-
-## [0.9.80](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.79...@uidu/inputs@0.9.80) (2018-04-04)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.79"></a>
-
-## [0.9.79](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.78...@uidu/inputs@0.9.79) (2018-04-04)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.78"></a>
-
-## [0.9.78](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.77...@uidu/inputs@0.9.78) (2018-04-04)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.77"></a>
-
-## [0.9.77](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.76...@uidu/inputs@0.9.77) (2018-03-16)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.76"></a>
-
-## [0.9.76](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.75...@uidu/inputs@0.9.76) (2018-03-16)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.75"></a>
-
-## [0.9.75](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.74...@uidu/inputs@0.9.75) (2018-03-14)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.74"></a>
-
-## [0.9.74](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.73...@uidu/inputs@0.9.74) (2018-03-13)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.73"></a>
-
-## [0.9.73](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.72...@uidu/inputs@0.9.73) (2018-03-09)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.72"></a>
-
-## [0.9.72](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.71...@uidu/inputs@0.9.72) (2018-03-09)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.71"></a>
-
-## [0.9.71](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.70...@uidu/inputs@0.9.71) (2018-03-02)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.70"></a>
-
-## [0.9.70](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.69...@uidu/inputs@0.9.70) (2018-02-28)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.69"></a>
-
-## [0.9.69](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.68...@uidu/inputs@0.9.69) (2018-02-27)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.68"></a>
-
-## [0.9.68](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.67...@uidu/inputs@0.9.68) (2018-02-27)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.67"></a>
-
-## [0.9.67](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.66...@uidu/inputs@0.9.67) (2018-02-27)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.66"></a>
-
-## [0.9.66](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.65...@uidu/inputs@0.9.66) (2018-02-27)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.65"></a>
-
-## [0.9.65](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.64...@uidu/inputs@0.9.65) (2018-02-27)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.64"></a>
-
-## [0.9.64](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.63...@uidu/inputs@0.9.64) (2018-02-26)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.63"></a>
-
-## [0.9.63](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.62...@uidu/inputs@0.9.63) (2018-02-23)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.62"></a>
-
-## [0.9.62](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.61...@uidu/inputs@0.9.62) (2018-02-22)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.61"></a>
-
-## [0.9.61](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.60...@uidu/inputs@0.9.61) (2018-02-22)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.60"></a>
-
-## [0.9.60](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.59...@uidu/inputs@0.9.60) (2018-02-22)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.59"></a>
-
-## [0.9.59](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.58...@uidu/inputs@0.9.59) (2018-02-14)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.58"></a>
-
-## [0.9.58](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.57...@uidu/inputs@0.9.58) (2018-01-26)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.57"></a>
-
-## [0.9.57](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.56...@uidu/inputs@0.9.57) (2018-01-25)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.56"></a>
-
-## [0.9.56](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.55...@uidu/inputs@0.9.56) (2018-01-25)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.55"></a>
-
-## [0.9.55](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.54...@uidu/inputs@0.9.55) (2018-01-22)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.54"></a>
-
-## [0.9.54](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.53...@uidu/inputs@0.9.54) (2018-01-10)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.53"></a>
-
-## [0.9.53](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.52...@uidu/inputs@0.9.53) (2018-01-10)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.52"></a>
-
-## [0.9.52](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.51...@uidu/inputs@0.9.52) (2018-01-09)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.51"></a>
-
-## [0.9.51](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.50...@uidu/inputs@0.9.51) (2018-01-05)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.50"></a>
-
-## [0.9.50](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.49...@uidu/inputs@0.9.50) (2018-01-05)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.49"></a>
-
-## [0.9.49](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.48...@uidu/inputs@0.9.49) (2018-01-05)
-
-### Bug Fixes
-
-* **textarea:** changed autosize lib ([63421e4](https://github.com/uidu-org/uidu-ui-kit/commit/63421e4))
-
-<a name="0.9.48"></a>
-
-## [0.9.48](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.47...@uidu/inputs@0.9.48) (2018-01-05)
-
-### Bug Fixes
-
-* **textarea:** fix autosize ([80d6d87](https://github.com/uidu-org/uidu-ui-kit/commit/80d6d87))
-
-<a name="0.9.47"></a>
-
-## [0.9.47](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.46...@uidu/inputs@0.9.47) (2018-01-05)
-
-### Bug Fixes
-
-* **textarea:** fix autosize ([5d1ee87](https://github.com/uidu-org/uidu-ui-kit/commit/5d1ee87))
-
-<a name="0.9.46"></a>
-
-## [0.9.46](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.45...@uidu/inputs@0.9.46) (2018-01-05)
-
-### Bug Fixes
-
-* **textarea:** adding autosize ([04c3abd](https://github.com/uidu-org/uidu-ui-kit/commit/04c3abd))
-
-<a name="0.9.45"></a>
-
-## [0.9.45](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.44...@uidu/inputs@0.9.45) (2018-01-04)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.44"></a>
-
-## [0.9.44](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.43...@uidu/inputs@0.9.44) (2018-01-04)
-
-### Bug Fixes
-
-* **input-geosuggest:** remove geolocation if not available + fix onFocus callback ([ace066e](https://github.com/uidu-org/uidu-ui-kit/commit/ace066e))
-
-<a name="0.9.43"></a>
-
-## [0.9.43](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.42...@uidu/inputs@0.9.43) (2018-01-03)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.42"></a>
-
-## [0.9.42](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.41...@uidu/inputs@0.9.42) (2018-01-03)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.41"></a>
-
-## [0.9.41](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.40...@uidu/inputs@0.9.41) (2017-12-29)
-
-### Bug Fixes
-
-* **svg:** fix sizing for firefox ([30c7081](https://github.com/uidu-org/uidu-ui-kit/commit/30c7081))
-
-<a name="0.9.40"></a>
-
-## [0.9.40](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.39...@uidu/inputs@0.9.40) (2017-12-28)
-
-### Bug Fixes
-
-* **image-uploader:** center loader ([7da3120](https://github.com/uidu-org/uidu-ui-kit/commit/7da3120))
-
-<a name="0.9.39"></a>
-
-## [0.9.39](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.38...@uidu/inputs@0.9.39) (2017-12-28)
-
-### Bug Fixes
-
-* **image-uploadee:** wire [@uidu](https://github.com/uidu)/loader ([4baec96](https://github.com/uidu-org/uidu-ui-kit/commit/4baec96))
-
-<a name="0.9.38"></a>
-
-## [0.9.38](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.37...@uidu/inputs@0.9.38) (2017-12-28)
-
-### Bug Fixes
-
-* **image-uploader:** adding loader and fix orientation ([93a730d](https://github.com/uidu-org/uidu-ui-kit/commit/93a730d))
-
-<a name="0.9.37"></a>
-
-## [0.9.37](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.36...@uidu/inputs@0.9.37) (2017-12-22)
-
-### Bug Fixes
-
-* **inputs:** select with multiple option no downshift ([328e0af](https://github.com/uidu-org/uidu-ui-kit/commit/328e0af))
-
-<a name="0.9.36"></a>
-
-## [0.9.36](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.35...@uidu/inputs@0.9.36) (2017-12-22)
-
-### Bug Fixes
-
-* **inputs:** adding select async with create ([d4418d1](https://github.com/uidu-org/uidu-ui-kit/commit/d4418d1))
-
-<a name="0.9.35"></a>
-
-## [0.9.35](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.34...@uidu/inputs@0.9.35) (2017-12-22)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.34"></a>
-
-## [0.9.34](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.33...@uidu/inputs@0.9.34) (2017-12-22)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.33"></a>
-
-## [0.9.33](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.32...@uidu/inputs@0.9.33) (2017-12-22)
-
-### Bug Fixes
-
-* **inputs:** downshift focus method ([042e60a](https://github.com/uidu-org/uidu-ui-kit/commit/042e60a))
-
-<a name="0.9.32"></a>
-
-## [0.9.32](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.31...@uidu/inputs@0.9.32) (2017-12-22)
-
-### Bug Fixes
-
-* **inputs:** select re-enabled focus ([cf2d6d6](https://github.com/uidu-org/uidu-ui-kit/commit/cf2d6d6))
-
-<a name="0.9.31"></a>
-
-## [0.9.31](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.30...@uidu/inputs@0.9.31) (2017-12-22)
-
-### Bug Fixes
-
-* **inputs:** select downshift focus ([316b281](https://github.com/uidu-org/uidu-ui-kit/commit/316b281))
-
-<a name="0.9.30"></a>
-
-## [0.9.30](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.29...@uidu/inputs@0.9.30) (2017-12-22)
-
-### Bug Fixes
-
-* **downshift:** focus ([9f1032b](https://github.com/uidu-org/uidu-ui-kit/commit/9f1032b))
-
-<a name="0.9.29"></a>
-
-## [0.9.29](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.28...@uidu/inputs@0.9.29) (2017-12-22)
-
-### Bug Fixes
-
-* **downshift:** focus ([ccc2ad5](https://github.com/uidu-org/uidu-ui-kit/commit/ccc2ad5))
-
-<a name="0.9.28"></a>
-
-## [0.9.28](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.27...@uidu/inputs@0.9.28) (2017-12-22)
-
-### Bug Fixes
-
-* **inputs:** add focus method to all inputs ([d721fa9](https://github.com/uidu-org/uidu-ui-kit/commit/d721fa9))
-
-<a name="0.9.27"></a>
-
-## [0.9.27](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.26...@uidu/inputs@0.9.27) (2017-12-21)
-
-### Bug Fixes
-
-* **inputs:** select focus ([7a2622a](https://github.com/uidu-org/uidu-ui-kit/commit/7a2622a))
-
-<a name="0.9.26"></a>
-
-## [0.9.26](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.25...@uidu/inputs@0.9.26) (2017-12-20)
-
-### Bug Fixes
-
-* **inputs:** added select async ([10036fe](https://github.com/uidu-org/uidu-ui-kit/commit/10036fe))
-
-<a name="0.9.25"></a>
-
-## [0.9.25](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.24...@uidu/inputs@0.9.25) (2017-12-15)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.24"></a>
-
-## [0.9.24](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.23...@uidu/inputs@0.9.24) (2017-12-14)
-
-### Bug Fixes
-
-* **inputs:** pass value to downshift exposed select ([d35177a](https://github.com/uidu-org/uidu-ui-kit/commit/d35177a))
-
-<a name="0.9.23"></a>
-
-## [0.9.23](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.22...@uidu/inputs@0.9.23) (2017-12-14)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.22"></a>
-
-## [0.9.22](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.21...@uidu/inputs@0.9.22) (2017-12-14)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.21"></a>
-
-## [0.9.21](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.20...@uidu/inputs@0.9.21) (2017-12-14)
-
-### Bug Fixes
-
-* **inputs:** lint + added uidu slider ([ae9d87e](https://github.com/uidu-org/uidu-ui-kit/commit/ae9d87e))
-
-<a name="0.9.20"></a>
-
-## [0.9.20](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.19...@uidu/inputs@0.9.20) (2017-12-12)
-
-### Bug Fixes
-
-* **inputs:** adding rate input and radio-grid, fixed radio and checkbox styling, exposed select tabindex, and added uidu-utils ([59a18cf](https://github.com/uidu-org/uidu-ui-kit/commit/59a18cf))
-
-<a name="0.9.19"></a>
-
-## [0.9.19](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.18...@uidu/inputs@0.9.19) (2017-11-30)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.18"></a>
-
-## [0.9.18](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.17...@uidu/inputs@0.9.18) (2017-11-30)
-
-### Bug Fixes
-
-* **select:** Select exposed options with downshift ([df832eb](https://github.com/uidu-org/uidu-ui-kit/commit/df832eb))
-
-<a name="0.9.17"></a>
-
-## [0.9.17](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.16...@uidu/inputs@0.9.17) (2017-11-30)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.16"></a>
-
-## [0.9.16](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.15...@uidu/inputs@0.9.16) (2017-11-27)
-
-### Bug Fixes
-
-* **dates:** fix missing css and upgrade to version 7 ([5eedb35](https://github.com/uidu-org/uidu-ui-kit/commit/5eedb35))
-
-<a name="0.9.15"></a>
-
-## [0.9.15](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.14...@uidu/inputs@0.9.15) (2017-11-27)
-
-### Bug Fixes
-
-* **inputs:** Adding input switch, upgrade react-select and react-day-picker ([518eab4](https://github.com/uidu-org/uidu-ui-kit/commit/518eab4))
-
-<a name="0.9.14"></a>
-
-## [0.9.14](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.13...@uidu/inputs@0.9.14) (2017-11-24)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.13"></a>
-
-## [0.9.13](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.12...@uidu/inputs@0.9.13) (2017-11-24)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.12"></a>
-
-## [0.9.12](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.11...@uidu/inputs@0.9.12) (2017-11-23)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.11"></a>
-
-## [0.9.11](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.10...@uidu/inputs@0.9.11) (2017-11-23)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.10"></a>
-
-## [0.9.10](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.9...@uidu/inputs@0.9.10) (2017-11-20)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.9"></a>
-
-## [0.9.9](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.8...@uidu/inputs@0.9.9) (2017-11-16)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.8"></a>
-
-## [0.9.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.7...@uidu/inputs@0.9.8) (2017-11-13)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.7"></a>
-
-## [0.9.7](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.6...@uidu/inputs@0.9.7) (2017-11-13)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.6"></a>
-
-## [0.9.6](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.5...@uidu/inputs@0.9.6) (2017-11-13)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.5"></a>
-
-## [0.9.5](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.4...@uidu/inputs@0.9.5) (2017-11-13)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.4"></a>
-
-## [0.9.4](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.3...@uidu/inputs@0.9.4) (2017-11-13)
-
-### Bug Fixes
-
-* **formsy:** upgrade to formsy/formsy-react@1.0.0 ([1419697](https://github.com/uidu-org/uidu-ui-kit/commit/1419697))
-
-<a name="0.9.3"></a>
-
-## [0.9.3](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.2...@uidu/inputs@0.9.3) (2017-11-13)
-
-### Bug Fixes
-
-* **inputs:** moved to latest momentjs ([139e632](https://github.com/uidu-org/uidu-ui-kit/commit/139e632))
-* **select:** add autofocus props ([7e627a9](https://github.com/uidu-org/uidu-ui-kit/commit/7e627a9))
-
-<a name="0.9.2"></a>
-
-## [0.9.2](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.1...@uidu/inputs@0.9.2) (2017-10-19)
-
-### Bug Fixes
-
-* **time:** Added default onChange to time input ([a3e2970](https://github.com/uidu-org/uidu-ui-kit/commit/a3e2970))
-
-<a name="0.9.1"></a>
-
-## [0.9.1](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.9.0...@uidu/inputs@0.9.1) (2017-10-19)
-
-**Note:** Version bump only for package @uidu/inputs
-
-<a name="0.9.0"></a>
-
-# [0.9.0](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.8...@uidu/inputs@0.9.0) (2017-10-19)
-
-### Bug Fixes
-
-* **deps:** removed downshift dependency ([51ca616](https://github.com/uidu-org/uidu-ui-kit/commit/51ca616))
-* **inputs:** cleanup some errors, fix file input lang attributes ([915ab21](https://github.com/uidu-org/uidu-ui-kit/commit/915ab21))
-* **inputs:** removed trailing ~ ([2b4b15b](https://github.com/uidu-org/uidu-ui-kit/commit/2b4b15b))
-* **select:** adding custom arrows ([60085a1](https://github.com/uidu-org/uidu-ui-kit/commit/60085a1))
-
-### Features
-
-* **select:** wire react-select instead of Downshift ([7ab7b49](https://github.com/uidu-org/uidu-ui-kit/commit/7ab7b49))
-* **time:** added new timeinput instead of select. Seems easier to use ([4c6a025](https://github.com/uidu-org/uidu-ui-kit/commit/4c6a025))
-
-<a name="0.9.0"></a>
-
-# [0.9.0](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.8...@uidu/inputs@0.9.0) (2017-10-19)
-
-### Bug Fixes
-
-* **deps:** removed downshift dependency ([51ca616](https://github.com/uidu-org/uidu-ui-kit/commit/51ca616))
-* **inputs:** cleanup some errors, fix file input lang attributes ([915ab21](https://github.com/uidu-org/uidu-ui-kit/commit/915ab21))
-* **select:** adding custom arrows ([60085a1](https://github.com/uidu-org/uidu-ui-kit/commit/60085a1))
-
-### Features
-
-* **select:** wire react-select instead of Downshift ([7ab7b49](https://github.com/uidu-org/uidu-ui-kit/commit/7ab7b49))
-* **time:** added new timeinput instead of select. Seems easier to use ([4c6a025](https://github.com/uidu-org/uidu-ui-kit/commit/4c6a025))
-
-<a name="0.8.8"></a>
-
-## [0.8.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.7...@uidu/inputs@0.8.8) (2017-10-19)
-
-### Bug Fixes
-
-* **geosuggest:** show conditional help based on geocoder response ([d23c554](https://github.com/uidu-org/uidu-ui-kit/commit/d23c554))
-
-<a name="0.8.7"></a>
-
-## [0.8.7](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.6...@uidu/inputs@0.8.7) (2017-10-19)
-
-### Bug Fixes
-
-* **changelog:** removed duplicate releases ([d66302e](https://github.com/uidu-org/uidu-ui-kit/commit/d66302e))
-
-<a name="0.8.6"></a>
-
-## [0.8.6](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.5...@uidu/inputs@0.8.6) (2017-10-18)
-
-### Bug Fixes
-
-* **input:** allow for number as value, also in control component ([98477ef](https://github.com/uidu-org/uidu-ui-kit/commit/98477ef))
-* **input:** allow for number as value, also in control component ([98477ef](https://github.com/uidu-org/uidu-ui-kit/commit/98477ef))
-
-<a name="0.8.5"></a>
-
-## [0.8.5](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.4...@uidu/inputs@0.8.5) (2017-10-18)
-
-### Bug Fixes
-
-* **build:** typo in changelog ([8cc2a77](https://github.com/uidu-org/uidu-ui-kit/commit/8cc2a77))
-* **input:** allow for number as value ([878fb8f](https://github.com/uidu-org/uidu-ui-kit/commit/878fb8f))
-
-<a name="0.8.4"></a>
-
-## [0.8.4](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.3...@uidu/inputs@0.8.4) (2017-10-18)
-
-### Bug Fixes
-
-* **label:** error in space for required symbol ([8f2317d](https://github.com/uidu-org/uidu-ui-kit/commit/8f2317d))
-
-<a name="0.8.3"></a>
-
-## [0.8.3](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.3...@uidu/inputs@0.8.3) (2017-10-18)
-
-### Bug Fixes
-
-* **label:** float label should include required symbol if input is required ([e364285](https://github.com/uidu-org/uidu-ui-kit/commit/e364285))
-
-<a name="0.8.2"></a>
-
-## [0.8.2](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.8.1...@uidu/inputs@0.8.2) (2017-10-18)
-
-### Bug Fixes
-
-* **inputs:** proper import of css modules ([ab4d5b7](https://github.com/uidu-org/uidu-ui-kit/commit/ab4d5b7))
-
-<a name="0.8.0"></a>
-
-# [0.8.0](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/inputs@0.7.78...@uidu/inputs@0.8.0) (2017-10-18)
-
-### Features
-
-* **geosuggest:** adding navigator location on click to populate field ([8388aaa](https://github.com/uidu-org/uidu-ui-kit/commit/8388aaa))
+# @atlaskit/button
+
+## 10.1.2
+- Updated dependencies [d7ef59d432](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d7ef59d432):
+  - @atlaskit/docs@6.0.1
+  - @atlaskit/checkbox@5.0.11
+  - @atlaskit/icon@16.0.0
+
+## 10.1.1
+- Updated dependencies [58b84fa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/58b84fa):
+  - @atlaskit/analytics-next@3.1.2
+  - @atlaskit/checkbox@5.0.9
+  - @atlaskit/icon@15.0.2
+  - @atlaskit/logo@9.2.6
+  - @atlaskit/spinner@9.0.13
+  - @atlaskit/theme@7.0.1
+  - @atlaskit/docs@6.0.0
+
+## 10.1.0
+- [minor] [36929ef](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/36929ef):
+
+  - Add reset as it is listed as a valid type for button and is useful when building forms
+
+## 10.0.4
+- Updated dependencies [d13242d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d13242d):
+  - @atlaskit/docs@5.2.3
+  - @atlaskit/checkbox@5.0.8
+  - @atlaskit/icon@15.0.1
+  - @atlaskit/logo@9.2.5
+  - @atlaskit/spinner@9.0.12
+  - @atlaskit/theme@7.0.0
+
+## 10.0.3
+- [patch] [76a8f1c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/76a8f1c):
+
+  - Convert @atlaskit/textarea to Typescript
+    - Dist paths have changed, if you are importing by exact file path you will need to update your imports `import '@atlaskit/button/dist/es5/components/ButtonGroup'`
+    - Flow types are not present any more, Typescript definitions are shipped instead
+
+## 10.0.2
+- [patch] [8f89287](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/8f89287):
+
+  - Add tslib to dependencies to stop load breaking when it's not there
+
+## 10.0.1
+- Updated dependencies [ab9b69c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ab9b69c):
+  - @atlaskit/docs@5.2.2
+  - @atlaskit/checkbox@5.0.7
+  - @atlaskit/icon@15.0.0
+
+## 10.0.0
+- [major] [6998f11](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6998f11):
+
+  - Converted @atlaskit/button to Typescript
+    - Dist paths have changed, if you are importing by exact file path you will need to update your imports
+      - E.g. `import '@atlaskit/button/dist/cjs/components/ButtonGroup';` would need to be updated to `import '@atlaskit/button/dist/es5/components/ButtonGroup'`
+    - Flow types are not present any more, Typescript definitions are shipped instead
+
+- Updated dependencies [bfac186](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/bfac186):
+  - @atlaskit/analytics-next-types@3.1.2
+  - @atlaskit/type-helpers@2.0.0
+
+## 9.0.16
+- [patch] Fix truncation in button [508ca2c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/508ca2c)
+
+## 9.0.15
+- [patch] Adds missing implicit @babel/runtime dependency [b71751b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/b71751b)
+
+## 9.0.14
+- [patch] Fix styling of button rendering icon in IE [b4c5b87](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/b4c5b87)
+
+## 9.0.13
+- [patch] Updated dependencies [65c6514](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/65c6514)
+  - @atlaskit/docs@5.0.8
+  - @atlaskit/checkbox@5.0.2
+  - @atlaskit/icon@14.0.0
+
+## 9.0.12
+- [patch] Add help appearance [3548c3f](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/3548c3f)
+
+## 9.0.11
+- [patch] Update the appearance of selected for Help [196603f](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/196603f)
+
+## 9.0.10
+- [patch] Updated dependencies [7d51a09](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7d51a09)
+  - @atlaskit/spinner@9.0.9
+
+## 9.0.9
+- [patch] Updated dependencies [80e1925](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/80e1925)
+  - @atlaskit/checkbox@5.0.0
+
+## 9.0.8
+- [patch] Adds sideEffects: false to allow proper tree shaking [b5d6d04](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/b5d6d04)
+
+## 9.0.6
+- [patch] Updated dependencies [df22ad8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/df22ad8)
+  - @atlaskit/theme@6.0.0
+  - @atlaskit/spinner@9.0.6
+  - @atlaskit/icon@13.2.5
+  - @atlaskit/checkbox@4.0.4
+  - @atlaskit/docs@5.0.6
+
+## 9.0.5
+- [patch] update the dependency of react-dom to 16.4.2 due to vulnerability in previous versions read https://reactjs.org/blog/2018/08/01/react-v-16-4-2.html for details [a4bd557](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a4bd557)
+- [patch] Updated dependencies [a4bd557](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a4bd557)
+  - @atlaskit/analytics-next@3.0.4
+  - @atlaskit/checkbox@4.0.3
+  - @atlaskit/theme@5.1.3
+  - @atlaskit/spinner@9.0.5
+  - @atlaskit/icon@13.2.4
+
+## 9.0.4
+- [patch] Updated dependencies [acd86a1](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/acd86a1)
+  - @atlaskit/icon@13.2.2
+  - @atlaskit/checkbox@4.0.2
+  - @atlaskit/theme@5.1.2
+  - @atlaskit/spinner@9.0.4
+  - @atlaskit/analytics-next@3.0.3
+  - @atlaskit/docs@5.0.2
+
+## 9.0.3
+- [patch] Add a SSR test for every package, add react-dom and build-utils in devDependencies [7e331b5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7e331b5)
+- [patch] Updated dependencies [7e331b5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7e331b5)
+  - @atlaskit/analytics-next@3.0.2
+  - @atlaskit/checkbox@4.0.1
+  - @atlaskit/theme@5.1.1
+  - @atlaskit/spinner@9.0.3
+  - @atlaskit/icon@13.2.1
+
+## 9.0.2
+- [patch] Move analytics tests and replace elements to core [49d4ab4](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/49d4ab4)
+- [patch] Updated dependencies [49d4ab4](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/49d4ab4)
+  - @atlaskit/analytics-next@3.0.1
+  - @atlaskit/spinner@9.0.2
+  - @atlaskit/docs@5.0.1
+
+## 9.0.1
+- [patch] Updated dependencies [619ab41](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/619ab41)
+  - @atlaskit/spinner@9.0.1
+
+## 9.0.0
+- [major] Provides analytics for common component interations. See the [Instrumented Components](https://atlaskit.atlassian.com/packages/core/analytics-next) section for more details. If you are using enzyme for testing you will have to use [our forked version of the library](https://atlaskit.atlassian.com/docs/guides/testing#we-use-a-forked-version-of-enzyme). [563a7eb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/563a7eb)
+- [major] Updates to React ^16.4.0 [7edb866](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7edb866)
+- [major] Updated dependencies [563a7eb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/563a7eb)
+  - @atlaskit/analytics-next@3.0.0
+  - @atlaskit/checkbox@4.0.0
+  - @atlaskit/theme@5.0.0
+  - @atlaskit/spinner@9.0.0
+  - @atlaskit/docs@5.0.0
+  - @atlaskit/icon@13.0.0
+- [major] Updated dependencies [7edb866](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7edb866)
+  - @atlaskit/analytics-next@3.0.0
+  - @atlaskit/checkbox@4.0.0
+  - @atlaskit/theme@5.0.0
+  - @atlaskit/spinner@9.0.0
+  - @atlaskit/docs@5.0.0
+  - @atlaskit/icon@13.0.0
+
+## 8.2.7
+- [patch] Fixed spinner position and size for isLoading state of buttons [d6fb3c9](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d6fb3c9)
+- [none] Updated dependencies [d6fb3c9](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d6fb3c9)
+
+## 8.2.6
+- [patch] Updated prop description for button. Added button label props for inline-edit accessibility. [11205df](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/11205df)
+- [none] Updated dependencies [11205df](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/11205df)
+
+## 8.2.5
+- [patch] Fix flow types [da63331](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/da63331)
+
+- [none] Updated dependencies [da63331](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/da63331)
+- [none] Updated dependencies [7724115](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7724115)
+
+## 8.2.4
+- [patch] Remove or update $FlowFixMe [e8ad98a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e8ad98a)
+- [none] Updated dependencies [e8ad98a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e8ad98a)
+  - @atlaskit/icon@12.6.1
+
+## 8.2.3
+- [patch] Updated dependencies [cdba8b3](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cdba8b3)
+  - @atlaskit/spinner@8.0.0
+
+## 8.2.2
+- [patch] Fix $FlowFixMe and release packages [25d0b2d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/25d0b2d)
+- [patch] Updated dependencies [25d0b2d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/25d0b2d)
+  - @atlaskit/spinner@7.1.1
+  - @atlaskit/checkbox@3.1.2
+  - @atlaskit/icon@12.3.1
+
+## 8.2.1
+- [patch] Fixed interactions for isLoading state. Now prevents interactions (click, hover, keyboard submit) while loading [4605f44](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/4605f44)
+- [none] Updated dependencies [4605f44](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/4605f44)
+
+## 8.2.0
+- [minor] Fixes types for Flow 0.74 [dc50cd2](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/dc50cd2)
+- [patch] Updated dependencies [dc50cd2](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/dc50cd2)
+  - @atlaskit/spinner@7.1.0
+  - @atlaskit/checkbox@3.1.0
+  - @atlaskit/icon@12.2.0
+
+## 8.1.2
+- [patch] Clean Changelogs - remove duplicates and empty entries [e7756cd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e7756cd)
+- [patch] Updated dependencies [e7756cd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e7756cd)
+  - @atlaskit/theme@4.0.4
+  - @atlaskit/spinner@7.0.2
+  - @atlaskit/checkbox@3.0.6
+  - @atlaskit/icon@12.1.2
+
+## 8.1.1
+- [patch] Update changelogs to remove duplicate [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
+- [patch] Updated dependencies [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
+  - @atlaskit/theme@4.0.3
+  - @atlaskit/spinner@7.0.1
+  - @atlaskit/icon@12.1.1
+  - @atlaskit/analytics-next@2.1.8
+  - @atlaskit/checkbox@3.0.5
+  - @atlaskit/docs@4.1.1
+
+## 8.1.0
+- [patch] Updated dependencies [9d20f54](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9d20f54)
+  - @atlaskit/spinner@7.0.0
+  - @atlaskit/icon@12.1.0
+  - @atlaskit/checkbox@3.0.4
+  - @atlaskit/docs@4.1.0
+  - @atlaskit/theme@4.0.2
+  - @atlaskit/analytics-next@2.1.7
+
+## 8.0.1
+- [patch] Update readme's [223cd67](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/223cd67)
+- [patch] Updated dependencies [223cd67](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/223cd67)
+  - @atlaskit/icon@12.0.1
+  - @atlaskit/analytics-next@2.1.5
+  - @atlaskit/checkbox@3.0.1
+  - @atlaskit/theme@4.0.1
+  - @atlaskit/spinner@6.0.1
+  - @atlaskit/docs@4.0.1
+
+## 8.0.0
+- [major] makes styled-components a peer dependency and upgrades version range from 1.4.6 - 3 to ^3.2.6 [1e80619](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e80619)
+- [patch] Updated dependencies [1e80619](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e80619)
+  - @atlaskit/icon@12.0.0
+  - @atlaskit/analytics-next@2.1.4
+  - @atlaskit/checkbox@3.0.0
+  - @atlaskit/theme@4.0.0
+  - @atlaskit/spinner@6.0.0
+  - @atlaskit/docs@4.0.0
+
+## 7.2.5
+- [patch] Updated dependencies [d662caa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d662caa)
+  - @atlaskit/icon@11.3.0
+  - @atlaskit/analytics-next@2.1.1
+  - @atlaskit/theme@3.2.2
+  - @atlaskit/docs@3.0.4
+
+## 7.2.4
+- [patch] Export types for Button [6a47d88](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6a47d88)
+- [none] Updated dependencies [6a47d88](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6a47d88)
+
+## 7.2.3
+- [patch] Fix invalid css in button [2363d14](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/2363d14)
+- [none] Updated dependencies [2363d14](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/2363d14)
+
+## 7.2.2
+- [patch] Fix react ref dev warnings when using custom components [40b743c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/40b743c)
+
+## 7.2.0
+- [minor] Add ariaLabel prop to button so that it can be passed to the underlying component [d7a1e7e](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d7a1e7e)
+
+## 7.1.0
+- [minor] Add `autoFocus` to button, allowing button to be automatically focused on first render. [bf36eb6](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/bf36eb6)
+
+## 7.0.3
+- [patch] Fix a react dev warning when using a custom component [8fb3bc1](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/8fb3bc1)
+
+## 7.0.2
+- [patch] Update empty state and button to have consistent types [f0da143](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/f0da143)
+
+## 7.0.1
+- [patch] Update tests + flow [05d406d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/05d406d)
+- [patch] Remove default props to have it optional [0907a36](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/0907a36)
+
+## 7.0.0
+- [major] Bump to React 16.3. [4251858](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/4251858)
+
+## 6.6.4
+- [patch] Updates flow types of withAnalyticsEvents and withAnalyticsContext HOCs [26778bc](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/26778bc)
+- [patch] Uses element config flow type with button deprecation warnings hoc [a9aa90a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a9aa90a)
+
+## 6.6.3
+- [patch] added onBlur and onFocus hooks [27d01b7](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/27d01b7)
+
+## 6.6.2
+- [patch] Re-releasing due to potentially broken babel release [9ed0bba](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9ed0bba)
+
+## 6.6.1
+- [patch] added selected focus state for button [dad190d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/dad190d)
+
+## 6.6.0
+- [minor] Update styled-components dependency to support versions 1.4.6 - 3 [ceccf30](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ceccf30)
+
+## 6.5.0
+- [minor] Instrument button with analytics [4e84f5b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/4e84f5b)
+
+## 6.4.2
+- [patch] updated the repository url to https://bitbucket.org/atlassian/atlaskit-mk-2 [1e57e5a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e57e5a)
+
+## 6.4.1
+- [patch] Packages Flow types for elements components [3111e74](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/3111e74)
+
+## 6.4.0
+- [minor] id property on Button component is not propagated if href property is provided [7d46c81](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7d46c81)
+
+## 6.3.1
+- [patch] Resolved low hanging flow errors in field-base field-text comment icon item and website, $ [007de27](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/007de27)
+
+## 6.3.0
+- [minor] Add React 16 support. [12ea6e4](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/12ea6e4)
+
+## 6.2.0
+- [minor] replace flow type to be less restrictive [a28cdbd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a28cdbd)
+
+## 6.1.0
+- [minor] Add theming to Button. Deprecate 'help' appearance from Button. [c14ea2e](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/c14ea2e)
+- [minor] Add theming to Button. Deprecate 'help' appearance from Button. [c14ea2e](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/c14ea2e)
+
+## 6.0.0
+- [major] Remove typescript [4635000](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/4635000)
+- [major] Remove typescript [4635000](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/4635000)
+- [patch] Move button to new repo, tidy types [2dafda6](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/2dafda6)
+- [patch] Move button to new repo, tidy types [2dafda6](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/2dafda6)
+
+## 5.4.14 (2017-12-01)
+* bug fix; fix button group spacing (issues closed: ak-3978) ([f0037f2](https://bitbucket.org/atlassian/atlaskit/commits/f0037f2))
+
+## 5.4.13 (2017-11-30)
+* bug fix; fix disabled buttons with child elements propagating click events ([584ffdc](https://bitbucket.org/atlassian/atlaskit/commits/584ffdc))
+
+## 5.4.12 (2017-11-27)
+* bug fix; export interface for ts ([15c291c](https://bitbucket.org/atlassian/atlaskit/commits/15c291c))
+
+## 5.4.11 (2017-11-27)
+* bug fix; fix disabled buttons not swallowing click events (issues closed: ak-3646) ([80e976b](https://bitbucket.org/atlassian/atlaskit/commits/80e976b))
+
+## 5.4.10 (2017-11-24)
+* bug fix; fix button-group prop validation to ignore null children ([3f7f0c3](https://bitbucket.org/atlassian/atlaskit/commits/3f7f0c3))
+
+## 5.4.9 (2017-11-21)
+* bug fix; bumping internal dependencies to latest version ([5e81848](https://bitbucket.org/atlassian/atlaskit/commits/5e81848))
+
+## 5.4.8 (2017-10-27)
+* bug fix; correct formatting for user-select style ([fe9419c](https://bitbucket.org/atlassian/atlaskit/commits/fe9419c))
+
+## 5.4.7 (2017-10-27)
+* bug fix; change icon to be unselectable so button content can be copied ([e8c876a](https://bitbucket.org/atlassian/atlaskit/commits/e8c876a))
+
+## 5.4.6 (2017-10-27)
+* bug fix; updated button props typings ([c7a9c09](https://bitbucket.org/atlassian/atlaskit/commits/c7a9c09))
+
+## 5.4.5 (2017-10-23)
+* bug fix; support false/null/undefined children in ButtonGroup ([4667228](https://bitbucket.org/atlassian/atlaskit/commits/4667228))
+
+## 5.4.4 (2017-10-22)
+* bug fix; update dependencies for react-16 ([077d1ad](https://bitbucket.org/atlassian/atlaskit/commits/077d1ad))
+
+## 5.4.3 (2017-10-16)
+* bug fix; fix issue where invalid box-shadow style was applied (issues closed: ak-3704) ([a786038](https://bitbucket.org/atlassian/atlaskit/commits/a786038))
+
+## 5.4.2 (2017-10-03)
+* bug fix; improve button performance ([1bbf0d1](https://bitbucket.org/atlassian/atlaskit/commits/1bbf0d1))
+
+## 5.4.1 (2017-09-27)
+* bug fix; button will truncate if wider than its parent (issues closed: ak-3332) ([a701ea1](https://bitbucket.org/atlassian/atlaskit/commits/a701ea1))
+
+## 5.4.0 (2017-09-22)
+* feature; buttons no longer prevent text selection (issues closed: ak-3270) ([9ab343b](https://bitbucket.org/atlassian/atlaskit/commits/9ab343b))
+
+## 5.3.0 (2017-09-18)
+* feature; support new Help button appearance (issues closed: ak-3535) ([69728ed](https://bitbucket.org/atlassian/atlaskit/commits/69728ed))
+
+## 5.2.0 (2017-09-12)
+* feature; we need the ability to reference elements ([cbf5c12](https://bitbucket.org/atlassian/atlaskit/commits/cbf5c12))
+
+## 5.1.2 (2017-09-08)
+* bug fix; adding ButtonGroup to type declarations of button pckage. ([bb373c1](https://bitbucket.org/atlassian/atlaskit/commits/bb373c1))
+
+## 5.1.1 (2017-08-24)
+* bug fix; improved focus ring contrast for warning and danger buttons ([39ddda7](https://bitbucket.org/atlassian/atlaskit/commits/39ddda7))
+
+## 5.1.0 (2017-08-23)
+* bug fix; subtle-link button font colour is slightly updated (issues closed: ak-2480) ([510393a](https://bitbucket.org/atlassian/atlaskit/commits/510393a))
+* feature; added warning (yellow) and danger (red) options to Button.appearance prop (issues closed: ak-2480) ([ba4cfde](https://bitbucket.org/atlassian/atlaskit/commits/ba4cfde))
+
+## 5.0.1 (2017-08-16)
+* bug fix; fix react warning about PropTypes ([6b4cd29](https://bitbucket.org/atlassian/atlaskit/commits/6b4cd29))
+
+## 5.0.0 (2017-08-11)
+* bug fix; fix the theme-dependency ([db90333](https://bitbucket.org/atlassian/atlaskit/commits/db90333))
+* bug fix; button: fix focus box shadow ([9746e73](https://bitbucket.org/atlassian/atlaskit/commits/9746e73))
+* bug fix; button: fix dark link color - default / hover / active ([7b85a29](https://bitbucket.org/atlassian/atlaskit/commits/7b85a29))
+* breaking; affects internal styled-components implementation ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
+* breaking; implement dark mode theme ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
+* feature; implement dark mode ([d959bb1](https://bitbucket.org/atlassian/atlaskit/commits/d959bb1))
+
+## 4.0.0 (2017-08-11)
+* bug fix; button: fix focus box shadow ([9746e73](https://bitbucket.org/atlassian/atlaskit/commits/9746e73))
+* bug fix; button: fix dark link color - default / hover / active ([7b85a29](https://bitbucket.org/atlassian/atlaskit/commits/7b85a29))
+* breaking; affects internal styled-components implementation ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
+* breaking; implement dark mode theme ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
+* feature; implement dark mode ([d959bb1](https://bitbucket.org/atlassian/atlaskit/commits/d959bb1))
+
+## 3.6.0 (2017-08-09)
+* feature; export ButtonGroup from button package (issues closed: ak-2382) ([61682c6](https://bitbucket.org/atlassian/atlaskit/commits/61682c6))
+
+## 3.5.3 (2017-07-27)
+* fix; rename jsnext:main to jsnext:experimental:main temporarily ([c7508e0](https://bitbucket.org/atlassian/atlaskit/commits/c7508e0))
+
+## 3.5.2 (2017-07-25)
+* fix; use class transform in loose mode in babel to improve load performance in apps ([fde719a](https://bitbucket.org/atlassian/atlaskit/commits/fde719a))
+
+## 3.5.1 (2017-07-20)
+* fix; return focus ring to buttons ([94f1ad0](https://bitbucket.org/atlassian/atlaskit/commits/94f1ad0))
+
+## 3.2.0 (2017-07-17)
+* fix; rerelease, failed prepublish scripts ([5fd82f8](https://bitbucket.org/atlassian/atlaskit/commits/5fd82f8))
+
+## 3.2.0 (2017-07-17)
+* feature; added ES module builds to dist and add jsnext:main to most ADG packages ([ea76507](https://bitbucket.org/atlassian/atlaskit/commits/ea76507))
+
+## 3.1.0 (2017-07-10)
+* feature; added functionality to have full-width buttons via optional prop ([ad7fae6](https://bitbucket.org/atlassian/atlaskit/commits/ad7fae6))
+
+## 2.0.0 (2017-06-01)
+* fix; add prop-types as a dependency to avoid React 15.x warnings ([92598eb](https://bitbucket.org/atlassian/atlaskit/commits/92598eb))
+* refactored button to styled-components ([de6465b](https://bitbucket.org/atlassian/atlaskit/commits/de6465b))
+* breaking; refactored to styled-components
+* ISSUES CLOSED: AK-2381, AK-2300
+
+## 1.1.4 (2017-05-25)
+* fix; update util-shared-styles dependency in button ([159dd02](https://bitbucket.org/atlassian/atlaskit/commits/159dd02))
+
+## 1.1.3 (2017-05-06)
+* fix; link buttons with no spacing are now baseline aligned correctly ([66f5e65](https://bitbucket.org/atlassian/atlaskit/commits/66f5e65))
+
+## 1.1.2 (2017-04-27)
+* fix; update legal copy to be more clear. Not all modules include ADG license. ([f3a945e](https://bitbucket.org/atlassian/atlaskit/commits/f3a945e))
+
+## 1.1.1 (2017-04-26)
+* fix; update legal copy and fix broken links for component README on npm. New contribution and ([0b3e454](https://bitbucket.org/atlassian/atlaskit/commits/0b3e454))
+
+## 1.1.0 (2017-04-20)
+* feature; removed explicit style! imports, set style-loader in webpack config ([891fc3c](https://bitbucket.org/atlassian/atlaskit/commits/891fc3c))
+
+## 1.0.16 (2017-04-04)
+* fix; adds defensive code to allow testing in mocha/jsdom ([3f9b72c](https://bitbucket.org/atlassian/atlaskit/commits/3f9b72c))
+
+## 1.0.15 (2017-03-23)
+* fix; Empty commit to release the component ([49c08ee](https://bitbucket.org/atlassian/atlaskit/commits/49c08ee))
+
+## 1.0.13 (2017-03-21)
+* fix; maintainers for all the packages were added ([261d00a](https://bitbucket.org/atlassian/atlaskit/commits/261d00a))
+
+## 1.0.11 (2017-03-08)
+* fix; fix subtle-link button to use the correct color default color ([c4c274d](https://bitbucket.org/atlassian/atlaskit/commits/c4c274d))
+
+## 1.0.10 (2017-02-28)
+* fix; dummy commit to release stories ([3df5d9f](https://bitbucket.org/atlassian/atlaskit/commits/3df5d9f))
+
+## 1.0.9 (2017-02-28)
+* fix; dummy commit to fix broken stories and missing registry pages ([a31e92a](https://bitbucket.org/atlassian/atlaskit/commits/a31e92a))
+
+## 1.0.8 (2017-02-28)
+* fix; dummy commit to release stories for components ([a105c02](https://bitbucket.org/atlassian/atlaskit/commits/a105c02))
+
+## 1.0.7 (2017-02-28)
+* fix; Removes jsdoc annotations from button ([fe8e23b](https://bitbucket.org/atlassian/atlaskit/commits/fe8e23b))
+
+## 1.0.6 (2017-02-24)
+* fix; fixes AK-1787: buttons with z-index + shadow ([014af88](https://bitbucket.org/atlassian/atlaskit/commits/014af88))
+* fix; spinner related tests fixed ([e6d8ad5](https://bitbucket.org/atlassian/atlaskit/commits/e6d8ad5))
+* fix; storybook clean up and button margin fixed ([e06b9c5](https://bitbucket.org/atlassian/atlaskit/commits/e06b9c5))
+
+## 1.0.5 (2017-02-20)
+* fix; use correctly scoped package names in npm docs ([91dbd2f](https://bitbucket.org/atlassian/atlaskit/commits/91dbd2f))
+
+## 1.0.4 (2017-02-16)
+* fix; refactor stories to use // rather than http:// ([a0826cf](https://bitbucket.org/atlassian/atlaskit/commits/a0826cf))
+
+## 1.0.3 (2017-02-09)
+* fix; avoiding binding render to this ([40c9951](https://bitbucket.org/atlassian/atlaskit/commits/40c9951))
+
+## 1.0.2 (2017-02-09)
+* fix; readme refactor to use util-readme ([1adf905](https://bitbucket.org/atlassian/atlaskit/commits/1adf905))
+
+## 1.0.1 (2017-02-06)
+* fix; Updates package to use ak scoped packages ([1262016](https://bitbucket.org/atlassian/atlaskit/commits/1262016))

@@ -1,0 +1,42 @@
+.hoverable {
+  .d-hover {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    visibility: hidden;
+  }
+
+  &:hover {
+    .d-hover {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      visibility: visible;
+    }
+    .d-hover-inline {
+      display: inline;
+    }
+
+    .d-hover-inline-block {
+      display: inline-block;
+    }
+
+    .d-hover-block {
+      display: block;
+    }
+
+    .d-hover-table {
+      display: table;
+    }
+
+    .d-hover-table-cell {
+      display: table-cell;
+    }
+
+    .d-hover-flex {
+      display: flex;
+    }
+
+    .d-hover-inline-flex {
+      display: inline-flex;
+    }
+  }
+}

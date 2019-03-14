@@ -3,7 +3,8 @@
 import React, { type ComponentType } from 'react';
 import styled from 'styled-components';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { Card, CardBody, CardHeader, Tooltip } from 'reactstrap';
+import Card from 'react-bootstrap/Card';
+import Tooltip from '@uidu/tooltip';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 import { Code } from 'react-feather';
 import ErrorBoundary from './ErrorBoundary';
@@ -65,38 +66,32 @@ export default class Example extends React.Component<Props, State> {
 
   render() {
     const { Component, source, language, title, packageName } = this.props;
-    const { isHover, isSourceVisible } = this.state;
-    const toggleLabel = isSourceVisible
-      ? 'Hide Code Snippet'
-      : 'Show Code Snippet';
+    const { isSourceVisible } = this.state;
+    const toggleLabel = isSourceVisible ? (
+      <span>Hide Code Snippet</span>
+    ) : (
+      <span>Show Code Snippet</span>
+    );
 
-    const state = isHover ? 'hover' : 'normal';
     const mode = isSourceVisible ? 'open' : 'closed';
 
     return (
-      <Wrapper className="card border mb-4" state={state} mode={mode}>
-        <CardHeader>
-          <Toggle
-            ref={c => {
-              this.toggleElement = c;
-            }}
-            onClick={this.toggleSource}
-            onMouseOver={() => this.setState({ isHover: true })}
-            onMouseOut={() => this.setState({ isHover: false })}
-            title={toggleLabel}
-            mode={mode}
-          >
-            <ToggleTitle mode={mode}>{title}</ToggleTitle>
-            <Code id="UncontrolledTooltipExample" label={toggleLabel} />
-            <Tooltip
-              isOpen={state === 'hover'}
-              placement="left"
-              target="UncontrolledTooltipExample"
+      <Wrapper className="border mb-4" mode={mode}>
+        <Card.Header>
+          <Tooltip placement="left" content={toggleLabel}>
+            <Toggle
+              ref={c => {
+                this.toggleElement = c;
+              }}
+              onClick={this.toggleSource}
+              title={toggleLabel}
+              mode={mode}
             >
-              {toggleLabel}
-            </Tooltip>
-          </Toggle>
-        </CardHeader>
+              <ToggleTitle mode={mode}>{title}</ToggleTitle>
+              <Code id="UncontrolledTooltipExample" label={toggleLabel} />
+            </Toggle>
+          </Tooltip>
+        </Card.Header>
         {isSourceVisible && (
           <SyntaxHighlighter
             language="javascript"
@@ -106,13 +101,13 @@ export default class Example extends React.Component<Props, State> {
             {packageName ? replaceSrc(source, packageName) : source}
           </SyntaxHighlighter>
         )}
-        <CardBody>
+        <Card.Body>
           <Showcase>
             <ErrorBoundary onError={this.onError}>
               <Component />
             </ErrorBoundary>
           </Showcase>
-        </CardBody>
+        </Card.Body>
       </Wrapper>
     );
   }

@@ -1,6 +1,7 @@
 // @flow
 
 const allPackages = {
+  accordion: { key: 'accordion', name: 'Accordion' },
   analytics: { key: 'analytics', name: 'Analytics' },
   avatar: { key: 'avatar', name: 'Avatar' },
   badge: { key: 'badge', name: 'badge' },
@@ -28,6 +29,7 @@ const allPackages = {
   'layer-manager': { key: 'layer-manager', name: 'Layer Manager' },
   logo: { key: 'logo', name: 'Logo' },
   lozenge: { key: 'lozenge', name: 'lozenge' },
+  message: { key: 'message', name: 'Message' },
   'modal-dialog': { key: 'modal-dialog', name: 'Modal Dialog' },
   'multi-select': { key: 'multi-select', name: 'Select (Multi)' },
   navigation: { key: 'navigation', name: 'Navigation' },

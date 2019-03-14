@@ -1,0 +1,49 @@
+{
+  "name": "@uidu/media-filmstrip",
+  "version": "0.1.0",
+  "description": "Includes components that show media cards as a filmstrip",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@atlaskit/field-radio-group": "^4.0.15",
+    "@atlaskit/field-range": "^5.0.17",
+    "@atlaskit/icon": "^16.0.3",
+    "@uidu/button": "^0.1.25",
+    "@uidu/media-card": "^0.1.0",
+    "@uidu/media-core": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "@uidu/spinner": "^0.1.0",
+    "@uidu/theme": "^0.1.0",
+    "debounce": "^1.2.0",
+    "tslib": "^1.9.3"
+  },
+  "peerDependencies": {
+    "@uidu/media-core": "^0.1.0",
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@atlaskit/field-radio-group": "^4.0.15",
+    "@types/debounce": "^1.2.0",
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/button": "^0.1.0",
+    "@uidu/checkbox": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/field-range": "^0.1.0",
+    "@uidu/media-core": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "enzyme": "^3.9.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0"
+  }
+}

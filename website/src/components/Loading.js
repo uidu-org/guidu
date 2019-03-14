@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import Spinner from '@atlaskit/spinner';
+import Spinner from '@uidu/spinner';
 
 const Container = styled.div`
   align-items: center;

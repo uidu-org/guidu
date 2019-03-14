@@ -41,7 +41,9 @@ export default class Form extends Component {
         loading: true,
       },
       () => {
-        handleSubmit(modelToSubmit, resetForm);
+        handleSubmit(modelToSubmit, resetForm).then(() => {
+          this.setState({loading: false})
+        });
       },
     );
   };

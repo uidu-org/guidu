@@ -3,8 +3,6 @@
 module.exports = function(api) {
   api.cache(true);
 
-  console.log(api);
-
   const plugins = [
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',

@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { FieldTextStateless } from '../src';
+import { inputDefaultProps } from '@uidu/field-base';
 
 type State = {
   value: string | number,
@@ -19,7 +20,7 @@ export default class StatelessExample extends Component<void, State> {
       <div>
         <p>The field should not break outside the coloured flex container.</p>
         <div style={{ display: 'flex', width: 150, backgroundColor: '#fea' }}>
-          <FieldTextStateless />
+          <FieldTextStateless {...inputDefaultProps} />
         </div>
       </div>
     );

@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { DropdownItem } from '@atlaskit/dropdown-menu';
+import { DropdownItem } from '@uidu/dropdown-menu';
 import Avatar, { withPseudoState, getProps } from '@uidu/avatar';
 
 type Props = {

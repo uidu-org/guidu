@@ -1,50 +1,31 @@
 // @flow
 import React, { Component } from 'react';
-import Button from '@uidu/button';
+import { Form, formDefaultProps } from '@uidu/form';
+import { inputDefaultProps } from '@uidu/field-base';
 import FieldText from '../src';
 
-const formTestUrl = '//httpbin.org/get';
-
 export default class FormExample extends Component<void, void> {
+  state = {
+    value: null,
+  };
+
   render() {
+    const { value } = this.state;
     return (
       <div>
-        <form
-          action={formTestUrl}
-          method="get"
-          style={{ backgroundColor: 'white' }}
-          target="submitFrame"
+        <Form
+          {...formDefaultProps}
+          handleSubmit={model => this.setState({ value: model })}
         >
           <FieldText
-            label="Required with default value"
+            {...inputDefaultProps}
+            label="Required with no default value"
             required
-            value="A default value"
             name="example-text"
           />
-
-          <p>
-            <Button type="submit" appearance="primary">
-              Submit
-            </Button>
-          </p>
-        </form>
+        </Form>
         <p>The data submitted by the form will appear below:</p>
-        <iframe
-          src=""
-          title="Checkbox Resopnse Frame"
-          id="submitFrame"
-          name="submitFrame"
-          style={{
-            width: '95%',
-            height: '300px',
-            borderStyle: 'dashed',
-            borderWidth: '1px',
-            borderColor: '#ccc',
-            padding: '0.5em',
-            color: '#ccc',
-            margin: '0.5em',
-          }}
-        />
+        {value && JSON.stringify(value, null, 2)}
       </div>
     );
   }

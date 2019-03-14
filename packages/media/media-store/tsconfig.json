@@ -1,0 +1,9 @@
+{
+  "extends": "../../../tsconfig.media.json",
+  "include": [
+    "./src/**/*.ts",
+    "./examples/*.ts",
+    "./examples/*.tsx",
+    "./example-helpers/*.ts"
+  ]
+}

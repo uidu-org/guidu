@@ -1,0 +1,33 @@
+{
+  "name": "@uidu/media-image",
+  "version": "0.1.0",
+  "description": "Atlassian Editor component for JIRA",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@uidu/docs": "^0.1.20",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "tslib": "^1.9.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.0",
+    "@uidu/field-text": "^0.1.0",
+    "@uidu/form": "^0.1.21",
+    "@uidu/media-core": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "enzyme": "^3.9.0"
+  }
+}

@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinkWrapper should have hover styles when isInteractive=true 1`] = `
+.c0 {
+  border-radius: 3px;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  padding: 0 8px 8px 8px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #F4F5F7;
+  line-height: initial;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.c0:hover {
+  background-color: #EBECF0;
+}
+
+.c0:active {
+  background-color: #DEEBFF;
+}
+
+.c0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<a
+  className="c0"
+/>
+`;
+
+exports[`LinkWrapper should not have hover styles when isInteractive=false 1`] = `
+.c0 {
+  border-radius: 3px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  padding: 0 8px 8px 8px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #F4F5F7;
+  line-height: initial;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.c0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<a
+  className="c0"
+/>
+`;
+
+exports[`Wrapper should have hover styles when isInteractive=true 1`] = `
+.c0 {
+  border-radius: 3px;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  padding: 0 8px 8px 8px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #F4F5F7;
+  line-height: initial;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  position: relative;
+}
+
+.c0:hover {
+  background-color: #EBECF0;
+}
+
+.c0:active {
+  background-color: #DEEBFF;
+}
+
+<div
+  className="c0"
+/>
+`;
+
+exports[`Wrapper should not have hover styles when isInteractive=false 1`] = `
+.c0 {
+  border-radius: 3px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  box-sizing: border-box;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+  padding: 0 8px 8px 8px;
+  width: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #F4F5F7;
+  line-height: initial;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+  position: relative;
+}
+
+<div
+  className="c0"
+/>
+`;

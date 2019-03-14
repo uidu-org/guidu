@@ -63,8 +63,6 @@ class ToggleStateless extends Component<StatelessProps, State> {
       size,
     };
 
-    console.log(styledProps);
-
     return (
       <Switch
         {...this.props}

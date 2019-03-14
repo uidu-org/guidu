@@ -9,7 +9,7 @@ import NAV_DATA from './NAV_DATA';
 import * as fs from './utils/fs';
 
 const productPackages = [
-  'bitbucket',
+  'uidu',
   'confluence',
   'jira',
   'statuspage',

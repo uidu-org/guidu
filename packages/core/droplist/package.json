@@ -1,0 +1,45 @@
+{
+  "name": "@uidu/droplist",
+  "version": "0.1.0",
+  "description": "Droplist component",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@atlaskit/icon": "^16.0.3",
+    "@uidu/item": "^0.1.0",
+    "@atlaskit/layer": "^5.0.10",
+    "@babel/runtime": "^7.0.0",
+    "@uidu/analytics": "^0.1.2",
+    "@uidu/spinner": "^0.1.0",
+    "@uidu/theme": "^0.1.0",
+    "@uidu/tooltip": "^0.1.0",
+    "babel-runtime": "^6.26.0",
+    "classnames": "^2.2.6",
+    "keycode": "^2.1.7",
+    "prop-types": "^15.6.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@atlaskit/webdriver-runner": "^0.1.0",
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/button": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/field-base": "^0.1.0",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0"
+  }
+}

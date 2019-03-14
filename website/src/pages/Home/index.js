@@ -68,7 +68,7 @@ export default class HomePage extends Component {
           <title>{BASE_TITLE}</title>
         </Helmet>
         <Style />
-        <Title>Atlaskit</Title>
+        <Title>GUIdu</Title>
         <Intro>
           Atlassian&#39;s official UI library, built according to the
           Atlassian&nbsp;Design&nbsp;Guidelines.

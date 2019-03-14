@@ -1,0 +1,51 @@
+{
+  "name": "@uidu/select",
+  "version": "0.1.0",
+  "description": "Select Component",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "types": "src/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src/index.d.ts"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0",
+    "@uidu/analytics": "^0.1.2",
+    "@uidu/checkbox": "^0.1.35",
+    "@uidu/field-base": "^0.1.23",
+    "@uidu/form": "^0.1.21",
+    "@uidu/spinner": "^0.1.0",
+    "@uidu/theme": "^0.1.2",
+    "@uidu/tooltip": "^0.1.2",
+    "faker": "^4.1.0",
+    "focus-trap": "^4.0.2",
+    "react-fast-compare": "^2.0.4",
+    "react-number-format": "^4.0.6",
+    "react-select": "^2.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/button": "^0.1.25",
+    "@uidu/docs": "^0.1.20",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0"
+  },
+  "keywords": [
+    "uidu",
+    "react",
+    "ui"
+  ]
+}

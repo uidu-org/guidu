@@ -1,0 +1,59 @@
+{
+  "name": "@uidu/media-editor",
+  "version": "0.1.0",
+  "description": "Media component for image annotations",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@atlaskit/icon": "^16.0.3",
+    "@atlaskit/inline-dialog": "^9.0.15",
+    "@atlaskit/util-shared-styles": "^3.1.2",
+    "@types/uuid": "^3.4.4",
+    "@uidu/build-utils": "^0.1.2",
+    "@uidu/button": "^0.1.25",
+    "@uidu/docs": "^0.1.20",
+    "@uidu/media-card": "^0.1.0",
+    "@uidu/media-core": "^0.1.0",
+    "@uidu/media-store": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "@uidu/media-ui": "^0.1.0",
+    "@uidu/spinner": "^0.1.0",
+    "@uidu/theme": "^0.1.2",
+    "enzyme": "^3.9.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "react-intl": "^2.8.0",
+    "rxjs": "^6.4.0",
+    "styled-components": "^4.0.3",
+    "tslib": "^1.9.3",
+    "uuid": "^3.3.2"
+  },
+  "peerDependencies": {
+    "@uidu/media-core": "^0.1.0",
+    "react": "^16.8.3",
+    "react-intl": "^2.8.0",
+    "rxjs": "^6.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/media-core": "^0.1.0",
+    "@uidu/media-store": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0",
+    "react-intl": "^2.8.0",
+    "rxjs": "^6.4.0"
+  }
+}

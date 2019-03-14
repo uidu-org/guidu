@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import LaddaButton, { XL, SLIDE_UP } from 'react-ladda';
-
 export default class FormSubmit extends Component {
   getActionBasedOnMethod = () => {
     const { label, method } = this.props;
@@ -24,27 +22,18 @@ export default class FormSubmit extends Component {
     } = this.props;
 
     return (
-      <LaddaButton
-        {...buttonProps}
-        ref={this.initElementRef}
-        type="submit"
-        loading={loading}
-        className={classNames('btn', className)}
-        disabled={!canSubmit}
-        data-size={XL}
-        data-style={SLIDE_UP}
-        data-spinner-size={30}
-        data-spinner-color="#ddd"
-        data-spinner-lines={12}
-      >
-        {this.getActionBasedOnMethod()}
-      </LaddaButton>
-    );
+    <button className={classNames('btn', className)} type="submit" disabled={!canSubmit || loading}>
+  {loading && (
+    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>)}
+  {loading && <span className="ml-2">Loading...</span>}
+   {!loading && this.getActionBasedOnMethod()}
+</button>
+)
   }
 }
 
 FormSubmit.defaultProps = {
-  className: 'btn-primary',
+  className: 'btn-secondary',
   label: null,
   method: 'POST',
   canSubmit: false,

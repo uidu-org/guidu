@@ -300,7 +300,7 @@ export default class Cards extends Component {
     const columns = this.columnIndexes();
 
     return (
-      <CardsWrapper innerRef={this.detectColumns}>
+      <CardsWrapper ref={this.detectColumns}>
         {columns.map((cardKeys, colIndex) => (
           /* eslint-disable react/no-array-index-key */
           <CardColumn key={colIndex}>

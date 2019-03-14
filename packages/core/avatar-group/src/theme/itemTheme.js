@@ -1,5 +1,5 @@
 // @flow
-import { itemThemeNamespace } from '@atlaskit/item';
+import { itemThemeNamespace } from '@uidu/item';
 import { gridSize, math, colors } from '@uidu/theme';
 
 const dropdownPadding = {

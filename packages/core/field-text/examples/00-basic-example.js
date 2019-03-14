@@ -1,19 +1,23 @@
 // @flow
 import React, { PureComponent } from 'react';
+import { Form, formDefaultProps } from '@uidu/form';
+import { inputDefaultProps } from '@uidu/field-base';
+
 import TextField from '../src';
 
 type State = {|
   eventResult: string,
 |};
+
 export default class BasicExample extends PureComponent<void, State> {
   state = {
     eventResult:
       'Click into and out of the input above to trigger onBlur & onFocus in the Fieldbase',
   };
 
-  onChange = (event: any) => {
+  onChange = (name, value) => {
     this.setState({
-      eventResult: `onChange called with value: ${event.target.value}`,
+      eventResult: `onChange called with value: ${value}`,
     });
   };
 
@@ -31,41 +35,68 @@ export default class BasicExample extends PureComponent<void, State> {
 
   render() {
     return (
-      <div>
+      <Form {...formDefaultProps}>
         <TextField
+          {...inputDefaultProps}
           onChange={this.onChange}
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           label="With change, blur & focus handlers"
         />
         <div
+          className="mb-5"
           style={{
             borderStyle: 'dashed',
             borderWidth: '1px',
             borderColor: '#ccc',
             padding: '0.5em',
             color: '#ccc',
-            margin: '0.5em',
           }}
         >
           {this.state.eventResult}
         </div>
 
-        <TextField label="hidden label" isLabelHidden />
-        <TextField autoFocus label="autofocused" />
-        <TextField value="candy" label="With default value" />
-        <TextField disabled label="disabled" value="no touching" />
-        <TextField required label="Required" />
-        <TextField isInvalid label="Is Invalid" />
-        <TextField placeholder="Click here to input" label="With Placeholder" />
+        {/* <TextField
+          {...inputDefaultProps}
+          label="hidden label"
+          layout="elementOnly"
+        /> */}
+        <TextField {...inputDefaultProps} label="With autofocus" autoFocus />
         <TextField
-          invalidMessage="Modal Dialog Text"
-          label="with error message"
+          {...inputDefaultProps}
+          value="candy"
+          label="With default value"
         />
-        <TextField isSpellCheckEnabled={false} label="spell check disabled" />
-        <TextField maxLength={5} label="Max length of 5" />
-        <TextField type="Number" label="Number typed input" />
-      </div>
+        <TextField {...inputDefaultProps} disabled label="disabled" />
+        <TextField {...inputDefaultProps} required label="Required field" />
+        <TextField {...inputDefaultProps} isInvalid label="Invalid" />
+        <TextField
+          {...inputDefaultProps}
+          label="With help"
+          help={<span className="text-primary">This is a node help</span>}
+        />
+        <TextField
+          {...inputDefaultProps}
+          isSpellCheckEnabled={false}
+          label="Spell Check disabled"
+        />
+        <TextField
+          {...inputDefaultProps}
+          maxLength={5}
+          label="Max length of 5"
+        />
+        <TextField
+          {...inputDefaultProps}
+          type="number"
+          label="Number typed input"
+        />
+        <TextField
+          {...inputDefaultProps}
+          type="number"
+          label="Number typed input"
+          floatLabel="Test floating label"
+        />
+      </Form>
     );
   }
 }

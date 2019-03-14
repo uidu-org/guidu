@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "../../dist/es2015"
+  },
+  "include": ["../../src/**/*.ts", "../../src/**/*.tsx"]
+}

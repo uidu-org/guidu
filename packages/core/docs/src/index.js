@@ -20,8 +20,6 @@ const customMd = defaultMd.customize({
   },
 });
 
-console.log(customMd);
-
 export { default as code } from './code';
 export { default as Example } from './Example';
 export { default as Props } from './Props';

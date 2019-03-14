@@ -4,6 +4,7 @@
   //   0 2px 5px 0 rgba(50, 50, 93, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
   //   0 1px 2px 0 rgba(0, 0, 0, 0.08);
   //   0 1px 0 rgba(255, 255, 255, 0.3) inset;
+  appearance: none;
   cursor: default;
   font-size: 0.8rem;
   line-height: normal; // test it or remove it
@@ -36,21 +37,13 @@
     border-radius: 40px;
   }
 
-  &:hover {
+  &:hover:enabled {
     // box-shadow: 0 0 0 1px rgba(50, 50, 93, 0.1),
     //   0 2px 5px 0 rgba(50, 50, 93, 0.1), 0 3px 9px 0 rgba(50, 50, 93, 0.08),
     //   0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
     opacity: 1;
-    transform: translateY(-1px);
+    // transform: translateY(-1px);
   }
-}
-
-@import 'ladda/css/ladda';
-
-.ladda-label {
-  align-items: center;
-  display: flex;
-  justify-content: center;
 }
 
 // // Apply the mixin to the buttons

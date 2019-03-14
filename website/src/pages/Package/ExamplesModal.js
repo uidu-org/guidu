@@ -1,6 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import styled, { css } from 'styled-components';
 import { Redirect } from 'react-router-dom';
 import { Link } from '../../components/WrappedLink';
@@ -93,41 +94,36 @@ const Nav = styled.nav`
 const NavInner = styled.div`
   max-height: 100%;
   overflow-y: auto;
-  padding: 2px;
-
-  /* Not ideal to be overriding AkButton styles, but we don't have a link list component */
-  a {
-    margin: 2px 0 0 0;
-    width: 100%;
-  }
 `;
 
 function ExampleNavigation({ examples, exampleId, onExampleSelected }) {
   const regex = /^[a-zA-Z0-9]/; // begins with letter or number, avoid "special" files
 
   return (
-    <Nav>
+    <Nav className="nav flex-column">
       <NavInner>
         {examples ? (
           fs.flatMap(
             examples,
             (file, filePath) =>
               file.id.match(regex) && (
-                <Button
-                  isSelected={file.id === exampleId}
-                  key={file.id}
-                  appearance="subtle"
-                  spacing="compact"
-                  href={fs.normalize(filePath.replace('examples/', ''))}
-                  onClick={event => {
-                    event.preventDefault();
-                    onExampleSelected(
-                      fs.normalize(filePath.replace('examples/', '')),
-                    );
-                  }}
-                >
-                  {fs.titleize(file.id)}
-                </Button>
+                <li className="nav-item">
+                  <a
+                    key={file.id}
+                    href={fs.normalize(filePath.replace('examples/', ''))}
+                    className={classNames('nav-link', {
+                      active: file.id === exampleId,
+                    })}
+                    onClick={event => {
+                      event.preventDefault();
+                      onExampleSelected(
+                        fs.normalize(filePath.replace('examples/', '')),
+                      );
+                    }}
+                  >
+                    {fs.titleize(file.id)}
+                  </a>
+                </li>
               ),
           )
         ) : (
@@ -206,27 +202,6 @@ const ModalHeaderComp = ({
   <ModalHeader showKeyline={showKeyline}>
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
-      {/* <CodeSandbox
-          example={example}
-          examples={examples}
-          groupId={groupId}
-          packageId={packageId}
-          pkgJSON={pkgJSON}
-          loadingButton={() => (
-            <Button type="submit" isDisabled iconBefore={<CodeSandboxLogo />}>
-              Loading...
-            </Button>
-          )}
-          deployButton={({ isDisabled, error }) => (
-            <Button
-              type="submit"
-              isDisabled={isDisabled}
-              iconBefore={<CodeSandboxLogo />}
-            >
-              {error ? error.name : 'Sandbox'}
-            </Button>
-          )}
-        /> */}
       <Button
         withIcon
         onClick={onCodeToggle}
@@ -238,7 +213,7 @@ const ModalHeaderComp = ({
       <Tooltip content="Fullscreen" position="bottom">
         <Button
           appearance="subtle"
-          as={Link}
+          component={Link}
           to={toExampleUrl(groupId, packageId, exampleId)}
           withIcon
         >

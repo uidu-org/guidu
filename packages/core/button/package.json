@@ -14,12 +14,29 @@
   "publishConfig": {
     "access": "public"
   },
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
   "dependencies": {
-    "classnames": "^2.2.6"
+    "@atlaskit/type-helpers": "^2.0.0",
+    "@babel/runtime": "^7.0.0",
+    "@uidu/analytics": "^0.1.0",
+    "@uidu/spinner": "0.1.0",
+    "@uidu/theme": "^0.1.0",
+    "babel-runtime": "^6.26.0",
+    "tslib": "^1.9.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.20",
-    "@uidu/form": "^0.1.21"
-  },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
+    "@atlaskit/icon": "^16.0.3",
+    "@atlaskit/logo": "^9.2.7",
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/checkbox": "^0.1.35",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/form": "^0.1.21",
+    "enzyme": "^3.9.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1"
+  }
 }

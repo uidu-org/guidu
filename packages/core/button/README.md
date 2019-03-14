@@ -1,27 +1,14 @@
-# uidu inputs
+# Button
 
-Get the AMD module located at `uidu-inputs.js` and include it in your project.
+Buttons are used as triggers for actions. They are used in forms, toolbars,
+dialog footers and as stand-alone action triggers.
 
-Here is a sample integration:
+## Installation
 
-```js
-require.config({
-  paths: {
-    'react': 'vendor/bower_components/react/react',
-    'UiduInputs': 'uidu-inputs'
-  }
-});
-
-require(['react', 'UiduInputs'], function(React, UiduInputs) {
-
-  React.render(React.createElement(UiduInputs), document.getElementById('widget-container'));
-
-});
+```sh
+yarn add @atlaskit/button
 ```
 
-## Development
+## Usage
 
-* Development server `npm start`.
-* Continuously run tests on file changes `npm run watch-test`;
-* Run tests: `npm test`;
-* Build `npm run build`;
+Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/button).

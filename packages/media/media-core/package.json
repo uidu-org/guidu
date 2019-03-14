@@ -1,0 +1,44 @@
+{
+  "name": "@uidu/media-core",
+  "version": "0.1.0",
+  "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "uidu:src": "src/index.js",
+  "files": [
+    "dist"
+  ],
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@uidu/docs": "^0.1.20",
+    "@uidu/media-store": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "dataloader": "^1.4.0",
+    "deep-equal": "^1.0.1",
+    "lru-fast": "^0.2.2",
+    "tslib": "^1.9.3",
+    "uuid": "^3.3.2",
+    "uuid-validate": "^0.0.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "rxjs": "^6.4.0"
+  },
+  "devDependencies": {
+    "@types/uuid-validate": "^0.0.1",
+    "@uidu/build-utils": "^0.1.0",
+    "@uidu/button": "^0.1.0",
+    "@uidu/docs": "^0.1.0",
+    "@uidu/media-card": "^0.1.0",
+    "@uidu/media-test-helpers": "^0.1.0",
+    "react-dom": "^16.4.0",
+    "rxjs": "^6.4.0",
+    "sinon": "^7.2.5",
+    "styled-components": "^4.0.3"
+  }
+}

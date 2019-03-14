@@ -82,7 +82,7 @@ module.exports = function createWebpackConfig(
       hints: false,
     },
     // parallelism: ??, TODO
-    entry: {
+    entry: entry || {
       main: getEntries({
         isProduction,
         websiteDir,
@@ -94,7 +94,7 @@ module.exports = function createWebpackConfig(
         entryPath: './src/examples-entry.js',
       }),
     },
-    output: {
+    output: output || {
       filename: '[name].js',
       path: path.resolve(websiteDir, 'dist'),
       publicPath: '/',
@@ -123,7 +123,6 @@ module.exports = function createWebpackConfig(
               'name',
               'version',
               'description',
-              'atlaskit',
               'uidu',
               'maintainers',
               'peerDependencies',
@@ -251,7 +250,7 @@ module.exports = function createWebpackConfig(
       ],
     },
     resolve: {
-      mainFields: ['module', 'uidu:src', 'atlaskit:src', 'browser', 'main'],
+      mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
     },
     resolveLoader: {
@@ -265,10 +264,6 @@ module.exports = function createWebpackConfig(
       isProduction,
       noMinimizeFlag: noMinimize,
     }),
-    stats: {
-      // https://github.com/TypeStrong/ts-loader/issues/751
-      warningsFilter: /export .* was not found in/,
-    },
   };
 };
 

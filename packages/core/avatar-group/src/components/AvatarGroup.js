@@ -2,7 +2,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component, type ElementConfig } from 'react';
 import { ThemeProvider } from 'styled-components';
-import DropdownMenu, { DropdownItemGroup } from '@atlaskit/dropdown-menu';
+import DropdownMenu, { DropdownItemGroup } from '@uidu/dropdown-menu';
 import Avatar, {
   type AvatarClickType,
   type AvatarPropTypes,
@@ -21,6 +21,7 @@ const GROUP_COMPONENT = {
 const MAX_COUNT = {
   grid: 11,
   stack: 5,
+  inline: null,
 };
 
 type Props = {
@@ -138,7 +139,7 @@ export default class AvatarGroup extends Component<Props> {
     const Group = GROUP_COMPONENT[appearance];
 
     // Render (max - 1) avatars to leave space for moreIndicator
-    const maxAvatar = total > max ? max - 1 : max;
+    const maxAvatar = max ? (total > max ? max - 1 : max) : total;
 
     const items = data
       .slice(0, maxAvatar)
