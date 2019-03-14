@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Tooltip from '@uidu/tooltip';
-import DropdownMenu, { DropdownItem } from '@uidu/dropdown-menu';
+import DropdownMenu, {
+  DropdownItem,
+  DropdownItemGroup,
+} from '@uidu/dropdown-menu';
 
 import { Smile } from 'react-feather';
 
@@ -30,16 +33,16 @@ export default class Reactions extends Component {
         boundariesElement="viewport"
         onOpenChange={e => console.log('dropdown opened', e)}
       >
-        <div className="d-flex">
+        <DropdownItemGroup>
           {['👍', '👎', '😀', '❤️', '🎉'].map(option => (
             <DropdownItem
               isSelected={reaction && reaction.id === option}
-              onClick={() => onClick(option)}
+              onClick={console.log}
             >
               {option}
             </DropdownItem>
           ))}
-        </div>
+        </DropdownItemGroup>
       </DropdownMenu>
     );
   }

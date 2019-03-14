@@ -6,7 +6,7 @@ import { darken, mix } from 'polished';
 
 import Avatar from '@uidu/avatar';
 import { colors, gridSize, math } from '@uidu/theme';
-import CheckCircleIcon from '@atlaskit/icon/glyph/check-circle';
+import { CheckCircle } from 'react-feather';
 
 import type { ItemTheme } from '../src/types';
 
@@ -102,7 +102,9 @@ export default class ItemThemeDemo extends Component<Props, {}> {
       <Root background={myTheme.default.background}>
         <ThemeProvider theme={{ [itemThemeNamespace]: myTheme }}>
           <ItemGroup title={this.props.title}>
-            <Item description="Some description text">First item</Item>
+            <Item onClick={console.log} description="Some description text">
+              First item (clickable)
+            </Item>
             <Item elemBefore={<Avatar size="xsmall" />}>
               Item two with just avatar and main text
             </Item>
@@ -118,7 +120,7 @@ export default class ItemThemeDemo extends Component<Props, {}> {
               lots and lots and lots of text and lots and lots and lots and lots
               and lots and lots and lots and lots and lots and lots !
             </Item>
-            <Item elemAfter={<CheckCircleIcon size="medium" label="" />}>
+            <Item elemAfter={<CheckCircle size={16} label="" />}>
               Notice how the icon colour changes based on theme, item with lots
               and lots and lots and lots and lots and lots and lots and lots and
               lots and lots of text and lots and lots and lots and lots and lots

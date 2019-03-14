@@ -6,7 +6,7 @@ import uuid from 'uuid/v1';
 import { withAnalyticsEvents, createAndFireEvent } from '@uidu/analytics';
 import Button from '@uidu/button';
 import Droplist, { Item, Group } from '@uidu/droplist';
-import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
+import { ChevronDown } from 'react-feather';
 
 import {
   name as packageName,
@@ -298,7 +298,7 @@ class DropdownMenuStateless extends Component<
       isSelected: isOpen,
     };
     if (!triggerProps.iconAfter && !triggerProps.iconBefore) {
-      triggerProps.iconAfter = <ExpandIcon size="medium" label="" />;
+      triggerProps.iconAfter = <ChevronDown size="16" label="" />;
     }
     return (
       <Button {...defaultButtonProps} {...triggerProps}>

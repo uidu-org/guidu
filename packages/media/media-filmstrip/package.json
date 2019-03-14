@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@atlaskit/field-radio-group": "^4.0.15",
-    "@atlaskit/field-range": "^5.0.17",
+    "@atlaskit/field-range": "^6.0.1",
     "@atlaskit/icon": "^16.0.3",
     "@uidu/button": "^0.1.25",
     "@uidu/media-card": "^0.1.0",

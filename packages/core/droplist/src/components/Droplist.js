@@ -44,7 +44,7 @@ type Props = {
   onClick?: any => mixed,
   onKeyDown?: any => mixed,
   onOpenChange?: any => mixed,
-  /** Position of the menu. See the documentation of @atlaskit/layer for more details. */
+  /** Position of the menu. See the documentation of @uidu/layer for more details. */
   position?: string,
   /** Value passed to the Layer component to determine if the list will be fixed positioned. Useful for breaking out of overflow scroll/hidden containers. Note that the layer will become detached from the target element when scrolling so scroll lock or close on scroll handling may be necessary. */
   isMenuFixed: boolean,
@@ -232,7 +232,7 @@ class Droplist extends Component<Props, void> {
 }
 
 export { Droplist as DroplistWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'droplist',

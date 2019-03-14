@@ -18,7 +18,7 @@
     "@atlaskit/analytics-gas-types": "^3.2.4",
     "@atlaskit/analytics-next": "^3.2.1",
     "@atlaskit/analytics-next-types": "^3.2.0",
-    "@atlaskit/field-range": "^5.0.17",
+    "@atlaskit/field-range": "^6.0.1",
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/modal-dialog": "^7.2.3",
     "@types/enzyme": "^3.9.0",

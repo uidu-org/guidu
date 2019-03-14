@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router';
 import { HashRouter, Link } from 'react-router-dom';
-import Question from '@atlaskit/icon/glyph/question';
-import Arrow from '@atlaskit/icon/glyph/arrow-right';
+import { ArrowRight, HelpCircle as Question } from 'react-feather';
 import Avatar from '@uidu/avatar';
 import Lozenge from '@uidu/lozenge';
 import Tooltip from '@uidu/tooltip';
@@ -115,7 +114,7 @@ export default class ItemStory extends Component<{}, {}> {
                       width: '105px',
                     }}
                   >
-                    <Arrow label="" />
+                    <ArrowRight label="" />
                     <Lozenge appearance="success">done</Lozenge>
                   </div>
                 }
@@ -131,7 +130,7 @@ export default class ItemStory extends Component<{}, {}> {
                       width: '105px',
                     }}
                   >
-                    <Arrow label="" />
+                    <ArrowRight label="" />
                     <Lozenge appearance="inprogress">in progress</Lozenge>
                   </div>
                 }

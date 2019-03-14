@@ -468,7 +468,7 @@
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-"@atlaskit/popper@^0.3.6", "@atlaskit/popper@^0.3.7":
+"@atlaskit/popper@^0.3.6":
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/@atlaskit/popper/-/popper-0.3.7.tgz#0dbf6528294b5907789addf9024543622bc8699a"
   integrity sha512-/eeruFjbSNhDjBB34Ty0MSmpQSb/9uIEkjHIGx5gTvCtC/hbbTGcAGI6Uwbi408l89wroVL2oZoXW9b26DQQGg==
@@ -496,7 +496,7 @@
     exenv "^1.2.2"
     tiny-invariant "^0.0.3"
 
-"@atlaskit/portal@^0.2.1":
+"@atlaskit/portal@^0.2.0", "@atlaskit/portal@^0.2.1":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@atlaskit/portal/-/portal-0.2.1.tgz#45d89bf76b2da425e1f0b54fad2da3ac57646312"
   integrity sha512-CmE4M588iG1B2Ckj0X1GY4ZlPRLHNJ+tx4J8p/go3m6PqTOoPWMISOrflUQgOF6TL2TLqLYDiHR4QSjRGxnTBg==
@@ -14916,9 +14916,9 @@ qs@^6.5.2:
   integrity sha512-KIJqT9jQJDQx5h5uAVPimw6yVg2SekOKu959OCtktD3FjzbpvaPr8i4zzg07DOMz+igA4W/aNM7OV8H37pFYfA==
 
 query-string@*, query-string@^6.2.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.3.0.tgz#41ae8a61e1213c80b182d5db6cf129e05af89fc5"
-  integrity sha512-jkpCkoHiAA2BYZvni5GieU3x860QDfkh2+M6bPnrYUywqOWbGwPq5VzntTS06ixX4GVHEiq2ZhlmGy/e9LQ3zA==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.4.0.tgz#1566c0cec3a2da2d82c222ed3f9e2a921dba5e6a"
+  integrity sha512-Werid2I41/tJTqOGPJ3cC3vwrIh/8ZupBQbp7BSsqXzr+pTin3aMJ/EZb8UEuk7ZO3VqQFvq2qck/ihc6wqIdw==
   dependencies:
     decode-uri-component "^0.2.0"
     strict-uri-encode "^2.0.0"

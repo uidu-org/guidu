@@ -11,8 +11,8 @@ import React, {
 } from 'react';
 import NodeResolver from 'react-node-resolver';
 import flushable from 'flushable';
-import { Popper } from '@atlaskit/popper';
-import Portal from '@atlaskit/portal';
+import { Popper } from '@uidu/popper';
+import Portal from '@uidu/portal';
 import { layers } from '@uidu/theme';
 
 import {

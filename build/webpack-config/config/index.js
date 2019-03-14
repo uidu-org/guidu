@@ -250,7 +250,7 @@ module.exports = function createWebpackConfig(
       ],
     },
     resolve: {
-      mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
+      mainFields: ['uidu:src', 'atlaskit:src', 'module', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
     },
     resolveLoader: {

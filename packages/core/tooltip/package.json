@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/popper": "^0.3.7",
-    "@atlaskit/portal": "^0.1.0",
+    "@uidu/popper": "^0.1.0",
+    "@uidu/portal": "^0.1.0",
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.2",
     "@uidu/theme": "^0.1.2",

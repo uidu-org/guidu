@@ -3,7 +3,7 @@
 import React, { type Node } from 'react';
 import { mount } from 'enzyme';
 import { AnalyticsListener } from '@uidu/analytics';
-import Portal from '@atlaskit/portal';
+import Portal from '@uidu/portal';
 import { layers } from '@uidu/theme';
 import Tooltip from '../../Tooltip';
 import { Tooltip as StyledTooltip } from '../../../styled';

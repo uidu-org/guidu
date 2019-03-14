@@ -187,7 +187,7 @@ class Item extends PureComponent<Props, State> {
 }
 
 export { Item as DroplistItemWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'droplistItem',
