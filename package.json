@@ -19,7 +19,8 @@
   "scripts": {
     "build": "                               run-p build:pkg build:babel build:flowtypes && run-p build:typescript build:adf-schema:json-schema --print-label --continue-on-error && yarn build:exception-packages",
     "build:exception-packages": "            yarn build:media-editor:copy-binaries && yarn build:css-reset && yarn build:reduced-ui-pack && run-p build:navigation-next --print-label",
-    "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
+    "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects && yarn build:pkg:new && echo \"TODO: Remove pkg:new when everything has dropped cjs\"",
+    "build:pkg:new": "                       bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json tmp/package.json --only name,version,sideEffects && bolt workspaces exec --only-fs 'packages/**' -- mv ./tmp/package.json ./version.json",
     "build:babel": "                         run-p build:babel:esm",
     "build:babel:esm": "                     NODE_ENV=production BABEL_ENV=production:esm bolt workspaces exec --parallel --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js babel)\" -- babel --root-mode upward src -d dist/esm",
     "build:typescript": "                    run-p build:typescript:es2015 build:typescript:cli build:typescript:es5",

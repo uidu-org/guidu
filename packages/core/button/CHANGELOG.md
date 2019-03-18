@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.29
+- [patch] :
+
+  - Added version.json
+
 ## 0.1.28
 - [patch] :
 

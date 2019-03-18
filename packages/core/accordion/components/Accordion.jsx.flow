@@ -15,7 +15,7 @@ export default class Accordion extends PureComponent<AccordionPropTypes> {
     arrow: StyledAccordionItemTitleArrow,
     accordion: true,
     items: [],
-    enableTooltip: true,
+    // enableTooltip: true,
   };
 
   render() {
@@ -23,8 +23,8 @@ export default class Accordion extends PureComponent<AccordionPropTypes> {
 
     return (
       <StyledAccordion {...this.props}>
-        {items.map(item => (
-          <AccordionItem {...item.props}>
+        {items.map((item, index) => (
+          <AccordionItem key={index} {...item.props}>
             <StyledAccordionItemTitle {...item.titleProps}>
               {item.title}
               <Arrow />

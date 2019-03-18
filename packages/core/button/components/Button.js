@@ -10,7 +10,7 @@ import ButtonContent from '../styled/ButtonContent';
 import ButtonWrapper from '../styled/ButtonWrapper';
 import IconWrapper from '../styled/IconWrapper';
 import LoadingSpinner from '../styled/LoadingSpinner';
-import { name as packageName, version as packageVersion, } from '../../package.json';
+import { name as packageName, version as packageVersion, } from '../version.json';
 import { withDefaultProps } from '@atlaskit/type-helpers';
 var StyledButton = styled.button(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), getButtonStyles);
 StyledButton.displayName = 'StyledButton';
