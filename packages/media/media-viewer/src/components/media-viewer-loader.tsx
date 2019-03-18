@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { ModalSpinner } from '@uidu/media-ui';
 import { MediaViewer } from './media-viewer';
 import { MediaViewerProps } from './types';

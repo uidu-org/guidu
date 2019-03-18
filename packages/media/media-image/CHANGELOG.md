@@ -1,5 +1,10 @@
 # @atlaskit/media-image
 
+## 0.1.1
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 7.0.10
 - [patch] [f84de3bf0b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/f84de3bf0b):
 

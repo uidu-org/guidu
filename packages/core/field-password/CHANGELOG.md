@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.1
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 0.1.2
 - [patch] :
 

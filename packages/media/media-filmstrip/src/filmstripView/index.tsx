@@ -7,8 +7,7 @@ import {
   MouseEvent,
   ReactElement,
 } from 'react';
-import ArrowLeft from '@atlaskit/icon/glyph/arrow-left';
-import ArrowRight from '@atlaskit/icon/glyph/arrow-right';
+import { ArrowLeft, ArrowRight } from 'react-feather';
 import * as debounce from 'debounce';
 import {
   FilmStripViewWrapper,

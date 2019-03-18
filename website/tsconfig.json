@@ -1,0 +1,6 @@
+{
+  "extends": "../tsconfig.base.json",
+  "moduleResolution": "node",
+  "include": ["scripts/**/*.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"]
+}

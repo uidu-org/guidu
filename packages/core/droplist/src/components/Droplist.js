@@ -195,7 +195,7 @@ class Droplist extends Component<Props, void> {
       <Content
         data-role="droplistContent"
         isTall={appearance === 'tall'}
-        innerRef={this.handleContentRef}
+        ref={this.handleContentRef}
         maxHeight={maxHeight}
       >
         {isLoading ? (
@@ -222,7 +222,7 @@ class Droplist extends Component<Props, void> {
           isAlwaysFixed={isOpen && isMenuFixed}
           onPositioned={onPositioned}
         >
-          <Trigger fit={shouldFitContainer} innerRef={this.handleTriggerRef}>
+          <Trigger fit={shouldFitContainer} ref={this.handleTriggerRef}>
             {trigger}
           </Trigger>
         </Layer>

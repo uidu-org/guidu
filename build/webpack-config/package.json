@@ -4,7 +4,7 @@
     "webpack-dev": "./bin/dev.js",
     "webpack-build": "./bin/build.js"
   },
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Configurations for webpack used in Guidu",
   "main": "config/index.js",
   "scripts": {
@@ -18,9 +18,9 @@
   "license": "ISC",
   "dependencies": {
     "@mdx-js/loader": "^0.20.1",
-    "@uidu/changelog-loader": "^0.1.8",
-    "@uidu/fs-loader": "^0.1.16",
-    "@uidu/nav-info-loader": "^0.1.16",
+    "@uidu/changelog-loader": "^0.1.9",
+    "@uidu/fs-loader": "^0.1.17",
+    "@uidu/nav-info-loader": "^0.1.17",
     "babel-loader": "^8.0.4",
     "bolt": "^0.22.6",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",

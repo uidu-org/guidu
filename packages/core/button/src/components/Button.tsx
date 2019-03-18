@@ -188,7 +188,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
       (iconAfter && !iconBefore && !children)
     );
     return (
-      <StyledComponent innerRef={this.getInnerRef} {...buttonProps}>
+      <StyledComponent ref={this.getInnerRef} {...buttonProps}>
         <ButtonWrapper onClick={this.onInnerClick} fit={!!shouldFitContainer}>
           {isLoading ? (
             <LoadingSpinner

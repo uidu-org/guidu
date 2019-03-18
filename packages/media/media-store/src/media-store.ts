@@ -286,6 +286,7 @@ export class MediaStore {
     params?: MediaStoreGetFileImageParams,
     controller?: AbortController,
   ): Promise<Blob> => {
+    console.log(id);
     return this.request(
       `/file/${id}/image`,
       {

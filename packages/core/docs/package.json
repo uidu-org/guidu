@@ -1,6 +1,6 @@
 {
   "name": "@uidu/docs",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "Utilities for building documentation",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,10 +15,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/button": "^0.1.25",
-    "@uidu/code": "^0.1.2",
-    "@uidu/theme": "^0.1.2",
-    "@uidu/tooltip": "^0.1.2",
+    "@uidu/button": "^0.1.26",
+    "@uidu/code": "^0.1.3",
+    "@uidu/theme": "^0.1.3",
+    "@uidu/tooltip": "^0.1.3",
     "babel-runtime": "^6.26.0",
     "pretty-proptypes": "^0.6.0",
     "react-bootstrap": "^1.0.0-beta.5",

@@ -8,7 +8,7 @@ import {
 import { IntlProvider, intlShape } from 'react-intl';
 import { ThemeProvider } from 'styled-components';
 import { Shortcut, theme } from '@uidu/media-ui';
-import { withAnalyticsEvents } from '@atlaskit/analytics-next';
+import { withAnalyticsEvents } from '@uidu/analytics';
 import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
 import { mediaViewerModalEvent } from './analytics/media-viewer';
 import { channel } from './analytics/index';

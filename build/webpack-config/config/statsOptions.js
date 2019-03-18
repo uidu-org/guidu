@@ -38,7 +38,7 @@ module.exports = {
   chunksSort: 'field',
 
   // `webpack --colors` equivalent
-  colors: false,
+  colors: true,
 
   // Display the distance from the entry point for each module
   depth: false,
@@ -95,5 +95,7 @@ module.exports = {
 
   // Add warnings
   warnings: false,
-  warningsFilter: () => true,
+
+  // https://github.com/TypeStrong/ts-loader/issues/751
+  warningsFilter: /export .* was not found in/,
 };

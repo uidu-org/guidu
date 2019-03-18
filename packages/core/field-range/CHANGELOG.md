@@ -1,5 +1,10 @@
 # @uidu/field-range
 
+## 0.1.3
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 0.1.2
 - [patch] :
 

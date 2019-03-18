@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.7
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 3.0.6
 - [patch] :
 

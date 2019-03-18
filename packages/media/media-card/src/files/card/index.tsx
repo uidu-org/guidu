@@ -2,11 +2,7 @@ import * as React from 'react';
 import { Component } from 'react';
 import { messages } from '@uidu/media-ui';
 import { FormattedMessage } from 'react-intl';
-import {
-  FileDetails,
-  ImageResizeMode,
-  MediaItemType,
-} from '@uidu/media-core';
+import { FileDetails, ImageResizeMode, MediaItemType } from '@uidu/media-core';
 import { SharedCardProps, CardStatus } from '../..';
 import { CardAction } from '../../actions';
 import { FileCardImageView } from '../cardImageView';

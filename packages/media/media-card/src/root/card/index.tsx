@@ -120,6 +120,7 @@ export class Card extends Component<CardProps, CardState> {
 
   async subscribe(identifier: Identifier, context: Context) {
     const { isCardVisible } = this.state;
+
     if (!isCardVisible) {
       return;
     }
@@ -148,13 +149,13 @@ export class Card extends Component<CardProps, CardState> {
       .subscribe({
         next: async fileState => {
           let currentDataURI = this.state.dataURI;
-          console.log(fileState);
-          console.log(this.state);
           // const { metadata: currentMetadata } = this.state;
           // const metadata = extendMetadata(
           //   fileState,
           //   currentMetadata as FileDetails,
           // );
+
+          console.log(fileState);
 
           if (!currentDataURI) {
             const {
@@ -234,6 +235,7 @@ export class Card extends Component<CardProps, CardState> {
           }
         },
         error: error => {
+          console.log(error);
           this.notifyStateChange({ error, status: 'error' });
         },
       });

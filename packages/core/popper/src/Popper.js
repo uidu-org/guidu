@@ -75,7 +75,7 @@ export class Popper extends Component<Props, State> {
 
     return (
       <ReactPopper
-        positionFixed
+        // positionFixed
         modifiers={modifiers}
         placement={placement}
         {...(referenceElement ? { referenceElement } : {})}

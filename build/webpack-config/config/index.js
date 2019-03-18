@@ -10,6 +10,11 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const { createDefaultGlob } = require('./utils');
 const statsOptions = require('./statsOptions');
 
+const baseCacheDir = path.resolve(
+  __dirname,
+  '../../../node_modules/.cache-loader',
+);
+
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 
 const cssRegex = /\.css$/;
@@ -86,12 +91,12 @@ module.exports = function createWebpackConfig(
       main: getEntries({
         isProduction,
         websiteDir,
-        entryPath: './src/index.js',
+        entryPath: './src/index.tsx',
       }),
       examples: getEntries({
         isProduction,
         websiteDir,
-        entryPath: './src/examples-entry.js',
+        entryPath: './src/examples-entry.tsx',
       }),
     },
     output: output || {
@@ -149,7 +154,24 @@ module.exports = function createWebpackConfig(
         },
         {
           test: /\.(js|jsx|mjs)$/,
-          exclude: /node_modules/,
+          exclude: /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
+          // use: [
+          //   {
+          //     loader: 'thread-loader',
+          //     options: {
+          //       name: 'babel-pool',
+          //     },
+          //   },
+          //   {
+          //     loader: 'babel-loader',
+          //     options: {
+          //       babelrc: true,
+          //       rootMode: 'upward',
+          //       envName: 'production:esm',
+          //       cacheDirectory: path.resolve(baseCacheDir, 'babel'),
+          //     },
+          //   },
+          // ],
           loader: 'babel-loader',
           options: {
             configFile: '../babel.config.js',
@@ -164,6 +186,20 @@ module.exports = function createWebpackConfig(
           options: {
             transpileOnly: true,
           },
+          // use: [
+          //   {
+          //     loader: 'cache-loader',
+          //     options: {
+          //       cacheDirectory: path.resolve(baseCacheDir, 'ts'),
+          //     },
+          //   },
+          //   {
+          //     loader: require.resolve('ts-loader'),
+          //     options: {
+          //       transpileOnly: true,
+          //     },
+          //   },
+          // ],
         },
         // "postcss" loader applies autoprefixer to our CSS.
         // "css" loader resolves paths in CSS and adds assets as dependencies.
@@ -176,16 +212,6 @@ module.exports = function createWebpackConfig(
           exclude: cssModuleRegex,
           use: getStyleLoaders({
             importLoaders: 1,
-          }),
-        },
-        // Adds support for CSS Modules (https://github.com/css-modules/css-modules)
-        // using the extension .module.css
-        {
-          test: cssModuleRegex,
-          use: getStyleLoaders({
-            importLoaders: 1,
-            modules: true,
-            getLocalIdent: getCSSModuleLocalIdent,
           }),
         },
         // Opt-in support for SASS (using .scss or .sass extensions).
@@ -227,22 +253,6 @@ module.exports = function createWebpackConfig(
             },
           },
         },
-        // // "file" loader makes sure those assets get served by WebpackDevServer.
-        // // When you `import` an asset, you get its (virtual) filename.
-        // // In production, they would get copied to the `build` folder.
-        // // This loader doesn't use a "test" so it will catch all modules
-        // // that fall through the other loaders.
-        // {
-        //   // Exclude `js` files to keep "css" loader working as it injects
-        //   // its runtime that would otherwise be processed through "file" loader.
-        //   // Also exclude `html` and `json` extensions so they get processed
-        //   // by webpacks internal loaders.
-        //   exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
-        //   loader: require.resolve('file-loader'),
-        //   options: {
-        //     name: 'static/media/[name].[hash:8].[ext]',
-        //   },
-        // },
         {
           test: /\.less$/,
           use: ['style-loader', 'css-loader', 'less-loader'],
@@ -250,7 +260,7 @@ module.exports = function createWebpackConfig(
       ],
     },
     resolve: {
-      mainFields: ['uidu:src', 'atlaskit:src', 'module', 'browser', 'main'],
+      mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
     },
     resolveLoader: {

@@ -62,7 +62,7 @@ type Props = {
   /** The content of the tooltip */
   content: Node,
   /** Extend `TooltipPrimitive` to create your own tooptip and pass it as component */
-  component: ComponentType<{ innerRef: HTMLElement => void }>,
+  component: ComponentType<{ ref: HTMLElement => void }>,
   /** Time in milliseconds to wait before showing and hiding the tooltip. Defaults to 300. */
   delay: number,
   /**
@@ -257,6 +257,7 @@ class Tooltip extends Component<Props, State> {
       component: TooltipContainer,
       tag: TargetContainer,
     } = this.props;
+
     const {
       isVisible,
       renderTooltip,
@@ -305,7 +306,7 @@ class Tooltip extends Component<Props, State> {
                 >
                   {getAnimationStyles => (
                     <TooltipContainer
-                      innerRef={ref}
+                      ref={ref}
                       style={{
                         ...getAnimationStyles(placement),
                         ...style,

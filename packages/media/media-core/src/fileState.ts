@@ -106,6 +106,7 @@ const apiProcessingStatusToFileStatus = (
 export const mapMediaFileToFileState = (
   mediaFile: MediaStoreResponse<MediaFile>,
 ): FileState => {
+  console.log(mediaFile);
   const {
     id,
     name,
@@ -114,6 +115,7 @@ export const mapMediaFileToFileState = (
     artifacts,
     mediaType,
     mimeType,
+    preview,
   } = mediaFile.data;
   const status = apiProcessingStatusToFileStatus(processingStatus);
 
@@ -127,6 +129,7 @@ export const mapMediaFileToFileState = (
         size,
         mediaType,
         mimeType,
+        preview,
       } as ProcessingFileState;
     case 'succeeded':
       return {
@@ -137,6 +140,7 @@ export const mapMediaFileToFileState = (
         artifacts,
         mediaType,
         mimeType,
+        preview,
       } as ProcessedFileState;
     case 'failed':
       return {

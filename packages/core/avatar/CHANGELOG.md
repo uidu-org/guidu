@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.3
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 0.2.2
 - [patch] :
 

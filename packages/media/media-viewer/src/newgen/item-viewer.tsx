@@ -120,6 +120,8 @@ export class ItemViewerBase extends React.Component<Props, State> {
       previewCount,
     };
 
+    console.log(item);
+
     switch (item.mediaType) {
       case 'image':
         return <ImageViewer onLoad={this.onViewerLoaded} {...viewerProps} />;

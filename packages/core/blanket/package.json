@@ -1,6 +1,6 @@
 {
   "name": "@uidu/blanket",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A React component that covers the underlying UI for a layered component.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,17 +17,17 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/analytics": "^0.1.2",
-    "@uidu/theme": "^0.1.0"
+    "@uidu/analytics": "^0.1.3",
+    "@uidu/theme": "^0.1.3"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/button": "^0.1.25",
-    "@uidu/docs": "^0.1.0",
+    "@uidu/build-utils": "^0.1.3",
+    "@uidu/button": "^0.1.26",
+    "@uidu/docs": "^0.1.21",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },

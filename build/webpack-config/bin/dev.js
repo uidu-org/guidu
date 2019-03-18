@@ -132,4 +132,7 @@ async function runDevServer() {
   });
 }
 
-runDevServer().catch(err => process.exit(err));
+runDevServer().catch(err => {
+  console.log(err);
+  process.exit(err);
+});

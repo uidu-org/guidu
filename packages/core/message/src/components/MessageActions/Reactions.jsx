@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import Tooltip from '@uidu/tooltip';
 import DropdownMenu, {
@@ -7,14 +9,21 @@ import DropdownMenu, {
 
 import { Smile } from 'react-feather';
 
-export default class Reactions extends Component {
+export default class Reactions extends Component<*> {
   static defaultProps = {
+    options: ['👍', '👎', '😀', '❤️', '🎉'],
     reaction: undefined,
     onClick: () => {},
   };
 
+  handleClick = (e: Event, option) => {
+    e.preventDefault();
+    const { onClick } = this.props;
+    onClick(option);
+  };
+
   render() {
-    const { onClick, reaction } = this.props;
+    const { options, onClick, reaction } = this.props;
     return (
       <DropdownMenu
         trigger={
@@ -29,15 +38,15 @@ export default class Reactions extends Component {
           </Tooltip>
         }
         triggerType="default"
-        position="top middle"
-        boundariesElement="viewport"
+        position="left middle"
+        boundariesElement="window"
         onOpenChange={e => console.log('dropdown opened', e)}
       >
         <DropdownItemGroup>
-          {['👍', '👎', '😀', '❤️', '🎉'].map(option => (
+          {options.map(option => (
             <DropdownItem
               isSelected={reaction && reaction.id === option}
-              onClick={console.log}
+              onClick={e => this.handleClick(e, option)}
             >
               {option}
             </DropdownItem>

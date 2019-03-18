@@ -219,7 +219,7 @@ export default class Item extends Component<Props, {}> {
         tabIndex={isDisabled || isHidden || this.props.href ? null : 0}
         target={this.props.target}
         title={this.props.title}
-        innerRef={patchedInnerRef}
+        ref={patchedInnerRef}
         {...dnd && dnd.draggableProps}
         {...dragHandleProps}
         {...patchedEventHandlers}

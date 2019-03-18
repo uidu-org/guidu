@@ -2,17 +2,89 @@
 import React from 'react';
 import faker from 'faker';
 
-import Message from '../src';
+import Message, { MessageGroup, MessageLog, MessageReactions } from '../src';
 
-const message = {
-  messager: {
-    ...faker.helpers.userCard(),
-    avatar: {
-      thumb: `https://api.adorable.io/avatars/80/${faker.internet.email()}.png`,
-    },
-  },
-  body: faker.lorem.paragraphs(),
-  createdAt: faker.date.past(),
-};
+import { messagerFactory, messageLogFactory } from '../examples-utils';
 
-export default () => <Message message={message} />;
+const userA = messagerFactory();
+const userB = messagerFactory();
+const messageLog = messageLogFactory();
+
+export default () => (
+  <div>
+    <MessageGroup
+      messager={userA}
+      messages={[
+        {
+          body: faker.lorem.paragraphs(),
+          createdAt: faker.date.past(),
+        },
+        {
+          body: faker.lorem.paragraph(),
+          createdAt: faker.date.past(),
+        },
+      ]}
+    >
+      {({ messages, messager }) =>
+        messages.map(message => (
+          <Message key={message.id} message={message} messager={messager} />
+        ))
+      }
+    </MessageGroup>
+    <MessageGroup
+      messager={userB}
+      messages={[
+        {
+          body: faker.lorem.paragraph(),
+          createdAt: faker.date.past(),
+        },
+      ]}
+    >
+      {({ messages, messager }) =>
+        messages.map(message => (
+          <Message key={message.id} message={message} messager={messager} />
+        ))
+      }
+    </MessageGroup>
+    <MessageLog message={messageLog} messager={messageLog.messager} />
+    <MessageGroup
+      messager={userA}
+      messages={[
+        {
+          body: faker.lorem.paragraph(),
+          createdAt: faker.date.past(),
+          attachments: [
+            {
+              mediaItemType: 'file',
+              id: '9016',
+              collectionName: 'uidu',
+            },
+            {
+              mediaItemType: 'file',
+              id: '9017',
+              collectionName: 'uidu',
+            },
+            {
+              mediaItemType: 'file',
+              id: '9018',
+              collectionName: 'uidu',
+            },
+            {
+              mediaItemType: 'file',
+              id: '9015',
+              collectionName: 'uidu',
+            },
+          ],
+        },
+      ]}
+    >
+      {({ messages, messager }) =>
+        messages.map(message => (
+          <Message key={message.id} message={message} messager={messager}>
+            <MessageReactions reactions={[`😀`, `😀`, `❤️`]} />
+          </Message>
+        ))
+      }
+    </MessageGroup>
+  </div>
+);

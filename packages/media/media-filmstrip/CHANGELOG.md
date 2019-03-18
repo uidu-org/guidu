@@ -1,5 +1,10 @@
 # @atlaskit/media-filmstrip
 
+## 0.1.1
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 27.1.0
 - [minor] [f1b46bcb42](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/f1b46bcb42):
 

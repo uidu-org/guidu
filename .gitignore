@@ -10,17 +10,15 @@ coverage/
 junit.xml
 test-reports/
 browserstack.err
-**/__image_snapshots__/
+**/__image_snapshots__/__diff_output__/
+.measure-output/
+imageSnapshotFailures/
 
 # created by build-stats tool
 .data/
 
 # ignore yarn.locks generated in packages
 packages/**/**/yarn.lock
-yarn.lock
-
-website/dist
-packages/*/dist
 
 # ignore all logs
 *.log
@@ -32,3 +30,18 @@ packages/*/dist
 
 # ignore OS generated files
 **/.DS_Store
+
+# This is a hardcoded file for now, just to show that things are working, will remove once not
+# hardcoded
+releases/new-release.md
+website/dist.zip
+
+# A file we use for pushing secrets to micros, just in case
+secrets.json
+.vs/slnx.sqlite
+
+# this is created only in deploy-branch-build-dists builds in CI
+dists/
+
+# allow using .envrc to automate local environment, exclude from CVS
+.envrc

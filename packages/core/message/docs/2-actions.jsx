@@ -29,9 +29,18 @@ export default md`
   ${(
     <Example
       packageName="@uidu/message"
-      Component={require('../examples/01-basic')}
+      Component={require('../examples/02-with-reactions')}
       title="Message"
-      source={require('!!raw-loader!../examples/01-basic')}
+      source={require('!!raw-loader!../examples/02-with-reactions')}
+    />
+  )}
+
+  ${(
+    <Example
+      packageName="@uidu/message"
+      Component={require('../examples/03-with-actions')}
+      title="Message"
+      source={require('!!raw-loader!../examples/03-with-actions')}
     />
   )}
 `;

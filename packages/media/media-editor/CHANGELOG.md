@@ -1,5 +1,10 @@
 # @atlaskit/media-editor
 
+## 0.1.1
+- [patch] :
+
+  - Publish media components, added message 0.1.0
+
 ## 28.0.0
 - Updated dependencies [fc6164c8c2](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/fc6164c8c2):
 - Updated dependencies [190c4b7bd3](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/190c4b7bd3):

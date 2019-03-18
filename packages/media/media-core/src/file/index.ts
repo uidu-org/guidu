@@ -130,7 +130,6 @@ export class FileFetcherImpl implements FileFetcher {
         items.push(...response.data.items);
       }),
     );
-    console.log(getItemsFromKeys(keys, items));
     return getItemsFromKeys(keys, items);
   };
 

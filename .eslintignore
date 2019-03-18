@@ -8,22 +8,28 @@ docs/templates/**
 
 # the core icon package
 packages/core/icon/glyph/**
-packages/core/icon/es5/**
+packages/core/icon/cjs/**
 packages/core/icon/utils/**
 
 # the icon icon-file-type package
 packages/core/icon-file-type/glyph/**
-packages/core/icon-file-type/es5/**
+packages/core/icon-file-type/cjs/**
 packages/core/icon-file-type/utils/**
 
 # the icon icon-object package
 packages/core/icon-object/glyph/**
-packages/core/icon-object/es5/**
+packages/core/icon-object/cjs/**
 packages/core/icon-object/utils/**
 packages/bitbucket/codemod-util-shared-styles-to-theme/__fixtures__
+
+# the icon icon-priority package
+packages/core/icon-priority/glyph/**
+packages/core/icon-priority/cjs/**
+packages/core/icon-priority/utils/**
 
 # flow tests
 packages/**/__tests__/flow/
 
 # tmp
 build
+website

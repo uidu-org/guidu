@@ -30,7 +30,18 @@
       "es2015.promise",
       "es2016.array.include"
     ],
-    "types": ["jest", "react","react-router","history", "enzyme", "css-color-names", "jest-styled-components", "styled-components", "linkify-it", "url-search-params"],
+    "types": [
+      "jest",
+      "react",
+      "react-router",
+      "history",
+      "enzyme",
+      "css-color-names",
+      "jest-styled-components",
+      "styled-components",
+      "linkify-it",
+      "url-search-params"
+    ],
     "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "files": [

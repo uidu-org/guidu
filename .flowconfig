@@ -1,15 +1,16 @@
 [ignore]
-.*/node_modules/.*
 .*/node_modules/styled-components/.*
 .*/website/dist/sandbox/.*
 .*/website/.*
 .*/docs/templates/.*
 .*/packages/bitbucket/codemod-util-shared-styles-to-theme/__fixtures__/.*
-.*/packages/elements/icon/es5/.*
+.*/packages/elements/icon/cjs/.*
 .*/node_modules/stylelint/.*
 .*/node_modules/babel-flow-types/.*
 .*/node_modules/babel-normalize-comments/.*
 .*/node_modules/extract-react-types/.*
+# Older versions of button which are transitive deps may contain flow errors/warnings
+<PROJECT_ROOT>/node_modules/@uidu/button/.*
 .*/.git/.*
 [untyped]
 .*/node_modules/react-select
@@ -17,7 +18,6 @@
 [include]
 
 [libs]
-node_modules/*
 
 [options]
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/bitbucket/\1/src/index'
@@ -34,6 +34,7 @@ module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/id
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/jira/\1/src/index'
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/marketplace/\1/src/index'
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/media/\1/src/index'
+module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/navigation/\1/src/index'
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/people-and-teams/\1/src/index'
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/pipelines/\1/src/index'
 module.name_mapper='^@uidu\/\([a-zA-Z0-9_\-]+\)$' -> '<PROJECT_ROOT>/packages/purchasing/\1/src/index'

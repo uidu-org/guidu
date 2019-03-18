@@ -116,33 +116,33 @@ export async function MediaPicker<K extends keyof MediaPickerComponents>(
     case 'binary':
       const {
         BinaryUploaderImpl,
-      } = await import(/* webpackChunkName:"@atlaskit-internal_media-picker-binary" */ './components/binary');
+      } = await import(/* webpackChunkName:"@uidu-internal_media-picker-binary" */ './components/binary');
       return new BinaryUploaderImpl(context, pickerConfig as BinaryConfig);
     case 'browser':
       const {
         BrowserImpl,
-      } = await import(/* webpackChunkName:"@atlaskit-internal_media-picker-browser" */ './components/browser');
+      } = await import(/* webpackChunkName:"@uidu-internal_media-picker-browser" */ './components/browser');
       return new BrowserImpl(context, pickerConfig as
         | BrowserConfig
         | undefined);
     case 'clipboard':
       const {
         ClipboardImpl,
-      } = await import(/* webpackChunkName:"@atlaskit-internal_media-picker-clipboard" */ './components/clipboard');
+      } = await import(/* webpackChunkName:"@uidu-internal_media-picker-clipboard" */ './components/clipboard');
       return new ClipboardImpl(context, pickerConfig as
         | ClipboardConfig
         | undefined);
     case 'dropzone':
       const {
         DropzoneImpl,
-      } = await import(/* webpackChunkName:"@atlaskit-internal_media-picker-dropzone" */ './components/dropzone');
+      } = await import(/* webpackChunkName:"@uidu-internal_media-picker-dropzone" */ './components/dropzone');
       return new DropzoneImpl(context, pickerConfig as
         | DropzoneConfig
         | undefined);
     case 'popup':
       const {
         PopupImpl,
-      } = await import(/* webpackChunkName:"@atlaskit-internal_media-picker-popup" */ './components/popup');
+      } = await import(/* webpackChunkName:"@uidu-internal_media-picker-popup" */ './components/popup');
       return new PopupImpl(context, pickerConfig as PopupConfig);
     default:
       throw new Error(`The component ${componentName} does not exist`);

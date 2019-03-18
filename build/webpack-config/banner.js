@@ -1,5 +1,4 @@
 // @flow
-
 const chalk = require('chalk');
 
 function print(msg /*: Array<String>*/) {
