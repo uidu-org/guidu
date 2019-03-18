@@ -1,7 +1,7 @@
 // @flow
 import { itemThemeNamespace } from '@uidu/item';
 import { colors, themed } from '@uidu/theme';
-import chromatism from 'chromatism';
+import { convert } from 'chromatism';
 import {
   type DrawerTheme,
   type Background,
@@ -22,7 +22,7 @@ const focus = {
 };
 
 function lightenColor(color, alpha) {
-  const { r: red, g: green, b: blue } = chromatism.convert(color).rgb;
+  const { r: red, g: green, b: blue } = convert(color).rgb;
   return `rgba(${red}, ${green}, ${blue}, 0.${alpha})`;
 }
 
