@@ -201,7 +201,6 @@ const ModalHeaderComp = ({
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
       <Button
-        withIcon
         onClick={onCodeToggle}
         isSelected={displayCode}
         title={displayCode ? 'Hide Source' : 'Show Source'}
@@ -213,18 +212,17 @@ const ModalHeaderComp = ({
           appearance="subtle"
           component={Link}
           to={toExampleUrl(groupId, packageId, exampleId)}
-          withIcon
         >
           <ScreenIcon label="Screen Icon" />
         </Button>
       </Tooltip>
       <Tooltip content="Isolated View" position="bottom">
-        <Button appearance="subtle" href={loaderUrl} target={'_blank'} withIcon>
+        <Button appearance="subtle" href={loaderUrl} target={'_blank'}>
           <LinkIcon label="Link Icon" />
         </Button>
       </Tooltip>
       <Tooltip content="Close" position="bottom">
-        <Button appearance="subtle" onClick={close} withIcon>
+        <Button appearance="subtle" onClick={close}>
           <CloseIcon label="Close Modal" />
         </Button>
       </Tooltip>

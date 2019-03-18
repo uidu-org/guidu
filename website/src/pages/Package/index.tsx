@@ -148,7 +148,6 @@ class Package extends React.Component<Props> {
                 color="light"
                 component={Link}
                 to={`/packages/${groupId}/${pkgId}/changelog`}
-                withIcon
               >
                 <List className="mr-2" size={'1rem'} /> Changelog
               </Button>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer';
 import * as pdfjsLib from 'pdfjs-dist/build/pdf';
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { ZoomControls } from '../../zoomControls';
 import { PDFWrapper } from '../../styled';
 import { closeOnDirectClick } from '../../utils/closeOnDirectClick';
@@ -13,7 +13,7 @@ import { ZoomLevel } from '../../domain/zoomLevel';
 export const pdfViewerClassName = 'pdfViewer';
 
 /* tslint:disable:no-unused-expression */
-injectGlobal`
+createGlobalStyle`
   .${pdfViewerClassName} {
     margin-top: 64px;
     margin-bottom: 64px;

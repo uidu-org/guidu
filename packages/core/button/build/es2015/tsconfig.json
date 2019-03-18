@@ -2,7 +2,7 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "declaration": true,
-    "outDir": "../../dist/es2015",
+    "outDir": "../../",
     "target": "es5",
     "module": "esnext"
   },
