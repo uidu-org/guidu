@@ -1,7 +1,7 @@
 /* tslint:disable:variable-name */
 
 import styled, { css, keyframes } from 'styled-components';
-import { borderRadius, colors, gridSize } from '@atlaskit/theme';
+import { borderRadius, colors, gridSize } from '@uidu/theme';
 import { checkeredBg } from './images';
 
 import {

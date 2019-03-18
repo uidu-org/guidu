@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Spinner from '../src';
 
 type State = {

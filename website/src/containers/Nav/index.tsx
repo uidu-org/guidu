@@ -7,7 +7,7 @@ import Navigation, {
   AkContainerTitle,
   presetThemes,
 } from '@atlaskit/navigation';
-import { borderRadius, colors } from '@atlaskit/theme';
+import { borderRadius, colors } from '@uidu/theme';
 import Tooltip from '@atlaskit/tooltip';
 
 import SearchIcon from '@atlaskit/icon/glyph/search';

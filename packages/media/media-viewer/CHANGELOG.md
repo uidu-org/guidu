@@ -45,7 +45,7 @@
 ## 35.1.1
 - [patch] [ef469cbb0b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ef469cbb0b):
 
-  - MS-357 replaced @atlaskit/util-shared-styles from media components by @atlaskit/theme
+  - MS-357 replaced @atlaskit/util-shared-styles from media components by @uidu/theme
 
 ## 35.1.0
 - [minor] [a74d635f1c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a74d635f1c):
@@ -177,7 +177,7 @@
   - @atlaskit/icon@15.0.2
   - @atlaskit/modal-dialog@7.1.1
   - @atlaskit/spinner@9.0.13
-  - @atlaskit/theme@7.0.1
+  - @uidu/theme@7.0.1
   - @atlaskit/analytics-gas-types@3.2.3
   - @atlaskit/media-card@44.1.3
   - @atlaskit/media-core@24.5.2
@@ -208,7 +208,7 @@
   - @atlaskit/modal-dialog@7.0.14
   - @atlaskit/spinner@9.0.12
   - @atlaskit/media-ui@7.8.2
-  - @atlaskit/theme@7.0.0
+  - @uidu/theme@7.0.0
 
 ## 27.0.3
 - [patch] [5a6de24](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/5a6de24):
@@ -232,7 +232,7 @@
   - @atlaskit/icon@14.6.1
   - @atlaskit/modal-dialog@7.0.12
   - @atlaskit/spinner@9.0.11
-  - @atlaskit/theme@6.2.1
+  - @uidu/theme@6.2.1
   - @atlaskit/media-card@44.0.1
   - @atlaskit/media-core@24.5.1
   - @atlaskit/media-ui@7.6.1
@@ -437,7 +437,7 @@ d):
 
 ## 17.0.5
 - [patch] Updated dependencies [df22ad8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/df22ad8)
-  - @atlaskit/theme@6.0.0
+  - @uidu/theme@6.0.0
   - @atlaskit/media-ui@5.1.1
   - @atlaskit/spinner@9.0.6
   - @atlaskit/modal-dialog@6.0.9
@@ -481,7 +481,7 @@ d):
   - @atlaskit/button@9.0.4
   - @atlaskit/media-core@22.2.1
   - @atlaskit/media-test-helpers@15.2.1
-  - @atlaskit/theme@5.1.2
+  - @uidu/theme@5.1.2
   - @atlaskit/field-range@5.0.2
   - @atlaskit/spinner@9.0.4
   - @atlaskit/docs@5.0.2
@@ -539,7 +539,7 @@ d):
   - @atlaskit/media-ui@4.0.0
   - @atlaskit/media-core@22.0.0
   - @atlaskit/media-test-helpers@15.0.0
-  - @atlaskit/theme@5.0.0
+  - @uidu/theme@5.0.0
   - @atlaskit/field-range@5.0.0
   - @atlaskit/spinner@9.0.0
   - @atlaskit/docs@5.0.0
@@ -549,7 +549,7 @@ d):
   - @atlaskit/media-test-helpers@15.0.0
   - @atlaskit/media-core@22.0.0
   - @atlaskit/button@9.0.0
-  - @atlaskit/theme@5.0.0
+  - @uidu/theme@5.0.0
   - @atlaskit/field-range@5.0.0
   - @atlaskit/spinner@9.0.0
   - @atlaskit/docs@5.0.0
@@ -611,7 +611,7 @@ d):
   - @atlaskit/media-test-helpers@14.0.3
   - @atlaskit/media-core@19.1.3
   - @atlaskit/button@8.1.2
-  - @atlaskit/theme@4.0.4
+  - @uidu/theme@4.0.4
   - @atlaskit/spinner@7.0.2
   - @atlaskit/icon@12.1.2
 
@@ -621,7 +621,7 @@ d):
   - @atlaskit/media-ui@3.1.1
   - @atlaskit/media-test-helpers@14.0.2
   - @atlaskit/media-core@19.1.2
-  - @atlaskit/theme@4.0.3
+  - @uidu/theme@4.0.3
   - @atlaskit/spinner@7.0.1
   - @atlaskit/icon@12.1.1
   - @atlaskit/button@8.1.1
@@ -635,7 +635,7 @@ d):
   - @atlaskit/docs@4.1.0
   - @atlaskit/media-core@19.1.1
   - @atlaskit/media-test-helpers@14.0.1
-  - @atlaskit/theme@4.0.2
+  - @uidu/theme@4.0.2
   - @atlaskit/button@8.1.0
 
 ## 15.0.10
@@ -676,7 +676,7 @@ d):
   - @atlaskit/media-core@19.0.0
   - @atlaskit/icon@12.0.0
   - @atlaskit/button@8.0.0
-  - @atlaskit/theme@4.0.0
+  - @uidu/theme@4.0.0
   - @atlaskit/spinner@6.0.0
   - @atlaskit/docs@4.0.0
 
@@ -753,7 +753,7 @@ d):
   - @atlaskit/media-test-helpers@12.0.4
   - @atlaskit/media-core@18.0.3
   - @atlaskit/button@7.2.5
-  - @atlaskit/theme@3.2.2
+  - @uidu/theme@3.2.2
   - @atlaskit/spinner@5.0.2
   - @atlaskit/docs@3.0.4
 

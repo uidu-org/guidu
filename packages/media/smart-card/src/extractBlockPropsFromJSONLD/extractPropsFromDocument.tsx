@@ -4,7 +4,7 @@ import { FormattedRelative } from 'react-intl';
 import { BlockCardResolvedViewProps } from '@uidu/media-ui';
 import { extractPropsFromObject } from './extractPropsFromObject';
 import ChatIcon from '@atlaskit/icon/glyph/comment';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { getIconForFileType, getLabelForFileType } from '../getIconForFileType';
 
 type Person = {

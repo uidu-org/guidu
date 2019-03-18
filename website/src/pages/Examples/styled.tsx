@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { Link } from '../../components/WrappedLink';
 import { Transition } from 'react-transition-group';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 
 const NAVBAR_HEIGHT = '48px';
 

@@ -1,7 +1,7 @@
 import styled, { ThemedOuterStyledProps } from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { borderRadiusBottom } from '../../../mixins';
 
 export interface WrapperProps {

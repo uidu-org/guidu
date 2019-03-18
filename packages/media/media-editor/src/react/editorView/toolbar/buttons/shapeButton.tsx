@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { toolIcons } from './toolButton';
 import { Tool } from '../../../../common';
 import { shapeTools } from '../popups/shapePopup';

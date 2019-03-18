@@ -11,7 +11,7 @@ jest.mock('../../../newgen/analytics/item-viewer', () => mockItemViewer);
 import * as React from 'react';
 import { mount } from 'enzyme';
 import { ErrorMessage, createError } from '../../../newgen/error';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { fakeIntl } from '@uidu/media-test-helpers';
 
 describe('Error Message', () => {

@@ -5,7 +5,7 @@ const { getPackagesWithKarmaTests } = require('../karma-config');
 const {
   getPackagesInfo,
   TOOL_NAME_TO_FILTERS,
-} = require('@atlaskit/build-utils/tools');
+} = require('@uidu/build-utils/tools');
 
 /**
  * This is a helper script to return whether or not a certain tool should be run.

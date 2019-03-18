@@ -1,4 +1,4 @@
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { borderRadius } from '@uidu/media-ui';
 /*
  * Used to display the blue border around a selected card without

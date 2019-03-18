@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import Blanket from '@atlaskit/blanket';
+import Blanket from '@uidu/blanket';
 import EmojiIcon from '@atlaskit/icon/glyph/emoji';
 
 import Drawer from '../../index';

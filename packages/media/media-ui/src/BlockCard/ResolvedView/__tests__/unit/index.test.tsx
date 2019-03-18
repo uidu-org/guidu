@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { shallow, mount, ReactWrapper } from 'enzyme';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Avatar from '@atlaskit/avatar';
 import AvatarGroup from '@atlaskit/avatar-group';
 import { BlockCardResolvedView, Action } from '../..';

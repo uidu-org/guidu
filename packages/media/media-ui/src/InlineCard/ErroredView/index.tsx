@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { truncateUrlForErrorView } from '../utils';
 import { Frame } from '../Frame';
 import { IconAndTitleLayout } from '../IconAndTitleLayout';

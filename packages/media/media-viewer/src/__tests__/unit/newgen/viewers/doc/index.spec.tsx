@@ -7,7 +7,7 @@ import { createContext } from '../../../_stubs';
 import { Spinner } from '../../../../../newgen/loading';
 import { DocViewer, Props } from '../../../../../newgen/viewers/doc/index';
 import { ErrorMessage, createError } from '../../../../../newgen/error';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { mountWithIntlContext } from '@uidu/media-test-helpers';
 import { BaseState } from '../../../../../newgen/viewers/base-viewer';
 import { Content } from '../../../../../newgen/content';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import ArrowIcon from '@atlaskit/icon/glyph/media-services/arrow';
 import BrushIcon from '@atlaskit/icon/glyph/media-services/brush';
 import LineIcon from '@atlaskit/icon/glyph/media-services/line';

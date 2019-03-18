@@ -12,7 +12,7 @@ import * as React from 'react';
 import { ReactWrapper } from 'enzyme';
 import { Observable } from 'rxjs';
 import Spinner  from '@uidu/spinner';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import {
   Context,
   ProcessedFileState,

@@ -4,7 +4,7 @@ import {
   withAnalyticsEvents,
   withAnalyticsContext,
   createAndFireEvent,
-} from '@atlaskit/analytics-next';
+} from '@uidu/analytics';
 import withDeprecationWarnings from './withDeprecationWarnings';
 import getButtonProps from './getButtonProps';
 import CustomComponentProxy from './CustomComponentProxy';

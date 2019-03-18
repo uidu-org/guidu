@@ -3,7 +3,7 @@ import { Component } from 'react';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import { Color } from '../../../../common';
 
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import {
   ColorSample,
   DropdownRightIconWrapper,

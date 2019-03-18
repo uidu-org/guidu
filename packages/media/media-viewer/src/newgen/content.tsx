@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component, SyntheticEvent, ReactElement, ReactNode } from 'react';
 import CrossIcon from '@atlaskit/icon/glyph/cross';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { closeOnDirectClick } from './utils/closeOnDirectClick';
 import {
   ContentWrapper,

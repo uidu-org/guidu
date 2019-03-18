@@ -4,7 +4,7 @@ import {
   LozengeViewModel,
 } from '@uidu/media-ui';
 import ChatIcon from '@atlaskit/icon/glyph/comment';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { FormattedRelative } from 'react-intl';
 
 export const buildTaskTitle = (json: any) => {

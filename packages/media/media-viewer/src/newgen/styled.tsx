@@ -7,7 +7,7 @@ import { MediaType } from '@uidu/media-core';
 // @ts-ignore: unused variable
 // prettier-ignore
 import { HTMLAttributes, VideoHTMLAttributes, AudioHTMLAttributes, ImgHTMLAttributes, ComponentClass, ClassAttributes } from 'react';
-import { colors, layers, borderRadius } from '@atlaskit/theme';
+import { colors, layers, borderRadius } from '@uidu/theme';
 import { ellipsis } from '@uidu/media-ui';
 
 const overlayZindex = layers.modal() + 10;

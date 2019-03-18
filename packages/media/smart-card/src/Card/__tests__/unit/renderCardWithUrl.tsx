@@ -8,7 +8,7 @@ import * as React from 'react';
 import { CardWithUrlContent } from '../../renderCardWithUrl';
 import { mount } from 'enzyme';
 import { Client, ResolveResponse } from '../../../Client';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import {
   AnalyticsEventPayload,
   UIAnalyticsEventInterface,

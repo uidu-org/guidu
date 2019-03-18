@@ -13,7 +13,7 @@ import {
   nextTick,
 } from '@uidu/media-test-helpers';
 import ModalDialog from '@atlaskit/modal-dialog';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { InfiniteScroll } from '@uidu/media-ui';
 import { Context } from '@uidu/media-core';
 import {

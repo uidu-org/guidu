@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { ellipsis } from '../../mixins';
 
 export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`

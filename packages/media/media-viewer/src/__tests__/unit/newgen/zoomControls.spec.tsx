@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import {
   ZoomControlsBase,
   ZoomControlsProps,

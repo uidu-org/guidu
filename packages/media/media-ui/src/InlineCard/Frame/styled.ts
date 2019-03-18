@@ -1,7 +1,7 @@
 import { AnchorHTMLAttributes, ComponentClass } from 'react';
 import styled from 'styled-components';
-import { colors } from '@atlaskit/theme';
-import { borderRadius as akBorderRadius } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
+import { borderRadius as akBorderRadius } from '@uidu/theme';
 
 export interface WrapperProps {
   isSelected?: boolean;

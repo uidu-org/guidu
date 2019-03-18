@@ -8,7 +8,7 @@ import {
   FileIdentifier,
 } from '@uidu/media-core';
 import { DownloadButtonWrapper } from './styled';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { withAnalyticsEvents } from '@atlaskit/analytics-next';
 import {
   downloadButtonEvent,

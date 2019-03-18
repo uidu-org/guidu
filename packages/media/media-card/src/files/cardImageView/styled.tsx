@@ -1,7 +1,7 @@
 /* tslint:disable:variable-name */
 import styled from 'styled-components';
 import { absolute, borderRadius, size } from '@uidu/media-ui';
-import { colors, themed } from '@atlaskit/theme';
+import { colors, themed } from '@uidu/theme';
 import { Root, cardShadow } from '../../styles';
 import { getSelectedBorderStyle } from '../../styles/getSelectedBorderStyle';
 

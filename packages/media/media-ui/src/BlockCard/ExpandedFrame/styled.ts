@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { HTMLAttributes, ComponentClass, AnchorHTMLAttributes } from 'react';
 
-import { colors, fontFamily } from '@atlaskit/theme';
+import { colors, fontFamily } from '@uidu/theme';
 import { borderRadius, size, ellipsis } from '../../mixins';
 
 const wrapperPadding = 8;

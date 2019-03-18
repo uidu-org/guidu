@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { fontFamily } from '@atlaskit/theme';
+import { fontFamily } from '@uidu/theme';
 import { fadeIn } from '@uidu/media-ui';
 
 export * from './config';

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Page, { Grid, GridColumn } from '@atlaskit/page';
-import Button, { ButtonGroup } from '@atlaskit/button';
+import Button, { ButtonGroup } from '@uidu/button';
 import { Provider, Card, Client } from '../src';
 import urlsJSON from './example-urls.json';
 import styled from 'styled-components';
 import * as lorem from 'lorem-ipsum';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { IntlProvider } from 'react-intl';
 
 enum GroupingModes {

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { injectIntl, InjectedIntlProps } from 'react-intl';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { Tool, Color } from '../../../common';
 
 import { LineWidthButton } from './buttons/lineWidthButton';

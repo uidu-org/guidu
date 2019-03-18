@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass, ImgHTMLAttributes } from 'react';
-import { colors, borderRadius, gridSize } from '@atlaskit/theme';
+import { colors, borderRadius, gridSize } from '@uidu/theme';
 
 export interface AvatarImageProps {
   isSelected: boolean;

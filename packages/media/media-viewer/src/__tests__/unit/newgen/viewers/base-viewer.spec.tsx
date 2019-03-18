@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { ProcessedFileState } from '@uidu/media-core';
 import { BaseProps, BaseViewer } from '../../../../newgen/viewers/base-viewer';
 import { createContext } from '../../_stubs';

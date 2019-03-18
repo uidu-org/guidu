@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { CollapsedFrame } from '../CollapsedFrame';
 import { minWidth, maxWidth } from '../dimensions';
 import { CollapsedIconTitleDescriptionLayout } from '../CollapsedIconTitleDescriptionLayout';

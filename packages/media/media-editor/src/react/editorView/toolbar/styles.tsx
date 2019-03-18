@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 
 export const ToolbarContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
   display: flex;

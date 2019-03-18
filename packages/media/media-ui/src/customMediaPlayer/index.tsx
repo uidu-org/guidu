@@ -6,7 +6,7 @@ import FullScreenIconOn from '@atlaskit/icon/glyph/vid-full-screen-on';
 import FullScreenIconOff from '@atlaskit/icon/glyph/vid-full-screen-off';
 import SoundIcon from '@atlaskit/icon/glyph/hipchat/outgoing-sound';
 import HDIcon from '@atlaskit/icon/glyph/vid-hd-circle';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Spinner  from '@uidu/spinner';
 import MediaPlayer, {
   SetVolumeFunction,
@@ -14,7 +14,7 @@ import MediaPlayer, {
   VideoState,
   VideoActions,
 } from 'react-video-renderer';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { ThemeProvider } from 'styled-components';
 import theme from '../theme';
 import { TimeRange } from './timeRange';

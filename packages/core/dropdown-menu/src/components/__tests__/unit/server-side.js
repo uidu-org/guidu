@@ -4,7 +4,7 @@
 // @flow
 
 import React from 'react';
-import { getExamplesFor } from '@atlaskit/build-utils/getExamples';
+import { getExamplesFor } from '@uidu/build-utils/getExamples';
 import ReactDOMServer from 'react-dom/server';
 
 test('Dropdown menu server side rendering', async () => {

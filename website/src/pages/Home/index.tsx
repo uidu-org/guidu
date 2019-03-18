@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { gridSize, math, colors } from '@atlaskit/theme';
+import { gridSize, math, colors } from '@uidu/theme';
 import Cards from './Cards';
 import { TABLET_BREAKPOINT_MIN } from './config';
 import '../../../public/css/charlie-display-font.less';

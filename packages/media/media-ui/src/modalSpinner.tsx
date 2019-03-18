@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { layers } from '@atlaskit/theme';
+import { layers } from '@uidu/theme';
 import Spinner  from '@uidu/spinner';
 import styled from 'styled-components';
 

@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass, LiHTMLAttributes } from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 
 export interface WrapperProps {
   isActive: boolean;

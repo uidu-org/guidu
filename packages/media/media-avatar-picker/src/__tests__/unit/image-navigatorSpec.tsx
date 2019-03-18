@@ -3,7 +3,7 @@ import * as util from '../../util';
 const fileSizeMbSpy = jest.spyOn(util, 'fileSizeMb');
 import * as React from 'react';
 import Spinner  from '@uidu/spinner';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { Ellipsify, Camera, Rectangle } from '@uidu/media-ui';
 import ImageNavigator, {
   ImageNavigator as ImageNavigatorView,

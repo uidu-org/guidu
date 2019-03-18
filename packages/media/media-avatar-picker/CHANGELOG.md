@@ -21,7 +21,7 @@
 ## 13.0.1
 - [patch] [ef469cbb0b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ef469cbb0b):
 
-  - MS-357 replaced @atlaskit/util-shared-styles from media components by @atlaskit/theme
+  - MS-357 replaced @atlaskit/util-shared-styles from media components by @uidu/theme
 
 ## 13.0.0
 - [major] [a0972d484a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a0972d484a):

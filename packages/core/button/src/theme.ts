@@ -1,1 +1,1 @@
-export const themeNamespace = '@atlaskit-shared-theme/button';
+export const themeNamespace = '@uidu-shared-theme/button';

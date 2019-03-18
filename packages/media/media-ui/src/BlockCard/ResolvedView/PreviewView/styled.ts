@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { fadeIn } from '../../../mixins';
 
 const borderRadius = `border-radius: 3px 3px 0 0;`;

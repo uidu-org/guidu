@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 
 const optionsColorNormal = colors.N500;
 const optionsColorActive = colors.B400;

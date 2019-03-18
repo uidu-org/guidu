@@ -1,6 +1,6 @@
 import { mount } from 'enzyme';
 import * as React from 'react';
-import Spinner from '@atlaskit/spinner';
+import Spinner from '@uidu/spinner';
 import { AtlassianIcon } from '@atlaskit/logo';
 
 import Button, { ButtonBase } from '../../Button';

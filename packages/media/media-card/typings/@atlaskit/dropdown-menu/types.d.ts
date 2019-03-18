@@ -74,7 +74,7 @@ type DropdownMenuBaseProps = {
   /** Content which will trigger the dropdown menu to open and close. Use with `triggerType`
    * to easily get a button trigger. */
   trigger?: ReactElement<any> | string;
-  /** Props to pass through to the trigger button. See @atlaskit/button for allowed props. */
+  /** Props to pass through to the trigger button. See @uidu/button for allowed props. */
   triggerButtonProps?: {};
   /** Controls the type of trigger to be used for the dropdown menu. The default trigger allows
    * you to supply your own trigger component. Setting this prop to `button` will render a

@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
-import { fontFamily, colors } from '@atlaskit/theme';
+import { fontFamily, colors } from '@uidu/theme';
 import { borderRadius } from '../../mixins';
 
 export interface FrameProps {

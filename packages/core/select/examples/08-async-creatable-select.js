@@ -3,7 +3,7 @@
 import React, { Component, Fragment } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
 import { inputDefaultProps } from '@uidu/field-base/examples-utils';
-import { Checkbox } from '@atlaskit/checkbox';
+import { Checkbox } from '@uidu/checkbox';
 import { AsyncCreatableSelect as AsyncCreatable } from '../src';
 
 import { cities } from './common/data';

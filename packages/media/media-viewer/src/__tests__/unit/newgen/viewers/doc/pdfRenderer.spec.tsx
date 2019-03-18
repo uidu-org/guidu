@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as pdfjsLib from 'pdfjs-dist/build/pdf';
 import * as PDFJSViewer from 'pdfjs-dist/web/pdf_viewer';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import {
   PDFRenderer,
   pdfViewerClassName,

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 
 export interface MutedIndicatorProps {
   isMuted: boolean;

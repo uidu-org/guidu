@@ -4,7 +4,7 @@ The main purpose of the blanket component is to provide the overlay layer for co
 
 ## Installation
 
-yarn add @atlaskit/blanket
+yarn add @uidu/blanket
 
 ## Usage
 

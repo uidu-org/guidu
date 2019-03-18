@@ -1,4 +1,4 @@
-import { colors, themed } from '@atlaskit/theme';
+import { colors, themed } from '@uidu/theme';
 
 /**
  * Convert a hex colour code to RGBA.

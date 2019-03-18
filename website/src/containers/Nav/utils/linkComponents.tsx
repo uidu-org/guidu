@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { toClass } from 'recompose';
 import styled from 'styled-components';
-import { gridSize } from '@atlaskit/theme';
+import { gridSize } from '@uidu/theme';
 import { AkNavigationItem } from '@atlaskit/navigation';
 import renderNav from './renderNav';
 import { Link } from '../../../components/WrappedLink';

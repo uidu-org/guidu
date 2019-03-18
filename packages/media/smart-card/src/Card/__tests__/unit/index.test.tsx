@@ -24,7 +24,7 @@ import {
   InlineCardForbiddenView,
 } from '@uidu/media-ui';
 import { ClientConfig } from '../../../Client';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { AnalyticsListener } from '@atlaskit/analytics-next';
 import { resolvedEvent } from '../../../analytics';
 

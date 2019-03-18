@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.core.json",
   "files": [
-    "./typings/atlaskit.d.ts",
+    "./typings/uidu.d.ts",
     "./typings/deep-equal.d.ts",
     "./typings/deepcopy.d.ts",
     "./typings/enzyme-react-intl.d.ts",

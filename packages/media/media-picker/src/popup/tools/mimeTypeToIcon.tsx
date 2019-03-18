@@ -9,7 +9,7 @@ import DocumentIcon from '@atlaskit/icon/glyph/media-services/document';
 import PDFDocumentIcon from '@atlaskit/icon/glyph/media-services/pdf';
 import ZipDocumentIcon from '@atlaskit/icon/glyph/media-services/zip';
 import UnknownIcon from '@atlaskit/icon/glyph/media-services/unknown';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import styled from 'styled-components';
 
 interface IconWrapperProps {

@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.27
+- [patch] :
+
+  - Compiled typescript
+
 ## 0.1.26
 - [patch] :
 
@@ -18,7 +23,7 @@
   - @atlaskit/icon@15.0.2
   - @atlaskit/logo@9.2.6
   - @atlaskit/spinner@9.0.13
-  - @atlaskit/theme@7.0.1
+  - @uidu/theme@7.0.1
   - @atlaskit/docs@6.0.0
 
 ## 10.1.0
@@ -33,7 +38,7 @@
   - @atlaskit/icon@15.0.1
   - @atlaskit/logo@9.2.5
   - @atlaskit/spinner@9.0.12
-  - @atlaskit/theme@7.0.0
+  - @uidu/theme@7.0.0
 
 ## 10.0.3
 - [patch] [76a8f1c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/76a8f1c):
@@ -99,7 +104,7 @@
 
 ## 9.0.6
 - [patch] Updated dependencies [df22ad8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/df22ad8)
-  - @atlaskit/theme@6.0.0
+  - @uidu/theme@6.0.0
   - @atlaskit/spinner@9.0.6
   - @atlaskit/icon@13.2.5
   - @atlaskit/checkbox@4.0.4
@@ -110,7 +115,7 @@
 - [patch] Updated dependencies [a4bd557](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a4bd557)
   - @atlaskit/analytics-next@3.0.4
   - @atlaskit/checkbox@4.0.3
-  - @atlaskit/theme@5.1.3
+  - @uidu/theme@5.1.3
   - @atlaskit/spinner@9.0.5
   - @atlaskit/icon@13.2.4
 
@@ -118,7 +123,7 @@
 - [patch] Updated dependencies [acd86a1](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/acd86a1)
   - @atlaskit/icon@13.2.2
   - @atlaskit/checkbox@4.0.2
-  - @atlaskit/theme@5.1.2
+  - @uidu/theme@5.1.2
   - @atlaskit/spinner@9.0.4
   - @atlaskit/analytics-next@3.0.3
   - @atlaskit/docs@5.0.2
@@ -128,7 +133,7 @@
 - [patch] Updated dependencies [7e331b5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7e331b5)
   - @atlaskit/analytics-next@3.0.2
   - @atlaskit/checkbox@4.0.1
-  - @atlaskit/theme@5.1.1
+  - @uidu/theme@5.1.1
   - @atlaskit/spinner@9.0.3
   - @atlaskit/icon@13.2.1
 
@@ -149,14 +154,14 @@
 - [major] Updated dependencies [563a7eb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/563a7eb)
   - @atlaskit/analytics-next@3.0.0
   - @atlaskit/checkbox@4.0.0
-  - @atlaskit/theme@5.0.0
+  - @uidu/theme@5.0.0
   - @atlaskit/spinner@9.0.0
   - @atlaskit/docs@5.0.0
   - @atlaskit/icon@13.0.0
 - [major] Updated dependencies [7edb866](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7edb866)
   - @atlaskit/analytics-next@3.0.0
   - @atlaskit/checkbox@4.0.0
-  - @atlaskit/theme@5.0.0
+  - @uidu/theme@5.0.0
   - @atlaskit/spinner@9.0.0
   - @atlaskit/docs@5.0.0
   - @atlaskit/icon@13.0.0
@@ -205,7 +210,7 @@
 ## 8.1.2
 - [patch] Clean Changelogs - remove duplicates and empty entries [e7756cd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e7756cd)
 - [patch] Updated dependencies [e7756cd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e7756cd)
-  - @atlaskit/theme@4.0.4
+  - @uidu/theme@4.0.4
   - @atlaskit/spinner@7.0.2
   - @atlaskit/checkbox@3.0.6
   - @atlaskit/icon@12.1.2
@@ -213,7 +218,7 @@
 ## 8.1.1
 - [patch] Update changelogs to remove duplicate [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
 - [patch] Updated dependencies [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
-  - @atlaskit/theme@4.0.3
+  - @uidu/theme@4.0.3
   - @atlaskit/spinner@7.0.1
   - @atlaskit/icon@12.1.1
   - @atlaskit/analytics-next@2.1.8
@@ -226,7 +231,7 @@
   - @atlaskit/icon@12.1.0
   - @atlaskit/checkbox@3.0.4
   - @atlaskit/docs@4.1.0
-  - @atlaskit/theme@4.0.2
+  - @uidu/theme@4.0.2
   - @atlaskit/analytics-next@2.1.7
 
 ## 8.0.1
@@ -235,7 +240,7 @@
   - @atlaskit/icon@12.0.1
   - @atlaskit/analytics-next@2.1.5
   - @atlaskit/checkbox@3.0.1
-  - @atlaskit/theme@4.0.1
+  - @uidu/theme@4.0.1
   - @atlaskit/spinner@6.0.1
   - @atlaskit/docs@4.0.1
 
@@ -245,7 +250,7 @@
   - @atlaskit/icon@12.0.0
   - @atlaskit/analytics-next@2.1.4
   - @atlaskit/checkbox@3.0.0
-  - @atlaskit/theme@4.0.0
+  - @uidu/theme@4.0.0
   - @atlaskit/spinner@6.0.0
   - @atlaskit/docs@4.0.0
 
@@ -253,7 +258,7 @@
 - [patch] Updated dependencies [d662caa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d662caa)
   - @atlaskit/icon@11.3.0
   - @atlaskit/analytics-next@2.1.1
-  - @atlaskit/theme@3.2.2
+  - @uidu/theme@3.2.2
   - @atlaskit/docs@3.0.4
 
 ## 7.2.4

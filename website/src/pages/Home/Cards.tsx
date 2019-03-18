@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { Link } from '../../components/WrappedLink';
-import { gridSize, colors, math } from '@atlaskit/theme';
+import { gridSize, colors, math } from '@uidu/theme';
 import debounce from 'lodash.debounce';
 
 import { AtlassianIcon } from '@atlaskit/logo';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import FabricAnalyticsListeners from '@atlaskit/analytics-listeners';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import Loadable from '../../components/WrappedLoader';
 import qs from 'query-string';
 

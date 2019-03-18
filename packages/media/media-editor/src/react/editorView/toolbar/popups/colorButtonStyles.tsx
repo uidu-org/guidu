@@ -3,7 +3,7 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors, borderRadius } from '@atlaskit/theme';
+import { colors, borderRadius } from '@uidu/theme';
 
 export const ColorSample: ComponentClass<HTMLAttributes<{}>> = styled.div`
   cursor: pointer;

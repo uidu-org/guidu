@@ -5,7 +5,7 @@ import { List, Props, State } from '../../../newgen/list';
 import { ErrorMessage } from '../../../newgen/error';
 import ArrowRightCircleIcon from '@atlaskit/icon/glyph/chevron-right-circle';
 import { ItemViewer } from '../../../newgen/item-viewer';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { mountWithIntlContext } from '@uidu/media-test-helpers';
 
 function createFixture(props: Partial<Props>) {

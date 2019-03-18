@@ -6,9 +6,9 @@ dialog footers and as stand-alone action triggers.
 ## Installation
 
 ```sh
-yarn add @atlaskit/button
+yarn add @uidu/button
 ```
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/button).
+Detailed docs and example usage can be found [here](https://uidu.atlassian.com/packages/core/button).

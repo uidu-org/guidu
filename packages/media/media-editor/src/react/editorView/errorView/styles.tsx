@@ -3,8 +3,8 @@
 import styled from 'styled-components';
 
 import { HTMLAttributes, ComponentClass } from 'react';
-import { colors } from '@atlaskit/theme';
-import Button from '@atlaskit/button';
+import { colors } from '@uidu/theme';
+import Button from '@uidu/button';
 
 export const ErrorPopup: ComponentClass<HTMLAttributes<{}>> = styled.div`
   width: 290px;

@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
 import LinkIcon from '@atlaskit/icon/glyph/link';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import CodeIcon from '@atlaskit/icon/glyph/code';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import Flag, { FlagGroup } from '@atlaskit/flag';

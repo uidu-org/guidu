@@ -1,4 +1,4 @@
-import AkButton from '@atlaskit/button';
+import AkButton from '@uidu/button';
 import { ShallowWrapper, shallow } from 'enzyme';
 import * as React from 'react';
 

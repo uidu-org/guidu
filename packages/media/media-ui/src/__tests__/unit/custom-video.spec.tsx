@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import FullScreenIcon from '@atlaskit/icon/glyph/vid-full-screen-on';
 import VidPlayIcon from '@atlaskit/icon/glyph/vid-play';
 import VidHdCircleIcon from '@atlaskit/icon/glyph/vid-hd-circle';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Spinner  from '@uidu/spinner';
 import { fakeIntl } from '@uidu/media-test-helpers';
 import {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { gridSize } from '@atlaskit/theme';
+import { gridSize } from '@uidu/theme';
 
 export default styled.div`
   display: inline-flex;

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 
 import sinon from 'sinon';
 import Spinner from '../..';

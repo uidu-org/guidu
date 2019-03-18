@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import ZoomOutIcon from '@atlaskit/icon/glyph/media-services/zoom-out';
 import ZoomInIcon from '@atlaskit/icon/glyph/media-services/zoom-in';
 import { ZoomLevel } from './domain/zoomLevel';

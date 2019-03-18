@@ -17,7 +17,7 @@ import { AudioViewer } from '../../../../../newgen/viewers/audio';
 import Spinner  from '@uidu/spinner';
 import { DefaultCoverWrapper, AudioCover } from '../../../../../newgen/styled';
 import { ErrorMessage } from '../../../../../newgen/error';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 
 const token = 'some-token';
 const clientId = 'some-client-id';

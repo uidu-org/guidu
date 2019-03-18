@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as debounce from 'lodash.debounce';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { Ellipsify } from '../../../ellipsify';
 import { Wrapper } from './styled';
 

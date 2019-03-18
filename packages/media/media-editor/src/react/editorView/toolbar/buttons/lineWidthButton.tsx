@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
 import { DropdownRightIconWrapper, DropdownLeftIconWrapper } from './styles';
 import { LineWidthIcon } from './lineWidthIcon';

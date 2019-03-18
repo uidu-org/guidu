@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 import ModalDialog from '@atlaskit/modal-dialog';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import { smallImage, mountWithIntlContext } from '@uidu/media-test-helpers';
 import { Avatar } from '../../avatar-list';
 import { ImageNavigator, CONTAINER_SIZE } from '../../image-navigator';
