@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.28
+- [patch] :
+
+  - Flatten dist
+
 ## 0.1.27
 - [patch] :
 
