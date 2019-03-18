@@ -10,5 +10,3 @@ export { default as RequiredSymbol } from './RequiredSymbol';
 export { default as Row } from './Row';
 export { default as Wrapper } from './Wrapper';
 export { default as FloatLabel } from './styled/FloatLabel';
-
-export { inputDefaultProps } from '../examples-utils';

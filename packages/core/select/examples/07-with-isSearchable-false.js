@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-import { selectDefaultProps } from '../examples-utils'
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
+import { selectDefaultProps } from '../examples-utils';
 
 import Select from '../src';
 

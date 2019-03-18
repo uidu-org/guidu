@@ -1,8 +1,7 @@
 // @flow
 import React, { Component, type ElementRef } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import Btn from '@uidu/button';
 import Select from '../src';
 
@@ -45,7 +44,7 @@ export default class FocusBlurSelect extends Component<*> {
             { label: 'Sydney', value: 'sydney' },
           ]}
           getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+          getOptionValue={({ value }) => value}
           placeholder="Choose a City"
         />
         <div>

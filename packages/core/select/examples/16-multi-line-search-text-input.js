@@ -1,8 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { CreatableSelect } from '../src';
 
 const components = {
@@ -69,7 +68,7 @@ export default class MultiLineSearchInput extends Component<*, State> {
           onKeyDown={this.handleKeyDown}
           placeholder="Type something and press enter..."
           getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+          getOptionValue={({ value }) => value}
           value={value}
         />
       </Form>

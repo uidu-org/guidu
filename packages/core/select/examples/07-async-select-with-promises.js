@@ -1,8 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { cities } from './common/data';
 import { AsyncSelect } from '../src';
 
@@ -37,7 +36,7 @@ export default class WithPromises extends Component<*, State> {
           defaultOptions
           loadOptions={promiseOptions}
           getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+          getOptionValue={({ value }) => value}
         />
       </Form>
     );

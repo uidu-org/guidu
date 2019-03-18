@@ -1,8 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { Checkbox } from '@uidu/checkbox';
 import { CheckboxSelect } from '../src';
 
@@ -37,7 +36,7 @@ export default class withCustomGetOptionLabel extends Component<
             ]}
             placeholder="Choose a City"
             getOptionLabel={customGetOptionLabel}
-      getOptionValue={({ value }) => value}
+            getOptionValue={({ value }) => value}
           />
         ) : (
           <CheckboxSelect
@@ -51,7 +50,7 @@ export default class withCustomGetOptionLabel extends Component<
             ]}
             placeholder="Choose a City"
             getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+            getOptionValue={({ value }) => value}
           />
         )}
 

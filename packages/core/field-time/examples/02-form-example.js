@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import FieldTime from '../src';
 
 export default class FormExample extends Component<void, void> {

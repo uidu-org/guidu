@@ -2,8 +2,7 @@
 
 import React, { Component, Fragment } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { Checkbox } from '@atlaskit/checkbox';
 import { AsyncCreatableSelect as AsyncCreatable } from '../src';
 
@@ -54,7 +53,7 @@ export default class AsyncCreatableExample extends Component<*, State> {
           <AsyncCreatable
             {...inputDefaultProps}
             getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+            getOptionValue={({ value }) => value}
             loadOptions={this.loadOptions}
             allowCreateWhileLoading={allowCreateWhileLoading}
             onCreateOption={this.handleCreateOption}

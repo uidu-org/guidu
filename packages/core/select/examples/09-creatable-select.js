@@ -1,8 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { CreatableSelect } from '../src';
 
 const defaultOptions = [
@@ -70,7 +69,7 @@ export default class CreatableAdvanced extends Component<*, State> {
           onCreateOption={this.handleCreate}
           options={options}
           getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+          getOptionValue={({ value }) => value}
           value={value}
         />
       </Form>

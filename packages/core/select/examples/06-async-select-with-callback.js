@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { AsyncSelect } from '../src';
 
 import { cities } from './common/data';

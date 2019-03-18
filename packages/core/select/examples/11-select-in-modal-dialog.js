@@ -1,8 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base';
-
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import Modal, { ModalTransition } from '@atlaskit/modal-dialog';
 import Button from '@uidu/button';
 import Select from '../src';

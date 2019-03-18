@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { FieldTextStateless } from '../src';
-import { inputDefaultProps } from '@uidu/field-base';
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 
 type State = {
   value: string | number,

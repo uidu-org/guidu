@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.4
+- [patch] :
+
+  - FIx examples-utils export
+
 ## 0.1.3
 - [patch] :
 

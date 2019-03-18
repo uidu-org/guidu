@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.25
+- [patch] :
+
+  - FIx examples-utils export
+
 ## 0.1.24
 - [patch] :
 

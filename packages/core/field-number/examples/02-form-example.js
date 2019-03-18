@@ -1,6 +1,6 @@
 // @flow
 import React, { Component } from 'react';
-import { inputDefaultProps } from '@uidu/field-base';
+import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { Form, formDefaultProps } from '@uidu/form';
 import FieldNumber from '../src';
 
