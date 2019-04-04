@@ -36,8 +36,11 @@ module.exports = async function boltNavLoader() {
   // which blocks us from using it inside import statement
   const files /*: Array<string> */ = await globby(patterns, {
     cwd: projectRoot,
+    expandDirectories: false,
     onlyFiles: false,
   });
+
+  console.log(files);
 
   /*
     Packages will be an object containing the name in the file structure, and

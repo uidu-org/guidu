@@ -20,7 +20,6 @@
     "@atlaskit/analytics-next-types": "^3.2.0",
     "@atlaskit/field-range": "^6.0.1",
     "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/modal-dialog": "^7.2.3",
     "@types/enzyme": "^3.9.0",
     "@types/query-string": "^6.2.0",
     "@uidu/analytics": "^0.1.3",
@@ -32,6 +31,7 @@
     "@uidu/media-store": "^0.1.1",
     "@uidu/media-test-helpers": "^0.1.1",
     "@uidu/media-ui": "^0.1.1",
+    "@uidu/modal-dialog": "^0.1.0",
     "@uidu/spinner": "^0.1.1",
     "@uidu/theme": "^0.1.3",
     "deep-equal": "^1.0.1",
@@ -56,7 +56,6 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@atlaskit/modal-dialog": "^7.2.3",
     "@types/enzyme": "^3.9.0",
     "@types/query-string": "^6.2.0",
     "@uidu/build-utils": "^0.1.3",

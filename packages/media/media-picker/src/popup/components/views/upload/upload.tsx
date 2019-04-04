@@ -21,7 +21,7 @@ import AnnotateIcon from '@atlaskit/icon/glyph/media-services/annotate';
 import TrashIcon from '@atlaskit/icon/glyph/trash';
 import EditorInfoIcon from '@atlaskit/icon/glyph/error';
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
-import ModalDialog, { ModalTransition } from '@atlaskit/modal-dialog';
+import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
 import { messages, InfiniteScroll } from '@uidu/media-ui';
 import { Browser } from '../../../../components/types';
 import { isWebGLAvailable } from '../../../tools/webgl';

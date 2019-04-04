@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Provider } from 'react-redux';
 import Spinner from '@uidu/spinner';
 import { FlagGroup } from '@atlaskit/flag';
-import { Card, CardAction } from '@atlaskit/media-card';
+import { Card, CardAction } from '@uidu/media-card';
 import { MediaCollectionItem } from '@uidu/media-store';
 import {
   asMock,
@@ -12,7 +12,7 @@ import {
   fakeIntl,
   nextTick,
 } from '@uidu/media-test-helpers';
-import ModalDialog from '@atlaskit/modal-dialog';
+import ModalDialog from '@uidu/modal-dialog';
 import Button from '@uidu/button';
 import { InfiniteScroll } from '@uidu/media-ui';
 import { Context } from '@uidu/media-core';

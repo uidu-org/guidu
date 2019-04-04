@@ -18,7 +18,7 @@ import Modal, {
   ModalBody as Body,
   ModalHeader as OgModalHeader,
   ModalTitle,
-} from '@atlaskit/modal-dialog';
+} from '@uidu/modal-dialog';
 import { colors, elevation, gridSize } from '@uidu/theme';
 
 import * as fs from '../../utils/fs';

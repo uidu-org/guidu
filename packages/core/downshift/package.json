@@ -1,0 +1,10 @@
+{
+  "name": "@uidu/downshift",
+  "version": "0.1.0",
+  "description": "Downshift React component",
+  "main": "index.js",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false
+}

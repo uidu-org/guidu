@@ -55,6 +55,8 @@ type DropdownMenuBaseProps = {
   /** Content that will be rendered inside the layer element. Should typically be
    * `DropdownItemGroup` or `DropdownItem`, or checkbox / radio variants of those. */
   children?: Node,
+  /** Class will be applied to DropList Wrapper. */
+  className?: string,
   /** If true, a Spinner is rendered instead of the items */
   isLoading: boolean,
   /** Controls the open state of the dropdown. */

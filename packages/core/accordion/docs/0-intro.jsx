@@ -3,13 +3,7 @@ import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
-  This package exports an number of different Avatar related components:
-
-  Use the \`Avatar\` component to represent users with their profile picture.
-  Optionally, a presence to indicate online status can also be displayed.
-
-  You can use the \`Presence\` component independently for contexts where the
-  profile picture is not required (e.g. next to a username).
+  Accordion component that uses [react-accessible-accordion](https://github.com/springload/react-accessible-accordion)
 
   ## Usage
 
@@ -19,7 +13,7 @@ export default md`
     <Example
       packageName="@uidu/accordion"
       Component={require('../examples/01-basicAccordion')}
-      title="Accordion"
+      title="Accordion allowMultipleExpanded"
       source={require('!!raw-loader!../examples/01-basicAccordion')}
     />
   )}
@@ -29,7 +23,7 @@ export default md`
     <Example
       packageName="@uidu/accordion"
       Component={require('../examples/02-basicNoCollapseAccordion')}
-      title="Accordion no collapse"
+      title="Accordion no allowMultipleExpanded"
       source={require('!!raw-loader!../examples/02-basicNoCollapseAccordion')}
     />
   )}

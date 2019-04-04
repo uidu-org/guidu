@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { PureComponent } from 'react';
-import ModalDialog, { ModalFooter } from '@atlaskit/modal-dialog';
+import ModalDialog, { ModalFooter } from '@uidu/modal-dialog';
 import Button from '@uidu/button';
 import { FormattedMessage, intlShape, IntlProvider } from 'react-intl';
 import { messages } from '@uidu/media-ui';

@@ -1,12 +1,12 @@
-# @atlaskit/media-avatar-picker
+# @uidu/media-avatar-picker
 
 Provides a component to select, drag and resize image avatars. It also provides a default list of predefined avatars.
 
 ## Installation
 
-~~~sh
-yarn add @atlaskit/media-avatar-picker
-~~~
+```sh
+yarn add @uidu/media-avatar-picker
+```
 
 ## Using the component
 
@@ -38,8 +38,8 @@ The component only accepts images up to 10Mib.
 
 The component will handle the following errors on the client:
 
-* Bad format - if the user uploads an image with a bad format, or drops an invalid mime type, an error will be shown
-* Image size > 10Mib - if the user uploads or drops an image greater than 10Mib in size, an error message will be shown
+- Bad format - if the user uploads an image with a bad format, or drops an invalid mime type, an error will be shown
+- Image size > 10Mib - if the user uploads or drops an image greater than 10Mib in size, an error message will be shown
 
 See the `errorMessage` property below to set your own custom error message if required.
 
@@ -97,9 +97,9 @@ _(optional)_ This property allows the consumer to display an error message. This
 
 Below is an example of rendering an \`AvatarPickerDialog\`. The dialog should be wrapped in a \`ModalTransition\` component so it fades out when closed.
 
-~~~
-import { AvatarPickerDialog, Avatar } from '@atlaskit/media-avatar-picker';
-import { ModalTransition } from '@atlaskit/modal-dialog';
+```
+import { AvatarPickerDialog, Avatar } from '@uidu/media-avatar-picker';
+import { ModalTransition } from '@uidu/modal-dialog';
 
 const avatars: Array<Avatar> = [{ dataURI: 'some-data-uri' }];
 
@@ -119,4 +119,4 @@ const App = ({ isOpen }) => (
     )}
   </ModalTransition>
 );
-~~~
+```

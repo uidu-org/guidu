@@ -28,8 +28,8 @@ function isInternal(groupId, pkgId) {
   return (
     pkgInfo &&
     pkgInfo.config &&
-    pkgInfo.config.atlaskit &&
-    pkgInfo.config.atlaskit.internal
+    pkgInfo.config.uidu &&
+    pkgInfo.config.uidu.internal
   );
 }
 

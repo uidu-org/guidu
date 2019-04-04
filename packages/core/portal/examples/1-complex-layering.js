@@ -5,7 +5,7 @@ import Button from '@uidu/button';
 import EmojiIcon from '@atlaskit/icon/glyph/emoji';
 import Flag, { FlagGroup } from '@atlaskit/flag';
 import InlineDialog from '@atlaskit/inline-dialog';
-import ModalDialog, { ModalTransition } from '@atlaskit/modal-dialog';
+import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
 import {
   Spotlight,
   SpotlightManager,

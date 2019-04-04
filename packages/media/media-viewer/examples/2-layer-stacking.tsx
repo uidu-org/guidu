@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Button from '@uidu/button';
-import ModalDialog from '@atlaskit/modal-dialog';
+import ModalDialog from '@uidu/modal-dialog';
 import {
   createStorybookContext,
   defaultCollectionName,

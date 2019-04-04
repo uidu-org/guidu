@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Form, formDefaultProps } from '@uidu/form';
 import { inputDefaultProps } from '@uidu/field-base/examples-utils';
-import Modal, { ModalTransition } from '@atlaskit/modal-dialog';
+import Modal, { ModalTransition } from '@uidu/modal-dialog';
 import Button from '@uidu/button';
 import Select from '../src';
 
@@ -41,7 +41,7 @@ export default class SelectInModal extends Component<{}, State> {
                 <Select
                   {...inputDefaultProps}
                   getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
+                  getOptionValue={({ value }) => value}
                   menuPortalTarget={document.body}
                   isMulti
                   styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}

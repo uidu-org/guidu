@@ -1,4 +1,4 @@
-import { ModalTransition } from '@atlaskit/modal-dialog';
+import { ModalTransition } from '@uidu/modal-dialog';
 import Page, { Grid, GridColumn } from '@atlaskit/page';
 import GlobalTheme from '@uidu/theme';
 import * as React from 'react';
