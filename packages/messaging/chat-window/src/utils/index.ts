@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const sortByDay = data =>
+export const sortByDay = (data: Array): Array =>
   data.sort(
     (a, b) =>
       // Turn your strings into dates, and then subtract them
@@ -8,7 +8,7 @@ export const sortByDay = data =>
       new Date(b.createdAt) - new Date(a.createdAt),
   );
 
-export const groupByDay = data =>
+export const groupByDay = (data: Array): Object =>
   data.reduce((messages, message) => {
     const date = moment(message.createdAt)
       .startOf('day')
@@ -20,7 +20,7 @@ export const groupByDay = data =>
     return messages;
   }, {});
 
-export const groupByMessager = data =>
+export const groupByMessager = (data: Array): Array =>
   data.reduce((accumulator, message, index) => {
     const lastMessage = index > 0 ? accumulator[index - 1] : null;
     if (
