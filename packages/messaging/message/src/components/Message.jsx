@@ -7,7 +7,8 @@ import MessageForm from '@uidu/message-form';
 
 import MessagesAttachments from './MessageAttachments';
 
-import StyledMessage from '../styled/Message';
+import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
+import { isOnlyEmojis } from '../utils';
 
 export default class Message extends Component {
   state = {
@@ -27,6 +28,14 @@ export default class Message extends Component {
   render() {
     const { message, children } = this.props;
     const { editing, hovered, isDropdownOpen } = this.state;
+
+    if (isOnlyEmojis(message.body)) {
+      return (
+        <StyledMessageEmoji className="message mt-2 hoverable position-relative">
+          {message.body}
+        </StyledMessageEmoji>
+      );
+    }
 
     return (
       <StyledMessage
@@ -60,12 +69,13 @@ export default class Message extends Component {
         {(message.attachments || []).length > 0 && (
           <MessagesAttachments attachments={message.attachments} />
         )}
-        {children({
-          editing,
-          hovered,
-          onDropdownChange: this.keepActionsVisible,
-          setEditing: this.setEditing,
-        })}
+        {children &&
+          children({
+            editing,
+            hovered,
+            onDropdownChange: this.keepActionsVisible,
+            setEditing: this.setEditing,
+          })}
       </StyledMessage>
     );
   }

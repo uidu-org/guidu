@@ -1,6 +1,4 @@
 import React from 'react';
-// import classNames from 'classnames';
-import moment from 'moment';
 import ReactChatView from 'react-chatview';
 
 import Message, {
@@ -8,7 +6,6 @@ import Message, {
   MessageActions,
   MessageActionReactions,
   MessageActionReply,
-  MessageActionPin,
   MessageActionMore,
   MessageReactions,
 } from '@uidu/message';

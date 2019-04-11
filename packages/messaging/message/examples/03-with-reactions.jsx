@@ -1,19 +1,18 @@
 // @flow
+
 import React, { Component } from 'react';
 
 import Message, {
   MessageGroup,
   MessageActions,
   MessageActionReactions,
-  MessageActionReply,
-  MessageActionPin,
-  MessageActionMore,
   MessageReactions,
 } from '../src';
 
 import { messageFactory, messagerFactory } from '../examples-utils';
 
-const generatedMessage = messageFactory();
+const message1 = messageFactory();
+const message2 = messageFactory();
 const messager = messagerFactory();
 
 export default class Demo extends Component {
@@ -37,19 +36,15 @@ export default class Demo extends Component {
   render() {
     const { reactions } = this.state;
     return (
-      <MessageGroup messages={[generatedMessage]} messager={messager}>
+      <MessageGroup messager={messager} messages={[message1, message2]}>
         {({ messages, messager }) =>
           messages.map((message, index) => (
             <Message message={message} messager={messager}>
-              {({ editing, hovered }) => [
-                <MessageActions>
+              {({ editing, hovered, onDropdownChange }) => [
+                <MessageActions hovered={hovered}>
                   <MessageActionReactions
+                    onOpenChange={onDropdownChange}
                     onClick={reaction => this.addReaction(reaction, index)}
-                  />
-                  <MessageActionReply />
-                  <MessageActionPin />
-                  <MessageActionMore
-                    actions={[{ name: 'Edit' }, { name: 'Forward' }]}
                   />
                 </MessageActions>,
                 <MessageReactions reactions={reactions[index]} />,

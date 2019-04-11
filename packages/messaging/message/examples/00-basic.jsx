@@ -47,6 +47,21 @@ export default () => (
         ))
       }
     </MessageGroup>
+    <MessageGroup
+      messager={userB}
+      messages={[
+        {
+          body: '❤️',
+          createdAt: faker.date.past(),
+        },
+      ]}
+    >
+      {({ messages, messager }) =>
+        messages.map(message => (
+          <Message key={message.id} message={message} messager={messager} />
+        ))
+      }
+    </MessageGroup>
     <MessageLog message={messageLog} messager={messageLog.messager} />
     <MessageGroup
       messager={userA}

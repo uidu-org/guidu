@@ -1,9 +1,11 @@
+// @flow
+
 import React, { Component } from 'react';
 import Tooltip from '@uidu/tooltip';
 
 import { MessageCircle } from 'react-feather';
 
-export default class Reply extends Component {
+export default class Reply extends Component<*> {
   render() {
     return (
       <Tooltip

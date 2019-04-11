@@ -3,51 +3,72 @@ import React from 'react';
 import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
-  This package exports an number of different Message related components:
+  Available Message Actions
 
-  - Message (Default Export)
-  - [MessageLog](/packages/core/message/docs/message-log)
-  - [MessageActions](/packages/core/message/docs/message-actions)
-  - [MessageAttachments](/packages/core/message/docs/message-attachments)
-  - [Skeleton](/packages/core/avatar/docs/skeleton)
-
-
-  Use the \`Message\` component to represent a message exhanged in teams and private messages.
-  Optionally, a presence to indicate online status can also be displayed.
-
-  You can use the \`Presence\` component independently for contexts where the
-  profile picture is not required (e.g. next to a username).
+  - MessageActions (Default Export)
+  - MessageActionPin (to pin message)
+  - MessageActionReply (to reply to message)
+  - MessageActionReactions (to add reactions to message)
+  - MessageActionMore (to show more options)
 
   ## Usage
 
   ${code`import Message, {
   MessageActions,
-  MessageAttachments,
-  MessageLog,
+  MessageActionPin,
+  MessageActionReply,
+  MessageActionReactions,
+  MessageActionMore,
 } from '@uidu/message';`}
 
   ${(
     <Example
       packageName="@uidu/message"
-      Component={require('../examples/02-with-reactions')}
+      Component={require('../examples/02-with-actions')}
       title="Message"
-      source={require('!!raw-loader!../examples/02-with-reactions')}
+      source={require('!!raw-loader!../examples/02-with-actions')}
     />
   )}
 
   ${(
-    <Example
-      packageName="@uidu/message"
-      Component={require('../examples/03-with-actions')}
-      title="Message"
-      source={require('!!raw-loader!../examples/03-with-actions')}
+    <Props
+      heading="Avatar Props"
+      props={require('!!extract-react-types-loader!../src/components/MessageActions')}
+    />
+  )}
+
+  ${(
+    <Props
+      heading="Avatar Props"
+      props={require('!!extract-react-types-loader!../src/components/MessageActions/Pin')}
+    />
+  )}
+
+  ${(
+    <Props
+      heading="Avatar Props"
+      props={require('!!extract-react-types-loader!../src/components/MessageActions/Pin')}
+    />
+  )}
+
+  ${(
+    <Props
+      heading="Avatar Props"
+      props={require('!!extract-react-types-loader!../src/components/MessageActions/Reply')}
+    />
+  )}
+
+  ${(
+    <Props
+      heading="Avatar Props"
+      props={require('!!extract-react-types-loader!../src/components/MessageActions/Reactions')}
+    />
+  )}
+
+  ${(
+    <Props
+      heading="Avatar Props"
+      props={require('!!extract-react-types-loader!../src/components/MessageActions/More')}
     />
   )}
 `;
-
-// ${(
-//     <Props
-//       heading="Avatar Props"
-//       props={require('!!extract-react-types-loader!../src/components/Avatar')}
-//     />
-//   )}

@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import Tooltip from '@uidu/tooltip';
 import DropdownMenu, {
@@ -7,7 +9,7 @@ import DropdownMenu, {
 
 import { MoreHorizontal } from 'react-feather';
 
-export default class More extends Component {
+export default class More extends Component<*> {
   render() {
     const { actions, onOpenChange } = this.props;
     return (
