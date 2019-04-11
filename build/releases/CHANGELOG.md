@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.8
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 3.0.7
 - [patch] :
 

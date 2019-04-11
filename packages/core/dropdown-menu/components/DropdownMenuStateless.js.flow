@@ -427,6 +427,7 @@ class DropdownMenuStateless extends Component<
     const {
       appearance,
       boundariesElement,
+      className,
       isLoading,
       isOpen,
       onOpenChange,
@@ -452,6 +453,7 @@ class DropdownMenuStateless extends Component<
         <Droplist
           appearance={appearance}
           boundariesElement={boundariesElement}
+          className={className}
           isLoading={isLoading}
           isOpen={isOpen}
           onClick={this.handleClick}

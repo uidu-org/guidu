@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.1.21
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 2.1.20
 - [patch] :
 

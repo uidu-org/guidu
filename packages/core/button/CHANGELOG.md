@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.30
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 0.1.29
 - [patch] :
 

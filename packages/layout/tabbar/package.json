@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tabbar",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Downshift React component",
   "main": "index.js",
   "repository": "https://github.com/uidu-org/guidu",

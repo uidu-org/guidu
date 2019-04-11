@@ -1,6 +1,6 @@
 {
   "name": "@uidu/portal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Atlaskit wrapper for rendering components in React portals",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -30,10 +30,10 @@
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/inline-dialog": "^9.0.15",
     "@atlaskit/onboarding": "^7.0.1",
-    "@uidu/button": "^0.1.26",
-    "@uidu/docs": "^0.1.21",
-    "@uidu/modal-dialog": "^0.1.0",
-    "@uidu/tooltip": "^0.1.3",
+    "@uidu/button": "^0.1.30",
+    "@uidu/docs": "^0.1.22",
+    "@uidu/modal-dialog": "^0.1.1",
+    "@uidu/tooltip": "^0.1.4",
     "enzyme": "^3.9.0",
     "styled-components": "^4.0.3"
   }

@@ -1,5 +1,10 @@
 # @uidu/badge
 
+## 0.1.4
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 0.1.3
 - [patch] :
 

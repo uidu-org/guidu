@@ -15,20 +15,30 @@ export default class MessageGroup extends Component {
   render() {
     const { messages, messager, kind, children } = this.props;
 
-    console.log(kind);
-    console.log(messages);
-
     if (kind === 'message.create') {
       return (
-        <div className={classNames('position-relative p-3 border-top', {})}>
+        <div className={classNames('position-relative p-3', {})}>
           <div className="media">
-            <Avatar
-              src={messager.avatar.thumb}
-              name={messager.name}
-              withTooltip
-            />
-            <div className="media-body ml-3" style={{ minWidth: 0 }}>
-              <h6 className="text-heavy mb-0">{messager.name}</h6>
+            <div className="d-none d-md-block">
+              <Avatar
+                src={messager.avatar.thumb}
+                name={messager.name}
+                withTooltip
+              />
+            </div>
+
+            <div className="media-body ml-md-3" style={{ minWidth: 0 }}>
+              <h6 className="text-heavy mb-0 d-flex align-items-center">
+                <div className="d-md-none mr-2">
+                  <Avatar
+                    src={messager.avatar.thumb}
+                    name={messager.name}
+                    withTooltip
+                    size="small"
+                  />
+                </div>
+                {messager.name}
+              </h6>
               {this.props.children({ messages, messager })}
             </div>
           </div>
@@ -37,9 +47,9 @@ export default class MessageGroup extends Component {
     }
 
     return (
-      <div className="position-relative py-3 border-top">
+      <div className="position-relative p-3">
         {messages.map(message => (
-          <div className="text-center text-muted small">
+          <div key={message.id} className="text-center text-muted small">
             {message.messager.name} {message.body}
           </div>
         ))}

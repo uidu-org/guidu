@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react';
 import Tooltip from '@uidu/tooltip';
 import DropdownMenu, {
@@ -7,9 +9,9 @@ import DropdownMenu, {
 
 import { MoreHorizontal } from 'react-feather';
 
-export default class More extends Component {
+export default class More extends Component<*> {
   render() {
-    const { actions } = this.props;
+    const { actions, onOpenChange } = this.props;
     return (
       <div className="btn-group btn-group-sm" role="group">
         <DropdownMenu
@@ -26,12 +28,14 @@ export default class More extends Component {
           }
           triggerType="default"
           position="top middle"
-          boundariesElement="viewport"
-          onOpenChange={e => console.log('dropdown opened', e)}
+          // boundariesElement="viewport"
+          onOpenChange={onOpenChange}
         >
           <DropdownItemGroup>
             {actions.map(action => (
-              <DropdownItem>{action.name}</DropdownItem>
+              <DropdownItem key={action.name} onClick={action.onClick}>
+                {action.name}
+              </DropdownItem>
             ))}
           </DropdownItemGroup>
         </DropdownMenu>

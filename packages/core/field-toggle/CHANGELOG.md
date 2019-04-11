@@ -1,5 +1,10 @@
 # @uidu/toggle
 
+## 0.1.5
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 0.1.4
 - [patch] :
 

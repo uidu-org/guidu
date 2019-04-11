@@ -1,5 +1,10 @@
 # @atlaskit/modal-dialog
 
+## 0.1.1
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 8.0.2
 - Updated dependencies [9d5cc39394](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9d5cc39394):
   - @atlaskit/docs@7.0.1

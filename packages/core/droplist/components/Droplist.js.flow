@@ -37,6 +37,8 @@ type Props = {
   /** Content that will be rendered inside the layer element. Should typically be
    * `ItemGroup` or `Item`, or checkbox / radio variants of those. */
   children?: Node,
+  /** Class will be applied to DropList Wrapper. */
+  className?: string,
   /** If true, a Spinner is rendered instead of the items */
   isLoading?: boolean,
   /** Controls the open state of the drop list. */
@@ -70,6 +72,7 @@ class Droplist extends Component<Props, void> {
     appearance: 'default',
     boundariesElement: 'viewport',
     children: null,
+    className: undefined,
     isLoading: false,
     isOpen: false,
     onClick: () => {},
@@ -178,6 +181,7 @@ class Droplist extends Component<Props, void> {
       appearance,
       boundariesElement,
       children,
+      className,
       isLoading,
       isOpen,
       maxHeight,
@@ -211,7 +215,12 @@ class Droplist extends Component<Props, void> {
     ) : null;
 
     return (
-      <Wrapper fit={shouldFitContainer} onClick={onClick} onKeyDown={onKeyDown}>
+      <Wrapper
+        className={className}
+        fit={shouldFitContainer}
+        onClick={onClick}
+        onKeyDown={onKeyDown}
+      >
         <Layer
           autoFlip={shouldFlip}
           boundariesElement={boundariesElement}

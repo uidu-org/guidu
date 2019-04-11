@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.28
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 0.1.27
 - [patch] :
 

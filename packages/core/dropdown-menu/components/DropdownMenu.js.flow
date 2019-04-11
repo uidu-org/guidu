@@ -20,6 +20,7 @@ export default class DropdownMenu extends Component<
   static defaultProps = {
     appearance: 'default',
     boundariesElement: 'viewport',
+    className: undefined,
     defaultOpen: false,
     isLoading: false,
     isOpen: false,
@@ -99,6 +100,7 @@ export default class DropdownMenu extends Component<
     const {
       appearance,
       boundariesElement,
+      className,
       children,
       isLoading,
       items,
@@ -117,6 +119,7 @@ export default class DropdownMenu extends Component<
       <StatelessMenu
         appearance={appearance}
         boundariesElement={boundariesElement}
+        className={className}
         isOpen={isOpen}
         isLoading={isLoading}
         items={items}

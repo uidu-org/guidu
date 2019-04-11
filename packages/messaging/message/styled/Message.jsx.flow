@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const StyledMessageEmoji = styled.div`
+  font-size: 3rem;
+`;
+
 export default styled.div`
   display: flex;
   flex-direction: column;

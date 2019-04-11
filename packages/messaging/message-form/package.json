@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Message form",
   "main": "index.js",
   "uidu:src": "src/index.ts",
@@ -9,12 +9,12 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.21"
+    "@uidu/docs": "^0.1.22"
   },
   "dependencies": {
-    "@uidu/dropdown-menu": "^0.1.1",
-    "@uidu/field-mentions": "^0.1.0",
-    "@uidu/form": "^0.1.22",
+    "@uidu/dropdown-menu": "^0.1.2",
+    "@uidu/field-mentions": "^0.1.1",
+    "@uidu/form": "^0.1.23",
     "emoji-mart": "^2.10.0",
     "react-feather": "^1.1.6"
   }

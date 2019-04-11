@@ -36,8 +36,8 @@ GroupTitleAfter.displayName = 'ItemGroupTitleAfter';
 const GroupTitleText = styled.div`
   flex: 1 1 auto;
   font-size: ${fontSizeSmall}px;
-  line-height: 1;
-  text-transform: uppercase;
+  ${'' /* line-height: 1; */}
+  ${'' /* text-transform: uppercase; */}
   /* Required for children to truncate */
   min-width: 0;
 `;

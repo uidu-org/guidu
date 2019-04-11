@@ -1,5 +1,10 @@
 # @uidu/media-test-helpers
 
+## 0.1.2
+- [patch] :
+
+  - Big component rewrite, fix bolt dev environmnet"
+
 ## 0.1.1
 - [patch] :
 
