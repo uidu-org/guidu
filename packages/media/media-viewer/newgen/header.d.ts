@@ -29,7 +29,7 @@ export declare class Header extends React.Component<Props & InjectedIntlProps, S
     private needsReset;
     private release;
 }
-declare const _default: React.ComponentClass<Pick<Props, "context" | "onClose" | "identifier">, any> & {
+declare const _default: React.ComponentClass<Pick<Props, "onClose" | "context" | "identifier">, any> & {
     WrappedComponent: React.ComponentType<Props & InjectedIntlProps>;
 };
 export default _default;

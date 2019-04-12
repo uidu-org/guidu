@@ -31,4 +31,4 @@ export declare class ItemViewerBase extends React.Component<Props, State> {
     private needsReset;
     private release;
 }
-export declare const ItemViewer: React.ComponentClass<Pick<Props, "context" | "showControls" | "onClose" | "featureFlags" | "previewCount" | "identifier">, any>;
+export declare const ItemViewer: React.ComponentClass<Pick<Props, "showControls" | "onClose" | "context" | "featureFlags" | "previewCount" | "identifier">, any>;

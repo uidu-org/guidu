@@ -1,5 +1,5 @@
 import * as tslib_1 from "tslib";
-import { name as packageName, version as packageVersion, } from '../../../version.json';
+import { name as packageName, version as packageVersion, } from '../../version.json';
 export var channel = 'media';
 export var packageAttributes = {
     componentName: 'media-viewer',
