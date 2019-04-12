@@ -1,5 +1,10 @@
 # @uidu/field-mentions
 
+## 0.1.4
+- [patch] :
+
+  - Versions and dist
+
 ## 0.1.3
 - [patch] :
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Field Mentions Component",
   "module": "index.js",
   "uidu:src": "src/index.ts",

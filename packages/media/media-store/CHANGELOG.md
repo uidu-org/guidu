@@ -1,5 +1,10 @@
 # @atlaskit/media-store
 
+## 0.1.3
+- [patch] :
+
+  - Versions and dist
+
 ## 0.1.2
 - [patch] :
 
