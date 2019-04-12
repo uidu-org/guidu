@@ -1,4 +1,4 @@
-export { default, defaultProps } from './components/FieldMentions';
+export { default } from './components/FieldMentions';
 export {
   default as FieldMentionsStateless,
 } from './components/FieldMentionsStateless';

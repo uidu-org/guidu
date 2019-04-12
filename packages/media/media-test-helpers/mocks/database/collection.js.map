@@ -1,0 +1,1 @@
+{"version":3,"file":"collection.js","sourceRoot":"","sources":["../../src/mocks/database/collection.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,aAAa,EAAE,MAAM,YAAY,CAAC;AAE3C,MAAM,UAAU,gBAAgB,CAAC,IAAa;IAC5C,OAAO;QACL,IAAI,EAAE,IAAI,IAAI,aAAa,EAAE;QAC7B,SAAS,EAAE,IAAI,CAAC,GAAG,EAAE;KACtB,CAAC;AACJ,CAAC"}

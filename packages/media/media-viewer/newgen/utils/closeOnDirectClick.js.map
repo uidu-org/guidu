@@ -1,0 +1,1 @@
+{"version":3,"file":"closeOnDirectClick.js","sourceRoot":"","sources":["../../src/newgen/utils/closeOnDirectClick.ts"],"names":[],"mappings":"AAEA,MAAM,UAAU,kBAAkB,CAChC,OAAoB;IAEpB,OAAO,UAAA,CAAC;QACN,IAAI,CAAC,CAAC,MAAM,KAAK,CAAC,CAAC,aAAa,IAAI,OAAO,EAAE;YAC3C,OAAO,EAAE,CAAC;SACX;IACH,CAAC,CAAC;AACJ,CAAC"}

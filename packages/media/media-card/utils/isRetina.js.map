@@ -1,0 +1,1 @@
+{"version":3,"file":"isRetina.js","sourceRoot":"","sources":["../src/utils/isRetina.ts"],"names":[],"mappings":"AAAA,MAAM,UAAU,QAAQ;IACtB,IAAM,UAAU,GACd,wIAAwI,CAAC;IAE3I,OAAO,CACL,MAAM,CAAC,gBAAgB,GAAG,CAAC;QAC3B,CAAC,MAAM,CAAC,UAAU,IAAI,MAAM,CAAC,UAAU,CAAC,UAAU,CAAC,CAAC,OAAO,CAAC,CAC7D,CAAC;AACJ,CAAC"}

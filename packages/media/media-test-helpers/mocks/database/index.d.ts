@@ -1,0 +1,22 @@
+import { ClientBasedAuth } from '@uidu/media-core';
+import { MediaCollection } from '@uidu/media-store';
+import { Database } from 'kakapo';
+import { CollectionItem } from './collection-item';
+import { Upload } from './upload';
+import { Chunk } from './chunk';
+import { MockUserCollection } from '../media-mock';
+export * from './collection';
+export * from './collection-item';
+export declare const tenantAuth: ClientBasedAuth;
+export declare const userAuth: ClientBasedAuth;
+export declare const userAuthProvider: () => Promise<ClientBasedAuth>;
+export declare const tenantAuthProvider: () => Promise<ClientBasedAuth>;
+export declare type DatabaseSchema = {
+    collection: MediaCollection;
+    collectionItem: CollectionItem;
+    upload: Upload;
+    chunk: Chunk;
+};
+export declare function createDatabase(): Database<DatabaseSchema>;
+export declare function generateUserData(collectionData: MockUserCollection | undefined): void;
+export declare function generateTenantData(): void;

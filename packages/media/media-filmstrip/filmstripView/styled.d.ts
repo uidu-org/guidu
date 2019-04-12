@@ -1,0 +1,12 @@
+import { ThemedOuterStyledProps } from 'styled-components';
+import { HTMLAttributes, ComponentClass, LiHTMLAttributes } from 'react';
+export declare const FilmStripViewWrapper: ComponentClass<HTMLAttributes<{}>>;
+export declare const FilmStripListWrapper: ComponentClass<HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>>;
+export declare const FilmStripList: ComponentClass<HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>>;
+export declare const FilmStripListItem: ComponentClass<LiHTMLAttributes<{}>>;
+export declare const ArrowWrapper: ComponentClass<HTMLAttributes<{}>>;
+export declare const ArrowLeftWrapper: ComponentClass<HTMLAttributes<{}>>;
+export declare const ArrowRightWrapper: ComponentClass<HTMLAttributes<{}>>;
+export declare const Shadow: ComponentClass<HTMLAttributes<{}>>;
+export declare const ShadowLeft: ComponentClass<HTMLAttributes<{}>>;
+export declare const ShadowRight: ComponentClass<HTMLAttributes<{}>>;

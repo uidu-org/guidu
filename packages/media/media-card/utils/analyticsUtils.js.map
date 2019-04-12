@@ -1,0 +1,1 @@
+{"version":3,"file":"analyticsUtils.js","sourceRoot":"","sources":["../src/utils/analyticsUtils.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,OAAO,EAAE,IAAI,EAAE,MAAM,iBAAiB,CAAC;AAEhD,MAAM,CAAC,IAAM,uBAAuB,GAAG,UACrC,aAAkB,EAClB,eAAoB,IACK,OAAA,CAAC;IAC1B,cAAc,EAAE,OAAO;IACvB,WAAW,EAAE,IAAI;IACjB,aAAa,eAAA;IACb,aAAa,EAAE,WAAW;IAC1B,eAAe,iBAAA;CAChB,CAAC,EANyB,CAMzB,CAAC"}
