@@ -1,5 +1,10 @@
 # @atlaskit/media-viewer
 
+## 0.1.6
+- [patch] :
+
+  - Built with ts, changed package with version
+
 ## 0.1.5
 - [patch] :
 

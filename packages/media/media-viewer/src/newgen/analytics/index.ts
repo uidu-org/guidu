@@ -3,7 +3,7 @@ import { MediaType } from '@uidu/media-store';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../../package.json';
+} from '../../../version.json';
 
 export const channel = 'media';
 
