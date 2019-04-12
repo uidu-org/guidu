@@ -9,6 +9,10 @@ import MentionMatcher from './MentionMatcher';
 import { MessagesRendererProps } from '../types';
 
 export default class MessageRenderer extends Component<MessagesRendererProps> {
+  static defaultProps = {
+    tagName: 'div',
+  };
+
   render() {
     const { content, tagName } = this.props;
     return (

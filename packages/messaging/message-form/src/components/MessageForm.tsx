@@ -29,31 +29,48 @@ import 'emoji-mart/css/emoji-mart.css';
 // import AttachmentsNew from './attachments/new';
 // import Attachment from './attachments/show';
 
-import { MessagesFormProps } from '../types';
+import { MessageFormProps, MessageFormState } from '../types';
 
-function fetchUsers(query, callback) {
-  if (!query) return;
-  fetch(`https://api.github.com/search/users?q=${query}`, { json: true })
-    .then(res => res.json())
-
-    // Transform the users to what react-mentions expects
-    .then(res =>
-      res.items.map(user => ({ display: user.login, id: user.login })),
-    )
-    .then(callback);
+interface GitHubJSONResponse {
+  items: Array<any>;
 }
 
-let container;
+function fetchUsers(query: string, callback: () => void): any {
+  if (!query) {
+    return Promise.resolve([]);
+  }
 
-export default class MessagesForm extends React.Component<MessagesFormProps> {
+  return (
+    fetch(`https://api.github.com/search/users?q=${query}`)
+      .then((response: Response) => response.json())
+      // Transform the users to what react-mentions expects
+      .then((json: GitHubJSONResponse) =>
+        json.items.map(user => ({ display: user.login, id: user.login })),
+      )
+      .then(callback)
+      .catch(() => [])
+  );
+}
+
+let container: any;
+
+export default class MessagesForm extends React.Component<
+  MessageFormProps,
+  MessageFormState
+> {
+  private form: React.RefObject<any> = React.createRef();
+  private mentionsInput: React.RefObject<any> = React.createRef();
+  private mentionsComponentInput: React.RefObject<any> = React.createRef();
+
   static defaultProps = {
     placeholder: 'Add your message...',
     onSubmit: () => {},
     onDismiss: () => {},
     createMessage: console.log,
+    updateMessage: console.log,
   };
 
-  constructor(props) {
+  constructor(props: MessageFormProps) {
     super(props);
     this.state = {
       attachments: [],
@@ -65,111 +82,111 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
     };
   }
 
-  onAdd = files => {
-    Array.from(files).forEach((file, index) => {
-      this.add(file, index + this.state.attachments.length);
-      this.preview(file, index + this.state.attachments.length);
-      this.upload(file, index + this.state.attachments.length);
-    });
-  };
+  // onAdd = files => {
+  //   Array.from(files).forEach((file, index) => {
+  //     this.add(file, index + this.state.attachments.length);
+  //     this.preview(file, index + this.state.attachments.length);
+  //     this.upload(file, index + this.state.attachments.length);
+  //   });
+  // };
 
-  add = (file, index) => {
-    this.setState({
-      attachments: [...this.state.attachments, { position: index }],
-      submitLabel: this.messageSender(),
-    });
-  };
+  // add = (file, index) => {
+  //   this.setState({
+  //     attachments: [...this.state.attachments, { position: index }],
+  //     submitLabel: this.messageSender(),
+  //   });
+  // };
 
-  preview = (file, index) => {
-    loadImage.parseMetaData(file, data => {
-      let orientation = 0;
-      if (data.exif) {
-        orientation = data.exif.get('Orientation');
-      }
-      loadImage(
-        file,
-        () => {
-          const reader = new window.FileReader();
-          if (file.type.split('/')[0] === 'image') {
-            reader.readAsDataURL(file);
-            reader.onloadend = () => {
-              const base64data = reader.result;
-              this.setState({
-                attachments: [
-                  ...this.state.attachments.slice(0, index),
-                  {
-                    ...this.state.attachments[index],
-                    filename: file.name,
-                    type: file.type.split('/')[1],
-                    previewUrl: base64data,
-                  },
-                  ...this.state.attachments.slice(index + 1),
-                ],
-              });
-            };
-          } else {
-            this.setState({
-              attachments: [
-                ...this.state.attachments.slice(0, index),
-                {
-                  ...this.state.attachments[index],
-                  filename: file.name,
-                  type: file.type.split('/')[1],
-                  // previewUrl: base64data,
-                },
-                ...this.state.attachments.slice(index + 1),
-              ],
-            });
-          }
-        },
-        {
-          orientation,
-          canvas: true,
-        },
-      );
-    });
-  };
+  // preview = (file, index) => {
+  //   loadImage.parseMetaData(file, data => {
+  //     let orientation = 0;
+  //     if (data.exif) {
+  //       orientation = data.exif.get('Orientation');
+  //     }
+  //     loadImage(
+  //       file,
+  //       () => {
+  //         const reader = new window.FileReader();
+  //         if (file.type.split('/')[0] === 'image') {
+  //           reader.readAsDataURL(file);
+  //           reader.onloadend = () => {
+  //             const base64data = reader.result;
+  //             this.setState({
+  //               attachments: [
+  //                 ...this.state.attachments.slice(0, index),
+  //                 {
+  //                   ...this.state.attachments[index],
+  //                   filename: file.name,
+  //                   type: file.type.split('/')[1],
+  //                   previewUrl: base64data,
+  //                 },
+  //                 ...this.state.attachments.slice(index + 1),
+  //               ],
+  //             });
+  //           };
+  //         } else {
+  //           this.setState({
+  //             attachments: [
+  //               ...this.state.attachments.slice(0, index),
+  //               {
+  //                 ...this.state.attachments[index],
+  //                 filename: file.name,
+  //                 type: file.type.split('/')[1],
+  //                 // previewUrl: base64data,
+  //               },
+  //               ...this.state.attachments.slice(index + 1),
+  //             ],
+  //           });
+  //         }
+  //       },
+  //       {
+  //         orientation,
+  //         canvas: true,
+  //       },
+  //     );
+  //   });
+  // };
 
-  upload = (file, index) => {
-    const upload = new DirectUpload(
-      file,
-      '/rails/active_storage/direct_uploads',
-    );
+  // upload = (file, index) => {
+  //   const upload = new DirectUpload(
+  //     file,
+  //     '/rails/active_storage/direct_uploads',
+  //   );
 
-    upload.create((error, blob) => {
-      if (error) {
-        // Handle the error
-      } else {
-        this.setState({
-          attachments: [
-            ...this.state.attachments.slice(0, index),
-            {
-              ...this.state.attachments[index],
-              ...blob,
-            },
-            ...this.state.attachments.slice(index + 1),
-          ],
-        });
-      }
-    });
-  };
+  //   upload.create((error, blob) => {
+  //     if (error) {
+  //       // Handle the error
+  //     } else {
+  //       this.setState({
+  //         attachments: [
+  //           ...this.state.attachments.slice(0, index),
+  //           {
+  //             ...this.state.attachments[index],
+  //             ...blob,
+  //           },
+  //           ...this.state.attachments.slice(index + 1),
+  //         ],
+  //       });
+  //     }
+  //   });
+  // };
 
-  remove = index => {
-    this.setState(
-      {
-        attachments: this.state.attachments.filter((a, i) => index !== i),
-      },
-      () => {
-        if (this.state.attachments.length === 0) {
-          this.setState({
-            submitLabel: this.thumbSender(),
-          });
-        }
-      },
-    );
-  };
+  // remove = index => {
+  //   this.setState(
+  //     {
+  //       attachments: this.state.attachments.filter((a, i) => index !== i),
+  //     },
+  //     () => {
+  //       if (this.state.attachments.length === 0) {
+  //         this.setState({
+  //           submitLabel: this.thumbSender(),
+  //         });
+  //       }
+  //     },
+  //   );
+  // };
 
-  isValid = canSubmit => {
+  isValid = (canSubmit: boolean): boolean => {
     if (this.state.attachments.length > 0) {
       return (
         this.state.attachments.filter(a => !a.signed_id).length === 0 &&
@@ -179,7 +196,7 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
     return canSubmit;
   };
 
-  handleSubmitLabel = (name, value) => {
+  handleSubmitLabel = (_name: string, value: string | Object): void => {
     if (value !== '') {
       this.setState({
         submitLabel: this.messageSender(),
@@ -193,7 +210,7 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
     }
   };
 
-  handleSubmit = model => {
+  handleSubmit = (model: any): Promise<any> => {
     const { createMessage, updateMessage, messageable, message } = this.props;
     const modelToSubmit = {
       message: {
@@ -236,17 +253,17 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
 
   render() {
     const {
-      tasks,
-      teams,
+      // tasks,
+      // teams,
       message,
       placeholder,
-      organizationMembers,
+      // organizationMembers,
       // callbacks
       onDismiss,
       onSubmit,
     } = this.props;
 
-    const { attachments, submitted } = this.state;
+    const { submitted } = this.state;
 
     return (
       <div
@@ -255,7 +272,7 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
           'border-top': !message.body,
         })}
       >
-        {attachments.length > 0 && (
+        {/* {attachments.length > 0 && (
           <div className="p-2 px-md-3 bg-light animated slideInBottom">
             <div className="d-flex" style={{ overflowX: 'auto' }}>
               {attachments.map((attachment, index) => (
@@ -268,7 +285,7 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
               ))}
             </div>
           </div>
-        )}
+        )} */}
         <div
           id="suggestionPortal"
           style={{
@@ -284,11 +301,9 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
           }}
         />
         <Form
-          ref={c => {
-            this.form = c;
-          }}
+          ref={this.form}
           submitted={submitted}
-          handleSubmit={async model => {
+          handleSubmit={async (model: any) => {
             await this.handleSubmit(model);
             this.setState({
               attachments: [],
@@ -296,7 +311,8 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
               submitLabel: this.thumbSender(),
               submitted: true,
             });
-            this.form.form.reset();
+            console.log(this.form);
+            this.form.current.form.reset();
             onSubmit();
           }}
           className={classNames('', {
@@ -305,7 +321,13 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
           inputsWrapperProps={{
             className: 'd-flex flex-grow-1',
           }}
-          footerRenderer={({ loading, canSubmit }) => {
+          footerRenderer={({
+            loading,
+            canSubmit,
+          }: {
+            loading: boolean;
+            canSubmit: boolean;
+          }) => {
             if (message.body) {
               return (
                 <div className="px-2 pb-3">
@@ -403,22 +425,18 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
           )}
           <div className="d-flex align-items-center flex-grow-1">
             <FieldMentions
-              ref={c => {
-                this.mentionsInput = c;
-              }}
-              componentRef={c => {
-                this.mentionsComponentInput = c;
-              }}
+              ref={this.mentionsInput}
+              componentRef={this.mentionsComponentInput}
               className="border-0 mr-2"
               layout="elementOnly"
               name="message[body]"
               onChange={this.handleSubmitLabel}
               required={this.state.attachments.length === 0}
               value={message.body ? { value: message.body } : ''}
-              onKeyDown={event => {
+              onKeyDown={(event: KeyboardEvent) => {
                 if (event.keyCode === 13 && !event.shiftKey) {
                   event.preventDefault();
-                  this.form.form.submit();
+                  this.form.current.form.submit();
                 }
               }}
               placeholder={placeholder}
@@ -449,29 +467,29 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
               }}
               suggestionsPortalHost={container}
             />
-            {attachments.map((attachment, index) => (
+            {/* {attachments.map((attachment, index) => (
               <Input
                 key={attachment.signed_id}
                 type="hidden"
                 name={`message[attachments][${index}][signed_blob_id]`}
                 value={attachment.signed_id}
               />
-            ))}
+            ))} */}
           </div>
         </Form>
         {this.state.emojiPicker && (
           <Picker
-            onSelect={emoji => {
-              const previousValue = this.mentionsInput.state.value;
+            onSelect={(emoji: any) => {
+              const previousValue = this.mentionsInput.current.state.value;
               const newValue = `${
                 previousValue ? `${previousValue.value} ` : ''
               }${emoji.native}`;
-              this.mentionsInput.setValue({
+              this.mentionsInput.current.setValue({
                 ...previousValue,
                 value: newValue,
                 plainTextValue: newValue,
               });
-              this.mentionsComponentInput.handleChange(
+              this.mentionsComponentInput.current.handleChange(
                 null,
                 newValue,
                 newValue,
@@ -494,15 +512,3 @@ export default class MessagesForm extends React.Component<MessagesFormProps> {
     );
   }
 }
-
-// MessagesForm.propTypes = {
-//   createMessage: PropTypes.func.isRequired,
-//   updateMessage: PropTypes.func.isRequired,
-//   onSubmit: PropTypes.func,
-//   onDismiss: PropTypes.func,
-//   messageable: PropTypes.shape(PropTypes.obj).isRequired,
-//   message: PropTypes.shape(PropTypes.obj).isRequired,
-//   tasks: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   teams: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   organizationMembers: PropTypes.arrayOf(PropTypes.object).isRequired,
-// };

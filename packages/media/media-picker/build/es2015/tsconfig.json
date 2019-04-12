@@ -2,13 +2,8 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "declaration": true,
-    "outDir": "../../dist/es2015",
-    "target": "es5",
-    "module": "esnext"
+    "outDir": "../../"
   },
   "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
-  "exclude": [
-    "../../src/__tests__/**/*.*",
-    "../../src/**/__tests__/unit/*.*"
-  ]
+  "exclude": ["../../src/__tests__/unit/*.*", "../../src/**/__tests__/unit/*.*"]
 }

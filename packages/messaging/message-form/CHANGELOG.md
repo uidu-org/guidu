@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.2
+- [patch] :
+
+  - Build es2015
+
 ## 0.1.1
 - [patch] :
 

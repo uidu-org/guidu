@@ -18,26 +18,20 @@ import { ChatWindowType } from 'src/types';
 export default class ChatWindow extends Component<ChatWindowType> {
   static defaultProps = {
     messageable: {},
-    organizationMembers: [],
     fetchMessages: () => {},
   };
 
   render() {
-    const {
-      messageable,
-      organizationMembers,
-      fetchMessages,
-      ...otherProps
-    } = this.props;
+    const { messageable, fetchMessages, ...otherProps } = this.props;
     const { messages } = messageable;
 
-    if (!messages || messages.isFetching) {
-      return (
-        <div className="h-100 d-flex align-items-center justify-content-center">
-          <Loader />
-        </div>
-      );
-    }
+    // if (!messages || messages.isFetching) {
+    //   return (
+    //     <div className="h-100 d-flex align-items-center justify-content-center">
+    //       <Loader />
+    //     </div>
+    //   );
+    // }
 
     const groupedByDay = groupByDay(sortByDay(messages.messages));
     return (
@@ -68,7 +62,7 @@ export default class ChatWindow extends Component<ChatWindowType> {
                   </div>
                   {groupByMessager(todayMessages)
                     .reverse()
-                    .map((messageGroup, index) => {
+                    .map((messageGroup: any, index: number) => {
                       return (
                         <MessageGroup
                           key={`${day}-${index}`}
@@ -123,19 +117,8 @@ export default class ChatWindow extends Component<ChatWindowType> {
             })}
           </ReactChatView>
         </div>
-        <MessagesForm
-          {...otherProps}
-          message={{}}
-          messageable={messageable}
-          organizationMembers={organizationMembers}
-        />
+        <MessagesForm {...otherProps} message={{}} messageable={messageable} />
       </div>
     );
   }
 }
-
-// Messages.propTypes = {
-//   organizationMembers: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   messageable: PropTypes.shape(PropTypes.obj).isRequired,
-//   fetchMessages: PropTypes.func.isRequired,
-// };

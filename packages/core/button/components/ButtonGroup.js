@@ -1,9 +1,21 @@
-import * as tslib_1 from "tslib";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 import * as React from 'react';
 import withDeprecationWarnings from './withDeprecationWarnings';
 import Group, { GroupItem } from '../styled/ButtonGroup';
 var ButtonGroup = /** @class */ (function (_super) {
-    tslib_1.__extends(ButtonGroup, _super);
+    __extends(ButtonGroup, _super);
     function ButtonGroup() {
         return _super !== null && _super.apply(this, arguments) || this;
     }

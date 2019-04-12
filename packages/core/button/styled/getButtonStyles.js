@@ -1,4 +1,7 @@
-import * as tslib_1 from "tslib";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
 import { css } from 'styled-components';
 import { borderRadius, fontSize, gridSize, math } from '@uidu/theme';
 import themeDefinitions from './themeDefinitions';
@@ -79,7 +82,7 @@ export default function getButtonStyles(props) {
     var color = getPropertyAppearance('color', props);
     var boxShadowColor = getPropertyAppearance('boxShadowColor', props);
     var boxShadow = boxShadowColor
-        ? css(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n        box-shadow: 0 0 0 2px ", ";\n      "], ["\n        box-shadow: 0 0 0 2px ", ";\n      "])), boxShadowColor) : null;
+        ? css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n        box-shadow: 0 0 0 2px ", ";\n      "], ["\n        box-shadow: 0 0 0 2px ", ";\n      "])), boxShadowColor) : null;
     var textDecoration = getPropertyAppearance('textDecoration', props);
     // Spacing: Compact
     if (props.spacing === 'compact') {
@@ -121,7 +124,7 @@ export default function getButtonStyles(props) {
         width = '100%';
     }
     /* Note use of !important to override the ThemeReset on anchor tag styles */
-    return css(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n    align-items: baseline;\n    background: ", ";\n    border-radius: ", "px;\n    border-width: 0;\n    box-sizing: border-box;\n    color: ", " !important;\n    cursor: ", ";\n    display: inline-flex;\n    font-size: inherit;\n    font-style: normal;\n    height: ", ";\n    line-height: ", ";\n    margin: 0;\n    max-width: 100%;\n    outline: ", " !important;\n    padding: ", ";\n    text-align: center;\n    text-decoration: ", ";\n    transition: ", ";\n    transition-duration: ", ";\n    vertical-align: ", ";\n    white-space: nowrap;\n    width: ", ";\n    ", " &::-moz-focus-inner {\n      border: 0;\n      margin: 0;\n      padding: 0;\n    }\n    ", ";\n  "], ["\n    align-items: baseline;\n    background: ", ";\n    border-radius: ", "px;\n    border-width: 0;\n    box-sizing: border-box;\n    color: ", " !important;\n    cursor: ", ";\n    display: inline-flex;\n    font-size: inherit;\n    font-style: normal;\n    height: ", ";\n    line-height: ", ";\n    margin: 0;\n    max-width: 100%;\n    outline: ", " !important;\n    padding: ", ";\n    text-align: center;\n    text-decoration: ", ";\n    transition: ", ";\n    transition-duration: ", ";\n    vertical-align: ", ";\n    white-space: nowrap;\n    width: ", ";\n    ", " &::-moz-focus-inner {\n      border: 0;\n      margin: 0;\n      padding: 0;\n    }\n    ", ";\n  "])), background, borderRadius, color, cursor, height, lineHeight, outline, padding, textDecoration, transition, transitionDuration, verticalAlign, width, boxShadow, isLoadingStyles);
+    return css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    align-items: baseline;\n    background: ", ";\n    border-radius: ", "px;\n    border-width: 0;\n    box-sizing: border-box;\n    color: ", " !important;\n    cursor: ", ";\n    display: inline-flex;\n    font-size: inherit;\n    font-style: normal;\n    height: ", ";\n    line-height: ", ";\n    margin: 0;\n    max-width: 100%;\n    outline: ", " !important;\n    padding: ", ";\n    text-align: center;\n    text-decoration: ", ";\n    transition: ", ";\n    transition-duration: ", ";\n    vertical-align: ", ";\n    white-space: nowrap;\n    width: ", ";\n    ", " &::-moz-focus-inner {\n      border: 0;\n      margin: 0;\n      padding: 0;\n    }\n    ", ";\n  "], ["\n    align-items: baseline;\n    background: ", ";\n    border-radius: ", "px;\n    border-width: 0;\n    box-sizing: border-box;\n    color: ", " !important;\n    cursor: ", ";\n    display: inline-flex;\n    font-size: inherit;\n    font-style: normal;\n    height: ", ";\n    line-height: ", ";\n    margin: 0;\n    max-width: 100%;\n    outline: ", " !important;\n    padding: ", ";\n    text-align: center;\n    text-decoration: ", ";\n    transition: ", ";\n    transition-duration: ", ";\n    vertical-align: ", ";\n    white-space: nowrap;\n    width: ", ";\n    ", " &::-moz-focus-inner {\n      border: 0;\n      margin: 0;\n      padding: 0;\n    }\n    ", ";\n  "])), background, borderRadius, color, cursor, height, lineHeight, outline, padding, textDecoration, transition, transitionDuration, verticalAlign, width, boxShadow, isLoadingStyles);
 }
 var templateObject_1, templateObject_2;
 //# sourceMappingURL=getButtonStyles.js.map

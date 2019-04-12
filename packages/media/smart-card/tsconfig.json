@@ -5,15 +5,12 @@
     "./src/**/*.tsx",
     "./docs/*.ts",
     "./docs/*.tsx",
-    "./examples/*.ts",
-    "./examples/*.tsx"
+    "./examples/**/*.ts",
+    "./examples/**/*.tsx",
+    "./examples-helpers/**/*.ts",
+    "./examples-helpers/**/*.tsx"
   ],
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@atlaskit/analytics-next": [
-        "node_modules/@atlaskit/analytics-next-types"
-      ]
-    }
+    "baseUrl": "./"
   }
 }

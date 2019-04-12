@@ -15,8 +15,8 @@
       "@atlaskit/analytics-next": [
         "node_modules/@atlaskit/analytics-next-types"
       ],
-      "@atlaskit/dropdown-menu": ["typings/@atlaskit/dropdown-menu"],
-      "@atlaskit/item": ["typings/@atlaskit/item"]
+      "@uidu/dropdown-menu": ["typings/@uidu/dropdown-menu"],
+      "@uidu/item": ["typings/@uidu/item"]
     }
   }
 }

@@ -7,17 +7,10 @@
     "./examples/*.tsx",
     "./example-helpers/*.ts",
     "./example-helpers/*.tsx",
-    "./typings/atlaskit.d.ts"
+    "./typings/uidu.d.ts"
   ],
-  "exclude": [
-    "./src/__tests__/integration/**/*.ts"
-  ],
+  "exclude": ["./src/__tests__/integration/**/*.ts"],
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@atlaskit/analytics-next": [
-        "node_modules/@atlaskit/analytics-next-types"
-      ]
-    }
+    "baseUrl": "./"
   }
 }

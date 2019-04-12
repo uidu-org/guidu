@@ -1,5 +1,8 @@
 {
   "extends": "../../../tsconfig.media.json",
+  "compilerOptions": {
+    "baseUrl": "./"
+  },
   "include": [
     "./src/**/*.ts",
     "./src/**/*.tsx",
@@ -8,6 +11,6 @@
     "./docs/**/*.ts",
     "./docs/**/*.tsx",
     "./examples/**/*.ts",
-    "./examples/**/*.tsx",
+    "./examples/**/*.tsx"
   ]
 }

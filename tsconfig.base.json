@@ -1,4 +1,5 @@
 {
+  "extends": "./tsconfig.entry-points.json",
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
@@ -10,7 +11,7 @@
     "jsx": "react",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "sourceMap": true,
@@ -37,17 +38,20 @@
       "history",
       "enzyme",
       "css-color-names",
+      "jest-styled-components",
       "styled-components",
       "linkify-it",
       "url-search-params"
     ],
-    "typeRoots": ["./typings", "./node_modules/@types"]
+    "typeRoots": ["./typings", "./node_modules/@types"],
+    "esModuleInterop": true
   },
   "files": [
     "./typings/uidu.d.ts",
     "./typings/blueimp-load-image.d.ts",
     "./typings/deep-equal.d.ts",
     "./typings/deepcopy.d.ts",
+    "./typings/diff.d.ts",
     "./typings/events.d.ts",
     "./typings/fetch-mock.d.ts",
     "./typings/jest-in-case.d.ts",
@@ -67,18 +71,21 @@
     "./typings/pdfjs-dist.d.ts",
     "./typings/png-chunks-extract.d.ts",
     "./typings/postis.d.ts",
+    "./typings/pretty-data.d.ts",
     "./typings/prosemirror-markdown.d.ts",
     "./typings/prosemirror-dev-tools.d.ts",
     "./typings/p-wait-for.d.ts",
     "./typings/querystring.d.ts",
     "./typings/raf-schd.d.ts",
     "./typings/raf-stub.d.ts",
+    "./typings/enzyme-react-intl.d.ts",
     "./typings/rusha.d.ts",
     "./typings/scrollparent.d.ts",
     "./typings/snake-case.d.ts",
     "./typings/static-assets.d.ts",
     "./typings/url.d.ts",
     "./typings/url-search-params.d.ts",
+    "./typings/unescape.d.ts",
     "./typings/uuid.d.ts",
     "./typings/webpack.d.ts"
   ]

@@ -1,10 +1,7 @@
-export declare type MessageableType = {
-    /** The base styling to apply to the button */
-    messages: Array;
-};
+import { MessageableProps } from '@uidu/message-form';
 export declare type ChatWindowType = {
     /** The base styling to apply to the button */
-    messageable: MessageableType;
+    messageable: MessageableProps;
     /** The base styling to apply to the button */
-    fetchMessages: () => Array;
+    fetchMessages: (messageable: MessageableProps, lastId: number) => Array<any>;
 };

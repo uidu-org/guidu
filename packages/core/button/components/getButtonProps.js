@@ -1,4 +1,14 @@
-import * as tslib_1 from "tslib";
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var getAppearanceProps = function (props, state) {
     var appearance = props.appearance, className = props.className, isDisabled = props.isDisabled, isLoading = props.isLoading, isSelected = props.isSelected, spacing = props.spacing, shouldFitContainer = props.shouldFitContainer;
     var isActive = state.isActive, isFocus = state.isFocus, isHover = state.isHover;
@@ -49,17 +59,17 @@ var getButtonElementProps = function (props) {
 };
 var getButtonProps = function (component) {
     var props = component.props, state = component.state;
-    var defaultProps = tslib_1.__assign({ id: props.id }, getAppearanceProps(props, state), getInteractionProps(component), { 'aria-label': props.ariaLabel });
+    var defaultProps = __assign({ id: props.id }, getAppearanceProps(props, state), getInteractionProps(component), { 'aria-label': props.ariaLabel });
     if (props.component) {
-        return tslib_1.__assign({}, props, defaultProps);
+        return __assign({}, props, defaultProps);
     }
     if (props.href) {
         if (props.isDisabled) {
             return defaultProps;
         }
-        return tslib_1.__assign({}, defaultProps, getLinkElementProps(props));
+        return __assign({}, defaultProps, getLinkElementProps(props));
     }
-    return tslib_1.__assign({}, defaultProps, getButtonElementProps(props));
+    return __assign({}, defaultProps, getButtonElementProps(props));
 };
 export default getButtonProps;
 //# sourceMappingURL=getButtonProps.js.map

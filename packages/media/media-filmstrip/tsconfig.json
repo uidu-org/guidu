@@ -1,6 +1,7 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
+    "baseUrl": "./",
     "noImplicitAny": true
   },
   "include": [
@@ -9,6 +10,6 @@
     "./examples/*.ts",
     "./examples/*.tsx",
     "./example-helpers/*.ts",
-    "./example-helpers/*.tsx",
+    "./example-helpers/*.tsx"
   ]
 }

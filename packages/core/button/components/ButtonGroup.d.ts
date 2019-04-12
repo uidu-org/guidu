@@ -5,6 +5,6 @@ export declare type ButtonGroupProps = {
     appearance?: ButtonAppearances;
 };
 declare const _default: React.ComponentClass<ButtonGroupProps & {
-    appearance?: "default" | "danger" | "link" | "primary" | "subtle" | "subtle-link" | "warning" | "help" | undefined;
+    appearance?: ButtonAppearances;
 }, any>;
 export default _default;

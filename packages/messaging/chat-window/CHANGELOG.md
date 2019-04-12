@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.3
+- [patch] :
+
+  - Build es2015
+
 ## 0.1.2
 - [patch] :
 

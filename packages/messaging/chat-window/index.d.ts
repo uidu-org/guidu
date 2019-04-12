@@ -1,1 +1,1 @@
-export { default, defaultProps } from './components/ChatWindow';
+export { default } from './components/ChatWindow';
