@@ -1,5 +1,10 @@
 # @uidu/message-renderer
 
+## 0.1.3
+- [patch] :
+
+  - Compiled
+
 ## 0.1.2
 - [patch] :
 

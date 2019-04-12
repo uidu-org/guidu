@@ -1,88 +1,56 @@
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
+import * as tslib_1 from "tslib";
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import * as React from 'react';
-import styled from 'styled-components';
+import memoize from 'memoize-one';
 import { withAnalyticsEvents, withAnalyticsContext, createAndFireEvent, } from '@uidu/analytics';
-import withDeprecationWarnings from './withDeprecationWarnings';
-import getButtonProps from './getButtonProps';
-import CustomComponentProxy from './CustomComponentProxy';
-import getButtonStyles from '../styled/getButtonStyles';
-import ButtonContent from '../styled/ButtonContent';
-import ButtonWrapper from '../styled/ButtonWrapper';
-import IconWrapper from '../styled/IconWrapper';
-import LoadingSpinner from '../styled/LoadingSpinner';
 import { name as packageName, version as packageVersion, } from '../version.json';
-import { withDefaultProps } from '@atlaskit/type-helpers';
-var StyledButton = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), getButtonStyles);
-StyledButton.displayName = 'StyledButton';
-// Target the <a> here to override a:hover specificity.
-var StyledLink = styled.a(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n  a& {\n    ", ";\n  }\n"], ["\n  a& {\n    ", ";\n  }\n"])), getButtonStyles);
-StyledLink.displayName = 'StyledLink';
-var StyledSpan = styled.span(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n  ", ";\n"], ["\n  ", ";\n"])), getButtonStyles);
-StyledSpan.displayName = 'StyledSpan';
-var createStyledComponent = function () {
-    // Override pseudo-state specificity.
-    // This is necessary because we don't know what DOM element the custom component will render.
-    var component = styled(CustomComponentProxy)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    &,\n    a&,\n    &:hover,\n    &:active,\n    &:focus {\n      ", "\n    }\n  "], ["\n    &,\n    a&,\n    &:hover,\n    &:active,\n    &:focus {\n      ", "\n    }\n  "])), getButtonStyles);
-    component.displayName = 'StyledCustomComponent';
-    return component;
-};
-export var defaultProps = {
-    appearance: 'default',
-    isDisabled: false,
-    isSelected: false,
-    isLoading: false,
-    spacing: 'default',
-    type: 'button',
-    shouldFitContainer: false,
-    autoFocus: false,
-};
+import GlobalTheme from '@uidu/theme';
+import { Theme } from '../theme';
+import { mapAttributesToState, filterProps, composeRefs } from './utils';
+import Content from './Content';
+import InnerWrapper from './InnerWrapper';
+import IconWrapper from './IconWrapper';
+import LoadingSpinner from './LoadingSpinner';
 var Button = /** @class */ (function (_super) {
-    __extends(Button, _super);
+    tslib_1.__extends(Button, _super);
     function Button() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        // ref can be a range of things because we render button, a, span or other React components
+        _this.button = React.createRef();
+        // Makes sure we don't call ref every render.
+        _this.getComposedRefs = memoize(composeRefs);
         _this.state = {
             isActive: false,
             isFocus: false,
             isHover: false,
         };
-        _this.customComponent = null;
         _this.isInteractive = function () { return !_this.props.isDisabled && !_this.props.isLoading; };
-        _this.onMouseEnter = function () {
+        _this.onMouseEnter = function (e) {
             _this.setState({ isHover: true });
+            if (_this.props.onMouseEnter) {
+                _this.props.onMouseEnter(e);
+            }
         };
-        _this.onMouseLeave = function () { return _this.setState({ isHover: false, isActive: false }); };
+        _this.onMouseLeave = function (e) {
+            _this.setState({ isHover: false, isActive: false });
+            if (_this.props.onMouseLeave) {
+                _this.props.onMouseLeave(e);
+            }
+        };
         _this.onMouseDown = function (e) {
             e.preventDefault();
             _this.setState({ isActive: true });
+            if (_this.props.onMouseDown) {
+                _this.props.onMouseDown(e);
+            }
         };
-        _this.onMouseUp = function () { return _this.setState({ isActive: false }); };
+        _this.onMouseUp = function (e) {
+            _this.setState({ isActive: false });
+            if (_this.props.onMouseUp) {
+                _this.props.onMouseUp(e);
+            }
+        };
         _this.onFocus = function (event) {
             _this.setState({ isFocus: true });
             if (_this.props.onFocus) {
@@ -95,63 +63,81 @@ var Button = /** @class */ (function (_super) {
                 _this.props.onBlur(event);
             }
         };
-        /* Swallow click events when the button is disabled to prevent inner child clicks bubbling up */
+        _this.getElement = function () {
+            var _a = _this.props, href = _a.href, isDisabled = _a.isDisabled;
+            if (href) {
+                return isDisabled ? 'span' : 'a';
+            }
+            return 'button';
+        };
+        // Swallow click events when the button is disabled
+        // to prevent inner child clicks bubbling up.
         _this.onInnerClick = function (e) {
             if (!_this.isInteractive()) {
                 e.stopPropagation();
             }
             return true;
         };
-        _this.getInnerRef = function (ref) {
-            _this.button = ref;
-            if (_this.props.innerRef) {
-                _this.props.innerRef(ref);
-            }
-        };
         return _this;
     }
-    Button.prototype.componentWillReceiveProps = function (nextProps) {
-        if (this.props.component !== nextProps.component) {
-            delete this.customComponent;
-        }
-    };
     Button.prototype.componentDidMount = function () {
-        if (this.props.autoFocus && this.button) {
+        if (this.props.autoFocus && this.button instanceof HTMLButtonElement) {
             this.button.focus();
         }
     };
-    Button.prototype.getStyledComponent = function () {
-        if (this.props.component) {
-            if (!this.customComponent) {
-                this.customComponent = createStyledComponent();
-            }
-            return this.customComponent;
-        }
-        if (this.props.href) {
-            return this.props.isDisabled ? StyledSpan : StyledLink;
-        }
-        return StyledButton;
-    };
     Button.prototype.render = function () {
-        var _a = this.props, children = _a.children, iconBefore = _a.iconBefore, iconAfter = _a.iconAfter, isLoading = _a.isLoading, shouldFitContainer = _a.shouldFitContainer, spacing = _a.spacing, appearance = _a.appearance, isSelected = _a.isSelected, isDisabled = _a.isDisabled;
-        var buttonProps = getButtonProps(this);
-        var StyledComponent = this.getStyledComponent();
+        var _this = this;
+        var _a = this.props, _b = _a.appearance, appearance = _b === void 0 ? 'default' : _b, children = _a.children, className = _a.className, CustomComponent = _a.component, consumerRef = _a.consumerRef, iconAfter = _a.iconAfter, iconBefore = _a.iconBefore, _c = _a.isDisabled, isDisabled = _c === void 0 ? false : _c, _d = _a.isLoading, isLoading = _d === void 0 ? false : _d, _e = _a.isSelected, isSelected = _e === void 0 ? false : _e, _f = _a.shouldFitContainer, shouldFitContainer = _f === void 0 ? false : _f, _g = _a.spacing, spacing = _g === void 0 ? 'default' : _g, _h = _a.theme, theme = _h === void 0 ? function (current, props) { return current(props); } : _h, rest = tslib_1.__rest(_a, ["appearance", "children", "className", "component", "consumerRef", "iconAfter", "iconBefore", "isDisabled", "isLoading", "isSelected", "shouldFitContainer", "spacing", "theme"]);
+        var attributes = tslib_1.__assign({}, this.state, { isSelected: isSelected, isDisabled: isDisabled });
+        var StyledButton = CustomComponent || this.getElement();
         var iconIsOnlyChild = !!((iconBefore && !iconAfter && !children) ||
             (iconAfter && !iconBefore && !children));
-        return (React.createElement(StyledComponent, __assign({ ref: this.getInnerRef }, buttonProps),
-            React.createElement(ButtonWrapper, { onClick: this.onInnerClick, fit: !!shouldFitContainer },
-                isLoading ? (React.createElement(LoadingSpinner, { spacing: spacing, appearance: appearance, isSelected: isSelected, isDisabled: isDisabled })) : null,
-                iconBefore ? (React.createElement(IconWrapper, { isLoading: isLoading, spacing: buttonProps.spacing, isOnlyChild: iconIsOnlyChild }, iconBefore)) : null,
-                children ? (React.createElement(ButtonContent, { isLoading: isLoading, followsIcon: !!iconBefore, spacing: buttonProps.spacing }, children)) : null,
-                iconAfter ? (React.createElement(IconWrapper, { isLoading: isLoading, spacing: buttonProps.spacing, isOnlyChild: iconIsOnlyChild }, iconAfter)) : null)));
+        var specifiers = function (styles) {
+            if (StyledButton === 'a') {
+                return {
+                    'a&': styles,
+                };
+            }
+            else if (StyledButton === CustomComponent) {
+                return {
+                    '&, a&, &:hover, &:active, &:focus': styles,
+                };
+            }
+            return styles;
+        };
+        console.log(theme);
+        return (jsx(Theme.Provider, { value: theme },
+            jsx(GlobalTheme.Consumer, null, function (_a) {
+                var mode = _a.mode;
+                return (jsx(Theme.Consumer, tslib_1.__assign({ mode: mode, state: mapAttributesToState(attributes), iconIsOnlyChild: iconIsOnlyChild }, _this.props), function (_a) {
+                    var buttonStyles = _a.buttonStyles, spinnerStyles = _a.spinnerStyles;
+                    return (jsx(StyledButton, tslib_1.__assign({}, filterProps(rest, StyledButton), { ref: _this.getComposedRefs(_this.button, consumerRef), onMouseEnter: _this.onMouseEnter, onMouseLeave: _this.onMouseLeave, onMouseDown: _this.onMouseDown, onMouseUp: _this.onMouseUp, onFocus: _this.onFocus, onBlur: _this.onBlur, disabled: isDisabled, className: className, css: specifiers(buttonStyles) }),
+                        jsx(InnerWrapper, { onClick: _this.onInnerClick, fit: !!shouldFitContainer },
+                            isLoading && (jsx(LoadingSpinner, { spacing: spacing, appearance: appearance, isSelected: isSelected, isDisabled: isDisabled, styles: spinnerStyles })),
+                            iconBefore && (jsx(IconWrapper, { isLoading: isLoading, spacing: spacing, isOnlyChild: iconIsOnlyChild, icon: iconBefore })),
+                            children && (jsx(Content, { isLoading: isLoading, followsIcon: !!iconBefore, spacing: spacing }, children)),
+                            iconAfter && (jsx(IconWrapper, { isLoading: isLoading, spacing: spacing, isOnlyChild: iconIsOnlyChild, icon: iconAfter })))));
+                }));
+            })));
+    };
+    Button.defaultProps = {
+        appearance: 'default',
+        autoFocus: false,
+        isDisabled: false,
+        isLoading: false,
+        isSelected: false,
+        shouldFitContainer: false,
+        spacing: 'default',
+        theme: function (current, props) { return current(props); },
+        type: 'button',
     };
     return Button;
 }(React.Component));
 export { Button };
-export var DefaultedButton = withDefaultProps(defaultProps, Button);
-export var ButtonBase = Button;
-export var ButtonWithoutAnalytics = withDeprecationWarnings(DefaultedButton);
-var createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+var createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+var ButtonWithRef = React.forwardRef(function (props, ref) { return jsx(Button, tslib_1.__assign({}, props, { consumerRef: ref })); });
+ButtonWithRef.displayName = 'Button';
+// @ts-ignore
 export default withAnalyticsContext({
     componentName: 'button',
     packageName: packageName,
@@ -166,6 +152,5 @@ export default withAnalyticsContext({
             packageVersion: packageVersion,
         },
     }),
-})(ButtonWithoutAnalytics));
-var templateObject_1, templateObject_2, templateObject_3, templateObject_4;
+})(ButtonWithRef));
 //# sourceMappingURL=Button.js.map

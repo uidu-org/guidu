@@ -3,7 +3,6 @@ import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import FieldMentionsStateless from './FieldMentionsStateless';
 
 import { FieldMentionsProps } from '../types';
-import console = require('console');
 
 class FieldMentions extends Component<FieldMentionsProps> {
   static defaultProps = {

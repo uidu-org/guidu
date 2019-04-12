@@ -1,90 +1,49 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import * as React from 'react';
-import styled from 'styled-components';
+import memoize from 'memoize-one';
 import {
   withAnalyticsEvents,
   withAnalyticsContext,
   createAndFireEvent,
 } from '@uidu/analytics';
-import withDeprecationWarnings from './withDeprecationWarnings';
-import getButtonProps from './getButtonProps';
-import CustomComponentProxy from './CustomComponentProxy';
-import getButtonStyles from '../styled/getButtonStyles';
-import ButtonContent from '../styled/ButtonContent';
-import ButtonWrapper from '../styled/ButtonWrapper';
-import IconWrapper from '../styled/IconWrapper';
-import LoadingSpinner from '../styled/LoadingSpinner';
-
-import { ButtonProps } from '../types';
-
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
-import { withDefaultProps } from '@atlaskit/type-helpers';
-
-const StyledButton = styled.button`
-  ${getButtonStyles};
-`;
-StyledButton.displayName = 'StyledButton';
-
-// Target the <a> here to override a:hover specificity.
-const StyledLink = styled.a`
-  a& {
-    ${getButtonStyles};
-  }
-`;
-StyledLink.displayName = 'StyledLink';
-
-const StyledSpan = styled.span`
-  ${getButtonStyles};
-`;
-StyledSpan.displayName = 'StyledSpan';
-
-const createStyledComponent = () => {
-  // Override pseudo-state specificity.
-  // This is necessary because we don't know what DOM element the custom component will render.
-  const component = styled(CustomComponentProxy)`
-    &,
-    a&,
-    &:hover,
-    &:active,
-    &:focus {
-      ${getButtonStyles}
-    }
-  `;
-  component.displayName = 'StyledCustomComponent';
-  return component;
-};
+import GlobalTheme from '@uidu/theme';
+import { Theme } from '../theme';
+import { mapAttributesToState, filterProps, composeRefs } from './utils';
+import Content from './Content';
+import InnerWrapper from './InnerWrapper';
+import IconWrapper from './IconWrapper';
+import LoadingSpinner from './LoadingSpinner';
+import { ButtonProps, ThemeMode, ThemeProps, ThemeTokens } from '../types';
 
 export type ButtonState = {
+  isHover: boolean;
   isActive: boolean;
   isFocus: boolean;
-  isHover: boolean;
-};
-
-export const defaultProps: Pick<
-  ButtonProps,
-  | 'appearance'
-  | 'isDisabled'
-  | 'isSelected'
-  | 'isLoading'
-  | 'spacing'
-  | 'type'
-  | 'shouldFitContainer'
-  | 'autoFocus'
-> = {
-  appearance: 'default',
-  isDisabled: false,
-  isSelected: false,
-  isLoading: false,
-  spacing: 'default',
-  type: 'button',
-  shouldFitContainer: false,
-  autoFocus: false,
 };
 
 export class Button extends React.Component<ButtonProps, ButtonState> {
-  button: HTMLElement | undefined;
+  static defaultProps: ButtonProps = {
+    appearance: 'default',
+    autoFocus: false,
+    isDisabled: false,
+    isLoading: false,
+    isSelected: false,
+    shouldFitContainer: false,
+    spacing: 'default',
+    theme: (current, props) => current(props),
+    type: 'button',
+  };
+
+  // ref can be a range of things because we render button, a, span or other React components
+  button = React.createRef<HTMLElement>();
+
+  // Makes sure we don't call ref every render.
+  getComposedRefs = memoize(composeRefs);
 
   state = {
     isActive: false,
@@ -92,34 +51,42 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     isHover: false,
   };
 
-  componentWillReceiveProps(nextProps: ButtonProps) {
-    if (this.props.component !== nextProps.component) {
-      delete this.customComponent;
-    }
-  }
-
   componentDidMount() {
-    if (this.props.autoFocus && this.button) {
+    if (this.props.autoFocus && this.button instanceof HTMLButtonElement) {
       this.button.focus();
     }
   }
 
-  private customComponent: React.ComponentType<any> | null = null;
-
   isInteractive = () => !this.props.isDisabled && !this.props.isLoading;
 
-  onMouseEnter = () => {
+  onMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
     this.setState({ isHover: true });
+    if (this.props.onMouseEnter) {
+      this.props.onMouseEnter(e);
+    }
   };
 
-  onMouseLeave = () => this.setState({ isHover: false, isActive: false });
+  onMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
+    this.setState({ isHover: false, isActive: false });
+    if (this.props.onMouseLeave) {
+      this.props.onMouseLeave(e);
+    }
+  };
 
-  onMouseDown = (e: Event) => {
+  onMouseDown = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     this.setState({ isActive: true });
+    if (this.props.onMouseDown) {
+      this.props.onMouseDown(e);
+    }
   };
 
-  onMouseUp = () => this.setState({ isActive: false });
+  onMouseUp = (e: React.MouseEvent<HTMLElement>) => {
+    this.setState({ isActive: false });
+    if (this.props.onMouseUp) {
+      this.props.onMouseUp(e);
+    }
+  };
 
   onFocus: React.FocusEventHandler<HTMLButtonElement> = event => {
     this.setState({ isFocus: true });
@@ -135,110 +102,148 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     }
   };
 
-  /* Swallow click events when the button is disabled to prevent inner child clicks bubbling up */
-  onInnerClick: React.MouseEventHandler<HTMLButtonElement> = e => {
+  getElement = () => {
+    const { href, isDisabled } = this.props;
+    if (href) {
+      return isDisabled ? 'span' : 'a';
+    }
+    return 'button';
+  };
+
+  // Swallow click events when the button is disabled
+  // to prevent inner child clicks bubbling up.
+  onInnerClick: React.MouseEventHandler<HTMLElement> = e => {
     if (!this.isInteractive()) {
       e.stopPropagation();
     }
     return true;
   };
 
-  getStyledComponent() {
-    if (this.props.component) {
-      if (!this.customComponent) {
-        this.customComponent = createStyledComponent() as React.ComponentType<
-          any
-        >;
-      }
-      return this.customComponent;
-    }
-
-    if (this.props.href) {
-      return this.props.isDisabled ? StyledSpan : StyledLink;
-    }
-
-    return StyledButton;
-  }
-
-  getInnerRef = (ref: HTMLElement) => {
-    this.button = ref;
-
-    if (this.props.innerRef) {
-      this.props.innerRef(ref);
-    }
-  };
-
   render() {
     const {
+      appearance = 'default',
       children,
-      iconBefore,
+      className,
+      component: CustomComponent,
+      consumerRef,
       iconAfter,
-      isLoading,
-      shouldFitContainer,
-      spacing,
-      appearance,
-      isSelected,
-      isDisabled,
+      iconBefore,
+      isDisabled = false,
+      isLoading = false,
+      isSelected = false,
+      shouldFitContainer = false,
+      spacing = 'default',
+      theme = (
+        current: (props: ThemeProps) => ThemeTokens,
+        props: ThemeProps,
+      ) => current(props),
+      ...rest
     } = this.props;
-    const buttonProps = getButtonProps(this);
-    const StyledComponent = this.getStyledComponent();
+
+    const attributes = { ...this.state, isSelected, isDisabled };
+
+    const StyledButton: React.ReactType = CustomComponent || this.getElement();
 
     const iconIsOnlyChild: boolean = !!(
       (iconBefore && !iconAfter && !children) ||
       (iconAfter && !iconBefore && !children)
     );
+
+    const specifiers = (styles: {}) => {
+      if (StyledButton === 'a') {
+        return {
+          'a&': styles,
+        };
+      } else if (StyledButton === CustomComponent) {
+        return {
+          '&, a&, &:hover, &:active, &:focus': styles,
+        };
+      }
+      return styles;
+    };
+
+    console.log(theme);
+
     return (
-      <StyledComponent ref={this.getInnerRef} {...buttonProps}>
-        <ButtonWrapper onClick={this.onInnerClick} fit={!!shouldFitContainer}>
-          {isLoading ? (
-            <LoadingSpinner
-              spacing={spacing}
-              appearance={appearance}
-              isSelected={isSelected}
-              isDisabled={isDisabled}
-            />
-          ) : null}
-          {iconBefore ? (
-            <IconWrapper
-              isLoading={isLoading}
-              spacing={buttonProps.spacing}
-              isOnlyChild={iconIsOnlyChild}
+      <Theme.Provider value={theme}>
+        <GlobalTheme.Consumer>
+          {({ mode }: { mode: ThemeMode }) => (
+            <Theme.Consumer
+              mode={mode}
+              state={mapAttributesToState(attributes)}
+              iconIsOnlyChild={iconIsOnlyChild}
+              {...this.props}
             >
-              {iconBefore}
-            </IconWrapper>
-          ) : null}
-          {children ? (
-            <ButtonContent
-              isLoading={isLoading}
-              followsIcon={!!iconBefore}
-              spacing={buttonProps.spacing}
-            >
-              {children}
-            </ButtonContent>
-          ) : null}
-          {iconAfter ? (
-            <IconWrapper
-              isLoading={isLoading}
-              spacing={buttonProps.spacing}
-              isOnlyChild={iconIsOnlyChild}
-            >
-              {iconAfter}
-            </IconWrapper>
-          ) : null}
-        </ButtonWrapper>
-      </StyledComponent>
+              {({ buttonStyles, spinnerStyles }) => (
+                <StyledButton
+                  {...filterProps(rest, StyledButton)}
+                  ref={this.getComposedRefs(this.button, consumerRef)}
+                  onMouseEnter={this.onMouseEnter}
+                  onMouseLeave={this.onMouseLeave}
+                  onMouseDown={this.onMouseDown}
+                  onMouseUp={this.onMouseUp}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  disabled={isDisabled}
+                  className={className}
+                  css={specifiers(buttonStyles)}
+                >
+                  <InnerWrapper
+                    onClick={this.onInnerClick}
+                    fit={!!shouldFitContainer}
+                  >
+                    {isLoading && (
+                      <LoadingSpinner
+                        spacing={spacing}
+                        appearance={appearance}
+                        isSelected={isSelected}
+                        isDisabled={isDisabled}
+                        styles={spinnerStyles}
+                      />
+                    )}
+                    {iconBefore && (
+                      <IconWrapper
+                        isLoading={isLoading}
+                        spacing={spacing}
+                        isOnlyChild={iconIsOnlyChild}
+                        icon={iconBefore}
+                      />
+                    )}
+                    {children && (
+                      <Content
+                        isLoading={isLoading}
+                        followsIcon={!!iconBefore}
+                        spacing={spacing}
+                      >
+                        {children}
+                      </Content>
+                    )}
+                    {iconAfter && (
+                      <IconWrapper
+                        isLoading={isLoading}
+                        spacing={spacing}
+                        isOnlyChild={iconIsOnlyChild}
+                        icon={iconAfter}
+                      />
+                    )}
+                  </InnerWrapper>
+                </StyledButton>
+              )}
+            </Theme.Consumer>
+          )}
+        </GlobalTheme.Consumer>
+      </Theme.Provider>
     );
   }
 }
 
-export const DefaultedButton = withDefaultProps(defaultProps, Button);
+const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(
+  (props, ref) => <Button {...props} consumerRef={ref} />,
+);
+ButtonWithRef.displayName = 'Button';
 
-export type ButtonType = Button;
-export const ButtonBase = Button;
-
-export const ButtonWithoutAnalytics = withDeprecationWarnings(DefaultedButton);
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
-
+// @ts-ignore
 export default withAnalyticsContext({
   componentName: 'button',
   packageName,
@@ -248,12 +253,11 @@ export default withAnalyticsContext({
     onClick: createAndFireEventOnAtlaskit({
       action: 'clicked',
       actionSubject: 'button',
-
       attributes: {
         componentName: 'button',
         packageName,
         packageVersion,
       },
     }),
-  })(ButtonWithoutAnalytics),
-);
+  })(ButtonWithRef),
+) as React.ComponentType<ButtonProps>;

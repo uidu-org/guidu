@@ -1,19 +1,24 @@
 import { mount } from 'enzyme';
 import * as React from 'react';
-import Spinner from '@uidu/spinner';
-import { AtlassianIcon } from '@atlaskit/logo';
+import cases from 'jest-in-case';
+import Spinner from '@atlaskit/spinner';
+import * as renderer from 'react-test-renderer';
+import serializer, { matchers } from 'jest-emotion';
+import Button from '../../Button';
+import InnerWrapper from '../../InnerWrapper';
 
-import Button, { ButtonBase } from '../../Button';
-import IconWrapper from '../../../styled/IconWrapper';
-import ButtonContent from '../../../styled/ButtonContent';
+expect.extend(matchers);
+expect.addSnapshotSerializer(serializer);
+
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('ak-button/default-behaviour', () => {
-  it('button should have type="button" by default', () =>
-    expect(
-      mount(<Button />)
-        .find(ButtonBase)
-        .props().type,
-    ).toBe('button'));
+  it('button should have type="button" by default', () => {
+    const wrapper = mount(<Button />);
+    expect(wrapper.find('button').props().type).toBe('button');
+  });
 
   it('should render button if there is no href property', () => {
     const wrapper = mount(<Button />);
@@ -35,7 +40,7 @@ describe('ak-button/default-behaviour', () => {
 
   it('should render span when the button is disabled and has href property', () => {
     const wrapper = mount(<Button isDisabled href="test" />);
-    expect(wrapper.find('StyledSpan').length).toBe(1);
+    expect(wrapper.find('span').first().length).toBe(1);
     expect(wrapper.find('button').length).toBe(0);
     expect(wrapper.find('a').length).toBe(0);
   });
@@ -81,12 +86,12 @@ describe('ak-button/default-behaviour', () => {
 
   it('should render button with full container width', () => {
     const wrapper = mount(<Button shouldFitContainer />);
-    expect(wrapper.find('ButtonWrapper').prop('fit')).toBe(true);
+    expect(wrapper.find(InnerWrapper).prop('fit')).toBe(true);
   });
 
   it('should render button without full container width', () => {
     const wrapper = mount(<Button />);
-    expect(wrapper.find('ButtonWrapper').prop('fit')).toBe(false);
+    expect(wrapper.find(InnerWrapper).prop('fit')).toBe(false);
   });
 
   it('should be able to render both of the icons', () => {
@@ -127,7 +132,7 @@ describe('ak-button/default-behaviour', () => {
         button
       </Button>,
     );
-    wrapper.find('button').simulate('click');
+    wrapper.find(InnerWrapper).simulate('click');
     expect(spy).toHaveBeenCalledTimes(0);
   });
 
@@ -148,31 +153,6 @@ describe('ak-button/default-behaviour', () => {
     expect(wrapper.find('button').is('[tabIndex=0]')).toBe(true);
   });
 
-  it('should set accessibility attributes', () => {
-    expect(mount(<Button />).find('button[aria-haspopup]').length).toBe(0);
-    expect(mount(<Button />).find('button[aria-expanded]').length).toBe(0);
-    expect(mount(<Button />).find('button[aria-controls]').length).toBe(0);
-    expect(mount(<Button />).find('button[aria-label]').length).toBe(0);
-    expect(mount(<Button />).find('button[id]').length).toBe(0);
-    expect(
-      mount(<Button ariaHaspopup />).find('button[aria-haspopup=true]').length,
-    ).toBe(1);
-    expect(
-      mount(<Button ariaExpanded />).find('button[aria-expanded=true]').length,
-    ).toBe(1);
-    expect(
-      mount(<Button ariaControls="test" />).find('button[aria-controls="test"]')
-        .length,
-    ).toBe(1);
-    expect(
-      mount(<Button ariaLabel="test" />).find('button[aria-label="test"]')
-        .length,
-    ).toBe(1);
-    expect(mount(<Button id="test" />).find('button[id="test"]').length).toBe(
-      1,
-    );
-  });
-
   it('should trigger onFocus handler on focus', () => {
     const spy = jest.fn();
     const wrapper = mount(
@@ -180,7 +160,7 @@ describe('ak-button/default-behaviour', () => {
         button
       </Button>,
     );
-    const button = wrapper.find('StyledButton');
+    const button = wrapper.find('button');
     button.prop('onFocus')!({} as any);
     expect(spy).toHaveBeenCalled();
   });
@@ -204,49 +184,12 @@ describe('ak-button/default-behaviour', () => {
       const wrapper = mount(<Button>Some text</Button>);
       expect(wrapper.find(Spinner).length).toEqual(0);
     });
+
     it('set the opacity of the text to 0 when isLoading is true', () => {
-      const wrapper = mount(<Button isLoading>Some text</Button>);
-      expect(
-        wrapper
-          .find(ButtonContent)
-          .find('span')
-          .get(0).props.style.opacity,
-      ).toEqual(0);
-    });
-    it('set the iconBefore opacity to 0 when isLoading', () => {
-      const wrapper = mount(
-        <Button isLoading iconBefore={<AtlassianIcon />}>
-          Some text
-        </Button>,
-      );
-      expect(
-        wrapper
-          .find(IconWrapper)
-          .find('span')
-          .get(0).props.style.opacity,
-      ).toEqual(0);
-    });
-    it('set the iconAfter opacity to 0 when isLoading', () => {
-      const wrapper = mount(
-        <Button isLoading iconAfter={<AtlassianIcon />}>
-          Some text
-        </Button>,
-      );
-      expect(
-        wrapper
-          .find(IconWrapper)
-          .find('span')
-          .get(0).props.style.opacity,
-      ).toEqual(0);
-    });
-    it('set the opacity of the text to undefined when isLoading is false', () => {
-      const wrapper = mount(<Button>Some text</Button>);
-      expect(
-        wrapper
-          .find(ButtonContent)
-          .find('span')
-          .get(0).props.style.opacity,
-      ).toEqual(1);
+      const wrapper = renderer
+        .create(<Button isLoading>Some text</Button>)
+        .toJSON();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 
@@ -257,8 +200,30 @@ describe('ak-button/default-behaviour', () => {
         button
       </Button>,
     );
-    const button = wrapper.find('StyledButton');
+    const button = wrapper.find('button');
     button.prop('onBlur')!({} as any);
     expect(spy).toHaveBeenCalled();
   });
+
+  cases(
+    'onMouse* prop is called',
+    ({ key }: { key: string }) => {
+      const spy = jest.fn();
+      const onMouseHandler = { [key]: spy };
+      const wrapper = mount(<Button {...onMouseHandler}>Button</Button>);
+      const button = wrapper.find('button');
+      const event = {
+        preventDefault: () => {},
+      } as React.MouseEvent<HTMLElement>;
+      // @ts-ignore
+      button.prop(key)!(event);
+      expect(spy).toHaveBeenCalled();
+    },
+    [
+      { key: 'onMouseDown' },
+      { key: 'onMouseUp' },
+      { key: 'onMouseEnter' },
+      { key: 'onMouseLeave' },
+    ],
+  );
 });

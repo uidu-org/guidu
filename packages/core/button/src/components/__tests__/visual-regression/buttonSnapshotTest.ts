@@ -8,7 +8,7 @@ describe('Snapshot Test', () => {
     const url = getExampleUrl(
       'core',
       'button',
-      'ButtonAppearances',
+      'Appearances',
       // @ts-ignore
       global.__BASEURL__,
     );

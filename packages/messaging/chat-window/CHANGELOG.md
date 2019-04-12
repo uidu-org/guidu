@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.4
+- [patch] :
+
+  - Compiled
+
 ## 0.1.3
 - [patch] :
 

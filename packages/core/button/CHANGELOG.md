@@ -1,29 +1,93 @@
 # @atlaskit/button
 
-## 0.1.30
-- [patch] :
+## 12.0.0
+- [major] [1e826b2966](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e826b2966):
 
-  - Big component rewrite, fix bolt dev environmnet"
+  ###️ Highlights
 
-## 0.1.29
-- [patch] :
+  - **New theming API** - Button now supports the new Atlaskit theming API, which allows for powerful custom theming of Buttons and
+    its internal components.
+  - **Speed improvements** - Button has been re-written from the ground up - on heavy-load benchmarks, Button is twice as fast
+    (taking 48% of the time to load).
+  - **Emotion support** - Button is now built using Emotion 10! This is part of a wider push
+    for Emotion across all Atlaskit components.
 
-  - Added version.json
+  ### Breaking Changes:
 
-## 0.1.28
-- [patch] :
+  - The old theming API is no longer supported.
+  - Styling a Button using Styled Components is no longer supported.
+  - Button exports a Theme to use as context instead of using Styled Components' ThemeProvider.
+  - Camel-case ARIA props have been renamed (**ariaExpanded**, **ariaHaspopup** and **ariaLabel**).
 
-  - Flatten dist
+  See the [upgrade guide](atlaskit.atlassian.com/packages/core/button/docs/upgrade-guide) for more details
 
-## 0.1.27
-- [patch] :
+## 11.0.11
+- [patch] [f8d92ffc5e](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/f8d92ffc5e):
 
-  - Compiled typescript
+  - Revert the change to consume entry points from theme
 
-## 0.1.26
-- [patch] :
+## 11.0.10
+- [patch] [5e3ad7f751](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/5e3ad7f751):
 
-  - Publish media components, added message 0.1.0
+  - Importing theme components from the root theme package instead of the theme build file
+
+## 11.0.9
+- [patch] [872b3b905a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/872b3b905a):
+
+  - Updates theme to the version which exposes multiple entry points
+
+## 11.0.8
+- [patch] [22ce87801e](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/22ce87801e):
+
+  - Optimised usages of theme in button using multiple entry points
+
+## 11.0.7
+- [patch] [d13fad66df](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d13fad66df):
+
+  - Enable esModuleInterop for typescript, this allows correct use of default exports
+
+## 11.0.6
+- Updated dependencies [fd940a833b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/fd940a833b):
+  - @atlaskit/spinner@10.0.4
+
+## 11.0.5
+- [patch] [98e11001ff](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/98e11001ff):
+
+  - Removes duplicate babel-runtime dependency
+
+## 11.0.4
+- Updated dependencies [986c5e47c8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/986c5e47c8):
+  - @atlaskit/spinner@10.0.2
+
+## 11.0.3
+- [patch] [59d4ab031b](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/59d4ab031b):
+
+  - Call mouse handlers (e.g. onMouseDown) which are passed in as props
+
+## 11.0.2
+- [patch] [1bcaa1b991](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1bcaa1b991):
+
+  - Add npmignore for index.ts to prevent some jest tests from resolving that instead of index.js
+
+## 11.0.1
+- [patch] [90a14be594](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/90a14be594):
+
+  - Fix broken type-helpers
+
+## 11.0.0
+- [major] [9d5cc39394](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9d5cc39394):
+
+  - Dropped ES5 distributables from the typescript packages
+
+## 10.1.3
+- Updated dependencies [76299208e6](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/76299208e6):
+  - @atlaskit/icon@16.0.4
+  - @atlaskit/docs@7.0.0
+  - @atlaskit/analytics-next@4.0.0
+  - @atlaskit/checkbox@6.0.0
+  - @atlaskit/logo@10.0.0
+  - @atlaskit/spinner@10.0.0
+  - @atlaskit/theme@8.0.0
 
 ## 10.1.2
 - Updated dependencies [d7ef59d432](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d7ef59d432):
@@ -38,7 +102,7 @@
   - @atlaskit/icon@15.0.2
   - @atlaskit/logo@9.2.6
   - @atlaskit/spinner@9.0.13
-  - @uidu/theme@7.0.1
+  - @atlaskit/theme@7.0.1
   - @atlaskit/docs@6.0.0
 
 ## 10.1.0
@@ -53,7 +117,7 @@
   - @atlaskit/icon@15.0.1
   - @atlaskit/logo@9.2.5
   - @atlaskit/spinner@9.0.12
-  - @uidu/theme@7.0.0
+  - @atlaskit/theme@7.0.0
 
 ## 10.0.3
 - [patch] [76a8f1c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/76a8f1c):
@@ -119,7 +183,7 @@
 
 ## 9.0.6
 - [patch] Updated dependencies [df22ad8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/df22ad8)
-  - @uidu/theme@6.0.0
+  - @atlaskit/theme@6.0.0
   - @atlaskit/spinner@9.0.6
   - @atlaskit/icon@13.2.5
   - @atlaskit/checkbox@4.0.4
@@ -130,7 +194,7 @@
 - [patch] Updated dependencies [a4bd557](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a4bd557)
   - @atlaskit/analytics-next@3.0.4
   - @atlaskit/checkbox@4.0.3
-  - @uidu/theme@5.1.3
+  - @atlaskit/theme@5.1.3
   - @atlaskit/spinner@9.0.5
   - @atlaskit/icon@13.2.4
 
@@ -138,7 +202,7 @@
 - [patch] Updated dependencies [acd86a1](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/acd86a1)
   - @atlaskit/icon@13.2.2
   - @atlaskit/checkbox@4.0.2
-  - @uidu/theme@5.1.2
+  - @atlaskit/theme@5.1.2
   - @atlaskit/spinner@9.0.4
   - @atlaskit/analytics-next@3.0.3
   - @atlaskit/docs@5.0.2
@@ -148,7 +212,7 @@
 - [patch] Updated dependencies [7e331b5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7e331b5)
   - @atlaskit/analytics-next@3.0.2
   - @atlaskit/checkbox@4.0.1
-  - @uidu/theme@5.1.1
+  - @atlaskit/theme@5.1.1
   - @atlaskit/spinner@9.0.3
   - @atlaskit/icon@13.2.1
 
@@ -169,14 +233,14 @@
 - [major] Updated dependencies [563a7eb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/563a7eb)
   - @atlaskit/analytics-next@3.0.0
   - @atlaskit/checkbox@4.0.0
-  - @uidu/theme@5.0.0
+  - @atlaskit/theme@5.0.0
   - @atlaskit/spinner@9.0.0
   - @atlaskit/docs@5.0.0
   - @atlaskit/icon@13.0.0
 - [major] Updated dependencies [7edb866](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7edb866)
   - @atlaskit/analytics-next@3.0.0
   - @atlaskit/checkbox@4.0.0
-  - @uidu/theme@5.0.0
+  - @atlaskit/theme@5.0.0
   - @atlaskit/spinner@9.0.0
   - @atlaskit/docs@5.0.0
   - @atlaskit/icon@13.0.0
@@ -225,7 +289,7 @@
 ## 8.1.2
 - [patch] Clean Changelogs - remove duplicates and empty entries [e7756cd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e7756cd)
 - [patch] Updated dependencies [e7756cd](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e7756cd)
-  - @uidu/theme@4.0.4
+  - @atlaskit/theme@4.0.4
   - @atlaskit/spinner@7.0.2
   - @atlaskit/checkbox@3.0.6
   - @atlaskit/icon@12.1.2
@@ -233,7 +297,7 @@
 ## 8.1.1
 - [patch] Update changelogs to remove duplicate [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
 - [patch] Updated dependencies [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
-  - @uidu/theme@4.0.3
+  - @atlaskit/theme@4.0.3
   - @atlaskit/spinner@7.0.1
   - @atlaskit/icon@12.1.1
   - @atlaskit/analytics-next@2.1.8
@@ -246,7 +310,7 @@
   - @atlaskit/icon@12.1.0
   - @atlaskit/checkbox@3.0.4
   - @atlaskit/docs@4.1.0
-  - @uidu/theme@4.0.2
+  - @atlaskit/theme@4.0.2
   - @atlaskit/analytics-next@2.1.7
 
 ## 8.0.1
@@ -255,7 +319,7 @@
   - @atlaskit/icon@12.0.1
   - @atlaskit/analytics-next@2.1.5
   - @atlaskit/checkbox@3.0.1
-  - @uidu/theme@4.0.1
+  - @atlaskit/theme@4.0.1
   - @atlaskit/spinner@6.0.1
   - @atlaskit/docs@4.0.1
 
@@ -265,7 +329,7 @@
   - @atlaskit/icon@12.0.0
   - @atlaskit/analytics-next@2.1.4
   - @atlaskit/checkbox@3.0.0
-  - @uidu/theme@4.0.0
+  - @atlaskit/theme@4.0.0
   - @atlaskit/spinner@6.0.0
   - @atlaskit/docs@4.0.0
 
@@ -273,7 +337,7 @@
 - [patch] Updated dependencies [d662caa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d662caa)
   - @atlaskit/icon@11.3.0
   - @atlaskit/analytics-next@2.1.1
-  - @uidu/theme@3.2.2
+  - @atlaskit/theme@3.2.2
   - @atlaskit/docs@3.0.4
 
 ## 7.2.4

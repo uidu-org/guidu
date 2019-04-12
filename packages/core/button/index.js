@@ -1,4 +1,4 @@
-export { default, defaultProps } from './components/Button';
+export { default } from './components/Button';
 export { default as ButtonGroup } from './components/ButtonGroup';
-export { themeNamespace } from './theme';
+export { Theme } from './theme';
 //# sourceMappingURL=index.js.map

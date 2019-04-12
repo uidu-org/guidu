@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-renderer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Message renderer",
   "main": "index.js",
   "uidu:src": "src/index.ts",

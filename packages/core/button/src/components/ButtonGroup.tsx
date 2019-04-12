@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import * as React from 'react';
-import withDeprecationWarnings from './withDeprecationWarnings';
-import Group, { GroupItem } from '../styled/ButtonGroup';
+import { gridSize } from '@uidu/theme';
 import { ButtonAppearances } from '../types';
 
 export type ButtonGroupProps = {
@@ -8,27 +9,37 @@ export type ButtonGroupProps = {
   appearance?: ButtonAppearances;
 };
 
-class ButtonGroup extends React.Component<ButtonGroupProps> {
+export const groupItemStyles = {
+  flex: '1 0 auto',
+  display: 'flex',
+
+  /* margins don't flip when the layout uses dir="rtl", whereas pseudos do */
+  '& + &::before': {
+    content: `''`,
+    display: 'inline-block',
+    width: `${gridSize() / 2}px`,
+  },
+};
+
+export default class ButtonGroup extends React.Component<ButtonGroupProps> {
   render() {
     const { appearance, children } = this.props;
 
     return (
-      <Group>
+      <div css={{ display: 'inline-flex' }}>
         {React.Children.map(children, (child, idx) => {
           if (!child) {
             return null;
           }
           return (
-            <GroupItem key={idx}>
+            <div key={idx} css={groupItemStyles}>
               {appearance
                 ? React.cloneElement(child as JSX.Element, { appearance })
                 : child}
-            </GroupItem>
+            </div>
           );
         })}
-      </Group>
+      </div>
     );
   }
 }
-
-export default withDeprecationWarnings(ButtonGroup);

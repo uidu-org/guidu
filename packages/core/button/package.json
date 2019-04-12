@@ -13,12 +13,17 @@
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
   "dependencies": {
+    "@atlaskit/analytics-next-types": "^3.2.0",
     "@atlaskit/type-helpers": "^2.0.1",
     "@babel/runtime": "^7.0.0",
+    "@emotion/core": "^10.0.10",
+    "@types/react-router-dom": "^4.3.2",
     "@uidu/analytics": "^0.1.4",
     "@uidu/spinner": "^0.1.2",
     "@uidu/theme": "^0.1.4",
     "babel-runtime": "^6.26.0",
+    "jest-emotion": "^10.0.10",
+    "memoize-one": "^5.0.0",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
@@ -33,7 +38,10 @@
     "@uidu/docs": "^0.1.22",
     "@uidu/form": "^0.1.23",
     "enzyme": "^3.9.0",
+    "jest-emotion": "^10.0.10",
+    "jest-in-case": "^1.0.2",
     "react-dom": "^16.4.0",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.8.3"
   }
 }

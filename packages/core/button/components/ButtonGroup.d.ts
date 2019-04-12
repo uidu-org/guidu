@@ -4,7 +4,15 @@ export declare type ButtonGroupProps = {
     /** The appearance to apply to all buttons. */
     appearance?: ButtonAppearances;
 };
-declare const _default: React.ComponentClass<ButtonGroupProps & {
-    appearance?: ButtonAppearances;
-}, any>;
-export default _default;
+export declare const groupItemStyles: {
+    flex: string;
+    display: string;
+    '& + &::before': {
+        content: string;
+        display: string;
+        width: string;
+    };
+};
+export default class ButtonGroup extends React.Component<ButtonGroupProps> {
+    render(): JSX.Element;
+}

@@ -7,7 +7,7 @@ export type MentionItems = {
   /** Trigger is the string used to activate this mentionable item (es: @)*/
   trigger: string;
   /** Data is the list mention is matched against */
-  data: Array<> | Promise<>;
+  data: Array<any> | Promise<any>;
   /** Function to render suggestion */
   renderSuggestion: (
     entry: string,
@@ -23,7 +23,7 @@ export type FieldMentionsProps = {
   /** Items to mention. */
   items: Array<MentionItems>;
   /** Function to handle display. */
-  displayTransform: (id: string, display: string, type: string) => void;
+  displayTransform: (id: string, display: string, type: string) => string;
   /** Function to handle display. */
   suggestionsPortalHost: (element: HTMLElement) => void;
 };
