@@ -15,4 +15,4 @@ export declare class NavigationBase extends Component<NavigationProps, {}> {
     readonly selectedIndex: number;
     render(): JSX.Element;
 }
-export declare const Navigation: React.ComponentClass<Pick<NavigationProps, "items" | "onChange" | "selectedItem">, any>;
+export declare const Navigation: React.ComponentClass<Pick<NavigationProps, "onChange" | "items" | "selectedItem">, any>;

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-store",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Media Store API Web Client Library",
   "uidu:src": "src/index.ts",
   "module": "index.js",

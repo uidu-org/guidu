@@ -1,0 +1,27 @@
+declare const _default: {
+    zh: string;
+    cs: string;
+    da: string;
+    nl: string;
+    en: string;
+    en_GB: string;
+    et: string;
+    fi: string;
+    fr: string;
+    de: string;
+    hu: string;
+    is: string;
+    it: string;
+    ja: string;
+    ko: string;
+    nb: string;
+    pl: string;
+    pt_BR: string;
+    pt_PT: string;
+    ro: string;
+    ru: string;
+    sk: string;
+    es: string;
+    sv: string;
+};
+export default _default;

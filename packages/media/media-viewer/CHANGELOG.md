@@ -1,5 +1,10 @@
 # @atlaskit/media-viewer
 
+## 0.1.7
+- [patch] :
+
+  - Build and fix version
+
 ## 0.1.6
 - [patch] :
 

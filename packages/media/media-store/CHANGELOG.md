@@ -1,5 +1,10 @@
 # @atlaskit/media-store
 
+## 0.1.5
+- [patch] :
+
+  - Build and fix version
+
 ## 0.1.4
 - [patch] :
 
