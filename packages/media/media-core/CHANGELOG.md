@@ -1,5 +1,10 @@
 # @atlaskit/media-core
 
+## 0.1.4
+- [patch] :
+
+  - Proper dist file indication
+
 ## 0.1.3
 - [patch] :
 
