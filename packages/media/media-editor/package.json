@@ -2,12 +2,9 @@
   "name": "@uidu/media-editor",
   "version": "0.1.2",
   "description": "Media component for image annotations",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "uidu:src": "src/index.tsx",
+  "module": "index.js",
+  "types": "index.d.ts",
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

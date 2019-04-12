@@ -2,12 +2,9 @@
   "name": "@uidu/media-image",
   "version": "0.1.2",
   "description": "Atlassian Editor component for JIRA",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
+  "uidu:src": "src/index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",
