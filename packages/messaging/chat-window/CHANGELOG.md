@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.6
+- [patch] :
+
+  - Fix groupByMessager function
+
 ## 0.1.5
 - [patch] :
 

@@ -22,7 +22,7 @@ export const groupByDay = (data: Array<any>): Object =>
 
 export const groupByMessager = (data: Array<any>): Array<any> =>
   data.reduce((accumulator, message, index) => {
-    const lastMessage = index > 0 ? accumulator[index - 1] : null;
+    const lastMessage = index > 0 ? accumulator[accumulator.length - 1] : null;
     if (
       lastMessage &&
       lastMessage.messager.id === message.messager.id &&
@@ -30,9 +30,13 @@ export const groupByMessager = (data: Array<any>): Array<any> =>
       //  &&
       // moment(message.createdAt).diff(lastMessage.createdAt, 'minutes') <= 5
     ) {
-      accumulator[index - 1].messages.push(message);
+      accumulator[accumulator.length - 1].messages.push(message);
     } else {
-      accumulator.push({ ...message, messages: [message] });
+      accumulator.push({
+        kind: message.kind,
+        messager: message.messager,
+        messages: [message],
+      });
     }
 
     return accumulator;

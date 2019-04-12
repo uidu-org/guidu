@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import moment from 'moment';
 export var sortByDay = function (data) {
     return data.sort(function (a, b) {
@@ -31,17 +20,21 @@ export var groupByDay = function (data) {
 };
 export var groupByMessager = function (data) {
     return data.reduce(function (accumulator, message, index) {
-        var lastMessage = index > 0 ? accumulator[index - 1] : null;
+        var lastMessage = index > 0 ? accumulator[accumulator.length - 1] : null;
         if (lastMessage &&
             lastMessage.messager.id === message.messager.id &&
             lastMessage.kind === message.kind
         //  &&
         // moment(message.createdAt).diff(lastMessage.createdAt, 'minutes') <= 5
         ) {
-            accumulator[index - 1].messages.push(message);
+            accumulator[accumulator.length - 1].messages.push(message);
         }
         else {
-            accumulator.push(__assign({}, message, { messages: [message] }));
+            accumulator.push({
+                kind: message.kind,
+                messager: message.messager,
+                messages: [message],
+            });
         }
         return accumulator;
     }, []);
