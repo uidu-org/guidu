@@ -1,5 +1,10 @@
 # @atlaskit/media-store
 
+## 0.1.6
+- [patch] :
+
+  - FIX version path
+
 ## 0.1.5
 - [patch] :
 

@@ -1,5 +1,10 @@
 # @uidu/media-ui
 
+## 0.1.5
+- [patch] :
+
+  - FIX version path
+
 ## 0.1.4
 - [patch] :
 
