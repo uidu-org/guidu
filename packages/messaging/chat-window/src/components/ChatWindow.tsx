@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactChatView from 'react-chatview';
 
 import Message, {
@@ -17,12 +17,20 @@ import { ChatWindowType } from 'src/types';
 
 export default class ChatWindow extends Component<ChatWindowType> {
   static defaultProps = {
+    betweenMinutes: 5,
     messageable: {},
     fetchMessages: () => {},
   };
 
   render() {
-    const { messageable, fetchMessages, ...otherProps } = this.props;
+    const {
+      messageable,
+      fetchMessages,
+      mentionables,
+      betweenMinutes,
+      actions,
+      ...otherProps
+    } = this.props;
     const { messages } = messageable;
 
     // if (!messages || messages.isFetching) {
@@ -56,11 +64,11 @@ export default class ChatWindow extends Component<ChatWindowType> {
             {Object.keys(groupedByDay).map(day => {
               const todayMessages = groupedByDay[day];
               return (
-                <div key={day}>
+                <Fragment key={day}>
                   <div className="d-flex justify-content-center sticky-top small text-muted py-3">
                     {day}
                   </div>
-                  {groupByMessager(todayMessages)
+                  {groupByMessager(todayMessages, betweenMinutes)
                     .reverse()
                     .map((messageGroup: any, index: number) => {
                       return (
@@ -70,12 +78,19 @@ export default class ChatWindow extends Component<ChatWindowType> {
                           messages={messageGroup.messages}
                           kind={messageGroup.kind}
                         >
-                          {({ messager, messages }) =>
-                            messages.reverse().map(message => (
+                          {({
+                            messager,
+                            messages,
+                          }: {
+                            messager: any;
+                            messages: any;
+                          }) =>
+                            messages.reverse().map((message: any) => (
                               <Message
                                 key={message.id}
                                 message={message}
                                 messager={messager}
+                                mentionables={mentionables}
                               >
                                 {({
                                   editing,
@@ -91,13 +106,12 @@ export default class ChatWindow extends Component<ChatWindowType> {
                                     />
                                     <MessageActionMore
                                       onOpenChange={onDropdownChange}
-                                      actions={[
-                                        { name: 'Edit', onClick: setEditing },
-                                        // { name: 'Pin' },
-                                        { name: 'Forward' },
-                                        { name: 'Copy' },
-                                        { name: 'Set reminder' },
-                                      ]}
+                                      actions={actions({
+                                        onDropdownChange,
+                                        setEditing,
+                                        editing,
+                                        message,
+                                      })}
                                     />
                                   </MessageActions>,
                                   message.reactions && (
@@ -112,12 +126,17 @@ export default class ChatWindow extends Component<ChatWindowType> {
                         </MessageGroup>
                       );
                     })}
-                </div>
+                </Fragment>
               );
             })}
           </ReactChatView>
         </div>
-        <MessagesForm {...otherProps} message={{}} messageable={messageable} />
+        <MessagesForm
+          {...otherProps}
+          mentionables={mentionables}
+          message={{}}
+          messageable={messageable}
+        />
       </div>
     );
   }

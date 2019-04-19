@@ -39,7 +39,7 @@ export default class Reactions extends Component<*> {
         }
         triggerType="default"
         position="left middle"
-        boundariesElement="window"
+        boundariesElement="scrollParent"
         onOpenChange={onOpenChange}
       >
         <DropdownItemGroup>

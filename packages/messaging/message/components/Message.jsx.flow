@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import moment from 'moment';
 import classNames from 'classnames';
 import MessageRenderer from '@uidu/message-renderer';
 import MessageForm from '@uidu/message-form';
-// import { autolinker, automentioner } from 'utils';
-
 import MessagesAttachments from './MessageAttachments';
 
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
@@ -39,19 +37,10 @@ export default class Message extends Component {
 
     return (
       <StyledMessage
-        className="message mt-2 hoverable position-relative"
+        className="message mt-1 hoverable position-relative"
         onMouseEnter={() => this.setState({ hovered: true })}
         onMouseLeave={() => this.setState({ hovered: isDropdownOpen })}
       >
-        <small
-          className="text-muted ml-2 d-hover position-absolute"
-          style={{
-            right: '8px',
-            bottom: '2px',
-          }}
-        >
-          {moment(message.createdAt).format('HH:mm')}
-        </small>
         {editing ? (
           <div className="m-3">
             <MessageForm
@@ -62,14 +51,28 @@ export default class Message extends Component {
             />
           </div>
         ) : (
-          <p className="mb-0">
-            <MessageRenderer tagName="fragment" content={message.body} />
-          </p>
+          <Fragment>
+            <small
+              className="text-muted ml-2 d-hover position-absolute"
+              style={{
+                backgroundColor: '#f8f9fa',
+                right: '2px',
+                bottom: '2px',
+                padding: '0 0 0 1rem',
+              }}
+            >
+              {moment(message.createdAt).format('HH:mm')}
+            </small>
+            <div className="mb-0">
+              <MessageRenderer tagName="fragment" content={message.body} />
+            </div>
+          </Fragment>
         )}
         {(message.attachments || []).length > 0 && (
           <MessagesAttachments attachments={message.attachments} />
         )}
-        {children &&
+        {!editing &&
+          children &&
           children({
             editing,
             hovered,

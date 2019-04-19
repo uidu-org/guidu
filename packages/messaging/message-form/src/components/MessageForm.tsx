@@ -14,43 +14,9 @@ import { Picker } from 'emoji-mart';
 import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
 import FieldMentions, { defaultStyle } from '@uidu/field-mentions';
 import Dropdown, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
-// import { Input, Mentions as MentionsInput } from '@uidu/inputs';
-// import * as loadImage from 'blueimp-load-image';
-// import {
-//   mentionableMembers,
-//   mentionableTeams,
-//   mentionableContacts,
-// } from 'apps/teams/utils';
-
-// import { DirectUpload } from 'activestorage';
-
 import 'emoji-mart/css/emoji-mart.css';
 
-// import AttachmentsNew from './attachments/new';
-// import Attachment from './attachments/show';
-
 import { MessageFormProps, MessageFormState } from '../types';
-
-interface GitHubJSONResponse {
-  items: Array<any>;
-}
-
-function fetchUsers(query: string, callback: () => void): any {
-  if (!query) {
-    return Promise.resolve([]);
-  }
-
-  return (
-    fetch(`https://api.github.com/search/users?q=${query}`)
-      .then((response: Response) => response.json())
-      // Transform the users to what react-mentions expects
-      .then((json: GitHubJSONResponse) =>
-        json.items.map(user => ({ display: user.login, id: user.login })),
-      )
-      .then(callback)
-      .catch(() => [])
-  );
-}
 
 let container: any;
 
@@ -63,6 +29,7 @@ export default class MessagesForm extends React.Component<
   private mentionsComponentInput: React.RefObject<any> = React.createRef();
 
   static defaultProps = {
+    actions: [],
     placeholder: 'Add your message...',
     onSubmit: () => {},
     onDismiss: () => {},
@@ -81,110 +48,6 @@ export default class MessagesForm extends React.Component<
         : this.thumbSender(),
     };
   }
-
-  // onAdd = files => {
-  //   Array.from(files).forEach((file, index) => {
-  //     this.add(file, index + this.state.attachments.length);
-  //     this.preview(file, index + this.state.attachments.length);
-  //     this.upload(file, index + this.state.attachments.length);
-  //   });
-  // };
-
-  // add = (file, index) => {
-  //   this.setState({
-  //     attachments: [...this.state.attachments, { position: index }],
-  //     submitLabel: this.messageSender(),
-  //   });
-  // };
-
-  // preview = (file, index) => {
-  //   loadImage.parseMetaData(file, data => {
-  //     let orientation = 0;
-  //     if (data.exif) {
-  //       orientation = data.exif.get('Orientation');
-  //     }
-  //     loadImage(
-  //       file,
-  //       () => {
-  //         const reader = new window.FileReader();
-  //         if (file.type.split('/')[0] === 'image') {
-  //           reader.readAsDataURL(file);
-  //           reader.onloadend = () => {
-  //             const base64data = reader.result;
-  //             this.setState({
-  //               attachments: [
-  //                 ...this.state.attachments.slice(0, index),
-  //                 {
-  //                   ...this.state.attachments[index],
-  //                   filename: file.name,
-  //                   type: file.type.split('/')[1],
-  //                   previewUrl: base64data,
-  //                 },
-  //                 ...this.state.attachments.slice(index + 1),
-  //               ],
-  //             });
-  //           };
-  //         } else {
-  //           this.setState({
-  //             attachments: [
-  //               ...this.state.attachments.slice(0, index),
-  //               {
-  //                 ...this.state.attachments[index],
-  //                 filename: file.name,
-  //                 type: file.type.split('/')[1],
-  //                 // previewUrl: base64data,
-  //               },
-  //               ...this.state.attachments.slice(index + 1),
-  //             ],
-  //           });
-  //         }
-  //       },
-  //       {
-  //         orientation,
-  //         canvas: true,
-  //       },
-  //     );
-  //   });
-  // };
-
-  // upload = (file, index) => {
-  //   const upload = new DirectUpload(
-  //     file,
-  //     '/rails/active_storage/direct_uploads',
-  //   );
-
-  //   upload.create((error, blob) => {
-  //     if (error) {
-  //       // Handle the error
-  //     } else {
-  //       this.setState({
-  //         attachments: [
-  //           ...this.state.attachments.slice(0, index),
-  //           {
-  //             ...this.state.attachments[index],
-  //             ...blob,
-  //           },
-  //           ...this.state.attachments.slice(index + 1),
-  //         ],
-  //       });
-  //     }
-  //   });
-  // };
-
-  // remove = index => {
-  //   this.setState(
-  //     {
-  //       attachments: this.state.attachments.filter((a, i) => index !== i),
-  //     },
-  //     () => {
-  //       if (this.state.attachments.length === 0) {
-  //         this.setState({
-  //           submitLabel: this.thumbSender(),
-  //         });
-  //       }
-  //     },
-  //   );
-  // };
 
   isValid = (canSubmit: boolean): boolean => {
     if (this.state.attachments.length > 0) {
@@ -253,17 +116,15 @@ export default class MessagesForm extends React.Component<
 
   render() {
     const {
-      // tasks,
-      // teams,
+      actions,
       message,
       placeholder,
-      // organizationMembers,
-      // callbacks
+      mentionables,
       onDismiss,
       onSubmit,
     } = this.props;
 
-    const { submitted } = this.state;
+    const { submitted, submitLabel } = this.state;
 
     return (
       <div
@@ -272,20 +133,6 @@ export default class MessagesForm extends React.Component<
           'border-top': !message.body,
         })}
       >
-        {/* {attachments.length > 0 && (
-          <div className="p-2 px-md-3 bg-light animated slideInBottom">
-            <div className="d-flex" style={{ overflowX: 'auto' }}>
-              {attachments.map((attachment, index) => (
-                <Attachment
-                  attachment={attachment}
-                  index={index}
-                  preview
-                  onRemove={this.remove}
-                />
-              ))}
-            </div>
-          </div>
-        )} */}
         <div
           id="suggestionPortal"
           style={{
@@ -311,7 +158,6 @@ export default class MessagesForm extends React.Component<
               submitLabel: this.thumbSender(),
               submitted: true,
             });
-            console.log(this.form);
             this.form.current.form.reset();
             onSubmit();
           }}
@@ -366,26 +212,16 @@ export default class MessagesForm extends React.Component<
                 >
                   <Smile size={18} />
                 </button>
-                {/* <AttachmentsNew
-                  className="btn btn-sm d-flex align-items-center mb-0 text-muted px-2 shadow-none mr-2"
-                  type="button"
-                  name="attachment[file]"
-                  attachable={this.props.message}
-                  attachments={this.state.attachments}
-                  onAdd={this.onAdd}
-                  multiple
-                >
-                  <Paperclip size={18} />
-                </AttachmentsNew> */}
-                {cloneElement(this.state.submitLabel, {
-                  loading,
-                  canSubmit: this.isValid(canSubmit),
-                })}
+                {submitLabel &&
+                  cloneElement(submitLabel, {
+                    loading,
+                    canSubmit: this.isValid(canSubmit),
+                  })}
               </div>
             );
           }}
         >
-          {!message.body && (
+          {!message.body && actions.length > 0 && (
             <Dropdown
               className="align-self-center"
               trigger={
@@ -397,30 +233,18 @@ export default class MessagesForm extends React.Component<
                 </button>
               }
             >
-              <DropdownItemGroup title="New...">
-                <DropdownItem>
-                  <Mic size="1rem" className="mr-2" />
-                  Audio message
-                </DropdownItem>
-                <DropdownItem>
-                  <BarChart2 size="1rem" className="mr-2" />
-                  Poll
-                </DropdownItem>
-                <DropdownItem>
-                  <Clock size="1rem" className="mr-2" />
-                  Reminder
-                </DropdownItem>
-              </DropdownItemGroup>
-              <DropdownItemGroup title="Add a file from...">
-                <DropdownItem>
-                  <Paperclip size="1rem" className="mr-2" />
-                  Your computer
-                </DropdownItem>
-                <DropdownItem>
-                  <BarChart2 size="1rem" className="mr-2" />
-                  Google Drive
-                </DropdownItem>
-              </DropdownItemGroup>
+              {actions.map(actionGroup => (
+                <DropdownItemGroup
+                  key={actionGroup.name}
+                  title={actionGroup.name}
+                >
+                  {actionGroup.children.map((action, index) => (
+                    <DropdownItem key={index} {...action.props}>
+                      {action.name}
+                    </DropdownItem>
+                  ))}
+                </DropdownItemGroup>
+              ))}
             </Dropdown>
           )}
           <div className="d-flex align-items-center flex-grow-1">
@@ -441,13 +265,7 @@ export default class MessagesForm extends React.Component<
               }}
               placeholder={placeholder}
               autoFocus={!!message.body}
-              items={[
-                {
-                  trigger: '@',
-                  type: 'User',
-                  data: fetchUsers,
-                },
-              ]}
+              items={mentionables}
               style={{
                 ...defaultStyle,
                 suggestions: {
@@ -460,8 +278,6 @@ export default class MessagesForm extends React.Component<
                     ...defaultStyle.suggestions.list,
                     maxHeight: '13rem',
                     overflow: 'auto',
-                    // display: 'flex',
-                    // flexDirection: 'column-reverse',
                   },
                 },
               }}
@@ -499,8 +315,6 @@ export default class MessagesForm extends React.Component<
             showPreview
             style={{
               width: '100%',
-              // position: 'relative',
-              // bottom: '64px',
               fontFamily: 'inherit',
               fontSize: 'inherit',
               color: 'inherit',

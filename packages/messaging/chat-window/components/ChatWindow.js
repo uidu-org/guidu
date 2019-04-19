@@ -11,7 +11,7 @@ var ChatWindow = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ChatWindow.prototype.render = function () {
-        var _a = this.props, messageable = _a.messageable, fetchMessages = _a.fetchMessages, otherProps = tslib_1.__rest(_a, ["messageable", "fetchMessages"]);
+        var _a = this.props, messageable = _a.messageable, fetchMessages = _a.fetchMessages, mentionables = _a.mentionables, otherProps = tslib_1.__rest(_a, ["messageable", "fetchMessages", "mentionables"]);
         var messages = messageable.messages;
         // if (!messages || messages.isFetching) {
         //   return (
@@ -37,7 +37,7 @@ var ChatWindow = /** @class */ (function (_super) {
                             .map(function (messageGroup, index) {
                             return (React.createElement(MessageGroup, { key: day + "-" + index, messager: messageGroup.messager, messages: messageGroup.messages, kind: messageGroup.kind }, function (_a) {
                                 var messager = _a.messager, messages = _a.messages;
-                                return messages.reverse().map(function (message) { return (React.createElement(Message, { key: message.id, message: message, messager: messager }, function (_a) {
+                                return messages.reverse().map(function (message) { return (React.createElement(Message, { key: message.id, message: message, messager: messager, mentionables: mentionables }, function (_a) {
                                     var editing = _a.editing, setEditing = _a.setEditing, hovered = _a.hovered, onDropdownChange = _a.onDropdownChange;
                                     return [
                                         React.createElement(MessageActions, { hovered: hovered },
@@ -56,7 +56,7 @@ var ChatWindow = /** @class */ (function (_super) {
                             }));
                         })));
                 }))),
-            React.createElement(MessagesForm, tslib_1.__assign({}, otherProps, { message: {}, messageable: messageable }))));
+            React.createElement(MessagesForm, tslib_1.__assign({}, otherProps, { mentionables: mentionables, message: {}, messageable: messageable }))));
     };
     ChatWindow.defaultProps = {
         messageable: {},

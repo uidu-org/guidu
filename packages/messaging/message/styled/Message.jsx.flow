@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledMessageEmoji = styled.div`
-  font-size: 3rem;
+  font-size: 2rem;
 `;
 
 export default styled.div`

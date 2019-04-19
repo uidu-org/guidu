@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MentionProps } from 'react-mentions';
 export interface Message {
     id?: number;
     body?: string;
@@ -8,14 +9,15 @@ export declare type MessageableProps = {
     messages: {
         hasMore: boolean;
         isFetching: boolean;
-        messages: Array<any>;
+        messages: Array<Message>;
     };
 };
 export declare type MessageFormProps = {
     /** The base styling to apply to the button. */
-    placeholder: string;
+    placeholder?: string;
     messageable: MessageableProps;
     message: Message;
+    mentionables?: Array<MentionProps>;
     createMessage?: (messageable: MessageableProps, model: any) => any;
     updateMessage?: (messageable: MessageableProps, message: Message, model: any) => any;
     onDismiss: () => void;

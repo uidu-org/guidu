@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MentionProps } from 'react-mentions';
 
 export interface Message {
   id?: number;
@@ -10,22 +11,46 @@ export type MessageableProps = {
   messages: {
     hasMore: boolean;
     isFetching: boolean;
-    messages: Array<any>;
+    messages: Array<Message>;
   };
 };
 
+export type MessageFormActionProps = {
+  /** The base styling to apply to the button. */
+  name: string | React.ElementType;
+  /** The base styling to apply to the button. */
+  props: any;
+};
+
+export interface MessageFormActionsProps {
+  /** The base styling to apply to the button. */
+  name: string;
+  /** The base styling to apply to the button. */
+  children: Array<MessageFormActionProps>;
+}
+
 export type MessageFormProps = {
   /** The base styling to apply to the button. */
-  placeholder: string;
+  actions?: Array<MessageFormActionsProps>;
+  /** The base styling to apply to the button. */
+  placeholder?: string;
+  /** The base styling to apply to the button. */
   messageable: MessageableProps;
+  /** The base styling to apply to the button. */
   message: Message;
+  /** The base styling to apply to the button. */
+  mentionables?: Array<MentionProps>;
+  /** The base styling to apply to the button. */
   createMessage?: (messageable: MessageableProps, model: any) => any;
+  /** The base styling to apply to the button. */
   updateMessage?: (
     messageable: MessageableProps,
     message: Message,
     model: any,
   ) => any;
+  /** The base styling to apply to the button. */
   onDismiss: () => void;
+  /** The base styling to apply to the button. */
   onSubmit: () => void;
 };
 

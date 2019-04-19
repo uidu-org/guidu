@@ -7,6 +7,7 @@ export default function MessageActions({ children, hovered }) {
   if (!hovered) {
     return null;
   }
+
   return (
     <StyledMessageActions
       hovered={hovered}

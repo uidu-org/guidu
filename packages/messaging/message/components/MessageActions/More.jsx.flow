@@ -20,7 +20,7 @@ export default class More extends Component<*> {
               tag="button"
               className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
               placement="top"
-              content="Add a reaction"
+              content="More"
               delay={0}
             >
               <MoreHorizontal size={16} />
@@ -28,12 +28,16 @@ export default class More extends Component<*> {
           }
           triggerType="default"
           position="top middle"
-          // boundariesElement="viewport"
+          boundariesElement="scrollParent"
           onOpenChange={onOpenChange}
         >
           <DropdownItemGroup>
             {actions.map(action => (
-              <DropdownItem key={action.name} onClick={action.onClick}>
+              <DropdownItem
+                key={action.name}
+                onClick={action.onClick}
+                {...action.props}
+              >
                 {action.name}
               </DropdownItem>
             ))}
