@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.31
+- [patch] :
+
+  - Release Stepper and animatedmenu
+
 ## 12.0.0
 - [major] [1e826b2966](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e826b2966):
 

@@ -25,7 +25,7 @@ function CardVideo(props) {
         });
     };
     var onTimeUpdate = function () {
-        var progress = (videoRef.currentTime / videoRef.duration) * 100;
+        var progress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
         setProgress(progress);
     };
     return (React.createElement(MediaWrap, tslib_1.__assign({ className: "microlink_card__media_video_wrapper", cardSize: cardSize, loading: loading, onClick: togglePlayback }, restProps),

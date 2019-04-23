@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.44
+- [patch] :
+
+  - Release Stepper and animatedmenu
+
 ## 0.1.43
 - [patch] :
 

@@ -72,22 +72,28 @@ export default class AtlaskitThemeProvider extends Component<
   ThemeProps,
 > {
   stylesheet: any;
+
   static defaultProps = {
     mode: DEFAULT_THEME_MODE,
   };
+
   static childContextTypes = {
     hasAtlaskitThemeProvider: PropTypes.bool,
   };
+
   static contextTypes = {
     hasAtlaskitThemeProvider: PropTypes.bool,
   };
+
   constructor(props: Props) {
     super(props);
     this.state = buildThemeState(props.mode);
   }
+
   getChildContext() {
     return { hasAtlaskitThemeProvider: true };
   }
+
   componentWillMount() {
     if (!this.context.hasAtlaskitThemeProvider && exenv.canUseDOM) {
       const css = getStylesheetResetCSS(this.state);
@@ -99,6 +105,7 @@ export default class AtlaskitThemeProvider extends Component<
       }
     }
   }
+
   componentWillReceiveProps(newProps: Props) {
     if (newProps.mode !== this.props.mode) {
       const newThemeState = buildThemeState(newProps.mode);
@@ -109,15 +116,17 @@ export default class AtlaskitThemeProvider extends Component<
       this.setState(newThemeState);
     }
   }
+
   componentWillUnmount() {
     if (this.stylesheet && document && document.head) {
       document.head.removeChild(this.stylesheet);
       delete this.stylesheet;
     }
   }
+
   render() {
     const { children } = this.props;
-    const theme = this.state.theme;
+    const { theme } = this.state;
     return (
       /* Wrapping the new provider around the old one provides forward
       compatibility when using the old provider for styled components. This

@@ -15,7 +15,7 @@ const mobileStyle = media.mobile`
   flex: 0 0 92px;
 `;
 
-export default styled.div`
+export default styled.div<any>`
   background: #e1e8ed no-repeat center center / cover;
   display: block;
   flex: 0 0 125px;

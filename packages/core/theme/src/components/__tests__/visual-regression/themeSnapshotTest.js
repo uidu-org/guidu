@@ -1,5 +1,8 @@
 // @flow
-import { getExampleUrl, takeScreenShot } from '@uidu/visual-regression/helper';
+import {
+  getExampleUrl,
+  takeScreenShot,
+} from '@atlaskit/visual-regression/helper';
 
 describe('Snapshot Test', () => {
   it('Theme colors should match production example', async () => {

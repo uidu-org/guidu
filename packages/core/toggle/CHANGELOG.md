@@ -1,5 +1,10 @@
 # @uidu/toggle
 
+## 0.1.5
+- [patch] :
+
+  - Release Stepper and animatedmenu
+
 ## 0.1.4
 - [patch] :
 

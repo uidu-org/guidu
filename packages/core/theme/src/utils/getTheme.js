@@ -10,7 +10,8 @@ export default function getTheme(
   if (props && props.theme && props.theme.__ATLASKIT_THEME__) {
     // $FlowFixMe - cannot narrow type between input types
     return props.theme.__ATLASKIT_THEME__;
-  } else if (props && props.theme && props.theme.mode) {
+  }
+  if (props && props.theme && props.theme.mode) {
     // $FlowFixMe - cannot narrow type between input types
     return props.theme;
   }

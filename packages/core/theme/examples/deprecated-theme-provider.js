@@ -9,12 +9,14 @@ type State = { themeMode: 'light' | 'dark' };
 
 export default class extends Component<Props, State> {
   state = { themeMode: 'light' };
+
   switchTheme = () => {
     const { themeMode } = this.state;
     this.setState({
       themeMode: themeMode === 'light' ? 'dark' : 'light',
     });
   };
+
   render() {
     const { themeMode } = this.state;
     return (

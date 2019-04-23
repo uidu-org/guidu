@@ -42,8 +42,11 @@ class Button extends Component<Props, State> {
   state = {
     hover: false,
   };
+
   onMouseEnter = () => this.setState({ hover: true });
+
   onMouseLeave = () => this.setState({ hover: false });
+
   render() {
     return (
       <Theme.Provider value={this.props.theme}>

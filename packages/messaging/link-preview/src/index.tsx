@@ -67,7 +67,7 @@ function LinkPreview<LinkPreviewProps>(props) {
 
     let imageUrl;
     let videoUrl;
-    let media = {};
+    let media: any = {};
     let isVideo = false;
 
     if (isNil(video)) {

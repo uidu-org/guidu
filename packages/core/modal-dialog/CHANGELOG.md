@@ -1,5 +1,10 @@
 # @atlaskit/modal-dialog
 
+## 0.1.4
+- [patch] :
+
+  - Release Stepper and animatedmenu
+
 ## 0.1.3
 - [patch] :
 

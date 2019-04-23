@@ -1,4 +1,4 @@
-/// <reference types="react" />
+/// <reference path="../theme/index.d.ts" />
 import { ThemeProps, ThemeTokens, ThemeMode, ThemeFallbacks } from './types';
 export declare const fallbacks: ThemeFallbacks;
 export declare const baseTheme: {
@@ -392,9 +392,4 @@ export declare function applyPropertyStyle(property: string, { appearance, state
     state?: string;
     mode?: ThemeMode;
 }, theme: any): any;
-export declare const Theme: {
-    Consumer: import("react").ElementType<ThemeTokens>;
-    Provider: import("react").ElementType<{
-        value: (tokens: ThemeTokens, props: ThemeProps) => ThemeTokens;
-    }>;
-};
+export declare const Theme: import("@uidu/theme").Theme<ThemeTokens, ThemeProps>;

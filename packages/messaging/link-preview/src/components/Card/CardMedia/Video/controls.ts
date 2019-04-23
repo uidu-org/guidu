@@ -49,7 +49,7 @@ export const ProgressBar = styled('div').attrs(
       opacity: playing ? 0.8 : 0,
     },
   }),
-)`
+)<any>`
   position: absolute;
   left: 0;
   bottom: 0;

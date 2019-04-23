@@ -1,5 +1,10 @@
 # @uidu/media-ui
 
+## 0.1.6
+- [patch] :
+
+  - Release Stepper and animatedmenu
+
 ## 0.1.5
 - [patch] :
 

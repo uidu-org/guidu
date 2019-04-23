@@ -38,7 +38,7 @@ var CACHE = {};
 var CardWrap = function (_a) {
     var rel = _a.rel, href = _a.href, target = _a.target, props = tslib_1.__rest(_a, ["rel", "href", "target"]);
     var key = JSON.stringify(tslib_1.__assign({}, props, { children: undefined }));
-    return createElement(CACHE[key] || (CACHE[key] = createEl(props)), props.as === 'a' ? tslib_1.__assign({ href: href, rel: rel, target: target }, props) : props);
+    return createElement(CACHE[key] || (CACHE[key] = createEl({ as: props.as })), props.as === 'a' ? tslib_1.__assign({ href: href, rel: rel, target: target }, props) : props);
 };
 CardWrap.defaultProps = {
     as: 'a',
