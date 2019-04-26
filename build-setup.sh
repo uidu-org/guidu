@@ -34,10 +34,11 @@ echo -e "\e[32m  Setting Yarn registry and token"
 yarn config set _authToken $NPM_TOKEN
 yarn config set registry https://registry.npmjs.org/
 
+npm config set python $(which python)
+
 # Forces `chalk` to display colored output in pipelines
 export FORCE_COLOR=1
 yarn config set color always
-
 
 echo -e "\e[32m  Yarn config list"
 yarn config list
