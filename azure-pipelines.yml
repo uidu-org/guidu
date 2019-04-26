@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: echo $(mySecret)
+- script: echo $BOT_EMAIL
   displayName: 'Run a one-line script'
 
 - script: |
