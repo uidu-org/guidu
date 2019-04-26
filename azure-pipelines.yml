@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: source ./build-setup.sh
+- script: echo $(mySecret)
   displayName: 'Run a one-line script'
 
 - script: |
