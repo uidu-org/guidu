@@ -50,4 +50,4 @@ test -z "$(cat yarn.lock | grep "packages.atlassian")" || (echo "Private registr
 
 # React Popper needs to be pinned to 1.0.2 until the recursion bugs with it are fixed
 # (check their repo https://github.com/FezVrasta/react-popper)
-test -n "$(cat package.json | grep "\"react-popper\": \"1.0.2\"")" || (echo "React Popper needs to be pinned to 1.0.2 until the recursion bugs with it are fixed (check their repo https://github.com/FezVrasta/react-popper)" && false)
+# test -n "$(cat package.json | grep "\"react-popper\": \"1.0.2\"")" || (echo "React Popper needs to be pinned to 1.0.2 until the recursion bugs with it are fixed (check their repo https://github.com/FezVrasta/react-popper)" && false)
