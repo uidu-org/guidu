@@ -10,7 +10,7 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 steps:
-- script: echo $BOT_EMAIL
+- script: echo ${BOT_EMAIL}
   displayName: 'Run a one-line script'
 
 - script: |
