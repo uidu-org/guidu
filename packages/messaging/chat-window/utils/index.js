@@ -18,21 +18,23 @@ export var groupByDay = function (data) {
         return messages;
     }, {});
 };
-export var groupByMessager = function (data) {
+export var groupByMessager = function (data, betweenMinutes) {
     return data.reduce(function (accumulator, message, index) {
         var lastMessage = index > 0 ? accumulator[accumulator.length - 1] : null;
         if (lastMessage &&
             lastMessage.messager.id === message.messager.id &&
-            lastMessage.kind === message.kind
-        //  &&
-        // moment(message.createdAt).diff(lastMessage.createdAt, 'minutes') <= 5
-        ) {
+            lastMessage.kind === message.kind &&
+            moment(lastMessage.createdAt).diff(message.createdAt, 'minutes') <=
+                betweenMinutes) {
+            // Group with previous
             accumulator[accumulator.length - 1].messages.push(message);
         }
         else {
+            // New line
             accumulator.push({
                 kind: message.kind,
                 messager: message.messager,
+                createdAt: message.createdAt,
                 messages: [message],
             });
         }

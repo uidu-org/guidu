@@ -1,0 +1,1 @@
+{"version":3,"file":"removeEventProxy.js","sourceRoot":"","sources":["removeEventProxy.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,kBAAkB,GAAG,oBAAoB,CAAC;AAYvD,MAAM,UAAU,wBAAwB,CACtC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,kBAAkB,CAAC;AAC5C,CAAC;AAED,MAAM,UAAU,gBAAgB,CAC9B,OAAsC;IAEtC,OAAO;QACL,IAAI,EAAE,kBAAkB;QACxB,OAAO,SAAA;KACR,CAAC;AACJ,CAAC"}

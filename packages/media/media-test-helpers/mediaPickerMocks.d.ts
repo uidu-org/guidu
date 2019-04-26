@@ -3,7 +3,7 @@
 import { State } from '@atlaskit/media-picker/src/popup/domain';
 import { Store } from 'react-redux';
 export declare const mockState: State;
-export declare const mockStore: (state?: Partial<any>) => {
+export declare const mockStore: (state?: any) => {
     dispatch: jest.Mock<any, any>;
     getState: () => any;
     subscribe: jest.Mock<any, any>;

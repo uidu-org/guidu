@@ -63,7 +63,7 @@ const baseStyle = css`
 
 const createEl = ({ as }) =>
   styled(as)(
-    baseStyle,
+    () => baseStyle,
     ({ loading, contrast }) => !loading && !contrast && hoverStyle,
     ({ cardSize }) => isLarge(cardSize) && largeStyle,
     ({ direction }) => direction === 'rtl' && rtlStyle,

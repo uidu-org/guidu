@@ -1,0 +1,1 @@
+{"version":3,"file":"startFileBrowser.js","sourceRoot":"","sources":["startFileBrowser.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,kBAAkB,GAAG,oBAAoB,CAAC;AAMvD,MAAM,UAAU,wBAAwB,CACtC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,kBAAkB,CAAC;AAC5C,CAAC;AAED,MAAM,UAAU,gBAAgB;IAC9B,OAAO;QACL,IAAI,EAAE,kBAAkB;KACzB,CAAC;AACJ,CAAC"}

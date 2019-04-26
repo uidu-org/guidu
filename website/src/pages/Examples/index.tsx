@@ -11,6 +11,7 @@ import Button from '@uidu/button';
 import CodeIcon from '@atlaskit/icon/glyph/code';
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import Flag, { FlagGroup } from '@atlaskit/flag';
+import { Form } from '@uidu/form';
 import Select from '@uidu/select';
 import Tooltip from '@uidu/tooltip';
 import { colors } from '@uidu/theme';
@@ -63,24 +64,27 @@ function PackageSelector(props) {
 
   return (
     <Control>
-      <Select
-        styles={{
-          container: styles => ({
-            ...styles,
-            flex: '1 1 0px',
-          }),
-          control: styles => ({
-            ...styles,
-            backgroundColor: '#fff',
-          }),
-        }}
-        options={packagesSelectOptions}
-        placeholder="Select Package"
-        onChange={(value, { action }) =>
-          action === 'select-option' && props.onSelected(value)
-        }
-        value={selectedPackageItem}
-      />
+      <Form>
+        <Select
+          name="foo"
+          styles={{
+            container: styles => ({
+              ...styles,
+              flex: '1 1 0px',
+            }),
+            control: styles => ({
+              ...styles,
+              backgroundColor: '#fff',
+            }),
+          }}
+          options={packagesSelectOptions}
+          placeholder="Select Package"
+          onChange={(value, { action }) =>
+            action === 'select-option' && props.onSelected(value)
+          }
+          value={selectedPackageItem}
+        />
+      </Form>
     </Control>
   );
 }
@@ -110,24 +114,27 @@ function ExampleSelector(props) {
 
   return (
     <Control>
-      <Select
-        styles={{
-          container: styles => ({
-            ...styles,
-            flex: '1 1 0px',
-          }),
-          control: styles => ({
-            ...styles,
-            backgroundColor: '#fff',
-          }),
-        }}
-        options={examplesSelectItems}
-        placeholder="Select Example"
-        onChange={(value, { action }) =>
-          action === 'select-option' && props.onSelected(value)
-        }
-        value={selectedExampleItem}
-      />
+      <Form>
+        <Select
+          name="foo"
+          styles={{
+            container: styles => ({
+              ...styles,
+              flex: '1 1 0px',
+            }),
+            control: styles => ({
+              ...styles,
+              backgroundColor: '#fff',
+            }),
+          }}
+          options={examplesSelectItems}
+          placeholder="Select Example"
+          onChange={(value, { action }) =>
+            action === 'select-option' && props.onSelected(value)
+          }
+          value={selectedExampleItem}
+        />
+      </Form>
     </Control>
   );
 }

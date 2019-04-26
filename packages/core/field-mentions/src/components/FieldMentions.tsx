@@ -12,36 +12,35 @@ class FieldMentions extends Component<FieldMentionsProps> {
     onKeyDown: () => {},
   };
 
-  handleChange = (event, newValue, newPlainTextValue, mentions) => {
+  private element: React.RefObject<any> = React.createRef();
+
+  handleChange = (event, value, plainTextValue, mentions) => {
     const { onSetValue, onChange, name } = this.props;
-    if (newValue === '') {
+    if (value === '') {
       onSetValue('');
       onChange(name, '');
     } else {
       onSetValue({
-        value: newValue,
-        plainTextValue: newPlainTextValue,
+        value,
+        plainTextValue,
         mentions,
       });
       onChange(name, {
-        value: newValue,
-        plainTextValue: newPlainTextValue,
+        value,
+        plainTextValue,
         mentions,
       });
     }
   };
 
-  initElementRef = element => {
-    this.element = element;
-  };
-
   render() {
+    const { onChange, ...otherProps } = this.props;
     return (
       <Wrapper {...this.props}>
         <FieldMentionsStateless
-          {...this.props}
+          {...otherProps}
           onChange={this.handleChange}
-          ref={this.initElementRef}
+          ref={this.element}
         />
       </Wrapper>
     );

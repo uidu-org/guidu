@@ -12,7 +12,7 @@ const statsOptions = require('./statsOptions');
 
 const baseCacheDir = path.resolve(
   __dirname,
-  '../../../node_modules/.cache-loader',
+  '../../../node_modules/.cache/cache-loader',
 );
 
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
@@ -155,51 +155,44 @@ module.exports = function createWebpackConfig(
         {
           test: /\.(js|jsx|mjs)$/,
           exclude: /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
-          // use: [
-          //   {
-          //     loader: 'thread-loader',
-          //     options: {
-          //       name: 'babel-pool',
-          //     },
-          //   },
-          //   {
-          //     loader: 'babel-loader',
-          //     options: {
-          //       babelrc: true,
-          //       rootMode: 'upward',
-          //       envName: 'production:esm',
-          //       cacheDirectory: path.resolve(baseCacheDir, 'babel'),
-          //     },
-          //   },
-          // ],
-          loader: 'babel-loader',
-          options: {
-            configFile: '../babel.config.js',
-            rootMode: 'upward',
-            envName: 'production:cjs',
-          },
+          use: [
+            {
+              loader: 'thread-loader',
+              options: {
+                name: 'babel-pool',
+              },
+            },
+            {
+              loader: 'babel-loader',
+              options: {
+                configFile: '../babel.config.js',
+                rootMode: 'upward',
+                envName: 'production:esm',
+                cacheDirectory: path.resolve(baseCacheDir, 'babel'),
+              },
+            },
+          ],
         },
         {
           test: /\.(ts|tsx)?$/,
           exclude: /node_modules/,
-          loader: require.resolve('ts-loader'),
-          options: {
-            transpileOnly: true,
-          },
-          // use: [
-          //   {
-          //     loader: 'cache-loader',
-          //     options: {
-          //       cacheDirectory: path.resolve(baseCacheDir, 'ts'),
-          //     },
-          //   },
-          //   {
-          //     loader: require.resolve('ts-loader'),
-          //     options: {
-          //       transpileOnly: true,
-          //     },
-          //   },
-          // ],
+          use: [
+            {
+              loader: 'cache-loader',
+              options: {
+                cacheDirectory: path.resolve(baseCacheDir, 'ts'),
+              },
+            },
+            {
+              loader: require.resolve('ts-loader'),
+              options: {
+                transpileOnly: true,
+              },
+            },
+          ],
+          // options: {
+          //   transpileOnly: true,
+          // },
         },
         // "postcss" loader applies autoprefixer to our CSS.
         // "css" loader resolves paths in CSS and adds assets as dependencies.

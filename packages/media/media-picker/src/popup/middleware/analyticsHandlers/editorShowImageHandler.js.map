@@ -1,0 +1,1 @@
+{"version":3,"file":"editorShowImageHandler.js","sourceRoot":"","sources":["editorShowImageHandler.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,iBAAiB,EAAE,MAAM,+BAA+B,CAAC;AAClE,OAAO,EAAE,uBAAuB,EAAE,MAAM,+BAA+B,CAAC;AAGxE,gBAAe,UAAC,MAAc;IAC5B,IAAI,uBAAuB,CAAC,MAAM,CAAC,EAAE;QACnC,OAAO;YACL;gBACE,IAAI,EAAE,iBAAiB;gBACvB,SAAS,EAAE,iBAAiB;aAC7B;SACF,CAAC;KACH;AACH,CAAC,EAAC"}

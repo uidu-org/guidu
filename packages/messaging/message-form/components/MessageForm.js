@@ -1,33 +1,12 @@
 import * as tslib_1 from "tslib";
 import React, { cloneElement } from 'react';
 import classNames from 'classnames';
-import { Plus, Smile, BarChart2, Paperclip, ThumbsUp, Send, Clock, Mic, } from 'react-feather';
+import { Plus, Smile, ThumbsUp, Send, } from 'react-feather';
 import { Picker } from 'emoji-mart';
 import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
 import FieldMentions, { defaultStyle } from '@uidu/field-mentions';
 import Dropdown, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
-// import { Input, Mentions as MentionsInput } from '@uidu/inputs';
-// import * as loadImage from 'blueimp-load-image';
-// import {
-//   mentionableMembers,
-//   mentionableTeams,
-//   mentionableContacts,
-// } from 'apps/teams/utils';
-// import { DirectUpload } from 'activestorage';
 import 'emoji-mart/css/emoji-mart.css';
-function fetchUsers(query, callback) {
-    if (!query) {
-        return Promise.resolve([]);
-    }
-    return (fetch("https://api.github.com/search/users?q=" + query)
-        .then(function (response) { return response.json(); })
-        // Transform the users to what react-mentions expects
-        .then(function (json) {
-        return json.items.map(function (user) { return ({ display: user.login, id: user.login }); });
-    })
-        .then(callback)
-        .catch(function () { return []; }));
-}
 var container;
 var MessagesForm = /** @class */ (function (_super) {
     tslib_1.__extends(MessagesForm, _super);
@@ -36,104 +15,6 @@ var MessagesForm = /** @class */ (function (_super) {
         _this.form = React.createRef();
         _this.mentionsInput = React.createRef();
         _this.mentionsComponentInput = React.createRef();
-        // onAdd = files => {
-        //   Array.from(files).forEach((file, index) => {
-        //     this.add(file, index + this.state.attachments.length);
-        //     this.preview(file, index + this.state.attachments.length);
-        //     this.upload(file, index + this.state.attachments.length);
-        //   });
-        // };
-        // add = (file, index) => {
-        //   this.setState({
-        //     attachments: [...this.state.attachments, { position: index }],
-        //     submitLabel: this.messageSender(),
-        //   });
-        // };
-        // preview = (file, index) => {
-        //   loadImage.parseMetaData(file, data => {
-        //     let orientation = 0;
-        //     if (data.exif) {
-        //       orientation = data.exif.get('Orientation');
-        //     }
-        //     loadImage(
-        //       file,
-        //       () => {
-        //         const reader = new window.FileReader();
-        //         if (file.type.split('/')[0] === 'image') {
-        //           reader.readAsDataURL(file);
-        //           reader.onloadend = () => {
-        //             const base64data = reader.result;
-        //             this.setState({
-        //               attachments: [
-        //                 ...this.state.attachments.slice(0, index),
-        //                 {
-        //                   ...this.state.attachments[index],
-        //                   filename: file.name,
-        //                   type: file.type.split('/')[1],
-        //                   previewUrl: base64data,
-        //                 },
-        //                 ...this.state.attachments.slice(index + 1),
-        //               ],
-        //             });
-        //           };
-        //         } else {
-        //           this.setState({
-        //             attachments: [
-        //               ...this.state.attachments.slice(0, index),
-        //               {
-        //                 ...this.state.attachments[index],
-        //                 filename: file.name,
-        //                 type: file.type.split('/')[1],
-        //                 // previewUrl: base64data,
-        //               },
-        //               ...this.state.attachments.slice(index + 1),
-        //             ],
-        //           });
-        //         }
-        //       },
-        //       {
-        //         orientation,
-        //         canvas: true,
-        //       },
-        //     );
-        //   });
-        // };
-        // upload = (file, index) => {
-        //   const upload = new DirectUpload(
-        //     file,
-        //     '/rails/active_storage/direct_uploads',
-        //   );
-        //   upload.create((error, blob) => {
-        //     if (error) {
-        //       // Handle the error
-        //     } else {
-        //       this.setState({
-        //         attachments: [
-        //           ...this.state.attachments.slice(0, index),
-        //           {
-        //             ...this.state.attachments[index],
-        //             ...blob,
-        //           },
-        //           ...this.state.attachments.slice(index + 1),
-        //         ],
-        //       });
-        //     }
-        //   });
-        // };
-        // remove = index => {
-        //   this.setState(
-        //     {
-        //       attachments: this.state.attachments.filter((a, i) => index !== i),
-        //     },
-        //     () => {
-        //       if (this.state.attachments.length === 0) {
-        //         this.setState({
-        //           submitLabel: this.thumbSender(),
-        //         });
-        //       }
-        //     },
-        //   );
-        // };
         _this.isValid = function (canSubmit) {
             if (_this.state.attachments.length > 0) {
                 return (_this.state.attachments.filter(function (a) { return !a.signed_id; }).length === 0 &&
@@ -188,13 +69,7 @@ var MessagesForm = /** @class */ (function (_super) {
     }
     MessagesForm.prototype.render = function () {
         var _this = this;
-        var _a = this.props, 
-        // tasks,
-        // teams,
-        message = _a.message, placeholder = _a.placeholder, mentionables = _a.mentionables, 
-        // organizationMembers,
-        // callbacks
-        onDismiss = _a.onDismiss, onSubmit = _a.onSubmit;
+        var _a = this.props, actions = _a.actions, message = _a.message, placeholder = _a.placeholder, mentionables = _a.mentionables, onDismiss = _a.onDismiss, onSubmit = _a.onSubmit;
         var _b = this.state, submitted = _b.submitted, submitLabel = _b.submitLabel;
         return (React.createElement("div", { className: classNames('bg-white p-3 sticky-bottom position-relative', {
                 border: !!message.body,
@@ -260,25 +135,8 @@ var MessagesForm = /** @class */ (function (_super) {
                                 canSubmit: _this.isValid(canSubmit),
                             })));
                 } },
-                !message.body && (React.createElement(Dropdown, { className: "align-self-center", trigger: React.createElement("button", { className: "btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 shadow-none", type: "button" },
-                        React.createElement(Plus, { size: 18 })) },
-                    React.createElement(DropdownItemGroup, { title: "New..." },
-                        React.createElement(DropdownItem, null,
-                            React.createElement(Mic, { size: "1rem", className: "mr-2" }),
-                            "Audio message"),
-                        React.createElement(DropdownItem, null,
-                            React.createElement(BarChart2, { size: "1rem", className: "mr-2" }),
-                            "Poll"),
-                        React.createElement(DropdownItem, null,
-                            React.createElement(Clock, { size: "1rem", className: "mr-2" }),
-                            "Reminder")),
-                    React.createElement(DropdownItemGroup, { title: "Add a file from..." },
-                        React.createElement(DropdownItem, null,
-                            React.createElement(Paperclip, { size: "1rem", className: "mr-2" }),
-                            "Your computer"),
-                        React.createElement(DropdownItem, null,
-                            React.createElement(BarChart2, { size: "1rem", className: "mr-2" }),
-                            "Google Drive")))),
+                !message.body && actions.length > 0 && (React.createElement(Dropdown, { className: "align-self-center", trigger: React.createElement("button", { className: "btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 shadow-none", type: "button" },
+                        React.createElement(Plus, { size: 18 })) }, actions.map(function (actionGroup) { return (React.createElement(DropdownItemGroup, { key: actionGroup.name, title: actionGroup.name }, actionGroup.children.map(function (action, index) { return (React.createElement(DropdownItem, tslib_1.__assign({ key: index }, action.props), action.name)); }))); }))),
                 React.createElement("div", { className: "d-flex align-items-center flex-grow-1" },
                     React.createElement(FieldMentions, { ref: this.mentionsInput, componentRef: this.mentionsComponentInput, className: "border-0 mr-2", layout: "elementOnly", name: "message[body]", onChange: this.handleSubmitLabel, required: this.state.attachments.length === 0, value: message.body ? { value: message.body } : '', onKeyDown: function (event) {
                             if (event.keyCode === 13 && !event.shiftKey) {
@@ -293,8 +151,6 @@ var MessagesForm = /** @class */ (function (_super) {
                     _this.mentionsComponentInput.current.handleChange(null, newValue, newValue, previousValue ? previousValue.mentions : []);
                 }, showPreview: true, style: {
                     width: '100%',
-                    // position: 'relative',
-                    // bottom: '64px',
                     fontFamily: 'inherit',
                     fontSize: 'inherit',
                     color: 'inherit',
@@ -302,6 +158,7 @@ var MessagesForm = /** @class */ (function (_super) {
                 } }))));
     };
     MessagesForm.defaultProps = {
+        actions: [],
         placeholder: 'Add your message...',
         onSubmit: function () { },
         onDismiss: function () { },

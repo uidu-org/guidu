@@ -1,5 +1,10 @@
 # @uidu/media-test-helpers
 
+## 0.1.7
+- [patch] :
+
+  - Bump dependencies and added shell and navigation components
+
 ## 0.1.6
 - [patch] :
 

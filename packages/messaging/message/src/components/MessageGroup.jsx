@@ -17,7 +17,7 @@ export default class MessageGroup extends Component {
 
     if (kind === 'message.create') {
       return (
-        <div className={classNames('position-relative p-3', {})}>
+        <div className={classNames('position-relative py-3 px-4', {})}>
           <div className="media">
             <div className="d-none d-md-block">
               <Avatar

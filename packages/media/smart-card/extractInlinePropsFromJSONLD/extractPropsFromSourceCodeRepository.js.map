@@ -1,0 +1,1 @@
+{"version":3,"file":"extractPropsFromSourceCodeRepository.js","sourceRoot":"","sources":["../src/extractInlinePropsFromJSONLD/extractPropsFromSourceCodeRepository.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,gCAAgC,EAAE,MAAM,0BAA0B,CAAC;AAE5E,MAAM,CAAC,IAAM,8CAA8C,GAAG,UAC5D,IAAS,IACuB,OAAA,gCAAgC,CAAC,IAAI,CAAC,EAAtC,CAAsC,CAAC"}

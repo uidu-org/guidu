@@ -1,0 +1,15 @@
+{
+  "name": "@uidu/multi-entry-tools",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Tools for supporting multiple entry points",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Atlassian Pty Ltd",
+  "license": "Apache-2.0",
+  "dependencies": {},
+  "bin": {
+    "get-multi-entry-map": "./cli.js"
+  }
+}

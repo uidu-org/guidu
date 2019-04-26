@@ -1,0 +1,1 @@
+{"version":3,"file":"editRemoteImageHandler.js","sourceRoot":"","sources":["editRemoteImageHandler.ts"],"names":[],"mappings":";AACA,OAAO,EAAE,uBAAuB,EAAE,MAAM,+BAA+B,CAAC;AACxE,OAAO,EAAE,kBAAkB,EAAiB,MAAM,GAAG,CAAC;AAEtD,gBAAe,UAAC,MAAc;IAC5B,IAAI,uBAAuB,CAAC,MAAM,CAAC,EAAE;QACnC,OAAO;iCAEA,kBAAkB,IACrB,eAAe,EAAE,oBAAoB;SAExC,CAAC;KACH;AACH,CAAC,EAAC"}

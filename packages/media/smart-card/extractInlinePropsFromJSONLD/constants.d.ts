@@ -1,0 +1,12 @@
+export declare const CONFLUENCE_GENERATOR_ID = "https://www.atlassian.com/#Confluence";
+export declare const JIRA_GENERATOR_ID = "https://www.atlassian.com/#Jira";
+export declare const JIRA_TASK = "JiraTask";
+export declare const JIRA_SUB_TASK = "JiraSubTask";
+export declare const JIRA_STORY = "JiraStory";
+export declare const JIRA_BUG = "JiraBug";
+export declare const JIRA_EPIC = "JiraEpic";
+export declare const JIRA_INCIDENT = "JiraIncident";
+export declare const JIRA_SERVICE_REQUEST = "JiraServiceRequest";
+export declare const JIRA_CHANGE = "JiraChange";
+export declare const JIRA_PROBLEM = "JiraProblem";
+export declare const JIRA_CUSTOM_TASK_TYPE = "JiraCustomTaskType";

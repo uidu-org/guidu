@@ -93,6 +93,7 @@ export default class Basic extends React.Component<{}> {
         mentionables={[
           {
             trigger: '@',
+            markup: '@[__display__](__id__)',
             type: 'User',
             data: fetchUsers,
           },

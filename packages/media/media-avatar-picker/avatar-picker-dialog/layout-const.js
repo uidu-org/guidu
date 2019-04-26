@@ -1,0 +1,6 @@
+export var DEFAULT_VISIBLE_PREDEFINED_AVATARS = 5;
+export var AVATAR_DIALOG_WIDTH = 375;
+export var AVATAR_DIALOG_HEIGHT = 470;
+export var PREDEFINED_AVATARS_VIEW_WIDTH = 343;
+export var PREDEFINED_AVATARS_VIEW_HEIGHT = 290;
+//# sourceMappingURL=layout-const.js.map

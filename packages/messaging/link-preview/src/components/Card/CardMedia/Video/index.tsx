@@ -42,7 +42,7 @@ function CardVideo(props) {
 
   const [playing, setPlaying] = useState(autoPlay);
   const [progress, setProgress] = useState(0);
-  const videoRef = useRef();
+  const videoRef = useRef(null);
 
   const togglePlayback = event => {
     event.preventDefault();

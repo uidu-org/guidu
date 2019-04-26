@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.5
+- [patch] :
+
+  - Bump dependencies and added shell and navigation components
+
 ## 0.1.4
 - [patch] :
 

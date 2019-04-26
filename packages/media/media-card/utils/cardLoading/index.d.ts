@@ -7,6 +7,6 @@ export interface LoadingCardProps {
 export declare const getDimensionsWithDefault: (dimensions?: CardDimensions) => CardDimensions;
 export declare class CardLoading extends Component<LoadingCardProps, {}> {
     render(): JSX.Element;
-    readonly iconSize: "small" | "medium" | "large";
+    readonly iconSize: "small" | "large" | "medium";
     readonly icon: JSX.Element;
 }

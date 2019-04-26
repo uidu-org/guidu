@@ -16,6 +16,6 @@ export interface WithAppearanceProps {
 export declare const withAppearance: (styleMap: {
     image?: string;
     auto?: string;
-    horizontal?: string;
     square?: string;
+    horizontal?: string;
 }) => ({ appearance }: WithAppearanceProps) => string;

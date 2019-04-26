@@ -43,7 +43,7 @@ export default class ChatWindow extends Component<ChatWindowType> {
 
     const groupedByDay = groupByDay(sortByDay(messages.messages));
     return (
-      <div className="feed d-flex flex-column justify-content-end h-100">
+      <div className="feed d-flex flex-column justify-content-end h-100 flex-grow-1">
         <div
           className="h-100" // commenting this will put messages down but no auto-.scroll
           style={{

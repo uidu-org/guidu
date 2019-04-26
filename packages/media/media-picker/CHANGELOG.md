@@ -1,5 +1,10 @@
 # @uidu/media-picker
 
+## 0.1.4
+- [patch] :
+
+  - Bump dependencies and added shell and navigation components
+
 ## 0.1.3
 - [patch] :
 

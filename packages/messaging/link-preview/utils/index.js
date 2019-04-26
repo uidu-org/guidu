@@ -17,14 +17,14 @@ export var media = {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        return css(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n    @media (max-width: 48em) {\n      ", ";\n    }\n  "], ["\n    @media (max-width: 48em) {\n      ", ";\n    }\n  "])), css.apply(void 0, tslib_1.__spread(args)));
+        return css(templateObject_1 || (templateObject_1 = tslib_1.__makeTemplateObject(["\n    @media (max-width: 48em) {\n      ", ";\n    }\n  "], ["\n    @media (max-width: 48em) {\n      ", ";\n    }\n  "])), css(function () { return args; }));
     },
     desktop: function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        return css(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n    @media (min-width: 48em) {\n      ", ";\n    }\n  "], ["\n    @media (min-width: 48em) {\n      ", ";\n    }\n  "])), css.apply(void 0, tslib_1.__spread(args)));
+        return css(templateObject_2 || (templateObject_2 = tslib_1.__makeTemplateObject(["\n    @media (min-width: 48em) {\n      ", ";\n    }\n  "], ["\n    @media (min-width: 48em) {\n      ", ";\n    }\n  "])), css(function () { return args; }));
     },
 };
 var apiValue = function (key, value) {

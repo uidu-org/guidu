@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.32
+- [patch] :
+
+  - Bump dependencies and added shell and navigation components
+
 ## 0.1.31
 - [patch] :
 

@@ -9,19 +9,14 @@ export default class FieldMentionsStateless extends Component<
   FieldMentionsStatelessProps
 > {
   static defaultProps = {
-    markup: '[__display__](__type__:__id__)',
     placeholder: "Mention people using '@'",
     allowSpaceInQuery: true,
-    displayTransform: (id, display) => display,
     style: defaultStyle,
   };
 
   render() {
     const {
       value,
-      style,
-      markup,
-      displayTransform,
       placeholder,
       allowSpaceInQuery,
       items,
@@ -34,12 +29,10 @@ export default class FieldMentionsStateless extends Component<
 
     return (
       <MentionsInput
-        value={value ? value.value : ''}
+        value={value.value || ''}
         onChange={onChange}
         onKeyDown={onKeyDown}
-        markup={markup}
         style={style}
-        displayTransform={displayTransform}
         placeholder={placeholder}
         allowSpaceInQuery={allowSpaceInQuery}
         className={classNames('form-control h-auto', className)}

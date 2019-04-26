@@ -1,0 +1,1 @@
+{"version":3,"file":"sendUploadEvent.js","sourceRoot":"","sources":["sendUploadEvent.ts"],"names":[],"mappings":"AAGA,MAAM,CAAC,IAAM,iBAAiB,GAAG,mBAAmB,CAAC;AAYrD,MAAM,UAAU,uBAAuB,CACrC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,iBAAiB,CAAC;AAC3C,CAAC;AAED,MAAM,UAAU,eAAe,CAC7B,OAAqC;IAErC,OAAO;QACL,IAAI,EAAE,iBAAiB;QACvB,OAAO,SAAA;KACR,CAAC;AACJ,CAAC"}

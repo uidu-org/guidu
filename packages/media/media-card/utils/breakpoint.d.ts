@@ -1,6 +1,6 @@
 /// <reference types="react" />
 export declare type BreakpointSizeValue = 'small' | 'medium' | 'large' | 'xlarge';
-export declare const breakpointSize: (width: import("react").ReactText, sizes?: any) => "small" | "medium" | "large" | "xlarge";
+export declare const breakpointSize: (width: import("react").ReactText, sizes?: any) => "small" | "large" | "medium" | "xlarge";
 export interface BreakpointProps {
     breakpointSize: BreakpointSizeValue;
 }

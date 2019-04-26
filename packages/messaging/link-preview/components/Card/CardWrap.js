@@ -17,7 +17,7 @@ var rtlStyle = function (_a) {
 var baseStyle = css(templateObject_6 || (templateObject_6 = tslib_1.__makeTemplateObject(["\n  background-color: #fff;\n  overflow: hidden;\n  color: #181919;\n  display: flex;\n  text-decoration: none;\n  opacity: 1;\n  position: relative;\n\n  transition-duration: 0.15s;\n  transition-timing-function: ease-in-out;\n\n  &:active,\n  &:hover {\n    color: #181919;\n    text-decoration: none;\n    outline: 0;\n  }\n"], ["\n  background-color: #fff;\n  overflow: hidden;\n  color: #181919;\n  display: flex;\n  text-decoration: none;\n  opacity: 1;\n  position: relative;\n\n  transition-duration: 0.15s;\n  transition-timing-function: ease-in-out;\n\n  &:active,\n  &:hover {\n    color: #181919;\n    text-decoration: none;\n    outline: 0;\n  }\n"])));
 var createEl = function (_a) {
     var as = _a.as;
-    return styled(as)(baseStyle, function (_a) {
+    return styled(as)(function () { return baseStyle; }, function (_a) {
         var loading = _a.loading, contrast = _a.contrast;
         return !loading && !contrast && hoverStyle;
     }, function (_a) {

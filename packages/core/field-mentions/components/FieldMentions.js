@@ -6,33 +6,32 @@ var FieldMentions = /** @class */ (function (_super) {
     tslib_1.__extends(FieldMentions, _super);
     function FieldMentions() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.handleChange = function (event, newValue, newPlainTextValue, mentions) {
+        _this.element = React.createRef();
+        _this.handleChange = function (event, value, plainTextValue, mentions) {
             var _a = _this.props, onSetValue = _a.onSetValue, onChange = _a.onChange, name = _a.name;
-            if (newValue === '') {
+            if (value === '') {
                 onSetValue('');
                 onChange(name, '');
             }
             else {
                 onSetValue({
-                    value: newValue,
-                    plainTextValue: newPlainTextValue,
+                    value: value,
+                    plainTextValue: plainTextValue,
                     mentions: mentions,
                 });
                 onChange(name, {
-                    value: newValue,
-                    plainTextValue: newPlainTextValue,
+                    value: value,
+                    plainTextValue: plainTextValue,
                     mentions: mentions,
                 });
             }
         };
-        _this.initElementRef = function (element) {
-            _this.element = element;
-        };
         return _this;
     }
     FieldMentions.prototype.render = function () {
+        var _a = this.props, onChange = _a.onChange, otherProps = tslib_1.__rest(_a, ["onChange"]);
         return (React.createElement(Wrapper, tslib_1.__assign({}, this.props),
-            React.createElement(FieldMentionsStateless, tslib_1.__assign({}, this.props, { onChange: this.handleChange, ref: this.initElementRef }))));
+            React.createElement(FieldMentionsStateless, tslib_1.__assign({}, otherProps, { onChange: this.handleChange, ref: this.element }))));
     };
     FieldMentions.defaultProps = {
         displayTransform: function (id, display, type) { return display; },

@@ -42,7 +42,7 @@ export declare class CardViewBase extends React.Component<CardViewBaseProps, Car
  * With this CardView class constructor version `createAnalyticsEvent` props is supplied for you, so
  * when creating instance of that class you don't need to worry about it.
  */
-export declare const CardViewWithAnalyticsEvents: React.ComponentClass<Pick<CardViewBaseProps, "progress" | "metadata" | "appearance" | "onClick" | "onMouseEnter" | "selected" | "onRetry" | "actions" | "status" | "dimensions" | "selectable" | "disableOverlay" | "dataURI" | "previewOrientation" | "resizeMode" | "mediaItemType" | "onSelectChange">, any>;
+export declare const CardViewWithAnalyticsEvents: React.ComponentClass<Pick<CardViewBaseProps, "progress" | "metadata" | "onClick" | "onMouseEnter" | "selected" | "appearance" | "dimensions" | "actions" | "selectable" | "onRetry" | "disableOverlay" | "dataURI" | "previewOrientation" | "status" | "resizeMode" | "mediaItemType" | "onSelectChange">, any>;
 /**
  * This if final version of CardView that is exported to the consumer. This version wraps everything
  * with Analytics Context information so that all the Analytics Events created anywhere inside CardView

@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.9
+- [patch] :
+
+  - Bump dependencies and added shell and navigation components
+
 ## 3.0.8
 - [patch] :
 

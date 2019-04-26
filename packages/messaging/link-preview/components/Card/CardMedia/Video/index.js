@@ -14,7 +14,7 @@ function CardVideo(props) {
     var hasControls = props.controls, autoPlay = props.autoPlay, cardSize = props.cardSize, controls = props.controls, imageUrl = props.imageUrl, videoUrl = props.videoUrl, loading = props.loading, loop = props.loop, muted = props.muted, playsInline = props.playsInline, restProps = tslib_1.__rest(props, ["controls", "autoPlay", "cardSize", "controls", "imageUrl", "videoUrl", "loading", "loop", "muted", "playsInline"]);
     var _a = tslib_1.__read(useState(autoPlay), 2), playing = _a[0], setPlaying = _a[1];
     var _b = tslib_1.__read(useState(0), 2), progress = _b[0], setProgress = _b[1];
-    var videoRef = useRef();
+    var videoRef = useRef(null);
     var togglePlayback = function (event) {
         event.preventDefault();
         setPlaying(function (playing) {

@@ -1,0 +1,1 @@
+{"version":3,"file":"dropzoneDropIn.js","sourceRoot":"","sources":["dropzoneDropIn.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,gBAAgB,GAAG,kBAAkB,CAAC;AAOnD,MAAM,UAAU,sBAAsB,CACpC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,gBAAgB,CAAC;AAC1C,CAAC;AAED,MAAM,UAAU,cAAc,CAAC,SAAiB;IAC9C,OAAO;QACL,IAAI,EAAE,gBAAgB;QACtB,SAAS,WAAA;KACV,CAAC;AACJ,CAAC"}

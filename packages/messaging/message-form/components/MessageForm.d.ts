@@ -6,6 +6,7 @@ export default class MessagesForm extends React.Component<MessageFormProps, Mess
     private mentionsInput;
     private mentionsComponentInput;
     static defaultProps: {
+        actions: any[];
         placeholder: string;
         onSubmit: () => void;
         onDismiss: () => void;

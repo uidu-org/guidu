@@ -1,8 +1,8 @@
 import * as tslib_1 from "tslib";
 var MockFileReader = /** @class */ (function () {
     function MockFileReader(result) {
-        if (result === void 0) { result = 'mockResult'; }
         var _this = this;
+        if (result === void 0) { result = 'mockResult'; }
         this.loadEvent = function () { };
         this.errorEvent = function (_) { };
         this.addEventListener = jest.fn().mockImplementation(function (eventName, fn) {

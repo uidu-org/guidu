@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-toggle",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A component to view and switch between enabled or disabled states",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -20,7 +20,7 @@
     "@uidu/analytics": "^0.1.4",
     "@uidu/field-base": "^0.1.26",
     "@uidu/theme": "^0.1.4",
-    "@uidu/toggle": "^0.1.5",
+    "@uidu/toggle": "^0.1.6",
     "react-switch": "^5.0.0",
     "uuid": "^3.3.2"
   },
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@uidu/build-utils": "^0.1.4",
-    "@uidu/button": "^0.1.31",
+    "@uidu/button": "^0.1.32",
     "@uidu/docs": "^0.1.22",
     "@uidu/form": "^0.1.23",
     "enzyme": "^3.9.0",

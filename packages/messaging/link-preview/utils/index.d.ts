@@ -4,8 +4,8 @@ export declare const isNil: (value: any) => boolean;
 export declare const getUrlPath: (data: any) => any;
 export declare const someProp: (data: any, props: any) => any;
 export declare const media: {
-    mobile: (...args: any[]) => import("styled-components").FlattenSimpleInterpolation;
-    desktop: (...args: any[]) => import("styled-components").FlattenSimpleInterpolation;
+    mobile: (...args: any[]) => import("styled-components").FlattenInterpolation<import("styled-components").ThemeProps<any>>;
+    desktop: (...args: any[]) => import("styled-components").FlattenInterpolation<import("styled-components").ThemeProps<any>>;
 };
 export declare const defaultApiParameters: {
     video: boolean;

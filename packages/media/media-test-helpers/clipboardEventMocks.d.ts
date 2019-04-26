@@ -41,7 +41,7 @@ export declare const getMockClipboardEvent: () => {
         readonly eventPhase: number;
         readonly isTrusted: boolean;
         returnValue: boolean;
-        readonly srcElement: Element;
+        readonly srcElement: EventTarget;
         readonly target: EventTarget;
         readonly timeStamp: number;
         readonly type: string;
@@ -103,7 +103,7 @@ export declare const MockDragEvent: () => {
         readonly eventPhase: number;
         readonly isTrusted: boolean;
         returnValue: boolean;
-        readonly srcElement: Element;
+        readonly srcElement: EventTarget;
         readonly target: EventTarget;
         readonly timeStamp: number;
         readonly type: string;

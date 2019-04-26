@@ -2,10 +2,8 @@ import { Component } from 'react';
 import { FieldMentionsStatelessProps } from '../types';
 export default class FieldMentionsStateless extends Component<FieldMentionsStatelessProps> {
     static defaultProps: {
-        markup: string;
         placeholder: string;
         allowSpaceInQuery: boolean;
-        displayTransform: (id: any, display: any) => any;
         style: {
             highlighter: {
                 padding: number;

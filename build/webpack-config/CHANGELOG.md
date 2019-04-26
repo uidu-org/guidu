@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.21
+- [patch] :
+
+  - Bump dependencies and added shell and navigation components
+
 ## 0.1.20
 - [patch] :
 

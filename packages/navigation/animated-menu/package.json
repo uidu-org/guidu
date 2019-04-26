@@ -1,6 +1,6 @@
 {
   "name": "@uidu/animated-menu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Animated menu like Stripe",
   "uidu:src": "src/index.ts",
   "main": "index.js",
