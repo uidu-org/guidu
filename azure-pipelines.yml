@@ -12,6 +12,9 @@ pool:
 container: uidu/guidu:0.1.1
 
 steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '2.7'
   # - script: |
   #     docker build -t $(dockerId)/$(imageName) .
   #     docker login -u $(dockerId) -p $(pswd)
