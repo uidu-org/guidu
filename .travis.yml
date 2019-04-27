@@ -11,18 +11,25 @@ before_install:
 git:
   depth: 2
 
-script:
-  - source ./build-setup.sh
-  - bolt install --pure-lockfile
-  - yarn build
-  - node ./build/releases/bin/build-releases.js version
-  - git remote rm origin
-  - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
-  - git push origin master
-  - yarn build:pkg
-  - node ./build/releases/bin/build-releases.js publish --public
-  - git remote rm origin
-  - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
-  - git push origin master --tags
+jobs:
+  include:
+    - stage: build
+      script:
+        - source ./build-setup.sh
+        - bolt install --pure-lockfile
+        - yarn build
+        - node ./build/releases/bin/build-releases.js version
+        - git remote rm origin
+        - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
+        - git push origin master
+        - yarn build:pkg
+        - node ./build/releases/bin/build-releases.js publish --public
+        - git remote rm origin
+        - git remote add origin https://${GH_TOKEN}@github.com/uidu_org/guidu.git > /dev/null 2>&1
+        - git push origin master --tags
+    - stage: deploy
+      script:
+        - cd website && yarn build
+        - netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p --dir ./dist
 
 cache: yarn
