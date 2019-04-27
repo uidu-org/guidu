@@ -1,0 +1,12 @@
+{
+  "releases": [
+    { "name": "@uidu/accordion", "type": "patch" },
+    { "name": "@uidu/analytics", "type": "patch" },
+    { "name": "@uidu/avatar-group", "type": "patch" },
+    { "name": "@uidu/badge", "type": "patch" },
+    { "name": "@uidu/blanket", "type": "patch" },
+    { "name": "@uidu/button", "type": "patch" },
+    { "name": "@uidu/checkbox", "type": "patch" }
+  ],
+  "dependents": []
+}

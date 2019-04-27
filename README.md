@@ -3,7 +3,6 @@
 ![banner](https://travis-ci.org/uidu-org/guidu.svg?branch=master)
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-TODO: Put more badges here.
 
 > Guidu is uidu&#39;s design system library
 
@@ -32,6 +31,7 @@ TODO: Fill out this long description.
 ## Maintainers
 
 [@uidu-org](https://github.com/uidu-org)
+[@apuntovanini](https://github.com/apuntovanini)
 
 ## Contributing
 
