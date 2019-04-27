@@ -5,7 +5,6 @@
 echo -e "\e[32m  Setting git configs..."
 git config --global user.email "$BOT_ACCOUNT_EMAIL"
 git config --global user.name "$BOT_ACCOUNT_NAME"
-git config --global push.default simple
 
 # # We fetch and checkout master here so that we have a local reference to "master" in other commands
 # # (avoids the "ambiguous argument 'master': unknown revision or path not in the working tree" error)
