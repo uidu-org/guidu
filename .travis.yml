@@ -5,7 +5,6 @@ services:
 
 before_install:
   - docker pull uidu/guidu
-  - docker ps -a
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
   - export PATH="$HOME/.yarn/bin:$PATH"
 
@@ -25,16 +24,5 @@ script:
   - git remote rm origin
   - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
   - git push origin master --tags
-
-before_deploy:
-  - yarn global add netlify-cli
-
-deploy:
-  provider: script
-  script:
-    - cd website && yarn build
-    - netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN -p --dir ./dist
-  on:
-    branch: master
 
 cache: yarn
