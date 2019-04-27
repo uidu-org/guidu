@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'Ubuntu-16.04'
 
-container: uidu/guidu:0.1.1
+container: uidu/guidu:0.1.2
 
 steps:
   - task: UsePythonVersion@0

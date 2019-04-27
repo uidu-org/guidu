@@ -13,3 +13,5 @@ git:
 
 script:
   - source ./build-setup.sh
+  - bolt install --pure-lockfile
+  - yarn build
