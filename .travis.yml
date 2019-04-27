@@ -27,7 +27,7 @@ script:
   - git push origin master --tags
 
 before_deploy:
-  - yarn global add netflify-cli
+  - yarn global add netlify-cli
 
 deploy:
   provider: script
