@@ -16,12 +16,13 @@ script:
   - bolt install --pure-lockfile
   - yarn build
   - node ./build/releases/bin/build-releases.js version
-  - git commit -m "Travis update $TRAVIS_BUILD_NUMBER" -m "[skip ci]"
   - git remote rm origin
-  - git remote add origin https://uidu-org:${GH_TOKEN}@github.com/uidu_org/guidu.git > /dev/null 2>&1
+  - git remote add origin https://${GH_TOKEN}@github.com/uidu_org/guidu.git > /dev/null 2>&1
   - git push origin master
   - yarn build:pkg
   - node ./build/releases/bin/build-releases.js publish --public
+  - git remote rm origin
+  - git remote add origin https://${GH_TOKEN}@github.com/uidu_org/guidu.git > /dev/null 2>&1
   - git push origin master --tags
 
 cache: yarn
