@@ -6,7 +6,7 @@ RUN apt-get -y update && apt-get -y install git && apt-get install -y build-esse
 # Install yarn
 # NOTE: This version of yarn is not the one that is used to install dependencies at the root. That yarn
 # version comes from bolt itself ("~/.config/yarn/global/node_modules/bolt/node_modules/.bin/yarn")
-RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.15.0
+RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
 ENV PATH $HOME/.yarn/bin:$PATH
 
 # Install git-lfs
