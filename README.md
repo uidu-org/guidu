@@ -31,7 +31,7 @@ TODO: Fill out this long description.
 
 ## Maintainers
 
-[@@uidu-org](https://github.com/@uidu-org)
+[@uidu-org](https://github.com/uidu-org)
 
 ## Contributing
 
