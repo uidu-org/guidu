@@ -1,7 +1,7 @@
 FROM node:11.6.0-slim
 
 # Install git and bzip2
-RUN apt-get -y update && apt-get -y install git && apt-get -qq -y install bzip2 && rm -rf /var/lib/apt/lists/*
+RUN apt-get -y update && apt-get -y install git && apt-get install -y build-essential && apt-get -qq -y install bzip2 && rm -rf /var/lib/apt/lists/*
 
 # Install yarn
 # NOTE: This version of yarn is not the one that is used to install dependencies at the root. That yarn

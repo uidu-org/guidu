@@ -1,0 +1,13 @@
+language: node_js
+
+services:
+  - docker
+
+before_install:
+  - docker pull uidu/guidu
+
+git:
+  depth: 2
+
+script:
+  - source ./build-setup.sh
