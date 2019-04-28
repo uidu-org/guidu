@@ -1,8 +1,8 @@
 // @flow
 
 import React, { type Node } from 'react';
-import { md, Example, Props } from '@atlaskit/docs';
-import Lozenge from '@atlaskit/lozenge';
+import { md, Example, Props } from '@uidu/docs';
+import Lozenge from '@uidu/lozenge';
 
 const Deprecated = ({ children }: { children: Node }) => (
   <h3>
@@ -28,7 +28,7 @@ export default md`
 
   ${(
     <Example
-      packageName="@atlaskit/theme"
+      packageName="@uidu/theme"
       Component={require('../examples/creating-themes').default}
       source={require('!!raw-loader!../examples/creating-themes')}
       title="Creating themes"
@@ -38,10 +38,10 @@ export default md`
   ${<Experimental>Theming components</Experimental>}
 
   Whenever you create a new theme, it provides you a context specific to that theme. When theming a component, you use this context to provide a theme for your component. It is recommended that you, at the very least, export the provider for your theme so consumers can customise the look and feel of your component.
-  
+
   ${(
     <Example
-      packageName="@atlaskit/theme"
+      packageName="@uidu/theme"
       Component={require('../examples/theming-components').default}
       source={require('!!raw-loader!../examples/theming-components')}
       title="Creating themes"
@@ -51,10 +51,10 @@ export default md`
   ${<Experimental>The global theme</Experimental>}
 
   The global theme is the \`default\` export of the theme package. It is defined by using the \`createTheme\` function, so it will give you both a \`Consumer\` and \`Provider\` for you to use or customise as you see fit.
-    
+
   ${(
     <Example
-      packageName="@atlaskit/theme"
+      packageName="@uidu/theme"
       Component={require('../examples/global-theme').default}
       source={require('!!raw-loader!../examples/global-theme')}
       title="Creating themes"
@@ -67,7 +67,7 @@ export default md`
 
   ${(
     <Example
-      packageName="@atlaskit/theme"
+      packageName="@uidu/theme"
       Component={require('../examples/reset').default}
       source={require('!!raw-loader!../examples/reset')}
       title="Reset"
@@ -78,7 +78,7 @@ export default md`
 
   ${(
     <Example
-      packageName="@atlaskit/theme"
+      packageName="@uidu/theme"
       Component={require('../examples/themed-reset').default}
       source={require('!!raw-loader!../examples/themed-reset')}
       title="Themed reset"
@@ -103,7 +103,7 @@ export default md`
 
   ${(
     <Example
-      packageName="@atlaskit/theme"
+      packageName="@uidu/theme"
       Component={require('../examples/deprecated-theme-provider').default}
       source={require('!!raw-loader!../examples/deprecated-theme-provider')}
       title="DEPRECATED AtlaskitThemeProvider"

@@ -1,14 +1,14 @@
 import * as React from 'react';
-import Changelog, { type Logs } from '../../components/ChangeLog';
+import Changelog, { Logs } from '../../components/ChangeLog';
 
 const LatestChange = ({
   changelog,
   pkgId,
   groupId,
 }: {
-  changelog: Logs,
-  pkgId: string,
-  groupId: string,
+  changelog: Logs;
+  pkgId: string;
+  groupId: string;
 }) => {
   if (!changelog || !changelog[0] || !changelog[0].version) return null;
 
