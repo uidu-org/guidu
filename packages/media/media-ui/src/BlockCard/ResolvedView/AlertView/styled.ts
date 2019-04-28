@@ -1,6 +1,5 @@
-import styled, { ThemedOuterStyledProps } from 'styled-components';
+import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 import { borderRadiusBottom } from '../../../mixins';
 
@@ -8,9 +7,7 @@ export interface WrapperProps {
   type: 'success' | 'failure';
 }
 
-export const Wrapper: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<WrapperProps, {}>
-> = styled.div`
+export const Wrapper = styled.div<WrapperProps>`
   position: absolute;
   left: 0;
   right: 0;

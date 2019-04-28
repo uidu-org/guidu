@@ -2,11 +2,10 @@
 
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 
 // z-index is set to 200 for the main container to be above the dropzone which has z-index 100
-export const CenterView: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CenterView = styled.div`
   position: fixed;
   left: 0;
   top: 0;

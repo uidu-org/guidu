@@ -1,10 +1,7 @@
-import styled, { ThemedOuterStyledProps } from 'styled-components';
-import { HTMLAttributes, ComponentClass } from 'react';
+import styled from 'styled-components';
 
 // z-index is set to 200 for the main container to be above the dropzone which has z-index 100
-export const EditorContainer: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.div`
+export const EditorContainer = styled.div`
   height: 100%;
 
   display: flex;

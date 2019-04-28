@@ -2,9 +2,7 @@
 
 import styled from 'styled-components';
 
-import { TableHTMLAttributes, ComponentClass } from 'react';
-
-export const Matrix: ComponentClass<TableHTMLAttributes<{}>> = styled.table`
+export const Matrix = styled.table`
   thead {
     td {
       text-align: center;

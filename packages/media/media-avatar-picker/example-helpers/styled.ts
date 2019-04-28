@@ -1,10 +1,9 @@
 import styled from 'styled-components';
-import { ComponentClass } from 'react';
 import { checkeredBg } from '../src/image-placer/styled';
 
 export const Slider = styled.input``;
 
-export const Label: ComponentClass = styled.label`
+export const Label = styled.label`
   display: block;
 
   > input {

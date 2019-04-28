@@ -2,11 +2,7 @@
 
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
-
-export const PredefinedAvatarsWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const PredefinedAvatarsWrapper = styled.div`
   display: flex;
 
   .show-more-button {

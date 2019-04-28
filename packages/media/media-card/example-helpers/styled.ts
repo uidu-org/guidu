@@ -1,43 +1,33 @@
-/* tslint:disable:variable-name */
-
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
-
-export const CardSwitcherWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const CardSwitcherWrapper = styled.div`
   display: flex;
 `;
 
-export const CardSwitcherBtn: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.button`
+export const CardSwitcherBtn = styled.button`
   margin: 10px auto;
   display: block;
 `;
 
-export const CardSwitcherTitle: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CardSwitcherTitle = styled.div`
   border-bottom: 1px solid;
   text-align: center;
 `;
 
-export const CardSwitcherRow: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CardSwitcherRow = styled.div`
   width: 300px;
   height: 400px;
   overflow: hidden;
   border: 1px solid;
 `;
 
-export const EditableCardOptions: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const EditableCardOptions = styled.div`
   padding: 20px;
   border-bottom: 1px solid #ccc;
   max-width: 700px;
 `;
 
-export const SliderWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const SliderWrapper = styled.div`
   display: flex;
   width: 50%;
 
@@ -47,9 +37,7 @@ export const SliderWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const EditableCardContent: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const EditableCardContent = styled.div`
   /* Not making the wrapper fancier or center elements in order to have a more realistic scenario */
   padding: 20px;
   border: 2px dashed;
@@ -59,7 +47,7 @@ export const EditableCardContent: ComponentClass<
   box-sizing: border-box;
 `;
 
-export const OptionsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const OptionsWrapper = styled.div`
   display: flex;
 
   > * {
@@ -68,9 +56,7 @@ export const OptionsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const CardDimensionsWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const CardDimensionsWrapper = styled.div`
   margin: 10px 10px 20px 10px;
   display: flex;
 
@@ -82,12 +68,10 @@ export const CardDimensionsWrapper: ComponentClass<
   }
 `;
 
-export const MainWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const MainWrapper = styled.div`
   display: flex;
 `;
-export const CardPreviewWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const CardPreviewWrapper = styled.div`
   flex: 1;
 `;
 

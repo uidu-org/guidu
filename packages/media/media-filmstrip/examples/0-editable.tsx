@@ -1,7 +1,6 @@
 /* tslint:disable: no-console */
 
 import * as React from 'react';
-import { HTMLAttributes, ComponentClass, LabelHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { AkFieldRadioGroup as RadioGroup } from '@atlaskit/field-radio-group';
 import Slider from '@atlaskit/field-range';
@@ -13,24 +12,22 @@ import {
 } from '@uidu/media-test-helpers';
 import { FilmstripView } from '../src/filmstripView';
 
-const StoryWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+const StoryWrapper = styled.div`
   padding: 1em;
 `;
 
-const Separator: ComponentClass<HTMLAttributes<{}>> = styled.hr`
+const Separator = styled.hr`
   margin: 1em 0;
   border: 1px solid #ccc;
 `;
 
-const ControlLabel: ComponentClass<
-  HTMLAttributes<{}> & LabelHTMLAttributes<{}>
-> = styled.label`
+const ControlLabel = styled.label`
   display: block;
   margin-top: 1em;
   font-weight: bold;
 `;
 
-const Flex: ComponentClass<HTMLAttributes<{}>> = styled.div`
+const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,7 +37,7 @@ interface BoxProps {
   grow?: number;
 }
 
-const Box: ComponentClass<HTMLAttributes<{}> & BoxProps> = styled.div`
+const Box = styled.div<BoxProps>`
   padding: 4px;
   ${({ grow }: { grow?: number }) => (grow && `flex-grow: ${grow};`) || ''};
 `;

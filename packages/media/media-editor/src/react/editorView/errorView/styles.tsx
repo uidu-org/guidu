@@ -1,12 +1,8 @@
-// tslint:disable:variable-name
-
 import styled from 'styled-components';
-
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 import Button from '@uidu/button';
 
-export const ErrorPopup: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ErrorPopup = styled.div`
   width: 290px;
   padding: 16px;
   background-color: ${colors.N0};
@@ -17,11 +13,11 @@ export const ErrorPopup: ComponentClass<HTMLAttributes<{}>> = styled.div`
   flex-direction: column;
 `;
 
-export const ErrorIconWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ErrorIconWrapper = styled.div`
   width: 92px;
 `;
 
-export const ErrorMessage: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ErrorMessage = styled.div`
   color: ${colors.N900};
   margin-top: 16px;
   margin-bottom: 4px;
@@ -30,7 +26,7 @@ export const ErrorMessage: ComponentClass<HTMLAttributes<{}>> = styled.div`
   font-weight: bold;
 `;
 
-export const ErrorHint: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ErrorHint = styled.div`
   color: ${colors.N70};
   margin-top: 4px;
   margin-bottom: 20px;
@@ -38,7 +34,7 @@ export const ErrorHint: ComponentClass<HTMLAttributes<{}>> = styled.div`
   text-align: center;
 `;
 
-export const ErrorButton: ComponentClass<any> = styled(Button)`
+export const ErrorButton = styled(Button)`
   display: inline-flex;
   width: 84px;
   margin: 2px;

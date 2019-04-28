@@ -1,1 +1,0 @@
-{"version":3,"file":"updatePopupUrls.js","sourceRoot":"","sources":["updatePopupUrls.tsx"],"names":[],"mappings":";AAGA,OAAO,EAAE,uBAAuB,EAAE,MAAM,4BAA4B,CAAC;AAErE,MAAM,CAAC,OAAO,UAAU,eAAe,CAAC,KAAY,EAAE,MAAc;IAClE,IAAI,uBAAuB,CAAC,MAAM,CAAC,EAAE;QAC3B,IAAA,kBAAI,CAAY;QACxB,4BACK,KAAK,EACL,IAAI,EACP;KACH;IAED,OAAO,KAAK,CAAC;AACf,CAAC"}

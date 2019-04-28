@@ -2,9 +2,7 @@
 
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
-
-export const AvatarListWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const AvatarListWrapper = styled.div`
   ul {
     display: flex;
 

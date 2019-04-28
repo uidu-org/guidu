@@ -5,7 +5,7 @@ import {
   FileIdentifier,
   Context,
   FileDetails,
-  isPreviewableType,
+  // isPreviewableType,
   isFileIdentifier,
   isExternalImageIdentifier,
   isDifferentIdentifier,
@@ -28,7 +28,7 @@ import { LazyContent } from '../../utils/lazyContent';
 import { getBaseAnalyticsContext } from '../../utils/analyticsUtils';
 import { getDataURIDimension } from '../../utils/getDataURIDimension';
 import { getDataURIFromFileState } from '../../utils/getDataURIFromFileState';
-import { extendMetadata } from '../../utils/metadata';
+// import { extendMetadata } from '../../utils/metadata';
 import { isBigger } from '../../utils/dimensionComparer';
 import { getCardStatus } from './getCardStatus';
 import { InlinePlayer } from '../inlinePlayer';

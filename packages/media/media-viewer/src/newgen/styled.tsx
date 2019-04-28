@@ -1,12 +1,5 @@
-// StyledComponentClass and React types are imported to prevent a typescript error caused by inferred types sourced
-// from external modules - https://github.com/styled-components/styled-components/issues/1063#issuecomment-320344957
-// @ts-ignore: unused variable
-// prettier-ignore
-import styled, { StyledComponentClass } from 'styled-components';
+import styled from 'styled-components';
 import { MediaType } from '@uidu/media-core';
-// @ts-ignore: unused variable
-// prettier-ignore
-import { HTMLAttributes, VideoHTMLAttributes, AudioHTMLAttributes, ImgHTMLAttributes, ComponentClass, ClassAttributes } from 'react';
 import { colors, layers, borderRadius } from '@uidu/theme';
 import { ellipsis } from '@uidu/media-ui';
 
@@ -141,7 +134,7 @@ export const ErrorImage = styled.img`
   user-select: none;
 `;
 
-export const Video: ComponentClass<VideoHTMLAttributes<{}>> = styled.video`
+export const Video = styled.video`
   width: 100vw;
   height: 100vh;
 `;
@@ -220,7 +213,7 @@ export type ImgProps = {
   shouldPixelate: boolean;
 };
 
-export const Img: ComponentClass<ImgHTMLAttributes<{}> & ImgProps> = styled.img`
+export const Img = styled.img<ImgProps>`
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -276,9 +269,7 @@ export interface IconWrapperProps {
   type: MediaType;
 }
 
-export const IconWrapper: ComponentClass<
-  HTMLAttributes<{}> & IconWrapperProps
-> = styled.div`
+export const IconWrapper = styled.div<IconWrapperProps>`
   display: inline-flex;
   color: ${({ type }: IconWrapperProps) =>
     mediaTypeIconColors[type] || mediaTypeIconColors.unknown};

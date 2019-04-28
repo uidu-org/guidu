@@ -7,9 +7,7 @@ import {
 } from '@uidu/media-test-helpers';
 import { Card } from '../src';
 
-const GradientBackground: React.ComponentClass<
-  React.HTMLAttributes<{}>
-> = styled.div`
+const GradientBackground = styled.div`
   background: linear-gradient(
     to bottom,
     rgba(226, 226, 226, 1) 0%,
@@ -17,7 +15,7 @@ const GradientBackground: React.ComponentClass<
   );
 `;
 
-const DummyContent: React.ComponentClass<React.HTMLAttributes<{}>> = styled.div`
+const DummyContent = styled.div`
   height: 125vh;
 `;
 

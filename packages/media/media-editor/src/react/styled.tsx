@@ -1,11 +1,4 @@
-import styled, { ThemedOuterStyledProps } from 'styled-components';
-
-import {
-  HTMLAttributes,
-  ComponentClass,
-  CanvasHTMLAttributes,
-  TextareaHTMLAttributes,
-} from 'react';
+import styled from 'styled-components';
 import { layers, colors } from '@uidu/theme';
 import { ButtonProps } from './toolbarButtons';
 
@@ -16,34 +9,26 @@ export interface LineWidthFrontCircleProps {
 export const blanketColor = colors.N700A;
 const overlayZindex = layers.modal() + 10;
 
-export const MediaEditorContainer: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const MediaEditorContainer = styled.div`
   position: absolute;
   top: 0;
 `;
 MediaEditorContainer.displayName = 'MediaEditorContainer';
 
-export const OutputArea: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.div`
+export const OutputArea = styled.div`
   position: absolute;
   overflow: hidden;
 `;
 OutputArea.displayName = 'OutputArea';
 
-export const DrawingCanvas: ComponentClass<
-  CanvasHTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.canvas`
+export const DrawingCanvas = styled.canvas`
   position: absolute;
   left: 0;
   top: 0;
 `;
 DrawingCanvas.displayName = 'DrawingCanvas';
 
-export const SupplementaryCanvas: ComponentClass<
-  CanvasHTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.canvas`
+export const SupplementaryCanvas = styled.canvas`
   position: absolute;
   display: none;
   left: 0;
@@ -53,9 +38,7 @@ SupplementaryCanvas.displayName = 'SupplementaryCanvas';
 
 // TODO Check with transparent canvas, because DefaultKeyboardInput makes the text area visible to get focus.
 // https://jira.atlassian.com/browse/FIL-4059
-export const HiddenTextArea: ComponentClass<
-  TextareaHTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.textarea`
+export const HiddenTextArea = styled.textarea`
   position: absolute;
   display: block;
   visibility: hidden; /* display:none won't allow to get the keyboard focus */
@@ -69,9 +52,7 @@ export const HiddenTextArea: ComponentClass<
 `;
 HiddenTextArea.displayName = 'HiddenTextArea';
 
-export const HiddenTextHelperDiv: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.div`
+export const HiddenTextHelperDiv = styled.div`
   position: absolute;
   display: block;
   visibility: hidden; /* display:none won't allow us to call getClientBoundingRect() for children */
@@ -84,7 +65,7 @@ export const HiddenTextHelperDiv: ComponentClass<
 `;
 HiddenTextHelperDiv.displayName = 'HiddenTextHelperDiv';
 
-export const ToolbarContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ToolbarContainer = styled.div`
   width: 32px;
   height: 392px;
   background-color: ${colors.N600A};
@@ -93,9 +74,7 @@ export const ToolbarContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
 `;
 ToolbarContainer.displayName = 'ToolbarContainer';
 
-export const ToolbarButton: ComponentClass<
-  HTMLAttributes<{}> & ButtonProps
-> = styled.div`
+export const ToolbarButton = styled.div<ButtonProps>`
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -109,7 +88,7 @@ export const ToolbarButton: ComponentClass<
 `;
 ToolbarButton.displayName = 'ToolbarButton';
 
-export const ColorSquare: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ColorSquare = styled.div`
   width: 20px;
   height: 20px;
   margin: 4px;
@@ -121,9 +100,7 @@ export const ColorSquare: ComponentClass<HTMLAttributes<{}>> = styled.div`
 `;
 ColorSquare.displayName = 'ColorSquare';
 
-export const LineWidthBackCircle: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const LineWidthBackCircle = styled.div`
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -133,9 +110,7 @@ export const LineWidthBackCircle: ComponentClass<
 `;
 LineWidthBackCircle.displayName = 'LineWidthBackCircle';
 
-export const LineWidthFrontCircle: ComponentClass<
-  HTMLAttributes<{}> & LineWidthFrontCircleProps
-> = styled.div`
+export const LineWidthFrontCircle = styled.div<LineWidthFrontCircleProps>`
   width: ${(props: LineWidthFrontCircleProps) =>
     props.width ? `${props.width}px` : '0'};
   height: ${(props: LineWidthFrontCircleProps) =>
@@ -147,7 +122,7 @@ export const LineWidthFrontCircle: ComponentClass<
 `;
 LineWidthFrontCircle.displayName = 'LineWidthFrontCircle';
 
-export const ToolIcon: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ToolIcon = styled.div`
   width: 20px;
   height: 20px;
   margin: 4px;
@@ -156,7 +131,7 @@ export const ToolIcon: ComponentClass<HTMLAttributes<{}>> = styled.div`
 ToolIcon.displayName = 'ToolIcon';
 
 // TODO This is copy paste from media-viewer
-export const Blanket: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Blanket = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -167,7 +142,7 @@ export const Blanket: ComponentClass<HTMLAttributes<{}>> = styled.div`
 `;
 Blanket.displayName = 'Blanket';
 
-export const SpinnerWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const SpinnerWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;

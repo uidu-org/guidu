@@ -1,1 +1,0 @@
-{"version":3,"file":"startImport.js","sourceRoot":"","sources":["startImport.tsx"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,YAAY,GAAG,cAAc,CAAC;AAM3C,MAAM,UAAU,mBAAmB,CACjC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,YAAY,CAAC;AACtC,CAAC;AAED,MAAM,UAAU,WAAW;IACzB,OAAO;QACL,IAAI,EAAE,YAAY;KACnB,CAAC;AACJ,CAAC"}

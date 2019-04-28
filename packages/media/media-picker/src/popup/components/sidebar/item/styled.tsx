@@ -2,16 +2,13 @@
 
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass, LiHTMLAttributes } from 'react';
 import { colors } from '@uidu/theme';
 
 export interface WrapperProps {
   isActive: boolean;
 }
 
-export const Wrapper: ComponentClass<
-  LiHTMLAttributes<{}> & WrapperProps
-> = styled.li`
+export const Wrapper = styled.li<WrapperProps>`
   color: ${({ isActive }: WrapperProps) =>
     isActive ? colors.B400 : colors.N500};
   padding: 6px 25px;
@@ -25,12 +22,12 @@ export const Wrapper: ComponentClass<
   }
 `;
 
-export const ServiceIcon: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ServiceIcon = styled.div`
   display: inline-block;
   vertical-align: middle;
 `;
 
-export const ServiceName: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ServiceName = styled.div`
   font-size: 14px;
   position: relative;
   margin-left: 10px;

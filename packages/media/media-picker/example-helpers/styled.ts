@@ -1,24 +1,17 @@
-/* tslint:disable:variable-name */
-import {
-  HTMLAttributes,
-  ComponentClass,
-  ImgHTMLAttributes,
-  ProgressHTMLAttributes,
-} from 'react';
-import styled, { ThemedOuterStyledProps } from 'styled-components';
+import styled from 'styled-components';
 
 export interface DropzoneContainerProps {
   isActive: boolean;
 }
 
-export const PopupContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const PopupContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: calc(100vh - 100px);
   overflow: hidden;
 `;
 
-export const PopupHeader: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const PopupHeader = styled.div`
   border-bottom: 1px solid #ccc;
   margin-bottom: 15px;
   display: flex;
@@ -30,30 +23,24 @@ export const PopupHeader: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const PopupEventsWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const PopupEventsWrapper = styled.div`
   overflow: auto;
 `;
 
 export interface PreviewImageProps {
   fadedOut: boolean;
 }
-export const PreviewImage: ComponentClass<
-  ImgHTMLAttributes<{}> & PreviewImageProps
-> = styled.img`
+export const PreviewImage = styled.img<PreviewImageProps>`
   width: 300px;
   ${({ fadedOut }: PreviewImageProps) => `opacity: ${fadedOut ? 0.3 : 1};`};
 `;
 
-export const PreviewImageWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const PreviewImageWrapper = styled.div`
   position: relative;
   margin-right: 15px;
 `;
 
-export const InfoWrapper: ComponentClass<HTMLAttributes<{}>> = styled.pre`
+export const InfoWrapper = styled.pre`
   position: absolute;
   width: 160px;
   color: black;
@@ -63,9 +50,7 @@ export const InfoWrapper: ComponentClass<HTMLAttributes<{}>> = styled.pre`
   text-align: center;
 `;
 
-export const DropzoneContainer: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<DropzoneContainerProps, {}>
-> = styled.div`
+export const DropzoneContainer = styled.div<DropzoneContainerProps>`
   width: 600px;
   min-height: 500px;
   border: 1px dashed transparent;
@@ -78,33 +63,27 @@ export const DropzoneContainer: ComponentClass<
       : ''};
 `;
 
-export const DropzoneConfigOptions: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div``;
+export const DropzoneConfigOptions = styled.div``;
 
-export const DropzoneRoot: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const DropzoneRoot = styled.div`
   display: flex;
 `;
 
-export const DropzoneContentWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const DropzoneContentWrapper = styled.div`
   display: flex;
 `;
 
-export const PreviewsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const PreviewsWrapper = styled.div`
   display: flex;
   flex-flow: row wrap;
   overflow: visible;
 `;
 
-export const PreviewsTitle: ComponentClass<HTMLAttributes<{}>> = styled.h1`
+export const PreviewsTitle = styled.h1`
   width: 100%;
 `;
 
-export const ProgressCircleWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const ProgressCircleWrapper = styled.div`
   position: absolute;
   top: calc(50% - 50px);
   left: calc(50% - 50px);
@@ -112,7 +91,7 @@ export const ProgressCircleWrapper: ComponentClass<
   height: 100px;
 `;
 
-export const DropzoneItemsInfo: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const DropzoneItemsInfo = styled.div`
   flex: 1;
   min-width: 600px;
   display: flex;
@@ -124,9 +103,7 @@ export interface ClipboardContainerProps {
   isWindowFocused: boolean;
 }
 
-export const ClipboardContainer: ComponentClass<
-  HTMLAttributes<{}> & ClipboardContainerProps
-> = styled.div`
+export const ClipboardContainer = styled.div<ClipboardContainerProps>`
   padding: 10px;
   min-height: 400px;
 
@@ -134,17 +111,13 @@ export const ClipboardContainer: ComponentClass<
     isWindowFocused ? `1px dashed gray` : `1px dashed transparent`};
 `;
 
-export const UploadingFilesWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div``;
+export const UploadingFilesWrapper = styled.div``;
 
-export const FileProgress: ComponentClass<
-  ProgressHTMLAttributes<{}>
-> = styled.progress`
+export const FileProgress = styled.progress`
   width: 400px;
 `;
 
-export const FilesInfoWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const FilesInfoWrapper = styled.div`
   border: 1px solid;
   padding: 10px;
   margin-bottom: 10px;
@@ -154,11 +127,11 @@ export const FilesInfoWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   display: flex;
 `;
 
-export const CardsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CardsWrapper = styled.div`
   flex: 1;
 `;
 
-export const CardItemWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CardItemWrapper = styled.div`
   display: inline-block;
 `;
 

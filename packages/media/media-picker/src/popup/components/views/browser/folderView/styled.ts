@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass, LiHTMLAttributes } from 'react';
 import { colors } from '@uidu/theme';
 
-export const FolderViewerWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const FolderViewerWrapper = styled.div`
   display: flex;
   flex-direction: column;
 
   height: 100%;
 `;
 
-export const SpinnerWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const SpinnerWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,9 +18,7 @@ export const SpinnerWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   flex: 1;
 `;
 
-export const FolderViewerContent: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.ul`
+export const FolderViewerContent = styled.ul`
   /* Take up all of the available space between header and footer */
   flex: 1;
 
@@ -41,9 +36,7 @@ export interface SelectableProps {
   isSelected?: boolean;
 }
 
-export const FolderViewerRow: ComponentClass<
-  LiHTMLAttributes<{}> & SelectableProps
-> = styled.li`
+export const FolderViewerRow = styled.li<SelectableProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,12 +62,12 @@ export const FolderViewerRow: ComponentClass<
 `;
 FolderViewerRow.displayName = 'FolderViewerRow';
 
-export const FileMetadataGroup: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const FileMetadataGroup = styled.div`
   display: flex;
   align-items: center;
 `;
 
-export const FileIcon: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const FileIcon = styled.div`
   /* vertically center icon */
   display: flex;
   align-items: center;
@@ -83,9 +76,7 @@ export const FileIcon: ComponentClass<HTMLAttributes<{}>> = styled.div`
   height: 32px;
 `;
 
-export const FileName: ComponentClass<
-  HTMLAttributes<{}> & SelectableProps
-> = styled.div`
+export const FileName = styled.div<SelectableProps>`
   padding-left: 17px;
   vertical-align: middle;
   overflow: hidden;
@@ -95,28 +86,26 @@ export const FileName: ComponentClass<
     isSelected ? 'color: white;' : `color: ${colors.N900}`};
 `;
 
-export const FileCreateDate: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const FileCreateDate = styled.div`
   color: ${colors.N90};
   text-align: right;
   padding: 0 10px 0 10px;
 `;
 
-export const FileSize: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const FileSize = styled.div`
   color: ${colors.N90};
   min-width: 70px;
   text-align: right;
   padding: 0 0 0 10px;
 `;
 
-export const SelectedFileIconWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const SelectedFileIconWrapper = styled.div`
   color: ${colors.B400} !important;
   right: 23px;
   top: 12px;
 `;
 
-export const MoreBtnWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const MoreBtnWrapper = styled.div`
   display: flex;
   justify-content: center;
 

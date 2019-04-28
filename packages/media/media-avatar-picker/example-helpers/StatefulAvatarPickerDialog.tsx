@@ -10,7 +10,7 @@ import { generateAvatars } from '../example-helpers';
 
 const avatars: Array<Avatar> = generateAvatars(30);
 
-const Layout: React.ComponentClass<React.HTMLAttributes<{}>> = styled.div`
+const Layout = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

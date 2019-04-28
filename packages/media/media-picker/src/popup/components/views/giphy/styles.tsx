@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass, ImgHTMLAttributes } from 'react';
 import { colors } from '@uidu/theme';
 
-export const Container: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Container = styled.div`
   height: 100%;
   overflow-y: scroll;
 
@@ -12,25 +11,23 @@ export const Container: ComponentClass<HTMLAttributes<{}>> = styled.div`
 export interface GridCellProps {
   width: number;
 }
-export const GridCell: ComponentClass<
-  HTMLAttributes<{}> & GridCellProps
-> = styled.div`
+export const GridCell = styled.div<GridCellProps>`
   ${({ width }: GridCellProps) => `width: ${width}px;`} margin-top: 5px;
 `;
 
-export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Title = styled.div`
   color: #091e42;
   font-size: 20px;
   margin-top: 15px;
 `;
 
-export const ButtonContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
 `;
 
-export const WarningContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const WarningContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,23 +38,21 @@ export const WarningContainer: ComponentClass<HTMLAttributes<{}>> = styled.div`
   user-select: text;
 `;
 
-export const WarningIconWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const WarningIconWrapper = styled.div`
   width: 92px;
 `;
 
-export const WarningImage: ComponentClass<ImgHTMLAttributes<{}>> = styled.img`
+export const WarningImage = styled.img`
   width: 200px;
 `;
 
-export const WarningHeading: ComponentClass<HTMLAttributes<{}>> = styled.p`
+export const WarningHeading = styled.p`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
 `;
 
-export const WarningSuggestion: ComponentClass<HTMLAttributes<{}>> = styled.p`
+export const WarningSuggestion = styled.p`
   color: ${colors.N300};
   font-size: 14px;
   margin-top: 5px;

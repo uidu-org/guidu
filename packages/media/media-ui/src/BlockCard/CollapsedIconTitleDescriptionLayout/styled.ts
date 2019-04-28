@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 import { ellipsis } from '../../mixins';
 
-export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Title = styled.div`
   color: ${colors.N800};
   font-size: 14px;
   font-weight: 500;
@@ -12,7 +11,7 @@ export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
   ${ellipsis('100%')};
 `;
 
-export const Description: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Description = styled.div`
   color: ${colors.N300};
   font-size: 12px;
   font-weight: normal;

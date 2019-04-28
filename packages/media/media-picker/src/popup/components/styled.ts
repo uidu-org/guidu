@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors, fontFamily } from '@uidu/theme';
 
-export const MediaPickerPopupWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const MediaPickerPopupWrapper = styled.div`
   display: flex;
   cursor: default;
   user-select: none;
@@ -17,13 +14,13 @@ export const MediaPickerPopupWrapper: ComponentClass<
   width: 968px;
 `;
 
-export const SidebarWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const SidebarWrapper = styled.div`
   width: 235px;
   min-width: 235px;
   background-color: ${colors.N30};
 `;
 
-export const ViewWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ViewWrapper = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;

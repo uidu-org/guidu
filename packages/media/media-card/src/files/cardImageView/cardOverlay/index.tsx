@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { MouseEvent, Component, ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
-import * as cx from 'classnames';
+import cx from 'classnames';
 import { MediaType } from '@uidu/media-core';
 import TickIcon from '@atlaskit/icon/glyph/check';
 import { Ellipsify } from '@uidu/media-ui';

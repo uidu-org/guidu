@@ -16,9 +16,7 @@ interface IconWrapperProps {
   color: string;
 }
 
-const IconWrapper: React.ComponentClass<
-  React.HTMLAttributes<{}> & IconWrapperProps
-> = styled.div`
+const IconWrapper = styled.div<IconWrapperProps>`
   ${({ color }: IconWrapperProps) => `color: ${color};`};
 `;
 

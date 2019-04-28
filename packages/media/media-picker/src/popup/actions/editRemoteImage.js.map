@@ -1,1 +1,0 @@
-{"version":3,"file":"editRemoteImage.js","sourceRoot":"","sources":["editRemoteImage.tsx"],"names":[],"mappings":"AAGA,MAAM,CAAC,IAAM,iBAAiB,GAAG,mBAAmB,CAAC;AAQrD,MAAM,UAAU,uBAAuB,CACrC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,iBAAiB,CAAC;AAC3C,CAAC;AAED,MAAM,UAAU,eAAe,CAC7B,IAAmB,EACnB,cAAsB;IAEtB,OAAO;QACL,IAAI,EAAE,iBAAiB;QACvB,IAAI,MAAA;QACJ,cAAc,gBAAA;KACf,CAAC;AACJ,CAAC"}

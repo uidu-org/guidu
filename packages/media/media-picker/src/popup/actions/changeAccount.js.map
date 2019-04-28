@@ -1,1 +1,0 @@
-{"version":3,"file":"changeAccount.js","sourceRoot":"","sources":["changeAccount.tsx"],"names":[],"mappings":"AAGA,MAAM,CAAC,IAAM,cAAc,GAAG,gBAAgB,CAAC;AAQ/C,MAAM,UAAU,qBAAqB,CACnC,MAAc;IAEd,OAAO,MAAM,CAAC,IAAI,KAAK,cAAc,CAAC;AACxC,CAAC;AAED,MAAM,UAAU,aAAa,CAC3B,WAAwB,EACxB,SAAiB;IAEjB,OAAO;QACL,IAAI,EAAE,cAAc;QACpB,WAAW,aAAA;QACX,SAAS,WAAA;KACV,CAAC;AACJ,CAAC"}

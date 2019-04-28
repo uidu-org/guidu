@@ -1,1 +1,0 @@
-{"version":3,"file":"editorCloseHandler.js","sourceRoot":"","sources":["editorCloseHandler.ts"],"names":[],"mappings":";AACA,OAAO,EAAE,mBAAmB,EAAE,MAAM,2BAA2B,CAAC;AAChE,OAAO,EAAE,kBAAkB,EAAiB,MAAM,GAAG,CAAC;AAEtD,gBAAe,UAAC,MAAc;IAC5B,IAAI,mBAAmB,CAAC,MAAM,CAAC,EAAE;QAC/B,OAAO;iCAEA,kBAAkB,IACrB,eAAe,EAAE,gBAAc,MAAM,CAAC,SAAS,WAAQ;SAE1D,CAAC;KACH;AACH,CAAC,EAAC"}

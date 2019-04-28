@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { ComponentClass, ImgHTMLAttributes, HTMLAttributes } from 'react';
-
 import { colors } from '@uidu/theme';
 
 export const checkeredBg =
@@ -30,16 +28,12 @@ export interface TransformProps {
   transform?: string;
 }
 
-export const ImagePlacerWrapper: ComponentClass<
-  ColorProps & HTMLAttributes<{}>
-> = styled.div`
+export const ImagePlacerWrapper = styled.div`
   background-color: ${(props: ColorProps) => props.backgroundColor};
   display: inline-block;
 `;
 
-export const ImagePlacerErrorWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const ImagePlacerErrorWrapper = styled.div`
   background-color: ${colors.R500};
   color: white;
   width: 100%;
@@ -48,14 +42,9 @@ export const ImagePlacerErrorWrapper: ComponentClass<
   padding-top: 45%;
 `;
 
-export type ContainerWrapperProps = MarginProps &
-  SizeProps &
-  ColorProps &
-  HTMLAttributes<{}>;
+export type ContainerWrapperProps = MarginProps & SizeProps & ColorProps;
 
-export const ContainerWrapper: ComponentClass<
-  ContainerWrapperProps
-> = styled.div.attrs<ContainerWrapperProps>({
+export const ContainerWrapper = styled.div.attrs<ContainerWrapperProps>({
   style: ({ width, height, margin }: ContainerWrapperProps) => ({
     width: width !== undefined ? width! + margin * 2 : 0,
     height: height !== undefined ? height! + margin * 2 : 0,
@@ -70,13 +59,9 @@ export const ContainerWrapper: ComponentClass<
 
 export const EASING = 0.15;
 
-export type ImageWrapperProps = ImgHTMLAttributes<{}> &
-  TransformProps &
-  BoundsProps;
+export type ImageWrapperProps = TransformProps & BoundsProps;
 
-export const ImageWrapper: ComponentClass<ImageWrapperProps> = styled.img.attrs<
-  BoundsProps
->({
+export const ImageWrapper = styled.img.attrs<BoundsProps>({
   style: ({ x, y, width, height }: ImageWrapperProps) => ({
     left: x,
     top: y,
@@ -99,9 +84,7 @@ export interface MarginWrapperProps {
   size: number;
 }
 
-export const MarginWrapperSquare: ComponentClass<
-  MarginWrapperProps
-> = styled.div`
+export const MarginWrapperSquare = styled.div`
   position: absolute;
   border: 1px dotted white;
   left: 0;
@@ -113,9 +96,7 @@ export const MarginWrapperSquare: ComponentClass<
   height: ${({ height }) => height}px;
 `;
 
-export const MarginWrapperCircle: ComponentClass<
-  MarginWrapperProps
-> = styled.div`
+export const MarginWrapperCircle = styled.div<MarginWrapperProps>`
   position: absolute;
   overflow: hidden;
   left: 0px;

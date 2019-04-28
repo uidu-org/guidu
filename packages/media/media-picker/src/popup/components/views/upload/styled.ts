@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-
-import { HTMLAttributes, ImgHTMLAttributes, ComponentClass } from 'react';
 import { borderIcon } from '../../../../icons';
 
 export interface IsEmptyProps {
   isEmpty?: boolean;
 }
 
-export const SpinnerWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const SpinnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,16 +13,16 @@ export const SpinnerWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   height: calc(100% - 211px);
 `;
 
-export const DefaultImage: ComponentClass<ImgHTMLAttributes<{}>> = styled.img`
+export const DefaultImage = styled.img`
   float: left;
   width: 115px;
 `;
 
-export const TextWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const TextWrapper = styled.div`
   float: left;
 `;
 
-export const DropzoneText: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const DropzoneText = styled.div`
   display: block;
   margin-left: 10px;
   white-space: nowrap;
@@ -32,15 +30,13 @@ export const DropzoneText: ComponentClass<HTMLAttributes<{}>> = styled.div`
   color: #6c798f;
 `;
 
-export const ButtonWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ButtonWrapper = styled.div`
   margin-left: 10px;
   margin-top: 14px;
   text-align: center;
 `;
 
-export const DropzoneContentWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const DropzoneContentWrapper = styled.div`
   display: block;
   float: left;
   position: relative;
@@ -49,9 +45,7 @@ export const DropzoneContentWrapper: ComponentClass<
   transform: translate(-50%, -50%);
 `;
 
-export const DropzoneContainer: ComponentClass<
-  HTMLAttributes<{}> & IsEmptyProps
-> = styled.div`
+export const DropzoneContainer = styled.div<IsEmptyProps>`
   box-sizing: border-box;
   border: 2px dashed #cfd4db;
   border-image-source: url('${borderIcon}');
@@ -62,20 +56,18 @@ export const DropzoneContainer: ComponentClass<
     isEmpty ? 'height: calc(100% - 4px);' : 'height: 211px;'}
 `;
 
-export const RecentUploadsTitle: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const RecentUploadsTitle = styled.div`
   padding: 25px 10px 5px 0;
   font-size: 20px;
   color: #071d43;
 `;
 
-export const CardsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CardsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
 
-export const CardWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const CardWrapper = styled.div`
   margin: 6px 0;
   margin-right: 12px;
   outline: none;
@@ -86,7 +78,7 @@ export const CardWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Wrapper = styled.div`
   box-sizing: border-box;
   width: 100%;
   height: 100%;

@@ -1,6 +1,5 @@
 /* tslint:disable: variable-name */
 import * as React from 'react';
-import { HTMLAttributes, ComponentClass } from 'react';
 import styled from 'styled-components';
 import { FilmstripView } from '../src/filmstripView';
 import { FilmstripState } from '../src';
@@ -12,7 +11,7 @@ export interface StoryState {
   offset: number;
 }
 
-const Box: ComponentClass<HTMLAttributes<{}>> = styled.div`
+const Box = styled.div`
   width: 250px;
   height: 100px;
   background-color: lightgreen;

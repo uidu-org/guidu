@@ -8,7 +8,7 @@ import {
   ReactElement,
 } from 'react';
 import { ArrowLeft, ArrowRight } from 'react-feather';
-import * as debounce from 'debounce';
+import debounce from 'debounce';
 import {
   FilmStripViewWrapper,
   FilmStripListWrapper,
@@ -96,7 +96,7 @@ export interface ArrowProps {
 export const LeftArrow: React.SFC<ArrowProps> = ({ onClick }: ArrowProps) => (
   <ShadowLeft>
     <ArrowLeftWrapper className="arrow" onClick={onClick}>
-      <ArrowLeft label="left" />
+      <ArrowLeft />
     </ArrowLeftWrapper>
   </ShadowLeft>
 );
@@ -104,7 +104,7 @@ export const LeftArrow: React.SFC<ArrowProps> = ({ onClick }: ArrowProps) => (
 export const RightArrow: React.SFC<ArrowProps> = ({ onClick }: ArrowProps) => (
   <ShadowRight>
     <ArrowRightWrapper className="arrow" onClick={onClick}>
-      <ArrowRight label="right" />
+      <ArrowRight />
     </ArrowRightWrapper>
   </ShadowRight>
 );

@@ -1,10 +1,6 @@
-/* tslint:disable:variable-name */
-
 import styled from 'styled-components';
 
-import { ComponentClass, AnchorHTMLAttributes } from 'react';
-
-export const A: ComponentClass<AnchorHTMLAttributes<{}>> = styled.a`
+export const A = styled.a`
   text-decoration: none;
   outline: 0 !important;
 

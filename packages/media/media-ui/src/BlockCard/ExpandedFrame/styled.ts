@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { HTMLAttributes, ComponentClass, AnchorHTMLAttributes } from 'react';
-
 import { colors, fontFamily } from '@uidu/theme';
 import { borderRadius, size, ellipsis } from '../../mixins';
 
@@ -84,21 +82,17 @@ const wrapperStyles = css`
 //   maxWidth?: number;
 // }
 
-export const LinkWrapper: ComponentClass<
-  AnchorHTMLAttributes<{}> & WrapperProps
-> = styled.a`
+export const LinkWrapper = styled.a<WrapperProps>`
   ${wrapperStyles} &:hover {
     text-decoration: none;
   }
 `;
 
-export const Wrapper: ComponentClass<
-  HTMLAttributes<{}> & WrapperProps
-> = styled.div`
+export const Wrapper = styled.div<WrapperProps>`
   ${wrapperStyles};
 `;
 
-export const Header: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Header = styled.div`
   height: 32px;
   display: flex;
   align-items: center;
@@ -109,9 +103,7 @@ export interface PlaceholderProps {
   isPlaceholder: boolean;
 }
 
-export const IconWrapper: ComponentClass<
-  HTMLAttributes<{}> & PlaceholderProps
-> = styled.div`
+export const IconWrapper = styled.div<PlaceholderProps>`
   ${borderRadius} ${size(16)} ${({ isPlaceholder }: PlaceholderProps) => {
   if (isPlaceholder) {
     return `
@@ -123,9 +115,7 @@ export const IconWrapper: ComponentClass<
 }} margin-right: 4px;
 `;
 
-export const TextWrapper: ComponentClass<
-  HTMLAttributes<{}> & PlaceholderProps
-> = styled.div`
+export const TextWrapper = styled.div<PlaceholderProps>`
   ${({ isPlaceholder }: PlaceholderProps) => {
     if (isPlaceholder) {
       return `
@@ -147,9 +137,7 @@ export interface ContentProps {
   isInteractive: boolean;
 }
 
-export const Content: ComponentClass<
-  HTMLAttributes<{}> & ContentProps
-> = styled.div`
+export const Content = styled.div<ContentProps>`
   position: relative;
 
   ${borderRadius} ${cardShadow} background-color: white;

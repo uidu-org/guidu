@@ -1,19 +1,18 @@
 import styled from 'styled-components';
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 import { ellipsis, borderRadius, size } from '../../mixins';
 
 const thumbnailWidth = 40;
 export const maxAvatarCount = 6;
 
-export const ContentWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   padding: 8px 12px 12px 12px;
 `;
 
-export const LeftWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const LeftWrapper = styled.div`
   /* FIXME: top padding dependent on content */
   display: flex;
   align-items: flex-start;
@@ -23,18 +22,18 @@ export const LeftWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   min-width: ${thumbnailWidth}px;
 `;
 
-export const RightWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const RightWrapper = styled.div`
   flex-grow: 1;
   min-width: 0; /* for Chrome ellipsis */
   flex-basis: 0; /* for IE ellipsis */
 `;
 
-export const FooterWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const FooterWrapper = styled.div`
   display: flex;
   margin-top: 8px;
 `;
 
-export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Title = styled.div`
   color: ${colors.N900};
   font-size: 16px;
   font-weight: 500;
@@ -43,7 +42,7 @@ export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
   overflow: hidden;
 `;
 
-export const Byline: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Byline = styled.div`
   margin-top: 4px;
   color: ${colors.N300};
   font-size: 12px;
@@ -52,7 +51,7 @@ export const Byline: ComponentClass<HTMLAttributes<{}>> = styled.div`
   ${ellipsis('100%')};
 `;
 
-export const Description: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Description = styled.div`
   margin-top: 7px;
   color: ${colors.N800};
   font-size: 12px;
@@ -62,7 +61,7 @@ export const Description: ComponentClass<HTMLAttributes<{}>> = styled.div`
   overflow: hidden;
 `;
 
-export const IconWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const IconWrapper = styled.div`
   margin-top: 4px;
 `;
 
@@ -70,9 +69,7 @@ export interface ThumbnailProps {
   src: string;
 }
 
-export const Thumbnail: ComponentClass<
-  HTMLAttributes<{}> & ThumbnailProps
-> = styled.div`
+export const Thumbnail = styled.div<ThumbnailProps>`
   ${borderRadius} ${size(48)} float: right;
   margin: 4px 0 12px 12px;
   background-color: ${colors.N30};
@@ -80,11 +77,11 @@ export const Thumbnail: ComponentClass<
   background-size: cover;
 `;
 
-export const UsersWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const UsersWrapper = styled.div`
   margin-top: 8px;
 `;
 
-export const ActionsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ActionsWrapper = styled.div`
   margin-top: 8px;
   text-align: right;
 
@@ -97,7 +94,7 @@ export const ActionsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const AlertWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const AlertWrapper = styled.div`
   position: absolute;
   top: 0;
   right: 0;

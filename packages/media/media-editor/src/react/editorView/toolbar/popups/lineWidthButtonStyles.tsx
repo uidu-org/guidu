@@ -1,18 +1,14 @@
-// tslint:disable:variable-name
-
 import styled from 'styled-components';
-
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 
-export const Container: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Container = styled.div`
   width: 32px;
   height: 32px;
   padding: 1px;
   box-sizing: border-box;
 `;
 
-export const HoverArea: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const HoverArea = styled.div`
   box-sizing: border-box;
   width: 30px;
   height: 30px;
@@ -26,9 +22,7 @@ export const HoverArea: ComponentClass<HTMLAttributes<{}>> = styled.div`
 export interface AreaProps {
   isSelected: boolean;
 }
-export const MainArea: ComponentClass<
-  HTMLAttributes<{}> & AreaProps
-> = styled.div`
+export const MainArea = styled.div<AreaProps>`
   box-sizing: border-box;
   width: 24px;
   height: 24px;
@@ -37,9 +31,7 @@ export const MainArea: ComponentClass<
     props.isSelected ? colors.N500 : colors.N30A};
 `;
 
-export const FrontArea: ComponentClass<
-  HTMLAttributes<{}> & AreaProps
-> = styled.div`
+export const FrontArea = styled.div<AreaProps>`
   box-sizing: border-box;
   background-color: ${(props: AreaProps) =>
     props.isSelected ? colors.N0 : colors.N500};

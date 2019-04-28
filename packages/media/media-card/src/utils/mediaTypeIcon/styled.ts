@@ -1,8 +1,6 @@
 /* tslint:disable:variable-name */
 
 import styled from 'styled-components';
-
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 
 const typeToColorMap: any = {
@@ -17,9 +15,7 @@ export interface IconWrapperProps {
   type: string;
 }
 
-export const IconWrapper: ComponentClass<
-  HTMLAttributes<{}> & IconWrapperProps
-> = styled.div`
+export const IconWrapper = styled.div<IconWrapperProps>`
   display: inline-flex;
   color: ${({ type }: IconWrapperProps) =>
     typeToColorMap[type] || typeToColorMap.unknown};

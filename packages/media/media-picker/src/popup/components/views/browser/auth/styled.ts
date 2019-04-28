@@ -1,9 +1,7 @@
 import styled from 'styled-components';
-
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 
-export const IconWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const IconWrapper = styled.div`
   color: ${colors.N30};
   display: flex;
   align-items: center;
@@ -20,11 +18,11 @@ export const IconWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const ButtonWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ButtonWrapper = styled.div`
   text-align: center;
 `;
 
-export const TextDescription: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const TextDescription = styled.div`
   margin-top: 18px;
   color: ${colors.N500};
   opacity: 0.7;
@@ -32,13 +30,13 @@ export const TextDescription: ComponentClass<HTMLAttributes<{}>> = styled.div`
   text-align: center;
 `;
 
-export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Title = styled.div`
   text-align: center;
   font-size: 16px;
   color: ${colors.N100};
 `;
 
-export const ConnectWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ConnectWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

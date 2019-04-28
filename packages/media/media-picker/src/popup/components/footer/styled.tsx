@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
 import Button from '@uidu/button';
 
-export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Wrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
@@ -12,8 +11,8 @@ export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   padding: 26px 15px 23px 18px;
 `;
 
-export const InsertButton: ComponentClass<any> = styled(Button)`
+export const InsertButton = styled(Button)`
   margin-right: 5px;
 `;
 
-export const CancelButton: ComponentClass<any> = styled(Button)``;
+export const CancelButton = styled(Button)``;

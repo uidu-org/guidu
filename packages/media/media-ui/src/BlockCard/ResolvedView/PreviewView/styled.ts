@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 import { fadeIn } from '../../../mixins';
 
 const borderRadius = `border-radius: 3px 3px 0 0;`;
 
-export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   height: 0;
   padding-bottom: 56.25%;
@@ -15,7 +14,7 @@ export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   ${fadeIn};
 `;
 
-export const IconWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const IconWrapper = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -26,9 +25,7 @@ export interface ImageWrapperProps {
   url: string;
 }
 
-export const ImageWrapper: ComponentClass<
-  HTMLAttributes<{}> & ImageWrapperProps
-> = styled.div`
+export const ImageWrapper = styled.div<ImageWrapperProps>`
   position: absolute;
   top: 0;
   right: 0;

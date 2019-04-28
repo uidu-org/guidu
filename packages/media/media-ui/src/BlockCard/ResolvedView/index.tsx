@@ -381,10 +381,7 @@ export class BlockCardResolvedView extends React.Component<
     );
   }
 
-  renderWithToolTip(
-    Elem: React.ComponentClass<any>,
-    model: { text: string; tooltip?: string },
-  ) {
+  renderWithToolTip(Elem: any, model: { text: string; tooltip?: string }) {
     if (model.tooltip) {
       return (
         <Tooltip content={model.tooltip}>

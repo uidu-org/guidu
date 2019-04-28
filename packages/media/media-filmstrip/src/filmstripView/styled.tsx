@@ -1,13 +1,9 @@
 /* tslint:disable:variable-name */
 
-import styled, { ThemedOuterStyledProps } from 'styled-components';
-
-import { HTMLAttributes, ComponentClass, LiHTMLAttributes } from 'react';
+import styled from 'styled-components';
 import { colors } from '@uidu/theme';
 
-export const FilmStripViewWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const FilmStripViewWrapper = styled.div`
   position: relative;
   padding: 3px 0;
   border-radius: 3px;
@@ -21,17 +17,13 @@ export const FilmStripViewWrapper: ComponentClass<
   }
 `;
 
-export const FilmStripListWrapper: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.div`
+export const FilmStripListWrapper = styled.div`
   width: inherit;
   overflow: hidden;
   padding: 2px 0;
 `;
 
-export const FilmStripList: ComponentClass<
-  HTMLAttributes<{}> & ThemedOuterStyledProps<{}, {}>
-> = styled.ul`
+export const FilmStripList = styled.ul`
   margin: 0;
   padding: 0;
   transition-property: transform;
@@ -40,9 +32,7 @@ export const FilmStripList: ComponentClass<
   display: inline-block;
 `;
 
-export const FilmStripListItem: ComponentClass<
-  LiHTMLAttributes<{}>
-> = styled.li`
+export const FilmStripListItem = styled.li`
   list-style-type: none;
   margin: 0;
   padding: 0 4px;
@@ -52,7 +42,7 @@ export const FilmStripListItem: ComponentClass<
   font-size: 0;
 `;
 
-export const ArrowWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const ArrowWrapper = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -84,9 +74,7 @@ export const ArrowWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const ArrowLeftWrapper: ComponentClass<HTMLAttributes<{}>> = styled(
-  ArrowWrapper,
-)`
+export const ArrowLeftWrapper = styled(ArrowWrapper)`
   left: 8px;
 
   svg {
@@ -94,9 +82,7 @@ export const ArrowLeftWrapper: ComponentClass<HTMLAttributes<{}>> = styled(
   }
 `;
 
-export const ArrowRightWrapper: ComponentClass<HTMLAttributes<{}>> = styled(
-  ArrowWrapper,
-)`
+export const ArrowRightWrapper = styled(ArrowWrapper)`
   right: 8px;
 
   svg {
@@ -104,7 +90,7 @@ export const ArrowRightWrapper: ComponentClass<HTMLAttributes<{}>> = styled(
   }
 `;
 
-export const Shadow: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Shadow = styled.div`
   position: absolute;
   z-index: 10;
   height: 100%;
@@ -113,10 +99,10 @@ export const Shadow: ComponentClass<HTMLAttributes<{}>> = styled.div`
   background-color: rgba(0, 0, 0, 0.2);
 `;
 
-export const ShadowLeft: ComponentClass<HTMLAttributes<{}>> = styled(Shadow)`
+export const ShadowLeft = styled(Shadow)`
   left: 0;
 `;
 
-export const ShadowRight: ComponentClass<HTMLAttributes<{}>> = styled(Shadow)`
+export const ShadowRight = styled(Shadow)`
   right: 0;
 `;

@@ -1,4 +1,3 @@
-import { AnchorHTMLAttributes, ComponentClass } from 'react';
 import styled from 'styled-components';
 import { colors } from '@uidu/theme';
 import { borderRadius as akBorderRadius } from '@uidu/theme';
@@ -52,9 +51,7 @@ const isSelected = ({ isSelected }: WrapperProps) => {
   }
 };
 
-export const Wrapper: ComponentClass<
-  AnchorHTMLAttributes<{}> & WrapperProps
-> = styled.a`
+export const Wrapper = styled.a<WrapperProps>`
   line-height: ${16 / 14};
   margin: 0px 2px;
   padding: 2px;

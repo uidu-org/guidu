@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { MentionProps } from 'react-mentions';
 
-export interface Message {
+export type Message = {
   id?: number;
   body?: string;
-}
+};
 
 export type MessageableProps = {
   /** The base styling to apply to the button */
@@ -22,12 +22,12 @@ export type MessageFormActionProps = {
   props: any;
 };
 
-export interface MessageFormActionsProps {
+export type MessageFormActionsProps = {
   /** The base styling to apply to the button. */
   name: string;
   /** The base styling to apply to the button. */
   children: Array<MessageFormActionProps>;
-}
+};
 
 export type MessageFormProps = {
   /** The base styling to apply to the button. */

@@ -1,9 +1,6 @@
-import * as React from 'react';
 import styled from 'styled-components';
 
-export const Wrapper: React.ComponentClass<
-  React.HTMLAttributes<{}>
-> = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -14,7 +11,7 @@ export const Wrapper: React.ComponentClass<
   }
 `;
 
-export const Left: React.ComponentClass<React.HTMLAttributes<{}>> = styled.div`
+export const Left = styled.div`
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -24,9 +21,7 @@ export const Left: React.ComponentClass<React.HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const Middle: React.ComponentClass<
-  React.HTMLAttributes<{}>
-> = styled.div`
+export const Middle = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +29,7 @@ export const Middle: React.ComponentClass<
   overflow: hidden;
 `;
 
-export const Right: React.ComponentClass<React.HTMLAttributes<{}>> = styled.div`
+export const Right = styled.div`
   display: flex;
   align-items: center;
   flex-shrink: 0;

@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-import { HTMLAttributes, ComponentClass } from 'react';
 import { colors } from '@uidu/theme';
 import { ellipsis } from '../../../mixins';
 
 const widgetHeight = 24;
 
-export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-grow: 1;
   flex-wrap: wrap;
@@ -23,7 +22,7 @@ export const Wrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const WidgetWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const WidgetWrapper = styled.div`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -31,7 +30,7 @@ export const WidgetWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div`
   max-width: calc(100% - (2 * 12px));
 `;
 
-export const WidgetDetails: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const WidgetDetails = styled.div`
   display: flex;
   align-items: center;
 
@@ -41,13 +40,13 @@ export const WidgetDetails: ComponentClass<HTMLAttributes<{}>> = styled.div`
   }
 `;
 
-export const Title: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Title = styled.div`
   color: ${colors.N300};
   font-size: 12px;
   line-height: ${16 / 12};
 `;
 
-export const Text: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Text = styled.div`
   ${ellipsis('none')};
   color: ${colors.N800};
   font-size: 12px;

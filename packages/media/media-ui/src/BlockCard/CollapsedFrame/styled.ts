@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { fontFamily, colors } from '@uidu/theme';
 import { borderRadius } from '../../mixins';
@@ -54,9 +53,7 @@ function selected({ isSelected }: FrameProps) {
     : '';
 }
 
-export const Wrappper: React.ComponentClass<
-  FrameProps & HTMLAttributes<{}>
-> = styled.div`
+export const Wrappper = styled.div<FrameProps>`
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -72,10 +69,10 @@ export const Wrappper: React.ComponentClass<
   ${selected}
 `;
 
-export const Icon: React.ComponentClass<HTMLAttributes<{}>> = styled.span`
+export const Icon = styled.span`
   display: inline-flex;
 `;
 
-export const Text: React.ComponentClass<HTMLAttributes<{}>> = styled.span`
+export const Text = styled.span`
   margin-left: 12px;
 `;

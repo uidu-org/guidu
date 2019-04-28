@@ -1,17 +1,11 @@
-/* tslint:disable:variable-name */
-
 import styled from 'styled-components';
-
-import { HTMLAttributes, ComponentClass, ImgHTMLAttributes } from 'react';
 import { colors, borderRadius, gridSize } from '@uidu/theme';
 
 export interface AvatarImageProps {
   isSelected: boolean;
 }
 
-const AvatarImage: ComponentClass<
-  ImgHTMLAttributes<{}> & AvatarImageProps
-> = styled.img`
+const AvatarImage = styled.img<AvatarImageProps>`
   border-radius: ${borderRadius()};
   cursor: pointer;
   ${({ isSelected }: AvatarImageProps) =>
@@ -22,23 +16,17 @@ const AvatarImage: ComponentClass<
       : ''};
 `;
 
-export const LargeAvatarImage: ComponentClass<
-  ImgHTMLAttributes<{}> & AvatarImageProps
-> = styled(AvatarImage)`
+export const LargeAvatarImage = styled<AvatarImageProps>(AvatarImage)`
   width: ${gridSize() * 9}px;
   height: ${gridSize() * 9}px;
 `;
 
-export const SmallAvatarImage: ComponentClass<
-  ImgHTMLAttributes<{}> & AvatarImageProps
-> = styled(AvatarImage)`
+export const SmallAvatarImage = styled<AvatarImageProps>(AvatarImage)`
   width: ${gridSize() * 5}px;
   height: ${gridSize() * 5}px;
 `;
 
-export const PredefinedAvatarViewWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const PredefinedAvatarViewWrapper = styled.div`
   ul {
     display: flex;
     flex-flow: row wrap;

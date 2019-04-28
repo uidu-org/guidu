@@ -9,7 +9,7 @@ import { PredefinedAvatarView } from '../src/predefined-avatar-view';
 import { generateAvatars } from '../example-helpers';
 
 const avatars: Array<Avatar> = generateAvatars(5);
-const Wrapper: React.ComponentClass<React.HTMLAttributes<{}>> = styled.div`
+const Wrapper = styled.div`
   margin: 10px;
 `;
 

@@ -1,12 +1,8 @@
 import styled from 'styled-components';
-
-import { HTMLAttributes, ComponentClass } from 'react';
 import Button from '@uidu/button';
 import { colors } from '@uidu/theme';
 
-export const FolderViewerNavigation: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const FolderViewerNavigation = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -19,18 +15,18 @@ export const FolderViewerNavigation: ComponentClass<
 `;
 FolderViewerNavigation.displayName = 'FolderViewerNavigation';
 
-export const ControlsWrapper: ComponentClass<HTMLAttributes<{}>> = styled.div``;
+export const ControlsWrapper = styled.div``;
 
-export const Controls: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const Controls = styled.div`
   height: 30px;
   display: flex;
 `;
 
-export const ControlButton: ComponentClass<any> = styled(Button)`
+export const ControlButton = styled(Button)`
   margin-right: 5px;
 `;
 
-export const BreadCrumbs: ComponentClass<HTMLAttributes<{}>> = styled.div`
+export const BreadCrumbs = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
 `;
@@ -39,18 +35,14 @@ export interface BreadCrumbLinkLabelProps {
   isLast: boolean;
 }
 
-export const BreadCrumbLinkLabel: ComponentClass<
-  HTMLAttributes<{}> & BreadCrumbLinkLabelProps
-> = styled.span`
+export const BreadCrumbLinkLabel = styled.span<BreadCrumbLinkLabelProps>`
   &:hover {
     text-decoration: ${(props: BreadCrumbLinkLabelProps) =>
       props.isLast ? 'none' : 'underline'};
   }
 `;
 
-export const BreadCrumbLinkSeparator: ComponentClass<
-  HTMLAttributes<{}> & BreadCrumbLinkLabelProps
-> = styled.span`
+export const BreadCrumbLinkSeparator = styled.span<BreadCrumbLinkLabelProps>`
   color: ${colors.N500};
   display: ${(props: BreadCrumbLinkLabelProps) =>
     props.isLast ? 'none' : 'inline'};
@@ -58,9 +50,7 @@ export const BreadCrumbLinkSeparator: ComponentClass<
   text-decoration: none;
 `;
 
-export const BreadCrumbLink: ComponentClass<
-  HTMLAttributes<{}> & BreadCrumbLinkLabelProps
-> = styled.span`
+export const BreadCrumbLink = styled.span<BreadCrumbLinkLabelProps>`
   color: ${(props: BreadCrumbLinkLabelProps) =>
     props.isLast ? colors.N900 : colors.N500};
   cursor: ${(props: BreadCrumbLinkLabelProps) =>
@@ -69,12 +59,10 @@ export const BreadCrumbLink: ComponentClass<
     props.isLast ? '20px' : '14px'};
 `;
 
-export const AccountItemButton: ComponentClass<any> = styled(Button)``;
+export const AccountItemButton = styled(Button)``;
 
 // Dropdown is NOT intentionally extended by this component to allow HACK style below to work
-export const AccountDropdownWrapper: ComponentClass<
-  HTMLAttributes<{}>
-> = styled.div`
+export const AccountDropdownWrapper = styled.div`
   /* TODO: remove this when the ak-dropdown-menu package supports custom item types */
   span[role='presentation'] > span > span:first-child {
     display: none;
