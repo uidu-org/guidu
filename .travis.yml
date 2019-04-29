@@ -13,9 +13,10 @@ before_install:
   - source ./build-setup.sh
 
 install:
-  - bolt install --pure-lockfile
+  -
 
 script:
+  - bolt install --pure-lockfile
   - yarn build
   - node ./build/releases/bin/build-releases.js version
   - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git HEAD:master > /dev/null 2>&1
