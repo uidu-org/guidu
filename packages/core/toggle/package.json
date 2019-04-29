@@ -1,6 +1,6 @@
 {
   "name": "@uidu/toggle",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A component to view and switch between enabled or disabled states",
   "module": "index.js",
   "uidu:src": "src/index.js",
