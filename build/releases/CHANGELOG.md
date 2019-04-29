@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.11
+- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+  - Release all
+
 ## 3.0.10
 - [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 

@@ -1,5 +1,10 @@
 # @atlaskit/lozenge
 
+## 0.1.6
+- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+  - Release all
+
 ## 0.1.5
 - [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 

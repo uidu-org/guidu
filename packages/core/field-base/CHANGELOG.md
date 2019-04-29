@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.28
+- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+  - Release all
+
 ## 0.1.27
 - [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 

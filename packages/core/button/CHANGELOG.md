@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.34
+- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+  - Release all
+
 ## 0.1.33
 - [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
