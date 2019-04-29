@@ -1,5 +1,5 @@
-import { State } from '@atlaskit/media-picker/src/popup/domain';
-import { Store } from 'react-redux';
+import { State } from '@atlaskit/media-picker/popup/domain';
+import { Store } from 'redux';
 import { Observable } from 'rxjs/Observable';
 import { fakeContext } from './fakeContextProvider';
 

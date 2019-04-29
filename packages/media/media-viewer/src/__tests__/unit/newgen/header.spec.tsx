@@ -2,7 +2,7 @@ import * as util from '../../../newgen/utils';
 const constructAuthTokenUrlSpy = jest.spyOn(util, 'constructAuthTokenUrl');
 
 import * as React from 'react';
-import { Observable } from 'rxjs';
+import { Observable, of, EMPTY, NEVER } from 'rxjs';
 import { ReactWrapper, mount } from 'enzyme';
 import { MediaType, FileState, Identifier } from '@uidu/media-core';
 import DownloadIcon from '@atlaskit/icon/glyph/download';
@@ -41,7 +41,7 @@ describe('<Header />', () => {
 
   it('shows an empty header while loading', () => {
     const context = createContext({
-      getFileState: () => Observable.empty(),
+      getFileState: () => EMPTY,
     });
     const el = mount(
       <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -52,7 +52,7 @@ describe('<Header />', () => {
 
   it('resubscribes to the provider when the data property value is changed', () => {
     const context = createContext({
-      getFileState: () => Observable.of(processedImageState),
+      getFileState: () => of(processedImageState),
     });
     const el = mount(
       <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -67,7 +67,7 @@ describe('<Header />', () => {
 
   it('component resets initial state when new identifier is passed', () => {
     const context = createContext({
-      getFileState: () => Observable.of(processedImageState),
+      getFileState: () => of(processedImageState),
     });
     const el = mount<{}, HeaderState>(
       <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -78,7 +78,7 @@ describe('<Header />', () => {
     // since the test is executed synchronously
     // let's prevent the second call to getFile from immediately resolving and
     // updating the state to SUCCESSFUL before we run the assertion.
-    context.file.getFileState = () => Observable.never();
+    context.file.getFileState = () => NEVER;
 
     el.setProps({ identifier: identifier2 });
     expect(el.state().item.status).toEqual('PENDING');
@@ -86,7 +86,7 @@ describe('<Header />', () => {
 
   it('component resets initial state when new context is passed', () => {
     const context = createContext({
-      getFileState: () => Observable.of(processedImageState),
+      getFileState: () => of(processedImageState),
     });
     const el = mount<{}, HeaderState>(
       <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -97,7 +97,7 @@ describe('<Header />', () => {
     // let's prevent the second call to getFile from immediately resolving and
     // updating the state to SUCCESSFUL before we run the assertion.
     const newContext = createContext({
-      getFileState: () => Observable.never(),
+      getFileState: () => NEVER,
     });
     el.setProps({ context: newContext });
     expect(el.state().item.status).toEqual('PENDING');
@@ -107,7 +107,7 @@ describe('<Header />', () => {
     describe('File collectionName', () => {
       it('shows the title when loaded', () => {
         const context = createContext({
-          getFileState: () => Observable.of(processedImageState),
+          getFileState: () => of(processedImageState),
         });
         const el = mount(
           <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -122,7 +122,7 @@ describe('<Header />', () => {
           name: '',
         };
         const context = createContext({
-          getFileState: () => Observable.of(unNamedImage),
+          getFileState: () => of(unNamedImage),
         });
         const el = mount(
           <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -147,7 +147,7 @@ describe('<Header />', () => {
           artifacts: {},
         };
         const context = createContext({
-          getFileState: () => Observable.of(testItem),
+          getFileState: () => of(testItem),
         });
         const el = mount(
           <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -172,7 +172,7 @@ describe('<Header />', () => {
           size: 0,
         };
         const context = createContext({
-          getFileState: () => Observable.of(noSizeImage),
+          getFileState: () => of(noSizeImage),
         });
         const el = mount(
           <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -188,7 +188,7 @@ describe('<Header />', () => {
           size: 23232323,
         };
         const context = createContext({
-          getFileState: () => Observable.of(noMediaTypeElement),
+          getFileState: () => of(noMediaTypeElement),
         });
         const el = mount(
           <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -212,7 +212,7 @@ describe('<Header />', () => {
     it('MSW-720: passes the collectionName to getFile', () => {
       const collectionName = 'some-collection';
       const context = createContext({
-        getFileState: () => Observable.of(processedImageState),
+        getFileState: () => of(processedImageState),
       });
       const identifierWithCollection = { ...identifier, collectionName };
       const el = mount(
@@ -231,7 +231,7 @@ describe('<Header />', () => {
     it('MSW-720: passes the collectionName to context.file.downloadBinary', () => {
       const collectionName = 'some-collection';
       const context = createContext({
-        getFileState: () => Observable.of(processedImageState),
+        getFileState: () => of(processedImageState),
       });
       const identifierWithCollection = { ...identifier, collectionName };
       const el = mount(
@@ -260,7 +260,7 @@ describe('<Header />', () => {
 
     it('should show the download button disabled while the item metadata is loading', () => {
       const context = createContext({
-        getFileState: () => Observable.empty(),
+        getFileState: () => EMPTY,
       });
       const el = mount(
         <Header intl={fakeIntl} context={context} identifier={identifier} />,
@@ -271,7 +271,7 @@ describe('<Header />', () => {
 
     it('should show the download button enabled when the item is loaded', () => {
       const context = createContext({
-        getFileState: () => Observable.of(processedImageState),
+        getFileState: () => of(processedImageState),
       });
       const el = mount(
         <Header intl={fakeIntl} context={context} identifier={identifier} />,

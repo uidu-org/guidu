@@ -65,7 +65,7 @@ export class CustomMediaPlayer extends Component<
   CustomMediaPlayerProps & InjectedIntlProps,
   CustomMediaPlayerState
 > {
-  videoWrapperRef?: HTMLElement;
+  videoWrapperRef?: HTMLDivElement | null;
 
   state: CustomMediaPlayerState = {
     isFullScreenEnabled: false,
@@ -117,7 +117,7 @@ export class CustomMediaPlayer extends Component<
     const { type, isHDAvailable, isHDActive, onHDToggleClick } = this.props;
 
     if (type === 'audio' || !isHDAvailable) {
-      return;
+      return null;
     }
     const primaryColor = isHDActive ? colors.B200 : colors.DN400;
     const secondaryColor = isHDActive ? colors.white : colors.DN60;
@@ -164,7 +164,7 @@ export class CustomMediaPlayer extends Component<
 
   onFullScreenClick = () => toggleFullscreen(this.videoWrapperRef);
 
-  saveVideoWrapperRef = (el: HTMLElement | undefined) =>
+  saveVideoWrapperRef = (el: HTMLDivElement | null) =>
     (this.videoWrapperRef = el);
 
   renderFullScreenButton = () => {
@@ -174,7 +174,7 @@ export class CustomMediaPlayer extends Component<
     } = this.props;
 
     if (type === 'audio') {
-      return;
+      return null;
     }
 
     const { isFullScreenEnabled } = this.state;

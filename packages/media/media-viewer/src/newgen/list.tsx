@@ -67,7 +67,7 @@ export class List extends React.Component<Props, State> {
     }
   }
 
-  onNavigationChange = (selectedItem: FileIdentifier) => {
+  onNavigationChange = (selectedItem: FileIdentifier | any) => {
     const { onNavigationChange, showControls } = this.props;
     if (onNavigationChange) {
       onNavigationChange(selectedItem);

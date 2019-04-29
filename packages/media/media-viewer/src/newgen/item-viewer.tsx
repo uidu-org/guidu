@@ -31,7 +31,7 @@ import {
 import { AudioViewer } from './viewers/audio';
 
 export type Props = Readonly<{
-  identifier: FileIdentifier;
+  identifier: FileIdentifier | any;
   context: Context;
   featureFlags?: MediaViewerFeatureFlags;
   showControls?: () => void;

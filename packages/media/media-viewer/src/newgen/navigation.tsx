@@ -83,13 +83,7 @@ export class NavigationBase extends Component<NavigationProps, {}> {
               <Shortcut keyCode={37} handler={prev('keyboard')} />
               <Button
                 onClick={prev('mouse')}
-                iconBefore={
-                  <ArrowLeftCircle
-                    strokeColor={colors.N800}
-                    size={24}
-                    label="Previous"
-                  />
-                }
+                iconBefore={<ArrowLeftCircle stroke={colors.N800} size={24} />}
               />
             </Arrow>
           ) : null}
@@ -101,13 +95,7 @@ export class NavigationBase extends Component<NavigationProps, {}> {
               <Shortcut keyCode={39} handler={next('keyboard')} />
               <Button
                 onClick={next('mouse')}
-                iconBefore={
-                  <ArrowRightCircle
-                    strokeColor={colors.N800}
-                    size={24}
-                    label="Next"
-                  />
-                }
+                iconBefore={<ArrowRightCircle stroke={colors.N800} size={24} />}
               />
             </Arrow>
           ) : null}

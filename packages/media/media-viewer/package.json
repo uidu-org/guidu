@@ -17,6 +17,7 @@
     "@atlaskit/analytics-next-types": "^3.2.0",
     "@atlaskit/field-range": "^6.0.1",
     "@atlaskit/icon": "^16.0.3",
+    "@atlaskit/media-picker": "^38.1.6",
     "@types/enzyme": "^3.9.0",
     "@uidu/analytics": "^0.1.4",
     "@uidu/build-utils": "^0.1.4",

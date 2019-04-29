@@ -40,7 +40,7 @@ export class Outcome<Data, Err = Error> {
     if (this.state.status === 'SUCCESSFUL') {
       return this.state.data;
     } else {
-      return;
+      return null;
     }
   }
 
@@ -48,7 +48,7 @@ export class Outcome<Data, Err = Error> {
     if (this.state.status === 'FAILED') {
       return this.state.err;
     } else {
-      return;
+      return null;
     }
   }
 

@@ -3,7 +3,7 @@ import Context from '../Context';
 import { Client, ObjectState } from '../Client';
 import { v4 } from 'uuid';
 import { BlockCardErroredView, InlineCardErroredView } from '@uidu/media-ui';
-import { WithAnalyticsEventProps } from '@uidu/analytics-next-types';
+import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
 import { GasPayload } from '@atlaskit/analytics-gas-types';
 import { ANALYTICS_CHANNEL } from '../analytics';
 

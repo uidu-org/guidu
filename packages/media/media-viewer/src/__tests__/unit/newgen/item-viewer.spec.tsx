@@ -10,8 +10,9 @@ jest.mock('../../../newgen/viewers/image', () => mockImageViewer);
 
 import * as React from 'react';
 import { ReactWrapper } from 'enzyme';
-import { Observable } from 'rxjs';
-import Spinner  from '@uidu/spinner';
+import { Observable, EMPTY, NEVER } from 'rxjs';
+import { of } from 'rxjs';
+import Spinner from '@uidu/spinner';
 import Button from '@uidu/button';
 import {
   Context,
@@ -82,7 +83,7 @@ describe('<ItemViewer />', () => {
   });
 
   it('shows an indicator while loading', () => {
-    const context = makeFakeContext(Observable.empty());
+    const context = makeFakeContext(EMPTY);
     const { el } = mountComponent(context, identifier);
     expect(el.find(Spinner)).toHaveLength(1);
   });
@@ -101,7 +102,7 @@ describe('<ItemViewer />', () => {
 
   it('should show the image viewer if media type is image', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: identifier.id,
         mediaType: 'image',
         status: 'processed',
@@ -117,7 +118,7 @@ describe('<ItemViewer />', () => {
   });
 
   it('should should error and download button if processing Status failed', () => {
-    const context = makeFakeContext(Observable.of({ status: 'error' }));
+    const context = makeFakeContext(of({ status: 'error' }));
     const { el } = mountComponent(context, identifier);
     el.update();
     const errorMessage = el.find(ErrorMessage);
@@ -130,7 +131,7 @@ describe('<ItemViewer />', () => {
 
   it('should should error and download button if file is processing failed', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: '123',
         mediaType: 'video',
         status: 'failed-processing',
@@ -150,7 +151,7 @@ describe('<ItemViewer />', () => {
 
   it('should should error and download button if file is in error state', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: '123',
         mediaType: 'image',
         status: 'error',
@@ -178,7 +179,7 @@ describe('<ItemViewer />', () => {
       size: 1,
       artifacts: {},
     };
-    const context = makeFakeContext(Observable.of(state));
+    const context = makeFakeContext(of(state));
     const { el } = mountComponent(context, identifier);
     el.update();
     expect(el.find(VideoViewer)).toHaveLength(1);
@@ -190,7 +191,7 @@ describe('<ItemViewer />', () => {
 
   it('should show the audio viewer if media type is audio', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: identifier.id,
         mediaType: 'audio',
         status: 'processed',
@@ -207,7 +208,7 @@ describe('<ItemViewer />', () => {
 
   it('should show the document viewer if media type is document', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: identifier.id,
         mediaType: 'doc',
         status: 'processed',
@@ -224,7 +225,7 @@ describe('<ItemViewer />', () => {
 
   it('should should error and download button if file is unsupported', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: identifier.id,
         mediaType: 'unknown',
         status: 'processed',
@@ -242,7 +243,7 @@ describe('<ItemViewer />', () => {
 
   it('MSW-720: passes the collectionName to getFileState', () => {
     const context = makeFakeContext(
-      Observable.of({
+      of({
         id: identifier.id,
         mediaType: 'image',
         status: 'processed',
@@ -259,7 +260,7 @@ describe('<ItemViewer />', () => {
     it('unsubscribes from the provider when unmounted', () => {
       const release = jest.fn();
       const context = makeFakeContext(
-        Observable.of({
+        of({
           id: '123',
           mediaType: 'unknown',
           status: 'processed',
@@ -275,7 +276,7 @@ describe('<ItemViewer />', () => {
     it('resubscribes to the provider when the data property value is changed', () => {
       const identifierCopy = { ...identifier };
       const context = makeFakeContext(
-        Observable.of({
+        of({
           id: '123',
           mediaType: 'unknown',
           status: 'processed',
@@ -298,7 +299,7 @@ describe('<ItemViewer />', () => {
 
       // if the context changes, we will also resubscribe
       const newContext = makeFakeContext(
-        Observable.of({
+        of({
           id: '123',
           mediaType: 'unknown',
           status: 'processed',
@@ -312,7 +313,7 @@ describe('<ItemViewer />', () => {
 
     it('should return to PENDING state when resets', () => {
       const context = makeFakeContext(
-        Observable.of({
+        of({
           id: '123',
           mediaType: 'unknown',
           status: 'processed',
@@ -329,7 +330,7 @@ describe('<ItemViewer />', () => {
       // since the test is executed synchronously
       // let's prevent the second call to getFile from immediately resolving and
       // updating the state to SUCCESSFUL before we run the assertion.
-      context.file.getFileState = () => Observable.never();
+      context.file.getFileState = () => NEVER;
       el.setProps({ context, identifier: identifier2 });
       el.update();
 
@@ -346,7 +347,7 @@ describe('<ItemViewer />', () => {
 
     it('should trigger analytics when the preview commences', () => {
       const context = makeFakeContext(
-        Observable.of({
+        of({
           id: identifier.id,
           mediaType: 'unknown',
           status: 'processed',
@@ -407,7 +408,7 @@ describe('<ItemViewer />', () => {
         errorMessage: 'Image viewer failed :(',
       });
       const context = makeFakeContext(
-        Observable.of({
+        of({
           id: identifier.id,
           mediaType: 'image',
           status: 'processed',
@@ -435,7 +436,7 @@ describe('<ItemViewer />', () => {
 
     it('should trigger analytics when viewer is successful', () => {
       const context = makeFakeContext(
-        Observable.of({
+        of({
           id: identifier.id,
           mediaType: 'image',
           status: 'processed',

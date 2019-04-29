@@ -1,6 +1,6 @@
 import * as events from 'events';
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import {
   Context,
   ContextConfig,
@@ -26,12 +26,10 @@ export class Stubs {
 
     jest
       .spyOn(mediaViewer, 'on')
-      .mockImplementation((event, callback) => emitter.on(event, callback));
+      .mockImplementation(() => {});
     jest
       .spyOn(mediaViewer, 'off')
-      .mockImplementation((event, callback) =>
-        emitter.removeListener(event, callback),
-      );
+      .mockImplementation(() => {});
 
     return mediaViewer;
   }
@@ -54,11 +52,11 @@ export class Stubs {
       config,
       file: {
         downloadBinary: jest.fn(),
-        getFileState: jest.fn(getFileState || (() => Observable.empty())),
+        getFileState: jest.fn(getFileState || (() => EMPTY)),
         upload: jest.fn(),
       } as any,
       collection: {
-        getItems: jest.fn(() => Observable.empty()),
+        getItems: jest.fn(() => EMPTY),
         loadNextPage: jest.fn(),
       } as any,
     };

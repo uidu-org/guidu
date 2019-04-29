@@ -1,4 +1,5 @@
 import { Observable } from 'rxjs/Observable';
+import { ConnectableObservable } from 'rxjs/Observable/ConnectableObservable';
 import { Observer } from 'rxjs/Observer';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { publishReplay } from 'rxjs/operators/publishReplay';
@@ -147,7 +148,7 @@ export class FileFetcherImpl implements FileFetcher {
       const collection = options && options.collectionName;
       const fileStream$ = publishReplay<FileState>(1)(
         this.createDownloadFileStream(id, collection),
-      );
+      ) as ConnectableObservable<FileState>;
 
       fileStream$.connect();
 

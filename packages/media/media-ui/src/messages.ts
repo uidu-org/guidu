@@ -81,7 +81,7 @@ export type MessageKey =
 
 type Messages = { [K in MessageKey]: FormattedMessage.MessageDescriptor };
 
-export const messages = defineMessages<Messages>({
+const messageDescriptors: Messages = {
   retry: {
     id: 'fabric.media.retry',
     defaultMessage: 'Retry',
@@ -494,4 +494,6 @@ export const messages = defineMessages<Messages>({
     defaultMessage: 'image',
     description: '',
   },
-});
+};
+
+export const messages = defineMessages(messageDescriptors);

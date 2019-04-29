@@ -13,6 +13,7 @@ export type MediaFile = {
   readonly processingStatus?: MediaFileProcessingStatus;
   readonly size: number;
   readonly artifacts: MediaFileArtifacts;
+  readonly preview?: any;
 };
 
 export type MediaCollection = {

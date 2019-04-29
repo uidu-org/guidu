@@ -63,7 +63,7 @@ export interface FilmstripViewProps {
    */
   offset?: number;
   /** Any React **node** */
-  children?: ReactChild;
+  children?: ReactNode;
   /** A **function** called when the size of the filmstrip has been changed e.g. when mounted, after the window is resized or the children have changed.
    * **Arguments:**
    * - event:
@@ -463,7 +463,7 @@ export class FilmstripView extends React.Component<
               transitionDuration,
             }}
           >
-            {children && React.Children.map(children, mapReactChildToReactNode)}
+            {React.Children.map(children as any, mapReactChildToReactNode)}
           </FilmStripList>
         </FilmStripListWrapper>
         {this.renderRightArrow()}

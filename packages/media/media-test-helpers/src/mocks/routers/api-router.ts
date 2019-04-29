@@ -9,7 +9,7 @@ import {
   Database,
 } from 'kakapo';
 import { TouchFileDescriptor } from '@uidu/media-store';
-import * as uuid from 'uuid/v4';
+import uuid from 'uuid/v4';
 
 import { mapDataUriToBlob } from '../../utils';
 import { mockDataUri } from '../database/mockData';

@@ -34,7 +34,7 @@ export class StateWatch<T> {
 
   getProp<P extends T>(propName: keyof P): P[typeof propName] | undefined {
     if (this.entry === null) {
-      return;
+      return null;
     }
     return (this.entry.state as P)[propName];
   }

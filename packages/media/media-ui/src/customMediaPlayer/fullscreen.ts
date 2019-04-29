@@ -43,7 +43,7 @@ export const getFullscreenElement = (): HTMLElement | undefined => {
   return propertyName && (document as any)[propertyName];
 };
 
-export const toggleFullscreen = (element?: HTMLElement) => {
+export const toggleFullscreen = (element?: HTMLDivElement | null) => {
   if (getFullscreenElement()) {
     exitFullscreen();
   } else if (element) {

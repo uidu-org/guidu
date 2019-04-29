@@ -1,18 +1,18 @@
 import * as React from 'react';
-import * as Loadable from 'react-loadable';
+import Loadable from 'react-loadable';
 
 export const getIconForFileType = (
   fileMimeType: string,
 ): React.ReactNode | undefined => {
   let icon = typeToIcon[fileMimeType.toLowerCase()];
   if (!icon) {
-    return;
+    return null;
   }
 
   const [label, importCb] = icon;
 
   if (!importCb) {
-    return;
+    return null;
   }
 
   const Icon = Loadable({
@@ -28,7 +28,7 @@ export const getLabelForFileType = (
 ): React.ReactNode | undefined => {
   let icon = typeToIcon[fileMimeType.toLowerCase()];
   if (!icon) {
-    return;
+    return null;
   }
 
   const [label] = icon;

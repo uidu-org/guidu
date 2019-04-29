@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Identifier, FileIdentifier } from '@uidu/media-core';
-import { Observable } from 'rxjs';
+import { of } from 'rxjs';
 import { List, Props, State } from '../../../newgen/list';
 import { ErrorMessage } from '../../../newgen/error';
 import ArrowRightCircleIcon from '@atlaskit/icon/glyph/chevron-right-circle';
@@ -18,7 +18,7 @@ function createFixture(props: Partial<Props>) {
   const context = {
     file: {
       getFileState: () =>
-        Observable.of({
+        of({
           id: '123',
           mediaType: 'image',
           status: 'processed',
