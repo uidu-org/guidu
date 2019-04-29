@@ -9,7 +9,7 @@
   publish = "website/dist"
 
   # Default build command.
-  command = "cd website && yarn build && yarn build:copy"
+  command = "yarn build:website"
 
 [[redirects]]
   from = "/*"
