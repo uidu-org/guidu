@@ -1,7 +1,4 @@
-import { Observable } from 'rxjs/Observable';
-import { ConnectableObservable } from 'rxjs/Observable/ConnectableObservable';
-import { Observer } from 'rxjs/Observer';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Observable, Observer, ConnectableObservable, ReplaySubject } from 'rxjs';
 import { publishReplay } from 'rxjs/operators/publishReplay';
 import uuid from 'uuid/v4';
 import Dataloader from 'dataloader';
