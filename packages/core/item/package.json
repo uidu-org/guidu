@@ -2,13 +2,9 @@
   "name": "@uidu/item",
   "version": "0.1.7",
   "description": "A generic item component to be used within other components",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

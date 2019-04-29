@@ -2,13 +2,9 @@
   "name": "@uidu/map",
   "version": "0.1.5",
   "description": "A React component for maps",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

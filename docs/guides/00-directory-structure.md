@@ -70,10 +70,7 @@ The `dist` directory contains the bundles we ship to our NPM package. We ship bo
 └─ packages
   └─ core
     └─ avatar
-      └─ dist
-        ├─ cjs
-        ├─ esm
-        └─ package.json
+      └─ package.json
 ```
 
 #### `docs`

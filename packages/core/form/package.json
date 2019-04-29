@@ -2,12 +2,8 @@
   "name": "@uidu/form",
   "version": "0.1.26",
   "description": "Forms using Formsy",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index",
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

@@ -2,13 +2,9 @@
   "name": "@uidu/field-toggle",
   "version": "0.1.10",
   "description": "A component to view and switch between enabled or disabled states",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

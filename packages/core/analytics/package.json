@@ -2,12 +2,8 @@
   "name": "@uidu/analytics",
   "version": "0.1.6",
   "description": "The uidu component analytics framework",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

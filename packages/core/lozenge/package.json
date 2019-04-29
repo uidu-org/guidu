@@ -2,13 +2,9 @@
   "name": "@uidu/lozenge",
   "version": "0.1.7",
   "description": "A React component that highlights status for quick recognition",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

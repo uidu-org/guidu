@@ -2,13 +2,9 @@
   "name": "@uidu/avatar-group",
   "version": "2.1.24",
   "description": "A component to display avatars as a group, either as a stack or in a grid.",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",

@@ -2,12 +2,8 @@
   "name": "@uidu/smart-card",
   "version": "0.1.6",
   "description": "Smart card component",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "module": "index.js",
   "uidu:src": "src/index.js",
-  "files": [
-    "dist"
-  ],
   "author": "uidu",
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",
