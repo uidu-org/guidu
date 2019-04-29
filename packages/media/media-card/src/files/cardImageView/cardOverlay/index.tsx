@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MouseEvent, Component, ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 import { FormattedMessage } from 'react-intl';
 import cx from 'classnames';
 import { MediaType } from '@uidu/media-core';
@@ -184,7 +184,7 @@ export class CardOverlay extends Component<CardOverlayProps, CardOverlayState> {
   };
 
   removeBtnClick(handler: CardEventHandler) {
-    return (e: MouseEvent<HTMLDivElement>) => {
+    return (e: React.MouseEvent<HTMLDivElement>) => {
       e.preventDefault();
       e.stopPropagation();
       handler();
