@@ -13,7 +13,7 @@ ${code`import { Skeleton } from '@uidu/avatar';`}
 ${(
   <Example
     packageName="@uidu/avatar"
-    Component={require('../examples/15-skeleton')}
+    Component={require('../examples/15-skeleton').default}
     title="Skeleton"
     source={require('!!raw-loader!../examples/15-skeleton')}
   />

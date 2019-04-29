@@ -12,7 +12,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/accordion"
-      Component={require('../examples/01-basicAccordion')}
+      Component={require('../examples/01-basicAccordion').default}
       title="Accordion allowMultipleExpanded"
       source={require('!!raw-loader!../examples/01-basicAccordion')}
     />
@@ -22,7 +22,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/accordion"
-      Component={require('../examples/02-basicNoCollapseAccordion')}
+      Component={require('../examples/02-basicNoCollapseAccordion').default}
       title="Accordion no allowMultipleExpanded"
       source={require('!!raw-loader!../examples/02-basicNoCollapseAccordion')}
     />

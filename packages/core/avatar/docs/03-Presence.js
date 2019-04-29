@@ -15,7 +15,7 @@ ${code`import { Presence } from '@uidu/avatar';`}
 ${(
   <Example
     packageName="@uidu/avatar"
-    Component={require('../examples/04-basicPresence')}
+    Component={require('../examples/04-basicPresence').default}
     title="Presence"
     source={require('!!raw-loader!../examples/04-basicPresence')}
   />

@@ -14,7 +14,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/field-range"
-      Component={require('../examples/00-basic-example')}
+      Component={require('../examples/00-basic-example').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-basic-example')}
     />

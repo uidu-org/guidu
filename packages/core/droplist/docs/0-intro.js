@@ -23,7 +23,7 @@ import DropList, {
   ${(
     <Example
       packageName="@uidu/droplist"
-      Component={require('../examples/00-basic-example')}
+      Component={require('../examples/00-basic-example').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-basic-example')}
     />
@@ -32,7 +32,7 @@ import DropList, {
   ${(
     <Example
       packageName="@uidu/droplist"
-      Component={require('../examples/01-bound-example')}
+      Component={require('../examples/01-bound-example').default}
       title="With Label"
       source={require('!!raw-loader!../examples/01-bound-example')}
     />

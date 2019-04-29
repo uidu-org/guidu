@@ -13,7 +13,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/code"
-      Component={require('../examples/00-inline-code-basic')}
+      Component={require('../examples/00-inline-code-basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-inline-code-basic')}
     />

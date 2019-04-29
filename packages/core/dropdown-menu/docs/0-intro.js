@@ -15,7 +15,7 @@ The stateful component handles selection for you, while still providing several 
 ${(
   <Example
     packageName="@uidu/dropdown-menu"
-    Component={require('../examples/01-default-dropdown-menu')}
+    Component={require('../examples/01-default-dropdown-menu').default}
     title="Default Dropdown"
     source={require('!!raw-loader!../examples/01-default-dropdown-menu')}
   />
@@ -24,7 +24,7 @@ ${(
 ${(
   <Example
     packageName="@uidu/dropdown-menu"
-    Component={require('../examples/02-complex-dropdown-menu')}
+    Component={require('../examples/02-complex-dropdown-menu').default}
     title="Complex Dropdown"
     source={require('!!raw-loader!../examples/02-complex-dropdown-menu')}
   />
@@ -33,7 +33,7 @@ ${(
 ${(
   <Example
     packageName="@uidu/dropdown-menu"
-    Component={require('../examples/03-stateless-dropdown-menu')}
+    Component={require('../examples/03-stateless-dropdown-menu').default}
     title="Stateless Dropdown"
     source={require('!!raw-loader!../examples/03-stateless-dropdown-menu')}
   />

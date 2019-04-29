@@ -29,7 +29,7 @@ export default md`
 ${(
   <Example
     packageName="@uidu/avatar-group"
-    Component={require('../examples/02-basicAvatarGroup')}
+    Component={require('../examples/02-basicAvatarGroup').default}
     title="AvatarGroup"
     source={require('!!raw-loader!../examples/02-basicAvatarGroup')}
   />

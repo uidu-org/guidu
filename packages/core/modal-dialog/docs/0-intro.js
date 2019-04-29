@@ -33,7 +33,7 @@ ${code`
   ${(
     <Example
       packageName="@uidu/modal-dialog"
-      Component={require('../examples/00-basic')}
+      Component={require('../examples/00-basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-basic')}
     />
@@ -45,7 +45,7 @@ ${code`
   ${(
     <Example
       packageName="@uidu/modal-dialog"
-      Component={require('../examples/10-appearance')}
+      Component={require('../examples/10-appearance').default}
       title="Appearance"
       source={require('!!raw-loader!../examples/10-appearance')}
     />
@@ -60,7 +60,7 @@ ${code`
   ${(
     <Example
       packageName="@uidu/modal-dialog"
-      Component={require('../examples/15-custom')}
+      Component={require('../examples/15-custom').default}
       title="Custom"
       source={require('!!raw-loader!../examples/15-custom')}
     />
@@ -72,7 +72,7 @@ ${code`
   ${(
     <Example
       packageName="@uidu/modal-dialog"
-      Component={require('../examples/45-form')}
+      Component={require('../examples/45-form').default}
       title="Form"
       source={require('!!raw-loader!../examples/45-form')}
     />

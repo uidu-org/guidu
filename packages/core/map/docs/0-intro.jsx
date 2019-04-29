@@ -14,7 +14,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/map"
-      Component={require('../examples/0-basic')}
+      Component={require('../examples/0-basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/0-basic')}
     />
@@ -23,7 +23,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/map"
-      Component={require('../examples/1-with-marker')}
+      Component={require('../examples/1-with-marker').default}
       title="With Marker"
       source={require('!!raw-loader!../examples/1-with-marker')}
     />
@@ -32,7 +32,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/map"
-      Component={require('../examples/2-with-cluster')}
+      Component={require('../examples/2-with-cluster').default}
       title="With Marker Cluster"
       source={require('!!raw-loader!../examples/2-with-cluster')}
     />

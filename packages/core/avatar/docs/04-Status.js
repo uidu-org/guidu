@@ -15,7 +15,7 @@ ${code`import { Status } from '@uidu/avatar';`}
 ${(
   <Example
     packageName="@uidu/avatar"
-    Component={require('../examples/05-basicStatus')}
+    Component={require('../examples/05-basicStatus').default}
     title="Status"
     source={require('!!raw-loader!../examples/05-basicStatus')}
   />

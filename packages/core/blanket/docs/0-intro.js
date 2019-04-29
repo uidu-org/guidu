@@ -20,7 +20,7 @@ shown or hidden with its parent element.
   ${(
     <Example
       packageName="@uidu/blanket"
-      Component={require('../examples/00-basic-usage')}
+      Component={require('../examples/00-basic-usage').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-basic-usage')}
     />
@@ -29,7 +29,7 @@ shown or hidden with its parent element.
   ${(
     <Example
       packageName="@uidu/blanket"
-      Component={require('../examples/01-click-through')}
+      Component={require('../examples/01-click-through').default}
       title="With click through enabled"
       source={require('!!raw-loader!../examples/01-click-through')}
     />

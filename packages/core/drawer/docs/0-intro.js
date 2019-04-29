@@ -15,7 +15,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/drawer"
-      Component={require('../examples/00-basic-drawer')}
+      Component={require('../examples/00-basic-drawer').default}
       source={require('!!raw-loader!../examples/00-basic-drawer')}
       title="Basic"
     />
@@ -24,7 +24,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/drawer"
-      Component={require('../examples/01-drawer-origins')}
+      Component={require('../examples/01-drawer-origins').default}
       source={require('!!raw-loader!../examples/01-drawer-origins')}
       title="Origins"
     />
@@ -35,7 +35,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/drawer"
-      Component={require('../examples/05-drawer-widths')}
+      Component={require('../examples/05-drawer-widths').default}
       source={require('!!raw-loader!../examples/05-drawer-widths')}
       title="Drawer Width"
       componentProps={{ test: true }}
@@ -51,7 +51,9 @@ export default md`
   ${(
     <Example
       packageName="@uidu/drawer"
-      Component={require('../examples/15-retain-drawer-contents-on-close')}
+      Component={
+        require('../examples/15-retain-drawer-contents-on-close').default
+      }
       source={require('!!raw-loader!../examples/15-retain-drawer-contents-on-close')}
       title="Retain content when drawer is closed"
     />

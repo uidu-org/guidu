@@ -20,7 +20,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/checkbox"
-      Component={require('../examples/00-basic-usage.js')}
+      Component={require('../examples/00-basic-usage.js').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-basic-usage')}
     />
@@ -29,7 +29,7 @@ export default md`
 ${(
   <Example
     packageName="@uidu/checkbox"
-    Component={require('../examples/01-indeterminate')}
+    Component={require('../examples/01-indeterminate').default}
     title="Indeterminate"
     source={require('!!raw-loader!../examples/01-indeterminate')}
   />
@@ -38,7 +38,7 @@ ${(
 ${(
   <Example
     packageName="@uidu/checkbox"
-    Component={require('../examples/04-checkbox-form')}
+    Component={require('../examples/04-checkbox-form').default}
     title="With a Form"
     source={require('!!raw-loader!../examples/04-checkbox-form')}
   />

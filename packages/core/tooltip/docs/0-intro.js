@@ -20,7 +20,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/tooltip"
-      Component={require('../examples/basic')}
+      Component={require('../examples/basic').default}
       source={require('!!raw-loader!../examples/basic')}
       title="Basic"
     />
@@ -31,7 +31,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/tooltip"
-      Component={require('../examples/position')}
+      Component={require('../examples/position').default}
       source={require('!!raw-loader!../examples/position')}
       title="Position"
       componentProps={{ test: true }}
@@ -47,7 +47,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/tooltip"
-      Component={require('../examples/hover-intent')}
+      Component={require('../examples/hover-intent').default}
       source={require('!!raw-loader!../examples/hover-intent')}
       title="Intent"
     />
