@@ -1,6 +1,6 @@
 {
   "name": "@uidu/blanket",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A React component that covers the underlying UI for a layered component.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,7 +18,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.6",
-    "@uidu/theme": "^0.1.6"
+    "@uidu/theme": "^0.1.7"
   },
   "peerDependencies": {
     "react": "^16.8.3",

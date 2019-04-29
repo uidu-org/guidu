@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tooltip",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A React Component for displaying Tooltips",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -21,7 +21,7 @@
     "@uidu/analytics": "^0.1.6",
     "@uidu/popper": "^0.1.4",
     "@uidu/portal": "^0.1.4",
-    "@uidu/theme": "^0.1.6",
+    "@uidu/theme": "^0.1.7",
     "flushable": "^1.0.0",
     "react-node-resolver": "^2.0.1",
     "react-transition-group": "^4.0.0"
