@@ -1,5 +1,28 @@
 # @uidu/animated-menu
 
+## 0.1.3
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Try to see if published
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Typescript fixes
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Release all packages
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Remove dist files from repo
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Build and publish all packages
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Release all packages to fix those with previuos failed builds
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Added types
+
 ## 0.1.2
 - [patch] :
 

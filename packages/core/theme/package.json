@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "The Atlaskit theme framework",
   "license": "Apache-2.0",
   "module": "index.js",
@@ -24,11 +24,11 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.0",
-    "@uidu/button": "^0.1.0",
-    "@uidu/docs": "^0.1.0",
-    "@uidu/lozenge": "^0.1.0",
-    "@uidu/section-message": "^0.1.0",
+    "@uidu/build-utils": "^0.1.5",
+    "@uidu/button": "^0.1.33",
+    "@uidu/docs": "^0.1.23",
+    "@uidu/lozenge": "^0.1.5",
+    "@uidu/section-message": "^0.1.5",
     "color": "^3.1.0",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"

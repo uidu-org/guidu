@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-text",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Field Text Component",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,19 +19,19 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/analytics": "^0.1.4",
-    "@uidu/field-base": "^0.1.26",
-    "@uidu/form": "^0.1.23",
-    "@uidu/theme": "^0.1.4"
+    "@uidu/analytics": "^0.1.5",
+    "@uidu/field-base": "^0.1.27",
+    "@uidu/form": "^0.1.25",
+    "@uidu/theme": "^0.1.5"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.4",
-    "@uidu/button": "^0.1.30",
-    "@uidu/docs": "^0.1.22",
+    "@uidu/build-utils": "^0.1.5",
+    "@uidu/button": "^0.1.33",
+    "@uidu/docs": "^0.1.23",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },

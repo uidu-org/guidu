@@ -1,5 +1,19 @@
 # @uidu/media-test-helpers
 
+## 0.1.8
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Release all packages
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Fix Build
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Build and publish all packages
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Release all packages to fix those with previuos failed builds
+
 ## 0.1.7
 - [patch] :
 

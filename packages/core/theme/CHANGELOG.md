@@ -1,5 +1,19 @@
 # @atlaskit/theme
 
+## 0.1.5
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Release all packages
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Remove dist files from repo
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Build and publish all packages
+- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+  - Release all packages to fix those with previuos failed builds
+
 ## 8.1.6
 - Updated dependencies [1e826b2966](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e826b2966):
   - @atlaskit/docs@7.0.2

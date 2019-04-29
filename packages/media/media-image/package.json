@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-image",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Atlassian Editor component for JIRA",
   "uidu:src": "src/index.ts",
   "module": "index.js",
@@ -12,20 +12,20 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/docs": "^0.1.22",
-    "@uidu/media-core": "^0.1.2",
-    "@uidu/media-test-helpers": "^0.1.2",
+    "@uidu/docs": "^0.1.23",
+    "@uidu/media-core": "^0.1.6",
+    "@uidu/media-test-helpers": "^0.1.8",
     "tslib": "^1.9.3"
   },
   "peerDependencies": {
     "react": "^16.8.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.22",
-    "@uidu/field-text": "^0.1.5",
-    "@uidu/form": "^0.1.23",
-    "@uidu/media-core": "^0.1.2",
-    "@uidu/media-test-helpers": "^0.1.2",
+    "@uidu/docs": "^0.1.23",
+    "@uidu/field-text": "^0.1.6",
+    "@uidu/form": "^0.1.25",
+    "@uidu/media-core": "^0.1.6",
+    "@uidu/media-test-helpers": "^0.1.8",
     "enzyme": "^3.9.0"
   }
 }
