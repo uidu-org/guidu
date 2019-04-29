@@ -1,5 +1,10 @@
 # @uidu/media-card
 
+## 0.1.9
+- [patch] [5ec18e8](https://github.org/uidu-org/guidu/commits/5ec18e8):
+
+  - Proper import version instead of package
+
 ## 0.1.8
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

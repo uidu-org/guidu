@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-number",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Field Number Component",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -16,7 +16,7 @@
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.7",
     "@uidu/field-base": "^0.1.29",
-    "@uidu/field-text": "^0.1.10",
+    "@uidu/field-text": "^0.1.11",
     "@uidu/form": "^0.1.27",
     "@uidu/theme": "^0.1.8",
     "react-number-format": "^4.0.6"
