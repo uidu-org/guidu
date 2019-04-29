@@ -1,5 +1,10 @@
 # @uidu/media-test-helpers
 
+## 0.1.11
+- [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
+
+  - Drop CJS from builds, release all packages to update references both in dev and production
+
 ## 0.1.10
 - [patch] [3fd365d](https://github.org/uidu-org/guidu/commits/3fd365d):
 

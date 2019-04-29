@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-core",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
   "uidu:src": "src/index.ts",
   "module": "index.js",
@@ -12,9 +12,9 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/docs": "^0.1.24",
-    "@uidu/media-store": "^0.1.8",
-    "@uidu/media-test-helpers": "^0.1.9",
+    "@uidu/docs": "^0.1.25",
+    "@uidu/media-store": "^0.1.9",
+    "@uidu/media-test-helpers": "^0.1.11",
     "dataloader": "^1.4.0",
     "deep-equal": "^1.0.1",
     "lru-fast": "^0.2.2",
@@ -28,11 +28,11 @@
   },
   "devDependencies": {
     "@types/uuid-validate": "^0.0.1",
-    "@uidu/build-utils": "^0.1.6",
-    "@uidu/button": "^0.1.34",
-    "@uidu/docs": "^0.1.24",
-    "@uidu/media-card": "^0.1.7",
-    "@uidu/media-test-helpers": "^0.1.9",
+    "@uidu/build-utils": "^0.1.7",
+    "@uidu/button": "^0.1.35",
+    "@uidu/docs": "^0.1.25",
+    "@uidu/media-card": "^0.1.8",
+    "@uidu/media-test-helpers": "^0.1.11",
     "react-dom": "^16.4.0",
     "rxjs": "^6.4.0",
     "sinon": "^7.2.5",

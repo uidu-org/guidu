@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.12
+- [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
+
+  - Drop CJS from builds, release all packages to update references both in dev and production
+
 ## 3.0.11
 - [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
 

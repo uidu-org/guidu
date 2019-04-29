@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "Forms using Formsy",
   "module": "index.js",
   "uidu:src": "src/index",
@@ -17,7 +17,7 @@
     "formsy-react": "^1.1.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.24"
+    "@uidu/docs": "^0.1.25"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

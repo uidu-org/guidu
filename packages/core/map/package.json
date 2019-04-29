@@ -1,6 +1,6 @@
 {
   "name": "@uidu/map",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A React component for maps",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -15,7 +15,7 @@
     "@babel/runtime": "^7.0.0",
     "@types/googlemaps": "^3.30.19",
     "@types/markerclustererplus": "^2.1.33",
-    "@uidu/theme": "^0.1.7",
+    "@uidu/theme": "^0.1.8",
     "babel-runtime": "^6.26.0",
     "react-google-maps": "^9.4.5",
     "recompose": "^0.30.0"
@@ -25,8 +25,8 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.6",
-    "@uidu/docs": "^0.1.24",
+    "@uidu/build-utils": "^0.1.7",
+    "@uidu/docs": "^0.1.25",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0",
     "react-test-renderer": "^16.8.3"

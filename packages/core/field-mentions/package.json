@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Field Mentions Component",
   "module": "index.js",
   "uidu:src": "src/index.ts",
@@ -13,10 +13,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/analytics": "^0.1.6",
-    "@uidu/field-base": "^0.1.28",
-    "@uidu/form": "^0.1.26",
-    "@uidu/theme": "^0.1.6",
+    "@uidu/analytics": "^0.1.7",
+    "@uidu/field-base": "^0.1.29",
+    "@uidu/form": "^0.1.27",
+    "@uidu/theme": "^0.1.8",
     "classnames": "^2.2.6",
     "react-mentions": "^3.0.0"
   },
@@ -25,9 +25,9 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.6",
-    "@uidu/button": "^0.1.34",
-    "@uidu/docs": "^0.1.24",
+    "@uidu/build-utils": "^0.1.7",
+    "@uidu/button": "^0.1.35",
+    "@uidu/docs": "^0.1.25",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },
