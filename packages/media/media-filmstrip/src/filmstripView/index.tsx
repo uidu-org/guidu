@@ -84,7 +84,7 @@ export interface FilmstripViewState {
 }
 
 export interface ArrowProps {
-  onClick: (event: MouseEvent<HTMLDivElement>) => void;
+  onClick: (event: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export const LeftArrow: React.SFC<ArrowProps> = ({ onClick }: ArrowProps) => (
@@ -334,7 +334,7 @@ export class FilmstripView extends React.Component<
     this.handleSizeChange();
   };
 
-  handleLeftClick = (event: MouseEvent<HTMLDivElement>) => {
+  handleLeftClick = (event: React.MouseEvent<HTMLDivElement>) => {
     // Stop the click event from bubling up and being handled by other components
     // See https://product-fabric.atlassian.net/browse/MSW-165
     event.stopPropagation();
