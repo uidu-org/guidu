@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.base",
-  "include": ["./packages/**/*", "./website/**/*"],
+  "include": ["./packages/**/*"],
   "compilerOptions": {
     "baseUrl": "./"
   }

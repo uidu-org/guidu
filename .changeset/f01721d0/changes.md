@@ -1,0 +1,1 @@
+- Release all packages to fix those with previuos failed builds
