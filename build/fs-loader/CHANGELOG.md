@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.20
+- [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
+
+  - Release all packages again
+- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+  - Release all
+
 ## 0.1.19
 - [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 

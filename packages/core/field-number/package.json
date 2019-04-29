@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-number",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Field Number Component",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,11 +19,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/analytics": "^0.1.5",
-    "@uidu/field-base": "^0.1.27",
-    "@uidu/field-text": "^0.1.6",
-    "@uidu/form": "^0.1.25",
-    "@uidu/theme": "^0.1.5",
+    "@uidu/analytics": "^0.1.6",
+    "@uidu/field-base": "^0.1.28",
+    "@uidu/field-text": "^0.1.7",
+    "@uidu/form": "^0.1.26",
+    "@uidu/theme": "^0.1.6",
     "react-number-format": "^4.0.6"
   },
   "peerDependencies": {
@@ -31,9 +31,9 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.5",
-    "@uidu/button": "^0.1.33",
-    "@uidu/docs": "^0.1.23",
+    "@uidu/build-utils": "^0.1.6",
+    "@uidu/button": "^0.1.34",
+    "@uidu/docs": "^0.1.24",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },
