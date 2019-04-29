@@ -3,20 +3,22 @@ language: node_js
 services:
   - docker
 
-before_install:
-  - docker pull uidu/guidu
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
-  - export PATH="$HOME/.yarn/bin:$PATH"
-
 git:
   depth: 2
 
-script:
+before_install:
+  - docker run uidu/guidu
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
+  - export PATH="$HOME/.yarn/bin:$PATH"
   - source ./build-setup.sh
+
+install:
   - bolt install --pure-lockfile
+
+script:
   - yarn build
   - node ./build/releases/bin/build-releases.js version
-  - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git master > /dev/null 2>&1
+  - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git HEAD:master > /dev/null 2>&1
   - yarn build:pkg
   - node ./build/releases/bin/build-releases.js publish --public
   - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --tags > /dev/null 2>&1
