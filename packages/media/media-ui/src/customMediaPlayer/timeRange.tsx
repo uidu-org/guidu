@@ -125,14 +125,14 @@ export class TimeRange extends Component<TimeRangeProps, TimeRangeState> {
     onChange(currentTime);
   };
 
-  private saveWrapperElement = (el?: HTMLElement) => {
+  private saveWrapperElement = (el: HTMLElement | undefined | null) => {
     if (el) {
       this.wrapperElement = el;
       this.setWrapperWidth();
     }
   };
 
-  private saveThumbElement = (el?: HTMLElement) => {
+  private saveThumbElement = (el: HTMLElement | undefined | null) => {
     if (el) {
       this.thumbElement = el;
     }

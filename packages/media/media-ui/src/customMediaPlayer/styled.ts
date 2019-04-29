@@ -123,7 +123,7 @@ export const ControlsWrapper = styled.div`
   position: absolute;
 `;
 
-export const VolumeToggleWrapper = styled.div`
+export const VolumeToggleWrapper = styled.div<MutedIndicatorProps>`
   position: relative;
   margin-right: 13px;
 
@@ -139,7 +139,7 @@ export const VolumeTimeRangeWrapper = styled.div`
   margin-right: 20px;
 `;
 
-export const MutedIndicator = styled.div`
+export const MutedIndicator = styled.div<MutedIndicatorProps>`
   width: 29px;
   height: 2px;
   position: absolute;
@@ -162,7 +162,7 @@ export interface CurrentTimeTooltipProps {
   isDragging: boolean;
 }
 
-export const CurrentTimeTooltip = styled.div`
+export const CurrentTimeTooltip = styled.div<CurrentTimeTooltipProps>`
   position: absolute;
   user-select: none;
   top: -28px;
@@ -178,7 +178,7 @@ export const CurrentTimeTooltip = styled.div`
   transition: opacity 0.3s;
 `;
 
-export const TimeRangeWrapper = styled.div`
+export const TimeRangeWrapper = styled.div<WithAsActiveProps>`
   display: flex;
   align-items: center;
   height: 22px;

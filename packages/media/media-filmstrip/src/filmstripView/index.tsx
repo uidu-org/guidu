@@ -63,7 +63,7 @@ export interface FilmstripViewProps {
    */
   offset?: number;
   /** Any React **node** */
-  children?: ReactNode;
+  children?: ReactChild;
   /** A **function** called when the size of the filmstrip has been changed e.g. when mounted, after the window is resized or the children have changed.
    * **Arguments:**
    * - event:
@@ -318,15 +318,15 @@ export class FilmstripView extends React.Component<
     );
   };
 
-  handleWindowElementChange = (windowElement: HTMLElement) => {
+  handleWindowElementChange = (windowElement: HTMLDivElement | null) => {
+    if (!windowElement) return;
+
     this.windowElement = windowElement;
     this.handleSizeChange();
   };
 
-  handleBufferElementChange = (bufferElement: HTMLElement) => {
-    if (!bufferElement) {
-      return;
-    }
+  handleBufferElementChange = (bufferElement: HTMLUListElement | null) => {
+    if (!bufferElement) return;
 
     this.bufferElement = bufferElement;
     this.handleSizeChange();
@@ -457,9 +457,13 @@ export class FilmstripView extends React.Component<
         >
           <FilmStripList
             ref={this.handleBufferElementChange}
-            style={{ transform, transitionProperty, transitionDuration }}
+            style={{
+              transform,
+              transitionProperty,
+              transitionDuration,
+            }}
           >
-            {React.Children.map(children, mapReactChildToReactNode)}
+            {children && React.Children.map(children, mapReactChildToReactNode)}
           </FilmStripList>
         </FilmStripListWrapper>
         {this.renderRightArrow()}

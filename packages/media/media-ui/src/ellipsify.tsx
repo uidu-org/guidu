@@ -32,7 +32,9 @@ export const Ellipsify = (props: EllipsifyProps): JSX.Element => {
   );
 };
 
-const setEllipsis = (props: EllipsifyProps) => (element: HTMLElement) => {
+const setEllipsis = (props: EllipsifyProps) => (
+  element: HTMLDivElement | null,
+) => {
   if (!element) {
     return;
   }

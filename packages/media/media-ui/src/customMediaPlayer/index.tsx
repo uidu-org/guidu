@@ -7,7 +7,7 @@ import FullScreenIconOff from '@atlaskit/icon/glyph/vid-full-screen-off';
 import SoundIcon from '@atlaskit/icon/glyph/hipchat/outgoing-sound';
 import HDIcon from '@atlaskit/icon/glyph/vid-hd-circle';
 import Button from '@uidu/button';
-import Spinner  from '@uidu/spinner';
+import Spinner from '@uidu/spinner';
 import MediaPlayer, {
   SetVolumeFunction,
   NavigateFunction,
@@ -164,7 +164,8 @@ export class CustomMediaPlayer extends Component<
 
   onFullScreenClick = () => toggleFullscreen(this.videoWrapperRef);
 
-  saveVideoWrapperRef = (el?: HTMLElement) => (this.videoWrapperRef = el);
+  saveVideoWrapperRef = (el: HTMLElement | undefined) =>
+    (this.videoWrapperRef = el);
 
   renderFullScreenButton = () => {
     const {

@@ -50,6 +50,16 @@ export type MessageKey =
   | 'could_not_load_editor'
   | 'could_not_save_image'
   | 'annotate'
+  | 'annotate_tool_arrow'
+  | 'annotate_tool_text'
+  | 'annotate_tool_shape'
+  | 'annotate_tool_brush'
+  | 'annotate_tool_blur'
+  | 'annotate_tool_line_thickness'
+  | 'annotate_tool_color'
+  | 'annotate_confirmation_close_anyway'
+  | 'annotate_confirmation_heading'
+  | 'annotate_confirmation_content'
   | 'drop_your_files_here'
   | 'share_files_instantly'
   | 'insert_files'
@@ -119,7 +129,7 @@ export const messages = defineMessages<Messages>({
     id: 'fabric.media.search_all_gifs',
     defaultMessage: 'Search all the GIFs!',
     description:
-      'Used as input placeholder to let the user know that he can search for GIF image files',
+      'Used as input placeholder to let the user know that they can search for GIF image files',
   },
   cant_retrieve_gifs: {
     id: 'fabric.media.cant_retrieve_gifs',
@@ -338,6 +348,57 @@ export const messages = defineMessages<Messages>({
     defaultMessage: 'Annotate',
     description: '',
   },
+  annotate_tool_arrow: {
+    id: 'fabric.media.annotate.tool.arrow',
+    defaultMessage: 'Arrow',
+    description: '',
+  },
+  annotate_tool_text: {
+    id: 'fabric.media.annotate.tool.text',
+    defaultMessage: 'Text',
+    description: '',
+  },
+  annotate_tool_shape: {
+    id: 'fabric.media.annotate.tool.shape',
+    defaultMessage: 'Shape',
+    description: '',
+  },
+  annotate_tool_brush: {
+    id: 'fabric.media.annotate.tool.brush',
+    defaultMessage: 'Brush',
+    description: '',
+  },
+  annotate_tool_blur: {
+    id: 'fabric.media.annotate.tool.blur',
+    defaultMessage: 'Blur',
+    description: '',
+  },
+  annotate_tool_line_thickness: {
+    id: 'fabric.media.annotate.tool.line.thickness',
+    defaultMessage: 'Line thickness',
+    description: '',
+  },
+  annotate_tool_color: {
+    id: 'fabric.media.annotate.tool.color',
+    defaultMessage: 'Color',
+    description: '',
+  },
+  annotate_confirmation_close_anyway: {
+    id: 'fabric.media.annotate.confirmation.close.anyway',
+    defaultMessage: 'Close anyway',
+    description: '',
+  },
+  annotate_confirmation_heading: {
+    id: 'fabric.media.annotate.confirmation.heading',
+    defaultMessage: 'Unsaved changes',
+    description: '',
+  },
+  annotate_confirmation_content: {
+    id: 'fabric.media.annotate.confirmation.content',
+    defaultMessage:
+      'You have some unsaved changes. Are you sure you want to leave?',
+    description: '',
+  },
   drop_your_files_here: {
     id: 'fabric.media.drop_your_files_here',
     defaultMessage: 'Drop your files here',
@@ -383,12 +444,14 @@ export const messages = defineMessages<Messages>({
   disable_fullscreen: {
     id: 'fabric.media.disable_fullscreen',
     defaultMessage: 'disable fullscreen',
-    description: 'Hint to let the user know he can disable the fullscreen mode',
+    description:
+      'Hint to let the user know they can disable the fullscreen mode',
   },
   enable_fullscreen: {
     id: 'fabric.media.enable_fullscreen',
     defaultMessage: 'enable fullscreen',
-    description: 'Hint to let the user know he can enable the fullscreen mode',
+    description:
+      'Hint to let the user know they can enable the fullscreen mode',
   },
   error_loading_file: {
     id: 'fabric.media.error_loading_file',

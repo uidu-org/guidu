@@ -44,7 +44,7 @@ export default class AlertView extends React.Component<
     }
   };
 
-  handleMount = (el?: HTMLDivElement) => {
+  handleMount = (el: HTMLDivElement | null) => {
     if (el) {
       this.el = el;
     }
