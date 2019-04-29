@@ -16,13 +16,13 @@ script:
   - bolt install --pure-lockfile
   - yarn build
   - node ./build/releases/bin/build-releases.js version
-  - git remote rm origin
-  - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
-  - git push origin master
+  # - git remote rm origin
+  # - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
+  - git push
   - yarn build:pkg
   - node ./build/releases/bin/build-releases.js publish --public
-  - git remote rm origin
-  - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
-  - git push origin master --tags
+  # - git remote rm origin
+  # - git remote add origin https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
+  - git push --tags
 
 cache: yarn
