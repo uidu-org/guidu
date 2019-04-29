@@ -7,10 +7,7 @@ import {
   createAndFireEvent,
 } from '@uidu/analytics';
 import { FieldTextStateless } from '@uidu/field-text';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../package.json';
+import { name as packageName, version as packageVersion } from './version.json';
 import StyledInput from './styled/Input';
 import type { FieldNumberProps } from './types';
 

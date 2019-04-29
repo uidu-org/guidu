@@ -5,10 +5,7 @@ import {
   withAnalyticsContext,
   createAndFireEvent,
 } from '@uidu/analytics';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../package.json';
+import { name as packageName, version as packageVersion } from './version.json';
 import Div from './styled';
 
 type Props = {

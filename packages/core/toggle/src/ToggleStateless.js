@@ -7,10 +7,7 @@ import {
   createAndFireEvent,
 } from '@uidu/analytics';
 import Switch from 'react-switch';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../package.json';
+import { name as packageName, version as packageVersion } from './version.json';
 import defaultBaseProps from './defaultBaseProps';
 import type { StatelessProps, DefaultBaseProps } from './types';
 

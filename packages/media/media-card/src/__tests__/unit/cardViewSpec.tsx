@@ -13,10 +13,7 @@ import { FileDetails } from '@uidu/media-core';
 import { AnalyticsListener } from '@atlaskit/analytics-next';
 
 import { UIAnalyticsEventInterface } from '@atlaskit/analytics-next-types';
-import {
-  mountWithIntlContext,
-  expectToEqual,
-} from '@uidu/media-test-helpers';
+import { mountWithIntlContext, expectToEqual } from '@uidu/media-test-helpers';
 import {
   CardView,
   CardViewBase,
@@ -307,7 +304,7 @@ describe('CardView', () => {
       expect(actualContext.componentName).toEqual('CardView');
       expect(actualContext.actionSubject).toEqual('MediaCard');
       expect(actualContext.packageVersion).toEqual(
-        require('../../../package.json').version,
+        require('../../version.json').version,
       );
       expect(actualContext.type).toEqual('file');
       expect(actualContext.actionSubjectId).toEqual('abcd');
@@ -346,7 +343,7 @@ describe('CardView', () => {
       expect(actualContext.componentName).toEqual('CardView');
       expect(actualContext.actionSubject).toEqual('MediaCard');
       expect(actualContext.packageVersion).toEqual(
-        require('../../../package.json').version,
+        require('../../version.json').version,
       );
       expect(actualContext.type).toEqual('file');
       expect(actualContext.actionSubjectId).toEqual(null);

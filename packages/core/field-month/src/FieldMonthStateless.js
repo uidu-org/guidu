@@ -7,10 +7,7 @@ import {
   withAnalyticsContext,
   createAndFireEvent,
 } from '@uidu/analytics';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../package.json';
+import { name as packageName, version as packageVersion } from './version.json';
 import Input from './styled/Input';
 import type { FieldMonthProps } from './types';
 
