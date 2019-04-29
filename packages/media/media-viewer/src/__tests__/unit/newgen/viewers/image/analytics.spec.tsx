@@ -31,7 +31,7 @@ const imageItem: ProcessedFileState = {
   artifacts: {},
 };
 
-export function createFixture(response: Promise<Blob>) {
+export function createFixture(response: Promise<Blob>): any {
   const context = fakeContext();
   (context.getImage as jest.Mock).mockReturnValue(response);
   const onClose = jest.fn();
