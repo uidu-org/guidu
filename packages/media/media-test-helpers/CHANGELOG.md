@@ -1,5 +1,10 @@
 # @uidu/media-test-helpers
 
+## 0.1.10
+- [patch] [3fd365d](https://github.org/uidu-org/guidu/commits/3fd365d):
+
+  - Added tsconfing for compiling
+
 ## 0.1.9
 - [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
 
