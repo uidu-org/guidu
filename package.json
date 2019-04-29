@@ -29,7 +29,7 @@
     "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015",
     "build:flowtypes": "                     run-p build:flowtypes:esm",
     "build:flowtypes:esm": "                 bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js babel flow)\" -- flow-copy-source -v -i '**/__tests__/**' src ./",
-    "build:website": "                       cd website && yarn build && yarn build:copy",
+    "build:website": "                       cd website && yarn build && yarn",
     "update:icons": "                        bolt w @atlaskit/icon update && bolt w @atlaskit/icon-object update && bolt w @atlaskit/icon-file-type update && bolt w @atlaskit/reduced-ui-pack update",
     "delete": "                              yarn run delete:modules && yarn run delete:build",
     "delete:modules": "                      bolt ws exec --parallel -- rm -rf node_modules && rm -rf node_modules",
@@ -95,7 +95,8 @@
     "build:bundle-analysis": "               node ./build/ci-scripts/run.bundle.analysis",
     "build:css-reset": "                     BABEL_ENV=production:cjs bolt w @atlaskit/css-reset run build",
     "build:reduced-ui-pack": "               BABEL_ENV=production:cjs bolt w @atlaskit/reduced-ui-pack run build",
-    "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code"
+    "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
+    "build:multi-entry-point-tsconfig": "    node ./build/multi-entry-tools/typescript-paths-tsconfig-builder.js > tsconfig.entry-points.json"
   },
   "devDependencies": {
     "@atlaskit/onboarding": "^7.0.1",

@@ -319,10 +319,6 @@
         "../../core/lozenge/src/theme",
         "./packages/core/lozenge/src/theme"
       ],
-      "@uidu/modal-dialog/index.d": [
-        "../../core/modal-dialog/src/index.d",
-        "./packages/core/modal-dialog/src/index.d"
-      ],
       "@uidu/modal-dialog/index": [
         "../../core/modal-dialog/src/index",
         "./packages/core/modal-dialog/src/index"
@@ -522,14 +518,6 @@
       "@uidu/media-image/mediaImage": [
         "../../media/media-image/src/mediaImage",
         "./packages/media/media-image/src/mediaImage"
-      ],
-      "@uidu/media-picker/config": [
-        "../../media/media-picker/src/config",
-        "./packages/media/media-picker/src/config"
-      ],
-      "@uidu/media-picker/index": [
-        "../../media/media-picker/src/index",
-        "./packages/media/media-picker/src/index"
       ],
       "@uidu/media-store/index": [
         "../../media/media-store/src/index",
@@ -771,17 +759,9 @@
         "../../messaging/message-form/src/types",
         "./packages/messaging/message-form/src/types"
       ],
-      "@uidu/message-renderer/index.d": [
-        "../../messaging/message-renderer/src/index.d",
-        "./packages/messaging/message-renderer/src/index.d"
-      ],
       "@uidu/message-renderer/index": [
         "../../messaging/message-renderer/src/index",
         "./packages/messaging/message-renderer/src/index"
-      ],
-      "@uidu/message-renderer/types.d": [
-        "../../messaging/message-renderer/src/types.d",
-        "./packages/messaging/message-renderer/src/types.d"
       ],
       "@uidu/message-renderer/types": [
         "../../messaging/message-renderer/src/types",
