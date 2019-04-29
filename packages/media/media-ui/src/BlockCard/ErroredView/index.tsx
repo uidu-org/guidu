@@ -22,7 +22,7 @@ export interface BlockCardErroredViewProps {
 export class BlockCardErroredView extends React.Component<
   BlockCardErroredViewProps
 > {
-  handleRetry = (event: React.MouseEvent<HTMLButtonElement>) => {
+  handleRetry = (event: React.MouseEvent<HTMLElement>) => {
     const { onRetry } = this.props;
     if (onRetry) {
       event.preventDefault();

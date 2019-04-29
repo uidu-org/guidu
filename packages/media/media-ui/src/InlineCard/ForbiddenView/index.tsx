@@ -21,7 +21,7 @@ export interface InlineCardForbiddenViewProps {
 export class InlineCardForbiddenView extends React.Component<
   InlineCardForbiddenViewProps
 > {
-  handleRetry = (event: React.MouseEvent<HTMLButtonElement>) => {
+  handleRetry = (event: React.MouseEvent<HTMLElement>) => {
     const { onAuthorise } = this.props;
     event.preventDefault();
     event.stopPropagation();

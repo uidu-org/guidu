@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { MouseEvent } from 'react';
 import {
   className,
   LinkWrapper,
@@ -30,7 +29,7 @@ export class ExpandedFrame extends React.Component<ExpandedFrameProps> {
     return !isPlaceholder && (Boolean(href) || Boolean(onClick));
   }
 
-  handleClick = (event: MouseEvent<HTMLElement>) => {
+  handleClick = (event: React.MouseEvent<HTMLElement>) => {
     const { onClick } = this.props;
     if (onClick) {
       event.preventDefault();

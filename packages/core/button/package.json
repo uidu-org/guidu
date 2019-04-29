@@ -3,7 +3,7 @@
   "version": "0.1.32",
   "description": "Button component for use in forms",
   "module": "index.js",
-  "uidu:src": "src/index.ts",
+  "uidu:src": "index.ts",
   "types": "index.d.ts",
   "author": "uidu",
   "license": "ISC",

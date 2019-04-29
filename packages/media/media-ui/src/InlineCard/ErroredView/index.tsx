@@ -23,7 +23,7 @@ export interface InlineCardErroredViewProps {
 export class InlineCardErroredView extends React.Component<
   InlineCardErroredViewProps
 > {
-  handleRetry = (event: React.MouseEvent<HTMLButtonElement>) => {
+  handleRetry = (event: React.MouseEvent<HTMLElement>) => {
     const { onRetry } = this.props;
     if (onRetry) {
       event.preventDefault();

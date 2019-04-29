@@ -26,7 +26,7 @@
     "build:typescript": "                    run-p build:typescript:es2015 build:typescript:cli build:typescript:es5",
     "build:typescript:cli": "                NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescriptcli)\" -- tsc --project ./build/cli",
     "build:typescript:es5": "                NODE_ENV=production bolt workspaces exec --only-fs \"packages/editor/{adf-schema,adf-utils}\" -- tsc --project ./build/es5 && NODE_ENV=production bolt workspaces exec --only-fs \"packages/editor/{adf-schema,adf-utils}\" -- cp version.json dist/es5/version.json",
-    "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015 || exit 0",
+    "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015",
     "build:flowtypes": "                     run-p build:flowtypes:esm",
     "build:flowtypes:esm": "                 bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js babel flow)\" -- flow-copy-source -v -i '**/__tests__/**' src ./",
     "update:icons": "                        bolt w @atlaskit/icon update && bolt w @atlaskit/icon-object update && bolt w @atlaskit/icon-file-type update && bolt w @atlaskit/reduced-ui-pack update",
