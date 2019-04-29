@@ -1,0 +1,1 @@
+- Build and publish all packages
