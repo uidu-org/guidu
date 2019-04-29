@@ -1,12 +1,6 @@
 /* tslint:disable variable-name */
 import * as React from 'react';
-import {
-  ReactNode,
-  ReactChild,
-  WheelEvent,
-  MouseEvent,
-  ReactElement,
-} from 'react';
+import { ReactNode, ReactChild, ReactElement } from 'react';
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import debounce from 'debounce';
 import {
@@ -357,7 +351,7 @@ export class FilmstripView extends React.Component<
     }
   };
 
-  handleRightClick = (event: MouseEvent<HTMLDivElement>) => {
+  handleRightClick = (event: React.MouseEvent<HTMLDivElement>) => {
     // Stop the click event from bubling up and being handled by other components
     // See https://product-fabric.atlassian.net/browse/MSW-165
     event.stopPropagation();
@@ -374,7 +368,7 @@ export class FilmstripView extends React.Component<
     }
   };
 
-  handleScroll = (event: WheelEvent<HTMLDivElement>) => {
+  handleScroll = (event: React.WheelEvent<HTMLDivElement>) => {
     const isHorizontalScroll = Math.abs(event.deltaX) > Math.abs(event.deltaY);
     if (!isHorizontalScroll) {
       return;
