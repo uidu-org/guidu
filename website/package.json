@@ -8,8 +8,8 @@
     "yarn": "^1.9.2"
   },
   "scripts": {
-    "start": "node ./node_modules/@uidu/webpack-config//bin/dev.js",
-    "build": "rm -rf dist && node --max-old-space-size=8192 ./node_modules/@uidu/webpack-config/bin/build.js",
+    "start": "node ../build/webpack-config//bin/dev.js",
+    "build": "rm -rf dist && node --max-old-space-size=8192 ../build/webpack-config/bin/build.js",
     "build:report": "yarn build --report",
     "build:no-minimize": "yarn build --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",
@@ -64,7 +64,6 @@
     "@uidu/theme": "^0.1.6",
     "@uidu/themes-uidu": "^0.1.30",
     "@uidu/tooltip": "^0.1.8",
-    "@uidu/webpack-config": "^0.1.22",
     "bolt-query": "^1.1.4",
     "codesandboxer": "^1.0.1",
     "commonmark": "^0.28.1",
