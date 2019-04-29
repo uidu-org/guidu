@@ -6,7 +6,7 @@ import {
   processingError,
   fileWithError,
 } from './index.spec';
-import { version as packageVersion } from '../../../../../package.json';
+import { version as packageVersion } from '../../../../version.json';
 import { ProcessedFileState } from '@uidu/media-core';
 
 const unsupportedFile: ProcessedFileState = {

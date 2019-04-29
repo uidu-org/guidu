@@ -6,7 +6,7 @@ import Droplist from '@uidu/droplist';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../../../package.json';
+} from '../../../version.json';
 //import DropdownMenuStatelessWithAnalytics from '../../DropdownMenuStateless';
 
 import DropdownMenuStatelessWithAnalytics, {

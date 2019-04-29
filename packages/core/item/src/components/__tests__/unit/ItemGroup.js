@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme';
 
 import Item, { ItemGroup } from '../../..';
 
-import { name } from '../../../../package.json';
+import { name } from '../../../version.json';
 import {
   GroupTitle,
   GroupTitleText,

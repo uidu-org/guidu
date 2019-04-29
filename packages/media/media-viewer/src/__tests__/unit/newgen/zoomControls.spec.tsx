@@ -10,7 +10,7 @@ import { ZoomLevel } from '../../../newgen/domain/zoomLevel';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../../../package.json';
+} from '../../../version.json';
 import { fakeIntl } from '@uidu/media-test-helpers';
 
 describe('Zooming', () => {

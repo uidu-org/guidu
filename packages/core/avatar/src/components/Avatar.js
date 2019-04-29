@@ -11,7 +11,7 @@ import Tooltip from '@uidu/tooltip';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../package.json';
+} from '../version.json';
 import { validIconSizes, propsOmittedFromClickData } from './constants';
 import Presence from './Presence';
 import AvatarImage from './AvatarImage';

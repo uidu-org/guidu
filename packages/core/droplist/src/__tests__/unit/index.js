@@ -5,7 +5,7 @@ import Layer from '@uidu/layer';
 import Spinner from '@uidu/spinner';
 import Item, { ItemGroup } from '@uidu/item';
 
-import { name } from '../../../package.json';
+import { name } from '../../version.json';
 
 import DroplistWithAnalytics from '../../../src';
 import { DroplistWithoutAnalytics as Droplist } from '../../components/Droplist';

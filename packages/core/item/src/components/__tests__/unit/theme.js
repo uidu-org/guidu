@@ -5,7 +5,7 @@ import {
   getThemeStyle,
 } from '../../../util/theme';
 
-import { name } from '../../../../package.json';
+import { name } from '../../../version.json';
 
 describe(`${name} - theme`, () => {
   const themeWithChildAndParentKeys = { hover: { text: 'purple' } };

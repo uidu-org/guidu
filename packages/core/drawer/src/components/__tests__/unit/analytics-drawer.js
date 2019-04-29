@@ -12,7 +12,7 @@ import ArrowLeft from '@atlaskit/icon/glyph/arrow-left';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../../../package.json';
+} from '../../../version.json';
 import { DrawerBase } from '../../index';
 
 // This is a global mock for this file that will mock all components wrapped with analytics

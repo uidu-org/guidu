@@ -13,7 +13,7 @@ import Tooltip from '@uidu/tooltip';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../package.json';
+} from '../version.json';
 
 import {
   After,

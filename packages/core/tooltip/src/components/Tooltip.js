@@ -23,7 +23,7 @@ import {
 import {
   name as packageName,
   version as packageVersion,
-} from '../../package.json';
+} from '../version.json';
 
 import type {
   PositionType,

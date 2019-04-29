@@ -35,7 +35,7 @@ import { DocViewer } from '../../../newgen/viewers/doc';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../../../package.json';
+} from '../../../version.json';
 
 const identifier: any = {
   id: 'some-id',

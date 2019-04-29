@@ -2,7 +2,7 @@
 import {
   name as packageName,
   version as packageVersion,
-} from '../../../package.json';
+} from '../../version.json';
 
 export const hoveredPayload = {
   action: 'displayed',

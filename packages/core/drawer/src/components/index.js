@@ -15,7 +15,7 @@ import Blanket from '@uidu/blanket';
 import {
   name as packageName,
   version as packageVersion,
-} from '../../package.json';
+} from '../version.json';
 import drawerItemTheme from '../theme/drawer-item-theme';
 import DrawerPrimitive from './primitives';
 import { Fade } from './transitions';
