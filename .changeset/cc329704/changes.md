@@ -1,0 +1,1 @@
+- Added tsconfing for compiling
