@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "description": "Animated menu like Stripe",
   "uidu:src": "src/index.ts",
-  "main": "index.js",
+  "module": "index.js",
   "repository": "https://github.com/uidu-org/guidu",
   "author": "uidu",
   "license": "MIT",

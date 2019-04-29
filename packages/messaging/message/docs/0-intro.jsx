@@ -29,7 +29,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/message"
-      Component={require('../examples/00-basic')}
+      Component={require('../examples/00-basic').default}
       title="Message"
       source={require('!!raw-loader!../examples/00-basic')}
     />

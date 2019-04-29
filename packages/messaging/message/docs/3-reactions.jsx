@@ -16,7 +16,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/message"
-      Component={require('../examples/03-with-reactions')}
+      Component={require('../examples/03-with-reactions').default}
       title="Message"
       source={require('!!raw-loader!../examples/03-with-reactions')}
     />
