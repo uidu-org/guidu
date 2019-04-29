@@ -1,6 +1,6 @@
 {
   "name": "@uidu/smart-card",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Smart card component",
   "module": "index.js",
   "uidu:src": "src/index.js",

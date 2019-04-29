@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.8
+- [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
+
+  - Fix version path instead of package
+
 ## 0.1.7
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 
