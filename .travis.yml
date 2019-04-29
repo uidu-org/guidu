@@ -16,7 +16,7 @@ script:
   - bolt install --pure-lockfile
   - yarn build
   - node ./build/releases/bin/build-releases.js version
-  - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git > /dev/null 2>&1
+  - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git master > /dev/null 2>&1
   - yarn build:pkg
   - node ./build/releases/bin/build-releases.js publish --public
   - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --tags > /dev/null 2>&1

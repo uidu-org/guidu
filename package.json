@@ -87,7 +87,7 @@
     "start:stride": "                        dotenv yarn run website:start **/packages/stride/**",
     "start:trello": "                        dotenv yarn run website:start **/packages/trello/**",
     "start:teamwork-ecosystem": "            dotenv yarn run website:start **/packages/teamwork-ecosystem/**",
-    "changeset": "                           node ./build/releases/bin/build-releases.js changeset --commit",
+    "changeset": "                           node ./build/releases/bin/build-releases.js changeset",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
     "build:media-editor:copy-binaries": "    cd packages/media/media-editor && cp -r src/engine/core/binaries dist/es5/engine/core && cp -r src/engine/core/binaries dist/es2015/engine/core",
