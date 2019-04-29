@@ -1,6 +1,6 @@
 {
   "name": "@uidu/item",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A generic item component to be used within other components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,8 +17,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/avatar": "^0.2.6",
-    "@uidu/theme": "^0.1.6",
+    "@uidu/avatar": "^0.2.7",
+    "@uidu/theme": "^0.1.7",
     "polished": "^3.0.3",
     "prop-types": "^15.6.0",
     "react-addons-text-content": "^0.0.4",
@@ -30,11 +30,11 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.2.6",
+    "@uidu/avatar": "^0.2.7",
     "@uidu/build-utils": "^0.1.6",
     "@uidu/docs": "^0.1.24",
-    "@uidu/lozenge": "^0.1.6",
-    "@uidu/tooltip": "^0.1.8",
+    "@uidu/lozenge": "^0.1.7",
+    "@uidu/tooltip": "^0.1.9",
     "enzyme": "^3.9.0",
     "polished": "^3.0.3",
     "react-dom": "^16.4.0",

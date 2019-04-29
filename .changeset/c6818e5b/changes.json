@@ -1,7 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/theme", "type": "patch" },
-    { "name": "@uidu/chat-window", "type": "patch" }
-  ],
-  "dependents": []
-}

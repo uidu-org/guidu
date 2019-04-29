@@ -1,6 +1,6 @@
 {
   "name": "@uidu/map",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A React component for maps",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,7 +19,7 @@
     "@babel/runtime": "^7.0.0",
     "@types/googlemaps": "^3.30.19",
     "@types/markerclustererplus": "^2.1.33",
-    "@uidu/theme": "^0.1.6",
+    "@uidu/theme": "^0.1.7",
     "babel-runtime": "^6.26.0",
     "react-google-maps": "^9.4.5",
     "recompose": "^0.30.0"

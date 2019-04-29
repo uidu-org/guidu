@@ -1,6 +1,6 @@
 {
   "name": "@uidu/range",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Component which renders a slider and is a substitute of the native input[range] element",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/theme": "^0.1.6",
+    "@uidu/theme": "^0.1.7",
     "babel-runtime": "^6.26.0",
     "prop-types": "^15.6.0"
   },
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@uidu/build-utils": "^0.1.6",
     "@uidu/docs": "^0.1.24",
-    "@uidu/section-message": "0.1.6",
+    "@uidu/section-message": "0.1.7",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/chat-window",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Downshift React component",
   "uidu:src": "src/index.ts",
   "module": "index.js",

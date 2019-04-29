@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.10
+- [patch] [8474126](https://github.org/uidu-org/guidu/commits/8474126):
+
+  - Bump versions
+
 ## 0.1.9
 - [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
 

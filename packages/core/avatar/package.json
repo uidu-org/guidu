@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "A component that represents a user",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -18,8 +18,8 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.6",
-    "@uidu/theme": "^0.1.6",
-    "@uidu/tooltip": "^0.1.8"
+    "@uidu/theme": "^0.1.7",
+    "@uidu/tooltip": "^0.1.9"
   },
   "peerDependencies": {
     "react": "^16.8.3",
@@ -30,8 +30,8 @@
     "@uidu/button": "^0.1.34",
     "@uidu/docs": "^0.1.24",
     "@uidu/field-base": "^0.1.28",
-    "@uidu/section-message": "^0.1.6",
-    "@uidu/toggle": "^0.1.8",
+    "@uidu/section-message": "^0.1.7",
+    "@uidu/toggle": "^0.1.9",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },

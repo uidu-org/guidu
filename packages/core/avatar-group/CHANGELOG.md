@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.1.24
+- [patch] [8474126](https://github.org/uidu-org/guidu/commits/8474126):
+
+  - Fix docs examples default
+
 ## 2.1.23
 - [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
 

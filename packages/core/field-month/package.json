@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-month",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Field Month Component",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -22,7 +22,7 @@
     "@uidu/analytics": "^0.1.6",
     "@uidu/field-base": "^0.1.28",
     "@uidu/form": "^0.1.26",
-    "@uidu/theme": "^0.1.6"
+    "@uidu/theme": "^0.1.7"
   },
   "peerDependencies": {
     "react": "^16.8.3",

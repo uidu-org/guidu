@@ -1,6 +1,6 @@
 {
   "name": "@uidu/spinner",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A React component that displays a spinning icon to show a loading state",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/theme": "^0.1.6",
+    "@uidu/theme": "^0.1.7",
     "babel-runtime": "^6.26.0",
     "react-dom": "^16.4.0",
     "react-transition-group": "^4.0.0",
