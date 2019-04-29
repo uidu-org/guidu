@@ -27,7 +27,7 @@ export const DownloadButton: any = withAnalyticsEvents({
     const ev = createEvent(props.analyticsPayload);
     ev.fire(channel);
   },
-})(Button);
+})(Button as any);
 
 export const createItemDownloader = (
   file: FileState,

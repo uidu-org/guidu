@@ -1,6 +1,5 @@
 import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
-import { NavLink as Link } from 'react-router-dom';
 
 export default class Tabbar extends PureComponent<any, any> {
   constructor(props) {
