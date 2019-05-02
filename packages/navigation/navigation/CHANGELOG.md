@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.1.6
+- [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
+
+  - Do not publish on npm if packages do not built - travis. FIX ts error in field-mentions
+- [patch] [74476cc](https://github.org/uidu-org/guidu/commits/74476cc):
+
+  - Navigation export types in dev mode
+
 ## 0.1.5
 - [patch] [013c8de](https://github.org/uidu-org/guidu/commits/013c8de):
 

@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.25
+- [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
+
+  - Do not publish on npm if packages do not built - travis. FIX ts error in field-mentions
+
 ## 0.1.24
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

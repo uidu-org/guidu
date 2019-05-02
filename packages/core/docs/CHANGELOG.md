@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.26
+- [patch] [74476cc](https://github.org/uidu-org/guidu/commits/74476cc):
+
+  - Navigation export types in dev mode
+
 ## 0.1.25
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

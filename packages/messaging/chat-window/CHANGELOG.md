@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.13
+- [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
+
+  - Do not publish on npm if packages do not built - travis. FIX ts error in field-mentions
+
 ## 0.1.12
 - [patch] [013c8de](https://github.org/uidu-org/guidu/commits/013c8de):
 

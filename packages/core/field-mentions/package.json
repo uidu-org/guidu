@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Field Mentions Component",
   "module": "index.js",
   "uidu:src": "src/index.ts",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@uidu/build-utils": "^0.1.7",
     "@uidu/button": "^0.1.35",
-    "@uidu/docs": "^0.1.25",
+    "@uidu/docs": "^0.1.26",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },
