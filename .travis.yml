@@ -11,14 +11,14 @@ install:
   - yarn install --pure-lockfile
 
 script:
-  - source ./build-setup.sh
+  - bash ./build-setup.sh
   - bolt install --pure-lockfile
   - yarn build
 
 deploy:
   provider: script
   skip_cleanup: true
-  script: bash release-setup.sh
+  script: bash ./release-setup.sh
   on:
     branch: master
 

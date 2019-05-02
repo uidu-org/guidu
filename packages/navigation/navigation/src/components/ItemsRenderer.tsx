@@ -82,7 +82,6 @@ const itemComponents = {
 
 const renderItemComponent = (props: any, key: string, index: number) => {
   let element = null;
-  console.log(props);
   // We need an explicit conditional against each type for flow type refinement to work
   // if (props.type === 'BackItem') {
   //   const { type, ...compProps } = props;

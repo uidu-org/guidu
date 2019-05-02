@@ -1,0 +1,4 @@
+{
+  "releases": [{ "name": "@uidu/navigation", "type": "patch" }],
+  "dependents": []
+}

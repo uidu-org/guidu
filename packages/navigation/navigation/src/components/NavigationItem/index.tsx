@@ -16,8 +16,8 @@ export default class NavigationItem extends PureComponent<any> {
   render() {
     const { text, before, after, ...otherProps } = this.props;
     return (
-      <StyledNavigationItem {...otherProps}>
-        <StyledNavigationLink>
+      <StyledNavigationItem>
+        <StyledNavigationLink {...otherProps}>
           {!!before && (
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
           )}
