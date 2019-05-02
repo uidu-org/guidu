@@ -1,8 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/chat-window", "type": "patch" },
-    { "name": "@uidu/navigation", "type": "patch" },
-    { "name": "@uidu/shell", "type": "patch" }
-  ],
-  "dependents": []
-}

@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.12
+- [patch] [013c8de](https://github.org/uidu-org/guidu/commits/013c8de):
+
+  - Added proper schema to navigation, still missing Skeleton. Added day background to chat-window
+
 ## 0.1.11
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

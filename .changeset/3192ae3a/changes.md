@@ -1,1 +1,0 @@
-- Added proper schema to navigation, still missing Skeleton. Added day background to chat-window
