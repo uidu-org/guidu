@@ -1,111 +1,140 @@
 import React, { Component } from 'react';
-import { Activity, Settings, Grid, Bell, Info } from 'react-feather';
+import {
+  Activity,
+  Settings,
+  Grid,
+  Bell,
+  Info,
+  MoreHorizontal,
+} from 'react-feather';
 import Avatar from '@uidu/avatar';
 import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
-import Shell, {
-  ShellHeader,
-  ShellContent,
-  ShellNavigation,
-  ShellBody,
-} from '@uidu/shell';
-import Navigation, { GlobalNavigation } from '../src';
+import Shell, { ShellContent, ShellNavigation } from '@uidu/shell';
+import Navigation, { GlobalNavigation, NavigationItem } from '../src';
 
 import foo from '../examples-utils/assets/foo.svg';
 
 const schema = [
   {
-    children: [
-      {
-        path: `/`,
-        name: 'Riepilogo',
-      },
-      {
-        path: `/orders`,
-        name: 'Ordini',
-      },
-      {
-        path: `/attendances`,
-        name: 'Partecipanti',
-      },
-      {
-        path: `/messages`,
-        name: 'Messaggi agli iscritti',
-      },
-    ],
+    type: 'NavigationHeader',
+    text: 'Team',
+    before: <Avatar borderColor="transparent" />,
   },
   {
-    icon: <Activity className="mr-2" size={14} />,
-    name: 'Browse',
-    children: [
+    type: 'NavigationSection',
+    items: [
       {
-        path: `/`,
-        name: [
-          <div className="d-flex align-items-center">
-            <div
-              style={{
-                width: '18px',
-                height: '18px',
-                backgroundColor: 'cadetblue',
-                borderRadius: '100%',
-              }}
-              className="mr-2"
-            />
-            #general
-          </div>,
-          <Badge max={10}>{20}</Badge>,
+        type: 'NavigationGroup',
+        items: [
+          {
+            path: `/`,
+            text: 'Riepilogo',
+            type: 'NavigationItem',
+          },
+          {
+            path: `/orders`,
+            text: 'Ordini',
+            type: 'NavigationItem',
+          },
+          {
+            path: `/attendances`,
+            text: 'Partecipanti',
+            type: 'NavigationItem',
+          },
+          {
+            path: `/messages`,
+            text: 'Messaggi agli iscritti',
+            type: 'NavigationItem',
+          },
         ],
       },
       {
-        path: `/`,
-        name: [
-          <div className="d-flex align-items-center">
-            <div
-              style={{
-                width: '18px',
-                height: '18px',
-                backgroundColor: 'cadetblue',
-                borderRadius: '100%',
-              }}
-              className="mr-2"
-            />
-            #marketing
-          </div>,
+        type: 'NavigationGroup',
+        heading: 'Teams',
+        after: <a className="text-transparent">Add</a>,
+        items: [
+          {
+            path: `/`,
+            type: 'NavigationItem',
+            text: '#general',
+            before: (
+              <div
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  backgroundColor: 'cadetblue',
+                  borderRadius: '100%',
+                }}
+              />
+            ),
+            after: <Badge max={10}>{20}</Badge>,
+          },
+          {
+            path: `/`,
+            type: 'NavigationItem',
+            before: (
+              <div
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  backgroundColor: 'cadetblue',
+                  borderRadius: '100%',
+                }}
+              />
+            ),
+            text: '#marketing',
+          },
+          {
+            path: `/`,
+            type: 'NavigationItem',
+            before: (
+              <div
+                style={{
+                  width: '18px',
+                  height: '18px',
+                  backgroundColor: 'cadetblue',
+                  borderRadius: '100%',
+                }}
+              />
+            ),
+            text: '#dev',
+          },
+          {
+            type: 'InlineComponent',
+            component: () => (
+              <NavigationItem
+                className="text-center"
+                text={<MoreHorizontal />}
+                onClick={console.log}
+              />
+            ),
+          },
         ],
       },
       {
-        path: `/`,
-        name: [
-          <div className="d-flex align-items-center">
-            <div
-              style={{
-                width: '18px',
-                height: '18px',
-                backgroundColor: 'cadetblue',
-                borderRadius: '100%',
-              }}
-              className="mr-2"
-            />
-            #dev
-          </div>,
+        type: 'NavigationGroup',
+        before: <Activity size={14} />,
+        text: 'Browse',
+        heading: 'Browse',
+        items: [
+          {
+            type: 'NavigationItem',
+            before: <Settings size={18} />,
+            text: 'Ordini',
+          },
+          {
+            path: `/attendances`,
+            type: 'NavigationItem',
+            text: 'Ordini',
+            after: <Lozenge>Closed</Lozenge>,
+          },
+          {
+            path: `/messages`,
+            type: 'NavigationItem',
+            text: 'Messaggi agli iscritti',
+          },
         ],
-      },
-    ],
-  },
-  {
-    name: [
-      <div className="d-flex align-items-center">
-        <Settings size={18} className="mr-2" /> Ordini
-      </div>,
-    ],
-    children: [
-      {
-        path: `/attendances`,
-        name: ['Ordini', <Lozenge>Closed</Lozenge>],
-      },
-      {
-        path: `/messages`,
-        name: 'Messaggi agli iscritti',
       },
     ],
   },
@@ -116,6 +145,7 @@ export default class Basic extends Component<any> {
     return (
       <Shell>
         <GlobalNavigation
+          navigationWidth={35}
           header={{
             children: <Avatar borderColor="transparent" />,
             name: 'Joydeed',
@@ -190,17 +220,10 @@ export default class Basic extends Component<any> {
         />
         <ShellContent>
           <ShellNavigation
-            style={{ display: 'flex', flex: '0 1 25%' }}
+            style={{ display: 'flex', flex: '0 1 35%', minWidth: 0 }}
             className="bg-light"
           >
-            <ShellHeader>
-              <div className="d-flex px-4 h-100 w-100 align-items-center">
-                <h5 className="ml-2 mb-0">AppName</h5>
-              </div>
-            </ShellHeader>
-            <ShellBody scrollable>
-              <Navigation schema={schema} />
-            </ShellBody>
+            <Navigation schema={schema} />
           </ShellNavigation>
         </ShellContent>
       </Shell>

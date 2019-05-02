@@ -1,22 +1,21 @@
 import React, { PureComponent } from 'react';
 import { ShellSidebar, ShellHeader, ShellBody, ShellFooter } from '@uidu/shell';
 import { Transition } from 'react-transition-group';
-import { FakeItemWrapper, FakeGlobalItemWrapper } from '../styled';
-import { GlobalNavigationProps } from '../types';
-import GlobalItem from './GlobalItem';
+import GlobalItem from '../GlobalNavigationItem';
+
+import { FakeItemWrapper, FakeGlobalItemWrapper } from './styled';
+import { GlobalNavigationProps, GlobalNavigationState } from './types';
 
 const defaultStyle = {
   transition: 'transform 130ms ease-in',
   position: 'absolute',
-  width: 'calc((100% - 4rem) * 0.25 + 4rem)',
   left: 0,
-  backgroundColor: '#4C566A',
   height: '100%',
   willChange: 'transform',
 };
 
 const transitionStyles = {
-  entering: { transform: 'translateX(0)' },
+  entering: { transform: 'translateX(0)', zIndex: 4 },
   entered: { transform: 'translateX(0)', zIndex: 30 },
   exiting: {
     transform: 'translateX(-100%)',
@@ -26,22 +25,40 @@ const transitionStyles = {
 };
 
 export default class GlobalNavigation extends PureComponent<
-  GlobalNavigationProps
+  GlobalNavigationProps,
+  GlobalNavigationState
 > {
-  state = {
+  static defaultProps = {
+    backgroundColor: '#4C566A',
     isOpen: false,
+    width: '4rem',
+    navigationWidth: 25,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpen: props.isOpen,
+    };
+  }
+
   render() {
-    const { header, body, footer, width } = this.props;
+    const {
+      backgroundColor,
+      header,
+      body,
+      footer,
+      width,
+      navigationWidth,
+    } = this.props;
     const { isOpen } = this.state;
 
     return [
       <ShellSidebar
         style={{
-          width: '4rem',
-          backgroundColor: '#4C566A',
-          zIndex: 2,
+          width,
+          backgroundColor,
+          zIndex: 3,
         }}
         onMouseEnter={() => this.setState({ isOpen: true })}
       >
@@ -55,7 +72,9 @@ export default class GlobalNavigation extends PureComponent<
         </ShellBody>
         <ShellFooter
           className="d-flex flex-column align-items-center py-3"
-          style={{ backgroundColor: 'rgba(255, 255, 255, .05)' }}
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, .05)',
+          }}
         >
           {footer.map(footerItem => (
             <GlobalItem {...footerItem} />
@@ -67,12 +86,17 @@ export default class GlobalNavigation extends PureComponent<
           <ShellSidebar
             style={{
               ...defaultStyle,
+              ...{
+                backgroundColor,
+                width: `calc((100% - ${width}) * ${navigationWidth /
+                  100} + ${width})`,
+              },
               ...transitionStyles[state],
             }}
             onMouseLeave={() => this.setState({ isOpen: false })}
           >
             <ShellHeader>
-              <FakeGlobalItemWrapper style={{ width: '4rem' }}>
+              <FakeGlobalItemWrapper style={{ width }}>
                 <GlobalItem {...header} />
               </FakeGlobalItemWrapper>
               <h5 className="m-0 text-light">{header.name}</h5>
@@ -80,7 +104,7 @@ export default class GlobalNavigation extends PureComponent<
             <ShellBody scrollable className="d-flex flex-column">
               {body.map(bodyItem => (
                 <FakeItemWrapper>
-                  <FakeGlobalItemWrapper style={{ width: '4rem' }}>
+                  <FakeGlobalItemWrapper style={{ width }}>
                     <GlobalItem {...bodyItem} />
                   </FakeGlobalItemWrapper>
                   {bodyItem.name}
@@ -89,11 +113,13 @@ export default class GlobalNavigation extends PureComponent<
             </ShellBody>
             <ShellFooter
               className="d-flex flex-column py-3"
-              style={{ backgroundColor: 'rgba(255, 255, 255, .05)' }}
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, .05)',
+              }}
             >
               {footer.map(footerItem => (
                 <FakeItemWrapper as="a" href="#">
-                  <FakeGlobalItemWrapper style={{ width: '4rem' }}>
+                  <FakeGlobalItemWrapper style={{ width }}>
                     <GlobalItem {...footerItem} />
                   </FakeGlobalItemWrapper>
                   {footerItem.name}

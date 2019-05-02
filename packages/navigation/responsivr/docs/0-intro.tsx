@@ -11,11 +11,11 @@ export default md`
 
   ## Usage
 
-  ${code`import Navigation, { GlobalNavigation } from '@uidu/navigation';`}
+  ${code`import LinkPreview from '@uidu/link-preview';`}
 
   ${(
     <Example
-      packageName="@uidu/navigation"
+      packageName="@uidu/link-preview"
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic')}
@@ -23,18 +23,9 @@ export default md`
   )}
 
   ${(
-    <Example
-      packageName="@uidu/navigation"
-      Component={require('../examples/Skeleton').default}
-      title="Basic"
-      source={require('!!raw-loader!../examples/Skeleton')}
-    />
-  )}
-
-  ${(
     <Props
       heading="Button Props"
-      props={require('!!extract-react-types-loader!../src/components/GlobalNavigation')}
+      props={require('!!extract-react-types-loader!../src/index')}
     />
   )}
 `;

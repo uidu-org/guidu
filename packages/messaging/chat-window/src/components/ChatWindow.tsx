@@ -66,7 +66,7 @@ export default class ChatWindow extends Component<ChatWindowType> {
               return (
                 <Fragment key={day}>
                   <div className="d-flex justify-content-center sticky-top small text-muted py-3">
-                    {day}
+                    <div className="bg-white px-2">{day}</div>
                   </div>
                   {groupByMessager(todayMessages, betweenMinutes)
                     .reverse()

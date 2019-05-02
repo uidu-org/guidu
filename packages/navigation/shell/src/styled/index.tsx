@@ -53,6 +53,7 @@ export const Sidebar = styled.aside`
 export const Navigation = styled.aside`
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1;
 `;
 
 export const Content = styled.main`

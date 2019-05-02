@@ -255,10 +255,6 @@
         "../../core/field-text/src/FieldTextStateless",
         "./packages/core/field-text/src/FieldTextStateless"
       ],
-      "@uidu/field-text/index.d": [
-        "../../core/field-text/src/index.d",
-        "./packages/core/field-text/src/index.d"
-      ],
       "@uidu/field-text/index": [
         "../../core/field-text/src/index",
         "./packages/core/field-text/src/index"
@@ -779,9 +775,17 @@
         "../../navigation/navigation/src/index",
         "./packages/navigation/navigation/src/index"
       ],
-      "@uidu/navigation/types": [
-        "../../navigation/navigation/src/types",
-        "./packages/navigation/navigation/src/types"
+      "@uidu/responsivr/index": [
+        "../../navigation/responsivr/src/index",
+        "./packages/navigation/responsivr/src/index"
+      ],
+      "@uidu/responsivr/Responsivr": [
+        "../../navigation/responsivr/src/Responsivr",
+        "./packages/navigation/responsivr/src/Responsivr"
+      ],
+      "@uidu/responsivr/types": [
+        "../../navigation/responsivr/src/types",
+        "./packages/navigation/responsivr/src/types"
       ],
       "@uidu/shell/index": [
         "../../navigation/shell/src/index",
