@@ -332,6 +332,7 @@
     "kakapo": "^3.3.4",
     "keycode": "^2.2.0",
     "ldclient-js": "^2.9.4",
+    "less-loader": "^5.0.0",
     "loader-utils": "^1.2.3",
     "lodash": "^4.17.4",
     "lodash-es": "^4.17.4",

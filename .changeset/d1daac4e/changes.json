@@ -1,0 +1,10 @@
+{
+  "releases": [
+    { "name": "@uidu/webpack-config", "type": "patch" },
+    { "name": "@uidu/field-mentions", "type": "patch" },
+    { "name": "@uidu/navigation", "type": "patch" },
+    { "name": "@uidu/shell", "type": "patch" },
+    { "name": "@uidu/chat-window", "type": "patch" }
+  ],
+  "dependents": []
+}

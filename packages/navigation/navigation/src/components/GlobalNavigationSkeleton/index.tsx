@@ -18,7 +18,14 @@ const GlobalItemLoader = () => (
     secondaryColor="#b6d3ff"
     secondaryOpacity={0.15}
   >
-    <rect x="0" y="0" rx="3" ry="3" width="100%" height="22" />
+    <rect
+      x="0"
+      y="0"
+      rx="3"
+      ry="3"
+      width={`${(Math.random() * (0.85 - 0.45) + 0.3) * 100}%`}
+      height="22"
+    />
   </ContentLoader>
 );
 

@@ -20,8 +20,9 @@ const transitionStyles = {
   exiting: {
     transform: 'translateX(-100%)',
     transition: 'transform 300ms ease-out',
+    zIndex: 30,
   },
-  exited: { transform: 'translateX(-100%)' },
+  exited: { transform: 'translateX(-100%)', zIndex: 2 },
 };
 
 export default class GlobalNavigation extends PureComponent<

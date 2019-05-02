@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import { gridSize } from '@uidu/theme';
 import { ShellHeader, ShellBody } from '@uidu/shell';
 import NavigationItem from './NavigationItem';
+import NavigationItemSkeleton from './NavigationItemSkeleton';
 
 import NavigationHeaderComponent from './NavigationHeader';
 import NavigationGroupHeadingComponent from './NavigationGroupHeading';
@@ -49,7 +50,7 @@ const NavigationGroup = ({
       after={after}
       separator={separator}
     >
-      <ItemsRenderer items={items} />
+      <ItemsRenderer items={items} {...props} />
     </NavigationGroupComponent>
   ) : null;
 
@@ -69,6 +70,7 @@ const Debug = (props: any) => (
 const itemComponents = {
   NavigationHeader,
   NavigationItem,
+  NavigationItemSkeleton,
   NavigationGroupHeading,
   // Item: ConnectedItem,
   // SortableItem,
@@ -100,6 +102,9 @@ const renderItemComponent = (props: any, key: string, index: number) => {
   } else if (props.type === 'NavigationHeader') {
     const { type, id, ...compProps } = props;
     element = <NavigationHeader key={key} {...compProps} />;
+  } else if (props.type === 'NavigationItemSkeleton') {
+    const { type, ...compProps } = props;
+    element = <NavigationItemSkeleton key={key} {...compProps} />;
   }
   // } else if (props.type === 'SortableItem') {
   //   const { type, ...compProps } = props;

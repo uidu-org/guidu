@@ -14,7 +14,7 @@ before_install:
 script:
   - source ./build-setup.sh
   - bolt install --pure-lockfile
-  - yarn build
+  - yarn build || travis_terminate 1
   - node ./build/releases/bin/build-releases.js version
   - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git HEAD:master > /dev/null 2>&1
   - yarn build:pkg

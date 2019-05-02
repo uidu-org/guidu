@@ -38,10 +38,10 @@ export default class FieldMentionsStateless extends Component<
         className={classNames('form-control h-auto', className)}
         suggestionsPortalHost={suggestionsPortalHost}
       >
-        {items.map(item => (
+        {items.map((item, index) => (
           <Mention
             {...item}
-            key={item.type}
+            key={`mention-${index}`}
             style={defaultMentionStyle}
             appendSpaceOnAdd
           />
