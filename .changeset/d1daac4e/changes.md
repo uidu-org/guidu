@@ -1,1 +1,0 @@
-- Do not publish on npm if packages do not built - travis. FIX ts error in field-mentions
