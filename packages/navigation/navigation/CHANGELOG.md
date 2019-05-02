@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.7
+- [patch] [947ce47](https://github.org/uidu-org/guidu/commits/947ce47):
+
+  - Pass link props to proper component
+
 ## 0.1.6
 - [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
 

@@ -1,1 +1,0 @@
-- Pass link props to proper component
