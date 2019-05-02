@@ -1,5 +1,4 @@
 import { replaceImports } from 'codesandboxer';
-
 const regexString = /((?:import|export)\s*['"\`])(..\/src\/index.less)(['"\`]\s*)/;
 
 export default function replaceSrc(content, name) {
@@ -9,7 +8,7 @@ export default function replaceSrc(content, name) {
   }
 
   if (name) {
-    replacedCode = replaceImports(replacedCode, [['../src', name]]);
+    replacedCode = replaceImports(replacedCode.default, [['../src', name]]);
   }
   return replacedCode;
 }
