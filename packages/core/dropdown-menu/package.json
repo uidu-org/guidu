@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dropdown-menu",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Creates a dropdown menu, with optional groups, headings, icons, checkbox items, radio group items and disabled items.",
   "module": "index.js",
   "uidu:src": "src/index.js",

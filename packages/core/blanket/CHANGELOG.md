@@ -1,5 +1,10 @@
 # @uidu/blanket
 
+## 0.1.8
+- [patch] [5ec18e8](https://github.org/uidu-org/guidu/commits/5ec18e8):
+
+  - Proper import version instead of package
+
 ## 0.1.7
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 

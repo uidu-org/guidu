@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-month",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Field Month Component",
   "module": "index.js",
   "uidu:src": "src/index.js",
