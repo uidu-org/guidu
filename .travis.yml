@@ -6,19 +6,28 @@ services:
 git:
   depth: 2
 
+env: SH="docker exec -t guidu bash -c"
+
 before_install:
-  - docker pull uidu/guidu
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
-  - export PATH="$HOME/.yarn/bin:$PATH"
+  - docker run -d --name guidu uidu/guidu
+  - docker ps
+  # - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.9.2
+  # - export PATH="$HOME/.yarn/bin:$PATH"
 
 script:
-  - source ./build-setup.sh
-  - bolt install --pure-lockfile
-  - yarn build || travis_terminate 1
-  - node ./build/releases/bin/build-releases.js version
-  - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git HEAD:master > /dev/null 2>&1
-  - yarn build:pkg
-  - node ./build/releases/bin/build-releases.js publish --public
-  - git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --tags > /dev/null 2>&1
+  - $SH source ./build-setup.sh
+  - $SH bolt install --pure-lockfile
+  - $SH yarn build
+
+deploy:
+  provider: script
+  script:
+    - $SH node ./build/releases/bin/build-releases.js version
+    - $SH git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git HEAD:master > /dev/null 2>&1
+    - $SH yarn build:pkg
+    - $SH node ./build/releases/bin/build-releases.js publish --public
+    - $SH git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --tags > /dev/null 2>&1
+  on:
+    branch: master
 
 cache: yarn
