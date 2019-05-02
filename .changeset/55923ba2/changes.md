@@ -1,0 +1,1 @@
+- Bump bolt dependencies
