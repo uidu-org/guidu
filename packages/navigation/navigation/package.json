@@ -2,7 +2,7 @@
   "name": "@uidu/navigation",
   "version": "0.1.5",
   "description": "Downshift React component",
-  "uidu:src": "src/index.ts",
+  "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
   "repository": "https://github.com/uidu-org/guidu",

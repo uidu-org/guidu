@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Skeleton } from '@uidu/avatar';
 import ContentLoader from 'react-content-loader';
-import { GlobalNavigation } from '..';
+import GlobalNavigation from '../GlobalNavigation';
+import { GlobalNavigationProps } from '../GlobalNavigation/types';
 
 const GlobalItemLoader = () => (
   <ContentLoader
@@ -29,10 +30,13 @@ const GlobalItemLoader = () => (
   </ContentLoader>
 );
 
-export default class GlobalNavitationSkeleton extends PureComponent {
+export default class GlobalNavitationSkeleton extends PureComponent<
+  GlobalNavigationProps
+> {
   render() {
     return (
       <GlobalNavigation
+        {...this.props}
         header={{
           children: <Skeleton borderColor="transparent" />,
           name: 'Joydeed',

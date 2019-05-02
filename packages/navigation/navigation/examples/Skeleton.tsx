@@ -32,7 +32,7 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <Shell>
-        <GlobalNavigationSkeleton />
+        <GlobalNavigationSkeleton navigationWidth={25} />
         <ShellContent>
           <ShellNavigation
             style={{ display: 'flex', flex: '0 1 25%' }}

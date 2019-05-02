@@ -43,7 +43,10 @@ export const ToggleTitle = styled.h5`
   margin: 0;
 `;
 
-const Showcase = styled.div``;
+const Showcase = styled.div`
+  position: relative;
+  overflow-x: hidden;
+`;
 
 export default class Example extends React.Component<Props, State> {
   static defaultProps = {
