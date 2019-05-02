@@ -21,7 +21,7 @@
     "@uidu/fs-loader": "^0.1.21",
     "@uidu/nav-info-loader": "^0.1.21",
     "babel-loader": "^8.0.4",
-    "bolt": "^0.22.6",
+    "bolt": "^0.23.1",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "chalk": "^2.4.2",
     "compression-webpack-plugin": "^2.0.0",

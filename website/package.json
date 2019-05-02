@@ -10,8 +10,7 @@
   "scripts": {
     "start": "node ../build/webpack-config//bin/dev.js",
     "prebuild": "rm -rf dist",
-    "build": "node --max-old-space-size=8192 ../build/webpack-config/bin/build.js",
-    "postbuild": "yarn build:copy",
+    "build": "node --max-old-space-size=8192 ../build/webpack-config/bin/build.js && yarn build:copy",
     "build:report": "yarn build --report",
     "build:no-minimize": "yarn build --no-minimize",
     "build:copy": "cp dist/index.html dist/404.html && cp -R public/* dist/",

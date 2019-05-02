@@ -261,7 +261,7 @@
     "babel-runtime": "^6.26.0",
     "bitbucket-build-status": "^1.0.3",
     "blueimp-load-image": "^2.20.1",
-    "bolt": "^0.22.6",
+    "bolt": "^0.23.1",
     "bolt-query": "^1.1.4",
     "bolt-webpack-analyzer": "^0.0.1",
     "bootstrap": "^4.1.3",

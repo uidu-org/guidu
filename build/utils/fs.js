@@ -9,6 +9,10 @@ function readFile(filePath) {
   return util.promisify(cb => fs.readFile(filePath, cb))();
 }
 
+function readdir(filePath) {
+  return util.promisify(cb => fs.readdir(filePath, cb))();
+}
+
 function rename(oldPath, newPath) {
   return util.promisify(cb => fs.rename(oldPath, newPath, cb))();
 }
@@ -41,4 +45,5 @@ module.exports = {
   mkdtemp,
   stat,
   exists,
+  readdir,
 };

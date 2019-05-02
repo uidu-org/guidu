@@ -9,7 +9,7 @@
   "author": "uidu",
   "license": "ISC",
   "dependencies": {
-    "bolt": "^0.22.6",
+    "bolt": "^0.23.1",
     "globby": "^9.0.0",
     "loader-utils": "^1.2.3"
   },

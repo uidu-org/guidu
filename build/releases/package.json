@@ -16,7 +16,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@uidu/build-utils": "^0.1.7",
-    "bolt": "^0.22.6",
+    "bolt": "^0.23.1",
     "boxen": "^3.0.0",
     "chalk": "^2.4.2",
     "fs-extra": "^7.0.0",

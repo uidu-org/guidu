@@ -15,7 +15,6 @@ async function getPackagesInfo(cwd /*: string */) {
       let tsConfigCliExists = await exists(
         path.join(pkg.dir, 'build', 'cli', 'tsconfig.json'),
       );
-      let tslintConfigExists = await exists(path.join(pkg.dir, 'tslint.json'));
       let testBrowserExists = await exists(
         path.join(pkg.dir, '__tests-karma__'),
       );
@@ -41,7 +40,6 @@ async function getPackagesInfo(cwd /*: string */) {
       let isTypeScriptCLI = tsConfigCliExists;
       let isTypeScript =
         tsConfigExists && !isTypeScriptCLI && !isWebsitePackage; // The website does not need to be built
-      let isTSLint = isTypeScript || tslintConfigExists;
 
       let isBabel = srcExists && !isTypeScript && !isWebsitePackage;
       let isFlow = isBabel || isWebsitePackage;
@@ -60,7 +58,6 @@ async function getPackagesInfo(cwd /*: string */) {
         relativeDir,
         isTypeScript,
         isTypeScriptCLI,
-        isTSLint,
         isBabel,
         isFlow,
         isESLint,
@@ -77,7 +74,6 @@ async function getPackagesInfo(cwd /*: string */) {
 const TOOL_NAME_TO_FILTERS /*: { [key: string]: (pkg: Object) => boolean } */ = {
   typescript: pkg => pkg.isTypeScript,
   typescriptcli: pkg => pkg.isTypeScriptCLI,
-  tslint: pkg => pkg.isTSLint,
   babel: pkg => pkg.isBabel,
   flow: pkg => pkg.isFlow,
   eslint: pkg => pkg.isESLint,
