@@ -67,10 +67,10 @@ export default class HomePage extends React.Component {
           <title>{`${BASE_TITLE}`}</title>
         </Helmet>
         <Style />
-        <Title>Atlaskit</Title>
+        <Title>Guidu</Title>
         <Intro>
-          Atlassian&#39;s official UI library, built according to the
-          Atlassian&nbsp;Design&nbsp;Guidelines.
+          Uidu&#39;s official UI library, built according to the
+          uidu&nbsp;Design&nbsp;Guidelines.
         </Intro>
         <Cards />
       </HomePageWrapper>

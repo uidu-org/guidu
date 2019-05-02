@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@types/emoji-mart": "^2.8.4",
-    "@types/react-mentions": "^2.4.0",
+    "@types/react-mentions": "^3.0.0",
     "@uidu/dropdown-menu": "^0.1.6",
     "@uidu/field-mentions": "^0.1.9",
     "@uidu/form": "^0.1.27",
