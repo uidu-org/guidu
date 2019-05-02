@@ -10,7 +10,7 @@ const createConfig = require('../config');
 const { print, buildBanner } = require('../banner');
 const utils = require('../config/utils');
 
-async function runBuild() {
+function runBuild() {
   const mode = 'production';
   const websiteEnv = process.env.WEBSITE_ENV || 'local';
   const noMinimize = !!process.argv.find(arg =>
@@ -20,7 +20,7 @@ async function runBuild() {
 
   print(buildBanner());
 
-  const config = await createConfig({
+  const config = createConfig({
     mode,
     websiteEnv,
     noMinimize,
@@ -50,5 +50,6 @@ async function runBuild() {
 }
 
 runBuild().catch(errCode => {
+  console.log(errCode);
   process.exit(errCode);
 });
