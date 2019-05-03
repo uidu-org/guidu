@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.26
+- [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
+
+  - Bump bolt dependencies
+
 ## 0.1.25
 - [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
 

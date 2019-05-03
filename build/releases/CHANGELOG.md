@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.13
+- [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
+
+  - Bump bolt dependencies
+
 ## 3.0.12
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 
