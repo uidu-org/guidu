@@ -1,7 +1,6 @@
-import styled from 'styled-components';
 import { colors } from '@uidu/theme';
+import styled from 'styled-components';
 
-console.log(colors);
 export const StyledStepNumber = styled.div`
   align-items: center;
   justify-content: center;

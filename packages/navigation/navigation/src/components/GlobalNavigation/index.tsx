@@ -1,9 +1,8 @@
+import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
 import React, { PureComponent } from 'react';
-import { ShellSidebar, ShellHeader, ShellBody, ShellFooter } from '@uidu/shell';
 import { Transition } from 'react-transition-group';
 import GlobalItem from '../GlobalNavigationItem';
-
-import { FakeItemWrapper, FakeGlobalItemWrapper } from './styled';
+import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
 import { GlobalNavigationProps, GlobalNavigationState } from './types';
 
 const defaultStyle = {
@@ -51,8 +50,10 @@ export default class GlobalNavigation extends PureComponent<
       footer,
       width,
       navigationWidth,
+      navigationMinWidth,
     } = this.props;
     const { isOpen } = this.state;
+
 
     return [
       <ShellSidebar
@@ -92,6 +93,9 @@ export default class GlobalNavigation extends PureComponent<
                 width: `calc((100% - ${width}) * ${navigationWidth /
                   100} + ${width})`,
               },
+              ...(navigationMinWidth && {
+                minWidth: `calc(${navigationMinWidth} + ${width})`,
+              }),
               ...transitionStyles[state],
             }}
             onMouseLeave={() => this.setState({ isOpen: false })}

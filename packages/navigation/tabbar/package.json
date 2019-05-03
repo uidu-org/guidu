@@ -3,6 +3,8 @@
   "version": "0.1.5",
   "description": "Downshift React component",
   "module": "index.js",
+  "uidu:src": "index.ts",
+  "types": "index.d.ts",
   "repository": "https://github.com/uidu-org/guidu",
   "author": "uidu",
   "license": "MIT",
@@ -11,6 +13,7 @@
     "@uidu/docs": "^0.1.25"
   },
   "dependencies": {
+    "@uidu/shell": "^0.1.7",
     "react-dom": "^16.4.0"
   }
 }

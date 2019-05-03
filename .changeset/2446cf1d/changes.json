@@ -1,0 +1,12 @@
+{
+  "releases": [
+    { "name": "@uidu/build-releases", "type": "patch" },
+    { "name": "@uidu/webpack-config", "type": "patch" },
+    { "name": "@uidu/navigation", "type": "patch" },
+    { "name": "@uidu/shell", "type": "patch" },
+    { "name": "@uidu/stepper", "type": "patch" },
+    { "name": "@uidu/tabbar", "type": "patch" },
+    { "name": "@uidu/themes-uidu", "type": "patch" }
+  ],
+  "dependents": []
+}

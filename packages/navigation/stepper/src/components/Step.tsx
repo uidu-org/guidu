@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
 import classNames from 'classnames';
-import { Edit, Check } from 'react-feather';
-
-import { StepProps } from '../types';
+import React, { Component } from 'react';
+import { Check, Edit } from 'react-feather';
 import StyledStep, {
-  StyledStepNumber,
-  StyledStepHeader,
   StyledStepBody,
+  StyledStepHeader,
+  StyledStepNumber,
 } from '../styled/Step';
+import { StepProps } from '../types';
 
 export default class Step extends Component<StepProps> {
   static defaultProps = {

@@ -6,6 +6,7 @@ export type GlobalNavigationProps = {
   isOpen?: boolean;
   width: string;
   navigationWidth: number;
+  navigationMinWidth?: string;
 };
 
 export type GlobalNavigationState = {

@@ -1,11 +1,10 @@
 // Stepper is a component to manage multiple step forms
 // It uses React Router for managing sections
 
-import { Component, createRef } from 'react';
 import queryString from 'query-string';
-import { animateScroll as scroll } from 'react-scroll';
+import { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { transitionToPromise } from '../utils';
+import { animateScroll as scroll } from 'react-scroll';
 import { Step } from 'src';
 import { StepperProps } from '../types';
 

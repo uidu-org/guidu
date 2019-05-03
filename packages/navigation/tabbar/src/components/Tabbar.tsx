@@ -1,34 +1,20 @@
+import { ShellFooter } from '@uidu/shell';
 import React, { PureComponent } from 'react';
-import { createPortal } from 'react-dom';
+import { TabbarProps } from '../types';
 
-export default class Tabbar extends PureComponent<any, any> {
-  constructor(props) {
-    super(props);
-    this.el = document.createElement('div');
-  }
-
-  componentDidMount() {
-    document.body.appendChild(this.el);
-  }
+export default class Tabbar extends PureComponent<TabbarProps> {
+  static defaultProps = {
+    className: 'navbar-light justify-content-between bg-white p-0 border-top',
+  };
 
   render() {
-    const { children } = this.props;
-    return createPortal(
-      <nav
-        className="navbar-light justify-content-between bg-white p-0 border-top"
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          width: '100%',
-          zIndex: 300,
-          height: '3rem',
-        }}
-      >
-        <ul className="nav nav-fill justify-content-center w-100 navbar-nav flex-row">
+    const { children, className, ...otherProps } = this.props;
+    return (
+      <ShellFooter className={className} {...otherProps}>
+        <ul className="nav nav-fill navbar-nav flex-row align-items-center">
           {children}
         </ul>
-      </nav>,
-      this.el,
+      </ShellFooter>
     );
   }
 }

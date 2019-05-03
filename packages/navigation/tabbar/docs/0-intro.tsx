@@ -7,11 +7,11 @@ export default md`
 
   ## Usage
 
-  ${code`import Accordion from '@uidu/accordion';`}
+  ${code`import Tabbar, { TabbarLink } from '@uidu/tabbar';`}
 
   ${(
     <Example
-      packageName="@uidu/accordion"
+      packageName="@uidu/tabbar"
       Component={require('../examples/Basic').default}
       title="Accordion allowMultipleExpanded"
       source={require('!!raw-loader!../examples/Basic')}
@@ -21,7 +21,7 @@ export default md`
 
   ${(
     <Props
-      heading="Accordion Props"
+      heading="Tabbar Props"
       props={require('!!extract-react-types-loader!../src/components/Tabbar')}
     />
   )}

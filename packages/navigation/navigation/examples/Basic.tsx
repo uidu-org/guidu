@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
-import {
-  Activity,
-  Settings,
-  Grid,
-  Bell,
-  Info,
-  MoreHorizontal,
-} from 'react-feather';
 import Avatar from '@uidu/avatar';
 import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
-import Shell, { ShellContent, ShellNavigation } from '@uidu/shell';
-import Navigation, { GlobalNavigation, NavigationItem } from '../src';
-
+import Shell, { ShellContent, ShellMain, ShellNavigation } from '@uidu/shell';
+import React, { Component } from 'react';
+import {
+  Activity,
+  Bell,
+  Grid,
+  Info,
+  MoreHorizontal,
+  Settings,
+} from 'react-feather';
 import foo from '../examples-utils/assets/foo.svg';
+import Navigation, { GlobalNavigation, NavigationItem } from '../src';
 
 const schema = [
   {
@@ -119,6 +118,19 @@ const schema = [
         heading: 'Browse',
         items: [
           {
+            path: `/`,
+            type: 'NavigationItem',
+            before: (
+              <Avatar
+                size="xsmall"
+                // src={contact.avatar.thumb}
+                // name={contact.name}
+                name="test with tooltip"
+              />
+            ),
+            text: '#dev',
+          },
+          {
             type: 'NavigationItem',
             before: <Settings size={18} />,
             text: 'Ordini',
@@ -145,7 +157,8 @@ export default class Basic extends Component<any> {
     return (
       <Shell>
         <GlobalNavigation
-          navigationWidth={35}
+          navigationWidth={20}
+          navigationMinWidth="17rem"
           header={{
             children: <Avatar borderColor="transparent" />,
             name: 'Joydeed',
@@ -220,11 +233,12 @@ export default class Basic extends Component<any> {
         />
         <ShellContent>
           <ShellNavigation
-            style={{ display: 'flex', flex: '0 1 35%', minWidth: 0 }}
-            className="bg-light"
+            style={{ display: 'flex', flex: '1 0 20%', minWidth: '17rem' }}
+            // className="bg-light"
           >
             <Navigation schema={schema} />
           </ShellNavigation>
+          <ShellMain />
         </ShellContent>
       </Shell>
     );
