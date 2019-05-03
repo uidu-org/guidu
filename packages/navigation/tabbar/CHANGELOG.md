@@ -1,5 +1,10 @@
 # @uidu/tabbar
 
+## 0.1.6
+- [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
+
+  - Update some styling to tabbar and navigation
+
 ## 0.1.5
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

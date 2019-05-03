@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tabbar",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Downshift React component",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -13,7 +13,7 @@
     "@uidu/docs": "^0.1.25"
   },
   "dependencies": {
-    "@uidu/shell": "^0.1.7",
+    "@uidu/shell": "^0.1.8",
     "react-dom": "^16.4.0"
   }
 }

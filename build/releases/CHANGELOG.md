@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.14
+- [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
+
+  - Update some styling to tabbar and navigation
+
 ## 3.0.13
 - [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
 

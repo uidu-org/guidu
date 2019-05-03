@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.27
+- [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
+
+  - Update some styling to tabbar and navigation
+
 ## 0.1.26
 - [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
 

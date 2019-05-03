@@ -1,6 +1,6 @@
 {
   "name": "@uidu/build-releases",
-  "version": "3.0.13",
+  "version": "3.0.14",
   "description": "This will definitely get split up at some point, just using for testing",
   "main": "bin/build-releases.js",
   "publishConfig": {
