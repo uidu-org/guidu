@@ -1,24 +1,21 @@
 import * as React from 'react';
-import { Activity } from 'react-feather';
-
-import Shell, {
-  ShellSidebar,
-  ShellHeader,
-  ShellContent,
-  ShellNavigation,
-  ShellMain,
-  ShellBody,
-  ShellFooter,
-} from '../src';
+import ChatWindow from '../../../messaging/chat-window/examples/Basic';
 import {
+  NavigationHeader,
+  NavigationMenu,
+  SidebarFooter,
   SidebarLogo,
   SidebarMenu,
-  SidebarFooter,
-  NavigationMenu,
-  NavigationHeader,
 } from '../examples-utils';
-
-import ChatWindow from '../../../messaging/chat-window/examples/Basic';
+import Shell, {
+  ShellBody,
+  ShellContent,
+  ShellFooter,
+  ShellHeader,
+  ShellMain,
+  ShellNavigation,
+  ShellSidebar,
+} from '../src';
 
 export default function Dashboard() {
   return (
@@ -56,10 +53,10 @@ export default function Dashboard() {
               Long navigation with search bar & actions
             </div>
           </ShellHeader>
-          <ShellBody className="d-flex">
+          <ShellBody className="d-flex" style={{ minHeight: 0 }}>
             <ChatWindow />
             <ShellNavigation
-              className="bg-white border-left p-4 flex-shrink-0"
+              className="bg-white border-left p-4 flex-shrink-0 d-none d-lg-flex"
               style={{ width: '30%' }}
             >
               Group sidebar

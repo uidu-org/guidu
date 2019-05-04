@@ -3,6 +3,8 @@
 html,
 body {
   overscroll-behavior: none;
+  overflow: hidden;
+  position: fixed;
 }
 
 body {

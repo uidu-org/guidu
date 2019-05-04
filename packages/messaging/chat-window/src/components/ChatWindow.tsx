@@ -1,17 +1,16 @@
-import React, { Component, Fragment } from 'react';
-import ReactChatView from 'react-chatview';
-
 import Message, {
-  MessageGroup,
-  MessageActions,
+  MessageActionMore,
   MessageActionReactions,
   MessageActionReply,
-  MessageActionMore,
+  MessageActions,
+  MessageGroup,
   MessageReactions,
 } from '@uidu/message';
 import MessagesForm from '@uidu/message-form';
-import { sortByDay, groupByDay, groupByMessager } from '../utils';
+import React, { Component, Fragment } from 'react';
+import ReactChatView from 'react-chatview';
 import { ChatWindowType } from 'src/types';
+import { groupByDay, groupByMessager, sortByDay } from '../utils';
 
 // import Loader from 'components/Loader';
 
@@ -43,11 +42,16 @@ export default class ChatWindow extends Component<ChatWindowType> {
 
     const groupedByDay = groupByDay(sortByDay(messages.messages));
     return (
-      <div className="feed d-flex flex-column justify-content-end h-100 flex-grow-1">
+      <div
+        className="feed d-flex flex-column justify-content-end"
+        style={{ flex: '1 1 auto', minHeight: 0 }}
+      >
         <div
           className="h-100" // commenting this will put messages down but no auto-.scroll
           style={{
             overflow: 'auto',
+            WebkitOverflowScrolling: 'touch',
+            overscrollBehavior: 'contain',
           }}
         >
           <ReactChatView

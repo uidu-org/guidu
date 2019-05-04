@@ -1,25 +1,22 @@
-import * as React from 'react';
-import styled from 'styled-components';
-
-import { Helmet } from 'react-helmet';
-import { List } from 'react-feather';
-
-import Button from '@uidu/button';
 import { AtlassianIcon } from '@atlaskit/logo';
-
+import Button from '@uidu/button';
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
 import Loading from '../../components/Loading';
 import Page from '../../components/Page';
-import FourOhFour from '../FourOhFour';
-
-import MetaData from './MetaData';
-import LatestChangelog from './LatestChangelog';
-
-import { isModuleNotFoundError } from '../../utils/errors';
-import * as fs from '../../utils/fs';
 import { Link } from '../../components/WrappedLink';
 import Loadable from '../../components/WrappedLoader';
-
+import * as fs from '../../utils/fs';
+import FourOhFour from '../FourOhFour';
+import MetaData from './MetaData';
 import fetchPackageData from './utils/fsOperations';
+
+
+
+
+
+
 
 export const ButtonGroup = styled.div`
   display: inline-flex;
@@ -143,14 +140,14 @@ class Package extends React.Component<Props> {
           </div>
           {examplePath && (
             <ButtonGroup>
-              <Button
+              {/* <Button
                 className="mr-3"
                 color="light"
                 component={Link}
                 to={`/packages/${groupId}/${pkgId}/changelog`}
               >
                 <List className="mr-2" size={'1rem'} /> Changelog
-              </Button>
+              </Button> */}
               <Button component={Link} to={exampleModalPath}>
                 Examples
               </Button>

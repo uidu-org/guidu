@@ -3,14 +3,7 @@ import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
 import Shell, { ShellContent, ShellMain, ShellNavigation } from '@uidu/shell';
 import React, { Component } from 'react';
-import {
-  Activity,
-  Bell,
-  Grid,
-  Info,
-  MoreHorizontal,
-  Settings,
-} from 'react-feather';
+import { Activity, Bell, Grid, Info, MoreHorizontal, Settings } from 'react-feather';
 import foo from '../examples-utils/assets/foo.svg';
 import Navigation, { GlobalNavigation, NavigationItem } from '../src';
 

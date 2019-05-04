@@ -1,30 +1,28 @@
 import { ModalTransition } from '@uidu/modal-dialog';
-import GlobalTheme from '@uidu/theme';
-import * as React from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import { withRouter, RouteComponentProps } from 'react-router';
-import styled, { createGlobalStyle } from 'styled-components';
-
 import Shell, {
-  ShellSidebar,
   ShellBody,
   ShellContent,
   ShellMain,
+  ShellSidebar,
 } from '@uidu/shell';
-import Home from '../pages/Home';
+import GlobalTheme from '@uidu/theme';
+import * as React from 'react';
+import { RouteComponentProps, withRouter } from 'react-router';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import styled, { createGlobalStyle } from 'styled-components';
+import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
 import ChangeLogExplorer from '../pages/ChangeLogExplorer';
+import Document from '../pages/Document';
 import FullscreenExamples from '../pages/Examples';
 import FourOhFour from '../pages/FourOhFour';
-import Pattern from '../pages/Pattern';
-import PatternsInfo from '../pages/PatternsInfo';
-import Document from '../pages/Document';
+import Home from '../pages/Home';
 import Package from '../pages/Package';
-import PackagesList from '../pages/PackagesList';
-import PackageDocument from '../pages/PackageDocument';
 import ChangelogModal from '../pages/Package/ChangelogModal';
 import ExamplesModal from '../pages/Package/ExamplesModal';
-import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
-
+import PackageDocument from '../pages/PackageDocument';
+import PackagesList from '../pages/PackagesList';
+import Pattern from '../pages/Pattern';
+import PatternsInfo from '../pages/PatternsInfo';
 import Nav from './Nav';
 
 // eslint-disable-next-line

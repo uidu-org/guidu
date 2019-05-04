@@ -4,18 +4,27 @@ const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
   if (fixedHeight === 'mobileOnly') {
     return css`
       @media (max-width: 700px) {
-        height: 100vh;
+        height: 100%;
       }
+      -webkit-overflow-scrolling: touch;
       height: auto;
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+      overscroll-behavior-y: contain;
     `;
   }
   if (fixedHeight) {
     return css`
-      height: 100vh;
+      overflow: hidden;
+      height: 100%;
     `;
   }
   return css`
+    -webkit-overflow-scrolling: touch;
     height: auto;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overscroll-behavior-y: contain;
   `;
 };
 
@@ -45,9 +54,11 @@ export const Wrapper = styled.div<{
   fixedHeight: boolean | 'mobileOnly';
 }>`
   display: flex;
+  overscroll-behavior: none;
 
   ${({ fixedHeight }) => mobileOnlyHeight(fixedHeight)};
-  width: 100%;
+  max-height: 100vh;
+  width: 100vw;
 `;
 
 export const Sidebar = styled.aside`

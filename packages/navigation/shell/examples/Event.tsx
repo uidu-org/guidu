@@ -1,19 +1,17 @@
 import * as React from 'react';
-import { Activity, ArrowLeft } from 'react-feather';
-
-import Shell, {
-  ShellSidebar,
-  ShellHeader,
-  ShellContent,
-  ShellNavigation,
-  ShellMain,
-  ShellBody,
-} from '../src';
+import { ArrowLeft } from 'react-feather';
 import { NavigationMenu } from '../examples-utils';
+import Shell, {
+  ShellBody,
+  ShellContent,
+  ShellHeader,
+  ShellMain,
+  ShellNavigation,
+} from '../src';
 
 export default function Event() {
   return (
-    <Shell fixedHeight="mobileOnly">
+    <Shell>
       <ShellContent>
         <ShellMain>
           <ShellHeader>
@@ -61,11 +59,11 @@ export default function Event() {
                 maxWidth: '22%',
               }}
             >
-              <ShellBody scrollable="mobileOnly">
+              <ShellBody scrollable>
                 <NavigationMenu />
               </ShellBody>
             </ShellNavigation>
-            <ShellBody scrollable="mobileOnly">
+            <ShellBody scrollable>
               <div className="row no-gutters justify-content-center my-5">
                 <div className="col-lg-10">
                   <p>Content</p>

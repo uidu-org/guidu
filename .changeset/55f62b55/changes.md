@@ -1,0 +1,1 @@
+- Fix themes and shell to work crossbrowser (safari scrolling issues)
