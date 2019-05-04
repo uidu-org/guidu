@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.8
+- [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
+
+  - Update some styling to tabbar and navigation
+
 ## 0.1.7
 - [patch] [947ce47](https://github.org/uidu-org/guidu/commits/947ce47):
 
