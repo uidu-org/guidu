@@ -8,7 +8,10 @@ export default function replaceSrc(content, name) {
   }
 
   if (name) {
-    replacedCode = replaceImports(replacedCode.default, [['../src', name]]);
+    replacedCode = replaceImports(
+      replacedCode.default ? replacedCode.default : replacedCode,
+      [['../src', name]],
+    );
   }
   return replacedCode;
 }

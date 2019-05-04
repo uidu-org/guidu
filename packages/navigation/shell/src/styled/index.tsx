@@ -51,15 +51,18 @@ const mobileOnlyScrollable = (scrollable: boolean | 'mobileOnly') => {
 };
 
 export const Wrapper = styled.div<{
-  fixedHeight: boolean | 'mobileOnly';
-}>`
-  display: flex;
-  overscroll-behavior: none;
+         fixedHeight: boolean | 'mobileOnly';
+       }>`
+         display: flex;
+         overscroll-behavior: none;
 
-  ${({ fixedHeight }) => mobileOnlyHeight(fixedHeight)};
-  max-height: 100vh;
-  width: 100vw;
-`;
+         ${({ fixedHeight }) => mobileOnlyHeight(fixedHeight)};
+         max-height: 100vh;
+         width: 100vw;
+
+         min-width: 0;
+         min-height: 0;
+       `;
 
 export const Sidebar = styled.aside`
   flex-direction: column;
@@ -95,6 +98,9 @@ export const Header = styled.header`
 export const Body = styled.div<{ scrollable?: boolean | 'mobileOnly' }>`
   flex: 1 1 auto;
   ${({ scrollable }) => mobileOnlyScrollable(scrollable)};
+  // to fix chrome flex
+  min-width: 0;
+  min-height: 0;
 `;
 
 export const Footer = styled.footer`
