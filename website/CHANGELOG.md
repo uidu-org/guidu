@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.50
+- [patch] [1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
+
+  - Fix themes and shell to work crossbrowser (safari scrolling issues)
+
 ## 0.1.49
 - [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
 
