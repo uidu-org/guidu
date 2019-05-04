@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.14
+- [patch] [1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
+
+  - Fix themes and shell to work crossbrowser (safari scrolling issues)
+
 ## 0.1.13
 - [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
 

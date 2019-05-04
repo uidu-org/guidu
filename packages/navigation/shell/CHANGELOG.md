@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.9
+- [patch] [1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
+
+  - Fix themes and shell to work crossbrowser (safari scrolling issues)
+
 ## 0.1.8
 - [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 
