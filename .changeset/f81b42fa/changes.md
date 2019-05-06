@@ -1,1 +1,0 @@
-- Added Navigation with icons, fix mobile messages and (maybe) chat view
