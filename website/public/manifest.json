@@ -1,7 +1,7 @@
 {
   "name": "guidu",
   "short_name": "guidu",
-  "start_url": "/examples.html?groupId=navigation&packageId=shell&exampleId=Discover",
+  "start_url": "/examples.html?groupId=navigation&packageId=shell&exampleId=Dashboard",
   "theme_color": "#ec8447",
   "background_color": "#FFFFFF",
   "display": "standalone",

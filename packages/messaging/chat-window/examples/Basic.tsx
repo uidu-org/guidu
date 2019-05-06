@@ -983,7 +983,8 @@ export default function Basic() {
                 },
               ],
               mentions: [],
-              body: 'Questo era vuoto ma non ho capito perchè, forse per gli allegati',
+              body:
+                'Questo era vuoto ma non ho capito perchè, forse per gli allegati',
               unread: false,
               messageable: {
                 slug: 'general',
