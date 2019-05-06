@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo -e "\e[32m git branch -a"
+git branch -a
 echo -e "\e[32m Run build-releases version to update versions into packages and commit"
 node ./build/releases/bin/build-releases.js version
 echo -e "\e[32m Push last commit into master"
