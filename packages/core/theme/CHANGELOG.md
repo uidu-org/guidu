@@ -1,5 +1,10 @@
 # @atlaskit/theme
 
+## 0.1.9
+- [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
+
+  - Added Navigation with icons, fix mobile messages and (maybe) chat view
+
 ## 0.1.8
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

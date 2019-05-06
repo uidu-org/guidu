@@ -1,5 +1,10 @@
 # @uidu/message
 
+## 0.1.7
+- [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
+
+  - Added Navigation with icons, fix mobile messages and (maybe) chat view
+
 ## 0.1.6
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

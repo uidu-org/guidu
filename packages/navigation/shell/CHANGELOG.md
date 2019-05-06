@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.11
+- [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
+
+  - Added Navigation with icons, fix mobile messages and (maybe) chat view
+
 ## 0.1.10
 - [patch] [c6666ae](https://github.org/uidu-org/guidu/commits/c6666ae):
 

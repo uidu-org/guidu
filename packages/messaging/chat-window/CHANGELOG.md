@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.15
+- [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
+
+  - Added Navigation with icons, fix mobile messages and (maybe) chat view
+
 ## 0.1.14
 - [patch] [1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
 
