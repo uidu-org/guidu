@@ -1,12 +1,10 @@
-import React, { Component, Fragment } from 'react';
-import moment from 'moment';
-import classNames from 'classnames';
-import MessageRenderer from '@uidu/message-renderer';
 import MessageForm from '@uidu/message-form';
-import MessagesAttachments from './MessageAttachments';
-
+import MessageRenderer from '@uidu/message-renderer';
+import moment from 'moment';
+import React, { Component, Fragment } from 'react';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
 import { isOnlyEmojis } from '../utils';
+import MessagesAttachments from './MessageAttachments';
 
 export default class Message extends Component {
   state = {
@@ -30,12 +28,12 @@ export default class Message extends Component {
     if (isOnlyEmojis(message.body)) {
       return (
         <StyledMessageEmoji className="message mt-2 hoverable position-relative">
-          {message.body}
+          <span>{message.body}</span>
         </StyledMessageEmoji>
       );
     }
 
-    return (
+    return [
       <StyledMessage
         className="message mt-1 hoverable position-relative"
         onMouseEnter={() => this.setState({ hovered: true })}
@@ -68,9 +66,6 @@ export default class Message extends Component {
             </div>
           </Fragment>
         )}
-        {(message.attachments || []).length > 0 && (
-          <MessagesAttachments attachments={message.attachments} />
-        )}
         {!editing &&
           children &&
           children({
@@ -79,7 +74,10 @@ export default class Message extends Component {
             onDropdownChange: this.keepActionsVisible,
             setEditing: this.setEditing,
           })}
-      </StyledMessage>
-    );
+      </StyledMessage>,
+      (message.attachments || []).length > 0 && (
+        <MessagesAttachments attachments={message.attachments} />
+      ),
+    ];
   }
 }

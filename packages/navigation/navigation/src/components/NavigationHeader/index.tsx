@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import StyledNavigationHeader, {
+  StyledNavigationHeaderAfter,
   StyledNavigationHeaderBefore,
   StyledNavigationHeaderText,
-  StyledNavigationHeaderAfter,
 } from './styled';
 
 export default class NavigationHeader extends PureComponent<any> {
@@ -14,7 +14,7 @@ export default class NavigationHeader extends PureComponent<any> {
           <StyledNavigationHeaderBefore>{before}</StyledNavigationHeaderBefore>
         )}
         <StyledNavigationHeaderText>
-          <h5 className="ml-2 mb-0">{text}</h5>
+          <h5 className="mb-0">{text}</h5>
         </StyledNavigationHeaderText>
         {!!after && (
           <StyledNavigationHeaderAfter>{after}</StyledNavigationHeaderAfter>

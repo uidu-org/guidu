@@ -4,6 +4,7 @@ export const StyledNavigationHeaderBefore = styled.div`
   align-items: center;
   display: flex;
   margin-right: 0.5rem;
+  margin-left: -0.5rem;
 `;
 
 export const StyledNavigationHeaderText = styled.div`
@@ -18,7 +19,7 @@ export const StyledNavigationHeaderAfter = styled.div`
 `;
 
 export default styled.div.attrs(({ className }) => ({
-  className: `px-4${className ? ` ${className}` : ''}`,
+  className: `px-4 ml-2 ml-md-3${className ? ` ${className}` : ''}`,
 }))`
   align-items: center;
   display: flex;

@@ -1,4 +1,4 @@
-const emojiRegex = require('emoji-regex/text');
+const emojiRegex = require('emoji-regex');
 
 export const isOnlyEmojis = message => {
   if (!message) return true;

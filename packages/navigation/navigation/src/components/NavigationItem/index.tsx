@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
 import {
+  StyledNavigationAfter,
+  StyledNavigationBefore,
   StyledNavigationItem,
   StyledNavigationLink,
-  StyledNavigationBefore,
   StyledNavigationText,
-  StyledNavigationAfter,
 } from './styled';
 
 export default class NavigationItem extends PureComponent<any> {

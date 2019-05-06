@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import classNames from 'classnames';
-
 import Avatar from '@uidu/avatar';
+import classNames from 'classnames';
+import React, { Component } from 'react';
 
 export default class MessageGroup extends Component {
   static defaultProps = {
@@ -17,28 +16,16 @@ export default class MessageGroup extends Component {
 
     if (kind === 'message.create') {
       return (
-        <div className={classNames('position-relative py-3 px-4', {})}>
-          <div className="media">
-            <div className="d-none d-md-block">
-              <Avatar
-                src={messager.avatar.thumb}
-                name={messager.name}
-                withTooltip
-              />
-            </div>
-
-            <div className="media-body ml-md-3" style={{ minWidth: 0 }}>
-              <h6 className="text-heavy mb-0 d-flex align-items-center">
-                <div className="d-md-none mr-2">
-                  <Avatar
-                    src={messager.avatar.thumb}
-                    name={messager.name}
-                    withTooltip
-                    size="small"
-                  />
-                </div>
-                {messager.name}
-              </h6>
+        <div className={classNames('position-relative py-3 px-3 px-md-4', {})}>
+          <div className="media align-items-end align-items-md-start">
+            <Avatar
+              src={messager.avatar.thumb}
+              name={messager.name}
+              withTooltip={false}
+              // size="small"
+            />
+            <div className="media-body ml-3" style={{ minWidth: 0 }}>
+              <p className="small mb-0 text-muted">{messager.name}</p>
               {this.props.children({ messages, messager })}
             </div>
           </div>

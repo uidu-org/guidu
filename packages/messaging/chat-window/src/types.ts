@@ -1,8 +1,9 @@
 import { MessageableProps, MessageFormProps } from '@uidu/message-form';
+import * as React from 'react';
 
-export type ChatWindowType = MessageFormProps & {
+export type ChatWindowProps = MessageFormProps & {
   /** The base styling to apply to the button */
-  fetchMessages: (messageable: MessageableProps, lastId: number) => Array<any>;
+  fetchMessages: (messageable: MessageableProps, lastId: number) => Promise<any>;
   /** The base styling to apply to the button */
   betweenMinutes: number;
   /** The base styling to apply to the button */
@@ -13,3 +14,19 @@ export type ChatWindowType = MessageFormProps & {
   /** The base styling to apply to the button */
   onReact: (message: any) => void;
 };
+
+
+export type ChatViewProps = {
+  flipped?: boolean;
+  reversed?: boolean;
+  scrollLoadThreshold?: number;
+  shouldTriggerLoad?: () => boolean;
+  onInfiniteLoad: () => Promise<any>;
+  loadingSpinnerDelegate: React.ReactNode,
+  className?: string;
+  returnScrollable?: (element: HTMLDivElement) => void;
+}
+
+export type ChatViewState = {
+  isInfiniteLoading: boolean;
+}

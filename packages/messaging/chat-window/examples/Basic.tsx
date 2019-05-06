@@ -1,14 +1,6 @@
 import * as React from 'react';
-import moment from 'moment';
-import faker from 'faker';
 import { useClipboard } from 'use-clipboard-copy';
-
 import ChatWindow from '../src';
-
-import {
-  messagerFactory,
-  messageLogFactory,
-} from '@uidu/message/examples-utils';
 
 interface GitHubJSONResponse {
   items: Array<any>;
@@ -681,7 +673,7 @@ export default function Basic() {
               isLoading: false,
               attachments: [],
               mentions: [],
-              body: 'funziona?',
+              body: '1',
               unread: false,
               messageable: {
                 slug: 'general',
@@ -991,7 +983,7 @@ export default function Basic() {
                 },
               ],
               mentions: [],
-              body: '',
+              body: 'Questo era vuoto ma non ho capito perchè, forse per gli allegati',
               unread: false,
               messageable: {
                 slug: 'general',

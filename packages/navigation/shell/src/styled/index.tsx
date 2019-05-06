@@ -51,18 +51,18 @@ const mobileOnlyScrollable = (scrollable: boolean | 'mobileOnly') => {
 };
 
 export const Wrapper = styled.div<{
-         fixedHeight: boolean | 'mobileOnly';
-       }>`
-         display: flex;
-         overscroll-behavior: none;
+  fixedHeight: boolean | 'mobileOnly';
+}>`
+  display: flex;
+  overscroll-behavior: none;
 
-         ${({ fixedHeight }) => mobileOnlyHeight(fixedHeight)};
-         max-height: 100vh;
-         width: 100vw;
+  ${({ fixedHeight }) => mobileOnlyHeight(fixedHeight)};
+  max-height: 100vh;
+  width: 100vw;
 
-         min-width: 0;
-         min-height: 0;
-       `;
+  min-width: 0;
+  min-height: 0;
+`;
 
 export const Sidebar = styled.aside`
   flex-direction: column;

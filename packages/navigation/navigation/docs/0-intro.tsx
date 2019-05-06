@@ -1,5 +1,5 @@
+import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -26,8 +26,17 @@ export default md`
     <Example
       packageName="@uidu/navigation"
       Component={require('../examples/Skeleton').default}
-      title="Basic"
+      title="Skeleton"
       source={require('!!raw-loader!../examples/Skeleton')}
+    />
+  )}
+
+  ${(
+    <Example
+      packageName="@uidu/navigation"
+      Component={require('../examples/Icon').default}
+      title="Icon Navigation"
+      source={require('!!raw-loader!../examples/Icon')}
     />
   )}
 

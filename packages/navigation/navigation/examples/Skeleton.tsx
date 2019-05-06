@@ -1,13 +1,9 @@
+import Shell, { ShellContent, ShellNavigation } from '@uidu/shell';
 import React, { Component } from 'react';
-import Shell, {
-  ShellHeader,
-  ShellContent,
-  ShellNavigation,
-  ShellBody,
-} from '@uidu/shell';
 import Navigation, { GlobalNavigationSkeleton } from '../src';
 
 const schema = [
+  { type: 'NavigationHeader', text: 'Skeleton' },
   {
     type: 'NavigationSection',
     items: [
@@ -38,14 +34,7 @@ export default class Basic extends Component<any> {
             style={{ display: 'flex', flex: '0 1 25%' }}
             // className="bg-light"
           >
-            <ShellHeader>
-              <div className="d-flex px-4 h-100 w-100 align-items-center">
-                <h5 className="ml-2 mb-0">AppName</h5>
-              </div>
-            </ShellHeader>
-            <ShellBody scrollable>
-              <Navigation schema={schema} />
-            </ShellBody>
+            <Navigation schema={schema} />
           </ShellNavigation>
         </ShellContent>
       </Shell>

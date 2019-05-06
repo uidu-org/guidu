@@ -1,18 +1,5 @@
+export { GlobalNavigation, GlobalNavigationItem, GlobalNavigationSkeleton, NavigationGroup, NavigationGroupHeading, NavigationHeader, NavigationIconItem, NavigationItem, NavigationItemSkeleton } from './components';
 export { default } from './components/Navigation';
-export {
-  GlobalNavigation,
-  GlobalNavigationItem,
-  GlobalNavigationSkeleton,
-  // GlobalNavigationSwitcher,
-  // Navigation
-  NavigationHeader,
-  NavigationItem,
-  NavigationItemSkeleton,
-  NavigationGroup,
-  NavigationGroupHeading,
-  // NavigationSortableGroup,
-  // NavigationSortableItem,
-} from './components';
 
 // 'BackItem'
 // 'ContainerHeader'

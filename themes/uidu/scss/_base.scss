@@ -5,6 +5,11 @@ body {
   overscroll-behavior: none;
   overflow: hidden;
   position: fixed;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }
 
 body {

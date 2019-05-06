@@ -1,20 +1,19 @@
 // based on schema type we render different components
-import React, { PureComponent } from 'react';
+import { ShellBody, ShellFooter, ShellHeader } from '@uidu/shell';
 import { gridSize } from '@uidu/theme';
-import { ShellHeader, ShellBody } from '@uidu/shell';
+import React, { PureComponent } from 'react';
+import NavigationGroupComponent from './NavigationGroup';
+import NavigationGroupHeadingComponent from './NavigationGroupHeading';
+import NavigationHeaderComponent from './NavigationHeader';
+import NavigationIconItem from './NavigationIconItem';
 import NavigationItem from './NavigationItem';
 import NavigationItemSkeleton from './NavigationItemSkeleton';
-
-import NavigationHeaderComponent from './NavigationHeader';
-import NavigationGroupHeadingComponent from './NavigationGroupHeading';
-import NavigationGroupComponent from './NavigationGroup';
 
 /**
  * ITEMS
  */
 
 // Header
-// <h5 className="ml-2 mb-0">AppName</h5>
 const NavigationHeader = ({ text, after, before }) => (
   <ShellHeader>
     <NavigationHeaderComponent text={text} after={after} before={before} />
@@ -26,6 +25,13 @@ const NavigationSection = ({ items, ...props }) => (
   <ShellBody scrollable {...props}>
     <ItemsRenderer items={items} />
   </ShellBody>
+);
+
+// Footer
+const NavigationFooter = ({ items, ...props }) => (
+  <ShellFooter {...props}>
+    <ItemsRenderer items={items} />
+  </ShellFooter>
 );
 
 // Group
@@ -41,6 +47,8 @@ const NavigationGroup = ({
   items,
   before,
   after,
+  withPadding,
+  withMargin,
   ...props
 }) =>
   items.length ? (
@@ -49,6 +57,8 @@ const NavigationGroup = ({
       before={before}
       after={after}
       separator={separator}
+      withPadding={withPadding}
+      withMargin={withMargin}
     >
       <ItemsRenderer items={items} {...props} />
     </NavigationGroupComponent>
@@ -69,6 +79,7 @@ const Debug = (props: any) => (
 
 const itemComponents = {
   NavigationHeader,
+  NavigationIconItem,
   NavigationItem,
   NavigationItemSkeleton,
   NavigationGroupHeading,
@@ -98,6 +109,9 @@ const renderItemComponent = (props: any, key: string, index: number) => {
   if (props.type === 'NavigationItem') {
     const { type, ...compProps } = props;
     element = <NavigationItem key={key} {...compProps} index={index} />;
+  } else if (props.type === 'NavigationIconItem') {
+    const { type, ...compProps } = props;
+    element = <NavigationIconItem key={key} {...compProps} index={index} />;
   } else if (props.type === 'NavigationHeader') {
     const { type, id, ...compProps } = props;
     element = <NavigationHeader key={key} {...compProps} />;
@@ -128,6 +142,7 @@ const renderItemComponent = (props: any, key: string, index: number) => {
 const groupComponents = {
   NavigationGroup,
   NavigationSection,
+  NavigationFooter,
   // HeaderSection,
   // MenuSection,
   // Section,
@@ -154,6 +169,9 @@ const renderGroupComponent = (
   } else if (props.type === 'NavigationSection') {
     const { type, ...compProps } = props;
     element = <NavigationSection key={key} {...compProps} />;
+  } else if (props.type === 'NavigationFooter') {
+    const { type, ...compProps } = props;
+    element = <NavigationFooter key={key} {...compProps} />;
   }
   // } else if (props.type === 'HeaderSection') {
   //   const { type, ...compProps } = props;
