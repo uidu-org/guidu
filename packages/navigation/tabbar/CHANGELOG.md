@@ -1,5 +1,10 @@
 # @uidu/tabbar
 
+## 0.1.7
+- [patch] [6f780ad](https://github.org/uidu-org/guidu/commits/6f780ad):
+
+  - Added build for tabbar
+
 ## 0.1.6
 - [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 

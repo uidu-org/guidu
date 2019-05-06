@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.27
+- [patch] [c6666ae](https://github.org/uidu-org/guidu/commits/c6666ae):
+
+  - FIX docs and shell min-width
+
 ## 0.1.26
 - [patch] [74476cc](https://github.org/uidu-org/guidu/commits/74476cc):
 

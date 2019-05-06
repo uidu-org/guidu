@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.10
+- [patch] [c6666ae](https://github.org/uidu-org/guidu/commits/c6666ae):
+
+  - FIX docs and shell min-width
+
 ## 0.1.9
 - [patch] [1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
 
