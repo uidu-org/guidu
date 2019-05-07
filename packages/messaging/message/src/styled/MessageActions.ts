@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export default styled.div`
+export default styled.div<{ hovered: boolean; }>`
   right: 0;
   top: -25px;
   position: absolute;

@@ -8,6 +8,20 @@ export const StyledMessageEmoji = styled.div`
   }
 `;
 
+export const StyledMobileMessage = styled.div`
+display: flex;
+  flex-direction: column;
+  min-width: 0;
+  zoom: 1;
+  max-width: 85%;
+    background: #f1f0f0;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 1.3em;
+    width: fit-content;
+`
+
+
 export default styled.div`
   display: flex;
   flex-direction: column;
@@ -15,10 +29,11 @@ export default styled.div`
   zoom: 1;
 
   @media (max-width: 700px) {
-    max-width: 80%;
-    background: #f4f4f4;
-    padding: 4px 8px;
-    border-radius: 8px;
+    max-width: 85%;
+    background: #f1f0f0;
+    color: black;
+    padding: 6px 12px;
+    border-radius: 1.3em;
     width: fit-content;
   }
 

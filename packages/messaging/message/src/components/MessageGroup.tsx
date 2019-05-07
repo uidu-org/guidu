@@ -1,14 +1,11 @@
 import Avatar from '@uidu/avatar';
 import classNames from 'classnames';
 import React, { Component } from 'react';
+import { MessageGroupProps } from '../types';
 
-export default class MessageGroup extends Component {
+export default class MessageGroup extends Component<MessageGroupProps> {
   static defaultProps = {
     kind: 'message.create',
-  };
-
-  state = {
-    editing: false,
   };
 
   render() {
@@ -26,7 +23,7 @@ export default class MessageGroup extends Component {
             />
             <div className="media-body ml-3" style={{ minWidth: 0 }}>
               <p className="small mb-0 text-muted">{messager.name}</p>
-              {this.props.children({ messages, messager })}
+              {children({ messages, messager })}
             </div>
           </div>
         </div>

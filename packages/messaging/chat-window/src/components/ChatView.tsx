@@ -216,7 +216,7 @@ export default class ChatView extends Component<ChatViewProps, ChatViewState> {
           overflowScrolling: 'touch',
           WebkitOverflowScrolling: 'touch',
           overscrollBehavior: 'contain',
-          '-webkit-backface-visibility': 'hidden',
+          WebkitBackfaceVisibility: 'hidden',
         }}
       >
         {this.props.flipped ? loadSpinner : null}

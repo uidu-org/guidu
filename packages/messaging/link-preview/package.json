@@ -2,7 +2,7 @@
   "name": "@uidu/link-preview",
   "version": "0.1.3",
   "description": "A link preview regex and rendering",
-  "uidu:src": "src/index.ts",
+  "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
   "repository": "https://github.com/uidu-org/guidu",

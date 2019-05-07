@@ -1,19 +1,7 @@
+import { Message, MessageableProps } from '@uidu/message';
 import * as React from 'react';
 import { MentionProps } from 'react-mentions';
 
-export type Message = {
-  id?: number;
-  body?: string;
-};
-
-export type MessageableProps = {
-  /** The base styling to apply to the button */
-  messages: {
-    hasMore: boolean;
-    isFetching: boolean;
-    messages: Array<Message>;
-  };
-};
 
 export type MessageFormActionProps = {
   /** The base styling to apply to the button. */
@@ -48,6 +36,7 @@ export type MessageFormProps = {
     message: Message,
     model: any,
   ) => any;
+  onReplyDismiss?: (event: React.MouseEvent) => void;
   /** The base styling to apply to the button. */
   onDismiss: () => void;
   /** The base styling to apply to the button. */

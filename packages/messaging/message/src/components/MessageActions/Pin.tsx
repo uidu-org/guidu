@@ -1,21 +1,18 @@
-// @flow
-
-import React, { Component } from 'react';
 import Tooltip from '@uidu/tooltip';
+import React, { Component } from 'react';
+import { Star } from 'react-feather';
 
-import { MessageCircle } from 'react-feather';
-
-export default class Reply extends Component<*> {
+export default class Reply extends Component<any> {
   render() {
     return (
       <Tooltip
         placement="top"
-        content="Commenta"
+        content="Star"
         delay={0}
         tag="button"
         className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
       >
-        <MessageCircle size={16} />
+        <Star size={16} />
       </Tooltip>
     );
   }

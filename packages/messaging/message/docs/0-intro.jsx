@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   This package exports an number of different Message related components:

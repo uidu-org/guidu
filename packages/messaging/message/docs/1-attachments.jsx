@@ -1,6 +1,6 @@
 // @flow
+import { Example, md } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   Message Attachments use [MediaFilmstrip](/packages/media/media-filmstrip) to display file attachments.

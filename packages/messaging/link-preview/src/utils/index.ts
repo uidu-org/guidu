@@ -69,9 +69,7 @@ export const createApiUrl = props => {
 
 export const fetchFromApiUrl = ({ apiKey, apiUrl }, source) => {
   const headers = apiKey ? { 'x-api-key': apiKey } : {};
-  console.log(source);
   return axios.get(apiUrl, { headers, cancelToken: source.token }).then(res => {
-    console.log(res);
     return res.data;
   });
 };

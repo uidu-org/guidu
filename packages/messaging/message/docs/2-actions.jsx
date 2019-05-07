@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   Available Message Actions
@@ -33,42 +33,60 @@ export default md`
   ${(
     <Props
       heading="Avatar Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions')
+          .default
+      }
     />
   )}
 
   ${(
     <Props
       heading="Avatar Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions/Pin')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions/Pin')
+          .default
+      }
     />
   )}
 
   ${(
     <Props
       heading="Avatar Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions/Pin')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions/Pin')
+          .default
+      }
     />
   )}
 
   ${(
     <Props
       heading="Avatar Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions/Reply')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions/Reply')
+          .default
+      }
     />
   )}
 
   ${(
     <Props
       heading="Avatar Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions/Reactions')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions/Reactions')
+          .default
+      }
     />
   )}
 
   ${(
     <Props
       heading="Avatar Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions/More')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions/More')
+          .default
+      }
     />
   )}
 `;

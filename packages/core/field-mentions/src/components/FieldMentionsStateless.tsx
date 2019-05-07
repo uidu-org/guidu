@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
 import classNames from 'classnames';
-import { MentionsInput, Mention } from 'react-mentions';
-
+import React, { Component } from 'react';
+import { Mention, MentionsInput } from 'react-mentions';
 import { FieldMentionsStatelessProps } from '../types';
-import { defaultStyle, defaultMentionStyle } from '../utils';
+import { defaultMentionStyle, defaultStyle } from '../utils';
 
 export default class FieldMentionsStateless extends Component<
   FieldMentionsStatelessProps
 > {
+  private inputRef: React.RefObject<any> = React.createRef();
+
   static defaultProps = {
     placeholder: "Mention people using '@'",
     allowSpaceInQuery: true,
@@ -27,6 +28,8 @@ export default class FieldMentionsStateless extends Component<
       style,
     } = this.props;
 
+    console.log(this.props.ref);
+
     return (
       <MentionsInput
         value={value.value || ''}
@@ -37,6 +40,7 @@ export default class FieldMentionsStateless extends Component<
         allowSpaceInQuery={allowSpaceInQuery}
         className={classNames('form-control h-auto', className)}
         suggestionsPortalHost={suggestionsPortalHost}
+        inputRef={this.inputRef}
       >
         {items.map((item, index) => (
           <Mention

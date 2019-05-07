@@ -1,19 +1,16 @@
-// @flow
-
-import React, { Component } from 'react';
 import { Card } from '@uidu/media-card';
-import { Identifier } from '@uidu/media-core';
 import { FilmstripView } from '@uidu/media-filmstrip';
 import { createUploadContext } from '@uidu/media-test-helpers';
-import { MediaViewer, MediaViewerDataSource } from '@uidu/media-viewer';
+import { MediaViewer } from '@uidu/media-viewer';
+import React, { Component } from 'react';
+import { MessageAttachmentsProps, MessageAttachmentsState } from '../../types';
 
 const context = createUploadContext();
 
-export type State = {
-  selectedItem?: Identifier,
-};
-
-export default class MessageAttachments extends Component<{}, State> {
+export default class MessageAttachments extends Component<
+  MessageAttachmentsProps,
+  MessageAttachmentsState
+> {
   state = {
     animate: false,
     offset: 0,

@@ -1,9 +1,10 @@
-import { MessageableProps, MessageFormProps } from '@uidu/message-form';
+import Message, { MessageableProps } from '@uidu/message';
+import { MessageFormProps } from '@uidu/message-form';
 import * as React from 'react';
 
 export type ChatWindowProps = MessageFormProps & {
   /** The base styling to apply to the button */
-  fetchMessages: (messageable: MessageableProps, lastId: number) => Promise<any>;
+  fetchMessages: (messageable: MessageableProps, lastId: number | string) => Promise<any>;
   /** The base styling to apply to the button */
   betweenMinutes: number;
   /** The base styling to apply to the button */
@@ -15,6 +16,9 @@ export type ChatWindowProps = MessageFormProps & {
   onReact: (message: any) => void;
 };
 
+export type ChatWindowState = {
+  replyTo: Message | null;
+}
 
 export type ChatViewProps = {
   flipped?: boolean;

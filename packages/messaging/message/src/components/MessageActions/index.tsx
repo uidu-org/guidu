@@ -1,9 +1,13 @@
-// @flow
-
-import React from 'react';
+import React, { PureComponent } from 'react';
 import StyledMessageActions from '../../styled/MessageActions';
 
-export default function MessageActions({ children, hovered }) {
+export default class MessageActions extends React.PureComponent<any> {
+  render() {
+    const {
+  children,
+  hovered,
+} = this.props
+  
   if (!hovered) {
     return null;
   }
@@ -18,4 +22,4 @@ export default function MessageActions({ children, hovered }) {
       {children}
     </StyledMessageActions>
   );
-}
+}}

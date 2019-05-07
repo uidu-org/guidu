@@ -1,11 +1,9 @@
-// @flow
-
 import React, { Component } from 'react';
 
-const getCounts = array =>
+const getCounts = (array: Array<any>) =>
   array.reduce((a, c) => ((a[c] = (a[c] || 0) + 1), a), Object.create(null));
 
-export default class MessageReactions extends Component<*> {
+export default class MessageReactions extends Component<any> {
   static defaultProps = {
     reactions: [],
   };

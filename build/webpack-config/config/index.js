@@ -255,6 +255,9 @@ module.exports = function createWebpackConfig(
     resolve: {
       mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
+      alias: {
+      'react-native$': 'react-native-web',
+    },
     },
     resolveLoader: {
       modules: [

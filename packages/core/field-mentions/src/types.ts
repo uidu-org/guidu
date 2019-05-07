@@ -1,4 +1,4 @@
-import { OnChangeHandlerFunc, MentionProps, MentionItem } from 'react-mentions';
+import { MentionItem, MentionProps, OnChangeHandlerFunc } from 'react-mentions';
 
 export type FieldMentionsProps = {
   /** Items to mention. */
@@ -13,6 +13,7 @@ export type FieldMentionsProps = {
 
 export type FieldMentionsStatelessProps = {
   style?: any;
+  ref: React.RefObject<any>;
   /** Items to mention. */
   items: Array<MentionProps>;
   /** Add a classname to the button. */

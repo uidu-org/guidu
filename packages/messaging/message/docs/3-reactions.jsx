@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   Add reactions to a Message.
@@ -25,14 +25,20 @@ export default md`
   ${(
     <Props
       heading="Message Reactions Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageReactions')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageReactions')
+          .default
+      }
     />
   )}
 
   ${(
     <Props
       heading="Message Action Reactions Props"
-      props={require('!!extract-react-types-loader!../src/components/MessageActions/Reactions')}
+      props={
+        require('!!extract-react-types-loader!../src/components/MessageActions/Reactions')
+          .default
+      }
     />
   )}
 `;

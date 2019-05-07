@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
-import FieldMentionsStateless from './FieldMentionsStateless';
-
+import React, { Component } from 'react';
 import { FieldMentionsProps } from '../types';
+import FieldMentionsStateless from './FieldMentionsStateless';
 
 class FieldMentions extends Component<FieldMentionsProps> {
   static defaultProps = {

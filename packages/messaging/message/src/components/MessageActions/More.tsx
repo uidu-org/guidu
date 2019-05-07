@@ -1,15 +1,12 @@
-// @flow
-
-import React, { Component } from 'react';
-import Tooltip from '@uidu/tooltip';
 import DropdownMenu, {
-  DropdownItemGroup,
   DropdownItem,
+  DropdownItemGroup,
 } from '@uidu/dropdown-menu';
-
+import Tooltip from '@uidu/tooltip';
+import React, { Component } from 'react';
 import { MoreHorizontal } from 'react-feather';
 
-export default class More extends Component<*> {
+export default class More extends Component<any> {
   render() {
     const { actions, onOpenChange } = this.props;
     return (

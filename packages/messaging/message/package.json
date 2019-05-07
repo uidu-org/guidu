@@ -3,7 +3,8 @@
   "version": "0.1.7",
   "description": "A React component that renders a message",
   "module": "index.js",
-  "uidu:src": "src/index.jsx",
+  "uidu:src": "index.ts",
+  "types": "index.d.ts",
   "repository": "https://github.com/uidu-org/guidu",
   "sideEffects": false,
   "author": "uidu",
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "@uidu/avatar": "^0.2.8",
+    "@uidu/drawer": "^0.1.9",
     "@uidu/dropdown-menu": "^0.1.6",
     "@uidu/media-card": "^0.1.8",
     "@uidu/media-core": "^0.1.8",
@@ -31,6 +33,8 @@
     "emoji-regex": "^8.0.0",
     "moment": "^2.18.1",
     "prop-types": "^15.6.0",
-    "react-feather": "^1.1.6"
+    "react-feather": "^1.1.6",
+    "react-spring": "^8.0.20",
+    "react-use-gesture": "^5.0.0"
   }
 }

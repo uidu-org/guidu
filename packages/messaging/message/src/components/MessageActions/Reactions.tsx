@@ -1,15 +1,12 @@
-// @flow
-
-import React, { Component } from 'react';
-import Tooltip from '@uidu/tooltip';
 import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
-
+import Tooltip from '@uidu/tooltip';
+import React, { Component } from 'react';
 import { Smile } from 'react-feather';
 
-export default class Reactions extends Component<*> {
+export default class Reactions extends Component<any> {
   static defaultProps = {
     options: ['👍', '👎', '😀', '❤️', '🎉'],
     reaction: undefined,

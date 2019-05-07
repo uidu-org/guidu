@@ -1,7 +1,3 @@
 export { default } from './components/MessageForm';
-export {
-  MessageFormProps,
-  MessageableProps,
-  MessageFormActionsProps,
-  MessageFormActionProps,
-} from './types';
+export { MessageFormActionProps, MessageFormActionsProps, MessageFormProps } from './types';
+

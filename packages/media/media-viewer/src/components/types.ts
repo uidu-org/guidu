@@ -12,7 +12,7 @@ export interface MediaViewerProps {
   readonly selectedItem: Identifier;
   readonly dataSource: MediaViewerDataSource;
 
-  readonly collectionName: string;
+  readonly collectionName?: string;
   readonly pageSize?: number;
 
   readonly onClose?: () => void;
