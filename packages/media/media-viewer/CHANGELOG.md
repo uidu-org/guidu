@@ -1,5 +1,10 @@
 # @atlaskit/media-viewer
 
+## 0.1.13
+- [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
+
+  - Message reverse on mobile, padding for different viewports, media-viewer is not rendered into a portal, not only a blanket
+
 ## 0.1.12
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 

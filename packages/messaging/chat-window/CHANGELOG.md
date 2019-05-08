@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.1.17
+- [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
+
+  - Message reverse on mobile, padding for different viewports, media-viewer is not rendered into a portal, not only a blanket
+- [patch] [b37a1c0](https://github.org/uidu-org/guidu/commits/b37a1c0):
+
+  - Min width to shell and shell main to fix chrome flex issues
+
 ## 0.1.16
 - [patch] [d59b402](https://github.org/uidu-org/guidu/commits/d59b402):
 

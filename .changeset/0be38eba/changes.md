@@ -1,1 +1,0 @@
-- Message reverse on mobile, padding for different viewports, media-viewer is not rendered into a portal, not only a blanket

@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.11
+- [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
+
+  - Message reverse on mobile, padding for different viewports, media-viewer is not rendered into a portal, not only a blanket
+
 ## 0.1.10
 - [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
 
