@@ -29,6 +29,7 @@ export default function Basic() {
   });
   return (
     <ChatWindow
+      isSelf={messager => messager.id === 1306}
       betweenMinutes={20}
       mentionables={[
         {
@@ -831,7 +832,7 @@ export default function Basic() {
                 website: null,
                 notes: null,
                 gender: 'male',
-                id: 1306,
+                id: 1200,
                 createdAt: '2016-02-04T09:03:11.000Z',
                 updatedAt: '2017-10-23T16:26:10.000Z',
                 klass: 'Contact',
@@ -1085,7 +1086,7 @@ export default function Basic() {
                 website: null,
                 notes: null,
                 gender: 'male',
-                id: 1306,
+                id: 1200,
                 createdAt: '2016-02-04T09:03:11.000Z',
                 updatedAt: '2017-10-23T16:26:10.000Z',
                 klass: 'Contact',

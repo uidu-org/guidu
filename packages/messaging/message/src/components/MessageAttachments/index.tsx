@@ -2,6 +2,7 @@ import { Card } from '@uidu/media-card';
 import { FilmstripView } from '@uidu/media-filmstrip';
 import { createUploadContext } from '@uidu/media-test-helpers';
 import { MediaViewer } from '@uidu/media-viewer';
+import classNames from 'classnames';
 import React, { Component } from 'react';
 import { MessageAttachmentsProps, MessageAttachmentsState } from '../../types';
 
@@ -32,11 +33,11 @@ export default class MessageAttachments extends Component<
   };
 
   render() {
-    const { attachments } = this.props;
+    const { attachments, className } = this.props;
     const { offset, animate, selectedItem } = this.state;
 
     return (
-      <div className="mt-2 w-auto">
+      <div className={classNames('mt-2 w-auto', className)}>
         <FilmstripView
           animate={animate}
           offset={offset}

@@ -30,6 +30,7 @@ export type Message = {
   children?: (props: any) => void;
   showAttachments?: boolean;
   mobileView?: boolean;
+  reverse?: boolean;
   // Functions for mobile
   onReply?: () => void;
   onMessageDrag?: () => void;
@@ -47,10 +48,13 @@ export type MessageGroupProps = {
   messages: Array<Message>;
   messager: Messager;
   children: (props: any) => Array<Message>;
+  mobileView?: boolean;
+  isSelf?: (messager: Messager) => boolean;
 }
 
 export type MessageAttachmentsProps = {
   attachments: Array<any>;
+  className?: string;
 }
 
 export type MessageAttachmentsState = {

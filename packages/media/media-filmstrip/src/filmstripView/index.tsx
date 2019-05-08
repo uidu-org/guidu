@@ -1,17 +1,17 @@
 /* tslint:disable variable-name */
-import * as React from 'react';
-import { ReactNode, ReactChild, ReactElement } from 'react';
-import { ArrowLeft, ArrowRight } from 'react-feather';
 import debounce from 'debounce';
+import * as React from 'react';
+import { ReactChild, ReactElement, ReactNode } from 'react';
+import { ArrowLeft, ArrowRight } from 'react-feather';
 import {
-  FilmStripViewWrapper,
-  FilmStripListWrapper,
-  FilmStripList,
   ArrowLeftWrapper,
   ArrowRightWrapper,
+  FilmStripList,
+  FilmStripListItem,
+  FilmStripListWrapper,
+  FilmStripViewWrapper,
   ShadowLeft,
   ShadowRight,
-  FilmStripListItem,
 } from './styled';
 
 const DURATION_MIN = 0.5;
@@ -51,6 +51,7 @@ export interface FilmstripViewProps {
    * Having **animate=true** results in an awkward UX when changing the **offset** property before the
    * animation finishes.
    */
+  className?: string;
   animate?: boolean;
   /** A **number**. Defaults to 0.
    * Determines the visible portion of the filmstrip.
@@ -436,7 +437,7 @@ export class FilmstripView extends React.Component<
   }
 
   render(): JSX.Element {
-    const { animate, children } = this.props;
+    const { animate, children, className } = this.props;
 
     const transform = `translateX(${-this.offset}px)`;
     const transitionProperty = animate ? 'transform' : 'none';
@@ -446,6 +447,7 @@ export class FilmstripView extends React.Component<
       <FilmStripViewWrapper>
         {this.renderLeftArrow()}
         <FilmStripListWrapper
+          className={className}
           ref={this.handleWindowElementChange}
           onWheel={this.handleScroll}
         >

@@ -1,5 +1,6 @@
 import MessageForm from '@uidu/message-form';
 import MessageRenderer from '@uidu/message-renderer';
+import classNames from 'classnames';
 import moment from 'moment';
 import React, { Component, Fragment } from 'react';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
@@ -28,12 +29,22 @@ export default class Message extends Component<MessageProps, MessageState> {
   setEditing = () => this.setState({ editing: true });
 
   render() {
-    const { message, children, showAttachments, mobileView } = this.props;
+    const {
+      message,
+      children,
+      showAttachments,
+      mobileView,
+      reverse,
+    } = this.props;
     const { editing, hovered, isDropdownOpen } = this.state;
 
     if (isOnlyEmojis(message.body)) {
       return (
-        <StyledMessageEmoji className="message mt-2 hoverable position-relative">
+        <StyledMessageEmoji
+          className={classNames('message mt-2', {
+            'text-right': reverse,
+          })}
+        >
           <span>{message.body}</span>
         </StyledMessageEmoji>
       );

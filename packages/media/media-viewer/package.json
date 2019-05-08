@@ -29,6 +29,7 @@
     "@uidu/media-test-helpers": "^0.1.11",
     "@uidu/media-ui": "^0.1.10",
     "@uidu/modal-dialog": "^0.1.9",
+    "@uidu/portal": "^0.1.5",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.8",
     "deep-equal": "^1.0.1",

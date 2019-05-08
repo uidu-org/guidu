@@ -4,7 +4,7 @@ import { Star } from 'react-feather';
 import Slider from '@uidu/slider';
 
 const AppAnnouncements = () => (
-  <section className="container-fluid px-md-4 mb-4">
+  <section className="container-fluid px-xl-4 mb-4">
     <Slider
       options={{
         slidesPerView: 2,

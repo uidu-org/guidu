@@ -1,25 +1,26 @@
-import * as React from 'react';
-import {
-  Context,
-  Identifier,
-  isFileIdentifier,
-  FileIdentifier,
-} from '@uidu/media-core';
-import { IntlProvider, intlShape } from 'react-intl';
-import { ThemeProvider } from 'styled-components';
-import { Shortcut, theme } from '@uidu/media-ui';
-import { withAnalyticsEvents } from '@uidu/analytics';
-import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
-import { mediaViewerModalEvent } from './analytics/media-viewer';
-import { channel } from './analytics/index';
 import {
   GasPayload,
   GasScreenEventPayload,
 } from '@atlaskit/analytics-gas-types';
-import { ItemSource, MediaViewerFeatureFlags } from './domain';
-import { List } from './list';
+import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
+import { withAnalyticsEvents } from '@uidu/analytics';
+import {
+  Context,
+  FileIdentifier,
+  Identifier,
+  isFileIdentifier,
+} from '@uidu/media-core';
+import { Shortcut, theme } from '@uidu/media-ui';
+import Portal from '@uidu/portal';
+import * as React from 'react';
+import { IntlProvider, intlShape } from 'react-intl';
+import { ThemeProvider } from 'styled-components';
+import { channel } from './analytics/index';
+import { mediaViewerModalEvent } from './analytics/media-viewer';
 import { Collection } from './collection';
 import { Content } from './content';
+import { ItemSource, MediaViewerFeatureFlags } from './domain';
+import { List } from './list';
 import { Blanket } from './styled';
 
 export type Props = Readonly<
@@ -53,10 +54,12 @@ class MediaViewerComponent extends React.Component<Props, {}> {
     const { onClose } = this.props;
     const content = (
       <ThemeProvider theme={theme}>
-        <Blanket>
-          {onClose && <Shortcut keyCode={27} handler={onClose} />}
-          <Content onClose={onClose}>{this.renderContent()}</Content>
-        </Blanket>
+        <Portal zIndex={1200}>
+          <Blanket>
+            {onClose && <Shortcut keyCode={27} handler={onClose} />}
+            <Content onClose={onClose}>{this.renderContent()}</Content>
+          </Blanket>
+        </Portal>
       </ThemeProvider>
     );
 

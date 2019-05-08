@@ -15,6 +15,7 @@ export type ChatWindowProps = MessageFormProps & {
   onReply: (message: any) => void;
   /** The base styling to apply to the button */
   onReact: (message: any) => void;
+  isSelf: (messager: any) => boolean;
 };
 
 export type ChatWindowState = {

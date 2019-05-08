@@ -19,7 +19,7 @@ export const StyledNavigationHeaderAfter = styled.div`
 `;
 
 export default styled.div.attrs(({ className }) => ({
-  className: `px-4 ml-2 ml-md-3${className ? ` ${className}` : ''}`,
+  className: `px-3 px-xl-4 ml-2 ml-md-3${className ? ` ${className}` : ''}`,
 }))`
   align-items: center;
   display: flex;

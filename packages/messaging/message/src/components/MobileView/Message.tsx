@@ -1,5 +1,6 @@
 import Drawer from '@uidu/drawer';
 import MessageRenderer from '@uidu/message-renderer';
+import classNames from 'classnames';
 import moment from 'moment';
 import React, { Component, Fragment } from 'react';
 import { MessageCircle } from 'react-feather';
@@ -118,48 +119,67 @@ export default class MobileViewMessage extends Component<
   };
 
   render() {
-    const { message, children, showAttachments } = this.props;
+    const { message, children, showAttachments, reverse } = this.props;
     const { viewDetails, viewActions, viewReply } = this.state;
 
     return (
       <Fragment>
+        <div
+          className={classNames('d-flex align-items-center', {
+            'justify-content-end': reverse,
+          })}
+          style={{ minWidth: 0 }}
+        >
+          {viewReply && <MessageCircle className="mr-2 position-absolute" />}
+          {reverse ? (
+            <StyledMobileViewMessage reverse={reverse} className="message mt-1">
+              <div className="mb-0">
+                <MessageRenderer tagName="fragment" content={message.body} />
+              </div>
+            </StyledMobileViewMessage>
+          ) : (
+            <SwipeableMessage
+              viewActions={viewActions}
+              onDrag={this.onDrag}
+              onDragEnd={this.onDragEnd}
+              onReply={this.onReply}
+            >
+              <TouchableOpacity
+                activeOpacity={0.8}
+                onLongPress={this.toggleActions}
+                onPress={this.toggleDetails}
+              >
+                <View>
+                  <StyledMobileViewMessage
+                    reverse={reverse}
+                    className="message mt-1"
+                  >
+                    <div className="mb-0">
+                      <MessageRenderer
+                        tagName="fragment"
+                        content={message.body}
+                      />
+                    </div>
+                  </StyledMobileViewMessage>
+                </View>
+              </TouchableOpacity>
+            </SwipeableMessage>
+          )}
+        </div>
+        {(message.attachments || []).length > 0 && showAttachments && (
+          <MessagesAttachments
+            attachments={message.attachments}
+            className={reverse ? 'text-right' : undefined}
+          />
+        )}
         {viewDetails && (
-          <p className="text-muted my-2 small">
+          <p className="text-muted ml-1 mt-1 mb-0 small">
             {moment(message.createdAt).format('HH:mm')}
           </p>
         )}
-        <div className="d-flex align-items-center" style={{ minWidth: 0 }}>
-          {viewReply && <MessageCircle className="mr-2 position-absolute" />}
-          <SwipeableMessage
-            viewActions={viewActions}
-            onDrag={this.onDrag}
-            onDragEnd={this.onDragEnd}
-            onReply={this.onReply}
-          >
-            <TouchableOpacity
-              activeOpacity={0.8}
-              onLongPress={this.toggleActions}
-              onPress={this.toggleDetails}
-            >
-              <View>
-                <StyledMobileViewMessage className="message mt-1">
-                  <div className="mb-0">
-                    <MessageRenderer
-                      tagName="fragment"
-                      content={message.body}
-                    />
-                  </div>
-                </StyledMobileViewMessage>
-              </View>
-            </TouchableOpacity>
-          </SwipeableMessage>
-        </div>
-        {(message.attachments || []).length > 0 && showAttachments && (
-          <MessagesAttachments attachments={message.attachments} />
-        )}
-        {viewDetails && (
+        {/* {viewDetails && (
           <p className="text-muted my-2 small">Visualizzato da tutti</p>
-        )}
+        )} */}
         <Drawer
           isOpen={viewActions}
           onClose={this.toggleActions}

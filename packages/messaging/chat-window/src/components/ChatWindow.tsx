@@ -114,6 +114,7 @@ export default class ChatWindow extends Component<
       betweenMinutes,
       actions,
       formActions,
+      isSelf,
       ...otherProps
     } = this.props;
     const { messages } = messageable;
@@ -169,17 +170,22 @@ export default class ChatWindow extends Component<
                             messager={messageGroup.messager}
                             messages={messageGroup.messages}
                             kind={messageGroup.kind}
+                            mobileView={matches}
+                            isSelf={isSelf}
                           >
                             {({
                               messager,
                               messages,
+                              reverse,
                             }: {
                               messager: any;
                               messages: any;
+                              reverse: boolean;
                             }) =>
                               messages.reverse().map(message => (
                                 <Message
                                   {...otherProps}
+                                  reverse={reverse}
                                   messageable={messageable}
                                   key={message.id}
                                   message={message}

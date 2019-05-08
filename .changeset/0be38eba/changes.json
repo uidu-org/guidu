@@ -1,0 +1,11 @@
+{
+  "releases": [
+    { "name": "@uidu/media-filmstrip", "type": "patch" },
+    { "name": "@uidu/chat-window", "type": "patch" },
+    { "name": "@uidu/message-renderer", "type": "patch" },
+    { "name": "@uidu/message", "type": "patch" },
+    { "name": "@uidu/navigation", "type": "patch" },
+    { "name": "@uidu/media-viewer", "type": "patch" }
+  ],
+  "dependents": []
+}

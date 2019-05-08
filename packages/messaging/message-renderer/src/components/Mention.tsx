@@ -1,5 +1,5 @@
+import Dropdown, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
 import React from 'react';
-import Dropdown, { DropdownItemGroup, DropdownItem } from '@uidu/dropdown-menu';
 import { AtSign } from 'react-feather';
 import StyledMention from '../styled/Mention';
 
@@ -10,7 +10,7 @@ export interface MentionProps {
 export default props => {
   return (
     <Dropdown
-      className="align-middle"
+      className="align-text-top"
       boundariesElement="scrollParent"
       trigger={
         <StyledMention>
