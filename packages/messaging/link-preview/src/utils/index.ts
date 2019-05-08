@@ -1,6 +1,6 @@
-import { css } from 'styled-components';
 import axios from 'axios';
 import getUrls from 'get-urls';
+import { css } from 'styled-components';
 
 const REGEX_HTTPS = /^https/;
 const REGEX_LOCALHOST = /http:\/\/localhost/;

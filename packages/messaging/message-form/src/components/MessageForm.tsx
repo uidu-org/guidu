@@ -40,7 +40,6 @@ export default class MessagesForm extends React.Component<
   }
 
   focus = () => {
-    console.log(this.mentionsComponentInput);
     this.mentionsComponentInput.current.element.current.inputRef.current.focus();
   };
 
@@ -131,15 +130,15 @@ export default class MessagesForm extends React.Component<
     return (
       <Fragment>
         {replyTo && (
-          <div className="p-3 bg-light d-flex align-items-center justify-content-center">
-            <div style={{ minWidth: 0 }}>
-              <p className="mb-0 text-muted">
-                <MessageCircle size={16} className="mr-2" />
+          <div className="p-3 border-top d-flex align-items-center justify-content-center flex-shrink-0">
+            <div style={{ minWidth: 0 }} className="flex-grow-1">
+              <p className="mb-0">
+                <MessageCircle size={14} className="mr-2" />
                 <span>
                   In risposta a <b>{replyTo.messager.name}</b>
                 </span>
               </p>
-              <p className="mb-0 mt-1 text-truncate">{replyTo.body}</p>
+              <p className="mb-0 text-muted text-truncate">{replyTo.body}</p>
             </div>
             <button
               className="ml-3 btn btn-sm d-flex flex-shrink-0"
@@ -150,13 +149,10 @@ export default class MessagesForm extends React.Component<
           </div>
         )}
         <div
-          className={classNames(
-            'bg-white p-3 sticky-bottom position-relative',
-            {
-              border: !!message.body,
-              'border-top': !message.body,
-            },
-          )}
+          className={classNames('bg-white position-relative', {
+            border: !!message.body,
+            'border-top p-3': !message.body,
+          })}
         >
           <div
             id="suggestionPortal"
@@ -276,7 +272,9 @@ export default class MessagesForm extends React.Component<
               <FieldMentions
                 ref={this.mentionsInput}
                 componentRef={this.mentionsComponentInput}
-                className="border-0 mr-2"
+                className={classNames('border-0 shadow-none', {
+                  'mr-2': !message.body,
+                })}
                 layout="elementOnly"
                 name="message[body]"
                 onChange={this.handleSubmitLabel}

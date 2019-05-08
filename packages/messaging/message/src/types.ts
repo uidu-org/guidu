@@ -30,6 +30,10 @@ export type Message = {
   children?: (props: any) => void;
   showAttachments?: boolean;
   mobileView?: boolean;
+  // Functions for mobile
+  onReply?: () => void;
+  onMessageDrag?: () => void;
+  onMessageDragEnd?: () => void;
 }
 
 export type MessageState = {

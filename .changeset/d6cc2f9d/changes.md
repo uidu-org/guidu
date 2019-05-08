@@ -1,0 +1,1 @@
+- Added mobile versions, fix some actions (reply)

@@ -3,20 +3,26 @@ import MessageRenderer from '@uidu/message-renderer';
 import moment from 'moment';
 import React, { Component, Fragment } from 'react';
 import { MessageCircle } from 'react-feather';
-import { TouchableOpacity, Vibration } from 'react-native';
+import { TouchableOpacity, Vibration, View } from 'react-native';
 import { animated, useSpring } from 'react-spring';
 import { useGesture } from 'react-use-gesture';
 import { Message } from '../../types';
 import MessagesAttachments from '../MessageAttachments';
 import { StyledMobileViewMessage } from './styled';
 
-const SwipeableMessage = ({ onDrag, onDragEnd, children }) => {
+const SwipeableMessage = ({
+  onDrag,
+  onDragEnd,
+  onReply,
+  viewActions,
+  children,
+}) => {
   const [{ xy }, set] = useSpring(() => ({ xy: [0, 0] }));
   const bind = useGesture(
     {
-      onDrag: ({ delta, local }) => {
-        onDrag(xy);
+      onDrag: ({ delta }) => {
         if (delta[0] > 0) {
+          onDrag(xy);
           // activate only when scrolling right
           if (delta[0] > 150) {
             set({ xy: [150, 0] });
@@ -28,8 +34,9 @@ const SwipeableMessage = ({ onDrag, onDragEnd, children }) => {
       onDragEnd: ({ delta }) => {
         if (delta[0] > 150) {
           Vibration.vibrate([0, 1000, 2000, 3000]);
-          onDragEnd();
+          onReply();
         }
+        onDragEnd();
         set({ xy: [0, 0] });
       },
     },
@@ -38,7 +45,7 @@ const SwipeableMessage = ({ onDrag, onDragEnd, children }) => {
 
   return (
     <animated.div
-      {...bind()}
+      {...!viewActions && bind()}
       style={{
         transform: xy.interpolate(x => `translateX(${x}px)`),
       }}
@@ -56,6 +63,12 @@ export default class MobileViewMessage extends Component<
     viewReply: boolean;
   }
 > {
+  static defaultProps = {
+    onMessageReply: () => {},
+    onMessageDrag: () => {},
+    onMessageDragEnd: () => {},
+  };
+
   state = {
     viewDetails: false,
     viewActions: false,
@@ -63,11 +76,9 @@ export default class MobileViewMessage extends Component<
   };
 
   toggleDetails = () => {
-    this.setState(
-      prevState => ({
-        viewDetails: !prevState.viewDetails,
-      })
-    );
+    this.setState(prevState => ({
+      viewDetails: !prevState.viewDetails,
+    }));
   };
 
   toggleActions = () => {
@@ -80,15 +91,30 @@ export default class MobileViewMessage extends Component<
   };
 
   onDrag = () => {
-    this.setState({
-      viewActions: false,
-      viewDetails: false,
-      viewReply: true,
-    });
+    this.setState(
+      {
+        viewDetails: false,
+        viewReply: true,
+      },
+      () => {
+        this.props.onMessageDrag();
+      },
+    );
   };
 
-  onDragEnd = e => {
-    this.props.onReply(e);
+  onDragEnd = () => {
+    this.setState(
+      {
+        viewReply: false,
+      },
+      () => {
+        this.props.onMessageDragEnd();
+      },
+    );
+  };
+
+  onReply = () => {
+    this.props.onReply();
   };
 
   render() {
@@ -102,19 +128,29 @@ export default class MobileViewMessage extends Component<
             {moment(message.createdAt).format('HH:mm')}
           </p>
         )}
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center" style={{ minWidth: 0 }}>
           {viewReply && <MessageCircle className="mr-2 position-absolute" />}
-          <SwipeableMessage onDrag={this.onDrag} onDragEnd={this.onDragEnd}>
+          <SwipeableMessage
+            viewActions={viewActions}
+            onDrag={this.onDrag}
+            onDragEnd={this.onDragEnd}
+            onReply={this.onReply}
+          >
             <TouchableOpacity
               activeOpacity={0.8}
               onLongPress={this.toggleActions}
               onPress={this.toggleDetails}
             >
-              <StyledMobileViewMessage className="message mt-1">
-                <div className="mb-0">
-                  <MessageRenderer tagName="fragment" content={message.body} />
-                </div>
-              </StyledMobileViewMessage>
+              <View>
+                <StyledMobileViewMessage className="message mt-1">
+                  <div className="mb-0">
+                    <MessageRenderer
+                      tagName="fragment"
+                      content={message.body}
+                    />
+                  </div>
+                </StyledMobileViewMessage>
+              </View>
             </TouchableOpacity>
           </SwipeableMessage>
         </div>

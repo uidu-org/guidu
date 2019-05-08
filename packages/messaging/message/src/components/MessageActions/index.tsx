@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import StyledMessageActions from '../../styled/MessageActions';
 
 export default class MessageActions extends React.PureComponent<any> {

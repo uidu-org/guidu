@@ -2,12 +2,11 @@ import MessageForm from '@uidu/message-form';
 import MessageRenderer from '@uidu/message-renderer';
 import moment from 'moment';
 import React, { Component, Fragment } from 'react';
-import { TouchableOpacity, View } from 'react-native';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
 import { Message as MessageProps, MessageState } from '../types';
 import { isOnlyEmojis } from '../utils';
 import MessagesAttachments from './MessageAttachments';
-import MobileViewMessage from './MobileView/Message'
+import MobileViewMessage from './MobileView/Message';
 
 export default class Message extends Component<MessageProps, MessageState> {
   static defaultProps = {
@@ -41,9 +40,7 @@ export default class Message extends Component<MessageProps, MessageState> {
     }
 
     if (mobileView) {
-      return (
-        <MobileViewMessage {...this.props} />
-      );
+      return <MobileViewMessage {...this.props} />;
     } else {
       return [
         <StyledMessage
@@ -52,14 +49,12 @@ export default class Message extends Component<MessageProps, MessageState> {
           onMouseLeave={() => this.setState({ hovered: isDropdownOpen })}
         >
           {editing ? (
-            <div className="m-3">
-              <MessageForm
-                {...this.props}
-                message={message}
-                onDismiss={() => this.setState({ editing: false })}
-                onSubmit={() => this.setState({ editing: false })}
-              />
-            </div>
+            <MessageForm
+              {...this.props}
+              message={message}
+              onDismiss={() => this.setState({ editing: false })}
+              onSubmit={() => this.setState({ editing: false })}
+            />
           ) : (
             <Fragment>
               <small
