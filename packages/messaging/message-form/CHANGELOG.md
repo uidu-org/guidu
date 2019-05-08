@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.8
+- [patch] [d59b402](https://github.org/uidu-org/guidu/commits/d59b402):
+
+  - Added mobile versions, fix some actions (reply)
+
 ## 0.1.7
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 
