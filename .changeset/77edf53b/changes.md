@@ -1,0 +1,1 @@
+- Min width to shell and shell main to fix chrome flex issues
