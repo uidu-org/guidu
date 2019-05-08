@@ -7,6 +7,7 @@ export type ChatWindowProps = MessageFormProps & {
   fetchMessages: (messageable: MessageableProps, lastId: number | string) => Promise<any>;
   /** The base styling to apply to the button */
   betweenMinutes: number;
+  formActions: Array<any>;
   /** The base styling to apply to the button */
   actions: ({ editing, setEditing, message, onDropdownChange }) => Array<any>;
   /** The base styling to apply to the button */

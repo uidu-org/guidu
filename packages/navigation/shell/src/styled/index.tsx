@@ -79,6 +79,7 @@ export const Navigation = styled.aside`
 export const Content = styled.main`
   display: flex;
   width: 100%;
+  min-width: 0;
 `;
 
 export const Main = styled.main`
@@ -86,6 +87,7 @@ export const Main = styled.main`
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  min-width: 0;
 `;
 
 export const Header = styled.header`

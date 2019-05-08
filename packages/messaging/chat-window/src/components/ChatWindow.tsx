@@ -43,6 +43,8 @@ export default class ChatWindow extends Component<
   static defaultProps = {
     betweenMinutes: 5,
     messageable: {},
+    formActions: [],
+    actions: () => [],
     fetchMessages: () => Promise.resolve([]),
   };
 
@@ -111,6 +113,7 @@ export default class ChatWindow extends Component<
       mentionables,
       betweenMinutes,
       actions,
+      formActions,
       ...otherProps
     } = this.props;
     const { messages } = messageable;
@@ -176,6 +179,7 @@ export default class ChatWindow extends Component<
                             }) =>
                               messages.reverse().map(message => (
                                 <Message
+                                  {...otherProps}
                                   messageable={messageable}
                                   key={message.id}
                                   message={message}
@@ -228,6 +232,7 @@ export default class ChatWindow extends Component<
             </ReactChatView>
             <MessagesForm
               {...otherProps}
+              actions={formActions}
               ref={this.messageForm}
               mentionables={mentionables}
               message={{

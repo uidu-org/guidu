@@ -1,20 +1,31 @@
-import Dropdown, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
 import FieldMentions, { defaultStyle } from '@uidu/field-mentions';
 import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
+import Spinner from '@uidu/spinner';
 import classNames from 'classnames';
-import { Picker } from 'emoji-mart';
-import 'emoji-mart/css/emoji-mart.css';
 import React, { cloneElement, Fragment } from 'react';
-import { MessageCircle, Plus, Send, Smile, ThumbsUp, X } from 'react-feather';
+import { Send, Smile, ThumbsUp } from 'react-feather';
+import Loadable from 'react-loadable';
 import { MessageFormProps, MessageFormState } from '../types';
+import MessageFormActions from './MessageFormActions';
+import MessageFormReplyTo from './MessageFormReplyTo';
 
-let container: any;
+const LoadableEmojiPicker = Loadable({
+  loader: () => import('./MessageFormEmojiPicker'),
+  loading() {
+    return (
+      <div className="p-3 d-flex align-items-center justify-content-center">
+        <Spinner />
+      </div>
+    );
+  },
+});
 
 export default class MessagesForm extends React.Component<
   MessageFormProps,
   MessageFormState
 > {
   private form: React.RefObject<any> = React.createRef();
+  private suggestionsPortal: React.RefObject<any> = React.createRef();
   private mentionsInput: React.RefObject<any> = React.createRef();
   private mentionsComponentInput: React.RefObject<any> = React.createRef();
 
@@ -80,7 +91,6 @@ export default class MessagesForm extends React.Component<
         mentions: model.message.body ? model.message.body.mentions : [],
       },
     };
-    console.log(modelToSubmit);
     if (!message.id) {
       return createMessage(messageable, modelToSubmit);
     }
@@ -130,23 +140,10 @@ export default class MessagesForm extends React.Component<
     return (
       <Fragment>
         {replyTo && (
-          <div className="p-3 border-top d-flex align-items-center justify-content-center flex-shrink-0">
-            <div style={{ minWidth: 0 }} className="flex-grow-1">
-              <p className="mb-0">
-                <MessageCircle size={14} className="mr-2" />
-                <span>
-                  In risposta a <b>{replyTo.messager.name}</b>
-                </span>
-              </p>
-              <p className="mb-0 text-muted text-truncate">{replyTo.body}</p>
-            </div>
-            <button
-              className="ml-3 btn btn-sm d-flex flex-shrink-0"
-              onClick={onReplyDismiss}
-            >
-              <X size={16} />
-            </button>
-          </div>
+          <MessageFormReplyTo
+            replyTo={replyTo}
+            onReplyDismiss={onReplyDismiss}
+          />
         )}
         <div
           className={classNames('bg-white position-relative', {
@@ -164,23 +161,25 @@ export default class MessagesForm extends React.Component<
               bottom: '100%',
               zIndex: 3000,
             }}
-            ref={el => {
-              container = el;
-            }}
+            ref={this.suggestionsPortal}
           />
           <Form
             ref={this.form}
             submitted={submitted}
             handleSubmit={async (model: any) => {
               await this.handleSubmit(model);
-              this.setState({
-                attachments: [],
-                emojiPicker: false,
-                submitLabel: this.thumbSender(),
-                submitted: true,
-              });
-              this.form.current.form.reset();
-              onSubmit();
+              this.setState(
+                {
+                  attachments: [],
+                  emojiPicker: false,
+                  submitLabel: this.thumbSender(),
+                  submitted: true,
+                },
+                () => {
+                  this.form.current.form.reset();
+                  onSubmit();
+                },
+              );
             }}
             className={classNames('', {
               'd-flex': !message.body,
@@ -226,9 +225,9 @@ export default class MessagesForm extends React.Component<
                     className="btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 shadow-none"
                     type="button"
                     onClick={() =>
-                      this.setState({
-                        emojiPicker: !this.state.emojiPicker,
-                      })
+                      this.setState(prevState => ({
+                        emojiPicker: !prevState.emojiPicker,
+                      }))
                     }
                   >
                     <Smile size={18} />
@@ -243,30 +242,7 @@ export default class MessagesForm extends React.Component<
             }}
           >
             {!message.body && actions.length > 0 && (
-              <Dropdown
-                className="align-self-center"
-                trigger={
-                  <button
-                    className="btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 shadow-none"
-                    type="button"
-                  >
-                    <Plus size={18} />
-                  </button>
-                }
-              >
-                {actions.map(actionGroup => (
-                  <DropdownItemGroup
-                    key={actionGroup.name}
-                    title={actionGroup.name}
-                  >
-                    {actionGroup.children.map((action, index) => (
-                      <DropdownItem key={index} {...action.props}>
-                        {action.name}
-                      </DropdownItem>
-                    ))}
-                  </DropdownItemGroup>
-                ))}
-              </Dropdown>
+              <MessageFormActions actions={actions} />
             )}
             <div className="d-flex align-items-center flex-grow-1">
               <FieldMentions
@@ -299,12 +275,15 @@ export default class MessagesForm extends React.Component<
                     left: 0,
                     list: {
                       ...defaultStyle.suggestions.list,
+                      boxShadow: 'none',
+                      borderTop: '1px solid #e7e7e7',
+                      borderBottom: '1px solid #e7e7e7',
                       maxHeight: '13rem',
                       overflow: 'auto',
                     },
                   },
                 }}
-                suggestionsPortalHost={container}
+                suggestionsPortalHost={this.suggestionsPortal.current}
               />
               {/* {attachments.map((attachment, index) => (
               <Input
@@ -317,34 +296,9 @@ export default class MessagesForm extends React.Component<
             </div>
           </Form>
           {this.state.emojiPicker && (
-            <Picker
-              onSelect={(emoji: any) => {
-                const previousValue = this.mentionsInput.current.state.value;
-                const newValue = `${
-                  previousValue ? `${previousValue.value} ` : ''
-                }${emoji.native}`;
-                this.mentionsInput.current.setValue({
-                  ...previousValue,
-                  value: newValue,
-                  plainTextValue: newValue,
-                });
-                this.mentionsComponentInput.current.handleChange(
-                  null,
-                  newValue,
-                  newValue,
-                  previousValue ? previousValue.mentions : [],
-                );
-              }}
-              showPreview
-              style={{
-                width: '100%',
-                fontFamily: 'inherit',
-                fontSize: 'inherit',
-                color: 'inherit',
-                borderRadius: 0,
-                border: 0,
-                margin: '1rem 0 0',
-              }}
+            <LoadableEmojiPicker
+              mentionsInput={this.mentionsInput}
+              mentionsComponentInput={this.mentionsComponentInput}
             />
           )}
         </div>
