@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.16
+- [patch] [d59b402](https://github.org/uidu-org/guidu/commits/d59b402):
+
+  - Added mobile versions, fix some actions (reply)
+
 ## 0.1.15
 - [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
 
