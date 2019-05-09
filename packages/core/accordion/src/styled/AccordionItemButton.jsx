@@ -1,17 +1,13 @@
-import React from 'react';
-import type { Node } from 'react';
-import styled from 'styled-components';
-import { withTheme } from '@uidu/theme';
 import { AccordionItemButton } from 'react-accessible-accordion';
-// import { Theme } from '../theme';
-// import { getInnerStyles } from './utils';
+import styled from 'styled-components';
 
 export default styled(AccordionItemButton)`
   ${'' /* background-color: #f4f4f4; */}
   align-items: center;
   display: flex;
   cursor: pointer;
-  justify-content: space-between;
+  justify-content: ${({ reverse }) =>
+    reverse ? 'flex-start' : 'space-between'};
   padding: 1rem;
   width: 100%;
   text-align: left;

@@ -9,5 +9,5 @@ export default styled.span`
   word-break: break-word;
   border-radius: 4px;
   padding: 0px 4px;
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, 0.1);
 `;

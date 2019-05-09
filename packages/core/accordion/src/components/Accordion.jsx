@@ -6,18 +6,25 @@ import {
   AccordionItemHeading,
   AccordionItemState,
 } from 'react-accessible-accordion';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'react-feather';
 import StyledAccordion from '../styled/Accordion';
-import StyledAccordionItemButton from '../styled/AccordionItemButton';
 import StyledAccordionItemBody from '../styled/AccordionItemBody';
-import StyledAccordionItemTitleArrow from '../styled/AccordionItemTitleArrow';
-
-import { ChevronLeft, ChevronDown } from 'react-feather';
+import StyledAccordionItemButton from '../styled/AccordionItemButton';
 
 import type { AccordionPropTypes } from '../types';
 
 export default class Accordion extends PureComponent<AccordionPropTypes> {
   static defaultProps = {
-    arrow: StyledAccordionItemTitleArrow,
+    arrows: {
+      default: {
+        default: ChevronLeft,
+        expanded: ChevronDown,
+      },
+      reverse: {
+        default: ChevronRight,
+        expanded: ChevronDown,
+      },
+    },
     accordion: true,
     items: [],
     allowMultipleExpanded: true,
@@ -25,21 +32,46 @@ export default class Accordion extends PureComponent<AccordionPropTypes> {
     // enableTooltip: true,
   };
 
-  render() {
-    const { items } = this.props;
+  renderTitle = (item, expanded) => {
+    const { reverse, arrows } = this.props;
+    if (reverse) {
+      const {
+        reverse: { default: Default, expanded: Expanded },
+      } = arrows;
+      return (
+        <StyledAccordionItemButton reverse {...item.titleProps}>
+          {expanded ? (
+            <Expanded className="mr-2" />
+          ) : (
+            <Default className="mr-2" />
+          )}
+          {item.title(expanded)}
+        </StyledAccordionItemButton>
+      );
+    }
+
+    const {
+      default: { default: Default, expanded: Expanded },
+    } = arrows;
 
     return (
-      <StyledAccordion {...this.props}>
+      <StyledAccordionItemButton {...item.titleProps}>
+        {item.title(expanded)}
+        {expanded ? <Expanded /> : <Default />}
+      </StyledAccordionItemButton>
+    );
+  };
+
+  render() {
+    const { items, ...otherProps } = this.props;
+
+    return (
+      <StyledAccordion {...otherProps}>
         {items.map((item, index) => (
-          <AccordionItem key={index} {...item.props}>
+          <AccordionItem uuid={item.uuid} key={index} {...item.props}>
             <AccordionItemHeading>
               <AccordionItemState>
-                {({ expanded }) => (
-                  <StyledAccordionItemButton {...item.titleProps}>
-                    {item.title}
-                    {expanded ? <ChevronDown /> : <ChevronLeft />}
-                  </StyledAccordionItemButton>
-                )}
+                {({ expanded }) => this.renderTitle(item, expanded)}
               </AccordionItemState>
             </AccordionItemHeading>
             <StyledAccordionItemBody {...item.bodyProps}>

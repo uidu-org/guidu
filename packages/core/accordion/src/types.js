@@ -12,6 +12,8 @@ export type AccordionClickType = (
 
 export type AccordionPropTypesBase = {
   /** Open only one item at a time or not */
+  reverse?: boolean,
+  /** Open only one item at a time or not */
   allowMultipleExpanded?: boolean,
   /** Allow accordion to close on click */
   allowZeroExpanded?: boolean,

@@ -1,10 +1,5 @@
-import React from 'react';
-import type { Node } from 'react';
-import styled from 'styled-components';
-import { withTheme } from '@uidu/theme';
 import { AccordionItemPanel } from 'react-accessible-accordion';
-// import { Theme } from '../theme';
-// import { getInnerStyles } from './utils';
+import styled from 'styled-components';
 
 export default styled(AccordionItemPanel)`
   padding: 1rem;

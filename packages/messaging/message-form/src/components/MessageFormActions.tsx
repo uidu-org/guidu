@@ -10,7 +10,7 @@ export default class MessageFormActions extends PureComponent<any> {
         className="align-self-center"
         trigger={
           <button
-            className="btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 shadow-none"
+            className="btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 px-xl-3 shadow-none"
             type="button"
           >
             <Plus size={18} />

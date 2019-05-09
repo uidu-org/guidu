@@ -1,7 +1,7 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
-import { Star } from 'react-feather';
 import Slider from '@uidu/slider';
+import React from 'react';
+import { Star } from 'react-feather';
+import { hot } from 'react-hot-loader';
 
 const AppAnnouncements = () => (
   <section className="container-fluid px-xl-4 mb-4">

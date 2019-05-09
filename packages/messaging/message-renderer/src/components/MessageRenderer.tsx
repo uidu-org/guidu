@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
 import Interweave from 'interweave';
-import { UrlMatcher, HashtagMatcher } from 'interweave-autolink';
-
-import Hashtag from './Hashtag';
-import Url from './Url';
-import MentionMatcher from './MentionMatcher';
-
+import { HashtagMatcher, UrlMatcher } from 'interweave-autolink';
+import React, { Component } from 'react';
 import { MessagesRendererProps } from '../types';
+import Hashtag from './Hashtag';
+import MentionMatcher from './MentionMatcher';
+import Url from './Url';
 
 export default class MessageRenderer extends Component<MessagesRendererProps> {
   static defaultProps = {

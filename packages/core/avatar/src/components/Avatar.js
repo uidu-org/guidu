@@ -1,26 +1,26 @@
 // @flow
 
-import React, { Component } from 'react';
-import type { Node } from 'react';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
+import React, { Component } from 'react';
+import { getProps, getStyledAvatar } from '../helpers';
+import { mapProps, withPseudoState } from '../hoc';
+import Outer, { PresenceWrapper, StatusWrapper } from '../styled/Avatar';
+import { Theme } from '../theme';
+import { omit } from '../utils';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
-import { validIconSizes, propsOmittedFromClickData } from './constants';
-import Presence from './Presence';
 import AvatarImage from './AvatarImage';
+import { propsOmittedFromClickData, validIconSizes } from './constants';
+import Presence from './Presence';
 import Status from './Status';
-import Outer, { PresenceWrapper, StatusWrapper } from '../styled/Avatar';
-import { omit } from '../utils';
-import { getProps, getStyledAvatar } from '../helpers';
-import { mapProps, withPseudoState } from '../hoc';
-import { Theme } from '../theme';
+import type { Node } from 'react';
 import type { AvatarPropTypes, SupportedSizeWithAnIcon } from '../types';
 
 const warn = (message: string) => {
@@ -194,7 +194,9 @@ class Avatar extends Component<AvatarPropTypes> {
     );
 
     return enableTooltip && name ? (
-      <Tooltip content={name}>{AvatarNode}</Tooltip>
+      <Tooltip content={name} className="d-flex">
+        {AvatarNode}
+      </Tooltip>
     ) : (
       AvatarNode
     );

@@ -5,7 +5,7 @@ export const StyledMobileViewMessage = styled.div<{ reverse: boolean }>`
   flex-direction: column;
   min-width: 0;
   zoom: 1;
-  max-width: ${({ reverse }) => reverse ? '65%' : '85%'};
+  max-width: 85%;
   background: ${({ reverse }) => reverse ? '#007aff' : '#f1f0f0'};
   color: ${({ reverse }) => reverse ? '#ffffff' : 'black'};
   padding: 6px 12px;
