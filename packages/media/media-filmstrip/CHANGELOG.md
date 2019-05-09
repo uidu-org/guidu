@@ -1,5 +1,10 @@
 # @atlaskit/media-filmstrip
 
+## 0.1.9
+- [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
+
+  - Message reverse on mobile, padding for different viewports, media-viewer is not rendered into a portal, not only a blanket
+
 ## 0.1.8
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

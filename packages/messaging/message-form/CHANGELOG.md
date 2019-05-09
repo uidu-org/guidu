@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.9
+- [patch] [b37a1c0](https://github.org/uidu-org/guidu/commits/b37a1c0):
+
+  - Min width to shell and shell main to fix chrome flex issues
+
 ## 0.1.8
 - [patch] [d59b402](https://github.org/uidu-org/guidu/commits/d59b402):
 

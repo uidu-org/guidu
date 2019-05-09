@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.12
+- [patch] [b37a1c0](https://github.org/uidu-org/guidu/commits/b37a1c0):
+
+  - Min width to shell and shell main to fix chrome flex issues
+
 ## 0.1.11
 - [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
 

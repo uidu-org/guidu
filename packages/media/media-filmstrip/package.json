@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-filmstrip",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Includes components that show media cards as a filmstrip",
   "uidu:src": "index.ts",
   "module": "index.js",
