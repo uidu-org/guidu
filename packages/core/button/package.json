@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "description": "Button component for use in forms",
   "module": "index.js",
   "uidu:src": "index.ts",
