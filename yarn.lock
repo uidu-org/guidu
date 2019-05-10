@@ -543,9 +543,9 @@
     video-snapshot "^1.0.3"
 
 "@atlaskit/media-client@^1.1.0":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@atlaskit/media-client/-/media-client-1.1.2.tgz#72e108798a5651c52c02d894671c28ac99914669"
-  integrity sha512-1bhcu6qnwVhO7K4zbcZmizU+cylhGlHgCTIJZiQzPsnydxsC2uArQ3DF7T6ErsXxrZObJg4jQ5unJcoDPfrhLQ==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/media-client/-/media-client-1.1.3.tgz#379e0bf33ce48e467ab2ca4c4e00616b7a071c07"
+  integrity sha512-A4y6nbPSX0iNuTRX2yBKSce8xo8k42n1ekO7ZbdiZPZkQIicppGwXYHTRDRagZYE7dWZnYq5QSNYFywRzglsdw==
   dependencies:
     "@types/query-string" "^4.3.1"
     chunkinator "^2.0.4"
@@ -11177,9 +11177,9 @@ interweave-autolink@^3.0.0:
     prop-types "^15.7.2"
 
 interweave@^11.0.0:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/interweave/-/interweave-11.0.1.tgz#a39a12efa3ee5d78a4f97f8d1eb289e4030c5599"
-  integrity sha512-/xFd7LtKmOwZX1UzXcFM1OceGKIk4r0QKrO5nxCLmVyIlpaFhw/2LezxT1Dl/YTLt7xGuwBkVosOunJ5IjxOmg==
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/interweave/-/interweave-11.1.0.tgz#1da968783f248990c814219a16536fb67e49a2f8"
+  integrity sha512-Y4x3K9eYnhgHCLcQls1gyLn0DXDtuMOdArmpjdgrM+Y/kt6IOYOa6AxbqhRPxh+3UaSZZ53APf4SAJIDqn9ORg==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -18023,9 +18023,9 @@ rxjs-async-map@^0.1.2:
     rxjs "^5.5.6"
 
 rxjs-compat@^6.4.0:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.5.1.tgz#de928292c633a9a5f2f54a4431e6f9c468001c68"
-  integrity sha512-k0aaMAYFg+DCIUxo3yJcUamFRenWLR23e/VJCQvKOxwSd9DQlwcSn2ov+7b23rKaX4weKG7OrzEBWGqQPkQ07A==
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/rxjs-compat/-/rxjs-compat-6.5.2.tgz#e469070adf6260bdad195e9d4a39f444ae28b458"
+  integrity sha512-TRMkTp4FgSxE2HtGvxmgRukh3JqdFM7ejAj1Ti/VdodbPGfWvZR5+KdLKRV9jVDFyu2SknM8RD+PR54KGnoLjg==
 
 rxjs@^5.5.2, rxjs@^5.5.6:
   version "5.5.12"
@@ -18035,9 +18035,9 @@ rxjs@^5.5.2, rxjs@^5.5.6:
     symbol-observable "1.0.1"
 
 rxjs@^6.3.3, rxjs@^6.4.0:
-  version "6.5.1"
-  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.1.tgz#f7a005a9386361921b8524f38f54cbf80e5d08f4"
-  integrity sha512-y0j31WJc83wPu31vS1VlAFW5JGrnGC+j+TtGAa1fRQphy48+fDYiDmX8tjGloToEsMkxnouOg/1IzXGKkJnZMg==
+  version "6.5.2"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.5.2.tgz#2e35ce815cd46d84d02a209fb4e5921e051dbec7"
+  integrity sha512-HUb7j3kvb7p7eCUHE3FqjoDsC1xfZQ4AHFWfTKSpZ+sAhhz5X1WX0ZuUqWbzB2QhSLp3DoLUG+hMdEDKqWo2Zg==
   dependencies:
     tslib "^1.9.0"
 
