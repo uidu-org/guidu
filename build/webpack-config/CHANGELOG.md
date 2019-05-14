@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.28
+- [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
+
+  - Bump dependencies, larger mobile messages, accordion fixes
+
 ## 0.1.27
 - [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 

@@ -1,5 +1,10 @@
 # @atlaskit/button
 
+## 0.1.36
+- [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
+
+  - Bump dependencies, larger mobile messages, accordion fixes
+
 ## 0.1.35
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

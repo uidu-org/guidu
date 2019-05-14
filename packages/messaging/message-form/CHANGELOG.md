@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.10
+- [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
+
+  - Bump dependencies, larger mobile messages, accordion fixes
+
 ## 0.1.9
 - [patch] [b37a1c0](https://github.org/uidu-org/guidu/commits/b37a1c0):
 

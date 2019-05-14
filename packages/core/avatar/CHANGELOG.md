@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.10
+- [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
+
+  - Bump dependencies, larger mobile messages, accordion fixes
+
 ## 0.2.9
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 

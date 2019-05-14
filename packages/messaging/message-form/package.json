@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Message form",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -18,7 +18,7 @@
     "@uidu/dropdown-menu": "^0.1.6",
     "@uidu/field-mentions": "^0.1.11",
     "@uidu/form": "^0.1.27",
-    "@uidu/message": "^0.1.9",
+    "@uidu/message": "^0.1.10",
     "@uidu/spinner": "^0.1.8",
     "emoji-mart": "^2.10.0",
     "react-feather": "^1.1.6",

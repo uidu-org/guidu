@@ -1,6 +1,6 @@
 {
   "name": "@uidu/accordion",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React accessible accordion component",
   "module": "index.js",
   "uidu:src": "src/index.jsx",
