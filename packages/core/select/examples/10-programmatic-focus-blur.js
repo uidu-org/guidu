@@ -1,8 +1,9 @@
 // @flow
-import React, { Component, type ElementRef } from 'react';
-import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import Btn from '@uidu/button';
+import { Form } from '@uidu/form';
+import React, { Component, ElementRef } from 'react';
+import { inputDefaultProps } from '../../field-base/examples-utils';
+import { formDefaultProps } from '../../form/examples-utils';
 import Select from '../src';
 
 const Button = ({ inline = true, ...props }: { inline?: boolean }) => (

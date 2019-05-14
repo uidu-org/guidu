@@ -1,9 +1,10 @@
 // @flow
+import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
-import { cities } from './common/data';
+import { inputDefaultProps } from '../../field-base/examples-utils';
+import { formDefaultProps } from '../../form/examples-utils';
 import { AsyncSelect } from '../src';
+import { cities } from './common/data';
 
 type State = {
   inputValue: string,

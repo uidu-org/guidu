@@ -1,10 +1,10 @@
 // @flow
 
+import { Form } from '@uidu/form';
 import React from 'react';
-import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
+import { inputDefaultProps } from '../../field-base/examples-utils';
+import { formDefaultProps } from '../../form/examples-utils';
 import { AsyncSelect } from '../src';
-
 import { cities } from './common/data';
 
 // you control how the options are filtered

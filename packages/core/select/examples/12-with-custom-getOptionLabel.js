@@ -1,8 +1,9 @@
 // @flow
-import React, { Component } from 'react';
-import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { Checkbox } from '@uidu/checkbox';
+import { Form } from '@uidu/form';
+import React, { Component } from 'react';
+import { inputDefaultProps } from '../../field-base/examples-utils';
+import { formDefaultProps } from '../../form/examples-utils';
 import { CheckboxSelect } from '../src';
 
 // data imported for brevity; equal to the options from Single Select example

@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Label from './Label';
 
 const Row = props => {
@@ -16,7 +16,7 @@ const Row = props => {
   let element = props.children;
 
   if (layout === 'elementOnly') {
-    return <span>{element}</span>;
+    return element;
   }
 
   const cssClasses = {

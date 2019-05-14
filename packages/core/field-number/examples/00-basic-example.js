@@ -1,8 +1,8 @@
 // @flow
+import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
-import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
-
+import { inputDefaultProps } from '../../field-base/examples-utils';
+import { formDefaultProps } from '../../form/examples-utils';
 import TextField from '../src';
 
 type State = {|

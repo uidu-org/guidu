@@ -8,5 +8,5 @@ export const formDefaultProps = {
   footerRenderer: ({ canSubmit, loading }) => (
     <FormSubmit label="Save" canSubmit={canSubmit} loading={loading} />
   ),
-  handleSubmit: model => later(3000, model).then(console.log),
+  handleSubmit: model => later(3000, model),
 };

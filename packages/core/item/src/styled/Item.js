@@ -1,10 +1,11 @@
 // @flow
-import styled, { css } from 'styled-components';
 import { colors } from '@uidu/theme';
+import styled, { css } from 'styled-components';
 import { getThemeStyle, themeNamespace } from '../util/theme';
 
 const getItemState = stateName => ({ theme }) => {
   const stateStyles = getThemeStyle(theme[themeNamespace], stateName);
+
   return css`
     background-color: ${stateStyles.background};
     color: ${stateStyles.text};

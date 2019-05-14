@@ -1,15 +1,12 @@
 // @flow
-import React, { PureComponent } from 'react';
 import { Form } from '@uidu/form';
-import TextField from '../src';
+import React, { PureComponent } from 'react';
 import { formDefaultProps, inputDefaultProps } from '../examples-utils';
+import TextField from '../src';
 
 type State = {|
   eventResult: string,
 |};
-
-console.log(formDefaultProps);
-console.log(inputDefaultProps);
 
 export default class BasicExample extends PureComponent<void, State> {
   state = {

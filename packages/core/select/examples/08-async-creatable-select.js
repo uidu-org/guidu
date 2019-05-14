@@ -1,11 +1,11 @@
 // @flow
 
-import React, { Component, Fragment } from 'react';
-import { Form, formDefaultProps } from '@uidu/form';
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { Checkbox } from '@uidu/checkbox';
+import { Form } from '@uidu/form';
+import React, { Component, Fragment } from 'react';
+import { inputDefaultProps } from '../../field-base/examples-utils';
+import { formDefaultProps } from '../../form/examples-utils';
 import { AsyncCreatableSelect as AsyncCreatable } from '../src';
-
 import { cities } from './common/data';
 
 type State = {
