@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.2
+- [patch] [223cf05](https://github.org/uidu-org/guidu/commits/223cf05):
+
+  - Export column types from @uidu/table
+
 ## 0.1.1
 - [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
 

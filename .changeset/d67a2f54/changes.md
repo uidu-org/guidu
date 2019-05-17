@@ -1,1 +1,0 @@
-- Export column types from @uidu/table
