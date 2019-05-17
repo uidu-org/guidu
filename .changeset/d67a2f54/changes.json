@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/data-controls", "type": "patch" },
+    { "name": "@uidu/table", "type": "patch" }
+  ],
+  "dependents": []
+}

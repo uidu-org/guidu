@@ -1,20 +1,30 @@
-import { checkboxColumn, dateColumn, numberColumn, singleSelectColumn } from '../src/components/columns';
+import { checkboxColumn, dateColumn, numberColumn, singleSelectColumn, textColumn } from '../src';
 
 export const availableColumns = [
   {
-    colId: 'email',
-    field: 'email',
-    headerName: 'Email',
-    filter: 'TextFilter',
+    colId: 'id',
+    field: 'id',
+    headerName: '',
     pinned: true,
     lockVisible: true,
     checkboxSelection: true,
     headerCheckboxSelection: true,
+    width: 80,
+    suppressMenu: true,
+  },
+  {
+    colId: 'email',
+    field: 'email',
+    headerName: 'Email',
+    ...textColumn(),
+    pinned: true,
+    lockVisible: true,
   },
   {
     colId: 'displayName',
     field: 'displayName',
     headerName: 'FullName',
+    ...textColumn()
   },
   {
     colId: 'createdAt',
@@ -32,11 +42,13 @@ export const availableColumns = [
     colId: 'firstName',
     field: 'firstName',
     headerName: 'firstName',
+    ...textColumn()
   },
   {
     colId: 'lastName',
     field: 'lastName',
     headerName: 'lastName',
+    ...textColumn()
   },
   {
     colId: 'age',

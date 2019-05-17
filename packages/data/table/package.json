@@ -15,7 +15,12 @@
     "moment": "^2.18.1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@loadable/component": "^5.10.1",
+    "@uidu/dropdown-menu": "^0.1.8",
     "@uidu/droplist": "^0.1.7",
     "@uidu/item": "^0.1.9",
     "ag-grid-community": "^20.2.0",

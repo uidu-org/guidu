@@ -2,6 +2,7 @@ import loadable from '@loadable/component';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
+import CustomHeader from './headers';
 
 const AgGridReact = (loadable as any).lib(() => import('ag-grid-react'));
 
@@ -26,8 +27,9 @@ export default class Table extends Component<any> {
               defaultColDef={{
                 resizable: true,
                 sortable: true,
-                suppressMenu: true,
+                suppressMenu: false,
                 editable: true,
+                headerComponentFramework: CustomHeader,
               }}
               rowHeight={32}
               {...this.props}
