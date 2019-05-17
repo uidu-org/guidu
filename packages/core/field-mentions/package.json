@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Field Mentions Component",
   "module": "index.js",
   "uidu:src": "src/index.ts",
@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.7",
-    "@uidu/field-base": "^0.1.29",
-    "@uidu/form": "^0.1.27",
+    "@uidu/field-base": "^0.1.30",
+    "@uidu/form": "^0.1.28",
     "@uidu/theme": "^0.1.8",
     "classnames": "^2.2.6",
     "react-mentions": "^3.0.0"

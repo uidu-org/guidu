@@ -1,5 +1,10 @@
 # @uidu/toggle
 
+## 0.1.13
+- [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
+
+  - First versions for table related components
+
 ## 0.1.12
 - [patch] [5ec18e8](https://github.org/uidu-org/guidu/commits/5ec18e8):
 
