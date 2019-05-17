@@ -12,12 +12,20 @@ import XHRUpload from '@uppy/xhr-upload';
 import React, { Component } from 'react';
 
 export default class MediaPicker extends Component<any> {
+  private uppy;
+
   constructor(props) {
     super(props);
     this.uppy = Uppy({
-      restrictions: { maxNumberOfFiles: 1 },
+      restrictions: {
+        maxNumberOfFiles: 1,
+        minNumberOfFiles: 1,
+        maxFileSize: null,
+        allowedFileTypes: null,
+      },
       autoProceed: true,
-    })
+    });
+    this.uppy
       .use(Webcam)
       .use(XHRUpload, {
         endpoint: 'http://my-website.org/upload',
@@ -33,10 +41,10 @@ export default class MediaPicker extends Component<any> {
       .use(Dropbox, {
         target: document.body,
         companionUrl: 'https://companion.uppy.io/',
-      })
-      .on('complete', result => {
-        console.log(result);
       });
+    this.uppy.on('complete', result => {
+      console.log(result);
+    });
   }
 
   render() {

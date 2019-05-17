@@ -1,0 +1,4 @@
+{
+  "releases": [{ "name": "@uidu/media-picker", "type": "patch" }],
+  "dependents": []
+}
