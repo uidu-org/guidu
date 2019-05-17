@@ -1,5 +1,10 @@
 # @uidu/field-mentions
 
+## 0.1.12
+- [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
+
+  - Release uidu/board for tasks management
+
 ## 0.1.11
 - [patch] [d59b402](https://github.org/uidu-org/guidu/commits/d59b402):
 

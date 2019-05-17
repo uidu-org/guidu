@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.30
+- [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
+
+  - Release uidu/board for tasks management
+
 ## 0.1.29
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

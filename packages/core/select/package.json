@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Select Component",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -16,8 +16,8 @@
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.7",
     "@uidu/checkbox": "^0.1.41",
-    "@uidu/field-base": "^0.1.29",
-    "@uidu/form": "^0.1.27",
+    "@uidu/field-base": "^0.1.30",
+    "@uidu/form": "^0.1.28",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.8",
     "@uidu/tooltip": "^0.1.10",

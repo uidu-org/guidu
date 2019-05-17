@@ -1,5 +1,10 @@
 # @uidu/item
 
+## 0.1.10
+- [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
+
+  - Release uidu/board for tasks management
+
 ## 0.1.9
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 

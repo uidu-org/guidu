@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-text",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Field Text Component",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -15,8 +15,8 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.7",
-    "@uidu/field-base": "^0.1.29",
-    "@uidu/form": "^0.1.27",
+    "@uidu/field-base": "^0.1.30",
+    "@uidu/form": "^0.1.28",
     "@uidu/theme": "^0.1.8"
   },
   "peerDependencies": {
