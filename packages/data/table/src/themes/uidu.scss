@@ -1,0 +1,108 @@
+// $icons-path: 'ag-grid-community/src/styles/icons/';
+
+$border-color: red;
+$light: #f3f3f3;
+$highlight-color: yellow;
+$primary: orange;
+
+// @import 'ag-grid-community/src/styles/ag-grid.scss';
+
+.ag-theme-uidu {
+  .ag-header {
+    // background-color: $light;
+    border-bottom: 1px solid $border-color;
+    border-top: 1px solid $border-color;
+  }
+
+  .ag-row {
+    // border-bottom-width: 1px;
+    border-bottom: 1px solid $border-color;
+
+    &.ag-row-hover {
+      background-color: $light;
+    }
+
+    &.ag-row-selected {
+      background-color: $highlight-color;
+    }
+  }
+
+  .ag-header-cell {
+    font-weight: 500;
+    // @extend .bg-light;
+
+    &.ag-column-hover {
+      border-top: 1px solid $primary;
+    }
+  }
+
+  .ag-cell-wrapper {
+    display: flex;
+    width: 100%;
+  }
+
+  .ag-cell,
+  .ag-header-cell {
+    // @extend .px-3;
+    font-size: 14px;
+    align-items: center;
+    border: 1px solid transparent;
+    border-right: 1px solid $border-color;
+    display: flex;
+    line-height: normal;
+  }
+
+  .ag-header-select-all {
+    // @extend .mr-2;
+
+    .ag-checkbox-checked,
+    .ag-checkbox-unchecked {
+      align-items: center;
+      display: flex;
+    }
+  }
+
+  .ag-cell-label-container {
+    // @extend .w-100;
+  }
+
+  .ag-sort-descending-icon,
+  .ag-sort-ascending-icon {
+    position: absolute;
+    right: 0.35rem;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+
+  .ag-selection-checkbox {
+    // @extend .mr-2;
+
+    align-items: center;
+    display: flex;
+  }
+
+  .ag-cell-focus {
+    // border-color: $primary;
+  }
+
+  .ag-cell-inline-editing {
+    // border: 0;
+
+    input {
+      // @extend .form-control;
+      // @extend .form-control-sm;
+    }
+  }
+
+  .ag-pinned-left-header,
+  .ag-pinned-left-cols-viewport-wrapper {
+    border-right: 1px solid $border-color;
+  }
+
+  .ag-pinned-left-cols-viewport-wrapper {
+    // box-shadow: 0px 0px 10px #eee;
+    .ag-row-hover {
+      border-left: 1px solid $primary;
+    }
+  }
+}

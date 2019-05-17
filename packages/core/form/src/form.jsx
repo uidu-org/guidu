@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Formsy from 'formsy-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import OptionsProvider from './hoc/options-provider';
 
 export default class Form extends Component {
@@ -42,7 +42,7 @@ export default class Form extends Component {
       },
       () => {
         handleSubmit(modelToSubmit, resetForm).then(() => {
-          this.setState({loading: false})
+          this.setState({ loading: false });
         });
       },
     );
@@ -83,7 +83,7 @@ export default class Form extends Component {
           onValid={this.enableButton}
           onInvalid={this.disableButton}
         >
-          <div style={{ position: 'relative' }} {...inputsWrapperProps}>
+          <div {...inputsWrapperProps}>
             {loading && withLoader && (
               <div className="form-loader">
                 <div className="vertical-align">

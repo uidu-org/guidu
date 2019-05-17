@@ -1,0 +1,27 @@
+{
+  "name": "@uidu/media-picker",
+  "version": "0.1.0",
+  "description": "Atlassian Editor component for JIRA",
+  "uidu:src": "src/index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "author": "uidu",
+  "license": "ISC",
+  "repository": "https://github.com/uidu-org/guidu",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "dependencies": {
+    "@uppy/core": "^1.0.1",
+    "@uppy/drag-drop": "^1.0.1",
+    "@uppy/dropbox": "^1.0.1",
+    "@uppy/google-drive": "^1.0.1",
+    "@uppy/react": "^1.0.1",
+    "@uppy/url": "^1.0.1",
+    "@uppy/webcam": "^1.0.1",
+    "@uppy/xhr-upload": "^1.0.1"
+  }
+}

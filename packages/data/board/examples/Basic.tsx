@@ -1,7 +1,7 @@
 import Badge from '@uidu/badge';
 import React, { Component } from 'react';
 import { MoreHorizontal, Plus } from 'react-feather';
-import Board, { ColumnProps } from '..';
+import Board, { ColumnProps } from '../../board';
 import { authorItemMap } from '../examples-utils';
 
 const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (

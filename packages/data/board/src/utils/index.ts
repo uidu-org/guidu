@@ -1,5 +1,5 @@
 import { DraggableLocation } from 'react-beautiful-dnd';
-import { ItemProps, ItemMapProps } from '../types';
+import { ItemMapProps, ItemProps } from '../types';
 
 export const grid: number = 8;
 export const borderRadius: number = 2;

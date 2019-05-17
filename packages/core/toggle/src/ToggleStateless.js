@@ -1,14 +1,14 @@
 // @flow
-import React, { Component } from 'react';
-
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
+import React, { Component } from 'react';
 import Switch from 'react-switch';
-import { name as packageName, version as packageVersion } from './version.json';
 import defaultBaseProps from './defaultBaseProps';
+import { name as packageName, version as packageVersion } from './version.json';
+
 import type { StatelessProps, DefaultBaseProps } from './types';
 
 type State = {|
@@ -49,6 +49,18 @@ class ToggleStateless extends Component<StatelessProps, State> {
     this.props.onChange(event);
   };
 
+  sizes = () => {
+    const { size } = this.props;
+    switch (size) {
+      case 'xsmall':
+        return [16, 8];
+      case 'small':
+        return [24, 10];
+      default:
+        return [56, 20];
+    }
+  };
+
   render() {
     const { isChecked, isDisabled, label, name, size, value } = this.props;
     const { isFocused } = this.state;
@@ -59,6 +71,8 @@ class ToggleStateless extends Component<StatelessProps, State> {
       isFocused,
       size,
     };
+
+    const sizes = this.sizes();
 
     return (
       <Switch
@@ -75,8 +89,8 @@ class ToggleStateless extends Component<StatelessProps, State> {
         onColor="#28a745"
         // offHandleColor="#0ff"
         // onHandleColor="#08f"
-        height={28}
-        width={56}
+        height={sizes[1]}
+        width={sizes[0]}
       />
     );
   }
