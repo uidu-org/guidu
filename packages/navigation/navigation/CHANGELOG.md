@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.12
+- [patch] [104d294](https://github.org/uidu-org/guidu/commits/104d294):
+
+  - Added ShellResizer for larger layouts, refactor table columns folders"
+
 ## 0.1.11
 - [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
 
