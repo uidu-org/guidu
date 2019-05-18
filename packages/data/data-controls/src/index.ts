@@ -1,7 +1,11 @@
 export { default as Customizer } from './components/Customizer';
 export { default } from './components/DataControls';
 export { default as Filterer } from './components/Filterer';
+export { default as Finder } from './components/Finder';
 export { default as Grouper } from './components/Grouper';
+export { default as More } from './components/More';
+export { default as Resizer } from './components/Resizer';
+export { default as Sharer } from './components/Sharer';
 export { default as Sorter } from './components/Sorter';
 export { default as Stacker } from './components/Stacker';
 export { default as Toggler } from './components/Toggler';

@@ -1,72 +1,177 @@
-import { checkboxColumn, dateColumn, numberColumn, singleSelectColumn, textColumn } from '../src';
+import {
+  addressColumn,
+  attachmentsColumn,
+  checkboxColumn,
+  currencyColumn,
+  dateColumn,
+  defaultColumn,
+  emailColumn,
+  idColumn,
+  memberColumn,
+  multipleSelectColumn,
+  numberColumn,
+  percentColumn,
+  phoneColumn,
+  primaryColumn,
+  ratingColumn,
+  singleSelectColumn,
+  stringColumn,
+  textColumn,
+  urlColumn,
+} from '../src';
 
 export const availableColumns = [
   {
     colId: 'id',
     field: 'id',
-    headerName: '',
-    pinned: true,
-    lockVisible: true,
-    checkboxSelection: true,
-    headerCheckboxSelection: true,
-    width: 80,
-    suppressMenu: true,
+    ...idColumn(),
   },
   {
     colId: 'email',
     field: 'email',
     headerName: 'Email',
-    ...textColumn(),
-    pinned: true,
-    lockVisible: true,
+    ...defaultColumn(),
+    ...emailColumn(),
+    ...primaryColumn(),
   },
   {
     colId: 'displayName',
     field: 'displayName',
     headerName: 'FullName',
-    ...textColumn()
+    ...defaultColumn(),
+    ...textColumn(),
   },
   {
     colId: 'createdAt',
     field: 'createdAt',
     headerName: 'Data creazione',
-    ...dateColumn()
+    ...defaultColumn(),
+    ...dateColumn(),
   },
   {
     colId: 'updatedAt',
     field: 'updatedAt',
     headerName: 'Ultimo aggiornamento',
-    ...dateColumn()
+    ...defaultColumn(),
+    ...dateColumn(),
   },
   {
     colId: 'firstName',
     field: 'firstName',
     headerName: 'firstName',
-    ...textColumn()
+    ...defaultColumn(),
+    ...stringColumn(),
   },
   {
     colId: 'lastName',
     field: 'lastName',
     headerName: 'lastName',
-    ...textColumn()
+    ...defaultColumn(),
+    ...stringColumn(),
   },
   {
     colId: 'age',
     field: 'age',
     headerName: 'Età',
-    ...numberColumn()
+    ...defaultColumn(),
+    ...numberColumn(),
   },
   {
     colId: 'gender',
     field: 'gender',
     headerName: 'Genere',
-    ...singleSelectColumn({ options: [{ id: 'male', name: 'Maschio' }, { id: 'female', name: 'Femmina' }] })
+    ...defaultColumn(),
+    ...singleSelectColumn({
+      options: [
+        { id: 'male', name: 'Maschio' },
+        { id: 'female', name: 'Femmina' },
+      ],
+    }),
   },
   {
     colId: 'role',
     field: 'role',
     headerName: 'Admin',
-    ...checkboxColumn()
+    ...defaultColumn(),
+    ...checkboxColumn(),
+  },
+  {
+    colId: 'tags',
+    field: 'scope',
+    headerName: 'Tags',
+    ...defaultColumn(),
+    ...multipleSelectColumn({
+      options: [
+        { id: 'male', name: 'Maschio' },
+        { id: 'female', name: 'Femmina' },
+      ],
+    }),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Assignee',
+    ...defaultColumn(),
+    ...memberColumn({
+      options: [
+        { id: 'male', name: 'Maschio' },
+        { id: 'female', name: 'Femmina' },
+      ],
+    }),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Indirizzo',
+    ...defaultColumn(),
+    ...addressColumn(),
+  },
+  {
+    colId: 'tags',
+    field: 'phone',
+    headerName: 'Telefono',
+    ...defaultColumn(),
+    ...phoneColumn(),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Files',
+    ...defaultColumn(),
+    ...attachmentsColumn({
+      options: [
+        { id: 'male', name: 'Maschio' },
+        { id: 'female', name: 'Femmina' },
+      ],
+    }),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Valore',
+    ...defaultColumn(),
+    ...currencyColumn(),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Percentuale',
+    ...defaultColumn(),
+    ...percentColumn(),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Voto',
+    ...defaultColumn(),
+    ...ratingColumn(),
+  },
+  {
+    colId: 'tags',
+    field: 'uid',
+    headerName: 'Assignee',
+    ...defaultColumn(),
+    ...urlColumn(),
   },
 ];
 
@@ -75,5 +180,5 @@ export const fetchContacts = () => {
     'https://uidufundraising.uidu.local:8443/dashboard/apps/contacts.json',
   )
     .then(result => result.json())
-    .then(rowData => rowData)
-}
+    .then(rowData => rowData);
+};

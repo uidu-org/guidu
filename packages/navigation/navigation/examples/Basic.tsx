@@ -1,9 +1,21 @@
 import Avatar from '@uidu/avatar';
 import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
-import Shell, { ShellContent, ShellMain, ShellNavigation } from '@uidu/shell';
+import Shell, {
+  ShellContent,
+  ShellMain,
+  ShellNavigation,
+  ShellResizer,
+} from '@uidu/shell';
 import React, { Component } from 'react';
-import { Activity, Bell, Grid, Info, MoreHorizontal, Settings } from 'react-feather';
+import {
+  Activity,
+  Bell,
+  Grid,
+  Info,
+  MoreHorizontal,
+  Settings,
+} from 'react-feather';
 import foo from '../examples-utils/assets/foo.svg';
 import Navigation, { GlobalNavigation, NavigationItem } from '../src';
 
@@ -145,8 +157,13 @@ const schema = [
   },
 ];
 
-export default class Basic extends Component<any> {
+export default class Basic extends Component<any, { isCollapsed: boolean }> {
+  state = {
+    isCollapsed: true,
+  };
+
   render() {
+    const { isCollapsed } = this.state;
     return (
       <Shell>
         <GlobalNavigation
@@ -226,12 +243,25 @@ export default class Basic extends Component<any> {
         />
         <ShellContent>
           <ShellNavigation
-            style={{ display: 'flex', flex: '1 0 20%', minWidth: '17rem' }}
-            // className="bg-light"
+            style={{
+              transition:
+                'width 300ms cubic-bezier(0.2, 0, 0, 1) 0s, min-width 300ms cubic-bezier(0.2, 0, 0, 1) 0s',
+              ...(isCollapsed
+                ? { width: '24px', minWidth: 0 }
+                : { width: '20%', minWidth: '17rem' }),
+            }}
           >
             <Navigation schema={schema} />
+            <ShellResizer
+              isCollapsed={isCollapsed}
+              onClick={() =>
+                this.setState(prevState => ({
+                  isCollapsed: !prevState.isCollapsed,
+                }))
+              }
+            />
           </ShellNavigation>
-          <ShellMain />
+          <ShellMain className="bg-dark" />
         </ShellContent>
       </Shell>
     );

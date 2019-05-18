@@ -1,7 +1,7 @@
 import Item, { ItemGroup } from '@uidu/item';
 import React, { Component } from 'react';
 
-export default class DatePicker extends Component<any, any> {
+export default class MultipleSelect extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {

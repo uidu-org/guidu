@@ -4,6 +4,7 @@ import React from 'react';
 
 export default () => ({
   // cellEditorFramework: DatePicker,
+  type: 'numericColumn',
   filter: 'agNumberColumnFilter',
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faHashtag} /> },
   // valueFormatter: ({ value }) => moment(value).format('L'),

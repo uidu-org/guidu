@@ -1,15 +1,19 @@
 import Dropdown, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { ChevronDown, Lock } from 'react-feather';
 
-export default class CustomHeader extends Component<any> {
+export default class CustomHeader extends PureComponent<any> {
   render() {
     const { enableMenu, displayName, menuIcon } = this.props;
 
     return (
       <div className="d-flex align-items-center justify-content-center">
         <div className="customHeaderLabel flex-grow-1 text-truncate">
-          {menuIcon && <span className="mr-2">{menuIcon}</span>}
+          {menuIcon && (
+            <span className="mr-2" style={{ opacity: 0.5 }}>
+              {menuIcon}
+            </span>
+          )}
           {displayName}
         </div>
         {!!enableMenu ? (

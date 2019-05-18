@@ -126,7 +126,7 @@ export default class Sorter extends Component<any> {
                       (this.form.current as any).form.submit();
                     }}
                     list={sorters}
-                    fields={fields}
+                    fields={fields.filter(f => !!f.sortable)}
                   />
                 </div>
               )}

@@ -11,7 +11,14 @@ export default class Navigation extends PureComponent<NavigationProps> {
     }
 
     if (schema) {
-      return <ItemsRenderer items={schema} />;
+      return (
+        <div
+          className="position-absolute w-100 d-flex flex-column h-100"
+          style={{ overflow: 'hidden' }}
+        >
+          <ItemsRenderer items={schema} />
+        </div>
+      );
     }
 
     return children;

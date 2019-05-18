@@ -1,6 +1,10 @@
 import DataControls, {
   Filterer,
+  Finder,
   Grouper,
+  More,
+  Resizer,
+  Sharer,
   Sorter,
   Toggler,
 } from '@uidu/data-controls';
@@ -75,32 +79,47 @@ export default class WithControls extends Component<any, any> {
     this.gridApi.setSortModel(sortModel);
   };
 
+  setSearch = e => {
+    this.gridApi.setQuickFilter(e.target.value);
+  };
+
   render() {
     const { sorters, filters, groupers } = this.state;
     console.log(this.gridApi);
     return (
       <Fragment>
         <DataControls>
-          <Toggler
-            fields={this.state.columnDefs}
-            onToggle={this.toggleColumn}
-            onSortEnd={this.moveColumn}
-          />
-          <Filterer
-            fields={this.state.columnDefs}
-            onChange={this.setFilters}
-            filters={filters}
-          />
-          <Grouper
-            fields={this.state.columnDefs}
-            onChange={this.setGroupers}
-            groupers={groupers}
-          />
-          <Sorter
-            fields={this.state.columnDefs}
-            onChange={this.setSorters}
-            sorters={sorters}
-          />
+          <div>
+            <Toggler
+              fields={this.state.columnDefs}
+              onToggle={this.toggleColumn}
+              onSortEnd={this.moveColumn}
+            />
+            <Filterer
+              fields={this.state.columnDefs}
+              onChange={this.setFilters}
+              filters={filters}
+            />
+            <Grouper
+              fields={this.state.columnDefs}
+              onChange={this.setGroupers}
+              groupers={groupers}
+            />
+            <Sorter
+              fields={this.state.columnDefs}
+              onChange={this.setSorters}
+              sorters={sorters}
+            />
+            <Resizer />
+            <Sharer />
+            <More
+              onDownload={() => this.gridApi.exportDataAsCsv()}
+              onDuplicate={console.log}
+            />
+          </div>
+          <div className="ml-auto">
+            <Finder onChange={this.setSearch} />
+          </div>
         </DataControls>
         <Table
           innerRef={c => {

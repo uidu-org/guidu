@@ -71,9 +71,12 @@ export const Sidebar = styled.aside`
 `;
 
 export const Navigation = styled.aside`
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: flex-end;
   z-index: 1;
+  position: relative;
+  display: flex;
+  will-change: min-width width;
 `;
 
 export const Content = styled.main`
@@ -108,4 +111,9 @@ export const Body = styled.div<{ scrollable?: boolean | 'mobileOnly' }>`
 export const Footer = styled.footer`
   // height: 3rem;
   flex-shrink: 0;
+`;
+
+export const Resizer = styled.div`
+  width: 24px;
+  height: 100%;
 `;

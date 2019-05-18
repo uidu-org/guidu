@@ -1,0 +1,1 @@
+- Added ShellResizer for larger layouts, refactor table columns folders"

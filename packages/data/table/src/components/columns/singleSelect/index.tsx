@@ -1,10 +1,10 @@
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'; // import SingleSelectRenderer from '../renderers/SingleSelect';
-import SingleSelectEditor from '../editors/SingleSelect';
+import React from 'react';
+import Editor from './editor';
 
 export default field => ({
-  cellEditorFramework: SingleSelectEditor,
+  cellEditorFramework: Editor,
   cellEditorParams: {
     options: field.options,
   },
