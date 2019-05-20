@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.13
+- [patch] [104d294](https://github.org/uidu-org/guidu/commits/104d294):
+
+  - Added ShellResizer for larger layouts, refactor table columns folders"
+
 ## 0.1.12
 - [patch] [b37a1c0](https://github.org/uidu-org/guidu/commits/b37a1c0):
 
