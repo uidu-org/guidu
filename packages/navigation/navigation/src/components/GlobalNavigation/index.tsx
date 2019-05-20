@@ -33,7 +33,10 @@ export default class GlobalNavigation extends PureComponent<
     isOpen: false,
     width: '4rem',
     navigationWidth: 25,
+    showAfter: 1000,
   };
+
+  private timer: number = null;
 
   constructor(props) {
     super(props);
@@ -41,6 +44,20 @@ export default class GlobalNavigation extends PureComponent<
       isOpen: props.isOpen,
     };
   }
+
+  onMouseEnter = () => {
+    const { showAfter } = this.props;
+    this.timer = window.setTimeout(() => {
+      this.setState({ isOpen: true });
+    }, showAfter);
+  };
+
+  onMouseLeave = () => {
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.setState({ isOpen: false });
+  };
 
   render() {
     const {
@@ -54,7 +71,6 @@ export default class GlobalNavigation extends PureComponent<
     } = this.props;
     const { isOpen } = this.state;
 
-
     return [
       <ShellSidebar
         style={{
@@ -62,7 +78,7 @@ export default class GlobalNavigation extends PureComponent<
           backgroundColor,
           zIndex: 3,
         }}
-        onMouseEnter={() => this.setState({ isOpen: true })}
+        onMouseEnter={this.onMouseEnter}
       >
         <ShellHeader className="justify-content-center">
           <GlobalItem {...header} />
@@ -83,7 +99,7 @@ export default class GlobalNavigation extends PureComponent<
           ))}
         </ShellFooter>
       </ShellSidebar>,
-      <Transition in={isOpen} timeout={300}>
+      <Transition in={isOpen}>
         {state => (
           <ShellSidebar
             style={{
@@ -98,7 +114,7 @@ export default class GlobalNavigation extends PureComponent<
               }),
               ...transitionStyles[state],
             }}
-            onMouseLeave={() => this.setState({ isOpen: false })}
+            onMouseLeave={this.onMouseLeave}
           >
             <ShellHeader>
               <FakeGlobalItemWrapper style={{ width }}>
@@ -107,12 +123,14 @@ export default class GlobalNavigation extends PureComponent<
               <h5 className="m-0 text-light">{header.name}</h5>
             </ShellHeader>
             <ShellBody scrollable className="d-flex flex-column">
-              {body.map(bodyItem => (
-                <FakeItemWrapper>
+              {body.map(({ children, name, ...otherProps})  => (
+                <FakeItemWrapper {...otherProps}>
                   <FakeGlobalItemWrapper style={{ width }}>
-                    <GlobalItem {...bodyItem} />
+                    <GlobalItem as="span">
+                      {children}
+                    </GlobalItem>
                   </FakeGlobalItemWrapper>
-                  {bodyItem.name}
+                  {name}
                 </FakeItemWrapper>
               ))}
             </ShellBody>
@@ -122,12 +140,12 @@ export default class GlobalNavigation extends PureComponent<
                 backgroundColor: 'rgba(255, 255, 255, .05)',
               }}
             >
-              {footer.map(footerItem => (
-                <FakeItemWrapper as="a" href="#">
+              {footer.map(({ name, children, ...otherProps}) => (
+                <FakeItemWrapper {...otherProps}>
                   <FakeGlobalItemWrapper style={{ width }}>
-                    <GlobalItem {...footerItem} />
+                    <GlobalItem>{children}</GlobalItem>
                   </FakeGlobalItemWrapper>
-                  {footerItem.name}
+                  {name}
                 </FakeItemWrapper>
               ))}
             </ShellFooter>

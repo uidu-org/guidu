@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
 import Tooltip from '@uidu/tooltip';
+import React, { PureComponent } from 'react';
 import StyledGlobalItem, { StyledGlobalItemButton } from './styled';
 
 export default class GlobalItem extends PureComponent<any> {
   static defaultProps = {
-    as: 'button',
+    as: 'a',
     badge: undefined,
     tooltip: undefined,
   };

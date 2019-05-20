@@ -180,49 +180,49 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
               name: 'Team',
             },
             {
-              as: 'button',
+              as: 'a',
               children: (
                 <Avatar src={foo} size="small" borderColor="transparent" />
               ),
               name: 'Anagrafica',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Donazioni',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Eventi',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Annunci',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'CercaBandi',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Tesseramenti',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Tasks',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Website',
             },
             {
-              as: 'button',
+              as: 'a',
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Moduli',
             },

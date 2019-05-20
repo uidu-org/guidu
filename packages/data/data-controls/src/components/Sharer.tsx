@@ -1,4 +1,7 @@
-import DropdownMenu, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
+import DropdownMenu, {
+  DropdownItem,
+  DropdownItemGroup,
+} from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { Share } from 'react-feather';
 import { Trigger } from '../styled';
