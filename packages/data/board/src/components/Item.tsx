@@ -26,10 +26,8 @@ function ItemItem(props: Props) {
     <Item
       item={item}
       provided={provided}
-      href={item.author.url}
       isDragging={isDragging}
       isGroupedOver={isGroupedOver}
-      colors={item.author.colors}
       ref={provided.innerRef}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
