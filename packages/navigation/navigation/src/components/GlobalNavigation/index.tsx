@@ -99,7 +99,7 @@ export default class GlobalNavigation extends PureComponent<
           ))}
         </ShellFooter>
       </ShellSidebar>,
-      <Transition in={isOpen}>
+      <Transition in={isOpen} timeout={300}>
         {state => (
           <ShellSidebar
             style={{
@@ -123,12 +123,10 @@ export default class GlobalNavigation extends PureComponent<
               <h5 className="m-0 text-light">{header.name}</h5>
             </ShellHeader>
             <ShellBody scrollable className="d-flex flex-column">
-              {body.map(({ children, name, ...otherProps})  => (
+              {body.map(({ children, name, ...otherProps }) => (
                 <FakeItemWrapper {...otherProps}>
                   <FakeGlobalItemWrapper style={{ width }}>
-                    <GlobalItem as="span">
-                      {children}
-                    </GlobalItem>
+                    <GlobalItem as="span">{children}</GlobalItem>
                   </FakeGlobalItemWrapper>
                   {name}
                 </FakeItemWrapper>
@@ -140,7 +138,7 @@ export default class GlobalNavigation extends PureComponent<
                 backgroundColor: 'rgba(255, 255, 255, .05)',
               }}
             >
-              {footer.map(({ name, children, ...otherProps}) => (
+              {footer.map(({ name, children, ...otherProps }) => (
                 <FakeItemWrapper {...otherProps}>
                   <FakeGlobalItemWrapper style={{ width }}>
                     <GlobalItem>{children}</GlobalItem>
