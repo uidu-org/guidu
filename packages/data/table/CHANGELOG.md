@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.4
+- [patch] [e1e43c0](https://github.org/uidu-org/guidu/commits/e1e43c0):
+
+  - Fix id column, fix board authors
+
 ## 0.1.3
 - [patch] [104d294](https://github.org/uidu-org/guidu/commits/104d294):
 

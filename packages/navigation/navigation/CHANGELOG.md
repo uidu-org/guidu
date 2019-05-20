@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.13
+- [patch] [e1e43c0](https://github.org/uidu-org/guidu/commits/e1e43c0):
+
+  - Fix navigation global items on hover, added timeout to show it
+
 ## 0.1.12
 - [patch] [104d294](https://github.org/uidu-org/guidu/commits/104d294):
 

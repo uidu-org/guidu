@@ -1,5 +1,10 @@
 # @uidu/data-controls
 
+## 0.1.4
+- [patch] [e1e43c0](https://github.org/uidu-org/guidu/commits/e1e43c0):
+
+  - Fix navigation global items on hover, added timeout to show it
+
 ## 0.1.3
 - [patch] [104d294](https://github.org/uidu-org/guidu/commits/104d294):
 
