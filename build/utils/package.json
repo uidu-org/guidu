@@ -1,6 +1,6 @@
 {
   "name": "@uidu/build-utils",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Collection of utilities to used during the release process of Atlaskit",
   "main": "index.js",
   "scripts": {

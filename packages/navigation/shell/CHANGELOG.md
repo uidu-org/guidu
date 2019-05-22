@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.14
+- [patch] [a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):
+
+  - Removed unnecessary dependencies to build-utils, fix field-password instructions hide/show, added @uidu/devise package to handle authentication
+
 ## 0.1.13
 - [patch] [104d294](https://github.org/uidu-org/guidu/commits/104d294):
 
