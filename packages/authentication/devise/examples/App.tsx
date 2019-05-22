@@ -81,9 +81,9 @@ export default function App() {
                 }}
                 defaultView="sessions"
                 routes={{
-                  registrations: 'sign_up',
-                  sessions: 'sign_in',
-                  passwords: 'passwords',
+                  registrations: '/sign_up',
+                  sessions: '/sign_in',
+                  passwords: '/passwords',
                 }}
               />
             )}

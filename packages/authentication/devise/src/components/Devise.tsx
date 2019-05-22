@@ -39,7 +39,7 @@ export default class Devise extends Component<DeviseProps> {
                   <Switch>
                     <Route
                       exact
-                      path={`${match.path}${routes.sessions}`}
+                      path={routes.sessions}
                       render={routeProps => (
                         <Providers
                           {...this.props}
@@ -50,7 +50,7 @@ export default class Devise extends Component<DeviseProps> {
                     />
                     <Route
                       exact
-                      path={`${match.path}${routes.registrations}`}
+                      path={routes.registrations}
                       render={routeProps => (
                         <Providers
                           {...this.props}
@@ -60,7 +60,7 @@ export default class Devise extends Component<DeviseProps> {
                       )}
                     />
                     <Route
-                      path={`${match.path}${routes.sessions}/email/:step?`}
+                      path={`${routes.sessions}/email/:step?`}
                       render={routeProps => (
                         <DeviseForm
                           {...this.props}
@@ -70,7 +70,7 @@ export default class Devise extends Component<DeviseProps> {
                       )}
                     />
                     <Route
-                      path={`${match.path}${routes.registrations}/email/:step?`}
+                      path={`${routes.registrations}/email/:step?`}
                       render={routeProps => (
                         <DeviseForm
                           {...this.props}
@@ -81,21 +81,21 @@ export default class Devise extends Component<DeviseProps> {
                     />
                     <Route
                       exact
-                      path={`${match.path}${routes.passwords}`}
+                      path={routes.passwords}
                       render={routeProps => (
                         <PasswordRecovery {...this.props} {...routeProps} />
                       )}
                     />
                     <Route
                       exact
-                      path={`${match.path}${routes.passwords}/edit`}
+                      path={`${routes.passwords}/edit`}
                       render={routeProps => (
                         <PasswordReset {...this.props} {...routeProps} />
                       )}
                     />
                     <Route
-                      exact
-                      path={match.path}
+                      // exact
+                      // path={match.path}
                       render={routeProps => (
                         <Providers
                           {...this.props}

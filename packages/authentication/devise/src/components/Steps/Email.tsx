@@ -11,11 +11,11 @@ export default class DeviseStepEmail extends PureComponent<any> {
     return checkExistence(model.user.email).then(response => {
       if (response.data.exists) {
         return onSave({ ...model.user, ...response.data }).then(() =>
-          history.push(`/${routes.sessions}/email/password`),
+          history.push(`${routes.sessions}/email/password`),
         );
       }
       return onSave({ ...model.user, ...response.data }).then(() =>
-        history.push(`/${routes.sessions}/email/info`),
+        history.push(`${routes.sessions}/email/info`),
       );
     });
   };
@@ -33,7 +33,7 @@ export default class DeviseStepEmail extends PureComponent<any> {
             label="Avanti"
           />,
           <Link
-            to={`/${routes.sessions}`}
+            to={routes.sessions}
             className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
           >
             <ArrowLeft className="mr-2" size={18} />

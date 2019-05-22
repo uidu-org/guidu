@@ -6,7 +6,7 @@ export default class DeviseStepInfo extends PureComponent<any> {
   handleSubmit = async model => {
     const { onSave, history, routes } = this.props;
     return onSave(model.user).then(() =>
-      history.push(`/${routes.sessions}/email/password`),
+      history.push(`${routes.sessions}/email/password`),
     );
   };
 

@@ -38,7 +38,7 @@ export default class DeviseStepPassword extends PureComponent<any, any> {
           user && user.exists && (
             <Link
               to={{
-                pathname: `/${routes.passwords}`,
+                pathname: routes.passwords,
                 search: user && `?email=${user.email}`,
               }}
               className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"

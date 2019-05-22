@@ -36,7 +36,7 @@ export default class PasswordRecovery extends Component<any> {
             />
           </FormFooter>,
           <Link
-            to={`/${routes.sessions}`}
+            to={routes.sessions}
             className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
           >
             <FormattedMessage {...messages.password_recovery_secondary_cta} />
