@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { Activity } from 'react-feather';
-
 import Shell, {
-  ShellSidebar,
-  ShellHeader,
-  ShellContent,
-  ShellMain,
   ShellBody,
+  ShellContent,
   ShellFooter,
+  ShellHeader,
+  ShellMain,
 } from '../src';
 
 export default function App() {

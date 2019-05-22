@@ -1,0 +1,1 @@
+- Removed unnecessary dependencies to build-utils, fix field-password instructions hide/show, added @uidu/devise package to handle authentication

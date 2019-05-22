@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@uidu/build-releases": "^3.0.13",
-    "bitbucket-build-status": "^1.0.3",
     "chalk": "^2.4.2",
     "editor": "^1.0.0",
     "fuzzy": "^0.1.3",

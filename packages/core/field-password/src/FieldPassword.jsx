@@ -1,13 +1,13 @@
 // @flow
 
-import React, { Component } from 'react';
-import classNames from 'classnames';
-import zxcvbn from 'zxcvbn';
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import Tooltip from '@uidu/tooltip';
+import classNames from 'classnames';
+import React, { Component } from 'react';
 import { Eye, EyeOff } from 'react-feather';
-
+import zxcvbn from 'zxcvbn';
 import FieldPasswordStateless from './FieldPasswordStateless';
+
 import type { FieldPasswordProps } from './types';
 
 type State = {
@@ -22,6 +22,7 @@ class FieldPassword extends Component<FieldPasswordProps, State> {
     tooltipProps: {
       content: 'Show/Hide password',
     },
+    measurePasswordStrength: true,
     instructions: 'Use at least 8 character. Password strength:',
     passwordStrengths: ['Worst', 'Bad', 'Weak', 'Good', 'Strong'],
     onBlur: () => {},
@@ -34,12 +35,13 @@ class FieldPassword extends Component<FieldPasswordProps, State> {
   };
 
   handleChange = event => {
-    const { onSetValue, onChange, name } = this.props;
+    const { onSetValue, onChange, name, measurePasswordStrength } = this.props;
     const { value } = event.currentTarget;
-    console.log(zxcvbn(value));
-    this.setState({
-      passwordStrength: zxcvbn(value).score,
-    });
+    if (measurePasswordStrength) {
+      this.setState({
+        passwordStrength: zxcvbn(value).score,
+      });
+    }
     onSetValue(value);
     onChange(name, value);
   };
@@ -67,6 +69,7 @@ class FieldPassword extends Component<FieldPasswordProps, State> {
       passwordStrengths,
       instructions,
       tooltipProps,
+      measurePasswordStrength,
     } = this.props;
     const {
       isPasswordVisible,
@@ -96,10 +99,11 @@ class FieldPassword extends Component<FieldPasswordProps, State> {
             </button>
           </Tooltip>
         </div>
-        {showInstructions && (
+        {measurePasswordStrength && showInstructions && (
           <small className="form-text text-muted d-flex align-items-center">
             <span>
-              {instructions} <b>{passwordStrengths[passwordStrength]}</b>
+              {instructions}
+              <b>{passwordStrengths[passwordStrength]}</b>
             </span>
             <div
               className="progress rounded w-25 ml-2"

@@ -16,7 +16,7 @@ export const AVATAR_SIZES: {
   xsmall: gridSizeValue * 2,
   small: gridSizeValue * 3,
   medium: gridSizeValue * 4,
-  large: gridSizeValue * 5,
+  large: gridSizeValue * 6,
   xlarge: gridSizeValue * 12,
   xxlarge: gridSizeValue * 16,
 };
