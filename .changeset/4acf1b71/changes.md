@@ -1,1 +1,0 @@
-- Fix navigation global items on hover, added timeout to show it

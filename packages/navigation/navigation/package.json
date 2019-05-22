@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Downshift React component",
   "uidu:src": "index.ts",
   "module": "index.js",
