@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.11
+- [patch] [a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):
+
+  - Removed unnecessary dependencies to build-utils, fix field-password instructions hide/show, added @uidu/devise package to handle authentication
+
 ## 0.2.10
 - [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
 

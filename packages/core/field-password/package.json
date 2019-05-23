@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-password",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Field Password Component",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -29,7 +29,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
+    "@uidu/build-utils": "^0.1.9",
     "@uidu/button": "^0.1.35",
     "@uidu/docs": "^0.1.25",
     "enzyme": "^3.9.0",

@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.5
+- [patch] [a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):
+
+  - Removed unnecessary dependencies to build-utils, fix field-password instructions hide/show, added @uidu/devise package to handle authentication
+
 ## 0.1.4
 - [patch] [e1e43c0](https://github.org/uidu-org/guidu/commits/e1e43c0):
 

@@ -1,5 +1,10 @@
 # @atlaskit/build-utils
 
+## 0.1.9
+- [patch] [a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):
+
+  - Removed unnecessary dependencies to build-utils, fix field-password instructions hide/show, added @uidu/devise package to handle authentication
+
 ## 0.1.8
 - [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "A component that represents a user",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -22,7 +22,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
+    "@uidu/build-utils": "^0.1.9",
     "@uidu/button": "^0.1.36",
     "@uidu/docs": "^0.1.25",
     "@uidu/field-base": "^0.1.29",
