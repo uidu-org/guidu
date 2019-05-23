@@ -1,5 +1,10 @@
 # @uidu/drawer
 
+## 0.1.10
+- [patch] [fbc04be](https://github.org/uidu-org/guidu/commits/fbc04be):
+
+  - Try fixing styled functions
+
 ## 0.1.9
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 
