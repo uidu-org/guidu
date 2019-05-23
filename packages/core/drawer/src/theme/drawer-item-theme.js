@@ -1,18 +1,14 @@
+import { Background, DrawerTheme, ItemTheme, ScrollBarTheme } from './types';
+import { colors, themed } from '@uidu/theme';
+import {
+  darkDrawerItemActiveBackground,
+  darkDrawerItemHoverBackground,
+  gridSize,
+} from '../constants';
+
+import { convert } from 'chromatism';
 // @flow
 import { itemThemeNamespace } from '@uidu/item';
-import { colors, themed } from '@uidu/theme';
-import { convert } from 'chromatism';
-import {
-  type DrawerTheme,
-  type Background,
-  type ItemTheme,
-  type ScrollBarTheme,
-} from './types';
-import {
-  gridSize,
-  darkDrawerItemHoverBackground,
-  darkDrawerItemActiveBackground,
-} from '../constants';
 
 // These themes are copied over from @uidu/global-navigation to preserve the theming
 // of search and starred drawers.
