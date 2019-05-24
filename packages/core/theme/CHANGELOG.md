@@ -1,5 +1,10 @@
 # @atlaskit/theme
 
+## 0.1.10
+- [patch] [fbc04be](https://github.org/uidu-org/guidu/commits/fbc04be):
+
+  - Try fixing styled functions
+
 ## 0.1.9
 - [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
 
