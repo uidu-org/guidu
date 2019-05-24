@@ -1,8 +1,8 @@
 // @flow
 
-import React, { type Node } from 'react';
-import styled from 'styled-components';
 import { colors, themed, withTheme } from '@uidu/theme';
+import React, { Node } from 'react';
+import styled from 'styled-components';
 import { Theme } from '../theme';
 import type { AppearanceType, SizeType } from '../types';
 

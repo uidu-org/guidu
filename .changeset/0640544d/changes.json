@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/avatar", "type": "patch" },
+    { "name": "@uidu/shell", "type": "patch" }
+  ],
+  "dependents": []
+}
