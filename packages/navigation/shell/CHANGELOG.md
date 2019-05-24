@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.15
+- [patch] [a08131a](https://github.org/uidu-org/guidu/commits/a08131a):
+
+  - Added props to shell
+
 ## 0.1.14
 - [patch] [a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "A component that represents a user",
   "module": "index.js",
   "uidu:src": "src/index.js",
