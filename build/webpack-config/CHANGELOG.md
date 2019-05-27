@@ -1,81 +1,99 @@
 # Change Log
 
 ## 0.1.28
-- [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
+
+- [patch][9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
 
   - Bump dependencies, larger mobile messages, accordion fixes
 
 ## 0.1.27
-- [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
+
+- [patch][bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 
   - Update some styling to tabbar and navigation
 
 ## 0.1.26
-- [patch] [4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
+
+- [patch][4f6e77f](https://github.org/uidu-org/guidu/commits/4f6e77f):
 
   - Bump bolt dependencies
 
 ## 0.1.25
-- [patch] [edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
+
+- [patch][edeeba4](https://github.org/uidu-org/guidu/commits/edeeba4):
 
   - Do not publish on npm if packages do not built - travis. FIX ts error in field-mentions
 
 ## 0.1.24
-- [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
+
+- [patch][93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 
   - Drop CJS from builds, release all packages to update references both in dev and production
 
 ## 0.1.23
-- [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
+
+- [patch][31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
 
   - Release all packages again
-- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+- [patch][7200672](https://github.org/uidu-org/guidu/commits/7200672):
 
   - Release all
 
 ## 0.1.22
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Release all packages
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Removed dist files from git
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Build and publish all packages
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Release all packages to fix those with previuos failed builds
 
 ## 0.1.21
+
 - [patch] :
 
   - Bump dependencies and added shell and navigation components
 
 ## 0.1.20
+
 - [patch] :
 
   - Release Stepper and animatedmenu
 
 ## 0.1.19
+
 - [patch] :
 
   - Big component rewrite, fix bolt dev environmnet"
 
 ## 0.1.18
+
 - [patch] :
 
   - Publish media components, added message 0.1.0
 
 ## 0.1.17
+
 - [patch] :
 
   - Dist folder created
 
 ## 0.1.16
+
 - [patch] :
 
   - Release with build included
+
 - [patch] :
 
   - Released newly created components and moved all atlaskit references to @uidu scope
@@ -87,137 +105,58 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.14](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.13...@uidu/webpack-config@0.1.14) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
 
 ## [0.1.13](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.12...@uidu/webpack-config@0.1.13) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.12](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.11...@uidu/webpack-config@0.1.12) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
 
 ## [0.1.11](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.10...@uidu/webpack-config@0.1.11) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.10](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.9...@uidu/webpack-config@0.1.10) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
 
 ## [0.1.9](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.8...@uidu/webpack-config@0.1.9) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.8](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.7...@uidu/webpack-config@0.1.8) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
 
 ## [0.1.7](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.6...@uidu/webpack-config@0.1.7) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.6](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.4...@uidu/webpack-config@0.1.6) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
 
 ## [0.1.4](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.4...@uidu/webpack-config@0.1.4) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.4](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.3...@uidu/webpack-config@0.1.4) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
 
 ## [0.1.3](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.2...@uidu/webpack-config@0.1.3) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## [0.1.2](https://github.com/uidu-org/guidu/compare/@uidu/webpack-config@0.1.1...@uidu/webpack-config@0.1.2) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
 
-
-
-
-
 ## 0.1.1 (2018-11-10)
 
 **Note:** Version bump only for package @uidu/webpack-config
-
-
-
-
-
-# @atlaskit/webpack-config
-
-## 2.0.4
-- [patch] suppress "export not found" warnings for ts transpiling in webpack [9baa015](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9baa015)
-
-## 2.0.3
-- [patch] Upgrade to webpack 4 [ea8a4bb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ea8a4bb)
-- [patch] Updated dependencies [ea8a4bb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ea8a4bb)
-  - bolt-fs-loader@0.0.1
-
-## 2.0.2
-- [patch] Migrate Profilecard to AKM2 DIR-553 [9bac948](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9bac948)
-
-## 2.0.1
-- [patch] adds environment variable for whether the atlaskit website is running locally, in staging or in production [a04c1c5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a04c1c5)
-
-## 2.0.0
-- [major] Updated website to use iframe to load examples. Example loader now in a separate react app. Webpack config refactored to compile separate example loader, chunking refactored to be more performant with the new website changes. Updated modal-dialog to use new component structure to optionally specify a Body wrapping component. [e1fdfd8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e1fdfd8)

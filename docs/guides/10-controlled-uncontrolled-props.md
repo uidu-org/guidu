@@ -2,8 +2,8 @@
 
 Related reading:
 
-* <https://reactjs.org/docs/uncontrolled-components.html>
-* <https://github.com/treshugart/react-ctrl>
+- <https://reactjs.org/docs/uncontrolled-components.html>
+- <https://github.com/treshugart/react-ctrl>
 
 ## History
 
@@ -16,6 +16,7 @@ It was sort of the hot thing at the time when we made the decision to follow thi
 We've recently been spiking some patterns to be able to give consumers the ability to selectively apply the controlled / uncontrolled pattern to any given piece of state within a component. This means that not only form fields and the `defaultValue` / `value` props get this treatment, all `state` can have corresponding default props (uncontrolled) or props (controlled).
 
 On the component developer's end, the steps are as follows:
+
 1. Expose a default prop for each controlled prop that you wish to also be uncontrolled. The convention for naming is the controlled prop has the
    same name as a key in state and the default prop name is prefixed with `default`. For `value`, this would mean you have a `value` prop and a `defaultValue` prop.
 
@@ -25,6 +26,7 @@ On the component developer's end, the steps are as follows:
      defaultValue: string;
    }
    ```
+
    Note that the flow type for the default prop is required since we're going to be adding a `defaultProps` entry for it.
 
 2. Add the default values for each uncontrolled (default) prop in the static `defaultProps` property of your component.
@@ -37,6 +39,7 @@ On the component developer's end, the steps are as follows:
      ...
    }
    ```
+
 3. Initialise your state with keys for each controlled prop with values sourced from your uncontrolled prop value
 
    ```
@@ -48,6 +51,7 @@ On the component developer's end, the steps are as follows:
      ...
    }
    ```
+
 4. Create a custom `getState` method (or getter) that retrieves your state but with your controlled props merged in as well. This method will then
    be used as the single source of truth and results in controlled props being used if they exist and the uncontrolled state value if not.
 
@@ -62,6 +66,7 @@ On the component developer's end, the steps are as follows:
      ...
    }
    ```
+
 5. Use `this.getState()` everywhere you access state instead of `this.state`.
 
    ```
@@ -76,7 +81,6 @@ On the component developer's end, the steps are as follows:
      }
    ```
 
-
 [react-ctrl](https://github.com/treshugart/react-ctrl) was created to abstract most of these steps away, however, its API isn't stable yet so we have
 gone with the more manual approach for now.
 
@@ -88,7 +92,7 @@ once we've investigated if there's a better abstraction for this pattern.
 In order to get both controlled and uncontrolled behaviour from the `datetime-picker`, we used to have to do:
 
 ```js
-import { DatePicker, DatePickerStateless } from '@atlaskit/datetime-picker';
+import { DatePicker, DatePickerStateless } from '@uidu/datetime-picker';
 
 // Uncontrolled.
 <DatePicker defaultValue="2000-01-01" />
@@ -100,7 +104,7 @@ import { DatePicker, DatePickerStateless } from '@atlaskit/datetime-picker';
 However, now, all we have to do is:
 
 ```js
-import { DatePicker } from '@atlaskit/datetime-picker';
+import { DatePicker } from '@uidu/datetime-picker';
 
 // Uncontrolled.
 <DatePicker defaultValue="2000-01-01" />

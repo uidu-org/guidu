@@ -5,7 +5,7 @@ The Atlaskit theme framework, helpers and the ADG color palette.
 ## Installation
 
 ```sh
-yarn add @atlaskit/theme
+yarn add @uidu/theme
 ```
 
 ## Usage

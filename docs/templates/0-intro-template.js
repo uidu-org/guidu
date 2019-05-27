@@ -1,7 +1,7 @@
 // @flow
 
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { code, md, Example, Props } from '@uidu/docs';
 
 // The core parts of the intro page for your examples documentation are:
 // 1. A summary description
@@ -19,7 +19,7 @@ export default md`
 
   ${/* This code snippet should show all the exports of a component */ ''}
   ${code`
-    import Component, { SubComponent } from '@atlaskit/component';
+    import Component, { SubComponent } from '@uidu/component';
   `}
 
   TODO: Provide the base information that someone needs to render the component

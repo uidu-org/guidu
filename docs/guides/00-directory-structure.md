@@ -2,7 +2,7 @@
 
 Related reading:
 
-* [Component design](./component-design)
+- [Component design](./component-design)
 
 The top-level directory structure for Atlaskit looks like the following diagram:
 
@@ -90,7 +90,7 @@ The `docs` directory houses the docs specific to the respective package. The doc
 
 Like the `docs` directory, the purpose of the `examples` directory is to document behaviour, but in a much more fine-grained fashion. It shows you an example and the code to create the corresponding example.
 
-When not writing unit tests, this is where you'll spend most of your development time when viewing your components as you write your source code. It's preferable that you write your tests first, but you can have both running at the same time so as you make updates, you can see your test output *and* your component output.
+When not writing unit tests, this is where you'll spend most of your development time when viewing your components as you write your source code. It's preferable that you write your tests first, but you can have both running at the same time so as you make updates, you can see your test output _and_ your component output.
 
 ```
 └─ packages
@@ -110,7 +110,7 @@ This is where the NPM packages are kept. Bolt will automatically populate this, 
 Each package's source should contain a similar directory structure. Essentially this rule follows the convention that anything that has a default export must be `CamelCapped` or `camelCased`. Everything else is `dash-cased`. This rule is expanded into the following that goes into greater detail about how certain things in the structure should look (i.e. styled-components / tests).
 
 1. There must always be an `index.js` that exports your public API.
-2. Each file that has a default export, must *only* have a default export - no named exports. This simplifies the heuristics to determine a name for the file.
+2. Each file that has a default export, must _only_ have a default export - no named exports. This simplifies the heuristics to determine a name for the file.
 3. The file name should be the name of the export. For example, if `Avatar` is a default export for a file, the file name should be `Avatar.js`. For a HoC, this might look something like `withAvatar`.
 4. In lieu of a file, you may use a directory with an `index.js` file. For example, `Avatar/index.js`.
 5. Styled components should go in a `styled.js` file, or you can use a `styled/index.js` file that exports sibling files with default exports that conform to #3 or #4. This should also follow something similar to #6 and have this for every level of components.
@@ -145,7 +145,7 @@ Your structure may look something like this:
 
 The key difference between the file and directory forms (i.e. `styled.js` vs `styled/index.js`) is how complex your component becomes. What matters here is that consistency is still very close and your imports do not change.
 
-_The rules listed above are exhaustive. Anything outside of them are not supported. This includes things like leading underscores (_filename.js), underscored names (file_name.js) and dotted names (file.name.js)._
+_The rules listed above are exhaustive. Anything outside of them are not supported. This includes things like leading underscores (\_filename.js), underscored names (file_name.js) and dotted names (file.name.js)._
 
 #### `CHANGELOG.md`
 
@@ -169,7 +169,7 @@ The `README.md` file contains a introduction for each package.
 
 ## Patterns
 
-The `patterns` directory is a single package that houses all of our overarching component patterns. For example, this may contain a rough implementation of `@atlaskit/navigation` for Jira.
+The `patterns` directory is a single package that houses all of our overarching component patterns. For example, this may contain a rough implementation of `@uidu/navigation` for Jira.
 
 ## Releases
 

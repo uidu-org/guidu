@@ -2,7 +2,7 @@
 
 Related reading:
 
-* [Releasing packages](./releasing-packages)
+- [Releasing packages](./releasing-packages)
 
 > All components must follow [Semver](http://semver.org/). For new components they should start in what's called "dev releases" at 0.0.0. While a component is in dev releases, it is considered unstable and not bound by normal Semver rules for versions above the first major release (1.0.0).
 
@@ -24,7 +24,7 @@ This not only gives consumers an insight to a component's API and functionality,
 
 Versions do matter. If we release something at 1.0 and say we follow Semver, it tells consumers that this API is ready for prime time. If we realise we made some mistakes and have to reiterate them, it may cause some breaking changes. Using dev releases here gives us a grace period where we can harden a component while a consumer uses it. We will always have early adopters and later adopters. Let's leverage the former to help the latter.
 
-*A version should specifically outline the overall stability of the component and where it's at in its greater evolutionary lifecycle.*
+_A version should specifically outline the overall stability of the component and where it's at in its greater evolutionary lifecycle._
 
 ### Striking a balance
 
@@ -39,26 +39,33 @@ It's important to strike a balance here because the more contributions we get, t
 Some examples of what would fall under the abstract semver umbrella:
 
 1. **MAJOR** version when
-  - Change named exports exposed via the main entry point.
-  - Changing and renaming public props.
-  - Making a public prop more restrictive in what it accepts.
-  - Change named exports exposed via the main entry point.
-  - Icon sizes changing.
-  - Changes in CSS that can affect layout outside of a component. For example, changing display property from flex to block and vice-versa.
-  - Upgrade peer dependencies.
-  - You've made a visual change in a component that could affect someone using the public API. Box sizing could affect positioning, or child content. The value of a predefined prop like `size="xlarge"` could fall into this. These are addressed on a component-by-component basis.
+
+- Change named exports exposed via the main entry point.
+- Changing and renaming public props.
+- Making a public prop more restrictive in what it accepts.
+- Change named exports exposed via the main entry point.
+- Icon sizes changing.
+- Changes in CSS that can affect layout outside of a component. For example, changing display property from flex to block and vice-versa.
+- Upgrade peer dependencies.
+- You've made a visual change in a component that could affect someone using the public API. Box sizing could affect positioning, or child content. The value of a predefined prop like `size="xlarge"` could fall into this. These are addressed on a component-by-component basis.
+
 2. **MINOR** version when
-  - Anything that has a leading underscore.
-  - Anything inside render(). This includes elements, attributes and classes. For example, add / removing attributes or changing text content. Some integration tests may be relying on this, but it's still not a breaking change. It won't break you in production if you're using caret versions from NPM. It'll break your tests, but you'll update those prior to releasing anything. *We'll do our best to notify products of changes like this.*
+
+- Anything that has a leading underscore.
+- Anything inside render(). This includes elements, attributes and classes. For example, add / removing attributes or changing text content. Some integration tests may be relying on this, but it's still not a breaking change. It won't break you in production if you're using caret versions from NPM. It'll break your tests, but you'll update those prior to releasing anything. _We'll do our best to notify products of changes like this._
+
 3. **PATCH** version when
-  - update package dependencies
-  - Directory structure changes
-    - Reworking our directory structure. We offer a `dist/esm` build where the module field in the `package.json` points to the entry point within that folder. There should be no reason to reach into packages.
+
+- update package dependencies
+- Directory structure changes
+  - Reworking our directory structure. We offer a `dist/esm` build where the module field in the `package.json` points to the entry point within that folder. There should be no reason to reach into packages.
+
 4. **NO RELEASE** when
-  - Update dev dependencies (including `flow-bin`)
-  - Add tests or examples
-  - Update examples
-  - Update internal documentation
+
+- Update dev dependencies (including `flow-bin`)
+- Add tests or examples
+- Update examples
+- Update internal documentation
 
 ## Flow and our public API
 
@@ -68,8 +75,8 @@ If types informed version numbers of a public API, it's very likely that we woul
 
 For this reason:
 
-* Updating `flow-bin` should not trigger a release unless you have to update types for certain components.
-* Updating Flow types within a component should trigger a release of the appropriate type and be called out in the changelogs.
+- Updating `flow-bin` should not trigger a release unless you have to update types for certain components.
+- Updating Flow types within a component should trigger a release of the appropriate type and be called out in the changelogs.
 
 If you were to change the return type of a function in your public API, this alone should does not mean you are releasing a major version. The fact that you are expecting a different type of value does, even if no code change is required. Most times, an update to your types will correspond to an update in your code, or your expected public API.
 
@@ -114,10 +121,10 @@ If there is an alternative package, then documenting it would also be a good ide
 
 > This package is deprecated and will be supported until [insert date]. We recommend using [x package] instead.
 
-Use @atlaskit/section-message component with appearence set to "error" in order to make the deprecation notice
+Use @uidu/section-message component with appearence set to "error" in order to make the deprecation notice
 visible in the component docs.
 
-You can see examples of deprecation notices using SectionMessage in @atlaskit/single-select component docs.
+You can see examples of deprecation notices using SectionMessage in @uidu/single-select component docs.
 
 #### Run `npm deprecate`
 
