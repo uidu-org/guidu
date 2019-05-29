@@ -1,18 +1,18 @@
-import * as React from 'react';
-import { Component } from 'react';
+import Slider from '@uidu/field-range';
+import { Identifier } from '@uidu/media-core';
 import {
   createStorybookContext,
   genericFileId,
 } from '@uidu/media-test-helpers';
 import Toggle from '@uidu/toggle';
-import Slider from '@atlaskit/field-range';
-import { Identifier } from '@uidu/media-core';
-import { Card, CardDimensions } from '../src';
-import { CardDimensionsWrapper } from '../example-helpers/styled';
+import * as React from 'react';
+import { Component } from 'react';
 import {
-  EditableCardOptions,
+  CardDimensionsWrapper,
   EditableCardContent,
+  EditableCardOptions,
 } from '../example-helpers/styled';
+import { Card, CardDimensions } from '../src';
 
 const context = createStorybookContext();
 

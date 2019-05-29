@@ -1,14 +1,13 @@
 // @flow
-import React from 'react';
+import Blanket from '@uidu/blanket';
 import { mount } from 'enzyme';
-import Blanket from '@atlaskit/blanket';
-
+import React from 'react';
 import ModalDialog, { ModalTransition } from '../../..';
-import { Positioner } from '../../Modal';
+import { Dialog, dialogHeight, dialogWidth } from '../../../styled/Modal';
 import Content from '../../Content';
-import Header from '../../Header';
 import Footer from '../../Footer';
-import { dialogHeight, dialogWidth, Dialog } from '../../../styled/Modal';
+import Header from '../../Header';
+import { Positioner } from '../../Modal';
 
 jest.mock('raf-schd', () => fn => fn);
 

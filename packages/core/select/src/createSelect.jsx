@@ -1,13 +1,12 @@
 // @flow
-import React, { Component, type ComponentType, type ElementRef } from 'react';
-import { mergeStyles, makeAnimated } from 'react-select';
-import memoizeOne from 'memoize-one';
-import isEqual from 'react-fast-compare';
-import { colors, gridSize } from '@uidu/theme';
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
-
+import { colors } from '@uidu/theme';
+import memoizeOne from 'memoize-one';
+import React, { Component, ComponentType, ElementRef } from 'react';
+import isEqual from 'react-fast-compare';
+import { mergeStyles } from 'react-select';
+import makeAnimated from 'react-select/animated';
 import * as defaultComponents from './components';
-
 // NOTE in the future, `Props` and `defaultProps` should come
 // directly from react-select
 

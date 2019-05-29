@@ -19,6 +19,7 @@
     "@uidu/build-utils": "^0.1.7",
     "@uidu/button": "^0.1.35",
     "@uidu/docs": "^0.1.25",
+    "@uidu/field-range": "^0.1.8",
     "@uidu/media-core": "^0.1.8",
     "@uidu/media-test-helpers": "^0.1.11",
     "@uidu/media-ui": "^0.1.10",

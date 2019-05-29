@@ -24,6 +24,7 @@
     "@uidu/checkbox": "^0.1.41",
     "@uidu/docs": "^0.1.25",
     "@uidu/dropdown-menu": "^0.1.8",
+    "@uidu/field-range": "^0.1.8",
     "@uidu/field-text": "^0.1.11",
     "@uidu/media-card": "^0.1.9",
     "@uidu/media-core": "^0.1.8",

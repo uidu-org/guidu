@@ -1,33 +1,33 @@
 declare var global: any; // we need define an interface for the Node global object when overwriting global objects, in this case FileReader
-import * as util from '../../util';
-const fileSizeMbSpy = jest.spyOn(util, 'fileSizeMb');
-import * as React from 'react';
-import Spinner  from '@uidu/spinner';
 import Button from '@uidu/button';
-import { Ellipsify, Camera, Rectangle } from '@uidu/media-ui';
+import Slider from '@uidu/field-range';
+import {
+  createMouseEvent,
+  mountWithIntlContext,
+  smallImage,
+} from '@uidu/media-test-helpers';
+import { Camera, Ellipsify, Rectangle } from '@uidu/media-ui';
+import Spinner from '@uidu/spinner';
+import { ReactWrapper } from 'enzyme';
+import * as React from 'react';
+import { MAX_SIZE_MB } from '../../avatar-picker-dialog';
+import { ImageCropper } from '../../image-cropper';
 import ImageNavigator, {
-  ImageNavigator as ImageNavigatorView,
-  CONTAINER_INNER_SIZE,
   containerRect,
+  CONTAINER_INNER_SIZE,
+  ImageNavigator as ImageNavigatorView,
   Props as ImageNavigatorProps,
 } from '../../image-navigator';
-import { MAX_SIZE_MB } from '../../avatar-picker-dialog';
+import { errorIcon } from '../../image-navigator/images';
 import {
-  ImageUploader,
   DragZone,
   DragZoneImage,
   DragZoneText,
+  ImageUploader,
   PaddedBreak,
 } from '../../image-navigator/styled';
-import { ImageCropper } from '../../image-cropper';
-import Slider from '@atlaskit/field-range';
-import {
-  createMouseEvent,
-  smallImage,
-  mountWithIntlContext,
-} from '@uidu/media-test-helpers';
-import { errorIcon } from '../../image-navigator/images';
-import { ReactWrapper } from 'enzyme';
+import * as util from '../../util';
+const fileSizeMbSpy = jest.spyOn(util, 'fileSizeMb');
 
 describe('Image navigator', () => {
   let component: any;

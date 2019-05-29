@@ -807,10 +807,6 @@
         "../../navigation/tabbar/src/index",
         "./packages/navigation/tabbar/src/index"
       ],
-      "@atlaskit/analytics-next": [
-        "node_modules/@atlaskit/analytics-next-types",
-        "packages/elements/analytics-next-types"
-      ]
     }
   }
 }

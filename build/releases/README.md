@@ -60,14 +60,14 @@ The information in the `changes.json` will look like:
 ```json
 {
   "releases": [
-    { "name": "@atlaskit/analytics-listeners", "type": "major" },
-    { "name": "@atlaskit/website", "type": "patch" }
+    { "name": "@uidu/analytics-listeners", "type": "major" },
+    { "name": "@uidu/website", "type": "patch" }
   ],
   "dependents": [
     {
-      "name": "@atlaskit/global-navigation",
+      "name": "@uidu/global-navigation",
       "type": "patch",
-      "dependencies": ["@atlaskit/analytics-listeners"]
+      "dependencies": ["@uidu/analytics-listeners"]
     }
   ]
 }
@@ -99,8 +99,8 @@ Example of commit message:
 RELEASING: Releasing 2 package(s)
 
 Releases:
-  @atlaskit/icon@13.3.0
-  @atlaskit/reduced-ui-pack@9.2.0
+  @uidu/icon@13.3.0
+  @uidu/reduced-ui-pack@9.2.0
 
 Dependents:
   []
@@ -109,7 +109,7 @@ Deleted:
   []
 
 ---
-{"releases":[{"name":"@atlaskit/icon","commits":["d36f760","7cf05b3"],"version":"13.3.0"},{"name":"@atlaskit/reduced-ui-pack","commits":["d36f760","365460a"],"version":"9.2.0"}],"changesets":[{"commit":"d36f760","summary":"Add new icon"},{"commit":"365460a","summary":"Add new icon for Roadmap"},{"commit":"7cf05b3","summary":"Add new icon for Roadmap"}]}
+{"releases":[{"name":"@uidu/icon","commits":["d36f760","7cf05b3"],"version":"13.3.0"},{"name":"@uidu/reduced-ui-pack","commits":["d36f760","365460a"],"version":"9.2.0"}],"changesets":[{"commit":"d36f760","summary":"Add new icon"},{"commit":"365460a","summary":"Add new icon for Roadmap"},{"commit":"7cf05b3","summary":"Add new icon for Roadmap"}]}
 ---
 
 [skip ci]

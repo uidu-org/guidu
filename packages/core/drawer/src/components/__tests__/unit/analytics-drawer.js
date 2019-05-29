@@ -1,14 +1,13 @@
 // @flow
-import React from 'react';
-import { mount } from 'enzyme';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
 import Blanket from '@uidu/blanket';
-import ArrowLeft from '@atlaskit/icon/glyph/arrow-left';
-
+import { mount } from 'enzyme';
+import React from 'react';
+import { ArrowLeft } from 'react-feather';
 import {
   name as packageName,
   version as packageVersion,

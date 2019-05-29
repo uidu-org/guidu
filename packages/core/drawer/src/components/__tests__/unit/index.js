@@ -1,10 +1,9 @@
 // @flow
 
-import React from 'react';
-import { mount } from 'enzyme';
 import Blanket from '@uidu/blanket';
-import EmojiIcon from '@atlaskit/icon/glyph/emoji';
-
+import { mount } from 'enzyme';
+import React from 'react';
+import { Smile } from 'react-feather';
 import Drawer from '../../index';
 import DrawerPrimitive from '../../primitives';
 
@@ -153,7 +152,7 @@ describe('Drawer Transitions', () => {
   it('should call onClose when custom back button is clicked', () => {
     const onClose = jest.fn();
     const wrapper = mount(
-      <Drawer isOpen icon={EmojiIcon} onClose={onClose} width="wide">
+      <Drawer isOpen icon={Smile} onClose={onClose} width="wide">
         <code>Drawer contents</code>
       </Drawer>,
     );

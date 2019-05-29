@@ -1,29 +1,26 @@
 jest.mock('../../../src/utils/getDataURIFromFileState');
-import { Observable, ReplaySubject } from 'rxjs';
-import * as React from 'react';
-import { shallow, mount } from 'enzyme';
-import { fakeContext, nextTick } from '@uidu/media-test-helpers';
-import {
-  Context,
-  FileState,
-  FileDetails,
-  FileIdentifier,
-  ExternalImageIdentifier,
-} from '@uidu/media-core';
 import { AnalyticsListener } from '@atlaskit/analytics-next';
 import { UIAnalyticsEventInterface } from '@atlaskit/analytics-next-types';
-import { CardAction, CardProps, CardDimensions } from '../../../src';
-
-import { CardView } from '../../../src/root/cardView';
-
-import { Card } from '../../../src/root/card';
-
-import { LazyContent } from '../../../src/utils/lazyContent';
 import {
-  getDataURIFromFileState,
-  FilePreview,
-} from '../../../src/utils/getDataURIFromFileState';
+  Context,
+  ExternalImageIdentifier,
+  FileDetails,
+  FileIdentifier,
+  FileState,
+} from '@uidu/media-core';
+import { fakeContext, nextTick } from '@uidu/media-test-helpers';
+import { mount, shallow } from 'enzyme';
+import * as React from 'react';
+import { Observable, ReplaySubject } from 'rxjs';
+import { CardAction, CardDimensions, CardProps } from '../../../src';
+import { Card } from '../../../src/root/card';
+import { CardView } from '../../../src/root/cardView';
 import { InlinePlayer } from '../../../src/root/inlinePlayer';
+import {
+  FilePreview,
+  getDataURIFromFileState,
+} from '../../../src/utils/getDataURIFromFileState';
+import { LazyContent } from '../../../src/utils/lazyContent';
 
 describe('Card', () => {
   const fileIdentifier: FileIdentifier = {
@@ -345,7 +342,7 @@ describe('Card', () => {
         actionSubject: 'MediaCard',
         actionSubjectId: 'some-random-id',
         componentName: 'Card',
-        packageName: '@atlaskit/media-card',
+        packageName: '@uidu/media-card',
       }),
     );
   });

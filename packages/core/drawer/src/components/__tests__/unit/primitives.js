@@ -1,9 +1,8 @@
 // @flow
 
-import React from 'react';
 import { mount, shallow } from 'enzyme';
-import ArrowLeft from '@atlaskit/icon/glyph/arrow-left';
-
+import React from 'react';
+import { ArrowLeft } from 'react-feather';
 import DrawerPrimitive from '../../primitives';
 import { Slide } from '../../transitions';
 

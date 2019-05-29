@@ -29,7 +29,7 @@ const constants = [
   'assistive',
 ];
 
-const akTheme = '@atlaskit/theme';
+const akTheme = '@uidu/theme';
 
 const constantsPredicate = specifier =>
   !specifier ||

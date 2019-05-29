@@ -53,7 +53,7 @@ module.exports = async function boltNavLoader() {
         {
           name: 'analytics',
           team: 'elements',
-          config: { name: '@atlaskit/analytics', version: '2.5.0' },
+          config: { name: '@uidu/analytics', version: '2.5.0' },
         }
       ]
     }

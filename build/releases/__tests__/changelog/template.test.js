@@ -7,7 +7,7 @@ describe('template', () => {
     const input = {
       releases: [
         {
-          name: '@atlaskit/badge',
+          name: '@uidu/badge',
           version: '1.0.0',
           commits: ['496287c'],
         },
@@ -18,7 +18,7 @@ describe('template', () => {
           commit: '496287c',
           releases: [
             {
-              name: '@atlaskit/badge',
+              name: '@uidu/badge',
               type: 'patch',
             },
           ],
@@ -44,12 +44,12 @@ describe('template', () => {
     const input = {
       releases: [
         {
-          name: '@atlaskit/badge',
+          name: '@uidu/badge',
           version: '1.0.0',
           commits: ['496287c'],
         },
         {
-          name: '@atlaskit/code',
+          name: '@uidu/code',
           version: '1.0.1',
           commits: ['496287c'],
         },
@@ -61,15 +61,15 @@ describe('template', () => {
           commit: '496287c',
           releases: [
             {
-              name: '@atlaskit/badge',
+              name: '@uidu/badge',
               type: 'patch',
             },
           ],
           dependents: [
             {
-              name: '@atlaskit/code',
+              name: '@uidu/code',
               type: 'minor',
-              dependencies: ['@atlaskit/badge'],
+              dependencies: ['@uidu/badge'],
             },
           ],
         },
@@ -84,14 +84,14 @@ describe('template', () => {
     const expectedOutput2 = outdent`
       ## 1.0.1
       - Updated dependencies [496287c]:
-        - @atlaskit/badge@1.0.0`;
+        - @uidu/badge@1.0.0`;
     expect(output).toBe(expectedOutput2);
   });
   it('should work with custom getReleaseLine', async () => {
     const input = {
       releases: [
         {
-          name: '@atlaskit/badge',
+          name: '@uidu/badge',
           version: '1.0.0',
           commits: ['496287c'],
         },
@@ -102,7 +102,7 @@ describe('template', () => {
           commit: '496287c',
           releases: [
             {
-              name: '@atlaskit/badge',
+              name: '@uidu/badge',
               type: 'patch',
             },
           ],
@@ -126,12 +126,12 @@ describe('template', () => {
     const input = {
       releases: [
         {
-          name: '@atlaskit/badge',
+          name: '@uidu/badge',
           version: '1.0.0',
           commits: ['496287c'],
         },
         {
-          name: '@atlaskit/code',
+          name: '@uidu/code',
           version: '1.0.1',
           commits: ['496287c'],
         },
@@ -143,15 +143,15 @@ describe('template', () => {
           commit: '496287c',
           releases: [
             {
-              name: '@atlaskit/badge',
+              name: '@uidu/badge',
               type: 'patch',
             },
           ],
           dependents: [
             {
-              name: '@atlaskit/code',
+              name: '@uidu/code',
               type: 'minor',
-              dependencies: ['@atlaskit/badge'],
+              dependencies: ['@uidu/badge'],
             },
           ],
         },

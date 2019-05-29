@@ -1,19 +1,19 @@
 // @flow
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
-} from '@atlaskit/analytics-next';
+  withAnalyticsContext,
+  withAnalyticsEvents,
+} from '@uidu/analytics';
+import '../../components/Droplist';
 import {
   name as packageName,
   version as packageVersion,
 } from '../../version.json';
-import '../../components/Droplist';
 
 // This is a global mock for this file that will mock all components wrapped with analytics
 // and replace them with an empty SFC that returns null. This includes components imported
 // directly in this file and others imported as dependencies of those imports.
-jest.mock('@atlaskit/analytics-next', () => ({
+jest.mock('@uidu/analytics', () => ({
   withAnalyticsEvents: jest.fn(() => jest.fn(() => () => null)),
   withAnalyticsContext: jest.fn(() => jest.fn(() => () => null)),
   createAndFireEvent: jest.fn(() => jest.fn(args => args)),

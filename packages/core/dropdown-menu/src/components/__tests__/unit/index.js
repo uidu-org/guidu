@@ -1,19 +1,15 @@
 // @flow
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Droplist from '@uidu/droplist';
 import Button, { defaultProps as defaultButtonProps } from '@uidu/button';
-import MoreIcon from '@atlaskit/icon/glyph/more';
-import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-
-import Menu, {
-  DropdownItem,
-  DropdownItemCheckbox,
-  DropdownItemGroup,
-  DropdownItemGroupCheckbox,
-} from '../../..';
-import { KEY_SPACE, KEY_ENTER, KEY_DOWN, KEY_ESC } from '../../../util/keys';
+import Droplist from '@uidu/droplist';
+import { mount, shallow } from 'enzyme';
+import React from 'react';
+import {
+  Maximize2 as ExpandIcon,
+  MoreVertical as MoreIcon,
+} from 'react-feather';
+import Menu, { DropdownItem, DropdownItemGroup } from '../../..';
+import { KEY_DOWN, KEY_ENTER, KEY_ESC, KEY_SPACE } from '../../../util/keys';
 
 const itemsList = (
   <DropdownItemGroup title="test1" elemAfter="AK-1234">

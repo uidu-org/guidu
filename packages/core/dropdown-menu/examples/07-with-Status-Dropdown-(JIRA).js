@@ -1,10 +1,10 @@
 // @flow
 
-import React from 'react';
-import styled from 'styled-components';
 import Lozenge from '@uidu/lozenge';
-import Arrow from '@atlaskit/icon/glyph/arrow-right';
-import DropdownMenu, { DropdownItemGroup, DropdownItem } from '../src';
+import React from 'react';
+import { ArrowRight } from 'react-feather';
+import styled from 'styled-components';
+import DropdownMenu, { DropdownItem, DropdownItemGroup } from '../src';
 
 const JiraItem = styled.div`
   align-items: center;
@@ -26,7 +26,7 @@ export default () => (
       <DropdownItem
         elemAfter={
           <JiraItem>
-            <Arrow label="" size="small" />
+            <ArrowRight label="" size="small" />
             <Lozenge appearance="inprogress">in progress</Lozenge>
           </JiraItem>
         }
@@ -36,7 +36,7 @@ export default () => (
       <DropdownItem
         elemAfter={
           <JiraItem>
-            <Arrow label="" size="small" />
+            <ArrowRight label="" size="small" />
             <Lozenge appearance="success">Done</Lozenge>
           </JiraItem>
         }

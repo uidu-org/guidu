@@ -1,30 +1,27 @@
 // @flow
-import React, { Component } from 'react';
-import { canUseDOM } from 'exenv';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
-import Blanket from '@atlaskit/blanket';
-
+import Blanket from '@uidu/blanket';
+import { canUseDOM } from 'exenv';
+import React, { Component } from 'react';
+import { WIDTH_ENUM } from '../shared-variables';
+import {
+  Dialog,
+  FillScreen as StyledFillScreen,
+  PositionerAbsolute,
+  PositionerRelative,
+} from '../styled/Modal';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
-
-import { WIDTH_ENUM } from '../shared-variables';
-
-import {
-  PositionerAbsolute,
-  PositionerRelative,
-  Dialog,
-  FillScreen as StyledFillScreen,
-} from '../styled/Modal';
 import { Animation } from './Animation';
 import Content from './Content';
 import FocusLock from './FocusLock';
-import { type Props as OuterProps } from './ModalWrapper';
+import { Props as OuterProps } from './ModalWrapper';
 
 export const Positioner = ({
   scrollBehavior,

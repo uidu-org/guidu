@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { CardProps } from '../..';
 import { CardLoading } from '../../utils/cardLoading';
 import { Card as CardType } from './index';
-import { CardProps } from '../..';
 
 interface AsyncCardProps {
   Card?: typeof CardType;
@@ -20,8 +20,10 @@ export default class Card extends React.PureComponent<
 
   componentWillMount() {
     if (!this.state.Card) {
-      import(/* webpackChunkName:"@atlaskit-internal_Card" */
-      './index').then(module => {
+      import(
+        /* webpackChunkName:"@uidu-internal_Card" */
+        './index'
+      ).then(module => {
         Card.Card = module.Card;
         this.setState({ Card: module.Card });
       });

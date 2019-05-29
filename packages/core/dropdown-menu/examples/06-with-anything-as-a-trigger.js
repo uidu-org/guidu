@@ -1,10 +1,10 @@
 // @flow
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 
-import React from 'react';
 import Avatar from '@uidu/avatar';
-import Question from '@atlaskit/icon/glyph/question';
-import Dropdown, { DropdownItemGroup, DropdownItem } from '../src';
+import React from 'react';
+import { HelpCircle } from 'react-feather';
+import Dropdown, { DropdownItem, DropdownItemGroup } from '../src';
 
 const getDropDownData = () => (
   <DropdownItemGroup title="Heading">
@@ -39,7 +39,7 @@ export default () => (
     <Dropdown
       trigger={
         <span tabIndex="0">
-          <Question label="dropdown`s trigger" />
+          <HelpCircle label="dropdown`s trigger" />
         </span>
       }
     >

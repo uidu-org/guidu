@@ -1,12 +1,12 @@
 // @flow
 
+import { mount, shallow } from 'enzyme';
 import React from 'react';
-import { shallow, mount } from 'enzyme';
 import { toClass } from 'recompose';
-
 import Item, { itemThemeNamespace } from '../../..';
-import { name } from '../../../version.json';
 import { After, Before, Content, Description } from '../../../styled/ItemParts';
+import { name } from '../../../version.json';
+
 
 describe(`${name} - Item`, () => {
   describe('root element type', () => {
@@ -478,7 +478,7 @@ describe(`${name} - Item`, () => {
 
   describe('theme exports', () => {
     it('should export a named itemThemeNamespace string', () => {
-      expect(itemThemeNamespace).toBe('@atlaskit-shared-theme/item');
+      expect(itemThemeNamespace).toBe('@uidu-shared-theme/item');
     });
   });
 });

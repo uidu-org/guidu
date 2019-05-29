@@ -1,41 +1,41 @@
+import ScaleLargeIcon from '@atlaskit/icon/glyph/media-services/scale-large';
+import ScaleSmallIcon from '@atlaskit/icon/glyph/media-services/scale-small';
+import Button from '@uidu/button';
+import Slider from '@uidu/field-range';
+import {
+  Camera,
+  Ellipsify,
+  messages,
+  Rectangle,
+  Vector2,
+} from '@uidu/media-ui';
+import Spinner from '@uidu/spinner';
+import { gridSize } from '@uidu/theme';
+import * as exenv from 'exenv';
 import * as React from 'react';
 import { Component } from 'react';
 import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
-import { gridSize } from '@uidu/theme';
-import Button from '@uidu/button';
-import ScaleLargeIcon from '@atlaskit/icon/glyph/media-services/scale-large';
-import ScaleSmallIcon from '@atlaskit/icon/glyph/media-services/scale-small';
-import ImageCropper, { OnLoadHandler } from '../image-cropper';
-import Slider from '@atlaskit/field-range';
-import Spinner from '@uidu/spinner';
+import { ACCEPT, ERROR, MAX_SIZE_MB } from '../avatar-picker-dialog';
 import {
-  Ellipsify,
-  Camera,
-  Rectangle,
-  Vector2,
-  messages,
-} from '@uidu/media-ui';
-import * as exenv from 'exenv';
+  constrainEdges,
+  constrainPos,
+  constrainScale,
+} from '../constraint-util';
+import ImageCropper, { OnLoadHandler } from '../image-cropper';
+import { dataURItoFile, fileSizeMb } from '../util';
+import { errorIcon, uploadPlaceholder } from './images';
 import {
   Container,
-  SliderContainer,
-  FileInput,
-  ImageUploader,
   DragZone,
   DragZoneImage,
   DragZoneText,
-  SelectionBlocker,
-  PaddedBreak,
+  FileInput,
   ImageBg,
+  ImageUploader,
+  PaddedBreak,
+  SelectionBlocker,
+  SliderContainer,
 } from './styled';
-import { uploadPlaceholder, errorIcon } from './images';
-import {
-  constrainPos,
-  constrainScale,
-  constrainEdges,
-} from '../constraint-util';
-import { dataURItoFile, fileSizeMb } from '../util';
-import { ERROR, MAX_SIZE_MB, ACCEPT } from '../avatar-picker-dialog';
 
 export const CONTAINER_SIZE = gridSize() * 32;
 export const CONTAINER_INNER_SIZE = gridSize() * 25;

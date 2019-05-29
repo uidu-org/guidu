@@ -1,41 +1,41 @@
 /* tslint:disable:no-console */
 
-import * as React from 'react';
-import { Component } from 'react';
 import FieldRadioGroup from '@atlaskit/field-radio-group';
+import Slider from '@uidu/field-range';
+import { ImageResizeMode, MediaItemType } from '@uidu/media-core';
 import {
-  videoFileDetails,
-  imageFileDetails,
   audioFileDetails,
   docFileDetails,
-  unknownFileDetails,
+  imageFileDetails,
   smallImage,
   smallTransparentImage,
   tallImage,
+  unknownFileDetails,
+  videoFileDetails,
   wideImage,
   wideTransparentImage,
 } from '@uidu/media-test-helpers';
-import { ImageResizeMode, MediaItemType } from '@uidu/media-core';
 import Toggle from '@uidu/toggle';
-import Slider from '@atlaskit/field-range';
 import * as exenv from 'exenv';
-import { CardView } from '../src/root/cardView';
-import { CardAppearance, CardStatus, CardDimensions, CardAction } from '../src';
+import * as React from 'react';
+import { Component } from 'react';
 import {
-  openAction,
+  actions,
   closeAction,
   deleteAction,
-  actions,
+  openAction,
 } from '../example-helpers';
 import {
-  EditableCardOptions,
-  EditableCardContent,
-  SliderWrapper,
-  OptionsWrapper,
   CardDimensionsWrapper,
-  MainWrapper,
   CardPreviewWrapper,
+  EditableCardContent,
+  EditableCardOptions,
+  MainWrapper,
+  OptionsWrapper,
+  SliderWrapper,
 } from '../example-helpers/styled';
+import { CardAction, CardAppearance, CardDimensions, CardStatus } from '../src';
+import { CardView } from '../src/root/cardView';
 import { defaultImageCardDimensions } from '../src/utils/cardDimensions';
 
 const appearanceOptions = [

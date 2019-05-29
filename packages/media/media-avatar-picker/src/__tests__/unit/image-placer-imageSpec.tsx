@@ -1,19 +1,18 @@
-import * as React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { ImageWrapper } from '../../image-placer/styled';
-
-// mock @atlaskit/media-ui::mockIsImageRemote() ...
-const mockIsImageRemote = jest.fn();
-jest.mock('@atlaskit/media-core', () => ({
-  isImageRemote: mockIsImageRemote,
-}));
-
+import * as React from 'react';
 // ...before importing Image
 import {
   ImagePlacerImage,
   ImagePlacerImageProps,
   IMAGE_ERRORS,
 } from '../../image-placer/image';
+import { ImageWrapper } from '../../image-placer/styled';
+
+// mock @uidu/media-ui::mockIsImageRemote() ...
+const mockIsImageRemote = jest.fn();
+jest.mock('@uidu/media-core', () => ({
+  isImageRemote: mockIsImageRemote,
+}));
 
 interface SetupInfo {
   wrapper: ShallowWrapper;

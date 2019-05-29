@@ -1,31 +1,31 @@
+import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
+import {
+  BlockCardErroredView,
+  BlockCardForbiddenView,
+  BlockCardResolvedView,
+  BlockCardResolvingView,
+  BlockCardUnauthorisedView,
+  CardLinkView,
+  InlineCardErroredView,
+  InlineCardForbiddenView,
+  InlineCardResolvedView,
+  InlineCardResolvingView,
+  InlineCardUnauthorizedView,
+} from '@uidu/media-ui';
 import * as React from 'react';
 import LazyRender from 'react-lazily-render';
 import {
-  CardLinkView,
-  BlockCardResolvingView,
-  BlockCardErroredView,
-  BlockCardUnauthorisedView,
-  BlockCardForbiddenView,
-  BlockCardResolvedView,
-  InlineCardResolvedView,
-  InlineCardResolvingView,
-  InlineCardErroredView,
-  InlineCardForbiddenView,
-  InlineCardUnauthorizedView,
-} from '@uidu/media-ui';
-import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
-import { ObjectState, Client } from '../Client';
-import { extractBlockPropsFromJSONLD } from '../extractBlockPropsFromJSONLD';
-import { extractInlinePropsFromJSONLD } from '../extractInlinePropsFromJSONLD';
-import { DefinedState } from '../Client/types';
-import { CardAppearance } from './types';
-import { WithObject } from '../WithObject';
-import {
+  ANALYTICS_CHANNEL,
   connectFailedEvent,
   connectSucceededEvent,
   trackAppAccountConnected,
-  ANALYTICS_CHANNEL,
 } from '../analytics';
+import { Client, ObjectState } from '../Client';
+import { DefinedState } from '../Client/types';
+import { extractBlockPropsFromJSONLD } from '../extractBlockPropsFromJSONLD';
+import { extractInlinePropsFromJSONLD } from '../extractInlinePropsFromJSONLD';
+import { WithObject } from '../WithObject';
+import { CardAppearance } from './types';
 
 const getCollapsedIcon = (state: DefinedState): string | undefined => {
   const { data } = state;

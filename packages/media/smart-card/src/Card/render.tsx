@@ -1,10 +1,10 @@
-import * as React from 'react';
 import { WithAnalyticsEventProps } from '@atlaskit/analytics-next-types';
-import { CardProps, CardWithData, CardWithUrl } from './types';
-import { CardWithUrlContent as CardWithUrlContentType } from './renderCardWithUrl';
-import { CardWithDataContent as CardWithDataContentType } from './renderCardWithData';
-import { CardLinkView } from '@uidu/media-ui';
 import { auth } from '@atlaskit/outbound-auth-flow-client';
+import { CardLinkView } from '@uidu/media-ui';
+import * as React from 'react';
+import { CardWithDataContent as CardWithDataContentType } from './renderCardWithData';
+import { CardWithUrlContent as CardWithUrlContentType } from './renderCardWithUrl';
+import { CardProps, CardWithData, CardWithUrl } from './types';
 
 export const isCardWithData = (props: CardProps): props is CardWithData =>
   !!(props as CardWithData).data;
@@ -15,12 +15,12 @@ export class CardWithURLRenderer extends React.PureComponent<
   static CardContent: typeof CardWithUrlContentType | null = null;
 
   static moduleImporter(target: CardWithURLRenderer) {
-    import(/* webpackChunkName:"@atlaskit-internal-smartcard-urlcardcontent" */ './renderCardWithUrl').then(
-      module => {
-        CardWithURLRenderer.CardContent = module.CardWithUrlContent;
-        target.forceUpdate();
-      },
-    );
+    import(
+      /* webpackChunkName:"@atlaskit-internal-smartcard-urlcardcontent" */ './renderCardWithUrl'
+    ).then(module => {
+      CardWithURLRenderer.CardContent = module.CardWithUrlContent;
+      target.forceUpdate();
+    });
   }
 
   componentDidMount() {
@@ -65,12 +65,12 @@ export class CardWithDataRenderer extends React.PureComponent<
   static CardContent: typeof CardWithDataContentType | null = null;
 
   static moduleImporter(target: CardWithDataRenderer) {
-    import(/* webpackChunkName:"@atlaskit-internal-smartcard-datacardcontent" */ './renderCardWithData').then(
-      module => {
-        CardWithDataRenderer.CardContent = module.CardWithDataContent;
-        target.forceUpdate();
-      },
-    );
+    import(
+      /* webpackChunkName:"@atlaskit-internal-smartcard-datacardcontent" */ './renderCardWithData'
+    ).then(module => {
+      CardWithDataRenderer.CardContent = module.CardWithDataContent;
+      target.forceUpdate();
+    });
   }
 
   componentDidMount() {

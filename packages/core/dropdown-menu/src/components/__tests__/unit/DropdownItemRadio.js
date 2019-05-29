@@ -1,17 +1,5 @@
 // @flow
 /* eslint-disable no-unused-vars */
-import React from 'react';
-import { mount } from 'enzyme';
-import RadioIcon from '@atlaskit/icon/glyph/radio';
-import { colors } from '@uidu/theme';
-import Item from '@uidu/item';
-
-import { KEY_ENTER, KEY_SPACE } from '../../../util/keys';
-import DropdownMenu, {
-  DropdownItemGroupRadio,
-  DropdownItemRadio,
-  DropdownMenuStateless,
-} from '../../..';
 
 test('Skipped tests', () => {});
 
