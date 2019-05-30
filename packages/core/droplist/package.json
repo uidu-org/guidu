@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/layer": "^6.0.0",
+    "@uidu/layer": "^0.1.0",
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.7",
     "@uidu/item": "^0.1.9",

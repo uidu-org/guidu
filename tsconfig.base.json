@@ -47,7 +47,6 @@
     "esModuleInterop": true
   },
   "files": [
-    "./typings/atlaskit.d.ts",
     "./typings/uidu.d.ts",
     "./typings/blueimp-load-image.d.ts",
     "./typings/deep-equal.d.ts",

@@ -1,29 +1,29 @@
 // @flow
 
-import React, { Component, type Node } from 'react';
-import PropTypes from 'prop-types';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
-import Layer from '@atlaskit/layer';
+import Layer from '@uidu/layer';
 import Spinner from '@uidu/spinner';
-import { ThemeProvider } from 'styled-components';
 import { gridSize } from '@uidu/theme';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import PropTypes from 'prop-types';
+import React, { Component, Node } from 'react';
+import { ThemeProvider } from 'styled-components';
 import Wrapper, {
   Content,
   SpinnerContainer,
   Trigger,
 } from '../styled/Droplist';
 import itemTheme from '../theme/item-theme';
+import {
+  name as packageName,
+  version as packageVersion,
+} from '../version.json';
 
 const halfFocusRing = 1;
-const dropOffset = `0 ${gridSize()}px`;
+const dropOffset = `0,${gridSize()}px`;
 
 type Props = {
   /**

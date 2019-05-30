@@ -67,7 +67,7 @@
     "@uidu/tooltip": "^0.1.10",
     "bolt-query": "^1.1.4",
     "codesandboxer": "^1.0.1",
-    "commonmark": "^0.28.1",
+    "commonmark": "^0.29.0",
     "commonmark-react-renderer": "^4.3.4",
     "connect-history-api-fallback": "^1.6.0",
     "extract-react-types-loader": "^0.3.1",

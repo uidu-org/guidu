@@ -1,23 +1,18 @@
 // @flow
 
-import GlobalTheme, { type ThemeProp } from '@uidu/theme';
-import React, {
-  cloneElement,
-  Component,
-  type Element,
-  type ComponentType,
-} from 'react';
-import { propsOmittedFromClickData } from './constants';
-import { omit } from '../utils';
+import GlobalTheme, { ThemeProp } from '@uidu/theme';
+import React, { cloneElement, Component, ComponentType, Element } from 'react';
+import { getProps, getStyledAvatarItem } from '../helpers';
+import { withPseudoState } from '../hoc';
 import {
-  getBackgroundColor,
   Content,
+  getBackgroundColor,
   PrimaryText,
   SecondaryText,
 } from '../styled/AvatarItem';
-import { getProps, getStyledAvatarItem } from '../helpers';
-import { withPseudoState } from '../hoc';
-import { ThemeItem, type ThemeItemTokens } from '../theme/item';
+import { ThemeItem, ThemeItemTokens } from '../theme/item';
+import { omit } from '../utils';
+import { propsOmittedFromClickData } from './constants';
 import type { AvatarClickType } from '../types';
 
 /* eslint-disable react/no-unused-prop-types */
@@ -112,7 +107,7 @@ class AvatarItem extends Component<Props> {
 
                 return (
                   <StyledComponent
-                    innerRef={this.setNode}
+                    ref={this.setNode}
                     {...enhancedProps}
                     onClick={this.guardedClick}
                   >

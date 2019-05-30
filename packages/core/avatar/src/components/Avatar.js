@@ -177,7 +177,7 @@ class Avatar extends Component<AvatarPropTypes> {
       <Theme.Provider value={theme}>
         <Outer size={size} stackIndex={stackIndex}>
           <Inner
-            innerRef={this.setRef}
+            ref={this.setRef}
             {...enhancedProps}
             onClick={onClick != null ? this.guardedClick : undefined}
           >
