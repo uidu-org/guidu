@@ -1,10 +1,6 @@
-import {
-  Context,
-  isClientBasedAuth,
-  FileIdentifier,
-} from '@uidu/media-core';
-import { stringify } from 'query-string';
+import { Context, FileIdentifier, isClientBasedAuth } from '@uidu/media-core';
 import { MediaCollectionItem } from '@uidu/media-store';
+import { stringify } from 'query-string';
 
 // We want to remove constructAuthTokenUrl and use mediaStore instead
 // https://product-fabric.atlassian.net/browse/MSW-869
@@ -54,7 +50,7 @@ function buildIssuerBasedUrl(
   return buildUrl(host, url, { issuer, collection, token });
 }
 
-function buildUrl(host: string, url: string, query: Object) {
+function buildUrl(host: string, url: string, query: any) {
   const separator = url.indexOf('?') > -1 ? '&' : '?';
   return `${host}${url}${separator}${stringify(query)}`;
 }
