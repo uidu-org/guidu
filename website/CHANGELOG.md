@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.52
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Added uidu/layer to fix popper warnings
+
 ## 0.1.51
 - [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
 

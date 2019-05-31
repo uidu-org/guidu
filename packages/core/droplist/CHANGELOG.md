@@ -1,5 +1,16 @@
 # @uidu/droplist
 
+## 0.1.8
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Release data-manager
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Added uidu/layer to fix popper warnings
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.7
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 

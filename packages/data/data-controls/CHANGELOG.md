@@ -1,5 +1,10 @@
 # @uidu/data-controls
 
+## 0.1.5
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Release data-manager
+
 ## 0.1.4
 - [patch] [e1e43c0](https://github.org/uidu-org/guidu/commits/e1e43c0):
 

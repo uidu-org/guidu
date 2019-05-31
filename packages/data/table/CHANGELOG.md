@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.6
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Release data-manager
+
 ## 0.1.5
 - [patch] [a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):
 

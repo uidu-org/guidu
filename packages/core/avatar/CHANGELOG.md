@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.13
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Release data-manager
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Added uidu/layer to fix popper warnings
+
 ## 0.2.12
 - [patch] [a08131a](https://github.org/uidu-org/guidu/commits/a08131a):
 

@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.29
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.28
 
 - [patch][9f47041](https://github.org/uidu-org/guidu/commits/9f47041):

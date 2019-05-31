@@ -1,5 +1,10 @@
 # @uidu/media-test-helpers
 
+## 0.1.12
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Release data-manager
+
 ## 0.1.11
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

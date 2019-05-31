@@ -1,6 +1,6 @@
 {
   "name": "@uidu/code",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "config": {
     "access": "public"
   },
@@ -10,7 +10,7 @@
   "sideEffects": false,
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/theme": "^0.1.8",
+    "@uidu/theme": "^0.1.11",
     "memoize-one": "^5.0.0",
     "react-syntax-highlighter": "^10.1.3"
   },

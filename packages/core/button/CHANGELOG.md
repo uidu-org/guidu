@@ -1,5 +1,10 @@
 # @uidu/button
 
+## 0.1.37
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.36
 
 - [patch][9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
