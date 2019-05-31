@@ -1,5 +1,10 @@
 # @uidu/data-controls
 
+## 0.1.7
+- [patch] [5dcf828](https://github.org/uidu-org/guidu/commits/5dcf828):
+
+  - Data-controls and data-manager render prop
+
 ## 0.1.6
 - [patch] [0190460](https://github.org/uidu-org/guidu/commits/0190460):
 
