@@ -32,37 +32,40 @@ export default class Item extends PureComponent<any> {
         style={{
           ...style,
           left: style.left + gutterSize,
+          // paddingLeft: gutterSize / 2,
+          // paddingRight: gutterSize / 2,
           top: style.top + gutterSize,
           width: style.width - gutterSize,
           height: style.height - gutterSize,
         }}
-        className="card"
         key={item.id}
       >
-        <div className="card-body">
-          <div className="card-title">Test</div>
-          <dl className="mb-0">
-            {columnDefs.map(column => [
-              <dt
-                className="small text-muted mt-3 text-truncate"
-                key={`${item.id}-${column.field}-name`}
-              >
-                {column.headerComponentParams &&
-                column.headerComponentParams.menuIcon ? (
-                  <span className="mr-2">
-                    {column.headerComponentParams.menuIcon}
-                  </span>
-                ) : null}
-                {column.headerName}
-              </dt>,
-              <dd
-                className="mb-0 text-truncate"
-                key={`${item.id}-${column.field}-value`}
-              >
-                {this.valueRenderer(item.data[column.field], column)}
-              </dd>,
-            ])}
-          </dl>
+        <div className="card">
+          <div className="card-body">
+            <div className="card-title">Test</div>
+            <dl className="mb-0">
+              {columnDefs.map(column => [
+                <dt
+                  className="small text-muted mt-3 text-truncate"
+                  key={`${item.id}-${column.field}-name`}
+                >
+                  {column.headerComponentParams &&
+                  column.headerComponentParams.menuIcon ? (
+                    <span className="mr-2">
+                      {column.headerComponentParams.menuIcon}
+                    </span>
+                  ) : null}
+                  {column.headerName}
+                </dt>,
+                <dd
+                  className="mb-0 text-truncate"
+                  key={`${item.id}-${column.field}-value`}
+                >
+                  {this.valueRenderer(item.data[column.field], column)}
+                </dd>,
+              ])}
+            </dl>
+          </div>
         </div>
       </div>
     );

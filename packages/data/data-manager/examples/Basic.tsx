@@ -33,6 +33,7 @@ export default class Basic extends Component<any, any> {
               viewProps: {
                 gallery: {
                   gutterSize: 24,
+                  columnCount: 3,
                 },
               },
             })}
