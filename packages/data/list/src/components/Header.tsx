@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 
-const GUTTER_SIZE = 8;
-
 export default class Header extends PureComponent<any> {
   render() {
     const { style, data } = this.props;

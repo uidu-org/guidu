@@ -1,7 +1,5 @@
 import React, { PureComponent } from 'react';
 
-const GUTTER_SIZE = 8;
-
 export default class Item extends PureComponent<any> {
   valueRenderer = (
     value,
@@ -23,9 +21,6 @@ export default class Item extends PureComponent<any> {
     const { index, style, data } = this.props;
     const { items, columnDefs, gutterSize } = data;
     const item = items[index];
-
-    console.log(style);
-    console.log(gutterSize);
 
     if (!item) {
       return null;

@@ -4,6 +4,7 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 import { VariableSizeList as VariableList } from 'react-window';
 import Header from './Header';
 import Item from './Item';
+
 const StickyListContext = createContext(null);
 StickyListContext.displayName = 'StickyListContext';
 
