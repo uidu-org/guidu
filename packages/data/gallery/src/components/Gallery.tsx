@@ -75,11 +75,11 @@ class Cell extends PureComponent<any> {
   }
 }
 
-const innerElementType = forwardRef(({ style, ...rest }, ref) => (
+const innerElementType = forwardRef(({ ...rest }, ref: any) => (
   <div
     ref={ref}
     style={{
-      ...style,
+      // ...style,
       paddingTop: GUTTER_SIZE,
       paddingLeft: GUTTER_SIZE,
     }}

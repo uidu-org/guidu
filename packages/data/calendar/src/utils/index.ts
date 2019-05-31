@@ -28,15 +28,14 @@ const resizeEvent = (resizeType, { event, start, end }, updateEvent) => {
 };
 
 // Calendar
-const calendarProps = ({ events, updateEvent }) => ({
+const calendarProps = ({ events, onEventDrop, onEventResize }) => ({
   localizer,
   selectable: true,
   resizable: true,
   showMultiDayTimes: true,
   scrollToTime: moment().toDate(),
-  onEventDrop: props => moveEvent(props, updateEvent),
-  onEventResize: (resizeType, props) =>
-    resizeEvent(resizeType, props, updateEvent),
+  onEventDrop, // props => moveEvent(props, updateEvent),
+  onEventResize, // (resizeType, props) => resizeEvent(resizeType, props, updateEvent),
   defaultDate: moment().toDate(),
   events,
   defaultView: 'day',

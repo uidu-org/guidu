@@ -225,7 +225,8 @@ export default class DataManager extends Component<any, any> {
                   onSortEnd={this.moveColumn}
                 />
               )}
-              {currentView.kind === 'gallery' && (
+              {(currentView.kind === 'gallery' ||
+                currentView.kind === 'list') && (
                 <Customizer
                   fields={columnDefs}
                   onToggle={this.toggleColumn}

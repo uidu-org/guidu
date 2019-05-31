@@ -7,7 +7,7 @@ import Item from './Item';
 
 const GUTTER_SIZE = 8;
 
-const StickyListContext = createContext();
+const StickyListContext = createContext(null);
 StickyListContext.displayName = 'StickyListContext';
 
 const ItemWrapper = ({ data, index, style }) => {
@@ -18,7 +18,7 @@ const ItemWrapper = ({ data, index, style }) => {
   return <ItemRenderer index={index} style={style} data={data} />;
 };
 
-const innerElementType = forwardRef(({ children, ...rest }, ref) => (
+const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
   <StickyListContext.Consumer>
     {({ stickyIndices, columnDefs }) => (
       <div ref={ref} {...rest}>

@@ -11,11 +11,18 @@ import Toolbar from './Toolbar';
 // const DragAndDropCalendar = withDragAndDrop(BigCalendar);
 
 export default class Calendar extends PureComponent<any> {
+  static defaultProps = {
+    onEventDrop: () => {},
+    onEventResize: () => {},
+    events: [],
+  };
+
   render() {
+    const { events, onEventResize, onEventDrop } = this.props;
     return (
       <ShellBody>
         <BigCalendar
-          {...calendarProps(this.props)}
+          {...calendarProps({ events, onEventDrop, onEventResize })}
           {...this.props}
           defaultView="month"
           selectable={false}
