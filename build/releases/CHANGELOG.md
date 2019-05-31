@@ -1,5 +1,13 @@
 # @uidu/build-releases
 
+## 3.0.15
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Added uidu/layer to fix popper warnings
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 3.0.14
 - [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 

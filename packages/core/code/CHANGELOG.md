@@ -1,5 +1,10 @@
 # @uidu/code
 
+## 0.1.9
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.8
 
 - [patch][93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):

@@ -1,5 +1,10 @@
 # @uidu/theme
 
+## 0.1.11
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.10
 
 - [patch][fbc04be](https://github.org/uidu-org/guidu/commits/fbc04be):

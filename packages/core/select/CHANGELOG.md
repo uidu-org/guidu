@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.12
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.11
 - [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
 

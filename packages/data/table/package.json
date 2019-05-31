@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React ag-datagrid wrapper with default configurations",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/data-controls": "^0.1.4",
+    "@uidu/data-controls": "^0.1.5",
     "@uidu/docs": "^0.1.27",
     "moment": "^2.18.1"
   },
@@ -19,11 +19,11 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@loadable/component": "^5.10.1",
-    "@uidu/avatar": "^0.2.11",
-    "@uidu/dropdown-menu": "^0.1.8",
-    "@uidu/droplist": "^0.1.7",
-    "@uidu/item": "^0.1.10",
-    "@uidu/lozenge": "^0.1.8",
+    "@uidu/avatar": "^0.2.13",
+    "@uidu/dropdown-menu": "^0.1.10",
+    "@uidu/droplist": "^0.1.8",
+    "@uidu/item": "^0.1.11",
+    "@uidu/lozenge": "^0.1.9",
     "ag-grid-community": "^20.2.0",
     "ag-grid-react": "^20.2.0"
   }

@@ -1,5 +1,16 @@
 # @uidu/media-card
 
+## 0.1.10
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Release data-manager
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Added uidu/layer to fix popper warnings
+- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+  - Remove some dependencies
+
 ## 0.1.9
 - [patch] [5ec18e8](https://github.org/uidu-org/guidu/commits/5ec18e8):
 

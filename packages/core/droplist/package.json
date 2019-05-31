@@ -1,6 +1,6 @@
 {
   "name": "@uidu/droplist",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Droplist component",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -12,12 +12,12 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/layer": "^0.1.0",
     "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.7",
-    "@uidu/item": "^0.1.9",
+    "@uidu/item": "^0.1.11",
+    "@uidu/layer": "^0.1.1",
     "@uidu/spinner": "^0.1.8",
-    "@uidu/theme": "^0.1.8",
+    "@uidu/theme": "^0.1.11",
     "@uidu/tooltip": "^0.1.11",
     "babel-runtime": "^6.26.0",
     "classnames": "^2.2.6",
@@ -31,9 +31,9 @@
   },
   "devDependencies": {
     "@uidu/build-utils": "^0.1.7",
-    "@uidu/button": "^0.1.35",
+    "@uidu/button": "^0.1.37",
     "@uidu/docs": "^0.1.25",
-    "@uidu/field-base": "^0.1.29",
+    "@uidu/field-base": "^0.1.31",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   }
