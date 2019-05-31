@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.1.6
+- [patch] [0190460](https://github.org/uidu-org/guidu/commits/0190460):
+
+  - Remove console logs
+- [patch] [4aea6a5](https://github.org/uidu-org/guidu/commits/4aea6a5):
+
+  - Fix @uidu/select version
+
 ## 0.1.5
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
