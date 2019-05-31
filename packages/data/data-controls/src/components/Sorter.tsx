@@ -23,13 +23,11 @@ export default class Sorter extends Component<any> {
   handleSubmit = async model => {
     const { onChange } = this.props;
     const response = await (this.form.current as any).form.getModel();
-    console.log('sorters from form', response.sorters);
     onChange(response.sorters || []);
   };
 
   render() {
     const { sorters, fields } = this.props;
-    console.log('sorters from props', sorters);
     const sortersCount = sorters.length;
     return (
       <DropdownMenu
