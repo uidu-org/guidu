@@ -11,7 +11,7 @@ export default md`
   If you use a layer with a component that could be opened or closed, you have to make sure you re-render the layer the first time you open the component, otherwise it will end up with a wrong position.
 
   ![Example of Layer](https://i.imgur.com/f2UkGw8.gif)
- 
+
   ## Usage
 
   ### HTML
@@ -21,7 +21,7 @@ export default md`
   Import the component in your React app as follows:
 
   ${code`import Layer from '@uidu/layer';
- 
+
   const myContent = <div>I'm going to be aligned to the right!</div>;
 
   ReactDOM.render(

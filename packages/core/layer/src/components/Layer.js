@@ -1,15 +1,15 @@
 // @flow
-import React, { Component, type Node, type ElementRef } from 'react';
-import styled from 'styled-components';
-import rafSchedule from 'raf-schd';
-
 import Popper from 'popper.js';
-import ScrollBlock from './internal/ScrollBlock';
+import rafSchedule from 'raf-schd';
+import React, { Component, ElementRef, Node } from 'react';
+import styled, { css } from 'styled-components';
+import ContentContainer from '../styledContentContainer';
 import {
   getFlipBehavior,
   positionPropToPopperPosition,
 } from './internal/helpers';
-import ContentContainer from '../styledContentContainer';
+import ScrollBlock from './internal/ScrollBlock';
+
 import type {
   FlipPositionType,
   BoundariesElementType,
@@ -73,7 +73,7 @@ const FixedTarget = styled.div`
     if (fixedOffset && targetRef) {
       const actualTarget = targetRef.firstChild;
       const rect = actualTarget.getBoundingClientRect();
-      return `
+      return css`
         position: fixed;
         top: ${fixedOffset.top}px;
         left: ${fixedOffset.left}px;
@@ -103,7 +103,7 @@ export default class Layer extends Component<Props, State> {
     boundariesElement: 'viewport',
     children: null,
     content: null,
-    offset: '0 0',
+    offset: '0,0',
     onFlippedChange: () => {},
     position: 'right middle',
     zIndex: 400,

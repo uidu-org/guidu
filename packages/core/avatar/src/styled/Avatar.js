@@ -1,11 +1,11 @@
 // @flow
 
-import React from 'react';
-import type { Node } from 'react';
-import styled from 'styled-components';
 import { withTheme } from '@uidu/theme';
+import React from 'react';
+import styled from 'styled-components';
 import { Theme } from '../theme';
 import { getInnerStyles } from './utils';
+import type { Node } from 'react';
 
 export default (props: { children: Node, stackIndex: ?number }) => (
   <Theme.Consumer {...props} includeBorderWidth>
@@ -13,7 +13,9 @@ export default (props: { children: Node, stackIndex: ?number }) => (
       return (
         <div
           style={{
-            display: 'inline-block',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             position: 'relative',
             outline: 0,
             zIndex: props.stackIndex,

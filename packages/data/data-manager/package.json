@@ -1,0 +1,26 @@
+{
+  "name": "@uidu/data-manager",
+  "version": "0.1.0",
+  "description": "Data manager with different views, filter and sorts",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.10.1",
+    "@uidu/calendar": "^0.1.0",
+    "@uidu/data-controls": "^0.1.4",
+    "@uidu/gallery": "^0.1.0",
+    "@uidu/list": "^0.1.0",
+    "@uidu/shell": "^0.1.15",
+    "@uidu/spinner": "^0.1.8",
+    "@uidu/table": "^0.1.5",
+    "react-sortable-hoc": "^1.9.1"
+  }
+}

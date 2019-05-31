@@ -1,11 +1,11 @@
-import { Server } from 'kakapo';
 import * as exenv from 'exenv';
-import { createApiRouter, createMediaPlaygroundRouter } from './routers';
+import { Server } from 'kakapo';
 import {
   createDatabase,
-  generateUserData,
   generateTenantData,
+  generateUserData,
 } from './database';
+import { createApiRouter, createMediaPlaygroundRouter } from './routers';
 
 export type MockUserCollection = { [filename: string]: string };
 export class MediaMock {
@@ -23,7 +23,7 @@ export class MediaMock {
 
     this.server.use(createDatabase());
     this.server.use(createMediaPlaygroundRouter());
-    this.server.use(createApiRouter());
+    this.server.use(createApiRouter() as any);
 
     generateUserData(this.collection);
     generateTenantData();

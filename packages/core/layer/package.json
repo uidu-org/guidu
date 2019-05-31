@@ -23,7 +23,7 @@
     "@uidu/build-utils": "^0.1.7",
     "@uidu/docs": "^0.1.25",
     "enzyme": "^3.9.0",
-    "raf-stub": "^2.0.1",
+    "raf-stub": "^2.0.2",
     "react-dom": "^16.4.0"
   },
   "uidu": {

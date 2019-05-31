@@ -17,7 +17,7 @@ export default class AddToList extends Component<any> {
           {fields
             .filter(f => list.map(s => s.colId.colId).indexOf(f.colId) < 0)
             .map(field => (
-              <DropdownItem onClick={() => onClick(field)}>
+              <DropdownItem key={field.colId} onClick={() => onClick(field)}>
                 {field.headerName}
               </DropdownItem>
             ))}

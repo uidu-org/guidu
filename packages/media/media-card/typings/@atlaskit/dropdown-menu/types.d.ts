@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, MouseEvent, KeyboardEvent } from 'react';
+import { KeyboardEvent, MouseEvent, ReactElement, ReactNode } from 'react';
 
 export type ItemId = string;
 export type GroupId = string;

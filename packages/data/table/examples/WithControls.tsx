@@ -24,6 +24,7 @@ export default class WithControls extends Component<any, any> {
     };
   }
 
+  private grid = React.createRef();
   private gridApi = null;
   private gridColumnApi = null;
 
@@ -65,9 +66,14 @@ export default class WithControls extends Component<any, any> {
     this.setState({ groupers });
   };
 
-  onSortChanged = () => {
-    const sortModel = this.gridApi.getSortModel();
+  onSortChanged = ({ api, columnApi }) => {
+    const sortModel = api.getSortModel();
+    console.log(api.getModel().rowsToDisplay);
     // this.setState({ sorters: sortModel });
+  };
+
+  onFilterChanged = ({ api, columnApi }) => {
+    console.log(api.getModel().rowsToDisplay);
   };
 
   setSorters = sorters => {
@@ -85,7 +91,7 @@ export default class WithControls extends Component<any, any> {
 
   render() {
     const { sorters, filters, groupers } = this.state;
-    console.log(this.gridApi);
+
     return (
       <Fragment>
         <DataControls>
@@ -122,15 +128,15 @@ export default class WithControls extends Component<any, any> {
           </div>
         </DataControls>
         <Table
-          innerRef={c => {
-            this.grid = c;
-          }}
+          innerRef={this.grid}
           onGridReady={this.onGridReady}
           columnDefs={this.state.columnDefs}
           rowData={this.state.rowData}
           onSortChanged={this.onSortChanged}
+          onFilterChanged={this.onFilterChanged}
           rowSelection="multiple"
           suppressRowClickSelection
+          rowHeight={48}
         />
       </Fragment>
     );

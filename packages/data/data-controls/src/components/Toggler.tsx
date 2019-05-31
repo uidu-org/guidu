@@ -23,6 +23,12 @@ const SortableItem = SortableElement(({ value: column, onToggle }) => (
         size="xsmall"
       />
       <div style={{ maxWidth: 160 }} className="text-truncate">
+        {column.headerComponentParams &&
+        column.headerComponentParams.menuIcon ? (
+          <small className="mx-2">
+            {column.headerComponentParams.menuIcon}
+          </small>
+        ) : null}
         {column.headerName}
       </div>
     </div>

@@ -5,7 +5,7 @@ import React from 'react';
 import Editor from './editor';
 
 export default () => ({
-cellEditorFramework: Editor,
+  cellEditorFramework: Editor,
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faCalendarDay} /> },
   valueFormatter: ({ value }) => moment(value).format('L'),

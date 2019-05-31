@@ -138,19 +138,16 @@ class Droplist extends Component<Props, void> {
 
   handleClickOutside = (event: Event): void => {
     if (this.props.isOpen) {
-      // $FlowFixMe - flow is lost and if not an instance of Node
-      if (event.target instanceof Node) {
-        // Rather than check for the target within the entire Droplist, we specify the trigger/content.
-        // This aids with future effort in scroll-locking Droplist when isMenuFixed is enabled; the scroll
-        // blanket which stretches to the viewport should not stop 'close' from being triggered.
-        const withinTrigger =
-          this.triggerRef && this.triggerRef.contains(event.target);
-        const withinContent =
-          this.dropContentRef && this.dropContentRef.contains(event.target);
+      // Rather than check for the target within the entire Droplist, we specify the trigger/content.
+      // This aids with future effort in scroll-locking Droplist when isMenuFixed is enabled; the scroll
+      // blanket which stretches to the viewport should not stop 'close' from being triggered.
+      const withinTrigger =
+        this.triggerRef && this.triggerRef.contains(event.target);
+      const withinContent =
+        this.dropContentRef && this.dropContentRef.contains(event.target);
 
-        if (!withinTrigger && !withinContent) {
-          this.close(event);
-        }
+      if (!withinTrigger && !withinContent) {
+        this.close(event);
       }
     }
   };
