@@ -306,7 +306,7 @@ export default class DataManager extends Component<any, any> {
   render() {
     const { children } = this.props;
 
-    return children({
+    return (children as any)({
       renderControls: this.renderControls,
       renderView: this.renderView,
     });

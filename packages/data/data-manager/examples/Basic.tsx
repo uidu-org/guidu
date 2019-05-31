@@ -28,7 +28,14 @@ export default class Basic extends Component<any, any> {
                 availableViews: ['table', 'gallery', 'calendar', 'list'],
               })}
             </div>
-            {renderView({ className: 'bg-light' })}
+            {renderView({
+              className: 'bg-light',
+              viewProps: {
+                gallery: {
+                  gutterSize: 24,
+                },
+              },
+            })}
           </Fragment>
         )}
       </DataManager>
