@@ -4,9 +4,6 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 import { VariableSizeList as VariableList } from 'react-window';
 import Header from './Header';
 import Item from './Item';
-
-const GUTTER_SIZE = 8;
-
 const StickyListContext = createContext(null);
 StickyListContext.displayName = 'StickyListContext';
 
@@ -20,14 +17,14 @@ const ItemWrapper = ({ data, index, style }) => {
 
 const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
   <StickyListContext.Consumer>
-    {({ stickyIndices, columnDefs }) => (
+    {({ stickyIndices, columnDefs, gutterSize }) => (
       <div ref={ref} {...rest}>
         {stickyIndices.map(index => (
           <Header
             index={index}
             key={index}
             style={{ height: 48 }}
-            data={{ columnDefs }}
+            data={{ columnDefs, gutterSize }}
           />
         ))}
 
@@ -40,11 +37,17 @@ const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
 const StickyList = ({
   children,
   stickyIndices,
-  itemData: { columnDefs, items },
+  itemData: { columnDefs, items, gutterSize },
   ...rest
 }) => (
   <StickyListContext.Provider
-    value={{ ItemRenderer: children, stickyIndices, columnDefs, items }}
+    value={{
+      ItemRenderer: children,
+      stickyIndices,
+      columnDefs,
+      items,
+      gutterSize,
+    }}
   >
     <VariableList
       itemData={{
@@ -52,6 +55,7 @@ const StickyList = ({
         stickyIndices,
         items,
         columnDefs,
+        gutterSize,
       }}
       {...rest}
     >
@@ -60,13 +64,21 @@ const StickyList = ({
   </StickyListContext.Provider>
 );
 
-const createItemData = memoize((items, columnDefs) => ({ items, columnDefs }));
+const createItemData = memoize((items, columnDefs, gutterSize) => ({
+  items,
+  columnDefs,
+  gutterSize,
+}));
 
 export default class List extends PureComponent<any> {
+  static defaultProps = {
+    gutterSize: 8,
+  };
+
   render() {
-    const { rowData, columnDefs } = this.props;
+    const { rowData, columnDefs, gutterSize } = this.props;
     const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
-    const itemData = createItemData(rowData, visibleColumnDefs);
+    const itemData = createItemData(rowData, visibleColumnDefs, gutterSize);
     return (
       <AutoSizer>
         {({ height, width }) => {

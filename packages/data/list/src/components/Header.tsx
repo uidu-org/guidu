@@ -5,13 +5,13 @@ const GUTTER_SIZE = 8;
 export default class Header extends PureComponent<any> {
   render() {
     const { style, data } = this.props;
-    const { columnDefs } = data;
+    const { columnDefs, gutterSize } = data;
     return (
       <div
         style={{
           ...style,
-          minWidth: `calc(100% - ${GUTTER_SIZE * 2}px)`,
-          paddingLeft: GUTTER_SIZE + 1, // border,
+          minWidth: `calc(100% - ${gutterSize * 2}px)`,
+          paddingLeft: gutterSize + 1, // border,
           width: 'fit-content',
           height: style.height,
         }}

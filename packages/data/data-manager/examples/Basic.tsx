@@ -35,6 +35,9 @@ export default class Basic extends Component<any, any> {
                   gutterSize: 24,
                   columnCount: 3,
                 },
+                list: {
+                  gutterSize: 24,
+                },
               },
             })}
           </Fragment>

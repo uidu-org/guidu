@@ -21,8 +21,12 @@ export default class Item extends PureComponent<any> {
 
   render() {
     const { index, style, data } = this.props;
-    const { items, columnDefs } = data;
+    const { items, columnDefs, gutterSize } = data;
     const item = items[index];
+
+    console.log(style);
+    console.log(gutterSize);
+
     if (!item) {
       return null;
     }
@@ -31,11 +35,11 @@ export default class Item extends PureComponent<any> {
       <div
         style={{
           ...style,
-          minWidth: `calc(100% - ${GUTTER_SIZE * 2}px)`,
-          left: style.left + GUTTER_SIZE,
-          top: style.top + GUTTER_SIZE,
+          minWidth: `calc(100% - ${gutterSize * 2}px)`,
+          left: style.left + gutterSize,
+          top: style.top + gutterSize,
           // width: style.width - GUTTER_SIZE,
-          height: style.height - GUTTER_SIZE,
+          height: style.height - gutterSize,
           transition: 'all 500ms ease-in-out',
         }}
         className="card flex-row align-items-center w-auto"

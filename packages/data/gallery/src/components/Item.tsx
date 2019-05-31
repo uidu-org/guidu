@@ -18,22 +18,18 @@ export default class Item extends PureComponent<any> {
   };
 
   render() {
-    const { columnIndex, rowIndex, style, isScrolling, data } = this.props;
-    const { items, columnDefs, gutterSize, columnCount } = data;
+    const { columnIndex, rowIndex, style, data } = this.props;
+    const { items, columnDefs, gutterSize } = data;
     const item = items[rowIndex] && items[rowIndex][columnIndex];
     if (!item) {
       return null;
     }
-
-    console.log(style);
 
     return (
       <div
         style={{
           ...style,
           left: style.left + gutterSize,
-          // paddingLeft: gutterSize / 2,
-          // paddingRight: gutterSize / 2,
           top: style.top + gutterSize,
           width: style.width - gutterSize,
           height: style.height - gutterSize,
