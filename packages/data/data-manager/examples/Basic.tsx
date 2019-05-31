@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
 
@@ -20,7 +20,18 @@ export default class Basic extends Component<any, any> {
         availableViews={['table', 'gallery', 'calendar', 'list']}
         columnDefs={this.state.columnDefs}
         rowData={this.state.rowData}
-      />
+      >
+        {({ renderControls, renderView }) => (
+          <Fragment>
+            <div className="d-flex px-xl-4 p-3">
+              {renderControls({
+                availableViews: ['table', 'gallery', 'calendar', 'list'],
+              })}
+            </div>
+            {renderView({ className: 'bg-light' })}
+          </Fragment>
+        )}
+      </DataManager>
     );
   }
 }

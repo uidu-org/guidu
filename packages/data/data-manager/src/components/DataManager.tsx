@@ -1,5 +1,5 @@
 import loadable from '@loadable/component';
-import DataControls, {
+import {
   Customizer,
   Filterer,
   Finder,
@@ -11,7 +11,7 @@ import DataControls, {
   Toggler,
   Viewer,
 } from '@uidu/data-controls';
-import { ShellBody, ShellHeader } from '@uidu/shell';
+import { ShellBody } from '@uidu/shell';
 import Spinner from '@uidu/spinner';
 import Table from '@uidu/table';
 import moment from 'moment';
@@ -113,16 +113,41 @@ export default class DataManager extends Component<any, any> {
     });
   };
 
-  renderView = () => {
+  setRowHeight = rowHeight => {
+    console.log(rowHeight);
+    this.setState(
+      {
+        rowHeight,
+      },
+      () => {
+        this.gridApi.resetRowHeights();
+      },
+    );
+  };
+
+  renderView = ({
+    className = null,
+    viewProps = {
+      table: {},
+      calendar: {},
+      list: {},
+      gallery: {},
+    },
+  }) => {
     const { rowData } = this.props;
     const { data, columnDefs, currentView, rowHeight } = this.state;
 
     if (!rowData) {
-      return <Spinner />;
+      return (
+        <ShellBody className="d-flex align-items-center justify-content-center">
+          <Spinner />
+        </ShellBody>
+      );
     }
 
     const table = (
       <Table
+        {...viewProps.table}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
         columnDefs={columnDefs}
@@ -136,16 +161,27 @@ export default class DataManager extends Component<any, any> {
     );
 
     if (currentView.kind === 'table') {
-      return <ShellBody scrollable>{table}</ShellBody>;
+      return (
+        <ShellBody className={className} scrollable>
+          {table}
+        </ShellBody>
+      );
     }
 
     if (currentView.kind === 'calendar') {
       return (
         <Fragment>
-          <LoadableCalendar fallback={<div>Loading...</div>}>
+          <LoadableCalendar
+            fallback={
+              <ShellBody className="d-flex align-items-center justify-content-center">
+                <Spinner />
+              </ShellBody>
+            }
+          >
             {({ default: Calendar }) => {
               return (
                 <Calendar
+                  {...viewProps.calendar}
                   events={data.map(datum => datum.data)}
                   startAccessor={item => moment(item.createdAt).toDate()}
                   titleAccessor={item => item.email}
@@ -166,106 +202,113 @@ export default class DataManager extends Component<any, any> {
 
     if (currentView.kind === 'list') {
       return (
-        <ShellBody scrollable>
-          <LoadableList fallback={<div>Loading...</div>}>
+        <Fragment>
+          <LoadableList
+            fallback={
+              <ShellBody className="d-flex align-items-center justify-content-center">
+                <Spinner />
+              </ShellBody>
+            }
+          >
             {({ default: List }) => (
-              <List
-                rowData={data.map(datum => datum.data)}
-                columnDefs={columnDefs}
-              />
+              <ShellBody scrollable className={className}>
+                <List
+                  {...viewProps.list}
+                  rowData={data.map(datum => datum.data)}
+                  columnDefs={columnDefs}
+                />
+              </ShellBody>
             )}
           </LoadableList>
           <div className="d-none">{table}</div>
-        </ShellBody>
+        </Fragment>
       );
     }
 
     return (
-      <ShellBody scrollable>
-        <LoadableGallery fallback={<div>Loading...</div>}>
+      <Fragment>
+        <LoadableGallery
+          fallback={
+            <ShellBody className="d-flex align-items-center justify-content-center">
+              <Spinner />
+            </ShellBody>
+          }
+        >
           {({ default: Gallery }) => (
-            <Gallery rowData={data} columnDefs={columnDefs} />
+            <ShellBody className={className} scrollable>
+              <Gallery
+                {...viewProps.gallery}
+                rowData={data}
+                columnDefs={columnDefs}
+              />
+            </ShellBody>
           )}
         </LoadableGallery>
         <div className="d-none">{table}</div>
-      </ShellBody>
+      </Fragment>
     );
   };
 
-  setRowHeight = rowHeight => {
-    console.log(rowHeight);
-    this.setState(
-      {
-        rowHeight,
-      },
-      () => {
-        this.gridApi.resetRowHeights();
-      },
-    );
-  };
-
-  render() {
-    const { availableViews } = this.props;
+  renderControls = ({ availableViews }) => {
     const { sorters, filters, groupers, columnDefs, currentView } = this.state;
 
     return (
       <Fragment>
-        <ShellHeader>
-          <DataControls>
-            <div className="d-flex">
-              <Viewer
-                currentView={currentView}
-                availableViews={availableViews}
-                onChange={this.toggleView}
-              />
-              {currentView.kind === 'table' && (
-                <Toggler
-                  fields={columnDefs}
-                  onToggle={this.toggleColumn}
-                  onSortEnd={this.moveColumn}
-                />
-              )}
-              {(currentView.kind === 'gallery' ||
-                currentView.kind === 'list') && (
-                <Customizer
-                  fields={columnDefs}
-                  onToggle={this.toggleColumn}
-                  onSortEnd={this.moveColumn}
-                />
-              )}
-              <Filterer
-                fields={columnDefs}
-                onChange={this.setFilters}
-                filters={filters}
-              />
-              {currentView.kind === 'table' && (
-                <Grouper
-                  fields={columnDefs}
-                  onChange={this.setGroupers}
-                  groupers={groupers}
-                />
-              )}
-              <Sorter
-                fields={columnDefs}
-                onChange={this.setSorters}
-                sorters={sorters}
-              />
-              {currentView.kind === 'table' && (
-                <Resizer onResize={this.setRowHeight} />
-              )}
-              <Sharer />
-              <More
-                onDownload={() => this.gridApi.exportDataAsCsv()}
-                onDuplicate={console.log}
-              />
-            </div>
-            <div className="ml-auto">
-              <Finder onChange={this.setSearch} />
-            </div>
-          </DataControls>
-        </ShellHeader>
-        {this.renderView()}
+        <Viewer
+          currentView={currentView}
+          availableViews={availableViews}
+          onChange={this.toggleView}
+        />
+        {currentView.kind === 'table' && (
+          <Toggler
+            fields={columnDefs}
+            onToggle={this.toggleColumn}
+            onSortEnd={this.moveColumn}
+          />
+        )}
+        {(currentView.kind === 'gallery' || currentView.kind === 'list') && (
+          <Customizer
+            fields={columnDefs}
+            onToggle={this.toggleColumn}
+            onSortEnd={this.moveColumn}
+          />
+        )}
+        <Filterer
+          fields={columnDefs}
+          onChange={this.setFilters}
+          filters={filters}
+        />
+        {currentView.kind === 'list' && (
+          <Grouper
+            fields={columnDefs}
+            onChange={this.setGroupers}
+            groupers={groupers}
+          />
+        )}
+        <Sorter
+          fields={columnDefs}
+          onChange={this.setSorters}
+          sorters={sorters}
+        />
+        {currentView.kind === 'table' && (
+          <Resizer onResize={this.setRowHeight} />
+        )}
+        <Sharer />
+        <Finder onChange={this.setSearch} />
+        <More
+          onDownload={() => this.gridApi.exportDataAsCsv()}
+          onDuplicate={console.log}
+        />
       </Fragment>
     );
+  };
+
+  render() {
+    const { children } = this.props;
+
+    return children({
+      renderControls: this.renderControls,
+      renderView: this.renderView,
+    });
   }
 }

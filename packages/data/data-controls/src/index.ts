@@ -1,5 +1,4 @@
 export { default as Customizer } from './components/Customizer';
-export { default } from './components/DataControls';
 export { default as Filterer } from './components/Filterer';
 export { default as Finder } from './components/Finder';
 export { default as Grouper } from './components/Grouper';

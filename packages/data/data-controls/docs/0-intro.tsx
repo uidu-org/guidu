@@ -24,8 +24,69 @@ export default md`
 
   ${(
     <Props
-      heading="Step Props"
-      props={require('!!extract-react-types-loader!../src/components/DataControls')}
+      heading="Customizer"
+      props={require('!!extract-react-types-loader!../src/components/Customizer')}
     />
   )}
+  ${(
+    <Props
+      heading="Filterer"
+      props={require('!!extract-react-types-loader!../src/components/Filterer')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Finder"
+      props={require('!!extract-react-types-loader!../src/components/Finder')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Grouper"
+      props={require('!!extract-react-types-loader!../src/components/Grouper')}
+    />
+  )}
+  ${(
+    <Props
+      heading="More"
+      props={require('!!extract-react-types-loader!../src/components/More')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Resizer"
+      props={require('!!extract-react-types-loader!../src/components/Resizer')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Sharer"
+      props={require('!!extract-react-types-loader!../src/components/Sharer')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Sorter"
+      props={require('!!extract-react-types-loader!../src/components/Sorter')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Stacker"
+      props={require('!!extract-react-types-loader!../src/components/Stacker')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Toggler"
+      props={require('!!extract-react-types-loader!../src/components/Toggler')}
+    />
+  )}
+  ${(
+    <Props
+      heading="Viewer"
+      props={require('!!extract-react-types-loader!../src/components/Viewer')}
+    />
+  )}
+
 `;
