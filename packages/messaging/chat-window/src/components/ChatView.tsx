@@ -213,7 +213,7 @@ export default class ChatView extends Component<ChatViewProps, ChatViewState> {
         style={{
           overflowX: 'hidden',
           overflowY: 'scroll',
-          overflowScrolling: 'touch',
+          // overflowScrolling: 'touch',
           WebkitOverflowScrolling: 'touch',
           overscrollBehavior: 'contain',
           WebkitBackfaceVisibility: 'hidden',
