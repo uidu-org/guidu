@@ -212,7 +212,7 @@ export default class DataManager extends Component<any, any> {
       <Fragment>
         <ShellHeader>
           <DataControls>
-            <div>
+            <div className="d-flex">
               <Viewer
                 currentView={currentView}
                 availableViews={availableViews}
