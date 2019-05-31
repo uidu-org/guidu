@@ -1,0 +1,1 @@
+- Fix @uidu/select version

@@ -1,0 +1,4 @@
+{
+  "releases": [{ "name": "@uidu/data-controls", "type": "patch" }],
+  "dependents": []
+}
