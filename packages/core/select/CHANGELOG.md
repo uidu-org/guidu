@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.13
+- [patch] [420ff9e](https://github.org/uidu-org/guidu/commits/420ff9e):
+
+  - Remove makeAsyncSelect exports
+
 ## 0.1.12
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
