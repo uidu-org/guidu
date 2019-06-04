@@ -5,6 +5,7 @@ import Editor from './editor';
 import Renderer from './renderer';
 
 export default field => ({
+  type: 'member',
   cellRendererFramework: Renderer,
   cellEditorFramework: Editor,
   cellEditorParams: {

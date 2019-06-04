@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
 export default () => ({
+  type: 'country',
   filter: 'agTextColumnFilter',
   headerComponentParams: {
     menuIcon: <FontAwesomeIcon icon={faExternalLinkAlt} />,

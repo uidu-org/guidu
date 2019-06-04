@@ -5,6 +5,7 @@ import React from 'react';
 import Editor from './editor';
 
 export default () => ({
+  type: 'date',
   cellEditorFramework: Editor,
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faCalendarDay} /> },

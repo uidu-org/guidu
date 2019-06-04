@@ -4,6 +4,7 @@ import React from 'react';
 
 export default () => ({
   filter: 'agTextColumnFilter',
+  type: 'address',
   headerComponentParams: {
     menuIcon: <FontAwesomeIcon icon={faMapMarkerAlt} />,
   },

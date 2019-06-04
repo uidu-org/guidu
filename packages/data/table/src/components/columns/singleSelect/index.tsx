@@ -4,6 +4,7 @@ import React from 'react';
 import Editor from './editor';
 
 export default field => ({
+  type: 'singleSelect',
   cellEditorFramework: Editor,
   cellEditorParams: {
     options: field.options,

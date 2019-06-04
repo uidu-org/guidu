@@ -5,6 +5,7 @@ import React from 'react';
 const EmailRenderer = ({ value }) => <a href="#">{value}</a>;
 
 export default () => ({
+  type: 'email',
   filter: 'agTextColumnFilter',
   cellRendererFramework: EmailRenderer,
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faFont} /> },

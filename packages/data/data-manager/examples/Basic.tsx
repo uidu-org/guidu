@@ -37,6 +37,7 @@ export default class Basic extends Component<any, any> {
                 },
                 list: {
                   gutterSize: 24,
+                  rowHeight: 128,
                 },
               },
             })}

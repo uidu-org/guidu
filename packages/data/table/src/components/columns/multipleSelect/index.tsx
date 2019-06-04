@@ -6,6 +6,7 @@ import Editor from './editor';
 
 export default field => ({
   // cellRendererFramework: Renderer,
+  type: 'multipleSelect',
   cellEditorFramework: Editor,
   cellEditorParams: {
     options: field.options,

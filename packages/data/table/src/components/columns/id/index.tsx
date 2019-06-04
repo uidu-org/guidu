@@ -1,4 +1,5 @@
 export default () => ({
+  type: 'date',
   headerName: 'ID',
   pinned: true,
   lockVisible: true,

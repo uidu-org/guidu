@@ -1,3 +1,4 @@
+import { getCover } from '@uidu/table';
 import memoize from 'memoize-one';
 import React, { PureComponent } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -35,7 +36,6 @@ export default class Gallery extends PureComponent<GalleryProps> {
 
   render() {
     const { rowData, columnDefs, columnCount, gutterSize } = this.props;
-    console.log(this.props);
     const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
     const items = this.chunkData(rowData, columnCount);
     const itemData = createItemData(
@@ -44,6 +44,8 @@ export default class Gallery extends PureComponent<GalleryProps> {
       gutterSize,
       columnCount,
     );
+
+    const cover = getCover(visibleColumnDefs);
 
     return (
       <AutoSizer>
@@ -65,6 +67,7 @@ export default class Gallery extends PureComponent<GalleryProps> {
                 ITEM_COLUMN_ROW * visibleColumnDefs.length +
                 ITEM_PADDING +
                 gutterSize +
+                (cover ? (cover.width ? (cover.width * 3) / 2 : 207) : 0) +
                 2 // borders
               }
               width={width}

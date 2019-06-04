@@ -31,6 +31,31 @@ export default class Table extends Component<any> {
                 editable: true,
                 headerComponentFramework: CustomHeader,
               }}
+              columnTypes={{
+                address: {},
+                attachments: {},
+                checkbox: {},
+                country: {},
+                cover: {},
+                currency: {},
+                date: {},
+                default: {},
+                email: {},
+                id: {},
+                member: {},
+                multipleSelect: {},
+                number: {},
+                percent: {},
+                phone: {},
+                primary: {},
+                progress: {},
+                rating: {},
+                singleSelect: {},
+                string: {},
+                text: {},
+                url: {},
+                vote: {},
+              }}
               rowHeight={32}
               {...this.props}
             />

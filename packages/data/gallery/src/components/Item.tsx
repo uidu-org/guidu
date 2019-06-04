@@ -1,22 +1,7 @@
+import { getCover, getPrimary, valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
 
 export default class Item extends PureComponent<any> {
-  valueRenderer = (
-    value,
-    { cellRendererFramework: Renderer, valueFormatter },
-  ) => {
-    if (!value) {
-      return '-';
-    }
-
-    if (Renderer) {
-      return (
-        <Renderer value={valueFormatter ? valueFormatter(value) : value} />
-      );
-    }
-    return valueFormatter ? valueFormatter(value) : value;
-  };
-
   render() {
     const { columnIndex, rowIndex, style, data } = this.props;
     const { items, columnDefs, gutterSize } = data;
@@ -24,6 +9,9 @@ export default class Item extends PureComponent<any> {
     if (!item) {
       return null;
     }
+
+    const primary = getPrimary(columnDefs);
+    const cover = getCover(columnDefs);
 
     return (
       <div
@@ -37,8 +25,25 @@ export default class Item extends PureComponent<any> {
         key={item.id}
       >
         <div className="card">
+          {cover && (
+            <div
+              style={{
+                height: cover.width ? (cover.width * 3) / 2 : '207px',
+                backgroundSize: 'cover',
+                backgroundPosition: '50% 50%',
+                backgroundImage: `url(${valueRenderer(
+                  item.data[cover.field],
+                  cover,
+                )})`,
+              }}
+            />
+          )}
           <div className="card-body">
-            <div className="card-title">Test</div>
+            {primary && (
+              <div className="card-title">
+                {valueRenderer(item.data[primary.field], primary)}
+              </div>
+            )}
             <dl className="mb-0">
               {columnDefs.map(column => [
                 <dt
@@ -57,7 +62,7 @@ export default class Item extends PureComponent<any> {
                   className="mb-0 text-truncate"
                   key={`${item.id}-${column.field}-value`}
                 >
-                  {this.valueRenderer(item.data[column.field], column)}
+                  {valueRenderer(item.data[column.field], column)}
                 </dd>,
               ])}
             </dl>

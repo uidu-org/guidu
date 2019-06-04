@@ -18,13 +18,13 @@ const ItemWrapper = ({ data, index, style }) => {
 
 const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
   <StickyListContext.Consumer>
-    {({ stickyIndices, columnDefs, gutterSize }) => (
+    {({ stickyIndices, columnDefs, gutterSize, headerHeight }) => (
       <div ref={ref} {...rest}>
         {stickyIndices.map(index => (
           <Header
             index={index}
             key={index}
-            style={{ height: 48 }}
+            style={{ height: headerHeight }}
             data={{ columnDefs, gutterSize }}
           />
         ))}
@@ -38,6 +38,7 @@ const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
 const StickyList = ({
   children,
   stickyIndices,
+  headerHeight,
   itemData: { columnDefs, items, gutterSize },
   ...rest
 }) => (
@@ -48,6 +49,7 @@ const StickyList = ({
       columnDefs,
       items,
       gutterSize,
+      headerHeight,
     }}
   >
     <VariableList
@@ -57,6 +59,7 @@ const StickyList = ({
         items,
         columnDefs,
         gutterSize,
+        headerHeight,
       }}
       {...rest}
     >
@@ -74,10 +77,18 @@ const createItemData = memoize((items, columnDefs, gutterSize) => ({
 export default class List extends PureComponent<any> {
   static defaultProps = {
     gutterSize: 8,
+    headerHeight: 48,
+    itemSize: 96,
   };
 
   render() {
-    const { rowData, columnDefs, gutterSize } = this.props;
+    const {
+      rowData,
+      columnDefs,
+      gutterSize,
+      rowHeight,
+      headerHeight,
+    } = this.props;
     const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
     const itemData = createItemData(rowData, visibleColumnDefs, gutterSize);
     return (
@@ -87,9 +98,9 @@ export default class List extends PureComponent<any> {
             <StickyList
               useIsScrolling
               height={height}
-              // itemData={itemData}
               itemCount={rowData.length}
-              itemSize={index => (index === 0 ? 48 : 96)}
+              itemSize={index => (index === 0 ? headerHeight : rowHeight)}
+              headerHeight={headerHeight}
               stickyIndices={[0]}
               itemData={itemData}
               innerElementType={innerElementType}

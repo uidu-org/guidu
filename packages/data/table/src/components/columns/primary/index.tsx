@@ -1,5 +1,5 @@
 export default () => ({
-  pinned: 'left',
+  type: 'primary',
   suppressMovable: true,
   lockVisible: true,
 });

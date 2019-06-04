@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   addressColumn,
   attachmentsColumn,
@@ -73,3 +74,24 @@ export const buildColumn = field => ({
 });
 
 export const buildColumns = fields => fields.map(field => buildColumn(field));
+
+export const valueRenderer = (
+  originalValue,
+  { cellRendererFramework: Renderer, valueFormatter, valueGetter },
+) => {
+  const value = valueGetter ? valueGetter(originalValue) : originalValue;
+  if (!value) {
+    return '-';
+  }
+
+  if (Renderer) {
+    return <Renderer value={valueFormatter ? valueFormatter(value) : value} />;
+  }
+  return valueFormatter ? valueFormatter(value) : value;
+};
+
+export const getPrimary = columnDefs =>
+  columnDefs.filter(column => column.type === 'primary')[0];
+
+export const getCover = columnDefs =>
+  columnDefs.filter(column => column.type === 'cover')[0];

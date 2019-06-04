@@ -4,6 +4,7 @@ import React from 'react';
 import Renderer from './renderer';
 
 export default () => ({
+  type: 'phone',
   filter: 'agTextColumnFilter',
   cellRendererFramework: Renderer,
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faPhone} /> },

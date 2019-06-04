@@ -4,5 +4,6 @@ import React from 'react';
 
 export default () => ({
   filter: 'agTextColumnFilter',
+  type: 'attachments',
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faFile} /> },
 });

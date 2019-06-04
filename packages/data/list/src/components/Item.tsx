@@ -1,22 +1,7 @@
+import { getCover, getPrimary, valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
 
 export default class Item extends PureComponent<any> {
-  valueRenderer = (
-    value,
-    { cellRendererFramework: Renderer, valueFormatter },
-  ) => {
-    if (!value) {
-      return '-';
-    }
-
-    if (Renderer) {
-      return (
-        <Renderer value={valueFormatter ? valueFormatter(value) : value} />
-      );
-    }
-    return valueFormatter ? valueFormatter(value) : value;
-  };
-
   render() {
     const { index, style, data } = this.props;
     const { items, columnDefs, gutterSize } = data;
@@ -25,6 +10,9 @@ export default class Item extends PureComponent<any> {
     if (!item) {
       return null;
     }
+
+    const primary = getPrimary(columnDefs);
+    const cover = getCover(columnDefs);
 
     return (
       <div
@@ -39,34 +27,48 @@ export default class Item extends PureComponent<any> {
         }}
         className="card flex-row align-items-center w-auto"
       >
-        <div
-          style={{
-            width: '138px',
-            backgroundColor: 'red',
-            marginRight: '1rem',
-            height: '100%',
-            flexShrink: 0,
-          }}
-        />
-        <div className="d-flex flex-column">
+        {cover && (
           <div
-            className="mb-2"
             style={{
-              position: 'sticky',
-              left: '1rem',
-              width: 'fit-content',
+              width: cover.width || '138px',
+              backgroundSize: 'cover',
+              backgroundPosition: '50% 50%',
+              backgroundImage: `url(${valueRenderer(
+                item[cover.field],
+                cover,
+              )})`,
+              height: '100%',
+              flexShrink: 0,
             }}
-          >
-            <p className="font-weight-bold mb-0">Test</p>
-          </div>
+          />
+        )}
+        <div className="d-flex flex-column ml-3">
+          {primary && (
+            <div
+              className="mb-2"
+              style={{
+                position: 'sticky',
+                left: '1rem',
+                width: 'fit-content',
+              }}
+            >
+              <p className="font-weight-bold mb-0">
+                {valueRenderer(item[primary.field], primary)}
+              </p>
+            </div>
+          )}
           <div className="d-flex">
             {columnDefs.map(column => (
               <div
                 key={`${item.id}-${column.colId}-value`}
                 className="text-truncate"
-                style={{ width: '150px' }}
+                style={{
+                  width: column.width || '150px',
+                  minWidth: column.minWidth || 'auto',
+                  maxWidth: column.maxWidth || 'auto',
+                }}
               >
-                {this.valueRenderer(item[column.field], column)}
+                {valueRenderer(item[column.field], column)}
               </div>
             ))}
           </div>
