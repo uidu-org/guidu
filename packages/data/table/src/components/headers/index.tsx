@@ -7,7 +7,7 @@ export default class CustomHeader extends PureComponent<any> {
     const { enableMenu, displayName, menuIcon } = this.props;
 
     return (
-      <div className="d-flex align-items-center justify-content-center flex-grow-1">
+      <div className="d-flex align-items-center justify-content-center flex-grow-1igin ">
         <div className="customHeaderLabel flex-grow-1 text-truncate">
           {menuIcon && (
             <span className="mr-2" style={{ opacity: 0.5 }}>

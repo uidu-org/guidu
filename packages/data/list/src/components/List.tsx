@@ -16,36 +16,24 @@ const ItemWrapper = ({ data, index, style }) => {
   return <ItemRenderer index={index} style={style} data={data} />;
 };
 
-const innerElementType = forwardRef(
-  ({ children, style, ...rest }, ref: any) => (
-    <StickyListContext.Consumer>
-      {({
-        stickyIndices,
-        columnDefs,
-        gutterSize,
-        headerHeight,
-        onItemClick,
-      }) => (
-        <div
-          ref={ref}
-          style={{ ...style, paddingBottom: gutterSize }}
-          {...rest}
-        >
-          {stickyIndices.map(index => (
-            <Header
-              index={index}
-              key={index}
-              style={{ height: headerHeight }}
-              data={{ columnDefs, gutterSize, onItemClick }}
-            />
-          ))}
+const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
+  <StickyListContext.Consumer>
+    {({ stickyIndices, columnDefs, gutterSize, headerHeight, onItemClick }) => (
+      <div ref={ref} {...rest}>
+        {stickyIndices.map(index => (
+          <Header
+            index={index}
+            key={index}
+            style={{ height: headerHeight }}
+            data={{ columnDefs, gutterSize, onItemClick }}
+          />
+        ))}
 
-          {children}
-        </div>
-      )}
-    </StickyListContext.Consumer>
-  ),
-);
+        {children}
+      </div>
+    )}
+  </StickyListContext.Consumer>
+));
 
 const StickyList = ({
   children,

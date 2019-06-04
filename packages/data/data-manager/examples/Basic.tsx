@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import 'react-big-calendar/lib/sass/styles.scss';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
 

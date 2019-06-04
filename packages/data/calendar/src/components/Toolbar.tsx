@@ -1,20 +1,9 @@
 import { ShellHeader } from '@uidu/shell';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
-import 'react-big-calendar/lib/addons/dragAndDrop/styles.css';
-import 'react-big-calendar/lib/sass/styles.scss';
 import { ChevronLeft, ChevronRight } from 'react-feather';
 
 export default class Toolbar extends PureComponent<any> {
-  // static propTypes = {
-  //   view: PropTypes.string.isRequired,
-  //   views: PropTypes.arrayOf(PropTypes.string).isRequired,
-  //   label: PropTypes.node.isRequired,
-  //   localizer: PropTypes.shape(PropTypes.obj).isRequired,
-  //   onNavigate: PropTypes.func.isRequired,
-  //   onView: PropTypes.func.isRequired,
-  // };
-
   render() {
     const { localizer, label } = this.props;
     const { messages } = localizer;

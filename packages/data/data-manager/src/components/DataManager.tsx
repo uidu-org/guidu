@@ -129,10 +129,18 @@ export default class DataManager extends Component<DataManagerProps, any> {
   renderView = ({
     className = null,
     viewProps = {
-      table: {},
-      calendar: {},
-      list: {},
-      gallery: {},
+      table: {
+        className: null,
+      },
+      calendar: {
+        className: null,
+      },
+      list: {
+        className: null,
+      },
+      gallery: {
+        className: null,
+      },
     },
   }) => {
     const { rowData } = this.props;
@@ -163,7 +171,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     if (currentView.kind === 'table') {
       return (
-        <ShellBody className={className} scrollable>
+        <ShellBody className={viewProps.table.className} scrollable>
           {table}
         </ShellBody>
       );
@@ -212,7 +220,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
             }
           >
             {({ default: List }) => (
-              <ShellBody scrollable className={className}>
+              <ShellBody scrollable className={viewProps.list.className}>
                 <List
                   {...viewProps.list}
                   onItemClick={console.log}
@@ -237,7 +245,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
           }
         >
           {({ default: Gallery }) => (
-            <ShellBody className={className} scrollable>
+            <ShellBody className={viewProps.gallery.className} scrollable>
               <Gallery
                 {...viewProps.gallery}
                 rowData={data}
