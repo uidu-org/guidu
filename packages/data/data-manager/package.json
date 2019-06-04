@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Data manager with different views, filter and sorts",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -14,13 +14,13 @@
   },
   "dependencies": {
     "@loadable/component": "^5.10.1",
-    "@uidu/calendar": "^0.1.1",
+    "@uidu/calendar": "^0.1.2",
     "@uidu/data-controls": "^0.1.7",
-    "@uidu/gallery": "^0.1.4",
-    "@uidu/list": "^0.1.3",
+    "@uidu/gallery": "^0.1.5",
+    "@uidu/list": "^0.1.4",
     "@uidu/shell": "^0.1.15",
     "@uidu/spinner": "^0.1.8",
-    "@uidu/table": "^0.1.7",
+    "@uidu/table": "^0.1.8",
     "react-sortable-hoc": "^1.9.1"
   }
 }

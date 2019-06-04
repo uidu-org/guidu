@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.8
+- [patch] [8e96367](https://github.org/uidu-org/guidu/commits/8e96367):
+
+  - Added onItemClick and some styling fixes (with classes)
+- [patch] [68b0979](https://github.org/uidu-org/guidu/commits/68b0979):
+
+  - No default styling for calendar"
+
 ## 0.1.7
 - [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
 

@@ -1,5 +1,10 @@
 # @uidu/gallery
 
+## 0.1.5
+- [patch] [8e96367](https://github.org/uidu-org/guidu/commits/8e96367):
+
+  - Added onItemClick and some styling fixes (with classes)
+
 ## 0.1.4
 - [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
 

@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.5
+- [patch] [8e96367](https://github.org/uidu-org/guidu/commits/8e96367):
+
+  - Added onItemClick and some styling fixes (with classes)
+- [patch] [68b0979](https://github.org/uidu-org/guidu/commits/68b0979):
+
+  - No default styling for calendar"
+
 ## 0.1.4
 - [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
 
