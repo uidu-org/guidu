@@ -16,30 +16,42 @@ const ItemWrapper = ({ data, index, style }) => {
   return <ItemRenderer index={index} style={style} data={data} />;
 };
 
-const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
-  <StickyListContext.Consumer>
-    {({ stickyIndices, columnDefs, gutterSize, headerHeight }) => (
-      <div ref={ref} {...rest}>
-        {stickyIndices.map(index => (
-          <Header
-            index={index}
-            key={index}
-            style={{ height: headerHeight }}
-            data={{ columnDefs, gutterSize }}
-          />
-        ))}
+const innerElementType = forwardRef(
+  ({ children, style, ...rest }, ref: any) => (
+    <StickyListContext.Consumer>
+      {({
+        stickyIndices,
+        columnDefs,
+        gutterSize,
+        headerHeight,
+        onItemClick,
+      }) => (
+        <div
+          ref={ref}
+          style={{ ...style, paddingBottom: gutterSize }}
+          {...rest}
+        >
+          {stickyIndices.map(index => (
+            <Header
+              index={index}
+              key={index}
+              style={{ height: headerHeight }}
+              data={{ columnDefs, gutterSize, onItemClick }}
+            />
+          ))}
 
-        {children}
-      </div>
-    )}
-  </StickyListContext.Consumer>
-));
+          {children}
+        </div>
+      )}
+    </StickyListContext.Consumer>
+  ),
+);
 
 const StickyList = ({
   children,
   stickyIndices,
   headerHeight,
-  itemData: { columnDefs, items, gutterSize },
+  itemData: { columnDefs, items, gutterSize, onItemClick },
   ...rest
 }) => (
   <StickyListContext.Provider
@@ -50,6 +62,7 @@ const StickyList = ({
       items,
       gutterSize,
       headerHeight,
+      onItemClick,
     }}
   >
     <VariableList
@@ -60,6 +73,7 @@ const StickyList = ({
         columnDefs,
         gutterSize,
         headerHeight,
+        onItemClick,
       }}
       {...rest}
     >
@@ -68,11 +82,14 @@ const StickyList = ({
   </StickyListContext.Provider>
 );
 
-const createItemData = memoize((items, columnDefs, gutterSize) => ({
-  items,
-  columnDefs,
-  gutterSize,
-}));
+const createItemData = memoize(
+  (items, columnDefs, gutterSize, onItemClick) => ({
+    items,
+    columnDefs,
+    gutterSize,
+    onItemClick,
+  }),
+);
 
 export default class List extends PureComponent<any> {
   static defaultProps = {
@@ -88,9 +105,15 @@ export default class List extends PureComponent<any> {
       gutterSize,
       rowHeight,
       headerHeight,
+      onItemClick,
     } = this.props;
     const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
-    const itemData = createItemData(rowData, visibleColumnDefs, gutterSize);
+    const itemData = createItemData(
+      rowData,
+      visibleColumnDefs,
+      gutterSize,
+      onItemClick,
+    );
     return (
       <AutoSizer>
         {({ height, width }) => {

@@ -17,12 +17,13 @@ import Table from '@uidu/table';
 import moment from 'moment';
 import React, { Component, Fragment } from 'react';
 import { arrayMove } from 'react-sortable-hoc';
+import { DataManagerProps } from '../types';
 
 const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
 const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
 
-export default class DataManager extends Component<any, any> {
+export default class DataManager extends Component<DataManagerProps, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -150,7 +151,7 @@ export default class DataManager extends Component<any, any> {
         {...viewProps.table}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
-        columnDefs={columnDefs}
+        columnDefs={columnDefs.filter(column => column.type !== 'cover')}
         rowData={rowData}
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
@@ -214,6 +215,7 @@ export default class DataManager extends Component<any, any> {
               <ShellBody scrollable className={className}>
                 <List
                   {...viewProps.list}
+                  onItemClick={console.log}
                   rowData={data.map(datum => datum.data)}
                   columnDefs={columnDefs}
                 />

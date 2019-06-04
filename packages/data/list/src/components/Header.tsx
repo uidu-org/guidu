@@ -20,49 +20,59 @@ export default class Header extends PureComponent<any> {
       >
         {cover && (
           <div
+            className="text-truncate d-flex align-items-center data-list-cover-header"
             style={{
               width: cover.width || '138px',
               backgroundColor: 'transparent',
               height: '100%',
               flexShrink: 0,
             }}
-          />
+          >
+            <span className="mr-2" style={{ opacity: 0.5 }}>
+              {cover.headerComponentParams.menuIcon}
+            </span>
+            Cover
+          </div>
         )}
-        <div className="d-flex flex-column ml-3">
+        <div className="d-flex flex-column">
           <div className="d-flex">
-            {columnDefs.map(
-              ({
-                colId,
-                width,
-                minWidth,
-                maxWidth,
-                headerName,
-                headerComponentParams,
-              }) => {
-                let menuIcon;
-                if (headerComponentParams) {
-                  menuIcon = headerComponentParams.menuIcon;
-                }
-                return (
-                  <div
-                    key={`${colId}-label`}
-                    className="text-truncate"
-                    style={{
-                      width: width || '150px',
-                      minWidth: minWidth || 'auto',
-                      maxWidth: maxWidth || 'auto',
-                    }}
-                  >
-                    {menuIcon && (
-                      <span className="mr-2" style={{ opacity: 0.5 }}>
-                        {menuIcon}
-                      </span>
-                    )}
-                    {headerName}
-                  </div>
-                );
-              },
-            )}
+            {columnDefs
+              .filter(
+                column => column.type !== 'cover' && column.type !== 'primary',
+              )
+              .map(
+                ({
+                  colId,
+                  width,
+                  minWidth,
+                  maxWidth,
+                  headerName,
+                  headerComponentParams,
+                }) => {
+                  let menuIcon;
+                  if (headerComponentParams) {
+                    menuIcon = headerComponentParams.menuIcon;
+                  }
+                  return (
+                    <div
+                      key={`${colId}-label`}
+                      className="text-truncate data-list-header"
+                      style={{
+                        width: width || '150px',
+                        minWidth: minWidth || 'auto',
+                        maxWidth: maxWidth || 'auto',
+                      }}
+                    >
+                      {menuIcon && (
+                        <span className="mr-2" style={{ opacity: 0.5 }}>
+                          {menuIcon}
+                        </span>
+                      )}
+                      {headerName}
+                    </div>
+                  );
+                },
+              )}
           </div>
         </div>
       </div>

@@ -1,0 +1,1 @@
+- Added onItemClick and some styling fixes (with classes)

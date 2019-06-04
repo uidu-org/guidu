@@ -30,7 +30,8 @@ export const availableColumns = [
   {
     colId: 'email',
     field: 'email',
-    headerName: 'Email',
+    headerName: 'Cover',
+    ...defaultColumn(),
     ...coverColumn(),
     valueGetter: ({ data }) =>
       'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
