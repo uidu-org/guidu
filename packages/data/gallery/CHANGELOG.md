@@ -1,5 +1,10 @@
 # @uidu/gallery
 
+## 0.1.3
+- [patch] [26c0af6](https://github.org/uidu-org/guidu/commits/26c0af6):
+
+  - Added gutterSize to list as well
+
 ## 0.1.2
 - [patch] [5dcf828](https://github.org/uidu-org/guidu/commits/5dcf828):
 
