@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-test-helpers",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Collection of test helpers used in media component stories and specs",
   "uidu:src": "src/index.tsx",
   "module": "index.js",

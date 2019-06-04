@@ -1,5 +1,10 @@
 # @uidu/link-preview
 
+## 0.1.5
+- [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
+
+  - Added cover column, updated axios
+
 ## 0.1.4
 - [patch] [d59b402](https://github.org/uidu-org/guidu/commits/d59b402):
 

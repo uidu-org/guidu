@@ -1,6 +1,6 @@
 {
   "name": "@uidu/ci-scripts",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "description": "A collection of scripts for use in CI",
   "main": "index.js",

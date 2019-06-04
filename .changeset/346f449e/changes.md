@@ -1,1 +1,0 @@
-- Added cover column, updated axios

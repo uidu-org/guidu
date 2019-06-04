@@ -1,5 +1,10 @@
 # @uidu/ci-scripts
 
+## 0.1.8
+- [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
+
+  - Added cover column, updated axios
+
 ## 0.1.7
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 
