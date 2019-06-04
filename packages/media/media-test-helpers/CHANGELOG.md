@@ -1,5 +1,10 @@
 # @uidu/media-test-helpers
 
+## 0.1.13
+- [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
+
+  - Added cover column, updated axios
+
 ## 0.1.12
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 

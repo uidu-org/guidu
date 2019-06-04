@@ -1,5 +1,10 @@
 # @uidu/list
 
+## 0.1.3
+- [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
+
+  - Added cover column, updated axios
+
 ## 0.1.2
 - [patch] [39654c0](https://github.org/uidu-org/guidu/commits/39654c0):
 

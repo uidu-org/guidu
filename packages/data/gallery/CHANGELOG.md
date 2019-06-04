@@ -1,5 +1,10 @@
 # @uidu/gallery
 
+## 0.1.4
+- [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
+
+  - Added cover column, updated axios
+
 ## 0.1.3
 - [patch] [26c0af6](https://github.org/uidu-org/guidu/commits/26c0af6):
 
