@@ -1,5 +1,10 @@
 # @uidu/dropdown-menu
 
+## 0.1.11
+- [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
+
+  - Bump dependencies
+
 ## 0.1.10
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
