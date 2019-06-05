@@ -10,6 +10,8 @@ export default class Item extends PureComponent<any> {
       return null;
     }
 
+    console.log(item);
+
     const primary = getPrimary(columnDefs);
     const cover = getCover(columnDefs);
 

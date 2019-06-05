@@ -227,7 +227,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
                 <List
                   {...viewProps.list}
                   onItemClick={onItemClick}
-                  rowData={data.map(datum => datum.data)}
+                  rowData={data}
                   columnDefs={columnDefs}
                 />
               </ShellBody>

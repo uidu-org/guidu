@@ -57,7 +57,7 @@ export default class Item extends PureComponent<any> {
                 width: 'fit-content',
               }}
             >
-              {valueRenderer(item[primary.field], primary)}
+              {valueRenderer(item.data[primary.field], primary)}
             </div>
           )}
           <div className="d-flex">
@@ -75,7 +75,7 @@ export default class Item extends PureComponent<any> {
                     maxWidth: column.maxWidth || 'auto',
                   }}
                 >
-                  {valueRenderer(item[column.field], column)}
+                  {valueRenderer(item.data[column.field], column)}
                 </div>
               ))}
           </div>

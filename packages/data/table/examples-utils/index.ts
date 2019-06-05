@@ -1,3 +1,4 @@
+import faker from 'faker';
 import {
   addressColumn,
   attachmentsColumn,
@@ -33,8 +34,10 @@ export const availableColumns = [
     headerName: 'Cover',
     ...defaultColumn(),
     ...coverColumn(),
-    valueGetter: ({ data }) =>
-      'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+    valueGetter: props => {
+      console.log(props);
+      return 'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
+    },
   },
   {
     colId: 'email',
@@ -51,6 +54,20 @@ export const availableColumns = [
     headerName: 'FullName',
     ...defaultColumn(),
     ...textColumn(),
+  },
+  {
+    colId: 'value',
+    field: 'value',
+    headerName: 'Valore',
+    ...defaultColumn(),
+    ...currencyColumn(),
+  },
+  {
+    colId: 'percent',
+    field: 'percent',
+    headerName: 'Percentuale',
+    ...defaultColumn(),
+    ...percentColumn(),
   },
   {
     colId: 'createdAt',
@@ -157,20 +174,6 @@ export const availableColumns = [
     }),
   },
   {
-    colId: 'value',
-    field: 'uid',
-    headerName: 'Valore',
-    ...defaultColumn(),
-    ...currencyColumn(),
-  },
-  {
-    colId: 'percent',
-    field: 'uid',
-    headerName: 'Percentuale',
-    ...defaultColumn(),
-    ...percentColumn(),
-  },
-  {
     colId: 'votes',
     field: 'uid',
     headerName: 'Voto',
@@ -187,9 +190,26 @@ export const availableColumns = [
 ];
 
 export const fetchContacts = () => {
-  return fetch(
-    'https://uidufundraising.uidu.local:8443/dashboard/apps/contacts.json',
-  )
-    .then(result => result.json())
-    .then(rowData => rowData);
+  return new Promise((resolve, reject) => {
+    let wait = setTimeout(() => {
+      clearTimeout(wait);
+      resolve(
+        Array.from(Array(100).keys()).map(i => ({
+          id: faker.random.uuid(),
+          email: faker.internet.email(),
+          displayName: faker.name.findName(),
+          value: faker.commerce.price(),
+          percent: faker.random.number(),
+          createdAt: faker.date.past(),
+          updatedAt: faker.date.recent(),
+          firstName: faker.name.firstName(),
+          lastName: faker.name.lastName(),
+          age: faker.random.number(),
+          gender: 'female',
+          role: 'admin',
+          member: faker.internet.email(),
+        })),
+      );
+    }, 3000);
+  });
 };

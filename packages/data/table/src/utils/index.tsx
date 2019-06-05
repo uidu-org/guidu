@@ -76,18 +76,19 @@ export const buildColumn = field => ({
 export const buildColumns = fields => fields.map(field => buildColumn(field));
 
 export const valueRenderer = (
-  originalValue,
-  { cellRendererFramework: Renderer, valueFormatter, valueGetter },
+  value,
+  { cellRendererFramework: Renderer, valueFormatter },
 ) => {
-  const value = valueGetter ? valueGetter(originalValue) : originalValue;
   if (!value) {
     return '-';
   }
 
   if (Renderer) {
-    return <Renderer value={valueFormatter ? valueFormatter(value) : value} />;
+    return (
+      <Renderer value={valueFormatter ? valueFormatter({ value }) : value} />
+    );
   }
-  return valueFormatter ? valueFormatter(value) : value;
+  return valueFormatter ? valueFormatter({ value }) : value;
 };
 
 export const getPrimary = columnDefs =>
