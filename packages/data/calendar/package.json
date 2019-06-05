@@ -1,6 +1,6 @@
 {
   "name": "@uidu/calendar",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React component to show data items as calendar",
   "uidu:src": "index.ts",
   "module": "index.js",
