@@ -41,7 +41,6 @@ export default class Table extends Component<any> {
                 date: {},
                 default: {},
                 email: {},
-                id: {},
                 member: {},
                 multipleSelect: {},
                 number: {},
@@ -53,6 +52,7 @@ export default class Table extends Component<any> {
                 singleSelect: {},
                 string: {},
                 text: {},
+                uid: {},
                 url: {},
                 vote: {},
               }}

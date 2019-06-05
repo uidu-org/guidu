@@ -1,11 +1,10 @@
 // @flow
-import React, { Component, type Node } from 'react';
+import React, { Component, Node } from 'react';
 import textContent from 'react-addons-text-content';
-
 import {
   GroupTitle,
-  GroupTitleText,
   GroupTitleAfter,
+  GroupTitleText,
 } from '../styled/ItemGroup';
 
 type Props = {
@@ -23,6 +22,8 @@ type Props = {
   role: string,
   /** Accessibility label - if not provided the title will be used if available */
   label?: Node,
+  /** Accessibility label - if not provided the title will be used if available */
+  className?: string,
 };
 
 export default class ItemGroup extends Component<Props, {}> {
@@ -41,6 +42,7 @@ export default class ItemGroup extends Component<Props, {}> {
       label,
       innerRef,
       role,
+      className,
     } = this.props;
 
     const ariaLabel = (() => {
@@ -53,7 +55,12 @@ export default class ItemGroup extends Component<Props, {}> {
       return '';
     })();
     return (
-      <div aria-label={ariaLabel} role={role} ref={innerRef}>
+      <div
+        aria-label={ariaLabel}
+        role={role}
+        ref={innerRef}
+        className={className}
+      >
         {title ? (
           <GroupTitle aria-hidden="true" isCompact={isCompact}>
             <GroupTitleText>{title}</GroupTitleText>

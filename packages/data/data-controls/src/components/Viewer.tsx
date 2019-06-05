@@ -19,33 +19,53 @@ const viewIcons = {
 
 export default class Viewer extends Component<any> {
   render() {
-    const { onChange, availableViews, currentView } = this.props;
+    const {
+      onChange,
+      onAdd,
+      dataViews,
+      availableViews,
+      currentView,
+    } = this.props;
     return (
       <DropdownMenu
         trigger={
           <Trigger activeBg="#fee2d5" className="btn pr-5 mr-3" active={false}>
             {viewIcons[currentView.kind]}
-            <span style={{ textTransform: 'initial' }}>{currentView.kind}</span>
+            <span style={{ textTransform: 'initial' }}>{currentView.name}</span>
           </Trigger>
         }
         position="bottom left"
       >
         <DropdownItemGroup>
-          {availableViews.map(availableView => (
+          {dataViews.map(dataView => (
             <DropdownItem
-              key={availableView}
+              key={dataView.id}
               onClick={e => {
                 e.preventDefault();
-                onChange({
-                  kind: availableView,
-                });
+                onChange(dataView);
               }}
             >
-              {viewIcons[availableView]}
-              {availableView}
+              {viewIcons[dataView.kind]}
+              {dataView.name}
             </DropdownItem>
           ))}
         </DropdownItemGroup>
+        <div className="border-top p-2 mt-2">
+          <DropdownItemGroup className="d-flex" title="aggiungi">
+            {availableViews.map(availableView => (
+              <DropdownItem
+                key={availableView}
+                onClick={e => {
+                  e.preventDefault();
+                  onAdd(availableView);
+                }}
+              >
+                {viewIcons[availableView]}
+                {availableView}
+              </DropdownItem>
+            ))}
+          </DropdownItemGroup>
+        </div>
       </DropdownMenu>
     );
   }

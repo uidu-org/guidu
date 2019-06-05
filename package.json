@@ -142,7 +142,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.4.0",
     "faker": "^4.1.0",
-    "flow-bin": "^0.99",
+    "flow-bin": "^0.100",
     "fs-extra": "^8.0.1",
     "jest": "^24.1.0",
     "less": "^3.8.1",

@@ -29,6 +29,9 @@ export default class Sorter extends Component<any> {
   render() {
     const { sorters, fields } = this.props;
     const sortersCount = sorters.length;
+
+    console.log(fields);
+
     return (
       <DropdownMenu
         trigger={

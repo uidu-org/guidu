@@ -76,7 +76,9 @@ export default class Toggler extends Component<any> {
             placeholder="Cerca tra le colonne"
           />
           <SortableList
-            items={fields}
+            items={fields.filter(
+              column => column.type !== 'primary' && column.type !== 'cover',
+            )}
             // onSortEnd={onSortEnd}
             onToggle={onToggle}
             // useDragHandle

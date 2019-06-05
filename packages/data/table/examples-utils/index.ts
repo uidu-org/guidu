@@ -7,7 +7,6 @@ import {
   dateColumn,
   defaultColumn,
   emailColumn,
-  idColumn,
   memberColumn,
   multipleSelectColumn,
   numberColumn,
@@ -18,6 +17,7 @@ import {
   singleSelectColumn,
   stringColumn,
   textColumn,
+  uidColumn,
   urlColumn,
 } from '../src';
 
@@ -25,7 +25,7 @@ export const availableColumns = [
   {
     colId: 'id',
     field: 'id',
-    ...idColumn(),
+    ...uidColumn(),
   },
   {
     colId: 'email',

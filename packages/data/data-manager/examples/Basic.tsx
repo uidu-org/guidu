@@ -3,13 +3,46 @@ import 'react-big-calendar/lib/sass/styles.scss';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
 
+const dataViews = [
+  {
+    id: 1,
+    name: 'Tutti i contatti',
+    kind: 'table',
+  },
+  {
+    id: 2,
+    name: 'Galleria contatti',
+    kind: 'gallery',
+  },
+];
+
 export default class Basic extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
+      dataViews,
+      currentView: dataViews[0],
       columnDefs: [...availableColumns],
     };
   }
+
+  toggleView = view => {
+    this.setState({
+      currentView: view,
+    });
+  };
+
+  addView = kind => {
+    const newView = {
+      id: this.state.dataViews.length + 1,
+      kind,
+      name: `new ${kind}`,
+    };
+    this.setState({
+      dataViews: [...this.state.dataViews, newView],
+      currentView: newView,
+    });
+  };
 
   componentDidMount() {
     fetchContacts().then(rowData => this.setState({ rowData }));
@@ -21,6 +54,10 @@ export default class Basic extends Component<any, any> {
         availableViews={['table', 'gallery', 'calendar', 'list']}
         columnDefs={this.state.columnDefs}
         rowData={this.state.rowData}
+        currentView={this.state.currentView}
+        dataViews={this.state.dataViews}
+        onViewChange={this.toggleView}
+        onViewAdd={this.addView}
       >
         {({ renderControls, renderView }) => (
           <Fragment>
@@ -30,9 +67,9 @@ export default class Basic extends Component<any, any> {
               })}
             </div>
             {renderView({
-              className: 'bg-light',
               viewProps: {
                 gallery: {
+                  className: 'bg-light',
                   gutterSize: 24,
                   columnCount: 3,
                 },

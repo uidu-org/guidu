@@ -33,9 +33,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
       filters: [],
       groupers: [],
       rowHeight: 48,
-      currentView: {
-        kind: 'gallery',
-      },
     };
   }
 
@@ -127,7 +124,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   renderView = ({
-    className = null,
     viewProps = {
       table: {
         className: null,
@@ -143,8 +139,8 @@ export default class DataManager extends Component<DataManagerProps, any> {
       },
     },
   }) => {
-    const { rowData } = this.props;
-    const { data, columnDefs, currentView, rowHeight } = this.state;
+    const { rowData, onItemClick, currentView } = this.props;
+    const { data, columnDefs, rowHeight } = this.state;
 
     if (!rowData) {
       return (
@@ -171,7 +167,10 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     if (currentView.kind === 'table') {
       return (
-        <ShellBody className={viewProps.table.className} scrollable>
+        <ShellBody
+          className={(viewProps.table || ({} as any)).className}
+          scrollable
+        >
           {table}
         </ShellBody>
       );
@@ -191,6 +190,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
               return (
                 <Calendar
                   {...viewProps.calendar}
+                  onItemClick={onItemClick}
                   events={data.map(datum => datum.data)}
                   startAccessor={item => moment(item.createdAt).toDate()}
                   titleAccessor={item => item.email}
@@ -220,10 +220,13 @@ export default class DataManager extends Component<DataManagerProps, any> {
             }
           >
             {({ default: List }) => (
-              <ShellBody scrollable className={viewProps.list.className}>
+              <ShellBody
+                scrollable
+                className={(viewProps.list || ({} as any)).className}
+              >
                 <List
                   {...viewProps.list}
-                  onItemClick={console.log}
+                  onItemClick={onItemClick}
                   rowData={data.map(datum => datum.data)}
                   columnDefs={columnDefs}
                 />
@@ -245,9 +248,13 @@ export default class DataManager extends Component<DataManagerProps, any> {
           }
         >
           {({ default: Gallery }) => (
-            <ShellBody className={viewProps.gallery.className} scrollable>
+            <ShellBody
+              className={(viewProps.gallery || ({} as any)).className}
+              scrollable
+            >
               <Gallery
                 {...viewProps.gallery}
+                onItemClick={onItemClick}
                 rowData={data}
                 columnDefs={columnDefs}
               />
@@ -260,14 +267,17 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   renderControls = ({ availableViews }) => {
-    const { sorters, filters, groupers, columnDefs, currentView } = this.state;
+    const { currentView, dataViews, onViewChange, onViewAdd } = this.props;
+    const { sorters, filters, groupers, columnDefs } = this.state;
 
     return (
       <Fragment>
         <Viewer
           currentView={currentView}
+          dataViews={dataViews}
           availableViews={availableViews}
-          onChange={this.toggleView}
+          onChange={onViewChange}
+          onAdd={onViewAdd}
         />
         {currentView.kind === 'table' && (
           <Toggler

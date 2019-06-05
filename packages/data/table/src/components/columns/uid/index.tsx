@@ -1,5 +1,5 @@
 export default () => ({
-  type: 'date',
+  type: 'uid',
   headerName: 'ID',
   pinned: true,
   lockVisible: true,

@@ -57,9 +57,7 @@ export default class Item extends PureComponent<any> {
                 width: 'fit-content',
               }}
             >
-              <p className="font-weight-bold mb-0">
-                {valueRenderer(item[primary.field], primary)}
-              </p>
+              {valueRenderer(item[primary.field], primary)}
             </div>
           )}
           <div className="d-flex">
