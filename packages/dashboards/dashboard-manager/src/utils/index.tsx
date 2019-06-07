@@ -1,10 +1,5 @@
-import { nest } from 'd3-collection';
 import { timeDay, timeMonth, timeWeek, timeYear } from 'd3-time';
-import orderBy from 'lodash/orderBy';
 import moment from 'moment';
-import React from 'react';
-
-export const cleanTimeSeriesList = list => list.filter(l => !l.fake);
 
 export const convertTimeframeToRange = timeframe => {
   const range = {
@@ -45,38 +40,13 @@ export const convertTimeframeToRange = timeframe => {
   return range;
 };
 
-export const labelByTimeframeGroup = (label, timeframeGrouping) => {
-  switch (timeframeGrouping) {
-    case 'week':
-      return (
-        <span>
-          {moment(label).format('L')}
-          <span>
-            {' '}
-            -{' '}
-            {moment(label)
-              .add(1, 'weeks')
-              .format('L')}
-          </span>
-        </span>
-      );
-    case 'month':
-      return moment(label).format("MMMM 'YY");
-    case 'year':
-      return moment(label).format('YYYY');
-    default:
-      return moment(label).format('L');
-  }
-};
-
 export const groupByTimeframe = (
-  from,
-  to,
+  timeframe,
   timeframeGrouping,
   list,
-  rollup,
   key = 'createdAt',
 ) => {
+  const { from, to } = convertTimeframeToRange(timeframe);
   const startDate = moment(from).startOf(timeframeGrouping);
   const endDate = moment(to).endOf(timeframeGrouping);
   let range = null;
@@ -104,30 +74,8 @@ export const groupByTimeframe = (
       moment(endDate).diff(moment(l[key]).startOf(timeframeGrouping)) >= 0,
   );
 
-  const listWithKeys = orderBy(
-    [
-      ...range.map(l => ({
-        fake: true,
-        [key]: moment(l)
-          .startOf(timeframeGrouping)
-          // .utc()
-          .format(),
-      })),
-      ...data,
-    ],
-    key,
-    'asc',
-  );
-
   return {
-    timeline: nest()
-      .key(d =>
-        moment(d[key])
-          .startOf(timeframeGrouping)
-          .format(),
-      )
-      .rollup(rollup)
-      .entries(listWithKeys),
+    range,
     data,
   };
 };

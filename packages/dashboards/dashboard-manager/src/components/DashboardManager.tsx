@@ -1,17 +1,11 @@
 import { layoutOptions, renderBlock } from '@uidu/blocks';
 import { TimeFrame } from '@uidu/dashboard-controls';
-import groupBy from 'lodash/groupBy';
-import sumBy from 'lodash/sumBy';
 import React, { Component, Fragment } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import { DashboardManagerProps } from '../types';
-import {
-  cleanTimeSeriesList,
-  convertTimeframeToRange,
-  groupByTimeframe,
-} from '../utils';
+import { groupByTimeframe } from '../utils';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -19,8 +13,6 @@ export default class DashboardManager extends Component<
   DashboardManagerProps,
   any
 > {
-  private grid = React.createRef();
-
   constructor(props) {
     super(props);
     const { defaultTimeFrame } = props;
@@ -35,24 +27,10 @@ export default class DashboardManager extends Component<
     });
 
   renderBlocks = ({ blocks = [], ...rest }) => {
-    const { rowData } = this.props;
+    const { rowData, onLayoutChange } = this.props;
     const { timeFrame } = this.state;
 
-    const range = convertTimeframeToRange(timeFrame);
-    console.log(range);
-    const data = groupByTimeframe(
-      range.from,
-      range.to,
-      'month',
-      rowData,
-      v => ({
-        donationsCount: cleanTimeSeriesList(v).length,
-        contactsCount: Object.keys(
-          groupBy(cleanTimeSeriesList(v), 'contact.id'),
-        ).length,
-        donationsAmount: sumBy(cleanTimeSeriesList(v), 'amount'),
-      }),
-    );
+    const { data, range } = groupByTimeframe(timeFrame, 'month', rowData);
 
     const layout = blocks.map((block, index) => ({
       i: `${index}`,
@@ -62,26 +40,35 @@ export default class DashboardManager extends Component<
       h: 3,
       ...layoutOptions[block.kind],
     }));
-    console.log(layout);
 
     return (
       <ResponsiveGridLayout
         autoSize
         measureBeforeMount
         verticalCompact
-        rowHeight={96}
+        rowHeight={98.5}
         layouts={{
           lg: layout,
           md: layout,
         }}
-        onLayoutChange={console.log}
-        breakpoints={{ lg: 1200, md: 996, sm: 768, xs: 480, xxs: 0 }}
+        onLayoutChange={onLayoutChange}
+        breakpoints={{
+          lg: 1200,
+          md: 996,
+          sm: 768,
+          xs: 480,
+          xxs: 0,
+        }}
         cols={{ lg: 4, md: 4, sm: 2, xs: 1, xxs: 1 }}
         margin={[24, 24]}
+        isResizable={false}
       >
         {blocks.map((block, index) => {
-          console.log(block);
-          return <div key={`${index}`}>{renderBlock(block, data, rest)}</div>;
+          return (
+            <div key={`${index}`}>
+              {renderBlock(block, data, { ...rest, range })}
+            </div>
+          );
         })}
       </ResponsiveGridLayout>
     );

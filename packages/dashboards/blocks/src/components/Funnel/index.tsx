@@ -1,4 +1,3 @@
-import Spinner from '@uidu/spinner';
 import React, { PureComponent } from 'react';
 import {
   Funnel,
@@ -8,6 +7,7 @@ import {
   Tooltip,
 } from 'recharts';
 import { colors } from '../../utils';
+import Loader from '../Loader';
 
 const data01 = [
   {
@@ -40,10 +40,9 @@ const data01 = [
 export default class PieBlock extends PureComponent<any> {
   render() {
     const { rowData, loaded } = this.props;
-    const { data, timeline } = rowData;
 
     if (!loaded) {
-      return <Spinner />;
+      return <Loader />;
     }
 
     return (

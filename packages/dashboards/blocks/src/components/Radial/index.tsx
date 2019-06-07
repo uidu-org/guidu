@@ -1,12 +1,14 @@
-import Spinner from '@uidu/spinner';
+import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
 import {
+  Cell,
   Legend,
   RadialBar,
   RadialBarChart,
   ResponsiveContainer,
 } from 'recharts';
-import { colors } from '../../utils';
+import { colors, manipulator } from '../../utils';
+import Loader from '../Loader';
 
 const data01 = [
   {
@@ -53,14 +55,40 @@ const data01 = [
   },
 ];
 
-export default class PieBlock extends PureComponent<any> {
+export default class RadialBlock extends PureComponent<any> {
+  inBin = amount => {
+    const { bins } = this.props;
+    const foo = bins.map((bin, index) => {
+      if (amount >= bin[0] && amount <= bin[1]) {
+        return true;
+      }
+      return false;
+    });
+    return foo.indexOf(true);
+  };
+
+  manipulate = () => {
+    const { rowData, bins, groupBy, rollup: rollupper } = this.props;
+    let manipulated = rollup(
+      rowData,
+      c => manipulator(c, rollupper),
+      c => this.inBin(c.amount),
+    );
+
+    return Array.from(manipulated, ([key, value]) => ({
+      key,
+      value,
+    }));
+  };
+
   render() {
     const { rowData, loaded } = this.props;
-    const { data, timeline } = rowData;
 
     if (!loaded) {
-      return <Spinner />;
+      return <Loader />;
     }
+
+    const manipulated = this.manipulate();
 
     return (
       <div className="card h-100">
@@ -72,25 +100,31 @@ export default class PieBlock extends PureComponent<any> {
               // height={300}
               // cx={150}
               // cy={150}
+              startAngle={180}
+              endAngle={0}
               innerRadius={20}
               outerRadius={140}
               barSize={10}
-              data={data01}
+              data={manipulated}
             >
               <RadialBar
                 minAngle={15}
                 label={{ position: 'insideStart', fill: '#fff' }}
                 background
                 clockWise
-                dataKey="uv"
-              />
+                dataKey="value"
+              >
+                {manipulated.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={colors[index]} />
+                ))}
+              </RadialBar>
               <Legend
                 iconSize={10}
                 width={120}
                 height={140}
                 layout="vertical"
                 verticalAlign="middle"
-                // wrapperStyle={style}
+                align="right"
               />
             </RadialBarChart>
           </ResponsiveContainer>
