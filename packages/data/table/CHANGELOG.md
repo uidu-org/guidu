@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.10
+- [patch] [5e9d0df](https://github.org/uidu-org/guidu/commits/5e9d0df):
+
+  - Upgrade table to ag-grid 21
+
 ## 0.1.9
 - [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
 
