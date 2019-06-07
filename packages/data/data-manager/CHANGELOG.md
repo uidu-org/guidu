@@ -1,5 +1,10 @@
 # @uidu/data-manager
 
+## 0.1.6
+- [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
+
+  - Bump dependencies
+
 ## 0.1.5
 - [patch] [8e96367](https://github.org/uidu-org/guidu/commits/8e96367):
 
