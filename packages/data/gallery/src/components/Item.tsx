@@ -45,12 +45,12 @@ export default class Item extends PureComponent<any> {
               }}
             />
           )}
+          {primary && (
+            <div className="card-header text-truncate font-weight-bold">
+              {valueRenderer(item.data[primary.field], primary)}
+            </div>
+          )}
           <div className="card-body">
-            {primary && (
-              <div className="card-title text-truncate font-weight-bold">
-                {valueRenderer(item.data[primary.field], primary)}
-              </div>
-            )}
             <dl className="mb-0">
               {columnDefs
                 .filter(

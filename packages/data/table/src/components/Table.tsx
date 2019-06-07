@@ -2,7 +2,7 @@ import loadable from '@loadable/component';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
-// import CustomHeader from './headers';
+import CustomHeader from './headers';
 
 const AgGridReact = (loadable as any).lib(() => import('ag-grid-react'));
 
@@ -19,6 +19,7 @@ export default class Table extends Component<any> {
           {({ AgGridReact: Grid }) => (
             <Grid
               ref={innerRef}
+              componentWrappingElement="div"
               columnDefs={this.props.columnDefs}
               rowData={this.props.rowData}
               reactNext
@@ -29,7 +30,7 @@ export default class Table extends Component<any> {
                 sortable: true,
                 suppressMenu: false,
                 editable: true,
-                // headerComponentFramework: CustomHeader,
+                headerComponentFramework: CustomHeader,
               }}
               columnTypes={{
                 address: {},

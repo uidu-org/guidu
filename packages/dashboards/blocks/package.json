@@ -1,0 +1,22 @@
+{
+  "name": "@uidu/blocks",
+  "version": "0.1.0",
+  "description": "Elements to filter, sort, group data",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "dependencies": {
+    "@loadable/component": "^5.10.1",
+    "@uidu/spinner": "^0.1.8",
+    "react-animated-number": "^0.4.4",
+    "react-google-charts": "^3.0.13",
+    "recharts": "^1.6.2"
+  }
+}

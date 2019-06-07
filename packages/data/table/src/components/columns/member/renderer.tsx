@@ -3,12 +3,13 @@ import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  background-color: #eeeeee;
+  min-width: 0;
+  /* background-color: #eeeeee;
   border-radius: 40px;
   padding-right: 8px;
-  line-height: 1;
+  line-height: 1; */
 `;
 
 export default class MemberRenderer extends PureComponent<any> {
@@ -17,7 +18,7 @@ export default class MemberRenderer extends PureComponent<any> {
     return (
       <Wrapper>
         <Avatar size="small" enableTooltip={false} borderColor="transparent" />
-        <span className="ml-1">{value}</span>
+        <span className="ml-1 text-truncate">{value}</span>
       </Wrapper>
     );
   }

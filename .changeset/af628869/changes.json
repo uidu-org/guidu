@@ -1,0 +1,8 @@
+{
+  "releases": [
+    { "name": "@uidu/webpack-config", "type": "patch" },
+    { "name": "@uidu/gallery", "type": "patch" },
+    { "name": "@uidu/table", "type": "patch" }
+  ],
+  "dependents": []
+}

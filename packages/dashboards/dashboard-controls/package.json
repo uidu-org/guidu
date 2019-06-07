@@ -1,0 +1,22 @@
+{
+  "name": "@uidu/dashboard-controls",
+  "version": "0.1.0",
+  "description": "Elements to filter, sort, group data",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "dependencies": {
+    "@uidu/dropdown-menu": "^0.1.10",
+    "@uidu/form": "^0.1.28",
+    "@uidu/inputs": "^1.0.0-beta.45",
+    "moment": "^2.18.1",
+    "react-feather": "^1.1.6"
+  }
+}
