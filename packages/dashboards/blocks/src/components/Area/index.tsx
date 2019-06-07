@@ -52,18 +52,18 @@ export default class AreasBlock extends PureComponent<any> {
   render() {
     const { rowData, loaded, areas } = this.props;
     if (!loaded) {
-      return <Loader className="border-0 bg-light" />;
+      return <Loader className="border-0 bg-light shadow-none" />;
     }
 
     const manipulated = this.manipulate(rowData);
 
     return (
-      <div className="card h-100 border-0">
+      <div className="card h-100 border-0 shadow-none">
         <div className="flex-grow-1 justify-content-center flex-column d-flex">
           <div className="list-group list-group-flush">
             {areas.map((area, index) => (
-              <div className="list-group-item" key={area.label}>
-                <div className="row align-items-end">
+              <div className="list-group-item px-0 px-md-3" key={area.label}>
+                <div className="row align-items-center">
                   <div className="col-sm-3">
                     <h6 className="mb-1 text-muted">{area.label}</h6>
                     <h4 className="my-0">
@@ -79,7 +79,7 @@ export default class AreasBlock extends PureComponent<any> {
                     </h4>
                   </div>
                   <div className="col-sm-9">
-                    <div style={{ width: '100%', height: '64px' }}>
+                    <div style={{ width: '100%', height: '80px' }}>
                       <ResponsiveContainer>
                         <AreaChart data={manipulated} syncId="anyId">
                           <Tooltip
