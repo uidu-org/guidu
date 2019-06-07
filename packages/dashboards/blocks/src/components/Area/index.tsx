@@ -52,14 +52,13 @@ export default class AreasBlock extends PureComponent<any> {
   render() {
     const { rowData, loaded, areas } = this.props;
     if (!loaded) {
-      return <Loader />;
+      return <Loader className="border-0 bg-light" />;
     }
 
     const manipulated = this.manipulate(rowData);
 
     return (
-      <div className="card h-100">
-        <div className="card-header">Trend</div>
+      <div className="card h-100 border-0">
         <div className="flex-grow-1 justify-content-center flex-column d-flex">
           <div className="list-group list-group-flush">
             {areas.map((area, index) => (

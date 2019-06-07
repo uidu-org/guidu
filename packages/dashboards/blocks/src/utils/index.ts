@@ -7,7 +7,7 @@ export const layoutOptions = {
   Funnel: { w: 2, maxW: 2, h: 4 },
   Geo: { h: 4, isResizable: false },
   List: { minH: 3, w: 2 },
-  Pie: { minH: 4, h: 3, w: 2 },
+  Pie: { minH: 4, h: 4, w: 2 },
   Radial: { h: 4, minH: 4 },
 };
 
