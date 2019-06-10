@@ -1,1 +1,0 @@
-- Fix render static blocks

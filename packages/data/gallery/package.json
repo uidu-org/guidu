@@ -1,6 +1,6 @@
 {
   "name": "@uidu/gallery",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "React component to show data items as gallery card",
   "uidu:src": "index.ts",
   "module": "index.js",

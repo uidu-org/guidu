@@ -1,5 +1,10 @@
 # @uidu/gallery
 
+## 0.1.7
+- [patch] [c6a1ef9](https://github.org/uidu-org/guidu/commits/c6a1ef9):
+
+  - Added definitions for dashboard blocks
+
 ## 0.1.6
 - [patch] [5e9d0df](https://github.org/uidu-org/guidu/commits/5e9d0df):
 
