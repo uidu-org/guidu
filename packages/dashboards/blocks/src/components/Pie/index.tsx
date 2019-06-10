@@ -51,7 +51,7 @@ export default class PieBlock extends PureComponent<any> {
                 {manipulated.map((entry, index) => (
                   <Cell
                     key={`cell-${index}`}
-                    fill={colors.reverse()[index + 4]}
+                    fill={colors[colors.length - 5 - index + 1]}
                   />
                 ))}
               </Pie>
