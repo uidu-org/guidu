@@ -15,13 +15,13 @@ export default class AreasBlock extends PureComponent<any> {
   };
 
   manipulate = data => {
-    const { range, areas } = this.props;
+    const { range, areas, timeFrameGrouping } = this.props;
     let manipulated = data;
     const listWithKeys = [
       ...range.map(l => ({
         fake: true,
         createdAt: moment(l)
-          .startOf('week')
+          .startOf(timeFrameGrouping)
           .format(),
       })),
       ...data,
@@ -36,7 +36,7 @@ export default class AreasBlock extends PureComponent<any> {
         }, {}),
       c =>
         moment(c.createdAt)
-          .startOf('week')
+          .startOf(timeFrameGrouping)
           .format(),
     );
 
@@ -50,7 +50,7 @@ export default class AreasBlock extends PureComponent<any> {
   };
 
   render() {
-    const { rowData, loaded, areas } = this.props;
+    const { rowData, loaded, areas, timeFrameGrouping } = this.props;
     if (!loaded) {
       return <Loader className="border-0 bg-light shadow-none" />;
     }
@@ -89,7 +89,7 @@ export default class AreasBlock extends PureComponent<any> {
                                 formatValue={value =>
                                   format(value, area.formatter)
                                 }
-                                timeframeGrouping="week"
+                                timeframeGrouping={timeFrameGrouping}
                               />
                             }
                           />

@@ -4,12 +4,16 @@ import Loader from './Loader';
 
 const LoadableBlock = loadable(props => import(`./${props.kind}`));
 
-export const renderBlock = ({ kind, ...rest }, rowData, otherProps) => {
+export const renderBlock = (
+  { kind, namespace, ...rest },
+  rowData,
+  otherProps,
+) => {
   return (
     <LoadableBlock
       kind={kind}
       fallback={<Loader />}
-      rowData={rowData}
+      rowData={rowData[namespace]}
       {...rest}
       {...otherProps}
     />

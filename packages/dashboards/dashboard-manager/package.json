@@ -14,6 +14,7 @@
     "@uidu/shell": "^0.1.15"
   },
   "dependencies": {
+    "@types/react-grid-layout": "^0.16.7",
     "@uidu/blocks": "^0.1.1",
     "@uidu/dashboard-controls": "^0.1.0",
     "d3-collection": "^1.0.7",

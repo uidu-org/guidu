@@ -13,7 +13,12 @@ export default class Basic extends Component<any> {
 
   componentDidMount() {
     fetchDonations().then(response =>
-      this.setState({ rowData: response, loaded: true }),
+      this.setState({
+        rowData: {
+          donations: response,
+        },
+        loaded: true,
+      }),
     );
   }
 

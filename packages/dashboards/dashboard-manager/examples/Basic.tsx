@@ -8,22 +8,33 @@ export default class Basic extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      rowData: [],
+      rowData: {
+        donations: [],
+      },
       loaded: false,
     };
   }
 
   componentDidMount() {
     fetchDonations().then(response =>
-      this.setState({ rowData: response, loaded: true }),
+      this.setState({
+        rowData: {
+          donations: response,
+        },
+        loaded: true,
+      }),
     );
   }
 
   render() {
     const { rowData, loaded } = this.state;
     return (
-      <DashboardManager rowData={rowData} defaultTimeFrame="1Y">
-        {({ renderControls, renderBlocks }) => (
+      <DashboardManager
+        rowData={rowData}
+        defaultTimeFrame="1Y"
+        gridProps={{ isDraggable: false }}
+      >
+        {({ renderControls, renderBlocks, renderStaticBlocks }) => (
           <Fragment>
             <ShellHeader className="border-bottom">
               {renderControls({
@@ -31,6 +42,42 @@ export default class Basic extends Component<any, any> {
               })}
             </ShellHeader>
             <ShellBody scrollable>
+              {renderStaticBlocks({
+                loaded,
+                blocks: [
+                  {
+                    kind: 'Area',
+                    namespace: 'donations',
+                    x: 0,
+                    areas: [
+                      {
+                        label: 'Raccolta',
+                        name: 'donationsAmount',
+                        rollup: ['sum', 'amount'],
+                        formatter: 'currency',
+                      },
+                      {
+                        label: 'Donazioni',
+                        name: 'donationsCount',
+                        rollup: ['count', 'id'],
+                        formatter: 'integer',
+                      },
+                      {
+                        label: 'Donatori',
+                        name: 'donorsCount',
+                        rollup: ['count', 'contact.id'],
+                        formatter: 'integer',
+                      },
+                      {
+                        label: 'Media donazione',
+                        name: 'donationsAverage',
+                        rollup: ['mean', 'amount'],
+                        formatter: 'currency',
+                      },
+                    ],
+                  },
+                ],
+              })}
               <div className="container px-0">
                 <div className="row">
                   <div className="col-12">
@@ -38,37 +85,8 @@ export default class Basic extends Component<any, any> {
                       loaded,
                       blocks: [
                         {
-                          kind: 'Area',
-                          x: 0,
-                          areas: [
-                            {
-                              label: 'Raccolta',
-                              name: 'donationsAmount',
-                              rollup: ['sum', 'amount'],
-                              formatter: 'currency',
-                            },
-                            {
-                              label: 'Donazioni',
-                              name: 'donationsCount',
-                              rollup: ['count', 'id'],
-                              formatter: 'integer',
-                            },
-                            {
-                              label: 'Donatori',
-                              name: 'donorsCount',
-                              rollup: ['count', 'contact.id'],
-                              formatter: 'integer',
-                            },
-                            {
-                              label: 'Media donazione',
-                              name: 'donationsAverage',
-                              rollup: ['mean', 'amount'],
-                              formatter: 'currency',
-                            },
-                          ],
-                        },
-                        {
                           kind: 'Counter',
+                          namespace: 'donations',
                           label: 'counter',
                           x: 0,
                           rollup: ['sum', 'amount'],
@@ -76,6 +94,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Counter',
+                          namespace: 'donations',
                           label: 'counter',
                           x: 1,
                           rollup: ['count', 'id'],
@@ -83,6 +102,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Counter',
+                          namespace: 'donations',
                           label: 'counter',
                           x: 2,
                           rollup: ['count', 'contact.id'],
@@ -90,6 +110,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Counter',
+                          namespace: 'donations',
                           label: 'counter',
                           x: 3,
                           rollup: ['mean', 'amount'],
@@ -97,6 +118,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Pie',
+                          namespace: 'donations',
                           label: 'Metodo di pagamento',
                           groupBy: 'paymentMethod',
                           rollup: ['count', 'id'],
@@ -104,6 +126,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           label: 'Top campaigns',
+                          namespace: 'donations',
                           kind: 'List',
                           x: 2,
                           groupBy: 'donationCampaignId',
@@ -112,6 +135,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           label: 'Average donations',
+                          namespace: 'donations',
                           kind: 'List',
                           x: 0,
                           groupBy: 'donationCampaignId',
@@ -120,6 +144,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           label: 'Top donors',
+                          namespace: 'donations',
                           kind: 'List',
                           x: 0,
                           groupBy: 'contact.id',
@@ -128,6 +153,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           label: 'Top donations',
+                          namespace: 'donations',
                           kind: 'List',
                           x: 0,
                           rollup: ['max', 'amount'],
@@ -135,6 +161,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Bar',
+                          namespace: 'donations',
                           x: 2,
                           groupBy: 'donationCampaignId',
                           bars: [
@@ -168,6 +195,7 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Radial',
+                          namespace: 'donations',
                           rollup: ['count', 'id'],
                           bins: [
                             [0, 10000],
@@ -179,10 +207,12 @@ export default class Basic extends Component<any, any> {
                         },
                         {
                           kind: 'Funnel',
+                          namespace: 'donations',
                           x: 0,
                         },
                         {
                           kind: 'Geo',
+                          namespace: 'donations',
                           x: 0,
                           rollup: ['count', 'id'],
                         },

@@ -13,11 +13,17 @@ export default class DashboardManager extends Component<
   DashboardManagerProps,
   any
 > {
+  static defaultProps = {
+    defaultTimeFrame: '1Y',
+    defaultTimeFrameGrouping: 'month',
+  };
+
   constructor(props) {
     super(props);
-    const { defaultTimeFrame } = props;
+    const { defaultTimeFrame, defaultTimeFrameGrouping } = props;
     this.state = {
       timeFrame: defaultTimeFrame,
+      timeFrameGrouping: defaultTimeFrameGrouping,
     };
   }
 
@@ -26,11 +32,44 @@ export default class DashboardManager extends Component<
       timeFrame,
     });
 
-  renderBlocks = ({ blocks = [], ...rest }) => {
-    const { rowData, onLayoutChange } = this.props;
-    const { timeFrame } = this.state;
+  onTimeFrameGroupingChange = timeFrameGrouping =>
+    this.setState({
+      timeFrameGrouping,
+    });
 
-    const { data, range } = groupByTimeframe(timeFrame, 'month', rowData);
+  renderStaticBlocks = ({ blocks = [], ...rest }) => {
+    const { rowData } = this.props;
+    const { timeFrame, timeFrameGrouping } = this.state;
+
+    const { data, range } = groupByTimeframe(
+      timeFrame,
+      timeFrameGrouping,
+      rowData,
+    );
+
+    return blocks.map((block, index) => {
+      return (
+        <div key={`${index}`}>
+          {renderBlock(block, data, {
+            ...rest,
+            range,
+            timeFrame,
+            timeFrameGrouping,
+          })}
+        </div>
+      );
+    });
+  };
+
+  renderBlocks = ({ blocks = [], ...rest }) => {
+    const { rowData, gridProps } = this.props;
+    const { timeFrame, timeFrameGrouping } = this.state;
+
+    const { data, range } = groupByTimeframe(
+      timeFrame,
+      timeFrameGrouping,
+      rowData,
+    );
 
     const layout = blocks.map((block, index) => ({
       i: `${index}`,
@@ -50,8 +89,8 @@ export default class DashboardManager extends Component<
         layouts={{
           lg: layout,
           md: layout,
+          sm: layout,
         }}
-        onLayoutChange={onLayoutChange}
         breakpoints={{
           lg: 1200,
           md: 996,
@@ -62,11 +101,17 @@ export default class DashboardManager extends Component<
         cols={{ lg: 4, md: 4, sm: 2, xs: 1, xxs: 1 }}
         margin={[24, 24]}
         isResizable={false}
+        {...gridProps}
       >
         {blocks.map((block, index) => {
           return (
             <div key={`${index}`}>
-              {renderBlock(block, data, { ...rest, range })}
+              {renderBlock(block, data, {
+                ...rest,
+                range,
+                timeFrame,
+                timeFrameGrouping,
+              })}
             </div>
           );
         })}
@@ -88,6 +133,7 @@ export default class DashboardManager extends Component<
     return (children as any)({
       renderControls: this.renderControls,
       renderBlocks: this.renderBlocks,
+      renderStaticBlocks: this.renderStaticBlocks,
     });
   }
 }

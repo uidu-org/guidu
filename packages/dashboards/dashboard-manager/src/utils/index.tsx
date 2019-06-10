@@ -66,13 +66,17 @@ export const groupByTimeframe = (
       range = timeYear.range(startDate.toDate(), endDate.toDate());
       break;
   }
-  const data = list.filter(
-    l =>
-      moment(l[key])
-        .startOf(timeframeGrouping)
-        .diff(moment(startDate)) >= 0 &&
-      moment(endDate).diff(moment(l[key]).startOf(timeframeGrouping)) >= 0,
-  );
+
+  const data = Object.keys(list).reduce((acc, namespace) => {
+    acc[namespace] = list[namespace].filter(
+      l =>
+        moment(l[key])
+          .startOf(timeframeGrouping)
+          .diff(moment(startDate)) >= 0 &&
+        moment(endDate).diff(moment(l[key]).startOf(timeframeGrouping)) >= 0,
+    );
+    return acc;
+  }, {});
 
   return {
     range,

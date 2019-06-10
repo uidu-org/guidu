@@ -1,5 +1,8 @@
+import { ReactGridLayoutProps } from 'react-grid-layout';
+
 export type DashboardManagerProps = {
-  rowData: Array<any>;
+  rowData: any;
   defaultTimeFrame: string;
-  onLayoutChange?: (layout, layouts) => void;
+  defaultTimeFrameGrouping: string;
+  gridProps?: ReactGridLayoutProps;
 };
