@@ -1,16 +1,6 @@
 import { group, max, mean, sum } from 'd3-array';
 import numeral from 'numeral';
 
-export const layoutOptions = {
-  Area: { w: 4, minW: 4, isResizable: false, h: 4 },
-  Counter: { maxH: 1, h: 1, w: 1, isResizable: false },
-  Funnel: { w: 2, maxW: 2, h: 4 },
-  Geo: { h: 4, isResizable: false },
-  List: { minH: 3, w: 2 },
-  Pie: { minH: 4, h: 4, w: 2 },
-  Radial: { h: 4, minH: 4 },
-};
-
 // http://tristen.ca/hcl-picker/#/hlc/14/0.53/433339/E8D489
 export const colors = [
   '#E8D489',

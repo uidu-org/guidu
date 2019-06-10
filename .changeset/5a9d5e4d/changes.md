@@ -1,0 +1,1 @@
+- Added definitions for dashboard blocks

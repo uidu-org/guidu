@@ -6,7 +6,9 @@ export default class Basic extends Component<any> {
   constructor(props) {
     super(props);
     this.state = {
-      rowData: [],
+      rowData: {
+        donations: [],
+      },
       loaded: false,
     };
   }
@@ -26,7 +28,10 @@ export default class Basic extends Component<any> {
     return (
       <div className="d-flex align-items-center p-3">
         <Blocks
-          blocks={[{ kind: 'geo' }, { kind: 'list' }]}
+          blocks={[
+            { kind: 'Geo', namespace: 'donations', rollup: ['count', 'id'] },
+            { kind: 'List', namespace: 'donations', rollup: ['count', 'id'] },
+          ]}
           rowData={this.state.rowData}
           loaded={this.state.loaded}
         />

@@ -50,7 +50,7 @@ export default class Item extends PureComponent<any> {
               {valueRenderer(item.data[primary.field], primary)}
             </div>
           )}
-          <div className="card-body">
+          <div className={primary ? 'card-body pt-1' : 'card-body'}>
             <dl className="mb-0">
               {columnDefs
                 .filter(

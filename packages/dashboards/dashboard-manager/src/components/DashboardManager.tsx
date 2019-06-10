@@ -1,4 +1,4 @@
-import { layoutOptions, renderBlock } from '@uidu/blocks';
+import { renderBlock } from '@uidu/blocks';
 import { TimeFrame, TimeFrameGrouper } from '@uidu/dashboard-controls';
 import React, { Component, Fragment } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
@@ -71,13 +71,14 @@ export default class DashboardManager extends Component<
       rowData,
     );
 
-    const layout = blocks.map((block, index) => ({
+    const layout = blocks.map(({ x, y, w, h, minW, minH }, index) => ({
       i: `${index}`,
-      x: block.x,
-      y: 0,
-      w: 4,
-      h: 3,
-      ...layoutOptions[block.kind],
+      x,
+      y,
+      w,
+      h,
+      minH,
+      minW,
     }));
 
     return (
@@ -98,7 +99,7 @@ export default class DashboardManager extends Component<
           xs: 480,
           xxs: 0,
         }}
-        cols={{ lg: 4, md: 4, sm: 2, xs: 1, xxs: 1 } as any}
+        cols={{ lg: 4, md: 4, sm: 4, xs: 1, xxs: 1 } as any}
         margin={[24, 24]}
         isResizable={false}
         {...gridProps}

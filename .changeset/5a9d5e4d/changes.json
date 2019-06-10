@@ -1,0 +1,8 @@
+{
+  "releases": [
+    { "name": "@uidu/blocks", "type": "patch" },
+    { "name": "@uidu/dashboard-manager", "type": "patch" },
+    { "name": "@uidu/gallery", "type": "patch" }
+  ],
+  "dependents": []
+}
