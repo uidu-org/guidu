@@ -1,6 +1,6 @@
 {
   "name": "@uidu/blocks",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Elements to filter, sort, group data",
   "uidu:src": "index.ts",
   "module": "index.js",
