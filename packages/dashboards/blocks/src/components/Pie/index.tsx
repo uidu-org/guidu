@@ -34,7 +34,12 @@ export default class PieBlock extends PureComponent<any> {
         <div className="card-body">
           <ResponsiveContainer>
             <PieChart>
-              <Legend verticalAlign="bottom" height={32} iconType="circle" />
+              <Legend
+                layout="vertical"
+                verticalAlign="middle"
+                iconType="circle"
+                align="right"
+              />
               <Pie
                 data={manipulated}
                 dataKey="value"

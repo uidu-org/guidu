@@ -68,6 +68,7 @@ export const Sidebar = styled.aside`
   flex-direction: column;
   flex-shrink: 0;
   justify-content: space-between;
+  flex-grow: 1;
 `;
 
 export const Navigation = styled.aside`

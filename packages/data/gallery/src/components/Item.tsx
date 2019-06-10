@@ -34,8 +34,9 @@ export default class Item extends PureComponent<any> {
         <div className="card">
           {cover && (
             <div
+              className="card-img-top"
               style={{
-                height: cover.width ? (cover.width * 3) / 2 : '207px',
+                height: cover.width ? (cover.width * 3) / 2 : '200px',
                 backgroundSize: 'cover',
                 backgroundPosition: '50% 50%',
                 backgroundImage: `url(${valueRenderer(

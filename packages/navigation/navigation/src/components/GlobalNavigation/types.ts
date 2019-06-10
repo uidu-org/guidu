@@ -7,6 +7,7 @@ export type GlobalNavigationProps = {
   width: string;
   navigationWidth: number;
   navigationMinWidth?: string;
+  showOverlay: boolean;
   showAfter?: number;
 };
 

@@ -20,7 +20,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
 
   &:hover,
   &.active {
-    background-color: #f3f3f3;
+    background-color: rgba(76, 86, 106, 0.08);
     color: #4c566a;
     transition: background-color linear 300ms;
   }

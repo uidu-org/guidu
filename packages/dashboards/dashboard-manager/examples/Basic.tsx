@@ -1,6 +1,7 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Component, Fragment } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
+import { UserCheck } from 'react-feather';
 import DashboardManager from '../';
 import { fetchDonations } from '../examples-utils';
 
@@ -97,6 +98,7 @@ export default class Basic extends Component<any, any> {
                         {
                           kind: 'Counter',
                           namespace: 'donations',
+                          itemBefore: <UserCheck />,
                           label: 'counter',
                           x: 1,
                           y: 0,

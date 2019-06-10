@@ -10,7 +10,7 @@ export default class CounterBlock extends PureComponent<any> {
   };
 
   render() {
-    const { rowData, loaded, label, formatter } = this.props;
+    const { rowData, loaded, label, formatter, itemBefore } = this.props;
 
     if (!loaded) {
       return <Loader />;
@@ -19,18 +19,21 @@ export default class CounterBlock extends PureComponent<any> {
     const manipulated = this.manipulate();
 
     return (
-      <div className="card card-body h-100 justify-content-center">
-        <h6 className="mb-1 text-muted">{label}</h6>
-        <h4 className="my-0">
-          <AnimatedNumber
-            value={manipulated}
-            style={{
-              transition: '0.8s ease-out',
-              transitionProperty: 'background-color, color, opacity',
-            }}
-            formatValue={value => format(value, formatter)}
-          />
-        </h4>
+      <div className="card card-body h-100 d-flex align-items-center flex-row">
+        {itemBefore && <div className="flex-shrink-0 mr-3">{itemBefore}</div>}
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <h6 className="mb-1 text-muted text-truncate">{label}</h6>
+          <h4 className="my-0">
+            <AnimatedNumber
+              value={manipulated}
+              style={{
+                transition: '0.8s ease-out',
+                transitionProperty: 'background-color, color, opacity',
+              }}
+              formatValue={value => format(value, formatter)}
+            />
+          </h4>
+        </div>
       </div>
     );
   }
