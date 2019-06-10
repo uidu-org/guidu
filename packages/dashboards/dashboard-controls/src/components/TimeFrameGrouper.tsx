@@ -9,19 +9,27 @@ export default class TimeFrameGrouper extends Component<any> {
   };
 
   render() {
-    const { groupers } = this.props;
+    const { groupers, onChange, currentGrouper } = this.props;
 
     return (
       <DropdownMenu
         trigger={
           <Trigger activeBg="#d0f0fd" className="btn">
-            <span style={{ textTransform: 'initial' }}>Raggruppa</span>
+            <span style={{ textTransform: 'initial' }}>{currentGrouper}</span>
           </Trigger>
         }
       >
         <DropdownItemGroup>
-          {groupers.map(timeframe => (
-            <DropdownItem key={timeframe}>{timeframe}</DropdownItem>
+          {groupers.map(timeframeGrouper => (
+            <DropdownItem
+              key={timeframeGrouper}
+              onClick={e => {
+                e.preventDefault();
+                onChange(timeframeGrouper);
+              }}
+            >
+              {timeframeGrouper}
+            </DropdownItem>
           ))}
         </DropdownItemGroup>
       </DropdownMenu>

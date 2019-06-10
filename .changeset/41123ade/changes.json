@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/dashboard-controls", "type": "patch" },
+    { "name": "@uidu/dashboard-manager", "type": "patch" }
+  ],
+  "dependents": []
+}

@@ -1,5 +1,5 @@
 import { layoutOptions, renderBlock } from '@uidu/blocks';
-import { TimeFrame } from '@uidu/dashboard-controls';
+import { TimeFrame, TimeFrameGrouper } from '@uidu/dashboard-controls';
 import React, { Component, Fragment } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
@@ -98,7 +98,7 @@ export default class DashboardManager extends Component<
           xs: 480,
           xxs: 0,
         }}
-        cols={{ lg: 4, md: 4, sm: 2, xs: 1, xxs: 1 }}
+        cols={{ lg: 4, md: 4, sm: 2, xs: 1, xxs: 1 } as any}
         margin={[24, 24]}
         isResizable={false}
         {...gridProps}
@@ -123,6 +123,10 @@ export default class DashboardManager extends Component<
     return (
       <Fragment>
         <TimeFrame onChange={this.onTimeFrameChange} />
+        <TimeFrameGrouper
+          currentGrouper={this.state.timeFrameGrouping}
+          onChange={this.onTimeFrameGroupingChange}
+        />
       </Fragment>
     );
   };
