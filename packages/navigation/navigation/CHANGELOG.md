@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.14
+- [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
+
+  - Optional navigation overlay, fix colors, spacing
+
 ## 0.1.13
 - [patch] [e1e43c0](https://github.org/uidu-org/guidu/commits/e1e43c0):
 

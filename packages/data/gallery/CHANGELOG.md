@@ -1,5 +1,10 @@
 # @uidu/gallery
 
+## 0.1.8
+- [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
+
+  - Optional navigation overlay, fix colors, spacing
+
 ## 0.1.7
 - [patch] [c6a1ef9](https://github.org/uidu-org/guidu/commits/c6a1ef9):
 
