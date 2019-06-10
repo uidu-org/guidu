@@ -64,7 +64,7 @@ export default class AreasBlock extends PureComponent<any> {
             {areas.map((area, index) => (
               <div className="list-group-item px-0 px-md-3" key={area.label}>
                 <div className="row align-items-center">
-                  <div className="col-sm-3">
+                  <div className="col-sm-3 mb-3 mb-md-0">
                     <h6 className="mb-1 text-muted">{area.label}</h6>
                     <h4 className="my-0">
                       <AnimatedNumber

@@ -47,18 +47,14 @@ export default class DashboardManager extends Component<
       rowData,
     );
 
-    return blocks.map((block, index) => {
-      return (
-        <div key={`${index}`}>
-          {renderBlock(block, data, {
-            ...rest,
-            range,
-            timeFrame,
-            timeFrameGrouping,
-          })}
-        </div>
-      );
-    });
+    return blocks.map((block, index) =>
+      renderBlock(block, data, {
+        ...rest,
+        range,
+        timeFrame,
+        timeFrameGrouping,
+      }),
+    );
   };
 
   renderBlocks = ({ blocks = [], ...rest }) => {

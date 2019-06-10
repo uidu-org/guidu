@@ -13,7 +13,7 @@ export default class PieBlock extends PureComponent<any> {
       c => (groupBy ? resolve(groupBy, c) : c.id),
     );
     manipulated = Array.from(manipulated, ([key, value]) => ({
-      key: `test-${key}`,
+      key: key,
       value,
     })).sort((a, b) => b.value - a.value);
 
