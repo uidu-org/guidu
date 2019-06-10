@@ -1,1 +1,0 @@
-- Allow to render static blocks (such as area), and to pass props to grid layout

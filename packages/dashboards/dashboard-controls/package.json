@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-controls",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Elements to filter, sort, group data",
   "uidu:src": "index.ts",
   "module": "index.js",
