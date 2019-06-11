@@ -1,5 +1,10 @@
 # @uidu/dashboard-manager
 
+## 0.1.4
+- [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
+
+  - Optional navigation overlay, fix colors, spacing
+
 ## 0.1.3
 - [patch] [fe425f8](https://github.org/uidu-org/guidu/commits/fe425f8):
 

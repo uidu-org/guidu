@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.16
+- [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
+
+  - Optional navigation overlay, fix colors, spacing
+
 ## 0.1.15
 - [patch] [a08131a](https://github.org/uidu-org/guidu/commits/a08131a):
 

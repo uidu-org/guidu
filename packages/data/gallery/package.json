@@ -1,6 +1,6 @@
 {
   "name": "@uidu/gallery",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "React component to show data items as gallery card",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -11,7 +11,7 @@
   "private": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.27",
-    "@uidu/shell": "^0.1.15"
+    "@uidu/shell": "^0.1.16"
   },
   "dependencies": {
     "@uidu/spinner": "^0.1.8",
