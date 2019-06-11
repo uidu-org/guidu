@@ -1,9 +1,6 @@
 import React, { PureComponent } from 'react';
 import ContentLoader from 'react-content-loader';
-import {
-  StyledNavigationItem,
-  StyledNavigationLink,
-} from '../NavigationItem/styled';
+import StyledNavigationHeader from '../NavigationHeader/styled';
 
 const NavigationItemLoader = ({ hasBefore }) => (
   <ContentLoader
@@ -32,7 +29,7 @@ const NavigationItemLoader = ({ hasBefore }) => (
   </ContentLoader>
 );
 
-export default class NavigationItem extends PureComponent<any> {
+export default class NavigationHeaderSkeleton extends PureComponent<any> {
   static defaultProps = {
     hasBefore: false,
   };
@@ -41,11 +38,9 @@ export default class NavigationItem extends PureComponent<any> {
     const { hasBefore, ...otherProps } = this.props;
 
     return (
-      <StyledNavigationItem {...otherProps}>
-        <StyledNavigationLink className="d-block">
-          <NavigationItemLoader hasBefore={hasBefore} />
-        </StyledNavigationLink>
-      </StyledNavigationItem>
+      <StyledNavigationHeader>
+        <NavigationItemLoader hasBefore={hasBefore} />
+      </StyledNavigationHeader>
     );
   }
 }

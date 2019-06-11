@@ -1,0 +1,19 @@
+{
+  "name": "@uidu/fab",
+  "version": "0.1.0",
+  "description": "Floating action buttons",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "dependencies": {
+    "react-feather": "^1.1.6",
+    "styled-components": "^4.0.3"
+  }
+}

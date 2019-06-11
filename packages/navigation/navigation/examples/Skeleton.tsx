@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Navigation, { GlobalNavigationSkeleton } from '../src';
 
 const schema = [
-  { type: 'NavigationHeader', text: 'Skeleton' },
+  { type: 'NavigationHeaderSkeleton', text: 'Skeleton' },
   {
     type: 'NavigationSection',
     items: [
@@ -17,6 +17,7 @@ const schema = [
         type: 'NavigationGroup',
         items: Array.from(Array(4).keys()).map(() => ({
           hasBefore: true,
+          width: '25%',
           type: 'NavigationItemSkeleton',
         })),
       },
@@ -32,7 +33,7 @@ export default class Basic extends Component<any> {
         <ShellContent>
           <ShellNavigation
             style={{ display: 'flex', flex: '0 1 25%' }}
-            // className="bg-light"
+            className="bg-light border-right"
           >
             <Navigation schema={schema} />
           </ShellNavigation>

@@ -1,0 +1,84 @@
+import React, { PureComponent } from 'react';
+import { StyledActions, StyledActionWrapper, StyledFab } from '../styled';
+import MainButton from './MainButton';
+
+export default class Fab extends PureComponent<any> {
+  static defaultProps = {
+    position: { bottom: 0, right: 0 },
+    event: 'hover',
+  };
+
+  state = { open: false };
+
+  enter = () => this.props.event === 'hover' && this.open();
+
+  leave = () => this.props.event === 'hover' && this.close();
+
+  open = () => this.setState({ open: true });
+
+  close = () => this.setState({ open: false });
+
+  toggle = () =>
+    this.props.event === 'click'
+      ? this.state.open
+        ? this.close()
+        : this.open()
+      : null;
+
+  actionOnClick = userFunc => {
+    this.setState({ open: false }, () => {
+      // Hack to allow the FAB to close before the user event fires
+      setTimeout(() => {
+        userFunc();
+      }, 1);
+    });
+  };
+
+  rc() {
+    const { children: c, position: p } = this.props;
+    const { open } = this.state;
+    if (React.Children.count(c) > 6)
+      console.warn('@uidu/fab only supports up to 6 action buttons');
+    return React.Children.map(c as React.ReactElement<any>, (ch, i) => (
+      <StyledActionWrapper className={`${'top' in p ? 'top' : ''}`}>
+        {React.cloneElement(ch, {
+          'data-testid': `action-button-${i}`,
+          'aria-label': ch.props.text || `Menu button ${i + 1}`,
+          'aria-hidden': !open,
+          ...ch.props,
+          onClick: () => this.actionOnClick(ch.props.onClick),
+        })}
+        {ch.props.text && (
+          <span className={'right' in p ? 'right' : ''} aria-hidden={!open}>
+            {ch.props.text}
+          </span>
+        )}
+      </StyledActionWrapper>
+    ));
+  }
+
+  render() {
+    const { position, icon, mainButtonStyles } = this.props;
+    return (
+      <StyledFab
+        onMouseEnter={this.enter}
+        onMouseLeave={this.leave}
+        isOpen={this.state.open}
+        style={position}
+      >
+        <StyledActions>
+          <MainButton
+            onClick={this.toggle}
+            style={mainButtonStyles}
+            role="button"
+            aria-label="Floating menu"
+            tabIndex="0"
+          >
+            {icon}
+          </MainButton>
+          <ul>{this.rc()}</ul>
+        </StyledActions>
+      </StyledFab>
+    );
+  }
+}

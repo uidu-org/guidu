@@ -5,6 +5,7 @@ import React, { PureComponent } from 'react';
 import NavigationGroupComponent from './NavigationGroup';
 import NavigationGroupHeadingComponent from './NavigationGroupHeading';
 import NavigationHeaderComponent from './NavigationHeader';
+import NavigationHeaderSkeletonComponent from './NavigationHeaderSkeleton';
 import NavigationIconItem from './NavigationIconItem';
 import NavigationItem from './NavigationItem';
 import NavigationItemSkeleton from './NavigationItemSkeleton';
@@ -17,6 +18,16 @@ import NavigationItemSkeleton from './NavigationItemSkeleton';
 const NavigationHeader = ({ text, after, before }) => (
   <ShellHeader>
     <NavigationHeaderComponent text={text} after={after} before={before} />
+  </ShellHeader>
+);
+
+const NavigationHeaderSkeleton = ({ text, after, before }) => (
+  <ShellHeader>
+    <NavigationHeaderSkeletonComponent
+      text={text}
+      after={after}
+      before={before}
+    />
   </ShellHeader>
 );
 
@@ -81,6 +92,7 @@ const itemComponents = {
   NavigationHeader,
   NavigationIconItem,
   NavigationItem,
+  NavigationHeaderSkeleton,
   NavigationItemSkeleton,
   NavigationGroupHeading,
   // Item: ConnectedItem,
@@ -118,6 +130,9 @@ const renderItemComponent = (props: any, key: string, index: number) => {
   } else if (props.type === 'NavigationItemSkeleton') {
     const { type, ...compProps } = props;
     element = <NavigationItemSkeleton key={key} {...compProps} />;
+  } else if (props.type === 'NavigationHeaderSkeleton') {
+    const { type, ...compProps } = props;
+    element = <NavigationHeaderSkeleton key={key} {...compProps} />;
   }
   // } else if (props.type === 'SortableItem') {
   //   const { type, ...compProps } = props;
@@ -228,7 +243,7 @@ export default class ItemsRenderer extends PureComponent<any> {
       const key =
         typeof props.nestedGroupKey === 'string'
           ? props.nestedGroupKey
-          : props.id;
+          : props.id || `navigation-${index}`;
 
       if (props.type === 'InlineComponent') {
         const { type, component: CustomComponent, ...componentProps } = props;

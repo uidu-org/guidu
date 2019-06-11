@@ -153,6 +153,7 @@
     "prop-types": "^15.6.0",
     "react-beautiful-dnd": "^11.0.0",
     "react-day-picker": "^7.3.0",
+    "react-icons": "^3.7.0",
     "react-lorem-component": "^0.13.0",
     "sass-lint": "^1.12.1",
     "tslint": "^5.16.0",

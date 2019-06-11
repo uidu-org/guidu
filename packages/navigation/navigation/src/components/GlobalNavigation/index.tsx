@@ -1,5 +1,5 @@
 import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import { Transition } from 'react-transition-group';
 import GlobalItem from '../GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
@@ -84,98 +84,112 @@ export default class GlobalNavigation extends PureComponent<
     } = this.props;
     const { isOpen } = this.state;
 
-    return [
-      <ShellSidebar
-        style={{
-          width,
-          backgroundColor,
-          zIndex: 3,
-        }}
-        onMouseEnter={this.onMouseEnter}
-      >
-        <ShellHeader className="justify-content-center">
-          <GlobalItem {...header} />
-        </ShellHeader>
-        {body.length && (
-          <ShellBody
-            scrollable
-            className="d-flex flex-column align-items-center"
-          >
-            {body.map(bodyItem => (
-              <GlobalItem {...bodyItem} />
-            ))}
-          </ShellBody>
-        )}
-        {footer.length && (
-          <ShellFooter
-            className="d-flex flex-column align-items-center py-3"
-            style={{
-              backgroundColor: 'rgba(255, 255, 255, .05)',
-            }}
-          >
-            {footer.map(footerItem => (
-              <GlobalItem {...footerItem} />
-            ))}
-          </ShellFooter>
-        )}
-      </ShellSidebar>,
-      showOverlay && (
-        <Transition in={isOpen} timeout={300}>
-          {state => (
-            <ShellSidebar
-              style={{
-                ...defaultStyle,
-                ...{
-                  backgroundColor,
-                  width: `calc((100% - ${width}) * ${navigationWidth /
-                    100} + ${width})`,
-                },
-                ...(navigationMinWidth && {
-                  minWidth: `calc(${navigationMinWidth} + ${width})`,
-                }),
-                ...transitionStyles[state],
-              }}
-              onMouseLeave={this.onMouseLeave}
+    return (
+      <Fragment>
+        <ShellSidebar
+          style={{
+            width,
+            backgroundColor,
+            zIndex: 3,
+          }}
+          onMouseEnter={this.onMouseEnter}
+        >
+          <ShellHeader className="justify-content-center">
+            <GlobalItem {...header} />
+          </ShellHeader>
+          {body.length > 0 && (
+            <ShellBody
+              scrollable
+              className="d-flex flex-column align-items-center"
             >
-              <ShellHeader>
-                <FakeGlobalItemWrapper style={{ width }}>
-                  <GlobalItem {...header} />
-                </FakeGlobalItemWrapper>
-                <h5 className="m-0 text-light">{header.name}</h5>
-              </ShellHeader>
-              {body.length && (
-                <ShellBody scrollable className="d-flex flex-column">
-                  {body.map(({ children, name, ...otherProps }) => (
-                    <FakeItemWrapper {...otherProps}>
-                      <FakeGlobalItemWrapper style={{ width }}>
-                        <GlobalItem as="span">{children}</GlobalItem>
-                      </FakeGlobalItemWrapper>
-                      {name}
-                    </FakeItemWrapper>
-                  ))}
-                </ShellBody>
-              )}
-              {footer.length && (
-                <ShellFooter
-                  className="d-flex flex-column py-3"
-                  style={{
-                    backgroundColor: 'rgba(255, 255, 255, .05)',
-                  }}
-                >
-                  {footer.map(({ name, children, ...otherProps }) => (
-                    <FakeItemWrapper {...otherProps}>
-                      <FakeGlobalItemWrapper style={{ width }}>
-                        <GlobalItem>{children}</GlobalItem>
-                      </FakeGlobalItemWrapper>
-                      {name}
-                    </FakeItemWrapper>
-                  ))}
-                </ShellFooter>
-              )}
-            </ShellSidebar>
+              {body.map((bodyItem, index) => (
+                <GlobalItem
+                  key={`global-navigation-body-${index}`}
+                  {...bodyItem}
+                />
+              ))}
+            </ShellBody>
           )}
-        </Transition>
-      ),
-    ];
+          {footer.length > 0 && (
+            <ShellFooter
+              className="d-flex flex-column align-items-center py-3"
+              style={{
+                backgroundColor: 'rgba(255, 255, 255, .05)',
+              }}
+            >
+              {footer.map((footerItem, index) => (
+                <GlobalItem
+                  key={`global-navigation-footer-${index}`}
+                  {...footerItem}
+                />
+              ))}
+            </ShellFooter>
+          )}
+        </ShellSidebar>
+        {showOverlay && (
+          <Transition in={isOpen} timeout={300}>
+            {state => (
+              <ShellSidebar
+                style={{
+                  ...defaultStyle,
+                  ...{
+                    backgroundColor,
+                    width: `calc((100% - ${width}) * ${navigationWidth /
+                      100} + ${width})`,
+                  },
+                  ...(navigationMinWidth && {
+                    minWidth: `calc(${navigationMinWidth} + ${width})`,
+                  }),
+                  ...transitionStyles[state],
+                }}
+                onMouseLeave={this.onMouseLeave}
+              >
+                <ShellHeader>
+                  <FakeGlobalItemWrapper style={{ width }}>
+                    <GlobalItem {...header} />
+                  </FakeGlobalItemWrapper>
+                  <h5 className="m-0 text-light">{header.name}</h5>
+                </ShellHeader>
+                {body.length > 0 && (
+                  <ShellBody scrollable className="d-flex flex-column">
+                    {body.map(({ children, name, ...otherProps }, index) => (
+                      <FakeItemWrapper
+                        key={`global-navigation-fake-body-${index}`}
+                        {...otherProps}
+                      >
+                        <FakeGlobalItemWrapper style={{ width }}>
+                          <GlobalItem as="span">{children}</GlobalItem>
+                        </FakeGlobalItemWrapper>
+                        {name}
+                      </FakeItemWrapper>
+                    ))}
+                  </ShellBody>
+                )}
+                {footer.length > 0 && (
+                  <ShellFooter
+                    className="d-flex flex-column py-3"
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, .05)',
+                    }}
+                  >
+                    {footer.map(({ name, children, ...otherProps }, index) => (
+                      <FakeItemWrapper
+                        key={`global-navigation-fake-footer-${index}`}
+                        {...otherProps}
+                      >
+                        <FakeGlobalItemWrapper style={{ width }}>
+                          <GlobalItem>{children}</GlobalItem>
+                        </FakeGlobalItemWrapper>
+                        {name}
+                      </FakeItemWrapper>
+                    ))}
+                  </ShellFooter>
+                )}
+              </ShellSidebar>
+            )}
+          </Transition>
+        )}
+      </Fragment>
+    );
   }
 }

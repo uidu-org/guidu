@@ -1,24 +1,24 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as React from 'react';
-import memoize from 'memoize-one';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
+import GlobalTheme from '@uidu/theme';
+import memoize from 'memoize-one';
+import * as React from 'react';
+import { Theme } from '../theme';
+import { ButtonProps, ThemeMode, ThemeProps, ThemeTokens } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
-import GlobalTheme from '@uidu/theme';
-import { Theme } from '../theme';
-import { mapAttributesToState, filterProps, composeRefs } from './utils';
 import Content from './Content';
-import InnerWrapper from './InnerWrapper';
 import IconWrapper from './IconWrapper';
+import InnerWrapper from './InnerWrapper';
 import LoadingSpinner from './LoadingSpinner';
-import { ButtonProps, ThemeMode, ThemeProps, ThemeTokens } from '../types';
+import { composeRefs, filterProps, mapAttributesToState } from './utils';
 
 export type ButtonState = {
   isHover: boolean;
@@ -161,8 +161,6 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
       }
       return styles;
     };
-
-    console.log(theme);
 
     return (
       <Theme.Provider value={theme}>

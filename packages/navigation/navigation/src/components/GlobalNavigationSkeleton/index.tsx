@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
 import { Skeleton } from '@uidu/avatar';
+import React, { PureComponent } from 'react';
 import ContentLoader from 'react-content-loader';
 import GlobalNavigation from '../GlobalNavigation';
 import { GlobalNavigationProps } from '../GlobalNavigation/types';
@@ -30,7 +30,7 @@ const GlobalItemLoader = () => (
   </ContentLoader>
 );
 
-export default class GlobalNavitationSkeleton extends PureComponent<
+export default class GlobalNavigationSkeleton extends PureComponent<
   GlobalNavigationProps
 > {
   render() {

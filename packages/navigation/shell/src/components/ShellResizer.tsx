@@ -2,8 +2,7 @@ import React from 'react';
 import { ArrowLeft, Menu } from 'react-feather';
 import { Header, Resizer } from '../styled';
 
-export default function(props) {
-  const { isCollapsed } = props;
+export default function({ isCollapsed, ...rest }) {
   return (
     <Resizer>
       <Header className="position-relative hoverable">
@@ -17,7 +16,7 @@ export default function(props) {
             height: '24px',
             padding: '0',
           }}
-          {...props}
+          {...rest}
         >
           {isCollapsed ? <Menu size={14} /> : <ArrowLeft size={14} />}
         </button>
