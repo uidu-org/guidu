@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Downshift React component",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -17,7 +17,7 @@
     "react-feather": "^1.1.6"
   },
   "dependencies": {
-    "@uidu/shell": "^0.1.16",
+    "@uidu/shell": "^0.1.17",
     "@uidu/theme": "^0.1.9",
     "@uidu/tooltip": "^0.1.10",
     "react-content-loader": "^4.2.1",

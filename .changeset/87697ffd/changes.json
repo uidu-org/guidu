@@ -1,9 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/button", "type": "patch" },
-    { "name": "@uidu/fab", "type": "patch" },
-    { "name": "@uidu/navigation", "type": "patch" },
-    { "name": "@uidu/shell", "type": "patch" }
-  ],
-  "dependents": []
-}
