@@ -1,6 +1,6 @@
 {
   "name": "@uidu/fab",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Floating action buttons",
   "uidu:src": "index.ts",
   "module": "index.js",
