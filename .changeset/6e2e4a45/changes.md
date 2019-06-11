@@ -1,0 +1,1 @@
+- No type button for main button either
