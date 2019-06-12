@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Donate form",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,10 +13,10 @@
     "@uidu/docs": "^0.1.27"
   },
   "dependencies": {
-    "@uidu/contact": "^0.1.0",
+    "@uidu/contact": "^0.1.1",
     "@uidu/form": "^0.1.28",
     "@uidu/modal-dialog": "^0.1.10",
-    "@uidu/payments": "^0.1.0",
+    "@uidu/payments": "^0.1.1",
     "@uidu/shell": "^0.1.17",
     "@uidu/slider": "^1.0.0-beta.4",
     "react-feather": "^1.1.6",

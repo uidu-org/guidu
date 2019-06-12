@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.31
+- [patch] [d7c8168](https://github.org/uidu-org/guidu/commits/d7c8168):
+
+  - Added donate component and ecommerce group
+- [patch] [3db2594](https://github.org/uidu-org/guidu/commits/3db2594):
+
+  - Proper https in dev, added contact form and contact to donate component. Fix message ts
+
 ## 0.1.30
 - [patch] [5e9d0df](https://github.org/uidu-org/guidu/commits/5e9d0df):
 

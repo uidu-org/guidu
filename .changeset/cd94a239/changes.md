@@ -1,1 +1,0 @@
-- Proper https in dev, added contact form and contact to donate component. Fix message ts

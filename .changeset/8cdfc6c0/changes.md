@@ -1,1 +1,0 @@
-- Added typescript definitions and fix providers

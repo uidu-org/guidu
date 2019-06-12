@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "A React component that renders a message",
   "module": "index.js",
   "uidu:src": "index.ts",
