@@ -5,28 +5,31 @@ import Slider from '@uidu/slider';
 // import ContactForm from 'organization/components/contacts/form';
 import React, { Component, Fragment } from 'react';
 import { ArrowLeft, Circle, X } from 'react-feather';
+import { DonateProps, DonateState } from '../types';
 import Donation from './steps/Donation';
 import DonationPreferences from './steps/preferences';
 
-export default class Donate extends Component<any, any> {
+export default class Donate extends Component<DonateProps, DonateState> {
+  static defaultProps = {
+    providers: ['card'],
+  };
+
   private slider = React.createRef();
 
   constructor(props) {
     super(props);
     this.state = {
       donation: props.donation,
-      paymentFormError: null,
-      paymentFormSubmitted: false,
       activeSlide: 0,
       provider: 'card',
     };
   }
 
   createDonation = token => {
-    const { donationCampaign, onDonationCreate } = this.props;
+    const { donationCampaign, onCreate } = this.props;
     const { donation } = this.state;
     console.log(token);
-    return onDonationCreate(donation, token);
+    return onCreate(donation, token);
     // return apiCall(
     //   'post',
     //   donation.recurrence === 'month'
@@ -58,32 +61,19 @@ export default class Donate extends Component<any, any> {
 
   render() {
     const {
-      history,
-      form,
       currentMember,
       currentOrganization,
       donationCampaign,
+      providers,
     } = this.props;
-    const {
-      donation,
-      activeSlide,
-      paymentFormError,
-      paymentFormSubmitted,
-    } = this.state;
+    const { donation, activeSlide } = this.state;
 
     const slides = [
       {
         key: 'donation',
         navbar: [
           <div className="navbar-header d-md-none" key="donation-header">
-            <a
-              className="navbar-brand d-flex align-items-center"
-              data-toggle="offcanvas"
-              data-target="#donation-campaign-navigation"
-              aria-controls="sidebar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+            <a className="navbar-brand d-flex align-items-center">
               <X />
             </a>
           </div>,
@@ -107,7 +97,10 @@ export default class Donate extends Component<any, any> {
           />
         ),
       },
-      {
+    ];
+
+    if (providers.length > 1) {
+      slides.push({
         key: 'pay-with',
         navbar: [
           <div className="navbar-header" key="payment-header">
@@ -149,85 +142,84 @@ export default class Donate extends Component<any, any> {
             )}
           </div>
         ),
-      },
-      {
-        key: 'pay',
-        navbar: [
-          <div className="navbar-header" key="payment-header">
-            <a
-              href="#"
-              className="navbar-brand d-flex align-items-center"
-              onClick={e => {
-                e.preventDefault();
-                (this.slider.current as any).prev();
+      });
+    }
+
+    slides.push({
+      key: 'pay',
+      navbar: [
+        <div className="navbar-header" key="payment-header">
+          <a
+            href="#"
+            className="navbar-brand d-flex align-items-center"
+            onClick={e => {
+              e.preventDefault();
+              (this.slider.current as any).prev();
+            }}
+          >
+            <ArrowLeft />
+          </a>
+        </div>,
+        <div className="navbar-title" key="payment-title">
+          <span className="navbar-brand m-0">Pagamento</span>
+        </div>,
+      ],
+      component: (
+        <div className="p-4">
+          {donation.amount && (
+            <Payments
+              amount={donation.amount}
+              apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
+              onPaymentIntentSuccess={paymentIntent => {
+                console.log(paymentIntent);
+                (this.slider.current as any).next();
               }}
+              provider={this.state.provider}
             >
-              <ArrowLeft />
-            </a>
-          </div>,
-          <div className="navbar-title" key="payment-title">
-            <span className="navbar-brand m-0">Pagamento</span>
-          </div>,
-        ],
-        component: (
-          <div className="p-4">
-            {donation.amount && (
-              <Payments
-                amount={donation.amount}
-                apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
-                onPaymentIntentSuccess={paymentIntent => {
-                  console.log(paymentIntent);
-                  (this.slider.current as any).next();
-                }}
-                provider={this.state.provider}
-              >
-                {paymentProps => (
-                  <Pay
-                    {...paymentProps}
-                    providerProps={{ hidePostalCode: true }}
-                  >
+              {paymentProps => (
+                <Pay {...paymentProps} providerProps={{ hidePostalCode: true }}>
+                  <div className="card card-body mb-3 p-3">
+                    <dl className="mb-0">
+                      <dt className="d-flex align-items-center justify-content-between">
+                        Donazione
+                        {donation.recurrence === 'month' && (
+                          <span className="badge badge-secondary p-1 px-3">
+                            ogni mese
+                          </span>
+                        )}
+                      </dt>
+                      <dd className="mb-0 text-muted">
+                        Stai per donare {donation.amount / 100} € a{' '}
+                        <span className="text-medium">
+                          {currentOrganization.name}
+                        </span>{' '}
+                        per il progetto{' '}
+                        <span className="text-medium">
+                          {donationCampaign.name}
+                        </span>
+                      </dd>
+                    </dl>
+                  </div>
+                  {currentMember && (
                     <div className="card card-body mb-3 p-3">
                       <dl className="mb-0">
-                        <dt className="d-flex align-items-center justify-content-between">
-                          Donazione
-                          {donation.recurrence === 'month' && (
-                            <span className="badge badge-secondary p-1 px-3">
-                              ogni mese
-                            </span>
-                          )}
-                        </dt>
+                        <dt>Contatto</dt>
                         <dd className="mb-0 text-muted">
-                          Stai per donare {donation.amount / 100} € a{' '}
-                          <span className="text-medium">
-                            {currentOrganization.name}
-                          </span>{' '}
-                          per il progetto{' '}
-                          <span className="text-medium">
-                            {donationCampaign.name}
-                          </span>
+                          <address className="mb-0">
+                            <span className="text-medium">
+                              Stai donando come {currentMember.name}
+                            </span>
+                            <br />
+                            {currentMember.email}
+                          </address>
                         </dd>
                       </dl>
                     </div>
-                    {currentMember && (
-                      <div className="card card-body mb-3 p-3">
-                        <dl className="mb-0">
-                          <dt>Contatto</dt>
-                          <dd className="mb-0 text-muted">
-                            <address className="mb-0">
-                              <span className="text-medium">
-                                Stai donando come {currentMember.name}
-                              </span>
-                              <br />
-                              {currentMember.email}
-                            </address>
-                          </dd>
-                        </dl>
-                      </div>
-                    )}
-                  </Pay>
-                )}
-              </Payments>
-              /*
+                  )}
+                </Pay>
+              )}
+            </Payments>
+            /*
               <Elements>
                 <PaymentForm
                   {...this.props}
@@ -243,107 +235,107 @@ export default class Donate extends Component<any, any> {
                 </PaymentForm>
                 </Elements>
               */
-            )}
-          </div>
-        ),
-      },
-      {
-        key: 'preferences',
-        navbar: [
-          <div className="navbar-header" key="preferences-header">
-            <a
-              href="#"
-              className="navbar-brand d-flex align-items-center"
-              onClick={e => {
-                window.alert('esci');
-              }}
-            >
-              <X />
-            </a>
-          </div>,
-          <div className="navbar-title" key="preferences-title">
-            <span className="navbar-brand m-0">Personalizza</span>
-          </div>,
-        ],
-        component: (
-          <div>
-            <div className="p-4 bg-donations">
-              <div className="media align-items-center">
-                {/* <AnimatedCheck
+          )}
+        </div>
+      ),
+    });
+
+    slides.push({
+      key: 'preferences',
+      navbar: [
+        <div className="navbar-header" key="preferences-header">
+          <a
+            href="#"
+            className="navbar-brand d-flex align-items-center"
+            onClick={e => {
+              window.alert('esci');
+            }}
+          >
+            <X />
+          </a>
+        </div>,
+        <div className="navbar-title" key="preferences-title">
+          <span className="navbar-brand m-0">Personalizza</span>
+        </div>,
+      ],
+      component: (
+        <div>
+          <div className="p-4 bg-donations">
+            <div className="media align-items-center">
+              {/* <AnimatedCheck
                   className="mr-3 text-white"
                   style={{ width: '28px' }}
                 /> */}
-                <div className="media-body">
-                  <p className="mb-0 text-white text-medium">
-                    Donazione effettuata con successo
-                  </p>
-                </div>
+              <div className="media-body">
+                <p className="mb-0 text-white text-medium">
+                  Donazione effettuata con successo
+                </p>
               </div>
             </div>
-            <div className="p-4">
-              <p className="text-muted">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <a className="card mb-3" href={donation.receiptPath}>
-                <div className="media align-items-stretch">
-                  <div className="d-flex align-items-center py-2 px-3 bg-light">
-                    <div
-                      className="file-icon file-icon-xs d-flex mx-1 flex-shrink-0"
-                      data-type="pdf"
-                      style={{
-                        width: '11px',
-                        height: '16px',
-                        verticalAlign: 'sub',
-                      }}
-                    />
-                  </div>
-                  <div className="media-body text-medium py-2 px-3">
-                    Scarica la ricevuta
-                  </div>
-                </div>
-              </a>
-              <a className="card" href={donation.receiptPath}>
-                <div className="media align-items-stretch">
-                  <div className="d-flex align-items-center py-2 px-3 bg-light">
-                    <div
-                      className="file-icon file-icon-xs d-flex mx-1 flex-shrink-0"
-                      data-type="pdf"
-                      style={{
-                        width: '11px',
-                        height: '16px',
-                        verticalAlign: 'sub',
-                      }}
-                    />
-                  </div>
-                  <div className="media-body text-medium py-2 px-3">
-                    Condividi sui social
-                  </div>
-                </div>
-              </a>
-            </div>
-            <hr />
-
-            <div className="p-4">
-              {donation.subscription ? (
-                <p>Registrati</p>
-              ) : (
-                <DonationPreferences
-                  {...this.props}
-                  // submitted={loadingSection !== 'contact'}
-                  donation={donation}
-                  onSave={newContact => {
-                    this.setState({
-                      contact: newContact,
-                    });
-                  }}
-                />
-              )}
-            </div>
           </div>
-        ),
-      },
-    ];
+          <div className="p-4">
+            <p className="text-muted">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <a className="card mb-3" href={donation.receiptPath}>
+              <div className="media align-items-stretch">
+                <div className="d-flex align-items-center py-2 px-3 bg-light">
+                  <div
+                    className="file-icon file-icon-xs d-flex mx-1 flex-shrink-0"
+                    data-type="pdf"
+                    style={{
+                      width: '11px',
+                      height: '16px',
+                      verticalAlign: 'sub',
+                    }}
+                  />
+                </div>
+                <div className="media-body text-medium py-2 px-3">
+                  Scarica la ricevuta
+                </div>
+              </div>
+            </a>
+            <a className="card" href={donation.receiptPath}>
+              <div className="media align-items-stretch">
+                <div className="d-flex align-items-center py-2 px-3 bg-light">
+                  <div
+                    className="file-icon file-icon-xs d-flex mx-1 flex-shrink-0"
+                    data-type="pdf"
+                    style={{
+                      width: '11px',
+                      height: '16px',
+                      verticalAlign: 'sub',
+                    }}
+                  />
+                </div>
+                <div className="media-body text-medium py-2 px-3">
+                  Condividi sui social
+                </div>
+              </div>
+            </a>
+          </div>
+          <hr />
+
+          <div className="p-4">
+            {donation.subscription ? (
+              <p>Registrati</p>
+            ) : (
+              <DonationPreferences
+                {...this.props}
+                // submitted={loadingSection !== 'contact'}
+                donation={donation}
+                onSave={newContact => {
+                  this.setState({
+                    contact: newContact,
+                  });
+                }}
+              />
+            )}
+          </div>
+        </div>
+      ),
+    });
 
     if (!currentMember) {
       slides.splice(1, 0, {
@@ -401,11 +393,6 @@ export default class Donate extends Component<any, any> {
             </div>
           </div>
         </ShellHeader>
-        {/* <nav
-          className="navbar navbar-expand-md navbar-light flex-nowrap justify-content-between"
-          key="main-navbar"
-        >
-        </nav> */}
         <Slider
           options={{
             slidesPerView: 1,
@@ -426,14 +413,3 @@ export default class Donate extends Component<any, any> {
     );
   }
 }
-
-// DonationsForm.defaultProps = {
-//   donation: {},
-//   onSave: () => {},
-// };
-
-// DonationsForm.propTypes = {
-//   currentOrganization: PropTypes.shape(PropTypes.obj).isRequired,
-//   donationCampaign: PropTypes.shape(PropTypes.obj).isRequired,
-//   donation: PropTypes.shape(PropTypes.obj),
-// };

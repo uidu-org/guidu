@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { Component } from 'react';
 import { CheckCircle } from 'react-feather';
 
-export default class DonationDonation extends Component<any, any> {
+export default class Donation extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,7 +46,7 @@ export default class DonationDonation extends Component<any, any> {
 
   handleCustomAmount = (name, value) => {
     this.setState({
-      selectedAmount: value * 100,
+      selectedAmount: value,
     });
   };
 

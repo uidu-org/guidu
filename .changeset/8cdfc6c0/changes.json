@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/payments", "type": "patch" },
+    { "name": "@uidu/donate", "type": "patch" }
+  ],
+  "dependents": []
+}
