@@ -4,6 +4,7 @@ export type PaymentsProps = {
   amount: number;
   provider: PaymentProviderTypes;
   stripe?: stripe.Stripe;
+  scope?: string;
   onSave: (token) => void;
   onPaymentIntentSuccess: (intent) => void;
   onPaymentIntentError: (intent) => void;

@@ -31,6 +31,7 @@ const minimatch = require('minimatch');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const historyApiFallback = require('connect-history-api-fallback');
+const fs = require('fs');
 const createConfig = require('../config');
 const utils = require('../config/utils');
 const { print, devServerBanner, errorMsg } = require('../banner');
@@ -108,7 +109,15 @@ async function runDevServer() {
     // Enable gzip compression of generated files.
     compress: true,
 
-    https: true,
+    https: {
+      key: fs.readFileSync(
+        '/Users/andreavanini/Applications/uidu/config/certs/key.pem',
+      ),
+      cert: fs.readFileSync(
+        '/Users/andreavanini/Applications/uidu/config/certs/crt.pem',
+      ),
+      // ca: fs.readFileSync('C:/Users/User/AppData/Local/mkcert/rootCA.pem'),
+    },
 
     historyApiFallback: true,
     disableHostCheck,

@@ -5,6 +5,7 @@ import { generatePaymentIntent } from '../utils';
 
 class Payments extends PureComponent<PaymentsProps, PaymentsState> {
   static defaultProps = {
+    scope: 'primary',
     onPaymentIntentSuccess: console.log,
     onPaymentIntentError: console.log,
     onSourceSuccess: console.log,

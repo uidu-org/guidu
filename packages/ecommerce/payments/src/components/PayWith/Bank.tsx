@@ -4,7 +4,7 @@ import { createOptions } from '../../utils';
 
 export default class PayWithCard extends PureComponent<any> {
   render() {
-    const { children, handleSubmit, providerProps } = this.props;
+    const { children, handleSubmit, providerProps, scope } = this.props;
 
     return (
       <div
@@ -27,7 +27,7 @@ export default class PayWithCard extends PureComponent<any> {
               />
             </div>
           </div>
-          <button type="submit" className="btn btn-primary px-5">
+          <button type="submit" className={`btn btn-${scope} px-5`}>
             Conferma
           </button>
           <div id="mandate-acceptance" className="mt-3 small text-muted">

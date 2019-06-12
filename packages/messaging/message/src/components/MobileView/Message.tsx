@@ -24,6 +24,7 @@ const SwipeableMessage = ({
   const [{ xy }, set] = useSpring(() => ({ xy: [0, 0] }));
   const bind = useGesture(
     {
+      // @ts-ignore
       onDrag: ({ delta }) => {
         if (delta[0] > 0) {
           onDrag(xy);
@@ -49,7 +50,7 @@ const SwipeableMessage = ({
 
   return (
     <animated.div
-      {...!viewActions && bind()}
+      {...(!viewActions && bind())}
       style={{
         transform: xy.interpolate(x => `translateX(${x}px)`),
       }}

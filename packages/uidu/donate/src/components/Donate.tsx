@@ -1,3 +1,4 @@
+import Contact from '@uidu/contact';
 import Payments, { Pay, PayWith } from '@uidu/payments';
 import { ShellHeader } from '@uidu/shell';
 import Slider from '@uidu/slider';
@@ -123,6 +124,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
           <div className="p-4">
             {donation.amount && (
               <Payments
+                scope="donations"
                 amount={donation.amount}
                 apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
                 onPaymentIntentSuccess={this.createDonation}
@@ -168,6 +170,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
         <div className="p-4">
           {donation.amount && (
             <Payments
+              scope="donations"
               amount={donation.amount}
               apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
               onPaymentIntentSuccess={paymentIntent => {
@@ -359,13 +362,15 @@ export default class Donate extends Component<DonateProps, DonateState> {
         ],
         component: (
           <div className="p-4">
-            {/* <ContactForm
+            <Contact
               {...this.props}
               submitted
               scope="donations"
               contact={currentMember}
-              onSave={() => setTimeout(() => this.slider.next(), 500)}
-            /> */}
+              onSave={() =>
+                setTimeout(() => (this.slider.current as any).next(), 500)
+              }
+            />
           </div>
         ),
       });
