@@ -5,8 +5,8 @@ import queryString from 'query-string';
 import { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { animateScroll as scroll } from 'react-scroll';
-import { Step } from 'src';
 import { StepperProps } from '../types';
+import Step from './Step';
 
 class Stepper extends Component<StepperProps, any> {
   private steps: {

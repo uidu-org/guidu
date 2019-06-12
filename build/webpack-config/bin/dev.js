@@ -108,6 +108,8 @@ async function runDevServer() {
     // Enable gzip compression of generated files.
     compress: true,
 
+    https: true,
+
     historyApiFallback: true,
     disableHostCheck,
 

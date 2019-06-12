@@ -1,3 +1,4 @@
+import { ReactFragment } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 
 export type StepProps = {
@@ -19,5 +20,5 @@ export type StepProps = {
 export type StepperProps = {
   defaultStep?: string;
   scrollElement?: HTMLDivElement;
-  children: (props: any) => StepProps;
+  children: (props: any) => StepProps | ReactFragment;
 } & RouteComponentProps;

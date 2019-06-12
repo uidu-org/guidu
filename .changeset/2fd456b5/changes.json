@@ -1,0 +1,12 @@
+{
+  "releases": [
+    { "name": "@uidu/webpack-config", "type": "patch" },
+    { "name": "@uidu/payment-sources", "type": "patch" },
+    { "name": "@uidu/payments", "type": "patch" },
+    { "name": "@uidu/stripe-accounts", "type": "patch" },
+    { "name": "@uidu/stepper", "type": "patch" },
+    { "name": "@uidu/donate", "type": "patch" },
+    { "name": "@uidu/guidu-website", "type": "patch" }
+  ],
+  "dependents": []
+}
