@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.16
+- [patch] [e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
+
+  - Remove onmouseenter for showing globalnavigation
+
 ## 0.1.15
 - [patch] [9c54116](https://github.org/uidu-org/guidu/commits/9c54116):
 

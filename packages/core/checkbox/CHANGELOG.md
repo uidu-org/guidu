@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.42
+- [patch] [e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
+
+  - Added textarea field component
+
 ## 0.1.41
 
 - [patch][93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
