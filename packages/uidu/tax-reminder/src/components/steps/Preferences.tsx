@@ -1,5 +1,7 @@
+import { Checkbox } from '@uidu/checkbox';
+import FieldText from '@uidu/field-text';
 import { Form, FormFooter, FormSubmit } from '@uidu/form';
-import { Checkbox, Input, Textarea } from '@uidu/inputs';
+import { Textarea } from '@uidu/inputs';
 import React, { Component } from 'react';
 // import { apiCall } from 'utils';
 
@@ -60,7 +62,7 @@ export default class DonationPreferences extends Component {
                 : 'activerecord.attributes.donation.preferences.anonymous'}
             </a>
           </label>
-          <Input
+          <FieldText
             type="text"
             layout="elementOnly"
             name="donation[preferences][display_name]"

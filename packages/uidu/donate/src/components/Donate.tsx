@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { ArrowLeft, X } from 'react-feather';
 import { DonateProps, DonateState } from '../types';
 import Donation from './steps/Donation';
-import DonationPreferences from './steps/preferences';
+import Preferences from './steps/Preferences';
 
 export default class Donate extends Component<DonateProps, DonateState> {
   static defaultProps = {
@@ -306,7 +306,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
             {donation.subscription ? (
               <p>Registrati</p>
             ) : (
-              <DonationPreferences
+              <Preferences
                 {...this.props}
                 // submitted={loadingSection !== 'contact'}
                 donation={donation}

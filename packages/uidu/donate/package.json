@@ -13,6 +13,8 @@
     "@uidu/docs": "^0.1.27"
   },
   "dependencies": {
+    "@uidu/checkbox": "^0.1.41",
+    "@uidu/field-text": "^0.1.12",
     "@uidu/form": "^0.1.28",
     "@uidu/modal-dialog": "^0.1.10",
     "@uidu/payments": "^0.1.0",

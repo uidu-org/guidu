@@ -1,9 +1,11 @@
+import { Checkbox } from '@uidu/checkbox';
+import FieldText from '@uidu/field-text';
 import { Form, FormFooter, FormSubmit } from '@uidu/form';
-import { Checkbox, Input, Textarea } from '@uidu/inputs';
+import { Textarea } from '@uidu/inputs';
 import React, { Component } from 'react';
 // import { apiCall } from 'utils';
 
-export default class DonationPreferences extends Component {
+export default class DonationPreferences extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +23,9 @@ export default class DonationPreferences extends Component {
 
   handleSubmit = model => {
     const { donation } = this.props;
-    return apiCall('patch', donation.path, model);
+    console.log(donation);
+    console.log(model);
+    // return apiCall('patch', donation.path, model);
   };
 
   render() {
@@ -60,7 +64,7 @@ export default class DonationPreferences extends Component {
                 : 'activerecord.attributes.donation.preferences.anonymous'}
             </a>
           </label>
-          <Input
+          <FieldText
             type="text"
             layout="elementOnly"
             name="donation[preferences][display_name]"
@@ -70,7 +74,7 @@ export default class DonationPreferences extends Component {
             disabled={anonymous}
           />
         </div>
-        <div className="d-none">
+        <div className="form-group">
           <Checkbox
             label="Anonimo"
             name="donation[preferences][anonymous]"

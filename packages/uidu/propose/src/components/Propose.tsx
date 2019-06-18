@@ -3,7 +3,7 @@ import { Shell } from '@uidu/widgets';
 // import ContactForm from 'organization/components/contacts/form';
 import React, { Component } from 'react';
 import { X } from 'react-feather';
-import ReminderPreferences from './steps/preferences';
+import Preferences from './steps/Preferences';
 import Proposal from './steps/Proposal';
 
 export default class TaxReminder extends Component<any, any> {
@@ -169,7 +169,7 @@ export default class TaxReminder extends Component<any, any> {
               {proposal.subscription ? (
                 <p>Registrati</p>
               ) : (
-                <ReminderPreferences
+                <Preferences
                   {...this.props}
                   // submitted={loadingSection !== 'contact'}
                   proposal={proposal}
