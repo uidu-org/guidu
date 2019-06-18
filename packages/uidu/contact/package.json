@@ -1,6 +1,6 @@
 {
   "name": "@uidu/contact",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Basic contact form info",
   "uidu:src": "index.ts",
   "module": "index.js",
