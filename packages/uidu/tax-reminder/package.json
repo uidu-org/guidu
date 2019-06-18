@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tax-reminder",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
@@ -16,7 +16,7 @@
     "@uidu/field-text": "^0.1.12",
     "@uidu/form": "^0.1.28",
     "@uidu/select": "^0.1.13",
-    "@uidu/widgets": "^0.1.0",
+    "@uidu/widgets": "^0.1.1",
     "moment": "^2.18.1",
     "react-feather": "^1.1.6"
   }

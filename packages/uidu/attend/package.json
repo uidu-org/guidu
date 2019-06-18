@@ -1,6 +1,6 @@
 {
   "name": "@uidu/attend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React component to attend to an event",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,12 +13,12 @@
     "@uidu/docs": "^0.1.27"
   },
   "dependencies": {
-    "@uidu/field-counter": "^0.1.0",
+    "@uidu/field-counter": "^0.1.1",
     "@uidu/field-text": "^0.1.12",
     "@uidu/form": "^0.1.28",
     "@uidu/payments": "^0.1.0",
     "@uidu/spinner": "^0.1.8",
-    "@uidu/widgets": "^0.1.0",
+    "@uidu/widgets": "^0.1.1",
     "moment": "^2.18.1",
     "react-countdown-now": "^2.1.0",
     "react-feather": "^1.1.6",

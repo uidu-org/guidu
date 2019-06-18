@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-counter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A counter input element - good for plus-minus elements",
   "uidu:src": "index.ts",
   "module": "index.js",

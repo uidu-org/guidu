@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Load field-* based on field kind",
   "uidu:src": "index.ts",
   "module": "index.js",
