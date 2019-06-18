@@ -1,5 +1,6 @@
 import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
+import { ChevronsLeft, ChevronsRight } from 'react-feather';
 import { Transition } from 'react-transition-group';
 import GlobalItem from '../GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
@@ -92,7 +93,7 @@ export default class GlobalNavigation extends PureComponent<
             backgroundColor,
             zIndex: 3,
           }}
-          onMouseEnter={this.onMouseEnter}
+          // onMouseEnter={this.onMouseEnter}
         >
           <ShellHeader className="justify-content-center">
             <GlobalItem {...header} />
@@ -123,6 +124,16 @@ export default class GlobalNavigation extends PureComponent<
                   {...footerItem}
                 />
               ))}
+              {showOverlay && (
+                <GlobalItem
+                  onClick={e => {
+                    e.preventDefault();
+                    this.setState({ isOpen: true });
+                  }}
+                >
+                  <ChevronsRight />
+                </GlobalItem>
+              )}
             </ShellFooter>
           )}
         </ShellSidebar>
@@ -142,7 +153,7 @@ export default class GlobalNavigation extends PureComponent<
                   }),
                   ...transitionStyles[state],
                 }}
-                onMouseLeave={this.onMouseLeave}
+                // onMouseLeave={this.onMouseLeave}
               >
                 <ShellHeader>
                   <FakeGlobalItemWrapper style={{ width }}>
@@ -183,6 +194,18 @@ export default class GlobalNavigation extends PureComponent<
                         {name}
                       </FakeItemWrapper>
                     ))}
+                    <FakeItemWrapper
+                      onClick={e => {
+                        e.preventDefault();
+                        this.setState({ isOpen: false });
+                      }}
+                    >
+                      <FakeGlobalItemWrapper style={{ width }}>
+                        <GlobalItem>
+                          <ChevronsLeft />
+                        </GlobalItem>
+                      </FakeGlobalItemWrapper>
+                    </FakeItemWrapper>
                   </ShellFooter>
                 )}
               </ShellSidebar>

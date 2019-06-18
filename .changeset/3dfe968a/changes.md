@@ -1,0 +1,1 @@
+- Remove onmouseenter for showing globalnavigation

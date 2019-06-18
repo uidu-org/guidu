@@ -8,14 +8,7 @@ import Shell, {
   ShellResizer,
 } from '@uidu/shell';
 import React, { Component } from 'react';
-import {
-  Activity,
-  Bell,
-  Grid,
-  Info,
-  MoreHorizontal,
-  Settings,
-} from 'react-feather';
+import { Activity, Bell, Grid, MoreHorizontal, Settings } from 'react-feather';
 import foo from '../examples-utils/assets/foo.svg';
 import Navigation, { GlobalNavigation, NavigationItem } from '../src';
 
@@ -234,7 +227,7 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
               badge: <Badge appearance="important">{3}</Badge>,
               name: 'Notifiche',
             },
-            { children: <Info size={20} />, name: 'Assistenza' },
+            // { children: <Info size={20} />, name: 'Assistenza' },
             {
               children: <Avatar size="small" borderColor="transparent" />,
               name: 'Andrea Vanini',
