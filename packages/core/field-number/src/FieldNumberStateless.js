@@ -1,14 +1,14 @@
 // @flow
 
-import React, { Component } from 'react';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
 import { FieldTextStateless } from '@uidu/field-text';
-import { name as packageName, version as packageVersion } from './version.json';
+import React, { Component } from 'react';
 import StyledInput from './styled/Input';
+import { name as packageName, version as packageVersion } from './version.json';
 import type { FieldNumberProps } from './types';
 
 type Props = FieldNumberProps & {
@@ -26,6 +26,7 @@ class FieldNumberStateless extends Component<Props, void> {
     return (
       <FieldTextStateless
         {...this.props}
+        inputMode="numeric"
         component={StyledInput}
         options={{
           thousandSeparator: '.',

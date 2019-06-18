@@ -1,11 +1,9 @@
-import Contact from '@uidu/contact';
 import Payments, { Pay, PayWith } from '@uidu/payments';
-import { ShellHeader } from '@uidu/shell';
-import Slider from '@uidu/slider';
+import { Shell } from '@uidu/widgets';
 // import AnimatedCheck from 'components/AnimatedCheck';
 // import ContactForm from 'organization/components/contacts/form';
-import React, { Component, Fragment } from 'react';
-import { ArrowLeft, Circle, X } from 'react-feather';
+import React, { Component } from 'react';
+import { ArrowLeft, X } from 'react-feather';
 import { DonateProps, DonateState } from '../types';
 import Donation from './steps/Donation';
 import DonationPreferences from './steps/preferences';
@@ -72,16 +70,16 @@ export default class Donate extends Component<DonateProps, DonateState> {
     const slides = [
       {
         key: 'donation',
-        navbar: [
-          <div className="navbar-header d-md-none" key="donation-header">
-            <a className="navbar-brand d-flex align-items-center">
-              <X />
-            </a>
-          </div>,
-          <div className="navbar-title text-md-left" key="donation-title">
-            <span className="navbar-brand m-0">Dona ora</span>
-          </div>,
-        ],
+        header: {
+          itemBefore: (
+            <div className="navbar-header d-md-none">
+              <a className="navbar-brand d-flex align-items-center">
+                <X />
+              </a>
+            </div>
+          ),
+          name: 'Dona ora',
+        },
         component: (
           <Donation
             {...this.props}
@@ -103,25 +101,25 @@ export default class Donate extends Component<DonateProps, DonateState> {
     if (providers.length > 1) {
       slides.push({
         key: 'pay-with',
-        navbar: [
-          <div className="navbar-header" key="payment-header">
-            <a
-              href="#"
-              className="navbar-brand d-flex align-items-center"
-              onClick={e => {
-                e.preventDefault();
-                (this.slider.current as any).prev();
-              }}
-            >
-              <ArrowLeft />
-            </a>
-          </div>,
-          <div className="navbar-title" key="payment-title">
-            <span className="navbar-brand m-0">Pagamento</span>
-          </div>,
-        ],
+        header: {
+          itemBefore: (
+            <div className="navbar-header" key="payment-header">
+              <a
+                href="#"
+                className="navbar-brand d-flex align-items-center"
+                onClick={e => {
+                  e.preventDefault();
+                  (this.slider.current as any).prev();
+                }}
+              >
+                <ArrowLeft />
+              </a>
+            </div>
+          ),
+          name: 'Metodo di pagamento',
+        },
         component: (
-          <div className="p-4">
+          <div className="p-3 p-xl-4">
             {donation.amount && (
               <Payments
                 scope="donations"
@@ -149,25 +147,25 @@ export default class Donate extends Component<DonateProps, DonateState> {
 
     slides.push({
       key: 'pay',
-      navbar: [
-        <div className="navbar-header" key="payment-header">
-          <a
-            href="#"
-            className="navbar-brand d-flex align-items-center"
-            onClick={e => {
-              e.preventDefault();
-              (this.slider.current as any).prev();
-            }}
-          >
-            <ArrowLeft />
-          </a>
-        </div>,
-        <div className="navbar-title" key="payment-title">
-          <span className="navbar-brand m-0">Pagamento</span>
-        </div>,
-      ],
+      header: {
+        itemBefore: (
+          <div className="navbar-header" key="payment-header">
+            <a
+              href="#"
+              className="navbar-brand d-flex align-items-center"
+              onClick={e => {
+                e.preventDefault();
+                (this.slider.current as any).prev();
+              }}
+            >
+              <ArrowLeft />
+            </a>
+          </div>
+        ),
+        name: 'Pagamento',
+      },
       component: (
-        <div className="p-4">
+        <div className="p-3 p-xl-4">
           {donation.amount && (
             <Payments
               scope="donations"
@@ -222,22 +220,6 @@ export default class Donate extends Component<DonateProps, DonateState> {
                 </Pay>
               )}
             </Payments>
-            /*
-              <Elements>
-                <PaymentForm
-                  {...this.props}
-                  onSave={this.createDonation}
-                  paymentFormError={paymentFormError}
-                  paymentFormSubmitted={paymentFormSubmitted}
-                  scope="donations"
-                  product={{
-                    name: 'Donazione',
-                    grossPrice: donation && donation.amount,
-                  }}
-                >
-                </PaymentForm>
-                </Elements>
-              */
           )}
         </div>
       ),
@@ -245,25 +227,25 @@ export default class Donate extends Component<DonateProps, DonateState> {
 
     slides.push({
       key: 'preferences',
-      navbar: [
-        <div className="navbar-header" key="preferences-header">
-          <a
-            href="#"
-            className="navbar-brand d-flex align-items-center"
-            onClick={e => {
-              window.alert('esci');
-            }}
-          >
-            <X />
-          </a>
-        </div>,
-        <div className="navbar-title" key="preferences-title">
-          <span className="navbar-brand m-0">Personalizza</span>
-        </div>,
-      ],
+      header: {
+        itemBefore: (
+          <div className="navbar-header" key="preferences-header">
+            <a
+              href="#"
+              className="navbar-brand d-flex align-items-center"
+              onClick={e => {
+                window.alert('esci');
+              }}
+            >
+              <X />
+            </a>
+          </div>
+        ),
+        name: 'Personalizza',
+      },
       component: (
         <div>
-          <div className="p-4 bg-donations">
+          <div className="p-3 p-xl-4 bg-donations">
             <div className="media align-items-center">
               {/* <AnimatedCheck
                   className="mr-3 text-white"
@@ -276,7 +258,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
               </div>
             </div>
           </div>
-          <div className="p-4">
+          <div className="p-3 p-xl-4">
             <p className="text-muted">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -320,7 +302,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
           </div>
           <hr />
 
-          <div className="p-4">
+          <div className="p-3 p-xl-4">
             {donation.subscription ? (
               <p>Registrati</p>
             ) : (
@@ -340,81 +322,8 @@ export default class Donate extends Component<DonateProps, DonateState> {
       ),
     });
 
-    if (!currentMember) {
-      slides.splice(1, 0, {
-        key: 'contact',
-        navbar: [
-          <div className="navbar-header" key="contact-header">
-            <a
-              href="#"
-              className="navbar-brand d-flex align-items-center"
-              onClick={e => {
-                e.preventDefault();
-                (this.slider.current as any).prev();
-              }}
-            >
-              <ArrowLeft />
-            </a>
-          </div>,
-          <div className="navbar-title" key="contact-title">
-            <span className="navbar-brand m-0">Contatto</span>
-          </div>,
-        ],
-        component: (
-          <div className="p-4">
-            <Contact
-              {...this.props}
-              submitted
-              scope="donations"
-              contact={currentMember}
-              onSave={() =>
-                setTimeout(() => (this.slider.current as any).next(), 500)
-              }
-            />
-          </div>
-        ),
-      });
-    }
-
     return (
-      <Fragment>
-        <ShellHeader className="border-bottom">
-          <div className="container-fluid px-1 flex-nowrap d-flex justify-content-between">
-            {slides[activeSlide].navbar}
-            <div className="navbar-actions" id="navbar-actions">
-              <ul className="list-inline d-flex align-items-center justify-content-end mb-0 flex-nowrap">
-                {slides.map((slide, index) => (
-                  <li className="nav-item" key={slide.key}>
-                    <a className="nav-link px-1">
-                      {index === activeSlide ? (
-                        <Circle size={10} fill="#26a69a" stroke="#26a69a" />
-                      ) : (
-                        <Circle size={10} fill="#f1f3f5" stroke="#f1f3f5" />
-                      )}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </ShellHeader>
-        <Slider
-          options={{
-            slidesPerView: 1,
-            // allowTouchMove: false,
-            on: {
-              slideChange: () =>
-                this.setState({
-                  activeSlide: (this.slider.current as any).mySlider
-                    .activeIndex,
-                }),
-            },
-          }}
-          ref={this.slider}
-        >
-          {slides.map(slide => slide.component)}
-        </Slider>
-      </Fragment>
+      <Shell slides={slides} ref={this.slider} currentMember={currentMember} />
     );
   }
 }

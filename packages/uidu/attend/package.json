@@ -1,7 +1,7 @@
 {
-  "name": "@uidu/donate",
+  "name": "@uidu/attend",
   "version": "0.1.0",
-  "description": "Donate form",
+  "description": "React component to attend to an event",
   "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
@@ -13,10 +13,14 @@
     "@uidu/docs": "^0.1.27"
   },
   "dependencies": {
+    "@uidu/field-counter": "^0.1.0",
+    "@uidu/field-text": "^0.1.12",
     "@uidu/form": "^0.1.28",
-    "@uidu/modal-dialog": "^0.1.10",
     "@uidu/payments": "^0.1.0",
+    "@uidu/spinner": "^0.1.8",
     "@uidu/widgets": "^0.1.0",
+    "moment": "^2.18.1",
+    "react-countdown-now": "^2.1.0",
     "react-feather": "^1.1.6",
     "react-stripe-elements": "^3.0.0"
   }

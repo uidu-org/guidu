@@ -1,7 +1,6 @@
 {
-  "name": "@uidu/donate",
+  "name": "@uidu/tax-reminder",
   "version": "0.1.0",
-  "description": "Donate form",
   "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
@@ -14,10 +13,9 @@
   },
   "dependencies": {
     "@uidu/form": "^0.1.28",
-    "@uidu/modal-dialog": "^0.1.10",
-    "@uidu/payments": "^0.1.0",
+    "@uidu/select": "^0.1.13",
     "@uidu/widgets": "^0.1.0",
-    "react-feather": "^1.1.6",
-    "react-stripe-elements": "^3.0.0"
+    "moment": "^2.18.1",
+    "react-feather": "^1.1.6"
   }
 }

@@ -90,7 +90,7 @@ export default class Donation extends Component<any, any> {
           ),
         ]}
       >
-        <div className="form-group mb-0 p-4">
+        <div className="form-group mb-0 p-3 p-xl-4">
           <RadioButton
             options={[
               {

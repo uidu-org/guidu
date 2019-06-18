@@ -11,10 +11,10 @@ export type FieldTextType =
   | 'hidden'
   // | 'month' -> FieldMonth
   // | 'number' -> FieldNumber
-  | 'password' // -> FieldPassword
+  // | 'password' // -> FieldPassword
   // | 'range' -> FieldRange
   | 'search'
-  // | 'tel' -> FieldTel
+  | 'tel'
   // | 'time' -> FieldTime
   | 'url';
 // | 'week' -> Select

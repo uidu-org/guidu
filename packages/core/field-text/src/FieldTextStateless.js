@@ -1,14 +1,14 @@
 // @flow
 
-import React, { Component } from 'react';
-import classNames from 'classnames';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
-import { name as packageName, version as packageVersion } from './version.json';
+import classNames from 'classnames';
+import React, { Component } from 'react';
 import Input from './styled/Input';
+import { name as packageName, version as packageVersion } from './version.json';
 import type { FieldTextProps } from './types';
 
 type Props = FieldTextProps & {
@@ -40,6 +40,24 @@ class FieldTextStateless extends Component<Props, void> {
     this.input = input;
     // $FlowFixMe - Cannot call `this.props.innerRef` because undefined [1] is not a function
     this.props.innerRef(input);
+  };
+
+  getInputMode = (type: string) => {
+    const { inputMode } = this.props;
+    if (inputMode) {
+      return inputMode;
+    }
+
+    switch (type) {
+      case 'tel':
+        return 'tel';
+      case 'email':
+        return 'email';
+      case 'url':
+        return 'url';
+      default:
+        return null;
+    }
   };
 
   render() {
@@ -102,6 +120,9 @@ class FieldTextStateless extends Component<Props, void> {
         spellCheck={isSpellCheckEnabled}
         type={type}
         value={value}
+        {...(this.getInputMode(type)
+          ? { inputMode: this.getInputMode(type) }
+          : {})}
         {...options} // for other input patterns}
       />
     );

@@ -1,0 +1,16 @@
+{
+  "name": "@uidu/widgets",
+  "version": "0.1.0",
+  "description": "Widgets components with zois",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@uidu/contact": "^0.1.0",
+    "@uidu/shell": "^0.1.17",
+    "@uidu/slider": "^1.0.0-beta.4",
+    "react-feather": "^1.1.6"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  }
+}
