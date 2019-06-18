@@ -15,6 +15,7 @@
   "dependencies": {
     "@uidu/checkbox": "^0.1.41",
     "@uidu/field-text": "^0.1.12",
+    "@uidu/field-textarea": "^0.1.0",
     "@uidu/form": "^0.1.28",
     "@uidu/modal-dialog": "^0.1.10",
     "@uidu/payments": "^0.1.0",

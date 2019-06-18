@@ -15,6 +15,7 @@
   "dependencies": {
     "@uidu/field-counter": "^0.1.1",
     "@uidu/field-text": "^0.1.12",
+    "@uidu/field-textarea": "^0.1.0",
     "@uidu/form": "^0.1.28",
     "@uidu/payments": "^0.1.0",
     "@uidu/spinner": "^0.1.8",

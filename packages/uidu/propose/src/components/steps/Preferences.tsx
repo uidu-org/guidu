@@ -1,7 +1,7 @@
 import { Checkbox } from '@uidu/checkbox';
 import FieldText from '@uidu/field-text';
+import FieldTextarea from '@uidu/field-textarea';
 import { Form, FormFooter, FormSubmit } from '@uidu/form';
-import { Textarea } from '@uidu/inputs';
 import React, { Component } from 'react';
 // import { apiCall } from 'utils';
 
@@ -42,7 +42,7 @@ export default class Preferences extends Component<any, any> {
           </FormFooter>
         )}
       >
-        <Textarea
+        <FieldTextarea
           rows={3}
           label="Lascia un messaggio (opzionale)"
           name="donation[body]"

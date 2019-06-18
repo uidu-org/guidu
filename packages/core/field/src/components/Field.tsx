@@ -62,6 +62,9 @@ const LoadableFieldNumber = (loadable as any).lib(() =>
 );
 const LoadableCheckbox = (loadable as any).lib(() => import('@uidu/checkbox'));
 const LoadableSelect = (loadable as any).lib(() => import('@uidu/select'));
+const LoadableFieldTextarea = (loadable as any).lib(() =>
+  import('@uidu/field-textarea'),
+);
 
 export default class Field extends PureComponent<any> {
   static defaultProps = {
@@ -147,14 +150,18 @@ export default class Field extends PureComponent<any> {
       //   return <InputGeosuggest {...sharedProps} value={getValue() || ''} />;
       // case 'file':
       //   return <InputFile {...sharedProps} value={getValue() || false} />;
-      // case 'long_text':
-      //   return (
-      //     <Textarea
-      //       {...sharedProps}
-      //       className="form-control form-control-autosize"
-      //       value={getValue() || ''}
-      //     />
-      //   );
+      case 'text':
+        return (
+          <LoadableFieldTextarea fallback={<FieldLoader withLabel={!!label} />}>
+            {({ default: FieldTextarea }) => (
+              <FieldTextarea
+                {...sharedProps}
+                className="form-control form-control-autosize"
+                value={this.getValue() || ''}
+              />
+            )}
+          </LoadableFieldTextarea>
+        );
       case 'number':
         return (
           <LoadableFieldNumber fallback={<FieldLoader withLabel={!!label} />}>

@@ -14,6 +14,7 @@
   "dependencies": {
     "@uidu/checkbox": "^0.1.41",
     "@uidu/field-text": "^0.1.12",
+    "@uidu/field-textarea": "^0.1.0",
     "@uidu/form": "^0.1.28",
     "@uidu/select": "^0.1.13",
     "@uidu/widgets": "^0.1.1",
