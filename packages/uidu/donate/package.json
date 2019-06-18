@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Donate form",
   "uidu:src": "index.ts",
   "module": "index.js",

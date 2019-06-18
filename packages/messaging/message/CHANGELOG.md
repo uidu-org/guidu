@@ -1,5 +1,10 @@
 # @uidu/message
 
+## 0.1.11
+- [patch] [3db2594](https://github.org/uidu-org/guidu/commits/3db2594):
+
+  - Proper https in dev, added contact form and contact to donate component. Fix message ts
+
 ## 0.1.10
 - [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
 

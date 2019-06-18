@@ -1,5 +1,10 @@
 # @uidu/stepper
 
+## 0.1.7
+- [patch] [d7c8168](https://github.org/uidu-org/guidu/commits/d7c8168):
+
+  - Added donate component and ecommerce group
+
 ## 0.1.6
 - [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 
