@@ -7,7 +7,13 @@ export default class Basic extends Component<any, any> {
     return (
       <Fragment>
         <CommentForm comment={{}} />
-        <Comment comment={{ id: 1, body: 'foo', owner: { avatar: {} } }} />
+        <Comment
+          comment={{
+            id: 1,
+            body: 'foo',
+            owner: { name: 'Andrea', avatar: {} },
+          }}
+        />
       </Fragment>
     );
   }

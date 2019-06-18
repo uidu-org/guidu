@@ -5,7 +5,7 @@ import debounce from 'lodash/debounce';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-export default class CommentForm extends Component<any> {
+export default class CommentForm extends Component<any, any> {
   private form = React.createRef();
 
   fetchUsers = debounce((query, callback) => {

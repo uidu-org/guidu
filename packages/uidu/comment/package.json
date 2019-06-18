@@ -17,6 +17,7 @@
     "@uidu/field-mentions": "^0.1.12",
     "@uidu/field-text": "^0.1.12",
     "@uidu/form": "^0.1.28",
+    "@uidu/message-renderer": "^0.1.9",
     "@uidu/spinner": "^0.1.8",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",

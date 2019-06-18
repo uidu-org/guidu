@@ -1,3 +1,5 @@
+import Avatar from '@uidu/avatar';
+import MessageRenderer from '@uidu/message-renderer';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
 // import { MessageWith, Share as ShareOn, Vote } from 'user/utils/components';
@@ -19,16 +21,8 @@ export default class Comment extends PureComponent<any, any> {
     return (
       <div className="comment mt-4 mb-5" id={`comment-${comment.id}`}>
         <div className="media align-items-center mt-3 mb-2">
-          <a href={comment.owner.path}>
-            <img
-              className="rounded-circle mr-3"
-              src={comment.owner.avatar.thumb}
-              alt={comment.owner.name}
-              style={{
-                width: '2rem',
-                height: '2rem',
-              }}
-            />
+          <a href={comment.owner.path} className="mr-2 mr-md-3">
+            <Avatar src={comment.owner.avatar.thumb} />
           </a>
           <div className="media-body media-middle">
             <p className="mb-0">
@@ -40,12 +34,9 @@ export default class Comment extends PureComponent<any, any> {
           </div>
         </div>
         <div className="pl-5">
-          <p
-            className="comment-body mb-2"
-            dangerouslySetInnerHTML={{
-              __html: comment.body,
-            }}
-          />
+          <div className="mb-2">
+            <MessageRenderer content={comment.body} tagName="fragment" />
+          </div>
           <div className="text-muted d-flex align-items-center">
             {/* <Vote {...this.props} votable={comment}>
               {({ handleClick, active, loading }) => (
