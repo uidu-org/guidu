@@ -1,0 +1,12 @@
+{
+  "releases": [
+    { "name": "@uidu/field", "type": "patch" },
+    { "name": "@uidu/field-counter", "type": "patch" },
+    { "name": "@uidu/contact", "type": "patch" },
+    { "name": "@uidu/donate", "type": "patch" },
+    { "name": "@uidu/tax-reminder", "type": "patch" },
+    { "name": "@uidu/widgets", "type": "patch" },
+    { "name": "@uidu/attend", "type": "patch" }
+  ],
+  "dependents": []
+}
