@@ -5,7 +5,7 @@ import { Form, FormFooter, FormSubmit } from '@uidu/form';
 import React, { Component } from 'react';
 // import { apiCall } from 'utils';
 
-export default class DonationPreferences extends Component {
+export default class DonationPreferences extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,7 +23,7 @@ export default class DonationPreferences extends Component {
 
   handleSubmit = model => {
     const { donation } = this.props;
-    return apiCall('patch', donation.path, model);
+    // return apiCall('patch', donation.path, model);
   };
 
   render() {
