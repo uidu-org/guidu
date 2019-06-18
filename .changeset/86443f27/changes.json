@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/propose", "type": "patch" },
+    { "name": "@uidu/tax-reminder", "type": "patch" }
+  ],
+  "dependents": []
+}

@@ -104,7 +104,8 @@ export default class Donation extends Component<any, any> {
         <Select
           options={moment()
             .localeData()
-            ._months.map((item, index) => ({
+            .months()
+            .map((item, index) => ({
               id: index + 1,
               name: item.charAt(0).toUpperCase() + item.slice(1),
             }))}

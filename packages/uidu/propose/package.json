@@ -1,0 +1,22 @@
+{
+  "name": "@uidu/propose",
+  "version": "0.1.0",
+  "description": "Job/volunteer proposals",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "dependencies": {
+    "@uidu/field": "^0.1.0",
+    "@uidu/field-text": "^0.1.12",
+    "@uidu/form": "^0.1.28",
+    "@uidu/widgets": "^0.1.0",
+    "react-feather": "^1.1.6"
+  }
+}
