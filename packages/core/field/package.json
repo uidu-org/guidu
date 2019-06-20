@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Load field-* based on field kind",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -14,10 +14,10 @@
     "@uidu/form": "^0.1.28"
   },
   "dependencies": {
-    "@uidu/checkbox": "^0.1.41",
+    "@uidu/checkbox": "^0.1.42",
     "@uidu/field-number": "^0.1.10",
     "@uidu/field-text": "^0.1.12",
-    "@uidu/field-textarea": "^0.1.0",
+    "@uidu/field-textarea": "^0.1.1",
     "@uidu/select": "^0.1.13",
     "react-content-loader": "^4.2.1"
   }
