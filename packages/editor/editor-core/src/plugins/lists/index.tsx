@@ -1,0 +1,145 @@
+import { bulletList, listItem, orderedList } from '@atlaskit/adf-schema';
+import * as React from 'react';
+import { ToolbarSize } from '../../components/Toolbar';
+import WithPluginState from '../../components/WithPluginState';
+import { toggleBulletList, toggleOrderedList, tooltip } from '../../keymaps';
+import { EditorPlugin } from '../../types';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../analytics';
+import { messages } from '../lists/messages';
+import { IconList, IconListNumber } from '../quick-insert/assets';
+import inputRulePlugin from './pm-plugins/input-rule';
+import keymapPlugin from './pm-plugins/keymap';
+import { createPlugin, pluginKey } from './pm-plugins/main';
+import ToolbarLists from './ui/ToolbarLists';
+
+const listPlugin: EditorPlugin = {
+  nodes() {
+    return [
+      { name: 'bulletList', node: bulletList },
+      { name: 'orderedList', node: orderedList },
+      { name: 'listItem', node: listItem },
+    ];
+  },
+
+  pmPlugins() {
+    return [
+      { name: 'lists', plugin: ({ dispatch }) => createPlugin(dispatch) },
+      {
+        name: 'listsInputRule',
+        plugin: ({ schema }) => inputRulePlugin(schema),
+      },
+      { name: 'listsKeymap', plugin: () => keymapPlugin() },
+    ];
+  },
+
+  pluginsOptions: {
+    quickInsert: ({ formatMessage }) => [
+      {
+        title: formatMessage(messages.unorderedList),
+        description: formatMessage(messages.unorderedListDescription),
+        keywords: ['ul', 'unordered list'],
+        priority: 1100,
+        keyshortcut: tooltip(toggleBulletList),
+        icon: () => <IconList label={formatMessage(messages.unorderedList)} />,
+        action(insert, state) {
+          const tr = insert(
+            state.schema.nodes.bulletList.createChecked(
+              {},
+              state.schema.nodes.listItem.createChecked(
+                {},
+                state.schema.nodes.paragraph.createChecked(),
+              ),
+            ),
+          );
+
+          return addAnalytics(tr, {
+            action: ACTION.FORMATTED,
+            actionSubject: ACTION_SUBJECT.TEXT,
+            actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_BULLET,
+            eventType: EVENT_TYPE.TRACK,
+            attributes: {
+              inputMethod: INPUT_METHOD.QUICK_INSERT,
+            },
+          });
+        },
+      },
+      {
+        title: formatMessage(messages.orderedList),
+        description: formatMessage(messages.orderedListDescription),
+        keywords: ['ol', 'ordered list', 'numbered list'],
+        priority: 1200,
+        keyshortcut: tooltip(toggleOrderedList),
+        icon: () => (
+          <IconListNumber label={formatMessage(messages.orderedList)} />
+        ),
+        action(insert, state) {
+          const tr = insert(
+            state.schema.nodes.orderedList.createChecked(
+              {},
+              state.schema.nodes.listItem.createChecked(
+                {},
+                state.schema.nodes.paragraph.createChecked(),
+              ),
+            ),
+          );
+
+          return addAnalytics(tr, {
+            action: ACTION.FORMATTED,
+            actionSubject: ACTION_SUBJECT.TEXT,
+            actionSubjectId: ACTION_SUBJECT_ID.FORMAT_LIST_NUMBER,
+            eventType: EVENT_TYPE.TRACK,
+            attributes: {
+              inputMethod: INPUT_METHOD.QUICK_INSERT,
+            },
+          });
+        },
+      },
+    ],
+  },
+
+  primaryToolbarComponent({
+    editorView,
+    dispatchAnalyticsEvent,
+    popupsMountPoint,
+    popupsBoundariesElement,
+    popupsScrollableElement,
+    toolbarSize,
+    disabled,
+    isToolbarReducedSpacing,
+  }) {
+    const isSmall = toolbarSize < ToolbarSize.L;
+    const isSeparator = toolbarSize >= ToolbarSize.S;
+
+    return (
+      <WithPluginState
+        plugins={{ listsState: pluginKey }}
+        render={({ listsState }) => (
+          <ToolbarLists
+            isSmall={isSmall}
+            isSeparator={isSeparator}
+            isReducedSpacing={isToolbarReducedSpacing}
+            disabled={disabled}
+            editorView={editorView}
+            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
+            popupsMountPoint={popupsMountPoint}
+            popupsBoundariesElement={popupsBoundariesElement}
+            popupsScrollableElement={popupsScrollableElement}
+            bulletListActive={listsState.bulletListActive}
+            bulletListDisabled={listsState.bulletListDisabled}
+            orderedListActive={listsState.orderedListActive}
+            orderedListDisabled={listsState.orderedListDisabled}
+          />
+        )}
+      />
+    );
+  },
+};
+
+export default listPlugin;

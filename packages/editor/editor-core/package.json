@@ -1,0 +1,26 @@
+{
+  "name": "@uidu/editor-core",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@atlaskit/adf-schema": "^2.6.1",
+    "@atlaskit/editor-common": "^39.8.5",
+    "@types/react-intl": "^2.3.8",
+    "@uidu/droplist": "^0.1.8",
+    "@uidu/item": "^0.1.12",
+    "@uidu/media-card": "^0.1.10",
+    "@uidu/smart-card": "^0.1.9",
+    "@uidu/tooltip": "^0.1.11",
+    "prosemirror-example-setup": "^1.0.1",
+    "prosemirror-model": "^1.7.1",
+    "prosemirror-schema-basic": "^1.0.1",
+    "prosemirror-schema-list": "^1.0.3",
+    "prosemirror-state": "^1.2.3",
+    "prosemirror-view": "^1.9.10"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27",
+    "@uidu/shell": "^0.1.17"
+  }
+}
