@@ -16,10 +16,7 @@
     "@uidu/smart-card": "^0.1.9",
     "@uidu/theme": "^0.1.12",
     "@uidu/tooltip": "^0.1.11",
-    "prosemirror-example-setup": "^1.0.1",
     "prosemirror-model": "^1.7.1",
-    "prosemirror-schema-basic": "^1.0.1",
-    "prosemirror-schema-list": "^1.0.3",
     "prosemirror-state": "^1.2.3",
     "prosemirror-view": "^1.9.10"
   },

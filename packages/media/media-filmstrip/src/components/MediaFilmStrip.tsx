@@ -37,7 +37,7 @@ export default class MediaFilmStrip extends Component<any, any> {
       <div>
         {!isLoading ? (
           <FilmStrip>
-            {images.map((image, index) => (
+            {images.map((image: any, index: number) => (
               <MediaCard
                 onClick={() => this.toggleModal(index)}
                 key={image.id}
@@ -53,18 +53,18 @@ export default class MediaFilmStrip extends Component<any, any> {
           </FilmStrip>
         ) : null}
         <ModalGateway>
-          {Number.isInteger(currentModal) ? (
+          {Number.isInteger(currentModal as any) ? (
             <Modal
               isFullscreen
               closeOnBackdropClick={false}
               onClose={this.toggleModal}
               styles={{
-                blanket: base => ({
+                blanket: (base: any) => ({
                   ...base,
                   backgroundColor: colors.N90,
                   zIndex: 3000,
                 }),
-                positioner: base => ({
+                positioner: (base: any) => ({
                   ...base,
                   display: 'block',
                   zIndex: 3000,
@@ -81,11 +81,11 @@ export default class MediaFilmStrip extends Component<any, any> {
                 frameProps={{ autoSize: 'height' }}
                 views={images}
                 styles={{
-                  container: base => ({
+                  container: (base: any) => ({
                     ...base,
                     height: '100vh',
                   }),
-                  view: base => ({
+                  view: (base: any) => ({
                     ...base,
                     alignItems: 'center',
                     display: 'flex ',

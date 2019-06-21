@@ -48,6 +48,7 @@
   },
   "files": [
     "./typings/atlaskit.d.ts",
+    "./typings/react-images.d.ts",
     "./typings/uidu.d.ts",
     "./typings/blueimp-load-image.d.ts",
     "./typings/deep-equal.d.ts",

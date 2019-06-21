@@ -1,14 +1,13 @@
+import { Checkbox } from '@atlaskit/checkbox';
+import Form, { Field, FormHeader } from '@atlaskit/form';
+import Page, { Grid, GridColumn } from '@atlaskit/page';
+import { RadioGroup } from '@atlaskit/radio';
+import Button from '@uidu/button';
+import { FieldTextStateless as Textfield } from '@uidu/field-text';
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
-
-import Page, { Grid, GridColumn } from '@atlaskit/page';
-import Form, { Field, FormHeader } from '@atlaskit/form';
-import Textfield from '@atlaskit/textfield';
-import Button from '@uidu/button';
-import { Provider, Card, Client } from '../src';
+import { Card, Client, Provider } from '../src';
 import { CardAppearance } from '../src/Card/types';
-import { Checkbox } from '@atlaskit/checkbox';
-import { RadioGroup } from '@atlaskit/radio';
 import urlsJSON from './example-urls.json';
 
 const params =
@@ -147,9 +146,7 @@ class Example extends React.Component<{}, ExampleState> {
                     &nbsp;
                     <a href={example.url}>
                       {example.description ||
-                        `${example.provider} ${example.visibility} ${
-                          example.type
-                        }`}
+                        `${example.provider} ${example.visibility} ${example.type}`}
                     </a>
                   </p>
                 ))}

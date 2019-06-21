@@ -12,7 +12,9 @@
     "access": "public"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.27"
+    "@uidu/button": "^0.1.38",
+    "@uidu/docs": "^0.1.27",
+    "@uidu/modal-dialog": "^0.1.10"
   },
   "dependencies": {
     "@uppy/core": "^1.0.1",

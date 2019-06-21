@@ -3,7 +3,6 @@
 import React, { type ComponentType } from 'react';
 import styled from 'styled-components';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import Card from 'react-bootstrap/Card';
 import Tooltip from '@uidu/tooltip';
 import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
 import { Code } from 'react-feather';
@@ -25,7 +24,7 @@ type State = {
 
 const TRANSITION_DURATION = '200ms';
 
-const Wrapper = styled(Card)`
+const Wrapper = styled.div`
   margin-top: 20px;
   transition: background-color ${TRANSITION_DURATION};
 `;
@@ -79,8 +78,8 @@ export default class Example extends React.Component<Props, State> {
     const mode = isSourceVisible ? 'open' : 'closed';
 
     return (
-      <Wrapper className="border mb-4" mode={mode}>
-        <Card.Header>
+      <Wrapper className="border mb-4 card" mode={mode}>
+        <div className="card-header">
           <Tooltip placement="left" content={toggleLabel}>
             <Toggle
               ref={c => {
@@ -94,7 +93,7 @@ export default class Example extends React.Component<Props, State> {
               <Code id="UncontrolledTooltipExample" label={toggleLabel} />
             </Toggle>
           </Tooltip>
-        </Card.Header>
+        </div>
         {isSourceVisible && (
           <SyntaxHighlighter
             language="javascript"
@@ -104,13 +103,13 @@ export default class Example extends React.Component<Props, State> {
             {packageName ? replaceSrc(source, packageName) : source}
           </SyntaxHighlighter>
         )}
-        <Card.Body>
+        <div className="card-body">
           <Showcase>
             <ErrorBoundary onError={this.onError}>
               <Component />
             </ErrorBoundary>
           </Showcase>
-        </Card.Body>
+        </div>
       </Wrapper>
     );
   }

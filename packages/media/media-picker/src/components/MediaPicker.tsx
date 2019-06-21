@@ -4,7 +4,7 @@ import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
 import Dropbox from '@uppy/dropbox';
 import GoogleDrive from '@uppy/google-drive';
-import { Dashboard } from '@uppy/react';
+import { DashboardModal } from '@uppy/react';
 import Url from '@uppy/url';
 import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
@@ -18,9 +18,11 @@ export default class MediaPicker extends Component<any> {
   constructor(props) {
     super(props);
     this.uppy = Uppy({
+      debug: true,
+      allowMultipleUploads: true,
       restrictions: {
-        maxNumberOfFiles: 1,
-        minNumberOfFiles: 1,
+        maxNumberOfFiles: null,
+        minNumberOfFiles: null,
         maxFileSize: null,
         allowedFileTypes: null,
       },
@@ -29,21 +31,28 @@ export default class MediaPicker extends Component<any> {
     this.uppy
       .use(Webcam)
       .use(XHRUpload, {
+        formData: true,
         endpoint:
-          'https://uidufundraising.uidu.local:8443/dashboard/apps/attachments.json',
+          'https://uidufundraising.uidu.local:8443/rails/active_storage/direct_uploads',
+        withCredentials: true,
       })
       .use(Url, {
-        target: document.body,
-        companionUrl: 'https://companion.uppy.io/',
+        companionUrl:
+          'https://tgt7qn1t68.execute-api.eu-west-1.amazonaws.com/dev',
       })
       .use(GoogleDrive, {
-        target: document.body,
-        companionUrl: 'https://companion.uppy.io/',
+        companionUrl:
+          'https://tgt7qn1t68.execute-api.eu-west-1.amazonaws.com/dev',
       })
       .use(Dropbox, {
-        target: document.body,
-        companionUrl: 'https://companion.uppy.io/',
+        companionUrl:
+          'https://tgt7qn1t68.execute-api.eu-west-1.amazonaws.com/dev',
       });
+    this.uppy.on('file-added', file => {
+      this.uppy.setFileMeta(file.id, {
+        size: file.size,
+      });
+    });
     this.uppy.on('complete', result => {
       console.log(result);
     });
@@ -51,9 +60,12 @@ export default class MediaPicker extends Component<any> {
 
   render() {
     return (
-      <div>
-        <Dashboard uppy={this.uppy} plugins={['XHRUpload', 'Webcam', 'Url']} />
-      </div>
+      <DashboardModal
+        uppy={this.uppy}
+        plugins={['XHRUpload', 'Webcam', 'Url', 'Dropbox', 'GoogleDrive']}
+        proudlyDisplayPoweredByUppy={false}
+        {...this.props}
+      />
     );
   }
 }

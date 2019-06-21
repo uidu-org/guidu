@@ -1,12 +1,10 @@
 // @flow
-import React, { Component } from 'react';
-import Button from '@uidu/button';
-
-import Form, { Field, CheckboxField } from '@atlaskit/form';
 import { Checkbox } from '@atlaskit/checkbox';
-import Textfield from '@atlaskit/textfield';
 import RadioGroup, { AkRadio } from '@atlaskit/field-radio-group';
-
+import Form, { CheckboxField, Field } from '@atlaskit/form';
+import Button from '@uidu/button';
+import { FieldTextStateless as Textfield } from '@uidu/field-text';
+import React, { Component } from 'react';
 import ModalDialog, { ModalFooter, ModalTransition } from '../src';
 
 type State = { isOpen: boolean };

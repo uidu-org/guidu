@@ -9,10 +9,6 @@ declare module '@uidu/button' {
   declare module.exports: any;
 }
 
-declare module '@atlaskit/textarea' {
-  declare module.exports: any;
-}
-
 declare module '@atlaskit/atlassian-switcher' {
   declare module.exports: any;
 }
