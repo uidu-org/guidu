@@ -59,4 +59,5 @@ export type MessageAttachmentsProps = {
 export type MessageAttachmentsState = {
   animate: boolean;
   offset: number;
+  selectedItem?: any;
 };
