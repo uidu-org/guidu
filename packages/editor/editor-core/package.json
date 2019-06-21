@@ -11,6 +11,7 @@
     "@uidu/item": "^0.1.12",
     "@uidu/media-card": "^0.1.10",
     "@uidu/smart-card": "^0.1.9",
+    "@uidu/theme": "^0.1.12",
     "@uidu/tooltip": "^0.1.11",
     "prosemirror-example-setup": "^1.0.1",
     "prosemirror-model": "^1.7.1",

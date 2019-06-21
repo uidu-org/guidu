@@ -1,7 +1,7 @@
 // @ts-ignore: unused variable
 // prettier-ignore
-import { css, Styles, StyledComponentClass } from 'styled-components';
-import { colors, Color } from './utils';
+import { css } from 'styled-components';
+import { Color, colors } from './utils';
 
 const telepointerColorStyle = (color: Color, index: number) => `
   &.color-${index} {

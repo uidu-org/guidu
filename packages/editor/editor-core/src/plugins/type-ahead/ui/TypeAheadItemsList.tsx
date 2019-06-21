@@ -1,9 +1,9 @@
+import Item, { ItemGroup, itemThemeNamespace } from '@uidu/item';
+import { borderRadius, colors, themed } from '@uidu/theme';
 import * as React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import Item, { ItemGroup, itemThemeNamespace } from '@atlaskit/item';
-import { colors, borderRadius, themed } from '@atlaskit/theme';
-import { TypeAheadItem } from '../types';
 import IconFallback from '../../quick-insert/assets/fallback';
+import { TypeAheadItem } from '../types';
 
 const itemTheme = {
   [itemThemeNamespace]: {
@@ -184,6 +184,7 @@ export class TypeAheadItemComponent extends React.Component<
   componentDidUpdate() {
     const ref = this.state.ref;
     if (this.props.index === this.props.currentIndex && ref) {
+      console.log(ref);
       scrollIntoViewIfNeeded(ref);
     }
   }

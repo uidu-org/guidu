@@ -173,6 +173,9 @@ export default class Editor extends PureComponent<EditorProps> {
                     allowTextColor: true,
                     allowLists: true,
                     allowTables: true,
+                    quickInsert: true,
+                    allowLayouts: true,
+                    allowIndentation: true,
                   }}
                   // createAnalyticsEvent={createAnalyticsEvent}
                   portalProviderAPI={portalProviderAPI}
@@ -202,6 +205,7 @@ export default class Editor extends PureComponent<EditorProps> {
                           eventDispatcher,
                           dispatchAnalyticsEvent,
                           config,
+                          ...props,
                         }),
                     })
                   }

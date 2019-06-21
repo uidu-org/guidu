@@ -3,12 +3,16 @@ import {
   alignment,
   basePlugin,
   blockTypePlugin,
+  clearMarksOnChangeToEmptyDocumentPlugin,
   editorDisabledPlugin,
   fakeTextCursorPlugin,
   floatingToolbarPlugin,
   gapCursorPlugin,
+  gridPlugin,
   hyperlinkPlugin,
+  indentationPlugin,
   insertBlockPlugin,
+  layoutPlugin,
   listsPlugin,
   pastePlugin,
   placeholderPlugin,
@@ -39,7 +43,7 @@ export function getDefaultPluginsList(
     basePlugin(props.appearance),
     blockTypePlugin,
     placeholderPlugin,
-    // clearMarksOnChangeToEmptyDocumentPlugin,
+    clearMarksOnChangeToEmptyDocumentPlugin,
     hyperlinkPlugin,
     textFormattingPlugin(props.textFormatting || {}),
     widthPlugin,
@@ -172,9 +176,9 @@ export default function createPluginsList(
   //   plugins.push(placeholderTextPlugin(options));
   // }
 
-  // if (props.allowLayouts) {
-  //   plugins.push(layoutPlugin);
-  // }
+  if (props.allowLayouts) {
+    plugins.push(layoutPlugin);
+  }
 
   // if (props.UNSAFE_cards) {
   //   plugins.push(cardPlugin);
@@ -193,9 +197,9 @@ export default function createPluginsList(
   //   plugins.push(statusPlugin({ menuDisabled: statusMenuDisabled }));
   // }
 
-  // if (props.allowIndentation) {
-  //   plugins.push(indentationPlugin);
-  // }
+  if (props.allowIndentation) {
+    plugins.push(indentationPlugin);
+  }
 
   // // UI only plugins
   plugins.push(
@@ -211,7 +215,7 @@ export default function createPluginsList(
   // }
 
   plugins.push(gapCursorPlugin);
-  // plugins.push(gridPlugin);
+  plugins.push(gridPlugin);
   // plugins.push(submitEditorPlugin);
   plugins.push(fakeTextCursorPlugin);
   plugins.push(floatingToolbarPlugin);

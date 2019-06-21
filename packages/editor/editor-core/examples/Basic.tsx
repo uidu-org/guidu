@@ -13,13 +13,19 @@ export default class Basic extends PureComponent<any, any> {
 
   render() {
     return (
-      <Editor shouldFocus>
+      <Editor shouldFocus containerElement={this.element}>
         {({ renderToolbar, renderEditor }) => (
           <Fragment>
             <ShellHeader className="border-bottom px-xl-4 px-3">
               {renderToolbar({})}
             </ShellHeader>
-            <ShellBody>{renderEditor({})}</ShellBody>
+            <ShellBody
+              ref={c => {
+                this.element = c;
+              }}
+            >
+              {renderEditor({})}
+            </ShellBody>
           </Fragment>
         )}
       </Editor>

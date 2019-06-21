@@ -1,7 +1,5 @@
-// export { default as gridPlugin } from './grid';
 // export { default as breakoutPlugin } from './breakout';
 export { default as alignment } from './alignment';
-// export { default as indentationPlugin } from './indentation';
 // export { default as annotationPlugin } from './annotation';
 export { default as analyticsPlugin } from './analytics';
 export { default as basePlugin } from './base';
@@ -10,9 +8,9 @@ export {
   default as blockTypePlugin,
   pluginKey as blockPluginStateKey,
 } from './block-type';
-// export {
-//   default as clearMarksOnChangeToEmptyDocumentPlugin,
-// } from './clear-marks-on-change-to-empty-document';
+export {
+  default as clearMarksOnChangeToEmptyDocumentPlugin,
+} from './clear-marks-on-change-to-empty-document';
 // export { default as codeBlockPlugin } from './code-block';
 // export { default as collabEditPlugin, CollabEditProvider } from './collab-edit';
 // export {
@@ -27,12 +25,14 @@ export { default as fakeTextCursorPlugin } from './fake-text-cursor';
 // export { default as cardPlugin } from './card';
 export { default as floatingToolbarPlugin } from './floating-toolbar';
 export { default as gapCursorPlugin } from './gap-cursor';
+export { default as gridPlugin } from './grid';
 // export { default as helpDialogPlugin } from './help-dialog';
 export { default as hyperlinkPlugin } from './hyperlink';
+export { default as indentationPlugin } from './indentation';
 // export { default as imageUploadPlugin } from './image-upload';
 export { default as insertBlockPlugin } from './insert-block';
 // export { default as jiraIssuePlugin } from './jira-issue';
-// export { default as layoutPlugin } from './layout';
+export { default as layoutPlugin } from './layout';
 export { default as listsPlugin } from './lists';
 export { default as macroPlugin } from './macro';
 // export { default as maxContentSizePlugin } from './max-content-size';

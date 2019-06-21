@@ -14,15 +14,15 @@ import {
 import styled from 'styled-components';
 // import { placeholderStyles } from '../../plugins/placeholder/styles';
 import { blocktypeStyles } from '../../plugins/block-type/styles';
-// import { codeBlockStyles } from '../../plugins/code-block/styles';
-// import { listsStyles } from '../../plugins/lists/styles';
-// import { ruleStyles } from '../../plugins/rule/styles';
-// import { mediaStyles } from '../../plugins/media/styles';
-// import { layoutStyles } from '../../plugins/layout/styles';
 // import { panelStyles } from '../../plugins/panel/styles';
 import { fakeCursorStyles } from '../../plugins/fake-text-cursor/styles';
 // import { telepointerStyle } from '../../plugins/collab-edit/styles';
 import { gapCursorStyles } from '../../plugins/gap-cursor/styles';
+// import { codeBlockStyles } from '../../plugins/code-block/styles';
+// import { listsStyles } from '../../plugins/lists/styles';
+// import { ruleStyles } from '../../plugins/rule/styles';
+// import { mediaStyles } from '../../plugins/media/styles';
+import { layoutStyles } from '../../plugins/layout/styles';
 import { tableStyles } from '../../plugins/table/ui/styles';
 // import { mentionsStyles } from '../../plugins/mentions/styles';
 import { textFormattingStyles } from '../../plugins/text-formatting/styles';
@@ -90,13 +90,14 @@ const ContentStyles = styled.div`
     }
   }
 
-  ${blocktypeStyles}
-  ${textFormattingStyles}
+  ${blocktypeStyles};
+  ${textFormattingStyles};
   ${gapCursorStyles};
   ${tableStyles};
-  ${fakeCursorStyles}
-  ${blockMarksSharedStyles}
-  ${dateSharedStyle}
+  ${fakeCursorStyles};
+  ${blockMarksSharedStyles};
+  ${dateSharedStyle};
+  ${layoutStyles};
 
   /** Global selector for extensions, as .danger tag is assigned to root level node which is unaccessible from triggered child node **/
   /* Danger when nested node */
@@ -109,7 +110,8 @@ const ContentStyles = styled.div`
   .danger > span > .extension-container {
     background: ${akEditorDeleteBackground};
     .extension-overlay {
-      box-shadow: inset 0px 0px 0px ${akEditorDeleteBorderBoldSize}px ${akEditorDeleteBorder} !important;
+      box-shadow: inset 0px 0px 0px ${akEditorDeleteBorderBoldSize}px
+        ${akEditorDeleteBorder} !important;
       opacity: 1;
       transition: opacity 0s;
     }
@@ -155,7 +157,6 @@ const ContentStyles = styled.div`
       padding: 0 4px;
     }
   }
-
 `;
 
 export default ContentStyles;
