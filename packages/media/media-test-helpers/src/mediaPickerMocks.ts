@@ -33,8 +33,8 @@ export const mockState: State = {
     totalResultCount: 100,
   },
   onCancelUpload: jest.fn(),
-  tenantContext: fakeContext(),
-  userContext: fakeContext(),
+  tenantContext: fakeContext() as any,
+  userContext: fakeContext() as any,
   config: {},
   deferredIdUpfronts: {},
 };
