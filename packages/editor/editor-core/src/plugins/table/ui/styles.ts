@@ -11,7 +11,7 @@ import {
   tableMarginTop,
   tableSharedStyle,
 } from '@atlaskit/editor-common';
-import { borderRadius, colors, fontSize } from '@atlaskit/theme';
+import { borderRadius, colors, fontSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { scrollbarStyles } from '../../../components/styles';
 import { TableCssClassName as ClassName } from '../types';

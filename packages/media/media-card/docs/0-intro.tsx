@@ -1,5 +1,5 @@
+import { Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, code, Example, Props } from '@uidu/docs';
 
 export default md`
 This component provides 2 exports:
@@ -14,88 +14,18 @@ This component provides 2 exports:
 
   ## Usage
 
-  ### Card
-
-  ${code`
-  import { Card } from '@uidu/media-card';
-  import { ContextFactory } from '@uidu/media-core';
-
-  const context = ContextFactory.create({
-    tokenProvider,
-  });
-
-  // url preview
-  const urlPreviewId = {
-    mediaItemType: 'link',
-    url: 'https://atlassian.com',
-  };
-
-  <Card context={context} identifier={urlPreviewId} />;
-
-  // stored link
-  const linkId = {
-    mediaItemType: 'link',
-    id: 'some-link-id',
-    collectionName: 'some-collection-name',
-  };
-
-  <Card context={context} identifier={linkId} />;
-
-  // stored file
-  const fileId = {
-    mediaItemType: 'file',
-    id: 'some-file-id',
-    collectionName: 'some-collection-name',
-  };
-
-  <Card context={context} identifier={fileId} />;
-`}
-
-### Card View
-
-${code`
-import { CardView } from @uidu/media-card;
-const resizeModes: Array<ImageResizeMode> = ['crop', 'fit', 'full-fit'];
-
-export const createCardsOfDifferentResizeModes = () => {
-  return resizeModes.map(mode => {
-    const content = images.map(img => (
-      <CardView
-        appearance="image"
-        status="complete"
-        resizeMode={mode}
-        dataURI={img}
-      />
-    ));
-
-    return {
-      title: mode,
-      content,
-    };
-  });
-};
-`}
-
 ${(
   <Example
-    Component={require('../examples/0-file-card-flow').default}
+    Component={require('../examples/Basic').default}
     title="File Card"
-    source={require('!!raw-loader!../examples/0-file-card-flow')}
+    source={require('!!raw-loader!../examples/Basic')}
   />
 )}
 
 ${(
   <Props
     heading="Card Props"
-    props={require('!!extract-react-types-loader!../src/files/card')}
+    props={require('!!extract-react-types-loader!../src/components/MediaCard')}
   />
 )}
-
-${(
-  <Props
-    heading="Card View Props"
-    props={require('!!extract-react-types-loader!../src/files/cardImageView')}
-  />
-)}
-
 `;

@@ -1,4 +1,3 @@
-import { Identifier } from '@uidu/media-core';
 import { MentionProps } from 'react-mentions';
 
 export type MessageableProps = {
@@ -15,11 +14,11 @@ export type Messager = {
   avatar: {
     thumb: string;
   };
-}
+};
 
 export type Message = {
   id?: string | number;
-  body?: string,
+  body?: string;
   message?: Message;
   replyTo?: Message;
   messager?: Messager;
@@ -35,13 +34,13 @@ export type Message = {
   onReply?: () => void;
   onMessageDrag?: () => void;
   onMessageDragEnd?: () => void;
-}
+};
 
 export type MessageState = {
   editing: boolean;
   hovered: boolean;
   isDropdownOpen: boolean;
-}
+};
 
 export type MessageGroupProps = {
   kind: string;
@@ -50,15 +49,14 @@ export type MessageGroupProps = {
   children: (props: any) => Array<Message>;
   mobileView?: boolean;
   isSelf?: (messager: Messager) => boolean;
-}
+};
 
 export type MessageAttachmentsProps = {
   attachments: Array<any>;
   className?: string;
-}
+};
 
 export type MessageAttachmentsState = {
   animate: boolean;
   offset: number;
-  selectedItem?: Identifier | undefined,
-}
+};

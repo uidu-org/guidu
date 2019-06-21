@@ -1,8 +1,5 @@
-import {
-  tableBackgroundBorderColors,
-  tableBackgroundColorPalette,
-} from '@atlaskit/adf-schema';
-import { colors } from '@atlaskit/theme';
+import { tableBackgroundBorderColors, tableBackgroundColorPalette } from '@atlaskit/adf-schema';
+import { colors } from '@uidu/theme';
 import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -13,22 +10,8 @@ import DropdownMenu from '../../../../components/DropdownMenu';
 import { Shortcut } from '../../../../components/styles';
 import { closestElement } from '../../../../utils';
 import { INPUT_METHOD } from '../../../analytics';
-import {
-  clearHoverSelection,
-  hoverColumns,
-  hoverRows,
-  toggleContextualMenu,
-} from '../../commands';
-import {
-  deleteColumnsWithAnalytics,
-  deleteRowsWithAnalytics,
-  emptyMultipleCellsWithAnalytics,
-  insertColumnWithAnalytics,
-  insertRowWithAnalytics,
-  mergeCellsWithAnalytics,
-  setColorWithAnalytics,
-  splitCellWithAnalytics,
-} from '../../commands-with-analytics';
+import { clearHoverSelection, hoverColumns, hoverRows, toggleContextualMenu } from '../../commands';
+import { deleteColumnsWithAnalytics, deleteRowsWithAnalytics, emptyMultipleCellsWithAnalytics, insertColumnWithAnalytics, insertRowWithAnalytics, mergeCellsWithAnalytics, setColorWithAnalytics, splitCellWithAnalytics } from '../../commands-with-analytics';
 import { getPluginState } from '../../pm-plugins/main';
 import { canMergeCells } from '../../transforms';
 import { TableCssClassName as ClassName } from '../../types';

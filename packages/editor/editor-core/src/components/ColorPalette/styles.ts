@@ -1,4 +1,4 @@
-import { gridSize } from '@atlaskit/theme';
+import { gridSize } from '@uidu/theme';
 import styled from 'styled-components';
 
 export const ColorPaletteWrapper = styled.div`

@@ -1,0 +1,21 @@
+{
+  "name": "@uidu/editor-common",
+  "version": "0.1.0",
+  "description": "A package that contains common classes and components for editor and renderer",
+  "license": "Apache-2.0",
+  "uidu:src": "src/index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Oscar W",
+    "Stanislav S"
+  ],
+  "atlaskit": {
+    "internal": true,
+    "name": "Editor Common",
+    "team": "editor"
+  },
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+}

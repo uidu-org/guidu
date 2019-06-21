@@ -1,11 +1,11 @@
-import { Plugin, PluginKey, Transaction, EditorState } from 'prosemirror-state';
-
-import { colorPalette, borderColorPalette } from '@atlaskit/adf-schema';
-import { colors } from '@atlaskit/theme';
-
+import { borderColorPalette, colorPalette } from '@atlaskit/adf-schema';
+import { colors } from '@uidu/theme';
+import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
 import { getActiveColor } from '../utils/color';
 import { getDisabledState } from '../utils/disabled';
+
+
 
 export type TextColorPluginState = {
   palette: Map<string, string>;

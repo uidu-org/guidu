@@ -1,5 +1,5 @@
 import { ActivityItem } from '@atlaskit/activity';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 

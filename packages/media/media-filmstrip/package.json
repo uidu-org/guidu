@@ -12,35 +12,17 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/field-radio-group": "^4.0.15",
-    "@atlaskit/field-range": "^6.0.1",
-    "@atlaskit/icon": "^16.0.3",
-    "@types/debounce": "^1.2.0",
-    "@uidu/button": "^0.1.35",
+    "@types/react-images": "^0.5.1",
     "@uidu/media-card": "^0.1.8",
-    "@uidu/media-core": "^0.1.8",
-    "@uidu/media-test-helpers": "^0.1.11",
-    "@uidu/spinner": "^0.1.8",
-    "@uidu/theme": "^0.1.8",
-    "debounce": "^1.2.0",
-    "tslib": "^1.9.3"
+    "@uidu/theme": "^0.1.12",
+    "react-images": "^1.0.0"
   },
   "peerDependencies": {
-    "@uidu/media-core": "^0.1.8",
     "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@atlaskit/field-radio-group": "^4.0.15",
-    "@types/debounce": "^1.2.0",
-    "@uidu/build-utils": "^0.1.7",
-    "@uidu/button": "^0.1.35",
-    "@uidu/checkbox": "^0.1.41",
     "@uidu/docs": "^0.1.25",
-    "@uidu/field-range": "^0.1.8",
-    "@uidu/media-core": "^0.1.8",
-    "@uidu/media-test-helpers": "^0.1.11",
-    "enzyme": "^3.9.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   }

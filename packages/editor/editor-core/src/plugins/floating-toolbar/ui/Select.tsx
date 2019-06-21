@@ -1,4 +1,4 @@
-import Select from '@atlaskit/select';
+import Select from '@uidu/select';
 import * as React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';

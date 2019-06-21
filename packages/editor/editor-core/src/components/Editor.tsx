@@ -3,10 +3,12 @@ import {
   ProviderFactory,
   Transformer,
 } from '@atlaskit/editor-common';
-import { EditorState } from 'prosemirror-state';
+import { Node as PMNode } from 'prosemirror-model';
+import { EditorState, Transaction } from 'prosemirror-state';
 import { DirectEditorProps, EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { intlShape } from 'react-intl';
+import { analyticsService } from '../analytics';
 import {
   createErrorReporter,
   createPMPlugins,
@@ -22,11 +24,15 @@ import {
   AnalyticsDispatch,
   analyticsEventKey,
   AnalyticsEventPayload,
+  AnalyticsEventPayloadWithChannel,
+  analyticsPluginKey,
   DispatchAnalyticsEvent,
   EVENT_TYPE,
   PLATFORMS,
 } from '../plugins/analytics';
 import { EditorConfig, EditorPlugin, EditorProps } from '../types';
+import { getDocStructure } from '../utils/document-logger';
+import { findChangedNodesFromTransaction, validateNodes } from '../utils/nodes';
 import { PortalProviderAPI } from './PortalProvider';
 
 export interface EditorViewProps {
@@ -195,42 +201,42 @@ export default class Editor extends PureComponent<any> {
   getDirectEditorProps = (state?: EditorState): DirectEditorProps => {
     return {
       state: state || this.editorState,
-      // dispatchTransaction: (transaction: Transaction) => {
-      //   if (!this.view) {
-      //     return undefined;
-      //   }
+      dispatchTransaction: (transaction: Transaction) => {
+        if (!this.view) {
+          return undefined;
+        }
 
-      //   const nodes: PMNode[] = findChangedNodesFromTransaction(transaction);
-      //   if (validateNodes(nodes)) {
-      //     // go ahead and update the state now we know the transaction is good
-      //     const editorState = this.view.state.apply(transaction);
-      //     this.view.updateState(editorState);
-      //     if (this.props.editorProps.onChange && transaction.docChanged) {
-      //       this.props.editorProps.onChange(this.view);
-      //     }
-      //     this.editorState = editorState;
-      //   } else {
-      //     const documents = {
-      //       new: getDocStructure(transaction.doc),
-      //       prev: getDocStructure(transaction.docs[0]),
-      //     };
-      //     analyticsService.trackEvent(
-      //       'atlaskit.fabric.editor.invalidtransaction',
-      //       { documents: JSON.stringify(documents) }, // V2 events don't support object properties
-      //     );
-      //     this.dispatchAnalyticsEvent({
-      //       action: ACTION.DISPATCHED_INVALID_TRANSACTION,
-      //       actionSubject: ACTION_SUBJECT.EDITOR,
-      //       eventType: EVENT_TYPE.OPERATIONAL,
-      //       attributes: {
-      //         analyticsEventPayloads: transaction.getMeta(
-      //           analyticsPluginKey,
-      //         ) as AnalyticsEventPayloadWithChannel[],
-      //         documents,
-      //       },
-      //     });
-      //   }
-      // },
+        const nodes: PMNode[] = findChangedNodesFromTransaction(transaction);
+        if (validateNodes(nodes)) {
+          // go ahead and update the state now we know the transaction is good
+          const editorState = this.view.state.apply(transaction);
+          this.view.updateState(editorState);
+          if (this.props.editorProps.onChange && transaction.docChanged) {
+            this.props.editorProps.onChange(this.view);
+          }
+          this.editorState = editorState;
+        } else {
+          const documents = {
+            new: getDocStructure(transaction.doc),
+            prev: getDocStructure(transaction.docs[0]),
+          };
+          analyticsService.trackEvent(
+            'atlaskit.fabric.editor.invalidtransaction',
+            { documents: JSON.stringify(documents) }, // V2 events don't support object properties
+          );
+          this.dispatchAnalyticsEvent({
+            action: ACTION.DISPATCHED_INVALID_TRANSACTION,
+            actionSubject: ACTION_SUBJECT.EDITOR,
+            eventType: EVENT_TYPE.OPERATIONAL,
+            attributes: {
+              analyticsEventPayloads: transaction.getMeta(
+                analyticsPluginKey,
+              ) as AnalyticsEventPayloadWithChannel[],
+              documents,
+            },
+          });
+        }
+      },
       // Disables the contentEditable attribute of the editor if the editor is disabled
       editable: _state => !this.props.editorProps.disabled,
       attributes: { 'data-gramm': 'false' },

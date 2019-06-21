@@ -159,7 +159,7 @@ export default class Editor extends PureComponent<EditorProps> {
   );
 
   render() {
-    const { children } = this.props;
+    const { children, ...otherProps } = this.props;
     return (
       <IntlProvider locale="en">
         <EditorContext editorActions={this.editorActions}>
@@ -176,6 +176,7 @@ export default class Editor extends PureComponent<EditorProps> {
                     quickInsert: true,
                     allowLayouts: true,
                     allowIndentation: true,
+                    ...otherProps,
                   }}
                   // createAnalyticsEvent={createAnalyticsEvent}
                   portalProviderAPI={portalProviderAPI}

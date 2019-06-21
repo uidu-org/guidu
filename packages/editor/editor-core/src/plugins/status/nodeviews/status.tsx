@@ -1,13 +1,11 @@
 import { Color, Status, StatusStyle } from '@atlaskit/status/element';
-import { borderRadius, colors } from '@atlaskit/theme';
+import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
 import styled from 'styled-components';
-import InlineNodeWrapper, {
-  createMobileInlineDomRef,
-} from '../../../components/InlineNodeWrapper';
+import InlineNodeWrapper, { createMobileInlineDomRef } from '../../../components/InlineNodeWrapper';
 import { PortalProviderAPI } from '../../../components/PortalProvider';
 import WithPluginState from '../../../components/WithPluginState';
 import { EventDispatcher } from '../../../event-dispatcher';

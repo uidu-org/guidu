@@ -1,6 +1,6 @@
 import { akEditorMenuZIndex } from '@atlaskit/editor-common';
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import { borderRadius, colors } from '@atlaskit/theme';
+import { borderRadius, colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';

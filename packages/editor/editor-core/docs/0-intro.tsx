@@ -23,6 +23,15 @@ export default md`
   )}
 
   ${(
+    <Example
+      packageName="@uidu/stepper"
+      Component={require('../examples/WithEditorActions').default}
+      title="Basic"
+      source={require('!!raw-loader!../examples/WithEditorActions')}
+    />
+  )}
+
+  ${(
     <Props
       heading="Sorter"
       props={require('!!extract-react-types-loader!../src/components/Editor')}

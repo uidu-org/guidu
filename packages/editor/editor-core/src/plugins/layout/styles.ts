@@ -1,7 +1,7 @@
 // @ts-ignore: unused variable
 // prettier-ignore
 import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorDeleteBorderSize, columnLayoutSharedStyle, gridMediumMaxWidth } from '@atlaskit/editor-common';
-import { colors, gridSize } from '@atlaskit/theme';
+import { colors, gridSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { TableCssClassName } from '../table/types';
 import { tableMarginFullWidthMode } from '../table/ui/styles';

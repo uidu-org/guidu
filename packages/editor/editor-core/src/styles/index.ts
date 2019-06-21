@@ -1,4 +1,4 @@
-import { codeFontFamily, colors } from '@atlaskit/theme';
+import { codeFontFamily, colors } from '@uidu/theme';
 
 const { B100, B400, B50, N0, N20, N30, N40, N100, N500, N700, N900 } = colors;
 

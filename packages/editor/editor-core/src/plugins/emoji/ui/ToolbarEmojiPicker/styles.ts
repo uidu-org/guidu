@@ -1,5 +1,5 @@
+import { gridSize } from '@uidu/theme';
 import styled from 'styled-components';
-import { gridSize } from '@atlaskit/theme';
 
 export const OuterContainer = styled.span<{ width?: 'small' | 'large' }>`
   position: relative;

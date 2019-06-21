@@ -7,16 +7,8 @@
     "./examples/*.tsx",
     "./example-helpers/*.ts",
     "./example-helpers/*.tsx",
-    "./typings/**/*.d.ts"
   ],
   "compilerOptions": {
     "baseUrl": "./",
-    "paths": {
-      "@atlaskit/analytics-next": [
-        "node_modules/@atlaskit/analytics-next-types"
-      ],
-      "@uidu/dropdown-menu": ["typings/@uidu/dropdown-menu"],
-      "@uidu/item": ["typings/@uidu/item"]
-    }
   }
 }

@@ -1,4 +1,4 @@
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import styled from 'styled-components';
 
 const Separator = styled.span`

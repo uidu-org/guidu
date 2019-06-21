@@ -1,4 +1,4 @@
-import { borderRadius } from '@atlaskit/theme';
+import { borderRadius } from '@uidu/theme';
 import styled from 'styled-components';
 import { Wrapper as WrapperDefault } from '../styles';
 

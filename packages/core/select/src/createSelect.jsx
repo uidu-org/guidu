@@ -162,12 +162,12 @@ function baseStyles(validationState, isCompact) {
       ...base,
       backgroundColor: 'transparent',
       borderRadius: '.25rem',
-      borderColor: state.isFocused ? '#f8d1bb' : '#ced4da',
+      borderColor: state.isFocused ? '#f8d1bb' : '#f2f2f3',
       boxShadow: state.isFocused
         ? '0 0 0 0.2rem rgba(236, 132, 71, 0.25)'
         : '0 1px 0 rgba(0, 0, 0, 0.06)',
       '&:hover': {
-        borderColor: state.isFocused ? '#f8d1bb' : '#ced4da',
+        borderColor: state.isFocused ? '#f8d1bb' : '#f2f2f3',
       },
     }),
     // valueContainer: css => ({

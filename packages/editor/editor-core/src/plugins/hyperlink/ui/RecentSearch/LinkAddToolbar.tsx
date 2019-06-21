@@ -2,7 +2,7 @@ import { ActivityItem, ActivityProvider } from '@atlaskit/activity';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
 import EditorAlignLeftIcon from '@atlaskit/icon/glyph/editor/align-left';
 import LinkIcon from '@atlaskit/icon/glyph/link';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { KeyboardEvent, PureComponent } from 'react';

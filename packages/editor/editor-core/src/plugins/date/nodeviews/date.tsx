@@ -1,15 +1,15 @@
-import * as React from 'react';
-import styled from 'styled-components';
-import { Node as PMNode } from 'prosemirror-model';
-import { EditorView } from 'prosemirror-view';
-import { borderRadius, colors } from '@atlaskit/theme';
+import { Date } from '@atlaskit/date';
 import {
+  DateSharedCssClassName,
+  isPastDate,
   timestampToString,
   timestampToTaskContext,
-  isPastDate,
-  DateSharedCssClassName,
 } from '@atlaskit/editor-common';
-import { Date } from '@atlaskit/date';
+import { borderRadius, colors } from '@uidu/theme';
+import { Node as PMNode } from 'prosemirror-model';
+import { EditorView } from 'prosemirror-view';
+import * as React from 'react';
+import styled from 'styled-components';
 import { setDatePickerAt } from '../actions';
 
 const SelectableDate = styled(Date)`

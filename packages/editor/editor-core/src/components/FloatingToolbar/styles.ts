@@ -1,4 +1,4 @@
-import { borderRadius, colors } from '@atlaskit/theme';
+import { borderRadius, colors } from '@uidu/theme';
 import styled, { css } from 'styled-components';
 import { dropShadow } from '../styles';
 

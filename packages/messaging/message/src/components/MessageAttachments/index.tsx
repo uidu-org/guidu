@@ -1,12 +1,7 @@
-import { Card } from '@uidu/media-card';
-import { FilmstripView } from '@uidu/media-filmstrip';
-import { createUploadContext } from '@uidu/media-test-helpers';
-import { MediaViewer } from '@uidu/media-viewer';
+import MediaFilmStrip from '@uidu/media-filmstrip';
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import { MessageAttachmentsProps, MessageAttachmentsState } from '../../types';
-
-const context = createUploadContext();
 
 export default class MessageAttachments extends Component<
   MessageAttachmentsProps,
@@ -38,30 +33,14 @@ export default class MessageAttachments extends Component<
 
     return (
       <div className={classNames('mt-2 w-auto', className)}>
-        <FilmstripView
-          animate={animate}
-          offset={offset}
-          onSize={this.handleSizeChange}
-          onScroll={this.handleScrollChange}
-        >
-          {attachments.map(attachment => (
-            <Card
-              key={attachment.id}
-              context={context}
-              identifier={attachment}
-              onClick={() => this.setItem(attachment)}
-            />
-          ))}
-        </FilmstripView>
-        {selectedItem && (
-          <MediaViewer
-            context={context}
-            selectedItem={selectedItem.identifier}
-            dataSource={{ list: attachments }}
-            onClose={this.onClose}
-            pageSize={5}
-          />
-        )}
+        <MediaFilmStrip
+          images={attachments.map(attachment => ({
+            id: attachment.id,
+            src: attachment.blob.downloadUrl,
+            type: attachment.kind,
+            alt: attachment.blob.name,
+          }))}
+        />
       </div>
     );
   }

@@ -1,4 +1,4 @@
-import { colors, gridSize } from '@atlaskit/theme';
+import { colors, gridSize } from '@uidu/theme';
 import styled, { css } from 'styled-components';
 
 const akGridSize = gridSize() + 'px';

@@ -1,5 +1,5 @@
-import { colors } from '@atlaskit/theme';
 import { hexToRgba } from '@atlaskit/editor-common';
+import { colors } from '@uidu/theme';
 
 interface Property {
   [key: string]: {

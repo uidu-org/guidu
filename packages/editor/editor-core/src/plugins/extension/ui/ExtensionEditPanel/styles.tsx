@@ -1,4 +1,4 @@
-import { borderRadius, colors } from '@atlaskit/theme';
+import { borderRadius, colors } from '@uidu/theme';
 import styled from 'styled-components';
 
 export const Toolbar = styled.div`

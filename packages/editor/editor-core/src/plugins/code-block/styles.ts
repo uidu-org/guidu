@@ -1,16 +1,14 @@
-import { css } from 'styled-components';
-import { borderRadius, colors, themed } from '@atlaskit/theme';
-import {
-  blockNodesVerticalMargin,
-  akEditorTableCellMinWidth,
-} from '@atlaskit/editor-common';
-import { akEditorCodeFontFamily, akEditorCodeBlockPadding } from '../../styles';
 import {
   akEditorDeleteBackground,
   akEditorDeleteBorder,
   akEditorDeleteBorderSize,
   akEditorDeleteIconColor,
+  akEditorTableCellMinWidth,
+  blockNodesVerticalMargin,
 } from '@atlaskit/editor-common';
+import { borderRadius, colors, themed } from '@uidu/theme';
+import { css } from 'styled-components';
+import { akEditorCodeBlockPadding, akEditorCodeFontFamily } from '../../styles';
 
 export const codeBlockStyles = css`
   .ProseMirror .code-block {

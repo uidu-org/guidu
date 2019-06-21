@@ -1,5 +1,5 @@
+import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, code, Example, Props } from '@uidu/docs';
 
 export default md`
   This component displays multiple media cards horizontally. Allows to navigate through the stored cards.
@@ -8,34 +8,15 @@ export default md`
 
   ${code`
   import React from 'react';
-  import { FilmstripView } from '@uidu/media-filmstrip';
+  import MediaFilmStrip from '@uidu/media-filmstrip';
 
   class FilmstripViewExample extends React.Component {
-    state = {
-      animate: false,
-      offset: 0,
-    };
-
-    handleSizeChange = ({ offset }) => this.setState({ offset });
-
-    handleScrollChange = ({ animate, offset }) =>
-      this.setState({ animate, offset });
-
     render() {
-      const { animate, offset, children } = this.state;
       return (
-        <FilmstripView
-          animate={animate}
-          offset={offset}
-          onSize={this.handleSizeChange}
-          onScroll={this.handleScrollChange}
+        <MediaFilmStrip
+          images={[]}
         >
-          <div>#1</div>
-          <div>#2</div>
-          <div>#3</div>
-          <div>#4</div>
-          <div>#5</div>
-        </FilmstripView>
+        </MediaFilmStrip>
       );
     }
   }
@@ -43,13 +24,15 @@ export default md`
 
 ${(
   <Example
-    Component={require('../examples/0-editable').default}
+    Component={require('../examples/Basic').default}
     title="Editable"
-    source={require('!!raw-loader!../examples/0-editable')}
+    source={require('!!raw-loader!../examples/Basic')}
   />
 )}
 
 ${(
-  <Props props={require('!!extract-react-types-loader!../src/filmstripView')} />
+  <Props
+    props={require('!!extract-react-types-loader!../src/components/MediaFilmStrip')}
+  />
 )}
 `;

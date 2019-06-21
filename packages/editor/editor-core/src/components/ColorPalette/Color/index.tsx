@@ -1,11 +1,11 @@
+import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
+import { colors } from '@uidu/theme';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { defineMessages, injectIntl, InjectedIntlProps } from 'react-intl';
-import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
-import { colors } from '@atlaskit/theme';
+import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
 import { Button, ButtonWrapper } from './styles';
 
-// IMO these should live inside @atlaskit/theme
+// IMO these should live inside @uidu/theme
 const messages = defineMessages({
   '#172b4d': {
     id: 'fabric.theme.#172b4d',

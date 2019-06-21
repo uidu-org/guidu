@@ -1,4 +1,4 @@
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import styled from 'styled-components';
 
 // Normal .className gets overridden by input[type=text] hence this hack to produce input.className

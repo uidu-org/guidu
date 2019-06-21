@@ -1,7 +1,7 @@
 // @ts-ignore: unused variable
 // prettier-ignore
 import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorDeleteBorderBoldSize, mediaSingleSharedStyle } from '@atlaskit/editor-common';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
 
 export const mediaStyles = css`

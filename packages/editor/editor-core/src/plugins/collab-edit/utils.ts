@@ -1,12 +1,10 @@
+import { hexToRgba, ProviderFactory } from '@atlaskit/editor-common';
+import { colors as themeColors } from '@uidu/theme';
+import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
-import { Node as PMNode } from 'prosemirror-model';
-import { colors as themeColors } from '@atlaskit/theme';
-
-import { hexToRgba, ProviderFactory } from '@atlaskit/editor-common';
-
-import { CollabEditOptions } from './types';
 import { processRawValue, ZeroWidthSpace } from '../../utils';
+import { CollabEditOptions } from './types';
 
 export interface Color {
   solid: string;

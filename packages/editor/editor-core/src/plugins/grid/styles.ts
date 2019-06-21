@@ -1,6 +1,6 @@
 // @ts-ignore: unused variable
 import { akEditorGridLineZIndex } from '@atlaskit/editor-common';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
 
 export const GRID_GUTTER = 12;

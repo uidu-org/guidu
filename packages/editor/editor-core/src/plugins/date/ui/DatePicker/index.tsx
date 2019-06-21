@@ -5,7 +5,7 @@ import {
   timestampToIsoFormat,
   timestampToUTCDate,
 } from '@atlaskit/editor-common';
-import { borderRadius, colors } from '@atlaskit/theme';
+import { borderRadius, colors } from '@uidu/theme';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import withOuterListeners from '../../../../components/with-outer-listeners';

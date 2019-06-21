@@ -1,10 +1,4 @@
-import {
-  borderRadius,
-  colors,
-  fontSize,
-  gridSize,
-  themed,
-} from '@atlaskit/theme';
+import { borderRadius, colors, fontSize, gridSize, themed } from '@uidu/theme';
 import styled from 'styled-components';
 
 export const padding = gridSize();

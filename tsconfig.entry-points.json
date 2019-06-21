@@ -3,6 +3,14 @@
 {
   "compilerOptions": {
     "paths": {
+      "@uidu/devise/index": [
+        "../../authentication/devise/src/index",
+        "./packages/authentication/devise/src/index"
+      ],
+      "@uidu/devise/types": [
+        "../../authentication/devise/src/types",
+        "./packages/authentication/devise/src/types"
+      ],
       "@uidu/accordion/types": [
         "../../core/accordion/src/types",
         "./packages/core/accordion/src/types"
@@ -163,6 +171,18 @@
         "../../core/droplist/src/types",
         "./packages/core/droplist/src/types"
       ],
+      "@uidu/fab/index": [
+        "../../core/fab/src/index",
+        "./packages/core/fab/src/index"
+      ],
+      "@uidu/fab/types": [
+        "../../core/fab/src/types",
+        "./packages/core/fab/src/types"
+      ],
+      "@uidu/field/index": [
+        "../../core/field/src/index",
+        "./packages/core/field/src/index"
+      ],
       "@uidu/field-base/index": [
         "../../core/field-base/src/index",
         "./packages/core/field-base/src/index"
@@ -170,6 +190,18 @@
       "@uidu/field-base/prop-types": [
         "../../core/field-base/src/prop-types",
         "./packages/core/field-base/src/prop-types"
+      ],
+      "@uidu/field-counter/index": [
+        "../../core/field-counter/src/index",
+        "./packages/core/field-counter/src/index"
+      ],
+      "@uidu/field-downshift/index": [
+        "../../core/field-downshift/src/index",
+        "./packages/core/field-downshift/src/index"
+      ],
+      "@uidu/field-downshift/types": [
+        "../../core/field-downshift/src/types",
+        "./packages/core/field-downshift/src/types"
       ],
       "@uidu/field-mentions/index": [
         "../../core/field-mentions/src/index",
@@ -263,6 +295,10 @@
         "../../core/field-text/src/types",
         "./packages/core/field-text/src/types"
       ],
+      "@uidu/field-textarea/index": [
+        "../../core/field-textarea/src/index",
+        "./packages/core/field-textarea/src/index"
+      ],
       "@uidu/field-time/FieldTime": [
         "../../core/field-time/src/FieldTime",
         "./packages/core/field-time/src/FieldTime"
@@ -306,6 +342,18 @@
       "@uidu/item/types": [
         "../../core/item/src/types",
         "./packages/core/item/src/types"
+      ],
+      "@uidu/layer/index": [
+        "../../core/layer/src/index",
+        "./packages/core/layer/src/index"
+      ],
+      "@uidu/layer/styledContentContainer": [
+        "../../core/layer/src/styledContentContainer",
+        "./packages/core/layer/src/styledContentContainer"
+      ],
+      "@uidu/layer/types": [
+        "../../core/layer/src/types",
+        "./packages/core/layer/src/types"
       ],
       "@uidu/lozenge/index": [
         "../../core/lozenge/src/index",
@@ -451,21 +499,109 @@
         "../../core/tooltip/src/types",
         "./packages/core/tooltip/src/types"
       ],
-      "@uidu/media-avatar-picker/constraint-util": [
-        "../../media/media-avatar-picker/src/constraint-util",
-        "./packages/media/media-avatar-picker/src/constraint-util"
+      "@uidu/blocks/index": [
+        "../../dashboards/blocks/src/index",
+        "./packages/dashboards/blocks/src/index"
       ],
-      "@uidu/media-avatar-picker/index": [
-        "../../media/media-avatar-picker/src/index",
-        "./packages/media/media-avatar-picker/src/index"
+      "@uidu/blocks/types": [
+        "../../dashboards/blocks/src/types",
+        "./packages/dashboards/blocks/src/types"
       ],
-      "@uidu/media-avatar-picker/util": [
-        "../../media/media-avatar-picker/src/util",
-        "./packages/media/media-avatar-picker/src/util"
+      "@uidu/dashboard-controls/index": [
+        "../../dashboards/dashboard-controls/src/index",
+        "./packages/dashboards/dashboard-controls/src/index"
       ],
-      "@uidu/media-card/actions": [
-        "../../media/media-card/src/actions",
-        "./packages/media/media-card/src/actions"
+      "@uidu/dashboard-controls/types": [
+        "../../dashboards/dashboard-controls/src/types",
+        "./packages/dashboards/dashboard-controls/src/types"
+      ],
+      "@uidu/dashboard-manager/index": [
+        "../../dashboards/dashboard-manager/src/index",
+        "./packages/dashboards/dashboard-manager/src/index"
+      ],
+      "@uidu/dashboard-manager/types": [
+        "../../dashboards/dashboard-manager/src/types",
+        "./packages/dashboards/dashboard-manager/src/types"
+      ],
+      "@uidu/board/index": [
+        "../../data/board/src/index",
+        "./packages/data/board/src/index"
+      ],
+      "@uidu/board/types": [
+        "../../data/board/src/types",
+        "./packages/data/board/src/types"
+      ],
+      "@uidu/calendar/index": [
+        "../../data/calendar/src/index",
+        "./packages/data/calendar/src/index"
+      ],
+      "@uidu/data-controls/index": [
+        "../../data/data-controls/src/index",
+        "./packages/data/data-controls/src/index"
+      ],
+      "@uidu/data-controls/types": [
+        "../../data/data-controls/src/types",
+        "./packages/data/data-controls/src/types"
+      ],
+      "@uidu/data-manager/index": [
+        "../../data/data-manager/src/index",
+        "./packages/data/data-manager/src/index"
+      ],
+      "@uidu/data-manager/types": [
+        "../../data/data-manager/src/types",
+        "./packages/data/data-manager/src/types"
+      ],
+      "@uidu/gallery/index": [
+        "../../data/gallery/src/index",
+        "./packages/data/gallery/src/index"
+      ],
+      "@uidu/gallery/types": [
+        "../../data/gallery/src/types",
+        "./packages/data/gallery/src/types"
+      ],
+      "@uidu/list/index": [
+        "../../data/list/src/index",
+        "./packages/data/list/src/index"
+      ],
+      "@uidu/table/index": [
+        "../../data/table/src/index",
+        "./packages/data/table/src/index"
+      ],
+      "@uidu/table/types": [
+        "../../data/table/src/types",
+        "./packages/data/table/src/types"
+      ],
+      "@uidu/payment-sources/index": [
+        "../../ecommerce/payment-sources/src/index",
+        "./packages/ecommerce/payment-sources/src/index"
+      ],
+      "@uidu/payments/index": [
+        "../../ecommerce/payments/src/index",
+        "./packages/ecommerce/payments/src/index"
+      ],
+      "@uidu/payments/types": [
+        "../../ecommerce/payments/src/types",
+        "./packages/ecommerce/payments/src/types"
+      ],
+      "@uidu/stripe-accounts/index": [
+        "../../ecommerce/stripe-accounts/src/index",
+        "./packages/ecommerce/stripe-accounts/src/index"
+      ],
+      "@uidu/editor-core/editor": [
+        "../../editor/editor-core/src/editor",
+        "./packages/editor/editor-core/src/editor"
+      ],
+      "@uidu/editor-core/index": [
+        "../../editor/editor-core/src/index",
+        "./packages/editor/editor-core/src/index"
+      ],
+      "@uidu/editor-core/messages": [
+        "../../editor/editor-core/src/messages",
+        "./packages/editor/editor-core/src/messages"
+      ],
+      "@uidu/editor-core/version-wrapper": [
+        "../../editor/editor-core/src/version-wrapper",
+        "./packages/editor/editor-core/src/version-wrapper"
       ],
       "@uidu/media-card/index": [
         "../../media/media-card/src/index",
@@ -487,22 +623,6 @@
         "../../media/media-core/src/item",
         "./packages/media/media-core/src/item"
       ],
-      "@uidu/media-editor/common": [
-        "../../media/media-editor/src/common",
-        "./packages/media/media-editor/src/common"
-      ],
-      "@uidu/media-editor/index": [
-        "../../media/media-editor/src/index",
-        "./packages/media/media-editor/src/index"
-      ],
-      "@uidu/media-editor/util": [
-        "../../media/media-editor/src/util",
-        "./packages/media/media-editor/src/util"
-      ],
-      "@uidu/media-filmstrip/filmstrip": [
-        "../../media/media-filmstrip/src/filmstrip",
-        "./packages/media/media-filmstrip/src/filmstrip"
-      ],
       "@uidu/media-filmstrip/index": [
         "../../media/media-filmstrip/src/index",
         "./packages/media/media-filmstrip/src/index"
@@ -514,6 +634,14 @@
       "@uidu/media-image/mediaImage": [
         "../../media/media-image/src/mediaImage",
         "./packages/media/media-image/src/mediaImage"
+      ],
+      "@uidu/media-picker/index": [
+        "../../media/media-picker/src/index",
+        "./packages/media/media-picker/src/index"
+      ],
+      "@uidu/media-picker/types": [
+        "../../media/media-picker/src/types",
+        "./packages/media/media-picker/src/types"
       ],
       "@uidu/media-store/index": [
         "../../media/media-store/src/index",
@@ -731,6 +859,10 @@
         "../../media/smart-card/src/index",
         "./packages/media/smart-card/src/index"
       ],
+      "@uidu/chat-room/index": [
+        "../../messaging/chat-room/src/index",
+        "./packages/messaging/chat-room/src/index"
+      ],
       "@uidu/chat-window/index": [
         "../../messaging/chat-window/src/index",
         "./packages/messaging/chat-window/src/index"
@@ -746,6 +878,14 @@
       "@uidu/link-preview/types": [
         "../../messaging/link-preview/src/types",
         "./packages/messaging/link-preview/src/types"
+      ],
+      "@uidu/message/index": [
+        "../../messaging/message/src/index",
+        "./packages/messaging/message/src/index"
+      ],
+      "@uidu/message/types": [
+        "../../messaging/message/src/types",
+        "./packages/messaging/message/src/types"
       ],
       "@uidu/message-form/index": [
         "../../messaging/message-form/src/index",
@@ -807,6 +947,62 @@
         "../../navigation/tabbar/src/index",
         "./packages/navigation/tabbar/src/index"
       ],
+      "@uidu/tabbar/types": [
+        "../../navigation/tabbar/src/types",
+        "./packages/navigation/tabbar/src/types"
+      ],
+      "@uidu/attend/index": [
+        "../../uidu/attend/src/index",
+        "./packages/uidu/attend/src/index"
+      ],
+      "@uidu/comment/index": [
+        "../../uidu/comment/src/index",
+        "./packages/uidu/comment/src/index"
+      ],
+      "@uidu/comment/types": [
+        "../../uidu/comment/src/types",
+        "./packages/uidu/comment/src/types"
+      ],
+      "@uidu/contact/index": [
+        "../../uidu/contact/src/index",
+        "./packages/uidu/contact/src/index"
+      ],
+      "@uidu/donate/index": [
+        "../../uidu/donate/src/index",
+        "./packages/uidu/donate/src/index"
+      ],
+      "@uidu/donate/types": [
+        "../../uidu/donate/src/types",
+        "./packages/uidu/donate/src/types"
+      ],
+      "@uidu/propose/index": [
+        "../../uidu/propose/src/index",
+        "./packages/uidu/propose/src/index"
+      ],
+      "@uidu/propose/types": [
+        "../../uidu/propose/src/types",
+        "./packages/uidu/propose/src/types"
+      ],
+      "@uidu/tax-reminder/index": [
+        "../../uidu/tax-reminder/src/index",
+        "./packages/uidu/tax-reminder/src/index"
+      ],
+      "@uidu/tax-reminder/types": [
+        "../../uidu/tax-reminder/src/types",
+        "./packages/uidu/tax-reminder/src/types"
+      ],
+      "@uidu/widgets/index": [
+        "../../uidu/widgets/src/index",
+        "./packages/uidu/widgets/src/index"
+      ],
+      "@uidu/widgets/types": [
+        "../../uidu/widgets/src/types",
+        "./packages/uidu/widgets/src/types"
+      ],
+      "@atlaskit/analytics-next": [
+        "node_modules/@atlaskit/analytics-next-types",
+        "packages/elements/analytics-next-types"
+      ]
     }
   }
 }

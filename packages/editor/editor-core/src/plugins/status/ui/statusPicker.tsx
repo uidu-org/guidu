@@ -7,7 +7,7 @@ import {
   ColorType as Color,
   StatusPicker as AkStatusPicker,
 } from '@atlaskit/status/picker';
-import { borderRadius, colors, gridSize } from '@atlaskit/theme';
+import { borderRadius, colors, gridSize } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 import { dropShadow } from '../../../components/styles';

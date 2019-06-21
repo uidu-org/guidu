@@ -1,8 +1,8 @@
-import Avatar from '@atlaskit/avatar';
-import AvatarGroup from '@atlaskit/avatar-group';
 import { akEditorSmallZIndex } from '@atlaskit/editor-common';
 import InviteTeamIcon from '@atlaskit/icon/glyph/editor/add';
-import { colors, gridSize } from '@atlaskit/theme';
+import Avatar from '@uidu/avatar';
+import AvatarGroup from '@uidu/avatar-group';
+import { colors, gridSize } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { InjectedIntlProps, injectIntl } from 'react-intl';
