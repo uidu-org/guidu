@@ -5,8 +5,6 @@ import { pluginFactory } from '../../../utils/plugin-state-factory';
 import { setMediaContext } from '../commands/media-editor';
 import { MediaEditorAction, MediaEditorState, MediaProvider } from '../types';
 
-
-
 export const pluginKey = new PluginKey('mediaEditorPlugin');
 
 export const reducer = (
@@ -107,4 +105,3 @@ export const createPlugin = ({
 };
 
 export { createCommand, getPluginState };
-

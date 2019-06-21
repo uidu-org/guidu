@@ -1,5 +1,16 @@
-import { ExternalMediaAttributes, MediaAttributes, MediaSingleLayout } from '@atlaskit/adf-schema';
-import { browser, DEFAULT_IMAGE_HEIGHT, DEFAULT_IMAGE_WIDTH, MediaSingle, ProviderFactory, WithProviders } from '@atlaskit/editor-common';
+import {
+  ExternalMediaAttributes,
+  MediaAttributes,
+  MediaSingleLayout,
+} from '@atlaskit/adf-schema';
+import {
+  browser,
+  DEFAULT_IMAGE_HEIGHT,
+  DEFAULT_IMAGE_WIDTH,
+  MediaSingle,
+  ProviderFactory,
+  WithProviders,
+} from '@atlaskit/editor-common';
 import { Context } from '@atlaskit/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection } from 'prosemirror-state';
@@ -19,7 +30,10 @@ import { setNodeSelection } from '../../../utils';
 import { pluginKey as widthPluginKey } from '../../width';
 import { updateMediaNodeAttrs } from '../commands';
 import { isMobileUploadCompleted } from '../commands/helpers';
-import { MediaPluginState, stateKey as mediaPluginKey } from '../pm-plugins/main';
+import {
+  MediaPluginState,
+  stateKey as mediaPluginKey,
+} from '../pm-plugins/main';
 import { MediaProvider } from '../types';
 import ResizableMediaSingle from '../ui/ResizableMediaSingle';
 import MediaItem from './media';

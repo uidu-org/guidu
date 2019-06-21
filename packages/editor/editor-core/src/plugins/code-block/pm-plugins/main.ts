@@ -1,9 +1,11 @@
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
-import { findParentDomRefOfType, findParentNodeOfType } from 'prosemirror-utils';
+import {
+  findParentDomRefOfType,
+  findParentNodeOfType,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { CommandDispatch, PMPluginFactoryParams } from '../../../types';
 import codeBlockNodeView from '../nodeviews/code-block';
-
 
 export type CodeBlockState = {
   element?: HTMLElement;

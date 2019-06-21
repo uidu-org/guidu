@@ -1,16 +1,26 @@
-import { DOMOutputSpec, DOMSerializer, Node as PmNode } from 'prosemirror-model';
+import {
+  DOMOutputSpec,
+  DOMSerializer,
+  Node as PmNode,
+} from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
 import { PortalProviderAPI } from '../../../components/PortalProvider';
 import WithPluginState from '../../../components/WithPluginState';
-import ReactNodeView, { ForwardRef, getPosHandler } from '../../../nodeviews/ReactNodeView';
+import ReactNodeView, {
+  ForwardRef,
+  getPosHandler,
+} from '../../../nodeviews/ReactNodeView';
 import { closestElement } from '../../../utils';
 import { pluginKey as widthPluginKey } from '../../width';
 import { pluginConfig as getPluginConfig } from '../index';
 import { getPluginState, pluginKey } from '../pm-plugins/main';
 import { handleBreakoutContent } from '../pm-plugins/table-resizing/commands';
 import { pluginKey as tableResizingPluginKey } from '../pm-plugins/table-resizing/index';
-import { contentWidth, generateColgroup } from '../pm-plugins/table-resizing/utils';
+import {
+  contentWidth,
+  generateColgroup,
+} from '../pm-plugins/table-resizing/utils';
 import { TableCssClassName as ClassName } from '../types';
 import TableComponent from './TableComponent';
 

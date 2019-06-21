@@ -1,5 +1,11 @@
 import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import { akEditorBreakoutPadding, akEditorWideLayoutWidth, calcColumnsFromPx, calcPctFromPx, calcPxFromColumns } from '@atlaskit/editor-common';
+import {
+  akEditorBreakoutPadding,
+  akEditorWideLayoutWidth,
+  calcColumnsFromPx,
+  calcPctFromPx,
+  calcPxFromColumns,
+} from '@atlaskit/editor-common';
 import { Context } from '@atlaskit/media-core';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import * as React from 'react';
@@ -9,7 +15,6 @@ import Resizer from './Resizer';
 import { Wrapper } from './styled';
 import { EnabledHandles, Props } from './types';
 import { handleSides, imageAlignmentMap, snapTo } from './utils';
-
 
 type State = {
   offsetLeft: number;
@@ -282,9 +287,9 @@ export default class ResizableMediaSingle extends React.Component<
       enable[side] =
         ['full-width', 'wide', 'center']
           .concat(`wrap-${oppositeSide}` as MediaSingleLayout)
-          .concat(`align-${
-            imageAlignmentMap[oppositeSide]
-          }` as MediaSingleLayout)
+          .concat(
+            `align-${imageAlignmentMap[oppositeSide]}` as MediaSingleLayout,
+          )
           .indexOf(layout) > -1;
 
       if (side === 'left' && this.insideInlineLike) {

@@ -3,7 +3,15 @@ import { Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import { createInputRule } from '../../../utils/input-rules';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, AnalyticsEventPayload, EVENT_TYPE, INPUT_METHOD } from '../../analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  AnalyticsEventPayload,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../../analytics';
 import { queueCards } from '../../card/pm-plugins/actions';
 import { LinkMatcher, Match, normalizeUrl } from '../utils';
 

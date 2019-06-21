@@ -3,7 +3,10 @@ import { NodeSelection, Selection } from 'prosemirror-state';
 import { Decoration, EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
 import { PortalProviderAPI } from '../components/PortalProvider';
-import { ReactNodeViewState, stateKey as SelectionChangePluginKey } from '../plugins/base/pm-plugins/react-nodeview';
+import {
+  ReactNodeViewState,
+  stateKey as SelectionChangePluginKey,
+} from '../plugins/base/pm-plugins/react-nodeview';
 
 export type getPosHandler = () => number;
 export type ReactComponentProps = { [key: string]: any };

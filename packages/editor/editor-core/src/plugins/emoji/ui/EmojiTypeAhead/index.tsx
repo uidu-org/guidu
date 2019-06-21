@@ -2,14 +2,28 @@ import { CreateUIAnalyticsEventSignature } from '@atlaskit/analytics-next';
 import { akEditorFloatingDialogZIndex, Popup } from '@atlaskit/editor-common';
 import { EmojiProvider } from '@atlaskit/emoji/resource';
 import { EmojiTypeAhead as AkEmojiTypeAhead } from '@atlaskit/emoji/typeahead';
-import { EmojiDescription, EmojiId, OptionalEmojiDescription } from '@atlaskit/emoji/types';
+import {
+  EmojiDescription,
+  EmojiId,
+  OptionalEmojiDescription,
+} from '@atlaskit/emoji/types';
 import { PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { analyticsService } from '../../../../analytics';
-import { getInsertTypeForKey, InsertType } from '../../../../analytics/fabric-analytics-helper';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, DispatchAnalyticsEvent, EVENT_TYPE, INPUT_METHOD } from '../../../analytics';
+import {
+  getInsertTypeForKey,
+  InsertType,
+} from '../../../../analytics/fabric-analytics-helper';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  DispatchAnalyticsEvent,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../../../analytics';
 import { EmojiState } from '../../pm-plugins/main';
 
 export interface Props {

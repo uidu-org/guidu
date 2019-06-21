@@ -1,11 +1,21 @@
 import { keydownHandler } from 'prosemirror-keymap';
 import { Node, Slice } from 'prosemirror-model';
-import { EditorState, Plugin, PluginKey, TextSelection } from 'prosemirror-state';
+import {
+  EditorState,
+  Plugin,
+  PluginKey,
+  TextSelection,
+} from 'prosemirror-state';
 import { findParentNodeOfType } from 'prosemirror-utils';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { Command } from '../../../types';
 import { filter } from '../../../utils/commands';
-import { fixColumnSizes, fixColumnStructure, getSelectedLayout, PresetLayout } from '../actions';
+import {
+  fixColumnSizes,
+  fixColumnStructure,
+  getSelectedLayout,
+  PresetLayout,
+} from '../actions';
 
 export type LayoutState = {
   pos: number | null;

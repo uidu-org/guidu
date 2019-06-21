@@ -4,7 +4,12 @@ import { TextSelection } from 'prosemirror-state';
 import { safeInsert } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { EventDispatcher } from '../event-dispatcher';
-import { compose, getEditorValueWithMedia, processRawValue, toJSON } from '../utils';
+import {
+  compose,
+  getEditorValueWithMedia,
+  processRawValue,
+  toJSON,
+} from '../utils';
 import { sanitizeNode } from '../utils/filter/node-filter';
 
 export type ContextUpdateHandler = (

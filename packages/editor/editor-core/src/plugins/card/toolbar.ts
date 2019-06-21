@@ -7,10 +7,16 @@ import { FloatingToolbarConfig } from '../../../src/plugins/floating-toolbar/typ
 import { Command } from '../../../src/types';
 import { analyticsService } from '../../analytics';
 import commonMessages from '../../messages';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, AnalyticsEventPayload, EVENT_TYPE, INPUT_METHOD } from '../analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  AnalyticsEventPayload,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../analytics';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
-
-
 
 export const messages = defineMessages({
   block: {

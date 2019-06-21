@@ -1,5 +1,11 @@
 import { Node, Schema } from 'prosemirror-model';
-import { EditorState, Plugin, PluginKey, Selection, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  Plugin,
+  PluginKey,
+  Selection,
+  Transaction,
+} from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
 import { shallowEqual } from '../../../plugins/text-formatting/utils';
 

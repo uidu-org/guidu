@@ -1,10 +1,32 @@
 import { Fragment, Node as PMNode, NodeType } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
-import { ContentNodeWithPos, hasParentNode, safeInsert } from 'prosemirror-utils';
+import {
+  ContentNodeWithPos,
+  hasParentNode,
+  safeInsert,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { atTheBeginningOfBlock, atTheEndOfBlock, atTheEndOfDoc, endPositionOfParent, findFarthestParentNode, insideTableCell, isInListItem, setNodeSelection, setTextSelection, startPositionOfParent } from '../../../utils';
+import {
+  atTheBeginningOfBlock,
+  atTheEndOfBlock,
+  atTheEndOfDoc,
+  endPositionOfParent,
+  findFarthestParentNode,
+  insideTableCell,
+  isInListItem,
+  setNodeSelection,
+  setTextSelection,
+  startPositionOfParent,
+} from '../../../utils';
 import { MediaState } from '../types';
-import { copyOptionalAttrsFromMediaState, isInsidePotentialEmptyParagraph, isSelectionNonMediaBlockNode, posOfMediaGroupNearby, posOfParentMediaGroup, posOfPrecedingMediaGroup } from './media-common';
+import {
+  copyOptionalAttrsFromMediaState,
+  isInsidePotentialEmptyParagraph,
+  isSelectionNonMediaBlockNode,
+  posOfMediaGroupNearby,
+  posOfParentMediaGroup,
+  posOfPrecedingMediaGroup,
+} from './media-common';
 
 export interface Range {
   start: number;

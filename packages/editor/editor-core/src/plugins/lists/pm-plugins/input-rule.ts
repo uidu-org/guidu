@@ -1,9 +1,25 @@
-import { InputRule, inputRules, wrappingInputRule } from 'prosemirror-inputrules';
+import {
+  InputRule,
+  inputRules,
+  wrappingInputRule,
+} from 'prosemirror-inputrules';
 import { Node as PMNode, NodeRange, NodeType, Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import { analyticsService, trackAndInvoke } from '../../../analytics';
-import { createInputRule as defaultCreateInputRule, defaultInputRuleHandler, InputRuleWithHandler, leafNodeReplacementCharacter } from '../../../utils/input-rules';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, EVENT_TYPE, INPUT_METHOD, ruleWithAnalytics } from '../../analytics';
+import {
+  createInputRule as defaultCreateInputRule,
+  defaultInputRuleHandler,
+  InputRuleWithHandler,
+  leafNodeReplacementCharacter,
+} from '../../../utils/input-rules';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  EVENT_TYPE,
+  INPUT_METHOD,
+  ruleWithAnalytics,
+} from '../../analytics';
 
 export function createInputRule(regexp: RegExp, nodeType: NodeType) {
   return wrappingInputRule(

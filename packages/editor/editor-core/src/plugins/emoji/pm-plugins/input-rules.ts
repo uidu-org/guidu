@@ -1,8 +1,18 @@
 import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, EVENT_TYPE, INPUT_METHOD } from '../../../plugins/analytics';
-import { createInputRule, leafNodeReplacementCharacter } from '../../../utils/input-rules';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../../../plugins/analytics';
+import {
+  createInputRule,
+  leafNodeReplacementCharacter,
+} from '../../../utils/input-rules';
 import { emojiPluginKey, EmojiState } from './main';
 
 export function inputRulePlugin(schema: Schema): Plugin | undefined {

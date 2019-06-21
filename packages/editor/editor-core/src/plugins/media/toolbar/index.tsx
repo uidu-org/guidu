@@ -2,7 +2,10 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { EditorState } from 'prosemirror-state';
 import { removeSelectedNode } from 'prosemirror-utils';
 import { InjectedIntl } from 'react-intl';
-import { FloatingToolbarConfig, FloatingToolbarItem } from '../../../../src/plugins/floating-toolbar/types';
+import {
+  FloatingToolbarConfig,
+  FloatingToolbarItem,
+} from '../../../../src/plugins/floating-toolbar/types';
 import { Command, EditorAppearance } from '../../../../src/types';
 import commonMessages from '../../../messages';
 import { isFullPage } from '../../../utils/is-full-page';
@@ -10,8 +13,6 @@ import { hoverDecoration } from '../../base/pm-plugins/decoration';
 import { MediaPluginState, stateKey } from '../pm-plugins/main';
 import { renderAnnotationButton } from './annotation';
 import buildLayoutButtons from './buildMediaLayoutButtons';
-
-
 
 const remove: Command = (state, dispatch) => {
   if (dispatch) {
