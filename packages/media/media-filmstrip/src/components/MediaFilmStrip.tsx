@@ -1,10 +1,7 @@
-// import { Heading } from '../../components';
 import MediaCard from '@uidu/media-card';
 import { colors } from '@uidu/theme';
 import React, { Component } from 'react';
 import Carousel, { Modal, ModalGateway } from 'react-images';
-// import { largeDevice } from '../../../utils';
-// import { Header } from './components';
 
 const navButtonStyles = (base: any) => ({
   ...base,
@@ -23,10 +20,7 @@ const navButtonStyles = (base: any) => ({
   },
 });
 
-type Props = {};
-type State = { currentModal: number | null };
-
-export default class MediaFilmStrip extends Component<Props, State> {
+export default class MediaFilmStrip extends Component<any, any> {
   state = { currentModal: null };
 
   toggleModal = (index: number | null = null) => {
@@ -132,26 +126,6 @@ const FilmStrip = (props: any) => (
       paddingTop: 10,
       WebkitOverflowScrolling: 'touch',
       whiteSpace: 'nowrap',
-    }}
-    {...props}
-  />
-);
-
-const Image = (props: any) => (
-  <div
-    style={{
-      backgroundColor: '#eee',
-      boxSizing: 'border-box',
-      display: 'inline-block',
-      margin: gutter,
-      overflow: 'hidden',
-      paddingBottom: '15%',
-      position: 'relative',
-      width: `calc(25% - ${gutter * 2}px)`,
-
-      ':hover': {
-        opacity: 0.9,
-      },
     }}
     {...props}
   />

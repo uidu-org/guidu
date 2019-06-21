@@ -4,6 +4,7 @@ import '@uppy/dashboard/dist/style.css';
 import '@uppy/drag-drop/dist/style.css';
 import Dropbox from '@uppy/dropbox';
 import GoogleDrive from '@uppy/google-drive';
+import { Dashboard } from '@uppy/react';
 import Url from '@uppy/url';
 import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
@@ -28,7 +29,8 @@ export default class MediaPicker extends Component<any> {
     this.uppy
       .use(Webcam)
       .use(XHRUpload, {
-        endpoint: 'http://my-website.org/upload',
+        endpoint:
+          'https://uidufundraising.uidu.local:8443/dashboard/apps/attachments.json',
       })
       .use(Url, {
         target: document.body,
@@ -50,7 +52,7 @@ export default class MediaPicker extends Component<any> {
   render() {
     return (
       <div>
-        {/* <Dashboard uppy={this.uppy} plugins={['XHRUpload', 'Webcam', 'Url']} /> */}
+        <Dashboard uppy={this.uppy} plugins={['XHRUpload', 'Webcam', 'Url']} />
       </div>
     );
   }

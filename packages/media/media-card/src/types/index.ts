@@ -9,6 +9,8 @@ export type MediaCardStatus =
 export type MediaCardProps = {
   identifier?: string | number;
   file?: any;
+  onClick?: () => void;
+  style?: any;
 };
 
 export type MediaCardState = {
