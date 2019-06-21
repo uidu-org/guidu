@@ -155,7 +155,7 @@ export default class MediaSingleNode extends Component<
     );
   };
 
-  selectMediaSingle = ({ event }: CardEvent) => {
+  selectMediaSingle = ({ event }: any) => {
     // We need to call "stopPropagation" here in order to prevent the browser from navigating to
     // another URL if the media node is wrapped in a link mark.
     event.stopPropagation();

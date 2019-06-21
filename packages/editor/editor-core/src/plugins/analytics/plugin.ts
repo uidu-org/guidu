@@ -8,7 +8,7 @@ export const analyticsPluginKey = new PluginKey('analyticsPlugin');
 
 function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEventSignature) {
   if (!createAnalyticsEvent) {
-    return false;
+    return undefined;
   }
 
   return new Plugin({

@@ -239,7 +239,7 @@ export function handlePastePreservingMarks(slice: Slice): Command {
 
 async function isLinkSmart(
   text: string,
-  type: CardAppearance,
+  type: any,
   cardOptions: CardOptions,
 ): Promise<boolean> {
   if (!cardOptions.provider) {

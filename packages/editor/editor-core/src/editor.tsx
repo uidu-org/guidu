@@ -62,7 +62,8 @@ export default class Editor extends PureComponent<EditorProps> {
     //  this.deprecationWarnings(props);
     //  this.onEditorCreated = this.onEditorCreated.bind(this);
     //  this.onEditorDestroyed = this.onEditorDestroyed.bind(this);
-    this.editorActions = (context || {}).editorActions || new EditorActions();
+    this.editorActions =
+      (context || ({} as any)).editorActions || new EditorActions();
   }
 
   componentWillUnmount() {
@@ -117,10 +118,11 @@ export default class Editor extends PureComponent<EditorProps> {
   renderToolbar = ({ view, eventDispatcher, config }) => {
     return (
       <Toolbar
+        appearance={this.props.appearance}
+        disabled={this.props.disabled}
         editorView={view!}
         editorActions={this.editorActions}
         eventDispatcher={eventDispatcher}
-        contentComponents={config.contentComponents}
         items={config.primaryToolbarComponents}
         providerFactory={this.providerFactory}
         popupsMountPoint={this.props.popupsMountPoint}
@@ -149,7 +151,7 @@ export default class Editor extends PureComponent<EditorProps> {
         popupsMountPoint={this.props.popupsMountPoint}
         popupsBoundariesElement={this.props.popupsBoundariesElement}
         popupsScrollableElement={this.props.popupsScrollableElement}
-        containerElement={this.containerElement}
+        containerElement={this.props.containerElement}
         disabled={!!this.props.disabled}
       />
       {editor}

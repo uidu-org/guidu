@@ -68,7 +68,7 @@ export function createInputRulePlugin(schema: Schema): Plugin | undefined {
     return undefined;
   }
 
-  const urlWithASpaceRule = createLinkInputRule(new LinkMatcher() as RegExp);
+  const urlWithASpaceRule = createLinkInputRule(new LinkMatcher() as any);
 
   // [something](link) should convert to a hyperlink
   const markdownLinkRule = createInputRule(

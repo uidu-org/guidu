@@ -250,4 +250,6 @@ export interface EditorProps {
   sanitizePrivateContent?: boolean;
 
   children: ({ renderToolbar, renderEditor }) => any;
+
+  containerElement?: any;
 }

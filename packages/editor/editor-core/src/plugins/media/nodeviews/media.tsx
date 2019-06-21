@@ -4,7 +4,7 @@ import {
   withImageLoader,
 } from '@atlaskit/editor-common';
 import { Context, Identifier } from '@atlaskit/media-core';
-import { Card, CardLoading } from '@uidu/media-card';
+import { Card } from '@uidu/media-card';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -28,9 +28,9 @@ export interface MediaNodeProps extends ReactNodeProps, ImageLoaderProps {
   node: PMNode;
   getPos: ProsemirrorGetPosHandler;
   providerFactory?: ProviderFactory;
-  cardDimensions: CardDimensions;
+  cardDimensions: any;
   isMediaSingle?: boolean;
-  onClick?: CardOnClickCallback;
+  onClick?: any;
   onExternalImageLoaded?: (dimensions: {
     width: number;
     height: number;
@@ -100,7 +100,8 @@ class MediaNode extends Component<MediaNodeProps> {
       type !== 'external' &&
       (!viewContext || (typeof uploadComplete === 'boolean' && !uploadComplete))
     ) {
-      return <CardLoading dimensions={cardDimensions} />;
+      return <div>Loading...</div>;
+      // return <CardLoading dimensions={cardDimensions} />;
     }
 
     const identifier: Identifier =

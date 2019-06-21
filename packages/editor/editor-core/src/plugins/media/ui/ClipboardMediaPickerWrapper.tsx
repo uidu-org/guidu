@@ -1,6 +1,6 @@
 import { ErrorReporter } from '@atlaskit/editor-common';
 import { Context } from '@atlaskit/media-core';
-import Clipboard, { ClipboardConfig } from '@atlaskit/media-picker';
+import Clipboard from '@uidu/media-picker';
 import * as React from 'react';
 import PickerFacade from '../picker-facade';
 import { MediaPluginState, MediaProvider } from '../pm-plugins/main';
@@ -11,7 +11,7 @@ type Props = {
 };
 
 type State = {
-  config?: ClipboardConfig;
+  config?: any;
   context?: Context;
   pickerFacadeInstance?: PickerFacade;
 };

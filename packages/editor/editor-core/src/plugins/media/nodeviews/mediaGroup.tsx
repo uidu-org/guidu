@@ -167,7 +167,7 @@ class MediaGroupNodeView extends ReactNodeView {
               view={this.view}
               forwardRef={forwardRef}
               selected={isSelected ? $anchor.pos : null}
-              disabled={(editorDisabledPlugin || {}).editorDisabled}
+              disabled={(editorDisabledPlugin || ({} as any)).editorDisabled}
               editorAppearance={editorAppearance}
             />
           );

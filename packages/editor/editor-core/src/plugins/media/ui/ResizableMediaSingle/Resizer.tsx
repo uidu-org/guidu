@@ -131,6 +131,7 @@ export default class Resizer extends React.Component<
         onResize={this.handleResize}
         size={{
           width: this.props.width,
+          height: this.props.height,
         }}
         className={classnames(
           'media-single',

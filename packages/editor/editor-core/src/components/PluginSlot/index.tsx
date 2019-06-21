@@ -1,11 +1,11 @@
+import { ProviderFactory } from '@atlaskit/editor-common';
+import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import styled from 'styled-components';
-import { EditorView } from 'prosemirror-view';
-import { ProviderFactory } from '@atlaskit/editor-common';
-import { EditorAppearance, UIComponentFactory } from '../../types';
-import { EventDispatcher } from '../../event-dispatcher';
 import EditorActions from '../../actions';
+import { EventDispatcher } from '../../event-dispatcher';
 import { DispatchAnalyticsEvent } from '../../plugins/analytics';
+import { EditorAppearance, UIComponentFactory } from '../../types';
 import { whichTransitionEvent } from '../../utils';
 
 const PluginsComponentsWrapper = styled.div`
@@ -85,7 +85,7 @@ export default class PluginSlot extends React.Component<Props, any> {
   removeModeChangeListener = (contentArea?: HTMLElement) => {
     if (contentArea && this.transitionEvent) {
       contentArea.removeEventListener(
-        this.transitionEvent,
+        this.transitionEvent as any,
         this.forceComponentUpdate,
       );
     }
@@ -98,7 +98,7 @@ export default class PluginSlot extends React.Component<Props, any> {
        * to full width / default mode completes
        */
       contentArea.addEventListener(
-        this.transitionEvent,
+        this.transitionEvent as any,
         this.forceComponentUpdate,
       );
     }

@@ -11,13 +11,20 @@ import {
   createErrorReporter,
   createPMPlugins,
   createSchema,
+  initAnalytics,
   processPluginsList,
 } from '../create-editor/create-editor';
 import createPluginList from '../create-editor/create-plugins-list';
 import { createDispatch, Dispatch, EventDispatcher } from '../event-dispatcher';
 import {
+  ACTION,
+  ACTION_SUBJECT,
+  AnalyticsDispatch,
+  analyticsEventKey,
   AnalyticsEventPayload,
   DispatchAnalyticsEvent,
+  EVENT_TYPE,
+  PLATFORMS,
 } from '../plugins/analytics';
 import { EditorConfig, EditorPlugin, EditorProps } from '../types';
 import { PortalProviderAPI } from './PortalProvider';
@@ -83,14 +90,14 @@ export default class Editor extends PureComponent<any> {
     // if (allowAnalyticsGASV3) {
     //   this.activateAnalytics(createAnalyticsEvent);
     // }
-    // initAnalytics(props.editorProps.analyticsHandler);
+    initAnalytics(props.editorProps.analyticsHandler);
 
-    // this.dispatchAnalyticsEvent({
-    //   action: ACTION.STARTED,
-    //   actionSubject: ACTION_SUBJECT.EDITOR,
-    //   attributes: { platform: PLATFORMS.WEB },
-    //   eventType: EVENT_TYPE.UI,
-    // });
+    this.dispatchAnalyticsEvent({
+      action: ACTION.STARTED,
+      actionSubject: ACTION_SUBJECT.EDITOR,
+      attributes: { platform: PLATFORMS.WEB },
+      eventType: EVENT_TYPE.UI,
+    });
   }
 
   // Helper to allow tests to inject plugins directly
@@ -144,7 +151,7 @@ export default class Editor extends PureComponent<any> {
       providerFactory: options.props.providerFactory,
       portalProviderAPI: this.props.portalProviderAPI,
       reactContext: () => this.context,
-      // dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
+      dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
     console.log(this.config);
@@ -263,6 +270,15 @@ export default class Editor extends PureComponent<any> {
       });
       this.view.destroy(); // Destroys the dom node & all node views
       this.view = undefined;
+    }
+  };
+
+  dispatchAnalyticsEvent = (payload: AnalyticsEventPayload): void => {
+    if (this.props.allowAnalyticsGASV3 && this.eventDispatcher) {
+      const dispatch: AnalyticsDispatch = createDispatch(this.eventDispatcher);
+      dispatch(analyticsEventKey, {
+        payload,
+      });
     }
   };
 

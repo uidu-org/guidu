@@ -191,7 +191,7 @@ export function processRawValue(
           ) {
             fireAnalyticsEvent(entity, error, 'mark');
           }
-          return false;
+          return undefined;
         }
 
         /**
