@@ -9,35 +9,32 @@ export default class UpVote extends PureComponent<any, any> {
   }
 
   handleClick = e => {
-    const { currentUser, history, votable, vote, onVote } = this.props;
+    const { currentUser, onVoteFailed, votable, vote, onVote } = this.props;
     e.preventDefault();
     e.stopPropagation();
     this.setState({ loading: true });
-    if (currentUser) {
-      // vote
-      vote(votable).then(response => {
-        console.log(response);
-        this.setState({ loading: false });
-        return onVote(response.data);
-      });
-    } else {
-      // history.push({
-      //   pathname: '/accounts/sign_in',
-      //   state: { modal: true },
-      // });
-      setTimeout(
-        () =>
-          this.setState({ loading: false }, () =>
-            window.alert('iscriviti per votare'),
-          ),
-        3000,
-      );
-    }
+    // if (currentUser) {
+    // vote
+    vote(votable).then(response => {
+      console.log(response);
+      this.setState({ loading: false });
+      return onVote(response.data);
+    });
+    // } else {
+    // history.push({
+    //   pathname: '/accounts/sign_in',
+    //   state: { modal: true },
+    // });
+    //   setTimeout(
+    //     () => this.setState({ loading: false }, () => onVoteFailed()),
+    //     300,
+    //   );
+    // }
   };
 
   isActive = () => {
     const { currentUser, votable } = this.props;
-    if (!currentUser) return false;
+    // if (!currentUser) return false;
     if (!votable) return false;
     return votable.voted;
   };

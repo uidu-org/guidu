@@ -98,7 +98,7 @@ export const getButtonStyles = (props: ThemeProps) => ({
   background: getBackground(props),
   borderRadius: `${borderRadius()}px`,
   boxShadow: getBoxShadow(props),
-  color: `${getColor(props)} !important`,
+  color: `${getColor(props)}`, // !important`,
   cursor: getCursor(props),
   height: getHeight(props),
   lineHeight: getLineHeight(props),
