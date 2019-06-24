@@ -1,5 +1,10 @@
 # @atlaskit/media-filmstrip
 
+## 0.1.11
+- [patch] [bb44dc4](https://github.org/uidu-org/guidu/commits/bb44dc4):
+
+  - Fewer tsconfig
+
 ## 0.1.10
 - [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
 

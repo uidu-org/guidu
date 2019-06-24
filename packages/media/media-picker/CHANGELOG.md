@@ -1,5 +1,10 @@
 # @uidu/media-picker
 
+## 0.1.2
+- [patch] [bb44dc4](https://github.org/uidu-org/guidu/commits/bb44dc4):
+
+  - Fewer tsconfig
+
 ## 0.1.1
 - [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
 
