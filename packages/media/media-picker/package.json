@@ -1,7 +1,7 @@
 {
   "name": "@uidu/media-picker",
   "version": "0.1.5",
-  "description": "Atlassian Editor component for JIRA",
+  "description": "uidu media picker, using Uppy",
   "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",

@@ -1,1 +1,0 @@
-- Fewer tsconfig
