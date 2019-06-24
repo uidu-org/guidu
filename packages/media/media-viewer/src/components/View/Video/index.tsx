@@ -4,26 +4,25 @@ import React, { Component } from 'react';
 import Icon from './Icon';
 import ProgressBar from './Progress';
 
-
 type UrlShape = {
-  type: 'video/mp4' | 'video/ogg',
-  src: string,
+  type: 'video/mp4' | 'video/ogg';
+  src: string;
 };
 
 export type ViewShape = {
-  poster: string,
-  urls: Array<UrlShape>,
+  poster: string;
+  urls: Array<UrlShape>;
 };
 
 type ViewProps = {
-  currentIndex: number,
-  data: ViewShape,
-  interactionIsIdle: boolean,
+  currentIndex: number;
+  data: ViewShape;
+  interactionIsIdle: boolean;
 };
-type ViewState = { paused: boolean, progress: number };
+type ViewState = { paused: boolean; progress: number };
 
 function calculateProgress({ currentTime, duration }) {
-  return 100 / duration * currentTime;
+  return (100 / duration) * currentTime;
 }
 
 const Footer = ({ interactionIsIdle, ...props }) => (
@@ -98,7 +97,8 @@ export default class View extends Component<ViewProps, ViewState> {
   handlePause = () => {
     this.setState({ paused: true });
   };
-  playOrPause = (type: 'play' | 'pause' | 'toggle' = 'toggle') => {
+  playOrPause = (e, type: 'play' | 'pause' | 'toggle' = 'toggle') => {
+    e.preventDefault();
     const { video } = this;
 
     switch (type) {
@@ -116,9 +116,10 @@ export default class View extends Component<ViewProps, ViewState> {
         }
     }
   };
-  getVideo = (ref: ElementRef<*>) => {
+  getVideo = (ref: any) => {
     this.video = ref;
   };
+
   render() {
     const { data, interactionIsIdle } = this.props;
     const { progress } = this.state;
@@ -146,7 +147,7 @@ export default class View extends Component<ViewProps, ViewState> {
           ref={this.getVideo}
           style={{ width: '100%', height: 'auto' }}
         >
-          {data.sources.map((vid, idx) => (
+          {(data as any).sources.map((vid, idx) => (
             <source key={idx} src={vid.url} type={vid.type} />
           ))}
           Your browser does not support HTML5 video.
