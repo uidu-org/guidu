@@ -149,7 +149,7 @@
     "copy-pkg": "^1.0.0",
     "diff": "^4.0.1",
     "dotenv-cli": "^2.0.0",
-    "eslint": "^6.0.0",
+    "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-react-app": "^4.0.0",
     "eslint-plugin-class-property": "^1.0.6",
