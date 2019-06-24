@@ -627,14 +627,6 @@
         "../../media/media-filmstrip/src/index",
         "./packages/media/media-filmstrip/src/index"
       ],
-      "@uidu/media-image/index": [
-        "../../media/media-image/src/index",
-        "./packages/media/media-image/src/index"
-      ],
-      "@uidu/media-image/mediaImage": [
-        "../../media/media-image/src/mediaImage",
-        "./packages/media/media-image/src/mediaImage"
-      ],
       "@uidu/media-picker/index": [
         "../../media/media-picker/src/index",
         "./packages/media/media-picker/src/index"
@@ -834,6 +826,10 @@
       "@uidu/media-viewer/index": [
         "../../media/media-viewer/src/index",
         "./packages/media/media-viewer/src/index"
+      ],
+      "@uidu/media-viewer/types": [
+        "../../media/media-viewer/src/types",
+        "./packages/media/media-viewer/src/types"
       ],
       "@uidu/smart-card/analytics": [
         "../../media/smart-card/src/analytics",

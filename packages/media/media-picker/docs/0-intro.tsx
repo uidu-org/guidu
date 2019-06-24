@@ -7,7 +7,7 @@ export default md`
 
   ## Usage
 
-  ${code`import { MediaImage } from '@uidu/media-image';
+  ${code`import { MediaImage } from '@uidu/media-picker';
 
   `}
 
