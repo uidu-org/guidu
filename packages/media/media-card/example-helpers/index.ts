@@ -5,6 +5,8 @@ export const fakeImage = () => ({
   id: faker.random.uuid(),
   src: faker.image.dataUri(),
   alt: faker.finance.accountName(),
+  caption: faker.lorem.sentence(),
+  author: faker.helpers.userCard(),
 });
 
 export const fakeVideo = () => ({
@@ -12,6 +14,8 @@ export const fakeVideo = () => ({
   id: faker.random.uuid(),
   src: faker.image.dataUri(),
   alt: faker.finance.accountName(),
+  caption: faker.lorem.sentence(),
+  author: faker.helpers.userCard(),
 });
 
 export const fakeFile = () => ({
@@ -19,6 +23,8 @@ export const fakeFile = () => ({
   id: faker.random.uuid(),
   src: faker.image.dataUri(),
   alt: faker.finance.accountName(),
+  caption: faker.lorem.sentence(),
+  author: faker.helpers.userCard(),
 });
 
 export const fakeLink = () => ({
@@ -26,6 +32,8 @@ export const fakeLink = () => ({
   id: faker.random.uuid(),
   src: faker.image.dataUri(),
   alt: faker.finance.accountName(),
+  caption: faker.lorem.sentence(),
+  author: faker.helpers.userCard(),
 });
 
 export const fetchAttachments = () => {
