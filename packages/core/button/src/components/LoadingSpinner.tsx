@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as React from 'react';
 import Spinner from '@uidu/spinner';
+import * as React from 'react';
 
 const appearances: string[] = ['primary', 'danger'];
 
@@ -32,7 +32,7 @@ export default class LoadingSpinner extends React.Component<Props> {
 
   render() {
     const { spacing, styles } = this.props;
-    let spinnerSize = spacing !== 'default' ? 'small' : 'medium';
+    let spinnerSize = spacing !== 'default' ? 'xsmall' : 'small';
 
     return (
       <div css={styles}>

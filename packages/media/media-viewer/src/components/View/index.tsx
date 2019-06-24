@@ -17,7 +17,7 @@ export default class View extends PureComponent<any> {
       // case 'file':
       //   return <LoadableFile {...this.props} />;
       default:
-        break;
+        return null;
     }
   }
 }

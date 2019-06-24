@@ -16,6 +16,7 @@
     "@uidu/checkbox": "^0.1.42",
     "@uidu/field": "^0.1.2",
     "@uidu/field-text": "^0.1.12",
+    "@uidu/field-textarea": "^0.1.1",
     "@uidu/form": "^0.1.28",
     "@uidu/widgets": "^0.1.1",
     "react-feather": "^1.1.6"

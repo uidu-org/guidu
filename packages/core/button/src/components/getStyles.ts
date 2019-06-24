@@ -117,7 +117,7 @@ export const getButtonStyles = (props: ThemeProps) => ({
   '&:hover': {
     textDecoration: getTextDecoration(props),
   },
-  ...(props.isLoading && { 'pointer-events': 'none' }),
+  ...(props.isLoading && { pointerEvents: 'none' }),
 });
 
 /**

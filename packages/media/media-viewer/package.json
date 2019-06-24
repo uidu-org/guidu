@@ -15,6 +15,7 @@
     "@loadable/component": "^5.10.1",
     "@uidu/avatar": "^0.2.13",
     "@uidu/button": "^0.1.38",
+    "@uidu/comment": "^0.1.0",
     "@uidu/shell": "^0.1.17",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.12",
