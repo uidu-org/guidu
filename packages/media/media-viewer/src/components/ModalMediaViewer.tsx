@@ -4,17 +4,15 @@ import { Modal, ModalGateway } from 'react-images';
 import MediaViewer from './MediaViewer';
 
 export default class ModalMediaViewer extends PureComponent<any> {
-  toggleModal = () => {};
-
   render() {
-    const { currentIndex } = this.props;
+    const { currentIndex, onClose } = this.props;
     return (
       <ModalGateway>
         {Number.isInteger(currentIndex as any) ? (
           <Modal
             isFullscreen
             closeOnBackdropClick={false}
-            onClose={this.toggleModal}
+            onClose={onClose}
             styles={{
               blanket: (base: any) => ({
                 ...base,
@@ -28,7 +26,11 @@ export default class ModalMediaViewer extends PureComponent<any> {
               }),
             }}
           >
-            <MediaViewer views={this.props.views} currentIndex={currentIndex} />
+            <MediaViewer
+              views={this.props.views}
+              currentIndex={currentIndex}
+              onClose={onClose}
+            />
           </Modal>
         ) : null}
       </ModalGateway>

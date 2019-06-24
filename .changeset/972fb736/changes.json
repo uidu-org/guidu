@@ -1,0 +1,8 @@
+{
+  "releases": [
+    { "name": "@uidu/media-card", "type": "patch" },
+    { "name": "@uidu/media-filmstrip", "type": "patch" },
+    { "name": "@uidu/media-viewer", "type": "patch" }
+  ],
+  "dependents": []
+}

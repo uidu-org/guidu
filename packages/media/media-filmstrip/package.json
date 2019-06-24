@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@uidu/media-card": "^0.1.8",
+    "@uidu/media-viewer": "^0.1.13",
     "@uidu/theme": "^0.1.12",
     "react-images": "^1.0.0"
   },

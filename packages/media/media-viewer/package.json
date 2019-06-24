@@ -12,10 +12,13 @@
     "access": "public"
   },
   "dependencies": {
+    "@loadable/component": "^5.10.1",
     "@uidu/avatar": "^0.2.13",
+    "@uidu/button": "^0.1.38",
     "@uidu/shell": "^0.1.17",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.12",
+    "raf-schd": "^4.0.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-feather": "^1.1.6",
@@ -28,7 +31,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.25",
-    "@uidu/media-card": "^0.1.8",
+    "@uidu/media-card": "^0.1.10",
     "react-dom": "^16.4.0",
     "react-intl": "^2.8.0"
   }

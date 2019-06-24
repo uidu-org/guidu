@@ -2,12 +2,11 @@ import React, { PureComponent } from 'react';
 import { MediaCardProps } from '../types';
 import Image from './Image';
 import MediaCardViewer from './MediaCardViewer';
+import Video from './Video';
 
 export default class MediaCard extends PureComponent<MediaCardProps> {
   render() {
     const { file, ...otherProps } = this.props;
-
-    console.log(file);
 
     let content;
 
@@ -17,6 +16,9 @@ export default class MediaCard extends PureComponent<MediaCardProps> {
       switch (file.type) {
         case 'image':
           content = <Image {...file} />;
+          break;
+        case 'video':
+          content = <Video {...file} />;
           break;
         default:
           content = (

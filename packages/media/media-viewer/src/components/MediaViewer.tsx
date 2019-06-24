@@ -1,45 +1,69 @@
+import { ShellMain } from '@uidu/shell';
 import React, { PureComponent } from 'react';
 import Carousel from 'react-images';
-import Header from './Header';
+import { NavigationNext, NavigationPrev } from './Navigation';
+import Sidebar from './Sidebar';
+import View from './View';
 
-export default class MediaViewer extends PureComponent<any> {
+export default class MediaViewer extends PureComponent<any, any> {
+  static defaultProps = {
+    currentIndex: 0,
+  };
+
+  constructor(props) {
+    super(props);
+    const { views, currentIndex } = this.props;
+    this.state = {
+      currentView: views[currentIndex],
+    };
+  }
+
+  onViewChange = (index: number) => {
+    const { views } = this.props;
+    this.setState({ currentView: views[index] });
+  };
+
   render() {
     const { views, currentIndex } = this.props;
+    const { currentView } = this.state;
 
     return (
-      <Carousel
-        currentIndex={currentIndex || 0}
-        components={{
-          Footer: null,
-          Header,
-        }}
-        isFullscreen
-        frameProps={{ autoSize: 'height' }}
-        views={views}
-        styles={{
-          container: (base: any) => ({
-            ...base,
-            height: '100vh',
-          }),
-          view: (base: any) => ({
-            ...base,
-            alignItems: 'center',
-            display: 'flex ',
-            height: 'calc(100vh - 54px)',
-            justifyContent: 'center',
-
-            // [largeDevice]: {
-            //   padding: 20,
-            // },
-
-            '& > img': {
-              maxHeight: 'calc(100vh - 94px)',
-            },
-          }),
-          // navigationPrev: navButtonStyles,
-          // navigationNext: navButtonStyles,
-        }}
-      />
+      <ShellMain className="flex-row">
+        <Carousel
+          trackProps={{
+            onViewChange: this.onViewChange,
+          }}
+          currentIndex={currentIndex}
+          components={{
+            Footer: null,
+            NavigationPrev,
+            NavigationNext,
+            View,
+          }}
+          isFullscreen
+          frameProps={{ autoSize: 'height' }}
+          views={views}
+          styles={{
+            container: (base: any) => ({
+              ...base,
+              height: '100vh',
+              flex: 1,
+            }),
+            view: (base: any) => ({
+              ...base,
+              backgroundColor: 'black',
+              alignItems: 'center',
+              display: 'flex ',
+              height: '100vh',
+              justifyContent: 'center',
+              '& > img': {
+                maxHeight: '100vh',
+              },
+            }),
+          }}
+        />
+        <Sidebar {...this.props} currentView={currentView} />
+      </ShellMain>
     );
   }
 }
