@@ -1,8 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/media-card", "type": "patch" },
-    { "name": "@uidu/media-viewer", "type": "patch" },
-    { "name": "@uidu/message", "type": "patch" }
-  ],
-  "dependents": []
-}

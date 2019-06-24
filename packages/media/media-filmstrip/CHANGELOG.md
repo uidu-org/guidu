@@ -1,5 +1,10 @@
 # @atlaskit/media-filmstrip
 
+## 0.1.10
+- [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
+
+  - Nextgen mediaviewer
+
 ## 0.1.9
 - [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
 
