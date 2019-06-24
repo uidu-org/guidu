@@ -1,1 +1,0 @@
-- Publish new media-viewer

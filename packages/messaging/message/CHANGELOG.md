@@ -1,5 +1,10 @@
 # @uidu/message
 
+## 0.1.12
+- [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
+
+  - Publish new media-viewer
+
 ## 0.1.11
 - [patch] [3db2594](https://github.org/uidu-org/guidu/commits/3db2594):
 

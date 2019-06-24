@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-card",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
   "uidu:src": "index.ts",
   "module": "index.js",

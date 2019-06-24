@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.1.11
+- [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
+
+  - Nextgen mediaviewer
+- [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
+
+  - Publish new media-viewer
+
 ## 0.1.10
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
