@@ -1,11 +1,11 @@
 // @flow
 
-import React, { type ComponentType } from 'react';
-import styled from 'styled-components';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import Tooltip from '@uidu/tooltip';
-import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import React, { ComponentType } from 'react';
 import { Code } from 'react-feather';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import styled from 'styled-components';
 import ErrorBoundary from './ErrorBoundary';
 import replaceSrc from './replaceSrc';
 

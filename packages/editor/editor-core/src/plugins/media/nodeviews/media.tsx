@@ -119,16 +119,16 @@ class MediaNode extends Component<MediaNodeProps> {
 
     return (
       <Card
-        context={viewContext as any}
-        resizeMode="stretchy-fit"
-        dimensions={cardDimensions}
-        identifier={identifier}
-        selectable={true}
-        selected={selected}
-        disableOverlay={true}
+        // context={viewContext as any}
+        // resizeMode="stretchy-fit"
+        // dimensions={cardDimensions}
+        identifier={(identifier as any).id}
+        // selectable={true}
+        // selected={selected}
+        // disableOverlay={true}
         onClick={onClick}
-        useInlinePlayer={!isMobile}
-        isLazy={!isMobile}
+        // useInlinePlayer={!isMobile}
+        // isLazy={!isMobile}
       />
     );
   }
