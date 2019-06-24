@@ -4,7 +4,7 @@ import {
   withImageLoader,
 } from '@atlaskit/editor-common';
 import { Context, Identifier } from '@atlaskit/media-core';
-import { Card } from '@uidu/media-card';
+import Card from '@uidu/media-card';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
