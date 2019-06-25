@@ -2,7 +2,6 @@ import { Message, MessageableProps } from '@uidu/message';
 import * as React from 'react';
 import { MentionProps } from 'react-mentions';
 
-
 export type MessageFormActionProps = {
   /** The base styling to apply to the button. */
   name: string | React.ElementType;
@@ -41,11 +40,11 @@ export type MessageFormProps = {
   onDismiss: () => void;
   /** The base styling to apply to the button. */
   onSubmit: () => void;
+  /** The base styling to apply to the button. */
+  attachments: Array<any>;
 };
 
 export type MessageFormState = {
-  /** The base styling to apply to the button. */
-  attachments: Array<any>;
   /** The base styling to apply to the button. */
   submitted: boolean;
 

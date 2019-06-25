@@ -10,18 +10,21 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.25"
+    "@uidu/docs": "^0.1.25",
+    "@uidu/media-picker": "^0.1.6"
   },
   "dependencies": {
+    "@loadable/component": "^5.10.1",
     "@types/emoji-mart": "^2.8.4",
     "@types/react-mentions": "^3.0.0",
     "@uidu/dropdown-menu": "^0.1.6",
     "@uidu/field-mentions": "^0.1.11",
+    "@uidu/field-text": "^0.1.12",
     "@uidu/form": "^0.1.27",
+    "@uidu/media-filmstrip": "^0.1.11",
     "@uidu/message": "^0.1.10",
     "@uidu/spinner": "^0.1.8",
     "emoji-mart": "^2.10.0",
-    "react-feather": "^1.1.6",
-    "react-loadable": "^5.5.0"
+    "react-feather": "^1.1.6"
   }
 }

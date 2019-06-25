@@ -13,10 +13,15 @@ import XHRUpload from '@uppy/xhr-upload';
 import React, { Component } from 'react';
 
 export default class MediaPicker extends Component<any> {
+  static defaultProps = {
+    onComplete: console.log,
+  };
+
   private uppy;
 
   constructor(props) {
     super(props);
+    const { onComplete } = props;
     this.uppy = Uppy({
       debug: true,
       allowMultipleUploads: true,
@@ -54,7 +59,7 @@ export default class MediaPicker extends Component<any> {
       });
     });
     this.uppy.on('complete', result => {
-      console.log(result);
+      onComplete(result);
     });
   }
 

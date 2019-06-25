@@ -44,6 +44,7 @@ export default class ChatWindow extends Component<
     betweenMinutes: 5,
     messageable: {},
     formActions: [],
+    formAttachments: [],
     actions: () => [],
     fetchMessages: () => Promise.resolve([]),
   };
@@ -114,6 +115,7 @@ export default class ChatWindow extends Component<
       betweenMinutes,
       actions,
       formActions,
+      formAttachments,
       isSelf,
       ...otherProps
     } = this.props;
@@ -239,6 +241,7 @@ export default class ChatWindow extends Component<
             <MessagesForm
               {...otherProps}
               actions={formActions}
+              attachments={formAttachments}
               ref={this.messageForm}
               mentionables={mentionables}
               message={{

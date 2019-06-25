@@ -20,9 +20,7 @@ export default class MessageFormActions extends PureComponent<any> {
         {actions.map(actionGroup => (
           <DropdownItemGroup key={actionGroup.name} title={actionGroup.name}>
             {actionGroup.children.map((action, index) => (
-              <DropdownItem key={index} {...action.props}>
-                {action.name}
-              </DropdownItem>
+              <DropdownItem key={index} {...action} />
             ))}
           </DropdownItemGroup>
         ))}

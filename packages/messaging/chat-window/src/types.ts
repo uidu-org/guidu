@@ -4,10 +4,14 @@ import * as React from 'react';
 
 export type ChatWindowProps = MessageFormProps & {
   /** The base styling to apply to the button */
-  fetchMessages: (messageable: MessageableProps, lastId: number | string) => Promise<any>;
+  fetchMessages: (
+    messageable: MessageableProps,
+    lastId: number | string,
+  ) => Promise<any>;
   /** The base styling to apply to the button */
   betweenMinutes: number;
   formActions: Array<any>;
+  formAttachments: Array<any>;
   /** The base styling to apply to the button */
   actions: ({ editing, setEditing, message, onDropdownChange }) => Array<any>;
   /** The base styling to apply to the button */
@@ -20,7 +24,7 @@ export type ChatWindowProps = MessageFormProps & {
 
 export type ChatWindowState = {
   replyTo: Message | null;
-}
+};
 
 export type ChatViewProps = {
   flipped?: boolean;
@@ -28,11 +32,11 @@ export type ChatViewProps = {
   scrollLoadThreshold?: number;
   shouldTriggerLoad?: () => boolean;
   onInfiniteLoad: () => Promise<any>;
-  loadingSpinnerDelegate: React.ReactNode,
+  loadingSpinnerDelegate: React.ReactNode;
   className?: string;
   returnScrollable?: (element: HTMLDivElement) => void;
-}
+};
 
 export type ChatViewState = {
   isInfiniteLoading: boolean;
-}
+};

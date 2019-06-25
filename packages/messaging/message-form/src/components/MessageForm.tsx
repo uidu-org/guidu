@@ -1,24 +1,17 @@
+import loadable from '@loadable/component';
 import FieldMentions, { defaultStyle } from '@uidu/field-mentions';
+import FieldText from '@uidu/field-text';
 import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
+import MediaFilmStrip from '@uidu/media-filmstrip';
 import Spinner from '@uidu/spinner';
 import classNames from 'classnames';
 import React, { cloneElement, Fragment } from 'react';
 import { Send, Smile, ThumbsUp } from 'react-feather';
-import Loadable from 'react-loadable';
 import { MessageFormProps, MessageFormState } from '../types';
 import MessageFormActions from './MessageFormActions';
 import MessageFormReplyTo from './MessageFormReplyTo';
 
-const LoadableEmojiPicker = Loadable({
-  loader: () => import('./MessageFormEmojiPicker'),
-  loading() {
-    return (
-      <div className="p-3 d-flex align-items-center justify-content-center">
-        <Spinner />
-      </div>
-    );
-  },
-});
+const LoadableEmojiPicker = loadable(() => import('./MessageFormEmojiPicker'));
 
 export default class MessagesForm extends React.Component<
   MessageFormProps,
@@ -31,6 +24,7 @@ export default class MessagesForm extends React.Component<
 
   static defaultProps = {
     actions: [],
+    attachments: [],
     placeholder: 'Add your message...',
     onSubmit: () => {},
     onDismiss: () => {},
@@ -41,7 +35,6 @@ export default class MessagesForm extends React.Component<
   constructor(props: MessageFormProps) {
     super(props);
     this.state = {
-      attachments: [],
       emojiPicker: false,
       submitted: false,
       submitLabel: props.message.body
@@ -55,9 +48,9 @@ export default class MessagesForm extends React.Component<
   };
 
   isValid = (canSubmit: boolean): boolean => {
-    if (this.state.attachments.length > 0) {
+    if (this.props.attachments.length > 0) {
       return (
-        this.state.attachments.filter(a => !a.signed_id).length === 0 &&
+        this.props.attachments.filter(a => !a.signed_id).length === 0 &&
         canSubmit
       );
     }
@@ -132,10 +125,13 @@ export default class MessagesForm extends React.Component<
       onDismiss,
       onSubmit,
       onReplyDismiss,
+      attachments,
     } = this.props;
     const { replyTo } = message;
 
     const { submitted, submitLabel } = this.state;
+
+    console.log(attachments);
 
     return (
       <Fragment>
@@ -151,6 +147,16 @@ export default class MessagesForm extends React.Component<
             'border-top p-3': !message.body,
           })}
         >
+          {attachments.length > 0 && (
+            <MediaFilmStrip
+              images={attachments.map(attachment => ({
+                id: attachment.id,
+                src: attachment.preview,
+                type: attachment.type,
+                alt: attachment.filename,
+              }))}
+            />
+          )}
           <div
             id="suggestionPortal"
             style={{
@@ -170,7 +176,6 @@ export default class MessagesForm extends React.Component<
               await this.handleSubmit(model);
               this.setState(
                 {
-                  attachments: [],
                   emojiPicker: false,
                   submitLabel: this.thumbSender(),
                   submitted: true,
@@ -254,7 +259,7 @@ export default class MessagesForm extends React.Component<
                 layout="elementOnly"
                 name="message[body]"
                 onChange={this.handleSubmitLabel}
-                required={this.state.attachments.length === 0}
+                required={this.props.attachments.length === 0}
                 value={message.body ? { value: message.body } : ''}
                 onKeyDown={(event: KeyboardEvent) => {
                   if (event.keyCode === 13 && !event.shiftKey) {
@@ -285,18 +290,23 @@ export default class MessagesForm extends React.Component<
                 }}
                 suggestionsPortalHost={this.suggestionsPortal.current}
               />
-              {/* {attachments.map((attachment, index) => (
-              <Input
-                key={attachment.signed_id}
-                type="hidden"
-                name={`message[attachments][${index}][signed_blob_id]`}
-                value={attachment.signed_id}
-              />
-            ))} */}
+              {attachments.map((attachment, index) => (
+                <FieldText
+                  key={attachment.signed_id}
+                  type="hidden"
+                  name={`message[attachments][${index}][signed_blob_id]`}
+                  value={attachment.signed_id}
+                />
+              ))}
             </div>
           </Form>
           {this.state.emojiPicker && (
             <LoadableEmojiPicker
+              fallback={
+                <div className="p-3 d-flex align-items-center justify-content-center">
+                  <Spinner />
+                </div>
+              }
               mentionsInput={this.mentionsInput}
               mentionsComponentInput={this.mentionsComponentInput}
             />
