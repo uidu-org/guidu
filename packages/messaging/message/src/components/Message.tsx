@@ -94,7 +94,12 @@ export default class Message extends Component<MessageProps, MessageState> {
             })}
         </StyledMessage>,
         (message.attachments || []).length > 0 && showAttachments && (
-          <MessagesAttachments attachments={message.attachments} />
+          <MessagesAttachments
+            attachments={message.attachments.map(attachment => ({
+              ...attachment,
+              author: message.messager,
+            }))}
+          />
         ),
       ];
     }

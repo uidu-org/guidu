@@ -8,8 +8,8 @@ const LoadableVideo = loadable(() => import('./Video'));
 export default class View extends PureComponent<any> {
   render() {
     const { data } = this.props;
-    console.log(data);
-    switch (data.type) {
+
+    switch (data.kind) {
       case 'image':
         return <LoadableImage {...this.props} />;
       case 'video':

@@ -97,8 +97,8 @@ export default class View extends Component<ViewProps, ViewState> {
   handlePause = () => {
     this.setState({ paused: true });
   };
-  playOrPause = (e, type: 'play' | 'pause' | 'toggle' = 'toggle') => {
-    e.preventDefault();
+  playOrPause = (type: 'play' | 'pause' | 'toggle' = 'toggle') => {
+    // e.preventDefault();
     const { video } = this;
 
     switch (type) {
@@ -142,7 +142,7 @@ export default class View extends Component<ViewProps, ViewState> {
         <video
           autoPlay={false}
           controls={false}
-          onClick={this.playOrPause}
+          onClick={_e => this.playOrPause()}
           poster={data.poster}
           ref={this.getVideo}
           style={{ width: '100%', height: 'auto' }}
