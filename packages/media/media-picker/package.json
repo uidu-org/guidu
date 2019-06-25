@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "uidu media picker, using Uppy",
   "uidu:src": "index.ts",
   "module": "index.js",
