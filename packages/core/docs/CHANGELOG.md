@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.28
+- [patch] [fcbe74e](https://github.org/uidu-org/guidu/commits/fcbe74e):
+
+  - Remove some dependencies
+
 ## 0.1.27
 - [patch] [c6666ae](https://github.org/uidu-org/guidu/commits/c6666ae):
 

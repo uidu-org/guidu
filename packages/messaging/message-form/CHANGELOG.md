@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.11
+- [patch] [fad97b6](https://github.org/uidu-org/guidu/commits/fad97b6):
+
+  - Added first draft of message attachments and media-picker
+
 ## 0.1.10
 - [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
 
