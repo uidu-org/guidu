@@ -1,5 +1,10 @@
 # @uidu/blocks
 
+## 0.1.5
+- [patch] [134e912](https://github.org/uidu-org/guidu/commits/134e912):
+
+  - Try remove warnings
+
 ## 0.1.4
 - [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
 

@@ -1,5 +1,10 @@
 # @uidu/media-picker
 
+## 0.1.6
+- [patch] [e51d1cf](https://github.org/uidu-org/guidu/commits/e51d1cf):
+
+  - Publish
+
 ## 0.1.2
 - [patch] [bb44dc4](https://github.org/uidu-org/guidu/commits/bb44dc4):
 
