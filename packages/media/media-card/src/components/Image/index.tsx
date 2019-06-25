@@ -5,9 +5,9 @@ export default class Image extends PureComponent<any> {
   render() {
     const { src } = this.props;
     return (
-      <StyledImage style={{ backgroundImage: "url('" + src + "')" }}>
-        <span className="profile-attachment-content"></span>
-      </StyledImage>
+      <StyledImage
+        style={{ backgroundImage: "url('" + src + "')" }}
+      ></StyledImage>
     );
   }
 }

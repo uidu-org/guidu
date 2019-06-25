@@ -10,4 +10,8 @@ export const StyledImage = styled.div`
   color: inherit;
   position: absolute;
   border-radius: 0.25rem;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 `;

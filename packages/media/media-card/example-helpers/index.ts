@@ -1,22 +1,23 @@
 import faker from 'faker';
 
 export const fakeImage = () => ({
-  type: 'image',
+  kind: 'image',
   id: faker.random.uuid(),
   src: faker.image.business(),
-  alt: faker.finance.accountName(),
-  caption: faker.lorem.sentence(),
+  filename: faker.finance.accountName(),
+  description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
+  createdAt: faker.date.recent(),
 });
 
 export const fakeVideo = () => ({
-  type: 'video',
+  kind: 'video',
   id: faker.random.uuid(),
-  src: faker.image.business(),
-  alt: faker.finance.accountName(),
-  caption: faker.lorem.sentence(),
+  filename: faker.finance.accountName(),
+  src: 'https://peach.blender.org/wp-content/uploads/bbb-splash.png',
+  description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
-  poster: 'https://peach.blender.org/wp-content/uploads/bbb-splash.png',
+  createdAt: faker.date.recent(),
   sources: [
     {
       type: 'video/mp4',
@@ -30,21 +31,23 @@ export const fakeVideo = () => ({
 });
 
 export const fakeFile = () => ({
-  type: 'file',
+  kind: 'file',
   id: faker.random.uuid(),
   src: faker.image.dataUri(),
-  alt: faker.finance.accountName(),
-  caption: faker.lorem.sentence(),
+  filename: faker.finance.accountName(),
+  description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
+  createdAt: faker.date.recent(),
 });
 
 export const fakeLink = () => ({
-  type: 'link',
+  kind: 'link',
   id: faker.random.uuid(),
   src: faker.image.dataUri(),
-  alt: faker.finance.accountName(),
-  caption: faker.lorem.sentence(),
+  filename: faker.finance.accountName(),
+  description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
+  createdAt: faker.date.recent(),
 });
 
 export const fetchAttachments = () => {
@@ -52,8 +55,10 @@ export const fetchAttachments = () => {
     let wait = setTimeout(() => {
       clearTimeout(wait);
       resolve([
-        ...Array.from(Array(10).keys()).map(i => fakeImage()),
-        ...Array.from(Array(10).keys()).map(i => fakeVideo()),
+        ...Array.from(Array(1).keys()).map(i => fakeImage()),
+        ...Array.from(Array(1).keys()).map(i => fakeVideo()),
+        ...Array.from(Array(1).keys()).map(i => fakeFile()),
+        ...Array.from(Array(1).keys()).map(i => fakeLink()),
       ]);
     }, 3000);
   });

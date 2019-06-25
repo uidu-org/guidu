@@ -1,19 +1,16 @@
-export type MediaCardStatus =
-  | 'uploading'
-  | 'loading'
-  | 'processing'
-  | 'complete'
-  | 'error'
-  | 'failed-processing';
-
-export type MediaCardProps = {
-  identifier?: string | number;
-  file?: any;
-  onClick?: () => void;
-  style?: any;
+export type FileProps = {
+  src: string | undefined;
+  kind: string;
+  description?: string;
+  createdAt: string;
+  id: number | string;
+  filename: string;
+  blob: any;
+  extension: string;
 };
 
-export type MediaCardState = {
-  status: MediaCardStatus;
-  file: any;
+export type MediaCardProps = {
+  file: FileProps;
+  onClick?: () => void;
+  style?: any;
 };

@@ -6,10 +6,18 @@ export default class Basic extends PureComponent {
   render() {
     return (
       <Fragment>
-        <MediaCard file={fakeImage()} />
-        <MediaCard file={fakeVideo()} />
-        <MediaCard file={fakeFile()} />
-        <MediaCard file={fakeLink()} />
+        <div style={{ width: '200px' }}>
+          <MediaCard file={fakeImage()} />
+        </div>
+        <div style={{ width: '200px' }}>
+          <MediaCard file={fakeVideo()} />
+        </div>
+        <div style={{ width: '200px' }}>
+          <MediaCard file={fakeFile()} />
+        </div>
+        <div style={{ width: '200px' }}>
+          <MediaCard file={fakeLink()} />
+        </div>
       </Fragment>
     );
   }

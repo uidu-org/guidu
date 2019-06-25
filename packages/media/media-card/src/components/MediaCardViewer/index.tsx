@@ -1,16 +1,13 @@
 import React, { PureComponent } from 'react';
+import StyledMediaCardViewer from './styled';
 
 export default class MediaCardViewer extends PureComponent<any> {
   render() {
     const { children, ...otherProps } = this.props;
     return (
-      <div
-        className="card"
-        style={{ width: '300px', height: '128px' }}
-        {...otherProps}
-      >
+      <StyledMediaCardViewer className="card" {...otherProps}>
         {children}
-      </div>
+      </StyledMediaCardViewer>
     );
   }
 }

@@ -1,8 +1,12 @@
+import { initializeFileTypeIcons } from '@uifabric/file-type-icons';
 import React, { PureComponent } from 'react';
 import { MediaCardProps } from '../types';
+import File from './File';
 import Image from './Image';
 import MediaCardViewer from './MediaCardViewer';
 import Video from './Video';
+
+initializeFileTypeIcons();
 
 export default class MediaCard extends PureComponent<MediaCardProps> {
   render() {
@@ -13,7 +17,7 @@ export default class MediaCard extends PureComponent<MediaCardProps> {
     if (!file) {
       content = 'File not found';
     } else {
-      switch (file.type) {
+      switch (file.kind) {
         case 'image':
           content = <Image {...file} />;
           break;
@@ -21,11 +25,8 @@ export default class MediaCard extends PureComponent<MediaCardProps> {
           content = <Video {...file} />;
           break;
         default:
-          content = (
-            <p>
-              Unupported file type <code>{file.type}</code>
-            </p>
-          );
+          content = <File {...file} />;
+          break;
       }
     }
 

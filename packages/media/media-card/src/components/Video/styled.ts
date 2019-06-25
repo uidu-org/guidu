@@ -10,6 +10,10 @@ export const StyledPoster = styled.div<{ poster: string }>`
   overflow: hidden;
   width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 `;
 
 export const StyledPlayButton = styled.button`
