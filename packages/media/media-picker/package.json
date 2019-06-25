@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "uidu media picker, using Uppy",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@uidu/button": "^0.1.38",
-    "@uidu/docs": "^0.1.27",
+    "@uidu/docs": "^0.1.28",
     "@uidu/modal-dialog": "^0.1.10"
   },
   "dependencies": {

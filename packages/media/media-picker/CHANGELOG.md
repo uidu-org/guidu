@@ -1,5 +1,10 @@
 # @uidu/media-picker
 
+## 0.1.7
+- [patch] [fad97b6](https://github.org/uidu-org/guidu/commits/fad97b6):
+
+  - Added first draft of message attachments and media-picker
+
 ## 0.1.6
 - [patch] [e51d1cf](https://github.org/uidu-org/guidu/commits/e51d1cf):
 

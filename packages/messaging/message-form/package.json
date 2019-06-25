@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Message form",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,8 +10,8 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.25",
-    "@uidu/media-picker": "^0.1.6"
+    "@uidu/docs": "^0.1.28",
+    "@uidu/media-picker": "^0.1.7"
   },
   "dependencies": {
     "@loadable/component": "^5.10.1",

@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.18
+- [patch] [fad97b6](https://github.org/uidu-org/guidu/commits/fad97b6):
+
+  - Added first draft of message attachments and media-picker
+
 ## 0.1.17
 - [patch] [3902e2c](https://github.org/uidu-org/guidu/commits/3902e2c):
 
