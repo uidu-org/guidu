@@ -1,10 +1,10 @@
 // @flow
 
-import React, { Component, type Node } from 'react';
-import { colors, layers, gridSize } from '@uidu/theme';
-import { ArrowLeft, ArrowRight, ArrowUp, ArrowDown } from 'react-feather';
-
+import { colors, gridSize, layers } from '@uidu/theme';
+import React, { Component, Node } from 'react';
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from 'react-feather';
 import { Slide } from './transitions';
+
 import type { DrawerPrimitiveProps, DrawerSize, DrawerOrigin } from './types';
 
 // Misc.
@@ -65,7 +65,7 @@ const Wrapper = ({
 }) => {
   return (
     <div
-      css={{
+      style={{
         backgroundColor: colors.N0,
         display: 'flex',
         overflow: 'hidden',
@@ -82,10 +82,7 @@ const Wrapper = ({
 // ------------------------------
 
 const Content = props => (
-  <div
-    css={{ flex: 1, marginTop: 3 * gridSize(), overflow: 'auto' }}
-    {...props}
-  />
+  <div style={{ flex: 1, overflow: 'auto' }} {...props} />
 );
 
 // Sidebar / Icons etc.
@@ -94,7 +91,7 @@ const Content = props => (
 const Sidebar = props => {
   return (
     <div
-      css={{
+      style={{
         alignItems: 'center',
         boxSizing: 'border-box',
         color: colors.N500,
@@ -115,7 +112,7 @@ type IconWrapperProps = { onClick?: (SyntheticMouseEvent<*>) => void };
 const IconWrapper = (props: IconWrapperProps) => (
   <button
     type="button"
-    css={{
+    style={{
       alignItems: 'center',
       background: 0,
       border: 0,
@@ -155,14 +152,14 @@ export default class DrawerPrimitive extends Component<DrawerPrimitiveProps> {
 
     return (
       <Slide component={Wrapper} onExited={onCloseComplete} {...props}>
-        <Sidebar>
+        {/* <Sidebar>
           <IconWrapper
             onClick={onClose}
             data-test-selector="DrawerPrimitiveSidebarCloseButton"
           >
             {Icon ? <Icon size="large" /> : icons[this.props.origin]}
           </IconWrapper>
-        </Sidebar>
+        </Sidebar> */}
         <Content>{children}</Content>
       </Slide>
     );
