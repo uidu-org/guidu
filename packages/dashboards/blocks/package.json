@@ -8,7 +8,9 @@
   "repository": "https://github.com/uidu-org/guidu",
   "author": "uidu",
   "license": "MIT",
-  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@uidu/docs": "^0.1.27"
   },

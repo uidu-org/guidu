@@ -45,10 +45,10 @@
     "@atlaskit/util-service-support" "2.0.4"
     tslib "^1.7.1"
 
-"@atlaskit/adf-schema@^2.5.5", "@atlaskit/adf-schema@^2.5.8", "@atlaskit/adf-schema@^2.6.1", "@atlaskit/adf-schema@^2.8.0":
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/adf-schema/-/adf-schema-2.8.1.tgz#3cf654d3d19933bb298bd0e2d32999dce457ad42"
-  integrity sha512-TrdqoHGxhMglJ8nzu7yfC613Pa+SukRoRMBtDIJfi4exfeXIYrcbDEt/mMW2+yqNWd61BwU6r4l5OupZtQ6OwQ==
+"@atlaskit/adf-schema@^2.5.5", "@atlaskit/adf-schema@^2.6.1", "@atlaskit/adf-schema@^2.8.0", "@atlaskit/adf-schema@^2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/adf-schema/-/adf-schema-2.9.0.tgz#9ab77446c941c49bd4d3e05e9bc0618c1813fa43"
+  integrity sha512-6PL5y88j/nD/XYg3UAaSb+12i091j+4ltCDm5ia0/DXF9h6hKjX82v8zxzRWs0J/N8BpYF+KJ59QtWB9sM/XkA==
   dependencies:
     "@types/linkify-it" "^2.0.4"
     "@types/prosemirror-model" "^1.5.0"
@@ -57,7 +57,7 @@
     css-color-names "0.0.4"
     linkify-it "^2.0.3"
     prosemirror-model "^1.7.0"
-    prosemirror-view "^1.8.3"
+    prosemirror-view "^1.9.10"
     tslib "^1.9.3"
 
 "@atlaskit/adf-utils@^6.1.0":
@@ -423,13 +423,13 @@
     react-uid "^2.2.0"
 
 "@atlaskit/dropdown-menu@^8.0.4", "@atlaskit/dropdown-menu@^8.0.5", "@atlaskit/dropdown-menu@^8.0.6":
-  version "8.0.6"
-  resolved "https://registry.yarnpkg.com/@atlaskit/dropdown-menu/-/dropdown-menu-8.0.6.tgz#b834934b0a42e221cce54aec8088cf29f131e818"
-  integrity sha512-WLy2J9NFXYRDHQ/DJfLI6sT7LFMWb9LxQ33X0y/M0XTBL4esYQw1YEfiMRzcdSkvtX8tel/WAMiHnix3MVjUiA==
+  version "8.0.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/dropdown-menu/-/dropdown-menu-8.0.7.tgz#07c9e2111d934f5ebc63004ee8cfb8e6a5adc920"
+  integrity sha512-KE0cI6kaXPreArkEjwe7azycOlm8E50hEOSD7qguS04yJHXdA7HbQ0cdNPY7XxKafoq10onpdyz1Cpnybtt2mA==
   dependencies:
     "@atlaskit/analytics-next" "^5.0.2"
     "@atlaskit/button" "^13.0.8"
-    "@atlaskit/droplist" "^9.0.6"
+    "@atlaskit/droplist" "^9.0.7"
     "@atlaskit/icon" "^18.0.4"
     "@atlaskit/item" "^10.0.4"
     "@atlaskit/theme" "^9.1.1"
@@ -473,15 +473,15 @@
     keycode "^2.1.7"
     prop-types "^15.5.10"
 
-"@atlaskit/droplist@^9.0.5", "@atlaskit/droplist@^9.0.6":
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/@atlaskit/droplist/-/droplist-9.0.6.tgz#ef8d5ee1149cd6846eb17cc6c1d2943c6058e1ef"
-  integrity sha512-wvWePLEMAEIJT1M1WBAe6n8nLs8I2MgfFSn601yD9FFgbGN5MFv4zLI/l/RbSWGK+u/vGwFOhxAuo9p0zuhS2A==
+"@atlaskit/droplist@^9.0.5", "@atlaskit/droplist@^9.0.6", "@atlaskit/droplist@^9.0.7":
+  version "9.0.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/droplist/-/droplist-9.0.7.tgz#63f3ee54ce40fcdd47a75984c9c3ee6332a58dc4"
+  integrity sha512-NQyUR3mNp/1Npi48tUF8Dt7TPhXIdAM0KT7JUyuNLlHBeFjORwsxLjB4299coETU1p98TU6xyyNSgzfID8luOQ==
   dependencies:
     "@atlaskit/analytics-next" "^5.0.2"
     "@atlaskit/icon" "^18.0.4"
     "@atlaskit/item" "^10.0.4"
-    "@atlaskit/layer" "^7.0.2"
+    "@atlaskit/layer" "^7.0.3"
     "@atlaskit/spinner" "^12.0.1"
     "@atlaskit/theme" "^9.1.1"
     "@atlaskit/tooltip" "^15.0.0"
@@ -512,17 +512,18 @@
     prosemirror-markdown "^1.2.0"
     prosemirror-model "^1.7.0"
 
-"@atlaskit/editor-common@^39.10.0", "@atlaskit/editor-common@^39.3.0", "@atlaskit/editor-common@^39.8.0", "@atlaskit/editor-common@^39.8.5", "@atlaskit/editor-common@^39.9.0":
-  version "39.10.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-39.10.0.tgz#6716ec621097195948c761dac6a5221bd2fdf194"
-  integrity sha512-f6enWeNm86YolMGrnppqrjcM+vNP42uYhxTn+yT+wigzYd7SEtePVDCKtMVASQutz9x2WyIjyfbcnr5qLAZYcQ==
+"@atlaskit/editor-common@^39.12.0", "@atlaskit/editor-common@^39.3.0", "@atlaskit/editor-common@^39.8.5", "@atlaskit/editor-common@^39.9.0":
+  version "39.12.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-39.12.0.tgz#5c22cefb031a453f0eae94d1ee265acc8a480c1b"
+  integrity sha512-aZz9p1SdOUQWupEzcECm+rMIAw1GAapjbj0kXMWEPAKHchZA9kFK4B5FGYWsJkocqjiYObgXjZlk1p1BLpXynw==
   dependencies:
-    "@atlaskit/adf-schema" "^2.8.0"
+    "@atlaskit/adf-schema" "^2.9.0"
     "@atlaskit/analytics-namespaced-context" "^4.1.0"
     "@atlaskit/analytics-next" "^5.0.0"
     "@atlaskit/emoji" "^62.1.6"
     "@atlaskit/icon" "^18.0.0"
     "@atlaskit/media-card" "^63.1.5"
+    "@atlaskit/media-client" "^1.5.0"
     "@atlaskit/mention" "^18.3.1"
     "@atlaskit/profilecard" "^12.0.0"
     "@atlaskit/theme" "^9.0.0"
@@ -534,16 +535,16 @@
     css-color-names "0.0.4"
     date-fns "^1.30.1"
     prosemirror-model "^1.7.0"
-    prosemirror-view "^1.8.3"
+    prosemirror-view "^1.9.10"
     raf-schd "^2.1.0"
 
-"@atlaskit/editor-core@^112.14.0":
-  version "112.19.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/editor-core/-/editor-core-112.19.1.tgz#8fdcde61b77392708ceb23e58c081f82a51a42d9"
-  integrity sha512-zaeJw972W8KybX8PHbCH1mc5Z91U2f9lR1DZprsLKjHQo95Ua2ucZROuCpx7RlMEEjC4F2HIv3J5akulTUeChQ==
+"@atlaskit/editor-core@^112.22.0":
+  version "112.22.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/editor-core/-/editor-core-112.22.0.tgz#5d538bbeb035e53a64db0c7e178da79e74c6e156"
+  integrity sha512-Evbt+2iLbPDZ1NbFFFKIQugAsMLiVb/ff6WOXtBUnPOBa9hbyIoNqmGjxLSYSSpifXRjfVYj01+n806S5p2bRw==
   dependencies:
     "@atlaskit/activity" "^1.0.1"
-    "@atlaskit/adf-schema" "^2.8.0"
+    "@atlaskit/adf-schema" "^2.9.0"
     "@atlaskit/adf-utils" "^6.1.0"
     "@atlaskit/analytics-gas-types" "^4.0.4"
     "@atlaskit/analytics-listeners" "^6.1.0"
@@ -556,7 +557,7 @@
     "@atlaskit/code" "^11.0.1"
     "@atlaskit/date" "^0.7.0"
     "@atlaskit/droplist" "^9.0.5"
-    "@atlaskit/editor-common" "^39.10.0"
+    "@atlaskit/editor-common" "^39.12.0"
     "@atlaskit/editor-json-transformer" "^6.1.0"
     "@atlaskit/editor-markdown-transformer" "^3.1.0"
     "@atlaskit/emoji" "^62.1.7"
@@ -564,6 +565,7 @@
     "@atlaskit/item" "^10.0.3"
     "@atlaskit/logo" "^12.0.2"
     "@atlaskit/media-card" "^63.1.5"
+    "@atlaskit/media-client" "^1.5.0"
     "@atlaskit/media-editor" "^36.1.2"
     "@atlaskit/media-filmstrip" "^34.2.1"
     "@atlaskit/media-picker" "^44.0.0"
@@ -576,6 +578,7 @@
     "@atlaskit/task-decision" "^15.0.4"
     "@atlaskit/theme" "^9.0.3"
     "@atlaskit/tooltip" "^15.0.0"
+    "@atlaskit/type-helpers" "^4.1.1"
     "@atlaskit/util-service-support" "^4.0.3"
     "@atlaskit/width-detector" "^2.0.0"
     "@sentry/browser" "^4.6.3"
@@ -600,7 +603,7 @@
     prosemirror-collab "^1.0.0"
     prosemirror-commands "^1.0.7"
     prosemirror-history "^1.0.2"
-    prosemirror-inputrules "^1.0.1"
+    prosemirror-inputrules "^1.0.4"
     prosemirror-keymap "^1.0.1"
     prosemirror-markdown "^1.2.0"
     prosemirror-model "^1.7.0"
@@ -609,7 +612,7 @@
     prosemirror-tables "^0.8.1"
     prosemirror-transform "^1.1.3"
     prosemirror-utils "0.9.0"
-    prosemirror-view "^1.8.3"
+    prosemirror-view "^1.9.10"
     raf-schd "^2.1.0"
     re-resizable "^4.9.0"
     react-loadable "^5.1.0"
@@ -637,14 +640,14 @@
     prosemirror-model "^1.7.0"
 
 "@atlaskit/editor-test-helpers@^9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/editor-test-helpers/-/editor-test-helpers-9.4.1.tgz#9ee74e83261e39c5ad84b8b9e01f729f1e2e1f48"
-  integrity sha512-FSIhG1tiUG9fXPxemZnr/qp/9PJP4N681xKDf0BfQVQ9YXCABuawhB/qfX+iTPL1BgkWOzxjYTXUOUoomqAvMw==
+  version "9.5.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/editor-test-helpers/-/editor-test-helpers-9.5.0.tgz#656706be79714feb116e07ac6cff1884c79522b1"
+  integrity sha512-EM9emZsZCoLuiFtt/2hlOdh8hsyF8LVJJiLiFsa1FQEtgIS5B4mZLRHZml3J53fBftLv6INTmgA5PYMjQpNMog==
   dependencies:
-    "@atlaskit/adf-schema" "^2.5.8"
+    "@atlaskit/adf-schema" "^2.9.0"
     "@atlaskit/analytics-next" "^5.0.0"
-    "@atlaskit/editor-common" "^39.8.0"
-    "@atlaskit/editor-core" "^112.14.0"
+    "@atlaskit/editor-common" "^39.12.0"
+    "@atlaskit/editor-core" "^112.22.0"
     "@atlaskit/icon" "^18.0.0"
     "@atlaskit/media-core" "^30.0.4"
     "@atlaskit/media-test-helpers" "^24.0.3"
@@ -656,7 +659,7 @@
     prosemirror-state "^1.2.2"
     prosemirror-tables "^0.8.1"
     prosemirror-utils "0.9.0"
-    prosemirror-view "^1.8.3"
+    prosemirror-view "^1.9.10"
     react-intl "^2.6.0"
 
 "@atlaskit/emoji@^62.0.0", "@atlaskit/emoji@^62.1.6", "@atlaskit/emoji@^62.1.7", "@atlaskit/emoji@^62.2.0":
@@ -1024,10 +1027,10 @@
     raf-schd "^2.1.0"
     react-scrolllock "^3.0.2"
 
-"@atlaskit/layer@^7.0.0", "@atlaskit/layer@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@atlaskit/layer/-/layer-7.0.2.tgz#f85d09c2f5622e9b2a2f755f80e7ee5553e6e90a"
-  integrity sha512-sq2hsDrOjBRpp9fYK2fJl/hJY+X5QW6FASyyS+3rBZVVazLYDQTrKiXDUKi7t3lcu3QEXCA/u7yfCRABHERl5Q==
+"@atlaskit/layer@^7.0.0", "@atlaskit/layer@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@atlaskit/layer/-/layer-7.0.3.tgz#f63c40e5d18f71a5c6764267c5c23ce9be3a9e47"
+  integrity sha512-NhJFTAKfFchRUKP9kyZDpvHdr1PokLoSRPYNeR+cg+LHr0lway27h8MKhZ6ySFQfqLi1kIlBx0Gz8noIhODoEw==
   dependencies:
     "@babel/runtime" "^7.0.0"
     popper.js "^1.14.1"
@@ -1157,9 +1160,9 @@
     uuid "^3.1.0"
 
 "@atlaskit/media-editor@^36.1.1", "@atlaskit/media-editor@^36.1.2":
-  version "36.1.2"
-  resolved "https://registry.yarnpkg.com/@atlaskit/media-editor/-/media-editor-36.1.2.tgz#d036bbb38892583ce0c0ef52723b0e15f91155f3"
-  integrity sha512-+Mu+e9Sqy332sDVQlp6z3ZAhyvyRLJJ1iwKiSN4i/pARaDR/LYHrnzbZnBZrx6aaa+Ef9+DOivVImKLIq0WuTg==
+  version "36.2.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/media-editor/-/media-editor-36.2.0.tgz#34046f02647bb1c2b28051bb2a017131534ef8f2"
+  integrity sha512-z1N8Tht/bJCA5w9gvnbuNXMxKc9Ryb9aF69j+xZBLT/CdQN8xziJB7XFlbm44HSRQSYV1CCnJ2ObVcvsXuf1SQ==
   dependencies:
     "@atlaskit/button" "^13.0.8"
     "@atlaskit/field-range" "^7.0.4"
@@ -5362,9 +5365,9 @@ ast-types@0.9.6:
   integrity sha1-ECyenpAF0+fjgpvwxPok7oYu6bk=
 
 ast-types@0.x.x:
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.13.1.tgz#9461428a270c5a27fda44b738dd3bab2e9353003"
-  integrity sha512-b+EeK0WlzrSmpMw5jktWvQGxblpWnvMrV+vOp69RLjzGiHwWV0vgq75DPKtUjppKni3yWwSW8WLGV3Ch/XIWcQ==
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/ast-types/-/ast-types-0.13.2.tgz#df39b677a911a83f3a049644fb74fdded23cea48"
+  integrity sha512-uWMHxJxtfj/1oZClOxDEV1sQ1HCDkA4MG8Gr69KKeBjEVH0R84WlejZ0y2DcwyBlpAEMltmVYkVgqfLFb2oyiA==
 
 astral-regex@^1.0.0:
   version "1.0.0"
@@ -7283,14 +7286,14 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000957:
-  version "1.0.30000976"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000976.tgz#33c6bc12934b003baaa9c1fa9de399122d26e2f9"
-  integrity sha512-QvzPHBh2cYmilQAiiamun3ooHRGKFKtVwLzzx0RG7avjpj7Gii89Yzs92EKeHNqbAA2rlcFXg4GzP/tC68OGuw==
+  version "1.0.30000977"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000977.tgz#8ee0141e26443941ae02e06826357bf4ee847541"
+  integrity sha512-V+FisJLGKnEZg7Dmc1QxKEM62LJKOYIF8xEFCg9N98nCdac1gBZioxtYOXcscZtKwsoLcwyA+YFrgIMZ43ENfA==
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000939, caniuse-lite@^1.0.30000955, caniuse-lite@^1.0.30000971, caniuse-lite@^1.0.30000975:
-  version "1.0.30000976"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000976.tgz#d30fe12662cb2a21e130d307db9907513ca830a2"
-  integrity sha512-tleNB1IwPRqZiod6nUNum63xQCMN96BUO2JTeiwuRM7p9d616EHsMBjBWJMudX39qCaPuWY8KEWzMZq7A9XQMQ==
+  version "1.0.30000977"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000977.tgz#7da2ca14cae2fddb368c05c57ab4a529afd658ff"
+  integrity sha512-RTXL32vdfAc2g9aoDL6vnBzbOO/3sM+T+YX4m7W9iFZnl3qIz7WYoZZpcZpALud8xq4+N56rnruX/NQy9HQu6A==
 
 capture-exit@^2.0.0:
   version "2.0.0"
@@ -9791,9 +9794,9 @@ ejs@^2.5.9, ejs@^2.6.1:
   integrity sha512-PcW2a0tyTuPHz3tWyYqtK6r1fZ3gp+3Sop8Ph+ZYN81Ob5rwmbHEzaqs10N3BEsaGTkh/ooniXK+WwszGlc2+Q==
 
 electron-to-chromium@^1.3.122, electron-to-chromium@^1.3.164:
-  version "1.3.172"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.172.tgz#1eafb3afdc47bcb9c2a2249b2736be352016da4b"
-  integrity sha512-bHgFvYeHBiQNNuY/WvoX37zLosPgMbR8nKU1r4mylHptLvuMMny/KG/L28DTIlcoOCJjMAhEimy3DHDgDayPbg==
+  version "1.3.173"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.173.tgz#275b9ba235447b95fc3204d32ca2c5a8bf2ca599"
+  integrity sha512-weH16m8as+4Fy4XJxrn/nFXsIqB7zkxERhvj/5YX2HE4HB8MCu98Wsef4E3mu0krIT27ic0bGsr+TvqYrUn6Qg==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -11233,9 +11236,9 @@ flow-copy-source@^2.0.3:
     yargs "^13.1.0"
 
 flow-parser@^0.*:
-  version "0.101.1"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.101.1.tgz#06bf99f73c39cfa6ad0c69f1eb101dc7a4bf4f7d"
-  integrity sha512-5XI7KnnndL1E0bmZp+SURCeNe0mZ86QHtwnmmn91J7Q3VptG26QEpH8pEecN+UgKRFm23K9zzTeesJhmuGA+mg==
+  version "0.102.0"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.102.0.tgz#5b42d36759d50bd73509b2a2fc8b5a00162a03c1"
+  integrity sha512-lePuMLr6QXv3AwTCl/pnh55YIzHNHHNPl0FW0wuug+tJKSN2UoWFCriANsYNax0Bm0GivHUGQPPQ/GmGgEXbSA==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
@@ -12624,7 +12627,7 @@ http-deceiver@^1.2.7:
   resolved "https://registry.yarnpkg.com/http-deceiver/-/http-deceiver-1.2.7.tgz#fa7168944ab9a519d337cb0bec7284dc3e723d87"
   integrity sha1-+nFolEq5pRnTN8sL7HKE3D5yPYc=
 
-http-errors@1.7.2, http-errors@~1.7.2:
+http-errors@1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.2.tgz#4f5029cf13239f31036e5b2e55292bcfbcc85c8f"
   integrity sha512-uUQBt3H/cSIVfch6i1EuPNy/YsRSOUBXTVfZ+yR7Zjez3qjBz6i9+i4zjNaoqcoFVI4lQJ5plg63TvGfRSDCRg==
@@ -12652,6 +12655,17 @@ http-errors@~1.6.2:
     inherits "2.0.3"
     setprototypeof "1.1.0"
     statuses ">= 1.4.0 < 2"
+
+http-errors@~1.7.2:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-1.7.3.tgz#6c619e4f9c60308c38519498c14fbb10aacebb06"
+  integrity sha512-ZTTX0MWrsQ2ZAhA1cejAwDLycFsd7I7nVtnkT3Ol0aqodaKW+0CTZDQ1uBv5whptCnc8e8HeRRJxRs0kmm/Qfw==
+  dependencies:
+    depd "~1.1.2"
+    inherits "2.0.4"
+    setprototypeof "1.1.1"
+    statuses ">= 1.5.0 < 2"
+    toidentifier "1.0.0"
 
 "http-parser-js@>=0.4.0 <0.4.11":
   version "0.4.10"
@@ -12904,7 +12918,7 @@ inflight@^1.0.4:
     once "^1.3.0"
     wrappy "1"
 
-inherits@2, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
+inherits@2, inherits@2.0.4, inherits@^2.0.1, inherits@^2.0.3, inherits@~2.0.0, inherits@~2.0.1, inherits@~2.0.3:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.4.tgz#0fa2c64f932917c3433a0ded55363aae37416b7c"
   integrity sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==
@@ -18607,7 +18621,7 @@ prosemirror-history@^1.0.2, prosemirror-history@^1.0.4:
     prosemirror-transform "^1.0.0"
     rope-sequence "^1.2.0"
 
-prosemirror-inputrules@^1.0.1, prosemirror-inputrules@^1.0.4:
+prosemirror-inputrules@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prosemirror-inputrules/-/prosemirror-inputrules-1.0.4.tgz#8ae84d9c147abb448b86063ff422e801c4b1658d"
   integrity sha512-RhuBghqUgYWm8ai/P+k1lMl1ZGvt6Cs3Xeur8oN0L1Yy+Z5GmsTp3fT8RVl+vJeGkItEAxAit9Qh7yZxixX7rA==
@@ -18682,7 +18696,7 @@ prosemirror-utils@^0.9.2:
   resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-0.9.2.tgz#1d0c9134a7dae12516e81e7d232dbb9290567a11"
   integrity sha512-k9WXksx+MMwZ5hrMCvD/k8O1trCohDFhBp8g0e3yZIQ83ZAK0FsApEH8fHidMuUdTZPrkleHr6HNlFVH1FemHg==
 
-prosemirror-view@^1.0.0, prosemirror-view@^1.8.3, prosemirror-view@^1.9.10:
+prosemirror-view@^1.0.0, prosemirror-view@^1.9.10:
   version "1.9.10"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.9.10.tgz#e2254e65f1496f7330d0fc1581f34d1962453604"
   integrity sha512-jdRLg19sdcxgKUEaH61LjzIy6MUSQmDsU2OnNGvjSbl5UgZNMg+fWkjGqWDd+llGdh1DLaM0ItBHfHd9OeZA+Q==
@@ -19039,9 +19053,9 @@ rc-animate@^3.0.0-rc.1:
     react-lifecycles-compat "^3.0.4"
 
 rc-calendar@~9.15.0:
-  version "9.15.0"
-  resolved "https://registry.yarnpkg.com/rc-calendar/-/rc-calendar-9.15.0.tgz#4ed253723aa875505d2d5738dcfd42eed1684405"
-  integrity sha512-jmyiSG2QWIwB6Po2PySwB+kwpodWMxLVIJ0G2VJKu3jPQL0hNbsV47U28bhQzHkm5o0B3rJ3Tm+lk2VLcKbkaA==
+  version "9.15.1"
+  resolved "https://registry.yarnpkg.com/rc-calendar/-/rc-calendar-9.15.1.tgz#c3f5afee4ff9c0a9bd130079c3f6425ce7df0472"
+  integrity sha512-cJcq3DnNYrYvDi0CvoguRf2eBGN/E+svs1Dm3cPEsi4yVhxMjNGdq/5Iyxa84dCOWOJHV5NcecUIasfwvaTuoQ==
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -19715,9 +19729,9 @@ react-feather@^1.0.7, react-feather@^1.1.6:
   integrity sha512-iCofWhTjX+vQwvDmg7o6vg0XrUg1c41yBDZG+l83nz1FiCsleJoUgd3O+kHpOeWMXuPrRIFfCixvcqyOLGOgIg==
 
 react-flip-toolkit@^6.5.9:
-  version "6.6.4"
-  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-6.6.4.tgz#a5cf54329e39a42c517997d77e3d648b20f0cc16"
-  integrity sha512-DMPvPdKRBjnINf8bt3Zr/CK2D//6PV3ehRPTHJQU08HD2Sxp3Pkg50VniXX4k039KUzVo0LnMsgVHaqr6E6yZQ==
+  version "6.6.5"
+  resolved "https://registry.yarnpkg.com/react-flip-toolkit/-/react-flip-toolkit-6.6.5.tgz#f03a1746d8a34a5c0fcc8c4a47df6f33c407e9e5"
+  integrity sha512-7U1bopbxaw3xgDGwybvj8FxzEoxvxhdstNYFoCX9CxfUhqK3+dXY5Mkw4plmVF3MdTmOZSrrDKVIigBeF7rqxA==
   dependencies:
     rematrix "0.2.2"
 
