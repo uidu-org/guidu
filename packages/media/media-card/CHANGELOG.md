@@ -1,5 +1,10 @@
 # @uidu/media-card
 
+## 0.1.13
+- [patch] [d5a25bf](https://github.org/uidu-org/guidu/commits/d5a25bf):
+
+  - Better media cards
+
 ## 0.1.12
 - [patch] [bb44dc4](https://github.org/uidu-org/guidu/commits/bb44dc4):
 
