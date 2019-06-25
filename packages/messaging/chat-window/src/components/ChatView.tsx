@@ -1,6 +1,6 @@
 import clone from 'lodash.clone';
 import React, { Component } from 'react';
-import { ChatViewProps, ChatViewState } from 'src/types';
+import { ChatViewProps, ChatViewState } from '../types';
 
 let supportsPassive = false;
 try {

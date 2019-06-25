@@ -4,7 +4,6 @@ import * as PropTypes from 'prop-types';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { EventHandler, KeyboardEvent, MouseEvent } from 'react';
 import wrapComponentWithClickArea from '../../../nodeviews/legacy-nodeview-factory/ui/wrapper-click-area';
 import { stateKey as ReactNodeViewState } from '../../../plugins/base/pm-plugins/react-nodeview';
 import { ZeroWidthSpace } from '../../../utils';
@@ -19,7 +18,7 @@ export interface Props {
 
 export class InlineCardNode extends React.PureComponent<Props> {
   private scrollContainer?: HTMLElement;
-  private onClick: EventHandler<MouseEvent | KeyboardEvent> = () => {};
+  private onClick = () => {};
 
   static contextTypes = {
     contextAdapter: PropTypes.object,

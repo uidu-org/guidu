@@ -122,7 +122,7 @@ class MediaNode extends Component<MediaNodeProps> {
         // context={viewContext as any}
         // resizeMode="stretchy-fit"
         // dimensions={cardDimensions}
-        identifier={(identifier as any).id}
+        file={identifier as any}
         // selectable={true}
         // selected={selected}
         // disableOverlay={true}

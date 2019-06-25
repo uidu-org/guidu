@@ -1,6 +1,7 @@
 {
-  "extends": "./tsconfig.base",
+  "extends": "./tsconfig.core",
   "include": ["./packages/**/*"],
+  "exclude": ["./packages/**/examples", "./packages/**/examples-utils"],
   "compilerOptions": {
     "baseUrl": "./"
   }
