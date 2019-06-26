@@ -3633,10 +3633,10 @@
   dependencies:
     tslib "^1.7.1"
 
-"@uifabric/styling@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@uifabric/styling/-/styling-7.0.2.tgz#bfa60750962bdff2408a642aab373e5cac73ee19"
-  integrity sha512-05hYiFWTTal85/H5AYwShveA0nyJ0DpEpjArXbGVd98o2L1oZk9L0YQygTHU86YWtgwOAjnUjef0oYSdUm6rYw==
+"@uifabric/styling@^7.0.2", "@uifabric/styling@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@uifabric/styling/-/styling-7.0.3.tgz#434cbed7b56e2686d5390b1b7fd8c86df6a6135a"
+  integrity sha512-hW+Zjug1NTvfkWnAMKfak/hFTnUHybLnF2YYLeRA1ab4mAoRGXYh/7Pj18FTzmpED2U/3utJk7tdKvNbm++h3Q==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/merge-styles" "^7.0.2"
@@ -6378,9 +6378,9 @@ cache-base@^1.0.1:
     unset-value "^1.0.0"
 
 cache-loader@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/cache-loader/-/cache-loader-4.0.0.tgz#f85ffae27780f6ab5c6732b4f12b84cb6bf193d2"
-  integrity sha512-QTLCBoDju/InytQyQNHsn0q0xDlInCtId09CW8BLhFZY72GcqDHGbJdSiulsv1YBwB4zvy2QhioPADoSAl7qjg==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/cache-loader/-/cache-loader-4.0.1.tgz#198049cf04e9e599ad90bc6a9c695d5e866cc875"
+  integrity sha512-r5uLI/Igk1qomgoaCvX3LiiDJfKJ03oeAOV7RTrLdkzwxmwjw/JZUr9LYPRsM6CV99SGnR55Tve534aSZsH0mw==
   dependencies:
     buffer-json "^2.0.0"
     find-cache-dir "^3.0.0"
@@ -8254,9 +8254,9 @@ dataloader@^1.4.0:
   integrity sha512-68s5jYdlvasItOJnCuI2Q9s4q98g0pCyL3HrcKJu8KNugUl8ahgmZYg38ysLTgQjjXX3H8CJLkAvWrclWfcalw==
 
 date-arithmetic@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/date-arithmetic/-/date-arithmetic-4.0.0.tgz#20514510adc5cbfc507151d5f133333ba95c891e"
-  integrity sha512-dIeY8FEapS0T0VK0YaHH+69ouYR429Xb9pXugBLAEAs4WfRYOVCyPE5EF7gpILFnA2M8U9WfF5WPS/hHvCg7qg==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/date-arithmetic/-/date-arithmetic-4.0.1.tgz#e7f94da8a14ebf4d2bbe4fb66598532c25dc1fb5"
+  integrity sha512-fawhJU3ajJud093das8L3PSXqDb+LjclKhRTIbVX1xC+QeHtL/30kNTkS8s/lOiKMGMngxKvwEzQhBEmK/KQnQ==
 
 date-fns@*, date-fns@^1.23.0, date-fns@^1.27.2, date-fns@^1.30.1:
   version "1.30.1"
@@ -13305,9 +13305,9 @@ js-levenshtein@^1.1.3:
   integrity sha512-X2BB11YZtrRqY4EnQcLX5Rh373zbK4alC1FW7D7MBhL2gtcC17cTnr6DmfHZeS0s2rTHjUTMMHfG7gO8SSdw+g==
 
 js-search@^1.3.7:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/js-search/-/js-search-1.4.2.tgz#59a91e117d6badb20bf0d7643ba7577d5a81d7e2"
-  integrity sha1-WakeEX1rrbIL8NdkO6dXfVqB1+I=
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/js-search/-/js-search-1.4.3.tgz#23a86d7e064ca53a473930edc48615b6b1c1954a"
+  integrity sha512-Sny5pf00kX1sM1KzvUC9nGYWXOvBfy30rmvZWeRktpg+esQKedIXrXNee/I2CAnsouCyaTjitZpRflDACx4toA==
 
 js-string-escape@^1.0.1:
   version "1.0.1"
@@ -14606,7 +14606,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-meow@sindresorhus/meow#43401c3:
+"meow@github:sindresorhus/meow#43401c3":
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
@@ -15854,16 +15854,16 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.5.2"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.5.2.tgz#3f8cd8179bb8cc63d5dc25792af2e3644e77cc4e"
-  integrity sha512-Mx4OtdpbpyuFR8/FaBw36Jgg+nx3kizpyAaV5z/SlYUUtfLUm9hekwjFFqdsVTw6IriHekaRoM5DTz6uHB9OoQ==
+  version "7.5.3"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.5.3.tgz#12258b7d14bbf1e14f8a23e5285340f8c6fc3359"
+  integrity sha512-nBmIFch+pz7TBn6R3s3rpEDY8rMAUxcihr/CoBEocsD9kmQ4Kw3M4ShoBIVb89N+Lr0TFc6mGKS/AQNKWk4yOg==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/foundation" "^7.0.1"
     "@uifabric/icons" "^7.0.2"
     "@uifabric/merge-styles" "^7.0.2"
     "@uifabric/set-version" "^7.0.0"
-    "@uifabric/styling" "^7.0.2"
+    "@uifabric/styling" "^7.0.3"
     "@uifabric/utilities" "^7.0.3"
     prop-types "^15.5.10"
     tslib "^1.7.1"

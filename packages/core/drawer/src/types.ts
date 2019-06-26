@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { WithAnalyticsEventsProps } from '@uidu/analytics'
 
 export type DrawerSize = 'narrow' | 'medium' | 'wide' | 'extended' | 'full';
 export type DrawerOrigin = 'left' | 'top' | 'right' | 'bottom';

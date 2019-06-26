@@ -270,7 +270,6 @@
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-lodash": "^3.3.4",
     "babel-runtime": "^6.26.0",
-    "bitbucket-build-status": "^1.0.3",
     "blueimp-load-image": "^2.20.1",
     "body-scroll-lock": "^2.6.1",
     "bolt": "^0.23.1",
