@@ -1,9 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/media-viewer", "type": "patch" },
-    { "name": "@uidu/message", "type": "patch" },
-    { "name": "@uidu/droplist", "type": "patch" },
-    { "name": "@uidu/dropdown-menu", "type": "patch" }
-  ],
-  "dependents": []
-}

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A React component that renders a message",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -19,10 +19,10 @@
   "dependencies": {
     "@uidu/avatar": "^0.2.10",
     "@uidu/drawer": "^0.1.9",
-    "@uidu/dropdown-menu": "^0.1.6",
-    "@uidu/media-card": "^0.1.11",
+    "@uidu/dropdown-menu": "^0.1.12",
+    "@uidu/media-card": "^0.1.14",
     "@uidu/media-core": "^0.1.8",
-    "@uidu/media-filmstrip": "^0.1.10",
+    "@uidu/media-filmstrip": "^0.1.13",
     "@uidu/message-form": "^0.1.10",
     "@uidu/message-renderer": "^0.1.9",
     "@uidu/tooltip": "^0.1.10",

@@ -1,5 +1,10 @@
 # @uidu/droplist
 
+## 0.1.9
+- [patch] [fe71b9f](https://github.org/uidu-org/guidu/commits/fe71b9f):
+
+  - Styòed-components
+
 ## 0.1.8
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
