@@ -60,10 +60,13 @@ export default class Accordion extends PureComponent<AccordionPropTypes> {
   };
 
   render() {
-    const { items, ...otherProps } = this.props;
+    const { items, allowMultipleExpanded, allowZeroExpanded } = this.props;
 
     return (
-      <StyledAccordion {...otherProps}>
+      <StyledAccordion
+        allowMultipleExpanded={allowMultipleExpanded}
+        allowZeroExpanded={allowZeroExpanded}
+      >
         {items.map((item, index) => (
           <AccordionItem uuid={item.uuid} key={index} {...item.props}>
             <AccordionItemHeading>

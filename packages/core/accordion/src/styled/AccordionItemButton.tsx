@@ -1,7 +1,7 @@
 import { AccordionItemButton } from 'react-accessible-accordion';
 import styled from 'styled-components';
 
-export default styled(AccordionItemButton)`
+export default styled(AccordionItemButton)<{ reverse: string }>`
   ${'' /* background-color: #f4f4f4; */}
   align-items: center;
   display: flex;

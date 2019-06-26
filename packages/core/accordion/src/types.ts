@@ -1,32 +1,26 @@
-import { AnalyticsEventInterface } from '@uidu/analytics';
-import { ThemeProps, ThemeTokens } from './theme';
-  ?{ event?: KeyboardEvent | MouseEvent, item: Object },
-  ?AnalyticsEventInterface,
-) => void;
-
 export type AccordionPropTypesBase = {
+  arrows: any;
   /** Open only one item at a time or not */
-  reverse?: boolean,
+  reverse?: boolean;
   /** Open only one item at a time or not */
-  allowMultipleExpanded?: boolean,
+  allowMultipleExpanded?: boolean;
   /** Allow accordion to close on click */
-  allowZeroExpanded?: boolean,
+  allowZeroExpanded?: boolean;
   /** Open only one item at a time or not */
-  items: Array,
-  /** Open only one item at a time or not */
-  onChange?: (name: string, value: boolean) => mixed,
+  items: Array<any>;
   /** Display a tooltip on hover */
-  enableTooltip: boolean,
+  enableTooltip: boolean;
   /** Assign specific tabIndex order to the underlying node. */
-  tabIndex?: number,
+  tabIndex?: number;
   /** You should not be accessing this prop under any circumstances. It is
    provided by @uidu/analytics. */
-  createAnalyticsEvent?: any,
-  /** The theme that should be applied to the avatar. */
-  theme?: ThemeProp<ThemeTokens, ThemeProps>,
+  createAnalyticsEvent?: any;
 };
 
 export type AccordionPropTypes = AccordionPropTypesBase & {
   /** Handler to be called on click. */
-  onClick?: AccordionClickType,
+  onClick?: (
+    { event, item }: { event: KeyboardEvent | MouseEvent; item: any },
+    AnalyticsEventInterface,
+  ) => void;
 };
