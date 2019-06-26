@@ -1,16 +1,10 @@
 import { sanitizeNodes } from '@atlaskit/adf-schema';
-import { ErrorReporter, ErrorReportingHandler } from '@atlaskit/editor-common';
+import { ErrorReporter, ErrorReportingHandler } from '@uidu/editor-common';
 import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { AnalyticsHandler, analyticsService } from '../analytics';
 import Ranks from '../plugins/rank';
-import {
-  EditorConfig,
-  EditorPlugin,
-  EditorProps,
-  PluginsOptions,
-  PMPluginCreateConfig,
-} from '../types';
+import { EditorConfig, EditorPlugin, EditorProps, PluginsOptions, PMPluginCreateConfig } from '../types';
 import { name, version } from '../version-wrapper';
 
 export function sortByRank(a: { rank: number }, b: { rank: number }): number {

@@ -10,8 +10,7 @@ import {
   MediaSingle,
   ProviderFactory,
   WithProviders,
-} from '@atlaskit/editor-common';
-import { Context } from '@atlaskit/media-core';
+} from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection } from 'prosemirror-state';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';

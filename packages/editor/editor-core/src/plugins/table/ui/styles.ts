@@ -1,16 +1,5 @@
 // @ts-ignore: unused variable
-import {
-  akEditorSmallZIndex,
-  akEditorTableBorder,
-  akEditorTableNumberColumnWidth,
-  akEditorTableToolbarSize,
-  akEditorUnitZIndex,
-  browser,
-  tableCellPadding,
-  tableMarginBottom,
-  tableMarginTop,
-  tableSharedStyle,
-} from '@atlaskit/editor-common';
+import { akEditorSmallZIndex, akEditorTableBorder, akEditorTableNumberColumnWidth, akEditorTableToolbarSize, akEditorUnitZIndex, browser, tableCellPadding, tableMarginBottom, tableMarginTop, tableSharedStyle } from '@uidu/editor-common';
 import { borderRadius, colors, fontSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { scrollbarStyles } from '../../../components/styles';

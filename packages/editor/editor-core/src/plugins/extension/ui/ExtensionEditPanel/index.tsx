@@ -1,9 +1,9 @@
-import { Popup } from '@atlaskit/editor-common';
 import EditIcon from '@atlaskit/icon/glyph/editor/edit';
 import CenterIcon from '@atlaskit/icon/glyph/editor/media-center';
 import FullWidthIcon from '@atlaskit/icon/glyph/editor/media-full-width';
 import WideIcon from '@atlaskit/icon/glyph/editor/media-wide';
 import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
+import { Popup } from '@uidu/editor-common';
 import * as React from 'react';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import { Separator, Toolbar } from './styles';

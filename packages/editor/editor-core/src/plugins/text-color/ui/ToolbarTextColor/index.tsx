@@ -1,5 +1,5 @@
-import { akEditorMenuZIndex } from '@atlaskit/editor-common';
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
+import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -12,12 +12,7 @@ import ToolbarButton from '../../../../components/ToolbarButton';
 import * as commands from '../../commands/change-color';
 import { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
-import {
-  ExpandIconWrapper,
-  Separator,
-  TriggerWrapper,
-  Wrapper,
-} from './styles';
+import { ExpandIconWrapper, Separator, TriggerWrapper, Wrapper } from './styles';
 
 export const messages = defineMessages({
   textColor: {

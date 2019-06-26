@@ -1,5 +1,5 @@
-import { findOverflowScrollParent } from '@atlaskit/editor-common';
-import { Card } from '@uidu/smart-card';
+import { findOverflowScrollParent } from '@uidu/editor-common';
+import MediaCard from '@uidu/media-card';
 import * as PropTypes from 'prop-types';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
@@ -42,13 +42,21 @@ export class InlineCardNode extends React.PureComponent<Props> {
       <span>
         <span>{ZeroWidthSpace}</span>
         <span className="card">
-          <Card
-            url={url}
-            data={data}
-            appearance="inline"
-            isSelected={selected}
+          <MediaCard
+            file={{
+              id: 'foo',
+              filename: 'devo toglierle',
+              blob: {},
+              src: url,
+              kind: 'smart',
+              createdAt: Date(),
+              extension: 'png',
+            }}
+            // data={data}
+            // appearance="inline"
+            // isSelected={selected}
             onClick={this.onClick}
-            container={this.scrollContainer}
+            // container={this.scrollContainer}
           />
         </span>
       </span>

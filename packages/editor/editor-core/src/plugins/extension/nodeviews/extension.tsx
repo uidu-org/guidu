@@ -1,4 +1,4 @@
-import { ExtensionHandlers, ProviderFactory } from '@atlaskit/editor-common';
+import { ExtensionHandlers, ProviderFactory } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';

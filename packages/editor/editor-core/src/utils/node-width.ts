@@ -1,17 +1,9 @@
-import {
-  absoluteBreakoutWidth,
-  akEditorFullWidthLayoutWidth,
-  gridMediumMaxWidth,
-} from '@atlaskit/editor-common';
+import { absoluteBreakoutWidth, akEditorFullWidthLayoutWidth, gridMediumMaxWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import { BODIED_EXT_PADDING } from '../plugins/extension/ui/Extension/styles';
-import {
-  LAYOUT_COLUMN_PADDING,
-  LAYOUT_OFFSET,
-  LAYOUT_SECTION_MARGIN,
-} from '../plugins/layout/styles';
+import { LAYOUT_COLUMN_PADDING, LAYOUT_OFFSET, LAYOUT_SECTION_MARGIN } from '../plugins/layout/styles';
 import { WidthPluginState } from '../plugins/width';
 
 /**

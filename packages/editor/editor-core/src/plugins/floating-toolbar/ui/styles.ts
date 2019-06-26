@@ -1,4 +1,4 @@
-import { hexToRgba } from '@atlaskit/editor-common';
+import { hexToRgba } from '@uidu/editor-common';
 import { colors } from '@uidu/theme';
 
 interface Property {

@@ -1,4 +1,4 @@
-import { ExtensionHandlers } from '@atlaskit/editor-common';
+import { ExtensionHandlers } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import {
   findSelectedNodeOfType,

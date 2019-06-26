@@ -1,29 +1,25 @@
-import * as React from 'react';
 import { emoji, emojiQuery } from '@atlaskit/adf-schema';
-import { WithProviders, Providers } from '@atlaskit/editor-common';
-
+import { Providers, WithProviders } from '@uidu/editor-common';
+import * as React from 'react';
 import { EditorPlugin } from '../../types';
-import { CreateUIAnalyticsEventSignature } from '@atlaskit/analytics-next';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
-import { createPlugin, emojiPluginKey } from './pm-plugins/main';
-import inputRulePlugin from './pm-plugins/input-rules';
-import keymap from './pm-plugins/keymap';
-import { inputRulePlugin as asciiInputRulePlugin } from './pm-plugins/ascii-input-rules';
-import ToolbarEmojiPicker from './ui/ToolbarEmojiPicker';
-import EmojiTypeAhead from './ui/EmojiTypeAhead';
 import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
   addAnalytics,
   EVENT_TYPE,
   INPUT_METHOD,
-  ACTION_SUBJECT,
-  ACTION,
-  ACTION_SUBJECT_ID,
 } from '../analytics';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock';
 import { IconEmoji } from '../quick-insert/assets';
+import { inputRulePlugin as asciiInputRulePlugin } from './pm-plugins/ascii-input-rules';
+import inputRulePlugin from './pm-plugins/input-rules';
+import keymap from './pm-plugins/keymap';
+import { createPlugin, emojiPluginKey } from './pm-plugins/main';
+import EmojiTypeAhead from './ui/EmojiTypeAhead';
+import ToolbarEmojiPicker from './ui/ToolbarEmojiPicker';
 
-const emojiPlugin = (
-  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
-): EditorPlugin => ({
+const emojiPlugin = (createAnalyticsEvent?: any): EditorPlugin => ({
   nodes() {
     return [{ name: 'emoji', node: emoji }];
   },

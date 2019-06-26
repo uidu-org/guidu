@@ -1,4 +1,4 @@
-import { akEditorMobileBreakoutPoint, browser, calcTableWidth } from '@atlaskit/editor-common';
+import { akEditorMobileBreakoutPoint, browser, calcTableWidth } from '@uidu/editor-common';
 import classnames from 'classnames';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';

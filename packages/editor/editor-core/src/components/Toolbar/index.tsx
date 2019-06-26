@@ -1,5 +1,5 @@
-import { ProviderFactory } from '@atlaskit/editor-common';
 import WidthDetector from '@atlaskit/width-detector';
+import { ProviderFactory } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import styled from 'styled-components';

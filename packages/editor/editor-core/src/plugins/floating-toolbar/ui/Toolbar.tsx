@@ -1,5 +1,5 @@
 import { ButtonGroup } from '@atlaskit/button';
-import { ProviderFactory } from '@atlaskit/editor-common';
+import { ProviderFactory } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize, themed } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';

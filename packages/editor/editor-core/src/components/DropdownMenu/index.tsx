@@ -1,5 +1,5 @@
-import { akEditorFloatingPanelZIndex, Popup } from '@atlaskit/editor-common';
 import DropList from '@uidu/droplist';
+import { akEditorFloatingPanelZIndex, Popup } from '@uidu/editor-common';
 import Item, { ItemGroup } from '@uidu/item';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';

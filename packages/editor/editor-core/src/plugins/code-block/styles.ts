@@ -5,7 +5,7 @@ import {
   akEditorDeleteIconColor,
   akEditorTableCellMinWidth,
   blockNodesVerticalMargin,
-} from '@atlaskit/editor-common';
+} from '@uidu/editor-common';
 import { borderRadius, colors, themed } from '@uidu/theme';
 import { css } from 'styled-components';
 import { akEditorCodeBlockPadding, akEditorCodeFontFamily } from '../../styles';

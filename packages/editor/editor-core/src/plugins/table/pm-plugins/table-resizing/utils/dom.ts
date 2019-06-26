@@ -1,4 +1,4 @@
-import { akEditorTableToolbarSize, tableResizeHandleWidth } from '@atlaskit/editor-common';
+import { akEditorTableToolbarSize, tableResizeHandleWidth } from '@uidu/editor-common';
 import { EditorState } from 'prosemirror-state';
 import { TableMap } from 'prosemirror-tables';
 import { findDomRefAtPos } from 'prosemirror-utils';

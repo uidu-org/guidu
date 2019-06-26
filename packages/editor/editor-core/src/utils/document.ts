@@ -1,5 +1,5 @@
 import { ADFEntity, ValidationError, validator } from '@atlaskit/adf-utils';
-import { ProviderFactory } from '@atlaskit/editor-common';
+import { ProviderFactory } from '@uidu/editor-common';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorState, Selection, Transaction } from 'prosemirror-state';
 import { ContentNodeWithPos } from 'prosemirror-utils';

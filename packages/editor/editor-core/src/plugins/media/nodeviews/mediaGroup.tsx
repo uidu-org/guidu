@@ -1,6 +1,5 @@
 import EditorCloseIcon from '@atlaskit/icon/glyph/editor/close';
-import { Context, FileIdentifier } from '@atlaskit/media-core';
-import { Filmstrip } from '@atlaskit/media-filmstrip';
+import MediaFilmstrip from '@uidu/media-filmstrip';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
@@ -36,7 +35,7 @@ export type MediaGroupProps = {
 };
 
 export interface MediaGroupState {
-  viewContext?: Context;
+  viewContext?: any;
 }
 
 export default class MediaGroup extends React.Component<
@@ -103,7 +102,7 @@ export default class MediaGroup extends React.Component<
   renderChildNodes = () => {
     const { viewContext } = this.state;
     const items = this.mediaNodes.map((item, idx) => {
-      const identifier: FileIdentifier = {
+      const identifier: any = {
         id: item.attrs.id,
         mediaItemType: 'file',
         collectionName: item.attrs.collection,
@@ -133,7 +132,7 @@ export default class MediaGroup extends React.Component<
       };
     });
 
-    return <Filmstrip items={items} context={viewContext} />;
+    return <MediaFilmstrip items={items} context={viewContext} />;
   };
 
   render() {

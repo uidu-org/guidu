@@ -1,25 +1,14 @@
-import { akEditorMenuZIndex } from '@atlaskit/editor-common';
 import MoreIcon from '@atlaskit/icon/glyph/editor/more';
+import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
 import { analyticsService } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
-import {
-  Separator,
-  Shortcut,
-  TriggerWrapper,
-  Wrapper,
-} from '../../../../components/styles';
+import { Separator, Shortcut, TriggerWrapper, Wrapper } from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
-import {
-  clearFormatting as clearFormattingKeymap,
-  toggleCode,
-  toggleStrikethrough,
-  toggleUnderline,
-  tooltip,
-} from '../../../../keymaps';
+import { clearFormatting as clearFormattingKeymap, toggleCode, toggleStrikethrough, toggleUnderline, tooltip } from '../../../../keymaps';
 import { INPUT_METHOD } from '../../../analytics';
 import { clearFormattingWithAnalytics } from '../../commands/clear-formatting';
 import * as commands from '../../commands/text-formatting';

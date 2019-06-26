@@ -1,12 +1,8 @@
+import { tableCellMinWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import { tableCellMinWidth } from '@atlaskit/editor-common';
-import { growColumn, shrinkColumn } from './resize-logic';
-import {
-  ColumnState,
-  getCellsRefsInColumn,
-  getColumnStateFromDOM,
-} from './column-state';
 import { insertColgroupFromNode } from './colgroup';
+import { ColumnState, getCellsRefsInColumn, getColumnStateFromDOM } from './column-state';
+import { growColumn, shrinkColumn } from './resize-logic';
 
 export interface ResizeState {
   cols: ColumnState[];

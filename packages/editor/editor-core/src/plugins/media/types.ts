@@ -1,6 +1,3 @@
-import { Context, FileIdentifier } from '@atlaskit/media-core';
-import { MediaFile, UploadParams } from '@atlaskit/media-picker';
-
 export type MediaStateStatus =
   | 'unknown'
   | 'ready'
@@ -32,20 +29,20 @@ export interface MediaState {
 export interface FeatureFlags {}
 
 export interface MediaProvider {
-  uploadParams?: UploadParams;
+  uploadParams?: any;
 
   /**
    * Used for displaying Media Cards and downloading files.
    * This is context config is required.
    */
-  viewContext: Promise<Context>;
+  viewContext: Promise<any>;
 
   /**
    * (optional) Used for creating new uploads and finalizing files.
    * NOTE: We currently don't accept Context instance, because we need config properties
    *       to initialize
    */
-  uploadContext?: Promise<Context>;
+  uploadContext?: Promise<any>;
 
   /**
    * (optional) For any additional feature to be enabled
@@ -60,33 +57,33 @@ export interface CustomMediaPicker {
   removeAllListeners(event: any): void;
   emit(event: string, data: any): void;
   destroy(): void;
-  setUploadParams(uploadParams: UploadParams): void;
+  setUploadParams(uploadParams: any): void;
 }
 
 export type MobileUploadEndEventPayload = {
-  readonly file: MediaFile & {
+  readonly file: any & {
     readonly collectionName?: string;
     readonly publicId?: string;
   };
 };
 
 export type MediaEditorState = {
-  context?: Context;
+  context?: any;
   editor?: {
     pos: number;
-    identifier: FileIdentifier;
+    identifier: any;
   };
 };
 
 export type OpenMediaEditor = {
   type: 'open';
   pos: number;
-  identifier: FileIdentifier;
+  identifier: any;
 };
 
 export type UploadAnnotation = {
   type: 'upload';
-  newIdentifier: FileIdentifier;
+  newIdentifier: any;
 };
 
 export type CloseMediaEditor = {
@@ -95,7 +92,7 @@ export type CloseMediaEditor = {
 
 export type SetMediaContext = {
   type: 'setContext';
-  context?: Context;
+  context?: any;
 };
 
 export type MediaEditorAction =

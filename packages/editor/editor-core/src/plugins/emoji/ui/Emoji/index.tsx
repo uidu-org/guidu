@@ -1,10 +1,6 @@
-import {
-  ProviderFactory,
-  Providers,
-  WithProviders,
-} from '@atlaskit/editor-common';
 import { ResourcedEmoji } from '@atlaskit/emoji/element';
 import { EmojiId } from '@atlaskit/emoji/types';
+import { ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { ClickSelectWrapper } from '../../../../components/styles';

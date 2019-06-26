@@ -1,4 +1,4 @@
-import { Card } from '@uidu/smart-card';
+import MediaCard from '@uidu/media-card';
 import * as PropTypes from 'prop-types';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
@@ -33,12 +33,21 @@ class BlockCardNode extends React.Component<Props, {}> {
     // that puts caret in next editable text element
     const cardInner = (
       <>
-        <Card
-          url={url}
-          data={data}
-          appearance="block"
-          isSelected={selected}
+        <MediaCard
+          file={{
+            id: 'foo',
+            filename: 'devo toglierle',
+            blob: {},
+            src: url,
+            kind: 'smart',
+            createdAt: Date(),
+            extension: 'png',
+          }}
+          // data={data}
+          // appearance="inline"
+          // isSelected={selected}
           onClick={this.onClick}
+          // container={this.scrollContainer}
         />
         <span contentEditable={true} />
       </>

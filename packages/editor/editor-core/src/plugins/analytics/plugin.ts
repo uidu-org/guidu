@@ -1,4 +1,3 @@
-import { CreateUIAnalyticsEventSignature } from '@atlaskit/analytics-next';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { AnalyticsEventPayload } from './types';
@@ -6,7 +5,7 @@ import { fireAnalyticsEvent } from './utils';
 
 export const analyticsPluginKey = new PluginKey('analyticsPlugin');
 
-function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEventSignature) {
+function createPlugin(createAnalyticsEvent?: any) {
   if (!createAnalyticsEvent) {
     return undefined;
   }
@@ -30,9 +29,7 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEventSignature) {
   });
 }
 
-const analyticsPlugin = (
-  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
-): EditorPlugin => ({
+const analyticsPlugin = (createAnalyticsEvent?: any): EditorPlugin => ({
   pmPlugins() {
     return [
       {

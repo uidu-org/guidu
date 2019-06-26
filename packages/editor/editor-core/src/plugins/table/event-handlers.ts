@@ -1,38 +1,17 @@
-import { EditorView } from 'prosemirror-view';
-import {
-  EditorState,
-  Transaction,
-  TextSelection,
-  Selection,
-} from 'prosemirror-state';
+import { browser } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
-import { TableMap, cellAround, CellSelection } from 'prosemirror-tables';
+import { EditorState, Selection, TextSelection, Transaction } from 'prosemirror-state';
+import { cellAround, CellSelection, TableMap } from 'prosemirror-tables';
 import { findTable, getSelectionRect, removeTable } from 'prosemirror-utils';
-import { browser } from '@atlaskit/editor-common';
-
+import { EditorView } from 'prosemirror-view';
 import { analyticsService } from '../../analytics';
-import {
-  addAnalytics,
-  TABLE_ACTION,
-  ACTION_SUBJECT,
-  EVENT_TYPE,
-} from '../analytics';
-import {
-  isElementInTableCell,
-  setNodeSelection,
-  isLastItemMediaGroup,
-  closestElement,
-} from '../../utils/';
-import { isInsertColumnButton, isInsertRowButton, getIndex } from './utils';
-import {
-  setEditorFocus,
-  showInsertColumnButton,
-  showInsertRowButton,
-  hideInsertColumnOrRowButton,
-} from './commands';
+import { closestElement, isElementInTableCell, isLastItemMediaGroup, setNodeSelection } from '../../utils/';
+import { ACTION_SUBJECT, addAnalytics, EVENT_TYPE, TABLE_ACTION } from '../analytics';
+import { hideInsertColumnOrRowButton, setEditorFocus, showInsertColumnButton, showInsertRowButton } from './commands';
 import { getPluginState } from './pm-plugins/main';
-import { getSelectedCellInfo } from './utils';
 import { deleteColumns, deleteRows } from './transforms';
+import { getIndex, getSelectedCellInfo, isInsertColumnButton, isInsertRowButton } from './utils';
+
 
 export const handleBlur = (view: EditorView, event: Event): boolean => {
   const { state, dispatch } = view;

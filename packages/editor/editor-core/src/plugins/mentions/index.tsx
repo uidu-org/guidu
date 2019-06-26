@@ -1,12 +1,4 @@
 import { mention } from '@atlaskit/adf-schema';
-import {
-  AnalyticsEventPayload,
-  CreateUIAnalyticsEventSignature,
-} from '@atlaskit/analytics-next';
-import {
-  ContextIdentifierProvider,
-  ProviderFactory,
-} from '@atlaskit/editor-common';
 import { MentionItem } from '@atlaskit/mention/item';
 import {
   ELEMENTS_CHANNEL,
@@ -16,6 +8,10 @@ import {
   MentionProvider,
 } from '@atlaskit/mention/resource';
 import { TeamMember } from '@atlaskit/mention/team-resource';
+import {
+  ContextIdentifierProvider,
+  ProviderFactory,
+} from '@uidu/editor-common';
 import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';
@@ -60,11 +56,11 @@ export interface TeamInfoAttrAnalytics {
 }
 
 const mentionsPlugin = (
-  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
+  createAnalyticsEvent?: any,
   sanitizePrivateContent?: boolean,
 ): EditorPlugin => {
   let sessionId = uuid();
-  const fireEvent = <T extends AnalyticsEventPayload>(payload: T): void => {
+  const fireEvent = <T extends any>(payload: T): void => {
     if (createAnalyticsEvent) {
       if (payload.attributes && !payload.attributes.sessionId) {
         payload.attributes.sessionId = sessionId;

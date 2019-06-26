@@ -1,5 +1,5 @@
 import { ExtensionLayout } from '@atlaskit/adf-schema';
-import { ExtensionHandlers, ProviderFactory } from '@atlaskit/editor-common';
+import { ExtensionHandlers, ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { findDomRefAtPos, findSelectedNodeOfType } from 'prosemirror-utils';

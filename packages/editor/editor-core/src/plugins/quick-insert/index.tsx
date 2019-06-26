@@ -1,24 +1,24 @@
-import { InjectedIntl } from 'react-intl';
+import { ProviderFactory } from '@uidu/editor-common';
 import { Plugin, PluginKey } from 'prosemirror-state';
-import { ProviderFactory } from '@atlaskit/editor-common';
+import { InjectedIntl } from 'react-intl';
 import { analyticsService } from '../../analytics';
-import { EditorPlugin, Command } from '../../types';
+import { Command, EditorPlugin } from '../../types';
 import { dedupe } from '../../utils';
 import {
-  QuickInsertItem,
-  QuickInsertProvider,
-  QuickInsertHandler,
-} from './types';
-import { find } from './search';
-import {
-  analyticsEventKey,
-  AnalyticsDispatch,
   ACTION,
   ACTION_SUBJECT,
-  INPUT_METHOD,
-  EVENT_TYPE,
   ACTION_SUBJECT_ID,
+  AnalyticsDispatch,
+  analyticsEventKey,
+  EVENT_TYPE,
+  INPUT_METHOD,
 } from '../analytics';
+import { find } from './search';
+import {
+  QuickInsertHandler,
+  QuickInsertItem,
+  QuickInsertProvider,
+} from './types';
 
 const quickInsertPlugin: EditorPlugin = {
   name: 'quickInsert',

@@ -1,4 +1,4 @@
-import { browser } from '@atlaskit/editor-common';
+import { browser } from '@uidu/editor-common';
 import { Command } from '../types';
 
 export const toggleBold = makeKeyMapWithCommon('Bold', 'Mod-b');

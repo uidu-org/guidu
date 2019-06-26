@@ -1,15 +1,12 @@
-import * as React from 'react';
-import { PureComponent, ComponentClass, StatelessComponent } from 'react';
+import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
+import * as React from 'react';
+import { ComponentClass, PureComponent, StatelessComponent } from 'react';
 import styled from 'styled-components';
-import { ProviderFactory } from '@atlaskit/editor-common';
 import { ReactNodeViewState } from '../../../plugins/base/pm-plugins/react-nodeview';
 import { setNodeSelection } from '../../../utils';
-import {
-  ProsemirrorGetPosHandler,
-  ReactComponentConstructor,
-} from '../../types';
+import { ProsemirrorGetPosHandler, ReactComponentConstructor } from '../../types';
 
 export interface ReactNodeViewComponents {
   [key: string]: ComponentClass<any> | StatelessComponent<any>;

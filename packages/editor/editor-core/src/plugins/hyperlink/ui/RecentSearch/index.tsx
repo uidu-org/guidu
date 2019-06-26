@@ -1,7 +1,7 @@
+import { ProviderFactory, WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
-import RecentList, { LinkInputType } from './LinkAddToolbar';
-import { ProviderFactory, WithProviders } from '@atlaskit/editor-common';
 import { DispatchAnalyticsEvent } from '../../../analytics';
+import RecentList, { LinkInputType } from './LinkAddToolbar';
 
 export interface Props {
   providerFactory: ProviderFactory;

@@ -1,34 +1,18 @@
+import { browser } from '@uidu/editor-common';
+import { Selection } from 'prosemirror-state';
+import { getSelectionRect, isCellSelection } from 'prosemirror-utils';
+import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component, SyntheticEvent } from 'react';
-import { EditorView } from 'prosemirror-view';
-import { Selection } from 'prosemirror-state';
-import { isCellSelection, getSelectionRect } from 'prosemirror-utils';
-import { browser } from '@atlaskit/editor-common';
-
 import { INPUT_METHOD } from '../../../../analytics';
-import {
-  hoverColumns,
-  selectColumn,
-  clearHoverSelection,
-} from '../../../commands';
-import {
-  insertColumnWithAnalytics,
-  deleteColumnsWithAnalytics,
-} from '../../../commands-with-analytics';
+import { clearHoverSelection, hoverColumns, selectColumn } from '../../../commands';
+import { deleteColumnsWithAnalytics, insertColumnWithAnalytics } from '../../../commands-with-analytics';
 import { TableCssClassName as ClassName } from '../../../types';
-import {
-  isSelectionUpdated,
-  getColumnsWidths,
-  isColumnDeleteButtonVisible,
-  getColumnDeleteButtonParams,
-  isColumnInsertButtonVisible,
-  getColumnsParams,
-  getColumnClassNames,
-  ColumnParams,
-} from '../../../utils';
+import { ColumnParams, getColumnClassNames, getColumnDeleteButtonParams, getColumnsParams, getColumnsWidths, isColumnDeleteButtonVisible, isColumnInsertButtonVisible, isSelectionUpdated } from '../../../utils';
 import tableMessages from '../../messages';
-import InsertButton from '../InsertButton';
 import DeleteButton from '../DeleteButton';
+import InsertButton from '../InsertButton';
+
 
 export interface Props {
   editorView: EditorView;

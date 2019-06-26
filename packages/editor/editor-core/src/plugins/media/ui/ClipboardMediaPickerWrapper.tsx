@@ -1,6 +1,5 @@
-import { ErrorReporter } from '@atlaskit/editor-common';
-import { Context } from '@atlaskit/media-core';
-import Clipboard from '@uidu/media-picker';
+import { ErrorReporter } from '@uidu/editor-common';
+import MediaPicker from '@uidu/media-picker';
 import * as React from 'react';
 import PickerFacade from '../picker-facade';
 import { MediaPluginState, MediaProvider } from '../pm-plugins/main';
@@ -12,7 +11,7 @@ type Props = {
 
 type State = {
   config?: any;
-  context?: Context;
+  context?: any;
   pickerFacadeInstance?: PickerFacade;
 };
 
@@ -108,7 +107,7 @@ export default class ClipboardMediaPickerWrapper extends React.Component<
     }
 
     return (
-      <Clipboard
+      <MediaPicker
         context={context}
         config={config}
         onError={pickerFacadeInstance.handleUploadError}

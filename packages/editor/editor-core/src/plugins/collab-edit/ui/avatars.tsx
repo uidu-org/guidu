@@ -1,7 +1,7 @@
-import { akEditorSmallZIndex } from '@atlaskit/editor-common';
 import InviteTeamIcon from '@atlaskit/icon/glyph/editor/add';
 import Avatar from '@uidu/avatar';
 import AvatarGroup from '@uidu/avatar-group';
+import { akEditorSmallZIndex } from '@uidu/editor-common';
 import { colors, gridSize } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';

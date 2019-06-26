@@ -1,4 +1,4 @@
-import { blockNodesVerticalMargin } from '@atlaskit/editor-common';
+import { blockNodesVerticalMargin } from '@uidu/editor-common';
 import { borderRadius, colors, themed } from '@uidu/theme';
 import styled from 'styled-components';
 import { padding, Wrapper as WrapperDefault } from '../styles';

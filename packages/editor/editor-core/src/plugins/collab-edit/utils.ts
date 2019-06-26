@@ -1,4 +1,4 @@
-import { hexToRgba, ProviderFactory } from '@atlaskit/editor-common';
+import { hexToRgba, ProviderFactory } from '@uidu/editor-common';
 import { colors as themeColors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';

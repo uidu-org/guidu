@@ -1,18 +1,8 @@
+import { akEditorTableNumberColumnWidth, tableCellMinWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import {
-  tableCellMinWidth,
-  akEditorTableNumberColumnWidth,
-} from '@atlaskit/editor-common';
-import { getTableWidth } from '../../../utils';
 import { DomAtPos } from '../../../../../types';
-import {
-  getLayoutSize,
-  ResizeState,
-  getResizeStateFromDOM,
-  getTotalWidth,
-  reduceSpace,
-  adjustColumnsWidths,
-} from '../utils';
+import { getTableWidth } from '../../../utils';
+import { adjustColumnsWidths, getLayoutSize, getResizeStateFromDOM, getTotalWidth, reduceSpace, ResizeState } from '../utils';
 
 export interface ScaleOptions {
   node: PMNode;

@@ -1,13 +1,8 @@
+import { ResourcedMention } from '@atlaskit/mention/element';
+import { MentionProvider } from '@atlaskit/mention/resource';
+import { MentionEventHandlers, ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { MentionProvider } from '@atlaskit/mention/resource';
-import { ResourcedMention } from '@atlaskit/mention/element';
-import {
-  MentionEventHandlers,
-  ProviderFactory,
-  Providers,
-  WithProviders,
-} from '@atlaskit/editor-common';
 
 export interface MentionProps {
   id: string;

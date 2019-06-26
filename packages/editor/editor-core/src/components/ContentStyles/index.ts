@@ -1,16 +1,4 @@
-import {
-  akEditorDeleteBackground,
-  akEditorDeleteBorder,
-  akEditorDeleteBorderBoldSize,
-  blockMarksSharedStyles,
-  dateSharedStyle,
-  indentationSharedStyles,
-  inlineNodeSharedStyle,
-  listsSharedStyles,
-  paragraphSharedStyles,
-  shadowSharedStyle,
-  whitespaceSharedStyles,
-} from '@atlaskit/editor-common';
+import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorDeleteBorderBoldSize, blockMarksSharedStyles, dateSharedStyle, indentationSharedStyles, inlineNodeSharedStyle, listsSharedStyles, paragraphSharedStyles, shadowSharedStyle, whitespaceSharedStyles } from '@uidu/editor-common';
 import styled from 'styled-components';
 // import { placeholderStyles } from '../../plugins/placeholder/styles';
 import { blocktypeStyles } from '../../plugins/block-type/styles';

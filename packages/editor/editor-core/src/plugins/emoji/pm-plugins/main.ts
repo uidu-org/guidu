@@ -1,18 +1,11 @@
-import { ProviderFactory } from '@atlaskit/editor-common';
 import { EmojiProvider } from '@atlaskit/emoji/resource';
-import {
-  EmojiDescription,
-  EmojiId,
-  EmojiSearchResult,
-} from '@atlaskit/emoji/types';
+import { EmojiDescription, EmojiId, EmojiSearchResult } from '@atlaskit/emoji/types';
+import { ProviderFactory } from '@uidu/editor-common';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { PortalProviderAPI } from '../../../components/PortalProvider';
 import { EditorAppearance } from '../../../types';
-import {
-  isChromeWithSelectionBug,
-  isMarkTypeAllowedInCurrentSelection,
-} from '../../../utils';
+import { isChromeWithSelectionBug, isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import emojiNodeView from '../nodeviews/emoji';
 
 export const emojiPluginKey = new PluginKey('emojiPlugin');

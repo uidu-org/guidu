@@ -1,5 +1,5 @@
-import { hexToRgba } from '@atlaskit/editor-common';
 import DocumentFilledIcon from '@atlaskit/icon/glyph/document-filled';
+import { hexToRgba } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';

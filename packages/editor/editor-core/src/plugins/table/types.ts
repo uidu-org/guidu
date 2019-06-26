@@ -1,14 +1,8 @@
+import { tableCellContentWrapperSelector, tableCellSelector, tableHeaderSelector, TableLayout, tablePrefixSelector } from '@atlaskit/adf-schema';
+import { TableSharedCssClassName } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { DecorationSet } from 'prosemirror-view';
-import {
-  TableLayout,
-  tablePrefixSelector,
-  tableCellSelector,
-  tableHeaderSelector,
-  tableCellContentWrapperSelector,
-} from '@atlaskit/adf-schema';
-import { TableSharedCssClassName } from '@atlaskit/editor-common';
 
 export type PermittedLayoutsDescriptor = TableLayout[] | 'all';
 export type Cell = { pos: number; start: number; node: PmNode };

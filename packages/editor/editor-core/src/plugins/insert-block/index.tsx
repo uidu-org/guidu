@@ -1,4 +1,4 @@
-import { WithProviders } from '@atlaskit/editor-common';
+import { WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
 import { ToolbarSize } from '../../components/Toolbar';
 import WithPluginState from '../../components/WithPluginState';

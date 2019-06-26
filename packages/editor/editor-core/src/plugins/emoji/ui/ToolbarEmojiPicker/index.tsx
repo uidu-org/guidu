@@ -1,8 +1,8 @@
-import { Popup } from '@atlaskit/editor-common';
 import { EmojiPicker as AkEmojiPicker } from '@atlaskit/emoji/picker';
 import { EmojiProvider } from '@atlaskit/emoji/resource';
 import { EmojiId } from '@atlaskit/emoji/types';
 import EmojiIcon from '@atlaskit/icon/glyph/editor/emoji';
+import { Popup } from '@uidu/editor-common';
 import { PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';

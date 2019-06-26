@@ -1,4 +1,4 @@
-import { tableNewColumnMinWidth } from '@atlaskit/editor-common';
+import { tableNewColumnMinWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { TableMap } from 'prosemirror-tables';
 import { findDomRefAtPos } from 'prosemirror-utils';

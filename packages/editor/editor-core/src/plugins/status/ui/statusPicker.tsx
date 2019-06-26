@@ -1,12 +1,9 @@
-import {
-  CreateUIAnalyticsEventSignature,
-  withAnalyticsEvents,
-} from '@atlaskit/analytics-next';
-import { akEditorFloatingDialogZIndex, Popup } from '@atlaskit/editor-common';
+import { withAnalyticsEvents } from '@atlaskit/analytics-next';
 import {
   ColorType as Color,
   StatusPicker as AkStatusPicker,
 } from '@atlaskit/status/picker';
+import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -34,7 +31,7 @@ export interface Props {
   defaultText?: string;
   defaultColor?: Color;
   defaultLocalId?: string;
-  createAnalyticsEvent?: CreateUIAnalyticsEventSignature;
+  createAnalyticsEvent?: any;
 }
 
 export interface State {

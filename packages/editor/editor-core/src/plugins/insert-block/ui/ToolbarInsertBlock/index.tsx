@@ -1,4 +1,3 @@
-import { akEditorMenuZIndex, Popup } from '@atlaskit/editor-common';
 import { EmojiPicker as AkEmojiPicker } from '@atlaskit/emoji/picker';
 import { EmojiProvider } from '@atlaskit/emoji/resource';
 import { EmojiId } from '@atlaskit/emoji/types';
@@ -20,6 +19,7 @@ import TaskIcon from '@atlaskit/icon/glyph/editor/task';
 import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
+import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
@@ -28,40 +28,13 @@ import { ReactInstance } from 'react';
 import * as ReactDOM from 'react-dom';
 import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
 import EditorActions from '../../../../actions';
-import {
-  analyticsService as analytics,
-  withAnalytics,
-} from '../../../../analytics';
+import { analyticsService as analytics, withAnalytics } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
-import {
-  ButtonGroup,
-  ExpandIconWrapper,
-  Shortcut,
-  Wrapper,
-} from '../../../../components/styles';
+import { ButtonGroup, ExpandIconWrapper, Shortcut, Wrapper } from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
-import {
-  addLink,
-  findKeymapByDescription,
-  toggleTable,
-  tooltip,
-} from '../../../../keymaps';
-import {
-  Command,
-  CommandDispatch,
-  InsertMenuCustomItem,
-} from '../../../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  InsertEventPayload,
-  PANEL_TYPE,
-  withAnalytics as commandWithAnalytics,
-} from '../../../analytics';
+import { addLink, findKeymapByDescription, toggleTable, tooltip } from '../../../../keymaps';
+import { Command, CommandDispatch, InsertMenuCustomItem } from '../../../../types';
+import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, DispatchAnalyticsEvent, EVENT_TYPE, INPUT_METHOD, InsertEventPayload, PANEL_TYPE, withAnalytics as commandWithAnalytics } from '../../../analytics';
 import { BlockType } from '../../../block-type/types';
 import { insertDate, openDatePicker } from '../../../date/actions';
 import { showLinkToolbar } from '../../../hyperlink/commands';

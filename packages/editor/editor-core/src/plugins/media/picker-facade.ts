@@ -1,9 +1,24 @@
-import { ErrorReportingHandler } from '@atlaskit/editor-common';
-import { Context } from '@atlaskit/media-core';
-import { ComponentConfigs, isBrowser, isDropzone, isImagePreview, isPopup, MediaFile, MediaPicker, MediaPickerComponent, MediaPickerComponents, UploadErrorEventPayload, UploadParams, UploadPreviewUpdateEventPayload, UploadProcessingEventPayload } from '@atlaskit/media-picker';
-import { CustomMediaPicker, MediaState, MobileUploadEndEventPayload } from './types';
-
-
+import {
+  ComponentConfigs,
+  isBrowser,
+  isDropzone,
+  isImagePreview,
+  isPopup,
+  MediaFile,
+  MediaPicker,
+  MediaPickerComponent,
+  MediaPickerComponents,
+  UploadErrorEventPayload,
+  UploadParams,
+  UploadPreviewUpdateEventPayload,
+  UploadProcessingEventPayload,
+} from '@atlaskit/media-picker';
+import { ErrorReportingHandler } from '@uidu/editor-common';
+import {
+  CustomMediaPicker,
+  MediaState,
+  MobileUploadEndEventPayload,
+} from './types';
 
 export type PickerType = keyof MediaPickerComponents | 'customMediaPicker';
 export type ExtendedComponentConfigs = ComponentConfigs & {
@@ -11,16 +26,16 @@ export type ExtendedComponentConfigs = ComponentConfigs & {
 };
 
 export type PickerFacadeConfig = {
-  context: Context;
+  context: any;
   errorReporter: ErrorReportingHandler;
 };
 
 export type MediaStateEvent = MediaState;
 export type MediaStateEventListener = (evt: MediaStateEvent) => void;
 
-export type MediaStateEventSubscriber = ((
+export type MediaStateEventSubscriber = (
   listener: MediaStateEventListener,
-) => void);
+) => void;
 export type NewMediaEvent = (
   state: MediaState,
   onStateChanged: MediaStateEventSubscriber,

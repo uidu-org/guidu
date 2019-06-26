@@ -1,5 +1,5 @@
-import { Popup } from '@atlaskit/editor-common';
 import DropdownList from '@uidu/droplist';
+import { Popup } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent } from 'react';
 

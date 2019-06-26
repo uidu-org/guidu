@@ -1,25 +1,12 @@
+import { ProviderFactory } from '@uidu/editor-common';
 import { receiveTransaction } from 'prosemirror-collab';
+import { AllSelection, NodeSelection, Selection, Transaction } from 'prosemirror-state';
 import { Step } from 'prosemirror-transform';
-import {
-  AllSelection,
-  NodeSelection,
-  Selection,
-  Transaction,
-} from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { ProviderFactory } from '@atlaskit/editor-common';
-
-import {
-  InitData,
-  RemoteData,
-  ConnectionData,
-  PresenceData,
-  TelepointerData,
-  SendableSelection,
-  CollabEditOptions,
-} from './types';
-
+import { CollabEditOptions, ConnectionData, InitData, PresenceData, RemoteData, SendableSelection, TelepointerData } from './types';
 import { replaceDocument } from './utils';
+
+
 
 export const handleInit = (
   initData: InitData,

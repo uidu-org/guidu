@@ -1,4 +1,4 @@
-import { ProviderFactory, Transformer } from '@atlaskit/editor-common';
+import { ProviderFactory, Transformer } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { IntlProvider, IntlShape, intlShape } from 'react-intl';

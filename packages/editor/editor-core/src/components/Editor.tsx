@@ -1,35 +1,14 @@
-import {
-  ErrorReporter,
-  ProviderFactory,
-  Transformer,
-} from '@atlaskit/editor-common';
+import { ErrorReporter, ProviderFactory, Transformer } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
 import { DirectEditorProps, EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
 import { intlShape } from 'react-intl';
 import { analyticsService } from '../analytics';
-import {
-  createErrorReporter,
-  createPMPlugins,
-  createSchema,
-  initAnalytics,
-  processPluginsList,
-} from '../create-editor/create-editor';
+import { createErrorReporter, createPMPlugins, createSchema, initAnalytics, processPluginsList } from '../create-editor/create-editor';
 import createPluginList from '../create-editor/create-plugins-list';
 import { createDispatch, Dispatch, EventDispatcher } from '../event-dispatcher';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  AnalyticsDispatch,
-  analyticsEventKey,
-  AnalyticsEventPayload,
-  AnalyticsEventPayloadWithChannel,
-  analyticsPluginKey,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-  PLATFORMS,
-} from '../plugins/analytics';
+import { ACTION, ACTION_SUBJECT, AnalyticsDispatch, analyticsEventKey, AnalyticsEventPayload, AnalyticsEventPayloadWithChannel, analyticsPluginKey, DispatchAnalyticsEvent, EVENT_TYPE, PLATFORMS } from '../plugins/analytics';
 import { EditorConfig, EditorPlugin, EditorProps } from '../types';
 import { getDocStructure } from '../utils/document-logger';
 import { findChangedNodesFromTransaction, validateNodes } from '../utils/nodes';

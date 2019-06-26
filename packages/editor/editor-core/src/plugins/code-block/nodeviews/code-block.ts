@@ -1,6 +1,6 @@
+import { browser } from '@uidu/editor-common';
+import { DOMOutputSpec, DOMSerializer, Node } from 'prosemirror-model';
 import rafSchedule from 'raf-schd';
-import { Node, DOMSerializer, DOMOutputSpec } from 'prosemirror-model';
-import { browser } from '@atlaskit/editor-common';
 
 const MATCH_NEWLINES = new RegExp('\n', 'g');
 

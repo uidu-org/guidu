@@ -1,15 +1,10 @@
+import { ExtensionHandlers, ProviderFactory } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
-import { ProviderFactory, ExtensionHandlers } from '@atlaskit/editor-common';
-import { EventDispatcher } from '../event-dispatcher';
 import EditorActions from '../actions';
-import {
-  UIComponentFactory,
-  ToolbarUIComponentFactory,
-  ReactComponents,
-  InsertMenuCustomItem,
-} from '../types';
-import { CollabEditOptions } from '../plugins/collab-edit';
+import { EventDispatcher } from '../event-dispatcher';
 import { DispatchAnalyticsEvent } from '../plugins/analytics';
+import { CollabEditOptions } from '../plugins/collab-edit';
+import { InsertMenuCustomItem, ReactComponents, ToolbarUIComponentFactory, UIComponentFactory } from '../types';
 import { EditorAppearance } from './editor-props';
 
 export interface EditorAppearanceComponentProps {

@@ -1,8 +1,8 @@
+import EditorFileIcon from '@atlaskit/icon/glyph/editor/file';
+import { getExtensionLozengeData } from '@uidu/editor-common';
+import { Node as PmNode } from 'prosemirror-model';
 import * as React from 'react';
 import { Component } from 'react';
-import { Node as PmNode } from 'prosemirror-model';
-import EditorFileIcon from '@atlaskit/icon/glyph/editor/file';
-import { getExtensionLozengeData } from '@atlaskit/editor-common';
 import { PlaceholderFallback, PlaceholderFallbackParams } from './styles';
 
 export const capitalizeFirstLetter = (str: string): string => {

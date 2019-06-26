@@ -1,18 +1,11 @@
-import {
-  calcBreakoutWidth,
-  overflowShadow,
-  OverflowShadowProps,
-} from '@atlaskit/editor-common';
+import { calcBreakoutWidth, overflowShadow, OverflowShadowProps } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
 import WithPluginState from '../../../../../components/WithPluginState';
 import { MacroProvider } from '../../../../macro';
-import {
-  pluginKey as widthPluginKey,
-  WidthPluginState,
-} from '../../../../width';
+import { pluginKey as widthPluginKey, WidthPluginState } from '../../../../width';
 import ExtensionLozenge from '../Lozenge';
 import { Overlay } from '../styles';
 import { Content, ContentWrapper, Header, Wrapper } from './styles';

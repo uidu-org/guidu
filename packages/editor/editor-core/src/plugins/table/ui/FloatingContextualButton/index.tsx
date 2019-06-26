@@ -1,5 +1,5 @@
-import { Popup } from '@atlaskit/editor-common';
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
+import { Popup } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';

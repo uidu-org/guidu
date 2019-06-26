@@ -5,8 +5,7 @@ import {
   calcColumnsFromPx,
   calcPctFromPx,
   calcPxFromColumns,
-} from '@atlaskit/editor-common';
-import { Context } from '@atlaskit/media-core';
+} from '@uidu/editor-common';
 import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import * as React from 'react';
 import { isFullPage } from '../../../../utils/is-full-page';

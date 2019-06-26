@@ -1,10 +1,9 @@
 import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import { MediaSingleProps } from '@atlaskit/editor-common';
+import { MediaSingleProps } from '@uidu/editor-common';
+import { EditorState } from 'prosemirror-state';
+import { EditorView } from 'prosemirror-view';
 import { EditorAppearance } from '../../../../types';
 import { GridType } from '../../../grid/types';
-import { EditorView } from 'prosemirror-view';
-import { EditorState } from 'prosemirror-state';
-import { Context } from '@atlaskit/media-core';
 
 export type EnabledHandles = { left?: boolean; right?: boolean };
 

@@ -1,7 +1,7 @@
 import { TableLayout } from '@atlaskit/adf-schema';
-import { Popup } from '@atlaskit/editor-common';
 import CollapseIcon from '@atlaskit/icon/glyph/editor/collapse';
 import ExpandIcon from '@atlaskit/icon/glyph/editor/expand';
+import { Popup } from '@uidu/editor-common';
 import classnames from 'classnames';
 import { findTable } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';

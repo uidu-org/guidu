@@ -1,9 +1,8 @@
-import { createCommand, getPluginState } from '../pm-plugins/media-editor';
-import { FileIdentifier, Context } from '@atlaskit/media-core';
 import { MediaBaseAttributes } from '@atlaskit/adf-schema';
 import { Dimensions } from '@atlaskit/media-editor';
+import { createCommand, getPluginState } from '../pm-plugins/media-editor';
 
-export const openMediaEditor = (pos: number, identifier: FileIdentifier) =>
+export const openMediaEditor = (pos: number, identifier: any) =>
   createCommand({
     type: 'open',
     identifier,
@@ -15,14 +14,14 @@ export const closeMediaEditor = () =>
     type: 'close',
   });
 
-export const setMediaContext = (context?: Context) =>
+export const setMediaContext = (context?: any) =>
   createCommand({
     type: 'setContext',
     context,
   });
 
 export const uploadAnnotation = (
-  newIdentifier: FileIdentifier,
+  newIdentifier: any,
   newDimensions: Dimensions,
 ) =>
   createCommand(

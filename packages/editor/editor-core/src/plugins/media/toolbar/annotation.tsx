@@ -1,23 +1,19 @@
-import * as React from 'react';
 import AnnotateIcon from '@atlaskit/icon/glyph/media-services/annotate';
-import { Context } from '@atlaskit/media-core';
 import { EditorView } from 'prosemirror-view';
+import * as React from 'react';
 import { defineMessages, InjectedIntl } from 'react-intl';
-
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  EVENT_TYPE,
+  withAnalytics,
+} from '../../../plugins/analytics';
 import { Command } from '../../../types';
 import Button from '../../floating-toolbar/ui/Button';
 import Separator from '../../floating-toolbar/ui/Separator';
-
-import { MediaPluginState, stateKey } from '../pm-plugins/main';
 import { openMediaEditor } from '../commands/media-editor';
-
-import {
-  withAnalytics,
-  ACTION_SUBJECT_ID,
-  ACTION_SUBJECT,
-  ACTION,
-  EVENT_TYPE,
-} from '../../../plugins/analytics';
+import { MediaPluginState, stateKey } from '../pm-plugins/main';
 
 const annotate: Command = (state, dispatch) => {
   const pluginState: MediaPluginState | undefined = stateKey.getState(state);
@@ -62,7 +58,7 @@ export const messages = defineMessages({
 });
 
 type AnnotationToolbarProps = {
-  viewContext: Context;
+  viewContext: any;
   id: string;
   intl: InjectedIntl;
   view?: EditorView;

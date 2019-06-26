@@ -1,4 +1,4 @@
-import { ErrorReporter, ProviderFactory } from '@atlaskit/editor-common';
+import { ErrorReporter, ProviderFactory } from '@uidu/editor-common';
 import { Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';

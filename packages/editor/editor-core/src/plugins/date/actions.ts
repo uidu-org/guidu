@@ -1,13 +1,13 @@
+import { todayTimestampInUTC } from '@uidu/editor-common';
 import {
   EditorState,
-  Transaction,
   NodeSelection,
   Selection,
+  Transaction,
 } from 'prosemirror-state';
-import { todayTimestampInUTC } from '@atlaskit/editor-common';
-import { pluginKey } from './plugin';
-import { DateType } from './index';
 import { Command } from '../../types';
+import { DateType } from './index';
+import { pluginKey } from './plugin';
 
 export const insertDate = (date?: DateType) => (
   state: EditorState,

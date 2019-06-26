@@ -45,6 +45,7 @@
     "esModuleInterop": true
   },
   "files": [
+    "./typings/atlaskit.d.ts",
     "./typings/uidu.d.ts",
     "./typings/react-images.d.ts",
     "./typings/package.json.d.ts",

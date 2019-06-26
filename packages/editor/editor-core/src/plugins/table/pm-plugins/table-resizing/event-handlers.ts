@@ -1,8 +1,5 @@
 import { CellAttributes, TableLayout } from '@atlaskit/adf-schema';
-import {
-  akEditorTableNumberColumnWidth,
-  tableCellMinWidth,
-} from '@atlaskit/editor-common';
+import { akEditorTableNumberColumnWidth, tableCellMinWidth } from '@uidu/editor-common';
 import { TableMap } from 'prosemirror-tables';
 import { getSelectionRect } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
@@ -13,16 +10,7 @@ import { updateColumnWidths } from '../../transforms';
 import { getSelectedColumnIndexes } from '../../utils';
 import { evenColumns, setDragging } from './commands';
 import { getPluginState } from './plugin';
-import {
-  createResizeHandle,
-  currentColWidth,
-  getLayoutSize,
-  getResizeStateFromDOM,
-  pointsAtCell,
-  resizeColumn,
-  updateControls,
-  updateResizeHandle,
-} from './utils';
+import { createResizeHandle, currentColWidth, getLayoutSize, getResizeStateFromDOM, pointsAtCell, resizeColumn, updateControls, updateResizeHandle } from './utils';
 
 export const handleMouseDown = (
   view: EditorView,

@@ -1,4 +1,4 @@
-import { akEditorTableNumberColumnWidth } from '@atlaskit/editor-common';
+import { akEditorTableNumberColumnWidth } from '@uidu/editor-common';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { SyntheticEvent } from 'react';

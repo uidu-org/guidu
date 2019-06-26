@@ -1,4 +1,4 @@
-import { ProviderFactory } from '@atlaskit/editor-common';
+import { ProviderFactory } from '@uidu/editor-common';
 import { Plugin, PluginKey, PluginSpec } from 'prosemirror-state';
 import { PMPluginFactoryParams } from '../../../types';
 import { pluginFactory } from '../../../utils/plugin-state-factory';
@@ -105,3 +105,4 @@ export const createPlugin = ({
 };
 
 export { createCommand, getPluginState };
+

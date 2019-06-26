@@ -1,24 +1,12 @@
-import { TableMap } from 'prosemirror-tables';
+import { tableCellMinWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
+import { Transaction } from 'prosemirror-state';
+import { TableMap } from 'prosemirror-tables';
 import { isTableSelected } from 'prosemirror-utils';
-import { tableCellMinWidth } from '@atlaskit/editor-common';
 import { Command, DomAtPos } from '../../../../types';
 import { updateColumnWidths } from '../../transforms';
 import { createCommand, getPluginState } from './plugin';
-import {
-  addContainerLeftRightPadding,
-  resizeColumn,
-  getResizeStateFromDOM,
-  hasTableBeenResized,
-  insertColgroupFromNode as recreateResizeColsByNode,
-  ScaleOptions,
-  scaleWithParent,
-  scale,
-  ResizeState,
-  isClickNear,
-  evenAllColumnsWidths,
-} from './utils';
-import { Transaction } from 'prosemirror-state';
+import { addContainerLeftRightPadding, evenAllColumnsWidths, getResizeStateFromDOM, hasTableBeenResized, insertColgroupFromNode as recreateResizeColsByNode, isClickNear, resizeColumn, ResizeState, scale, ScaleOptions, scaleWithParent } from './utils';
 
 export const handleBreakoutContent = (
   tableRef: HTMLTableElement,

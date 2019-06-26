@@ -1,27 +1,18 @@
-import { Node as PMNode, Schema, Fragment, Slice } from 'prosemirror-model';
-import { EditorView } from 'prosemirror-view';
-import { safeInsert, hasParentNodeOfType } from 'prosemirror-utils';
+import { MediaSingleAttributes, MediaSingleLayout } from '@atlaskit/adf-schema';
+import { akEditorBreakoutPadding, breakoutWideScaleRatio, calcPxFromPct } from '@uidu/editor-common';
+import { Fragment, Node as PMNode, Schema, Slice } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
-import { MediaSingleLayout, MediaSingleAttributes } from '@atlaskit/adf-schema';
-import {
-  calcPxFromPct,
-  breakoutWideScaleRatio,
-  akEditorBreakoutPadding,
-} from '@atlaskit/editor-common';
-
-import {
-  isImage,
-  atTheBeginningOfBlock,
-  checkNodeDown,
-  isEmptyParagraph,
-} from '../../../utils';
-import { copyOptionalAttrsFromMediaState } from '../utils/media-common';
-import { MediaState } from '../types';
+import { hasParentNodeOfType, safeInsert } from 'prosemirror-utils';
+import { EditorView } from 'prosemirror-view';
 import { Command } from '../../../types';
-import { mapSlice } from '../../../utils/slice';
+import { atTheBeginningOfBlock, checkNodeDown, isEmptyParagraph, isImage } from '../../../utils';
 import { getParentNodeWidth } from '../../../utils/node-width';
-import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
+import { mapSlice } from '../../../utils/slice';
 import { WidthPluginState } from '../../width';
+import { MediaState } from '../types';
+import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
+import { copyOptionalAttrsFromMediaState } from '../utils/media-common';
+
 
 export interface MediaSingleState extends MediaState {
   dimensions: { width: number; height: number };

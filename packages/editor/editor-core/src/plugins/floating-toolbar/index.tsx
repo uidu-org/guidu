@@ -1,4 +1,4 @@
-import { Popup, ProviderFactory } from '@atlaskit/editor-common';
+import { Popup, ProviderFactory } from '@uidu/editor-common';
 import {
   EditorState,
   Plugin,
@@ -96,7 +96,6 @@ const floatingToolbarPlugin: EditorPlugin = {
     providerFactory,
     dispatchAnalyticsEvent,
   }) {
-    console.log('non arrivo comunque qui, no?');
     return (
       <WithPluginState
         plugins={{

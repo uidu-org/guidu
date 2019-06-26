@@ -1,34 +1,15 @@
-import {
-  Plugin,
-  PluginKey,
-  Transaction,
-  Selection,
-  EditorState,
-} from 'prosemirror-state';
-import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
-import { Step, ReplaceStep } from 'prosemirror-transform';
-import { ProviderFactory } from '@atlaskit/editor-common';
+import { ProviderFactory } from '@uidu/editor-common';
 import memoizeOne from 'memoize-one';
-
+import { EditorState, Plugin, PluginKey, Selection, Transaction } from 'prosemirror-state';
+import { ReplaceStep, Step } from 'prosemirror-transform';
+import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
-import {
-  getSendableSelection,
-  handleInit,
-  handleConnection,
-  handlePresence,
-  handleTelePointer,
-  applyRemoteData,
-} from './actions';
-import {
-  Participant,
-  ConnectionData,
-  PresenceData,
-  TelepointerData,
-} from './types';
+import { applyRemoteData, getSendableSelection, handleConnection, handleInit, handlePresence, handleTelePointer } from './actions';
 import { Participants, ReadOnlyParticipants } from './participants';
-import { findPointers, createTelepointers } from './utils';
 import { CollabEditProvider, CollabEvent } from './provider';
-import { CollabEditOptions } from './types';
+import { CollabEditOptions, ConnectionData, Participant, PresenceData, TelepointerData } from './types';
+import { createTelepointers, findPointers } from './utils';
+
 
 export { CollabEditProvider };
 

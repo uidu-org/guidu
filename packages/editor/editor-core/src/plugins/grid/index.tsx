@@ -1,9 +1,5 @@
 import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import {
-  akEditorBreakoutPadding,
-  akEditorFullPageMaxWidth,
-  breakoutWideScaleRatio,
-} from '@atlaskit/editor-common';
+import { akEditorBreakoutPadding, akEditorFullPageMaxWidth, breakoutWideScaleRatio } from '@uidu/editor-common';
 import classnames from 'classnames';
 import { PluginKey } from 'prosemirror-state';
 import * as React from 'react';
@@ -225,3 +221,4 @@ const gridPlugin: EditorPlugin = {
 
 export default gridPlugin;
 export { GRID_GUTTER } from './styles';
+

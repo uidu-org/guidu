@@ -1,7 +1,6 @@
 import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import { ErrorReporter } from '@atlaskit/editor-common';
-import { Context } from '@atlaskit/media-core';
 import { UploadParams } from '@atlaskit/media-picker';
+import { ErrorReporter } from '@uidu/editor-common';
 import assert from 'assert';
 import { Node, Node as PMNode, Schema } from 'prosemirror-model';
 import { EditorState, NodeSelection, Plugin, PluginKey } from 'prosemirror-state';

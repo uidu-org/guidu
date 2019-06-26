@@ -1,6 +1,6 @@
+import { Popup } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { Popup } from '@atlaskit/editor-common';
 import { Container } from './styles';
 
 export type Coordinates = {
@@ -25,11 +25,7 @@ export interface Props {
   onPositionCalculated?: (position: Coordinates) => any;
 }
 
-export {
-  handlePositionCalculatedWith,
-  getOffsetParent,
-  getNearestNonTextNode,
-} from './utils';
+export { getNearestNonTextNode, getOffsetParent, handlePositionCalculatedWith } from './utils';
 
 export default class FloatingToolbar extends PureComponent<Props, any> {
   render() {

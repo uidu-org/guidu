@@ -1,5 +1,5 @@
 import { date } from '@atlaskit/adf-schema';
-import { todayTimestampInUTC } from '@atlaskit/editor-common';
+import { todayTimestampInUTC } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import * as React from 'react';
 import Loadable from 'react-loadable';
