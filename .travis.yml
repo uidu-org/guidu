@@ -22,4 +22,7 @@ deploy:
   on:
     branch: master
 
-cache: yarn
+cache:
+  timeout: 1200
+  yarn: true
+  npm: true
