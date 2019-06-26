@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "@uidu/media-card": "^0.1.13",
+    "@uidu/media-core": "^0.1.8",
     "@uidu/media-viewer": "^0.1.14",
     "@uidu/theme": "^0.1.12",
-    "react-images": "^1.0.0"
+    "react-images": "^1.0.0",
+    "styled-components": "^4.0.3"
   },
   "peerDependencies": {
     "react": "^16.8.3",

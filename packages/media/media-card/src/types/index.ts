@@ -1,16 +1,7 @@
-export type FileProps = {
-  src: string | undefined;
-  kind: string;
-  description?: string;
-  createdAt: string;
-  id: number | string;
-  filename: string;
-  blob: any;
-  extension: string;
-};
+import { FileIdentifier } from '@uidu/media-core';
 
 export type MediaCardProps = {
-  file: FileProps;
+  file: FileIdentifier;
   onClick?: () => void;
   onOpen?: () => void;
   onRemove?: () => void;

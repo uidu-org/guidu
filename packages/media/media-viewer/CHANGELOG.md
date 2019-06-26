@@ -1,10 +1,12 @@
-# @atlaskit/media-viewer
+# @uidu/media-viewer
 
 ## 0.1.14
-- [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
+
+- [patch][2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
 
   - Nextgen mediaviewer
-- [patch] [2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
+
+- [patch][2fe8c7a](https://github.org/uidu-org/guidu/commits/2fe8c7a):
 
   - Publish new media-viewer
 
@@ -101,9 +103,3 @@
 - [patch] :
 
   - Publish media components, added message 0.1.0
-
-## 36.1.0
-
-- [minor][f1b46bcb42](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/f1b46bcb42):
-
-  - ED-6259 Enable stricter types for media packages

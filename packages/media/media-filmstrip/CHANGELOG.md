@@ -1,4 +1,4 @@
-# @atlaskit/media-filmstrip
+# @uidu/media-filmstrip
 
 ## 0.1.12
 

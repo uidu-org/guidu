@@ -1,3 +1,4 @@
+import { FileIdentifier } from '@uidu/media-core';
 import { MentionProps } from 'react-mentions';
 
 export type MessageableProps = {
@@ -52,12 +53,6 @@ export type MessageGroupProps = {
 };
 
 export type MessageAttachmentsProps = {
-  attachments: Array<any>;
+  attachments: Array<FileIdentifier>;
   className?: string;
-};
-
-export type MessageAttachmentsState = {
-  animate: boolean;
-  offset: number;
-  selectedItem?: any;
 };

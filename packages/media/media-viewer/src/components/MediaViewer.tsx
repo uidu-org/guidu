@@ -1,30 +1,34 @@
 import { ShellMain } from '@uidu/shell';
 import React, { PureComponent } from 'react';
 import Carousel from 'react-images';
+import { MediaViewerProps, MediaViewerState } from '../types';
 import { NavigationNext, NavigationPrev } from './Navigation';
 import Sidebar from './Sidebar';
 import View from './View';
 
-export default class MediaViewer extends PureComponent<any, any> {
+export default class MediaViewer extends PureComponent<
+  MediaViewerProps,
+  MediaViewerState
+> {
   static defaultProps = {
     currentIndex: 0,
   };
 
   constructor(props) {
     super(props);
-    const { views, currentIndex } = this.props;
+    const { files, currentIndex } = this.props;
     this.state = {
-      currentView: views[currentIndex],
+      currentView: files[currentIndex],
     };
   }
 
   onViewChange = (index: number) => {
-    const { views } = this.props;
-    this.setState({ currentView: views[index] });
+    const { files } = this.props;
+    this.setState({ currentView: files[index] });
   };
 
   render() {
-    const { views, currentIndex } = this.props;
+    const { files, currentIndex } = this.props;
     const { currentView } = this.state;
 
     return (
@@ -42,7 +46,7 @@ export default class MediaViewer extends PureComponent<any, any> {
           }}
           isFullscreen
           frameProps={{ autoSize: 'height' }}
-          views={views}
+          views={files}
           styles={{
             container: (base: any) => ({
               ...base,

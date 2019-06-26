@@ -611,10 +611,6 @@
         "../../media/media-card/src/index",
         "./packages/media/media-card/src/index"
       ],
-      "@uidu/media-core/fileState": [
-        "../../media/media-core/src/fileState",
-        "./packages/media/media-core/src/fileState"
-      ],
       "@uidu/media-core/identifier": [
         "../../media/media-core/src/identifier",
         "./packages/media/media-core/src/identifier"
@@ -622,10 +618,6 @@
       "@uidu/media-core/index": [
         "../../media/media-core/src/index",
         "./packages/media/media-core/src/index"
-      ],
-      "@uidu/media-core/item": [
-        "../../media/media-core/src/item",
-        "./packages/media/media-core/src/item"
       ],
       "@uidu/media-filmstrip/index": [
         "../../media/media-filmstrip/src/index",
@@ -638,22 +630,6 @@
       "@uidu/media-picker/types": [
         "../../media/media-picker/src/types",
         "./packages/media/media-picker/src/types"
-      ],
-      "@uidu/media-store/index": [
-        "../../media/media-store/src/index",
-        "./packages/media/media-store/src/index"
-      ],
-      "@uidu/media-store/media-store": [
-        "../../media/media-store/src/media-store",
-        "./packages/media/media-store/src/media-store"
-      ],
-      "@uidu/media-store/upload-controller": [
-        "../../media/media-store/src/upload-controller",
-        "./packages/media/media-store/src/upload-controller"
-      ],
-      "@uidu/media-store/uploader": [
-        "../../media/media-store/src/uploader",
-        "./packages/media/media-store/src/uploader"
       ],
       "@uidu/media-viewer/index": [
         "../../media/media-viewer/src/index",

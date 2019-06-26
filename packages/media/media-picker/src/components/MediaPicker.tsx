@@ -1,3 +1,4 @@
+import { companionUrl } from '@uidu/media-core';
 import Uppy from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
@@ -42,16 +43,13 @@ export default class MediaPicker extends Component<any> {
         withCredentials: true,
       })
       .use(Url, {
-        companionUrl:
-          'https://tgt7qn1t68.execute-api.eu-west-1.amazonaws.com/dev',
+        companionUrl,
       })
       .use(GoogleDrive, {
-        companionUrl:
-          'https://tgt7qn1t68.execute-api.eu-west-1.amazonaws.com/dev',
+        companionUrl,
       })
       .use(Dropbox, {
-        companionUrl:
-          'https://tgt7qn1t68.execute-api.eu-west-1.amazonaws.com/dev',
+        companionUrl,
       });
     this.uppy.on('file-added', file => {
       this.uppy.setFileMeta(file.id, {

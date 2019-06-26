@@ -1,32 +1,27 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import styled, { css } from 'styled-components';
-import { Redirect } from 'react-router-dom';
-import { Link } from '../../components/WrappedLink';
-import { Helmet } from 'react-helmet';
-import { Code, Close } from 'react-feather';
+import { FlagGroup } from '@atlaskit/flag';
 import CodeIcon from '@atlaskit/icon/glyph/code';
 import CloseIcon from '@atlaskit/icon/glyph/cross';
-import ScreenIcon from '@atlaskit/icon/glyph/screen';
 import LinkIcon from '@atlaskit/icon/glyph/link';
-
-import Button from '@uidu/button';
-import { FlagGroup } from '@atlaskit/flag';
-import Tooltip from '@uidu/tooltip';
+import ScreenIcon from '@atlaskit/icon/glyph/screen';
+import Button, { ButtonGroup } from '@uidu/button';
 import Modal, {
   ModalBody as Body,
   ModalHeader as OgModalHeader,
   ModalTitle,
 } from '@uidu/modal-dialog';
 import { colors, elevation, gridSize } from '@uidu/theme';
-
+import Tooltip from '@uidu/tooltip';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { Redirect } from 'react-router-dom';
+import styled, { css } from 'styled-components';
+import ExampleDisplay from '../../components/Examples/ExampleDisplay';
+import { Link } from '../../components/WrappedLink';
+import { getConfig } from '../../site';
 import * as fs from '../../utils/fs';
 import packageResolver, { getLoaderUrl } from '../../utils/packageResolver';
-import ExampleDisplay from '../../components/Examples/ExampleDisplay';
-import { getConfig } from '../../site';
-// import CodeSandbox from './CodeSandbox';
-import CodeSandboxLogo from './CodeSandboxLogo';
 
 // ==============================
 // PAGE
@@ -200,32 +195,39 @@ const ModalHeaderComp = ({
   <ModalHeader showKeyline={showKeyline}>
     <ModalTitle>{fs.titleize(packageId)} Examples</ModalTitle>
     <ModalActions>
-      <Button
-        onClick={onCodeToggle}
-        isSelected={displayCode}
-        title={displayCode ? 'Hide Source' : 'Show Source'}
-      >
-        <CodeIcon label="Toggle code snippet" /> Source
-      </Button>
-      <Tooltip content="Fullscreen" position="bottom">
+      <ButtonGroup>
         <Button
-          appearance="subtle"
-          component={Link}
-          to={toExampleUrl(groupId, packageId, exampleId)}
+          onClick={onCodeToggle}
+          isSelected={displayCode}
+          title={displayCode ? 'Hide Source' : 'Show Source'}
+          iconBefore={<CodeIcon label="Toggle code snippet" />}
         >
-          <ScreenIcon label="Screen Icon" />
+          Source
         </Button>
-      </Tooltip>
-      <Tooltip content="Isolated View" position="bottom">
-        <Button appearance="subtle" href={loaderUrl} target={'_blank'}>
-          <LinkIcon label="Link Icon" />
-        </Button>
-      </Tooltip>
-      <Tooltip content="Close" position="bottom">
-        <Button appearance="subtle" onClick={close}>
-          <CloseIcon label="Close Modal" />
-        </Button>
-      </Tooltip>
+        <Tooltip content="Fullscreen" position="bottom">
+          <Button
+            appearance="subtle"
+            component={Link}
+            to={toExampleUrl(groupId, packageId, exampleId)}
+            iconBefore={<ScreenIcon label="Screen Icon" />}
+          />
+        </Tooltip>
+        <Tooltip content="Isolated View" position="bottom">
+          <Button
+            appearance="subtle"
+            href={loaderUrl}
+            target={'_blank'}
+            iconBefore={<LinkIcon label="Link Icon" />}
+          />
+        </Tooltip>
+        <Tooltip content="Close" position="bottom">
+          <Button
+            appearance="subtle"
+            onClick={close}
+            iconBefore={<CloseIcon label="Close Modal" />}
+          />
+        </Tooltip>
+      </ButtonGroup>
     </ModalActions>
   </ModalHeader>
 );

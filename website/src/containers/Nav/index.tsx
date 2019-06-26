@@ -1,27 +1,25 @@
-import * as React from 'react';
-import { toClass } from 'recompose';
-import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
-import { Link } from '../../components/WrappedLink';
+import PackagesIcon from '@atlaskit/icon/glyph/component';
+import PatternsIcon from '@atlaskit/icon/glyph/issues';
+import MenuIcon from '@atlaskit/icon/glyph/menu';
+import DocumentationIcon from '@atlaskit/icon/glyph/overview';
+import SearchIcon from '@atlaskit/icon/glyph/search';
 import Navigation, {
   AkContainerTitle,
   presetThemes,
 } from '@atlaskit/navigation';
 import { borderRadius, colors } from '@uidu/theme';
-import Tooltip from '@atlaskit/tooltip';
-
-import SearchIcon from '@atlaskit/icon/glyph/search';
-import MenuIcon from '@atlaskit/icon/glyph/menu';
-import PackagesIcon from '@atlaskit/icon/glyph/component';
-import DocumentationIcon from '@atlaskit/icon/glyph/overview';
-import PatternsIcon from '@atlaskit/icon/glyph/issues';
-
-import Groups from './Groups';
-import GroupDrawer from './GroupDrawer';
-import SearchDrawer from './SearchDrawer';
-import { externalPackages as packages, docs, patterns } from '../../site';
+import Tooltip from '@uidu/tooltip';
+import * as React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { toClass } from 'recompose';
+import styled from 'styled-components';
 import atlaskitLogo from '../../assets/atlaskit-logo-inverted.png';
 import atlaskitLogoMonochrome from '../../assets/atlaskit-logo-monochrome.png';
+import { Link } from '../../components/WrappedLink';
+import { docs, externalPackages as packages, patterns } from '../../site';
+import GroupDrawer from './GroupDrawer';
+import Groups from './Groups';
+import SearchDrawer from './SearchDrawer';
 
 export type State = {
   groupDrawerOpen: boolean;

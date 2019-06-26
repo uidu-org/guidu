@@ -5,23 +5,22 @@ import { fetchAttachments } from '../../media-card/example-helpers';
 
 export default class Basic extends PureComponent {
   state = {
-    cards: [],
+    files: [],
     currentIndex: undefined,
   };
 
   componentDidMount() {
-    fetchAttachments().then(response => this.setState({ cards: response }));
+    fetchAttachments().then(response => this.setState({ files: response }));
   }
 
   render() {
-    const { cards, currentIndex } = this.state;
-    return cards.length ? (
+    const { files, currentIndex } = this.state;
+    return files.length ? (
       <Fragment>
         <div className="container">
           <div className="card-columns">
-            {cards.map((card, index) => (
+            {files.map((card, index) => (
               <MediaCard
-                className="w-100 card position-relative"
                 file={card}
                 onClick={() => {
                   this.setState({ currentIndex: index });
@@ -31,7 +30,7 @@ export default class Basic extends PureComponent {
           </div>
         </div>
         <ModalMediaViewer
-          views={cards}
+          files={files}
           currentIndex={currentIndex}
           onClose={() => this.setState({ currentIndex: undefined })}
         />

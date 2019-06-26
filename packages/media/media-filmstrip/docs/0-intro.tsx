@@ -13,9 +13,7 @@ export default md`
   class FilmstripViewExample extends React.Component {
     render() {
       return (
-        <MediaFilmStrip
-          images={[]}
-        >
+        <MediaFilmStrip files={[]}>
         </MediaFilmStrip>
       );
     }

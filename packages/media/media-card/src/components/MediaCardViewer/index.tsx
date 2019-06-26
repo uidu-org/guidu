@@ -51,7 +51,7 @@ export default class MediaCardViewer extends PureComponent<any> {
               </Tooltip>
             )}
             {onRemove && (
-              <Tooltip content="Modifica">
+              <Tooltip content="Elimina">
                 <Button iconBefore={<Trash size={16} />} onClick={onRemove} />
               </Tooltip>
             )}

@@ -81,7 +81,6 @@
     "./typings/raf-schd.d.ts",
     "./typings/raf-stub.d.ts",
     "./typings/enzyme-react-intl.d.ts",
-    "./typings/rusha.d.ts",
     "./typings/scrollparent.d.ts",
     "./typings/snake-case.d.ts",
     "./typings/static-assets.d.ts",

@@ -1,5 +1,4 @@
 import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import { UploadParams } from '@atlaskit/media-picker';
 import { ErrorReporter } from '@uidu/editor-common';
 import assert from 'assert';
 import { Node, Node as PMNode, Schema } from 'prosemirror-model';
@@ -415,8 +414,8 @@ export class MediaPluginState {
   };
 
   private async initPickers(
-    uploadParams: UploadParams,
-    context: Context,
+    uploadParams: any,
+    context: any,
     Picker: typeof PickerFacade,
     reactContext: () => {},
   ) {

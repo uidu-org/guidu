@@ -1,5 +1,5 @@
+import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
-import { md, code, Example } from '@uidu/docs';
 
 export default md`
   This package is required by other Media Components, and should not be used
@@ -36,9 +36,9 @@ const context: Context = ContextFactory.create(config);
 
   ${(
     <Example
-      Component={require('../examples/1-get-file').default}
+      Component={require('../examples/Basic').default}
       title="Get File"
-      source={require('!!raw-loader!../examples/1-get-file')}
+      source={require('!!raw-loader!../examples/Basic')}
     />
   )}
 `;

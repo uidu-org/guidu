@@ -17,6 +17,7 @@
     "@uidu/modal-dialog": "^0.1.10"
   },
   "dependencies": {
+    "@uidu/media-core": "^0.1.8",
     "@uppy/core": "^1.0.1",
     "@uppy/drag-drop": "^1.0.1",
     "@uppy/dropbox": "^1.0.1",

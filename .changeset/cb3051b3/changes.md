@@ -1,0 +1,1 @@
+- Bump packages, remove some dependencies, better media-card types"

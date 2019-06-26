@@ -33,8 +33,7 @@
     "bolt-query": "^1.1.4",
     "extract-react-types-loader": "^0.3.1",
     "netlify-cli": "^2.8.1",
-    "node-fetch": "^2.3.0",
-    "tty-table": "^2.7.0"
+    "node-fetch": "^2.3.0"
   },
   "dependencies": {
     "@atlaskit/analytics-listeners": "^4.2.0",
@@ -59,6 +58,7 @@
     "@uidu/form": "^0.1.27",
     "@uidu/lozenge": "^0.1.9",
     "@uidu/modal-dialog": "^0.1.10",
+    "@uidu/navigation": "^0.1.16",
     "@uidu/select": "^0.1.12",
     "@uidu/shell": "^0.1.11",
     "@uidu/spinner": "^0.1.8",
@@ -71,7 +71,6 @@
     "commonmark-react-renderer": "^4.3.4",
     "connect-history-api-fallback": "^1.6.0",
     "extract-react-types-loader": "^0.3.1",
-    "ldclient-js": "^2.9.4",
     "lodash.debounce": "^4.0.8",
     "netlify-cli": "^2.8.1",
     "node-fetch": "^2.3.0",
@@ -95,7 +94,6 @@
     "snake-case": "^2.1.0",
     "styled-components": "^4.0.3",
     "tti-polyfill": "^0.2.2",
-    "tty-table": "^2.7.0",
     "uuid": "^3.3.2"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"

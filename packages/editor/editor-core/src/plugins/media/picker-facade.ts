@@ -1,19 +1,5 @@
-import {
-  ComponentConfigs,
-  isBrowser,
-  isDropzone,
-  isImagePreview,
-  isPopup,
-  MediaFile,
-  MediaPicker,
-  MediaPickerComponent,
-  MediaPickerComponents,
-  UploadErrorEventPayload,
-  UploadParams,
-  UploadPreviewUpdateEventPayload,
-  UploadProcessingEventPayload,
-} from '@atlaskit/media-picker';
 import { ErrorReportingHandler } from '@uidu/editor-common';
+import MediaPicker from '@uidu/media-picker';
 import {
   CustomMediaPicker,
   MediaState,

@@ -4,15 +4,15 @@ import MediaFilmStrip from '../src';
 
 export default class ViewStory extends PureComponent<any, any> {
   state = {
-    cards: [],
+    files: [],
   };
 
   componentDidMount() {
-    fetchAttachments().then(response => this.setState({ cards: response }));
+    fetchAttachments().then(files => this.setState({ files }));
   }
 
   render() {
-    const { cards } = this.state;
-    return <MediaFilmStrip images={cards} />;
+    const { files } = this.state;
+    return <MediaFilmStrip files={files} />;
   }
 }

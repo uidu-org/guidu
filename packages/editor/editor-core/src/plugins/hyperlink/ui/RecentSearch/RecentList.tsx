@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { ActivityItem } from '@atlaskit/activity';
-import Spinner from '@atlaskit/spinner';
+import Spinner from '@uidu/spinner';
 import styled from 'styled-components';
 import RecentItem from './RecentItem';
 

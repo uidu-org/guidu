@@ -1,4 +1,3 @@
-import { AtlassianIcon } from '@atlaskit/logo';
 import Button from '@uidu/button';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
@@ -11,12 +10,6 @@ import * as fs from '../../utils/fs';
 import FourOhFour from '../FourOhFour';
 import MetaData from './MetaData';
 import fetchPackageData from './utils/fsOperations';
-
-
-
-
-
-
 
 export const ButtonGroup = styled.div`
   display: inline-flex;
@@ -151,14 +144,6 @@ class Package extends React.Component<Props> {
               <Button component={Link} to={exampleModalPath}>
                 Examples
               </Button>
-              {pkg['atlaskit:designLink'] && (
-                <Button
-                  iconBefore={<AtlassianIcon size="small" />}
-                  href={pkg['atlaskit:designLink']}
-                >
-                  Design docs
-                </Button>
-              )}
             </ButtonGroup>
           )}
         </div>

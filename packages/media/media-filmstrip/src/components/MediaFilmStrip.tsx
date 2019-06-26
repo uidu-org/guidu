@@ -1,60 +1,49 @@
 import MediaCard from '@uidu/media-card';
 import { ModalMediaViewer } from '@uidu/media-viewer';
 import React, { Component, Fragment } from 'react';
+import { FilmStrip } from '../styled';
+import { MediaFilmStripProps, MediaFilmStripState } from '../types';
 
-export default class MediaFilmStrip extends Component<any, any> {
-  state = { currentModal: null };
+export default class MediaFilmStrip extends Component<
+  MediaFilmStripProps,
+  MediaFilmStripState
+> {
+  state = { currentModal: undefined };
 
-  toggleModal = (index: number | null = null) => {
+  toggleModal = (index: number | undefined = undefined) => {
     this.setState({ currentModal: index });
   };
 
   render() {
-    const { images, isLoading } = this.props;
+    const { files, ...otherProps } = this.props;
     const { currentModal } = this.state;
 
     return (
       <Fragment>
-        {!isLoading ? (
-          <FilmStrip>
-            {images.map((image: any, index: number) => (
-              <div
-                key={image.id}
-                style={{
-                  width: `calc(30% - 16px)`,
-                  display: 'inline-flex',
-                  marginRight: 8,
-                }}
-              >
-                <MediaCard
-                  onOpen={() => this.toggleModal(index)}
-                  file={image}
-                />
-              </div>
-            ))}
-          </FilmStrip>
-        ) : null}
+        <FilmStrip>
+          {files.map((image: any, index: number) => (
+            <div
+              key={image.id}
+              style={{
+                width: `calc(30% - 16px)`,
+                display: 'inline-flex',
+                marginRight: 8,
+              }}
+            >
+              <MediaCard
+                onOpen={() => this.toggleModal(index)}
+                file={image}
+                {...otherProps}
+              />
+            </div>
+          ))}
+        </FilmStrip>
         <ModalMediaViewer
           currentIndex={currentModal}
-          views={images}
+          files={files}
           onClose={() => this.toggleModal(null)}
         />
       </Fragment>
     );
   }
 }
-
-const FilmStrip = (props: any) => (
-  <div
-    style={{
-      overflowX: 'auto',
-      WebkitOverflowScrolling: 'touch',
-      whiteSpace: 'nowrap',
-      paddingBottom: '1rem',
-      paddingTop: '1rem',
-      marginTop: '-1rem',
-      marginBottom: '-1rem',
-    }}
-    {...props}
-  />
-);

@@ -4,15 +4,15 @@ import { fetchAttachments } from '../../media-card/example-helpers';
 
 export default class Basic extends PureComponent {
   state = {
-    cards: [],
+    files: [],
   };
 
   componentDidMount() {
-    fetchAttachments().then(response => this.setState({ cards: response }));
+    fetchAttachments().then(response => this.setState({ files: response }));
   }
 
   render() {
-    const { cards } = this.state;
-    return cards.length ? <MediaViewer views={cards} /> : <div>Loading...</div>;
+    const { files } = this.state;
+    return files.length ? <MediaViewer files={files} /> : <div>Loading...</div>;
   }
 }

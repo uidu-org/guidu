@@ -55,8 +55,7 @@
     "webpack": "^4.29.5",
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-dev-server": "^3.2.1",
-    "webpack-manifest-plugin": "^2.0.4",
-    "workbox-webpack-plugin": "^4.0.0"
+    "webpack-manifest-plugin": "^2.0.4"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

@@ -5,7 +5,7 @@ Wrapper for react-popper with common config and some helpers
 ## Installation
 
 ```sh
-yarn add @atlaskit/popper
+yarn add @uidu/popper
 ```
 
 ## Usage
