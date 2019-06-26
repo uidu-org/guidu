@@ -39,7 +39,7 @@ const TEST_ONLY_PATTERN = process.env.TEST_ONLY_PATTERN || '';
     )
     .map(changedPkg => changedPkg.split('/').pop());
 
-  const atlaskitCoverageReducer = (result, { coverage, pkg }) => ({
+  const uiduCoverageReducer = (result, { coverage, pkg }) => ({
     ...result,
     collectCoverageFrom: [
       ...result.collectCoverageFrom,
@@ -61,7 +61,7 @@ const TEST_ONLY_PATTERN = process.env.TEST_ONLY_PATTERN || '';
       return changedPackagesName.find(changedPkg => pkgName === changedPkg);
     })
     .map(pkg => ({ pkg, coverage: codeCoverageByPackage[pkg] }))
-    .reduce(atlaskitCoverageReducer, {
+    .reduce(uiduCoverageReducer, {
       collectCoverageFrom: [],
       coverageThreshold: {},
     });

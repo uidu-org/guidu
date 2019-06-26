@@ -1,8 +1,6 @@
-// @flow
-
-import React, { Component } from 'react';
 import Button from '@uidu/button';
-import Drawer, { type DrawerWidth } from '../src';
+import React, { Component } from 'react';
+import Drawer, { DrawerWidth } from '../src';
 import { sizes } from '../src/constants';
 
 type State = {
@@ -27,7 +25,7 @@ export default class DrawersExample extends Component<{}, State> {
         <div>
           <code>{this.state.size} size</code>
         </div>
-        <div css={{ margin: '1rem 0' }}>
+        <div style={{ margin: '1rem 0' }}>
           <Button type="button" onClick={this.onNextClick}>
             Next size
           </Button>

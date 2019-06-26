@@ -1,38 +1,34 @@
-// @flow
-
-import React, { Component, type ComponentType } from 'react';
-import { Transition } from 'react-transition-group';
 import { layers } from '@uidu/theme';
-import { DrawerOrigin } from './types';
+import React, { Component, ComponentType } from 'react';
+import { Transition } from 'react-transition-group';
 import { transitionDurationMs, transitionTimingFunction } from '../constants';
+import { DrawerOrigin } from '../types';
 
 // Transitions
 // ------------------------------
 
-type Styles = { [string]: string | number | null };
-
 type TransitionProps = {
-  children?: Node,
-  component?: ComponentType<*> | string,
-  onExited?: (node: HTMLElement) => void,
-  shouldUnmountOnExit?: boolean,
-  origin: DrawerOrigin,
-  in: boolean,
+  children?: React.ReactNode;
+  component?: ComponentType | string;
+  onExited?: (node: HTMLElement) => void;
+  shouldUnmountOnExit?: boolean;
+  origin: DrawerOrigin;
+  in: boolean;
 };
 
 type HandlerProps = {
-  defaultStyles: Styles,
+  defaultStyles: any;
   transitionProps: {
-    appear: boolean,
-    mountOnEnter: boolean,
-    unmountOnExit: boolean,
-  },
+    appear: boolean;
+    mountOnEnter: boolean;
+    unmountOnExit: boolean;
+  };
   transitionStyles: {
-    entering?: Styles,
-    entered?: Styles,
-    exiting?: Styles,
-    exited?: Styles,
-  },
+    entering?: any;
+    entered?: any;
+    exiting?: any;
+    exited?: any;
+  };
 };
 
 const defaultTransitionProps = {

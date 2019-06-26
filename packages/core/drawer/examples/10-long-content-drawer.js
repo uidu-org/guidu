@@ -1,9 +1,6 @@
-// @flow
-
-import React, { Component } from 'react';
 import Button from '@uidu/button';
+import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
-
 import Drawer from '../src';
 
 type State = {
@@ -26,7 +23,7 @@ export default class DrawersExample extends Component<{}, State> {
 
   render() {
     return (
-      <div css={{ padding: '2rem' }}>
+      <div style={{ padding: '2rem' }}>
         <Drawer
           onClose={this.closeDrawer}
           isOpen={this.state.isDrawerOpen}

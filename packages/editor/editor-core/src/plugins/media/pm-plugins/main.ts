@@ -2,7 +2,12 @@ import { MediaSingleLayout } from '@atlaskit/adf-schema';
 import { ErrorReporter } from '@uidu/editor-common';
 import assert from 'assert';
 import { Node, Node as PMNode, Schema } from 'prosemirror-model';
-import { EditorState, NodeSelection, Plugin, PluginKey } from 'prosemirror-state';
+import {
+  EditorState,
+  NodeSelection,
+  Plugin,
+  PluginKey,
+} from 'prosemirror-state';
 import { insertPoint } from 'prosemirror-transform';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
@@ -11,21 +16,32 @@ import * as ReactDOM from 'react-dom';
 import analyticsService from '../../../analytics/service';
 import { Dispatch } from '../../../event-dispatcher';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, AnalyticsEventPayload, DispatchAnalyticsEvent, EVENT_TYPE, InputMethodInsertMedia, INPUT_METHOD } from '../../../plugins/analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  AnalyticsEventPayload,
+  DispatchAnalyticsEvent,
+  EVENT_TYPE,
+  InputMethodInsertMedia,
+  INPUT_METHOD,
+} from '../../../plugins/analytics';
 import { EditorAppearance } from '../../../types/editor-props';
 import { isImage } from '../../../utils';
 import { isFullPage } from '../../../utils/is-full-page';
 import { updateMediaNodeAttrs } from '../commands';
 import * as helpers from '../commands/helpers';
 import { MediaPluginOptions } from '../media-plugin-options';
-import PickerFacade, { MediaStateEventListener, MediaStateEventSubscriber, PickerFacadeConfig } from '../picker-facade';
+import PickerFacade, {
+  MediaStateEventListener,
+  MediaStateEventSubscriber,
+  PickerFacadeConfig,
+} from '../picker-facade';
 import { MediaProvider, MediaState, MediaStateStatus } from '../types';
 import DropPlaceholder, { PlaceholderType } from '../ui/Media/DropPlaceholder';
 import { removeMediaNode, splitMediaGroup } from '../utils/media-common';
 import { insertMediaGroupNode } from '../utils/media-files';
 import { insertMediaSingleNode, isMediaSingle } from '../utils/media-single';
-
-
 
 export { MediaState, MediaProvider, MediaStateStatus };
 

@@ -1,7 +1,5 @@
-// @flow
-
-import React, { Component } from 'react';
 import Button from '@uidu/button';
+import React, { Component } from 'react';
 import Drawer from '../src';
 
 type State = {
@@ -34,7 +32,7 @@ export default class DrawersExample extends Component<{}, State> {
     const { origin } = this.state;
 
     return (
-      <div css={{ padding: '2rem' }}>
+      <div style={{ padding: '2rem' }}>
         <Drawer
           onClose={this.onClose}
           onCloseComplete={this.onCloseComplete}

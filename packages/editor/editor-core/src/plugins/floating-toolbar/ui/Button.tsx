@@ -1,4 +1,4 @@
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { baseStyles, getButtonStyles } from './styles';

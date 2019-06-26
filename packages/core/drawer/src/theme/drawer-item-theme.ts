@@ -7,7 +7,7 @@ import {
 } from '../constants';
 
 import { convert } from 'chromatism';
-// @flow
+
 import { itemThemeNamespace } from '@uidu/item';
 
 // These themes are copied over from @uidu/global-navigation to preserve the theming

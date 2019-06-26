@@ -256,8 +256,8 @@ module.exports = function createWebpackConfig(
       mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
       alias: {
-      'react-native$': 'react-native-web',
-    },
+        'react-native$': 'react-native-web',
+      },
     },
     resolveLoader: {
       modules: [
@@ -329,7 +329,7 @@ function getEntries({ isProduction, entryPath, websiteDir }) {
   if (isProduction) {
     return absEntryPath;
   }
-  const port = process.env.ATLASKIT_DEV_PORT || '9000';
+  const port = process.env.UIDU_DEV_PORT || '9000';
   const devServerPath = `${require.resolve(
     'webpack-dev-server/client',
   )}?http://localhost:${port}/`;

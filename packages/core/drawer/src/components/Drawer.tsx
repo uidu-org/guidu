@@ -1,35 +1,29 @@
-// @flow
-
-import React, { Children, Component, Fragment, type Node } from 'react';
-import { canUseDOM } from 'exenv';
-import { createPortal } from 'react-dom';
-import { ThemeProvider } from 'styled-components';
-import { TransitionGroup } from 'react-transition-group';
 import {
   createAndFireEvent,
-  withAnalyticsEvents,
   withAnalyticsContext,
-  type WithAnalyticsEventsProps,
+  withAnalyticsEvents,
 } from '@uidu/analytics';
 import Blanket from '@uidu/blanket';
+import { ThemeProvider } from '@uidu/theme';
+import { canUseDOM } from 'exenv';
+import * as React from 'react';
+import { createPortal } from 'react-dom';
+import { TransitionGroup } from 'react-transition-group';
+import drawerItemTheme from '../theme/drawer-item-theme';
+import { CloseTrigger, DrawerProps } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
-import drawerItemTheme from '../theme/drawer-item-theme';
-import DrawerPrimitive from './primitives';
+import DrawerPrimitive from './DrawerPrimitive';
 import { Fade } from './transitions';
-import type { CloseTrigger, DrawerProps } from './types';
 
-const OnlyChild = ({ children }) => Children.toArray(children)[0] || null;
+const OnlyChild = ({ children }) => React.Children.toArray(children)[0] || null;
 
 const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
 const createAndFireOnClick = (
-  createAnalyticsEvent: $PropertyType<
-    WithAnalyticsEventsProps,
-    'createAnalyticsEvent',
-  >,
+  createAnalyticsEvent: any,
   trigger: CloseTrigger,
 ) =>
   createAndFireEventOnAtlaskit({
@@ -43,7 +37,7 @@ const createAndFireOnClick = (
     },
   })(createAnalyticsEvent);
 
-export class DrawerBase extends Component<DrawerProps> {
+export class DrawerBase extends React.Component<DrawerProps> {
   static defaultProps = {
     width: 'narrow',
     origin: 'left',
@@ -55,35 +49,35 @@ export class DrawerBase extends Component<DrawerProps> {
     const { isOpen } = this.props;
 
     if (isOpen) {
-      window.addEventListener('keydown', this.handleKeyDown);
+      window.addEventListener('keydown', this.handleKeyDown as any);
     }
   }
 
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.handleKeyDown);
+    window.removeEventListener('keydown', this.handleKeyDown as any);
   }
 
   componentDidUpdate(prevProps: DrawerProps) {
     const { isOpen } = this.props;
     if (isOpen !== prevProps.isOpen) {
       if (isOpen) {
-        window.addEventListener('keydown', this.handleKeyDown);
+        window.addEventListener('keydown', this.handleKeyDown as any);
       } else {
-        window.removeEventListener('keydown', this.handleKeyDown);
+        window.removeEventListener('keydown', this.handleKeyDown as any);
       }
     }
   }
 
-  handleBlanketClick = (event: SyntheticMouseEvent<*>) => {
+  handleBlanketClick = (event: React.MouseEvent) => {
     this.handleClose(event, 'blanket');
   };
 
-  handleBackButtonClick = (event: SyntheticMouseEvent<*>) => {
+  handleBackButtonClick = (event: React.MouseEvent) => {
     this.handleClose(event, 'backButton');
   };
 
   handleClose = (
-    event: SyntheticKeyboardEvent<*> | SyntheticMouseEvent<*>,
+    event: React.KeyboardEvent | React.MouseEvent,
     trigger: CloseTrigger,
   ) => {
     const { createAnalyticsEvent, onClose } = this.props;
@@ -95,7 +89,7 @@ export class DrawerBase extends Component<DrawerProps> {
     }
   };
 
-  handleKeyDown = (event: SyntheticKeyboardEvent<*>) => {
+  handleKeyDown = (event: React.KeyboardEvent) => {
     const { isOpen, onKeyDown } = this.props;
 
     if (event.key === 'Escape' && isOpen) {
@@ -119,11 +113,11 @@ export class DrawerBase extends Component<DrawerProps> {
       onCloseComplete,
       origin,
     } = this.props;
+
     return createPortal(
       <TransitionGroup component={OnlyChild}>
-        <Fragment>
-          {/* $FlowFixMe the `in` prop is internal */}
-          <Fade in={isOpen}>
+        <React.Fragment>
+          <Fade in={isOpen} origin={origin}>
             <Blanket isTinted onBlanketClicked={this.handleBlanketClick} />
           </Fade>
           <DrawerPrimitive
@@ -137,14 +131,14 @@ export class DrawerBase extends Component<DrawerProps> {
           >
             {children}
           </DrawerPrimitive>
-        </Fragment>
+        </React.Fragment>
       </TransitionGroup>,
       this.body,
     );
   }
 }
 
-export const DrawerItemTheme = (props: { children: Node }) => (
+export const DrawerItemTheme = (props: { children: React.ReactNode }) => (
   <ThemeProvider theme={drawerItemTheme}>{props.children}</ThemeProvider>
 );
 

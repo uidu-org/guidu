@@ -9,3 +9,5 @@ export type MediaViewerProps = {
 export type MediaViewerState = {
   currentView?: FileIdentifier;
 };
+
+export type ModalMediaViewerProps = {} & MediaViewerProps;

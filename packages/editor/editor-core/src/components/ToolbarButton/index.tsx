@@ -1,4 +1,4 @@
-import { ButtonProps } from '@atlaskit/button';
+import { ButtonProps } from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import Button from './styles';

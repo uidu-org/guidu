@@ -24,7 +24,7 @@ if [ "$TRAVIS_BRANCH" = "master" ]; then
 fi
 
 echo -e "\e[32m  Setting npm registry token"
-# $NPM_TOKEN is the auth token for the "atlaskit" user
+# $NPM_TOKEN is the auth token for the "uidu" user
 npm set //registry.npmjs.org/:_authToken=$NPM_TOKEN
 # For some reason, the npm dist-tag commands are hitting yarnpkg and not npmjs
 npm set //registry.yarnpkg.com/:_authToken=$NPM_TOKEN

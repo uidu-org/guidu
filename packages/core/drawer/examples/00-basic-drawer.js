@@ -1,7 +1,7 @@
-// @flow
-
-import React, { Component } from 'react';
 import Button from '@uidu/button';
+import { ShellBody, ShellHeader } from '@uidu/shell';
+import React, { Component } from 'react';
+import Lorem from 'react-lorem-component';
 import Drawer from '../src';
 
 type State = {
@@ -31,14 +31,17 @@ export default class DrawersExample extends Component<{}, State> {
 
   render() {
     return (
-      <div css={{ padding: '2rem' }}>
+      <div style={{ padding: '2rem' }}>
         <Drawer
           onClose={this.onClose}
           onCloseComplete={this.onCloseComplete}
           isOpen={this.state.isDrawerOpen}
           size="wide"
         >
-          <code>Drawer contents</code>
+          <ShellHeader>Titolo</ShellHeader>
+          <ShellBody scrollable>
+            <Lorem count={100} />
+          </ShellBody>
         </Drawer>
         <Button type="button" onClick={this.openDrawer}>
           Open drawer

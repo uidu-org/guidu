@@ -1,4 +1,4 @@
-import Button, { ButtonProps } from '@atlaskit/button';
+import Button, { ButtonProps } from '@uidu/button';
 import * as React from 'react';
 
 export default (props: ButtonProps) => (

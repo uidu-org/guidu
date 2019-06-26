@@ -1,4 +1,4 @@
-import { ButtonGroup } from '@atlaskit/button';
+import { ButtonGroup } from '@uidu/button';
 import { ProviderFactory } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize, themed } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';

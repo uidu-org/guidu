@@ -1,4 +1,3 @@
-// @flow
 export type Color = string | Function;
 export type Background = Color;
 export type Text = Color;

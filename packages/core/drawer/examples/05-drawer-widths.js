@@ -1,10 +1,8 @@
-// @flow
-
-import React, { Component } from 'react';
 import Button from '@uidu/button';
+import React, { Component } from 'react';
 import Drawer from '../src';
-import type { DrawerWidth } from '../src/components/types';
 import { sizes } from '../src/constants';
+import type { DrawerWidth } from '../src/components/types';
 
 type State = {
   isDrawerOpen: boolean,
@@ -30,14 +28,14 @@ export default class DrawersExample extends Component<{}, State> {
 
   render() {
     return (
-      <div css={{ padding: '2rem' }}>
+      <div style={{ padding: '2rem' }}>
         <Drawer
           onClose={this.closeDrawer}
           isOpen={this.state.isDrawerOpen}
           size={this.state.size}
         >
           <code
-            css={{
+            style={{
               textTransform: 'capitalize',
             }}
           >{`${this.state.size} drawer contents`}</code>

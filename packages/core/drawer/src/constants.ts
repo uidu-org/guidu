@@ -1,4 +1,3 @@
-// @flow
 import { gridSize as akGridSize } from '@uidu/theme';
 
 export const transitionDuration = '0.22s';

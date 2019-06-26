@@ -1,6 +1,5 @@
-// @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   This package exports \`Drawer\` and \`DrawerBase\` components.
@@ -64,7 +63,7 @@ export default md`
   ${(
     <Props
       heading="Drawer Props"
-      props={require('!!extract-react-types-loader!../src/components/index')}
+      props={require('!!extract-react-types-loader!../src/components/Drawer')}
     />
   )}
 `;

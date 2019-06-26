@@ -5,7 +5,7 @@ const npmRun = require('npm-run');
 const BITBUCKET_COMMIT = process.env.BITBUCKET_COMMIT;
 const AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY;
 const AWS_SECRET_KEY = process.env.AWS_SECRET_KEY;
-const BUCKET_NAME = 'atlaskit-artefacts';
+const BUCKET_NAME = 'uidu-artefacts';
 const BUCKET_REGION = 'ap-southeast-2';
 
 if (!AWS_ACCESS_KEY || !AWS_SECRET_KEY || !BITBUCKET_COMMIT) {
