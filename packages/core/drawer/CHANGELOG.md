@@ -1,5 +1,10 @@
 # @uidu/drawer
 
+## 0.1.12
+- [patch] [d5a25bf](https://github.org/uidu-org/guidu/commits/d5a25bf):
+
+  - Move css to style to see if styled-component is the problem
+
 ## 0.1.11
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
