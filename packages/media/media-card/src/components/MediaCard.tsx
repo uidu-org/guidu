@@ -10,7 +10,7 @@ initializeFileTypeIcons();
 
 export default class MediaCard extends PureComponent<MediaCardProps> {
   render() {
-    const { file, ...otherProps } = this.props;
+    const { file } = this.props;
 
     let content;
 
@@ -30,6 +30,6 @@ export default class MediaCard extends PureComponent<MediaCardProps> {
       }
     }
 
-    return <MediaCardViewer {...otherProps}>{content}</MediaCardViewer>;
+    return <MediaCardViewer {...this.props}>{content}</MediaCardViewer>;
   }
 }

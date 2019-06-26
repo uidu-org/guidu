@@ -12,5 +12,7 @@ export type FileProps = {
 export type MediaCardProps = {
   file: FileProps;
   onClick?: () => void;
+  onOpen?: () => void;
+  onRemove?: () => void;
   style?: any;
 };

@@ -8,6 +8,7 @@ export const fakeImage = () => ({
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
+  extension: 'jpg',
 });
 
 export const fakeVideo = () => ({
@@ -18,6 +19,7 @@ export const fakeVideo = () => ({
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
+  extension: 'mkv',
   sources: [
     {
       type: 'video/mp4',
@@ -33,11 +35,12 @@ export const fakeVideo = () => ({
 export const fakeFile = () => ({
   kind: 'file',
   id: faker.random.uuid(),
-  src: faker.image.dataUri(),
+  src: faker.image.business(),
   filename: faker.finance.accountName(),
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
+  extension: 'pdf',
 });
 
 export const fakeLink = () => ({
@@ -48,6 +51,7 @@ export const fakeLink = () => ({
   description: faker.lorem.sentence(),
   author: faker.helpers.userCard(),
   createdAt: faker.date.recent(),
+  extension: 'png',
 });
 
 export const fetchAttachments = () => {

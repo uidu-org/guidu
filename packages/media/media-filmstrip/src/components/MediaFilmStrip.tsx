@@ -19,6 +19,7 @@ export default class MediaFilmStrip extends Component<any, any> {
           <FilmStrip>
             {images.map((image: any, index: number) => (
               <div
+                key={image.id}
                 style={{
                   width: `calc(30% - 16px)`,
                   display: 'inline-flex',
@@ -26,8 +27,7 @@ export default class MediaFilmStrip extends Component<any, any> {
                 }}
               >
                 <MediaCard
-                  onClick={() => this.toggleModal(index)}
-                  key={image.id}
+                  onOpen={() => this.toggleModal(index)}
                   file={image}
                 />
               </div>
@@ -50,6 +50,10 @@ const FilmStrip = (props: any) => (
       overflowX: 'auto',
       WebkitOverflowScrolling: 'touch',
       whiteSpace: 'nowrap',
+      paddingBottom: '1rem',
+      paddingTop: '1rem',
+      marginTop: '-1rem',
+      marginBottom: '-1rem',
     }}
     {...props}
   />

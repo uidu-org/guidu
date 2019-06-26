@@ -1,11 +1,11 @@
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { fakeFile, fakeImage, fakeLink, fakeVideo } from '../example-helpers';
 import MediaCard from '../src';
 
 export default class Basic extends PureComponent {
   render() {
     return (
-      <Fragment>
+      <div className="card-columns">
         <div style={{ width: '200px' }}>
           <MediaCard file={fakeImage()} />
         </div>
@@ -18,7 +18,7 @@ export default class Basic extends PureComponent {
         <div style={{ width: '200px' }}>
           <MediaCard file={fakeLink()} />
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

@@ -12,8 +12,11 @@
     "access": "public"
   },
   "dependencies": {
+    "@uidu/button": "^0.1.38",
+    "@uidu/dropdown-menu": "^0.1.11",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.11",
+    "@uidu/tooltip": "^0.1.11",
     "@uifabric/file-type-icons": "^7.0.3",
     "office-ui-fabric-react": "^7.5.2",
     "react": "^16.8.3",
