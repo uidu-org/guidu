@@ -63,7 +63,7 @@ export default class ResizableMediaSingle extends React.Component<
     }
   }
 
-  async checkVideoFile(viewContext?: Context) {
+  async checkVideoFile(viewContext?: any) {
     const $pos = this.$pos;
     if (!$pos || !viewContext) {
       return undefined;

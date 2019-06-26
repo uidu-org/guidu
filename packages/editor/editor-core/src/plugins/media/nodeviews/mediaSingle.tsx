@@ -54,7 +54,7 @@ export interface MediaSingleNodeProps {
 export interface MediaSingleNodeState {
   width?: number;
   height?: number;
-  viewContext?: Context;
+  viewContext?: any;
 }
 
 export default class MediaSingleNode extends Component<

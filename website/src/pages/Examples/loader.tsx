@@ -1,8 +1,6 @@
 import Shell, { ShellContent, ShellMain } from '@uidu/shell';
-import { colors } from '@uidu/theme';
 import qs from 'query-string';
 import * as React from 'react';
-import styled from 'styled-components';
 import {
   initializeGA,
   observePerformanceMetrics,
@@ -10,28 +8,8 @@ import {
 } from '../../components/Analytics/GoogleAnalyticsListener';
 import Loading from '../../components/Loading';
 import Loadable from '../../components/WrappedLoader';
-import { File } from '../../types';
 import * as fs from '../../utils/fs';
 import packageResolver from '../../utils/packageResolver';
-
-const ErrorMessage = styled.div`
-  background-color: ${colors.R400};
-  color: white;
-  font-size: 120%;
-  padding: 1rem;
-`;
-
-export type State = {
-  packageId: string;
-  groupId: string;
-  exampleId: string;
-  examplesPath: string | undefined;
-};
-
-export type ExampleLoaderProps = {
-  example: File;
-};
-
 export default class ExamplesIFrame extends React.Component<{}, State> {
   state = {
     packageId: '',

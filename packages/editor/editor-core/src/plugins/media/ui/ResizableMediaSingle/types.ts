@@ -22,6 +22,6 @@ export type Props = MediaSingleProps & {
   containerWidth: number;
   appearance?: EditorAppearance;
   selected: boolean;
-  viewContext?: Context;
+  viewContext?: any;
   fullWidthMode?: boolean;
 };

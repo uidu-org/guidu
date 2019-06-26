@@ -1,5 +1,5 @@
 import { layers } from '@uidu/theme';
-import React, { Component, ComponentType } from 'react';
+import React, { Component } from 'react';
 import { Transition } from 'react-transition-group';
 import { transitionDurationMs, transitionTimingFunction } from '../constants';
 import { DrawerOrigin } from '../types';
@@ -9,7 +9,7 @@ import { DrawerOrigin } from '../types';
 
 type TransitionProps = {
   children?: React.ReactNode;
-  component?: ComponentType | string;
+  component?: any;
   onExited?: (node: HTMLElement) => void;
   shouldUnmountOnExit?: boolean;
   origin: DrawerOrigin;

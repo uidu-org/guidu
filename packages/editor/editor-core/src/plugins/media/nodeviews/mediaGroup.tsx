@@ -132,7 +132,7 @@ export default class MediaGroup extends React.Component<
       };
     });
 
-    return <MediaFilmstrip items={items} context={viewContext} />;
+    return <MediaFilmstrip files={items as any} />;
   };
 
   render() {

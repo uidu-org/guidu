@@ -46,7 +46,6 @@ export class InlineCardNode extends React.PureComponent<Props> {
             file={{
               id: 'foo',
               filename: 'devo toglierle',
-              blob: {},
               src: url,
               kind: 'smart',
               createdAt: Date(),

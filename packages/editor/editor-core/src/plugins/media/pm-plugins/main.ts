@@ -35,7 +35,6 @@ import { MediaPluginOptions } from '../media-plugin-options';
 import PickerFacade, {
   MediaStateEventListener,
   MediaStateEventSubscriber,
-  PickerFacadeConfig,
 } from '../picker-facade';
 import { MediaProvider, MediaState, MediaStateStatus } from '../types';
 import DropPlaceholder, { PlaceholderType } from '../ui/Media/DropPlaceholder';
@@ -54,8 +53,8 @@ export interface MediaNodeWithPosHandler {
 
 export class MediaPluginState {
   public allowsUploads: boolean = false;
-  public mediaContext?: Context;
-  public uploadContext?: Context;
+  public mediaContext?: any;
+  public uploadContext?: any;
   public ignoreLinks: boolean = false;
   public waitForMediaUpload: boolean = true;
   public allUploadsFinished: boolean = true;
@@ -296,11 +295,7 @@ export class MediaPluginState {
 
   // TODO [MSW-454]: remove this logic from Editor
   onPopupPickerClose = () => {
-    if (
-      this.dropzonePicker &&
-      this.popupPicker &&
-      this.popupPicker.type === 'popup'
-    ) {
+    if (this.dropzonePicker && this.popupPicker) {
       this.dropzonePicker.activate();
     }
   };
@@ -309,7 +304,7 @@ export class MediaPluginState {
     if (!this.popupPicker) {
       return undefined;
     }
-    if (this.dropzonePicker && this.popupPicker.type === 'popup') {
+    if (this.dropzonePicker) {
       this.dropzonePicker.deactivate();
     }
     this.popupPicker.show();
@@ -440,58 +435,6 @@ export class MediaPluginState {
     }
     const { errorReporter, pickers, pickerPromises } = this;
     // create pickers if they don't exist, re-use otherwise
-    if (!pickers.length) {
-      const pickerFacadeConfig: PickerFacadeConfig = {
-        context,
-        errorReporter,
-      };
-      const defaultPickerConfig = {
-        uploadParams,
-        proxyReactContext: reactContext(),
-      };
-
-      if (this.options.customMediaPicker) {
-        const customPicker = new Picker(
-          'customMediaPicker',
-          pickerFacadeConfig,
-          this.options.customMediaPicker,
-        ).init();
-
-        pickerPromises.push(customPicker);
-        pickers.push((this.customPicker = await customPicker));
-      } else {
-        const popupPicker = new Picker(
-          // Fallback to browser picker for unauthenticated users
-          context.config && context.config.userAuthProvider
-            ? 'popup'
-            : 'browser',
-          pickerFacadeConfig,
-          defaultPickerConfig,
-        ).init();
-
-        const dropzonePicker = new Picker('dropzone', pickerFacadeConfig, {
-          container: this.options.customDropzoneContainer,
-          headless: true,
-          ...defaultPickerConfig,
-        }).init();
-
-        pickerPromises.push(popupPicker, dropzonePicker);
-        pickers.push(
-          (this.popupPicker = await popupPicker),
-          (this.dropzonePicker = await dropzonePicker),
-        );
-
-        this.dropzonePicker.onDrag(this.handleDrag);
-        this.removeOnCloseListener = this.popupPicker.onClose(
-          this.onPopupPickerClose,
-        );
-      }
-
-      pickers.forEach(picker => {
-        picker.onNewMedia(this.insertFile);
-        picker.onNewMedia(this.trackNewMediaEvent(picker.type));
-      });
-    }
 
     // set new upload params for the pickers
     pickers.forEach(picker => picker.setUploadParams(uploadParams));

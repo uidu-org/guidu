@@ -147,16 +147,7 @@ export default class MessagesForm extends React.Component<
             'border-top p-3': !message.body,
           })}
         >
-          {attachments.length > 0 && (
-            <MediaFilmStrip
-              images={attachments.map(attachment => ({
-                id: attachment.id,
-                src: attachment.preview,
-                type: attachment.type,
-                alt: attachment.filename,
-              }))}
-            />
-          )}
+          {attachments.length > 0 && <MediaFilmStrip files={attachments} />}
           <div
             id="suggestionPortal"
             style={{

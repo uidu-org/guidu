@@ -6,8 +6,8 @@ import {
   MobileUploadEndEventPayload,
 } from './types';
 
-export type PickerType = keyof MediaPickerComponents | 'customMediaPicker';
-export type ExtendedComponentConfigs = ComponentConfigs & {
+export type PickerType = 'customMediaPicker';
+export type ExtendedComponentConfigs = {
   customMediaPicker: CustomMediaPicker;
 };
 
@@ -28,7 +28,7 @@ export type NewMediaEvent = (
 ) => void;
 
 export default class PickerFacade {
-  private picker?: MediaPickerComponent | CustomMediaPicker;
+  private picker?: any;
   private onDragListeners: Array<Function> = [];
   private errorReporter: ErrorReportingHandler;
   private pickerType: PickerType;
@@ -50,17 +50,18 @@ export default class PickerFacade {
 
   async init(): Promise<PickerFacade> {
     let picker;
-    if (this.pickerType === 'customMediaPicker') {
-      picker = this.picker = this.pickerConfig as CustomMediaPicker;
-    } else {
-      picker = this.picker = await this.mediaPickerFactoryClass(
-        this.pickerType,
-        this.config.context,
-        this.pickerConfig as any,
-      );
-    }
+    console.log('foo');
+    // if (this.pickerType === 'customMediaPicker') {
+    //   picker = this.picker = this.pickerConfig as CustomMediaPicker;
+    // } else {
+    //   picker = this.picker = await this.mediaPickerFactoryClass(
+    //     this.pickerType,
+    //     this.config.context,
+    //     this.pickerConfig as any,
+    //   );
+    // }
 
-    (picker as any).on('upload-preview-update', this.handleUploadPreviewUpdate);
+    // (picker as any).on('upload-preview-update', this.handleUploadPreviewUpdate);
     (picker as any).on('upload-processing', this.handleReady);
     (picker as any).on('upload-error', this.handleUploadError);
     (picker as any).on('mobile-upload-end', this.handleMobileUploadEnd);

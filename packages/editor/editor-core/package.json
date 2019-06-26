@@ -15,6 +15,7 @@
     "@uidu/editor-common": "^0.1.0",
     "@uidu/item": "^0.1.12",
     "@uidu/media-card": "^0.1.10",
+    "@uidu/media-core": "^0.1.8",
     "@uidu/media-filmstrip": "^0.1.12",
     "@uidu/media-picker": "^0.1.7",
     "@uidu/select": "^0.1.13",

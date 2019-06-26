@@ -4,6 +4,7 @@ import {
   withImageLoader,
 } from '@uidu/editor-common';
 import Card from '@uidu/media-card';
+import { FileIdentifier } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -36,7 +37,7 @@ export interface MediaNodeProps extends ReactNodeProps, ImageLoaderProps {
   }) => void;
   editorAppearance: EditorAppearance;
   mediaProvider?: Promise<MediaProvider>;
-  viewContext?: Context;
+  viewContext?: any;
   uploadComplete?: boolean;
 }
 
@@ -103,18 +104,14 @@ class MediaNode extends Component<MediaNodeProps> {
       // return <CardLoading dimensions={cardDimensions} />;
     }
 
-    const identifier: Identifier =
-      type === 'external'
-        ? {
-            dataURI: url!,
-            name: url,
-            mediaItemType: 'external-image',
-          }
-        : {
-            id,
-            mediaItemType: 'file',
-            collectionName: collection!,
-          };
+    const identifier: FileIdentifier = {
+      src: url!,
+      filename: url,
+      kind: 'image',
+      createdAt: 'now',
+      id: 'foo',
+      extension: 'png',
+    };
 
     return (
       <Card

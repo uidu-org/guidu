@@ -1,6 +1,7 @@
 import { Node, Schema } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { filterChildrenBetween } from '../../../utils';
+// import { mentionPluginKey } from '../../mentions';
 
 const SMART_TO_ASCII = {
   '…': '...',
@@ -53,9 +54,9 @@ const isNodeTextBlock = (schema: Schema) => {
   const { mention, text } = schema.nodes;
 
   return (node: Node, _: any, parent: Node) => {
-    if (node.type === mentionPluginKey || node.type === text) {
-      return parent.isTextblock;
-    }
+    // if (node.type === mentionPluginKey || node.type === text) {
+    //   return parent.isTextblock;
+    // }
     return false;
   };
 };

@@ -1,9 +1,10 @@
 # TODO
 
-[ ] analytics
+[x] analytics
 [x] uidu docs -> react-bootstrap
-[ ] editor-core -> smart card
-[ ] editor-common
-[ ] media-editor
+[x] editor-core -> smart card
+[x] editor-common
+[x] media-editor
+[ ] Pass travis build
 [ ] eslint plugins
 [ ] remove atlaskit dependencies

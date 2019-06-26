@@ -37,7 +37,6 @@ class BlockCardNode extends React.Component<Props, {}> {
           file={{
             id: 'foo',
             filename: 'devo toglierle',
-            blob: {},
             src: url,
             kind: 'smart',
             createdAt: Date(),

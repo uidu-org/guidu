@@ -16,6 +16,7 @@ export {
 // createAnalyticsEvent HOC
 export {
   AnalyticsEventsWrappedComp,
+  CreateUIAnalyticsEventSignature,
   default as withAnalyticsEvents,
   WithAnalyticsEventsProps,
   withAnalyticsForSumTypeProps,

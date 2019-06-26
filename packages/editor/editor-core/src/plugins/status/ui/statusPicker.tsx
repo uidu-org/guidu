@@ -2,7 +2,6 @@ import {
   ColorType as Color,
   StatusPicker as AkStatusPicker,
 } from '@atlaskit/status/picker';
-import { withAnalyticsEvents } from '@uidu/analytics';
 import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize } from '@uidu/theme';
 import * as React from 'react';
@@ -48,7 +47,10 @@ const PickerContainer = styled.div`
   ${dropShadow};
 `;
 
-export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
+export default class StatusPickerWithoutAnalytcs extends React.Component<
+  Props,
+  State
+> {
   private startTime!: number;
   private inputMethod?: InputMethod;
   private createStatusAnalyticsAndFireFunc: Function;
@@ -239,4 +241,4 @@ export class StatusPickerWithoutAnalytcs extends React.Component<Props, State> {
     event.nativeEvent.stopImmediatePropagation();
 }
 
-export default withAnalyticsEvents()(StatusPickerWithoutAnalytcs);
+// export default withAnalyticsEvents()(StatusPickerWithoutAnalytcs);

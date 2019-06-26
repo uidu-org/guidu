@@ -9,44 +9,44 @@
 
 type AnalyticsEventConfig = {
   /** Path to component being wrapped with analytics */
-  path: string,
+  path: string;
   /** Path to analytics test file that will be created and/or already exists */
-  testPath: string,
+  testPath: string;
   /** The 'component' context value that will be exposed via analytics context */
-  actionSubject: string,
+  actionSubject: string;
   /** Any components that derive from the base component that will therefore have analytics
    * as well. E.g. any stateful version of a stateless component.
    */
-  derivatives?: string[],
+  derivatives?: string[];
   /** The name of the component used in the component test file. This is also used
    * as the name of the base (unwrapped) component export in the component file path.
    * This name should be consistent, some names were manually updated so that they aligned.
    */
-  component: string,
+  component: string;
   /** A map of prop callbacks that will be instrumented with analytics.
    *  The key represents the prop callback name and the value represents the 'action'
    *  payload value that will be attached to the analytics event.
    */
   props: {
-    [propName: string]: string | string[],
-  },
+    [propName: string]: string | string[];
+  };
   /** A map of prop callbacks that will be instrumented with analytics.
    *  The key represents the prop callback name and the value represents the 'action'
    *  payload value that will be attached to the analytics event.
    */
   attributes: {
-    componentName: string,
-    [attribute: string]: string,
-  },
+    componentName: string;
+    [attribute: string]: string;
+  };
   /** Path to the components existing test file so that we can add mount tests to it */
-  componentTestPath?: string,
+  componentTestPath?: string;
   /** Signals to the codemod to not override the analytics tests in the component test
    *  file as some manual work has been done that cannot be automated.
    */
-  manualComponentTestOverride?: boolean,
+  manualComponentTestOverride?: boolean;
   /** Signals that this map entry is for test purposes and should not be part of other exports */
-  test?: true,
-  ignore?: boolean,
+  test?: true;
+  ignore?: boolean;
 };
 
 const analyticsEventMap: AnalyticsEventConfig[] = [
@@ -95,8 +95,6 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     testPath: 'breadcrumbs/__tests__/analytics-item.js',
     actionSubject: 'breadcrumbsItem',
     component: 'BreadcrumbsItem',
-    overwrite: 'Button',
-    overwritePackage: '@uidu/button',
     props: {
       onClick: 'clicked',
     },
@@ -184,8 +182,6 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
       componentName: 'calendar',
     },
     componentTestPath: 'calendar/src/components/__tests__/Calendar.js',
-    refIssue: true,
-    rerun: true,
   },
   {
     path: 'checkbox/src/Checkbox.js',
@@ -262,8 +258,6 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     actionSubject: 'dropdownMenu',
     component: 'DropdownMenuStateless',
     derivatives: ['DropdownMenu'],
-    overwrite: 'Droplist',
-    overwritePackage: '@uidu/droplist',
     props: {
       onOpenChange: 'toggled',
     },
@@ -520,8 +514,6 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
       componentName: 'select',
     },
     componentTestPath: 'select/src/components/__tests__/unit/Select.js',
-    needsMountTest: true,
-    refIssue: true,
   },
   {
     path: 'table-tree/src/components/Row.js',

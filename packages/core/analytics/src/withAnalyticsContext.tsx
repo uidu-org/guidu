@@ -16,7 +16,7 @@ export type AnalyticsContextWrappedComp = ComponentType<any>;
 export default function withAnalyticsContext(defaultData: {} = {}) {
   return WrappedComponent => {
     // $FlowFixMe - flow 0.67 doesn't know about forwardRef
-    const WithAnalyticsContext = React.forwardRef((props, ref) => {
+    const WithAnalyticsContext = React.forwardRef((props: any, ref) => {
       const { analyticsContext = {}, ...others } = props;
       const data = { ...defaultData, ...analyticsContext };
       return (

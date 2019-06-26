@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { AnalyticsEventPayload } from './types';
+import { AnalyticsEventPayload, UIAnalyticsEventInterface } from './types';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
 
 export type CreateUIAnalyticsEvent = (
@@ -58,7 +58,7 @@ class AnalyticsContextConsumer extends Component<any> {
 // patch the callback so it provides analytics information.
 const modifyCallbackProp = (
   propName: string,
-  eventMapEntry: AnalyticsEventPayload | AnalyticsEventCreator<T>,
+  eventMapEntry: AnalyticsEventPayload | AnalyticsEventCreator<any>,
   props: any,
   createAnalyticsEvent: CreateUIAnalyticsEvent,
 ) => (...args) => {
@@ -81,6 +81,10 @@ const vmap = <A, B>(obj: Obj<A>, fn: (string, A) => B): Obj<B> =>
 export type AnalyticsEventsWrappedComp = React.ComponentType<
   AnalyticsEventsProps
 >;
+
+export type CreateUIAnalyticsEventSignature = (
+  payload: AnalyticsEventPayload,
+) => UIAnalyticsEventInterface;
 
 export default function withAnalyticsEvents(
   createEventMap: EventMap<any> = {},
