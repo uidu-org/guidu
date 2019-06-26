@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-card",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@uidu/button": "^0.1.38",
-    "@uidu/dropdown-menu": "^0.1.11",
+    "@uidu/dropdown-menu": "^0.1.12",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.11",
     "@uidu/tooltip": "^0.1.11",

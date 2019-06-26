@@ -1,5 +1,10 @@
 # @uidu/dropdown-menu
 
+## 0.1.12
+- [patch] [fe71b9f](https://github.org/uidu-org/guidu/commits/fe71b9f):
+
+  - Styòed-components
+
 ## 0.1.11
 - [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
 
