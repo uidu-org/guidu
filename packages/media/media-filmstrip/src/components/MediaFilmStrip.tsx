@@ -20,7 +20,7 @@ export default class MediaFilmStrip extends Component<any, any> {
             {images.map((image: any, index: number) => (
               <div
                 style={{
-                  width: `calc(40% - 16px)`,
+                  width: `calc(30% - 16px)`,
                   display: 'inline-flex',
                   marginRight: 8,
                 }}

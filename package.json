@@ -71,7 +71,7 @@
     "start:editor": "                        dotenv yarn run website:start **/packages/editor/**",
     "start:elements": "                      dotenv yarn run website:start **/packages/elements/**",
     "start:dashboards": "                    dotenv yarn run website:start **/packages/dashboards/**",
-    "start:home": "                          dotenv yarn run website:start **/packages/home/**",
+    "start:forms": "                         dotenv yarn run website:start **/packages/forms/**",
     "start:media": "                         dotenv yarn run website:start **/packages/media/**",
     "start:messaging": "                     dotenv yarn run website:start **/packages/messaging/**",
     "start:navigation": "                    dotenv yarn run website:start **/packages/navigation/**",

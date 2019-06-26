@@ -39,6 +39,7 @@ export default class MessageAttachments extends Component<
             src: attachment.blob.downloadUrl,
             type: attachment.kind,
             alt: attachment.blob.name,
+            author: attachment.author,
           }))}
         />
       </div>
