@@ -8,7 +8,6 @@ import { ChevronDown, ChevronLeft, ChevronRight } from 'react-feather';
 import StyledAccordion from '../styled/Accordion';
 import StyledAccordionItemBody from '../styled/AccordionItemBody';
 import StyledAccordionItemButton from '../styled/AccordionItemButton';
-
 import { AccordionPropTypes } from '../types';
 
 export default class Accordion extends PureComponent<AccordionPropTypes> {

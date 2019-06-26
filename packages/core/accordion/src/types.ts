@@ -1,9 +1,5 @@
 import { AnalyticsEventInterface } from '@uidu/analytics';
-import { ThemeProp } from '@uidu/theme';
-import { Node, ComponentType } from 'react';
 import { ThemeProps, ThemeTokens } from './theme';
-
-export type AccordionClickType = (
   ?{ event?: KeyboardEvent | MouseEvent, item: Object },
   ?AnalyticsEventInterface,
 ) => void;
