@@ -1,4 +1,3 @@
-// @flow
 /**
  * This map was originally used to configure the analytics codemod to run over
  * each component.

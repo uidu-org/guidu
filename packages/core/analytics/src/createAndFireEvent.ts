@@ -1,6 +1,5 @@
-//@flow
-import { type AnalyticsEventPayload } from './types';
-import { type CreateUIAnalyticsEvent } from './withAnalyticsEvents';
+import { AnalyticsEventPayload } from './types';
+import { CreateUIAnalyticsEvent } from './withAnalyticsEvents';
 
 export default (channel?: string) => (payload: AnalyticsEventPayload) => (
   createAnalyticsEvent: CreateUIAnalyticsEvent,

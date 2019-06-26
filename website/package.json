@@ -36,7 +36,6 @@
     "node-fetch": "^2.3.0"
   },
   "dependencies": {
-    "@atlaskit/analytics-listeners": "^4.2.0",
     "@atlaskit/css-reset": "^3.0.6",
     "@atlaskit/dynamic-table": "^10.0.23",
     "@atlaskit/flag": "^9.1.10",

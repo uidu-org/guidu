@@ -7,7 +7,7 @@ export const inlineCursorTargetStateKey = new PluginKey(
   'inlineCursorTargetPlugin',
 );
 
-export const SPECIAL_NODES = ['mention', 'emoji'];
+export const SPECIAL_NODES = ['mention'];
 
 export const isSpecial = (node: Node | null | undefined) => {
   return node && SPECIAL_NODES.indexOf(node.type.name) !== -1;

@@ -1,18 +1,16 @@
-// @flow
-
-import { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
+import { Component, ReactNode } from 'react';
+import { UIAnalyticsEventHandler } from './types';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
-import type { UIAnalyticsEventHandler } from './types';
 
 type Props = {
   /** Children! */
-  children?: Node,
+  children?: ReactNode;
   /** The channel to listen for events on. */
-  channel?: string,
+  channel?: string;
   /** A function which will be called when an event is fired on this Listener's
    * channel. It is passed the event and the channel as arguments. */
-  onEvent: (event: UIAnalyticsEvent, channel?: string) => void,
+  onEvent: (event: UIAnalyticsEvent, channel?: string) => void;
 };
 
 const ContextTypes = {

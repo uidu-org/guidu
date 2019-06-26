@@ -10,7 +10,7 @@
   "author": "uidu",
   "repository": "https://github.com/uidu-org/guidu",
   "dependencies": {
-    "@atlaskit/analytics-next": "^3.2.1",
+    "@uidu/analytics": "^0.1.7",
     "@uidu/theme": "^0.1.12",
     "raf-schd": "^4.0.0",
     "styled-components": "^4.0.3"

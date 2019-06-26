@@ -1,12 +1,12 @@
+import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import * as React from 'react';
-import { WithAnalyticsEventsProps } from '@uidu/analytics'
 
 export type DrawerSize = 'narrow' | 'medium' | 'wide' | 'extended' | 'full';
 export type DrawerOrigin = 'left' | 'top' | 'right' | 'bottom';
 
 export type BaseProps = {
   /** The content of the drawer */
-  children: React.ReactNode;
+  children: any;
   /** Icon to be rendered in your drawer as a component, if available */
   icon?: React.ComponentType;
   /** Available drawer sizes */

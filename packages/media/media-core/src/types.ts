@@ -1,4 +1,4 @@
-export type FileKinds = 'image' | 'video' | 'link' | 'file';
+export type FileKinds = 'image' | 'video' | 'link' | 'file' | 'smart';
 
 export type FileIdentifier = {
   src: string | undefined;

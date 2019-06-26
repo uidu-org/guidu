@@ -10,7 +10,6 @@ import {
   pluginKey as blockTypeStateKey,
 } from '../block-type/pm-plugins/main';
 import { DateState, pluginKey as dateStateKey } from '../date/plugin';
-import { emojiPluginKey, EmojiState } from '../emoji/pm-plugins/main';
 import {
   HyperlinkState,
   stateKey as hyperlinkPluginKey,
@@ -95,7 +94,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             tablesState: tablesStateKey,
             macroState: macroStateKey,
             hyperlinkState: hyperlinkPluginKey,
-            emojiState: emojiPluginKey,
             dateState: dateStateKey,
             imageUpload: imageUploadStateKey,
             placeholderTextState: placeholderTextStateKey,
@@ -109,7 +107,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             tablesState,
             macroState = {} as MacroState,
             hyperlinkState,
-            emojiState,
             dateState,
             imageUpload,
             placeholderTextState,
@@ -122,7 +119,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             tablesState: TablePluginState | undefined;
             macroState: MacroState | undefined;
             hyperlinkState: HyperlinkState | undefined;
-            emojiState: EmojiState | undefined;
             dateState: DateState | undefined;
             imageUpload: ImageUploadPluginState | undefined;
             placeholderTextState: PlaceholderPluginState | undefined;
@@ -161,9 +157,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
                 !hyperlinkState.canInsertLink ||
                 !!hyperlinkState.activeLinkMark
               }
-              emojiDisabled={!emojiState || !emojiState.enabled}
-              insertEmoji={emojiState && emojiState.insertEmoji}
-              emojiProvider={providers.emojiProvider}
               nativeStatusSupported={options.nativeStatusSupported}
               horizontalRuleEnabled={options.horizontalRuleEnabled}
               onInsertBlockType={handleInsertBlockType}
@@ -184,7 +177,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
     return (
       <WithProviders
         providerFactory={providerFactory}
-        providers={['emojiProvider']}
+        providers={[]}
         renderNode={renderNode}
       />
     );

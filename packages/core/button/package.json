@@ -13,7 +13,6 @@
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
   "dependencies": {
-    "@atlaskit/analytics-next-types": "^3.2.0",
     "@atlaskit/type-helpers": "^2.0.1",
     "@babel/runtime": "^7.0.0",
     "@emotion/core": "^10.0.10",

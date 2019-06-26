@@ -25,11 +25,6 @@ export const IconDivider = Loadable({
   loading: () => null,
 });
 
-export const IconEmoji = Loadable({
-  loader: () => import('./emoji'),
-  loading: () => null,
-});
-
 export const IconImages = Loadable({
   loader: () => import('./images'),
   loading: () => null,

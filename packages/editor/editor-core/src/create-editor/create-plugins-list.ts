@@ -1,4 +1,4 @@
-// import { CreateUIAnalyticsEventSignature } from '@atlaskit/analytics-next';
+import { CreateUIAnalyticsEventSignature } from '@uidu/analytics';
 import {
   alignment,
   basePlugin,
@@ -14,7 +14,8 @@ import {
   insertBlockPlugin,
   layoutPlugin,
   listsPlugin,
-  pastePlugin,
+  // mediaPlugin,
+  // pastePlugin,
   placeholderPlugin,
   quickInsertPlugin,
   tablesPlugin,
@@ -30,7 +31,7 @@ import { EditorPlugin, EditorProps } from '../types';
  */
 export function getDefaultPluginsList(
   props: EditorProps,
-  // createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
+  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
 ): EditorPlugin[] {
   let defaultPluginList: EditorPlugin[] = [];
 
@@ -39,7 +40,7 @@ export function getDefaultPluginsList(
   // }
 
   return defaultPluginList.concat([
-    pastePlugin,
+    // pastePlugin,
     basePlugin(props.appearance),
     blockTypePlugin,
     placeholderPlugin,
@@ -58,7 +59,7 @@ export function getDefaultPluginsList(
  */
 export default function createPluginsList(
   props: EditorProps,
-  // createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
+  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
 ): EditorPlugin[] {
   const plugins = getDefaultPluginsList(props);
 
@@ -101,10 +102,6 @@ export default function createPluginsList(
   //   );
   // }
 
-  // if (props.emojiProvider) {
-  //   plugins.push(emojiPlugin(createAnalyticsEvent));
-  // }
-
   if (props.allowTables) {
     plugins.push(tablesPlugin(props.appearance === 'full-width'));
   }
@@ -119,19 +116,6 @@ export default function createPluginsList(
 
   // if (props.saveOnEnter) {
   //   plugins.push(saveOnEnterPlugin);
-  // }
-
-  // if (props.legacyImageUploadProvider) {
-  //   plugins.push(imageUploadPlugin);
-
-  //   if (!props.media && !props.mediaProvider) {
-  //     plugins.push(
-  //       mediaPlugin({
-  //         allowMediaSingle: { disableLayout: true },
-  //         allowMediaGroup: false,
-  //       }),
-  //     );
-  //   }
   // }
 
   // if (props.collabEdit || props.collabEditProvider) {

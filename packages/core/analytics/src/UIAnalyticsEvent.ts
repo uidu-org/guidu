@@ -1,7 +1,5 @@
-// @flow
-
 import AnalyticsEvent from './AnalyticsEvent';
-import type {
+import {
   AnalyticsEventUpdater,
   UIAnalyticsEventHandler,
   UIAnalyticsEventInterface,

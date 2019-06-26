@@ -1,6 +1,4 @@
-// @flow
-
-import { Children, Component, type Node } from 'react';
+import { Children, Component, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 const ContextTypes = {
@@ -9,7 +7,7 @@ const ContextTypes = {
 
 type Props = {
   /** Children! */
-  children: Node,
+  children: ReactNode,
   /** Arbitrary data. Any events created below this component in the tree will
    * have this added as an item in their context array. */
   data: {},

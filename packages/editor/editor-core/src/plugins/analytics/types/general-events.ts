@@ -1,10 +1,10 @@
-import { UIAEP, TrackAEP } from './events';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
+import { TrackAEP, UIAEP } from './events';
 
 export enum PLATFORMS {
   NATIVE = 'mobileNative',
@@ -84,11 +84,6 @@ type ButtonFeedbackAEP = ButtonAEP<
   undefined
 >;
 
-type PickerEmojiAEP = PickerAEP<
-  ACTION_SUBJECT_ID.PICKER_EMOJI,
-  { inputMethod: INPUT_METHOD.TOOLBAR | INPUT_METHOD.INSERT_MENU }
->;
-
 type PickerImageAEP = PickerAEP<
   ACTION_SUBJECT_ID.PICKER_CLOUD,
   {
@@ -102,11 +97,6 @@ type PickerImageAEP = PickerAEP<
 type TypeAheadQuickInsertAEP = TypeAheadAEP<
   ACTION_SUBJECT_ID.TYPEAHEAD_QUICK_INSERT,
   { inputMethod: INPUT_METHOD.KEYBOARD }
->;
-
-type TypeAheadEmojiAEP = TypeAheadAEP<
-  ACTION_SUBJECT_ID.TYPEAHEAD_EMOJI,
-  { inputMethod: INPUT_METHOD.QUICK_INSERT | INPUT_METHOD.KEYBOARD }
 >;
 
 type TypeAheadLinkAEP = TypeAheadAEP<
@@ -147,10 +137,8 @@ export type GeneralEventPayload =
   | AnnotateButtonAEP
   | ButtonHelpAEP
   | ButtonFeedbackAEP
-  | PickerEmojiAEP
   | PickerImageAEP
   | TypeAheadQuickInsertAEP
-  | TypeAheadEmojiAEP
   | TypeAheadLinkAEP
   | TypeAheadMentionAEP
   | FullWidthModeAEP;

@@ -1,7 +1,6 @@
 import { keydownHandler } from 'prosemirror-keymap';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
-// import { typeAheadPluginKey } from '../../../plugins/type-ahead';
-// import { emojiPluginKey } from '../../../plugins/emoji/pm-plugins/main';
+import { typeAheadPluginKey } from '../../../plugins/type-ahead';
 import { Command } from '../../../types';
 import { isSelectionEndOfParagraph } from '../../../utils';
 import { filter } from '../../../utils/commands';
@@ -15,9 +14,8 @@ const isSelectionAligned = (state: EditorState): boolean =>
     m => m.type === state.schema.marks.alignment,
   );
 
-const isTypeaheadNotDisplaying = (state: EditorState): boolean => true;
-// !typeAheadPluginKey.getState(state).active &&
-// !emojiPluginKey.getState(state).queryActive;
+const isTypeaheadNotDisplaying = (state: EditorState): boolean =>
+  !typeAheadPluginKey.getState(state).active;
 
 const splitBlockPreservingMarks: Command = (state, dispatch): boolean => {
   if (dispatch) {

@@ -1,4 +1,4 @@
-import { traverse, ADFEntity } from '@atlaskit/adf-utils';
+import { ADFEntity, traverse } from '@atlaskit/adf-utils';
 import { JSONDocNode } from '@atlaskit/editor-json-transformer';
 
 export function removeMarks(node: ADFEntity) {
@@ -17,7 +17,7 @@ export function sanitizeNode(json: JSONDocNode): JSONDocNode {
       return {
         ...node,
         marks: node.marks.filter(
-          mark => ['emojiQuery', 'typeAheadQuery'].indexOf(mark.type) === -1,
+          mark => ['typeAheadQuery'].indexOf(mark.type) === -1,
         ),
       };
     },
@@ -27,7 +27,6 @@ export function sanitizeNode(json: JSONDocNode): JSONDocNode {
       }
       return false; // empty status
     },
-    emoji: removeMarks,
     mention: removeMarks,
     date: removeMarks,
     hardBreak: removeMarks,

@@ -1,46 +1,36 @@
-// @flow
-
-import React, {
-  Component,
-  type Node,
-  type ComponentType,
-  type ElementConfig,
-} from 'react';
 import PropTypes from 'prop-types';
-
+import React, { Component } from 'react';
+import { AnalyticsEventPayload } from './types';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
-import type { AnalyticsEventPayload } from './types';
 
 export type CreateUIAnalyticsEvent = (
   payload: AnalyticsEventPayload,
 ) => UIAnalyticsEvent;
 
-export type WithAnalyticsEventsProps = {|
+export type WithAnalyticsEventsProps = {
   /**
     You should not be accessing this prop under any circumstances. It is provided by `@uidu/analytics` and integrated in the component
   */
-  createAnalyticsEvent: CreateUIAnalyticsEvent,
-|};
-
-type AnalyticsEventsProps = {
-  createAnalyticsEvent: CreateUIAnalyticsEvent | void,
+  createAnalyticsEvent: CreateUIAnalyticsEvent;
 };
 
-type AnalyticsEventCreator<ProvidedProps: {}> = (
+type AnalyticsEventsProps = {
+  createAnalyticsEvent: CreateUIAnalyticsEvent | void;
+};
+
+type AnalyticsEventCreator<ProvidedProps> = (
   create: CreateUIAnalyticsEvent,
   props: ProvidedProps,
-) => ?UIAnalyticsEvent;
+) => UIAnalyticsEvent | undefined;
 
-type EventMap<ProvidedProps: {}> = {
-  [string]: AnalyticsEventPayload | AnalyticsEventCreator<ProvidedProps>,
+type EventMap<ProvidedProps> = {
+  [key: string]: AnalyticsEventPayload | AnalyticsEventCreator<ProvidedProps>;
 };
 
 // This component is used to grab the analytics functions off context.
 // It uses legacy context, but provides an API similar to 16.3 context.
 // This makes it easier to use with the forward ref API.
-class AnalyticsContextConsumer extends Component<{
-  children: CreateUIAnalyticsEvent => Node,
-}> {
+class AnalyticsContextConsumer extends Component<any> {
   static contextTypes = {
     getAtlaskitAnalyticsEventHandlers: PropTypes.func,
     getAtlaskitAnalyticsContext: PropTypes.func,
@@ -61,15 +51,15 @@ class AnalyticsContextConsumer extends Component<{
     return new UIAnalyticsEvent({ context, handlers, payload });
   };
   render() {
-    return this.props.children(this.createAnalyticsEvent);
+    return (this.props.children as any)(this.createAnalyticsEvent);
   }
 }
 
 // patch the callback so it provides analytics information.
-const modifyCallbackProp = <T: {}>(
+const modifyCallbackProp = (
   propName: string,
   eventMapEntry: AnalyticsEventPayload | AnalyticsEventCreator<T>,
-  props: T,
+  props: any,
   createAnalyticsEvent: CreateUIAnalyticsEvent,
 ) => (...args) => {
   const event =
@@ -82,27 +72,19 @@ const modifyCallbackProp = <T: {}>(
   }
 };
 
-type Obj<T> = { [string]: T };
+type Obj<T> = { [key: string]: T };
 // helper that provides an easy way to map an object's values
 // ({ string: A }, (string, A) => B) => { string: B }
 const vmap = <A, B>(obj: Obj<A>, fn: (string, A) => B): Obj<B> =>
   Object.keys(obj).reduce((curr, k) => ({ ...curr, [k]: fn(k, obj[k]) }), {});
 
-/* This must use $Supertype to work with multiple HOCs - https://github.com/facebook/flow/issues/6057#issuecomment-414157781
- * We also cannot alias this as a generic of withAnalyticsEvents itself as
- * that causes issues with multiple HOCs - https://github.com/facebook/flow/issues/6587
- */
-type AnalyticsEventsWrappedProps<C> = $Diff<
-  ElementConfig<$Supertype<C>>,
-  AnalyticsEventsProps,
->;
-export type AnalyticsEventsWrappedComp<C> = ComponentType<
-  AnalyticsEventsWrappedProps<C>,
+export type AnalyticsEventsWrappedComp = React.ComponentType<
+  AnalyticsEventsProps
 >;
 
-export default function withAnalyticsEvents<P: {}, C: ComponentType<P>>(
-  createEventMap: EventMap<AnalyticsEventsWrappedProps<C>> = {},
-): C => AnalyticsEventsWrappedComp<C> {
+export default function withAnalyticsEvents(
+  createEventMap: EventMap<any> = {},
+) {
   return WrappedComponent => {
     // $FlowFixMe - flow 0.67 doesn't know about forwardRef
     const WithAnalyticsEvents = React.forwardRef((props, ref) => {

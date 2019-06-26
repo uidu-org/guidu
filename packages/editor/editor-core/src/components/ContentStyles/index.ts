@@ -1,4 +1,16 @@
-import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorDeleteBorderBoldSize, blockMarksSharedStyles, dateSharedStyle, indentationSharedStyles, inlineNodeSharedStyle, listsSharedStyles, paragraphSharedStyles, shadowSharedStyle, whitespaceSharedStyles } from '@uidu/editor-common';
+import {
+  akEditorDeleteBackground,
+  akEditorDeleteBorder,
+  akEditorDeleteBorderBoldSize,
+  blockMarksSharedStyles,
+  dateSharedStyle,
+  indentationSharedStyles,
+  inlineNodeSharedStyle,
+  listsSharedStyles,
+  paragraphSharedStyles,
+  shadowSharedStyle,
+  whitespaceSharedStyles,
+} from '@uidu/editor-common';
 import styled from 'styled-components';
 // import { placeholderStyles } from '../../plugins/placeholder/styles';
 import { blocktypeStyles } from '../../plugins/block-type/styles';
@@ -65,17 +77,6 @@ const ContentStyles = styled.div`
 
   .blockCardView-content-wrap {
     display: inline-block;
-  }
-
-  /* fix cursor alignment */
-  .ProseMirror .emoji-common-node {
-    display: inline;
-    vertical-align: baseline;
-
-    img {
-      display: inline-block;
-      vertical-align: middle;
-    }
   }
 
   ${blocktypeStyles};

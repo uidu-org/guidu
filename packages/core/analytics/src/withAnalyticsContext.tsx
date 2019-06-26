@@ -1,12 +1,9 @@
-// @flow
-
-import React, { type ComponentType, type ElementConfig } from 'react';
-
+import React, { ComponentType } from 'react';
 import AnalyticsContext from './AnalyticsContext';
 
-type WithAnalyticsContextProps = {|
-  analyticsContext?: {},
-|};
+type WithAnalyticsContextProps = {
+  analyticsContext?: any;
+};
 
 /* The returned component props must use $Supertype to work with multiple HOCs - https://github.com/facebook/flow/issues/6057#issuecomment-414157781
  * We also cannot alias this as a generic as that causes issues with multiple HOCs - https://github.com/facebook/flow/issues/6587.
@@ -14,14 +11,9 @@ type WithAnalyticsContextProps = {|
  * Intersections cause issues so we must use exact objects in conjunction with
  * object spreading instead - https://github.com/flowtype/flow-bin/issues/93#issuecomment-340687896
  */
-export type AnalyticsContextWrappedComp<C> = ComponentType<{
-  ...$Exact<WithAnalyticsContextProps>,
-  ...$Exact<ElementConfig<$Supertype<C>>>,
-}>;
+export type AnalyticsContextWrappedComp = ComponentType<any>;
 
-export default function withAnalyticsContext<P: {}, C: ComponentType<P>>(
-  defaultData: {} = {},
-): C => AnalyticsContextWrappedComp<C> {
+export default function withAnalyticsContext(defaultData: {} = {}) {
   return WrappedComponent => {
     // $FlowFixMe - flow 0.67 doesn't know about forwardRef
     const WithAnalyticsContext = React.forwardRef((props, ref) => {

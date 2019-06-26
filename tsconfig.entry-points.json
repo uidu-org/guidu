@@ -147,6 +147,10 @@
         "../../core/drawer/src/index",
         "./packages/core/drawer/src/index"
       ],
+      "@uidu/drawer/types": [
+        "../../core/drawer/src/types",
+        "./packages/core/drawer/src/types"
+      ],
       "@uidu/dropdown-menu/index": [
         "../../core/dropdown-menu/src/index",
         "./packages/core/dropdown-menu/src/index"
@@ -611,17 +615,29 @@
         "../../media/media-card/src/index",
         "./packages/media/media-card/src/index"
       ],
-      "@uidu/media-core/identifier": [
-        "../../media/media-core/src/identifier",
-        "./packages/media/media-core/src/identifier"
+      "@uidu/media-core/constants": [
+        "../../media/media-core/src/constants",
+        "./packages/media/media-core/src/constants"
       ],
       "@uidu/media-core/index": [
         "../../media/media-core/src/index",
         "./packages/media/media-core/src/index"
       ],
+      "@uidu/media-core/types": [
+        "../../media/media-core/src/types",
+        "./packages/media/media-core/src/types"
+      ],
       "@uidu/media-filmstrip/index": [
         "../../media/media-filmstrip/src/index",
         "./packages/media/media-filmstrip/src/index"
+      ],
+      "@uidu/media-filmstrip/styled": [
+        "../../media/media-filmstrip/src/styled",
+        "./packages/media/media-filmstrip/src/styled"
+      ],
+      "@uidu/media-filmstrip/types": [
+        "../../media/media-filmstrip/src/types",
+        "./packages/media/media-filmstrip/src/types"
       ],
       "@uidu/media-picker/index": [
         "../../media/media-picker/src/index",
@@ -786,10 +802,6 @@
       "@uidu/widgets/types": [
         "../../uidu/widgets/src/types",
         "./packages/uidu/widgets/src/types"
-      ],
-      "@atlaskit/analytics-next": [
-        "node_modules/@atlaskit/analytics-next-types",
-        "packages/elements/analytics-next-types"
       ]
     }
   }

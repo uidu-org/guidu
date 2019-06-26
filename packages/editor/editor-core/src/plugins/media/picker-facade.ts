@@ -65,15 +65,6 @@ export default class PickerFacade {
     (picker as any).on('upload-error', this.handleUploadError);
     (picker as any).on('mobile-upload-end', this.handleMobileUploadEnd);
 
-    if (isDropzone(picker)) {
-      (picker as any).on('drag-enter', this.handleDragEnter);
-      (picker as any).on('drag-leave', this.handleDragLeave);
-    }
-
-    if (isDropzone(picker)) {
-      picker.activate();
-    }
-
     return this;
   }
 
@@ -96,28 +87,16 @@ export default class PickerFacade {
     (picker as any).removeAllListeners('upload-processing');
     (picker as any).removeAllListeners('upload-error');
 
-    if (isDropzone(picker)) {
-      (picker as any).removeAllListeners('drag-enter');
-      (picker as any).removeAllListeners('drag-leave');
-    }
-
     this.onStartListeners = [];
     this.onDragListeners = [];
 
     try {
-      if (isDropzone(picker)) {
-        picker.deactivate();
-      }
-
-      if (isPopup(picker) || isBrowser(picker)) {
-        picker.teardown();
-      }
     } catch (ex) {
       this.errorReporter.captureException(ex);
     }
   }
 
-  setUploadParams(params: UploadParams): void {
+  setUploadParams(params): void {
     if (this.picker) {
       this.picker.setUploadParams(params);
     }
@@ -125,46 +104,20 @@ export default class PickerFacade {
 
   onClose(cb: () => void): () => void {
     const { picker } = this;
-    if (isPopup(picker)) {
-      picker.on('closed', cb);
-
-      return () => picker.off('closed', cb);
-    }
-
     return () => {};
   }
 
   activate() {
     const { picker } = this;
-    if (isDropzone(picker)) {
-      picker.activate();
-    }
   }
 
   deactivate() {
     const { picker } = this;
-    if (isDropzone(picker)) {
-      picker.deactivate();
-    }
   }
 
-  show(): void {
-    if (isPopup(this.picker)) {
-      try {
-        this.picker.show();
-      } catch (ex) {
-        this.errorReporter.captureException(ex);
-      }
-    } else if (isBrowser(this.picker)) {
-      this.picker.browse();
-    }
-  }
+  show(): void {}
 
-  hide(): void {
-    if (isPopup(this.picker)) {
-      this.picker.hide();
-    }
-  }
+  hide(): void {}
 
   onNewMedia(cb: NewMediaEvent) {
     this.onStartListeners.push(cb);
@@ -174,42 +127,7 @@ export default class PickerFacade {
     this.onDragListeners.push(cb);
   }
 
-  public handleUploadPreviewUpdate = (
-    event: UploadPreviewUpdateEventPayload,
-  ) => {
-    const { file, preview } = event;
-    const { dimensions, scaleFactor } = isImagePreview(preview)
-      ? preview
-      : { dimensions: undefined, scaleFactor: undefined };
-
-    const state = {
-      id: file.id,
-      fileName: file.name,
-      fileSize: file.size,
-      fileMimeType: file.type,
-      dimensions,
-      scaleFactor,
-    };
-
-    this.eventListeners[file.id] = [];
-    this.onStartListeners.forEach(cb =>
-      cb(state, evt => this.subscribeStateChanged(file, evt)),
-    );
-  };
-
-  private subscribeStateChanged = (
-    file: MediaFile,
-    onStateChanged: MediaStateEventListener,
-  ) => {
-    const subscribers = this.eventListeners[file.id];
-    if (!subscribers) {
-      return undefined;
-    }
-
-    subscribers.push(onStateChanged);
-  };
-
-  public handleUploadError = ({ error }: UploadErrorEventPayload) => {
+  public handleUploadError = ({ error }) => {
     if (!error || !error.fileId) {
       const err = new Error(
         `Media: unknown upload-error received from Media Picker: ${error &&
@@ -255,7 +173,7 @@ export default class PickerFacade {
     );
   };
 
-  public handleReady = (event: UploadProcessingEventPayload) => {
+  public handleReady = event => {
     const { file } = event;
 
     const listeners = this.eventListeners[file.id];

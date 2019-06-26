@@ -1,8 +1,12 @@
 import { ActivityProvider } from '@atlaskit/activity';
-import { EmojiProvider } from '@atlaskit/emoji/resource';
 import { MentionProvider } from '@atlaskit/mention/resource';
 import { TaskDecisionProvider } from '@atlaskit/task-decision';
-import { ContextIdentifierProvider, ErrorReportingHandler, ExtensionHandlers, Transformer } from '@uidu/editor-common';
+import {
+  ContextIdentifierProvider,
+  ErrorReportingHandler,
+  ExtensionHandlers,
+  Transformer,
+} from '@uidu/editor-common';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { ReactElement } from 'react';
@@ -179,7 +183,6 @@ export interface EditorProps {
   activityProvider?: Promise<ActivityProvider>;
   collabEditProvider?: Promise<CollabEditProvider>;
   presenceProvider?: Promise<any>;
-  emojiProvider?: Promise<EmojiProvider>;
   taskDecisionProvider?: Promise<TaskDecisionProvider>;
   contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
 

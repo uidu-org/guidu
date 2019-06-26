@@ -1,10 +1,8 @@
-// @flow
-
-import type {
-  AnalyticsEventPayload,
-  AnalyticsEventUpdater,
+import {
   AnalyticsEventInterface,
+  AnalyticsEventPayload,
   AnalyticsEventProps,
+  AnalyticsEventUpdater,
 } from './types';
 
 export default class AnalyticsEvent implements AnalyticsEventInterface {

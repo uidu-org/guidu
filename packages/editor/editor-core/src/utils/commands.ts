@@ -1,9 +1,9 @@
+import { Mark, MarkType, Node as PmNode, ResolvedPos } from 'prosemirror-model';
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
 import { CellSelection } from 'prosemirror-tables';
-import { ResolvedPos, MarkType, Mark, Node as PmNode } from 'prosemirror-model';
-import { transformSmartCharsMentionsAndEmojis } from '../plugins/text-formatting/commands/transform-to-code';
+import { EditorView } from 'prosemirror-view';
 import { GapCursorSelection } from '../plugins/gap-cursor';
+import { transformSmartCharsMentions } from '../plugins/text-formatting/commands/transform-to-code';
 import { Command } from '../types';
 
 type Predicate = (state: EditorState, view?: EditorView) => boolean;
@@ -95,7 +95,7 @@ const applyMarkOnRange = (
   const { schema } = tr.doc.type;
   const { code } = schema.marks;
   if (mark.type === code) {
-    transformSmartCharsMentionsAndEmojis(from, to, tr);
+    transformSmartCharsMentions(from, to, tr);
   }
 
   tr.doc.nodesBetween(tr.mapping.map(from), tr.mapping.map(to), (node, pos) => {
@@ -199,8 +199,6 @@ const toggleMark = (
 };
 
 export {
-  // https://github.com/typescript-eslint/typescript-eslint/issues/131
-  // eslint-disable-next-line no-undef
   Predicate,
   filter,
   isEmptySelectionAtStart,

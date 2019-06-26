@@ -13,12 +13,8 @@ export {
 } from './clear-marks-on-change-to-empty-document';
 // export { default as codeBlockPlugin } from './code-block';
 // export { default as collabEditPlugin, CollabEditProvider } from './collab-edit';
-// export {
-//   default as confluenceInlineComment,
-// } from './confluence-inline-comment';
 export { default as datePlugin } from './date';
 export { default as editorDisabledPlugin } from './editor-disabled';
-// export { default as emojiPlugin } from './emoji';
 export { default as extensionPlugin } from './extension';
 export { default as fakeTextCursorPlugin } from './fake-text-cursor';
 // export { default as inlineActionPlugin } from './inline-action';
@@ -36,7 +32,7 @@ export { default as layoutPlugin } from './layout';
 export { default as listsPlugin } from './lists';
 export { default as macroPlugin } from './macro';
 // export { default as maxContentSizePlugin } from './max-content-size';
-// export { default as mediaPlugin } from './media';
+export { default as mediaPlugin } from './media';
 // export { default as mentionsPlugin } from './mentions';
 // export { default as panelPlugin } from './panel';
 export { default as pastePlugin } from './paste';

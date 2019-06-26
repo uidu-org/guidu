@@ -1,4 +1,3 @@
-import FabricAnalyticsListeners from '@atlaskit/analytics-listeners';
 import Shell, { ShellContent, ShellMain } from '@uidu/shell';
 import { colors } from '@uidu/theme';
 import qs from 'query-string';
@@ -19,7 +18,7 @@ const ErrorMessage = styled.div`
   background-color: ${colors.R400};
   color: white;
   font-size: 120%;
-  padding: 1em;
+  padding: 1rem;
 `;
 
 export type State = {
@@ -124,13 +123,7 @@ function ExampleLoader(props: ExampleLoaderProps) {
 
       const meta = ExampleComp.meta || {};
 
-      return meta.noListener ? (
-        <ExampleComp />
-      ) : (
-        <FabricAnalyticsListeners client={mockClient}>
-          <ExampleComp />
-        </FabricAnalyticsListeners>
-      );
+      return <ExampleComp />;
     },
   });
 

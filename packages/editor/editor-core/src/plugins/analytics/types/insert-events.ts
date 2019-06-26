@@ -1,10 +1,10 @@
-import { TrackAEP } from './events';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
+import { TrackAEP } from './events';
 import { InsertSmartLinkAEP } from './smart-links';
 
 export enum PANEL_TYPE {
@@ -134,16 +134,6 @@ type InsertActionDecisionAEP = InsertAEP<
   }
 >;
 
-type InsertEmojiAEP = InsertAEP<
-  ACTION_SUBJECT_ID.EMOJI,
-  {
-    inputMethod:
-      | INPUT_METHOD.TYPEAHEAD
-      | INPUT_METHOD.PICKER
-      | INPUT_METHOD.ASCII;
-  }
->;
-
 type InsertStatusAEP = InsertAEP<
   ACTION_SUBJECT_ID.STATUS,
   {
@@ -213,7 +203,6 @@ export type InsertEventPayload =
   | InsertCodeBlockAEP
   | InsertTableAEP
   | InsertActionDecisionAEP
-  | InsertEmojiAEP
   | InsertStatusAEP
   | InsertMediaAEP
   | InsertLinkAEP

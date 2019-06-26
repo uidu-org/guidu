@@ -54,7 +54,6 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
       nodes: {
         decisionItem,
         decisionList,
-        emoji,
         hardBreak,
         mention,
         paragraph,
@@ -89,7 +88,7 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
       selection instanceof TextSelection &&
       Array.isArray(selectionMarks) &&
       selectionMarks.length > 0 &&
-      hasOnlyNodesOfType(paragraph, text, emoji, mention, hardBreak)(slice) &&
+      hasOnlyNodesOfType(paragraph, text, mention, hardBreak)(slice) &&
       (!codeMark.isInSet(selectionMarks) || textFormattingState.codeActive) // for codeMarks let's make sure mark is active
     ) {
       filters.push(applyTextMarksToSlice(schema, selection.$head.marks()));
@@ -150,7 +149,6 @@ export function handlePastePreservingMarks(slice: Slice): Command {
       marks: { code: codeMark, link: linkMark },
       nodes: {
         bulletList,
-        emoji,
         hardBreak,
         heading,
         listItem,
@@ -212,7 +210,6 @@ export function handlePastePreservingMarks(slice: Slice): Command {
         listItem,
         paragraph,
         text,
-        emoji,
         mention,
         orderedList,
       )(slice)

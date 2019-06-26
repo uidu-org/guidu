@@ -18,7 +18,7 @@ const FIND_SMART_CHAR = new RegExp(
   'g',
 );
 
-const replaceMentionOrEmojiForTextContent = (
+const replaceMentionForTextContent = (
   position: number,
   nodeSize: number,
   textContent: string,
@@ -50,23 +50,23 @@ const replaceSmartCharsToAscii = (
 };
 
 const isNodeTextBlock = (schema: Schema) => {
-  const { mention, text, emoji } = schema.nodes;
+  const { mention, text } = schema.nodes;
 
   return (node: Node, _: any, parent: Node) => {
-    if (node.type === mention || node.type === emoji || node.type === text) {
+    if (node.type === mentionPluginKey || node.type === text) {
       return parent.isTextblock;
     }
     return false;
   };
 };
 
-export const transformSmartCharsMentionsAndEmojis = (
+export const transformSmartCharsMentions = (
   from: number,
   to: number,
   tr: Transaction,
 ): void => {
   const { schema } = tr.doc.type;
-  const { mention, text, emoji } = schema.nodes;
+  const { mention, text } = schema.nodes;
   // Traverse through all the nodes within the range and replace them with their plaintext counterpart
   const children = filterChildrenBetween(
     tr.doc,
@@ -76,13 +76,8 @@ export const transformSmartCharsMentionsAndEmojis = (
   );
 
   children.forEach(({ node, pos }) => {
-    if (node.type === mention || node.type === emoji) {
-      replaceMentionOrEmojiForTextContent(
-        pos,
-        node.nodeSize,
-        node.attrs.text,
-        tr,
-      );
+    if (node.type === mention) {
+      replaceMentionForTextContent(pos, node.nodeSize, node.attrs.text, tr);
     } else if (node.type === text && node.text) {
       const replacePosition = pos > from ? pos : from;
 

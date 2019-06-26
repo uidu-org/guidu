@@ -1,11 +1,8 @@
-// @flow
-
 import AnalyticsEvent from './AnalyticsEvent';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
 
-// Basic events
 export type AnalyticsEventPayload = {
-  [string]: any,
+  [key: string]: any;
 };
 
 export type AnalyticsEventUpdater =
@@ -13,7 +10,7 @@ export type AnalyticsEventUpdater =
   | ((payload: AnalyticsEventPayload) => AnalyticsEventPayload);
 
 export type AnalyticsEventProps = {
-  payload: AnalyticsEventPayload,
+  payload: AnalyticsEventPayload;
 };
 
 export interface AnalyticsEventInterface {
@@ -32,8 +29,8 @@ export type UIAnalyticsEventHandler = (
 ) => void;
 
 export type UIAnalyticsEventProps = AnalyticsEventProps & {
-  context?: Array<{}>,
-  handlers?: Array<UIAnalyticsEventHandler>,
+  context?: Array<{}>;
+  handlers?: Array<UIAnalyticsEventHandler>;
 };
 
 export interface UIAnalyticsEventInterface {

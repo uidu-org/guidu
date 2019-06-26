@@ -1,4 +1,3 @@
-import { Dimensions, SmartMediaEditor } from '@atlaskit/media-editor';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { closeMediaEditor, uploadAnnotation } from '../commands/media-editor';
@@ -10,7 +9,7 @@ type Props = {
 };
 
 export default class MediaEditor extends React.PureComponent<Props> {
-  private onUploadStart = (newFileIdentifier: any, dimensions: Dimensions) => {
+  private onUploadStart = (newFileIdentifier: any, dimensions: any) => {
     const { state, dispatch } = this.props.view;
     uploadAnnotation(newFileIdentifier, dimensions)(state, dispatch);
   };
@@ -30,13 +29,6 @@ export default class MediaEditor extends React.PureComponent<Props> {
 
     const { identifier } = editor;
 
-    return (
-      <SmartMediaEditor
-        identifier={identifier}
-        context={context}
-        onUploadStart={this.onUploadStart}
-        onClose={this.onClose}
-      />
-    );
+    return <h1>Should render media-editor here</h1>;
   }
 }

@@ -1,4 +1,4 @@
-import { withAnalyticsEvents } from '@atlaskit/analytics-next';
+import { withAnalyticsEvents } from '@uidu/analytics';
 import * as React from 'react';
 
 export type Props = {

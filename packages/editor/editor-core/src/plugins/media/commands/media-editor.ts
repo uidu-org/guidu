@@ -1,5 +1,4 @@
 import { MediaBaseAttributes } from '@atlaskit/adf-schema';
-import { Dimensions } from '@atlaskit/media-editor';
 import { createCommand, getPluginState } from '../pm-plugins/media-editor';
 
 export const openMediaEditor = (pos: number, identifier: any) =>
@@ -20,10 +19,7 @@ export const setMediaContext = (context?: any) =>
     context,
   });
 
-export const uploadAnnotation = (
-  newIdentifier: any,
-  newDimensions: Dimensions,
-) =>
+export const uploadAnnotation = (newIdentifier: any, newDimensions: any) =>
   createCommand(
     {
       type: 'upload',

@@ -1,8 +1,8 @@
-import { withAnalyticsEvents } from '@atlaskit/analytics-next';
 import {
   ColorType as Color,
   StatusPicker as AkStatusPicker,
 } from '@atlaskit/status/picker';
+import { withAnalyticsEvents } from '@uidu/analytics';
 import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize } from '@uidu/theme';
 import * as React from 'react';
