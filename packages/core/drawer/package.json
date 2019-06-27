@@ -1,6 +1,6 @@
 {
   "name": "@uidu/drawer",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "React component the renders a Drawer from the left of the screen",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -12,11 +12,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/analytics": "^0.1.7",
-    "@uidu/blanket": "^0.1.7",
+    "@uidu/analytics": "^0.1.8",
+    "@uidu/blanket": "^0.1.9",
     "@uidu/docs": "^0.1.25",
-    "@uidu/item": "^0.1.11",
-    "@uidu/theme": "^0.1.12",
+    "@uidu/item": "^0.1.13",
+    "@uidu/theme": "^0.1.13",
     "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
     "react-dom": "^16.4.0",
@@ -28,7 +28,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.37",
+    "@uidu/button": "^0.1.39",
     "@uidu/dropdown-menu": "^0.1.10",
     "@uidu/shell": "^0.1.17",
     "enzyme": "^3.9.0",

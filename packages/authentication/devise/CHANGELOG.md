@@ -1,5 +1,10 @@
 # @uidu/devise
 
+## 0.1.2
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Remove some tests, fix travis cache timeout, migrate accordion to typescript
+
 ## 0.1.1
 - [patch] [2fcd764](https://github.org/uidu-org/guidu/commits/2fcd764):
 

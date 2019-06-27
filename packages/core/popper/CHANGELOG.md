@@ -1,5 +1,13 @@
 # @uidu/popper
 
+## 0.1.6
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Remove some tests, fix travis cache timeout, migrate accordion to typescript
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Bump packages, remove some dependencies, better media-card types"
+
 ## 0.1.5
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

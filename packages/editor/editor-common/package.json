@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A package that contains common classes and components for editor and renderer",
   "license": "Apache-2.0",
   "uidu:src": "index.ts",
@@ -10,8 +10,8 @@
   "author": "uidu",
   "repository": "https://github.com/uidu-org/guidu",
   "dependencies": {
-    "@uidu/analytics": "^0.1.7",
-    "@uidu/theme": "^0.1.12",
+    "@uidu/analytics": "^0.1.8",
+    "@uidu/theme": "^0.1.13",
     "raf-schd": "^4.0.0",
     "styled-components": "^4.0.3"
   }

@@ -1,5 +1,10 @@
 # @uidu/field-range
 
+## 0.1.9
+- Updated dependencies [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+  - @uidu/section-message@0.1.9
+  - @uidu/theme@0.1.13
+
 ## 0.1.8
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.54
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Remove some tests, fix travis cache timeout, migrate accordion to typescript
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Fix ts?
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Bump packages, remove some dependencies, better media-card types"
+
 ## 0.1.53
 - [patch] [d7c8168](https://github.org/uidu-org/guidu/commits/d7c8168):
 

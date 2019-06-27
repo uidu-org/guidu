@@ -1,6 +1,6 @@
 {
   "name": "@uidu/badge",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A React component that indicates values",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/theme": "^0.1.8",
+    "@uidu/theme": "^0.1.13",
     "babel-runtime": "^6.26.0"
   },
   "peerDependencies": {

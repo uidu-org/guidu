@@ -1,5 +1,10 @@
 # @uidu/button
 
+## 0.1.39
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Remove some tests, fix travis cache timeout, migrate accordion to typescript
+
 ## 0.1.38
 - [patch] [9c54116](https://github.org/uidu-org/guidu/commits/9c54116):
 

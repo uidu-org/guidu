@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-toggle",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A component to view and switch between enabled or disabled states",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/analytics": "^0.1.7",
+    "@uidu/analytics": "^0.1.8",
     "@uidu/field-base": "^0.1.30",
-    "@uidu/theme": "^0.1.8",
-    "@uidu/toggle": "^0.1.13",
+    "@uidu/theme": "^0.1.13",
+    "@uidu/toggle": "^0.1.14",
     "react-switch": "^5.0.0",
     "uuid": "^3.3.2"
   },
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@uidu/build-utils": "^0.1.7",
-    "@uidu/button": "^0.1.35",
+    "@uidu/button": "^0.1.39",
     "@uidu/docs": "^0.1.25",
     "@uidu/form": "^0.1.28",
     "enzyme": "^3.9.0",

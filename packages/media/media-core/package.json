@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-core",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
   "uidu:src": "index.ts",
   "module": "index.js",
