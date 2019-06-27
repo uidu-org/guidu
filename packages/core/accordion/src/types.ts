@@ -12,9 +12,6 @@ export type AccordionPropTypesBase = {
   enableTooltip: boolean;
   /** Assign specific tabIndex order to the underlying node. */
   tabIndex?: number;
-  /** You should not be accessing this prop under any circumstances. It is
-   provided by @uidu/analytics. */
-  createAnalyticsEvent?: any;
 };
 
 export type AccordionPropTypes = AccordionPropTypesBase & {
