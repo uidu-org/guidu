@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.1.14
+- [patch] [23b9701](https://github.org/uidu-org/guidu/commits/23b9701):
+
+  - Proper versions of drawer
+- [patch] [dcea81c](https://github.org/uidu-org/guidu/commits/dcea81c):
+
+  - Proper theme provider
+
 ## 0.1.13
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

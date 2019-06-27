@@ -1,1 +1,0 @@
-- Proper theme provider
