@@ -1,5 +1,10 @@
 # @uidu/media-viewer
 
+## 0.1.16
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Bump packages, remove some dependencies, better media-card types"
+
 ## 0.1.15
 - [patch] [fe71b9f](https://github.org/uidu-org/guidu/commits/fe71b9f):
 

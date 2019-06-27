@@ -1,5 +1,10 @@
 # @uidu/media-filmstrip
 
+## 0.1.14
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Bump packages, remove some dependencies, better media-card types"
+
 ## 0.1.13
 - [patch] [2d61d43](https://github.org/uidu-org/guidu/commits/2d61d43):
 

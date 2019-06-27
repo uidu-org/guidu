@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "uidu media picker, using Uppy",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -12,12 +12,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.38",
+    "@uidu/button": "^0.1.39",
     "@uidu/docs": "^0.1.28",
-    "@uidu/modal-dialog": "^0.1.10"
+    "@uidu/modal-dialog": "^0.1.11"
   },
   "dependencies": {
-    "@uidu/media-core": "^0.1.8",
+    "@uidu/media-core": "^0.1.9",
     "@uppy/core": "^1.0.1",
     "@uppy/drag-drop": "^1.0.1",
     "@uppy/dropbox": "^1.0.1",

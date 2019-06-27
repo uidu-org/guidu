@@ -1,5 +1,10 @@
 # @uidu/media-picker
 
+## 0.1.8
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Bump packages, remove some dependencies, better media-card types"
+
 ## 0.1.7
 - [patch] [fad97b6](https://github.org/uidu-org/guidu/commits/fad97b6):
 

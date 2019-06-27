@@ -1,5 +1,10 @@
 # @uidu/media-core
 
+## 0.1.9
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Bump packages, remove some dependencies, better media-card types"
+
 ## 0.1.8
 
 - [patch][93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/lozenge",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A React component that highlights status for quick recognition",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0",
-    "@uidu/theme": "^0.1.11",
+    "@uidu/theme": "^0.1.13",
     "babel-runtime": "^6.26.0"
   },
   "peerDependencies": {

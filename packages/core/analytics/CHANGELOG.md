@@ -1,5 +1,10 @@
 # @uidu/analytics
 
+## 0.1.8
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Fix ts?
+
 ## 0.1.7
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

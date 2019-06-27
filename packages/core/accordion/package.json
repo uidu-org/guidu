@@ -1,6 +1,6 @@
 {
   "name": "@uidu/accordion",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "React accessible accordion component",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@uidu/docs": "^0.1.25",
-    "@uidu/theme": "^0.1.8",
+    "@uidu/theme": "^0.1.13",
     "react-accessible-accordion": "^3.0.0",
     "styled-components": "^4.0.3"
   }

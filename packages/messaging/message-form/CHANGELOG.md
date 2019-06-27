@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.12
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Fix ts?
+
 ## 0.1.11
 - [patch] [fad97b6](https://github.org/uidu-org/guidu/commits/fad97b6):
 

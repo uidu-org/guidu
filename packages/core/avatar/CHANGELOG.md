@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.14
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Remove some tests, fix travis cache timeout, migrate accordion to typescript
+
 ## 0.2.13
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 

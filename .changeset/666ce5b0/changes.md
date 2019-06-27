@@ -1,1 +1,0 @@
-- Remove some tests, fix travis cache timeout, migrate accordion to typescript

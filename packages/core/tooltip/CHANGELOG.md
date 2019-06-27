@@ -1,5 +1,10 @@
 # @uidu/tooltip
 
+## 0.1.12
+- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+  - Remove some tests, fix travis cache timeout, migrate accordion to typescript
+
 ## 0.1.11
 - [patch] [e09ee49](https://github.org/uidu-org/guidu/commits/e09ee49):
 
