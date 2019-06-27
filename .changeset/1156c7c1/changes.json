@@ -1,0 +1,10 @@
+{
+  "releases": [{ "name": "@uidu/drawer", "type": "minor" }],
+  "dependents": [
+    {
+      "name": "@uidu/message",
+      "type": "patch",
+      "dependencies": ["@uidu/drawer"]
+    }
+  ]
+}
