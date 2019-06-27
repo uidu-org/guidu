@@ -1,5 +1,10 @@
 # @uidu/drawer
 
+## 0.1.14
+- [patch] [924594c](https://github.org/uidu-org/guidu/commits/924594c):
+
+  - Proper versions of drawer
+
 ## 0.1.13
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

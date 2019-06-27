@@ -1,7 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/message", "type": "patch" },
-    { "name": "@uidu/drawer", "type": "patch" }
-  ],
-  "dependents": []
-}

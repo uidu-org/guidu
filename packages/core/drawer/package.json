@@ -1,6 +1,6 @@
 {
   "name": "@uidu/drawer",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "React component the renders a Drawer from the left of the screen",
   "module": "index.js",
   "uidu:src": "index.ts",
