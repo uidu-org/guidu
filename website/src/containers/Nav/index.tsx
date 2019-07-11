@@ -2,7 +2,6 @@ import PackagesIcon from '@atlaskit/icon/glyph/component';
 import PatternsIcon from '@atlaskit/icon/glyph/issues';
 import MenuIcon from '@atlaskit/icon/glyph/menu';
 import DocumentationIcon from '@atlaskit/icon/glyph/overview';
-import SearchIcon from '@atlaskit/icon/glyph/search';
 import Navigation, {
   AkContainerTitle,
   presetThemes,
@@ -19,7 +18,6 @@ import { Link } from '../../components/WrappedLink';
 import { docs, externalPackages as packages, patterns } from '../../site';
 import GroupDrawer from './GroupDrawer';
 import Groups from './Groups';
-import SearchDrawer from './SearchDrawer';
 
 export type State = {
   groupDrawerOpen: boolean;
@@ -124,12 +122,6 @@ export default class Nav extends React.Component<{}, State> {
                   </Tooltip>
                 }
                 globalPrimaryItemHref={'/'}
-                globalSearchIcon={
-                  <Tooltip content="Search" position="right">
-                    <SearchIcon label="search" />
-                  </Tooltip>
-                }
-                onSearchDrawerOpen={this.openSearchDrawer}
                 onCreateDrawerOpen={this.openGroupDrawer}
                 containerHeaderComponent={() =>
                   containerNavAvailable &&
@@ -153,14 +145,6 @@ export default class Nav extends React.Component<{}, State> {
                   )
                 }
                 drawers={[
-                  <SearchDrawer
-                    isOpen={searchDrawerOpen}
-                    closeDrawer={this.closeSearchDrawer}
-                    searchDrawerValue={searchDrawerValue}
-                    updateSearchValue={this.updateSearchValue}
-                    packages={packages}
-                    key="searchDrawer"
-                  />,
                   <GroupDrawer
                     key="groupDrawer"
                     isOpen={groupDrawerOpen}

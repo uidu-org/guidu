@@ -1,23 +1,22 @@
-import * as React from 'react';
-import styled, { keyframes, css } from 'styled-components';
-import { Link } from '../../components/WrappedLink';
-import { gridSize, colors, math } from '@uidu/theme';
-import debounce from 'lodash.debounce';
-
-import { AtlassianIcon } from '@atlaskit/logo';
-import PackagesIcon from '@atlaskit/icon/glyph/component';
-import BlogIcon from '@atlaskit/icon/glyph/component';
-import MediaDocIcon from '@atlaskit/icon/glyph/media-services/document';
 import CodeIcon from '@atlaskit/icon/glyph/code';
-
-import rocket from '../../assets/Rocket.png';
-import platform from '../../assets/Platform.png';
+import {
+  default as BlogIcon,
+  default as PackagesIcon,
+} from '@atlaskit/icon/glyph/component';
+import MediaDocIcon from '@atlaskit/icon/glyph/media-services/document';
+import { AtlassianIcon } from '@atlaskit/logo';
+import { colors, gridSize, math } from '@uidu/theme';
+import debounce from 'lodash.debounce';
+import * as React from 'react';
+import styled, { css, keyframes } from 'styled-components';
 import multiTool from '../../assets/multiTool.png';
-
+import platform from '../../assets/Platform.png';
+import rocket from '../../assets/Rocket.png';
+import { Link } from '../../components/WrappedLink';
 import {
   MOBILE_BREAKPOINT_MAX,
-  TABLET_BREAKPOINT_MIN,
   TABLET_BREAKPOINT_MAX,
+  TABLET_BREAKPOINT_MIN,
 } from './config';
 
 const CardIcon = styled.span`

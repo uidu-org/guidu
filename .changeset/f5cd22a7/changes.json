@@ -1,0 +1,11 @@
+{
+  "releases": [
+    { "name": "@uidu/webpack-config", "type": "patch" },
+    { "name": "@uidu/button", "type": "patch" },
+    { "name": "@uidu/code", "type": "patch" },
+    { "name": "@uidu/docs", "type": "patch" },
+    { "name": "@uidu/portal", "type": "patch" },
+    { "name": "@uidu/guidu-website", "type": "patch" }
+  ],
+  "dependents": []
+}

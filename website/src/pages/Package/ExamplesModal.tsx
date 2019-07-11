@@ -1,4 +1,3 @@
-import { FlagGroup } from '@atlaskit/flag';
 import CodeIcon from '@atlaskit/icon/glyph/code';
 import CloseIcon from '@atlaskit/icon/glyph/cross';
 import LinkIcon from '@atlaskit/icon/glyph/link';
@@ -386,9 +385,6 @@ export default class ExamplesModal extends React.Component<Props, State> {
                 </ErrorMessage>
               </Content>
             )}
-            <FlagGroup>
-              {Object.keys(this.state.flags).map(key => this.state.flags[key])}
-            </FlagGroup>
           </ModalContent>
         </ContentBody>
       </Modal>

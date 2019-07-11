@@ -1,18 +1,16 @@
 // @flow
 /* eslint-disable react/no-multi-comp */
-import React, { type Node } from 'react';
-import Button from '@uidu/button';
-import EmojiIcon from '@atlaskit/icon/glyph/emoji';
-import Flag, { FlagGroup } from '@atlaskit/flag';
 import InlineDialog from '@atlaskit/inline-dialog';
-import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
 import {
   Spotlight,
   SpotlightManager,
   SpotlightTarget,
   SpotlightTransition,
 } from '@atlaskit/onboarding';
+import Button from '@uidu/button';
+import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
 import Tooltip from '@uidu/tooltip';
+import React, { Node } from 'react';
 
 const TooltipButton = ({
   children,
@@ -147,16 +145,6 @@ class Modal extends React.Component<ModalProps, ModalState> {
             }
           />
         </ModalDialog>
-        <FlagGroup onDismissed={name => this.removeFlag(name)}>
-          {flags.map(id => (
-            <Flag
-              id={id}
-              key={`${id}`}
-              icon={<EmojiIcon />}
-              title={`${id + 1}: Whoa a new flag!`}
-            />
-          ))}
-        </FlagGroup>
       </React.Fragment>
     );
   }

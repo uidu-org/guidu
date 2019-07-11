@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
-import stringRaw from 'string-raw';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import stringRaw from 'string-raw';
 
 /*
  * Tag function to render a code block, e.g. code`console.log("hello world")`

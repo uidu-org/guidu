@@ -22,7 +22,6 @@
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
-    "@atlaskit/flag": "^9.1.10",
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/inline-dialog": "^9.0.15",
     "@atlaskit/onboarding": "^7.0.1",

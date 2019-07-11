@@ -1,30 +1,22 @@
-import * as React from 'react';
-import { match } from 'react-router';
-import PropTypes from 'prop-types';
-import { withRouter } from 'react-router';
-import { Redirect } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
-
 import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
+import CodeIcon from '@atlaskit/icon/glyph/code';
 import LinkIcon from '@atlaskit/icon/glyph/link';
 import Button from '@uidu/button';
-import CodeIcon from '@atlaskit/icon/glyph/code';
-import ErrorIcon from '@atlaskit/icon/glyph/error';
-import Flag, { FlagGroup } from '@atlaskit/flag';
 import { Form } from '@uidu/form';
 import Select from '@uidu/select';
 import Tooltip from '@uidu/tooltip';
-import { colors } from '@uidu/theme';
-
+import PropTypes from 'prop-types';
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
+import { match, withRouter } from 'react-router';
+import { Redirect } from 'react-router-dom';
 import ExampleDisplay from '../../components/Examples/ExampleDisplay';
+import { externalPackages, getConfig } from '../../site';
 import * as fs from '../../utils/fs';
-import { getConfig } from '../../site';
 import packageResolver, { getLoaderUrl } from '../../utils/packageResolver';
 import { packageUrl } from '../../utils/url';
-import { externalPackages } from '../../site';
 import CodeSandbox from '../Package/CodeSandbox';
 import CodeSandboxLogo from '../Package/CodeSandboxLogo';
-
 import {
   CodeContainer,
   Container,
@@ -308,46 +300,6 @@ class Examples extends React.Component<Props, State> {
   onCodeToggle = () =>
     this.setState(state => ({ displayCode: !state.displayCode }));
 
-  addFlag = (flagProps: {
-    appearance: 'error' | 'info' | 'normal' | 'success' | 'warning';
-    description: string;
-    title: string;
-  }) => {
-    const id = Date.now().toString();
-    const icon = (() => {
-      if (flagProps.appearance === 'error') {
-        return <ErrorIcon label="Error" secondaryColor={colors.R400} />;
-      }
-
-      return '';
-    })();
-    this.setState({
-      flags: {
-        [id]: (
-          <Flag
-            icon={icon}
-            id={id}
-            key={id}
-            actions={[{ content: 'OK', onClick: () => this.removeFlag(id) }]}
-            {...flagProps}
-          />
-        ),
-        ...this.state.flags,
-      },
-    });
-  };
-
-  removeFlag = (removedKey: string) => {
-    const flags = Object.keys(this.state.flags)
-      .filter(key => key !== removedKey.toString())
-      .reduce(
-        (newFlags, key) => ({ ...newFlags, [key]: this.state.flags[key] }),
-        {},
-      );
-
-    this.setState({ flags });
-  };
-
   deploySandbox = async () => {
     const props = packageResolver(
       this.props.match.params.groupId,
@@ -373,11 +325,6 @@ class Examples extends React.Component<Props, State> {
       window.open(url);
     } else {
       const message = await response.text();
-      this.addFlag({
-        appearance: 'error',
-        description: message,
-        title: 'Error deploying to Codesandbox',
-      });
     }
     this.setState({ loadingSandbox: false });
   };
@@ -456,9 +403,6 @@ class Examples extends React.Component<Props, State> {
             </ErrorMessage>
           </Content>
         )}
-        <FlagGroup>
-          {Object.keys(this.state.flags).map(key => this.state.flags[key])}
-        </FlagGroup>
       </Container>
     );
   }

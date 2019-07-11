@@ -1,26 +1,18 @@
+import { colors, gridSize, math } from '@uidu/theme';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { gridSize, math, colors } from '@uidu/theme';
 import Cards from './Cards';
 import { TABLET_BREAKPOINT_MIN } from './config';
-import '../../../public/css/charlie-display-font.less';
-
-const fonts =
-  '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
 const Title = styled.h1`
-  color: ${colors.N0};
-  font-family: 'Charlie_Display_Semibold', ${fonts}; /* stylelint-disable-line */
   font-size: 52px;
   margin: 80px 0 0 !important;
   letter-spacing: 0;
 `;
 const Intro = styled.div`
-  color: ${colors.N0};
   display: inline-block;
   font-size: 24px;
-  font-family: 'Charlie_Display_Regular', ${fonts}; /* stylelint-disable-line */
   font-weight: 300;
   margin-bottom: 80px;
   margin-top: 24px;
@@ -39,7 +31,6 @@ const Intro = styled.div`
 const HomePageWrapper = styled.div`
   margin: 0 auto;
   text-align: center;
-  color: ${colors.N0};
   margin-top: ${math.add(gridSize, 3)}px;
 
   @media (min-width: ${TABLET_BREAKPOINT_MIN}px) {
@@ -51,14 +42,6 @@ const HomePageWrapper = styled.div`
   }
 `;
 
-const Style = () => (
-  <style>{`
-  body {
-    background-color: ${colors.B500};
-  }
-`}</style>
-);
-
 export default class HomePage extends React.Component {
   render() {
     return (
@@ -66,7 +49,6 @@ export default class HomePage extends React.Component {
         <Helmet>
           <title>{`${BASE_TITLE}`}</title>
         </Helmet>
-        <Style />
         <Title>Guidu</Title>
         <Intro>
           Uidu&#39;s official UI library, built according to the
