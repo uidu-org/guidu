@@ -1,7 +1,7 @@
 // @flow
 
 import Tooltip from '@uidu/tooltip';
-import React, { ComponentType } from 'react';
+import React, { ComponentType, Fragment } from 'react';
 import { Code } from 'react-feather';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -38,7 +38,7 @@ export const Toggle = styled.div`
 `;
 
 // NOTE: use of important necessary to override element targeted headings
-export const ToggleTitle = styled.h5`
+export const ToggleTitle = styled.h6`
   margin: 0;
 `;
 
@@ -78,8 +78,7 @@ export default class Example extends React.Component<Props, State> {
     const mode = isSourceVisible ? 'open' : 'closed';
 
     return (
-      <Wrapper className="border mb-4 card" mode={mode}>
-        <div className="card-header">
+      <Fragment>
           <Tooltip placement="left" content={toggleLabel}>
             <Toggle
               ref={c => {
@@ -93,7 +92,7 @@ export default class Example extends React.Component<Props, State> {
               <Code id="UncontrolledTooltipExample" label={toggleLabel} />
             </Toggle>
           </Tooltip>
-        </div>
+      <Wrapper className="border mb-5 card" mode={mode}>
         {isSourceVisible && (
           <SyntaxHighlighter
             language="javascript"
@@ -111,6 +110,7 @@ export default class Example extends React.Component<Props, State> {
           </Showcase>
         </div>
       </Wrapper>
+      </Fragment>
     );
   }
 }

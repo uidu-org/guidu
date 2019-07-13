@@ -1,5 +1,6 @@
 import Button from '@uidu/button';
-import * as React from 'react';
+import { ShellBody, ShellHeader } from '@uidu/shell';
+import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import Loading from '../../components/Loading';
@@ -118,7 +119,7 @@ class Package extends React.Component<Props> {
     const title = fs.titleize(pkgId);
 
     return (
-      <Page>
+      <Fragment>
         {urlIsExactMatch && (
           <Helmet>
             <title>
@@ -126,11 +127,12 @@ class Package extends React.Component<Props> {
             </title>
           </Helmet>
         )}
-        <div className="d-flex align-items-center justify-content-between">
-          <div className="mr-3">
-            <h1 className="h4">{title}</h1>
-            <p className="mb-0">{pkg.description}</p>
-          </div>
+        <ShellHeader className="border-bottom px-3 px-lg-4 justify-content-between">
+          <h1 className="h5 m-0">
+            <small>
+              <code>{pkg.name}</code>
+            </small>
+          </h1>
           {examplePath && (
             <ButtonGroup>
               {/* <Button
@@ -138,26 +140,30 @@ class Package extends React.Component<Props> {
                 color="light"
                 component={Link}
                 to={`/packages/${groupId}/${pkgId}/changelog`}
-              >
+                >
                 <List className="mr-2" size={'1rem'} /> Changelog
               </Button> */}
+              <MetaData
+                packageName={pkg.name}
+                packageSrc={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
+                changelog={changelog}
+                pkgId={pkgId}
+                groupId={groupId}
+              />
               <Button component={Link} to={exampleModalPath}>
                 Examples
               </Button>
             </ButtonGroup>
           )}
-        </div>
-        <hr />
-        <MetaData
-          packageName={pkg.name}
-          packageSrc={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
-          changelog={changelog}
-          pkgId={pkgId}
-          groupId={groupId}
-        />
-        <hr />
-        {doc || <NoDocs name={pkgId} />}
-      </Page>
+        </ShellHeader>
+        <ShellBody scrollable>
+          <div className="container my-5">
+            <div className="row justify-content-center">
+              <div className="col-lg-10">{doc || <NoDocs name={pkgId} />}</div>
+            </div>
+          </div>
+        </ShellBody>
+      </Fragment>
     );
   }
 }

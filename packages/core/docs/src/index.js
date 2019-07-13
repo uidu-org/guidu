@@ -9,9 +9,7 @@ const customMd = defaultMd.customize({
       React.createElement(
         'h' + props.level,
         {
-          className: `h${
-            props.level > 4 && props.level < 2 ? props.level : props.level + 2
-          } mt-5`,
+          className: `h6 mt-5`,
         },
         props.children,
       ),
@@ -20,9 +18,9 @@ const customMd = defaultMd.customize({
   },
 });
 
+export { Prop } from 'pretty-proptypes';
 export { default as code } from './code';
 export { default as Example } from './Example';
 export { default as Props } from './Props';
 export { default as replaceSrc } from './replaceSrc';
-export { Prop } from 'pretty-proptypes';
 export { customMd as md };

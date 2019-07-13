@@ -4,12 +4,10 @@ import {
   default as PackagesIcon,
 } from '@atlaskit/icon/glyph/component';
 import MediaDocIcon from '@atlaskit/icon/glyph/media-services/document';
-import { AtlassianIcon } from '@atlaskit/logo';
 import { colors, gridSize, math } from '@uidu/theme';
 import debounce from 'lodash.debounce';
 import * as React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import multiTool from '../../assets/multiTool.png';
 import platform from '../../assets/Platform.png';
 import rocket from '../../assets/Rocket.png';
 import { Link } from '../../components/WrappedLink';
@@ -196,23 +194,6 @@ const cards = [
       'Check out the documentation and usage guides for the Atlaskit packages.',
   },
   {
-    href: 'http://atlassian.design',
-    title: 'Atlassian Design Guidelines',
-    image: multiTool,
-    icon: () => (
-      <CardIcon color={colors.B400}>
-        <AtlassianIcon
-          label="Atlassian Design Guidelines"
-          iconColor={colors.N0}
-          iconGradientStart={colors.B400}
-          iconGradientStop={colors.N0}
-          size="xsmall"
-        />
-      </CardIcon>
-    ),
-    text: 'Need some more design guidance? Have a look at the ADG.',
-  },
-  {
     to: '/docs/guides/contributing',
     title: 'Make it better',
     icon: () => (
@@ -290,11 +271,11 @@ export default class Cards extends React.Component {
   columnIndexes = () => {
     const { columnCount } = this.state;
     if (columnCount === 1) {
-      return [[0, 1, 2, 3, 4, 5]];
+      return [[0, 1, 2, 3, 4]];
     } else if (columnCount === 2) {
-      return [[0, 2], [1, 3, 4, 5]];
+      return [[0, 2], [1, 3, 4]];
     }
-    return [[0, 3], [1, 4], [2, 5]];
+    return [[0, 2], [1, 4, 3]];
   };
 
   render() {

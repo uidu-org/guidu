@@ -1,22 +1,9 @@
-import * as React from 'react';
 import PackageIcon from '@atlaskit/icon/glyph/chevron-right';
-import ChevronDownIcon from '@atlaskit/icon/glyph/chevron-down';
-import styled from 'styled-components';
-import { isSubNavExpanded } from '../utils/linkComponents';
-import renderNav from '../utils/renderNav';
+import * as React from 'react';
+import { NavLink as Link } from 'react-router-dom';
 import { Directory, File, NavGroup, NavGroupItem } from '../../../types';
 import * as fs from '../../../utils/fs';
-import { packageUrl, packageDocUrl } from '../../../utils/url';
-
-const CenteredIcon = styled.span`
-  align-items: center;
-  display: flex;
-  font-size: 12px;
-  height: 16px;
-  justify-content: center;
-  line-height: 24px;
-  width: 16px;
-`;
+import { packageDocUrl, packageUrl } from '../../../utils/url';
 
 export function buildSubNavGroup(
   children: Array<File>,
@@ -32,9 +19,9 @@ export function buildSubNavGroup(
       (acc, item) => {
         acc.items.push({
           to: url(fs.normalize(item.id)),
-          title: fs.titleize(item.id),
-          isCompact: true,
-          icon: <CenteredIcon>•</CenteredIcon>,
+          text: fs.titleize(item.id),
+          type: 'NavigationItem',
+          as: Link,
         });
         return acc;
       },
@@ -43,7 +30,6 @@ export function buildSubNavGroup(
 }
 
 const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
-  let navigationItemIcon = <CenteredIcon>•</CenteredIcon>;
   const docs = fs.maybeGetById(fs.getDirectories(pkg.children) || [], 'docs');
   const examples = fs.maybeGetById(
     fs.getDirectories(pkg.children) || [],
@@ -69,29 +55,13 @@ const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
 
   if (docsSubnav) items.push(docsSubnav);
 
-  if (items.length) {
-    navigationItemIcon = isSubNavExpanded(
-      packageUrl(group.id, pkg.id),
-      pathname,
-    ) ? (
-      <ChevronDownIcon label="chevron" size="small" />
-    ) : (
-      <PackageIcon label="package" size="small" />
-    );
-  }
-
   return {
-    isCompact: true,
-    icon: navigationItemIcon,
     to: packageUrl(group.id, pkg.id),
-    title: fs.titleize(pkg.id),
+    text: fs.titleize(pkg.id),
+    type: 'NavigationItem',
+    as: Link,
     items,
   };
-};
-
-const packagesList = {
-  to: '/packages',
-  title: 'Overview',
 };
 
 export type PackagesNavProps = {
@@ -100,11 +70,12 @@ export type PackagesNavProps = {
   onClick?: (e: Event) => void;
 };
 
-const standardGroups = (dirs: Array<Directory>, pathname): NavGroup[] =>
+export const standardGroups = (dirs: Array<Directory>, pathname): NavGroup[] =>
   dirs.map(group => {
     const packages = fs.getDirectories(group.children);
     return {
-      title: group.id,
+      heading: group.id,
+      type: 'NavigationGroup',
       items: packages.reduce(
         (items, pkg) => {
           const details = getItemDetails(pkg, group, pathname);
@@ -117,19 +88,3 @@ const standardGroups = (dirs: Array<Directory>, pathname): NavGroup[] =>
       ),
     };
   });
-
-export default function PackagesNav(props: PackagesNavProps) {
-  const { packages, pathname } = props;
-  const dirs = fs.getDirectories(packages.children);
-
-  return (
-    <div>
-      {renderNav(
-        [{ items: [packagesList] }, ...standardGroups(dirs, pathname)],
-        {
-          pathname,
-        },
-      )}
-    </div>
-  );
-}

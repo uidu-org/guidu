@@ -1,8 +1,6 @@
-import { gridSize } from '@uidu/theme';
+import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
-import Page from '../components/Page';
 import { externalPackages as packages, getConfig } from '../site';
 import * as fs from '../utils/fs';
 
@@ -41,9 +39,9 @@ export default function PackagesList() {
       <Helmet>
         <title>{`Browse all packages - ${BASE_TITLE}`}</title>
       </Helmet>
-      <Page>
-        <h1>Packages</h1>
-        <table className="table mt-5">
+      <ShellHeader>Packages</ShellHeader>
+      <ShellBody scrollable>
+        <table className="table">
           <thead>
             <tr>
               <th>Name</th>
@@ -65,13 +63,7 @@ export default function PackagesList() {
             ))}
           </tbody>
         </table>
-      </Page>
+      </ShellBody>
     </Fragment>
   );
 }
-
-// Tabular data
-const RowCell = styled.div`
-  padding-bottom: ${gridSize}px;
-  padding-top: ${gridSize}px;
-`;
