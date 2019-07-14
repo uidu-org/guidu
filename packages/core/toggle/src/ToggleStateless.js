@@ -56,13 +56,24 @@ class ToggleStateless extends Component<StatelessProps, State> {
         return [16, 8];
       case 'small':
         return [24, 10];
-      default:
+      case 'large':
         return [56, 20];
+      default:
+        return [40, 18];
     }
   };
 
   render() {
-    const { isChecked, isDisabled, label, name, size, value } = this.props;
+    const {
+      isChecked,
+      isDisabled,
+      label,
+      name,
+      size,
+      value,
+      baseColor,
+      activeColor,
+    } = this.props;
     const { isFocused } = this.state;
 
     const styledProps = {
@@ -85,8 +96,8 @@ class ToggleStateless extends Component<StatelessProps, State> {
         checked={isChecked}
         uncheckedIcon={false}
         checkedIcon={false}
-        offColor="#ededed"
-        onColor="#28a745"
+        offColor={baseColor}
+        onColor={activeColor}
         // offHandleColor="#0ff"
         // onHandleColor="#08f"
         height={sizes[1]}

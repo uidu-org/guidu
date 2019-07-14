@@ -3,7 +3,7 @@ import * as H from 'history';
 import { match } from 'react-router';
 import styled from 'styled-components';
 import { Link } from '../components/WrappedLink';
-import BackIcon from '@atlaskit/icon/glyph/arrow-left';
+import { ArrowLeft } from 'react-feather';
 import TextField from '@uidu/field-text';
 import Button from '@uidu/button';
 import Loadable from '../components/WrappedLoader';
@@ -106,7 +106,7 @@ const Back = ({
   <Button
     appearance="link"
     component={Link}
-    iconBefore={<BackIcon label="Back Icon" size="small" />}
+    iconBefore={<ArrowLeft size={16} />}
     spacing="none"
     to={to}
   >

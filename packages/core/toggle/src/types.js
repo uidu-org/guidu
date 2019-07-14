@@ -16,7 +16,9 @@ type BaseProps = {
   /** Handler to be called when toggle is focused. */
   onFocus: (event: Event) => void,
   /** Defines the size of the toggle. */
-  size: 'regular' | 'large',
+  size: 'xsmall' | 'small' | 'regular' | 'large',
+  baseColor: string,
+  activeColor: string,
 };
 
 // All base props have defaults

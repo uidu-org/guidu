@@ -12,7 +12,6 @@
     "@babel/runtime": "^7.0.0",
     "popper.js": "^1.14.4",
     "raf-schd": "^4.0.0",
-    "raf-stub": "^2.0.2",
     "react-scrolllock": "^4.0.1"
   },
   "peerDependencies": {
@@ -23,7 +22,6 @@
     "@uidu/build-utils": "^0.1.7",
     "@uidu/docs": "^0.1.25",
     "enzyme": "^3.9.0",
-    "raf-stub": "^2.0.2",
     "react-dom": "^16.4.0"
   },
   "uidu": {

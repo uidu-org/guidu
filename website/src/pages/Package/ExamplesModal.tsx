@@ -1,7 +1,4 @@
-import CodeIcon from '@atlaskit/icon/glyph/code';
-import CloseIcon from '@atlaskit/icon/glyph/cross';
-import LinkIcon from '@atlaskit/icon/glyph/link';
-import ScreenIcon from '@atlaskit/icon/glyph/screen';
+import { Code, X, Link as LinkIcon, Maximize } from 'react-feather';
 import Button, { ButtonGroup } from '@uidu/button';
 import Modal, {
   ModalBody as Body,
@@ -199,31 +196,28 @@ const ModalHeaderComp = ({
           onClick={onCodeToggle}
           isSelected={displayCode}
           title={displayCode ? 'Hide Source' : 'Show Source'}
-          iconBefore={<CodeIcon label="Toggle code snippet" />}
+          iconBefore={<Code size={16} />}
         >
           Source
         </Button>
         <Tooltip content="Fullscreen" position="bottom">
           <Button
-            appearance="subtle"
             component={Link}
             to={toExampleUrl(groupId, packageId, exampleId)}
-            iconBefore={<ScreenIcon label="Screen Icon" />}
+            iconBefore={<Maximize size={16} />}
           />
         </Tooltip>
         <Tooltip content="Isolated View" position="bottom">
           <Button
-            appearance="subtle"
             href={loaderUrl}
             target={'_blank'}
-            iconBefore={<LinkIcon label="Link Icon" />}
+            iconBefore={<LinkIcon size={16} />}
           />
         </Tooltip>
         <Tooltip content="Close" position="bottom">
           <Button
-            appearance="subtle"
             onClick={close}
-            iconBefore={<CloseIcon label="Close Modal" />}
+            iconBefore={<X size={16} />}
           />
         </Tooltip>
       </ButtonGroup>

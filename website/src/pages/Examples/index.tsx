@@ -1,6 +1,4 @@
-import ArrowLeftIcon from '@atlaskit/icon/glyph/arrow-left';
-import CodeIcon from '@atlaskit/icon/glyph/code';
-import LinkIcon from '@atlaskit/icon/glyph/link';
+import { ArrowLeft, Code, Link } from 'react-feather';
 import Button from '@uidu/button';
 import { Form } from '@uidu/form';
 import Select from '@uidu/select';
@@ -169,7 +167,7 @@ class ExampleNavigation extends React.Component<ExampleNavigationProps> {
         <NavSection style={{ marginLeft: 8 }}>
           <Tooltip content="Back to docs" position="right">
             <NavLink to={packageUrl(groupId, packageId)}>
-              <ArrowLeftIcon label="Back to docs" />
+              <ArrowLeft size={16} />
             </NavLink>
           </Tooltip>
         </NavSection>
@@ -219,13 +217,13 @@ class ExampleNavigation extends React.Component<ExampleNavigationProps> {
             position="left"
           >
             <NavButton isSelected={codeIsVisible} onClick={onCodeToggle}>
-              <CodeIcon label="Show source" />
+              <Code size={16} />
             </NavButton>
           </Tooltip>
           <Tooltip content="Isolated View" position="bottom">
             <Button
               appearance="subtle"
-              iconBefore={<LinkIcon label="Link Icon" />}
+              iconBefore={<Link size={16} />}
               href={loaderUrl}
               target="_blank"
             />

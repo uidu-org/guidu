@@ -3,8 +3,7 @@ import * as H from 'history';
 import styled from 'styled-components';
 import Loadable from 'react-loadable';
 import { Helmet } from 'react-helmet';
-
-import CloseIcon from '@atlaskit/icon/glyph/cross';
+import { X } from 'react-feather';
 
 import Button from '@uidu/button';
 import { gridSize, math } from '@uidu/theme';
@@ -73,7 +72,7 @@ const Header = ({
     </FieldWrapper>
     <Button
       appearance="subtle"
-      iconBefore={<CloseIcon label="Close Modal" />}
+      iconBefore={<X size={16} />}
       onClick={onClose}
     />
   </ModalHeader>

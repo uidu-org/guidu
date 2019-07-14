@@ -23,7 +23,7 @@
     "raf-schd": "^4.0.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-images": "^1.0.0",
     "styled-components": "^4.0.3"
   },

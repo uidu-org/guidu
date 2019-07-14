@@ -107,6 +107,7 @@ export const getButtonStyles = (props: ThemeProps) => ({
   transitionDuration: getTransitionDuration(props),
   verticalAlign: getVerticalAlign(props),
   width: getWidth(props),
+  WebkitAppearance: 'none',
 
   '&::-moz-focus-inner': {
     border: 0,

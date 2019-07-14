@@ -30,7 +30,7 @@
     "emoji-regex": "^8.0.0",
     "moment": "^2.18.1",
     "prop-types": "^15.6.0",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-spring": "^8.0.20",
     "react-use-gesture": "^5.0.0",
     "styled-components": "^4.0.3"

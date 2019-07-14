@@ -79,7 +79,6 @@
     "./typings/p-wait-for.d.ts",
     "./typings/querystring.d.ts",
     "./typings/raf-schd.d.ts",
-    "./typings/raf-stub.d.ts",
     "./typings/enzyme-react-intl.d.ts",
     "./typings/scrollparent.d.ts",
     "./typings/snake-case.d.ts",

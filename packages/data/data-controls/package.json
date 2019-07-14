@@ -22,7 +22,7 @@
     "@uidu/toggle": "^0.1.13",
     "classnames": "^2.2.6",
     "react-day-picker": "^7.3.0",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-powerplug": "^1.0.0",
     "react-sortable-hoc": "^1.9.1",
     "styled-components": "^4.0.3"

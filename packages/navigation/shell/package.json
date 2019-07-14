@@ -13,7 +13,7 @@
     "@uidu/docs": "^0.1.27",
     "@uidu/navigation": "^0.1.15",
     "faker": "^4.1.0",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-router-dom": "^5.0.0"
   },
   "dependencies": {

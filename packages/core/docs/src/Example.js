@@ -5,7 +5,7 @@ import React, { ComponentType, Fragment } from 'react';
 import { Code } from 'react-feather';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import ErrorBoundary from './ErrorBoundary';
 import replaceSrc from './replaceSrc';
 
@@ -15,6 +15,7 @@ type Props = {
   source: string,
   title: string,
   packageName: string,
+  overflowHidden: boolean,
 };
 
 type State = {
@@ -44,7 +45,12 @@ export const ToggleTitle = styled.h6`
 
 const Showcase = styled.div`
   position: relative;
-  overflow-x: hidden;
+  ${({ overflowHidden }) =>
+    overflowHidden
+      ? css`
+          overflow-x: hidden;
+        `
+      : null};
 `;
 
 export default class Example extends React.Component<Props, State> {
@@ -67,7 +73,14 @@ export default class Example extends React.Component<Props, State> {
   };
 
   render() {
-    const { Component, source, language, title, packageName } = this.props;
+    const {
+      Component,
+      source,
+      language,
+      title,
+      packageName,
+      overflowHidden,
+    } = this.props;
     const { isSourceVisible } = this.state;
     const toggleLabel = isSourceVisible ? (
       <span>Hide Code Snippet</span>
@@ -79,37 +92,37 @@ export default class Example extends React.Component<Props, State> {
 
     return (
       <Fragment>
-          <Tooltip placement="left" content={toggleLabel}>
-            <Toggle
-              ref={c => {
-                this.toggleElement = c;
-              }}
-              onClick={this.toggleSource}
-              title={toggleLabel}
-              mode={mode}
-            >
-              <ToggleTitle mode={mode}>{title}</ToggleTitle>
-              <Code id="UncontrolledTooltipExample" label={toggleLabel} />
-            </Toggle>
-          </Tooltip>
-      <Wrapper className="border mb-5 card" mode={mode}>
-        {isSourceVisible && (
-          <SyntaxHighlighter
-            language="javascript"
-            style={tomorrow}
-            customStyle={{ marginTop: 0, padding: '1rem' }}
+        <Tooltip placement="left" content={toggleLabel}>
+          <Toggle
+            ref={c => {
+              this.toggleElement = c;
+            }}
+            onClick={this.toggleSource}
+            title={toggleLabel}
+            mode={mode}
           >
-            {packageName ? replaceSrc(source, packageName) : source}
-          </SyntaxHighlighter>
-        )}
-        <div className="card-body">
-          <Showcase>
-            <ErrorBoundary onError={this.onError}>
-              <Component />
-            </ErrorBoundary>
-          </Showcase>
-        </div>
-      </Wrapper>
+            <ToggleTitle mode={mode}>{title}</ToggleTitle>
+            <Code id="UncontrolledTooltipExample" label={toggleLabel} />
+          </Toggle>
+        </Tooltip>
+        <Wrapper className="border mb-5 card" mode={mode}>
+          {isSourceVisible && (
+            <SyntaxHighlighter
+              language="javascript"
+              style={tomorrow}
+              customStyle={{ marginTop: 0, padding: '1rem' }}
+            >
+              {packageName ? replaceSrc(source, packageName) : source}
+            </SyntaxHighlighter>
+          )}
+          <div className="card-body">
+            <Showcase overflowHidden={overflowHidden}>
+              <ErrorBoundary onError={this.onError}>
+                <Component />
+              </ErrorBoundary>
+            </Showcase>
+          </div>
+        </Wrapper>
       </Fragment>
     );
   }

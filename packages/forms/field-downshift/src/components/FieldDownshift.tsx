@@ -7,6 +7,7 @@ class FieldDownshift extends PureComponent<FieldDownshiftProps> {
   static defaultProps = {
     wrapper: FieldWrapper,
     input: null,
+    onChange: () => {},
     itemsGetter: ({ items }) => items,
     item: ({ item, ...rest }) => <div {...rest}>{item.name}</div>,
     menu: ({ children, ...rest }) => <div {...rest}>{children}</div>,

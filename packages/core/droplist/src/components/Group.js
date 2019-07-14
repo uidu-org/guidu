@@ -1,6 +1,6 @@
 // @flow
-import React, { PureComponent, type Node } from 'react';
-import Group, { Heading, HeadingText, HeadingAfter } from '../styled/Group';
+import React, { Node, PureComponent } from 'react';
+import Group, { Heading, HeadingAfter, HeadingText } from '../styled/Group';
 
 type Props = {
   children?: any,
@@ -48,7 +48,7 @@ class DroplistGroup extends PureComponent<Props, State> {
             <HeadingText>{heading}</HeadingText>
             {elemAfter ? (
               <HeadingAfter
-                innerRef={r => {
+                ref={r => {
                   this.headingElement = r;
                 }}
               >

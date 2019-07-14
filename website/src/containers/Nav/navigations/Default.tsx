@@ -1,6 +1,5 @@
-import OverviewIcon from '@atlaskit/icon/glyph/overview';
 import React from 'react';
-import { GitHub, Package } from 'react-feather';
+import { Book, GitHub, Package } from 'react-feather';
 import { NavLink as Link } from 'react-router-dom';
 
 export default [
@@ -9,7 +8,7 @@ export default [
     text: 'Getting started',
     as: Link,
     type: 'NavigationItem',
-    before: <OverviewIcon label="Documentation" />,
+    before: <Book size={20} />,
   },
   {
     to: '/packages',

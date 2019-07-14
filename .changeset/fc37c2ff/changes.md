@@ -1,0 +1,1 @@
+- Bump react-feather, fixes to Select, downshift and toggle

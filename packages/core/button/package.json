@@ -34,7 +34,7 @@
     "@uidu/build-utils": "^0.1.7",
     "@uidu/checkbox": "^0.1.41",
     "@uidu/docs": "^0.1.25",
-    "@uidu/form": "^0.1.27",
+    "@uidu/form": "^0.1.28",
     "enzyme": "^3.9.0",
     "jest-emotion": "^10.0.10",
     "jest-in-case": "^1.0.2",

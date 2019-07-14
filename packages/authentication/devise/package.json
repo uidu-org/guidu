@@ -23,7 +23,7 @@
     "@uidu/spinner": "^0.1.8",
     "query-string": "^6.2.0",
     "react-facebook": "^8.0.4",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-google-login": "^5.0.4",
     "react-intl": "^2.8.0",
     "react-router-dom": "^5.0.0",

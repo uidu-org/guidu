@@ -1,11 +1,10 @@
 // @flow
-import React from 'react';
 import Button from '@uidu/button';
+import { borderRadius, elevation } from '@uidu/theme';
+import React from 'react';
 import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
-import { elevation, borderRadius } from '@uidu/theme';
-
-import { Manager, Reference, Popper } from '../src';
+import { Manager, Popper, Reference } from '../src';
 
 const Popup = styled.div`
   background: white;
@@ -43,7 +42,7 @@ export default () => (
             {({ ref, style, placement, outOfBoundaries }) => (
               <Popup
                 outOfBoundaries={outOfBoundaries}
-                innerRef={ref}
+                ref={ref}
                 style={style}
                 data-placement={placement}
               >

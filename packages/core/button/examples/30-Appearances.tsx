@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as React from 'react';
 import { Checkbox } from '@uidu/checkbox';
+import { Form } from '@uidu/form';
+import * as React from 'react';
 import Button, { ButtonAppearances } from '../src';
 
 const appearances: ButtonAppearances[] = [
@@ -39,17 +40,20 @@ export default class ButtonAppearance extends React.Component<{}, State> {
     const { showLoadingState } = this.state;
 
     return (
-      <React.Fragment>
-        <Checkbox
-          value="showLoading"
-          label="Show Loading State"
-          onChange={({ target }: React.SyntheticEvent<HTMLInputElement>) =>
-            this.setState({
-              showLoadingState: (target as HTMLInputElement).checked,
-            })
-          }
-          name="show-loading"
-        />
+      <Form handleSubmit={console.log}>
+        <div className="form-group">
+          <Checkbox
+            value="showLoading"
+            label="Show Loading State"
+            onChange={(name, value) =>
+              this.setState({
+                showLoadingState: value,
+              })
+            }
+            value={showLoadingState}
+            name="show-loading"
+          />
+        </div>
         <Table>
           {appearances.map(a => (
             <Row key={a}>
@@ -79,7 +83,7 @@ export default class ButtonAppearance extends React.Component<{}, State> {
             </Row>
           ))}
         </Table>
-      </React.Fragment>
+      </Form>
     );
   }
 }

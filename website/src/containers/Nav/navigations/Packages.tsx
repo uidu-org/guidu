@@ -1,4 +1,4 @@
-import PackageIcon from '@atlaskit/icon/glyph/chevron-right';
+import {Package} from 'react-feather';
 import * as React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import { Directory, File, NavGroup, NavGroupItem } from '../../../types';
@@ -50,7 +50,7 @@ const getItemDetails = (pkg: Directory, group: Directory, pathname) => {
     docItems,
     'Docs',
     packageDocUrl.bind(null, group.id, pkg.id),
-    PackageIcon,
+    Package,
   );
 
   if (docsSubnav) items.push(docsSubnav);

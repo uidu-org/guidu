@@ -1,18 +1,17 @@
 // @flow
-import React, { Component, type Node, type ElementType } from 'react';
 import rafSchedule from 'raf-schd';
+import React, { Component, ElementType, Node } from 'react';
 import ScrollLock from 'react-scrolllock';
-
+import {
+  Body as DefaultBody,
+  keylineHeight,
+  styledBody,
+  Wrapper,
+} from '../styled/Content';
 import Footer from './Footer';
 import Header from './Header';
 
 import type { AppearanceType, KeyboardOrMouseEvent } from '../types';
-import {
-  Body as DefaultBody,
-  styledBody,
-  keylineHeight,
-  Wrapper,
-} from '../styled/Content';
 
 function getInitialState() {
   return {
@@ -263,7 +262,7 @@ export default class Content extends Component<Props, State> {
               showKeyline={showHeaderKeyline}
             />
             <BodyComponent
-              innerRef={this.getScrollContainer}
+              ref={this.getScrollContainer}
               shouldScroll={shouldScroll}
             >
               {children}

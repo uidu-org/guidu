@@ -15,7 +15,7 @@
   "dependencies": {
     "@uidu/theme": "^0.1.8",
     "classnames": "^2.2.6",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-router-dom": "^5.0.0",
     "react-scroll": "^1.7.11",
     "styled-components": "^4.0.3"

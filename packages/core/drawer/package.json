@@ -20,7 +20,7 @@
     "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
     "react-dom": "^16.4.0",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-transition-group": "^4.0.0"
   },
   "peerDependencies": {

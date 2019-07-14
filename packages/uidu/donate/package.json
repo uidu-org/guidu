@@ -20,7 +20,7 @@
     "@uidu/modal-dialog": "^0.1.10",
     "@uidu/payments": "^0.1.0",
     "@uidu/widgets": "^0.1.1",
-    "react-feather": "^1.1.6",
+    "react-feather": "^2.0.3",
     "react-stripe-elements": "^3.0.0"
   }
 }

@@ -310,6 +310,7 @@ export default function createSelect(WrappedComponent: ComponentType<*>) {
       isSearchable: true,
       getOptionLabel: ({ name }) => name,
       getOptionValue: ({ id }) => id,
+      onChange: () => {},
     };
 
     componentWillReceiveProps(nextProps: Props) {

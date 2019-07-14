@@ -1,20 +1,15 @@
-import Button from '@uidu/button';
+import Button, { ButtonGroup } from '@uidu/button';
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment } from 'react';
+import { GitHub, Package as PackageIcon } from 'react-feather';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 import Loading from '../../components/Loading';
 import Page from '../../components/Page';
 import { Link } from '../../components/WrappedLink';
 import Loadable from '../../components/WrappedLoader';
 import * as fs from '../../utils/fs';
 import FourOhFour from '../FourOhFour';
-import MetaData from './MetaData';
 import fetchPackageData from './utils/fsOperations';
-
-export const ButtonGroup = styled.div`
-  display: inline-flex;
-`;
 
 export const NoDocs = props => {
   return <div>Component "{props.name}" doesn't have any documentation.</div>;
@@ -143,14 +138,29 @@ class Package extends React.Component<Props> {
                 >
                 <List className="mr-2" size={'1rem'} /> Changelog
               </Button> */}
-              <MetaData
-                packageName={pkg.name}
-                packageSrc={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
-                changelog={changelog}
-                pkgId={pkgId}
-                groupId={groupId}
+              <Button
+                href={`https://www.npmjs.com/package/${pkg.name}`}
+                label="npm"
+                summary={pkg.name}
+                iconBefore={<PackageIcon size={16} />}
+                target="_blank"
               />
-              <Button component={Link} to={exampleModalPath}>
+              <Button
+                href={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
+                label="Source"
+                summary="Github"
+                iconBefore={<GitHub size={16} />}
+                target="_blank"
+              />
+              <Button
+                component={React.forwardRef(
+                  ({ children, ...rest }, ref: any) => (
+                    <Link {...rest} to={exampleModalPath} ref={ref}>
+                      {children}
+                    </Link>
+                  ),
+                )}
+              >
                 Examples
               </Button>
             </ButtonGroup>

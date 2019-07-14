@@ -14,9 +14,10 @@ const items = [
   { value: '', bg: 'rgb(196, 196, 196)' },
 ];
 
-const Menu = ({ selectedItem, children, ...rest }) => {
+const Menu = ({ selectedItem, children, ref, ...rest }) => {
   return (
     <DropdownMenu
+      ref={ref}
       trigger={
         <div
           className="d-flex align-items-center justify-content-center"
