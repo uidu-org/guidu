@@ -14,6 +14,6 @@
   },
   "dependencies": {
     "@uidu/form": "^0.1.28",
-    "react-stripe-elements": "^3.0.0"
+    "react-stripe-elements": "^4.0.0"
   }
 }

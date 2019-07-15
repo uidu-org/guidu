@@ -13,7 +13,7 @@ export type PaymentsProps = {
 };
 
 export type PaymentsState = {
-  paymentIntent: stripe.StripePaymentMethod;
+  paymentIntent: any; // stripe.StripePaymentMethod;
   loading: boolean;
   formError: any;
 };

@@ -20,6 +20,6 @@
     "@uidu/spinner": "^0.1.8",
     "@uidu/stepper": "^0.1.7",
     "moment": "^2.18.1",
-    "react-stripe-elements": "^3.0.0"
+    "react-stripe-elements": "^4.0.0"
   }
 }
