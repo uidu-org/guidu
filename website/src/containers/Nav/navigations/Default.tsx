@@ -5,7 +5,7 @@ import { NavLink as Link } from 'react-router-dom';
 export default [
   {
     to: '/docs',
-    text: 'Getting started',
+    text: 'Documentation',
     as: Link,
     type: 'NavigationItem',
     before: <Book size={20} />,

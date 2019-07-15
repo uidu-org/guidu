@@ -1,8 +1,8 @@
+import { borderRadius, colors, gridSize, math } from '@uidu/theme';
 import * as React from 'react';
 import ReactMarkdown from 'react-markdown';
 import semver from 'semver';
 import styled, { css } from 'styled-components';
-import { math, gridSize, colors, borderRadius } from '@uidu/theme';
 
 const gutter = math.multiply(gridSize, 3);
 
@@ -105,13 +105,12 @@ export default class ChangeLog extends React.Component<Props> {
           <NoMatch>No matching versions &mdash; please try again.</NoMatch>
         ) : (
           logs.map((v, i) => {
+            console.log(v);
             const major = v.version.substr(0, 1);
             const majorHasChanged = currentMajor !== major;
             currentMajor = major;
             // In case of blank / empty changelogs, the default commit points to mk-2
-            const href = `https://bitbucket.org/atlassian/${
-              v.repository
-            }/commits/tag/%40uidu%2F${packageName}%40${v.version}`;
+            const href = `https://bitbucket.org/atlassian/${v.repository}/commits/tag/%40uidu%2F${packageName}%40${v.version}`;
             return (
               // Version is not unique enough due to untidy changelogs.
               /* eslint-disable react/no-array-index-key */

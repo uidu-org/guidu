@@ -1,5 +1,5 @@
+import { ShellBody } from '@uidu/shell';
 import * as React from 'react';
-import Page from '../components/Page';
 
 export type FourOhFourProps = {};
 
@@ -20,10 +20,10 @@ export default class FourOhFour extends React.PureComponent<FourOhFourProps> {
 
   render() {
     return (
-      <Page>
+      <ShellBody scrollable>
         <h1>Oops!</h1>
         <p>{"Couldn't find this page."}</p>
-      </Page>
+      </ShellBody>
     );
   }
 }

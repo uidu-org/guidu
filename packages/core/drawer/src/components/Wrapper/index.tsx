@@ -24,6 +24,7 @@ const positionAndSizes = (size, origin) => {
       top: 0;
       height: 100vh;
       width: ${widths[size]};
+      max-width: ${size === 'full' ? '100vw' : '90vw'};
     `;
   } else {
     return css`
@@ -31,6 +32,7 @@ const positionAndSizes = (size, origin) => {
       left: 0;
       width: 100vw;
       height: ${heights[size]};
+      max-height: ${size === 'full' ? '100vh' : '90vh'};
     `;
   }
 };

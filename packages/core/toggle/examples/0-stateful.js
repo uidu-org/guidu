@@ -4,9 +4,21 @@ import Toggle from '../src';
 
 export default () => (
   <div>
-    <p>Regular</p>
-    <Toggle />
-    <p>Large (checked by default)</p>
-    <Toggle size="large" isDefaultChecked />
+    <div className="form-group">
+      <label htmlFor="regular" className="control-label">
+        Regular
+      </label>
+      <div>
+        <Toggle />
+      </div>
+    </div>
+    <div className="form-group">
+      <label htmlFor="large" className="control-label">
+        Large (checked by default)
+      </label>
+      <div>
+        <Toggle size="large" isDefaultChecked />
+      </div>
+    </div>
   </div>
 );

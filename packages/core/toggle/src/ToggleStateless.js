@@ -57,9 +57,9 @@ class ToggleStateless extends Component<StatelessProps, State> {
       case 'small':
         return [24, 10];
       case 'large':
-        return [56, 20];
+        return [46, 22];
       default:
-        return [40, 18];
+        return [38, 18];
     }
   };
 

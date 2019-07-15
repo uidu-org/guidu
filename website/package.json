@@ -36,13 +36,12 @@
     "node-fetch": "^2.3.0"
   },
   "dependencies": {
-    "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/logo": "^9.2.7",
     "@uidu/badge": "^0.1.9",
     "@uidu/button": "^0.1.40",
     "@uidu/checkbox": "^0.1.41",
     "@uidu/code": "^0.1.11",
     "@uidu/docs": "^0.1.29",
+    "@uidu/drawer": "^0.2.0",
     "@uidu/field-text": "^0.1.13",
     "@uidu/form": "^0.1.27",
     "@uidu/list": "^0.1.5",
@@ -75,6 +74,7 @@
     "react-helmet": "^5.2.0",
     "react-loadable": "^5.5.0",
     "react-markdown": "^4.0.6",
+    "react-media": "^1.9.2",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-transition-group": "^4.0.0",

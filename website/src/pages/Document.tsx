@@ -1,13 +1,13 @@
-import * as React from 'react';
+import { ShellBody, ShellHeader } from '@uidu/shell';
+import React, { Fragment } from 'react';
 import { match } from 'react-router';
 import { Redirect } from 'react-router-dom';
-import Loadable from '../components/WrappedLoader';
-import * as fs from '../utils/fs';
-import Page from '../components/Page';
-import Markdown from '../components/Markdown';
-import FourOhFour from './FourOhFour';
 import Loading from '../components/Loading';
+import Markdown from '../components/Markdown';
+import Loadable from '../components/WrappedLoader';
 import { docs } from '../site';
+import * as fs from '../utils/fs';
+import FourOhFour from './FourOhFour';
 
 export type DocProps = {
   match: match<Record<string, string>>; // TODO: replace with react router
@@ -48,8 +48,19 @@ export default function Document({
   });
 
   return (
-    <Page>
-      <Content />
-    </Page>
+    <Fragment>
+      <ShellHeader className="px-3 px-xl-4 border-bottom">
+        Documentation
+      </ShellHeader>
+      <ShellBody scrollable>
+        <div className="container my-3 my-sm-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <Content />
+            </div>
+          </div>
+        </div>
+      </ShellBody>
+    </Fragment>
   );
 }

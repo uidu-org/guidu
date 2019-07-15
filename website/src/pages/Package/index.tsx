@@ -1,12 +1,21 @@
 import Button, { ButtonGroup } from '@uidu/button';
+import Drawer from '@uidu/drawer';
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment } from 'react';
-import { GitHub, Package as PackageIcon } from 'react-feather';
+import {
+  GitHub,
+  List,
+  Menu,
+  MoreVertical,
+  Package as PackageIcon,
+} from 'react-feather';
 import { Helmet } from 'react-helmet';
+import Media from 'react-media';
 import Loading from '../../components/Loading';
 import Page from '../../components/Page';
 import { Link } from '../../components/WrappedLink';
 import Loadable from '../../components/WrappedLoader';
+import Navigation from '../../containers/Nav';
 import * as fs from '../../utils/fs';
 import FourOhFour from '../FourOhFour';
 import fetchPackageData from './utils/fsOperations';
@@ -95,6 +104,33 @@ export default function LoadData({ match }) {
 }
 
 class Package extends React.Component<Props> {
+  state = {
+    isDrawerOpen: false,
+    isDrawerOptionsOpen: false,
+  };
+
+  openDrawer = () =>
+    this.setState({
+      isDrawerOpen: true,
+    });
+
+  openOptionsDrawer = () =>
+    this.setState({
+      isDrawerOptionsOpen: true,
+    });
+
+  onClose = () => {
+    this.setState({
+      isDrawerOpen: false,
+    });
+  };
+
+  onCloseOptions = () => {
+    this.setState({
+      isDrawerOptionsOpen: false,
+    });
+  };
+
   render() {
     const {
       urlIsExactMatch,
@@ -115,6 +151,22 @@ class Package extends React.Component<Props> {
 
     return (
       <Fragment>
+        <Drawer
+          onClose={this.onClose}
+          isOpen={this.state.isDrawerOpen}
+          size="narrow"
+        >
+          <Navigation {...this.props} />
+        </Drawer>
+
+        <Drawer
+          onClose={this.onCloseOptions}
+          isOpen={this.state.isDrawerOptionsOpen}
+          size="narrow"
+          origin="bottom"
+        >
+          <p>Foo</p>
+        </Drawer>
         {urlIsExactMatch && (
           <Helmet>
             <title>
@@ -124,50 +176,85 @@ class Package extends React.Component<Props> {
         )}
         <ShellHeader className="border-bottom px-3 px-lg-4 justify-content-between">
           <h1 className="h5 m-0">
+            <Button
+              type="button"
+              onClick={this.openDrawer}
+              appearance="subtle"
+              iconBefore={<Menu size={18} />}
+              className="mr-3 d-lg-none"
+            ></Button>
             <small>
               <code>{pkg.name}</code>
             </small>
           </h1>
           {examplePath && (
-            <ButtonGroup>
-              {/* <Button
-                className="mr-3"
-                color="light"
-                component={Link}
-                to={`/packages/${groupId}/${pkgId}/changelog`}
-                >
-                <List className="mr-2" size={'1rem'} /> Changelog
-              </Button> */}
-              <Button
-                href={`https://www.npmjs.com/package/${pkg.name}`}
-                label="npm"
-                summary={pkg.name}
-                iconBefore={<PackageIcon size={16} />}
-                target="_blank"
-              />
-              <Button
-                href={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
-                label="Source"
-                summary="Github"
-                iconBefore={<GitHub size={16} />}
-                target="_blank"
-              />
-              <Button
-                component={React.forwardRef(
-                  ({ children, ...rest }, ref: any) => (
-                    <Link {...rest} to={exampleModalPath} ref={ref}>
-                      {children}
-                    </Link>
-                  ),
-                )}
-              >
-                Examples
-              </Button>
-            </ButtonGroup>
+            <Media query={{ maxWidth: 768 }}>
+              {matches => {
+                if (matches) {
+                  return (
+                    <ButtonGroup>
+                      <Button
+                        type="button"
+                        onClick={this.openOptionsDrawer}
+                        appearance="subtle"
+                        iconBefore={<MoreVertical size={18} />}
+                      ></Button>
+                      <Button
+                        component={React.forwardRef(
+                          ({ children, ...rest }, ref: any) => (
+                            <Link {...rest} to={exampleModalPath} ref={ref}>
+                              {children}
+                            </Link>
+                          ),
+                        )}
+                      >
+                        Examples
+                      </Button>
+                    </ButtonGroup>
+                  );
+                }
+                return (
+                  <ButtonGroup>
+                    <Button
+                      href={`https://www.npmjs.com/package/${pkg.name}`}
+                      label="npm"
+                      summary={pkg.name}
+                      iconBefore={<PackageIcon size={16} />}
+                      target="_blank"
+                    />
+                    <Button
+                      href={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
+                      label="Source"
+                      summary="Github"
+                      iconBefore={<GitHub size={16} />}
+                      target="_blank"
+                    />
+                    <Button
+                      component={Link}
+                      to={`/packages/${groupId}/${pkgId}/changelog`}
+                      iconBefore={<List size={16} />}
+                    >
+                      Changelog
+                    </Button>
+                    <Button
+                      component={React.forwardRef(
+                        ({ children, ...rest }, ref: any) => (
+                          <Link {...rest} to={exampleModalPath} ref={ref}>
+                            {children}
+                          </Link>
+                        ),
+                      )}
+                    >
+                      Examples
+                    </Button>
+                  </ButtonGroup>
+                );
+              }}
+            </Media>
           )}
         </ShellHeader>
         <ShellBody scrollable>
-          <div className="container my-5">
+          <div className="container my-3 my-sm-5">
             <div className="row justify-content-center">
               <div className="col-lg-10">{doc || <NoDocs name={pkgId} />}</div>
             </div>

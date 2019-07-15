@@ -1,6 +1,8 @@
 import Navigation from '@uidu/navigation';
+import { ShellHeader } from '@uidu/shell';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import atlaskitLogo from '../../assets/atlaskit-logo.png';
 import { externalPackages as packages } from '../../site';
 import * as fs from '../../utils/fs';
 import defaultNavigations from './navigations/Default';
@@ -34,8 +36,18 @@ export default class Nav extends React.Component<{}, State> {
           render={({ location }) => {
             const schema = [
               {
-                type: 'NavigationHeader',
-                text: 'GUIDU',
+                type: 'InlineComponent',
+                component: () => (
+                  <ShellHeader className="border-bottom px-3 px-xl-4">
+                    <img
+                      alt="Atlaskit logo"
+                      className="mr-2 mr-xl-3"
+                      src={atlaskitLogo}
+                      style={{ display: 'block', width: 24 }}
+                    />
+                    <h5 className="m-0">GUIDU</h5>
+                  </ShellHeader>
+                ),
               },
               {
                 type: 'NavigationSection',
@@ -43,7 +55,7 @@ export default class Nav extends React.Component<{}, State> {
                   {
                     type: 'InlineComponent',
                     component: () => (
-                      <div className="px-3 px-xl-4">
+                      <div className="px-3 px-xl-4 my-4">
                         <input
                           type="search"
                           className="form-control shadow-none mb-4"
@@ -62,7 +74,6 @@ export default class Nav extends React.Component<{}, State> {
                 ],
               },
             ];
-            console.log(schema);
 
             return <Navigation schema={schema} />;
           }}

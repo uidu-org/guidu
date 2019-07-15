@@ -2,6 +2,8 @@ import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 
 export default md`
+
+  # Drawer
   This package exports \`Drawer\` and \`DrawerBase\` components.
 
   You can wrap \`Drawer\` around any other React component to display the given

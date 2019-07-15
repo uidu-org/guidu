@@ -39,7 +39,7 @@ export default function PackagesList() {
       <Helmet>
         <title>{`Browse all packages - ${BASE_TITLE}`}</title>
       </Helmet>
-      <ShellHeader>Packages</ShellHeader>
+      <ShellHeader className="px-3 px-xl-4">Packages</ShellHeader>
       <ShellBody scrollable>
         <table className="table">
           <thead>
