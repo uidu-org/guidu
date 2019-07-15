@@ -10,5 +10,7 @@ const defaultBaseProps: DefaultBaseProps = {
   label: '',
   name: '',
   value: '',
+  activeColor: '#28a745',
+  baseColor: '#ededed',
 };
 export default defaultBaseProps;

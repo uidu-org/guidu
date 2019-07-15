@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import stringRaw from 'string-raw';
 
 /*
@@ -18,7 +18,19 @@ export default function code(
   source = source.replace(/(\n\s*)+$/g, ''); // Remove trailing newlines
   return (
     <div className="my-4 mb-5">
-      <SyntaxHighlighter language="javascript" style={tomorrow}>
+      <SyntaxHighlighter
+        language="javascript"
+        style={prism}
+        customStyle={{
+          backgroundColor: '#f8f9fa',
+          border: 0,
+          marginTop: 0,
+          marginBottom: 0,
+          padding: '1.5rem',
+          borderBottomRightRadius: 4,
+          borderBottomLeftRadius: 4,
+        }}
+      >
         {source}
       </SyntaxHighlighter>
     </div>

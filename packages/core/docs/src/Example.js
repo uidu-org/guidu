@@ -3,8 +3,8 @@
 import Tooltip from '@uidu/tooltip';
 import React, { ComponentType, Fragment } from 'react';
 import { Code } from 'react-feather';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styled, { css } from 'styled-components';
 import ErrorBoundary from './ErrorBoundary';
 import replaceSrc from './replaceSrc';
@@ -59,7 +59,7 @@ export default class Example extends React.Component<Props, State> {
   };
 
   state = {
-    isSourceVisible: false,
+    isSourceVisible: true,
     isHover: false,
   };
 
@@ -106,15 +106,6 @@ export default class Example extends React.Component<Props, State> {
           </Toggle>
         </Tooltip>
         <Wrapper className="border mb-5 card" mode={mode}>
-          {isSourceVisible && (
-            <SyntaxHighlighter
-              language="javascript"
-              style={tomorrow}
-              customStyle={{ marginTop: 0, padding: '1rem' }}
-            >
-              {packageName ? replaceSrc(source, packageName) : source}
-            </SyntaxHighlighter>
-          )}
           <div className="card-body">
             <Showcase overflowHidden={overflowHidden}>
               <ErrorBoundary onError={this.onError}>
@@ -122,6 +113,23 @@ export default class Example extends React.Component<Props, State> {
               </ErrorBoundary>
             </Showcase>
           </div>
+          {isSourceVisible && (
+            <SyntaxHighlighter
+              language="javascript"
+              style={prism}
+              customStyle={{
+                backgroundColor: '#f8f9fa',
+                border: 0,
+                marginTop: 0,
+                marginBottom: 0,
+                padding: '1.5rem',
+                borderBottomRightRadius: 4,
+                borderBottomLeftRadius: 4,
+              }}
+            >
+              {packageName ? replaceSrc(source, packageName) : source}
+            </SyntaxHighlighter>
+          )}
         </Wrapper>
       </Fragment>
     );
