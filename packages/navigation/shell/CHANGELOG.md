@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.18
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.17
 - [patch] [9c54116](https://github.org/uidu-org/guidu/commits/9c54116):
 

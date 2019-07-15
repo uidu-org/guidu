@@ -1,5 +1,12 @@
 # @uidu/message
 
+## 0.1.16
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+- Updated dependencies [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+  - @uidu/drawer@0.2.0
+
 ## 0.1.15
 - [patch] [23b9701](https://github.org/uidu-org/guidu/commits/23b9701):
 

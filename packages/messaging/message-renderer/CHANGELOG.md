@@ -1,5 +1,10 @@
 # @uidu/message-renderer
 
+## 0.1.10
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.9
 - [patch] [9f47041](https://github.org/uidu-org/guidu/commits/9f47041):
 

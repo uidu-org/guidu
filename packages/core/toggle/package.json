@@ -1,6 +1,6 @@
 {
   "name": "@uidu/toggle",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "A component to view and switch between enabled or disabled states",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -24,8 +24,8 @@
   },
   "devDependencies": {
     "@uidu/build-utils": "^0.1.7",
-    "@uidu/button": "^0.1.39",
-    "@uidu/docs": "^0.1.25",
+    "@uidu/button": "^0.1.40",
+    "@uidu/docs": "^0.1.29",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   }

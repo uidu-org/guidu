@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.14
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.13
 - [patch] [420ff9e](https://github.org/uidu-org/guidu/commits/420ff9e):
 

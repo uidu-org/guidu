@@ -1,6 +1,6 @@
 {
   "name": "@uidu/code",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "config": {
     "access": "public"
   },
@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@uidu/build-utils": "^0.1.7",
-    "@uidu/docs": "^0.1.25",
+    "@uidu/docs": "^0.1.29",
     "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },

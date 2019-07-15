@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.29
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump dependencies
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.28
 - [patch] [fcbe74e](https://github.org/uidu-org/guidu/commits/fcbe74e):
 

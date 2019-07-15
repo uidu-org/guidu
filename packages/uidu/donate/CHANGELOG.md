@@ -1,5 +1,10 @@
 # @uidu/donate
 
+## 0.1.4
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.3
 - [patch] [e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
 
