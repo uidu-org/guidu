@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Message form",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.28",
+    "@uidu/docs": "^0.1.29",
     "@uidu/media-picker": "^0.1.8"
   },
   "dependencies": {
@@ -22,7 +22,7 @@
     "@uidu/field-text": "^0.1.13",
     "@uidu/form": "^0.1.27",
     "@uidu/media-filmstrip": "^0.1.14",
-    "@uidu/message": "^0.1.14",
+    "@uidu/message": "^0.1.16",
     "@uidu/spinner": "^0.1.8",
     "emoji-mart": "^2.10.0",
     "react-feather": "^2.0.3"

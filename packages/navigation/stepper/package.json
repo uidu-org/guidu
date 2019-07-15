@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stepper",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Animated menu like Stripe",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.25"
+    "@uidu/docs": "^0.1.29"
   },
   "dependencies": {
     "@uidu/theme": "^0.1.8",

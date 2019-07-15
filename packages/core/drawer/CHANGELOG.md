@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.2.0
+- [minor] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump drawer
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.14
 - [patch] [23b9701](https://github.org/uidu-org/guidu/commits/23b9701):
 

@@ -1,5 +1,10 @@
 # @uidu/popper
 
+## 0.1.7
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.6
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

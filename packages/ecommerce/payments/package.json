@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payments",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Payment form using Stripe",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.27"
+    "@uidu/docs": "^0.1.29"
   },
   "dependencies": {
     "@types/react-stripe-elements": "^1.1.10",

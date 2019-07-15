@@ -1,6 +1,6 @@
 {
   "name": "@uidu/docs",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "description": "Utilities for building documentation",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -11,8 +11,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/button": "^0.1.35",
-    "@uidu/code": "^0.1.8",
+    "@uidu/button": "^0.1.40",
+    "@uidu/code": "^0.1.11",
     "@uidu/theme": "^0.1.8",
     "@uidu/tooltip": "^0.1.10",
     "babel-runtime": "^6.26.0",

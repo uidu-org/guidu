@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A package that contains common classes and components for editor and renderer",
   "license": "Apache-2.0",
   "uidu:src": "index.ts",

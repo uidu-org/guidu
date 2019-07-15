@@ -1,5 +1,10 @@
 # @uidu/data-controls
 
+## 0.1.9
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.8
 - [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
 

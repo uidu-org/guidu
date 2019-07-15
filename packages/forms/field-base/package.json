@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "Inputs using Formsy",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -21,7 +21,7 @@
     "shortid": "^2.2.14"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.25",
+    "@uidu/docs": "^0.1.29",
     "@uidu/forms": "^1.0.0-beta.8",
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-import": "^1.11.0",

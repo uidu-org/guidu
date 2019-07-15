@@ -1,5 +1,10 @@
 # @uidu/stepper
 
+## 0.1.8
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.7
 - [patch] [d7c8168](https://github.org/uidu-org/guidu/commits/d7c8168):
 

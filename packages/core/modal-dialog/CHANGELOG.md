@@ -1,5 +1,10 @@
 # @uidu/modal-dialog
 
+## 0.1.12
+- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+  - Bump react-feather, fixes to Select, downshift and toggle
+
 ## 0.1.11
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

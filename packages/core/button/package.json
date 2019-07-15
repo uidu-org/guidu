@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.39",
+  "version": "0.1.40",
   "description": "Button component for use in forms",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -33,7 +33,7 @@
     "@atlaskit/logo": "^9.2.7",
     "@uidu/build-utils": "^0.1.7",
     "@uidu/checkbox": "^0.1.41",
-    "@uidu/docs": "^0.1.25",
+    "@uidu/docs": "^0.1.29",
     "@uidu/form": "^0.1.28",
     "enzyme": "^3.9.0",
     "jest-emotion": "^10.0.10",
