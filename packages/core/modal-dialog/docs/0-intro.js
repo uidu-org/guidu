@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { code, md, Example, Props } from '@uidu/docs';
 
 export default md`
   This component displays content in a layer that sits above the rest of the page content. Users won't be able to interact with the page until the dialog is closed.
@@ -63,18 +63,6 @@ ${code`
       Component={require('../examples/15-custom').default}
       title="Custom"
       source={require('!!raw-loader!../examples/15-custom')}
-    />
-  )}
-
-  The example below demonstrates how to wrap the internal components of \`ModalDialog\` to provide
-  support for forms.
-
-  ${(
-    <Example
-      packageName="@uidu/modal-dialog"
-      Component={require('../examples/45-form').default}
-      title="Form"
-      source={require('!!raw-loader!../examples/45-form')}
     />
   )}
 
