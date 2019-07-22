@@ -6,13 +6,10 @@ import React, { Component, Fragment } from 'react';
 import { MessageCircle } from 'react-feather';
 import { TouchableOpacity, Vibration, View } from 'react-native';
 import { animated, useSpring } from 'react-spring';
-// @ts-ignore
 import { useGesture } from 'react-use-gesture';
 import { Message } from '../../types';
 import MessagesAttachments from '../MessageAttachments';
 import { StyledMobileViewMessage } from './styled';
-
-console.log(useGesture);
 
 const SwipeableMessage = ({
   onDrag,

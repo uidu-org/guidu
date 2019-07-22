@@ -439,7 +439,7 @@
     "react-syntax-highlighter": "^11.0.1",
     "react-test-renderer": "^16.8.3",
     "react-transition-group": "^4.0.0",
-    "react-use-gesture": "^5.0.0",
+    "react-use-gesture": "5.1.2",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.2",
     "reactstrap": "^8.0.0",
