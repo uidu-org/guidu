@@ -1,5 +1,5 @@
 import moment from 'moment';
-import momentLocalizer from 'react-big-calendar/lib/localizers/moment';
+import { momentLocalizer } from 'react-big-calendar';
 
 const localizer = momentLocalizer(moment); //
 

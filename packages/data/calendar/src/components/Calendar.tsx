@@ -1,6 +1,6 @@
 import { ShellBody } from '@uidu/shell';
 import React, { PureComponent } from 'react';
-import BigCalendar from 'react-big-calendar';
+import { Calendar as BigCalendar } from 'react-big-calendar';
 import calendarProps from '../utils';
 import Event from './Event';
 import Toolbar from './Toolbar';
