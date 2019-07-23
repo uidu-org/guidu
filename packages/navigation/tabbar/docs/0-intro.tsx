@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   Accordion component that uses [react-accessible-accordion](https://github.com/springload/react-accessible-accordion)
@@ -15,6 +15,8 @@ export default md`
       Component={require('../examples/Basic').default}
       title="Accordion allowMultipleExpanded"
       source={require('!!raw-loader!../examples/Basic')}
+      fullWidth
+      overflowHidden
     />
   )}
 

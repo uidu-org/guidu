@@ -1,18 +1,6 @@
 import DropdownMenu, { DropdownItemGroup } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
-import { AlignJustify, Calendar, Grid, List } from 'react-feather';
 import { Trigger } from '../styled';
-
-const viewIcons = {
-  calendar: (
-    <Calendar strokeWidth={2} size={14} className="mr-2" color="#A3BE8C" />
-  ),
-  gallery: <Grid strokeWidth={2} size={14} className="mr-2" color="#EBCB8B" />,
-  list: <List strokeWidth={2} size={14} className="mr-2" color="#D08770" />,
-  table: (
-    <AlignJustify strokeWidth={1} size={14} className="mr-2" color="#BF616A" />
-  ),
-};
 
 export default class TimeFrameCustom extends Component<any> {
   render() {

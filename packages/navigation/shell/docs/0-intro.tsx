@@ -1,5 +1,5 @@
+import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -27,6 +27,8 @@ export default md`
       Component={require('../examples/Dashboard').default}
       title="Dashboard"
       source={require('!!raw-loader!../examples/Dashboard').default}
+      fullWidth
+      overflowHidden
     />
   )}
 
@@ -36,6 +38,8 @@ export default md`
       Component={require('../examples/App').default}
       title="App"
       source={require('!!raw-loader!../examples/App').default}
+      fullWidth
+      overflowHidden
     />
   )}
 
@@ -45,6 +49,8 @@ export default md`
       Component={require('../examples/Event').default}
       title="Event"
       source={require('!!raw-loader!../examples/Event').default}
+      fullWidth
+      overflowHidden
     />
   )}
 
@@ -54,6 +60,8 @@ export default md`
       Component={require('../examples/Discover').default}
       title="Discover"
       source={require('!!raw-loader!../examples/Discover').default}
+      fullWidth
+      overflowHidden
     />
   )}
 

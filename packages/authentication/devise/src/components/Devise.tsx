@@ -31,9 +31,9 @@ export default class Devise extends Component<DeviseProps> {
             style={{ flex: '1 1 auto' }}
           >
             <div className="row align-items-center justify-content-center my-4 my-sm-5">
-              <div className="col-sm-8 col-md-6 col-lg-5 col-xl-4">
+              <div className="col-sm-8 col-xl-4">
                 <div className="card card-body">
-                  <div className="text-center mb-4">
+                  <div className="d-flex justify-content-center w-100 mb-4">
                     <Avatar src={icon} size="large" />
                   </div>
                   <Switch>

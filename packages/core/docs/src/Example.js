@@ -59,7 +59,7 @@ export default class Example extends React.Component<Props, State> {
   };
 
   state = {
-    isSourceVisible: true,
+    isSourceVisible: false,
     isHover: false,
   };
 
@@ -80,6 +80,7 @@ export default class Example extends React.Component<Props, State> {
       title,
       packageName,
       overflowHidden,
+      fullWidth,
     } = this.props;
     const { isSourceVisible } = this.state;
     const toggleLabel = isSourceVisible ? (
@@ -106,13 +107,6 @@ export default class Example extends React.Component<Props, State> {
           </Toggle>
         </Tooltip>
         <Wrapper className="border mb-5 card" mode={mode}>
-          <div className="card-body">
-            <Showcase overflowHidden={overflowHidden}>
-              <ErrorBoundary onError={this.onError}>
-                <Component />
-              </ErrorBoundary>
-            </Showcase>
-          </div>
           {isSourceVisible && (
             <SyntaxHighlighter
               language="javascript"
@@ -130,6 +124,13 @@ export default class Example extends React.Component<Props, State> {
               {packageName ? replaceSrc(source, packageName) : source}
             </SyntaxHighlighter>
           )}
+          <div className={fullWidth ? '' : 'card-body'}>
+            <Showcase overflowHidden={overflowHidden}>
+              <ErrorBoundary onError={this.onError}>
+                <Component />
+              </ErrorBoundary>
+            </Showcase>
+          </div>
         </Wrapper>
       </Fragment>
     );

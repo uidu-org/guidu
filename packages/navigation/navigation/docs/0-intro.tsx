@@ -19,6 +19,8 @@ export default md`
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic')}
+      overflowHidden
+      fullWidth
     />
   )}
 
@@ -28,6 +30,8 @@ export default md`
       Component={require('../examples/Skeleton').default}
       title="Skeleton"
       source={require('!!raw-loader!../examples/Skeleton')}
+      overflowHidden
+      fullWidth
     />
   )}
 
@@ -37,6 +41,8 @@ export default md`
       Component={require('../examples/Icon').default}
       title="Icon Navigation"
       source={require('!!raw-loader!../examples/Icon')}
+      overflowHidden
+      fullWidth
     />
   )}
 

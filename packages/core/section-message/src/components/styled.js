@@ -1,22 +1,23 @@
 // @flow
+import { borderRadius, colors, gridSize, math, typography } from '@uidu/theme';
 import styled from 'styled-components';
-import { borderRadius, colors, math, gridSize, typography } from '@uidu/theme';
 
 export const Container = styled.section`
   display: flex;
   border-radius: ${borderRadius}px;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  padding: ${math.multiply(gridSize, 2)}px;
+  padding: 1.5rem;
 `;
 
 export const Title = styled.h1`
-  margin-top: 0.25rem;
   ${typography.h500};
+  margin-top: 0rem;
 `;
 
 export const Description = styled.div`
   * + & {
     margin-top: 8px;
+    margin-bottom: 0px;
   }
 `;
 
@@ -26,6 +27,7 @@ export const Actions = styled.ul`
   padding-left: 0;
   * + & {
     margin-top: 8px;
+    margin-bottom: 0px;
   }
 `;
 

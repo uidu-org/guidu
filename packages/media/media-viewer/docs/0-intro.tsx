@@ -9,6 +9,7 @@ MediaViewer is Atlassian's powerful solution for viewing files on the web. It's 
       Component={require('../examples/Basic').default}
       title="Single File Preview"
       source={require('!!raw-loader!../examples/Basic').default}
+      fullWidth
     />
   )}
 

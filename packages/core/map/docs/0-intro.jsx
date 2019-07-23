@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   Use lozenges to highlight an item's status for quick recognition. Use
@@ -17,6 +17,7 @@ export default md`
       Component={require('../examples/0-basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/0-basic')}
+      fullWidth
     />
   )}
 
@@ -26,6 +27,7 @@ export default md`
       Component={require('../examples/1-with-marker').default}
       title="With Marker"
       source={require('!!raw-loader!../examples/1-with-marker')}
+      fullWidth
     />
   )}
 
@@ -35,6 +37,7 @@ export default md`
       Component={require('../examples/2-with-cluster').default}
       title="With Marker Cluster"
       source={require('!!raw-loader!../examples/2-with-cluster')}
+      fullWidth
     />
   )}
 
