@@ -64,8 +64,7 @@ export default class View extends Component<ViewProps, ViewState> {
     this.setState({ paused: true });
   };
 
-  playOrPause = (e, type: 'play' | 'pause' | 'toggle' = 'toggle') => {
-    e.preventDefault();
+  playOrPause = (type: 'play' | 'pause' | 'toggle' = 'toggle') => {
     const { video } = this;
 
     switch (type) {

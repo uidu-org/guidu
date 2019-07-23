@@ -38,7 +38,7 @@ const context: Context = ContextFactory.create(config);
     <Example
       Component={require('../examples/Basic').default}
       title="Get File"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 `;

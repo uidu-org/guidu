@@ -24,7 +24,7 @@ ${(
   <Example
     Component={require('../examples/Basic').default}
     title="Editable"
-    source={require('!!raw-loader!../examples/Basic')}
+    source={require('!!raw-loader!../examples/Basic').default}
   />
 )}
 

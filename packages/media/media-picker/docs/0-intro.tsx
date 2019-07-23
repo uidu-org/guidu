@@ -15,7 +15,7 @@ export default md`
     <Example
       Component={require('../examples/0-basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/0-basic')}
+      source={require('!!raw-loader!../examples/0-basic').default}
     />
   )}
 
