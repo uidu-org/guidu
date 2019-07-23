@@ -1,5 +1,10 @@
 # @uidu/calendar
 
+## 0.1.4
+- [patch] [225ae07](https://github.org/uidu-org/guidu/commits/225ae07):
+
+  - FIX Big calendar import?
+
 ## 0.1.3
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
