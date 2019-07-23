@@ -96,7 +96,7 @@ export default class View extends Component<ViewProps, ViewState> {
         <video
           autoPlay={false}
           controls={false}
-          onClick={this.playOrPause}
+          onClick={this.playOrPause as any}
           poster={data.poster}
           ref={this.getVideo}
           style={{ width: '100%', height: 'auto' }}
@@ -108,7 +108,7 @@ export default class View extends Component<ViewProps, ViewState> {
         </video>
         {this.video ? (
           <Footer interactionIsIdle={interactionIsIdle}>
-            <Button type="button" onClick={this.playOrPause}>
+            <Button type="button" onClick={this.playOrPause as any}>
               {paused ? <Play></Play> : <Pause />}
             </Button>
             <ProgressBar progress={progress} />
