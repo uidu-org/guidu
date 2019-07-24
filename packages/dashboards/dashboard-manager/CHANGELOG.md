@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.1.5
+- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+  - Added field-date-range and field-date
+- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+  - Better date controls in dashboard
+
 ## 0.1.4
 - [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
 

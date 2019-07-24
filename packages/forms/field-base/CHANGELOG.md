@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.34
+- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+  - Added field-date-range and field-date
+- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+  - Better date controls in dashboard
+
 ## 0.1.33
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
