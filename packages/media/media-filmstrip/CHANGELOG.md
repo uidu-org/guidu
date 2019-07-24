@@ -1,5 +1,10 @@
 # @uidu/media-filmstrip
 
+## 0.1.15
+- [patch] [8b7d6e0](https://github.org/uidu-org/guidu/commits/8b7d6e0):
+
+  - Fix css with styled-components
+
 ## 0.1.14
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

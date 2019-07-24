@@ -1,5 +1,10 @@
 # @uidu/media-viewer
 
+## 0.1.18
+- [patch] [c19b728](https://github.org/uidu-org/guidu/commits/c19b728):
+
+  - Position X in header
+
 ## 0.1.17
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
