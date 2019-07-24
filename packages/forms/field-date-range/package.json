@@ -8,6 +8,7 @@
     "@uidu/field-base": "^0.1.33",
     "@uidu/field-date": "^0.1.0",
     "moment": "^2.18.1",
+    "react-day-picker": "^7.3.0",
     "react-feather": "^2.0.3",
     "react-helmet": "^5.2.0"
   },

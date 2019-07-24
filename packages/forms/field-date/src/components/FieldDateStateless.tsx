@@ -7,7 +7,9 @@ import moment from 'moment';
 import React, { Component } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils, {
+  // @ts-ignore
   formatDate,
+  // @ts-ignore
   parseDate,
 } from 'react-day-picker/moment';
 import { FieldDateProps } from '../types';

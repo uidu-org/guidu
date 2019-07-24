@@ -5,4 +5,6 @@ export type FieldDateProps = DayPickerInputProps & {
   displayFormat?: string;
   inputClassName?: string;
   containerClassName?: string;
+  wrapperClassName?: string;
+  innerRef: React.RefObject<any>;
 };

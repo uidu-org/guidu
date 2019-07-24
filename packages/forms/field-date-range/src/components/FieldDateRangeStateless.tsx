@@ -6,6 +6,7 @@ import {
 import { FieldDateStateless } from '@uidu/field-date';
 import moment from 'moment';
 import React, { Component } from 'react';
+// @ts-ignore
 import { formatDate } from 'react-day-picker/moment';
 import { ArrowRight } from 'react-feather';
 import Helmet from 'react-helmet';
@@ -16,7 +17,7 @@ import {
 
 moment.locale('it');
 
-class FieldDateRangeStateless extends Component<any> {
+class FieldDateRangeStateless extends Component<any, any> {
   private fromElement: any = React.createRef();
   private toElement: any = React.createRef();
 
