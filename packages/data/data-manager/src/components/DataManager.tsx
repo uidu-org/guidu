@@ -43,6 +43,16 @@ export default class DataManager extends Component<DataManagerProps, any> {
   onGridReady = ({ api, columnApi }) => {
     this.gridApi = api;
     this.gridColumnApi = columnApi;
+    columnApi.autoSizeAllColumns();
+    api.sizeColumnsToFit();
+    window.addEventListener('resize', function() {
+      setTimeout(function() {
+        api.sizeColumnsToFit();
+      });
+    });
+
+    api.sizeColumnsToFit();
+
     this.setState({
       data: api.getModel().rowsToDisplay,
     });

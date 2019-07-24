@@ -52,7 +52,7 @@ export default class Basic extends Component<any, any> {
     return (
       <DataManager
         availableViews={['table', 'gallery', 'calendar', 'list']}
-        columnDefs={this.state.columnDefs}
+        columnDefs={this.state.columnDefs.slice(0, 5)}
         rowData={this.state.rowData}
         currentView={this.state.currentView}
         dataViews={this.state.dataViews}

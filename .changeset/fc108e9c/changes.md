@@ -1,0 +1,1 @@
+- Fit columns and resize with container

@@ -24,13 +24,13 @@ export default class Table extends Component<any> {
               rowData={this.props.rowData}
               reactNext
               animateRows
-              onGridReady={({ columnApi }) => columnApi.autoSizeAllColumns()}
               defaultColDef={{
                 resizable: true,
                 sortable: true,
                 suppressMenu: false,
                 editable: true,
                 headerComponentFramework: CustomHeader,
+                minWidth: 140,
               }}
               columnTypes={{
                 address: {},
