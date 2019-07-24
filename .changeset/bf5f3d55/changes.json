@@ -1,0 +1,10 @@
+{
+  "releases": [
+    { "name": "@uidu/dashboard-controls", "type": "patch" },
+    { "name": "@uidu/dashboard-manager", "type": "patch" },
+    { "name": "@uidu/checkbox", "type": "patch" },
+    { "name": "@uidu/field-base", "type": "patch" },
+    { "name": "@uidu/field-textarea", "type": "patch" }
+  ],
+  "dependents": []
+}

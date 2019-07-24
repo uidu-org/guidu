@@ -1,11 +1,15 @@
 import { renderBlock } from '@uidu/blocks';
-import { TimeFrame, TimeFrameGrouper } from '@uidu/dashboard-controls';
+import {
+  TimeFrame,
+  TimeFrameComparator,
+  TimeFrameGrouper,
+} from '@uidu/dashboard-controls';
 import React, { Component, Fragment } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import { DashboardManagerProps } from '../types';
-import { groupByTimeframe } from '../utils';
+import { convertTimeframeToRange, groupByTimeframe } from '../utils';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -24,12 +28,14 @@ export default class DashboardManager extends Component<
     this.state = {
       timeFrame: defaultTimeFrame,
       timeFrameGrouping: defaultTimeFrameGrouping,
+      timeRange: convertTimeframeToRange(defaultTimeFrame),
     };
   }
 
   onTimeFrameChange = timeFrame =>
     this.setState({
       timeFrame,
+      timeRange: convertTimeframeToRange(timeFrame),
     });
 
   onTimeFrameGroupingChange = timeFrameGrouping =>
@@ -41,7 +47,7 @@ export default class DashboardManager extends Component<
     const { rowData } = this.props;
     const { timeFrame, timeFrameGrouping } = this.state;
 
-    const { data, range } = groupByTimeframe(
+    const { data, comparator, range } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,
       rowData,
@@ -61,7 +67,7 @@ export default class DashboardManager extends Component<
     const { rowData, gridProps } = this.props;
     const { timeFrame, timeFrameGrouping } = this.state;
 
-    const { data, range } = groupByTimeframe(
+    const { data, comparator, range } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,
       rowData,
@@ -117,11 +123,24 @@ export default class DashboardManager extends Component<
   };
 
   renderControls = ({ availableTimeFrames }) => {
+    console.log(this.state);
     return (
       <Fragment>
-        <TimeFrame onChange={this.onTimeFrameChange} />
+        <TimeFrame
+          activeTimeFrame={this.state.timeFrame}
+          onChange={this.onTimeFrameChange}
+          handleDateChange={this.onTimeFrameChange}
+          from={this.state.timeRange.from}
+          to={this.state.timeRange.to}
+        />
+        <TimeFrameComparator
+          onChange={this.onTimeFrameChange}
+          handleDateChange={this.onTimeFrameChange}
+          from={this.state.timeRange.from}
+          to={this.state.timeRange.to}
+        />
         <TimeFrameGrouper
-          currentGrouper={this.state.timeFrameGrouping}
+          activeGrouper={this.state.timeFrameGrouping}
           onChange={this.onTimeFrameGroupingChange}
         />
       </Fragment>

@@ -1,0 +1,18 @@
+{
+  "name": "@uidu/field-date-range",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@uidu/analytics": "^0.1.8",
+    "@uidu/field-base": "^0.1.33",
+    "@uidu/field-date": "^0.1.0",
+    "moment": "^2.18.1",
+    "react-feather": "^2.0.3",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.29",
+    "@uidu/form": "^0.1.28"
+  }
+}

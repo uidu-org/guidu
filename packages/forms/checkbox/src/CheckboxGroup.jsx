@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import { ComponentCommon, ErrorMessages, Help, Row } from '@uidu/field-base';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { ComponentCommon, ErrorMessages, Help, Row } from '@uidu/field-base';
-import { type CheckboxGroupProps } from './types';
+import React, { Component } from 'react';
+import { CheckboxGroupProps } from './types';
 
 export default class CheckboxGroup extends Component<CheckboxGroupProps> {
   constructor(props) {
@@ -98,7 +98,6 @@ export default class CheckboxGroup extends Component<CheckboxGroupProps> {
 }
 
 CheckboxGroup.propTypes = {
-  // ...ControlCommon.propTypes,
   ...ComponentCommon.propTypes,
   options: PropTypes.arrayOf(
     PropTypes.shape({

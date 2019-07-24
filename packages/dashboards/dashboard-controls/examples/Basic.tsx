@@ -6,7 +6,7 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <div className="d-flex align-items-center p-3">
-        <TimeFrame />
+        <TimeFrame onChange={console.log} />
         <TimeFrameComparator />
         <TimeFrameGrouper />
         {/* <TimeFrameCustom /> */}

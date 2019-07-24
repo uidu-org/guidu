@@ -1,20 +1,44 @@
 import { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
-import { Form } from '@uidu/form';
-import { DateRange } from '@uidu/inputs';
-import moment from 'moment';
+import { FieldDateRangeStateless } from '@uidu/field-date-range';
 import React, { Component, Fragment } from 'react';
 import { Calendar } from 'react-feather';
 import { Trigger } from '../styled';
+import { TimeFrameProps } from '../types';
 import DropdownMenu from '../utils/DropdownMenu';
 
-export default class TimeFrame extends Component<any> {
+export default class TimeFrame extends Component<TimeFrameProps> {
   static defaultProps = {
-    timeframes: ['1W', '2W', '1M', '3M', '1Y', '5Y'],
+    timeframes: [
+      {
+        key: '1W',
+        name: '1 settimana',
+      },
+      { key: '4W', name: '4 settimane' },
+      { key: '1Y', name: '1 anno' },
+      { key: 'MTD', name: 'Mese corrente' },
+      { key: 'QTD', name: 'Trimestre corrente' },
+      { key: 'YTD', name: 'Anno corrente' },
+      { key: '5Y', name: 'Tutto' },
+    ],
     handleDateChange: console.log,
   };
 
   render() {
-    const { timeframes, handleDateChange, onChange } = this.props;
+    const {
+      timeframes,
+      activeTimeFrame,
+      handleDateChange,
+      onChange,
+      from,
+      to,
+    } = this.props;
+
+    const currentTimeFrame =
+      typeof activeTimeFrame == 'string'
+        ? timeframes.filter(t => t.key === activeTimeFrame)[0]
+        : activeTimeFrame;
+
+    console.log(currentTimeFrame);
 
     return (
       <Fragment>
@@ -22,43 +46,38 @@ export default class TimeFrame extends Component<any> {
           trigger={
             <Trigger activeBg="#d0f0fd" className="btn">
               <Calendar strokeWidth={2} size={14} className="mr-2" />
-              <span style={{ textTransform: 'initial' }}>Periodo</span>
+              <span style={{ textTransform: 'initial' }}>
+                {currentTimeFrame.key ? currentTimeFrame.name : 'Custom'}
+              </span>
             </Trigger>
           }
         >
           <DropdownItemGroup>
             {timeframes.map(timeframe => (
               <DropdownItem
-                key={timeframe}
+                key={timeframe.key}
                 onClick={e => {
                   e.preventDefault();
-                  onChange(timeframe);
+                  onChange(timeframe.key);
                 }}
+                isSelected={
+                  currentTimeFrame.key && timeframe.key === currentTimeFrame.key
+                }
               >
-                {timeframe}
+                {timeframe.name}
               </DropdownItem>
             ))}
           </DropdownItemGroup>
         </DropdownMenu>
-        <Form handleSubmit={() => {}} footerRenderer={() => {}}>
-          <div className="d-flex">
-            <DateRange
-              dayPickerProps={{
-                numberOfMonths: 1,
-              }}
-              name="f"
-              layout="elementOnly"
-              className="form-control form-control-sm shadow-none border"
-              from={moment()
-                .startOf('day')
-                .toDate()}
-              to={moment()
-                .startOf('day')
-                .toDate()}
-              onChange={handleDateChange}
-            />
-          </div>
-        </Form>
+        <div className="d-flex">
+          <FieldDateRangeStateless
+            name="f"
+            layout="elementOnly"
+            from={from.toDate()}
+            to={to.toDate()}
+            onChange={handleDateChange}
+          />
+        </div>
       </Fragment>
     );
   }

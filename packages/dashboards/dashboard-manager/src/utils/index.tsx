@@ -12,25 +12,24 @@ export const convertTimeframeToRange = timeframe => {
         .subtract(1, 'week')
         .startOf('day');
       break;
-    case '2W':
+    case '4W':
       range.from = moment()
-        .subtract(2, 'week')
-        .startOf('day');
-      break;
-    case '1M':
-      range.from = moment()
-        .subtract(1, 'month')
-        .startOf('day');
-      break;
-    case '3M':
-      range.from = moment()
-        .subtract(3, 'month')
+        .subtract(4, 'week')
         .startOf('day');
       break;
     case '1Y':
       range.from = moment()
         .subtract(1, 'year')
         .startOf('day');
+      break;
+    case 'MTD':
+      range.from = moment().startOf('month');
+      break;
+    case 'QTD':
+      range.from = moment().startOf('quarter');
+      break;
+    case 'YTD':
+      range.from = moment().startOf('year');
       break;
     default:
       range.from = moment()
@@ -46,9 +45,13 @@ export const groupByTimeframe = (
   list,
   key = 'createdAt',
 ) => {
-  const { from, to } = convertTimeframeToRange(timeframe);
+  const { from, to } =
+    typeof timeframe === 'string'
+      ? convertTimeframeToRange(timeframe)
+      : timeframe;
   const startDate = moment(from).startOf(timeframeGrouping);
   const endDate = moment(to).endOf(timeframeGrouping);
+
   let range = null;
   switch (timeframeGrouping) {
     case 'day':
@@ -79,6 +82,7 @@ export const groupByTimeframe = (
   }, {});
 
   return {
+    comparator: {},
     range,
     data,
   };

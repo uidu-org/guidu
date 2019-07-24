@@ -1,6 +1,6 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Component, Fragment } from 'react';
-import 'react-big-calendar/lib/sass/styles.scss';
+import 'react-day-picker/lib/style.css';
 import { UserCheck } from 'react-feather';
 import DashboardManager from '../';
 import { fetchDonations } from '../examples-utils';
@@ -32,7 +32,7 @@ export default class Basic extends Component<any, any> {
     return (
       <DashboardManager
         rowData={rowData}
-        defaultTimeFrame="1Y"
+        defaultTimeFrame="YTD"
         gridProps={{ isDraggable: true, onLayoutChange: console.log }}
       >
         {({ renderControls, renderBlocks, renderStaticBlocks }) => (
