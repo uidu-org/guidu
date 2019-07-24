@@ -45,10 +45,10 @@
     "@atlaskit/util-service-support" "2.0.4"
     tslib "^1.7.1"
 
-"@atlaskit/adf-schema@^2.12.2", "@atlaskit/adf-schema@^2.12.3", "@atlaskit/adf-schema@^2.6.1":
-  version "2.12.3"
-  resolved "https://registry.yarnpkg.com/@atlaskit/adf-schema/-/adf-schema-2.12.3.tgz#c45489d965fa0e1be3a2777eca440916d5b3ff80"
-  integrity sha512-EK9HXgDHSIVkGnXAXLIV3sKy4zoIZ/oQ7FxU0X2hyt892sO4e2p+DSvlzXLCXqVkoqdTPIW3mgSBKzmovPO10A==
+"@atlaskit/adf-schema@^2.12.2", "@atlaskit/adf-schema@^2.12.4", "@atlaskit/adf-schema@^2.6.1":
+  version "2.12.4"
+  resolved "https://registry.yarnpkg.com/@atlaskit/adf-schema/-/adf-schema-2.12.4.tgz#652bbfbb866478983f0ad7fe62c7559b0bd8068c"
+  integrity sha512-Nx7t0jTL95MH+Va/8u+H44Mw4Z+1moX0XCthP7wAJPa7hcL1lbOCANj8vdEk4c8Ga7f2BpW/sGJOzMTIaK6N7A==
   dependencies:
     "@types/linkify-it" "^2.0.4"
     "@types/prosemirror-model" "^1.5.0"
@@ -57,7 +57,7 @@
     css-color-names "0.0.4"
     linkify-it "^2.0.3"
     prosemirror-model "^1.7.0"
-    prosemirror-view "^1.9.10"
+    prosemirror-view "^1.9.12"
     tslib "^1.9.3"
 
 "@atlaskit/adf-utils@^6.1.0":
@@ -116,10 +116,10 @@
     "@babel/runtime" "^7.0.0"
     prop-types "^15.5.10"
 
-"@atlaskit/analytics-next@^5.1.2":
-  version "5.1.3"
-  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-5.1.3.tgz#05dac9ef67dd0845a6154674edf3e98640cf8fd8"
-  integrity sha512-llonf8ESzfcktPibiSORwlN7t8EgAi8x85k+z310N8payP7bUAnZKgDZpvu0tHdqwROiD5E6+CD5/AGMvO6s2A==
+"@atlaskit/analytics-next@^5.1.2", "@atlaskit/analytics-next@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-5.2.0.tgz#a19de50defc013d3d4f7a866bde52d9873fd9886"
+  integrity sha512-wZJAKPExs4/QkHO8W/TRHBF8JwpKyT20cDk8o3fffsHd1tiivYz+9Q1pp7J3PKY+zl48Ost8DIQLI4/d7N+uuA==
   dependencies:
     "@babel/runtime" "^7.0.0"
     prop-types "^15.5.10"
@@ -180,11 +180,11 @@
     tslib "^1.9.3"
 
 "@atlaskit/button@^13.0.15", "@atlaskit/button@^13.0.16":
-  version "13.0.16"
-  resolved "https://registry.yarnpkg.com/@atlaskit/button/-/button-13.0.16.tgz#5198b90d142a235ae6d91f97a4cd79ed4778cf67"
-  integrity sha512-Jn/Sc7thI5tTx+btxwMGHEpsINbS857zTGDzOaz+8FlmDtefdMO5vu9Xk7GzLkw2Q9nge5ulqSKmd9z2pVd7oA==
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/button/-/button-13.1.0.tgz#8d1f4b232a55156e677f01a2b9a30164a7b24757"
+  integrity sha512-LIsW9tg0+wQWz+3MayIA6Qted3sPCt3ArVTRRhFwP+MkvSMxAKgi+14s805P1BTvxrcNqRKITajmfcIy7yRQcg==
   dependencies:
-    "@atlaskit/analytics-next" "^5.1.2"
+    "@atlaskit/analytics-next" "^5.2.0"
     "@atlaskit/spinner" "^12.0.5"
     "@atlaskit/theme" "^9.1.0"
     "@atlaskit/type-helpers" "^4.1.5"
@@ -251,11 +251,11 @@
     prop-types "^15.5.10"
 
 "@atlaskit/editor-common@^39.16.3":
-  version "39.16.6"
-  resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-39.16.6.tgz#18caa68f4f406091e3c848dd2df67e725ff32c47"
-  integrity sha512-Vnp/HzFPIxoJbLV2wgBtYTuLRhMbvb7kI0yq+Uq78cK0nyBJrv/+rZG4h667PX5TT1Z3HpH1H4r8fGakz/bwKA==
+  version "39.16.7"
+  resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-39.16.7.tgz#58a883a758b950b13bd8473c8722a3396db5073a"
+  integrity sha512-o22X1DcN/r3tw5ITkosiGhJiI3jC1FR3Grk1BBwlaw1N03OWEfeP9Dw+WALaMdedi79OzdOXEZt2EdmRUTsyPA==
   dependencies:
-    "@atlaskit/adf-schema" "^2.12.3"
+    "@atlaskit/adf-schema" "^2.12.4"
     "@atlaskit/analytics-namespaced-context" "^4.1.4"
     "@atlaskit/analytics-next" "^5.1.2"
     "@atlaskit/emoji" "^62.2.5"
@@ -273,7 +273,7 @@
     css-color-names "0.0.4"
     date-fns "^1.30.1"
     prosemirror-model "^1.7.0"
-    prosemirror-view "^1.9.10"
+    prosemirror-view "^1.9.12"
     raf-schd "^2.1.0"
 
 "@atlaskit/editor-json-transformer@^6.2.0":
@@ -597,9 +597,9 @@
     tslib "^1.9.3"
 
 "@atlaskit/mention@^18.4.2", "@atlaskit/mention@^18.7.3":
-  version "18.8.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/mention/-/mention-18.8.0.tgz#e8704f4e2785d658b2e50af10de727494620956a"
-  integrity sha512-rkAJDCcHph/uZuB22G0ig+vag8opvikubHyZJe919D0nnwVGSVChh3/pCXMWPqwwK+RqRC/35oiukIK0b0UC5A==
+  version "18.9.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/mention/-/mention-18.9.0.tgz#db2778aa35973bbe0dacdc6cdcd9ed1b4851a550"
+  integrity sha512-SoZhmwbfPzkDlaCxI1BbflXjKsijzqPT3jT2DTfGNPuxDO7Pdsp4P5Sc8O7kyl3i+NytZ/jdHzP4HoFn4fTDYA==
   dependencies:
     "@atlaskit/analytics-gas-types" "^4.0.7"
     "@atlaskit/analytics-next" "^5.1.2"
@@ -2143,7 +2143,7 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@netlify/cli-utils@^1.0.1", "@netlify/cli-utils@^1.0.6":
+"@netlify/cli-utils@^1.0.6", "@netlify/cli-utils@^1.0.7":
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/@netlify/cli-utils/-/cli-utils-1.0.7.tgz#67b82743ac25e26904a8a552e1bfc3d6bdc34ad0"
   integrity sha512-Tt7vVjutcuW9a4QxQ9CmJ38uaGqffk1zd6wJg6TMcy6/x/3bW4J1BdEiz7ZZ5OGidvtx5QaLv51ExNHtEFsZ8g==
@@ -3077,9 +3077,9 @@
     "@types/node" "*"
 
 "@types/webpack@*":
-  version "4.32.0"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.32.0.tgz#bd4a149964cd471538f2781f2be5f9815175463b"
-  integrity sha512-kpz5wHDyG/WEpzX9gcwFp/w0oSsq0n/rmFdJelk/QBMHmNIOZdiTDInV0Lj8itGKBahQrBgJGJRss/6UHgLuKg==
+  version "4.32.1"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.32.1.tgz#6e95010e806f808abd6551c112097ac09035aacf"
+  integrity sha512-9n38CBx9uga1FEAdTipnt0EkbKpsCJFh7xJb1LE65FFb/A6OOLFX022vYsGC1IyVCZ/GroNg9u/RMmlDxGcLIw==
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
@@ -3213,10 +3213,10 @@
   dependencies:
     tslib "^1.7.1"
 
-"@uifabric/styling@^7.2.1", "@uifabric/styling@^7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@uifabric/styling/-/styling-7.3.0.tgz#4c9a84b50be02d18a0dcf1526fbe717dea013e9c"
-  integrity sha512-2U4DYI4jn7yGaYuYeC+1w7SKdX7pS4Imwds8NQzGAXBg34kDtEZicTWnLaX28SAFIpMS6FlHqvjQfccbyhdhfQ==
+"@uifabric/styling@^7.2.1", "@uifabric/styling@^7.3.0", "@uifabric/styling@^7.3.1":
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/@uifabric/styling/-/styling-7.3.1.tgz#f188b96dd27232e0c172a65f34683c269b67a838"
+  integrity sha512-vjeB3WsqiR/pcTbxkhUNX66H/BYlwblc+D4weUwKH55spSAxAb4ih0HiMAsSEPVns5rzdIqPzZWjNZtA0wki1Q==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/merge-styles" "^7.2.0"
@@ -5494,9 +5494,9 @@ bolt@^0.20.6:
     yarn "^1.6.0"
 
 bolt@^0.23.1:
-  version "0.23.5"
-  resolved "https://registry.yarnpkg.com/bolt/-/bolt-0.23.5.tgz#999bb4eed4f6bb5f0199777c28c353a1fee559c1"
-  integrity sha512-Lwn72xePccD3m5R/TXYugaWHmGPZzwvXJoQThPflVHfZHu2vJKTHteTBQddnbdsAfRWzVLBzQM+aK9tvSEiezA==
+  version "0.23.6"
+  resolved "https://registry.yarnpkg.com/bolt/-/bolt-0.23.6.tgz#dc24a985bd38df00274efeb5cfb3b5b63dcf58ce"
+  integrity sha512-s+0upkSqbxdiTYI6LJEqDpzF+Jepam1oUllGjbZz1kUxS4hmbUH5Cc2FsQxCNgiWopkEIz4mAt9kCNvz6bBmyQ==
   dependencies:
     array-includes "^3.0.3"
     babel-runtime "^6.25.0"
@@ -8504,9 +8504,9 @@ ejs@^2.5.9, ejs@^2.6.1:
   integrity sha512-PcW2a0tyTuPHz3tWyYqtK6r1fZ3gp+3Sop8Ph+ZYN81Ob5rwmbHEzaqs10N3BEsaGTkh/ooniXK+WwszGlc2+Q==
 
 electron-to-chromium@^1.3.122, electron-to-chromium@^1.3.191:
-  version "1.3.199"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.199.tgz#f9a62a74cda77854310a2abffde8b75591ea09a1"
-  integrity sha512-gachlDdHSK47s0N2e58GH9HMC6Z4ip0SfmYUa5iEbE50AKaOUXysaJnXMfKj0xB245jWbYcyFSH+th3rqsF8hA==
+  version "1.3.200"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.200.tgz#78fb858b466269e8eb46d31a52562f00c865127f"
+  integrity sha512-PUurrpyDA74MuAjJRD+79ss5BqJlU3mdArRbuu4wO/dt6jc3Ic/6BDmFJxkdwbfq39cHf/XKm2vW98XSvut9Dg==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -14749,11 +14749,11 @@ netlify-cli@^2.8.1:
     update-notifier "^2.5.0"
 
 netlify-dev-plugin@^1.0.23:
-  version "1.0.24"
-  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.24.tgz#caacb73dcd0ac2572742a00990730bb33c8d3aaa"
-  integrity sha512-zEYvEJKacSVYIJ0eUQ9sEEddvWvZ3elDhfvgJ1XV0mEhPkdJZg9OT6WispQryhgU+r82Z+Auz/DWyCI7lSFQFA==
+  version "1.0.25"
+  resolved "https://registry.yarnpkg.com/netlify-dev-plugin/-/netlify-dev-plugin-1.0.25.tgz#4ea156d9a77bd802acdfb10d883b3ae3dcea2500"
+  integrity sha512-yTjgg2kwAMJynAe+VNRtzgFJQE6s9QH533cp1yMHMNGBLCKm3tmwViM1Qt+t+GnmEfoTNphkFSeFdfB+3P+tbw==
   dependencies:
-    "@netlify/cli-utils" "^1.0.1"
+    "@netlify/cli-utils" "^1.0.7"
     "@netlify/rules-proxy" "^0.1.3"
     "@netlify/zip-it-and-ship-it" "^0.3.0"
     "@oclif/command" "^1"
@@ -15013,9 +15013,9 @@ node-pre-gyp@^0.12.0:
     tar "^4"
 
 node-releases@^1.1.13, node-releases@^1.1.25:
-  version "1.1.25"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.25.tgz#0c2d7dbc7fed30fbe02a9ee3007b8c90bf0133d3"
-  integrity sha512-fI5BXuk83lKEoZDdH3gRhtsNgh05/wZacuXkgbiYkceE7+QIMXOg98n9ZV7mz27B+kFHnqHcUpscZZlGRSmTpQ==
+  version "1.1.26"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.26.tgz#f30563edc5c7dc20cf524cc8652ffa7be0762937"
+  integrity sha512-fZPsuhhUHMTlfkhDLGtfY80DSJTjOcx+qD1j5pqPkuhUHVS7xHZIg9EE4DHK8O3f0zTxXHX5VIkDG8pu98/wfQ==
   dependencies:
     semver "^5.3.0"
 
@@ -15422,16 +15422,16 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.14.1"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.14.1.tgz#1c3dfc7b558bce4d89328f3d94bc4c5cf072ca6b"
-  integrity sha512-LXAW68eyvqvf0P3pOt88Hfh0ECs78wbFXx23IjqQIbIHr1mTyxiKEWGD2YT0AtmyjjNcTIJvYG2Ls8xoP+QiTA==
+  version "7.15.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.15.0.tgz#a9ece7182dbe19fdfe99456cece5676ae07f2455"
+  integrity sha512-NfkCDpQQvfUvbBBYvouMa2D1Xka2zylQdjipKt0J5qL40iOhN/nz/p86m7t2bfRIZ2i78SsdXUe5DXF1xViH5A==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/foundation" "^7.0.3"
     "@uifabric/icons" "^7.1.1"
     "@uifabric/merge-styles" "^7.2.0"
     "@uifabric/set-version" "^7.0.1"
-    "@uifabric/styling" "^7.3.0"
+    "@uifabric/styling" "^7.3.1"
     "@uifabric/utilities" "^7.0.7"
     prop-types "^15.5.10"
     tslib "^1.7.1"
@@ -17291,7 +17291,7 @@ prosemirror-utils@^0.9.2:
   resolved "https://registry.yarnpkg.com/prosemirror-utils/-/prosemirror-utils-0.9.4.tgz#9de3c638040070cf312a5adcf76fd58cf94e7a7d"
   integrity sha512-6R3AqS+g3ohnWvgWb/eE1v+Kl1Hp0q/FXflJk8/tHEzXHCxjPXJrU8onf458kANSbB+g8yaCRjd7+3/Gne1LKA==
 
-prosemirror-view@^1.0.0, prosemirror-view@^1.9.10:
+prosemirror-view@^1.0.0, prosemirror-view@^1.9.10, prosemirror-view@^1.9.12:
   version "1.9.12"
   resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.9.12.tgz#d0afc22387080ab2f6e0c44bca97486f3af6fbb0"
   integrity sha512-og0JxRtce/hsg+61aPgCasfQtkqWYKuWmunU8H4+194AUpaYWg4ZmLNY9qWjfN7XKXoEtV4vPOUJ5RrYVijGjw==
@@ -17996,9 +17996,9 @@ rc-upload@~2.6.7:
     warning "4.x"
 
 rc-util@^4.0.4, rc-util@^4.1.0, rc-util@^4.1.1, rc-util@^4.3.0, rc-util@^4.4.0, rc-util@^4.5.0, rc-util@^4.5.1, rc-util@^4.6.0, rc-util@^4.7.0, rc-util@^4.8.0, rc-util@^4.8.1:
-  version "4.8.3"
-  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.8.3.tgz#f31fddde61eac62a61881c4a8b0b9afbc8b72bb4"
-  integrity sha512-ecnVORqR8s2j3qgzh6volWkEBqlnl3zhtIqh4LmPf+eGrJj+FJaGYE/sE5My36TaGoI9TH1AAX7ei/wbBQHgHQ==
+  version "4.8.4"
+  resolved "https://registry.yarnpkg.com/rc-util/-/rc-util-4.8.4.tgz#e7baa462ed2647bd478745a9aec7353c0944813a"
+  integrity sha512-1B2h0/pMXfSUBRAgPdoDIKK5XBuzLBuLI9rLwUEW163SPoDvfb9jmg3ymBPtzne2jWgwtdNw4j0vIq/8Yo849A==
   dependencies:
     add-dom-event-listener "^1.1.0"
     babel-runtime "6.x"
