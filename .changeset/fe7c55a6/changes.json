@@ -1,0 +1,4 @@
+{
+  "releases": [{ "name": "@uidu/media-viewer", "type": "patch" }],
+  "dependents": []
+}

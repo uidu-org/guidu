@@ -14,7 +14,7 @@ export default class Sidebar extends PureComponent<any> {
 
     return (
       <StyledSidebar>
-        <ShellHeader className="px-3 px-xl-4 border-bottom">
+        <ShellHeader className="px-3 pr-xl-4 border-bottom justify-content-between">
           <div style={{ alignItems: 'center', display: 'flex ', minWidth: 0 }}>
             <AvatarItem
               avatar={<Avatar src={author.avatar} />}
