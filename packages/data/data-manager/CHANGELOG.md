@@ -1,5 +1,10 @@
 # @uidu/data-manager
 
+## 0.1.7
+- [patch] [c01fa16](https://github.org/uidu-org/guidu/commits/c01fa16):
+
+  - Fit columns and resize with container
+
 ## 0.1.6
 - [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
 
