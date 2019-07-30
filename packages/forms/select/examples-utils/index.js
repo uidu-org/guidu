@@ -7,7 +7,6 @@ const defaultUsers = Array.from(Array(10)).map(x => ({
 const defaultOptions = Array.from(Array(10)).map(x => ({
   id: faker.lorem.word(),
   name: faker.lorem.word(),
-  disabled: true,
 }));
 
 export const selectDefaultProps = {
