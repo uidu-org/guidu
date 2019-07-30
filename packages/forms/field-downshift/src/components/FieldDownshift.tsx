@@ -32,11 +32,13 @@ class FieldDownshift extends PureComponent<FieldDownshiftProps> {
       menu,
       item: itemRenderer,
       itemsGetter,
+      value,
     } = this.props;
     return (
       <Downshift
         onChange={this.onChange}
         itemToString={item => (item ? item.value : '')}
+        initialSelectedItem={value}
       >
         {({
           getRootProps,

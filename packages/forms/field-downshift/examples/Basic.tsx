@@ -56,6 +56,7 @@ export default class Basic extends PureComponent {
           menu={Menu}
           item={Item}
           items={items}
+          value={items[1]}
         />
         <br />
         <h6>With search</h6>

@@ -10,4 +10,5 @@ export type FieldDownshiftProps = {
   onSetValue: (value) => void;
   onChange: (name, value) => void;
   name: string;
-}
+  value: any;
+};

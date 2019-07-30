@@ -83,6 +83,7 @@ export default class Basic extends PureComponent {
       <Form {...formDefaultProps} footerRenderer={() => null}>
         <FieldDownshift
           {...inputDefaultProps}
+          value={items[2]}
           onChange={(name, value) => console.log(value.value)}
           layout="elementOnly"
           menu={Menu}
