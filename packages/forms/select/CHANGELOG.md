@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.15
+- [patch] [eb617ab](https://github.org/uidu-org/guidu/commits/eb617ab):
+
+  - Fix disabled items colors
+
 ## 0.1.14
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
