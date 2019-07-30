@@ -1,0 +1,1 @@
+- Fix disabled items colors

@@ -221,17 +221,15 @@ function baseStyles(validationState, isCompact) {
       paddingBottom: 0,
       margin: '0 2px',
     }),
-    option: (base, state) => ({
+    option: (base, { isSelected, isFocused, isDisabled }) => ({
       ...base,
       padding: '.5rem 1rem',
       backgroundColor:
-        state.isSelected || state.isFocused
-          ? 'rgb(242, 249, 252)'
-          : 'transparent',
-      color: 'rgb(51, 51, 51)',
+        isSelected || isFocused ? 'rgb(242, 249, 252)' : 'transparent',
+      color: isDisabled ? '#ccc' : 'rgb(51, 51, 51)',
       '&:hover': {
         backgroundColor: 'rgb(242, 249, 252)',
-        color: 'rgb(51, 51, 51)',
+        color: isDisabled ? '#ccc' : 'rgb(51, 51, 51)',
       },
     }),
     // placeholder: css => ({ ...css, color: colors.N100 }),
