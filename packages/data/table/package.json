@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "React ag-datagrid wrapper with default configurations",
   "uidu:src": "index.ts",
   "module": "index.js",

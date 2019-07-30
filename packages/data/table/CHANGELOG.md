@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.11
+- [patch] [c01fa16](https://github.org/uidu-org/guidu/commits/c01fa16):
+
+  - Fit columns and resize with container
+
 ## 0.1.10
 - [patch] [5e9d0df](https://github.org/uidu-org/guidu/commits/5e9d0df):
 
