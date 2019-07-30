@@ -1,5 +1,10 @@
 # @uidu/downshift
 
+## 0.1.6
+- [patch] [f940531](https://github.org/uidu-org/guidu/commits/f940531):
+
+  - Allow passing initalValue
+
 ## 0.1.5
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
