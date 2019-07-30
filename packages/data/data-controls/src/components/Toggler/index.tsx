@@ -1,9 +1,9 @@
 import { ToggleStateless } from '@uidu/toggle';
 import React, { Component } from 'react';
-import { MoreVertical, Settings } from 'react-feather';
+import { EyeOff, MoreVertical } from 'react-feather';
 import { SortableContainer, SortableElement } from 'react-sortable-hoc';
-import { Trigger } from '../styled';
-import DropdownMenu from '../utils/DropdownMenu';
+import { Trigger } from '../../styled';
+import DropdownMenu from '../../utils/DropdownMenu';
 
 const SortableItem = SortableElement(({ value: column, onToggle }) => (
   <div
@@ -56,13 +56,16 @@ const SortableList = SortableContainer(({ items, onToggle, api }) =>
 export default class Toggler extends Component<any> {
   render() {
     const { fields, onSortEnd, onToggle, api } = this.props;
+    const hiddenCount = fields.filter(f => f.hide).length;
 
     return (
       <DropdownMenu
         trigger={
-          <Trigger activeBg="#d0f0fd" className="btn">
-            <Settings strokeWidth={2} size={14} className="mr-2" />
-            <span style={{ textTransform: 'initial' }}>Customize cards</span>
+          <Trigger activeBg="#d0f0fd" active={!!hiddenCount} className="btn">
+            <EyeOff strokeWidth={2} size={14} className="mr-2" />
+            <span style={{ textTransform: 'initial' }}>
+              {hiddenCount ? `${hiddenCount} fields hidden` : 'Hide fields'}
+            </span>
           </Trigger>
         }
       >
@@ -73,7 +76,9 @@ export default class Toggler extends Component<any> {
             placeholder="Cerca tra le colonne"
           />
           <SortableList
-            items={fields}
+            items={fields.filter(
+              column => column.type !== 'primary' && column.type !== 'cover',
+            )}
             // onSortEnd={onSortEnd}
             onToggle={onToggle}
             // useDragHandle

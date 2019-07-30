@@ -1,5 +1,6 @@
 import moment from 'moment';
 import React, { Component } from 'react';
+import 'react-big-calendar/lib/sass/styles.scss';
 import Calendar from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
 

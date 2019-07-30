@@ -12,7 +12,7 @@ import {
   Settings,
   Trash,
 } from 'react-feather';
-import { Trigger } from '../styled';
+import { Trigger } from '../../styled';
 
 export default class More extends Component<any> {
   render() {

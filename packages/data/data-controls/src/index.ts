@@ -6,6 +6,5 @@ export { default as More } from './components/More';
 export { default as Resizer } from './components/Resizer';
 export { default as Sharer } from './components/Sharer';
 export { default as Sorter } from './components/Sorter';
-export { default as Stacker } from './components/Stacker';
 export { default as Toggler } from './components/Toggler';
 export { default as Viewer } from './components/Viewer';

@@ -3,6 +3,8 @@ import * as React from 'react';
 
 export default md`
 
+  # Calendar
+
   Buttons are used as triggers for actions. They are used in forms, toolbars,
   dialog footers and as stand-alone action triggers.
 

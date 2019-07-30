@@ -4,7 +4,7 @@ import DropdownMenu, {
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { AlignJustify, Calendar, Grid, List } from 'react-feather';
-import { Trigger } from '../styled';
+import { Trigger } from '../../styled';
 
 const viewIcons = {
   calendar: (

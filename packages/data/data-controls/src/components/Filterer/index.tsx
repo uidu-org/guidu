@@ -3,11 +3,12 @@ import Select from '@uidu/select';
 import React, { Component } from 'react';
 import { Filter } from 'react-feather';
 import { List } from 'react-powerplug';
-import { Trigger } from '../styled';
-import AddToList from '../utils/AddToList';
-import DropdownMenu from '../utils/DropdownMenu';
+import { Trigger } from '../../styled';
+import AddToList from '../../utils/AddToList';
+import DropdownMenu from '../../utils/DropdownMenu';
+import { FiltererProps } from './types';
 
-export default class Filterer extends Component<any> {
+export default class Filterer extends Component<FiltererProps> {
   static defaultProps = {
     onChange: console.log,
   };

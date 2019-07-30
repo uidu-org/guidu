@@ -1,9 +1,10 @@
 import DropdownMenu from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { Search } from 'react-feather';
-import { Trigger } from '../styled';
+import { Trigger } from '../../styled';
+import { FinderProps } from './types';
 
-export default class Finder extends Component<any> {
+export default class Finder extends Component<FinderProps> {
   private input: React.RefObject<HTMLInputElement> = React.createRef();
 
   render() {
@@ -29,10 +30,6 @@ export default class Finder extends Component<any> {
           name=""
           placeholder="Cerca tra i contatti..."
           onChange={onChange}
-          // e => {
-          //   this.grid.api.setQuickFilter(e.target.value);
-          //   onChange
-          // }}
         />
       </DropdownMenu>
     );

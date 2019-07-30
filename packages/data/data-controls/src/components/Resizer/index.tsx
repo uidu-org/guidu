@@ -4,7 +4,7 @@ import DropdownMenu, {
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { Maximize2 } from 'react-feather';
-import { Trigger } from '../styled';
+import { Trigger } from '../../styled';
 
 export default class Resizer extends Component<any> {
   private input: React.RefObject<HTMLInputElement> = React.createRef();

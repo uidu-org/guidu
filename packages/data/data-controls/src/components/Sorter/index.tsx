@@ -3,8 +3,8 @@ import Select from '@uidu/select';
 import React, { Component } from 'react';
 import { Sliders, X } from 'react-feather';
 import { List } from 'react-powerplug';
-import { Trigger } from '../styled';
-import { DropdownMenu, PickField } from '../utils';
+import { Trigger } from '../../styled';
+import { DropdownMenu, PickField } from '../../utils';
 
 // this component should return an array of sorters https://www.ag-grid.com/javascript-grid-sorting/#sorting-api
 // example:
