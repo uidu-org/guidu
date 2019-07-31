@@ -3,16 +3,11 @@ import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 
 export default md`
-  ##### Usage
+  # Checkbox
 
   A checkbox element primarily for use in forms.
 
-  ${code`
-  import {
-    Checkbox,
-    CheckboxGroup
-  } from '@uidu/checkbox';
-  `}
+  ${code`import Checkbox, { CheckboxGroup } from '@uidu/checkbox';`}
 
   The Checkbox export provides for controlled & uncontrolled usage and includes the label, input & icon.
 

@@ -6,3 +6,5 @@ import CheckboxGroupComponent from './CheckboxGroup';
 
 export const Checkbox = ComponentHOC(CheckboxComponent);
 export const CheckboxGroup = ComponentHOC(CheckboxGroupComponent);
+
+export default Checkbox;

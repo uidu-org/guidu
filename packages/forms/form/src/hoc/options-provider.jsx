@@ -1,5 +1,5 @@
-import { Component, Children } from 'react';
 import PropTypes from 'prop-types';
+import { Children, Component } from 'react';
 
 class OptionsProvider extends Component {
   getChildContext() {

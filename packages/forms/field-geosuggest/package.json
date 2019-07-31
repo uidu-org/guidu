@@ -1,0 +1,20 @@
+{
+  "name": "@uidu/field-geosuggest",
+  "version": "0.1.0",
+  "description": "Suggest addresses with google autocompletge",
+  "main": "index.ts",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.29",
+    "@uidu/form": "^0.1.28"
+  },
+  "dependencies": {
+    "@uidu/field-base": "^0.1.34"
+  }
+}

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 export default class FormSubmit extends Component {
   getActionBasedOnMethod = () => {
@@ -22,13 +22,22 @@ export default class FormSubmit extends Component {
     } = this.props;
 
     return (
-    <button className={classNames('btn', className)} type="submit" disabled={!canSubmit || loading}>
-  {loading && (
-    <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>)}
-  {loading && <span className="ml-2">Loading...</span>}
-   {!loading && this.getActionBasedOnMethod()}
-</button>
-)
+      <button
+        className={classNames('btn', className)}
+        type="submit"
+        disabled={!canSubmit || loading}
+      >
+        {loading && (
+          <span
+            className="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+        )}
+        {loading && <span className="ml-2">Loading...</span>}
+        {!loading && this.getActionBasedOnMethod()}
+      </button>
+    );
   }
 }
 

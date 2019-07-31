@@ -1,0 +1,1 @@
+- Allow default export for forms consistency

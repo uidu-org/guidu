@@ -1,7 +1,7 @@
 // @flow
-import React, { PureComponent } from 'react';
 import { Form } from '@uidu/form';
-import { Checkbox } from '../src/index';
+import React, { PureComponent } from 'react';
+import Checkbox from '../src';
 
 const BasicUsageExample = class extends PureComponent {
   constructor(props) {
