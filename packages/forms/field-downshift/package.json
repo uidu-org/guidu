@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-downshift",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Downshift React component",
   "uidu:src": "index.ts",
   "module": "index.js",
