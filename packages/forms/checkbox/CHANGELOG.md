@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.44
+- [patch] [2809c2f](https://github.org/uidu-org/guidu/commits/2809c2f):
+
+  - Allow default export for forms consistency
+
 ## 0.1.43
 - [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 

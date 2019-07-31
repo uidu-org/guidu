@@ -1,8 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/checkbox", "type": "patch" },
-    { "name": "@uidu/field-geosuggest", "type": "patch" },
-    { "name": "@uidu/form", "type": "patch" }
-  ],
-  "dependents": []
-}
