@@ -1,0 +1,20 @@
+{
+  "releases": [
+    { "name": "@uidu/section-message", "type": "patch" },
+    { "name": "@uidu/data-controls", "type": "patch" },
+    { "name": "@uidu/checkbox", "type": "patch" },
+    { "name": "@uidu/form", "type": "patch" }
+  ],
+  "dependents": [
+    {
+      "name": "@uidu/range",
+      "type": "patch",
+      "dependencies": ["@uidu/section-message"]
+    },
+    {
+      "name": "@uidu/field-range",
+      "type": "patch",
+      "dependencies": ["@uidu/section-message"]
+    }
+  ]
+}
