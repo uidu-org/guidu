@@ -12,19 +12,15 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
-    "babel-runtime": "^6.26.0",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
     "react": "^16.8.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/button": "^0.1.39",
     "@uidu/docs": "^0.1.25",
     "@uidu/field-text": "^0.1.13",
-    "enzyme": "^3.9.0",
     "lodash.isequal": "^4.5.0",
     "react-dom": "^16.4.0",
     "redux": "^4.0.1"

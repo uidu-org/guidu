@@ -13,13 +13,11 @@
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
     "@emotion/core": "^10.0.10",
     "@types/react-router-dom": "^4.3.2",
     "@uidu/analytics": "^0.1.8",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.13",
-    "babel-runtime": "^6.26.0",
     "jest-emotion": "^10.0.10",
     "memoize-one": "^5.0.0",
     "tslib": "^1.9.3"
@@ -31,11 +29,9 @@
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/logo": "^9.2.7",
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/checkbox": "^0.1.41",
     "@uidu/docs": "^0.1.29",
     "@uidu/form": "^0.1.28",
-    "enzyme": "^3.9.0",
     "jest-emotion": "^10.0.10",
     "jest-in-case": "^1.0.2",
     "react-dom": "^16.4.0",

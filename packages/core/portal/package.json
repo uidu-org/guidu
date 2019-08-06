@@ -12,8 +12,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
-    "babel-runtime": "^6.26.0",
     "exenv": "^1.2.2",
     "tiny-invariant": "^1.0.3"
   },
@@ -29,7 +27,6 @@
     "@uidu/docs": "^0.1.29",
     "@uidu/modal-dialog": "^0.1.12",
     "@uidu/tooltip": "^0.1.12",
-    "enzyme": "^3.9.0",
     "styled-components": "^4.0.3"
   }
 }

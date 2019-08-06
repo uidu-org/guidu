@@ -9,15 +9,12 @@
   "uidu:src": "src/index.js",
   "sideEffects": false,
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
     "@uidu/theme": "^0.1.13",
     "memoize-one": "^5.0.0",
     "react-syntax-highlighter": "^11.0.1"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/docs": "^0.1.29",
-    "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {

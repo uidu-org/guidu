@@ -35,7 +35,6 @@
     "types": [
       "jest",
       "react",
-      "enzyme",
       "css-color-names",
       "jest-styled-components",
       "styled-components",

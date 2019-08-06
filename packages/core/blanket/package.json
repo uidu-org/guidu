@@ -12,7 +12,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.8",
     "@uidu/theme": "^0.1.13"
   },
@@ -21,10 +20,8 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/button": "^0.1.39",
     "@uidu/docs": "^0.1.25",
-    "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },
   "keywords": [

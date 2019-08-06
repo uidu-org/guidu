@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.8",
     "@uidu/blanket": "^0.1.9",
     "@uidu/button": "^0.1.40",
@@ -36,12 +35,10 @@
     "@atlaskit/field-radio-group": "^4.0.15",
     "@atlaskit/inline-dialog": "^9.0.15",
     "@uidu/avatar": "^0.2.14",
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/checkbox": "^0.1.41",
     "@uidu/docs": "^0.1.29",
     "@uidu/field-text": "^0.1.13",
     "@uidu/select": "^0.1.14",
-    "enzyme": "^3.9.0",
     "react-beautiful-dnd": "^11.0.0",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"

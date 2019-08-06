@@ -31,7 +31,6 @@
     "@uidu/button": "^0.1.40",
     "@uidu/dropdown-menu": "^0.1.10",
     "@uidu/shell": "^0.1.18",
-    "enzyme": "^3.9.0",
     "react-lorem-component": "^0.13.0"
   }
 }

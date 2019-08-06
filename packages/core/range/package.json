@@ -12,9 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
     "@uidu/theme": "^0.1.13",
-    "babel-runtime": "^6.26.0",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
@@ -22,10 +20,8 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/docs": "^0.1.25",
     "@uidu/section-message": "0.1.9",
-    "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   },
   "keywords": [

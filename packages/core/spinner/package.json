@@ -12,9 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
     "@uidu/theme": "^0.1.8",
-    "babel-runtime": "^6.26.0",
     "react-dom": "^16.4.0",
     "react-transition-group": "^4.0.0",
     "sinon": "^7.2.5"
@@ -24,10 +22,8 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/button": "^0.1.35",
     "@uidu/docs": "^0.1.25",
-    "enzyme": "^3.9.0",
     "react-dom": "^16.4.0",
     "sinon": "^7.2.5"
   }

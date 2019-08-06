@@ -12,14 +12,12 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@babel/runtime": "^7.0.0",
     "@uidu/analytics": "^0.1.8",
     "@uidu/item": "^0.1.13",
     "@uidu/layer": "^0.1.3",
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.13",
     "@uidu/tooltip": "^0.1.12",
-    "babel-runtime": "^6.26.0",
     "classnames": "^2.2.6",
     "keycode": "^2.2.0",
     "prop-types": "^15.6.0"
@@ -30,11 +28,9 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/build-utils": "^0.1.7",
     "@uidu/button": "^0.1.40",
     "@uidu/docs": "^0.1.29",
     "@uidu/field-base": "^0.1.33",
-    "enzyme": "^3.9.0",
     "react-dom": "^16.4.0"
   }
 }
