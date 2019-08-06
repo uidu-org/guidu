@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Downshift React component",
   "uidu:src": "src/index.ts",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.29",
+    "@uidu/docs": "^0.1.30",
     "@uidu/navigation": "^0.1.17",
     "faker": "^4.1.0",
     "react-feather": "^2.0.3",

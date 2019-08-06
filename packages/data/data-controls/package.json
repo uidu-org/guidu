@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Elements to filter, sort, group data",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -11,15 +11,15 @@
   "private": false,
   "devDependencies": {
     "@loadable/babel-plugin": "^5.10.0",
-    "@uidu/docs": "^0.1.29"
+    "@uidu/docs": "^0.1.30"
   },
   "dependencies": {
-    "@uidu/dropdown-menu": "^0.1.11",
-    "@uidu/droplist": "^0.1.11",
-    "@uidu/form": "^0.1.28",
-    "@uidu/item": "^0.1.12",
-    "@uidu/select": "^0.1.14",
-    "@uidu/toggle": "^0.1.15",
+    "@uidu/dropdown-menu": "^0.1.13",
+    "@uidu/droplist": "^0.1.12",
+    "@uidu/form": "^0.1.30",
+    "@uidu/item": "^0.1.14",
+    "@uidu/select": "^0.1.16",
+    "@uidu/toggle": "^0.1.16",
     "classnames": "^2.2.6",
     "react-day-picker": "^7.3.0",
     "react-feather": "^2.0.3",

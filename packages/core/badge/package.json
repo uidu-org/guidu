@@ -1,6 +1,6 @@
 {
   "name": "@uidu/badge",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A React component that indicates values",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -12,14 +12,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/theme": "^0.1.13"
+    "@uidu/theme": "^0.1.14"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.25",
+    "@uidu/docs": "^0.1.30",
     "react-dom": "^16.4.0",
     "react-test-renderer": "^16.8.3"
   }

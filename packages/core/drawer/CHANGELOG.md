@@ -1,5 +1,10 @@
 # @uidu/drawer
 
+## 0.2.1
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.2.0
 - [minor] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/popper",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Wrapper for react-popper with common config and some helpers",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -19,9 +19,9 @@
     "react": "^16.8.3"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.40",
-    "@uidu/docs": "^0.1.29",
-    "@uidu/theme": "^0.1.13",
+    "@uidu/button": "^0.1.41",
+    "@uidu/docs": "^0.1.30",
+    "@uidu/theme": "^0.1.14",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^4.0.3"

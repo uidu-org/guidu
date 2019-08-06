@@ -1,5 +1,10 @@
 # @uidu/field-mentions
 
+## 0.1.13
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.1.12
 - [patch] [f2e03fd](https://github.org/uidu-org/guidu/commits/f2e03fd):
 

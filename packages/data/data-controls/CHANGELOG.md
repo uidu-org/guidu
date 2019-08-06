@@ -1,5 +1,10 @@
 # @uidu/data-controls
 
+## 0.1.10
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Bump dependencies
+
 ## 0.1.9
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 

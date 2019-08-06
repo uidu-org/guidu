@@ -1,5 +1,10 @@
 # @uidu/dropdown-menu
 
+## 0.1.13
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.1.12
 - [patch] [fe71b9f](https://github.org/uidu-org/guidu/commits/fe71b9f):
 

@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.30
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Bump dependencies
+
 ## 0.1.29
 - [patch] [2809c2f](https://github.org/uidu-org/guidu/commits/2809c2f):
 

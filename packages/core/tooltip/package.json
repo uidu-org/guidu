@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tooltip",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A React Component for displaying Tooltips",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/analytics": "^0.1.8",
-    "@uidu/popper": "^0.1.6",
-    "@uidu/portal": "^0.1.6",
-    "@uidu/theme": "^0.1.13",
+    "@uidu/analytics": "^0.1.9",
+    "@uidu/popper": "^0.1.8",
+    "@uidu/portal": "^0.1.8",
+    "@uidu/theme": "^0.1.14",
     "flushable": "^1.0.0",
     "react-node-resolver": "^2.0.1",
     "react-transition-group": "^4.0.0"
@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/button": "^0.1.39",
-    "@uidu/docs": "^0.1.25",
+    "@uidu/button": "^0.1.41",
+    "@uidu/docs": "^0.1.30",
     "react-dom": "^16.4.0"
   }
 }

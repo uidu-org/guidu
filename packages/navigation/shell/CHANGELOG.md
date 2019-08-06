@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.19
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.1.18
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 

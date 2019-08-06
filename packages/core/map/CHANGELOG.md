@@ -1,5 +1,10 @@
 # @uidu/map
 
+## 0.1.7
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.1.6
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

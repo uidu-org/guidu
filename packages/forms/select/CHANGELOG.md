@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.16
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.1.15
 - [patch] [eb617ab](https://github.org/uidu-org/guidu/commits/eb617ab):
 

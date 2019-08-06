@@ -1,5 +1,10 @@
 # @uidu/analytics
 
+## 0.1.9
+- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+  - Removed unused dependencies
+
 ## 0.1.8
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 
