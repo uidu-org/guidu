@@ -1,5 +1,10 @@
 # @uidu/dashboard-controls
 
+## 0.1.4
+- [patch] [79bbab1](https://github.org/uidu-org/guidu/commits/79bbab1):
+
+  - Added ShellBodyWithSpinner
+
 ## 0.1.3
 - [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 

@@ -1,5 +1,10 @@
 # @uidu/droplist
 
+## 0.1.13
+- [patch] [5ddb7dd](https://github.org/uidu-org/guidu/commits/5ddb7dd):
+
+  - Better dashboard controls and dropdowns
+
 ## 0.1.12
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

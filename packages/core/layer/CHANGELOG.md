@@ -1,5 +1,10 @@
 # @uidu/layer
 
+## 0.1.5
+- [patch] [5ddb7dd](https://github.org/uidu-org/guidu/commits/5ddb7dd):
+
+  - Better dashboard controls and dropdowns
+
 ## 0.1.4
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

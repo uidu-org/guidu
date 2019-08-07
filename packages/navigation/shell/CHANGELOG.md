@@ -1,5 +1,10 @@
 # @uidu/shell
 
+## 0.1.20
+- [patch] [79bbab1](https://github.org/uidu-org/guidu/commits/79bbab1):
+
+  - Added ShellBodyWithSpinner
+
 ## 0.1.19
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

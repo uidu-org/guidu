@@ -1,6 +1,6 @@
 {
   "name": "@uidu/droplist",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Droplist component",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -14,7 +14,7 @@
     "@atlaskit/icon": "^16.0.3",
     "@uidu/analytics": "^0.1.9",
     "@uidu/item": "^0.1.14",
-    "@uidu/layer": "^0.1.4",
+    "@uidu/layer": "^0.1.5",
     "@uidu/spinner": "^0.1.9",
     "@uidu/theme": "^0.1.14",
     "@uidu/tooltip": "^0.1.13",
