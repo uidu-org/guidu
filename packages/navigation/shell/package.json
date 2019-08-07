@@ -17,6 +17,7 @@
     "react-router-dom": "^5.0.0"
   },
   "dependencies": {
+    "@uidu/spinner": "^0.1.9",
     "styled-components": "^4.0.3"
   }
 }

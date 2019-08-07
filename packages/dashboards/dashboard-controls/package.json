@@ -10,7 +10,8 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.29"
+    "@uidu/docs": "^0.1.29",
+    "moment": "^2.18.1"
   },
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.10",

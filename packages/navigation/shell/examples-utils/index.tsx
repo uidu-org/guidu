@@ -1,8 +1,7 @@
-import React from 'react';
-import { Grid, Bell, Activity } from 'react-feather';
-import faker from 'faker';
-
 import Navigation from '@uidu/navigation';
+import faker from 'faker';
+import React from 'react';
+import { Activity, Bell, Grid } from 'react-feather';
 
 export const SidebarLogo = () => (
   <img
@@ -25,24 +24,38 @@ export const NavigationHeader = ({ app }) => (
 
 const schema = [
   {
-    icon: <Activity className="mr-2" size={14} />,
-    name: 'Browse',
-    children: [
+    type: 'NavigationHeader',
+    text: 'Contatti',
+  },
+  {
+    type: 'NavigationSection',
+    items: [
       {
-        path: `/`,
-        name: 'Riepilogo',
-      },
-      {
-        path: `/orders`,
-        name: 'Ordini',
-      },
-      {
-        path: `/attendances`,
-        name: 'Partecipanti',
-      },
-      {
-        path: `/messages`,
-        name: 'Messaggi agli iscritti',
+        type: 'NavigationGroup',
+        text: 'Browse',
+        before: <Activity className="mr-2" size={14} />,
+        items: [
+          {
+            type: 'NavigationItem',
+            path: `/`,
+            text: 'Riepilogo',
+          },
+          {
+            type: 'NavigationItem',
+            path: `/orders`,
+            text: 'Ordini',
+          },
+          {
+            type: 'NavigationItem',
+            path: `/attendances`,
+            text: 'Partecipanti',
+          },
+          {
+            type: 'NavigationItem',
+            path: `/messages`,
+            text: 'Messaggi agli iscritti',
+          },
+        ],
       },
     ],
   },

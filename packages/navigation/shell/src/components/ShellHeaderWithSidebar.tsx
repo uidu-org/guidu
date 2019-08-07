@@ -1,5 +1,5 @@
-import { ShellHeader } from '@uidu/shell';
 import React from 'react';
+import ShellHeader from './ShellHeader';
 
 export default ({ children, sidebar }) => (
   <ShellHeader className="px-xl-4 px-3">

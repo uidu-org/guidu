@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ChatWindow from '../../../messaging/chat-window/examples/Basic';
 import {
   NavigationMenu,
   SidebarFooter,
@@ -8,6 +7,7 @@ import {
 } from '../examples-utils';
 import Shell, {
   ShellBody,
+  ShellBodyWithSpinner,
   ShellContent,
   ShellFooter,
   ShellHeader,
@@ -16,7 +16,7 @@ import Shell, {
   ShellSidebar,
 } from '../src';
 
-export default function Dashboard() {
+export default function App() {
   return (
     <Shell>
       <ShellSidebar style={{ width: '4rem', backgroundColor: '#4C566A' }}>
@@ -35,27 +35,23 @@ export default function Dashboard() {
           style={{
             flex: '1 0 22%',
             maxWidth: '22%',
-            minWidth: 'fit-content',
+            // backgroundColor: '#f8f9fa',
           }}
-          // className="border-right"
         >
           <NavigationMenu />
         </ShellNavigation>
-        <ShellMain style={{ flex: '1 0 78%' }} className="border-left">
+        <ShellMain style={{ flex: '1 0 78%' }}>
           <ShellHeader>
-            <div className="d-flex px-4 border-bottom h-100 w-100 align-items-center">
-              Long navigation with search bar & actions
+            <div className="d-flex px-4  h-100 w-100 align-items-center">
+              <input
+                type="search"
+                className="form-control bg-light border-0"
+                placeholder="Search among your contacts..."
+              />
+              <button className="btn btn-primary ml-4">Add</button>
             </div>
           </ShellHeader>
-          <ShellBody className="d-flex" style={{ minHeight: 0 }}>
-            <ChatWindow />
-            <ShellNavigation
-              className="bg-white border-left p-4 flex-shrink-0 d-none d-lg-flex"
-              style={{ width: '30%' }}
-            >
-              Group sidebar
-            </ShellNavigation>
-          </ShellBody>
+          <ShellBodyWithSpinner />
         </ShellMain>
       </ShellContent>
     </Shell>

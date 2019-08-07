@@ -1,22 +1,19 @@
 import * as React from 'react';
-import { Activity } from 'react-feather';
-
-import Shell, {
-  ShellSidebar,
-  ShellHeader,
-  ShellContent,
-  ShellNavigation,
-  ShellMain,
-  ShellBody,
-  ShellFooter,
-} from '../src';
 import {
+  NavigationMenu,
+  SidebarFooter,
   SidebarLogo,
   SidebarMenu,
-  SidebarFooter,
-  NavigationMenu,
-  NavigationHeader,
 } from '../examples-utils';
+import Shell, {
+  ShellBody,
+  ShellContent,
+  ShellFooter,
+  ShellHeader,
+  ShellMain,
+  ShellNavigation,
+  ShellSidebar,
+} from '../src';
 
 export default function App() {
   return (
@@ -40,12 +37,7 @@ export default function App() {
             // backgroundColor: '#f8f9fa',
           }}
         >
-          <ShellHeader>
-            <NavigationHeader app="contacts" />
-          </ShellHeader>
-          <ShellBody scrollable>
-            <NavigationMenu />
-          </ShellBody>
+          <NavigationMenu />
         </ShellNavigation>
         <ShellMain style={{ flex: '1 0 78%' }}>
           <ShellHeader>

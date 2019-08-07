@@ -59,9 +59,7 @@ export default function Event() {
                 maxWidth: '22%',
               }}
             >
-              <ShellBody scrollable>
-                <NavigationMenu />
-              </ShellBody>
+              <NavigationMenu />
             </ShellNavigation>
             <ShellBody scrollable>
               <div className="row no-gutters justify-content-center my-5">

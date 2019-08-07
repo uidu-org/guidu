@@ -3,6 +3,9 @@ export { default as ShellBody } from './components/ShellBody';
 export {
   default as ShellBodyWithSidebar,
 } from './components/ShellBodyWithSidebar';
+export {
+  default as ShellBodyWithSpinner,
+} from './components/ShellBodyWithSpinner';
 export { default as ShellContent } from './components/ShellContent';
 export { default as ShellFooter } from './components/ShellFooter';
 export { default as ShellHeader } from './components/ShellHeader';
