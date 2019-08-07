@@ -20,14 +20,14 @@ export default class Resizer extends Component<any> {
         }
         position="bottom left"
       >
-        <DropdownItemGroup title="Select a row height">
+        <DropdownItemGroup>
           <DropdownItem
             onClick={e => {
               e.preventDefault();
               onResize(36);
             }}
           >
-            Short
+            Compatta
           </DropdownItem>
           <DropdownItem
             onClick={e => {
@@ -35,7 +35,7 @@ export default class Resizer extends Component<any> {
               onResize(48);
             }}
           >
-            Medium
+            Predefinita
           </DropdownItem>
           <DropdownItem
             onClick={e => {
@@ -43,7 +43,7 @@ export default class Resizer extends Component<any> {
               onResize(60);
             }}
           >
-            Tall
+            Normale
           </DropdownItem>
           <DropdownItem
             onClick={e => {

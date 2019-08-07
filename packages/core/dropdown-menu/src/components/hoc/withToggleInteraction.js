@@ -1,14 +1,13 @@
 // @flow
 
-import React, { Component, type Node, type ComponentType } from 'react';
 import { colors } from '@uidu/theme';
 import PropTypes from 'prop-types';
-import getDisplayName from '../../util/getDisplayName';
-import safeContextCall from '../../util/safeContextCall';
+import React, { Component, ComponentType, Node } from 'react';
 import { selectionManagerContext } from '../../util/contextNamespace';
-import type { Behaviors } from '../../types';
-
+import getDisplayName from '../../util/getDisplayName';
 import { KEY_ENTER, KEY_SPACE } from '../../util/keys';
+import safeContextCall from '../../util/safeContextCall';
+import type { Behaviors } from '../../types';
 
 type Props = {
   /** Content to be displayed inside the item. Same as @uidu/item `children` prop. */
@@ -115,6 +114,7 @@ const withToggleInteraction = (
               secondaryColor={iconColors.secondary}
               size="medium"
               label=""
+              isSelected={isSelected}
             />
           }
         >

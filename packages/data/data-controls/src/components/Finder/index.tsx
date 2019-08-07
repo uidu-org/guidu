@@ -28,7 +28,7 @@ export default class Finder extends Component<FinderProps> {
           className="form-control shadow-none border-0"
           type="search"
           name=""
-          placeholder="Cerca tra i contatti..."
+          placeholder="Cerca..."
           onChange={onChange}
         />
       </DropdownMenu>

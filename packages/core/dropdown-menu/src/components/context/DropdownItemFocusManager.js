@@ -1,10 +1,10 @@
 // @flow
 
-import React, { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component, Node } from 'react';
 import { focusManagerContext } from '../../util/contextNamespace';
+import { KEY_DOWN, KEY_TAB, KEY_UP } from '../../util/keys';
 import type { ItemId, FocusItem } from '../../types';
-import { KEY_DOWN, KEY_UP, KEY_TAB } from '../../util/keys';
 
 type Props = {
   /** Causes first registered item to receive focus */
@@ -18,6 +18,7 @@ type Props = {
 
 export default class DropdownItemFocusManager extends Component<Props> {
   static childContextTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
     [focusManagerContext]: PropTypes.object,
   };
 

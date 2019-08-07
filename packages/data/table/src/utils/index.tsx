@@ -96,3 +96,6 @@ export const getPrimary = columnDefs =>
 
 export const getCover = columnDefs =>
   columnDefs.filter(column => column.type === 'cover')[0];
+
+export const getAvatar = columnDefs =>
+  columnDefs.filter(column => column.type === 'avatar')[0];

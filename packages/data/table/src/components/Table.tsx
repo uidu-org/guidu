@@ -33,6 +33,7 @@ export default class Table extends Component<any> {
                 minWidth: 140,
               }}
               columnTypes={{
+                avatar: {},
                 address: {},
                 attachments: {},
                 checkbox: {},

@@ -6,7 +6,7 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <div>
-        <Toggler fields={availableColumns} />
+        <Toggler fields={availableColumns} onToggle={console.log} />
         <Filterer fields={availableColumns} filterers={[]} />
         <Grouper fields={availableColumns} groupers={[]} />
         <Sorter fields={availableColumns} sorters={[]} />

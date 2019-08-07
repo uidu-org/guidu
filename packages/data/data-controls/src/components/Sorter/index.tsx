@@ -34,11 +34,12 @@ export default class Sorter extends Component<any> {
 
     return (
       <DropdownMenu
+        shouldFitContent
         trigger={
           <Trigger activeBg="#fee2d5" className="btn" active={!!sortersCount}>
             <Sliders strokeWidth={2} size={14} className="mr-2" />
             <span style={{ textTransform: 'initial' }}>
-              {sortersCount ? `Sorted by ${sortersCount} fields` : 'Sort'}
+              {sortersCount ? `Ordinati per ${sortersCount} campi` : 'Ordina'}
             </span>
           </Trigger>
         }
@@ -114,10 +115,10 @@ export default class Sorter extends Component<any> {
                     </div>
                   ))}
                   {!list.length && (
-                    <p className="text-muted">No sorts applied</p>
+                    <p className="text-muted">Nessun ordinamento selezionato</p>
                   )}
                   <PickField
-                    label="Pick a field to sort by"
+                    label="Scegli un campo per ordinare i dati"
                     onClick={field => {
                       push({
                         sort: { id: 'asc', name: 'asc' },

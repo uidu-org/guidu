@@ -82,6 +82,7 @@ class Droplist extends Component<Props, void> {
     isMenuFixed: false,
     shouldAllowMultilineItems: false,
     shouldFitContainer: false,
+    shouldFitContent: false,
     shouldFlip: true,
     trigger: null,
     onPositioned: () => {},
@@ -204,9 +205,7 @@ class Droplist extends Component<Props, void> {
             <Spinner size="small" />
           </SpinnerContainer>
         ) : (
-          <ThemeProvider theme={itemTheme}>
-            <div>{children}</div>
-          </ThemeProvider>
+          <ThemeProvider theme={itemTheme}>{children}</ThemeProvider>
         )}
       </Content>
     ) : null;

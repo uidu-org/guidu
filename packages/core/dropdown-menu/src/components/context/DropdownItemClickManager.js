@@ -1,7 +1,7 @@
 // @flow
 
-import { Component, type Element } from 'react';
 import PropTypes from 'prop-types';
+import { Component, Element } from 'react';
 import { clickManagerContext } from '../../util/contextNamespace';
 
 type Props = {
@@ -13,6 +13,7 @@ type Props = {
 
 export default class DropdownItemClickManager extends Component<Props> {
   static childContextTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
     [clickManagerContext]: PropTypes.object,
   };
 

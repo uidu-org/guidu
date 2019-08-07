@@ -2,8 +2,9 @@ import faker from 'faker';
 import {
   addressColumn,
   attachmentsColumn,
+  avatarColumn,
   checkboxColumn,
-  coverColumn,
+  // coverColumn,
   currencyColumn,
   dateColumn,
   defaultColumn,
@@ -28,16 +29,19 @@ export const availableColumns = [
     field: 'id',
     ...uidColumn(),
   },
+  // {
+  //   colId: 'cover',
+  //   field: 'cover',
+  //   headerName: 'Cover',
+  //   ...defaultColumn(),
+  //   ...coverColumn(),
+  // },
   {
-    colId: 'email',
-    field: 'email',
-    headerName: 'Cover',
+    colId: 'avatar',
+    field: 'avatar',
+    headerName: 'Avatar',
     ...defaultColumn(),
-    ...coverColumn(),
-    valueGetter: props => {
-      console.log(props);
-      return 'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80';
-    },
+    ...avatarColumn(),
   },
   {
     colId: 'email',
@@ -196,8 +200,11 @@ export const fetchContacts = () => {
       resolve(
         Array.from(Array(100).keys()).map(i => ({
           id: faker.random.uuid(),
+          avatar: faker.image.avatar(),
           email: faker.internet.email(),
           displayName: faker.name.findName(),
+          cover:
+            'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
           value: faker.commerce.price(),
           percent: faker.random.number(),
           createdAt: faker.date.past(),

@@ -1,19 +1,25 @@
-import { getCover, getPrimary, valueRenderer } from '@uidu/table';
+import { valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
+import ItemHeader from './ItemHeader';
 
 export default class Item extends PureComponent<any> {
   render() {
     const { columnIndex, rowIndex, style, data } = this.props;
-    const { items, columnDefs, gutterSize, onItemClick } = data;
+    const {
+      items,
+      columnDefs,
+      gutterSize,
+      onItemClick,
+      primary,
+      cover,
+      avatar,
+    } = data;
     const item = items[rowIndex] && items[rowIndex][columnIndex];
     if (!item) {
       return null;
     }
 
-    console.log(item);
-
-    const primary = getPrimary(columnDefs);
-    const cover = getCover(columnDefs);
+    console.log(avatar);
 
     return (
       <div
@@ -32,35 +38,27 @@ export default class Item extends PureComponent<any> {
         key={item.id}
       >
         <div className="card">
-          {cover && (
-            <div
-              className="card-img-top"
-              style={{
-                height: cover.width ? (cover.width * 3) / 2 : '200px',
-                backgroundSize: 'cover',
-                backgroundPosition: '50% 50%',
-                backgroundImage: `url(${valueRenderer(
-                  item.data[cover.field],
-                  cover,
-                )})`,
-              }}
-            />
-          )}
+          <ItemHeader cover={cover} avatar={avatar} item={item} />
           {primary && (
-            <div className="card-header text-truncate font-weight-bold">
+            <div
+              className="card-header text-truncate border-bottom-0"
+              style={{ fontWeight: 500 }}
+            >
               {valueRenderer(item.data[primary.field], primary)}
             </div>
           )}
-          <div className={primary ? 'card-body pt-1' : 'card-body'}>
+          <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
             <dl className="mb-0">
               {columnDefs
                 .filter(
                   column =>
-                    column.type !== 'cover' && column.type !== 'primary',
+                    column.type !== 'cover' &&
+                    column.type !== 'primary' &&
+                    column.type !== 'avatar',
                 )
                 .map(column => [
                   <dt
-                    className="small text-muted mt-3 text-truncate"
+                    className="small text-muted text-truncate mt-3"
                     key={`${item.id}-${column.field}-name`}
                   >
                     {column.headerComponentParams &&

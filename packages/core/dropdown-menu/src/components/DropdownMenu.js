@@ -31,6 +31,7 @@ export default class DropdownMenu extends Component<
     isMenuFixed: false,
     shouldAllowMultilineItems: false,
     shouldFitContainer: false,
+    shouldFitContent: false,
     shouldFlip: true,
     triggerType: 'default',
     onPositioned: () => {},
@@ -108,6 +109,7 @@ export default class DropdownMenu extends Component<
       isMenuFixed,
       shouldAllowMultilineItems,
       shouldFitContainer,
+      shouldFitContent,
       shouldFlip,
       trigger,
       triggerButtonProps,
@@ -129,6 +131,7 @@ export default class DropdownMenu extends Component<
         isMenuFixed={isMenuFixed}
         shouldAllowMultilineItems={shouldAllowMultilineItems}
         shouldFitContainer={shouldFitContainer}
+        shouldFitContent={shouldFitContent}
         shouldFlip={shouldFlip}
         trigger={trigger}
         triggerButtonProps={triggerButtonProps}

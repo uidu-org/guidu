@@ -19,6 +19,7 @@ export default class Filterer extends Component<FiltererProps> {
     const { onChange, filters, fields } = this.props;
     return (
       <DropdownMenu
+        shouldFitContent
         trigger={
           <Trigger activeBg="#d1f7c4" className="btn">
             <Filter strokeWidth={2} size={14} className="mr-2" />
@@ -67,10 +68,10 @@ export default class Filterer extends Component<FiltererProps> {
                     </div>
                   ))}
                   {!list.length && (
-                    <p className="text-muted">No filters applied</p>
+                    <p className="text-muted">Nessun filtro applicato</p>
                   )}
                   <AddToList
-                    label="Add filter"
+                    label="Aggiungi un filtro"
                     onClick={field => {
                       push({
                         sort: { id: 'asc', name: 'asc' },

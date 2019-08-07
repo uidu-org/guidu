@@ -6,13 +6,11 @@ import {
   Grouper,
   More,
   Resizer,
-  Sharer,
   Sorter,
   Toggler,
   Viewer,
 } from '@uidu/data-controls';
-import { ShellBody } from '@uidu/shell';
-import Spinner from '@uidu/spinner';
+import { ShellBody, ShellBodyWithSpinner } from '@uidu/shell';
 import Table from '@uidu/table';
 import moment from 'moment';
 import React, { Component, Fragment } from 'react';
@@ -153,11 +151,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     const { data, columnDefs, rowHeight } = this.state;
 
     if (!rowData) {
-      return (
-        <ShellBody className="d-flex align-items-center justify-content-center">
-          <Spinner />
-        </ShellBody>
-      );
+      return <ShellBodyWithSpinner />;
     }
 
     const table = (
@@ -165,7 +159,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
         {...viewProps.table}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
-        columnDefs={columnDefs.filter(column => column.type !== 'cover')}
+        columnDefs={columnDefs.filter(
+          column => column.type !== 'cover' && column.type !== 'avatar',
+        )}
         rowData={rowData}
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
@@ -189,13 +185,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     if (currentView.kind === 'calendar') {
       return (
         <Fragment>
-          <LoadableCalendar
-            fallback={
-              <ShellBody className="d-flex align-items-center justify-content-center">
-                <Spinner />
-              </ShellBody>
-            }
-          >
+          <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
             {({ default: Calendar }) => {
               return (
                 <Calendar
@@ -222,13 +212,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     if (currentView.kind === 'list') {
       return (
         <Fragment>
-          <LoadableList
-            fallback={
-              <ShellBody className="d-flex align-items-center justify-content-center">
-                <Spinner />
-              </ShellBody>
-            }
-          >
+          <LoadableList fallback={<ShellBodyWithSpinner />}>
             {({ default: List }) => (
               <ShellBody
                 scrollable
@@ -250,13 +234,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     return (
       <Fragment>
-        <LoadableGallery
-          fallback={
-            <ShellBody className="d-flex align-items-center justify-content-center">
-              <Spinner />
-            </ShellBody>
-          }
-        >
+        <LoadableGallery fallback={<ShellBodyWithSpinner />}>
           {({ default: Gallery }) => (
             <ShellBody
               className={(viewProps.gallery || ({} as any)).className}
@@ -323,7 +301,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
         {currentView.kind === 'table' && (
           <Resizer onResize={this.setRowHeight} />
         )}
-        <Sharer />
+        {/* <Sharer /> */}
         <Finder onChange={this.setSearch} />
         <More
           onDownload={() => this.gridApi.exportDataAsCsv()}

@@ -69,9 +69,8 @@ export default class Basic extends Component<any, any> {
             {renderView({
               viewProps: {
                 gallery: {
-                  className: 'bg-light',
                   gutterSize: 24,
-                  columnCount: 3,
+                  columnCount: 4,
                 },
                 list: {
                   gutterSize: 24,

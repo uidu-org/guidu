@@ -351,7 +351,7 @@ export default class Layer extends Component<Props, State> {
     const opacity = hasExtractedStyles ? {} : { opacity: 0 };
 
     return (
-      <div>
+      <>
         <div
           ref={ref => {
             this.targetRef = ref;
@@ -385,7 +385,7 @@ export default class Layer extends Component<Props, State> {
             {this.props.content}
           </div>
         </ContentContainer>
-      </div>
+      </>
     );
   }
 }

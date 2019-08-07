@@ -1,5 +1,6 @@
 export { default as addressColumn } from './address';
 export { default as attachmentsColumn } from './attachments';
+export { default as avatarColumn } from './avatar';
 export { default as checkboxColumn } from './checkbox';
 export { default as countryColumn } from './country';
 export { default as coverColumn } from './cover';

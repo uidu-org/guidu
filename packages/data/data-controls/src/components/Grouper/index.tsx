@@ -35,7 +35,9 @@ export default class Sorter extends Component<any> {
           <Trigger activeBg="#ede2fe" className="btn" active={!!groupersCount}>
             <Server strokeWidth={2} size={14} className="mr-2" />
             <span style={{ textTransform: 'initial' }}>
-              {groupersCount ? `Grouped by ${groupersCount} fields` : 'Group'}
+              {groupersCount
+                ? `Raggrupati da ${groupersCount} campi`
+                : 'Raggruppa'}
             </span>
           </Trigger>
         }

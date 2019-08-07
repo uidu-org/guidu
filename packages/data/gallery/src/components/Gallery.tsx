@@ -1,4 +1,4 @@
-import { getCover } from '@uidu/table';
+import { getAvatar, getCover, getPrimary } from '@uidu/table';
 import memoize from 'memoize-one';
 import React, { PureComponent } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -7,16 +7,28 @@ import { GalleryProps } from '../types';
 import Item from './Item';
 
 const ITEM_HEADER_HEIGHT = 24;
-const ITEM_COLUMN_ROW = 63;
+const ITEM_COLUMN_ROW = 54;
 const ITEM_PADDING = 48;
 
 const createItemData = memoize(
-  (items, columnDefs, gutterSize, columnCount, onItemClick) => ({
+  (
     items,
     columnDefs,
     gutterSize,
     columnCount,
     onItemClick,
+    primary,
+    cover,
+    avatar,
+  ) => ({
+    items,
+    columnDefs,
+    gutterSize,
+    columnCount,
+    onItemClick,
+    primary,
+    cover,
+    avatar,
   }),
 );
 
@@ -36,6 +48,18 @@ export default class Gallery extends PureComponent<GalleryProps> {
     }, []);
   };
 
+  getGutterSize = ({ avatar, cover }) => {
+    if (cover) {
+      return cover.width ? (cover.width * 3) / 2 : 207;
+    }
+
+    if (avatar) {
+      return 207;
+    }
+
+    return 0;
+  };
+
   render() {
     const {
       rowData,
@@ -46,15 +70,21 @@ export default class Gallery extends PureComponent<GalleryProps> {
     } = this.props;
     const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
     const items = this.chunkData(rowData, columnCount);
+
+    const primary = getPrimary(visibleColumnDefs);
+    const cover = getCover(visibleColumnDefs);
+    const avatar = getAvatar(visibleColumnDefs);
+
     const itemData = createItemData(
       items,
       visibleColumnDefs,
       gutterSize,
       columnCount,
       onItemClick,
+      primary,
+      cover,
+      avatar,
     );
-
-    const cover = getCover(visibleColumnDefs);
 
     return (
       <AutoSizer>
@@ -76,11 +106,13 @@ export default class Gallery extends PureComponent<GalleryProps> {
                 ITEM_COLUMN_ROW *
                   visibleColumnDefs.filter(
                     column =>
-                      column.type !== 'cover' && column.type !== 'primary',
+                      column.type !== 'cover' &&
+                      column.type !== 'primary' &&
+                      column.type !== 'avatar',
                   ).length +
                 ITEM_PADDING +
                 gutterSize +
-                (cover ? (cover.width ? (cover.width * 3) / 2 : 207) : 0) +
+                this.getGutterSize({ avatar, cover }) +
                 2 // borders
               }
               width={width}
