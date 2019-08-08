@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Elements to filter, sort, group data",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,8 +13,8 @@
     "@uidu/docs": "^0.1.30"
   },
   "dependencies": {
-    "@uidu/dropdown-menu": "^0.1.13",
-    "@uidu/droplist": "^0.1.12",
+    "@uidu/dropdown-menu": "^0.1.14",
+    "@uidu/droplist": "^0.1.13",
     "@uidu/form": "^0.1.30",
     "@uidu/item": "^0.1.14",
     "@uidu/select": "^0.1.16",

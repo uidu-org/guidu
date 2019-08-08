@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dropdown-menu",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Creates a dropdown menu, with optional groups, headings, icons, checkbox items, radio group items and disabled items.",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -14,7 +14,7 @@
     "@atlaskit/icon": "^16.0.3",
     "@uidu/analytics": "^0.1.9",
     "@uidu/button": "^0.1.41",
-    "@uidu/droplist": "^0.1.12",
+    "@uidu/droplist": "^0.1.13",
     "@uidu/item": "^0.1.14",
     "@uidu/theme": "^0.1.14",
     "array-find": "^1.0.0",

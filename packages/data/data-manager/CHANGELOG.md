@@ -1,5 +1,10 @@
 # @uidu/data-manager
 
+## 0.1.8
+- [patch] [5ddb7dd](https://github.org/uidu-org/guidu/commits/5ddb7dd):
+
+  - Better dashboard controls and dropdowns
+
 ## 0.1.7
 - [patch] [c01fa16](https://github.org/uidu-org/guidu/commits/c01fa16):
 

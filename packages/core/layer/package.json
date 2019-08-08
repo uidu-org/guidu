@@ -1,6 +1,6 @@
 {
   "name": "@uidu/layer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A React layer component responsible for the position of an element on a page",
   "module": "index.js",
   "uidu:src": "src/index.js",

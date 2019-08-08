@@ -1,5 +1,10 @@
 # @uidu/table
 
+## 0.1.12
+- [patch] [5ddb7dd](https://github.org/uidu-org/guidu/commits/5ddb7dd):
+
+  - Better dashboard controls and dropdowns
+
 ## 0.1.11
 - [patch] [c01fa16](https://github.org/uidu-org/guidu/commits/c01fa16):
 

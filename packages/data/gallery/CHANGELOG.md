@@ -1,5 +1,10 @@
 # @uidu/gallery
 
+## 0.1.9
+- [patch] [5ddb7dd](https://github.org/uidu-org/guidu/commits/5ddb7dd):
+
+  - Better dashboard controls and dropdowns
+
 ## 0.1.8
 - [patch] [d08a049](https://github.org/uidu-org/guidu/commits/d08a049):
 
