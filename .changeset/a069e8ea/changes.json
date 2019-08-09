@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/editor-core", "type": "patch" },
+    { "name": "@uidu/field-textarea", "type": "patch" }
+  ],
+  "dependents": []
+}

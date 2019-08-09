@@ -36,10 +36,14 @@ class FieldTextareaStateless extends Component<any> {
       onChange,
       onKeyDown,
       onKeyUp,
+      rows,
+      cols,
     } = this.props;
 
     return (
       <textarea
+        rows={rows}
+        cols={cols}
         ref={this.element}
         placeholder={placeholder}
         className={className}

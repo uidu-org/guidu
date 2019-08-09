@@ -22,10 +22,17 @@
     "@uidu/spinner": "^0.1.8",
     "@uidu/theme": "^0.1.13",
     "@uidu/tooltip": "^0.1.12",
+    "prosemirror-commands": "^1.0.8",
+    "prosemirror-history": "^1.0.4",
+    "prosemirror-inputrules": "^1.0.4",
+    "prosemirror-keymap": "^1.0.1",
     "prosemirror-model": "^1.7.1",
     "prosemirror-schema-list": "^1.0.3",
     "prosemirror-state": "^1.2.3",
-    "prosemirror-view": "^1.9.10"
+    "prosemirror-tables": "^0.8.1",
+    "prosemirror-utils": "^0.9.2",
+    "prosemirror-view": "^1.9.10",
+    "re-resizable": "^5.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.27",
