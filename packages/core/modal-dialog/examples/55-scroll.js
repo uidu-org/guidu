@@ -1,9 +1,10 @@
 // @flow
-import React, { PureComponent } from 'react';
-import styled from 'styled-components';
-import Lorem from 'react-lorem-component';
 import Button from '@uidu/button';
-import FieldRadioGroup from '@atlaskit/field-radio-group';
+import Form from '@uidu/form';
+import { RadioGroup } from '@uidu/radio';
+import React, { PureComponent } from 'react';
+import Lorem from 'react-lorem-component';
+import styled from 'styled-components';
 import Modal, { ModalTransition } from '../src';
 
 const TallContainer = styled.div`
@@ -12,12 +13,10 @@ const TallContainer = styled.div`
 
 const scrollBehaviors = [
   {
-    name: 'scrollBehavior',
-    value: 'inside',
-    label: 'inside',
-    defaultSelected: true,
+    id: 'inside',
+    name: 'inside',
   },
-  { name: 'scrollBehavior', value: 'outside', label: 'outside' },
+  { name: 'outside', id: 'outside' },
 ];
 
 type State = {
@@ -34,9 +33,9 @@ export default class ExampleScroll extends PureComponent<{}, State> {
   close = () => this.setState({ isOpen: false });
   scrollToBottom = () => this.bottomRef.scrollIntoView(true);
 
-  onScrollBehaviorChange = (e: any) => {
+  onScrollBehaviorChange = (name, value) => {
     this.setState({
-      scrollBehavior: e.target.value,
+      [name]: value,
     });
   };
 
@@ -60,11 +59,15 @@ export default class ExampleScroll extends PureComponent<{}, State> {
           such as <code>scrollIntoView</code> scrolling the window instead of
           only the closest scroll parent will be prevented.
         </p>
-        <FieldRadioGroup
-          items={scrollBehaviors}
-          label="Scroll behavior:"
-          onRadioChange={this.onScrollBehaviorChange}
-        />
+        <Form>
+          <RadioGroup
+            options={scrollBehaviors}
+            label="Scroll behavior:"
+            onChange={this.onScrollBehaviorChange}
+            name="scrollBehavior"
+            value="inside"
+          />
+        </Form>
         <Button onClick={this.open}>Open Modal</Button>
         <ModalTransition>
           {isOpen && (

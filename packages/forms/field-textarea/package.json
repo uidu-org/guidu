@@ -3,6 +3,8 @@
   "version": "0.1.3",
   "description": "Simple Textarea component",
   "main": "index.js",
+  "uidu:src": "index.ts",
+  "types": "index.d.ts",
   "license": "MIT",
   "devDependencies": {
     "@uidu/docs": "^0.1.27",

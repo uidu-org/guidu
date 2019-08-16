@@ -321,20 +321,6 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     componentTestPath: 'dynamic-table/__tests__/Stateless.js',
   },
   {
-    path: 'field-radio-group/src/RadioGroupStateless.js',
-    testPath: 'field-radio-group/src/__tests__/analytics-radio-group.js',
-    actionSubject: 'radioItem',
-    component: 'AkFieldRadioGroup',
-    derivatives: ['RadioGroup'],
-    props: {
-      onRadioChange: 'selected',
-    },
-    attributes: {
-      componentName: 'fieldRadioGroup',
-    },
-    componentTestPath: 'field-radio-group/src/__tests__/RadioGroup.js',
-  },
-  {
     path: 'field-text/src/FieldTextStateless.js',
     testPath: 'field-text/src/__tests__/analytics.js',
     actionSubject: 'textField',

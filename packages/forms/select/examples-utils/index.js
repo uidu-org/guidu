@@ -1,11 +1,11 @@
 import faker from 'faker';
 
-const defaultUsers = Array.from(Array(10)).map(x => ({
+export const defaultUsers = Array.from(Array(10)).map(x => ({
   ...faker.helpers.userCard(),
 }));
 
-const defaultOptions = Array.from(Array(10)).map(x => ({
-  id: faker.lorem.word(),
+export const defaultOptions = Array.from(Array(10)).map(x => ({
+  id: faker.random.uuid(),
   name: faker.lorem.word(),
 }));
 

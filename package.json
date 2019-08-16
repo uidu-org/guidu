@@ -158,7 +158,6 @@
     "@atlaskit/date": "^0.7.0",
     "@atlaskit/editor-json-transformer": "^6.2.0",
     "@atlaskit/editor-markdown-transformer": "^3.1.0",
-    "@atlaskit/field-radio-group": "^4.0.15",
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/inline-dialog": "^9.0.15",
     "@atlaskit/logo": "^9.2.7",
