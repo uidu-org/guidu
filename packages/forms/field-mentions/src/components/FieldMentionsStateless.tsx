@@ -13,6 +13,7 @@ export default class FieldMentionsStateless extends Component<
     placeholder: "Mention people using '@'",
     allowSpaceInQuery: true,
     style: defaultStyle,
+    value: {},
   };
 
   render() {
@@ -40,7 +41,7 @@ export default class FieldMentionsStateless extends Component<
         allowSpaceInQuery={allowSpaceInQuery}
         className={classNames('form-control h-auto', className)}
         suggestionsPortalHost={suggestionsPortalHost}
-        inputRef={this.inputRef}
+        // inputRef={this.inputRef}
       >
         {items.map((item, index) => (
           <Mention

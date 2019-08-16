@@ -10,6 +10,10 @@ import {
 import { WrapperProps } from './types';
 
 export default class Wrapper extends PureComponent<WrapperProps> {
+  static defaultProps = {
+    layout: 'vertical',
+  };
+
   render() {
     const {
       children,
@@ -21,26 +25,19 @@ export default class Wrapper extends PureComponent<WrapperProps> {
       type,
       showErrors,
       required,
-      onChange,
-      // value,
-      ...otherProps
     } = this.props;
 
     if (type === 'hidden') {
       return children;
     }
 
-    // if (addonBefore || addonAfter || buttonBefore || buttonAfter) {
-    //   control = <InputGroup {...this.props}>{control}</InputGroup>;
-    // }
-
     if (floatLabel) {
       return (
         <Row
-          {...this.props}
-          label={null} // so that shouldRenderLabel return false in Row.js
+          label={() => null} // so that shouldRenderLabel return false in Row.js
           required={false} // so that shouldRenderLabel return false in Row.js
           htmlFor={id}
+          {...this.props}
         >
           <FloatLabel htmlFor={id} className="has-float-label">
             {children}
@@ -61,7 +58,7 @@ export default class Wrapper extends PureComponent<WrapperProps> {
     }
 
     return (
-      <Row {...this.props} htmlFor={id}>
+      <Row htmlFor={id} {...this.props}>
         {children}
         {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
         {help ? <Help help={help} /> : null}

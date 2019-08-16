@@ -1,9 +1,13 @@
+import { FieldBaseLayout } from '../../types';
+
 export type RowProps = {
   children: React.ReactNode;
-  fakeLabel: boolean;
-  htmlFor: string;
-  label: React.ReactNode;
-  layout: 'horizontal' | 'vertical' | 'elementOnly';
-  required: boolean;
-  showErrors: boolean;
+  htmlFor?: string;
+  layout?: FieldBaseLayout;
+  label?: React.ReactNode;
+  fakeLabel?: boolean;
+  required?: boolean;
+  showErrors?: boolean;
+  elementWrapperClassName?: string;
+  rowClassName?: string;
 };

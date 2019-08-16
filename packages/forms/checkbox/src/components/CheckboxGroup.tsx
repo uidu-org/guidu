@@ -1,98 +1,53 @@
-import { ErrorMessages, Help, Row } from '@uidu/field-base';
-import classNames from 'classnames';
-import PropTypes from 'prop-types';
+import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import React, { Component } from 'react';
 import { CheckboxGroupProps } from '../types';
+import CheckboxStateless from './CheckboxStateless';
 
-export default class CheckboxGroup extends Component<CheckboxGroupProps> {
-  constructor(props) {
-    super(props);
-    this.elements = {};
-  }
+class CheckboxGroup extends Component<CheckboxGroupProps> {
+  private elements = {};
+
+  static defaultProps = {
+    type: 'stacked',
+    options: [],
+    value: [],
+  };
 
   handleChange = () => {
     const { options, name } = this.props;
+    console.log(this.elements);
     const checkedOptions = options.filter(
-      option => this.elements[option.id].checked,
+      option => this.elements[option.id].current.checked,
     );
     const value = checkedOptions.map(option => option.id);
+    console.log(value);
     this.props.onSetValue(value);
     this.props.onChange(name, value);
   };
 
-  renderElement = () => {
-    const controls = this.props.options.map(checkbox => {
-      const checked = this.props.value.indexOf(checkbox.id) !== -1;
-      const disabled = checkbox.disabled || this.props.disabled;
-      return (
-        <div
-          className={classNames(
-            'custom-control custom-checkbox',
-            this.props.className,
-          )}
-          key={[this.props.id, checkbox.id].join('-')}
-        >
-          <input
-            {...this.props}
-            className="custom-control-input"
-            id={[this.props.id, checkbox.id].join('-')}
-            ref={c => {
-              this.elements[checkbox.id] = c;
-            }}
-            checked={checked}
-            type="checkbox"
-            value={checkbox.id}
-            onChange={this.handleChange}
-            disabled={disabled}
-          />
-          <label
-            className="custom-control-label"
-            htmlFor={[this.props.id, checkbox.id].join('-')}
-          >
-            {checkbox.label || checkbox.name}
-          </label>
-        </div>
-      );
-    });
-    if (this.props.type === 'stacked') {
-      return <div className="custom-controls-stacked">{controls}</div>;
-    }
-    return controls;
-  };
-
   render() {
-    const element = this.renderElement();
-
-    if (this.props.layout === 'elementOnly') {
-      return <div>{element}</div>;
-    }
+    const { options, value } = this.props;
 
     return (
-      <Row {...this.props} fakeLabel>
-        {element}
-        {this.props.help ? <Help help={this.props.help} /> : null}
-        {this.props.showErrors ? (
-          <ErrorMessages messages={this.props.errorMessages} />
-        ) : null}
-      </Row>
+      <Wrapper {...this.props}>
+        {options.map(option => (
+          <CheckboxStateless
+            ref={(c: any) => {
+              if (c) {
+                this.elements[option.id] = c.element;
+              }
+            }}
+            key={option.id}
+            id={option.id}
+            value={option.id}
+            label={option.name}
+            name={name}
+            checked={value.indexOf(option.id) >= 0}
+            onChange={this.handleChange}
+          />
+        ))}
+      </Wrapper>
     );
   }
 }
 
-CheckboxGroup.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      disabled: PropTypes.bool,
-      value: PropTypes.string,
-      label: PropTypes.string,
-    }),
-  ),
-  value: PropTypes.arrayOf(PropTypes.number),
-  type: PropTypes.oneOf(['inline', 'stacked']),
-};
-
-CheckboxGroup.defaultProps = {
-  type: 'stacked',
-  options: [],
-  value: [],
-};
+export default ComponentHOC(CheckboxGroup);

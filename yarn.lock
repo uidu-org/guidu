@@ -331,18 +331,6 @@
     url "^0.11.0"
     uuid "^3.1.0"
 
-"@atlaskit/field-base@^11.0.14":
-  version "11.0.15"
-  resolved "https://registry.yarnpkg.com/@atlaskit/field-base/-/field-base-11.0.15.tgz#bd06931a462bbe2ad4e9222f39b1734762f47342"
-  integrity sha512-Zlp/y5WaZsKoh377tUujB1xHsZvxSkOfvT5sUoKVlwTK4dYRnIg3uSteuAXPgn6YvuxCa4lVL/QwOlQ3+zpS1A==
-  dependencies:
-    "@atlaskit/icon" "^16.0.0"
-    "@atlaskit/inline-dialog" "^9.0.14"
-    "@atlaskit/spinner" "^9.0.13"
-    "@atlaskit/theme" "^7.0.1"
-    "@babel/runtime" "^7.0.0"
-    babel-runtime "^6.26.0"
-
 "@atlaskit/field-base@^13.0.7", "@atlaskit/field-base@^13.0.9":
   version "13.0.9"
   resolved "https://registry.yarnpkg.com/@atlaskit/field-base/-/field-base-13.0.9.tgz#80ddeee306a88e8d36af8a274394d8b9b00dc925"
@@ -352,17 +340,6 @@
     "@atlaskit/inline-dialog" "^12.0.10"
     "@atlaskit/spinner" "^12.0.1"
     "@atlaskit/theme" "^9.1.1"
-    "@babel/runtime" "^7.0.0"
-
-"@atlaskit/field-radio-group@^4.0.15":
-  version "4.0.15"
-  resolved "https://registry.yarnpkg.com/@atlaskit/field-radio-group/-/field-radio-group-4.0.15.tgz#ca80b854e9cedc96433b61268e9934bb7fb19bc7"
-  integrity sha512-3p9SCgJ0rm3FV9F+Ot2zFHBcUCFir5Hx41muBAd6bDRHiEWnqo2TOmsgNLpgetXSDuIEUNJs1qQhrnB46qfEcw==
-  dependencies:
-    "@atlaskit/analytics-next" "^3.1.2"
-    "@atlaskit/field-base" "^11.0.14"
-    "@atlaskit/icon" "^16.0.0"
-    "@atlaskit/theme" "^7.0.1"
     "@babel/runtime" "^7.0.0"
 
 "@atlaskit/field-range@^7.0.4":
@@ -399,7 +376,7 @@
     shallow-equal "^1.0.0"
     tiny-invariant "^0.0.3"
 
-"@atlaskit/icon@^16.0.0", "@atlaskit/icon@^16.0.3", "@atlaskit/icon@^16.0.9":
+"@atlaskit/icon@^16.0.3", "@atlaskit/icon@^16.0.9":
   version "16.0.9"
   resolved "https://registry.yarnpkg.com/@atlaskit/icon/-/icon-16.0.9.tgz#4dff47273165671e907f78835c984cff29c4a98e"
   integrity sha512-1gWuWgBsX6XZwX12iAPjoU0B0na92BZuCG0k8vHAIHJnhrgFpMJP7bqqV1IEob39qgbahk/4G9zagLBaNHWxoQ==
@@ -429,7 +406,7 @@
     react-node-resolver "^1.0.1"
     tslib "^1.9.3"
 
-"@atlaskit/inline-dialog@^9.0.14", "@atlaskit/inline-dialog@^9.0.15":
+"@atlaskit/inline-dialog@^9.0.15":
   version "9.0.15"
   resolved "https://registry.yarnpkg.com/@atlaskit/inline-dialog/-/inline-dialog-9.0.15.tgz#e8c5bdd530aecba0226f74ae9169902b8e5cb4d9"
   integrity sha512-MxhL2hfvvJE+db4gcXt794ljGdhL0SJJRkhIF5b1Eo6ZXvBSfZCvN9xxXy2VzIWOSL35oVAvKn54zlwo+YMnJQ==
@@ -731,16 +708,6 @@
     "@babel/runtime" "^7.0.0"
     react-transition-group "^2.2.1"
     tslib "^1.9.3"
-
-"@atlaskit/spinner@^9.0.13":
-  version "9.0.13"
-  resolved "https://registry.yarnpkg.com/@atlaskit/spinner/-/spinner-9.0.13.tgz#030005c51a8acab842ce0771e16fe8c6cc7d585a"
-  integrity sha512-EA5weoo1lftixC1oxVT1ePNCWATNaWETrAwOf6uuj/fpPTXjZ5HEwbgddlyCLVZ3vcljpXFTwmM1Nj24sGnrdg==
-  dependencies:
-    "@atlaskit/theme" "^7.0.1"
-    "@babel/runtime" "^7.0.0"
-    babel-runtime "^6.26.0"
-    react-transition-group "^2.2.1"
 
 "@atlaskit/status@^0.9.2":
   version "0.9.8"
@@ -9971,13 +9938,21 @@ format@^0.2.2:
   resolved "https://registry.yarnpkg.com/format/-/format-0.2.2.tgz#d6170107e9efdc4ed30c9dc39016df942b5cb58b"
   integrity sha1-1hcBB+nv3E7TDJ3DkBbflCtctYs=
 
-formsy-react@^1.0.0, formsy-react@^1.1.5:
+formsy-react@^1.0.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/formsy-react/-/formsy-react-1.1.5.tgz#ee0911bb70712eb6fb9924d56fdb974a19006955"
   integrity sha512-nNWe4Vbp6aDQ/zSxJ7gVQgD5+avFRVbydcjA2Om42flxpQFrKE54AAbuyEj3Jvv+2b9LVl+WLMAPalyvLjwNcQ==
   dependencies:
     form-data-to-object "^0.2.0"
     prop-types "^15.5.10"
+
+formsy-react@^2.0.0-beta.3:
+  version "2.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/formsy-react/-/formsy-react-2.0.0-beta.4.tgz#14c95f26c2d607f1d1a447362680e73a692d20b3"
+  integrity sha512-6o42LbZ6IO8UQIBGQaOoo0yjYfr1rDSv2fKNgRXZHQTGWoZU8vnBe7RttCCIxYp5AeTO67A86SGiAmsKsqh+/A==
+  dependencies:
+    form-data-to-object "^0.2.0"
+    prop-types "^15.7.2"
 
 forwarded@~0.1.2:
   version "0.1.2"
@@ -13986,7 +13961,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:

@@ -1,16 +1,21 @@
-import { Node } from 'react';
+import { FieldBaseProps } from '@uidu/field-base';
 
-export type CheckboxGroupProps = {
-  options: Array<any>;
+export type CheckboxGroupOptionsProps = {
+  id: string;
+  name: string | React.ReactNode;
+  label?: string | React.ReactNode;
+  disabled?: boolean;
 };
 
-export type CheckboxProps = {
+export type CheckboxGroupProps = FieldBaseProps & {
+  options: Array<CheckboxGroupOptionsProps>;
+};
+
+export type CheckboxProps = FieldBaseProps & {
   /** Sets whether the checkbox begins checked. */
   defaultChecked: boolean;
   /** id assigned to input */
   id: string;
-  /** Callback to receive a reference.  */
-  inputRef?: (input: HTMLInputElement) => any;
   /** Sets whether the checkbox is checked or unchecked. */
   isChecked?: boolean;
   /** Sets whether the checkbox is disabled. */
@@ -23,13 +28,10 @@ export type CheckboxProps = {
   /** Marks the field as required & changes the label style. */
   isRequired?: boolean;
   /** The label to be displayed to the right of the checkbox. The label is part
+   label?: React.ReactNode | string;
    of the clickable element to select the checkbox. */
-  label?: Node | string;
   /** The name of the submitted field in a checkbox. */
   name?: string;
-  /** Function that is called whenever the state of the checkbox changes. It will
-   be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
-  onChange?: (name: string, value: boolean) => any;
   /** The value to be used in the checkbox input. This is the value that will be returned on form submission. */
   value?: number | string;
 };

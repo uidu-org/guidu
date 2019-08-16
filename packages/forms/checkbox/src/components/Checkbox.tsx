@@ -26,8 +26,6 @@ class Checkbox extends PureComponent<CheckboxProps> {
       ...otherProps
     } = this.props;
 
-    console.log(value);
-
     return (
       <Wrapper {...this.props}>
         <InputControl
