@@ -1,4 +1,3 @@
-// @flow
 import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
 import Checkbox from '../src';

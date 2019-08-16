@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { withFormsy } from 'formsy-react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import shortid from 'shortid';
-import { styleClassNames } from './prop-types';
 
 // Component HOC
 // -------------
@@ -17,6 +16,16 @@ import { styleClassNames } from './prop-types';
 // basis.
 const FormsyReactComponent = ComposedComponent => {
   class ComponentHOC extends Component {
+    static defaultProps = {
+      disabled: false,
+      id: null,
+      label: null,
+      help: null,
+      layout: 'vertical',
+      validateOnSubmit: true,
+      validatePristine: false,
+    };
+
     // Use the following value for layout:
     // 1. layout prop (if supplied)
     // 2. [else] layout context (if defined)
@@ -172,50 +181,50 @@ const FormsyReactComponent = ComposedComponent => {
     setValue: PropTypes.func.isRequired,
   };
 
-  ComponentHOC.propTypes = {
-    ...formsyPropTypes,
-    ...styleClassNames,
+  // ComponentHOC.propTypes = {
+  //   ...formsyPropTypes,
+  //   ...styleClassNames,
 
-    name: PropTypes.string.isRequired,
-    disabled: PropTypes.bool,
+  //   name: PropTypes.string.isRequired,
+  //   disabled: PropTypes.bool,
 
-    // Not used here, but composed components expect this to be a string.
-    help: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-      PropTypes.object,
-    ]),
+  //   // Not used here, but composed components expect this to be a string.
+  //   help: PropTypes.oneOfType([
+  //     PropTypes.string,
+  //     PropTypes.node,
+  //     PropTypes.object,
+  //   ]),
 
-    id: PropTypes.string,
-    label: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.node,
-      PropTypes.object,
-    ]),
+  //   id: PropTypes.string,
+  //   label: PropTypes.oneOfType([
+  //     PropTypes.string,
+  //     PropTypes.node,
+  //     PropTypes.object,
+  //   ]),
 
-    layout: PropTypes.string,
+  //   layout: PropTypes.string,
 
-    // * validateOnSubmit
-    // * validatePristine
-    //
-    // Neither of these props actually stop the validations from running,
-    // they just determine whether the error messages should be shown on
-    // components or not.
+  //   // * validateOnSubmit
+  //   // * validatePristine
+  //   //
+  //   // Neither of these props actually stop the validations from running,
+  //   // they just determine whether the error messages should be shown on
+  //   // components or not.
 
-    // Whether to hide validation errors on components before the form is
-    // submitted.
-    validateOnSubmit: PropTypes.bool,
+  //   // Whether to hide validation errors on components before the form is
+  //   // submitted.
+  //   validateOnSubmit: PropTypes.bool,
 
-    // Whether to show validation errors on pristine (untouched) components.
-    validatePristine: PropTypes.bool,
-  };
+  //   // Whether to show validation errors on pristine (untouched) components.
+  //   validatePristine: PropTypes.bool,
+  // };
 
-  ComponentHOC.contextTypes = {
-    ...styleClassNames,
-    layout: PropTypes.string,
-    validateOnSubmit: PropTypes.bool,
-    validatePristine: PropTypes.bool,
-  };
+  // ComponentHOC.contextTypes = {
+  //   ...styleClassNames,
+  //   layout: PropTypes.string,
+  //   validateOnSubmit: PropTypes.bool,
+  //   validatePristine: PropTypes.bool,
+  // };
 
   // * elementWrapperClassName
   // * labelClassName
@@ -225,15 +234,6 @@ const FormsyReactComponent = ComposedComponent => {
   // * layout (See getLayout, defaults to 'horizontal')
   // * validatePristine: (See getValidatePristine, defaults to 'false'),
   // * validateOnSubmit: (See getValidateOnSubmit, defaults to 'false'),
-  ComponentHOC.defaultProps = {
-    disabled: false,
-    id: null,
-    label: null,
-    help: null,
-    layout: 'vertical',
-    validateOnSubmit: true,
-    validatePristine: false,
-  };
 
   return withFormsy(ComponentHOC);
 };

@@ -1,4 +1,3 @@
-// @flow
 import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 
@@ -15,7 +14,7 @@ export default md`
   ${(
     <Example
       packageName="@uidu/checkbox"
-      Component={require('../examples/00-basic-usage.js').default}
+      Component={require('../examples/00-basic-usage').default}
       title="Basic"
       source={require('!!raw-loader!../examples/00-basic-usage')}
     />
@@ -40,11 +39,17 @@ ${(
 )}
 
 #### Checkbox Props
-${<Props props={require('!!extract-react-types-loader!../src/Checkbox')} />}
+${(
+  <Props
+    props={require('!!extract-react-types-loader!../src/components/Checkbox')}
+  />
+)}
 
 #### CheckboxGroup Props
 ${(
-  <Props props={require('!!extract-react-types-loader!../src/CheckboxGroup')} />
+  <Props
+    props={require('!!extract-react-types-loader!../src/components/CheckboxGroup')}
+  />
 )}
 
 

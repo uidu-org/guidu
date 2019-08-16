@@ -6,8 +6,6 @@ class RadioGroup extends PureComponent<any> {
   private element = React.createRef();
 
   static defaultProps = {
-    // ...ComponentCommon.defaultProps,
-    // value: '',
     isInline: false,
     onBlur: () => {},
     onChange: () => {},

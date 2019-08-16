@@ -5,6 +5,7 @@
   "module": "index.js",
   "uidu:src": "src/index",
   "author": "uidu",
+  "sideEffects": false,
   "license": "ISC",
   "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {

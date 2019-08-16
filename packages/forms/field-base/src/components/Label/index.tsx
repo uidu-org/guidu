@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import RequiredSymbol from './RequiredSymbol';
+import React from 'react';
+import RequiredSymbol from '../RequiredSymbol';
+import { LabelProps } from './types';
 
-const Label = props => {
+const Label = (props: LabelProps) => {
   const { layout, label, htmlFor, labelClassName, fakeLabel, required } = props;
 
   if (layout === 'elementOnly') {
@@ -44,19 +44,6 @@ Label.defaultProps = {
   required: false,
   label: null,
   htmlFor: null,
-};
-
-Label.propTypes = {
-  fakeLabel: PropTypes.bool,
-  htmlFor: PropTypes.string,
-  label: PropTypes.node,
-  labelClassName: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.array,
-    PropTypes.object,
-  ]),
-  layout: PropTypes.oneOf(['horizontal', 'vertical', 'elementOnly']),
-  required: PropTypes.bool,
 };
 
 export default Label;

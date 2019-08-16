@@ -1,8 +1,8 @@
-import { ComponentCommon, ErrorMessages, Help, Row } from '@uidu/field-base';
+import { ErrorMessages, Help, Row } from '@uidu/field-base';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import { CheckboxGroupProps } from './types';
+import { CheckboxGroupProps } from '../types';
 
 export default class CheckboxGroup extends Component<CheckboxGroupProps> {
   constructor(props) {
@@ -21,24 +21,6 @@ export default class CheckboxGroup extends Component<CheckboxGroupProps> {
   };
 
   renderElement = () => {
-    const inputProps = Object.assign({}, this.props);
-
-    Object.keys(ComponentCommon.propTypes).forEach(key => {
-      delete inputProps[key];
-    });
-
-    delete inputProps.addonAfter;
-    delete inputProps.addonBefore;
-    delete inputProps.buttonAfter;
-    delete inputProps.buttonBefore;
-    delete inputProps.debounce;
-    delete inputProps.updateOn;
-    delete inputProps.value;
-    delete inputProps.onBlur;
-    delete inputProps.isPristine;
-    delete inputProps.showErrors;
-    delete inputProps.options;
-
     const controls = this.props.options.map(checkbox => {
       const checked = this.props.value.indexOf(checkbox.id) !== -1;
       const disabled = checkbox.disabled || this.props.disabled;
@@ -51,7 +33,7 @@ export default class CheckboxGroup extends Component<CheckboxGroupProps> {
           key={[this.props.id, checkbox.id].join('-')}
         >
           <input
-            {...inputProps}
+            {...this.props}
             className="custom-control-input"
             id={[this.props.id, checkbox.id].join('-')}
             ref={c => {
@@ -98,7 +80,6 @@ export default class CheckboxGroup extends Component<CheckboxGroupProps> {
 }
 
 CheckboxGroup.propTypes = {
-  ...ComponentCommon.propTypes,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       disabled: PropTypes.bool,
@@ -111,7 +92,6 @@ CheckboxGroup.propTypes = {
 };
 
 CheckboxGroup.defaultProps = {
-  ...ComponentCommon.defaultProps,
   type: 'stacked',
   options: [],
   value: [],

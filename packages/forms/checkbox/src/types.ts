@@ -1,41 +1,35 @@
-// @flow
-
-import { type Node, type Element, Component } from 'react';
-
-export type ChildrenType = Node;
-export type ComponentType = Component<*, *>;
-export type ElementType = Element<*>;
+import { Node } from 'react';
 
 export type CheckboxGroupProps = {
-  options: Array,
+  options: Array<any>;
 };
 
 export type CheckboxProps = {
   /** Sets whether the checkbox begins checked. */
-  defaultChecked: boolean,
+  defaultChecked: boolean;
   /** id assigned to input */
-  id: string,
+  id: string;
   /** Callback to receive a reference.  */
-  inputRef?: (input: ?HTMLInputElement) => mixed,
+  inputRef?: (input: HTMLInputElement) => any;
   /** Sets whether the checkbox is checked or unchecked. */
-  isChecked?: boolean,
+  isChecked?: boolean;
   /** Sets whether the checkbox is disabled. */
-  isDisabled?: boolean,
+  isDisabled?: boolean;
   /** Sets whether the checkbox is indeterminate. This only affects the
    style and does not modify the isChecked property. */
-  isIndeterminate?: boolean,
+  isIndeterminate?: boolean;
   /** Marks the field as invalid. Changes style of unchecked component. */
-  isInvalid?: boolean,
+  isInvalid?: boolean;
   /** Marks the field as required & changes the label style. */
-  isRequired?: boolean,
+  isRequired?: boolean;
   /** The label to be displayed to the right of the checkbox. The label is part
    of the clickable element to select the checkbox. */
-  label?: Node | string,
+  label?: Node | string;
   /** The name of the submitted field in a checkbox. */
-  name?: string,
+  name?: string;
   /** Function that is called whenever the state of the checkbox changes. It will
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
-  onChange?: (name: string, value: boolean) => mixed,
+  onChange?: (name: string, value: boolean) => any;
   /** The value to be used in the checkbox input. This is the value that will be returned on form submission. */
-  value?: number | string,
+  value?: number | string;
 };

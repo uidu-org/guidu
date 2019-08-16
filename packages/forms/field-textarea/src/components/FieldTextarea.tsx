@@ -6,8 +6,6 @@ class FieldTextarea extends PureComponent<any> {
   private element = React.createRef();
 
   static defaultProps = {
-    // ...ComponentCommon.defaultProps,
-    // value: '',
     floatLabel: null,
     onBlur: () => {},
     onChange: () => {},

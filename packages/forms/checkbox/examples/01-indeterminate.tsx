@@ -1,6 +1,5 @@
-// @flow
-import React, { PureComponent } from 'react';
 import { Form } from '@uidu/form';
+import React, { PureComponent } from 'react';
 import { Checkbox } from '../src/index';
 
 const getCheckedChildrenCount = checkedItems => {

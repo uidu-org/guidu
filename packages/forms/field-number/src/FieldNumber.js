@@ -1,14 +1,13 @@
 // @flow
 
-import React, { PureComponent } from 'react';
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import React, { PureComponent } from 'react';
 import InputControl from './FieldNumberStateless';
 
 import type { FieldNumberProps } from './types';
 
 class FieldNumber extends PureComponent<FieldNumberProps> {
   static defaultProps = {
-    // ...ComponentCommon.defaultProps,
     type: 'tel',
     value: '',
     floatLabel: null,

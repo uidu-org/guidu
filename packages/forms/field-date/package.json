@@ -1,9 +1,10 @@
 {
   "name": "@uidu/field-date",
   "version": "0.1.1",
-  "main": "index.js",
   "uidu:src": "index.ts",
+  "module": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
   "license": "MIT",
   "dependencies": {
     "@uidu/analytics": "^0.1.8",

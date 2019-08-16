@@ -1,9 +1,8 @@
 // @flow
 
-import React, { Component } from 'react';
-import debounce from 'lodash/debounce';
-
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import debounce from 'lodash/debounce';
+import React, { Component } from 'react';
 import InputControl from './FieldTextStateless';
 
 import type { FieldTextProps } from './types';
@@ -11,7 +10,6 @@ import type { FieldTextProps } from './types';
 class FieldText extends Component<FieldTextProps> {
   static defaultProps = {
     component: InputControl,
-    // ...ComponentCommon.defaultProps,
     type: 'text',
     value: '',
     floatLabel: null,

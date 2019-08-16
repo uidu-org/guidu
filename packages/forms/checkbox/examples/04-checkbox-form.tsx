@@ -1,8 +1,7 @@
-// @flow
-import React, { PureComponent } from 'react';
 import Button from '@uidu/button';
 import { Form } from '@uidu/form';
-import { Checkbox } from '../src/index';
+import React, { PureComponent } from 'react';
+import Checkbox, { CheckboxGroup } from '..';
 
 const formTestUrl = '//httpbin.org/get';
 
@@ -28,20 +27,13 @@ export default class CheckboxGroupExample extends PureComponent<void> {
           </p>
 
           <span>
-            <Checkbox
-              label="Same Name - One"
-              value="Same Name - One"
+            <CheckboxGroup
               name="same-name"
-            />
-            <Checkbox
-              label="Same Name - Two"
-              value="Same Name - Two"
-              name="same-name"
-            />
-            <Checkbox
-              label="Same Name - Three"
-              value="Same Name - Three"
-              name="same-name"
+              options={[
+                { name: 'Same Name - One', id: 'Same Name - One' },
+                { name: 'Same Name - Two', id: 'Same Name - Two' },
+                { name: 'Same Name - Three', id: 'Same Name - Three' },
+              ]}
             />
           </span>
           <p>

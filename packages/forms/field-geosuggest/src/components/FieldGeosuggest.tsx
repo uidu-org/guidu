@@ -535,13 +535,7 @@ class FieldGeosuggest extends PureComponent<any, any> {
   }
 }
 
-// InputGeosuggest.propTypes = {
-//   ...ComponentCommon.propTypes,
-//   value: PropTypes.string,
-// };
-
 // InputGeosuggest.defaultProps = {
-//   ...ComponentCommon.defaultProps,
 //   value: '',
 //   formatAddressFromCoordinates: ({ locality }) =>
 //     locality ? locality.long_name : '',

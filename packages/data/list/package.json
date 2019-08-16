@@ -1,7 +1,6 @@
 {
   "name": "@uidu/list",
   "version": "0.1.5",
-  "main": "index.js",
   "description": "React component to show data items as calendar",
   "uidu:src": "index.ts",
   "module": "index.js",

@@ -2,9 +2,10 @@
   "name": "@uidu/radio",
   "version": "0.1.0",
   "description": "Radio component for forms",
-  "main": "index.js",
   "uidu:src": "index.ts",
+  "module": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
   "license": "MIT",
   "devDependencies": {
     "@uidu/docs": "^0.1.30",

@@ -6,9 +6,10 @@ import {
   Icon,
   RequiredSymbol,
   Row,
-} from './index';
+} from '../../index';
+import { WrapperProps } from './types';
 
-export default class Wrapper extends PureComponent {
+export default class Wrapper extends PureComponent<WrapperProps> {
   render() {
     const {
       children,

@@ -2,11 +2,12 @@
   "name": "@uidu/field-image-uploader",
   "version": "0.1.0",
   "description": "An image uploader with preview",
-  "main": "index.js",
   "uidu:src": "index.ts",
+  "module": "index.js",
   "types": "index.d.ts",
   "license": "MIT",
   "private": false,
+  "sideEffects": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.30",
     "@uidu/form": "^0.1.30"

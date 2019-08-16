@@ -1,26 +1,24 @@
 // @flow
 
-import React, { Component } from 'react';
-import debounce from 'lodash/debounce';
-
 import {
   ComponentHOC,
   ErrorMessages,
   Help,
   Icon,
-  Row,
   RequiredSymbol,
+  Row,
 } from '@uidu/field-base';
+import debounce from 'lodash/debounce';
+import React, { Component } from 'react';
 import InputControl from './FieldMonthStateless';
-
 import FloatLabel from './styled/FloatLabel';
+
 // import InputGroup from './input-group';
 
 import type { FieldMonthProps } from './types';
 
 class FieldMonth extends Component<FieldMonthProps> {
   static defaultProps = {
-    // ...ComponentCommon.defaultProps,
     type: 'text',
     value: '',
     floatLabel: null,
@@ -152,7 +150,6 @@ export default ComponentHOC(FieldMonth);
 // FieldMonth.propTypes = {
 //   ...InputControl.propTypes,
 //   // ...inputGroupPropTypes,
-//   ...ComponentCommon.propTypes,
 //   debounce: PropTypes.shape({
 //     blur: PropTypes.number,
 //     change: PropTypes.number,

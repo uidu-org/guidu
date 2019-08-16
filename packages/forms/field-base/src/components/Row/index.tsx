@@ -1,9 +1,9 @@
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import React from 'react';
-import Label from './Label';
+import Label from '../Label';
+import { RowProps } from './types';
 
-const Row = props => {
+const Row = (props: RowProps) => {
   const {
     elementWrapperClassName,
     required,
@@ -57,17 +57,6 @@ const Row = props => {
       {element}
     </div>
   );
-};
-
-Row.propTypes = {
-  // ...styleClassNames,
-  children: PropTypes.node,
-  fakeLabel: PropTypes.bool,
-  htmlFor: PropTypes.string,
-  label: PropTypes.node,
-  layout: PropTypes.oneOf(['horizontal', 'vertical', 'elementOnly']),
-  required: PropTypes.bool,
-  showErrors: PropTypes.bool,
 };
 
 Row.defaultProps = {

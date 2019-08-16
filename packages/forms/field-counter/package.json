@@ -9,6 +9,7 @@
   "author": "uidu",
   "license": "MIT",
   "private": false,
+  "sideEffects": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.27",
     "@uidu/form": "^0.1.28"

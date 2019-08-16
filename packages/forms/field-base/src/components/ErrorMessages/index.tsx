@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { ErrorMessagesProps } from './types';
 
-export default function ErrorMessages({ messages }) {
+export default function ErrorMessages({ messages = [] }: ErrorMessagesProps) {
   return (
     <div className="invalid-feedback">
       {messages.map((message, key) => (
@@ -12,11 +12,3 @@ export default function ErrorMessages({ messages }) {
     </div>
   );
 }
-
-ErrorMessages.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.string),
-};
-
-ErrorMessages.defaultProps = {
-  messages: [],
-};

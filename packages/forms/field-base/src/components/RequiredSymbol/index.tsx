@@ -1,16 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { RequiredSymbolProps } from './types';
 
-const RequiredSymbol = props => {
+const RequiredSymbol = (props: RequiredSymbolProps) => {
   if (props.required === false) {
     return null;
   }
   return <span className="required-symbol">{props.symbol}</span>;
-};
-
-RequiredSymbol.propTypes = {
-  required: PropTypes.bool.isRequired,
-  symbol: PropTypes.node,
 };
 
 RequiredSymbol.defaultProps = {

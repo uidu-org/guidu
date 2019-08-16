@@ -5,6 +5,7 @@
   "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
+  "sideEffects": false,
   "repository": "https://github.com/uidu-org/guidu",
   "author": "uidu",
   "license": "MIT",

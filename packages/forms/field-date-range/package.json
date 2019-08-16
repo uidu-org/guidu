@@ -1,8 +1,11 @@
 {
   "name": "@uidu/field-date-range",
   "version": "0.1.1",
-  "main": "index.js",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
   "license": "MIT",
+  "sideEffects": false,
   "dependencies": {
     "@uidu/analytics": "^0.1.8",
     "@uidu/field-base": "^0.1.34",
