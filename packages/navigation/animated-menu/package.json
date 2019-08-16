@@ -1,6 +1,6 @@
 {
   "name": "@uidu/animated-menu",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Animated menu like Stripe",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.25"
+    "@uidu/docs": "^0.1.31"
   },
   "dependencies": {
     "classnames": "^2.2.6",

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-viewer",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "MediaViewer is Atlassian's powerful solution for viewing files on the web. It's both powerful and extendable yet easy-to-integrate",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -32,7 +32,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.29",
+    "@uidu/docs": "^0.1.31",
     "@uidu/media-card": "^0.1.15",
     "react-dom": "^16.4.0",
     "react-intl": "^3.1.7"

@@ -1,5 +1,10 @@
 # @uidu/animated-menu
 
+## 0.1.6
+- [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
+
+  - Update react-intl, fix editor-core dependencies
+
 ## 0.1.5
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

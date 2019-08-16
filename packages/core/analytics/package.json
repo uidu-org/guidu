@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "The uidu component analytics framework",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@uidu/button": "^0.1.41",
-    "@uidu/docs": "^0.1.30",
+    "@uidu/docs": "^0.1.31",
     "@uidu/field-text": "^0.1.14",
     "lodash.isequal": "^4.5.0",
     "react-dom": "^16.4.0",

@@ -1,5 +1,10 @@
 # @uidu/editor-core
 
+## 0.1.3
+- [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
+
+  - Update react-intl, fix editor-core dependencies
+
 ## 0.1.2
 - [patch] [5f78d0f](https://github.org/uidu-org/guidu/commits/5f78d0f):
 

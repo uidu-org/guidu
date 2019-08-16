@@ -1,5 +1,10 @@
 # @uidu/devise
 
+## 0.1.4
+- [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
+
+  - Update react-intl, fix editor-core dependencies
+
 ## 0.1.3
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 

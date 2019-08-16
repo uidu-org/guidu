@@ -1,5 +1,10 @@
 # @uidu/media-viewer
 
+## 0.1.19
+- [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
+
+  - Update react-intl, fix editor-core dependencies
+
 ## 0.1.18
 - [patch] [c19b728](https://github.org/uidu-org/guidu/commits/c19b728):
 

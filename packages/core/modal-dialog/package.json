@@ -1,6 +1,6 @@
 {
   "name": "@uidu/modal-dialog",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
   "module": "index.js",
   "uidu:src": "src/index.js",
@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/analytics": "^0.1.9",
+    "@uidu/analytics": "^0.1.10",
     "@uidu/blanket": "^0.1.10",
     "@uidu/button": "^0.1.41",
-    "@uidu/form": "^0.1.30",
+    "@uidu/form": "^0.1.31",
     "@uidu/portal": "^0.1.8",
     "@uidu/theme": "^0.1.14",
     "exenv": "^1.2.2",
@@ -35,10 +35,10 @@
     "@atlaskit/inline-dialog": "^9.0.15",
     "@uidu/avatar": "^0.2.15",
     "@uidu/checkbox": "^0.1.45",
-    "@uidu/docs": "^0.1.30",
+    "@uidu/docs": "^0.1.31",
     "@uidu/field-text": "^0.1.14",
     "@uidu/radio": "^0.1.0",
-    "@uidu/select": "^0.1.16",
+    "@uidu/select": "^0.1.17",
     "react-beautiful-dnd": "^11.0.0",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"
