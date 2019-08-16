@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.17
+- [patch] [4208f90](https://github.org/uidu-org/guidu/commits/4208f90):
+
+  - Bump dependencies, added @uidu/radio"
+
 ## 0.1.16
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

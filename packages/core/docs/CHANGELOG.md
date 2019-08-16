@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.31
+- [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
+
+  - Update react-intl, fix editor-core dependencies
+
 ## 0.1.30
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

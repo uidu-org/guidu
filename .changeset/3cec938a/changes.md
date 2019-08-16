@@ -1,1 +1,0 @@
-- Update react-intl, fix editor-core dependencies

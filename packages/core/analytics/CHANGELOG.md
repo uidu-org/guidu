@@ -1,5 +1,10 @@
 # @uidu/analytics
 
+## 0.1.10
+- [patch] [4208f90](https://github.org/uidu-org/guidu/commits/4208f90):
+
+  - Bump dependencies, added @uidu/radio"
+
 ## 0.1.9
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

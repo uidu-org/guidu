@@ -1,9 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/analytics", "type": "patch" },
-    { "name": "@uidu/modal-dialog", "type": "patch" },
-    { "name": "@uidu/field-textarea", "type": "patch" },
-    { "name": "@uidu/select", "type": "patch" }
-  ],
-  "dependents": []
-}
