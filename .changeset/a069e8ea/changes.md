@@ -1,1 +1,0 @@
-- Added rows and columns to textarea, missing dependencies for editor-core WIP

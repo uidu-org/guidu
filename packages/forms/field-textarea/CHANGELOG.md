@@ -1,5 +1,10 @@
 # @uidu/field-textarea
 
+## 0.1.3
+- [patch] [5f78d0f](https://github.org/uidu-org/guidu/commits/5f78d0f):
+
+  - Added rows and columns to textarea, missing dependencies for editor-core WIP
+
 ## 0.1.2
 - [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 
