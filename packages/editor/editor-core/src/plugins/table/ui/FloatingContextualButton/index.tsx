@@ -3,7 +3,7 @@ import { Popup } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { InjectedIntlProps, injectIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import { closestElement } from '../../../../utils';
@@ -26,7 +26,7 @@ const ButtonWrapper = styled.div`
 `;
 
 class FloatingContextualButton extends React.Component<
-  Props & InjectedIntlProps,
+  Props & WrappedComponentProps,
   any
 > {
   render() {
@@ -37,7 +37,7 @@ class FloatingContextualButton extends React.Component<
       targetCellPosition,
       isContextualMenuOpen,
       intl: { formatMessage },
-    } = this.props; //  : Props & InjectedIntlProps
+    } = this.props; //  : Props & WrappedComponentProps
 
     const domAtPos = editorView.domAtPos.bind(editorView);
     const targetCellRef = findDomRefAtPos(targetCellPosition, domAtPos);

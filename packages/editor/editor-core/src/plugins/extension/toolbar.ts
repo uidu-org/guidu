@@ -6,16 +6,21 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { hasParentNodeOfType } from 'prosemirror-utils';
-import { defineMessages, InjectedIntl } from 'react-intl';
+import { defineMessages, IntlShape } from 'react-intl';
 import commonMessages from '../../messages';
 import { Command } from '../../types';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
-import { FloatingToolbarHandler, FloatingToolbarItem } from '../floating-toolbar/types';
+import {
+  FloatingToolbarHandler,
+  FloatingToolbarItem,
+} from '../floating-toolbar/types';
 import { MacroState, pluginKey as macroPluginKey } from '../macro';
-import { editExtension, removeExtension, updateExtensionLayout } from './actions';
+import {
+  editExtension,
+  removeExtension,
+  updateExtensionLayout,
+} from './actions';
 import { ExtensionState, pluginKey } from './plugin';
-
-
 
 export const messages = defineMessages({
   edit: {
@@ -50,7 +55,7 @@ const isLayoutSupported = (
 
 const breakoutOptions = (
   state: EditorState,
-  formatMessage: InjectedIntl['formatMessage'],
+  formatMessage: IntlShape['formatMessage'],
   extensionState: ExtensionState,
 ): Array<FloatingToolbarItem<Command>> => {
   const { layout, allowBreakout, node } = extensionState;

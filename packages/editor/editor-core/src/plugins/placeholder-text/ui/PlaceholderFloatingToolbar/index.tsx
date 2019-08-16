@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import FloatingToolbar, {
   Coordinates,
   getNearestNonTextNode,
@@ -30,7 +30,7 @@ export interface Props {
 }
 
 class PlaceholderFloatingToolbar extends React.Component<
-  Props & InjectedIntlProps
+  Props & WrappedComponentProps
 > {
   handleSubmit = (value?: string) => {
     if (value) {

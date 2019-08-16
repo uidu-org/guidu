@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bolt": "^0.23.1",
-    "globby": "^9.0.0",
+    "globby": "^10.0.0",
     "loader-utils": "^1.2.3"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"

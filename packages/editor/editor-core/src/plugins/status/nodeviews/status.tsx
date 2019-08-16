@@ -3,9 +3,11 @@ import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
-import InlineNodeWrapper, { createMobileInlineDomRef } from '../../../components/InlineNodeWrapper';
+import InlineNodeWrapper, {
+  createMobileInlineDomRef,
+} from '../../../components/InlineNodeWrapper';
 import { PortalProviderAPI } from '../../../components/PortalProvider';
 import WithPluginState from '../../../components/WithPluginState';
 import { EventDispatcher } from '../../../event-dispatcher';
@@ -72,10 +74,10 @@ export interface ContainerProps {
 }
 
 class StatusContainerView extends React.Component<
-  ContainerProps & InjectedIntlProps,
+  ContainerProps & WrappedComponentProps,
   {}
 > {
-  constructor(props: ContainerProps & InjectedIntlProps) {
+  constructor(props: ContainerProps & WrappedComponentProps) {
     super(props);
   }
 

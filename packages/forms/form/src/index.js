@@ -1,10 +1,7 @@
-import FormActions from './actions';
-import FormDestroy from './destroy';
-import FormFooter from './footer';
-import Form from './form';
-import FormMeta from './meta';
-import FormSubmit from './submit';
-
-export { Form, FormActions, FormDestroy, FormFooter, FormMeta, FormSubmit };
-
-export default Form;
+export { default as FormActions } from './actions';
+export { default as FormDestroy } from './destroy';
+export { default as FormFooter } from './footer';
+export { default, default as Form } from './form';
+export { default as FormSection } from './FormSection';
+export { default as FormMeta } from './meta';
+export { default as FormSubmit } from './submit';

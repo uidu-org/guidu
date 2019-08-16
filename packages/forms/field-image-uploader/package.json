@@ -1,0 +1,27 @@
+{
+  "name": "@uidu/field-image-uploader",
+  "version": "0.1.0",
+  "description": "An image uploader with preview",
+  "main": "index.js",
+  "uidu:src": "index.ts",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.30",
+    "@uidu/form": "^0.1.30"
+  },
+  "dependencies": {
+    "@uidu/analytics": "^0.1.9",
+    "@uidu/button": "^0.1.41",
+    "@uidu/field-base": "^0.1.34",
+    "@uidu/range": "^0.1.10",
+    "@uidu/spinner": "^0.1.9",
+    "blueimp-load-image": "^2.20.1",
+    "classnames": "^2.2.6",
+    "react-avatar-editor": "^11.0.7",
+    "react-dropzone": "^10.1.7",
+    "react-feather": "^2.0.3",
+    "styled-components": "^4.0.3"
+  }
+}

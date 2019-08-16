@@ -2,7 +2,7 @@ import { akEditorTableNumberColumnWidth } from '@uidu/editor-common';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { SyntheticEvent } from 'react';
-import { InjectedIntlProps, injectIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import * as keymaps from '../../../../keymaps';
 import { closestElement } from '../../../../utils/';
 import { TableCssClassName as ClassName } from '../../types';
@@ -77,7 +77,7 @@ const InsertButton = ({
   showInsertButton,
   type,
   intl: { formatMessage },
-}: ButtonProps & InjectedIntlProps) => (
+}: ButtonProps & WrappedComponentProps) => (
   <div
     data-index={index}
     className={`${ClassName.CONTROLS_INSERT_BUTTON_WRAP} ${

@@ -2,7 +2,7 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import OpenIcon from '@atlaskit/icon/glyph/open';
 import { EditorState, NodeSelection } from 'prosemirror-state';
 import { removeSelectedNode } from 'prosemirror-utils';
-import { defineMessages, InjectedIntl } from 'react-intl';
+import { defineMessages, IntlShape } from 'react-intl';
 import { FloatingToolbarConfig } from '../../../src/plugins/floating-toolbar/types';
 import { Command } from '../../../src/types';
 import { analyticsService } from '../../analytics';
@@ -165,7 +165,7 @@ const buildDropdown = (
 
 export const floatingToolbar = (
   state: EditorState,
-  intl: InjectedIntl,
+  intl: IntlShape,
 ): FloatingToolbarConfig | undefined => {
   const { inlineCard, blockCard } = state.schema.nodes;
   const nodeType = [inlineCard, blockCard];

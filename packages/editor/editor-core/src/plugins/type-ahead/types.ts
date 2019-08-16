@@ -1,9 +1,9 @@
-import { ReactElement } from 'react';
-import { InjectedIntl } from 'react-intl';
-import { EditorState, Transaction } from 'prosemirror-state';
 import { Node } from 'prosemirror-model';
-import { SelectItemMode } from './commands/select-item';
+import { EditorState, Transaction } from 'prosemirror-state';
+import { ReactElement } from 'react';
+import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../event-dispatcher';
+import { SelectItemMode } from './commands/select-item';
 
 export type TypeAheadItemRenderProps = {
   onClick: () => void;
@@ -42,7 +42,7 @@ export type TypeAheadHandler = {
   getItems: (
     query: string,
     editorState: EditorState,
-    intl: InjectedIntl,
+    intl: IntlShape,
     meta: {
       prevActive: boolean;
       queryChanged: boolean;

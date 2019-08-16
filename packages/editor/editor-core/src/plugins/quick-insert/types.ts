@@ -1,6 +1,6 @@
-import { InjectedIntl } from 'react-intl';
-import { EditorState, Transaction } from 'prosemirror-state';
 import { Node } from 'prosemirror-model';
+import { EditorState, Transaction } from 'prosemirror-state';
+import { IntlShape } from 'react-intl';
 import { TypeAheadItem } from '../type-ahead/types';
 
 export type QuickInsertActionInsert = (
@@ -29,7 +29,7 @@ export type QuickInsertOptions =
 
 export type QuickInsertHandler =
   | Array<QuickInsertItem>
-  | ((intl: InjectedIntl) => Array<QuickInsertItem>);
+  | ((intl: IntlShape) => Array<QuickInsertItem>);
 
 export type IconProps = {
   label?: string;

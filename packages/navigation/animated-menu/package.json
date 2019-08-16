@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "react-flip-toolkit": "^6.5.9",
+    "react-flip-toolkit": "^7.0.0",
     "react-router-dom": "^5.0.0",
     "styled-components": "^4.0.3"
   }

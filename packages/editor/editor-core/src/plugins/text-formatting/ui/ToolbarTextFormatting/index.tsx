@@ -3,7 +3,7 @@ import ItalicIcon from '@atlaskit/icon/glyph/editor/italic';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import { ButtonGroup } from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
@@ -36,7 +36,9 @@ export interface Props {
   isReducedSpacing?: boolean;
 }
 
-class ToolbarTextFormatting extends PureComponent<Props & InjectedIntlProps> {
+class ToolbarTextFormatting extends PureComponent<
+  Props & WrappedComponentProps
+> {
   render() {
     const {
       disabled,

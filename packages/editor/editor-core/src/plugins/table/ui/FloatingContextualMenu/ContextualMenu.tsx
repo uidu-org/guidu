@@ -1,17 +1,34 @@
-import { tableBackgroundBorderColors, tableBackgroundColorPalette } from '@atlaskit/adf-schema';
+import {
+  tableBackgroundBorderColors,
+  tableBackgroundColorPalette,
+} from '@atlaskit/adf-schema';
 import { colors } from '@uidu/theme';
 import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import ColorPalette from '../../../../components/ColorPalette';
 import DropdownMenu from '../../../../components/DropdownMenu';
 import { Shortcut } from '../../../../components/styles';
 import { closestElement } from '../../../../utils';
 import { INPUT_METHOD } from '../../../analytics';
-import { clearHoverSelection, hoverColumns, hoverRows, toggleContextualMenu } from '../../commands';
-import { deleteColumnsWithAnalytics, deleteRowsWithAnalytics, emptyMultipleCellsWithAnalytics, insertColumnWithAnalytics, insertRowWithAnalytics, mergeCellsWithAnalytics, setColorWithAnalytics, splitCellWithAnalytics } from '../../commands-with-analytics';
+import {
+  clearHoverSelection,
+  hoverColumns,
+  hoverRows,
+  toggleContextualMenu,
+} from '../../commands';
+import {
+  deleteColumnsWithAnalytics,
+  deleteRowsWithAnalytics,
+  emptyMultipleCellsWithAnalytics,
+  insertColumnWithAnalytics,
+  insertRowWithAnalytics,
+  mergeCellsWithAnalytics,
+  setColorWithAnalytics,
+  splitCellWithAnalytics,
+} from '../../commands-with-analytics';
 import { getPluginState } from '../../pm-plugins/main';
 import { canMergeCells } from '../../transforms';
 import { TableCssClassName as ClassName } from '../../types';
@@ -59,7 +76,7 @@ export interface State {
   isSubmenuOpen: boolean;
 }
 
-class ContextualMenu extends Component<Props & InjectedIntlProps, State> {
+class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
   state: State = {
     isSubmenuOpen: false,
   };

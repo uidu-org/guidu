@@ -2,7 +2,7 @@ import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
 import { colors } from '@uidu/theme';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { Button, ButtonWrapper } from './styles';
 
 // IMO these should live inside @uidu/theme
@@ -59,7 +59,7 @@ export interface Props {
   checkMarkColor?: string;
 }
 
-class Color extends PureComponent<Props & InjectedIntlProps> {
+class Color extends PureComponent<Props & WrappedComponentProps> {
   render() {
     const {
       tabIndex,

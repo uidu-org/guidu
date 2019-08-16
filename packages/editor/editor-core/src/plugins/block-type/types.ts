@@ -6,7 +6,7 @@
 //
 // Rather than half-match half-not, this plugin introduces its own
 // nomenclature for what 'block type' is active.
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, MessageDescriptor } from 'react-intl';
 
 export const messages = defineMessages({
   normal: {
@@ -252,7 +252,7 @@ export type BlockTypeName =
 
 export interface BlockType {
   name: string;
-  title: FormattedMessage.MessageDescriptor;
+  title: MessageDescriptor;
   nodeName: string;
   tagName?: string;
   level?: number;

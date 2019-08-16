@@ -1,6 +1,6 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import { Plugin, PluginKey } from 'prosemirror-state';
-import { InjectedIntl } from 'react-intl';
+import { IntlShape } from 'react-intl';
 import { analyticsService } from '../../analytics';
 import { Command, EditorPlugin } from '../../types';
 import { dedupe } from '../../utils';
@@ -90,7 +90,7 @@ const quickInsertPlugin: EditorPlugin = {
 export default quickInsertPlugin;
 
 const itemsCache: Record<string, Array<QuickInsertItem>> = {};
-const processItems = (items: Array<QuickInsertHandler>, intl: InjectedIntl) => {
+const processItems = (items: Array<QuickInsertHandler>, intl: IntlShape) => {
   if (!itemsCache[intl.locale]) {
     itemsCache[intl.locale] = items.reduce(
       (acc: Array<QuickInsertItem>, item) => {

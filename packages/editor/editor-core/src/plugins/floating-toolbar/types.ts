@@ -3,7 +3,7 @@ import { NodeType } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
-import { InjectedIntl } from 'react-intl';
+import { IntlShape } from 'react-intl';
 import { Command } from '../../types';
 import { DispatchAnalyticsEvent } from '../analytics';
 import { ButtonAppearance } from './ui/Button';
@@ -107,6 +107,6 @@ export interface FloatingToolbarConfig {
 
 export type FloatingToolbarHandler = (
   state: EditorState,
-  intl: InjectedIntl,
+  intl: IntlShape,
   providerFactory: ProviderFactory,
 ) => FloatingToolbarConfig | undefined;

@@ -4,7 +4,7 @@ import NumberListIcon from '@atlaskit/icon/glyph/editor/number-list';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { InjectedIntlProps, injectIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
 import {
@@ -51,7 +51,7 @@ export interface State {
   isDropdownOpen: boolean;
 }
 
-class ToolbarLists extends PureComponent<Props & InjectedIntlProps, State> {
+class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
   state: State = {
     isDropdownOpen: false,
   };

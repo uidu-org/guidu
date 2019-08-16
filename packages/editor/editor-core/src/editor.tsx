@@ -1,7 +1,7 @@
 import { ProviderFactory, Transformer } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
-import { IntlProvider, IntlShape, intlShape } from 'react-intl';
+import { IntlContext, IntlProvider, IntlShape } from 'react-intl';
 import styled from 'styled-components';
 import EditorActions from './actions';
 import ContentStyles from './components/ContentStyles';
@@ -50,7 +50,7 @@ type Context = {
 export default class Editor extends PureComponent<EditorProps> {
   static contextTypes = {
     editorActions: {},
-    intl: intlShape,
+    intl: IntlContext,
   };
 
   private editorActions: EditorActions;

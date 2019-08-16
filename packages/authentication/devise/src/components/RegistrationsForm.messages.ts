@@ -1,4 +1,4 @@
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, MessageDescriptor } from 'react-intl';
 
 export type MessageKey =
   | 'simple_registrations_title'
@@ -9,7 +9,7 @@ export type MessageKey =
   | 'simple_registrations_password_label'
   | 'simple_registrations_remember_me_label';
 
-type Messages = { [K in MessageKey]: FormattedMessage.MessageDescriptor };
+type Messages = { [K in MessageKey]: MessageDescriptor };
 
 const messageDescriptors: Messages = {
   simple_registrations_title: {

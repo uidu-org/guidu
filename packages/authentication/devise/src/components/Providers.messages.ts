@@ -1,4 +1,4 @@
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, MessageDescriptor } from 'react-intl';
 
 export type MessageKey =
   | 'privacy_intro'
@@ -9,7 +9,7 @@ export type MessageKey =
   | 'registrations_description'
   | 'registrations_with_provider';
 
-type Messages = { [K in MessageKey]: FormattedMessage.MessageDescriptor };
+type Messages = { [K in MessageKey]: MessageDescriptor };
 
 const messageDescriptors: Messages = {
   privacy_intro: {

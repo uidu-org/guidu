@@ -6,7 +6,7 @@ import classnames from 'classnames';
 import { findTable } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { InjectedIntlProps, injectIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import commonMessages from '../../../../messages';
 import { toggleTableLayoutWithAnalytics } from '../../commands-with-analytics';
@@ -39,7 +39,7 @@ const getTitle = (layout: TableLayout) => {
   }
 };
 
-class LayoutButton extends React.Component<Props & InjectedIntlProps, any> {
+class LayoutButton extends React.Component<Props & WrappedComponentProps, any> {
   render() {
     const {
       intl: { formatMessage },

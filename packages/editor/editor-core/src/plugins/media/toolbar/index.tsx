@@ -1,7 +1,7 @@
 import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { EditorState } from 'prosemirror-state';
 import { removeSelectedNode } from 'prosemirror-utils';
-import { InjectedIntl } from 'react-intl';
+import { IntlShape } from 'react-intl';
 import {
   FloatingToolbarConfig,
   FloatingToolbarItem,
@@ -23,7 +23,7 @@ const remove: Command = (state, dispatch) => {
 
 export const floatingToolbar = (
   state: EditorState,
-  intl: InjectedIntl,
+  intl: IntlShape,
   allowResizing?: boolean,
   allowAnnotation?: boolean,
   appearance?: EditorAppearance,

@@ -9,7 +9,7 @@ import WrapRightIcon from '@atlaskit/icon/glyph/editor/media-wrap-right';
 import { Schema } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
 import { hasParentNodeOfType } from 'prosemirror-utils';
-import { defineMessages, InjectedIntl } from 'react-intl';
+import { defineMessages, IntlShape } from 'react-intl';
 import commonMessages from '../../../messages';
 import { Command } from '../../../types';
 import {
@@ -87,7 +87,7 @@ const makeAlign = (layout: MediaSingleLayout): Command => {
 const mapIconsToToolbarItem = (
   icons: Array<any>,
   layout: MediaSingleLayout,
-  intl: InjectedIntl,
+  intl: IntlShape,
 ) =>
   icons.map<FloatingToolbarItem<Command>>(toolbarItem => {
     const { value } = toolbarItem;
@@ -111,7 +111,7 @@ const shouldHideLayoutToolbar = (selection: NodeSelection, { nodes }: Schema) =>
 
 const buildLayoutButtons = (
   state: EditorState,
-  intl: InjectedIntl,
+  intl: IntlShape,
   allowResizing?: boolean,
 ) => {
   const { selection } = state;

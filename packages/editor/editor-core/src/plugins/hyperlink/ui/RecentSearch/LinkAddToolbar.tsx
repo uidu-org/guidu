@@ -6,11 +6,19 @@ import { colors } from '@uidu/theme';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { KeyboardEvent, PureComponent } from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled, { css } from 'styled-components';
 import { analyticsService } from '../../../../analytics';
 import PanelTextInput from '../../../../components/PanelTextInput';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, AnalyticsEventPayload, DispatchAnalyticsEvent, EVENT_TYPE, INPUT_METHOD } from '../../../analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  AnalyticsEventPayload,
+  DispatchAnalyticsEvent,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../../../analytics';
 import { normalizeUrl } from '../../utils';
 import RecentList from './RecentList';
 
@@ -121,7 +129,7 @@ export interface State {
   displayText: string;
 }
 
-class RecentSearch extends PureComponent<Props & InjectedIntlProps, State> {
+class RecentSearch extends PureComponent<Props & WrappedComponentProps, State> {
   /* To not fire on-blur on tab-press */
   private isTabPressed: boolean = false;
 
@@ -133,7 +141,7 @@ class RecentSearch extends PureComponent<Props & InjectedIntlProps, State> {
   private urlBlur: () => void;
   private textBlur: () => void;
 
-  constructor(props: Props & InjectedIntlProps) {
+  constructor(props: Props & WrappedComponentProps) {
     super(props);
     this.state = {
       selectedIndex: -1,

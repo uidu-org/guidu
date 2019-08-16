@@ -5,7 +5,7 @@ import { akEditorSmallZIndex } from '@uidu/editor-common';
 import { colors, gridSize } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { InjectedIntlProps, injectIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled, { keyframes } from 'styled-components';
 import ToolbarButton from '../../../components/ToolbarButton';
 import WithPluginState from '../../../components/WithPluginState';
@@ -122,7 +122,7 @@ function Item(props: any) {
     </AvatarItem>
   );
 }
-class Avatars extends React.Component<Props & InjectedIntlProps, any> {
+class Avatars extends React.Component<Props & WrappedComponentProps, any> {
   private onAvatarClick = () => {};
   private renderInviteToEditButton = () => {
     const {

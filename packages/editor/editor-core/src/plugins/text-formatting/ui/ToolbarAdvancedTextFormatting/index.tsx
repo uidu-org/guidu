@@ -3,12 +3,23 @@ import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { analyticsService } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
-import { Separator, Shortcut, TriggerWrapper, Wrapper } from '../../../../components/styles';
+import {
+  Separator,
+  Shortcut,
+  TriggerWrapper,
+  Wrapper,
+} from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
-import { clearFormatting as clearFormattingKeymap, toggleCode, toggleStrikethrough, toggleUnderline, tooltip } from '../../../../keymaps';
+import {
+  clearFormatting as clearFormattingKeymap,
+  toggleCode,
+  toggleStrikethrough,
+  toggleUnderline,
+  tooltip,
+} from '../../../../keymaps';
 import { INPUT_METHOD } from '../../../analytics';
 import { clearFormattingWithAnalytics } from '../../commands/clear-formatting';
 import * as commands from '../../commands/text-formatting';
@@ -72,7 +83,7 @@ export interface State {
 }
 
 class ToolbarAdvancedTextFormatting extends PureComponent<
-  Props & InjectedIntlProps,
+  Props & WrappedComponentProps,
   State
 > {
   state: State = {

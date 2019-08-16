@@ -35,6 +35,6 @@
     "@uidu/docs": "^0.1.29",
     "@uidu/media-card": "^0.1.15",
     "react-dom": "^16.4.0",
-    "react-intl": "^2.8.0"
+    "react-intl": "^3.1.7"
   }
 }

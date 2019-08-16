@@ -3,7 +3,7 @@ import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { withAnalytics } from '../../../../analytics';
 import ColorPalette from '../../../../components/ColorPalette';
@@ -12,7 +12,12 @@ import ToolbarButton from '../../../../components/ToolbarButton';
 import * as commands from '../../commands/change-color';
 import { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
-import { ExpandIconWrapper, Separator, TriggerWrapper, Wrapper } from './styles';
+import {
+  ExpandIconWrapper,
+  Separator,
+  TriggerWrapper,
+  Wrapper,
+} from './styles';
 
 export const messages = defineMessages({
   textColor: {
@@ -104,7 +109,7 @@ export interface Props {
 }
 
 class ToolbarTextColor extends React.Component<
-  Props & InjectedIntlProps,
+  Props & WrappedComponentProps,
   State
 > {
   state: State = {

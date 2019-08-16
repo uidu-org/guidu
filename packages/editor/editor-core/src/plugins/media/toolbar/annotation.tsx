@@ -1,7 +1,7 @@
 import AnnotateIcon from '@atlaskit/icon/glyph/media-services/annotate';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { defineMessages, InjectedIntl } from 'react-intl';
+import { defineMessages, IntlShape } from 'react-intl';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -60,7 +60,7 @@ export const messages = defineMessages({
 type AnnotationToolbarProps = {
   viewContext: any;
   id: string;
-  intl: InjectedIntl;
+  intl: IntlShape;
   view?: EditorView;
 };
 
@@ -124,7 +124,7 @@ export class AnnotationToolbar extends React.Component<AnnotationToolbarProps> {
 
 export const renderAnnotationButton = (
   pluginState: MediaPluginState,
-  intl: InjectedIntl,
+  intl: IntlShape,
 ) => {
   return (view?: EditorView, idx?: number) => {
     const selectedContainer = pluginState.selectedMediaContainerNode();

@@ -1,10 +1,14 @@
 import * as React from 'react';
 import { SyntheticEvent } from 'react';
-import { FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
+import {
+  injectIntl,
+  MessageDescriptor,
+  WrappedComponentProps,
+} from 'react-intl';
 import { TableCssClassName as ClassName } from '../../types';
 
 export interface ButtonProps {
-  removeLabel: FormattedMessage.MessageDescriptor;
+  removeLabel: MessageDescriptor;
   style?: object;
   onClick?: (event: SyntheticEvent) => void;
   onMouseEnter?: (event: SyntheticEvent) => void;
@@ -18,7 +22,7 @@ const DeleteButton = ({
   onMouseLeave,
   removeLabel,
   intl: { formatMessage },
-}: ButtonProps & InjectedIntlProps) => (
+}: ButtonProps & WrappedComponentProps) => (
   <div
     className={ClassName.CONTROLS_DELETE_BUTTON_WRAP}
     style={style}

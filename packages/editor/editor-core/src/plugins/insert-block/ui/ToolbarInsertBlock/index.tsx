@@ -22,7 +22,7 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { ReactInstance } from 'react';
 import * as ReactDOM from 'react-dom';
-import { defineMessages, InjectedIntlProps, injectIntl } from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import EditorActions from '../../../../actions';
 import {
   analyticsService as analytics,
@@ -257,7 +257,7 @@ const isDetachedElement = (el: HTMLElement) => !document.body.contains(el);
 const noop = () => {};
 
 class ToolbarInsertBlock extends React.PureComponent<
-  Props & InjectedIntlProps,
+  Props & WrappedComponentProps,
   State
 > {
   private pickerRef?: ReactInstance;

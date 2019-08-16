@@ -3,10 +3,21 @@ import TextStyleIcon from '@atlaskit/icon/glyph/editor/text-style';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
 import * as React from 'react';
 import { createElement, ReactElement } from 'react';
-import { defineMessages, FormattedMessage, InjectedIntlProps, injectIntl } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import { analyticsService as analytics } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
-import { ButtonContent, ExpandIconWrapper, MenuWrapper, Separator, Wrapper } from '../../../../components/styles';
+import {
+  ButtonContent,
+  ExpandIconWrapper,
+  MenuWrapper,
+  Separator,
+  Wrapper,
+} from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import { BlockTypeState } from '../../pm-plugins/main';
 import { BlockType, NORMAL_TEXT } from '../../types';
@@ -44,7 +55,7 @@ export interface State {
 }
 
 class ToolbarBlockType extends React.PureComponent<
-  Props & InjectedIntlProps,
+  Props & WrappedComponentProps,
   State
 > {
   state = {

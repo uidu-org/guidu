@@ -6,7 +6,7 @@ import LayoutTwoRightSidebarIcon from '@atlaskit/icon/glyph/editor/layout-two-ri
 import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { EditorState } from 'prosemirror-state';
 import { findDomRefAtPos } from 'prosemirror-utils';
-import { defineMessages, FormattedMessage, InjectedIntl } from 'react-intl';
+import { defineMessages, IntlShape, MessageDescriptor } from 'react-intl';
 import {
   FloatingToolbarButton,
   FloatingToolbarConfig,
@@ -56,7 +56,7 @@ export const messages = defineMessages({
 
 type PresetLayoutButtonItem = {
   type: PresetLayout;
-  title: FormattedMessage.MessageDescriptor;
+  title: MessageDescriptor;
   icon: Icon;
 };
 
@@ -88,7 +88,7 @@ const SIDEBAR_LAYOUT_TYPES: PresetLayoutButtonItem[] = [
 ];
 
 const buildLayoutButton = (
-  intl: InjectedIntl,
+  intl: IntlShape,
   item: PresetLayoutButtonItem,
   currentLayout: string | undefined,
 ): FloatingToolbarItem<Command> => ({
@@ -101,7 +101,7 @@ const buildLayoutButton = (
 
 export const buildToolbar = (
   state: EditorState,
-  intl: InjectedIntl,
+  intl: IntlShape,
   pos: number,
   _allowBreakout: boolean,
   addSidebarLayouts: boolean,

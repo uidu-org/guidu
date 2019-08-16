@@ -1,4 +1,4 @@
-import { defineMessages, FormattedMessage } from 'react-intl';
+import { defineMessages, MessageDescriptor } from 'react-intl';
 
 export type MessageKey =
   | 'password_reset_title'
@@ -7,7 +7,7 @@ export type MessageKey =
   | 'password_reset_secondary_cta'
   | 'password_reset_password_label';
 
-type Messages = { [K in MessageKey]: FormattedMessage.MessageDescriptor };
+type Messages = { [K in MessageKey]: MessageDescriptor };
 
 const messageDescriptors: Messages = {
   password_reset_title: {
