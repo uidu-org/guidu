@@ -19,12 +19,13 @@ class Form extends Component<FormProps, FormState> {
     loading: false,
   };
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.submitted) {
-      this.setState({
+  static getDerivedStateFromProps(props, _state) {
+    if (props.submitted) {
+      return {
         loading: false,
-      });
+      };
     }
+    return null;
   }
 
   enableButton = () => {
