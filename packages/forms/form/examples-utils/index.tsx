@@ -1,5 +1,5 @@
 import React from 'react';
-import FormSubmit from '../src/submit';
+import { FormSubmit } from '..';
 
 const later = (delay, value) =>
   new Promise(resolve => setTimeout(resolve, delay, value));

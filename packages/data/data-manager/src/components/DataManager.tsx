@@ -79,7 +79,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     });
   };
 
-  setFilters = console.log;
+  setFilters = async () => console.log;
 
   setGroupers = groupers => {
     this.setState({ groupers });

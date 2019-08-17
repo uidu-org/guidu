@@ -23,7 +23,7 @@ export default function AttendancesFormInfo({
   return (
     <div className="p-3 p-xl-4">
       <Form
-        handleSubmit={console.log}
+        handleSubmit={async model => console.log}
         withLoader={false}
         footerRenderer={({ canSubmit }) => (
           <FormFooter>

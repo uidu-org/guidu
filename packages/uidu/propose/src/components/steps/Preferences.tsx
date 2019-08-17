@@ -21,7 +21,7 @@ export default class Preferences extends Component<any, any> {
     });
   };
 
-  handleSubmit = model => {
+  handleSubmit = async model => {
     const { donation } = this.props;
     // return apiCall('patch', donation.path, model);
   };

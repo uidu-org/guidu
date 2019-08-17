@@ -10,7 +10,7 @@ import { FiltererProps } from './types';
 
 export default class Filterer extends Component<FiltererProps> {
   static defaultProps = {
-    onChange: console.log,
+    onChange: async model => console.log(model),
   };
 
   private form = React.createRef();

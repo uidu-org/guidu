@@ -3,10 +3,11 @@
   "version": "0.1.31",
   "description": "Forms using Formsy",
   "module": "index.js",
-  "uidu:src": "src/index",
-  "author": "uidu",
+  "uidu:src": "index.ts",
+  "types": "index.d.ts",
   "sideEffects": false,
-  "license": "ISC",
+  "author": "uidu",
+  "license": "MIT",
   "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"

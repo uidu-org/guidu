@@ -1,7 +1,7 @@
+import { FormContext } from '@uidu/form';
 import { withFormsy } from 'formsy-react';
 import React, { Component } from 'react';
 import shortid from 'shortid';
-// import { ComponentHOCProps } from './types';
 
 // Component HOC
 // -------------
@@ -17,6 +17,8 @@ import shortid from 'shortid';
 const FormsyReactComponent = ComposedComponent => {
   class ComponentHOC extends Component<any> {
     private id: string = null;
+
+    static contextType = FormContext;
 
     static defaultProps = {
       disabled: false,

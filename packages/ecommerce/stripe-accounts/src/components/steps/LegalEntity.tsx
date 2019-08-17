@@ -6,7 +6,7 @@ import React from 'react';
 export default function LegalEntity({ handleSubmit }) {
   return (
     <Form
-      onValidSubmit={handleSubmit}
+      handleSubmit={handleSubmit}
       autoComplete="off"
       footerRenderer={({}) => <button>Invia</button>}
     >

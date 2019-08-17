@@ -1,16 +1,23 @@
 import Formsy from 'formsy-react';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import OptionsProvider from './hoc/options-provider';
+import { FormProps, FormState } from '../types';
+import FormContext from './FormContext';
 
-export default class Form extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      canSubmit: false,
-      loading: false,
-    };
-  }
+class Form extends Component<FormProps, FormState> {
+  private form: React.RefObject<Formsy> = React.createRef();
+
+  static defaultProps = {
+    footerRenderer: () => {},
+    handleSubmit: () => {},
+    inputsWrapperProps: {},
+    submitted: false,
+    withLoader: true,
+  };
+
+  state = {
+    canSubmit: false,
+    loading: false,
+  };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.submitted) {
@@ -34,14 +41,13 @@ export default class Form extends Component {
 
   handleSubmit = (model, resetForm) => {
     const { handleSubmit } = this.props;
-    const modelToSubmit = model;
     this.setState(
       {
         // canSubmit: false,
         loading: true,
       },
       () => {
-        handleSubmit(modelToSubmit, resetForm).then(() => {
+        handleSubmit(model, resetForm).then(() => {
           this.setState({ loading: false });
         });
       },
@@ -49,20 +55,6 @@ export default class Form extends Component {
   };
 
   render() {
-    const formsyProps = Object.assign({}, this.props);
-    delete formsyProps.elementWrapperClassName;
-    delete formsyProps.inputsWrapperProps;
-    delete formsyProps.labelClassName;
-    delete formsyProps.layout;
-    delete formsyProps.rowClassName;
-    delete formsyProps.validatePristine;
-    delete formsyProps.validateOnSubmit;
-
-    delete formsyProps.handleSubmit;
-    delete formsyProps.footerRenderer;
-    delete formsyProps.submitted;
-    delete formsyProps.withLoader;
-
     const { loading, canSubmit } = this.state;
 
     const {
@@ -70,15 +62,26 @@ export default class Form extends Component {
       children,
       withLoader,
       inputsWrapperProps,
+      handleSubmit,
+      submitted,
+      innerRef,
+      ...otherProps
     } = this.props;
 
     return (
-      <OptionsProvider {...this.props}>
+      <FormContext.Provider
+        value={{
+          layout: 'vertical',
+          validateOnSubmit: false,
+          validatePristine: false,
+          rowClassName: '',
+          labelClassName: '',
+          elementWrapperClassName: '',
+        }}
+      >
         <Formsy
-          {...formsyProps}
-          ref={c => {
-            this.form = c;
-          }}
+          {...otherProps}
+          ref={innerRef}
           onValidSubmit={this.handleSubmit}
           onValid={this.enableButton}
           onInvalid={this.disableButton}
@@ -99,27 +102,15 @@ export default class Form extends Component {
           </div>
           {footerRenderer({ loading, canSubmit }, this.form, this.handleSubmit)}
         </Formsy>
-      </OptionsProvider>
+      </FormContext.Provider>
     );
   }
 }
 
-Form.propTypes = {
-  footerRenderer: PropTypes.func,
-  handleSubmit: PropTypes.func,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
-  submitted: PropTypes.bool,
-  withLoader: PropTypes.bool,
-  inputsWrapperProps: PropTypes.shape(PropTypes.obj),
-};
-
-Form.defaultProps = {
-  footerRenderer: () => {},
-  handleSubmit: () => {},
-  inputsWrapperProps: {},
-  submitted: false,
-  withLoader: true,
-};
+export default React.forwardRef<any, FormProps>(
+  ({ children, ...otherProps }, ref) => (
+    <Form innerRef={ref} {...otherProps}>
+      {children}
+    </Form>
+  ),
+);

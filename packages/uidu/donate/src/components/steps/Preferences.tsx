@@ -1,7 +1,7 @@
 import { Checkbox } from '@uidu/checkbox';
 import FieldText from '@uidu/field-text';
-import { Form, FormFooter, FormSubmit } from '@uidu/form';
 import FieldTextarea from '@uidu/field-textarea';
+import { Form, FormFooter, FormSubmit } from '@uidu/form';
 import React, { Component } from 'react';
 // import { apiCall } from 'utils';
 
@@ -21,7 +21,7 @@ export default class DonationPreferences extends Component<any, any> {
     });
   };
 
-  handleSubmit = model => {
+  handleSubmit = async model => {
     const { donation } = this.props;
     console.log(donation);
     console.log(model);
