@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.32
+- [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
+
+  - Upgrade form and field-base to typescript
+
 ## 0.1.31
 - [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
 

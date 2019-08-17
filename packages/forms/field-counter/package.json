@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-counter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A counter input element - good for plus-minus elements",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -12,11 +12,11 @@
   "sideEffects": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.27",
-    "@uidu/form": "^0.1.28"
+    "@uidu/form": "^0.1.32"
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.7",
-    "@uidu/field-base": "^0.1.31",
+    "@uidu/field-base": "^0.1.35",
     "react-numeric-input": "^2.2.3"
   }
 }
