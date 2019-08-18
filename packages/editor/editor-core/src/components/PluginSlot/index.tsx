@@ -63,7 +63,7 @@ export default class PluginSlot extends React.Component<Props, any> {
     this.addModeChangeListener(this.props.contentArea);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (this.props.contentArea !== nextProps.contentArea) {
       this.removeModeChangeListener(this.props.contentArea);
       this.addModeChangeListener(nextProps.contentArea);

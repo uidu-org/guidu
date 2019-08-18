@@ -18,7 +18,7 @@ export type ImageStatus = 'complete' | 'loading' | 'error';
 export const withImageLoader = <P extends {}>(
   Wrapped: ComponentType<P & ImageLoaderProps>,
 ): React.ComponentClass<P & ImageLoaderProps> =>
-  class WithImageLoader extends Component<
+  (class WithImageLoader extends Component<
     P & ImageLoaderProps,
     ImageLoaderState
   > {
@@ -32,7 +32,7 @@ export const withImageLoader = <P extends {}>(
       this.fetchImage(this.props);
     }
 
-    componentWillReceiveProps(nextProps: ImageLoaderProps) {
+    UNSAFE_componentWillReceiveProps(nextProps: ImageLoaderProps) {
       if (nextProps.url !== this.props.url) {
         this.setState({
           imageStatus: 'loading',
@@ -85,4 +85,4 @@ export const withImageLoader = <P extends {}>(
       const { imageStatus } = this.state;
       return <Wrapped {...this.props} imageStatus={imageStatus} />;
     }
-  };
+  });

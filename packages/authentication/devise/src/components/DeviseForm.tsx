@@ -30,7 +30,7 @@ export default class DeviseForm extends PureComponent<any, any> {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const {
       match: {
         params: { step },

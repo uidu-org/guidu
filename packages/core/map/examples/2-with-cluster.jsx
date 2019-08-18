@@ -3,7 +3,7 @@ import Map, { MarkerCluster } from '../src';
 import { defaultMapProps } from '../examples-utils';
 
 export default class DemoApp extends PureComponent {
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.setState({ markers: [] });
   }
 

@@ -57,7 +57,7 @@ export default class ResizableMediaSingle extends React.Component<
     }
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (this.props.viewContext !== nextProps.viewContext) {
       this.checkVideoFile(nextProps.viewContext);
     }

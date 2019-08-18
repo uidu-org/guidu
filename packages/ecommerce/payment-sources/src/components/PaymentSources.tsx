@@ -1,4 +1,4 @@
-import { Form } from '@uidu/forms';
+import { Form } from '@uidu/form';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import { Element } from 'react-scroll';
@@ -64,7 +64,7 @@ class PaymentSources extends PureComponent<any, any> {
     // );
   };
 
-  handleSubmit = model => {
+  handleSubmit = async model => {
     const { stripe, currentUser } = this.props;
     this.setState({
       loading: true,

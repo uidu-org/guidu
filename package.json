@@ -223,7 +223,6 @@
     "@types/styled-components": "^4.1.12",
     "@types/url-search-params": "^1.1.0",
     "@types/uuid": "^3.4.4",
-    "@uidu/forms": "^1.0.0-beta.8",
     "@uidu/inputs": "^1.0.0-beta.45",
     "@uidu/slider": "^1.0.0-beta.4",
     "@uifabric/file-type-icons": "^7.0.3",

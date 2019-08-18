@@ -60,7 +60,7 @@ export default class MediaGroup extends React.Component<
     this.updateMediaContext();
   }
 
-  componentWillReceiveProps(props: MediaGroupProps) {
+  UNSAFE_componentWillReceiveProps(props: MediaGroupProps) {
     this.updateMediaContext();
     this.setMediaItems(props);
   }

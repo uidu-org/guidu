@@ -98,7 +98,7 @@ class FieldGeosuggest extends PureComponent<any, any> {
     };
   }
 
-  componentWillReceiveProps = nextProps => {
+  UNSAFE_componentWillReceiveProps = nextProps => {
     const { value, onSetValue } = this.props;
     const isValueChanging = nextProps.value !== value;
     if (isValueChanging) {

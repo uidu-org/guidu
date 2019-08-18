@@ -41,7 +41,7 @@ export default class View extends Component<ViewProps, ViewState> {
     this.video.removeEventListener('timeupdate', this.handleTimeUpdate);
   }
 
-  componentWillReceiveProps(nextProps: ViewProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: ViewProps) {
     if (this.props.currentIndex !== nextProps.currentIndex) {
       this.playOrPause('pause');
     }

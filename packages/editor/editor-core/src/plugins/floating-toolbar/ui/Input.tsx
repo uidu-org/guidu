@@ -23,7 +23,7 @@ export default class TextField extends Component<Props, State> {
     };
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (this.state.text !== nextProps.defaultValue) {
       this.setState({
         text: nextProps.defaultValue || '',

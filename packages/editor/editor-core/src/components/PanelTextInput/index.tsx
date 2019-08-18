@@ -30,7 +30,7 @@ export default class PanelTextInput extends PureComponent<Props, State> {
     };
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (nextProps.defaultValue !== this.props.defaultValue) {
       this.setState({
         value: nextProps.defaultValue,

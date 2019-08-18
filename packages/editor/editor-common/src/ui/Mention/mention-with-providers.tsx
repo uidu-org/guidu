@@ -29,11 +29,11 @@ const noop = () => {};
 export default class MentionWithProviders extends PureComponent<Props, State> {
   state: State = { profilecardProvider: null };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.updateProfilecardProvider(this.props);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (nextProps.profilecardProvider !== this.props.profilecardProvider) {
       this.updateProfilecardProvider(nextProps);
     }

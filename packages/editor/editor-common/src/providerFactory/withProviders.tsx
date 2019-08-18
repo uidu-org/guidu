@@ -22,7 +22,7 @@ export class WithProviders extends PureComponent<Props, { providers: any }> {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { providers, providerFactory } = this.props;
 
     providers.forEach(name => {

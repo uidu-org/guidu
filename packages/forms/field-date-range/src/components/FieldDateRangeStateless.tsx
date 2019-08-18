@@ -40,7 +40,7 @@ class FieldDateRangeStateless extends Component<any, any> {
     };
   }
 
-  componentWillReceiveProps({ from: nextFrom, to: nextTo }) {
+  UNSAFE_componentWillReceiveProps({ from: nextFrom, to: nextTo }) {
     const { from, to } = this.state;
     if (
       nextFrom &&
