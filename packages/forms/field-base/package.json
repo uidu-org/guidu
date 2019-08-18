@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.34",
+  "version": "0.1.35",
   "description": "Inputs using Formsy",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/form": "^0.1.31",
+    "@uidu/form": "^0.1.32",
     "classnames": "^2.2.6",
     "formsy-react": "^2.0.0-beta.3",
     "react-feather": "^2.0.3",

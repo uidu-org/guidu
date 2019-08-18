@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Donate form",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,10 +13,10 @@
     "@uidu/docs": "^0.1.29"
   },
   "dependencies": {
-    "@uidu/checkbox": "^0.1.42",
-    "@uidu/field-text": "^0.1.12",
-    "@uidu/field-textarea": "^0.1.1",
-    "@uidu/form": "^0.1.28",
+    "@uidu/checkbox": "^0.1.46",
+    "@uidu/field-text": "^0.1.15",
+    "@uidu/field-textarea": "^0.1.5",
+    "@uidu/form": "^0.1.32",
     "@uidu/modal-dialog": "^0.1.12",
     "@uidu/payments": "^0.1.2",
     "@uidu/widgets": "^0.1.2",

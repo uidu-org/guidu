@@ -1,6 +1,6 @@
 {
   "name": "@uidu/propose",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Job/volunteer proposals",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,11 +13,11 @@
     "@uidu/docs": "^0.1.29"
   },
   "dependencies": {
-    "@uidu/checkbox": "^0.1.42",
-    "@uidu/field": "^0.1.2",
-    "@uidu/field-text": "^0.1.12",
-    "@uidu/field-textarea": "^0.1.1",
-    "@uidu/form": "^0.1.28",
+    "@uidu/checkbox": "^0.1.46",
+    "@uidu/field": "^0.1.3",
+    "@uidu/field-text": "^0.1.15",
+    "@uidu/field-textarea": "^0.1.5",
+    "@uidu/form": "^0.1.32",
     "@uidu/widgets": "^0.1.2",
     "react-feather": "^2.0.3"
   }

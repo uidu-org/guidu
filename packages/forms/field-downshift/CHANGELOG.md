@@ -1,5 +1,10 @@
 # @uidu/downshift
 
+## 0.1.7
+- [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
+
+  - Upgrade form and field-base to typescript
+
 ## 0.1.6
 - [patch] [f940531](https://github.org/uidu-org/guidu/commits/f940531):
 

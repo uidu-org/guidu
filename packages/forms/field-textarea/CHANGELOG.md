@@ -1,5 +1,10 @@
 # @uidu/field-textarea
 
+## 0.1.5
+- [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
+
+  - Upgrade form and field-base to typescript
+
 ## 0.1.4
 - [patch] [4208f90](https://github.org/uidu-org/guidu/commits/4208f90):
 

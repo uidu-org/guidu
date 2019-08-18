@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Data manager with different views, filter and sorts",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.1",
     "@uidu/calendar": "^0.1.2",
-    "@uidu/data-controls": "^0.1.11",
+    "@uidu/data-controls": "^0.1.12",
     "@uidu/gallery": "^0.1.9",
     "@uidu/list": "^0.1.5",
     "@uidu/shell": "^0.1.20",

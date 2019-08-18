@@ -1,5 +1,10 @@
 # @uidu/propose
 
+## 0.1.4
+- [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
+
+  - Upgrade form and field-base to typescript
+
 ## 0.1.3
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 

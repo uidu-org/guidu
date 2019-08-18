@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An image uploader with preview",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -10,12 +10,12 @@
   "sideEffects": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.30",
-    "@uidu/form": "^0.1.30"
+    "@uidu/form": "^0.1.32"
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.9",
     "@uidu/button": "^0.1.41",
-    "@uidu/field-base": "^0.1.34",
+    "@uidu/field-base": "^0.1.35",
     "@uidu/range": "^0.1.10",
     "@uidu/spinner": "^0.1.9",
     "blueimp-load-image": "^2.20.1",
