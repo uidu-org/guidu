@@ -1,6 +1,6 @@
 {
   "name": "@uidu/radio",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Radio component for forms",
   "uidu:src": "index.ts",
   "module": "index.js",
@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.9",
-    "@uidu/field-base": "^0.1.35"
+    "@uidu/field-base": "^0.1.36"
   }
 }

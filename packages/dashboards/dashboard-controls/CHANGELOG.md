@@ -1,5 +1,10 @@
 # @uidu/dashboard-controls
 
+## 0.1.5
+- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+  - Bump dependencies
+
 ## 0.1.4
 - [patch] [79bbab1](https://github.org/uidu-org/guidu/commits/79bbab1):
 

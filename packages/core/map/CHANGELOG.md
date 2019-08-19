@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.1.8
+- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+  - Codemod for unsafe react lifecycle methods
+- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+  - Bump dependencies
+
 ## 0.1.7
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

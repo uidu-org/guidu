@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "description": "Inputs using Formsy",
   "module": "index.js",
   "uidu:src": "index.ts",
