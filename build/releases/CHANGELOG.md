@@ -1,5 +1,10 @@
 # @uidu/build-releases
 
+## 3.0.17
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 3.0.16
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

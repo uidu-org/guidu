@@ -1,5 +1,10 @@
 # @uidu/tabbar
 
+## 0.1.8
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.7
 - [patch] [6f780ad](https://github.org/uidu-org/guidu/commits/6f780ad):
 

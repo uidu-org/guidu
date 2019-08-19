@@ -1,5 +1,10 @@
 # @uidu/devise
 
+## 0.1.6
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.5
 - [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
 

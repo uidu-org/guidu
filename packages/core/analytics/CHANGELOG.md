@@ -1,5 +1,10 @@
 # @uidu/analytics
 
+## 0.1.11
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.10
 - [patch] [4208f90](https://github.org/uidu-org/guidu/commits/4208f90):
 

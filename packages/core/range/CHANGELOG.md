@@ -1,5 +1,10 @@
 # @uidu/field-range
 
+## 0.1.11
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.10
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

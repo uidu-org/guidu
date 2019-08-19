@@ -1,5 +1,10 @@
 # @uidu/multi-entry-tools
 
+## 0.0.6
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.0.5
 - [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 

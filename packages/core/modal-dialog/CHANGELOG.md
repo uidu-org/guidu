@@ -1,5 +1,10 @@
 # @uidu/modal-dialog
 
+## 0.1.16
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.15
 - [patch] [5a9b207](https://github.org/uidu-org/guidu/commits/5a9b207):
 

@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.16
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.2.15
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/pipelines-docker-image",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": true,
   "description": "Docker image used to set up the guidu repo in pipelines",
   "repository": "https://github.com/uidu-org/guidu.git",

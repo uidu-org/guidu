@@ -1,5 +1,10 @@
 # @uidu/ci-scripts
 
+## 0.1.9
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.8
 - [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
 

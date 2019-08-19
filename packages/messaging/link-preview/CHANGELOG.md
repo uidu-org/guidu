@@ -1,5 +1,10 @@
 # @uidu/link-preview
 
+## 0.1.6
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.5
 - [patch] [613df8d](https://github.org/uidu-org/guidu/commits/613df8d):
 

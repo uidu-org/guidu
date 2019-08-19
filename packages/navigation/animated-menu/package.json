@@ -1,6 +1,6 @@
 {
   "name": "@uidu/animated-menu",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "description": "Animated menu like Stripe",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -15,7 +15,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.31"
+    "@uidu/docs": "^0.1.32"
   },
   "uidu:src": "index.ts"
 }

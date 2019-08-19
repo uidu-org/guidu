@@ -1,5 +1,10 @@
 # @uidu/layer
 
+## 0.1.6
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.5
 - [patch] [5ddb7dd](https://github.org/uidu-org/guidu/commits/5ddb7dd):
 

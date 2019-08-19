@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -9,15 +9,15 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/avatar": "^0.2.14",
-    "@uidu/drawer": "^0.2.0",
-    "@uidu/dropdown-menu": "^0.1.12",
-    "@uidu/media-card": "^0.1.15",
-    "@uidu/media-core": "^0.1.9",
-    "@uidu/media-filmstrip": "^0.1.14",
-    "@uidu/message-form": "^0.1.13",
-    "@uidu/message-renderer": "^0.1.10",
-    "@uidu/tooltip": "^0.1.12",
+    "@uidu/avatar": "^0.2.16",
+    "@uidu/drawer": "^0.2.2",
+    "@uidu/dropdown-menu": "^0.1.15",
+    "@uidu/media-card": "^0.1.16",
+    "@uidu/media-core": "^0.1.10",
+    "@uidu/media-filmstrip": "^0.1.16",
+    "@uidu/message-form": "^0.1.14",
+    "@uidu/message-renderer": "^0.1.11",
+    "@uidu/tooltip": "^0.1.14",
     "classnames": "^2.2.6",
     "emoji-regex": "^8.0.0",
     "moment": "^2.18.1",
@@ -28,7 +28,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.29",
+    "@uidu/docs": "^0.1.32",
     "faker": "^4.1.0"
   },
   "publishConfig": {

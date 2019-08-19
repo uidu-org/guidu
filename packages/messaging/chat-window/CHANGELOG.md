@@ -1,5 +1,10 @@
 # @uidu/chat-window
 
+## 0.1.19
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.18
 - [patch] [fad97b6](https://github.org/uidu-org/guidu/commits/fad97b6):
 
