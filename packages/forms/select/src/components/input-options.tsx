@@ -115,14 +115,14 @@ class ControlOption extends Component<any, any> {
     const [styles, classes] = getPrimitiveStyles({ getStyles, ...rest });
 
     return (
-      <div css={styles} className={classes} {...props}>
-        <div css={iconWrapperCSS()}>
+      <div style={styles} className={classes} {...props}>
+        <div style={iconWrapperCSS()}>
           <Icon
             primaryColor={getPrimaryColor({ ...this.props, ...this.state })}
             secondaryColor={getSecondaryColor({ ...this.props, ...this.state })}
           />
         </div>
-        <div css={truncateCSS()}>{children}</div>
+        <div style={truncateCSS()}>{children}</div>
       </div>
     );
   }

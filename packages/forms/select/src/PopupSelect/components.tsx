@@ -18,7 +18,7 @@ export const MenuDialog = ({ maxWidth, minWidth, ...props }: MenuProps) => {
   const shadow = colors.N40A;
   return (
     <div
-      css={{
+      style={{
         backgroundColor: 'white',
         borderRadius: 4,
         boxShadow: `0 0 0 1px ${shadow}, 0 4px 11px ${shadow}`,
@@ -36,18 +36,19 @@ export const MenuDialog = ({ maxWidth, minWidth, ...props }: MenuProps) => {
 // ==============================
 
 const DropdownIndicator = () => (
-  <div css={{ marginRight: 2, textAlign: 'center', width: 32 }}>
+  <div style={{ marginRight: 2, textAlign: 'center', width: 32 }}>
     <SearchIcon />
   </div>
 );
+
 const Control = ({ innerRef, innerProps, ...props }: any) => (
-  <div ref={innerRef} css={{ padding: '8px 8px 4px' }}>
+  <div ref={innerRef} style={{ padding: '8px 8px 4px' }}>
     <components.Control {...props} innerProps={innerProps} />
   </div>
 );
 export const DummyControl = (props: any) => (
   <div
-    css={{
+    style={{
       border: 0,
       clip: 'rect(1px, 1px, 1px, 1px)',
       height: 1,

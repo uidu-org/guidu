@@ -18,8 +18,8 @@ const flagCSS = () => ({
 });
 
 const Opt = ({ children, icon }: any) => (
-  <div css={labelCSS()}>
-    <span css={flagCSS()}>{icon}</span>
+  <div style={labelCSS()}>
+    <span style={flagCSS()}>{icon}</span>
     {children}
   </div>
 );
