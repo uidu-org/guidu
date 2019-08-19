@@ -2,20 +2,12 @@
   "name": "@uidu/message",
   "version": "0.1.16",
   "description": "A React component that renders a message",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "sideEffects": false,
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "publishConfig": {
-    "access": "public"
-  },
-  "devDependencies": {
-    "@uidu/docs": "^0.1.29",
-    "faker": "^4.1.0"
-  },
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/avatar": "^0.2.14",
     "@uidu/drawer": "^0.2.0",
@@ -34,5 +26,13 @@
     "react-spring": "^8.0.20",
     "react-use-gesture": "5.1.2",
     "styled-components": "^4.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.29",
+    "faker": "^4.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts"
 }

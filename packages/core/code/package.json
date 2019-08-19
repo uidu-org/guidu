@@ -1,13 +1,15 @@
 {
   "name": "@uidu/code",
   "version": "0.1.12",
+  "description": "Renders inline code snippets and code blocks",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "config": {
     "access": "public"
   },
-  "description": "Renders inline code snippets and code blocks",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
   "dependencies": {
     "@uidu/theme": "^0.1.14",
     "memoize-one": "^5.0.0",
@@ -21,10 +23,8 @@
     "react": "^16.8.3",
     "styled-components": "^4.0.3"
   },
-  "author": "uidu",
-  "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "uidu:src": "src/index.js"
 }

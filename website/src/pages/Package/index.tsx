@@ -174,7 +174,7 @@ class Package extends React.Component<Props> {
             </title>
           </Helmet>
         )}
-        <ShellHeader className="border-bottom px-3 px-lg-4 justify-content-between">
+        <ShellHeader className="px-3 px-lg-4 justify-content-between">
           <h1 className="h5 m-0">
             <Button
               type="button"

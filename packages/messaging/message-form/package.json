@@ -1,18 +1,13 @@
 {
   "name": "@uidu/message-form",
   "version": "0.1.13",
+  "private": false,
   "description": "Message form",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.29",
-    "@uidu/media-picker": "^0.1.8"
-  },
   "dependencies": {
     "@loadable/component": "^5.10.1",
     "@types/emoji-mart": "^2.8.4",
@@ -26,5 +21,10 @@
     "@uidu/spinner": "^0.1.8",
     "emoji-mart": "^2.10.0",
     "react-feather": "^2.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.29",
+    "@uidu/media-picker": "^0.1.8"
+  },
+  "uidu:src": "index.ts"
 }

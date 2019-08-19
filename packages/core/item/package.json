@@ -2,15 +2,11 @@
   "name": "@uidu/item",
   "version": "0.1.14",
   "description": "A generic item component to be used within other components",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "dependencies": {
     "@uidu/avatar": "^0.2.15",
     "@uidu/theme": "^0.1.14",
@@ -18,11 +14,6 @@
     "prop-types": "^15.6.0",
     "react-addons-text-content": "^0.0.4",
     "uuid": "^3.3.2"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0",
-    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.2.15",
@@ -34,5 +25,14 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "recompose": "^0.30.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "src/index.js"
 }

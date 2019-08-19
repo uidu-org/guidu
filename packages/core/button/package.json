@@ -2,16 +2,11 @@
   "name": "@uidu/button",
   "version": "0.1.41",
   "description": "Button component for use in forms",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
+  "author": "uidu",
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@types/react-router-dom": "^4.3.2",
@@ -21,10 +16,6 @@
     "jest-emotion": "^10.0.10",
     "memoize-one": "^5.0.0",
     "tslib": "^1.9.3"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
@@ -37,5 +28,14 @@
     "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0",
     "react-test-renderer": "^16.8.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
+  "uidu:src": "index.ts"
 }

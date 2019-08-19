@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { Component } from 'react';
 import { Eye, EyeOff } from 'react-feather';
 import zxcvbn from 'zxcvbn';
+import { FieldPasswordProps } from '../types';
 import FieldPasswordStateless from './FieldPasswordStateless';
 
 type State = {
@@ -12,7 +13,7 @@ type State = {
   passwordStrength: number;
 };
 
-class FieldPassword extends Component<any, State> {
+class FieldPassword extends Component<FieldPasswordProps, State> {
   private element;
 
   static defaultProps = {

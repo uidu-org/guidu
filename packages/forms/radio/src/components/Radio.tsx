@@ -5,11 +5,7 @@ import InputControl from './RadioStateless';
 class Radio extends PureComponent<any> {
   private element = React.createRef();
 
-  static defaultProps = {
-    floatLabel: null,
-    onBlur: () => {},
-    onChange: () => {},
-  };
+  static defaultProps = {};
 
   handleChange = event => {
     const {

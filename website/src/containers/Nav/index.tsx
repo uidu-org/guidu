@@ -1,8 +1,8 @@
 import Navigation from '@uidu/navigation';
 import { ShellHeader } from '@uidu/shell';
+import Avatar from 'avataaars';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import atlaskitLogo from '../../assets/atlaskit-logo.png';
 import { externalPackages as packages } from '../../site';
 import * as fs from '../../utils/fs';
 import defaultNavigations from './navigations/Default';
@@ -38,14 +38,28 @@ export default class Nav extends React.Component<{}, State> {
               {
                 type: 'InlineComponent',
                 component: () => (
-                  <ShellHeader className="border-bottom px-3 px-xl-4">
-                    <img
-                      alt="Atlaskit logo"
-                      className="mr-2 mr-xl-3"
-                      src={atlaskitLogo}
-                      style={{ display: 'block', width: 24 }}
+                  <ShellHeader className="px-3 px-xl-4 py-3 h-auto">
+                    <Avatar
+                      style={{ width: '96px', height: '96px' }}
+                      avatarStyle="Circle"
+                      topType="WinterHat2"
+                      accessoriesType="Round"
+                      hatColor="Heather"
+                      facialHairType="BeardMajestic"
+                      facialHairColor="Blonde"
+                      clotheType="ShirtScoopNeck"
+                      clotheColor="Blue03"
+                      eyeType="Happy"
+                      eyebrowType="DefaultNatural"
+                      mouthType="Default"
+                      skinColor="Light"
                     />
-                    <h5 className="m-0">GUIDU</h5>
+                    <div className="ml-2">
+                      <h5 className="m-0">GUIDÙ</h5>
+                      <p className="mb-0 text-muted small">
+                        A friend who helps you build awesome things
+                      </p>
+                    </div>
                   </ShellHeader>
                 ),
               },
@@ -55,7 +69,7 @@ export default class Nav extends React.Component<{}, State> {
                   {
                     type: 'InlineComponent',
                     component: () => (
-                      <div className="px-3 px-xl-4 my-4">
+                      <div className="px-3 px-xl-4 mb-4">
                         <input
                           type="search"
                           className="form-control shadow-none mb-4"

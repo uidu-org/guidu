@@ -2,19 +2,19 @@
   "name": "@uidu/media-core",
   "version": "0.1.9",
   "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "author": "uidu",
-  "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@uidu/docs": "^0.1.25"
   },
   "peerDependencies": {
     "react": "^16.8.3"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts"
 }

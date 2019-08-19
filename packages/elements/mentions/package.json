@@ -2,13 +2,13 @@
   "name": "@uidu/mentions",
   "version": "0.1.4",
   "description": "A React component that renders a message",
-  "module": "index.js",
-  "uidu:src": "src/index.jsx",
-  "repository": "https://github.com/uidu-org/guidu",
-  "sideEffects": false,
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "uidu:src": "src/index.jsx"
 }

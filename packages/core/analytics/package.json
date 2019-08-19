@@ -2,20 +2,13 @@
   "name": "@uidu/analytics",
   "version": "0.1.10",
   "description": "The uidu component analytics framework",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "prop-types": "^15.6.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.41",
@@ -24,5 +17,12 @@
     "lodash.isequal": "^4.5.0",
     "react-dom": "^16.4.0",
     "redux": "^4.0.1"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts"
 }

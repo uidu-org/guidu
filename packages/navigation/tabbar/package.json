@@ -1,19 +1,19 @@
 {
   "name": "@uidu/tabbar",
   "version": "0.1.7",
-  "description": "Downshift React component",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
   "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.27"
-  },
+  "description": "Downshift React component",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/shell": "^0.1.10",
     "react-dom": "^16.4.0"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "uidu:src": "index.ts"
 }

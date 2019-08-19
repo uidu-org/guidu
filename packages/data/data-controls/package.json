@@ -1,17 +1,13 @@
 {
   "name": "@uidu/data-controls",
   "version": "0.1.12",
+  "private": false,
   "description": "Elements to filter, sort, group data",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.30"
-  },
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.14",
     "@uidu/droplist": "^0.1.13",
@@ -22,5 +18,9 @@
     "react-feather": "^2.0.3",
     "react-powerplug": "^1.0.0",
     "styled-components": "^4.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.30"
+  },
+  "uidu:src": "index.ts"
 }

@@ -1,17 +1,13 @@
 {
   "name": "@uidu/calendar",
   "version": "0.1.4",
+  "private": false,
   "description": "React component to show data items as calendar",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.29"
-  },
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.10",
     "@uidu/shell": "^0.1.18",
@@ -19,5 +15,9 @@
     "moment": "^2.18.1",
     "react-big-calendar": "^0.22.0",
     "react-feather": "^2.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.29"
+  },
+  "uidu:src": "index.ts"
 }

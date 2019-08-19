@@ -111,7 +111,7 @@ export default class Field extends PureComponent<any> {
       case 'checkbox':
         return (
           <LoadableCheckbox fallback={<CheckboxLoader />}>
-            {({ Checkbox }) => (
+            {({ default: Checkbox }) => (
               <div className="my-3">
                 <Checkbox
                   {...sharedProps}

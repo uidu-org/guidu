@@ -1,21 +1,21 @@
 {
   "name": "@uidu/list",
   "version": "0.1.5",
+  "private": false,
   "description": "React component to show data items as calendar",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.27"
-  },
   "dependencies": {
     "@uidu/table": "^0.1.9",
     "memoize-one": "^5.0.0",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.2"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27"
+  },
+  "uidu:src": "index.ts"
 }

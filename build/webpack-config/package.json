@@ -1,21 +1,18 @@
 {
   "name": "@uidu/webpack-config",
-  "bin": {
-    "webpack-dev": "./bin/dev.js",
-    "webpack-build": "./bin/build.js"
-  },
   "version": "0.1.34",
   "description": "Configurations for webpack used in Guidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "uidu",
   "main": "config/index.js",
+  "bin": {
+    "webpack-build": "./bin/build.js",
+    "webpack-dev": "./bin/dev.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "github:uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": "uidu",
-  "license": "ISC",
   "dependencies": {
     "@uidu/changelog-loader": "^0.1.13",
     "@uidu/fs-loader": "^0.1.23",
@@ -56,6 +53,9 @@
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-dev-server": "^3.2.1",
     "webpack-manifest-plugin": "^2.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

@@ -2,15 +2,16 @@
   "name": "@uidu/modal-dialog",
   "version": "0.1.15",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
-  "author": "uidu",
+  "keywords": [
+    "atlaskit",
+    "react",
+    "ui"
+  ],
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
     "@uidu/analytics": "^0.1.10",
@@ -27,10 +28,6 @@
     "react-transition-group": "^4.0.0",
     "tiny-invariant": "^1.0.3"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@atlaskit/inline-dialog": "^9.0.15",
     "@uidu/avatar": "^0.2.15",
@@ -43,9 +40,12 @@
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"
   },
-  "keywords": [
-    "atlaskit",
-    "react",
-    "ui"
-  ]
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "src/index.js"
 }

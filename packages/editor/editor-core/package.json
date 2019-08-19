@@ -1,8 +1,9 @@
 {
   "name": "@uidu/editor-core",
   "version": "0.1.4",
-  "main": "index.js",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
+  "main": "index.js",
   "dependencies": {
     "@atlaskit/adf-schema": "^2.6.1",
     "@atlaskit/adf-utils": "^6.1.0",

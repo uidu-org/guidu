@@ -2,25 +2,15 @@
   "name": "@uidu/theme",
   "version": "0.1.14",
   "description": "The Atlaskit theme framework",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
-  "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Sean C",
-    "Ajay M",
-    "Daniel D",
-    "Kang C"
-  ],
   "dependencies": {
     "exenv": "^1.2.2",
     "prop-types": "^15.6.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.41",
@@ -29,5 +19,16 @@
     "@uidu/section-message": "^0.1.10",
     "color": "^3.1.0",
     "react-dom": "^16.4.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "maintainers": [
+    "Sean C",
+    "Ajay M",
+    "Daniel D",
+    "Kang C"
+  ],
+  "uidu:src": "src/index.js"
 }

@@ -2,8 +2,9 @@
   "name": "@uidu/widgets",
   "version": "0.1.2",
   "description": "Widgets components with zois",
-  "main": "index.js",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
+  "main": "index.js",
   "dependencies": {
     "@uidu/contact": "^0.1.2",
     "@uidu/shell": "^0.1.18",

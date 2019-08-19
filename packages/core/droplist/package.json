@@ -2,14 +2,10 @@
   "name": "@uidu/droplist",
   "version": "0.1.13",
   "description": "Droplist component",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "module": "index.js",
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
     "@uidu/analytics": "^0.1.9",
@@ -22,15 +18,19 @@
     "keycode": "^2.2.0",
     "prop-types": "^15.6.0"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@uidu/button": "^0.1.41",
     "@uidu/docs": "^0.1.30",
     "@uidu/field-base": "^0.1.33",
     "react-dom": "^16.4.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "src/index.js"
 }

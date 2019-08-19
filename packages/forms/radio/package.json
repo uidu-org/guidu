@@ -2,17 +2,18 @@
   "name": "@uidu/radio",
   "version": "0.2.1",
   "description": "Radio component for forms",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "sideEffects": false,
-  "license": "MIT",
+  "dependencies": {
+    "@uidu/analytics": "^0.1.9",
+    "@uidu/field-base": "^0.1.36"
+  },
   "devDependencies": {
     "@uidu/docs": "^0.1.30",
     "@uidu/form": "^0.1.32"
   },
-  "dependencies": {
-    "@uidu/analytics": "^0.1.9",
-    "@uidu/field-base": "^0.1.36"
-  }
+  "uidu:src": "index.ts"
 }

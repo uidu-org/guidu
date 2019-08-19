@@ -2,23 +2,15 @@
   "name": "@uidu/avatar",
   "version": "0.2.15",
   "description": "A component that represents a user",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "dependencies": {
     "@uidu/analytics": "^0.1.9",
     "@uidu/theme": "^0.1.14",
     "@uidu/tooltip": "^0.1.13"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.41",
@@ -28,5 +20,13 @@
     "@uidu/toggle": "^0.1.16",
     "react-dom": "^16.4.0"
   },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
+  "uidu:src": "src/index.js"
 }

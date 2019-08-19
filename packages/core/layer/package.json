@@ -2,28 +2,28 @@
   "name": "@uidu/layer",
   "version": "0.1.5",
   "description": "A React layer component responsible for the position of an element on a page",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "dependencies": {
     "popper.js": "^1.14.4",
     "raf-schd": "^4.0.0",
     "react-scrolllock": "^4.0.1"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@uidu/docs": "^0.1.30",
     "react-dom": "^16.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
   },
   "uidu": {
     "internal": true,
     "name": "Layer",
     "team": "core"
-  }
+  },
+  "uidu:src": "src/index.js"
 }

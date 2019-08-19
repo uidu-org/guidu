@@ -2,16 +2,12 @@
   "name": "@uidu/field-base",
   "version": "0.1.36",
   "description": "Inputs using Formsy",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
+  "author": "uidu",
   "sideEffects": false,
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/form": "^0.1.32",
     "classnames": "^2.2.6",
@@ -20,5 +16,9 @@
     "shortid": "^2.2.14"
   },
   "devDependencies": {},
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
+  "uidu:src": "index.ts"
 }

@@ -2,27 +2,24 @@
   "name": "@uidu/themes-uidu",
   "version": "0.1.34",
   "description": "uidu main theme",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "",
+  "files": [
+    "index.scss"
+  ],
   "main": "index.scss",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uidu-org/guidu.git"
+  "devDependencies": {
+    "@uidu/docs": "^0.1.25"
   },
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "index.scss"
-  ],
-  "author": "",
-  "license": "ISC",
   "bundlesize": [
     {
       "path": "./dist/umd/*.js",
       "maxSize": "300 kB"
     }
   ],
-  "devDependencies": {
-    "@uidu/docs": "^0.1.25"
-  },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

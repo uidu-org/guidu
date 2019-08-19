@@ -2,15 +2,11 @@
   "name": "@uidu/media-card",
   "version": "0.1.15",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "author": "uidu",
-  "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
     "@uidu/button": "^0.1.39",
     "@uidu/dropdown-menu": "^0.1.12",
@@ -24,15 +20,19 @@
     "react-dom": "^16.4.0",
     "styled-components": "^4.0.3"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@uidu/docs": "^0.1.25",
     "faker": "^4.1.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts"
 }

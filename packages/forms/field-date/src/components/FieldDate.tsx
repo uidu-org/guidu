@@ -8,10 +8,7 @@ class FieldDate extends PureComponent<FieldBaseProps & FieldDateProps> {
   private element = React.createRef();
 
   static defaultProps = {
-    floatLabel: null,
     formatSubmit: 'YYYY-MM-DD',
-    onBlur: () => {},
-    onChange: () => {},
   };
 
   handleChange = (date: any) => {

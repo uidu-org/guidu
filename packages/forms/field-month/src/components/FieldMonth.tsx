@@ -8,9 +8,6 @@ class FieldMonth extends Component<any> {
   static defaultProps = {
     type: 'text',
     value: '',
-    floatLabel: null,
-    onChange: () => {},
-    onBlur: () => {},
   };
 
   handleChange = event => {

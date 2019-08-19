@@ -1,22 +1,22 @@
 {
   "name": "@uidu/field-counter",
   "version": "0.1.2",
+  "private": false,
   "description": "A counter input element - good for plus-minus elements",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "sideEffects": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.27",
-    "@uidu/form": "^0.1.32"
-  },
   "dependencies": {
     "@uidu/analytics": "^0.1.7",
     "@uidu/field-base": "^0.1.35",
     "react-numeric-input": "^2.2.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.27",
+    "@uidu/form": "^0.1.32"
+  },
+  "uidu:src": "index.ts"
 }

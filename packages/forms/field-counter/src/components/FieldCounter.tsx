@@ -1,15 +1,10 @@
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
+import { FieldCounterProps } from '../types';
 import InputControl from './FieldCounterStateless';
 
-class FieldCounter extends PureComponent<any> {
+class FieldCounter extends PureComponent<FieldCounterProps> {
   private element = React.createRef();
-
-  static defaultProps = {
-    floatLabel: null,
-    onBlur: () => {},
-    onChange: () => {},
-  };
 
   handleChange = value => {
     const { onChange, onSetValue, name } = this.props;

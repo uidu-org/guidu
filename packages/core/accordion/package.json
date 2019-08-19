@@ -2,19 +2,19 @@
   "name": "@uidu/accordion",
   "version": "0.1.9",
   "description": "React accessible accordion component",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/docs": "^0.1.25",
     "@uidu/theme": "^0.1.13",
     "react-accessible-accordion": "^3.0.0",
     "styled-components": "^4.0.3"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts"
 }

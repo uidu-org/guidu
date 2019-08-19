@@ -2,15 +2,12 @@
   "name": "@uidu/build-utils",
   "version": "0.1.9",
   "description": "Collection of utilities to used during the release process of Atlaskit",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "uidu",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "uidu",
-  "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "@uidu/build-releases": "^3.0.13",
@@ -23,5 +20,8 @@
     "npm-run": "^5.0.1",
     "projector-spawn": "^1.0.1",
     "uuid": "^3.3.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

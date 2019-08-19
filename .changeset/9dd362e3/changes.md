@@ -1,0 +1,1 @@
+- Better package json organization

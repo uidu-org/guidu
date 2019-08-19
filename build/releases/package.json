@@ -2,18 +2,16 @@
   "name": "@uidu/build-releases",
   "version": "3.0.16",
   "description": "This will definitely get split up at some point, just using for testing",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
   "main": "bin/build-releases.js",
-  "publishConfig": {
-    "access": "public"
+  "bin": {
+    "build-releases": "./bin/build-releases.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "bin": {
-    "build-releases": "./bin/build-releases.js"
-  },
-  "author": "Atlassian Pty Ltd",
-  "license": "Apache-2.0",
   "dependencies": {
     "@uidu/build-utils": "^0.1.8",
     "bolt": "^0.23.1",
@@ -28,5 +26,8 @@
   },
   "devDependencies": {
     "jest-fixtures": "^0.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

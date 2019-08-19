@@ -28,7 +28,7 @@ const defaults = {
 
 const PopupSelectExample = () => (
   <Form {...formDefaultProps}>
-    <div css={{ display: 'flex', justifyContent: 'space-between' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
       <PopupSelect
         {...defaults}
         target={({ ref }) => <button ref={ref}>Target</button>}
@@ -47,7 +47,7 @@ const PopupSelectExample = () => (
         popperProps={{ placement: 'right-start' }}
       />
     </div>
-    <div css={{ display: 'flex' }}>
+    <div style={{ display: 'flex' }}>
       <div
         style={{
           background: 'AliceBlue',

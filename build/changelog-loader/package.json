@@ -1,13 +1,13 @@
 {
   "name": "@uidu/changelog-loader",
   "version": "0.1.13",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "ISC",
+  "author": "uidu",
   "main": "index.js",
-  "uidu:src": "index.js",
-  "repository": "github:uidu-org/guidu",
   "publishConfig": {
     "access": "public"
   },
-  "author": "uidu",
-  "license": "ISC",
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
+  "uidu:src": "index.js"
 }

@@ -1,14 +1,13 @@
 {
   "name": "@uidu/chat-window",
   "version": "0.1.18",
+  "private": false,
   "description": "Downshift React component",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
   "dependencies": {
     "@uidu/message": "^0.1.9",
     "@uidu/message-form": "^0.1.11",
@@ -24,5 +23,6 @@
     "@uidu/shell": "^0.1.12",
     "faker": "^4.1.0",
     "use-clipboard-copy": "^0.1.0"
-  }
+  },
+  "uidu:src": "index.ts"
 }

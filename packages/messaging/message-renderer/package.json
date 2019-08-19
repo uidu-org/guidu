@@ -1,17 +1,13 @@
 {
   "name": "@uidu/message-renderer",
   "version": "0.1.10",
+  "private": false,
   "description": "Message renderer",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.29"
-  },
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.6",
     "@uidu/theme": "^0.1.8",
@@ -19,5 +15,9 @@
     "interweave-autolink": "^3.0.0",
     "react-feather": "^2.0.3",
     "styled-components": "^4.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.29"
+  },
+  "uidu:src": "index.ts"
 }

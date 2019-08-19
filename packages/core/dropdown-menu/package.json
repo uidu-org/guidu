@@ -2,14 +2,10 @@
   "name": "@uidu/dropdown-menu",
   "version": "0.1.14",
   "description": "Creates a dropdown menu, with optional groups, headings, icons, checkbox items, radio group items and disabled items.",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "module": "index.js",
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
     "@uidu/analytics": "^0.1.9",
@@ -21,16 +17,20 @@
     "prop-types": "^15.6.0",
     "uuid": "^3.3.2"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@uidu/avatar": "^0.2.15",
     "@uidu/docs": "^0.1.30",
     "@uidu/lozenge": "^0.1.11",
     "@uidu/tooltip": "^0.1.13",
     "react-dom": "^16.4.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "src/index.js"
 }

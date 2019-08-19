@@ -2,15 +2,11 @@
   "name": "@uidu/map",
   "version": "0.1.8",
   "description": "A React component for maps",
-  "module": "index.js",
-  "uidu:src": "src/index.js",
-  "sideEffects": false,
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
-  "repository": "https://github.com/uidu-org/guidu",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
   "dependencies": {
     "@types/googlemaps": "^3.30.19",
     "@types/markerclustererplus": "^2.1.33",
@@ -18,13 +14,17 @@
     "react-google-maps": "^9.4.5",
     "recompose": "^0.30.0"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@uidu/docs": "^0.1.30",
     "react-dom": "^16.4.0",
     "react-test-renderer": "^16.8.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "src/index.js"
 }

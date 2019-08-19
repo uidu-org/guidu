@@ -15,11 +15,14 @@ import { ComponentHOCProps } from './types';
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const FormsyReactComponent = (
-  ComposedComponent: ComponentClass<any>,
-) => {
+const FormsyReactComponent = (ComposedComponent: ComponentClass<any>) => {
   class ComponentHOC extends Component<ComponentHOCProps> {
     private id: string = null;
+
+    static defaultProps = {
+      onChange: () => {},
+      layout: 'vertical',
+    };
 
     static contextType = FormContext;
 
@@ -128,12 +131,7 @@ const FormsyReactComponent = (
     }
   }
 
-  ComposedComponent.defaultProps = {
-    onChange: () => {},
-    layout: 'vertical',
-  };
-
-  const WithFormsy = withFormsy(ComponentHOC);
+  const WithFormsy = withFormsy(ComponentHOC as any);
   return React.forwardRef<any, any>((props, ref) => {
     return <WithFormsy {...props} ref={ref} />;
   });

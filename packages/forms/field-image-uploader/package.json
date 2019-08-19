@@ -1,17 +1,13 @@
 {
   "name": "@uidu/field-image-uploader",
   "version": "0.1.1",
+  "private": false,
   "description": "An image uploader with preview",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "license": "MIT",
-  "private": false,
-  "sideEffects": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.30",
-    "@uidu/form": "^0.1.32"
-  },
   "dependencies": {
     "@uidu/analytics": "^0.1.9",
     "@uidu/button": "^0.1.41",
@@ -24,5 +20,10 @@
     "react-dropzone": "^10.1.7",
     "react-feather": "^2.0.3",
     "styled-components": "^4.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.30",
+    "@uidu/form": "^0.1.32"
+  },
+  "uidu:src": "index.ts"
 }

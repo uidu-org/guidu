@@ -3,13 +3,14 @@
   "version": "0.1.8",
   "private": true,
   "description": "A collection of scripts for use in CI",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
   "main": "index.js",
   "scripts": {
-    "stop-if-older-build": "node ./release.stop.pipeline.if.older.build.running.js",
-    "restart-stopped-build": "node ./release.restart.last.stopped.build.js"
+    "restart-stopped-build": "node ./release.restart.last.stopped.build.js",
+    "stop-if-older-build": "node ./release.stop.pipeline.if.older.build.running.js"
   },
-  "author": "Atlassian Pty Ltd",
-  "license": "Apache-2.0",
   "dependencies": {
     "@uidu/build-utils": "^0.1.7",
     "adf-builder": "^3.3.0",

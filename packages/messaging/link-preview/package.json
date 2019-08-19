@@ -2,14 +2,15 @@
   "name": "@uidu/link-preview",
   "version": "0.1.5",
   "description": "A link preview regex and rendering",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
+  "dependencies": {
+    "axios": "^0.19.0",
+    "get-urls": "^9.1.0",
+    "nanoclamp": "^1.2.9"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.25",
@@ -17,9 +18,8 @@
     "@uidu/form": "^0.1.27",
     "lodash": "^4.17.4"
   },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "get-urls": "^9.1.0",
-    "nanoclamp": "^1.2.9"
-  }
+  "publishConfig": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts"
 }

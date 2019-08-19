@@ -1,21 +1,21 @@
 {
   "name": "@uidu/animated-menu",
   "version": "0.1.6",
+  "private": false,
   "description": "Animated menu like Stripe",
-  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu.git",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "repository": "https://github.com/uidu-org/guidu",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.31"
-  },
   "dependencies": {
     "classnames": "^2.2.6",
     "react-flip-toolkit": "^7.0.0",
     "react-router-dom": "^5.0.0",
     "styled-components": "^4.0.3"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.31"
+  },
+  "uidu:src": "index.ts"
 }
