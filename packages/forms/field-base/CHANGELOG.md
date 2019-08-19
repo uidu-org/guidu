@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.36
+- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+  - Bump dependencies
+
 ## 0.1.35
 - [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
 

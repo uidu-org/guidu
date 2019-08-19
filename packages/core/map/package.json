@@ -1,6 +1,6 @@
 {
   "name": "@uidu/map",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A React component for maps",
   "module": "index.js",
   "uidu:src": "src/index.js",

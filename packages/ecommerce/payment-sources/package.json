@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payment-sources",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Payment form using Stripe",
   "uidu:src": "index.ts",
   "module": "index.js",

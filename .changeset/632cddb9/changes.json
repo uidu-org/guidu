@@ -1,7 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/modal-dialog", "type": "patch" },
-    { "name": "@uidu/radio", "type": "patch" }
-  ],
-  "dependents": []
-}

@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.1.5
+- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+  - Codemod for unsafe react lifecycle methods
+- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+  - Bump dependencies
+
 ## 0.1.4
 - [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
 

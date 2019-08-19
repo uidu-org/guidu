@@ -1,5 +1,10 @@
 # @uidu/modal-dialog
 
+## 0.1.15
+- [patch] [5a9b207](https://github.org/uidu-org/guidu/commits/5a9b207):
+
+  - Bump
+
 ## 0.1.14
 - [patch] [4208f90](https://github.org/uidu-org/guidu/commits/4208f90):
 
