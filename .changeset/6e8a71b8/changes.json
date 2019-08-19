@@ -1,0 +1,27 @@
+{
+  "releases": [
+    { "name": "@uidu/checkbox", "type": "patch" },
+    { "name": "@uidu/editor-core", "type": "patch" },
+    { "name": "@uidu/field-base", "type": "patch" },
+    { "name": "@uidu/field-counter", "type": "patch" },
+    { "name": "@uidu/field-date-range", "type": "patch" },
+    { "name": "@uidu/field-date", "type": "patch" },
+    { "name": "@uidu/field-downshift", "type": "patch" },
+    { "name": "@uidu/field-geosuggest", "type": "patch" },
+    { "name": "@uidu/field-image-uploader", "type": "patch" },
+    { "name": "@uidu/field-mentions", "type": "patch" },
+    { "name": "@uidu/field-month", "type": "patch" },
+    { "name": "@uidu/field-number", "type": "patch" },
+    { "name": "@uidu/field-password", "type": "patch" },
+    { "name": "@uidu/field-range", "type": "patch" },
+    { "name": "@uidu/field-text", "type": "patch" },
+    { "name": "@uidu/field-textarea", "type": "patch" },
+    { "name": "@uidu/field-time", "type": "patch" },
+    { "name": "@uidu/field-toggle", "type": "patch" },
+    { "name": "@uidu/form", "type": "patch" },
+    { "name": "@uidu/radio", "type": "patch" },
+    { "name": "@uidu/select", "type": "patch" },
+    { "name": "@uidu/blocks", "type": "patch" }
+  ],
+  "dependents": []
+}

@@ -1,9 +1,9 @@
 import { ComponentHOC, Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { FieldDownshiftProps } from '../types';
 
-class FieldDownshift extends PureComponent<FieldDownshiftProps> {
+class FieldDownshift extends Component<FieldDownshiftProps> {
   static defaultProps = {
     wrapper: FieldWrapper,
     input: null,

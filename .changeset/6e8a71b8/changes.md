@@ -1,0 +1,1 @@
+- Migrate forms to typescript, WIP typing and documenting all components, using formsy 2"

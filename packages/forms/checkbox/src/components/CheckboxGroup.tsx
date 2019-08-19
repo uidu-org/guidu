@@ -14,12 +14,10 @@ class CheckboxGroup extends Component<CheckboxGroupProps> {
 
   handleChange = () => {
     const { options, name } = this.props;
-    console.log(this.elements);
     const checkedOptions = options.filter(
       option => this.elements[option.id].current.checked,
     );
     const value = checkedOptions.map(option => option.id);
-    console.log(value);
     this.props.onSetValue(value);
     this.props.onChange(name, value);
   };

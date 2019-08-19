@@ -3,10 +3,11 @@
   "version": "0.1.11",
   "description": "Component which renders a slider and is a substitute of the native input[range] element",
   "module": "index.js",
-  "uidu:src": "src/index.js",
+  "uidu:src": "index.td",
+  "types": "index.d.ts",
   "sideEffects": false,
   "author": "uidu",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"

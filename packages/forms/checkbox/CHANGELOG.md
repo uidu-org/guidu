@@ -1,30 +1,36 @@
 # Change Log
 
 ## 0.1.46
-- [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
+
+- [patch][86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
 
   - Upgrade form and field-base to typescript
 
 ## 0.1.45
-- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+- [patch][fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 
   - Bump dependencies
 
 ## 0.1.44
-- [patch] [2809c2f](https://github.org/uidu-org/guidu/commits/2809c2f):
+
+- [patch][2809c2f](https://github.org/uidu-org/guidu/commits/2809c2f):
 
   - Allow default export for forms consistency
 
 ## 0.1.43
-- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+- [patch][a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 
   - Added field-date-range and field-date
-- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+- [patch][a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 
   - Better date controls in dashboard
 
 ## 0.1.42
-- [patch] [e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
+
+- [patch][e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
 
   - Added textarea field component
 

@@ -7,7 +7,7 @@
   "types": "index.d.ts",
   "sideEffects": false,
   "author": "uidu",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"

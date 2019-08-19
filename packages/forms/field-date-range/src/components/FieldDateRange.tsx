@@ -14,7 +14,6 @@ class FieldDate extends PureComponent<any> {
 
   handleChange = (value: any) => {
     const { onSetValue, onChange } = this.props;
-    console.log(value);
     onSetValue(value);
     onChange(name, value);
   };

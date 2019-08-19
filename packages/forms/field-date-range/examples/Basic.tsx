@@ -12,7 +12,6 @@ export default class Basic extends Component<any, any> {
   };
 
   onChange = (name, value) => {
-    console.log(name, value);
     this.setState({
       eventResult: `onChange called with value: ${value.from} ${value.to}`,
     });

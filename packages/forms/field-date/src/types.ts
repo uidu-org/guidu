@@ -7,4 +7,5 @@ export type FieldDateProps = DayPickerInputProps & {
   containerClassName?: string;
   wrapperClassName?: string;
   innerRef: React.RefObject<any>;
+  formatSubmit: string;
 };

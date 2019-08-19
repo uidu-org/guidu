@@ -58,7 +58,7 @@ class FieldTextareaStateless extends Component<any> {
 }
 
 export { FieldTextareaStateless as FieldTextareaStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldTextarea',
@@ -66,7 +66,7 @@ export default withAnalyticsContext({
   packageVersion,
 })(
   withAnalyticsEvents({
-    onBlur: createAndFireEventOnAtlaskit({
+    onBlur: createAndFireEventOnGuidu({
       action: 'blurred',
       actionSubject: 'textareaField',
 
@@ -77,7 +77,7 @@ export default withAnalyticsContext({
       },
     }),
 
-    onFocus: createAndFireEventOnAtlaskit({
+    onFocus: createAndFireEventOnGuidu({
       action: 'focused',
       actionSubject: 'textareaField',
 

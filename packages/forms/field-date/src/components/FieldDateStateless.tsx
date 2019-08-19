@@ -79,7 +79,7 @@ class FieldDateStateless extends Component<FieldDateProps> {
 }
 
 export { FieldDateStateless as FieldDateStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldDate',
@@ -87,7 +87,7 @@ export default withAnalyticsContext({
   packageVersion,
 })(
   withAnalyticsEvents({
-    onBlur: createAndFireEventOnAtlaskit({
+    onBlur: createAndFireEventOnGuidu({
       action: 'blurred',
       actionSubject: 'dateField',
 
@@ -98,7 +98,7 @@ export default withAnalyticsContext({
       },
     }),
 
-    onFocus: createAndFireEventOnAtlaskit({
+    onFocus: createAndFireEventOnGuidu({
       action: 'focused',
       actionSubject: 'dateField',
 

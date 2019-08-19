@@ -3,11 +3,11 @@
   "version": "0.1.14",
   "description": "Field Month Component",
   "module": "index.js",
-  "uidu:src": "src/index.js",
+  "uidu:src": "index.ts",
   "types": "index.d.ts",
   "sideEffects": false,
   "author": "uidu",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"

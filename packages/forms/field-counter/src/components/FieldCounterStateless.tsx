@@ -74,7 +74,7 @@ class FieldCounterStateless extends Component<any> {
 }
 
 export { FieldCounterStateless as FieldNumberStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldNumeric',
@@ -82,7 +82,7 @@ export default withAnalyticsContext({
   packageVersion,
 })(
   withAnalyticsEvents({
-    onBlur: createAndFireEventOnAtlaskit({
+    onBlur: createAndFireEventOnGuidu({
       action: 'blurred',
       actionSubject: 'numericField',
 
@@ -93,7 +93,7 @@ export default withAnalyticsContext({
       },
     }),
 
-    onFocus: createAndFireEventOnAtlaskit({
+    onFocus: createAndFireEventOnGuidu({
       action: 'focused',
       actionSubject: 'numericField',
 

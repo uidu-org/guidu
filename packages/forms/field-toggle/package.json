@@ -3,10 +3,11 @@
   "version": "0.1.16",
   "description": "A component to view and switch between enabled or disabled states",
   "module": "index.js",
-  "uidu:src": "src/index.js",
+  "uidu:src": "index.ts",
+  "types": "index.d.ts",
   "sideEffects": false,
   "author": "uidu",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "https://github.com/uidu-org/guidu",
   "publishConfig": {
     "access": "public"

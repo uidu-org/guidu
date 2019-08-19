@@ -2,45 +2,7 @@ import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import { MapPin } from 'react-feather';
-
-function GeosuggestItem({ userInput: term, suggest, onClick, isActive }) {
-  const text = suggest.label;
-  const cleanedTerm = term.replace(/(\s+)/, '(<[^>]+>)*$1(<[^>]+>)*');
-  const pattern = new RegExp(cleanedTerm, 'gi');
-  const cleanedText = text.replace(pattern, '<b>$&</b>');
-  return (
-    <a
-      role="button"
-      tabIndex={0}
-      className={classNames('dropdown-item', {
-        active: isActive,
-      })}
-      onClick={e => {
-        e.preventDefault();
-        onClick(suggest);
-      }}
-    >
-      <span dangerouslySetInnerHTML={{ __html: cleanedText }} />
-    </a>
-  );
-}
-
-// GeosuggestItem.propTypes = {
-//   userInput: PropTypes.string,
-//   suggest: PropTypes.shape({
-//     label: PropTypes.string,
-//     placeId: PropTypes.string,
-//     description: PropTypes.string,
-//   }),
-//   onClick: PropTypes.func.isRequired,
-//   isActive: PropTypes.bool,
-// };
-
-// GeosuggestItem.defaultProps = {
-//   userInput: undefined,
-//   suggest: {},
-//   isActive: false,
-// };
+import FieldGeosuggestItem from './FieldGeosuggestItem';
 
 class FieldGeosuggest extends PureComponent<any, any> {
   geolocationAvailable: boolean;
@@ -216,7 +178,7 @@ class FieldGeosuggest extends PureComponent<any, any> {
         activeSuggest && suggest.placeId === activeSuggest.placeId;
 
       return (
-        <GeosuggestItem
+        <FieldGeosuggestItem
           key={suggest.placeId}
           suggest={suggest}
           isActive={isActive}

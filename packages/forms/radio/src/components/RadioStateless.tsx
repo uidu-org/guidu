@@ -50,7 +50,7 @@ class RadioStateless extends Component<any> {
 }
 
 export { RadioStateless as RadioStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldRadio',
@@ -58,7 +58,7 @@ export default withAnalyticsContext({
   packageVersion,
 })(
   withAnalyticsEvents({
-    onBlur: createAndFireEventOnAtlaskit({
+    onBlur: createAndFireEventOnGuidu({
       action: 'blurred',
       actionSubject: 'radioField',
 
@@ -69,7 +69,7 @@ export default withAnalyticsContext({
       },
     }),
 
-    onFocus: createAndFireEventOnAtlaskit({
+    onFocus: createAndFireEventOnGuidu({
       action: 'focused',
       actionSubject: 'radioField',
 

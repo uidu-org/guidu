@@ -48,8 +48,6 @@ class FieldDateRangeStateless extends Component<any, any> {
       // (nextFrom.getTime() !== from.getTime() ||
       //   nextTo.getTime() !== to.getTime())
     ) {
-      console.log(nextFrom);
-      console.log(nextTo);
       this.setState({ from: nextFrom, to: nextTo }, () => {
         // onChange({ from: nextFrom, to: nextTo });
       });
@@ -91,8 +89,6 @@ class FieldDateRangeStateless extends Component<any, any> {
       className,
     } = this.props;
     const { from, to } = this.state;
-    console.log(from);
-    console.log(to);
     const modifiers = { start: from, end: to };
 
     return (
@@ -172,7 +168,7 @@ class FieldDateRangeStateless extends Component<any, any> {
 }
 
 export { FieldDateRangeStateless as FieldDateRangeStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldDate',
@@ -180,7 +176,7 @@ export default withAnalyticsContext({
   packageVersion,
 })(
   withAnalyticsEvents({
-    onBlur: createAndFireEventOnAtlaskit({
+    onBlur: createAndFireEventOnGuidu({
       action: 'blurred',
       actionSubject: 'dateField',
 
@@ -191,7 +187,7 @@ export default withAnalyticsContext({
       },
     }),
 
-    onFocus: createAndFireEventOnAtlaskit({
+    onFocus: createAndFireEventOnGuidu({
       action: 'focused',
       actionSubject: 'dateField',
 

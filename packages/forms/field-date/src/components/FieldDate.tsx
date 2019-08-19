@@ -1,9 +1,10 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { ComponentHOC, FieldBaseProps, Wrapper } from '@uidu/field-base';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
+import { FieldDateProps } from '../types';
 import InputControl from './FieldDateStateless';
 
-class FieldDate extends PureComponent<any> {
+class FieldDate extends PureComponent<FieldBaseProps & FieldDateProps> {
   private element = React.createRef();
 
   static defaultProps = {

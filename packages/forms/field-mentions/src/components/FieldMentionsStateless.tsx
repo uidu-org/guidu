@@ -29,8 +29,6 @@ export default class FieldMentionsStateless extends Component<
       style,
     } = this.props;
 
-    console.log(this.props.ref);
-
     return (
       <MentionsInput
         value={value.value || ''}

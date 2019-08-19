@@ -7,7 +7,7 @@ class Checkbox extends PureComponent<CheckboxProps> {
   private element = React.createRef();
 
   static defaultProps = {
-    onChange: () => {},
+    isIndeterminate: false,
   };
 
   handleChange = e => {

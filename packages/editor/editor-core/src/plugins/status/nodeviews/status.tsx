@@ -109,6 +109,7 @@ class StatusContainerView extends React.Component<
                 localId={localId}
                 style={style}
                 onClick={this.handleClick}
+                onHover={() => {}}
               />
             </StyledStatus>
           );

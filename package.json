@@ -215,6 +215,7 @@
     "@types/react-redux": "^7.0.3",
     "@types/react-router": "^5.0.0",
     "@types/react-router-dom": "^4.3.2",
+    "@types/react-select": "^3.0.2",
     "@types/react-stripe-elements": "^1.1.10",
     "@types/react-transition-group": "^4.2.0",
     "@types/recompose": "^0.30.3",

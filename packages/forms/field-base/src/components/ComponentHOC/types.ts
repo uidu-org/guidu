@@ -3,7 +3,8 @@ import { FieldBaseLayout } from '../../types';
 
 export type ComponentHOCProps = PassDownProps & {
   layout: FieldBaseLayout;
-  disabled: boolean;
+  disabled?: boolean;
   validateOnSubmit?: boolean;
   validatePristine?: boolean;
+  onChange?: () => void;
 };

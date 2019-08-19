@@ -1,7 +1,8 @@
 import { FormContext } from '@uidu/form';
 import { withFormsy } from 'formsy-react';
-import React, { Component } from 'react';
+import React, { Component, ComponentClass } from 'react';
 import shortid from 'shortid';
+import { ComponentHOCProps } from './types';
 
 // Component HOC
 // -------------
@@ -14,22 +15,13 @@ import shortid from 'shortid';
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const FormsyReactComponent = ComposedComponent => {
-  class ComponentHOC extends Component<any> {
+const FormsyReactComponent = (
+  ComposedComponent: ComponentClass<any>,
+) => {
+  class ComponentHOC extends Component<ComponentHOCProps> {
     private id: string = null;
 
     static contextType = FormContext;
-
-    static defaultProps = {
-      disabled: false,
-      id: null,
-      label: null,
-      help: null,
-      layout: 'vertical',
-      validateOnSubmit: true,
-      validatePristine: false,
-      onChange: () => {},
-    };
 
     constructor(props) {
       super(props);
@@ -108,6 +100,7 @@ const FormsyReactComponent = ComposedComponent => {
         isRequired,
         value,
         setValue,
+        ref,
       } = this.props;
 
       const cssProps = {
@@ -131,11 +124,19 @@ const FormsyReactComponent = ComposedComponent => {
         onSetValue: setValue,
       };
 
-      return <ComposedComponent {...props} />;
+      return <ComposedComponent ref={ref} {...props} />;
     }
   }
 
-  return withFormsy(ComponentHOC);
+  ComposedComponent.defaultProps = {
+    onChange: () => {},
+    layout: 'vertical',
+  };
+
+  const WithFormsy = withFormsy(ComponentHOC);
+  return React.forwardRef<any, any>((props, ref) => {
+    return <WithFormsy {...props} ref={ref} />;
+  });
 };
 
 export default FormsyReactComponent;
