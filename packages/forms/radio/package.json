@@ -1,6 +1,6 @@
 {
   "name": "@uidu/radio",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Radio component for forms",
   "uidu:src": "index.ts",
   "module": "index.js",

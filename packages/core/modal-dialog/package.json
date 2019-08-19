@@ -37,7 +37,7 @@
     "@uidu/checkbox": "^0.1.45",
     "@uidu/docs": "^0.1.31",
     "@uidu/field-text": "^0.1.14",
-    "@uidu/radio": "^0.1.0",
+    "@uidu/radio": "^0.2.0",
     "@uidu/select": "^0.1.17",
     "react-beautiful-dnd": "^11.0.0",
     "react-dom": "^16.4.0",
