@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-password",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Field Password Component",
   "module": "index.js",
   "uidu:src": "index.ts",
@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.9",
-    "@uidu/field-base": "^0.1.35",
-    "@uidu/field-text": "^0.1.15",
-    "@uidu/form": "^0.1.32",
+    "@uidu/field-base": "^0.1.37",
+    "@uidu/field-text": "^0.1.16",
+    "@uidu/form": "^0.1.33",
     "@uidu/theme": "^0.1.14",
     "@uidu/tooltip": "^0.1.13",
     "classnames": "^2.2.6",

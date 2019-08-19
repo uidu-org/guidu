@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "description": "Forms using Formsy",
   "module": "index.js",
   "uidu:src": "index.ts",
