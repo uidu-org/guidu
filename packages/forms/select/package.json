@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Select Component",
   "keywords": [
     "react",
@@ -15,9 +15,9 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.10",
-    "@uidu/checkbox": "^0.1.46",
-    "@uidu/field-base": "^0.1.35",
-    "@uidu/form": "^0.1.32",
+    "@uidu/checkbox": "^0.1.47",
+    "@uidu/field-base": "^0.1.37",
+    "@uidu/form": "^0.1.33",
     "@uidu/spinner": "^0.1.9",
     "@uidu/theme": "^0.1.14",
     "@uidu/tooltip": "^0.1.13",
