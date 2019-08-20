@@ -1,5 +1,10 @@
 # @uidu/field-counter
 
+## 0.1.4
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.3
 - [patch] [b78d4f0](https://github.org/uidu-org/guidu/commits/b78d4f0):
 

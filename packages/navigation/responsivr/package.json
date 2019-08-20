@@ -1,6 +1,6 @@
 {
   "name": "@uidu/responsivr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Responsivr manages media query component logics",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "react-media": "^1.9.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.25"
+    "@uidu/docs": "^0.1.32"
   },
   "uidu:src": "index.ts"
 }

@@ -1,5 +1,10 @@
 # @uidu/contact
 
+## 0.1.3
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.2
 - [patch] [a59bde7](https://github.org/uidu-org/guidu/commits/a59bde7):
 

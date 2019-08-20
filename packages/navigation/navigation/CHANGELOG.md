@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.18
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.17
 - [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
 

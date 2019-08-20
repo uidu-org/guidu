@@ -1,5 +1,10 @@
 # @uidu/build-utils
 
+## 0.1.10
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.9
 
 - [patch][a26b52b](https://github.org/uidu-org/guidu/commits/a26b52b):

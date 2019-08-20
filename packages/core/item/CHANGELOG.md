@@ -1,5 +1,10 @@
 # @uidu/item
 
+## 0.1.15
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.14
 - [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 

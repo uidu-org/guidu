@@ -1,5 +1,10 @@
 # @uidu/blocks
 
+## 0.1.7
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.6
 - [patch] [b78d4f0](https://github.org/uidu-org/guidu/commits/b78d4f0):
 

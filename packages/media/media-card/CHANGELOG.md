@@ -1,5 +1,10 @@
 # @uidu/media-card
 
+## 0.1.16
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.15
 - [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 

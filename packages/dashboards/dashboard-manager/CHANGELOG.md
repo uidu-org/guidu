@@ -1,5 +1,10 @@
 # @uidu/dashboard-manager
 
+## 0.1.6
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.5
 - [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 

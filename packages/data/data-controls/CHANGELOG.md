@@ -1,5 +1,10 @@
 # @uidu/data-controls
 
+## 0.1.13
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.12
 - [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
 

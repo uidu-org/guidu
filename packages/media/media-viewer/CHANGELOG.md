@@ -1,5 +1,10 @@
 # @uidu/media-viewer
 
+## 0.1.21
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.20
 - [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
 

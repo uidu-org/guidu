@@ -1,5 +1,10 @@
 # @uidu/mentions
 
+## 0.1.5
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.4
 - [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 

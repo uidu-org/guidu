@@ -1,6 +1,6 @@
 {
   "name": "@uidu/portal",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Atlaskit wrapper for rendering components in React portals",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -15,10 +15,10 @@
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/inline-dialog": "^9.0.15",
     "@atlaskit/onboarding": "^7.0.1",
-    "@uidu/button": "^0.1.41",
-    "@uidu/docs": "^0.1.30",
-    "@uidu/modal-dialog": "^0.1.13",
-    "@uidu/tooltip": "^0.1.13",
+    "@uidu/button": "^0.1.42",
+    "@uidu/docs": "^0.1.32",
+    "@uidu/modal-dialog": "^0.1.16",
+    "@uidu/tooltip": "^0.1.14",
     "styled-components": "^4.0.3"
   },
   "peerDependencies": {

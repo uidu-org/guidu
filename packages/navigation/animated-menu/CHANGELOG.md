@@ -1,5 +1,10 @@
 # @uidu/animated-menu
 
+## 0.1.7
+- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+  - Better package json organization
+
 ## 0.1.6
 - [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
 
