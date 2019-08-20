@@ -174,84 +174,94 @@ class Package extends React.Component<Props> {
             </title>
           </Helmet>
         )}
-        <ShellHeader className="px-3 px-lg-4 justify-content-between">
-          <h1 className="h5 m-0">
-            <Button
-              type="button"
-              onClick={this.openDrawer}
-              appearance="subtle"
-              iconBefore={<Menu size={18} />}
-              className="mr-3 d-lg-none"
-            ></Button>
-            <small>
-              <code>{pkg.name}</code>
-            </small>
-          </h1>
-          {examplePath && (
-            <Media query={{ maxWidth: 768 }}>
-              {matches => {
-                if (matches) {
-                  return (
-                    <ButtonGroup>
-                      <Button
-                        type="button"
-                        onClick={this.openOptionsDrawer}
-                        appearance="subtle"
-                        iconBefore={<MoreVertical size={18} />}
-                      ></Button>
-                      <Button
-                        component={React.forwardRef(
-                          ({ children, ...rest }, ref: any) => (
-                            <Link {...rest} to={exampleModalPath} ref={ref}>
-                              {children}
-                            </Link>
-                          ),
-                        )}
-                      >
-                        Examples
-                      </Button>
-                    </ButtonGroup>
-                  );
-                }
-                return (
-                  <ButtonGroup>
-                    <Button
-                      href={`https://www.npmjs.com/package/${pkg.name}`}
-                      label="npm"
-                      summary={pkg.name}
-                      iconBefore={<PackageIcon size={16} />}
-                      target="_blank"
-                    />
-                    <Button
-                      href={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
-                      label="Source"
-                      summary="Github"
-                      iconBefore={<GitHub size={16} />}
-                      target="_blank"
-                    />
-                    <Button
-                      component={Link}
-                      to={`/packages/${groupId}/${pkgId}/changelog`}
-                      iconBefore={<List size={16} />}
-                    >
-                      Changelog
-                    </Button>
-                    <Button
-                      component={React.forwardRef(
-                        ({ children, ...rest }, ref: any) => (
-                          <Link {...rest} to={exampleModalPath} ref={ref}>
-                            {children}
-                          </Link>
-                        ),
-                      )}
-                    >
-                      Examples
-                    </Button>
-                  </ButtonGroup>
-                );
-              }}
-            </Media>
-          )}
+        <ShellHeader className="">
+          <div className="container my-3 my-sm-5">
+            <div className="row justify-content-center">
+              <div className="col-lg-10 d-flex justify-content-between align-content-center">
+                <h1 className="h5 m-0 d-flex align-items-center">
+                  <Button
+                    type="button"
+                    onClick={this.openDrawer}
+                    appearance="subtle"
+                    iconBefore={<Menu size={18} />}
+                    className="mr-3 d-lg-none"
+                  ></Button>
+                  <small>
+                    <code>{pkg.name}</code>
+                  </small>
+                </h1>
+                {examplePath && (
+                  <Media query={{ maxWidth: 768 }}>
+                    {matches => {
+                      if (matches) {
+                        return (
+                          <ButtonGroup>
+                            <Button
+                              type="button"
+                              onClick={this.openOptionsDrawer}
+                              appearance="subtle"
+                              iconBefore={<MoreVertical size={18} />}
+                            ></Button>
+                            <Button
+                              component={React.forwardRef(
+                                ({ children, ...rest }, ref: any) => (
+                                  <Link
+                                    {...rest}
+                                    to={exampleModalPath}
+                                    ref={ref}
+                                  >
+                                    {children}
+                                  </Link>
+                                ),
+                              )}
+                            >
+                              Examples
+                            </Button>
+                          </ButtonGroup>
+                        );
+                      }
+                      return (
+                        <ButtonGroup>
+                          <Button
+                            href={`https://www.npmjs.com/package/${pkg.name}`}
+                            label="npm"
+                            summary={pkg.name}
+                            iconBefore={<PackageIcon size={16} />}
+                            target="_blank"
+                          />
+                          <Button
+                            href={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
+                            label="Source"
+                            summary="Github"
+                            iconBefore={<GitHub size={16} />}
+                            target="_blank"
+                          />
+                          <Button
+                            component={Link}
+                            to={`/packages/${groupId}/${pkgId}/changelog`}
+                            iconBefore={<List size={16} />}
+                          >
+                            Changelog
+                          </Button>
+                          <Button
+                            component={React.forwardRef(
+                              ({ children, ...rest }, ref: any) => (
+                                <Link {...rest} to={exampleModalPath} ref={ref}>
+                                  {children}
+                                </Link>
+                              ),
+                            )}
+                          >
+                            Examples
+                          </Button>
+                        </ButtonGroup>
+                      );
+                    }}
+                  </Media>
+                )}
+              </div>
+            </div>
+          </div>
         </ShellHeader>
         <ShellBody scrollable>
           <div className="container my-3 my-sm-5">

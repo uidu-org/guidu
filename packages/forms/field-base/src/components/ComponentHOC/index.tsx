@@ -15,7 +15,9 @@ import { ComponentHOCProps } from './types';
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const FormsyReactComponent = (ComposedComponent: ComponentClass<any>) => {
+const FormsyReactComponent = <P extends unknown>(
+  ComposedComponent: ComponentClass<P>,
+) => {
   class ComponentHOC extends Component<ComponentHOCProps> {
     private id: string = null;
 
@@ -127,13 +129,17 @@ const FormsyReactComponent = (ComposedComponent: ComponentClass<any>) => {
         onSetValue: setValue,
       };
 
-      return <ComposedComponent ref={ref} {...props} />;
+      return <ComposedComponent ref={ref} {...(props as P)} />;
     }
   }
 
   const WithFormsy = withFormsy(ComponentHOC as any);
-  return React.forwardRef<any, any>((props, ref) => {
-    return <WithFormsy {...props} ref={ref} />;
+  return React.forwardRef<any, P>(({ children, ...props }, ref) => {
+    return (
+      <WithFormsy {...props} ref={ref}>
+        {children}
+      </WithFormsy>
+    );
   });
 };
 

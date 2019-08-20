@@ -38,15 +38,15 @@ export default class GlobalNavigationSkeleton extends PureComponent<
       <GlobalNavigation
         {...this.props}
         header={{
-          children: <Skeleton borderColor="transparent" />,
+          children: <Skeleton />,
           name: 'Joydeed',
         }}
         body={Array.from(Array(10).keys()).map(i => ({
-          children: <Skeleton size="small" borderColor="transparent" />,
+          children: <Skeleton size="small" />,
           name: <GlobalItemLoader />,
         }))}
         footer={Array.from(Array(4).keys()).map(i => ({
-          children: <Skeleton size="small" borderColor="transparent" />,
+          children: <Skeleton size="small" />,
           name: <GlobalItemLoader />,
         }))}
       />

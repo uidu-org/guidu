@@ -1,19 +1,11 @@
+import { FieldBaseProps } from '@uidu/field-base';
 import { MentionItem, MentionProps, OnChangeHandlerFunc } from 'react-mentions';
 
-export type FieldMentionsProps = {
-  /** Items to mention. */
-  items: Array<MentionProps>;
+export type FieldMentionsProps = FieldBaseProps & {
   /** Function to handle display. */
-  suggestionsPortalHost: Element;
-
-  onSetValue: (value: string | {}) => void;
-  onChange: (name: string, value: string | {}) => void;
-  name: string;
-};
-
-export type FieldMentionsStatelessProps = {
+  componentRef?: any;
   style?: any;
-  ref: React.RefObject<any>;
+  ref?: React.RefObject<any>;
   /** Items to mention. */
   items: Array<MentionProps>;
   /** Add a classname to the button. */
@@ -26,6 +18,12 @@ export type FieldMentionsStatelessProps = {
   allowSpaceInQuery?: boolean;
   placeholder?: string;
   suggestionsPortalHost?: Element;
-  onKeyDown?: () => void;
-  onChange: OnChangeHandlerFunc;
+  onKeyDown?: (e: any) => void;
+};
+
+export type FieldMentionsStatelessProps = Omit<
+  FieldMentionsProps,
+  'onChange'
+> & {
+  onChange?: OnChangeHandlerFunc;
 };

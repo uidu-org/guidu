@@ -1,7 +1,7 @@
 import { FieldBaseLayout } from '../../types';
 
 export type RowProps = {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   htmlFor?: string;
   layout?: FieldBaseLayout;
   label?: React.ReactNode;

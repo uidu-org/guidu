@@ -4,12 +4,11 @@
 // requirement, we could just use a native click event all the way up to DropdownMenuStateless,
 // and could get rid of this HOC and DropdownItemClickManager.
 
-import React, { Component, type Node, type ComponentType } from 'react';
 import PropTypes from 'prop-types';
-
+import React, { Component, ComponentType, Node } from 'react';
+import { clickManagerContext } from '../../util/contextNamespace';
 import getDisplayName from '../../util/getDisplayName';
 import safeContextCall from '../../util/safeContextCall';
-import { clickManagerContext } from '../../util/contextNamespace';
 
 type Props = {
   /** Content to be displayed inside the item. Same as @uidu/item `children` prop. */

@@ -252,7 +252,7 @@ export default class MessagesForm extends React.Component<
                 onChange={this.handleSubmitLabel}
                 required={this.props.attachments.length === 0}
                 value={message.body ? { value: message.body } : ''}
-                onKeyDown={(event: KeyboardEvent) => {
+                onKeyDown={(event: React.KeyboardEvent) => {
                   if (event.keyCode === 13 && !event.shiftKey) {
                     event.preventDefault();
                     this.form.current.form.submit();

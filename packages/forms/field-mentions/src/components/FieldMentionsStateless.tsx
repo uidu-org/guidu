@@ -39,7 +39,7 @@ export default class FieldMentionsStateless extends Component<
         allowSpaceInQuery={allowSpaceInQuery}
         className={classNames('form-control h-auto', className)}
         suggestionsPortalHost={suggestionsPortalHost}
-        // inputRef={this.inputRef}
+        inputRef={this.inputRef}
       >
         {items.map((item, index) => (
           <Mention

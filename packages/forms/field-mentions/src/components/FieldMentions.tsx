@@ -4,13 +4,6 @@ import { FieldMentionsProps } from '../types';
 import FieldMentionsStateless from './FieldMentionsStateless';
 
 class FieldMentions extends Component<FieldMentionsProps> {
-  static defaultProps = {
-    displayTransform: (id, display, type) => display,
-    onBlur: () => {},
-    onChange: () => {},
-    onKeyDown: () => {},
-  };
-
   private element: React.RefObject<any> = React.createRef();
 
   handleChange = (event, value, plainTextValue, mentions) => {

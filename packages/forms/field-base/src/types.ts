@@ -17,11 +17,11 @@ export type FieldBaseProps = {
 
   showErrors?: boolean;
   /** type assigned to input */
-  type: string;
+  type?: string;
   /** id assigned to input */
-  id: string;
+  id?: string;
   /** The name of the submitted field. */
-  value: any;
+  value?: any;
   /** The name of the submitted field. */
   name: string;
   /** Text to display in the input if the input is empty. */
@@ -39,11 +39,14 @@ export type FieldBaseProps = {
   /** Set the maximum length that the entered text can be. */
   maxLength?: number;
 
+  /** */
+  validations?: string;
+
   /** Function that is called whenever the state of the checkbox changes. It will
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
   onChange?: (name, value) => void;
   onBlur?: (name, value) => void;
-  onSetValue: (value) => void;
+  onSetValue?: (value) => void;
 
   // /** Handler to be called when the input loses focus. */
 

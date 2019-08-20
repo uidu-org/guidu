@@ -138,12 +138,12 @@ export default class CommentForm extends Component<any, any> {
               }
               items={[
                 {
-                  type: 'User',
+                  // type: 'User',
                   trigger: '@',
                   data: this.fetchUsers,
                   style: { backgroundColor: '#d1c4e9' },
                   renderSuggestion: (
-                    suggestion,
+                    suggestion: any,
                     search,
                     highlightedDisplay,
                   ) => (
@@ -166,7 +166,7 @@ export default class CommentForm extends Component<any, any> {
                 }
               }}
               // placeholder={placeholder}
-              displayTransform={(id, display) => display}
+              // displayTransform={(id, display) => display}
               required
             />
           </div>
