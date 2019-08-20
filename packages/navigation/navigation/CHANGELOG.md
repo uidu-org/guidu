@@ -1,5 +1,10 @@
 # @uidu/navigation
 
+## 0.1.19
+- [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
+
+  - Avatar to ts, fix typings for field-base"
+
 ## 0.1.18
 - [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 

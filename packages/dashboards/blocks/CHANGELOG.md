@@ -1,5 +1,10 @@
 # @uidu/blocks
 
+## 0.1.8
+- [patch] [206a865](https://github.org/uidu-org/guidu/commits/206a865):
+
+  - Small fixes to layout
+
 ## 0.1.7
 - [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 

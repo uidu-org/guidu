@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.2.17
+- [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
+
+  - Avatar to ts, fix typings for field-base"
+
 ## 0.2.16
 - [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
