@@ -13,11 +13,15 @@ class Stepper extends Component<StepperProps, any> {
     name?: string;
   } = {};
 
+  static defaultProps = {
+    marginTop: 16,
+  };
+
   componentDidMount() {
     const { history, defaultStep } = this.props;
-    // if (defaultStep && !this.getCurrentStepFormLocation()) {
-    //   history.replace(`${history.location.pathname}?s=${defaultStep}`);
-    // }
+    if (defaultStep && !this.getCurrentStepFormLocation()) {
+      history.replace(`${history.location.pathname}?s=${defaultStep}`);
+    }
   }
 
   getCurrentStepFormLocation = (): string | undefined => {
@@ -83,14 +87,14 @@ class Stepper extends Component<StepperProps, any> {
   };
 
   goToStep = (name: string) => {
-    const { history, scrollElement } = this.props;
+    const { history, scrollElement, marginTop } = this.props;
     const step = this.steps[name].step.current;
     const that = this;
     history.replace(`${history.location.pathname}?s=${name}`);
     setTimeout(() => {
       if (scrollElement) {
         scroll.scrollTo(
-          that.getStepRect(step).top + scrollElement.scrollTop - 16,
+          that.getStepRect(step).top + scrollElement.scrollTop - marginTop,
           {
             duration: 300,
             delay: 50,
