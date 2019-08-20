@@ -1,5 +1,10 @@
 # @uidu/stepper
 
+## 0.1.10
+- [patch] [c7c3928](https://github.org/uidu-org/guidu/commits/c7c3928):
+
+  - Adding marginTop to Stepper and default on mount
+
 ## 0.1.9
 - [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
