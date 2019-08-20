@@ -1,5 +1,10 @@
 # @uidu/message-form
 
+## 0.1.15
+- [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
+
+  - Avatar to ts, fix typings for field-base"
+
 ## 0.1.14
 - [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
