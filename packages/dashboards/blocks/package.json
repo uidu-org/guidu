@@ -15,6 +15,7 @@
     "lodash": "^4.17.4",
     "numeral": "^2.0.6",
     "react-animated-number": "^0.4.4",
+    "react-countup": "^4.2.2",
     "react-google-charts": "^3.0.13",
     "recharts": "^1.6.2"
   },

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import AnimatedNumber from 'react-animated-number';
+import CountUp from 'react-countup';
 import { format, manipulator } from '../../utils';
 import Loader from '../Loader';
 
@@ -24,13 +24,11 @@ export default class CounterBlock extends PureComponent<any> {
         <div style={{ flex: 1, minWidth: 0 }}>
           <h6 className="mb-1 text-muted text-truncate">{label}</h6>
           <h4 className="my-0">
-            <AnimatedNumber
-              value={manipulated}
-              style={{
-                transition: '0.8s ease-out',
-                transitionProperty: 'background-color, color, opacity',
-              }}
-              formatValue={value => format(value, formatter)}
+            <CountUp
+              start={0}
+              end={manipulated}
+              decimals={0}
+              formattinFn={value => format(value, formatter)}
             />
           </h4>
         </div>

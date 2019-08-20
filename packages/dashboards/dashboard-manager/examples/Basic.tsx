@@ -32,7 +32,7 @@ export default class Basic extends Component<any, any> {
     return (
       <DashboardManager
         rowData={rowData}
-        defaultTimeFrame="YTD"
+        defaultTimeFrame="5Y"
         gridProps={{ isDraggable: true, onLayoutChange: console.log }}
       >
         {({ renderControls, renderBlocks, renderStaticBlocks }) => (
