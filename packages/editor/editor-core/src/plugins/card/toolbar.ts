@@ -167,6 +167,7 @@ export const floatingToolbar = (
   state: EditorState,
   intl: IntlShape,
 ): FloatingToolbarConfig | undefined => {
+  console.log(intl);
   const { inlineCard, blockCard } = state.schema.nodes;
   const nodeType = [inlineCard, blockCard];
 

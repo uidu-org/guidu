@@ -2845,13 +2845,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-intl@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-intl/-/react-intl-3.0.0.tgz#a2cce0024b6cfe403be28ccf67f49d720fa810ec"
-  integrity sha512-k8F3d05XQGEqSWIfK97bBjZe4z9RruXU9Wa7OZ2iUC5pdeIpzuQDZe/9C2J3Xir5//ZtAkhcv08Wfx3n5TBTQg==
-  dependencies:
-    react-intl "*"
-
 "@types/react-loadable@^5.4.1":
   version "5.5.1"
   resolved "https://registry.yarnpkg.com/@types/react-loadable/-/react-loadable-5.5.1.tgz#f04a262f16e9f088098ddad1aa50682ad0984aa7"
@@ -18145,7 +18138,7 @@ react-input-autosize@^2.2.1:
   dependencies:
     prop-types "^15.5.8"
 
-react-intl@*, react-intl@^3.1.7:
+react-intl@^3.1.7:
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-3.1.9.tgz#83ce5c6d82a4c1cfc228682032549602e5d169d3"
   integrity sha512-mQxhcFsYsj7O+k2Gsf1p+QaGhEdr+g7v5hYaa88dqar1m1xdWldEJjZ4JK/waHTp4zhVPoco4NQ1JdPkhs8HkA==

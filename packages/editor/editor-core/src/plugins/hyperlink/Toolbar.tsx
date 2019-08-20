@@ -6,8 +6,21 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { defineMessages } from 'react-intl';
 import { AlignType, FloatingToolbarHandler } from '../floating-toolbar/types';
-import { editInsertedLink, hideLinkToolbar, insertLink, removeLink, setLinkHref, setLinkText, updateLink } from './commands';
-import { EditInsertedState, HyperlinkState, InsertState, stateKey } from './pm-plugins/main';
+import {
+  editInsertedLink,
+  hideLinkToolbar,
+  insertLink,
+  removeLink,
+  setLinkHref,
+  setLinkText,
+  updateLink,
+} from './commands';
+import {
+  EditInsertedState,
+  HyperlinkState,
+  InsertState,
+  stateKey,
+} from './pm-plugins/main';
 import RecentList from './ui/RecentSearch';
 import { normalizeUrl } from './utils';
 
@@ -120,7 +133,6 @@ export const getToolbarConfig: FloatingToolbarHandler = (
         : '',
     };
 
-    console.log(activeLinkMark);
     switch (activeLinkMark.type) {
       case 'EDIT': {
         const { pos, node } = activeLinkMark;

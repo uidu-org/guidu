@@ -160,8 +160,6 @@ export default class Editor extends PureComponent<any> {
       dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
-    console.log(this.config);
-
     this.contentTransformer = contentTransformerProvider
       ? contentTransformerProvider(schema)
       : undefined;

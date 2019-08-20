@@ -184,7 +184,6 @@ export class TypeAheadItemComponent extends React.Component<
   componentDidUpdate() {
     const ref = this.state.ref;
     if (this.props.index === this.props.currentIndex && ref) {
-      console.log(ref);
       scrollIntoViewIfNeeded(ref);
     }
   }
