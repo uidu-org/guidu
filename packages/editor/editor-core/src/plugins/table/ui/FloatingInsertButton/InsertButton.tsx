@@ -1,5 +1,5 @@
-import Tooltip from '@atlaskit/tooltip';
 import { akEditorTableNumberColumnWidth } from '@uidu/editor-common';
+import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { SyntheticEvent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';

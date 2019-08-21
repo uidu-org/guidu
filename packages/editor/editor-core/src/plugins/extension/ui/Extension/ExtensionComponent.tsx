@@ -21,7 +21,7 @@ export interface Props {
 }
 
 export interface State {
-  macroProvider?: MacroProvider;
+  macroProvider?: any | MacroProvider;
 }
 
 export default class ExtensionComponent extends Component<Props, State> {

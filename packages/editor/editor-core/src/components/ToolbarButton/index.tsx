@@ -14,8 +14,8 @@ export type Props = {
   selected?: boolean;
   spacing?: 'default' | 'compact' | 'none';
   target?: string;
-  title?: string;
-  titlePosition?: string;
+  title?: React.ReactNode;
+  titlePosition?: any;
 } & Pick<ButtonProps, 'theme' | 'aria-label'>;
 
 export default class ToolbarButton extends React.PureComponent<Props, {}> {

@@ -3,6 +3,7 @@ import {
   JSONNode,
   JSONTransformer,
 } from '@atlaskit/editor-json-transformer';
+import { browser } from '@uidu/editor-common';
 import { toggleMark } from 'prosemirror-commands';
 import {
   Fragment,
@@ -304,9 +305,14 @@ export function checkNodeDown(
   doc: Node,
   filter: (node: Node) => boolean,
 ): boolean {
-  const res = doc.resolve(
-    selection.$to.after(findAncestorPosition(doc, selection.$to).depth),
-  );
+  const ancestorDepth = findAncestorPosition(doc, selection.$to).depth;
+
+  // Top level node
+  if (ancestorDepth === 0) {
+    return false;
+  }
+
+  const res = doc.resolve(selection.$to.after(ancestorDepth));
   return res.nodeAfter ? filter(res.nodeAfter) : false;
 }
 
@@ -468,7 +474,7 @@ export function getGroupsInRange(
 /**
  * Traverse the document until an "ancestor" is found. Any nestable block can be an ancestor.
  */
-export function findAncestorPosition(doc: Node, pos: any): any {
+export function findAncestorPosition(doc: Node, pos: ResolvedPos): any {
   const nestableBlocks = ['blockquote', 'bulletList', 'orderedList'];
 
   if (pos.depth === 1) {
@@ -714,9 +720,9 @@ export const isTemporary = (id: string): boolean => {
 
 // @see: https://github.com/ProseMirror/prosemirror/issues/710
 // @see: https://bugs.chromium.org/p/chromium/issues/detail?id=740085
-// Chrome >= 58
+// Chrome >= 58 (desktop only)
 export const isChromeWithSelectionBug =
-  parseInt((navigator.userAgent.match(/Chrome\/(\d{2})/) || [])[1], 10) >= 58;
+  browser.chrome && !browser.android && browser.chrome_version >= 58;
 
 export const isEmptyNode = (schema: Schema) => {
   const {

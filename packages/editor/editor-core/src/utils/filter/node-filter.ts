@@ -17,7 +17,7 @@ export function sanitizeNode(json: JSONDocNode): JSONDocNode {
       return {
         ...node,
         marks: node.marks.filter(
-          mark => ['typeAheadQuery'].indexOf(mark.type) === -1,
+          mark => ['emojiQuery', 'typeAheadQuery'].indexOf(mark.type) === -1,
         ),
       };
     },
@@ -27,6 +27,7 @@ export function sanitizeNode(json: JSONDocNode): JSONDocNode {
       }
       return false; // empty status
     },
+    emoji: removeMarks,
     mention: removeMarks,
     date: removeMarks,
     hardBreak: removeMarks,

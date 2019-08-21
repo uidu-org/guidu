@@ -1,10 +1,11 @@
 import { blockquote, hardBreak, heading } from '@atlaskit/adf-schema';
 import { NodeSpec } from 'prosemirror-model';
+import { EditorState } from 'prosemirror-state';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
+import { IntlShape } from 'react-intl';
 import { ToolbarSize } from '../../components/Toolbar';
 import WithPluginState from '../../components/WithPluginState';
-import { toggleBlockQuote, tooltip } from '../../keymaps';
+import * as keymaps from '../../keymaps';
 import { AllowedBlockTypes, EditorPlugin } from '../../types';
 import {
   ACTION,
@@ -14,12 +15,16 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { IconQuote } from '../quick-insert/assets';
+import { IconHeading, IconQuote } from '../quick-insert/assets';
+import {
+  QuickInsertActionInsert,
+  QuickInsertItem,
+} from '../quick-insert/types';
 import { setBlockTypeWithAnalytics } from './commands';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
 import { createPlugin, pluginKey } from './pm-plugins/main';
-import { messages } from './types';
+import { HeadingLevels, messages } from './types';
 import ToolbarBlockType from './ui/ToolbarBlockType';
 
 interface BlockTypeNode {
@@ -27,7 +32,47 @@ interface BlockTypeNode {
   node: NodeSpec;
 }
 
-const blockType: EditorPlugin = {
+const headingPluginOptions = ({
+  formatMessage,
+}: IntlShape): Array<QuickInsertItem> =>
+  Array.from({ length: 6 }, (_v, idx) => {
+    const level = (idx + 1) as HeadingLevels;
+    const descriptionDescriptor = (messages as any)[
+      `heading${level}Description`
+    ];
+    const keyshortcut = keymaps.tooltip(
+      (keymaps as any)[`toggleHeading${level}`],
+    );
+
+    return {
+      title: formatMessage((messages as any)[`heading${level}`]),
+      description: formatMessage(descriptionDescriptor),
+      priority: 1300,
+      keywords: [`h${level}`],
+      keyshortcut,
+      icon: () => (
+        <IconHeading
+          level={level}
+          label={formatMessage(descriptionDescriptor)}
+        />
+      ),
+      action(insert: QuickInsertActionInsert, state: EditorState) {
+        const tr = insert(state.schema.nodes.heading.createChecked({ level }));
+        return addAnalytics(tr, {
+          action: ACTION.FORMATTED,
+          actionSubject: ACTION_SUBJECT.TEXT,
+          eventType: EVENT_TYPE.TRACK,
+          actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
+          attributes: {
+            inputMethod: INPUT_METHOD.QUICK_INSERT,
+            newHeadingLevel: level,
+          },
+        });
+      },
+    };
+  });
+
+const blockTypePlugin = (): EditorPlugin => ({
   nodes({ allowBlockType }) {
     const nodes: BlockTypeNode[] = [
       { name: 'heading', node: heading },
@@ -106,39 +151,39 @@ const blockType: EditorPlugin = {
   },
 
   pluginsOptions: {
-    quickInsert: ({ formatMessage }) => [
-      {
-        title: formatMessage(messages.blockquote),
-        description: formatMessage(messages.blockquoteDescription),
-        priority: 1300,
-        keyshortcut: tooltip(toggleBlockQuote),
-        icon: () => (
-          <FormattedMessage {...messages.blockquote}>
-            {(label: string) => <IconQuote label={label} />}
-          </FormattedMessage>
-        ),
-        action(insert, state) {
-          const tr = insert(
-            state.schema.nodes.blockquote.createChecked(
-              {},
-              state.schema.nodes.paragraph.createChecked(),
-            ),
-          );
+    quickInsert: intl => {
+      const { formatMessage } = intl;
+      return [
+        {
+          title: formatMessage(messages.blockquote),
+          description: formatMessage(messages.blockquoteDescription),
+          priority: 1300,
+          keyshortcut: keymaps.tooltip(keymaps.toggleBlockQuote),
+          icon: () => <IconQuote label={formatMessage(messages.blockquote)} />,
+          action(insert, state) {
+            const tr = insert(
+              state.schema.nodes.blockquote.createChecked(
+                {},
+                state.schema.nodes.paragraph.createChecked(),
+              ),
+            );
 
-          return addAnalytics(tr, {
-            action: ACTION.FORMATTED,
-            actionSubject: ACTION_SUBJECT.TEXT,
-            eventType: EVENT_TYPE.TRACK,
-            actionSubjectId: ACTION_SUBJECT_ID.FORMAT_BLOCK_QUOTE,
-            attributes: {
-              inputMethod: INPUT_METHOD.QUICK_INSERT,
-            },
-          });
+            return addAnalytics(tr, {
+              action: ACTION.FORMATTED,
+              actionSubject: ACTION_SUBJECT.TEXT,
+              eventType: EVENT_TYPE.TRACK,
+              actionSubjectId: ACTION_SUBJECT_ID.FORMAT_BLOCK_QUOTE,
+              attributes: {
+                inputMethod: INPUT_METHOD.QUICK_INSERT,
+              },
+            });
+          },
         },
-      },
-    ],
+        ...headingPluginOptions(intl),
+      ];
+    },
   },
-};
+});
 
-export default blockType;
+export default blockTypePlugin;
 export { BlockTypeState, pluginKey } from './pm-plugins/main';

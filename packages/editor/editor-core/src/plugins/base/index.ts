@@ -1,16 +1,16 @@
+import { doc, paragraph, text } from '@atlaskit/adf-schema';
 import { baseKeymap } from 'prosemirror-commands';
 import { history } from 'prosemirror-history';
-import { keymap } from 'prosemirror-keymap';
-import { doc, paragraph, text } from '@atlaskit/adf-schema';
-import { EditorPlugin, EditorAppearance, PMPluginFactory } from '../../types';
+import { EditorAppearance, EditorPlugin, PMPluginFactory } from '../../types';
+import { isFullPage } from '../../utils/is-full-page';
+import { keymap } from '../../utils/keymap';
+import decorationPlugin from './pm-plugins/decoration';
 import filterStepsPlugin from './pm-plugins/filter-steps';
 import focusHandlerPlugin from './pm-plugins/focus-handler';
-import newlinePreserveMarksPlugin from './pm-plugins/newline-preserve-marks';
 import inlineCursorTargetPlugin from './pm-plugins/inline-cursor-target';
+import newlinePreserveMarksPlugin from './pm-plugins/newline-preserve-marks';
 import { plugin as reactNodeView } from './pm-plugins/react-nodeview';
-import decorationPlugin from './pm-plugins/decoration';
 import scrollGutter from './pm-plugins/scroll-gutter';
-import { isFullPage } from '../../utils/is-full-page';
 
 const basePlugin = (appearance?: EditorAppearance): EditorPlugin => ({
   pmPlugins() {

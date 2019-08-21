@@ -13,7 +13,8 @@ export type ReactComponentProps = { [key: string]: any };
 export type ForwardRef = (node: HTMLElement | null) => void;
 export type shouldUpdate = (nextNode: PMNode) => boolean;
 
-export default class ReactNodeView implements NodeView {
+export default class ReactNodeView<P = ReactComponentProps>
+  implements NodeView {
   private domRef?: HTMLElement;
   private contentDOMWrapper?: Node;
   private reactComponent?: React.ComponentType<any>;
@@ -21,7 +22,7 @@ export default class ReactNodeView implements NodeView {
   private hasContext: boolean;
   private _viewShouldUpdate?: shouldUpdate;
 
-  reactComponentProps: ReactComponentProps = {};
+  reactComponentProps: P;
 
   view: EditorView;
   getPos: getPosHandler;
@@ -33,7 +34,7 @@ export default class ReactNodeView implements NodeView {
     view: EditorView,
     getPos: getPosHandler,
     portalProviderAPI: PortalProviderAPI,
-    reactComponentProps: ReactComponentProps = {},
+    reactComponentProps?: P,
     reactComponent?: React.ComponentType<any>,
     hasContext: boolean = false,
     viewShouldUpdate?: shouldUpdate,
@@ -42,7 +43,7 @@ export default class ReactNodeView implements NodeView {
     this.view = view;
     this.getPos = getPos;
     this.portalProviderAPI = portalProviderAPI;
-    this.reactComponentProps = reactComponentProps;
+    this.reactComponentProps = reactComponentProps || ({} as P);
     this.reactComponent = reactComponent;
     this.hasContext = hasContext;
     this._viewShouldUpdate = viewShouldUpdate;
@@ -118,10 +119,7 @@ export default class ReactNodeView implements NodeView {
     }
   }
 
-  render(
-    props: ReactComponentProps,
-    forwardRef?: ForwardRef,
-  ): React.ReactElement<any> | null {
+  render(props: P, forwardRef?: ForwardRef): React.ReactElement<any> | null {
     return this.reactComponent ? (
       <this.reactComponent
         view={this.view}
@@ -240,19 +238,21 @@ export default class ReactNodeView implements NodeView {
  *   return super.viewShouldUpdate(nextNode);
  * }```
  */
-export class SelectionBasedNodeView extends ReactNodeView {
+export class SelectionBasedNodeView<
+  P = ReactComponentProps
+> extends ReactNodeView<P> {
   private oldSelection: Selection;
   private selectionChangeState: ReactNodeViewState;
 
-  private pos: number | undefined;
-  private posEnd: number | undefined;
+  pos: number | undefined;
+  posEnd: number | undefined;
 
   constructor(
     node: PMNode,
     view: EditorView,
     getPos: getPosHandler,
     portalProviderAPI: PortalProviderAPI,
-    reactComponentProps: ReactComponentProps = {},
+    reactComponentProps: P,
     reactComponent?: React.ComponentType<any>,
     hasContext: boolean = false,
     viewShouldUpdate?: shouldUpdate,
@@ -305,7 +305,11 @@ export class SelectionBasedNodeView extends ReactNodeView {
   };
 
   insideSelection = () => {
-    const { from, to } = this.view.state.selection;
+    const selection = this.view.state.selection;
+    const { from, to } = selection;
+    if (selection instanceof NodeSelection) {
+      return selection.node === this.node;
+    }
     return this.isSelectionInsideNode(from, to);
   };
 

@@ -13,7 +13,7 @@ import {
 import { TypeAheadHandler } from './types';
 import { TypeAhead } from './ui/TypeAhead';
 
-const typeAheadPlugin: EditorPlugin = {
+const typeAheadPlugin = (): EditorPlugin => ({
   name: 'typeAhead',
 
   marks() {
@@ -80,7 +80,7 @@ const typeAheadPlugin: EditorPlugin = {
       />
     );
   },
-};
+});
 
 export { typeAheadPluginKey, TypeAheadPluginState };
 export default typeAheadPlugin;

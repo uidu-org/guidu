@@ -375,6 +375,7 @@
     "uuid": "^3.3.2",
     "uuid-validate": "^0.0.3",
     "video-snapshot": "^1.0.3",
+    "w3c-keyname": "^2.1.0",
     "webpack": "^4.29.5",
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-dev-server": "^3.2.1",

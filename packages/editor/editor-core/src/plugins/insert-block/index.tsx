@@ -33,7 +33,6 @@ import {
   pluginKey as placeholderTextStateKey,
   PluginState as PlaceholderPluginState,
 } from '../placeholder-text';
-import { pluginKey as tablesStateKey } from '../table/pm-plugins/main';
 import { TablePluginState } from '../table/types';
 import { TypeAheadPluginState } from '../type-ahead';
 import { pluginKey as typeAheadPluginKey } from '../type-ahead/pm-plugins/main';
@@ -56,6 +55,7 @@ const toolbarSizeToButtons = (toolbarSize: ToolbarSize) => {
 };
 
 export interface InsertBlockOptions {
+  allowTables?: boolean;
   insertMenuItems?: any;
   horizontalRuleEnabled?: boolean;
   nativeStatusSupported?: boolean;
@@ -91,7 +91,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             blockTypeState: blockTypeStateKey,
             mediaState: mediaStateKey,
             mentionState: mentionPluginKey,
-            tablesState: tablesStateKey,
             macroState: macroStateKey,
             hyperlinkState: hyperlinkPluginKey,
             dateState: dateStateKey,
@@ -104,7 +103,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             mentionState,
             blockTypeState,
             mediaState,
-            tablesState,
             macroState = {} as MacroState,
             hyperlinkState,
             dateState,
@@ -130,7 +128,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
               isDisabled={disabled}
               isTypeAheadAllowed={typeAheadState && typeAheadState.isAllowed}
               editorView={editorView}
-              tableSupported={!!tablesState}
+              tableSupported={options.allowTables}
               actionSupported={!!editorView.state.schema.nodes.taskItem}
               mentionsSupported={
                 !!(mentionState && mentionState.mentionProvider)

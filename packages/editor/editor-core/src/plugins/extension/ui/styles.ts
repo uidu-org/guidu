@@ -1,10 +1,10 @@
-import { css } from 'styled-components';
-import { borderRadius } from '@atlaskit/theme';
 import {
   akEditorSelectedBorder,
   akEditorSelectedBorderBoldSize,
   blockNodesVerticalMargin,
-} from '@atlaskit/editor-common';
+} from '@uidu/editor-common';
+import { borderRadius } from '@uidu/theme';
+import { css } from 'styled-components';
 
 export const extensionStyles = css`
   .extensionView-content-wrap,

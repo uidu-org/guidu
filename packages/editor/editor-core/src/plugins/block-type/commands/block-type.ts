@@ -2,6 +2,7 @@ import { Node as PMNode, NodeType } from 'prosemirror-model';
 import { EditorState, Selection, TextSelection } from 'prosemirror-state';
 import { findWrapping } from 'prosemirror-transform';
 import { Command } from '../../../types';
+import { filterChildrenBetween } from '../../../utils';
 import { removeBlockMarks } from '../../../utils/mark';
 import {
   ACTION,
@@ -14,7 +15,7 @@ import {
 import {
   BLOCK_QUOTE,
   CODE_BLOCK,
-  HeadingLevels,
+  HeadingLevelsAndNormalText,
   HEADINGS_BY_NAME,
   NORMAL_TEXT,
   PANEL,
@@ -34,10 +35,7 @@ export function setBlockType(name: string): Command {
 
     const headingBlockType = HEADINGS_BY_NAME[name];
     if (headingBlockType && nodes.heading && headingBlockType.level) {
-      return setHeading(headingBlockType.level as HeadingLevels)(
-        state,
-        dispatch,
-      );
+      return setHeading(headingBlockType.level)(state, dispatch);
     }
 
     return false;
@@ -56,10 +54,10 @@ export function setBlockTypeWithAnalytics(
 
     const headingBlockType = HEADINGS_BY_NAME[name];
     if (headingBlockType && nodes.heading && headingBlockType.level) {
-      return setHeadingWithAnalytics(
-        headingBlockType.level as HeadingLevels,
-        inputMethod,
-      )(state, dispatch);
+      return setHeadingWithAnalytics(headingBlockType.level, inputMethod)(
+        state,
+        dispatch,
+      );
     }
 
     return false;
@@ -79,20 +77,54 @@ export function setNormalText(): Command {
     return true;
   };
 }
+function withCurrentHeadingLevel(
+  fn: (level?: HeadingLevelsAndNormalText) => Command,
+): Command {
+  return (state, dispatch, view) => {
+    // Find all headings and paragraphs of text
+    const { heading, paragraph } = state.schema.nodes;
+    const nodes = filterChildrenBetween(
+      state.doc,
+      state.selection.from,
+      state.selection.to,
+      (node: PMNode) => {
+        return node.type === heading || node.type === paragraph;
+      },
+    );
+
+    // Check each paragraph and/or heading and check for consistent level
+    let level: undefined | HeadingLevelsAndNormalText;
+    for (let node of nodes) {
+      const nodeLevel = node.node.type === heading ? node.node.attrs.level : 0;
+      if (!level) {
+        level = nodeLevel;
+      } else if (nodeLevel !== level) {
+        // Conflict in level, therefore inconsistent and undefined
+        level = undefined;
+        break;
+      }
+    }
+
+    return fn(level)(state, dispatch, view);
+  };
+}
 
 export function setNormalTextWithAnalytics(inputMethod: InputMethod): Command {
-  return withAnalytics({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    eventType: EVENT_TYPE.TRACK,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
-    attributes: {
-      inputMethod,
-      newHeadingLevel: 0,
-    },
-  })(setNormalText());
+  return withCurrentHeadingLevel(previousHeadingLevel =>
+    withAnalytics({
+      action: ACTION.FORMATTED,
+      actionSubject: ACTION_SUBJECT.TEXT,
+      eventType: EVENT_TYPE.TRACK,
+      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
+      attributes: {
+        inputMethod,
+        newHeadingLevel: 0,
+        previousHeadingLevel,
+      },
+    })(setNormalText()),
+  );
 }
-export function setHeading(level: number): Command {
+export function setHeading(level: HeadingLevelsAndNormalText): Command {
   return function(state, dispatch) {
     const {
       tr,
@@ -109,19 +141,23 @@ export function setHeading(level: number): Command {
 }
 
 export const setHeadingWithAnalytics = (
-  newHeadingLevel: HeadingLevels,
+  newHeadingLevel: HeadingLevelsAndNormalText,
   inputMethod: InputMethod,
-) =>
-  withAnalytics({
-    action: ACTION.FORMATTED,
-    actionSubject: ACTION_SUBJECT.TEXT,
-    eventType: EVENT_TYPE.TRACK,
-    actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
-    attributes: {
-      inputMethod,
-      newHeadingLevel,
-    },
-  })(setHeading(newHeadingLevel));
+) => {
+  return withCurrentHeadingLevel(previousHeadingLevel =>
+    withAnalytics({
+      action: ACTION.FORMATTED,
+      actionSubject: ACTION_SUBJECT.TEXT,
+      eventType: EVENT_TYPE.TRACK,
+      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_HEADING,
+      attributes: {
+        inputMethod,
+        newHeadingLevel,
+        previousHeadingLevel,
+      },
+    })(setHeading(newHeadingLevel)),
+  );
+};
 
 export function insertBlockType(name: string): Command {
   return function(state, dispatch) {

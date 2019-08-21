@@ -20,7 +20,7 @@ const pluginConfig = (
   return textColorConfig;
 };
 
-const textColorPlugin: EditorPlugin = {
+const textColorPlugin = (): EditorPlugin => ({
   name: 'textColor',
 
   marks() {
@@ -62,7 +62,7 @@ const textColorPlugin: EditorPlugin = {
       />
     );
   },
-};
+});
 
 export { TextColorPluginState, textColorPluginKey };
 export default textColorPlugin;

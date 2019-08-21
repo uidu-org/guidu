@@ -15,7 +15,7 @@ export const defaultConfig: AlignmentPluginState = {
   align: 'start',
 };
 
-const alignmentPlugin: EditorPlugin = {
+const alignmentPlugin = (): EditorPlugin => ({
   name: 'alignmentPlugin',
 
   marks() {
@@ -62,6 +62,6 @@ const alignmentPlugin: EditorPlugin = {
       />
     );
   },
-};
+});
 
 export default alignmentPlugin;

@@ -1,15 +1,33 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import memoizeOne from 'memoize-one';
-import { EditorState, Plugin, PluginKey, Selection, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  Plugin,
+  PluginKey,
+  Selection,
+  Transaction,
+} from 'prosemirror-state';
 import { ReplaceStep, Step } from 'prosemirror-transform';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
-import { applyRemoteData, getSendableSelection, handleConnection, handleInit, handlePresence, handleTelePointer } from './actions';
+import {
+  applyRemoteData,
+  getSendableSelection,
+  handleConnection,
+  handleInit,
+  handlePresence,
+  handleTelePointer,
+} from './actions';
 import { Participants, ReadOnlyParticipants } from './participants';
 import { CollabEditProvider, CollabEvent } from './provider';
-import { CollabEditOptions, ConnectionData, Participant, PresenceData, TelepointerData } from './types';
+import {
+  CollabEditOptions,
+  ConnectionData,
+  Participant,
+  PresenceData,
+  TelepointerData,
+} from './types';
 import { createTelepointers, findPointers } from './utils';
-
 
 export { CollabEditProvider };
 

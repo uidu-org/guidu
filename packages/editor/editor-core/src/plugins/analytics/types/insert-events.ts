@@ -134,6 +134,16 @@ type InsertActionDecisionAEP = InsertAEP<
   }
 >;
 
+type InsertEmojiAEP = InsertAEP<
+  ACTION_SUBJECT_ID.EMOJI,
+  {
+    inputMethod:
+      | INPUT_METHOD.TYPEAHEAD
+      | INPUT_METHOD.PICKER
+      | INPUT_METHOD.ASCII;
+  }
+>;
+
 type InsertStatusAEP = InsertAEP<
   ACTION_SUBJECT_ID.STATUS,
   {
@@ -196,6 +206,13 @@ type InsertLinkPreviewAEP = InsertAEP<
   }
 >;
 
+type InsertMediaLinkAEP = InsertAEP<
+  ACTION_SUBJECT_ID.MEDIA_LINK,
+  {
+    inputMethod: INPUT_METHOD.TYPEAHEAD | INPUT_METHOD.MANUAL;
+  }
+>;
+
 export type InsertEventPayload =
   | InsertDividerAEP
   | InsertLineBreakAEP
@@ -203,8 +220,10 @@ export type InsertEventPayload =
   | InsertCodeBlockAEP
   | InsertTableAEP
   | InsertActionDecisionAEP
+  | InsertEmojiAEP
   | InsertStatusAEP
   | InsertMediaAEP
   | InsertLinkAEP
   | InsertLinkPreviewAEP
+  | InsertMediaLinkAEP
   | InsertSmartLinkAEP;

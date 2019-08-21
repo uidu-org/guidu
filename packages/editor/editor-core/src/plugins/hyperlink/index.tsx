@@ -19,7 +19,7 @@ import { createKeymapPlugin } from './pm-plugins/keymap';
 import { LinkAction, plugin, stateKey } from './pm-plugins/main';
 import { getToolbarConfig } from './Toolbar';
 
-const hyperlinkPlugin: EditorPlugin = {
+const hyperlinkPlugin = (): EditorPlugin => ({
   marks() {
     return [{ name: 'link', mark: link }];
   },
@@ -77,7 +77,7 @@ const hyperlinkPlugin: EditorPlugin = {
     ],
     floatingToolbar: getToolbarConfig,
   },
-};
+});
 
 export { HyperlinkState } from './pm-plugins/main';
 

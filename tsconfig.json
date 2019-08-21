@@ -2,7 +2,7 @@
   "extends": "./tsconfig.entry-points.json",
   "compilerOptions": {
     "allowJs": false,
-    "alwaysStrict": true,
+    "alwaysStrict": false,
     "declaration": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,

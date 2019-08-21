@@ -1,5 +1,9 @@
 import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import { akEditorBreakoutPadding, akEditorFullPageMaxWidth, breakoutWideScaleRatio } from '@uidu/editor-common';
+import {
+  akEditorBreakoutPadding,
+  akEditorFullPageMaxWidth,
+  breakoutWideScaleRatio,
+} from '@uidu/editor-common';
 import classnames from 'classnames';
 import { PluginKey } from 'prosemirror-state';
 import * as React from 'react';
@@ -186,7 +190,7 @@ class Grid extends React.Component<Props> {
 
 const ThemedGrid = withTheme(Grid);
 
-const gridPlugin: EditorPlugin = {
+const gridPlugin = (): EditorPlugin => ({
   contentComponent: ({ editorView, appearance }) => {
     return (
       <WithPluginState
@@ -217,8 +221,7 @@ const gridPlugin: EditorPlugin = {
       />
     );
   },
-};
+});
 
 export default gridPlugin;
 export { GRID_GUTTER } from './styles';
-

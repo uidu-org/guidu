@@ -7,7 +7,7 @@ import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
 import { DirectEditorProps, EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
-import { injectIntl } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { analyticsService } from '../analytics';
 import {
   createErrorReporter,
@@ -41,13 +41,14 @@ export interface EditorViewProps {
   providerFactory: ProviderFactory;
   portalProviderAPI: PortalProviderAPI;
   allowAnalyticsGASV3?: boolean;
+  disabled?: boolean;
   render?: (props: {
     editor: JSX.Element;
     view?: EditorView;
     config: EditorConfig;
     eventDispatcher: EventDispatcher;
     transformer?: Transformer<string>;
-    dispatchAnalyticsEvent: DispatchAnalyticsEvent;
+    dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   }) => JSX.Element;
   onEditorCreated: (instance: {
     view: EditorView;
@@ -63,7 +64,7 @@ export interface EditorViewProps {
   }) => void;
 }
 
-class Editor extends PureComponent<any> {
+class Editor extends PureComponent<any & WrappedComponentProps> {
   view?: EditorView;
   eventDispatcher: EventDispatcher;
   contentTransformer?: Transformer<string>;
@@ -76,7 +77,7 @@ class Editor extends PureComponent<any> {
     channel?: string;
   }) => void;
 
-  constructor(props: EditorViewProps) {
+  constructor(props: EditorViewProps & WrappedComponentProps) {
     super(props);
     this.eventDispatcher = new EventDispatcher();
     this.dispatch = createDispatch(this.eventDispatcher);

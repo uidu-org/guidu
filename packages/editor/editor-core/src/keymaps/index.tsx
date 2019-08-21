@@ -1,5 +1,5 @@
-import { colors } from '@atlaskit/theme';
 import { browser } from '@uidu/editor-common';
+import { colors } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';
 import { Command } from '../types';

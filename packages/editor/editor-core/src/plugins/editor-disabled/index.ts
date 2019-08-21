@@ -1,7 +1,6 @@
-import { Plugin, PluginKey, EditorState } from 'prosemirror-state';
-import { EditorPlugin } from '../../types';
+import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { Dispatch } from '../../event-dispatcher';
-
+import { EditorPlugin } from '../../types';
 import { pluginFactory } from '../../utils/plugin-state-factory';
 
 export const pluginKey = new PluginKey('editorDisabledPlugin');
@@ -37,13 +36,13 @@ export function createPlugin(
   });
 }
 
-const editorDisabledPlugin: EditorPlugin = {
+const editorDisabledPlugin = (): EditorPlugin => ({
   pmPlugins: () => [
     {
       name: 'editorDisabled',
       plugin: ({ dispatch, oldState }) => createPlugin(dispatch, oldState),
     },
   ],
-};
+});
 
 export default editorDisabledPlugin;

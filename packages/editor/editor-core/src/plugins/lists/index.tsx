@@ -20,7 +20,7 @@ import keymapPlugin from './pm-plugins/keymap';
 import { createPlugin, pluginKey } from './pm-plugins/main';
 import ToolbarLists from './ui/ToolbarLists';
 
-const listPlugin: EditorPlugin = {
+const listPlugin = (): EditorPlugin => ({
   nodes() {
     return [
       { name: 'bulletList', node: bulletList },
@@ -147,6 +147,6 @@ const listPlugin: EditorPlugin = {
       />
     );
   },
-};
+});
 
 export default listPlugin;

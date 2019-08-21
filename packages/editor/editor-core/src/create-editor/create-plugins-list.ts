@@ -1,6 +1,5 @@
-import { CreateUIAnalyticsEventSignature } from '@uidu/analytics';
 import {
-  alignment,
+  alignmentPlugin,
   basePlugin,
   blockTypePlugin,
   clearMarksOnChangeToEmptyDocumentPlugin,
@@ -29,29 +28,24 @@ import { EditorPlugin, EditorProps } from '../types';
 /**
  * Returns list of plugins that are absolutely necessary for editor to work
  */
-export function getDefaultPluginsList(
-  props: EditorProps,
-  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
-): EditorPlugin[] {
-  let defaultPluginList: EditorPlugin[] = [];
-
-  // if (props.allowAnalyticsGASV3) {
-  //   defaultPluginList.push(analyticsPlugin(createAnalyticsEvent));
-  // }
-
-  return defaultPluginList.concat([
+export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
+  return [
     // pastePlugin,
     basePlugin(props.appearance),
-    blockTypePlugin,
-    placeholderPlugin,
-    clearMarksOnChangeToEmptyDocumentPlugin,
-    hyperlinkPlugin,
+    blockTypePlugin(),
+    placeholderPlugin(),
+    clearMarksOnChangeToEmptyDocumentPlugin(),
+    hyperlinkPlugin(),
     textFormattingPlugin(props.textFormatting || {}),
-    widthPlugin,
-    typeAheadPlugin,
+    widthPlugin(),
+    typeAheadPlugin(),
+    editorDisabledPlugin(),
+    gapCursorPlugin(),
+    gridPlugin(),
+    fakeTextCursorPlugin(),
+    floatingToolbarPlugin(),
     // unsupportedContentPlugin,
-    editorDisabledPlugin,
-  ]);
+  ];
 }
 
 /**
@@ -59,7 +53,7 @@ export function getDefaultPluginsList(
  */
 export default function createPluginsList(
   props: EditorProps,
-  createAnalyticsEvent?: CreateUIAnalyticsEventSignature,
+  createAnalyticsEvent?: any,
 ): EditorPlugin[] {
   const plugins = getDefaultPluginsList(props);
 
@@ -68,7 +62,7 @@ export default function createPluginsList(
   // }
 
   if (props.allowTextAlignment) {
-    plugins.push(alignment);
+    plugins.push(alignmentPlugin());
   }
 
   // if (props.allowInlineAction) {
@@ -76,11 +70,11 @@ export default function createPluginsList(
   // }
 
   if (props.allowTextColor) {
-    plugins.push(textColorPlugin);
+    plugins.push(textColorPlugin());
   }
 
   if (props.allowLists) {
-    plugins.push(listsPlugin);
+    plugins.push(listsPlugin());
   }
 
   // if (props.allowRule) {
@@ -161,7 +155,7 @@ export default function createPluginsList(
   // }
 
   if (props.allowLayouts) {
-    plugins.push(layoutPlugin);
+    plugins.push(layoutPlugin());
   }
 
   // if (props.UNSAFE_cards) {
@@ -182,7 +176,7 @@ export default function createPluginsList(
   // }
 
   if (props.allowIndentation) {
-    plugins.push(indentationPlugin);
+    plugins.push(indentationPlugin());
   }
 
   // // UI only plugins
@@ -198,11 +192,7 @@ export default function createPluginsList(
   //   plugins.push(annotationPlugin);
   // }
 
-  plugins.push(gapCursorPlugin());
-  plugins.push(gridPlugin);
   // plugins.push(submitEditorPlugin);
-  plugins.push(fakeTextCursorPlugin);
-  plugins.push(floatingToolbarPlugin);
 
   if (props.appearance !== 'mobile') {
     plugins.push(quickInsertPlugin());

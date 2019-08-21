@@ -1,18 +1,18 @@
 import { chainCommands } from 'prosemirror-commands';
-import { undoInputRule } from 'prosemirror-inputrules';
-import { keymap } from 'prosemirror-keymap';
 import { redo, undo } from 'prosemirror-history';
+import { undoInputRule } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
-import * as keymaps from '../../../keymaps';
-import * as commands from '../../../commands';
 import { trackAndInvoke } from '../../../analytics';
-import * as blockTypes from '../types';
+import * as commands from '../../../commands';
+import * as keymaps from '../../../keymaps';
+import { keymap } from '../../../utils/keymap';
+import { INPUT_METHOD } from '../../analytics';
 import {
   cleanUpAtTheStartOfDocument,
   insertBlockTypesWithAnalytics,
 } from '../../block-type/commands';
-import { INPUT_METHOD } from '../../analytics';
+import * as blockTypes from '../types';
 
 const analyticsEventName = (blockTypeName: string, eventSource: string) =>
   `atlassian.editor.format.${blockTypeName}.${eventSource}`;
@@ -50,6 +50,7 @@ export default function keymapPlugin(schema: Schema): Plugin {
     trackAndInvoke('atlassian.editor.redo.keyboard', redo),
     list,
   );
+
   keymaps.bindKeymapWithCommand(
     keymaps.undo.common!,
     trackAndInvoke(
@@ -70,39 +71,19 @@ export default function keymapPlugin(schema: Schema): Plugin {
     list,
   );
 
-  [
-    blockTypes.NORMAL_TEXT,
-    blockTypes.HEADING_1,
-    blockTypes.HEADING_2,
-    blockTypes.HEADING_3,
-    blockTypes.HEADING_4,
-    blockTypes.HEADING_5,
-    blockTypes.HEADING_6,
-    blockTypes.BLOCK_QUOTE,
-  ].forEach(blockType => {
-    if (schema.nodes[blockType.nodeName]) {
-      const shortcut = keymaps.findShortcutByDescription(
-        blockType.title.defaultMessage,
-      );
-      if (shortcut) {
-        const eventName = analyticsEventName(
-          blockType.name,
+  if (schema.nodes[blockTypes.BLOCK_QUOTE.nodeName]) {
+    keymaps.bindKeymapWithCommand(
+      keymaps.findShortcutByKeymap(keymaps.toggleBlockQuote)!,
+      trackAndInvoke(
+        analyticsEventName(blockTypes.BLOCK_QUOTE.name, INPUT_METHOD.KEYBOARD),
+        insertBlockTypesWithAnalytics(
+          blockTypes.BLOCK_QUOTE.name,
           INPUT_METHOD.KEYBOARD,
-        );
-        keymaps.bindKeymapWithCommand(
-          shortcut,
-          trackAndInvoke(
-            eventName,
-            insertBlockTypesWithAnalytics(
-              blockType.name,
-              INPUT_METHOD.KEYBOARD,
-            ),
-          ),
-          list,
-        );
-      }
-    }
-  });
+        ),
+      ),
+      list,
+    );
+  }
 
   return keymap(list);
 }

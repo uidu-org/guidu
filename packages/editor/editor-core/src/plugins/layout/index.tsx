@@ -15,7 +15,7 @@ import { buildToolbar } from './toolbar';
 
 export { pluginKey };
 
-export default {
+const layoutPlugin = (): EditorPlugin => ({
   nodes() {
     return [
       { name: 'layoutSection', node: layoutSection },
@@ -58,4 +58,6 @@ export default {
       },
     ],
   },
-} as EditorPlugin;
+});
+
+export default layoutPlugin;

@@ -1,13 +1,14 @@
 import { Dispatch } from '../../../event-dispatcher';
-import { EVENT_TYPE, ACTION_SUBJECT } from './enums';
-import { GeneralEventPayload } from './general-events';
-import { FormatEventPayload } from './format-events';
-import { SubstituteEventPayload } from './substitute-events';
-import { InsertEventPayload } from './insert-events';
-import { NodeEventPayload } from './node-events';
-import { TableEventPayload } from './table-events';
-import { PasteEventPayload } from './paste-events';
+import { ACTION_SUBJECT, EVENT_TYPE } from './enums';
 import { ErrorEventPayload } from './error-events';
+import { FormatEventPayload } from './format-events';
+import { GeneralEventPayload } from './general-events';
+import { InsertEventPayload } from './insert-events';
+import { MediaEventPayload } from './media-events';
+import { NodeEventPayload } from './node-events';
+import { PasteEventPayload } from './paste-events';
+import { SubstituteEventPayload } from './substitute-events';
+import { TableEventPayload } from './table-events';
 
 type AEP<Action, ActionSubject, ActionSubjectID, Attributes, EventType> = {
   action: Action;
@@ -67,6 +68,7 @@ export type AnalyticsEventPayload =
   | SubstituteEventPayload
   | InsertEventPayload
   | NodeEventPayload
+  | MediaEventPayload
   | TableEventPayload
   | PasteEventPayload
   | ErrorEventPayload;

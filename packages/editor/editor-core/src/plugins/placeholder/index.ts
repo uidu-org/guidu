@@ -94,7 +94,7 @@ export function createPlugin(placeholderText?: string): Plugin | undefined {
   });
 }
 
-const placeholderPlugin: EditorPlugin = {
+const placeholderPlugin = (): EditorPlugin => ({
   pmPlugins() {
     return [
       {
@@ -103,6 +103,6 @@ const placeholderPlugin: EditorPlugin = {
       },
     ];
   },
-};
+});
 
 export default placeholderPlugin;

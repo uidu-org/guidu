@@ -13969,7 +13969,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
@@ -22072,6 +22072,11 @@ w3c-keyname@^1.1.8:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/w3c-keyname/-/w3c-keyname-1.1.8.tgz#4e2219663760fd6535b7a1550f1552d71fc9372c"
   integrity sha512-2HAdug8GTiu3b4NYhssdtY8PXRue3ICnh1IlxvZYl+hiINRq0GfNWei3XOPDg8L0PsxbmYjWVLuLj6BMRR/9vA==
+
+w3c-keyname@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/w3c-keyname/-/w3c-keyname-2.1.0.tgz#45dd2da6de8c89cce56132132ab13a74d93ce1d4"
+  integrity sha512-IDJf9/rvYW5xb5It7p33WfpGTg7lM1P1kmDxUofCFAqTamhj/anz8KuD7bX7UDvftNKQ23nBhEsYvqddSVIjkA==
 
 wait-port@^0.2.2:
   version "0.2.2"

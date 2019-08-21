@@ -1,20 +1,42 @@
-import { inputRules, textblockTypeInputRule, wrappingInputRule } from 'prosemirror-inputrules';
+import {
+  inputRules,
+  textblockTypeInputRule,
+  wrappingInputRule,
+} from 'prosemirror-inputrules';
 import { NodeType, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { safeInsert } from 'prosemirror-utils';
 import { analyticsService, trackAndInvoke } from '../../../analytics';
-import { createInputRule, defaultInputRuleHandler, InputRuleWithHandler, leafNodeReplacementCharacter } from '../../../utils/input-rules';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, AnalyticsEventPayload, EVENT_TYPE, INPUT_METHOD, ruleWithAnalytics } from '../../analytics';
+import {
+  createInputRule,
+  defaultInputRuleHandler,
+  InputRuleWithHandler,
+  leafNodeReplacementCharacter,
+} from '../../../utils/input-rules';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  AnalyticsEventPayload,
+  EVENT_TYPE,
+  INPUT_METHOD,
+  ruleWithAnalytics,
+} from '../../analytics';
 import { insertBlock } from '../commands/insert-block';
-import { isConvertableToCodeBlock, transformToCodeBlockAction } from '../commands/transform-to-code-block';
-import { HeadingLevels } from '../types';
-
+import {
+  isConvertableToCodeBlock,
+  transformToCodeBlockAction,
+} from '../commands/transform-to-code-block';
+import { HeadingLevelsAndNormalText } from '../types';
 
 const MAX_HEADING_LEVEL = 6;
 
-function getHeadingLevel(match: string[]): { level: HeadingLevels } {
+function getHeadingLevel(
+  match: string[],
+): { level: HeadingLevelsAndNormalText } {
   return {
-    level: match[1].length as HeadingLevels,
+    level: match[1].length as HeadingLevelsAndNormalText,
   };
 }
 

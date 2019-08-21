@@ -1,6 +1,6 @@
 import { Plugin, PluginKey } from 'prosemirror-state';
-import { EditorPlugin } from '../../types';
 import { Dispatch } from '../../event-dispatcher';
+import { EditorPlugin } from '../../types';
 
 export const pluginKey = new PluginKey('widthPlugin');
 
@@ -44,7 +44,7 @@ export function createPlugin(
   });
 }
 
-const widthPlugin: EditorPlugin = {
+const widthPlugin = (): EditorPlugin => ({
   pmPlugins: () => [
     {
       name: 'width',
@@ -65,6 +65,6 @@ const widthPlugin: EditorPlugin = {
     editorView.dispatch(tr);
     return null;
   },
-};
+});
 
 export default widthPlugin;

@@ -70,7 +70,7 @@ function filterUndefined<T>(x?: T): x is T {
   return !!x;
 }
 
-const floatingToolbarPlugin: EditorPlugin = {
+const floatingToolbarPlugin = (): EditorPlugin => ({
   name: 'floatingToolbar',
 
   pmPlugins(floatingToolbarHandlers: Array<FloatingToolbarHandler> = []) {
@@ -166,7 +166,7 @@ const floatingToolbarPlugin: EditorPlugin = {
       />
     );
   },
-};
+});
 
 export default floatingToolbarPlugin;
 

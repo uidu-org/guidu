@@ -1,6 +1,9 @@
 import { traverse } from '@atlaskit/adf-utils';
 import { JSONDocNode } from '@atlaskit/editor-json-transformer';
-import { isResolvingMentionProvider, MentionProvider } from '@atlaskit/mention/resource';
+import {
+  isResolvingMentionProvider,
+  MentionProvider,
+} from '@atlaskit/mention/resource';
 import { ProviderFactory } from '@uidu/editor-common';
 
 /**
@@ -19,7 +22,10 @@ export function sanitizeNodeForPrivacy(
     mention: node => {
       if (node.attrs && node.attrs.text) {
         hasCacheableMentions = true;
-        mentionNames.set(node.attrs.id, node.attrs.text);
+        // Remove @ prefix
+        const text = node.attrs.text;
+        const name = text.startsWith('@') ? text.slice(1) : text;
+        mentionNames.set(node.attrs.id, name);
       }
       return {
         ...node,

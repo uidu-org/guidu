@@ -72,6 +72,11 @@ export type PluginsOptions = {
   floatingToolbar?: FloatingToolbarHandler;
 };
 
+export type PMPlugin = {
+  name: string;
+  plugin: PMPluginFactory;
+};
+
 export interface EditorPlugin {
   /**
    * Name of a plugin, that other plugins can use to provide options to it.
@@ -86,9 +91,7 @@ export interface EditorPlugin {
   /**
    * List of ProseMirror-plugins. This is where we define which plugins will be added to EditorView (main-plugin, keybindings, input-rules, etc.).
    */
-  pmPlugins?: (
-    pluginOptions?: any,
-  ) => { name: string; plugin: PMPluginFactory }[];
+  pmPlugins?: (pluginOptions?: any) => Array<PMPlugin>;
 
   /**
    * List of Nodes to add to the schema.

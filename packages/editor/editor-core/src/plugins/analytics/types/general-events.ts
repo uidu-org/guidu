@@ -4,7 +4,7 @@ import {
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
-import { TrackAEP, UIAEP } from './events';
+import { OperationalAEP, TrackAEP, UIAEP } from './events';
 
 export enum PLATFORMS {
   NATIVE = 'mobileNative',
@@ -31,6 +31,13 @@ type PickerAEP<ActionSubjectID, Attributes> = UIAEP<
   Attributes
 >;
 
+type FeedbackAEP = UIAEP<
+  ACTION.OPENED,
+  ACTION_SUBJECT.FEEDBACK_DIALOG,
+  undefined,
+  { inputMethod: INPUT_METHOD.QUICK_INSERT }
+>;
+
 type TypeAheadAEP<ActionSubjectID, Attributes> = UIAEP<
   ACTION.INVOKED,
   ACTION_SUBJECT.TYPEAHEAD,
@@ -43,6 +50,18 @@ type EditorStartAEP = UIAEP<
   ACTION_SUBJECT.EDITOR,
   undefined,
   { platform: PLATFORMS.NATIVE | PLATFORMS.HYBRID | PLATFORMS.WEB }
+>;
+
+type EditorPerfAEP = OperationalAEP<
+  ACTION.EDITOR_MOUNTED | ACTION.PROSEMIRROR_RENDERED,
+  ACTION_SUBJECT.EDITOR,
+  undefined,
+  {
+    duration: number;
+    startTime: number;
+    nodes?: Record<string, number>;
+    ttfb?: number;
+  }
 >;
 
 type EditorStopAEP = UIAEP<
@@ -84,6 +103,11 @@ type ButtonFeedbackAEP = ButtonAEP<
   undefined
 >;
 
+type PickerEmojiAEP = PickerAEP<
+  ACTION_SUBJECT_ID.PICKER_EMOJI,
+  { inputMethod: INPUT_METHOD.TOOLBAR | INPUT_METHOD.INSERT_MENU }
+>;
+
 type PickerImageAEP = PickerAEP<
   ACTION_SUBJECT_ID.PICKER_CLOUD,
   {
@@ -97,6 +121,11 @@ type PickerImageAEP = PickerAEP<
 type TypeAheadQuickInsertAEP = TypeAheadAEP<
   ACTION_SUBJECT_ID.TYPEAHEAD_QUICK_INSERT,
   { inputMethod: INPUT_METHOD.KEYBOARD }
+>;
+
+type TypeAheadEmojiAEP = TypeAheadAEP<
+  ACTION_SUBJECT_ID.TYPEAHEAD_EMOJI,
+  { inputMethod: INPUT_METHOD.QUICK_INSERT | INPUT_METHOD.KEYBOARD }
 >;
 
 type TypeAheadLinkAEP = TypeAheadAEP<
@@ -137,8 +166,12 @@ export type GeneralEventPayload =
   | AnnotateButtonAEP
   | ButtonHelpAEP
   | ButtonFeedbackAEP
+  | PickerEmojiAEP
   | PickerImageAEP
+  | FeedbackAEP
   | TypeAheadQuickInsertAEP
+  | TypeAheadEmojiAEP
   | TypeAheadLinkAEP
   | TypeAheadMentionAEP
-  | FullWidthModeAEP;
+  | FullWidthModeAEP
+  | EditorPerfAEP;

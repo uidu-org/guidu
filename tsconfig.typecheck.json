@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.core",
+  "extends": "./tsconfig.json",
   "include": ["./packages/**/*"],
   "exclude": ["./packages/**/examples", "./packages/**/examples-utils"],
   "compilerOptions": {

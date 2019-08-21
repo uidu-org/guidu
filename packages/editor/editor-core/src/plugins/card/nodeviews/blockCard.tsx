@@ -3,7 +3,6 @@ import * as PropTypes from 'prop-types';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import wrapComponentWithClickArea from '../../../nodeviews/legacy-nodeview-factory/ui/wrapper-click-area';
 import { stateKey as ReactNodeViewState } from '../../../plugins/base/pm-plugins/react-nodeview';
 
 export interface Props {
@@ -12,6 +11,7 @@ export interface Props {
   getPos: () => number;
   view: EditorView;
   selected?: boolean;
+  pluginState: any;
 }
 
 class BlockCardNode extends React.Component<Props, {}> {
@@ -66,11 +66,10 @@ class BlockCardNode extends React.Component<Props, {}> {
   }
 }
 
-const ClickableBlockCard = wrapComponentWithClickArea(BlockCardNode);
 export default class WrappedInline extends React.PureComponent<Props, {}> {
   render() {
     return (
-      <ClickableBlockCard
+      <BlockCardNode
         {...this.props}
         pluginState={ReactNodeViewState.getState(this.props.view.state)}
       />

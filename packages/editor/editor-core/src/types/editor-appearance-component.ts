@@ -4,7 +4,12 @@ import EditorActions from '../actions';
 import { EventDispatcher } from '../event-dispatcher';
 import { DispatchAnalyticsEvent } from '../plugins/analytics';
 import { CollabEditOptions } from '../plugins/collab-edit';
-import { InsertMenuCustomItem, ReactComponents, ToolbarUIComponentFactory, UIComponentFactory } from '../types';
+import {
+  InsertMenuCustomItem,
+  ReactComponents,
+  ToolbarUIComponentFactory,
+  UIComponentFactory,
+} from '../types';
 import { EditorAppearance } from './editor-props';
 
 export interface EditorAppearanceComponentProps {
