@@ -1,6 +1,5 @@
 import { codeBlock } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import {
   ACTION,
@@ -46,11 +45,7 @@ const codeBlockPlugin = (options: CodeBlockOptions = {}): EditorPlugin => ({
         description: formatMessage(messages.codeblockDescription),
         priority: 700,
         keyshortcut: '```',
-        icon: () => (
-          <FormattedMessage {...messages.codeblock}>
-            {(label: string) => <IconCode label={label} />}
-          </FormattedMessage>
-        ),
+        icon: () => <IconCode label={formatMessage(messages.codeblock)} />,
         action(insert, state) {
           const schema = state.schema;
           const tr = insert(schema.nodes.codeBlock.createChecked());
