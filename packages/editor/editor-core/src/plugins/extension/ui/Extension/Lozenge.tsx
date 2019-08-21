@@ -3,7 +3,11 @@ import { getExtensionLozengeData } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import * as React from 'react';
 import { Component } from 'react';
-import { PlaceholderFallback, PlaceholderFallbackParams } from './styles';
+import {
+  PlaceholderFallback,
+  PlaceholderFallbackParams,
+  StyledImage,
+} from './styles';
 
 export const capitalizeFirstLetter = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
@@ -26,7 +30,7 @@ export default class ExtensionLozenge extends Component<Props, any> {
     const { node } = this.props;
 
     const imageData = getExtensionLozengeData({ node, type: 'image' });
-    if (imageData) {
+    if (imageData && node.type.name !== 'extension') {
       return this.renderImage(imageData);
     }
 
@@ -37,17 +41,18 @@ export default class ExtensionLozenge extends Component<Props, any> {
   private renderImage(lozengeData: LozengeData) {
     const { extensionKey } = this.props.node.attrs;
     const { url, ...rest } = lozengeData;
-    return <img src={url} {...rest} alt={extensionKey} />;
+    return <StyledImage src={url} {...rest} alt={extensionKey} />;
   }
 
   private renderFallback(lozengeData?: LozengeData) {
     const { parameters, extensionKey } = this.props.node.attrs;
+    const { name } = this.props.node.type;
     const params = parameters && parameters.macroParams;
     const title = (parameters && parameters.extensionTitle) || extensionKey;
-
+    const isBlockExtension = name === 'extension';
     return (
       <PlaceholderFallback>
-        {lozengeData ? (
+        {lozengeData && !isBlockExtension ? (
           this.renderImage({
             height: ICON_SIZE,
             width: ICON_SIZE,
@@ -57,7 +62,7 @@ export default class ExtensionLozenge extends Component<Props, any> {
           <EditorFileIcon label={title} />
         )}
         <span className="extension-title">{capitalizeFirstLetter(title)}</span>
-        {params && (
+        {params && !isBlockExtension && (
           <PlaceholderFallbackParams>
             {Object.keys(params).map(
               key => key && ` | ${key} = ${params[key].value}`,

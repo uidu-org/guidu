@@ -1,11 +1,8 @@
-import { blockNodesVerticalMargin } from '@uidu/editor-common';
 import { borderRadius, colors, themed } from '@uidu/theme';
 import styled from 'styled-components';
 import { padding, Wrapper as WrapperDefault } from '../styles';
 
 export const Wrapper = styled(WrapperDefault)`
-  margin: ${blockNodesVerticalMargin} 0;
-
   .extension-overflow-wrapper:not(.with-body) {
     overflow-x: auto;
   }
@@ -28,8 +25,7 @@ export const Header = styled.div`
   vertical-align: middle;
 
   &.with-children {
-    padding: 0;
-    background: white;
+    padding: 4px 8px 8px;
   }
 `;
 

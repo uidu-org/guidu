@@ -57,9 +57,10 @@ const breakoutOptions = (
   state: EditorState,
   formatMessage: WrappedComponentProps['intl']['formatMessage'],
   extensionState: ExtensionState,
+  breakoutEnabled: boolean,
 ): Array<FloatingToolbarItem<Command>> => {
   const { layout, allowBreakout, node } = extensionState;
-  return allowBreakout && isLayoutSupported(state, node)
+  return breakoutEnabled && allowBreakout && isLayoutSupported(state, node)
     ? [
         {
           type: 'button',
@@ -86,10 +87,31 @@ const breakoutOptions = (
     : [];
 };
 
-export const getToolbarConfig: FloatingToolbarHandler = (
-  state,
-  { formatMessage },
-) => {
+const editButton = (
+  formatMessage: WrappedComponentProps['intl']['formatMessage'],
+  macroState: MacroState,
+  extensionState: ExtensionState,
+): Array<FloatingToolbarItem<Command>> => {
+  if (!extensionState.showEditButton) {
+    return [];
+  }
+
+  return [
+    {
+      type: 'button',
+      icon: EditIcon,
+      onClick: editExtension(
+        macroState && macroState.macroProvider,
+        extensionState.updateExtension,
+      ),
+      title: formatMessage(messages.edit),
+    },
+  ];
+};
+
+export const getToolbarConfig = (
+  breakoutEnabled: boolean = true,
+): FloatingToolbarHandler => (state, { formatMessage }) => {
   const extensionState: ExtensionState = pluginKey.getState(state);
   const macroState: MacroState = macroPluginKey.getState(state);
   if (extensionState && extensionState.element) {
@@ -104,13 +126,13 @@ export const getToolbarConfig: FloatingToolbarHandler = (
       getDomRef: () => extensionState.element!.parentElement || undefined,
       nodeType,
       items: [
-        {
-          type: 'button',
-          icon: EditIcon,
-          onClick: editExtension(macroState && macroState.macroProvider),
-          title: formatMessage(messages.edit),
-        },
-        ...breakoutOptions(state, formatMessage, extensionState),
+        ...editButton(formatMessage, macroState, extensionState),
+        ...breakoutOptions(
+          state,
+          formatMessage,
+          extensionState,
+          breakoutEnabled,
+        ),
         {
           type: 'separator',
         },

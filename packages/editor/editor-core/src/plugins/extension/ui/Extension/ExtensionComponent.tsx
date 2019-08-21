@@ -1,4 +1,4 @@
-import { ExtensionHandlers } from '@uidu/editor-common';
+import { ExtensionHandlers, getExtensionRenderer } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import {
   findSelectedNodeOfType,
@@ -21,14 +21,14 @@ export interface Props {
 }
 
 export interface State {
-  macroProvider?: MacroProvider | any;
+  macroProvider?: MacroProvider;
 }
 
 export default class ExtensionComponent extends Component<Props, State> {
   state: State = {};
   mounted = false;
 
-  UNSAFE_componentWillMount() {
+  componentWillMount() {
     this.mounted = true;
   }
 
@@ -43,7 +43,7 @@ export default class ExtensionComponent extends Component<Props, State> {
     this.mounted = false;
   }
 
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
+  componentWillReceiveProps(nextProps: Props) {
     const { macroProvider } = nextProps;
 
     if (this.props.macroProvider !== macroProvider) {
@@ -142,7 +142,8 @@ export default class ExtensionComponent extends Component<Props, State> {
       return undefined;
     }
 
-    return extensionHandlers[extensionType](
+    const render = getExtensionRenderer(extensionHandlers[extensionType]);
+    return render(
       {
         type: node.type.name as
           | 'extension'

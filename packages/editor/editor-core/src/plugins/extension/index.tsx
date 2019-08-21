@@ -1,13 +1,17 @@
 import {
-  inlineExtension,
-  extension,
   bodiedExtension,
+  extension,
+  inlineExtension,
 } from '@atlaskit/adf-schema';
 import { EditorPlugin } from '../../types';
 import createPlugin from './plugin';
 import { getToolbarConfig } from './toolbar';
 
-const extensionPlugin: EditorPlugin = {
+interface ExtensionPluginOptions {
+  breakoutEnabled?: boolean;
+}
+
+const extensionPlugin = (config: ExtensionPluginOptions): EditorPlugin => ({
   nodes() {
     return [
       { name: 'extension', node: extension },
@@ -42,8 +46,8 @@ const extensionPlugin: EditorPlugin = {
   },
 
   pluginsOptions: {
-    floatingToolbar: getToolbarConfig,
+    floatingToolbar: getToolbarConfig(config.breakoutEnabled),
   },
-};
+});
 
 export default extensionPlugin;

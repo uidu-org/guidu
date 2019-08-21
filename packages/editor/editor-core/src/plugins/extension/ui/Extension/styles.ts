@@ -62,3 +62,8 @@ export const PlaceholderFallbackParams = styled.span`
   white-space: nowrap;
   overflow: hidden;
 `;
+
+export const StyledImage = styled.img`
+  max-height: 16px;
+  max-width: 16px;
+`;

@@ -1,15 +1,18 @@
-import { findParentNodeOfType } from 'prosemirror-utils';
-import { Slice, Schema } from 'prosemirror-model';
+import { UpdateExtension } from '@uidu/editor-common';
+import { Node as PmNode, Schema, Slice } from 'prosemirror-model';
+import { EditorState, NodeSelection } from 'prosemirror-state';
 import {
-  removeSelectedNode,
-  removeParentNodeOfType,
+  findParentNodeOfType,
   findSelectedNodeOfType,
+  removeParentNodeOfType,
+  removeSelectedNode,
+  replaceSelectedNode,
 } from 'prosemirror-utils';
-import { pluginKey } from './plugin';
-import { MacroProvider, insertMacroFromMacroBrowser } from '../macro';
-import { getExtensionNode, isSelectionNodeExtension } from './utils';
+import { Command, CommandDispatch } from '../../types';
 import { mapFragment } from '../../utils/slice';
-import { Command } from '../../types';
+import { insertMacroFromMacroBrowser, MacroProvider } from '../macro';
+import { pluginKey } from './plugin';
+import { getExtensionNode, isSelectionNodeExtension } from './utils';
 
 export const updateExtensionLayout = (layout: string): Command => (
   state,
@@ -54,13 +57,58 @@ export const updateExtensionLayout = (layout: string): Command => (
   return true;
 };
 
-export const editExtension = (macroProvider: MacroProvider | null): Command => (
-  state,
-  dispatch,
-): boolean => {
+export const updateExtensionParams = (
+  updateExtension: UpdateExtension<object>,
+  node: { node: PmNode; pos: number },
+) => async (state: EditorState, dispatch?: CommandDispatch): Promise<void> => {
+  if (!state.schema.nodes.extension) {
+    return;
+  }
+  const { parameters } = node.node.attrs;
+  const newParameters = await updateExtension(parameters);
+
+  if (newParameters) {
+    const newAttrs = {
+      ...node.node.attrs,
+      parameters: {
+        ...parameters,
+        ...newParameters,
+      },
+    };
+
+    const newNode = state.schema.nodes.extension.createChecked(newAttrs);
+    if (!newNode) {
+      return;
+    }
+
+    let transaction = replaceSelectedNode(newNode)(state.tr);
+    // Replacing selected node doesn't update the selection. `selection.node` still returns the old node
+    transaction = transaction.setSelection(
+      NodeSelection.create(transaction.doc, state.selection.anchor),
+    );
+
+    if (dispatch) {
+      dispatch(transaction.scrollIntoView());
+    }
+  }
+};
+
+export const editExtension = (
+  macroProvider: MacroProvider | null,
+  updateExtension?: UpdateExtension<object>,
+): Command => (state, dispatch): boolean => {
   const node = getExtensionNode(state);
 
-  if (!node || !macroProvider) {
+  if (!node) {
+    return false;
+  }
+
+  if (updateExtension) {
+    updateExtensionParams(updateExtension, node)(state, dispatch);
+    return true;
+  }
+
+  if (!macroProvider) {
     return false;
   }
 

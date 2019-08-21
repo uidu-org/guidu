@@ -1,4 +1,8 @@
-import { ExtensionHandlers, ProviderFactory, WithProviders } from '@uidu/editor-common';
+import {
+  ExtensionHandlers,
+  ProviderFactory,
+  WithProviders,
+} from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
