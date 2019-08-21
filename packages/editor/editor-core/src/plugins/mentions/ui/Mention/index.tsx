@@ -1,11 +1,10 @@
-import { ResourcedMention } from '@atlaskit/mention/element';
-import { MentionProvider } from '@atlaskit/mention/resource';
 import {
   MentionEventHandlers,
   ProviderFactory,
   Providers,
   WithProviders,
 } from '@uidu/editor-common';
+import { MentionProvider, ResourcedMention } from '@uidu/mentions';
 import * as React from 'react';
 import { PureComponent } from 'react';
 

@@ -1,22 +1,20 @@
 import { mention } from '@atlaskit/adf-schema';
-import { MentionItem } from '@atlaskit/mention/item';
+import {
+  ContextIdentifierProvider,
+  ProviderFactory,
+} from '@uidu/editor-common';
 import {
   ELEMENTS_CHANNEL,
   isResolvingMentionProvider,
   isSpecialMention,
   MentionDescription,
+  MentionItem,
   MentionProvider,
-  TeamMentionProvider,
-} from '@atlaskit/mention/resource';
-import {
+  TeamMember,
   TeamMentionHighlight,
   TeamMentionHighlightController,
-} from '@atlaskit/mention/spotlight';
-import { TeamMember } from '@atlaskit/mention/team-resource';
-import {
-  ContextIdentifierProvider,
-  ProviderFactory,
-} from '@uidu/editor-common';
+  TeamMentionProvider,
+} from '@uidu/mentions';
 import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';

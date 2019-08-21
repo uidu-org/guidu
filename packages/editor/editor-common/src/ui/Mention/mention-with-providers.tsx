@@ -1,6 +1,5 @@
 import { MentionUserType as UserType } from '@atlaskit/adf-schema';
-import { ResourcedMention } from '@atlaskit/mention/element';
-import { MentionProvider } from '@atlaskit/mention/resource';
+import { ResourcedMention } from '@uidu/mentions';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { MentionEventHandlers } from '../EventHandlers';

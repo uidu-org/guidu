@@ -1,14 +1,13 @@
-import * as React from 'react';
-import { findDOMNode } from 'react-dom';
-import { PureComponent, ReactInstance } from 'react';
 import { MentionUserType as UserType } from '@atlaskit/adf-schema';
-import { MentionProvider, ResourcedMention } from '@atlaskit/mention';
-
-import { ProfilecardProvider } from './types';
 import ProfileCard, { ProfileCardAction } from '@atlaskit/profilecard';
+import { ResourcedMention } from '@uidu/mentions';
+import * as React from 'react';
+import { PureComponent, ReactInstance } from 'react';
+import { findDOMNode } from 'react-dom';
 import { MentionEventHandler } from '../EventHandlers';
 import Popup from '../Popup';
 import withOuterListeners from '../with-outer-listeners';
+import { ProfilecardProvider } from './types';
 
 const ProfilecardResourcedWithListeners = withOuterListeners(ProfileCard);
 

@@ -1,5 +1,4 @@
 import { ActivityProvider } from '@atlaskit/activity';
-import { MentionProvider } from '@atlaskit/mention/resource';
 import { TaskDecisionProvider } from '@atlaskit/task-decision';
 import {
   ContextIdentifierProvider,
@@ -7,6 +6,7 @@ import {
   ExtensionHandlers,
   Transformer,
 } from '@uidu/editor-common';
+import { MentionProvider } from '@uidu/mentions';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { ReactElement } from 'react';

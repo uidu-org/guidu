@@ -1,10 +1,7 @@
 import { traverse } from '@atlaskit/adf-utils';
 import { JSONDocNode } from '@atlaskit/editor-json-transformer';
-import {
-  isResolvingMentionProvider,
-  MentionProvider,
-} from '@atlaskit/mention/resource';
 import { ProviderFactory } from '@uidu/editor-common';
+import { isResolvingMentionProvider, MentionProvider } from '@uidu/mentions';
 
 /**
  * Sanitises a document where some content should not be in the document (e.g. mention names).

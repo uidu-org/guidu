@@ -4,10 +4,7 @@ import {
   OPERATIONAL_EVENT_TYPE,
   UI_EVENT_TYPE,
 } from '@atlaskit/analytics-gas-types';
-import {
-  isSpecialMention,
-  MentionDescription,
-} from '@atlaskit/mention/resource';
+import { isSpecialMention, MentionDescription } from '@uidu/mentions';
 import {
   name as packageName,
   version as packageVersion,
