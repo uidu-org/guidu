@@ -1,14 +1,22 @@
-import { createLanguageList, DEFAULT_LANGUAGES, getLanguageIdentifier } from '@atlaskit/adf-schema';
+import {
+  createLanguageList,
+  DEFAULT_LANGUAGES,
+  getLanguageIdentifier,
+} from '@atlaskit/adf-schema';
 import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { findParentNodeOfType } from 'prosemirror-utils';
 import { defineMessages } from 'react-intl';
 import commonMessages from '../../messages';
 import { Command } from '../../types';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
-import { FloatingToolbarButton, FloatingToolbarHandler, FloatingToolbarSelect, FloatingToolbarSeparator } from '../floating-toolbar/types';
+import {
+  FloatingToolbarButton,
+  FloatingToolbarHandler,
+  FloatingToolbarSelect,
+  FloatingToolbarSeparator,
+} from '../floating-toolbar/types';
 import { changeLanguage, removeCodeBlock } from './actions';
 import { CodeBlockState, pluginKey } from './pm-plugins/main';
-
 
 export const messages = defineMessages({
   selectLanguage: {

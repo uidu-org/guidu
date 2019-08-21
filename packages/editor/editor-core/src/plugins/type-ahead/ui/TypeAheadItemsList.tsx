@@ -214,9 +214,7 @@ export class TypeAheadItemComponent extends React.Component<
         <ItemBody>
           <ItemText>
             <div className="item-title">{item.title}</div>
-            {item.description && (
-              <div className="item-description">{item.description}</div>
-            )}
+            <div className="item-description">{item.description}</div>
           </ItemText>
           <ItemAfter>
             {item.keyshortcut && <KeyHint>{item.keyshortcut}</KeyHint>}

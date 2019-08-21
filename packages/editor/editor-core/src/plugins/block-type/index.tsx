@@ -1,6 +1,7 @@
 import { blockquote, hardBreak, heading } from '@atlaskit/adf-schema';
 import { NodeSpec } from 'prosemirror-model';
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { ToolbarSize } from '../../components/Toolbar';
 import WithPluginState from '../../components/WithPluginState';
 import { toggleBlockQuote, tooltip } from '../../keymaps';
@@ -13,7 +14,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-// import { IconQuote } from '../quick-insert/assets';
+import { IconQuote } from '../quick-insert/assets';
 import { setBlockTypeWithAnalytics } from './commands';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
@@ -111,7 +112,11 @@ const blockType: EditorPlugin = {
         description: formatMessage(messages.blockquoteDescription),
         priority: 1300,
         keyshortcut: tooltip(toggleBlockQuote),
-        // icon: () => <IconQuote label={formatMessage(messages.blockquote)} />,
+        icon: () => (
+          <FormattedMessage {...messages.blockquote}>
+            {(label: string) => <IconQuote label={label} />}
+          </FormattedMessage>
+        ),
         action(insert, state) {
           const tr = insert(
             state.schema.nodes.blockquote.createChecked(

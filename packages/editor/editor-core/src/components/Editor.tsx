@@ -7,7 +7,7 @@ import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
 import { DirectEditorProps, EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
-import { IntlContext } from 'react-intl';
+import { injectIntl } from 'react-intl';
 import { analyticsService } from '../analytics';
 import {
   createErrorReporter,
@@ -63,7 +63,7 @@ export interface EditorViewProps {
   }) => void;
 }
 
-export default class Editor extends PureComponent<any> {
+class Editor extends PureComponent<any> {
   view?: EditorView;
   eventDispatcher: EventDispatcher;
   contentTransformer?: Transformer<string>;
@@ -75,10 +75,6 @@ export default class Editor extends PureComponent<any> {
     payload: AnalyticsEventPayload;
     channel?: string;
   }) => void;
-
-  static contextTypes = {
-    intl: IntlContext,
-  };
 
   constructor(props: EditorViewProps) {
     super(props);
@@ -142,6 +138,7 @@ export default class Editor extends PureComponent<any> {
     );
     const schema = createSchema(this.config);
 
+    console.log(this.props);
     const {
       contentTransformerProvider,
       defaultValue,
@@ -157,6 +154,7 @@ export default class Editor extends PureComponent<any> {
       providerFactory: options.props.providerFactory,
       portalProviderAPI: this.props.portalProviderAPI,
       reactContext: () => this.context,
+      intl: this.props.intl,
       dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
@@ -297,3 +295,5 @@ export default class Editor extends PureComponent<any> {
     });
   }
 }
+
+export default injectIntl(Editor);

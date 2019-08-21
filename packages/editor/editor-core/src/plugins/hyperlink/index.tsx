@@ -1,5 +1,6 @@
 import { link } from '@atlaskit/adf-schema';
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { addLink, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import {
@@ -49,7 +50,11 @@ const hyperlinkPlugin: EditorPlugin = {
         keywords: ['url', 'link', 'hyperlink'],
         priority: 1200,
         keyshortcut: tooltip(addLink),
-        icon: () => <IconLink label={formatMessage(messages.link)} />,
+        icon: () => (
+          <FormattedMessage {...messages.link}>
+            {(label: string) => <IconLink label={label} />}
+          </FormattedMessage>
+        ),
         action(_insert, state) {
           const pos = state.selection.from;
           const { nodeBefore } = state.selection.$from;

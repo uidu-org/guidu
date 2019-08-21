@@ -7,7 +7,12 @@ import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import ColorPalette from '../../../../components/ColorPalette';
 import DropdownMenu from '../../../../components/DropdownMenu';
 import { Shortcut } from '../../../../components/styles';
@@ -134,7 +139,6 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
       targetCellPosition,
       isOpen,
       selectionRect,
-      intl: { formatMessage },
     } = this.props;
     const items: any[] = [];
     const { isSubmenuOpen } = this.state;
@@ -146,7 +150,7 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
       const background =
         node && node.attrs.background ? node.attrs.background : '#ffffff';
       items.push({
-        content: formatMessage(messages.cellBackground),
+        content: messages.cellBackground,
         value: { name: 'background' },
         elemAfter: (
           <div>
@@ -174,13 +178,13 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
     }
 
     items.push({
-      content: formatMessage(tableMessages.insertColumn),
+      content: tableMessages.insertColumn,
       value: { name: 'insert_column' },
       elemAfter: <Shortcut>⌃⌥→</Shortcut>,
     });
 
     items.push({
-      content: formatMessage(tableMessages.insertRow),
+      content: tableMessages.insertRow,
       value: { name: 'insert_row' },
       elemAfter: <Shortcut>⌃⌥↓</Shortcut>,
     });
@@ -190,36 +194,51 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
     const noOfRows = bottom - top;
 
     items.push({
-      content: formatMessage(tableMessages.removeColumns, {
-        0: noOfColumns,
-      }),
+      content: (
+        <FormattedMessage
+          {...tableMessages.removeColumns}
+          values={{
+            0: noOfColumns,
+          }}
+        />
+      ),
       value: { name: 'delete_column' },
     });
 
     items.push({
-      content: formatMessage(tableMessages.removeRows, {
-        0: noOfRows,
-      }),
+      content: (
+        <FormattedMessage
+          {...tableMessages.removeRows}
+          values={{
+            0: noOfRows,
+          }}
+        />
+      ),
       value: { name: 'delete_row' },
     });
 
     if (allowMergeCells) {
       items.push({
-        content: formatMessage(messages.mergeCells),
+        content: <FormattedMessage {...messages.mergeCells} />,
         value: { name: 'merge' },
         isDisabled: !canMergeCells(state.tr),
       });
       items.push({
-        content: formatMessage(messages.splitCell),
+        content: <FormattedMessage {...messages.splitCell} />,
         value: { name: 'split' },
         isDisabled: !splitCell(state),
       });
     }
 
     items.push({
-      content: formatMessage(messages.clearCells, {
-        0: Math.max(noOfColumns, noOfRows),
-      }),
+      content: (
+        <FormattedMessage
+          {...messages.clearCells}
+          values={{
+            0: Math.max(noOfColumns, noOfRows),
+          }}
+        />
+      ),
       value: { name: 'clear' },
       elemAfter: <Shortcut>⌫</Shortcut>,
     });

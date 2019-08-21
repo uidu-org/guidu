@@ -205,7 +205,7 @@ export default function createPluginsList(
   plugins.push(floatingToolbarPlugin);
 
   if (props.appearance !== 'mobile') {
-    plugins.push(quickInsertPlugin);
+    plugins.push(quickInsertPlugin());
   }
 
   return plugins;

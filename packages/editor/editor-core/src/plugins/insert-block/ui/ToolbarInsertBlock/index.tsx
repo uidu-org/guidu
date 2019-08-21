@@ -22,7 +22,12 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { ReactInstance } from 'react';
 import * as ReactDOM from 'react-dom';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import EditorActions from '../../../../actions';
 import {
   analyticsService as analytics,
@@ -346,7 +351,6 @@ class ToolbarInsertBlock extends React.PureComponent<
       isDisabled,
       buttons: numberOfButtons,
       isReducedSpacing,
-      intl: { formatMessage },
     } = this.props;
 
     const items = this.createItems();
@@ -357,24 +361,27 @@ class ToolbarInsertBlock extends React.PureComponent<
       return null;
     }
 
-    const labelInsertMenu = formatMessage(messages.insertMenu);
     const toolbarButtonFactory = (disabled: boolean, items: Array<any>) => (
-      <ToolbarButton
-        ref={el => this.handleDropDownButtonRef(el, items)}
-        selected={isOpen}
-        disabled={disabled}
-        onClick={this.handleTriggerClick}
-        spacing={isReducedSpacing ? 'none' : 'default'}
-        title={`${labelInsertMenu} /`}
-        iconBefore={
-          <TriggerWrapper>
-            <AddIcon label={labelInsertMenu} />
-            <ExpandIconWrapper>
-              <ExpandIcon label={labelInsertMenu} />
-            </ExpandIconWrapper>
-          </TriggerWrapper>
-        }
-      />
+      <FormattedMessage {...messages.insertMenu}>
+        {(labelInsertMenu: string) => (
+          <ToolbarButton
+            ref={el => this.handleDropDownButtonRef(el, items)}
+            selected={isOpen}
+            disabled={disabled}
+            onClick={this.handleTriggerClick}
+            spacing={isReducedSpacing ? 'none' : 'default'}
+            title={`${labelInsertMenu} /`}
+            iconBefore={
+              <TriggerWrapper>
+                <AddIcon label={labelInsertMenu} />
+                <ExpandIconWrapper>
+                  <ExpandIcon label={labelInsertMenu} />
+                </ExpandIconWrapper>
+              </TriggerWrapper>
+            }
+          />
+        )}
+      </FormattedMessage>
     );
 
     return (
@@ -443,98 +450,129 @@ class ToolbarInsertBlock extends React.PureComponent<
     let items: any[] = [];
 
     if (actionSupported) {
-      const labelAction = formatMessage(messages.action);
       items.push({
-        content: labelAction,
+        content: formatMessage(messages.action),
         value: { name: 'action' },
-        elemBefore: <TaskIcon label={labelAction} />,
+        elemBefore: (
+          <FormattedMessage {...messages.action}>
+            {(labelAction: string) => <TaskIcon label={labelAction} />}
+          </FormattedMessage>
+        ),
         elemAfter: <Shortcut>{'[]'}</Shortcut>,
         shortcut: '[]',
       });
     }
 
     if (linkSupported) {
-      const labelLink = formatMessage(messages.link);
       const shortcutLink = tooltip(addLink);
       items.push({
-        content: labelLink,
+        content: formatMessage(messages.link),
         value: { name: 'link' },
         isDisabled: linkDisabled,
-        elemBefore: <LinkIcon label={labelLink} />,
+        elemBefore: (
+          <FormattedMessage {...messages.link}>
+            {(labelLink: string) => <LinkIcon label={labelLink} />}
+          </FormattedMessage>
+        ),
         elemAfter: <Shortcut>{shortcutLink}</Shortcut>,
         shortcut: shortcutLink,
       });
     }
     if (mediaSupported && mediaUploadsEnabled) {
-      const labelFilesAndImages = formatMessage(messages.filesAndImages);
       items.push({
-        content: labelFilesAndImages,
+        content: formatMessage(messages.filesAndImages),
         value: { name: 'media' },
-        elemBefore: <EditorImageIcon label={labelFilesAndImages} />,
+        elemBefore: (
+          <FormattedMessage {...messages.filesAndImages}>
+            {(labelFilesAndImages: string) => (
+              <EditorImageIcon label={labelFilesAndImages} />
+            )}
+          </FormattedMessage>
+        ),
       });
     }
     if (imageUploadSupported) {
-      const labelImage = formatMessage(messages.image);
       items.push({
-        content: labelImage,
+        content: formatMessage(messages.image),
         value: { name: 'image upload' },
         isDisabled: !imageUploadEnabled,
-        elemBefore: <EditorImageIcon label={labelImage} />,
+        elemBefore: (
+          <FormattedMessage {...messages.image}>
+            {(labelImage: string) => <EditorImageIcon label={labelImage} />}
+          </FormattedMessage>
+        ),
       });
     }
     if (mentionsSupported) {
-      const labelMention = formatMessage(messages.mention);
       items.push({
-        content: labelMention,
+        content: formatMessage(messages.mention),
         value: { name: 'mention' },
         isDisabled: !isTypeAheadAllowed,
-        elemBefore: <MentionIcon label={labelMention} />,
+        elemBefore: (
+          <FormattedMessage {...messages.mention}>
+            {(labelMention: string) => <MentionIcon label={labelMention} />}
+          </FormattedMessage>
+        ),
         elemAfter: <Shortcut>@</Shortcut>,
         shortcut: '@',
       });
     }
     if (tableSupported) {
-      const labelTable = formatMessage(messages.table);
       const shortcutTable = tooltip(toggleTable);
       items.push({
-        content: labelTable,
+        content: formatMessage(messages.table),
         value: { name: 'table' },
-        elemBefore: <TableIcon label={labelTable} />,
+        elemBefore: (
+          <FormattedMessage {...messages.table}>
+            {(labelTable: string) => <TableIcon label={labelTable} />}
+          </FormattedMessage>
+        ),
         elemAfter: <Shortcut>{shortcutTable}</Shortcut>,
         shortcut: shortcutTable,
       });
     }
     if (layoutSectionEnabled) {
-      const labelColumns = formatMessage(messages.columns);
       items.push({
-        content: labelColumns,
+        content: formatMessage(messages.columns),
         value: { name: 'layout' },
-        elemBefore: <LayoutTwoEqualIcon label={labelColumns} />,
+        elemBefore: (
+          <FormattedMessage {...messages.columns}>
+            {(labelColumns: string) => (
+              <LayoutTwoEqualIcon label={labelColumns} />
+            )}
+          </FormattedMessage>
+        ),
       });
     }
     if (availableWrapperBlockTypes) {
       availableWrapperBlockTypes.forEach(blockType => {
         const BlockTypeIcon =
           blockTypeIcons[blockType.name as keyof typeof blockTypeIcons];
-        const labelBlock = formatMessage(blockType.title);
         const shortcutBlock = tooltip(
           findKeymapByDescription(blockType.title.defaultMessage),
         );
         items.push({
-          content: labelBlock,
+          content: formatMessage(blockType.title),
           value: blockType,
-          elemBefore: <BlockTypeIcon label={labelBlock} />,
+          elemBefore: (
+            <FormattedMessage {...blockType.title}>
+              {(labelBlock: string) => <BlockTypeIcon label={labelBlock} />}
+            </FormattedMessage>
+          ),
           elemAfter: <Shortcut>{shortcutBlock}</Shortcut>,
           shortcut: shortcutBlock,
         });
       });
     }
     if (decisionSupported) {
-      const labelDecision = formatMessage(messages.decision);
       items.push({
-        content: labelDecision,
+        content: formatMessage(messages.decision),
         value: { name: 'decision' },
-        elemBefore: <DecisionIcon label={labelDecision} />,
+        elemBefore: (
+          <FormattedMessage {...messages.decision}>
+            {(labelDecision: string) => <DecisionIcon label={labelDecision} />}
+          </FormattedMessage>
+        ),
         elemAfter: <Shortcut>{'<>'}</Shortcut>,
         shortcut: '<>',
       });
@@ -543,40 +581,56 @@ class ToolbarInsertBlock extends React.PureComponent<
       horizontalRuleEnabled &&
       this.props.editorView.state.schema.nodes.rule
     ) {
-      const labelHorizontalRule = formatMessage(messages.horizontalRule);
       items.push({
-        content: labelHorizontalRule,
+        content: formatMessage(messages.horizontalRule),
         value: { name: 'horizontalrule' },
-        elemBefore: <HorizontalRuleIcon label={labelHorizontalRule} />,
+        elemBefore: (
+          <FormattedMessage {...messages.horizontalRule}>
+            {(labelHorizontalRule: string) => (
+              <HorizontalRuleIcon label={labelHorizontalRule} />
+            )}
+          </FormattedMessage>
+        ),
         elemAfter: <Shortcut>---</Shortcut>,
         shortcut: '---',
       });
     }
 
     if (dateEnabled) {
-      const labelDate = formatMessage(messages.date);
       items.push({
-        content: labelDate,
+        content: formatMessage(messages.date),
         value: { name: 'date' },
-        elemBefore: <DateIcon label={labelDate} />,
+        elemBefore: (
+          <FormattedMessage {...messages.date}>
+            {(labelDate: string) => <DateIcon label={labelDate} />}
+          </FormattedMessage>
+        ),
       });
     }
 
     if (placeholderTextEnabled) {
-      const labelPlaceholderText = formatMessage(messages.placeholderText);
       items.push({
-        content: labelPlaceholderText,
+        content: formatMessage(messages.placeholderText),
         value: { name: 'placeholder text' },
-        elemBefore: <PlaceholderTextIcon label={labelPlaceholderText} />,
+        elemBefore: (
+          <FormattedMessage {...messages.placeholderText}>
+            {(labelPlaceholderText: string) => (
+              <PlaceholderTextIcon label={labelPlaceholderText} />
+            )}
+          </FormattedMessage>
+        ),
       });
     }
 
     if (nativeStatusSupported) {
-      const labelStatus = formatMessage(messages.status);
       items.push({
-        content: labelStatus,
+        content: formatMessage(messages.status),
         value: { name: 'status' },
-        elemBefore: <StatusIcon label={labelStatus} />,
+        elemBefore: (
+          <FormattedMessage {...messages.status}>
+            {(labelStatus: string) => <StatusIcon label={labelStatus} />}
+          </FormattedMessage>
+        ),
       });
     }
 
@@ -586,11 +640,16 @@ class ToolbarInsertBlock extends React.PureComponent<
       // has time to implement this button before it disappears.
       // Should be safe to delete soon. If in doubt ask Leandro Lemos (llemos)
     } else if (typeof macroProvider !== 'undefined' && macroProvider) {
-      const labelViewMore = formatMessage(messages.viewMore);
       items.push({
-        content: labelViewMore,
+        content: formatMessage(messages.viewMore),
         value: { name: 'macro' },
-        elemBefore: <EditorMoreIcon label={labelViewMore} />,
+        elemBefore: (
+          <FormattedMessage {...messages.viewMore}>
+            {(labelViewMore: string) => (
+              <EditorMoreIcon label={labelViewMore} />
+            )}
+          </FormattedMessage>
+        ),
       });
     }
     return items;

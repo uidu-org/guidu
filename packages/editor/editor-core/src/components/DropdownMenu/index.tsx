@@ -164,12 +164,14 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
           handleClickOutside={this.handleClose}
           handleEscapeKeydown={this.handleClose}
         >
-          <div style={{ height: 0, minWidth: fitWidth || 0 }} />
-          {items.map((group, index) => (
-            <ItemGroup key={index}>
-              {group.items.map(item => this.renderItem(item))}
-            </ItemGroup>
-          ))}
+          <div>
+            <div style={{ height: 0, minWidth: fitWidth || 0 }} />
+            {items.map((group, index) => (
+              <ItemGroup key={index}>
+                {group.items.map(item => this.renderItem(item))}
+              </ItemGroup>
+            ))}
+          </div>
         </DropListWithOutsideListeners>
       </Popup>
     );

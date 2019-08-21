@@ -20,7 +20,7 @@ import {
   QuickInsertProvider,
 } from './types';
 
-const quickInsertPlugin: EditorPlugin = {
+const quickInsertPlugin = (): EditorPlugin => ({
   name: 'quickInsert',
 
   pmPlugins(quickInsert: Array<QuickInsertHandler>) {
@@ -85,24 +85,18 @@ const quickInsertPlugin: EditorPlugin = {
       },
     },
   },
-};
+});
 
 export default quickInsertPlugin;
 
 const itemsCache: Record<string, Array<QuickInsertItem>> = {};
 const processItems = (items: Array<QuickInsertHandler>, intl: IntlShape) => {
-  if (!itemsCache[intl.locale]) {
-    itemsCache[intl.locale] = items.reduce(
-      (acc: Array<QuickInsertItem>, item) => {
-        if (typeof item === 'function') {
-          return acc.concat(item(intl));
-        }
-        return acc.concat(item);
-      },
-      [],
-    );
-  }
-  return itemsCache[intl.locale];
+  return items.reduce((acc: Array<QuickInsertItem>, item) => {
+    if (typeof item === 'function') {
+      return acc.concat(item(intl));
+    }
+    return acc.concat(item);
+  }, []);
 };
 
 /**

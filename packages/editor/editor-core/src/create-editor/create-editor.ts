@@ -4,7 +4,13 @@ import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { AnalyticsHandler, analyticsService } from '../analytics';
 import Ranks from '../plugins/rank';
-import { EditorConfig, EditorPlugin, EditorProps, PluginsOptions, PMPluginCreateConfig } from '../types';
+import {
+  EditorConfig,
+  EditorPlugin,
+  EditorProps,
+  PluginsOptions,
+  PMPluginCreateConfig,
+} from '../types';
 import { name, version } from '../version-wrapper';
 
 export function sortByRank(a: { rank: number }, b: { rank: number }): number {
@@ -139,6 +145,7 @@ export function createPMPlugins({
   errorReporter,
   portalProviderAPI,
   reactContext,
+  intl,
   dispatchAnalyticsEvent,
   oldState,
 }: PMPluginCreateConfig): Plugin[] {
@@ -155,6 +162,7 @@ export function createPMPlugins({
         eventDispatcher,
         portalProviderAPI,
         reactContext,
+        intl,
         dispatchAnalyticsEvent,
         oldState,
       }),

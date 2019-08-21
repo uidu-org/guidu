@@ -10,6 +10,7 @@ import { findDomRefAtPos, findSelectedNodeOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import rafSchedule from 'raf-schd';
 import * as React from 'react';
+import { IntlShape } from 'react-intl';
 import WithPluginState from '../../components/WithPluginState';
 import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types';
@@ -77,10 +78,11 @@ const floatingToolbarPlugin: EditorPlugin = {
       {
         // Should be after all toolbar plugins
         name: 'floatingToolbar',
-        plugin: ({ dispatch, reactContext, providerFactory }) =>
+        plugin: ({ dispatch, reactContext, intl, providerFactory }) =>
           floatingToolbarPluginFactory({
             dispatch,
             floatingToolbarHandlers,
+            intl,
             reactContext,
             providerFactory,
           }),
@@ -200,14 +202,10 @@ function floatingToolbarPluginFactory(options: {
   floatingToolbarHandlers: Array<FloatingToolbarHandler>;
   dispatch: Dispatch<FloatingToolbarConfig | undefined>;
   reactContext: () => { [key: string]: any };
+  intl: IntlShape;
   providerFactory: ProviderFactory;
 }) {
-  const {
-    floatingToolbarHandlers,
-    dispatch,
-    reactContext,
-    providerFactory,
-  } = options;
+  const { floatingToolbarHandlers, dispatch, providerFactory, intl } = options;
 
   const apply = (
     _tr: Transaction,
@@ -215,7 +213,6 @@ function floatingToolbarPluginFactory(options: {
     _oldState: EditorState<any>,
     newState: EditorState<any>,
   ) => {
-    const { intl } = reactContext();
     const activeConfigs = floatingToolbarHandlers
       .map(handler => handler(newState, intl, providerFactory))
       .filter(filterUndefined)

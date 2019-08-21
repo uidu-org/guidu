@@ -1,7 +1,7 @@
 import AnnotateIcon from '@atlaskit/icon/glyph/media-services/annotate';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { defineMessages, IntlShape } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -60,7 +60,6 @@ export const messages = defineMessages({
 type AnnotationToolbarProps = {
   viewContext: any;
   id: string;
-  intl: IntlShape;
   view?: EditorView;
 };
 
@@ -105,27 +104,24 @@ export class AnnotationToolbar extends React.Component<AnnotationToolbarProps> {
       return null;
     }
 
-    const { intl } = this.props;
-
-    const title = intl.formatMessage(messages.annotate);
-
     return (
       <>
         <Separator />
-        <Button
-          title={title}
-          icon={<AnnotateIcon label={title} />}
-          onClick={this.onClickAnnotation}
-        />
+        <FormattedMessage {...messages.annotate}>
+          {(title: string) => (
+            <Button
+              title={title}
+              icon={<AnnotateIcon label={title} />}
+              onClick={this.onClickAnnotation}
+            />
+          )}
+        </FormattedMessage>
       </>
     );
   }
 }
 
-export const renderAnnotationButton = (
-  pluginState: MediaPluginState,
-  intl: IntlShape,
-) => {
+export const renderAnnotationButton = (pluginState: MediaPluginState) => {
   return (view?: EditorView, idx?: number) => {
     const selectedContainer = pluginState.selectedMediaContainerNode();
     if (!selectedContainer) {
@@ -138,7 +134,6 @@ export const renderAnnotationButton = (
         viewContext={pluginState.mediaContext!}
         id={selectedContainer.firstChild!.attrs.id}
         view={view}
-        intl={intl}
       />
     );
   };

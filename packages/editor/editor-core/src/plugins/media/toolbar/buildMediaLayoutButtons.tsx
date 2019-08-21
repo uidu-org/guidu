@@ -9,7 +9,8 @@ import WrapRightIcon from '@atlaskit/icon/glyph/editor/media-wrap-right';
 import { Schema } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
 import { hasParentNodeOfType } from 'prosemirror-utils';
-import { defineMessages, IntlShape } from 'react-intl';
+import React from 'react';
+import { defineMessages } from 'react-intl';
 import commonMessages from '../../../messages';
 import { Command } from '../../../types';
 import {
@@ -84,18 +85,14 @@ const makeAlign = (layout: MediaSingleLayout): Command => {
   };
 };
 
-const mapIconsToToolbarItem = (
-  icons: Array<any>,
-  layout: MediaSingleLayout,
-  intl: IntlShape,
-) =>
+const mapIconsToToolbarItem = (icons: Array<any>, layout: MediaSingleLayout) =>
   icons.map<FloatingToolbarItem<Command>>(toolbarItem => {
     const { value } = toolbarItem;
 
     return {
       type: 'button',
       icon: toolbarItem.icon,
-      title: intl.formatMessage(layoutToMessages[value]),
+      title: layoutToMessages[value],
       selected: layout === value,
       onClick: makeAlign(value),
     };
@@ -109,11 +106,7 @@ const shouldHideLayoutToolbar = (selection: NodeSelection, { nodes }: Schema) =>
     nodes.table,
   ])(selection);
 
-const buildLayoutButtons = (
-  state: EditorState,
-  intl: IntlShape,
-  allowResizing?: boolean,
-) => {
+const buildLayoutButtons = (state: EditorState, allowResizing?: boolean) => {
   const { selection } = state;
   const { mediaSingle } = state.schema.nodes;
 
@@ -129,15 +122,15 @@ const buildLayoutButtons = (
   const { layout } = selection.node.attrs;
 
   let toolbarItems = [
-    ...mapIconsToToolbarItem(alignmentIcons, layout, intl),
+    ...mapIconsToToolbarItem(alignmentIcons, layout),
     { type: 'separator' } as FloatingToolbarSeparator,
-    ...mapIconsToToolbarItem(wrappingIcons, layout, intl),
+    ...mapIconsToToolbarItem(wrappingIcons, layout),
   ];
 
   if (!allowResizing) {
     toolbarItems = toolbarItems.concat([
       { type: 'separator' } as FloatingToolbarSeparator,
-      ...mapIconsToToolbarItem(breakoutIcons, layout, intl),
+      ...mapIconsToToolbarItem(breakoutIcons, layout),
     ]);
   }
 

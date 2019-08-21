@@ -88,13 +88,13 @@ const SIDEBAR_LAYOUT_TYPES: PresetLayoutButtonItem[] = [
 ];
 
 const buildLayoutButton = (
-  intl: IntlShape,
+  { formatMessage }: IntlShape,
   item: PresetLayoutButtonItem,
   currentLayout: string | undefined,
 ): FloatingToolbarItem<Command> => ({
   type: 'button',
   icon: item.icon,
-  title: intl.formatMessage(item.title),
+  title: formatMessage(item.title),
   onClick: setPresetLayout(item.type),
   selected: !!currentLayout && currentLayout === item.type,
 });

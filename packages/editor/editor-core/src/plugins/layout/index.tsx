@@ -1,16 +1,17 @@
+import { layoutColumn, layoutSection } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import { layoutSection, layoutColumn } from '@atlaskit/adf-schema';
+import { FormattedMessage } from 'react-intl';
 import { EditorPlugin } from '../../types';
 import { FloatingToolbarConfig } from '../floating-toolbar/types';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { IconLayout } from '../quick-insert/assets';
+import { createDefaultLayoutSection } from './actions';
 import {
   default as createLayoutPlugin,
-  pluginKey,
   LayoutState,
+  pluginKey,
 } from './pm-plugins/main';
 import { buildToolbar } from './toolbar';
-import { createDefaultLayoutSection } from './actions';
-import { IconLayout } from '../quick-insert/assets';
 
 export { pluginKey };
 
@@ -46,7 +47,11 @@ export default {
         description: formatMessage(messages.columnsDescription),
         keywords: ['layout', 'section', 'column'],
         priority: 1100,
-        icon: () => <IconLayout label={formatMessage(messages.columns)} />,
+        icon: () => (
+          <FormattedMessage {...messages.columns}>
+            {(label: string) => <IconLayout label={label} />}
+          </FormattedMessage>
+        ),
         action(insert, state) {
           return insert(createDefaultLayoutSection(state));
         },

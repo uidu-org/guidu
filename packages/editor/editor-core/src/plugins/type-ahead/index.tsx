@@ -24,8 +24,8 @@ const typeAheadPlugin: EditorPlugin = {
     return [
       {
         name: 'typeAhead',
-        plugin: ({ dispatch, reactContext }) =>
-          createPlugin(dispatch, reactContext, typeAhead),
+        plugin: ({ dispatch, reactContext, intl }) =>
+          createPlugin(dispatch, reactContext, intl, typeAhead),
       },
       {
         name: 'typeAheadInputRule',

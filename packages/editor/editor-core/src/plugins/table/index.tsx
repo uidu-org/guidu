@@ -2,6 +2,7 @@ import { table, tableCell, tableHeader, tableRow } from '@atlaskit/adf-schema';
 import { tableEditing } from 'prosemirror-tables';
 import { createTable } from 'prosemirror-utils';
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import WithPluginState from '../../components/WithPluginState';
 import { toggleTable, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
@@ -175,7 +176,11 @@ const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
         description: formatMessage(messages.tableDescription),
         priority: 600,
         keyshortcut: tooltip(toggleTable),
-        icon: () => <IconTable label={formatMessage(messages.table)} />,
+        icon: () => (
+          <FormattedMessage {...messages.table}>
+            {(label: string) => <IconTable label={label} />}
+          </FormattedMessage>
+        ),
         action(insert, state) {
           const tr = insert(createTable(state.schema));
           return addAnalytics(tr, {

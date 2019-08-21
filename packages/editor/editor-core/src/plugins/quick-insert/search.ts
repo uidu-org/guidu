@@ -10,6 +10,8 @@ export function defaultCompareFn(
   a: number | string,
   b: number | string,
 ): number {
+  console.log(a);
+  console.log(b);
   return typeof a === 'number' && typeof b === 'number'
     ? a - b
     : String.prototype.localeCompare.call(a, b);
@@ -27,6 +29,8 @@ export function buildSortPredicateWith<T>(
   compareFn = defaultCompareFn,
 ): (a: T, b: T) => number {
   return (a: T, b: T) => {
+    console.log(a);
+    console.log(b);
     const [propA, propB, prioA, prioB] = [
       getProp(a),
       getProp(b),
@@ -117,6 +121,16 @@ export function find(
     priority?: number;
   }>,
 ) {
+  console.log(items);
+  console.log(
+    items.sort(
+      buildSortPredicateWith(
+        item => item.title,
+        item => item.priority || Number.POSITIVE_INFINITY,
+        SortMode.PRIORITY_FIRST,
+      ),
+    ),
+  );
   return (
     items
       // pre-sort items by title ascending, putting prioritary items first

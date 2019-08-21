@@ -3,7 +3,12 @@ import ItalicIcon from '@atlaskit/icon/glyph/editor/italic';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import { ButtonGroup } from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
@@ -40,12 +45,7 @@ class ToolbarTextFormatting extends PureComponent<
   Props & WrappedComponentProps
 > {
   render() {
-    const {
-      disabled,
-      isReducedSpacing,
-      textFormattingState,
-      intl: { formatMessage },
-    } = this.props;
+    const { disabled, isReducedSpacing, textFormattingState } = this.props;
     const {
       strongHidden,
       strongActive,
@@ -55,30 +55,36 @@ class ToolbarTextFormatting extends PureComponent<
       emDisabled,
     } = textFormattingState;
 
-    const labelBold = formatMessage(messages.bold);
-    const labelItalic = formatMessage(messages.italic);
     return (
       <ButtonGroup width={isReducedSpacing ? 'small' : 'large'}>
         {strongHidden ? null : (
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            onClick={this.handleBoldClick}
-            selected={strongActive}
-            disabled={disabled || strongDisabled}
-            title={tooltip(toggleBold, labelBold)}
-            iconBefore={<BoldIcon label={labelBold} />}
-          />
+          <FormattedMessage {...messages.bold}>
+            {(text: string) => (
+              <ToolbarButton
+                spacing={isReducedSpacing ? 'none' : 'default'}
+                onClick={this.handleBoldClick}
+                selected={strongActive}
+                disabled={disabled || strongDisabled}
+                title={tooltip(toggleBold, text)}
+                iconBefore={<BoldIcon label={text} />}
+              />
+            )}
+          </FormattedMessage>
         )}
 
         {emHidden ? null : (
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            onClick={this.handleItalicClick}
-            selected={emActive}
-            disabled={disabled || emDisabled}
-            title={tooltip(toggleItalic, labelItalic)}
-            iconBefore={<ItalicIcon label={labelItalic} />}
-          />
+          <FormattedMessage {...messages.italic}>
+            {(text: string) => (
+              <ToolbarButton
+                spacing={isReducedSpacing ? 'none' : 'default'}
+                onClick={this.handleItalicClick}
+                selected={emActive}
+                disabled={disabled || emDisabled}
+                title={tooltip(toggleItalic, text)}
+                iconBefore={<ItalicIcon label={text} />}
+              />
+            )}
+          </FormattedMessage>
         )}
       </ButtonGroup>
     );

@@ -1,18 +1,19 @@
-import * as React from 'react';
 import { rule } from '@atlaskit/adf-schema';
+import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import { EditorPlugin } from '../../types';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
-import keymapPlugin from './pm-plugins/keymap';
-import inputRulePlugin from './pm-plugins/input-rule';
 import {
-  addAnalytics,
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
-  INPUT_METHOD,
+  addAnalytics,
   EVENT_TYPE,
+  INPUT_METHOD,
 } from '../analytics';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock';
 import { IconDivider } from '../quick-insert/assets';
+import inputRulePlugin from './pm-plugins/input-rule';
+import keymapPlugin from './pm-plugins/keymap';
 
 const rulePlugin: EditorPlugin = {
   nodes() {
@@ -41,7 +42,9 @@ const rulePlugin: EditorPlugin = {
         priority: 1200,
         keyshortcut: '---',
         icon: () => (
-          <IconDivider label={formatMessage(messages.horizontalRule)} />
+          <FormattedMessage {...messages.horizontalRule}>
+            {(label: string) => <IconDivider label={label} />}
+          </FormattedMessage>
         ),
         action(insert, state) {
           const tr = insert(state.schema.nodes.rule.createChecked());

@@ -82,6 +82,8 @@ class ToolbarBlockType extends React.PureComponent<
       intl: { formatMessage },
     } = this.props;
 
+    console.log(this.props);
+
     const isHeadingDisabled = !availableBlockTypes.some(
       blockType => blockType.nodeName === 'heading',
     );
@@ -103,36 +105,39 @@ class ToolbarBlockType extends React.PureComponent<
     }, '');
 
     const toolbarButtonFactory = (disabled: boolean) => {
-      const labelTextStyles = formatMessage(messages.textStyles);
       return (
-        <ToolbarButton
-          spacing={isReducedSpacing ? 'none' : 'default'}
-          selected={active}
-          className="block-type-btn"
-          disabled={disabled}
-          onClick={this.handleTriggerClick}
-          title={labelTextStyles}
-          aria-label="Font style"
-          iconAfter={
-            <Wrapper isSmall={isSmall}>
-              {isSmall && <TextStyleIcon label={labelTextStyles} />}
-              <ExpandIconWrapper>
-                <ExpandIcon label={labelTextStyles} />
-              </ExpandIconWrapper>
-            </Wrapper>
-          }
-        >
-          {!isSmall && (
-            <ButtonContent>
-              <FormattedMessage
-                {...(blockTypeTitles[0] || NORMAL_TEXT.title)}
-              />
-              <div style={{ overflow: 'hidden', height: 0 }}>
-                {longestDropdownMenuItem}
-              </div>
-            </ButtonContent>
+        <FormattedMessage {...messages.textStyles}>
+          {(labelTextStyles: string) => (
+            <ToolbarButton
+              spacing={isReducedSpacing ? 'none' : 'default'}
+              selected={active}
+              className="block-type-btn"
+              disabled={disabled}
+              onClick={this.handleTriggerClick}
+              title={labelTextStyles}
+              aria-label="Font style"
+              iconAfter={
+                <Wrapper isSmall={isSmall}>
+                  {isSmall && <TextStyleIcon label={labelTextStyles} />}
+                  <ExpandIconWrapper>
+                    <ExpandIcon label={labelTextStyles} />
+                  </ExpandIconWrapper>
+                </Wrapper>
+              }
+            >
+              {!isSmall && (
+                <ButtonContent>
+                  <FormattedMessage
+                    {...(blockTypeTitles[0] || NORMAL_TEXT.title)}
+                  />
+                  <div style={{ overflow: 'hidden', height: 0 }}>
+                    {longestDropdownMenuItem}
+                  </div>
+                </ButtonContent>
+              )}
+            </ToolbarButton>
           )}
-        </ToolbarButton>
+        </FormattedMessage>
       );
     };
 
@@ -172,9 +177,6 @@ class ToolbarBlockType extends React.PureComponent<
   };
 
   private createItems = () => {
-    const {
-      intl: { formatMessage },
-    } = this.props;
     const { currentBlockType, availableBlockTypes } = this.props.pluginState;
     const items = availableBlockTypes.reduce(
       (acc, blockType, blockTypeNo) => {
@@ -183,7 +185,11 @@ class ToolbarBlockType extends React.PureComponent<
         acc.push({
           content: (
             <BlockTypeMenuItem tagName={tagName} selected={isActive}>
-              {createElement(tagName, {}, formatMessage(blockType.title))}
+              {createElement(
+                tagName,
+                {},
+                <FormattedMessage {...blockType.title} />,
+              )}
             </BlockTypeMenuItem>
           ),
           value: blockType,

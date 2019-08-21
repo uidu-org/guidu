@@ -23,7 +23,7 @@ const remove: Command = (state, dispatch) => {
 
 export const floatingToolbar = (
   state: EditorState,
-  intl: IntlShape,
+  { formatMessage }: IntlShape,
   allowResizing?: boolean,
   allowAnnotation?: boolean,
   appearance?: EditorAppearance,
@@ -37,12 +37,12 @@ export const floatingToolbar = (
 
   let layoutButtons: FloatingToolbarItem<Command>[] = [];
   if (isFullPage(appearance)) {
-    layoutButtons = buildLayoutButtons(state, intl, allowResizing);
+    layoutButtons = buildLayoutButtons(state, allowResizing);
     if (layoutButtons.length) {
       if (allowAnnotation) {
         layoutButtons.push({
           type: 'custom',
-          render: renderAnnotationButton(pluginState, intl),
+          render: renderAnnotationButton(pluginState),
         });
       }
 
@@ -62,7 +62,7 @@ export const floatingToolbar = (
         icon: RemoveIcon,
         onMouseEnter: hoverDecoration(mediaSingle, true),
         onMouseLeave: hoverDecoration(mediaSingle, false),
-        title: intl.formatMessage(commonMessages.remove),
+        title: formatMessage(commonMessages.remove),
         onClick: remove,
       },
     ],

@@ -141,11 +141,6 @@ export const getToolbarConfig: FloatingToolbarHandler = (
         );
         const link = linkMark[0] && linkMark[0].attrs.href;
 
-        const labelOpenLink = formatMessage(messages.openLink);
-        const labelUnlink = formatMessage(messages.unlink);
-
-        const editLink = formatMessage(messages.editLink);
-
         return {
           ...hyperLinkToolbar,
           height: 32,
@@ -155,7 +150,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               type: 'button',
               onClick: editInsertedLink(),
               selected: false,
-              title: editLink,
+              title: formatMessage(messages.editLink),
               showTitle: true,
             },
             {
@@ -167,7 +162,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               href: link,
               onClick: () => true,
               selected: false,
-              title: labelOpenLink,
+              title: formatMessage(messages.openLink),
               icon: OpenIcon,
               className: 'hyperlink-open-link',
             },
@@ -178,7 +173,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               type: 'button',
               onClick: removeLink(pos),
               selected: false,
-              title: labelUnlink,
+              title: formatMessage(messages.unlink),
               icon: UnlinkIcon,
             },
           ],

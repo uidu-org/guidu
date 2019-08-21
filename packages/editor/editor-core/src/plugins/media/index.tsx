@@ -1,5 +1,6 @@
 import { media, mediaGroup, mediaSingle } from '@atlaskit/adf-schema';
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import WithPluginState from '../../components/WithPluginState';
 import {
   EditorAppearance,
@@ -201,7 +202,9 @@ const mediaPlugin = (
         priority: 400,
         keywords: ['media', 'attachment'],
         icon: () => (
-          <IconImages label={formatMessage(messages.filesAndImages)} />
+          <FormattedMessage {...messages.filesAndImages}>
+            {(label: string) => <IconImages label={label} />}
+          </FormattedMessage>
         ),
         action(insert, state) {
           const pluginState = pluginKey.getState(state);

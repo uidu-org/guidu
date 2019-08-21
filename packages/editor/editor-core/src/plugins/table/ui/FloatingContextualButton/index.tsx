@@ -3,7 +3,11 @@ import { Popup } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import styled from 'styled-components';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import { closestElement } from '../../../../utils';
@@ -36,7 +40,6 @@ class FloatingContextualButton extends React.Component<
       editorView,
       targetCellPosition,
       isContextualMenuOpen,
-      intl: { formatMessage },
     } = this.props; //  : Props & WrappedComponentProps
 
     const domAtPos = editorView.domAtPos.bind(editorView);
@@ -50,28 +53,31 @@ class FloatingContextualButton extends React.Component<
       `.${ClassName.TABLE_NODE_WRAPPER}`,
     );
 
-    const labelCellOptions = formatMessage(messages.cellOptions);
     return (
-      <Popup
-        alignX="right"
-        alignY="start"
-        target={targetCellRef}
-        mountTo={tableWrapper || mountPoint}
-        boundariesElement={targetCellRef}
-        scrollableElement={scrollableElement}
-        forcePlacement={true}
-        offset={[3, -3]}
-      >
-        <ButtonWrapper>
-          <ToolbarButton
-            className={ClassName.CONTEXTUAL_MENU_BUTTON}
-            selected={isContextualMenuOpen}
-            title={labelCellOptions}
-            onClick={this.handleClick}
-            iconBefore={<ExpandIcon label={labelCellOptions} />}
-          />
-        </ButtonWrapper>
-      </Popup>
+      <FormattedMessage {...messages.cellOptions}>
+        {(labelCellOptions: string) => (
+          <Popup
+            alignX="right"
+            alignY="start"
+            target={targetCellRef}
+            mountTo={tableWrapper || mountPoint}
+            boundariesElement={targetCellRef}
+            scrollableElement={scrollableElement}
+            forcePlacement={true}
+            offset={[3, -3]}
+          >
+            <ButtonWrapper>
+              <ToolbarButton
+                className={ClassName.CONTEXTUAL_MENU_BUTTON}
+                selected={isContextualMenuOpen}
+                title={labelCellOptions}
+                onClick={this.handleClick}
+                iconBefore={<ExpandIcon label={labelCellOptions} />}
+              />
+            </ButtonWrapper>
+          </Popup>
+        )}
+      </FormattedMessage>
     );
   }
 

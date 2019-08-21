@@ -6,7 +6,7 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { hasParentNodeOfType } from 'prosemirror-utils';
-import { defineMessages, IntlShape } from 'react-intl';
+import { defineMessages, WrappedComponentProps } from 'react-intl';
 import commonMessages from '../../messages';
 import { Command } from '../../types';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
@@ -55,7 +55,7 @@ const isLayoutSupported = (
 
 const breakoutOptions = (
   state: EditorState,
-  formatMessage: IntlShape['formatMessage'],
+  formatMessage: WrappedComponentProps['intl']['formatMessage'],
   extensionState: ExtensionState,
 ): Array<FloatingToolbarItem<Command>> => {
   const { layout, allowBreakout, node } = extensionState;

@@ -1,20 +1,21 @@
-import * as React from 'react';
 import { codeBlock } from '@atlaskit/adf-schema';
-import { createPlugin } from './pm-plugins/main';
-import { getToolbarConfig } from './toolbar';
-import keymap from './pm-plugins/keymaps';
-import ideUX from './pm-plugins/ide-ux';
-import { messages } from '../block-type/types';
+import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
+import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import {
-  addAnalytics,
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
-  INPUT_METHOD,
+  addAnalytics,
   EVENT_TYPE,
+  INPUT_METHOD,
 } from '../analytics';
+import { messages } from '../block-type/types';
 import { IconCode } from '../quick-insert/assets';
-import { PMPluginFactoryParams, EditorPlugin } from '../../types';
+import ideUX from './pm-plugins/ide-ux';
+import keymap from './pm-plugins/keymaps';
+import { createPlugin } from './pm-plugins/main';
+import { getToolbarConfig } from './toolbar';
 
 export interface CodeBlockOptions {
   enableKeybindingsForIDE?: boolean;
@@ -45,7 +46,11 @@ const codeBlockPlugin = (options: CodeBlockOptions = {}): EditorPlugin => ({
         description: formatMessage(messages.codeblockDescription),
         priority: 700,
         keyshortcut: '```',
-        icon: () => <IconCode label={formatMessage(messages.codeblock)} />,
+        icon: () => (
+          <FormattedMessage {...messages.codeblock}>
+            {(label: string) => <IconCode label={label} />}
+          </FormattedMessage>
+        ),
         action(insert, state) {
           const schema = state.schema;
           const tr = insert(schema.nodes.codeBlock.createChecked());

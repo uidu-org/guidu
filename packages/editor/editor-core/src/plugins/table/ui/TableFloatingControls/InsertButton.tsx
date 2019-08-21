@@ -2,7 +2,11 @@ import { akEditorTableNumberColumnWidth } from '@uidu/editor-common';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { SyntheticEvent } from 'react';
-import { injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import * as keymaps from '../../../../keymaps';
 import { closestElement } from '../../../../utils/';
 import { TableCssClassName as ClassName } from '../../types';
@@ -76,7 +80,7 @@ const InsertButton = ({
   tableRef,
   showInsertButton,
   type,
-  intl: { formatMessage },
+  intl,
 }: ButtonProps & WrappedComponentProps) => (
   <div
     data-index={index}
@@ -87,39 +91,40 @@ const InsertButton = ({
     }`}
   >
     {showInsertButton && (
-      <Tooltip
-        content={shortcutTooltip(
-          formatMessage(tooltipMessageByType(type)),
-          shortcutMessageByType(type),
+      <FormattedMessage {...tooltipMessageByType(type)}>
+        {(text: string) => (
+          <Tooltip
+            content={shortcutTooltip(text, shortcutMessageByType(type))}
+            position="top"
+          >
+            <>
+              <div className={ClassName.CONTROLS_INSERT_BUTTON_INNER}>
+                <button
+                  type="button"
+                  className={ClassName.CONTROLS_INSERT_BUTTON}
+                  onMouseDown={onMouseDown}
+                >
+                  <svg className={ClassName.CONTROLS_BUTTON_ICON}>
+                    <path
+                      d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"
+                      fill="currentColor"
+                      fillRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div
+                className={ClassName.CONTROLS_INSERT_LINE}
+                style={
+                  type === 'row'
+                    ? { width: getInsertLineWidth(tableRef) }
+                    : { height: getInsertLineHeight(tableRef) }
+                }
+              />
+            </>
+          </Tooltip>
         )}
-        position="top"
-      >
-        <>
-          <div className={ClassName.CONTROLS_INSERT_BUTTON_INNER}>
-            <button
-              type="button"
-              className={ClassName.CONTROLS_INSERT_BUTTON}
-              onMouseDown={onMouseDown}
-            >
-              <svg className={ClassName.CONTROLS_BUTTON_ICON}>
-                <path
-                  d="M10 4a1 1 0 0 1 1 1v4h4a1 1 0 0 1 0 2h-4v4a1 1 0 0 1-2 0v-4H5a1 1 0 1 1 0-2h4V5a1 1 0 0 1 1-1z"
-                  fill="currentColor"
-                  fillRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-          <div
-            className={ClassName.CONTROLS_INSERT_LINE}
-            style={
-              type === 'row'
-                ? { width: getInsertLineWidth(tableRef) }
-                : { height: getInsertLineHeight(tableRef) }
-            }
-          />
-        </>
-      </Tooltip>
+      </FormattedMessage>
     )}
     <div className={ClassName.CONTROLS_INSERT_MARKER} />
   </div>

@@ -4,7 +4,11 @@ import NumberListIcon from '@atlaskit/icon/glyph/editor/number-list';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
 import {
@@ -74,13 +78,13 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
       orderedListActive,
       intl: { formatMessage },
     } = this.props;
-    const labelUnorderedList = formatMessage(messages.unorderedList);
-    const labelOrderedList = formatMessage(messages.orderedList);
+
+    console.log(this.props);
 
     let items = [
       {
         key: 'unorderedList',
-        content: labelUnorderedList,
+        content: formatMessage(messages.unorderedList),
         value: { name: 'bullet_list' },
         isDisabled: bulletListDisabled,
         isActive: Boolean(bulletListActive),
@@ -88,7 +92,7 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
       },
       {
         key: 'orderedList',
-        content: labelOrderedList,
+        content: formatMessage(messages.orderedList),
         value: { name: 'ordered_list' },
         isDisabled: orderedListDisabled,
         isActive: Boolean(orderedListActive),
@@ -108,30 +112,35 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
       bulletListDisabled,
       orderedListActive,
       orderedListDisabled,
-      intl: { formatMessage },
     } = this.props;
     const { isDropdownOpen } = this.state;
     if (!isSmall) {
-      const labelUnorderedList = formatMessage(messages.unorderedList);
-      const labelOrderedList = formatMessage(messages.orderedList);
       return (
         <ButtonGroup width={isReducedSpacing ? 'small' : 'large'}>
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            onClick={this.handleBulletListClick}
-            selected={bulletListActive}
-            disabled={bulletListDisabled || disabled}
-            title={tooltip(toggleBulletListKeymap, labelUnorderedList)}
-            iconBefore={<BulletListIcon label={labelUnorderedList} />}
-          />
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            onClick={this.handleOrderedListClick}
-            selected={orderedListActive}
-            disabled={orderedListDisabled || disabled}
-            title={tooltip(toggleOrderedListKeymap, labelOrderedList)}
-            iconBefore={<NumberListIcon label={labelOrderedList} />}
-          />
+          <FormattedMessage {...messages.unorderedList}>
+            {(labelUnorderedList: string) => (
+              <ToolbarButton
+                spacing={isReducedSpacing ? 'none' : 'default'}
+                onClick={this.handleBulletListClick}
+                selected={bulletListActive}
+                disabled={bulletListDisabled || disabled}
+                title={tooltip(toggleBulletListKeymap, labelUnorderedList)}
+                iconBefore={<BulletListIcon label={labelUnorderedList} />}
+              />
+            )}
+          </FormattedMessage>
+          <FormattedMessage {...messages.orderedList}>
+            {(labelOrderedList: string) => (
+              <ToolbarButton
+                spacing={isReducedSpacing ? 'none' : 'default'}
+                onClick={this.handleOrderedListClick}
+                selected={orderedListActive}
+                disabled={orderedListDisabled || disabled}
+                title={tooltip(toggleOrderedListKeymap, labelOrderedList)}
+                iconBefore={<NumberListIcon label={labelOrderedList} />}
+              />
+            )}
+          </FormattedMessage>
           {isSeparator && <Separator />}
         </ButtonGroup>
       );
@@ -143,37 +152,42 @@ class ToolbarLists extends PureComponent<Props & WrappedComponentProps, State> {
         popupsScrollableElement,
       } = this.props;
 
-      const labelLists = formatMessage(messages.lists);
       return (
         <Wrapper>
-          <DropdownMenu
-            items={items}
-            onItemActivated={this.onItemActivated}
-            mountTo={popupsMountPoint}
-            boundariesElement={popupsBoundariesElement}
-            scrollableElement={popupsScrollableElement}
-            isOpen={isDropdownOpen}
-            onOpenChange={this.onOpenChange}
-            fitHeight={188}
-            fitWidth={175}
-          >
-            <ToolbarButton
-              spacing={isReducedSpacing ? 'none' : 'default'}
-              selected={bulletListActive || orderedListActive}
-              disabled={disabled}
-              onClick={this.handleTriggerClick}
-              title={labelLists}
-              iconBefore={
-                <Wrapper>
-                  <BulletListIcon label={labelLists} />
-                  <ExpandIconWrapper>
-                    <ExpandIcon label={labelLists} />
-                  </ExpandIconWrapper>
-                </Wrapper>
-              }
-            />
-          </DropdownMenu>
-          {isSeparator && <Separator />}
+          <FormattedMessage {...messages.lists}>
+            {(labelLists: string) => (
+              <>
+                <DropdownMenu
+                  items={items}
+                  onItemActivated={this.onItemActivated}
+                  mountTo={popupsMountPoint}
+                  boundariesElement={popupsBoundariesElement}
+                  scrollableElement={popupsScrollableElement}
+                  isOpen={isDropdownOpen}
+                  onOpenChange={this.onOpenChange}
+                  fitHeight={188}
+                  fitWidth={175}
+                >
+                  <ToolbarButton
+                    spacing={isReducedSpacing ? 'none' : 'default'}
+                    selected={bulletListActive || orderedListActive}
+                    disabled={disabled}
+                    onClick={this.handleTriggerClick}
+                    title={labelLists}
+                    iconBefore={
+                      <Wrapper>
+                        <BulletListIcon label={labelLists} />
+                        <ExpandIconWrapper>
+                          <ExpandIcon label={labelLists} />
+                        </ExpandIconWrapper>
+                      </Wrapper>
+                    }
+                  />
+                </DropdownMenu>
+                {isSeparator && <Separator />}
+              </>
+            )}
+          </FormattedMessage>
         </Wrapper>
       );
     }

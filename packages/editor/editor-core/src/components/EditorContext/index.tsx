@@ -1,5 +1,5 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
 import EditorActions from '../../actions';
 
 export type EditorContextProps = { editorActions?: EditorActions };

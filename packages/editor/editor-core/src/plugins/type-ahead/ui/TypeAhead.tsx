@@ -46,6 +46,9 @@ export function TypeAhead({
   if (!active || !anchorElement || !items || !items.length) {
     return null;
   }
+  console.log(active);
+  console.log(items);
+  console.log(anchorElement);
   return (
     <Popup
       zIndex={akEditorFloatingDialogZIndex}

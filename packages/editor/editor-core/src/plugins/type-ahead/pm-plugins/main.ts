@@ -1,11 +1,22 @@
-import { EditorState, Plugin, PluginKey, TextSelection, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  Plugin,
+  PluginKey,
+  TextSelection,
+  Transaction,
+} from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
+import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../../event-dispatcher';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import { dismissCommand } from '../commands/dismiss';
 import { itemsListUpdated } from '../commands/items-list-updated';
 import { updateQueryCommand } from '../commands/update-query';
-import { TypeAheadHandler, TypeAheadItem, TypeAheadItemsLoader } from '../types';
+import {
+  TypeAheadHandler,
+  TypeAheadItem,
+  TypeAheadItemsLoader,
+} from '../types';
 import { findTypeAheadQuery } from '../utils/find-query-mark';
 import { isQueryActive } from '../utils/is-query-active';
 
@@ -67,6 +78,7 @@ export function createInitialPluginState(
 export function createPlugin(
   dispatch: Dispatch,
   reactContext: () => { [key: string]: any },
+  intl: IntlShape,
   typeAhead: Array<TypeAheadHandler>,
 ): Plugin {
   return new Plugin({
@@ -107,6 +119,7 @@ export function createPlugin(
               ? defaultActionHandler({
                   dispatch,
                   reactContext,
+                  intl,
                   typeAhead,
                   state,
                   pluginState,
@@ -122,6 +135,7 @@ export function createPlugin(
               dispatch,
               reactContext,
               typeAhead,
+              intl,
               state,
               pluginState,
               tr,
@@ -259,6 +273,7 @@ export function createItemsLoader(
 export function defaultActionHandler({
   dispatch,
   reactContext,
+  intl,
   typeAhead,
   pluginState,
   state,
@@ -266,6 +281,7 @@ export function defaultActionHandler({
 }: {
   dispatch: Dispatch;
   reactContext: () => { [key: string]: any };
+  intl: IntlShape;
   typeAhead: Array<TypeAheadHandler>;
   pluginState: PluginState;
   state: EditorState;
@@ -325,7 +341,6 @@ export function defaultActionHandler({
   let itemsLoader: TypeAheadItemsLoader = null;
 
   try {
-    const { intl } = reactContext();
     typeAheadItems = typeAheadHandler.getItems(
       query,
       state,
@@ -346,9 +361,12 @@ export function defaultActionHandler({
       itemsLoader = createItemsLoader(typeAheadItems as Promise<
         Array<TypeAheadItem>
       >);
+      console.log(pluginState);
       typeAheadItems = pluginState.items;
     }
-  } catch (e) {}
+  } catch (e) {
+    throw e;
+  }
 
   const queryMark = findTypeAheadQuery(state);
 

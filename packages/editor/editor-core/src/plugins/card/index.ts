@@ -1,10 +1,10 @@
+import { blockCard, inlineCard } from '@atlaskit/adf-schema';
 import { PluginKey } from 'prosemirror-state';
-import { inlineCard, blockCard } from '@atlaskit/adf-schema';
 import { EditorPlugin } from '../../types';
 import { createPlugin } from './pm-plugins/main';
 import { floatingToolbar } from './toolbar';
 
-export { CardProvider, CardOptions } from './types';
+export { CardOptions, CardProvider } from './types';
 
 export const stateKey = new PluginKey('cardPlugin');
 

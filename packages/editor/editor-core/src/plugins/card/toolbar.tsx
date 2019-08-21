@@ -165,9 +165,8 @@ const buildDropdown = (
 
 export const floatingToolbar = (
   state: EditorState,
-  intl: IntlShape,
+  { formatMessage }: IntlShape,
 ): FloatingToolbarConfig | undefined => {
-  console.log(intl);
   const { inlineCard, blockCard } = state.schema.nodes;
   const nodeType = [inlineCard, blockCard];
 
@@ -181,7 +180,7 @@ export const floatingToolbar = (
       {
         type: 'button',
         icon: OpenIcon,
-        title: intl.formatMessage(commonMessages.visit),
+        title: formatMessage(commonMessages.visit),
         onClick: visitCardLink,
       },
       { type: 'separator' },
@@ -191,7 +190,7 @@ export const floatingToolbar = (
         icon: RemoveIcon,
         onMouseEnter: hoverDecoration(nodeType, true),
         onMouseLeave: hoverDecoration(nodeType, false),
-        title: intl.formatMessage(commonMessages.remove),
+        title: formatMessage(commonMessages.remove),
         onClick: removeCard,
       },
     ],

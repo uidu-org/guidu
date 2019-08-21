@@ -3,7 +3,12 @@ import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import styled from 'styled-components';
 import { withAnalytics } from '../../../../analytics';
 import ColorPalette from '../../../../components/ColorPalette';
@@ -130,10 +135,8 @@ class ToolbarTextColor extends React.Component<
       popupsScrollableElement,
       isReducedSpacing,
       pluginState,
-      intl: { formatMessage },
     } = this.props;
 
-    const labelTextColor = formatMessage(messages.textColor);
     return (
       <Wrapper>
         <Dropdown
@@ -146,32 +149,36 @@ class ToolbarTextColor extends React.Component<
           fitHeight={80}
           zIndex={akEditorMenuZIndex}
           trigger={
-            <ToolbarButton
-              spacing={isReducedSpacing ? 'none' : 'default'}
-              disabled={pluginState.disabled}
-              selected={isOpen}
-              title={labelTextColor}
-              onClick={this.toggleOpen}
-              iconBefore={
-                <TriggerWrapper>
-                  <TextColorIconWrapper>
-                    <EditorTextColorIcon />
-                    <TextColorIconBar
-                      selectedColor={
-                        pluginState.color !== pluginState.defaultColor &&
-                        pluginState.color
-                      }
-                      gradientColors={
-                        pluginState.disabled ? disabledRainbow : rainbow
-                      }
-                    />
-                  </TextColorIconWrapper>
-                  <ExpandIconWrapper>
-                    <ExpandIcon label={labelTextColor} />
-                  </ExpandIconWrapper>
-                </TriggerWrapper>
-              }
-            />
+            <FormattedMessage {...messages.textColor}>
+              {(labelTextColor: string) => (
+                <ToolbarButton
+                  spacing={isReducedSpacing ? 'none' : 'default'}
+                  disabled={pluginState.disabled}
+                  selected={isOpen}
+                  title={labelTextColor}
+                  onClick={this.toggleOpen}
+                  iconBefore={
+                    <TriggerWrapper>
+                      <TextColorIconWrapper>
+                        <EditorTextColorIcon />
+                        <TextColorIconBar
+                          selectedColor={
+                            pluginState.color !== pluginState.defaultColor &&
+                            pluginState.color
+                          }
+                          gradientColors={
+                            pluginState.disabled ? disabledRainbow : rainbow
+                          }
+                        />
+                      </TextColorIconWrapper>
+                      <ExpandIconWrapper>
+                        <ExpandIcon label={labelTextColor} />
+                      </ExpandIconWrapper>
+                    </TriggerWrapper>
+                  }
+                />
+              )}
+            </FormattedMessage>
           }
         >
           <ColorPalette

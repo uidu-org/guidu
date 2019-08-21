@@ -6,7 +6,12 @@ import { colors } from '@uidu/theme';
 import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { KeyboardEvent, PureComponent } from 'react';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
+import {
+  defineMessages,
+  FormattedMessage,
+  injectIntl,
+  WrappedComponentProps,
+} from 'react-intl';
 import styled, { css } from 'styled-components';
 import { analyticsService } from '../../../../analytics';
 import PanelTextInput from '../../../../components/PanelTextInput';
@@ -211,50 +216,54 @@ class RecentSearch extends PureComponent<Props & WrappedComponentProps, State> {
 
   render() {
     const { items, isLoading, selectedIndex, text, displayText } = this.state;
-    const {
-      intl: { formatMessage },
-      provider,
-    } = this.props;
-    const placeholder = formatMessage(
-      provider ? messages.placeholder : messages.linkPlaceholder,
-    );
-
-    const formatLinkAddressText = formatMessage(messages.linkAddress);
-    const formatClearLinkText = formatMessage(messages.clearLink);
-    const formatDisplayText = formatMessage(messages.displayText);
+    const { provider } = this.props;
 
     return (
       <div className="recent-list">
         <Container provider={!!provider}>
           <UrlInputWrapper>
             <IconWrapper>
-              <Tooltip content={formatLinkAddressText}>
-                <LinkIcon label={formatLinkAddressText} />
-              </Tooltip>
+              <FormattedMessage {...messages.linkAddress}>
+                {(formatLinkAddressText: string) => (
+                  <Tooltip content={formatLinkAddressText}>
+                    <LinkIcon label={formatLinkAddressText} />
+                  </Tooltip>
+                )}
+              </FormattedMessage>
             </IconWrapper>
-            <PanelTextInput
-              ref={ele => (this.urlInputContainer = ele)}
-              placeholder={placeholder}
-              onSubmit={this.handleSubmit}
-              onChange={this.updateInput}
-              autoFocus={true}
-              onCancel={this.urlBlur}
-              onBlur={this.urlBlur}
-              defaultValue={text}
-              onKeyDown={this.handleKeyDown}
-            />
+            <FormattedMessage
+              {...(provider ? messages.placeholder : messages.linkPlaceholder)}
+            >
+              {(placeholder: string) => (
+                <PanelTextInput
+                  ref={ele => (this.urlInputContainer = ele)}
+                  placeholder={placeholder}
+                  onSubmit={this.handleSubmit}
+                  onChange={this.updateInput}
+                  autoFocus={true}
+                  onCancel={this.urlBlur}
+                  onBlur={this.urlBlur}
+                  defaultValue={text}
+                  onKeyDown={this.handleKeyDown}
+                />
+              )}
+            </FormattedMessage>
             {text && (
-              <Tooltip content={formatClearLinkText}>
-                <ClearText
-                  onClick={this.clearUrl.bind(
-                    null,
-                    'text',
-                    this.urlInputContainer,
-                  )}
-                >
-                  <CrossCircleIcon label={formatClearLinkText} />
-                </ClearText>
-              </Tooltip>
+              <FormattedMessage {...messages.clearLink}>
+                {(formatClearLinkText: string) => (
+                  <Tooltip content={formatClearLinkText}>
+                    <ClearText
+                      onClick={this.clearUrl.bind(
+                        null,
+                        'text',
+                        this.urlInputContainer,
+                      )}
+                    >
+                      <CrossCircleIcon label={formatClearLinkText} />
+                    </ClearText>
+                  </Tooltip>
+                )}
+              </FormattedMessage>
             )}
           </UrlInputWrapper>
           <RecentList
@@ -264,35 +273,43 @@ class RecentSearch extends PureComponent<Props & WrappedComponentProps, State> {
             onSelect={this.handleSelected}
             onMouseMove={this.handleMouseMove}
           />
-          <TextInputWrapper>
-            <IconWrapper>
-              <Tooltip content={formatDisplayText}>
-                <EditorAlignLeftIcon label={formatDisplayText} />
-              </Tooltip>
-            </IconWrapper>
-            <PanelTextInput
-              ref={ele => (this.displayTextInputContainer = ele)}
-              placeholder={formatDisplayText}
-              onChange={this.handleTextKeyDown}
-              onCancel={this.textBlur}
-              onBlur={this.textBlur}
-              defaultValue={displayText}
-              onSubmit={this.handleSubmit}
-            />
-            {displayText && (
-              <Tooltip content={formatMessage(messages.clearText)}>
-                <ClearText
-                  onClick={this.clearUrl.bind(
-                    null,
-                    'displayText',
-                    this.displayTextInputContainer,
-                  )}
-                >
-                  <CrossCircleIcon label={formatMessage(messages.clearText)} />
-                </ClearText>
-              </Tooltip>
+          <FormattedMessage {...messages.displayText}>
+            {(formatDisplayText: string) => (
+              <TextInputWrapper>
+                <IconWrapper>
+                  <Tooltip content={formatDisplayText}>
+                    <EditorAlignLeftIcon label={formatDisplayText} />
+                  </Tooltip>
+                </IconWrapper>
+                <PanelTextInput
+                  ref={ele => (this.displayTextInputContainer = ele)}
+                  placeholder={formatDisplayText}
+                  onChange={this.handleTextKeyDown}
+                  onCancel={this.textBlur}
+                  onBlur={this.textBlur}
+                  defaultValue={displayText}
+                  onSubmit={this.handleSubmit}
+                />
+                {displayText && (
+                  <Tooltip
+                    content={<FormattedMessage {...messages.clearText} />}
+                  >
+                    <ClearText
+                      onClick={this.clearUrl.bind(
+                        null,
+                        'displayText',
+                        this.displayTextInputContainer,
+                      )}
+                    >
+                      <FormattedMessage {...messages.clearText}>
+                        {(label: string) => <CrossCircleIcon label={label} />}
+                      </FormattedMessage>
+                    </ClearText>
+                  </Tooltip>
+                )}
+              </TextInputWrapper>
             )}
-          </TextInputWrapper>
+          </FormattedMessage>
         </Container>
       </div>
     );

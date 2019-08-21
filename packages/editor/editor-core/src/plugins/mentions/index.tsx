@@ -15,6 +15,7 @@ import {
 import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';
+import { FormattedMessage } from 'react-intl';
 import uuid from 'uuid';
 import { analyticsService } from '../../analytics';
 import { PortalProviderAPI } from '../../components/PortalProvider';
@@ -123,7 +124,11 @@ const mentionsPlugin = (
           description: formatMessage(messages.mentionDescription),
           priority: 400,
           keyshortcut: '@',
-          icon: () => <IconMention label={formatMessage(messages.mention)} />,
+          icon: () => (
+            <FormattedMessage {...messages.mention}>
+              {(label: string) => <IconMention label={label} />}
+            </FormattedMessage>
+          ),
           action(insert, state) {
             const mark = state.schema.mark('typeAheadQuery', {
               trigger: '@',
@@ -148,7 +153,7 @@ const mentionsPlugin = (
         getItems(
           query,
           state,
-          _intl,
+          intl,
           { prevActive, queryChanged },
           tr,
           dispatch,
