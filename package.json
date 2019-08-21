@@ -74,6 +74,7 @@
     "@atlaskit/profilecard": "^12.0.0",
     "@atlaskit/status": "^0.9.2",
     "@atlaskit/task-decision": "^15.0.4",
+    "@atlaskit/type-helpers": "^4.1.6",
     "@atlaskit/util-service-support": "^4.0.3",
     "@atlaskit/util-shared-styles": "^3.1.2",
     "@atlaskit/width-detector": "^2.0.0",

@@ -185,6 +185,7 @@ export default class MobileViewMessage extends Component<
           isOpen={viewActions}
           onClose={this.toggleActions}
           origin="bottom"
+          size="medium"
         >
           {children &&
             children({

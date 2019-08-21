@@ -1,20 +1,18 @@
 import React from 'react';
-
 import AnalyticsContext from './AnalyticsContext';
 
 export interface WithContextProps {
   analyticsContext?: Record<string, any>;
 }
 
-const withAnalyticsContext = (defaultData?: any) => <Props, Component>(
-  WrappedComponent: React.JSXElementConstructor<Props> & Component,
+const withAnalyticsContext = (defaultData?: any) => <TOriginalProps extends {}>(
+  Component:
+    | React.ComponentClass<TOriginalProps>
+    | React.FunctionComponent<TOriginalProps>,
 ) => {
-  type WrappedProps = JSX.LibraryManagedAttributes<
-    Component,
-    Props & WithContextProps
-  >;
+  type ResultProps = TOriginalProps & WithContextProps;
 
-  const WithAnalyticsContext = React.forwardRef<any, WrappedProps>(
+  const WithAnalyticsContext = React.forwardRef<any, ResultProps>(
     (props, ref) => {
       // @ts-ignore
       const { analyticsContext = {}, ...rest } = props;
@@ -25,15 +23,15 @@ const withAnalyticsContext = (defaultData?: any) => <Props, Component>(
 
       return (
         <AnalyticsContext data={analyticsData}>
-          <WrappedComponent {...rest} ref={ref} />
+          <Component {...(rest as ResultProps)} ref={ref} />
         </AnalyticsContext>
       );
     },
   );
 
   // @ts-ignore
-  WithAnalyticsContext.displayName = `WithAnalyticsContext(${WrappedComponent.displayName ||
-    WrappedComponent.name})`;
+  WithAnalyticsContext.displayName = `WithAnalyticsContext(${Component.displayName ||
+    Component.name})`;
 
   return WithAnalyticsContext;
 };

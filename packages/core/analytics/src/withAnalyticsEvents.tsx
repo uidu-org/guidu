@@ -1,8 +1,6 @@
 import React from 'react';
-
-import { Omit } from '@atlaskit/type-helpers';
-import { CreateUIAnalyticsEvent, CreateEventMap } from './types';
 import AnalyticsContextConsumer from './AnalyticsContextConsumer';
+import { CreateEventMap, CreateUIAnalyticsEvent } from './types';
 
 export interface WithAnalyticsEventsProps {
   /**
@@ -13,15 +11,12 @@ export interface WithAnalyticsEventsProps {
 }
 
 const withAnalyticsEvents = (createEventMap?: CreateEventMap) => <
-  Props extends WithAnalyticsEventsProps,
+  TOriginalProps extends {},
   Component
 >(
-  WrappedComponent: React.JSXElementConstructor<Props> & Component,
+  WrappedComponent: React.JSXElementConstructor<TOriginalProps> & Component,
 ) => {
-  type WrappedProps = JSX.LibraryManagedAttributes<
-    Component,
-    Omit<Props, keyof WithAnalyticsEventsProps>
-  >;
+  type WrappedProps = TOriginalProps & WithAnalyticsEventsProps;
 
   const WithAnalyticsEvents = React.forwardRef<any, WrappedProps>(
     (props, ref) => (
@@ -30,11 +25,11 @@ const withAnalyticsEvents = (createEventMap?: CreateEventMap) => <
         wrappedComponentProps={props}
       >
         {({ createAnalyticsEvent, patchedEventProps }) => (
+          // @ts-ignore
           <WrappedComponent
-            {...props}
+            {...(props as WrappedProps)}
             {...patchedEventProps}
             createAnalyticsEvent={createAnalyticsEvent}
-            // @ts-ignore
             ref={ref}
           />
         )}

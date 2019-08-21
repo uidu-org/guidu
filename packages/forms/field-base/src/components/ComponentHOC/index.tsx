@@ -1,6 +1,6 @@
 import { FormContext } from '@uidu/form';
 import { withFormsy } from 'formsy-react';
-import React, { Component, ComponentClass } from 'react';
+import React from 'react';
 import shortid from 'shortid';
 import { ComponentHOCProps } from './types';
 
@@ -15,11 +15,15 @@ import { ComponentHOCProps } from './types';
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const FormsyReactComponent = <P extends unknown>(
-  ComposedComponent: ComponentClass<P>,
+const FormsyReactComponent = <TOriginalProps extends {}>(
+  Component:
+    | React.ComponentClass<TOriginalProps>
+    | React.FunctionComponent<TOriginalProps>,
 ) => {
-  class ComponentHOC extends Component<ComponentHOCProps> {
-    private id: string = null;
+  type ResultProps = TOriginalProps & ComponentHOCProps;
+
+  const result = class FrcWrapper extends React.Component<ResultProps, {}> {
+    id: string = null;
 
     static defaultProps = {
       onChange: () => {},
@@ -28,7 +32,7 @@ const FormsyReactComponent = <P extends unknown>(
 
     static contextType = FormContext;
 
-    constructor(props) {
+    constructor(props: ResultProps) {
       super(props);
       const { id } = props;
       this.id = id || shortid.generate();
@@ -106,7 +110,10 @@ const FormsyReactComponent = <P extends unknown>(
         value,
         setValue,
         ref,
+        ...otherProps
       } = this.props;
+
+      console.log(this.props);
 
       const cssProps = {
         elementWrapperClassName: this.combineContextWithProp(
@@ -116,8 +123,7 @@ const FormsyReactComponent = <P extends unknown>(
         rowClassName: this.combineContextWithProp('rowClassName'),
       };
 
-      const props = {
-        ...this.props,
+      const newProps = {
         ...cssProps,
         disabled: isFormDisabled || disabled,
         errorMessages,
@@ -129,18 +135,26 @@ const FormsyReactComponent = <P extends unknown>(
         onSetValue: setValue,
       };
 
-      return <ComposedComponent ref={ref} {...(props as P)} />;
+      return (
+        <Component
+          ref={ref}
+          {...(otherProps as TOriginalProps)}
+          {...newProps}
+        />
+      );
     }
-  }
+  };
 
-  const WithFormsy = withFormsy(ComponentHOC as any);
-  return React.forwardRef<any, P>(({ children, ...props }, ref) => {
-    return (
-      <WithFormsy {...props} ref={ref}>
-        {children}
-      </WithFormsy>
-    );
-  });
+  return result;
+
+  //  const WithFormsy = withFormsy(ComponentHOC as any);
+  //  return React.forwardRef<any, P>(({ children, ...props }, ref) => {
+  //    return (
+  //      <WithFormsy {...props} ref={ref}>
+  //        {children}
+  //      </WithFormsy>
+  //    );
+  //  });
 };
 
-export default FormsyReactComponent;
+export default Component => withFormsy(FormsyReactComponent(Component));

@@ -8,6 +8,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@atlaskit/type-helpers": "^4.1.6",
     "prop-types": "^15.6.0"
   },
   "devDependencies": {

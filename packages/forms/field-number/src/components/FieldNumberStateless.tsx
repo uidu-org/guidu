@@ -3,7 +3,7 @@ import {
   withAnalyticsContext,
   withAnalyticsEvents,
 } from '@uidu/analytics';
-import { FieldTextStateless } from '@uidu/field-text';
+import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
 import React, { Component } from 'react';
 import StyledInput from '../styled/Input';
 import { FieldNumberProps } from '../types';
@@ -12,7 +12,7 @@ import {
   version as packageVersion,
 } from '../version.json';
 
-class FieldNumberStateless extends Component<FieldNumberProps, void> {
+class FieldNumberStateless extends Component<FieldNumberProps> {
   static defaultProps = {
     type: 'tel',
   };
@@ -21,7 +21,7 @@ class FieldNumberStateless extends Component<FieldNumberProps, void> {
     const { options, onValueChange } = this.props;
 
     return (
-      <FieldTextStateless
+      <FieldTextStatelessWithoutAnalytics
         {...this.props}
         inputMode="numeric"
         component={StyledInput}

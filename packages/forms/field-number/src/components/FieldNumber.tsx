@@ -1,8 +1,9 @@
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
+import { FieldNumberProps } from '../types';
 import InputControl from './FieldNumberStateless';
 
-class FieldNumber extends PureComponent<any> {
+class FieldNumber extends PureComponent<FieldNumberProps> {
   private element;
 
   static defaultProps = {

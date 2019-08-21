@@ -194,6 +194,7 @@ export default class ToolbarEmojiPicker extends PureComponent<Props, State> {
           emojiProvider={emojiProvider}
           onSelection={this.handleSelectedEmoji}
           onPickerRef={this.onPickerRef}
+          hideToneSelector
         />
       </Popup>
     );

@@ -1,9 +1,10 @@
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
-import InputControl from './FieldTimeStateless';
+import { FieldTimeProps } from '../types';
+import FieldTimeStateless from './FieldTimeStateless';
 
-class FieldTime extends PureComponent<any> {
-  private element;
+class FieldTime extends PureComponent<FieldTimeProps> {
+  element;
 
   static defaultProps = {
     value: undefined,
@@ -22,7 +23,7 @@ class FieldTime extends PureComponent<any> {
   render() {
     return (
       <Wrapper {...this.props}>
-        <InputControl
+        <FieldTimeStateless
           {...this.props}
           onChange={this.handleChange}
           ref={this.initElementRef}

@@ -24,9 +24,9 @@ export type LinkEventClickHandler = (
 export type SmartCardEventClickHandler = (url?: string) => void;
 
 export interface MentionEventHandlers {
-  onClick?: MentionEventHandler;
-  onMouseEnter?: MentionEventHandler;
-  onMouseLeave?: MentionEventHandler;
+  onClick: MentionEventHandler;
+  onMouseEnter: MentionEventHandler;
+  onMouseLeave: MentionEventHandler;
 }
 
 export interface EventHandlers {

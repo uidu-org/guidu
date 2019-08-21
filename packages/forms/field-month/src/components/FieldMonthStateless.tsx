@@ -11,7 +11,7 @@ import {
   version as packageVersion,
 } from '../version.json';
 
-class FieldMonthStateless extends Component<any, void> {
+class FieldMonthStateless extends Component<any> {
   static defaultProps = {
     disabled: false,
     isReadOnly: false,

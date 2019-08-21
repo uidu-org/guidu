@@ -3,7 +3,7 @@ import {
   withAnalyticsContext,
   withAnalyticsEvents,
 } from '@uidu/analytics';
-import { FieldDateStateless } from '@uidu/field-date';
+import { FieldDateStatelessWithoutAnalytics } from '@uidu/field-date';
 import moment from 'moment';
 import React, { Component } from 'react';
 // @ts-ignore
@@ -93,7 +93,7 @@ class FieldDateRangeStateless extends Component<any, any> {
 
     return (
       <div className={className}>
-        <FieldDateStateless
+        <FieldDateStatelessWithoutAnalytics
           innerRef={this.fromElement}
           value={from}
           placeholder={placeholder.from}
@@ -114,7 +114,7 @@ class FieldDateRangeStateless extends Component<any, any> {
         />
         <ArrowRight size={16} className="flex-shrink-0" />
         <span className="InputFromTo-to">
-          <FieldDateStateless
+          <FieldDateStatelessWithoutAnalytics
             innerRef={this.toElement}
             value={to}
             placeholder={placeholder.to}

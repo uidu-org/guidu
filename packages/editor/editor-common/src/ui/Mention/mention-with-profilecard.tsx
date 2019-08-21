@@ -1,6 +1,6 @@
 import { MentionUserType as UserType } from '@atlaskit/adf-schema';
 import ProfileCard, { ProfileCardAction } from '@atlaskit/profilecard';
-import { ResourcedMention } from '@uidu/mentions';
+import { MentionProvider, ResourcedMention } from '@uidu/mentions';
 import * as React from 'react';
 import { PureComponent, ReactInstance } from 'react';
 import { findDOMNode } from 'react-dom';

@@ -3,7 +3,7 @@ import {
   withAnalyticsContext,
   withAnalyticsEvents,
 } from '@uidu/analytics';
-import { FieldTextStateless } from '@uidu/field-text';
+import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
 import React, { Component } from 'react';
 import TimeField from 'react-simple-timefield';
 import { FieldTimeProps } from '../types';
@@ -22,7 +22,7 @@ class FieldTimeStateless extends Component<FieldTimeProps> {
     return (
       <TimeField
         {...this.props}
-        input={<FieldTextStateless />} // {Element}  default: <input type="text" />
+        input={<FieldTextStatelessWithoutAnalytics {...this.props} />} // {Element}  default: <input type="text" />
         colon=":" // {String}   default: ":"
         // showSeconds // {Boolean}  default: false
       />
