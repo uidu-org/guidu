@@ -25,10 +25,12 @@ export interface Props {
   offset?: number[];
   onPositionCalculated?: (position: Position) => Position;
   onPlacementChanged?: (placement: [string, string]) => void;
+  shouldRenderPopup?: (position: Position) => boolean;
   scrollableElement?: HTMLElement;
   stick?: boolean;
   ariaLabel?: string;
   forcePlacement?: boolean;
+  allowOutOfBounds?: boolean; // Allow to correct position elements inside table: https://product-fabric.atlassian.net/browse/ED-7191
 }
 
 export interface State {
@@ -45,6 +47,7 @@ export default class Popup extends React.Component<Props, State> {
   scrollElement: undefined | false | HTMLElement;
   static defaultProps = {
     offset: [0, 0],
+    allowOutOfBound: false,
   };
 
   state: State = {
@@ -70,6 +73,7 @@ export default class Popup extends React.Component<Props, State> {
       alignY,
       stick,
       forcePlacement,
+      allowOutOfBounds,
     } = props;
     const { popup } = state;
 
@@ -97,6 +101,7 @@ export default class Popup extends React.Component<Props, State> {
       target,
       stick,
       offset: offset!,
+      allowOutOfBounds,
     });
     position = onPositionCalculated ? onPositionCalculated(position) : position;
 
@@ -160,7 +165,7 @@ export default class Popup extends React.Component<Props, State> {
 
   onResize = () => this.scheduledUpdatePosition();
 
-  UNSAFE_componentWillReceiveProps(newProps: Props) {
+  componentWillReceiveProps(newProps: Props) {
     // We are delaying `updatePosition` otherwise it happens before the children
     // get rendered and we end up with a wrong position
     this.scheduledUpdatePosition(newProps);
@@ -191,6 +196,11 @@ export default class Popup extends React.Component<Props, State> {
 
   private renderPopup() {
     const { position } = this.state;
+    const { shouldRenderPopup } = this.props;
+
+    if (shouldRenderPopup && !shouldRenderPopup(position || {})) {
+      return null;
+    }
 
     return (
       <div

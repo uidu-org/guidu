@@ -1,46 +1,43 @@
 // @ts-ignore: unused variable
 // prettier-ignore
+import { typography } from '@uidu/theme';
 import { css } from 'styled-components';
 
 // @see typography spreadsheet: https://docs.google.com/spreadsheets/d/1iYusRGCT4PoPfvxbJ8NrgjtfFgXLm5lpDWXzjua1W2E/edit#gid=93913128
 // text sizing prototype: http://proto/fabricrender/
 export const headingsSharedStyles = css`
   & h1 {
-    line-height: 1.167;
-    font-size: 1.714em;
-    margin-top: 1.667em;
+    ${typography.h700};
     margin-bottom: 0;
+    margin-top: 1.667em;
   }
 
   & h2 {
-    line-height: 1.2;
-    font-size: 1.429em;
+    ${typography.h600};
     margin-top: 1.8em;
     margin-bottom: 0;
   }
 
   & h3 {
-    line-height: 1.25;
-    font-size: 1.143em;
+    ${typography.h500};
     margin-top: 2em;
     margin-bottom: 0;
   }
 
   & h4 {
-    line-height: 1.429;
-    font-size: 1em;
+    ${typography.h400};
     margin-top: 1.357em;
   }
 
   & h5 {
-    line-height: 1.333;
-    font-size: 0.857em;
+    ${typography.h300};
     margin-top: 1.667em;
+    text-transform: none;
   }
 
   & h6 {
-    line-height: 1.455;
-    font-size: 0.786em;
+    ${typography.h100};
     margin-top: 1.455em;
+    text-transform: none;
   }
 `;

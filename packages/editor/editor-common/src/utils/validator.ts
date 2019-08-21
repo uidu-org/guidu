@@ -421,7 +421,11 @@ export const getValidNode = (
       }
       case 'inlineCard':
       case 'blockCard': {
-        if (attrs && (attrs.url || attrs.data)) {
+        if (
+          attrs &&
+          ((attrs.url && isSafeUrl(attrs.url)) ||
+            (attrs.data && attrs.data.url && isSafeUrl(attrs.data.url)))
+        ) {
           return {
             type,
             attrs,

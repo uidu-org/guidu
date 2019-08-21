@@ -1,7 +1,10 @@
 // @ts-ignore: unused variable
 import { gridSize } from '@uidu/theme';
 import { css } from 'styled-components';
-import { akEditorBlockquoteBorderColor, blockNodesVerticalMargin } from '../consts';
+import {
+  akEditorBlockquoteBorderColor,
+  blockNodesVerticalMargin,
+} from '../consts';
 
 export const blockquoteSharedStyles = css`
   & blockquote {

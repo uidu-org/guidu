@@ -11,6 +11,7 @@ export interface CalculatePositionParams {
   popup?: HTMLElement;
   offset: number[];
   stick?: boolean;
+  allowOutOfBounds?: boolean;
 }
 
 export function isBody(elem: HTMLElement | Element): boolean {
@@ -145,6 +146,8 @@ const calculateHorizontalPlacement = ({
 
   popupClientWidth,
   offset,
+
+  allowOutOfBounds = false,
 }: {
   placement: string;
   targetLeft: number;
@@ -159,6 +162,8 @@ const calculateHorizontalPlacement = ({
 
   popupClientWidth: number;
   offset: Array<number>;
+
+  allowOutOfBounds: boolean;
 }): Position => {
   const position = {} as Position;
 
@@ -194,21 +199,23 @@ const calculateHorizontalPlacement = ({
         offset[0],
     );
   }
+  if (!allowOutOfBounds) {
+    if (position.left !== undefined) {
+      position.left = getPopupXInsideParent(
+        position.left,
+        popupClientWidth,
+        popupOffsetParentClientWidth,
+      );
+    }
+    if (position.right !== undefined) {
+      position.right = getPopupXInsideParent(
+        position.right,
+        popupClientWidth,
+        popupOffsetParentClientWidth,
+      );
+    }
+  }
 
-  if (position.left !== undefined) {
-    position.left = getPopupXInsideParent(
-      position.left,
-      popupClientWidth,
-      popupOffsetParentClientWidth,
-    );
-  }
-  if (position.right !== undefined) {
-    position.right = getPopupXInsideParent(
-      position.right,
-      popupClientWidth,
-      popupOffsetParentClientWidth,
-    );
-  }
   return position;
 };
 
@@ -395,6 +402,7 @@ export function calculatePosition({
   popup,
   offset,
   stick,
+  allowOutOfBounds = false,
 }: CalculatePositionParams): Position {
   let position: Position = {};
 
@@ -481,6 +489,7 @@ export function calculatePosition({
     popupOffsetParentClientWidth: popup.offsetParent.clientWidth,
     popupClientWidth: popup.clientWidth || 0,
     offset,
+    allowOutOfBounds,
   });
 
   position = { ...position, ...horizontalPosition };

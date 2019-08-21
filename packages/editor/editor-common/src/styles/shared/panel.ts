@@ -5,8 +5,8 @@ import { hexToRgba } from '../../utils';
 import {
   akEditorDeleteBackground,
   akEditorDeleteBorder,
-  akEditorDeleteBorderSize,
   akEditorDeleteIconColor,
+  akEditorSelectedBorderSize,
   akEditorTableCellMinWidth,
   relativeSize,
 } from '../consts';
@@ -166,7 +166,7 @@ export const panelSharedStyles = css`
 
     /* Danger when top level node */
     &.danger {
-      box-shadow: inset 0px 0px 0px ${akEditorDeleteBorderSize}px
+      box-shadow: inset 0px 0px 0px ${akEditorSelectedBorderSize}px
         ${akEditorDeleteBorder};
       background: ${akEditorDeleteBackground} !important;
 

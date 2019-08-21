@@ -1,4 +1,5 @@
 export { BaseTheme, mapBreakpointToLayoutMaxWidth } from './BaseTheme';
+export { default as Emoji } from './Emoji';
 export * from './EventHandlers';
 export {
   default as MediaSingle,

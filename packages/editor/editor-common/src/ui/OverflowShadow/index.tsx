@@ -24,12 +24,12 @@ export interface OverflowShadowOptions {
 
 const isIE11 = browser.ie_version === 11;
 
-export default function overflowShadow(
-  Component: any,
+export default function overflowShadow<P extends OverflowShadowProps>(
+  Component: React.ComponentType<P> | React.StatelessComponent<P>,
   options: OverflowShadowOptions,
 ) {
   return class OverflowShadow extends React.Component<
-    any,
+    Pick<P, Exclude<keyof P, keyof OverflowShadowProps>>,
     OverflowShadowState
   > {
     overflowContainer?: HTMLElement | null;

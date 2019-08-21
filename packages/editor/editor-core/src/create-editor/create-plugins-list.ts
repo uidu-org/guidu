@@ -198,7 +198,7 @@ export default function createPluginsList(
   //   plugins.push(annotationPlugin);
   // }
 
-  plugins.push(gapCursorPlugin);
+  plugins.push(gapCursorPlugin());
   plugins.push(gridPlugin);
   // plugins.push(submitEditorPlugin);
   plugins.push(fakeTextCursorPlugin);
