@@ -2,15 +2,10 @@ import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
 import { colors } from '@uidu/theme';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { Button, ButtonWrapper } from './styles';
 
-// IMO these should live inside @uidu/theme
+// IMO these should live inside @atlaskit/theme
 const messages = defineMessages({
   '#172b4d': {
     id: 'fabric.theme.#172b4d',
@@ -19,7 +14,7 @@ const messages = defineMessages({
   },
   '#97a0af': {
     id: 'fabric.theme.#97a0af',
-    defaultMessage: 'Light grey',
+    defaultMessage: 'Light gray',
     description: 'Name of a color.',
   },
   '#6554c0': {
@@ -73,6 +68,7 @@ class Color extends PureComponent<Props & WrappedComponentProps> {
       isSelected,
       borderColor,
       checkMarkColor = colors.N0,
+      intl: { formatMessage },
     } = this.props;
     const borderStyle = `1px solid ${borderColor}`;
     return (
@@ -83,11 +79,9 @@ class Color extends PureComponent<Props & WrappedComponentProps> {
           tabIndex={tabIndex}
           className={`${isSelected ? 'selected' : ''}`}
           title={
-            value && messages[value as keyof typeof messages] ? (
-              <FormattedMessage {...messages[value as keyof typeof messages]} />
-            ) : (
-              label
-            )
+            value && messages[value as keyof typeof messages]
+              ? formatMessage(messages[value as keyof typeof messages])
+              : label
           }
           style={{
             backgroundColor: value || 'transparent',
@@ -95,11 +89,10 @@ class Color extends PureComponent<Props & WrappedComponentProps> {
           }}
         >
           {isSelected && (
-            <FormattedMessage {...messages.selected}>
-              {(label: string) => (
-                <EditorDoneIcon primaryColor={checkMarkColor} label={label} />
-              )}
-            </FormattedMessage>
+            <EditorDoneIcon
+              primaryColor={checkMarkColor}
+              label={formatMessage(messages.selected)}
+            />
           )}
         </Button>
       </ButtonWrapper>

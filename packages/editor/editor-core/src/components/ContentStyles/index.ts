@@ -1,9 +1,10 @@
 import {
   akEditorDeleteBackground,
   akEditorDeleteBorder,
-  akEditorDeleteBorderBoldSize,
+  akEditorSelectedBorderBoldSize,
   blockMarksSharedStyles,
   dateSharedStyle,
+  editorFontSize,
   indentationSharedStyles,
   inlineNodeSharedStyle,
   listsSharedStyles,
@@ -12,19 +13,24 @@ import {
   whitespaceSharedStyles,
 } from '@uidu/editor-common';
 import styled from 'styled-components';
-// import { placeholderStyles } from '../../plugins/placeholder/styles';
 import { blocktypeStyles } from '../../plugins/block-type/styles';
-// import { panelStyles } from '../../plugins/panel/styles';
-import { fakeCursorStyles } from '../../plugins/fake-text-cursor/styles';
-// import { telepointerStyle } from '../../plugins/collab-edit/styles';
-import { gapCursorStyles } from '../../plugins/gap-cursor/styles';
 // import { codeBlockStyles } from '../../plugins/code-block/styles';
-// import { listsStyles } from '../../plugins/lists/styles';
-// import { ruleStyles } from '../../plugins/rule/styles';
-// import { mediaStyles } from '../../plugins/media/styles';
+import { telepointerStyle } from '../../plugins/collab-edit/styles';
+import { extensionStyles } from '../../plugins/extension/ui/styles';
+import { fakeCursorStyles } from '../../plugins/fake-text-cursor/styles';
+import { gapCursorStyles } from '../../plugins/gap-cursor/styles';
+import { gridStyles } from '../../plugins/grid/styles';
+import { linkStyles } from '../../plugins/hyperlink/styles';
 import { layoutStyles } from '../../plugins/layout/styles';
+import { listsStyles } from '../../plugins/lists/styles';
+import { mediaStyles } from '../../plugins/media/styles';
+import { mentionsStyles } from '../../plugins/mentions/styles';
+// import { panelStyles } from '../../plugins/panel/styles';
+import { placeholderTextStyles } from '../../plugins/placeholder-text/styles';
+import { placeholderStyles } from '../../plugins/placeholder/styles';
+import { ruleStyles } from '../../plugins/rule/styles';
 import { tableStyles } from '../../plugins/table/ui/styles';
-// import { mentionsStyles } from '../../plugins/mentions/styles';
+// import { tasksAndDecisionsStyles } from '../../plugins/tasks-and-decisions/ui/styles';
 import { textFormattingStyles } from '../../plugins/text-formatting/styles';
 
 const ContentStyles = styled.div`
@@ -38,7 +44,7 @@ const ContentStyles = styled.div`
 
   .ProseMirror {
     outline: none;
-    font-size: 1rem;
+    font-size: ${editorFontSize}px;
 
     ${whitespaceSharedStyles};
     ${paragraphSharedStyles};
@@ -79,14 +85,35 @@ const ContentStyles = styled.div`
     display: inline-block;
   }
 
-  ${blocktypeStyles};
-  ${textFormattingStyles};
+  /* fix cursor alignment */
+  .ProseMirror .emoji-common-node {
+    display: inline;
+    vertical-align: baseline;
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  ${blocktypeStyles}
+  ${textFormattingStyles}
+  ${placeholderTextStyles}
+  ${placeholderStyles}
+  ${listsStyles}
+  ${ruleStyles}
+  ${mediaStyles}
+  ${layoutStyles}
+  ${telepointerStyle}
   ${gapCursorStyles};
   ${tableStyles};
-  ${fakeCursorStyles};
-  ${blockMarksSharedStyles};
-  ${dateSharedStyle};
-  ${layoutStyles};
+  ${fakeCursorStyles}
+  ${mentionsStyles}
+  ${gridStyles}
+  ${linkStyles}
+  ${blockMarksSharedStyles}
+  ${dateSharedStyle}
+  ${extensionStyles}
 
   /** Global selector for extensions, as .danger tag is assigned to root level node which is unaccessible from triggered child node **/
   /* Danger when nested node */
@@ -98,12 +125,7 @@ const ContentStyles = styled.div`
   /* Danger when top level node */
   .danger > span > .extension-container {
     background: ${akEditorDeleteBackground};
-    .extension-overlay {
-      box-shadow: inset 0px 0px 0px ${akEditorDeleteBorderBoldSize}px
-        ${akEditorDeleteBorder} !important;
-      opacity: 1;
-      transition: opacity 0s;
-    }
+    box-shadow: 0 0 0 ${akEditorSelectedBorderBoldSize}px ${akEditorDeleteBorder};
   }
 
   .panelView-content-wrap {
@@ -146,6 +168,7 @@ const ContentStyles = styled.div`
       padding: 0 4px;
     }
   }
+
 `;
 
 export default ContentStyles;
