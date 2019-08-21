@@ -74,6 +74,7 @@ const typeAheadPlugin = (): EditorPlugin => ({
               isLoading={!!typeAhead.itemsLoader}
               items={typeAhead.items}
               currentIndex={typeAhead.currentIndex}
+              highlight={typeAhead.highlight}
             />
           );
         }}

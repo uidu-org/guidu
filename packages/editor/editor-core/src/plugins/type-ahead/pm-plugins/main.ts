@@ -5,11 +5,11 @@ import {
   TextSelection,
   Transaction,
 } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
 import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../../event-dispatcher';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import { dismissCommand } from '../commands/dismiss';
+import { insertTypeAheadQuery } from '../commands/insert-query';
 import { itemsListUpdated } from '../commands/items-list-updated';
 import { updateQueryCommand } from '../commands/update-query';
 import {
@@ -36,13 +36,7 @@ export type PluginState = {
   queryStarted: number;
   upKeyCount: number;
   downKeyCount: number;
-};
-
-type EditorViewWithDOMChange = EditorView & {
-  inDOMChange: {
-    composing: boolean;
-    finish: (force: boolean) => void;
-  };
+  highlight?: JSX.Element | null;
 };
 
 export const ACTIONS = {
@@ -134,8 +128,8 @@ export function createPlugin(
             return defaultActionHandler({
               dispatch,
               reactContext,
-              typeAhead,
               intl,
+              typeAhead,
               state,
               pluginState,
               tr,
@@ -201,11 +195,7 @@ export function createPlugin(
     props: {
       handleDOMEvents: {
         input(view, event: any) {
-          const {
-            state,
-            dispatch,
-            inDOMChange: domChange,
-          } = view as EditorViewWithDOMChange;
+          const { state, dispatch } = view;
           const { selection, schema } = state;
 
           if (
@@ -217,17 +207,27 @@ export function createPlugin(
             return false;
           }
 
+          return false;
+        },
+        // FM-2123: On latest Android version Q there's a bug while compositionend,
+        // the typeAheadQuery is inserted next to the position of the trigger character (so that creates double characters).
+        // In this use case, need to replace the last written character with our typeAheadQuery.
+        compositionend: (view, event: any) => {
+          const { state, dispatch } = view;
+          const { selection, schema } = state;
+
           const triggers = typeAhead.map(
             typeAheadHandler => typeAheadHandler.trigger,
           );
 
           if (
             triggers.indexOf(event.data) !== -1 &&
-            event.inputType === 'insertCompositionText' &&
-            domChange &&
-            domChange.composing
+            selection instanceof TextSelection &&
+            selection.$cursor &&
+            !schema.marks.typeAheadQuery.isInSet(selection.$cursor.marks())
           ) {
-            domChange.finish(true);
+            insertTypeAheadQuery(event.data, true)(state, dispatch);
+            return true;
           }
 
           return false;
@@ -339,6 +339,7 @@ export function defaultActionHandler({
   const typeAheadHandler = typeAhead.find(t => t.trigger === trigger)!;
   let typeAheadItems: Array<TypeAheadItem> | Promise<Array<TypeAheadItem>> = [];
   let itemsLoader: TypeAheadItemsLoader = null;
+  let highlight: JSX.Element | null = null;
 
   try {
     typeAheadItems = typeAheadHandler.getItems(
@@ -353,6 +354,10 @@ export function defaultActionHandler({
       dispatch,
     );
 
+    if (typeAheadHandler.getHighlight) {
+      highlight = typeAheadHandler.getHighlight(state);
+    }
+
     if (pluginState.itemsLoader) {
       pluginState.itemsLoader.cancel();
     }
@@ -361,12 +366,9 @@ export function defaultActionHandler({
       itemsLoader = createItemsLoader(typeAheadItems as Promise<
         Array<TypeAheadItem>
       >);
-      console.log(pluginState);
       typeAheadItems = pluginState.items;
     }
-  } catch (e) {
-    throw e;
-  }
+  } catch (e) {}
 
   const queryMark = findTypeAheadQuery(state);
 
@@ -384,6 +386,7 @@ export function defaultActionHandler({
     queryStarted: Date.now(),
     upKeyCount: 0,
     downKeyCount: 0,
+    highlight,
   };
 
   dispatch(pluginKey, newPluginState);

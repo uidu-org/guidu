@@ -1,5 +1,5 @@
-import { Selection, EditorState, NodeSelection } from 'prosemirror-state';
 import { Fragment, Node } from 'prosemirror-model';
+import { EditorState, NodeSelection, Selection } from 'prosemirror-state';
 import { safeInsert } from 'prosemirror-utils';
 import { analyticsService } from '../../../analytics';
 import { Command } from '../../../types';
@@ -7,7 +7,7 @@ import {
   isChromeWithSelectionBug,
   normaliseNestedLayout,
 } from '../../../utils';
-import { pluginKey, ACTIONS } from '../pm-plugins/main';
+import { ACTIONS, pluginKey } from '../pm-plugins/main';
 import { TypeAheadHandler, TypeAheadItem } from '../types';
 import { findTypeAheadQuery } from '../utils/find-query-mark';
 import { dismissCommand } from './dismiss';
@@ -136,7 +136,7 @@ export const selectItem = (
 
         tr = tr.replaceWith(start, start, fragment);
 
-        // This problem affects Chrome v58-62. See: https://github.com/ProseMirror/prosemirror/issues/710
+        // This problem affects Chrome v58+. See: https://github.com/ProseMirror/prosemirror/issues/710
         if (isChromeWithSelectionBug) {
           const selection = document.getSelection();
           if (selection) {

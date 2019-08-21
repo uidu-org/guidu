@@ -1,5 +1,5 @@
-import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
-import { borderRadius, colors, gridSize, math } from '@uidu/theme';
+import { akEditorFloatingDialogZIndex, Popup } from '@atlaskit/editor-common';
+import { borderRadius, colors, gridSize, math } from '@atlaskit/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import styled from 'styled-components';
@@ -30,6 +30,7 @@ export type TypeAheadProps = {
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;
   popupsScrollableElement?: HTMLElement;
+  highlight?: JSX.Element | null;
 };
 
 export function TypeAhead({
@@ -42,13 +43,11 @@ export function TypeAhead({
   popupsMountPoint,
   popupsBoundariesElement,
   popupsScrollableElement,
+  highlight,
 }: TypeAheadProps) {
   if (!active || !anchorElement || !items || !items.length) {
     return null;
   }
-  console.log(active);
-  console.log(items);
-  console.log(anchorElement);
   return (
     <Popup
       zIndex={akEditorFloatingDialogZIndex}
@@ -61,6 +60,7 @@ export function TypeAhead({
       offset={[0, 8]}
     >
       <TypeAheadContent className="fabric-editor-typeahead">
+        {highlight}
         {Array.isArray(items) ? (
           <TypeAheadItemsList
             insertByIndex={index =>

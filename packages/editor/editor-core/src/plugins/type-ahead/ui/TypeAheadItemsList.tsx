@@ -2,6 +2,7 @@ import Item, { ItemGroup, itemThemeNamespace } from '@uidu/item';
 import { borderRadius, colors, themed } from '@uidu/theme';
 import * as React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import { Shortcut } from '../../../components/styles';
 import IconFallback from '../../quick-insert/assets/fallback';
 import { TypeAheadItem } from '../types';
 
@@ -68,17 +69,7 @@ const ItemText = styled.div`
 `;
 
 const ItemAfter = styled.div`
-  min-width: 12px;
-`;
-
-const KeyHint = styled.div`
-  background-color: rgba(223, 225, 229, 0.5); /* N60 at 50% */
-  color: ${colors.N100};
-  border-radius: ${borderRadius()}px;
-  padding: 4px;
-  line-height: 12px;
-  font-size: 11.67px;
-  align-self: flex-end;
+  flex: 0 0 auto;
 `;
 
 const fallbackIcon = (label: string) => {
@@ -214,10 +205,12 @@ export class TypeAheadItemComponent extends React.Component<
         <ItemBody>
           <ItemText>
             <div className="item-title">{item.title}</div>
-            <div className="item-description">{item.description}</div>
+            {item.description && (
+              <div className="item-description">{item.description}</div>
+            )}
           </ItemText>
           <ItemAfter>
-            {item.keyshortcut && <KeyHint>{item.keyshortcut}</KeyHint>}
+            {item.keyshortcut && <Shortcut>{item.keyshortcut}</Shortcut>}
           </ItemAfter>
         </ItemBody>
       </Item>
