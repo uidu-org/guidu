@@ -1,18 +1,24 @@
-// @flow
-import React, { Component } from 'react';
+import React, { Component, MouseEvent } from 'react';
 import {
   AnalyticsListener,
   UIAnalyticsEvent,
   withAnalyticsEvents,
+  WithAnalyticsEventsProps,
 } from '../src';
 
-class ButtonBase extends Component<*> {
-  handleClick = e => {
-    // Create our analytics event
-    const analyticsEvent = this.props.createAnalyticsEvent({ action: 'click' });
+interface Props extends WithAnalyticsEventsProps {
+  onClick: (e: MouseEvent<HTMLButtonElement>) => void;
+}
 
-    // Fire our analytics event on the 'uidu' channel
-    analyticsEvent.fire('uidu');
+class ButtonBase extends Component<Props> {
+  handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    // Create our analytics event
+    const analyticsEvent = this.props.createAnalyticsEvent!({
+      action: 'click',
+    });
+
+    // Fire our analytics event on the 'atlaskit' channel
+    analyticsEvent.fire('atlaskit');
 
     if (this.props.onClick) {
       this.props.onClick(e);
@@ -27,7 +33,6 @@ class ButtonBase extends Component<*> {
 
 const Button = withAnalyticsEvents()(ButtonBase);
 
-// eslint-disable-next-line react/no-multi-comp
 export default class App extends Component<void> {
   handleEvent = (analyticsEvent: UIAnalyticsEvent) => {
     const { payload, context } = analyticsEvent;
@@ -36,8 +41,10 @@ export default class App extends Component<void> {
 
   render() {
     return (
-      <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
-        <Button>Click me</Button>
+      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+        <Button onClick={() => console.log('onClick callback')}>
+          Click me
+        </Button>
       </AnalyticsListener>
     );
   }

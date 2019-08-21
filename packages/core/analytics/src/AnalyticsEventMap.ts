@@ -6,8 +6,7 @@
  * If analytics has been manually for a component and you do not wish for it to be
  * codemodded, add an `ignore: true` prop to it.
  */
-
-type AnalyticsEventConfig = {
+export interface AnalyticsEventConfig {
   /** Path to component being wrapped with analytics */
   path: string;
   /** Path to analytics test file that will be created and/or already exists */
@@ -47,9 +46,14 @@ type AnalyticsEventConfig = {
   /** Signals that this map entry is for test purposes and should not be part of other exports */
   test?: true;
   ignore?: boolean;
-};
+  overwrite?: string;
+  overwritePackage?: string;
+  refIssue?: boolean;
+  rerun?: boolean;
+  needsMountTest?: boolean;
+}
 
-const analyticsEventMap: AnalyticsEventConfig[] = [
+export const analyticsEventMap: AnalyticsEventConfig[] = [
   {
     path: 'avatar/src/components/Avatar.js',
     testPath: 'avatar/src/components/__tests__/analytics.js',
@@ -95,6 +99,8 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     testPath: 'breadcrumbs/__tests__/analytics-item.js',
     actionSubject: 'breadcrumbsItem',
     component: 'BreadcrumbsItem',
+    overwrite: 'Button',
+    overwritePackage: '@atlaskit/button',
     props: {
       onClick: 'clicked',
     },
@@ -182,6 +188,8 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
       componentName: 'calendar',
     },
     componentTestPath: 'calendar/src/components/__tests__/Calendar.js',
+    refIssue: true,
+    rerun: true,
   },
   {
     path: 'checkbox/src/Checkbox.js',
@@ -258,6 +266,8 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     actionSubject: 'dropdownMenu',
     component: 'DropdownMenuStateless',
     derivatives: ['DropdownMenu'],
+    overwrite: 'Droplist',
+    overwritePackage: '@atlaskit/droplist',
     props: {
       onOpenChange: 'toggled',
     },
@@ -321,6 +331,20 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     componentTestPath: 'dynamic-table/__tests__/Stateless.js',
   },
   {
+    path: 'field-radio-group/src/RadioGroupStateless.js',
+    testPath: 'field-radio-group/src/__tests__/analytics-radio-group.js',
+    actionSubject: 'radioItem',
+    component: 'AkFieldRadioGroup',
+    derivatives: ['RadioGroup'],
+    props: {
+      onRadioChange: 'selected',
+    },
+    attributes: {
+      componentName: 'fieldRadioGroup',
+    },
+    componentTestPath: 'field-radio-group/src/__tests__/RadioGroup.js',
+  },
+  {
     path: 'field-text/src/FieldTextStateless.js',
     testPath: 'field-text/src/__tests__/analytics.js',
     actionSubject: 'textField',
@@ -380,20 +404,18 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
     componentTestPath: 'inline-dialog/__tests__/index.js',
   },
   {
-    path: 'inline-edit/src/InlineEditStateless.js',
-    testPath: 'inline-edit/src/__tests__/analytics.js',
+    path: 'inline-edit/src/components/InlineEdit.tsx',
+    testPath: 'inline-edit/src/components/__tests__/analytics.ts',
     actionSubject: 'inlineEdit',
-    component: 'InlineEditStateless',
-    derivatives: ['InlineEdit'],
+    component: 'InlineEdit',
     props: {
-      onCancel: 'canceled',
       onConfirm: 'confirmed',
-      onEditRequested: 'edited',
     },
     attributes: {
       componentName: 'inlineEdit',
     },
-    componentTestPath: 'inline-edit/src/__tests__/InlineEdit.js',
+    componentTestPath:
+      'inline-edit/src/components/__tests__/unit/InlineEdit.tsx',
   },
   {
     path: 'modal-dialog/src/components/Modal.js',
@@ -500,6 +522,8 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
       componentName: 'select',
     },
     componentTestPath: 'select/src/components/__tests__/unit/Select.js',
+    needsMountTest: true,
+    refIssue: true,
   },
   {
     path: 'table-tree/src/components/Row.js',
@@ -574,35 +598,42 @@ const analyticsEventMap: AnalyticsEventConfig[] = [
   },
 ];
 
-// $FlowFixMe
-module.exports.analyticsPackages = analyticsEventMap
+export const analyticsPackages = analyticsEventMap
   .filter(pkg => pkg.test !== true)
   .map(config => {
-    const path = config.path;
+    const { path } = config;
 
     return path.substring(0, path.indexOf('/'));
   });
 
-module.exports.analyticsEventMap = analyticsEventMap;
+export interface InstrumentedItem {
+  packageName: string;
+  component: string;
+  actionSubject: string;
+  prop: string;
+  payload: Record<string, string | string[]>;
+}
 
-module.exports.instrumentedComponents = analyticsEventMap
+export const instrumentedComponents = analyticsEventMap
   .filter(pkg => pkg.test !== true)
-  .reduce((acc, config) => {
-    const path = config.path;
+  .reduce<InstrumentedItem[]>((acc, config) => {
+    const { path } = config;
     const packageSuffix = path.substring(0, path.indexOf('/'));
-    const items = [];
+    const items: InstrumentedItem[] = [];
+
     Object.keys(config.props).forEach(propName => {
       const components = config.derivatives
         ? [config.component].concat(config.derivatives).join(', ')
         : config.component;
+
       items.push({
-        packageName: `@uidu/${packageSuffix}`,
+        packageName: `@atlaskit/${packageSuffix}`,
         component: components,
         actionSubject: config.actionSubject,
         prop: propName,
         payload: { action: config.props[propName] },
       });
     });
-    // $FlowFixMe
+
     return acc.concat(items);
   }, []);

@@ -1,121 +1,52 @@
-import PropTypes from 'prop-types';
-import React, { Component } from 'react';
-import { AnalyticsEventPayload, UIAnalyticsEventInterface } from './types';
-import UIAnalyticsEvent from './UIAnalyticsEvent';
+import React from 'react';
 
-export type CreateUIAnalyticsEvent = (
-  payload: AnalyticsEventPayload,
-) => UIAnalyticsEvent;
+import { Omit } from '@atlaskit/type-helpers';
+import { CreateUIAnalyticsEvent, CreateEventMap } from './types';
+import AnalyticsContextConsumer from './AnalyticsContextConsumer';
 
-export type WithAnalyticsEventsProps = {
+export interface WithAnalyticsEventsProps {
   /**
-    You should not be accessing this prop under any circumstances. It is provided by `@uidu/analytics` and integrated in the component
-  */
-  createAnalyticsEvent: CreateUIAnalyticsEvent;
-};
-
-type AnalyticsEventsProps = {
-  createAnalyticsEvent: CreateUIAnalyticsEvent | void;
-};
-
-type AnalyticsEventCreator<ProvidedProps> = (
-  create: CreateUIAnalyticsEvent,
-  props: ProvidedProps,
-) => UIAnalyticsEvent | undefined;
-
-type EventMap<ProvidedProps> = {
-  [key: string]: AnalyticsEventPayload | AnalyticsEventCreator<ProvidedProps>;
-};
-
-// This component is used to grab the analytics functions off context.
-// It uses legacy context, but provides an API similar to 16.3 context.
-// This makes it easier to use with the forward ref API.
-class AnalyticsContextConsumer extends Component<any> {
-  static contextTypes = {
-    getAtlaskitAnalyticsEventHandlers: PropTypes.func,
-    getAtlaskitAnalyticsContext: PropTypes.func,
-  };
-  createAnalyticsEvent = (payload: AnalyticsEventPayload): UIAnalyticsEvent => {
-    const {
-      getAtlaskitAnalyticsEventHandlers,
-      getAtlaskitAnalyticsContext,
-    } = this.context;
-    const context =
-      (typeof getAtlaskitAnalyticsContext === 'function' &&
-        getAtlaskitAnalyticsContext()) ||
-      [];
-    const handlers =
-      (typeof getAtlaskitAnalyticsEventHandlers === 'function' &&
-        getAtlaskitAnalyticsEventHandlers()) ||
-      [];
-    return new UIAnalyticsEvent({ context, handlers, payload });
-  };
-  render() {
-    return (this.props.children as any)(this.createAnalyticsEvent);
-  }
+   * You should not be accessing this prop under any circumstances.
+   * It is provided by `@atlaskit/analytics-next` and integrated in the component
+   */
+  createAnalyticsEvent?: CreateUIAnalyticsEvent;
 }
 
-// patch the callback so it provides analytics information.
-const modifyCallbackProp = (
-  propName: string,
-  eventMapEntry: AnalyticsEventPayload | AnalyticsEventCreator<any>,
-  props: any,
-  createAnalyticsEvent: CreateUIAnalyticsEvent,
-) => (...args) => {
-  const event =
-    typeof eventMapEntry === 'function'
-      ? eventMapEntry(createAnalyticsEvent, props)
-      : createAnalyticsEvent(eventMapEntry);
-  const providedCallback = props[propName];
-  if (providedCallback) {
-    providedCallback(...args, event);
-  }
+const withAnalyticsEvents = (createEventMap?: CreateEventMap) => <
+  Props extends WithAnalyticsEventsProps,
+  Component
+>(
+  WrappedComponent: React.JSXElementConstructor<Props> & Component,
+) => {
+  type WrappedProps = JSX.LibraryManagedAttributes<
+    Component,
+    Omit<Props, keyof WithAnalyticsEventsProps>
+  >;
+
+  const WithAnalyticsEvents = React.forwardRef<any, WrappedProps>(
+    (props, ref) => (
+      <AnalyticsContextConsumer<WrappedProps>
+        createEventMap={createEventMap}
+        wrappedComponentProps={props}
+      >
+        {({ createAnalyticsEvent, patchedEventProps }) => (
+          <WrappedComponent
+            {...props}
+            {...patchedEventProps}
+            createAnalyticsEvent={createAnalyticsEvent}
+            // @ts-ignore
+            ref={ref}
+          />
+        )}
+      </AnalyticsContextConsumer>
+    ),
+  );
+
+  // @ts-ignore
+  WithAnalyticsEvents.displayName = `WithAnalyticsEvents(${WrappedComponent.displayName ||
+    WrappedComponent.name})`;
+
+  return WithAnalyticsEvents;
 };
 
-type Obj<T> = { [key: string]: T };
-// helper that provides an easy way to map an object's values
-// ({ string: A }, (string, A) => B) => { string: B }
-const vmap = <A, B>(obj: Obj<A>, fn: (string, A) => B): Obj<B> =>
-  Object.keys(obj).reduce((curr, k) => ({ ...curr, [k]: fn(k, obj[k]) }), {});
-
-export type AnalyticsEventsWrappedComp = React.ComponentType<
-  AnalyticsEventsProps
->;
-
-export type CreateUIAnalyticsEventSignature = (
-  payload: AnalyticsEventPayload,
-) => UIAnalyticsEventInterface;
-
-export default function withAnalyticsEvents(
-  createEventMap: EventMap<any> = {},
-) {
-  return WrappedComponent => {
-    // $FlowFixMe - flow 0.67 doesn't know about forwardRef
-    const WithAnalyticsEvents = React.forwardRef((props, ref) => {
-      return (
-        <AnalyticsContextConsumer>
-          {createAnalyticsEvent => {
-            const modifiedProps = vmap(createEventMap, (propName, entry) =>
-              modifyCallbackProp(propName, entry, props, createAnalyticsEvent),
-            );
-            return (
-              <WrappedComponent
-                {...props}
-                {...modifiedProps}
-                createAnalyticsEvent={createAnalyticsEvent}
-                ref={ref}
-              />
-            );
-          }}
-        </AnalyticsContextConsumer>
-      );
-    });
-
-    WithAnalyticsEvents.displayName = `WithAnalyticsEvents(${WrappedComponent.displayName ||
-      WrappedComponent.name})`;
-
-    return WithAnalyticsEvents;
-  };
-}
-
-export const withAnalyticsForSumTypeProps = withAnalyticsEvents;
+export default withAnalyticsEvents;

@@ -1,21 +1,29 @@
-import AnalyticsEvent from './AnalyticsEvent';
-import {
-  AnalyticsEventUpdater,
-  UIAnalyticsEventHandler,
-  UIAnalyticsEventInterface,
-  UIAnalyticsEventProps,
-} from './types';
+import AnalyticsEvent, {
+  AnalyticsEventPayload,
+  AnalyticsEventProps,
+} from './AnalyticsEvent';
 
-const { warn } = console;
+type ChannelIdentifier = string;
+type Context = Record<string, any>[];
 
-export default class UIAnalyticsEvent extends AnalyticsEvent
-  implements UIAnalyticsEventInterface {
-  context: Array<{}>;
-  handlers: Array<UIAnalyticsEventHandler>;
+export type UIAnalyticsEventHandler = (
+  event: UIAnalyticsEvent,
+  channel?: ChannelIdentifier,
+) => void;
+
+export type UIAnalyticsEventProps = AnalyticsEventProps & {
+  context?: Context;
+  handlers?: UIAnalyticsEventHandler[];
+};
+
+export default class UIAnalyticsEvent extends AnalyticsEvent {
+  context: Context;
+  handlers: UIAnalyticsEventHandler[];
   hasFired: boolean;
 
   constructor(props: UIAnalyticsEventProps) {
     super(props);
+
     this.context = props.context || [];
     this.handlers = props.handlers || [];
     this.hasFired = false;
@@ -23,15 +31,19 @@ export default class UIAnalyticsEvent extends AnalyticsEvent
 
   clone = (): UIAnalyticsEvent | null => {
     if (this.hasFired) {
-      warn("Cannot clone an event after it's been fired.");
+      // eslint-disable-next-line no-console
+      console.warn("Cannot clone an event after it's been fired.");
       return null;
     }
+
     const context = [...this.context];
     const handlers = [...this.handlers];
 
-    // We stringify and parse here to get a hacky "deep clone" of the object.
-    // This has some limitations in that it wont support functions, regexs, Maps, Sets, etc,
-    // but none of those need to be represented in our payload, so we consider this fine
+    /**
+     * A hacky "deep clone" of the object. This is limited in that it wont
+     * support functions, regexs, Maps, Sets, etc, but none of those need to
+     * be represented in our payload.
+     */
     const payload = JSON.parse(JSON.stringify(this.payload));
 
     return new UIAnalyticsEvent({ context, handlers, payload });
@@ -39,20 +51,26 @@ export default class UIAnalyticsEvent extends AnalyticsEvent
 
   fire = (channel?: string) => {
     if (this.hasFired) {
-      warn('Cannot fire an event twice.');
+      // eslint-disable-next-line no-console
+      console.warn('Cannot fire an event twice.');
       return;
     }
-    this.handlers.forEach(handler => {
-      handler(this, channel);
-    });
+
+    this.handlers.forEach(handler => handler(this, channel));
     this.hasFired = true;
   };
 
-  update(updater: AnalyticsEventUpdater): this {
+  update(
+    updater:
+      | Record<string, any>
+      | ((payload: AnalyticsEventPayload) => AnalyticsEventPayload),
+  ): this {
     if (this.hasFired) {
-      warn("Cannot update an event after it's been fired.");
+      // eslint-disable-next-line no-console
+      console.warn("Cannot update an event after it's been fired.");
       return this;
     }
+
     return super.update(updater);
   }
 }

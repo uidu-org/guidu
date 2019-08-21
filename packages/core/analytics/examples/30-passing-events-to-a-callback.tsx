@@ -1,15 +1,24 @@
-// @flow
-import React, { Component } from 'react';
+import React, { Component, MouseEvent } from 'react';
 import {
   AnalyticsListener,
   UIAnalyticsEvent,
   withAnalyticsEvents,
+  WithAnalyticsEventsProps,
 } from '../src';
 
-class ManualButtonBase extends Component<*> {
-  handleClick = e => {
+interface ButtonBaseProps extends WithAnalyticsEventsProps {
+  onClick: (
+    e: MouseEvent<HTMLButtonElement>,
+    analyticsEvent?: UIAnalyticsEvent,
+  ) => void;
+}
+
+class ManualButtonBase extends Component<ButtonBaseProps> {
+  handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     // Create our analytics event
-    const analyticsEvent = this.props.createAnalyticsEvent({ action: 'click' });
+    const analyticsEvent = this.props.createAnalyticsEvent!({
+      action: 'click',
+    });
 
     if (this.props.onClick) {
       // Pass the event through the corresponding callback prop
@@ -23,8 +32,7 @@ class ManualButtonBase extends Component<*> {
   }
 }
 
-// eslint-disable-next-line react/no-multi-comp
-class ButtonBase extends Component<*> {
+class ButtonBase extends Component<ButtonBaseProps> {
   render() {
     const { createAnalyticsEvent, ...props } = this.props;
     return <button {...props} />;
@@ -35,12 +43,16 @@ const ManualButton = withAnalyticsEvents()(ManualButtonBase);
 const VerboseButton = withAnalyticsEvents({
   onClick: create => create({ action: 'click' }),
 })(ButtonBase);
-const ShorthandButton = withAnalyticsEvents({ onClick: { action: 'click' } })(
-  ButtonBase,
-);
+const ShorthandButton = withAnalyticsEvents({
+  onClick: { action: 'click' },
+})(ButtonBase);
 
 const ButtonGroup = () => {
-  const onClick = (e, analyticsEvent) => analyticsEvent.fire('uidu');
+  const onClick = (
+    e: MouseEvent<HTMLButtonElement>,
+    analyticsEvent?: UIAnalyticsEvent,
+  ) => analyticsEvent && analyticsEvent.fire('atlaskit');
+
   return (
     <div>
       <div>
@@ -62,7 +74,6 @@ const ButtonGroup = () => {
   );
 };
 
-// eslint-disable-next-line react/no-multi-comp
 export default class App extends Component<void> {
   handleEvent = (analyticsEvent: UIAnalyticsEvent) => {
     const { payload, context } = analyticsEvent;
@@ -71,7 +82,7 @@ export default class App extends Component<void> {
 
   render() {
     return (
-      <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
+      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
         <ButtonGroup />
       </AnalyticsListener>
     );

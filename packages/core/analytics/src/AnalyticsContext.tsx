@@ -1,21 +1,20 @@
-import { Children, Component, ReactNode } from 'react';
 import PropTypes from 'prop-types';
+import React, { Children, Component } from 'react';
 
 const ContextTypes = {
   getAtlaskitAnalyticsContext: PropTypes.func,
 };
 
-type Props = {
+interface Props {
   /** Children! */
-  children: ReactNode,
+  children: React.ReactNode;
   /** Arbitrary data. Any events created below this component in the tree will
    * have this added as an item in their context array. */
-  data: {},
-};
+  data: unknown;
+}
 
 export default class AnalyticsContext extends Component<Props> {
   static contextTypes = ContextTypes;
-
   static childContextTypes = ContextTypes;
 
   getChildContext = () => ({
@@ -29,6 +28,7 @@ export default class AnalyticsContext extends Component<Props> {
       (typeof getAtlaskitAnalyticsContext === 'function' &&
         getAtlaskitAnalyticsContext()) ||
       [];
+
     return [...ancestorData, data];
   };
 

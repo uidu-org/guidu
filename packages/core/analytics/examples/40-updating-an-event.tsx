@@ -1,17 +1,21 @@
-// @flow
-import React, { Component } from 'react';
-import FieldText from '@uidu/field-text';
-import Button from '@uidu/button';
-import { AnalyticsListener } from '../src';
+import React, { Component, MouseEvent, FormEvent } from 'react';
+import FieldText from '@atlaskit/field-text';
+import Button from '@atlaskit/button';
 
-class Form extends Component<*, { value: string }> {
+import { UIAnalyticsEvent, AnalyticsListener } from '../src';
+
+class Form extends Component<{}, { value: string }> {
   state = {
     value: 'Joe Bloggs',
   };
 
-  handleInputChange = e => this.setState({ value: e.currentTarget.value });
+  handleInputChange = (e: FormEvent<HTMLInputElement>) =>
+    this.setState({ value: e.currentTarget.value });
 
-  handleSubmitButtonClick = (e, analyticsEvent) => {
+  handleSubmitButtonClick = (
+    e: MouseEvent<HTMLElement>,
+    analyticsEvent: UIAnalyticsEvent,
+  ) => {
     analyticsEvent
       .update(payload => ({
         ...payload,

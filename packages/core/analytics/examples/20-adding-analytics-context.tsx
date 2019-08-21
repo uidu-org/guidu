@@ -1,13 +1,15 @@
-// @flow
 import React from 'react';
-import Button from '@uidu/button';
-import { AnalyticsContext, AnalyticsListener } from '../src';
+import Button from '@atlaskit/button';
+import { AnalyticsContext, AnalyticsListener, UIAnalyticsEvent } from '../src';
 
 const SaveButton = () => (
   <Button
     appearance="primary"
-    onClick={(e, analytic) => {
-      analytic.fire();
+    onClick={(
+      e: React.MouseEvent<HTMLElement>,
+      analyticsEvent: UIAnalyticsEvent,
+    ) => {
+      analyticsEvent.fire();
     }}
   >
     Save

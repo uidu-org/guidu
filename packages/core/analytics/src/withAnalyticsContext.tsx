@@ -1,34 +1,41 @@
-import React, { ComponentType } from 'react';
+import React from 'react';
+
 import AnalyticsContext from './AnalyticsContext';
 
-type WithAnalyticsContextProps = {
-  analyticsContext?: any;
-};
+export interface WithContextProps {
+  analyticsContext?: Record<string, any>;
+}
 
-/* The returned component props must use $Supertype to work with multiple HOCs - https://github.com/facebook/flow/issues/6057#issuecomment-414157781
- * We also cannot alias this as a generic as that causes issues with multiple HOCs - https://github.com/facebook/flow/issues/6587.
- * We could declare a parametrized flow type for it but this convolutes error messages.
- * Intersections cause issues so we must use exact objects in conjunction with
- * object spreading instead - https://github.com/flowtype/flow-bin/issues/93#issuecomment-340687896
- */
-export type AnalyticsContextWrappedComp = ComponentType<any>;
+const withAnalyticsContext = (defaultData?: any) => <Props, Component>(
+  WrappedComponent: React.JSXElementConstructor<Props> & Component,
+) => {
+  type WrappedProps = JSX.LibraryManagedAttributes<
+    Component,
+    Props & WithContextProps
+  >;
 
-export default function withAnalyticsContext(defaultData: {} = {}) {
-  return WrappedComponent => {
-    // $FlowFixMe - flow 0.67 doesn't know about forwardRef
-    const WithAnalyticsContext = React.forwardRef((props: any, ref) => {
-      const { analyticsContext = {}, ...others } = props;
-      const data = { ...defaultData, ...analyticsContext };
+  const WithAnalyticsContext = React.forwardRef<any, WrappedProps>(
+    (props, ref) => {
+      // @ts-ignore
+      const { analyticsContext = {}, ...rest } = props;
+      const analyticsData = {
+        ...defaultData,
+        ...analyticsContext,
+      };
+
       return (
-        <AnalyticsContext data={data}>
-          <WrappedComponent {...others} ref={ref} />
+        <AnalyticsContext data={analyticsData}>
+          <WrappedComponent {...rest} ref={ref} />
         </AnalyticsContext>
       );
-    });
+    },
+  );
 
-    WithAnalyticsContext.displayName = `WithAnalyticsContext(${WrappedComponent.displayName ||
-      WrappedComponent.name})`;
+  // @ts-ignore
+  WithAnalyticsContext.displayName = `WithAnalyticsContext(${WrappedComponent.displayName ||
+    WrappedComponent.name})`;
 
-    return WithAnalyticsContext;
-  };
-}
+  return WithAnalyticsContext;
+};
+
+export default withAnalyticsContext;

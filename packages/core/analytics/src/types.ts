@@ -1,45 +1,16 @@
-import AnalyticsEvent from './AnalyticsEvent';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
+import { AnalyticsEventPayload } from './AnalyticsEvent';
 
-export type AnalyticsEventPayload = {
-  [key: string]: any;
-};
+export type CreateUIAnalyticsEvent = (
+  payload: AnalyticsEventPayload,
+) => UIAnalyticsEvent;
 
-export type AnalyticsEventUpdater =
-  | {}
-  | ((payload: AnalyticsEventPayload) => AnalyticsEventPayload);
+export type AnalyticsEventCreator = (
+  create: CreateUIAnalyticsEvent,
+  props: Record<string, any>,
+) => UIAnalyticsEvent | undefined;
 
-export type AnalyticsEventProps = {
-  payload: AnalyticsEventPayload;
-};
-
-export interface AnalyticsEventInterface {
-  payload: AnalyticsEventPayload;
-
-  clone(): AnalyticsEvent;
-  update(updater: AnalyticsEventUpdater): AnalyticsEvent;
-}
-
-// UI events
-type ChannelIdentifier = string;
-
-export type UIAnalyticsEventHandler = (
-  event: UIAnalyticsEvent,
-  channel?: ChannelIdentifier,
-) => void;
-
-export type UIAnalyticsEventProps = AnalyticsEventProps & {
-  context?: Array<{}>;
-  handlers?: Array<UIAnalyticsEventHandler>;
-};
-
-export interface UIAnalyticsEventInterface {
-  context: Array<{}>;
-  handlers?: Array<UIAnalyticsEventHandler>;
-  hasFired: boolean;
-  payload: AnalyticsEventPayload;
-
-  clone(): UIAnalyticsEvent | null;
-  fire(channel?: ChannelIdentifier): void;
-  update(updater: AnalyticsEventUpdater): AnalyticsEvent;
-}
+export type CreateEventMap = Record<
+  string,
+  AnalyticsEventPayload | AnalyticsEventCreator
+>;

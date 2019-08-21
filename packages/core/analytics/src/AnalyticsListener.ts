@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
-import { Component, ReactNode } from 'react';
-import { UIAnalyticsEventHandler } from './types';
-import UIAnalyticsEvent from './UIAnalyticsEvent';
+import React, { Component } from 'react';
+import UIAnalyticsEvent, { UIAnalyticsEventHandler } from './UIAnalyticsEvent';
 
 type Props = {
   /** Children! */
-  children?: ReactNode;
+  children?: React.ReactNode;
   /** The channel to listen for events on. */
   channel?: string;
   /** A function which will be called when an event is fired on this Listener's
@@ -37,6 +36,7 @@ export default class AnalyticsListener extends Component<Props> {
         onEvent(event, eventChannel);
       }
     };
+
     return [handler, ...parentEventHandlers];
   };
 
