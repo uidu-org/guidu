@@ -1,12 +1,23 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import { receiveTransaction } from 'prosemirror-collab';
-import { AllSelection, NodeSelection, Selection, Transaction } from 'prosemirror-state';
+import {
+  AllSelection,
+  NodeSelection,
+  Selection,
+  Transaction,
+} from 'prosemirror-state';
 import { Step } from 'prosemirror-transform';
 import { EditorView } from 'prosemirror-view';
-import { CollabEditOptions, ConnectionData, InitData, PresenceData, RemoteData, SendableSelection, TelepointerData } from './types';
+import {
+  CollabEditOptions,
+  ConnectionData,
+  InitData,
+  PresenceData,
+  RemoteData,
+  SendableSelection,
+  TelepointerData,
+} from './types';
 import { replaceDocument } from './utils';
-
-
 
 export const handleInit = (
   initData: InitData,

@@ -98,7 +98,10 @@ export const createTelepointers = (
   cursor.style.cssText = `${style({ color: avatarColor.color.solid })};`;
   cursor.setAttribute('data-initial', initial);
   return decorations.concat(
-    (Decoration as any).widget(to, cursor, { pointer: { sessionId } }),
+    (Decoration as any).widget(to, cursor, {
+      pointer: { sessionId },
+      key: `telepointer-${sessionId}`,
+    }),
   );
 };
 

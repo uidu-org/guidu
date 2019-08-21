@@ -88,6 +88,7 @@ export default () => {
             return Decoration.widget(position, node, {
               raw: true,
               side: -1,
+              key: 'inlineCursor',
             } as any);
           });
 

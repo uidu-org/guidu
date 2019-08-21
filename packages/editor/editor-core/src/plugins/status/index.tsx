@@ -1,7 +1,6 @@
 import { status } from '@atlaskit/adf-schema';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 import WithPluginState from '../../components/WithPluginState';
 import { EditorPlugin } from '../../types';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
@@ -103,11 +102,7 @@ const decorateWithPluginOptions = (
         description: formatMessage(messages.statusDescription),
         priority: 700,
         keywords: ['lozenge'],
-        icon: () => (
-          <FormattedMessage {...messages.status}>
-            {(label: string) => <IconStatus label={label} />}
-          </FormattedMessage>
-        ),
+        icon: () => <IconStatus label={formatMessage(messages.status)} />,
         action: createStatus(),
       },
     ],

@@ -1,8 +1,8 @@
-import { keymap } from 'prosemirror-keymap';
 import { MarkType, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { trackAndInvoke } from '../../../analytics';
 import * as keymaps from '../../../keymaps';
+import { keymap } from '../../../utils/keymap';
 import { INPUT_METHOD } from '../../analytics';
 import * as commands from '../commands/text-formatting';
 

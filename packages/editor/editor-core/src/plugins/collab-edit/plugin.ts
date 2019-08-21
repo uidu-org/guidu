@@ -1,12 +1,6 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import memoizeOne from 'memoize-one';
-import {
-  EditorState,
-  Plugin,
-  PluginKey,
-  Selection,
-  Transaction,
-} from 'prosemirror-state';
+import { Plugin, PluginKey, Selection, Transaction } from 'prosemirror-state';
 import { ReplaceStep, Step } from 'prosemirror-transform';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
@@ -65,8 +59,6 @@ export const createPlugin = (
   dispatch: Dispatch,
   providerFactory: ProviderFactory,
   options?: CollabEditOptions,
-  // This will only be populated when the editor is reloaded/reconfigured
-  oldState?: EditorState,
   sanitizePrivateContent?: boolean,
 ) => {
   let collabEditProvider: CollabEditProvider | null;
@@ -75,9 +67,7 @@ export const createPlugin = (
     key: pluginKey,
     state: {
       init(config) {
-        return (
-          (oldState && pluginKey.getState(oldState)) || PluginState.init(config)
-        );
+        return PluginState.init(config);
       },
       apply(tr, prevPluginState: PluginState, oldState, newState) {
         const pluginState = prevPluginState.apply(tr);

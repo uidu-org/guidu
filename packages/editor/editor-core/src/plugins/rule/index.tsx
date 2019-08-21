@@ -1,6 +1,5 @@
 import { rule } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { EditorPlugin } from '../../types';
 import {
   ACTION,
@@ -15,7 +14,7 @@ import { IconDivider } from '../quick-insert/assets';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
 
-const rulePlugin: EditorPlugin = {
+const rulePlugin = (): EditorPlugin => ({
   nodes() {
     return [{ name: 'rule', node: rule }];
   },
@@ -42,9 +41,7 @@ const rulePlugin: EditorPlugin = {
         priority: 1200,
         keyshortcut: '---',
         icon: () => (
-          <FormattedMessage {...messages.horizontalRule}>
-            {(label: string) => <IconDivider label={label} />}
-          </FormattedMessage>
+          <IconDivider label={formatMessage(messages.horizontalRule)} />
         ),
         action(insert, state) {
           const tr = insert(state.schema.nodes.rule.createChecked());
@@ -59,6 +56,6 @@ const rulePlugin: EditorPlugin = {
       },
     ],
   },
-};
+});
 
 export default rulePlugin;

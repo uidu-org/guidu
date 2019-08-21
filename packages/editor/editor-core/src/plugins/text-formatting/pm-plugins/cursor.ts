@@ -53,7 +53,7 @@ export default new Plugin({
             ? $click.nodeAfter
             : $click.nodeBefore;
 
-        // Need to set the selection here to allow clicking between [code('text'),{<>}]
+        // Need to set the selection here to allow clicking between [code('text'),{<>},emoji()]
         const tr = view.state.tr.setSelection(TextSelection.near($click));
         if (clickWasInsideNodeDOM) {
           tr.setStoredMarks([code.create()]);

@@ -1,6 +1,11 @@
 import { uuid } from '@atlaskit/adf-schema';
 import { Fragment } from 'prosemirror-model';
-import { EditorState, NodeSelection, Selection, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  NodeSelection,
+  Selection,
+  Transaction,
+} from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { pluginKey, StatusType } from './plugin';
 

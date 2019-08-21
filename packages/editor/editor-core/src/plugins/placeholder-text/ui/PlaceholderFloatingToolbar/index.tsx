@@ -1,10 +1,5 @@
 import * as React from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import FloatingToolbar, {
   Coordinates,
   getNearestNonTextNode,
@@ -58,6 +53,7 @@ class PlaceholderFloatingToolbar extends React.Component<
       popupsMountPoint,
       getFixedCoordinatesFromPos,
       popupsBoundariesElement,
+      intl: { formatMessage },
     } = this.props;
     const target = getNodeFromPos(showInsertPanelAt);
     const offsetParent = getOffsetParent(editorViewDOM, popupsMountPoint);
@@ -77,17 +73,13 @@ class PlaceholderFloatingToolbar extends React.Component<
         fitHeight={32}
         offset={[0, 12]}
       >
-        <FormattedMessage {...messages.placeholderTextPlaceholder}>
-          {(placeholderTextPlaceholder: string) => (
-            <PanelTextInput
-              placeholder={placeholderTextPlaceholder}
-              onSubmit={this.handleSubmit}
-              onBlur={this.handleBlur}
-              autoFocus
-              width={300}
-            />
-          )}
-        </FormattedMessage>
+        <PanelTextInput
+          placeholder={formatMessage(messages.placeholderTextPlaceholder)}
+          onSubmit={this.handleSubmit}
+          onBlur={this.handleBlur}
+          autoFocus
+          width={300}
+        />
       </FloatingToolbar>
     );
   }

@@ -1,7 +1,6 @@
 import { Node, Schema } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { filterChildrenBetween } from '../../../utils';
-// import { mentionPluginKey } from '../../mentions';
 
 const SMART_TO_ASCII = {
   '…': '...',
@@ -19,7 +18,7 @@ const FIND_SMART_CHAR = new RegExp(
   'g',
 );
 
-const replaceMentionForTextContent = (
+const replaceMentionOrEmojiForTextContent = (
   position: number,
   nodeSize: number,
   textContent: string,
@@ -51,23 +50,23 @@ const replaceSmartCharsToAscii = (
 };
 
 const isNodeTextBlock = (schema: Schema) => {
-  const { mention, text } = schema.nodes;
+  const { mention, text, emoji } = schema.nodes;
 
   return (node: Node, _: any, parent: Node) => {
-    // if (node.type === mentionPluginKey || node.type === text) {
-    //   return parent.isTextblock;
-    // }
+    if (node.type === mention || node.type === emoji || node.type === text) {
+      return parent.isTextblock;
+    }
     return false;
   };
 };
 
-export const transformSmartCharsMentions = (
+export const transformSmartCharsMentionsAndEmojis = (
   from: number,
   to: number,
   tr: Transaction,
 ): void => {
   const { schema } = tr.doc.type;
-  const { mention, text } = schema.nodes;
+  const { mention, text, emoji } = schema.nodes;
   // Traverse through all the nodes within the range and replace them with their plaintext counterpart
   const children = filterChildrenBetween(
     tr.doc,
@@ -77,8 +76,13 @@ export const transformSmartCharsMentions = (
   );
 
   children.forEach(({ node, pos }) => {
-    if (node.type === mention) {
-      replaceMentionForTextContent(pos, node.nodeSize, node.attrs.text, tr);
+    if (node.type === mention || node.type === emoji) {
+      replaceMentionOrEmojiForTextContent(
+        pos,
+        node.nodeSize,
+        node.attrs.text,
+        tr,
+      );
     } else if (node.type === text && node.text) {
       const replacePosition = pos > from ? pos : from;
 

@@ -3,26 +3,21 @@ import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { withAnalytics } from '../../../../analytics';
 import ColorPalette from '../../../../components/ColorPalette';
 import Dropdown from '../../../../components/Dropdown';
+import {
+  ExpandIconWrapper,
+  MenuWrapper,
+  Separator,
+  TriggerWrapper,
+} from '../../../../components/styles';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import * as commands from '../../commands/change-color';
 import { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
-import {
-  ExpandIconWrapper,
-  Separator,
-  TriggerWrapper,
-  Wrapper,
-} from './styles';
 
 export const messages = defineMessages({
   textColor: {
@@ -135,10 +130,12 @@ class ToolbarTextColor extends React.Component<
       popupsScrollableElement,
       isReducedSpacing,
       pluginState,
+      intl: { formatMessage },
     } = this.props;
 
+    const labelTextColor = formatMessage(messages.textColor);
     return (
-      <Wrapper>
+      <MenuWrapper>
         <Dropdown
           mountTo={popupsMountPoint}
           boundariesElement={popupsBoundariesElement}
@@ -149,36 +146,32 @@ class ToolbarTextColor extends React.Component<
           fitHeight={80}
           zIndex={akEditorMenuZIndex}
           trigger={
-            <FormattedMessage {...messages.textColor}>
-              {(labelTextColor: string) => (
-                <ToolbarButton
-                  spacing={isReducedSpacing ? 'none' : 'default'}
-                  disabled={pluginState.disabled}
-                  selected={isOpen}
-                  title={labelTextColor}
-                  onClick={this.toggleOpen}
-                  iconBefore={
-                    <TriggerWrapper>
-                      <TextColorIconWrapper>
-                        <EditorTextColorIcon />
-                        <TextColorIconBar
-                          selectedColor={
-                            pluginState.color !== pluginState.defaultColor &&
-                            pluginState.color
-                          }
-                          gradientColors={
-                            pluginState.disabled ? disabledRainbow : rainbow
-                          }
-                        />
-                      </TextColorIconWrapper>
-                      <ExpandIconWrapper>
-                        <ExpandIcon label={labelTextColor} />
-                      </ExpandIconWrapper>
-                    </TriggerWrapper>
-                  }
-                />
-              )}
-            </FormattedMessage>
+            <ToolbarButton
+              spacing={isReducedSpacing ? 'none' : 'default'}
+              disabled={pluginState.disabled}
+              selected={isOpen}
+              title={labelTextColor}
+              onClick={this.toggleOpen}
+              iconBefore={
+                <TriggerWrapper>
+                  <TextColorIconWrapper>
+                    <EditorTextColorIcon />
+                    <TextColorIconBar
+                      selectedColor={
+                        pluginState.color !== pluginState.defaultColor &&
+                        pluginState.color
+                      }
+                      gradientColors={
+                        pluginState.disabled ? disabledRainbow : rainbow
+                      }
+                    />
+                  </TextColorIconWrapper>
+                  <ExpandIconWrapper>
+                    <ExpandIcon label={labelTextColor} />
+                  </ExpandIconWrapper>
+                </TriggerWrapper>
+              }
+            />
           }
         >
           <ColorPalette
@@ -189,7 +182,7 @@ class ToolbarTextColor extends React.Component<
           />
         </Dropdown>
         <Separator />
-      </Wrapper>
+      </MenuWrapper>
     );
   }
 

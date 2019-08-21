@@ -13,7 +13,11 @@ export default {
     'mention',
     'mentionInputRule',
     'mentionKeymap',
+    'emoji',
     'placeholderText',
+    'emojiInputRule',
+    'emojiKeymap',
+    'emojiAsciiInputRule',
     'blockType',
     'quickInsert',
     'tasksAndDecisions',
@@ -22,7 +26,7 @@ export default {
     'typeAhead',
     'typeAheadKeymap',
     'typeAheadInputRule',
-    // This should be always after `typeAheadKeymap`
+    // This should be always after `typeAheadKeymap` & `emojiKeymap`
     'indentationKeymap',
     'lists',
     'textColor',
@@ -105,10 +109,11 @@ export default {
     'unsupportedInline',
     'confluenceJiraIssue',
     'hardBreak',
+    'emoji',
     'placeholder',
+    'mediaSingle',
     'mediaGroup',
     'table',
-    'mediaSingle',
     'media',
     'tableHeader',
     'decisionList',
@@ -139,6 +144,7 @@ export default {
     'underline',
     'code',
     'typeAheadQuery',
+    'emojiQuery',
 
     // Block marks
     'alignment',

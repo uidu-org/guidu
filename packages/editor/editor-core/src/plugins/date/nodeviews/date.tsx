@@ -1,5 +1,10 @@
 import { Date } from '@atlaskit/date';
-import { DateSharedCssClassName, isPastDate, timestampToString, timestampToTaskContext } from '@uidu/editor-common';
+import {
+  DateSharedCssClassName,
+  isPastDate,
+  timestampToString,
+  timestampToTaskContext,
+} from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
@@ -8,7 +13,7 @@ import styled from 'styled-components';
 import { setDatePickerAt } from '../actions';
 
 const SelectableDate = styled(Date)`
-  .ProseMirror-selectednode & {
+  .dateView-content-wrap.ProseMirror-selectednode & {
     position: relative;
     &::before {
       content: '';

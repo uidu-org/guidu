@@ -15,10 +15,18 @@ import {
 import { transformSliceToRemoveOpenBodiedExtension } from '../../extension/actions';
 import { linkifyContent } from '../../hyperlink/utils';
 import { transformSliceToRemoveOpenLayoutNodes } from '../../layout/utils';
+import {
+  transformSliceToCorrectMediaWrapper,
+  unwrapNestedMediaElements,
+} from '../../media/utils/media-common';
 import { transformSliceForMedia } from '../../media/utils/media-single';
 import { transformSliceToAddTableHeaders } from '../../table/commands';
 import { pluginKey as tableStateKey } from '../../table/pm-plugins/main';
-import { transformSliceToRemoveOpenTable } from '../../table/utils';
+import {
+  transformSliceToCorrectEmptyTableCells,
+  transformSliceToFixHardBreakProblemOnCopyFromCell,
+  transformSliceToRemoveOpenTable,
+} from '../../table/utils';
 import { handleMacroAutoConvert, handleMention } from '../handlers';
 import linkify from '../linkify-md-plugin';
 import { escapeLinks } from '../util';
@@ -196,7 +204,6 @@ export function createPlugin(
         if (isRichText) {
           // linkify the text where possible
           slice = linkifyContent(state.schema)(slice);
-
           // run macro autoconvert prior to other conversions
           if (
             handleMacroAutoConvert(text, slice, cardOptions)(
@@ -253,6 +260,10 @@ export function createPlugin(
           slice = handleMention(slice, schema);
         }
 
+        slice = transformSliceToFixHardBreakProblemOnCopyFromCell(
+          slice,
+          schema,
+        );
         /** If a partial paste of table, paste only table's content */
         slice = transformSliceToRemoveOpenTable(slice, schema);
 
@@ -267,6 +278,10 @@ export function createPlugin(
         slice = transformSliceToJoinAdjacentCodeBlocks(slice);
 
         slice = transformSingleLineCodeBlockToCodeMark(slice, schema);
+
+        slice = transformSliceToCorrectMediaWrapper(slice, schema);
+
+        slice = transformSliceToCorrectEmptyTableCells(slice, schema);
 
         if (
           slice.content.childCount &&
@@ -289,6 +304,11 @@ export function createPlugin(
           html = html.replace(/white-space:pre/g, '');
           html = html.replace(/white-space:pre-wrap/g, '');
         }
+
+        if (html.indexOf('<img ') >= 0) {
+          html = unwrapNestedMediaElements(html);
+        }
+
         return html;
       },
     },

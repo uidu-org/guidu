@@ -1,15 +1,15 @@
-import { Plugin, EditorState } from 'prosemirror-state';
-import { DecorationSet, Decoration } from 'prosemirror-view';
+import { EditorState, Plugin } from 'prosemirror-state';
+import { Decoration, DecorationSet } from 'prosemirror-view';
 import {
+  HyperlinkState,
   InsertStatus,
   stateKey as hyperlinkStateKey,
-  HyperlinkState,
 } from './main';
 
 const createTextCursor = (pos: number): Decoration => {
   const node = document.createElement('div');
   node.className = 'ProseMirror-fake-text-cursor';
-  return Decoration.widget(pos, node);
+  return Decoration.widget(pos, node, { key: 'hyperlink-text-cursor' });
 };
 
 const createTextSelection = (from: number, to: number): Decoration =>

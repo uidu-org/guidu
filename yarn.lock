@@ -262,9 +262,9 @@
     "@babel/runtime" "^7.0.0"
     prop-types "^15.5.10"
 
-"@atlaskit/editor-common@^39.17.0":
+"@uidu/editor-common@^39.17.0":
   version "39.17.3"
-  resolved "https://registry.yarnpkg.com/@atlaskit/editor-common/-/editor-common-39.17.3.tgz#4312b59b8b0e27dc3277e22ae2b16aa59e247e39"
+  resolved "https://registry.yarnpkg.com/@uidu/editor-common/-/editor-common-39.17.3.tgz#4312b59b8b0e27dc3277e22ae2b16aa59e247e39"
   integrity sha512-Gn1NZUyryrgVWgxlHogdMAzLXWk8vGQXz5g77iRo61tPgjvkGfCJ28yS+D+nAMhyurg6DnL6hCOHVld1Jf0Awg==
   dependencies:
     "@atlaskit/adf-schema" "^3.0.0"
@@ -302,7 +302,7 @@
   integrity sha512-L1j5zFB25Yhmk42ZJuNI637PhEJE0KUmce4cyrCME1fPvgyT9Fg+sHE5tVca+Kpd+PTLP2+rZ9m/HTObhFnYHw==
   dependencies:
     "@atlaskit/adf-schema" "^3.0.0"
-    "@atlaskit/editor-common" "^39.17.0"
+    "@uidu/editor-common" "^39.17.0"
     markdown-it "^8.4.0"
     markdown-it-table "^2.0.4"
     prosemirror-markdown "^1.2.0"

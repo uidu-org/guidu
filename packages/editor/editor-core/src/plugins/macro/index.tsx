@@ -2,7 +2,7 @@ import { ProviderFactory } from '@uidu/editor-common';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
-import { PMPluginFactoryParams } from '../../types';
+import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import { setMacroProvider } from './actions';
 import { MacroProvider } from './types';
 
@@ -37,19 +37,23 @@ export const createPlugin = (
     },
     key: pluginKey,
     view: (view: EditorView) => {
+      const handleProvider = (
+        _name: string,
+        provider?: Promise<MacroProvider>,
+      ) => provider && setMacroProvider(provider)(view);
       // make sure editable DOM node is mounted
       if (view.dom.parentNode) {
-        providerFactory.subscribe(
-          'macroProvider',
-          (_name, provider?: Promise<MacroProvider>) =>
-            provider && setMacroProvider(provider)(view),
-        );
+        providerFactory.subscribe('macroProvider', handleProvider);
       }
-      return {};
+      return {
+        destroy() {
+          providerFactory.unsubscribe('macroProvider', handleProvider);
+        },
+      };
     },
   });
 
-export default {
+const macroPlugin = (): EditorPlugin => ({
   pmPlugins() {
     return [
       {
@@ -59,4 +63,6 @@ export default {
       },
     ];
   },
-};
+});
+
+export default macroPlugin;

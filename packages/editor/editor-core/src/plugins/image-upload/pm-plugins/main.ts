@@ -4,13 +4,15 @@ import { analyticsService } from '../../../analytics';
 import { PMPluginFactoryParams } from '../../../types';
 import { isPastedFile } from '../../../utils/clipboard';
 import { isDroppedFile } from '../../../utils/drag-drop';
-import { ImageUploadHandler, ImageUploadPluginAction, ImageUploadPluginState } from '../types';
+import {
+  ImageUploadHandler,
+  ImageUploadPluginAction,
+  ImageUploadPluginState,
+} from '../types';
 import { canInsertMedia, isMediaSelected } from '../utils';
 import { insertExternalImage, startImageUpload } from './commands';
 
-
-
-type DOMHandlerPredicate = ((e: Event) => boolean);
+type DOMHandlerPredicate = (e: Event) => boolean;
 const createDOMHandler = (pred: DOMHandlerPredicate, eventName: string) => (
   view: EditorView,
   event: Event,

@@ -96,7 +96,6 @@ const textFormatting = (options: TextFormattingOptions): EditorPlugin => ({
   }) {
     return (
       <WithPluginState
-        editorView={editorView}
         plugins={{
           textFormattingState: textFormattingPluginKey,
           clearFormattingState: clearFormattingPluginKey,

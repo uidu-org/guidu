@@ -2,13 +2,16 @@ import { getValidNode } from '@uidu/editor-common';
 import assert from 'assert';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
-import { replaceParentNodeOfType, replaceSelectedNode, safeInsert } from 'prosemirror-utils';
+import {
+  replaceParentNodeOfType,
+  replaceSelectedNode,
+  safeInsert,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { CommandDispatch } from '../../types';
 import { normaliseNestedLayout } from '../../utils';
 import { pluginKey } from './';
 import { MacroAttributes, MacroProvider } from './types';
-
 
 export const insertMacroFromMacroBrowser = (
   macroProvider: MacroProvider,

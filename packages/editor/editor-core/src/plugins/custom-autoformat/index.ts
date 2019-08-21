@@ -1,17 +1,15 @@
-import { Plugin as PMPlugin, EditorState } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
 import { keydownHandler } from 'prosemirror-keymap';
-
+import { EditorState, Plugin as PMPlugin } from 'prosemirror-state';
+import { EditorView } from 'prosemirror-view';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
+import { buildHandler, completeReplacements } from './doc';
+import { InputRule, triggerInputRule } from './input-rules';
+import reducers from './reducers';
 import {
   AutoformattingProvider,
-  CustomAutoformatState,
   CustomAutoformatAction,
+  CustomAutoformatState,
 } from './types';
-
-import reducers from './reducers';
-import { triggerInputRule, InputRule } from './input-rules';
-import { completeReplacements, buildHandler } from './doc';
 import { getPluginState, pluginKey } from './utils';
 
 export const createPMPlugin = ({ providerFactory }: PMPluginFactoryParams) => {
@@ -115,10 +113,10 @@ export const createPMPlugin = ({ providerFactory }: PMPluginFactoryParams) => {
   });
 };
 
-const customAutoformatPlugin: EditorPlugin = {
+const customAutoformatPlugin = (): EditorPlugin => ({
   pmPlugins() {
     return [{ name: 'customAutoformat', plugin: createPMPlugin }];
   },
-};
+});
 
 export default customAutoformatPlugin;

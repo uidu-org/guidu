@@ -1,7 +1,7 @@
 // @ts-ignore: unused variable
 // prettier-ignore
-import { colors } from '@uidu/theme';
-import { css } from 'styled-components';
+import { css, Styles, StyledComponentClass } from 'styled-components';
+import { colors } from '@atlaskit/theme';
 
 export const placeholderTextStyles = css`
   .ProseMirror span[data-placeholder] {

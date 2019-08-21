@@ -3,12 +3,7 @@ import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { analyticsService } from '../../../../analytics';
 import DropdownMenu from '../../../../components/DropdownMenu';
 import {
@@ -106,7 +101,6 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
   };
 
   render() {
-    console.log(this.props);
     const { isOpen } = this.state;
     const {
       popupsMountPoint,
@@ -115,6 +109,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
       isReducedSpacing,
       textFormattingState = {},
       clearFormattingState = {},
+      intl: { formatMessage },
     } = this.props;
     const {
       codeActive,
@@ -130,31 +125,28 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
     } = textFormattingState;
     const { formattingIsPresent } = clearFormattingState;
     const items = this.createItems();
+    const labelMoreFormatting = formatMessage(messages.moreFormatting);
 
     const toolbarButtonFactory = (disabled: boolean) => (
-      <FormattedMessage {...messages.moreFormatting}>
-        {(labelMoreFormatting: string) => (
-          <ToolbarButton
-            spacing={isReducedSpacing ? 'none' : 'default'}
-            selected={
-              isOpen ||
-              underlineActive ||
-              codeActive ||
-              strikeActive ||
-              subscriptActive ||
-              superscriptActive
-            }
-            disabled={disabled}
-            onClick={this.handleTriggerClick}
-            title={labelMoreFormatting}
-            iconBefore={
-              <TriggerWrapper>
-                <MoreIcon label={labelMoreFormatting} />
-              </TriggerWrapper>
-            }
-          />
-        )}
-      </FormattedMessage>
+      <ToolbarButton
+        spacing={isReducedSpacing ? 'none' : 'default'}
+        selected={
+          isOpen ||
+          underlineActive ||
+          codeActive ||
+          strikeActive ||
+          subscriptActive ||
+          superscriptActive
+        }
+        disabled={disabled}
+        onClick={this.handleTriggerClick}
+        title={labelMoreFormatting}
+        iconBefore={
+          <TriggerWrapper>
+            <MoreIcon label={labelMoreFormatting} />
+          </TriggerWrapper>
+        }
+      />
     );
 
     if (
@@ -291,7 +283,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
     items.push({
       key: value,
       content,
-      elemAfter: <Shortcut>{tooltip}</Shortcut>,
+      elemAfter: tooltip && <Shortcut>{tooltip}</Shortcut>,
       value,
       isActive: active,
       isDisabled: disabled,

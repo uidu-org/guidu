@@ -5,8 +5,31 @@ import { EditorView } from 'prosemirror-view';
 import { commandWithAnalytics as commandWithV2Analytics } from '../../../analytics';
 import { Command } from '../../../types';
 import { pipe } from '../../../utils';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, AnalyticsEventPayload, EVENT_TYPE, INPUT_METHOD, PasteContent, PasteContents, PasteSource, PasteType, PasteTypes, PASTE_ACTION_SUBJECT_ID, withAnalytics } from '../../analytics';
-import { handleCodeBlock, handleMarkdown, handleMediaSingle, handlePasteAsPlainText, handlePasteIntoTaskAndDecision, handlePastePreservingMarks, handleRichText } from '../handlers';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  AnalyticsEventPayload,
+  EVENT_TYPE,
+  INPUT_METHOD,
+  PasteContent,
+  PasteContents,
+  PasteSource,
+  PasteType,
+  PasteTypes,
+  PASTE_ACTION_SUBJECT_ID,
+  withAnalytics,
+} from '../../analytics';
+import {
+  handleCodeBlock,
+  handleMarkdown,
+  handleMediaSingle,
+  handlePasteAsPlainText,
+  handlePasteIntoTaskAndDecision,
+  handlePastePreservingMarks,
+  handleRichText,
+} from '../handlers';
 import { getPasteSource } from '../util';
 
 type PasteContext = {
@@ -76,16 +99,23 @@ function getContent(state: EditorState, slice: Slice): PasteContent {
   slice.content.forEach((node: Node) => {
     if (node.type === paragraph && node.content.size === 0) {
       // Skip empty paragraph
-      return undefined;
+      return;
     }
 
-    if (node.type === paragraph) {
-      if (node.rangeHasMark(0, node.nodeSize - 2, link)) {
-        // Check node contain link
-        nodeOrMarkName.add('url');
-        return undefined;
-      }
+    if (node.type.name === 'text' && link.isInSet(node.marks)) {
+      nodeOrMarkName.add('url');
+      return;
     }
+
+    // Check node contain link
+    if (
+      node.type === paragraph &&
+      node.rangeHasMark(0, node.nodeSize - 2, link)
+    ) {
+      nodeOrMarkName.add('url');
+      return;
+    }
+
     nodeOrMarkName.add(node.type.name);
   });
 

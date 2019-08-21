@@ -5,8 +5,6 @@ import { Dispatch } from '../../../event-dispatcher';
 import { getActiveColor } from '../utils/color';
 import { getDisabledState } from '../utils/disabled';
 
-
-
 export type TextColorPluginState = {
   palette: Map<string, string>;
   borderColorPalette: {

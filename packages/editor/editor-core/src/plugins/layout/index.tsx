@@ -1,6 +1,5 @@
 import { layoutColumn, layoutSection } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { EditorPlugin } from '../../types';
 import { FloatingToolbarConfig } from '../floating-toolbar/types';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
@@ -47,11 +46,7 @@ const layoutPlugin = (): EditorPlugin => ({
         description: formatMessage(messages.columnsDescription),
         keywords: ['layout', 'section', 'column'],
         priority: 1100,
-        icon: () => (
-          <FormattedMessage {...messages.columns}>
-            {(label: string) => <IconLayout label={label} />}
-          </FormattedMessage>
-        ),
+        icon: () => <IconLayout label={formatMessage(messages.columns)} />,
         action(insert, state) {
           return insert(createDefaultLayoutSection(state));
         },

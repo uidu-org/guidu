@@ -1,5 +1,10 @@
 import Calendar from '@atlaskit/calendar';
-import { akEditorFloatingDialogZIndex, Popup, timestampToIsoFormat, timestampToUTCDate } from '@uidu/editor-common';
+import {
+  akEditorFloatingDialogZIndex,
+  Popup,
+  timestampToIsoFormat,
+  timestampToUTCDate,
+} from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';

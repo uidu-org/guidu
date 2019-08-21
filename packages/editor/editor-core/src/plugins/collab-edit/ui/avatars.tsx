@@ -5,11 +5,7 @@ import { akEditorSmallZIndex } from '@uidu/editor-common';
 import { colors, gridSize } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import {
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled, { keyframes } from 'styled-components';
 import ToolbarButton from '../../../components/ToolbarButton';
 import WithPluginState from '../../../components/WithPluginState';
@@ -133,21 +129,22 @@ class Avatars extends React.Component<Props & WrappedComponentProps, any> {
       inviteToEditComponent: InviteToEditComponent,
       inviteToEditHandler,
       isInviteToEditButtonSelected,
+      intl: { formatMessage },
     } = this.props;
 
     const button = (
-      <FormattedMessage {...messages.inviteToEditButtonTitle}>
-        {(inviteToEditButtonTitle: string) => (
-          <ToolbarButton
-            className="invite-to-edit"
-            onClick={inviteToEditHandler}
-            selected={isInviteToEditButtonSelected}
-            title={inviteToEditButtonTitle}
-            titlePosition="bottom"
-            iconBefore={<InviteTeamIcon label={inviteToEditButtonTitle} />}
+      <ToolbarButton
+        className="invite-to-edit"
+        onClick={inviteToEditHandler}
+        selected={isInviteToEditButtonSelected}
+        title={formatMessage(messages.inviteToEditButtonTitle)}
+        titlePosition="bottom"
+        iconBefore={
+          <InviteTeamIcon
+            label={formatMessage(messages.inviteToEditButtonTitle)}
           />
-        )}
-      </FormattedMessage>
+        }
+      />
     );
 
     if (InviteToEditComponent) {

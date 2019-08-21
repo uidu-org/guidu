@@ -1,7 +1,7 @@
 import { EditorPlugin } from '../../types';
 import { createPlugin } from './pm-plugins/main';
 
-const paste: EditorPlugin = {
+const pastePlugin = (): EditorPlugin => ({
   pmPlugins() {
     return [
       {
@@ -15,6 +15,6 @@ const paste: EditorPlugin = {
       },
     ];
   },
-};
+});
 
-export default paste;
+export default pastePlugin;

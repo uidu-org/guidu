@@ -3,7 +3,7 @@ import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import { GapCursorSelection } from '../plugins/gap-cursor';
-import { transformSmartCharsMentions } from '../plugins/text-formatting/commands/transform-to-code';
+import { transformSmartCharsMentionsAndEmojis } from '../plugins/text-formatting/commands/transform-to-code';
 import { Command } from '../types';
 
 type Predicate = (state: EditorState, view?: EditorView) => boolean;
@@ -95,7 +95,7 @@ const applyMarkOnRange = (
   const { schema } = tr.doc.type;
   const { code } = schema.marks;
   if (mark.type === code) {
-    transformSmartCharsMentions(from, to, tr);
+    transformSmartCharsMentionsAndEmojis(from, to, tr);
   }
 
   tr.doc.nodesBetween(tr.mapping.map(from), tr.mapping.map(to), (node, pos) => {

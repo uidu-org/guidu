@@ -14,7 +14,7 @@ import {
   layoutPlugin,
   listsPlugin,
   // mediaPlugin,
-  // pastePlugin,
+  pastePlugin,
   placeholderPlugin,
   quickInsertPlugin,
   tablesPlugin,
@@ -30,7 +30,7 @@ import { EditorPlugin, EditorProps } from '../types';
  */
 export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
   return [
-    // pastePlugin,
+    pastePlugin(),
     basePlugin(props.appearance),
     blockTypePlugin(),
     placeholderPlugin(),

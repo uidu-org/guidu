@@ -1,6 +1,5 @@
 import { bulletList, listItem, orderedList } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { ToolbarSize } from '../../components/Toolbar';
 import WithPluginState from '../../components/WithPluginState';
 import { toggleBulletList, toggleOrderedList, tooltip } from '../../keymaps';
@@ -48,11 +47,7 @@ const listPlugin = (): EditorPlugin => ({
         keywords: ['ul', 'unordered list'],
         priority: 1100,
         keyshortcut: tooltip(toggleBulletList),
-        icon: () => (
-          <FormattedMessage {...messages.unorderedList}>
-            {(label: string) => <IconList label={label} />}
-          </FormattedMessage>
-        ),
+        icon: () => <IconList label={formatMessage(messages.unorderedList)} />,
         action(insert, state) {
           const tr = insert(
             state.schema.nodes.bulletList.createChecked(
@@ -82,9 +77,7 @@ const listPlugin = (): EditorPlugin => ({
         priority: 1200,
         keyshortcut: tooltip(toggleOrderedList),
         icon: () => (
-          <FormattedMessage {...messages.orderedList}>
-            {(label: string) => <IconListNumber label={label} />}
-          </FormattedMessage>
+          <IconListNumber label={formatMessage(messages.orderedList)} />
         ),
         action(insert, state) {
           const tr = insert(

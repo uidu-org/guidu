@@ -2,7 +2,9 @@ import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import InlineNodeWrapper, { createMobileInlineDomRef } from '../../../components/InlineNodeWrapper';
+import InlineNodeWrapper, {
+  createMobileInlineDomRef,
+} from '../../../components/InlineNodeWrapper';
 import { PortalProviderAPI } from '../../../components/PortalProvider';
 import { getPosHandler, ReactNodeView } from '../../../nodeviews';
 import { EditorAppearance } from '../../../types';

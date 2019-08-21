@@ -4,7 +4,12 @@ import { Mark } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { defineMessages } from 'react-intl';
+import {
+  RECENT_SEARCH_HEIGHT_IN_PX,
+  RECENT_SEARCH_WIDTH_IN_PX,
+} from '../../components/RecentSearch/ToolbarComponents';
+import { linkToolbarMessages as linkToolbarCommonMessages } from '../../messages';
+import { DispatchAnalyticsEvent } from '../analytics';
 import { AlignType, FloatingToolbarHandler } from '../floating-toolbar/types';
 import {
   editInsertedLink,
@@ -21,26 +26,8 @@ import {
   InsertState,
   stateKey,
 } from './pm-plugins/main';
-import RecentList from './ui/RecentSearch';
+import RecentList from './ui/HyperlinkAddToolbar';
 import { normalizeUrl } from './utils';
-
-export const messages = defineMessages({
-  openLink: {
-    id: 'fabric.editor.openLink',
-    defaultMessage: 'Open link in a new tab',
-    description: 'Opens the link in a new tab',
-  },
-  unlink: {
-    id: 'fabric.editor.unlink',
-    defaultMessage: 'Unlink',
-    description: 'Removes the hyperlink but keeps your text.',
-  },
-  editLink: {
-    id: 'fabric.editor.editLink',
-    defaultMessage: 'Edit link',
-    description: 'Edit the link, update display text',
-  },
-});
 
 /* type guard for edit links */
 function isEditLink(
@@ -141,6 +128,11 @@ export const getToolbarConfig: FloatingToolbarHandler = (
         );
         const link = linkMark[0] && linkMark[0].attrs.href;
 
+        const labelOpenLink = formatMessage(linkToolbarCommonMessages.openLink);
+        const labelUnlink = formatMessage(linkToolbarCommonMessages.unlink);
+
+        const editLink = formatMessage(linkToolbarCommonMessages.editLink);
+
         return {
           ...hyperLinkToolbar,
           height: 32,
@@ -150,7 +142,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               type: 'button',
               onClick: editInsertedLink(),
               selected: false,
-              title: formatMessage(messages.editLink),
+              title: editLink,
               showTitle: true,
             },
             {
@@ -162,7 +154,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               href: link,
               onClick: () => true,
               selected: false,
-              title: formatMessage(messages.openLink),
+              title: labelOpenLink,
               icon: OpenIcon,
               className: 'hyperlink-open-link',
             },
@@ -173,7 +165,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               type: 'button',
               onClick: removeLink(pos),
               selected: false,
-              title: formatMessage(messages.unlink),
+              title: labelUnlink,
               icon: UnlinkIcon,
             },
           ],
@@ -190,17 +182,21 @@ export const getToolbarConfig: FloatingToolbarHandler = (
           );
           link = linkMark[0] && linkMark[0].attrs.href;
         }
+        const displayText = isEditLink(activeLinkMark)
+          ? getLinkText(activeLinkMark, state)
+          : linkState.activeText;
 
         return {
           ...hyperLinkToolbar,
-          height: 360,
-          width: 420,
+          height: RECENT_SEARCH_HEIGHT_IN_PX,
+          width: RECENT_SEARCH_WIDTH_IN_PX,
           items: [
             {
               type: 'custom',
               render: (
                 view?: EditorView,
                 idx?: number,
+                dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
               ):
                 | React.ComponentClass
                 | React.SFC
@@ -213,11 +209,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                   <RecentList
                     key={idx}
                     displayUrl={link}
-                    displayText={
-                      isEditLink(activeLinkMark)
-                        ? getLinkText(activeLinkMark, state)
-                        : linkState.activeText
-                    }
+                    displayText={displayText || ''}
                     providerFactory={providerFactory}
                     onSubmit={(href, text) => {
                       isEditLink(activeLinkMark)
@@ -234,6 +226,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                       view.focus();
                     }}
                     onBlur={handleBlur(activeLinkMark, view)}
+                    dispatchAnalyticsEvent={dispatchAnalyticsEvent}
                   />
                 );
               },

@@ -2,7 +2,6 @@ import { date } from '@atlaskit/adf-schema';
 import { todayTimestampInUTC } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
 import Loadable from 'react-loadable';
 import WithPluginState from '../../components/WithPluginState';
 import { EditorPlugin } from '../../types';
@@ -33,7 +32,7 @@ export type DateType = {
   day?: number;
 };
 
-const datePlugin: EditorPlugin = {
+const datePlugin = (): EditorPlugin => ({
   nodes() {
     return [{ name: 'date', node: date }];
   },
@@ -109,11 +108,7 @@ const datePlugin: EditorPlugin = {
         priority: 800,
         keywords: ['time', 'today', '/'],
         keyshortcut: '//',
-        icon: () => (
-          <FormattedMessage {...messages.date}>
-            {(label: string) => <IconDate label={label} />}
-          </FormattedMessage>
-        ),
+        icon: () => <IconDate label={formatMessage(messages.date)} />,
         action(insert, state) {
           const dateNode = state.schema.nodes.date.createChecked({
             timestamp: todayTimestampInUTC(),
@@ -127,6 +122,6 @@ const datePlugin: EditorPlugin = {
       },
     ],
   },
-};
+});
 
 export default datePlugin;

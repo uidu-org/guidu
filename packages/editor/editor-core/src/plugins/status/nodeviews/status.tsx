@@ -3,12 +3,7 @@ import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import InlineNodeWrapper, {
   createMobileInlineDomRef,
@@ -96,13 +91,15 @@ class StatusContainerView extends React.Component<
         editorView={view}
         eventDispatcher={eventDispatcher}
         render={() => {
-          const { text, color, localId, style } = this.props;
+          const {
+            text,
+            color,
+            localId,
+            style,
+            intl: { formatMessage },
+          } = this.props;
 
-          const statusText = text ? (
-            text
-          ) : (
-            <FormattedMessage {...messages.placeholder} />
-          );
+          const statusText = text ? text : formatMessage(messages.placeholder);
 
           return (
             <StyledStatus placeholderStyle={!text}>

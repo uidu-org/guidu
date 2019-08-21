@@ -1,6 +1,6 @@
 import { Node } from 'prosemirror-model';
 import { Plugin, PluginKey } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
+import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { EditorPlugin } from '../../types';
 import { isEmptyDocument } from '../../utils';
 
@@ -16,8 +16,45 @@ export function createPlaceholderDecoration(
   placeholderNode.textContent = placeholderText;
   placeholderDecoration.appendChild(placeholderNode);
   return DecorationSet.create(doc, [
-    Decoration.widget(1, placeholderDecoration, { side: -1 }),
+    Decoration.widget(1, placeholderDecoration, {
+      side: -1,
+      key: 'placeholder',
+    }),
   ]);
+}
+
+function removePlaceholderIfData(view: EditorView, event: Event) {
+  const havePlaceholder = pluginKey.getState(view.state);
+  const compositionEvent = event as CompositionEvent;
+
+  const hasData =
+    compositionEvent.type === 'compositionstart' ||
+    (compositionEvent.type === 'compositionupdate' && !!compositionEvent.data);
+
+  if (havePlaceholder && hasData) {
+    view.dispatch(
+      view.state.tr.setMeta(pluginKey, { removePlaceholder: true }),
+    );
+  }
+
+  return false;
+}
+
+function applyPlaceholderIfEmpty(view: EditorView, event: Event) {
+  const havePlaceholder = pluginKey.getState(view.state);
+  const compositionEvent = event as CompositionEvent;
+
+  const emptyData = compositionEvent.data === '';
+
+  if (!havePlaceholder && emptyData) {
+    view.dispatch(
+      view.state.tr.setMeta(pluginKey, {
+        applyPlaceholderIfEmpty: true,
+      }),
+    );
+  }
+
+  return false;
 }
 
 export function createPlugin(placeholderText?: string): Plugin | undefined {
@@ -64,31 +101,11 @@ export function createPlugin(placeholderText?: string): Plugin | undefined {
       // an Editor state update so the placeholder will still be shown. We hook into the compositionstart
       // and compositionend events instead, to make sure we show/hide the placeholder for these devices.
       handleDOMEvents: {
-        compositionstart(view) {
-          const havePlaceholder = pluginKey.getState(view.state);
-
-          if (havePlaceholder) {
-            // remove placeholder, since document definitely contains text
-            view.dispatch(
-              view.state.tr.setMeta(pluginKey, { removePlaceholder: true }),
-            );
-          }
-
-          return false;
-        },
-        compositionend(view) {
-          const havePlaceholder = pluginKey.getState(view.state);
-
-          if (!havePlaceholder) {
-            view.dispatch(
-              view.state.tr.setMeta(pluginKey, {
-                applyPlaceholderIfEmpty: true,
-              }),
-            );
-          }
-
-          return false;
-        },
+        compositionstart: removePlaceholderIfData,
+        compositionupdate: (view: EditorView, event: Event) =>
+          applyPlaceholderIfEmpty(view, event) ||
+          removePlaceholderIfData(view, event),
+        compositionend: applyPlaceholderIfEmpty,
       },
     },
   });

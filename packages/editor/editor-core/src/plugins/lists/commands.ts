@@ -1,15 +1,45 @@
 import * as baseCommand from 'prosemirror-commands';
-import { Fragment, Node, NodeRange, NodeType, ResolvedPos, Slice } from 'prosemirror-model';
+import {
+  Fragment,
+  Node,
+  NodeRange,
+  NodeType,
+  ResolvedPos,
+  Slice,
+} from 'prosemirror-model';
 import * as baseListCommand from 'prosemirror-schema-list';
-import { EditorState, NodeSelection, TextSelection, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  NodeSelection,
+  TextSelection,
+  Transaction,
+} from 'prosemirror-state';
 import { liftTarget, ReplaceAroundStep } from 'prosemirror-transform';
-import { findPositionOfNodeBefore, hasParentNodeOfType } from 'prosemirror-utils';
+import {
+  findPositionOfNodeBefore,
+  hasParentNodeOfType,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command } from '../../types';
 import { compose, isRangeOfType, sanitizeSelectionMarks } from '../../utils';
-import { filter, findCutBefore, isEmptySelectionAtStart, isFirstChildOfParent } from '../../utils/commands';
+import {
+  filter,
+  findCutBefore,
+  isEmptySelectionAtStart,
+  isFirstChildOfParent,
+} from '../../utils/commands';
 import { hasVisibleContent, isNodeEmpty } from '../../utils/document';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, EVENT_TYPE, INDENT_DIR, INDENT_TYPE, INPUT_METHOD, withAnalytics } from '../analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  INDENT_DIR,
+  INDENT_TYPE,
+  INPUT_METHOD,
+  withAnalytics,
+} from '../analytics';
 import { GapCursorSelection } from '../gap-cursor';
 import { liftFollowingList, liftSelectionList } from './transforms';
 
@@ -481,11 +511,7 @@ export function liftListItems(): Command {
     tr.doc.nodesBetween($from.pos, $to.pos, (node, pos) => {
       // Following condition will ensure that block types paragraph, heading, codeBlock, blockquote, panel are lifted.
       // isTextblock is true for paragraph, heading, codeBlock.
-      if (
-        node.isTextblock ||
-        node.type.name === 'blockquote' ||
-        node.type.name === 'panel'
-      ) {
+      if (node.isTextblock) {
         const sel = new NodeSelection(tr.doc.resolve(tr.mapping.map(pos)));
         const range = sel.$from.blockRange(sel.$to);
 

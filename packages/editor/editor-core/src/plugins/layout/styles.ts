@@ -1,6 +1,6 @@
 // @ts-ignore: unused variable
 // prettier-ignore
-import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorDeleteBorderSize, columnLayoutSharedStyle, gridMediumMaxWidth } from '@uidu/editor-common';
+import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorSelectedBorderSize, columnLayoutSharedStyle, gridMediumMaxWidth } from '@uidu/editor-common';
 import { colors, gridSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { TableCssClassName } from '../table/types';
@@ -52,7 +52,7 @@ export const layoutStyles = css`
 
       &.selected.danger > [data-layout-column] {
         background-color: ${akEditorDeleteBackground};
-        border: ${akEditorDeleteBorderSize}px solid ${akEditorDeleteBorder};
+        border: ${akEditorSelectedBorderSize}px solid ${akEditorDeleteBorder};
       }
     }
   }
