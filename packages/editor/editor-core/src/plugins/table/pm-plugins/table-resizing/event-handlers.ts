@@ -1,28 +1,28 @@
-import { TableMap } from 'prosemirror-tables';
-import { EditorView } from 'prosemirror-view';
-import { getSelectionRect } from 'prosemirror-utils';
+import { CellAttributes, TableLayout } from '@atlaskit/adf-schema';
 import {
-  tableCellMinWidth,
   akEditorTableNumberColumnWidth,
+  tableCellMinWidth,
 } from '@uidu/editor-common';
-import { TableLayout, CellAttributes } from '@atlaskit/adf-schema';
-import { pluginKey as editorDisabledPluginKey } from '../../../editor-disabled';
-import { updateColumnWidths } from '../../transforms';
-import {
-  getResizeStateFromDOM,
-  resizeColumn,
-  getLayoutSize,
-  currentColWidth,
-  pointsAtCell,
-  createResizeHandle,
-  updateResizeHandle,
-  updateControls,
-} from './utils';
-import { getSelectedColumnIndexes } from '../../utils';
-import { pluginKey as widthPluginKey } from '../../../width';
-import { getPluginState } from './plugin';
-import { setDragging, evenColumns } from './commands';
+import { TableMap } from 'prosemirror-tables';
+import { getSelectionRect } from 'prosemirror-utils';
+import { EditorView } from 'prosemirror-view';
 import { getParentNodeWidth } from '../../../../utils/node-width';
+import { pluginKey as editorDisabledPluginKey } from '../../../editor-disabled';
+import { pluginKey as widthPluginKey } from '../../../width';
+import { updateColumnWidths } from '../../transforms';
+import { getSelectedColumnIndexes } from '../../utils';
+import { evenColumns, setDragging } from './commands';
+import { getPluginState } from './plugin';
+import {
+  createResizeHandle,
+  currentColWidth,
+  getLayoutSize,
+  getResizeStateFromDOM,
+  pointsAtCell,
+  resizeColumn,
+  updateControls,
+  updateResizeHandle,
+} from './utils';
 
 export const handleMouseDown = (
   view: EditorView,

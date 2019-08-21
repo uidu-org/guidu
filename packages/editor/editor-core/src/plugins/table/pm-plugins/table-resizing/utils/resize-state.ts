@@ -1,12 +1,12 @@
-import { Node as PMNode } from 'prosemirror-model';
 import { tableCellMinWidth } from '@uidu/editor-common';
-import { growColumn, shrinkColumn } from './resize-logic';
+import { Node as PMNode } from 'prosemirror-model';
+import { insertColgroupFromNode } from './colgroup';
 import {
   ColumnState,
   getCellsRefsInColumn,
   getColumnStateFromDOM,
 } from './column-state';
-import { insertColgroupFromNode } from './colgroup';
+import { growColumn, shrinkColumn } from './resize-logic';
 
 export interface ResizeState {
   cols: ColumnState[];
@@ -66,9 +66,9 @@ export const updateColgroup = (state: ResizeState): void => {
   state.cols
     .filter(column => !!column.width) // if width is 0, we dont want to apply that.
     .forEach((column, i) => {
-      (state.colgroupChildren[i] as HTMLElement).style.width = `${
-        column.width
-      }px`;
+      (state.colgroupChildren[
+        i
+      ] as HTMLElement).style.width = `${column.width}px`;
     });
 };
 

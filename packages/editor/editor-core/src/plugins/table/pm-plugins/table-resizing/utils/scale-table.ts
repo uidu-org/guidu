@@ -1,17 +1,17 @@
-import { Node as PMNode } from 'prosemirror-model';
 import {
-  tableCellMinWidth,
   akEditorTableNumberColumnWidth,
+  tableCellMinWidth,
 } from '@uidu/editor-common';
-import { getTableWidth } from '../../../utils';
+import { Node as PMNode } from 'prosemirror-model';
 import { DomAtPos } from '../../../../../types';
+import { getTableWidth } from '../../../utils';
 import {
+  adjustColumnsWidths,
   getLayoutSize,
-  ResizeState,
   getResizeStateFromDOM,
   getTotalWidth,
   reduceSpace,
-  adjustColumnsWidths,
+  ResizeState,
 } from '../utils';
 
 export interface ScaleOptions {
