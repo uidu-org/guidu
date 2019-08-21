@@ -6,6 +6,7 @@ import {
 import { Selection } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { tableDeleteButtonSize } from '../ui/styles';
+import { TableCssClassName as ClassName } from '../types';
 
 export interface RowParams {
   startIndex: number;
@@ -24,23 +25,6 @@ export const getRowHeights = (tableRef: HTMLTableElement): number[] => {
     }
   }
   return heights;
-};
-
-export const isRowInsertButtonVisible = (
-  index: number,
-  selection: Selection,
-): boolean => {
-  const rect = getSelectionRect(selection);
-  if (
-    rect &&
-    selection instanceof CellSelection &&
-    selection.isRowSelection() &&
-    !isTableSelected(selection) &&
-    rect.bottom - index === index - rect.top
-  ) {
-    return false;
-  }
-  return true;
 };
 
 export const isRowDeleteButtonVisible = (selection: Selection): boolean => {
@@ -118,9 +102,9 @@ export const getRowClassNames = (
     isRowSelected(index)(selection) ||
     (hoveredRows.indexOf(index) > -1 && !isResizing)
   ) {
-    classNames.push('active');
+    classNames.push(ClassName.HOVERED_CELL_ACTIVE);
     if (isInDanger) {
-      classNames.push('danger');
+      classNames.push(ClassName.HOVERED_CELL_IN_DANGER);
     }
   }
   return classNames.join(' ');

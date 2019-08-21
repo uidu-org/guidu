@@ -1,13 +1,10 @@
-import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
+import { TableLayout } from '@atlaskit/adf-schema';
 import { Popup } from '@uidu/editor-common';
+import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import {
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import { closestElement } from '../../../../utils';
@@ -23,6 +20,7 @@ export interface Props {
   mountPoint?: HTMLElement;
   boundariesElement?: HTMLElement;
   scrollableElement?: HTMLElement;
+  layout?: TableLayout;
 }
 
 const ButtonWrapper = styled.div`
@@ -40,7 +38,8 @@ class FloatingContextualButton extends React.Component<
       editorView,
       targetCellPosition,
       isContextualMenuOpen,
-    } = this.props; //  : Props & WrappedComponentProps
+      intl: { formatMessage },
+    } = this.props; //  : Props & InjectedIntlProps
 
     const domAtPos = editorView.domAtPos.bind(editorView);
     const targetCellRef = findDomRefAtPos(targetCellPosition, domAtPos);
@@ -53,35 +52,41 @@ class FloatingContextualButton extends React.Component<
       `.${ClassName.TABLE_NODE_WRAPPER}`,
     );
 
+    const labelCellOptions = formatMessage(messages.cellOptions);
     return (
-      <FormattedMessage {...messages.cellOptions}>
-        {(labelCellOptions: string) => (
-          <Popup
-            alignX="right"
-            alignY="start"
-            target={targetCellRef}
-            mountTo={tableWrapper || mountPoint}
-            boundariesElement={targetCellRef}
-            scrollableElement={scrollableElement}
-            forcePlacement={true}
-            offset={[3, -3]}
-          >
-            <ButtonWrapper>
-              <ToolbarButton
-                className={ClassName.CONTEXTUAL_MENU_BUTTON}
-                selected={isContextualMenuOpen}
-                title={labelCellOptions}
-                onClick={this.handleClick}
-                iconBefore={<ExpandIcon label={labelCellOptions} />}
-              />
-            </ButtonWrapper>
-          </Popup>
-        )}
-      </FormattedMessage>
+      <Popup
+        alignX="right"
+        alignY="start"
+        target={targetCellRef}
+        mountTo={tableWrapper || mountPoint}
+        boundariesElement={targetCellRef}
+        scrollableElement={scrollableElement}
+        offset={[3, -3]}
+        forcePlacement
+        allowOutOfBounds
+      >
+        <ButtonWrapper>
+          <ToolbarButton
+            className={ClassName.CONTEXTUAL_MENU_BUTTON}
+            selected={isContextualMenuOpen}
+            title={labelCellOptions}
+            onClick={this.handleClick}
+            iconBefore={<ExpandIcon label={labelCellOptions} />}
+          />
+        </ButtonWrapper>
+      </Popup>
     );
   }
 
-  handleClick = () => {
+  shouldComponentUpdate(nextProps: Props) {
+    return (
+      this.props.targetCellPosition !== nextProps.targetCellPosition ||
+      this.props.layout !== nextProps.layout ||
+      this.props.isContextualMenuOpen !== nextProps.isContextualMenuOpen
+    );
+  }
+
+  private handleClick = () => {
     const { state, dispatch } = this.props.editorView;
 
     toggleContextualMenu()(state, dispatch);

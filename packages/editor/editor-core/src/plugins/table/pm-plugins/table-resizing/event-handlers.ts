@@ -1,16 +1,28 @@
-import { CellAttributes, TableLayout } from '@atlaskit/adf-schema';
-import { akEditorTableNumberColumnWidth, tableCellMinWidth } from '@uidu/editor-common';
 import { TableMap } from 'prosemirror-tables';
-import { getSelectionRect } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { getParentNodeWidth } from '../../../../utils/node-width';
+import { getSelectionRect } from 'prosemirror-utils';
+import {
+  tableCellMinWidth,
+  akEditorTableNumberColumnWidth,
+} from '@uidu/editor-common';
+import { TableLayout, CellAttributes } from '@atlaskit/adf-schema';
 import { pluginKey as editorDisabledPluginKey } from '../../../editor-disabled';
-import { pluginKey as widthPluginKey } from '../../../width';
 import { updateColumnWidths } from '../../transforms';
+import {
+  getResizeStateFromDOM,
+  resizeColumn,
+  getLayoutSize,
+  currentColWidth,
+  pointsAtCell,
+  createResizeHandle,
+  updateResizeHandle,
+  updateControls,
+} from './utils';
 import { getSelectedColumnIndexes } from '../../utils';
-import { evenColumns, setDragging } from './commands';
+import { pluginKey as widthPluginKey } from '../../../width';
 import { getPluginState } from './plugin';
-import { createResizeHandle, currentColWidth, getLayoutSize, getResizeStateFromDOM, pointsAtCell, resizeColumn, updateControls, updateResizeHandle } from './utils';
+import { setDragging, evenColumns } from './commands';
+import { getParentNodeWidth } from '../../../../utils/node-width';
 
 export const handleMouseDown = (
   view: EditorView,
@@ -103,7 +115,7 @@ export const handleMouseDown = (
       resizeHandlePos === null ||
       !pointsAtCell(state.doc.resolve(resizeHandlePos))
     ) {
-      return undefined;
+      return;
     }
     // resizeHandlePos could be remapped via a collab change.
     // Fetch a fresh reference of the table.
@@ -114,7 +126,7 @@ export const handleMouseDown = (
     // If we let go in the same place we started, dont need to do anything.
     if (dragging && clientX === dragging.startX) {
       setDragging(null)(state, dispatch);
-      return undefined;
+      return;
     }
 
     let { tr } = state;

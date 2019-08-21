@@ -1,13 +1,25 @@
-import { akEditorFloatingOverlapPanelZIndex, Popup } from '@uidu/editor-common';
-import { EditorState } from 'prosemirror-state';
-import { findCellRectClosestToPos, findDomRefAtPos, getSelectionRect, isCellSelection } from 'prosemirror-utils';
-import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import styled from 'styled-components';
+import { EditorView } from 'prosemirror-view';
+import { EditorState } from 'prosemirror-state';
+import {
+  findDomRefAtPos,
+  getSelectionRect,
+  findCellRectClosestToPos,
+  isCellSelection,
+} from 'prosemirror-utils';
+import {
+  Popup,
+  akEditorFloatingOverlapPanelZIndex,
+} from '@uidu/editor-common';
+import ContextualMenu from './ContextualMenu';
+import {
+  contextualMenuDropdownWidth,
+  contextualMenuTriggerSize,
+  tablePopupStyles,
+} from '../styles';
 import { pluginKey } from '../../pm-plugins/main';
 import { PluginConfig } from '../../types';
-import { contextualMenuDropdownWidth, contextualMenuTriggerSize, tablePopupStyles } from '../styles';
-import ContextualMenu from './ContextualMenu';
 
 const MenuWrapper = styled.div`
   ${tablePopupStyles}

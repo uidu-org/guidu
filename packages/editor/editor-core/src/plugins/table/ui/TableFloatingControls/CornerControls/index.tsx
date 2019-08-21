@@ -5,38 +5,26 @@ import { EditorView } from 'prosemirror-view';
 import { isTableSelected, selectTable, findTable } from 'prosemirror-utils';
 import { TableMap } from 'prosemirror-tables';
 
-import { INPUT_METHOD } from '../../../../analytics';
 import { clearHoverSelection, hoverTable } from '../../../commands';
 import { TableCssClassName as ClassName } from '../../../types';
-import {
-  insertRowWithAnalytics,
-  insertColumnWithAnalytics,
-} from '../../../commands-with-analytics';
-import InsertButton from '../InsertButton';
 
 export interface Props {
   editorView: EditorView;
   tableRef?: HTMLTableElement;
   isInDanger?: boolean;
   isResizing?: boolean;
+  hoveredRows?: number[];
   isHeaderColumnEnabled?: boolean;
   isHeaderRowEnabled?: boolean;
-  isNumberColumnEnabled?: boolean;
-  insertColumnButtonIndex?: number;
-  insertRowButtonIndex?: number;
-  hoveredRows?: number[];
 }
 
 export default class CornerControls extends Component<Props, any> {
   render() {
     const {
       isInDanger,
-      isResizing,
-      isHeaderRowEnabled,
-      isHeaderColumnEnabled,
-      insertColumnButtonIndex,
-      insertRowButtonIndex,
       tableRef,
+      isHeaderColumnEnabled,
+      isHeaderRowEnabled,
     } = this.props;
     if (!tableRef) {
       return null;
@@ -58,23 +46,16 @@ export default class CornerControls extends Component<Props, any> {
           onMouseOver={this.hoverTable}
           onMouseOut={this.clearHoverSelection}
         />
-        {!isHeaderColumnEnabled && (
-          <InsertButton
-            type="column"
-            tableRef={tableRef}
-            index={0}
-            showInsertButton={!isResizing && insertColumnButtonIndex === 0}
-            onMouseDown={this.insertColumn}
-          />
-        )}
+
         {!isHeaderRowEnabled && (
-          <InsertButton
-            type="row"
-            tableRef={tableRef}
-            index={0}
-            showInsertButton={!isResizing && insertRowButtonIndex === 0}
-            onMouseDown={this.insertRow}
-          />
+          <div className={ClassName.CORNER_CONTROLS_INSERT_ROW_MARKER}>
+            <div className={ClassName.CONTROLS_INSERT_MARKER} />
+          </div>
+        )}
+        {!isHeaderColumnEnabled && (
+          <div className={ClassName.CORNER_CONTROLS_INSERT_COLUMN_MARKER}>
+            <div className={ClassName.CONTROLS_INSERT_MARKER} />
+          </div>
         )}
       </div>
     );
@@ -108,15 +89,5 @@ export default class CornerControls extends Component<Props, any> {
   private hoverTable = () => {
     const { state, dispatch } = this.props.editorView;
     hoverTable()(state, dispatch);
-  };
-
-  private insertColumn = () => {
-    const { state, dispatch } = this.props.editorView;
-    insertColumnWithAnalytics(INPUT_METHOD.BUTTON, 0)(state, dispatch);
-  };
-
-  private insertRow = () => {
-    const { state, dispatch } = this.props.editorView;
-    insertRowWithAnalytics(INPUT_METHOD.BUTTON, 0)(state, dispatch);
   };
 }

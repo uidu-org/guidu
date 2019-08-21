@@ -33,6 +33,7 @@ export default class NumberColumn extends Component<Props, any> {
           <div
             key={`wrapper-${index}`}
             className={this.getClassNames(index)}
+            data-index={index}
             style={{
               height: (rows[index] as HTMLElement).offsetHeight + 1,
             }}
@@ -87,8 +88,8 @@ export default class NumberColumn extends Component<Props, any> {
       ((hoveredRows || []).indexOf(index) !== -1 && !isResizing);
     return [
       ClassName.NUMBERED_COLUMN_BUTTON,
-      isActive ? 'active' : '',
-      isActive && isInDanger ? 'danger' : '',
+      isActive ? ClassName.HOVERED_CELL_ACTIVE : '',
+      isActive && isInDanger ? ClassName.HOVERED_CELL_IN_DANGER : '',
     ].join(' ');
   };
 }

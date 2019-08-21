@@ -2,20 +2,21 @@ import {
   tableBackgroundBorderColors,
   tableBackgroundColorPalette,
 } from '@atlaskit/adf-schema';
-import { colors } from '@uidu/theme';
+import { colors } from '@atlaskit/theme';
 import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import ColorPalette from '../../../../components/ColorPalette';
 import DropdownMenu from '../../../../components/DropdownMenu';
 import { Shortcut } from '../../../../components/styles';
+import {
+  addColumnAfter,
+  addRowAfter,
+  backspace,
+  tooltip,
+} from '../../../../keymaps';
 import { closestElement } from '../../../../utils';
 import { INPUT_METHOD } from '../../../analytics';
 import {
@@ -122,7 +123,7 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
       '.fabric-editor-popup-scroll-parent',
     );
     if (!(parent && ref)) {
-      return undefined;
+      return;
     }
     const boundariesRect = parent.getBoundingClientRect();
     const rect = ref.getBoundingClientRect();
@@ -139,6 +140,7 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
       targetCellPosition,
       isOpen,
       selectionRect,
+      intl: { formatMessage },
     } = this.props;
     const items: any[] = [];
     const { isSubmenuOpen } = this.state;
@@ -150,7 +152,7 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
       const background =
         node && node.attrs.background ? node.attrs.background : '#ffffff';
       items.push({
-        content: messages.cellBackground,
+        content: formatMessage(messages.cellBackground),
         value: { name: 'background' },
         elemAfter: (
           <div>
@@ -178,15 +180,15 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
     }
 
     items.push({
-      content: tableMessages.insertColumn,
+      content: formatMessage(tableMessages.insertColumn),
       value: { name: 'insert_column' },
-      elemAfter: <Shortcut>⌃⌥→</Shortcut>,
+      elemAfter: <Shortcut>{tooltip(addColumnAfter)}</Shortcut>,
     });
 
     items.push({
-      content: tableMessages.insertRow,
+      content: formatMessage(tableMessages.insertRow),
       value: { name: 'insert_row' },
-      elemAfter: <Shortcut>⌃⌥↓</Shortcut>,
+      elemAfter: <Shortcut>{tooltip(addRowAfter)}</Shortcut>,
     });
 
     const { top, bottom, right, left } = selectionRect;
@@ -194,53 +196,38 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
     const noOfRows = bottom - top;
 
     items.push({
-      content: (
-        <FormattedMessage
-          {...tableMessages.removeColumns}
-          values={{
-            0: noOfColumns,
-          }}
-        />
-      ),
+      content: formatMessage(tableMessages.removeColumns, {
+        0: noOfColumns,
+      }),
       value: { name: 'delete_column' },
     });
 
     items.push({
-      content: (
-        <FormattedMessage
-          {...tableMessages.removeRows}
-          values={{
-            0: noOfRows,
-          }}
-        />
-      ),
+      content: formatMessage(tableMessages.removeRows, {
+        0: noOfRows,
+      }),
       value: { name: 'delete_row' },
     });
 
     if (allowMergeCells) {
       items.push({
-        content: <FormattedMessage {...messages.mergeCells} />,
+        content: formatMessage(messages.mergeCells),
         value: { name: 'merge' },
         isDisabled: !canMergeCells(state.tr),
       });
       items.push({
-        content: <FormattedMessage {...messages.splitCell} />,
+        content: formatMessage(messages.splitCell),
         value: { name: 'split' },
         isDisabled: !splitCell(state),
       });
     }
 
     items.push({
-      content: (
-        <FormattedMessage
-          {...messages.clearCells}
-          values={{
-            0: Math.max(noOfColumns, noOfRows),
-          }}
-        />
-      ),
+      content: formatMessage(messages.clearCells, {
+        0: Math.max(noOfColumns, noOfRows),
+      }),
       value: { name: 'clear' },
-      elemAfter: <Shortcut>⌫</Shortcut>,
+      elemAfter: <Shortcut>{tooltip(backspace)}</Shortcut>,
     });
 
     return items.length ? [{ items }] : null;

@@ -1,16 +1,11 @@
 import { TableLayout } from '@atlaskit/adf-schema';
+import { Popup } from '@uidu/editor-common';
 import CollapseIcon from '@atlaskit/icon/glyph/editor/collapse';
 import ExpandIcon from '@atlaskit/icon/glyph/editor/expand';
-import { Popup } from '@uidu/editor-common';
 import classnames from 'classnames';
-import { findTable } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import {
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import ToolbarButton from '../../../../components/ToolbarButton';
 import commonMessages from '../../../../messages';
 import { toggleTableLayoutWithAnalytics } from '../../commands-with-analytics';
@@ -23,6 +18,7 @@ export interface Props {
   boundariesElement?: HTMLElement;
   scrollableElement?: HTMLElement;
   isResizing?: boolean;
+  layout?: TableLayout;
 }
 
 const POPUP_OFFSET = [
@@ -46,57 +42,58 @@ const getTitle = (layout: TableLayout) => {
 class LayoutButton extends React.Component<Props & WrappedComponentProps, any> {
   render() {
     const {
+      intl: { formatMessage },
       mountPoint,
       boundariesElement,
       scrollableElement,
       targetRef,
-      editorView,
       isResizing,
+      layout = 'default',
     } = this.props;
     if (!targetRef) {
       return null;
     }
-    const table = findTable(editorView.state.selection);
-    if (!table) {
-      return false;
-    }
-    const { layout } = table.node.attrs;
+    const title = formatMessage(getTitle(layout));
 
     return (
-      <FormattedMessage {...getTitle(layout)}>
-        {(title: string) => (
-          <Popup
-            ariaLabel={title}
-            offset={POPUP_OFFSET}
-            target={targetRef}
-            alignY="start"
-            alignX="end"
-            stick={true}
-            mountTo={mountPoint}
-            boundariesElement={boundariesElement}
-            scrollableElement={scrollableElement}
-            forcePlacement={true}
-          >
-            <div
-              className={classnames(ClassName.LAYOUT_BUTTON, {
-                [ClassName.IS_RESIZING]: isResizing,
-              })}
-            >
-              <ToolbarButton
-                title={title}
-                onClick={this.handleClick}
-                iconBefore={
-                  layout === 'full-width' ? (
-                    <CollapseIcon label={title} />
-                  ) : (
-                    <ExpandIcon label={title} />
-                  )
-                }
-              />
-            </div>
-          </Popup>
-        )}
-      </FormattedMessage>
+      <Popup
+        ariaLabel={title}
+        offset={POPUP_OFFSET}
+        target={targetRef}
+        alignY="start"
+        alignX="end"
+        stick={true}
+        mountTo={mountPoint}
+        boundariesElement={boundariesElement}
+        scrollableElement={scrollableElement}
+        forcePlacement={true}
+      >
+        <div
+          className={classnames(ClassName.LAYOUT_BUTTON, {
+            [ClassName.IS_RESIZING]: isResizing,
+          })}
+        >
+          <ToolbarButton
+            title={title}
+            onClick={this.handleClick}
+            iconBefore={
+              layout === 'full-width' ? (
+                <CollapseIcon label={title} />
+              ) : (
+                <ExpandIcon label={title} />
+              )
+            }
+          />
+        </div>
+      </Popup>
+    );
+  }
+
+  shouldComponentUpdate(nextProps: Props) {
+    return (
+      this.props.targetRef !== nextProps.targetRef ||
+      this.props.layout !== nextProps.layout ||
+      this.props.isResizing !== nextProps.isResizing
     );
   }
 

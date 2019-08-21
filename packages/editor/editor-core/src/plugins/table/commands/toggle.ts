@@ -1,6 +1,7 @@
 //#region Imports
 import { toggleHeader } from 'prosemirror-tables';
 import { findTable } from 'prosemirror-utils';
+import { Transaction } from 'prosemirror-state';
 import { TableLayout } from '@atlaskit/adf-schema';
 import { createCommand } from '../pm-plugins/main';
 import { Command } from '../../../types';
@@ -58,15 +59,20 @@ export const toggleTableLayout: Command = (state, dispatch): boolean => {
   }
   const layout = getNextLayout(table.node.attrs.layout);
 
-  if (dispatch) {
-    dispatch(
-      state.tr.setNodeMarkup(table.pos, state.schema.nodes.table, {
+  return createCommand(
+    {
+      type: 'SET_TABLE_LAYOUT',
+      data: {
+        layout,
+      },
+    },
+    (tr: Transaction) => {
+      return tr.setNodeMarkup(table.pos, state.schema.nodes.table, {
         ...table.node.attrs,
         layout,
-      }),
-    );
-  }
-  return true;
+      });
+    },
+  )(state, dispatch);
 };
 
 export const toggleContextualMenu = () =>

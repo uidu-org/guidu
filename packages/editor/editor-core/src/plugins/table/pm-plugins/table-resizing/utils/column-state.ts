@@ -1,7 +1,7 @@
-import { tableNewColumnMinWidth } from '@uidu/editor-common';
-import { Node as PMNode } from 'prosemirror-model';
 import { TableMap } from 'prosemirror-tables';
 import { findDomRefAtPos } from 'prosemirror-utils';
+import { Node as PMNode } from 'prosemirror-model';
+import { tableNewColumnMinWidth } from '@uidu/editor-common';
 import { contentWidth } from './content-width';
 
 export interface ColumnState {
@@ -77,7 +77,7 @@ export const calculateColumnWidth = (
 
     if (colspan > 1) {
       colSpanWidth = calculateColumnWidthCb(css, cellRef, colspan);
-      return undefined;
+      return;
     }
 
     if (css) {

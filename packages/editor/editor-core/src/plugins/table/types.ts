@@ -1,8 +1,14 @@
-import { tableCellContentWrapperSelector, tableCellSelector, tableHeaderSelector, TableLayout, tablePrefixSelector } from '@atlaskit/adf-schema';
-import { TableSharedCssClassName } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { DecorationSet } from 'prosemirror-view';
+import {
+  TableLayout,
+  tablePrefixSelector,
+  tableCellSelector,
+  tableHeaderSelector,
+  tableCellContentWrapperSelector,
+} from '@atlaskit/adf-schema';
+import { TableSharedCssClassName } from '@uidu/editor-common';
 
 export type PermittedLayoutsDescriptor = TableLayout[] | 'all';
 export type Cell = { pos: number; start: number; node: PmNode };
@@ -50,6 +56,7 @@ export interface TablePluginState {
   insertColumnButtonIndex?: number;
   insertRowButtonIndex?: number;
   isFullWidthModeEnabled?: boolean;
+  layout?: TableLayout;
 }
 
 export type TablePluginAction =
@@ -62,6 +69,9 @@ export type TablePluginAction =
         tableRef?: HTMLElement;
         tableNode?: PmNode;
         tableWrapperTarget?: HTMLElement;
+        layout: TableLayout;
+        isHeaderRowEnabled: boolean;
+        isHeaderColumnEnabled: boolean;
       };
     }
   | {
@@ -91,6 +101,10 @@ export type TablePluginAction =
     }
   | { type: 'CLEAR_HOVER_SELECTION'; data: { decorationSet: DecorationSet } }
   | { type: 'SET_TARGET_CELL_POSITION'; data: { targetCellPosition?: number } }
+  | {
+      type: 'SET_TABLE_LAYOUT';
+      data: { layout: TableLayout };
+    }
   | { type: 'SHOW_INSERT_ROW_BUTTON'; data: { insertRowButtonIndex: number } }
   | {
       type: 'SHOW_INSERT_COLUMN_BUTTON';
@@ -115,22 +129,28 @@ export type ColumnResizingPluginAction =
       data: { lastClick: { x: number; y: number; time: number } | null };
     };
 
-export const TableDecorations = {
-  CONTROLS_HOVER: 'CONTROLS_HOVER',
-};
+export enum TableDecorations {
+  ALL_CONTROLS_HOVER = 'CONTROLS_HOVER',
+  ROW_CONTROLS_HOVER = 'ROW_CONTROLS_HOVER',
+  COLUMN_CONTROLS_HOVER = 'COLUMN_CONTROLS_HOVER',
+  TABLE_CONTROLS_HOVER = 'TABLE_CONTROLS_HOVER',
+
+  COLUMN_CONTROLS_DECORATIONS = 'COLUMN_CONTROLS_DECORATIONS',
+  COLUMN_SELECTED = 'COLUMN_SELECTED',
+}
 
 export const TableCssClassName = {
   ...TableSharedCssClassName,
 
-  COLUMN_CONTROLS_WRAPPER: `${tablePrefixSelector}-column-controls-wrapper`,
   COLUMN_CONTROLS: `${tablePrefixSelector}-column-controls`,
-  COLUMN_CONTROLS_INNER: `${tablePrefixSelector}-column-controls__inner`,
-  COLUMN_CONTROLS_BUTTON_WRAP: `${tablePrefixSelector}-column-controls__button-wrap`,
+  COLUMN_CONTROLS_DECORATIONS: `${tablePrefixSelector}-column-controls-decoration`,
+  COLUMN_SELECTED: `${tablePrefixSelector}-column__selected`,
 
   ROW_CONTROLS_WRAPPER: `${tablePrefixSelector}-row-controls-wrapper`,
   ROW_CONTROLS: `${tablePrefixSelector}-row-controls`,
   ROW_CONTROLS_INNER: `${tablePrefixSelector}-row-controls__inner`,
   ROW_CONTROLS_BUTTON_WRAP: `${tablePrefixSelector}-row-controls__button-wrap`,
+  ROW_CONTROLS_BUTTON: `${tablePrefixSelector}-row-controls__button`,
 
   CONTROLS_BUTTON: `${tablePrefixSelector}-controls__button`,
   CONTROLS_BUTTON_ICON: `${tablePrefixSelector}-controls__button-icon`,
@@ -148,13 +168,24 @@ export const TableCssClassName = {
   CONTROLS_DELETE_BUTTON_WRAP: `${tablePrefixSelector}-controls__delete-button-wrap`,
   CONTROLS_DELETE_BUTTON: `${tablePrefixSelector}-controls__delete-button`,
 
+  CONTROLS_FLOATING_BUTTON_COLUMN: `${tablePrefixSelector}-controls-floating__button-column`,
+  CONTROLS_FLOATING_BUTTON_ROW: `${tablePrefixSelector}-controls-floating__button-row`,
+
   CORNER_CONTROLS: `${tablePrefixSelector}-corner-controls`,
+  CORNER_CONTROLS_INSERT_ROW_MARKER: `${tablePrefixSelector}-corner-controls__insert-row-marker`,
+  CORNER_CONTROLS_INSERT_COLUMN_MARKER: `${tablePrefixSelector}-corner-controls__insert-column-marker`,
   CONTROLS_CORNER_BUTTON: `${tablePrefixSelector}-corner-button`,
 
   NUMBERED_COLUMN: `${tablePrefixSelector}-numbered-column`,
   NUMBERED_COLUMN_BUTTON: `${tablePrefixSelector}-numbered-column__button`,
 
+  HOVERED_COLUMN: `${tablePrefixSelector}-hovered-column`,
+  HOVERED_ROW: `${tablePrefixSelector}-hovered-row`,
+  HOVERED_TABLE: `${tablePrefixSelector}-hovered-table`,
   HOVERED_CELL: `${tablePrefixSelector}-hovered-cell`,
+  HOVERED_CELL_IN_DANGER: 'danger',
+  HOVERED_CELL_ACTIVE: 'active',
+  HOVERED_DELETE_BUTTON: `${tablePrefixSelector}-hovered-delete-button`,
   WITH_CONTROLS: `${tablePrefixSelector}-with-controls`,
   RESIZING_PLUGIN: `${tablePrefixSelector}-resizing-plugin`,
   RESIZE_CURSOR: `${tablePrefixSelector}-resize-cursor`,
@@ -172,6 +203,7 @@ export const TableCssClassName = {
   // defined in ReactNodeView based on PM node name
   NODEVIEW_WRAPPER: 'tableView-content-wrap',
 
+  TABLE_SELECTED: `${tablePrefixSelector}-table__selected`,
   TABLE_CELL_NODE_WRAPPER: tableCellSelector,
   TABLE_HEADER_NODE_WRAPPER: tableHeaderSelector,
   CELL_NODEVIEW_WRAPPER: tableCellContentWrapperSelector,

@@ -1,12 +1,30 @@
 import { browser } from '@uidu/editor-common';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
-import { findParentDomRefOfType, findParentNodeOfType } from 'prosemirror-utils';
+import {
+  findParentDomRefOfType,
+  findParentNodeOfType,
+} from 'prosemirror-utils';
 import { DecorationSet, EditorView } from 'prosemirror-view';
 import { PortalProviderAPI } from '../../../components/PortalProvider';
 import { Dispatch } from '../../../event-dispatcher';
 import { pluginFactory } from '../../../utils/plugin-state-factory';
-import { addBoldInEmptyHeaderCells, clearHoverSelection, setTableRef } from '../commands';
-import { handleBlur, handleClick, handleCut, handleFocus, handleMouseLeave, handleMouseOver, handleTripleClick } from '../event-handlers';
+import {
+  addBoldInEmptyHeaderCells,
+  clearHoverSelection,
+  setTableRef,
+} from '../commands';
+import {
+  handleBlur,
+  handleClick,
+  handleCut,
+  handleFocus,
+  handleMouseDown,
+  handleMouseLeave,
+  handleMouseMove,
+  handleMouseOut,
+  handleMouseOver,
+  handleTripleClick,
+} from '../event-handlers';
 import { handleDocOrSelectionChanged } from '../handlers';
 import { createTableView } from '../nodeviews/table';
 import reducer from '../reducer';
@@ -164,17 +182,11 @@ export const createPlugin = (
       handleDOMEvents: {
         blur: handleBlur,
         focus: handleFocus,
-        // Ignore any `mousedown` `event` from control and numbered column buttons
-        // PM end up changing selection during shift selection if not prevented
-        mousedown: (_, event: Event) =>
-          !!(
-            event.target &&
-            event.target instanceof HTMLElement &&
-            (event.target.classList.contains(ClassName.CONTROLS_BUTTON) ||
-              event.target.classList.contains(ClassName.NUMBERED_COLUMN_BUTTON))
-          ),
+        mousedown: handleMouseDown,
         mouseover: handleMouseOver,
         mouseleave: handleMouseLeave,
+        mouseout: handleMouseOut,
+        mousemove: handleMouseMove,
         click: handleClick,
       },
 
@@ -184,4 +196,3 @@ export const createPlugin = (
 };
 
 export { createCommand, getPluginState };
-

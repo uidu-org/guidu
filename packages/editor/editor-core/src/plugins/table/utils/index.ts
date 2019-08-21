@@ -4,7 +4,14 @@ export {
   normalizeSelection,
   isSelectionUpdated,
 } from './selection';
-export { findControlsHoverDecoration } from './decoration';
+export {
+  findControlsHoverDecoration,
+  createControlsHoverDecoration,
+  createColumnControlsDecoration,
+  createColumnSelectedDecorations,
+  updatePluginStateDecorations,
+  updateNodeDecorations,
+} from './decoration';
 export {
   isIsolating,
   containsHeaderColumn,
@@ -22,20 +29,28 @@ export {
   removeTableFromFirstChild,
   removeTableFromLastChild,
   transformSliceToRemoveOpenTable,
+  transformSliceToCorrectEmptyTableCells,
+  transformSliceToFixHardBreakProblemOnCopyFromCell,
 } from './paste';
-export { isInsertColumnButton, isInsertRowButton, getIndex } from './dom';
+export {
+  isCell,
+  isCornerButton,
+  isInsertRowButton,
+  isColumnControlsDecorations,
+  isTableControlsButton,
+  isRowControlsButton,
+  getColumnOrRowIndex,
+  getMousePositionHorizontalRelativeByElement,
+  getMousePositionVerticalRelativeByElement,
+} from './dom';
 export {
   getColumnsWidths,
-  isColumnInsertButtonVisible,
   isColumnDeleteButtonVisible,
   getColumnDeleteButtonParams,
-  getColumnsParams,
   getColumnClassNames,
-  ColumnParams,
 } from './column-controls';
 export {
   getRowHeights,
-  isRowInsertButtonVisible,
   isRowDeleteButtonVisible,
   getRowDeleteButtonParams,
   getRowsParams,

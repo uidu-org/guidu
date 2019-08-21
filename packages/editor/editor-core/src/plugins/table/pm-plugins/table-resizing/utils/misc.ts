@@ -1,8 +1,16 @@
-import { CellAttributes, TableLayout } from '@atlaskit/adf-schema';
-import { akEditorDefaultLayoutWidth, akEditorFullWidthLayoutWidth, akEditorGutterPadding, akEditorWideLayoutWidth, calcTableWidth, getBreakpoint, mapBreakpointToLayoutMaxWidth } from '@uidu/editor-common';
-import { NodeSpec, ResolvedPos } from 'prosemirror-model';
 import { cellAround, TableMap } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
+import { ResolvedPos, NodeSpec } from 'prosemirror-model';
+import { TableLayout, CellAttributes } from '@atlaskit/adf-schema';
+import {
+  calcTableWidth,
+  akEditorWideLayoutWidth,
+  akEditorDefaultLayoutWidth,
+  akEditorFullWidthLayoutWidth,
+  getBreakpoint,
+  mapBreakpointToLayoutMaxWidth,
+  akEditorGutterPadding,
+} from '@uidu/editor-common';
 import { TableOptions } from '../../../nodeviews/table';
 
 export const tableLayoutToSize: Record<string, number> = {

@@ -1,8 +1,18 @@
-import { akEditorTableNumberColumnWidth, tableCellMinWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import { DomAtPos } from '../../../../../types';
+import {
+  tableCellMinWidth,
+  akEditorTableNumberColumnWidth,
+} from '@uidu/editor-common';
 import { getTableWidth } from '../../../utils';
-import { adjustColumnsWidths, getLayoutSize, getResizeStateFromDOM, getTotalWidth, reduceSpace, ResizeState } from '../utils';
+import { DomAtPos } from '../../../../../types';
+import {
+  getLayoutSize,
+  ResizeState,
+  getResizeStateFromDOM,
+  getTotalWidth,
+  reduceSpace,
+  adjustColumnsWidths,
+} from '../utils';
 
 export interface ScaleOptions {
   node: PMNode;
@@ -57,9 +67,17 @@ export const scale = (
   let newWidth = maxSize;
 
   // adjust table width if layout is updated
-  if (layoutChanged && prevTableWidth > previousMaxSize) {
-    const overflowScale = prevTableWidth / previousMaxSize;
-    newWidth = Math.floor(newWidth * overflowScale);
+  const hasOverflow = prevTableWidth > previousMaxSize;
+  if (layoutChanged && hasOverflow) {
+    // No keep overflow if the old content can be in the new size
+    const canFitInNewSize = prevTableWidth < maxSize;
+    if (canFitInNewSize) {
+      newWidth = maxSize;
+    } else {
+      // Keep the same scale.
+      const overflowScale = prevTableWidth / previousMaxSize;
+      newWidth = Math.floor(newWidth * overflowScale);
+    }
   }
 
   if (node.attrs.isNumberColumnEnabled) {
