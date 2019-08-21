@@ -7,6 +7,7 @@ to {
 `;
 
 const gapCursor = '.ProseMirror-gapcursor';
+const prosemirrorwidget = '.ProseMirror-widget';
 const wrapLeft = '[layout="wrap-left"]';
 const wrapRight = '[layout="wrap-right"]';
 
@@ -128,7 +129,9 @@ export const gapCursorStyles = css`
   ${wrapLeft} + ${gapCursor} + span + ${wrapRight} + * > *,
   ${wrapRight} + ${gapCursor} + span + ${wrapLeft} + * > *,
   ${gapCursor} + ${wrapLeft} + span + ${wrapRight} + * > *,
-  ${gapCursor} + ${wrapRight} + span + ${wrapLeft} + * > * {
+  ${gapCursor} + ${wrapRight} + span + ${wrapLeft} + * > *,
+  ${prosemirrorwidget} + ${gapCursor} + *,
+  ${prosemirrorwidget} + ${gapCursor} + span + * {
     margin-top: 0;
   }
 `;

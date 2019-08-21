@@ -8,7 +8,7 @@ export enum Side {
   RIGHT = 'right',
 }
 
-export const JSON_ID = 'gapcursor2';
+export const JSON_ID = 'gapcursor';
 
 export class GapCursorSelection extends Selection {
   public readonly visible: boolean = false;
