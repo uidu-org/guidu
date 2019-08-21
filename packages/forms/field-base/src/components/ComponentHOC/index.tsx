@@ -22,13 +22,13 @@ const FormsyReactComponent = <TOriginalProps extends {}>(
 ) => {
   type ResultProps = TOriginalProps & ComponentHOCProps;
 
-  const result = class FrcWrapper extends React.Component<ResultProps, {}> {
+  const result = class FrcWrapper extends React.Component<ResultProps> {
     id: string = null;
 
-    static defaultProps = {
-      onChange: () => {},
-      layout: 'vertical',
-    };
+    // static defaultProps = {
+    //   onChange: () => {},
+    //   layout: 'vertical',
+    // };
 
     static contextType = FormContext;
 
