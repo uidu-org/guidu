@@ -1,5 +1,10 @@
 # @uidu/field-text
 
+## 0.1.19
+- [patch] [347eb6f](https://github.org/uidu-org/guidu/commits/347eb6f):
+
+  - Remove console.log
+
 ## 0.1.18
 - [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 

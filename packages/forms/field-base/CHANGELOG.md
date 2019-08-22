@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.1.41
+- [patch] [eea866e](https://github.org/uidu-org/guidu/commits/eea866e):
+
+  -  Field base default props
+
 ## 0.1.40
 - [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 

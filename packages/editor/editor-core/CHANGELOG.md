@@ -1,5 +1,10 @@
 # @uidu/editor-core
 
+## 0.1.8
+- [patch] [eea866e](https://github.org/uidu-org/guidu/commits/eea866e):
+
+  -  Field base default props
+
 ## 0.1.7
 - [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
