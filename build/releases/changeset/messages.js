@@ -3,7 +3,6 @@ const { green, red } = require('chalk');
 const boxen = require('boxen');
 const outdent = require('outdent');
 
-// prettier-ignore
 function printIntroBanner() {
   const message = outdent`
     ${red('================ NOTE ================')}

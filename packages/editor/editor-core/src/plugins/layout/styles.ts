@@ -1,6 +1,11 @@
 // @ts-ignore: unused variable
-// prettier-ignore
-import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorSelectedBorderSize, columnLayoutSharedStyle, gridMediumMaxWidth } from '@uidu/editor-common';
+import {
+  akEditorDeleteBackground,
+  akEditorDeleteBorder,
+  akEditorSelectedBorderSize,
+  columnLayoutSharedStyle,
+  gridMediumMaxWidth,
+} from '@uidu/editor-common';
 import { colors, gridSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { TableCssClassName } from '../table/types';

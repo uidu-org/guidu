@@ -52,14 +52,12 @@ async function getPackageBumpRange(pkgJSON) {
     if (maintainers && Array.isArray(maintainers) && maintainers.length > 0) {
       maintainersString = ` (${maintainers.join(', ')})`;
     }
-    // prettier-ignore
     const message = yellow(outdent`
       WARNING: Releasing a major version for ${green(name)} will be its ${red('first major release')}.
       If you are unsure if this is correct, contact the package's maintainers${maintainersString} ${red('before committing this changeset')}.
 
       If you still want to release this package, select the appropriate version below:
     `)
-    // prettier-ignore-end
     type = await cli.askList(message, ['patch', 'minor', 'major']);
   }
 

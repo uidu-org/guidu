@@ -1,5 +1,4 @@
 // @ts-ignore: unused variable
-// prettier-ignore
 import { css } from 'styled-components';
 import { Color, colors } from './utils';
 

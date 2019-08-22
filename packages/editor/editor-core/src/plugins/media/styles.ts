@@ -1,6 +1,10 @@
 // @ts-ignore: unused variable
-// prettier-ignore
-import { akEditorDeleteBackground, akEditorDeleteBorder, akEditorDeleteBorderBoldSize, mediaSingleSharedStyle } from '@uidu/editor-common';
+import {
+  akEditorDeleteBackground,
+  akEditorDeleteBorder,
+  akEditorDeleteBorderBoldSize,
+  mediaSingleSharedStyle,
+} from '@uidu/editor-common';
 import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
 

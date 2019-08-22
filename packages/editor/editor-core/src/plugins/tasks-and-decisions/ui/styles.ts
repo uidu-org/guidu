@@ -1,5 +1,4 @@
 // @ts-ignore: unused variable
-// prettier-ignore
 import { akEditorTableCellMinWidth } from '@uidu/editor-common';
 import { fontSize } from '@uidu/theme';
 import { css } from 'styled-components';

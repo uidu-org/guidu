@@ -1,5 +1,4 @@
 // @ts-ignore: unused variable
-// prettier-ignore
 import { typography } from '@uidu/theme';
 import { css } from 'styled-components';
 
