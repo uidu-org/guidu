@@ -21,9 +21,6 @@ class FieldText extends Component<any> {
 
   render() {
     const { component: StatelessInput } = this.props;
-    console.log(this.props);
-
-    console.log(StatelessInput);
 
     return (
       <Wrapper {...this.props}>
