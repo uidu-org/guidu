@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 0.1.5
+- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+  - Release all packages, unique tsconfig
+- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+  - Fixed all ts errors, try to release again
+
 ## 0.1.4
 - [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 

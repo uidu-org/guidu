@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-time",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Field Time Component",
   "keywords": [
     "react",
@@ -14,15 +14,15 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.11",
-    "@uidu/field-base": "^0.1.38",
-    "@uidu/field-text": "^0.1.17",
-    "@uidu/form": "^0.1.34",
+    "@uidu/analytics": "^0.1.12",
+    "@uidu/field-base": "^0.1.40",
+    "@uidu/field-text": "^0.1.18",
+    "@uidu/form": "^0.1.35",
     "@uidu/theme": "^0.1.15",
     "react-simple-timefield": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.42",
+    "@uidu/button": "^0.1.43",
     "@uidu/docs": "^0.1.32",
     "react-dom": "^16.4.0"
   },

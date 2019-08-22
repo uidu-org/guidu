@@ -1,5 +1,10 @@
 # @uidu/comment
 
+## 0.1.3
+- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+  - Release all packages, unique tsconfig
+
 ## 0.1.2
 - [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
 

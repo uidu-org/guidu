@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.42",
+  "version": "0.1.43",
   "description": "Button component for use in forms",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@types/react-router-dom": "^4.3.2",
-    "@uidu/analytics": "^0.1.11",
+    "@uidu/analytics": "^0.1.12",
     "@uidu/spinner": "^0.1.10",
     "@uidu/theme": "^0.1.15",
     "jest-emotion": "^10.0.10",
@@ -20,9 +20,9 @@
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
     "@atlaskit/logo": "^9.2.7",
-    "@uidu/checkbox": "^0.1.48",
+    "@uidu/checkbox": "^0.1.50",
     "@uidu/docs": "^0.1.32",
-    "@uidu/form": "^0.1.34",
+    "@uidu/form": "^0.1.35",
     "jest-emotion": "^10.0.10",
     "jest-in-case": "^1.0.2",
     "react-dom": "^16.4.0",
