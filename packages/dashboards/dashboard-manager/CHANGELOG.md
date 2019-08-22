@@ -1,5 +1,10 @@
 # @uidu/dashboard-manager
 
+## 0.1.8
+- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+  - Release all packages, unique tsconfig
+
 ## 0.1.7
 - [patch] [206a865](https://github.org/uidu-org/guidu/commits/206a865):
 

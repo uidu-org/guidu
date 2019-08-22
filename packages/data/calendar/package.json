@@ -1,6 +1,6 @@
 {
   "name": "@uidu/calendar",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.15",
-    "@uidu/shell": "^0.1.21",
+    "@uidu/shell": "^0.1.22",
     "classnames": "^2.2.6",
     "moment": "^2.18.1",
     "react-big-calendar": "^0.22.0",

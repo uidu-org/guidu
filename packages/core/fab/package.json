@@ -1,6 +1,6 @@
 {
   "name": "@uidu/fab",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "description": "Floating action buttons",
   "repository": "https://github.com/uidu-org/guidu.git",

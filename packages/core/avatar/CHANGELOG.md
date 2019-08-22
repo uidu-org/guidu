@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.18
+- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+  - Release all packages, unique tsconfig
+- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+  - Fixed all ts errors, try to release again
+
 ## 0.2.17
 - [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
 
