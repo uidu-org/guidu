@@ -1,11 +1,31 @@
 import { deleteSelection, splitBlock } from 'prosemirror-commands';
-import { Fragment, Node as PMNode, ResolvedPos } from 'prosemirror-model';
+import {
+  Fragment,
+  Node as PMNode,
+  ResolvedPos,
+  Schema,
+  Slice,
+} from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { createNewParagraphBelow, createParagraphNear } from '../../../commands';
+import {
+  createNewParagraphBelow,
+  createParagraphNear,
+} from '../../../commands';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
-import { atTheBeginningOfBlock, atTheBeginningOfDoc, atTheEndOfBlock, endPositionOfParent, isTemporary, moveLeft, startPositionOfParent } from '../../../utils';
-import { MediaState } from '../types';
+import {
+  atTheBeginningOfBlock,
+  atTheBeginningOfDoc,
+  atTheEndOfBlock,
+  endPositionOfParent,
+  isImage,
+  isTemporary,
+  moveLeft,
+  startPositionOfParent,
+} from '../../../utils';
+import { walkUpTreeUntil } from '../../../utils/dom';
+import { mapSlice } from '../../../utils/slice';
+import { MediaProvider, MediaState } from '../types';
 
 export const posOfMediaGroupNearby = (
   state: EditorState,
@@ -206,4 +226,128 @@ export const copyOptionalAttrsFromMediaState = (
         node.attrs[key] = attrValue;
       }
     });
+};
+
+/**
+ * Customer can define either deprecated Context or MediaClientConfig object directly. All internal
+ * API are being switched to MediaClientConfig exclusively.
+ * This utility helps to retrieve MediaClientConfig object from media Provider no matter what customer
+ * has provided.
+ */
+export const getViewMediaClientConfigFromMediaProvider = async (
+  mediaProvider: MediaProvider,
+): Promise<any> => {
+  if (mediaProvider.viewContext) {
+    return (await mediaProvider.viewContext).config;
+  } else {
+    // We can use ! here since XOR would not allow MediaProvider object created without one of the properties.
+    return (mediaProvider as any).viewMediaClientConfig!;
+  }
+};
+
+/**
+ * Customer can define either deprecated Context or MediaClientConfig object directly. All internal
+ * API are being switched to MediaClientConfig exclusively.
+ * This utility helps to retrieve MediaClientConfig object from media Provider no matter what customer
+ * has provided.
+ */
+export const getUploadMediaClientConfigFromMediaProvider = async (
+  mediaProvider: MediaProvider,
+): Promise<any | undefined> => {
+  if (mediaProvider.uploadContext) {
+    return (await mediaProvider.uploadContext).config;
+  } else if ((mediaProvider as any).uploadMediaClientConfig) {
+    return (mediaProvider as any).uploadMediaClientConfig;
+  } else {
+    return undefined;
+  }
+};
+
+export const transformSliceToCorrectMediaWrapper = (
+  slice: Slice,
+  schema: Schema,
+) => {
+  const { mediaGroup, mediaSingle, media } = schema.nodes;
+  return mapSlice(slice, (node, parent) => {
+    if (!parent && node.type === media) {
+      if (
+        mediaSingle &&
+        (isImage(node.attrs.__fileMimeType) || node.attrs.type === 'external')
+      ) {
+        return mediaSingle.createChecked({}, node);
+      } else {
+        return mediaGroup.createChecked({}, [node]);
+      }
+    }
+
+    return node;
+  });
+};
+
+/**
+ * Check base styles to see if an element will be invisible when rendered in a document.
+ * @param element
+ */
+const isElementInvisible = (element: HTMLElement) => {
+  return (
+    element.style.opacity === '0' ||
+    element.style.display === 'none' ||
+    element.style.visibility === 'hidden'
+  );
+};
+
+/**
+ * Given a html string, we attempt to hoist any nested `<img>` tags,
+ * not wrapped by a `<div>` as ProseMirror no-op's on those scenarios.
+ * @param html
+ */
+export const unwrapNestedMediaElements = (html: string) => {
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = html;
+
+  const imageTags = wrapper.querySelectorAll('img');
+  if (!imageTags.length) {
+    return html;
+  }
+
+  imageTags.forEach(imageTag => {
+    // Capture the immediate parent, we may remove the media from here later.
+    const mediaParent = imageTag.parentElement;
+    if (!mediaParent) {
+      return;
+    }
+
+    // If either the parent or the image itself contains styles that would make
+    // them invisible on copy, dont paste them.
+    if (isElementInvisible(mediaParent) || isElementInvisible(imageTag)) {
+      mediaParent.removeChild(imageTag);
+      return;
+    }
+
+    // If its wrapped by a div we assume its safe to bypass.
+    // ProseMirror should handle this case properly.
+    if (mediaParent instanceof HTMLDivElement) {
+      return;
+    }
+
+    // Find the top most parent before we have our faux created element.
+    const rootElement = walkUpTreeUntil(mediaParent, wrapper);
+
+    // Here we try to insert the media right after its top most parent element
+    // Unless its the last element in our structure then we will insert above it.
+    if (rootElement) {
+      // Only remove the media if we have somewhere else to place it.
+      mediaParent.removeChild(imageTag);
+      // Attempt to clean up lines left behind by the image
+      mediaParent.innerText = mediaParent.innerText.trim();
+
+      // Insert as close as possible to the root element's index in the tree.
+      wrapper.insertBefore(
+        imageTag,
+        rootElement.nextElementSibling || rootElement,
+      );
+    }
+  });
+
+  return wrapper.innerHTML;
 };

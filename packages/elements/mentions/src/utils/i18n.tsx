@@ -2,20 +2,11 @@ import * as React from 'react';
 import { FormattedMessage, MessageDescriptor } from 'react-intl';
 import { messages } from '../components/i18n';
 
-export type Formatter<
-  T extends { [k: string]: MessageValue }
-> = React.ComponentType<T & Partial<FormattedMessage.Props>>;
-
 export const noPropFormatter = (
   messageDescriptor: MessageDescriptor,
-): Formatter<{}> => props => (
-  <FormattedMessage {...props} {...messageDescriptor} />
-);
+) => props => <FormattedMessage {...props} {...messageDescriptor} />;
 
-export const NoAccessWarning: Formatter<{ name: string }> = ({
-  name,
-  ...props
-}) => (
+export const NoAccessWarning = ({ name, ...props }) => (
   <FormattedMessage
     {...props}
     values={{ name }}

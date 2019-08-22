@@ -13,7 +13,7 @@ export interface Props {
   isExpanded?: boolean;
   onClickToExpand?: () => void;
   renderEditor: (
-    Editor: typeof EditorImports.Editor,
+    Editor: typeof EditorImports.ReactEditorView,
     modules: EditorModule,
   ) => JSX.Element;
 }

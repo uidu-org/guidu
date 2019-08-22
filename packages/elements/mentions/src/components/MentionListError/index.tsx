@@ -4,7 +4,6 @@ import {
   DefaultAdvisedAction,
   DefaultHeadline,
   DifferentText,
-  Formatter,
   LoginAgain,
 } from '../../utils/i18n';
 import { GenericErrorIllustration } from './GenericErrorIllustration';
@@ -18,9 +17,7 @@ export interface Props {
   error?: Error;
 }
 
-const advisedActionMessages: {
-  [key: string]: Formatter<{}>;
-} = {
+const advisedActionMessages = {
   '401': LoginAgain,
   '403': DifferentText,
   default: DefaultAdvisedAction,

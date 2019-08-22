@@ -154,7 +154,7 @@ export default function overflowShadow<P extends OverflowShadowProps>(
         <Component
           handleRef={this.handleContainer}
           shadowClassNames={classNames}
-          {...this.props}
+          {...(this.props as any)}
         />
       );
     }

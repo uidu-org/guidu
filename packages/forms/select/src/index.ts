@@ -1,4 +1,6 @@
 export { components, createFilter, mergeStyles } from 'react-select';
+export { makeAsyncSelect } from 'react-select/async';
+export { makeCreatableSelect } from 'react-select/creatable';
 export { default as AsyncCreatableSelect } from './AsyncCreatableSelect';
 export { default as AsyncSelect } from './AsyncSelect';
 export { default as CheckboxSelect } from './CheckboxSelect';

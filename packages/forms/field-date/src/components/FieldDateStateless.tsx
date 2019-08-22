@@ -12,7 +12,6 @@ import MomentLocaleUtils, {
   // @ts-ignore
   parseDate,
 } from 'react-day-picker/moment';
-import { FieldDateProps } from '../types';
 import {
   name as packageName,
   version as packageVersion,
@@ -20,7 +19,7 @@ import {
 
 moment.locale('it');
 
-class FieldDateStateless extends Component<FieldDateProps> {
+class FieldDateStateless extends Component<any> {
   private element: any = React.createRef();
 
   static defaultProps = {

@@ -11,7 +11,8 @@ export type FieldBaseProps = {
   disabled?: boolean;
   /** Add asterisk to label. Set required for form that the field is part of. */
   required?: boolean;
-
+  /** Is Pristine */
+  isPristine?: boolean;
   /** If true, prevents the value of the input from being edited. */
   isReadOnly?: boolean;
 

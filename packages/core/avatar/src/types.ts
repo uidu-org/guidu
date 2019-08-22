@@ -1,4 +1,4 @@
-import { AnalyticsEventInterface } from '@uidu/analytics';
+import { AnalyticsEvent } from '@uidu/analytics';
 
 export type AppearanceType = 'circle' | 'square';
 export type PresenceType = ('online' | 'busy' | 'focus' | 'offline') | Node;
@@ -17,7 +17,7 @@ export type StyledComponentType = 'custom' | 'button' | 'link' | 'span';
 
 export type AvatarClickType = (
   event: { event?: KeyboardEvent | MouseEvent; item: Object },
-  analytics?: AnalyticsEventInterface,
+  analytics?: AnalyticsEvent,
 ) => void;
 
 export type AvatarPropTypesBase = {

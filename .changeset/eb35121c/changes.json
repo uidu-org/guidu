@@ -1,0 +1,13 @@
+{
+  "releases": [
+    { "name": "@uidu/avatar", "type": "patch" },
+    { "name": "@uidu/editor-common", "type": "patch" },
+    { "name": "@uidu/editor-core", "type": "patch" },
+    { "name": "@uidu/mentions", "type": "patch" },
+    { "name": "@uidu/field-base", "type": "patch" },
+    { "name": "@uidu/field-date-range", "type": "patch" },
+    { "name": "@uidu/field-date", "type": "patch" },
+    { "name": "@uidu/select", "type": "patch" }
+  ],
+  "dependents": []
+}

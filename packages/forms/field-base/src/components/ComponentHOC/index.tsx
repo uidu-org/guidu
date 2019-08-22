@@ -2,8 +2,8 @@ import { FormContext } from '@uidu/form';
 import { withFormsy } from 'formsy-react';
 import React from 'react';
 import shortid from 'shortid';
+import { FieldBaseProps } from '../../types';
 import { ComponentHOCProps } from './types';
-
 // Component HOC
 // -------------
 //
@@ -15,7 +15,7 @@ import { ComponentHOCProps } from './types';
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const FormsyReactComponent = <TOriginalProps extends {}>(
+const FormsyReactComponent = <TOriginalProps extends FieldBaseProps & unknown>(
   Component:
     | React.ComponentClass<TOriginalProps>
     | React.FunctionComponent<TOriginalProps>,
@@ -113,8 +113,6 @@ const FormsyReactComponent = <TOriginalProps extends {}>(
         ...otherProps
       } = this.props;
 
-      console.log(this.props);
-
       const cssProps = {
         elementWrapperClassName: this.combineContextWithProp(
           'elementWrapperClassName',
@@ -157,4 +155,5 @@ const FormsyReactComponent = <TOriginalProps extends {}>(
   //  });
 };
 
+// @ts-ignore
 export default Component => withFormsy(FormsyReactComponent(Component));
