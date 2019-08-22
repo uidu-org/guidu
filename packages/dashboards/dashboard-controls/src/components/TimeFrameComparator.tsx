@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 
 export default class TimeFrameComparator extends PureComponent<any> {
   render() {
-    const { handleDateChange } = this.props;
+    const { handleDateChange, from, to } = this.props;
 
     return (
       <div className="d-flex align-items-center ml-2">
@@ -11,10 +11,10 @@ export default class TimeFrameComparator extends PureComponent<any> {
         <FieldDateRangeStateless
           name="f"
           layout="elementOnly"
-          // className="form-control form-control-sm shadow-none border"
-          //  from={from.toDate()}
-          //  to={to.toDate()}
+          from={from.toDate()}
+          to={to.toDate()}
           onChange={handleDateChange}
+          displayFormat="DD/MM/YY"
         />
       </div>
     );

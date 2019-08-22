@@ -6,18 +6,18 @@ export const labelByTimeframeGroup = (label, timeframeGrouping) => {
     case 'week':
       return (
         <span>
-          {moment(label).format('L')}
+          {moment(label).format('DD MMM')}
           <span>
             {' '}
             -{' '}
             {moment(label)
               .add(1, 'weeks')
-              .format('L')}
+              .format('DD MMM')}
           </span>
         </span>
       );
     case 'month':
-      return moment(label).format("MMMM 'YY");
+      return moment(label).format("MMM 'YY");
     case 'year':
       return moment(label).format('YYYY');
     default:
@@ -35,18 +35,39 @@ export default class Tooltip extends PureComponent<any> {
     } = this.props;
     if (active) {
       return (
-        <div>
-          {points.slice(0, 1).map(({ payload, dataKey }) => {
-            const { key: label, value } = payload;
-            const cleanedDataKey = dataKey.replace('value.', '');
-            return (
-              <p className="mb-0" key={label}>
-                <b>{formatValue(value[cleanedDataKey])}</b>
-                <br />
-                {labelByTimeframeGroup(label, timeframeGrouping)}
-              </p>
-            );
-          })}
+        <div className="card">
+          {points
+            .reverse()
+            .slice(0, 1)
+            .map(({ payload, dataKey }) => {
+              const { key: label, value } = payload;
+              const cleanedDataKey = dataKey.replace('value.', '');
+              return (
+                <div
+                  className="bg-light d-flex justify-content-between small p-2"
+                  key={label}
+                >
+                  {labelByTimeframeGroup(label, timeframeGrouping)}
+                  <b className="ml-5">{formatValue(value[cleanedDataKey])}</b>
+                </div>
+              );
+            })}
+          {points.length > 1 &&
+            points.slice(1, points.length).map(({ payload, dataKey }) => {
+              const { previousKey: label, previousValue } = payload;
+              const cleanedDataKey = dataKey.replace('previousValue.', '');
+              return (
+                <div
+                  className="d-flex justify-content-between small p-2"
+                  key={label}
+                >
+                  {labelByTimeframeGroup(label, timeframeGrouping)}
+                  <b className="ml-5">
+                    {formatValue(previousValue[cleanedDataKey])}
+                  </b>
+                </div>
+              );
+            })}
         </div>
       );
     }

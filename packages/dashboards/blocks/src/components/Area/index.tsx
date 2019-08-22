@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import { colors, format, manipulator } from '../../utils';
 import Loader from '../Loader';
+import Comparator from './Comparator';
 import AreaTooltip from './Tooltip';
 
 export default class AreasBlock extends PureComponent<any> {
@@ -14,8 +15,8 @@ export default class AreasBlock extends PureComponent<any> {
     limit: 5,
   };
 
-  manipulate = data => {
-    const { range, areas, timeFrameGrouping } = this.props;
+  manipulate = (data, { range }) => {
+    const { areas, timeFrameGrouping } = this.props;
     let manipulated = data;
     const listWithKeys = [
       ...range.map(l => ({
@@ -50,43 +51,78 @@ export default class AreasBlock extends PureComponent<any> {
   };
 
   render() {
-    const { rowData, loaded, areas, timeFrameGrouping } = this.props;
+    const {
+      rowData,
+      range,
+      comparatorData,
+      comparatorRange,
+      loaded,
+      areas,
+      timeFrameGrouping,
+    } = this.props;
+
     if (!loaded) {
       return <Loader className="border-0 bg-light shadow-none" />;
     }
 
-    const manipulated = this.manipulate(rowData);
+    const manipulated = this.manipulate(rowData, { range });
+    let data = manipulated;
+    if (comparatorData) {
+      const manipulatedPrevious = this.manipulate(comparatorData, {
+        range: comparatorRange,
+      });
+      data = manipulated.reduce((acc, item, index) => {
+        acc.push({
+          ...item,
+          previousKey: manipulatedPrevious[index].key,
+          previousValue: manipulatedPrevious[index].value,
+        });
+        return acc;
+      }, []);
+    }
 
     return (
       <div className="card h-100 border-0 shadow-none bg-transparent">
         <div className="flex-grow-1 justify-content-center flex-column d-flex">
           <div className="list-group list-group-flush">
             {areas.map((area, index) => {
+              const currentValue = manipulator(rowData, area.rollup);
               return (
                 <div
                   className="list-group-item bg-transparent px-0 px-md-3"
-                  key={area.label || index}
+                  key={index}
                 >
                   <div className="row align-items-center">
-                    <div className="col-sm-3 mb-3 mb-md-0">
+                    <div className="col-sm-5 mb-3 mb-md-0">
                       <h6 className="mb-1 text-muted">{area.label}</h6>
-                      <h4 className="my-0">
-                        <CountUp
-                          start={0}
-                          end={manipulator(rowData, area.rollup)}
-                          decimals={2}
-                          formattingFn={value => format(value, area.formatter)}
+                      <div className="row align-items-center text-nowrap">
+                        <div className="col-5">
+                          <h4 className="m-0">
+                            <CountUp
+                              start={0}
+                              end={currentValue}
+                              decimals={2}
+                              formattingFn={value =>
+                                format(value, area.formatter)
+                              }
+                            />
+                          </h4>
+                        </div>
+                        <Comparator
+                          comparatorData={comparatorData}
+                          currentValue={currentValue}
+                          area={area}
                         />
-                      </h4>
+                      </div>
                     </div>
-                    <div className="col-sm-9">
+                    <div className="col-sm-7">
                       <div style={{ width: '100%', height: '80px' }}>
                         <ResponsiveContainer>
-                          <AreaChart data={manipulated} syncId="anyId">
+                          <AreaChart data={data} syncId="anyId">
                             <Tooltip
                               content={
                                 <AreaTooltip
-                                  dataKey={`value.${area.name}`}
+                                  primary="value"
                                   formatValue={value =>
                                     format(value, area.formatter)
                                   }
@@ -95,6 +131,14 @@ export default class AreasBlock extends PureComponent<any> {
                               }
                             />
                             <XAxis dataKey="key" hide />
+                            {comparatorData && (
+                              <Area
+                                type="monotone"
+                                dataKey={`previousValue.${area.name}`}
+                                stroke="#f3f3f3"
+                                fill="#f3f3f3"
+                              />
+                            )}
                             <Area
                               type="monotone"
                               dataKey={`value.${area.name}`}

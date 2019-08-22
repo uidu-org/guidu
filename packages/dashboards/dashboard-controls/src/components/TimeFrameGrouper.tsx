@@ -16,8 +16,9 @@ export default class TimeFrameGrouper extends Component<any> {
 
   render() {
     const { groupers, onChange, activeGrouper } = this.props;
+    console.log(groupers)
 
-    const currentGrouper = groupers.filter(g => g.key === activeGrouper)[0];
+    const currentGrouper = groupers.filter(g => g.key === activeGrouper)[0] || groupers[0];
 
     return (
       <DropdownMenu

@@ -23,7 +23,7 @@ class FieldDateRangeStateless extends Component<any, any> {
 
   static defaultProps = {
     locale: 'it',
-    displayFormat: 'LL',
+    displayFormat: 'L',
     placeholder: {
       from: `${formatDate(new Date(), 'LL', 'it')}`,
       to: `${formatDate(new Date(), 'LL', 'it')}`,
@@ -110,7 +110,7 @@ class FieldDateRangeStateless extends Component<any, any> {
             },
           }}
           onDayChange={this.handleFromChange}
-          displayFormat="ll"
+          displayFormat={displayFormat}
         />
         <ArrowRight size={16} className="flex-shrink-0" />
         <span className="InputFromTo-to">
@@ -129,7 +129,7 @@ class FieldDateRangeStateless extends Component<any, any> {
               numberOfMonths: 2,
             }}
             onDayChange={this.handleToChange}
-            displayFormat="ll"
+            displayFormat={displayFormat}
           />
         </span>
         <Helmet>
@@ -143,7 +143,7 @@ class FieldDateRangeStateless extends Component<any, any> {
                 color: red;
               }
               .InputFromTo .DayPickerInput input {
-                max-width: 110px;
+                max-width: 90px;
               }
               .InputFromTo .DayPicker-Day {
                 border-radius: 0 !important;

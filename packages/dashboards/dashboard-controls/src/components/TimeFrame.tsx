@@ -76,6 +76,7 @@ export default class TimeFrame extends Component<TimeFrameProps> {
             from={from.toDate()}
             to={to.toDate()}
             onChange={handleDateChange}
+            displayFormat="DD/MM/YY"
           />
         </div>
       </Fragment>

@@ -9,7 +9,11 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
 import { DashboardManagerProps } from '../types';
-import { convertTimeframeToRange, groupByTimeframe } from '../utils';
+import {
+  convertTimeframeToRange,
+  groupByTimeframe,
+  groupersByTimeframe,
+} from '../utils';
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
@@ -32,11 +36,17 @@ export default class DashboardManager extends Component<
     };
   }
 
-  onTimeFrameChange = timeFrame =>
-    this.setState({
+  onTimeFrameChange = timeFrame => {
+    const groupers = groupersByTimeframe(timeFrame);
+    return this.setState(prevState => ({
       timeFrame,
       timeRange: convertTimeframeToRange(timeFrame),
-    });
+      timeFrameGrouping:
+        groupers.map(g => g.key).indexOf(prevState.timeFrameGrouping.key) > 0
+          ? prevState.timeFrameGrouping
+          : groupers[groupers.length - 1].key,
+    }));
+  };
 
   onTimeFrameGroupingChange = timeFrameGrouping =>
     this.setState({
@@ -47,7 +57,7 @@ export default class DashboardManager extends Component<
     const { rowData } = this.props;
     const { timeFrame, timeFrameGrouping } = this.state;
 
-    const { data, comparator, range } = groupByTimeframe(
+    const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,
       rowData,
@@ -57,6 +67,8 @@ export default class DashboardManager extends Component<
       renderBlock(block, data, {
         ...rest,
         range,
+        comparatorRange: timeFrame != '5Y' ? comparatorRange : {},
+        comparatorData: timeFrame != '5Y' ? comparatorData : {},
         timeFrame,
         timeFrameGrouping,
       }),
@@ -67,7 +79,7 @@ export default class DashboardManager extends Component<
     const { rowData, gridProps } = this.props;
     const { timeFrame, timeFrameGrouping } = this.state;
 
-    const { data, comparator, range } = groupByTimeframe(
+    const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,
       rowData,
@@ -112,6 +124,8 @@ export default class DashboardManager extends Component<
               {renderBlock(block, data, {
                 ...rest,
                 range,
+                comparatorRange: timeFrame != '5Y' ? comparatorRange : {},
+                comparatorData: timeFrame != '5Y' ? comparatorData : {},
                 timeFrame,
                 timeFrameGrouping,
               })}
@@ -123,24 +137,27 @@ export default class DashboardManager extends Component<
   };
 
   renderControls = ({ availableTimeFrames }) => {
-    console.log(this.state);
+    const { timeFrame, timeRange, timeFrameGrouping } = this.state;
     return (
       <Fragment>
         <TimeFrame
-          activeTimeFrame={this.state.timeFrame}
+          activeTimeFrame={timeFrame}
           onChange={this.onTimeFrameChange}
           handleDateChange={this.onTimeFrameChange}
-          from={this.state.timeRange.from}
-          to={this.state.timeRange.to}
+          from={timeRange.range.from}
+          to={timeRange.range.to}
         />
-        <TimeFrameComparator
-          onChange={this.onTimeFrameChange}
-          handleDateChange={this.onTimeFrameChange}
-          from={this.state.timeRange.from}
-          to={this.state.timeRange.to}
-        />
+        {timeFrame !== '5Y' && (
+          <TimeFrameComparator
+            onChange={this.onTimeFrameChange}
+            handleDateChange={this.onTimeFrameChange}
+            from={timeRange.previousRange.from}
+            to={timeRange.previousRange.to}
+          />
+        )}
         <TimeFrameGrouper
-          activeGrouper={this.state.timeFrameGrouping}
+          groupers={groupersByTimeframe(timeFrame)}
+          activeGrouper={timeFrameGrouping}
           onChange={this.onTimeFrameGroupingChange}
         />
       </Fragment>

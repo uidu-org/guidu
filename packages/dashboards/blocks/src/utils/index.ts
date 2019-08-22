@@ -46,7 +46,7 @@ export const format = (value, formatter) => {
     case 'integer':
       return numeral(value).format();
     case 'percent':
-      return numeral(value).format('0.00%');
+      return numeral(value).format('0.0%');
     case 'bytes':
       return numeral(value).format('0.00b');
     default:

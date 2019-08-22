@@ -10,6 +10,11 @@ export type BlockProps = {
 
 export type BlocksProps = {
   blocks: Array<BlockProps>;
+  comparatorData?:
+    | {
+        [key: string]: Array<any>;
+      }
+    | {};
   rowData: {
     [key: string]: Array<any>;
   };
