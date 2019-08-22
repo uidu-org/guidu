@@ -42,7 +42,7 @@ export default {
     'Use isso para agrupar os itens de uma lista',
   'fabric.editor.heading6': 'Título 6',
   'fabric.editor.heading6Description':
-    'Use isso para títulos de nível superior',
+    'Use isso para títulos de nível inferior',
   'fabric.editor.blockquote': 'Citação',
   'fabric.editor.blockquote.description': 'Inserir cotação ou citação',
   'fabric.editor.codeblock': 'Trecho de código',
@@ -102,9 +102,9 @@ export default {
   'fabric.editor.decision': 'Decisão',
   'fabric.editor.decision.description':
     'Registre decisões para facilitar o acompanhamento',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+  'fabric.editor.feedbackDialog': 'Enviar feedback',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Conte-nos sobre sua experiência com o novo editor',
   'fabric.editor.horizontalRule': 'Divisória',
   'fabric.editor.horizontalRule.description':
     'Separar conteúdo com uma linha horizontal',

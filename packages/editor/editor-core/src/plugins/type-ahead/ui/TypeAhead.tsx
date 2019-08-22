@@ -1,5 +1,5 @@
-import { akEditorFloatingDialogZIndex, Popup } from '@atlaskit/editor-common';
-import { borderRadius, colors, gridSize, math } from '@atlaskit/theme';
+import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
+import { borderRadius, colors, gridSize, math } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import styled from 'styled-components';

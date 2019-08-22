@@ -48,4 +48,6 @@ export interface EditorAppearanceComponentProps {
   disabled?: boolean;
 
   collabEdit?: CollabEditOptions;
+
+  allowDynamicTextSizing?: boolean;
 }

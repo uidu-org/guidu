@@ -246,6 +246,53 @@ export const changeImageAlignment = (align?: AlignmentState): Command => (
   return false;
 };
 
+export const createToggleBlockMarkOnRange = <T = object>(
+  markType: MarkType,
+  getAttrs: (prevAttrs?: T, node?: PMNode) => T | undefined | false,
+  allowedBlocks?:
+    | Array<NodeType>
+    | ((schema: Schema, node: PMNode, parent: PMNode) => boolean),
+) => (
+  from: number,
+  to: number,
+  tr: Transaction,
+  state: EditorState,
+): boolean => {
+  let markApplied = false;
+  state.doc.nodesBetween(from, to, (node, pos, parent) => {
+    if (!node.type.isBlock) {
+      return false;
+    }
+
+    if (
+      (!allowedBlocks ||
+        (Array.isArray(allowedBlocks)
+          ? allowedBlocks.indexOf(node.type) > -1
+          : allowedBlocks(state.schema, node, parent))) &&
+      parent.type.allowsMarkType(markType)
+    ) {
+      const oldMarks = node.marks.filter(mark => mark.type === markType);
+
+      const prevAttrs = oldMarks.length ? (oldMarks[0].attrs as T) : undefined;
+      const newAttrs = getAttrs(prevAttrs, node);
+
+      if (newAttrs !== undefined) {
+        tr.setNodeMarkup(
+          pos,
+          node.type,
+          node.attrs,
+          node.marks
+            .filter(mark => !markType.excludes(mark.type))
+            .concat(newAttrs === false ? [] : markType.create(newAttrs)),
+        );
+        markApplied = true;
+      }
+    }
+    return false;
+  });
+  return markApplied;
+};
+
 /**
  * Toggles block mark based on the return type of `getAttrs`.
  * This is similar to ProseMirror's `getAttrs` from `AttributeSpec`
@@ -263,53 +310,19 @@ export const toggleBlockMark = <T = object>(
   let markApplied = false;
   const tr = state.tr;
 
-  const toggleBlockMarkOnRange = (
-    from: number,
-    to: number,
-    tr: Transaction,
-  ) => {
-    state.doc.nodesBetween(from, to, (node, pos, parent) => {
-      if (!node.type.isBlock) {
-        return false;
-      }
-
-      if (
-        (!allowedBlocks ||
-          (Array.isArray(allowedBlocks)
-            ? allowedBlocks.indexOf(node.type) > -1
-            : allowedBlocks(state.schema, node, parent))) &&
-        parent.type.allowsMarkType(markType)
-      ) {
-        const oldMarks = node.marks.filter(mark => mark.type === markType);
-
-        const prevAttrs = oldMarks.length
-          ? (oldMarks[0].attrs as T)
-          : undefined;
-        const newAttrs = getAttrs(prevAttrs, node);
-
-        if (newAttrs !== undefined) {
-          tr.setNodeMarkup(
-            pos,
-            node.type,
-            node.attrs,
-            node.marks
-              .filter(mark => !markType.excludes(mark.type))
-              .concat(newAttrs === false ? [] : markType.create(newAttrs)),
-          );
-          markApplied = true;
-        }
-      }
-      return false;
-    });
-  };
+  const toggleBlockMarkOnRange = createToggleBlockMarkOnRange(
+    markType,
+    getAttrs,
+    allowedBlocks,
+  );
 
   if (state.selection instanceof CellSelection) {
     state.selection.forEachCell((cell, pos) => {
-      toggleBlockMarkOnRange(pos, pos + cell.nodeSize, tr);
+      markApplied = toggleBlockMarkOnRange(pos, pos + cell.nodeSize, tr, state);
     });
   } else {
     const { from, to } = state.selection;
-    toggleBlockMarkOnRange(from, to, tr);
+    markApplied = toggleBlockMarkOnRange(from, to, tr, state);
   }
 
   if (markApplied && tr.docChanged) {

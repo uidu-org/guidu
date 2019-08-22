@@ -4,7 +4,12 @@ import { TextSelection } from 'prosemirror-state';
 import { safeInsert } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { EventDispatcher } from '../event-dispatcher';
-import { compose, getEditorValueWithMedia, processRawValue, toJSON } from '../utils';
+import {
+  compose,
+  getEditorValueWithMedia,
+  processRawValue,
+  toJSON,
+} from '../utils';
 import { sanitizeNode } from '../utils/filter/node-filter';
 
 export type ContextUpdateHandler = (
@@ -134,12 +139,18 @@ export default class EditorActions implements EditorActionsOptions {
     const doc = await getEditorValueWithMedia(this.editorView);
 
     if (!doc) {
-      return undefined;
+      return;
     }
 
     return compose(
+      doc =>
+        this.contentEncode
+          ? this.contentEncode(
+              Node.fromJSON(this.editorView!.state.schema, doc),
+            )
+          : doc,
       sanitizeNode,
-      this.contentEncode || toJSON,
+      toJSON,
     )(doc);
   }
 
@@ -173,7 +184,10 @@ export default class EditorActions implements EditorActionsOptions {
     return true;
   }
 
-  replaceSelection(rawValue: Node | Object | string): boolean {
+  replaceSelection(
+    rawValue: Node | Object | string,
+    tryToReplace?: boolean,
+  ): boolean {
     if (!this.editorView) {
       return false;
     }
@@ -194,7 +208,9 @@ export default class EditorActions implements EditorActionsOptions {
     }
 
     // try to find a place in the document where to insert a node if its not allowed at the cursor position by schema
-    this.editorView.dispatch(safeInsert(content)(state.tr).scrollIntoView());
+    this.editorView.dispatch(
+      safeInsert(content, undefined, tryToReplace)(state.tr).scrollIntoView(),
+    );
 
     return true;
   }

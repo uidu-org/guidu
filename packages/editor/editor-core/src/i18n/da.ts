@@ -99,9 +99,9 @@ export default {
   'fabric.editor.decision': 'Beslutning',
   'fabric.editor.decision.description':
     'Registrér beslutninger, så de er lette at finde igen',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+  'fabric.editor.feedbackDialog': 'Giv feedback',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Fortæl os om din oplevelse med den nye editor.',
   'fabric.editor.horizontalRule': 'Rumdeler',
   'fabric.editor.horizontalRule.description':
     'Adskil indhold med en vandret linje',

@@ -1,8 +1,9 @@
-export * from './types';
+export * from './context-adapter';
 export {
   default as ReactNodeView,
-  ReactComponentProps,
-  getPosHandler,
   ForwardRef,
+  getPosHandler,
+  ReactComponentProps,
+  SelectionBasedNodeView,
 } from './ReactNodeView';
-export * from './context-adapter';
+export * from './types';

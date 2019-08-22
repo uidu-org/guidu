@@ -35,6 +35,7 @@ import { isNodeEmpty } from './document';
 export * from './action';
 export {
   findFarthestParentNode,
+  getNodesCount,
   getStepRange,
   hasVisibleContent,
   isEmptyDocument,

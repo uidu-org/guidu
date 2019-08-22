@@ -96,9 +96,9 @@ export default {
   'fabric.editor.decision': 'Otsus',
   'fabric.editor.decision.description':
     'Saa otsustest ülevaade, et nende jälgimine oleks hõlpsam',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+  'fabric.editor.feedbackDialog': 'Anna tagasisidet',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Räägi meile oma uue muutja kasutamise kogemusest',
   'fabric.editor.horizontalRule': 'Jagaja',
   'fabric.editor.horizontalRule.description':
     'Eralda sisu horisontaalse joonega',

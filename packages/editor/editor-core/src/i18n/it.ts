@@ -6,12 +6,12 @@
  */
 // Italian
 export default {
-  'fabric.editor.mediaAddLink': 'Aggiungi collegamento',
+  'fabric.editor.mediaAddLink': 'Aggiungi link',
   'fabric.editor.openLink': 'Apri link in una nuova scheda',
-  'fabric.editor.unlink': 'Scollega',
+  'fabric.editor.unlink': 'Rimuovi link',
   'fabric.editor.editLink': 'Modifica link',
   'fabric.editor.hyperlinkToolbarPlaceholder':
-    'Incolla link o ricerca tra i visualizzati di recente',
+    'Incolla link o cerca tra i visualizzati di recente',
   'fabric.editor.linkPlaceholder': 'Incolla link',
   'fabric.editor.linkAddress': 'Collega indirizzo',
   'fabric.editor.layoutFixedWidth': 'Torna alla visualizzazione centrata',
@@ -48,16 +48,16 @@ export default {
   'fabric.editor.infoPanel': 'Pannello informazioni',
   'fabric.editor.infoPanel.description':
     'Metti in evidenza l’informazione in un pannello colorato',
-  'fabric.editor.notePanel': 'Pannello nota',
+  'fabric.editor.notePanel': 'Pannello note',
   'fabric.editor.notePanel.description':
     'Aggiungi una nota in un pannello colorato',
-  'fabric.editor.successPanel': 'Pannello operazione completata',
+  'fabric.editor.successPanel': 'Pannello operazioni completate',
   'fabric.editor.successPanel.description':
     'Aggiungi consigli in un pannello colorato',
-  'fabric.editor.warningPanel': 'Pannello di avviso',
+  'fabric.editor.warningPanel': 'Pannello avvisi',
   'fabric.editor.warningPanel.description':
     'Aggiungi un avviso in un pannello colorato',
-  'fabric.editor.errorPanel': 'Pannello di errore',
+  'fabric.editor.errorPanel': 'Pannello errori',
   'fabric.editor.errorPanel.description':
     'Segnala gli errori in un pannello colorato',
   'fabric.editor.other': 'Altri...',
@@ -67,7 +67,7 @@ export default {
   'fabric.editor.displayLink': 'Mostra come testo',
   'fabric.editor.selectLanguage': 'Seleziona lingua',
   'fabric.editor.edit': 'Modifica',
-  'fabric.editor.editorHelp': 'Aiuto editor di testo',
+  'fabric.editor.editorHelp': "Guida dell'editor",
   'fabric.editor.helpDialogTips':
     'Premi {keyMap} per aprire velocemente questa finestra di dialogo ogni volta che vuoi',
   'fabric.editor.keyboardShortcuts': 'Scelte rapide da tastiera',
@@ -76,15 +76,15 @@ export default {
   'fabric.editor.redo': 'Ripeti',
   'fabric.editor.pastePlainText': 'Incolla testo non formattato',
   'fabric.editor.altText': 'Testo alternativo',
-  'fabric.editor.closeHelpDialog': 'Chiudi la finestra di aiuto',
+  'fabric.editor.closeHelpDialog': 'Chiudi la finestra della guida',
   'fabric.editor.quickInsert': 'Inserimento rapido',
   'fabric.editor.displayText': 'Testo da mostrare',
   'fabric.editor.clearLinkText': 'Cancella testo',
   'fabric.editor.clearLink': 'Cancella link',
   'fabric.editor.action': 'Attività',
   'fabric.editor.action.description': 'Crea e assegna elementi di azione',
-  'fabric.editor.link': 'Collega',
-  'fabric.editor.link.description': 'Inserisci un collegamento',
+  'fabric.editor.link': 'Inserisci link',
+  'fabric.editor.link.description': 'Inserisci un link',
   'fabric.editor.filesAndImages': 'File e immagini',
   'fabric.editor.filesAndImages.description':
     'Aggiungi alla tua pagina immagini e altri file',
@@ -99,10 +99,10 @@ export default {
   'fabric.editor.table.description': 'Inserisci una tabella',
   'fabric.editor.decision': 'Decisione',
   'fabric.editor.decision.description':
-    'Cattura decisioni per monitorarle agevolmente',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+    'Acquisisci decisioni per monitorarle agevolmente',
+  'fabric.editor.feedbackDialog': 'Lascia un feedback',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Raccontaci la tua esperienza usando il nuovo editor',
   'fabric.editor.horizontalRule': 'Divisore',
   'fabric.editor.horizontalRule.description':
     'Contenuti separati con una riga orizzontale',
@@ -122,7 +122,7 @@ export default {
   'fabric.editor.leftSidebar': 'Barra laterale sinistra',
   'fabric.editor.threeColumnsWithSidebars': 'Tre colonne con barre laterali',
   'fabric.editor.unorderedList': 'Elenco puntato',
-  'fabric.editor.unorderedList.description': 'Crea una lista non ordinata',
+  'fabric.editor.unorderedList.description': 'Crea un elenco non ordinato',
   'fabric.editor.orderedList': 'Elenco numerato',
   'fabric.editor.orderedList.description': 'Crea una lista ordinata',
   'fabric.editor.lists': 'Elenchi',
@@ -131,7 +131,7 @@ export default {
   'fabric.editor.wrapRight': 'RItorno a capo a destra',
   'fabric.editor.backLink': 'Torna indietro',
   'fabric.editor.info': 'Info',
-  'fabric.editor.note': 'Note',
+  'fabric.editor.note': 'Nota',
   'fabric.editor.success': 'Operazione riuscita',
   'fabric.editor.warning': 'Attenzione',
   'fabric.editor.error': 'Errore',

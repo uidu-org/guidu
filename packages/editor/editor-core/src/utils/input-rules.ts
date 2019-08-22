@@ -42,7 +42,7 @@ export function createInputRule(
 }
 
 // ProseMirror uses the Unicode Character 'OBJECT REPLACEMENT CHARACTER' (U+FFFC) as text representation for
-// leaf nodes, i.e. nodes that don't have any content or text property (e.g. hardBreak, mention, rule)
+// leaf nodes, i.e. nodes that don't have any content or text property (e.g. hardBreak, emoji, mention, rule)
 // It was introduced because of https://github.com/ProseMirror/prosemirror/issues/262
 // This can be used in an input rule regex to be able to include or exclude such nodes.
 export const leafNodeReplacementCharacter = '\ufffc';
@@ -87,8 +87,7 @@ const hasUnsupportedMarkForInputRule = (
     schema: { marks },
   } = state;
   let unsupportedMarksPresent = false;
-  const isCodemark = (node: PMMark) =>
-    node.type === marks.code || node.type === marks.typeAheadQuery;
+  const isCodemark = (mark: PMMark) => mark.type === marks.code;
   doc.nodesBetween(start, end, node => {
     unsupportedMarksPresent =
       unsupportedMarksPresent || node.marks.filter(isCodemark).length > 0;

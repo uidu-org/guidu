@@ -9,9 +9,9 @@ export default {
   'fabric.editor.mediaAddLink': 'Link hinzufügen',
   'fabric.editor.openLink': 'Link in neuer Registerkarte öffnen',
   'fabric.editor.unlink': 'Verknüpfung löschen',
-  'fabric.editor.editLink': 'Link ändern',
+  'fabric.editor.editLink': 'Link bearbeiten',
   'fabric.editor.hyperlinkToolbarPlaceholder':
-    'Link einfügen oder suche kürzlich angesehene',
+    'Link einfügen oder kürzlich angesehene suchen',
   'fabric.editor.linkPlaceholder': 'Link einfügen',
   'fabric.editor.linkAddress': 'Link-Adresse',
   'fabric.editor.layoutFixedWidth': 'Zurück zur Mitte',
@@ -22,7 +22,7 @@ export default {
   'fabric.editor.alignImageLeft': 'Links ausrichten',
   'fabric.editor.remove': 'Entfernen',
   'fabric.editor.visit': 'Link in neuem Fenster öffnen',
-  'fabric.editor.editMode.inviteToEditButton.title': 'Zum Ändern einladen',
+  'fabric.editor.editMode.inviteToEditButton.title': 'Zum Bearbeiten einladen',
   'fabric.editor.saveButton': 'Speichern',
   'fabric.editor.cancelButton': 'Abbrechen',
   'fabric.editor.alignment': 'Ausrichtung',
@@ -38,7 +38,7 @@ export default {
     'Verwenden Sie dies für Unterbereiche und Gruppenüberschriften.',
   'fabric.editor.heading4': 'Überschrift 4',
   'fabric.editor.heading4Description':
-    'Verwenden Sie dies für die Überschrift tieferer Ebene.',
+    'Verwenden Sie dies für Überschriften tieferer Ebene.',
   'fabric.editor.heading5': 'Überschrift 5',
   'fabric.editor.heading5Description':
     'Verwenden Sie dies für die Gruppierung von Listenelementen.',
@@ -52,7 +52,7 @@ export default {
     'Code mit Syntaxhervorhebungen anzeigen',
   'fabric.editor.infoPanel': 'Infopanel',
   'fabric.editor.infoPanel.description':
-    'Informationen ein einem farbigen Panel hervorheben',
+    'Informationen in einem farbigen Panel hervorheben',
   'fabric.editor.notePanel': 'Hinweispanel',
   'fabric.editor.notePanel.description':
     'Hinweis in einem farbigen Panel einfügen',
@@ -68,7 +68,7 @@ export default {
   'fabric.editor.other': 'Sonstige …',
   'fabric.editor.textStyles': 'Textstil',
   'fabric.editor.displayBlock': 'Als Karte anzeigen',
-  'fabric.editor.displayInline': 'Als Verknüpfung anzeigen',
+  'fabric.editor.displayInline': 'Als Link anzeigen',
   'fabric.editor.displayLink': 'Als Text anzeigen',
   'fabric.editor.selectLanguage': 'Sprache auswählen',
   'fabric.editor.edit': 'Bearbeiten',
@@ -76,18 +76,18 @@ export default {
   'fabric.editor.helpDialogTips':
     'Drücken Sie {keyMap}, um diesen Dialog jederzeit schnell zu öffnen',
   'fabric.editor.keyboardShortcuts': 'Tastenkürzel',
-  'fabric.editor.markdown': 'Abschlag',
+  'fabric.editor.markdown': 'Markdown',
   'fabric.editor.undo': 'Rückgängig',
   'fabric.editor.redo': 'Wiederholen',
   'fabric.editor.pastePlainText': 'Einfachen Text einfügen',
-  'fabric.editor.altText': 'Alt-Text',
+  'fabric.editor.altText': 'Alternativer Text',
   'fabric.editor.closeHelpDialog': 'Hilfedialog schließen',
   'fabric.editor.quickInsert': 'Schnelleinfügung',
   'fabric.editor.displayText': 'Text zum Anzeigen',
   'fabric.editor.clearLinkText': 'Text löschen',
   'fabric.editor.clearLink': 'Link löschen',
-  'fabric.editor.action': 'Aufgelistete Aufgabe',
-  'fabric.editor.action.description': 'Aktionselemente erstellen und zuweisen',
+  'fabric.editor.action': 'Aufgabe',
+  'fabric.editor.action.description': 'Aufgaben erstellen und zuweisen',
   'fabric.editor.link': 'Link',
   'fabric.editor.link.description': 'Link einfügen',
   'fabric.editor.filesAndImages': 'Dateien und Bilder',
@@ -105,9 +105,9 @@ export default {
   'fabric.editor.decision': 'Entscheidung',
   'fabric.editor.decision.description':
     'Entscheidungen erfassen, um sie leicht zu verfolgen',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+  'fabric.editor.feedbackDialog': 'Feedback geben',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Teilen Sie uns Ihre Erfahrungen mit dem neuen Editor mit.',
   'fabric.editor.horizontalRule': 'Trennlinie',
   'fabric.editor.horizontalRule.description':
     'Inhalte mithilfe einer horizontalen Linie unterteilen',
@@ -158,7 +158,7 @@ export default {
   'fabric.editor.insertRow': 'Zeile einfügen',
   'fabric.editor.removeRows':
     '{0, plural, one{Zeile entfernen} other{Zeilen entfernen}}',
-  'fabric.editor.cellOptions': 'Zellenoptionen',
+  'fabric.editor.cellOptions': 'Zelloptionen',
   'fabric.editor.decisionPlaceholder': 'Entscheidung hinzufügen …',
   'fabric.editor.taskPlaceholder':
     'Geben Sie Ihre Aktion ein und weisen Sie sie mithilfe von „@” jemandem zu.',
@@ -169,7 +169,7 @@ export default {
   'fabric.editor.subscript': 'Tiefgestellt',
   'fabric.editor.superscript': 'Hochgstellt',
   'fabric.editor.clearFormatting': 'Formatierung löschen',
-  'fabric.editor.moreFormatting': 'Weitere Formatierungsmöglichkeiten',
+  'fabric.editor.moreFormatting': 'Mehr Formatierungsoptionen',
   'fabric.editor.bold': 'Fett',
   'fabric.editor.italic': 'Kursiv',
   'fabric.theme.#172b4d': 'Dunkelgrau',

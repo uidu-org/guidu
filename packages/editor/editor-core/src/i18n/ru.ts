@@ -93,9 +93,9 @@ export default {
   'fabric.editor.decision': 'Решение',
   'fabric.editor.decision.description':
     'Записывайте решения, чтобы их было проще отслеживать',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+  'fabric.editor.feedbackDialog': 'Оставить отзыв',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Расскажите, удобно ли вам пользоваться новым редактором.',
   'fabric.editor.horizontalRule': 'Разделитель',
   'fabric.editor.horizontalRule.description':
     'Разделение контента горизонтальной линией',
@@ -157,7 +157,7 @@ export default {
   'fabric.editor.superscript': 'Надстрочный текст',
   'fabric.editor.clearFormatting': 'Очистить форматирование',
   'fabric.editor.moreFormatting': 'Дополнительные параметры',
-  'fabric.editor.bold': 'Жирный',
+  'fabric.editor.bold': 'Полужирный',
   'fabric.editor.italic': 'Курсив',
   'fabric.theme.#172b4d': 'Темно-серый',
   'fabric.theme.#97a0af': 'Светло-серый',

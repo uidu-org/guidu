@@ -100,9 +100,9 @@ export default {
   'fabric.editor.decision': 'Döntés',
   'fabric.editor.decision.description':
     'Döntések rögzítése az egyszerű nyomon követés érdekében',
-  'fabric.editor.feedbackDialog': 'Give feedback',
+  'fabric.editor.feedbackDialog': 'Visszajelzés küldése',
   'fabric.editor.feedbackDialog.description':
-    'Tell us about your experience using the new editor',
+    'Számolj be nekünk az új szerkesztő használata során szerzett tapasztalataidról',
   'fabric.editor.horizontalRule': 'Elválasztó',
   'fabric.editor.horizontalRule.description':
     'Tartalom elválasztása egy vízszintes vonallal',
