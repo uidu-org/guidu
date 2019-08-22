@@ -25,10 +25,10 @@ const FormsyReactComponent = <TOriginalProps extends FieldBaseProps & unknown>(
   const result = class FrcWrapper extends React.Component<ResultProps> {
     id: string = null;
 
-    // static defaultProps = {
-    //   onChange: () => {},
-    //   layout: 'vertical',
-    // };
+    static defaultProps = {
+      onChange: () => {},
+      layout: 'vertical',
+    };
 
     static contextType = FormContext;
 

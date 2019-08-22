@@ -555,7 +555,7 @@
     pdfjs-dist "2.0.489"
     tslib "^1.9.3"
 
-"@atlaskit/mention@^18.14.2", "@atlaskit/mention@^18.4.2":
+"@atlaskit/mention@^18.14.2":
   version "18.14.2"
   resolved "https://registry.yarnpkg.com/@atlaskit/mention/-/mention-18.14.2.tgz#1f75d64ecf6b326fac5119403fb70e8158237b8e"
   integrity sha512-NzDtUm2bUumA46xdczDLF/ktZ1u/fmAxDi5XhvzIZc89SncMJl8gVQK8vVODLY3RHBvtbxo1knvUdSvuqK1nQg==
@@ -13983,7 +13983,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
