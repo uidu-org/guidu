@@ -43,7 +43,7 @@ export default class PieBlock extends PureComponent<any, any> {
     return (
       <div className="card h-100">
         <div className="card-header d-flex align-items-center">
-          {label}
+          <span className="text-truncate">{label}</span>
           <Switch
             isPrevious={showPrevious}
             comparatorData={comparatorData}

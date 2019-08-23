@@ -256,6 +256,17 @@ export default class Basic extends Component<any, any> {
                           h: 3,
                           rollup: ['count', 'id'],
                         },
+                        {
+                          kind: 'Treemap',
+                          namespace: 'donations',
+                          x: 0,
+                          y: 5,
+                          w: 2,
+                          h: 3,
+                          label: 'Payment methods',
+                          groupBy: 'paymentMethod',
+                          rollup: ['count', 'id'],
+                        },
                       ],
                     })}
                   </div>

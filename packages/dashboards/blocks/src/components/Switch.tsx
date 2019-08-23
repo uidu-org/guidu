@@ -11,7 +11,7 @@ export default function Switch({
     return (
       <Tooltip
         content={isPrevious ? 'Switch to current' : 'Switch to previous'}
-        className="ml-auto"
+        className="ml-auto text-nowrap"
       >
         <a href="#" className="text-muted small" onClick={onChange}>
           {range.from.format('l')} - {range.to.format('l')}
@@ -21,7 +21,7 @@ export default function Switch({
   }
 
   return (
-    <span className="text-muted small ml-auto">
+    <span className="text-muted small ml-auto text-nowrap">
       {range.from.format('l')} - {range.to.format('l')}
     </span>
   );

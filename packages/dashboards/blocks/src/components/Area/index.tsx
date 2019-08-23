@@ -65,6 +65,8 @@ export default class AreasBlock extends PureComponent<any> {
       return <Loader className="border-0 bg-light shadow-none" />;
     }
 
+    console.log(this.props);
+
     const manipulated = this.manipulate(rowData, { range });
     let data = manipulated;
     if (comparatorData) {
