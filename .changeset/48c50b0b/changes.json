@@ -1,9 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/blocks", "type": "patch" },
-    { "name": "@uidu/dashboard-controls", "type": "patch" },
-    { "name": "@uidu/dashboard-manager", "type": "patch" },
-    { "name": "@uidu/field-date-range", "type": "patch" }
-  ],
-  "dependents": []
-}

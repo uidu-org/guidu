@@ -1,1 +1,0 @@
-- Added data comparator for Area blocks
