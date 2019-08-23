@@ -59,6 +59,7 @@ export default class AreasBlock extends PureComponent<any> {
       loaded,
       areas,
       timeFrameGrouping,
+      namespace,
     } = this.props;
 
     if (!loaded) {
@@ -67,28 +68,36 @@ export default class AreasBlock extends PureComponent<any> {
 
     console.log(this.props);
 
-    const manipulated = this.manipulate(rowData, { range });
-    let data = manipulated;
-    if (comparatorData) {
-      const manipulatedPrevious = this.manipulate(comparatorData, {
-        range: comparatorRange,
-      });
-      data = manipulated.reduce((acc, item, index) => {
-        acc.push({
-          ...item,
-          previousKey: manipulatedPrevious[index].key,
-          previousValue: manipulatedPrevious[index].value,
-        });
-        return acc;
-      }, []);
-    }
-
     return (
       <div className="card h-100 border-0 shadow-none bg-transparent">
         <div className="flex-grow-1 justify-content-center flex-column d-flex">
           <div className="list-group list-group-flush">
             {areas.map((area, index) => {
-              const currentValue = manipulator(rowData, area.rollup);
+              const currentValue = manipulator(
+                rowData[area.namespace || namespace],
+                area.rollup,
+              );
+              const manipulated = this.manipulate(
+                rowData[area.namespace || namespace],
+                { range },
+              );
+              let data = manipulated;
+              if (comparatorData[area.namespace || namespace]) {
+                const manipulatedPrevious = this.manipulate(
+                  comparatorData[area.namespace || namespace],
+                  {
+                    range: comparatorRange,
+                  },
+                );
+                data = manipulated.reduce((acc, item, index) => {
+                  acc.push({
+                    ...item,
+                    previousKey: manipulatedPrevious[index].key,
+                    previousValue: manipulatedPrevious[index].value,
+                  });
+                  return acc;
+                }, []);
+              }
               return (
                 <div
                   className="list-group-item bg-transparent px-0 px-md-3"
@@ -113,7 +122,9 @@ export default class AreasBlock extends PureComponent<any> {
                           </h5>
                         </div>
                         <Comparator
-                          comparatorData={comparatorData}
+                          comparatorData={
+                            comparatorData[area.namespace || namespace]
+                          }
                           currentValue={currentValue}
                           area={area}
                         />
@@ -135,7 +146,7 @@ export default class AreasBlock extends PureComponent<any> {
                               }
                             />
                             <XAxis dataKey="key" hide />
-                            {comparatorData && (
+                            {comparatorData[area.namespace || namespace] && (
                               <Area
                                 type="monotone"
                                 dataKey={`previousValue.${area.name}`}

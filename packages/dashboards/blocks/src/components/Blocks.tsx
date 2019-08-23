@@ -14,8 +14,9 @@ export const renderBlock = (
     <LoadableBlock
       kind={kind}
       fallback={<Loader />}
-      rowData={rowData[namespace]}
-      comparatorData={comparatorData[namespace]}
+      rowData={rowData}
+      comparatorData={comparatorData}
+      namespace={namespace}
       {...rest}
       {...otherProps}
     />

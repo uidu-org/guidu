@@ -67,10 +67,10 @@ export default class RadialBlock extends PureComponent<any> {
     return foo.indexOf(true);
   };
 
-  manipulate = () => {
-    const { rowData, bins, groupBy, rollup: rollupper } = this.props;
+  manipulate = data => {
+    const { bins, groupBy, rollup: rollupper } = this.props;
     let manipulated = rollup(
-      rowData,
+      data,
       c => manipulator(c, rollupper),
       c => this.inBin(c.amount),
     );
@@ -82,13 +82,13 @@ export default class RadialBlock extends PureComponent<any> {
   };
 
   render() {
-    const { rowData, loaded } = this.props;
+    const { rowData, loaded, namespace } = this.props;
 
     if (!loaded) {
       return <Loader />;
     }
 
-    const manipulated = this.manipulate();
+    const manipulated = this.manipulate(rowData[namespace]);
 
     return (
       <div className="card h-100">

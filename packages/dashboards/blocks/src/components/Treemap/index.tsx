@@ -43,6 +43,7 @@ export default class TreemapBlock extends PureComponent<any, any> {
       datumRenderer,
       comparatorData,
       timeRange,
+      namespace,
     } = this.props;
 
     const { showPrevious } = this.state;
@@ -53,7 +54,7 @@ export default class TreemapBlock extends PureComponent<any, any> {
           <span className="text-truncate">{label}</span>
           <Switch
             isPrevious={showPrevious}
-            comparatorData={comparatorData}
+            comparatorData={comparatorData[namespace]}
             onChange={e =>
               this.setState(prevState => ({
                 showPrevious: !prevState.showPrevious,
@@ -106,7 +107,9 @@ export default class TreemapBlock extends PureComponent<any, any> {
               width="100%"
               height="100%"
               data={this.manipulate(
-                comparatorData && showPrevious ? comparatorData : rowData,
+                comparatorData && showPrevious
+                  ? comparatorData[namespace]
+                  : rowData[namespace],
               )}
             />
           ) : (

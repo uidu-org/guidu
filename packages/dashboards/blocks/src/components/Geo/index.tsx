@@ -30,13 +30,13 @@ export default class GeoBlock extends PureComponent<any> {
   };
 
   render() {
-    const { rowData, loaded, limit, formatter, label } = this.props;
+    const { rowData, loaded, limit, formatter, label, namespace } = this.props;
 
     if (!loaded) {
       return <Loader />;
     }
 
-    const manipulated = this.manipulate(rowData);
+    const manipulated = this.manipulate(rowData[namespace]);
 
     return (
       <div className="card h-100">

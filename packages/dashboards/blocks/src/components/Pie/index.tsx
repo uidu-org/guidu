@@ -27,8 +27,16 @@ export default class PieBlock extends PureComponent<any, any> {
 
     return manipulated;
   };
+
   render() {
-    const { rowData, loaded, label, comparatorData, timeRange } = this.props;
+    const {
+      rowData,
+      loaded,
+      label,
+      comparatorData,
+      timeRange,
+      namespace,
+    } = this.props;
 
     const { showPrevious } = this.state;
 
@@ -37,7 +45,9 @@ export default class PieBlock extends PureComponent<any, any> {
     }
 
     const manipulated = this.manipulate(
-      comparatorData && showPrevious ? comparatorData : rowData,
+      comparatorData && showPrevious
+        ? comparatorData[namespace]
+        : rowData[namespace],
     );
 
     return (
@@ -46,7 +56,7 @@ export default class PieBlock extends PureComponent<any, any> {
           <span className="text-truncate">{label}</span>
           <Switch
             isPrevious={showPrevious}
-            comparatorData={comparatorData}
+            comparatorData={comparatorData[namespace]}
             onChange={e =>
               this.setState(prevState => ({
                 showPrevious: !prevState.showPrevious,

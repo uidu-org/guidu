@@ -4,19 +4,26 @@ import { format, manipulator } from '../../utils';
 import Loader from '../Loader';
 
 export default class CounterBlock extends PureComponent<any> {
-  manipulate = () => {
-    const { rowData, rollup } = this.props;
-    return manipulator(rowData, rollup);
+  manipulate = data => {
+    const { rollup } = this.props;
+    return manipulator(data, rollup);
   };
 
   render() {
-    const { rowData, loaded, label, formatter, itemBefore } = this.props;
+    const {
+      rowData,
+      loaded,
+      label,
+      formatter,
+      itemBefore,
+      namespace,
+    } = this.props;
 
     if (!loaded) {
       return <Loader />;
     }
 
-    const manipulated = this.manipulate();
+    const manipulated = this.manipulate(rowData[namespace]);
 
     return (
       <div className="card card-body h-100 d-flex align-items-center flex-row">

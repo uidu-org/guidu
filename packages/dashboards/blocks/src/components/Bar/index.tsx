@@ -12,10 +12,10 @@ import { colors, manipulator, resolve } from '../../utils';
 import Loader from '../Loader';
 
 export default class BarBlock extends PureComponent<any> {
-  manipulate = () => {
-    const { rowData, bars, groupBy } = this.props;
+  manipulate = data => {
+    const { bars, groupBy } = this.props;
     let manipulated = rollup(
-      rowData,
+      data,
       c =>
         bars.reduce((acc, area) => {
           acc[`${area.name}`] = manipulator(c, area.rollup);
@@ -32,12 +32,19 @@ export default class BarBlock extends PureComponent<any> {
   };
 
   render() {
-    const { rowData, loaded, bars, range, timeFrameGrouping } = this.props;
+    const {
+      rowData,
+      loaded,
+      bars,
+      range,
+      timeFrameGrouping,
+      namespace,
+    } = this.props;
     if (!loaded) {
       return <Loader />;
     }
 
-    const manipulated = this.manipulate();
+    const manipulated = this.manipulate(rowData[namespace]);
 
     return (
       <div className="card h-100">

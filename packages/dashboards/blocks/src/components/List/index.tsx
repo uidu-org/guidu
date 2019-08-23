@@ -48,6 +48,7 @@ export default class ListBlock extends PureComponent<
       datumRenderer,
       comparatorData,
       timeRange,
+      namespace,
     } = this.props;
 
     const { showPrevious } = this.state;
@@ -77,7 +78,9 @@ export default class ListBlock extends PureComponent<
         </div>
         <Items
           data={this.manipulate(
-            comparatorData && showPrevious ? comparatorData : rowData,
+            comparatorData && showPrevious
+              ? comparatorData[namespace]
+              : rowData[namespace],
           )}
           limit={limit}
           datumRenderer={datumRenderer}
