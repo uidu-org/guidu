@@ -1,5 +1,10 @@
 # @uidu/dashboard-controls
 
+## 0.1.10
+- [patch] [4c58da3](https://github.org/uidu-org/guidu/commits/4c58da3):
+
+  - Allow dashboard-control localization
+
 ## 0.1.9
 - [patch] [9432d11](https://github.org/uidu-org/guidu/commits/9432d11):
 

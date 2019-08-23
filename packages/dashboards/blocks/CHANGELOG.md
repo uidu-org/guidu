@@ -1,5 +1,10 @@
 # @uidu/blocks
 
+## 0.1.13
+- [patch] [ba1cef7](https://github.org/uidu-org/guidu/commits/ba1cef7):
+
+  - Added different namespace for areas
+
 ## 0.1.12
 - [patch] [377f1c0](https://github.org/uidu-org/guidu/commits/377f1c0):
 

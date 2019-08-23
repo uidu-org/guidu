@@ -1,5 +1,10 @@
 # @uidu/editor-core
 
+## 0.1.9
+- [patch] [4c58da3](https://github.org/uidu-org/guidu/commits/4c58da3):
+
+  - Allow dashboard-control localization
+
 ## 0.1.8
 - [patch] [eea866e](https://github.org/uidu-org/guidu/commits/eea866e):
 

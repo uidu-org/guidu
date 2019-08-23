@@ -1,1 +1,0 @@
-- Added different namespace for areas
