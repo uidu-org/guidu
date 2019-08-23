@@ -6,7 +6,7 @@ import { MembersProps } from '../types';
 
 export default class Members extends Component<MembersProps> {
   static defaultProps = {
-    label: 'Watching',
+    label: 'Watching colleagues',
     members: [],
   };
 
