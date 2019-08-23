@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 0.1.13
+
+### Patch Changes
+
+- [patch][783defa](https://github.org/uidu-org/guidu/commits/783defa):
+
+  Patch export, republish
+
 ## 0.1.12
 
 ### Patch Changes
