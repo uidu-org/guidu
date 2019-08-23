@@ -83,7 +83,7 @@ async function run(opts) {
     logger.warn('No unreleased changesets found, exiting.');
     return;
   }
-  console.log(publishCommit);
+
   logger.log(publishCommit);
 
   await bumpReleasedPackages(releaseObj, allPackages, config);
@@ -96,14 +96,10 @@ async function run(opts) {
     }),
     {},
   );
-
-  console.log(versionsToUpdate);
   // update dependencies on those versions using bolt
   const pkgPaths = await bolt.updatePackageVersions(versionsToUpdate, {
     cwd,
   });
-
-  console.log(config);
 
   if (config.commit) {
     for (const pkgPath of pkgPaths) {

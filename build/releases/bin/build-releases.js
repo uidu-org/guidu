@@ -6,7 +6,6 @@ const publishCommand = require('../publish/publishCommand');
 const initializeCommand = require('../initialize/initializeCommand');
 
 const args = process.argv.slice(2);
-console.log(args);
 if (args.length < 1) {
   console.error('Expected a command to run');
   console.error('`build-releases [changeset|version|publish|initialize]`');
@@ -16,7 +15,6 @@ if (args.length < 1) {
 const command = args[0];
 const flags = args.filter(arg => arg.startsWith('--'));
 
-console.log(flags);
 // TODO: Replace this entire thing with meow or something
 // This is more complicated than flag.find because we want to make
 // sure false values can be added to override config
@@ -53,7 +51,6 @@ switch (command) {
     if (typeof getFlagValue('--commit') === 'boolean') {
       opts.commit = getFlagValue('--commit');
     }
-    console.log(opts);
     versionCommand(opts);
     break;
   case 'publish':

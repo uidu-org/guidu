@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 const { green } = require('chalk');
-// TODO: Make these pull from the actual packages once we have a firm repo structure
 const cli = require('@uidu/build-utils/cli');
 const git = require('@uidu/build-utils/git');
 const logger = require('@uidu/build-utils/logger');
