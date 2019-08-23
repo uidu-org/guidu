@@ -38,8 +38,6 @@ export default class TimeFrame extends Component<TimeFrameProps> {
         ? timeframes.filter(t => t.key === activeTimeFrame)[0]
         : activeTimeFrame;
 
-    console.log(currentTimeFrame);
-
     return (
       <Fragment>
         <DropdownMenu

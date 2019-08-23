@@ -55,7 +55,7 @@ export default class DashboardManager extends Component<
 
   renderStaticBlocks = ({ blocks = [], ...rest }) => {
     const { rowData } = this.props;
-    const { timeFrame, timeFrameGrouping } = this.state;
+    const { timeFrame, timeFrameGrouping, timeRange } = this.state;
 
     const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
@@ -71,13 +71,14 @@ export default class DashboardManager extends Component<
         comparatorData: timeFrame != '5Y' ? comparatorData : {},
         timeFrame,
         timeFrameGrouping,
+        timeRange,
       }),
     );
   };
 
   renderBlocks = ({ blocks = [], ...rest }) => {
     const { rowData, gridProps } = this.props;
-    const { timeFrame, timeFrameGrouping } = this.state;
+    const { timeFrame, timeFrameGrouping, timeRange } = this.state;
 
     const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
@@ -128,6 +129,7 @@ export default class DashboardManager extends Component<
                 comparatorData: timeFrame != '5Y' ? comparatorData : {},
                 timeFrame,
                 timeFrameGrouping,
+                timeRange,
               })}
             </div>
           );

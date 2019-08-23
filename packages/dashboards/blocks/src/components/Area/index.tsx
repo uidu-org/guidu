@@ -94,10 +94,12 @@ export default class AreasBlock extends PureComponent<any> {
                 >
                   <div className="row align-items-center">
                     <div className="col-sm-5 mb-3 mb-md-0">
-                      <h6 className="mb-1 text-muted">{area.label}</h6>
+                      <h6 className="mb-1 text-muted font-weight-light">
+                        {area.label}
+                      </h6>
                       <div className="row align-items-center text-nowrap">
                         <div className="col-5">
-                          <h4 className="m-0">
+                          <h5 className="m-0">
                             <CountUp
                               start={0}
                               end={currentValue}
@@ -106,7 +108,7 @@ export default class AreasBlock extends PureComponent<any> {
                                 format(value, area.formatter)
                               }
                             />
-                          </h4>
+                          </h5>
                         </div>
                         <Comparator
                           comparatorData={comparatorData}

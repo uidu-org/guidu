@@ -1,14 +1,26 @@
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import { format, manipulator, resolve } from '../../utils';
+import { manipulator, resolve } from '../../utils';
 import Loader from '../Loader';
+import Switch from '../Switch';
+import Items from './Items';
 
-export default class ListBlock extends PureComponent<any> {
+export default class ListBlock extends PureComponent<
+  any,
+  { showPrevious: boolean }
+> {
   static defaultProps = {
     groupBy: null,
     sortBy: 'createdAt',
     limit: 5,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPrevious: false,
+    };
+  }
 
   manipulate = data => {
     const { groupBy, rollup: rollupper } = this.props;
@@ -34,8 +46,11 @@ export default class ListBlock extends PureComponent<any> {
       formatter,
       label,
       datumRenderer,
+      comparatorData,
+      timeRange,
     } = this.props;
-    const manipulated = this.manipulate(rowData);
+
+    const { showPrevious } = this.state;
 
     if (!loaded) {
       return <Loader />;
@@ -43,8 +58,32 @@ export default class ListBlock extends PureComponent<any> {
 
     return (
       <div className="card h-100">
-        <div className="card-header">{label}</div>
-        <ul
+        <div className="card-header d-flex align-items-center">
+          {label}
+          <Switch
+            isPrevious={showPrevious}
+            comparatorData={comparatorData}
+            onChange={e =>
+              this.setState(prevState => ({
+                showPrevious: !prevState.showPrevious,
+              }))
+            }
+            range={
+              comparatorData && showPrevious
+                ? timeRange.previousRange
+                : timeRange.range
+            }
+          />
+        </div>
+        <Items
+          data={this.manipulate(
+            comparatorData && showPrevious ? comparatorData : rowData,
+          )}
+          limit={limit}
+          datumRenderer={datumRenderer}
+          formatter={formatter}
+        />
+        {/* <ul
           className="list-group list-group-flush"
           style={{ overflow: 'scroll' }}
         >
@@ -66,7 +105,7 @@ export default class ListBlock extends PureComponent<any> {
               </a>
             );
           })}
-        </ul>
+        </ul> */}
       </div>
     );
   }

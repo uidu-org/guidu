@@ -10,6 +10,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.1",
     "@uidu/spinner": "^0.1.10",
+    "@uidu/tooltip": "^0.1.14",
     "d3-array": "^2.2.0",
     "d3-time": "^1.0.11",
     "lodash": "^4.17.4",

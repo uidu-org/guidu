@@ -11,7 +11,7 @@ export default function Comparator({ comparatorData, currentValue, area }) {
       <>
         <div className="col-2 text-left">
           {difference !== null ? (
-            <h5
+            <h6
               className={`my-0 ${
                 difference >= 0 ? 'text-success' : 'text-danger'
               }`}
@@ -23,20 +23,20 @@ export default function Comparator({ comparatorData, currentValue, area }) {
                 suffix="%"
                 formattingFn={value => format(value, 'percent')}
               />
-            </h5>
+            </h6>
           ) : (
-            <h5 className="text-warning my-0">N/A</h5>
+            <h6 className="text-warning my-0">N/A</h6>
           )}
         </div>
         <div className="col-5 text-left">
-          <h5 className="ml-4 m-0 text-muted">
+          <h6 className="ml-4 m-0 text-muted font-weight-light">
             <CountUp
               start={0}
               end={previousValue}
               decimals={2}
               formattingFn={value => format(value, area.formatter)}
             />
-          </h5>
+          </h6>
         </div>
       </>
     );

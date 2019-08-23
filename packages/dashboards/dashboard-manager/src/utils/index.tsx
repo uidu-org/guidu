@@ -2,7 +2,6 @@ import { timeDay, timeMonth, timeWeek, timeYear } from 'd3-time';
 import moment from 'moment';
 
 export const convertTimeframeToRange = timeframe => {
-  console.log(timeframe);
   const range = {
     to: moment().startOf('day'),
     from: null,
