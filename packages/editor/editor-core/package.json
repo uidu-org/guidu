@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "main": "index.js",
