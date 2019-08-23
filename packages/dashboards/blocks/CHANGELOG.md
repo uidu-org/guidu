@@ -1,5 +1,10 @@
 # @uidu/blocks
 
+## 0.1.11
+- [patch] [9432d11](https://github.org/uidu-org/guidu/commits/9432d11):
+
+  - Adding comparator to lists and pie blocks, smaller headers for areas
+
 ## 0.1.10
 - [patch] [2d597e0](https://github.org/uidu-org/guidu/commits/2d597e0):
 
