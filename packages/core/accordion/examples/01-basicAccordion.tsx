@@ -1,6 +1,5 @@
 import React from 'react';
-import Accordion from '../src';
-
 import { defaultAccordionItems } from '../examples-utils';
+import Accordion from '../src';
 
 export default () => <Accordion items={defaultAccordionItems} />;
