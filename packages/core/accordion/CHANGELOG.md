@@ -1,5 +1,10 @@
 # @uidu/accordion
 
+## 0.1.12
+- [patch] [9414e1c](https://github.org/uidu-org/guidu/commits/9414e1c):
+
+  - Added more dashboard controls, FIX accordion preExpanded items
+
 ## 0.1.11
 - [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 

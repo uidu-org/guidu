@@ -1,5 +1,10 @@
 # @uidu/attend
 
+## 0.1.7
+- [patch] [b37655b](https://github.org/uidu-org/guidu/commits/b37655b):
+
+  Test newer changeset
+
 ## 0.1.6
 - [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
