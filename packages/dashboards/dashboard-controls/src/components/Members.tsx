@@ -1,14 +1,13 @@
 import AvatarGroup from '@uidu/avatar-group';
 import React, { Component } from 'react';
 import { Users } from 'react-feather';
-import { defaultUsers } from '../../../../forms/select/examples-utils';
 import { Trigger } from '../styled';
 import { MembersProps } from '../types';
 
 export default class Members extends Component<MembersProps> {
   static defaultProps = {
     label: 'Watching',
-    members: defaultUsers,
+    members: [],
   };
 
   render() {

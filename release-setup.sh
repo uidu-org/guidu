@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-echo -e "\e[32m git branch -a"
-git branch -a
+# echo -e "\e[32m git branch -a"
+# git branch -a
 echo -e "\e[32m Run build-releases version to update versions into packages and commit"
-node ./build/releases/bin/build-releases.js version
+yarn changeset bump
 echo -e "\e[32m Push last commit into master"
 git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git HEAD:master > /dev/null 2>&1
 echo -e "\e[32m Setting git configs..."
 yarn build:pkg
 echo -e "\e[32m Setting git configs..."
-node ./build/releases/bin/build-releases.js publish --public
+yarn changeset release --public
 echo -e "\e[32m Setting git configs..."
 git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --tags > /dev/null 2>&1
 echo -e "\e[32m Setting git configs..."
