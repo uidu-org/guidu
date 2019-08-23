@@ -1,5 +1,10 @@
 # @uidu/dashboard-controls
 
+## 0.1.8
+- [patch] [2d597e0](https://github.org/uidu-org/guidu/commits/2d597e0):
+
+  - Added data comparator for Area blocks
+
 ## 0.1.7
 - [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 

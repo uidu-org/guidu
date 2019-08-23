@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-controls",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.15",
-    "@uidu/field-date-range": "^0.1.6",
+    "@uidu/field-date-range": "^0.1.7",
     "@uidu/form": "^0.1.35",
     "moment": "^2.18.1",
     "react-feather": "^2.0.3"
