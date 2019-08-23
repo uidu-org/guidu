@@ -1,1 +1,0 @@
-- Adding comparator to lists and pie blocks, smaller headers for areas
