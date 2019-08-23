@@ -1,5 +1,10 @@
 # @uidu/blocks
 
+## 0.1.12
+- [patch] [377f1c0](https://github.org/uidu-org/guidu/commits/377f1c0):
+
+  - Adding treemap
+
 ## 0.1.11
 - [patch] [9432d11](https://github.org/uidu-org/guidu/commits/9432d11):
 
