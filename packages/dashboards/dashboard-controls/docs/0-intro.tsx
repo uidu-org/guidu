@@ -37,12 +37,6 @@ export default md`
   ${(
     <Props
       heading="Sorter"
-      props={require('!!extract-react-types-loader!../src/components/TimeFrameCustom')}
-    />
-  )}
-  ${(
-    <Props
-      heading="Sorter"
       props={require('!!extract-react-types-loader!../src/components/TimeFrameComparator')}
     />
   )}

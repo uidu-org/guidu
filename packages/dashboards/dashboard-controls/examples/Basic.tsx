@@ -15,7 +15,6 @@ export default class Basic extends Component<any> {
         />
         <TimeFrameComparator />
         <TimeFrameGrouper activeGrouper="month" />
-        {/* <TimeFrameCustom /> */}
       </div>
     );
   }

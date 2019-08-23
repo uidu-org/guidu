@@ -7,22 +7,6 @@ import { TimeFrameProps } from '../types';
 import DropdownMenu from '../utils/DropdownMenu';
 
 export default class TimeFrame extends Component<TimeFrameProps> {
-  static defaultProps = {
-    timeframes: [
-      {
-        key: '1W',
-        name: '1 settimana',
-      },
-      { key: '4W', name: '4 settimane' },
-      { key: '1Y', name: '1 anno' },
-      { key: 'MTD', name: 'Mese corrente' },
-      { key: 'QTD', name: 'Trimestre corrente' },
-      { key: 'YTD', name: 'Anno corrente' },
-      { key: '5Y', name: 'Tutto' },
-    ],
-    handleDateChange: console.log,
-  };
-
   render() {
     const {
       timeframes,
@@ -32,6 +16,7 @@ export default class TimeFrame extends Component<TimeFrameProps> {
       from,
       to,
     } = this.props;
+    console.log(this.props);
 
     const currentTimeFrame =
       typeof activeTimeFrame == 'string'

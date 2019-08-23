@@ -105,39 +105,36 @@ class ToolbarBlockType extends React.PureComponent<
     }, '');
 
     const toolbarButtonFactory = (disabled: boolean) => {
+      const labelTextStyles = formatMessage(messages.textStyles);
       return (
-        <FormattedMessage {...messages.textStyles}>
-          {(labelTextStyles: string) => (
-            <ToolbarButton
-              spacing={isReducedSpacing ? 'none' : 'default'}
-              selected={active}
-              className="block-type-btn"
-              disabled={disabled}
-              onClick={this.handleTriggerClick}
-              title={labelTextStyles}
-              aria-label="Font style"
-              iconAfter={
-                <Wrapper isSmall={isSmall}>
-                  {isSmall && <TextStyleIcon label={labelTextStyles} />}
-                  <ExpandIconWrapper>
-                    <ExpandIcon label={labelTextStyles} />
-                  </ExpandIconWrapper>
-                </Wrapper>
-              }
-            >
-              {!isSmall && (
-                <ButtonContent>
-                  <FormattedMessage
-                    {...(blockTypeTitles[0] || NORMAL_TEXT.title)}
-                  />
-                  <div style={{ overflow: 'hidden', height: 0 }}>
-                    {longestDropdownMenuItem}
-                  </div>
-                </ButtonContent>
-              )}
-            </ToolbarButton>
+        <ToolbarButton
+          spacing={isReducedSpacing ? 'none' : 'default'}
+          selected={active}
+          className="block-type-btn"
+          disabled={disabled}
+          onClick={this.handleTriggerClick}
+          title={labelTextStyles}
+          aria-label="Font style"
+          iconAfter={
+            <Wrapper isSmall={isSmall}>
+              {isSmall && <TextStyleIcon label={labelTextStyles} />}
+              <ExpandIconWrapper>
+                <ExpandIcon label={labelTextStyles} />
+              </ExpandIconWrapper>
+            </Wrapper>
+          }
+        >
+          {!isSmall && (
+            <ButtonContent>
+              <FormattedMessage
+                {...(blockTypeTitles[0] || NORMAL_TEXT.title)}
+              />
+              <div style={{ overflow: 'hidden', height: 0 }}>
+                {longestDropdownMenuItem}
+              </div>
+            </ButtonContent>
           )}
-        </FormattedMessage>
+        </ToolbarButton>
       );
     };
 

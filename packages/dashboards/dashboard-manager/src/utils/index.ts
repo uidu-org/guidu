@@ -1,7 +1,12 @@
+import {
+  Groupers,
+  GroupersKeys,
+  TimeFrameKeys,
+} from '@uidu/dashboard-controls';
 import { timeDay, timeMonth, timeWeek, timeYear } from 'd3-time';
 import moment from 'moment';
 
-export const convertTimeframeToRange = timeframe => {
+export const convertTimeframeToRange = (timeframe: TimeFrameKeys) => {
   const range = {
     to: moment().startOf('day'),
     from: null,
@@ -69,7 +74,7 @@ export const convertTimeframeToRange = timeframe => {
 
 export const groupByTimeframe = (
   timeframe,
-  timeframeGrouping,
+  timeframeGrouping: GroupersKeys,
   list,
   key = 'createdAt',
 ) => {
@@ -78,7 +83,7 @@ export const groupByTimeframe = (
     previousRange: { from: previousFrom, to: previousTo },
   } =
     typeof timeframe === 'string'
-      ? convertTimeframeToRange(timeframe)
+      ? convertTimeframeToRange(timeframe as TimeFrameKeys)
       : timeframe;
   const startDate = moment(from).startOf(timeframeGrouping);
   const endDate = moment(to).endOf(timeframeGrouping);
@@ -151,13 +156,10 @@ export const groupByTimeframe = (
   };
 };
 
-export const groupersByTimeframe = timeframe => {
-  const defaultGroupers = [
-    { key: 'day', name: 'Giornaliero' },
-    { key: 'week', name: 'Settimanale' },
-    { key: 'month', name: 'Mensile' },
-    { key: 'year', name: 'Annuale' },
-  ];
+export const groupersByTimeframe = (
+  defaultGroupers: Array<Groupers>,
+  timeframe: TimeFrameKeys,
+) => {
   switch (timeframe) {
     case '1W':
       return defaultGroupers.slice(0, 1);

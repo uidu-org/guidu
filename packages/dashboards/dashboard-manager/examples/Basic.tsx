@@ -38,9 +38,7 @@ export default class Basic extends Component<any, any> {
         {({ renderControls, renderBlocks, renderStaticBlocks }) => (
           <Fragment>
             <ShellHeader className="border-bottom">
-              {renderControls({
-                availableViews: ['table', 'gallery', 'calendar', 'list'],
-              })}
+              {renderControls({})}
             </ShellHeader>
             <ShellBody scrollable>
               {renderStaticBlocks({

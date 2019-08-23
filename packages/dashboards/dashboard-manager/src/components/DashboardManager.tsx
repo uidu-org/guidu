@@ -1,14 +1,16 @@
 import { renderBlock } from '@uidu/blocks';
 import {
+  GroupersKeys,
   TimeFrame,
   TimeFrameComparator,
   TimeFrameGrouper,
+  TimeFrameKeys,
 } from '@uidu/dashboard-controls';
 import React, { Component, Fragment } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
-import { DashboardManagerProps } from '../types';
+import { DashboardManagerProps, DashboardManagerState } from '../types';
 import {
   convertTimeframeToRange,
   groupByTimeframe,
@@ -19,30 +21,49 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export default class DashboardManager extends Component<
   DashboardManagerProps,
-  any
+  DashboardManagerState
 > {
   static defaultProps = {
     defaultTimeFrame: '1Y',
     defaultTimeFrameGrouping: 'month',
+    availableTimeFrames: [
+      {
+        key: '1W',
+        name: '1 settimana',
+      },
+      { key: '4W', name: '4 settimane' },
+      { key: '1Y', name: '1 anno' },
+      { key: 'MTD', name: 'Mese corrente' },
+      { key: 'QTD', name: 'Trimestre corrente' },
+      { key: 'YTD', name: 'Anno corrente' },
+      { key: '5Y', name: 'Tutto' },
+    ],
+    availableGroupers: [
+      { key: 'day', name: 'Giornaliero' },
+      { key: 'week', name: 'Settimanale' },
+      { key: 'month', name: 'Mensile' },
+      { key: 'year', name: 'Annuale' },
+    ],
   };
 
-  constructor(props) {
+  constructor(props: DashboardManagerProps) {
     super(props);
     const { defaultTimeFrame, defaultTimeFrameGrouping } = props;
     this.state = {
-      timeFrame: defaultTimeFrame,
-      timeFrameGrouping: defaultTimeFrameGrouping,
-      timeRange: convertTimeframeToRange(defaultTimeFrame),
+      timeFrame: defaultTimeFrame as TimeFrameKeys,
+      timeFrameGrouping: defaultTimeFrameGrouping as GroupersKeys,
+      timeRange: convertTimeframeToRange(defaultTimeFrame as TimeFrameKeys),
     };
   }
 
   onTimeFrameChange = timeFrame => {
-    const groupers = groupersByTimeframe(timeFrame);
+    const { availableGroupers } = this.props;
+    const groupers = groupersByTimeframe(availableGroupers, timeFrame);
     return this.setState(prevState => ({
       timeFrame,
       timeRange: convertTimeframeToRange(timeFrame),
       timeFrameGrouping:
-        groupers.map(g => g.key).indexOf(prevState.timeFrameGrouping.key) > 0
+        groupers.map(g => g.key).indexOf(prevState.timeFrameGrouping) > 0
           ? prevState.timeFrameGrouping
           : groupers[groupers.length - 1].key,
     }));
@@ -138,11 +159,13 @@ export default class DashboardManager extends Component<
     );
   };
 
-  renderControls = ({ availableTimeFrames }) => {
+  renderControls = ({}) => {
+    const { availableTimeFrames, availableGroupers } = this.props;
     const { timeFrame, timeRange, timeFrameGrouping } = this.state;
     return (
       <Fragment>
         <TimeFrame
+          timeframes={availableTimeFrames}
           activeTimeFrame={timeFrame}
           onChange={this.onTimeFrameChange}
           handleDateChange={this.onTimeFrameChange}
@@ -158,7 +181,7 @@ export default class DashboardManager extends Component<
           />
         )}
         <TimeFrameGrouper
-          groupers={groupersByTimeframe(timeFrame)}
+          groupers={groupersByTimeframe(availableGroupers, timeFrame)}
           activeGrouper={timeFrameGrouping}
           onChange={this.onTimeFrameGroupingChange}
         />

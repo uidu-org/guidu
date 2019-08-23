@@ -1,0 +1,1 @@
+- Allow dashboard-control localization

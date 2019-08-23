@@ -2,18 +2,10 @@ import { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { Server } from 'react-feather';
 import { Trigger } from '../styled';
+import { TimeFrameGrouperProps } from '../types';
 import DropdownMenu from '../utils/DropdownMenu';
 
-export default class TimeFrameGrouper extends Component<any> {
-  static defaultProps = {
-    groupers: [
-      { key: 'day', name: 'Giornaliero' },
-      { key: 'week', name: 'Settimanale' },
-      { key: 'month', name: 'Mensile' },
-      { key: 'year', name: 'Annuale' },
-    ],
-  };
-
+export default class TimeFrameGrouper extends Component<TimeFrameGrouperProps> {
   render() {
     const { groupers, onChange, activeGrouper } = this.props;
     const currentGrouper =
