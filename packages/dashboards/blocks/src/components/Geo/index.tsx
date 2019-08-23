@@ -11,6 +11,7 @@ const data01 = [
   ['Brazil', 400],
   ['Canada', 500],
   ['France', 600],
+
   ['RU', 700],
 ];
 
