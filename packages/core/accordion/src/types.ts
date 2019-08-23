@@ -12,6 +12,8 @@ export type AccordionPropTypesBase = {
   enableTooltip: boolean;
   /** Assign specific tabIndex order to the underlying node. */
   tabIndex?: number;
+  /** Assign specific tabIndex order to the underlying node. */
+  preExpanded?: Array<any>;
 };
 
 export type AccordionPropTypes = AccordionPropTypesBase & {

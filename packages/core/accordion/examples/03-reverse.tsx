@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 import { defaultAccordionItems } from '../examples-utils';
 import Accordion from '../src';

@@ -23,6 +23,15 @@ export default md`
   )}
 
   ${(
+    <Example
+      packageName="@uidu/stepper"
+      Component={require('../examples/Navigator').default}
+      title="Navigator"
+      source={require('!!raw-loader!../examples/Navigator')}
+    />
+  )}
+
+  ${(
     <Props
       heading="Sorter"
       props={require('!!extract-react-types-loader!../src/components/TimeFrame')}

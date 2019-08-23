@@ -1,0 +1,8 @@
+{
+  "releases": [
+    { "name": "@uidu/accordion", "type": "patch" },
+    { "name": "@uidu/dashboard-controls", "type": "patch" },
+    { "name": "@uidu/mentions", "type": "patch" }
+  ],
+  "dependents": []
+}
