@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 0.1.14
+
+### Patch Changes
+
+- [patch][f1cd73f](https://github.org/uidu-org/guidu/commits/f1cd73f):
+
+  Move prev arrow before label
+
 ## 0.1.13
 
 ### Patch Changes
