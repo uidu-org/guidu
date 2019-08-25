@@ -1,6 +1,6 @@
 import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
-import { ChevronsLeft, ChevronsRight } from 'react-feather';
+import { ChevronsRight } from 'react-feather';
 import { Transition } from 'react-transition-group';
 import GlobalItem from '../GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
@@ -112,12 +112,7 @@ export default class GlobalNavigation extends PureComponent<
             </ShellBody>
           )}
           {footer.length > 0 && (
-            <ShellFooter
-              className="d-flex flex-column align-items-center py-3"
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, .05)',
-              }}
-            >
+            <ShellFooter className="d-flex flex-column align-items-center py-3">
               {footer.map((footerItem, index) => (
                 <GlobalItem
                   key={`global-navigation-footer-${index}`}
@@ -177,12 +172,7 @@ export default class GlobalNavigation extends PureComponent<
                   </ShellBody>
                 )}
                 {footer.length > 0 && (
-                  <ShellFooter
-                    className="d-flex flex-column py-3"
-                    style={{
-                      backgroundColor: 'rgba(255, 255, 255, .05)',
-                    }}
-                  >
+                  <ShellFooter className="d-flex flex-column py-3">
                     {footer.map(({ name, children, ...otherProps }, index) => (
                       <FakeItemWrapper
                         key={`global-navigation-fake-footer-${index}`}
@@ -194,7 +184,7 @@ export default class GlobalNavigation extends PureComponent<
                         {name}
                       </FakeItemWrapper>
                     ))}
-                    <FakeItemWrapper
+                    {/* <FakeItemWrapper
                       onClick={e => {
                         e.preventDefault();
                         this.setState({ isOpen: false });
@@ -205,7 +195,7 @@ export default class GlobalNavigation extends PureComponent<
                           <ChevronsLeft />
                         </GlobalItem>
                       </FakeGlobalItemWrapper>
-                    </FakeItemWrapper>
+                    </FakeItemWrapper> */}
                   </ShellFooter>
                 )}
               </ShellSidebar>

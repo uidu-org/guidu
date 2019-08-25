@@ -9,6 +9,7 @@ import NavigationHeaderSkeletonComponent from './NavigationHeaderSkeleton';
 import NavigationIconItem from './NavigationIconItem';
 import NavigationItem from './NavigationItem';
 import NavigationItemSkeleton from './NavigationItemSkeleton';
+import NavigationSubItem from './NavigationSubItem';
 
 /**
  * ITEMS
@@ -92,6 +93,7 @@ const itemComponents = {
   NavigationHeader,
   NavigationIconItem,
   NavigationItem,
+  NavigationSubItem,
   NavigationHeaderSkeleton,
   NavigationItemSkeleton,
   NavigationGroupHeading,
@@ -121,6 +123,9 @@ const renderItemComponent = (props: any, key: string, index: number) => {
   if (props.type === 'NavigationItem') {
     const { type, ...compProps } = props;
     element = <NavigationItem key={key} {...compProps} index={index} />;
+  } else if (props.type === 'NavigationSubItem') {
+    const { type, ...compProps } = props;
+    element = <NavigationSubItem key={key} {...compProps} index={index} />;
   } else if (props.type === 'NavigationIconItem') {
     const { type, ...compProps } = props;
     element = <NavigationIconItem key={key} {...compProps} index={index} />;

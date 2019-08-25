@@ -2,10 +2,10 @@ import React from 'react';
 import { ArrowLeft, Menu } from 'react-feather';
 import { Header, Resizer } from '../styled';
 
-export default function({ isCollapsed, ...rest }) {
+export default function({ isCollapsed, onClick, ...rest }) {
   return (
-    <Resizer>
-      <Header className="position-relative hoverable">
+    <Resizer className="hoverable" onClick={onClick}>
+      <Header className="position-relative">
         <button
           className={`btn d-flex align-items-center justify-content-center position-absolute bg-white rounded-circle border${
             isCollapsed ? '' : ' d-hover'
@@ -16,6 +16,12 @@ export default function({ isCollapsed, ...rest }) {
             height: '24px',
             padding: '0',
           }}
+          onClick={e => {
+            e.preventDefault();
+            e.stopPropagation();
+            onClick();
+          }}
+          onMouseDown={e => e.stopPropagation()}
           {...rest}
         >
           {isCollapsed ? <Menu size={14} /> : <ArrowLeft size={14} />}

@@ -13,3 +13,4 @@ export {
 export { default as NavigationIconItem } from './NavigationIconItem';
 export { default as NavigationItem } from './NavigationItem';
 export { default as NavigationItemSkeleton } from './NavigationItemSkeleton';
+export { default as NavigationSubItem } from './NavigationSubItem';

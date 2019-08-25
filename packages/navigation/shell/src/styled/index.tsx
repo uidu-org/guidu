@@ -117,4 +117,9 @@ export const Footer = styled.footer`
 export const Resizer = styled.div`
   width: 24px;
   height: 100%;
+  position: relative;
+
+  &:hover {
+    box-shadow: 3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075) !important;
+  }
 `;

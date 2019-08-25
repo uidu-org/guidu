@@ -35,6 +35,16 @@ const schema = [
             type: 'NavigationItem',
           },
           {
+            path: `/orders`,
+            text: 'Ordini',
+            type: 'NavigationSubItem',
+          },
+          {
+            path: `/orders`,
+            text: 'Ordini',
+            type: 'NavigationSubItem',
+          },
+          {
             path: `/attendances`,
             text: 'Partecipanti',
             type: 'NavigationItem',
@@ -247,14 +257,15 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
             <Navigation schema={schema} />
             <ShellResizer
               isCollapsed={isCollapsed}
-              onClick={() =>
+              onClick={() => {
+                console.log('clicked');
                 this.setState(prevState => ({
                   isCollapsed: !prevState.isCollapsed,
-                }))
-              }
+                }));
+              }}
             />
           </ShellNavigation>
-          <ShellMain className="bg-dark" />
+          <ShellMain className="bg-light" />
         </ShellContent>
       </Shell>
     );
