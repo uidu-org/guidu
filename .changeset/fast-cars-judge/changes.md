@@ -1,1 +1,0 @@
-Small fixes to resizer
