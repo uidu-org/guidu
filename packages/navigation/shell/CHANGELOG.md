@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.1.26
+
+### Patch Changes
+
+- [patch][4263036](https://github.org/uidu-org/guidu/commits/4263036):
+
+  Added Treenav first draft
+
 ## 0.1.25
 
 ### Patch Changes
