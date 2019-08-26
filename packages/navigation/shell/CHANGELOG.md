@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.1.25
+
+### Patch Changes
+
+- [patch][b4355c0](https://github.org/uidu-org/guidu/commits/b4355c0):
+
+  Bigger header for large devices
+
 ## 0.1.24
 
 ### Patch Changes
