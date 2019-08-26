@@ -98,6 +98,10 @@ export const Header = styled.header`
   display: flex;
   align-items: center;
   height: 4.5rem;
+
+  @media (min-width: 700px) {
+    height: 6rem;
+  }
   flex-shrink: 0;
 `;
 
