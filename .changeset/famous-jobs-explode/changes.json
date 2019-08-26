@@ -1,0 +1,7 @@
+{
+  "releases": [
+    { "name": "@uidu/shell", "type": "patch" },
+    { "name": "@uidu/treenav", "type": "patch" }
+  ],
+  "dependents": []
+}

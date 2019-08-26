@@ -100,7 +100,7 @@ export const Header = styled.header`
   height: 4.5rem;
 
   @media (min-width: 700px) {
-    height: 6rem;
+    height: 5.5rem;
   }
   flex-shrink: 0;
 `;
