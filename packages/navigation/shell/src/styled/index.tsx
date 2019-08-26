@@ -114,12 +114,30 @@ export const Footer = styled.footer`
   flex-shrink: 0;
 `;
 
-export const Resizer = styled.div`
+export const Resizer = styled.div<{ hovered: boolean; isCollapsed: boolean }>`
   width: 24px;
   height: 100%;
   position: relative;
+  left: 24px;
 
   &:hover {
-    box-shadow: 3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075) !important;
+    cursor: ew-resize;
   }
+
+  box-shadow: ${({ isCollapsed, hovered }) =>
+    isCollapsed || hovered
+      ? ' -3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075)'
+      : 'none'};
+`;
+
+export const ResizerButton = styled.button<{
+  hovered: boolean;
+  isCollapsed: boolean;
+}>`
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: ${({ hovered, isCollapsed }) =>
+    hovered ? 'flex' : isCollapsed ? 'flex' : 'none'};
 `;

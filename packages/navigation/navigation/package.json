@@ -12,6 +12,7 @@
     "@uidu/shell": "^0.1.22",
     "@uidu/theme": "^0.1.15",
     "@uidu/tooltip": "^0.1.14",
+    "hoverintent": "^2.2.1",
     "polished": "^3.0.3",
     "react-content-loader": "^4.2.1",
     "react-dom": "^16.4.0",
