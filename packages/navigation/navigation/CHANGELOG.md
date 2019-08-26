@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.1.22
+
+### Patch Changes
+
+- [patch][d53fbd1](https://github.org/uidu-org/guidu/commits/d53fbd1):
+
+  Small fixes to resizer
+
 ## 0.1.21
 
 ### Patch Changes

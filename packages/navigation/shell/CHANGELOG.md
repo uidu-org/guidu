@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.1.24
+
+### Patch Changes
+
+- [patch][d53fbd1](https://github.org/uidu-org/guidu/commits/d53fbd1):
+
+  Small fixes to resizer
+
 ## 0.1.23
 
 ### Patch Changes

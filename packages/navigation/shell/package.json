@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.32",
-    "@uidu/navigation": "^0.1.21",
+    "@uidu/navigation": "^0.1.22",
     "faker": "^4.1.0",
     "react-feather": "^2.0.3",
     "react-router-dom": "^5.0.0"
