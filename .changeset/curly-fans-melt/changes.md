@@ -1,0 +1,1 @@
+Small changes to components
