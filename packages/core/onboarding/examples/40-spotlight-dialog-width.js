@@ -1,6 +1,8 @@
-import ArrowDownIcon from '@atlaskit/icon/glyph/arrow-down';
-import ArrowUpIcon from '@atlaskit/icon/glyph/arrow-up';
 import React, { Component } from 'react';
+import {
+  ArrowDown as ArrowDownIcon,
+  ArrowUp as ArrowUpIcon,
+} from 'react-feather';
 import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
 import {

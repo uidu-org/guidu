@@ -12,13 +12,15 @@ import { Fade } from './Animation';
 
 const noop = () => {};
 
-const { Consumer: TargetConsumer, Provider: TargetProvider } = createContext();
+const { Consumer: TargetConsumer, Provider: TargetProvider } = createContext(
+  {},
+);
 
 type SpotlightContext = {
   opened: () => void;
   closed: () => void;
   targets: {
-    [string]: HTMLElement | void;
+    [key: string]: HTMLElement | void;
   };
 };
 const {
@@ -53,7 +55,7 @@ export default class SpotlightManager extends PureComponent<
   Props,
   {
     spotlightCount: number;
-    targets: { [string]: HTMLElement | void };
+    targets: { [key: string]: HTMLElement | void };
   }
 > {
   static defaultProps = {

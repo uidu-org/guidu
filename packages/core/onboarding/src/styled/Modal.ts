@@ -1,4 +1,4 @@
-import { borderRadius, divide, gridSize } from '@uidu/theme';
+import { borderRadius, gridSize, math } from '@uidu/theme';
 import styled from 'styled-components';
 
 export const Body = styled.div`
@@ -31,5 +31,5 @@ export const Actions = styled.div`
   padding: 0 40px 40px;
 `;
 export const ActionItem = styled.div`
-  margin: 0 ${divide(gridSize, 2)}px;
+  margin: 0 ${math.divide(gridSize, 2)}px;
 `;

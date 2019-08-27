@@ -1,6 +1,6 @@
-import Avatar from '@atlaskit/avatar';
 import LockCircleIcon from '@atlaskit/icon/glyph/lock-circle';
-import Lozenge from '@atlaskit/lozenge';
+import Avatar from '@uidu/avatar';
+import Lozenge from '@uidu/lozenge';
 import { colors } from '@uidu/theme';
 import * as React from 'react';
 import {

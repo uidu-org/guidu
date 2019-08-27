@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
-import { Spotlight, SpotlightManager, SpotlightPulse, SpotlightTarget, SpotlightTransition } from '../src';
+import {
+  Spotlight,
+  SpotlightManager,
+  SpotlightPulse,
+  SpotlightTarget,
+  SpotlightTransition,
+} from '../src';
 import logoInverted from './assets/logo-inverted.png';
 import logo from './assets/logo.png';
 import { Code } from './styled';
-
-
 
 const radius = 8;
 const Replacement = rect => {

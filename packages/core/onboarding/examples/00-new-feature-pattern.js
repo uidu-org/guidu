@@ -1,8 +1,14 @@
-import Button, { ButtonGroup } from '@atlaskit/button';
-import { borderRadius } from '@atlaskit/theme';
+import Button, { ButtonGroup } from '@uidu/button';
+import { borderRadius } from '@uidu/theme';
 import React from 'react';
 import styled from 'styled-components';
-import { Spotlight, SpotlightManager, SpotlightPulse, SpotlightTarget, SpotlightTransition } from '../src';
+import {
+  Spotlight,
+  SpotlightManager,
+  SpotlightPulse,
+  SpotlightTarget,
+  SpotlightTransition,
+} from '../src';
 
 const Pulse = styled(SpotlightPulse)`
   position: static;

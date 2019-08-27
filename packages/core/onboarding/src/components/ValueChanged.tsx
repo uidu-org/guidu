@@ -1,9 +1,9 @@
-import React, { Node } from 'react';
+import React, { ReactNode } from 'react';
 
 type Props = {
   value: any;
   onChange: Function;
-  children: Node;
+  children: ReactNode;
 };
 
 // This component was born from the pain of using render props in lifecycle methods.

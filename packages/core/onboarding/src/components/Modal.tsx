@@ -1,20 +1,21 @@
 import Button, { Theme as ButtonTheme } from '@uidu/button';
 import Modal from '@uidu/modal-dialog';
-import React, { Component, Node } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { ActionItem, Actions, Body, Heading, Image } from '../styled/Modal';
+import { ActionsType } from '../types';
 import { modalButtonTheme } from './theme';
 
 type Props = {
   /** Buttons to render in the footer */
   actions?: ActionsType;
   /** The elements rendered in the modal */
-  children: Node;
+  children: ReactNode;
   /** Path to the the your image */
   image?: string;
   /** Optional element rendered above the body */
-  header?: ElementType;
+  header?: React.ElementType<any>;
   /** Optional element rendered below the body */
-  footer?: ElementType;
+  footer?: React.ElementType<any>;
   /** Heading text rendered above the body */
   heading?: string;
 };

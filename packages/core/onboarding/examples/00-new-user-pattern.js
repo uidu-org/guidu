@@ -1,6 +1,6 @@
-import Button from '@atlaskit/button';
 import { ProgressDots } from '@atlaskit/progress-indicator';
-import { gridSize } from '@atlaskit/theme';
+import Button from '@uidu/button';
+import { gridSize } from '@uidu/theme';
 import React from 'react';
 import styled from 'styled-components';
 import { SpotlightCard } from '../src';

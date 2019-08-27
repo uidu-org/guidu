@@ -1,5 +1,5 @@
+import Button from '@uidu/button';
 import React from 'react';
-import Button from '@atlaskit/button';
 import { AnalyticsContext, AnalyticsListener, UIAnalyticsEvent } from '../src';
 
 const SaveButton = () => (

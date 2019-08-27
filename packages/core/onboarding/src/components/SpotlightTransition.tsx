@@ -1,15 +1,15 @@
-import React, { createContext, Node } from 'react';
+import React, { createContext, ReactNode } from 'react';
 
 type Props = {
   /**
     Children that are conditionally rendered. The transition happens based
     on the existence or non-existence of children.
   */
-  children?: Node;
+  children?: ReactNode;
 };
 
 type State = {
-  currentChildren: Node;
+  currentChildren: ReactNode;
 };
 
 const { Consumer, Provider } = createContext({

@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@atlaskit/activity": "^1.0.3",
-    "@atlaskit/adf-schema": "^2.6.1",
+    "@atlaskit/adf-schema": "^3.1.2",
     "@atlaskit/adf-utils": "^6.1.0",
     "@atlaskit/analytics-gas-types": "^3.2.4",
     "@atlaskit/calendar": "^8.0.2",
@@ -68,7 +68,6 @@
     "@atlaskit/editor-json-transformer": "^6.2.0",
     "@atlaskit/editor-markdown-transformer": "^3.1.0",
     "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/inline-dialog": "^9.0.15",
     "@atlaskit/logo": "^9.2.7",
     "@atlaskit/profilecard": "^12.0.0",
     "@atlaskit/progress-indicator": "^7.0.8",
@@ -386,7 +385,6 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
-    "@atlaskit/onboarding": "^7.0.1",
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",

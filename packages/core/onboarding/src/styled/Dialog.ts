@@ -1,10 +1,9 @@
 import {
   borderRadius,
-  divide,
   DN50A,
   DN60A,
   gridSize,
-  multiply,
+  math,
   N0,
   N50A,
   N60A,
@@ -31,7 +30,7 @@ const boxShadow = props => {
   return [border, shadow].join(',');
 };
 
-export const FillScreen = styled.div`
+export const FillScreen = styled.div<{ scrollDistance: number }>`
   height: 100%;
   left: 0;
   overflow-y: auto;
@@ -52,7 +51,8 @@ export const Dialog = styled.div`
 `;
 export const DialogBody = styled.div`
   flex: 1 1 auto;
-  padding: ${multiply(gridSize, 2)}px ${multiply(gridSize, 3)}px ${gridSize}px;
+  padding: ${math.multiply(gridSize, 2)}px ${math.multiply(gridSize, 3)}px
+    ${gridSize}px;
 
   p:last-child,
   ul:last-child,
@@ -80,12 +80,12 @@ export const Image = styled.img`
 export const Actions = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 0 ${multiply(gridSize, 3)}px ${multiply(gridSize, 2)}px;
+  padding: 0 ${math.multiply(gridSize, 3)}px ${math.multiply(gridSize, 2)}px;
 `;
 export const ActionItems = styled.div`
   display: flex;
-  margin: 0 -${divide(gridSize, 2)}px;
+  margin: 0 -${math.divide(gridSize, 2)}px;
 `;
 export const ActionItem = styled.div`
-  margin: 0 ${divide(gridSize, 2)}px;
+  margin: 0 ${math.divide(gridSize, 2)}px;
 `;

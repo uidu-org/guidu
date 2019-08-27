@@ -13,12 +13,18 @@ type Props = {
   /** The background color of the element being highlighted */
   targetBgColor?: string;
   /** Function to fire when a user clicks on the cloned target */
-  // targetOnClick?: ({ event: MouseEvent, target?: string }) => void,
+  targetOnClick?: ({
+    event,
+    target,
+  }: {
+    event: MouseEvent;
+    target?: string;
+  }) => void;
   /** The border-radius of the element being highlighted */
   targetRadius?: number;
 };
 
-function cloneAndOverrideStyles(node: HTMLElement): HTMLElement {
+function cloneAndOverrideStyles(node: any): HTMLElement {
   const shouldCloneChildren = true;
   const clonedNode = node.cloneNode(shouldCloneChildren);
 
@@ -58,7 +64,9 @@ const Clone = (props: Props) => {
       />
       <TargetOverlay
         onClick={
-          targetOnClick ? event => targetOnClick({ event, target }) : undefined
+          targetOnClick
+            ? (event: any) => targetOnClick({ event, target })
+            : undefined
         }
       />
     </TargetInner>

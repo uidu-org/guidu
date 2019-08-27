@@ -1,14 +1,12 @@
 // @flow
-import React, { Component, type Node } from 'react';
-import styled from 'styled-components';
-import Lorem from 'react-lorem-component';
-
+import CrossIcon from '@atlaskit/icon/glyph/cross';
 import Avatar from '@uidu/avatar';
 import Button, { ButtonGroup } from '@uidu/button';
-import CrossIcon from '@atlaskit/icon/glyph/cross';
-import InlineDialog from '@atlaskit/inline-dialog';
+import InlineDialog from '@uidu/inline-dialog';
 import { colors } from '@uidu/theme';
-
+import React, { Component, Node } from 'react';
+import Lorem from 'react-lorem-component';
+import styled from 'styled-components';
 import ModalDialog, { ModalFooter, ModalTransition } from '../src';
 
 const defaults = ['header', 'footer', 'both', 'neither'];

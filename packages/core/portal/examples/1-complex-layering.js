@@ -1,14 +1,14 @@
 // @flow
 /* eslint-disable react/no-multi-comp */
-import InlineDialog from '@atlaskit/inline-dialog';
+import Button from '@uidu/button';
+import InlineDialog from '@uidu/inline-dialog';
+import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
 import {
   Spotlight,
   SpotlightManager,
   SpotlightTarget,
   SpotlightTransition,
-} from '@atlaskit/onboarding';
-import Button from '@uidu/button';
-import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
+} from '@uidu/onboarding';
 import Tooltip from '@uidu/tooltip';
 import React, { Node } from 'react';
 

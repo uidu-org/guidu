@@ -85,7 +85,7 @@ class SpotlightDialog extends Component<Props, State> {
     } = this.props;
     const { focusLockDisabled } = this.state;
 
-    const translatedPlacement: Placement | void = dialogPlacement
+    const translatedPlacement: any | void = dialogPlacement
       ? {
           'top left': 'top-start',
           'top center': 'top',
@@ -133,6 +133,7 @@ class SpotlightDialog extends Component<Props, State> {
                   Footer: footer,
                 }}
                 heading={heading}
+                isFlat
               >
                 {children}
               </SpotlightCard>

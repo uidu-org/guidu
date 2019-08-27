@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
-  AnalyticsListener,
   AnalyticsErrorBoundary,
+  AnalyticsListener,
   UIAnalyticsEvent,
   withAnalyticsEvents,
   WithAnalyticsEventsProps,
@@ -60,7 +60,7 @@ export default class App extends Component<{}> {
           channel="atlaskit"
           data={{
             componentName: 'button',
-            packageName: '@atlaskit/button',
+            packageName: '@uidu/button',
             componentVersion: '999.9.9',
           }}
         >

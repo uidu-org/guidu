@@ -8,16 +8,17 @@
   "sideEffects": false,
   "module": "index.js",
   "dependencies": {
+    "@uidu/onboarding": "^0.1.0",
     "exenv": "^1.2.2",
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/inline-dialog": "^9.0.15",
-    "@atlaskit/onboarding": "^7.0.1",
     "@uidu/button": "^0.1.42",
     "@uidu/docs": "^0.1.32",
+    "@uidu/inline-dialog": "^0.1.0",
     "@uidu/modal-dialog": "^0.1.16",
+    "@uidu/onboarding": "^0.1.0",
     "@uidu/tooltip": "^0.1.14",
     "styled-components": "^4.0.3"
   },

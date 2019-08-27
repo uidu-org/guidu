@@ -1,9 +1,11 @@
 import { Theme as ButtonTheme } from '@uidu/button';
-import { N0, N50A, N60A, P300 } from '@uidu/theme';
+import { colors } from '@uidu/theme';
 import React, { ComponentType, ReactNode } from 'react';
 import { ActionsType } from '../types';
-import Card, { CardTokens } from './Card';
+import Card from './Card';
 import { spotlightButtonTheme } from './theme';
+
+const { N0, N50A, N60A, P300 } = colors;
 
 type Props = {
   /** Buttons to render in the footer */
@@ -26,14 +28,14 @@ type Props = {
   /** Removes elevation styles if set */
   isFlat: boolean;
   /** the theme of the card */
-  theme: ThemeProp<CardTokens>;
+  theme: any; // ** ThemeProps<CardTokens> */;
   /** width of the card in pixels */
   width: number;
-  innerRef?: Function;
+  innerRef?: React.RefObject<any>;
 };
 
 class SpotlightCard extends React.Component<Props> {
-  static defaultProps: $Shape<Props> = {
+  static defaultProps: Props = {
     width: 400,
     isFlat: false,
     components: {},
@@ -88,6 +90,6 @@ class SpotlightCard extends React.Component<Props> {
 }
 
 // $FlowFixMe - flow doesn't know about forwardRef
-export default React.forwardRef((props: Props, ref) => (
+export default React.forwardRef((props: Props, ref: any) => (
   <SpotlightCard {...props} innerRef={ref} />
 ));

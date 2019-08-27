@@ -30,7 +30,7 @@ const borderRadius = p =>
 
 // IE11 and Edge: z-index needed because fixed position calculates z-index relative
 // to body insteadof nearest stacking context (Portal in our case).
-export const Div = styled.div`
+export const Div = styled.div<any>`
   z-index: ${layers.spotlight() + 1};
   ${backgroundColor} ${borderRadius};
 `;

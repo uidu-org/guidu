@@ -1,11 +1,11 @@
 import Button from '@uidu/button';
 import {
   borderRadius,
+  colors,
   createTheme,
   gridSize,
-  h600,
   layers,
-  multiply,
+  math,
 } from '@uidu/theme';
 import React, { ComponentType } from 'react';
 import styled from 'styled-components';
@@ -14,7 +14,7 @@ import { ActionsType } from '../types';
 
 export type CardTokens = {
   container: {
-    [string]: string | void;
+    [key: string]: string | void;
   };
 };
 
@@ -37,8 +37,8 @@ type Props = {
   /** The image to render above the heading. Can be a url or a Node. */
   image?: string | React.ReactNode;
   /** the theme of the card */
-  theme?: ThemeProp<CardTokens>;
-  innerRef?: Function;
+  theme?: any; // ** ThemeProps<CardTokens> */;
+  innerRef?: React.RefObject<any>;
 };
 
 const Container = styled.div`
@@ -48,11 +48,11 @@ const Container = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column;
-  padding: ${multiply(gridSize, 2)}px ${multiply(gridSize, 2.5)}px;
+  padding: ${math.multiply(gridSize, 2)}px ${math.multiply(gridSize, 2.5)}px;
 `;
 
 const Heading = styled.h4`
-  ${h600};
+  ${colors.h600};
   color: inherit;
 `;
 
@@ -138,6 +138,6 @@ const Card = ({
 };
 
 // $FlowFixMe - flow doesn't know about forwardRef
-export default React.forwardRef((props: Props, ref) => (
+export default React.forwardRef((props: Props, ref: any) => (
   <Card {...props} innerRef={ref} />
 ));

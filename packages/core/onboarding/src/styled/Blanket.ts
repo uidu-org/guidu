@@ -1,11 +1,11 @@
-import { DN90A, layers, N100A, themed } from '@uidu/theme';
+import { colors, layers, themed } from '@uidu/theme';
 import styled from 'styled-components';
 
 // NOTE:
 // we can't use @uidu/blanket
 // because it has to sit on top of other layered elements (i.e. Modal).
 
-const backgroundColor = themed({ light: N100A, dark: DN90A });
+const backgroundColor = themed({ light: colors.N100A, dark: colors.DN90A });
 
 // IE11 and Edge: z-index needed because fixed position calculates z-index relative
 // to body insteadof nearest stacking context (Portal in our case).

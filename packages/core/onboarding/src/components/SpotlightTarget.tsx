@@ -15,7 +15,7 @@ class SpotlightTarget extends Component<Props> {
       <TargetConsumer>
         {targetRef =>
           targetRef ? (
-            <NodeResolver innerRef={targetRef(this.props.name)}>
+            <NodeResolver innerRef={(targetRef as any)(this.props.name)}>
               {this.props.children}
             </NodeResolver>
           ) : (

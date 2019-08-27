@@ -6,8 +6,10 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
   "types": "index.d.ts",
+  "uidu:src": "src/index.js",
   "dependencies": {
     "exenv": "^1.2.2",
     "prop-types": "^15.6.0"
@@ -29,6 +31,5 @@
     "Ajay M",
     "Daniel D",
     "Kang C"
-  ],
-  "uidu:src": "src/index.js"
+  ]
 }

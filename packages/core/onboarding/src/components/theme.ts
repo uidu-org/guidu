@@ -1,5 +1,4 @@
-import { ButtonProps } from '@atlaskit/button';
-import * as colors from '@atlaskit/theme/colors';
+import { colors } from '@uidu/theme';
 
 const spotlightTheme = {
   default: {
@@ -102,7 +101,10 @@ function extract(newTheme: any, { mode, appearance, state }) {
   }, {});
 }
 
-export const spotlightButtonTheme = (current: any, themeProps: ButtonProps) => {
+export const spotlightButtonTheme = (
+  current: any,
+  themeProps: any /** ButtonProps */,
+) => {
   const { buttonStyles, ...rest } = current(themeProps);
   return {
     buttonStyles: {
@@ -113,7 +115,10 @@ export const spotlightButtonTheme = (current: any, themeProps: ButtonProps) => {
   };
 };
 
-export const modalButtonTheme = (current: any, themeProps: ButtonProps) => {
+export const modalButtonTheme = (
+  current: any,
+  themeProps: any /** ButtonProps */,
+) => {
   const { buttonStyles, ...rest } = current(themeProps);
   return {
     buttonStyles: {

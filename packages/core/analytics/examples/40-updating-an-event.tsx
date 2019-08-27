@@ -1,8 +1,7 @@
-import React, { Component, MouseEvent, FormEvent } from 'react';
 import FieldText from '@atlaskit/field-text';
-import Button from '@atlaskit/button';
-
-import { UIAnalyticsEvent, AnalyticsListener } from '../src';
+import Button from '@uidu/button';
+import React, { Component, FormEvent, MouseEvent } from 'react';
+import { AnalyticsListener, UIAnalyticsEvent } from '../src';
 
 class Form extends Component<{}, { value: string }> {
   state = {
