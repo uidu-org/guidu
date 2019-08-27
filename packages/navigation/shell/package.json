@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
