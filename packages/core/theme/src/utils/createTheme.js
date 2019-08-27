@@ -1,6 +1,6 @@
 // @flow
 
-import React, { createContext, type ComponentType, type Node } from 'react';
+import React, { ComponentType, createContext, Node } from 'react';
 
 export type ThemeProp<ThemeTokens = {}, ThemeProps = *> = (
   (ThemeProps) => ThemeTokens,

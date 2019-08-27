@@ -23,15 +23,11 @@ export const e300 = themed({
 // Panels
 export const e400 = themed({
   light: `box-shadow: 0 12px 24px -6px ${colors.N50A}, 0 0 1px ${colors.N60A};`,
-  dark: `box-shadow: 0 12px 24px -6px ${colors.DN50A}, 0 0 1px ${
-    colors.DN60A
-  };`,
+  dark: `box-shadow: 0 12px 24px -6px ${colors.DN50A}, 0 0 1px ${colors.DN60A};`,
 });
 
 // Flag messages (notifications)
 export const e500 = themed({
   light: `box-shadow: 0 20px 32px -8px ${colors.N50A}, 0 0 1px ${colors.N60A};`,
-  dark: `box-shadow: 0 20px 32px -8px ${colors.DN50A}, 0 0 1px ${
-    colors.DN60A
-  };`,
+  dark: `box-shadow: 0 20px 32px -8px ${colors.DN50A}, 0 0 1px ${colors.DN60A};`,
 });

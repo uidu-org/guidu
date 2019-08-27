@@ -1,16 +1,14 @@
 // @flow
 
-import React, { Component, type Node } from 'react';
-import PropTypes from 'prop-types';
-import styled, { ThemeProvider } from 'styled-components';
 import exenv from 'exenv';
-import type { ThemeModes, ThemeProps } from '../types';
+import PropTypes from 'prop-types';
+import React, { Component, Node } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 import * as colors from '../colors';
-
 import { CHANNEL, DEFAULT_THEME_MODE } from '../constants';
-
 // For forward-compat until everything is upgraded.
 import Theme from './Theme';
+import type { ThemeModes, ThemeProps } from '../types';
 
 function getStylesheetResetCSS(state: ThemeProps) {
   const backgroundColor = colors.background(state);

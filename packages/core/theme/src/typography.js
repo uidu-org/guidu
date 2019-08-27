@@ -1,7 +1,8 @@
 // @flow
 import { css } from 'styled-components';
+
 import * as colors from './colors';
-import { fontSize, gridSize } from './index';
+import { gridSize, fontSize } from './constants';
 
 const baseHeading = (size, lineHeight) => `
   font-size: ${size / fontSize()}em;
@@ -55,7 +56,7 @@ export const h300 = () => css`
   ${baseHeading(12, 16)} color: ${colors.heading};
   font-weight: 600;
   margin-top: ${gridSize() * 2.5}px;
-
+  text-transform: uppercase;
 `;
 
 export const h200 = () => css`

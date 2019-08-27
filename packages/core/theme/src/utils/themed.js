@@ -1,9 +1,8 @@
-import { ThemeProps, ThemedValue } from '../types';
-
 // @flow
 /* eslint-disable prefer-rest-params */
-import { css } from 'styled-components';
+
 import getTheme from './getTheme';
+import { type ThemedValue, type ThemeProps } from '../types';
 
 type Value = string | number;
 type Modes = { light: Value, dark: Value };
@@ -15,12 +14,10 @@ function themedVariants(variantProp, variants) {
     if (props && props[variantProp] && variants) {
       const modes = variants[props[variantProp]];
       if (modes) {
-        return css`
-          ${modes[theme.mode]}
-        `;
+        return modes[theme.mode];
       }
     }
-    return css``;
+    return '';
   };
 }
 
@@ -34,8 +31,6 @@ export default function themed(
   const modes = modesOrVariant;
   return (props: ?ThemeProps) => {
     const theme = getTheme(props);
-    return css`
-      ${modes[theme.mode]}
-    `;
+    return modes[theme.mode];
   };
 }

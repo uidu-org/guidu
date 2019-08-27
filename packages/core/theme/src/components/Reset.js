@@ -1,9 +1,9 @@
 // @flow
 
-import React, { type Node } from 'react';
+import React, { Node } from 'react';
 import styled, { css } from 'styled-components';
 import * as colors from '../colors';
-import { createTheme, type ThemeProp } from '../utils/createTheme';
+import { createTheme, ThemeProp } from '../utils/createTheme';
 
 export type ResetThemeProps = *;
 export type ResetThemeTokens = {

@@ -6,21 +6,18 @@
    Once the codemod is done and all the AK modules have been codeshifted, we delete index.js and rename this file to index + update all the imports
 */
 
-export { default as getTheme } from './utils/getTheme';
-export { default as themed } from './utils/themed';
+export { default as Appearance } from './components/Appearance';
 export {
   default as AtlaskitThemeProvider,
 } from './components/AtlaskitThemeProvider';
-
-export { default as Appearance } from './components/Appearance';
+export { Reset, ResetTheme } from './components/Reset';
+export { default } from './components/Theme';
+export { withTheme } from './hoc';
+export { createTheme } from './utils/createTheme';
+export { default as getTheme } from './utils/getTheme';
+export { default as themed } from './utils/themed';
 
 // New API
 export type { ResetThemeProps, ResetThemeTokens } from './components/Reset';
-export { ResetTheme, Reset } from './components/Reset';
-
-export { default } from './components/Theme';
-export { withTheme } from './hoc';
 
 export type { ThemeProp } from './utils/createTheme';
-
-export { createTheme } from './utils/createTheme';
