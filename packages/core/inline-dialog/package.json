@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "license": "MIT",
   "types": "index.d.ts",
@@ -9,9 +9,9 @@
   "sideEffects": false,
   "author": "uidu",
   "dependencies": {
-    "@uidu/analytics": "^0.1.12",
+    "@uidu/analytics": "^0.1.13",
     "@uidu/popper": "^0.1.9",
-    "@uidu/theme": "^0.1.15",
+    "@uidu/theme": "^0.1.16",
     "react-node-resolver": "^2.0.1"
   },
   "peerDependencies": {
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/button": "^0.1.43",
+    "@uidu/button": "^0.1.44",
     "@uidu/docs": "^0.1.32",
     "@uidu/form": "^0.1.35",
     "@uidu/select": "^0.1.21",

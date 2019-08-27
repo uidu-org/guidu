@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "The Atlaskit theme framework",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "Apache-2.0",
@@ -15,7 +15,7 @@
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.42",
+    "@uidu/button": "^0.1.44",
     "@uidu/docs": "^0.1.32",
     "@uidu/lozenge": "^0.1.12",
     "@uidu/section-message": "^0.1.11",
