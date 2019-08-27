@@ -1,4 +1,5 @@
-import FieldText from '@atlaskit/field-text';
+import FieldText from '@uidu/field-text';
+import Form from '@uidu/form';
 import Button from '@uidu/button';
 import React, { Component, FormEvent, MouseEvent } from 'react';
 import { AnalyticsListener, UIAnalyticsEvent } from '../src';
@@ -25,9 +26,10 @@ class Form extends Component<{}, { value: string }> {
 
   render() {
     return (
-      <div>
+      <Form>
         <FieldText
           label="Name"
+          name="name"
           onChange={this.handleInputChange}
           value={this.state.value}
         />
@@ -36,7 +38,7 @@ class Form extends Component<{}, { value: string }> {
             Submit
           </Button>
         </p>
-      </div>
+      </Form>
     );
   }
 }

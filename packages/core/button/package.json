@@ -14,8 +14,7 @@
     "@uidu/spinner": "^0.1.10",
     "@uidu/theme": "^0.1.15",
     "jest-emotion": "^10.0.10",
-    "memoize-one": "^5.0.0",
-    "tslib": "^1.9.3"
+    "memoize-one": "^5.0.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",

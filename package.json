@@ -370,7 +370,6 @@
     "thread-loader": "^2.1.2",
     "tiny-invariant": "^1.0.3",
     "ts-loader": "^6.0.0",
-    "tslib": "^1.9.3",
     "tti-polyfill": "^0.2.2",
     "url": "^0.11.0",
     "url-loader": "^2.0.0",
