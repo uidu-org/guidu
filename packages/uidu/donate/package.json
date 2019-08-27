@@ -17,7 +17,7 @@
     "@uidu/payments": "^0.1.4",
     "@uidu/widgets": "^0.1.4",
     "react-feather": "^2.0.3",
-    "react-stripe-elements": "^4.0.0"
+    "react-stripe-elements": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.32"

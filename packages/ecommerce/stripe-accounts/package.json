@@ -15,7 +15,7 @@
     "@uidu/spinner": "^0.1.10",
     "@uidu/stepper": "^0.1.11",
     "moment": "^2.18.1",
-    "react-stripe-elements": "^4.0.0"
+    "react-stripe-elements": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.32",

@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/form": "^0.1.35",
-    "react-stripe-elements": "^4.0.0"
+    "react-stripe-elements": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.32"
