@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
+import Lorem from 'react-lorem-component';
+
 import { Spotlight, SpotlightManager, SpotlightTarget } from '../src';
 import { Code, Highlight, HighlightGroup } from './styled';
 
@@ -10,14 +11,14 @@ const Wrapper = styled.div`
   padding: 40px;
 `;
 
-type State = {
-  active: number | null,
-};
+interface State {
+  active: number | null;
+}
 
 /* eslint-disable react/sort-comp */
 export default class SpotlightTargetBackgroundExample extends Component<
   Object,
-  State,
+  State
 > {
   state: State = { active: null };
 

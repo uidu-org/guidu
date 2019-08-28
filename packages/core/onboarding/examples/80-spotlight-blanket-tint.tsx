@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
-import {
-  Spotlight,
-  SpotlightManager,
-  SpotlightTarget,
-  SpotlightTransition,
-} from '../src';
-import { Highlight, HighlightGroup } from './styled';
 
-type State = {
-  active: number | null,
-};
+import { Spotlight, SpotlightManager, SpotlightTarget } from '../src';
+import { HighlightGroup, Highlight } from './styled';
+
+interface State {
+  active: number | null;
+}
 
 export default class SpotlightBasicExample extends Component<Object, State> {
   state: State = { active: null };
 
   start = () => this.setState({ active: 0 });
 
-  next = () => this.setState(state => ({ active: state.active + 1 }));
+  next = () => this.setState(state => ({ active: (state.active || 0) + 1 }));
 
   prev = () => this.setState(state => ({ active: (state.active || 0) - 1 }));
 
@@ -34,20 +30,20 @@ export default class SpotlightBasicExample extends Component<Object, State> {
         ]}
         dialogPlacement="bottom left"
         heading="Green"
-        target="green"
         key="green"
+        target="green"
       >
         <Lorem count={1} />
       </Spotlight>,
       <Spotlight
         actions={[
-          { onClick: this.next, text: 'Next' },
           { onClick: this.prev, text: 'Prev' },
+          { onClick: this.next, text: 'Next' },
         ]}
         dialogPlacement="bottom center"
         heading="Yellow"
-        target="yellow"
         key="yellow"
+        target="yellow"
       >
         <Lorem count={1} />
       </Spotlight>,
@@ -55,8 +51,8 @@ export default class SpotlightBasicExample extends Component<Object, State> {
         actions={[{ onClick: this.finish, text: 'Got it' }]}
         dialogPlacement="bottom right"
         heading="Red"
-        target="red"
         key="red"
+        target="red"
       >
         <Lorem count={1} />
       </Spotlight>,
@@ -69,7 +65,7 @@ export default class SpotlightBasicExample extends Component<Object, State> {
 
   render() {
     return (
-      <SpotlightManager>
+      <SpotlightManager blanketIsTinted={false}>
         <HighlightGroup>
           <SpotlightTarget name="green">
             <Highlight color="green">First Element</Highlight>
@@ -88,9 +84,7 @@ export default class SpotlightBasicExample extends Component<Object, State> {
 
         <button onClick={this.start}>Start</button>
 
-        <SpotlightTransition>
-          {this.renderActiveSpotlight()}
-        </SpotlightTransition>
+        {this.renderActiveSpotlight()}
       </SpotlightManager>
     );
   }

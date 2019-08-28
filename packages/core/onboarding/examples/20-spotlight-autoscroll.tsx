@@ -1,29 +1,31 @@
-
 import React, { Component, Fragment } from 'react';
 import Lorem from 'react-lorem-component';
-import { Spotlight, SpotlightManager, SpotlightTarget, SpotlightTransition } from '../src';
-import { Highlight, HighlightGroup } from './styled';
 
+import {
+  Spotlight,
+  SpotlightManager,
+  SpotlightTarget,
+  SpotlightTransition,
+} from '../src';
+import { HighlightGroup, Highlight } from './styled';
 
-type State = {
-  spotlight: 'target-one' | 'target-two' | 'off',
-};
+interface State {
+  spotlight: 'target-one' | 'target-two' | 'off';
+}
 
-const Base = props => <div style={{ paddingBottom: 40 }} {...props} />;
 const Paragraph = ({ position }: { position: number }) => (
   <Fragment>
     <h3>{position}</h3>
-    <Lorem seed={position} count={1} style={{ marginBottom: 20 }} />
+    <div style={{ marginBottom: 20 }}>
+      <Lorem count={1} />
+    </div>
   </Fragment>
 );
 
-export default class SpotlightAutoscrollExample extends Component<*, State> {
-  constructor() {
-    super();
-    this.state = {
-      spotlight: 'off',
-    };
-  }
+export default class SpotlightAutoscrollExample extends Component<{}, State> {
+  readonly state: State = {
+    spotlight: 'off',
+  };
 
   highlightOne = () => this.setState({ spotlight: 'target-one' });
 
@@ -34,7 +36,7 @@ export default class SpotlightAutoscrollExample extends Component<*, State> {
   render() {
     const { spotlight } = this.state;
     return (
-      <Base>
+      <div style={{ paddingBottom: 40 }}>
         <SpotlightManager>
           <p>
             To save some time for consumers and provide a delightfull experience
@@ -93,7 +95,10 @@ export default class SpotlightAutoscrollExample extends Component<*, State> {
                         onClick: this.highlightOne,
                         text: 'Prev',
                       },
-                  { onClick: this.close, text: 'Got it' },
+                  {
+                    onClick: this.close,
+                    text: 'Got it',
+                  },
                 ]}
                 dialogPlacement="bottom left"
                 heading="Aww, yiss!"
@@ -105,7 +110,7 @@ export default class SpotlightAutoscrollExample extends Component<*, State> {
             )}
           </SpotlightTransition>
         </SpotlightManager>
-      </Base>
+      </div>
     );
   }
 }

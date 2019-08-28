@@ -8,7 +8,9 @@ import {
 } from '../src';
 import { Highlight } from './styled';
 
-type State = { active: boolean };
+interface State {
+  active: boolean;
+}
 
 export default class SpotlightDialogWidthExample extends Component<{}, State> {
   state: State = { active: false };
@@ -37,7 +39,7 @@ export default class SpotlightDialogWidthExample extends Component<{}, State> {
               }}
             >
               <SpotlightTarget name="custom-button-appearances">
-                <Highlight>
+                <Highlight color="neutral">
                   <h1>Target</h1>
                 </Highlight>
               </SpotlightTarget>

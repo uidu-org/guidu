@@ -1,5 +1,11 @@
-export type ActionsType = Array<{
-  onClick?: (e: any) => void;
+import { ButtonAppearances } from '@uidu/button';
+import { ReactNode } from 'react';
+
+interface Action {
+  onClick?: (e: any) => any;
   key?: string;
-  text?: React.ReactNode;
-}>;
+  text?: ReactNode;
+  appearance?: ButtonAppearances;
+}
+
+export type Actions = Action[];

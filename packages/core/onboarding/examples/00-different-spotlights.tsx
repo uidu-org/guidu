@@ -1,7 +1,7 @@
+import UndoIcon from '@atlaskit/icon/glyph/editor/undo';
 import Button from '@uidu/button';
 import { typography } from '@uidu/theme';
 import React from 'react';
-import { CornerUpLeft as UndoIcon } from 'react-feather';
 import styled from 'styled-components';
 import { SpotlightCard } from '../src';
 import welcomeImage from './assets/this-is-new-jira.png';
@@ -59,7 +59,7 @@ export default () => (
     <SpotlightCard
       heading="Switch it up"
       headingAfterElement={
-        <Button iconBefore={<UndoIcon />} appearance="subtle-link">
+        <Button iconBefore={<UndoIcon label="undo" />} appearance="subtle-link">
           Replay
         </Button>
       }

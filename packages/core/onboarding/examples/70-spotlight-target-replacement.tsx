@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
+import Lorem from 'react-lorem-component';
+
 import {
   Spotlight,
   SpotlightManager,
@@ -8,12 +9,13 @@ import {
   SpotlightTarget,
   SpotlightTransition,
 } from '../src';
-import logoInverted from './assets/logo-inverted.png';
-import logo from './assets/logo.png';
 import { Code } from './styled';
 
+import logo from './assets/logo.png';
+import logoInverted from './assets/logo-inverted.png';
+
 const radius = 8;
-const Replacement = rect => {
+const Replacement = (rect: any) => {
   const style = { borderRadius: radius, overflow: 'hidden', ...rect };
 
   return (
@@ -28,13 +30,13 @@ const Image = styled.img`
   width: 128px;
 `;
 
-type State = {
-  active: boolean,
-};
+interface State {
+  active: boolean;
+}
 /* eslint-disable react/sort-comp */
 export default class SpotlightTargetReplacementExample extends Component<
   {},
-  State,
+  State
 > {
   state: State = {
     active: false,

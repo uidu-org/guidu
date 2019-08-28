@@ -1,45 +1,44 @@
 import Button from '@uidu/button';
 import {
   borderRadius,
-  colors,
   createTheme,
   gridSize,
   layers,
   math,
+  typography,
 } from '@uidu/theme';
-import React, { ComponentType } from 'react';
+import React, { ComponentType, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { ActionItem, ActionItems } from '../styled/Dialog';
-import { ActionsType } from '../types';
+import { Actions } from '../types';
 
-export type CardTokens = {
-  container: {
-    [key: string]: string | void;
-  };
-};
+export interface CardTokens {
+  container: Record<string, string | undefined>;
+}
 
-type Props = {
+interface Props {
   /** Buttons to render in the footer */
-  actions?: ActionsType;
+  actions?: Actions;
   /** An optional element rendered to the left of the footer actions */
-  actionsBeforeElement?: React.ReactNode;
+  actionsBeforeElement?: ReactNode;
   /** The content of the card */
-  children?: React.ReactNode;
+  children?: ReactNode;
   /** The container elements rendered by the component */
   components?: {
     Header?: ComponentType<any>;
     Footer?: ComponentType<any>;
   };
   /** The heading to be rendered above the body */
-  heading?: React.ReactNode;
+  heading?: ReactNode;
   /** An optional element rendered to the right of the heading */
-  headingAfterElement?: React.ReactNode;
+  headingAfterElement?: ReactNode;
   /** The image to render above the heading. Can be a url or a Node. */
-  image?: string | React.ReactNode;
+  image?: string | ReactNode;
   /** the theme of the card */
-  theme?: any; // ** ThemeProps<CardTokens> */;
-  innerRef?: React.RefObject<any>;
-};
+  theme?: ThemeProp<CardTokens, {}>;
+
+  innerRef?: React.Ref<HTMLElement>;
+}
 
 const Container = styled.div`
   ${({ theme }) => theme};
@@ -52,7 +51,7 @@ const Body = styled.div`
 `;
 
 const Heading = styled.h4`
-  ${colors.h600};
+  ${typography.h600};
   color: inherit;
 `;
 
@@ -70,7 +69,7 @@ const DefaultFooter = styled.div`
   padding-top: ${gridSize}px;
 `;
 
-const Theme = createTheme(() => ({
+const Theme = createTheme<CardTokens, {}>(() => ({
   container: {
     overflow: 'auto',
     borderRadius: `${borderRadius()}px`,
@@ -79,7 +78,7 @@ const Theme = createTheme(() => ({
   },
 }));
 
-const Card = ({
+const Card: FC<Props> = ({
   actions = [],
   actionsBeforeElement,
   children,
@@ -89,7 +88,7 @@ const Card = ({
   headingAfterElement,
   theme,
   innerRef,
-}: Props) => {
+}) => {
   const { Header = DefaultHeader, Footer = DefaultFooter } = components;
 
   return (
@@ -97,7 +96,7 @@ const Card = ({
       <Theme.Consumer>
         {({ container }) => {
           return (
-            <Container theme={container} ref={innerRef}>
+            <Container theme={container} innerRef={innerRef!}>
               {typeof image === 'string' ? <img src={image} alt="" /> : image}
               <Body>
                 {heading || headingAfterElement ? (
@@ -137,7 +136,6 @@ const Card = ({
   );
 };
 
-// $FlowFixMe - flow doesn't know about forwardRef
-export default React.forwardRef((props: Props, ref: any) => (
+export default React.forwardRef<HTMLElement, Props>((props, ref) => (
   <Card {...props} innerRef={ref} />
 ));

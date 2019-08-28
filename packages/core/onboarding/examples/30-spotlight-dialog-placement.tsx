@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
 import {
   Spotlight,
   SpotlightManager,
@@ -7,6 +8,20 @@ import {
   SpotlightTransition,
 } from '../src';
 import { Code, Highlight } from './styled';
+
+type Placement =
+  | 'top right'
+  | 'top center'
+  | 'top left'
+  | 'right bottom'
+  | 'right middle'
+  | 'right top'
+  | 'bottom left'
+  | 'bottom center'
+  | 'bottom right'
+  | 'left top'
+  | 'left middle'
+  | 'left bottom';
 
 const options = [
   'top right',
@@ -31,18 +46,18 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-type State = {
-  index?: number | void,
-};
+interface State {
+  index?: number;
+}
 
 /* eslint-disable react/sort-comp */
 export default class SpotlightDialogPlacementExample extends Component<
-  Object,
-  State,
+  {},
+  State
 > {
   state: State = {};
 
-  next = () => this.setState(state => ({ index: state.index + 1 }));
+  next = () => this.setState(state => ({ index: (state.index || 0) + 1 }));
 
   start = () => this.setState({ index: 0 });
 
@@ -50,7 +65,7 @@ export default class SpotlightDialogPlacementExample extends Component<
 
   render() {
     const { index } = this.state;
-    const placement = isNaN(index)
+    const placement = isNaN(index as number)
       ? null
       : options[(index || 0) % options.length];
 
@@ -74,7 +89,7 @@ export default class SpotlightDialogPlacementExample extends Component<
             {placement ? (
               <Spotlight
                 actions={[{ onClick: this.finish, text: 'Done' }]}
-                dialogPlacement={placement}
+                dialogPlacement={placement as Placement}
                 dialogWidth={300}
                 heading={`"${placement}"`}
                 key="placement-example"

@@ -1,21 +1,27 @@
 import Button, { Theme as ButtonTheme } from '@uidu/button';
 import Modal from '@uidu/modal-dialog';
-import React, { Component, ReactNode } from 'react';
-import { ActionItem, Actions, Body, Heading, Image } from '../styled/Modal';
-import { ActionsType } from '../types';
+import React, { Component, ElementType, ReactNode } from 'react';
+import {
+  ActionItem,
+  Actions as ModalActions,
+  Body,
+  Heading,
+  Image,
+} from '../styled/Modal';
+import { Actions } from '../types';
 import { modalButtonTheme } from './theme';
 
 type Props = {
   /** Buttons to render in the footer */
-  actions?: ActionsType;
+  actions?: Actions;
   /** The elements rendered in the modal */
   children: ReactNode;
   /** Path to the the your image */
   image?: string;
   /** Optional element rendered above the body */
-  header?: React.ElementType<any>;
+  header?: ElementType;
   /** Optional element rendered below the body */
-  footer?: React.ElementType<any>;
+  footer?: ElementType;
   /** Heading text rendered above the body */
   heading?: string;
 };
@@ -37,7 +43,7 @@ export default class OnboardingModal extends Component<Props> {
     const ActionsElement = () =>
       actionList ? (
         <ButtonTheme.Provider value={modalButtonTheme}>
-          <Actions>
+          <ModalActions>
             {actionList.map(({ text, key, ...rest }, idx) => {
               const variant = idx ? 'subtle-link' : 'primary';
               return (
@@ -50,11 +56,9 @@ export default class OnboardingModal extends Component<Props> {
                 </ActionItem>
               );
             })}
-          </Actions>
+          </ModalActions>
         </ButtonTheme.Provider>
-      ) : (
-        undefined
-      );
+      ) : null;
 
     return FooterElement || ActionsElement;
   };

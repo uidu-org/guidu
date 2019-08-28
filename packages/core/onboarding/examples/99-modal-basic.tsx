@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import { Modal } from '../src';
 import welcomeImage from './assets/this-is-new-jira.png';
 
-type State = {
-  active: boolean,
-};
+interface State {
+  active: boolean;
+}
 
 export default class Example extends Component<{}, State> {
   state: State = { active: false };

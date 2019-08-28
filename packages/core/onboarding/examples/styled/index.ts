@@ -1,7 +1,7 @@
 import { colors } from '@uidu/theme';
 import styled from 'styled-components';
 
-const highlights = {
+const highlights: Record<string, any> = {
   blue: colors.B300,
   green: colors.G300,
   neutral: colors.N100,
@@ -15,7 +15,14 @@ export const HighlightGroup = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-export const Highlight = styled.div`
+
+interface HighlightProps {
+  color: string;
+  radius?: number;
+  bg?: string;
+}
+
+export const Highlight = styled.div<HighlightProps>`
   align-items: space-between;
   background-color: ${p => p.bg || colors.N20};
   border-radius: ${p => p.radius || 0}px;

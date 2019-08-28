@@ -1,11 +1,11 @@
-import React, { ComponentType, ReactNode } from 'react';
-import { ActionsType } from '../types';
+import React, { ComponentType, MouseEvent, ReactNode } from 'react';
+import { Actions } from '../types';
 import SpotlightInner from './SpotlightInner';
 import { SpotlightConsumer } from './SpotlightManager';
 
-export type Props = {
+export interface Props {
   /** Buttons to render in the footer */
-  actions?: ActionsType;
+  actions?: Actions;
   /** An optional node to be rendered beside the footer actions */
   actionsBeforeElement?: ReactNode;
   /** The elements rendered in the modal */
@@ -43,18 +43,15 @@ export type Props = {
   /** The background color of the element being highlighted */
   targetBgColor?: string;
   /** Function to fire when a user clicks on the cloned target */
-  targetOnClick?: ({
-    event,
-    target,
-  }: {
-    event: MouseEvent;
+  targetOnClick?: (eventData: {
+    event: MouseEvent<HTMLElement>;
     target?: string;
   }) => void;
   /** The border-radius of the element being highlighted */
   targetRadius?: number;
   /** Alternative element to render than the wrapped target */
   targetReplacement?: ComponentType<any>;
-};
+}
 
 class Spotlight extends React.Component<Props> {
   static defaultProps = {
@@ -68,9 +65,10 @@ class Spotlight extends React.Component<Props> {
       <SpotlightConsumer>
         {({ opened, closed, targets }) => {
           // use the targetNode prop or try get the target from context targets using name
-          const actualTargetNode =
+          const actualTargetNode: HTMLElement | undefined =
             targetNode ||
             (typeof target === 'string' ? targets[target] : undefined);
+
           return actualTargetNode ? (
             <SpotlightInner
               {...rest}

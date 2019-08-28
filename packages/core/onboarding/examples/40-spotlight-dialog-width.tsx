@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {
-  ArrowDown as ArrowDownIcon,
-  ArrowUp as ArrowUpIcon,
-} from 'react-feather';
 import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
+import ArrowUpIcon from '@atlaskit/icon/glyph/arrow-up';
+import ArrowDownIcon from '@atlaskit/icon/glyph/arrow-down';
+
 import {
   Spotlight,
   SpotlightManager,
@@ -59,12 +58,12 @@ export default class SpotlightDialogWidthExample extends Component<{}, State> {
 
   increment = () =>
     this.setState(({ value }) => ({
-      value: value == null ? undefined : Math.min((value || 0) + 100, 600),
+      value: Math.min((value || 0) + 100, 600),
     }));
 
   decrement = () =>
     this.setState(({ value }) => ({
-      value: value == null ? undefined : Math.max((value || 0) - 100, 160),
+      value: Math.max((value || 0) - 100, 160),
     }));
 
   finish = () => this.setState({ value: null });

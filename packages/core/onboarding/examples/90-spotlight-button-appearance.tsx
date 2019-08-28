@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
 import {
   Spotlight,
   SpotlightManager,
@@ -16,7 +17,9 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-type State = { active: boolean };
+interface State {
+  active: boolean;
+}
 
 export default class SpotlightDialogWidthExample extends Component<{}, State> {
   state: State = { active: false };
@@ -43,7 +46,7 @@ export default class SpotlightDialogWidthExample extends Component<{}, State> {
                 actions={[
                   { onClick: this.finish, text: 'Default' },
                   {
-                    appearance: 'subtle-link',
+                    appearance: 'subtle-link', //TODO: this is required
                     onClick: this.finish,
                     text: 'Subtle link',
                   },

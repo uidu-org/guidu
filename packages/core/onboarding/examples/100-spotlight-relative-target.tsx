@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+
 import {
   Spotlight,
   SpotlightManager,
@@ -7,9 +8,9 @@ import {
   SpotlightTransition,
 } from '../src';
 
-type State = {
-  active: boolean,
-};
+interface State {
+  active: boolean;
+}
 
 const RelativeDiv = styled.div`
   background-color: PaleVioletRed;

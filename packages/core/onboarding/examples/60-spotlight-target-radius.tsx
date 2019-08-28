@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
-import { Spotlight, SpotlightManager, SpotlightTarget } from '../src';
-import { Code, Highlight, HighlightGroup } from './styled';
 
-type State = {
-  active: number | null,
-};
+import { Spotlight, SpotlightManager, SpotlightTarget } from '../src';
+import { Code, HighlightGroup, Highlight } from './styled';
+
+interface State {
+  active: number | null;
+}
 
 export default class SpotlightTargetRadiusExample extends Component<{}, State> {
   state: State = { active: null };

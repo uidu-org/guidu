@@ -1,16 +1,19 @@
-import React, { Component, ElementRef } from 'react';
-import Lorem from 'react-lorem-component';
+import React, { Component } from 'react';
 import { Transition } from 'react-transition-group';
+import Lorem from 'react-lorem-component';
+
 import { Spotlight, SpotlightManager, SpotlightTransition } from '../src';
 import { Highlight } from './styled';
 
-type State = {
-  drawerIsVisible: boolean,
-  spotlightIsVisible: boolean,
-};
+interface State {
+  drawerIsVisible: boolean;
+  spotlightIsVisible: boolean;
+}
+
+type AnimationState = { [key: string]: any };
 
 export default class SpotlightNodeExample extends Component<Object, State> {
-  drawer: HTMLElement;
+  drawer?: HTMLElement;
 
   state = { drawerIsVisible: false, spotlightIsVisible: false };
 
@@ -38,7 +41,7 @@ export default class SpotlightNodeExample extends Component<Object, State> {
     this.setState({ spotlightIsVisible: false });
   };
 
-  getDrawer = (ref: ElementRef<*>) => {
+  getDrawer = (ref: HTMLElement) => {
     this.drawer = ref;
   };
 
@@ -65,24 +68,20 @@ export default class SpotlightNodeExample extends Component<Object, State> {
           timeout={duration}
           onExit={this.hideSpotlight}
         >
-          {state => {
+          {(state: string) => {
             if (state === 'exited') return null;
             const base = {
               transition: `opacity ${duration}ms, transform ${duration}ms`,
               marginTop: 20,
             };
-            const anim = {
+            const anim: Record<string, AnimationState> = {
               entering: { opacity: 0, transform: 'translateX(-100%)' },
               entered: { opacity: 1, transform: 'translateX(0)' },
               exiting: { opacity: 0, transform: 'translateX(-50%)' },
             };
-            const animEnd =
-              !spotlightIsVisible && drawerIsVisible
-                ? this.showSpotlight
-                : null;
             const style = { ...base, ...anim[state] };
             return (
-              <div style={style} onTransitionEnd={animEnd}>
+              <div style={style}>
                 <Highlight innerRef={this.getDrawer} color="green">
                   <div style={{ width: 240 }}>
                     <h3 style={{ marginBottom: 20 }}>Animated Element</h3>

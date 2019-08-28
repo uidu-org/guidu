@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import { TargetInner, TargetOverlay } from '../styled/Target';
 
-type Props = {
+export interface CloneProps {
   /** Whether or not to display a pulse animation around the spotlighted element */
   pulse: boolean;
   /* An object containing the information used for positioning clone */
-  style: {};
+  style: Record<string, any>;
   /** The name of the SpotlightTarget */
   target?: string;
   /** The spotlight target node */
@@ -13,20 +13,17 @@ type Props = {
   /** The background color of the element being highlighted */
   targetBgColor?: string;
   /** Function to fire when a user clicks on the cloned target */
-  targetOnClick?: ({
-    event,
-    target,
-  }: {
-    event: MouseEvent;
+  targetOnClick?: (eventData: {
+    event: MouseEvent<HTMLElement>;
     target?: string;
-  }) => void;
+  }) => any;
   /** The border-radius of the element being highlighted */
   targetRadius?: number;
-};
+}
 
-function cloneAndOverrideStyles(node: any): HTMLElement {
+function cloneAndOverrideStyles(node: HTMLElement): HTMLElement {
   const shouldCloneChildren = true;
-  const clonedNode = node.cloneNode(shouldCloneChildren);
+  const clonedNode = node.cloneNode(shouldCloneChildren) as HTMLElement;
 
   clonedNode.style.margin = '0';
   clonedNode.style.position = 'static';
@@ -37,7 +34,7 @@ function cloneAndOverrideStyles(node: any): HTMLElement {
   return clonedNode;
 }
 
-const Clone = (props: Props) => {
+const Clone = (props: CloneProps) => {
   const {
     pulse,
     style,
@@ -64,9 +61,7 @@ const Clone = (props: Props) => {
       />
       <TargetOverlay
         onClick={
-          targetOnClick
-            ? (event: any) => targetOnClick({ event, target })
-            : undefined
+          targetOnClick ? event => targetOnClick({ event, target }) : undefined
         }
       />
     </TargetInner>

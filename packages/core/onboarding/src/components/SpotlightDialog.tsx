@@ -2,22 +2,24 @@ import {
   createAndFireEvent,
   withAnalyticsContext,
   withAnalyticsEvents,
+  WithAnalyticsEventsProps,
 } from '@uidu/analytics';
 import { Popper } from '@uidu/popper';
 import React, { Component, ComponentType, ReactNode } from 'react';
 import FocusLock from 'react-focus-lock';
 import { Image } from '../styled/Dialog';
-import { ActionsType } from '../types';
+import { Actions } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
+import { CardTokens } from './Card.js';
 import SpotlightCard from './SpotlightCard';
 import ValueChanged from './ValueChanged';
 
-type Props = {
+export interface SpotlightDialogProps extends WithAnalyticsEventsProps {
   /** Buttons to render in the footer */
-  actions?: ActionsType;
+  actions?: Actions;
   /** An optional element rendered beside the footer actions */
   actionsBeforeElement?: ReactNode;
   /** The elements rendered in the modal */
@@ -50,13 +52,13 @@ type Props = {
   targetNode: HTMLElement;
   /** js object containing the animation styles to apply to component */
   animationStyles: Object;
-};
+}
 
-type State = {
+interface State {
   focusLockDisabled: boolean;
-};
+}
 
-class SpotlightDialog extends Component<Props, State> {
+class SpotlightDialog extends Component<SpotlightDialogProps, State> {
   state = {
     focusLockDisabled: true,
   };
@@ -85,8 +87,8 @@ class SpotlightDialog extends Component<Props, State> {
     } = this.props;
     const { focusLockDisabled } = this.state;
 
-    const translatedPlacement: any | void = dialogPlacement
-      ? {
+    const translatedPlacement: Placement | undefined = dialogPlacement
+      ? ({
           'top left': 'top-start',
           'top center': 'top',
           'top right': 'top-end',
@@ -99,7 +101,7 @@ class SpotlightDialog extends Component<Props, State> {
           'left top': 'left-start',
           'left middle': 'left',
           'left bottom': 'left-end',
-        }[dialogPlacement]
+        }[dialogPlacement] as Placement)
       : undefined;
 
     return (
@@ -114,7 +116,7 @@ class SpotlightDialog extends Component<Props, State> {
               <SpotlightCard
                 ref={ref}
                 theme={parent => {
-                  const { container, ...others } = parent();
+                  const { container, ...others } = parent({});
                   return {
                     ...others,
                     container: {
@@ -122,7 +124,7 @@ class SpotlightDialog extends Component<Props, State> {
                       ...style,
                       ...animationStyles,
                     },
-                  };
+                  } as CardTokens;
                 }}
                 width={dialogWidth}
                 actions={actions}
@@ -133,7 +135,6 @@ class SpotlightDialog extends Component<Props, State> {
                   Footer: footer,
                 }}
                 heading={heading}
-                isFlat
               >
                 {children}
               </SpotlightCard>
@@ -145,7 +146,7 @@ class SpotlightDialog extends Component<Props, State> {
   }
 }
 
-const createAndFireEventOnuidu = createAndFireEvent('uidu');
+const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'spotlight',
@@ -153,10 +154,9 @@ export default withAnalyticsContext({
   packageVersion,
 })(
   withAnalyticsEvents({
-    targetOnClick: createAndFireEventOnuidu({
+    targetOnClick: createAndFireEventOnAtlaskit({
       action: 'clicked',
       actionSubject: 'spotlight',
-
       attributes: {
         componentName: 'spotlight',
         packageName,

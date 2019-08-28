@@ -1,15 +1,15 @@
 import { Theme as ButtonTheme } from '@uidu/button';
 import { colors } from '@uidu/theme';
-import React, { ComponentType, ReactNode } from 'react';
-import { ActionsType } from '../types';
-import Card from './Card';
+import React, { ComponentType, ReactNode, Ref } from 'react';
+import { Actions } from '../types';
+import Card, { CardTokens } from './Card';
 import { spotlightButtonTheme } from './theme';
 
 const { N0, N50A, N60A, P300 } = colors;
 
-type Props = {
+interface Props {
   /** Buttons to render in the footer */
-  actions?: ActionsType;
+  actions?: Actions;
   /** An optional element rendered to the left of the footer actions */
   actionsBeforeElement?: ReactNode;
   /** The content of the card */
@@ -26,20 +26,21 @@ type Props = {
   /** The image src to render above the heading */
   image?: string | ReactNode;
   /** Removes elevation styles if set */
-  isFlat: boolean;
+  isFlat?: boolean;
   /** the theme of the card */
-  theme: any; // ** ThemeProps<CardTokens> */;
+  theme?: ThemeProp<CardTokens, {}>;
   /** width of the card in pixels */
-  width: number;
-  innerRef?: React.RefObject<any>;
-};
+  width?: number;
+
+  innerRef?: Ref<HTMLElement> | null;
+}
 
 class SpotlightCard extends React.Component<Props> {
-  static defaultProps: Props = {
+  static defaultProps = {
     width: 400,
     isFlat: false,
     components: {},
-    theme: x => x(),
+    theme: (themeFn: () => any) => themeFn(),
   };
 
   render() {
@@ -67,19 +68,22 @@ class SpotlightCard extends React.Component<Props> {
           components={components}
           image={image}
           theme={parent => {
-            const { container, ...others } = parent();
-            return theme(() => ({
-              ...others,
-              container: {
-                background: P300,
-                color: N0,
-                width: `${Math.min(Math.max(width, 160), 600)}px`,
-                boxShadow: isFlat
-                  ? undefined
-                  : `0 4px 8px -2px ${N50A}, 0 0 1px ${N60A}`, // AK-5598
-                ...container,
-              },
-            }));
+            const { container, ...others } = parent({});
+            return theme!(
+              () => ({
+                ...others,
+                container: {
+                  background: P300,
+                  color: N0,
+                  width: `${Math.min(Math.max(width!, 160), 600)}px`,
+                  boxShadow: isFlat
+                    ? undefined
+                    : `0 4px 8px -2px ${N50A}, 0 0 1px ${N60A}`, // AK-5598
+                  ...container,
+                },
+              }),
+              {},
+            );
           }}
         >
           {children}
@@ -89,7 +93,6 @@ class SpotlightCard extends React.Component<Props> {
   }
 }
 
-// $FlowFixMe - flow doesn't know about forwardRef
-export default React.forwardRef((props: Props, ref: any) => (
+export default React.forwardRef<HTMLElement, Props>((props, ref) => (
   <SpotlightCard {...props} innerRef={ref} />
 ));
