@@ -79,11 +79,16 @@ const modalTheme = {
   },
 };
 
-function extract(newTheme: any, { mode, appearance, state }) {
+function extract(
+  newTheme: any,
+  { mode, appearance, state }: Record<string, any>,
+) {
   if (!newTheme[appearance]) {
     return undefined;
   }
+
   const root = newTheme[appearance];
+
   return Object.keys(root).reduce((acc: { [index: string]: string }, val) => {
     let node = root;
     [val, state, mode].forEach(item => {
@@ -103,7 +108,7 @@ function extract(newTheme: any, { mode, appearance, state }) {
 
 export const spotlightButtonTheme = (
   current: any,
-  themeProps: any /** ButtonProps */,
+  themeProps: Record<string, any>,
 ) => {
   const { buttonStyles, ...rest } = current(themeProps);
   return {
@@ -117,7 +122,7 @@ export const spotlightButtonTheme = (
 
 export const modalButtonTheme = (
   current: any,
-  themeProps: any /** ButtonProps */,
+  themeProps: Record<string, any>,
 ) => {
   const { buttonStyles, ...rest } = current(themeProps);
   return {

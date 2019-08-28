@@ -1,10 +1,10 @@
 import React, { ReactNode } from 'react';
 
-type Props = {
+interface Props {
   value: any;
   onChange: Function;
   children: ReactNode;
-};
+}
 
 // This component was born from the pain of using render props in lifecycle methods.
 // On update, it checks whether the current value prop is equal to the previous value prop.

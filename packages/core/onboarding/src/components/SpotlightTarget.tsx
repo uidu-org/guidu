@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import NodeResolver from 'react-node-resolver';
 import { TargetConsumer } from './SpotlightManager';
 
-type Props = {
+interface Props {
   /** a single child */
-  children: React.ReactNode;
+  children: ReactNode;
   /** the name to reference from Spotlight */
   name: string;
-};
+}
 
 class SpotlightTarget extends Component<Props> {
   render() {
@@ -15,7 +15,7 @@ class SpotlightTarget extends Component<Props> {
       <TargetConsumer>
         {targetRef =>
           targetRef ? (
-            <NodeResolver innerRef={(targetRef as any)(this.props.name)}>
+            <NodeResolver innerRef={targetRef(this.props.name)}>
               {this.props.children}
             </NodeResolver>
           ) : (

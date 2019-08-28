@@ -1,24 +1,29 @@
 import React, { createContext, ReactNode } from 'react';
 
-type Props = {
+interface Props {
   /**
     Children that are conditionally rendered. The transition happens based
     on the existence or non-existence of children.
   */
   children?: ReactNode;
-};
+}
 
-type State = {
+interface State {
   currentChildren: ReactNode;
-};
+}
 
-const { Consumer, Provider } = createContext({
+interface TransitionContextType {
+  isOpen: boolean;
+  onExited: () => void;
+}
+
+const TransitionContext = createContext<TransitionContextType>({
   isOpen: true,
-  onExited: undefined,
+  onExited: () => {},
 });
 
 // checks if children exist and are truthy
-const hasChildren = children =>
+const hasChildren = (children: ReactNode) =>
   React.Children.count(children) > 0 &&
   React.Children.map(children, child => !!child).filter(Boolean).length > 0;
 
@@ -44,18 +49,18 @@ class Transition extends React.Component<Props, State> {
 
   render() {
     return (
-      <Provider
+      <TransitionContext.Provider
         value={{
           onExited: this.onExited,
           isOpen: hasChildren(this.props.children),
         }}
       >
         {this.state.currentChildren}
-      </Provider>
+      </TransitionContext.Provider>
     );
   }
 }
 
-export const SpotlightTransitionConsumer = Consumer;
+export const SpotlightTransitionConsumer = TransitionContext.Consumer;
 
 export default Transition;

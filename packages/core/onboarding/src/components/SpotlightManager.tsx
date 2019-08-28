@@ -12,36 +12,38 @@ import { Fade } from './Animation';
 
 const noop = () => {};
 
-const { Consumer: TargetConsumer, Provider: TargetProvider } = createContext(
-  {},
-);
-
-type SpotlightContext = {
+interface SpotlightContext {
   opened: () => void;
   closed: () => void;
   targets: {
-    [key: string]: HTMLElement | void;
+    [key: string]: HTMLElement | undefined;
   };
-};
+}
+
+const { Consumer: TargetConsumer, Provider: TargetProvider } = createContext<
+  any
+>(undefined);
+
 const {
   Consumer: SpotlightStateConsumer,
   Provider: SpotlightStateProvider,
-} = createContext(
-  // ({ opened: noop, closed: noop, targets: {} }: SpotlightContext),
-  { opened: noop, closed: noop, targets: {} },
-);
+} = createContext<SpotlightContext>({
+  opened: noop,
+  closed: noop,
+  targets: {},
+});
 
 export { TargetConsumer };
 export { SpotlightStateConsumer as SpotlightConsumer };
 
-type Props = {
+interface Props {
   /** Boolean prop for toggling blanket transparency  */
   blanketIsTinted?: boolean;
   /* Typically the app, or a section of the app */
   children: ReactNode;
   /* Deprecated - Replaces the wrapping fragment with component */
   component?: ElementType;
-};
+}
 
 const Container = ({
   component: Wrapper,
@@ -67,7 +69,7 @@ export default class SpotlightManager extends PureComponent<
       if (this.props.component) {
         // eslint-disable-next-line no-console
         console.warn(
-          `uidu: The SpotlightManager 'component' prop is deprecated. Please wrap the SpotlightManager in the component instead.`,
+          `Atlaskit: The SpotlightManager 'component' prop is deprecated. Please wrap the SpotlightManager in the component instead.`,
         );
       }
     }
@@ -95,13 +97,11 @@ export default class SpotlightManager extends PureComponent<
     this.setState(state => ({ spotlightCount: state.spotlightCount - 1 }));
   };
 
-  getStateProviderValue = memoizeOne(
-    (targets): SpotlightContext => ({
-      opened: this.spotlightOpen,
-      closed: this.spotlightClose,
-      targets,
-    }),
-  );
+  getStateProviderValue = memoizeOne(targets => ({
+    opened: this.spotlightOpen,
+    closed: this.spotlightClose,
+    targets,
+  }));
 
   render() {
     const { blanketIsTinted, children, component: Tag } = this.props;

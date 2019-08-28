@@ -1,6 +1,6 @@
+import Button from '@uidu/button';
 import FieldText from '@uidu/field-text';
 import Form from '@uidu/form';
-import Button from '@uidu/button';
 import React, { Component, FormEvent, MouseEvent } from 'react';
 import { AnalyticsListener, UIAnalyticsEvent } from '../src';
 

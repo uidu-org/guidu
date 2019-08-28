@@ -11,19 +11,20 @@ import { Props as SpotlightProps } from './Spotlight';
 import SpotlightDialog from './SpotlightDialog';
 import { SpotlightTransitionConsumer } from './SpotlightTransition';
 
-export type Props = {
+export interface Props extends SpotlightProps {
   /** the spotlight tagert dom element */
   targetNode: HTMLElement;
   /** Called when the component has been mounted */
   onOpened: () => any;
   /** Called when the component has been unmounted */
   onClosed: () => any;
-} & SpotlightProps;
+}
 
-class SpotlightInner extends React.Component<
-  Props,
-  { replacementElement: HTMLElement | void }
-> {
+interface State {
+  replacementElement: HTMLElement | null;
+}
+
+class SpotlightInner extends React.Component<Props, State> {
   static defaultProps = {
     dialogWidth: 400,
     pulse: true,
@@ -34,7 +35,7 @@ class SpotlightInner extends React.Component<
     // In this case, we have to render the targetReplacement component,
     // get a dom reference from that component, then render again passing
     // that reference into SpotlightDialog (Popper).
-    replacementElement: undefined,
+    replacementElement: null,
   };
 
   componentDidUpdate(prevProps: Props) {
@@ -56,12 +57,13 @@ class SpotlightInner extends React.Component<
     this.props.onClosed();
   }
 
-  isPositionFixed = (element: HTMLElement) =>
+  isPositionFixed = (element: Element) =>
     window.getComputedStyle(element).position === 'fixed';
 
-  hasPositionFixedParent = (element: HTMLElement) => {
-    // Cast to to any - offsetParent should be of type "HTMLElement" instead of "Element"
-    const { offsetParent } = element as any;
+  hasPositionFixedParent = (element: HTMLElement): boolean => {
+    // Cast to to any - offsetParent should be of interface "HTMLElement" instead of "Element"
+    const { offsetParent } = element;
+
     if (!offsetParent) {
       return false;
     }
@@ -70,7 +72,7 @@ class SpotlightInner extends React.Component<
       return true;
     }
 
-    return this.hasPositionFixedParent(offsetParent);
+    return this.hasPositionFixedParent(offsetParent as HTMLElement);
   };
 
   getTargetNodeStyle = () => {
@@ -121,7 +123,9 @@ class SpotlightInner extends React.Component<
           <Portal zIndex={layers.spotlight() + 1}>
             {TargetReplacement ? (
               <NodeResovler
-                innerRef={elem => this.setState({ replacementElement: elem })}
+                innerRef={(elem: HTMLElement | null) =>
+                  this.setState({ replacementElement: elem })
+                }
               >
                 <TargetReplacement {...this.getTargetNodeStyle()} />
               </NodeResovler>
@@ -140,7 +144,15 @@ class SpotlightInner extends React.Component<
               <Fade in={isOpen} onExited={onExited}>
                 {animationStyles => (
                   <SpotlightDialog
-                    {...this.props}
+                    actions={this.props.actions}
+                    actionsBeforeElement={this.props.actionsBeforeElement}
+                    children={this.props.children}
+                    dialogPlacement={this.props.dialogPlacement}
+                    dialogWidth={this.props.dialogWidth}
+                    footer={this.props.footer}
+                    header={this.props.header}
+                    heading={this.props.heading}
+                    image={this.props.image}
                     targetNode={replacementElement || targetNode}
                     animationStyles={animationStyles}
                   />

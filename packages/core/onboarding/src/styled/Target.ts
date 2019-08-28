@@ -1,10 +1,21 @@
-import { layers, P300 } from '@uidu/theme';
+import { colors, layers } from '@uidu/theme';
 import styled, { css, keyframes } from 'styled-components';
+
+interface TargetProps {
+  pulse?: boolean;
+  bgColor?: string;
+  radius?: number;
+}
+
+interface TargetProps {
+  pulse?: boolean;
+  bgColor?: string;
+  radius?: number;
+}
 
 // NOTE:
 // Pulse color "rgb(101, 84, 192)" derived from "colors.P300"
-
-const baseShadow = `0 0 0 2px ${P300}`;
+const baseShadow = `0 0 0 2px ${colors.P300}`;
 const easing = 'cubic-bezier(0.55, 0.055, 0.675, 0.19)';
 const pulseKeframes = keyframes`
   0%, 33% { box-shadow: ${baseShadow}, 0 0 0 rgba(101, 84, 192, 1) }
@@ -13,30 +24,18 @@ const pulseKeframes = keyframes`
 const animation = css`
   animation: ${pulseKeframes} 3000ms ${easing} infinite;
 `;
-const animationWithCheck = ({ pulse }) => (pulse ? animation : null);
-
-const backgroundColor = p =>
-  p.bgColor
-    ? `
-        background-color: ${p.bgColor};
-      `
-    : null;
-const borderRadius = p =>
-  p.radius
-    ? `
-        border-radius: ${p.radius}px;
-      `
-    : null;
 
 // IE11 and Edge: z-index needed because fixed position calculates z-index relative
-// to body insteadof nearest stacking context (Portal in our case).
-export const Div = styled.div<any>`
+// to body instead of nearest stacking context (Portal in our case).
+export const Div = styled.div<TargetProps>`
   z-index: ${layers.spotlight() + 1};
-  ${backgroundColor} ${borderRadius};
+
+  ${p => (p.bgColor ? `background-color: ${p.bgColor};` : null)}
+  ${p => (p.radius ? `border-radius: ${p.radius}px;` : null)}
 `;
 
 export const TargetInner = styled(Div)`
-  ${animationWithCheck};
+  ${({ pulse }) => (pulse ? animation : null)};
 `;
 
 export const TargetOverlay = styled.div`
