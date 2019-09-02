@@ -1,12 +1,10 @@
-import { Checkbox } from '@uidu/checkbox';
-import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
 import React, { Fragment, PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
-export const messages = defineMessages({
+const messages = defineMessages({
   simple_sessions_title: {
     id: 'guidu.devise.simple_sessions_title',
     defaultMessage: 'Sign in',
@@ -46,10 +44,8 @@ export const messages = defineMessages({
 
 export default class SessionsForm extends PureComponent<any, any> {
   handleSubmit = async model => {
-    const { signIn, onSignIn, onSignInError } = this.props;
-    return signIn(model)
-      .then(onSignIn)
-      .catch(onSignInError);
+    const { signIn } = this.props;
+    return signIn(model);
   };
 
   render() {
@@ -93,32 +89,6 @@ export default class SessionsForm extends PureComponent<any, any> {
             autoCorrect="off"
             required
           />
-          <div className="form-group">
-            <FieldPassword
-              measurePasswordStrength={false}
-              autoComplete="current-password"
-              label={
-                <FormattedMessage
-                  {...messages.simple_sessions_password_label}
-                />
-              }
-              name="user[password]"
-              type="password"
-              id="new-password"
-              validations="minLength:8"
-              required
-            />
-          </div>
-          <div className="form-group">
-            <Checkbox
-              name="user[remember_me]"
-              label={
-                <FormattedMessage
-                  {...messages.simple_sessions_remember_me_label}
-                />
-              }
-            />
-          </div>
         </Form>
       </Fragment>
     );

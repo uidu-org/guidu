@@ -1,11 +1,10 @@
-import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
 import React, { Fragment, PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
-export const messages = defineMessages({
+const messages = defineMessages({
   simple_registrations_title: {
     id: 'guidu.devise.simple_registrations_title',
     defaultMessage: 'Sign up',
@@ -46,9 +45,7 @@ export const messages = defineMessages({
 export default class RegistrationsForm extends PureComponent<any, any> {
   handleSubmit = async ({ exists, ...model }) => {
     const { onSignUp, signUp, onSignUpError } = this.props;
-    return signUp(model)
-      .then(onSignUp)
-      .catch(onSignUpError);
+    return signUp(model);
   };
 
   render() {
@@ -98,21 +95,6 @@ export default class RegistrationsForm extends PureComponent<any, any> {
             autoCorrect="off"
             required
           />
-          <div className="form-group">
-            <FieldPassword
-              autoComplete="current-password"
-              label={
-                <FormattedMessage
-                  {...messages.simple_registrations_password_label}
-                />
-              }
-              name="user[password]"
-              type="password"
-              id="new-password"
-              validations="minLength:8"
-              required
-            />
-          </div>
           {additionalInfo}
         </Form>
       </Fragment>

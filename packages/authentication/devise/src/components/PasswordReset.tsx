@@ -3,9 +3,36 @@ import FieldText from '@uidu/field-text';
 import { Form, FormFooter, FormSubmit } from '@uidu/form';
 import queryString from 'query-string';
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { messages } from './PasswordReset.messages';
+
+export const messages = defineMessages({
+  password_reset_title: {
+    id: 'guidu.devise.password_reset_title',
+    defaultMessage: 'Reset your password',
+    description: 'password_reset_title',
+  },
+  password_reset_description: {
+    id: 'guidu.devise.password_reset_description',
+    defaultMessage: 'Choose a new password to access your account',
+    description: 'password_reset_description',
+  },
+  password_reset_primary_cta: {
+    id: 'guidu.devise.password_reset_primary_cta',
+    defaultMessage: 'Confirm',
+    description: 'password_reset_primary_cta',
+  },
+  password_reset_secondary_cta: {
+    id: 'guidu.devise.password_reset_secondary_cta',
+    defaultMessage: 'Sign in',
+    description: 'password_reset_secondary_cta',
+  },
+  password_reset_password_label: {
+    id: 'guidu.devise.password_reset_email_label',
+    defaultMessage: 'Insert a new password',
+    description: 'password_reset_email_label',
+  },
+});
 
 export default class PasswordReset extends Component<any> {
   handleSubmit = model => {
