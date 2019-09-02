@@ -1,40 +1,56 @@
 # @uidu/button
 
+## 0.1.44
+
+### Patch Changes
+
+- [patch][dc083d7](https://github.org/uidu-org/guidu/commits/dc083d7):
+
+  Small changes to components
+
 ## 0.1.43
-- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+- [patch][affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
   - Release all packages, unique tsconfig
 
 ## 0.1.42
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.41
-- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+- [patch][fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 
   - Removed unused dependencies
 
 ## 0.1.40
-- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+- [patch][def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
   - Bump dependencies
-- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+- [patch][def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
   - Bump react-feather, fixes to Select, downshift and toggle
 
 ## 0.1.39
-- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+- [patch][e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 
   - Remove some tests, fix travis cache timeout, migrate accordion to typescript
 
 ## 0.1.38
-- [patch] [9c54116](https://github.org/uidu-org/guidu/commits/9c54116):
+
+- [patch][9c54116](https://github.org/uidu-org/guidu/commits/9c54116):
 
   - Added keys and navigation header skeleton
 
 ## 0.1.37
-- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+- [patch][33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
   - Remove some dependencies
 

@@ -1,27 +1,40 @@
 # @uidu/theme
 
+## 0.1.16
+
+### Patch Changes
+
+- [patch][dc083d7](https://github.org/uidu-org/guidu/commits/dc083d7):
+
+  Small changes to components
+
 ## 0.1.15
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.14
-- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+- [patch][fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 
   - Removed unused dependencies
 
 ## 0.1.13
-- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+- [patch][e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 
   - Remove some tests, fix travis cache timeout, migrate accordion to typescript
 
 ## 0.1.12
-- [patch] [f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
+
+- [patch][f9bf957](https://github.org/uidu-org/guidu/commits/f9bf957):
 
   - Bump dependencies
 
 ## 0.1.11
-- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+- [patch][33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
   - Remove some dependencies
 
