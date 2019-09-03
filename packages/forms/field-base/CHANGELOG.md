@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.43
+
+### Patch Changes
+
+- [patch][04e4e71](https://github.org/uidu-org/guidu/commits/04e4e71):
+
+  Added id generation with shortid
+
 ## 0.1.42
 
 ### Patch Changes
