@@ -100,9 +100,9 @@
     "@atlaskit/type-helpers" "^2.1.0"
 
 "@atlaskit/analytics-next@^6.0.3", "@atlaskit/analytics-next@^6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-6.1.0.tgz#51c1b1ffcdbb2154f708ea3bc7098497546839eb"
-  integrity sha512-RMXUsBY5lbQdtkj0iPy6mepwbxRLwb5Jk6dNiH6bZwp3LZtXswxYAlmyVbgFUhyvAgGZIudvV/OjrwivrDZz7Q==
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-6.2.0.tgz#61656e08658709014c152c04ff632a64dff9637a"
+  integrity sha512-l4+UHQ2RihanUuiXiAq0IHFyTPZTHsF/s+akAFKcfioI3hiVMZW9XiY6LctbjoGKQHh0FLdG0EbBz9ob92WXfg==
   dependencies:
     "@atlaskit/type-helpers" "^4.2.0"
     prop-types "^15.5.10"
@@ -2710,9 +2710,9 @@
     "@types/react" "*"
 
 "@types/react-native@*":
-  version "0.60.10"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.10.tgz#cd227c95d04368c896d35eb3ae4cf8d7ad92407f"
-  integrity sha512-5GUyxt1w0fJ/xVKzOP1Sulce+I074ItIJW7nkwC/0Au5saUeVm1KwyEH2NaP2BUciEqZJSlRAdwOXrTScojzRQ==
+  version "0.60.11"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.11.tgz#c797f89180291c3a1d6f573f1e89644c8c17f60e"
+  integrity sha512-JAe7/UCGhnXxTwHCix1Gs6EbbCTeqU8TxxKHKNrsVtECZ9cPYp1UmJoDIDaNTz8o1/9nTFOtPj7CvHp2hWpEIQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -8709,9 +8709,9 @@ eslint-plugin-compat@^3.1.1:
     semver "^6.1.2"
 
 eslint-plugin-flowtype@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-4.2.0.tgz#a89ac991eef6753226eb8871261e266645aca4b9"
-  integrity sha512-mqf6AbQCP6N8Bk+ryXYwxt6sj3RT7i3kt8JOOx7WOQNlZtsLxqvnkXRRrToFHcN52E5W9c/p3UfNxCMsfENIJA==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-4.3.0.tgz#06d0837ac341caf369e7e6dbb112dd7fd21acf17"
+  integrity sha512-elvqoadMHnYqSYN1YXn02DR7SFW8Kc2CLe8na3m2GdQPQhIY+BgCd2quVJ1AbW3aO0zcyE9loVJ7Szy8A/xlMA==
   dependencies:
     lodash "^4.17.15"
 
@@ -14014,7 +14014,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-meow@sindresorhus/meow#43401c3:
+"meow@github:sindresorhus/meow#43401c3":
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
@@ -14153,7 +14153,7 @@ mime@1.6.0, mime@^1.2.11, mime@^1.4.1:
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.6.0.tgz#32cd9e5c64553bd58d19a568af452acff04981b1"
   integrity sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==
 
-mime@^2.4.2, mime@^2.4.4:
+mime@^2.4.4:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
   integrity sha512-LRxmNwziLPT828z+4YkNzloCFC2YM4wrB99k+AV5ZbEyfGNWfG8SO1FUXLmLDBSo89NrJZ4DIWeLjy1CHGhMGA==
@@ -17057,9 +17057,9 @@ prosemirror-utils@^0.9.2:
   integrity sha512-UC+j9hQQ1POYfMc5p7UFxBTptRiGPR7Kkmbl3jVvU8VgQbkI89tR/GK+3QYC8n+VvBZrtAoCrJItNhWSxX3slA==
 
 prosemirror-view@^1.0.0, prosemirror-view@^1.9.10, prosemirror-view@^1.9.12:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.10.1.tgz#678c2015ed1009612909df48f25651d576be80a6"
-  integrity sha512-Pyhz8CSov1VFtLb5G+SH4TCHyZiQihJXy3vpYdzbLoiayaRbht/v34Exy4Dd/QZIXUIEume4lWbifOHUglO26g==
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.10.2.tgz#760410dc02acf4d30b3879fc7de7b1a499ca2440"
+  integrity sha512-x+TAsejvecjjp9uDm5fUiKQkERaREguP6807xiJ8DVzfqCdJi9T+38FRq7kaIQgS2ZBsXx2SzeOtfx7I9z0fNQ==
   dependencies:
     prosemirror-model "^1.1.0"
     prosemirror-state "^1.0.0"
@@ -22341,12 +22341,13 @@ webpack-cli@^2.0.14:
     yeoman-generator "^2.0.5"
 
 webpack-dev-middleware@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.7.0.tgz#ef751d25f4e9a5c8a35da600c5fda3582b5c6cff"
-  integrity sha512-qvDesR1QZRIAZHOE3iQ4CXLZZSQ1lAUsSpnQmlB1PBfoN/xdRjmge3Dok0W4IdaVLJOGJy3sGI4sZHwjRU0PCA==
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/webpack-dev-middleware/-/webpack-dev-middleware-3.7.1.tgz#1167aea02afa034489869b8368fe9fed1aea7d09"
+  integrity sha512-5MWu9SH1z3hY7oHOV6Kbkz5x7hXbxK56mGHNqHTe6d+ewxOwKUxoUJBs7QIaJb33lPjl9bJZ3X0vCoooUzC36A==
   dependencies:
     memory-fs "^0.4.1"
-    mime "^2.4.2"
+    mime "^2.4.4"
+    mkdirp "^0.5.1"
     range-parser "^1.2.1"
     webpack-log "^2.0.0"
 

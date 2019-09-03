@@ -1,3 +1,4 @@
+// @ts-ignore
 import { withTheme } from '@uidu/theme';
 import styled from 'styled-components';
 import CustomComponentProxy from '../components/CustomComponentProxy';

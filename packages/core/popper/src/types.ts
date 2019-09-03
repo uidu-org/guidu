@@ -1,4 +1,3 @@
-// @flow
 export type Placement =
   | 'auto-start'
   | 'auto'

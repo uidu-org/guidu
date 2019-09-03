@@ -6,7 +6,7 @@ import React, { Component, Fragment } from 'react';
 import { MessageCircle } from 'react-feather';
 import { TouchableOpacity, Vibration, View } from 'react-native';
 import { animated, useSpring } from 'react-spring';
-import { useGesture } from 'react-use-gesture';
+import { useDrag } from 'react-use-gesture';
 import { Message } from '../../types';
 import MessagesAttachments from '../MessageAttachments';
 import { StyledMobileViewMessage } from './styled';
@@ -19,31 +19,35 @@ const SwipeableMessage = ({
   children,
 }) => {
   const [{ xy }, set] = useSpring(() => ({ xy: [0, 0] }));
-  const bind = useGesture(
-    {
-      // @ts-ignore
-      onDrag: ({ delta }) => {
-        if (delta[0] > 0) {
-          onDrag(xy);
-          // activate only when scrolling right
-          if (delta[0] > 150) {
-            set({ xy: [150, 0] });
-          } else {
-            set({ xy: delta });
-          }
-        }
-      },
-      onDragEnd: ({ delta }) => {
-        if (delta[0] > 150) {
-          Vibration.vibrate([0, 1000, 2000, 3000]);
-          onReply();
-        }
-        onDragEnd();
-        set({ xy: [0, 0] });
-      },
-    },
-    { event: { passive: false } },
-  );
+  const bind = useDrag(({ distance, down, delta }) => {
+    if (delta[0] > 150) {
+      onDrag(xy);
+      onReply();
+    }
+    set({ xy: down ? delta : [0, 0] });
+  });
+  // {
+  //   onDrag: ({ delta }) => {
+  //     if (delta[0] > 0) {
+  //       onDrag(xy);
+  //       // activate only when scrolling right
+  //       if (delta[0] > 150) {
+  //         set({ xy: [150, 0] });
+  //       } else {
+  //         set({ xy: delta });
+  //       }
+  //     }
+  //   },
+  //   onDragEnd: ({ delta }) => {
+  //     if (delta[0] > 150) {
+  //       Vibration.vibrate([0, 1000, 2000, 3000]);
+  //       onReply();
+  //     }
+  //     onDragEnd();
+  //     set({ xy: [0, 0] });
+  //   },
+  // },
+  // { event: { capture: true, passive: false } },
 
   return (
     <animated.div

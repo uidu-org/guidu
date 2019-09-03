@@ -1,5 +1,5 @@
-import Loader from '@uidu/loader';
 import Slider from '@uidu/slider';
+import Loader from '@uidu/spinner';
 import Stepper, { Step } from '@uidu/stepper';
 import classNames from 'classnames';
 import React, { Fragment, PureComponent } from 'react';

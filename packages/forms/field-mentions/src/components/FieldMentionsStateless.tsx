@@ -7,13 +7,12 @@ import { defaultMentionStyle, defaultStyle } from '../utils';
 export default class FieldMentionsStateless extends Component<
   FieldMentionsStatelessProps
 > {
-  private inputRef: React.RefObject<any> = React.createRef();
-
-  static defaultProps = {
+  public static defaultProps = {
     placeholder: "Mention people using '@'",
     allowSpaceInQuery: true,
     style: defaultStyle,
     value: {},
+    elementRef: React.createRef<HTMLSelectElement>(),
   };
 
   render() {
@@ -39,7 +38,7 @@ export default class FieldMentionsStateless extends Component<
         allowSpaceInQuery={allowSpaceInQuery}
         className={classNames('form-control h-auto', className)}
         suggestionsPortalHost={suggestionsPortalHost}
-        inputRef={this.inputRef}
+        inputRef={this.props.elementRef}
       >
         {items.map((item, index) => (
           <Mention

@@ -29,6 +29,7 @@
     "@uidu/media-filmstrip": "^0.1.17",
     "@uidu/media-picker": "^0.1.10",
     "@uidu/mentions": "^0.1.6",
+    "@uidu/modal-dialog": "^0.1.16",
     "@uidu/select": "^0.1.21",
     "@uidu/spinner": "^0.1.10",
     "@uidu/theme": "^0.1.15",

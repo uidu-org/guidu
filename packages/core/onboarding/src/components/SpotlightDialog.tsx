@@ -4,7 +4,7 @@ import {
   withAnalyticsEvents,
   WithAnalyticsEventsProps,
 } from '@uidu/analytics';
-import { Popper } from '@uidu/popper';
+import { Placement, Popper } from '@uidu/popper';
 import React, { Component, ComponentType, ReactNode } from 'react';
 import FocusLock from 'react-focus-lock';
 import { Image } from '../styled/Dialog';

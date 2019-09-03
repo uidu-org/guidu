@@ -4,7 +4,9 @@ import { FieldMentionsProps } from '../types';
 import FieldMentionsStateless from './FieldMentionsStateless';
 
 class FieldMentions extends Component<FieldMentionsProps> {
-  private element: React.RefObject<any> = React.createRef();
+  static defaultProps = {
+    elementRef: React.createRef<any>(),
+  };
 
   handleChange = (event, value, plainTextValue, mentions) => {
     const { onSetValue, onChange, name } = this.props;
@@ -32,7 +34,7 @@ class FieldMentions extends Component<FieldMentionsProps> {
         <FieldMentionsStateless
           {...otherProps}
           onChange={this.handleChange}
-          ref={this.element}
+          elementRef={this.props.elementRef}
         />
       </Wrapper>
     );

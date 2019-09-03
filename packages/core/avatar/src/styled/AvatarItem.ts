@@ -4,6 +4,7 @@ import {
   gridSize,
   math,
   themed,
+  // @ts-ignore
   withTheme,
 } from '@uidu/theme';
 import styled, { css } from 'styled-components';

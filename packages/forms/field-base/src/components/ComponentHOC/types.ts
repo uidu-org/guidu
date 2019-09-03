@@ -8,3 +8,17 @@ export type ComponentHOCProps = PassDownProps & {
   validatePristine?: boolean;
   onChange?: () => void;
 };
+
+export type ComponentValue = string | string[];
+
+export interface RequiredFromOriginalComponentProps {
+  validateBeforeSubmit: boolean;
+  validatePristine: boolean;
+  layout: FieldBaseLayout;
+  name: string;
+  value: ComponentValue;
+  disabled: boolean;
+  id: string;
+  label: React.ReactNode;
+  componentRef: React.RefObject<any>;
+}

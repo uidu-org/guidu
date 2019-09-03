@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/shell": "^0.1.22",
+    "@uidu/shell": "^0.1.26",
     "react-dom": "^16.4.0"
   },
   "devDependencies": {

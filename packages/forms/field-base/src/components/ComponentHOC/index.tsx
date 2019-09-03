@@ -1,9 +1,40 @@
 import { FormContext } from '@uidu/form';
 import { withFormsy } from 'formsy-react';
 import React from 'react';
-import shortid from 'shortid';
 import { FieldBaseProps } from '../../types';
-import { ComponentHOCProps } from './types';
+import {
+  getDisplayName,
+  getFallbackBoolean,
+  getId,
+  shouldShowErrors,
+} from '../../utils';
+import { RequiredFromOriginalComponentProps } from './types';
+
+/**
+ * Props coming from the `withFormsy` hoc.
+ */
+interface ExternalProps {
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  errorMessage: any;
+  hasValue: any;
+  innerRef: any;
+  isFormDisabled: boolean;
+  isFormSubmitted: boolean;
+  isPristine: boolean;
+  isRequired: boolean;
+  isValid: boolean;
+  isValidValue: boolean;
+  resetValue: any;
+  setValidations: any;
+  setValue: any;
+  showError: boolean;
+  showRequired: boolean;
+  validationError: any;
+  validationErrors: any;
+  validations: any;
+  /* eslint-enable @typescript-eslint/no-explicit-any */
+}
+
 // Component HOC
 // -------------
 //
@@ -15,14 +46,19 @@ import { ComponentHOCProps } from './types';
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const FormsyReactComponent = <TOriginalProps extends FieldBaseProps & unknown>(
+const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
   Component:
     | React.ComponentClass<TOriginalProps>
     | React.FunctionComponent<TOriginalProps>,
 ) => {
-  type ResultProps = TOriginalProps & ComponentHOCProps;
+  type ResultProps = TOriginalProps &
+    ExternalProps &
+    RequiredFromOriginalComponentProps;
 
-  const result = class FrcWrapper extends React.Component<ResultProps> {
+  const result = class FrcWrapper extends React.Component<ResultProps, {}> {
+    public static displayName = `withFRC(${getDisplayName(Component)})`;
+    public static contextType = FormContext;
+
     id: string = null;
 
     static defaultProps = {
@@ -30,130 +66,86 @@ const FormsyReactComponent = <TOriginalProps extends FieldBaseProps & unknown>(
       layout: 'vertical',
     };
 
-    static contextType = FormContext;
-
-    constructor(props: ResultProps) {
+    public constructor(props: ResultProps) {
       super(props);
-      const { id } = props;
-      this.id = id || shortid.generate();
     }
 
-    // Use the following value for layout:
-    // 1. layout prop (if supplied)
-    // 2. [else] layout context (if defined)
-    // 3. [else] 'vertical' (default value)
-    getLayout = () => this.props.layout || (this.context.layout || 'vertical');
-
-    // Use the following value for validatePristine:
-    // 1. validatePristine prop (if supplied)
-    // 2. [else] validatePristine context (if defined)
-    // 3. [else] false (default value)
-    getValidatePristine = () => {
-      const { validatePristine } = this.props;
-      const { validatePristine: contextValidatePristine } = this.props;
-      if (typeof validatePristine === 'boolean') {
-        return validatePristine;
-      }
-      return contextValidatePristine || false;
-    };
-
-    // Use the following value for validateOnSubmit:
-    // 1. validateOnSubmit prop (if supplied)
-    // 2. [else] validateOnSubmit context (if defined)
-    // 3. [else] false (default value)
-    getValidateOnSubmit = () => {
-      const { validateOnSubmit } = this.props;
-      const { validateOnSubmit: contextValidateOnSubmit } = this.props;
-      if (typeof validateOnSubmit === 'boolean') {
-        return validateOnSubmit;
-      }
-      return contextValidateOnSubmit || false;
-    };
-
-    // Combine a parent context value with a component prop value.
-    // This is used for CSS classnames, where the value is passed to `JedWatson/classnames`.
-    combineContextWithProp = key => [this.context[key], this.props[key]];
-
-    hashString = string => {
-      let hash = 0;
-      for (let i = 0; i < string.length; i += 1) {
-        // eslint-disable-next-line no-bitwise
-        hash = ((hash << 5) - hash + string.charCodeAt(i)) & 0xffffffff;
-      }
-      return hash;
-    };
-
-    // Determine whether to show errors, or not.
-    shouldShowErrors = () => {
-      const { isPristine, isFormSubmitted, isValid } = this.props;
-      if (isPristine) {
-        if (this.getValidatePristine() === false) {
-          return false;
-        }
-      }
-      if (this.getValidateOnSubmit() === true) {
-        if (!isFormSubmitted) {
-          return false;
-        }
-      }
-      return !isValid;
-    };
-
-    // We pass through all unknown props, but delete some
-    // formsy HOC props that we know we don't need.
-    render() {
+    public render(): JSX.Element {
       const {
-        isFormDisabled,
-        disabled,
-        errorMessages,
+        layout: contextLayout,
+        validateBeforeSubmit: contextValidateBeforeSubmit,
+        validatePristine: contextValidatePristine,
+      } = this.context;
+
+      const {
+        /* eslint-disable @typescript-eslint/no-unused-vars */
+        errorMessage,
+        hasValue,
+        innerRef,
         isRequired,
-        value,
+        isValidValue,
+        resetValue,
+        setValidations,
+        showError,
+        showRequired,
+        validationError,
+        validationErrors,
+        validations,
+        /* eslint-enable @typescript-eslint/no-unused-vars */
+        isFormDisabled,
+        isFormSubmitted,
+        isPristine,
+        isValid,
         setValue,
-        ref,
-        ...otherProps
+        validateBeforeSubmit: propValidateBeforeSubmit,
+        validatePristine: propValidatePristine,
+        layout: propLayout,
+        disabled: propDisabled,
+        id: propId,
+        label: propLabel,
+        name: propName,
+        componentRef,
+        ...props
       } = this.props;
 
-      const cssProps = {
-        elementWrapperClassName: this.combineContextWithProp(
-          'elementWrapperClassName',
-        ),
-        labelClassName: this.combineContextWithProp('labelClassName'),
-        rowClassName: this.combineContextWithProp('rowClassName'),
-      };
+      const validatePristine = getFallbackBoolean(
+        propValidatePristine,
+        contextValidatePristine,
+        false,
+      );
+
+      const validateBeforeSubmit = getFallbackBoolean(
+        propValidateBeforeSubmit,
+        contextValidateBeforeSubmit,
+        true,
+      );
+
+      const showErrors = shouldShowErrors(
+        isPristine,
+        isFormSubmitted,
+        isValid,
+        validatePristine,
+        validateBeforeSubmit,
+      );
+
+      const layout = propLayout || contextLayout;
 
       const newProps = {
-        ...cssProps,
-        disabled: isFormDisabled || disabled,
-        errorMessages,
-        id: this.id,
-        layout: this.getLayout(),
-        required: isRequired,
-        showErrors: this.shouldShowErrors(),
-        value,
+        id: getId(propId || '', propLabel || '', propName),
+        label: propLabel,
+        name: propName,
+        ref: componentRef,
+        disabled: isFormDisabled || propDisabled || false,
+        layout,
+        showErrors,
         onSetValue: setValue,
       };
 
-      return (
-        <Component
-          ref={ref}
-          {...(otherProps as TOriginalProps)}
-          {...newProps}
-        />
-      );
+      return <Component {...(props as TOriginalProps)} {...newProps} />;
     }
   };
-
   return result;
-
-  //  const WithFormsy = withFormsy(ComponentHOC as any);
-  //  return React.forwardRef<any, P>(({ children, ...props }, ref) => {
-  //    return (
-  //      <WithFormsy {...props} ref={ref}>
-  //        {children}
-  //      </WithFormsy>
-  //    );
-  //  });
 };
 
 // @ts-ignore
-export default Component => withFormsy(FormsyReactComponent(Component));
+export default Component => withFormsy(withFRC(Component));

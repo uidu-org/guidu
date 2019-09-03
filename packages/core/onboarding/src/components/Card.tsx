@@ -38,7 +38,7 @@ interface Props {
   /** the theme of the card */
   theme?: ThemeProp<CardTokens, {}>;
 
-  innerRef?: React.Ref<HTMLElement>;
+  innerRef?: React.Ref<any>;
 }
 
 const Container = styled.div`

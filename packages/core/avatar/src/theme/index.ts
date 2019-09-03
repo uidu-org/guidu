@@ -186,13 +186,18 @@ const propsDefaults = {
   size: 'xsmall',
 };
 
-export const Theme = createTheme(props => {
+export const Theme = createTheme<ThemeTokens, ThemeProps>(props => {
   const propsWithDefaults = { ...propsDefaults, ...props };
   return {
+    // @ts-ignore
     backgroundColor: getBackgroundColor(propsWithDefaults),
+    // @ts-ignore
     borderRadius: getBorderRadius(propsWithDefaults),
+    // @ts-ignore
     dimensions: getDimensions(propsWithDefaults),
+    // @ts-ignore
     presence: getPresenceLayout(propsWithDefaults),
+    // @ts-ignore
     status: getStatusLayout(propsWithDefaults),
   };
 });

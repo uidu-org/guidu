@@ -44,7 +44,9 @@ export default class MessagesForm extends React.Component<
   }
 
   focus = () => {
-    this.mentionsComponentInput.current.element.current.inputRef.current.focus();
+    console.log(this.mentionsComponentInput);
+    this.mentionsInput.current.focus();
+    // this.mentionsComponentInput.current.element.current.inputRef.current.focus();
   };
 
   isValid = (canSubmit: boolean): boolean => {
@@ -172,7 +174,7 @@ export default class MessagesForm extends React.Component<
                   submitted: true,
                 },
                 () => {
-                  this.form.current.form.reset();
+                  this.form.current.reset();
                   onSubmit();
                 },
               );
@@ -242,7 +244,7 @@ export default class MessagesForm extends React.Component<
             )}
             <div className="d-flex align-items-center flex-grow-1">
               <FieldMentions
-                ref={this.mentionsInput}
+                elementRef={this.mentionsInput}
                 componentRef={this.mentionsComponentInput}
                 className={classNames('border-0 shadow-none', {
                   'mr-2': !message.body,
@@ -255,7 +257,7 @@ export default class MessagesForm extends React.Component<
                 onKeyDown={(event: React.KeyboardEvent) => {
                   if (event.keyCode === 13 && !event.shiftKey) {
                     event.preventDefault();
-                    this.form.current.form.submit();
+                    this.form.current.submit();
                   }
                 }}
                 placeholder={placeholder}

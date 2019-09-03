@@ -43,9 +43,9 @@ class Payments extends PureComponent<PaymentsProps, PaymentsState> {
 
     switch (provider) {
       case 'bank_account':
-        return createSource({
-          type: 'sepa_debit',
-          currency: 'eur',
+        return createSource(null, {
+          // type: 'sepa_debit',
+          // currency: 'eur',
           owner: {
             name: 'test',
             email: 'andrea.vanini@uidu.org',

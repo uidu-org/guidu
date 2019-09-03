@@ -1,9 +1,10 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import * as React from 'react';
 import { MentionItem, MentionProps, OnChangeHandlerFunc } from 'react-mentions';
 
 export type FieldMentionsProps = FieldBaseProps & {
   /** Function to handle display. */
-  componentRef?: any;
+  // componentRef?: any;
   style?: any;
   ref?: React.RefObject<any>;
   /** Items to mention. */
@@ -19,6 +20,7 @@ export type FieldMentionsProps = FieldBaseProps & {
   placeholder?: string;
   suggestionsPortalHost?: Element;
   onKeyDown?: (e: any) => void;
+  elementRef: React.RefObject<any>;
 };
 
 export type FieldMentionsStatelessProps = Omit<
@@ -26,4 +28,5 @@ export type FieldMentionsStatelessProps = Omit<
   'onChange'
 > & {
   onChange?: OnChangeHandlerFunc;
+  elementRef: React.RefObject<any>;
 };
