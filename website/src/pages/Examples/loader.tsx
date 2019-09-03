@@ -17,7 +17,7 @@ export default class ExamplesIFrame extends React.Component<{}, State> {
     exampleId: '',
     examplesPath: undefined,
   };
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     if (window) {
       const { packageId, groupId, exampleId, examplesPath } = qs.parse(
         window.location.search,

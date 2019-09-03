@@ -28,7 +28,7 @@ export default class ChangelogExplorer extends React.Component<Props, State> {
   props: Props;
   state: State = { isInvalid: false, range: '' };
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { semver } = this.props.match.params;
     if (semver)
       this.setState({

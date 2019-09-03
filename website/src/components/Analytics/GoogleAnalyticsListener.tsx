@@ -146,7 +146,7 @@ class GoogleAnalyticsListener extends React.Component<Props> {
     }
     initializeGA();
   }
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.gaId !== this.props.gaId) {
       console.warn("You can't change the gaId one it has been initialised.");
     }
