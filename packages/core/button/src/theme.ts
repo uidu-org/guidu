@@ -1,7 +1,7 @@
 import { colors, createTheme } from '@uidu/theme';
 import { getButtonStyles, getSpinnerStyles } from './components/getStyles';
 import { hex2rgba } from './components/utils';
-import { ThemeFallbacks, ThemeMode } from './types';
+import { ThemeFallbacks, ThemeMode, ThemeProps, ThemeTokens } from './types';
 
 export const fallbacks: ThemeFallbacks = {
   background: { light: colors.N20A, dark: colors.DN70 },
@@ -112,7 +112,7 @@ export const baseTheme = {
 
   color: {
     default: {
-      default: { light: colors.N400, dark: colors.DN400 },
+      default: { light: colors.N500, dark: colors.DN400 },
       active: { light: colors.B400, dark: colors.B400 },
       disabled: { light: colors.N70, dark: colors.DN30 },
       selected: { light: colors.N20, dark: colors.DN400 },
@@ -145,7 +145,7 @@ export const baseTheme = {
       focusSelected: { light: colors.N20, dark: colors.N700 },
     },
     subtle: {
-      default: { light: colors.N400, dark: colors.DN400 },
+      default: { light: colors.N500, dark: colors.DN400 },
       active: { light: colors.B400, dark: colors.B400 },
       disabled: { light: colors.N70, dark: colors.DN100 },
       selected: { light: colors.N20, dark: colors.DN400 },
@@ -176,7 +176,7 @@ export function applyPropertyStyle(
     return 'initial';
   }
 
-  // Check for relevant fallbacks.
+  // Check for relevant fallbacks
   if (!propertyStyles[appearance]) {
     if (!propertyStyles['default']) {
       return fallbacks[property][mode] ? fallbacks[property][mode] : 'initial';
@@ -199,7 +199,7 @@ export function applyPropertyStyle(
   return stateStyles[mode] || appearanceStyles.default[mode];
 }
 
-export const Theme = createTheme(themeProps => ({
+export const Theme = createTheme<ThemeTokens, ThemeProps>(themeProps => ({
   buttonStyles: getButtonStyles(themeProps),
   spinnerStyles: getSpinnerStyles(),
 }));

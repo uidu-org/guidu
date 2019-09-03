@@ -2,7 +2,6 @@ import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
 import React, { Fragment, PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
 
 const messages = defineMessages({
   simple_registrations_title: {
@@ -73,14 +72,6 @@ export default class RegistrationsForm extends PureComponent<any, any> {
                 />
               }
             />,
-            <Link
-              to={routes.sessions}
-              className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
-            >
-              <FormattedMessage
-                {...messages.simple_registrations_secondary_cta}
-              />
-            </Link>,
           ]}
         >
           <FieldText

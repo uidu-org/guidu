@@ -1,9 +1,12 @@
-import Slider from '@uidu/slider';
+import FieldPassword from '@uidu/field-password';
+import FieldText from '@uidu/field-text';
+import { Form, FormSubmit } from '@uidu/form';
 import React, { Fragment, PureComponent } from 'react';
+import { ArrowLeft } from 'react-feather';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import Email from './Steps/Email';
-import Info from './Steps/Info';
-import Password from './Steps/Password';
+import Recaptcha from 'react-recaptcha';
+import { Link } from 'react-router-dom';
+import { userDataFromIdentity } from '../utils';
 
 export const messages = defineMessages({
   email_sessions_email_title: {
@@ -69,96 +72,21 @@ export const messages = defineMessages({
 });
 
 export default class DeviseForm extends PureComponent<any, any> {
-  private slider: any = React.createRef();
+  private recaptchaInstance = React.createRef();
+  private form = React.createRef();
 
-  constructor(props) {
-    super(props);
-    const { currentUser } = props;
-    this.state = {
-      currentUser,
-    };
-  }
-
-  componentDidMount() {
-    const {
-      match: {
-        params: { step },
-      },
-    } = this.props;
-    if (step) {
-      const slideIndex = this.slideNames().indexOf(step);
-      this.slider.current.update();
-      this.slider.current.to(slideIndex);
-    }
-  }
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    const {
-      match: {
-        params: { step },
-      },
-    } = this.props;
-    if (nextProps.match.params.step !== step) {
-      const slideIndex = this.slideNames().indexOf(nextProps.match.params.step);
-      this.slider.current.update();
-      this.slider.current.to(slideIndex);
-    }
-  }
-
-  update = async model => {
-    const { currentUser } = this.state;
-    await this.setState({
-      currentUser: {
-        ...currentUser,
-        ...model,
-      },
-    });
-    return this.state.currentUser;
+  handleSubmit = async () => {
+    (this.recaptchaInstance.current as any).execute();
   };
 
-  handleSubmit = async ({ exists, ...model }) => {
-    const {
-      onSignUp,
-      signUp,
-      signIn,
-      onSignIn,
-      onSignInError,
-      onSignUpError,
-    } = this.props;
-    if (exists) {
-      return signIn({ user: model })
-        .then(onSignIn)
-        .catch(onSignInError);
-    }
-    return signUp({ user: model })
-      .then(onSignUp)
-      .catch(onSignUpError);
-  };
-
-  slideNames = () => this.slides().map(slide => slide.name);
-
-  slides = () => {
-    const { currentUser } = this.state;
-    const slides = [
-      {
-        name: 'email',
-        component: Email,
-        onSave: this.update,
-      },
-    ];
-    if (!currentUser || (currentUser && !currentUser.exists)) {
-      slides.push({
-        name: 'info',
-        component: Info,
-        onSave: this.update,
-      });
-    }
-    slides.push({
-      name: 'password',
-      component: Password,
-      onSave: model => this.update(model).then(this.handleSubmit),
+  // executed once the captcha has been verified
+  // can be used to post forms, redirect, etc.
+  verifyCallback = captchaResponse => {
+    const { signUp } = this.props;
+    return signUp({
+      ...(this.form.current as any).form.getModel(),
+      'g-recaptcha-response': captchaResponse,
     });
-    return slides;
   };
 
   render() {
@@ -167,8 +95,10 @@ export default class DeviseForm extends PureComponent<any, any> {
         params: { step },
       },
       scope,
+      match,
+      currentUser,
+      currentIdentity,
     } = this.props;
-    const { currentUser } = this.state;
 
     return (
       <Fragment>
@@ -184,26 +114,120 @@ export default class DeviseForm extends PureComponent<any, any> {
             />
           </p>
         </div>
-        <div>
-          <Slider
-            options={{
-              slidesPerView: 1,
-              allowTouchMove: false,
-              initialSlide: step ? this.slideNames().indexOf(step) : 0,
-            }}
-            onSlideChangeEnd={console.log}
-            ref={this.slider}
-          >
-            {this.slides().map(({ component: SlideComponent, onSave }) => (
-              <SlideComponent
-                {...this.props}
-                scope={scope}
-                user={currentUser}
-                onSave={onSave}
+        <Form
+          ref={this.form}
+          handleSubmit={this.handleSubmit}
+          footerRenderer={({ canSubmit, loading }) => [
+            <div className="d-flex justify-content-between">
+              <Link
+                to={match.path}
+                className="btn btn-sm d-flex align-items-center justify-content-center btn-light"
+              >
+                <ArrowLeft className="mr-2" size={18} />
+                Indietro
+              </Link>
+              <FormSubmit
+                className="btn-primary"
+                canSubmit={canSubmit}
+                loading={loading}
+                label={'utils.actions.sign_in'}
               />
-            ))}
-          </Slider>
-        </div>
+            </div>,
+          ]}
+        >
+          {currentIdentity && [
+            <FieldText
+              type="hidden"
+              name="identity_ids"
+              value={currentIdentity.id}
+            />,
+            <FieldText
+              type="hidden"
+              name="user[remote_avatar_url]"
+              value={userDataFromIdentity(currentIdentity).avatar}
+            />,
+          ]}
+          <FieldText
+            type="email"
+            label={
+              currentIdentity && userDataFromIdentity(currentIdentity).email
+                ? 'Conferma la tua email'
+                : 'Inserisci la tua email'
+            }
+            name="user[email]"
+            autoComplete="email"
+            autoCorrect="off"
+            value={
+              currentUser
+                ? currentUser.email
+                : currentIdentity
+                ? userDataFromIdentity(currentIdentity).email
+                : ''
+            }
+            required
+          />
+          <FieldText
+            type="text"
+            label={
+              currentIdentity ? 'Conferma il tuo nome' : 'Inserisci il tuo nome'
+            }
+            name="user[first_name]"
+            autoComplete="given-name"
+            value={
+              currentIdentity
+                ? userDataFromIdentity(currentIdentity).firstName
+                : ''
+            }
+            required
+            // autoFocus
+          />
+          <FieldText
+            type="text"
+            label={
+              currentIdentity
+                ? 'Conferma il tuo cognome'
+                : 'Inserisci il tuo cognome'
+            }
+            name="user[last_name]"
+            autoComplete="family-name"
+            value={
+              currentIdentity
+                ? userDataFromIdentity(currentIdentity).lastName
+                : ''
+            }
+            required
+          />
+          {!currentIdentity && (
+            <div className="form-group">
+              <FieldPassword
+                measurePasswordStrength={false}
+                autoComplete="current-password"
+                label="Inserisci la tua password"
+                name="user[password]"
+                type="password"
+                id="new-password"
+                validations="minLength:8"
+                required
+              />
+            </div>
+          )}
+          <div className="form-group">
+            <Recaptcha
+              ref={this.recaptchaInstance}
+              sitekey="6LdLkqgUAAAAAPNT6KJn0Emp5bgJw3N9CQ-n27Dg"
+              size="invisible"
+              render="explicit"
+              badge="inline"
+              verifyCallback={this.verifyCallback}
+            />
+          </div>
+          <p className="text-muted small">
+            Per far funzionare uidu, registriamo i dati degli utenti e li
+            condividiamo con alcuni provider. Registrandoti, accetti le
+            Condizioni d'uso e confermi di aver letto e compreso la Privacy
+            Policy.
+          </p>
+        </Form>
       </Fragment>
     );
   }

@@ -1,7 +1,7 @@
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
@@ -45,16 +45,14 @@ export const messages = defineMessages({
 
 export default class RegistrationsForm extends PureComponent<any, any> {
   handleSubmit = async ({ exists, ...model }) => {
-    const { onSignUp, signUp, onSignUpError } = this.props;
-    return signUp(model)
-      .then(onSignUp)
-      .catch(onSignUpError);
+    const { signUp } = this.props;
+    return signUp(model);
   };
 
   render() {
     const { routes, additionalInfo } = this.props;
     return (
-      <Fragment>
+      <>
         <div className="text-center mb-4">
           <h3>
             <FormattedMessage {...messages.simple_registrations_title} />
@@ -65,26 +63,26 @@ export default class RegistrationsForm extends PureComponent<any, any> {
         </div>
         <Form
           handleSubmit={this.handleSubmit}
-          footerRenderer={({ canSubmit, loading }) => [
-            <FormSubmit
-              className="btn-primary w-100"
-              canSubmit={canSubmit}
-              loading={loading}
-              label={
-                <FormattedMessage
-                  {...messages.simple_registrations_primary_cta}
-                />
-              }
-            />,
-            <Link
-              to={routes.sessions}
-              className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
-            >
-              <FormattedMessage
-                {...messages.simple_registrations_secondary_cta}
+          footerRenderer={({ canSubmit, loading }) => (
+            <div className="d-flex justify-content-between">
+              <Link
+                to={routes.sessions}
+                className="btn btn-sm d-flex align-items-center justify-content-center btn-light"
+              >
+                Sign in
+              </Link>
+              <FormSubmit
+                className="btn-primary"
+                canSubmit={canSubmit}
+                loading={loading}
+                label={
+                  <FormattedMessage
+                    {...messages.simple_registrations_primary_cta}
+                  />
+                }
               />
-            </Link>,
-          ]}
+            </div>
+          )}
         >
           <FieldText
             type="email"
@@ -115,7 +113,7 @@ export default class RegistrationsForm extends PureComponent<any, any> {
           </div>
           {additionalInfo}
         </Form>
-      </Fragment>
+      </>
     );
   }
 }

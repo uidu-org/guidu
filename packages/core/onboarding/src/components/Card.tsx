@@ -7,6 +7,7 @@ import {
   math,
   typography,
 } from '@uidu/theme';
+import { ThemeProp } from '@uidu/theme/components';
 import React, { ComponentType, FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import { ActionItem, ActionItems } from '../styled/Dialog';
@@ -96,7 +97,7 @@ const Card: FC<Props> = ({
       <Theme.Consumer>
         {({ container }) => {
           return (
-            <Container theme={container} innerRef={innerRef!}>
+            <Container theme={container} ref={innerRef!}>
               {typeof image === 'string' ? <img src={image} alt="" /> : image}
               <Body>
                 {heading || headingAfterElement ? (

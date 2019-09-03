@@ -14,7 +14,7 @@ const GoogleLoginButton = ({ label, onCompleted, onError }) => (
         href="#"
         onClick={onClick}
       >
-        <div className="d-flex w-100 justify-content-start align-items-center">
+        <div className="d-flex w-100 justify-content-center align-items-center">
           <svg
             role="img"
             viewBox="2 2 20 20"
@@ -42,9 +42,7 @@ const GoogleLoginButton = ({ label, onCompleted, onError }) => (
               />
             </g>
           </svg>
-          <div className="mr-auto">
-            <h6 className="mb-0">{label}</h6>
-          </div>
+          <h6 className="mb-0">{label}</h6>
         </div>
       </a>
     )}

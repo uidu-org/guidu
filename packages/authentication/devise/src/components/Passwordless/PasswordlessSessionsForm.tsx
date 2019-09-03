@@ -2,7 +2,6 @@ import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
 import React, { Fragment, PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
-import { Link } from 'react-router-dom';
 
 const messages = defineMessages({
   simple_sessions_title: {
@@ -30,11 +29,6 @@ const messages = defineMessages({
     defaultMessage: 'Insert your email',
     description: 'simple_sessions_email_label',
   },
-  simple_sessions_password_label: {
-    id: 'guidu.devise.simple_sessions_password_label',
-    defaultMessage: 'Insert your password',
-    description: 'simple_sessions_email_label',
-  },
   simple_sessions_remember_me_label: {
     id: 'guidu.devise.simple_sessions_remember_me_label',
     defaultMessage: 'Remember me for next sessions',
@@ -44,8 +38,8 @@ const messages = defineMessages({
 
 export default class SessionsForm extends PureComponent<any, any> {
   handleSubmit = async model => {
-    const { signIn } = this.props;
-    return signIn(model);
+    const { requestPasswordlessToken } = this.props;
+    return requestPasswordlessToken(model);
   };
 
   render() {
@@ -71,12 +65,6 @@ export default class SessionsForm extends PureComponent<any, any> {
                 <FormattedMessage {...messages.simple_sessions_primary_cta} />
               }
             />,
-            <Link
-              to={routes.registrations}
-              className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
-            >
-              <FormattedMessage {...messages.simple_sessions_secondary_cta} />
-            </Link>,
           ]}
         >
           <FieldText

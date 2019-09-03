@@ -7,31 +7,25 @@ export type DeviseProps = {
     sessions: string;
     passwords: string;
   };
-  app: {
-    icon: string;
-    name: string;
-  };
   defaultView?: 'sessions' | 'registrations' | 'passwords';
 
+  // Actions
   checkExistence?: (model) => Promise<any>;
 
   authLogin?: (auth, provider) => Promise<any>;
-  onAuthLogin?: (response) => void;
-  onAuthLoginError?: (response) => void;
-
   signIn: (model) => Promise<any>;
-  onSignIn: (response) => void;
-  onSignInError?: (response) => void;
-
   signUp: (model) => Promise<any>;
-  onSignUp: (response) => void;
-  onSignUpError?: (response) => void;
-
   recoverPassword: (model) => Promise<any>;
-  onRecoverPassword: (response) => void;
-  onRecoverPasswordError?: (response) => void;
-
   resetPassword: (model) => Promise<any>;
-  onResetPassword: (response) => void;
-  onResetPasswordError?: (response) => void;
+
+  // Footer
 } & RouteComponentProps;
+
+export type ProvidersProps = {
+  
+}
+
+export type DeviseWrapperProps = {
+  header?: React.ReactNode;
+  footer?: React.ReactNode;
+};

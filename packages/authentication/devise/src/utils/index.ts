@@ -5,6 +5,7 @@ export const userDataFromIdentity = ({ provider, data }) => {
   let firstName;
   let lastName;
   let avatar;
+  let email;
 
   switch (provider) {
     case 'google':
@@ -13,9 +14,10 @@ export const userDataFromIdentity = ({ provider, data }) => {
       avatar = data.imageUrl;
       break;
     case 'facebook':
-      firstName = data.first_name;
-      lastName = data.last_name;
-      avatar = data.picture ? data.picture.data.url : '';
+      firstName = data.profile.first_name;
+      lastName = data.profile.last_name;
+      avatar = data.profile.picture ? data.profile.picture.data.url : '';
+      email = data.profile.email;
       break;
     default:
       firstName = '';
@@ -25,6 +27,7 @@ export const userDataFromIdentity = ({ provider, data }) => {
   }
 
   return {
+    email,
     firstName,
     lastName,
     avatar,

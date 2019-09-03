@@ -1,8 +1,13 @@
-import React, { Fragment, PureComponent } from 'react';
-import { Mail } from 'react-feather';
+import { Checkbox } from '@uidu/checkbox';
+import FieldPassword from '@uidu/field-password';
+import FieldText from '@uidu/field-text';
+import Form, { FormSubmit } from '@uidu/form';
+import Slider from '@uidu/slider';
+import React, { PureComponent } from 'react';
+import AnimateHeight from 'react-animate-height';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { alternativeScope } from '../utils';
+import DeviseForm from './DeviseForm';
 import FacebookLoginButton from './Providers/FacebookLoginButton';
 import GoogleLoginButton from './Providers/GoogleLoginButton';
 
@@ -46,9 +51,74 @@ export const messages = defineMessages({
     defaultMessage: 'Sign up with {provider}',
     description: '',
   },
+  simple_sessions_remember_me_label: {
+    id: 'guidu.devise.simple_sessions_remember_me_label',
+    defaultMessage: 'Remember me for next sessions',
+    description: 'simple_sessions_email_label',
+  },
 });
 
-export default class Providers extends PureComponent<any> {
+export default class Providers extends PureComponent<any, any> {
+  private slider: any = React.createRef();
+
+  constructor(props) {
+    super(props);
+    const { currentUser } = props;
+    this.state = {
+      currentUser,
+      exist: false,
+    };
+  }
+
+  componentDidMount() {
+    const { location } = this.props;
+    this.slider.current.to(this.activeSlideByRoute(location));
+  }
+
+  UNSAFE_componentWillReceiveProps({ location }) {
+    this.slider.current.to(this.activeSlideByRoute(location));
+  }
+
+  handleSubmit = model => {
+    const { routes, checkExistence, history } = this.props;
+    return checkExistence(model.user.email).then(response => {
+      if (response.data.exists) {
+        return this.setState(
+          {
+            exist: true,
+            currentUser: model.user,
+          },
+          () => {
+            this.slider.current.update();
+            this.slider.current.mySlider.updateAutoHeight(500);
+          },
+        );
+      }
+      return this.update(model.user).then(() =>
+        history.push(routes.registrations),
+      );
+    });
+  };
+
+  update = async model => {
+    const { currentUser } = this.state;
+    await this.setState({
+      currentUser: {
+        ...currentUser,
+        ...model,
+      },
+    });
+    return this.state.currentUser;
+  };
+
+  activeSlideByRoute = ({ pathname }) => {
+    const { routes } = this.props;
+    if (pathname === routes.registrations) {
+      return 1;
+    }
+    return 0;
+  };
+
   render() {
     const {
       routes,
@@ -57,88 +127,145 @@ export default class Providers extends PureComponent<any> {
       onAuthSignIn,
       onAuthSignInError,
       history,
+      location,
     } = this.props;
-    const scopedRoutes = routes[scope];
-    const oppositeRoutes = routes[alternativeScope(scope)];
+
+    const { currentUser, exist } = this.state;
 
     return (
       <div>
-        <div className="text-center">
-          <h3>
-            <FormattedMessage {...messages[`${scope}_title`]} />
-          </h3>
-          <p>
-            <FormattedMessage {...messages[`${scope}_description`]} />
-          </p>
-        </div>
-        <FacebookLoginButton
-          onCompleted={auth =>
-            authSignIn(auth, 'facebook').then(response => {
-              if (response.currentUser) {
-                //
-                return null;
+        <Slider
+          options={{
+            autoHeight: true,
+            slidesPerView: 1,
+            allowTouchMove: true,
+            initialSlide: this.activeSlideByRoute(location), // step ? this.slideNames().indexOf(step) : 0,
+          }}
+          ref={this.slider}
+        >
+          <div>
+            <div className="text-center">
+              <h3>
+                <FormattedMessage {...messages[`${scope}_title`]} />
+              </h3>
+              <p>
+                <FormattedMessage {...messages[`${scope}_description`]} />
+              </p>
+            </div>
+            <FacebookLoginButton
+              onCompleted={auth =>
+                authSignIn(auth, 'facebook').then(response => {
+                  if (response.currentUser) {
+                    //
+                    return null;
+                  }
+                  return history.push(`${routes.registrations}/email`);
+                })
               }
-              return history.push(`${routes.registrations}/email`);
-            })
-          }
-          onError={onAuthSignInError}
-          label={
-            <FormattedMessage
-              {...messages[`${scope}_with_provider`]}
-              values={{
-                provider: <span className="font-weight-bold">Facebook</span>,
-              }}
-            />
-          }
-        />
-        <GoogleLoginButton
-          onCompleted={auth => authSignIn(auth, 'google').then(onAuthSignIn)}
-          onError={onAuthSignInError}
-          label={
-            <FormattedMessage
-              {...messages[`${scope}_with_provider`]}
-              values={{
-                provider: <span className="font-weight-bold">Google</span>,
-              }}
-            />
-          }
-        />
-        <Link className="card card-body p-3 mb-3" to={`${scopedRoutes}/email`}>
-          <div className="d-flex w-100 justify-content-start align-items-center">
-            <Mail className="mr-2" size={18} />
-            <div className="mr-auto">
-              <h6 className="mb-0">
+              onError={onAuthSignInError}
+              label={
                 <FormattedMessage
                   {...messages[`${scope}_with_provider`]}
                   values={{
                     provider: (
-                      <span className="font-weight-bold">la tua email</span>
+                      <span className="font-weight-bold">Facebook</span>
                     ),
                   }}
                 />
-              </h6>
-            </div>
+              }
+            />
+            <GoogleLoginButton
+              onCompleted={auth =>
+                authSignIn(auth, 'google').then(onAuthSignIn)
+              }
+              onError={onAuthSignInError}
+              label={
+                <FormattedMessage
+                  {...messages[`${scope}_with_provider`]}
+                  values={{
+                    provider: <span className="font-weight-bold">Google</span>,
+                  }}
+                />
+              }
+            />
+            <h6 className="small text-muted text-uppercase my-4 text-center">
+              Oppure
+            </h6>
+            <Form
+              handleSubmit={this.handleSubmit}
+              footerRenderer={({ canSubmit, loading }) => (
+                <div className="d-flex align-items-center justify-content-between">
+                  {exist && (
+                    <Link
+                      to={`${routes.passwords}?email=${currentUser.email}`}
+                      className="btn btn-light"
+                    >
+                      Non ricordi la password
+                    </Link>
+                  )}
+                  <FormSubmit
+                    className={`btn-primary${exist ? ' px-5' : ' w-100'}`}
+                    canSubmit={canSubmit}
+                    loading={loading}
+                    label="Avanti"
+                  />
+                </div>
+              )}
+            >
+              <FieldText
+                type="email"
+                label="Inserisci la tua email"
+                name="user[email]"
+                autoComplete="email"
+                autoCorrect="off"
+                required
+              />
+              <AnimateHeight
+                height={exist ? 'auto' : 0}
+                onAnimationStart={({ newHeight }) => console.log(newHeight)}
+                onAnimationEnd={() => {
+                  this.slider.current.mySlider.updateAutoHeight(300, false);
+                  // this.slider.current.mySlider.updateAutoHeight(500);
+                  console.log('TODO: focus password field');
+                }}
+              >
+                {exist && (
+                  <>
+                    <FieldPassword
+                      measurePasswordStrength={false}
+                      autoComplete="current-password"
+                      label="Inserisci la tua password"
+                      name="user[password]"
+                      type="password"
+                      id="new-password"
+                      validations="minLength:8"
+                      required
+                      autoFocus
+                    />
+                    <div className="form-group">
+                      <Checkbox
+                        layout="elementOnly"
+                        name="user[remember_me]"
+                        label={
+                          <FormattedMessage
+                            {...messages.simple_sessions_remember_me_label}
+                          />
+                        }
+                      />
+                    </div>
+                  </>
+                )}
+              </AnimateHeight>
+            </Form>
           </div>
-        </Link>
-        <Link
-          to={oppositeRoutes}
-          className="d-flex align-items-center justify-content-center mt-3 text-dark"
-        >
-          {scope === 'registrations' ? (
-            <Fragment>
-              Hai già un account?
-              <span className="text-primary ml-1">Accedi.</span>
-            </Fragment>
-          ) : (
-            <Fragment>
-              Non hai un account?
-              <span className="text-primary ml-1">Creane uno.</span>
-            </Fragment>
-          )}
-        </Link>
-        <p className="text-muted text-center mt-3 mb-0 small">
-          <FormattedMessage {...messages.privacy_intro} />
-        </p>
+          <div>
+            <DeviseForm
+              {...this.props}
+              scope="registrations"
+              currentUser={currentUser}
+            />
+          </div>
+        </Slider>
       </div>
     );
   }

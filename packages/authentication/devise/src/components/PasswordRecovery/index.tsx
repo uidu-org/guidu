@@ -1,5 +1,5 @@
 import FieldText from '@uidu/field-text';
-import { Form, FormFooter, FormSubmit } from '@uidu/form';
+import { Form, FormSubmit } from '@uidu/form';
 import queryString from 'query-string';
 import React, { Component } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
@@ -51,25 +51,21 @@ export default class PasswordRecovery extends Component<any> {
     return (
       <Form
         handleSubmit={this.handleSubmit}
-        // submitted={false}
-        footerRenderer={({ canSubmit, loading }) => [
-          <FormFooter className="w-100">
+        footerRenderer={({ canSubmit, loading }) => (
+          <div className="d-flex align-items-center justify-content-between">
+            <Link to={routes.sessions} className="btn btn-light">
+              <FormattedMessage {...messages.password_recovery_secondary_cta} />
+            </Link>
             <FormSubmit
-              className="btn-primary w-100"
+              className="btn-primary px-5"
+              canSubmit={canSubmit}
+              loading={loading}
               label={
                 <FormattedMessage {...messages.password_recovery_primary_cta} />
               }
-              loading={loading}
-              canSubmit={canSubmit}
             />
-          </FormFooter>,
-          <Link
-            to={routes.sessions}
-            className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
-          >
-            <FormattedMessage {...messages.password_recovery_secondary_cta} />
-          </Link>,
-        ]}
+          </div>
+        )}
       >
         <div className="text-center mb-4">
           <h3>

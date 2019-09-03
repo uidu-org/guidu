@@ -1,17 +1,7 @@
-import {
-  borderRadius,
-  DN50A,
-  DN60A,
-  gridSize,
-  math,
-  N0,
-  N50A,
-  N60A,
-  P300,
-  themed,
-} from '@uidu/theme';
+import { borderRadius, colors, gridSize, math, themed } from '@uidu/theme';
 import styled from 'styled-components';
 
+const { DN50A, DN60A, N0, N50A, N60A, P300 } = colors;
 // dialog may not be smaller than 160px or larger than 600px
 const dialogWidth = ({ width }) => `${Math.min(Math.max(width, 160), 600)}px`;
 

@@ -1,5 +1,6 @@
 import { Theme as ButtonTheme } from '@uidu/button';
 import { colors } from '@uidu/theme';
+import { ThemeProp } from '@uidu/theme/components';
 import React, { ComponentType, ReactNode, Ref } from 'react';
 import { Actions } from '../types';
 import Card, { CardTokens } from './Card';
