@@ -317,7 +317,7 @@ const createSelect = <TOriginalProps extends {}>(
       onChange: () => {},
     };
 
-    componentWillReceiveProps(nextProps: ResultProps) {
+    UNSAFE_componentWillReceiveProps(nextProps: ResultProps) {
       this.cacheComponents(nextProps.enableAnimation, nextProps.components);
     }
 
