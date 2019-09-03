@@ -42,7 +42,7 @@ export default class ResourcedMention extends React.PureComponent<
     this.handleMentionProvider(this.props);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const { props } = this;
     if (
       props.id !== nextProps.id ||

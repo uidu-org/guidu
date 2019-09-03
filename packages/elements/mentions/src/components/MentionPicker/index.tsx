@@ -78,7 +78,7 @@ export class MentionPicker extends React.PureComponent<
     this.subscribeResourceProvider(this.props.resourceProvider);
   }
 
-  componentWillReceiveProps(nextProps: Props & WithAnalyticsEventsProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props & WithAnalyticsEventsProps) {
     this.applyPropChanges(this.props, nextProps);
   }
 

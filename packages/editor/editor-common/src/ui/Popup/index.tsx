@@ -165,7 +165,7 @@ export default class Popup extends React.Component<Props, State> {
 
   onResize = () => this.scheduledUpdatePosition();
 
-  componentWillReceiveProps(newProps: Props) {
+  UNSAFE_componentWillReceiveProps(newProps: Props) {
     // We are delaying `updatePosition` otherwise it happens before the children
     // get rendered and we end up with a wrong position
     this.scheduledUpdatePosition(newProps);

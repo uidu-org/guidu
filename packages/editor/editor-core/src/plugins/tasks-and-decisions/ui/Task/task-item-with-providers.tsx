@@ -34,7 +34,7 @@ export default class TaskItemWithProviders extends Component<Props, State> {
   // updates when no longer suitable.
   private mounted = false;
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.mounted = true;
     this.updateContextIdentifierProvider(this.props);
   }
@@ -43,7 +43,7 @@ export default class TaskItemWithProviders extends Component<Props, State> {
     this.mounted = false;
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (
       nextProps.contextIdentifierProvider !==
       this.props.contextIdentifierProvider

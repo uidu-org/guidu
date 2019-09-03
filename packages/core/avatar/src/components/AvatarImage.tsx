@@ -86,7 +86,7 @@ export default class AvatarImage extends PureComponent<Props, State> {
     this.loadImage();
   }
   // handle case where `src` is modified after mount
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (nextProps.src && this.props.src !== nextProps.src) {
       this.setState({ isLoading: true });
     }

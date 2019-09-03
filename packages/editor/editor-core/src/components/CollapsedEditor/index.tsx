@@ -18,7 +18,7 @@ export default class CollapsedEditor extends React.Component<Props, State> {
   editorComponent?: Editor;
   shouldTriggerExpandEvent?: boolean;
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     if (!this.props.isExpanded && nextProps.isExpanded) {
       this.shouldTriggerExpandEvent = true;
     }

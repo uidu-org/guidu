@@ -73,7 +73,7 @@ export default class ResourcedMentionList extends React.PureComponent<
     this.subscribePresenceProvider(this.props.presenceProvider);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     this.applyPropChanges(this.props, nextProps);
   }
 

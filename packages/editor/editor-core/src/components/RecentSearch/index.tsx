@@ -38,7 +38,7 @@ class RecentLink extends React.Component<
     limit: DEFAULT_ITEMS_LIMIT,
   };
 
-  componentWillReceiveProps(nextProps: RecentSearchProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: RecentSearchProps) {
     if (this.props.defaultUrl !== nextProps.defaultUrl) {
       this.setState((state: RecentSearchState) => {
         if (state.url !== nextProps.defaultUrl) {

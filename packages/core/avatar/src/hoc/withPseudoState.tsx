@@ -47,7 +47,7 @@ export default function withPseudoState<InnerProps>(
     static displayName = getDisplayName('withPseudoState', WrappedComponent);
     component: any;
     actionKeys: Array<string>;
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
       const { href, isInteractive, onClick } = this.props;
 
       if (href || isInteractive || onClick) {
