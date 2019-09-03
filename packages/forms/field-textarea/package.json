@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-textarea",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Simple Textarea component",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -8,13 +8,13 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.12",
-    "@uidu/field-base": "^0.1.40",
+    "@uidu/analytics": "^0.1.14",
+    "@uidu/field-base": "^0.1.42",
     "autosize": "^4.0.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.32",
-    "@uidu/form": "^0.1.35"
+    "@uidu/docs": "^0.1.33",
+    "@uidu/form": "^0.1.36"
   },
   "uidu:src": "index.ts"
 }

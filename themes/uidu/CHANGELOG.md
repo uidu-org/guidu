@@ -1,68 +1,91 @@
 # Change Log
 
+## 0.1.36
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods
+
 ## 0.1.35
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.34
-- [patch] [37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
+
+- [patch][37d1476](https://github.org/uidu-org/guidu/commits/37d1476):
 
   - Added Navigation with icons, fix mobile messages and (maybe) chat view
 
 ## 0.1.33
-- [patch] [1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
+
+- [patch][1ec6bda](https://github.org/uidu-org/guidu/commits/1ec6bda):
 
   - Fix themes and shell to work crossbrowser (safari scrolling issues)
 
 ## 0.1.32
-- [patch] [bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
+
+- [patch][bf73cb5](https://github.org/uidu-org/guidu/commits/bf73cb5):
 
   - Update some styling to tabbar and navigation
 
 ## 0.1.31
-- [patch] [93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
+
+- [patch][93d4c6e](https://github.org/uidu-org/guidu/commits/93d4c6e):
 
   - Drop CJS from builds, release all packages to update references both in dev and production
 
 ## 0.1.30
-- [patch] [31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
+
+- [patch][31cf37a](https://github.org/uidu-org/guidu/commits/31cf37a):
 
   - Release all packages again
-- [patch] [7200672](https://github.org/uidu-org/guidu/commits/7200672):
+
+- [patch][7200672](https://github.org/uidu-org/guidu/commits/7200672):
 
   - Release all
 
 ## 0.1.29
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Release all packages
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Build and publish all packages
-- [patch] [0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
+
+- [patch][0d12731](https://github.org/uidu-org/guidu/commits/0d12731):
 
   - Release all packages to fix those with previuos failed builds
 
 ## 0.1.28
+
 - [patch] :
 
   - Big component rewrite, fix bolt dev environmnet"
 
 ## 0.1.27
+
 - [patch] :
 
   - Publish media components, added message 0.1.0
 
 ## 0.1.26
+
 - [patch] :
 
   - Dist folder created
 
 ## 0.1.25
+
 - [patch] :
 
   - Release with build included
+
 - [patch] :
 
   - Released newly created components and moved all atlaskit references to @uidu scope
@@ -74,185 +97,93 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.23](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.22...@uidu/themes-uidu@0.1.23) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.22](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.21...@uidu/themes-uidu@0.1.22) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.21](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.20...@uidu/themes-uidu@0.1.21) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.20](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.19...@uidu/themes-uidu@0.1.20) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.19](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.18...@uidu/themes-uidu@0.1.19) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.18](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.17...@uidu/themes-uidu@0.1.18) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.17](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.16...@uidu/themes-uidu@0.1.17) (2019-02-21)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.16](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.15...@uidu/themes-uidu@0.1.16) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.15](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.14...@uidu/themes-uidu@0.1.15) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.14](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.13...@uidu/themes-uidu@0.1.14) (2018-11-10)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.13](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.12...@uidu/themes-uidu@0.1.13) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.12](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.11...@uidu/themes-uidu@0.1.12) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.11](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.10...@uidu/themes-uidu@0.1.11) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.10](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.9...@uidu/themes-uidu@0.1.10) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.9](https://github.com/uidu-org/guidu/compare/@uidu/themes-uidu@0.1.8...@uidu/themes-uidu@0.1.9) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.8](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.7...@uidu/themes-uidu@0.1.8) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.7](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.6...@uidu/themes-uidu@0.1.7) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.6](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.5...@uidu/themes-uidu@0.1.6) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.5](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.4...@uidu/themes-uidu@0.1.5) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## [0.1.4](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.3...@uidu/themes-uidu@0.1.4) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.3](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.2...@uidu/themes-uidu@0.1.3) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
 
-
-
-
-
 ## [0.1.2](https://github.com/uidu-org/uidu-ui-kit/compare/@uidu/themes-uidu@0.1.1...@uidu/themes-uidu@0.1.2) (2018-11-09)
 
 **Note:** Version bump only for package @uidu/themes-uidu
-
-
-
-
 
 ## 0.1.1 (2018-11-09)
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/modal-dialog",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
   "keywords": [
     "atlaskit",
@@ -14,12 +14,12 @@
   "module": "index.js",
   "dependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/analytics": "^0.1.11",
-    "@uidu/blanket": "^0.1.11",
-    "@uidu/button": "^0.1.42",
-    "@uidu/form": "^0.1.34",
-    "@uidu/portal": "^0.1.9",
-    "@uidu/theme": "^0.1.15",
+    "@uidu/analytics": "^0.1.14",
+    "@uidu/blanket": "^0.1.12",
+    "@uidu/button": "^0.1.45",
+    "@uidu/form": "^0.1.36",
+    "@uidu/portal": "^0.1.10",
+    "@uidu/theme": "^0.1.17",
     "exenv": "^1.2.2",
     "prop-types": "^15.6.0",
     "raf-schd": "^4.0.0",
@@ -29,13 +29,13 @@
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.2.18",
-    "@uidu/checkbox": "^0.1.48",
-    "@uidu/docs": "^0.1.32",
-    "@uidu/field-text": "^0.1.17",
-    "@uidu/inline-dialog": "^0.1.0",
-    "@uidu/radio": "^0.2.3",
-    "@uidu/select": "^0.1.20",
+    "@uidu/avatar": "^0.2.19",
+    "@uidu/checkbox": "^0.1.51",
+    "@uidu/docs": "^0.1.33",
+    "@uidu/field-text": "^0.1.20",
+    "@uidu/inline-dialog": "^0.1.2",
+    "@uidu/radio": "^0.2.5",
+    "@uidu/select": "^0.1.22",
     "react-beautiful-dnd": "^11.0.0",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"

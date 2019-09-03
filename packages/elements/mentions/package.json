@@ -1,6 +1,6 @@
 {
   "name": "@uidu/mentions",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -9,16 +9,16 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.12",
-    "@uidu/avatar": "^0.2.18",
-    "@uidu/button": "^0.1.43",
-    "@uidu/lozenge": "^0.1.12",
-    "@uidu/theme": "^0.1.15",
-    "@uidu/tooltip": "^0.1.14"
+    "@uidu/analytics": "^0.1.14",
+    "@uidu/avatar": "^0.2.19",
+    "@uidu/button": "^0.1.45",
+    "@uidu/lozenge": "^0.1.13",
+    "@uidu/theme": "^0.1.17",
+    "@uidu/tooltip": "^0.1.15"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.32",
-    "@uidu/theme": "^0.1.15",
+    "@uidu/docs": "^0.1.33",
+    "@uidu/theme": "^0.1.17",
     "faker": "^4.1.0"
   },
   "publishConfig": {

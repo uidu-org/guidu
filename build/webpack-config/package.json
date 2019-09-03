@@ -1,6 +1,6 @@
 {
   "name": "@uidu/webpack-config",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "description": "Configurations for webpack used in Guidu",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -14,9 +14,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@uidu/changelog-loader": "^0.1.14",
-    "@uidu/fs-loader": "^0.1.24",
-    "@uidu/nav-info-loader": "^0.1.25",
+    "@uidu/changelog-loader": "^0.1.15",
+    "@uidu/fs-loader": "^0.1.25",
+    "@uidu/nav-info-loader": "^0.1.26",
     "babel-loader": "^8.0.4",
     "bolt": "^0.23.1",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",

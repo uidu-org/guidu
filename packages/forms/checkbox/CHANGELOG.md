@@ -1,22 +1,34 @@
 # Change Log
 
+## 0.1.51
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods
+
 ## 0.1.50
-- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+- [patch][affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
   - Release all packages, unique tsconfig
 
 ## 0.1.49
-- [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
+
+- [patch][afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
 
   - Avatar to ts, fix typings for field-base"
 
 ## 0.1.48
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.47
-- [patch] [b78d4f0](https://github.org/uidu-org/guidu/commits/b78d4f0):
+
+- [patch][b78d4f0](https://github.org/uidu-org/guidu/commits/b78d4f0):
 
   - Migrate forms to typescript, WIP typing and documenting all components, using formsy 2"
 

@@ -1,27 +1,40 @@
 # @uidu/media-filmstrip
 
+## 0.1.18
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods
+
 ## 0.1.17
-- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+- [patch][affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
   - Release all packages, unique tsconfig
 
 ## 0.1.16
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.15
-- [patch] [8b7d6e0](https://github.org/uidu-org/guidu/commits/8b7d6e0):
+
+- [patch][8b7d6e0](https://github.org/uidu-org/guidu/commits/8b7d6e0):
 
   - Fix css with styled-components
 
 ## 0.1.14
-- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+- [patch][e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 
   - Bump packages, remove some dependencies, better media-card types"
 
 ## 0.1.13
-- [patch] [2d61d43](https://github.org/uidu-org/guidu/commits/2d61d43):
+
+- [patch][2d61d43](https://github.org/uidu-org/guidu/commits/2d61d43):
 
   - Better media card overlays and actions
 

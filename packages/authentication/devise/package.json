@@ -1,6 +1,6 @@
 {
   "name": "@uidu/devise",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "React component tied to devise for sign_in, sign_up and password recovery ",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,14 +9,14 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/avatar": "^0.2.18",
-    "@uidu/checkbox": "^0.1.50",
-    "@uidu/field-password": "^0.1.17",
-    "@uidu/field-text": "^0.1.18",
-    "@uidu/form": "^0.1.35",
-    "@uidu/shell": "^0.1.22",
+    "@uidu/avatar": "^0.2.19",
+    "@uidu/checkbox": "^0.1.51",
+    "@uidu/field-password": "^0.1.18",
+    "@uidu/field-text": "^0.1.20",
+    "@uidu/form": "^0.1.36",
+    "@uidu/shell": "^0.1.27",
     "@uidu/slider": "^1.0.0-beta.4",
-    "@uidu/spinner": "^0.1.10",
+    "@uidu/spinner": "^0.1.11",
     "query-string": "^6.2.0",
     "react-animate-height": "^2.0.15",
     "react-facebook": "^8.0.4",
@@ -28,7 +28,7 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.32"
+    "@uidu/docs": "^0.1.33"
   },
   "uidu:src": "index.ts"
 }

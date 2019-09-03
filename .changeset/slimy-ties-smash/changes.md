@@ -1,1 +1,0 @@
-FIX in theme and dependencies

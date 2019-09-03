@@ -1,27 +1,40 @@
 # @uidu/code
 
+## 0.1.14
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods
+
 ## 0.1.13
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.12
-- [patch] [fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
+
+- [patch][fd321d7](https://github.org/uidu-org/guidu/commits/fd321d7):
 
   - Removed unused dependencies
 
 ## 0.1.11
-- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+- [patch][def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
   - Bump dependencies
 
 ## 0.1.10
-- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+- [patch][e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 
   - Remove some tests, fix travis cache timeout, migrate accordion to typescript
 
 ## 0.1.9
-- [patch] [33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
+
+- [patch][33713cc](https://github.org/uidu-org/guidu/commits/33713cc):
 
   - Remove some dependencies
 

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "license": "MIT",
   "types": "index.d.ts",
@@ -9,9 +9,9 @@
   "sideEffects": false,
   "author": "uidu",
   "dependencies": {
-    "@uidu/analytics": "^0.1.13",
-    "@uidu/popper": "^0.1.9",
-    "@uidu/theme": "^0.1.16",
+    "@uidu/analytics": "^0.1.14",
+    "@uidu/popper": "^0.1.10",
+    "@uidu/theme": "^0.1.17",
     "react-node-resolver": "^2.0.1"
   },
   "peerDependencies": {
@@ -20,10 +20,10 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@uidu/button": "^0.1.44",
-    "@uidu/docs": "^0.1.32",
-    "@uidu/form": "^0.1.35",
-    "@uidu/select": "^0.1.21",
+    "@uidu/button": "^0.1.45",
+    "@uidu/docs": "^0.1.33",
+    "@uidu/form": "^0.1.36",
+    "@uidu/select": "^0.1.22",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"
   }

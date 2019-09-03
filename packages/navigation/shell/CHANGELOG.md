@@ -1,5 +1,15 @@
 # @uidu/shell
 
+## 0.1.27
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  FIX in theme and dependencies
+
 ## 0.1.26
 
 ### Patch Changes
