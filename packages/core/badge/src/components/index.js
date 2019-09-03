@@ -49,7 +49,7 @@ export default class Badge extends Component<Props> {
   };
 
   // TODO This can be removed when we remove support for onValueUpdated.
-  componentWillUpdate(nextProps: Props) {
+  UNSAFE_componentWillUpdate(nextProps: Props) {
     const { children, onValueUpdated, value } = this.props;
     let oldValue = children;
     let newValue = nextProps.children;

@@ -144,7 +144,7 @@ export default class Layer extends Component<Props, State> {
     this.calculateFixedOffset(this.props);
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     this.applyPopper(nextProps);
     this.calculateFixedOffset(nextProps);
   }

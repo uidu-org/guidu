@@ -49,7 +49,7 @@ export default class Slider extends Component<Props, State> {
 
   state: State;
 
-  componentWillReceiveProps({ value: nextValue, min, max }: Props) {
+  UNSAFE_componentWillReceiveProps({ value: nextValue, min, max }: Props) {
     const { value: currentValue } = this.props;
 
     if (currentValue !== nextValue) {
