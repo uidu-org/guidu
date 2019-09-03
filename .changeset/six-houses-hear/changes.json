@@ -1,0 +1,4 @@
+{
+  "releases": [{ "name": "@uidu/field-base", "type": "patch" }],
+  "dependents": []
+}
