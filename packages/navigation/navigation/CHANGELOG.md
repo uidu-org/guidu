@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.1.23
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods
+
 ## 0.1.22
 
 ### Patch Changes

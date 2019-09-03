@@ -1,58 +1,80 @@
 # Change Log
 
-## 0.1.41
-- [patch] [eea866e](https://github.org/uidu-org/guidu/commits/eea866e):
+## 0.1.42
 
-  -  Field base default props
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  FIX in theme and dependencies
+
+## 0.1.41
+
+- [patch][eea866e](https://github.org/uidu-org/guidu/commits/eea866e):
+
+  - Field base default props
 
 ## 0.1.40
-- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+- [patch][affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
   - Release all packages, unique tsconfig
-- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+- [patch][affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
   - Fixed all ts errors, try to release again
 
 ## 0.1.39
-- [patch] [afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
+
+- [patch][afb33ad](https://github.org/uidu-org/guidu/commits/afb33ad):
 
   - Avatar to ts, fix typings for field-base"
 
 ## 0.1.38
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.37
-- [patch] [b78d4f0](https://github.org/uidu-org/guidu/commits/b78d4f0):
+
+- [patch][b78d4f0](https://github.org/uidu-org/guidu/commits/b78d4f0):
 
   - Migrate forms to typescript, WIP typing and documenting all components, using formsy 2"
 
 ## 0.1.36
-- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+- [patch][f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
 
   - Bump dependencies
 
 ## 0.1.35
-- [patch] [86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
+
+- [patch][86c0899](https://github.org/uidu-org/guidu/commits/86c0899):
 
   - Upgrade form and field-base to typescript
 
 ## 0.1.34
-- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+- [patch][a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 
   - Added field-date-range and field-date
-- [patch] [a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
+
+- [patch][a30f71a](https://github.org/uidu-org/guidu/commits/a30f71a):
 
   - Better date controls in dashboard
 
 ## 0.1.33
-- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+- [patch][def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
   - Bump react-feather, fixes to Select, downshift and toggle
 
 ## 0.1.32
-- [patch] [e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
+
+- [patch][e73498c](https://github.org/uidu-org/guidu/commits/e73498c):
 
   - Added textarea field component
 

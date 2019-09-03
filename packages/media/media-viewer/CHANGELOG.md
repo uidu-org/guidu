@@ -1,45 +1,62 @@
 # @uidu/media-viewer
 
+## 0.1.23
+
+### Patch Changes
+
+- [patch][9663f6e](https://github.org/uidu-org/guidu/commits/9663f6e):
+
+  Release all packages for bumping all dependencies, fixes for react lifecycle unsafe methods
+
 ## 0.1.22
-- [patch] [affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
+
+- [patch][affa7ad](https://github.org/uidu-org/guidu/commits/affa7ad):
 
   - Release all packages, unique tsconfig
 
 ## 0.1.21
-- [patch] [4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
+
+- [patch][4a4aff7](https://github.org/uidu-org/guidu/commits/4a4aff7):
 
   - Better package json organization
 
 ## 0.1.20
-- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+- [patch][f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
 
   - Codemod for unsafe react lifecycle methods
-- [patch] [f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
+
+- [patch][f40a1fe](https://github.org/uidu-org/guidu/commits/f40a1fe):
 
   - Bump dependencies
 
 ## 0.1.19
-- [patch] [f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
+
+- [patch][f1b4dbf](https://github.org/uidu-org/guidu/commits/f1b4dbf):
 
   - Update react-intl, fix editor-core dependencies
 
 ## 0.1.18
-- [patch] [c19b728](https://github.org/uidu-org/guidu/commits/c19b728):
+
+- [patch][c19b728](https://github.org/uidu-org/guidu/commits/c19b728):
 
   - Position X in header
 
 ## 0.1.17
-- [patch] [def6207](https://github.org/uidu-org/guidu/commits/def6207):
+
+- [patch][def6207](https://github.org/uidu-org/guidu/commits/def6207):
 
   - Bump react-feather, fixes to Select, downshift and toggle
 
 ## 0.1.16
-- [patch] [e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
+
+- [patch][e3fc364](https://github.org/uidu-org/guidu/commits/e3fc364):
 
   - Bump packages, remove some dependencies, better media-card types"
 
 ## 0.1.15
-- [patch] [fe71b9f](https://github.org/uidu-org/guidu/commits/fe71b9f):
+
+- [patch][fe71b9f](https://github.org/uidu-org/guidu/commits/fe71b9f):
 
   - Styòed-components
 

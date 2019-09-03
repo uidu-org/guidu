@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-range",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Component which renders a slider and is a substitute of the native input[range] element",
   "keywords": [
     "react",
@@ -14,12 +14,12 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.1.15",
+    "@uidu/theme": "^0.1.17",
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.32",
-    "@uidu/section-message": "0.1.11",
+    "@uidu/docs": "^0.1.33",
+    "@uidu/section-message": "0.1.12",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {
