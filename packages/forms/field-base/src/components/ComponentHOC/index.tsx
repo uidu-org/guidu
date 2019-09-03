@@ -1,11 +1,11 @@
 import { FormContext } from '@uidu/form';
 import { withFormsy } from 'formsy-react';
 import React from 'react';
+import shortid from 'shortid';
 import { FieldBaseProps } from '../../types';
 import {
   getDisplayName,
   getFallbackBoolean,
-  getId,
   shouldShowErrors,
 } from '../../utils';
 import { RequiredFromOriginalComponentProps } from './types';
@@ -68,6 +68,8 @@ const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
 
     public constructor(props: ResultProps) {
       super(props);
+      const { id } = props;
+      this.id = id || shortid.generate();
     }
 
     public render(): JSX.Element {
@@ -131,7 +133,7 @@ const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
       const layout = propLayout || contextLayout;
 
       const newProps = {
-        id: getId(propId || '', propLabel || '', propName),
+        id: this.id,
         label: propLabel,
         name: propName,
         ref: componentRef,
