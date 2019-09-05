@@ -17,7 +17,7 @@ export const Shadow = styled.div<{ active: boolean }>`
   position: sticky;
   top: 0;
   width: 100%;
-  background: #fff;
+  z-index: 1;
 
   &::after {
     content: '';
