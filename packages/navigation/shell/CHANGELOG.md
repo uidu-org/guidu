@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.1.28
+
+### Patch Changes
+
+- [patch][aac263b](https://github.org/uidu-org/guidu/commits/aac263b):
+
+  Added shadow onScroll (default, can be disabled)
+
 ## 0.1.27
 
 ### Patch Changes
