@@ -1,9 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/field-base", "type": "patch" },
-    { "name": "@uidu/field-counter", "type": "patch" },
-    { "name": "@uidu/field-number", "type": "patch" },
-    { "name": "@uidu/form", "type": "patch" }
-  ],
-  "dependents": []
-}
