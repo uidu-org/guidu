@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-number",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Field Number Component",
   "keywords": [
     "react",
@@ -15,9 +15,9 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.14",
-    "@uidu/field-base": "^0.1.42",
+    "@uidu/field-base": "^0.1.44",
     "@uidu/field-text": "^0.1.20",
-    "@uidu/form": "^0.1.36",
+    "@uidu/form": "^0.1.37",
     "@uidu/theme": "^0.1.17",
     "react-number-format": "^4.0.6"
   },

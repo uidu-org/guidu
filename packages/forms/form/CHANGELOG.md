@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.37
+
+### Patch Changes
+
+- [patch][d524ca9](https://github.org/uidu-org/guidu/commits/d524ca9):
+
+  Added input group, fix validation before submit
+
 ## 0.1.36
 
 ### Patch Changes
