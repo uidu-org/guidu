@@ -42,6 +42,11 @@ export default class BasicExample extends PureComponent<void, State> {
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           label="With change, blur & focus handlers"
+          addonBefore={
+            <span className="input-group-text" id="basic-addon1">
+              €
+            </span>
+          }
         />
         <div
           className="mb-5"

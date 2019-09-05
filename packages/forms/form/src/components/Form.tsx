@@ -73,7 +73,7 @@ class Form extends Component<FormProps, FormState> {
       <FormContext.Provider
         value={{
           layout: 'vertical',
-          validateOnSubmit: false,
+          validateBeforeSubmit: false,
           validatePristine: false,
           rowClassName: '',
           labelClassName: '',

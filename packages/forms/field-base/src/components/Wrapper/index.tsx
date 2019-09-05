@@ -7,9 +7,12 @@ import {
   RequiredSymbol,
   Row,
 } from '../../index';
+import InputGroup, { InputGroupProps } from '../InputGroup';
 import { WrapperProps } from './types';
 
-export default class Wrapper extends PureComponent<WrapperProps> {
+export default class Wrapper extends PureComponent<
+  WrapperProps & InputGroupProps
+> {
   static defaultProps = {
     layout: 'vertical',
     floatLabel: false,
@@ -17,6 +20,10 @@ export default class Wrapper extends PureComponent<WrapperProps> {
 
   render() {
     const {
+      addonAfter,
+      addonBefore,
+      buttonAfter,
+      buttonBefore,
       children,
       errorMessages,
       floatLabel,
@@ -28,8 +35,21 @@ export default class Wrapper extends PureComponent<WrapperProps> {
       required,
     } = this.props;
 
+    let control = children;
+
     if (type === 'hidden') {
-      return children;
+      return control;
+    }
+
+    const inputGroupProps = {
+      addonAfter,
+      addonBefore,
+      buttonAfter,
+      buttonBefore,
+    };
+
+    if (addonBefore || addonAfter || buttonBefore || buttonAfter) {
+      control = <InputGroup {...inputGroupProps}>{control}</InputGroup>;
     }
 
     if (floatLabel) {
@@ -41,7 +61,7 @@ export default class Wrapper extends PureComponent<WrapperProps> {
           {...this.props}
         >
           <FloatLabel htmlFor={id} className="has-float-label">
-            {children}
+            {control}
             {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
             <span>
               {floatLabel}
@@ -55,12 +75,12 @@ export default class Wrapper extends PureComponent<WrapperProps> {
     }
 
     if (layout === 'elementOnly') {
-      return children;
+      return control;
     }
 
     return (
       <Row htmlFor={id} {...this.props}>
-        {children}
+        {control}
         {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
         {help ? <Help help={help} /> : null}
         {showErrors ? (

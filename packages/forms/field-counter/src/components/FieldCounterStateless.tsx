@@ -20,6 +20,7 @@ class FieldCounterStateless extends Component<any> {
 
     return (
       <NumericInput
+        {...this.props}
         className={className}
         onChange={onChange}
         placeholder={placeholder}

@@ -1,12 +1,12 @@
 import React from 'react';
 
 const FormContext = React.createContext({
-  layout: 'vertical',
-  validateOnSubmit: false,
-  validatePristine: false,
-  rowClassName: '',
-  labelClassName: '',
   elementWrapperClassName: '',
+  labelClassName: '',
+  layout: 'vertical',
+  rowClassName: '',
+  validateBeforeSubmit: false,
+  validatePristine: false,
 });
 
 export default FormContext;
