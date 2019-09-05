@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ShellBody from '../ShellBody';
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,9 +18,11 @@ const Inner = styled.div`
   overscroll-behavior-y: contain;
 `;
 
-export default ({ children, sidebar }) => (
+export default ({ children, sidebar, shadowOnScroll = true }) => (
   <Wrapper>
-    <Inner>{children}</Inner>
+    <ShellBody scrollable shadowOnScroll={shadowOnScroll}>
+      {children}
+    </ShellBody>
     {sidebar}
   </Wrapper>
 );

@@ -2205,6 +2205,14 @@
     once "^1.4.0"
     universal-user-agent "^4.0.0"
 
+"@researchgate/react-intersection-observer@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@researchgate/react-intersection-observer/-/react-intersection-observer-1.0.1.tgz#dfa43457a8712f7eaf8c5f7957385b5fdedf4800"
+  integrity sha512-Px8Y5jpnHC9UZLzVNmcJ4/vRYgMFfjwmCJn2N+qCBmbXRxIbPf9CrCy5WDF9Mr3DXDHZT4VtoaNRn65OO+nwoQ==
+  dependencies:
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -14026,7 +14034,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
@@ -18195,6 +18203,14 @@ react-input-autosize@^2.2.1:
   integrity sha512-3+K4CD13iE4lQQ2WlF8PuV5htfmTRLH6MDnfndHM6LuBRszuXnuyIfE7nhSKt8AzRBZ50bu0sAhkNMeS5pxQQA==
   dependencies:
     prop-types "^15.5.8"
+
+react-intersection-observer@^8.24.1:
+  version "8.24.1"
+  resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.24.1.tgz#f98ec6807a039c7f1456d457e4fe2f434a28d12e"
+  integrity sha512-4ugly0PWrYpGIgZeMD/aqjBzSlA5+W8k89+1FBC7T8w9Q0k1aOXFyQrcKQOoGfxSUnCPItqmWLsg7j50WsfVnw==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    invariant "^2.2.4"
 
 react-intl@^3.1.7:
   version "3.2.0"

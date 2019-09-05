@@ -9,6 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@researchgate/react-intersection-observer": "^1.0.1",
     "@uidu/spinner": "^0.1.11",
     "styled-components": "^4.0.3"
   },

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import ChatWindow from '../../../messaging/chat-window/examples/Basic';
 import {
   NavigationMenu,
   SidebarFooter,
@@ -8,6 +7,7 @@ import {
 } from '../examples-utils';
 import Shell, {
   ShellBody,
+  ShellBodyWithSidebar,
   ShellContent,
   ShellFooter,
   ShellHeader,
@@ -47,15 +47,59 @@ export default function Dashboard() {
               Long navigation with search bar & actions
             </div>
           </ShellHeader>
-          <ShellBody className="d-flex" style={{ minHeight: 0 }}>
-            <ChatWindow />
-            <ShellNavigation
-              className="bg-white border-left p-4 flex-shrink-0 d-none d-lg-flex"
-              style={{ width: '30%' }}
-            >
-              Group sidebar
-            </ShellNavigation>
-          </ShellBody>
+          <ShellBodyWithSidebar
+            sidebar={
+              <ShellNavigation
+                className="bg-white border-left p-4 flex-shrink-0 d-none d-lg-flex"
+                style={{ width: '30%' }}
+              >
+                Group sidebar
+              </ShellNavigation>
+            }
+          >
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+            <p>Content</p>
+          </ShellBodyWithSidebar>
         </ShellMain>
       </ShellContent>
     </Shell>

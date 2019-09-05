@@ -105,14 +105,6 @@ export const Header = styled.header`
   flex-shrink: 0;
 `;
 
-export const Body = styled.div<{ scrollable?: boolean | 'mobileOnly' }>`
-  flex: 1 1 auto;
-  ${({ scrollable }) => mobileOnlyScrollable(scrollable)};
-  // to fix chrome flex
-  min-width: 0;
-  min-height: 0;
-`;
-
 export const Footer = styled.footer`
   // height: 3rem;
   flex-shrink: 0;
