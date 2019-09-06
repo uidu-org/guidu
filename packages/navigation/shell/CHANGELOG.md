@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.1.29
+
+### Patch Changes
+
+- [patch][0a72efa](https://github.org/uidu-org/guidu/commits/0a72efa):
+
+  No shadow on shell body with spinner
+
 ## 0.1.28
 
 ### Patch Changes

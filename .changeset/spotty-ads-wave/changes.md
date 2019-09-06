@@ -1,1 +1,0 @@
-No shadow on shell body with spinner
