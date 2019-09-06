@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import Media from 'react-media';
 import {
-  NavLink as Link,
   Route,
   RouteComponentProps,
   Switch,
@@ -33,7 +32,7 @@ class Treenav extends PureComponent<TreenavProps & RouteComponentProps> {
                     </div>
                   )}
                 />
-                {items.map(({ to, name, component: Component, items }) => {
+                {items.map(({ to, component: Component, items }) => {
                   if (items) {
                     return (
                       <>
@@ -55,26 +54,22 @@ class Treenav extends PureComponent<TreenavProps & RouteComponentProps> {
                             </div>
                           )}
                         />
-                        {items.map(
-                          ({ anchor, name, component: ChildComponent }) => (
-                            <Route
-                              key={`${to}/${anchor}`}
-                              path={`${to}/${anchor}`}
-                              render={routeProps => (
-                                <ChildComponent
-                                  {...this.props}
-                                  {...routeProps}
-                                />
-                              )}
-                            />
-                          ),
-                        )}
+                        {items.map(({ anchor, component: ChildComponent }) => (
+                          <Route
+                            key={`${to}/${anchor}`}
+                            path={`${to}/${anchor}`}
+                            render={routeProps => (
+                              <ChildComponent {...this.props} {...routeProps} />
+                            )}
+                          />
+                        ))}
                       </>
                     );
                   }
 
                   return (
                     <Route
+                      exact
                       path={to}
                       render={routeProps => (
                         <>
@@ -88,51 +83,7 @@ class Treenav extends PureComponent<TreenavProps & RouteComponentProps> {
             );
           }
 
-          return (
-            <div className="container px-0 mt-md-4" id="foo">
-              <div className="row no-gutters">
-                <div className="col-md-3 col-lg-2 px-md-3 navbar-light">
-                  <ul className="nav navbar-nav mb-4 px-0 px-lg-2 sticky-top">
-                    {items.map(item => [
-                      <Link className="nav-link" to={item.to}>
-                        {item.name}
-                      </Link>,
-                      location.pathname === item.to && item.items && (
-                        <ul className="nav navbar-nav">
-                          {item.items.map(subLink => (
-                            <Link
-                              // href="#"
-                              className="small nav-link py-1"
-                              activeClassName="text-primary"
-                              to={subLink.anchor}
-                              // spy
-                              // hashSpy
-                              // smooth
-                              // offset={-25}
-                              // onSetActive={console.log}
-                            >
-                              {subLink.name}
-                            </Link>
-                          ))}
-                        </ul>
-                      ),
-                    ])}
-                  </ul>
-                </div>
-                <Switch>
-                  {items.map(({ to, component: Component }) => (
-                    <Route
-                      path={to}
-                      render={routeProps => (
-                        <Component {...this.props} {...routeProps} />
-                      )}
-                    />
-                  ))}
-                  {/* <Redirect to="/dashboard/settings/profile" /> */}
-                </Switch>
-              </div>
-            </div>
-          );
+          return this.props.children;
         }}
       </Media>
     );
