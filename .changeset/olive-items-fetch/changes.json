@@ -1,0 +1,8 @@
+{
+  "releases": [
+    { "name": "@uidu/webpack-config", "type": "patch" },
+    { "name": "@uidu/field-text", "type": "patch" },
+    { "name": "@uidu/form", "type": "patch" }
+  ],
+  "dependents": []
+}
