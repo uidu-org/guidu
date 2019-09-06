@@ -1,6 +1,6 @@
 {
   "name": "@uidu/treenav",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Treenav component allows nested card navigation for mobile and desktop (eg: settings page)",
   "module": "index.js",
   "types": "index.d.ts",

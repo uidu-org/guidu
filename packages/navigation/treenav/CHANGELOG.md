@@ -1,5 +1,13 @@
 # @uidu/treenav
 
+## 0.1.3
+
+### Patch Changes
+
+- [patch][0751db1](https://github.org/uidu-org/guidu/commits/0751db1):
+
+  Better treenav
+
 ## 0.1.2
 
 ### Patch Changes
