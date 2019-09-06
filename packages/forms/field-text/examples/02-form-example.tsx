@@ -15,7 +15,7 @@ export default class FormExample extends Component<void, void> {
       <div>
         <Form
           {...formDefaultProps}
-          handleSubmit={model => this.setState({ value: model })}
+          // handleSubmit={async model => this.setState({ value: model })}
         >
           <FieldText
             {...inputDefaultProps}

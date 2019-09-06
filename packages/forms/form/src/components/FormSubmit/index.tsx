@@ -7,6 +7,7 @@ export default class FormSubmit extends Component<any> {
     label: null,
     canSubmit: false,
     loading: false,
+    loadingLabel: undefined,
   };
 
   render() {
@@ -15,8 +16,8 @@ export default class FormSubmit extends Component<any> {
       // state from Form
       canSubmit,
       loading,
+      loadingLabel,
       label,
-      ...buttonProps
     } = this.props;
 
     return (
@@ -32,17 +33,11 @@ export default class FormSubmit extends Component<any> {
             aria-hidden="true"
           ></span>
         )}
-        {loading && <span className="ml-2">Loading...</span>}
+        {loading && loadingLabel && (
+          <span className="ml-2">{loadingLabel}</span>
+        )}
         {!loading && label}
       </button>
     );
   }
 }
-
-// FormSubmit.propTypes = {
-//   className: PropTypes.string,
-//   label: PropTypes.node,
-//   method: PropTypes.string,
-//   canSubmit: PropTypes.bool,
-//   loading: PropTypes.bool,
-// };

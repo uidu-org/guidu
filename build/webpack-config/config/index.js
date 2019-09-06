@@ -342,7 +342,7 @@ function getOptimizations({ isProduction, noMinimizeFlag }) {
     return undefined;
   }
   const terserPlugin = new TerserPlugin({
-    parallel: Math.max(os.cpus().length - 1, 1),
+    // parallel: Math.max(os.cpus().length - 1, 1),
     terserOptions: {
       compress: {
         // Disabling following options speeds up minimization by 20 – 30s

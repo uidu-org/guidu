@@ -1,7 +1,18 @@
 import Formsy from 'formsy-react';
 import React, { Component } from 'react';
+import styled, { css } from 'styled-components';
 import { FormProps, FormState } from '../types';
 import FormContext from './FormContext';
+
+const Loading = styled.div<{ loading: boolean }>`
+  opacity: ${({ loading }) => (loading ? 0.4 : 1)};
+  transition: opacity 0.3ms ease-in;
+  ${({ loading }) =>
+    loading &&
+    css`
+      pointer-events: none;
+    `};
+`;
 
 class Form extends Component<FormProps, FormState> {
   private form: React.RefObject<Formsy> = React.createRef();
@@ -87,20 +98,9 @@ class Form extends Component<FormProps, FormState> {
           onValid={this.enableButton}
           onInvalid={this.disableButton}
         >
-          <div {...inputsWrapperProps}>
-            {loading && withLoader && (
-              <div className="form-loader">
-                <div className="vertical-align">
-                  <span className="spinner">
-                    <span className="bounce1" />
-                    <span className="bounce2" />
-                    <span className="bounce3" />
-                  </span>
-                </div>
-              </div>
-            )}
+          <Loading loading={loading} {...inputsWrapperProps}>
             {children}
-          </div>
+          </Loading>
           {footerRenderer({ loading, canSubmit }, this.form, this.handleSubmit)}
         </Formsy>
       </FormContext.Provider>
