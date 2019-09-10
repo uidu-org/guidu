@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.1.9
+
+### Patch Changes
+
+- [patch][cacd477](https://github.org/uidu-org/guidu/commits/cacd477):
+
+  Intl passwordless form
+
 ## 0.1.8
 
 ### Patch Changes
