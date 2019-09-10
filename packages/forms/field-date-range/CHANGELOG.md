@@ -1,5 +1,13 @@
 # @uidu/field-date-range
 
+## 0.1.9
+
+### Patch Changes
+
+- [patch][b80e7e0](https://github.org/uidu-org/guidu/commits/b80e7e0):
+
+  Bump dependencies
+
 ## 0.1.8
 
 ### Patch Changes
