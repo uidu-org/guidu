@@ -4,39 +4,29 @@ import React, { Fragment, PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
-  simple_sessions_title: {
-    id: 'guidu.devise.simple_sessions_title',
+  passwordless_sessions_title: {
+    id: 'guidu.devise.passwordless_sessions_title',
     defaultMessage: 'Sign in',
-    description: 'simple_sessions_title',
+    description: 'passwordless_sessions_title',
   },
-  simple_sessions_description: {
-    id: 'guidu.devise.simple_sessions_description',
+  passwordless_sessions_description: {
+    id: 'guidu.devise.passwordless_sessions_description',
     defaultMessage: 'Sign in with your email and password',
-    description: 'simple_sessions_description',
+    description: 'passwordless_sessions_description',
   },
-  simple_sessions_primary_cta: {
-    id: 'guidu.devise.simple_sessions_primary_cta',
+  passwordless_sessions_primary_cta: {
+    id: 'guidu.devise.passwordless_sessions_primary_cta',
     defaultMessage: 'Sign in',
-    description: 'simple_sessions_primary_cta',
+    description: 'passwordless_sessions_primary_cta',
   },
-  simple_sessions_secondary_cta: {
-    id: 'guidu.devise.simple_sessions_secondary_cta',
-    defaultMessage: 'Create an account',
-    description: 'simple_sessions_secondary_cta',
-  },
-  simple_sessions_email_label: {
-    id: 'guidu.devise.simple_sessions_email_label',
+  passwordless_sessions_email_label: {
+    id: 'guidu.devise.passwordless_sessions_email_label',
     defaultMessage: 'Insert your email',
-    description: 'simple_sessions_email_label',
-  },
-  simple_sessions_remember_me_label: {
-    id: 'guidu.devise.simple_sessions_remember_me_label',
-    defaultMessage: 'Remember me for next sessions',
-    description: 'simple_sessions_email_label',
+    description: 'passwordless_sessions_email_label',
   },
 });
 
-export default class SessionsForm extends PureComponent<any, any> {
+export default class PasswordlessSessionsForm extends PureComponent<any, any> {
   handleSubmit = async model => {
     const { requestPasswordlessToken } = this.props;
     return requestPasswordlessToken(model);
@@ -45,13 +35,13 @@ export default class SessionsForm extends PureComponent<any, any> {
   render() {
     const { routes } = this.props;
     return (
-      <Fragment>
+      <>
         <div className="text-center mb-4">
           <h3>
-            <FormattedMessage {...messages.simple_sessions_title} />
+            <FormattedMessage {...messages.passwordless_sessions_title} />
           </h3>
           <p className="mb-0">
-            <FormattedMessage {...messages.simple_sessions_description} />
+            <FormattedMessage {...messages.passwordless_sessions_description} />
           </p>
         </div>
         <Form
@@ -62,7 +52,7 @@ export default class SessionsForm extends PureComponent<any, any> {
               canSubmit={canSubmit}
               loading={loading}
               label={
-                <FormattedMessage {...messages.simple_sessions_primary_cta} />
+                <FormattedMessage {...messages.passwordless_sessions_primary_cta} />
               }
             />,
           ]}
@@ -70,7 +60,7 @@ export default class SessionsForm extends PureComponent<any, any> {
           <FieldText
             type="email"
             label={
-              <FormattedMessage {...messages.simple_sessions_email_label} />
+              <FormattedMessage {...messages.passwordless_sessions_email_label} />
             }
             name="user[email]"
             autoComplete="email"
@@ -78,7 +68,7 @@ export default class SessionsForm extends PureComponent<any, any> {
             required
           />
         </Form>
-      </Fragment>
+      </>
     );
   }
 }
