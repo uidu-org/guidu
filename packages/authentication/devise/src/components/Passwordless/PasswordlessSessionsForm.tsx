@@ -1,6 +1,6 @@
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
@@ -52,7 +52,9 @@ export default class PasswordlessSessionsForm extends PureComponent<any, any> {
               canSubmit={canSubmit}
               loading={loading}
               label={
-                <FormattedMessage {...messages.passwordless_sessions_primary_cta} />
+                <FormattedMessage
+                  {...messages.passwordless_sessions_primary_cta}
+                />
               }
             />,
           ]}
@@ -60,7 +62,9 @@ export default class PasswordlessSessionsForm extends PureComponent<any, any> {
           <FieldText
             type="email"
             label={
-              <FormattedMessage {...messages.passwordless_sessions_email_label} />
+              <FormattedMessage
+                {...messages.passwordless_sessions_email_label}
+              />
             }
             name="user[email]"
             autoComplete="email"

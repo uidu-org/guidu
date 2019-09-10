@@ -1,6 +1,6 @@
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
@@ -24,64 +24,61 @@ const messages = defineMessages({
     defaultMessage: 'Insert your email',
     description: 'passwordless_registrations_email_label',
   },
-
 });
 
 export default class PasswordlessRegistrationsForm extends PureComponent<
-                 any,
-                 any
-               > {
-                 handleSubmit = async ({ exists, ...model }) => {
-                   const { onSignUp, signUp, onSignUpError } = this.props;
-                   return signUp(model);
-                 };
+  any,
+  any
+> {
+  handleSubmit = async ({ exists, ...model }) => {
+    const { onSignUp, signUp, onSignUpError } = this.props;
+    return signUp(model);
+  };
 
-                 render() {
-                   const { routes, additionalInfo } = this.props;
-                   return (
-                     <>
-                       <div className="text-center mb-4">
-                         <h3>
-                           <FormattedMessage
-                             {...messages.passwordless_registrations_title}
-                           />
-                         </h3>
-                         <p className="mb-0">
-                           <FormattedMessage
-                             {...messages.passwordless_registrations_description}
-                           />
-                         </p>
-                       </div>
-                       <Form
-                         handleSubmit={this.handleSubmit}
-                         footerRenderer={({ canSubmit, loading }) => [
-                           <FormSubmit
-                             className="btn-primary w-100"
-                             canSubmit={canSubmit}
-                             loading={loading}
-                             label={
-                               <FormattedMessage
-                                 {...messages.passwordless_registrations_primary_cta}
-                               />
-                             }
-                           />,
-                         ]}
-                       >
-                         <FieldText
-                           type="email"
-                           label={
-                             <FormattedMessage
-                               {...messages.passwordless_registrations_email_label}
-                             />
-                           }
-                           name="user[email]"
-                           autoComplete="email"
-                           autoCorrect="off"
-                           required
-                         />
-                         {additionalInfo}
-                       </Form>
-                     </>
-                   );
-                 }
-               }
+  render() {
+    const { routes, additionalInfo } = this.props;
+    return (
+      <>
+        <div className="text-center mb-4">
+          <h3>
+            <FormattedMessage {...messages.passwordless_registrations_title} />
+          </h3>
+          <p className="mb-0">
+            <FormattedMessage
+              {...messages.passwordless_registrations_description}
+            />
+          </p>
+        </div>
+        <Form
+          handleSubmit={this.handleSubmit}
+          footerRenderer={({ canSubmit, loading }) => [
+            <FormSubmit
+              className="btn-primary w-100"
+              canSubmit={canSubmit}
+              loading={loading}
+              label={
+                <FormattedMessage
+                  {...messages.passwordless_registrations_primary_cta}
+                />
+              }
+            />,
+          ]}
+        >
+          <FieldText
+            type="email"
+            label={
+              <FormattedMessage
+                {...messages.passwordless_registrations_email_label}
+              />
+            }
+            name="user[email]"
+            autoComplete="email"
+            autoCorrect="off"
+            required
+          />
+          {additionalInfo}
+        </Form>
+      </>
+    );
+  }
+}
