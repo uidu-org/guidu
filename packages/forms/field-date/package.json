@@ -10,7 +10,7 @@
     "@uidu/analytics": "^0.1.14",
     "@uidu/field-base": "^0.1.42",
     "moment": "^2.18.1",
-    "react-day-picker": "^7.3.0"
+    "react-day-picker": "^7.3.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.33",

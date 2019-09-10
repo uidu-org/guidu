@@ -19,7 +19,8 @@
     "@uidu/item": "^0.1.17",
     "@uidu/lozenge": "^0.1.13",
     "ag-grid-community": "^21.0.0",
-    "ag-grid-react": "^21.0.0"
+    "ag-grid-react": "^21.0.0",
+    "react-day-picker": "^7.3.2"
   },
   "devDependencies": {
     "@uidu/data-controls": "^0.1.15",
