@@ -34,7 +34,7 @@
     "@uidu/spinner": "^0.1.11",
     "@uidu/theme": "^0.1.17",
     "@uidu/tooltip": "^0.1.15",
-    "markdown-it": "^9.1.0",
+    "markdown-it": "^10.0.0",
     "prosemirror-commands": "^1.0.8",
     "prosemirror-history": "^1.0.4",
     "prosemirror-inputrules": "^1.0.4",

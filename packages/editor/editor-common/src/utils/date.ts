@@ -1,5 +1,4 @@
-import isBefore from 'date-fns/is_before';
-import differenceInCalendarDays from 'date-fns/difference_in_calendar_days';
+import { differenceInCalendarDays, isBefore } from 'date-fns';
 
 const ISO_FORMAT = 'YYYY-MM-DD';
 const DEFAULT_FORMAT = 'DD MMM YYYY';
@@ -80,6 +79,7 @@ export const timestampToIsoFormat = (timestamp: string | number): string => {
 
 export const isPastDate = (timestamp: string | number): boolean => {
   return isBefore(
+    // @ts-ignore
     timestampToIsoFormat(Number(timestamp)),
     timestampToIsoFormat(new Date().valueOf()),
   );
