@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "main": "index.js",
@@ -22,7 +22,7 @@
     "@uidu/avatar-group": "^2.1.28",
     "@uidu/button": "^0.1.45",
     "@uidu/droplist": "^0.1.15",
-    "@uidu/editor-common": "^0.1.6",
+    "@uidu/editor-common": "^0.1.7",
     "@uidu/item": "^0.1.17",
     "@uidu/media-card": "^0.1.18",
     "@uidu/media-core": "^0.1.12",

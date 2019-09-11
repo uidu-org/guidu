@@ -1,7 +1,0 @@
-{
-  "releases": [
-    { "name": "@uidu/editor-common", "type": "patch" },
-    { "name": "@uidu/editor-core", "type": "patch" }
-  ],
-  "dependents": []
-}
