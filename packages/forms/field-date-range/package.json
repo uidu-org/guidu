@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date-range",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "sideEffects": false,
@@ -9,7 +9,7 @@
   "dependencies": {
     "@uidu/analytics": "^0.1.14",
     "@uidu/field-base": "^0.1.42",
-    "@uidu/field-date": "^0.1.7",
+    "@uidu/field-date": "^0.1.8",
     "moment": "^2.18.1",
     "react-day-picker": "^7.3.2",
     "react-feather": "^2.0.3",

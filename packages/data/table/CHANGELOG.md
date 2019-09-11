@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.16
+
+### Patch Changes
+
+- [patch][b80e7e0](https://github.org/uidu-org/guidu/commits/b80e7e0):
+
+  Bump dependencies
+
 ## 0.1.15
 
 ### Patch Changes
