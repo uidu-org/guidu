@@ -61,7 +61,6 @@ export default class Basic extends Component<any, any> {
           { id: 0, kind: 'table', name: 'Table' },
           { id: 1, kind: 'gallery', name: 'Griglia' },
           { id: 2, kind: 'calendar', name: 'Calendario' },
-          { id: 3, kind: 'list', name: 'Lista' },
         ]}
         columnDefs={this.state.columnDefs}
         rowData={this.state.rowData}
@@ -74,11 +73,21 @@ export default class Basic extends Component<any, any> {
           <>
             <ShellHeader>
               {renderControls({
-                availableViews: [
-                  { id: 0, kind: 'table', name: 'Table' },
-                  { id: 1, kind: 'gallery', name: 'Griglia' },
-                  { id: 2, kind: 'calendar', name: 'Calendario' },
-                ],
+                controls: {
+                  finder: {
+                    visible: true,
+                  },
+                  viewer: {
+                    visible: true,
+                    props: {
+                      availableViews: [
+                        { id: 0, kind: 'table', name: 'Table' },
+                        { id: 1, kind: 'gallery', name: 'Griglia' },
+                        { id: 2, kind: 'calendar', name: 'Calendario' },
+                      ],
+                    },
+                  },
+                },
               })}
             </ShellHeader>
             <ShellBody scrollable>
@@ -87,7 +96,7 @@ export default class Basic extends Component<any, any> {
                   viewProps: {
                     gallery: {
                       gutterSize: 24,
-                      columnCount: 2,
+                      columnCount: 4,
                     },
                     table: {
                       rowHeight: 128,

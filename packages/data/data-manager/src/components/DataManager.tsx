@@ -22,6 +22,45 @@ const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
 const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
 
+const defaultAvailableControls = {
+  finder: {
+    visible: true,
+    props: {},
+  },
+  viewer: {
+    visible: true,
+    props: {},
+  },
+  toggler: {
+    visible: true,
+    props: {},
+  },
+  customizer: {
+    visible: true,
+    props: {},
+  },
+  filterer: {
+    visible: true,
+    props: {},
+  },
+  grouper: {
+    visible: true,
+    props: {},
+  },
+  sorter: {
+    visible: true,
+    props: {},
+  },
+  resizer: {
+    visible: true,
+    props: {},
+  },
+  more: {
+    visible: true,
+    props: {},
+  },
+};
+
 export default class DataManager extends Component<DataManagerProps, any> {
   constructor(props) {
     super(props);
@@ -191,7 +230,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
                 <Calendar
                   {...viewProps.calendar}
                   onItemClick={onItemClick}
-                  events={data.map(datum => datum.data)}
+                  events={data.map(datum => ({
+                    data: datum.data,
+                  }))}
                   startAccessor={item => moment(item.createdAt).toDate()}
                   titleAccessor={item => item.email}
                   endAccessor={item =>
@@ -217,7 +258,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
               <Gallery
                 {...viewProps.gallery}
                 onItemClick={onItemClick}
-                rowData={data}
+                rowData={data.map(datum => ({
+                  data: datum.data,
+                }))}
                 columnDefs={columnDefs}
               />
             )}
@@ -235,7 +278,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
               <List
                 {...viewProps.list}
                 onItemClick={onItemClick}
-                rowData={data}
+                rowData={data.map(datum => ({
+                  data: datum.data,
+                }))}
                 columnDefs={columnDefs}
               />
             )}
@@ -247,59 +292,86 @@ export default class DataManager extends Component<DataManagerProps, any> {
     });
   };
 
-  renderControls = ({ availableViews }) => {
+  renderControls = ({ controls }) => {
     const { currentView, dataViews, onViewChange, onViewAdd } = this.props;
     const { sorters, filters, groupers, columnDefs } = this.state;
 
+    const availableControls = {
+      ...defaultAvailableControls,
+      ...controls,
+    };
+
     return (
       <>
-        <Viewer
-          currentView={currentView}
-          dataViews={dataViews}
-          availableViews={availableViews}
-          onChange={onViewChange}
-          onAdd={onViewAdd}
-        />
-        <Finder onChange={this.setSearch} />
-        {currentView.kind === 'table' && (
+        {availableControls.finder.visible && (
+          <Finder
+            onChange={this.setSearch}
+            {...availableControls.finder.props}
+          />
+        )}
+        {availableControls.viewer.visible && (
+          <Viewer
+            currentView={currentView}
+            dataViews={dataViews}
+            onChange={onViewChange}
+            onAdd={onViewAdd}
+            {...availableControls.viewer.props}
+          />
+        )}
+        {currentView.kind === 'table' && availableControls.toggler.visible && (
           <Toggler
             fields={columnDefs}
             onToggle={this.toggleColumn}
             onSortEnd={this.moveColumn}
+            {...availableControls.toggler.props}
           />
         )}
-        {(currentView.kind === 'gallery' || currentView.kind === 'list') && (
-          <Customizer
+        {(currentView.kind === 'gallery' || currentView.kind === 'list') &&
+          availableControls.customizer.visible && (
+            <Customizer
+              fields={columnDefs}
+              onToggle={this.toggleColumn}
+              onSortEnd={this.moveColumn}
+              {...availableControls.customizer.props}
+            />
+          )}
+        {availableControls.filterer.visible && (
+          <Filterer
             fields={columnDefs}
-            onToggle={this.toggleColumn}
-            onSortEnd={this.moveColumn}
+            onChange={this.setFilters}
+            filters={filters}
+            {...availableControls.filterer.props}
           />
         )}
-        <Filterer
-          fields={columnDefs}
-          onChange={this.setFilters}
-          filters={filters}
-        />
-        {currentView.kind === 'list' && (
+        {currentView.kind === 'list' && availableControls.grouper.visible && (
           <Grouper
             fields={columnDefs}
             onChange={this.setGroupers}
             groupers={groupers}
+            {...availableControls.grouper.props}
           />
         )}
-        <Sorter
-          fields={columnDefs}
-          onChange={this.setSorters}
-          sorters={sorters}
-        />
-        {currentView.kind === 'table' && (
-          <Resizer onResize={this.setRowHeight} />
+        {availableControls.sorter.visible && (
+          <Sorter
+            fields={columnDefs}
+            onChange={this.setSorters}
+            sorters={sorters}
+            {...availableControls.sorter.props}
+          />
+        )}
+        {currentView.kind === 'table' && availableControls.resizer.visible && (
+          <Resizer
+            onResize={this.setRowHeight}
+            {...availableControls.resizer.props}
+          />
         )}
         {/* <Sharer /> */}
-        <More
-          onDownload={() => this.gridApi.exportDataAsCsv()}
-          onDuplicate={console.log}
-        />
+        {availableControls.more.visible && (
+          <More
+            onDownload={() => this.gridApi.exportDataAsCsv()}
+            {...availableControls.more.props}
+          />
+        )}
       </>
     );
   };
