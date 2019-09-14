@@ -2,6 +2,7 @@ import { Form } from '@uidu/form';
 import Select from '@uidu/select';
 import React, { Component } from 'react';
 import { Sliders, X } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { List } from 'react-powerplug';
 import { Trigger } from '../../styled';
 import { DropdownMenu, PickField } from '../../utils';
@@ -22,7 +23,7 @@ export default class Sorter extends Component<any> {
 
   handleSubmit = async model => {
     const { onChange } = this.props;
-    const response = await (this.form.current as any).form.getModel();
+    const response = await (this.form.current as any).getModel();
     onChange(response.sorters || []);
   };
 
@@ -39,7 +40,15 @@ export default class Sorter extends Component<any> {
           <Trigger activeBg="#fee2d5" className="btn" active={!!sortersCount}>
             <Sliders strokeWidth={2} size={14} className="mr-2" />
             <span style={{ textTransform: 'initial' }}>
-              {sortersCount ? `Ordinati per ${sortersCount} campi` : 'Ordina'}
+              <FormattedMessage
+                id="guidu.data_controls.sorter.label"
+                defaultMessage={`{sortersCount, plural,
+                  =0 {Sort}
+                  one {Sorted by 1 field}
+                  other {Sorted by # fields}
+                }`}
+                values={{ sortersCount }}
+              />
             </span>
           </Trigger>
         }
@@ -66,13 +75,20 @@ export default class Sorter extends Component<any> {
                             console.log(value);
                             return value.colId.colId === sorter.colId.colId;
                           });
-                          (this.form.current as any).form.submit();
+                          (this.form.current as any).submit();
                         }}
                       >
                         <X size={13} />
                       </button>
                       <span className="small mr-4">
-                        {index === 0 ? 'Sort by' : 'then by'}
+                        <FormattedMessage
+                          id="guidu.data_controls.sorter.sorted_by"
+                          defaultMessage={`{index, plural,
+                            =0 {Sort by}
+                            other {then by}
+                          }`}
+                          values={{ index }}
+                        />
                       </span>
                       <div style={{ minWidth: 180 }} className="mr-2">
                         <Select
@@ -85,9 +101,10 @@ export default class Sorter extends Component<any> {
                           menuPosition="fixed"
                           getOptionLabel={option => option.headerName}
                           getOptionValue={option => option.colId}
-                          onChange={() =>
-                            (this.form.current as any).form.submit()
-                          }
+                          onChange={() => {
+                            console.log(this.form);
+                            (this.form.current as any).submit();
+                          }}
                           styles={{
                             menuPortal: base => ({ ...base, zIndex: 9999 }),
                           }}
@@ -106,7 +123,7 @@ export default class Sorter extends Component<any> {
                         menuPosition="fixed"
                         onChange={() => {
                           console.log('changed');
-                          (this.form.current as any).form.submit();
+                          (this.form.current as any).submit();
                         }}
                         styles={{
                           menuPortal: base => ({ ...base, zIndex: 9999 }),
@@ -115,17 +132,27 @@ export default class Sorter extends Component<any> {
                     </div>
                   ))}
                   {!list.length && (
-                    <p className="text-muted">Nessun ordinamento selezionato</p>
+                    <p className="text-muted">
+                      <FormattedMessage
+                        id="guidu.data_controls.sorter.no_sorters"
+                        defaultMessage="No selected fields to sort by"
+                      />
+                    </p>
                   )}
                   <PickField
-                    label="Scegli un campo per ordinare i dati"
+                    label={
+                      <FormattedMessage
+                        id="guidu.data_controls.sorter.pick"
+                        defaultMessage="Pick a field to sort by"
+                      />
+                    }
                     onClick={field => {
                       push({
                         sort: { id: 'asc', name: 'asc' },
                         index: list.length,
                         colId: field,
                       });
-                      (this.form.current as any).form.submit();
+                      (this.form.current as any).submit();
                     }}
                     list={sorters}
                     fields={fields.filter(f => !!f.sortable)}

@@ -11,16 +11,20 @@ export default class Header extends PureComponent<any> {
       <div
         style={{
           ...style,
-          minWidth: `calc(100% - ${gutterSize * 2}px)`,
+          minWidth: '100%',
           paddingLeft: gutterSize + 1, // border,
           width: 'fit-content',
           height: style.height,
+          borderBottom: '1px solid #f2f2f3',
+          borderTop: '1px solid #f2f2f3',
+          fontSize: '14px',
+          fontWeight: 500,
         }}
-        className="sticky-top d-flex align-items-center bg-light border-bottom"
+        className="sticky-top d-flex align-items-center bg-white"
       >
         {cover && (
           <div
-            className="text-truncate d-flex align-items-center data-list-cover-header"
+            className="text-truncate d-flex align-items-center data-list-cover-header px-3 px-xl-4"
             style={{
               width: cover.width || '138px',
               backgroundColor: 'transparent',
@@ -56,7 +60,7 @@ export default class Header extends PureComponent<any> {
                   return (
                     <div
                       key={`${colId}-label`}
-                      className="text-truncate data-list-header"
+                      className="text-truncate data-list-header px-3 px-xl-4"
                       style={{
                         width: width || '150px',
                         minWidth: minWidth || 'auto',

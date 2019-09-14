@@ -13,6 +13,7 @@ module.exports = function(api) {
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
     'babel-plugin-add-module-exports',
+    'babel-plugin-styled-components',
   ];
 
   const presets = ['@babel/react', '@babel/flow', '@babel/preset-typescript'];

@@ -6,6 +6,7 @@ import Item, { withItemFocus } from '@uidu/item';
 import { ToggleStateless } from '@uidu/toggle';
 import React, { Component } from 'react';
 import { Settings } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 import DropdownMenu from '../../utils/DropdownMenu';
 
@@ -28,7 +29,12 @@ export default class Toggler extends Component<any> {
         trigger={
           <Trigger activeBg="#d0f0fd" className="btn">
             <Settings strokeWidth={2} size={14} className="mr-2" />
-            <span style={{ textTransform: 'initial' }}>Personalizza</span>
+            <span style={{ textTransform: 'initial' }}>
+              <FormattedMessage
+                id="guidu.data_controls.toggler.label"
+                defaultMessage="Customize"
+              />
+            </span>
           </Trigger>
         }
       >

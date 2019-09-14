@@ -1,4 +1,10 @@
-import React, { Component, Fragment } from 'react';
+import {
+  ShellBody,
+  ShellBodyWithSidebar,
+  ShellFooter,
+  ShellHeader,
+} from '@uidu/shell';
+import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
@@ -32,11 +38,11 @@ export default class Basic extends Component<any, any> {
     });
   };
 
-  addView = kind => {
+  addView = dataview => {
     const newView = {
       id: this.state.dataViews.length + 1,
-      kind,
-      name: `new ${kind}`,
+      kind: dataview.kind,
+      name: `New ${dataview.name}`,
     };
     this.setState({
       dataViews: [...this.state.dataViews, newView],
@@ -51,8 +57,13 @@ export default class Basic extends Component<any, any> {
   render() {
     return (
       <DataManager
-        availableViews={['table', 'gallery', 'calendar', 'list']}
-        columnDefs={this.state.columnDefs.slice(0, 5)}
+        availableViews={[
+          { id: 0, kind: 'table', name: 'Table' },
+          { id: 1, kind: 'gallery', name: 'Griglia' },
+          { id: 2, kind: 'calendar', name: 'Calendario' },
+          { id: 3, kind: 'list', name: 'Lista' },
+        ]}
+        columnDefs={this.state.columnDefs}
         rowData={this.state.rowData}
         currentView={this.state.currentView}
         dataViews={this.state.dataViews}
@@ -60,25 +71,37 @@ export default class Basic extends Component<any, any> {
         onViewAdd={this.addView}
       >
         {({ renderControls, renderView }) => (
-          <Fragment>
-            <div className="d-flex px-xl-4 p-3">
+          <>
+            <ShellHeader>
               {renderControls({
-                availableViews: ['table', 'gallery', 'calendar', 'list'],
+                availableViews: [
+                  { id: 0, kind: 'table', name: 'Table' },
+                  { id: 1, kind: 'gallery', name: 'Griglia' },
+                  { id: 2, kind: 'calendar', name: 'Calendario' },
+                ],
               })}
-            </div>
-            {renderView({
-              viewProps: {
-                gallery: {
-                  gutterSize: 24,
-                  columnCount: 4,
-                },
-                list: {
-                  gutterSize: 24,
-                  rowHeight: 128,
-                },
-              },
-            })}
-          </Fragment>
+            </ShellHeader>
+            <ShellBody scrollable>
+              <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
+                {renderView({
+                  viewProps: {
+                    gallery: {
+                      gutterSize: 24,
+                      columnCount: 2,
+                    },
+                    table: {
+                      rowHeight: 128,
+                    },
+                    list: {
+                      gutterSize: 0,
+                      rowHeight: 128,
+                    },
+                  },
+                })}
+              </ShellBodyWithSidebar>
+            </ShellBody>
+            <ShellFooter>Added pagination?</ShellFooter>
+          </>
         )}
       </DataManager>
     );

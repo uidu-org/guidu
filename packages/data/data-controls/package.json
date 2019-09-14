@@ -16,6 +16,7 @@
     "@uidu/select": "^0.1.22",
     "@uidu/toggle": "^0.1.18",
     "react-feather": "^2.0.3",
+    "react-intl": "^3.1.7",
     "react-powerplug": "^1.0.0",
     "styled-components": "^4.0.3"
   },

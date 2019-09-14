@@ -6,6 +6,7 @@ import Item, { withItemFocus } from '@uidu/item';
 import { ToggleStateless } from '@uidu/toggle';
 import React, { Component } from 'react';
 import { EyeOff } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 import DropdownMenu from '../../utils/DropdownMenu';
 
@@ -30,7 +31,15 @@ export default class Toggler extends Component<any> {
           <Trigger activeBg="#d0f0fd" active={!!hiddenCount} className="btn">
             <EyeOff strokeWidth={2} size={14} className="mr-2" />
             <span style={{ textTransform: 'initial' }}>
-              {hiddenCount ? `${hiddenCount} campi nascosti` : 'Nascondi campi'}
+              <FormattedMessage
+                id="guidu.data_controls.sorter.label"
+                defaultMessage={`{hiddenCount, plural,
+                  =0 {Hide fields}
+                  one {1 field hidden}
+                  other {# fields hidden}
+                }`}
+                values={{ hiddenCount }}
+              />
             </span>
           </Trigger>
         }
@@ -47,6 +56,7 @@ export default class Toggler extends Component<any> {
             .filter(f => !f.pinned)
             .map(field => (
               <DropdownItem
+                key={field.colId}
                 id={field.colId}
                 defaultSelected
                 onClick={e => {

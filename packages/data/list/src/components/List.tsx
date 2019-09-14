@@ -81,7 +81,7 @@ const createItemData = memoize(
 
 export default class List extends PureComponent<any> {
   static defaultProps = {
-    gutterSize: 8,
+    gutterSize: 0,
     headerHeight: 48,
     itemSize: 96,
   };

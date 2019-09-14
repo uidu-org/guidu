@@ -8,4 +8,4 @@ export { default as Sharer } from './components/Sharer';
 export { default as Sorter } from './components/Sorter';
 export { default as Toggler } from './components/Toggler';
 export { default as Viewer } from './components/Viewer';
-
+export { DataView } from './components/Viewer/types';

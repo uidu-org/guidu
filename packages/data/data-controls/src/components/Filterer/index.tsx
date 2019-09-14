@@ -2,6 +2,7 @@ import { Form } from '@uidu/form';
 import Select from '@uidu/select';
 import React, { Component } from 'react';
 import { Filter } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { List } from 'react-powerplug';
 import { Trigger } from '../../styled';
 import AddToList from '../../utils/AddToList';
@@ -23,7 +24,12 @@ export default class Filterer extends Component<FiltererProps> {
         trigger={
           <Trigger activeBg="#d1f7c4" className="btn">
             <Filter strokeWidth={2} size={14} className="mr-2" />
-            <span style={{ textTransform: 'initial' }}>Filtra</span>
+            <span style={{ textTransform: 'initial' }}>
+              <FormattedMessage
+                id="guidu.data_controls.filterer.label"
+                defaultMessage="Filter"
+              />
+            </span>
           </Trigger>
         }
       >
@@ -41,7 +47,12 @@ export default class Filterer extends Component<FiltererProps> {
                       className="d-flex align-items-center mb-2"
                       key={filter.colId.colId}
                     >
-                      <span>Where</span>
+                      <span>
+                        <FormattedMessage
+                          id="guidu.data_controls.filterer.where"
+                          defaultMessage="Where"
+                        />
+                      </span>
                       <Select
                         // menuPortalTarget={document.body}
                         name="field"
@@ -68,10 +79,20 @@ export default class Filterer extends Component<FiltererProps> {
                     </div>
                   ))}
                   {!list.length && (
-                    <p className="text-muted">Nessun filtro applicato</p>
+                    <p className="text-muted">
+                      <FormattedMessage
+                        id="guidu.data_controls.filterer.no_filters"
+                        defaultMessage="No filters applied"
+                      />
+                    </p>
                   )}
                   <AddToList
-                    label="Aggiungi un filtro"
+                    label={
+                      <FormattedMessage
+                        id="guidu.data_controls.filterer.no_filters"
+                        defaultMessage="Add a filter"
+                      />
+                    }
                     onClick={field => {
                       push({
                         sort: { id: 'asc', name: 'asc' },

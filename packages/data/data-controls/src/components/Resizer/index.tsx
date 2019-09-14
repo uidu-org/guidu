@@ -4,6 +4,7 @@ import DropdownMenu, {
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { Maximize2 } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 
 export default class Resizer extends Component<any> {
@@ -27,7 +28,10 @@ export default class Resizer extends Component<any> {
               onResize(36);
             }}
           >
-            Compatta
+            <FormattedMessage
+              id="guidu.data_controls.resizer.compact"
+              defaultMessage="Compact"
+            />
           </DropdownItem>
           <DropdownItem
             onClick={e => {
@@ -35,7 +39,10 @@ export default class Resizer extends Component<any> {
               onResize(48);
             }}
           >
-            Predefinita
+            <FormattedMessage
+              id="guidu.data_controls.resizer.default"
+              defaultMessage="Default"
+            />
           </DropdownItem>
           <DropdownItem
             onClick={e => {
@@ -43,7 +50,10 @@ export default class Resizer extends Component<any> {
               onResize(60);
             }}
           >
-            Normale
+            <FormattedMessage
+              id="guidu.data_controls.resizer.normal"
+              defaultMessage="Normal"
+            />
           </DropdownItem>
           <DropdownItem
             onClick={e => {
@@ -51,7 +61,10 @@ export default class Resizer extends Component<any> {
               onResize(72);
             }}
           >
-            Extra
+            <FormattedMessage
+              id="guidu.data_controls.resizer.extra"
+              defaultMessage="Extra"
+            />
           </DropdownItem>
         </DropdownItemGroup>
       </DropdownMenu>

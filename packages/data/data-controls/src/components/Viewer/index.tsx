@@ -4,7 +4,9 @@ import DropdownMenu, {
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
 import { AlignJustify, Calendar, Grid, List } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
+import { ViewerProps } from './types';
 
 const viewIcons = {
   calendar: <Calendar strokeWidth={2} size={14} color="#A3BE8C" />,
@@ -13,7 +15,7 @@ const viewIcons = {
   table: <AlignJustify strokeWidth={1} size={14} color="#BF616A" />,
 };
 
-export default class Viewer extends Component<any> {
+export default class Viewer extends Component<ViewerProps> {
   render() {
     const {
       onChange,
@@ -50,7 +52,15 @@ export default class Viewer extends Component<any> {
           ))}
         </DropdownItemGroup>
         <div className="border-top p-2 mt-2">
-          <DropdownItemGroup className="d-flex" title="Aggiungi">
+          <DropdownItemGroup
+            className="d-flex"
+            title={
+              <FormattedMessage
+                id="guidu.data_controls.viewer.add"
+                defaultMessage="Add view"
+              />
+            }
+          >
             {availableViews.map(availableView => (
               <DropdownItem
                 key={availableView}
@@ -58,9 +68,9 @@ export default class Viewer extends Component<any> {
                   e.preventDefault();
                   onAdd(availableView);
                 }}
-                elemBefore={viewIcons[availableView]}
+                elemBefore={viewIcons[availableView.kind]}
               >
-                {availableView}
+                {availableView.name}
               </DropdownItem>
             ))}
           </DropdownItemGroup>

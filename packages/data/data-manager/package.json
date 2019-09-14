@@ -17,6 +17,7 @@
     "@uidu/shell": "^0.1.27",
     "@uidu/spinner": "^0.1.11",
     "@uidu/table": "^0.1.15",
+    "react-media": "^1.9.2",
     "react-sortable-hoc": "^1.9.1"
   },
   "devDependencies": {

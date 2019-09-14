@@ -10,10 +10,11 @@ import {
   Toggler,
   Viewer,
 } from '@uidu/data-controls';
-import { ShellBody, ShellBodyWithSpinner } from '@uidu/shell';
+import { ShellBodyWithSpinner } from '@uidu/shell';
 import Table from '@uidu/table';
 import moment from 'moment';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import Media from 'react-media';
 import { arrayMove } from 'react-sortable-hoc';
 import { DataManagerProps } from '../types';
 
@@ -39,17 +40,20 @@ export default class DataManager extends Component<DataManagerProps, any> {
   private gridColumnApi = null;
 
   onGridReady = ({ api, columnApi }) => {
+    const { currentView } = this.props;
     this.gridApi = api;
     this.gridColumnApi = columnApi;
-    columnApi.autoSizeAllColumns();
-    api.sizeColumnsToFit();
-    window.addEventListener('resize', function() {
-      setTimeout(function() {
-        api.sizeColumnsToFit();
+    if (currentView.kind === 'table') {
+      columnApi.autoSizeAllColumns();
+      api.sizeColumnsToFit();
+      window.addEventListener('resize', function() {
+        setTimeout(function() {
+          api.sizeColumnsToFit();
+        });
       });
-    });
 
-    api.sizeColumnsToFit();
+      api.sizeColumnsToFit();
+    }
 
     this.setState({
       data: api.getModel().rowsToDisplay,
@@ -120,7 +124,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   setRowHeight = rowHeight => {
-    console.log(rowHeight);
     this.setState(
       {
         rowHeight,
@@ -131,20 +134,26 @@ export default class DataManager extends Component<DataManagerProps, any> {
     );
   };
 
+  renderResponsiveView = ({ mobileView, desktopView }) => {
+    return (
+      <Media query={{ maxWidth: 768 }}>
+        {matches => {
+          if (matches) {
+            return mobileView;
+          }
+
+          return desktopView;
+        }}
+      </Media>
+    );
+  };
+
   renderView = ({
     viewProps = {
-      table: {
-        className: null,
-      },
-      calendar: {
-        className: null,
-      },
-      list: {
-        className: null,
-      },
-      gallery: {
-        className: null,
-      },
+      table: {},
+      calendar: {},
+      list: {},
+      gallery: {},
     },
   }) => {
     const { rowData, onItemClick, currentView } = this.props;
@@ -156,6 +165,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     const table = (
       <Table
+        rowHeight={rowHeight}
         {...viewProps.table}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
@@ -167,24 +177,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
         onFilterChanged={this.onFilterChanged}
         rowSelection="multiple"
         suppressRowClickSelection
-        rowHeight={rowHeight}
       />
     );
 
-    if (currentView.kind === 'table') {
-      return (
-        <ShellBody
-          className={(viewProps.table || ({} as any)).className}
-          scrollable
-        >
-          {table}
-        </ShellBody>
-      );
-    }
+    let desktopView = table;
 
     if (currentView.kind === 'calendar') {
-      return (
-        <Fragment>
+      desktopView = (
+        <>
           <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
             {({ default: Calendar }) => {
               return (
@@ -205,53 +205,46 @@ export default class DataManager extends Component<DataManagerProps, any> {
             }}
           </LoadableCalendar>
           <div className="d-none">{table}</div>
-        </Fragment>
+        </>
       );
     }
 
-    if (currentView.kind === 'list') {
-      return (
-        <Fragment>
-          <LoadableList fallback={<ShellBodyWithSpinner />}>
-            {({ default: List }) => (
-              <ShellBody
-                scrollable
-                className={(viewProps.list || ({} as any)).className}
-              >
-                <List
-                  {...viewProps.list}
-                  onItemClick={onItemClick}
-                  rowData={data}
-                  columnDefs={columnDefs}
-                />
-              </ShellBody>
-            )}
-          </LoadableList>
-          <div className="d-none">{table}</div>
-        </Fragment>
-      );
-    }
-
-    return (
-      <Fragment>
-        <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-          {({ default: Gallery }) => (
-            <ShellBody
-              className={(viewProps.gallery || ({} as any)).className}
-              scrollable
-            >
+    if (currentView.kind === 'gallery') {
+      desktopView = (
+        <>
+          <LoadableGallery fallback={<ShellBodyWithSpinner />}>
+            {({ default: Gallery }) => (
               <Gallery
                 {...viewProps.gallery}
                 onItemClick={onItemClick}
                 rowData={data}
                 columnDefs={columnDefs}
               />
-            </ShellBody>
-          )}
-        </LoadableGallery>
-        <div className="d-none">{table}</div>
-      </Fragment>
-    );
+            )}
+          </LoadableGallery>
+          <div className="d-none">{table}</div>
+        </>
+      );
+    }
+
+    return this.renderResponsiveView({
+      mobileView: (
+        <>
+          <LoadableList fallback={<ShellBodyWithSpinner />}>
+            {({ default: List }) => (
+              <List
+                {...viewProps.list}
+                onItemClick={onItemClick}
+                rowData={data}
+                columnDefs={columnDefs}
+              />
+            )}
+          </LoadableList>
+          <div className="d-none">{table}</div>
+        </>
+      ),
+      desktopView,
+    });
   };
 
   renderControls = ({ availableViews }) => {
@@ -259,7 +252,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     const { sorters, filters, groupers, columnDefs } = this.state;
 
     return (
-      <Fragment>
+      <>
         <Viewer
           currentView={currentView}
           dataViews={dataViews}
@@ -267,6 +260,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
           onChange={onViewChange}
           onAdd={onViewAdd}
         />
+        <Finder onChange={this.setSearch} />
         {currentView.kind === 'table' && (
           <Toggler
             fields={columnDefs}
@@ -302,12 +296,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
           <Resizer onResize={this.setRowHeight} />
         )}
         {/* <Sharer /> */}
-        <Finder onChange={this.setSearch} />
         <More
           onDownload={() => this.gridApi.exportDataAsCsv()}
           onDuplicate={console.log}
         />
-      </Fragment>
+      </>
     );
   };
 

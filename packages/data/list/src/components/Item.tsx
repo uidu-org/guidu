@@ -1,5 +1,11 @@
 import { getCover, getPrimary, valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+
+const StyledItem = styled.div`
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+`;
 
 export default class Item extends PureComponent<any> {
   render() {
@@ -15,22 +21,24 @@ export default class Item extends PureComponent<any> {
     const cover = getCover(columnDefs);
 
     return (
-      <div
+      <StyledItem
+        key={item.id}
         onClick={e => {
           e.preventDefault();
           onItemClick(item);
         }}
         style={{
           ...style,
-          cursor: 'pointer',
           minWidth: `calc(100% - ${gutterSize * 2}px)`,
           left: style.left + gutterSize,
-          top: style.top + gutterSize,
-          // width: style.width - GUTTER_SIZE,
-          height: style.height - gutterSize,
-          transition: 'all 500ms ease-in-out',
+          // top: style.top + gutterSize,
+          top: 0,
+          transform: `translate3d(0px,${style.top}px, 0px)`,
+          willChange: 'transform',
+          transition: '300ms transform',
+          height: style.height,
         }}
-        className="card flex-row align-items-center w-auto mb-4"
+        className="d-flex border-bottom flex-row align-items-center w-auto"
       >
         {cover && (
           <div
@@ -50,7 +58,7 @@ export default class Item extends PureComponent<any> {
         <div className="d-flex flex-column">
           {primary && (
             <div
-              className="mb-2 data-list-primary-cell"
+              className="mb-2 data-list-primary-cell px-3 px-xl-4"
               style={{
                 position: 'sticky',
                 left: '1rem',
@@ -68,7 +76,7 @@ export default class Item extends PureComponent<any> {
               .map(column => (
                 <div
                   key={`${item.id}-${column.colId}-value`}
-                  className="text-truncate data-list-cell"
+                  className="text-truncate data-list-cell px-3 px-xl-4"
                   style={{
                     width: column.width || '150px',
                     minWidth: column.minWidth || 'auto',
@@ -80,7 +88,7 @@ export default class Item extends PureComponent<any> {
               ))}
           </div>
         </div>
-      </div>
+      </StyledItem>
     );
   }
 }

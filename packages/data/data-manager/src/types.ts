@@ -1,7 +1,9 @@
+import { DataView } from '@uidu/data-controls';
+
 export type DataManagerProps = {
-  availableViews?: Array<any>;
-  dataViews?: Array<any>;
-  currentView?: any;
+  availableViews?: Array<DataView>;
+  dataViews?: Array<DataView>;
+  currentView?: DataView;
   columnDefs: Array<any>;
   rowData: Array<any>;
   onItemClick?: (item) => void;
