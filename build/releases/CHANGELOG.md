@@ -1,5 +1,13 @@
 # @uidu/build-releases
 
+## 3.0.19
+
+### Patch Changes
+
+- [patch][0ca4f6a](https://github.org/uidu-org/guidu/commits/0ca4f6a):
+
+  Intl data-controls, responsive views (list for mobile)
+
 ## 3.0.18
 
 ### Patch Changes

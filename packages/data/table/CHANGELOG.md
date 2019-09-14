@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.17
+
+### Patch Changes
+
+- [patch][0ca4f6a](https://github.org/uidu-org/guidu/commits/0ca4f6a):
+
+  Intl data-controls, responsive views (list for mobile)
+
 ## 0.1.16
 
 ### Patch Changes
