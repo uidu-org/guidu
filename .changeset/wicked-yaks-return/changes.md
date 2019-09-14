@@ -1,0 +1,1 @@
+Uniform data passed to calendar, lists and gallery
