@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@loadable/component": "^5.10.1",
     "@uidu/calendar": "^0.1.8",
-    "@uidu/data-controls": "^0.1.16",
+    "@uidu/data-controls": "^0.1.17",
     "@uidu/gallery": "^0.1.12",
     "@uidu/list": "^0.1.9",
     "@uidu/shell": "^0.1.27",
