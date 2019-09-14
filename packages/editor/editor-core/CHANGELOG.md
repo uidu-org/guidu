@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.1.11
+
+### Patch Changes
+
+- [patch][32c5c4a](https://github.org/uidu-org/guidu/commits/32c5c4a):
+
+  Bump dependencies
+
 ## 0.1.10
 
 ### Patch Changes

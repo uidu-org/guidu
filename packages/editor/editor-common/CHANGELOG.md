@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 0.1.7
+
+### Patch Changes
+
+- [patch][32c5c4a](https://github.org/uidu-org/guidu/commits/32c5c4a):
+
+  Bump dependencies
+
 ## 0.1.6
 
 ### Patch Changes
