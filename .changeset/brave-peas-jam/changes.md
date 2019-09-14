@@ -1,0 +1,1 @@
+Intl data-controls, responsive views (list for mobile)
