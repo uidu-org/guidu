@@ -5,6 +5,6 @@ import React from 'react';
 export default () => ({
   type: ['numericColumn', 'currency'],
   filter: 'agTextColumnFilter',
-  valueFormatter: ({ value }) => `€ ${value}`,
+  valueFormatter: ({ value }) => value,
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faEuroSign} /> },
 });
