@@ -1,6 +1,4 @@
-import Dropdown, { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
 import React, { PureComponent } from 'react';
-import { ChevronDown, Lock } from 'react-feather';
 
 export default class CustomHeader extends PureComponent<any> {
   render() {
@@ -16,7 +14,7 @@ export default class CustomHeader extends PureComponent<any> {
           )}
           {displayName}
         </div>
-        {!!enableMenu ? (
+        {/* {!!enableMenu ? (
           <Dropdown
             isMenuFixed
             trigger={
@@ -40,7 +38,7 @@ export default class CustomHeader extends PureComponent<any> {
           </Dropdown>
         ) : (
           <Lock size={14} />
-        )}
+        )} */}
       </div>
     );
   }

@@ -6,6 +6,7 @@ import { FinderProps } from './types';
 
 const Wrapper = styled.div`
   position: relative;
+  margin-right: 0.25rem;
 `;
 
 const Icon = styled.div`

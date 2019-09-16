@@ -241,6 +241,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
                       .toDate()
                   }
                   columnDefs={columnDefs}
+                  toolbar={false}
                 />
               );
             }}

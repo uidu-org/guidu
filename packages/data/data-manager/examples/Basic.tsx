@@ -1,9 +1,4 @@
-import {
-  ShellBody,
-  ShellBodyWithSidebar,
-  ShellFooter,
-  ShellHeader,
-} from '@uidu/shell';
+import { ShellBody, ShellBodyWithSidebar, ShellHeader } from '@uidu/shell';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
 import DataManager from '../';
@@ -109,7 +104,6 @@ export default class Basic extends Component<any, any> {
                 })}
               </ShellBodyWithSidebar>
             </ShellBody>
-            <ShellFooter>Added pagination?</ShellFooter>
           </>
         )}
       </DataManager>

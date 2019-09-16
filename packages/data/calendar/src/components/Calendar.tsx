@@ -18,7 +18,6 @@ export default class Calendar extends PureComponent<any> {
     return (
       <BigCalendar
         {...calendarProps({ events, onEventDrop, onEventResize })}
-        {...this.props}
         defaultView="month"
         selectable={false}
         resizable={false}
@@ -29,6 +28,7 @@ export default class Calendar extends PureComponent<any> {
             event: Event,
           },
         }}
+        {...this.props}
       />
     );
   }

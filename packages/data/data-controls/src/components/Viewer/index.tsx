@@ -28,7 +28,7 @@ export default class Viewer extends Component<ViewerProps> {
       <DropdownMenu
         shouldFitContent
         trigger={
-          <Trigger activeBg="#fee2d5" className="btn pr-5 mr-3" active={false}>
+          <Trigger activeBg="#fee2d5" className="btn mr-2" active={false}>
             <span className="mr-2 d-flex align-items-center">
               {viewIcons[currentView.kind]}
             </span>

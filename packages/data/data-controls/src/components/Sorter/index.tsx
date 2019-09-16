@@ -31,7 +31,7 @@ export default class Sorter extends Component<any> {
     const { sorters, fields } = this.props;
     const sortersCount = sorters.length;
 
-    console.log(fields);
+    console.log(sorters);
 
     return (
       <DropdownMenu
