@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.11
+
+### Patch Changes
+
+- [patch][6e68a4d](https://github.org/uidu-org/guidu/commits/6e68a4d):
+
+  Add debug for sorter
+
 ## 0.1.10
 
 ### Patch Changes
