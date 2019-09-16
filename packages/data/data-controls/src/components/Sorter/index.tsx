@@ -99,8 +99,8 @@ export default class Sorter extends Component<any> {
                           name={`sorters[${index}][colId]`}
                           options={this.props.fields}
                           menuPosition="fixed"
-                          getOptionLabel={option => option.headerName}
-                          getOptionValue={option => option.colId}
+                          // getOptionLabel={option => option.headerName}
+                          // getOptionValue={option => option.colId}
                           onChange={(name, value) => {
                             console.log(name, value);
                             console.log(this.form);
