@@ -13,5 +13,4 @@ export default field => ({
   headerComponentParams: {
     menuIcon: <FontAwesomeIcon icon={faChevronCircleDown} />,
   },
-  // cellRendererFramework: SingleSelectRenderer,
 });

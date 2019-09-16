@@ -7,6 +7,6 @@ export default () => ({
   // cellEditorFramework: DatePicker,
   type: 'checkbox',
   filter: 'agDateColumnFilter',
-  cellRendererFramework: Renderer,
+  cellRenderer: Renderer,
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faCheckSquare} /> },
 });

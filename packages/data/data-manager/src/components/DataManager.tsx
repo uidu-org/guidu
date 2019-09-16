@@ -1,5 +1,6 @@
 import loadable from '@loadable/component';
 import {
+  CalendarToolbar,
   Customizer,
   Filterer,
   Finder,
@@ -23,6 +24,10 @@ const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
 const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
 
 const defaultAvailableControls = {
+  calendarToolbar: {
+    visible: true,
+    props: {},
+  },
   finder: {
     visible: true,
     props: {},
@@ -204,8 +209,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     const table = (
       <Table
-        rowHeight={rowHeight}
         {...viewProps.table}
+        // @ts-ignore
+        rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
         columnDefs={columnDefs.filter(
@@ -241,7 +247,10 @@ export default class DataManager extends Component<DataManagerProps, any> {
                       .toDate()
                   }
                   columnDefs={columnDefs}
-                  toolbar={false}
+                  // toolbar={false}
+                  components={{
+                    toolbar: CalendarToolbar,
+                  }}
                 />
               );
             }}
@@ -295,7 +304,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   renderControls = ({ controls }) => {
     const { currentView, dataViews, onViewChange, onViewAdd } = this.props;
-    const { sorters, filters, groupers, columnDefs } = this.state;
+    const { sorters, filters, groupers, columnDefs, rowHeight } = this.state;
 
     const availableControls = {
       ...defaultAvailableControls,
@@ -363,10 +372,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
         {currentView.kind === 'table' && availableControls.resizer.visible && (
           <Resizer
             onResize={this.setRowHeight}
+            rowHeight={rowHeight}
             {...availableControls.resizer.props}
           />
         )}
-        {/* <Sharer /> */}
+        {currentView.kind === 'calendar' &&
+          availableControls.calendarToolbar.visible && (
+            <div id="calendar-toolbar" className="d-flex align-items-center" />
+          )}
         {availableControls.more.visible && (
           <More
             onDownload={() => this.gridApi.exportDataAsCsv()}

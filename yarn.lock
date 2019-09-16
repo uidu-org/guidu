@@ -139,9 +139,9 @@
     tslib "^1.9.3"
 
 "@atlaskit/button@^13.1.6":
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/@atlaskit/button/-/button-13.2.0.tgz#0b9d6939518294f9e50213991de6fd7c0f4b4a39"
-  integrity sha512-kLtSuV05pIp4CaJiobdxDlyxjSyGGYZwJqG+xg6nwKeuBzH0upEL0ALO2ud6d8QBbwFznDjQw6RbAKOH6hyV2A==
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/button/-/button-13.3.0.tgz#0535427f742fa264ab86e7e7b20ff0bd79ecb3ef"
+  integrity sha512-yaCKWU3c3RbIb0TEIDsJa3fcahW3fVoqLazzRRYKx6bQfPDL5XjVCWVg5eDa0S/WH9o4EnRGPD7mSlMcr8DFRw==
   dependencies:
     "@atlaskit/analytics-next" "^6.0.3"
     "@atlaskit/spinner" "^12.0.9"
@@ -17136,9 +17136,9 @@ prosemirror-utils@^0.9.2:
   integrity sha512-UC+j9hQQ1POYfMc5p7UFxBTptRiGPR7Kkmbl3jVvU8VgQbkI89tR/GK+3QYC8n+VvBZrtAoCrJItNhWSxX3slA==
 
 prosemirror-view@^1.0.0, prosemirror-view@^1.9.10, prosemirror-view@^1.9.12:
-  version "1.10.3"
-  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.10.3.tgz#4f268b0054dcf1a497653aae9121d263f8b503a8"
-  integrity sha512-3R5iTItRmE1wWZ3X5pbl4j2H6gElTr7Hcr6wTS0QuRlqE9xROcP6BPQuBxaOANgzUOiU8Skw42GCI8Xc/d9Y/A==
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.11.1.tgz#e2359d486eee1467871eb5f13f6ea18c86603c3e"
+  integrity sha512-Gc1BAoh/v8ZqhgudUWME0xuxEyEVQLxSX3DOGeIqXUPs3mI+6x8nn2LqBLx5u5t1yKKIEhCynGx9Mf/tAk0wdg==
   dependencies:
     prosemirror-model "^1.1.0"
     prosemirror-state "^1.0.0"
@@ -18356,9 +18356,9 @@ react-markings@^1.2.0, react-markings@^1.3.0:
     commonmark-react-renderer "^4.3.3"
 
 react-media@^1.9.2:
-  version "1.9.2"
-  resolved "https://registry.yarnpkg.com/react-media/-/react-media-1.9.2.tgz#423ee12f952e1d69f1b994a58d3cbed21a92b370"
-  integrity sha512-JUYECMcJIm0V61LSVKd1e+II4ZTYO0GuR7xtlvKETlmThZ416BqZjZdJ1uGqgmMAGFeJ3TG4TX/3Kg4qbR3EJw==
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/react-media/-/react-media-1.10.0.tgz#7b0c5fe8ac55a53ce31b5249db3aaf8a22ff7703"
+  integrity sha512-FjgYmFoaPTImST06jqotuu0Mk8LOXiGYS/fIyiXuLnf20l3DPniBwtrxi604/HxxjqvmHS3oz5rAwnqdvosV4A==
   dependencies:
     "@babel/runtime" "^7.2.0"
     invariant "^2.2.2"

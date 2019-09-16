@@ -9,42 +9,39 @@ import { ResponsivrProps } from './types';
 export default class Responsivr extends Component<ResponsivrProps> {
   static defaultProps = {
     breakpoints: {
-      sm: 576,
-      md: 768,
-      lg: 992,
-      xl: 1200,
+      sm: { minWidth: 576, maxWidth: 767 },
+      md: { minWidth: 768, maxWidth: 991 },
+      lg: { minWidth: 992, maxWidth: 1199 },
+      xl: { minWidth: 1200 },
     },
+    targetWindow: window,
   };
-  render() {
-    const { sm, md, lg, xl, children, breakpoints } = this.props;
 
-    return [
-      sm && (
-        <Media
-          query={{ minWidth: breakpoints.sm, maxWidth: breakpoints.md - 0.02 }}
-        >
-          {matches => (matches ? sm : children)}
-        </Media>
-      ),
-      md && (
-        <Media
-          query={{ minWidth: breakpoints.md, maxWidth: breakpoints.lg - 0.02 }}
-        >
-          {matches => (matches ? md : children)}
-        </Media>
-      ),
-      lg && (
-        <Media
-          query={{ minWidth: breakpoints.lg, maxWidth: breakpoints.xl - 0.02 }}
-        >
-          {matches => (matches ? lg : children)}
-        </Media>
-      ),
-      xl && (
-        <Media query={{ minWidth: breakpoints.xl }}>
-          {matches => (matches ? xl : children)}
-        </Media>
-      ),
-    ];
+  render() {
+    const { sm, md, lg, xl, children, breakpoints, targetWindow } = this.props;
+
+    return (
+      <Media queries={breakpoints} targetWindow={targetWindow}>
+        {matches => {
+          if (typeof children === 'function') {
+            return children(matches);
+          }
+
+          if (matches.sm) {
+            return sm;
+          }
+          if (matches.md) {
+            return md;
+          }
+          if (matches.lg) {
+            return lg;
+          }
+          if (matches.xl) {
+            return xl;
+          }
+          return children;
+        }}
+      </Media>
+    );
   }
 }

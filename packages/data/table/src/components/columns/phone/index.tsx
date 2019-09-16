@@ -6,6 +6,6 @@ import Renderer from './renderer';
 export default () => ({
   type: 'phone',
   filter: 'agTextColumnFilter',
-  cellRendererFramework: Renderer,
+  cellRenderer: Renderer,
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faPhone} /> },
 });

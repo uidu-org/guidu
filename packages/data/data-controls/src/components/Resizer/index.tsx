@@ -3,7 +3,7 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
-import { Maximize2 } from 'react-feather';
+import { CheckCircle, Maximize2 } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 
@@ -11,7 +11,8 @@ export default class Resizer extends Component<any> {
   private input: React.RefObject<HTMLInputElement> = React.createRef();
 
   render() {
-    const { onResize } = this.props;
+    const { onResize, rowHeight } = this.props;
+    console.log(this.props);
     return (
       <DropdownMenu
         trigger={
@@ -27,6 +28,13 @@ export default class Resizer extends Component<any> {
               e.preventDefault();
               onResize(36);
             }}
+            {...(rowHeight === 36
+              ? {
+                  elemBefore: (
+                    <CheckCircle size={14} className="text-success" />
+                  ),
+                }
+              : null)}
           >
             <FormattedMessage
               id="guidu.data_controls.resizer.compact"
@@ -38,6 +46,13 @@ export default class Resizer extends Component<any> {
               e.preventDefault();
               onResize(48);
             }}
+            {...(rowHeight === 48
+              ? {
+                  elemBefore: (
+                    <CheckCircle size={14} className="text-success" />
+                  ),
+                }
+              : null)}
           >
             <FormattedMessage
               id="guidu.data_controls.resizer.default"
@@ -49,6 +64,13 @@ export default class Resizer extends Component<any> {
               e.preventDefault();
               onResize(60);
             }}
+            {...(rowHeight === 60
+              ? {
+                  elemBefore: (
+                    <CheckCircle size={14} className="text-success" />
+                  ),
+                }
+              : null)}
           >
             <FormattedMessage
               id="guidu.data_controls.resizer.normal"
@@ -60,6 +82,13 @@ export default class Resizer extends Component<any> {
               e.preventDefault();
               onResize(72);
             }}
+            {...(rowHeight === 72
+              ? {
+                  elemBefore: (
+                    <CheckCircle size={14} className="text-success" />
+                  ),
+                }
+              : null)}
           >
             <FormattedMessage
               id="guidu.data_controls.resizer.extra"

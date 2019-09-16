@@ -93,11 +93,7 @@ export default class Basic extends Component<any, any> {
                       gutterSize: 24,
                       columnCount: 4,
                     },
-                    table: {
-                      rowHeight: 128,
-                    },
                     list: {
-                      gutterSize: 0,
                       rowHeight: 128,
                     },
                   },

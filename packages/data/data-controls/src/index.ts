@@ -1,3 +1,4 @@
+export { default as CalendarToolbar } from './components/CalendarToolbar';
 export { default as Customizer } from './components/Customizer';
 export { default as Filterer } from './components/Filterer';
 export { default as Finder } from './components/Finder';

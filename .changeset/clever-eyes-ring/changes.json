@@ -1,0 +1,9 @@
+{
+  "releases": [
+    { "name": "@uidu/data-controls", "type": "patch" },
+    { "name": "@uidu/data-manager", "type": "patch" },
+    { "name": "@uidu/table", "type": "patch" },
+    { "name": "@uidu/responsivr", "type": "patch" }
+  ],
+  "dependents": []
+}

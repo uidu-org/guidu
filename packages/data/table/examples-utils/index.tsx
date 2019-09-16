@@ -16,6 +16,7 @@ import {
   percentColumn,
   phoneColumn,
   primaryColumn,
+  progressColumn,
   ratingColumn,
   singleSelectColumn,
   stringColumn,
@@ -170,6 +171,13 @@ export const availableColumns = [
     ...phoneColumn(),
   },
   {
+    colId: 'progress',
+    field: 'progress',
+    headerName: 'Progress',
+    ...defaultColumn(),
+    ...progressColumn(),
+  },
+  {
     colId: 'files',
     field: 'uid',
     headerName: 'Files',
@@ -219,6 +227,7 @@ export const fetchContacts = () => {
           gender: 'female',
           role: 'admin',
           member: faker.internet.email(),
+          progress: Math.random(),
         })),
       );
     }, 3000);
