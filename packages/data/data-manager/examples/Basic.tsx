@@ -1,4 +1,11 @@
-import { ShellBody, ShellBodyWithSidebar, ShellHeader } from '@uidu/shell';
+import {
+  ShellBody,
+  ShellBodyWithSidebar,
+  ShellBodyWithSpinner,
+  ShellHeader,
+} from '@uidu/shell';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
 import DataManager from '../';
@@ -24,6 +31,7 @@ export default class Basic extends Component<any, any> {
       dataViews,
       currentView: dataViews[0],
       columnDefs: [...availableColumns],
+      loaded: false,
     };
   }
 
@@ -46,10 +54,11 @@ export default class Basic extends Component<any, any> {
   };
 
   componentDidMount() {
-    fetchContacts().then(rowData => this.setState({ rowData }));
+    fetchContacts().then(rowData => this.setState({ loaded: true, rowData }));
   }
 
   render() {
+    const { loaded } = this.state;
     return (
       <DataManager
         availableViews={[
@@ -85,20 +94,25 @@ export default class Basic extends Component<any, any> {
                 },
               })}
             </ShellHeader>
+
             <ShellBody scrollable>
-              <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
-                {renderView({
-                  viewProps: {
-                    gallery: {
-                      gutterSize: 24,
-                      columnCount: 4,
+              {!loaded ? (
+                <ShellBodyWithSpinner></ShellBodyWithSpinner>
+              ) : (
+                <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
+                  {renderView({
+                    viewProps: {
+                      gallery: {
+                        gutterSize: 24,
+                        columnCount: 4,
+                      },
+                      list: {
+                        rowHeight: 128,
+                      },
                     },
-                    list: {
-                      rowHeight: 128,
-                    },
-                  },
-                })}
-              </ShellBodyWithSidebar>
+                  })}
+                </ShellBodyWithSidebar>
+              )}
             </ShellBody>
           </>
         )}

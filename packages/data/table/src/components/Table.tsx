@@ -1,6 +1,5 @@
 import loadable from '@loadable/component';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-balham.css';
+import { ShellBody, ShellBodyWithSpinner } from '@uidu/shell';
 import React, { Component } from 'react';
 import CustomHeader from './headers';
 
@@ -15,7 +14,13 @@ export default class Table extends Component<any> {
     const { theme, innerRef } = this.props;
     return (
       <div className={`ag-theme-${theme} h-100`}>
-        <AgGridReact fallback={<div>Loading...</div>}>
+        <AgGridReact
+          fallback={
+            <ShellBody>
+              <ShellBodyWithSpinner />
+            </ShellBody>
+          }
+        >
           {({ AgGridReact: Grid }) => (
             <Grid
               ref={innerRef}
