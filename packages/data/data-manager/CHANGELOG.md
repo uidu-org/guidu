@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.14
+
+### Patch Changes
+
+- [patch][cf7ca02](https://github.org/uidu-org/guidu/commits/cf7ca02):
+
+  Uniform data passed to calendar, lists and gallery
+
 ## 0.1.13
 
 ### Patch Changes
