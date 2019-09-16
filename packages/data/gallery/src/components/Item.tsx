@@ -19,8 +19,6 @@ export default class Item extends PureComponent<any> {
       return null;
     }
 
-    console.log(avatar);
-
     return (
       <div
         onClick={e => {

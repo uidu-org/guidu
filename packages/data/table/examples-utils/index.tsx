@@ -60,7 +60,6 @@ export const availableColumns = [
     ...defaultColumn(),
     ...textColumn(),
     cellRendererFramework: props => {
-      console.log(props);
       return <div>{props.value}</div>;
     },
   },

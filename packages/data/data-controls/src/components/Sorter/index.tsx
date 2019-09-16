@@ -101,7 +101,8 @@ export default class Sorter extends Component<any> {
                           menuPosition="fixed"
                           getOptionLabel={option => option.headerName}
                           getOptionValue={option => option.colId}
-                          onChange={() => {
+                          onChange={(name, value) => {
+                            console.log(name, value);
                             console.log(this.form);
                             (this.form.current as any).submit();
                           }}
@@ -147,6 +148,7 @@ export default class Sorter extends Component<any> {
                       />
                     }
                     onClick={field => {
+                      console.log(field);
                       push({
                         sort: { id: 'asc', name: 'asc' },
                         index: list.length,

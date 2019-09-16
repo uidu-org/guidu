@@ -79,8 +79,6 @@ export const valueRenderer = (data, column) => {
   const { field, cellRendererFramework: Renderer, valueFormatter } = column;
   const value = data[field];
 
-  console.log(column);
-
   if (!value) {
     return '-';
   }
