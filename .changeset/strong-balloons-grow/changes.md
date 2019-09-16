@@ -1,1 +1,0 @@
-Fix calendar view without toolbar

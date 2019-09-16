@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.15
+
+### Patch Changes
+
+- [patch][212eefb](https://github.org/uidu-org/guidu/commits/212eefb):
+
+  Fix calendar view without toolbar
+
 ## 0.1.14
 
 ### Patch Changes

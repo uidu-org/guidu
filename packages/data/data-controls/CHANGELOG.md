@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.1.18
+
+### Patch Changes
+
+- [patch][212eefb](https://github.org/uidu-org/guidu/commits/212eefb):
+
+  Fix calendar view without toolbar
+
 ## 0.1.17
 
 ### Patch Changes
