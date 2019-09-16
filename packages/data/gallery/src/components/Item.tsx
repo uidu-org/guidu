@@ -44,7 +44,7 @@ export default class Item extends PureComponent<any> {
               className="card-header text-truncate border-bottom-0"
               style={{ fontWeight: 500 }}
             >
-              {valueRenderer(item.data[primary.field], primary)}
+              {valueRenderer(item.data, primary)}
             </div>
           )}
           <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
@@ -73,7 +73,7 @@ export default class Item extends PureComponent<any> {
                     className="mb-0 text-truncate"
                     key={`${item.id}-${column.field}-value`}
                   >
-                    {valueRenderer(item.data[column.field], column)}
+                    {valueRenderer(item.data, column)}
                   </dd>,
                 ])}
             </dl>

@@ -18,8 +18,8 @@ const Cover = ({
         backgroundSize: 'cover',
         backgroundPosition: '50% 50%',
         backgroundImage:
-          cover && valueRenderer(item.data[cover.field], cover)
-            ? `url(${valueRenderer(item.data[cover.field], cover)})`
+          cover && valueRenderer(item.data, cover)
+            ? `url(${valueRenderer(item.data, cover)})`
             : null,
         backgroundColor: 'rgba(76,86,106,0.025)',
         display: 'flex',

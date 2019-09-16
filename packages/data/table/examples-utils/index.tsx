@@ -1,4 +1,5 @@
 import faker from 'faker';
+import React from 'react';
 import {
   addressColumn,
   attachmentsColumn,
@@ -58,6 +59,10 @@ export const availableColumns = [
     headerName: 'FullName',
     ...defaultColumn(),
     ...textColumn(),
+    cellRendererFramework: props => {
+      console.log(props);
+      return <div>{props.value}</div>;
+    },
   },
   {
     colId: 'value',

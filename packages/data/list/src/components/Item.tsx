@@ -17,6 +17,8 @@ export default class Item extends PureComponent<any> {
       return null;
     }
 
+    console.log(item);
+
     const primary = getPrimary(columnDefs);
     const cover = getCover(columnDefs);
 
@@ -46,10 +48,7 @@ export default class Item extends PureComponent<any> {
               width: cover.width || '138px',
               backgroundSize: 'cover',
               backgroundPosition: '50% 50%',
-              backgroundImage: `url(${valueRenderer(
-                item[cover.field],
-                cover,
-              )})`,
+              backgroundImage: `url(${valueRenderer(item.data, cover)})`,
               height: '100%',
               flexShrink: 0,
             }}
@@ -65,7 +64,7 @@ export default class Item extends PureComponent<any> {
                 width: 'fit-content',
               }}
             >
-              {valueRenderer(item.data[primary.field], primary)}
+              {valueRenderer(item.data, primary)}
             </div>
           )}
           <div className="d-flex">
@@ -83,7 +82,7 @@ export default class Item extends PureComponent<any> {
                     maxWidth: column.maxWidth || 'auto',
                   }}
                 >
-                  {valueRenderer(item.data[column.field], column)}
+                  {valueRenderer(item.data, column)}
                 </div>
               ))}
           </div>
