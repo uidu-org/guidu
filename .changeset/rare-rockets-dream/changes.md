@@ -1,0 +1,1 @@
+Added Responsivr component to manage responsiveness based on brekpoints
