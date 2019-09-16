@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.10
+
+### Patch Changes
+
+- [patch][212eefb](https://github.org/uidu-org/guidu/commits/212eefb):
+
+  Reformat render item value
+
 ## 0.1.9
 
 ### Patch Changes
