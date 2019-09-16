@@ -1,0 +1,1 @@
+Reformat render item value

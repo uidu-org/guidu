@@ -1,0 +1,8 @@
+{
+  "releases": [
+    { "name": "@uidu/gallery", "type": "patch" },
+    { "name": "@uidu/list", "type": "patch" },
+    { "name": "@uidu/table", "type": "patch" }
+  ],
+  "dependents": []
+}
