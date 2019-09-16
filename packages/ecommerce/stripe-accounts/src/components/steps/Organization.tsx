@@ -1,42 +1,79 @@
 import FieldText from '@uidu/field-text';
-import { Form } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import moment from 'moment';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export default ({ handleSubmit }) => (
   <Form
     handleSubmit={handleSubmit}
     autoComplete="off"
-    footerRenderer={({}) => <button>Invia</button>}
+    footerRenderer={({ loading, canSubmit }) => (
+      <FormSubmit
+        label={
+          <FormattedMessage
+            id="guidu.stripeAccounts.next"
+            defaultMessage="Next"
+          />
+        }
+        canSubmit={canSubmit}
+        loading={loading}
+      />
+    )}
   >
     <FieldText
       type="email"
-      label="activerecord.attributes.stripe_account.organization_email"
+      label={
+        <FormattedMessage
+          id="guidu.stripeAccounts.organization.email"
+          defaultMessage="Primary organization email"
+        />
+      }
       name="stripe_account[organization_email]"
       required
     />
     <FieldText
       type="text"
-      label="activerecord.attributes.stripe_account.organization_name"
+      label={
+        <FormattedMessage
+          id="guidu.stripeAccounts.organization.name"
+          defaultMessage="Organization name"
+        />
+      }
       name="stripe_account[organization_name]"
       required
     />
     <FieldText
       type="text"
-      label="activerecord.attributes.stripe_account.organization_fiscal_code"
+      label={
+        <FormattedMessage
+          id="guidu.stripeAccounts.organization.fiscalCode"
+          defaultMessage="Organization fiscal code"
+        />
+      }
       name="stripe_account[organization_fiscal_code]"
       required
     />
     <FieldText
       type="text"
-      label="activerecord.attributes.stripe_account.organization_vat_code"
+      label={
+        <FormattedMessage
+          id="guidu.stripeAccounts.organization.vatCode"
+          defaultMessage="Organization VAT code"
+        />
+      }
       name="stripe_account[organization_vat_code]"
     />
     <div className="row stretched">
       <div className="col-sm-8">
         <FieldText
           type="text"
-          label="activerecord.attributes.stripe_account.organization_address"
+          label={
+            <FormattedMessage
+              id="guidu.stripeAccounts.organization.address"
+              defaultMessage="Legal address"
+            />
+          }
           name="stripe_account[organization_address]"
           required
         />
@@ -44,14 +81,13 @@ export default ({ handleSubmit }) => (
       <div className="col-sm-4">
         <FieldText
           type="text"
-          label="activerecord.attributes.stripe_account.organization_postal_code"
+          label={
+            <FormattedMessage
+              id="guidu.stripeAccounts.organization.postalCode"
+              defaultMessage="Postal code"
+            />
+          }
           name="stripe_account[organization_postal_code]"
-          validations={{
-            isLength: 5,
-          }}
-          validationErrors={{
-            isLength: 'Inserisci un CAP valido',
-          }}
           required
         />
       </div>
@@ -60,7 +96,12 @@ export default ({ handleSubmit }) => (
       <div className="col-sm-4">
         <FieldText
           type="text"
-          label="activerecord.attributes.stripe_account.organization_city"
+          label={
+            <FormattedMessage
+              id="guidu.stripeAccounts.organization.city"
+              defaultMessage="City"
+            />
+          }
           name="stripe_account[organization_city]"
           required
         />
@@ -68,36 +109,45 @@ export default ({ handleSubmit }) => (
       <div className="col-sm-4">
         <FieldText
           type="text"
-          label="activerecord.attributes.stripe_account.organization_state"
+          label={
+            <FormattedMessage
+              id="guidu.stripeAccounts.organization.state"
+              defaultMessage="State"
+            />
+          }
           name="stripe_account[organization_state]"
-          validations={{
-            isLength: 2,
-          }}
-          validationErrors={{
-            isLength: 'Inserisci la sigla della tua provincia (ES. MI)',
-          }}
           required
         />
       </div>
       <div className="col-sm-4">
         <FieldText
           type="text"
-          label="activerecord.attributes.stripe_account.organization_country"
+          label={
+            <FormattedMessage
+              id="guidu.stripeAccounts.organization.country"
+              defaultMessage="Country"
+            />
+          }
           name="stripe_account[organization_country]"
-          autoCapitalize="characters"
-          validations={{
-            isLength: 2,
-          }}
-          validationErrors={{
-            isLength: 'Inserisci la sigla dello stato (ES. IT)',
-          }}
+          // autoCapitalize="characters"
+          // validations={{
+          //   isLength: 2,
+          // }}
+          // validationErrors={{
+          //   isLength: 'Inserisci la sigla dello stato (ES. IT)',
+          // }}
           required
         />
       </div>
     </div>
     <FieldText
       type="text"
-      label="activerecord.attributes.stripe_account.organization_birthdate"
+      label={
+        <FormattedMessage
+          id="guidu.stripeAccounts.organization.foundingDate"
+          defaultMessage="Founding date"
+        />
+      }
       name="stripe_account[organization_birthdate]"
       mask="99/99/9999"
       help={`GG/MM/AAAA - Es: ${moment().format('DD/MM/YYYY')}`}

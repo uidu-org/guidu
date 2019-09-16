@@ -1,13 +1,9 @@
-import Slider from '@uidu/slider';
-import Loader from '@uidu/spinner';
 import Stepper, { Step } from '@uidu/stepper';
-import classNames from 'classnames';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { Elements, injectStripe, StripeProvider } from 'react-stripe-elements';
 import BankAccount from './steps/BankAccount';
 import LegalEntity from './steps/LegalEntity';
 import Organization from './steps/Organization';
-import Status from './steps/Status';
 
 class StripeAccounts extends PureComponent<any, any> {
   static defaultProps = {
@@ -224,21 +220,14 @@ class StripeAccounts extends PureComponent<any, any> {
     );
   };
 
-  slideCallback = () => {
-    const swiper = (this.slider.current as any).mySlider;
-    if (!swiper) return;
-    this.setState({
-      currentSlide: swiper.activeIndex,
-    });
-  };
-
   render() {
+    const { scrollElement } = this.props;
     const { submitting, error, stripeAccount, currentSlide } = this.state;
 
     return (
-      <Stepper defaultStep="info">
+      <Stepper defaultStep="info" scrollElement={scrollElement}>
         {({ getStepProps, jumpToStep }) => (
-          <Fragment>
+          <>
             <Step
               {...getStepProps()}
               name="info"
@@ -274,114 +263,9 @@ class StripeAccounts extends PureComponent<any, any> {
                 handleSubmit={this.handleSubmit}
               />
             </Step>
-          </Fragment>
+          </>
         )}
       </Stepper>
-    );
-
-    return (
-      <div className="container container-spaced">
-        <div className="row">
-          <div className="col-sm-9">
-            <div className="card-body">
-              {(!stripeAccount || !stripeAccount.status) && (
-                <ul
-                  className="nav nav-tabs nav-justified nav-progress"
-                  role="tablist"
-                >
-                  <li
-                    role="presentation"
-                    className={classNames({
-                      active: currentSlide === 0,
-                    })}
-                  >
-                    <a>
-                      <b>1</b> -
-                    </a>
-                  </li>
-                  <li
-                    role="presentation"
-                    className={classNames({
-                      active: currentSlide === 1,
-                    })}
-                  >
-                    <a>
-                      <b>2</b> - Legale rappresentante
-                    </a>
-                  </li>
-                  <li
-                    role="presentation"
-                    className={classNames({
-                      active: currentSlide === 2,
-                    })}
-                  >
-                    <a>
-                      <b>3</b> - Conto corrente
-                    </a>
-                  </li>
-                </ul>
-              )}
-              <div className="card-body">
-                <Slider
-                  ref={this.slider}
-                  options={{
-                    spaceBetween: 0,
-                    // allowTouchMove: false,
-                    initialSlide: stripeAccount && stripeAccount.status ? 4 : 0,
-                    on: {
-                      slideChangeTransitionEnd: this.slideCallback,
-                    },
-                  }}
-                  slideClassName="swiper-slide-full-width"
-                >
-                  <Organization handleSubmit={this.save} />
-                  <LegalEntity handleSubmit={this.save} />
-                  <BankAccount
-                    submitting={submitting}
-                    error={error}
-                    handleSubmit={this.handleSubmit}
-                  />
-                  <Loader loaded={!submitting} />
-                  <Status stripeAccount={stripeAccount} />
-                </Slider>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-3">
-            <img
-              className="mb-4"
-              src={this.props.poweredByStripe}
-              alt="Powered by Stripe"
-            />
-            <h4>Istruzioni</h4>
-            <p
-            // dangerouslySetInnerHTML={{
-            //   __html: window.I18n.t('account_activation.instructions')[
-            //     currentSlide
-            //   ],
-            // }}
-            >
-              account_activation.instructions
-            </p>
-            {currentSlide === 0 && (
-              <div>
-                <br />
-                <h4>Hai già un account Stripe?</h4>
-                <p>
-                  Connetti gli account per gestire con uidu le donazioni e
-                  visualizzare su Stripe tutte le tue transazioni
-                </p>
-                <a
-                  href={`/auth/stripe_connect?redirect_to=${this.props.redirectTo}`}
-                  className="btn btn-block"
-                >
-                  Stripe Connect
-                </a>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
     );
   }
 }
