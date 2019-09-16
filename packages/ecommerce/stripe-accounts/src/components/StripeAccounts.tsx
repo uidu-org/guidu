@@ -1,5 +1,6 @@
 import Stepper, { Step } from '@uidu/stepper';
 import React, { PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Elements, injectStripe, StripeProvider } from 'react-stripe-elements';
 import BankAccount from './steps/BankAccount';
 import LegalEntity from './steps/LegalEntity';
@@ -16,7 +17,6 @@ class StripeAccounts extends PureComponent<any, any> {
     super(props);
     this.state = {
       stripeAccount: props.stripeAccount,
-      submitting: false,
       error: null,
       currentSlide: 0,
     };
@@ -29,8 +29,6 @@ class StripeAccounts extends PureComponent<any, any> {
 
   handleSubmit = model => {
     this.save(model, false);
-    this.submitting(true);
-    (this.slider.current as any).next();
     const { stripe } = this.props;
     const {
       bank_account_routing_number,
@@ -197,32 +195,23 @@ class StripeAccounts extends PureComponent<any, any> {
     }
   };
 
-  submitting = submitting => {
-    this.setState({
-      submitting,
-    });
-  };
-
-  save = async (model, next = true) => {
-    const { stripeAccount } = this.state;
-    await this.setState(
-      {
+  updateStripeAccount = (model, callback) => {
+    this.setState(
+      prevState => ({
         stripeAccount: {
-          ...stripeAccount,
+          ...prevState.stripeAccount,
           ...model.stripe_account,
         },
-      },
-      () => {
-        if (next) {
-          (this.slider.current as any).next();
-        }
-      },
+      }),
+      callback,
     );
   };
 
   render() {
     const { scrollElement } = this.props;
-    const { submitting, error, stripeAccount, currentSlide } = this.state;
+    const { error, stripeAccount } = this.state;
+
+    console.log(this.state);
 
     return (
       <Stepper defaultStep="info" scrollElement={scrollElement}>
@@ -231,37 +220,58 @@ class StripeAccounts extends PureComponent<any, any> {
             <Step
               {...getStepProps()}
               name="info"
-              label="Dati organizzazione"
+              label={
+                <FormattedMessage
+                  id="guidu.stripeAccounts.organization.title"
+                  defaultMessage="Organization's data"
+                />
+              }
               scope="teams"
               number={1}
             >
               <Organization
-                handleSubmit={async model =>
-                  this.save(model).then(jumpToStep('legal'))
+                stripeAccount={stripeAccount}
+                onSave={newStripeAccount =>
+                  this.updateStripeAccount(newStripeAccount, () => {
+                    jumpToStep('legal');
+                  })
                 }
               />
             </Step>
             <Step
               {...getStepProps()}
               name="legal"
-              label="Legale rappresentante"
+              label={
+                <FormattedMessage
+                  id="guidu.stripeAccounts.legalEntity.title"
+                  defaultMessage="Legal entity"
+                />
+              }
               scope="teams"
               number={2}
             >
-              <LegalEntity handleSubmit={this.save} />
+              <LegalEntity
+                stripeAccount={stripeAccount}
+                onSave={newStripeAccount =>
+                  this.updateStripeAccount(newStripeAccount, () => {
+                    jumpToStep('bank');
+                  })
+                }
+              />
             </Step>
             <Step
               {...getStepProps()}
               name="bank"
-              label="Conto corrente"
+              label={
+                <FormattedMessage
+                  id="guidu.stripeAccounts.bankAccount.title"
+                  defaultMessage="Bank Account"
+                />
+              }
               scope="teams"
               number={3}
             >
-              <BankAccount
-                submitting={submitting}
-                error={error}
-                handleSubmit={this.handleSubmit}
-              />
+              <BankAccount error={error} handleSubmit={this.handleSubmit} />
             </Step>
           </>
         )}

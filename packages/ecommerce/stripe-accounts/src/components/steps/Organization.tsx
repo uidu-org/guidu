@@ -1,12 +1,12 @@
 import FieldText from '@uidu/field-text';
 import Form, { FormSubmit } from '@uidu/form';
-import moment from 'moment';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import Address from './Address';
 
-export default ({ handleSubmit }) => (
+export default ({ onSave, stripeAccount }) => (
   <Form
-    handleSubmit={handleSubmit}
+    handleSubmit={async model => onSave(model)}
     autoComplete="off"
     footerRenderer={({ loading, canSubmit }) => (
       <FormSubmit
@@ -29,6 +29,7 @@ export default ({ handleSubmit }) => (
           defaultMessage="Primary organization email"
         />
       }
+      value={stripeAccount.organization_email || ''}
       name="stripe_account[organization_email]"
       required
     />
@@ -41,6 +42,7 @@ export default ({ handleSubmit }) => (
         />
       }
       name="stripe_account[organization_name]"
+      value={stripeAccount.organization_name || ''}
       required
     />
     <FieldText
@@ -52,6 +54,7 @@ export default ({ handleSubmit }) => (
         />
       }
       name="stripe_account[organization_fiscal_code]"
+      value={stripeAccount.organization_fiscal_code || ''}
       required
     />
     <FieldText
@@ -63,95 +66,8 @@ export default ({ handleSubmit }) => (
         />
       }
       name="stripe_account[organization_vat_code]"
+      value={stripeAccount.organization_vat_code || ''}
     />
-    <div className="row stretched">
-      <div className="col-sm-8">
-        <FieldText
-          type="text"
-          label={
-            <FormattedMessage
-              id="guidu.stripeAccounts.organization.address"
-              defaultMessage="Legal address"
-            />
-          }
-          name="stripe_account[organization_address]"
-          required
-        />
-      </div>
-      <div className="col-sm-4">
-        <FieldText
-          type="text"
-          label={
-            <FormattedMessage
-              id="guidu.stripeAccounts.organization.postalCode"
-              defaultMessage="Postal code"
-            />
-          }
-          name="stripe_account[organization_postal_code]"
-          required
-        />
-      </div>
-    </div>
-    <div className="row stretched">
-      <div className="col-sm-4">
-        <FieldText
-          type="text"
-          label={
-            <FormattedMessage
-              id="guidu.stripeAccounts.organization.city"
-              defaultMessage="City"
-            />
-          }
-          name="stripe_account[organization_city]"
-          required
-        />
-      </div>
-      <div className="col-sm-4">
-        <FieldText
-          type="text"
-          label={
-            <FormattedMessage
-              id="guidu.stripeAccounts.organization.state"
-              defaultMessage="State"
-            />
-          }
-          name="stripe_account[organization_state]"
-          required
-        />
-      </div>
-      <div className="col-sm-4">
-        <FieldText
-          type="text"
-          label={
-            <FormattedMessage
-              id="guidu.stripeAccounts.organization.country"
-              defaultMessage="Country"
-            />
-          }
-          name="stripe_account[organization_country]"
-          // autoCapitalize="characters"
-          // validations={{
-          //   isLength: 2,
-          // }}
-          // validationErrors={{
-          //   isLength: 'Inserisci la sigla dello stato (ES. IT)',
-          // }}
-          required
-        />
-      </div>
-    </div>
-    <FieldText
-      type="text"
-      label={
-        <FormattedMessage
-          id="guidu.stripeAccounts.organization.foundingDate"
-          defaultMessage="Founding date"
-        />
-      }
-      name="stripe_account[organization_birthdate]"
-      mask="99/99/9999"
-      help={`GG/MM/AAAA - Es: ${moment().format('DD/MM/YYYY')}`}
-      required
-    />
+    <Address scope="organization" stripeAccount={stripeAccount} />
   </Form>
 );

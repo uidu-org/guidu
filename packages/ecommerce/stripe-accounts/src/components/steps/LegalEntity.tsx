@@ -1,107 +1,66 @@
 import FieldText from '@uidu/field-text';
-import { Form } from '@uidu/form';
-import moment from 'moment';
+import Form, { FormSubmit } from '@uidu/form';
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
+import Address from './Address';
 
-export default function LegalEntity({ handleSubmit }) {
+export default function LegalEntity({ onSave, stripeAccount }) {
   return (
     <Form
-      handleSubmit={handleSubmit}
+      handleSubmit={async model => onSave(model)}
       autoComplete="off"
-      footerRenderer={({}) => <button>Invia</button>}
+      footerRenderer={({ loading, canSubmit }) => (
+        <FormSubmit
+          label={
+            <FormattedMessage
+              id="guidu.stripeAccounts.next"
+              defaultMessage="Next"
+            />
+          }
+          canSubmit={canSubmit}
+          loading={loading}
+        />
+      )}
     >
       <div className="row stretched">
         <div className="col-sm-6">
           <FieldText
             type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_first_name"
+            label={
+              <FormattedMessage
+                id="guidu.stripeAccounts.legalEntity.firstName"
+                defaultMessage="Name"
+              />
+            }
             name="stripe_account[legal_entity_owner_first_name]"
+            value={stripeAccount.legal_entity_owner_first_name || ''}
             required
           />
         </div>
         <div className="col-sm-6">
           <FieldText
             type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_last_name"
+            label={
+              <FormattedMessage
+                id="guidu.stripeAccounts.legalEntity.lastName"
+                defaultMessage="Last name"
+              />
+            }
             name="stripe_account[legal_entity_owner_last_name]"
+            value={stripeAccount.legal_entity_owner_last_name || ''}
             required
           />
         </div>
       </div>
-      <div className="row stretched">
-        <div className="col-sm-8">
-          <FieldText
-            type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_address"
-            name="stripe_account[legal_entity_owner_address]"
-            required
-          />
-        </div>
-        <div className="col-sm-4">
-          <FieldText
-            type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_postal_code"
-            name="stripe_account[legal_entity_owner_postal_code]"
-            validations={{
-              isLength: 5,
-            }}
-            validationErrors={{
-              isLength: 'Inserisci un CAP valido',
-            }}
-            required
-          />
-        </div>
-      </div>
-      <div className="row stretched">
-        <div className="col-sm-4">
-          <FieldText
-            type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_city"
-            name="stripe_account[legal_entity_owner_city]"
-            required
-          />
-        </div>
-        <div className="col-sm-4">
-          <FieldText
-            type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_state"
-            name="stripe_account[legal_entity_owner_state]"
-            validations={{
-              isLength: 2,
-            }}
-            validationErrors={{
-              isLength: 'Inserisci la sigla della tua provincia (ES. MI)',
-            }}
-            required
-          />
-        </div>
-        <div className="col-sm-4">
-          <FieldText
-            type="text"
-            label="activerecord.attributes.stripe_account.legal_entity_owner_country"
-            name="stripe_account[legal_entity_owner_country]"
-            autoCapitalize="characters"
-            validations={{
-              isLength: 2,
-            }}
-            validationErrors={{
-              isLength: 'Inserisci la sigla dello stato (ES. IT)',
-            }}
-            required
-          />
-        </div>
-      </div>
+      <Address scope="legalEntity" stripeAccount={stripeAccount} />
       <FieldText
         type="text"
-        label="activerecord.attributes.stripe_account.legal_entity_owner_birthdate"
-        name="stripe_account[legal_entity_owner_birthdate]"
-        mask="99/99/9999"
-        help={`GG/MM/AAAA - Es: ${moment().format('DD/MM/YYYY')}`}
-        required
-      />
-      <FieldText
-        type="text"
-        label="activerecord.attributes.stripe_account.legal_entity_owner_personal_id"
+        label={
+          <FormattedMessage
+            id="guidu.stripeAccounts.legalEntity.document"
+            defaultMessage="Personal identification document"
+          />
+        }
         name="stripe_account[legal_entity_owner_personal_id]"
         required
       />

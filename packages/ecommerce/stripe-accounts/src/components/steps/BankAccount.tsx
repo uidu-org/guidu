@@ -1,51 +1,62 @@
 import FieldText from '@uidu/field-text';
-import { Form } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
+import { createOptions } from '@uidu/payments';
 import React, { PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { IbanElement } from 'react-stripe-elements';
 
 export default class BankAccount extends PureComponent<any> {
   render() {
     const { handleSubmit, error } = this.props;
     return (
-      <Form
-        handleSubmit={handleSubmit}
-        footerRenderer={({}) => <button>Invia</button>}
-      >
-        {/* <FieldText
-          type="text"
-          label="activerecord.attributes.stripe_account.bank_account_country"
-          name="stripe_account[bank_account_country]"
-          value="IT"
-          required
-        />
-        <FieldText
-          type="text"
-          label={
-            'activerecord.attributes.stripe_account.bank_account_currency'
-          }
-          name="stripe_account[bank_account_currency]"
-          value="EUR"
-          required
-        /> */}
-        {error && <div className="alert alert-danger">{error.message}</div>}
-        <FieldText
-          type="text"
-          label={
-            'activerecord.attributes.stripe_account.bank_account_account_number'
-          }
-          name="stripe_account[bank_account_account_number]"
-          // validations={{
-          //   custom: this.validateBankAccont
-          // }}
-          // help="IT89370400440532013000"
-          required
-        />
-        <FieldText
-          type="text"
-          label="Intestatario"
-          name="stripe_account[bank_account_account_holder_name]"
-          required
-        />
-      </Form>
+      <>
+        <style>{`#iban-element { padding-top: 10px; padding-bottom: 10px }`}</style>
+        <Form
+          handleSubmit={handleSubmit}
+          autoComplete="off"
+          footerRenderer={({ loading, canSubmit }) => (
+            <FormSubmit
+              label={
+                <FormattedMessage
+                  id="guidu.stripeAccounts.Save"
+                  defaultMessage="Save"
+                />
+              }
+              canSubmit={canSubmit}
+              loading={loading}
+            />
+          )}
+        >
+          <div style={{ position: 'relative' }}>
+            <div className="form-group">
+              <label htmlFor="credit-card">
+                <FormattedMessage
+                  id="guidu.stripeAccounts.bankAccount.iban"
+                  defaultMessage="IBAN"
+                />
+              </label>
+              <IbanElement
+                id="iban-element"
+                className="form-control"
+                supportedCountries={['SEPA']}
+                {...createOptions()}
+              />
+            </div>
+          </div>
+          {error && <div className="alert alert-danger">{error.message}</div>}
+          <FieldText
+            type="text"
+            label={
+              <FormattedMessage
+                id="guidu.stripeAccounts.bankAccount.holder"
+                defaultMessage="Account owner"
+              />
+            }
+            name="stripe_account[bank_account_account_holder_name]"
+            required
+          />
+        </Form>
+      </>
     );
   }
 }
