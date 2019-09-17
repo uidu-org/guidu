@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 0.1.12
+
+### Patch Changes
+
+- ffd1801: Bump all packages changed before changesets update
+
+- Updated dependencies [ffd1801]
+  - @uidu/table@0.1.21
+
 ## 0.1.11
 
 ### Patch Changes

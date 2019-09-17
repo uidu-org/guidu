@@ -1,5 +1,12 @@
 # @uidu/data-controls
 
+## 0.1.21
+
+### Patch Changes
+
+- ffd1801: Bump all packages changed before changesets update
+- ffd1801: More debugging for sorters
+
 ## 0.1.20
 
 ### Patch Changes
