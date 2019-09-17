@@ -4,15 +4,14 @@ import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
 type AddressProps = {
-  scope: 'legalEntity' | 'organization';
+  scope: 'individual' | 'business';
   stripeAccount: any;
 };
 
 export default class Address extends PureComponent<AddressProps> {
   render() {
     const { stripeAccount, scope } = this.props;
-    const prefix =
-      scope === 'legalEntity' ? 'legal_entity_owner' : 'organization';
+    const prefix = scope === 'individual' ? 'individual' : 'business';
 
     return (
       <>

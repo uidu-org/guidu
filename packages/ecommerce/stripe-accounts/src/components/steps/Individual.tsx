@@ -28,12 +28,12 @@ export default function LegalEntity({ onSave, stripeAccount }) {
             type="text"
             label={
               <FormattedMessage
-                id="guidu.stripeAccounts.legalEntity.firstName"
+                id="guidu.stripeAccounts.individual.firstName"
                 defaultMessage="Name"
               />
             }
-            name="stripe_account[legal_entity_owner_first_name]"
-            value={stripeAccount.legal_entity_owner_first_name || ''}
+            name="stripe_account[individual_first_name]"
+            value={stripeAccount.individual_first_name || ''}
             required
           />
         </div>
@@ -42,36 +42,36 @@ export default function LegalEntity({ onSave, stripeAccount }) {
             type="text"
             label={
               <FormattedMessage
-                id="guidu.stripeAccounts.legalEntity.lastName"
+                id="guidu.stripeAccounts.individual.lastName"
                 defaultMessage="Last name"
               />
             }
-            name="stripe_account[legal_entity_owner_last_name]"
-            value={stripeAccount.legal_entity_owner_last_name || ''}
+            name="stripe_account[individual_last_name]"
+            value={stripeAccount.individual_last_name || ''}
             required
           />
         </div>
       </div>
-      <Address scope="legalEntity" stripeAccount={stripeAccount} />
+      <Address scope="individual" stripeAccount={stripeAccount} />
       <FieldText
         type="text"
         label={
           <FormattedMessage
-            id="guidu.stripeAccounts.legalEntity.document"
+            id="guidu.stripeAccounts.individual.document"
             defaultMessage="Personal identification document"
           />
         }
-        name="stripe_account[legal_entity_owner_personal_id]"
+        name="stripe_account[individual_personal_id]"
         required
       />
       {/* <FileInput
         label={window.I18n.t(
-          'activerecord.attributes.stripe_account.legal_entity_owner_document',
+          'activerecord.attributes.stripe_account.individual_document',
         )}
-        name="stripe_account[legal_entity_owner_document]"
+        name="stripe_account[individual_document]"
         value={undefined}
         help={window.I18n.t(
-          'activerecord.hints.stripe_account.legal_entity_owner_document',
+          'activerecord.hints.stripe_account.individual_document',
         )}
         accept="image/png, image/jpeg"
         required

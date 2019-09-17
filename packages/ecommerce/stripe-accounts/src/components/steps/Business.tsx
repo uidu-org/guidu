@@ -25,49 +25,49 @@ export default ({ onSave, stripeAccount }) => (
       type="email"
       label={
         <FormattedMessage
-          id="guidu.stripeAccounts.organization.email"
-          defaultMessage="Primary organization email"
+          id="guidu.stripeAccounts.business.email"
+          defaultMessage="Primary business email"
         />
       }
-      value={stripeAccount.organization_email || ''}
-      name="stripe_account[organization_email]"
+      value={stripeAccount.business_email || ''}
+      name="stripe_account[business_email]"
       required
     />
     <FieldText
       type="text"
       label={
         <FormattedMessage
-          id="guidu.stripeAccounts.organization.name"
+          id="guidu.stripeAccounts.business.name"
           defaultMessage="Organization name"
         />
       }
-      name="stripe_account[organization_name]"
-      value={stripeAccount.organization_name || ''}
+      name="stripe_account[business_name]"
+      value={stripeAccount.business_name || ''}
       required
     />
     <FieldText
       type="text"
       label={
         <FormattedMessage
-          id="guidu.stripeAccounts.organization.fiscalCode"
+          id="guidu.stripeAccounts.business.fiscalCode"
           defaultMessage="Organization fiscal code"
         />
       }
-      name="stripe_account[organization_fiscal_code]"
-      value={stripeAccount.organization_fiscal_code || ''}
+      name="stripe_account[business_fiscal_code]"
+      value={stripeAccount.business_fiscal_code || ''}
       required
     />
     <FieldText
       type="text"
       label={
         <FormattedMessage
-          id="guidu.stripeAccounts.organization.vatCode"
+          id="guidu.stripeAccounts.business.vatCode"
           defaultMessage="Organization VAT code"
         />
       }
-      name="stripe_account[organization_vat_code]"
-      value={stripeAccount.organization_vat_code || ''}
+      name="stripe_account[business_vat_code]"
+      value={stripeAccount.business_vat_code || ''}
     />
-    <Address scope="organization" stripeAccount={stripeAccount} />
+    <Address scope="business" stripeAccount={stripeAccount} />
   </Form>
 );

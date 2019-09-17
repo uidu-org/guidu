@@ -1,10 +1,12 @@
+// https://stripe.com/docs/connect/required-verification-information
+
 import Stepper, { Step } from '@uidu/stepper';
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Elements, injectStripe, StripeProvider } from 'react-stripe-elements';
-import BankAccount from './steps/BankAccount';
-import LegalEntity from './steps/LegalEntity';
-import Organization from './steps/Organization';
+import Business from './steps/Business';
+import ExternalAccount from './steps/ExternalAccount';
+import Individual from './steps/Individual';
 
 class StripeAccounts extends PureComponent<any, any> {
   static defaultProps = {
@@ -28,7 +30,7 @@ class StripeAccounts extends PureComponent<any, any> {
   };
 
   handleSubmit = model => {
-    this.save(model, false);
+    this.updateStripeAccount(model, false);
     const { stripe } = this.props;
     const {
       bank_account_routing_number,
@@ -63,87 +65,87 @@ class StripeAccounts extends PureComponent<any, any> {
       const formData = new FormData();
       // Organization data
       formData.append(
-        'stripe_account[organization_email]',
-        stripeAccount.organization_email,
+        'stripe_account[business_email]',
+        stripeAccount.business_email,
       );
       formData.append(
-        'stripe_account[organization_name]',
-        stripeAccount.organization_name,
+        'stripe_account[business_name]',
+        stripeAccount.business_name,
       );
       formData.append(
-        'stripe_account[organization_fiscal_code]',
-        stripeAccount.organization_fiscal_code,
+        'stripe_account[business_fiscal_code]',
+        stripeAccount.business_fiscal_code,
       );
       formData.append(
-        'stripe_account[organization_vat_code]',
-        stripeAccount.organization_vat_code,
+        'stripe_account[business_vat_code]',
+        stripeAccount.business_vat_code,
       );
       formData.append(
-        'stripe_account[organization_address]',
-        stripeAccount.organization_address,
+        'stripe_account[business_address]',
+        stripeAccount.business_address,
       );
       formData.append(
-        'stripe_account[organization_postal_code]',
-        stripeAccount.organization_postal_code,
+        'stripe_account[business_postal_code]',
+        stripeAccount.business_postal_code,
       );
       formData.append(
-        'stripe_account[organization_city]',
-        stripeAccount.organization_city,
+        'stripe_account[business_city]',
+        stripeAccount.business_city,
       );
       formData.append(
-        'stripe_account[organization_state]',
-        stripeAccount.organization_state,
+        'stripe_account[business_state]',
+        stripeAccount.business_state,
       );
       formData.append(
-        'stripe_account[organization_country]',
-        stripeAccount.organization_country,
+        'stripe_account[business_country]',
+        stripeAccount.business_country,
       );
       formData.append(
-        'stripe_account[organization_birthdate]',
-        this.cleanDate(stripeAccount.organization_birthdate),
+        'stripe_account[business_birthdate]',
+        this.cleanDate(stripeAccount.business_birthdate),
       );
 
       // Legal entity data
       formData.append(
-        'stripe_account[legal_entity_owner_first_name]',
-        stripeAccount.legal_entity_owner_first_name,
+        'stripe_account[individual_first_name]',
+        stripeAccount.individual_first_name,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_last_name]',
-        stripeAccount.legal_entity_owner_last_name,
+        'stripe_account[individual_last_name]',
+        stripeAccount.individual_last_name,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_address]',
-        stripeAccount.legal_entity_owner_address,
+        'stripe_account[individual_address]',
+        stripeAccount.individual_address,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_postal_code]',
-        stripeAccount.legal_entity_owner_postal_code,
+        'stripe_account[individual_postal_code]',
+        stripeAccount.individual_postal_code,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_city]',
-        stripeAccount.legal_entity_owner_city,
+        'stripe_account[individual_city]',
+        stripeAccount.individual_city,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_state]',
-        stripeAccount.legal_entity_owner_state,
+        'stripe_account[individual_state]',
+        stripeAccount.individual_state,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_country]',
-        stripeAccount.legal_entity_owner_country,
+        'stripe_account[individual_country]',
+        stripeAccount.individual_country,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_birthdate]',
-        this.cleanDate(stripeAccount.legal_entity_owner_birthdate),
+        'stripe_account[individual_birthdate]',
+        this.cleanDate(stripeAccount.individual_birthdate),
       );
       formData.append(
-        'stripe_account[legal_entity_owner_personal_id]',
-        stripeAccount.legal_entity_owner_personal_id,
+        'stripe_account[individual_personal_id]',
+        stripeAccount.individual_personal_id,
       );
       formData.append(
-        'stripe_account[legal_entity_owner_document]',
-        stripeAccount.legal_entity_owner_document[0],
-        stripeAccount.legal_entity_owner_document[0].name,
+        'stripe_account[individual_document]',
+        stripeAccount.individual_document[0],
+        stripeAccount.individual_document[0].name,
       );
 
       // Bank Account data
@@ -214,43 +216,43 @@ class StripeAccounts extends PureComponent<any, any> {
     console.log(this.state);
 
     return (
-      <Stepper defaultStep="info" scrollElement={scrollElement}>
+      <Stepper defaultStep="business" scrollElement={scrollElement}>
         {({ getStepProps, jumpToStep }) => (
           <>
             <Step
               {...getStepProps()}
-              name="info"
+              name="business"
               label={
                 <FormattedMessage
-                  id="guidu.stripeAccounts.organization.title"
-                  defaultMessage="Organization's data"
+                  id="guidu.stripeAccounts.business.title"
+                  defaultMessage="Business's data"
                 />
               }
               scope="teams"
               number={1}
             >
-              <Organization
+              <Business
                 stripeAccount={stripeAccount}
                 onSave={newStripeAccount =>
                   this.updateStripeAccount(newStripeAccount, () => {
-                    jumpToStep('legal');
+                    jumpToStep('individual');
                   })
                 }
               />
             </Step>
             <Step
               {...getStepProps()}
-              name="legal"
+              name="individual"
               label={
                 <FormattedMessage
-                  id="guidu.stripeAccounts.legalEntity.title"
-                  defaultMessage="Legal entity"
+                  id="guidu.stripeAccounts.individual.title"
+                  defaultMessage="Individual"
                 />
               }
               scope="teams"
               number={2}
             >
-              <LegalEntity
+              <Individual
                 stripeAccount={stripeAccount}
                 onSave={newStripeAccount =>
                   this.updateStripeAccount(newStripeAccount, () => {
@@ -264,14 +266,14 @@ class StripeAccounts extends PureComponent<any, any> {
               name="bank"
               label={
                 <FormattedMessage
-                  id="guidu.stripeAccounts.bankAccount.title"
+                  id="guidu.stripeAccounts.externalAccount.title"
                   defaultMessage="Bank Account"
                 />
               }
               scope="teams"
               number={3}
             >
-              <BankAccount error={error} handleSubmit={this.handleSubmit} />
+              <ExternalAccount error={error} handleSubmit={this.handleSubmit} />
             </Step>
           </>
         )}
