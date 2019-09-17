@@ -119,4 +119,4 @@ class Stepper extends Component<StepperProps, any> {
   }
 }
 
-export default withRouter(Stepper);
+export default withRouter(Stepper as any);

@@ -90,4 +90,4 @@ class Treenav extends PureComponent<TreenavProps & RouteComponentProps> {
   }
 }
 
-export default withRouter(Treenav);
+export default withRouter(Treenav as any);

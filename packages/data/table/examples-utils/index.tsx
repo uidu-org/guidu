@@ -148,6 +148,7 @@ export const availableColumns = [
     colId: 'member',
     field: 'member',
     headerName: 'Assignee',
+
     ...defaultColumn(),
     ...memberColumn({
       options: [
@@ -155,6 +156,7 @@ export const availableColumns = [
         { id: 'female', name: 'Femmina' },
       ],
     }),
+    valueGetter: ({ data: { member } }) => member.email,
   },
   {
     colId: 'address',
@@ -226,7 +228,7 @@ export const fetchContacts = () => {
           age: faker.random.number(),
           gender: 'female',
           role: 'admin',
-          member: faker.internet.email(),
+          member: faker.helpers.userCard(),
           progress: Math.random(),
         })),
       );
