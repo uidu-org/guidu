@@ -1,5 +1,11 @@
 # @uidu/stripe-accounts
 
+## 0.1.6
+
+### Patch Changes
+
+- e3bfef6: FIX typescript error in stripe accounts
+
 ## 0.1.5
 
 ### Patch Changes

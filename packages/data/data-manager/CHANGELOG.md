@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 0.1.16
+
+### Patch Changes
+
+- Faster cell renderers for table, calendar header
+- Added Responsivr component to manage responsiveness based on brekpoints
+
+- Updated dependencies []
+- Updated dependencies []
+- Updated dependencies [e3bfef6]
+- Updated dependencies [e3bfef6]
+  - @uidu/data-controls@0.1.20
+  - @uidu/table@0.1.20
+
 ## 0.1.15
 
 ### Patch Changes

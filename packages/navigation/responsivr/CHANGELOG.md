@@ -1,5 +1,12 @@
 # @uidu/responsivr
 
+## 0.1.4
+
+### Patch Changes
+
+- Faster cell renderers for table, calendar header
+- Added Responsivr component to manage responsiveness based on brekpoints
+
 ## 0.1.3
 
 ### Patch Changes

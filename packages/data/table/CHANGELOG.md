@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.1.20
+
+### Patch Changes
+
+- Faster cell renderers for table, calendar header
+- e3bfef6: Better currency
+
+- Updated dependencies []
+- Updated dependencies []
+- Updated dependencies [e3bfef6]
+  - @uidu/data-controls@0.1.20
+
 ## 0.1.19
 
 ### Patch Changes

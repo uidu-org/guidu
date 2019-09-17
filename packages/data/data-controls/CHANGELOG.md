@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.1.20
+
+### Patch Changes
+
+- Faster cell renderers for table, calendar header
+- Added Responsivr component to manage responsiveness based on brekpoints
+- e3bfef6: Try new changelog
+
 ## 0.1.19
 
 ### Patch Changes
