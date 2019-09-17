@@ -32,6 +32,7 @@ export default class Sorter extends Component<any> {
     const sortersCount = sorters.length;
 
     console.log(sorters);
+    console.log(fields);
 
     return (
       <DropdownMenu
@@ -97,7 +98,7 @@ export default class Sorter extends Component<any> {
                           isSearchable
                           isClearable={false}
                           name={`sorters[${index}][colId]`}
-                          options={this.props.fields}
+                          options={fields}
                           menuPosition="fixed"
                           getOptionLabel={option => option.headerName}
                           getOptionValue={option => option.colId}
