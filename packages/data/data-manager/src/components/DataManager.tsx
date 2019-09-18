@@ -75,7 +75,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       sorters: [],
       filters: [],
       groupers: [],
-      rowHeight: 48,
+      rowHeight: 64,
     };
   }
 

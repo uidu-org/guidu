@@ -1,3 +1,4 @@
+import numeral from 'numeral';
 import React from 'react';
 import {
   addressColumn,
@@ -113,3 +114,29 @@ export const getCover = columnDefs =>
 
 export const getAvatar = columnDefs =>
   columnDefs.filter(column => column.type === 'avatar')[0];
+
+export const numericComparator = (number1, number2) => {
+  const numericNumber1 = numeral(number1).value();
+  const numericNumber2 = numeral(number2).value();
+  if (numericNumber1 === null && number2 === null) {
+    return 0;
+  }
+
+  if (isNaN(numericNumber1)) {
+    return -1;
+  }
+
+  if (isNaN(numericNumber2)) {
+    return 1;
+  }
+
+  if (numericNumber1 === null) {
+    return -1;
+  }
+
+  if (numericNumber2 === null) {
+    return 1;
+  }
+
+  return numericNumber1 - numericNumber2;
+};

@@ -1,4 +1,5 @@
-import { Form } from '@uidu/form';
+import FieldText from '@uidu/field-text';
+import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { Component } from 'react';
 import { Sliders, X } from 'react-feather';
@@ -25,6 +26,7 @@ export default class Sorter extends Component<any> {
   handleSubmit = async model => {
     const { onChange } = this.props;
     const response = await (this.form.current as any).getModel();
+    console.log(response);
     onChange(response.sorters || []);
   };
 
@@ -64,48 +66,64 @@ export default class Sorter extends Component<any> {
             <List initial={sorters}>
               {({ list, pull, push }) => (
                 <div>
-                  {list.map((sorter: any, index: number) => (
-                    <div
-                      className="d-flex align-items-center mb-2"
-                      key={sorter.colId.colId}
-                    >
-                      <button
-                        type="button"
-                        className="btn btn-sm p-0 mr-2 d-flex align-items-center"
-                        onClick={() => {
-                          pull((value: any) => {
-                            console.log(value);
-                            return value.colId.colId === sorter.colId.colId;
-                          });
-                          (this.form.current as any).submit();
-                        }}
+                  {list.map((sorter: any, index: number) => {
+                    console.log(sorter);
+                    return (
+                      <div
+                        className="d-flex align-items-center mb-2"
+                        key={sorter.colId.colId}
                       >
-                        <X size={13} />
-                      </button>
-                      <span className="small mr-4">
-                        <FormattedMessage
-                          id="guidu.data_controls.sorter.sorted_by"
-                          defaultMessage={`{index, plural,
+                        <button
+                          type="button"
+                          className="btn btn-sm p-0 mr-2 d-flex align-items-center"
+                          onClick={() => {
+                            pull((value: any) => {
+                              console.log(value);
+                              return value.colId.colId === sorter.colId.colId;
+                            });
+                            (this.form.current as any).submit();
+                          }}
+                        >
+                          <X size={13} />
+                        </button>
+                        <span
+                          className="small mr-auto"
+                          style={{ minWidth: 200 }}
+                        >
+                          <FormattedMessage
+                            id="guidu.data_controls.sorter.sorted_by"
+                            defaultMessage={`{index, plural,
                             =0 {Sort by}
                             other {then by}
-                          }`}
-                          values={{ index }}
-                        />
-                      </span>
-                      <div style={{ minWidth: 180 }} className="mr-2">
-                        <Select
-                          value={sorter.colId}
+                          } {label}`}
+                            values={{ index, label: sorter.colId.headerName }}
+                          />
+                        </span>
+                        <FieldText
+                          type="hidden"
+                          value={sorter.colId.colId}
                           layout="elementOnly"
-                          isSearchable
+                          name={`sorters[${index}][colId][colId]`}
+                        />
+                        <FieldText
+                          type="hidden"
+                          value={sorter.colId.headerName}
+                          layout="elementOnly"
+                          name={`sorters[${index}][colId][headerName]`}
+                        />
+                        <Select
+                          layout="elementOnly"
                           isClearable={false}
-                          name={`sorters[${index}][colId]`}
-                          options={fields}
+                          name={`sorters[${index}][sort]`}
+                          value={sorter.sort}
+                          options={[
+                            { id: 'asc', name: 'asc' },
+                            { id: 'desc', name: 'desc' },
+                          ]}
+                          // https://github.com/OpusCapita/react-select/blob/2049ed35851b7f547a604995606384f307ca1675/src/client/components/MenuPortal__fix.react.js
                           menuPosition="fixed"
-                          getOptionLabel={option => option.headerName}
-                          getOptionValue={option => option.colId}
-                          onChange={(name, value) => {
-                            console.log(name, value);
-                            console.log(this.form);
+                          onChange={() => {
+                            console.log('changed');
                             (this.form.current as any).submit();
                           }}
                           styles={{
@@ -113,27 +131,8 @@ export default class Sorter extends Component<any> {
                           }}
                         />
                       </div>
-                      <Select
-                        layout="elementOnly"
-                        isClearable={false}
-                        name={`sorters[${index}][sort]`}
-                        value={sorter.sort}
-                        options={[
-                          { id: 'asc', name: 'asc' },
-                          { id: 'desc', name: 'desc' },
-                        ]}
-                        // https://github.com/OpusCapita/react-select/blob/2049ed35851b7f547a604995606384f307ca1675/src/client/components/MenuPortal__fix.react.js
-                        menuPosition="fixed"
-                        onChange={() => {
-                          console.log('changed');
-                          (this.form.current as any).submit();
-                        }}
-                        styles={{
-                          menuPortal: base => ({ ...base, zIndex: 9999 }),
-                        }}
-                      />
-                    </div>
-                  ))}
+                    );
+                  })}
                   {!list.length && (
                     <p className="text-muted">
                       <FormattedMessage
@@ -156,10 +155,16 @@ export default class Sorter extends Component<any> {
                         index: list.length,
                         colId: field,
                       });
-                      (this.form.current as any).submit();
+                      setTimeout(() => {
+                        (this.form.current as any).submit();
+                      }, 30);
                     }}
                     list={sorters}
-                    fields={fields.filter(f => !!f.sortable)}
+                    fields={fields.filter(
+                      f =>
+                        !!f.sortable &&
+                        sorters.map(s => s.colId.colId).indexOf(f.colId) < 0,
+                    )}
                   />
                 </div>
               )}

@@ -11,6 +11,7 @@
   "dependencies": {
     "@uidu/dropdown-menu": "^0.1.16",
     "@uidu/droplist": "^0.1.15",
+    "@uidu/field-text": "^0.1.21",
     "@uidu/form": "^0.1.36",
     "@uidu/item": "^0.1.17",
     "@uidu/select": "^0.1.22",

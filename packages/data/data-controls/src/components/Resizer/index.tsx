@@ -29,9 +29,9 @@ export default class Resizer extends PureComponent<ResizerProps> {
           <DropdownItem
             onClick={e => {
               e.preventDefault();
-              onResize(36);
+              onResize(48);
             }}
-            {...(rowHeight === 36
+            {...(rowHeight === 48
               ? {
                   elemBefore: (
                     <CheckCircle size={14} className="text-success" />
@@ -47,9 +47,9 @@ export default class Resizer extends PureComponent<ResizerProps> {
           <DropdownItem
             onClick={e => {
               e.preventDefault();
-              onResize(48);
+              onResize(64);
             }}
-            {...(rowHeight === 48
+            {...(rowHeight === 64
               ? {
                   elemBefore: (
                     <CheckCircle size={14} className="text-success" />
@@ -65,9 +65,9 @@ export default class Resizer extends PureComponent<ResizerProps> {
           <DropdownItem
             onClick={e => {
               e.preventDefault();
-              onResize(60);
+              onResize(72);
             }}
-            {...(rowHeight === 60
+            {...(rowHeight === 72
               ? {
                   elemBefore: (
                     <CheckCircle size={14} className="text-success" />
@@ -83,9 +83,9 @@ export default class Resizer extends PureComponent<ResizerProps> {
           <DropdownItem
             onClick={e => {
               e.preventDefault();
-              onResize(72);
+              onResize(80);
             }}
-            {...(rowHeight === 72
+            {...(rowHeight === 80
               ? {
                   elemBefore: (
                     <CheckCircle size={14} className="text-success" />
