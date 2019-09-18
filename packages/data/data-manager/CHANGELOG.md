@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.19
+
+### Patch Changes
+
+- 38c3219: Try fix sorters
+
+- Updated dependencies [38c3219]
+  - @uidu/data-controls@0.1.23
+  - @uidu/table@0.1.24
+
 ## 0.1.18
 
 ### Patch Changes

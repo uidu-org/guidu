@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.1.23
+
+### Patch Changes
+
+- 38c3219: Try fix sorters
+
 ## 0.1.22
 
 ### Patch Changes
