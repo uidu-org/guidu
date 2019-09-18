@@ -142,7 +142,7 @@ export const StyledAction = styled.button`
 export const StyledFab = styled.ul<{ isOpen: boolean }>`
   box-sizing: border-box;
   margin: 25px;
-  position: fixed;
+  position: absolute;
   white-space: nowrap;
   z-index: 9998;
   padding-left: 0;

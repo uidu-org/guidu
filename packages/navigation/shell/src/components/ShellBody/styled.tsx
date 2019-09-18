@@ -7,6 +7,7 @@ export const Body = styled.div<{ scrollable?: boolean | 'mobileOnly' }>`
   // to fix chrome flex
   min-width: 0;
   min-height: 0;
+  position: relative;
 `;
 
 export const ObserverComponent = styled.div`

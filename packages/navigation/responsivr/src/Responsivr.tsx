@@ -28,16 +28,16 @@ export default class Responsivr extends Component<ResponsivrProps> {
           }
 
           if (matches.sm) {
-            return sm;
+            return sm || null;
           }
           if (matches.md) {
-            return md;
+            return md || null;
           }
           if (matches.lg) {
-            return lg;
+            return lg || null;
           }
           if (matches.xl) {
-            return xl;
+            return xl || null;
           }
           return children;
         }}
