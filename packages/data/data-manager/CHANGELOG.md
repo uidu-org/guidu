@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 0.1.18
+
+### Patch Changes
+
+- 384bb60: Try again with uniform data layer
+
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+  - @uidu/data-controls@0.1.22
+  - @uidu/table@0.1.22
+  - @uidu/shell@0.1.30
+  - @uidu/gallery@0.1.16
+  - @uidu/list@0.1.13
+
 ## 0.1.17
 
 ### Patch Changes

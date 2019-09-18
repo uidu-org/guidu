@@ -1,5 +1,17 @@
 # @uidu/gallery
 
+## 0.1.16
+
+### Patch Changes
+
+- 384bb60: Try again with uniform data layer
+
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+  - @uidu/table@0.1.22
+  - @uidu/shell@0.1.30
+
 ## 0.1.15
 
 ### Patch Changes

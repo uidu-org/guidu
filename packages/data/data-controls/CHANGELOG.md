@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.1.22
+
+### Patch Changes
+
+- 384bb60: Fix member column avatar
+- 384bb60: Try again with uniform data layer
+- 384bb60: Export calendar components
+
 ## 0.1.21
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/table
 
+## 0.1.22
+
+### Patch Changes
+
+- 384bb60: Fix member column avatar
+- 384bb60: Try again with uniform data layer
+
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+  - @uidu/data-controls@0.1.22
+  - @uidu/shell@0.1.30
+
 ## 0.1.21
 
 ### Patch Changes

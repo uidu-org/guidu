@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.1.14
+
+### Patch Changes
+
+- b420c7a: 4 columns also for tablet view
+
+- Updated dependencies [384bb60]
+  - @uidu/shell@0.1.30
+
 ## 0.1.13
 
 ### Patch Changes

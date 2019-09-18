@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.1.7
+
+### Patch Changes
+
+- 384bb60: Make shell body relative, so that fab can be positioned absolutely. Responsivr default null renderers
+
 ## 0.1.6
 
 ### Patch Changes

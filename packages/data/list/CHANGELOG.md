@@ -1,5 +1,15 @@
 # @uidu/list
 
+## 0.1.13
+
+### Patch Changes
+
+- 384bb60: Try again with uniform data layer
+
+- Updated dependencies [384bb60]
+- Updated dependencies [384bb60]
+  - @uidu/table@0.1.22
+
 ## 0.1.12
 
 ### Patch Changes
