@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 0.1.21
+
+### Patch Changes
+
+- ffd1801: Bump all packages changed before changesets update
+
+- Updated dependencies [ffd1801]
+- Updated dependencies [ffd1801]
+  - @uidu/data-controls@0.1.21
+
 ## 0.1.20
 
 ### Patch Changes

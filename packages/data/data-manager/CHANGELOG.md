@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 0.1.17
+
+### Patch Changes
+
+- ffd1801: Bump all packages changed before changesets update
+
+- Updated dependencies [ffd1801]
+- Updated dependencies [ffd1801]
+  - @uidu/calendar@0.1.10
+  - @uidu/data-controls@0.1.21
+  - @uidu/gallery@0.1.15
+  - @uidu/list@0.1.12
+  - @uidu/table@0.1.21
+
 ## 0.1.16
 
 ### Patch Changes

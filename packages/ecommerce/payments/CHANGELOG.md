@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.1.6
+
+### Patch Changes
+
+- ffd1801: Bump all packages changed before changesets update
+
 ## 0.1.5
 
 ### Patch Changes
