@@ -1,4 +1,4 @@
-import { getCover, getPrimary, valueRenderer } from '@uidu/table';
+import { valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
@@ -10,22 +10,27 @@ const StyledItem = styled.div`
 export default class Item extends PureComponent<any> {
   render() {
     const { index, style, data } = this.props;
-    const { items, columnDefs, gutterSize, onItemClick } = data;
+    const {
+      items,
+      columnDefs,
+      gutterSize,
+      onItemClick,
+      primary,
+      cover,
+      avatar,
+    } = data;
     const item = items[index];
 
     if (!item) {
       return null;
     }
 
-    const primary = getPrimary(columnDefs);
-    const cover = getCover(columnDefs);
-
     return (
       <StyledItem
-        key={item.id}
+        key={item.data.id}
         onClick={e => {
           e.preventDefault();
-          onItemClick(item);
+          onItemClick(item.data);
         }}
         style={{
           ...style,
@@ -55,7 +60,9 @@ export default class Item extends PureComponent<any> {
         <div className="d-flex flex-column">
           {primary && (
             <div
-              className="mb-2 data-list-primary-cell px-3 px-xl-4"
+              className={`mb-2 data-list-primary-cell${
+                cover ? ' px-3 px-xl-4' : ''
+              }`}
               style={{
                 position: 'sticky',
                 left: '1rem',
@@ -72,7 +79,7 @@ export default class Item extends PureComponent<any> {
               )
               .map(column => (
                 <div
-                  key={`${item.id}-${column.colId}-value`}
+                  key={`${item.data.id}-${column.colId}-value`}
                   className="text-truncate data-list-cell px-3 px-xl-4"
                   style={{
                     width: column.width || '150px',

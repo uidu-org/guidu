@@ -76,16 +76,26 @@ export const buildColumn = field => ({
 export const buildColumns = fields => fields.map(field => buildColumn(field));
 
 export const valueRenderer = (data, column) => {
-  const { field, cellRendererFramework: Renderer, valueFormatter } = column;
-  const value = data[field];
+  const {
+    field,
+    cellRenderer: Renderer,
+    cellRendererFramework: RendererFramework,
+    valueFormatter,
+    valueGetter,
+  } = column;
+  let value = data[field];
+
+  if (valueGetter) {
+    value = valueGetter({ data, value });
+  }
 
   if (!value) {
     return '-';
   }
 
-  if (Renderer) {
+  if (RendererFramework) {
     return (
-      <Renderer
+      <RendererFramework
         data={data}
         value={valueFormatter ? valueFormatter({ value }) : value}
         colDef={column}

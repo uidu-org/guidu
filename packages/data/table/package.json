@@ -27,7 +27,8 @@
     "@uidu/data-controls": "^0.1.20",
     "@uidu/docs": "^0.1.33",
     "faker": "^4.1.0",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "numeral": "^2.0.6"
   },
   "uidu:src": "index.ts"
 }

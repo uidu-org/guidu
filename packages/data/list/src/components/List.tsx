@@ -1,3 +1,4 @@
+import { getAvatar, getCover, getPrimary } from '@uidu/table';
 import memoize from 'memoize-one';
 import React, { createContext, forwardRef, PureComponent } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
@@ -39,7 +40,15 @@ const StickyList = ({
   children,
   stickyIndices,
   headerHeight,
-  itemData: { columnDefs, items, gutterSize, onItemClick },
+  itemData: {
+    columnDefs,
+    items,
+    gutterSize,
+    onItemClick,
+    primary,
+    cover,
+    avatar,
+  },
   ...rest
 }) => (
   <StickyListContext.Provider
@@ -51,6 +60,9 @@ const StickyList = ({
       gutterSize,
       headerHeight,
       onItemClick,
+      primary,
+      cover,
+      avatar,
     }}
   >
     <VariableList
@@ -62,6 +74,9 @@ const StickyList = ({
         gutterSize,
         headerHeight,
         onItemClick,
+        primary,
+        cover,
+        avatar,
       }}
       {...rest}
     >
@@ -71,11 +86,14 @@ const StickyList = ({
 );
 
 const createItemData = memoize(
-  (items, columnDefs, gutterSize, onItemClick) => ({
+  (items, columnDefs, gutterSize, onItemClick, primary, cover, avatar) => ({
     items,
     columnDefs,
     gutterSize,
     onItemClick,
+    primary,
+    cover,
+    avatar,
   }),
 );
 
@@ -96,12 +114,21 @@ export default class List extends PureComponent<any> {
       onItemClick,
     } = this.props;
     const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
+
+    const primary = getPrimary(columnDefs);
+    const cover = getCover(visibleColumnDefs);
+    const avatar = getAvatar(visibleColumnDefs);
+
     const itemData = createItemData(
       rowData,
       visibleColumnDefs,
       gutterSize,
       onItemClick,
+      primary,
+      cover,
+      avatar,
     );
+
     return (
       <AutoSizer>
         {({ height, width }) => {

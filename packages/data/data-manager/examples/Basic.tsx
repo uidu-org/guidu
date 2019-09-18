@@ -88,6 +88,7 @@ export default class Basic extends Component<any, any> {
                         { id: 0, kind: 'table', name: 'Table' },
                         { id: 1, kind: 'gallery', name: 'Griglia' },
                         { id: 2, kind: 'calendar', name: 'Calendario' },
+                        { id: 3, kind: 'list', name: 'List (mobile view)' },
                       ],
                     },
                   },

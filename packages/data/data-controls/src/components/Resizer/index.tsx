@@ -2,17 +2,20 @@ import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { CheckCircle, Maximize2 } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 
-export default class Resizer extends Component<any> {
-  private input: React.RefObject<HTMLInputElement> = React.createRef();
+export type ResizerProps = {
+  onResize: (rowHeight: number) => void;
+  rowHeight: number;
+};
 
+export default class Resizer extends PureComponent<ResizerProps> {
   render() {
     const { onResize, rowHeight } = this.props;
-    console.log(this.props);
+
     return (
       <DropdownMenu
         trigger={

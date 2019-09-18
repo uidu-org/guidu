@@ -4,7 +4,7 @@ import React from 'react';
 
 export default () => ({
   type: ['numericColumn', 'currency'],
-  filter: 'agTextColumnFilter',
+  filter: 'agNumberColumnFilter',
   valueFormatter: ({ value }) => value,
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faEuroSign} /> },
 });

@@ -33,7 +33,7 @@ export default class Item extends PureComponent<any> {
           width: style.width - gutterSize,
           height: style.height - gutterSize,
         }}
-        key={item.id}
+        key={item.data.id}
       >
         <div className="card">
           <ItemHeader cover={cover} avatar={avatar} item={item} />
@@ -57,7 +57,7 @@ export default class Item extends PureComponent<any> {
                 .map(column => [
                   <dt
                     className="small text-muted text-truncate mt-3"
-                    key={`${item.id}-${column.field}-name`}
+                    key={`${item.data.id}-${column.field}-name`}
                   >
                     {column.headerComponentParams &&
                     column.headerComponentParams.menuIcon ? (
@@ -69,7 +69,7 @@ export default class Item extends PureComponent<any> {
                   </dt>,
                   <dd
                     className="mb-0 text-truncate"
-                    key={`${item.id}-${column.field}-value`}
+                    key={`${item.data.id}-${column.field}-value`}
                   >
                     {valueRenderer(item.data, column)}
                   </dd>,

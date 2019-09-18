@@ -21,13 +21,11 @@ export default class Sorter extends Component<any> {
   handleSubmit = async model => {
     const { onChange } = this.props;
     const response = await (this.form.current as any).form.getModel();
-    console.log('groupers from form', response.groupers);
     onChange(response.groupers || []);
   };
 
   render() {
     const { groupers, fields } = this.props;
-    console.log('groupers from props', groupers);
     const groupersCount = groupers.length;
     return (
       <DropdownMenu
@@ -61,7 +59,6 @@ export default class Sorter extends Component<any> {
                         className="btn btn-sm p-0 mr-2 d-flex align-items-center"
                         onClick={() => {
                           pull((value: any) => {
-                            console.log(value);
                             return value.colId.colId === grouper.colId.colId;
                           });
                           (this.form.current as any).form.submit();
@@ -103,7 +100,6 @@ export default class Sorter extends Component<any> {
                         // https://github.com/OpusCapita/react-select/blob/2049ed35851b7f547a604995606384f307ca1675/src/client/components/MenuPortal__fix.react.js
                         menuPosition="fixed"
                         onChange={() => {
-                          console.log('changed');
                           (this.form.current as any).form.submit();
                         }}
                         styles={{

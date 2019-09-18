@@ -12,7 +12,6 @@ export default class CalendarNavigator extends Component<any> {
 
   render() {
     const { onNext, onPrev, label } = this.props;
-    console.log(this.props);
 
     return (
       <div className="d-flex align-items-center">
