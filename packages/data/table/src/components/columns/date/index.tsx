@@ -10,4 +10,6 @@ export default () => ({
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: <FontAwesomeIcon icon={faCalendarDay} /> },
   valueFormatter: ({ value }) => moment(value).format('L'),
+  cellClass: 'justify-content-center',
+  headerClass: 'text-center',
 });

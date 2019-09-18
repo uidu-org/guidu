@@ -135,7 +135,7 @@ export default class DashboardManager extends Component<
           xs: 480,
           xxs: 0,
         }}
-        cols={{ lg: 4, md: 4, sm: 4, xs: 4, xxs: 1 } as any}
+        cols={{ lg: 4, md: 4, sm: 4, xs: 1, xxs: 1 } as any}
         margin={[24, 24]}
         isResizable={false}
         {...gridProps}

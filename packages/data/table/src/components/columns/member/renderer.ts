@@ -4,6 +4,7 @@ function MyCellRenderer() {}
 MyCellRenderer.prototype.init = function({ value, avatar, data }) {
   // create the cell
   this.eGui = document.createElement('div');
+  this.eGui.style = 'min-width: 0;';
   this.eGui.innerHTML = `<span class="d-flex align-items-center"><img class="rounded-circle mr-2" style="width: 24px" src=${avatar(
     data,
   )} /><span class="text-truncate">${value}</span></span>`;

@@ -5,6 +5,7 @@ MyCellRenderer.prototype.init = function(params) {
   console.log(params);
   // create the cell
   this.eGui = document.createElement('div');
+  this.eGui.style = 'min-width: 0;';
   this.eGui.innerHTML = `<span class="d-flex align-items-center justify-content-between"><span class="flex-grow-1">${params.value ||
     '-'}</span>${
     params.value

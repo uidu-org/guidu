@@ -67,6 +67,7 @@ export default class Item extends PureComponent<any> {
                 position: 'sticky',
                 left: '1rem',
                 width: 'fit-content',
+                maxWidth: `calc('100vw - 100px')`,
               }}
             >
               {valueRenderer(item.data, primary)}

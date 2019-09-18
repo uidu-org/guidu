@@ -5,6 +5,7 @@ MyCellRenderer.prototype.init = function(params) {
   console.log(params);
   // create the cell
   this.eGui = document.createElement('div');
+  this.eGui.style = 'min-width: 0;';
   this.eGui.innerHTML = `<div class="progress" style="height: 5px;"><div class="progress-bar" role="progressbar" style="width: ${params.value *
     100}%;" aria-valuenow="${params.value *
     100}" aria-valuemin="0" aria-valuemax="100"></div></div>`;
