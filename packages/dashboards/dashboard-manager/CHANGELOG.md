@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.1.15
+
+### Patch Changes
+
+- b90aa9e: Fix table header and alignment
+
 ## 0.1.14
 
 ### Patch Changes

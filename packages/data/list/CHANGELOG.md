@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 0.1.14
+
+### Patch Changes
+
+- b90aa9e: Fix table header and alignment
+
+- Updated dependencies [b90aa9e]
+  - @uidu/table@0.1.23
+
 ## 0.1.13
 
 ### Patch Changes
