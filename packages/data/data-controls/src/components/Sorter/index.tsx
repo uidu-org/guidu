@@ -16,6 +16,7 @@ type SorterProps = {};
 export default class Sorter extends Component<any> {
   static defaultProps = {
     onChange: console.log,
+    sorters: [],
   };
 
   private form = React.createRef();

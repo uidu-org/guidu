@@ -36,13 +36,11 @@ export const availableColumns = [
     colId: 'member',
     field: 'member',
     ...defaultColumn(),
-    ...memberColumn({}),
+    ...memberColumn({ avatar: data => data.avatar }),
     ...primaryColumn(),
-    pinned: 'left',
     headerName: 'Donor',
-    valueGetter: props => {
-      console.log(props);
-      return props.data.member.email;
+    valueGetter: ({ data }) => {
+      return data.member.email;
     },
   },
   {
