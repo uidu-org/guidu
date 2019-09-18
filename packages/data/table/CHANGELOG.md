@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.23
+
+### Patch Changes
+
+- b90aa9e: Fix table header and alignment
+
 ## 0.1.22
 
 ### Patch Changes
