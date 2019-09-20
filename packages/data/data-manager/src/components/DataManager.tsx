@@ -67,6 +67,11 @@ const defaultAvailableControls = {
 };
 
 export default class DataManager extends Component<DataManagerProps, any> {
+  static defaultProps = {
+    onGridReady: _params => {},
+    onFirstDataRendered: _params => {},
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -83,40 +88,57 @@ export default class DataManager extends Component<DataManagerProps, any> {
   private gridApi = null;
   private gridColumnApi = null;
 
-  onGridReady = ({ api, columnApi }) => {
-    const { currentView } = this.props;
+  onGridReady = params => {
+    const { api, columnApi } = params;
+    const { onGridReady } = this.props;
     this.gridApi = api;
     this.gridColumnApi = columnApi;
+    this.resizeTable();
+
+    this.setState(
+      {
+        data: api.getModel().rowsToDisplay,
+      },
+      () => {
+        onGridReady(params);
+      },
+    );
+  };
+
+  resizeTable = () => {
+    const { currentView } = this.props;
+    const { gridApi, gridColumnApi } = this;
     if (currentView.kind === 'table') {
-      columnApi.autoSizeAllColumns();
-      api.sizeColumnsToFit();
+      gridColumnApi.autoSizeAllColumns();
+      gridApi.sizeColumnsToFit();
       window.addEventListener('resize', function() {
         setTimeout(function() {
-          api.sizeColumnsToFit();
+          gridApi.sizeColumnsToFit();
         });
       });
 
-      api.sizeColumnsToFit();
+      gridApi.sizeColumnsToFit();
     }
-
-    this.setState({
-      data: api.getModel().rowsToDisplay,
-    });
   };
 
   toggleColumn = (name, active) => {
     this.gridColumnApi.setColumnVisible(name, active);
-    this.setState({
-      columnDefs: this.state.columnDefs.map(columnDef => {
-        if (columnDef.colId === name) {
-          return {
-            ...columnDef,
-            hide: !active,
-          };
-        }
-        return columnDef;
-      }),
-    });
+    this.setState(
+      {
+        columnDefs: this.state.columnDefs.map(columnDef => {
+          if (columnDef.colId === name) {
+            return {
+              ...columnDef,
+              hide: !active,
+            };
+          }
+          return columnDef;
+        }),
+      },
+      () => {
+        this.resizeTable();
+      },
+    );
   };
 
   moveColumn = ({ oldIndex, newIndex }) => {
@@ -200,7 +222,12 @@ export default class DataManager extends Component<DataManagerProps, any> {
       gallery: {},
     },
   }) => {
-    const { rowData, onItemClick, currentView } = this.props;
+    const {
+      rowData,
+      onItemClick,
+      currentView,
+      onFirstDataRendered,
+    } = this.props;
     const { data, columnDefs, rowHeight } = this.state;
 
     if (!rowData) {
@@ -214,6 +241,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
+        onFirstDataRendered={onFirstDataRendered}
         columnDefs={columnDefs.filter(
           column => column.type !== 'cover' && column.type !== 'avatar',
         )}

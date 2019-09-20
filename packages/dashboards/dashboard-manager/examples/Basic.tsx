@@ -1,5 +1,5 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';
 import { UserCheck } from 'react-feather';
 import DashboardManager from '../';
@@ -36,46 +36,48 @@ export default class Basic extends Component<any, any> {
         gridProps={{ isDraggable: true, onLayoutChange: console.log }}
       >
         {({ renderControls, renderBlocks, renderStaticBlocks }) => (
-          <Fragment>
+          <>
             <ShellHeader className="border-bottom">
               {renderControls({})}
             </ShellHeader>
             <ShellBody scrollable>
-              {renderStaticBlocks({
-                loaded,
-                blocks: [
-                  {
-                    kind: 'Area',
-                    namespace: 'donations',
-                    areas: [
-                      {
-                        label: 'Raccolta',
-                        name: 'donationsAmount',
-                        rollup: ['sum', 'amount'],
-                        formatter: 'currency',
-                      },
-                      {
-                        label: 'Donazioni',
-                        name: 'donationsCount',
-                        rollup: ['count', 'id'],
-                        formatter: 'integer',
-                      },
-                      {
-                        label: 'Donatori',
-                        name: 'donorsCount',
-                        rollup: ['count', 'contact.id'],
-                        formatter: 'integer',
-                      },
-                      {
-                        label: 'Media donazione',
-                        name: 'donationsAverage',
-                        rollup: ['mean', 'amount'],
-                        formatter: 'currency',
-                      },
-                    ],
-                  },
-                ],
-              })}
+              <div className="py-3 py-md-0 px-3" style={{ minHeight: '20rem' }}>
+                {renderStaticBlocks({
+                  loaded: loaded,
+                  blocks: [
+                    {
+                      kind: 'Area',
+                      namespace: 'donations',
+                      areas: [
+                        {
+                          label: 'Raccolta',
+                          name: 'donationsAmount',
+                          rollup: ['sum', 'amount'],
+                          formatter: 'currency',
+                        },
+                        {
+                          label: 'Donazioni',
+                          name: 'donationsCount',
+                          rollup: ['count', 'id'],
+                          formatter: 'integer',
+                        },
+                        {
+                          label: 'Donatori',
+                          name: 'donorsCount',
+                          rollup: ['count', 'contact.id'],
+                          formatter: 'integer',
+                        },
+                        {
+                          label: 'Media donazione',
+                          name: 'donationsAverage',
+                          rollup: ['mean', 'amount'],
+                          formatter: 'currency',
+                        },
+                      ],
+                    },
+                  ],
+                })}
+              </div>
               <div className="container px-0">
                 <div className="row">
                   <div className="col-12">
@@ -271,7 +273,7 @@ export default class Basic extends Component<any, any> {
                 </div>
               </div>
             </ShellBody>
-          </Fragment>
+          </>
         )}
       </DashboardManager>
     );

@@ -1,7 +1,6 @@
 import loadable from '@loadable/component';
 import React, { PureComponent } from 'react';
 import { BlocksProps } from '../types';
-import Loader from './Loader';
 
 const LoadableBlock = loadable(props => import(`./${props.kind}`));
 
@@ -13,7 +12,6 @@ export const renderBlock = (
   return (
     <LoadableBlock
       kind={kind}
-      fallback={<Loader />}
       rowData={rowData}
       comparatorData={comparatorData}
       namespace={namespace}

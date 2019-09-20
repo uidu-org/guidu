@@ -8,8 +8,24 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
+import { Transition } from 'react-transition-group';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
+
+const duration = 300;
+
+const defaultStyle = {
+  transition: `opacity ${duration}ms ease-in-out`,
+  opacity: 0,
+  height: '100%',
+};
+
+const transitionStyles = {
+  entering: { opacity: 1 },
+  entered: { opacity: 1 },
+  exiting: { opacity: 0 },
+  exited: { opacity: 0 },
+};
 
 const dataViews = [
   {
@@ -32,6 +48,7 @@ export default class Basic extends Component<any, any> {
       currentView: dataViews[0],
       columnDefs: [...availableColumns],
       loaded: false,
+      rendered: false,
     };
   }
 
@@ -72,6 +89,7 @@ export default class Basic extends Component<any, any> {
         dataViews={this.state.dataViews}
         onViewChange={this.toggleView}
         onViewAdd={this.addView}
+        onFirstDataRendered={() => this.setState({ rendered: true })}
       >
         {({ renderControls, renderView }) => (
           <>
@@ -101,17 +119,28 @@ export default class Basic extends Component<any, any> {
                 <ShellBodyWithSpinner></ShellBodyWithSpinner>
               ) : (
                 <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
-                  {renderView({
-                    viewProps: {
-                      gallery: {
-                        gutterSize: 24,
-                        columnCount: 4,
-                      },
-                      list: {
-                        rowHeight: 128,
-                      },
-                    },
-                  })}
+                  <Transition in={this.state.rendered} timeout={duration}>
+                    {state => (
+                      <div
+                        style={{
+                          ...defaultStyle,
+                          ...transitionStyles[state],
+                        }}
+                      >
+                        {renderView({
+                          viewProps: {
+                            gallery: {
+                              gutterSize: 24,
+                              columnCount: 4,
+                            },
+                            list: {
+                              rowHeight: 128,
+                            },
+                          },
+                        })}
+                      </div>
+                    )}
+                  </Transition>
                 </ShellBodyWithSidebar>
               )}
             </ShellBody>

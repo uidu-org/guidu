@@ -6,6 +6,8 @@ export type DataManagerProps = {
   currentView?: DataView;
   columnDefs: Array<any>;
   rowData: Array<any>;
+  onGridReady?: (params) => void;
+  onFirstDataRendered?: (params) => void;
   onItemClick?: (item) => void;
   onViewChange?: (item) => void;
   onViewAdd?: (item) => void;

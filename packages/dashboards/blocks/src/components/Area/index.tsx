@@ -63,7 +63,12 @@ export default class AreasBlock extends PureComponent<any> {
     } = this.props;
 
     if (!loaded) {
-      return <Loader className="border-0 bg-light shadow-none" />;
+      return (
+        <Loader
+          className="border-0 shadow-none"
+          style={{ minHeight: '20rem' }}
+        />
+      );
     }
 
     console.log(this.props);
