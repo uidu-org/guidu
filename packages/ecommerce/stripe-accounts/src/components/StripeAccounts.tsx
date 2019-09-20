@@ -216,6 +216,7 @@ class StripeAccounts extends PureComponent<any, any> {
     console.log(this.state);
 
     return (
+      // @ts-ignore
       <Stepper defaultStep="business" scrollElement={scrollElement}>
         {({ getStepProps, jumpToStep }) => (
           <>
