@@ -18,11 +18,11 @@
     "@uidu/spinner": "^0.1.11",
     "@uidu/table": "^0.1.24",
     "react-media": "^1.9.2",
-    "react-sortable-hoc": "^1.9.1"
+    "react-sortable-hoc": "^1.9.1",
+    "react-transition-group": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.33",
-    "react-transition-group": "^4.0.0"
+    "@uidu/docs": "^0.1.33"
   },
   "uidu:src": "index.ts"
 }
