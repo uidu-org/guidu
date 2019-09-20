@@ -220,6 +220,8 @@ export default class DataManager extends Component<DataManagerProps, any> {
         rowData={rowData}
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
+        onRowClicked={onItemClick}
+        rowDoubleClicked={() => null}
         rowSelection="multiple"
         suppressRowClickSelection
       />
