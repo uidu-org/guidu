@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.25
+
+### Patch Changes
+
+- fd56261: Do not load table asyn
+
 ## 0.1.24
 
 ### Patch Changes
