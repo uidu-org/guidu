@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.1.15
+
+### Patch Changes
+
+- f221d6b: Better areas loading, onGridReady props for data-manager
+
 ## 0.1.14
 
 ### Patch Changes
