@@ -1,5 +1,12 @@
 # @uidu/data-manager
 
+## 0.1.21
+
+### Patch Changes
+
+- f221d6b: Better areas loading, onGridReady props for data-manager
+- 3c09d6a: Export data manager fade
+
 ## 0.1.20
 
 ### Patch Changes

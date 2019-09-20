@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.1.16
+
+### Patch Changes
+
+- f221d6b: Better areas loading, onGridReady props for data-manager
+
+- Updated dependencies [f221d6b]
+  - @uidu/blocks@0.1.15
+
 ## 0.1.15
 
 ### Patch Changes
