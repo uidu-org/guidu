@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.1.20
+
+### Patch Changes
+
+- 8a66618: Add on item click to table
+
 ## 0.1.19
 
 ### Patch Changes
