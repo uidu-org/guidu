@@ -1,6 +1,5 @@
 import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
-import { ChevronsRight } from 'react-feather';
 import { Transition } from 'react-transition-group';
 import GlobalItem from '../GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
@@ -119,7 +118,7 @@ export default class GlobalNavigation extends PureComponent<
                   {...footerItem}
                 />
               ))}
-              {showOverlay && (
+              {/* {showOverlay && (
                 <GlobalItem
                   onClick={e => {
                     e.preventDefault();
@@ -128,7 +127,7 @@ export default class GlobalNavigation extends PureComponent<
                 >
                   <ChevronsRight />
                 </GlobalItem>
-              )}
+              )} */}
             </ShellFooter>
           )}
         </ShellSidebar>
