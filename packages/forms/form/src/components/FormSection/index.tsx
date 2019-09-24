@@ -1,7 +1,13 @@
 import React from 'react';
 import Media from 'react-media';
 
-const FormSection = ({ name, description, children, isFirst, isLast }) => (
+const FormSection = ({
+  name,
+  description,
+  children,
+  isFirst = false,
+  isLast = false,
+}) => (
   <Media query={{ maxWidth: 768 }}>
     {matches => {
       if (matches) {
