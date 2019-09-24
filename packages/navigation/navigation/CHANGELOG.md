@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.24
+
+### Patch Changes
+
+- afc40e7: Remove arrow to close tab"
+
 ## 0.1.23
 
 ### Patch Changes
