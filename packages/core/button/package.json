@@ -9,7 +9,6 @@
   "types": "index.d.ts",
   "dependencies": {
     "@emotion/core": "^10.0.10",
-    "@types/react-router-dom": "^4.3.2",
     "@uidu/analytics": "^0.1.14",
     "@uidu/spinner": "^0.1.11",
     "@uidu/theme": "^0.1.17",
@@ -18,7 +17,7 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^16.0.3",
-    "@atlaskit/logo": "^9.2.7",
+    "@atlaskit/logo": "^12.2.0",
     "@uidu/checkbox": "^0.1.51",
     "@uidu/docs": "^0.1.33",
     "@uidu/form": "^0.1.36",

@@ -5,8 +5,8 @@
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "@atlaskit/adf-schema": "^3.1.2",
-    "@atlaskit/adf-utils": "^6.1.0",
+    "@atlaskit/adf-schema": "^4.1.0",
+    "@atlaskit/adf-utils": "^7.1.0",
     "@atlaskit/analytics-gas-types": "^3.2.4",
     "@atlaskit/calendar": "^8.0.2",
     "@atlaskit/date": "^0.7.0",
