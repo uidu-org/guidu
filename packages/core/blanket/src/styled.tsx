@@ -1,8 +1,9 @@
-// @flow
+import { DN90A, N100A } from '@uidu/theme/colors';
+import { themed } from '@uidu/theme/components';
+import { layers } from '@uidu/theme/constants';
 import styled from 'styled-components';
-import { colors, themed, layers } from '@uidu/theme';
 
-const backgroundColor = themed({ light: colors.N100A, dark: colors.DN90A });
+const backgroundColor = themed({ light: N100A, dark: DN90A });
 export const opacity = (p: any) => (p.isTinted ? 1 : 0);
 export const pointerEvents = (p: any) =>
   p.canClickThrough ? 'none' : 'initial';

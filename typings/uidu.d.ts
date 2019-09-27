@@ -1,7 +1,6 @@
 /**
  * Tells TypeScript to ignore flow components by declaring them as empty modules
  */
-declare module '@uidu/blanket';
 declare module '@uidu/calendar';
 declare module '@uidu/codemod-util-shared-styles-to-theme';
 declare module '@uidu/comment';
@@ -29,8 +28,6 @@ declare module '@uidu/lozenge';
 declare module '@uidu/mobile-header';
 declare module '@uidu/modal-dialog';
 declare module '@uidu/multi-select';
-declare module '@uidu/navigation-next';
-declare module '@uidu/navigation';
 declare module '@uidu/nps';
 declare module '@uidu/panel';
 declare module '@uidu/polyfills';

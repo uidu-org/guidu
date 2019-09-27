@@ -1,14 +1,13 @@
-// @flow
-import React, { PureComponent } from 'react';
 import Button from '@uidu/button';
+import React from 'react';
 import Blanket from '../src';
 
 type State = {
-  canClickThrough: boolean,
-  isBlanketVisible: boolean,
+  canClickThrough: boolean;
+  isBlanketVisible: boolean;
 };
 
-export default class BasicExample extends PureComponent<void, State> {
+export default class BasicExample extends React.PureComponent<void, State> {
   state = {
     isBlanketVisible: false,
     canClickThrough: true,
@@ -27,7 +26,6 @@ export default class BasicExample extends PureComponent<void, State> {
           {!this.state.isBlanketVisible ? 'Show Blanket' : 'Hide Blanket'}
         </Button>
         <p>
-          {' '}
           Open the blanket with canClickThrough enabled & click the blanket to
           dismiss it. With canClickThrough enabled onBlanketClicked is not
           called & elements underneath the blanket can be interacted with

@@ -1,23 +1,23 @@
-// @flow
-import React, { PureComponent } from 'react';
 import {
-  withAnalyticsEvents,
-  withAnalyticsContext,
   createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
+  WithAnalyticsEventsProps,
 } from '@uidu/analytics';
-import { name as packageName, version as packageVersion } from './version.json';
+import React from 'react';
 import Div from './styled';
+import { name as packageName, version as packageVersion } from './version.json';
 
-type Props = {
+interface Props extends WithAnalyticsEventsProps {
   /** Whether mouse events can pierce the blanket. If true, onBlanketClicked will not be fired */
-  canClickThrough: boolean,
+  canClickThrough?: boolean;
   /** Whether the blanket has a tinted background color. */
-  isTinted: boolean,
+  isTinted?: boolean;
   /** Handler function to be called when the blanket is clicked */
-  onBlanketClicked: (event: SyntheticMouseEvent<*>) => void,
-};
+  onBlanketClicked?: (event: React.MouseEvent<HTMLDivElement>) => void;
+}
 
-class Blanket extends PureComponent<Props, void> {
+class Blanket extends React.Component<Props, {}> {
   static defaultProps = {
     canClickThrough: false,
     isTinted: false,
@@ -34,7 +34,7 @@ class Blanket extends PureComponent<Props, void> {
 }
 
 export { Blanket as BlanketWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'blanket',

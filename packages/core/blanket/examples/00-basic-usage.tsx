@@ -1,15 +1,14 @@
-// @flow
-import React, { PureComponent } from 'react';
 import Button from '@uidu/button';
+import React from 'react';
 import Blanket from '../src';
 
 type State = {
-  onEventResult: string,
-  canClickThrough: boolean,
-  isBlanketVisible: boolean,
+  onEventResult: string;
+  canClickThrough: boolean;
+  isBlanketVisible: boolean;
 };
 
-export default class BasicExample extends PureComponent<void, State> {
+export default class BasicExample extends React.PureComponent<void, State> {
   state = {
     onEventResult: 'Blanket isTinted:false canClickThrough:true',
     canClickThrough: true,
