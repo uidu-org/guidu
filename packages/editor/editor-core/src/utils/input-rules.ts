@@ -47,14 +47,6 @@ export function createInputRule(
 // This can be used in an input rule regex to be able to include or exclude such nodes.
 export const leafNodeReplacementCharacter = '\ufffc';
 
-/* eslint-disable no-bitwise */
-export const uuid = () =>
-  'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-    const r = (Math.random() * 16) | 0;
-    return (c === 'x' ? r : (r & 0x3) | 0x8).toString(16);
-  });
-/* eslint-enable no-bitwise */
-
 const hasUnsupportedMarkForBlockInputRule = (
   state: EditorState,
   start: number,

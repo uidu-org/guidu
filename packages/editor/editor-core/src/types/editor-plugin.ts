@@ -79,9 +79,9 @@ export type PMPlugin = {
 
 export interface EditorPlugin {
   /**
-   * Name of a plugin, that other plugins can use to provide options to it.
+   * Name of a plugin, that other plugins can use to provide options to it or exclude via a preset.
    */
-  name?: string;
+  name: string;
 
   /**
    * Options that will be passed to a plugin with a corresponding name if it exists and enabled.

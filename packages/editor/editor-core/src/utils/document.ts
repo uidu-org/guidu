@@ -239,7 +239,8 @@ export function processRawValue(
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(
-      `Error processing value: "${JSON.stringify(node)}" – ${e.message}`,
+      `Error processing document:\n${e.message}\n\n`,
+      JSON.stringify(node),
     );
     return undefined;
   }
