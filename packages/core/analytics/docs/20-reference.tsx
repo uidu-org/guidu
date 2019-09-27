@@ -1,6 +1,5 @@
-// @flow
-import React from 'react';
 import { code, md, Props } from '@uidu/docs';
+import React from 'react';
 
 export default md`
 
@@ -9,10 +8,13 @@ export default md`
   * [UIAnalyticsEvent](#UIAnalyticsEvent)
   * [withAnalyticsEvents](#withAnalyticsEvents)
   * [AnalyticsListener](#AnalyticsListener)
+  * [AnalyticsErrorBoundary](#AnalyticsErrorBoundary)
   * [AnalyticsContext](#AnalyticsContext)
   * [withAnalyticsContext](#withAnalyticsContext)
   * [AnalyticsEvent](#AnalyticsEvent)
   * [createAndFireEvent](#createAndFireEvent)
+  * [useAnalyticsEvents](#useAnalyticsEvents)
+  * [useCallbackWithAnalytics](#useCallbackWithAnalytics)
 
 
   <a name="UIAnalyticsEvent"></a>
@@ -63,10 +65,10 @@ update(
 
   &nbsp;
 
-  ${code`import { withAnalyticsEvents } from '@uidu/analytics';`}
+  ${code`import { withAnalyticsEvents } from '@atlaskit/analytics-next';`}
 
   A HOC which provides the wrapped component with a method for creating \`UIAnalyticsEvent\`s, via \`props.createAnalyticsEvent\`.
-  See the section on [creating your own events](/packages/core/analytics/docs/concepts#creating-your-own-events)
+  See the section on [creating your own events](/packages/core/analytics-next/docs/concepts#creating-your-own-events)
   in the Concepts page for a thorough explanation of how to use this component.
 
   Usage:
@@ -103,7 +105,7 @@ ${code`
 
   &nbsp;
 
-  ${code`import { AnalyticsListener } from '@uidu/analytics';`}
+  ${code`import { AnalyticsListener } from '@atlaskit/analytics-next';`}
 
   An \`AnalyticsListener\` wraps your app and listens to any events which are fired within it.
 
@@ -114,12 +116,68 @@ ${code`
     />
   )}
 
+
+  <a name="AnalyticsErrorBoundary"></a>
+  ### AnalyticsErrorBoundary
+
+  &nbsp;
+
+  ${code`import { AnalyticsErrorBoundary } from '@atlaskit/analytics-next';`}
+
+  Wrap part of your tree in \`AnalyticsErrorBoundary\` to provide error boundary track to any events created beneath it.
+
+  When a component is created verifies all of the components above it in the tree and any error will be catched and tracked automatically.
+
+  It's up to the developer pass this information when you're adding the component.
+
+  Usage:
+
+${code`
+import {
+  AnalyticsListener,
+  AnalyticsErrorBoundary
+} from '@atlaskit/analytics-next';
+
+// Wrapping your component with the component
+class ButtonWithAnalyticsErrorBoundary extends React.Component {
+  handleEvent = (analyticsEvent) => {
+    const { payload, context } = analyticsEvent;
+    console.log('Received event:', analyticsEvent, { payload, context });
+  };
+
+  render() {
+    return (
+      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+        <AnalyticsErrorBoundary
+          channel="atlaskit"
+          data={{
+            componentName: 'button',
+            packageName: '@atlaskit/button',
+            componentVersion: '999.9.9',
+          }}
+        >
+          <Button>Click me</Button>
+        </AnalyticsErrorBoundary>
+      </AnalyticsListener>
+    )
+  }
+}
+`}
+
+  ${(
+    <Props
+      heading="AnalyticsErrorBoundary Props"
+      props={require('!!extract-react-types-loader!../src/AnalyticsErrorBoundary')}
+    />
+  )}
+
+
   <a name="AnalyticsContext"></a>
   ### AnalyticsContext
 
   &nbsp;
 
-  ${code`import { AnalyticsContext } from '@uidu/analytics';`}
+  ${code`import { AnalyticsContext } from '@atlaskit/analytics-next';`}
 
   Wrap part of your tree in \`AnalyticsContext\` to provide data to any events created beneath it. When an event is created it snapshots all of the \`AnalyticsContext\`s above it in the tree and creates an array from the data. It's up to you to parse this information when you handle the event.
 
@@ -135,7 +193,7 @@ ${code`
 
   &nbsp;
 
-  ${code`import { withAnalyticsContext } from '@uidu/analytics';`}
+  ${code`import { withAnalyticsContext } from '@atlaskit/analytics-next';`}
 
   This HOC wraps a component in an \`AnalyticsContext\` and allows you to provide a default \`data\` value for it.
 
@@ -170,7 +228,7 @@ const Form = (props) => (
 
   &nbsp;
 
-  ${code`import { AnalyticsEvent } from '@uidu/analytics';`}
+  ${code`import { AnalyticsEvent } from '@atlaskit/analytics-next';`}
 
   A more generic type of event which only contains a payload and an update method. If you want to create an event outside of the UI you can create an instance of this class directly. Please see [UIAnalyticsEvent](#UIAnalyticsEvent) for more information.
 
@@ -179,7 +237,7 @@ const Form = (props) => (
 
   &nbsp;
 
-  ${code`import { createAndFireEvent } from '@uidu/analytics';`}
+  ${code`import { createAndFireEvent } from '@atlaskit/analytics-next';`}
 
   A helper to make firing an analytics event on different channels easier.
 
@@ -187,10 +245,50 @@ const Form = (props) => (
 
 ${code`
 const ButtonWithAnalytics = withAnalyticsEvents({
-  onClick: createAndFireEvent('uidu')({ action: 'click' }),
+  onClick: createAndFireEvent('atlaskit')({ action: 'click' }),
 })(Button);
 `}
 
-This will create an event with the payload, fire it on the \`'uidu'\`
+This will create an event with the payload, fire it on the \`'atlaskit'\`
 channel and return a clone of the event.
+
+<a name="useAnalyticsEvents"></a>
+### useAnalyticsEvents
+
+This custom React hook provides a method \`createAnalyticsEvent\` for creating \`UIAnalyticsEvent\`s. This hook can be used as a replacement for the \`withAnalyticsEvents\` HOC. See the section on [creating your own events](/packages/core/analytics-next/docs/concepts#creating-your-own-events)
+in the Concepts page for a thorough explanation of how to use this hook.
+
+Usage:
+
+${code`
+const { createAnalyticsEvent } = useAnalyticsEvents();
+
+const onClick = event => {
+  createAnalyticsEvent({
+    // payload
+  }).fire();
+
+  // onClick logic
+}
+`}
+
+<a name="useCallbackWithAnalytics"></a>
+### useCallbackWithAnalytics
+
+This custom React hook takes a callback function and an event payload, and returns a callback to fire the event and call the provided function. The hooks stores the input and memoizes the return value to optimize performance.
+
+Usage:
+
+${code`
+const handleClick = useCallbackWithAnalytics(
+  event => {
+    // onClick logic
+  }, {
+    action: 'click',
+  }
+);
+
+return <Button onClick={handleClick}>Click Me<Button>
+`}
+
 `;

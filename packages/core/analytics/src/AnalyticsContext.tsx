@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { Children, Component } from 'react';
+import { AnalyticsReactContext } from './AnalyticsReactContext';
 
 const ContextTypes = {
   getAtlaskitAnalyticsContext: PropTypes.func,
+  getAtlaskitAnalyticsEventHandlers: PropTypes.func,
 };
 
 interface Props {
@@ -13,9 +15,22 @@ interface Props {
   data: unknown;
 }
 
-export default class AnalyticsContext extends Component<Props> {
+interface State {
+  getAtlaskitAnalyticsContext: () => any[];
+  getAtlaskitAnalyticsEventHandlers: () => any[];
+}
+
+class AnalyticsContext extends Component<Props, State> {
   static contextTypes = ContextTypes;
   static childContextTypes = ContextTypes;
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      getAtlaskitAnalyticsContext: this.getAnalyticsContext,
+      getAtlaskitAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
+    };
+  }
 
   getChildContext = () => ({
     getAtlaskitAnalyticsContext: this.getAnalyticsContext,
@@ -32,7 +47,23 @@ export default class AnalyticsContext extends Component<Props> {
     return [...ancestorData, data];
   };
 
+  getAnalyticsEventHandlers = () => {
+    const { getAtlaskitAnalyticsEventHandlers } = this.context;
+    const ancestorHandlers =
+      (typeof getAtlaskitAnalyticsEventHandlers === 'function' &&
+        getAtlaskitAnalyticsEventHandlers()) ||
+      [];
+    return ancestorHandlers;
+  };
+
   render() {
-    return Children.only(this.props.children);
+    const { children } = this.props;
+    return (
+      <AnalyticsReactContext.Provider value={this.state}>
+        {Children.only(children)}
+      </AnalyticsReactContext.Provider>
+    );
   }
 }
+
+export default AnalyticsContext;

@@ -1,28 +1,26 @@
-// @flow
-import React from 'react';
 import { code, md } from '@uidu/docs';
-import { instrumentedComponents } from '../src/AnalyticsEventMap';
-
-type InstrumentedItem = {
-  packageName: string,
-  component: string,
-  actionSubject: string,
-  prop: string,
-  payload: Object,
-};
+import React from 'react';
+import {
+  instrumentedComponents,
+  InstrumentedItem,
+} from '../src/AnalyticsEventMap';
 
 const scrubRepeatedInfo = (
   item: InstrumentedItem,
   i: number,
   items: InstrumentedItem[],
 ) => {
-  const prev = i > 0 ? items[i - 1] : {};
+  const prev = i > 0 ? items[i - 1] : undefined;
+
   return {
     ...item,
-    packageName: item.packageName !== prev.packageName ? item.packageName : '',
-    component: item.component !== prev.component ? item.component : '',
+    packageName:
+      prev && item.packageName !== prev.packageName ? item.packageName : '',
+    component: prev && item.component !== prev.component ? item.component : '',
     actionSubject:
-      item.actionSubject !== prev.actionSubject ? item.actionSubject : '',
+      prev && item.actionSubject !== prev.actionSubject
+        ? item.actionSubject
+        : '',
     key: `${item.packageName}-${item.component}-${item.prop}`,
   };
 };
@@ -66,14 +64,14 @@ and recording these events in which ever way you like.
 
   ### SaveButton.js
 ${code`
-import Button from '@uidu/button';
+import Button from '@atlaskit/button';
 
 const SaveButton = ({ onClick }) => (
   <Button onClick={onClick}>Save</Button>
 );
 `}
 
-  Button provides you a [UIAnalyticsEvent](/packages/core/analytics/docs/reference#UIAnalyticsEvent) as the last arg
+  Button provides you a [UIAnalyticsEvent](/packages/core/analytics-next/docs/reference#UIAnalyticsEvent) as the last arg
   to the onClick hander. This is the pattern used for all callback props that
   support analytics.
 
@@ -81,7 +79,7 @@ const SaveButton = ({ onClick }) => (
 
   ### SaveButton.js
 ${code`
-import Button from '@uidu/button';
+import Button from '@atlaskit/button';
 
 const SaveButton = ({ onClick }) => (
   <Button
@@ -103,7 +101,7 @@ const SaveButton = ({ onClick }) => (
 
   ### App.js
 ${code`
-import { AnalyticsListener } from '@uidu/analytics';
+import { AnalyticsListener } from '@atlaskit/analytics-next';
 import SaveButton from './SaveButton';
 
 const sendAnalytics = analytic => console.log(analytic);
@@ -120,10 +118,10 @@ const App = () => (
 
   That's it! Below are some links to handy resources.
 
-  * [More information on UIAnalyticsEvent](/packages/core/analytics/docs/reference#UIAnalyticsEvent)
+  * [More information on UIAnalyticsEvent](/packages/core/analytics-next/docs/reference#UIAnalyticsEvent)
   * [The list of instrumented components](#InstrumentedComponents)
-  * [Adding extra information to an analytics event](/packages/core/analytics/docs/concepts#adding-more-information-to-an-event)
-  * [Analytics component reference](/packages/core/analytics/docs/reference)
+  * [Adding extra information to an analytics event](/packages/core/analytics-next/docs/concepts#adding-more-information-to-an-event)
+  * [Analytics component reference](/packages/core/analytics-next/docs/reference)
 
   <a name="InstrumentedComponents"></a>
   ## Instrumented Components

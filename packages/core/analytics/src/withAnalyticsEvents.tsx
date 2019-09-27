@@ -1,3 +1,4 @@
+import { Omit } from '@atlaskit/type-helpers';
 import React from 'react';
 import AnalyticsContextConsumer from './AnalyticsContextConsumer';
 import { CreateEventMap, CreateUIAnalyticsEvent } from './types';
@@ -5,18 +6,23 @@ import { CreateEventMap, CreateUIAnalyticsEvent } from './types';
 export interface WithAnalyticsEventsProps {
   /**
    * You should not be accessing this prop under any circumstances.
-   * It is provided by `@uidu/analytics` and integrated in the component
+   * It is provided by `@atlaskit/analytics-next` and integrated in the component
    */
   createAnalyticsEvent?: CreateUIAnalyticsEvent;
+
+  ref?: React.Ref<any>;
 }
 
 const withAnalyticsEvents = (createEventMap?: CreateEventMap) => <
-  TOriginalProps extends {},
+  Props extends WithAnalyticsEventsProps,
   Component
 >(
-  WrappedComponent: React.JSXElementConstructor<TOriginalProps> & Component,
+  WrappedComponent: React.JSXElementConstructor<Props> & Component,
 ) => {
-  type WrappedProps = TOriginalProps & WithAnalyticsEventsProps;
+  type WrappedProps = JSX.LibraryManagedAttributes<
+    Component,
+    Omit<Props, keyof WithAnalyticsEventsProps>
+  >;
 
   const WithAnalyticsEvents = React.forwardRef<any, WrappedProps>(
     (props, ref) => (
@@ -25,9 +31,8 @@ const withAnalyticsEvents = (createEventMap?: CreateEventMap) => <
         wrappedComponentProps={props}
       >
         {({ createAnalyticsEvent, patchedEventProps }) => (
-          // @ts-ignore
           <WrappedComponent
-            {...(props as WrappedProps)}
+            {...(props as any)}
             {...patchedEventProps}
             createAnalyticsEvent={createAnalyticsEvent}
             ref={ref}
