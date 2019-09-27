@@ -1,6 +1,5 @@
-// @ts-ignore
 import { colors, themed, withTheme } from '@uidu/theme';
-import React from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../theme';
 import { AppearanceType, SizeType } from '../types';
@@ -38,7 +37,9 @@ export const Slot = ({
         <span
           style={{
             backgroundColor,
-            backgroundImage: backgroundImage ? `url(${backgroundImage})` : null,
+            backgroundImage: backgroundImage
+              ? `url(${backgroundImage})`
+              : undefined,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
@@ -56,12 +57,17 @@ export const Slot = ({
   </Theme.Consumer>
 );
 
-type SvgProps = {
+interface SvgProps {
   appearance: AppearanceType;
   isLoading: boolean;
   size: SizeType;
-  children: React.ReactNode;
-};
+  children: ReactNode;
+  viewBox?: string;
+  version?: string;
+  xmlns?: string;
+  role?: string;
+  'aria-label'?: string;
+}
 
 export const Svg = ({
   appearance,
@@ -69,7 +75,7 @@ export const Svg = ({
   children,
   isLoading,
   ...otherProps
-}: SvgProps & any) => (
+}: SvgProps) => (
   <Theme.Consumer appearance={appearance} isLoading={isLoading} size={size}>
     {({ backgroundColor, borderRadius }) => {
       return (

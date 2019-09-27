@@ -8,6 +8,13 @@ export { withPseudoState } from './hoc';
 // The below are exposed for use by avatarGroup
 export { AVATAR_SIZES, BORDER_WIDTH } from './styled/constants';
 export { getBorderRadius, getInnerStyles } from './styled/utils';
+// Theming is currently experimental.
 export { Theme, ThemeProps, ThemeTokens } from './theme';
 export { ThemeItem, ThemeItemTokens } from './theme/item';
-export { AvatarClickType, AvatarPropTypes, SizeType } from './types';
+export {
+  AppearanceType,
+  AvatarClickType,
+  AvatarPropTypes,
+  IndicatorSizeType,
+  SizeType,
+} from './types';

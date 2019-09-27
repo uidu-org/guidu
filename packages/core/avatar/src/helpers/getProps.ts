@@ -1,64 +1,32 @@
-const getAppearanceProps = props => {
-  const {
-    appearance,
-    backgroundColor,
-    borderColor,
-    groupAppearance,
-    isActive,
-    isDisabled,
-    isFocus,
-    isHover,
-    isInteractive,
-    isSelected,
-    size,
-    stackIndex,
-  } = props;
+const getAppearanceProps = (props: Record<string, any>) => ({
+  appearance: props.appearance,
+  backgroundColor: props.backgroundColor,
+  borderColor: props.borderColor,
+  groupAppearance: props.groupAppearance,
+  isActive: props.isActive,
+  isDisabled: props.isDisabled,
+  isFocus: props.isFocus,
+  isHover: props.isHover,
+  isInteractive: props.isInteractive,
+  isSelected: props.isSelected,
+  size: props.size,
+  stackIndex: props.stackIndex,
+});
 
-  return {
-    appearance,
-    backgroundColor,
-    borderColor,
-    groupAppearance,
-    isActive,
-    isDisabled,
-    isFocus,
-    isHover,
-    isInteractive,
-    isSelected,
-    size,
-    stackIndex,
-  };
-};
+const getInteractionProps = (props: Record<string, any>) => ({
+  onBlur: props.onBlur,
+  onClick: props.onClick,
+  onFocus: props.onFocus,
+  onKeyDown: props.onKeyDown,
+  onKeyUp: props.onKeyUp,
+  onMouseDown: props.onMouseDown,
+  onMouseEnter: props.onMouseEnter,
+  onMouseLeave: props.onMouseLeave,
+  onMouseUp: props.onMouseUp,
+  tabIndex: props.tabIndex,
+});
 
-const getInteractionProps = props => {
-  const {
-    onBlur,
-    onClick,
-    onFocus,
-    onKeyDown,
-    onKeyUp,
-    onMouseDown,
-    onMouseEnter,
-    onMouseLeave,
-    onMouseUp,
-    tabIndex,
-  } = props;
-
-  return {
-    onBlur,
-    onClick,
-    onFocus,
-    onKeyDown,
-    onKeyUp,
-    onMouseDown,
-    onMouseEnter,
-    onMouseLeave,
-    onMouseUp,
-    tabIndex,
-  };
-};
-
-const getLinkElementProps = props => {
+const getLinkElementProps = (props: Record<string, any>) => {
   const { href, target } = props;
 
   // handle security issue for consumer
@@ -68,14 +36,15 @@ const getLinkElementProps = props => {
   return { href, rel, target };
 };
 
-const getButtonElementProps = props => {
+const getButtonElementProps = (props: Record<string, any>) => {
   const { id, isDisabled } = props;
 
-  return { id, type: 'button', disabled: isDisabled };
+  return { id, interface: 'button', disabled: isDisabled };
 };
 
-// TODO: type this correctly
-export default function getProps(component: any) {
+export default function getProps<Props extends Record<string, any>>(
+  component: React.Component<Props>,
+) {
   const { props } = component;
 
   const defaultProps = {

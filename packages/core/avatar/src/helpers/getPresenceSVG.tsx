@@ -1,10 +1,9 @@
-// @ts-ignore
 import { colors, themed, withTheme } from '@uidu/theme';
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { PresenceType } from '../types';
 
-const Svg = props => (
+const Svg: FC = props => (
   <svg
     height="100%"
     version="1.1"

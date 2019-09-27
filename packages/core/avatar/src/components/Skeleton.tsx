@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import StyledSkeleton from '../styled/Skeleton';
 import { AppearanceType, SizeType } from '../types';
 
-type Props = {
-  /* Incidcates the shape of the skeleton */
+interface SkeletonProps {
+  /* Indicates the shape of the skeleton */
   appearance: AppearanceType;
   /* Sets the color of the skeleton. By default it will inherit the current text color. */
   color?: string;
@@ -11,9 +11,9 @@ type Props = {
   size: SizeType;
   /* Determines the opacity of the skeleton */
   weight: 'normal' | 'strong';
-};
+}
 
-export default class Skeleton extends Component<Props> {
+export default class Skeleton extends Component<SkeletonProps> {
   static defaultProps = {
     appearance: 'circle',
     size: 'medium',
