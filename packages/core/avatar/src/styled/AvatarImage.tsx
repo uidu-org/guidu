@@ -1,3 +1,4 @@
+// @ts-ignore
 import { colors, themed, withTheme } from '@uidu/theme';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { withTheme } from '@uidu/theme';
 import { ComponentType } from 'react';
 import styled from 'styled-components';

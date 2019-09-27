@@ -1,5 +1,6 @@
 {
-	"name": "@uidu/avatar-group",
-	"version": "2.1.20",
-	"sideEffects": false
+	"name": "@atlaskit/avatar-group",
+	"version": "999.9.9",
+	"NOTE: THIS FILE": "IS ONLY USED IN DEVELOPMENT",
+	"BEFORE PUBLISH": "IT IS REGENERATED WITH ACTUAL VERSION INFO"
 }

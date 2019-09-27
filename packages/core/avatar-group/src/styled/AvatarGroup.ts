@@ -1,9 +1,12 @@
-// @flow
+import { BORDER_WIDTH, SizeType } from '@uidu/avatar';
+import {
+  backgroundActive,
+  backgroundHover,
+  backgroundOnLayer,
+} from '@uidu/theme/colors';
+import { gridSize } from '@uidu/theme/constants';
 import styled from 'styled-components';
-import { colors, gridSize } from '@uidu/theme';
-import { BORDER_WIDTH } from '@uidu/avatar';
 
-// TODO: use math utilities within styled component
 const gutterUnitless = gridSize() / 2;
 const gutter = `${gutterUnitless}px`;
 
@@ -16,13 +19,13 @@ export const Grid = styled.div`
   margin-right: -${gutter};
 
   > * {
-    margin-bottom: ${gridSize}px;
+    margin-bottom: ${gridSize};
     padding-left: ${gutter};
     padding-right: ${gutter};
   }
 `;
 
-export const Stack = styled.div`
+export const Stack = styled.div<{ size: SizeType }>`
   display: flex;
   line-height: 1;
   /* Balance the negative margin of the children */
@@ -33,26 +36,21 @@ export const Stack = styled.div`
   }
 `;
 
-export const Inline = styled.div`
-  display: flex;
-  overflow-x: scroll;
-`;
-
 export function getBackgroundColor({
   isActive,
   isHover,
 }: {
-  isActive: boolean,
-  isHover: boolean,
+  isActive: boolean;
+  isHover: boolean;
 }) {
-  let themedBackgroundColor = colors.backgroundOnLayer;
+  let themedBackgroundColor = backgroundOnLayer;
 
   if (isHover) {
-    themedBackgroundColor = colors.backgroundHover;
+    themedBackgroundColor = backgroundHover;
   }
 
   if (isActive) {
-    themedBackgroundColor = colors.backgroundActive;
+    themedBackgroundColor = backgroundActive;
   }
 
   return themedBackgroundColor;

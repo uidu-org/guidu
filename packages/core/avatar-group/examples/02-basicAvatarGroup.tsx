@@ -1,8 +1,7 @@
-// @flow
 import React from 'react';
-import AvatarGroup from '../src';
+import { getAdorableAvatar, RANDOM_USERS } from '../examples-util/data';
 import { ExampleGroup } from '../examples-util/helpers';
-import { RANDOM_USERS, getAdorableAvatar } from '../examples-util/data';
+import AvatarGroup from '../src';
 
 export default () => {
   const data = RANDOM_USERS.map(d => ({
@@ -11,8 +10,8 @@ export default () => {
     name: d.name,
     src: getAdorableAvatar(d.email),
     href: '#',
-    appearance: 'circle',
-    size: 'medium',
+    appearance: 'circle' as AppearanceType,
+    size: 'medium' as SizeType,
     enableTooltip: true,
   }));
 
@@ -32,15 +31,6 @@ export default () => {
           onAvatarClick={console.log}
           data={data}
           maxCount={14}
-          size="large"
-        />
-      </ExampleGroup>
-      <ExampleGroup heading="Display inline">
-        <AvatarGroup
-          appearance="inline"
-          onAvatarClick={console.log}
-          data={data}
-          // maxCount={14}
           size="large"
         />
       </ExampleGroup>

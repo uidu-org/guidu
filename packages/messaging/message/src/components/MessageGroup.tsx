@@ -31,7 +31,7 @@ export default class MessageGroup extends Component<MessageGroupProps> {
               <Avatar
                 src={messager.avatar.thumb}
                 name={messager.name}
-                withTooltip={false}
+                enableTooltip={false}
                 size={mobileView ? 'small' : 'medium'}
               />
             )}

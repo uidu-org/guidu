@@ -1,4 +1,4 @@
-import GlobalTheme from '@uidu/theme';
+import GlobalTheme, { ThemeProp } from '@uidu/theme';
 import React, {
   cloneElement,
   Component,

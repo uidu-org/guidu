@@ -1,6 +1,5 @@
-// @flow
+import { code, Example, md, Prop, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, Prop, code } from '@uidu/docs';
 
 export default md`
   \`AvatarGroup\` is a wrapper around avatars designed to render a collection
@@ -24,11 +23,11 @@ export default md`
 
   ## Usage
 
-  ${code`import AvatarGroup from '@uidu/avatar-group';`}
+  ${code`import AvatarGroup from '@atlaskit/avatar-group';`}
 
 ${(
   <Example
-    packageName="@uidu/avatar-group"
+    packageName="@atlaskit/avatar-group"
     Component={require('../examples/02-basicAvatarGroup').default}
     title="AvatarGroup"
     source={require('!!raw-loader!../examples/02-basicAvatarGroup')}
@@ -40,8 +39,8 @@ ${(
     heading="Avatar Group Props"
     props={require('!!extract-react-types-loader!../src/components/AvatarGroup')}
     overrides={{
+      // @ts-ignore
       data: props => {
-        /* eslint-disable */
         if (
           props &&
           props.typeValue &&
@@ -49,17 +48,17 @@ ${(
           props.typeValue.typeParams.params
         ) {
           props.typeValue.typeParams.params = [
-            { kind: 'id', name: '@uidu/avatar props' },
+            { kind: 'id', name: '@atlaskit/avatar props' },
           ];
         }
-        /* eslint-enable */
-        return <Prop {...props} type="Array<@uidu/avatar props>" />;
+
+        return <Prop {...props} interface="Array<@atlaskit/avatar props>" />;
       },
+      // @ts-ignore
       avatar: props => {
-        // Currently prett-proptypes does not have a good print type for function
+        // Currently pretty-propinterfaces does not have a good print interface for function
         // calls, so we are overriding how this is printed. AK-5133 should resolve
         // this.
-        /* eslint-disable */
         if (
           props &&
           props.typeValue &&
@@ -67,11 +66,11 @@ ${(
           props.typeValue.typeParams.params
         ) {
           props.typeValue.typeParams.params = [
-            { kind: 'id', name: '@uidu/avatar' },
+            { kind: 'id', name: '@atlaskit/avatar' },
           ];
         }
-        /* eslint-enable */
-        return <Prop {...props} defaultValue="@uidu/avatar" />;
+
+        return <Prop {...props} defaultValue="@atlaskit/avatar" />;
       },
     }}
   />

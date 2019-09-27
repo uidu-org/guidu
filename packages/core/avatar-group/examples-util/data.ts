@@ -1,4 +1,3 @@
-// @flow
 export const RANDOM_USERS = [
   { email: 'chaki@me.com', name: 'Chaki Caronni' },
   { email: 'nanop@outlook.com', name: 'Nanop Rgiersig' },
@@ -22,7 +21,7 @@ export const RANDOM_USERS = [
   { email: 'caronni@optonline.net', name: 'Caronni Chaki' },
 ];
 
-export function getAdorableAvatar(id: string, size?: number = 80) {
+export function getAdorableAvatar(id: string, size: number = 80) {
   return `https://api.adorable.io/avatars/${size}/${id}.png`;
 }
 export const avatarUrl: string =

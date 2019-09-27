@@ -1,17 +1,18 @@
-// @flow
-import React, { Component } from 'react';
+import Avatar, {
+  AvatarClickType,
+  getProps,
+  withPseudoState,
+} from '@uidu/avatar';
 import { DropdownItem } from '@uidu/dropdown-menu';
-import Avatar, { withPseudoState, getProps } from '@uidu/avatar';
+import React, { Component } from 'react';
 
-type Props = {
-  avatar: {
-    [string]: any,
-  },
-  isActive: boolean,
-  isHover: boolean,
-  index: number,
-  onAvatarClick: Function,
-};
+interface Props {
+  avatar: Record<string, any>;
+  isActive?: boolean;
+  isHover?: boolean;
+  index?: number;
+  onAvatarClick?: AvatarClickType;
+}
 
 class AvatarGroupItem extends Component<Props> {
   render() {
@@ -31,7 +32,7 @@ class AvatarGroupItem extends Component<Props> {
           />
         }
         href={href}
-        onClick={(event: KeyboardEvent | MouseEvent) => {
+        onClick={(event: React.MouseEvent) => {
           if (typeof onAvatarClick === 'function') {
             onAvatarClick({ event, item: avatar });
           }

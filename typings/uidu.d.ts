@@ -1,8 +1,6 @@
 /**
  * Tells TypeScript to ignore flow components by declaring them as empty modules
  */
-declare module '@uidu/avatar-group';
-declare module '@uidu/avatar';
 declare module '@uidu/blanket';
 declare module '@uidu/calendar';
 declare module '@uidu/codemod-util-shared-styles-to-theme';

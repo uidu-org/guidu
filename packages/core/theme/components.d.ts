@@ -34,4 +34,8 @@ declare module '@uidu/theme/components' {
   export class AtlaskitThemeProvider<ThemeProps> extends React.Component<
     ThemeProps
   > {}
+
+  export function withTheme<Props extends Object = {}>(
+    InnerComponent: React.ComponentType<Props>,
+  ): React.ComponentType<Props>;
 }
