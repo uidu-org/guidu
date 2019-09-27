@@ -1,15 +1,16 @@
-// @flow
+import React, { FC } from 'react';
 
-type Props = {
+const { Fragment } = React;
+
+interface Props {
   /** The number to format. */
-  children?: number,
-
+  children?: number | string;
   /** The maximum value to display. If value is 100, and max is 50, "50+" will be displayed */
-  max?: number,
-};
+  max?: number;
+}
 
-export const Format = (props: Props): string => {
-  let formatted = '';
+const Format: FC<Props> = props => {
+  let formatted: number | string = '';
   let { children = 0, max = 0 } = props;
 
   if (children < 0) {
@@ -28,6 +29,7 @@ export const Format = (props: Props): string => {
     formatted = children;
   }
 
-  return `${formatted}`;
+  return <Fragment>{formatted}</Fragment>;
 };
-Format.displayName = 'Ak.Badge.Format';
+
+export default Format;

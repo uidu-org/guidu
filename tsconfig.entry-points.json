@@ -879,6 +879,7 @@
         "../../uidu/widgets/src/types",
         "./packages/uidu/widgets/src/types"
       ]
-    }
+    },
+    "baseUrl": "/"
   }
 }

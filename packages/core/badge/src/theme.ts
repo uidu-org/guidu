@@ -1,5 +1,3 @@
-// @flow
-
 import { colors, createTheme } from '@uidu/theme';
 
 export type ThemeAppearance =
@@ -9,19 +7,19 @@ export type ThemeAppearance =
   | 'primary'
   | 'primaryInverted'
   | 'removed'
-  | {};
+  | Record<string, any>;
 
 export type ThemeMode = 'dark' | 'light';
 
-export type ThemeProps = {
-  appearance: ThemeAppearance,
-  mode: ThemeMode,
-};
+export interface ThemeProps {
+  appearance: ThemeAppearance;
+  mode: ThemeMode;
+}
 
-export type ThemeTokens = {
-  backgroundColor: string,
-  textColor: string,
-};
+export interface ThemeTokens {
+  backgroundColor: string;
+  textColor: string;
+}
 
 export const backgroundColors = {
   added: { light: colors.G50, dark: colors.G50 },
@@ -53,6 +51,7 @@ export const Theme = createTheme<ThemeTokens, ThemeProps>(
         ...appearance,
       };
     }
+
     return {
       backgroundColor: backgroundColors[appearance][mode],
       textColor: textColors[appearance][mode],

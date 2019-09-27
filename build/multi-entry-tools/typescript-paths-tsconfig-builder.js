@@ -37,6 +37,7 @@ async function main() {
       {
         compilerOptions: {
           paths,
+          baseUrl: '/',
         },
       },
       null,

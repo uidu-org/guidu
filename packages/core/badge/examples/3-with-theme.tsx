@@ -1,5 +1,3 @@
-// @flow
-
 import { AtlaskitThemeProvider } from '@uidu/theme';
 import React from 'react';
 import Badge from '../src';

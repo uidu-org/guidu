@@ -1,11 +1,13 @@
-// @flow
-
+import { borderRadius, colors } from '@uidu/theme';
 import React from 'react';
 import styled from 'styled-components';
-import { borderRadius, colors } from '@uidu/theme';
 import Badge from '../src';
 
-const Item = styled.div`
+interface ItemProps {
+  inverted?: boolean;
+}
+
+const Item = styled.div<ItemProps>`
   align-items: center;
   background: ${props => (props.inverted ? colors.B400 : 'none')};
   border-radius: ${borderRadius}px;
@@ -15,10 +17,6 @@ const Item = styled.div`
   margin-bottom: 4px;
   max-width: 300px;
   padding: 0.6em 1em;
-
-  p {
-    margin-bottom: 0;
-  }
 
   &:hover {
     background-color: ${props => (props.inverted ? colors.B500 : colors.N20)};
