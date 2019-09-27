@@ -18,7 +18,7 @@ export function DefaultImage({
 
   return (
     <GlobalTheme.Consumer>
-      {({ mode }) => {
+      {({ mode }: any) => {
         return (
           <Svg
             appearance={appearance}
@@ -55,79 +55,60 @@ export function DefaultImage({
   );
 }
 
-type Props = {
+interface Props {
   appearance: AppearanceType;
   size: SizeType;
   alt?: string;
   src?: string;
-};
+}
 
 type State = {
   hasError: boolean;
   isLoading: boolean;
 };
 
-let cache = {};
-
-export const clearCache = () => {
-  cache = {};
-};
-
 export default class AvatarImage extends PureComponent<Props, State> {
   state: State = {
     hasError: false,
-    // if provided a scr - we need to load it
-    isLoading: Boolean(this.props.src),
+    isLoading: false,
   };
-  isComponentMounted: boolean;
 
   componentDidMount() {
-    this.isComponentMounted = true;
-    this.loadImage();
-  }
-  // handle case where `src` is modified after mount
-  UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    if (nextProps.src && this.props.src !== nextProps.src) {
-      this.setState({ isLoading: true });
+    if (this.props.src) {
+      // check whether there was a problem loading the image
+      // if handleLoadError is called we show the default avatar
+      const img = new Image();
+      img.onerror = this.handleLoadError;
+      img.src = this.props.src || '';
     }
   }
+
   componentDidUpdate(prevProps: Props) {
     if (this.props.src && this.props.src !== prevProps.src) {
-      this.loadImage();
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({ isLoading: true }, () => {
+        const img = new Image();
+        img.onload = this.handleLoadSuccess;
+        img.onerror = this.handleLoadError;
+        img.src = this.props.src || '';
+      });
     }
   }
-  componentWillUnmount() {
-    this.isComponentMounted = false;
-  }
-  loadImage = () => {
-    // nothing to load
-    if (!this.props.src) {
-      return;
-    }
 
-    const img = new Image();
-    img.onload = this.handleLoadSuccess;
-    img.onerror = this.handleLoadError;
-    img.src = this.props.src;
-  };
-  handleLoad = (hasError: boolean) => {
-    if (this.isComponentMounted) {
-      this.setState({ hasError, isLoading: false });
-    }
-  };
   handleLoadSuccess = () => {
-    if (typeof this.props.src === 'string') {
-      cache[this.props.src] = true;
-    }
-    this.handleLoad(false);
+    this.setState({ hasError: false, isLoading: false });
   };
-  handleLoadError = () => this.handleLoad(true);
+
+  handleLoadError = () => {
+    this.setState({ hasError: true, isLoading: false });
+  };
 
   render() {
     const { alt, src, appearance, size } = this.props;
     const { hasError, isLoading } = this.state;
     const showDefault = !isLoading && (!src || hasError);
-    const imageUrl: string = src && (!isLoading || cache[src]) ? src : null;
+    const imageUrl: string | undefined = src && !isLoading ? src : undefined;
+
     return showDefault ? (
       <DefaultImage
         appearance={appearance}

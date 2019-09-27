@@ -1,6 +1,6 @@
 import { colors, themed } from '@uidu/theme';
 import { css } from 'styled-components';
-import { AppearanceType, AvatarPropTypes, SizeType } from '../types';
+import { AppearanceType, AvatarClickType, SizeType } from '../types';
 import {
   AVATAR_RADIUS,
   AVATAR_SIZES,
@@ -8,13 +8,14 @@ import {
   TRANSITION_DURATION,
 } from './constants';
 
-const backgroundColorFocus = colors.B200;
+const { B200, N70A, N200A, DN80A, background } = colors;
+const backgroundColorFocus = B200;
 const overlayColorDefault = 'transparent';
-const overlayColorHover = colors.N70A;
-const overlayColorSelected = colors.N200A;
+const overlayColorHover = N70A;
+const overlayColorSelected = N200A;
 const overlayColorDisabled = themed({
   light: 'rgba(255, 255, 255, 0.7)',
-  dark: colors.DN80A,
+  dark: DN80A,
 });
 
 // "square" avatars are explicit
@@ -30,9 +31,9 @@ export function getBorderRadius(
     : `${AVATAR_RADIUS[props.size] + borderWidth}px`;
 }
 
-export const getSize = (props: { size: SizeType }) => AVATAR_SIZES[props.size]; // for testing
+export const getSize = ({ size }: { size: SizeType }) => AVATAR_SIZES[size]; // for testing
 export function getAvatarDimensions(
-  props: { size: SizeType },
+  { size }: { size: SizeType },
   config: {
     includeBorderWidth: boolean;
     sizeOnly: boolean;
@@ -42,24 +43,40 @@ export function getAvatarDimensions(
   },
 ) {
   const borderWidth: number = config.includeBorderWidth
-    ? BORDER_WIDTH[props.size] * 2
+    ? BORDER_WIDTH[size] * 2
     : 0;
-  const size: number = AVATAR_SIZES[props.size] + borderWidth;
+
+  const finalSize: number = AVATAR_SIZES[size] + borderWidth;
 
   return config.sizeOnly
-    ? size
+    ? finalSize
     : `
-    height: ${size}px;
-    width: ${size}px;
+    height: ${finalSize}px;
+    width: ${finalSize}px;
   `;
+}
+
+interface InnerStylesProps {
+  appearance?: AppearanceType;
+  size?: SizeType;
+  isInteractive?: boolean;
+  href?: string;
+  borderColor?: string | (() => string);
+  stackIndex?: number;
+  isActive?: boolean;
+  isDisabled?: boolean;
+  isFocus?: boolean;
+  isHover?: boolean;
+  isSelected?: boolean;
+  onClick?: AvatarClickType;
 }
 
 // expose here for use with multiple element types
 export function getInnerStyles(
-  props: AvatarPropTypes & { isInteractive?: boolean },
+  props: InnerStylesProps = { appearance: 'circle', size: 'medium' },
 ) {
   const boxSizing: string = 'content-box';
-  const borderWidth: string = `${BORDER_WIDTH[props.size]}px`;
+  const borderWidth: string = `${BORDER_WIDTH[props.size!]}px`;
   const isInteractive: boolean = Boolean(
     props.isInteractive || props.href || props.onClick,
   );
@@ -67,7 +84,7 @@ export function getInnerStyles(
   // makes the avatar interactive but not clickable
   const isClickable = Boolean(props.href || props.onClick);
 
-  let backgroundColor = props.borderColor || colors.background;
+  let backgroundColor = props.borderColor || background;
   // Inherit cursor styles so we don't cancel out pointer cursors in places like avatar group more dropdown
   let cursor = 'inherit';
   let outline = 'none';

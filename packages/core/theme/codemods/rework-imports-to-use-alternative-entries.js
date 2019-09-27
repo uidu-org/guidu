@@ -1,5 +1,5 @@
 /* eslint-disable flowtype/require-valid-file-annotation */
-/* 
+/*
 WIP This codemod was build during shipit it's changes should be carefully scrutinized before shipping ;)
 */
 
@@ -9,6 +9,8 @@ const themeIndexImports = [
   'AtlaskitThemeProvider',
   'getTheme',
   'createTheme',
+  'GlobalThemeTokens',
+  'ThemeProp',
 ];
 
 const constants = [

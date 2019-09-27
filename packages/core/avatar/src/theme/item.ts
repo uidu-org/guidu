@@ -1,10 +1,10 @@
 import { createTheme } from '@uidu/theme';
 
-export type ThemeItemTokens = {
+export interface ThemeItemTokens {
   backgroundColor: string;
-};
+}
 
-export const ThemeItem = createTheme(() => {
+export const ThemeItem = createTheme<ThemeItemTokens, {}>(() => {
   return {
     backgroundColor: '',
   };

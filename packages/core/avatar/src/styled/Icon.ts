@@ -1,10 +1,15 @@
 // @ts-ignore
 import { colors, withTheme } from '@uidu/theme';
 import styled from 'styled-components';
+import { SizeType } from '../types';
 import { BORDER_WIDTH } from './constants';
 
-// set fallbacks for border color/width to protect consumers from invalid values
-export const Outer = withTheme(styled.span<{ bgColor?: string; size: string }>`
+interface OuterProps {
+  size?: SizeType;
+  bgColor?: string | (() => unknown);
+}
+
+export const Outer = withTheme(styled.span<OuterProps>`
   align-content: center;
   align-items: center;
   background-color: ${props => props.bgColor || colors.background};
@@ -13,7 +18,8 @@ export const Outer = withTheme(styled.span<{ bgColor?: string; size: string }>`
   display: flex;
   height: 100%;
   overflow: hidden;
-  padding: ${({ size }) => BORDER_WIDTH[size] || BORDER_WIDTH.medium}px;
+  padding: ${({ size }) =>
+    (size && BORDER_WIDTH[size]) || BORDER_WIDTH.medium}px;
   width: 100%;
 `);
 

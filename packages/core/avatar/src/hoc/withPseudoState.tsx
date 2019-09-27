@@ -1,52 +1,42 @@
 import React, { Component, ComponentType } from 'react';
-import { getDisplayName, omit } from '../utils';
+import { getDisplayName } from '../utils';
 
-type Props = {
+// export interface InternalHandlerProps {}
+
+export interface WithPseudoStateProps {
   href?: string;
   isActive?: boolean;
   isFocus?: boolean;
   isHover?: boolean;
   isInteractive?: boolean;
-  onBlur?: () => any;
-  onClick?: () => any;
-  onFocus?: () => any;
-  onKeyDown?: () => any;
-  onKeyUp?: () => any;
-  onMouseDown?: () => any;
-  onMouseEnter?: () => any;
-  onMouseLeave?: () => any;
-  onMouseUp?: () => any;
-};
+  onBlur?: (...args: any) => void;
+  onClick?: (...args: any) => void;
+  onFocus?: (...args: any) => void;
+  onKeyDown?: (...args: any) => void;
+  onKeyUp?: (...args: any) => void;
+  onMouseDown?: (...args: any) => void;
+  onMouseEnter?: (...args: any) => void;
+  onMouseLeave?: (...args: any) => void;
+  onMouseUp?: (...args: any) => void;
+}
 
-const INTERNAL_HANDLERS = [
-  'onBlur',
-  'onFocus',
-  'onKeyDown',
-  'onKeyUp',
-  'onMouseDown',
-  'onMouseEnter',
-  'onMouseLeave',
-  'onMouseUp',
-];
-
-type State = {
+export interface State {
   isActive: boolean;
   isFocus: boolean;
   isHover: boolean;
   isInteractive: boolean;
-};
+}
 
-export default function withPseudoState<InnerProps>(
-  WrappedComponent: ComponentType<InnerProps>,
+export default function withPseudoState<Props extends WithPseudoStateProps>(
+  WrappedComponent: ComponentType<Props>,
 ) {
-  type CombinedProps = any;
-  return class ComponentWithPseudoState extends Component<
-    CombinedProps,
-    State
-  > {
+  return class ComponentWithPseudoState extends Component<Props, State> {
     static displayName = getDisplayName('withPseudoState', WrappedComponent);
-    component: any;
-    actionKeys: Array<string>;
+
+    component: React.Ref<Props> = null;
+
+    actionKeys: string[] = [];
+
     UNSAFE_componentWillMount() {
       const { href, isInteractive, onClick } = this.props;
 
@@ -64,63 +54,86 @@ export default function withPseudoState<InnerProps>(
       ),
     };
 
-    // expose blur/focus to consumers via ref
     blur = () => {
+      // @ts-ignore reaching into the instance
       if (this.component && this.component.blur) this.component.blur();
     };
+
     focus = () => {
+      // @ts-ignore reaching into the instance
       if (this.component && this.component.focus) this.component.focus();
     };
 
-    setComponent = (component: any) => {
+    setComponent = (component: React.Ref<any>) => {
       this.component = component;
     };
 
-    onBlur = () => this.setState({ isActive: false, isFocus: false });
-    onFocus = () => this.setState({ isFocus: true });
-    onMouseLeave = () => this.setState({ isActive: false, isHover: false });
-    onMouseEnter = () => this.setState({ isHover: true });
-    onMouseUp = () => this.setState({ isActive: false });
-    onMouseDown = () => this.setState({ isActive: true });
+    onBlur = (...args: any[]) => {
+      this.setState({ isActive: false, isFocus: false });
 
-    onKeyDown = (event: KeyboardEvent) => {
+      if (this.props.onBlur) {
+        this.props.onBlur(...args);
+      }
+    };
+
+    onFocus = (...args: any[]) => {
+      this.setState({ isFocus: true });
+
+      if (this.props.onFocus) {
+        this.props.onFocus(...args);
+      }
+    };
+
+    onMouseLeave = (...args: any[]) => {
+      this.setState({ isActive: false, isHover: false });
+
+      if (this.props.onMouseLeave) {
+        this.props.onMouseLeave(...args);
+      }
+    };
+
+    onMouseEnter = (...args: any[]) => {
+      this.setState({ isHover: true });
+
+      if (this.props.onMouseEnter) {
+        this.props.onMouseEnter(...args);
+      }
+    };
+
+    onMouseUp = (...args: any[]) => {
+      this.setState({ isActive: false });
+
+      if (this.props.onMouseUp) {
+        this.props.onMouseUp(...args);
+      }
+    };
+
+    onMouseDown = (...args: any[]) => {
+      this.setState({ isActive: true });
+
+      if (this.props.onMouseDown) {
+        this.props.onMouseDown(...args);
+      }
+    };
+
+    onKeyDown = (event: KeyboardEvent, ...rest: any[]) => {
       if (this.actionKeys.indexOf(event.key) > -1) {
         this.setState({ isActive: true });
       }
+
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(event, ...rest);
+      }
     };
-    onKeyUp = (event: KeyboardEvent) => {
+
+    onKeyUp = (event: KeyboardEvent, ...rest: any[]) => {
       if (this.actionKeys.indexOf(event.key) > -1) {
         this.setState({ isActive: false });
       }
-    };
 
-    getProps = (): CombinedProps => {
-      const { isInteractive } = this.state;
-
-      // strip the consumer's handlers off props, then merge with our handlers
-      // if the element is interactive
-      // We cannot properly type omit because of the inability to convert from
-      // an array to a union of the array's items. See https://github.com/facebook/flow/issues/961
-      // if you want to learn more about this
-      // $FlowFixMe
-      const props: CombinedProps = omit(this.props, ...INTERNAL_HANDLERS);
-
-      const self: Object = this;
-
-      if (isInteractive) {
-        INTERNAL_HANDLERS.forEach((handler: string) => {
-          if (this.props[handler]) {
-            props[handler] = (...args) => {
-              self[handler](...args);
-              this.props[handler](...args);
-            };
-          } else {
-            props[handler] = self[handler];
-          }
-        });
+      if (this.props.onKeyUp) {
+        this.props.onKeyUp(event, ...rest);
       }
-
-      return props;
     };
 
     render() {
@@ -128,7 +141,17 @@ export default function withPseudoState<InnerProps>(
         <WrappedComponent
           ref={this.setComponent}
           {...this.state}
-          {...this.getProps()}
+          {...this.props}
+          {...(this.state.isInteractive && {
+            onBlur: this.onBlur,
+            onFocus: this.onFocus,
+            onMouseLeave: this.onMouseLeave,
+            onMouseEnter: this.onMouseEnter,
+            onMouseUp: this.onMouseUp,
+            onMouseDown: this.onMouseDown,
+            onKeyDown: this.onKeyDown,
+            onKeyUp: this.onKeyUp,
+          })}
         />
       );
     }

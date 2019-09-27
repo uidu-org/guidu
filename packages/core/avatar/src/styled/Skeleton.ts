@@ -1,13 +1,22 @@
 import styled from 'styled-components';
+import { AppearanceType, SizeType } from '../types';
 import { AVATAR_RADIUS, AVATAR_SIZES, BORDER_WIDTH } from './constants';
 
-export default styled.div<{ size: string; appearance: string; weight: string }>`
-  width: ${({ size }) => AVATAR_SIZES[size]}px;
-  height: ${({ size }) => AVATAR_SIZES[size]}px;
+const Skeleton = styled.div<{
+  size?: SizeType;
+  appearance?: AppearanceType;
+  weight?: string;
+}>`
+  width: ${({ size }) => AVATAR_SIZES[size || 'small']}px;
+  height: ${({ size }) => AVATAR_SIZES[size || 'small']}px;
   display: inline-block;
   border-radius: ${props =>
-    props.appearance === 'square' ? `${AVATAR_RADIUS[props.size]}px` : '50%'};
+    props.size && props.appearance === 'square'
+      ? `${AVATAR_RADIUS[props.size]}px`
+      : '50%'};
   background-color: ${({ color }) => color || 'currentColor'};
-  border: ${({ size }) => BORDER_WIDTH[size]}px solid transparent;
+  border: ${({ size }) => BORDER_WIDTH[size || 'small']}px solid transparent;
   opacity: ${({ weight }) => (weight === 'strong' ? 0.3 : 0.15)};
 `;
+
+export default Skeleton;

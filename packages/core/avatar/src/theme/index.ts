@@ -1,12 +1,14 @@
 import { colors, createTheme, gridSize } from '@uidu/theme';
 import { AppearanceType, PresenceType, SizeType } from '../types';
 
-type Dimensions = {
+const { N40, DN50 } = colors;
+
+interface Dimensions {
   height: string;
   width: string;
-};
+}
 
-type Layout = {
+interface Layout {
   // We have to specify all corners as optional because either bottom or top
   // and left or right could be specified.
   bottom?: string;
@@ -17,35 +19,35 @@ type Layout = {
   // Must be specified every time.
   height: string;
   width: string;
-};
+}
 
-type Sizes = {
+interface Sizes {
   xsmall: number;
   small: number;
   medium: number;
   large: number;
   xlarge: number;
   xxlarge: number;
-};
+}
 
 type ThemeMode = 'dark' | 'light';
 
-export type ThemeProps = {
+export interface ThemeProps {
   appearance?: AppearanceType;
   includeBorderWidth?: boolean;
   isLoading?: boolean;
   presence?: PresenceType;
-  size?: SizeType;
   mode?: ThemeMode;
-};
+  size: SizeType;
+}
 
-export type ThemeTokens = {
+export interface ThemeTokens {
   backgroundColor: string;
   borderRadius: string;
   dimensions: Dimensions;
   presence: Layout;
   status: Layout;
-};
+}
 
 const gridSizeValue: number = gridSize();
 
@@ -104,22 +106,17 @@ const SQUARE_ICON_OFFSET: Sizes = {
   xxlarge: 0,
 };
 
-function getBackgroundColor(props: {
-  isLoading: boolean;
-  mode: ThemeMode;
-}): string {
+function getBackgroundColor(props: ThemeProps) {
   const backgroundColors = {
-    light: colors.N40,
-    dark: colors.DN50,
+    light: N40,
+    dark: DN50,
   };
-  return props.isLoading ? backgroundColors[props.mode] : 'transparent';
+  return props.mode && props.isLoading
+    ? backgroundColors[props.mode]
+    : 'transparent';
 }
 
-function getBorderRadius(props: {
-  appearance: AppearanceType;
-  includeBorderWidth: boolean;
-  size: SizeType;
-}): string {
+function getBorderRadius(props: ThemeProps) {
   const borderWidth = props.includeBorderWidth ? BORDER_WIDTH[props.size] : 0;
   const borderRadius =
     props.appearance === 'circle'
@@ -128,10 +125,7 @@ function getBorderRadius(props: {
   return borderRadius;
 }
 
-function getDimensions(props: {
-  includeBorderWidth: boolean;
-  size: SizeType;
-}): Dimensions {
+function getDimensions(props: ThemeProps): Dimensions {
   const borderWidth: number = props.includeBorderWidth
     ? BORDER_WIDTH[props.size] * 2
     : 0;
@@ -141,10 +135,7 @@ function getDimensions(props: {
   return { height, width };
 }
 
-const getPresenceLayout = (props: {
-  appearance: AppearanceType;
-  size: SizeType;
-}): Layout => {
+const getPresenceLayout = (props: ThemeProps): Layout => {
   const presencePosition =
     props.appearance === 'square'
       ? -(BORDER_WIDTH[props.size] * 2)
@@ -159,10 +150,7 @@ const getPresenceLayout = (props: {
   };
 };
 
-const getStatusLayout = (props: {
-  appearance: AppearanceType;
-  size: SizeType;
-}): Layout => {
+const getStatusLayout = (props: ThemeProps): Layout => {
   const statusPosition =
     props.appearance === 'square'
       ? SQUARE_ICON_OFFSET[props.size]
@@ -177,7 +165,7 @@ const getStatusLayout = (props: {
   };
 };
 
-const propsDefaults = {
+const propsDefaults: ThemeProps = {
   appearance: 'circle',
   includeBorderWidth: false,
   isLoading: false,
@@ -189,15 +177,10 @@ const propsDefaults = {
 export const Theme = createTheme<ThemeTokens, ThemeProps>(props => {
   const propsWithDefaults = { ...propsDefaults, ...props };
   return {
-    // @ts-ignore
     backgroundColor: getBackgroundColor(propsWithDefaults),
-    // @ts-ignore
     borderRadius: getBorderRadius(propsWithDefaults),
-    // @ts-ignore
     dimensions: getDimensions(propsWithDefaults),
-    // @ts-ignore
     presence: getPresenceLayout(propsWithDefaults),
-    // @ts-ignore
     status: getStatusLayout(propsWithDefaults),
   };
 });

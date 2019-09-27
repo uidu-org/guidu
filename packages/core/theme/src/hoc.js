@@ -1,6 +1,6 @@
 // @flow
 
-import React, { type ComponentType } from 'react';
+import React from 'react';
 import Theme from './components/Theme';
 
 // Pre-executes the theme and passes it as a prop to the supplied component.

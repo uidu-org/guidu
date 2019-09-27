@@ -1,5 +1,10 @@
 import GlobalTheme from '@uidu/theme';
-import React, { cloneElement, Component, ComponentType } from 'react';
+import React, {
+  cloneElement,
+  Component,
+  ComponentType,
+  ReactNode,
+} from 'react';
 import { getProps, getStyledAvatarItem } from '../helpers';
 import { withPseudoState } from '../hoc';
 import {
@@ -8,14 +13,14 @@ import {
   PrimaryText,
   SecondaryText,
 } from '../styled/AvatarItem';
-import { ThemeItem } from '../theme/item';
+import { ThemeItem, ThemeItemTokens } from '../theme/item';
 import { AvatarClickType } from '../types';
 import { omit } from '../utils';
 import { propsOmittedFromClickData } from './constants';
 
 /* eslint-disable react/no-unused-prop-types */
-type Props = {
-  avatar: any;
+interface Props {
+  avatar: ReactNode;
   /** Change background color */
   backgroundColor?: string;
   /** A custom component to use instead of the default span. */
@@ -35,16 +40,16 @@ type Props = {
   /** Handler to be called on click. */
   onClick?: AvatarClickType;
   /** PrimaryText text */
-  primaryText?: string;
+  primaryText?: ReactNode;
   /** SecondaryText text */
-  secondaryText?: string;
+  secondaryText?: ReactNode;
   /** Pass target down to the anchor, if href is provided. */
   target?: '_blank' | '_self' | '_top' | '_parent';
   /** The item's theme. */
-  theme?: any; // ThemeProps<ThemeItemTokens>;
+  theme?: ThemeProp<ThemeItemTokens, {}>;
   /** Whether or not overflowing primary and secondary text is truncated */
   enableTextTruncate?: boolean;
-};
+}
 
 class AvatarItem extends Component<Props> {
   node?: HTMLElement;
@@ -57,12 +62,13 @@ class AvatarItem extends Component<Props> {
   blur = () => {
     if (this.node) this.node.blur();
   };
+
   focus = () => {
     if (this.node) this.node.focus();
   };
 
   // disallow click on disabled avatars
-  guardedClick = (event: KeyboardEvent | MouseEvent) => {
+  guardedClick = (event: React.MouseEvent) => {
     const { isDisabled, onClick } = this.props;
 
     if (isDisabled || typeof onClick !== 'function') return;
@@ -87,12 +93,12 @@ class AvatarItem extends Component<Props> {
     // distill props from context, props, and state
     const enhancedProps = getProps(this);
 
-    // provide element type based on props
+    // provide element interface based on props
     const StyledComponent: any = getStyledAvatarItem(this.props);
 
     return (
       <GlobalTheme.Consumer>
-        {({ mode }) => (
+        {({ mode }: any) => (
           <ThemeItem.Provider value={this.props.theme}>
             <ThemeItem.Consumer>
               {tokens => {
@@ -109,12 +115,14 @@ class AvatarItem extends Component<Props> {
                     {...enhancedProps}
                     onClick={this.guardedClick}
                   >
-                    {cloneElement(avatar, { borderColor })}
-                    <Content>
-                      <PrimaryText truncate={enableTextTruncate}>
+                    {React.isValidElement(avatar)
+                      ? cloneElement(avatar, { borderColor })
+                      : null}
+                    <Content truncate={enableTextTruncate!}>
+                      <PrimaryText truncate={enableTextTruncate!}>
                         {primaryText}
                       </PrimaryText>
-                      <SecondaryText truncate={enableTextTruncate}>
+                      <SecondaryText truncate={enableTextTruncate!}>
                         {secondaryText}
                       </SecondaryText>
                     </Content>

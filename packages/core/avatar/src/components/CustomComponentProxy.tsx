@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { AvatarPropTypes } from '../types';
 
 /**
- * ref is passed by Avatar component
- * TODO: Check if other props are needed?
+ * innerRef is passed by Avatar component
  */
-type CustomComponentProxyPropType = AvatarPropTypes & {
+interface CustomComponentProxyPropType extends AvatarPropTypes {
   avatar?: any;
   groupAppearance?: any;
-  ref?: () => void;
+  innerRef?: () => void;
   primaryText?: any;
   secondaryText?: any;
-};
+}
 
 /**
  * Styling a avatar is complicated and there are a number of properties which
@@ -22,7 +21,6 @@ type CustomComponentProxyPropType = AvatarPropTypes & {
  * used by styled-components, then passes the rest of the props on to the custom
  * component.
  */
-
 export default class CustomComponentProxy extends Component<
   CustomComponentProxyPropType
 > {
@@ -34,7 +32,7 @@ export default class CustomComponentProxy extends Component<
       component: ProxiedComponent,
       enableTooltip,
       groupAppearance,
-      ref,
+      innerRef,
       isActive,
       isDisabled,
       isFocus,

@@ -14,7 +14,7 @@ const focusBorderColor = themed({ light: colors.B200, dark: colors.B75 });
 const textColors = themed({ light: colors.N900, dark: colors.DN600 });
 const subtleTextColors = themed({ light: colors.N200, dark: colors.DN300 });
 
-type getBackgroundColorType = {
+interface GetBackgroundColorType {
   backgroundColor?: string;
   href?: string;
   isActive?: boolean;
@@ -22,7 +22,7 @@ type getBackgroundColorType = {
   isSelected?: boolean;
   mode: 'dark' | 'light';
   onClick?: AvatarClickType;
-};
+}
 
 export function getBackgroundColor({
   backgroundColor,
@@ -31,7 +31,7 @@ export function getBackgroundColor({
   isHover,
   isSelected,
   onClick,
-}: getBackgroundColorType) {
+}: GetBackgroundColorType) {
   const isInteractive = href || onClick;
 
   let themedBackgroundColor = backgroundColor || colors.background;
@@ -114,28 +114,32 @@ export function getStyles({
   `;
 }
 
-const truncateText = p =>
+const truncateText = (p: { truncate: boolean }) =>
   p.truncate &&
   css`
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   `;
-const truncateTextFlexParent = p =>
-  p.truncate &&
-  css`
-    max-width: 100%;
-    min-width: 0;
-  `;
 
-export const Content = styled.div`
-  ${truncateTextFlexParent} flex: 1 1 100%;
+export const Content = styled.div<{
+  truncate: boolean;
+}>`
+  ${truncate =>
+    truncate &&
+    css`
+      max-width: 100%;
+      min-width: 0;
+    `}
+  flex: 1 1 100%;
   line-height: 1.4;
   padding-left: ${gridSize}px;
 `;
+
 export const PrimaryText = withTheme(styled.div`
   ${truncateText} color: ${textColors};
 `);
+
 export const SecondaryText = withTheme(styled.div`
   ${truncateText} color: ${subtleTextColors};
   font-size: 0.85em;

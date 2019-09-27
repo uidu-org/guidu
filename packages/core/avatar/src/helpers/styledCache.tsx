@@ -1,5 +1,5 @@
+import { withTheme } from '@uidu/theme';
 import { ComponentType } from 'react';
-import { withTheme } from '@atlaskit/theme/components';
 import styled from 'styled-components';
 import CustomComponentProxy from '../components/CustomComponentProxy';
 

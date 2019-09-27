@@ -1,19 +1,23 @@
-// @ts-ignore
-import { withTheme } from '@uidu/theme';
-import React from 'react';
-import styled from 'styled-components';
+import React, { FC, ReactNode } from 'react';
 import { Theme } from '../theme';
-import { getInnerStyles } from './utils';
+import { AppearanceType, SizeType } from '../types';
 
-export default props => (
+interface AvatarProps {
+  /** A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests */
+  testId?: string;
+  size: SizeType;
+  children: ReactNode;
+  stackIndex?: number;
+}
+
+const Avatar: FC<AvatarProps> = props => (
   <Theme.Consumer {...props} includeBorderWidth>
     {({ dimensions }) => {
       return (
         <div
+          data-testid={props.testId}
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: 'inline-block',
             position: 'relative',
             outline: 0,
             zIndex: props.stackIndex,
@@ -27,12 +31,15 @@ export default props => (
   </Theme.Consumer>
 );
 
-// TODO this doesn't appear to be used anywhere so we should look at removing.
-export const Inner = withTheme(styled.div`
-  ${getInnerStyles};
-`);
+export default Avatar;
 
-export const PresenceWrapper = (props: any) => (
+interface PresenceWrapperProps {
+  appearance: AppearanceType;
+  size: SizeType;
+  children: ReactNode;
+}
+
+export const PresenceWrapper: FC<PresenceWrapperProps> = props => (
   <Theme.Consumer {...props} includeBorderWidth>
     {({ presence }) => {
       return (
@@ -50,7 +57,13 @@ export const PresenceWrapper = (props: any) => (
   </Theme.Consumer>
 );
 
-export const StatusWrapper = (props: any) => (
+interface StatusWrapperProps {
+  appearance: AppearanceType;
+  size: SizeType;
+  children: any;
+}
+
+export const StatusWrapper: FC<StatusWrapperProps> = props => (
   <Theme.Consumer {...props} includeBorderWidth>
     {({ status }) => {
       return (

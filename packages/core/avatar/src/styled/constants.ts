@@ -1,34 +1,24 @@
 import { gridSize } from '@uidu/theme';
+import { IndicatorSizeType, SizeType } from '../types';
+
+type AvatarSizeMap = Record<SizeType, number>;
+type IconSizeMap = Record<IndicatorSizeType, number>;
 
 export const TRANSITION_DURATION = '200ms';
 
 const gridSizeValue: number = gridSize();
 
-export const AVATAR_SIZES: {
-  xsmall: number;
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-  xxlarge: number;
-} = {
+export const AVATAR_SIZES: AvatarSizeMap = {
   xsmall: gridSizeValue * 2,
   small: gridSizeValue * 3,
   medium: gridSizeValue * 4,
-  large: gridSizeValue * 6,
+  large: gridSizeValue * 5,
   xlarge: gridSizeValue * 12,
   xxlarge: gridSizeValue * 16,
 };
 
 // border radius only applies to "square" avatars
-export const AVATAR_RADIUS: {
-  xsmall: number;
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-  xxlarge: number;
-} = {
+export const AVATAR_RADIUS: AvatarSizeMap = {
   xsmall: 2,
   small: 2,
   medium: 3,
@@ -37,14 +27,7 @@ export const AVATAR_RADIUS: {
   xxlarge: 12,
 };
 
-export const BORDER_WIDTH: {
-  xsmall: number;
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-  xxlarge: number;
-} = {
+export const BORDER_WIDTH: AvatarSizeMap = {
   xsmall: 2,
   small: 2,
   medium: 2,
@@ -57,49 +40,28 @@ export const BORDER_WIDTH: {
 // - groups
 // - presence
 // - status
-
-export const EXCESS_INDICATOR_FONT_SIZE: {
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-} = {
+export const EXCESS_INDICATOR_FONT_SIZE: IconSizeMap = {
   small: 10,
   medium: 11,
   large: 12,
   xlarge: 16,
 };
 
-export const ICON_SIZES: {
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-} = {
+export const ICON_SIZES: IconSizeMap = {
   small: 12,
   medium: 14,
   large: 15,
   xlarge: 18,
 };
 
-export const ICON_OFFSET: {
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-} = {
+export const ICON_OFFSET: IconSizeMap = {
   small: 0,
   medium: 0,
   large: 1,
   xlarge: 7,
 };
 
-export const SQUARE_ICON_OFFSET: {
-  small: number;
-  medium: number;
-  large: number;
-  xlarge: number;
-} = {
+export const SQUARE_ICON_OFFSET: IconSizeMap = {
   small: 0,
   medium: 0,
   large: 0,

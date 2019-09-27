@@ -1,30 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, ComponentType } from 'react';
 import { getDisplayName } from '../utils';
 
-export default function mapProps(mapping) {
-  return DecoratedComponent =>
-    // TODO: type this correctly
-    class MapProps extends Component<any> {
+interface Mapping<Props> {
+  [key: string]: (props: Props) => unknown;
+}
+
+export default function mapProps<Props extends Object>(
+  mapping: Mapping<Props>,
+) {
+  return (DecoratedComponent: ComponentType<Props>) =>
+    class MapProps extends Component<Props> {
       static displayName: string | void | null = getDisplayName(
         'mapProps',
         DecoratedComponent,
       );
+
       static DecoratedComponent = DecoratedComponent;
 
-      component?: any;
+      component?: React.Ref<any>;
 
       // expose blur/focus to consumers via ref
       blur = () => {
-        if (this.component && this.component.blur) {
-          this.component.blur();
-        }
+        // @ts-ignore accessing component internals
+        if (this.component && this.component.blur) this.component.blur();
       };
 
       focus = () => {
+        // @ts-ignore accessing component internals
         if (this.component && this.component.focus) this.component.focus();
       };
 
-      setComponent = (component?: any) => {
+      setComponent = (component?: React.Ref<any>) => {
         this.component = component;
       };
 

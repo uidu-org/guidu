@@ -4,24 +4,32 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
-import React, { Component } from 'react';
+import React, { Component, ReactNode } from 'react';
 import { getProps, getStyledAvatar } from '../helpers';
 import { mapProps, withPseudoState } from '../hoc';
 import Outer, { PresenceWrapper, StatusWrapper } from '../styled/Avatar';
+import { ICON_SIZES } from '../styled/constants';
 import { Theme } from '../theme';
-import { AvatarPropTypes } from '../types';
+import {
+  AppearanceType,
+  AvatarPropTypes,
+  IndicatorSizeType,
+  SizeType,
+} from '../types';
 import { omit } from '../utils';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
 import AvatarImage from './AvatarImage';
-import { propsOmittedFromClickData, validIconSizes } from './constants';
+import { propsOmittedFromClickData } from './constants';
 import Presence from './Presence';
 import Status from './Status';
 
+const validIconSizes = Object.keys(ICON_SIZES);
+
 const warn = (message: string) => {
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NODE_ENV !== 'production' && !process.env.CI) {
     console.warn(message); // eslint-disable-line no-console
   }
 };
@@ -30,29 +38,28 @@ class Avatar extends Component<AvatarPropTypes> {
   ref?: HTMLElement;
 
   static defaultProps = {
-    appearance: 'circle',
+    appearance: 'circle' as AppearanceType,
     enableTooltip: true,
-    size: 'medium',
+    size: 'medium' as SizeType,
   };
 
-  createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+  createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
   clickAnalyticsCaller = () => {
     const { createAnalyticsEvent } = this.props;
 
-    if (createAnalyticsEvent) {
-      return this.createAndFireEventOnAtlaskit({
-        action: 'clicked',
-        actionSubject: 'avatar',
+    return createAnalyticsEvent
+      ? this.createAndFireEventOnAtlaskit({
+          action: 'clicked',
+          actionSubject: 'avatar',
 
-        attributes: {
-          componentName: 'avatar',
-          packageName,
-          packageVersion,
-        },
-      })(createAnalyticsEvent);
-    }
-    return undefined;
+          attributes: {
+            componentName: 'avatar',
+            packageName,
+            packageVersion,
+          },
+        })(createAnalyticsEvent)
+      : undefined;
   };
 
   // expose blur/focus to consumers via ref
@@ -66,7 +73,7 @@ class Avatar extends Component<AvatarPropTypes> {
 
   // disallow click on disabled avatars
   // only return avatar data properties
-  guardedClick = (event: KeyboardEvent | MouseEvent) => {
+  guardedClick = (event: React.MouseEvent) => {
     const { isDisabled, onClick } = this.props;
 
     if (isDisabled || typeof onClick !== 'function') return;
@@ -80,7 +87,7 @@ class Avatar extends Component<AvatarPropTypes> {
 
   // enforce status / presence rules
   /* eslint-disable no-console */
-  renderIcon = () => {
+  renderIcon = (): ReactNode | undefined => {
     const { appearance, borderColor, presence, status } = this.props;
     const showPresence = Boolean(presence);
     const showStatus = Boolean(status);
@@ -90,14 +97,13 @@ class Avatar extends Component<AvatarPropTypes> {
       return null;
     }
 
-    // cannot display both
     if (showStatus && showPresence) {
       warn('Avatar supports `presence` OR `status` properties, not both.');
       return null;
     }
 
     // only support particular sizes
-    if (validIconSizes.indexOf(this.props.size) === -1) {
+    if (validIconSizes.indexOf(this.props.size!) === -1) {
       warn(
         `Avatar size "${String(this.props.size)}" does NOT support ${
           showPresence ? 'presence' : 'status'
@@ -107,18 +113,18 @@ class Avatar extends Component<AvatarPropTypes> {
     }
 
     // we can cast here because we already know that it is a valid icon size
-    const { size } = this.props;
+    const size = this.props.size as IndicatorSizeType;
 
-    const indicator = (() => {
+    const indicator: ReactNode = (() => {
       if (showPresence) {
         const customPresenceNode =
           typeof presence === 'object' ? presence : null;
 
         return (
-          <PresenceWrapper appearance={appearance} size={size}>
+          <PresenceWrapper appearance={appearance!} size={size}>
             <Presence
               borderColor={borderColor}
-              presence={!customPresenceNode && (presence as any)}
+              presence={!customPresenceNode && presence}
               size={size}
             >
               {customPresenceNode}
@@ -131,10 +137,10 @@ class Avatar extends Component<AvatarPropTypes> {
       const customStatusNode = typeof status === 'object' ? status : null;
 
       return (
-        <StatusWrapper appearance={appearance} size={size}>
+        <StatusWrapper appearance={appearance!} size={size}>
           <Status
             borderColor={borderColor}
-            status={!customStatusNode && (status as any)}
+            status={!customStatusNode && status}
             size={size}
           >
             {customStatusNode}
@@ -160,20 +166,20 @@ class Avatar extends Component<AvatarPropTypes> {
       stackIndex,
       onClick,
       theme,
+      testId,
     } = this.props;
 
     // distill props from context, props, and state
     const enhancedProps: AvatarPropTypes = getProps(this);
 
-    // provide element type based on props
-    // TODO: why not enhanced props?
+    // provide element interface based on props
     const Inner: any = getStyledAvatar(this.props);
 
     Inner.displayName = 'Inner';
 
     const AvatarNode = (
       <Theme.Provider value={theme}>
-        <Outer size={size} stackIndex={stackIndex}>
+        <Outer size={size!} stackIndex={stackIndex} testId={testId}>
           <Inner
             ref={this.setRef}
             {...enhancedProps}
@@ -181,8 +187,8 @@ class Avatar extends Component<AvatarPropTypes> {
           >
             <AvatarImage
               alt={name}
-              appearance={appearance}
-              size={size}
+              appearance={appearance!}
+              size={size!}
               src={src}
             />
           </Inner>
@@ -192,24 +198,22 @@ class Avatar extends Component<AvatarPropTypes> {
     );
 
     return enableTooltip && name ? (
-      <Tooltip content={name} className="d-flex">
-        {AvatarNode}
-      </Tooltip>
+      <Tooltip content={name}>{AvatarNode}</Tooltip>
     ) : (
       AvatarNode
     );
   }
 }
 
-export const AvatarWithoutAnalytics = mapProps({
-  appearance: props => props.appearance || Avatar.defaultProps.appearance, // 1
+export const AvatarWithoutAnalytics = mapProps<AvatarPropTypes>({
+  appearance: props => props.appearance || Avatar.defaultProps.appearance,
   isInteractive: props =>
     Boolean(
       (typeof props.enableTooltip !== 'undefined'
         ? props.enableTooltip
         : Avatar.defaultProps.enableTooltip) && props.name,
-    ), // 2
-})(withPseudoState(Avatar as any));
+    ),
+})(withPseudoState(Avatar));
 
 export default withAnalyticsContext({
   componentName: 'avatar',
