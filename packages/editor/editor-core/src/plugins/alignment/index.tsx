@@ -1,7 +1,7 @@
 import { alignment } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import WithPluginState from '../../components/WithPluginState';
 import { EditorPlugin } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
 import { changeAlignment } from './commands';
 import {
   AlignmentPluginState,
@@ -16,7 +16,7 @@ export const defaultConfig: AlignmentPluginState = {
 };
 
 const alignmentPlugin = (): EditorPlugin => ({
-  name: 'alignmentPlugin',
+  name: 'alignment',
 
   marks() {
     return [{ name: 'alignment', mark: alignment }];

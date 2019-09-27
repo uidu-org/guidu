@@ -1,5 +1,6 @@
 import { TableAEP } from './events';
 import { INPUT_METHOD } from './enums';
+import { SortOrder } from '../../table/types';
 
 //#region Constants
 export enum TABLE_ACTION {
@@ -18,6 +19,7 @@ export enum TABLE_ACTION {
   ADDED_COLUMN = 'addedColumn',
   DELETED_ROW = 'deletedRow',
   DELETED_COLUMN = 'deletedColumn',
+  SORTED_COLUMN = 'sortedColumn',
 }
 
 export enum TABLE_BREAKOUT {
@@ -28,6 +30,11 @@ export enum TABLE_BREAKOUT {
 //#endregion
 
 //#region Type Helpers
+interface SortColumn {
+  sortOrder: SortOrder;
+  mode: 'editor';
+}
+
 interface TotalRowAndColCount {
   totalRowCount: number;
   totalColumnCount: number;
@@ -49,7 +56,8 @@ type TableDeleteAEP = TableAEP<
   TABLE_ACTION.DELETED,
   {
     inputMethod: INPUT_METHOD.KEYBOARD | INPUT_METHOD.FLOATING_TB;
-  }
+  },
+  undefined
 >;
 
 type TableClearAEP = TableAEP<
@@ -57,17 +65,20 @@ type TableClearAEP = TableAEP<
   {
     inputMethod: INPUT_METHOD.KEYBOARD | INPUT_METHOD.CONTEXT_MENU;
   } & HorizontalAndVerticalCells &
-    TotalRowAndColCount
+    TotalRowAndColCount,
+  undefined
 >;
 
 type TableMergeSplitAEP = TableAEP<
   TABLE_ACTION.MERGED | TABLE_ACTION.SPLIT,
-  AllCellInfo
+  AllCellInfo,
+  undefined
 >;
 
 type TableColorAEP = TableAEP<
   TABLE_ACTION.COLORED,
-  { cellColor: string } & AllCellInfo
+  { cellColor: string } & AllCellInfo,
+  undefined
 >;
 
 type TableToggleHeaderAEP = TableAEP<
@@ -75,7 +86,8 @@ type TableToggleHeaderAEP = TableAEP<
   | TABLE_ACTION.TOGGLED_HEADER_ROW
   | TABLE_ACTION.TOGGLED_HEADER_COLUMN,
   // newState -> true : on, false: off
-  { newState: boolean } & TotalRowAndColCount
+  { newState: boolean } & TotalRowAndColCount,
+  undefined
 >;
 
 type TableChangeBreakoutAEP = TableAEP<
@@ -83,12 +95,14 @@ type TableChangeBreakoutAEP = TableAEP<
   {
     newBreakoutMode: TABLE_BREAKOUT;
     previousBreakoutMode: TABLE_BREAKOUT;
-  } & TotalRowAndColCount
+  } & TotalRowAndColCount,
+  undefined
 >;
 
 type TableCopyAndCutAEP = TableAEP<
   TABLE_ACTION.CUT | TABLE_ACTION.COPIED,
-  AllCellInfo
+  AllCellInfo,
+  undefined
 >;
 
 type TableAddRowOrColumnAEP = TableAEP<
@@ -100,7 +114,8 @@ type TableAddRowOrColumnAEP = TableAEP<
       | INPUT_METHOD.BUTTON
       | INPUT_METHOD.KEYBOARD;
     position: number;
-  } & TotalRowAndColCount
+  } & TotalRowAndColCount,
+  undefined
 >;
 
 type TableDeleteRowOrColumnAEP = TableAEP<
@@ -109,8 +124,24 @@ type TableDeleteRowOrColumnAEP = TableAEP<
     inputMethod: INPUT_METHOD.CONTEXT_MENU | INPUT_METHOD.BUTTON;
     position: number;
     count: number;
-  } & TotalRowAndColCount
+  } & TotalRowAndColCount,
+  undefined
 >;
+
+type TableSortColumnAEP = TableAEP<
+  TABLE_ACTION.SORTED_COLUMN,
+  {
+    inputMethod:
+      | INPUT_METHOD.SHORTCUT
+      | INPUT_METHOD.CONTEXT_MENU
+      | INPUT_METHOD.BUTTON
+      | INPUT_METHOD.KEYBOARD;
+    position: number;
+  } & TotalRowAndColCount &
+    SortColumn,
+  undefined
+>;
+
 //#endregion
 
 export type TableEventPayload =
@@ -122,4 +153,5 @@ export type TableEventPayload =
   | TableChangeBreakoutAEP
   | TableCopyAndCutAEP
   | TableAddRowOrColumnAEP
+  | TableSortColumnAEP
   | TableDeleteRowOrColumnAEP;

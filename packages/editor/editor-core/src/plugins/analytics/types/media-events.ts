@@ -1,10 +1,11 @@
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID } from './enums';
 import { TrackAEP } from './events';
+import { ACTION_SUBJECT, ACTION, ACTION_SUBJECT_ID } from './enums';
 
 type MediaLinkAEP<Action> = TrackAEP<
   Action,
   ACTION_SUBJECT.MEDIA_SINGLE,
   ACTION_SUBJECT_ID.MEDIA_LINK,
+  undefined,
   undefined
 >;
 

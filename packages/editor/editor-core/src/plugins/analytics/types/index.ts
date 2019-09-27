@@ -6,3 +6,4 @@ export * from './general-events';
 export * from './insert-events';
 export * from './table-events';
 export * from './paste-events';
+export * from './history-events';

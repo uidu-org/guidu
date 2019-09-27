@@ -1,11 +1,11 @@
-import { HeadingLevelsAndNormalText } from '../../block-type/types';
+import { TrackAEP } from './events';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
-import { TrackAEP } from './events';
+import { HeadingLevelsAndNormalText } from '../../block-type/types';
 
 export enum INDENT_DIR {
   INDENT = 'indent',
@@ -23,7 +23,8 @@ type FormatAEP<ActionSubjectID, Attributes> = TrackAEP<
   ACTION.FORMATTED,
   ACTION_SUBJECT.TEXT,
   ActionSubjectID,
-  Attributes
+  Attributes,
+  undefined
 >;
 
 type FormatBasicAEP = FormatAEP<

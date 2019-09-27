@@ -4,9 +4,9 @@ import EditorAlignLeftIcon from '@atlaskit/icon/glyph/editor/align-left';
 import EditorAlignRightIcon from '@atlaskit/icon/glyph/editor/align-right';
 import * as React from 'react';
 import { defineMessages } from 'react-intl';
-import Alignment from '../../../../components/Alignment';
-import Dropdown from '../../../../components/Dropdown';
-import ToolbarButton from '../../../../components/ToolbarButton';
+import Alignment from '../../../../ui/Alignment';
+import Dropdown from '../../../../ui/Dropdown';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import { AlignmentPluginState, AlignmentState } from '../../pm-plugins/main';
 import {
   ExpandIconWrapper,
@@ -66,7 +66,8 @@ class AlignmentToolbar extends React.Component<Props, State> {
           boundariesElement={popupsBoundariesElement}
           scrollableElement={popupsScrollableElement}
           isOpen={this.state.isOpen}
-          onOpenChange={this.handleOpenChange}
+          handleClickOutside={this.hide}
+          handleEscapeKeydown={this.hide}
           fitWidth={242}
           fitHeight={80}
           trigger={
@@ -110,6 +111,12 @@ class AlignmentToolbar extends React.Component<Props, State> {
 
   private handleOpenChange = ({ isOpen }: { isOpen: boolean }) => {
     this.setState({ isOpen });
+  };
+
+  private hide = () => {
+    if (this.state.isOpen === true) {
+      this.setState({ isOpen: false });
+    }
   };
 }
 

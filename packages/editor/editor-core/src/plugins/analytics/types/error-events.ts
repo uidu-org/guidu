@@ -12,7 +12,8 @@ type InvalidTransactionErrorAEP = OperationalAEP<
       new: SimplifiedNode | string;
       prev: SimplifiedNode | string;
     };
-  }
+  },
+  undefined
 >;
 
 export type ErrorEventPayload = InvalidTransactionErrorAEP;

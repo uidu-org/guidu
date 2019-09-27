@@ -1,10 +1,10 @@
+import { TrackAEP } from './events';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
-import { TrackAEP } from './events';
 import { InsertSmartLinkAEP } from './smart-links';
 
 export enum PANEL_TYPE {
@@ -49,17 +49,23 @@ export enum LINK_RESOURCE {
   OTHER = 'other',
 }
 
-export type InsertAEP<ActionSubjectID, Attributes> = TrackAEP<
+export type InsertAEP<
+  ActionSubjectID,
+  Attributes,
+  NonPrivacySafeAttributes
+> = TrackAEP<
   ACTION.INSERTED,
   ACTION_SUBJECT.DOCUMENT,
   ActionSubjectID,
-  Attributes
+  Attributes,
+  NonPrivacySafeAttributes
 >;
 
 type InsertLineBreakAEP = TrackAEP<
   ACTION.INSERTED,
   ACTION_SUBJECT.TEXT,
   ACTION_SUBJECT_ID.LINE_BREAK,
+  undefined,
   undefined
 >;
 
@@ -72,7 +78,8 @@ type InsertDividerAEP = InsertAEP<
       | INPUT_METHOD.INSERT_MENU
       | INPUT_METHOD.FORMATTING
       | INPUT_METHOD.SHORTCUT;
-  }
+  },
+  undefined
 >;
 
 type InsertPanelAEP = InsertAEP<
@@ -88,7 +95,8 @@ type InsertPanelAEP = InsertAEP<
       | PANEL_TYPE.NOTE
       | PANEL_TYPE.SUCCESS
       | PANEL_TYPE.WARNING;
-  }
+  },
+  undefined
 >;
 
 type InsertCodeBlockAEP = InsertAEP<
@@ -100,7 +108,8 @@ type InsertCodeBlockAEP = InsertAEP<
       | INPUT_METHOD.INSERT_MENU
       | INPUT_METHOD.FORMATTING
       | INPUT_METHOD.INSERT_MENU;
-  }
+  },
+  undefined
 >;
 
 type InsertTableAEP = InsertAEP<
@@ -112,7 +121,8 @@ type InsertTableAEP = InsertAEP<
       | INPUT_METHOD.INSERT_MENU
       | INPUT_METHOD.FORMATTING
       | INPUT_METHOD.SHORTCUT;
-  }
+  },
+  undefined
 >;
 
 type InsertActionDecisionAEP = InsertAEP<
@@ -131,7 +141,8 @@ type InsertActionDecisionAEP = InsertAEP<
     userContext?: USER_CONTEXT.EDIT | USER_CONTEXT.NEW;
     position: number;
     listSize: number;
-  }
+  },
+  undefined
 >;
 
 type InsertEmojiAEP = InsertAEP<
@@ -141,7 +152,8 @@ type InsertEmojiAEP = InsertAEP<
       | INPUT_METHOD.TYPEAHEAD
       | INPUT_METHOD.PICKER
       | INPUT_METHOD.ASCII;
-  }
+  },
+  undefined
 >;
 
 type InsertStatusAEP = InsertAEP<
@@ -151,7 +163,8 @@ type InsertStatusAEP = InsertAEP<
       | INPUT_METHOD.QUICK_INSERT
       | INPUT_METHOD.TOOLBAR
       | INPUT_METHOD.INSERT_MENU;
-  }
+  },
+  undefined
 >;
 
 export type InputMethodInsertMedia =
@@ -163,19 +176,25 @@ type InsertMediaAEP = InsertAEP<
   ACTION_SUBJECT_ID.MEDIA,
   {
     inputMethod: InputMethodInsertMedia;
-    fileExtension: string | undefined;
-  }
+    fileExtension?: string;
+  },
+  undefined
 >;
+
+export type InputMethodInsertLink =
+  | INPUT_METHOD.TYPEAHEAD
+  | INPUT_METHOD.CLIPBOARD
+  | INPUT_METHOD.FORMATTING
+  | INPUT_METHOD.AUTO_DETECT
+  | INPUT_METHOD.MANUAL;
 
 type InsertLinkAEP = InsertAEP<
   ACTION_SUBJECT_ID.LINK,
   {
-    inputMethod:
-      | INPUT_METHOD.TYPEAHEAD
-      | INPUT_METHOD.CLIPBOARD
-      | INPUT_METHOD.FORMATTING
-      | INPUT_METHOD.AUTO_DETECT
-      | INPUT_METHOD.MANUAL;
+    inputMethod: InputMethodInsertLink;
+  },
+  {
+    linkDomain: string;
   }
 >;
 
@@ -203,14 +222,38 @@ type InsertLinkPreviewAEP = InsertAEP<
       | LINK_RESOURCE.YOUTUBE
       | LINK_RESOURCE.TWITTER
       | LINK_RESOURCE.OTHER;
-  }
+  },
+  undefined
 >;
 
 type InsertMediaLinkAEP = InsertAEP<
   ACTION_SUBJECT_ID.MEDIA_LINK,
   {
     inputMethod: INPUT_METHOD.TYPEAHEAD | INPUT_METHOD.MANUAL;
-  }
+  },
+  undefined
+>;
+
+type InsertLayoutAEP = InsertAEP<
+  ACTION_SUBJECT_ID.LAYOUT,
+  {
+    inputMethod:
+      | INPUT_METHOD.TOOLBAR
+      | INPUT_METHOD.INSERT_MENU
+      | INPUT_METHOD.QUICK_INSERT;
+  },
+  undefined
+>;
+
+type InsertDateAEP = InsertAEP<
+  ACTION_SUBJECT_ID.DATE,
+  {
+    inputMethod:
+      | INPUT_METHOD.QUICK_INSERT
+      | INPUT_METHOD.TOOLBAR
+      | INPUT_METHOD.INSERT_MENU;
+  },
+  undefined
 >;
 
 export type InsertEventPayload =
@@ -226,4 +269,6 @@ export type InsertEventPayload =
   | InsertLinkAEP
   | InsertLinkPreviewAEP
   | InsertMediaLinkAEP
-  | InsertSmartLinkAEP;
+  | InsertSmartLinkAEP
+  | InsertLayoutAEP
+  | InsertDateAEP;

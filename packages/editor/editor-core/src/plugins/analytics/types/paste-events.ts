@@ -114,7 +114,8 @@ type PasteBaseAEP<Action, Attributes> = TrackAEP<
   Action,
   ACTION_SUBJECT.DOCUMENT,
   PASTE_ACTION_SUBJECT_ID,
-  Attributes
+  Attributes,
+  undefined
 >;
 
 type PasteAEP = PasteBaseAEP<

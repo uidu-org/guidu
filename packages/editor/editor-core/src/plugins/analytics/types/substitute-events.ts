@@ -18,7 +18,8 @@ type SubstituteAEP<ActionSubjectID, Attributes> = TrackAEP<
   ACTION.SUBSTITUTED,
   ACTION_SUBJECT.TEXT,
   ActionSubjectID,
-  Attributes
+  Attributes,
+  undefined
 >;
 
 type SubstituteProductAEP = SubstituteAEP<
