@@ -1,4 +1,3 @@
-// @flow
 /* eslint import/no-dynamic-require: 0, global-require: 0 */
 import memoizeOne from 'memoize-one';
 
@@ -28,6 +27,7 @@ export type SupportedLanguages =
   | 'fortran'
   | 'foxpro' // → purebasic
   | 'go'
+  | 'graphql'
   | 'groovy'
   | 'haskell'
   | 'haxe'
@@ -440,6 +440,11 @@ export const SUPPORTED_LANGUAGE_ALIASES = Object.freeze([
     name: 'Yaml',
     alias: ['yaml', 'yml'],
     value: 'yaml',
+  },
+  {
+    name: 'GraphQL',
+    alias: ['graphql'],
+    value: 'graphql',
   },
 ]);
 

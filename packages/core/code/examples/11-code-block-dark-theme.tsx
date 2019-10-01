@@ -1,8 +1,8 @@
-// @flow
+import { AtlaskitThemeProvider } from '@uidu/theme';
 import React from 'react';
 import { AkCodeBlock } from '../src';
 
-const exampleCodeBlock = `  // React Component
+const exampleCodeBlock = `  // React component
   class HelloMessage extends React.Component {
     render() {
       return (
@@ -21,15 +21,8 @@ const exampleCodeBlock = `  // React Component
 
 export default function Component() {
   return (
-    <div>
-      <h2>Showing code without line numbers</h2>
-      <AkCodeBlock
-        language="java"
-        text={exampleCodeBlock}
-        showLineNumbers={false}
-      />
-      <h2>Showing code with line numbers</h2>
+    <AtlaskitThemeProvider mode="dark">
       <AkCodeBlock language="java" text={exampleCodeBlock} />
-    </div>
+    </AtlaskitThemeProvider>
   );
 }

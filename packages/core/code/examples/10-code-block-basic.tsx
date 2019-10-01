@@ -1,9 +1,7 @@
-// @flow
 import React from 'react';
-import { uiduThemeProvider } from '@uidu/theme';
 import { AkCodeBlock } from '../src';
 
-const exampleCodeBlock = `  // React component
+const exampleCodeBlock = `  // React Component
   class HelloMessage extends React.Component {
     render() {
       return (
@@ -22,8 +20,15 @@ const exampleCodeBlock = `  // React component
 
 export default function Component() {
   return (
-    <uiduThemeProvider mode="dark">
+    <div>
+      <h2>Showing code without line numbers</h2>
+      <AkCodeBlock
+        language="java"
+        text={exampleCodeBlock}
+        showLineNumbers={false}
+      />
+      <h2>Showing code with line numbers</h2>
       <AkCodeBlock language="java" text={exampleCodeBlock} />
-    </uiduThemeProvider>
+    </div>
   );
 }

@@ -1,6 +1,5 @@
-// @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 

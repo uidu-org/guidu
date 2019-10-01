@@ -1,62 +1,66 @@
-// @flow
-import { codeFontFamily, borderRadius, gridSize, fontSize } from '@uidu/theme';
+import {
+  codeFontFamily,
+  borderRadius,
+  gridSize,
+  fontSize,
+} from '@atlaskit/theme/constants';
 
 import { defaultColors } from './defaultTheme';
 
 export type ThemeModes = 'light' | 'dark';
 export type ThemeProps = {
-  __ATLASKIT_THEME__: { mode: ThemeModes },
+  __ATLASKIT_THEME__: { mode: ThemeModes };
 };
 
 export type Theme = {
-  lineNumberColor?: string | number,
-  lineNumberBgColor?: string | number,
-  backgroundColor?: string | number,
-  textColor?: string | number,
-  substringColor?: string | number,
-  keywordColor?: string | number,
-  attributeColor?: string | number,
-  selectorTagColor?: string | number,
-  docTagColor?: string | number,
-  nameColor?: string | number,
-  builtInColor?: string | number,
-  literalColor?: string | number,
-  bulletColor?: string | number,
-  codeColor?: string | number,
-  additionColor?: string | number,
-  regexpColor?: string | number,
-  symbolColor?: string | number,
-  variableColor?: string | number,
-  templateVariableColor?: string | number,
-  linkColor?: string | number,
-  selectorAttributeColor?: string | number,
-  selectorPseudoColor?: string | number,
-  typeColor?: string | number,
-  stringColor?: string | number,
-  selectorIdColor?: string | number,
-  selectorClassColor?: string | number,
-  quoteColor?: string | number,
-  templateTagColor?: string | number,
-  deletionColor?: string | number,
-  titleColor?: string | number,
-  sectionColor?: string | number,
-  commentColor?: string | number,
-  metaKeywordColor?: string | number,
-  metaColor?: string | number,
-  functionColor?: string | number,
-  numberColor?: string | number,
+  lineNumberColor?: string | number;
+  lineNumberBgColor?: string | number;
+  backgroundColor?: string | number;
+  textColor?: string | number;
+  substringColor?: string | number;
+  keywordColor?: string | number;
+  attributeColor?: string | number;
+  selectorTagColor?: string | number;
+  docTagColor?: string | number;
+  nameColor?: string | number;
+  builtInColor?: string | number;
+  literalColor?: string | number;
+  bulletColor?: string | number;
+  codeColor?: string | number;
+  additionColor?: string | number;
+  regexpColor?: string | number;
+  symbolColor?: string | number;
+  variableColor?: string | number;
+  templateVariableColor?: string | number;
+  linkColor?: string | number;
+  selectorAttributeColor?: string | number;
+  selectorPseudoColor?: string | number;
+  typeColor?: string | number;
+  stringColor?: string | number;
+  selectorIdColor?: string | number;
+  selectorClassColor?: string | number;
+  quoteColor?: string | number;
+  templateTagColor?: string | number;
+  deletionColor?: string | number;
+  titleColor?: string | number;
+  sectionColor?: string | number;
+  commentColor?: string | number;
+  metaKeywordColor?: string | number;
+  metaColor?: string | number;
+  functionColor?: string | number;
+  numberColor?: string | number;
 };
 
 const codeContainerStyle = {
   fontFamily: codeFontFamily,
-  fontSize: '1rem',
-  // lineHeight: 20 / 12,
+  fontSize: '12px',
+  lineHeight: 20 / 12,
   padding: gridSize(),
 };
 
 const lineNumberContainerStyle = (theme: Theme) => ({
-  // fontSize: `${fontSize()}px`,
-  // lineHeight: 20 / 14,
+  fontSize: `${fontSize()}px`,
+  lineHeight: 20 / 14,
   color: theme.lineNumberColor,
   backgroundColor: theme.lineNumberBgColor,
   flexShrink: 0,
@@ -179,14 +183,14 @@ const sharedCodeStyle = (theme: Theme) => ({
   },
 });
 
-const codeStyle = theme => ({
+const codeStyle = (theme: Theme) => ({
   fontFamily: codeFontFamily,
-  fontSize: '.95rem',
+  fontSize: '12px',
   background: theme.backgroundColor,
   color: theme.textColor,
   borderRadius: borderRadius(),
   display: 'flex',
-  // lineHeight: 20 / 12,
+  lineHeight: 20 / 12,
   overflowX: 'auto',
   whiteSpace: 'pre',
 });

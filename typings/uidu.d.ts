@@ -2,7 +2,6 @@
  * Tells TypeScript to ignore flow components by declaring them as empty modules
  */
 declare module '@uidu/calendar';
-declare module '@uidu/code';
 declare module '@uidu/codemod-util-shared-styles-to-theme';
 declare module '@uidu/comment';
 declare module '@uidu/datetime-picker';

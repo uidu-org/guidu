@@ -1,25 +1,17 @@
-// @flow
 import React, { PureComponent } from 'react';
-import {
-  normalizeLanguage,
-  type SupportedLanguages,
-} from '../supportedLanguages';
-import {
-  type Theme,
-  type ThemeProps,
-  applyTheme,
-} from '../themes/themeBuilder';
+import { normalizeLanguage, SupportedLanguages } from '../supportedLanguages';
+import { Theme, ThemeProps, applyTheme } from '../themes/themeBuilder';
 import Code from './Code';
 
 type CodeBlockProps = {
   /** The code to be formatted */
-  text: string,
+  text: string;
   /** The language in which the code is written */
-  language: SupportedLanguages | string,
+  language: SupportedLanguages | string;
   /** Indicates whether or not to show line numbers */
-  showLineNumbers?: boolean,
+  showLineNumbers?: boolean;
   /** A custom theme to be applied, implements the Theme interface */
-  theme?: Theme | ThemeProps,
+  theme?: Theme | ThemeProps;
 };
 
 const LANGUAGE_FALLBACK = 'text';
@@ -40,7 +32,11 @@ export default class CodeBlock extends PureComponent<CodeBlockProps, {}> {
     const data = event.nativeEvent.clipboardData;
     if (data) {
       event.preventDefault();
-      const selectedText = window.getSelection().toString();
+      const selection = window.getSelection();
+      if (selection === null) {
+        return;
+      }
+      const selectedText = selection.toString();
       const document = `<!doctype html><html><head></head><body><pre>${selectedText}</pre></body></html>`;
       data.clearData();
       data.setData('text/html', document);

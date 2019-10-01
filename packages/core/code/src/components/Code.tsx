@@ -1,33 +1,25 @@
-// @flow
 import React, { PureComponent } from 'react';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import {
-  normalizeLanguage,
-  type SupportedLanguages,
-} from '../supportedLanguages';
-import {
-  type Theme,
-  type ThemeProps,
-  applyTheme,
-} from '../themes/themeBuilder';
+import { normalizeLanguage, SupportedLanguages } from '../supportedLanguages';
+import { Theme, ThemeProps, applyTheme } from '../themes/themeBuilder';
 
 type CodeProps = {
   /** The style object to apply to code */
-  codeStyle?: {},
+  codeStyle?: {};
   /** The element or custom react component to use in place of the default code tag */
-  codeTagProps?: {},
+  codeTagProps?: {};
   /** The language in which the code is written */
-  language: SupportedLanguages | string,
+  language: SupportedLanguages | string;
   /** The style object to apply to the container that shows line number */
-  lineNumberContainerStyle: {},
+  lineNumberContainerStyle: {};
   /** The element or custom react component to use in place of the default span tag */
-  preTag: Node | string,
+  preTag: Node | string;
   /** Indicates whether or not to show line numbers */
-  showLineNumbers: boolean,
+  showLineNumbers: boolean;
   /** The code to be formatted */
-  text: string,
+  text: string;
   /** A custom theme to be applied, implements the Theme interface */
-  theme?: Theme | ThemeProps,
+  theme?: Theme | ThemeProps;
 };
 
 export default class Code extends PureComponent<CodeProps, {}> {
