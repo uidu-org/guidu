@@ -15,6 +15,7 @@
     "@uidu/emoji": "^0.1.0",
     "@uidu/mentions": "^0.1.8",
     "@uidu/theme": "^0.1.17",
+    "css-color-names": "^1.0.1",
     "raf-schd": "^4.0.0",
     "styled-components": "^4.0.3"
   },

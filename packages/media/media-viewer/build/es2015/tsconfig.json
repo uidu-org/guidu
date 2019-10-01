@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig",
   "compilerOptions": {
+    "declaration": true,
     "outDir": "../../"
   },
   "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],

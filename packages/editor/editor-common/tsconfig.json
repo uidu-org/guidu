@@ -1,7 +1,6 @@
 {
   "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "noImplicitAny": true,
     "baseUrl": "./"
   },
   "include": [
@@ -12,8 +11,5 @@
     "test-helpers/**/*.ts",
     "test-helpers/**/*.tsx"
   ],
-  "exclude": [
-    "node_modules",
-    "src/json-schema"
-  ]
+  "exclude": ["node_modules", "src/json-schema"]
 }

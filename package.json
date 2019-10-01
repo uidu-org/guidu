@@ -418,6 +418,7 @@
     "@types/react-syntax-highlighter": "^11.0.0",
     "@types/react-virtualized": "^9.18.12",
     "@types/shortid": "^0.0.29",
+    "@types/url-parse": "^1.4.3",
     "@types/uuid-validate": "^0.0.1",
     "@types/xregexp": "^3.0.29",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
