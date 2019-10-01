@@ -2,8 +2,8 @@ import classNames from 'classnames';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { defaultCategories } from '../../util/constants';
 import { CategoryDescription, OnCategory } from '../../types';
+import { defaultCategories } from '../../util/constants';
 import { messages } from '../i18n';
 import {
   CategoryDescriptionMap,
@@ -45,7 +45,7 @@ const addNewCategories = (
 };
 
 export default class CategorySelector extends PureComponent<Props, State> {
-  static defaultProps = {
+  static defaultProps: Props = {
     onCategorySelected: () => {},
     dynamicCategories: [],
   };
