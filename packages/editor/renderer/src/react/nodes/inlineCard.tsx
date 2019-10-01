@@ -8,7 +8,7 @@ import {
 import { getEventHandler } from '../../utils';
 import { CardErrorBoundary } from './fallback';
 
-interface InlineCardProps {
+export interface InlineCardProps {
   url?: string;
   data?: object;
   eventHandlers?: EventHandlers;
