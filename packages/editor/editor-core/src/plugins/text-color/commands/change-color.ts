@@ -11,6 +11,7 @@ import {
   EVENT_TYPE,
   HigherOrderCommand,
 } from '../../analytics';
+import { PaletteColor } from '../../../ui/ColorPalette/Palettes/type';
 
 /**
  * Helper to create a higher order analytics command
@@ -22,12 +23,20 @@ import {
 function createWithColorAnalytics(
   newColor: string,
   previousColor: string | null,
-  palette: Map<string, string>,
+  palette: PaletteColor[],
 ): HigherOrderCommand {
-  const newColorLabel = palette.get(newColor) || newColor;
-  const previousColorLabel = previousColor
-    ? palette.get(previousColor) || previousColor
-    : '';
+  const newColorFromPalette = palette.find(({ value }) => value === newColor);
+  const previousColorFromPalette = palette.find(
+    ({ value }) => value === previousColor,
+  );
+
+  const newColorLabel = newColorFromPalette
+    ? newColorFromPalette.label
+    : newColor;
+  const previousColorLabel = previousColorFromPalette
+    ? previousColorFromPalette.label
+    : previousColor || '';
+
   return withAnalytics({
     action: ACTION.FORMATTED,
     actionSubject: ACTION_SUBJECT.TEXT,

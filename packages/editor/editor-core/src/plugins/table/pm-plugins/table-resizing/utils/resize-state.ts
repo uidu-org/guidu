@@ -1,6 +1,10 @@
-import { tableCellMinWidth } from '@uidu/editor-common';
+import {
+  calcTableColumnWidths,
+  tableCellMinWidth,
+  tableNewColumnMinWidth,
+} from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import { insertColgroupFromNode } from './colgroup';
+import { hasTableBeenResized, insertColgroupFromNode } from './colgroup';
 import {
   ColumnState,
   getCellsRefsInColumn,
@@ -11,10 +15,9 @@ import { growColumn, shrinkColumn } from './resize-logic';
 export interface ResizeState {
   cols: ColumnState[];
   maxSize: number;
-  colgroupChildren: HTMLCollection;
 }
 
-export const getResizeStateFromDOM = ({
+export const getResizeState = ({
   minWidth,
   maxSize,
   table,
@@ -29,16 +32,25 @@ export const getResizeStateFromDOM = ({
   start: number;
   domAtPos: (pos: number) => { node: Node; offset: number };
 }): ResizeState => {
-  const colgroupChildren = insertColgroupFromNode(tableRef, table);
+  if (hasTableBeenResized(table)) {
+    return {
+      cols: calcTableColumnWidths(table).map((width, index) => ({
+        width: width === 0 ? tableNewColumnMinWidth : width,
+        minWidth: width === 0 ? tableNewColumnMinWidth : minWidth,
+        index,
+      })),
+      maxSize,
+    };
+  }
 
+  // Getting the resize state from DOM
+  const colgroupChildren = insertColgroupFromNode(tableRef, table);
   return {
-    // update state from DOM
     cols: Array.from(colgroupChildren).map((_, index) => {
       const cellsRefs = getCellsRefsInColumn(index, table, start, domAtPos);
       return getColumnStateFromDOM(cellsRefs, index, minWidth);
     }),
     maxSize,
-    colgroupChildren,
   };
 };
 
@@ -47,6 +59,7 @@ export const resizeColumn = (
   resizeState: ResizeState,
   colIndex: number,
   amount: number,
+  tableRef: HTMLElement,
   selectedColumns?: number[],
 ): ResizeState => {
   const newState =
@@ -56,19 +69,23 @@ export const resizeColumn = (
       ? shrinkColumn(resizeState, colIndex, amount, selectedColumns)
       : resizeState;
 
-  updateColgroup(newState);
+  updateColgroup(newState, tableRef);
 
   return newState;
 };
 
 // updates Colgroup DOM node with new widths
-export const updateColgroup = (state: ResizeState): void => {
+export const updateColgroup = (
+  state: ResizeState,
+  tableRef: HTMLElement,
+): void => {
+  const cols = tableRef.querySelectorAll('col');
   state.cols
-    .filter(column => !!column.width) // if width is 0, we dont want to apply that.
+    .filter(column => column && !!column.width) // if width is 0, we dont want to apply that.
     .forEach((column, i) => {
-      (state.colgroupChildren[
-        i
-      ] as HTMLElement).style.width = `${column.width}px`;
+      if (cols[i]) {
+        cols[i].style.width = `${column.width}px`;
+      }
     });
 };
 

@@ -1,18 +1,58 @@
+import { isSafeUrl } from '@uidu/adf-schema';
 import { closeHistory } from 'prosemirror-history';
 import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, NodeSelection, Transaction } from 'prosemirror-state';
 import { safeInsert } from 'prosemirror-utils';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, addAnalytics, EVENT_TYPE } from '../../../plugins/analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+} from '../../../plugins/analytics';
 import { Command } from '../../../types';
 import { nodesBetweenChanged, processRawValue } from '../../../utils';
 import { SmartLinkNodeContext } from '../../analytics/types/smart-links';
 import { md } from '../../paste/pm-plugins/main';
-import { CardAppearance, CardPluginState, CardReplacementInputMethod, Request } from '../types';
+import {
+  CardAppearance,
+  CardPluginState,
+  CardReplacementInputMethod,
+  Request,
+} from '../types';
 import { appearanceForNodeType } from '../utils';
 import { queueCards, resolveCard } from './actions';
 import { pluginKey } from './main';
 
+export function shouldReplace(
+  node: Node,
+  compareLinkText: boolean = true,
+  compareToUrl?: string,
+) {
+  const linkMark = node.marks.find(mark => mark.type.name === 'link');
+  if (!linkMark) {
+    // not a link anymore
+    return false;
+  }
 
+  // ED-6041: compare normalised link text after linkfy from Markdown transformer
+  // instead, since it always decodes URL ('%20' -> ' ') on the link text
+  const normalisedHref = md.normalizeLinkText(linkMark.attrs.href);
+  const normalizedLinkText = md.normalizeLinkText(node.text || '');
+
+  if (compareLinkText && normalisedHref !== normalizedLinkText) {
+    return false;
+  }
+
+  if (compareToUrl) {
+    const normalizedUrl = md.normalizeLinkText(compareToUrl);
+    if (normalizedUrl !== normalisedHref) {
+      return false;
+    }
+  }
+
+  return true;
+}
 
 export function insertCard(tr: Transaction, cardAdf: Node, schema: Schema) {
   const { inlineCard } = schema.nodes;
@@ -37,6 +77,11 @@ function replaceLinksToCards(
 ): string | undefined {
   const { inlineCard } = schema.nodes;
   const { url } = request;
+
+  if (!isSafeUrl(url)) {
+    return undefined;
+  }
+
   // replace all the outstanding links with their cards
   const pos = tr.mapping.map(request.pos);
   const $pos = tr.doc.resolve(pos);
@@ -46,19 +91,7 @@ function replaceLinksToCards(
     return undefined;
   }
 
-  // not a link anymore
-  const linkMark = node.marks.find(mark => mark.type.name === 'link');
-  if (!linkMark) {
-    return undefined;
-  }
-
-  const textSlice = node.text;
-  const normalizedLinkText = textSlice && md.normalizeLinkText(url);
-  if (
-    request.compareLinkText &&
-    normalizedLinkText !== textSlice &&
-    url !== textSlice
-  ) {
+  if (!shouldReplace(node, request.compareLinkText, url)) {
     return undefined;
   }
 
@@ -68,7 +101,7 @@ function replaceLinksToCards(
     nodes.push(schema.text(' '));
   }
 
-  tr.replaceWith(pos, pos + (textSlice || url).length, nodes);
+  tr.replaceWith(pos, pos + (node.text || url).length, nodes);
 
   return $pos.node($pos.depth - 1).type.name;
 }
@@ -152,18 +185,8 @@ export const queueCardsFromChangedTr = (
     const linkMark = node.marks.find(mark => mark.type === link);
 
     if (linkMark) {
-      // ED-6041: compare normalised link text after linkfy from Markdown transformer
-      // instead, since it always decodes URL ('%20' -> ' ') on the link text
-      if (normalizeLinkText) {
-        const normalizedLinkText = md.normalizeLinkText(linkMark.attrs.href);
-
-        // don't bother queueing nodes that have user-defined text for a link
-        if (
-          node.text !== normalizedLinkText &&
-          node.text !== linkMark.attrs.href
-        ) {
-          return false;
-        }
+      if (!shouldReplace(node, normalizeLinkText)) {
+        return false;
       }
 
       requests.push({
@@ -181,7 +204,10 @@ export const queueCardsFromChangedTr = (
   return queueCards(requests)(tr);
 };
 
-export const changeSelectedCardToLink: Command = (state, dispatch) => {
+export const changeSelectedCardToLink = (
+  text?: string,
+  href?: string,
+): Command => (state, dispatch) => {
   const selectedNode =
     state.selection instanceof NodeSelection && state.selection.node;
   if (!selectedNode) {
@@ -189,13 +215,31 @@ export const changeSelectedCardToLink: Command = (state, dispatch) => {
   }
 
   const { link } = state.schema.marks;
+  const url = selectedNode.attrs.url || selectedNode.attrs.data.url;
 
   const tr = state.tr.replaceSelectionWith(
-    state.schema.text(selectedNode.attrs.url, [
-      link.create({ href: selectedNode.attrs.url }),
-    ]),
+    state.schema.text(text || url, [link.create({ href: href || url })]),
     false,
   );
+
+  if (dispatch) {
+    dispatch(tr.scrollIntoView());
+  }
+
+  return true;
+};
+
+export const changeSelectedCardToText = (text: string): Command => (
+  state,
+  dispatch,
+) => {
+  const selectedNode =
+    state.selection instanceof NodeSelection && state.selection.node;
+  if (!selectedNode) {
+    return false;
+  }
+
+  const tr = state.tr.replaceSelectionWith(state.schema.text(text), false);
 
   if (dispatch) {
     dispatch(tr.scrollIntoView());

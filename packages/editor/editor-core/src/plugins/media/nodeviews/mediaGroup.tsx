@@ -3,11 +3,12 @@ import MediaFilmstrip from '@uidu/media-filmstrip';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import WithPluginState from '../../../components/WithPluginState';
+import { getPosHandler } from '../../../nodeviews';
 import ReactNodeView, { ForwardRef } from '../../../nodeviews/ReactNodeView';
 import { stateKey as reactNodeViewStateKey } from '../../../plugins/base/pm-plugins/react-nodeview';
 import { EditorAppearance } from '../../../types';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
+import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection } from '../../../utils';
 import {
   EditorDisabledPluginState,
@@ -28,7 +29,7 @@ export type MediaGroupProps = {
   forwardRef?: (ref: HTMLElement) => void;
   node: PMNode;
   view: EditorView;
-  getPos: () => number;
+  getPos: getPosHandler;
   selected: number | null;
   disabled?: boolean;
   editorAppearance: EditorAppearance;
@@ -93,7 +94,12 @@ export default class MediaGroup extends React.Component<
     node.forEach((item, childOffset) => {
       this.mediaPluginState.mediaGroupNodes[item.attrs.id] = {
         node: item,
-        getPos: () => props.getPos() + childOffset + 1,
+        getPos: () =>
+          (typeof props.getPos === 'function'
+            ? props.getPos()
+            : +props.getPos) +
+          childOffset +
+          1,
       };
       this.mediaNodes.push(item);
     });
@@ -108,7 +114,12 @@ export default class MediaGroup extends React.Component<
         collectionName: item.attrs.collection,
       };
 
-      const nodePos = this.props.getPos() + idx + 1;
+      const nodePos =
+        (typeof this.props.getPos === 'function'
+          ? this.props.getPos()
+          : +this.props.getPos) +
+        idx +
+        1;
       return {
         identifier,
         selectable: true,
@@ -155,7 +166,8 @@ class MediaGroupNodeView extends ReactNodeView {
         }: {
           editorDisabledPlugin: EditorDisabledPluginState;
         }) => {
-          const nodePos = this.getPos();
+          const nodePos =
+            typeof this.getPos === 'function' ? this.getPos() : +this.getPos;
           const { $anchor, $head } = this.view.state.selection;
           const isSelected =
             nodePos < $anchor.pos && $head.pos < nodePos + this.node.nodeSize;
@@ -179,7 +191,7 @@ class MediaGroupNodeView extends ReactNodeView {
 export const ReactMediaGroupNode = (
   portalProviderAPI: PortalProviderAPI,
   editorAppearance?: EditorAppearance,
-) => (node: PMNode, view: EditorView, getPos: () => number): NodeView => {
+) => (node: PMNode, view: EditorView, getPos: getPosHandler): NodeView => {
   return new MediaGroupNodeView(node, view, getPos, portalProviderAPI, {
     editorAppearance,
   }).init();

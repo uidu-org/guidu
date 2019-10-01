@@ -1,13 +1,14 @@
-import { Node, Schema } from 'prosemirror-model';
+import { Node } from 'prosemirror-model';
 import {
   EditorState,
   Plugin,
   PluginKey,
   Selection,
+  TextSelection,
   Transaction,
 } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
-import { shallowEqual } from '../../../plugins/text-formatting/utils';
+import { shallowEqual } from '../../../utils';
 
 export enum LinkAction {
   SHOW_INSERT_TOOLBAR = 'SHOW_INSERT_TOOLBAR',
@@ -203,10 +204,7 @@ const getActiveLinkMark = (
   return undefined;
 };
 
-const getActiveText = (
-  schema: Schema,
-  selection: Selection,
-): string | undefined => {
+const getActiveText = (selection: Selection): string | undefined => {
   const currentSlice = selection.content();
 
   if (currentSlice.size === 0) {
@@ -215,15 +213,10 @@ const getActiveText = (
 
   if (
     currentSlice.content.childCount === 1 &&
-    [
-      schema.nodes.text,
-      schema.nodes.paragraph,
-      schema.nodes.heading,
-      schema.nodes.taskItem,
-      schema.nodes.decisionItem,
-    ].indexOf(currentSlice.content.firstChild!.type) !== -1
+    currentSlice.content.firstChild &&
+    selection instanceof TextSelection
   ) {
-    return currentSlice.content.firstChild!.textContent;
+    return currentSlice.content.firstChild.textContent;
   }
   return undefined;
 };
@@ -245,7 +238,7 @@ export const plugin = (dispatch: Dispatch) =>
           state.selection.to,
         )(state);
         return {
-          activeText: getActiveText(state.schema, state.selection),
+          activeText: getActiveText(state.selection),
           canInsertLink,
           activeLinkMark: toState(
             undefined,
@@ -285,7 +278,7 @@ export const plugin = (dispatch: Dispatch) =>
 
         if (tr.selectionSet) {
           state = {
-            activeText: getActiveText(newState.schema, newState.selection),
+            activeText: getActiveText(newState.selection),
             canInsertLink: canLinkBeCreatedInRange(
               newState.selection.from,
               newState.selection.to,

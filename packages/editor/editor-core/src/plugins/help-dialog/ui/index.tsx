@@ -12,8 +12,8 @@ import {
   WrappedComponentProps,
 } from 'react-intl';
 import { closeHelpCommand } from '../';
-import ToolbarButton from '../../../components/ToolbarButton';
 import * as keymaps from '../../../keymaps';
+import ToolbarButton from '../../../ui/ToolbarButton';
 import { messages as blockTypeMessages } from '../../block-type/types';
 import { messages as insertBlockMessages } from '../../insert-block/ui/ToolbarInsertBlock';
 import { messages as listMessages } from '../../lists/messages';
@@ -424,7 +424,6 @@ export const getComponentFromKeymap = (keymap: keymaps.Keymap) => {
 export interface Props {
   editorView: EditorView;
   isVisible: boolean;
-  appearance?: string;
   imageEnabled?: boolean;
   quickInsertEnabled?: boolean;
 }
@@ -523,9 +522,7 @@ class HelpDialog extends React.Component<Props & WrappedComponentProps> {
                       .map(form => (
                         <Row key={`textFormatting-${form.name}`}>
                           <span>{form.name}</span>
-                          {getComponentFromKeymap(
-                            form.keymap!({ appearance: this.props.appearance }),
-                          )}
+                          {getComponentFromKeymap(form.keymap!())}
                         </Row>
                       ))}
 

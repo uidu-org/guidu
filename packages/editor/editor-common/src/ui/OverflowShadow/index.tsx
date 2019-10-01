@@ -24,14 +24,13 @@ export interface OverflowShadowOptions {
 
 const isIE11 = browser.ie_version === 11;
 
-export default function overflowShadow<P extends OverflowShadowProps>(
-  Component: React.ComponentType<P> | React.StatelessComponent<P>,
+export default function overflowShadow<P>(
+  Component:
+    | React.ComponentType<P & OverflowShadowProps>
+    | React.StatelessComponent<P & OverflowShadowProps>,
   options: OverflowShadowOptions,
 ) {
-  return class OverflowShadow extends React.Component<
-    Pick<P, Exclude<keyof P, keyof OverflowShadowProps>>,
-    OverflowShadowState
-  > {
+  return class OverflowShadow extends React.Component<P, OverflowShadowState> {
     overflowContainer?: HTMLElement | null;
     container?: HTMLElement;
     scrollable?: NodeList;
@@ -154,7 +153,7 @@ export default function overflowShadow<P extends OverflowShadowProps>(
         <Component
           handleRef={this.handleContainer}
           shadowClassNames={classNames}
-          {...(this.props as any)}
+          {...this.props}
         />
       );
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 import Lorem from 'react-lorem-component';
 
 import InlineDialog from '../src';

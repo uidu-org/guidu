@@ -5,13 +5,13 @@ import {
 } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import WithPluginState from '../../../components/WithPluginState';
 import ReactNodeView, {
   ForwardRef,
   getPosHandler,
 } from '../../../nodeviews/ReactNodeView';
-import { closestElement } from '../../../utils';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
+import WithPluginState from '../../../ui/WithPluginState';
+import { closestElement, containsClassName } from '../../../utils';
 import { pluginKey as widthPluginKey } from '../../width';
 import { pluginConfig as getPluginConfig } from '../index';
 import { getPluginState, pluginKey } from '../pm-plugins/main';
@@ -37,7 +37,7 @@ export interface Props {
   allowColumnResizing?: boolean;
   cellMinWidth?: number;
   portalProviderAPI: PortalProviderAPI;
-  getPos: () => number;
+  getPos: getPosHandler;
   options?: TableOptions;
 }
 
@@ -65,7 +65,7 @@ const toDOM = (node: PmNode, props: Props) => {
   ] as DOMOutputSpec;
 };
 
-export default class TableView extends ReactNodeView {
+export default class TableView extends ReactNodeView<Props> {
   private table: HTMLElement | undefined;
   private observer?: MutationObserver;
 
@@ -88,13 +88,15 @@ export default class TableView extends ReactNodeView {
       // Ignore mutation doesn't pick up children updates
       // E.g. inserting a bodiless extension that renders
       // arbitrary nodes (aka macros).
-      if (this.observer) {
-        this.observer.observe(rendered.dom, {
-          subtree: true,
-          childList: true,
-          attributes: true,
-        });
-      }
+      requestAnimationFrame(() => {
+        if (this.observer) {
+          this.observer.observe(rendered.dom, {
+            subtree: true,
+            childList: true,
+            attributes: true,
+          });
+        }
+      });
     }
 
     return rendered;
@@ -148,7 +150,7 @@ export default class TableView extends ReactNodeView {
     const { view } = this;
     const elemOrWrapper = closestElement(
       target,
-      `.${ClassName.TABLE_HEADER_NODE_WRAPPER}, .${ClassName.TABLE_CELL_NODE_WRAPPER}`,
+      `.${ClassName.TABLE_HEADER_CELL}, .${ClassName.TABLE_CELL}`,
     );
     const { minWidth } = contentWidth(target, target);
 
@@ -160,7 +162,7 @@ export default class TableView extends ReactNodeView {
       handleBreakoutContent(
         elemOrWrapper as HTMLTableElement,
         cellPos - 1,
-        this.getPos() + 1,
+        (typeof this.getPos === 'function' ? this.getPos() : +this.getPos) + 1,
         minWidth,
         this.node,
         domAtPos,
@@ -168,7 +170,7 @@ export default class TableView extends ReactNodeView {
     }
   };
 
-  private resizeForExtensionContent = (target: HTMLTableElement) => {
+  private resizeForExtensionContent = (target: HTMLElement) => {
     if (!this.node) {
       return undefined;
     }
@@ -182,7 +184,7 @@ export default class TableView extends ReactNodeView {
     }
     const container = closestElement(
       target,
-      `.${ClassName.TABLE_HEADER_NODE_WRAPPER}, .${ClassName.TABLE_CELL_NODE_WRAPPER}`,
+      `.${ClassName.TABLE_HEADER_CELL}, .${ClassName.TABLE_CELL}`,
     ) as HTMLTableElement;
     if (!container) {
       return undefined;
@@ -195,7 +197,7 @@ export default class TableView extends ReactNodeView {
       handleBreakoutContent(
         container,
         cellPos - 1,
-        this.getPos() + 1,
+        (typeof this.getPos === 'function' ? this.getPos() : +this.getPos) + 1,
         elemOrWrapper.offsetWidth,
         this.node,
         domAtPos,
@@ -210,7 +212,14 @@ export default class TableView extends ReactNodeView {
 
     const uniqueTargets: Set<HTMLElement> = new Set();
     records.forEach(record => {
-      const target = record.target as HTMLTableElement;
+      const target = record.target as HTMLElement;
+      // ED-7344: ignore mutations that happen inside anything other than DIV or SPAN elements
+      if (
+        ['DIV', 'SPAN'].indexOf(target.tagName) === -1 ||
+        containsClassName(target, ClassName.RESIZE_HANDLE)
+      ) {
+        return undefined;
+      }
       // If we've seen this target already in this set of targets
       // We dont need to reprocess.
       if (!uniqueTargets.has(target)) {

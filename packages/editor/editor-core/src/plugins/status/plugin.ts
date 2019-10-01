@@ -1,10 +1,12 @@
-import { DecorationSet, Decoration } from 'prosemirror-view';
+import { Color as ColorType } from '@uidu/status';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
-import { Color as ColorType } from '@atlaskit/status/element';
-import statusNodeView from './nodeviews/status';
-import { PMPluginFactory } from '../../types';
+import { Decoration, DecorationSet } from 'prosemirror-view';
+import { Dispatch } from '../../event-dispatcher';
+import { PortalProviderAPI } from '../../ui/PortalProvider';
 import { ZeroWidthSpace } from '../../utils';
-import { mayGetStatusAtSelection, isEmptyStatus } from './utils';
+import { StatusPluginOptions } from './index';
+import statusNodeView from './nodeviews/status';
+import { isEmptyStatus, mayGetStatusAtSelection } from './utils';
 
 export const pluginKeyName = 'statusPlugin';
 export const pluginKey = new PluginKey('statusPlugin');
@@ -20,11 +22,11 @@ export type StatusState = {
   showStatusPickerAt: number | null;
 };
 
-const createPlugin: PMPluginFactory = ({
-  dispatch,
-  portalProviderAPI,
-  props: { appearance },
-}) =>
+const createPlugin = (
+  dispatch: Dispatch,
+  portalProviderAPI: PortalProviderAPI,
+  options?: StatusPluginOptions,
+) =>
   new Plugin({
     state: {
       init: () => ({
@@ -112,14 +114,15 @@ const createPlugin: PMPluginFactory = ({
     key: pluginKey,
     props: {
       nodeViews: {
-        status: statusNodeView(portalProviderAPI, appearance),
+        status: statusNodeView(portalProviderAPI, options),
       },
       decorations(state: EditorState) {
         const { tr } = state;
         const nodeAtSelection = tr.doc.nodeAt(tr.selection.from);
 
         if (
-          appearance !== 'mobile' &&
+          options &&
+          options.allowZeroWidthSpaceAfter &&
           nodeAtSelection &&
           nodeAtSelection.type === state.schema.nodes.status
         ) {

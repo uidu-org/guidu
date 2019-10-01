@@ -2,6 +2,7 @@ import DropdownList from '@uidu/droplist';
 import { Popup } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent } from 'react';
+import withOuterListeners from '../with-outer-listeners';
 
 export interface Props {
   mountTo?: HTMLElement;
@@ -26,7 +27,7 @@ export interface State {
  *
  * Also it controls popper's placement.
  */
-export default class Dropdown extends PureComponent<Props, State> {
+export class Dropdown extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
@@ -94,3 +95,7 @@ export default class Dropdown extends PureComponent<Props, State> {
     );
   }
 }
+
+const DropdownWithOuterListeners = withOuterListeners(Dropdown);
+
+export default DropdownWithOuterListeners;

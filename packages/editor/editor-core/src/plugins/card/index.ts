@@ -1,4 +1,4 @@
-import { blockCard, inlineCard } from '@atlaskit/adf-schema';
+import { blockCard, inlineCard } from '@uidu/adf-schema';
 import { PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { createPlugin } from './pm-plugins/main';
@@ -8,7 +8,9 @@ export { CardOptions, CardProvider } from './types';
 
 export const stateKey = new PluginKey('cardPlugin');
 
-const cardPlugin: EditorPlugin = {
+const cardPlugin = (): EditorPlugin => ({
+  name: 'card',
+
   nodes() {
     return [
       { name: 'inlineCard', node: inlineCard },
@@ -23,6 +25,6 @@ const cardPlugin: EditorPlugin = {
   pluginsOptions: {
     floatingToolbar,
   },
-};
+});
 
 export default cardPlugin;

@@ -1,24 +1,24 @@
-import * as React from 'react';
-import styled from 'styled-components';
 import {
   decisionItem,
   decisionList,
   taskItem,
   taskList,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import { Node as PMNode } from 'prosemirror-model';
+import { EditorState, Transaction } from 'prosemirror-state';
+import * as React from 'react';
+import styled from 'styled-components';
 import { EditorPlugin } from '../../types';
+import { INPUT_METHOD } from '../analytics';
 import { messages as insertBlockMessages } from '../insert-block/ui/ToolbarInsertBlock';
-import { createPlugin } from './pm-plugins/main';
+import { IconAction, IconDecision } from '../quick-insert/assets';
+import { getListTypes, insertTaskDecisionWithAnalytics } from './commands';
 import inputRulePlugin from './pm-plugins/input-rules';
 import keymap from './pm-plugins/keymaps';
+import { createPlugin } from './pm-plugins/main';
+import { TaskDecisionListType } from './types';
 import ToolbarDecision from './ui/ToolbarDecision';
 import ToolbarTask from './ui/ToolbarTask';
-import { INPUT_METHOD } from '../analytics';
-import { insertTaskDecisionWithAnalytics, getListTypes } from './commands';
-import { Transaction, EditorState } from 'prosemirror-state';
-import { TaskDecisionListType } from './types';
-import { IconAction, IconDecision } from '../quick-insert/assets';
 
 const TaskDecisionToolbarGroup = styled.div`
   display: flex;
@@ -54,6 +54,8 @@ const quickInsertItem = (
 };
 
 const tasksAndDecisionsPlugin = (): EditorPlugin => ({
+  name: 'taskDecision',
+
   nodes() {
     return [
       { name: 'decisionList', node: decisionList },
@@ -67,13 +69,8 @@ const tasksAndDecisionsPlugin = (): EditorPlugin => ({
     return [
       {
         name: 'tasksAndDecisions',
-        plugin: ({ portalProviderAPI, providerFactory, dispatch, props }) => {
-          return createPlugin(
-            portalProviderAPI,
-            providerFactory,
-            dispatch,
-            props.appearance,
-          );
+        plugin: ({ portalProviderAPI, providerFactory, dispatch }) => {
+          return createPlugin(portalProviderAPI, providerFactory, dispatch);
         },
       },
       {

@@ -1,4 +1,4 @@
-import { EDITOR_APPEARANCE_CONTEXT } from '@atlaskit/analytics-namespaced-context';
+import { EDITOR_APPEARANCE_CONTEXT } from '@uidu/analytics-namespaced-context';
 
 export const getAnalyticsAppearance = (
   appearance?: string,

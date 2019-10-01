@@ -1,14 +1,18 @@
 import {
-  tableCellContentWrapperSelector,
   tableCellSelector,
   tableHeaderSelector,
   TableLayout,
   tablePrefixSelector,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import { TableSharedCssClassName } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { DecorationSet } from 'prosemirror-view';
+
+export enum SortOrder {
+  ASC = 'asc',
+  DESC = 'desc',
+}
 
 export type PermittedLayoutsDescriptor = TableLayout[] | 'all';
 export type Cell = { pos: number; start: number; node: PmNode };
@@ -22,6 +26,7 @@ export interface PluginConfig {
   allowHeaderRow?: boolean;
   allowMergeCells?: boolean;
   allowNumberColumn?: boolean;
+  allowColumnSorting?: boolean;
   isHeaderRowRequired?: boolean;
   stickToolbarToBottom?: boolean;
   permittedLayouts?: PermittedLayoutsDescriptor;
@@ -34,6 +39,11 @@ export interface ColumnResizingPluginState {
   lastClick: { x: number; y: number; time: number } | null;
   lastColumnResizable?: boolean;
   dynamicTextSizing?: boolean;
+}
+
+export interface TableColumnOrdering {
+  columnIndex: number;
+  order: SortOrder;
 }
 
 export interface TablePluginState {
@@ -57,12 +67,14 @@ export interface TablePluginState {
   insertRowButtonIndex?: number;
   isFullWidthModeEnabled?: boolean;
   layout?: TableLayout;
+  ordering?: TableColumnOrdering;
 }
 
 export type TablePluginAction =
   | { type: 'SET_EDITOR_FOCUS'; data: { editorHasFocus: boolean } }
   | { type: 'TOGGLE_HEADER_ROW' }
   | { type: 'TOGGLE_HEADER_COLUMN' }
+  | { type: 'SORT_TABLE'; data: { ordering: TableColumnOrdering } }
   | {
       type: 'SET_TABLE_REF';
       data: {
@@ -80,6 +92,12 @@ export type TablePluginAction =
         decorationSet: DecorationSet;
         hoveredRows: number[];
         isInDanger?: boolean;
+      };
+    }
+  | {
+      type: 'HOVER_CELLS';
+      data: {
+        decorationSet: DecorationSet;
       };
     }
   | {
@@ -134,6 +152,7 @@ export enum TableDecorations {
   ROW_CONTROLS_HOVER = 'ROW_CONTROLS_HOVER',
   COLUMN_CONTROLS_HOVER = 'COLUMN_CONTROLS_HOVER',
   TABLE_CONTROLS_HOVER = 'TABLE_CONTROLS_HOVER',
+  CELL_CONTROLS_HOVER = 'CELL_CONTROLS_HOVER',
 
   COLUMN_CONTROLS_DECORATIONS = 'COLUMN_CONTROLS_DECORATIONS',
   COLUMN_SELECTED = 'COLUMN_SELECTED',
@@ -185,11 +204,14 @@ export const TableCssClassName = {
   HOVERED_CELL: `${tablePrefixSelector}-hovered-cell`,
   HOVERED_CELL_IN_DANGER: 'danger',
   HOVERED_CELL_ACTIVE: 'active',
+  HOVERED_CELL_WARNING: `${tablePrefixSelector}-hovered-cell__warning`,
   HOVERED_DELETE_BUTTON: `${tablePrefixSelector}-hovered-delete-button`,
   WITH_CONTROLS: `${tablePrefixSelector}-with-controls`,
   RESIZING_PLUGIN: `${tablePrefixSelector}-resizing-plugin`,
   RESIZE_CURSOR: `${tablePrefixSelector}-resize-cursor`,
   IS_RESIZING: `${tablePrefixSelector}-is-resizing`,
+
+  RESIZE_HANDLE: `${tablePrefixSelector}-resize-handle`,
 
   CONTEXTUAL_SUBMENU: `${tablePrefixSelector}-contextual-submenu`,
   CONTEXTUAL_MENU_BUTTON_WRAP: `${tablePrefixSelector}-contextual-menu-button-wrap`,
@@ -197,16 +219,14 @@ export const TableCssClassName = {
   CONTEXTUAL_MENU_ICON: `${tablePrefixSelector}-contextual-submenu-icon`,
 
   // come from prosemirror-table
-  COLUMN_RESIZE_HANDLE: 'column-resize-handle',
   SELECTED_CELL: 'selectedCell',
 
   // defined in ReactNodeView based on PM node name
   NODEVIEW_WRAPPER: 'tableView-content-wrap',
 
   TABLE_SELECTED: `${tablePrefixSelector}-table__selected`,
-  TABLE_CELL_NODE_WRAPPER: tableCellSelector,
-  TABLE_HEADER_NODE_WRAPPER: tableHeaderSelector,
-  CELL_NODEVIEW_WRAPPER: tableCellContentWrapperSelector,
+  TABLE_CELL: tableCellSelector,
+  TABLE_HEADER_CELL: tableHeaderSelector,
 
   TOP_LEFT_CELL: 'table > tbody > tr:nth-child(2) > td:nth-child(1)',
 };

@@ -54,6 +54,8 @@ export const createPlugin = (
   });
 
 const macroPlugin = (): EditorPlugin => ({
+  name: 'macro',
+
   pmPlugins() {
     return [
       {

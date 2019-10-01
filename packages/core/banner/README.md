@@ -6,7 +6,7 @@ intended to be used at the top of the page.
 ## Installation
 
 ```sh
-yarn add @atlaskit/banner
+yarn add @uidu/banner
 ```
 
 ## Usage

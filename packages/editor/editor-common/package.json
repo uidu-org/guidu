@@ -9,7 +9,10 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@uidu/adf-schema": "^0.1.0",
     "@uidu/analytics": "^0.1.14",
+    "@uidu/analytics-namespaced-context": "^0.1.0",
+    "@uidu/emoji": "^0.1.0",
     "@uidu/mentions": "^0.1.8",
     "@uidu/theme": "^0.1.17",
     "raf-schd": "^4.0.0",

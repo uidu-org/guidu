@@ -1,6 +1,14 @@
-import { layoutColumn, layoutSection } from '@atlaskit/adf-schema';
+import { layoutColumn, layoutSection } from '@uidu/adf-schema';
 import * as React from 'react';
 import { EditorPlugin } from '../../types';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../analytics';
 import { FloatingToolbarConfig } from '../floating-toolbar/types';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
 import { IconLayout } from '../quick-insert/assets';
@@ -15,6 +23,8 @@ import { buildToolbar } from './toolbar';
 export { pluginKey };
 
 const layoutPlugin = (): EditorPlugin => ({
+  name: 'layout',
+
   nodes() {
     return [
       { name: 'layoutSection', node: layoutSection },
@@ -48,7 +58,16 @@ const layoutPlugin = (): EditorPlugin => ({
         priority: 1100,
         icon: () => <IconLayout label={formatMessage(messages.columns)} />,
         action(insert, state) {
-          return insert(createDefaultLayoutSection(state));
+          const tr = insert(createDefaultLayoutSection(state));
+          return addAnalytics(tr, {
+            action: ACTION.INSERTED,
+            actionSubject: ACTION_SUBJECT.DOCUMENT,
+            actionSubjectId: ACTION_SUBJECT_ID.LAYOUT,
+            attributes: {
+              inputMethod: INPUT_METHOD.QUICK_INSERT,
+            },
+            eventType: EVENT_TYPE.TRACK,
+          });
         },
       },
     ],

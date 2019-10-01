@@ -34,7 +34,7 @@ export default md`
   ${(
     <Props
       heading="Sorter"
-      props={require('!!extract-react-types-loader!../src/components/Editor')}
+      props={require('!!extract-react-types-loader!../src/create-editor/ReactEditorView')}
     />
   )}
 `;

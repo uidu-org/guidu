@@ -23,9 +23,13 @@ import {
   moveLeft,
   startPositionOfParent,
 } from '../../../utils';
-import { walkUpTreeUntil } from '../../../utils/dom';
+import {
+  removeNestedEmptyEls,
+  unwrap,
+  walkUpTreeUntil,
+} from '../../../utils/dom';
 import { mapSlice } from '../../../utils/slice';
-import { MediaProvider, MediaState } from '../types';
+import { MediaState } from '../types';
 
 export const posOfMediaGroupNearby = (
   state: EditorState,
@@ -228,41 +232,6 @@ export const copyOptionalAttrsFromMediaState = (
     });
 };
 
-/**
- * Customer can define either deprecated Context or MediaClientConfig object directly. All internal
- * API are being switched to MediaClientConfig exclusively.
- * This utility helps to retrieve MediaClientConfig object from media Provider no matter what customer
- * has provided.
- */
-export const getViewMediaClientConfigFromMediaProvider = async (
-  mediaProvider: MediaProvider,
-): Promise<any> => {
-  if (mediaProvider.viewContext) {
-    return (await mediaProvider.viewContext).config;
-  } else {
-    // We can use ! here since XOR would not allow MediaProvider object created without one of the properties.
-    return (mediaProvider as any).viewMediaClientConfig!;
-  }
-};
-
-/**
- * Customer can define either deprecated Context or MediaClientConfig object directly. All internal
- * API are being switched to MediaClientConfig exclusively.
- * This utility helps to retrieve MediaClientConfig object from media Provider no matter what customer
- * has provided.
- */
-export const getUploadMediaClientConfigFromMediaProvider = async (
-  mediaProvider: MediaProvider,
-): Promise<any | undefined> => {
-  if (mediaProvider.uploadContext) {
-    return (await mediaProvider.uploadContext).config;
-  } else if ((mediaProvider as any).uploadMediaClientConfig) {
-    return (mediaProvider as any).uploadMediaClientConfig;
-  } else {
-    return undefined;
-  }
-};
-
 export const transformSliceToCorrectMediaWrapper = (
   slice: Slice,
   schema: Schema,
@@ -296,6 +265,14 @@ const isElementInvisible = (element: HTMLElement) => {
   );
 };
 
+const VALID_TAGS_CONTAINER = ['DIV', 'TD'];
+function canContainImage(element: HTMLElement | null): boolean {
+  if (!element) {
+    return false;
+  }
+  return VALID_TAGS_CONTAINER.indexOf(element.tagName) !== -1;
+}
+
 /**
  * Given a html string, we attempt to hoist any nested `<img>` tags,
  * not wrapped by a `<div>` as ProseMirror no-op's on those scenarios.
@@ -304,6 +281,14 @@ const isElementInvisible = (element: HTMLElement) => {
 export const unwrapNestedMediaElements = (html: string) => {
   const wrapper = document.createElement('div');
   wrapper.innerHTML = html;
+
+  // Remove Google Doc's wrapper <b> el
+  const docsWrapper = wrapper.querySelector<HTMLElement>(
+    'b[id^="docs-internal-guid-"]',
+  );
+  if (docsWrapper) {
+    unwrap(wrapper, docsWrapper);
+  }
 
   const imageTags = wrapper.querySelectorAll('img');
   if (!imageTags.length) {
@@ -330,24 +315,37 @@ export const unwrapNestedMediaElements = (html: string) => {
       return;
     }
 
-    // Find the top most parent before we have our faux created element.
-    const rootElement = walkUpTreeUntil(mediaParent, wrapper);
+    // Find the top most element that the parent has a valid container for the image.
+    // Stop just before found the wrapper
+    const insertBeforeElement = walkUpTreeUntil(mediaParent, element => {
+      // If is at the top just use this element as reference
+      if (element.parentElement === wrapper) {
+        return true;
+      }
 
-    // Here we try to insert the media right after its top most parent element
+      return canContainImage(element.parentElement);
+    });
+
+    // Here we try to insert the media right after its top most valid parent element
     // Unless its the last element in our structure then we will insert above it.
-    if (rootElement) {
-      // Only remove the media if we have somewhere else to place it.
-      mediaParent.removeChild(imageTag);
+    if (insertBeforeElement && insertBeforeElement.parentElement) {
+      // Insert as close as possible to the most closest valid element index in the tree.
+      insertBeforeElement.parentElement.insertBefore(
+        imageTag,
+        insertBeforeElement.nextElementSibling || insertBeforeElement,
+      );
+
       // Attempt to clean up lines left behind by the image
       mediaParent.innerText = mediaParent.innerText.trim();
-
-      // Insert as close as possible to the root element's index in the tree.
-      wrapper.insertBefore(
-        imageTag,
-        rootElement.nextElementSibling || rootElement,
-      );
+      // Walk up and delete empty elements left over after removing the image tag
+      removeNestedEmptyEls(mediaParent);
     }
   });
+
+  // If last child is a hardbreak we don't want it
+  if (wrapper.lastElementChild && wrapper.lastElementChild.tagName === 'BR') {
+    wrapper.removeChild(wrapper.lastElementChild);
+  }
 
   return wrapper.innerHTML;
 };

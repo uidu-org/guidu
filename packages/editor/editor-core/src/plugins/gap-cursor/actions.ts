@@ -1,25 +1,24 @@
 import {
   EditorState,
+  NodeSelection,
   Selection,
   TextSelection,
-  NodeSelection,
 } from 'prosemirror-state';
-import { removeNodeBefore } from 'prosemirror-utils';
-import { findDomRefAtPos } from 'prosemirror-utils';
-import { Direction, isBackward, isForward } from './direction';
-import { GapCursorSelection, Side } from './selection';
-import {
-  isTextBlockNearPos,
-  isValidTargetNode,
-  getMediaNearPos,
-} from './utils';
+import { findDomRefAtPos, removeNodeBefore } from 'prosemirror-utils';
 import { Command } from '../../types';
 import {
   atTheBeginningOfDoc,
   atTheEndOfDoc,
   ZeroWidthSpace,
 } from '../../utils';
+import { Direction, isBackward, isForward } from './direction';
 import { pluginKey } from './pm-plugins/main';
+import { GapCursorSelection, Side } from './selection';
+import {
+  getMediaNearPos,
+  isTextBlockNearPos,
+  isValidTargetNode,
+} from './utils';
 
 type MapDirection = { [name in Direction]: number };
 const mapDirection: MapDirection = {
@@ -83,9 +82,17 @@ function shouldHandleMediaGapCursor(
   return true;
 }
 
+export type DirectionString =
+  | 'up'
+  | 'down'
+  | 'left'
+  | 'right'
+  | 'forward'
+  | 'backward';
+
 export const arrow = (
   dir: Direction,
-  endOfTextblock: (dir: string, state?: EditorState) => boolean,
+  endOfTextblock?: (dir: DirectionString, state?: EditorState) => boolean,
 ): Command => (state, dispatch, view) => {
   const { doc, schema, selection, tr } = state;
 
@@ -95,7 +102,7 @@ export const arrow = (
   // start from text selection
   if (selection instanceof TextSelection) {
     // if cursor is in the middle of a text node, do nothing
-    if (!endOfTextblock(dir.toString())) {
+    if (!endOfTextblock || !endOfTextblock(dir.toString() as DirectionString)) {
       return false;
     }
 
@@ -256,12 +263,10 @@ export const setGapCursorAtPos = (
 const captureCursorCoords = (
   event: React.MouseEvent<any>,
   editorRef: HTMLElement,
-  posAtCoords: (
-    coords: {
-      left: number;
-      top: number;
-    },
-  ) => { pos: number; inside: number } | null | void,
+  posAtCoords: (coords: {
+    left: number;
+    top: number;
+  }) => { pos: number; inside: number } | null | void,
   state: EditorState,
 ): { position?: number; side: Side } | null => {
   const rect = editorRef.getBoundingClientRect();
@@ -302,12 +307,10 @@ const captureCursorCoords = (
 export const setCursorForTopLevelBlocks = (
   event: React.MouseEvent<any>,
   editorRef: HTMLElement,
-  posAtCoords: (
-    coords: {
-      left: number;
-      top: number;
-    },
-  ) => { pos: number; inside: number } | null | void,
+  posAtCoords: (coords: {
+    left: number;
+    top: number;
+  }) => { pos: number; inside: number } | null | void,
   editorFocused: boolean,
 ): Command => (state, dispatch) => {
   // plugin is disabled

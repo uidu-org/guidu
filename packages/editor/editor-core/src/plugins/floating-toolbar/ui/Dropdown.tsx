@@ -2,12 +2,9 @@ import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import * as React from 'react';
 import { Component, ReactElement } from 'react';
 import styled from 'styled-components';
-import UiDropdown from '../../../components/Dropdown';
-import withOuterListeners from '../../../components/with-outer-listeners';
+import UiDropdown from '../../../ui/Dropdown';
 import Button from './Button';
 import DropdownMenu, { itemSpacing, menuItemDimensions } from './DropdownMenu';
-
-const DropdownWithOutsideListeners = withOuterListeners(UiDropdown);
 
 export interface RenderOptionsPropsT<T> {
   hide: () => void;
@@ -118,7 +115,7 @@ export default class Dropdown extends Component<Props, State> {
       : options.height;
 
     return (
-      <DropdownWithOutsideListeners
+      <UiDropdown
         mountTo={mountPoint}
         boundariesElement={boundariesElement}
         scrollableElement={scrollableElement}
@@ -132,7 +129,7 @@ export default class Dropdown extends Component<Props, State> {
         {Array.isArray(options)
           ? this.renderArrayOptions(options)
           : options.render({ hide: this.hide, dispatchCommand })}
-      </DropdownWithOutsideListeners>
+      </UiDropdown>
     );
   }
 

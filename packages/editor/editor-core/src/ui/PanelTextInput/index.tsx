@@ -21,6 +21,7 @@ export interface State {
 
 export default class PanelTextInput extends PureComponent<Props, State> {
   private input?: HTMLInputElement;
+  private focusTimeoutId: number | undefined;
 
   constructor(props: Props) {
     super(props);
@@ -36,6 +37,10 @@ export default class PanelTextInput extends PureComponent<Props, State> {
         value: nextProps.defaultValue,
       });
     }
+  }
+
+  componentWillUnmount() {
+    window.clearTimeout(this.focusTimeoutId);
   }
 
   onMouseDown = () => {
@@ -108,7 +113,7 @@ export default class PanelTextInput extends PureComponent<Props, State> {
       this.input = input;
       if (this.props.autoFocus) {
         // Need this to prevent jumping when we render TextInput inside Portal @see ED-2992
-        window.setTimeout(() => input.focus());
+        this.focusTimeoutId = window.setTimeout(() => input.focus());
       }
     } else {
       this.input = undefined;

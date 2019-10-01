@@ -1,8 +1,11 @@
 // @ts-ignore: unused variable
+
 import { css } from 'styled-components';
 
+const mediaSingleClassName = 'media-single';
+
 const mediaSingleSharedStyle = css`
-  li .media-single {
+  li .${mediaSingleClassName} {
     margin: 0;
   }
 
@@ -14,17 +17,23 @@ const mediaSingleSharedStyle = css`
     height: 0;
   }
 
-  table .media-single {
-    margin: 0;
+  table .${mediaSingleClassName} {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    clear: both;
   }
 
-  .media-single.image-wrap-left + .media-single.image-wrap-right,
-  .media-single.image-wrap-right + .media-single.image-wrap-left,
-  .media-single.image-wrap-left + .media-single.image-wrap-left,
-  .media-single.image-wrap-right + .media-single.image-wrap-right {
+  .${mediaSingleClassName}.image-wrap-left
+    + .${mediaSingleClassName}.image-wrap-right,
+    .${mediaSingleClassName}.image-wrap-right
+    + .${mediaSingleClassName}.image-wrap-left,
+    .${mediaSingleClassName}.image-wrap-left
+    + .${mediaSingleClassName}.image-wrap-left,
+    .${mediaSingleClassName}.image-wrap-right
+    + .${mediaSingleClassName}.image-wrap-right {
     margin-right: 0;
     margin-left: 0;
   }
 `;
 
-export { mediaSingleSharedStyle };
+export { mediaSingleSharedStyle, mediaSingleClassName };

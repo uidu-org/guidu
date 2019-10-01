@@ -1,4 +1,4 @@
-import { EmojiId } from '@atlaskit/emoji';
+import { EmojiId } from '@uidu/emoji';
 import { safeInsert } from 'prosemirror-utils';
 import { Fragment } from 'prosemirror-model';
 import { Selection } from 'prosemirror-state';

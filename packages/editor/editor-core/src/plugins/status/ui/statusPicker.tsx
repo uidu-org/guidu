@@ -1,14 +1,14 @@
+import { CreateUIAnalyticsEvent, withAnalyticsEvents } from '@uidu/analytics';
+import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
 import {
   ColorType as Color,
   StatusPicker as AkStatusPicker,
-} from '@atlaskit/status/picker';
-import { withAnalyticsEvents } from '@uidu/analytics';
-import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
+} from '@uidu/status';
 import { borderRadius, colors, gridSize } from '@uidu/theme';
 import * as React from 'react';
 import styled from 'styled-components';
-import { dropShadow } from '../../../components/styles';
-import withOuterListeners from '../../../components/with-outer-listeners';
+import { dropShadow } from '../../../ui/styles';
+import withOuterListeners from '../../../ui/with-outer-listeners';
 import { DEFAULT_STATUS } from '../actions';
 import { analyticsState, createStatusAnalyticsAndFire } from '../analytics';
 import { StatusType } from '../plugin';
@@ -31,7 +31,7 @@ export interface Props {
   defaultText?: string;
   defaultColor?: Color;
   defaultLocalId?: string;
-  createAnalyticsEvent?: any;
+  createAnalyticsEvent?: CreateUIAnalyticsEvent;
 }
 
 export interface State {

@@ -8,7 +8,7 @@ export interface Props {
   title?: string;
   icon?: React.ReactElement<any>;
   iconAfter?: React.ReactElement<any>;
-  onClick: React.MouseEventHandler;
+  onClick?: React.MouseEventHandler;
   onMouseEnter?: <T>(event: React.MouseEvent<T>) => void;
   onMouseLeave?: <T>(event: React.MouseEvent<T>) => void;
   selected?: boolean;

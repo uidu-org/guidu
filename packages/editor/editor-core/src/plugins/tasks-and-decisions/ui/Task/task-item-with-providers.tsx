@@ -1,9 +1,9 @@
-import { FabricElementsAnalyticsContext } from '@atlaskit/analytics-namespaced-context';
+import { FabricElementsAnalyticsContext } from '@uidu/analytics-namespaced-context';
 import {
   ContentRef,
   ResourcedTaskItem,
   TaskDecisionProvider,
-} from '@atlaskit/task-decision';
+} from '@uidu/task-decision';
 import { ContextIdentifierProvider } from '@uidu/editor-common';
 import * as React from 'react';
 import { Component, ReactElement } from 'react';

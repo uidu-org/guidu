@@ -1,10 +1,10 @@
-import { textColor } from '@atlaskit/adf-schema';
 import * as React from 'react';
-import WithPluginState from '../../components/WithPluginState';
+import { textColor } from '@uidu/adf-schema';
 import { EditorPlugin } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
 import {
-  createPlugin,
   pluginKey as textColorPluginKey,
+  createPlugin,
   TextColorPluginConfig,
   TextColorPluginState,
 } from './pm-plugins/main';

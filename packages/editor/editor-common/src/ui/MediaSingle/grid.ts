@@ -1,4 +1,4 @@
-import { MediaSingleLayout } from '@atlaskit/adf-schema';
+import { MediaSingleLayout } from '@uidu/adf-schema';
 
 const handleMargin = 12;
 const gutterSize = handleMargin * 2;

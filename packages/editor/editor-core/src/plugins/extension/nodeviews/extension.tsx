@@ -2,9 +2,9 @@ import { ExtensionHandlers, ProviderFactory } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import { ReactNodeView } from '../../../nodeviews';
+import { getPosHandler, ReactNodeView } from '../../../nodeviews';
 import { ForwardRef } from '../../../nodeviews/ReactNodeView';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import { ZeroWidthSpace } from '../../../utils';
 import Extension from '../ui/Extension';
 
@@ -15,11 +15,12 @@ export interface Props {
 }
 
 class ExtensionNode extends ReactNodeView {
-  ignoreMutation(mutation: MutationRecord) {
+  ignoreMutation(mutation: any) {
     // Extensions can perform async operations that will change the DOM.
     // To avoid having their tree rebuilt, we need to ignore the mutation
-    // if its not a layout, we need to give children a chance to recalc
-    return mutation.attributeName !== 'data-layout';
+    // for atom based extensions if its not a layout, we need to give
+    // children a chance to recalc
+    return this.node.type.isAtom || mutation.attributeName !== 'data-layout';
   }
 
   getContentDOM() {
@@ -59,7 +60,7 @@ export default function ExtensionNodeView(
   providerFactory: ProviderFactory,
   extensionHandlers: ExtensionHandlers,
 ) {
-  return (node: PmNode, view: EditorView, getPos: () => number): NodeView => {
+  return (node: PmNode, view: EditorView, getPos: getPosHandler): NodeView => {
     return new ExtensionNode(node, view, getPos, portalProviderAPI, {
       providerFactory,
       extensionHandlers,

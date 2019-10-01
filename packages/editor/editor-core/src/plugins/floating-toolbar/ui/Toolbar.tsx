@@ -1,6 +1,7 @@
 import { ButtonGroup } from '@uidu/button';
 import { ProviderFactory } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize, themed } from '@uidu/theme';
+import { Node } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
@@ -30,6 +31,7 @@ export interface Props {
   editorView?: EditorView;
   dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   target?: HTMLElement;
+  node: Node;
 }
 
 const ToolbarContainer = styled.div`
@@ -118,6 +120,7 @@ export const isSameItem = (leftItem: Item, rightItem: Item): boolean => {
         'options',
       ]);
     case 'custom':
+      return false;
     case 'separator':
       return compareItemWithKeys(leftItem, rightItem as typeof leftItem);
   }
@@ -261,6 +264,9 @@ export default class Toolbar extends Component<Props> {
   }
 
   shouldComponentUpdate(nextProps: Props) {
-    return !areSameItems(this.props.items, nextProps.items);
+    return (
+      this.props.node.type !== nextProps.node.type ||
+      !areSameItems(this.props.items, nextProps.items)
+    );
   }
 }

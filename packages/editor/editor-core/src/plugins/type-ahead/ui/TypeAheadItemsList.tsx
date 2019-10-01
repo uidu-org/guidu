@@ -2,7 +2,7 @@ import Item, { ItemGroup, itemThemeNamespace } from '@uidu/item';
 import { borderRadius, colors, themed } from '@uidu/theme';
 import * as React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Shortcut } from '../../../components/styles';
+import { Shortcut } from '../../../ui/styles';
 import IconFallback from '../../quick-insert/assets/fallback';
 import { TypeAheadItem } from '../types';
 

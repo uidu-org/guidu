@@ -32,15 +32,6 @@ export const domIndex = function(node: Node | null): number | undefined {
   return undefined;
 };
 
-export const shallowEqual = (obj1: any, obj2: any) => {
-  for (let key in obj1) {
-    if (obj1[key] !== obj2[key]) {
-      return false;
-    }
-  }
-  return true;
-};
-
 export const hasCode = (state: EditorState, pos: number): boolean => {
   const { code } = state.schema.marks;
   const node = pos >= 0 && state.doc.nodeAt(pos);

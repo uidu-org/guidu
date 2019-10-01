@@ -1,20 +1,20 @@
-import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
+import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import { borderRadius, colors } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { withAnalytics } from '../../../../analytics';
-import ColorPalette from '../../../../components/ColorPalette';
-import Dropdown from '../../../../components/Dropdown';
+import ColorPalette from '../../../../ui/ColorPalette';
+import Dropdown from '../../../../ui/Dropdown';
 import {
   ExpandIconWrapper,
   MenuWrapper,
   Separator,
   TriggerWrapper,
-} from '../../../../components/styles';
-import ToolbarButton from '../../../../components/ToolbarButton';
+} from '../../../../ui/styles';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import * as commands from '../../commands/change-color';
 import { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
@@ -141,7 +141,8 @@ class ToolbarTextColor extends React.Component<
           boundariesElement={popupsBoundariesElement}
           scrollableElement={popupsScrollableElement}
           isOpen={isOpen && !pluginState.disabled}
-          onOpenChange={this.handleOpenChange}
+          handleClickOutside={this.hide}
+          handleEscapeKeydown={this.hide}
           fitWidth={242}
           fitHeight={80}
           zIndex={akEditorMenuZIndex}
@@ -178,7 +179,6 @@ class ToolbarTextColor extends React.Component<
             palette={pluginState.palette}
             onClick={color => this.changeTextColor(color, pluginState.disabled)}
             selectedColor={pluginState.color}
-            borderColors={pluginState.borderColorPalette}
           />
         </Dropdown>
         <Separator />
@@ -204,6 +204,12 @@ class ToolbarTextColor extends React.Component<
 
   private handleOpenChange = ({ isOpen }: { isOpen: boolean }) => {
     this.setState({ isOpen });
+  };
+
+  private hide = () => {
+    if (this.state.isOpen === true) {
+      this.setState({ isOpen: false });
+    }
   };
 }
 

@@ -3,9 +3,10 @@ import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../../event-dispatcher';
 import * as keymaps from '../../../keymaps';
+import { shallowEqual } from '../../../utils';
 import * as commands from '../commands/text-formatting';
 import { createInlineCodeFromTextInputWithAnalytics } from '../commands/text-formatting';
-import { anyMarkActive, shallowEqual } from '../utils';
+import { anyMarkActive } from '../utils';
 
 export const pluginKey = new PluginKey('textFormatting');
 
@@ -44,7 +45,6 @@ const getTextFormattingState = (
     subsup,
     underline,
   } = editorState.schema.marks;
-
   const state: TextFormattingState = {};
 
   if (code) {
@@ -55,7 +55,6 @@ const getTextFormattingState = (
     state.emActive = anyMarkActive(editorState, em);
     state.emDisabled = state.codeActive ? true : !toggleMark(em)(editorState);
   }
-
   if (strike) {
     state.strikeActive = anyMarkActive(editorState, strike);
     state.strikeDisabled = state.codeActive

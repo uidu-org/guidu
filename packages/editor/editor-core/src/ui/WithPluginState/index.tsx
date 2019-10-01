@@ -4,6 +4,7 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import EditorActions from '../../actions';
 import { EventDispatcher } from '../../event-dispatcher';
+import { EditorSharedConfig } from '../../labs/next/Editor';
 
 export interface State {
   [name: string]: any;
@@ -12,6 +13,7 @@ export interface State {
 export type PluginsConfig = { [name: string]: PluginKey };
 export type Context = {
   editorActions?: EditorActions;
+  editorSharedConfig?: EditorSharedConfig;
 };
 
 export interface Props {
@@ -42,10 +44,10 @@ export default class WithPluginState extends React.Component<Props, State> {
   private debounce: number | null = null;
   private notAppliedState = {};
   private isSubscribed = false;
-  private hasBeenMounted = false;
 
   static contextTypes = {
     editorActions: PropTypes.object,
+    editorSharedConfig: PropTypes.object,
   };
 
   state = {};
@@ -69,7 +71,10 @@ export default class WithPluginState extends React.Component<Props, State> {
       props.editorView ||
       (context &&
         context.editorActions &&
-        context.editorActions._privateGetEditorView())
+        context.editorActions._privateGetEditorView()) ||
+      (context &&
+        context.editorSharedConfig &&
+        context.editorSharedConfig.editorView)
     );
   }
 
@@ -79,7 +84,10 @@ export default class WithPluginState extends React.Component<Props, State> {
       props.eventDispatcher ||
       (this.context &&
         this.context.editorActions &&
-        this.context.editorActions._privateGetEventDispatcher())
+        this.context.editorActions._privateGetEventDispatcher()) ||
+      (this.context &&
+        this.context.editorSharedConfig &&
+        this.context.editorSharedConfig.eventDispatcher)
     );
   }
 
@@ -104,10 +112,7 @@ export default class WithPluginState extends React.Component<Props, State> {
     }
 
     this.debounce = window.setTimeout(() => {
-      if (this.hasBeenMounted) {
-        this.setState(this.notAppliedState);
-      }
-
+      this.setState(this.notAppliedState);
       this.debounce = null;
       this.notAppliedState = {};
     }, 0);
@@ -208,7 +213,6 @@ export default class WithPluginState extends React.Component<Props, State> {
   }
 
   componentDidMount() {
-    this.hasBeenMounted = true;
     this.subscribe(this.props);
     this.subscribeToContextUpdates(this.context);
   }
@@ -220,9 +224,9 @@ export default class WithPluginState extends React.Component<Props, State> {
   }
 
   componentWillUnmount() {
+    if (this.debounce) window.clearTimeout(this.debounce);
     this.unsubscribeFromContextUpdates(this.context);
     this.unsubscribe();
-    this.hasBeenMounted = false;
   }
 
   render() {

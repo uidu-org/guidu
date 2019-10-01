@@ -1,7 +1,7 @@
-import { TableMap } from 'prosemirror-tables';
-import { Transaction } from 'prosemirror-state';
+import { CellAttributes } from '@uidu/adf-schema';
 import { Node as PMNode } from 'prosemirror-model';
-import { CellAttributes } from '@atlaskit/adf-schema';
+import { TextSelection, Transaction } from 'prosemirror-state';
+import { CellSelection, TableMap } from 'prosemirror-tables';
 import { ResizeState } from '../pm-plugins/table-resizing/utils';
 import { setMeta } from './metadata';
 
@@ -12,7 +12,6 @@ export const updateColumnWidths = (
 ) => (tr: Transaction): Transaction => {
   const map = TableMap.get(table);
   const updatedCellsAttrs: { [key: number]: CellAttributes } = {};
-  const { selection } = tr;
 
   // calculating new attributes for each cell
   for (let columnIndex = 0; columnIndex < map.width; columnIndex++) {
@@ -86,14 +85,31 @@ export const updateColumnWidths = (
   }
 
   const tablePos = start - 1;
-  return (
-    tr
-      .replaceWith(
-        tablePos,
-        tablePos + table.nodeSize,
-        table.type.createChecked(table.attrs, rows, table.marks),
-      )
-      // restore selection after replacing the table
-      .setSelection(selection)
+  const { selection } = tr;
+
+  tr.replaceWith(
+    tablePos,
+    tablePos + table.nodeSize,
+    table.type.createChecked(table.attrs, rows, table.marks),
   );
+
+  // restore selection after replacing the table
+  if (selection instanceof TextSelection) {
+    tr.setSelection(
+      new TextSelection(
+        tr.doc.resolve(selection.$from.pos),
+        tr.doc.resolve(selection.$to.pos),
+      ),
+    );
+  } else if (selection instanceof CellSelection) {
+    const newSelection = CellSelection.create(
+      tr.doc,
+      selection.$anchorCell.pos,
+      selection.$headCell.pos,
+    );
+    // TS complaints about missing "visible" prop in CellSelection type
+    tr.setSelection(newSelection as any);
+  }
+
+  return tr;
 };

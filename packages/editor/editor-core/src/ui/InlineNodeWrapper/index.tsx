@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { EditorAppearance } from '../../types';
 
 /**
  * @see ED-6102: Deleting inline nodes doesn't work properly on Android
@@ -23,9 +22,9 @@ export const InlineNodeInnerWrapper = styled.span`
 `;
 
 const InlineNodeWrapper: React.StatelessComponent<{
-  appearance?: EditorAppearance;
-}> = ({ appearance, children }) =>
-  appearance === 'mobile' ? (
+  useInlineWrapper?: boolean;
+}> = ({ useInlineWrapper, children }) =>
+  useInlineWrapper ? (
     <InlineNodeInnerWrapper>{children}</InlineNodeInnerWrapper>
   ) : (
     <>{children}</>

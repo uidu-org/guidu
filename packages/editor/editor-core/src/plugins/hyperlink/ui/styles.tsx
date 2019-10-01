@@ -1,13 +1,17 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import UiFloatingToolbar from '../../../components/FloatingToolbar';
-import UiSeparator from '../../../components/Separator';
+import UiFloatingToolbar, {
+  Props as UiFloatingToolbarProps,
+} from '../../../ui/FloatingToolbar';
+import UiSeparator from '../../../ui/Separator';
 import UiToolbarButton, {
   Props as UiToolbarButtonProps,
-} from '../../../components/ToolbarButton';
+} from '../../../ui/ToolbarButton';
 
 // `line-height: 1` to fix extra 1px height from toolbar wrapper
-export const FloatingToolbar = styled(UiFloatingToolbar)`
+export const FloatingToolbar = styled(
+  UiFloatingToolbar
+)<UiFloatingToolbarProps>`
   max-height: 350px;
   min-height: 32px;
   height: initial;

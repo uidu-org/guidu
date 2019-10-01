@@ -1,7 +1,8 @@
 import { itemThemeNamespace } from '@uidu/item';
-import { backgroundActive, backgroundOnLayer, N900 } from '@uidu/theme/colors';
-import { gridSize } from '@uidu/theme/constants';
-import { multiply } from '@uidu/theme/math';
+import { colors, gridSize, math } from '@uidu/theme';
+
+const { backgroundActive, backgroundOnLayer, N900 } = colors;
+const { multiply } = math;
 
 const dropdownPadding = {
   bottom: 1,

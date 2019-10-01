@@ -1,11 +1,10 @@
-import { table, tableCell, tableHeader, tableRow } from '@atlaskit/adf-schema';
+import { table, tableCell, tableHeader, tableRow } from '@uidu/adf-schema';
 import { tableEditing } from 'prosemirror-tables';
 import { createTable } from 'prosemirror-utils';
 import * as React from 'react';
-import { FormattedMessage } from 'react-intl';
-import WithPluginState from '../../components/WithPluginState';
 import { toggleTable, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -17,7 +16,7 @@ import {
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
 import { IconTable } from '../quick-insert/assets';
 import { keymapPlugin } from './pm-plugins/keymap';
-import { createPlugin, pluginKey } from './pm-plugins/main';
+import { createPlugin, getPluginState, pluginKey } from './pm-plugins/main';
 import {
   createPlugin as createFlexiResizingPlugin,
   pluginKey as tableResizingPluginKey,
@@ -30,12 +29,12 @@ import {
 } from './types';
 import FloatingContextualButton from './ui/FloatingContextualButton';
 import FloatingContextualMenu from './ui/FloatingContextualMenu';
+import FloatingDeleteButton from './ui/FloatingDeleteButton';
+import FloatingInsertButton from './ui/FloatingInsertButton';
 import LayoutButton from './ui/LayoutButton';
 import { isLayoutSupported } from './utils';
 
-export const pluginConfig = (tablesConfig?: PluginConfig | boolean) => {
-  const config =
-    !tablesConfig || typeof tablesConfig === 'boolean' ? {} : tablesConfig;
+export const pluginConfig = (config: PluginConfig = {}) => {
   return config.advanced
     ? {
         allowBackgroundColor: true,
@@ -52,7 +51,19 @@ export const pluginConfig = (tablesConfig?: PluginConfig | boolean) => {
     : config;
 };
 
-const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
+interface TablePluginOptions {
+  tableOptions: PluginConfig;
+  dynamicSizingEnabled?: boolean;
+  breakoutEnabled?: boolean;
+  allowContextualMenu?: boolean;
+  // TODO these two need to be rethought
+  fullWidthEnabled?: boolean;
+  wasFullWidthEnabled?: boolean;
+}
+
+const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
+  name: 'table',
+
   nodes() {
     return [
       { name: 'table', node: table },
@@ -66,35 +77,35 @@ const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
     return [
       {
         name: 'table',
-        plugin: ({ props, prevProps, dispatch, portalProviderAPI }) => {
-          const { allowTables, appearance, allowDynamicTextSizing } = props;
-          const isBreakoutEnabled = appearance === 'full-page';
-          const isFullWidthModeEnabled = appearance === 'full-width';
-          const wasFullWidthModeEnabled =
-            prevProps && prevProps.appearance === 'full-width';
+        plugin: ({ dispatch, portalProviderAPI }) => {
+          const {
+            dynamicSizingEnabled,
+            fullWidthEnabled,
+            wasFullWidthEnabled,
+            breakoutEnabled,
+            tableOptions,
+          } = options || ({} as TablePluginOptions);
           return createPlugin(
             dispatch,
             portalProviderAPI,
-            pluginConfig(allowTables),
-            isBreakoutEnabled && allowDynamicTextSizing,
-            isBreakoutEnabled,
-            isFullWidthModeEnabled,
-            wasFullWidthModeEnabled,
+            pluginConfig(tableOptions),
+            breakoutEnabled && dynamicSizingEnabled,
+            breakoutEnabled,
+            fullWidthEnabled,
+            wasFullWidthEnabled,
           );
         },
       },
       {
         name: 'tablePMColResizing',
-        plugin: ({
-          dispatch,
-          props: { appearance, allowTables, allowDynamicTextSizing },
-        }) => {
-          const { allowColumnResizing } = pluginConfig(allowTables);
+        plugin: ({ dispatch }) => {
+          const { dynamicSizingEnabled, fullWidthEnabled, tableOptions } =
+            options || ({} as TablePluginOptions);
+          const { allowColumnResizing } = pluginConfig(tableOptions);
           return allowColumnResizing
             ? createFlexiResizingPlugin(dispatch, {
-                dynamicTextSizing:
-                  allowDynamicTextSizing && appearance !== 'full-width',
-                lastColumnResizable: appearance !== 'full-width',
+                dynamicTextSizing: dynamicSizingEnabled && !fullWidthEnabled,
+                lastColumnResizable: !fullWidthEnabled,
               } as ColumnResizingPluginState)
             : undefined;
         },
@@ -111,7 +122,6 @@ const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
     popupsMountPoint,
     popupsBoundariesElement,
     popupsScrollableElement,
-    appearance,
   }) {
     return (
       <WithPluginState
@@ -121,22 +131,44 @@ const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
         }}
         render={_ => {
           const { state } = editorView;
-          const pluginState = pluginKey.getState(state);
+          const pluginState = getPluginState(state);
           const tableResizingPluginState = tableResizingPluginKey.getState(
             state,
           );
           const isDragging =
             tableResizingPluginState && tableResizingPluginState.dragging;
-          const isMobile = appearance === 'mobile';
+          const allowControls =
+            pluginState &&
+            pluginState.pluginConfig &&
+            pluginState.pluginConfig.allowControls;
+
           return (
             <>
-              {pluginState.targetCellPosition && !isDragging && !isMobile && (
-                <FloatingContextualButton
+              {pluginState.targetCellPosition &&
+                !isDragging &&
+                options &&
+                options.allowContextualMenu && (
+                  <FloatingContextualButton
+                    editorView={editorView}
+                    mountPoint={popupsMountPoint}
+                    targetCellPosition={pluginState.targetCellPosition}
+                    scrollableElement={popupsScrollableElement}
+                    isContextualMenuOpen={pluginState.isContextualMenuOpen}
+                    layout={pluginState.layout}
+                  />
+                )}
+              {allowControls && (
+                <FloatingInsertButton
+                  tableNode={pluginState.tableNode}
+                  tableRef={pluginState.tableRef}
+                  insertColumnButtonIndex={pluginState.insertColumnButtonIndex}
+                  insertRowButtonIndex={pluginState.insertRowButtonIndex}
+                  isHeaderColumnEnabled={pluginState.isHeaderColumnEnabled}
+                  isHeaderRowEnabled={pluginState.isHeaderRowEnabled}
                   editorView={editorView}
                   mountPoint={popupsMountPoint}
-                  targetCellPosition={pluginState.targetCellPosition}
+                  boundariesElement={popupsBoundariesElement}
                   scrollableElement={popupsScrollableElement}
-                  isContextualMenuOpen={pluginState.isContextualMenuOpen}
                 />
               )}
               <FloatingContextualMenu
@@ -144,18 +176,29 @@ const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
                 mountPoint={popupsMountPoint}
                 boundariesElement={popupsBoundariesElement}
                 targetCellPosition={pluginState.targetCellPosition}
-                isOpen={pluginState.isContextualMenuOpen}
+                isOpen={Boolean(pluginState.isContextualMenuOpen)}
                 pluginConfig={pluginState.pluginConfig}
               />
-              {appearance === 'full-page' &&
-                isLayoutSupported(state) &&
-                !disableBreakoutUI && (
+              {allowControls && (
+                <FloatingDeleteButton
+                  editorView={editorView}
+                  selection={editorView.state.selection}
+                  tableRef={pluginState.tableRef as HTMLTableElement}
+                  mountPoint={popupsMountPoint}
+                  boundariesElement={popupsBoundariesElement}
+                  scrollableElement={popupsScrollableElement}
+                />
+              )}
+              {isLayoutSupported(state) &&
+                options &&
+                options.breakoutEnabled && (
                   <LayoutButton
                     editorView={editorView}
                     mountPoint={popupsMountPoint}
                     boundariesElement={popupsBoundariesElement}
                     scrollableElement={popupsScrollableElement}
                     targetRef={pluginState.tableWrapperTarget!}
+                    layout={pluginState.layout}
                     isResizing={
                       !!tableResizingPluginState &&
                       !!tableResizingPluginState.dragging
@@ -176,11 +219,7 @@ const tablesPlugin = (disableBreakoutUI?: boolean): EditorPlugin => ({
         description: formatMessage(messages.tableDescription),
         priority: 600,
         keyshortcut: tooltip(toggleTable),
-        icon: () => (
-          <FormattedMessage {...messages.table}>
-            {(label: string) => <IconTable label={label} />}
-          </FormattedMessage>
-        ),
+        icon: () => <IconTable label={formatMessage(messages.table)} />,
         action(insert, state) {
           const tr = insert(createTable(state.schema));
           return addAnalytics(tr, {

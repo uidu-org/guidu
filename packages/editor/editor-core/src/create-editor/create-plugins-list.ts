@@ -1,51 +1,85 @@
+import { CreateUIAnalyticsEvent } from '@uidu/analytics';
+import { EditorView } from 'prosemirror-view';
 import {
   alignmentPlugin,
+  analyticsPlugin,
   basePlugin,
   blockTypePlugin,
   clearMarksOnChangeToEmptyDocumentPlugin,
+  datePlugin,
   editorDisabledPlugin,
+  extensionPlugin,
   fakeTextCursorPlugin,
+  feedbackDialogPlugin,
   floatingToolbarPlugin,
   gapCursorPlugin,
   gridPlugin,
+  historyPlugin,
   hyperlinkPlugin,
   indentationPlugin,
   insertBlockPlugin,
   layoutPlugin,
   listsPlugin,
-  // mediaPlugin,
   pastePlugin,
   placeholderPlugin,
+  placeholderTextPlugin,
   quickInsertPlugin,
+  rulePlugin,
   tablesPlugin,
   textColorPlugin,
   textFormattingPlugin,
   typeAheadPlugin,
+  // unsupportedContentPlugin,
   widthPlugin,
 } from '../plugins';
 import { EditorPlugin, EditorProps } from '../types';
+import { isFullPage as fullPageCheck } from '../utils/is-full-page';
 
 /**
  * Returns list of plugins that are absolutely necessary for editor to work
  */
 export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
+  const { appearance, textFormatting, placeholder } = props;
+  const isFullPage = fullPageCheck(appearance);
+
   return [
     pastePlugin(),
-    basePlugin(props.appearance),
-    blockTypePlugin(),
-    placeholderPlugin(),
+    basePlugin({
+      allowInlineCursorTarget: appearance !== 'mobile',
+      allowScrollGutter: allowScrollGutter(props),
+      addRunTimePerformanceCheck: isFullPage,
+    }),
+    blockTypePlugin({ lastNodeMustBeParagraph: appearance === 'comment' }),
+    placeholderPlugin({ placeholder }),
     clearMarksOnChangeToEmptyDocumentPlugin(),
     hyperlinkPlugin(),
-    textFormattingPlugin(props.textFormatting || {}),
+    textFormattingPlugin(textFormatting || {}),
     widthPlugin(),
     typeAheadPlugin(),
+    // unsupportedContentPlugin(),
     editorDisabledPlugin(),
     gapCursorPlugin(),
-    gridPlugin(),
+    gridPlugin({ shouldCalcBreakoutGridLines: isFullPage }),
+    // submitEditorPlugin(),
     fakeTextCursorPlugin(),
     floatingToolbarPlugin(),
-    // unsupportedContentPlugin,
+    // sharedContextPlugin(),
   ];
+}
+
+function allowScrollGutter(
+  props: EditorProps,
+): ((view: EditorView) => HTMLElement | null) | undefined {
+  const { appearance } = props;
+  if (fullPageCheck(appearance)) {
+    // Full Page appearance uses a scrollable div wrapper
+    return () => document.querySelector('.fabric-editor-popup-scroll-parent');
+  }
+  if (appearance === 'mobile') {
+    // Mobile appearance uses body scrolling for improved performance on low powered devices.
+    return () => document.body;
+  }
+  return undefined;
 }
 
 /**
@@ -53,21 +87,26 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
  */
 export default function createPluginsList(
   props: EditorProps,
-  createAnalyticsEvent?: any,
+  prevProps?: EditorProps,
+  createAnalyticsEvent?: CreateUIAnalyticsEvent,
 ): EditorPlugin[] {
+  const isMobile = props.appearance === 'mobile';
+  const isFullPage = fullPageCheck(props.appearance);
   const plugins = getDefaultPluginsList(props);
 
-  // if (props.allowBreakout && isFullPage(props.appearance)) {
-  //   plugins.push(breakoutPlugin);
+  if (props.allowAnalyticsGASV3) {
+    plugins.push(analyticsPlugin(createAnalyticsEvent));
+  }
+
+  // if (props.allowBreakout && isFullPage) {
+  //   plugins.push(
+  //     breakoutPlugin({ allowBreakoutButton: props.appearance === 'full-page' }),
+  //   );
   // }
 
   if (props.allowTextAlignment) {
     plugins.push(alignmentPlugin());
   }
-
-  // if (props.allowInlineAction) {
-  //   plugins.push(inlineActionPlugin);
-  // }
 
   if (props.allowTextColor) {
     plugins.push(textColorPlugin());
@@ -77,12 +116,25 @@ export default function createPluginsList(
     plugins.push(listsPlugin());
   }
 
-  // if (props.allowRule) {
-  //   plugins.push(rulePlugin);
-  // }
+  if (props.allowRule) {
+    plugins.push(rulePlugin());
+  }
 
   // if (props.media || props.mediaProvider) {
-  //   plugins.push(mediaPlugin(props.media, props.appearance));
+  //   plugins.push(
+  //     mediaPlugin(props.media, {
+  //       allowLazyLoading: !isMobile,
+  //       allowBreakoutSnapPoints: isFullPage,
+  //       allowAdvancedToolBarOptions: isFullPage,
+  //       allowDropzoneDropLine: isFullPage,
+  //       allowMediaSingleEditable: !isMobile,
+  //       allowRemoteDimensionsFetch: !isMobile,
+  //       // This is a wild one. I didnt quite understand what the code was doing
+  //       // so a bit of guess for now.
+  //       allowMarkingUploadsAsIncomplete: isMobile,
+  //       fullWidthEnabled: props.appearance === 'full-width',
+  //     }),
+  //   );
   // }
 
   // if (props.allowCodeBlocks) {
@@ -92,24 +144,70 @@ export default function createPluginsList(
 
   // if (props.mentionProvider) {
   //   plugins.push(
-  //     mentionsPlugin(createAnalyticsEvent, props.sanitizePrivateContent),
+  //     mentionsPlugin({
+  //       createAnalyticsEvent,
+  //       sanitizePrivateContent: props.sanitizePrivateContent,
+  //       mentionInsertDisplayName: props.mentionInsertDisplayName,
+  //       useInlineWrapper: isMobile,
+  //       allowZeroWidthSpaceAfter: !isMobile,
+  //     }),
+  //   );
+  // }
+
+  // if (props.emojiProvider) {
+  //   plugins.push(
+  //     emojiPlugin({
+  //       createAnalyticsEvent,
+  //       useInlineWrapper: isMobile,
+  //       allowZeroWidthSpaceAfter: !isMobile,
+  //     }),
   //   );
   // }
 
   if (props.allowTables) {
-    plugins.push(tablesPlugin(props.appearance === 'full-width'));
+    const tableOptions =
+      !props.allowTables || typeof props.allowTables === 'boolean'
+        ? {}
+        : props.allowTables;
+    plugins.push(
+      tablesPlugin({
+        tableOptions,
+        breakoutEnabled: props.appearance === 'full-page',
+        allowContextualMenu: !isMobile,
+        fullWidthEnabled: props.appearance === 'full-width',
+        wasFullWidthEnabled: prevProps && prevProps.appearance === 'full-width',
+        dynamicSizingEnabled: props.allowDynamicTextSizing,
+      }),
+    );
   }
 
   // if (props.allowTasksAndDecisions || props.taskDecisionProvider) {
-  //   plugins.push(tasksAndDecisionsPlugin);
+  //   plugins.push(tasksAndDecisionsPlugin());
   // }
 
+  if (props.feedbackInfo) {
+    plugins.push(feedbackDialogPlugin(props.feedbackInfo));
+  }
+
   // if (props.allowHelpDialog) {
-  //   plugins.push(helpDialogPlugin);
+  //   plugins.push(helpDialogPlugin());
   // }
 
   // if (props.saveOnEnter) {
-  //   plugins.push(saveOnEnterPlugin);
+  //   plugins.push(saveOnEnterPlugin());
+  // }
+
+  // if (props.legacyImageUploadProvider) {
+  //   plugins.push(imageUploadPlugin());
+
+  //   if (!props.media && !props.mediaProvider) {
+  //     plugins.push(
+  //       mediaPlugin({
+  //         allowMediaSingle: { disableLayout: true },
+  //         allowMediaGroup: false,
+  //       }),
+  //     );
+  //   }
   // }
 
   // if (props.collabEdit || props.collabEditProvider) {
@@ -119,51 +217,53 @@ export default function createPluginsList(
   // }
 
   // if (props.maxContentSize) {
-  //   plugins.push(maxContentSizePlugin);
+  //   plugins.push(maxContentSizePlugin());
   // }
 
   // if (props.allowJiraIssue) {
-  //   plugins.push(jiraIssuePlugin);
+  //   plugins.push(jiraIssuePlugin());
   // }
 
   // if (props.allowPanel) {
-  //   plugins.push(panelPlugin);
+  //   plugins.push(panelPlugin());
   // }
 
-  // if (props.allowExtension) {
-  //   plugins.push(extensionPlugin);
-  // }
+  if (props.allowExtension) {
+    plugins.push(
+      extensionPlugin({ breakoutEnabled: props.appearance === 'full-page' }),
+    );
+  }
 
   // if (props.macroProvider) {
-  //   plugins.push(macroPlugin);
+  //   plugins.push(macroPlugin());
   // }
 
-  // if (props.allowConfluenceInlineComment) {
-  //   plugins.push(confluenceInlineComment);
+  // if (props.annotationProvider || props.allowConfluenceInlineComment) {
+  //   plugins.push(annotationPlugin(props.annotationProvider));
   // }
 
-  // if (props.allowDate) {
-  //   plugins.push(datePlugin);
-  // }
+  if (props.allowDate) {
+    plugins.push(datePlugin());
+  }
 
-  // if (props.allowTemplatePlaceholders) {
-  //   const options =
-  //     props.allowTemplatePlaceholders !== true
-  //       ? props.allowTemplatePlaceholders
-  //       : {};
-  //   plugins.push(placeholderTextPlugin(options));
-  // }
+  if (props.allowTemplatePlaceholders) {
+    const options =
+      props.allowTemplatePlaceholders !== true
+        ? props.allowTemplatePlaceholders
+        : {};
+    plugins.push(placeholderTextPlugin(options));
+  }
 
   if (props.allowLayouts) {
     plugins.push(layoutPlugin());
   }
 
   // if (props.UNSAFE_cards) {
-  //   plugins.push(cardPlugin);
+  //   plugins.push(cardPlugin());
   // }
 
   // if (props.autoformattingProvider) {
-  //   plugins.push(customAutoformatPlugin);
+  //   plugins.push(customAutoformatPlugin());
   // }
 
   let statusMenuDisabled = true;
@@ -172,30 +272,35 @@ export default function createPluginsList(
   //     typeof props.allowStatus === 'object'
   //       ? props.allowStatus.menuDisabled
   //       : false;
-  //   plugins.push(statusPlugin({ menuDisabled: statusMenuDisabled }));
+  //   plugins.push(
+  //     statusPlugin({
+  //       menuDisabled: statusMenuDisabled,
+  //       useInlineWrapper: isMobile,
+  //       allowZeroWidthSpaceAfter: !isMobile,
+  //     }),
+  //   );
   // }
 
   if (props.allowIndentation) {
     plugins.push(indentationPlugin());
   }
 
-  // // UI only plugins
+  // UI only plugins
   plugins.push(
     insertBlockPlugin({
+      allowTables: !!props.allowTables,
       insertMenuItems: props.insertMenuItems,
       horizontalRuleEnabled: props.allowRule,
       nativeStatusSupported: !statusMenuDisabled,
     }),
   );
 
-  // if (props.allowConfluenceInlineComment) {
-  //   plugins.push(annotationPlugin);
-  // }
-
-  // plugins.push(submitEditorPlugin);
-
-  if (props.appearance !== 'mobile') {
+  if (!isMobile) {
     plugins.push(quickInsertPlugin());
+  }
+
+  if (isMobile) {
+    plugins.push(historyPlugin());
   }
 
   return plugins;

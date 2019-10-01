@@ -1,17 +1,16 @@
 import { ErrorReporter, ProviderFactory } from '@uidu/editor-common';
 import { Schema } from 'prosemirror-model';
-import { EditorState, Plugin } from 'prosemirror-state';
+import { Plugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { IntlShape } from 'react-intl';
 import EditorActions from '../actions';
-import { PortalProviderAPI } from '../components/PortalProvider';
-import { ToolbarSize } from '../components/Toolbar';
 import { Dispatch, EventDispatcher } from '../event-dispatcher';
 import { DispatchAnalyticsEvent } from '../plugins/analytics';
 import { FloatingToolbarHandler } from '../plugins/floating-toolbar/types';
 import { QuickInsertHandler } from '../plugins/quick-insert/types';
 import { TypeAheadHandler } from '../plugins/type-ahead/types';
+import { PortalProviderAPI } from '../ui/PortalProvider';
+import { ToolbarSize } from '../ui/Toolbar';
 import { EditorConfig, MarkConfig, NodeConfig } from './editor-config';
 import { EditorAppearance, EditorProps } from './editor-props';
 
@@ -25,9 +24,7 @@ export type PMPluginFactoryParams = {
   errorReporter?: ErrorReporter;
   portalProviderAPI: PortalProviderAPI;
   reactContext: () => { [key: string]: any };
-  intl: IntlShape;
   dispatchAnalyticsEvent: DispatchAnalyticsEvent;
-  oldState?: EditorState;
 };
 
 export type PMPluginCreateConfig = PMPluginFactoryParams & {

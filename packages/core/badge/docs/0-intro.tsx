@@ -17,7 +17,7 @@ export default md`
   The \`default\` export gives you full badge functionality and automatically formats the number you priovide it.
 
 ${code`
-  import Badge from '@atlaskit/badge';
+  import Badge from '@uidu/badge';
 
   // Displays: 99+
   <Badge>{1000}</Badge>
@@ -31,7 +31,7 @@ ${code`
   The named \`Container\` export retains the styling of a normal badge, but without formatting. This means you can compose in whatever information you need to.
 
 ${code`
-  import { Container } from '@atlaskit/badge';
+  import { Container } from '@uidu/badge';
 
   // Displays: <em>Something</em>
   <Container><em>Something</em></Container>
@@ -45,7 +45,7 @@ ${code`
   The \`Format\` export can be used to compose your own badge together, or if you need the badge style formatting somewhere else.
 
   ${code`
-  import { Container, Format } from '@atlaskit/badge';
+  import { Container, Format } from '@uidu/badge';
 
   // Displays: <em>999+</em>
   <Container><em><Format>{1000}</Format></em></Container>

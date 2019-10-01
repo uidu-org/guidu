@@ -1,11 +1,8 @@
 import { BORDER_WIDTH, SizeType } from '@uidu/avatar';
-import {
-  backgroundActive,
-  backgroundHover,
-  backgroundOnLayer,
-} from '@uidu/theme/colors';
-import { gridSize } from '@uidu/theme/constants';
+import { colors, gridSize } from '@uidu/theme';
 import styled from 'styled-components';
+
+const { backgroundActive, backgroundHover, backgroundOnLayer } = colors;
 
 const gutterUnitless = gridSize() / 2;
 const gutter = `${gutterUnitless}px`;

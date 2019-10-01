@@ -1,14 +1,14 @@
-import { Plugin, PluginKey } from 'prosemirror-state';
 import classnames from 'classnames';
-import { updateResizeHandle, getResizeCellPos } from './utils';
+import { Plugin, PluginKey } from 'prosemirror-state';
+import { Dispatch } from '../../../../event-dispatcher';
+import { pluginFactory } from '../../../../utils/plugin-state-factory';
 import {
   ColumnResizingPluginState,
   TableCssClassName as ClassName,
 } from '../../types';
-import { Dispatch } from '../../../../event-dispatcher';
 import { handleMouseDown } from './event-handlers';
-import { pluginFactory } from '../../../../utils/plugin-state-factory';
 import reducer from './reducer';
+import { getResizeCellPos } from './utils';
 
 export const pluginKey = new PluginKey('tableFlexiColumnResizing');
 
@@ -56,18 +56,12 @@ export function createPlugin(
 
           const { dragging } = getPluginState(state);
           if (resizeHandlePos !== null && !dragging) {
-            const domAtPos = view.domAtPos.bind(view);
-            if (
-              handleMouseDown(
-                view,
-                event as MouseEvent,
-                resizeHandlePos,
-                dynamicTextSizing,
-              )
-            ) {
-              updateResizeHandle(state, domAtPos, resizeHandlePos);
-              return true;
-            }
+            return handleMouseDown(
+              view,
+              event as MouseEvent,
+              resizeHandlePos,
+              dynamicTextSizing,
+            );
           }
 
           return false;

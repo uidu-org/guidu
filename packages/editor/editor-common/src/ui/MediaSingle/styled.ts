@@ -1,4 +1,4 @@
-import { MediaSingleLayout } from '@atlaskit/adf-schema';
+import { MediaSingleLayout } from '@uidu/adf-schema';
 import styled, { css } from 'styled-components';
 import {
   akEditorFullPageMaxWidth,
@@ -153,7 +153,7 @@ export const MediaSingleDimensionHelper = ({
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<WrapperProps>`
   ${MediaSingleDimensionHelper};
   position: relative;
 

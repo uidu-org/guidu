@@ -6,7 +6,7 @@ import { CreateEventMap, CreateUIAnalyticsEvent } from './types';
 export interface WithAnalyticsEventsProps {
   /**
    * You should not be accessing this prop under any circumstances.
-   * It is provided by `@atlaskit/analytics-next` and integrated in the component
+   * It is provided by `@uidu/analytics` and integrated in the component
    */
   createAnalyticsEvent?: CreateUIAnalyticsEvent;
 

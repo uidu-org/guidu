@@ -1,4 +1,4 @@
-import { MediaSingleLayout } from '@atlaskit/adf-schema';
+import { MediaSingleLayout } from '@uidu/adf-schema';
 import classnames from 'classnames';
 import { Resizable, ResizeDirection, Size } from 're-resizable';
 import * as React from 'react';

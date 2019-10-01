@@ -1,9 +1,6 @@
 import { code, md } from '@uidu/docs';
 import React from 'react';
-import {
-  instrumentedComponents,
-  InstrumentedItem,
-} from '../src/AnalyticsEventMap';
+import { instrumentedComponents, InstrumentedItem } from '../src/AnalyticsEventMap';
 
 const scrubRepeatedInfo = (
   item: InstrumentedItem,
@@ -64,7 +61,7 @@ and recording these events in which ever way you like.
 
   ### SaveButton.js
 ${code`
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 
 const SaveButton = ({ onClick }) => (
   <Button onClick={onClick}>Save</Button>
@@ -79,7 +76,7 @@ const SaveButton = ({ onClick }) => (
 
   ### SaveButton.js
 ${code`
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 
 const SaveButton = ({ onClick }) => (
   <Button
@@ -101,7 +98,7 @@ const SaveButton = ({ onClick }) => (
 
   ### App.js
 ${code`
-import { AnalyticsListener } from '@atlaskit/analytics-next';
+import { AnalyticsListener } from '@uidu/analytics';
 import SaveButton from './SaveButton';
 
 const sendAnalytics = analytic => console.log(analytic);

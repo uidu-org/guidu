@@ -1,5 +1,5 @@
 import InviteTeamIcon from '@atlaskit/icon/glyph/editor/add';
-import Avatar from '@uidu/avatar';
+import Avatar, { SizeType } from '@uidu/avatar';
 import AvatarGroup from '@uidu/avatar-group';
 import { akEditorSmallZIndex } from '@uidu/editor-common';
 import { colors, gridSize } from '@uidu/theme';
@@ -7,10 +7,10 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled, { keyframes } from 'styled-components';
-import ToolbarButton from '../../../components/ToolbarButton';
-import WithPluginState from '../../../components/WithPluginState';
 import { EventDispatcher } from '../../../event-dispatcher';
 import messages from '../../../messages';
+import ToolbarButton from '../../../ui/ToolbarButton';
+import WithPluginState from '../../../ui/WithPluginState';
 import { pluginKey as collabEditPluginKey, PluginState } from '../plugin';
 import { CollabInviteToEditProps } from '../types';
 import { getAvatarColor } from '../utils';
@@ -172,7 +172,7 @@ class Avatars extends React.Component<Props & WrappedComponentProps, any> {
         name: p.name,
         src: p.avatar,
         sessionId: p.sessionId,
-        size: 'medium',
+        size: 'medium' as SizeType,
         component: Item,
       }))
       .sort(p => (p.sessionId === sessionId ? -1 : 1));

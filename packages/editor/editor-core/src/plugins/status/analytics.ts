@@ -1,3 +1,4 @@
+import { AnalyticsEventPayload, CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   name as packageName,
   version as packageVersion,
@@ -5,11 +6,11 @@ import {
 
 export const FABRIC_CHANNEL = 'fabric-elements';
 
-export const createStatusAnalyticsAndFire = (createAnalyticsEvent?: any) => (
-  payload: any,
-) => {
+export const createStatusAnalyticsAndFire = (
+  createAnalyticsEvent?: CreateUIAnalyticsEvent,
+) => (payload: AnalyticsEventPayload) => {
   if (createAnalyticsEvent && payload) {
-    const statusPayload: any = {
+    const statusPayload: AnalyticsEventPayload = {
       ...payload,
       eventType: 'ui',
     };

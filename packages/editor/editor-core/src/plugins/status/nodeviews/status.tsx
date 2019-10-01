@@ -1,19 +1,19 @@
-import { Color, Status, StatusStyle } from '@atlaskit/status/element';
+import { Color, Status, StatusStyle } from '@uidu/status';
 import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
-import InlineNodeWrapper, {
-  createMobileInlineDomRef,
-} from '../../../components/InlineNodeWrapper';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import WithPluginState from '../../../components/WithPluginState';
 import { EventDispatcher } from '../../../event-dispatcher';
 import { getPosHandler, ReactNodeView } from '../../../nodeviews';
-import { EditorAppearance } from '../../../types';
+import InlineNodeWrapper, {
+  createMobileInlineDomRef,
+} from '../../../ui/InlineNodeWrapper';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
+import WithPluginState from '../../../ui/WithPluginState';
 import { ZeroWidthSpace } from '../../../utils';
+import { StatusPluginOptions } from '../index';
 import { pluginKey } from '../plugin';
 
 export const messages = defineMessages({
@@ -109,7 +109,6 @@ class StatusContainerView extends React.Component<
                 localId={localId}
                 style={style}
                 onClick={this.handleClick}
-                onHover={() => {}}
               />
             </StyledStatus>
           );
@@ -129,12 +128,15 @@ class StatusContainerView extends React.Component<
 export const IntlStatusContainerView = injectIntl(StatusContainerView);
 
 export interface Props {
-  editorAppearance?: EditorAppearance;
+  options?: StatusPluginOptions;
 }
 
-export class StatusNodeView extends ReactNodeView {
+export class StatusNodeView extends ReactNodeView<Props> {
   createDomRef() {
-    if (this.reactComponentProps.editorAppearance === 'mobile') {
+    if (
+      this.reactComponentProps.options &&
+      this.reactComponentProps.options.useInlineWrapper
+    ) {
       return createMobileInlineDomRef();
     }
 
@@ -150,11 +152,11 @@ export class StatusNodeView extends ReactNodeView {
   }
 
   render(props: Props) {
-    const { editorAppearance } = props;
+    const { options } = props;
     const { text, color, localId, style } = this.node.attrs;
 
     return (
-      <InlineNodeWrapper appearance={editorAppearance}>
+      <InlineNodeWrapper useInlineWrapper={options && options.useInlineWrapper}>
         <IntlStatusContainerView
           view={this.view}
           text={text}
@@ -162,7 +164,7 @@ export class StatusNodeView extends ReactNodeView {
           style={style}
           localId={localId}
         />
-        {editorAppearance !== 'mobile' && ZeroWidthSpace}
+        {options && options.allowZeroWidthSpaceAfter && ZeroWidthSpace}
       </InlineNodeWrapper>
     );
   }
@@ -170,10 +172,10 @@ export class StatusNodeView extends ReactNodeView {
 
 export default function statusNodeView(
   portalProviderAPI: PortalProviderAPI,
-  editorAppearance?: EditorAppearance,
+  options?: StatusPluginOptions,
 ) {
   return (node: PMNode, view: EditorView, getPos: getPosHandler): NodeView =>
     new StatusNodeView(node, view, getPos, portalProviderAPI, {
-      editorAppearance,
+      options,
     }).init();
 }

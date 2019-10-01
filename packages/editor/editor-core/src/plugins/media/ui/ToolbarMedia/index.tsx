@@ -3,9 +3,9 @@ import { PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { withAnalytics } from '../../../../analytics';
-import ToolbarButton from '../../../../components/ToolbarButton';
-import WithPluginState from '../../../../components/WithPluginState';
 import { EventDispatcher } from '../../../../event-dispatcher';
+import ToolbarButton from '../../../../ui/ToolbarButton';
+import WithPluginState from '../../../../ui/WithPluginState';
 import { MediaPluginState } from '../../pm-plugins/main';
 
 export interface Props {

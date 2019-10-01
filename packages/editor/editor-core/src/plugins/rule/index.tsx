@@ -1,6 +1,9 @@
-import { rule } from '@atlaskit/adf-schema';
+import { rule } from '@uidu/adf-schema';
+import { Fragment } from 'prosemirror-model';
+import { Transaction } from 'prosemirror-state';
 import * as React from 'react';
 import { EditorPlugin } from '../../types';
+import { safeInsert } from '../../utils/insert';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -11,10 +14,13 @@ import {
 } from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
 import { IconDivider } from '../quick-insert/assets';
+import { getEditorProps } from '../shared-context';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
 
 const rulePlugin = (): EditorPlugin => ({
+  name: 'rule',
+
   nodes() {
     return [{ name: 'rule', node: rule }];
   },
@@ -44,7 +50,25 @@ const rulePlugin = (): EditorPlugin => ({
           <IconDivider label={formatMessage(messages.horizontalRule)} />
         ),
         action(insert, state) {
-          const tr = insert(state.schema.nodes.rule.createChecked());
+          let tr: Transaction<any> | null = null;
+          const { allowNewInsertionBehaviour } = getEditorProps(state);
+          if (allowNewInsertionBehaviour) {
+            /**
+             * This is a workaround to get rid of the typeahead text when using quick insert
+             * Once we insert *nothing*, we get a new transaction, so we can use the new selection
+             * without considering the extra text after the `/` command.
+             **/
+            tr = insert(Fragment.empty);
+            tr = safeInsert(
+              state.schema.nodes.rule.createChecked(),
+              tr.selection.from,
+            )(tr);
+          }
+
+          if (!tr) {
+            tr = insert(state.schema.nodes.rule.createChecked());
+          }
+
           return addAnalytics(tr, {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,

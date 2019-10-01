@@ -1,22 +1,15 @@
 import { findOverflowScrollParent } from '@uidu/editor-common';
 import MediaCard from '@uidu/media-card';
 import * as PropTypes from 'prop-types';
-import { Node as PMNode } from 'prosemirror-model';
-import { EditorView } from 'prosemirror-view';
+import rafSchedule from 'raf-schd';
 import * as React from 'react';
-import { stateKey as ReactNodeViewState } from '../../../plugins/base/pm-plugins/react-nodeview';
+import { SelectionBasedNodeView } from '../../../nodeviews/ReactNodeView';
 import { ZeroWidthSpace } from '../../../utils';
+import UnsupportedInlineNode from '../../unsupported-content/nodeviews/unsupported-inline';
+import { registerCard } from '../pm-plugins/actions';
+import { Card, SmartCardProps } from './genericCard';
 
-export interface Props {
-  children?: React.ReactNode;
-  node: PMNode;
-  getPos: () => number;
-  view: EditorView;
-  selected?: boolean;
-  pluginState: any;
-}
-
-export class InlineCardNode extends React.PureComponent<Props> {
+export class InlineCardComponent extends React.PureComponent<SmartCardProps> {
   private scrollContainer?: HTMLElement;
   private onClick = () => {};
 
@@ -30,13 +23,30 @@ export class InlineCardNode extends React.PureComponent<Props> {
     this.scrollContainer = scrollContainer || undefined;
   }
 
-  render() {
-    const { node, selected } = this.props;
-    const { url, data } = node.attrs;
+  onResolve = (data: { url?: string; title?: string }) => {
+    const { getPos, view } = this.props;
+    if (!getPos) {
+      return;
+    }
 
-    const cardContext = this.context.contextAdapter
-      ? this.context.contextAdapter.card
-      : undefined;
+    const { title, url } = data;
+
+    // don't dispatch immediately since we might be in the middle of
+    // rendering a nodeview
+    rafSchedule(() =>
+      view.dispatch(
+        registerCard({
+          title,
+          url,
+          pos: typeof getPos === 'function' ? getPos() : +getPos,
+        })(view.state.tr),
+      ),
+    )();
+  };
+
+  render() {
+    const { node, selected, cardContext } = this.props;
+    const { url, data } = node.attrs;
 
     const card = (
       <span>
@@ -44,18 +54,13 @@ export class InlineCardNode extends React.PureComponent<Props> {
         <span className="card">
           <MediaCard
             file={{
-              id: 'foo',
-              filename: 'devo toglierle',
               src: url,
-              kind: 'smart',
-              createdAt: Date(),
-              extension: 'png',
+              kind: 'image',
             }}
             // data={data}
             // appearance="inline"
             // isSelected={selected}
             onClick={this.onClick}
-            // container={this.scrollContainer}
           />
         </span>
       </span>
@@ -71,12 +76,16 @@ export class InlineCardNode extends React.PureComponent<Props> {
   }
 }
 
-export default class WrappedInline extends React.PureComponent<Props, {}> {
+const WrappedInlineCard = Card(InlineCardComponent, UnsupportedInlineNode);
+
+export class InlineCard extends SelectionBasedNodeView {
   render() {
     return (
-      <InlineCardNode
-        {...this.props}
-        pluginState={ReactNodeViewState.getState(this.props.view.state)}
+      <WrappedInlineCard
+        node={this.node}
+        selected={this.insideSelection()}
+        view={this.view}
+        getPos={this.getPos}
       />
     );
   }

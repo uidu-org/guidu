@@ -1,26 +1,32 @@
-import { Decoration, DecorationSet } from 'prosemirror-view';
+import { CellAttributes } from '@uidu/adf-schema';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorState, Selection, Transaction } from 'prosemirror-state';
+import { TableMap } from 'prosemirror-tables';
 import {
+  ContentNodeWithPos,
+  findTable,
+  getCellsInRow,
+  getSelectionRect,
+} from 'prosemirror-utils';
+import { Decoration, DecorationSet } from 'prosemirror-view';
+import { getPluginState } from '../pm-plugins/main';
+import {
+  Cell,
   TableCssClassName as ClassName,
   TableDecorations,
-  Cell,
 } from '../types';
-import {
-  getCellsInRow,
-  ContentNodeWithPos,
-  getSelectionRect,
-  findTable,
-} from 'prosemirror-utils';
-import { TableMap } from 'prosemirror-tables';
-import { getPluginState } from '../pm-plugins/main';
-import { CellAttributes } from '@atlaskit/adf-schema';
 
 const filterDecorationByKey = (
   key: TableDecorations,
   decorationSet: DecorationSet,
 ): Decoration[] =>
   decorationSet.find(undefined, undefined, spec => spec.key.indexOf(key) > -1);
+
+const createResizeHandleNode = (): HTMLElement => {
+  const node = document.createElement('div');
+  node.classList.add(ClassName.RESIZE_HANDLE);
+  return node;
+};
 
 export const findColumnControlSelectedDecoration = (
   decorationSet: DecorationSet,
@@ -31,6 +37,23 @@ export const findControlsHoverDecoration = (
   decorationSet: DecorationSet,
 ): Decoration[] =>
   filterDecorationByKey(TableDecorations.ALL_CONTROLS_HOVER, decorationSet);
+
+export const createCellHoverDecoration = (
+  cells: Cell[],
+  type: 'warning',
+): Decoration[] =>
+  cells.map(cell =>
+    Decoration.node(
+      cell.pos,
+      cell.pos + cell.node.nodeSize,
+      {
+        class: ClassName.HOVERED_CELL_WARNING,
+      },
+      {
+        key: TableDecorations.CELL_CONTROLS_HOVER,
+      },
+    ),
+  );
 
 export const createControlsHoverDecoration = (
   cells: Cell[],
@@ -118,6 +141,7 @@ export const createColumnControlsDecoration = (
     element.dataset.startIndex = `${index}`;
     index += colspan;
     element.dataset.endIndex = `${index}`;
+    element.appendChild(createResizeHandleNode());
 
     return Decoration.widget(
       cell.pos + 1,

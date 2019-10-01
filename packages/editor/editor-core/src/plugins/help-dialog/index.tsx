@@ -2,7 +2,6 @@ import { keymap } from 'prosemirror-keymap';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import * as React from 'react';
 import { analyticsService } from '../../analytics';
-import WithPluginState from '../../components/WithPluginState';
 import * as keymaps from '../../keymaps';
 import {
   ACTION,
@@ -13,6 +12,7 @@ import {
   INPUT_METHOD,
 } from '../../plugins/analytics';
 import { EditorPlugin } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
 import { pluginKey as quickInsertPluginKey } from '../quick-insert';
 import { HelpDialogLoader } from './ui/HelpDialogLoader';
 
@@ -54,6 +54,8 @@ export function createPlugin(dispatch: Function, imageEnabled: boolean) {
 }
 
 const helpDialog = (): EditorPlugin => ({
+  name: 'helpDialog',
+
   pmPlugins() {
     return [
       {
@@ -68,7 +70,7 @@ const helpDialog = (): EditorPlugin => ({
     ];
   },
 
-  contentComponent({ editorView, appearance }) {
+  contentComponent({ editorView }) {
     return (
       <WithPluginState
         plugins={{
@@ -77,7 +79,6 @@ const helpDialog = (): EditorPlugin => ({
         }}
         render={({ helpDialog = {} as any, quickInsert }) => (
           <HelpDialogLoader
-            appearance={appearance}
             editorView={editorView}
             isVisible={helpDialog.isVisible}
             quickInsertEnabled={!!quickInsert}

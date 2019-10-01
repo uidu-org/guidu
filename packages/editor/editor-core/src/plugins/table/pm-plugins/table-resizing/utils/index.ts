@@ -1,43 +1,36 @@
 export {
   generateColgroup,
-  insertColgroupFromNode,
   hasTableBeenResized,
+  insertColgroupFromNode,
 } from './colgroup';
-export { contentWidth } from './content-width';
 export {
+  addContainerLeftRightPadding,
+  calculateColumnWidth,
   ColumnState,
+  getCellsRefsInColumn,
   getColumnStateFromDOM,
   getFreeSpace,
-  getCellsRefsInColumn,
-  calculateColumnWidth,
-  addContainerLeftRightPadding,
 } from './column-state';
-export { growColumn, shrinkColumn, reduceSpace } from './resize-logic';
+export { contentWidth } from './content-width';
+export { getResizeCellPos, isClickNear, updateControls } from './dom';
 export {
-  ResizeState,
-  getResizeStateFromDOM,
-  resizeColumn,
-  updateColgroup,
-  getTotalWidth,
-  evenAllColumnsWidths,
-  bulkColumnsResize,
-  areColumnsEven,
-  adjustColumnsWidths,
-} from './resize-state';
-export {
-  tableLayoutToSize,
-  getLayoutSize,
-  getDefaultLayoutMaxWidth,
-  pointsAtCell,
-  edgeCell,
   currentColWidth,
   domCellAround,
+  getDefaultLayoutMaxWidth,
+  getLayoutSize,
+  pointsAtCell,
+  tableLayoutToSize,
 } from './misc';
+export { growColumn, reduceSpace, shrinkColumn } from './resize-logic';
 export {
-  updateControls,
-  isClickNear,
-  updateResizeHandle,
-  createResizeHandle,
-  getResizeCellPos,
-} from './dom';
-export { ScaleOptions, scale, scaleWithParent } from './scale-table';
+  adjustColumnsWidths,
+  areColumnsEven,
+  bulkColumnsResize,
+  evenAllColumnsWidths,
+  getResizeState,
+  getTotalWidth,
+  resizeColumn,
+  ResizeState,
+  updateColgroup,
+} from './resize-state';
+export { scale, ScaleOptions, scaleWithParent } from './scale-table';

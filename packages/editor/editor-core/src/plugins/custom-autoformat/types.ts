@@ -1,4 +1,4 @@
-import { ADFEntity } from '@atlaskit/adf-utils';
+import { ADFEntity } from '@uidu/adf-utils';
 import { Node as ProsemirrorNode } from 'prosemirror-model';
 
 export type AutoformatReplacement = ADFEntity;

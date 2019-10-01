@@ -1,6 +1,5 @@
-import { EmojiProvider } from '@atlaskit/emoji/resource';
-import { EmojiDescription } from '@atlaskit/emoji/types';
 import { ProviderFactory } from '@uidu/editor-common';
+import { EmojiDescription, EmojiProvider } from '@uidu/emoji';
 import { inputRules } from 'prosemirror-inputrules';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';

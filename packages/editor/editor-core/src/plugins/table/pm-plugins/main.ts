@@ -3,10 +3,11 @@ import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import {
   findParentDomRefOfType,
   findParentNodeOfType,
+  findTable,
 } from 'prosemirror-utils';
 import { DecorationSet, EditorView } from 'prosemirror-view';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
 import { Dispatch } from '../../../event-dispatcher';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import { pluginFactory } from '../../../utils/plugin-state-factory';
 import {
   addBoldInEmptyHeaderCells,
@@ -24,13 +25,14 @@ import {
   handleMouseOut,
   handleMouseOver,
   handleTripleClick,
+  whenTableInFocus,
 } from '../event-handlers';
 import { handleDocOrSelectionChanged } from '../handlers';
 import { createTableView } from '../nodeviews/table';
 import reducer from '../reducer';
 import { fixTables } from '../transforms';
 import { PluginConfig, TableCssClassName as ClassName } from '../types';
-import { findControlsHoverDecoration } from '../utils';
+import { findControlsHoverDecoration, updateResizeHandles } from '../utils';
 
 export const pluginKey = new PluginKey('tablePlugin');
 
@@ -86,7 +88,7 @@ export const createPlugin = (
     insertRowButtonIndex: undefined,
     decorationSet: DecorationSet.empty,
     isFullWidthModeEnabled,
-    isHeaderRowEnabled: true,
+    isHeaderRowEnabled: !!pluginConfig.allowHeaderRow,
     isHeaderColumnEnabled: false,
     ...defaultTableSelection,
   });
@@ -102,7 +104,8 @@ export const createPlugin = (
       const tr = transactions.find(tr => tr.getMeta('uiEvent') === 'cut');
       if (tr) {
         // "fixTables" removes empty rows as we don't allow that in schema
-        return fixTables(handleCut(tr, oldState, newState));
+        const updatedTr = handleCut(tr, oldState, newState);
+        return fixTables(updatedTr) || updatedTr;
       }
       if (transactions.find(tr => tr.docChanged)) {
         return fixTables(newState.tr);
@@ -118,6 +121,7 @@ export const createPlugin = (
           const { selection } = state;
           const pluginState = getPluginState(state);
           let tableRef;
+          let tableNode;
           if (pluginState.editorHasFocus) {
             const parent = findParentDomRefOfType(
               state.schema.nodes.table,
@@ -126,9 +130,15 @@ export const createPlugin = (
             if (parent) {
               tableRef = (parent as HTMLElement).querySelector('table');
             }
+
+            tableNode = findTable(state.selection);
           }
           if (pluginState.tableRef !== tableRef) {
             setTableRef(tableRef)(state, dispatch);
+          }
+
+          if (pluginState.tableNode !== tableNode) {
+            updateResizeHandles(tableRef);
           }
 
           if (pluginState.editorHasFocus && pluginState.tableRef) {
@@ -180,14 +190,14 @@ export const createPlugin = (
       },
 
       handleDOMEvents: {
-        blur: handleBlur,
         focus: handleFocus,
+        blur: whenTableInFocus(handleBlur),
         mousedown: handleMouseDown,
-        mouseover: handleMouseOver,
-        mouseleave: handleMouseLeave,
-        mouseout: handleMouseOut,
-        mousemove: handleMouseMove,
-        click: handleClick,
+        mouseover: whenTableInFocus(handleMouseOver),
+        mouseleave: whenTableInFocus(handleMouseLeave),
+        mouseout: whenTableInFocus(handleMouseOut),
+        mousemove: whenTableInFocus(handleMouseMove),
+        click: whenTableInFocus(handleClick),
       },
 
       handleTripleClick,

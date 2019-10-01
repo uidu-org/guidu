@@ -1,10 +1,18 @@
-import { date } from '@atlaskit/adf-schema';
+import { date } from '@uidu/adf-schema';
 import { todayTimestampInUTC } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import * as React from 'react';
 import Loadable from 'react-loadable';
-import WithPluginState from '../../components/WithPluginState';
 import { EditorPlugin } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  INPUT_METHOD,
+} from '../analytics';
 import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
@@ -33,6 +41,8 @@ export type DateType = {
 };
 
 const datePlugin = (): EditorPlugin => ({
+  name: 'date',
+
   nodes() {
     return [{ name: 'date', node: date }];
   },
@@ -75,7 +85,7 @@ const datePlugin = (): EditorPlugin => ({
           const showDatePickerAt = datePlugin && datePlugin.showDatePickerAt;
           if (
             !showDatePickerAt ||
-            (editorDisabledPlugin || ({} as any)).editorDisabled
+            (editorDisabledPlugin || {}).editorDisabled
           ) {
             return null;
           }
@@ -89,7 +99,9 @@ const datePlugin = (): EditorPlugin => ({
             <DatePicker
               key={showDatePickerAt}
               element={element}
-              onSelect={date => insertDate(date)(editorView.state, dispatch)}
+              onSelect={(date?: DateType) =>
+                insertDate(date)(editorView.state, dispatch)
+              }
               closeDatePicker={() =>
                 setDatePickerAt(null)(editorView.state, dispatch)
               }
@@ -115,6 +127,13 @@ const datePlugin = (): EditorPlugin => ({
           });
 
           const tr = insert(dateNode, { selectInlineNode: true });
+          addAnalytics(tr, {
+            action: ACTION.INSERTED,
+            actionSubject: ACTION_SUBJECT.DOCUMENT,
+            actionSubjectId: ACTION_SUBJECT_ID.DATE,
+            eventType: EVENT_TYPE.TRACK,
+            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
+          });
           return tr.setMeta(datePluginKey, {
             showDatePickerAt: tr.selection.from,
           });

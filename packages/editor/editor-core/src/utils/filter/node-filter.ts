@@ -1,5 +1,5 @@
-import { ADFEntity, traverse } from '@atlaskit/adf-utils';
-import { JSONDocNode } from '@atlaskit/editor-json-transformer';
+import { ADFEntity, traverse } from '@uidu/adf-utils';
+import { JSONDocNode } from '@uidu/editor-json-transformer';
 
 export function removeMarks(node: ADFEntity) {
   let newNode = { ...node };

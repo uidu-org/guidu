@@ -9,7 +9,10 @@ export { indentationSharedStyles } from './shared/indentation';
 export { inlineNodeSharedStyle } from './shared/inline-nodes';
 export { linkSharedStyle } from './shared/link';
 export { listsSharedStyles } from './shared/lists';
-export { mediaSingleSharedStyle } from './shared/media-single';
+export {
+  mediaSingleClassName,
+  mediaSingleSharedStyle,
+} from './shared/media-single';
 export { panelSharedStyles } from './shared/panel';
 export { paragraphSharedStyles } from './shared/paragraph';
 export { ruleSharedStyles } from './shared/rule';

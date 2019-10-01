@@ -1,18 +1,26 @@
-import { MediaSingleAttributes, MediaSingleLayout } from '@atlaskit/adf-schema';
-import { akEditorBreakoutPadding, breakoutWideScaleRatio, calcPxFromPct } from '@uidu/editor-common';
+import { MediaSingleAttributes, MediaSingleLayout } from '@uidu/adf-schema';
+import {
+  akEditorBreakoutPadding,
+  breakoutWideScaleRatio,
+  calcPxFromPct,
+} from '@uidu/editor-common';
 import { Fragment, Node as PMNode, Schema, Slice } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
 import { hasParentNodeOfType, safeInsert } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command } from '../../../types';
-import { atTheBeginningOfBlock, checkNodeDown, isEmptyParagraph, isImage } from '../../../utils';
+import {
+  atTheBeginningOfBlock,
+  checkNodeDown,
+  isEmptyParagraph,
+  isImage,
+} from '../../../utils';
 import { getParentNodeWidth } from '../../../utils/node-width';
 import { mapSlice } from '../../../utils/slice';
 import { WidthPluginState } from '../../width';
 import { MediaState } from '../types';
 import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
 import { copyOptionalAttrsFromMediaState } from '../utils/media-common';
-
 
 export interface MediaSingleState extends MediaState {
   dimensions: { width: number; height: number };
@@ -52,6 +60,7 @@ export const isMediaSingle = (schema: Schema, fileMimeType?: string) =>
 export const insertMediaAsMediaSingle = (
   view: EditorView,
   node: PMNode,
+  inputMethod: any,
 ): boolean => {
   const { state, dispatch } = view;
   const { mediaSingle, media } = state.schema.nodes;

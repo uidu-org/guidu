@@ -3,7 +3,8 @@
   "version": "0.1.18",
   "description": "Includes components that show media cards as a filmstrip",
   "repository": "https://github.com/uidu-org/guidu.git",
-  "license": "ISC",
+  "sideEffects": false,
+  "license": "MIT",
   "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
@@ -23,9 +24,6 @@
   "peerDependencies": {
     "react": "^16.8.3",
     "styled-components": "^4.0.3"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "uidu:src": "index.ts"
 }

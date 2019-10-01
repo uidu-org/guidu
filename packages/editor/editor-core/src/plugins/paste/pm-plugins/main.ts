@@ -1,4 +1,4 @@
-import { MarkdownTransformer } from '@atlaskit/editor-markdown-transformer';
+import { MarkdownTransformer } from '@uidu/editor-markdown-transformer';
 import MarkdownIt from 'markdown-it';
 import { Fragment, Node, Schema, Slice } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
@@ -8,38 +8,20 @@ import { insideTable } from '../../../utils';
 import * as clipboard from '../../../utils/clipboard';
 import { PasteTypes } from '../../analytics';
 import { CardOptions } from '../../card';
-import {
-  transformSingleLineCodeBlockToCodeMark,
-  transformSliceToJoinAdjacentCodeBlocks,
-} from '../../code-block/utils';
+import { transformSingleLineCodeBlockToCodeMark, transformSliceToJoinAdjacentCodeBlocks } from '../../code-block/utils';
 import { transformSliceToRemoveOpenBodiedExtension } from '../../extension/actions';
 import { linkifyContent } from '../../hyperlink/utils';
 import { transformSliceToRemoveOpenLayoutNodes } from '../../layout/utils';
-import {
-  transformSliceToCorrectMediaWrapper,
-  unwrapNestedMediaElements,
-} from '../../media/utils/media-common';
+import { transformSliceToCorrectMediaWrapper, unwrapNestedMediaElements } from '../../media/utils/media-common';
 import { transformSliceForMedia } from '../../media/utils/media-single';
 import { transformSliceToAddTableHeaders } from '../../table/commands';
-import { pluginKey as tableStateKey } from '../../table/pm-plugins/main';
-import {
-  transformSliceToCorrectEmptyTableCells,
-  transformSliceToFixHardBreakProblemOnCopyFromCell,
-  transformSliceToRemoveOpenTable,
-} from '../../table/utils';
+import { transformSliceRemoveCellBackgroundColor, transformSliceToRemoveColumnsWidths } from '../../table/commands/misc';
+import { getPluginState as getTablePluginState } from '../../table/pm-plugins/main';
+import { transformSliceToCorrectEmptyTableCells, transformSliceToFixHardBreakProblemOnCopyFromCell, transformSliceToRemoveOpenTable } from '../../table/utils';
 import { handleMacroAutoConvert, handleMention } from '../handlers';
 import linkify from '../linkify-md-plugin';
 import { escapeLinks } from '../util';
-import {
-  handleCodeBlockWithAnalytics,
-  handleMarkdownWithAnalytics,
-  handleMediaSingleWithAnalytics,
-  handlePasteAsPlainTextWithAnalytics,
-  handlePasteIntoTaskAndDecisionWithAnalytics,
-  handlePastePreservingMarksWithAnalytics,
-  handleRichTextWithAnalytics,
-  sendPasteAnalyticsEvent,
-} from './analytics';
+import { handleCodeBlockWithAnalytics, handleMarkdownWithAnalytics, handleMediaSingleWithAnalytics, handlePasteAsPlainTextWithAnalytics, handlePasteIntoTaskAndDecisionWithAnalytics, handlePastePreservingMarksWithAnalytics, handleRichTextWithAnalytics, sendPasteAnalyticsEvent } from './analytics';
 export const stateKey = new PluginKey('pastePlugin');
 
 export const md = MarkdownIt('zero', { html: false });
@@ -58,8 +40,18 @@ md.enable([
 md.use(linkify);
 
 function isHeaderRowRequired(state: EditorState) {
-  const tableState = tableStateKey.getState(state);
+  const tableState = getTablePluginState(state);
   return tableState && tableState.pluginConfig.isHeaderRowRequired;
+}
+
+function isAllowResizingEnabled(state: EditorState) {
+  const tableState = getTablePluginState(state);
+  return tableState && tableState.pluginConfig.allowColumnResizing;
+}
+
+function isBackgroundCellAllowed(state: EditorState) {
+  const tableState = getTablePluginState(state);
+  return tableState && tableState.pluginConfig.allowBackgroundColor;
 }
 
 export function createPlugin(
@@ -224,6 +216,19 @@ export function createPlugin(
           // row of content we see, if required
           if (!insideTable(state) && isHeaderRowRequired(state)) {
             slice = transformSliceToAddTableHeaders(slice, state.schema);
+          }
+
+          if (!isAllowResizingEnabled(state)) {
+            slice = transformSliceToRemoveColumnsWidths(slice, state.schema);
+          }
+
+          // If we don't allow background on cells, we need to remove it
+          // from the paste slice
+          if (!isBackgroundCellAllowed(state)) {
+            slice = transformSliceRemoveCellBackgroundColor(
+              slice,
+              state.schema,
+            );
           }
 
           // get prosemirror-tables to handle pasting tables if it can

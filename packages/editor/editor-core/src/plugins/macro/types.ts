@@ -1,5 +1,5 @@
 import { Node as PmNode } from 'prosemirror-model';
-import { ExtensionLayout } from '@atlaskit/adf-schema';
+import { ExtensionLayout } from '@uidu/adf-schema';
 
 export type ExtensionType = 'extension' | 'bodiedExtension' | 'inlineExtension';
 

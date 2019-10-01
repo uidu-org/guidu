@@ -1,5 +1,5 @@
+import { FabricChannel } from '@uidu/analytics-listeners';
 import analyticsPlugin, { analyticsPluginKey as pluginKey } from './plugin';
-import { FabricChannel } from '@atlaskit/analytics-listeners';
 
 export const analyticsEventKey = 'EDITOR_ANALYTICS_EVENT';
 export const editorAnalyticsChannel = FabricChannel.editor;

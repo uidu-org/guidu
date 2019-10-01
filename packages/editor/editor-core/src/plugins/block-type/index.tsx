@@ -1,12 +1,12 @@
-import { blockquote, hardBreak, heading } from '@atlaskit/adf-schema';
+import { blockquote, hardBreak, heading } from '@uidu/adf-schema';
 import { NodeSpec } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import * as React from 'react';
 import { IntlShape } from 'react-intl';
-import { ToolbarSize } from '../../components/Toolbar';
-import WithPluginState from '../../components/WithPluginState';
 import * as keymaps from '../../keymaps';
 import { AllowedBlockTypes, EditorPlugin } from '../../types';
+import { ToolbarSize } from '../../ui/Toolbar';
+import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -72,7 +72,13 @@ const headingPluginOptions = ({
     };
   });
 
-const blockTypePlugin = (): EditorPlugin => ({
+interface BlockTypePluginOptions {
+  lastNodeMustBeParagraph?: boolean;
+}
+
+const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
+  name: 'blockType',
+
   nodes({ allowBlockType }) {
     const nodes: BlockTypeNode[] = [
       { name: 'heading', node: heading },
@@ -92,8 +98,8 @@ const blockTypePlugin = (): EditorPlugin => ({
     return [
       {
         name: 'blockType',
-        plugin: ({ props, dispatch }) =>
-          createPlugin(dispatch, props.appearance),
+        plugin: ({ dispatch }) =>
+          createPlugin(dispatch, options && options.lastNodeMustBeParagraph),
       },
       {
         name: 'blockTypeInputRule',

@@ -1,4 +1,4 @@
-import { MediaSingleLayout } from '@atlaskit/adf-schema';
+import { MediaSingleLayout } from '@uidu/adf-schema';
 import {
   akEditorBreakoutPadding,
   akEditorWideLayoutWidth,
@@ -109,7 +109,11 @@ export default class ResizableMediaSingle extends React.Component<
   };
 
   get $pos() {
-    const pos = this.props.getPos();
+    const pos =
+      typeof this.props.getPos === 'function'
+        ? this.props.getPos()
+        : +this.props.getPos;
+
     if (Number.isNaN(pos as any) || typeof pos !== 'number') {
       return null;
     }
@@ -214,7 +218,7 @@ export default class ResizableMediaSingle extends React.Component<
       containerWidth: { width: containerWidth, lineLength },
       isFullWidthModeEnabled: fullWidthMode,
       layout,
-      pos: getPos(),
+      pos: typeof getPos === 'function' ? getPos() : +getPos,
     });
   };
 

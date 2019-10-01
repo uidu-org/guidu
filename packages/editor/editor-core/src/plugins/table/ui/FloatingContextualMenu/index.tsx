@@ -1,12 +1,21 @@
 import { akEditorFloatingOverlapPanelZIndex, Popup } from '@uidu/editor-common';
 import { EditorState } from 'prosemirror-state';
-import { findCellRectClosestToPos, findDomRefAtPos, getSelectionRect, isCellSelection } from 'prosemirror-utils';
+import {
+  findCellRectClosestToPos,
+  findDomRefAtPos,
+  getSelectionRect,
+  isCellSelection,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import styled from 'styled-components';
 import { pluginKey } from '../../pm-plugins/main';
 import { PluginConfig } from '../../types';
-import { contextualMenuDropdownWidth, contextualMenuTriggerSize, tablePopupStyles } from '../styles';
+import {
+  contextualMenuDropdownWidth,
+  contextualMenuTriggerSize,
+  tablePopupStyles,
+} from '../styles';
 import ContextualMenu from './ContextualMenu';
 
 const MenuWrapper = styled.div`
@@ -91,6 +100,7 @@ const FloatingContextualMenu = ({
           )}
           isOpen={isOpen}
           targetCellPosition={targetCellPosition}
+          allowColumnSorting={pluginConfig && pluginConfig.allowColumnSorting}
           allowMergeCells={pluginConfig!.allowMergeCells}
           allowBackgroundColor={pluginConfig!.allowBackgroundColor}
           selectionRect={selectionRect}

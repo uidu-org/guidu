@@ -1,4 +1,4 @@
-import { decisionListSelector, taskListSelector } from '@atlaskit/adf-schema';
+import { decisionListSelector, taskListSelector } from '@uidu/adf-schema';
 import {
   akEditorFullWidthLayoutWidth,
   akEditorGutterPadding,
@@ -52,12 +52,15 @@ const ContentArea = styled.div<{
   containerWidth?: number;
 }>`
   line-height: 24px;
-  height: 100%;
-  width: 100%;
   padding-top: 50px;
+  padding-bottom: 55px;
+  height: calc(
+    100% - 105px
+  ); /* fill the viewport: 100% - (padding top & bottom) */
+  width: 100%;
   flex-direction: column;
   flex-grow: 1;
-  padding-bottom: 55px;
+
   max-width: ${({ theme, fullWidthMode }: any) =>
     (fullWidthMode ? akEditorFullWidthLayoutWidth : theme.layoutMaxWidth) +
     TOTAL_PADDING}px;
@@ -155,7 +158,7 @@ interface MainToolbarProps {
   showKeyline: boolean;
 }
 
-const MainToolbar = styled.div`
+const MainToolbar = styled.div<MainToolbarProps>`
   position: relative;
   align-items: center;
   box-shadow: ${(props: MainToolbarProps) =>
@@ -267,6 +270,15 @@ export default class Editor extends React.Component<
     window.addEventListener('resize', this.handleResize, false);
   }
 
+  componentDidUpdate() {
+    if (
+      this.scrollContainer &&
+      this.scrollContainer.clientWidth !== this.state.containerWidth
+    ) {
+      this.updateContainerWidth();
+    }
+  }
+
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleResize);
 
@@ -296,6 +308,7 @@ export default class Editor extends React.Component<
       disabled,
       collabEdit,
       dispatchAnalyticsEvent,
+      allowAnnotation,
     } = this.props;
 
     const { showKeyline, containerWidth } = this.state;
@@ -333,6 +346,7 @@ export default class Editor extends React.Component<
         </MainToolbar>
         <ScrollContainer
           ref={this.scrollContainerRef}
+          allowAnnotation={allowAnnotation}
           className="fabric-editor-popup-scroll-parent"
         >
           <ClickAreaBlock editorView={editorView}>

@@ -27,7 +27,7 @@ export default md`
   ##### SaveButton.js
 
 ${code`
-import Button from '@atlaskit/button';
+import Button from '@uidu/button';
 
 const SaveButton = ({ onClick }) => (
   <Button
@@ -53,7 +53,7 @@ const SaveButton = ({ onClick }) => (
 
   ${(
     <Example
-      packageName="@atlaskit/analytics-next"
+      packageName="@uidu/analytics"
       Component={require('../examples/40-updating-an-event').default}
       title="Updating an event's payload"
       source={require('!!raw-loader!../examples/40-updating-an-event')}
@@ -81,7 +81,7 @@ import React, { Component } from 'react';
 import {
   AnalyticsContext,
   AnalyticsListener,
-} from '@atlaskit/analytics-next';
+} from '@uidu/analytics';
 import SaveButton from './SaveButton';
 
 const App = () => (
@@ -102,7 +102,7 @@ const App = () => (
 
   ${(
     <Example
-      packageName="@atlaskit/analytics-next"
+      packageName="@uidu/analytics"
       Component={require('../examples/20-adding-analytics-context').default}
       title="Adding context to an event"
       source={require('!!raw-loader!../examples/20-adding-analytics-context')}
@@ -136,7 +136,7 @@ const App = () => (
 
 ${code`
 import React, { Component } from 'react';
-import { withAnalyticsEvents } from '@atlaskit/analytics-next';
+import { withAnalyticsEvents } from '@uidu/analytics';
 
 class Button extends Component {
   handleClick = e => {
@@ -164,7 +164,7 @@ export default withAnalyticsEvents()(Button);
 
 ${code`
 import React from 'react';
-import { useAnalyticsEvents } from '@atlaskit/analytics-next';
+import { useAnalyticsEvents } from '@uidu/analytics';
 
 const Button = ({ onClick, ...props }) => {
   // Decompose function from the hook
@@ -192,7 +192,7 @@ export default Button;
 
   ${(
     <Example
-      packageName="@atlaskit/analytics-next"
+      packageName="@uidu/analytics"
       Component={require('../examples/10-basic-create-and-fire').default}
       title="Creating and firing an event"
       source={require('!!raw-loader!../examples/10-basic-create-and-fire')}
@@ -302,7 +302,7 @@ const ButtonWithAnalytics = withAnalyticsEvents({
 
   ${(
     <Example
-      packageName="@atlaskit/analytics-next"
+      packageName="@uidu/analytics"
       Component={require('../examples/30-passing-events-to-a-callback').default}
       title="Passing events through callbacks"
       source={require('!!raw-loader!../examples/30-passing-events-to-a-callback')}
@@ -348,7 +348,7 @@ onSubmit = analyticsEvent => {
   ##### Form.js (onSubmit method):
 
 ${code`
-import { withAnalyticsEvents, createAndFireEvent } from '@atlaskit/analytics-next';
+import { withAnalyticsEvents, createAndFireEvent } from '@uidu/analytics';
 
 const FormWithAnalytics = withAnalyticsEvents({
   onSubmit: createAndFireEvent('atlaskit')({ action: 'submit' })
@@ -360,7 +360,7 @@ const FormWithAnalytics = withAnalyticsEvents({
 
   ${(
     <Example
-      packageName="@atlaskit/analytics-next"
+      packageName="@uidu/analytics"
       Component={require('../examples/50-cloning-an-event').default}
       title="Cloning an event"
       source={require('!!raw-loader!../examples/50-cloning-an-event')}
@@ -377,7 +377,7 @@ const FormWithAnalytics = withAnalyticsEvents({
   In case it is useful for you to have a consistent interface for your events, even if they're not coming from the UI, we do export the base \`AnalyticsEvent\` class. Here's an example of how you might use it:
 
 ${code`
-import { AnalyticsEvent } from '@atlaskit/analytics-next';
+import { AnalyticsEvent } from '@uidu/analytics';
 import sendAnalyticsEventToBackend from './sendAnalyticsEventToBackend';
 
 const fetchBacon = async () => {

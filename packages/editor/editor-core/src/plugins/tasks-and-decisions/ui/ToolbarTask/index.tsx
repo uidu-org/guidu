@@ -4,7 +4,7 @@ import * as React from 'react';
 import { PureComponent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
-import ToolbarButton from '../../../../components/ToolbarButton';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import { messages } from '../../../insert-block/ui/ToolbarInsertBlock';
 import { insertTaskDecision } from '../../commands';
 

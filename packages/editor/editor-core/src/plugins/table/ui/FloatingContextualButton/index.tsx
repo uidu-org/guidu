@@ -1,4 +1,4 @@
-import { TableLayout } from '@atlaskit/adf-schema';
+import { TableLayout } from '@uidu/adf-schema';
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import { Popup } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
@@ -6,7 +6,7 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
-import ToolbarButton from '../../../../components/ToolbarButton';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import { closestElement } from '../../../../utils';
 import { toggleContextualMenu } from '../../commands';
 import { TableCssClassName as ClassName } from '../../types';

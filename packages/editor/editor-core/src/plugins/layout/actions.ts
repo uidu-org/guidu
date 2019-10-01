@@ -4,8 +4,16 @@ import { safeInsert } from 'prosemirror-utils';
 import { Command } from '../../types';
 import { getStepRange, isEmptyDocument } from '../../utils';
 import { flatmap, mapChildren } from '../../utils/slice';
-import { ACTION, ACTION_SUBJECT, addAnalytics, EVENT_TYPE } from '../analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  withAnalytics,
+} from '../analytics';
 import { LAYOUT_TYPE } from '../analytics/types/node-events';
+import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock';
 import { LayoutState, pluginKey } from './pm-plugins/main';
 
 export type PresetLayout =
@@ -90,6 +98,19 @@ export const insertLayoutColumns: Command = (state, dispatch) => {
   }
   return true;
 };
+
+export const insertLayoutColumnsWithAnalytics = (
+  inputMethod: TOOLBAR_MENU_TYPE,
+): Command =>
+  withAnalytics({
+    action: ACTION.INSERTED,
+    actionSubject: ACTION_SUBJECT.DOCUMENT,
+    actionSubjectId: ACTION_SUBJECT_ID.LAYOUT,
+    attributes: {
+      inputMethod,
+    },
+    eventType: EVENT_TYPE.TRACK,
+  })(insertLayoutColumns);
 
 /**
  * Handles switching from 2 -> 3 cols, or 3 -> 2 cols

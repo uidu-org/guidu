@@ -1,9 +1,9 @@
+import { UIAnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
 import {
   GasPayload,
   OPERATIONAL_EVENT_TYPE,
   UI_EVENT_TYPE,
-} from '@atlaskit/analytics-gas-types';
-import { UIAnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
+} from '@uidu/analytics-gas-types';
 import { isSpecialMentionText } from '../types';
 import {
   name as packageName,

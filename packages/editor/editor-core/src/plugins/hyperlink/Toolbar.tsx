@@ -4,17 +4,17 @@ import { Mark } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
+import { linkToolbarMessages as linkToolbarCommonMessages } from '../../messages';
 import {
   RECENT_SEARCH_HEIGHT_IN_PX,
   RECENT_SEARCH_WIDTH_IN_PX,
-} from '../../components/RecentSearch/ToolbarComponents';
-import { linkToolbarMessages as linkToolbarCommonMessages } from '../../messages';
-import { DispatchAnalyticsEvent } from '../analytics';
+} from '../../ui/RecentSearch/ToolbarComponents';
 import { AlignType, FloatingToolbarHandler } from '../floating-toolbar/types';
 import {
   editInsertedLink,
   hideLinkToolbar,
   insertLink,
+  insertLinkWithAnalytics,
   removeLink,
   setLinkHref,
   setLinkText,
@@ -196,7 +196,6 @@ export const getToolbarConfig: FloatingToolbarHandler = (
               render: (
                 view?: EditorView,
                 idx?: number,
-                dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
               ):
                 | React.ComponentClass
                 | React.SFC
@@ -211,13 +210,14 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                     displayUrl={link}
                     displayText={displayText || ''}
                     providerFactory={providerFactory}
-                    onSubmit={(href, text) => {
+                    onSubmit={(href, text, inputMethod) => {
                       isEditLink(activeLinkMark)
                         ? updateLink(href, text, activeLinkMark.pos)(
                             view.state,
                             view.dispatch,
                           )
-                        : insertLink(
+                        : insertLinkWithAnalytics(
+                            inputMethod,
                             activeLinkMark.from,
                             activeLinkMark.to,
                             href,
@@ -226,7 +226,6 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                       view.focus();
                     }}
                     onBlur={handleBlur(activeLinkMark, view)}
-                    dispatchAnalyticsEvent={dispatchAnalyticsEvent}
                   />
                 );
               },

@@ -14,7 +14,7 @@ import {
 } from '@uidu/editor-common';
 import styled from 'styled-components';
 import { blocktypeStyles } from '../../plugins/block-type/styles';
-// import { codeBlockStyles } from '../../plugins/code-block/styles';
+import { codeBlockStyles } from '../../plugins/code-block/styles';
 import { telepointerStyle } from '../../plugins/collab-edit/styles';
 import { extensionStyles } from '../../plugins/extension/ui/styles';
 import { fakeCursorStyles } from '../../plugins/fake-text-cursor/styles';
@@ -25,15 +25,14 @@ import { layoutStyles } from '../../plugins/layout/styles';
 import { listsStyles } from '../../plugins/lists/styles';
 import { mediaStyles } from '../../plugins/media/styles';
 import { mentionsStyles } from '../../plugins/mentions/styles';
-// import { panelStyles } from '../../plugins/panel/styles';
 import { placeholderTextStyles } from '../../plugins/placeholder-text/styles';
 import { placeholderStyles } from '../../plugins/placeholder/styles';
 import { ruleStyles } from '../../plugins/rule/styles';
 import { tableStyles } from '../../plugins/table/ui/styles';
-// import { tasksAndDecisionsStyles } from '../../plugins/tasks-and-decisions/ui/styles';
+import { tasksAndDecisionsStyles } from '../../plugins/tasks-and-decisions/ui/styles';
 import { textFormattingStyles } from '../../plugins/text-formatting/styles';
 
-const ContentStyles = styled.div`
+const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
   /* Hack for ie11 that is being used in code block.
    * https://bitbucket.org/atlassian/atlaskit/src/ad09f6361109ece1aab316c8cbd8116ffb7963ef/packages/editor-core/src/schema/nodes/code-block.ts?fileviewer=file-view-default#code-block.ts-110
    */
@@ -100,6 +99,7 @@ const ContentStyles = styled.div`
   ${textFormattingStyles}
   ${placeholderTextStyles}
   ${placeholderStyles}
+  ${codeBlockStyles}
   ${listsStyles}
   ${ruleStyles}
   ${mediaStyles}
@@ -109,6 +109,7 @@ const ContentStyles = styled.div`
   ${tableStyles};
   ${fakeCursorStyles}
   ${mentionsStyles}
+  ${tasksAndDecisionsStyles}
   ${gridStyles}
   ${linkStyles}
   ${blockMarksSharedStyles}
@@ -137,6 +138,13 @@ const ContentStyles = styled.div`
   }
 
   /** Needed to override any cleared floats, e.g. image wrapping */
+
+  span.fabric-editor-annotation {
+    /* Y200 with 40% opacity */
+    background-color: ${({ allowAnnotation }: any) =>
+      allowAnnotation ? 'rgba(255, 196, 0, 0.4)' : 'transparent'};
+  }
+
   div.fabric-editor-block-mark[class^='fabric-editor-align'] {
     clear: none !important;
   }

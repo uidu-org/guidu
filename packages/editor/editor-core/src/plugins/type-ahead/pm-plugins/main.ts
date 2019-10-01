@@ -5,12 +5,12 @@ import {
   TextSelection,
   Transaction,
 } from 'prosemirror-state';
-import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../../event-dispatcher';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import { dismissCommand } from '../commands/dismiss';
 import { insertTypeAheadQuery } from '../commands/insert-query';
 import { itemsListUpdated } from '../commands/items-list-updated';
+import { selectCurrentItem } from '../commands/select-item';
 import { updateQueryCommand } from '../commands/update-query';
 import {
   TypeAheadHandler,
@@ -72,7 +72,6 @@ export function createInitialPluginState(
 export function createPlugin(
   dispatch: Dispatch,
   reactContext: () => { [key: string]: any },
-  intl: IntlShape,
   typeAhead: Array<TypeAheadHandler>,
 ): Plugin {
   return new Plugin({
@@ -113,7 +112,6 @@ export function createPlugin(
               ? defaultActionHandler({
                   dispatch,
                   reactContext,
-                  intl,
                   typeAhead,
                   state,
                   pluginState,
@@ -128,7 +126,6 @@ export function createPlugin(
             return defaultActionHandler({
               dispatch,
               reactContext,
-              intl,
               typeAhead,
               state,
               pluginState,
@@ -146,7 +143,7 @@ export function createPlugin(
           ) as PluginState;
 
           if (!pluginState) {
-            return undefined;
+            return;
           }
 
           const { state, dispatch } = editorView;
@@ -161,7 +158,7 @@ export function createPlugin(
             !pluginState.trigger
           ) {
             dismissCommand()(state, dispatch);
-            return undefined;
+            return;
           }
 
           // Disable type ahead query when the first character is a space.
@@ -170,7 +167,7 @@ export function createPlugin(
             (pluginState.query || '').indexOf(' ') === 0
           ) {
             dismissCommand()(state, dispatch);
-            return undefined;
+            return;
           }
 
           // Optimization to not call dismissCommand if plugin is in an inactive state.
@@ -191,6 +188,25 @@ export function createPlugin(
           }
         },
       };
+    },
+    appendTransaction(_trs, _oldState, newState) {
+      const pluginState = pluginKey.getState(newState) as PluginState;
+      if (
+        pluginState.active &&
+        pluginState.query &&
+        pluginState.typeAheadHandler &&
+        pluginState.typeAheadHandler.forceSelect &&
+        pluginState.typeAheadHandler.forceSelect(
+          pluginState.query,
+          pluginState.items,
+        )
+      ) {
+        let newTr;
+        selectCurrentItem()(newState, tr => (newTr = tr));
+        return newTr;
+      }
+
+      return null;
     },
     props: {
       handleDOMEvents: {
@@ -273,7 +289,6 @@ export function createItemsLoader(
 export function defaultActionHandler({
   dispatch,
   reactContext,
-  intl,
   typeAhead,
   pluginState,
   state,
@@ -281,7 +296,6 @@ export function defaultActionHandler({
 }: {
   dispatch: Dispatch;
   reactContext: () => { [key: string]: any };
-  intl: IntlShape;
   typeAhead: Array<TypeAheadHandler>;
   pluginState: PluginState;
   state: EditorState;
@@ -342,6 +356,7 @@ export function defaultActionHandler({
   let highlight: JSX.Element | null = null;
 
   try {
+    const { intl } = reactContext();
     typeAheadItems = typeAheadHandler.getItems(
       query,
       state,

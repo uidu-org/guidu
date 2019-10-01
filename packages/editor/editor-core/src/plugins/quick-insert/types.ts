@@ -4,7 +4,7 @@ import { IntlShape } from 'react-intl';
 import { TypeAheadItem } from '../type-ahead/types';
 
 export type QuickInsertActionInsert = (
-  node?: Node | Object | string,
+  node?: Node | Record<string, any> | string,
   opts?: { selectInlineNode?: boolean },
 ) => Transaction;
 

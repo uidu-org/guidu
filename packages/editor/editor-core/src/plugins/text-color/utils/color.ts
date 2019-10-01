@@ -14,9 +14,12 @@ export const getActiveColor = (state: EditorState): string | null => {
     );
   } else {
     state.doc.nodesBetween($from.pos, $to.pos, currentNode => {
-      const mark = textColor.isInSet(currentNode.marks) || undefined;
-      marks.push(mark);
-      return !mark;
+      if (currentNode.isLeaf) {
+        const mark = textColor.isInSet(currentNode.marks) || undefined;
+        marks.push(mark);
+        return !mark;
+      }
+      return true;
     });
   }
 
@@ -31,10 +34,10 @@ export const getActiveColor = (state: EditorState): string | null => {
   });
 
   const marksWithColor = marks.filter(mark => !!mark) as Array<Mark>;
-  // When mutiple color is selected revert back to default color
+  // When multiple colors are selected revert back to default color
   if (
     marksWithColor.length > 1 ||
-    (marksWithColor.length === 1 && marks.length > 2)
+    (marksWithColor.length === 1 && marks.length > 1)
   ) {
     return null;
   }

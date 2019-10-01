@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '@atlaskit/icon';
+import Icon from '@atlaskit/icon/cjs/components/Icon';
 
 const textColorGlyph = () => (
   <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">

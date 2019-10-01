@@ -1,13 +1,14 @@
-import { Node as PMNode, DOMSerializer } from 'prosemirror-model';
-import { EditorView } from 'prosemirror-view';
+import { DOMSerializer, Node as PMNode } from 'prosemirror-model';
 import { TextSelection } from 'prosemirror-state';
+import { EditorView } from 'prosemirror-view';
+import { getPosHandler } from '../../../nodeviews';
 
 export default class PlaceholderTextNode {
   dom: HTMLElement | undefined;
   view: EditorView;
-  getPos: () => number;
+  getPos: getPosHandler;
 
-  constructor(node: PMNode, view: EditorView, getPos: () => number) {
+  constructor(node: PMNode, view: EditorView, getPos: getPosHandler) {
     this.view = view;
     this.getPos = getPos;
     this.dom = DOMSerializer.renderSpec(document, node.type.spec.toDOM!(node))
@@ -32,7 +33,8 @@ export default class PlaceholderTextNode {
 
   handleClick = (event: MouseEvent) => {
     const { state } = this.view;
-    const pos = this.getPos();
+    const pos =
+      typeof this.getPos === 'function' ? this.getPos() : +this.getPos;
     const selectionAtClick = TextSelection.create(state.tr.doc, pos);
 
     // In Firefox, clicking on the right-hand side of the span will place

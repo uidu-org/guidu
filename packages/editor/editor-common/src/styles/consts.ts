@@ -87,6 +87,8 @@ export const akEditorGutterPadding = 32;
 export const akEditorMobileBreakoutPoint = 720;
 export const akEditorTableCellMinWidth = 48;
 export const akEditorTableLegacyCellMinWidth = 128;
+export const akEditorMediaResizeHandlerPaddingWide = 12;
+export const akEditorMediaResizeHandlerPadding = 4;
 export const gridMediumMaxWidth = 1024;
 export const breakoutWideScaleRatio = 1.33;
 

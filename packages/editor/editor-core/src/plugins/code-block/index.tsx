@@ -1,4 +1,4 @@
-import { codeBlock } from '@atlaskit/adf-schema';
+import { codeBlock } from '@uidu/adf-schema';
 import * as React from 'react';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import {
@@ -21,6 +21,8 @@ export interface CodeBlockOptions {
 }
 
 const codeBlockPlugin = (options: CodeBlockOptions = {}): EditorPlugin => ({
+  name: 'codeBlock',
+
   nodes() {
     return [{ name: 'codeBlock', node: codeBlock }];
   },

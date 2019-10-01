@@ -1,60 +1,65 @@
+export { getSelectedCellInfo, getSelectedTableInfo } from './analytics';
 export {
-  getSelectedColumnIndexes,
-  getSelectedRowIndexes,
-  normalizeSelection,
-  isSelectionUpdated,
-} from './selection';
+  getColumnClassNames,
+  getColumnDeleteButtonParams,
+  getColumnsWidths,
+  isColumnDeleteButtonVisible,
+} from './column-controls';
 export {
-  findControlsHoverDecoration,
-  createControlsHoverDecoration,
+  createCellHoverDecoration,
   createColumnControlsDecoration,
   createColumnSelectedDecorations,
-  updatePluginStateDecorations,
+  createControlsHoverDecoration,
+  findControlsHoverDecoration,
   updateNodeDecorations,
+  updatePluginStateDecorations,
 } from './decoration';
 export {
-  isIsolating,
-  containsHeaderColumn,
-  containsHeaderRow,
+  getColumnOrRowIndex,
+  getMousePositionHorizontalRelativeByElement,
+  getMousePositionVerticalRelativeByElement,
+  isCell,
+  isColumnControlsDecorations,
+  isCornerButton,
+  isInsertRowButton,
+  isRowControlsButton,
+  isTableControlsButton,
+  updateResizeHandles,
+} from './dom';
+export {
   checkIfHeaderColumnEnabled,
   checkIfHeaderRowEnabled,
   checkIfNumberColumnEnabled,
-  isLayoutSupported,
+  containsHeaderColumn,
+  containsHeaderRow,
   getTableWidth,
+  isIsolating,
+  isLayoutSupported,
   tablesHaveDifferentColumnWidths,
   tablesHaveDifferentNoOfColumns,
 } from './nodes';
 export {
-  unwrapContentFromTable,
   removeTableFromFirstChild,
   removeTableFromLastChild,
-  transformSliceToRemoveOpenTable,
   transformSliceToCorrectEmptyTableCells,
   transformSliceToFixHardBreakProblemOnCopyFromCell,
+  transformSliceToRemoveOpenTable,
+  unwrapContentFromTable,
 } from './paste';
 export {
-  isCell,
-  isCornerButton,
-  isInsertRowButton,
-  isColumnControlsDecorations,
-  isTableControlsButton,
-  isRowControlsButton,
-  getColumnOrRowIndex,
-  getMousePositionHorizontalRelativeByElement,
-  getMousePositionVerticalRelativeByElement,
-} from './dom';
-export {
-  getColumnsWidths,
-  isColumnDeleteButtonVisible,
-  getColumnDeleteButtonParams,
-  getColumnClassNames,
-} from './column-controls';
-export {
-  getRowHeights,
-  isRowDeleteButtonVisible,
-  getRowDeleteButtonParams,
-  getRowsParams,
+  copyPreviousRow,
   getRowClassNames,
+  getRowDeleteButtonParams,
+  getRowHeights,
+  getRowsParams,
+  isRowDeleteButtonVisible,
   RowParams,
 } from './row-controls';
-export { getSelectedTableInfo, getSelectedCellInfo } from './analytics';
+export {
+  getSelectedColumnIndexes,
+  getSelectedRowIndexes,
+  isSelectionUpdated,
+  normalizeSelection,
+} from './selection';
+export { TableSortStep } from './sort-step';
+export { getMergedCellsPositions } from './table';

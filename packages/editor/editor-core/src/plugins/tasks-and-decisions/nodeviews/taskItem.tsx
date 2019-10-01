@@ -1,11 +1,15 @@
-import { AnalyticsListener, UIAnalyticsEvent } from '@uidu/analytics';
+import {
+  AnalyticsEventPayload,
+  AnalyticsListener,
+  UIAnalyticsEvent,
+} from '@uidu/analytics';
 import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import { Decoration, EditorView, NodeView } from 'prosemirror-view';
+import { Decoration, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import WithPluginState from '../../../components/WithPluginState';
-import { ReactComponentProps, ReactNodeView } from '../../../nodeviews';
+import { ForwardRef, getPosHandler, ReactNodeView } from '../../../nodeviews';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
+import WithPluginState from '../../../ui/WithPluginState';
 import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
@@ -17,19 +21,18 @@ import {
 import TaskItem from '../ui/Task';
 
 export interface Props {
-  children?: React.ReactNode;
-  view: EditorView;
-  node: PMNode;
+  providerFactory: ProviderFactory;
 }
 
-class Task extends ReactNodeView {
+class Task extends ReactNodeView<Props> {
   private isContentEmpty(node: PMNode) {
     return node.content.childCount === 0;
   }
 
   private handleOnChange = (taskId: string, isChecked: boolean) => {
     const { tr } = this.view.state;
-    const nodePos = this.getPos();
+    const nodePos =
+      typeof this.getPos === 'function' ? this.getPos() : +this.getPos;
 
     tr.setNodeMarkup(nodePos, undefined, {
       state: isChecked ? 'DONE' : 'TODO',
@@ -50,12 +53,14 @@ class Task extends ReactNodeView {
    */
   private addListAnalyticsData = (event: UIAnalyticsEvent) => {
     try {
-      const resolvedPos = this.view.state.doc.resolve(this.getPos());
+      const resolvedPos = this.view.state.doc.resolve(
+        typeof this.getPos === 'function' ? this.getPos() : +this.getPos,
+      );
       const position = resolvedPos.index();
       const listSize = resolvedPos.parent.childCount;
       const listLocalId = resolvedPos.parent.attrs.localId;
 
-      event.update((payload: any) => {
+      event.update((payload: AnalyticsEventPayload) => {
         const { attributes = {}, actionSubject } = payload;
         if (actionSubject !== 'action') {
           // Not action related, ignore
@@ -88,9 +93,8 @@ class Task extends ReactNodeView {
     return { dom: document.createElement('div') };
   }
 
-  render(props: ReactComponentProps, forwardRef: any) {
+  render(props: Props, forwardRef: ForwardRef) {
     const { localId, state } = this.node.attrs;
-
     return (
       <AnalyticsListener
         channel="fabric-elements"
@@ -103,32 +107,19 @@ class Task extends ReactNodeView {
           }}
           render={({
             editorDisabledPlugin,
-            taskDecisionPlugin,
           }: {
             editorDisabledPlugin: EditorDisabledPluginState;
             taskDecisionPlugin: TaskDecisionPluginState;
           }) => {
-            let insideCurrentNode = false;
-            if (
-              taskDecisionPlugin &&
-              taskDecisionPlugin.currentTaskDecisionItem
-            ) {
-              insideCurrentNode = this.node.eq(
-                taskDecisionPlugin.currentTaskDecisionItem,
-              );
-            }
-
             return (
               <TaskItem
                 taskId={localId}
                 contentRef={forwardRef}
                 isDone={state === 'DONE'}
                 onChange={this.handleOnChange}
-                showPlaceholder={
-                  !insideCurrentNode && this.isContentEmpty(this.node)
-                }
+                showPlaceholder={this.isContentEmpty(this.node)}
                 providers={props.providerFactory}
-                disabled={(editorDisabledPlugin || ({} as any)).editorDisabled}
+                disabled={(editorDisabledPlugin || {}).editorDisabled}
               />
             );
           }}
@@ -143,7 +134,7 @@ class Task extends ReactNodeView {
      * on first character insertion.
      * Note: last character deletion is handled externally and automatically re-renders.
      */
-    return this.isContentEmpty(this.node) && nextNode.content.childCount === 1;
+    return this.isContentEmpty(this.node) && !!nextNode.content.childCount;
   }
 
   update(node: PMNode, decorations: Decoration[]) {
@@ -162,7 +153,7 @@ export function taskItemNodeViewFactory(
   portalProviderAPI: PortalProviderAPI,
   providerFactory: ProviderFactory,
 ) {
-  return (node: any, view: any, getPos: () => number): NodeView => {
+  return (node: any, view: any, getPos: getPosHandler): NodeView => {
     return new Task(node, view, getPos, portalProviderAPI, {
       providerFactory,
     }).init();

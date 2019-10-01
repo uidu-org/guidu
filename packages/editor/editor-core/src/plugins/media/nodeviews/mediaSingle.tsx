@@ -2,7 +2,7 @@ import {
   ExternalMediaAttributes,
   MediaAttributes,
   MediaSingleLayout,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import {
   browser,
   DEFAULT_IMAGE_HEIGHT,
@@ -18,13 +18,13 @@ import { Decoration, EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
 import { MediaOptions } from '../';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import WithPluginState from '../../../components/WithPluginState';
 import { EventDispatcher } from '../../../event-dispatcher';
-import { ProsemirrorGetPosHandler } from '../../../nodeviews';
+import { getPosHandler, ProsemirrorGetPosHandler } from '../../../nodeviews';
 import { SelectionBasedNodeView } from '../../../nodeviews/ReactNodeView';
 import { createDisplayGrid } from '../../../plugins/grid';
 import { EditorAppearance } from '../../../types';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
+import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection } from '../../../utils';
 import { pluginKey as widthPluginKey } from '../../width';
 import { updateMediaNodeAttrs } from '../commands';
@@ -36,6 +36,7 @@ import {
 import { MediaProvider } from '../types';
 import ResizableMediaSingle from '../ui/ResizableMediaSingle';
 import MediaItem from './media';
+
 export interface MediaSingleNodeProps {
   view: EditorView;
   node: PMNode;
@@ -353,14 +354,17 @@ class MediaSingleNodeView extends SelectionBasedNodeView {
                 const isSelected = () =>
                   this.isSelectionInsideNode(selection.from, selection.to) ||
                   (selection instanceof NodeSelection &&
-                    selection.from === this.getPos());
+                    selection.from ===
+                      (typeof this.getPos === 'function'
+                        ? this.getPos()
+                        : +this.getPos));
 
                 return (
                   <MediaSingleNode
                     width={width.width}
                     lineLength={width.lineLength}
                     node={this.node}
-                    getPos={this.getPos}
+                    getPos={this.getPos as any}
                     mediaProvider={mediaProvider}
                     mediaOptions={mediaOptions || {}}
                     view={this.view}
@@ -403,7 +407,7 @@ export const ReactMediaSingleNode = (
   mediaOptions: MediaOptions = {},
   editorAppearance?: EditorAppearance,
   fullWidthMode?: boolean,
-) => (node: PMNode, view: EditorView, getPos: () => number) => {
+) => (node: PMNode, view: EditorView, getPos: getPosHandler) => {
   return new MediaSingleNodeView(node, view, getPos, portalProviderAPI, {
     eventDispatcher,
     editorAppearance,

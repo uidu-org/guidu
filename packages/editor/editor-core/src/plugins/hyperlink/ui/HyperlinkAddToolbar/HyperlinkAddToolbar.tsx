@@ -9,23 +9,15 @@ import { KeyboardEvent, PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { analyticsService } from '../../../../analytics';
-import PanelTextInput from '../../../../components/PanelTextInput';
-import RecentList from '../../../../components/RecentSearch/RecentList';
+import { linkToolbarMessages as linkToolbarCommonMessages } from '../../../../messages';
+import PanelTextInput from '../../../../ui/PanelTextInput';
+import RecentList from '../../../../ui/RecentSearch/RecentList';
 import {
   Container,
   InputWrapper,
   UrlInputWrapper,
-} from '../../../../components/RecentSearch/ToolbarComponents';
-import { linkToolbarMessages as linkToolbarCommonMessages } from '../../../../messages';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  AnalyticsEventPayload,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../../analytics';
+} from '../../../../ui/RecentSearch/ToolbarComponents';
+import { INPUT_METHOD } from '../../../analytics';
 import { normalizeUrl } from '../../utils';
 
 const ClearText = styled.span`
@@ -72,12 +64,11 @@ export interface Props {
     displayText: string,
     isTabPressed?: boolean,
   ) => void;
-  onSubmit?: (href: string, text: string, type?: LinkInputType) => void;
+  onSubmit?: (href: string, text: string, inputMethod: LinkInputType) => void;
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;
   autoFocus?: boolean;
   provider: Promise<ActivityProvider>;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   displayText?: string;
   displayUrl?: string;
 }
@@ -287,7 +278,6 @@ class LinkAddToolbar extends PureComponent<
           );
           this.trackAutoCompleteAnalyticsEvent(
             'atlassian.editor.format.hyperlink.autocomplete.click',
-            INPUT_METHOD.TYPEAHEAD,
           );
         }
       },
@@ -318,7 +308,6 @@ class LinkAddToolbar extends PureComponent<
         );
         this.trackAutoCompleteAnalyticsEvent(
           'atlassian.editor.format.hyperlink.autocomplete.keyboard',
-          INPUT_METHOD.TYPEAHEAD,
         );
       }
     } else if (text && text.length > 0) {
@@ -331,7 +320,6 @@ class LinkAddToolbar extends PureComponent<
         );
         this.trackAutoCompleteAnalyticsEvent(
           'atlassian.editor.format.hyperlink.autocomplete.notselected',
-          INPUT_METHOD.MANUAL,
         );
       }
     }
@@ -379,24 +367,9 @@ class LinkAddToolbar extends PureComponent<
     }
   };
 
-  private trackAutoCompleteAnalyticsEvent(
-    name: string,
-    method: INPUT_METHOD.TYPEAHEAD | INPUT_METHOD.MANUAL,
-  ) {
+  private trackAutoCompleteAnalyticsEvent(name: string) {
     const numChars = this.state.text ? this.state.text.length : 0;
     analyticsService.trackEvent(name, { numChars: numChars });
-
-    const payload: AnalyticsEventPayload = {
-      action: ACTION.INSERTED,
-      actionSubject: ACTION_SUBJECT.DOCUMENT,
-      actionSubjectId: ACTION_SUBJECT_ID.LINK,
-      attributes: { inputMethod: method },
-      eventType: EVENT_TYPE.TRACK,
-    };
-
-    if (this.props.dispatchAnalyticsEvent) {
-      this.props.dispatchAnalyticsEvent(payload);
-    }
   }
 }
 

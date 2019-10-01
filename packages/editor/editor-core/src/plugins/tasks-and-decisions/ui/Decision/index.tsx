@@ -1,4 +1,4 @@
-import { DecisionItem } from '@atlaskit/task-decision';
+import { DecisionItem } from '@uidu/task-decision';
 import * as React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 

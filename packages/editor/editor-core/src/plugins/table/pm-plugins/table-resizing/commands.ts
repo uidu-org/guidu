@@ -9,7 +9,7 @@ import { createCommand, getPluginState } from './plugin';
 import {
   addContainerLeftRightPadding,
   evenAllColumnsWidths,
-  getResizeStateFromDOM,
+  getResizeState,
   hasTableBeenResized,
   insertColgroupFromNode as recreateResizeColsByNode,
   isClickNear,
@@ -42,7 +42,7 @@ export const handleBreakoutContent = (
   }
 
   const resizeState = resizeColumn(
-    getResizeStateFromDOM({
+    getResizeState({
       minWidth: tableCellMinWidth,
       maxSize: tableRef.offsetWidth,
       table,
@@ -52,6 +52,7 @@ export const handleBreakoutContent = (
     }),
     rect.left,
     amount,
+    tableRef,
   );
 
   const { tr } = state;

@@ -43,6 +43,10 @@
         "../../core/analytics/src/AnalyticsListener",
         "./packages/core/analytics/src/AnalyticsListener"
       ],
+      "@uidu/analytics/AnalyticsReactContext": [
+        "../../core/analytics/src/AnalyticsReactContext",
+        "./packages/core/analytics/src/AnalyticsReactContext"
+      ],
       "@uidu/analytics/cleanProps": [
         "../../core/analytics/src/cleanProps",
         "./packages/core/analytics/src/cleanProps"
@@ -63,6 +67,18 @@
         "../../core/analytics/src/UIAnalyticsEvent",
         "./packages/core/analytics/src/UIAnalyticsEvent"
       ],
+      "@uidu/analytics/useAnalyticsEvents": [
+        "../../core/analytics/src/useAnalyticsEvents",
+        "./packages/core/analytics/src/useAnalyticsEvents"
+      ],
+      "@uidu/analytics/useCallbackWithAnalytics": [
+        "../../core/analytics/src/useCallbackWithAnalytics",
+        "./packages/core/analytics/src/useCallbackWithAnalytics"
+      ],
+      "@uidu/analytics/usePatchedProps": [
+        "../../core/analytics/src/usePatchedProps",
+        "./packages/core/analytics/src/usePatchedProps"
+      ],
       "@uidu/analytics/withAnalyticsContext": [
         "../../core/analytics/src/withAnalyticsContext",
         "./packages/core/analytics/src/withAnalyticsContext"
@@ -70,6 +86,10 @@
       "@uidu/analytics/withAnalyticsEvents": [
         "../../core/analytics/src/withAnalyticsEvents",
         "./packages/core/analytics/src/withAnalyticsEvents"
+      ],
+      "@uidu/analytics/withAnalyticsHook": [
+        "../../core/analytics/src/withAnalyticsHook",
+        "./packages/core/analytics/src/withAnalyticsHook"
       ],
       "@uidu/avatar/index": [
         "../../core/avatar/src/index",
@@ -94,6 +114,14 @@
       "@uidu/badge/theme": [
         "../../core/badge/src/theme",
         "./packages/core/badge/src/theme"
+      ],
+      "@uidu/banner/index": [
+        "../../core/banner/src/index",
+        "./packages/core/banner/src/index"
+      ],
+      "@uidu/banner/styled": [
+        "../../core/banner/src/styled",
+        "./packages/core/banner/src/styled"
       ],
       "@uidu/blanket/Blanket": [
         "../../core/blanket/src/Blanket",
@@ -447,9 +475,25 @@
         "../../ecommerce/stripe-accounts/src/index",
         "./packages/ecommerce/stripe-accounts/src/index"
       ],
+      "@uidu/adf-schema/index": [
+        "../../editor/adf-schema/src/index",
+        "./packages/editor/adf-schema/src/index"
+      ],
+      "@uidu/adf-utils/index": [
+        "../../editor/adf-utils/src/index",
+        "./packages/editor/adf-utils/src/index"
+      ],
+      "@uidu/editor-common/color": [
+        "../../editor/editor-common/src/color",
+        "./packages/editor/editor-common/src/color"
+      ],
       "@uidu/editor-common/index": [
         "../../editor/editor-common/src/index",
         "./packages/editor/editor-common/src/index"
+      ],
+      "@uidu/editor-common/validator": [
+        "../../editor/editor-common/src/validator",
+        "./packages/editor/editor-common/src/validator"
       ],
       "@uidu/editor-core/editor": [
         "../../editor/editor-core/src/editor",
@@ -466,6 +510,146 @@
       "@uidu/editor-core/version-wrapper": [
         "../../editor/editor-core/src/version-wrapper",
         "./packages/editor/editor-core/src/version-wrapper"
+      ],
+      "@uidu/editor-json-transformer/index": [
+        "../../editor/editor-json-transformer/src/index",
+        "./packages/editor/editor-json-transformer/src/index"
+      ],
+      "@uidu/editor-markdown-transformer/index": [
+        "../../editor/editor-markdown-transformer/src/index",
+        "./packages/editor/editor-markdown-transformer/src/index"
+      ],
+      "@uidu/editor-markdown-transformer/media": [
+        "../../editor/editor-markdown-transformer/src/media",
+        "./packages/editor/editor-markdown-transformer/src/media"
+      ],
+      "@uidu/json-schema-generator/cli": [
+        "../../editor/json-schema-generator/src/cli",
+        "./packages/editor/json-schema-generator/src/cli"
+      ],
+      "@uidu/json-schema-generator/index": [
+        "../../editor/json-schema-generator/src/index",
+        "./packages/editor/json-schema-generator/src/index"
+      ],
+      "@uidu/json-schema-generator/utils": [
+        "../../editor/json-schema-generator/src/utils",
+        "./packages/editor/json-schema-generator/src/utils"
+      ],
+      "@uidu/renderer/consts": [
+        "../../editor/renderer/src/consts",
+        "./packages/editor/renderer/src/consts"
+      ],
+      "@uidu/renderer/index": [
+        "../../editor/renderer/src/index",
+        "./packages/editor/renderer/src/index"
+      ],
+      "@uidu/renderer/messages": [
+        "../../editor/renderer/src/messages",
+        "./packages/editor/renderer/src/messages"
+      ],
+      "@uidu/renderer/render-document": [
+        "../../editor/renderer/src/render-document",
+        "./packages/editor/renderer/src/render-document"
+      ],
+      "@uidu/renderer/serializer": [
+        "../../editor/renderer/src/serializer",
+        "./packages/editor/renderer/src/serializer"
+      ],
+      "@uidu/renderer/text-serializer": [
+        "../../editor/renderer/src/text-serializer",
+        "./packages/editor/renderer/src/text-serializer"
+      ],
+      "@uidu/renderer/utils": [
+        "../../editor/renderer/src/utils",
+        "./packages/editor/renderer/src/utils"
+      ],
+      "@uidu/analytics-gas-types/index": [
+        "../../elements/analytics-gas-types/src/index",
+        "./packages/elements/analytics-gas-types/src/index"
+      ],
+      "@uidu/analytics-listeners/analytics-web-client-wrapper": [
+        "../../elements/analytics-listeners/src/analytics-web-client-wrapper",
+        "./packages/elements/analytics-listeners/src/analytics-web-client-wrapper"
+      ],
+      "@uidu/analytics-listeners/FabricAnalyticsListeners": [
+        "../../elements/analytics-listeners/src/FabricAnalyticsListeners",
+        "./packages/elements/analytics-listeners/src/FabricAnalyticsListeners"
+      ],
+      "@uidu/analytics-listeners/index": [
+        "../../elements/analytics-listeners/src/index",
+        "./packages/elements/analytics-listeners/src/index"
+      ],
+      "@uidu/analytics-listeners/types": [
+        "../../elements/analytics-listeners/src/types",
+        "./packages/elements/analytics-listeners/src/types"
+      ],
+      "@uidu/analytics-namespaced-context/FabricEditorAnalyticsContext": [
+        "../../elements/analytics-namespaced-context/src/FabricEditorAnalyticsContext",
+        "./packages/elements/analytics-namespaced-context/src/FabricEditorAnalyticsContext"
+      ],
+      "@uidu/analytics-namespaced-context/FabricElementsAnalyticsContext": [
+        "../../elements/analytics-namespaced-context/src/FabricElementsAnalyticsContext",
+        "./packages/elements/analytics-namespaced-context/src/FabricElementsAnalyticsContext"
+      ],
+      "@uidu/analytics-namespaced-context/index": [
+        "../../elements/analytics-namespaced-context/src/index",
+        "./packages/elements/analytics-namespaced-context/src/index"
+      ],
+      "@uidu/analytics-namespaced-context/NavigationAnalyticsContext": [
+        "../../elements/analytics-namespaced-context/src/NavigationAnalyticsContext",
+        "./packages/elements/analytics-namespaced-context/src/NavigationAnalyticsContext"
+      ],
+      "@uidu/analytics-viewer/index": [
+        "../../elements/analytics-viewer/src/index",
+        "./packages/elements/analytics-viewer/src/index"
+      ],
+      "@uidu/date/index": [
+        "../../elements/date/src/index",
+        "./packages/elements/date/src/index"
+      ],
+      "@uidu/elements-test-helpers/demo-ssr-hydrate": [
+        "../../elements/elements-test-helpers/src/demo-ssr-hydrate",
+        "./packages/elements/elements-test-helpers/src/demo-ssr-hydrate"
+      ],
+      "@uidu/elements-test-helpers/index": [
+        "../../elements/elements-test-helpers/src/index",
+        "./packages/elements/elements-test-helpers/src/index"
+      ],
+      "@uidu/elements-test-helpers/ssr-util": [
+        "../../elements/elements-test-helpers/src/ssr-util",
+        "./packages/elements/elements-test-helpers/src/ssr-util"
+      ],
+      "@uidu/emoji/admin": [
+        "../../elements/emoji/src/admin",
+        "./packages/elements/emoji/src/admin"
+      ],
+      "@uidu/emoji/element": [
+        "../../elements/emoji/src/element",
+        "./packages/elements/emoji/src/element"
+      ],
+      "@uidu/emoji/index": [
+        "../../elements/emoji/src/index",
+        "./packages/elements/emoji/src/index"
+      ],
+      "@uidu/emoji/picker": [
+        "../../elements/emoji/src/picker",
+        "./packages/elements/emoji/src/picker"
+      ],
+      "@uidu/emoji/resource": [
+        "../../elements/emoji/src/resource",
+        "./packages/elements/emoji/src/resource"
+      ],
+      "@uidu/emoji/typeahead": [
+        "../../elements/emoji/src/typeahead",
+        "./packages/elements/emoji/src/typeahead"
+      ],
+      "@uidu/emoji/types": [
+        "../../elements/emoji/src/types",
+        "./packages/elements/emoji/src/types"
+      ],
+      "@uidu/emoji/utils": [
+        "../../elements/emoji/src/utils",
+        "./packages/elements/emoji/src/utils"
       ],
       "@uidu/mentions/_constants": [
         "../../elements/mentions/src/_constants",
@@ -486,6 +670,42 @@
       "@uidu/mentions/types": [
         "../../elements/mentions/src/types",
         "./packages/elements/mentions/src/types"
+      ],
+      "@uidu/status/element": [
+        "../../elements/status/src/element",
+        "./packages/elements/status/src/element"
+      ],
+      "@uidu/status/index": [
+        "../../elements/status/src/index",
+        "./packages/elements/status/src/index"
+      ],
+      "@uidu/status/picker": [
+        "../../elements/status/src/picker",
+        "./packages/elements/status/src/picker"
+      ],
+      "@uidu/task-decision/constants": [
+        "../../elements/task-decision/src/constants",
+        "./packages/elements/task-decision/src/constants"
+      ],
+      "@uidu/task-decision/index": [
+        "../../elements/task-decision/src/index",
+        "./packages/elements/task-decision/src/index"
+      ],
+      "@uidu/task-decision/type-helpers": [
+        "../../elements/task-decision/src/type-helpers",
+        "./packages/elements/task-decision/src/type-helpers"
+      ],
+      "@uidu/task-decision/types": [
+        "../../elements/task-decision/src/types",
+        "./packages/elements/task-decision/src/types"
+      ],
+      "@uidu/util-data-test/index": [
+        "../../elements/util-data-test/src/index",
+        "./packages/elements/util-data-test/src/index"
+      ],
+      "@uidu/util-data-test/logger": [
+        "../../elements/util-data-test/src/logger",
+        "./packages/elements/util-data-test/src/logger"
       ],
       "@uidu/checkbox/index": [
         "../../forms/checkbox/src/index",

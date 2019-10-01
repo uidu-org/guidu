@@ -1,4 +1,5 @@
-import { mention } from '@atlaskit/adf-schema';
+import { mention } from '@uidu/adf-schema';
+import { AnalyticsEventPayload, CreateUIAnalyticsEvent } from '@uidu/analytics';
 import {
   ContextIdentifierProvider,
   ProviderFactory,
@@ -20,10 +21,10 @@ import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';
 import uuid from 'uuid';
 import { analyticsService } from '../../analytics';
-import { PortalProviderAPI } from '../../components/PortalProvider';
-import WithPluginState from '../../components/WithPluginState';
 import { Dispatch } from '../../event-dispatcher';
-import { Command, EditorAppearance, EditorPlugin } from '../../types';
+import { Command, EditorPlugin } from '../../types';
+import { PortalProviderAPI } from '../../ui/PortalProvider';
+import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -58,22 +59,28 @@ export interface TeamInfoAttrAnalytics {
   memberCount: number;
 }
 
-const mentionsPlugin = (
-  createAnalyticsEvent?: any,
-  sanitizePrivateContent?: boolean,
-  mentionInsertDisplayName?: boolean,
-): EditorPlugin => {
+export interface MentionPluginOptions {
+  createAnalyticsEvent?: CreateUIAnalyticsEvent;
+  sanitizePrivateContent?: boolean;
+  mentionInsertDisplayName?: boolean;
+  useInlineWrapper?: boolean;
+  allowZeroWidthSpaceAfter?: boolean;
+}
+
+const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
   let sessionId = uuid();
-  const fireEvent = <T extends any>(payload: T): void => {
-    if (createAnalyticsEvent) {
+  const fireEvent = <T extends AnalyticsEventPayload>(payload: T): void => {
+    if (options && options.createAnalyticsEvent) {
       if (payload.attributes && !payload.attributes.sessionId) {
         payload.attributes.sessionId = sessionId;
       }
-      createAnalyticsEvent(payload).fire(ELEMENTS_CHANNEL);
+      options.createAnalyticsEvent(payload).fire(ELEMENTS_CHANNEL);
     }
   };
 
   return {
+    name: 'mention',
+
     nodes() {
       return [{ name: 'mention', node: mention }];
     },
@@ -82,13 +89,13 @@ const mentionsPlugin = (
       return [
         {
           name: 'mention',
-          plugin: ({ providerFactory, dispatch, portalProviderAPI, props }) =>
+          plugin: ({ providerFactory, dispatch, portalProviderAPI }) =>
             mentionPluginFactory(
               dispatch,
               providerFactory,
               portalProviderAPI,
               fireEvent,
-              props.appearance,
+              options,
             ),
         },
       ];
@@ -223,6 +230,11 @@ const mentionsPlugin = (
           );
         },
         selectItem(state, item, insert, { mode }) {
+          const sanitizePrivateContent =
+            options && options.sanitizePrivateContent;
+          const mentionInsertDisplayName =
+            options && options.mentionInsertDisplayName;
+
           const { schema } = state;
 
           const pluginState = getMentionPluginState(state);
@@ -419,7 +431,7 @@ function mentionPluginFactory(
   providerFactory: ProviderFactory,
   portalProviderAPI: PortalProviderAPI,
   fireEvent: (payload: any) => void,
-  editorAppearance?: EditorAppearance,
+  options?: MentionPluginOptions,
 ) {
   let mentionProvider: MentionProvider;
 
@@ -469,11 +481,7 @@ function mentionPluginFactory(
     } as StateField<MentionPluginState>,
     props: {
       nodeViews: {
-        mention: mentionNodeView(
-          portalProviderAPI,
-          providerFactory,
-          editorAppearance,
-        ),
+        mention: mentionNodeView(portalProviderAPI, providerFactory, options),
       },
     },
     view(editorView) {

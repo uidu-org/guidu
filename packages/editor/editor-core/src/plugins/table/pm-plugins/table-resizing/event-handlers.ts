@@ -1,4 +1,4 @@
-import { CellAttributes, TableLayout } from '@atlaskit/adf-schema';
+import { CellAttributes, TableLayout } from '@uidu/adf-schema';
 import {
   akEditorTableNumberColumnWidth,
   tableCellMinWidth,
@@ -10,18 +10,16 @@ import { getParentNodeWidth } from '../../../../utils/node-width';
 import { pluginKey as editorDisabledPluginKey } from '../../../editor-disabled';
 import { pluginKey as widthPluginKey } from '../../../width';
 import { updateColumnWidths } from '../../transforms';
-import { getSelectedColumnIndexes } from '../../utils';
+import { getSelectedColumnIndexes, updateResizeHandles } from '../../utils';
 import { evenColumns, setDragging } from './commands';
 import { getPluginState } from './plugin';
 import {
-  createResizeHandle,
   currentColWidth,
   getLayoutSize,
-  getResizeStateFromDOM,
+  getResizeState,
   pointsAtCell,
   resizeColumn,
   updateControls,
-  updateResizeHandle,
 } from './utils';
 
 export const handleMouseDown = (
@@ -29,7 +27,7 @@ export const handleMouseDown = (
   event: MouseEvent,
   resizeHandlePos: number,
   dynamicTextSizing: boolean,
-) => {
+): boolean => {
   const { state, dispatch } = view;
   const { editorDisabled } = editorDisabledPluginKey.getState(state);
   const domAtPos = view.domAtPos.bind(view);
@@ -52,10 +50,6 @@ export const handleMouseDown = (
     dom = dom.parentNode! as HTMLTableElement;
   }
 
-  let resizeHandleRef: HTMLDivElement | null = createResizeHandle(
-    dom as HTMLTableElement,
-  );
-
   const containerWidth = widthPluginKey.getState(state);
   const parentWidth = getParentNodeWidth(start, state, containerWidth);
 
@@ -73,7 +67,7 @@ export const handleMouseDown = (
     maxSize -= akEditorTableNumberColumnWidth;
   }
 
-  const resizeState = getResizeStateFromDOM({
+  const resizeState = getResizeState({
     minWidth: tableCellMinWidth,
     maxSize,
     table: originalTable,
@@ -102,11 +96,6 @@ export const handleMouseDown = (
   function finish(event: MouseEvent) {
     window.removeEventListener('mouseup', finish);
     window.removeEventListener('mousemove', move);
-
-    if (resizeHandleRef && resizeHandleRef.parentNode) {
-      resizeHandleRef.parentNode.removeChild(resizeHandleRef);
-      resizeHandleRef = null;
-    }
 
     const { clientX } = event;
     const { state, dispatch } = view;
@@ -154,6 +143,7 @@ export const handleMouseDown = (
           resizeState,
           colIndex,
           clientX - startX,
+          dom,
           resizingSelectedColumns ? selectedColumns : undefined,
         );
         tr = updateColumnWidths(newResizeState, table, start)(tr);
@@ -184,10 +174,10 @@ export const handleMouseDown = (
       $cell.nodeAfter!.attrs.colspan -
       1;
 
-    resizeColumn(resizeState, colIndex, clientX - dragging.startX);
+    resizeColumn(resizeState, colIndex, clientX - dragging.startX, dom);
 
     updateControls(state);
-    updateResizeHandle(state, domAtPos, resizeHandlePos);
+    updateResizeHandles(dom);
   }
 
   window.addEventListener('mouseup', finish);

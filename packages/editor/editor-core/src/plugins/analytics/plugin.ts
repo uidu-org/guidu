@@ -1,23 +1,21 @@
-import { Plugin, PluginKey, EditorState } from 'prosemirror-state';
-import { CreateUIAnalyticsEvent } from '@atlaskit/analytics-next';
-import {
-  measureRender,
-  isPerformanceAPIAvailable,
-} from '@atlaskit/editor-common';
+import { CreateUIAnalyticsEvent } from '@uidu/analytics';
+import { isPerformanceAPIAvailable, measureRender } from '@uidu/editor-common';
+import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
-import {
-  AnalyticsEventPayload,
-  EVENT_TYPE,
-  AnalyticsEventPayloadWithChannel,
-  ACTION,
-} from './types';
 import { AnalyticsStep } from './analytics-step';
+import {
+  ACTION,
+  AnalyticsEventPayload,
+  AnalyticsEventPayloadWithChannel,
+  EVENT_TYPE,
+} from './types';
 import { fireAnalyticsEvent } from './utils';
 
 export const analyticsPluginKey = new PluginKey('analyticsPlugin');
 
 function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
   if (!createAnalyticsEvent) {
+    // @ts-ignore
     return;
   }
 
@@ -43,9 +41,7 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
               payload.action !== ACTION.INSERTED &&
               payload.action !== ACTION.DELETED
             ) {
-              const measureName = `${payload.actionSubject}:${payload.action}:${
-                payload.actionSubjectId
-              }`;
+              const measureName = `${payload.actionSubject}:${payload.action}:${payload.actionSubjectId}`;
               measureRender(measureName, duration => {
                 fireAnalyticsEvent(createAnalyticsEvent)({
                   payload: extendPayload(payload, duration),
@@ -63,9 +59,8 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
       newState: EditorState,
     ) {
       const analyticsEvents: AnalyticsEventPayloadWithChannel[] = transactions
-        .map(
-          (tr): AnalyticsEventPayloadWithChannel[] =>
-            tr.getMeta(analyticsPluginKey),
+        .map((tr): AnalyticsEventPayloadWithChannel[] =>
+          tr.getMeta(analyticsPluginKey),
         )
         .filter(analyticsMeta => !!analyticsMeta)
         .reduce(
@@ -92,7 +87,8 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
         // This is needed so undo of autoformatting works as expected, this is a special
         // case handled by prosemirror-inputrules plugin
         const activeInputRulePlugin = newState.plugins.find(
-          plugin => plugin.spec.isInputRules && plugin.getState(newState),
+          plugin =>
+            (plugin.spec as any).isInputRules && plugin.getState(newState),
         );
         if (activeInputRulePlugin) {
           const inputRuleState = activeInputRulePlugin.getState(newState);

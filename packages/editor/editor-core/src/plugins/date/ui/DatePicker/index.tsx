@@ -8,7 +8,7 @@ import {
 import { borderRadius, colors } from '@uidu/theme';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import withOuterListeners from '../../../../components/with-outer-listeners';
+import withOuterListeners from '../../../../ui/with-outer-listeners';
 import { DateType } from '../../index';
 
 const PopupWithListeners = withOuterListeners(Popup);

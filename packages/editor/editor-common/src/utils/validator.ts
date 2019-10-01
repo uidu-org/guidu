@@ -4,7 +4,7 @@ import {
   generateUuid as uuid,
   inlineNodes,
   isSafeUrl,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import { Mark as PMMark, Schema } from 'prosemirror-model';
 
 export type ADFStage = 'stage0' | 'final';
@@ -140,27 +140,6 @@ const flattenUnknownBlockTree = (
   return output;
 };
 
-// null is Object, also maybe check obj.constructor == Object if we want to skip Class
-const isValidObject = (obj: object) => obj !== null && typeof obj === 'object';
-const isValidString = (str: any): str is string => typeof str === 'string';
-const keysLen = (obj: object) => Object.keys(obj).length;
-
-const isValidIcon = (icon: any) =>
-  isValidObject(icon) &&
-  keysLen(icon) === 2 &&
-  isValidString(icon.url) &&
-  isValidString(icon.label);
-
-const isValidUser = (user: { id: string; icon: any }) => {
-  const len = keysLen(user);
-  return (
-    isValidObject(user) &&
-    len <= 2 &&
-    isValidIcon(user.icon) &&
-    (len === 1 || isValidString(user.id))
-  );
-};
-
 /**
  * Sanitize unknown node tree
  *
@@ -236,119 +215,6 @@ export const getValidNode = (
 
   if (type) {
     switch (type) {
-      case 'applicationCard': {
-        if (!attrs) {
-          break;
-        }
-        const {
-          text,
-          link,
-          background,
-          preview,
-          title,
-          description,
-          details,
-          actions,
-          context,
-        } = attrs;
-        if (!isValidString(text) || !isValidObject(title) || !title.text) {
-          break;
-        }
-
-        // title can contain at most two keys (text, user)
-        const titleKeys = Object.keys(title);
-        if (titleKeys.length > 2) {
-          break;
-        }
-        if (titleKeys.length === 2 && !title.user) {
-          break;
-        }
-        if (title.user && !isValidUser(title.user)) {
-          break;
-        }
-
-        if (
-          (link && !link.url) ||
-          (background && !background.url) ||
-          (preview && !preview.url) ||
-          (description && !description.text)
-        ) {
-          break;
-        }
-
-        if (context && !isValidString(context.text)) {
-          break;
-        }
-        if (context && (context.icon && !isValidIcon(context.icon))) {
-          break;
-        }
-
-        if (actions && !Array.isArray(actions)) {
-          break;
-        }
-        if (actions && !actions.length) {
-          break;
-        }
-        if (
-          actions &&
-          actions.some((meta: any) => {
-            const { key, title, target, parameters } = meta;
-            if (key && !isValidString(key)) {
-              return true;
-            }
-            if (!isValidString(title)) {
-              return true;
-            }
-            if (!target) {
-              return true;
-            }
-            if (!isValidString(target.key)) {
-              return true;
-            }
-            if (target.receiver && !isValidString(target.receiver)) {
-              return true;
-            }
-            if (parameters && !isValidObject(parameters)) {
-              return true;
-            }
-            return false;
-          })
-        ) {
-          break;
-        }
-
-        if (details && !Array.isArray(details)) {
-          break;
-        }
-        if (
-          details &&
-          details.some((meta: any) => {
-            const { badge, lozenge, users } = meta;
-            if (badge && typeof badge.value !== 'number') {
-              return true;
-            }
-            if (lozenge && !lozenge.text) {
-              return true;
-            }
-            if (users && !Array.isArray(users)) {
-              return true;
-            }
-
-            if (users && !users.every(isValidUser)) {
-              return true;
-            }
-            return false;
-          })
-        ) {
-          break;
-        }
-
-        return {
-          type,
-          text,
-          attrs,
-        };
-      }
       case 'doc': {
         const { version } = originalNode as ADDoc;
         if (version && content && content.length) {
@@ -818,15 +684,6 @@ export const getValidMark = (
 
   if (type) {
     switch (type) {
-      case 'action': {
-        if (attrs && attrs.target && attrs.target.key) {
-          return {
-            type,
-            attrs,
-          };
-        }
-        break;
-      }
       case 'code': {
         return {
           type,

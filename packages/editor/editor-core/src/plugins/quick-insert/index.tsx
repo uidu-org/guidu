@@ -91,12 +91,18 @@ export default quickInsertPlugin;
 
 const itemsCache: Record<string, Array<QuickInsertItem>> = {};
 const processItems = (items: Array<QuickInsertHandler>, intl: IntlShape) => {
-  return items.reduce((acc: Array<QuickInsertItem>, item) => {
-    if (typeof item === 'function') {
-      return acc.concat(item(intl));
-    }
-    return acc.concat(item);
-  }, []);
+  if (!itemsCache[intl.locale]) {
+    itemsCache[intl.locale] = items.reduce(
+      (acc: Array<QuickInsertItem>, item) => {
+        if (typeof item === 'function') {
+          return acc.concat(item(intl));
+        }
+        return acc.concat(item);
+      },
+      [],
+    );
+  }
+  return itemsCache[intl.locale];
 };
 
 /**

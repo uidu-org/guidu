@@ -1,11 +1,12 @@
 import { InputRule, inputRules } from 'prosemirror-inputrules';
 import { Fragment, Schema } from 'prosemirror-model';
-import { EditorState, Plugin } from 'prosemirror-state';
+import { EditorState, Plugin, Transaction } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
+import { safeInsert } from '../../../utils/insert';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -14,6 +15,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../../analytics';
+import { getEditorProps } from '../../shared-context';
 
 export const createHorizontalRule = (
   state: EditorState,
@@ -30,21 +32,38 @@ export const createHorizontalRule = (
     return null;
   }
 
-  const { $from } = state.selection;
-  const $afterRule = state.doc.resolve($from.after());
-  const { paragraph } = state.schema.nodes;
+  let tr: Transaction<any> | null = null;
+  const { allowNewInsertionBehaviour } = getEditorProps(state);
+  if (allowNewInsertionBehaviour) {
+    /**
+     * This is a workaround to get rid of the typeahead text when using quick insert
+     * Once we insert *nothing*, we get a new transaction, so we can use the new selection
+     * without considering the extra text after the `/` command.
+     **/
+    tr = state.tr.replaceWith(start, end, Fragment.empty);
 
-  if ($afterRule.nodeAfter && $afterRule.nodeAfter.type === paragraph) {
-    // if there's already a paragraph after, just insert the rule into
-    // the current paragraph
-    end = end + 1;
+    tr = safeInsert(state.schema.nodes.rule.createChecked(), tr.selection.from)(
+      tr,
+    );
   }
 
-  const tr = state.tr.replaceWith(
-    start,
-    end,
-    Fragment.from(state.schema.nodes.rule.createChecked()),
-  );
+  if (!tr) {
+    const { $from } = state.selection;
+    const $afterRule = state.doc.resolve($from.after());
+    const { paragraph } = state.schema.nodes;
+
+    if ($afterRule.nodeAfter && $afterRule.nodeAfter.type === paragraph) {
+      // if there's already a paragraph after, just insert the rule into
+      // the current paragraph
+      end = end + 1;
+    }
+
+    tr = state.tr.replaceWith(
+      start,
+      end,
+      Fragment.from(state.schema.nodes.rule.createChecked()),
+    );
+  }
 
   return addAnalytics(tr, {
     action: ACTION.INSERTED,

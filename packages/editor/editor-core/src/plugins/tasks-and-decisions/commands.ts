@@ -1,4 +1,4 @@
-import { uuid } from '@atlaskit/adf-schema';
+import { uuid } from '@uidu/adf-schema';
 import { ContextIdentifierProvider } from '@uidu/editor-common';
 import {
   Node as PMNode,

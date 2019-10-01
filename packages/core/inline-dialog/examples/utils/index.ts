@@ -1,5 +1,5 @@
 // Popper is not in TypeScript yet....
-// import { Placement } from '@atlaskit/popper' once it is.
+// import { Placement } from '@uidu/popper' once it is.
 type Placement =
   | 'auto-start'
   | 'auto'

@@ -1,4 +1,4 @@
-import { link } from '@atlaskit/adf-schema';
+import { link } from '@uidu/adf-schema';
 import * as React from 'react';
 import { addLink, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
@@ -19,6 +19,8 @@ import { LinkAction, plugin, stateKey } from './pm-plugins/main';
 import { getToolbarConfig } from './Toolbar';
 
 const hyperlinkPlugin = (): EditorPlugin => ({
+  name: 'hyperlink',
+
   marks() {
     return [{ name: 'link', mark: link }];
   },

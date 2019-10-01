@@ -1,9 +1,8 @@
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { PMPluginFactoryParams } from '../../../types';
-import { CardNodeView } from '../nodeviews';
-import blockCardNodeView from '../nodeviews/blockCard';
-import inlineCardNodeView from '../nodeviews/inlineCard';
+import { BlockCard } from '../nodeviews/blockCard';
+import { InlineCard } from '../nodeviews/inlineCard';
 import { CardPluginState, CardProvider, Request } from '../types';
 import { resolveCard, setProvider } from './actions';
 import { replaceQueuedUrlWithCard } from './doc';
@@ -62,6 +61,8 @@ export const createPlugin = ({
         return {
           requests: [],
           provider: null,
+          cards: [],
+          showLinkingToolbar: false,
         };
       },
 
@@ -72,6 +73,11 @@ export const createPlugin = ({
           requests: pluginState.requests.map(request => ({
             ...request,
             pos: tr.mapping.map(request.pos),
+          })),
+
+          cards: pluginState.cards.map(card => ({
+            ...card,
+            pos: tr.mapping.map(card.pos),
           })),
         };
 
@@ -140,20 +146,32 @@ export const createPlugin = ({
 
     props: {
       nodeViews: {
-        inlineCard: CardNodeView.fromComponent(
-          inlineCardNodeView,
-          portalProviderAPI,
-          {
-            providerFactory,
-          },
-        ),
-        blockCard: CardNodeView.fromComponent(
-          blockCardNodeView,
-          portalProviderAPI,
-          {
-            providerFactory,
-          },
-        ),
+        inlineCard: (node, view, getPos) => {
+          return new InlineCard(
+            node,
+            view,
+            getPos,
+            portalProviderAPI,
+            {
+              providerFactory,
+            },
+            undefined,
+            true,
+          ).init();
+        },
+        blockCard: (node, view, getPos) => {
+          return new BlockCard(
+            node,
+            view,
+            getPos,
+            portalProviderAPI,
+            {
+              providerFactory,
+            },
+            undefined,
+            true,
+          ).init();
+        },
       },
     },
 

@@ -1,4 +1,4 @@
-import { MentionAttributes } from '@atlaskit/adf-schema';
+import { MentionAttributes } from '@uidu/adf-schema';
 import { closeHistory } from 'prosemirror-history';
 import {
   Fragment,
@@ -14,13 +14,17 @@ import {
   TextSelection,
   Transaction,
 } from 'prosemirror-state';
-import { hasParentNodeOfType } from 'prosemirror-utils';
+import {
+  findParentNodeOfType,
+  hasParentNodeOfType,
+  safeInsert,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command, CommandDispatch } from '../../types';
 import { compose, insideTable, processRawValue } from '../../utils';
 import { taskDecisionSliceFilter } from '../../utils/filter';
 import { mapSlice } from '../../utils/slice';
-import { INPUT_METHOD } from '../analytics';
+import { InputMethodInsertMedia, INPUT_METHOD } from '../analytics';
 import { CardOptions } from '../card';
 import { insertCard, queueCardsFromChangedTr } from '../card/pm-plugins/doc';
 import { GapCursorSelection, Side } from '../gap-cursor/';
@@ -77,7 +81,8 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
       return false;
     }
 
-    const filters: Array<(slice: Slice) => Slice> = [
+    type Fn = (slice: Slice) => Slice;
+    const filters: [Fn, ...Array<Fn>] = [
       linkifyContent(schema),
       taskDecisionSliceFilter(schema),
     ];
@@ -358,27 +363,33 @@ function isOnlyMediaSingle(state: EditorState, slice: Slice) {
   );
 }
 
-export function handleMediaSingle(slice: Slice): Command {
-  return (state, dispatch, view) => {
-    if (view) {
-      if (isOnlyMedia(state, slice)) {
-        return insertMediaAsMediaSingle(view, slice.content.firstChild!);
-      }
-
-      if (insideTable(state) && isOnlyMediaSingle(state, slice)) {
-        const tr = state.tr.replaceSelection(slice);
-        const nextPos = tr.doc.resolve(
-          tr.mapping.map(state.selection.$from.pos),
-        );
-        if (dispatch) {
-          dispatch(
-            tr.setSelection(new GapCursorSelection(nextPos, Side.RIGHT)),
+export function handleMediaSingle(inputMethod: InputMethodInsertMedia) {
+  return function(slice: Slice): Command {
+    return (state, dispatch, view) => {
+      if (view) {
+        if (isOnlyMedia(state, slice)) {
+          return insertMediaAsMediaSingle(
+            view,
+            slice.content.firstChild!,
+            inputMethod,
           );
         }
-        return true;
+
+        if (insideTable(state) && isOnlyMediaSingle(state, slice)) {
+          const tr = state.tr.replaceSelection(slice);
+          const nextPos = tr.doc.resolve(
+            tr.mapping.map(state.selection.$from.pos),
+          );
+          if (dispatch) {
+            dispatch(
+              tr.setSelection(new GapCursorSelection(nextPos, Side.RIGHT)),
+            );
+          }
+          return true;
+        }
       }
-    }
-    return false;
+      return false;
+    };
   };
 }
 
@@ -445,10 +456,10 @@ function shouldFlattenList(state: EditorState, slice: Slice) {
 
 export function handleRichText(slice: Slice): Command {
   return (state, dispatch) => {
-    const { codeBlock } = state.schema.nodes;
+    const { codeBlock, panel } = state.schema.nodes;
     // In case user is pasting inline code,
     // any backtick ` immediately preceding it should be removed.
-    const tr = state.tr;
+    let tr = state.tr;
     if (hasInlineCode(state, slice)) {
       removePrecedingBackTick(tr);
     }
@@ -484,7 +495,28 @@ export function handleRichText(slice: Slice): Command {
     }
 
     closeHistory(tr);
-    tr.replaceSelection(slice);
+
+    // if inside an empty panel, try and insert content inside it rather than replace it
+    let panelParent = findParentNodeOfType(panel)(tr.selection);
+    if (
+      tr.selection.$from === tr.selection.$to &&
+      panelParent &&
+      !panelParent.node.textContent
+    ) {
+      tr = safeInsert(slice.content, tr.selection.$to.pos)(tr);
+      // set selection to end of inserted content
+      panelParent = findParentNodeOfType(panel)(tr.selection);
+      if (panelParent) {
+        tr.setSelection(
+          TextSelection.near(
+            tr.doc.resolve(panelParent.pos + panelParent.node.nodeSize),
+          ),
+        );
+      }
+    } else {
+      tr.replaceSelection(slice);
+    }
+
     tr.setStoredMarks([]);
     if (tr.selection.empty && tr.selection.$from.parent.type === codeBlock) {
       tr.setSelection(TextSelection.near(tr.selection.$from, 1) as Selection);

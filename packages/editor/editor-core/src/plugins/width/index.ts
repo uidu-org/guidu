@@ -45,6 +45,8 @@ export function createPlugin(
 }
 
 const widthPlugin = (): EditorPlugin => ({
+  name: 'width',
+
   pmPlugins: () => [
     {
       name: 'width',

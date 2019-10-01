@@ -1,4 +1,4 @@
-import { sanitizeNodes } from '@atlaskit/adf-schema';
+import { sanitizeNodes } from '@uidu/adf-schema';
 import { ErrorReporter, ErrorReportingHandler } from '@uidu/editor-common';
 import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
@@ -17,7 +17,7 @@ export function sortByRank(a: { rank: number }, b: { rank: number }): number {
   return a.rank - b.rank;
 }
 
-function sortByOrder(item: 'plugins' | 'nodes' | 'marks') {
+export function sortByOrder(item: 'plugins' | 'nodes' | 'marks') {
   return function(a: { name: string }, b: { name: string }): number {
     return Ranks[item].indexOf(a.name) - Ranks[item].indexOf(b.name);
   };
@@ -145,9 +145,7 @@ export function createPMPlugins({
   errorReporter,
   portalProviderAPI,
   reactContext,
-  intl,
   dispatchAnalyticsEvent,
-  oldState,
 }: PMPluginCreateConfig): Plugin[] {
   return editorConfig.pmPlugins
     .sort(sortByOrder('plugins'))
@@ -162,9 +160,7 @@ export function createPMPlugins({
         eventDispatcher,
         portalProviderAPI,
         reactContext,
-        intl,
         dispatchAnalyticsEvent,
-        oldState,
       }),
     )
     .filter(plugin => !!plugin) as Plugin[];

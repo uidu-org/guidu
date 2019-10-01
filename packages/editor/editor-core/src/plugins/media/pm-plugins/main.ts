@@ -1,4 +1,4 @@
-import { MediaSingleLayout } from '@atlaskit/adf-schema';
+import { MediaSingleLayout } from '@uidu/adf-schema';
 import { ErrorReporter } from '@uidu/editor-common';
 import assert from 'assert';
 import { Node, Node as PMNode, Schema } from 'prosemirror-model';

@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { MediaSingleLayout } from '@atlaskit/adf-schema';
-import Wrapper from './styled';
+import { MediaSingleLayout } from '@uidu/adf-schema';
 import classnames from 'classnames';
+import * as React from 'react';
 import { calcPxFromPct, layoutSupportsWidth } from './grid';
+import Wrapper from './styled';
 
 export const DEFAULT_IMAGE_WIDTH = 250;
 export const DEFAULT_IMAGE_HEIGHT = 200;
@@ -51,6 +51,9 @@ export default function MediaSingle({
       containerWidth={containerWidth}
       pctWidth={pctWidth}
       fullWidthMode={fullWidthMode}
+      data-node-type="mediaSingle"
+      data-layout={layout}
+      data-width={pctWidth}
       className={classnames('media-single', `image-${layout}`, className, {
         'is-loading': isLoading,
         'media-wrapped': layout === 'wrap-left' || layout === 'wrap-right',

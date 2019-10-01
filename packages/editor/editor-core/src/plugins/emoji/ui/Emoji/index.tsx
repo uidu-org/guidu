@@ -1,9 +1,8 @@
-import { ResourcedEmoji } from '@atlaskit/emoji/element';
-import { EmojiId } from '@atlaskit/emoji/types';
 import { ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
+import { EmojiId, ResourcedEmoji } from '@uidu/emoji';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import { ClickSelectWrapper } from '../../../../components/styles';
+import { ClickSelectWrapper } from '../../../../ui/styles';
 
 export interface EmojiProps extends EmojiId {
   allowTextFallback?: boolean;

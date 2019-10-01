@@ -60,7 +60,7 @@ const CommentEditor: any = styled.div`
   word-wrap: break-word;
 `;
 CommentEditor.displayName = 'CommentEditor';
-const TableControlsPadding = 16;
+const TableControlsPadding = 20;
 
 const MainToolbar = styled.div`
   position: relative;

@@ -5,11 +5,11 @@ import {
   strong,
   subsup,
   underline,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import * as React from 'react';
-import { ButtonGroup } from '../../components/styles';
-import WithPluginState from '../../components/WithPluginState';
 import { EditorPlugin } from '../../types';
+import { ButtonGroup } from '../../ui/styles';
+import WithPluginState from '../../ui/WithPluginState';
 import {
   plugin as clearFormattingPlugin,
   pluginKey as clearFormattingPluginKey,
@@ -34,6 +34,8 @@ export interface TextFormattingOptions {
 }
 
 const textFormatting = (options: TextFormattingOptions): EditorPlugin => ({
+  name: 'textFormatting',
+
   marks() {
     return [
       { name: 'em', mark: em },

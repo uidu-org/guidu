@@ -2,32 +2,54 @@ import MediaCard from '@uidu/media-card';
 import * as PropTypes from 'prop-types';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
+import rafSchedule from 'raf-schd';
 import * as React from 'react';
-import { stateKey as ReactNodeViewState } from '../../../plugins/base/pm-plugins/react-nodeview';
+import {
+  getPosHandler,
+  SelectionBasedNodeView,
+} from '../../../nodeviews/ReactNodeView';
+import UnsupportedBlockNode from '../../unsupported-content/nodeviews/unsupported-block';
+import { registerCard } from '../pm-plugins/actions';
+import { Card, SmartCardProps } from './genericCard';
 
 export interface Props {
   children?: React.ReactNode;
   node: PMNode;
-  getPos: () => number;
   view: EditorView;
   selected?: boolean;
-  pluginState: any;
+  getPos: getPosHandler;
 }
-
-class BlockCardNode extends React.Component<Props, {}> {
+export class BlockCardComponent extends React.PureComponent<SmartCardProps> {
   onClick = () => {};
 
   static contextTypes = {
     contextAdapter: PropTypes.object,
   };
 
-  render() {
-    const { node, selected } = this.props;
-    const { url, data } = node.attrs;
+  onResolve = (data: { url?: string; title?: string }) => {
+    const { getPos, view } = this.props;
+    if (!getPos) {
+      return;
+    }
 
-    const cardContext = this.context.contextAdapter
-      ? this.context.contextAdapter.card
-      : undefined;
+    const { title, url } = data;
+
+    // don't dispatch immediately since we might be in the middle of
+    // rendering a nodeview
+    rafSchedule(() =>
+      view.dispatch(
+        registerCard({
+          title,
+          url,
+          pos: typeof getPos === 'function' ? getPos() : +getPos,
+        })(view.state.tr),
+      ),
+    );
+  };
+
+  render() {
+    const { node, selected, cardContext } = this.props;
+    const { url, data } = node.attrs;
 
     // render an empty span afterwards to get around Webkit bug
     // that puts caret in next editable text element
@@ -66,12 +88,16 @@ class BlockCardNode extends React.Component<Props, {}> {
   }
 }
 
-export default class WrappedInline extends React.PureComponent<Props, {}> {
+const WrappedBlockCard = Card(BlockCardComponent, UnsupportedBlockNode);
+
+export class BlockCard extends SelectionBasedNodeView {
   render() {
     return (
-      <BlockCardNode
-        {...this.props}
-        pluginState={ReactNodeViewState.getState(this.props.view.state)}
+      <WrappedBlockCard
+        node={this.node}
+        selected={this.insideSelection()}
+        view={this.view}
+        getPos={this.getPos}
       />
     );
   }

@@ -1,6 +1,6 @@
-import { pluginKey } from './main';
-import { CardProvider, CardPluginAction, Request } from '../types';
 import { Transaction } from 'prosemirror-state';
+import { CardInfo, CardPluginAction, CardProvider, Request } from '../types';
+import { pluginKey } from './main';
 
 export const cardAction = (
   tr: Transaction,
@@ -21,6 +21,12 @@ export const queueCards = (requests: Request[]) => (tr: Transaction) =>
     requests: requests,
   });
 
+export const registerCard = (info: CardInfo) => (tr: Transaction) =>
+  cardAction(tr, {
+    type: 'REGISTER',
+    info,
+  });
+
 export const setProvider = (cardProvider: CardProvider | null) => (
   tr: Transaction,
 ) =>
@@ -28,3 +34,9 @@ export const setProvider = (cardProvider: CardProvider | null) => (
     type: 'SET_PROVIDER',
     provider: cardProvider,
   });
+
+export const showLinkToolbar = (tr: Transaction) =>
+  cardAction(tr, { type: 'SHOW_LINK_TOOLBAR' });
+
+export const hideLinkToolbar = (tr: Transaction) =>
+  cardAction(tr, { type: 'HIDE_LINK_TOOLBAR' });

@@ -1,5 +1,5 @@
+import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ReactNode } from 'react';
-import { WithAnalyticsEventsProps } from '@atlaskit/analytics-next';
 
 export type Placement =
   | 'auto-start'

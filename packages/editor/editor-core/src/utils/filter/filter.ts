@@ -1,4 +1,4 @@
-import { JSONDocNode, JSONNode } from '@atlaskit/editor-json-transformer';
+import { JSONDocNode, JSONNode } from '@uidu/editor-json-transformer';
 import { Schema, Slice } from 'prosemirror-model';
 
 const isBlockNode = (node: JSONNode, schema?: Schema): boolean => {

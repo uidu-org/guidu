@@ -1,8 +1,8 @@
 import { WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
-import { ToolbarSize } from '../../components/Toolbar';
-import WithPluginState from '../../components/WithPluginState';
 import { EditorPlugin } from '../../types';
+import { ToolbarSize } from '../../ui/Toolbar';
+import WithPluginState from '../../ui/WithPluginState';
 import { INPUT_METHOD } from '../analytics';
 import { insertBlockTypesWithAnalytics } from '../block-type/commands';
 import {
@@ -10,6 +10,7 @@ import {
   pluginKey as blockTypeStateKey,
 } from '../block-type/pm-plugins/main';
 import { DateState, pluginKey as dateStateKey } from '../date/plugin';
+import { emojiPluginKey, EmojiPluginState } from '../emoji';
 import {
   HyperlinkState,
   stateKey as hyperlinkPluginKey,
@@ -70,6 +71,8 @@ function handleInsertBlockType(name: string) {
 }
 
 const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
+  name: 'insertBlock',
+
   primaryToolbarComponent({
     editorView,
     editorActions,
@@ -93,6 +96,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             mentionState: mentionPluginKey,
             macroState: macroStateKey,
             hyperlinkState: hyperlinkPluginKey,
+            emojiState: emojiPluginKey,
             dateState: dateStateKey,
             imageUpload: imageUploadStateKey,
             placeholderTextState: placeholderTextStateKey,
@@ -105,6 +109,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             mediaState,
             macroState = {} as MacroState,
             hyperlinkState,
+            emojiState,
             dateState,
             imageUpload,
             placeholderTextState,
@@ -117,6 +122,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             tablesState: TablePluginState | undefined;
             macroState: MacroState | undefined;
             hyperlinkState: HyperlinkState | undefined;
+            emojiState: EmojiPluginState | undefined;
             dateState: DateState | undefined;
             imageUpload: ImageUploadPluginState | undefined;
             placeholderTextState: PlaceholderPluginState | undefined;
@@ -155,6 +161,8 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
                 !hyperlinkState.canInsertLink ||
                 !!hyperlinkState.activeLinkMark
               }
+              emojiDisabled={!emojiState || !emojiState.emojiProvider}
+              emojiProvider={providers.emojiProvider}
               nativeStatusSupported={options.nativeStatusSupported}
               horizontalRuleEnabled={options.horizontalRuleEnabled}
               onInsertBlockType={handleInsertBlockType}
@@ -175,7 +183,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
     return (
       <WithProviders
         providerFactory={providerFactory}
-        providers={[]}
+        providers={['emojiProvider']}
         renderNode={renderNode}
       />
     );

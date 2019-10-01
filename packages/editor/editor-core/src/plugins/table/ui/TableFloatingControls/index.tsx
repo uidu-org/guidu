@@ -4,6 +4,7 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
 import { hoverRows, selectRow } from '../../commands';
+import { TableColumnOrdering } from '../../types';
 import { isSelectionUpdated } from '../../utils';
 import CornerControls from './CornerControls';
 import NumberColumn from './NumberColumn';
@@ -22,6 +23,7 @@ export interface Props {
   hasHeaderRow?: boolean;
   tableHeight?: number;
   hoveredRows?: number[];
+  ordering?: TableColumnOrdering;
 }
 
 export default class TableFloatingControls extends Component<Props> {
@@ -37,8 +39,11 @@ export default class TableFloatingControls extends Component<Props> {
       tableHeight,
       tableActive,
       isHeaderColumnEnabled,
+      ordering,
     } = this.props;
+
     return (
+      ordering !== nextProps.ordering ||
       tableRef !== nextProps.tableRef ||
       tableHeight !== nextProps.tableHeight ||
       tableActive !== nextProps.tableActive ||

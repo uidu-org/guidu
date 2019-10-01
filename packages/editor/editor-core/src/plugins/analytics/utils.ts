@@ -1,10 +1,10 @@
-import { editorAnalyticsChannel } from './index';
-import { CreateUIAnalyticsEvent } from '@atlaskit/analytics-next';
-import { AnalyticsEventPayload } from './types';
-import { Transaction, EditorState } from 'prosemirror-state';
+import { CreateUIAnalyticsEvent } from '@uidu/analytics';
+import { EditorState, Transaction } from 'prosemirror-state';
 import { Command } from '../../types';
 import { InputRuleWithHandler } from '../../utils/input-rules';
+import { editorAnalyticsChannel } from './index';
 import { analyticsPluginKey } from './plugin';
+import { AnalyticsEventPayload } from './types';
 
 export type DispatchAnalyticsEvent = (payload: AnalyticsEventPayload) => void;
 export type HigherOrderCommand = (command: Command) => Command;

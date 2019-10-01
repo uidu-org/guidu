@@ -2,21 +2,24 @@
 import { Selection } from 'prosemirror-state';
 import { TableMap } from 'prosemirror-tables';
 import {
-  findTable,
   addColumnAt,
   addRowAt,
-  safeInsert,
   createTable as createTableNode,
+  findTable,
+  safeInsert,
 } from 'prosemirror-utils';
-import { getPluginState } from '../pm-plugins/main';
-import { checkIfHeaderRowEnabled } from '../utils';
 import { Command } from '../../../types';
+import { getPluginState } from '../pm-plugins/main';
+import { checkIfHeaderRowEnabled, copyPreviousRow } from '../utils';
 // #endregion
 
 // #region Commands
 export const insertColumn = (column: number): Command => (state, dispatch) => {
   const tr = addColumnAt(column)(state.tr);
-  const table = findTable(tr.selection)!;
+  const table = findTable(tr.selection);
+  if (!table) {
+    return false;
+  }
   // move the cursor to the newly created column
   const pos = TableMap.get(table.node).positionAt(0, column, table.node);
   if (dispatch) {
@@ -31,11 +34,16 @@ export const insertRow = (row: number): Command => (state, dispatch) => {
   // Don't clone the header row
   const headerRowEnabled = checkIfHeaderRowEnabled(state);
   const clonePreviousRow =
-    (headerRowEnabled && row > 1) || (!headerRowEnabled && row >= 0);
+    (headerRowEnabled && row > 1) || (!headerRowEnabled && row > 0);
 
-  const tr = addRowAt(row, clonePreviousRow)(state.tr);
+  const tr = clonePreviousRow
+    ? copyPreviousRow(state.schema)(row)(state.tr)
+    : addRowAt(row)(state.tr);
 
-  const table = findTable(tr.selection)!;
+  const table = findTable(tr.selection);
+  if (!table) {
+    return false;
+  }
   // move the cursor to the newly created row
   const pos = TableMap.get(table.node).positionAt(row, 0, table.node);
 

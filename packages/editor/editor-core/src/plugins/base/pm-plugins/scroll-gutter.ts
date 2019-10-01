@@ -1,32 +1,103 @@
-import { Plugin } from 'prosemirror-state';
+import { EditorState, Plugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 
 export const GUTTER_SIZE_IN_PX = 120; // Gutter size
+export const GUTTER_SELECTOR = '#editor-scroll-gutter';
+const MIN_TAP_SIZE_IN_PX = 40;
+
+function supportsIntersectionObserver() {
+  if (
+    typeof window !== 'undefined' &&
+    'IntersectionObserver' in window &&
+    'IntersectionObserverEntry' in window &&
+    'intersectionRatio' in (window as any).IntersectionObserverEntry.prototype
+  ) {
+    return true;
+  }
+  return false;
+}
+
+function listenForGutterVisibilityChanges(
+  scrollElement: HTMLElement,
+  gutterIsVisible: (visible: boolean) => void,
+): IntersectionObserver | undefined {
+  if (supportsIntersectionObserver()) {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[], _: IntersectionObserver) => {
+        entries.forEach(entry => {
+          gutterIsVisible(entry.intersectionRatio > 0);
+        });
+      },
+      {
+        root: scrollElement,
+        rootMargin: '0px',
+        threshold: 0,
+      },
+    );
+    return observer;
+  }
+  return undefined;
+}
 
 /**
- * Create a gutter that can be added or removed it from the dom
+ * Create a gutter element that can be added or removed from the DOM.
  */
 function createGutter() {
-  const $gutter = document.createElement('div');
-  $gutter.style.paddingBottom = `${GUTTER_SIZE_IN_PX}px`;
+  const gutter = document.createElement('div');
+  gutter.style.paddingBottom = `${GUTTER_SIZE_IN_PX}px`;
+  gutter.id = GUTTER_SELECTOR.substr(1);
+
+  let initialized = false;
   let mounted = false;
   let currentParent: HTMLElement | null = null;
+
+  let observer: IntersectionObserver | undefined;
+
+  let isVisible = false;
   return {
     addGutter(parent: HTMLElement) {
       if (parent) {
         currentParent = parent;
-        parent.appendChild($gutter);
+        parent.appendChild(gutter);
         mounted = true;
+        if (observer) {
+          observer.observe(gutter);
+        }
       }
     },
     removeGutter() {
       if (currentParent && mounted) {
         mounted = false;
-        currentParent.removeChild($gutter);
+        currentParent.removeChild(gutter);
+        if (observer) observer.unobserve(gutter);
       }
+    },
+    element() {
+      return gutter;
     },
     isMounted() {
       return mounted;
+    },
+    visible() {
+      // If we know whether it's visible we can avoid expensive calculations
+      if (observer) return isVisible;
+      // Fallback for legacy browsers assumes it's visible (if mounted)
+      return mounted;
+    },
+    observe(scrollElement: HTMLElement) {
+      if (!initialized) {
+        initialized = true;
+        observer = listenForGutterVisibilityChanges(
+          scrollElement,
+          (visible: boolean) => (isVisible = visible),
+        );
+      }
+    },
+    destroy() {
+      if (observer) observer.disconnect();
+      observer = undefined;
+      this.removeGutter();
+      initialized = mounted = false;
     },
   };
 }
@@ -56,89 +127,100 @@ function getCaretTopPosition(): number | undefined {
   return undefined;
 }
 
-export default () => {
+function scrollToGutterElement(
+  scrollContainer: HTMLElement,
+  gutterElement: HTMLElement,
+): boolean {
+  const viewportHeight = scrollContainer.offsetHeight;
+  const viewportOffsetY = scrollContainer.getBoundingClientRect().top;
+
+  const caretTopPosition = getCaretTopPosition();
+  if (!caretTopPosition) return false;
+
+  const caretTopFromContainer = caretTopPosition - viewportOffsetY;
+  const gutterThresholdTop =
+    viewportHeight - GUTTER_SIZE_IN_PX - MIN_TAP_SIZE_IN_PX * 2;
+
+  if (caretTopFromContainer < gutterThresholdTop) {
+    return false;
+  }
+
+  // Clamp the scroll position to above the scroll gutter element.
+  gutterElement.scrollIntoView(false);
+
+  // Mark scrolling as handled so that other plugin's don't override our position.
+  return true;
+}
+
+export default (
+  getScrollElement: ((view: EditorView) => HTMLElement | null) | undefined,
+) => {
+  if (!getScrollElement) return undefined;
+
   const gutter = createGutter();
+  let scrollElement: HTMLElement | null = null; // | undefined;
 
   return new Plugin({
+    props: {
+      // Determines the distance (in pixels) between the cursor and the end of the visible viewport at which point,
+      // when scrolling the cursor into view, scrolling takes place.
+      // Defaults to 0: https://prosemirror.net/docs/ref/#view.EditorProps.scrollThreshold
+      scrollThreshold: GUTTER_SIZE_IN_PX / 2,
+      // Determines the extra space (in pixels) that is left above or below the cursor when it is scrolled into view.
+      // Defaults to 5: https://prosemirror.net/docs/ref/#view.EditorProps.scrollMargin
+      scrollMargin: GUTTER_SIZE_IN_PX,
+      // Called when the view, after updating its state, tries to scroll the selection into view
+      // https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection
+      handleScrollToSelection: (): boolean => {
+        if (!gutter.isMounted() || !gutter.visible() || !scrollElement) {
+          // Avoid scrolling until applicable
+          return false;
+        }
+        return scrollToGutterElement(scrollElement, gutter.element());
+      },
+    },
     view(view: EditorView) {
-      let currentCaretPosition: number | undefined;
+      // Store references to avoid lookups on successive checks.
+      scrollElement = getScrollElement(view);
+      let editorElement: HTMLElement | null = view.dom as HTMLElement;
+      let editorParentElement = editorElement.parentElement;
+
       return {
-        update() {
-          if (!view.state.selection.empty) {
-            return undefined; // We dont handle selection
+        destroy() {
+          // Remove if it's mounted
+          gutter.destroy();
+          scrollElement = editorParentElement = editorElement = null;
+        },
+        /**
+         * Toggle the Scroll Gutter Element
+         */
+        update(view: EditorView, prevState: EditorState) {
+          if (!scrollElement || !editorParentElement) return;
+
+          const state = view.state;
+          if (prevState.selection === state.selection) {
+            // No need to recheck if the selected node hasn't changed.
+            return;
           }
 
-          const { dom: editorRootDom } = view;
-          const scrollContainer = (editorRootDom as HTMLElement)
-            .offsetParent as HTMLElement;
+          // Determine whether we need to add/remove the gutter element
+          const gutterMounted = gutter.isMounted();
+          const viewportHeight = scrollElement.offsetHeight;
+          const contentHeight =
+            editorParentElement.offsetHeight -
+            (gutterMounted ? GUTTER_SIZE_IN_PX : 0);
 
-          if (scrollContainer) {
-            const {
-              scrollTop: scrollContainerTop,
-              offsetHeight: scrollContainerOffsetHeight,
-            } = scrollContainer;
-
-            const {
-              top: scrollContainerTopPosition,
-            } = scrollContainer.getBoundingClientRect();
-
-            // Check if the content is higher enough, if not return
-            const {
-              height: editorRootHeight,
-            } = editorRootDom.getBoundingClientRect();
-
-            // We need to check if the current editor has enough content, if we dont do this we well force a scroll on a empty document.
-            const currentContentIsHigherEnough =
-              editorRootHeight + GUTTER_SIZE_IN_PX >=
-              scrollContainerOffsetHeight;
-
-            if (!currentContentIsHigherEnough) {
-              gutter.removeGutter();
-              return undefined;
+          // Add or remove the gutter based on whether the content is about to exceed the viewport height.
+          // We do this to ensure there is sufficient white space below the last content node in order to
+          // see any UI control elements which may sit beneath it.
+          const gutterThresholdHeight = viewportHeight - GUTTER_SIZE_IN_PX;
+          if (contentHeight >= gutterThresholdHeight) {
+            if (!gutterMounted) {
+              gutter.observe(scrollElement);
+              gutter.addGutter(editorParentElement);
             }
-
-            // Check if cursor position
-            const lastCaretPosition = currentCaretPosition;
-            const caretTopPosition = getCaretTopPosition();
-            if (!caretTopPosition) {
-              return undefined;
-            }
-
-            currentCaretPosition = caretTopPosition + scrollContainerTop;
-
-            // If I dont have caret position cannot detect right behavior
-            if (!lastCaretPosition || !currentCaretPosition) {
-              return undefined;
-            }
-
-            // If last caret position is higher that current, means that is going upward, so we do nothing
-            if (lastCaretPosition >= currentCaretPosition) {
-              return undefined;
-            }
-
-            const caretTopFromContainer =
-              caretTopPosition - scrollContainerTopPosition;
-
-            // Check if scroll is in the right position,
-            // Caret position should be between end of the page and expected gutter
-            const scrollIsInValidRange =
-              scrollContainerOffsetHeight <=
-                caretTopFromContainer + GUTTER_SIZE_IN_PX &&
-              scrollContainerOffsetHeight > caretTopFromContainer;
-            if (!scrollIsInValidRange) {
-              return undefined;
-            }
-
-            if (!gutter.isMounted()) {
-              gutter.addGutter(editorRootDom.parentElement!);
-            }
-
-            // If I reach here is because I should scroll to expected position from caret
-            scrollContainer.scrollTop =
-              scrollContainerTop +
-              GUTTER_SIZE_IN_PX -
-              scrollContainerOffsetHeight +
-              caretTopFromContainer;
+          } else {
+            if (gutterMounted) gutter.removeGutter();
           }
         },
       };

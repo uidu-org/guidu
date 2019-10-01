@@ -10,6 +10,7 @@ import {
   ACTION_SUBJECT_ID,
   EVENT_TYPE,
   INPUT_METHOD,
+  PANEL_TYPE,
   withAnalytics,
 } from '../../analytics';
 import {
@@ -184,6 +185,7 @@ export function insertBlockType(name: string): Command {
     return false;
   };
 }
+
 export const insertBlockTypesWithAnalytics = (
   name: string,
   inputMethod: INPUT_METHOD.TOOLBAR | INPUT_METHOD.KEYBOARD,
@@ -199,9 +201,25 @@ export const insertBlockTypesWithAnalytics = (
           inputMethod,
         },
       })(insertBlockType(name));
-    // Dont add analytics to other blocks
     case CODE_BLOCK.name:
+      return withAnalytics({
+        action: ACTION.INSERTED,
+        actionSubject: ACTION_SUBJECT.DOCUMENT,
+        actionSubjectId: ACTION_SUBJECT_ID.CODE_BLOCK,
+        attributes: { inputMethod: inputMethod as INPUT_METHOD.TOOLBAR },
+        eventType: EVENT_TYPE.TRACK,
+      })(insertBlockType(name));
     case PANEL.name:
+      return withAnalytics({
+        action: ACTION.INSERTED,
+        actionSubject: ACTION_SUBJECT.DOCUMENT,
+        actionSubjectId: ACTION_SUBJECT_ID.PANEL,
+        attributes: {
+          inputMethod: inputMethod as INPUT_METHOD.TOOLBAR,
+          panelType: PANEL_TYPE.INFO, // only info panels can be inserted from toolbar
+        },
+        eventType: EVENT_TYPE.TRACK,
+      })(insertBlockType(name));
     default:
       return insertBlockType(name);
   }

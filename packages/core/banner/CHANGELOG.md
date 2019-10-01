@@ -1,4 +1,4 @@
-# @atlaskit/banner
+# @uidu/banner
 
 ## 10.1.0
 
@@ -82,9 +82,9 @@
 ## 10.0.4
 
 - Updated dependencies [06326ef3f7](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/06326ef3f7):
-  - @atlaskit/docs@8.1.3
-  - @atlaskit/button@13.0.9
-  - @atlaskit/icon@19.0.0
+  - @uidu/docs@8.1.3
+  - @uidu/button@13.0.9
+  - @uidu/icon@19.0.0
 
 ## 10.0.3
 
@@ -97,9 +97,9 @@
 ## 10.0.2
 
 - Updated dependencies [cfc3c8adb3](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cfc3c8adb3):
-  - @atlaskit/docs@8.1.2
-  - @atlaskit/button@13.0.8
-  - @atlaskit/icon@18.0.0
+  - @uidu/docs@8.1.2
+  - @uidu/button@13.0.8
+  - @uidu/icon@18.0.0
 
 ## 10.0.1
 
@@ -122,18 +122,18 @@
 ## 9.0.2
 
 - Updated dependencies [9c0b4744be](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9c0b4744be):
-  - @atlaskit/docs@7.0.3
-  - @atlaskit/button@12.0.3
-  - @atlaskit/icon@16.0.9
-  - @atlaskit/theme@8.1.7
+  - @uidu/docs@7.0.3
+  - @uidu/button@12.0.3
+  - @uidu/icon@16.0.9
+  - @uidu/theme@8.1.7
 
 ## 9.0.1
 
 - Updated dependencies [1e826b2966](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e826b2966):
-  - @atlaskit/docs@7.0.2
-  - @atlaskit/icon@16.0.8
-  - @atlaskit/theme@8.1.6
-  - @atlaskit/button@12.0.0
+  - @uidu/docs@7.0.2
+  - @uidu/icon@16.0.8
+  - @uidu/theme@8.1.6
+  - @uidu/button@12.0.0
 
 ## 9.0.0
 
@@ -150,10 +150,10 @@
 ## 8.0.1
 
 - Updated dependencies [9d5cc39394](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9d5cc39394):
-  - @atlaskit/docs@7.0.1
-  - @atlaskit/icon@16.0.5
-  - @atlaskit/theme@8.0.1
-  - @atlaskit/button@11.0.0
+  - @uidu/docs@7.0.1
+  - @uidu/icon@16.0.5
+  - @uidu/theme@8.0.1
+  - @uidu/button@11.0.0
 
 ## 8.0.0
 
@@ -169,13 +169,13 @@
   The major reason for doing this is to allow us to support multiple entry points in packages, e.g:
 
   ```js
-  import colors from `@atlaskit/theme/colors`;
+  import { colors } from `@uidu/theme`;
   ```
 
   Previously this was sort of possible for consumers by doing something like:
 
   ```js
-  import colors from `@atlaskit/theme/dist/esm/colors`;
+  import colors from `@uidu/theme/dist/esm/colors`;
   ```
 
   This has a couple of issues. 1, it treats the file system as API making internal refactors harder, we have to worry about how consumers might be using things that aren't _actually_ supposed to be used. 2. We are unable to do this _internally_ in @atlaskit packages. This leads to lots of packages bundling all of theme, just to use a single color, especially in situations where tree shaking fails.
@@ -191,40 +191,40 @@
 ## 7.0.13
 
 - Updated dependencies [d7ef59d432](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d7ef59d432):
-  - @atlaskit/docs@6.0.1
-  - @atlaskit/button@10.1.2
-  - @atlaskit/icon@16.0.0
+  - @uidu/docs@6.0.1
+  - @uidu/button@10.1.2
+  - @uidu/icon@16.0.0
 
 ## 7.0.12
 
 - Updated dependencies [58b84fa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/58b84fa):
-  - @atlaskit/button@10.1.1
-  - @atlaskit/icon@15.0.2
-  - @atlaskit/theme@7.0.1
-  - @atlaskit/docs@6.0.0
+  - @uidu/button@10.1.1
+  - @uidu/icon@15.0.2
+  - @uidu/theme@7.0.1
+  - @uidu/docs@6.0.0
 
 ## 7.0.11
 
 - Updated dependencies [d13242d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d13242d):
-  - @atlaskit/docs@5.2.3
-  - @atlaskit/button@10.0.4
-  - @atlaskit/icon@15.0.1
-  - @atlaskit/theme@7.0.0
+  - @uidu/docs@5.2.3
+  - @uidu/button@10.0.4
+  - @uidu/icon@15.0.1
+  - @uidu/theme@7.0.0
 
 ## 7.0.10
 
 - Updated dependencies [ab9b69c](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/ab9b69c):
-  - @atlaskit/docs@5.2.2
-  - @atlaskit/button@10.0.1
-  - @atlaskit/icon@15.0.0
+  - @uidu/docs@5.2.2
+  - @uidu/button@10.0.1
+  - @uidu/icon@15.0.0
 
 ## 7.0.9
 
 - Updated dependencies [6998f11](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/6998f11):
-  - @atlaskit/docs@5.2.1
-  - @atlaskit/icon@14.6.1
-  - @atlaskit/theme@6.2.1
-  - @atlaskit/button@10.0.0
+  - @uidu/docs@5.2.1
+  - @uidu/icon@14.6.1
+  - @uidu/theme@6.2.1
+  - @uidu/button@10.0.0
 
 ## 7.0.8
 
@@ -233,9 +233,9 @@
 ## 7.0.7
 
 - [patch] Updated dependencies [65c6514](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/65c6514)
-  - @atlaskit/docs@5.0.8
-  - @atlaskit/button@9.0.13
-  - @atlaskit/icon@14.0.0
+  - @uidu/docs@5.0.8
+  - @uidu/button@9.0.13
+  - @uidu/icon@14.0.0
 
 ## 7.0.6
 
@@ -244,96 +244,96 @@
 ## 7.0.4
 
 - [patch] Updated dependencies [df22ad8](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/df22ad8)
-  - @atlaskit/theme@6.0.0
-  - @atlaskit/icon@13.2.5
-  - @atlaskit/button@9.0.6
-  - @atlaskit/docs@5.0.6
+  - @uidu/theme@6.0.0
+  - @uidu/icon@13.2.5
+  - @uidu/button@9.0.6
+  - @uidu/docs@5.0.6
 
 ## 7.0.3
 
 - [patch] update the dependency of react-dom to 16.4.2 due to vulnerability in previous versions read https://reactjs.org/blog/2018/08/01/react-v-16-4-2.html for details [a4bd557](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a4bd557)
 - [none] Updated dependencies [a4bd557](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/a4bd557)
-  - @atlaskit/button@9.0.5
-  - @atlaskit/theme@5.1.3
-  - @atlaskit/icon@13.2.4
+  - @uidu/button@9.0.5
+  - @uidu/theme@5.1.3
+  - @uidu/icon@13.2.4
 
 ## 6.1.0
 
 ## 7.0.2
 
 - [patch] Updated dependencies [acd86a1](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/acd86a1)
-  - @atlaskit/icon@13.2.2
-  - @atlaskit/button@9.0.4
-  - @atlaskit/theme@5.1.2
-  - @atlaskit/docs@5.0.2
+  - @uidu/icon@13.2.2
+  - @uidu/button@9.0.4
+  - @uidu/theme@5.1.2
+  - @uidu/docs@5.0.2
 
 ## 7.0.1
 
 - [patch] Add a SSR test for every package, add react-dom and build-utils in devDependencies [7e331b5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7e331b5)
 - [none] Updated dependencies [7e331b5](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7e331b5)
-  - @atlaskit/button@9.0.3
-  - @atlaskit/theme@5.1.1
-  - @atlaskit/icon@13.2.1
+  - @uidu/button@9.0.3
+  - @uidu/theme@5.1.1
+  - @uidu/icon@13.2.1
 
 ## 7.0.0
 
 - [major] Updates to React ^16.4.0 [7edb866](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7edb866)
 - [major] Updated dependencies [563a7eb](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/563a7eb)
-  - @atlaskit/button@9.0.0
-  - @atlaskit/theme@5.0.0
-  - @atlaskit/docs@5.0.0
-  - @atlaskit/icon@13.0.0
+  - @uidu/button@9.0.0
+  - @uidu/theme@5.0.0
+  - @uidu/docs@5.0.0
+  - @uidu/icon@13.0.0
 - [major] Updated dependencies [7edb866](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/7edb866)
-  - @atlaskit/button@9.0.0
-  - @atlaskit/theme@5.0.0
-  - @atlaskit/docs@5.0.0
-  - @atlaskit/icon@13.0.0
+  - @uidu/button@9.0.0
+  - @uidu/theme@5.0.0
+  - @uidu/docs@5.0.0
+  - @uidu/icon@13.0.0
 
 ## 6.1.3
 
 - [patch] Remove or update \$FlowFixMe [e8ad98a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e8ad98a)
 - [none] Updated dependencies [e8ad98a](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/e8ad98a)
-  - @atlaskit/button@8.2.4
-  - @atlaskit/icon@12.6.1
+  - @uidu/button@8.2.4
+  - @uidu/icon@12.6.1
 
 ## 6.1.2
 
 - [patch] Fix \$FlowFixMe and release packages [25d0b2d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/25d0b2d)
 - [none] Updated dependencies [25d0b2d](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/25d0b2d)
-  - @atlaskit/button@8.2.2
-  - @atlaskit/icon@12.3.1
+  - @uidu/button@8.2.2
+  - @uidu/icon@12.3.1
 
 ## 6.1.1
 
 - [patch] Update changelogs to remove duplicate [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
 - [none] Updated dependencies [cc58e17](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/cc58e17)
-  - @atlaskit/theme@4.0.3
-  - @atlaskit/icon@12.1.1
-  - @atlaskit/button@8.1.1
-  - @atlaskit/docs@4.1.1
+  - @uidu/theme@4.0.3
+  - @uidu/icon@12.1.1
+  - @uidu/button@8.1.1
+  - @uidu/docs@4.1.1
 - [none] Updated dependencies [9d20f54](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/9d20f54)
-  - @atlaskit/icon@12.1.0
-  - @atlaskit/docs@4.1.0
-  - @atlaskit/theme@4.0.2
-  - @atlaskit/button@8.1.0
+  - @uidu/icon@12.1.0
+  - @uidu/docs@4.1.0
+  - @uidu/theme@4.0.2
+  - @uidu/button@8.1.0
 
 ## 6.0.1
 
 - [patch] Update readme's [223cd67](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/223cd67)
 - [patch] Updated dependencies [223cd67](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/223cd67)
-  - @atlaskit/icon@12.0.1
-  - @atlaskit/button@8.0.1
-  - @atlaskit/theme@4.0.1
-  - @atlaskit/docs@4.0.1
+  - @uidu/icon@12.0.1
+  - @uidu/button@8.0.1
+  - @uidu/theme@4.0.1
+  - @uidu/docs@4.0.1
 
 ## 6.0.0
 
 - [major] makes styled-components a peer dependency and upgrades version range from 1.4.6 - 3 to ^3.2.6 [1e80619](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e80619)
 - [patch] Updated dependencies [1e80619](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1e80619)
-  - @atlaskit/icon@12.0.0
-  - @atlaskit/button@8.0.0
-  - @atlaskit/theme@4.0.0
-  - @atlaskit/docs@4.0.0
+  - @uidu/icon@12.0.0
+  - @uidu/button@8.0.0
+  - @uidu/theme@4.0.0
+  - @uidu/docs@4.0.0
 
 ## 5.0.3
 
@@ -342,10 +342,10 @@
 ## 5.0.2
 
 - [patch] Updated dependencies [d662caa](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/d662caa)
-  - @atlaskit/icon@11.3.0
-  - @atlaskit/button@7.2.5
-  - @atlaskit/theme@3.2.2
-  - @atlaskit/docs@3.0.4
+  - @uidu/icon@11.3.0
+  - @uidu/button@7.2.5
+  - @uidu/theme@3.2.2
+  - @uidu/docs@3.0.4
 
 ## 5.0.0
 
@@ -409,14 +409,14 @@
 - breaking; affects internal styled-components implementation ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
 - breaking; implement dark mode theme ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
 - feature; dark mode for Banner, plus loads of cleanup in docs/stories ([3f03b9a](https://bitbucket.org/atlassian/atlaskit/commits/3f03b9a))
-- bug fix; remove ak-icon and update @atlaskit/icon to latest in package.json ([8018cf0](https://bitbucket.org/atlassian/atlaskit/commits/8018cf0))
+- bug fix; remove ak-icon and update @uidu/icon to latest in package.json ([8018cf0](https://bitbucket.org/atlassian/atlaskit/commits/8018cf0))
 
 ## 3.0.0 (2017-08-11)
 
 - breaking; affects internal styled-components implementation ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
 - breaking; implement dark mode theme ([d14522a](https://bitbucket.org/atlassian/atlaskit/commits/d14522a))
 - feature; dark mode for Banner, plus loads of cleanup in docs/stories ([3f03b9a](https://bitbucket.org/atlassian/atlaskit/commits/3f03b9a))
-- bug fix; remove ak-icon and update @atlaskit/icon to latest in package.json ([8018cf0](https://bitbucket.org/atlassian/atlaskit/commits/8018cf0))
+- bug fix; remove ak-icon and update @uidu/icon to latest in package.json ([8018cf0](https://bitbucket.org/atlassian/atlaskit/commits/8018cf0))
 
 ## 2.4.2 (2017-07-27)
 

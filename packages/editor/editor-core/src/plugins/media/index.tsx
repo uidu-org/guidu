@@ -1,12 +1,12 @@
-import { media, mediaGroup, mediaSingle } from '@atlaskit/adf-schema';
+import { media, mediaGroup, mediaSingle } from '@uidu/adf-schema';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import WithPluginState from '../../components/WithPluginState';
 import {
   EditorAppearance,
   EditorPlugin,
   PMPluginFactoryParams,
 } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -57,6 +57,8 @@ const mediaPlugin = (
   options?: MediaOptions,
   appearance?: EditorAppearance,
 ): EditorPlugin => ({
+  name: 'media',
+
   nodes() {
     return [
       { name: 'mediaGroup', node: mediaGroup },

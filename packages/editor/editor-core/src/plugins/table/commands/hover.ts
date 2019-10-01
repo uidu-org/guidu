@@ -2,11 +2,13 @@
 import { TableMap } from 'prosemirror-tables';
 import { findTable, getCellsInColumn, getCellsInRow } from 'prosemirror-utils';
 import { createCommand } from '../pm-plugins/main';
+import { Cell, TableDecorations } from '../types';
 import {
-  updatePluginStateDecorations,
+  createCellHoverDecoration,
   createControlsHoverDecoration,
+  getMergedCellsPositions,
+  updatePluginStateDecorations,
 } from '../utils';
-import { TableDecorations } from '../types';
 // #endregion
 
 // #region Utils
@@ -14,6 +16,40 @@ const makeArray = (n: number) => Array.from(Array(n).keys());
 // #endregion
 
 // #region Commands
+export const hoverMergedCells = () =>
+  createCommand(
+    state => {
+      const mergedCellsPositions = getMergedCellsPositions(state.tr);
+      if (!mergedCellsPositions.length) {
+        return false;
+      }
+      const table = findTable(state.tr.selection);
+      if (!table) {
+        return false;
+      }
+
+      const mergedCells: Cell[] = mergedCellsPositions.map(pos => ({
+        pos: pos + table.start,
+        start: pos + table.start + 1,
+        node: table.node.nodeAt(pos)!,
+      }));
+
+      const decorations = createCellHoverDecoration(mergedCells, 'warning');
+
+      return {
+        type: 'HOVER_CELLS',
+        data: {
+          decorationSet: updatePluginStateDecorations(
+            state,
+            decorations,
+            TableDecorations.CELL_CONTROLS_HOVER,
+          ),
+        },
+      };
+    },
+    tr => tr.setMeta('addToHistory', false),
+  );
+
 export const hoverColumns = (hoveredColumns: number[], isInDanger?: boolean) =>
   createCommand(
     state => {

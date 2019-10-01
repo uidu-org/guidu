@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { Input } from '../../../components/PanelTextInput/styles';
+import { Input } from '../../../ui/PanelTextInput/styles';
 
 export interface Props {
   mountPoint?: HTMLElement;

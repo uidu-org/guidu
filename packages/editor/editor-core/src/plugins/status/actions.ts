@@ -1,4 +1,4 @@
-import { uuid } from '@atlaskit/adf-schema';
+import { uuid } from '@uidu/adf-schema';
 import { Fragment } from 'prosemirror-model';
 import {
   EditorState,
@@ -7,6 +7,15 @@ import {
   Transaction,
 } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
+import { Command } from '../../types';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  EVENT_TYPE,
+  withAnalytics,
+} from '../analytics';
+import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock';
 import { pluginKey, StatusType } from './plugin';
 
 export const DEFAULT_STATUS: StatusType = {
@@ -33,10 +42,10 @@ export const createStatus = (showStatusPickerAtOffset = -2) => (
     });
 };
 
-export const updateStatus = (status?: StatusType) => (
-  editorView: EditorView,
-): boolean => {
-  const { state, dispatch } = editorView;
+export const updateStatus = (status?: StatusType): Command => (
+  state,
+  dispatch,
+) => {
   const { schema } = state;
 
   const selectedStatus = status
@@ -68,7 +77,9 @@ export const updateStatus = (status?: StatusType) => (
         isNew: true,
       })
       .scrollIntoView();
-    dispatch(tr);
+    if (dispatch) {
+      dispatch(tr);
+    }
     return true;
   }
 
@@ -77,12 +88,26 @@ export const updateStatus = (status?: StatusType) => (
     tr = tr.setSelection(NodeSelection.create(tr.doc, showStatusPickerAt));
     tr = tr.setMeta(pluginKey, { showStatusPickerAt }).scrollIntoView();
 
-    dispatch(tr);
+    if (dispatch) {
+      dispatch(tr);
+    }
     return true;
   }
 
   return false;
 };
+
+export const updateStatusWithAnalytics = (
+  inputMethod: TOOLBAR_MENU_TYPE,
+  status?: StatusType,
+): Command =>
+  withAnalytics({
+    action: ACTION.INSERTED,
+    actionSubject: ACTION_SUBJECT.DOCUMENT,
+    actionSubjectId: ACTION_SUBJECT_ID.STATUS,
+    attributes: { inputMethod },
+    eventType: EVENT_TYPE.TRACK,
+  })(updateStatus(status));
 
 export const setStatusPickerAt = (showStatusPickerAt: number | null) => (
   state: EditorState,

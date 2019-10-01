@@ -19,7 +19,7 @@
     "@uidu/field-text": "^0.1.20",
     "@uidu/form": "^0.1.36",
     "@uidu/theme": "^0.1.17",
-    "react-simple-timefield": "^2.0.1"
+    "react-simple-timefield": "^3.0.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.45",

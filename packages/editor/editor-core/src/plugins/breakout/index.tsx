@@ -1,13 +1,13 @@
-import { breakout } from '@atlaskit/adf-schema';
+import { breakout } from '@uidu/adf-schema';
 import { calcBreakoutWidth } from '@uidu/editor-common';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { findParentNode } from 'prosemirror-utils';
 import * as React from 'react';
 import styled from 'styled-components';
-import WithPluginState from '../../components/WithPluginState';
 import { ReactNodeView } from '../../nodeviews';
 import { ForwardRef } from '../../nodeviews/ReactNodeView';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
+import WithPluginState from '../../ui/WithPluginState';
 import { pluginKey as widthPluginKey, WidthPluginState } from '../width';
 import { BreakoutCssClassName } from './constants';
 import LayoutButton from './ui/LayoutButton';
@@ -99,7 +99,13 @@ function createPlugin({
   });
 }
 
-const breakoutPlugin = (): EditorPlugin => ({
+interface BreakoutPluginOptions {
+  allowBreakoutButton?: boolean;
+}
+
+const breakoutPlugin = (options?: BreakoutPluginOptions): EditorPlugin => ({
+  name: 'breakout',
+
   pmPlugins() {
     return [{ name: 'breakout', plugin: createPlugin }];
   },
@@ -109,12 +115,12 @@ const breakoutPlugin = (): EditorPlugin => ({
 
   contentComponent({
     editorView,
-    appearance,
     popupsMountPoint,
     popupsBoundariesElement,
     popupsScrollableElement,
   }) {
-    if (appearance !== 'full-page') {
+    // This is a bit crappy, but should be resolved once we move to a static schema.
+    if (options && !options.allowBreakoutButton) {
       return null;
     }
 

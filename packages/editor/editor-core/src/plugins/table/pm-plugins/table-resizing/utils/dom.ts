@@ -1,16 +1,11 @@
-import {
-  akEditorTableToolbarSize,
-  tableResizeHandleWidth,
-} from '@uidu/editor-common';
 import { EditorState } from 'prosemirror-state';
 import { TableMap } from 'prosemirror-tables';
-import { findDomRefAtPos } from 'prosemirror-utils';
+import { getCellsInRow } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { closestElement } from '../../../../../utils';
+import { closestElement, containsClassName } from '../../../../../utils';
 import { updateOverflowShadows } from '../../../nodeviews/TableComponent';
 import { TableCssClassName as ClassName } from '../../../types';
 import { getPluginState as getMainPluginState } from '../../main';
-import { domCellAround, edgeCell, pointsAtCell } from './misc';
 
 function getHeights(
   children: NodeListOf<HTMLElement>,
@@ -86,99 +81,34 @@ export const isClickNear = (
   return dx * dx + dy * dy < 100;
 };
 
-export const createResizeHandle = (
-  tableRef: HTMLTableElement,
-): HTMLDivElement | null => {
-  const resizeHandleRef = document.createElement('div');
-  resizeHandleRef.className = ClassName.COLUMN_RESIZE_HANDLE;
-  tableRef.parentNode!.appendChild(resizeHandleRef);
-
-  const tableActive = closestElement(tableRef, `.${ClassName.WITH_CONTROLS}`);
-  const style = {
-    height: `${
-      tableActive
-        ? tableRef.offsetHeight + akEditorTableToolbarSize
-        : tableRef.offsetHeight
-    }px`,
-    top: `${
-      tableActive
-        ? tableRef.offsetTop - akEditorTableToolbarSize
-        : tableRef.offsetTop
-    }px`,
-  };
-
-  resizeHandleRef.style.top = style.top;
-  resizeHandleRef.style.height = style.height;
-
-  return resizeHandleRef;
-};
-
-export const updateResizeHandle = (
-  state: EditorState,
-  domAtPos: (pos: number) => { node: Node; offset: number },
-  resizeHandlePos: number,
-) => {
-  if (
-    resizeHandlePos === null ||
-    !pointsAtCell(state.doc.resolve(resizeHandlePos))
-  ) {
-    return false;
-  }
-
-  const $cell = state.doc.resolve(resizeHandlePos);
-  const tablePos = $cell.start(-1) - 1;
-  const tableWrapperRef = findDomRefAtPos(tablePos, domAtPos) as HTMLDivElement;
-
-  const resizeHandleRef = tableWrapperRef.querySelector(
-    `.${ClassName.COLUMN_RESIZE_HANDLE}`,
-  ) as HTMLDivElement;
-
-  const tableRef = tableWrapperRef.querySelector(`table`) as HTMLTableElement;
-
-  if (tableRef && resizeHandleRef) {
-    const cellRef = findDomRefAtPos(
-      resizeHandlePos,
-      domAtPos,
-    ) as HTMLTableCellElement;
-    const tableActive = closestElement(tableRef, `.${ClassName.WITH_CONTROLS}`);
-    resizeHandleRef.style.height = `${
-      tableActive
-        ? tableRef.offsetHeight + akEditorTableToolbarSize
-        : tableRef.offsetHeight
-    }px`;
-
-    resizeHandleRef.style.left = `${cellRef.offsetLeft +
-      cellRef.offsetWidth}px`;
-  }
-  return undefined;
-};
-
 export const getResizeCellPos = (
   view: EditorView,
   event: MouseEvent,
   lastColumnResizable: boolean,
 ): number | null => {
   const { state } = view;
-  const target = domCellAround(event.target as HTMLElement | null);
-  let cellPos: number | null = null;
+  const target = event.target as HTMLElement;
 
-  if (target) {
-    const { left, right } = target.getBoundingClientRect();
-    if (event.clientX - left <= tableResizeHandleWidth) {
-      cellPos = edgeCell(view, event, 'left', tableResizeHandleWidth);
-    } else if (right - event.clientX <= tableResizeHandleWidth) {
-      cellPos = edgeCell(view, event, 'right', tableResizeHandleWidth);
-    }
+  if (!containsClassName(target, ClassName.RESIZE_HANDLE)) {
+    return null;
   }
-
-  if (!lastColumnResizable && cellPos !== null) {
+  const parent = closestElement(target, '[data-start-index]');
+  if (!parent) {
+    return null;
+  }
+  const index = parseInt(parent.getAttribute('data-start-index') || '-1', 10);
+  if (index === -1) {
+    return null;
+  }
+  const cells = getCellsInRow(0)(state.selection);
+  if (!cells) {
+    return null;
+  }
+  const cellPos = cells[index].pos;
+  if (!lastColumnResizable) {
     const $cell = state.doc.resolve(cellPos);
     const map = TableMap.get($cell.node(-1));
-    const start = $cell.start(-1);
-    const columnIndex =
-      map.colCount($cell.pos - start) + $cell.nodeAfter!.attrs.colspan - 1;
-
-    if (columnIndex === map.width - 1) {
+    if (map.width === index + 1) {
       return null;
     }
   }

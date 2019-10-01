@@ -1,29 +1,8 @@
-import {
-  JSONDocNode,
-  JSONNode,
-  JSONTransformer,
-} from '@atlaskit/editor-json-transformer';
 import { browser } from '@uidu/editor-common';
+import { JSONDocNode, JSONNode, JSONTransformer } from '@uidu/editor-json-transformer';
 import { toggleMark } from 'prosemirror-commands';
-import {
-  Fragment,
-  Mark,
-  Mark as PMMark,
-  MarkType,
-  Node,
-  NodeRange,
-  NodeType,
-  ResolvedPos,
-  Schema,
-  Slice,
-} from 'prosemirror-model';
-import {
-  EditorState,
-  NodeSelection,
-  Selection,
-  TextSelection,
-  Transaction,
-} from 'prosemirror-state';
+import { Fragment, Mark, Mark as PMMark, MarkType, Node, NodeRange, NodeType, ResolvedPos, Schema, Slice } from 'prosemirror-model';
+import { EditorState, NodeSelection, Selection, TextSelection, Transaction } from 'prosemirror-state';
 import { findWrapping, liftTarget } from 'prosemirror-transform';
 import { hasParentNodeOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
@@ -33,18 +12,7 @@ import { GapCursorSelection, Side } from '../plugins/gap-cursor/selection';
 import { isNodeEmpty } from './document';
 
 export * from './action';
-export {
-  findFarthestParentNode,
-  getNodesCount,
-  getStepRange,
-  hasVisibleContent,
-  isEmptyDocument,
-  isEmptyParagraph,
-  isNodeEmpty,
-  isSelectionEndOfParagraph,
-  nodesBetweenChanged,
-  processRawValue,
-} from './document';
+export { findFarthestParentNode, getNodesCount, getStepRange, hasVisibleContent, isEmptyDocument, isEmptyParagraph, isNodeEmpty, isSelectionEndOfParagraph, nodesBetweenChanged, processRawValue } from './document';
 export { containsClassName } from './dom';
 export { filterContentByType } from './filter';
 export * from './mark';

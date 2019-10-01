@@ -1,20 +1,14 @@
-export {
-  hoverColumns,
-  hoverRows,
-  hoverTable,
-  clearHoverSelection,
-} from './hover';
-export { insertColumn, insertRow, createTable } from './insert';
-export {
-  getNextLayout,
-  toggleContextualMenu,
-  toggleHeaderColumn,
-  toggleHeaderRow,
-  toggleNumberColumn,
-  toggleTableLayout,
-} from './toggle';
 export { clearMultipleCells } from './clear';
 export {
+  clearHoverSelection,
+  hoverColumns,
+  hoverMergedCells,
+  hoverRows,
+  hoverTable,
+} from './hover';
+export { createTable, insertColumn, insertRow } from './insert';
+export {
+  addBoldInEmptyHeaderCells,
   autoSizeTable,
   convertFirstRowToHeader,
   deleteTable,
@@ -31,5 +25,13 @@ export {
   showInsertRowButton,
   transformSliceToAddTableHeaders,
   triggerUnlessTableHeader,
-  addBoldInEmptyHeaderCells,
 } from './misc';
+export { sortByColumn } from './sort';
+export {
+  getNextLayout,
+  toggleContextualMenu,
+  toggleHeaderColumn,
+  toggleHeaderRow,
+  toggleNumberColumn,
+  toggleTableLayout,
+} from './toggle';

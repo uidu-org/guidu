@@ -2,7 +2,7 @@
 import { toggleHeader } from 'prosemirror-tables';
 import { findTable } from 'prosemirror-utils';
 import { Transaction } from 'prosemirror-state';
-import { TableLayout } from '@atlaskit/adf-schema';
+import { TableLayout } from '@uidu/adf-schema';
 import { createCommand } from '../pm-plugins/main';
 import { Command } from '../../../types';
 //#endregion

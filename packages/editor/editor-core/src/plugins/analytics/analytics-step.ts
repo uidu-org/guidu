@@ -1,13 +1,7 @@
-import { CreateUIAnalyticsEvent } from '@atlaskit/analytics-next';
-import { Node as PMNode } from 'prosemirror-model';
-import { Step, StepResult, StepMap, ReplaceStep } from 'prosemirror-transform';
-import { Slice } from 'prosemirror-model';
-import {
-  AnalyticsEventPayloadWithChannel,
-  EVENT_TYPE,
-  TABLE_ACTION,
-  ACTION,
-} from './types';
+import { CreateUIAnalyticsEvent } from '@uidu/analytics';
+import { Node as PMNode, Slice } from 'prosemirror-model';
+import { ReplaceStep, Step, StepMap, StepResult } from 'prosemirror-transform';
+import { ACTION, AnalyticsEventPayloadWithChannel, EVENT_TYPE, TABLE_ACTION } from './types';
 import { fireAnalyticsEvent } from './utils';
 
 export const analyticsStepType = 'atlaskit-analytics';

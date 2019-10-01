@@ -1,9 +1,9 @@
-import { bulletList, listItem, orderedList } from '@atlaskit/adf-schema';
+import { bulletList, listItem, orderedList } from '@uidu/adf-schema';
 import * as React from 'react';
-import { ToolbarSize } from '../../components/Toolbar';
-import WithPluginState from '../../components/WithPluginState';
 import { toggleBulletList, toggleOrderedList, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
+import { ToolbarSize } from '../../ui/Toolbar';
+import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -20,6 +20,8 @@ import { createPlugin, pluginKey } from './pm-plugins/main';
 import ToolbarLists from './ui/ToolbarLists';
 
 const listPlugin = (): EditorPlugin => ({
+  name: 'list',
+
   nodes() {
     return [
       { name: 'bulletList', node: bulletList },
@@ -106,7 +108,6 @@ const listPlugin = (): EditorPlugin => ({
 
   primaryToolbarComponent({
     editorView,
-    dispatchAnalyticsEvent,
     popupsMountPoint,
     popupsBoundariesElement,
     popupsScrollableElement,
@@ -127,7 +128,6 @@ const listPlugin = (): EditorPlugin => ({
             isReducedSpacing={isToolbarReducedSpacing}
             disabled={disabled}
             editorView={editorView}
-            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
             popupsMountPoint={popupsMountPoint}
             popupsBoundariesElement={popupsBoundariesElement}
             popupsScrollableElement={popupsScrollableElement}

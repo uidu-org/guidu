@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 // @ts-ignore
 import { formatDate } from 'react-day-picker/moment';
 import { ArrowRight } from 'react-feather';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import {
   name as packageName,
   version as packageVersion,

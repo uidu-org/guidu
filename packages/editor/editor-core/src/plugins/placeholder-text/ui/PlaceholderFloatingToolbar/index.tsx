@@ -5,8 +5,8 @@ import FloatingToolbar, {
   getNearestNonTextNode,
   getOffsetParent,
   handlePositionCalculatedWith,
-} from '../../../../components/FloatingToolbar';
-import PanelTextInput from '../../../../components/PanelTextInput';
+} from '../../../../ui/FloatingToolbar';
+import PanelTextInput from '../../../../ui/PanelTextInput';
 
 export const messages = defineMessages({
   placeholderTextPlaceholder: {

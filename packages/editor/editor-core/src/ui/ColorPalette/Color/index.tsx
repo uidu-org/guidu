@@ -1,47 +1,13 @@
 import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
+import { hexToRgba, N0, N800 } from '@uidu/adf-schema';
 import { colors } from '@uidu/theme';
+import Tooltip from '@uidu/tooltip';
 import * as React from 'react';
 import { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { Button, ButtonWrapper } from './styles';
-
-// IMO these should live inside @atlaskit/theme
+// IMO these should live inside @uidu/theme
 const messages = defineMessages({
-  '#172b4d': {
-    id: 'fabric.theme.#172b4d',
-    defaultMessage: 'Dark gray',
-    description: 'Name of a color.',
-  },
-  '#97a0af': {
-    id: 'fabric.theme.#97a0af',
-    defaultMessage: 'Light gray',
-    description: 'Name of a color.',
-  },
-  '#6554c0': {
-    id: 'fabric.theme.#6554c0',
-    defaultMessage: 'Purple',
-    description: 'Name of a color.',
-  },
-  '#00b8d9': {
-    id: 'fabric.theme.#00b8d9',
-    defaultMessage: 'Teal',
-    description: 'Name of a color.',
-  },
-  '#36b37e': {
-    id: 'fabric.theme.#36b37e',
-    defaultMessage: 'Green',
-    description: 'Name of a color.',
-  },
-  '#ff5630': {
-    id: 'fabric.theme.#ff5630',
-    defaultMessage: 'Red',
-    description: 'Name of a color.',
-  },
-  '#ff991f': {
-    id: 'fabric.theme.#ff991f',
-    defaultMessage: 'Orange',
-    description: 'Name of a color.',
-  },
   selected: {
     id: 'fabric.editor.selected',
     defaultMessage: 'Selected',
@@ -55,9 +21,11 @@ export interface Props {
   tabIndex?: number;
   isSelected?: boolean;
   onClick: (value: string) => void;
-  borderColor: string;
+  borderColor?: string;
   checkMarkColor?: string;
 }
+
+const defaultBorderColor = hexToRgba(N800, 0.12) || N0;
 
 class Color extends PureComponent<Props & WrappedComponentProps> {
   render() {
@@ -66,36 +34,34 @@ class Color extends PureComponent<Props & WrappedComponentProps> {
       value,
       label,
       isSelected,
-      borderColor,
+      borderColor = defaultBorderColor,
       checkMarkColor = colors.N0,
       intl: { formatMessage },
     } = this.props;
     const borderStyle = `1px solid ${borderColor}`;
+
     return (
-      <ButtonWrapper>
-        <Button
-          onClick={this.onClick}
-          onMouseDown={this.onMouseDown}
-          tabIndex={tabIndex}
-          className={`${isSelected ? 'selected' : ''}`}
-          title={
-            value && messages[value as keyof typeof messages]
-              ? formatMessage(messages[value as keyof typeof messages])
-              : label
-          }
-          style={{
-            backgroundColor: value || 'transparent',
-            border: borderStyle,
-          }}
-        >
-          {isSelected && (
-            <EditorDoneIcon
-              primaryColor={checkMarkColor}
-              label={formatMessage(messages.selected)}
-            />
-          )}
-        </Button>
-      </ButtonWrapper>
+      <Tooltip content={label}>
+        <ButtonWrapper>
+          <Button
+            onClick={this.onClick}
+            onMouseDown={this.onMouseDown}
+            tabIndex={tabIndex}
+            className={`${isSelected ? 'selected' : ''}`}
+            style={{
+              backgroundColor: value || 'transparent',
+              border: borderStyle,
+            }}
+          >
+            {isSelected && (
+              <EditorDoneIcon
+                primaryColor={checkMarkColor}
+                label={formatMessage(messages.selected)}
+              />
+            )}
+          </Button>
+        </ButtonWrapper>
+      </Tooltip>
     );
   }
 

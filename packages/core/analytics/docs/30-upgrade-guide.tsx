@@ -96,7 +96,7 @@ This does however require you to extend your component's props with \`WithAnalyt
 A common pattern you’ll find with other HOC implementations, used to ensure you’re passing the correct super type to the HOC.
 
 ${code`
-import { WithAnalyticsEventsProps } from '@atlaskit/analytics-next';
+import { WithAnalyticsEventsProps } from '@uidu/analytics';
 
 interface ButtonProps extends WithAnalyticsEventsProps {
   appearance: string,

@@ -1,6 +1,6 @@
-import { traverse } from '@atlaskit/adf-utils';
-import { JSONDocNode } from '@atlaskit/editor-json-transformer';
+import { traverse } from '@uidu/adf-utils';
 import { ProviderFactory } from '@uidu/editor-common';
+import { JSONDocNode } from '@uidu/editor-json-transformer';
 import { isResolvingMentionProvider, MentionProvider } from '@uidu/mentions';
 
 /**

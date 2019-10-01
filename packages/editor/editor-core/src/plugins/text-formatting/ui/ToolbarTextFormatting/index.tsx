@@ -5,13 +5,13 @@ import * as React from 'react';
 import { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
-import { ButtonGroup } from '../../../../components/styles';
-import ToolbarButton from '../../../../components/ToolbarButton';
 import {
   renderTooltipContent,
   toggleBold,
   toggleItalic,
 } from '../../../../keymaps';
+import { ButtonGroup } from '../../../../ui/styles';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import { INPUT_METHOD } from '../../../analytics';
 import {
   toggleEmWithAnalytics,

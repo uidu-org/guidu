@@ -1,8 +1,8 @@
-import { MentionUserType as UserType } from '@atlaskit/adf-schema';
+import { MentionUserType as UserType } from '@uidu/adf-schema';
 import ProfileCard, { ProfileCardAction } from '@atlaskit/profilecard';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
 import * as React from 'react';
-import { PureComponent, ReactInstance } from 'react';
+import { PureComponent, ReactInstance, SyntheticEvent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { MentionEventHandler } from '../EventHandlers';
 import Popup from '../Popup';
@@ -24,9 +24,9 @@ export interface Props {
   mentionProvider?: Promise<MentionProvider>;
   portal?: HTMLElement;
   profilecardProvider: ProfilecardProvider;
-  onClick: MentionEventHandler;
-  onMouseEnter: MentionEventHandler;
-  onMouseLeave: MentionEventHandler;
+  onClick?: MentionEventHandler;
+  onMouseEnter?: MentionEventHandler;
+  onMouseLeave?: MentionEventHandler;
 }
 
 export type PopupAlignX = 'left' | 'right';
@@ -112,10 +112,12 @@ export default class MentionWithProfileCard extends PureComponent<
     });
   }
 
-  private showProfilecard = () => {
+  private showProfilecard = (event: SyntheticEvent<HTMLElement>) => {
     if (!this.domNode) {
       return;
     }
+
+    event.stopPropagation();
 
     const [popupAlignX, popupAlignY] = this.calculateLayerPosition();
 

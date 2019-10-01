@@ -1,5 +1,5 @@
-import { tableBackgroundColorPalette, TableLayout } from '@atlaskit/adf-schema';
-import { Rect, splitCell } from 'prosemirror-tables';
+import { tableBackgroundColorPalette, TableLayout } from '@uidu/adf-schema';
+import { Rect } from 'prosemirror-tables';
 import { findCellClosestToPos } from 'prosemirror-utils';
 import {
   analyticsService as analyticsV2,
@@ -20,13 +20,16 @@ import {
   insertColumn,
   insertRow,
   setMultipleCellAttrs,
+  sortByColumn,
   toggleHeaderColumn,
   toggleHeaderRow,
   toggleNumberColumn,
   toggleTableLayout,
 } from './commands';
+import { splitCell } from './commands/misc';
 import { getPluginState } from './pm-plugins/main';
 import { deleteColumns, deleteRows, mergeCells } from './transforms';
+import { SortOrder } from './types';
 import {
   checkIfNumberColumnEnabled,
   getSelectedCellInfo,
@@ -404,4 +407,28 @@ export const toggleTableLayoutWithAnalytics = () =>
     }
     return undefined;
   })(toggleTableLayout);
+
+export const sortColumnWithAnalytics = (
+  inputMethod: INPUT_METHOD.CONTEXT_MENU,
+  columnIndex: number,
+  sortOrder: SortOrder,
+) =>
+  withAnalytics(state => {
+    const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
+      state.selection,
+    );
+    return {
+      action: TABLE_ACTION.SORTED_COLUMN,
+      actionSubject: ACTION_SUBJECT.TABLE,
+      attributes: {
+        inputMethod,
+        totalRowCount,
+        totalColumnCount,
+        position: columnIndex,
+        sortOrder,
+        mode: 'editor',
+      },
+      eventType: EVENT_TYPE.TRACK,
+    };
+  })(sortByColumn(columnIndex, sortOrder));
 // #endregion

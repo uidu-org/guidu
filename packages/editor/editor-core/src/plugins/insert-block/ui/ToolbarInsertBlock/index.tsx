@@ -3,6 +3,7 @@ import AddIcon from '@atlaskit/icon/glyph/editor/add';
 import CodeIcon from '@atlaskit/icon/glyph/editor/code';
 import DateIcon from '@atlaskit/icon/glyph/editor/date';
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
+import EmojiIcon from '@atlaskit/icon/glyph/editor/emoji';
 import HorizontalRuleIcon from '@atlaskit/icon/glyph/editor/horizontal-rule';
 import EditorImageIcon from '@atlaskit/icon/glyph/editor/image';
 import InfoIcon from '@atlaskit/icon/glyph/editor/info';
@@ -16,6 +17,7 @@ import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
+import { EmojiId, EmojiPicker as AkEmojiPicker, EmojiProvider } from '@uidu/emoji';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
@@ -24,53 +26,26 @@ import { ReactInstance } from 'react';
 import * as ReactDOM from 'react-dom';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import EditorActions from '../../../../actions';
-import {
-  analyticsService as analytics,
-  withAnalytics,
-} from '../../../../analytics';
-import DropdownMenu from '../../../../components/DropdownMenu';
-import {
-  ButtonGroup,
-  ExpandIconWrapper,
-  Shortcut,
-  Wrapper,
-} from '../../../../components/styles';
-import ToolbarButton from '../../../../components/ToolbarButton';
-import {
-  addLink,
-  findKeymapByDescription,
-  findShortcutByDescription,
-  renderTooltipContent,
-  toggleTable,
-  tooltip,
-} from '../../../../keymaps';
-import {
-  Command,
-  CommandDispatch,
-  InsertMenuCustomItem,
-} from '../../../../types';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
-  INPUT_METHOD,
-  InsertEventPayload,
-  PANEL_TYPE,
-  withAnalytics as commandWithAnalytics,
-} from '../../../analytics';
+import { analyticsService as analytics, withAnalytics } from '../../../../analytics';
+import { addLink, findKeymapByDescription, findShortcutByDescription, renderTooltipContent, toggleTable, tooltip } from '../../../../keymaps';
+import { Command, CommandDispatch, InsertMenuCustomItem } from '../../../../types';
+import DropdownMenu from '../../../../ui/DropdownMenu';
+import { ButtonGroup, ExpandIconWrapper, Shortcut, Wrapper } from '../../../../ui/styles';
+import ToolbarButton from '../../../../ui/ToolbarButton';
+import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, DispatchAnalyticsEvent, EVENT_TYPE, INPUT_METHOD, withAnalytics as commandWithAnalytics } from '../../../analytics';
 import { BlockType } from '../../../block-type/types';
+import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
 import { insertDate, openDatePicker } from '../../../date/actions';
+import { insertEmoji } from '../../../emoji/commands/insert-emoji';
 import { showLinkToolbar } from '../../../hyperlink/commands';
-import { insertLayoutColumns } from '../../../layout/actions';
+import { insertLayoutColumnsWithAnalytics } from '../../../layout/actions';
 import { MacroProvider } from '../../../macro/types';
 import { insertMentionQuery } from '../../../mentions/commands/insert-mention-query';
 import { showPlaceholderFloatingToolbar } from '../../../placeholder-text/actions';
 import { createHorizontalRule } from '../../../rule/pm-plugins/input-rule';
-import { updateStatus } from '../../../status/actions';
+import { updateStatusWithAnalytics } from '../../../status/actions';
 import { createTable } from '../../../table/commands';
-// import { insertTaskDecision } from '../../../tasks-and-decisions/commands';
+import { insertTaskDecision } from '../../../tasks-and-decisions/commands';
 import { TriggerWrapper } from './styles';
 
 export const messages = defineMessages({
@@ -241,9 +216,11 @@ export interface Props {
   horizontalRuleEnabled?: boolean;
   placeholderTextEnabled?: boolean;
   layoutSectionEnabled?: boolean;
+  emojiProvider?: Promise<EmojiProvider>;
   availableWrapperBlockTypes?: BlockType[];
   linkSupported?: boolean;
   linkDisabled?: boolean;
+  emojiDisabled?: boolean;
   nativeStatusSupported?: boolean;
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;
@@ -262,6 +239,7 @@ export interface Props {
 
 export interface State {
   isOpen: boolean;
+  emojiPickerOpen: boolean;
 }
 
 export type TOOLBAR_MENU_TYPE = INPUT_METHOD.TOOLBAR | INPUT_METHOD.INSERT_MENU;
@@ -287,12 +265,24 @@ class ToolbarInsertBlock extends React.PureComponent<
 
   state: State = {
     isOpen: false,
+    emojiPickerOpen: false,
   };
+
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
+    // If number of visible buttons changed, close emoji picker
+    if (nextProps.buttons !== this.props.buttons) {
+      this.setState({ emojiPickerOpen: false });
+    }
+  }
 
   private onOpenChange = (attrs: { isOpen: boolean; open?: boolean }) => {
     const state = {
       isOpen: attrs.isOpen,
+      emojiPickerOpen: this.state.emojiPickerOpen,
     };
+    if (this.state.emojiPickerOpen && !attrs.open) {
+      state.emojiPickerOpen = false;
+    }
     this.setState(state);
   };
 
@@ -301,12 +291,39 @@ class ToolbarInsertBlock extends React.PureComponent<
     this.onOpenChange({ isOpen: !isOpen });
   };
 
+  private toggleEmojiPicker = (
+    inputMethod: TOOLBAR_MENU_TYPE = INPUT_METHOD.TOOLBAR,
+  ) => {
+    this.setState(
+      prevState => ({ emojiPickerOpen: !prevState.emojiPickerOpen }),
+      () => {
+        if (this.state.emojiPickerOpen) {
+          const { dispatchAnalyticsEvent } = this.props;
+          if (dispatchAnalyticsEvent) {
+            dispatchAnalyticsEvent({
+              action: ACTION.OPENED,
+              actionSubject: ACTION_SUBJECT.PICKER,
+              actionSubjectId: ACTION_SUBJECT_ID.PICKER_EMOJI,
+              attributes: { inputMethod },
+              eventType: EVENT_TYPE.UI,
+            });
+          }
+        }
+      },
+    );
+  };
+
   private renderPopup() {
+    const { emojiPickerOpen } = this.state;
     const {
       popupsMountPoint,
       popupsBoundariesElement,
       popupsScrollableElement,
+      emojiProvider,
     } = this.props;
+    if (!emojiPickerOpen || !this.button || !emojiProvider) {
+      return null;
+    }
 
     return (
       <Popup
@@ -317,7 +334,13 @@ class ToolbarInsertBlock extends React.PureComponent<
         mountTo={popupsMountPoint}
         boundariesElement={popupsBoundariesElement}
         scrollableElement={popupsScrollableElement}
-      ></Popup>
+      >
+        <AkEmojiPicker
+          emojiProvider={emojiProvider}
+          onSelection={this.handleSelectedEmoji}
+          onPickerRef={this.onPickerRef}
+        />
+      </Popup>
     );
   }
 
@@ -356,6 +379,7 @@ class ToolbarInsertBlock extends React.PureComponent<
         !isDetachedElement(e.target as HTMLElement) &&
         !picker.contains(e.target as HTMLElement))
     ) {
+      this.toggleEmojiPicker();
     }
   };
 
@@ -457,6 +481,8 @@ class ToolbarInsertBlock extends React.PureComponent<
       macroProvider,
       linkSupported,
       linkDisabled,
+      emojiDisabled,
+      emojiProvider,
       nativeStatusSupported,
       insertMenuItems,
       dateEnabled,
@@ -516,6 +542,18 @@ class ToolbarInsertBlock extends React.PureComponent<
         elemBefore: <MentionIcon label={labelMention} />,
         elemAfter: <Shortcut>@</Shortcut>,
         shortcut: '@',
+      });
+    }
+    if (emojiProvider) {
+      const labelEmoji = formatMessage(messages.emoji);
+      items.push({
+        content: labelEmoji,
+        value: { name: 'emoji' },
+        isDisabled: emojiDisabled || !isTypeAheadAllowed,
+        elemBefore: <EmojiIcon label={labelEmoji} />,
+        handleRef: this.handleButtonRef,
+        elemAfter: <Shortcut>:</Shortcut>,
+        shortcut: ':',
       });
     }
     if (tableSupported) {
@@ -655,9 +693,9 @@ class ToolbarInsertBlock extends React.PureComponent<
 
   private createDate = withAnalytics(
     'atlassian.editor.format.date.button',
-    (): boolean => {
+    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
-      insertDate()(editorView.state, editorView.dispatch);
+      insertDate(undefined, inputMethod)(editorView.state, editorView.dispatch);
       openDatePicker()(editorView.state, editorView.dispatch);
       return true;
     },
@@ -674,18 +712,24 @@ class ToolbarInsertBlock extends React.PureComponent<
 
   private insertLayoutColumns = withAnalytics(
     'atlassian.editor.format.layout.button',
-    (): boolean => {
+    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
-      insertLayoutColumns(editorView.state, editorView.dispatch);
+      insertLayoutColumnsWithAnalytics(inputMethod)(
+        editorView.state,
+        editorView.dispatch,
+      );
       return true;
     },
   );
 
   private createStatus = withAnalytics(
     'atlassian.editor.format.status.button',
-    (): boolean => {
+    (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
-      updateStatus()(editorView);
+      updateStatusWithAnalytics(inputMethod)(
+        editorView.state,
+        editorView.dispatch,
+      );
       return true;
     },
   );
@@ -720,7 +764,7 @@ class ToolbarInsertBlock extends React.PureComponent<
         return false;
       }
       const listType = name === 'action' ? 'taskList' : 'decisionList';
-      // insertTaskDecision(editorView, listType, inputMethod);
+      insertTaskDecision(editorView, listType, inputMethod);
       return true;
     });
 
@@ -728,6 +772,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     'atlassian.editor.format.horizontalrule.button',
     (inputMethod: TOOLBAR_MENU_TYPE): boolean => {
       const { editorView } = this.props;
+
       const tr = createHorizontalRule(
         editorView.state,
         editorView.state.selection.from,
@@ -744,47 +789,27 @@ class ToolbarInsertBlock extends React.PureComponent<
     },
   );
 
-  private insertBlockTypeWithAnalytics = (
-    itemName: string,
-    inputMethod: TOOLBAR_MENU_TYPE,
-  ) => {
-    const {
-      editorView,
-      onInsertBlockType,
-      dispatchAnalyticsEvent,
-    } = this.props;
-    const { state, dispatch } = editorView;
+  private insertBlockType = (itemName: string) =>
+    withAnalytics(`atlassian.editor.format.${itemName}.button`, () => {
+      const { editorView, onInsertBlockType } = this.props;
+      const { state, dispatch } = editorView;
 
-    let actionSubjectId: ACTION_SUBJECT_ID | undefined;
-    let additionalAttrs = {};
-    switch (itemName) {
-      case 'panel':
-        actionSubjectId = ACTION_SUBJECT_ID.PANEL;
-        additionalAttrs = { panelType: PANEL_TYPE.INFO }; // only info panels can be inserted from toolbar
-        break;
-      case 'codeblock':
-        actionSubjectId = ACTION_SUBJECT_ID.CODE_BLOCK;
-        break;
-      case 'blockquote':
-        actionSubjectId = ACTION_SUBJECT_ID.BLOCK_QUOTE;
-    }
+      onInsertBlockType!(itemName)(state, dispatch);
+      return true;
+    });
 
-    analytics.trackEvent(`atlassian.editor.format.${itemName}.button`);
-    if (dispatchAnalyticsEvent && actionSubjectId) {
-      dispatchAnalyticsEvent({
-        action: ACTION.INSERTED,
-        actionSubject: ACTION_SUBJECT.DOCUMENT,
-        actionSubjectId,
-        attributes: {
-          inputMethod,
-          ...additionalAttrs,
-        },
-        eventType: EVENT_TYPE.TRACK,
-      } as InsertEventPayload);
-    }
-
-    onInsertBlockType!(itemName)(state, dispatch);
-  };
+  private handleSelectedEmoji = withAnalytics(
+    'atlassian.editor.emoji.button',
+    (emojiId: EmojiId): boolean => {
+      insertEmoji(emojiId, INPUT_METHOD.PICKER)(
+        this.props.editorView.state,
+        this.props.editorView.dispatch,
+      );
+      this.props.editorView.focus();
+      this.toggleEmojiPicker();
+      return true;
+    },
+  );
 
   private onItemActivated = ({
     item,
@@ -820,10 +845,13 @@ class ToolbarInsertBlock extends React.PureComponent<
       case 'mention':
         this.insertMention(inputMethod);
         break;
+      case 'emoji':
+        this.toggleEmojiPicker(inputMethod);
+        break;
       case 'codeblock':
       case 'blockquote':
       case 'panel':
-        this.insertBlockTypeWithAnalytics(item.value.name, inputMethod);
+        this.insertBlockType(item.value.name)();
         break;
       case 'action':
       case 'decision':
@@ -848,10 +876,10 @@ class ToolbarInsertBlock extends React.PureComponent<
         this.createPlaceholderText();
         break;
       case 'layout':
-        this.insertLayoutColumns();
+        this.insertLayoutColumns(inputMethod);
         break;
       case 'status':
-        this.createStatus();
+        this.createStatus(inputMethod);
         break;
       default:
         if (item && item.onClick) {
@@ -871,7 +899,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       inputMethod: INPUT_METHOD.TOOLBAR,
     });
 
-  private insertInsertMenuItem = ({ item }: { item: any }) =>
+  private insertInsertMenuItem = ({ item }: { item: DropdownItem }) =>
     this.onItemActivated({
       item,
       inputMethod: INPUT_METHOD.INSERT_MENU,

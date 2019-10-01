@@ -1,4 +1,4 @@
-import { MediaSingleAttributes, MediaSingleLayout } from '@atlaskit/adf-schema';
+import { MediaSingleAttributes, MediaSingleLayout } from '@uidu/adf-schema';
 import EditorAlignImageCenter from '@atlaskit/icon/glyph/editor/align-image-center';
 import EditorAlignImageLeft from '@atlaskit/icon/glyph/editor/align-image-left';
 import EditorAlignImageRight from '@atlaskit/icon/glyph/editor/align-image-right';

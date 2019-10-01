@@ -1,48 +1,54 @@
 // #region Imports
-import { Transaction, TextSelection, Selection } from 'prosemirror-state';
+import { CellAttributes } from '@uidu/adf-schema';
+import { Node as PMNode, Schema, Slice } from 'prosemirror-model';
+import { Selection, TextSelection, Transaction } from 'prosemirror-state';
 import {
+  CellSelection,
   goToNextCell as baseGotoNextCell,
   selectionCell,
+  splitCellWithType,
   TableMap,
-  CellSelection,
 } from 'prosemirror-tables';
-import { EditorView, DecorationSet } from 'prosemirror-view';
-import { Node as PMNode, Slice, Schema } from 'prosemirror-model';
 import {
+  ContentNodeWithPos,
+  findCellClosestToPos,
+  findParentNodeOfType,
   findTable,
   getCellsInColumn,
   getCellsInRow,
+  getSelectionRect,
   isCellSelection,
   removeTable,
-  findParentNodeOfType,
-  findCellClosestToPos,
-  setCellAttrs,
-  getSelectionRect,
   selectColumn as selectColumnTransform,
   selectRow as selectRowTransform,
-  ContentNodeWithPos,
+  setCellAttrs,
 } from 'prosemirror-utils';
-import { createCommand, getPluginState } from '../pm-plugins/main';
-import {
-  checkIfHeaderRowEnabled,
-  checkIfHeaderColumnEnabled,
-  isIsolating,
-  updatePluginStateDecorations,
-  createColumnControlsDecoration,
-} from '../utils';
-import { Command } from '../../../types';
+import { DecorationSet, EditorView } from 'prosemirror-view';
 import { analyticsService } from '../../../analytics';
-import { outdentList } from '../../lists/commands';
-import { mapSlice } from '../../../utils/slice';
+import { Command } from '../../../types';
 import {
   closestElement,
-  isTextSelection,
   isNodeTypeParagraph,
+  isTextSelection,
 } from '../../../utils';
-import { fixAutoSizedTable } from '../transforms';
+import { mapSlice } from '../../../utils/slice';
 import { INPUT_METHOD } from '../../analytics';
+import { outdentList } from '../../lists/commands';
 import { insertRowWithAnalytics } from '../commands-with-analytics';
-import { TableCssClassName as ClassName, TableDecorations } from '../types';
+import { createCommand, getPluginState } from '../pm-plugins/main';
+import { fixAutoSizedTable } from '../transforms';
+import {
+  TableCssClassName as ClassName,
+  TableDecorations,
+  TablePluginState,
+} from '../types';
+import {
+  checkIfHeaderColumnEnabled,
+  checkIfHeaderRowEnabled,
+  createColumnControlsDecoration,
+  isIsolating,
+  updatePluginStateDecorations,
+} from '../utils';
 // #endregion
 
 // #region Constants
@@ -162,6 +168,25 @@ export const triggerUnlessTableHeader = (command: Command): Command => (
   return false;
 };
 
+export const transformSliceRemoveCellBackgroundColor = (
+  slice: Slice,
+  schema: Schema,
+): Slice => {
+  const { tableCell, tableHeader } = schema.nodes;
+  return mapSlice(slice, maybeCell => {
+    if (maybeCell.type === tableCell || maybeCell.type === tableHeader) {
+      const cellAttrs: CellAttributes = { ...maybeCell.attrs };
+      cellAttrs.background = undefined;
+      return maybeCell.type.createChecked(
+        cellAttrs,
+        maybeCell.content,
+        maybeCell.marks,
+      );
+    }
+    return maybeCell;
+  });
+};
+
 export const transformSliceToAddTableHeaders = (
   slice: Slice,
   schema: Schema,
@@ -191,6 +216,27 @@ export const transformSliceToAddTableHeaders = (
       }
     }
     return maybeTable;
+  });
+};
+
+export const transformSliceToRemoveColumnsWidths = (
+  slice: Slice,
+  schema: Schema,
+): Slice => {
+  const { tableHeader, tableCell } = schema.nodes;
+
+  return mapSlice(slice, maybeCell => {
+    if (maybeCell.type === tableCell || maybeCell.type === tableHeader) {
+      if (!maybeCell.attrs.colwidth) {
+        return maybeCell;
+      }
+      return maybeCell.type.createChecked(
+        { ...maybeCell.attrs, colwidth: undefined },
+        maybeCell.content,
+        maybeCell.marks,
+      );
+    }
+    return maybeCell;
   });
 };
 
@@ -446,3 +492,22 @@ export const addBoldInEmptyHeaderCells = (
   return false;
 };
 // #endregion
+
+/**
+ * We need to split cell keeping the right type of cell given current table configuration.
+ * We are using prosemirror-tables splitCellWithType that allows you to choose what cell type should be.
+ */
+export const splitCell: Command = (state, dispatch) => {
+  const tableState: TablePluginState = getPluginState(state);
+  const { tableHeader, tableCell } = state.schema.nodes;
+  return splitCellWithType(({ row, col }: { row: number; col: number }) => {
+    if (
+      (row === 0 && tableState.isHeaderRowEnabled) ||
+      (col === 0 && tableState.isHeaderColumnEnabled)
+    ) {
+      return tableHeader;
+    }
+
+    return tableCell;
+  })(state, dispatch);
+};

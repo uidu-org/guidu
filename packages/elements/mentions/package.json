@@ -10,6 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.14",
+    "@uidu/analytics-gas-types": "^0.1.0",
     "@uidu/avatar": "^0.2.19",
     "@uidu/button": "^0.1.45",
     "@uidu/lozenge": "^0.1.13",

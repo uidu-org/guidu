@@ -1,4 +1,4 @@
-import { alignment } from '@atlaskit/adf-schema';
+import { alignment } from '@uidu/adf-schema';
 import * as React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';

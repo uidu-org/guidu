@@ -1,13 +1,13 @@
 import { ActivityProvider } from '@atlaskit/activity';
-import { EmojiProvider } from '@atlaskit/emoji/resource';
-import { TaskDecisionProvider } from '@atlaskit/task-decision';
 import {
   ContextIdentifierProvider,
   ErrorReportingHandler,
   ExtensionHandlers,
   Transformer,
 } from '@uidu/editor-common';
+import { EmojiProvider } from '@uidu/emoji';
 import { MentionProvider } from '@uidu/mentions';
+import { TaskDecisionProvider } from '@uidu/task-decision';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { ReactElement } from 'react';
@@ -77,6 +77,8 @@ export interface EditorProps {
   - `mobile` - should be used for the mobile web view. It is a full page editor version for mobile.
   */
   appearance?: EditorAppearance;
+  children?: (editorProps) => any;
+  containerElement?: HTMLElement | undefined;
 
   // Legacy analytics support handler, which will be removed soon. **Do not use**.
   analyticsHandler?: AnalyticsHandler;

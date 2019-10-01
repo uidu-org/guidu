@@ -7,7 +7,7 @@ import { Node as PmNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
-import WithPluginState from '../../../../../components/WithPluginState';
+import WithPluginState from '../../../../../ui/WithPluginState';
 import { MacroProvider } from '../../../../macro';
 import {
   pluginKey as widthPluginKey,

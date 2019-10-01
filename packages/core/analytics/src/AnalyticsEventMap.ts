@@ -627,7 +627,7 @@ export const instrumentedComponents = analyticsEventMap
         : config.component;
 
       items.push({
-        packageName: `@atlaskit/${packageSuffix}`,
+        packageName: `@uidu/${packageSuffix}`,
         component: components,
         actionSubject: config.actionSubject,
         prop: propName,

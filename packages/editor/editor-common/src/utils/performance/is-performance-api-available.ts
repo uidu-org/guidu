@@ -17,3 +17,7 @@ export function isPerformanceAPIAvailable(): boolean {
 
   return hasRequiredPerformanceAPIs;
 }
+
+export function isPerformanceObserverAvailable(): boolean {
+  return !!(typeof window !== 'undefined' && 'PerformanceObserver' in window);
+}

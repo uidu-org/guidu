@@ -1,18 +1,18 @@
-import { emoji } from '@atlaskit/adf-schema';
+import { emoji } from '@uidu/adf-schema';
 import {
   EmojiDescription,
   EmojiProvider,
   EmojiTypeAheadItem,
   SearchSort,
-} from '@atlaskit/emoji';
+} from '@uidu/emoji';
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import { ProviderFactory } from '@uidu/editor-common';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';
 import { analyticsService } from '../../analytics';
-import { PortalProviderAPI } from '../../components/PortalProvider';
 import { Dispatch } from '../../event-dispatcher';
 import { Command, EditorPlugin } from '../../types';
+import { PortalProviderAPI } from '../../ui/PortalProvider';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -27,6 +27,7 @@ import { typeAheadPluginKey, TypeAheadPluginState } from '../type-ahead';
 import { TypeAheadItem } from '../type-ahead/types';
 import emojiNodeView from './nodeviews/emoji';
 import { inputRulePlugin as asciiInputRulePlugin } from './pm-plugins/ascii-input-rules';
+import { EmojiContextProvider } from './ui/EmojiContextProvider';
 
 export const defaultListLimit = 50;
 const isFullShortName = (query?: string) =>
@@ -42,6 +43,8 @@ export interface EmojiPluginOptions {
 }
 
 const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
+  name: 'emoji',
+
   nodes() {
     return [{ name: 'emoji', node: emoji }];
   },
@@ -129,25 +132,27 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           key: emoji.id || emoji.shortName,
           render({ isSelected, onClick, onHover }) {
             return (
-              <EmojiTypeAheadItem
-                emoji={emoji}
-                selected={isSelected}
-                onMouseMove={onHover}
-                onSelection={onClick}
-              />
+              // It's required to pass emojiProvider through the context for custom emojis to work
+              <EmojiContextProvider emojiProvider={pluginState.emojiProvider}>
+                <EmojiTypeAheadItem
+                  emoji={emoji}
+                  selected={isSelected}
+                  onMouseMove={onHover}
+                  onSelection={onClick}
+                />
+              </EmojiContextProvider>
             );
           },
           emoji,
         }));
       },
-      // TODO Uncomment this
-      // forceSelect(query: string, items: Array<TypeAheadItem>) {
-      //   const normalizedQuery = ':' + query;
-      //   return (
-      //     !!isFullShortName(normalizedQuery) &&
-      //     !!items.find(item => item.title.toLowerCase() === normalizedQuery)
-      //   );
-      // },
+      forceSelect(query: string, items: Array<TypeAheadItem>) {
+        const normalizedQuery = ':' + query;
+        return (
+          !!isFullShortName(normalizedQuery) &&
+          !!items.find(item => item.title.toLowerCase() === normalizedQuery)
+        );
+      },
       selectItem(state, item, insert, { mode }) {
         const { id = '', type = '', fallback, shortName } = item.emoji;
         const text = fallback || shortName;

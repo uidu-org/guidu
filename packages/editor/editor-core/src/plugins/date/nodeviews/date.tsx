@@ -1,4 +1,4 @@
-import { Date } from '@atlaskit/date';
+import { Date } from '@uidu/date';
 import {
   DateSharedCssClassName,
   isPastDate,

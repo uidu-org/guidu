@@ -8,7 +8,7 @@ import { getTableWidth } from '../../../utils';
 import {
   adjustColumnsWidths,
   getLayoutSize,
-  getResizeStateFromDOM,
+  getResizeState,
   getTotalWidth,
   reduceSpace,
   ResizeState,
@@ -84,7 +84,7 @@ export const scale = (
     newWidth -= akEditorTableNumberColumnWidth;
   }
 
-  const resizeState = getResizeStateFromDOM({
+  const resizeState = getResizeState({
     minWidth: tableCellMinWidth,
     maxSize,
     table: node,
@@ -103,7 +103,7 @@ export const scaleWithParent = (
   start: number,
   domAtPos: DomAtPos,
 ) => {
-  const resizeState = getResizeStateFromDOM({
+  const resizeState = getResizeState({
     minWidth: tableCellMinWidth,
     maxSize: parentWidth,
     table,

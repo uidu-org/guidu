@@ -1,9 +1,9 @@
-import { indentation } from '@atlaskit/adf-schema';
+import { indentation } from '@uidu/adf-schema';
 import { EditorPlugin } from '../../types';
 import { keymapPlugin } from './pm-plugins/keymap';
 
 const indentationPlugin = (): EditorPlugin => ({
-  name: 'indentationPlugin',
+  name: 'indentation',
 
   marks() {
     return [{ name: 'indentation', mark: indentation }];

@@ -24,6 +24,8 @@ export function createPlugin(): Plugin | undefined {
 }
 
 const clearMarksOnChangeToEmptyDocumentPlugin = (): EditorPlugin => ({
+  name: 'clearMarksOnEmptyDoc',
+
   pmPlugins() {
     return [{ name: 'clearMarksOnChange', plugin: createPlugin }];
   },

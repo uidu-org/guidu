@@ -5,14 +5,6 @@ import * as React from 'react';
 import { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { analyticsService } from '../../../../analytics';
-import DropdownMenu from '../../../../components/DropdownMenu';
-import {
-  Separator,
-  Shortcut,
-  TriggerWrapper,
-  Wrapper,
-} from '../../../../components/styles';
-import ToolbarButton from '../../../../components/ToolbarButton';
 import {
   clearFormatting as clearFormattingKeymap,
   toggleCode,
@@ -20,6 +12,14 @@ import {
   toggleUnderline,
   tooltip,
 } from '../../../../keymaps';
+import DropdownMenu, { MenuItem } from '../../../../ui/DropdownMenu';
+import {
+  Separator,
+  Shortcut,
+  TriggerWrapper,
+  Wrapper,
+} from '../../../../ui/styles';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import { INPUT_METHOD } from '../../../analytics';
 import { clearFormattingWithAnalytics } from '../../commands/clear-formatting';
 import * as commands from '../../commands/text-formatting';
@@ -81,6 +81,8 @@ export const messages = defineMessages({
 export interface State {
   isOpen?: boolean;
 }
+
+type ToolbarItem = MenuItem & { value: string };
 
 class ToolbarAdvancedTextFormatting extends PureComponent<
   Props & WrappedComponentProps,
@@ -198,7 +200,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
       intl: { formatMessage },
     } = this.props;
     const { code, underline, subsup, strike } = editorView.state.schema.marks;
-    let items: any[] = [];
+    let items: ToolbarItem[] = [];
 
     if (textFormattingState) {
       const {
@@ -260,7 +262,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
   };
 
   private addRecordToItems = (
-    items: Array<any>,
+    items: ToolbarItem[],
     content: string,
     value: string,
     tooltip?: string,
@@ -290,7 +292,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
     });
   };
 
-  private onItemActivated = ({ item }: { item: any }) => {
+  private onItemActivated = ({ item }: { item: ToolbarItem }) => {
     analyticsService.trackEvent(`atlassian.editor.format.${item.value}.button`);
 
     const { state, dispatch } = this.props.editorView;

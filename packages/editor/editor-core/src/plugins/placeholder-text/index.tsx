@@ -1,4 +1,4 @@
-import { placeholder } from '@atlaskit/adf-schema';
+import { placeholder } from '@uidu/adf-schema';
 import {
   NodeSelection,
   Plugin,
@@ -7,9 +7,9 @@ import {
   Transaction,
 } from 'prosemirror-state';
 import * as React from 'react';
-import WithPluginState from '../../components/WithPluginState';
 import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types/editor-plugin';
+import WithPluginState from '../../ui/WithPluginState';
 import { isNodeEmpty } from '../../utils';
 import { FakeTextCursorSelection } from '../fake-text-cursor/cursor';
 import {
@@ -125,6 +125,8 @@ export function createPlugin(
 const placeholderTextPlugin = (
   options: PlaceholderTextOptions,
 ): EditorPlugin => ({
+  name: 'placeholderText',
+
   nodes() {
     return [{ name: 'placeholder', node: placeholder }];
   },

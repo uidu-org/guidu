@@ -1,22 +1,25 @@
-import { Command } from '../../types';
-import { normalizeUrl } from './utils';
-import {
-  stateKey,
-  LinkAction,
-  canLinkBeCreatedInRange,
-} from './pm-plugins/main';
-import { EditorState, Selection } from 'prosemirror-state';
-import { filter, Predicate } from '../../utils/commands';
 import { Mark, Node, ResolvedPos } from 'prosemirror-model';
+import { EditorState, Selection } from 'prosemirror-state';
+import { Command } from '../../types';
+import { filter, Predicate } from '../../utils/commands';
 import {
-  addAnalytics,
   ACTION,
   ACTION_SUBJECT,
-  INPUT_METHOD,
-  EVENT_TYPE,
   ACTION_SUBJECT_ID,
+  addAnalytics,
+  EVENT_TYPE,
+  INPUT_METHOD,
+  withAnalytics,
 } from '../analytics';
 import { queueCardsFromChangedTr } from '../card/pm-plugins/doc';
+import { getLinkCreationAnalyticsEvent } from './analytics';
+import {
+  canLinkBeCreatedInRange,
+  LinkAction,
+  stateKey,
+} from './pm-plugins/main';
+import { LinkInputType } from './ui/HyperlinkAddToolbar/HyperlinkAddToolbar';
+import { normalizeUrl } from './utils';
 
 export function isTextAtPos(pos: number): Predicate {
   return (state: EditorState) => {
@@ -144,16 +147,17 @@ export function insertLink(
     const link = state.schema.marks.link;
     if (href.trim()) {
       const { tr } = state;
+      const normalizedUrl = normalizeUrl(href);
       if (from === to) {
         const textContent = text || href;
         tr.insertText(textContent, from, to);
         tr.addMark(
           from,
           from + textContent.length,
-          link.create({ href: normalizeUrl(href) }),
+          link.create({ href: normalizedUrl }),
         );
       } else {
-        tr.addMark(from, to, link.create({ href: normalizeUrl(href) }));
+        tr.addMark(from, to, link.create({ href: normalizedUrl }));
         tr.setSelection(Selection.near(tr.doc.resolve(to)));
       }
 
@@ -168,6 +172,17 @@ export function insertLink(
     return false;
   });
 }
+
+export const insertLinkWithAnalytics = (
+  inputMethod: LinkInputType,
+  from: number,
+  to: number,
+  href: string,
+  text?: string,
+) =>
+  withAnalytics(getLinkCreationAnalyticsEvent(inputMethod, href))(
+    insertLink(from, to, href, text, inputMethod),
+  );
 
 export function removeLink(pos: number): Command {
   return setLinkHref('', pos);

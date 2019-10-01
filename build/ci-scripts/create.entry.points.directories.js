@@ -2,7 +2,7 @@
 /* This script creates the folder per entry point and add a package.json that maps the path to the entry point .*/
 /**
  * Input:
- * packages/pkg/ 
+ * packages/pkg/
  * └── src
  *     ├── index.ts
  *     ├── a.ts
@@ -24,7 +24,7 @@
  *
  * Folder a -> package.json:
  * {
- * "name": "@atlaskit/bagde",
+ * "name": "@uidu/bagde",
    "main": "../../dist/esm/a.js",
    "modules": "../../dist/cjs/a.js",
    "types": "../../dist/cjs/a.d.ts",

@@ -23,11 +23,11 @@ export default md`
 
   ## Usage
 
-  ${code`import AvatarGroup from '@atlaskit/avatar-group';`}
+  ${code`import AvatarGroup from '@uidu/avatar-group';`}
 
 ${(
   <Example
-    packageName="@atlaskit/avatar-group"
+    packageName="@uidu/avatar-group"
     Component={require('../examples/02-basicAvatarGroup').default}
     title="AvatarGroup"
     source={require('!!raw-loader!../examples/02-basicAvatarGroup')}
@@ -48,11 +48,11 @@ ${(
           props.typeValue.typeParams.params
         ) {
           props.typeValue.typeParams.params = [
-            { kind: 'id', name: '@atlaskit/avatar props' },
+            { kind: 'id', name: '@uidu/avatar props' },
           ];
         }
 
-        return <Prop {...props} interface="Array<@atlaskit/avatar props>" />;
+        return <Prop {...props} interface="Array<@uidu/avatar props>" />;
       },
       // @ts-ignore
       avatar: props => {
@@ -66,11 +66,11 @@ ${(
           props.typeValue.typeParams.params
         ) {
           props.typeValue.typeParams.params = [
-            { kind: 'id', name: '@atlaskit/avatar' },
+            { kind: 'id', name: '@uidu/avatar' },
           ];
         }
 
-        return <Prop {...props} defaultValue="@atlaskit/avatar" />;
+        return <Prop {...props} defaultValue="@uidu/avatar" />;
       },
     }}
   />

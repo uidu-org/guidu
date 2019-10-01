@@ -7,7 +7,7 @@
   "author": "uidu",
   "module": "index.js",
   "dependencies": {
-    "@atlaskit/icon": "^16.0.3",
+    "@atlaskit/icon": "^19.0.6",
     "@uidu/analytics": "^0.1.14",
     "@uidu/item": "^0.1.17",
     "@uidu/layer": "^0.1.7",

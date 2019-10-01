@@ -49,13 +49,16 @@ export const openFeedbackDialog = async (feedbackInfo?: FeedbackInfo) =>
       }
     }
 
-    window.setTimeout(showJiraCollectorDialog, 0);
-    resolve();
+    const timeoutId = window.setTimeout(showJiraCollectorDialog, 0);
+    // Return the timoutId for consumers to call clearTimeout if they need to.
+    resolve(timeoutId);
   });
 
 const feedbackDialog = (feedbackInfo: FeedbackInfo): EditorPlugin => {
   defaultFeedbackInfo = feedbackInfo;
   return {
+    name: 'feedbackDialog',
+
     pluginsOptions: {
       quickInsert: ({ formatMessage }) => [
         {

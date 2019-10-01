@@ -1,14 +1,13 @@
-import { uuid } from '@atlaskit/adf-schema';
+import { uuid } from '@uidu/adf-schema';
 import {
   ContextIdentifierProvider,
   ProviderFactory,
 } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { Plugin, PluginKey } from 'prosemirror-state';
-import { findParentNodeOfType } from 'prosemirror-utils';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
 import { Dispatch } from '../../../event-dispatcher';
-import { Command, EditorAppearance } from '../../../types';
+import { Command } from '../../../types';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import { nodesBetweenChanged } from '../../../utils';
 import { decisionItemNodeView } from '../nodeviews/decisionItem';
 import { taskItemNodeViewFactory } from '../nodeviews/taskItem';
@@ -16,7 +15,6 @@ import { taskItemNodeViewFactory } from '../nodeviews/taskItem';
 export const stateKey = new PluginKey('tasksAndDecisionsPlugin');
 
 enum ACTIONS {
-  SET_CURRENT_TASK_DECISION_ITEM,
   SET_CONTEXT_PROVIDER,
 }
 
@@ -24,21 +22,6 @@ export interface TaskDecisionPluginState {
   currentTaskDecisionItem: PMNode | undefined;
   contextIdentifierProvider?: ContextIdentifierProvider;
 }
-
-const setCurrentTaskDecisionItem = (item: PMNode | undefined): Command => (
-  state,
-  dispatch,
-) => {
-  if (dispatch) {
-    dispatch(
-      state.tr.setMeta(stateKey, {
-        action: ACTIONS.SET_CURRENT_TASK_DECISION_ITEM,
-        data: item,
-      }),
-    );
-  }
-  return true;
-};
 
 const setContextIdentifierProvider = (
   provider: ContextIdentifierProvider | undefined,
@@ -58,7 +41,6 @@ export function createPlugin(
   portalProviderAPI: PortalProviderAPI,
   providerFactory: ProviderFactory,
   dispatch: Dispatch,
-  editorAppearance?: EditorAppearance,
 ) {
   return new Plugin({
     props: {
@@ -79,13 +61,6 @@ export function createPlugin(
         let newPluginState = pluginState;
 
         switch (action) {
-          case ACTIONS.SET_CURRENT_TASK_DECISION_ITEM:
-            newPluginState = {
-              ...pluginState,
-              currentTaskDecisionItem: data,
-            };
-            break;
-
           case ACTIONS.SET_CONTEXT_PROVIDER:
             newPluginState = {
               ...pluginState,
@@ -123,53 +98,7 @@ export function createPlugin(
       };
       providerFactory.subscribe('contextIdentifierProvider', providerHandler);
 
-      return {
-        update: view => {
-          if (editorAppearance !== 'mobile') {
-            return;
-          }
-
-          /**
-           * For composition we need to hide the placeholder when the user is
-           * inside of a taskItem, this is done via pluginState since focus always
-           * lies with the root PM node.
-           *
-           * For web this should always display the placeholder until there is content.
-           * Only mobile will hide the placeholder on focus.
-           *
-           * @see ED-5924
-           */
-          const { state, dispatch } = view;
-          const { selection, schema } = state;
-
-          const {
-            currentTaskDecisionItem,
-          }: TaskDecisionPluginState = stateKey.getState(state);
-          const taskDecisionItem = findParentNodeOfType([
-            schema.nodes.taskItem,
-            schema.nodes.decisionItem,
-          ])(selection);
-
-          if (!taskDecisionItem && currentTaskDecisionItem) {
-            setCurrentTaskDecisionItem(undefined)(state, dispatch);
-            return;
-          }
-
-          if (
-            taskDecisionItem &&
-            currentTaskDecisionItem &&
-            taskDecisionItem.node.eq(currentTaskDecisionItem) === false
-          ) {
-            setCurrentTaskDecisionItem(taskDecisionItem.node)(state, dispatch);
-            return;
-          }
-
-          if (taskDecisionItem && !currentTaskDecisionItem) {
-            setCurrentTaskDecisionItem(taskDecisionItem.node)(state, dispatch);
-            return;
-          }
-        },
-      };
+      return {};
     },
     key: stateKey,
     /*

@@ -2,7 +2,7 @@ import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import TextStyleIcon from '@atlaskit/icon/glyph/editor/text-style';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
 import * as React from 'react';
-import { createElement, ReactElement } from 'react';
+import { createElement } from 'react';
 import {
   defineMessages,
   FormattedMessage,
@@ -10,18 +10,19 @@ import {
   WrappedComponentProps,
 } from 'react-intl';
 import { analyticsService as analytics } from '../../../../analytics';
-import DropdownMenu from '../../../../components/DropdownMenu';
+import { findKeymapByDescription, tooltip } from '../../../../keymaps';
+import DropdownMenu, { MenuItem } from '../../../../ui/DropdownMenu';
 import {
   ButtonContent,
   ExpandIconWrapper,
   MenuWrapper,
   Separator,
   Wrapper,
-} from '../../../../components/styles';
-import ToolbarButton from '../../../../components/ToolbarButton';
+} from '../../../../ui/styles';
+import ToolbarButton from '../../../../ui/ToolbarButton';
 import { BlockTypeState } from '../../pm-plugins/main';
 import { BlockType, NORMAL_TEXT } from '../../types';
-import { BlockTypeMenuItem } from './styled';
+import { BlockTypeMenuItem, KeyboardShortcut } from './styled';
 
 export const messages = defineMessages({
   textStyles: {
@@ -32,11 +33,8 @@ export const messages = defineMessages({
   },
 });
 
-export type DropdownItem = {
-  content: ReactElement<any>;
-  key: string;
+export type DropdownItem = MenuItem & {
   value: BlockType;
-  isActive: boolean;
 };
 
 export interface Props {
@@ -174,6 +172,9 @@ class ToolbarBlockType extends React.PureComponent<
   };
 
   private createItems = () => {
+    const {
+      intl: { formatMessage },
+    } = this.props;
     const { currentBlockType, availableBlockTypes } = this.props.pluginState;
     const items = availableBlockTypes.reduce(
       (acc, blockType, blockTypeNo) => {
@@ -182,18 +183,16 @@ class ToolbarBlockType extends React.PureComponent<
         acc.push({
           content: (
             <BlockTypeMenuItem tagName={tagName} selected={isActive}>
-              {createElement(
-                tagName,
-                {},
-                <FormattedMessage {...blockType.title} />,
-              )}
+              {createElement(tagName, {}, formatMessage(blockType.title))}
             </BlockTypeMenuItem>
           ),
           value: blockType,
-          key: `${blockType}-${blockTypeNo}`,
-          // ED-2853, hiding tooltips as shortcuts are not working atm.
-          // tooltipDescription: tooltip(findKeymapByDescription(blockType.title)),
-          // tooltipPosition: 'right',
+          key: `${blockType.name}-${blockTypeNo}`,
+          elemAfter: (
+            <KeyboardShortcut selected={isActive}>
+              {tooltip(findKeymapByDescription(blockType.title.defaultMessage))}
+            </KeyboardShortcut>
+          ),
           isActive,
         });
         return acc;

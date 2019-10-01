@@ -178,7 +178,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
       !!tableResizingPluginState && !!tableResizingPluginState.dragging;
 
     const rowControls = [
-      <div key={0} className={`${ClassName.ROW_CONTROLS_WRAPPER}`}>
+      <div key={0} className={ClassName.ROW_CONTROLS_WRAPPER}>
         <TableFloatingControls
           editorView={view}
           tableRef={tableRef}
@@ -188,6 +188,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
           isResizing={isResizing}
           isNumberColumnEnabled={node.attrs.isNumberColumnEnabled}
           isHeaderRowEnabled={pluginState.isHeaderRowEnabled}
+          ordering={pluginState.ordering}
           isHeaderColumnEnabled={pluginState.isHeaderColumnEnabled}
           hasHeaderRow={containsHeaderRow(view.state, node)}
           // pass `selection` and `tableHeight` to control re-render
@@ -203,7 +204,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
           width: this.state.tableContainerWidth,
         }}
         className={classnames(ClassName.TABLE_CONTAINER, {
-          [ClassName.WITH_CONTROLS]: tableActive,
+          [ClassName.WITH_CONTROLS]: allowControls && tableActive,
           [ClassName.HOVERED_DELETE_BUTTON]: isInDanger,
           [ClassName.TABLE_SELECTED]: isTableSelected(view.state.selection),
           'less-padding': width < akEditorMobileBreakoutPoint,
@@ -309,7 +310,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
         ...scaleOptions,
         node,
         prevNode: this.node || node,
-        start: getPos() + 1,
+        start: (typeof getPos === 'function' ? getPos() : +getPos) + 1,
         containerWidth: width,
         previousContainerWidth: this.containerWidth!.width || width,
         ...options,
@@ -322,10 +323,16 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     if (this.table) {
       const { view, node, getPos, options, containerWidth } = this.props;
 
-      autoSizeTable(view, node, this.table, getPos(), {
-        dynamicTextSizing: (options && options.dynamicTextSizing) || false,
-        containerWidth: containerWidth.width,
-      });
+      autoSizeTable(
+        view,
+        node,
+        this.table,
+        typeof getPos === 'function' ? getPos() : +getPos,
+        {
+          dynamicTextSizing: (options && options.dynamicTextSizing) || false,
+          containerWidth: containerWidth.width,
+        },
+      );
     }
   };
 
@@ -375,7 +382,9 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
 
   private getParentNodeWidth = () =>
     getParentNodeWidth(
-      this.props.getPos(),
+      typeof this.props.getPos === 'function'
+        ? this.props.getPos()
+        : +this.props.getPos,
       this.props.view.state,
       this.props.containerWidth,
       this.props.options && this.props.options.isFullWidthModeEnabled,

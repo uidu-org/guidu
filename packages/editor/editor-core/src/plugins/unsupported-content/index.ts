@@ -3,7 +3,7 @@ import {
   confluenceUnsupportedInline,
   unsupportedBlock,
   unsupportedInline,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { ReactNodeView } from '../../nodeviews';
 import { EditorPlugin, PMPluginFactory } from '../../types';
@@ -48,6 +48,8 @@ const createPlugin: PMPluginFactory = ({ schema, portalProviderAPI }) => {
 };
 
 const unsupportedContentPlugin = (): EditorPlugin => ({
+  name: 'unsupportedContent',
+
   nodes() {
     return [
       {

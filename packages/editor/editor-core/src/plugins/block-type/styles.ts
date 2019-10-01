@@ -1,5 +1,7 @@
-// @ts-ignore: unused variable
-import { blockquoteSharedStyles, headingsSharedStyles } from '@uidu/editor-common';
+import {
+  blockquoteSharedStyles,
+  headingsSharedStyles,
+} from '@uidu/editor-common';
 import { css } from 'styled-components';
 
 export const blocktypeStyles = css`

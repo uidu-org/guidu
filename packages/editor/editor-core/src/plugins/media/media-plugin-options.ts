@@ -1,6 +1,7 @@
 import { ErrorReporter, ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
+import { getPosHandler } from '../../nodeviews';
 import { EditorAppearance } from '../../types/editor-props';
 import { CustomMediaPicker, MediaState } from './types';
 
@@ -10,7 +11,7 @@ export type MediaPluginOptions = {
     [name: string]: (
       node: PMNode,
       view: EditorView,
-      getPos: () => number,
+      getPos: getPosHandler,
     ) => NodeView;
   };
   errorReporter?: ErrorReporter;

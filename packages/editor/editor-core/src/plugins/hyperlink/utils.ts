@@ -1,4 +1,4 @@
-import { isSafeUrl } from '@atlaskit/adf-schema';
+import { isSafeUrl } from '@uidu/adf-schema';
 import LinkifyIt from 'linkify-it';
 import { Node, Schema, Slice } from 'prosemirror-model';
 import { mapSlice } from '../../utils/slice';

@@ -3,16 +3,9 @@ import { Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import { createInputRule } from '../../../utils/input-rules';
-import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  addAnalytics,
-  AnalyticsEventPayload,
-  EVENT_TYPE,
-  INPUT_METHOD,
-} from '../../analytics';
+import { addAnalytics, INPUT_METHOD } from '../../analytics';
 import { queueCards } from '../../card/pm-plugins/actions';
+import { getLinkCreationAnalyticsEvent } from '../analytics';
 import { LinkMatcher, Match, normalizeUrl } from '../utils';
 
 export function createLinkInputRule(regexp: RegExp): InputRule {
@@ -33,14 +26,6 @@ export function createLinkInputRule(regexp: RegExp): InputRule {
         'atlassian.editor.format.hyperlink.autoformatting',
       );
 
-      const payload: AnalyticsEventPayload = {
-        action: ACTION.INSERTED,
-        actionSubject: ACTION_SUBJECT.DOCUMENT,
-        actionSubjectId: ACTION_SUBJECT_ID.LINK,
-        attributes: { inputMethod: INPUT_METHOD.AUTO_DETECT },
-        eventType: EVENT_TYPE.TRACK,
-      };
-
       const tr = queueCards([
         {
           url: link.url,
@@ -58,7 +43,10 @@ export function createLinkInputRule(regexp: RegExp): InputRule {
           )
           .insertText(' '),
       );
-      return addAnalytics(tr, payload);
+      return addAnalytics(
+        tr,
+        getLinkCreationAnalyticsEvent(INPUT_METHOD.AUTO_DETECT, url),
+      );
     },
   );
 }
@@ -83,19 +71,15 @@ export function createInputRulePlugin(schema: Schema): Plugin | undefined {
         'atlassian.editor.format.hyperlink.autoformatting',
       );
 
-      const payload: AnalyticsEventPayload = {
-        action: ACTION.INSERTED,
-        actionSubject: ACTION_SUBJECT.DOCUMENT,
-        actionSubjectId: ACTION_SUBJECT_ID.LINK,
-        attributes: { inputMethod: INPUT_METHOD.FORMATTING },
-        eventType: EVENT_TYPE.TRACK,
-      };
       const tr = state.tr.replaceWith(
         start + prefix.length,
         end,
         schema.text(linkText, [markType]),
       );
-      return addAnalytics(tr, payload);
+      return addAnalytics(
+        tr,
+        getLinkCreationAnalyticsEvent(INPUT_METHOD.FORMATTING, url),
+      );
     },
   );
 

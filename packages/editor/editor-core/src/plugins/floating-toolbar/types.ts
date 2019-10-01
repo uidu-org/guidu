@@ -1,5 +1,5 @@
 import { ProviderFactory } from '@uidu/editor-common';
-import { NodeType } from 'prosemirror-model';
+import { Node, NodeType } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
@@ -97,12 +97,15 @@ export interface FloatingToolbarConfig {
 
   visible?: boolean;
   nodeType: NodeType | NodeType[];
-  items: Array<FloatingToolbarItem<Command>>;
+  items:
+    | Array<FloatingToolbarItem<Command>>
+    | ((node: Node) => Array<FloatingToolbarItem<Command>>);
   align?: AlignType;
   className?: string;
   height?: number;
   width?: number;
   offset?: [number, number];
+  forcePlacement?: boolean;
 }
 
 export type FloatingToolbarHandler = (

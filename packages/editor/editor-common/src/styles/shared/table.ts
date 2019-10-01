@@ -2,7 +2,7 @@ import {
   tableCellContentDomSelector,
   TableLayout,
   tablePrefixSelector,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import { colors, fontSize, themed } from '@uidu/theme';
 import { css } from 'styled-components';
 import {

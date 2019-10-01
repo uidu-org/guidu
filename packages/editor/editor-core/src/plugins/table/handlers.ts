@@ -1,16 +1,21 @@
 // #region Imports
+import { Node as PmNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
-import { findTable, findParentNodeOfType } from 'prosemirror-utils';
+import { findParentNodeOfType, findTable } from 'prosemirror-utils';
 import { DecorationSet } from 'prosemirror-view';
-import { Node as PmNode } from 'prosemirror-model';
 import { defaultTableSelection } from './pm-plugins/main';
-import { TablePluginState, TableDecorations } from './types';
 import {
-  findControlsHoverDecoration,
-  updateNodeDecorations,
+  TableColumnOrdering,
+  TableDecorations,
+  TablePluginState,
+} from './types';
+import {
   createColumnControlsDecoration,
   createColumnSelectedDecorations,
+  findControlsHoverDecoration,
+  TableSortStep,
+  updateNodeDecorations,
 } from './utils';
 import { findColumnControlSelectedDecoration } from './utils/decoration';
 // #endregion
@@ -70,6 +75,14 @@ export const handleDocOrSelectionChanged = (
     pluginState.decorationSet,
   );
 
+  const tableSortStep: TableSortStep = tr.steps.find(
+    step => step instanceof TableSortStep,
+  ) as TableSortStep;
+  let ordering: TableColumnOrdering | undefined;
+  if (tableSortStep && table && table.pos === tableSortStep.pos) {
+    ordering = tableSortStep.next;
+  }
+
   if (
     pluginState.tableNode !== tableNode ||
     pluginState.targetCellPosition !== targetCellPosition ||
@@ -85,7 +98,9 @@ export const handleDocOrSelectionChanged = (
       decorationSet: decorationSet.remove(hoverDecoration),
       targetCellPosition,
       tableNode,
+      ordering,
     };
+
     return nextPluginState;
   }
 

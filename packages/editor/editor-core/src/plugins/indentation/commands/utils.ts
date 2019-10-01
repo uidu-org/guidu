@@ -1,4 +1,4 @@
-import { IndentationMarkAttributes } from '@atlaskit/adf-schema';
+import { IndentationMarkAttributes } from '@uidu/adf-schema';
 import { Transaction } from 'prosemirror-state';
 import { GetAttrsChange } from '../../../utils/getAttrsWithChangesRecorder';
 import {

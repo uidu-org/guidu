@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MentionUserType as UserType } from '@atlaskit/adf-schema';
+import { MentionUserType as UserType } from '@uidu/adf-schema';
 import { PureComponent } from 'react';
 import MentionWithProviders from './mention-with-providers';
 

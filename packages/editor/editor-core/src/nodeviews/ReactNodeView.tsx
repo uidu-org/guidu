@@ -2,13 +2,13 @@ import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection, Selection } from 'prosemirror-state';
 import { Decoration, EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { PortalProviderAPI } from '../components/PortalProvider';
 import {
   ReactNodeViewState,
   stateKey as SelectionChangePluginKey,
 } from '../plugins/base/pm-plugins/react-nodeview';
+import { PortalProviderAPI } from '../ui/PortalProvider';
 
-export type getPosHandler = () => number;
+export type getPosHandler = (() => number) | boolean;
 export type ReactComponentProps = { [key: string]: any };
 export type ForwardRef = (node: HTMLElement | null) => void;
 export type shouldUpdate = (nextNode: PMNode) => boolean;
@@ -284,7 +284,7 @@ export class SelectionBasedNodeView<
    * expensive, unless you know you're definitely going to render.
    */
   private updatePos() {
-    this.pos = this.getPos();
+    this.pos = typeof this.getPos === 'function' ? this.getPos() : +this.getPos;
     this.posEnd = this.pos + this.node.nodeSize;
   }
 

@@ -1,20 +1,9 @@
 import { Node as PMNode } from 'prosemirror-model';
-import { Decoration, EditorView, NodeView } from 'prosemirror-view';
+import { Decoration, NodeView } from 'prosemirror-view';
 import * as React from 'react';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import WithPluginState from '../../../components/WithPluginState';
-import { ReactComponentProps, ReactNodeView } from '../../../nodeviews';
-import {
-  stateKey as taskPluginKey,
-  TaskDecisionPluginState,
-} from '../pm-plugins/main';
+import { ForwardRef, getPosHandler, ReactNodeView } from '../../../nodeviews';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import DecisionItem from '../ui/Decision';
-
-export interface Props {
-  children?: React.ReactNode;
-  view: EditorView;
-  node: PMNode;
-}
 
 class Decision extends ReactNodeView {
   private isContentEmpty(node: PMNode) {
@@ -31,35 +20,11 @@ class Decision extends ReactNodeView {
     return { dom: document.createElement('div') };
   }
 
-  render(_props: ReactComponentProps, forwardRef: any) {
+  render(_props: never, forwardRef: ForwardRef) {
     return (
-      <WithPluginState
-        plugins={{
-          taskDecisionPlugin: taskPluginKey,
-        }}
-        render={({
-          taskDecisionPlugin,
-        }: {
-          taskDecisionPlugin: TaskDecisionPluginState;
-        }) => {
-          let insideCurrentNode = false;
-          if (
-            taskDecisionPlugin &&
-            taskDecisionPlugin.currentTaskDecisionItem
-          ) {
-            insideCurrentNode = this.node.eq(
-              taskDecisionPlugin.currentTaskDecisionItem,
-            );
-          }
-          return (
-            <DecisionItem
-              contentRef={forwardRef}
-              showPlaceholder={
-                !insideCurrentNode && this.isContentEmpty(this.node)
-              }
-            />
-          );
-        }}
+      <DecisionItem
+        contentRef={forwardRef}
+        showPlaceholder={this.isContentEmpty(this.node)}
       />
     );
   }
@@ -70,7 +35,7 @@ class Decision extends ReactNodeView {
      * on first character insertion.
      * Note: last character deletion is handled externally and automatically re-renders.
      */
-    return this.isContentEmpty(this.node) && nextNode.content.childCount === 1;
+    return this.isContentEmpty(this.node) && !!nextNode.content.childCount;
   }
 
   update(node: PMNode, decorations: Decoration[]) {
@@ -86,7 +51,7 @@ class Decision extends ReactNodeView {
 export const decisionItemNodeView = (portalProviderAPI: PortalProviderAPI) => (
   node: any,
   view: any,
-  getPos: () => number,
+  getPos: getPosHandler,
 ): NodeView => {
-  return new Decision(node, view, getPos, portalProviderAPI).init();
+  return new Decision(node, view, getPos, portalProviderAPI, {}).init();
 };

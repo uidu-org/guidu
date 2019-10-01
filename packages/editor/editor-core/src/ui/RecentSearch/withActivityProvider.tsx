@@ -1,7 +1,11 @@
 import { ActivityProvider } from '@atlaskit/activity';
-import { ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
+import {
+  Diff,
+  ProviderFactory,
+  Providers,
+  WithProviders,
+} from '@uidu/editor-common';
 import * as React from 'react';
-import { Diff } from '../../utils/types';
 
 export interface ExpandedActivityProviderProps {
   providerFactory: ProviderFactory;

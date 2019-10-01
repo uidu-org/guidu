@@ -2,7 +2,7 @@ import {
   createLanguageList,
   DEFAULT_LANGUAGES,
   getLanguageIdentifier,
-} from '@atlaskit/adf-schema';
+} from '@uidu/adf-schema';
 import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { findParentNodeOfType } from 'prosemirror-utils';
 import { defineMessages } from 'react-intl';

@@ -1,4 +1,4 @@
-import { ContentRef } from '@atlaskit/task-decision';
+import { ContentRef } from '@uidu/task-decision';
 import { ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
 import * as React from 'react';
 import { PureComponent, ReactElement } from 'react';

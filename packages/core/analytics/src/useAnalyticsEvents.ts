@@ -1,9 +1,9 @@
-import { useContext, useCallback } from 'react';
-
+import { useCallback, useContext } from 'react';
+import { AnalyticsEventPayload } from './AnalyticsEvent';
 import { AnalyticsReactContext } from './AnalyticsReactContext';
 import { CreateUIAnalyticsEvent } from './types';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
-import { AnalyticsEventPayload } from './AnalyticsEvent';
+
 
 export type UseAnalyticsEventsHook = {
   createAnalyticsEvent: CreateUIAnalyticsEvent;
@@ -22,7 +22,7 @@ export function useAnalyticsEvents(): UseAnalyticsEventsHook {
   ) {
     /* eslint-disable-next-line no-console */
     console.warn(
-      `No compatible AnalyticsListener is listening to this event fire. Use of this hook requires the firing component/hook to be wrapped in an AnalyticsListener from @atlaskit/analytics-next@^6.3.0 or above.`,
+      `No compatible AnalyticsListener is listening to this event fire. Use of this hook requires the firing component/hook to be wrapped in an AnalyticsListener from @uidu/analytics@^6.3.0 or above.`,
     );
   }
 

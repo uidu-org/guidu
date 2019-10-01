@@ -77,7 +77,7 @@ export class CodeBlockView {
     return true;
   }
 
-  ignoreMutation(record: MutationRecord) {
+  ignoreMutation(record: any) {
     // Ensure updating the line-number gutter doesn't trigger reparsing the codeblock
     return (
       record.target === this.lineNumberGutter ||

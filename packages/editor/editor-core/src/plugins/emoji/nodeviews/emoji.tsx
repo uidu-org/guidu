@@ -2,11 +2,11 @@ import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
 import * as React from 'react';
+import { getPosHandler, ReactNodeView } from '../../../nodeviews';
 import InlineNodeWrapper, {
   createMobileInlineDomRef,
-} from '../../../components/InlineNodeWrapper';
-import { PortalProviderAPI } from '../../../components/PortalProvider';
-import { getPosHandler, ReactNodeView } from '../../../nodeviews';
+} from '../../../ui/InlineNodeWrapper';
+import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import { ZeroWidthSpace } from '../../../utils';
 import { EmojiPluginOptions } from '../index';
 import Emoji from '../ui/Emoji';
@@ -33,7 +33,6 @@ export class EmojiNodeView extends ReactNodeView<Props> {
     const { shortName, id, text } = this.node.attrs;
 
     return (
-      // @ts-ignore
       <InlineNodeWrapper useInlineWrapper={options && options.useInlineWrapper}>
         <Emoji
           providers={providerFactory}

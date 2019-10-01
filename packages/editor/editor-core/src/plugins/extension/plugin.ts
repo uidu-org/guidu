@@ -1,4 +1,4 @@
-import { ExtensionLayout } from '@atlaskit/adf-schema';
+import { ExtensionLayout } from '@uidu/adf-schema';
 import {
   ExtensionHandlers,
   ProviderFactory,
@@ -8,9 +8,9 @@ import { Node as PMNode } from 'prosemirror-model';
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { findDomRefAtPos, findSelectedNodeOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { PortalProviderAPI } from '../../components/PortalProvider';
 import { Dispatch } from '../../event-dispatcher';
 import { ExtensionConfig } from '../../types';
+import { PortalProviderAPI } from '../../ui/PortalProvider';
 import { closestElement } from '../../utils';
 import ExtensionNodeView from './nodeviews/extension';
 import { getExtensionNode } from './utils';

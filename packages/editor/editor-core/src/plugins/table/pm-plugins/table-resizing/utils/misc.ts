@@ -1,4 +1,4 @@
-import { CellAttributes, TableLayout } from '@atlaskit/adf-schema';
+import { CellAttributes, TableLayout } from '@uidu/adf-schema';
 import {
   akEditorDefaultLayoutWidth,
   akEditorFullWidthLayoutWidth,
@@ -9,8 +9,8 @@ import {
   mapBreakpointToLayoutMaxWidth,
 } from '@uidu/editor-common';
 import { NodeSpec, ResolvedPos } from 'prosemirror-model';
-import { cellAround, TableMap } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
+import { containsClassName } from '../../../../../utils';
 import { TableOptions } from '../../../nodeviews/table';
 
 export const tableLayoutToSize: Record<string, number> = {
@@ -64,38 +64,6 @@ export function pointsAtCell($pos: ResolvedPos<any>) {
   );
 }
 
-// Returns the pos of the cell on the side requested.
-export function edgeCell(
-  view: EditorView,
-  event: MouseEvent,
-  side: string,
-  handleWidth: number,
-): number | null {
-  const buffer = side === 'right' ? -handleWidth : handleWidth; // Fixes finicky bug where posAtCoords could return wrong pos.
-  let posResult = view.posAtCoords({
-    left: event.clientX + buffer,
-    top: event.clientY,
-  });
-
-  if (!posResult || !posResult.pos) {
-    return null;
-  }
-
-  let $cell = cellAround(view.state.doc.resolve(posResult.pos));
-  if (!$cell) {
-    return null;
-  }
-  if (side === 'right') {
-    return $cell.pos;
-  }
-
-  let map = TableMap.get($cell.node(-1));
-  let start = $cell.start(-1);
-  let index = map.map.indexOf($cell.pos - start);
-
-  return index % map.width === 0 ? null : start + map.map[index - 1];
-}
-
 // Get the current col width, handles colspan.
 export function currentColWidth(
   view: EditorView,
@@ -124,7 +92,7 @@ export function currentColWidth(
 // Attempts to find a parent TD/TH depending on target element.
 export function domCellAround(target: HTMLElement | null): HTMLElement | null {
   while (target && target.nodeName !== 'TD' && target.nodeName !== 'TH') {
-    target = target.classList.contains('ProseMirror')
+    target = containsClassName(target, 'ProseMirror')
       ? null
       : (target.parentNode as HTMLElement | null);
   }

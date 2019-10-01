@@ -1,4 +1,4 @@
-import { MediaBaseAttributes } from '@atlaskit/adf-schema';
+import { MediaBaseAttributes } from '@uidu/adf-schema';
 import { createCommand, getPluginState } from '../pm-plugins/media-editor';
 
 export const openMediaEditor = (pos: number, identifier: any) =>

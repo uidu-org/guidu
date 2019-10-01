@@ -7,6 +7,7 @@
   "author": "uidu",
   "sideEffects": false,
   "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/theme": "^0.1.17"
   },
@@ -22,5 +23,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "src/index.js"
+  "uidu:src": "index.ts"
 }
