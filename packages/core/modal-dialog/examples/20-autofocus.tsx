@@ -1,6 +1,6 @@
-import styled from 'styled-components';
 import Button, { ButtonGroup } from '@uidu/button';
 import React from 'react';
+import styled from 'styled-components';
 import ModalDialog, { ModalTransition } from '../src';
 
 const H4 = styled.h4`
