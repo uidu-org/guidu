@@ -1,11 +1,11 @@
-import Button, { ButtonGroup } from '@uidu/button';
 import CrossIcon from '@atlaskit/icon/glyph/cross';
+import Avatar from '@uidu/avatar';
+import Button, { ButtonGroup } from '@uidu/button';
 import InlineDialog from '@uidu/inline-dialog';
 import { colors } from '@uidu/theme';
-import styled from '@emotion/styled';
-import Avatar from '@uidu/avatar';
 import React from 'react';
 import Lorem from 'react-lorem-component';
+import styled from 'styled-components';
 import ModalDialog, { ModalFooter, ModalTransition } from '../src';
 import { ButtonOnClick } from '../src/types';
 

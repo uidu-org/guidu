@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import * as React from 'react';
 import { gridSize } from '@uidu/theme';
+import * as React from 'react';
 import { getLoadingStyle } from './utils';
 
 interface Props {

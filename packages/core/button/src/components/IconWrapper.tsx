@@ -1,7 +1,6 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import { getLoadingStyle } from './utils';
 import { gridSize } from '@uidu/theme';
+import React from 'react';
+import { getLoadingStyle } from './utils';
 
 interface Props {
   icon: React.ReactChild;

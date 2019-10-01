@@ -1,6 +1,5 @@
-import { css } from '@emotion/core';
-import styled from '@emotion/styled';
 import { colors, gridSize, math, themed } from '@uidu/theme';
+import styled, { css } from 'styled-components';
 import { AppearanceType } from '../types';
 import { flexMaxHeightIEFix } from '../utils/flex-max-height-ie-fix';
 

@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
 import Button, { ButtonGroup } from '@uidu/button';
 import React from 'react';
 import Lorem from 'react-lorem-component';
+import styled from 'styled-components';
 import ModalDialog, { ModalTransition } from '../src';
 
 const units = [420, '42em', '100%'];

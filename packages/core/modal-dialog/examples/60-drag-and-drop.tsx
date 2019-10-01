@@ -1,9 +1,15 @@
 /* eslint-disable react/no-multi-comp */
-import styled from '@emotion/styled';
 import Button from '@uidu/button';
 import { colors } from '@uidu/theme';
 import React from 'react';
-import { DragDropContext, Draggable, DraggableProvidedDragHandleProps as DragHandleProps, Droppable, DropResult } from 'react-beautiful-dnd';
+import {
+  DragDropContext,
+  Draggable,
+  DraggableProvidedDragHandleProps as DragHandleProps,
+  Droppable,
+  DropResult,
+} from 'react-beautiful-dnd';
+import styled from 'styled-components';
 import Modal, { ModalTransition } from '../src';
 
 const noop = () => {};

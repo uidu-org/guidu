@@ -1,7 +1,10 @@
-import styled from '@emotion/styled';
 import { borderRadius, colors, layers, themed } from '@uidu/theme';
+import styled from 'styled-components';
 import { gutter, WidthNames, WIDTH_ENUM } from '../shared-variables';
-import { flexMaxHeightIEFix, IEMaxHeightCalcPx } from '../utils/flex-max-height-ie-fix';
+import {
+  flexMaxHeightIEFix,
+  IEMaxHeightCalcPx,
+} from '../utils/flex-max-height-ie-fix';
 
 const { DN50, N0, N30A, N60A, text } = colors;
 const boxShadow = ({ isChromeless }: { isChromeless?: boolean }) =>

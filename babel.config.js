@@ -10,10 +10,10 @@ module.exports = function(api) {
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-syntax-export-default-from',
+    'babel-plugin-styled-components',
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
     'babel-plugin-add-module-exports',
-    'babel-plugin-styled-components',
   ];
 
   const presets = ['@babel/react', '@babel/flow', '@babel/preset-typescript'];
@@ -25,7 +25,7 @@ module.exports = function(api) {
       'production:cjs': {
         plugins: [
           '@babel/transform-runtime',
-          ['styled-components', { minify: false }],
+          ['babel-plugin-styled-components', { minify: false }],
           'transform-dynamic-import',
         ],
         presets: [['@babel/env', { modules: 'commonjs' }]],
@@ -39,7 +39,7 @@ module.exports = function(api) {
       'production:esm': {
         plugins: [
           '@babel/transform-runtime',
-          ['styled-components', { minify: false }],
+          ['babel-plugin-styled-components', { minify: false }],
         ],
         presets: [['@babel/env', { modules: false }]],
         ignore: [

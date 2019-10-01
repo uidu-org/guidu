@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
 import Button, { ButtonGroup } from '@uidu/button';
 import { gridSize } from '@uidu/theme';
 import React from 'react';
 import Lorem from 'react-lorem-component';
+import styled from 'styled-components';
 import ModalDialog, { ModalTransition } from '../src';
 import { WIDTH_ENUM } from '../src/shared-variables';
 

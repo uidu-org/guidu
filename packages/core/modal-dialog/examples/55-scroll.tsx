@@ -1,8 +1,8 @@
-import FieldRadioGroup from '@atlaskit/field-radio-group';
-import styled from '@emotion/styled';
 import Button from '@uidu/button';
+import { RadioGroup } from '@uidu/radio';
 import React from 'react';
 import Lorem from 'react-lorem-component';
+import styled from 'styled-components';
 import Modal, { ModalTransition } from '../src';
 
 const TallContainer = styled.div`
@@ -63,7 +63,7 @@ export default class ExampleScroll extends React.PureComponent<{}, State> {
           such as <code>scrollIntoView</code> scrolling the window instead of
           only the closest scroll parent will be prevented.
         </p>
-        <FieldRadioGroup
+        <RadioGroup
           items={scrollBehaviors}
           label="Scroll behavior:"
           onRadioChange={this.onScrollBehaviorChange}

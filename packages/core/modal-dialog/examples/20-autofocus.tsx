@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import Button, { ButtonGroup } from '@uidu/button';
 import React from 'react';
 import ModalDialog, { ModalTransition } from '../src';

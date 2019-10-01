@@ -55,7 +55,7 @@ const CustomButton = styled(Button)\`
 With the shift to Emotion in \`v12\`, we recommend using Emotion’s own \‘styled\’ function, or for more advanced use cases the new theming API:
 
 ${code`
-import styled from '@emotion/styled'
+import styled from 'styled-components'
 
 const CustomButton = styled(Button)\`
   background-color: red

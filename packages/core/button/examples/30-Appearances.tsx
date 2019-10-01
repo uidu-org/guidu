@@ -1,5 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
 import { Checkbox } from '@uidu/checkbox';
 import { Form } from '@uidu/form';
 import * as React from 'react';

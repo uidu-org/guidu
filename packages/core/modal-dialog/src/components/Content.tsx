@@ -1,20 +1,15 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-
-import React from 'react';
 import rafSchedule from 'raf-schd';
+import React from 'react';
 import ScrollLock from 'react-scrolllock';
-
-import Footer from './Footer';
-import Header from './Header';
-
-import { AppearanceType, KeyboardOrMouseEvent, ButtonOnClick } from '../types';
 import {
-  keylineHeight,
   Body as DefaultBody,
   bodyStyles,
+  keylineHeight,
   wrapperStyles,
 } from '../styled/Content';
+import { AppearanceType, ButtonOnClick, KeyboardOrMouseEvent } from '../types';
+import Footer from './Footer';
+import Header from './Header';
 
 function getInitialState() {
   return {

@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import * as React from 'react';
 import { AtlassianIcon } from '@atlaskit/logo';
+import * as React from 'react';
 import Button from '../src';
 
 const Icon = <AtlassianIcon label="Test icon" size="small" />;

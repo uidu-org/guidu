@@ -1,8 +1,6 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-import Button, { ButtonGroup } from '../src';
 import AddIcon from '@atlaskit/icon/glyph/editor/add';
 import { colors } from '@uidu/theme';
+import Button, { ButtonGroup } from '../src';
 
 export default () => (
   <div css={{ margin: 20 }}>
