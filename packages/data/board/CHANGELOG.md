@@ -1,5 +1,19 @@
 # @uidu/board
 
+## 0.1.7
+
+### Patch Changes
+
+- 9e09850: Removed emotion core
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/badge@0.1.13
+  - @uidu/docs@0.1.34
+  - @uidu/theme@0.1.18
+
 ## 0.1.6
 
 ### Patch Changes

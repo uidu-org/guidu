@@ -1,5 +1,18 @@
 # @uidu/adf-utils
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/adf-schema@0.1.1
+  - @uidu/json-schema-generator@0.1.1
+
 ## 7.1.0
 
 ### Minor Changes

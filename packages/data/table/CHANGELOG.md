@@ -1,5 +1,23 @@
 # @uidu/table
 
+## 0.1.26
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/dropdown-menu@0.1.17
+  - @uidu/droplist@0.1.16
+  - @uidu/item@0.1.18
+  - @uidu/lozenge@0.1.14
+  - @uidu/data-controls@0.1.24
+  - @uidu/shell@0.1.31
+
 ## 0.1.25
 
 ### Patch Changes

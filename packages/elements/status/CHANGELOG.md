@@ -1,5 +1,23 @@
 # @atlaskit/status
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/analytics@0.1.15
+  - @uidu/docs@0.1.34
+  - @uidu/lozenge@0.1.14
+  - @uidu/theme@0.1.18
+  - @uidu/analytics-gas-types@0.1.1
+  - @uidu/elements-test-helpers@0.1.1
+  - @uidu/field-text@0.1.22
+
 ## 0.9.13
 
 - Updated dependencies [80adfefba2](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/80adfefba2):

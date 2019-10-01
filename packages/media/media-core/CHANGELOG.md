@@ -1,5 +1,16 @@
 # @uidu/media-core
 
+## 0.1.13
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+
 ## 0.1.12
 
 ### Patch Changes

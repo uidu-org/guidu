@@ -1,5 +1,21 @@
 # @uidu/map
 
+## 0.2.0
+
+### Minor Changes
+
+- 9e09850: Map changed underneath library
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/theme@0.1.18
+
 ## 0.1.10
 
 ### Patch Changes

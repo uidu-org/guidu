@@ -1,5 +1,27 @@
 # @uidu/donate
 
+## 0.1.9
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/modal-dialog@0.1.18
+  - @uidu/form@0.1.39
+  - @uidu/docs@0.1.34
+  - @uidu/payments@0.1.7
+  - @uidu/checkbox@0.1.52
+  - @uidu/field-text@0.1.22
+  - @uidu/field-textarea@0.1.10
+  - @uidu/widgets@0.1.6
+
 ## 0.1.8
 
 ### Patch Changes

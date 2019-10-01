@@ -1,5 +1,25 @@
 # @uidu/drawer
 
+## 0.2.5
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/analytics@0.1.15
+  - @uidu/blanket@0.1.13
+  - @uidu/docs@0.1.34
+  - @uidu/dropdown-menu@0.1.17
+  - @uidu/item@0.1.18
+  - @uidu/theme@0.1.18
+  - @uidu/shell@0.1.31
+
 ## 0.2.4
 
 ### Patch Changes

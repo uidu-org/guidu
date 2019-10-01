@@ -1,6 +1,6 @@
 {
   "name": "@uidu/util-data-test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shared test and story data",
   "license": "MIT",
   "author": "uidu",
@@ -11,17 +11,17 @@
   },
   "dependencies": {
     "@atlaskit/util-service-support": "^4.0.3",
-    "@uidu/analytics": "^0.1.14",
-    "@uidu/emoji": "^0.1.0",
-    "@uidu/mentions": "^0.1.8",
-    "@uidu/task-decision": "^0.1.0",
+    "@uidu/analytics": "^0.1.15",
+    "@uidu/emoji": "^0.1.1",
+    "@uidu/mentions": "^0.1.9",
+    "@uidu/task-decision": "^0.1.1",
     "date-fns": "^2.0.0",
     "lodash.sample": "^4.2.1",
     "tslib": "^1.10.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.33"
+    "@uidu/docs": "^0.1.34"
   },
   "peerDependencies": {
     "js-search": "^1.4.3",

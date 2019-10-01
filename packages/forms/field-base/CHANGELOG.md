@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.1.45
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+
 ## 0.1.44
 
 ### Patch Changes

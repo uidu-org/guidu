@@ -1,5 +1,24 @@
 # @uidu/downshift
 
+## 0.1.13
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/docs@0.1.34
+  - @uidu/dropdown-menu@0.1.17
+  - @uidu/droplist@0.1.16
+  - @uidu/item@0.1.18
+  - @uidu/field-base@0.1.45
+  - @uidu/field-text@0.1.22
+
 ## 0.1.12
 
 ### Patch Changes

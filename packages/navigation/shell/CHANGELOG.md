@@ -1,5 +1,18 @@
 # @uidu/shell
 
+## 0.1.31
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/navigation@0.1.25
+
 ## 0.1.30
 
 ### Patch Changes

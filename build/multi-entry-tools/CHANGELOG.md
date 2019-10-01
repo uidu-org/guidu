@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.8
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+
 ## 0.0.7
 
 ### Patch Changes

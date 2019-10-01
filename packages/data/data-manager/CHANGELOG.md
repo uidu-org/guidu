@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 0.1.22
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/calendar@0.1.11
+  - @uidu/data-controls@0.1.24
+  - @uidu/gallery@0.1.17
+  - @uidu/list@0.1.15
+  - @uidu/table@0.1.26
+  - @uidu/shell@0.1.31
+
 ## 0.1.21
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/message
 
+## 0.1.20
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/drawer@0.2.5
+  - @uidu/dropdown-menu@0.1.17
+  - @uidu/tooltip@0.1.16
+  - @uidu/media-card@0.1.19
+  - @uidu/media-core@0.1.13
+  - @uidu/media-filmstrip@0.1.19
+  - @uidu/message-form@0.1.18
+  - @uidu/message-renderer@0.1.14
+
 ## 0.1.19
 
 ### Patch Changes

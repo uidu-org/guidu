@@ -1,5 +1,18 @@
 # @atlaskit/analytics-namespaced-context
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/analytics@0.1.15
+  - @uidu/docs@0.1.34
+  - @uidu/analytics-listeners@0.1.1
+
 ## 4.1.7
 
 ### Patch Changes

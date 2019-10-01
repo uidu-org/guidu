@@ -1,5 +1,11 @@
 # @uidu/pipelines-docker-image
 
+## 0.1.8
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+
 ## 0.1.7
 
 ### Patch Changes

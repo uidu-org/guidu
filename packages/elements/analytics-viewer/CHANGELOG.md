@@ -1,5 +1,16 @@
 # @uidu/analytics-viewer
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/analytics@0.1.15
+
 ## 0.3.6
 
 ### Patch Changes

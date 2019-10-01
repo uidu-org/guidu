@@ -1,5 +1,19 @@
 # @uidu/field-range
 
+## 0.1.16
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/section-message@0.1.13
+  - @uidu/docs@0.1.34
+  - @uidu/theme@0.1.18
+
 ## 0.1.15
 
 ### Patch Changes

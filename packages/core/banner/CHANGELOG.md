@@ -1,5 +1,16 @@
 # @uidu/banner
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/theme@0.1.18
+
 ## 10.1.0
 
 ### Minor Changes

@@ -1,5 +1,24 @@
 # @uidu/comment
 
+## 0.1.5
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/field-mentions@0.1.20
+  - @uidu/field-text@0.1.22
+  - @uidu/message-renderer@0.1.14
+
 ## 0.1.4
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/reactions
 
+## 0.1.7
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
 ## 0.1.6
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/media-picker
 
+## 0.1.12
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/modal-dialog@0.1.18
+  - @uidu/docs@0.1.34
+  - @uidu/media-core@0.1.13
+
 ## 0.1.11
 
 ### Patch Changes

@@ -1,5 +1,26 @@
 # @uidu/message-form
 
+## 0.1.18
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/docs@0.1.34
+  - @uidu/dropdown-menu@0.1.17
+  - @uidu/spinner@0.1.12
+  - @uidu/field-mentions@0.1.20
+  - @uidu/field-text@0.1.22
+  - @uidu/media-filmstrip@0.1.19
+  - @uidu/media-picker@0.1.12
+  - @uidu/message@0.1.20
+
 ## 0.1.17
 
 ### Patch Changes

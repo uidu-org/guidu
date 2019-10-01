@@ -1,5 +1,19 @@
 # @uidu/gallery
 
+## 0.1.17
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/table@0.1.26
+  - @uidu/shell@0.1.31
+
 ## 0.1.16
 
 ### Patch Changes
