@@ -1,0 +1,43 @@
+{
+  "name": "@uidu/analytics-listeners",
+  "version": "0.1.0",
+  "description": "Fabric analytics listeners to be used by the products",
+  "config": {
+    "access": "public"
+  },
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@uidu/analytics": "^0.1.14",
+    "@uidu/analytics-gas-types": "^0.1.0",
+    "@uidu/analytics-namespaced-context": "^0.1.0",
+    "lodash.last": "^3.0.0",
+    "lodash.merge": "^4.6.2",
+    "tslib": "^1.10.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3"
+  },
+  "author": "Atlassian Pty. Ltd",
+  "maintainers": [],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+  },
+  "devDependencies": {
+    "@uidu/button": "^0.1.45",
+    "@uidu/docs": "^0.1.33",
+    "react": "^16.8.3"
+  },
+  "atlaskit": {
+    "internal": true,
+    "name": "Analytics Listeners",
+    "team": "teams"
+  },
+  "keywords": [
+    "fabric",
+    "ui"
+  ]
+}

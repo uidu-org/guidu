@@ -1,0 +1,47 @@
+{
+  "name": "@uidu/adf-utils",
+  "version": "0.1.0",
+  "description": "Set of utilities to traverse, modify and create ADF documents.",
+  "license": "Apache-2.0",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
+  },
+  "files": [
+    "dist",
+    "builders.es.js",
+    "builders.es.d.ts",
+    "builders.js",
+    "builders.d.ts",
+    "traverse.es.js",
+    "traverse.es.d.ts",
+    "traverse.js",
+    "traverse.d.ts",
+    "validator.es.js",
+    "validator.es.d.ts",
+    "validator.js",
+    "validator.d.ts"
+  ],
+  "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Stanislav S"
+  ],
+  "atlaskit": {
+    "internal": true,
+    "name": "Adf utils",
+    "team": "editor"
+  },
+  "dependencies": {
+    "@uidu/adf-schema": "^0.1.0",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.33",
+    "@uidu/json-schema-generator": "^0.1.0",
+    "react": "^16.8.3"
+  },
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+}

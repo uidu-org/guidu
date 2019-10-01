@@ -1,0 +1,51 @@
+{
+  "name": "@uidu/emoji",
+  "version": "0.1.0",
+  "description": "Fabric emoji React components",
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "dependencies": {
+    "@atlaskit/icon": "^19.0.6",
+    "@atlaskit/util-service-support": "^4.0.3",
+    "@uidu/analytics": "^0.1.14",
+    "@uidu/button": "^0.1.45",
+    "@uidu/code": "^0.1.14",
+    "@uidu/field-text": "^0.1.21",
+    "@uidu/spinner": "^0.1.11",
+    "@uidu/theme": "^0.1.17",
+    "@uidu/tooltip": "^0.1.15",
+    "classnames": "^2.2.6",
+    "js-search": "^1.4.3",
+    "lru-fast": "^0.2.2",
+    "prop-types": "^15.6.0",
+    "react-virtualized": "^9.21.1",
+    "tslib": "^1.10.0",
+    "typestyle": "^2.0.4",
+    "url": "^0.11.0",
+    "uuid": "^3.3.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "react-intl": "^3.1.7"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/js-search": "^1.4.0",
+    "@types/react-virtualized": "^9.18.12",
+    "@uidu/docs": "^0.1.33",
+    "@uidu/elements-test-helpers": "^0.1.0",
+    "@uidu/layer": "^0.1.7",
+    "@uidu/section-message": "^0.1.12",
+    "@uidu/util-data-test": "^0.1.0",
+    "p-wait-for": "^3.1.0",
+    "react": "^16.8.3",
+    "react-intl": "^3.1.7"
+  },
+  "scripts": {
+    "i18n:push": "i18n-tools push --resource emoji . --type ts",
+    "i18n:pull": "i18n-tools pull --resource emoji . --type ts"
+  }
+}

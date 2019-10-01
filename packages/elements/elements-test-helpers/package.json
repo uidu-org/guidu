@@ -1,0 +1,33 @@
+{
+  "name": "@uidu/elements-test-helpers",
+  "version": "0.1.0",
+  "description": "common test helpers",
+  "private": true,
+  "uidu:src": "index.ts",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@uidu/build-utils": "^0.1.11",
+    "exenv": "^1.2.2"
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "react-intl": "^3.1.7"
+  },
+  "author": "Atlassian Pty. Ltd",
+  "maintainers": [],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+  },
+  "atlaskit": {
+    "internal": true,
+    "name": "Elements Test Helpers",
+    "team": "teams"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.33"
+  }
+}
