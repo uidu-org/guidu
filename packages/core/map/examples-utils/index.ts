@@ -1,6 +1,6 @@
 const center = {
   lat: 48,
-  lon: 9,
+  lng: 9,
 };
 
 export const defaultMapProps = {
@@ -8,7 +8,7 @@ export const defaultMapProps = {
 };
 
 export const defaultMarkerProps = {
-  location: center,
+  ...center,
 };
 
 export const markers = [];

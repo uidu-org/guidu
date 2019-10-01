@@ -1,4 +1,3 @@
-// @flow
 import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 
@@ -41,5 +40,9 @@ export default md`
     />
   )}
 
-  ${<Props props={require('!!extract-react-types-loader!../src/Map')} />}
+  ${(
+    <Props
+      props={require('!!extract-react-types-loader!../src/components/Map')}
+    />
+  )}
 `;

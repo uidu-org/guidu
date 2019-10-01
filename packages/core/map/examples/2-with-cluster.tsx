@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Map, { MarkerCluster } from '../src';
+import Map, { MarkerCluster } from '..';
 import { defaultMapProps } from '../examples-utils';
 
 export default class DemoApp extends PureComponent {
@@ -32,9 +32,11 @@ export default class DemoApp extends PureComponent {
 
   render() {
     return (
-      <Map {...defaultMapProps}>
-        <MarkerCluster markers={this.state.markers} />
-      </Map>
+      <div style={{ height: '400px', width: '100%' }}>
+        <Map {...defaultMapProps}>
+          <MarkerCluster markers={this.state.markers} />
+        </Map>
+      </div>
     );
   }
 }
