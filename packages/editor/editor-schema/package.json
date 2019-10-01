@@ -1,7 +1,0 @@
-{
-  "name": "@uidu/editor-schema",
-  "version": "0.1.2",
-  "repository": "https://github.com/uidu-org/guidu.git",
-  "license": "MIT",
-  "main": "index.js"
-}
