@@ -32,8 +32,8 @@ declare module '@uidu/toggle';
 declare module '@uidu/tooltip';
 
 // Build
-declare module '@uidu/ssr';
 declare module '@uidu/docs';
+declare module '@uidu/ssr';
 declare module '@uidu/build-utils';
 declare module '@uidu/build-utils/*';
 declare module '@uidu/visual-regression';
