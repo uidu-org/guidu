@@ -48,7 +48,6 @@
 '@uidu/editor-core': patch
 '@uidu/editor-json-transformer': patch
 '@uidu/editor-markdown-transformer': patch
-'@uidu/editor-schema': patch
 '@uidu/json-schema-generator': patch
 '@uidu/renderer': patch
 '@uidu/analytics-gas-types': patch
