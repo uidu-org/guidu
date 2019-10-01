@@ -4,13 +4,16 @@ module.exports = function(api) {
   api.cache(true);
 
   const plugins = [
+    [
+      'babel-plugin-styled-components',
+      { ssr: true, displayName: true, preprocess: false },
+    ],
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-transform-destructuring',
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-syntax-export-default-from',
-    'babel-plugin-styled-components',
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
     'babel-plugin-add-module-exports',
@@ -19,13 +22,11 @@ module.exports = function(api) {
   const presets = ['@babel/react', '@babel/flow', '@babel/preset-typescript'];
 
   return {
-    presets,
-    plugins,
     env: {
       'production:cjs': {
         plugins: [
-          '@babel/transform-runtime',
           ['babel-plugin-styled-components', { minify: false }],
+          '@babel/transform-runtime',
           'transform-dynamic-import',
         ],
         presets: [['@babel/env', { modules: 'commonjs' }]],
@@ -38,8 +39,8 @@ module.exports = function(api) {
       },
       'production:esm': {
         plugins: [
-          '@babel/transform-runtime',
           ['babel-plugin-styled-components', { minify: false }],
+          '@babel/transform-runtime',
         ],
         presets: [['@babel/env', { modules: false }]],
         ignore: [
@@ -55,5 +56,7 @@ module.exports = function(api) {
         plugins: ['transform-dynamic-import'],
       },
     },
+    plugins,
+    presets,
   };
 };

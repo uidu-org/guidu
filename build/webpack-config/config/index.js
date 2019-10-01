@@ -7,10 +7,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
-  .default;
-const styledComponentsTransformer = createStyledComponentsTransformer();
-
 const { createDefaultGlob } = require('./utils');
 const statsOptions = require('./statsOptions');
 
@@ -190,10 +186,11 @@ module.exports = function createWebpackConfig(
             {
               loader: require.resolve('ts-loader'),
               options: {
-                transpileOnly: true,
-                getCustomTransformers: () => ({
-                  before: [styledComponentsTransformer],
-                }),
+                // transpileOnly: true,
+                getCustomTransformers: path.join(
+                  __dirname,
+                  './ts-transformers.js',
+                ),
               },
             },
           ],
