@@ -18,7 +18,7 @@
     "build:multi-entry-point-tsconfig": "    node ./build/multi-entry-tools/typescript-paths-tsconfig-builder.js > tsconfig.entry-points.json",
     "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects && yarn build:pkg:new && echo \"TODO: Remove pkg:new when everything has dropped cjs\"",
     "build:pkg:new": "                       bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json tmp/package.json --only name,version,sideEffects && bolt workspaces exec --only-fs 'packages/**' -- mv ./tmp/package.json ./version.json",
-    "build:typescript": "                    run-p build:typescript:es2015 build:typescript:es5",
+    "build:typescript": "                    run-p build:typescript:es2015",
     "build:typescript:cli": "                NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescriptcli)\" -- tsc --project ./build/cli",
     "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015",
     "build:typescript:es5": "                NODE_ENV=production bolt workspaces exec --only-fs \"packages/editor/{adf-schema,adf-utils}\" -- tsc --project ./build/es5 && NODE_ENV=production bolt workspaces exec --only-fs \"packages/editor/{adf-schema,adf-utils}\" -- cp version.json dist/es5/version.json",
