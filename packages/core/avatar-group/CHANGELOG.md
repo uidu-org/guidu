@@ -1,5 +1,28 @@
 # Change Log
 
+## 2.1.29
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/code@0.1.15
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/dropdown-menu@0.1.17
+  - @uidu/item@0.1.18
+  - @uidu/theme@0.1.18
+  - @uidu/toggle@0.1.19
+  - @uidu/tooltip@0.1.16
+  - @uidu/field-base@0.1.45
+
 ## 2.1.28
 
 ### Patch Changes

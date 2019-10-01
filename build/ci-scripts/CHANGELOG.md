@@ -1,5 +1,14 @@
 # @uidu/ci-scripts
 
+## 0.1.11
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+
+- Updated dependencies [9e09850]
+  - @uidu/build-utils@0.1.12
+
 ## 0.1.10
 
 ### Patch Changes

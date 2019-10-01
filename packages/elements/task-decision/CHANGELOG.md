@@ -1,5 +1,30 @@
 # @uidu/task-decision
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/analytics@0.1.15
+  - @uidu/avatar@0.2.20
+  - @uidu/avatar-group@2.1.29
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/theme@0.1.18
+  - @uidu/editor-common@0.1.8
+  - @uidu/renderer@0.1.1
+  - @uidu/analytics-listeners@0.1.1
+  - @uidu/analytics-namespaced-context@0.1.1
+  - @uidu/elements-test-helpers@0.1.1
+  - @uidu/util-data-test@0.1.1
+
 ## 15.3.4
 
 ### Patch Changes

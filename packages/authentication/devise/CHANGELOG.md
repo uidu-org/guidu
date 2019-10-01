@@ -1,5 +1,25 @@
 # @uidu/devise
 
+## 0.1.10
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/checkbox@0.1.52
+  - @uidu/field-password@0.1.19
+  - @uidu/field-text@0.1.22
+  - @uidu/shell@0.1.31
+
 ## 0.1.9
 
 ### Patch Changes

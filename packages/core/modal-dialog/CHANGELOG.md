@@ -1,5 +1,35 @@
 # @uidu/modal-dialog
 
+## 0.1.18
+
+### Patch Changes
+
+- 9e09850: Moved to typescript
+- 9e09850: Removed emotion core
+- 9e09850: Bump all packages
+- 9e09850: Try again with build
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/portal@0.1.11
+  - @uidu/form@0.1.39
+  - @uidu/analytics@0.1.15
+  - @uidu/avatar@0.2.20
+  - @uidu/blanket@0.1.13
+  - @uidu/docs@0.1.34
+  - @uidu/inline-dialog@0.1.3
+  - @uidu/theme@0.1.18
+  - @uidu/checkbox@0.1.52
+  - @uidu/field-text@0.1.22
+  - @uidu/radio@0.2.6
+  - @uidu/select@0.1.23
+
 ## 0.1.17
 
 ### Patch Changes

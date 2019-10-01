@@ -1,5 +1,39 @@
 # @atlaskit/renderer
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/code@0.1.15
+  - @uidu/analytics@0.1.15
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/theme@0.1.18
+  - @uidu/tooltip@0.1.16
+  - @uidu/adf-schema@0.1.1
+  - @uidu/adf-utils@0.1.1
+  - @uidu/editor-common@0.1.8
+  - @uidu/editor-json-transformer@0.1.1
+  - @uidu/analytics-listeners@0.1.1
+  - @uidu/analytics-namespaced-context@0.1.1
+  - @uidu/mentions@0.1.9
+  - @uidu/status@0.1.1
+  - @uidu/task-decision@0.1.1
+  - @uidu/util-data-test@0.1.1
+  - @uidu/field-range@0.1.16
+  - @uidu/media-card@0.1.19
+  - @uidu/media-filmstrip@0.1.19
+  - @uidu/navigation@0.1.25
+
 ## 51.1.0
 
 ### Minor Changes

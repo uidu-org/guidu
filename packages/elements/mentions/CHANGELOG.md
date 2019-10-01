@@ -1,5 +1,25 @@
 # @uidu/mentions
 
+## 0.1.9
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/analytics@0.1.15
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/lozenge@0.1.14
+  - @uidu/theme@0.1.18
+  - @uidu/tooltip@0.1.16
+  - @uidu/analytics-gas-types@0.1.1
+
 ## 0.1.8
 
 ### Patch Changes

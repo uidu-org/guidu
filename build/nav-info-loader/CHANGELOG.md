@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.28
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+
 ## 0.1.27
 
 ### Patch Changes

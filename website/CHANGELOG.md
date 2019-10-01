@@ -1,5 +1,41 @@
 # Change Log
 
+## 0.1.60
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/modal-dialog@0.1.18
+  - @uidu/code@0.1.15
+  - @uidu/form@0.1.39
+  - @uidu/webpack-config@0.1.39
+  - @uidu/fs-loader@0.1.27
+  - @uidu/nav-info-loader@0.1.28
+  - @uidu/badge@0.1.13
+  - @uidu/docs@0.1.34
+  - @uidu/drawer@0.2.5
+  - @uidu/lozenge@0.1.14
+  - @uidu/spinner@0.1.12
+  - @uidu/theme@0.1.18
+  - @uidu/tooltip@0.1.16
+  - @uidu/list@0.1.15
+  - @uidu/table@0.1.26
+  - @uidu/checkbox@0.1.52
+  - @uidu/field-text@0.1.22
+  - @uidu/select@0.1.23
+  - @uidu/navigation@0.1.25
+  - @uidu/shell@0.1.31
+  - @uidu/themes-uidu@0.1.37
+
 ## 0.1.59
 
 ### Patch Changes

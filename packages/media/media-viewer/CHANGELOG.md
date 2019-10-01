@@ -1,5 +1,26 @@
 # @uidu/media-viewer
 
+## 0.1.24
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/avatar@0.2.20
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/theme@0.1.18
+  - @uidu/media-card@0.1.19
+  - @uidu/media-core@0.1.13
+  - @uidu/shell@0.1.31
+  - @uidu/comment@0.1.5
+
 ## 0.1.23
 
 ### Patch Changes

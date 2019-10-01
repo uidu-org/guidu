@@ -1,5 +1,21 @@
 # Change Log
 
+## 0.1.52
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- 9e09850: Try again with build
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/analytics@0.1.15
+  - @uidu/docs@0.1.34
+  - @uidu/field-base@0.1.45
+
 ## 0.1.51
 
 ### Patch Changes

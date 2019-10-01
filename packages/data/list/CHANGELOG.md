@@ -1,5 +1,17 @@
 # @uidu/list
 
+## 0.1.15
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/table@0.1.26
+
 ## 0.1.14
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.39
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+
+- Updated dependencies [9e09850]
+  - @uidu/changelog-loader@0.1.16
+  - @uidu/fs-loader@0.1.27
+  - @uidu/nav-info-loader@0.1.28
+
 ## 0.1.38
 
 ### Patch Changes

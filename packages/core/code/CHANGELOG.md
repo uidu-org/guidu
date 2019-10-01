@@ -1,5 +1,19 @@
 # @uidu/code
 
+## 0.1.15
+
+### Patch Changes
+
+- 9e09850: Moved to typescript
+- 9e09850: Bump all packages
+- 9e09850: Try again with build
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/theme@0.1.18
+
 ## 0.1.14
 
 ### Patch Changes

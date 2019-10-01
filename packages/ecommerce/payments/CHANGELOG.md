@@ -1,5 +1,18 @@
 # @uidu/payments
 
+## 0.1.7
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/docs@0.1.34
+
 ## 0.1.6
 
 ### Patch Changes

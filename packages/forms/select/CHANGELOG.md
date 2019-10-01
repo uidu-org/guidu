@@ -1,5 +1,29 @@
 # @uidu/field-text
 
+## 0.1.23
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/modal-dialog@0.1.18
+  - @uidu/form@0.1.39
+  - @uidu/analytics@0.1.15
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/theme@0.1.18
+  - @uidu/tooltip@0.1.16
+  - @uidu/checkbox@0.1.52
+  - @uidu/field-base@0.1.45
+
 ## 0.1.22
 
 ### Patch Changes

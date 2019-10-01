@@ -1,5 +1,19 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/adf-schema@0.1.1
+  - @uidu/editor-common@0.1.8
+  - @uidu/editor-core@0.1.12
+
 ## 3.1.6
 
 - Updated dependencies [1194ad5eb3](https://bitbucket.org/atlassian/atlaskit-mk-2/commits/1194ad5eb3):

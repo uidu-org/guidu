@@ -1,5 +1,25 @@
 # @uidu/button
 
+## 0.1.46
+
+### Patch Changes
+
+- 9e09850: Moved to typescript
+- 9e09850: Removed emotion core
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/form@0.1.39
+  - @uidu/analytics@0.1.15
+  - @uidu/docs@0.1.34
+  - @uidu/spinner@0.1.12
+  - @uidu/theme@0.1.18
+  - @uidu/checkbox@0.1.52
+
 ## 0.1.45
 
 ### Patch Changes

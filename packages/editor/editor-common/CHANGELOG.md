@@ -1,5 +1,21 @@
 # @uidu/editor-common
 
+## 0.1.8
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/analytics@0.1.15
+  - @uidu/theme@0.1.18
+  - @uidu/adf-schema@0.1.1
+  - @uidu/analytics-namespaced-context@0.1.1
+  - @uidu/emoji@0.1.1
+  - @uidu/mentions@0.1.9
+
 ## 0.1.7
 
 ### Patch Changes

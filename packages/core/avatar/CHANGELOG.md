@@ -1,5 +1,25 @@
 # Change Log
 
+## 0.2.20
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/button@0.1.46
+  - @uidu/section-message@0.1.13
+  - @uidu/analytics@0.1.15
+  - @uidu/docs@0.1.34
+  - @uidu/theme@0.1.18
+  - @uidu/toggle@0.1.19
+  - @uidu/tooltip@0.1.16
+  - @uidu/field-base@0.1.45
+
 ## 0.2.19
 
 ### Patch Changes

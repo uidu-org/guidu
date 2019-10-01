@@ -1,5 +1,20 @@
 # @uidu/chat-window
 
+## 0.1.22
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+  - @uidu/message@0.1.20
+  - @uidu/message-form@0.1.18
+  - @uidu/message-renderer@0.1.14
+  - @uidu/shell@0.1.31
+
 ## 0.1.21
 
 ### Patch Changes

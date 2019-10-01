@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.37
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/docs@0.1.34
+
 ## 0.1.36
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/adf-schema
 
+## 0.1.1
+
+### Patch Changes
+
+- 9e09850: Bump all packages
+- ffffbbe: Update dependencies
+
+- Updated dependencies [9e09850]
+- Updated dependencies [ffffbbe]
+  - @uidu/editor-json-transformer@0.1.1
+  - @uidu/json-schema-generator@0.1.1
+
 ## 4.1.0
 
 ### Minor Changes
