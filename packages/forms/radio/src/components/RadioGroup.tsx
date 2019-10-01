@@ -39,8 +39,8 @@ class RadioGroup extends PureComponent<any> {
         {options.map(option => (
           <RadioStateless
             isInline={isInline}
-            key={option.id}
-            id={option.id}
+            key={`${name}-${option.id}`}
+            id={`${name}-${option.id}`}
             value={option.id}
             label={option.name}
             name={name}
