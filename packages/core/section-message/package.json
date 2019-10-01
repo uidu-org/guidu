@@ -7,17 +7,16 @@
   "author": "uidu",
   "sideEffects": false,
   "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/button": "^0.1.45",
     "@uidu/theme": "^0.1.17"
   },
   "devDependencies": {
+    "@uidu/code": "^0.1.14",
     "@uidu/docs": "^0.1.33",
     "@uidu/field-range": "^0.1.15",
-    "exenv": "^1.2.2",
-    "jest-in-case": "^1.0.2",
-    "react-dom": "^16.4.0",
-    "react-test-renderer": "^16.8.3"
+    "react-dom": "^16.4.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",
@@ -26,5 +25,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "src/index.js"
+  "uidu:src": "index.ts"
 }

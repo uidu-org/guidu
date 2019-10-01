@@ -2,16 +2,12 @@
   "name": "@uidu/modal-dialog",
   "version": "0.1.17",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
-  "keywords": [
-    "atlaskit",
-    "react",
-    "ui"
-  ],
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
   "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^19.0.6",
     "@uidu/analytics": "^0.1.14",
@@ -47,5 +43,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "src/index.js"
+  "uidu:src": "index.ts"
 }

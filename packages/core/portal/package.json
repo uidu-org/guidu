@@ -7,9 +7,8 @@
   "author": "uidu",
   "sideEffects": false,
   "module": "index.js",
+  "types": "index.td.ts",
   "dependencies": {
-    "@uidu/onboarding": "^0.1.2",
-    "exenv": "^1.2.2",
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {
@@ -29,5 +28,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "src/index.js"
+  "uidu:src": "index.ts"
 }

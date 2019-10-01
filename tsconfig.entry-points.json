@@ -251,6 +251,10 @@
         "../../core/lozenge/src/theme",
         "./packages/core/lozenge/src/theme"
       ],
+      "@uidu/map/index": [
+        "../../core/map/src/index",
+        "./packages/core/map/src/index"
+      ],
       "@uidu/modal-dialog/index": [
         "../../core/modal-dialog/src/index",
         "./packages/core/modal-dialog/src/index"
