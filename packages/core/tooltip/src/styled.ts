@@ -1,7 +1,5 @@
-// @flow
-
+import { borderRadius, colors, layers, themed } from '@uidu/theme';
 import styled, { css } from 'styled-components';
-import { borderRadius, colors, themed, layers } from '@uidu/theme';
 
 const backgroundColor = themed({
   light: colors.N800,

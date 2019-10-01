@@ -1,6 +1,6 @@
-// @flow
-import React, { type Node } from 'react';
+import React from 'react';
 import { Transition } from 'react-transition-group';
+import { PositionTypeBase } from '../types';
 
 const ENTER_DURATION = 120;
 const EXIT_DURATION = 80;
@@ -20,19 +20,26 @@ const verticalOffset = {
   right: 0,
 };
 
-const defaultStyle = timeout => ({
-  transition: `transform ${timeout.enter}ms ${easing}, opacity ${
-    timeout.enter
-  }ms linear`,
+interface Timeout {
+  enter: number;
+  exit: number;
+}
+
+type TransitionStates = 'entering' | 'entered' | 'exiting';
+
+const defaultStyle = (timeout: Timeout) => ({
+  transition: `transform ${timeout.enter}ms ${easing}, opacity ${timeout.enter}ms linear`,
   opacity: 0,
 });
 
-const transitionStyle = (timeout, state, position) => {
-  const transitions = {
+const transitionStyle = (
+  timeout: Timeout,
+  state: TransitionStates,
+  position: PositionTypeBase,
+) => {
+  const transitions: { [key in TransitionStates]: any } = {
     entering: {
-      transform: `translate3d(${horizontalOffset[position]}px, ${
-        verticalOffset[position]
-      }px, 0)`,
+      transform: `translate3d(${horizontalOffset[position]}px, ${verticalOffset[position]}px, 0)`,
     },
     entered: {
       opacity: 1,
@@ -47,12 +54,22 @@ const transitionStyle = (timeout, state, position) => {
   return transitions[state];
 };
 
-const getStyle = (timeout, state) => position => ({
+const getStyle = (timeout: Timeout, state: TransitionStates) => (
+  position: PositionTypeBase,
+) => ({
   ...defaultStyle(timeout),
   ...transitionStyle(timeout, state, position),
 });
 
-type GetAnimationStyles = string => Object;
+type GetAnimationStyles = (position: PositionTypeBase) => Object;
+
+interface AnimationProps {
+  children: (getAnimationFn: GetAnimationStyles) => React.ReactNode;
+  immediatelyHide: boolean;
+  immediatelyShow: boolean;
+  in: boolean;
+  onExited: () => any;
+}
 
 const Animation = ({
   children,
@@ -60,13 +77,7 @@ const Animation = ({
   immediatelyShow,
   onExited,
   in: inProp,
-}: {
-  children: GetAnimationStyles => Node,
-  immediatelyHide: boolean,
-  immediatelyShow: boolean,
-  in: boolean,
-  onExited: () => mixed,
-}) => {
+}: AnimationProps) => {
   const timeout = {
     enter: immediatelyShow ? 1 : ENTER_DURATION,
     exit: immediatelyHide ? 1 : EXIT_DURATION,
@@ -79,7 +90,7 @@ const Animation = ({
       unmountOnExit
       appear
     >
-      {state => children(getStyle(timeout, state))}
+      {(state: TransitionStates) => children(getStyle(timeout, state))}
     </Transition>
   );
 };

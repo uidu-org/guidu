@@ -1,4 +1,3 @@
-// @flow
 import {
   name as packageName,
   version as packageVersion,

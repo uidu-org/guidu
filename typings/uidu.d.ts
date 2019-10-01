@@ -29,7 +29,6 @@ declare module '@uidu/slider';
 declare module '@uidu/spinner';
 declare module '@uidu/textfield';
 declare module '@uidu/toggle';
-declare module '@uidu/tooltip';
 
 // Build
 declare module '@uidu/docs';
