@@ -2,22 +2,24 @@
   "name": "@uidu/analytics-gas-types",
   "version": "0.1.0",
   "description": "Shared analytics functions/components for Fabric Elements",
-  "config": {
-    "access": "public"
-  },
-  "uidu:src": "index.ts",
-  "module": "index.js",
-  "types": "index.d.ts",
-  "dependencies": {
-    "@uidu/analytics": "^0.1.14",
-    "tslib": "^1.10.0"
-  },
-  "author": "Atlassian Pty. Ltd",
-  "maintainers": [],
-  "license": "Apache-2.0",
+  "keywords": [
+    "fabric",
+    "ui"
+  ],
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+  },
+  "license": "Apache-2.0",
+  "author": "Atlassian Pty. Ltd",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "config": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@uidu/analytics": "^0.1.14",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.33"
@@ -27,8 +29,6 @@
     "name": "Analytics Gas Types",
     "team": "teams"
   },
-  "keywords": [
-    "fabric",
-    "ui"
-  ]
+  "maintainers": [],
+  "uidu:src": "index.ts"
 }

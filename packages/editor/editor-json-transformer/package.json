@@ -2,26 +2,15 @@
   "name": "@uidu/editor-json-transformer",
   "version": "0.1.0",
   "description": "JSON transformer",
-  "license": "Apache-2.0",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "module": "index.js",
-  "sideEffects": false,
-  "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Rifat N"
-  ],
-  "atlaskit": {
-    "name": "Editor Json Transformer",
-    "team": "editor"
-  },
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
+  "sideEffects": false,
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/adf-schema": "^0.1.0",
     "prosemirror-model": "^1.7.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3"
   },
   "devDependencies": {
     "@types/prosemirror-model": "^1.5.0",
@@ -30,5 +19,16 @@
     "@uidu/editor-core": "^0.1.11",
     "prosemirror-view": "^1.9.10",
     "styled-components": "^4.0.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3"
+  },
+  "atlaskit": {
+    "name": "Editor Json Transformer",
+    "team": "editor"
+  },
+  "maintainers": [
+    "Rifat N"
+  ],
+  "uidu:src": "index.ts"
 }

@@ -3,20 +3,15 @@
   "version": "0.1.2",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "license": "MIT",
-  "types": "index.d.ts",
-  "module": "index.js",
-  "uidu:src": "srcindex.ts",
-  "sideEffects": false,
   "author": "uidu",
+  "sideEffects": false,
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.14",
     "@uidu/popper": "^0.1.10",
     "@uidu/theme": "^0.1.17",
     "react-node-resolver": "^2.0.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "@atlaskit/icon": "^19.0.6",
@@ -26,5 +21,10 @@
     "@uidu/select": "^0.1.22",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "uidu:src": "srcindex.ts"
 }

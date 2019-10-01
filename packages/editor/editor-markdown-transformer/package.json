@@ -2,21 +2,12 @@
   "name": "@uidu/editor-markdown-transformer",
   "version": "0.1.0",
   "description": "Editor Markdown transformer",
-  "module": "index.js",
-  "uidu:src": "index.ts",
-  "types": "index.d.ts",
-  "sideEffects": false,
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
-  "author": "Atlassian Pty. Ltd",
   "license": "MIT",
-  "maintainers": [
-    "Stan S",
-    "Rifat N"
-  ],
-  "atlaskit": {
-    "name": "Editor Markdown Transformer",
-    "team": "editor"
-  },
+  "author": "Atlassian Pty. Ltd",
+  "sideEffects": false,
+  "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/adf-schema": "^0.1.0",
     "@uidu/editor-common": "^0.1.7",
@@ -32,5 +23,14 @@
   },
   "peerDependencies": {
     "styled-components": "^4.0.3"
-  }
+  },
+  "atlaskit": {
+    "name": "Editor Markdown Transformer",
+    "team": "editor"
+  },
+  "maintainers": [
+    "Stan S",
+    "Rifat N"
+  ],
+  "uidu:src": "index.ts"
 }

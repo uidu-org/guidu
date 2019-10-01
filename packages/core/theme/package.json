@@ -8,7 +8,6 @@
   "sideEffects": false,
   "module": "dist/esm/index.js",
   "types": "index.d.ts",
-  "uidu:src": "src/index.js",
   "dependencies": {
     "exenv": "^1.2.2",
     "prop-types": "^15.6.0"
@@ -30,5 +29,6 @@
     "Ajay M",
     "Daniel D",
     "Kang C"
-  ]
+  ],
+  "uidu:src": "src/index.js"
 }

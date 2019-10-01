@@ -2,10 +2,14 @@
   "name": "@uidu/emoji",
   "version": "0.1.0",
   "description": "Fabric emoji React components",
-  "uidu:src": "index.ts",
+  "license": "Apache-2.0",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "sideEffects": false,
+  "scripts": {
+    "i18n:pull": "i18n-tools pull --resource emoji . --type ts",
+    "i18n:push": "i18n-tools push --resource emoji . --type ts"
+  },
   "dependencies": {
     "@atlaskit/icon": "^19.0.6",
     "@atlaskit/util-service-support": "^4.0.3",
@@ -26,12 +30,6 @@
     "url": "^0.11.0",
     "uuid": "^3.3.2"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0",
-    "react-intl": "^3.1.7"
-  },
-  "license": "Apache-2.0",
   "devDependencies": {
     "@types/js-search": "^1.4.0",
     "@types/react-virtualized": "^9.18.12",
@@ -44,8 +42,10 @@
     "react": "^16.8.3",
     "react-intl": "^3.1.7"
   },
-  "scripts": {
-    "i18n:push": "i18n-tools push --resource emoji . --type ts",
-    "i18n:pull": "i18n-tools pull --resource emoji . --type ts"
-  }
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "react-intl": "^3.1.7"
+  },
+  "uidu:src": "index.ts"
 }

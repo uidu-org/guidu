@@ -8,13 +8,12 @@
   "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "uidu:src": "index.ts",
   "scripts": {
+    "ak-postbuild": "yarn build:json-schema",
     "build:json-schema": "mkdir -p dist && cp -r json-schema dist",
     "generate:json-schema": "mkdir -p json-schema/v1/ && yarn generate:json-schema:full && yarn generate:json-schema:stage-0",
-    "generate:json-schema:stage-0": "json-schema-generator --outDir=./json-schema/v1/ --stage=0 ./src/schema/nodes/doc.ts",
     "generate:json-schema:full": "json-schema-generator --outDir=./json-schema/v1/ ./src/schema/nodes/doc.ts",
-    "ak-postbuild": "yarn build:json-schema"
+    "generate:json-schema:stage-0": "json-schema-generator --outDir=./json-schema/v1/ --stage=0 ./src/schema/nodes/doc.ts"
   },
   "dependencies": {
     "@types/linkify-it": "^2.0.4",
@@ -32,5 +31,6 @@
     "axios": "^0.19.0",
     "json-schema-diff-validator": "^0.4.1",
     "prosemirror-state": "^1.2.3"
-  }
+  },
+  "uidu:src": "index.ts"
 }

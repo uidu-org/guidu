@@ -1,30 +1,30 @@
 {
   "name": "@uidu/analytics-viewer",
   "version": "0.1.0",
-  "config": {
-    "access": "private"
-  },
   "description": "Analytics viewer for the examples",
-  "uidu:src": "index.ts",
-  "module": "index.js",
-  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+  },
+  "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "config": {
+    "access": "private"
+  },
+  "dependencies": {
+    "@uidu/analytics": "^0.1.14",
+    "styled-components": "^4.0.3"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.3"
   },
   "atlaskit": {
     "internal": true,
     "name": "Analytics Viewers",
     "team": "elements"
   },
-  "author": "Atlassian Pty Ltd",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "@uidu/analytics": "^0.1.14",
-    "styled-components": "^4.0.3"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3"
-  },
-  "devDependencies": {}
+  "uidu:src": "index.ts"
 }

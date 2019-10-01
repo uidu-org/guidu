@@ -2,14 +2,9 @@
   "name": "@uidu/adf-utils",
   "version": "0.1.0",
   "description": "Set of utilities to traverse, modify and create ADF documents.",
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
-  "uidu:src": "index.ts",
-  "module": "index.js",
-  "types": "index.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
-  },
+  "author": "Atlassian Pty Ltd",
   "files": [
     "dist",
     "builders.es.js",
@@ -25,14 +20,11 @@
     "validator.js",
     "validator.d.ts"
   ],
-  "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Stanislav S"
-  ],
-  "atlaskit": {
-    "internal": true,
-    "name": "Adf utils",
-    "team": "editor"
+  "sideEffects": false,
+  "module": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
   },
   "dependencies": {
     "@uidu/adf-schema": "^0.1.0",
@@ -43,5 +35,13 @@
     "@uidu/json-schema-generator": "^0.1.0",
     "react": "^16.8.3"
   },
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2"
+  "atlaskit": {
+    "internal": true,
+    "name": "Adf utils",
+    "team": "editor"
+  },
+  "maintainers": [
+    "Stanislav S"
+  ],
+  "uidu:src": "index.ts"
 }

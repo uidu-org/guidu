@@ -3,7 +3,6 @@
   "version": "0.1.11",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
-  "uidu:src": "index.ts",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -56,5 +55,6 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.33",
     "@uidu/shell": "^0.1.27"
-  }
+  },
+  "uidu:src": "index.ts"
 }

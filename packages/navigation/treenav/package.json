@@ -1,20 +1,20 @@
 {
   "name": "@uidu/treenav",
   "version": "0.1.3",
+  "private": false,
   "description": "Treenav component allows nested card navigation for mobile and desktop (eg: settings page)",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
-  "author": "uidu",
-  "license": "MIT",
-  "private": false,
-  "devDependencies": {
-    "@uidu/docs": "^0.1.33",
-    "@uidu/shell": "^0.1.27"
-  },
-  "uidu:src": "index.ts",
   "dependencies": {
     "react-feather": "^2.0.3",
     "react-media": "^1.9.2",
     "react-router-dom": "^5.0.0"
-  }
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.33",
+    "@uidu/shell": "^0.1.27"
+  },
+  "uidu:src": "index.ts"
 }

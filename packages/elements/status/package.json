@@ -1,28 +1,27 @@
 {
   "name": "@uidu/status",
   "version": "0.1.0",
-  "config": {
-    "access": "public"
-  },
   "description": "Fabric Status React Components",
-  "uidu:src": "index.ts",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "keywords": [
+    "date",
+    "editor",
+    "fabric",
+    "ui"
+  ],
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
   },
-  "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
-  "keywords": [
-    "ui",
-    "date",
-    "fabric",
-    "editor"
-  ],
-  "atlaskit": {
-    "name": "Status",
-    "team": "editor"
+  "author": "Atlassian Pty Ltd",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "i18n:pull": "i18n-tools pull --resource status . --type ts",
+    "i18n:push": "i18n-tools push --resource status . --type ts"
+  },
+  "config": {
+    "access": "public"
   },
   "dependencies": {
     "@atlaskit/icon": "^19.0.6",
@@ -33,18 +32,19 @@
     "@uidu/theme": "^0.1.17",
     "styled-components": "^4.0.3"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-intl": "^3.1.7"
-  },
   "devDependencies": {
     "@uidu/docs": "^0.1.33",
     "@uidu/elements-test-helpers": "^0.1.0",
     "react": "^16.8.3",
     "react-intl": "^3.1.7"
   },
-  "scripts": {
-    "i18n:push": "i18n-tools push --resource status . --type ts",
-    "i18n:pull": "i18n-tools pull --resource status . --type ts"
-  }
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-intl": "^3.1.7"
+  },
+  "atlaskit": {
+    "name": "Status",
+    "team": "editor"
+  },
+  "uidu:src": "index.ts"
 }

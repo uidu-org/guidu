@@ -5,8 +5,8 @@
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
-  "sideEffects": false,
   "author": "uidu",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {

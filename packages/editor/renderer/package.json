@@ -2,20 +2,12 @@
   "name": "@uidu/renderer",
   "version": "0.1.0",
   "description": "Renderer component",
+  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
-  "uidu:src": "index.ts",
+  "author": "Atlassian Pty Ltd",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "sideEffects": false,
-  "author": "Atlassian Pty Ltd",
-  "maintainers": [
-    "Oscar W"
-  ],
-  "atlaskit": {
-    "name": "Renderer",
-    "team": "editor"
-  },
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "dependencies": {
     "@atlaskit/icon": "^19.0.6",
     "@atlaskit/type-helpers": "^4.1.6",
@@ -40,10 +32,6 @@
     "react-loadable": "^5.5.0",
     "url-parse": "^1.4.7"
   },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^4.0.3"
-  },
   "devDependencies": {
     "@types/prosemirror-model": "^1.5.0",
     "@types/puppeteer": "^1.12.1",
@@ -57,5 +45,17 @@
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-live-clock": "^3.1.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "styled-components": "^4.0.3"
+  },
+  "atlaskit": {
+    "name": "Renderer",
+    "team": "editor"
+  },
+  "maintainers": [
+    "Oscar W"
+  ],
+  "uidu:src": "index.ts"
 }

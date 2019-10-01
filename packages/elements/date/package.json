@@ -1,40 +1,40 @@
 {
   "name": "@uidu/date",
   "version": "0.1.0",
-  "config": {
-    "access": "public"
-  },
   "description": "Fabric Date React Components",
-  "uidu:src": "index.ts",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "keywords": [
+    "date",
+    "fabric",
+    "teams",
+    "ui"
+  ],
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
   },
-  "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
-  "keywords": [
-    "ui",
-    "date",
-    "fabric",
-    "teams"
-  ],
-  "atlaskit": {
-    "name": "Date",
-    "team": "teams"
+  "author": "Atlassian Pty Ltd",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "config": {
+    "access": "public"
   },
   "dependencies": {
     "@uidu/theme": "^0.1.17",
     "date-fns": "^2.0.0",
     "styled-components": "^4.0.3"
   },
-  "peerDependencies": {
-    "react": "^16.8.3"
-  },
   "devDependencies": {
     "@uidu/docs": "^0.1.33",
     "@uidu/elements-test-helpers": "^0.1.0",
     "react": "^16.8.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3"
+  },
+  "atlaskit": {
+    "name": "Date",
+    "team": "teams"
+  },
+  "uidu:src": "index.ts"
 }

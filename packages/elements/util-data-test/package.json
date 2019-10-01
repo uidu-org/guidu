@@ -1,8 +1,9 @@
 {
   "name": "@uidu/util-data-test",
-  "description": "Shared test and story data",
   "version": "0.1.0",
-  "uidu:src": "index.ts",
+  "description": "Shared test and story data",
+  "license": "MIT",
+  "author": "uidu",
   "module": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -19,14 +20,13 @@
     "tslib": "^1.10.0",
     "uuid": "^3.3.2"
   },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.33"
+  },
   "peerDependencies": {
     "js-search": "^1.4.3",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   },
-  "devDependencies": {
-    "@uidu/docs": "^0.1.33"
-  },
-  "author": "uidu",
-  "license": "MIT"
+  "uidu:src": "index.ts"
 }
