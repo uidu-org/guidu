@@ -1,8 +1,9 @@
 import { ComponentHOC, Wrapper } from '@uidu/field-base';
 import React, { Component } from 'react';
 import InputControl from './FieldTextStateless';
+import { FieldTextProps } from '../types';
 
-class FieldText extends Component<any> {
+class FieldText extends Component<FieldTextProps> {
   private element: React.RefObject<any> = React.createRef();
 
   static defaultProps = {

@@ -2,7 +2,6 @@
   "extends": "./tsconfig.entry-points.json",
   "compilerOptions": {
     "allowJs": false,
-    "allowSyntheticDefaultImports": true,
     "alwaysStrict": false,
     "declaration": true,
     "downlevelIteration": true,
@@ -19,7 +18,8 @@
     "skipLibCheck": true,
     "noImplicitReturns": true,
     "noUnusedParameters": false,
-    "strict": true,
+    "strict": false,
+    "strictFunctionTypes": true,
     "target": "es5",
     "module": "esnext",
     "lib": [

@@ -287,6 +287,10 @@
         "../../core/popper/src/types",
         "./packages/core/popper/src/types"
       ],
+      "@uidu/portal/constants": [
+        "../../core/portal/src/constants",
+        "./packages/core/portal/src/constants"
+      ],
       "@uidu/portal/index": [
         "../../core/portal/src/index",
         "./packages/core/portal/src/index"

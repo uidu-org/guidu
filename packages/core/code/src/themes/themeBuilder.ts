@@ -1,10 +1,4 @@
-import {
-  codeFontFamily,
-  borderRadius,
-  gridSize,
-  fontSize,
-} from '@atlaskit/theme/constants';
-
+import { borderRadius, codeFontFamily, fontSize, gridSize } from '@uidu/theme';
 import { defaultColors } from './defaultTheme';
 
 export type ThemeModes = 'light' | 'dark';

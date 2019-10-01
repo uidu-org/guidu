@@ -1,8 +1,8 @@
-import RadioGroup, { AkRadio } from '@atlaskit/field-radio-group';
-import Form, { CheckboxField, Field } from '@atlaskit/form';
-import Textfield from '@atlaskit/textfield';
 import Button from '@uidu/button';
 import { Checkbox } from '@uidu/checkbox';
+import FieldText from '@uidu/field-text';
+import Form from '@uidu/form';
+import { RadioGroup } from '@uidu/radio';
 import React from 'react';
 import ModalDialog, { ModalFooter, ModalTransition } from '../src';
 import { FooterProps } from '../src/components/Footer';
@@ -17,7 +17,7 @@ export default class AtlaskitFormDemo extends React.Component<{}, State> {
 
   close = () => this.setState({ isOpen: false });
 
-  onFormSubmit = (data: Object) => console.log(JSON.stringify(data));
+  onFormSubmit = async (data: Object) => console.log(JSON.stringify(data));
 
   render() {
     const { isOpen } = this.state;
@@ -71,7 +71,10 @@ export default class AtlaskitFormDemo extends React.Component<{}, State> {
               onClose={this.close}
               components={{
                 Container: ({ children, className }: ContainerProps) => (
-                  <Form onSubmit={this.onFormSubmit}>
+                  <Form
+                    handleSubmit={this.onFormSubmit}
+                    footerRenderer={() => null}
+                  >
                     {({ formProps }: { formProps: FormProps }) => (
                       <form {...formProps} className={className}>
                         {children}
@@ -83,44 +86,27 @@ export default class AtlaskitFormDemo extends React.Component<{}, State> {
               }}
             >
               <p>Enter some text then submit the form to see the response.</p>
-              <Field label="Name" name="my-name" defaultValue="">
-                {({ fieldProps }: { fieldProps: FieldProps }) => (
-                  <Textfield {...fieldProps} />
-                )}
-              </Field>
-              <Field label="Email" name="my-email" defaultValue="">
-                {({ fieldProps }: { fieldProps: FieldProps }) => (
-                  <Textfield
-                    autoComplete="off"
-                    placeholder="gbelson@hooli.com"
-                    {...fieldProps}
-                  />
-                )}
-              </Field>
-
-              <CheckboxField name="checkbox" defaultIsChecked>
-                {({ fieldProps }: { fieldProps: FieldProps }) => (
-                  <Checkbox {...fieldProps} value="example" label="Checkbox" />
-                )}
-              </CheckboxField>
-
-              <Field name="radiogroup" defaultValue="">
-                {({
-                  fieldProps: { value, ...others },
-                }: {
-                  fieldProps: FieldProps;
-                }) => (
-                  <RadioGroup
-                    items={radioItems}
-                    label="Basic Radio Group Example"
-                    {...others}
-                  >
-                    <AkRadio name="standalone" value="singleButton">
-                      Radio button
-                    </AkRadio>
-                  </RadioGroup>
-                )}
-              </Field>
+              <FieldText label="Name" name="my-name" defaultValue="" />
+              )}
+              <FieldText
+                autoComplete="off"
+                placeholder="gbelson@hooli.com"
+                label="Email"
+                name="my-email"
+                defaultValue=""
+              />
+              <Checkbox
+                value="example"
+                label="Checkbox"
+                name="checkbox"
+                defaultIsChecked
+              />
+              )}
+              <RadioGroup
+                items={radioItems}
+                label="Basic Radio Group Example"
+              ></RadioGroup>
+              )}
             </ModalDialog>
           )}
         </ModalTransition>

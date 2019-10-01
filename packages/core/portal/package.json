@@ -9,6 +9,7 @@
   "module": "index.js",
   "types": "index.td.ts",
   "dependencies": {
+    "@uidu/theme": "^0.1.17",
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {

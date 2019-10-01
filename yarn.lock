@@ -2768,10 +2768,10 @@
     "@uifabric/utilities" "^7.2.0"
     tslib "^1.7.1"
 
-"@uifabric/utilities@^7.0.10", "@uifabric/utilities@^7.0.9", "@uifabric/utilities@^7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-7.2.0.tgz#4f2aaaf77440679557291d52dd9ccace3eb3d022"
-  integrity sha512-MEGGkFj7t1fwab2pG7mDpmyfF0GNu2RLDfsGxycMB75pW1pLMPZUZtDkS1IF8RpPnlK6Br+NvIMGwlXRHKmiQA==
+"@uifabric/utilities@^7.0.10", "@uifabric/utilities@^7.0.9", "@uifabric/utilities@^7.2.0", "@uifabric/utilities@^7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-7.3.0.tgz#c86f621c3b37681a87655ec13947c3fa98446991"
+  integrity sha512-wgS3EM7i8g+mKBgR74Kq+tlOGJsDTbnk29c2vP6eNrEb4Wbr3hvVEb1+UBaeDvvIABkYq4R6VVl/0SXNvUnhlg==
   dependencies:
     "@uifabric/merge-styles" "^7.7.0"
     "@uifabric/set-version" "^7.0.2"
@@ -15047,9 +15047,9 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.40.0"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.40.0.tgz#4d4ee1e57df2db20db515432c7be2701dc1aadd2"
-  integrity sha512-YRg/xj8dDCtrFqdj3d2Ph0/sZGrN2Ox32j3+1H2A/fvw121HyZnfEmlU+VSqJRnNcgOgeZIYDEFhWxsk0fQJeQ==
+  version "7.41.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.41.0.tgz#8803e9d358410a62dba260d7e53dcc29098d78de"
+  integrity sha512-r+tajNpUOHqEnQJK7y+4qApmmgvtUz02sEBsbtoj5zM47GS4h1Tv6esa8UJMcFKIWbXtsS86j0yuYZ6U/FLQVA==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/example-data" "^7.0.1"
@@ -15059,7 +15059,7 @@ office-ui-fabric-react@^7.5.2:
     "@uifabric/react-hooks" "^7.0.1"
     "@uifabric/set-version" "^7.0.2"
     "@uifabric/styling" "^7.7.2"
-    "@uifabric/utilities" "^7.2.0"
+    "@uifabric/utilities" "^7.3.0"
     prop-types "^15.5.10"
     tslib "^1.7.1"
 
@@ -18044,7 +18044,7 @@ react-images@^1.0.0:
     react-transition-group "^2.2.1"
     react-view-pager "^0.6.0"
 
-react-input-autosize@^2.2.1:
+react-input-autosize@^2.2.1, react-input-autosize@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-2.2.2.tgz#fcaa7020568ec206bc04be36f4eb68e647c4d8c2"
   integrity sha512-jQJgYCA3S0j+cuOwzuCd1OjmBmnZLdqQdiLKRYrsMMzbjUrVDS5RvJUDwJqA7sKuksDuzFtm6hZGKFu7Mjk5aw==
@@ -18241,9 +18241,9 @@ react-node-resolver@^2.0.1:
   integrity sha512-+PPy/FtAAo5wsLQYMlHkxJ3AMUGL33gpEIx/HBzS8OrcIfacRhGaNVWUJ8bhEbc64en+/bbCNTVZR+pkhqXEbA==
 
 react-number-format@^4.0.5, react-number-format@^4.0.6:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.2.0.tgz#297efac961504b72cdd3fd0c33442302191c52d8"
-  integrity sha512-LJY0+JUEdQG1Taj6qbL1Cd/8CfBn3X4ohBPGewWNRyRAGyxV/+zP02CQrMkCfPh1iXXx6V3oguJcZWXUwpQ3ow==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-number-format/-/react-number-format-4.3.0.tgz#3c6d7c77debad50a121da57a26abd937c9432da6"
+  integrity sha512-IAxm26MVyuiG+CCPlrz4KAOmxi/mVidK/3pIm2796qkfNtfF108QBBOBGLIFFRJQHwdDN/HI0beiAXK6mJM4Lw==
   dependencies:
     prop-types "^15.7.2"
 
@@ -18410,9 +18410,9 @@ react-select@^2.0.0:
     react-transition-group "^2.2.1"
 
 react-select@^3.0.3, react-select@^3.0.4:
-  version "3.0.6"
-  resolved "https://registry.yarnpkg.com/react-select/-/react-select-3.0.6.tgz#5d82cbd748130a9fc466e04e62182f01ff62d7a6"
-  integrity sha512-8L0V/+HN3Cd6QalgCSnltQpzbtkX7yuihWFWW3/+hQJq5yNGzzDPPA5LtcEBzLXIXh6W18nAHfF5DGoE7XSmmg==
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/react-select/-/react-select-3.0.7.tgz#1d5b3d33e7c2bf3f8dcbd9de9c1424f27ec44fe7"
+  integrity sha512-m4DKFUGvjjghxovuo4NyGltq/qPwFV5LV1Bo8wl1tUt1UQZO0Lvru1yC62wkTsittf5A+k4gyM4c+MhfEiERSQ==
   dependencies:
     "@babel/runtime" "^7.4.4"
     "@emotion/cache" "^10.0.9"
@@ -18422,7 +18422,7 @@ react-select@^3.0.3, react-select@^3.0.4:
     memoize-one "^5.0.0"
     prop-types "^15.6.0"
     raf "^3.4.0"
-    react-input-autosize "^2.2.1"
+    react-input-autosize "^2.2.2"
     react-transition-group "^2.2.1"
 
 react-side-effect@^1.1.0:
