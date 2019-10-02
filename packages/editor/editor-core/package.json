@@ -39,6 +39,7 @@
     "@uidu/theme": "^0.1.18",
     "@uidu/tooltip": "^0.1.16",
     "markdown-it": "^10.0.0",
+    "prosemirror-collab": "^1.1.2",
     "prosemirror-commands": "^1.0.8",
     "prosemirror-history": "^1.0.4",
     "prosemirror-inputrules": "^1.0.4",
