@@ -27,7 +27,7 @@ export default class Reactions extends Component<any> {
           <Tooltip
             tag="button"
             className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
-            placement="top"
+            position="top"
             content="Add a reaction"
             delay={0}
           >

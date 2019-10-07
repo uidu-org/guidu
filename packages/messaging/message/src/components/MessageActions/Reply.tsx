@@ -6,7 +6,7 @@ export default class Reply extends Component<any> {
   render() {
     const { onReply } = this.props;
     return (
-      <Tooltip placement="top" content="Commenta" delay={0}>
+      <Tooltip position="top" content="Commenta" delay={0}>
         <button
           className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
           onClick={onReply}

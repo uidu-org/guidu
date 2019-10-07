@@ -7,6 +7,6 @@ export type FieldPasswordProps = FieldBaseProps &
     passwordStrengths?: Array<string>;
     instructions?: React.ReactNode | string;
     tooltipProps?: {
-      content?: string;
+      content: string;
     };
   };

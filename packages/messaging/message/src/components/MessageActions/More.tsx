@@ -16,7 +16,7 @@ export default class More extends Component<any> {
             <Tooltip
               tag="button"
               className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
-              placement="top"
+              position="top"
               content="More"
               delay={0}
             >

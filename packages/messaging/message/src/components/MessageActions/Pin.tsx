@@ -6,7 +6,7 @@ export default class Reply extends Component<any> {
   render() {
     return (
       <Tooltip
-        placement="top"
+        position="top"
         content="Star"
         delay={0}
         tag="button"
