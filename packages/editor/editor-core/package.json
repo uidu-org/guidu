@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "module": "index.js",
@@ -37,7 +37,7 @@
     "@uidu/status": "^0.1.1",
     "@uidu/task-decision": "^0.1.1",
     "@uidu/theme": "^0.1.18",
-    "@uidu/tooltip": "^0.1.16",
+    "@uidu/tooltip": "^0.1.17",
     "markdown-it": "^10.0.0",
     "prosemirror-collab": "^1.1.2",
     "prosemirror-commands": "^1.0.8",

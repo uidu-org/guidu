@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 0.1.13
+
+### Patch Changes
+
+- 0bb2bd2: Added prosemirror dependency
+
+- Updated dependencies [0bb2bd2]
+  - @uidu/tooltip@0.1.17
+
 ## 0.1.12
 
 ### Patch Changes
