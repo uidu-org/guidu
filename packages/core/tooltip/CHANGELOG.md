@@ -1,5 +1,11 @@
 # @uidu/tooltip
 
+## 0.1.17
+
+### Patch Changes
+
+- 0bb2bd2: Moved tooltip to typescript
+
 ## 0.1.16
 
 ### Patch Changes

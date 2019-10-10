@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -17,7 +17,7 @@
     "@uidu/media-filmstrip": "^0.1.19",
     "@uidu/message-form": "^0.1.18",
     "@uidu/message-renderer": "^0.1.14",
-    "@uidu/tooltip": "^0.1.16",
+    "@uidu/tooltip": "^0.1.17",
     "classnames": "^2.2.6",
     "emoji-regex": "^8.0.0",
     "moment": "^2.18.1",

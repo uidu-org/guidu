@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 0.1.20
+
+### Patch Changes
+
+- 08cb934: Fix tooltip
+
+- Updated dependencies [0bb2bd2]
+  - @uidu/tooltip@0.1.17
+
 ## 0.1.19
 
 ### Patch Changes
