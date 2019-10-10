@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.40
+
+### Patch Changes
+
+- 1f1a843: Fix radio group
+
 ## 0.1.39
 
 ### Patch Changes
