@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
+import { AkCode, AkCodeBlock } from '@uidu/code';
 import * as CommonMark from 'commonmark';
 import * as ReactRenderer from 'commonmark-react-renderer';
-import { AkCodeBlock, AkCode } from '@uidu/code';
+import * as React from 'react';
+import { Helmet } from 'react-helmet';
 import Heading from './Markdown/Heading';
 
 export type Props = {
@@ -44,7 +44,7 @@ export default function Markdown({
           content={description || DEFAULT_META_DESCRIPTION}
         />
       </Helmet>
-      {renderer.render(parser.parse(children))}
+      {renderer.render(parser.parse(children as any))}
     </div>
   );
 }

@@ -1,12 +1,11 @@
+import '!style-loader!css-loader!prismjs/themes/prism-tomorrow.css';
+import { replaceSrc } from '@uidu/docs';
+import { colors, gridSize, themed } from '@uidu/theme';
+import { replaceImports } from 'codesandboxer';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx';
 import * as React from 'react';
 import styled from 'styled-components';
-import Prism from 'prismjs';
-import { colors, gridSize, themed } from '@uidu/theme';
-
-import '!style-loader!css-loader!prismjs/themes/prism-tomorrow.css';
-import 'prismjs/components/prism-jsx';
-import { replaceSrc } from '@uidu/docs';
-import { replaceImports } from 'codesandboxer';
 
 const Code = styled.pre`
   border-radius: 3px;
@@ -35,7 +34,7 @@ export default function CodeBlock(props: Props) {
   const importFixed = replaceImports(srcFixed, [
     ['../glyph/*', `${props.name}/glyph/`],
   ]);
-  const highlighted = Prism.highlight(importFixed, syntax, true);
+  const highlighted = Prism.highlight(importFixed, syntax, props.grammar);
 
   return (
     <Code>

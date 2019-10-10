@@ -11,6 +11,7 @@ import {
 } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import Media from 'react-media';
+import { RouteComponentProps } from 'react-router';
 import Loading from '../../components/Loading';
 import Page from '../../components/Page';
 import { Link } from '../../components/WrappedLink';
@@ -24,9 +25,7 @@ export const NoDocs = props => {
   return <div>Component "{props.name}" doesn't have any documentation.</div>;
 };
 
-export type PackageProps = {
-  match: match<Record<string, string>>;
-};
+export type PackageProps = {} & RouteComponentProps;
 
 export type Props = {
   description?: string;
@@ -237,7 +236,7 @@ class Package extends React.Component<Props> {
                             target="_blank"
                           />
                           <Button
-                            component={Link}
+                            component={Link as any}
                             to={`/packages/${groupId}/${pkgId}/changelog`}
                             iconBefore={<List size={16} />}
                           >

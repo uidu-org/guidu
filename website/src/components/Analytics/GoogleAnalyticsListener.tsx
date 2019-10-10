@@ -2,9 +2,9 @@ import * as React from 'react';
 import ReactGA from 'react-ga';
 import { withRouter } from 'react-router-dom';
 import ttiPolyfill from 'tti-polyfill';
-import { getAtlassianAnalyticsClient } from './AtlassianAnalytics';
 import { GOOGLE_ANALYTICS_ID } from '../../constants';
 import { Window } from '../../types';
+import { getAtlassianAnalyticsClient } from './AtlassianAnalytics';
 
 let mounted = 0;
 
@@ -162,4 +162,4 @@ class GoogleAnalyticsListener extends React.Component<Props> {
   }
 }
 
-export default withRouter(GoogleAnalyticsListener);
+export default withRouter(GoogleAnalyticsListener as any);

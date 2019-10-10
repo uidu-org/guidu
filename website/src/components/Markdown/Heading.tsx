@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as reactAddonsTextContent from 'react-addons-text-content';
 import { Helmet } from 'react-helmet';
-import * as snakeCase from 'snake-case';
+import snakeCase from 'snake-case';
 
 export type Props = {
   children?: React.ReactChild;
@@ -37,6 +37,7 @@ export default class Heading extends React.Component<Props, State> {
     // We should implement this using gray-matter to have meta data *title* in markdown
     // Currently gray-matter breaks in IE11, please see https://github.com/jonschlinkert/gray-matter/pull/76 for reference
     return (
+      // @ts-ignore
       <Tag
         id={id}
         onMouseEnter={handleShowAnchor}

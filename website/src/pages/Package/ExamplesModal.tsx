@@ -1,4 +1,3 @@
-import { Code, X, Link as LinkIcon, Maximize } from 'react-feather';
 import Button, { ButtonGroup } from '@uidu/button';
 import Modal, {
   ModalBody as Body,
@@ -10,8 +9,9 @@ import Tooltip from '@uidu/tooltip';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { Code, Link as LinkIcon, Maximize, X } from 'react-feather';
 import { Helmet } from 'react-helmet';
-import { Redirect } from 'react-router-dom';
+import { Redirect, RouteComponentProps } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import ExampleDisplay from '../../components/Examples/ExampleDisplay';
 import { Link } from '../../components/WrappedLink';
@@ -129,9 +129,7 @@ export type State = {
   loadingSandbox: boolean;
 };
 
-export type Props = {
-  match: match<Record<string, string>>;
-};
+export type Props = {} & RouteComponentProps;
 
 function toUrl(
   groupId?: string,
@@ -202,7 +200,7 @@ const ModalHeaderComp = ({
         </Button>
         <Tooltip content="Fullscreen" position="bottom">
           <Button
-            component={Link}
+            component={Link as any}
             to={toExampleUrl(groupId, packageId, exampleId)}
             iconBefore={<Maximize size={16} />}
           />
@@ -215,10 +213,7 @@ const ModalHeaderComp = ({
           />
         </Tooltip>
         <Tooltip content="Close" position="bottom">
-          <Button
-            onClick={close}
-            iconBefore={<X size={16} />}
-          />
+          <Button onClick={close} iconBefore={<X size={16} />} />
         </Tooltip>
       </ButtonGroup>
     </ModalActions>
@@ -267,7 +262,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
   onCodeToggle = () =>
     this.setState(state => ({ displayCode: !state.displayCode }));
 
-  close = (event?: Event) => {
+  close = (event?: React.MouseEvent) => {
     if (event) event.stopPropagation();
 
     const { params } = this.props.match;
@@ -342,7 +337,6 @@ export default class ExamplesModal extends React.Component<Props, State> {
         </Helmet>
         <ContentBody>
           <ExampleNavigation
-            groupId={groupId}
             packageId={packageId}
             exampleId={exampleId}
             groups={groups}
