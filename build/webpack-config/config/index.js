@@ -186,7 +186,7 @@ module.exports = function createWebpackConfig(
             {
               loader: require.resolve('ts-loader'),
               options: {
-                // transpileOnly: true,
+                transpileOnly: true,
                 getCustomTransformers: path.join(
                   __dirname,
                   './ts-transformers.js',

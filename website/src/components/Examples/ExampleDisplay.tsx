@@ -88,14 +88,16 @@ export default class ExampleDisplay extends React.Component<Props> {
       />
     );
   };
+  
   getIframeRef = ref => (this.iframeRef = ref);
+
   render() {
     if (!this.props.src) {
       console.error(
         'No source url provided for the examples iframe',
         this.props.src,
       );
-      return;
+      return null;
     }
     if (this.props.children)
       return this.props.children(

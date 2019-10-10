@@ -35,7 +35,7 @@ export default function CodeBlock(props: Props) {
   const importFixed = replaceImports(srcFixed, [
     ['../glyph/*', `${props.name}/glyph/`],
   ]);
-  const highlighted = Prism.highlight(importFixed, syntax);
+  const highlighted = Prism.highlight(importFixed, syntax, true);
 
   return (
     <Code>

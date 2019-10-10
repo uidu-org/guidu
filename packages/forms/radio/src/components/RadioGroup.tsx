@@ -44,8 +44,8 @@ class RadioGroup extends PureComponent<any> {
             value={option.id}
             label={option.name}
             name={name}
-            checked={option.id === value}
             onChange={this.handleChange}
+            {...(option.id === value && { checked: true })}
           />
         ))}
       </Wrapper>
