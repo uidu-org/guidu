@@ -35,7 +35,7 @@ const getColumnType = field => {
     case 'currency':
       return currencyColumn();
     case 'date':
-      return dateColumn();
+      return dateColumn({});
     case 'email':
       return emailColumn();
     case 'member':

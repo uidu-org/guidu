@@ -83,14 +83,14 @@ export const availableColumns = [
     field: 'createdAt',
     headerName: 'Data creazione',
     ...defaultColumn(),
-    ...dateColumn(),
+    ...dateColumn({}),
   },
   {
     colId: 'updatedAt',
     field: 'updatedAt',
     headerName: 'Ultimo aggiornamento',
     ...defaultColumn(),
-    ...dateColumn(),
+    ...dateColumn({}),
   },
   {
     colId: 'firstName',

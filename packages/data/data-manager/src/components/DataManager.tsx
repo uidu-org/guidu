@@ -236,6 +236,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     const table = (
       <Table
+        rowDoubleClicked={() => null}
+        rowSelection="multiple"
+        suppressRowClickSelection
         {...viewProps.table}
         // @ts-ignore
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
@@ -249,9 +252,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
         onRowClicked={onItemClick}
-        rowDoubleClicked={() => null}
-        rowSelection="multiple"
-        suppressRowClickSelection
       />
     );
 
