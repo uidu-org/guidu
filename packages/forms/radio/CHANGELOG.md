@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 0.2.7
+
+### Patch Changes
+
+- 1f1a843: Fix radio group
+
 ## 0.2.6
 
 ### Patch Changes
