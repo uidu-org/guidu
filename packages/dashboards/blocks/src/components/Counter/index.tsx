@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import CountUp from 'react-countup';
 import { format, manipulator } from '../../utils';
 import Loader from '../Loader';
+import { CounterProps } from './types';
 
-export default class CounterBlock extends PureComponent<any> {
+export default class CounterBlock extends PureComponent<CounterProps> {
   manipulate = data => {
     const { rollup } = this.props;
     return manipulator(data, rollup);
@@ -11,6 +12,7 @@ export default class CounterBlock extends PureComponent<any> {
 
   render() {
     const {
+      data,
       rowData,
       loaded,
       label,
@@ -23,7 +25,7 @@ export default class CounterBlock extends PureComponent<any> {
       return <Loader />;
     }
 
-    const manipulated = this.manipulate(rowData[namespace]);
+    const manipulated = data || this.manipulate(rowData[namespace]);
 
     return (
       <div className="card card-body h-100 d-flex align-items-center flex-row">
@@ -37,7 +39,7 @@ export default class CounterBlock extends PureComponent<any> {
               start={0}
               end={manipulated}
               decimals={0}
-              formattinFn={value => format(value, formatter)}
+              formattingFn={value => format(value, formatter)}
             />
           </h5>
         </div>

@@ -40,6 +40,7 @@ export default class ListBlock extends PureComponent<
 
   render() {
     const {
+      data,
       rowData,
       loaded,
       limit,
@@ -57,58 +58,41 @@ export default class ListBlock extends PureComponent<
       return <Loader />;
     }
 
+    const manipulated =
+      data ||
+      this.manipulate(
+        comparatorData && showPrevious
+          ? comparatorData[namespace]
+          : rowData[namespace],
+      );
+
     return (
       <div className="card h-100">
         <div className="card-header d-flex align-items-center">
           <span className="text-truncate">{label}</span>
-          <Switch
-            isPrevious={showPrevious}
-            comparatorData={comparatorData}
-            onChange={e =>
-              this.setState(prevState => ({
-                showPrevious: !prevState.showPrevious,
-              }))
-            }
-            range={
-              comparatorData && showPrevious
-                ? timeRange.previousRange
-                : timeRange.range
-            }
-          />
+          {comparatorData && (
+            <Switch
+              isPrevious={showPrevious}
+              comparatorData={comparatorData}
+              onChange={e =>
+                this.setState(prevState => ({
+                  showPrevious: !prevState.showPrevious,
+                }))
+              }
+              range={
+                comparatorData && showPrevious
+                  ? timeRange.previousRange
+                  : timeRange.range
+              }
+            />
+          )}
         </div>
         <Items
-          data={this.manipulate(
-            comparatorData && showPrevious
-              ? comparatorData[namespace]
-              : rowData[namespace],
-          )}
+          data={manipulated}
           limit={limit}
           datumRenderer={datumRenderer}
           formatter={formatter}
         />
-        {/* <ul
-          className="list-group list-group-flush"
-          style={{ overflow: 'scroll' }}
-        >
-          {manipulated.slice(0, limit).map(datum => {
-            if (datumRenderer) {
-              return datumRenderer(datum);
-            }
-
-            return (
-              <a
-                key={datum.key}
-                href="#"
-                className="list-group-item list-group-item-action d-flex"
-              >
-                {datum.key}
-                <span className="text-muted ml-auto">
-                  {formatter ? format(datum.value, formatter) : datum.value}
-                </span>
-              </a>
-            );
-          })}
-        </ul> */}
       </div>
     );
   }

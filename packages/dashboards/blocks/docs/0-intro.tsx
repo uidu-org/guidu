@@ -22,9 +22,20 @@ export default md`
     />
   )}
 
+  You can pass \`data\` attribute to use same components without built-in manipulators. Each block has different data requirements.
+
+  ${(
+    <Example
+      packageName="@uidu/stepper"
+      Component={require('../examples/SingleBlocks').default}
+      title="Single Blocks"
+      source={require('!!raw-loader!../examples/SingleBlocks')}
+    />
+  )}
+
   ${(
     <Props
-      heading="Sorter"
+      heading="Blocks"
       props={require('!!extract-react-types-loader!../src/components/Blocks')}
     />
   )}

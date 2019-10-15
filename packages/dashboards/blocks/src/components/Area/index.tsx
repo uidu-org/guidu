@@ -71,8 +71,6 @@ export default class AreasBlock extends PureComponent<any> {
       );
     }
 
-    console.log(this.props);
-
     return (
       <div className="card h-100 border-0 shadow-none bg-transparent">
         <div className="flex-grow-1 justify-content-center flex-column d-flex">

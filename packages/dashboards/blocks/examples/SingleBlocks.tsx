@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchDonations } from '../../dashboard-manager/examples-utils';
-import { Blocks } from '../src';
+import { Counter, List, Pie } from '../src';
 
 export default class Basic extends Component<any> {
   constructor(props) {
@@ -26,21 +26,20 @@ export default class Basic extends Component<any> {
 
   render() {
     return (
-      <div className="p-3">
-        <Blocks
-          blocks={[
-            { kind: 'Geo', namespace: 'donations', rollup: ['count', 'id'] },
-            {
-              kind: 'List',
-              namespace: 'donations',
-              rollup: ['count', 'id'],
-              label: 'List',
-            },
-          ]}
-          rowData={this.state.rowData}
-          loaded={this.state.loaded}
-        />
-      </div>
+      <>
+        <div className="p-3">
+          <h6>List</h6>
+          <List data={[{ key: 'foo', value: 'test' }]} loaded label="List" />
+        </div>
+        <div className="p-3">
+          <h6>Pie</h6>
+          <Pie />
+        </div>
+        <div className="p-3">
+          <h6>Counter</h6>
+          <Counter label="This is mandatory" loaded data={134} />
+        </div>
+      </>
     );
   }
 }
