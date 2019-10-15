@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.23
+
+### Patch Changes
+
+- 8c7656c: Date column allow options for formatting, more flexible data manager table
+- 8c7656c: Release data-manager for row selection
+
+- Updated dependencies [8c7656c]
+  - @uidu/table@0.1.27
+
 ## 0.1.22
 
 ### Patch Changes

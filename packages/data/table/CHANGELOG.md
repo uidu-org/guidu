@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.27
+
+### Patch Changes
+
+- 8c7656c: Date column allow options for formatting, more flexible data manager table
+
 ## 0.1.26
 
 ### Patch Changes
