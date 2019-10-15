@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.1.17
+
+### Patch Changes
+
+- f2e9e46: Allow usage of single blocks, FIX #44
+
 ## 0.1.16
 
 ### Patch Changes
