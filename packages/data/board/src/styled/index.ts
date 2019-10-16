@@ -11,7 +11,7 @@ export const ParentContainer = styled.div<{ height: string }>`
 export const Container = styled.div`
   /* min-height: 100vh; */
   /* like display:flex but will allow bleeding over the window width */
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100%;
   display: inline-flex;
 `;
@@ -83,7 +83,7 @@ const scrollContainerHeight: number = 400;
 
 export const ItemsListDropZone = styled.div`
   /* stop the list collapsing when empty */
-  min-height: ${scrollContainerHeight}px;
+  /* min-height: ${scrollContainerHeight}px; */
   /*
     not relying on the items for a margin-bottom
     as it will collapse when the list is empty
