@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.0
+
+### Minor Changes
+
+- ca23e5b: Fix board height and components
+
 ## 0.1.7
 
 ### Patch Changes
