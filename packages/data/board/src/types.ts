@@ -73,6 +73,8 @@ export type ItemsListProps = {
   // may not be provided - and might be null
   ignoreContainerClipping?: boolean;
   components?: BoardComponents;
+  header?: React.ReactNode;
+  footer?: React.ReactNode;
 };
 
 type ItemListProps = {

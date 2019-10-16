@@ -76,6 +76,8 @@ export default function ItemList(props: ItemsListProps) {
     listType,
     style,
     items,
+    header,
+    footer,
   } = props;
 
   const {
@@ -102,6 +104,7 @@ export default function ItemList(props: ItemsListProps) {
           isDraggingFrom={Boolean(dropSnapshot.draggingFromThisWith)}
           {...dropProvided.droppableProps}
         >
+          {header}
           {internalScroll ? (
             <ItemsListScrollContainer style={scrollContainerStyle}>
               <InnerList
@@ -117,6 +120,7 @@ export default function ItemList(props: ItemsListProps) {
               dropProvided={dropProvided}
             />
           )}
+          {footer}
         </ItemsListWrapper>
       )}
     </Droppable>

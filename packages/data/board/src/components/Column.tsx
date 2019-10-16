@@ -29,11 +29,6 @@ export default class Column extends Component<ColumnProps> {
             {...provided.draggableProps}
             {...provided.dragHandleProps}
           >
-            <Header
-              isDragging={snapshot.isDragging}
-              items={items}
-              title={title}
-            />
             <ItemList
               components={components}
               listId={title}
@@ -44,14 +39,23 @@ export default class Column extends Component<ColumnProps> {
               items={items}
               internalScroll={this.props.isScrollable}
               isCombineEnabled={Boolean(this.props.isCombineEnabled)}
+              header={
+                <Header
+                  isDragging={snapshot.isDragging}
+                  items={items}
+                  title={title}
+                />
+              }
+              footer={
+                Footer && (
+                  <Footer
+                    isDragging={snapshot.isDragging}
+                    items={items}
+                    title={title}
+                  />
+                )
+              }
             />
-            {Footer && (
-              <Footer
-                isDragging={snapshot.isDragging}
-                items={items}
-                title={title}
-              />
-            )}
           </Container>
         )}
       </Draggable>

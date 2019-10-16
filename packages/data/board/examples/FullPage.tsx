@@ -14,19 +14,21 @@ const Column = React.forwardRef<HTMLDivElement, ColumnProps>((props, ref) => (
 const ColumnHeader = ({ title, items, ...rest }) => {
   return (
     <div
-      className="card-header border-0 bg-transparent d-flex justify-content-between"
+      className="card-header px-0 border-0 bg-transparent d-flex justify-content-between"
       {...rest}
     >
       <div>
         <Badge>{items.length}</Badge>
         <span className="ml-2">{title}</span>
       </div>
-      <button>
-        <Plus size={16} />
-      </button>
-      <button>
-        <MoreHorizontal size={16} className="ml-2" />
-      </button>
+      <div className="btn-group">
+        <button>
+          <Plus size={16} />
+        </button>
+        <button>
+          <MoreHorizontal size={16} />
+        </button>
+      </div>
     </div>
   );
 };

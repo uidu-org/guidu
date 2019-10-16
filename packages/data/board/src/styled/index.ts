@@ -73,17 +73,17 @@ export const ItemsListWrapper = styled.div<any>`
   padding-bottom: 0;
   transition: background-color 0.2s ease, opacity 0.1s ease;
   user-select: none;
-  width: 20rem;
+  width: 22rem;
   min-width: 0;
   min-height: 0;
   /* height: 100%; */
 `;
 
-const scrollContainerHeight: number = 400;
+const scrollContainerHeight: number = 64;
 
 export const ItemsListDropZone = styled.div`
   /* stop the list collapsing when empty */
-  /* min-height: ${scrollContainerHeight}px; */
+  min-height: ${scrollContainerHeight}px;
   /*
     not relying on the items for a margin-bottom
     as it will collapse when the list is empty
