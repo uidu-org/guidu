@@ -131,7 +131,7 @@ export default md`
   ### Example:
 
   ${code`
-  import { traverse } from '@uidu/adf-utils/traverse.es'; // .es for ES2015
+  import { traverse } from '@uidu/adf-utils';
 
   const doc = {/* some ADF doc */};
 
@@ -246,7 +246,7 @@ export default md`
   ### Example:
 
   ${code`
-  import { map } from '@uidu/adf-utils/traverse.es'; // .es for ES2015
+  import { map } from '@uidu/adf-utils; // .es for ES2015
 
   const doc = {/* some ADF doc */};
 
@@ -348,7 +348,7 @@ export default md`
   ### Example:
 
   ${code`
-  import { filter } from '@uidu/adf-utils/traverse.es'; // .es for ES2015
+  import { filter } from '@uidu/adf-utils'; // .es for ES2015
 
   const doc = {/* some ADF doc */};
 
@@ -476,7 +476,7 @@ export default md`
   ### Example:
 
   ${code`
-  import { reduce } from '@uidu/adf-utils/traverse.es'; // .es for ES2015
+  import { reduce } from '@uidu/adf-utils'; // .es for ES2015
 
   const doc = {/* some ADF doc */};
 
@@ -501,7 +501,7 @@ export default md`
   ### Usage:
 
   ${code`
-  import { doc, p, emoji } from '@uidu/adf-utils/builders.es'; // .es for ES2015
+  import { doc, p, emoji } from '@uidu/adf-utils'; // .es for ES2015
 
   const adfDoc = doc(
     p('My favourite emoji is ', emoji({ text: '🤦‍♂️', shortName: ':man_facepalming:' }), '. What is yours?'),

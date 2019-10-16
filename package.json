@@ -21,7 +21,6 @@
     "build:typescript": "                    run-p build:typescript:es2015",
     "build:typescript:cli": "                NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescriptcli)\" -- tsc --project ./build/cli",
     "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015",
-    "build:typescript:es5": "                NODE_ENV=production bolt workspaces exec --only-fs \"packages/editor/{adf-schema,adf-utils}\" -- tsc --project ./build/es5 && NODE_ENV=production bolt workspaces exec --only-fs \"packages/editor/{adf-schema,adf-utils}\" -- cp version.json dist/es5/version.json",
     "build:website": "                       bolt install --pure-lockfile && cd website && yarn build",
     "changeset": "                           changeset",
     "delete": "                              yarn run delete:modules && yarn run delete:build",
