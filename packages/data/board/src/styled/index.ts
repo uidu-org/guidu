@@ -6,14 +6,13 @@ export const ParentContainer = styled.div<{ height: string }>`
   height: ${({ height }) => height};
   overflow-x: auto;
   overflow-y: auto;
-  padding: 16px 0px 0 16px;
 `;
 
 export const Container = styled.div`
   /* min-height: 100vh; */
   /* like display:flex but will allow bleeding over the window width */
   min-width: 100vw;
-  height: 100%;
+  min-height: 100%;
   display: inline-flex;
 `;
 
@@ -60,7 +59,7 @@ const getBackgroundColor = (
   if (isDraggingFrom) {
     return colors.T50;
   }
-  return colors.N20;
+  return '';
 };
 
 export const ItemsListWrapper = styled.div<any>`
@@ -77,6 +76,7 @@ export const ItemsListWrapper = styled.div<any>`
   width: 20rem;
   min-width: 0;
   min-height: 0;
+  /* height: 100%; */
 `;
 
 const scrollContainerHeight: number = 400;
@@ -84,7 +84,6 @@ const scrollContainerHeight: number = 400;
 export const ItemsListDropZone = styled.div`
   /* stop the list collapsing when empty */
   min-height: ${scrollContainerHeight}px;
-
   /*
     not relying on the items for a margin-bottom
     as it will collapse when the list is empty
@@ -93,13 +92,16 @@ export const ItemsListDropZone = styled.div`
 `;
 
 export const ItemsListScrollContainer = styled.div`
-  overflow-x: hidden;
-  overflow-y: auto;
-  max-height: ${scrollContainerHeight}px;
+  /* overflow-x: hidden; */
+  /* overflow-y: auto; */
+  height: 100%;
+  /* max-height: ${scrollContainerHeight}px; */
 `;
 
 /* stylelint-disable block-no-empty */
-export const ItemsListContainer = styled.div``;
+export const ItemsListContainer = styled.div`
+  height: 100%;
+`;
 /* stylelint-enable */
 
 const getItemBackgroundColor = (

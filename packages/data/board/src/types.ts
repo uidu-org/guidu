@@ -2,23 +2,10 @@ import { DraggableId, DraggableLocation } from 'react-beautiful-dnd';
 
 export type Id = string;
 
-export type AuthorColors = {
-  soft: string;
-  hard: string;
-};
-
-export type Author = {
-  id: Id;
-  name: string;
-  avatarUrl: string;
-  url: string;
-  colors: AuthorColors;
-};
-
 export type ItemProps = {
   id: Id;
-  content: string;
-  author: Author;
+  content: string | React.ReactNode;
+  data?: any;
 };
 
 export type Dragging = {
@@ -32,7 +19,8 @@ export type ItemMapProps = {
 
 export type Task = {
   id: Id;
-  content: string;
+  content: string | React.ReactNode;
+  data?: any;
 };
 
 export type BoardComponents = {
@@ -46,29 +34,31 @@ export type BoardComponents = {
   innerListContainer?: any;
   innerListDropzone?: any;
   item?: any;
-}
+};
 
 export type BoardProps = {
   initial: ItemMapProps;
   withScrollableColumns?: boolean;
+  withDraggableColumns?: boolean;
   isCombineEnabled?: boolean;
   containerHeight?: string;
   components?: BoardComponents;
-}
+};
 
 export type BoardState = {
   columns: ItemMapProps;
   ordered: string[];
-}
+};
 
 export type ColumnProps = {
-  title: string,
-  items: ItemProps[],
-  index: number,
-  isScrollable?: boolean,
-  isCombineEnabled?: boolean,
+  title: string;
+  items: ItemProps[];
+  index: number;
+  isScrollable?: boolean;
+  isDragDisabled?: boolean;
+  isCombineEnabled?: boolean;
   components?: BoardComponents;
-}
+};
 
 export type ItemsListProps = {
   listId?: string;

@@ -52,63 +52,87 @@ export const items: ItemProps[] = [
   {
     id: '1',
     content: 'Sometimes life is scary and dark',
-    author: BMO,
+    data: {
+      author: BMO,
+    },
   },
   {
     id: '2',
     content:
       'Sucking at something is the first step towards being sorta good at something.',
-    author: jake,
+    data: {
+      author: jake,
+    },
   },
   {
     id: '3',
     content: "You got to focus on what's real, man",
-    author: jake,
+    data: {
+      author: jake,
+    },
   },
   {
     id: '4',
     content: 'Is that where creativity comes from? From sad biz?',
-    author: finn,
+    data: {
+      author: finn,
+    },
   },
   {
     id: '5',
     content: 'Homies help homies. Always',
-    author: finn,
+    data: {
+      author: finn,
+    },
   },
   {
     id: '6',
     content: 'Responsibility demands sacrifice',
-    author: princess,
+    data: {
+      author: princess,
+    },
   },
   {
     id: '7',
     content: "That's it! The answer was so simple, I was too smart to see it!",
-    author: princess,
+    data: {
+      author: princess,
+    },
   },
   {
     id: '8',
     content: 'People make mistakes. It’s a part of growing up',
-    author: finn,
+    data: {
+      author: finn,
+    },
   },
   {
     id: '9',
     content: "Don't you always call sweatpants 'give up on life pants,' Jake?",
-    author: finn,
+    data: {
+      author: finn,
+    },
   },
   {
     id: '10',
     content: 'I should not have drunk that much tea!',
-    author: princess,
+    data: {
+      author: princess,
+    },
   },
   {
     id: '11',
     content: 'Please! I need the real you!',
-    author: princess,
+    data: {
+      author: princess,
+    },
   },
   {
     id: '12',
     content: "Haven't slept for a solid 83 hours, but, yeah, I'm good.",
-    author: princess,
+    data: {
+      author: princess,
+    },
   },
 ];
 
@@ -140,7 +164,7 @@ export const getAuthors = (count: number): Author[] =>
   });
 
 const getByAuthor = (author: Author, items: ItemProps[]): ItemProps[] =>
-  items.filter((item: ItemProps) => item.author === author);
+  items.filter((item: ItemProps) => item.data.author === author);
 
 export const authorItemMap: ItemMapProps = authors.reduce(
   (previous: ItemMapProps, author: Author) => ({

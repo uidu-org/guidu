@@ -10,7 +10,7 @@ import ItemList from './ItemsList';
 
 export default class Column extends Component<ColumnProps> {
   render() {
-    const { components, title, items, index } = this.props;
+    const { components, title, items, index, isDragDisabled } = this.props;
     const {
       columnHeader: Header,
       columnContainer: Container,
@@ -18,7 +18,11 @@ export default class Column extends Component<ColumnProps> {
     } = components;
 
     return (
-      <Draggable draggableId={title} index={index}>
+      <Draggable
+        draggableId={title}
+        index={index}
+        isDragDisabled={isDragDisabled}
+      >
         {(provided: DraggableProvided, snapshot: DraggableStateSnapshot) => (
           <Container
             ref={provided.innerRef}

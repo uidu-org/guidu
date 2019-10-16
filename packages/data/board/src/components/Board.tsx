@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import {
   DragDropContext,
   DraggableLocation,
@@ -39,6 +39,7 @@ const defaultComponents = {
 export default class Board extends Component<BoardProps, BoardState> {
   static defaultProps = {
     isCombineEnabled: false,
+    withDraggableColumns: false,
     components: defaultComponents,
   };
 
@@ -125,6 +126,7 @@ export default class Board extends Component<BoardProps, BoardState> {
       containerHeight,
       isCombineEnabled,
       withScrollableColumns,
+      withDraggableColumns,
     } = this.props;
 
     const {
@@ -154,6 +156,7 @@ export default class Board extends Component<BoardProps, BoardState> {
                 items={columns[key]}
                 isScrollable={withScrollableColumns}
                 isCombineEnabled={isCombineEnabled}
+                isDragDisabled={!withDraggableColumns}
               />
             ))}
             {provided.placeholder}
@@ -163,7 +166,7 @@ export default class Board extends Component<BoardProps, BoardState> {
     );
 
     return (
-      <Fragment>
+      <>
         <DragDropContext onDragEnd={this.onDragEnd}>
           {containerHeight ? (
             <ParentContainerComponent height={containerHeight}>
@@ -173,7 +176,7 @@ export default class Board extends Component<BoardProps, BoardState> {
             board
           )}
         </DragDropContext>
-      </Fragment>
+      </>
     );
   }
 }
