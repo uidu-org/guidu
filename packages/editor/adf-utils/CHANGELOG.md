@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.3.0
+
+### Minor Changes
+
+- 2b8b01c: Added export files
+
 ## 0.2.0
 
 ### Minor Changes

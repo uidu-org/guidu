@@ -1,5 +1,12 @@
 # @uidu/editor-core
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [2b8b01c]
+  - @uidu/adf-utils@0.3.0
+
 ## 0.1.14
 
 ### Patch Changes
