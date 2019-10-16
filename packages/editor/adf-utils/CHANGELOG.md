@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.4.0
+
+### Minor Changes
+
+- 6dd1ab6: Fix ad-utils?
+
 ## 0.3.0
 
 ### Minor Changes
