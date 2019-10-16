@@ -68,8 +68,8 @@ export const ItemsListWrapper = styled.div<any>`
   display: flex;
   flex-direction: column;
   opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : 'inherit')};
-  padding: ${grid}px;
-  border: ${grid}px;
+  padding: 0 1rem;
+  border: 1rem;
   padding-bottom: 0;
   transition: background-color 0.2s ease, opacity 0.1s ease;
   user-select: none;
