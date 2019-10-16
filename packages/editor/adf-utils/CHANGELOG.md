@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.2.0
+
+### Minor Changes
+
+- 8cd67b9: Export index.js
+
 ## 0.1.2
 
 ### Patch Changes
