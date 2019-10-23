@@ -1,5 +1,12 @@
 # @uidu/board
 
+## 0.2.2
+
+### Patch Changes
+
+- 95c9223: Minor padding fix
+- 95c9223: Board header and footer inside column
+
 ## 0.2.1
 
 ### Patch Changes
