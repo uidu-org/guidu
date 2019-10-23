@@ -107,10 +107,9 @@ export const ItemsListContainer = styled.div`
 const getItemBackgroundColor = (
   isDragging: boolean,
   isGroupedOver: boolean,
-  authorColors: any,
 ) => {
   if (isDragging) {
-    return authorColors.soft;
+    return colors.N10;
   }
 
   if (isGroupedOver) {
@@ -121,7 +120,7 @@ const getItemBackgroundColor = (
 };
 
 const getBorderColor = (isDragging: boolean, authorColors: any) =>
-  isDragging ? authorColors.hard : 'transparent';
+  isDragging ? colors.N10 : 'transparent';
 
 export const Item = styled.div<{
   isDragging?: boolean;
@@ -134,11 +133,7 @@ export const Item = styled.div<{
   border: 2px solid transparent;
   border-color: ${props => getBorderColor(props.isDragging, props.colors)};
   background-color: ${props =>
-    getItemBackgroundColor(
-      props.isDragging,
-      props.isGroupedOver,
-      props.colors,
-    )};
+    getItemBackgroundColor(props.isDragging, props.isGroupedOver)};
   box-shadow: ${({ isDragging }) =>
     isDragging ? `2px 2px 1px ${colors.N70}` : 'none'};
   padding: ${grid}px;
@@ -157,7 +152,7 @@ export const Item = styled.div<{
 
   &:focus {
     outline: none;
-    border-color: ${props => props.colors.hard};
+    border-color: ${props => colors.N10};
     box-shadow: none;
   }
 

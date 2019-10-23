@@ -10,6 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@loadable/component": "^5.10.1",
+    "@uidu/board": "^0.2.1",
     "@uidu/calendar": "^0.1.11",
     "@uidu/data-controls": "^0.1.24",
     "@uidu/gallery": "^0.1.17",
@@ -17,6 +18,7 @@
     "@uidu/shell": "^0.1.31",
     "@uidu/spinner": "^0.1.12",
     "@uidu/table": "^0.1.27",
+    "d3-array": "^2.2.0",
     "react-media": "^1.9.2",
     "react-sortable-hoc": "^1.9.1",
     "react-transition-group": "^4.0.0"

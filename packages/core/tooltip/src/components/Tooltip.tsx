@@ -330,7 +330,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
                   >
                     {getAnimationStyles => (
                       <TooltipContainer
-                        innerRef={ref}
+                        ref={ref}
                         className="Tooltip"
                         style={{
                           ...getAnimationStyles(placement as PositionTypeBase),

@@ -13,14 +13,16 @@ import {
 } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import Table from '@uidu/table';
+import { rollup } from 'd3-array';
 import moment from 'moment';
 import React, { Component } from 'react';
 import Media from 'react-media';
 import { arrayMove } from 'react-sortable-hoc';
 import { DataManagerProps } from '../types';
 
-const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
+const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
+const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
 const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
 
 const defaultAvailableControls = {
@@ -216,10 +218,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   renderView = ({
     viewProps = {
-      table: {},
+      board: {},
       calendar: {},
-      list: {},
       gallery: {},
+      list: {},
+      table: {},
     },
   }) => {
     const {
@@ -288,6 +291,47 @@ export default class DataManager extends Component<DataManagerProps, any> {
           <div className="d-none">{table}</div>
         </>
       );
+    }
+
+    if (currentView.kind === 'board') {
+      console.log(
+        Array.from(
+          rollup(rowData, item => item, item => item.id),
+          ([key, value]) => ({ key, value }),
+        ),
+      );
+      desktopView = null;
+      // (
+      //   <>
+      //     <LoadableBoard fallback={<ShellBodyWithSpinner />}>
+      //       {({ default: Board }) => {
+      //         return (
+      //           <Board
+      //             {...viewProps.board}
+      //             initial={groups(rowData, item => item.id)}
+      //             onItemClick={onItemClick}
+      //             // events={data.map(datum => ({
+      //             //   data: datum.data,
+      //             // }))}
+      //             // startAccessor={item => moment(item.createdAt).toDate()}
+      //             // titleAccessor={item => item.email}
+      //             // endAccessor={item =>
+      //             //   moment(item.createdAt)
+      //             //     .add(1, 'hour')
+      //             //     .toDate()
+      //             // }
+      //             // columnDefs={columnDefs}
+      //             // // toolbar={false}
+      //             // components={{
+      //             //   toolbar: CalendarToolbar,
+      //             // }}
+      //           />
+      //         );
+      //       }}
+      //     </LoadableBoard>
+      //     <div className="d-none">{table}</div>
+      //   </>
+      // );
     }
 
     if (currentView.kind === 'gallery') {

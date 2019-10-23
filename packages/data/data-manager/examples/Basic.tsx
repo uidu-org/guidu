@@ -78,11 +78,6 @@ export default class Basic extends Component<any, any> {
     const { loaded } = this.state;
     return (
       <DataManager
-        availableViews={[
-          { id: 0, kind: 'table', name: 'Table' },
-          { id: 1, kind: 'gallery', name: 'Griglia' },
-          { id: 2, kind: 'calendar', name: 'Calendario' },
-        ]}
         columnDefs={this.state.columnDefs}
         rowData={this.state.rowData}
         currentView={this.state.currentView}
@@ -106,7 +101,8 @@ export default class Basic extends Component<any, any> {
                         { id: 0, kind: 'table', name: 'Table' },
                         { id: 1, kind: 'gallery', name: 'Griglia' },
                         { id: 2, kind: 'calendar', name: 'Calendario' },
-                        { id: 3, kind: 'list', name: 'List (mobile view)' },
+                        { id: 3, kind: 'board', name: 'Kanban' },
+                        { id: 4, kind: 'list', name: 'List (mobile view)' },
                       ],
                     },
                   },
@@ -136,6 +132,7 @@ export default class Basic extends Component<any, any> {
                             list: {
                               rowHeight: 128,
                             },
+                            board: {},
                           },
                         })}
                       </div>
