@@ -1,5 +1,11 @@
 # @uidu/tooltip
 
+## 0.1.18
+
+### Patch Changes
+
+- 6e5fe56: Fix innerRef for tooltip
+
 ## 0.1.17
 
 ### Patch Changes
