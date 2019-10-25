@@ -302,7 +302,7 @@
     "react-google-charts": "^3.0.13",
     "react-google-login": "^5.0.4",
     "react-google-maps": "^9.4.5",
-    "react-grid-layout": "^0.16.6",
+    "react-grid-layout": "^0.17.0",
     "react-helmet": "^5.2.0",
     "react-images": "^1.0.0",
     "react-intersection-observer": "^8.24.1",

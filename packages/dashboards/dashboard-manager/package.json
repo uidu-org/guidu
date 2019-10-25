@@ -16,7 +16,7 @@
     "d3-time": "^1.0.11",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
-    "react-grid-layout": "^0.16.6"
+    "react-grid-layout": "^0.17.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34",
