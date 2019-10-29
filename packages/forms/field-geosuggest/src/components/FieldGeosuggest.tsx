@@ -5,6 +5,11 @@ import { MapPin } from 'react-feather';
 import FieldGeosuggestItem from './FieldGeosuggestItem';
 
 class FieldGeosuggest extends PureComponent<any, any> {
+  static defaultProps = {
+    onSuggestSelect: () => {},
+    onGeocode: () => {},
+  };
+
   geolocationAvailable: boolean;
   geosuggestInput: React.RefObject<HTMLInputElement> = React.createRef();
   geocoder;

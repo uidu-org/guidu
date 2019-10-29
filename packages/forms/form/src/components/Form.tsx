@@ -98,7 +98,10 @@ class Form extends Component<FormProps, FormState> {
           onValid={this.enableButton}
           onInvalid={this.disableButton}
         >
-          <Loading loading={loading} {...inputsWrapperProps}>
+          <Loading
+            {...inputsWrapperProps}
+            loading={loading ? loading : undefined}
+          >
             {children}
           </Loading>
           {footerRenderer({ loading, canSubmit }, this.form, this.handleSubmit)}

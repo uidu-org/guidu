@@ -31,7 +31,7 @@ export default class FormSubmit extends Component<any> {
             className="spinner-border spinner-border-sm"
             role="status"
             aria-hidden="true"
-          ></span>
+          />
         )}
         {loading && loadingLabel && (
           <span className="ml-2">{loadingLabel}</span>

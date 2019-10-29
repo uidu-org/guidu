@@ -16,7 +16,7 @@
     "@uidu/spinner": "^0.1.12",
     "blueimp-load-image": "^2.20.1",
     "classnames": "^2.2.6",
-    "react-avatar-editor": "^11.0.7",
+    "react-avatar-editor": "^12.0.0-beta.0",
     "react-dropzone": "^10.1.7",
     "react-feather": "^2.0.3",
     "styled-components": "^4.0.3"
