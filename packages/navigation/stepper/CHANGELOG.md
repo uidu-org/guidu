@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.1.14
+
+### Patch Changes
+
+- a0ff9c0: Added default value to textarea, steps are now rounded
+
 ## 0.1.13
 
 ### Patch Changes

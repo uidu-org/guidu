@@ -1,5 +1,11 @@
 # @uidu/field-textarea
 
+## 0.1.11
+
+### Patch Changes
+
+- a0ff9c0: Added default value to textarea, steps are now rounded
+
 ## 0.1.10
 
 ### Patch Changes
