@@ -1,6 +1,5 @@
 import Slider from '@uidu/slider';
 import React, { Component } from 'react';
-import 'swiper/dist/css/swiper.css';
 import Payments, { Pay, PayWith } from '../src';
 
 export default class Basic extends Component<any> {

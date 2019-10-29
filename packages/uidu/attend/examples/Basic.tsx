@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import 'swiper/dist/css/swiper.min.css';
 import Attend from '..';
 
 export default class Basic extends Component<any, any> {

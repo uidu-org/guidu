@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import 'swiper/dist/css/swiper.min.css';
 import { DeviseProps } from '../types';
 import PasswordRecovery from './PasswordRecovery';
 import PasswordReset from './PasswordReset';

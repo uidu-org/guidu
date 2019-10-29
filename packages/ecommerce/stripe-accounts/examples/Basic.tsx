@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
-import 'swiper/dist/css/swiper.css';
 import StripeAccounts from '../src';
 
 export default class Basic extends Component<any> {

@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import 'swiper/dist/css/swiper.min.css';
 import Comment, { CommentForm } from '../';
 
 export default class Basic extends Component<any, any> {
