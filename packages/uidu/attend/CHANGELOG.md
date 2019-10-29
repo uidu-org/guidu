@@ -1,5 +1,15 @@
 # @uidu/attend
 
+## 0.1.10
+
+### Patch Changes
+
+- f7b81c7: Remove swiper css
+
+- Updated dependencies [f7b81c7]
+  - @uidu/payments@0.1.9
+  - @uidu/widgets@0.1.8
+
 ## 0.1.9
 
 ### Patch Changes

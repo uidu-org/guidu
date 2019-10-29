@@ -1,5 +1,11 @@
 # @uidu/widgets
 
+## 0.1.8
+
+### Patch Changes
+
+- f7b81c7: Remove swiper css
+
 ## 0.1.7
 
 ### Patch Changes

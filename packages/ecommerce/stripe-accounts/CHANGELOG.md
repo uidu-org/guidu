@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.1.9
+
+### Patch Changes
+
+- f7b81c7: Remove swiper css
+
+- Updated dependencies [f7b81c7]
+  - @uidu/payments@0.1.9
+
 ## 0.1.8
 
 ### Patch Changes
