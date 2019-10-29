@@ -6,7 +6,7 @@ export const StyledStepNumber = styled.div`
   justify-content: center;
   display: flex;
   background-color: ${colors.N30};
-  border-radius: 0.25rem;
+  border-radius: 4rem;
   color: ${colors.N0};
   font-weight: bold;
   height: 2rem;
@@ -20,6 +20,8 @@ export const StyledStepHeader = styled.div`
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 
   &:hover {
     text-decoration: none;
@@ -41,6 +43,7 @@ export const StyledStepBody = styled.div`
 
 export default styled.div`
   position: relative;
+  opacity: 0.4;
 
   &.disabled {
     pointer-events: none;
@@ -58,6 +61,7 @@ export default styled.div`
   }
 
   &.active {
+    opacity: 1;
     .step-body {
       font-size: 1rem;
       opacity: 1;
@@ -72,7 +76,7 @@ export default styled.div`
     height: 100%;
     left: calc(2rem - 1px);
     position: absolute;
-    top: 32px;
+    top: 0px;
     width: 1px;
     z-index: -1;
   }

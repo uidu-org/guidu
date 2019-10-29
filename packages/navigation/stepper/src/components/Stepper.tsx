@@ -48,11 +48,13 @@ class Stepper extends Component<StepperProps, any> {
 
   getStepProps = ({ ...rest } = {}) => {
     const { isStepActive, toggleStep, jumpToStep } = this;
+    const { scope } = this.props;
     return {
       ref: (c: Step | null) => {
         if (!c) return;
         this.steps[c.props.name] = c;
       },
+      scope,
       isActive: isStepActive,
       toggleStep,
       jumpToStep,

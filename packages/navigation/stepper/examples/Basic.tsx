@@ -4,13 +4,13 @@ import Stepper, { Step } from '../src';
 export default class Basic extends Component<any> {
   render() {
     return (
-      <Stepper defaultStep="info" scrollElement={this.container}>
+      <Stepper defaultStep="info" scrollElement={this.container} scope="teams">
         {({ getStepProps, jumpToStep }) => [
           <Step
             {...getStepProps()}
             name="info"
+            description="Choose evet details"
             label="Dettagli dell'evento"
-            scope="teams"
             number={1}
           >
             <p>
@@ -22,8 +22,15 @@ export default class Basic extends Component<any> {
             {...getStepProps()}
             name="bar"
             label="Dettagli dell'evento"
-            scope="teams"
             number={2}
+          >
+            <p>Foo 2</p>
+          </Step>,
+          <Step
+            {...getStepProps()}
+            name="test"
+            label="Dettagli dell'evento"
+            number={3}
           >
             <p>Foo 2</p>
           </Step>,

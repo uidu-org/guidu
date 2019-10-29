@@ -38,6 +38,7 @@ class FieldTextareaStateless extends Component<any> {
       onKeyUp,
       rows,
       cols,
+      value,
     } = this.props;
 
     return (
@@ -52,7 +53,9 @@ class FieldTextareaStateless extends Component<any> {
         onChange={onChange}
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}
-      />
+      >
+        {value}
+      </textarea>
     );
   }
 }

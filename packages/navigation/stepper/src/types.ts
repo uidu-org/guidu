@@ -20,6 +20,7 @@ export type StepProps = {
 export type StepperProps = {
   defaultStep?: string;
   marginTop?: number;
+  scope?: string;
   scrollElement?: HTMLDivElement;
   children: (props: any) => StepProps | ReactFragment;
 } & RouteComponentProps;
