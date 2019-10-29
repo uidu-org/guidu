@@ -12,7 +12,7 @@
     "@uidu/field-text": "^0.1.22",
     "@uidu/form": "^0.1.39",
     "@uidu/payments": "^0.1.7",
-    "@uidu/slider": "^1.0.0-beta.4",
+    "@uidu/slider": "^1.0.0",
     "@uidu/spinner": "^0.1.12",
     "@uidu/stepper": "^0.1.13",
     "moment": "^2.18.1",

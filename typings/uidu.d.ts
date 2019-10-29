@@ -25,7 +25,6 @@ declare module '@uidu/panel';
 declare module '@uidu/polyfills';
 declare module '@uidu/single-select';
 declare module '@uidu/size-detector';
-declare module '@uidu/slider';
 declare module '@uidu/spinner';
 declare module '@uidu/textfield';
 declare module '@uidu/toggle';
