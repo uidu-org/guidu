@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stripe-accounts",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,8 +11,8 @@
   "dependencies": {
     "@uidu/field-text": "^0.1.22",
     "@uidu/form": "^0.1.39",
-    "@uidu/payments": "^0.1.7",
-    "@uidu/slider": "^1.0.0",
+    "@uidu/payments": "^0.1.8",
+    "@uidu/slider": "^1.0.1",
     "@uidu/spinner": "^0.1.12",
     "@uidu/stepper": "^0.1.13",
     "moment": "^2.18.1",

@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.1.14
+
+### Patch Changes
+
+- 105dc73: Added slider to guidu
+
+  - @uidu/field-range@0.1.17
+
 ## 0.1.13
 
 ### Patch Changes

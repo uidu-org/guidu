@@ -1,5 +1,16 @@
 # @uidu/stripe-accounts
 
+## 0.1.8
+
+### Patch Changes
+
+- 6deeb6d: Upgrade @uidu/slider
+
+- Updated dependencies [6deeb6d]
+- Updated dependencies [105dc73]
+  - @uidu/payments@0.1.8
+  - @uidu/slider@1.0.1
+
 ## 0.1.7
 
 ### Patch Changes
