@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.35
+
+### Patch Changes
+
+- e7b3893: Bump packages and small fixes to field geosuggest
+
 ## 0.1.34
 
 ### Patch Changes
