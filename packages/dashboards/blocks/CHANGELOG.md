@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.1.18
+
+### Patch Changes
+
+- 6927df2: Bump react-grid-layout
+
 ## 0.1.17
 
 ### Patch Changes

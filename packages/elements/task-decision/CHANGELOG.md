@@ -1,5 +1,14 @@
 # @uidu/task-decision
 
+## 0.1.2
+
+### Patch Changes
+
+- 6927df2: Bump react-grid-layout
+
+- Updated dependencies [6927df2]
+  - @uidu/util-data-test@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

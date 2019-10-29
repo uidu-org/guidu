@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.1.18
+
+### Patch Changes
+
+- 6927df2: Bump react-grid-layout
+
+- Updated dependencies [6927df2]
+  - @uidu/blocks@0.1.18
+
 ## 0.1.17
 
 ### Patch Changes

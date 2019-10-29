@@ -1,6 +1,6 @@
 {
   "name": "@uidu/task-decision",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tasks and decisions react components",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
@@ -34,7 +34,7 @@
     "@uidu/editor-common": "^0.1.8",
     "@uidu/elements-test-helpers": "^0.1.1",
     "@uidu/renderer": "^0.1.1",
-    "@uidu/util-data-test": "^0.1.1",
+    "@uidu/util-data-test": "^0.1.2",
     "react": "^16.8.3",
     "url-search-params": "^1.1.0"
   },
