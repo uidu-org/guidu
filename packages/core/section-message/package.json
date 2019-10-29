@@ -3,7 +3,7 @@
   "version": "0.1.13",
   "description": "A react component used to alert users of a particular screen area that needs user action",
   "repository": "https://github.com/uidu-org/guidu.git",
-  "license": "ISC",
+  "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
   "module": "index.js",
