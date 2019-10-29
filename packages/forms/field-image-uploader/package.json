@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": false,
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -22,8 +22,8 @@
     "styled-components": "^4.0.3"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.34",
-    "@uidu/form": "^0.1.39"
+    "@uidu/docs": "^0.1.35",
+    "@uidu/form": "^0.1.40"
   },
   "uidu:src": "index.ts"
 }

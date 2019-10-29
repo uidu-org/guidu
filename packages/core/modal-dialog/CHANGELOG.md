@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 0.1.19
+
+### Patch Changes
+
+- e7b3893: Bump packages and small fixes to field geosuggest
+
+- Updated dependencies [e7b3893]
+  - @uidu/docs@0.1.35
+  - @uidu/form@0.1.40
+
 ## 0.1.18
 
 ### Patch Changes

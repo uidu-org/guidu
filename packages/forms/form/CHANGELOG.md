@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.40
+
+### Patch Changes
+
+- e7b3893: Bump packages and small fixes to field geosuggest
+
+- Updated dependencies [e7b3893]
+  - @uidu/docs@0.1.35
+
 ## 0.1.39
 
 ### Patch Changes
