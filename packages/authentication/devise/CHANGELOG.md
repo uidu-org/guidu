@@ -1,5 +1,14 @@
 # @uidu/devise
 
+## 0.1.11
+
+### Patch Changes
+
+- 6deeb6d: Upgrade @uidu/slider
+
+- Updated dependencies [105dc73]
+  - @uidu/slider@1.0.1
+
 ## 0.1.10
 
 ### Patch Changes

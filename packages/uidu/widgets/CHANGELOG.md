@@ -1,5 +1,14 @@
 # @uidu/widgets
 
+## 0.1.7
+
+### Patch Changes
+
+- 6deeb6d: Upgrade @uidu/slider
+
+- Updated dependencies [105dc73]
+  - @uidu/slider@1.0.1
+
 ## 0.1.6
 
 ### Patch Changes

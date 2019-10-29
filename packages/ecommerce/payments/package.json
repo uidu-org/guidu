@@ -1,6 +1,6 @@
 {
   "name": "@uidu/payments",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@types/react-stripe-elements": "^1.1.10",
     "@uidu/form": "^0.1.39",
-    "@uidu/slider": "^1.0.0",
+    "@uidu/slider": "^1.0.1",
     "axios": "^0.19.0",
     "react-feather": "^2.0.3",
     "react-stripe-elements": "^5.0.0"
