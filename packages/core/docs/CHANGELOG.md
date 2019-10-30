@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.36
+
+### Patch Changes
+
+- 8779e84: Bump interweave, fix data-manager unmount
+
 ## 0.1.35
 
 ### Patch Changes

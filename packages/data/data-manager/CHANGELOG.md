@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.24
+
+### Patch Changes
+
+- 8779e84: Bump interweave, fix data-manager unmount
+
+- Updated dependencies [8779e84]
+  - @uidu/docs@0.1.36
+
 ## 0.1.23
 
 ### Patch Changes
