@@ -24,7 +24,8 @@
     "react-transition-group": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.36"
+    "@uidu/docs": "^0.1.36",
+    "react-intl": "^3.1.7"
   },
   "uidu:src": "index.ts"
 }

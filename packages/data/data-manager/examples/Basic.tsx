@@ -8,6 +8,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
+import { IntlProvider } from 'react-intl';
 import { Transition } from 'react-transition-group';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
@@ -77,73 +78,75 @@ export default class Basic extends Component<any, any> {
   render() {
     const { loaded } = this.state;
     return (
-      <DataManager
-        columnDefs={this.state.columnDefs}
-        rowData={this.state.rowData}
-        currentView={this.state.currentView}
-        dataViews={this.state.dataViews}
-        onViewChange={this.toggleView}
-        onViewAdd={this.addView}
-        onFirstDataRendered={() => this.setState({ rendered: true })}
-      >
-        {({ renderControls, renderView }) => (
-          <>
-            <ShellHeader>
-              {renderControls({
-                controls: {
-                  finder: {
-                    visible: true,
-                  },
-                  viewer: {
-                    visible: true,
-                    props: {
-                      availableViews: [
-                        { id: 0, kind: 'table', name: 'Table' },
-                        { id: 1, kind: 'gallery', name: 'Griglia' },
-                        { id: 2, kind: 'calendar', name: 'Calendario' },
-                        { id: 3, kind: 'board', name: 'Kanban' },
-                        { id: 4, kind: 'list', name: 'List (mobile view)' },
-                      ],
+      <IntlProvider locale="en">
+        <DataManager
+          columnDefs={this.state.columnDefs}
+          rowData={this.state.rowData}
+          currentView={this.state.currentView}
+          dataViews={this.state.dataViews}
+          onViewChange={this.toggleView}
+          onViewAdd={this.addView}
+          onFirstDataRendered={() => this.setState({ rendered: true })}
+        >
+          {({ renderControls, renderView }) => (
+            <>
+              <ShellHeader>
+                {renderControls({
+                  controls: {
+                    finder: {
+                      visible: true,
+                    },
+                    viewer: {
+                      visible: true,
+                      props: {
+                        availableViews: [
+                          { id: 0, kind: 'table', name: 'Table' },
+                          { id: 1, kind: 'gallery', name: 'Griglia' },
+                          { id: 2, kind: 'calendar', name: 'Calendario' },
+                          { id: 3, kind: 'board', name: 'Kanban' },
+                          { id: 4, kind: 'list', name: 'List (mobile view)' },
+                        ],
+                      },
                     },
                   },
-                },
-              })}
-            </ShellHeader>
+                })}
+              </ShellHeader>
 
-            <ShellBody scrollable>
-              {!loaded ? (
-                <ShellBodyWithSpinner></ShellBodyWithSpinner>
-              ) : (
-                <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
-                  <Transition in={this.state.rendered} timeout={duration}>
-                    {state => (
-                      <div
-                        style={{
-                          ...defaultStyle,
-                          ...transitionStyles[state],
-                        }}
-                      >
-                        {renderView({
-                          viewProps: {
-                            gallery: {
-                              gutterSize: 24,
-                              columnCount: 4,
+              <ShellBody scrollable>
+                {!loaded ? (
+                  <ShellBodyWithSpinner></ShellBodyWithSpinner>
+                ) : (
+                  <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
+                    <Transition in={this.state.rendered} timeout={duration}>
+                      {state => (
+                        <div
+                          style={{
+                            ...defaultStyle,
+                            ...transitionStyles[state],
+                          }}
+                        >
+                          {renderView({
+                            viewProps: {
+                              gallery: {
+                                gutterSize: 24,
+                                columnCount: 4,
+                              },
+                              list: {
+                                rowHeight: 128,
+                              },
+                              board: {},
                             },
-                            list: {
-                              rowHeight: 128,
-                            },
-                            board: {},
-                          },
-                        })}
-                      </div>
-                    )}
-                  </Transition>
-                </ShellBodyWithSidebar>
-              )}
-            </ShellBody>
-          </>
-        )}
-      </DataManager>
+                          })}
+                        </div>
+                      )}
+                    </Transition>
+                  </ShellBodyWithSidebar>
+                )}
+              </ShellBody>
+            </>
+          )}
+        </DataManager>
+      </IntlProvider>
     );
   }
 }

@@ -2,6 +2,7 @@ import faker from 'faker';
 import numeral from 'numeral';
 import React from 'react';
 import {
+  addressColumn,
   coverColumn,
   currencyColumn,
   dateColumn,
@@ -14,6 +15,7 @@ import {
   uidColumn,
 } from '../src';
 
+console.log(addressColumn());
 export const availableColumns = [
   {
     colId: 'id',
@@ -27,13 +29,12 @@ export const availableColumns = [
     ...defaultColumn(),
     ...coverColumn(),
   },
-  // {
-  //   colId: 'avatar',
-  //   field: 'avatar',
-  //   headerName: 'Avatar',
-  //   ...defaultColumn(),
-  //   ...avatarColumn(),
-  // },
+  {
+    colId: 'avatar',
+    field: 'avatar',
+    ...defaultColumn(),
+    ...addressColumn(),
+  },
   {
     colId: 'member',
     field: 'member',

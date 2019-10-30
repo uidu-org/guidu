@@ -1,27 +1,24 @@
-import addressColumn from './address';
-import attachmentsColumn from './attachments';
-import avatarColumn from './avatar';
-import checkboxColumn from './checkbox';
-import countryColumn from './country';
-import coverColumn from './cover';
-import currencyColumn from './currency';
-import dateColumn from './date';
-import defaultColumn from './default';
-import emailColumn from './email';
-import memberColumn from './member';
-import multipleSelectColumn from './multipleSelect';
-import numberColumn from './number';
-import percentColumn from './percent';
-import phoneColumn from './phone';
-import primaryColumn from './primary';
-import progressColumn from './progress';
-import ratingColumn from './rating';
-import singleSelectColumn from './singleSelect';
-import stringColumn from './string';
-import textColumn from './text';
-import uidColumn from './uid';
-import urlColumn from './url';
-import voteColumn from './vote';
+import { addressField } from './address';
+import { attachmentsField } from './attachments';
+import { avatarField } from './avatar';
+import { checkboxField } from './checkbox';
+import { countryField } from './country';
+import { coverField } from './cover';
+import { currencyField } from './currency';
+import { dateField } from './date';
+import { emailField } from './email';
+import { memberField } from './member';
+import { multipleSelectField } from './multipleSelect';
+import { numberField } from './number';
+import { percentField } from './percent';
+import { phoneField } from './phone';
+import { progressField } from './progress';
+import { ratingField } from './rating';
+import { singleSelectField } from './singleSelect';
+import { stringField } from './string';
+import { textField } from './text';
+import { urlField } from './url';
+import { voteField } from './vote';
 
 export { default as addressColumn } from './address';
 export { default as attachmentsColumn } from './attachments';
@@ -49,28 +46,25 @@ export { default as urlColumn } from './url';
 export { default as voteColumn } from './vote';
 
 export default [
-  addressColumn(),
-  attachmentsColumn(),
-  avatarColumn(),
-  checkboxColumn(),
-  countryColumn(),
-  coverColumn(),
-  currencyColumn(),
-  dateColumn({}),
-  defaultColumn(),
-  emailColumn(),
-  memberColumn({}),
-  multipleSelectColumn({}),
-  numberColumn(),
-  percentColumn(),
-  phoneColumn(),
-  primaryColumn(),
-  progressColumn(),
-  ratingColumn(),
-  singleSelectColumn({}),
-  stringColumn(),
-  textColumn(),
-  uidColumn(),
-  urlColumn(),
-  voteColumn(),
+  addressField,
+  attachmentsField,
+  avatarField,
+  checkboxField,
+  countryField,
+  coverField,
+  currencyField,
+  dateField,
+  emailField,
+  memberField,
+  multipleSelectField,
+  numberField,
+  percentField,
+  phoneField,
+  progressField,
+  ratingField,
+  singleSelectField,
+  stringField,
+  textField,
+  urlField,
+  voteField,
 ];
