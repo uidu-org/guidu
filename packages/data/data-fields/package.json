@@ -1,0 +1,22 @@
+{
+  "name": "@uidu/data-fields",
+  "version": "0.1.0",
+  "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
+  "license": "MIT",
+  "author": "uidu",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "private": false,
+  "uidu:src": "index.ts",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.18",
+    "@fortawesome/free-solid-svg-icons": "^5.8.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@uidu/field-text": "^0.1.22",
+    "@uidu/form": "^0.1.40",
+    "react-intl": "^3.1.7"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.1.36"
+  }
+}
