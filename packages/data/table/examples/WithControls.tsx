@@ -1,4 +1,4 @@
-import DataControls, {
+import {
   Filterer,
   Finder,
   Grouper,
@@ -96,7 +96,7 @@ export default class WithControls extends Component<any, any> {
 
     return (
       <Fragment>
-        <DataControls>
+        <div>
           <div>
             <Toggler
               fields={this.state.columnDefs}
@@ -128,7 +128,7 @@ export default class WithControls extends Component<any, any> {
           <div className="ml-auto">
             <Finder onChange={this.setSearch} />
           </div>
-        </DataControls>
+        </div>
         <Table
           innerRef={this.grid}
           onGridReady={this.onGridReady}
