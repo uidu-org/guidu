@@ -12,8 +12,12 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@loadable/component": "^5.10.1",
+    "@uidu/downshift": "^0.1.4",
     "@uidu/field-text": "^0.1.22",
+    "@uidu/field-toggle": "^0.1.21",
     "@uidu/form": "^0.1.40",
+    "@uidu/select": "^0.1.23",
     "react-intl": "^3.1.7"
   },
   "devDependencies": {

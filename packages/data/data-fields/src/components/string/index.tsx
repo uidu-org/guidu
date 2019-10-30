@@ -2,6 +2,7 @@ import { faFont } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import StringForm from './form';
 
 export default {
   id: 'string',
@@ -13,4 +14,5 @@ export default {
       defaultMessage="A single line of text. You can optionally prefill each new cell with a default value"
     />
   ),
+  form: StringForm,
 };

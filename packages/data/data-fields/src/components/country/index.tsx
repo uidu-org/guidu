@@ -7,5 +7,10 @@ export default {
   id: 'country',
   name: <FormattedMessage id="field.country.name" defaultMessage="Country" />,
   icon: <FontAwesomeIcon icon={faGlobe} />,
-  description: <FormattedMessage id="field.country.description" defaultMessage="Add a Country select list to your record" />
+  description: (
+    <FormattedMessage
+      id="field.country.description"
+      defaultMessage="Add a Country select list to your record"
+    />
+  ),
 };

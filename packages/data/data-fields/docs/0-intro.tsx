@@ -1,4 +1,4 @@
-import { code, md } from '@uidu/docs';
+import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
 import fields from '..';
 
@@ -38,5 +38,14 @@ export default md`
         ))}
       </tbody>
     </table>
+  )}
+
+  ${(
+    <Example
+      packageName="@uidu/data-fields"
+      Component={require('../examples/Basic').default}
+      title="Basic"
+      source={require('!!raw-loader!../examples/Basic')}
+    />
   )}
 `;
