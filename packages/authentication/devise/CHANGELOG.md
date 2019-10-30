@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.1.12
+
+### Patch Changes
+
+- f7b81c7: Remove swiper css
+
 ## 0.1.11
 
 ### Patch Changes

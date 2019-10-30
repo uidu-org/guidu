@@ -1,5 +1,14 @@
 # @uidu/tax-reminder
 
+## 0.1.9
+
+### Patch Changes
+
+- f7b81c7: Remove swiper css
+
+- Updated dependencies [f7b81c7]
+  - @uidu/widgets@0.1.8
+
 ## 0.1.8
 
 ### Patch Changes
