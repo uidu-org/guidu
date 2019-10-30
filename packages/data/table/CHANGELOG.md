@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 0.1.30
+
+### Patch Changes
+
+- 59deb72: Added uidu data-fields
+
+- Updated dependencies [59deb72]
+  - @uidu/data-fields@0.1.1
+
 ## 0.1.29
 
 ### Patch Changes
