@@ -107,6 +107,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
     );
   };
 
+  componentWillUnmount() {
+    console.log('destroy table');
+    this.gridApi && this.gridApi.destroy();
+  }
+
   resizeTable = () => {
     const { currentView } = this.props;
     const { gridApi, gridColumnApi } = this;

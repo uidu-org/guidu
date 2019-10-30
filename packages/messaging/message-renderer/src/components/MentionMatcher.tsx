@@ -1,7 +1,7 @@
-import React from 'react';
 import { Matcher, MatchResponse, Node } from 'interweave';
-import Mention, { MentionProps } from './Mention';
+import React from 'react';
 import { MENTION_PATTERN } from '../constants';
+import Mention, { MentionProps } from './Mention';
 
 export default class MentionMatcher extends Matcher<MentionProps> {
   replaceWith(match: string, props: MentionProps): Node {
@@ -12,7 +12,13 @@ export default class MentionMatcher extends Matcher<MentionProps> {
     return 'a';
   }
 
-  match(string: string): MatchResponse | null {
+  match(
+    string: string,
+  ): MatchResponse<{
+    display: string;
+    type: string;
+    id: string | number;
+  }> | null {
     return this.doMatch(string, MENTION_PATTERN, matches => {
       return {
         display: matches[2],
