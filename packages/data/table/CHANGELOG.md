@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.28
+
+### Patch Changes
+
+- 05e5940: Allow export of columns
+
 ## 0.1.27
 
 ### Patch Changes
