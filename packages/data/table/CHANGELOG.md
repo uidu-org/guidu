@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.31
+
+### Patch Changes
+
+- 2e3485d: Fix export for table
+
 ## 0.1.30
 
 ### Patch Changes
