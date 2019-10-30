@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.29
+
+### Patch Changes
+
+- 6ca4da5: Export fields from columns
+
 ## 0.1.28
 
 ### Patch Changes

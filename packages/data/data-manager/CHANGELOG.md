@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.25
+
+### Patch Changes
+
+- 6ca4da5: Export fields from columns
+
+- Updated dependencies [6ca4da5]
+  - @uidu/table@0.1.29
+
 ## 0.1.24
 
 ### Patch Changes
