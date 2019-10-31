@@ -1,5 +1,7 @@
+import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import { Input, RadioButton, Select } from '@uidu/inputs';
+import { RadioGroup } from '@uidu/radio';
+import Select from '@uidu/select';
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import { CheckCircle } from 'react-feather';
@@ -91,7 +93,7 @@ export default class Donation extends Component<any, any> {
         ]}
       >
         <div className="form-group mb-0 p-3 p-xl-4">
-          <RadioButton
+          <RadioGroup
             options={[
               {
                 id: 'once',
@@ -232,7 +234,7 @@ export default class Donation extends Component<any, any> {
           </div>
           {customAmount && (
             <div className="form-group mt-3 m-2">
-              <Input
+              <FieldText
                 type="number"
                 placeholder="Choose your donation amount"
                 name="donation[amount]"

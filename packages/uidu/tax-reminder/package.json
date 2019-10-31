@@ -9,6 +9,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/checkbox": "^0.1.52",
+    "@uidu/field-date": "^0.1.9",
     "@uidu/field-text": "^0.1.22",
     "@uidu/field-textarea": "^0.1.10",
     "@uidu/form": "^0.1.39",

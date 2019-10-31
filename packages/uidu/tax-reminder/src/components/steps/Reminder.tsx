@@ -1,5 +1,5 @@
+import FieldDate from '@uidu/field-date';
 import { Form, FormSubmit } from '@uidu/form';
-import { DateInput } from '@uidu/inputs';
 import Select from '@uidu/select';
 import moment from 'moment';
 import React, { Component } from 'react';
@@ -94,7 +94,7 @@ export default class Donation extends Component<any, any> {
           Quando hai in programma la dichiarazione dei redditi? Ti manderemo un
           promemoria il giorno selezionato.
         </p>
-        <DateInput
+        <FieldDate
           label="Che giorno vuoi ricevere il promemoria?"
           name="tax_return_campaign_reminder[day]"
           selectMonths
