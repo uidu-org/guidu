@@ -1,8 +1,8 @@
-import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { FieldTextStateless } from '@uidu/field-text';
 import { Form } from '@uidu/form';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
+import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldDownshift from '../src';
 
