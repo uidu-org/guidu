@@ -10,11 +10,11 @@ This differs from other solutions which render things for their use case and the
 
   ## Usage
 
-  ${code`import FieldDownshift from '@uidu/field-downshift';`}
+  ${code`import FieldFileUploader from '@uidu/field-file-uploader';`}
 
   ${(
     <Example
-      packageName="@uidu/field-downshift"
+      packageName="@uidu/field-file-uploader"
       Component={require('../examples/Basic').default}
       title="Basic exposed options select"
       source={require('!!raw-loader!../examples/Basic')}
@@ -23,7 +23,7 @@ This differs from other solutions which render things for their use case and the
 
   ${(
     <Props
-      heading="Downshift Props"
+      heading="FieldFileUploader Props"
       props={require('!!extract-react-types-loader!../src/components/FieldFileUploader')}
     />
   )}
