@@ -1,5 +1,11 @@
 # @uidu/donate
 
+## 0.1.11
+
+### Patch Changes
+
+- 1e2e8bf: Remove @uidu/inputs dependency
+
 ## 0.1.10
 
 ### Patch Changes
