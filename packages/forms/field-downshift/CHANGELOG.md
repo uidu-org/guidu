@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.1.14
+
+### Patch Changes
+
+- a309c22: FIX #48 and more data-fields forms
+
 ## 0.1.13
 
 ### Patch Changes
