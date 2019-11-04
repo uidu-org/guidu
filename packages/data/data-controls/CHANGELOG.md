@@ -1,5 +1,12 @@
 # @uidu/data-controls
 
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [0dd936b]
+  - @uidu/select@0.2.0
+
 ## 0.1.24
 
 ### Patch Changes

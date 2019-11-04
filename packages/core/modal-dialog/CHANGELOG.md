@@ -1,5 +1,14 @@
 # @uidu/modal-dialog
 
+## 0.1.20
+
+### Patch Changes
+
+- Updated dependencies [0dd936b]
+  - @uidu/select@0.2.0
+  - @uidu/button@0.1.47
+  - @uidu/inline-dialog@0.1.4
+
 ## 0.1.19
 
 ### Patch Changes

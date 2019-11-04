@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.46",
+  "version": "0.1.47",
   "description": "Button component for use in forms",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",

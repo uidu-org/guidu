@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.47
+
+### Patch Changes
+
+- 0dd936b: Select simple values, downshift default components
+
 ## 0.1.46
 
 ### Patch Changes

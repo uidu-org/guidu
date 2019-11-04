@@ -1,5 +1,13 @@
 # @uidu/downshift
 
+## 0.1.15
+
+### Patch Changes
+
+- 0dd936b: Select simple values, downshift default components
+- Updated dependencies [0dd936b]
+  - @uidu/field-base@0.1.46
+
 ## 0.1.14
 
 ### Patch Changes

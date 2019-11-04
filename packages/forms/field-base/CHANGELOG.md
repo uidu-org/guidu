@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.46
+
+### Patch Changes
+
+- 0dd936b: Select simple values, downshift default components
+
 ## 0.1.45
 
 ### Patch Changes
