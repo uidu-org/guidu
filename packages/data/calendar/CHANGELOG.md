@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.12
+
+### Patch Changes
+
+- 0dd936b: Select simple values, downshift default components
+
 ## 0.1.11
 
 ### Patch Changes

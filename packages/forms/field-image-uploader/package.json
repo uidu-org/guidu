@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,8 +10,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.15",
-    "@uidu/button": "^0.1.46",
-    "@uidu/field-base": "^0.1.45",
+    "@uidu/button": "^0.1.47",
+    "@uidu/field-base": "^0.1.46",
     "@uidu/range": "^0.1.13",
     "@uidu/spinner": "^0.1.12",
     "blueimp-load-image": "^2.20.1",

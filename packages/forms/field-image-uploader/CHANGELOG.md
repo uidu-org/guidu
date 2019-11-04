@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 0.1.8
+
+### Patch Changes
+
+- 0dd936b: Select simple values, downshift default components
+- Updated dependencies [0dd936b]
+  - @uidu/button@0.1.47
+  - @uidu/field-base@0.1.46
+
 ## 0.1.7
 
 ### Patch Changes

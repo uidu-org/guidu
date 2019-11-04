@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 0.2.0
+
+### Minor Changes
+
+- 0dd936b: Select simple values, downshift default components
+
+### Patch Changes
+
+- Updated dependencies [0dd936b]
+  - @uidu/button@0.1.47
+  - @uidu/field-base@0.1.46
+  - @uidu/modal-dialog@0.1.20
+
 ## 0.1.23
 
 ### Patch Changes

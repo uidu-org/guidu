@@ -1,5 +1,12 @@
 # @uidu/data-fields
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [0dd936b]
+  - @uidu/select@0.2.0
+
 ## 0.1.3
 
 ### Patch Changes
