@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.1
+
+### Patch Changes
+
+- fae0aba: FIX custom components for select
+
 ## 0.2.0
 
 ### Minor Changes
