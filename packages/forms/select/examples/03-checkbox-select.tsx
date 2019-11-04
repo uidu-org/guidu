@@ -15,13 +15,11 @@ const CheckboxExample = () => (
       options={[
         ...cities,
         {
-          label:
+          name:
             "super long name that no one will ever read because it's way too long to be a realistic option but it will highlight the flexbox grow and shrink styles",
-          value: 'test',
+          id: 'test',
         },
       ]}
-      getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
       placeholder="Choose a City"
     />
   </Form>

@@ -10,7 +10,7 @@ type State = {
 };
 
 const filterCities = (inputValue: string) =>
-  cities.filter(i => i.label.toLowerCase().includes(inputValue.toLowerCase()));
+  cities.filter(i => i.name.toLowerCase().includes(inputValue.toLowerCase()));
 
 const promiseOptions = inputValue =>
   new Promise(resolve => {
@@ -35,8 +35,6 @@ export default class WithPromises extends Component<*, State> {
           cacheOptions
           defaultOptions
           loadOptions={promiseOptions}
-          getOptionLabel={({ label }) => label}
-          getOptionValue={({ value }) => value}
         />
       </Form>
     );

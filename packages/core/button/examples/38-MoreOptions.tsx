@@ -49,34 +49,34 @@ const CustomComponent = React.forwardRef<HTMLDivElement, {}>((props, ref) => (
 ));
 
 const BuildStory = (props: any) => (
-  <div css={{ padding: '10px' }}>
+  <div style={{ padding: '10px' }}>
     <div
-      css={{
+      style={{
         display: 'flex',
         flexDirection: 'column',
         width: '70%',
       }}
     >
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props}>Create Issue</Button>
         <span>no extra attrs</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} href="//www.atlassian.com">
           Create Issue
         </Button>
         <span>with href attribute</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} href="//www.atlassian.com">
           Create Issue
         </Button>
         <span>with href attribute + no target</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <span>
           text
           <Button
@@ -90,7 +90,7 @@ const BuildStory = (props: any) => (
         <span>click event + text alignment check</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           isDisabled
@@ -101,7 +101,7 @@ const BuildStory = (props: any) => (
         <span>disabled</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           isDisabled
@@ -114,42 +114,42 @@ const BuildStory = (props: any) => (
         <span>disabled + href + target</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} component={CustomComponent} to="/custom-link">
           With a custom component
         </Button>
       </div>
 
-      <div css={styles.sample}>
-        <Button {...props} css={[styles.purpleBorder, styles.pinkBg]}>
+      <div style={styles.sample}>
+        <Button {...props} style={[styles.purpleBorder, styles.pinkBg]}>
           Custom classes with crazy colors
         </Button>
         <span>custom classes</span>
       </div>
 
-      <div css={styles.sample}>
-        <Button {...props} css={styles.truncated}>
+      <div style={styles.sample}>
+        <Button {...props} style={styles.truncated}>
           Truncated text which is very long and has many words to demonstrate
           truncation
         </Button>
         <span>truncated</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} isSelected>
           Selected
         </Button>
         <span>selected</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} iconBefore={<Page label="page icon" />}>
           Comment
         </Button>
         <span>button + text with page icon</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <span>
           text
           <Button
@@ -163,7 +163,7 @@ const BuildStory = (props: any) => (
         <span>button + text with question icon + text alignment check</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <span>
           text
           <Button
@@ -180,14 +180,14 @@ const BuildStory = (props: any) => (
         </span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} iconAfter={<Expand label="expand icon" />}>
           Show Options
         </Button>
         <span>button + text with expand icon</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           href="//www.atlassian.com"
@@ -196,7 +196,7 @@ const BuildStory = (props: any) => (
         <span>button with Page icon + href</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           href="//www.atlassian.com"
@@ -206,7 +206,7 @@ const BuildStory = (props: any) => (
         <span>button with icons + href + target</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <span>
           text
           <Button {...props} iconBefore={<Calendar label="calendar icon" />} />
@@ -215,7 +215,7 @@ const BuildStory = (props: any) => (
         <span>button with Calendar icon + text alignment check</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           isSelected
@@ -224,8 +224,8 @@ const BuildStory = (props: any) => (
         <span>button with Question icon + selected</span>
       </div>
 
-      <div css={styles.sample}>
-        <div css={styles.buttonContainer}>
+      <div style={styles.sample}>
+        <div style={styles.buttonContainer}>
           <Button
             {...props}
             spacing="none"
@@ -252,14 +252,14 @@ const BuildStory = (props: any) => (
         <span>button with icons, no spacing &amp; selected</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} spacing="compact">
           Create Issue
         </Button>
         <span>compact</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           onClick={() => console.log('clicking the Component')}
@@ -271,21 +271,21 @@ const BuildStory = (props: any) => (
         <span>compact + disabled</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} spacing="compact" isSelected>
           Selected Option
         </Button>
         <span>compact + selected</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button {...props} shouldFitContainer>
           Create Issue
         </Button>
         <span>shouldFitContainer</span>
       </div>
 
-      <div css={styles.sample}>
+      <div style={styles.sample}>
         <Button
           {...props}
           iconBefore={<Page label="page icon" />}

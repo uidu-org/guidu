@@ -15,13 +15,11 @@ const RadioExample = () => (
       options={[
         ...cities,
         {
-          label:
+          name:
             "super long name that noone will ever read because it's way too long",
-          value: 'test',
+          id: 'test',
         },
       ]}
-      getOptionLabel={({ label }) => label}
-      getOptionValue={({ value }) => value}
       placeholder="Choose a City"
     />
   </Form>

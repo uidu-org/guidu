@@ -6,6 +6,7 @@ import { FieldDownshiftProps } from '../types';
 class FieldDownshift extends Component<FieldDownshiftProps> {
   static defaultProps = {
     wrapper: FieldWrapper,
+    multiple: false,
     input: null,
     onChange: () => {},
     itemsGetter: ({ items }) => items,
@@ -13,15 +14,48 @@ class FieldDownshift extends Component<FieldDownshiftProps> {
     menu: ({ children, ...rest }) => <div {...rest}>{children}</div>,
   };
 
-  onChange = value => {
-    const { onSetValue, onChange, name } = this.props;
-    if (value === '') {
-      onSetValue('');
-      onChange(name, '');
+  onChange = selectedItem => {
+    const { onSetValue, onChange, name, multiple, items, value } = this.props;
+
+    if (multiple) {
+      if (value && value.map(v => v.id).indexOf(selectedItem.id) >= 0) {
+        const newValue = value
+          .map(v => v.id)
+          .filter(v => v !== selectedItem.id);
+        onSetValue(items.filter(o => newValue.indexOf(o.id) >= 0));
+        onChange(name, items.filter(o => newValue.indexOf(o.id) >= 0));
+      } else {
+        // add item
+        const newValue = [
+          ...items.filter(o => value.map(v => v.id).indexOf(o.id) >= 0),
+          selectedItem,
+        ];
+        onSetValue(newValue);
+        onChange(name, newValue);
+      }
     } else {
-      onSetValue(value);
-      onChange(name, value);
+      if (selectedItem === '') {
+        onSetValue('');
+        onChange(name, '');
+      } else {
+        onSetValue(selectedItem);
+        onChange(name, selectedItem);
+      }
     }
+  };
+
+  renderItem = ({ item, index, ...rest }) => {
+    const { multiple, value, item: itemRenderer } = this.props;
+    const isSelected = multiple
+      ? value && value.map(v => v.id).indexOf(item.id) >= 0
+      : value && value.id === item.id;
+
+    return itemRenderer({
+      item,
+      index,
+      isSelected,
+      ...rest,
+    });
   };
 
   render() {
@@ -30,15 +64,23 @@ class FieldDownshift extends Component<FieldDownshiftProps> {
       wrapper: WrapperComponent,
       input,
       menu,
-      item: itemRenderer,
       itemsGetter,
       value,
+      scope,
+      multiple,
     } = this.props;
+
     return (
       <Downshift
-        onChange={this.onChange}
+        onSelect={this.onChange}
         itemToString={item => (item ? item.value : '')}
-        initialSelectedItem={value}
+        initialSelectedItem={
+          multiple
+            ? items.filter(
+                i => value && value.map(v => v.id).indexOf(i.id) >= 0,
+              )
+            : value
+        }
       >
         {({
           getRootProps,
@@ -47,8 +89,7 @@ class FieldDownshift extends Component<FieldDownshiftProps> {
           getMenuProps,
           isOpen,
           inputValue,
-          highlightedIndex,
-          selectedItem,
+          ...rest
         }) => {
           return (
             <WrapperComponent
@@ -58,15 +99,14 @@ class FieldDownshift extends Component<FieldDownshiftProps> {
               {input && input({ ...getInputProps() })}
               {menu({
                 ...getMenuProps({}),
-                selectedItem,
                 children: itemsGetter({ items, inputValue, isOpen }).map(
                   (item, index) =>
-                    itemRenderer({
+                    this.renderItem({
                       item,
                       index,
-                      highlightedIndex,
-                      selectedItem,
+                      scope,
                       ...getItemProps({ item, index }),
+                      ...rest,
                     }),
                 ),
               })}

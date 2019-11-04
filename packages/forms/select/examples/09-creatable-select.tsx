@@ -5,24 +5,24 @@ import { formDefaultProps } from '../../form/examples-utils';
 import { CreatableSelect } from '../src';
 
 const defaultOptions = [
-  { label: 'Adelaide', value: 'adelaide' },
-  { label: 'Brisbane', value: 'brisbane' },
-  { label: 'Canberra', value: 'canberra' },
-  { label: 'Darwin', value: 'darwin' },
-  { label: 'Hobart', value: 'hobart' },
-  { label: 'Melbourne', value: 'melbourne' },
-  { label: 'Perth', value: 'perth' },
-  { label: 'Sydney', value: 'sydney' },
+  { name: 'Adelaide', id: 'adelaide' },
+  { name: 'Brisbane', id: 'brisbane' },
+  { name: 'Canberra', id: 'canberra' },
+  { name: 'Darwin', id: 'darwin' },
+  { name: 'Hobart', id: 'hobart' },
+  { name: 'Melbourne', id: 'melbourne' },
+  { name: 'Perth', id: 'perth' },
+  { name: 'Sydney', id: 'sydney' },
 ];
 
-const createOption = label => ({
-  label,
-  value: label.toLowerCase().replace(/\W/g, ''),
+const createOption = name => ({
+  name,
+  id: name.toLowerCase().replace(/\W/g, ''),
 });
 
 type State = {
   isLoading: boolean,
-  options: Array<{ label: string, value: string }>,
+  options: Array<{ name: string, id: string }>,
   value?: {},
 };
 
@@ -38,7 +38,7 @@ export default class CreatableAdvanced extends Component<*, State> {
     console.log(newValue);
     console.log(`action: ${actionMeta.action}`);
     console.groupEnd();
-    this.setState({ value: newValue });
+    // this.setState({ value: newValue });
   };
   handleCreate = (inputValue: any) => {
     // We do not assume how users would like to add newly created options to the existing options list.
@@ -65,11 +65,17 @@ export default class CreatableAdvanced extends Component<*, State> {
           isClearable
           isDisabled={isLoading}
           isLoading={isLoading}
-          onChange={this.handleChange}
+          // onChange={this.handleChange}
           onCreateOption={this.handleCreate}
           options={options}
-          getOptionLabel={({ label }) => label}
-          getOptionValue={({ value }) => value}
+          // formatCreateLabel={(inputText?: string) => {
+          //   console.log(inputText)
+          //   if (inputText) {
+          //     return inputText.trim();
+          //   }
+          //   return '';
+          // }}
+          isValidNewOption={() => true}
           value={value}
         />
       </Form>

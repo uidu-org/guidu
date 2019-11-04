@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button, { ButtonGroup } from '../src';
 
 const Row = (props: React.HTMLProps<HTMLDivElement>) => (
-  <div css={{ padding: 8 }} {...props} />
+  <div style={{ padding: 8 }} {...props} />
 );
 
 export default () => (

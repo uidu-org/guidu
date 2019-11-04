@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
-export default styled.div`
+export default styled.div<{ isHovered: boolean }>`
   position: absolute;
-  top: 0;
-  width: 100%;
+  top: 50%;
+  width: 50%;
   display: flex;
+  transform: translateY(-50%) translateX(-50%);
+  left: 50%;
   justify-content: space-between;
   background: #fff;
+  opacity: ${({ isHovered }) => (isHovered ? 1 : 0)};
+  transition: opacity 300ms ease-in;
 `;

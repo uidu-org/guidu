@@ -21,7 +21,7 @@ const SingleExample = () => (
       getOptionLabel={({ label }) => label}
       getOptionValue={({ value }) => value}
       placeholder="Choose a City"
-      isMulti
+      multiple
       maxMenuHeight={100}
     />
   </Form>

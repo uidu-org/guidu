@@ -6,6 +6,9 @@ import isEqual from 'react-fast-compare';
 import Select, { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import * as defaultComponents from './components';
+import MultiValueLabel from './components/MultiValueLabel';
+import Option from './components/Option';
+import SingleValue from './components/SingleValue';
 // NOTE in the future, `Props` and `defaultProps` should come
 // directly from react-select
 
@@ -58,7 +61,7 @@ type ReactSelectProps = {
   /* Override the built-in logic to detect whether an option is selected */
   isOptionSelected?: (OptionType, OptionsType) => boolean;
   /* Support multiple selected options */
-  isMulti?: boolean;
+  multiple?: boolean;
   /* Async: Text to display when loading options */
   loadingMessage?: ({ inputValue: string }) => string;
   /* Maximum height of the menu before scrolling */
@@ -93,6 +96,8 @@ type ReactSelectProps = {
   tabSelectsValue?: boolean;
   /* The value of the select; reflected by the selected option */
   value?: ValueType;
+
+  innerRef?: React.RefObject<any> | ((ref: any) => void);
 };
 
 type CreateSelectProps = Select &
@@ -244,13 +249,13 @@ function baseStyles(validationState, isCompact) {
     //   paddingTop: gridSize(),
     //   paddingBottom: gridSize(),
     // }),
-    // multiValue: css => ({
-    //   ...css,
-    //   borderRadius: '2px',
-    //   backgroundColor: colors.N40,
-    //   color: colors.N500,
-    //   maxWidth: '100%',
-    // }),
+    multiValue: css => ({
+      ...css,
+      borderRadius: '2px',
+      backgroundColor: colors.N20,
+      color: colors.N500,
+      maxWidth: '100%',
+    }),
     // multiValueLabel: css => ({
     //   ...css,
     //   padding: '2px',
@@ -315,6 +320,11 @@ const createSelect = <TOriginalProps extends {}>(
       getOptionLabel: ({ name }) => name,
       getOptionValue: ({ id }) => id,
       onChange: () => {},
+      components: {
+        Option,
+        SingleValue,
+        MultiValueLabel,
+      },
     };
 
     UNSAFE_componentWillReceiveProps(nextProps: ResultProps) {
@@ -345,25 +355,47 @@ const createSelect = <TOriginalProps extends {}>(
 
     onSelectRef = (ref: React.RefObject<any>) => {
       this.select = ref;
+
+      const { innerRef } = this.props;
+
+      if (typeof innerRef === 'object') {
+        (innerRef as any).current = ref;
+      }
+      if (typeof innerRef === 'function') {
+        (innerRef as any)(ref);
+      }
     };
 
-    onChange = (option, _action) => {
-      const { isMulti, name, onSetValue, onChange } = this.props;
-      if (isMulti) {
-        if (option.length > 0) {
-          onSetValue(option);
-          onChange(name, option);
-        } else {
-          onSetValue('');
-          onChange(name, '');
-        }
-      } else if (option) {
-        onSetValue(option);
-        onChange(name, option);
-      } else {
-        onSetValue('');
-        onChange(name, '');
-      }
+    onChange = (value, option, actionMeta) => {
+      const { name, onSetValue, onChange } = this.props;
+      onSetValue(value);
+      onChange(name, value, { option, actionMeta });
+    };
+
+    flatten = arr =>
+      arr.reduce(
+        (acc, val) =>
+          Array.isArray(val.options)
+            ? acc.concat(this.flatten(val.options))
+            : acc.concat(val),
+        [],
+      );
+
+    clean = x => x.trim();
+    toArray = str => str.split(',').map(this.clean);
+    toString = arr => arr.join(',');
+
+    getValue = () => {
+      const { value, options, multiple, getOptionValue } = this.props;
+
+      if (value === undefined) return undefined;
+
+      const opts = this.flatten(options);
+      const cleanedValue = multiple
+        ? opts.filter(o => value.includes(getOptionValue(o)))
+        : opts.find(o => getOptionValue(o) === value);
+
+      return cleanedValue;
     };
 
     render() {
@@ -371,9 +403,14 @@ const createSelect = <TOriginalProps extends {}>(
         styles,
         validationState,
         spacing,
-        isMulti,
+        multiple,
+        options,
+        value,
+        getOptionLabel,
+        getOptionValue,
         ...props
       } = this.props; // eslint-disable-line
+
       const isCompact = spacing === 'compact';
 
       // props must be spread first to stop `components` being overridden
@@ -381,11 +418,28 @@ const createSelect = <TOriginalProps extends {}>(
         <Wrapper {...props}>
           <Component
             ref={this.onSelectRef}
-            isMulti={isMulti}
-            {...(props as ResultProps)}
-            onChange={this.onChange}
+            isMulti={multiple}
+            defaultValue={this.getValue()}
+            options={options}
+            getOptionLabel={getOptionLabel}
+            getOptionValue={getOptionValue}
             components={this.components}
             styles={mergeStyles(baseStyles(validationState, isCompact), styles)}
+            onChange={(option, actionMeta) => {
+              if (multiple) {
+                return this.onChange(
+                  option ? option.map(v => getOptionValue(v)) : '',
+                  option,
+                  actionMeta,
+                );
+              }
+              return this.onChange(
+                option ? getOptionValue(option) : '',
+                option,
+                actionMeta,
+              );
+            }}
+            {...(props as ResultProps)}
           />
         </Wrapper>
       );

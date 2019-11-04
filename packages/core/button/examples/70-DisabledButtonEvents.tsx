@@ -33,7 +33,7 @@ export default class extends React.Component<{}, State> {
   render() {
     return (
       // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-      <div css={{ padding: 40 }} onClick={this.increment}>
+      <div style={{ padding: 40 }} onClick={this.increment}>
         <p>
           Native buttons only swallow onclick events when the button is the
           target of the click, i.e. it has no child elements. If it does have

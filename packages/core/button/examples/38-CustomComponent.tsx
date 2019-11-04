@@ -10,7 +10,7 @@ export default () => (
         HTMLElement,
         React.AllHTMLAttributes<HTMLElement>
       >((props, ref) => (
-        <header {...props} ref={ref} css={{ backgroundColor: 'pink' }} />
+        <header {...props} ref={ref} style={{ backgroundColor: 'pink' }} />
       ))}
     >
       App Switcher custom component

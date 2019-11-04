@@ -1,23 +1,23 @@
-export const cities: Array<{ label: string; value: any }> = [
-  { label: 'Adelaide', value: 'adelaide', extra: 'extra' },
-  { label: 'Brisbane', value: 'brisbane' },
-  { label: 'Canberra', value: 'canberra' },
-  { label: 'Darwin', value: 'darwin' },
-  { label: 'Hobart', value: 'hobart' },
-  { label: 'Melbourne', value: 'melbourne' },
-  { label: 'Perth', value: 'perth' },
-  { label: 'Sydney', value: 'sydney' },
+export const cities: Array<{ name: string; id: any }> = [
+  { name: 'Adelaide', id: 'adelaide', description: 'extra' },
+  { name: 'Brisbane', id: 'brisbane' },
+  { name: 'Canberra', id: 'canberra' },
+  { name: 'Darwin', id: 'darwin' },
+  { name: 'Hobart', id: 'hobart' },
+  { name: 'Melbourne', id: 'melbourne' },
+  { name: 'Perth', id: 'perth' },
+  { name: 'Sydney', id: 'sydney' },
 ];
 
-export const longFormValues: Array<{ label: string; value: any }> = [
-  { label: 'foo@foo@foo@foo@test@test.com', value: 'silly' },
+export const longFormValues: Array<{ name: string; id: any }> = [
+  { name: 'foo@foo@foo@foo@test@test.com', id: 'silly' },
   {
-    label: 'foo@foo@test@test@test@test@test@foo@test@foo.com',
-    value: 'even sillier',
+    name: 'foo@foo@test@test@test@test@test@foo@test@foo.com',
+    id: 'even sillier',
   },
   {
-    label:
+    name:
       'foo@foo@test@test@test@test@test@foo@test@foo.comfoo@foo@test@test@test@test@test@foo@test@foo.comfoo@foo@test@test@test@test@test@foo@test@foo.comfoo@foo@test@test@test@test@test@foo@test@foo.com',
-    value: 'silliest',
+    id: 'silliest',
   },
 ];

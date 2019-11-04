@@ -44,7 +44,7 @@ class PerfTest extends React.Component<{}, State> {
     for (let i = 1; i <= count; i++) {
       const buttonNumber = (i - 1) * BUTTON_COUNT;
       buttons.push(
-        <div key={`buttons-${i}`} css={{ padding: '10px' }}>
+        <div key={`buttons-${i}`} style={{ padding: '10px' }}>
           <Button appearance="default">Button {buttonNumber + 1}</Button>
           <Button appearance="danger">Button {buttonNumber + 2}</Button>
           <Button appearance="primary">Button {buttonNumber + 3}</Button>
@@ -69,7 +69,7 @@ class PerfTest extends React.Component<{}, State> {
   render() {
     return (
       <div>
-        <div css={{ padding: '10px' }}>
+        <div style={{ padding: '10px' }}>
           <Button appearance="primary" onClick={this.startTest}>
             Start Test
           </Button>

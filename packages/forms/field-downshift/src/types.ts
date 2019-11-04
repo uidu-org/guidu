@@ -8,4 +8,6 @@ export type FieldDownshiftProps = FieldBaseProps & {
   items: Array<any>;
   wrapper?: React.ComponentClass;
   input?: (props) => void;
+  scope?: string;
+  multiple?: boolean;
 };

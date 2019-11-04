@@ -45,7 +45,7 @@ export type FieldBaseProps = {
 
   /** Function that is called whenever the state of the checkbox changes. It will
    be called with an object containing the react synthetic event. Use currentTarget to get value, name and checked */
-  onChange?: (name, value) => void;
+  onChange?: (name, value, otherProps?: any) => void;
   onBlur?: (name, value) => void;
   onSetValue?: (value) => void;
 

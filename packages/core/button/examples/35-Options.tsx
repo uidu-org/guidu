@@ -11,7 +11,7 @@ const ButtonWrapper = ({
   inline?: boolean;
   children: React.ReactNode;
 }) => (
-  <div css={{ display: inline ? 'inline-block' : 'block', padding: 4 }}>
+  <div style={{ display: inline ? 'inline-block' : 'block', padding: 4 }}>
     {children}
   </div>
 );

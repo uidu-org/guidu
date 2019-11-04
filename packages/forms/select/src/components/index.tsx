@@ -1,5 +1,5 @@
-import SelectClearIcon from '@atlaskit/icon/glyph/select-clear';
 import React from 'react';
+import { X } from 'react-feather';
 import { components } from 'react-select';
 
 export {
@@ -10,12 +10,7 @@ export {
 
 export const MultiValueRemove = (props: any) => (
   <components.MultiValueRemove {...props}>
-    <SelectClearIcon
-      label="Clear"
-      size="small"
-      primaryColor="transparent"
-      secondaryColor="inherit"
-    />
+    <X size={16} />
   </components.MultiValueRemove>
 );
 

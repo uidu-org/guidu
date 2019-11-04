@@ -43,7 +43,7 @@ export default class SelectInModal extends Component<{}, State> {
                   getOptionLabel={({ label }) => label}
                   getOptionValue={({ value }) => value}
                   menuPortalTarget={document.body}
-                  isMulti
+                  multiple
                   styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
                   defaultValue={options.slice(3)}
                   options={options}

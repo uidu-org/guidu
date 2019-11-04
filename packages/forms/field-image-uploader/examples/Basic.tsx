@@ -1,6 +1,5 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import 'react-day-picker/lib/style.css';
 import FieldImageUploader from '..';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
@@ -57,7 +56,7 @@ export default class Basic extends Component<any, any> {
 
         <FieldImageUploader
           {...inputDefaultProps}
-          ratio="4by3"
+          ratio="16by9"
           defaultValue="https://images.unsplash.com/photo-1496016943515-7d33598c11e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
           onChange={this.onChange}
           // onBlur={this.onBlur}

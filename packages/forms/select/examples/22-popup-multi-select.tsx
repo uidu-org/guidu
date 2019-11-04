@@ -90,7 +90,7 @@ class MultiPopupSelectExample extends Component<*, State> {
                 {valuesString || placeholder}
               </Button>
             )}
-            isMulti
+            multiple
           />
         </p>
       </Form>

@@ -61,7 +61,7 @@ export default class MultiLineSearchInput extends Component<*, State> {
           components={components}
           inputValue={inputValue}
           isClearable
-          isMulti
+          multiple
           menuIsOpen={false}
           onChange={this.handleChange}
           onInputChange={this.handleInputChange}

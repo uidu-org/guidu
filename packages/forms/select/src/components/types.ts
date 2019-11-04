@@ -40,7 +40,7 @@
 //   getStyles: (string, any) => {};
 //   getValue: () => ValueType;
 //   hasValue: boolean;
-//   isMulti: boolean;
+//   multiple: boolean;
 //   options: OptionsType;
 //   selectOption: (OptionType) => void;
 //   selectProps: any;

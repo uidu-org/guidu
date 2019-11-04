@@ -27,13 +27,14 @@ export default ({
       <img
         alt={defaultValue}
         className={className}
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
+        style={
+          {
+            // width: '100%',
+            // height: '100%',
+          }
+        }
         src={defaultValue}
       />
-      )}
     </div>
     {children}
   </div>

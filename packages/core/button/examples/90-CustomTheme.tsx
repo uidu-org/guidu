@@ -3,15 +3,15 @@ import { colors } from '@uidu/theme';
 import Button, { ButtonGroup } from '../src';
 
 export default () => (
-  <div css={{ margin: 20 }}>
-    <h3 css={{ marginBottom: 15 }}>ADG Button</h3>
+  <div style={{ margin: 20 }}>
+    <h3 style={{ marginBottom: 15 }}>ADG Button</h3>
     <ButtonGroup>
       <Button iconBefore={<AddIcon label="add" />}>Button</Button>
       <Button appearance="primary">Button</Button>
       <Button appearance="warning">Button</Button>
     </ButtonGroup>
 
-    <h3 css={{ marginBottom: 15 }}>Themed Button</h3>
+    <h3 style={{ marginBottom: 15 }}>Themed Button</h3>
     <ButtonGroup>
       <ThemedButton iconBefore={<AddIcon label="add" />}>Button</ThemedButton>
       <ThemedButton appearance="primary">Button</ThemedButton>

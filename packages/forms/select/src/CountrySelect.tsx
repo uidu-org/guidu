@@ -45,9 +45,31 @@ const optionLabel = ({ abbr, code, icon, name }: OptionType) => (
 const formatOptionLabel = (opt: OptionType, { context }) =>
   context === 'value' ? controlLabel(opt) : optionLabel(opt);
 
+const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
+  return (
+    <div
+      {...innerProps}
+      className="d-flex align-items-center mr-auto"
+      style={{
+        ...getStyles('singleValue', otherProps),
+        // padding: '1rem',
+        minWidth: 0,
+        width: 'auto',
+      }}
+    >
+      {data.before && (
+        <div className="mr-2 flex-shrink-0 d-flex" style={{ width: 22 }}>
+          {data.before}
+        </div>
+      )}
+    </div>
+  );
+};
+
 // put it all together
-const CountrySelect = (props: any) => (
+const CountrySelect = ({ components, ...otherProps }) => (
   <Select
+    {...otherProps}
     isClearable={false}
     formatOptionLabel={formatOptionLabel}
     getOptionLabel={getOptionLabel}
@@ -55,11 +77,14 @@ const CountrySelect = (props: any) => (
     isMulti={false}
     options={groupedCountries}
     styles={{
-      container: css => ({ ...css, width: 130 }),
+      container: css => ({ ...css }),
       dropdownIndicator: css => ({ ...css, paddingLeft: 0 }),
       menu: css => ({ ...css, width: 300 }),
     }}
-    {...props}
+    components={{
+      ...components,
+      SingleValue: SingleValue,
+    }}
   />
 );
 

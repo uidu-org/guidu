@@ -52,8 +52,6 @@ export default class AsyncCreatableExample extends Component<*, State> {
         <Form {...formDefaultProps}>
           <AsyncCreatable
             {...inputDefaultProps}
-            getOptionLabel={({ label }) => label}
-            getOptionValue={({ value }) => value}
             loadOptions={this.loadOptions}
             allowCreateWhileLoading={allowCreateWhileLoading}
             onCreateOption={this.handleCreateOption}

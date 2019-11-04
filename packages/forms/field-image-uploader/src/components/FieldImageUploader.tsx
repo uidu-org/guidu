@@ -5,11 +5,12 @@ import debounce from 'lodash/debounce';
 import React, { Component } from 'react';
 import AvatarEditor from 'react-avatar-editor';
 import Dropzone from 'react-dropzone';
+import { FieldImageUploaderProps } from '../types';
 import Empty from './Empty';
 import Existing from './Existing';
 import Toolbar from './Toolbar';
 
-class FieldImageUploader extends Component<any, any> {
+class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
   canvas: React.RefObject<HTMLDivElement> = React.createRef();
   editor: React.RefObject<any> = React.createRef();
 
@@ -36,6 +37,7 @@ class FieldImageUploader extends Component<any, any> {
       imageName: null,
       imageMime: null,
       errors: [],
+      isHovered: false,
     };
   }
 
@@ -59,6 +61,9 @@ class FieldImageUploader extends Component<any, any> {
       onChange(name, blob);
     }, imageMime);
   }, 300);
+
+  handleMouseOut = () => this.setState({ isHovered: false });
+  handleMouseOver = () => this.setState({ isHovered: true });
 
   handleDrop = files => {
     this.setState(
@@ -163,7 +168,7 @@ class FieldImageUploader extends Component<any, any> {
       toolbar: ToolbarComponent,
       dropzoneProps,
     } = this.props;
-    const { data, imageUrl, loading, scale, errors } = this.state;
+    const { data, imageUrl, loading, scale, errors, isHovered } = this.state;
     let control = null;
 
     if (data.length === 0) {
@@ -179,7 +184,10 @@ class FieldImageUploader extends Component<any, any> {
                   borderRadius={borderRadius}
                   handleDrop={this.handleDrop}
                 >
-                  <ToolbarComponent dismiss={this.dismiss} />
+                  <ToolbarComponent
+                    dismiss={this.dismiss}
+                    isHovered={isHovered}
+                  />
                 </ExistingComponent>
               );
             }
@@ -216,6 +224,7 @@ class FieldImageUploader extends Component<any, any> {
             <ToolbarComponent
               handleScale={this.handleScale}
               dismiss={this.dismiss}
+              isHovered={isHovered}
             />
           </>
         </div>
@@ -226,6 +235,8 @@ class FieldImageUploader extends Component<any, any> {
       <div
         className={`embed-responsive embed-responsive-${ratio} card`}
         style={{ borderRadius }}
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
       >
         <div className="embed-responsive-item" ref={this.canvas}>
           {loading ? <Spinner /> : control}

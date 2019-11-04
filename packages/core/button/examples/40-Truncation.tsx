@@ -17,7 +17,7 @@ const narrowWrapperStyle = {
 };
 
 export default () => (
-  <div css={narrowWrapperStyle}>
+  <div style={narrowWrapperStyle}>
     <div>
       <Button appearance="primary">I am wider than my parent</Button>
     </div>
