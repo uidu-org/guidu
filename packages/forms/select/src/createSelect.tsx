@@ -423,6 +423,7 @@ const createSelect = <TOriginalProps extends {}>(
             options={options}
             getOptionLabel={getOptionLabel}
             getOptionValue={getOptionValue}
+            {...(props as ResultProps)}
             components={this.components}
             styles={mergeStyles(baseStyles(validationState, isCompact), styles)}
             onChange={(option, actionMeta) => {
@@ -439,7 +440,6 @@ const createSelect = <TOriginalProps extends {}>(
                 actionMeta,
               );
             }}
-            {...(props as ResultProps)}
           />
         </Wrapper>
       );
