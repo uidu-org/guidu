@@ -48,8 +48,7 @@ export default function HorizontalCard({
       </div>
       <div className="card-body p-3 p-md-4">
         <div className="d-flex align-items-center">
-          {item.beforeIcon && <div className="mr-3">{item.beforeIcon}</div>}
-          {item.beforeImage && <div className="mr-3">{item.beforeImage}</div>}
+          {item.before && <div className="mr-3">{item.before}</div>}
           <div>
             <h6 className="m-0">{item.name}</h6>
             <p className="mb-0 text-muted">{item.description}</p>
