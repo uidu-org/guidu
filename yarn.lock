@@ -994,9 +994,9 @@
     regenerator-runtime "^0.13.2"
 
 "@babel/preset-env@^7.1.0":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.7.0.tgz#46dccc1df6b6a195044421b3f61a029866d92eef"
-  integrity sha512-AgvG8VJDehjK0Ky86xvaqKpx0ASKQk63dfghqqFt6yf9gqmcvc5TodM0ZT0XZvw9fxfrG1PqJ1Xt+8bDnHv9xw==
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.7.1.tgz#04a2ff53552c5885cf1083e291c8dd5490f744bb"
+  integrity sha512-/93SWhi3PxcVTDpSqC+Dp4YxUu3qZ4m7I76k0w73wYfn7bGVuRIO4QUz95aJksbS+AD1/mT1Ie7rbkT0wSplaA==
   dependencies:
     "@babel/helper-module-imports" "^7.7.0"
     "@babel/helper-plugin-utils" "^7.0.0"
@@ -1043,7 +1043,7 @@
     "@babel/plugin-transform-template-literals" "^7.4.4"
     "@babel/plugin-transform-typeof-symbol" "^7.2.0"
     "@babel/plugin-transform-unicode-regex" "^7.7.0"
-    "@babel/types" "^7.7.0"
+    "@babel/types" "^7.7.1"
     browserslist "^4.6.0"
     core-js-compat "^3.1.1"
     invariant "^2.2.2"
@@ -1089,9 +1089,9 @@
     source-map-support "^0.5.16"
 
 "@babel/runtime-corejs2@^7.6.3":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.7.0.tgz#2cbd64c483e165f699b790ff8d8487cbea41c927"
-  integrity sha512-o02wk+OoKLDBDppKVVGajanVWqsdJFaz0z0n/NHzsTl6YJNZRwBe7U57sOy+DjkckYFzX+n/uIDMg1ogItqVCQ==
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime-corejs2/-/runtime-corejs2-7.7.1.tgz#ae94a96dbb020169344b857f12514e39bc3e3dcb"
+  integrity sha512-nlxajcFXWFyrFOyzOkphfby2izqoB9B4a3+rMqG4dBKMaHZUUS3BkgFBIAbNK6s+VOx0vaGJVgaQL0+3oWnxDQ==
   dependencies:
     core-js "^2.6.5"
     regenerator-runtime "^0.13.2"
@@ -1104,9 +1104,9 @@
     regenerator-runtime "^0.13.2"
 
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.3":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.0.tgz#9b309d493864d69e0b9ec093e1426535a76b4b94"
-  integrity sha512-xdf3hZAzoqL9q7ItTe/KyUGw214oXdHmq2XhW8ANRuo2KMX+s17RK+z4DsQiPkdOqCjep14eNTneRoiTs9T1AQ==
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.1.tgz#b223497bbfbcbbb38116673904debc71470ca528"
+  integrity sha512-SQ0sS7KUJDvgCI2cpZG0nJygO6002oTbhgSuw4WcocsnbxLwL5Q8I3fqbJdyBAc3uFrWZiR2JomseuxSuci3SQ==
   dependencies:
     regenerator-runtime "^0.13.2"
 
@@ -1134,10 +1134,10 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.0.0", "@babel/types@^7.0.0-beta.49", "@babel/types@^7.0.0-beta.56", "@babel/types@^7.3.0", "@babel/types@^7.4.0", "@babel/types@^7.7.0":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.7.0.tgz#bdf5967277ced7590da452c31d60853d0beb5d4f"
-  integrity sha512-ptM1jeXPYi3BfRBelzbTgL/7aP99oYJCbLtGha8phqRY3EeXch+i6LuxRcNQAIgL++yyNPR/rO6cGLDc0cvUMQ==
+"@babel/types@^7.0.0", "@babel/types@^7.0.0-beta.49", "@babel/types@^7.0.0-beta.56", "@babel/types@^7.3.0", "@babel/types@^7.4.0", "@babel/types@^7.7.0", "@babel/types@^7.7.1":
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.7.1.tgz#8b08ea368f2baff236613512cf67109e76285827"
+  integrity sha512-kN/XdANDab9x1z5gcjDc9ePpxexkt+1EQ2MQUiM4XnMvQfvp87/+6kY4Ko2maLXH+tei/DgJ/ybFITeqqRwDiA==
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.13"
@@ -1684,12 +1684,13 @@
     glob-to-regexp "^0.3.0"
 
 "@netlify/build@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.7.tgz#4956e999879103addba76aeaf4bea682a3b56e3c"
-  integrity sha512-a0Vjsx3Y/BN+6IL//rSTWhxcF4+xgxdk4zfV8VIomta9+FwkbY9MEryTjHMPbD6aiPznlDcXYg/wsj2Rz4tscA==
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.8.tgz#62368050448bcfca3cd9dd37b082d1a97736636c"
+  integrity sha512-QP4qf74uWKk5E8/YBG9eBjlSK79KaO3WFvVwfn89buKa0wM3c+/k0IGpJszs0FHCbdI5n+vCwJEfZcJcc5NpoA==
   dependencies:
     "@netlify/config" "^0.1.1"
-    "@netlify/zip-it-and-ship-it" "^0.4.0-6"
+    "@netlify/zip-it-and-ship-it" "^0.4.0-7"
+    ajv "^6.10.2"
     analytics "0.3.0"
     array-flat-polyfill "^1.0.1"
     camelcase-keys "^6.0.1"
@@ -1709,6 +1710,7 @@
     log-process-errors "^5.0.2"
     make-dir "^3.0.0"
     map-obj "^4.1.0"
+    moize "^5.4.4"
     netlify "^2.4.8"
     npm-run-path "^4.0.0"
     omit.js "^1.0.2"
@@ -1760,15 +1762,14 @@
     require-package-name "^2.0.1"
     resolve "^1.10.0"
 
-"@netlify/zip-it-and-ship-it@^0.4.0-6":
-  version "0.4.0-6"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.4.0-6.tgz#46c7a836dffe625bd18e443e29b4fdc12979ee9f"
-  integrity sha512-aE3g6a7dxMKFIXAl0QnAcP5thixc/nEMHgAV0c7jdnyYFczW+x2qyJeiXt5cOuGJuPvK09R4ZgwlkeYtbcq/hQ==
+"@netlify/zip-it-and-ship-it@^0.4.0-7":
+  version "0.4.0-7"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.4.0-7.tgz#02f4dc23698698cb67f1bd0601644fc4e1510621"
+  integrity sha512-zVPY2+pC1k7MOl1p4INxf64+NWvATKY9LPBB41mwjoGYo8RsTRRfaMt0JAycQPrSLQKjUY+484egzE2CCpx2NQ==
   dependencies:
     archiver "^3.0.0"
     common-path-prefix "^2.0.0"
     cp-file "^7.0.0"
-    debug "^4.1.1"
     elf-tools "^1.1.1"
     end-of-stream "^1.4.1"
     glob "^7.1.3"
@@ -8081,9 +8082,9 @@ ejs@^2.5.9, ejs@^2.6.1:
   integrity sha512-kS/gEPzZs3Y1rRsbGX4UOSjtP/CeJP0CxSNZHYxGfVM/VgLcv0ZqM7C45YyTj2DI2g7+P9Dd24C+IMIg6D0nYQ==
 
 electron-to-chromium@^1.3.247, electron-to-chromium@^1.3.295:
-  version "1.3.302"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.302.tgz#4c7ba3d56166507a56f7eb603fdde1ed701f5ac8"
-  integrity sha512-1qConyiVEbj4xZRBXqtGR003+9tV0rJF0PS6aeO0Ln/UL637js9hdwweCl07meh/kJoI2N4W8q3R3g3F5z46ww==
+  version "1.3.303"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.303.tgz#3059bcc39c1c3b492ca381d577b6a49b5050085e"
+  integrity sha512-xDFPmMjJ0gQBsVwspB0bjcbFn3MVcvU0sxXYmh1UMbZ6rDogQVM3vSyOvTO4rym1KlnJIU6nqzK3qs0yKudmjw==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -15124,9 +15125,9 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.57.0"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.57.0.tgz#b35ed8f52c05cfb21da0a67d0de561cac747a9d4"
-  integrity sha512-TIZ7Jf+bsAXS31xmbjOUEIPn8Rx0V7s4icAt1pCWTm4b2kgD0uwQaAVlg7Sxjj+fdd4aPf4zBSWr99waRFBvxQ==
+  version "7.57.1"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.57.1.tgz#eb22cdbcc18f34540005a1003fafc768b9ebf0ae"
+  integrity sha512-6RYDKv35Nt77fR4rnUHDLmar0TAuq/gMiffyDX4MjWpRsk7ql6xIPEIopkRmyH+uy3pMu9+mwZ14MMlu4nU59g==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/foundation" "^7.4.4"
@@ -21188,9 +21189,9 @@ typescript-plugin-styled-components@^1.4.3:
   integrity sha512-/n6+nwtYRJwj/uJdiMNrjsfy2V34uGDeBuY3WaL3a1lc+aaYyfxHLvRdV3W44O+ewijJrFcEHKYAJdYq4wxXlQ==
 
 typescript@^3.1.6, typescript@^3.6.4:
-  version "3.6.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.6.4.tgz#b18752bb3792bc1a0281335f7f6ebf1bbfc5b91d"
-  integrity sha512-unoCll1+l+YK4i4F8f22TaNVPRHcD9PA3yCuZ8g5e0qGqlVlJ/8FSateOLLSagn+Yg5+ZwuPkL8LFUc0Jcvksg==
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.2.tgz#27e489b95fa5909445e9fef5ee48d81697ad18fb"
+  integrity sha512-ml7V7JfiN2Xwvcer+XAf2csGO1bPBdRbFCkYBczNZggrBZ9c7G3riSUeJmqEU5uOtXNPMhE3n+R4FA/3YOAWOQ==
 
 typestyle@^2.0.4:
   version "2.0.4"
