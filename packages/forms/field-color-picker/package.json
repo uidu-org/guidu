@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-color-picker",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A color picker React Component",
   "module": "index.js",
   "types": "index.d.ts",

@@ -1,5 +1,13 @@
 # @uidu/widgets
 
+## 0.1.9
+
+### Patch Changes
+
+- 323a243: Added data-views, more on data-fields, changed new data view process, fix sort and filter dropdown positions
+- Updated dependencies [323a243]
+  - @uidu/slider@1.0.2
+
 ## 0.1.8
 
 ### Patch Changes
