@@ -30,6 +30,7 @@ export default class SingleSelectForm extends PureComponent<any, any> {
       {
         id: 1,
         color: 'red',
+        isNewOption: true,
       },
     ],
   };

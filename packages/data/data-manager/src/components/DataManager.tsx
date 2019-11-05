@@ -108,22 +108,22 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   componentWillUnmount() {
-    console.log('destroy table');
+    window.removeEventListener('resize', this.resizeTableOnWindowResize);
     this.gridApi && this.gridApi.destroy();
   }
+
+  resizeTableOnWindowResize = () => {
+    setTimeout(() => {
+      this.gridApi.sizeColumnsToFit();
+    });
+  };
 
   resizeTable = () => {
     const { currentView } = this.props;
     const { gridApi, gridColumnApi } = this;
     if (currentView.kind === 'table') {
       gridColumnApi.autoSizeAllColumns();
-      gridApi.sizeColumnsToFit();
-      window.addEventListener('resize', function() {
-        setTimeout(function() {
-          gridApi.sizeColumnsToFit();
-        });
-      });
-
+      window.addEventListener('resize', this.resizeTableOnWindowResize);
       gridApi.sizeColumnsToFit();
     }
   };

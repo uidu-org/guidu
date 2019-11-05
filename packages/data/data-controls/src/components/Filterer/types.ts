@@ -1,7 +1,5 @@
-import { FormHandleSubmit } from '@uidu/form';
-
 export type FiltererProps = {
-  onChange: FormHandleSubmit;
+  onChange: (filters: Array<any>) => void;
   filters: Array<any>;
   fields: Array<any>;
 };

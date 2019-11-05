@@ -3,12 +3,16 @@ import * as React from 'react';
 import fields from '..';
 
 export default md`
+  # DataFields
 
-  Buttons are used as triggers for actions. They are used in forms, toolbars,
-  dialog footers and as stand-alone action triggers.
+  DataFields manage a lot of data-driven interfaces. Depending on field-type many things should change, from available options and available question kinds, to how users can filter the field.
 
-  Button also exports a chat-window-group component to make it easy to display
-  multiple chat-windows together.
+  A field can contain the following:
+
+  - *form*: if the field requires additional info to be created (eg: select fields need options)
+  - *importer*: helpers when importing raw data to match data with field's required format (eg: in a checkboxField, map true and false value from raw data)
+  - *availableQuestions*: array of question kinds allowed for this field (eg: singleSelectField can have Select, RadioGroup or a FieldDownshift)
+  - *availableFilters*: array of filters (eg: euquals, moreThan, contains, notEqual)
 
   ## Usage
 

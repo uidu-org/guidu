@@ -23,7 +23,7 @@ export const Container = styled.div`
   color: ${textColor};
   max-height: ${multiply(gridSize, 56)}px;
   max-width: ${multiply(gridSize, 56)}px;
-  padding: ${multiply(gridSize, 2)}px ${multiply(gridSize, 3)}px;
+  padding: 1rem;
   z-index: ${layers.dialog};
 
   ${e200};
