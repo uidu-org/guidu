@@ -2,7 +2,7 @@
   "name": "@uidu/field-file-uploader",
   "version": "0.1.2",
   "description": "A file uploader",
-  "main": "index.js",
+  "module": "index.js",
   "types": "index.d.ts",
   "uidu:src": "index.ts",
   "author": "uidu",

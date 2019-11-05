@@ -104,7 +104,7 @@ export default class Basic extends Component<any, any> {
                           { id: 1, kind: 'gallery', name: 'Griglia' },
                           { id: 2, kind: 'calendar', name: 'Calendario' },
                           { id: 3, kind: 'board', name: 'Kanban' },
-                          { id: 4, kind: 'list', name: 'List (mobile view)' },
+                          { id: 4, kind: 'timeline', name: 'Timeline' },
                         ],
                       },
                     },

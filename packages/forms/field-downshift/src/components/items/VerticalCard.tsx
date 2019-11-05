@@ -53,7 +53,9 @@ export default function HorizontalCard({
           )}
           <div>
             <h6 className="m-0">{item.name}</h6>
-            <p className="mb-0 text-muted">{item.description}</p>
+            {item.description && (
+              <p className="mb-0 text-muted mt-2">{item.description}</p>
+            )}
           </div>
         </div>
       </div>

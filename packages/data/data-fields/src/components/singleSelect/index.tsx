@@ -1,12 +1,10 @@
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import withOptions from '../../hoc/withOptions';
 
-const SingleSelectForm = loadable(() => import('./form'));
-
-export default {
+export default withOptions({
   id: 'singleSelect',
   name: (
     <FormattedMessage
@@ -21,5 +19,4 @@ export default {
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),
-  form: SingleSelectForm,
-};
+});

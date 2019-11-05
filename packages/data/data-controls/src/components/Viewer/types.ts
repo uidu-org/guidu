@@ -1,8 +1,4 @@
-export type DataView = {
-  id: string | number;
-  kind: string;
-  name: string | React.ReactNode;
-};
+import { DataView } from '@uidu/data-views';
 
 export type ViewerProps = {
   dataViews?: Array<DataView>;

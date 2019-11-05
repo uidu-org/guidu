@@ -1,4 +1,4 @@
-import { DataView } from '@uidu/data-controls';
+import { DataView } from '@uidu/data-views';
 
 export type DataManagerProps = {
   availableViews?: Array<DataView>;

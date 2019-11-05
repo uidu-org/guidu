@@ -116,7 +116,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
 
     return createPortal(
       <TransitionGroup component={OnlyChild}>
-        <React.Fragment>
+        <>
           <Fade in={isOpen} origin={origin}>
             <Blanket isTinted onBlanketClicked={this.handleBlanketClick} />
           </Fade>
@@ -131,7 +131,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
           >
             {children}
           </DrawerPrimitive>
-        </React.Fragment>
+        </>
       </TransitionGroup>,
       this.body,
     );

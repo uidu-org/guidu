@@ -13,6 +13,7 @@
     "@uidu/board": "^0.2.1",
     "@uidu/calendar": "^0.1.11",
     "@uidu/data-controls": "^0.1.24",
+    "@uidu/data-views": "^0.1.0",
     "@uidu/gallery": "^0.1.17",
     "@uidu/list": "^0.1.15",
     "@uidu/shell": "^0.1.31",

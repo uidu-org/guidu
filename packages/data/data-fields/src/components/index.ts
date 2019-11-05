@@ -7,6 +7,7 @@ import coverField from './cover';
 import currencyField from './currency';
 import dateField from './date';
 import emailField from './email';
+import linkRecordField from './linkRecord';
 import memberField from './member';
 import multipleSelectField from './multipleSelect';
 import numberField from './number';
@@ -29,6 +30,7 @@ export { default as coverField } from './cover';
 export { default as currencyField } from './currency';
 export { default as dateField } from './date';
 export { default as emailField } from './email';
+export { default as linkRecordField } from './linkRecord';
 export { default as memberField } from './member';
 export { default as multipleSelectField } from './multipleSelect';
 export { default as numberField } from './number';
@@ -52,6 +54,7 @@ export const byName = {
   currency: currencyField,
   date: dateField,
   email: emailField,
+  linkRecord: linkRecordField,
   member: memberField,
   multipleSelect: multipleSelectField,
   number: numberField,
@@ -64,7 +67,7 @@ export const byName = {
   text: textField,
   url: urlField,
   vote: voteField,
-}
+};
 
 export default [
   addressField,
@@ -76,6 +79,7 @@ export default [
   currencyField,
   dateField,
   emailField,
+  linkRecordField,
   memberField,
   multipleSelectField,
   numberField,

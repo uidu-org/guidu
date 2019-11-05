@@ -1,0 +1,17 @@
+{
+  "name": "@uidu/data-views",
+  "version": "0.1.0",
+  "description": "Data view declarations and custom forms",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@uidu/docs": "^0.1.36",
+    "@uidu/form": "^0.1.40"
+  },
+  "uidu:src": "index.ts",
+  "dependencies": {
+    "react-feather": "^2.0.3"
+  }
+}
