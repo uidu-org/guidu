@@ -22,7 +22,7 @@
     "mkdirp": "^0.5.1",
     "prettier": "^1.8.2",
     "ts-node": "^8.4.1",
-    "typescript": "^3.1.6"
+    "typescript": "3.6.4"
   },
   "devDependencies": {
     "meow": "^5.0.0",
