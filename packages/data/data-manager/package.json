@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -12,7 +12,7 @@
     "@loadable/component": "^5.10.1",
     "@uidu/board": "^0.2.1",
     "@uidu/calendar": "^0.1.11",
-    "@uidu/data-controls": "^0.1.26",
+    "@uidu/data-controls": "^0.1.27",
     "@uidu/data-views": "^0.1.1",
     "@uidu/gallery": "^0.1.17",
     "@uidu/list": "^0.1.15",
@@ -25,7 +25,7 @@
     "react-transition-group": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.36",
+    "@uidu/docs": "^0.1.37",
     "react-intl": "^3.1.7"
   },
   "uidu:src": "index.ts"
