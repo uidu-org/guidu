@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.1.16
+
+### Patch Changes
+
+- a871753: Downshift beforeImage and beforeIcon are now merged into before props
+
 ## 0.1.15
 
 ### Patch Changes
