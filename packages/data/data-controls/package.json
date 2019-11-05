@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,7 +10,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/data-views": "^0.1.0",
+    "@uidu/data-views": "^0.1.1",
     "@uidu/dropdown-menu": "^0.1.17",
     "@uidu/droplist": "^0.1.16",
     "@uidu/field-text": "^0.1.22",

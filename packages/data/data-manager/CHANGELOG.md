@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.26
+
+### Patch Changes
+
+- 323a243: Added data-views, more on data-fields, changed new data view process, fix sort and filter dropdown positions
+- Updated dependencies [323a243]
+  - @uidu/data-controls@0.1.26
+  - @uidu/data-views@0.1.1
+
 ## 0.1.25
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.1.17
+
+### Patch Changes
+
+- 323a243: Added data-views, more on data-fields, changed new data view process, fix sort and filter dropdown positions
+
 ## 0.1.16
 
 ### Patch Changes
