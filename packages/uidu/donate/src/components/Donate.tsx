@@ -81,19 +81,21 @@ export default class Donate extends Component<DonateProps, DonateState> {
           name: 'Dona ora',
         },
         component: (
-          <Donation
-            {...this.props}
-            submitted
-            onSave={newDonation => {
-              this.setState(
-                {
-                  ...newDonation,
-                },
-                () =>
-                  setTimeout(() => (this.slider.current as any).next(), 500),
-              );
-            }}
-          />
+          <div>
+            <Donation
+              {...this.props}
+              submitted
+              onSave={newDonation => {
+                this.setState(
+                  {
+                    ...newDonation,
+                  },
+                  () =>
+                    setTimeout(() => (this.slider.current as any).next(), 500),
+                );
+              }}
+            />
+          </div>
         ),
       },
     ];

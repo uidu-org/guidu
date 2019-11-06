@@ -1,7 +1,7 @@
 import Contact from '@uidu/contact';
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import Slider from '@uidu/slider';
-import React, { Component, forwardRef, Fragment } from 'react';
+import React, { Component, forwardRef } from 'react';
 import { ArrowLeft, Circle } from 'react-feather';
 import { ShellProps, ShellState } from '../types';
 
@@ -15,12 +15,12 @@ class Shell extends Component<ShellProps, ShellState> {
 
   renderSlideHeader = ({ header }) => {
     return (
-      <Fragment>
+      <>
         {header.itemBefore}
         <div className="navbar-title text-md-left" key="donation-title">
           <span className="navbar-brand m-0">{header.name}</span>
         </div>
-      </Fragment>
+      </>
     );
   };
 
@@ -65,7 +65,7 @@ class Shell extends Component<ShellProps, ShellState> {
     }
 
     return (
-      <Fragment>
+      <>
         <ShellHeader className="border-bottom px-3 px-xl-4 justify-content-between">
           {this.renderSlideHeader(slides[activeSlide])}
           <div className="navbar-actions" id="navbar-actions">
@@ -103,7 +103,7 @@ class Shell extends Component<ShellProps, ShellState> {
             {slides.map(slide => slide.component)}
           </Slider>
         </ShellBody>
-      </Fragment>
+      </>
     );
   }
 }

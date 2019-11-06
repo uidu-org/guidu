@@ -64,11 +64,15 @@ export default class Attend extends PureComponent<any, any> {
           name: 'Biglietti',
         },
         component: (
-          <Order
-            {...this.props}
-            submitted
-            onSave={currentMember ? this.createOrder : this.updateOrderAndNext}
-          />
+          <div>
+            <Order
+              {...this.props}
+              submitted
+              onSave={
+                currentMember ? this.createOrder : this.updateOrderAndNext
+              }
+            />
+          </div>
         ),
       },
       {

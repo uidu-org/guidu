@@ -213,7 +213,7 @@ export function createParagraphAtEnd(): Command {
   };
 }
 
-export interface Command {
+export interface CommandInterface {
   (
     state: EditorState,
     dispatch: (tr: Transaction) => void,
@@ -221,10 +221,9 @@ export interface Command {
   ): boolean;
 }
 
-export const changeImageAlignment = (align?: AlignmentState): Command => (
-  state,
-  dispatch,
-) => {
+export const changeImageAlignment = (
+  align?: AlignmentState,
+): CommandInterface => (state, dispatch) => {
   const { from, to } = state.selection;
 
   const tr = state.tr;
@@ -306,7 +305,7 @@ export const toggleBlockMark = <T = object>(
   allowedBlocks?:
     | Array<NodeType>
     | ((schema: Schema, node: PMNode, parent: PMNode) => boolean),
-): Command => (state, dispatch) => {
+): CommandInterface => (state, dispatch) => {
   let markApplied = false;
   const tr = state.tr;
 
@@ -335,7 +334,7 @@ export const toggleBlockMark = <T = object>(
   return false;
 };
 
-export const clearEditorContent: Command = (state, dispatch) => {
+export const clearEditorContent: CommandInterface = (state, dispatch) => {
   const tr = state.tr;
   tr.replace(0, state.doc.nodeSize - 2);
   tr.setSelection(Selection.atStart(tr.doc));

@@ -24,7 +24,7 @@
     "prop-types": "^15.6.0",
     "react-feather": "^2.0.3",
     "react-spring": "^8.0.20",
-    "react-use-gesture": "^5.2.4",
+    "react-use-gesture": "^6.0.14",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {

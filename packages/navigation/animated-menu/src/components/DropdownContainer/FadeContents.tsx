@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const getFadeContainerKeyFrame = ({ animatingOut, direction }) => {
   if (!direction) return null;
@@ -11,7 +11,7 @@ const getFadeContainerKeyFrame = ({ animatingOut, direction }) => {
 `;
 };
 
-const getAnimationName = css`
+const getAnimationName = `
   ${getFadeContainerKeyFrame};
 `;
 

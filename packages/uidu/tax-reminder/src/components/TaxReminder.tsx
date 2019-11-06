@@ -73,19 +73,21 @@ export default class TaxReminder extends Component<any, any> {
           name: 'Destina il tuo 5x1000',
         },
         component: (
-          <Reminder
-            {...this.props}
-            submitted
-            onSave={newDonation => {
-              this.setState(
-                {
-                  ...newDonation,
-                },
-                () =>
-                  setTimeout(() => (this.slider.current as any).next(), 500),
-              );
-            }}
-          />
+          <div>
+            <Reminder
+              {...this.props}
+              submitted
+              onSave={newDonation => {
+                this.setState(
+                  {
+                    ...newDonation,
+                  },
+                  () =>
+                    setTimeout(() => (this.slider.current as any).next(), 500),
+                );
+              }}
+            />
+          </div>
         ),
       },
       {

@@ -1,8 +1,8 @@
 import { SyntheticEvent } from 'react';
 import { messages } from './components/i18n';
-import { CategoryId } from './components/picker/categories';
+import { CategoryId as Category } from './components/picker/categories';
 
-export type CategoryId = CategoryId;
+export type CategoryId = Category;
 
 export type RelativePosition = 'above' | 'below' | 'auto';
 
