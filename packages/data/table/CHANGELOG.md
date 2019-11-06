@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.32
+
+### Patch Changes
+
+- 8363167: Types for data-columns
+- Updated dependencies [8363167]
+  - @uidu/data-fields@0.1.7
+
 ## 0.1.31
 
 ### Patch Changes
