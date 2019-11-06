@@ -1,5 +1,12 @@
 # @uidu/table
 
+## 0.1.35
+
+### Patch Changes
+
+- Updated dependencies [360ae4e]
+  - @uidu/data-controls@0.2.0
+
 ## 0.1.34
 
 ### Patch Changes
