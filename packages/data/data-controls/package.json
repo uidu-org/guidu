@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,7 +10,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/data-views": "^0.1.1",
+    "@uidu/data-views": "^0.1.2",
     "@uidu/drawer": "^0.2.5",
     "@uidu/dropdown-menu": "^0.1.17",
     "@uidu/field-text": "^0.1.22",
@@ -18,7 +18,7 @@
     "@uidu/item": "^0.1.18",
     "@uidu/select": "^0.2.0",
     "@uidu/shell": "^0.1.31",
-    "@uidu/table": "^0.1.32",
+    "@uidu/table": "^0.1.34",
     "@uidu/toggle": "^0.1.19",
     "react-beautiful-dnd": "^12.0.0",
     "react-feather": "^2.0.3",
