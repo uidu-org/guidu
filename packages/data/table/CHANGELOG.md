@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.33
+
+### Patch Changes
+
+- b0132b2: Table with hooks and body scroll events
+
 ## 0.1.32
 
 ### Patch Changes
