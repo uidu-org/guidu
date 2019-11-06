@@ -2,9 +2,10 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
-export default {
-  id: 'country',
+const Country: Field = {
+  kind: 'country',
   name: <FormattedMessage id="field.country.name" defaultMessage="Country" />,
   icon: <FontAwesomeIcon icon={faGlobe} />,
   description: (
@@ -14,3 +15,5 @@ export default {
     />
   ),
 };
+
+export default Country;

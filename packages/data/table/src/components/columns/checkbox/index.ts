@@ -3,7 +3,7 @@ import Renderer from './renderer';
 
 export default () => ({
   // cellEditorFramework: DatePicker,
-  type: checkboxField.id,
+  type: checkboxField.kind,
   filter: 'agDateColumnFilter',
   cellRenderer: Renderer,
   headerComponentParams: { menuIcon: checkboxField.icon },

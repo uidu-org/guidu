@@ -2,9 +2,10 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
-export default {
-  id: 'phone',
+const Phone: Field = {
+  kind: 'phone',
   name: <FormattedMessage id="field.phone.name" defaultMessage="Phone" />,
   icon: <FontAwesomeIcon icon={faPhone} />,
   description: (
@@ -14,3 +15,5 @@ export default {
     />
   ),
 };
+
+export default Phone;

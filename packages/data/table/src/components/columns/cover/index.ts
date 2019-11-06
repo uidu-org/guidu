@@ -1,7 +1,7 @@
 import { coverField } from '@uidu/data-fields';
 
 export default () => ({
-  type: coverField.id,
+  type: coverField.kind,
   sortable: false,
   headerComponentParams: {
     menuIcon: coverField.icon,

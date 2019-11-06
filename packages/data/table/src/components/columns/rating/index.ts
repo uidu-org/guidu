@@ -1,7 +1,7 @@
 import { ratingField } from '@uidu/data-fields';
 
 export default () => ({
-  type: ratingField.id,
+  type: ratingField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: { menuIcon: ratingField.icon },
 });

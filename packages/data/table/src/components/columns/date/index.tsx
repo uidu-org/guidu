@@ -3,7 +3,7 @@ import moment from 'moment';
 import Editor from './editor';
 
 export default ({ format = 'L' }) => ({
-  type: dateField.id,
+  type: dateField.kind,
   cellEditorFramework: Editor,
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: dateField.icon },

@@ -3,7 +3,7 @@ import Editor from './editor';
 import Renderer from './renderer';
 
 export default field => ({
-  type: memberField.id,
+  type: memberField.kind,
   cellRenderer: Renderer,
   cellRendererParams: field,
   cellEditorFramework: Editor,

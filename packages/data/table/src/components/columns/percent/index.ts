@@ -2,7 +2,7 @@ import { percentField } from '@uidu/data-fields';
 
 export default () => ({
   filter: 'agNumberColumnFilter',
-  type: ['numericColumn', percentField.id],
+  type: ['numericColumn', percentField.kind],
   valueFormatter: ({ value }) => `${value}%`,
   headerComponentParams: { menuIcon: percentField.icon },
 });

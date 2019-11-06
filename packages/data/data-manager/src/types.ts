@@ -1,10 +1,11 @@
 import { DataView } from '@uidu/data-views';
+import { Column } from '@uidu/table';
 
 export type DataManagerProps = {
   availableViews?: Array<DataView>;
   dataViews?: Array<DataView>;
   currentView?: DataView;
-  columnDefs: Array<any>;
+  columnDefs: Array<Column>;
   rowData: Array<any>;
   onGridReady?: (params) => void;
   onFirstDataRendered?: (params) => void;

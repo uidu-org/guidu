@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
 const LinkRecordField = loadable(() => import('./form'));
-
-export default {
-  id: 'linkRecord',
+const LinkRecord: Field = {
+  kind: 'linkRecord',
   name: (
     <FormattedMessage
       id="field.linkRecord.name"
@@ -21,6 +21,7 @@ export default {
       defaultMessage="Linked record fields contain blue tokens that represent links to other records."
     />
   ),
-
   form: LinkRecordField,
 };
+
+export default LinkRecord;

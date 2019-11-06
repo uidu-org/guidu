@@ -1,7 +1,7 @@
 import { multipleSelectField } from '@uidu/data-fields';
 
 export default field => ({
-  type: multipleSelectField.id,
+  type: multipleSelectField.kind,
   cellEditorParams: {
     options: field.options,
   },

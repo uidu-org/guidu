@@ -1,7 +1,7 @@
 import { voteField } from '@uidu/data-fields';
 
 export default () => ({
-  type: voteField.id,
+  type: voteField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: {
     menuIcon: voteField.icon,

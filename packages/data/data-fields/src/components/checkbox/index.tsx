@@ -2,9 +2,10 @@ import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
-export default {
-  id: 'checkbox',
+const Checkbox: Field = {
+  kind: 'checkbox',
   name: <FormattedMessage id="field.checkbox.name" defaultMessage="Checkbox" />,
   icon: <FontAwesomeIcon icon={faCheckSquare} />,
   description: (
@@ -14,3 +15,5 @@ export default {
     />
   ),
 };
+
+export default Checkbox;

@@ -1,8 +1,9 @@
 import { AgGridReact } from 'ag-grid-react';
 import React, { Component } from 'react';
+import { TableProps } from '../types';
 import CustomHeader from './headers';
 
-export default class Table extends Component<any> {
+export default class Table extends Component<TableProps> {
   static defaultProps = {
     theme: 'balham',
   };

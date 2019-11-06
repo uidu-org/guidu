@@ -1,11 +1,14 @@
 import { faFont } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import StringForm from './form';
+import { Field } from '../../types';
 
-export default {
-  id: 'string',
+const StringForm = loadable(() => import('./form'));
+
+const String: Field = {
+  kind: 'string',
   name: <FormattedMessage id="field.string.name" defaultMessage="String" />,
   icon: <FontAwesomeIcon icon={faFont} />,
   description: (
@@ -16,3 +19,5 @@ export default {
   ),
   form: StringForm,
 };
+
+export default String;

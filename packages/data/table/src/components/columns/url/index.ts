@@ -1,7 +1,7 @@
 import { urlField } from '@uidu/data-fields';
 
 export default () => ({
-  type: urlField.id,
+  type: urlField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: {
     menuIcon: urlField.icon,

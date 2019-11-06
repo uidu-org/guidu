@@ -1,7 +1,7 @@
 import { textField } from '@uidu/data-fields';
 
 export default () => ({
-  type: textField.id,
+  type: textField.kind,
   filter: 'agTextColumnFilter',
   cellEditor: 'agLargeTextCellEditor',
   headerComponentParams: { menuIcon: textField.icon },

@@ -2,9 +2,10 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
-export default {
-  id: 'address',
+const Address: Field = {
+  kind: 'address',
   name: <FormattedMessage id="field.address.name" defaultMessage="Address" />,
   icon: <FontAwesomeIcon icon={faMapMarkerAlt} />,
   description: (
@@ -14,3 +15,5 @@ export default {
     />
   ),
 };
+
+export default Address;

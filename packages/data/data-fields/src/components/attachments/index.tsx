@@ -2,9 +2,10 @@ import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
-export default {
-  id: 'attachments',
+const Attachments: Field = {
+  kind: 'attachments',
   name: <FormattedMessage id="field.attachments.name" defaultMessage="Files" />,
   icon: <FontAwesomeIcon icon={faFile} />,
   description: (
@@ -14,3 +15,5 @@ export default {
     />
   ),
 };
+
+export default Attachments;

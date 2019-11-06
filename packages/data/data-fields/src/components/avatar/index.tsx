@@ -2,9 +2,10 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { Field } from '../../types';
 
-export default {
-  id: 'avatar',
+const Avatar: Field = {
+  kind: 'avatar',
   name: <FormattedMessage id="field.avatar.name" defaultMessage="Avatar" />,
   icon: <FontAwesomeIcon icon={faUserCircle} />,
   description: (
@@ -14,3 +15,5 @@ export default {
     />
   ),
 };
+
+export default Avatar;

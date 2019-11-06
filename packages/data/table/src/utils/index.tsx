@@ -1,3 +1,4 @@
+import { Field } from '@uidu/data-fields';
 import numeral from 'numeral';
 import React from 'react';
 import {
@@ -21,9 +22,10 @@ import {
   urlColumn,
   voteColumn,
 } from '../components/columns';
+import { Column } from '../types';
 
-const getColumnType = field => {
-  switch (field.type) {
+const getColumnType = (field: Field) => {
+  switch (field.kind) {
     case 'address':
       return addressColumn();
     case 'attachments':
@@ -52,7 +54,7 @@ const getColumnType = field => {
       return progressColumn();
     case 'rating':
       return ratingColumn();
-    case 'single_select':
+    case 'singleSelect':
       return singleSelectColumn(field);
     case 'string':
       return stringColumn();
@@ -67,14 +69,13 @@ const getColumnType = field => {
   }
 };
 
-export const buildColumn = field => ({
-  colId: field.name,
-  field: field.name,
-  headerName: field.label,
-  ...getColumnType(field),
+export const buildColumn = (column: Column) => ({
+  headerName: column.headerName,
+  ...getColumnType(column.dataField),
 });
 
-export const buildColumns = fields => fields.map(field => buildColumn(field));
+export const buildColumns = (columns: Array<Column>) =>
+  columns.map(column => buildColumn(column));
 
 export const valueRenderer = (data, column) => {
   const {

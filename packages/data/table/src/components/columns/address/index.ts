@@ -2,7 +2,7 @@ import { addressField } from '@uidu/data-fields';
 
 export default () => ({
   filter: 'agTextColumnFilter',
-  type: addressField.id,
+  type: addressField.kind,
   headerComponentParams: {
     menuIcon: addressField.icon,
   },

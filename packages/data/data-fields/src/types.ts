@@ -1,4 +1,7 @@
 export type Field = {
-  id: string;
-  name: string;
+  kind: string;
+  name: string | React.ReactNode;
+  icon: React.ReactNode;
+  description?: React.ReactNode;
+  form?: React.FC<any>;
 };
