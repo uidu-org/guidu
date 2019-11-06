@@ -1,5 +1,6 @@
 import faker from 'faker';
 import numeral from 'numeral';
+import React from 'react';
 
 export const availableColumns = [
   {
@@ -33,6 +34,12 @@ export const availableColumns = [
     colId: 'displayName',
     field: 'displayName',
     headerName: 'FullName',
+    valueGetter: ({ data }) => data.displayName,
+    cellRendererFramework: ({ data }) => (
+      <div>
+        <h1>{data.displayName}</h1>
+      </div>
+    ),
   },
   {
     dataField: 'currency',

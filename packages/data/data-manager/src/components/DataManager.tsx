@@ -268,6 +268,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
         onRowClicked={onItemClick}
+        accentedSort
       />
     );
 

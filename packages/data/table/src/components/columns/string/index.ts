@@ -4,4 +4,8 @@ export default () => ({
   type: stringField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: { menuIcon: stringField.icon },
+  // comparator: (valueA, valueB) => {
+  //   console.log(valueA);
+  //   return valueA.toLowerCase().localeCompare(valueB.toLowerCase());
+  // },
 });
