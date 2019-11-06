@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.1.19
+
+### Patch Changes
+
+- cb7b4f9: Try removing loadable folder errors
+
 ## 0.1.18
 
 ### Patch Changes
