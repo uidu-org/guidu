@@ -1,6 +1,6 @@
 {
   "name": "@uidu/popup-campaigns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Popus for capturing user attention on websites",
   "main": "index.js",
   "author": "uidu",

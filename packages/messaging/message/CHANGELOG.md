@@ -1,5 +1,11 @@
 # @uidu/message
 
+## 0.1.22
+
+### Patch Changes
+
+- 5adff07: Bump dependencies
+
 ## 0.1.21
 
 ### Patch Changes

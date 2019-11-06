@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.1.18
+
+### Patch Changes
+
+- 5adff07: Bump dependencies
+- Updated dependencies [5adff07]
+  - @uidu/emoji@0.1.3
+
 ## 0.1.17
 
 ### Patch Changes

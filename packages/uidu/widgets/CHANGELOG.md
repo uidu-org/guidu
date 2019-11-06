@@ -1,5 +1,11 @@
 # @uidu/widgets
 
+## 0.1.10
+
+### Patch Changes
+
+- 5adff07: Bump dependencies
+
 ## 0.1.9
 
 ### Patch Changes

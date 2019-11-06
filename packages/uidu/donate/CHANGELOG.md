@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.1.13
+
+### Patch Changes
+
+- 5adff07: Bump dependencies
+- Updated dependencies [5adff07]
+  - @uidu/widgets@0.1.10
+
 ## 0.1.12
 
 ### Patch Changes
