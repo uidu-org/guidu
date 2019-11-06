@@ -6,11 +6,11 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <div>
-        <Toggler fields={availableColumns} onToggle={console.log} />
-        <Filterer fields={availableColumns} filterers={[]} />
-        <Grouper fields={availableColumns} groupers={[]} />
-        <Sorter fields={availableColumns} sorters={[]} />
-        <Finder fields={availableColumns} />
+        <Toggler columnDefs={availableColumns} onToggle={console.log} />
+        <Filterer columnDefs={availableColumns} filterers={[]} />
+        <Grouper columnDefs={availableColumns} groupers={[]} />
+        <Sorter columnDefs={availableColumns} sorters={[]} />
+        <Finder columnDefs={availableColumns} />
         <Resizer />
       </div>
     );

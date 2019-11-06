@@ -2,7 +2,9 @@ import { Field } from '@uidu/data-fields';
 import { AgGridColumnProps } from 'ag-grid-react';
 
 export type Column = AgGridColumnProps & {
-  dataField: Field;
+  dataField?: Field['kind'];
+  dataFieldParams?: any;
+  primary?: boolean;
 };
 
 export type TableProps = {

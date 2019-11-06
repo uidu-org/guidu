@@ -1,66 +1,43 @@
 import faker from 'faker';
 import numeral from 'numeral';
-import React from 'react';
-import {
-  addressColumn,
-  coverColumn,
-  currencyColumn,
-  dateColumn,
-  defaultColumn,
-  memberColumn,
-  percentColumn,
-  primaryColumn,
-  stringColumn,
-  textColumn,
-  uidColumn,
-} from '../src';
 
-console.log(addressColumn());
 export const availableColumns = [
   {
+    dataField: 'uid',
     colId: 'id',
     field: 'id',
-    ...uidColumn(),
   },
   {
+    dataField: 'cover',
     colId: 'cover',
     field: 'cover',
     headerName: 'Cover',
-    ...defaultColumn(),
-    ...coverColumn(),
   },
   {
+    dataField: 'avatar',
     colId: 'avatar',
     field: 'avatar',
-    ...defaultColumn(),
-    ...addressColumn(),
   },
   {
+    dataField: 'member',
+    dataFieldParams: { avatar: data => data.avatar },
     colId: 'member',
-    field: 'member',
-    ...defaultColumn(),
-    ...memberColumn({ avatar: data => data.avatar }),
-    ...primaryColumn(),
+    primary: true,
     headerName: 'Donor',
     valueGetter: ({ data }) => {
       return data.member.email;
     },
   },
   {
+    dataField: 'string',
     colId: 'displayName',
     field: 'displayName',
     headerName: 'FullName',
-    ...defaultColumn(),
-    ...textColumn(),
-    cellRendererFramework: props => {
-      return <div>{props.value}</div>;
-    },
   },
   {
+    dataField: 'currency',
     colId: 'amount',
     field: 'amount',
-    ...defaultColumn(),
-    ...currencyColumn(),
     headerName: 'Donation amount',
     valueGetter: ({ data }) => numeral(data.amount).format('$ 0,0.00'),
   },
@@ -73,32 +50,28 @@ export const availableColumns = [
   //   valueFormatter: ({ value }) => `€ ${value}`,
   // },
   {
+    dataField: 'percent',
     colId: 'percent',
-    field: 'percent',
     headerName: 'Percentuale',
-    ...defaultColumn(),
-    ...percentColumn(),
+    valueGetter: ({ data }) => numeral(data.percent / 100).format('% 0'),
   },
   {
+    dataField: 'date',
     colId: 'createdAt',
     field: 'createdAt',
     headerName: 'Data creazione',
-    ...defaultColumn(),
-    ...dateColumn({}),
   },
   {
+    dataField: 'date',
     colId: 'updatedAt',
     field: 'updatedAt',
     headerName: 'Ultimo aggiornamento',
-    ...defaultColumn(),
-    ...dateColumn({}),
   },
   {
+    dataField: 'string',
     colId: 'firstName',
     field: 'firstName',
     headerName: 'firstName',
-    ...defaultColumn(),
-    ...stringColumn(),
   },
   // {
   //   colId: 'lastName',

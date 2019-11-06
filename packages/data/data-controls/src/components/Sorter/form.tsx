@@ -22,19 +22,10 @@ export default class SorterForm extends PureComponent<SorterProps> {
   };
 
   render() {
-    const { sorters, fields } = this.props;
-    console.log(fields);
-    console.log(
-      fields.map(field => ({
-        id: field.colId,
-        name: field.headerName,
-        ...(field.headerComponentParams
-          ? {
-              before: field.headerComponentParams.menuIcon,
-            }
-          : {}),
-      })),
-    );
+    const { sorters, columnDefs } = this.props;
+
+    console.log(columnDefs);
+
     return (
       <Form
         ref={this.form}
@@ -87,20 +78,20 @@ export default class SorterForm extends PureComponent<SorterProps> {
                             isClearable={false}
                             name={`sorters[${index}][colId][colId]`}
                             value={sorter.colId.colId}
-                            options={fields.map(field => ({
-                              id: field.colId,
-                              name: field.headerName,
-                              ...(field.headerComponentParams
+                            options={columnDefs.map(columnDef => ({
+                              id: columnDef.colId,
+                              name: columnDef.headerName,
+                              ...(columnDef.headerComponentParams
                                 ? {
                                     before:
-                                      field.headerComponentParams.menuIcon,
+                                      columnDef.headerComponentParams.menuIcon,
                                   }
                                 : {}),
                             }))}
                             onChange={(name, value, { option }) => {
-                              console.log(value);
-                              console.log(option);
-                              (this.form.current as any).submit();
+                              setTimeout(() => {
+                                (this.form.current as any).submit();
+                              }, 30);
                             }}
                           />
                         </div>
@@ -123,9 +114,9 @@ export default class SorterForm extends PureComponent<SorterProps> {
                               },
                             ]}
                             onChange={(name, value, { option }) => {
-                              console.log(value);
-                              console.log(option);
-                              (this.form.current as any).submit();
+                              setTimeout(() => {
+                                (this.form.current as any).submit();
+                              }, 30);
                             }}
                             // components={{
                             //   DropdownIndicator: () => null,
@@ -157,12 +148,12 @@ export default class SorterForm extends PureComponent<SorterProps> {
                     />
                   )
                 }
-                onClick={field => {
-                  console.log(field);
+                onClick={columnDef => {
+                  console.log(columnDef);
                   push({
                     sort: { id: 'asc', name: 'asc' },
                     index: list.length,
-                    colId: field,
+                    colId: columnDef,
                   });
                   setTimeout(() => {
                     (this.form.current as any).submit();
@@ -170,7 +161,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                 }}
                 list={sorters}
                 isDefaultOpen={list.length === 0}
-                fields={fields.filter(
+                columnDefs={columnDefs.filter(
                   f =>
                     !!f.sortable &&
                     sorters.map(s => s.colId.colId).indexOf(f.colId) < 0,

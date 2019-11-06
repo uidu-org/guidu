@@ -1,11 +1,11 @@
 import React from 'react';
-import { Columns } from 'react-feather';
+import { Trello } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 
 export default {
   id: 'board',
   name: <FormattedMessage id="dataView.board.name" defaultMessage="Board" />,
-  icon: Columns,
+  icon: Trello,
   color: '#D08770',
   description: (
     <FormattedMessage

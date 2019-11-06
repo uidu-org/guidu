@@ -11,6 +11,10 @@
         "../../authentication/devise/src/types",
         "./packages/authentication/devise/src/types"
       ],
+      "@uidu/popup-campaigns/index": [
+        "../../campaigns/popup-campaigns/src/index",
+        "./packages/campaigns/popup-campaigns/src/index"
+      ],
       "@uidu/accordion/index": [
         "../../core/accordion/src/index",
         "./packages/core/accordion/src/index"
@@ -323,6 +327,10 @@
         "../../core/section-message/src/types",
         "./packages/core/section-message/src/types"
       ],
+      "@uidu/slider/index": [
+        "../../core/slider/src/index",
+        "./packages/core/slider/src/index"
+      ],
       "@uidu/spinner/index": [
         "../../core/spinner/src/index",
         "./packages/core/spinner/src/index"
@@ -439,6 +447,14 @@
         "../../data/data-controls/src/index",
         "./packages/data/data-controls/src/index"
       ],
+      "@uidu/data-fields/index": [
+        "../../data/data-fields/src/index",
+        "./packages/data/data-fields/src/index"
+      ],
+      "@uidu/data-fields/types": [
+        "../../data/data-fields/src/types",
+        "./packages/data/data-fields/src/types"
+      ],
       "@uidu/data-manager/index": [
         "../../data/data-manager/src/index",
         "./packages/data/data-manager/src/index"
@@ -446,6 +462,14 @@
       "@uidu/data-manager/types": [
         "../../data/data-manager/src/types",
         "./packages/data/data-manager/src/types"
+      ],
+      "@uidu/data-views/index": [
+        "../../data/data-views/src/index",
+        "./packages/data/data-views/src/index"
+      ],
+      "@uidu/data-views/types": [
+        "../../data/data-views/src/types",
+        "./packages/data/data-views/src/types"
       ],
       "@uidu/gallery/index": [
         "../../data/gallery/src/index",
@@ -735,6 +759,10 @@
         "../../forms/field-base/src/types",
         "./packages/forms/field-base/src/types"
       ],
+      "@uidu/field-color-picker/index": [
+        "../../forms/field-color-picker/src/index",
+        "./packages/forms/field-color-picker/src/index"
+      ],
       "@uidu/field-counter/index": [
         "../../forms/field-counter/src/index",
         "./packages/forms/field-counter/src/index"
@@ -766,6 +794,14 @@
       "@uidu/field-downshift/types": [
         "../../forms/field-downshift/src/types",
         "./packages/forms/field-downshift/src/types"
+      ],
+      "@uidu/field-file-uploader/index": [
+        "../../forms/field-file-uploader/src/index",
+        "./packages/forms/field-file-uploader/src/index"
+      ],
+      "@uidu/field-file-uploader/types": [
+        "../../forms/field-file-uploader/src/types",
+        "./packages/forms/field-file-uploader/src/types"
       ],
       "@uidu/field-geosuggest/index": [
         "../../forms/field-geosuggest/src/index",

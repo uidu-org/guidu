@@ -17,13 +17,20 @@ import { rollup } from 'd3-array';
 import moment from 'moment';
 import React, { Component } from 'react';
 import Media from 'react-media';
-import { arrayMove } from 'react-sortable-hoc';
 import { DataManagerProps } from '../types';
 
 const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
 const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
 const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
+
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
 
 const defaultAvailableControls = {
   calendarToolbar: {
@@ -148,11 +155,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
     );
   };
 
-  moveColumn = ({ oldIndex, newIndex }) => {
-    const { columnDefs } = this.state;
-
+  moveColumn = ({ name, oldIndex, newIndex }) => {
+    this.gridColumnApi.moveColumn(name, newIndex);
+    const columnDefs = reorder(this.state.columnDefs, oldIndex, newIndex);
     this.setState({
-      columnDefs: arrayMove(columnDefs, oldIndex, newIndex),
+      columnDefs,
     });
   };
 
@@ -253,7 +260,8 @@ export default class DataManager extends Component<DataManagerProps, any> {
         innerRef={this.grid}
         onGridReady={this.onGridReady}
         onFirstDataRendered={onFirstDataRendered}
-        columnDefs={columnDefs.filter(
+        // use columnDefs from props to avoid flickering on toggling/reordering columns
+        columnDefs={this.props.columnDefs.filter(
           column => column.type !== 'cover' && column.type !== 'avatar',
         )}
         rowData={rowData}
@@ -407,26 +415,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
             {...availableControls.viewer.props}
           />
         )}
-        {currentView.kind === 'table' && availableControls.toggler.visible && (
-          <Toggler
-            fields={columnDefs}
-            onToggle={this.toggleColumn}
-            onSortEnd={this.moveColumn}
-            {...availableControls.toggler.props}
-          />
-        )}
-        {(currentView.kind === 'gallery' || currentView.kind === 'list') &&
-          availableControls.customizer.visible && (
-            <Customizer
-              fields={columnDefs}
-              onToggle={this.toggleColumn}
-              onSortEnd={this.moveColumn}
-              {...availableControls.customizer.props}
-            />
-          )}
         {availableControls.filterer.visible && (
           <Filterer
-            fields={columnDefs}
+            columnDefs={columnDefs.filter(
+              column => column.type !== 'cover' && column.type !== 'avatar',
+            )}
             onChange={this.setFilters}
             filters={filters}
             {...availableControls.filterer.props}
@@ -434,7 +427,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
         )}
         {currentView.kind === 'list' && availableControls.grouper.visible && (
           <Grouper
-            fields={columnDefs}
+            columnDefs={columnDefs}
             onChange={this.setGroupers}
             groupers={groupers}
             {...availableControls.grouper.props}
@@ -442,12 +435,33 @@ export default class DataManager extends Component<DataManagerProps, any> {
         )}
         {availableControls.sorter.visible && (
           <Sorter
-            fields={columnDefs}
+            columnDefs={columnDefs.filter(
+              column => column.type !== 'cover' && column.type !== 'avatar',
+            )}
             onChange={this.setSorters}
             sorters={sorters}
             {...availableControls.sorter.props}
           />
         )}
+        {currentView.kind === 'table' && availableControls.toggler.visible && (
+          <Toggler
+            columnDefs={columnDefs.filter(
+              column => column.type !== 'cover' && column.type !== 'avatar',
+            )}
+            onToggle={this.toggleColumn}
+            onDragEnd={this.moveColumn}
+            {...availableControls.toggler.props}
+          />
+        )}
+        {(currentView.kind === 'gallery' || currentView.kind === 'list') &&
+          availableControls.customizer.visible && (
+            <Customizer
+              columnDefs={columnDefs}
+              onToggle={this.toggleColumn}
+              onSortEnd={this.moveColumn}
+              {...availableControls.customizer.props}
+            />
+          )}
         {currentView.kind === 'table' && availableControls.resizer.visible && (
           <Resizer
             onResize={this.setRowHeight}

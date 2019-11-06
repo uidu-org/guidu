@@ -19,7 +19,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
   };
 
   render() {
-    const { filters, fields } = this.props;
+    const { filters, columnDefs } = this.props;
     return (
       <Form
         ref={this.form}
@@ -45,12 +45,12 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                       layout="elementOnly"
                       value={filter.colId.colId}
                       name="field"
-                      options={fields.map(field => ({
-                        id: field.colId,
-                        name: field.headerName,
-                        ...(field.headerComponentParams
+                      options={columnDefs.map(columnDef => ({
+                        id: columnDef.colId,
+                        name: columnDef.headerName,
+                        ...(columnDef.headerComponentParams
                           ? {
-                              before: field.headerComponentParams.menuIcon,
+                              before: columnDef.headerComponentParams.menuIcon,
                             }
                           : {}),
                       }))}
@@ -70,9 +70,9 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                       <Select
                         layout="elementOnly"
                         name="field"
-                        options={this.props.fields.map(field => ({
-                          id: field.colId,
-                          name: field.headerName,
+                        options={columnDefs.map(columnDef => ({
+                          id: columnDef.colId,
+                          name: columnDef.headerName,
                         }))}
                       />
                     </div>
@@ -93,11 +93,11 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                     />
                   )
                 }
-                onClick={field => {
+                onClick={columnDef => {
                   push({
                     sort: { id: 'asc', name: 'asc' },
                     index: list.length,
-                    colId: field,
+                    colId: columnDef,
                   });
                   setTimeout(() => {
                     (this.form.current as any).submit();
@@ -105,7 +105,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                 }}
                 isDefaultOpen={list.length === 0}
                 list={filters}
-                fields={fields}
+                columnDefs={columnDefs}
               />
             </div>
           )}

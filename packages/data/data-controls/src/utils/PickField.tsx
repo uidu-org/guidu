@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ChevronDown } from 'react-feather';
 
-export default class AddToList extends Component<any, any> {
+export default class PickField extends Component<any, any> {
   static defaultProps = {
     isDefaultOpen: false,
   };
@@ -15,7 +15,7 @@ export default class AddToList extends Component<any, any> {
   }
 
   render() {
-    const { fields, list, onClick, label, isDefaultOpen } = this.props;
+    const { columnDefs, list, onClick, label, isDefaultOpen } = this.props;
     const { isOpen } = this.state;
     return (
       <>
@@ -28,27 +28,27 @@ export default class AddToList extends Component<any, any> {
           {label} <ChevronDown size={16} />
         </div>
         {(isDefaultOpen || isOpen) &&
-          fields
+          columnDefs
             .filter(f => list.map(s => s.colId.colId).indexOf(f.colId) < 0)
-            .map(field => (
+            .map(columnDef => (
               <a
                 href="#"
                 className="list-group-item list-group-item-action px-3 px-xl-4"
-                key={field.colId}
+                key={columnDef.colId}
                 onClick={e => {
                   e.preventDefault();
-                  this.setState({ isOpen: false }, () => onClick(field));
+                  this.setState({ isOpen: false }, () => onClick(columnDef));
                 }}
               >
-                {field.headerComponentParams && (
+                {columnDef.headerComponentParams && (
                   <span
                     style={{ width: 22, display: 'inline-block' }}
                     className="mr-2"
                   >
-                    {field.headerComponentParams.menuIcon}
+                    {columnDef.headerComponentParams.menuIcon}
                   </span>
                 )}
-                {field.headerName}
+                {columnDef.headerName}
               </a>
             ))}
       </>

@@ -1,12 +1,13 @@
 import Drawer from '@uidu/drawer';
-import { ShellBody, ShellHeader } from '@uidu/shell';
-import { ToggleStateless } from '@uidu/toggle';
 import React, { Component } from 'react';
-import { EyeOff } from 'react-feather';
+import { Columns } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
+import DrawerLayout from '../../utils/DrawerLayout';
+import TogglerForm from './form';
+import { TogglerProps } from './types';
 
-export default class Toggler extends Component<any, any> {
+export default class Toggler extends Component<TogglerProps, any> {
   constructor(props) {
     super(props);
 
@@ -16,45 +17,8 @@ export default class Toggler extends Component<any, any> {
   }
 
   render() {
-    const { fields, onSortEnd, onToggle, api } = this.props;
-    const hiddenCount = fields.filter(f => f.hide).length;
-
-    const content = (
-      <>
-        <ShellHeader>Sorters</ShellHeader>
-        <ShellBody scrollable>
-          <div>
-            {fields
-              .filter(f => f.type !== 'primary' && f.type !== 'cover')
-              .filter(f => !f.pinned)
-              .map(field => (
-                <div
-                  key={field.colId}
-                  onClick={e => {
-                    onToggle(field.colId, !!field.hide);
-                  }}
-                  className="d-flex align-items-center py-1"
-                >
-                  <ToggleStateless
-                    isChecked={!field.hide}
-                    className="mr-2"
-                    size="xsmall"
-                  />
-                  <div style={{ maxWidth: 160 }} className="text-truncate">
-                    {field.headerComponentParams &&
-                    field.headerComponentParams.menuIcon ? (
-                      <small className="mr-2">
-                        {field.headerComponentParams.menuIcon}
-                      </small>
-                    ) : null}
-                    {field.headerName}
-                  </div>
-                </div>
-              ))}
-          </div>
-        </ShellBody>
-      </>
-    );
+    const { columnDefs } = this.props;
+    const hiddenCount = columnDefs.filter(f => f.hide).length;
 
     return (
       <>
@@ -64,12 +28,12 @@ export default class Toggler extends Component<any, any> {
           className="btn mr-2"
           onClick={() => this.setState({ dialogOpen: true })}
         >
-          <EyeOff strokeWidth={2} size={14} className="mr-2" />
+          <Columns strokeWidth={2} size={14} className="mr-2" />
           <span style={{ textTransform: 'initial' }}>
             <FormattedMessage
               id="guidu.data_controls.sorter.label"
               defaultMessage={`{hiddenCount, plural,
-                  =0 {Hide fields}
+                  =0 {Columns}
                   one {1 field hidden}
                   other {# fields hidden}
                 }`}
@@ -85,7 +49,16 @@ export default class Toggler extends Component<any, any> {
           origin="right"
           size="medium"
         >
-          {content}
+          <DrawerLayout
+            name={
+              <FormattedMessage
+                id="guidu.data_controls.toggler.label"
+                defaultMessage="Organize columns"
+              />
+            }
+          >
+            <TogglerForm {...this.props} />
+          </DrawerLayout>
         </Drawer>
       </>
     );

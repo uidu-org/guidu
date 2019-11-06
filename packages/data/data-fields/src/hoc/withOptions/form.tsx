@@ -80,6 +80,7 @@ export default class SingleSelectForm extends PureComponent<any, any> {
                   }))
                 }
                 isDefaultChecked={!!withColor}
+                size="xsmall"
               />
               <span className="text-muted small ml-2">
                 <FormattedMessage

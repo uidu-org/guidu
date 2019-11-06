@@ -1,3 +1,5 @@
+import { Column } from '@uidu/table';
+
 export type Sort = {
   colId: {
     colId: string;
@@ -12,5 +14,5 @@ export type Sort = {
 export type SorterProps = {
   onChange: (sorters: Array<Sort>) => void;
   sorters: Array<Sort>;
-  fields: Array<any>;
+  columnDefs: Column[];
 };

@@ -25,7 +25,7 @@ export default class Sorter extends Component<any> {
   };
 
   render() {
-    const { groupers, fields } = this.props;
+    const { groupers, columnDefs } = this.props;
     const groupersCount = groupers.length;
     return (
       <DropdownMenu
@@ -76,7 +76,7 @@ export default class Sorter extends Component<any> {
                           isSearchable
                           isClearable={false}
                           name={`groupers[${index}][colId]`}
-                          options={this.props.fields}
+                          options={columnDefs}
                           menuPosition="fixed"
                           getOptionLabel={option => option.headerName}
                           getOptionValue={option => option.colId}
@@ -113,16 +113,16 @@ export default class Sorter extends Component<any> {
                   )}
                   <PickField
                     label="Pick a field to group by"
-                    onClick={field => {
+                    onClick={columnDef => {
                       push({
                         sort: { id: 'asc', name: 'asc' },
                         index: list.length,
-                        colId: field,
+                        colId: columnDef,
                       });
                       (this.form.current as any).form.submit();
                     }}
                     list={groupers}
-                    fields={fields}
+                    columnDefs={columnDefs}
                   />
                 </div>
               )}

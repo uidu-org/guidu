@@ -4,6 +4,7 @@ import {
   ShellBodyWithSpinner,
   ShellHeader,
 } from '@uidu/shell';
+import { buildColumns } from '@uidu/table';
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
@@ -80,7 +81,7 @@ export default class Basic extends Component<any, any> {
     return (
       <IntlProvider locale="en">
         <DataManager
-          columnDefs={this.state.columnDefs}
+          columnDefs={buildColumns(this.state.columnDefs)}
           rowData={this.state.rowData}
           currentView={this.state.currentView}
           dataViews={this.state.dataViews}

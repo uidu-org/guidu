@@ -21,7 +21,6 @@
     "@uidu/table": "^0.1.32",
     "d3-array": "^2.2.0",
     "react-media": "^1.9.2",
-    "react-sortable-hoc": "^1.9.1",
     "react-transition-group": "^4.0.0"
   },
   "devDependencies": {

@@ -4,36 +4,45 @@ import React from 'react';
 import {
   addressColumn,
   attachmentsColumn,
+  avatarColumn,
   checkboxColumn,
   countryColumn,
+  coverColumn,
   currencyColumn,
   dateColumn,
+  defaultColumn,
   emailColumn,
   memberColumn,
   multipleSelectColumn,
   numberColumn,
   percentColumn,
   phoneColumn,
+  primaryColumn,
   progressColumn,
   ratingColumn,
   singleSelectColumn,
   stringColumn,
   textColumn,
+  uidColumn,
   urlColumn,
   voteColumn,
 } from '../components/columns';
 import { Column } from '../types';
 
-const getColumnType = (field: Field) => {
-  switch (field.kind) {
+const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
+  switch (dataField) {
     case 'address':
       return addressColumn();
     case 'attachments':
       return attachmentsColumn();
+    case 'avatar':
+      return avatarColumn();
     case 'checkbox':
       return checkboxColumn();
     case 'country':
       return countryColumn();
+    case 'cover':
+      return coverColumn();
     case 'currency':
       return currencyColumn();
     case 'date':
@@ -41,9 +50,9 @@ const getColumnType = (field: Field) => {
     case 'email':
       return emailColumn();
     case 'member':
-      return memberColumn(field);
+      return memberColumn(dataFieldParams);
     case 'multipleSelect':
-      return multipleSelectColumn(field);
+      return multipleSelectColumn(dataFieldParams);
     case 'number':
       return numberColumn();
     case 'percent':
@@ -55,11 +64,13 @@ const getColumnType = (field: Field) => {
     case 'rating':
       return ratingColumn();
     case 'singleSelect':
-      return singleSelectColumn(field);
+      return singleSelectColumn(dataFieldParams);
     case 'string':
       return stringColumn();
     case 'text':
       return textColumn();
+    case 'uid':
+      return uidColumn();
     case 'url':
       return urlColumn();
     case 'vote':
@@ -69,10 +80,19 @@ const getColumnType = (field: Field) => {
   }
 };
 
-export const buildColumn = (column: Column) => ({
-  headerName: column.headerName,
-  ...getColumnType(column.dataField),
-});
+export const buildColumn = ({
+  primary,
+  dataField,
+  dataFieldParams,
+  ...column
+}: Column) => {
+  return {
+    ...defaultColumn(),
+    ...(primary ? { ...primaryColumn() } : {}),
+    ...(dataField ? { ...getColumnType(dataField, dataFieldParams) } : {}),
+    ...column,
+  };
+};
 
 export const buildColumns = (columns: Array<Column>) =>
   columns.map(column => buildColumn(column));

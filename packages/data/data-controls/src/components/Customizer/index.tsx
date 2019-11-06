@@ -22,7 +22,7 @@ const DropdownItem = withToggleInteraction(
 
 export default class Toggler extends Component<any> {
   render() {
-    const { fields, onSortEnd, onToggle, api } = this.props;
+    const { columnDefs, onSortEnd, onToggle, api } = this.props;
 
     return (
       <DropdownMenu
@@ -38,27 +38,27 @@ export default class Toggler extends Component<any> {
           </Trigger>
         }
       >
-        <DropdownItemGroupCheckbox id="fields">
-          {fields
+        <DropdownItemGroupCheckbox id="columnDefs">
+          {columnDefs
             .filter(f => !f.pinned)
-            .map(field => (
+            .map(columnDef => (
               <DropdownItem
-                id={field.colId}
+                id={columnDef.colId}
                 defaultSelected
                 onClick={e => {
                   e.preventDefault();
                   e.stopPropagation();
-                  onToggle(field.colId, !!field.hide);
+                  onToggle(columnDef.colId, !!columnDef.hide);
                 }}
               >
                 <div style={{ maxWidth: 160 }} className="text-truncate">
-                  {field.headerComponentParams &&
-                  field.headerComponentParams.menuIcon ? (
+                  {columnDef.headerComponentParams &&
+                  columnDef.headerComponentParams.menuIcon ? (
                     <small className="mr-2">
-                      {field.headerComponentParams.menuIcon}
+                      {columnDef.headerComponentParams.menuIcon}
                     </small>
                   ) : null}
-                  {field.headerName}
+                  {columnDef.headerName}
                 </div>
               </DropdownItem>
             ))}

@@ -1728,14 +1728,16 @@
     yargs "^14.2.0"
 
 "@netlify/config@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.1.tgz#8afaff13b78935de46b3575a9cc2f108fea48627"
-  integrity sha512-LMywGz02K9K/NmKyDFN7AlevNzpGAjj5xF1q3Bw7AYQ9HVgvtCktHQGBQJkQKvbj8F+igJBgStOBouwJoP4EHA==
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.4.tgz#9b16d523347df38c218ba072982dfe9f5de733f3"
+  integrity sha512-6sLg7LCRnAWMvn7+r19sBRiVe0A/cK2D5CISq441eS4G8akGERPsXjzGyyxtSkfWLPlIqgbxiGELqVWpvG5CJw==
   dependencies:
     configorama "^0.3.6"
+    deepmerge "^4.2.2"
+    dot-prop "^5.2.0"
     find-up "^4.1.0"
+    make-dir "^3.0.0"
     map-obj "^4.1.0"
-    minimist "^1.2.0"
     path-exists "^4.0.0"
     resolve "^1.12.0"
 
@@ -2614,10 +2616,10 @@
     "@types/react-native" "*"
     csstype "^2.2.0"
 
-"@types/swiper@^4.4.6":
-  version "4.4.8"
-  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-4.4.8.tgz#8a0602eb34c8bfe87924a8df7ecd63345463b5c0"
-  integrity sha512-jtvfbuIUlrI+kV6yk63ddM9Uiv2a3ruGjhihzzDDq/C6kY6EZXV6yVGIc8OxMb0Gwjac2bGltMuF1WcDYV9sZQ==
+"@types/swiper@^5.2.0":
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-5.2.0.tgz#11ddbff1726a1a31c11a3e1e93e5d07050418445"
+  integrity sha512-JUkSp8aarWdp5SMWo89nMVFuBO3PZLhhP3F1jWGFUC2nclDxIU/ZbgMYAvBs29j906nQ/uAXiEqloV6qPQpUZg==
 
 "@types/tapable@*":
   version "1.0.4"
@@ -6843,6 +6845,14 @@ create-react-class@^15.5.2, create-react-class@^15.5.3, create-react-class@^15.6
     loose-envify "^1.3.1"
     object-assign "^4.1.1"
 
+create-react-context@<=0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.2.2.tgz#9836542f9aaa22868cd7d4a6f82667df38019dca"
+  integrity sha512-KkpaLARMhsTsgp0d2NA/R94F/eDLbhXERdIq3LvX2biCAXcDvHYoOqHfWCHf1+OLj+HKBotLG3KqaOOf+C1C+A==
+  dependencies:
+    fbjs "^0.8.0"
+    gud "^1.0.0"
+
 create-react-context@^0.1.5:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/create-react-context/-/create-react-context-0.1.6.tgz#0f425931d907741127acc6e31acb4f9015dd9fdc"
@@ -7519,6 +7529,11 @@ deepcopy@^2.0.0:
   dependencies:
     type-detect "^4.0.8"
 
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
+
 default-gateway@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/default-gateway/-/default-gateway-4.2.0.tgz#167104c7500c2115f6dd69b0a536bb8ed720552b"
@@ -7959,7 +7974,7 @@ dot-prop@^4.1.0, dot-prop@^4.1.1:
   dependencies:
     is-obj "^1.0.0"
 
-dot-prop@^5.0.0, dot-prop@^5.1.0:
+dot-prop@^5.0.0, dot-prop@^5.1.0, dot-prop@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-5.2.0.tgz#c34ecc29556dc45f1f4c22697b6f4904e0cc4fcb"
   integrity sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
@@ -9229,7 +9244,7 @@ fbjs-css-vars@^1.0.0:
   resolved "https://registry.yarnpkg.com/fbjs-css-vars/-/fbjs-css-vars-1.0.2.tgz#216551136ae02fe255932c3ec8775f18e2c078b8"
   integrity sha512-b2XGFAFdWZWg0phtAWLHCk836A1Xann+I+Dgd3Gk64MHKZO44FfoD1KxyvbSh0qZsIoXQGGlVztIY+oitJPpRQ==
 
-fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.9:
+fbjs@^0.8.0, fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.9:
   version "0.8.17"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.17.tgz#c4d598ead6949112653d6588b01a5cdcd9f90fdd"
   integrity sha1-xNWY6taUkRJlPWWIsBpc3Nn5D90=
@@ -13877,7 +13892,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
@@ -15109,9 +15124,9 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.57.2"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.57.2.tgz#2bc9109ddf651297e9733478cb839f79efb44474"
-  integrity sha512-GuyZWrkgiNx8b7z9+n6SzMwWvgLOxJfCwedQqVyAKObsNjYLXOLAfjmf8bGHeGxyws8ERGJCjjX13qbXYebTBw==
+  version "7.58.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.58.0.tgz#f0b524e6a433250d6a111d7d1c6ea2ba17a51105"
+  integrity sha512-WIxhpe6I+woxXmUnoy1j7vVjIrhAt+awGel9r8q2pzKcRt92mdB3L9OgwErJjr6rifKG7tLTZA6CDA1jfSQwkw==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/foundation" "^7.4.4"
@@ -17868,10 +17883,34 @@ react-overlays@^2.0.0-0:
     uncontrollable "^7.0.0"
     warning "^4.0.3"
 
-react-popper@1.3.4, react-popper@^1.3.3:
+react-popper@1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.3.tgz#2c6cef7515a991256b4f0536cd4bdcb58a7b6af6"
+  integrity sha512-ynMZBPkXONPc5K4P5yFWgZx5JGAUIP3pGGLNs58cfAPgK67olx7fmLp+AdpZ0+GoQ+ieFDa/z4cdV6u7sioH6w==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    create-react-context "<=0.2.2"
+    popper.js "^1.14.4"
+    prop-types "^15.6.1"
+    typed-styles "^0.0.7"
+    warning "^4.0.2"
+
+react-popper@1.3.4:
   version "1.3.4"
   resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.4.tgz#f0cd3b0d30378e1f663b0d79bcc8614221652ced"
   integrity sha512-9AcQB29V+WrBKk6X7p0eojd1f25/oJajVdMZkywIoAV6Ag7hzE1Mhyeup2Q1QnvFRtGQFQvtqfhlEoDAPfKAVA==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    create-react-context "^0.3.0"
+    popper.js "^1.14.4"
+    prop-types "^15.6.1"
+    typed-styles "^0.0.7"
+    warning "^4.0.2"
+
+react-popper@^1.3.3:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-1.3.5.tgz#3a785f2a6271af59902a45ec9870180d26d2d9c1"
+  integrity sha512-Wi5WewcQ7O4fP4YArjWXY7JXRkDX+7sAjE9AeEahgPg6PdAHvQibek+nVqxO1lS8aX2v3iWzCC5Jgm3cuVfdCQ==
   dependencies:
     "@babel/runtime" "^7.1.2"
     create-react-context "^0.3.0"
