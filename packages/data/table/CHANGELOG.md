@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.36
+
+### Patch Changes
+
+- a4a7df8: Try with accentedSort
+
 ## 0.1.35
 
 ### Patch Changes

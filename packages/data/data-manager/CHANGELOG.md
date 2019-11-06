@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.31
+
+### Patch Changes
+
+- a4a7df8: Try with accentedSort
+- Updated dependencies [a4a7df8]
+  - @uidu/table@0.1.36
+
 ## 0.1.30
 
 ### Patch Changes
