@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "license": "MIT",
   "author": "uidu",
@@ -24,6 +24,6 @@
     "react-intl": "^3.1.7"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.36"
+    "@uidu/docs": "^0.1.37"
   }
 }

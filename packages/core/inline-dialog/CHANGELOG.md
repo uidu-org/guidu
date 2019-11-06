@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.1.5
+
+### Patch Changes
+
+- fbe7c4d: Data controls with drawer, better than both dropdown and inline-dialg solutions
+- fbe7c4d: Republish
+- Updated dependencies [fbe7c4d]
+- Updated dependencies [fbe7c4d]
+  - @uidu/docs@0.1.37
+
 ## 0.1.4
 
 ### Patch Changes

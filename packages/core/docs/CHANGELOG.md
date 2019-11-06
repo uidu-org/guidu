@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.37
+
+### Patch Changes
+
+- fbe7c4d: Data controls with drawer, better than both dropdown and inline-dialg solutions
+- fbe7c4d: Republish
+
 ## 0.1.36
 
 ### Patch Changes
