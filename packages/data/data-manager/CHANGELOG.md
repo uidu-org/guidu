@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.28
+
+### Patch Changes
+
+- 8363167: Types for data-columns
+- Updated dependencies [8363167]
+  - @uidu/table@0.1.32
+
 ## 0.1.27
 
 ### Patch Changes

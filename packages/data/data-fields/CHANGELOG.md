@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.7
+
+### Patch Changes
+
+- 8363167: Types for data-columns
+
 ## 0.1.6
 
 ### Patch Changes
