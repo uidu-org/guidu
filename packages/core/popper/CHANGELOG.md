@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.1.12
+
+### Patch Changes
+
+- 301d188: Changed how columns should be defined in data-manager
+
 ## 0.1.11
 
 ### Patch Changes
