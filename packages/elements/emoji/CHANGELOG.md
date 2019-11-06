@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.1.3
+
+### Patch Changes
+
+- 5adff07: Bump dependencies
+
 ## 0.1.2
 
 ### Patch Changes
