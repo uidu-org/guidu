@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.29
+
+### Patch Changes
+
+- 413b830: Changed how columns should be defined in data-manager
+- Updated dependencies [413b830]
+  - @uidu/data-controls@0.1.28
+  - @uidu/data-views@0.1.2
+  - @uidu/table@0.1.34
+
 ## 0.1.28
 
 ### Patch Changes

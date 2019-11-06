@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.8
+
+### Patch Changes
+
+- 413b830: Changed how columns should be defined in data-manager
+
 ## 0.1.7
 
 ### Patch Changes
