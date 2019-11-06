@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 0.2.0
+
+### Minor Changes
+
+- 360ae4e: Update data-controls to use columnDefs
+
+### Patch Changes
+
+- @uidu/table@0.1.35
+
 ## 0.1.28
 
 ### Patch Changes
