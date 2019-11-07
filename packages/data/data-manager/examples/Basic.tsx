@@ -40,6 +40,18 @@ const dataViews = [
     name: 'Galleria contatti',
     kind: 'gallery',
   },
+  {
+    id: 4,
+    name: 'Calendario contatti',
+    kind: 'calendar',
+    primaryField: 'createdAt',
+  },
+  {
+    id: 5,
+    name: 'Trello contatti',
+    primaryField: 'country',
+    kind: 'board',
+  },
 ];
 
 export default class Basic extends Component<any, any> {

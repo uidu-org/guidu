@@ -13,7 +13,6 @@ import {
 } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import Table from '@uidu/table';
-import { rollup } from 'd3-array';
 import moment from 'moment';
 import React, { Component } from 'react';
 import Media from 'react-media';
@@ -23,6 +22,49 @@ const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
 const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
 const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
+
+const Column = React.forwardRef<HTMLDivElement, any>((props, ref) => (
+  <div ref={ref}>
+    <div className="" {...props} />
+  </div>
+));
+
+const ColumnHeader = ({ title, items, ...rest }) => {
+  return (
+    <div
+      className="card-header px-0 bg-transparent border-bottom-0 d-flex align-items-center justify-content-between"
+      {...rest}
+    >
+      <div>
+        <span className="mr-2">{title}</span>
+        {/* <Badge>{items.length}</Badge> */}
+      </div>
+      {/* <div className="btn-group">
+        <button className="btn btn-sm p-2">
+          <Plus size={16} />
+        </button>
+        <button className="btn btn-sm p-2">
+          <MoreHorizontal size={16} />
+        </button>
+      </div> */}
+    </div>
+  );
+};
+
+const Item = ({ item, provided, ...rest }) => {
+  const { history } = item;
+  return (
+    <a
+      // to={item.data.id}
+      onClick={() => history.push(`/apps/calls/proposals/${item.data.id}`)}
+      className="card card-body bg-white mb-2"
+      ref={provided.innerRef}
+      {...rest}
+    >
+      {item.content}
+    </a>
+  );
+};
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -318,11 +360,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
                   }))}
                   startAccessor={item => moment(item.createdAt).toDate()}
                   titleAccessor={item => item.email}
-                  endAccessor={item =>
-                    moment(item.createdAt)
-                      .add(1, 'hour')
-                      .toDate()
-                  }
+                  // endAccessor={item =>
+                  //   moment(item.createdAt)
+                  //     .add(1, 'hour')
+                  //     .toDate()
+                  // }
                   columnDefs={columnDefs}
                   // toolbar={false}
                   components={{
@@ -338,44 +380,36 @@ export default class DataManager extends Component<DataManagerProps, any> {
     }
 
     if (currentView.kind === 'board') {
-      console.log(
-        Array.from(
-          rollup(rowData, item => item, item => item.id),
-          ([key, value]) => ({ key, value }),
-        ),
+      desktopView = (
+        <>
+          <LoadableBoard fallback={<ShellBodyWithSpinner />}>
+            {({ default: Board }) => {
+              return (
+                <Board
+                  {...viewProps.board}
+                  initial={rowData.reduce((res, item, index) => {
+                    console.log();
+                    const key = item[currentView.primaryField];
+                    if (res[key]) {
+                      res[key] = [...res[key], { ...item, content: item.id }];
+                    } else {
+                      res[key] = [{ ...item, content: item.id }];
+                    }
+                    return res;
+                  }, {})}
+                  onItemClick={onItemClick}
+                  components={{
+                    columnContainer: Column,
+                    columnHeader: ColumnHeader,
+                    item: Item,
+                  }}
+                />
+              );
+            }}
+          </LoadableBoard>
+          <div className="d-none">{table}</div>
+        </>
       );
-      desktopView = null;
-      // (
-      //   <>
-      //     <LoadableBoard fallback={<ShellBodyWithSpinner />}>
-      //       {({ default: Board }) => {
-      //         return (
-      //           <Board
-      //             {...viewProps.board}
-      //             initial={groups(rowData, item => item.id)}
-      //             onItemClick={onItemClick}
-      //             // events={data.map(datum => ({
-      //             //   data: datum.data,
-      //             // }))}
-      //             // startAccessor={item => moment(item.createdAt).toDate()}
-      //             // titleAccessor={item => item.email}
-      //             // endAccessor={item =>
-      //             //   moment(item.createdAt)
-      //             //     .add(1, 'hour')
-      //             //     .toDate()
-      //             // }
-      //             // columnDefs={columnDefs}
-      //             // // toolbar={false}
-      //             // components={{
-      //             //   toolbar: CalendarToolbar,
-      //             // }}
-      //           />
-      //         );
-      //       }}
-      //     </LoadableBoard>
-      //     <div className="d-none">{table}</div>
-      //   </>
-      // );
     }
 
     if (currentView.kind === 'gallery') {

@@ -65,6 +65,7 @@ export default class CalendarView extends Component<any> {
         <DropdownItemGroup>
           {views.map(calendarView => (
             <DropdownItem
+              key={calendarView.id}
               onClick={e => {
                 e.preventDefault();
                 onView(calendarView);

@@ -25,7 +25,7 @@ export default class CalendarNavigator extends Component<any> {
         <Trigger
           activeBg="#d0f0fd"
           className="btn justify-content-center"
-          style={{ width: 120 }}
+          // style={{ width: 120 }}
         >
           <Calendar strokeWidth={2} size={14} className="mr-2 flex-shrink-0" />
           <span style={{ textTransform: 'initial' }} className="text-truncate">

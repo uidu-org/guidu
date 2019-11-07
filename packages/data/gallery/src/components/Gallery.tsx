@@ -68,8 +68,10 @@ export default class Gallery extends PureComponent<GalleryProps> {
       gutterSize,
       onItemClick,
     } = this.props;
-    const visibleColumnDefs = columnDefs.filter(c => !c.hide && !c.pinned);
-    const items = this.chunkData(rowData, columnCount);
+    const visibleColumnDefs = columnDefs.filter(
+      c => !c.hide && !c.pinned && !c.rowGroup,
+    );
+    const items = this.chunkData(rowData.filter(d => !!d.data), columnCount);
 
     const primary = getPrimary(columnDefs);
     const cover = getCover(visibleColumnDefs);
