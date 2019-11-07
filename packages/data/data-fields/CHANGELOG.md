@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.10
+
+### Patch Changes
+
+- b678f11: Work on filters and sorters, tried grouping to see how it work
+
 ## 0.1.9
 
 ### Patch Changes
