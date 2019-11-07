@@ -13439,9 +13439,9 @@ log-update@^2.3.0:
     wrap-ansi "^3.0.1"
 
 loglevel@^1.6.4:
-  version "1.6.4"
-  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.4.tgz#f408f4f006db8354d0577dcf6d33485b3cb90d56"
-  integrity sha512-p0b6mOGKcGa+7nnmKbpzR6qloPbrgLcnio++E+14Vo/XffOGwZtRpUhr8dTH/x2oCMmEoIU0Zwm3ZauhvYD17g==
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.6.tgz#0ee6300cc058db6b3551fa1c4bf73b83bb771312"
+  integrity sha512-Sgr5lbboAUBo3eXCSPL4/KoVz3ROKquOjcctxmHIt+vol2DrqTQe3SwkKKuYhEiWB5kYa13YyopJ69deJ1irzQ==
 
 lolex@^4.1.0, lolex@^4.2.0:
   version "4.2.0"
@@ -15223,9 +15223,9 @@ ora@^3.4.0:
     wcwidth "^1.0.1"
 
 orderedmap@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/orderedmap/-/orderedmap-1.0.0.tgz#d90fc2ba1ed085190907d601dec6e6a53f8d41ba"
-  integrity sha1-2Q/Cuh7QhRkJB9YB3sbmpT+NQbo=
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/orderedmap/-/orderedmap-1.1.0.tgz#dc41a147130b51e203e8523ea5ea57724af2b63d"
+  integrity sha512-abUlPCcmyI/17BWWoUWeAbnniTFUZuczP6iowD9XMBcUoD9jRtUO6w+KXkw64TDk+iHdyDfTAjIH7mTRzhXcaw==
 
 original@^1.0.0:
   version "1.0.2"
@@ -16999,9 +16999,9 @@ prosemirror-utils@^0.9.2:
   integrity sha512-UC+j9hQQ1POYfMc5p7UFxBTptRiGPR7Kkmbl3jVvU8VgQbkI89tR/GK+3QYC8n+VvBZrtAoCrJItNhWSxX3slA==
 
 prosemirror-view@^1.0.0, prosemirror-view@^1.9.10:
-  version "1.12.2"
-  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.12.2.tgz#f8753a3bb2b9571733f5c695cb846b02e6000ce0"
-  integrity sha512-Evxcy4r4H7zrhreFYgMI1C3/hhX3nbj2MQWzKYpY9NbAu/avySaz43f/POWkHULMr3IS//VH+hNmBS7u825fJA==
+  version "1.12.3"
+  resolved "https://registry.yarnpkg.com/prosemirror-view/-/prosemirror-view-1.12.3.tgz#9b1d260e88166b2b54ddf45c29108087cb876161"
+  integrity sha512-COsidBrMfC1+rlMc129ZFl3ysHpYWIb2X5oeRh4lyEd5rzu0NNTf2ZFzm5OE9cJXuGYXldy5Af8qKvlHHKyXJA==
   dependencies:
     prosemirror-model "^1.1.0"
     prosemirror-state "^1.0.0"
