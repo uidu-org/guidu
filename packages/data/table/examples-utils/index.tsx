@@ -20,12 +20,15 @@ export const availableColumns = [
   },
   {
     dataField: 'member',
-    dataFieldParams: { avatar: data => data.avatar },
+    dataFieldParams: {
+      avatar: data => (data ? data.avatar : null),
+    },
     colId: 'member',
     primary: true,
     headerName: 'Donor',
-    valueGetter: ({ data }) => {
-      return data.member.email;
+    field: 'member',
+    valueGetter: props => {
+      return props.data ? props.data.member.email : '-';
     },
   },
   {
@@ -39,21 +42,24 @@ export const availableColumns = [
     colId: 'amount',
     field: 'amount',
     headerName: 'Donation amount',
-    valueGetter: ({ data }) => numeral(data.amount).format('$ 0,0.00'),
+    aggFunc: 'sum',
+    // enableValue: true,
+    valueGetter: props => {
+      return props.data ? numeral(props.data.amount).format('$ 0,0.00') : null;
+    },
   },
-  // {
-  //   colId: 'value',
-  //   field: 'value',
-  //   headerName: 'Valore',
-  //   ...defaultColumn(),
-  //   ...currencyColumn(),
-  //   valueFormatter: ({ value }) => `€ ${value}`,
-  // },
+  {
+    dataField: 'country',
+    field: 'country',
+    headerName: 'Country',
+    rowGroup: true,
+  },
   {
     dataField: 'percent',
     colId: 'percent',
+    field: 'percent',
     headerName: 'Percentuale',
-    valueGetter: ({ data }) => numeral(data.percent / 100).format('% 0'),
+    // valueGetter: ({ data }) => numeral(data.percent / 100).format('% 0'),
   },
   {
     dataField: 'date',
@@ -73,7 +79,7 @@ export const availableColumns = [
       options: [
         { id: 'male', name: 'Maschio', color: 'turquoise' },
         { id: 'female', name: 'Femmina', color: 'yellow' },
-        { id: null, name: 'Unknown', },
+        { id: null, name: 'Unknown' },
       ],
     },
     colId: 'gender',
@@ -194,6 +200,7 @@ export const fetchContacts = () => {
           cover:
             'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
           amount: faker.commerce.price(),
+          country: faker.address.country(),
           percent: faker.random.number(),
           createdAt: faker.date.past(),
           updatedAt: faker.date.recent(),

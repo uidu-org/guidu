@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV === 'development') {
+  console.log('importing grid-enterprise');
+  import('ag-grid-enterprise');
+}
 import { AgGridReact } from 'ag-grid-react';
 import React, { useState } from 'react';
 import CustomHeader from './headers';
@@ -16,6 +20,10 @@ const Table = ({ theme = 'balham', columnDefs, rowData, ...otherProps }) => {
     <div className={`ag-theme-${theme} h-100${className}`}>
       <AgGridReact
         // ref={innerRef}
+        // enterprise features
+        groupDefaultExpanded={-1}
+        groupUseEntireRow
+        // community features
         componentWrappingElement="div"
         columnDefs={columnDefs}
         rowData={rowData}

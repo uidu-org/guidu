@@ -37,8 +37,11 @@ export default class Sorter extends Component<SorterProps, any> {
           active={!!sortersCount}
           onClick={() => this.setState({ dialogOpen: true })}
         >
-          <Sliders strokeWidth={2} size={14} className="mr-2" />
-          <span style={{ textTransform: 'initial' }}>
+          <Sliders strokeWidth={2} size={14} className="mr-xl-2" />
+          <span
+            style={{ textTransform: 'initial' }}
+            className="d-none d-xl-block"
+          >
             <FormattedMessage
               id="guidu.data_controls.sorter.label"
               defaultMessage={`{sortersCount, plural,

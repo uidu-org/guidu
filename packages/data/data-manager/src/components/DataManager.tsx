@@ -87,7 +87,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       columnDefs: props.columnDefs,
       data: [],
       sorters: [],
-      filters: [],
+      filterModel: {},
       groupers: [],
       rowHeight: 64,
     };
@@ -103,6 +103,22 @@ export default class DataManager extends Component<DataManagerProps, any> {
     this.gridApi = api;
     this.gridColumnApi = columnApi;
     this.resizeTable();
+
+    // setTimeout(() => {
+    //   const amountFilterComponent = api.getFilterInstance('displayName');
+    //   amountFilterComponent.setModel({
+    //     filterType: 'text',
+    //     type: 'contains',
+    //     filter: 'al',
+    //   });
+    //   const donorFilterComponent = api.getFilterInstance('member');
+    //   donorFilterComponent.setModel({
+    //     filterType: 'text',
+    //     type: 'contains',
+    //     filter: '@yahoo.com',
+    //   });
+    //   api.onFilterChanged();
+    // }, 5000);
 
     this.setState(
       {
@@ -163,34 +179,48 @@ export default class DataManager extends Component<DataManagerProps, any> {
     });
   };
 
-  setFilters = async () => console.log;
+  setFilterModel = async () => console.log;
 
   setGroupers = groupers => {
     this.setState({ groupers });
+  };
+
+  onFilterChanged = ({ api }) => {
+    const filterModel = api.getFilterModel();
+    this.setState({
+      data: api.getModel().rowsToDisplay,
+      filterModel,
+    });
   };
 
   onSortChanged = ({ api }) => {
     const sortModel = api.getSortModel();
     this.setState({
       data: api.getModel().rowsToDisplay,
-      // sorters: sortModel,
+      sorters: sortModel,
     });
   };
 
-  onFilterChanged = ({ api }) => {
-    this.setState({
-      data: api.getModel().rowsToDisplay,
-      // filters: sortModel,
-    });
+  addSorter = sorter => {
+    this.setState(prevState => ({
+      sorters: [...prevState.sorters, sorter],
+    }));
+  };
+
+  removeSorter = ({ colId }) => {
+    this.setState(
+      prevState => ({
+        sorters: prevState.sorters.filter(sorter => sorter.colId !== colId),
+      }),
+      () => {
+        this.gridApi.setSortModel(this.state.sorters);
+      },
+    );
   };
 
   setSorters = sorters => {
-    this.setState({ sorters });
-    const sortModel = sorters.map(sorter => ({
-      sort: sorter.sort.id,
-      colId: sorter.colId.colId,
-    }));
-    this.gridApi.setSortModel(sortModel);
+    // this.setState({ sorters });
+    this.gridApi.setSortModel(sorters);
   };
 
   setSearch = e => {
@@ -392,7 +422,13 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   renderControls = ({ controls }) => {
     const { currentView, dataViews, onViewChange, onViewAdd } = this.props;
-    const { sorters, filters, groupers, columnDefs, rowHeight } = this.state;
+    const {
+      sorters,
+      filterModel,
+      groupers,
+      columnDefs,
+      rowHeight,
+    } = this.state;
 
     const availableControls = {
       ...defaultAvailableControls,
@@ -421,8 +457,8 @@ export default class DataManager extends Component<DataManagerProps, any> {
             columnDefs={columnDefs.filter(
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}
-            onChange={this.setFilters}
-            filters={filters}
+            onChange={this.setFilterModel}
+            filterModel={filterModel}
             {...availableControls.filterer.props}
           />
         )}
@@ -440,6 +476,8 @@ export default class DataManager extends Component<DataManagerProps, any> {
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}
             onChange={this.setSorters}
+            addSorter={this.addSorter}
+            removeSorter={this.removeSorter}
             sorters={sorters}
             {...availableControls.sorter.props}
           />

@@ -8,6 +8,6 @@ export default ({ format = 'L' }) => ({
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: dateField.icon },
   valueFormatter: ({ value }) => moment(value).format(format),
-  cellClass: 'justify-content-center',
-  headerClass: 'text-center',
+  // cellClass: 'justify-content-center',
+  // headerClass: 'text-center',
 });

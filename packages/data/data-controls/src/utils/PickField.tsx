@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ChevronDown } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 
 export default class PickField extends Component<any, any> {
   static defaultProps = {
@@ -33,12 +34,15 @@ export default class PickField extends Component<any, any> {
             .map(columnDef => (
               <a
                 href="#"
-                className="list-group-item list-group-item-action px-3 px-xl-4"
+                className={`list-group-item list-group-item-action px-3 px-xl-4 d-flex align-items-center${
+                  columnDef.hide ? ' disabled' : ''
+                }`}
                 key={columnDef.colId}
                 onClick={e => {
                   e.preventDefault();
                   this.setState({ isOpen: false }, () => onClick(columnDef));
                 }}
+                {...(columnDef.hide ? { 'aria-disabled': true } : {})}
               >
                 {columnDef.headerComponentParams && (
                   <span
@@ -48,7 +52,17 @@ export default class PickField extends Component<any, any> {
                     {columnDef.headerComponentParams.menuIcon}
                   </span>
                 )}
-                {columnDef.headerName}
+                <div className="text-truncate flex-grow-1">
+                  {columnDef.headerName}
+                </div>
+                {columnDef.hide && (
+                  <span className="ml-auto small text-muted">
+                    <FormattedMessage
+                      defaultMessage="Hidden"
+                      id="guidu.data-controls.pickField.hidden"
+                    />
+                  </span>
+                )}
               </a>
             ))}
       </>

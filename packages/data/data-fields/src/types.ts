@@ -4,4 +4,5 @@ export type Field = {
   icon: React.ReactNode;
   description?: React.ReactNode;
   form?: React.FC<any>;
+  filterForm?: React.FC<any>;
 };

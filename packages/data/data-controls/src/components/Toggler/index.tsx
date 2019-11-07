@@ -28,8 +28,11 @@ export default class Toggler extends Component<TogglerProps, any> {
           className="btn mr-2"
           onClick={() => this.setState({ dialogOpen: true })}
         >
-          <Columns strokeWidth={2} size={14} className="mr-2" />
-          <span style={{ textTransform: 'initial' }}>
+          <Columns strokeWidth={2} size={14} className="mr-xl-2" />
+          <span
+            style={{ textTransform: 'initial' }}
+            className="d-none d-xl-block"
+          >
             <FormattedMessage
               id="guidu.data_controls.sorter.label"
               defaultMessage={`{hiddenCount, plural,

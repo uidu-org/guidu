@@ -1,18 +1,15 @@
 import { Column } from '@uidu/table';
 
 export type Sort = {
-  colId: {
-    colId: string;
-  };
+  colId: string;
   index: number;
-  sort: {
-    id: 'asc' | 'desc';
-    name: 'asc' | 'desc';
-  };
+  sort: 'asc' | 'desc';
 };
 
 export type SorterProps = {
   onChange: (sorters: Array<Sort>) => void;
+  addSorter: (sorter: Sort) => void;
+  removeSorter: (sorter: Sort) => void;
   sorters: Array<Sort>;
   columnDefs: Column[];
 };

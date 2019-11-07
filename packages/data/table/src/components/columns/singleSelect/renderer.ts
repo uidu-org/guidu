@@ -1,4 +1,7 @@
 export default params => {
+  if (!params) {
+    return '-';
+  }
   return `
     <div style="min-width: 0; display: flex;">
       <span
