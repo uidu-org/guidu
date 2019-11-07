@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.1
+
+### Patch Changes
+
+- b678f11: Work on filters and sorters, tried grouping to see how it work
+- Updated dependencies [b678f11]
+  - @uidu/table@0.1.39
+
 ## 0.2.0
 
 ### Minor Changes
