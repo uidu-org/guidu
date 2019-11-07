@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.38
+
+### Patch Changes
+
+- 8c1dd8a: Make CellRenderers to work for List view too
+- Updated dependencies [8c1dd8a]
+  - @uidu/data-fields@0.1.9
+
 ## 0.1.37
 
 ### Patch Changes
