@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.33
+
+### Patch Changes
+
+- 37e00f2: Add some more fixing to data packages
+- Updated dependencies [37e00f2]
+  - @uidu/data-controls@0.2.2
+  - @uidu/data-views@0.1.3
+  - @uidu/gallery@0.1.18
+
 ## 0.1.32
 
 ### Patch Changes

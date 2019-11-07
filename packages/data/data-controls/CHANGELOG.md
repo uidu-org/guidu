@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.2
+
+### Patch Changes
+
+- 37e00f2: Add some more fixing to data packages
+- Updated dependencies [37e00f2]
+  - @uidu/data-views@0.1.3
+
 ## 0.2.1
 
 ### Patch Changes
