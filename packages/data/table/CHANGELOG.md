@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.37
+
+### Patch Changes
+
+- 4f0e13d: Added some more column renderers
+
 ## 0.1.36
 
 ### Patch Changes
