@@ -89,7 +89,7 @@ export const buildColumn = ({
   return {
     ...defaultColumn(),
     ...(primary ? { ...primaryColumn() } : {}),
-    ...(dataField ? { ...getColumnType(dataField, dataFieldParams) } : {}),
+    ...(dataField ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) } : {}),
     ...column,
   };
 };

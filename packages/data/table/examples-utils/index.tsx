@@ -1,6 +1,5 @@
 import faker from 'faker';
 import numeral from 'numeral';
-import React from 'react';
 
 export const availableColumns = [
   {
@@ -34,12 +33,6 @@ export const availableColumns = [
     colId: 'displayName',
     field: 'displayName',
     headerName: 'FullName',
-    valueGetter: ({ data }) => data.displayName,
-    cellRendererFramework: ({ data }) => (
-      <div>
-        <h1>{data.displayName}</h1>
-      </div>
-    ),
   },
   {
     dataField: 'currency',
@@ -75,6 +68,19 @@ export const availableColumns = [
     headerName: 'Ultimo aggiornamento',
   },
   {
+    dataField: 'singleSelect',
+    dataFieldParams: {
+      options: [
+        { id: 'male', name: 'Maschio', color: 'turquoise' },
+        { id: 'female', name: 'Femmina', color: 'yellow' },
+        { id: null, name: 'Unknown', },
+      ],
+    },
+    colId: 'gender',
+    field: 'gender',
+    headerName: 'Genere',
+  },
+  {
     dataField: 'string',
     colId: 'firstName',
     field: 'firstName',
@@ -93,18 +99,6 @@ export const availableColumns = [
   //   headerName: 'Età',
   //   ...defaultColumn(),
   //   ...numberColumn(),
-  // },
-  // {
-  //   colId: 'gender',
-  //   field: 'gender',
-  //   headerName: 'Genere',
-  //   ...defaultColumn(),
-  //   ...singleSelectColumn({
-  //     options: [
-  //       { id: 'male', name: 'Maschio' },
-  //       { id: 'female', name: 'Femmina' },
-  //     ],
-  //   }),
   // },
   // {
   //   colId: 'role',
@@ -146,13 +140,12 @@ export const availableColumns = [
   //   ...defaultColumn(),
   //   ...addressColumn(),
   // },
-  // {
-  //   colId: 'phone',
-  //   field: 'phone',
-  //   headerName: 'Telefono',
-  //   ...defaultColumn(),
-  //   ...phoneColumn(),
-  // },
+  {
+    dataField: 'phone',
+    colId: 'phone',
+    field: 'phone',
+    headerName: 'Telefono',
+  },
   // {
   //   colId: 'progress',
   //   field: 'progress',
@@ -207,9 +200,10 @@ export const fetchContacts = () => {
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
           age: faker.random.number(),
-          gender: 'female',
+          gender: ['male', 'female', null][Math.floor(Math.random() * 3)],
           role: 'admin',
           member: faker.helpers.userCard(),
+          phone: faker.phone.phoneNumber(),
           progress: Math.random(),
         })),
       );
