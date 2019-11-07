@@ -89,7 +89,9 @@ export const buildColumn = ({
   return {
     ...defaultColumn(),
     ...(primary ? { ...primaryColumn() } : {}),
-    ...(dataField ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) } : {}),
+    ...(dataField
+      ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
+      : {}),
     ...column,
   };
 };
@@ -101,6 +103,7 @@ export const valueRenderer = (data, column) => {
   const {
     field,
     cellRenderer: Renderer,
+    cellRendererParams,
     cellRendererFramework: RendererFramework,
     valueFormatter,
     valueGetter,
@@ -113,6 +116,16 @@ export const valueRenderer = (data, column) => {
 
   if (!value) {
     return '-';
+  }
+
+  if (Renderer) {
+    return (
+      <div
+        dangerouslySetInnerHTML={{
+          __html: Renderer({ value, data, ...cellRendererParams }),
+        }}
+      />
+    );
   }
 
   if (RendererFramework) {

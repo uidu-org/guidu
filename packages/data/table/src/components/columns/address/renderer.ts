@@ -1,10 +1,6 @@
-function AddressCellRenderer() {}
-
-AddressCellRenderer.prototype.init = function(params) {
+export default params => {
   // create the cell
-  this.eGui = document.createElement('div');
-  this.eGui.style = 'min-width: 0;';
-  this.eGui.innerHTML = `
+  return `
     <span class="d-flex align-items-center justify-content-between">
       <span class="flex-grow-1 text-truncate">${params.value || '-'}</span>
       ${
@@ -19,16 +15,3 @@ AddressCellRenderer.prototype.init = function(params) {
     </span>
   `;
 };
-
-// gets called once when grid ready to insert the element
-AddressCellRenderer.prototype.getGui = function() {
-  return this.eGui;
-};
-
-// gets called whenever the user gets the cell to refresh
-AddressCellRenderer.prototype.refresh = function() {
-  // return true to tell the grid we refreshed successfully
-  return true;
-};
-
-export default AddressCellRenderer;
