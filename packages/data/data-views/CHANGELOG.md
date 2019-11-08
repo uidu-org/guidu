@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.1.3
+
+### Patch Changes
+
+- 37e00f2: Add some more fixing to data packages
+
 ## 0.1.2
 
 ### Patch Changes

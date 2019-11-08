@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.18
+
+### Patch Changes
+
+- 37e00f2: Add some more fixing to data packages
+
 ## 0.1.17
 
 ### Patch Changes
