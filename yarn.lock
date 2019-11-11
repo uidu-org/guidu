@@ -1105,7 +1105,7 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.3":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5", "@babel/runtime@^7.2.0", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.0", "@babel/runtime@^7.4.2", "@babel/runtime@^7.4.4", "@babel/runtime@^7.4.5", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.0", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2":
   version "7.7.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.2.tgz#111a78002a5c25fc8e3361bedc9529c696b85a6a"
   integrity sha512-JONRbXbTXc9WQE2mAZd1p0Z3DZ/6vaQIkgYMSTP3KjRCyd7rCZCcfhCyX+YjwcKxcZ82UrxbRD358bpExNgrjw==
@@ -1465,9 +1465,9 @@
     "@formatjs/intl-utils" "^1.4.0"
 
 "@formatjs/intl-unified-numberformat@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl-unified-numberformat/-/intl-unified-numberformat-2.1.1.tgz#b78fd03e9d0b27b64dbdd407b193fda832937056"
-  integrity sha512-iNahBXCNsDs72FAFcCfNedoeW/FhRUBc4MVStMJNC0AtiC3p6oObJzubULzHA1/rc1BoV2lcrEWHs0S0+adUVw==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl-unified-numberformat/-/intl-unified-numberformat-2.1.2.tgz#1a2f64d81ac27e29bf1125aa3d16928317c020e8"
+  integrity sha512-tdkO0vYt+2MhBr299P8KIUSaI6HLIsLtInWonwkAqF+ofgk/yO3NhpfIweJiHi7ecyW2xRcDBmKbGvAVY/wlGg==
   dependencies:
     "@formatjs/intl-utils" "^1.4.0"
 
@@ -1477,9 +1477,9 @@
   integrity sha512-z5HyJumGzORM+5SpvkAlp/hu0AHDeZcUNKSmj9NjS7kWxOGZMuAdS3X1K5XiE0j5I8r8s8SIaz0IQOdMA1WFeA==
 
 "@formatjs/macro@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@formatjs/macro/-/macro-0.2.1.tgz#1ef3e424c77f8f9b74ffd0ff3b33ebd4a76e8c0f"
-  integrity sha512-Ywvzqkd3yvRVneRJsGD9i+bUK5fB6dxO0fjLlSbqq0Y/TeM2+Ty787p3p98313ECrBv4K/usVehuEfGdhjD20g==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@formatjs/macro/-/macro-0.2.2.tgz#10e1c201638bc43885e2a8bbe0a7c01899e109fb"
+  integrity sha512-LijAHSCH+v/hEQskWDbDUEPF1EXUIENJ0csbtlZ/X0edDWuXb2PVTzqqIDXSesgtddxViBhZ4SarSYsehsG97g==
 
 "@fortawesome/fontawesome-common-types@^0.2.25":
   version "0.2.25"
@@ -1699,11 +1699,11 @@
     glob-to-regexp "^0.3.0"
 
 "@netlify/build@^0.1.7":
-  version "0.1.13"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.13.tgz#501bb589e7bace2633b0a084492b3edc824a0292"
-  integrity sha512-dhiOIh3vC+gnCFw8VQj9FEIbYpuZMpi8YzsIfQYX+IaOJ46eglC0cvGaN2NTOeFGvqTK/s3wV0+nAMKhpe4gnA==
+  version "0.1.14"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.14.tgz#7e95da798755aab35df9a4b21779de0f2b9e44d7"
+  integrity sha512-c3sQfvGxYlrYlcd5vlwJNF8p4LEqIGSNNgaj87Nj2+VcZCzRCQK8l/MqqnlJU/Z7w8IuLBnwcqSAF5sCyQkOVQ==
   dependencies:
-    "@netlify/config" "^0.1.6"
+    "@netlify/config" "^0.1.7"
     "@netlify/zip-it-and-ship-it" "^0.4.0-7"
     ajv "^6.10.2"
     analytics "0.3.0"
@@ -1734,19 +1734,24 @@
     redact-env "^0.2.0"
     replacestream "^4.0.3"
     resolve "^1.12.0"
+    string-width "^4.1.0"
     strip-ansi "^5.2.0"
     unixify "^1.0.0"
     yargs "^14.2.0"
 
-"@netlify/config@^0.1.1", "@netlify/config@^0.1.6":
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.6.tgz#840ccea7cd707d93399920e4f934b3789583ef64"
-  integrity sha512-Fnhx8UagSxgNNL/9FRbgksEeGCKrJAUh1Bztgyck1qbSLTqd/Y9d5gXz0rUWHjV53YUN3w5hw7KEOfljfgQaVg==
+"@netlify/config@^0.1.1", "@netlify/config@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.1.7.tgz#056e89cfe2abbadceed2123c980776def8a07f70"
+  integrity sha512-qg3pKzzyxYe6F2hExp7Akv9wJoGLw5zZ9bMv9duAzUkVqyAI/Gcv1ymYi4kkP0cop/92lJ70MzBkfHuexgpvWw==
   dependencies:
+    chalk "^2.4.2"
     configorama "^0.3.6"
     deepmerge "^4.2.2"
     dot-prop "^5.2.0"
     find-up "^4.1.0"
+    indent-string "^4.0.0"
+    is-plain-obj "^2.0.0"
+    js-yaml "^3.13.1"
     make-dir "^3.0.0"
     map-obj "^4.1.0"
     path-exists "^4.0.0"
@@ -3233,20 +3238,20 @@ adf-builder@^3.3.0:
   resolved "https://registry.yarnpkg.com/adf-builder/-/adf-builder-3.3.0.tgz#23d69266486b403727f130ae2217a262f7be78a5"
   integrity sha512-zl5Sk2HtJk/E+gBnD0g51w5wIEEujaAbzsBhSsteO8Fnef7v+7pvas0FeQuLCAgOxrwy945HWAB1gQ4yjPI3/g==
 
-ag-grid-community@^21.0.0:
-  version "21.2.2"
-  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-21.2.2.tgz#a5696a303fa04d03d26e4c9e09e114d308ff4ad4"
-  integrity sha512-x8kQmynYM/7zoigs7wIe7DkK1TIlUP5N1TYrGPsK8vO2gN+rqOok9csGPy4YamggWTcSxpy7wji/Kcz/gUp8/w==
+ag-grid-community@^22.0.0:
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-community/-/ag-grid-community-22.0.0.tgz#85e612804d6c8a455952b50539c9736b0f7f33b2"
+  integrity sha512-kxeJr+zkZIJuE1HLHLYclklaFZtffBIE9A2feZQHf3OcHj0csb+VYfCaigTAoiAqQxEQZshFVfZ8R4T34pqoig==
 
-ag-grid-enterprise@^21.2.2:
-  version "21.2.2"
-  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-21.2.2.tgz#9e32b6cee5a13e644c9b174f245c96ff63b7b37b"
-  integrity sha512-tmJh9bjSuAFg4CtQ+o+ygl/uXqPZg13p+heR73DxT20WhkA+/WYljQRBzyNyjs4C1GbdkPqWj9pSIu2klOU6Bw==
+ag-grid-enterprise@^22.0.0:
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-enterprise/-/ag-grid-enterprise-22.0.0.tgz#05625c4478650f4c9d212aa3aa85bb80c0c23ff2"
+  integrity sha512-FQ0tE3kbgS4Ukwx4xUVCqDYXGWCxjGMOX8IMwsUxYyky3z77sOM64Yv8WN07Tp8r1jfflsmh+vu99FAkEsHRww==
 
-ag-grid-react@^21.0.0:
-  version "21.2.2"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-21.2.2.tgz#55f19eb3bb14a3beddd642adb0bb03da1249ae59"
-  integrity sha512-QlTtLMsBgLMPzqP95KoOUxXfCwVoYpLOF0uiZeVouHXUR/WxZXlsgtcyOPueKwDGWKBQ+qxB0+3JV5q+mSrPXw==
+ag-grid-react@^22.0.0:
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-22.0.0.tgz#ae943ba782aff6fa3bd4117dc23ce4d7c73bbd03"
+  integrity sha512-KJOzx3avo3BWLBR4sRljEHEl55bmjaChH5ksgrp6GjGp9JEY6cGjrGJ75SVifZEKCn44U+PVvugLRpL+s4f2cQ==
   dependencies:
     prop-types "^15.6.2"
 
@@ -5715,7 +5720,7 @@ chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^3.0.0-beta.2:
+chalk@^3.0.0, chalk@^3.0.0-beta.2:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-3.0.0.tgz#3f73c2bf526591f574cc492c51e2456349f844e4"
   integrity sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
@@ -11474,9 +11479,9 @@ intl-messageformat-parser@^3.2.2:
   integrity sha512-ax9639ST77YimAddTH/0Q9qhXuYS8ZVsoqOZinqnS90MbXaNuIq+KIdifaIndwI+lMEv3o+qNaGycXYvlh17rw==
 
 intl-messageformat@^7.5.1:
-  version "7.5.1"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-7.5.1.tgz#998b357835b2234a7e2aff5b8c374dc2909ae925"
-  integrity sha512-XY9fEuSY5Y89YGBSSh6J6aS56d+Rp0octkXMrBU/HUCX0o8/jX4DCBwPJRHTswl4HqvqmpF0R8D6fAxni352Lg==
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-7.5.2.tgz#5258b7ec43adbdf7c9b3e79252dd68b5f40998b6"
+  integrity sha512-/aJQw9i7qFnLLW0wizIY97P/ronaS9vIH1K1rabTR76OgOYNhC791JSJAowiFxNzWvClXFd5iQmRKxXgYO/yNw==
   dependencies:
     intl-format-cache "^4.2.6"
     intl-messageformat-parser "^3.2.2"
@@ -17522,11 +17527,11 @@ react-error-overlay@^6.0.3:
   integrity sha512-bOUvMWFQVk5oz8Ded9Xb7WVdEi3QGLC8tH7HmYP0Fdp4Bn3qw0tRFmr5TW6mvahzvmrK4a6bqWGfCevBflP+Xw==
 
 react-facebook@^8.0.4:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/react-facebook/-/react-facebook-8.0.4.tgz#751e3014cc3a90131400ff24b1c4673bd042722e"
-  integrity sha512-Uka4acqxPTBUeH6NGx9ReJyi2WTkyN9vqURH5766tBLyP8h98fCneE43/S8Kd2uupNCgWHn3yse9MTw1udRNdw==
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/react-facebook/-/react-facebook-8.1.2.tgz#283c5c996a82e243a3688d527c64f1324f8e8349"
+  integrity sha512-VnuDCz1zO8h7ggoDSaj10RbtSVxxRSeQYDtYuu8a5GeEf/ptDdZiBf0GRug7/ehVswm+qJWptCvlA2HM0dI/Dg==
   dependencies:
-    "@babel/runtime" "^7.4.2"
+    "@babel/runtime" "^7.7.2"
     can-use-dom "^0.1.0"
     react-spinner-children "^1.0.8"
 

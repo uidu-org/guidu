@@ -27,7 +27,6 @@ const Table = ({ theme = 'balham', columnDefs, rowData, ...otherProps }) => {
         componentWrappingElement="div"
         columnDefs={columnDefs}
         rowData={rowData}
-        reactNext
         animateRows
         defaultColDef={{
           resizable: true,

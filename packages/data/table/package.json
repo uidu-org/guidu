@@ -21,9 +21,9 @@
     "@uidu/item": "^0.1.18",
     "@uidu/lozenge": "^0.1.14",
     "@uidu/shell": "^0.1.31",
-    "ag-grid-community": "^21.0.0",
-    "ag-grid-enterprise": "^21.2.2",
-    "ag-grid-react": "^21.0.0",
+    "ag-grid-community": "^22.0.0",
+    "ag-grid-enterprise": "^22.0.0",
+    "ag-grid-react": "^22.0.0",
     "react-day-picker": "^7.3.2",
     "react-intl": "^3.1.7"
   },

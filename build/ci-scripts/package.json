@@ -16,7 +16,7 @@
     "adf-builder": "^3.3.0",
     "axios": "^0.19.0",
     "bolt-webpack-analyzer": "^0.0.1",
-    "chalk": "^2.4.2",
+    "chalk": "^3.0.0",
     "npm-run": "^5.0.1",
     "p-wait-for": "^3.1.0",
     "s3-cli": "^0.13.0",
