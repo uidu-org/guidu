@@ -222,7 +222,7 @@ export default class Providers extends PureComponent<any, any> {
               />
               <AnimateHeight
                 height={exist ? 'auto' : 0}
-                onAnimationStart={({ newHeight }) => console.log(newHeight)}
+                // onAnimationStart={({ newHeight }) => console.log(newHeight)}
                 onAnimationEnd={() => {
                   this.slider.current.mySlider.updateAutoHeight(300, false);
                   // this.slider.current.mySlider.updateAutoHeight(500);
