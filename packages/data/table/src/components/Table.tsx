@@ -6,7 +6,14 @@ import { AgGridReact } from 'ag-grid-react';
 import React, { useState } from 'react';
 import CustomHeader from './headers';
 
-const Table = ({ theme = 'balham', columnDefs, rowData, ...otherProps }) => {
+const Table = ({
+  theme = 'uidu',
+  columnDefs,
+  rowData,
+  onAddField = () => {},
+  rowHeight = 32,
+  ...otherProps
+}) => {
   const [scrolled, setScrolled] = useState({ left: 0, top: 0 });
   let className = '';
   if (scrolled.left > 0) {
@@ -24,45 +31,48 @@ const Table = ({ theme = 'balham', columnDefs, rowData, ...otherProps }) => {
         groupDefaultExpanded={-1}
         groupUseEntireRow
         // community features
-        componentWrappingElement="div"
+        componentWrappingElement="span"
         columnDefs={columnDefs}
         rowData={rowData}
         animateRows
         defaultColDef={{
           resizable: true,
           sortable: true,
-          suppressMenu: false,
-          editable: true,
+          suppressMenu: true,
+          editable: false,
           headerComponentFramework: CustomHeader,
           minWidth: 140,
+          cellStyle: { lineHeight: `${rowHeight}px` },
         }}
-        columnTypes={{
-          avatar: {},
-          address: {},
-          attachments: {},
-          checkbox: {},
-          country: {},
-          cover: {},
-          currency: {},
-          date: {},
-          default: {},
-          email: {},
-          member: {},
-          multipleSelect: {},
-          number: {},
-          percent: {},
-          phone: {},
-          primary: {},
-          progress: {},
-          rating: {},
-          singleSelect: {},
-          string: {},
-          text: {},
-          uid: {},
-          url: {},
-          vote: {},
-        }}
-        rowHeight={32}
+        // columnTypes={{
+        //   avatar: {},
+        //   addField: {},
+        //   address: {},
+        //   attachments: {},
+        //   checkbox: {},
+        //   country: {},
+        //   cover: {},
+        //   currency: {},
+        //   date: {},
+        //   default: {},
+        //   email: {},
+        //   linkRecord: {},
+        //   member: {},
+        //   multipleSelect: {},
+        //   number: {},
+        //   percent: {},
+        //   phone: {},
+        //   primary: {},
+        //   progress: {},
+        //   rating: {},
+        //   singleSelect: {},
+        //   string: {},
+        //   text: {},
+        //   uid: {},
+        //   url: {},
+        //   vote: {},
+        // }}
+        rowHeight={rowHeight}
         onBodyScroll={({ left, top }) => setScrolled({ left, top })}
         {...otherProps}
       />

@@ -32,18 +32,21 @@ export default class MultipleSelect extends Component<any, any> {
       value,
       colDef: { cellEditorParams: params },
       column: { actualWidth },
+      values,
     } = this.props;
     const { options } = params;
+    console.log(this.props);
 
     return (
       <div
         tabIndex={1} // important - without this the keypresses wont be caught
         style={{ width: actualWidth }}
+        className="shadow"
       >
         <ItemGroup>
-          {options.map(option => (
-            <Item onClick={e => this.onChange(e, option.name)}>
-              {option.name}
+          {values.map(value => (
+            <Item key={value.id} onClick={e => this.onChange(e, value.id)}>
+              {value.name}
             </Item>
           ))}
         </ItemGroup>

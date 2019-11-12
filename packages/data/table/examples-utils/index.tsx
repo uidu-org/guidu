@@ -52,7 +52,7 @@ export const availableColumns = [
     dataField: 'country',
     field: 'country',
     headerName: 'Country',
-    rowGroup: true,
+    // rowGroup: true,
   },
   {
     dataField: 'percent',
@@ -151,6 +151,12 @@ export const availableColumns = [
     colId: 'phone',
     field: 'phone',
     headerName: 'Telefono',
+  },
+  {
+    dataFieldParams: { onFieldAdd: () => window.alert('add a field') },
+    dataField: 'addField',
+    colId: 'addField',
+    headerName: 'Add field',
   },
   // {
   //   colId: 'progress',

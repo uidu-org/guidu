@@ -1,3 +1,4 @@
+import addField from './addField';
 import addressField from './address';
 import attachmentsField from './attachments';
 import avatarField from './avatar';
@@ -21,6 +22,7 @@ import textField from './text';
 import urlField from './url';
 import voteField from './vote';
 
+export { default as addField } from './addField';
 export { default as addressField } from './address';
 export { default as attachmentsField } from './attachments';
 export { default as avatarField } from './avatar';
@@ -45,6 +47,7 @@ export { default as urlField } from './url';
 export { default as voteField } from './vote';
 
 export const byName = {
+  addField: addField,
   address: addressField,
   attachments: attachmentsField,
   avatar: avatarField,
@@ -70,6 +73,7 @@ export const byName = {
 };
 
 export default [
+  addField,
   addressField,
   attachmentsField,
   avatarField,

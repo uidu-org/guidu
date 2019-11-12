@@ -1,10 +1,16 @@
 import { singleSelectField } from '@uidu/data-fields';
+import Editor from '../multipleSelect/editor';
 import Renderer from './renderer';
 
 export default field => ({
   type: singleSelectField.kind,
+  cellEditorFramework: Editor,
   cellEditorParams: {
-    options: field.options,
+    values: field.options,
+    formatValue: option => {
+      console.log(option);
+      return option ? option.name : '';
+    },
   },
   cellRendererParams: {
     options: field.options,
@@ -14,5 +20,6 @@ export default field => ({
   headerComponentParams: {
     menuIcon: singleSelectField.icon,
   },
-  valueGetter: ({ data }) => field.options.filter(option => option.id === data[field.colId])[0]
+  valueGetter: ({ data }) =>
+    field.options.filter(option => option.id === data[field.colId])[0],
 });

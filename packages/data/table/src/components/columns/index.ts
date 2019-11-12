@@ -1,3 +1,4 @@
+export { default as addFieldColumn } from './addField';
 export { default as addressColumn } from './address';
 export { default as attachmentsColumn } from './attachments';
 export { default as avatarColumn } from './avatar';

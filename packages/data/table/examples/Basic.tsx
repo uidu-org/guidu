@@ -1,10 +1,8 @@
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
-import Table, { columns } from '../';
+import Table from '../';
 import { availableColumns, fetchContacts } from '../examples-utils';
+import '../src/themes/uidu.scss';
 
-console.log(columns);
 export default class Basic extends Component<any, any> {
   constructor(props) {
     super(props);
@@ -19,7 +17,11 @@ export default class Basic extends Component<any, any> {
 
   render() {
     return (
-      <Table columnDefs={this.state.columnDefs} rowData={this.state.rowData} />
+      <Table
+        theme="uidu"
+        columnDefs={this.state.columnDefs}
+        rowData={this.state.rowData}
+      />
     );
   }
 }

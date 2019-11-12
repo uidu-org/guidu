@@ -300,6 +300,27 @@ export default class DataManager extends Component<DataManagerProps, any> {
     );
   };
 
+  renderSidebar = () => {
+    const { rowData, onItemClick, currentView } = this.props;
+
+    if (currentView.kind === 'calendar') {
+      return (
+        <>
+          <p>List of events</p>
+        </>
+      );
+    }
+
+    if (currentView.kind === 'map') {
+      return (
+        <>
+          <p>List of events</p>
+        </>
+      );
+    }
+    return null;
+  };
+
   renderView = ({
     viewProps = {
       board: {},
@@ -314,6 +335,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       onItemClick,
       currentView,
       onFirstDataRendered,
+      onAddField,
     } = this.props;
     const { data, columnDefs, rowHeight } = this.state;
 
@@ -337,6 +359,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
           column => column.type !== 'cover' && column.type !== 'avatar',
         )}
         rowData={rowData}
+        onAddField={onAddField}
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
         onRowClicked={onItemClick}
@@ -562,6 +585,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     return (children as any)({
       renderControls: this.renderControls,
       renderView: this.renderView,
+      renderSidebar: this.renderSidebar,
     });
   }
 }

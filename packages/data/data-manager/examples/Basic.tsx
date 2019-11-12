@@ -5,14 +5,13 @@ import {
   ShellHeader,
 } from '@uidu/shell';
 import { buildColumns } from '@uidu/table';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles.scss';
 import { IntlProvider } from 'react-intl';
 import { Transition } from 'react-transition-group';
 import DataManager from '../';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
+import '../../table/src/styles/index.scss';
 
 const duration = 300;
 
@@ -101,7 +100,7 @@ export default class Basic extends Component<any, any> {
           onViewAdd={this.addView}
           onFirstDataRendered={() => this.setState({ rendered: true })}
         >
-          {({ renderControls, renderView }) => (
+          {({ renderControls, renderView, renderSidebar }) => (
             <>
               <ShellHeader>
                 {renderControls({
@@ -129,7 +128,13 @@ export default class Basic extends Component<any, any> {
                 {!loaded ? (
                   <ShellBodyWithSpinner></ShellBodyWithSpinner>
                 ) : (
-                  <ShellBodyWithSidebar sidebar={<p>Pippo</p>}>
+                  <ShellBodyWithSidebar
+                    sidebar={
+                      renderSidebar() && (
+                        <div className="col-xl-3">{renderSidebar({})}</div>
+                      )
+                    }
+                  >
                     <Transition in={this.state.rendered} timeout={duration}>
                       {state => (
                         <div
@@ -148,6 +153,9 @@ export default class Basic extends Component<any, any> {
                                 rowHeight: 128,
                               },
                               board: {},
+                              table: {
+                                headerHeight: 48,
+                              },
                             },
                           })}
                         </div>

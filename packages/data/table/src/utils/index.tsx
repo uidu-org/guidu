@@ -2,6 +2,7 @@ import { Field } from '@uidu/data-fields';
 import numeral from 'numeral';
 import React from 'react';
 import {
+  addFieldColumn,
   addressColumn,
   attachmentsColumn,
   avatarColumn,
@@ -31,6 +32,8 @@ import { Column } from '../types';
 
 const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
   switch (dataField) {
+    case 'addField':
+      return addFieldColumn(dataFieldParams);
     case 'address':
       return addressColumn();
     case 'attachments':

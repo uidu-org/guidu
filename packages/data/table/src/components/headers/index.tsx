@@ -3,10 +3,11 @@ import React, { PureComponent } from 'react';
 export default class CustomHeader extends PureComponent<any> {
   render() {
     const { enableMenu, displayName, menuIcon } = this.props;
+    console.log(this.props);
 
     return (
       <div
-        className="d-flex align-items-center justify-content-center flex-grow-1"
+        className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
         style={{ minWidth: 0 }}
       >
         <div className="customHeaderLabel flex-grow-1 text-truncate">
@@ -18,27 +19,16 @@ export default class CustomHeader extends PureComponent<any> {
           {displayName}
         </div>
         {/* {!!enableMenu ? (
-          <Dropdown
-            isMenuFixed
-            trigger={
-              <button className="btn p-1">
-                <ChevronDown size={16} />
-              </button>
-            }
-            position="bottom right"
+          <InlineDialog
+            // isMenuFixed
+            isOpen
+            content={<div>Funziona ora?</div>}
+            placement="bottom"
           >
-            <DropdownItemGroup title="Heading">
-              <DropdownItem>
-                Hello it with some really quite long text here.
-              </DropdownItem>
-              <DropdownItem>Some text 2</DropdownItem>
-              <DropdownItem isDisabled>Some disabled text</DropdownItem>
-              <DropdownItem>Some more text</DropdownItem>
-              <DropdownItem href="//atlassian.com" target="_new">
-                A link item
-              </DropdownItem>
-            </DropdownItemGroup>
-          </Dropdown>
+            <button className="btn p-1">
+              <ChevronDown size={16} />
+            </button>
+          </InlineDialog>
         ) : (
           <Lock size={14} />
         )} */}

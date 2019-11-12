@@ -57,6 +57,7 @@
     "website:start": "                       cd website && yarn start"
   },
   "dependencies": {
+    "@ag-grid-community/react": "^22.0.0",
     "@atlaskit/activity": "^1.0.3",
     "@atlaskit/calendar": "^9.0.1",
     "@atlaskit/icon": "^19.0.6",
