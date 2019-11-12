@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.11
+
+### Patch Changes
+
+- 8fc2e2c: Added addField field and column
+
 ## 0.1.10
 
 ### Patch Changes
