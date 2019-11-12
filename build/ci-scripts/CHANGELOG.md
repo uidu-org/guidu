@@ -1,5 +1,13 @@
 # @uidu/ci-scripts
 
+## 0.1.12
+
+### Patch Changes
+
+- fa4588d: Bump dependencies
+- Updated dependencies [fa4588d]
+  - @uidu/build-utils@0.1.13
+
 ## 0.1.11
 
 ### Patch Changes

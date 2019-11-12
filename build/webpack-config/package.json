@@ -1,6 +1,6 @@
 {
   "name": "@uidu/webpack-config",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "description": "Configurations for webpack used in Guidu",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",

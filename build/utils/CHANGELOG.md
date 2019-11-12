@@ -1,5 +1,13 @@
 # @uidu/build-utils
 
+## 0.1.13
+
+### Patch Changes
+
+- fa4588d: Bump dependencies
+- Updated dependencies [fa4588d]
+  - @uidu/build-releases@3.0.21
+
 ## 0.1.12
 
 ### Patch Changes
