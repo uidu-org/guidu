@@ -1,5 +1,5 @@
+import { ISimpleFilterModel } from '@ag-grid-community/core';
 import { Column } from '@uidu/table';
-import { ISimpleFilterModel } from 'ag-grid-community';
 
 export type FilterModel = ISimpleFilterModel;
 

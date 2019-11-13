@@ -43,9 +43,9 @@ export const availableColumns = [
     field: 'amount',
     headerName: 'Donation amount',
     aggFunc: 'sum',
-    // enableValue: true,
-    valueGetter: props => {
-      return props.data ? numeral(props.data.amount).format('$ 0,0.00') : null;
+    enableValue: true,
+    valueFormatter: ({ value, node, aggData, groupData, ...rest }) => {
+      return numeral(value).format('$ 0,0.00');
     },
   },
   {
@@ -216,7 +216,7 @@ export const fetchContacts = () => {
             path: '/foo/bar',
             scope: 'donations',
           },
-          amount: faker.commerce.price(),
+          amount: parseInt(faker.commerce.price(), 10),
           country: faker.address.country(),
           percent: faker.random.number(),
           createdAt: faker.date.past(),

@@ -24,6 +24,7 @@ export default ({ onFieldAdd }) => ({
     );
   },
   headerClass: 'ag-add-field-header text-center',
+  cellClass: 'ag-add-field-cell',
   headerComponentParams: {
     onFieldAdd,
   },

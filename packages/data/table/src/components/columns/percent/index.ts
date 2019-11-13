@@ -5,4 +5,5 @@ export default () => ({
   type: ['numericColumn', percentField.kind],
   valueFormatter: ({ value }) => `${value}%`,
   headerComponentParams: { menuIcon: percentField.icon },
+  aggFunc: 'avg',
 });

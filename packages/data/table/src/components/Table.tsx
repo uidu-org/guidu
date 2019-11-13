@@ -1,8 +1,6 @@
-if (process.env.NODE_ENV === 'development') {
-  console.log('importing grid-enterprise');
-  import('ag-grid-enterprise');
-}
-import { AgGridReact } from 'ag-grid-react';
+import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
+import { AgGridReact } from '@ag-grid-community/react';
+import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import React, { useState } from 'react';
 import CustomHeader from './headers';
 
@@ -31,10 +29,12 @@ const Table = ({
   return (
     <div className={`ag-theme-${theme} h-100${className}`}>
       <AgGridReact
+        modules={[ClientSideRowModelModule, RowGroupingModule]}
         // ref={innerRef}
         // enterprise features
         groupDefaultExpanded={-1}
         groupUseEntireRow
+        // suppressAggFuncInHeader
         // community features
         componentWrappingElement="span"
         columnDefs={columnDefs}

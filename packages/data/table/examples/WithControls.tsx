@@ -8,12 +8,11 @@ import {
   Sorter,
   Toggler,
 } from '@uidu/data-controls';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import React, { Component, Fragment } from 'react';
 import { arrayMove } from 'react-sortable-hoc';
 import Table from '../';
 import { availableColumns, fetchContacts } from '../examples-utils';
+import '../themes/uidu.scss';
 
 export default class WithControls extends Component<any, any> {
   constructor(props) {

@@ -1,5 +1,5 @@
+import { AgGridColumnProps } from '@ag-grid-community/react';
 import { Field } from '@uidu/data-fields';
-import { AgGridColumnProps } from 'ag-grid-react';
 
 export type Column = AgGridColumnProps & {
   dataField?: Field['kind'];

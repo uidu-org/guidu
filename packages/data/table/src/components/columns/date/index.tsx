@@ -7,7 +7,8 @@ export default ({ format = 'L' }) => ({
   cellEditorFramework: Editor,
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: dateField.icon },
-  valueFormatter: ({ value }) => moment(value).format(format),
+  valueFormatter: ({ value, aggData, node }) =>
+    node && node.group ? null : moment(value).format(format),
   // cellClass: 'justify-content-center',
   // headerClass: 'text-center',
 });

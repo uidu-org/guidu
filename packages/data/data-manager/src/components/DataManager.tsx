@@ -257,7 +257,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
     this.gridColumnApi.setRowGroupColumns(
       this.state.groupers.map(g => g.colId),
     );
-    setTimeout(() => this.gridApi.hideOverlay(), 600);
+
+    setTimeout(() => {
+      this.gridApi.refreshCells({ force: true });
+      this.gridApi.hideOverlay();
+    }, 600);
   };
 
   addFilter = ({ filter }) => {

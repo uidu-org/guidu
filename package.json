@@ -57,7 +57,11 @@
     "website:start": "                       cd website && yarn start"
   },
   "dependencies": {
+    "@ag-grid-community/client-side-row-model": "^22.0.0",
+    "@ag-grid-community/core": "^22.0.0",
     "@ag-grid-community/react": "^22.0.0",
+    "@ag-grid-enterprise/all-modules": "^22.0.0",
+    "@ag-grid-enterprise/row-grouping": "^22.0.0",
     "@atlaskit/activity": "^1.0.3",
     "@atlaskit/calendar": "^9.0.1",
     "@atlaskit/icon": "^19.0.6",
@@ -135,9 +139,6 @@
     "abortcontroller-polyfill": "^1.2.9",
     "add": "^2.0.6",
     "adf-builder": "^3.3.0",
-    "ag-grid-community": "^22.0.0",
-    "ag-grid-enterprise": "^22.0.0",
-    "ag-grid-react": "^22.0.0",
     "array-find": "^1.0.0",
     "autosize": "^4.0.2",
     "avataaars": "^1.2.1",

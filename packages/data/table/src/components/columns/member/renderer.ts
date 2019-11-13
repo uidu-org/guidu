@@ -1,4 +1,9 @@
-export default ({ value, avatar, data }) => {
+export default params => {
+  if (params.node && params.node.group) {
+    return null;
+  }
+
+  const { value, avatar, data } = params;
   // create the cell
   return `
     <div style="min-width: 0">

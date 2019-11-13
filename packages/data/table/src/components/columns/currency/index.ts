@@ -4,7 +4,7 @@ import { numericComparator } from '../../../utils';
 export default () => ({
   type: ['numericColumn', currencyField.kind],
   filter: 'agNumberColumnFilter',
-  valueFormatter: ({ value }) => value,
+  // valueFormatter: ({ value }) => value,
   headerComponentParams: { menuIcon: currencyField.icon },
   comparator: numericComparator,
 });

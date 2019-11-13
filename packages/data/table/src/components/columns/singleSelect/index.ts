@@ -21,5 +21,7 @@ export default field => ({
   },
   keyCreator: params => params.value.name,
   valueGetter: ({ data }) =>
-    field.options.filter(option => option.id === data[field.colId])[0],
+    data
+      ? field.options.filter(option => option.id === data[field.colId])[0]
+      : null,
 });

@@ -37,9 +37,11 @@ function LinkRecordRenderer({ history, value }) {
 
   return (
     <div ref={cell}>
-      <StyledLinkRecord>
-        <div className="text-truncate">{value.name}</div>
-      </StyledLinkRecord>
+      {value ? (
+        <StyledLinkRecord>
+          <div className="text-truncate">{value.name}</div>
+        </StyledLinkRecord>
+      ) : null}
     </div>
   );
 }

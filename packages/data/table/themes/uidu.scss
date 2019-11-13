@@ -1,7 +1,6 @@
 $font-family: 'Avenir'; // $font-family-sans-serif;
 $font-size: 1rem; // $font-size-base;
 $secondary-font-size: 14px; // $font-size-base;
-$icons-path: 'ag-grid-community/src/styles/icons/';
 $foreground-color: 'inherit'; // $body-color;
 $border-color: #f1f3f5; // $border-color;
 $odd-row-background-color: 'inherit'; // $white;
@@ -13,7 +12,7 @@ $primary: red;
 
 // $cell-horizontal-padding: 32px;
 
-@import 'ag-grid-community/src/styles/ag-grid.scss';
+@import '@ag-grid-enterprise/all-modules/dist/styles/ag-grid.scss';
 
 $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
@@ -225,6 +224,12 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
   .ag-numeric-cell {
     text-align: right;
+  }
+
+  .ag-add-field-cell {
+    &.ag-column-hover {
+      background-color: $light;
+    }
   }
 
   // .ag-pinned-left-cols-container,
