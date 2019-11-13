@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.47
+
+### Patch Changes
+
+- 27d1941: FIX theme
+
 ## 0.1.46
 
 ### Patch Changes
