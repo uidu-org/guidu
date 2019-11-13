@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.38
+
+### Patch Changes
+
+- 6ed511e: Added linkRecord field
+
 ## 0.1.37
 
 ### Patch Changes
