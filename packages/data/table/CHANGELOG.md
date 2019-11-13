@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.42
+
+### Patch Changes
+
+- 6b2073e: Try exporting styles
+
 ## 0.1.41
 
 ### Patch Changes
