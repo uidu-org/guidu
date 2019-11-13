@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.46
+
+### Patch Changes
+
+- 8c19458: Add paymentMethod field
+- Updated dependencies [8c19458]
+  - @uidu/data-fields@0.1.12
+
 ## 0.1.45
 
 ### Patch Changes
