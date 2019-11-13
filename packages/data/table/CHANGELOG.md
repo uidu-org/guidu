@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.44
+
+### Patch Changes
+
+- 1f19bda: Added groupers to @uidu/table
+- Updated dependencies [1f19bda]
+  - @uidu/data-controls@0.2.3
+
 ## 0.1.43
 
 ### Patch Changes
