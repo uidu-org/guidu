@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.41
+
+### Patch Changes
+
+- 8fc2e2c: Added addField field and column
+- Updated dependencies [8fc2e2c]
+  - @uidu/data-fields@0.1.11
+
 ## 0.1.40
 
 ### Patch Changes
