@@ -9,6 +9,7 @@ export { default as currencyColumn } from './currency';
 export { default as dateColumn } from './date';
 export { default as defaultColumn } from './default';
 export { default as emailColumn } from './email';
+export { default as linkRecordColumn } from './linkRecord';
 export { default as memberColumn } from './member';
 export { default as multipleSelectColumn } from './multipleSelect';
 export { default as numberColumn } from './number';

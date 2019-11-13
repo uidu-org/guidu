@@ -22,7 +22,9 @@
     "ag-grid-enterprise": "^22.0.0",
     "ag-grid-react": "^22.0.0",
     "react-day-picker": "^7.3.2",
-    "react-intl": "^3.1.7"
+    "react-intl": "^3.1.7",
+    "react-router-dom": "^5.0.0",
+    "styled-components": "^4.0.3"
   },
   "devDependencies": {
     "@uidu/data-controls": "^0.2.1",

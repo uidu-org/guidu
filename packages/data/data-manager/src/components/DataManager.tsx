@@ -347,13 +347,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
       <Table
         rowDoubleClicked={() => null}
         rowSelection="multiple"
-        suppressRowClickSelection
+        suppressRowClickSelection={true}
         {...viewProps.table}
         // @ts-ignore
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
         innerRef={this.grid}
         onGridReady={this.onGridReady}
         onFirstDataRendered={onFirstDataRendered}
+        sorters={this.state.sorters}
         // use columnDefs from props to avoid flickering on toggling/reordering columns
         columnDefs={this.props.columnDefs.filter(
           column => column.type !== 'cover' && column.type !== 'avatar',

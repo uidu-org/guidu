@@ -137,7 +137,7 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   .ag-react-container {
     flex: 1;
     min-width: 0;
-    display: flex;
+    // display: flex;
   }
 
   .ag-header-select-all {
@@ -231,4 +231,13 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   // .ag-pinned-left-header {
   //   border-right: 1px solid $border-color;
   // }
+
+  // interactions
+  .ag-cell-sorter-active {
+    background-color: rgba(254, 226, 213, 0.4);
+  }
+
+  .ag-cell-filter-active {
+    background-color: #d1f7c4;
+  }
 }

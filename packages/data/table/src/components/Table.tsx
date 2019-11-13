@@ -12,6 +12,7 @@ const Table = ({
   rowData,
   onAddField = () => {},
   rowHeight = 32,
+  sorters = [], // sync sorters from parents for styling
   ...otherProps
 }) => {
   const [scrolled, setScrolled] = useState({ left: 0, top: 0 });
@@ -22,6 +23,10 @@ const Table = ({
   if (scrolled.top > 0) {
     className += ' ag-scrolled-top';
   }
+
+  console.log('sorters from props', sorters);
+  const sortedById = sorters.map(s => s.colId);
+  console.log(sortedById);
 
   return (
     <div className={`ag-theme-${theme} h-100${className}`}>
@@ -42,36 +47,49 @@ const Table = ({
           editable: false,
           headerComponentFramework: CustomHeader,
           minWidth: 140,
-          cellStyle: { lineHeight: `${rowHeight}px` },
+          cellStyle: params => {
+            return {
+              lineHeight: `${rowHeight}px`,
+            };
+          },
+          cellClassRules: {
+            'ag-cell-sorter-active': params => {
+              // const column = params.columnApi.getColumn(params.colDef.colId);
+              console.log('sorters in params', sorters);
+              // console.log(column);
+              // console.log(column ? column.getSort() : 'no column');
+              return sortedById.includes(params.colDef.colId);
+            },
+          },
         }}
-        // columnTypes={{
-        //   avatar: {},
-        //   addField: {},
-        //   address: {},
-        //   attachments: {},
-        //   checkbox: {},
-        //   country: {},
-        //   cover: {},
-        //   currency: {},
-        //   date: {},
-        //   default: {},
-        //   email: {},
-        //   linkRecord: {},
-        //   member: {},
-        //   multipleSelect: {},
-        //   number: {},
-        //   percent: {},
-        //   phone: {},
-        //   primary: {},
-        //   progress: {},
-        //   rating: {},
-        //   singleSelect: {},
-        //   string: {},
-        //   text: {},
-        //   uid: {},
-        //   url: {},
-        //   vote: {},
-        // }}
+        columnTypes={{
+          avatar: {},
+          addField: {},
+          address: {},
+          attachments: {},
+          checkbox: {},
+          country: {},
+          cover: {},
+          currency: {},
+          date: {},
+          default: {},
+          email: {},
+          linkRecord: {},
+          member: {},
+          multipleSelect: {},
+          number: {},
+          percent: {},
+          phone: {},
+          primary: {},
+          progress: {},
+          rating: {},
+          singleSelect: {},
+          string: {},
+          text: {},
+          uid: {},
+          url: {},
+          vote: {},
+        }}
         rowHeight={rowHeight}
         onBodyScroll={({ left, top }) => setScrolled({ left, top })}
         {...otherProps}

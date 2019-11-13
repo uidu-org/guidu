@@ -13,6 +13,7 @@ import {
   dateColumn,
   defaultColumn,
   emailColumn,
+  linkRecordColumn,
   memberColumn,
   multipleSelectColumn,
   numberColumn,
@@ -52,6 +53,8 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
       return dateColumn({});
     case 'email':
       return emailColumn();
+    case 'linkRecord':
+      return linkRecordColumn();
     case 'member':
       return memberColumn(dataFieldParams);
     case 'multipleSelect':
