@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.37
+
+### Patch Changes
+
+- e04021a: Add to modularization, added groupers
+- Updated dependencies [e04021a]
+  - @uidu/data-controls@0.2.4
+  - @uidu/table@0.1.45
+
 ## 0.1.36
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.4
+
+### Patch Changes
+
+- e04021a: Add to modularization, added groupers
+- Updated dependencies [e04021a]
+  - @uidu/table@0.1.45
+
 ## 0.2.3
 
 ### Patch Changes
