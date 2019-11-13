@@ -12,6 +12,7 @@ import linkRecordField from './linkRecord';
 import memberField from './member';
 import multipleSelectField from './multipleSelect';
 import numberField from './number';
+import paymentMethodField from './paymentMethod';
 import percentField from './percent';
 import phoneField from './phone';
 import progressField from './progress';
@@ -36,6 +37,7 @@ export { default as linkRecordField } from './linkRecord';
 export { default as memberField } from './member';
 export { default as multipleSelectField } from './multipleSelect';
 export { default as numberField } from './number';
+export { default as paymentMethodField } from './paymentMethod';
 export { default as percentField } from './percent';
 export { default as phoneField } from './phone';
 export { default as progressField } from './progress';
@@ -61,6 +63,7 @@ export const byName = {
   member: memberField,
   multipleSelect: multipleSelectField,
   number: numberField,
+  paymentMethod: paymentMethodField,
   percent: percentField,
   phone: phoneField,
   progress: progressField,
@@ -87,6 +90,7 @@ export default [
   memberField,
   multipleSelectField,
   numberField,
+  paymentMethodField,
   percentField,
   phoneField,
   progressField,

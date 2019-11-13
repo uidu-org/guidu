@@ -105,13 +105,6 @@ export const availableColumns = [
     },
   },
   // {
-  //   colId: 'age',
-  //   field: 'age',
-  //   headerName: 'Età',
-  //   ...defaultColumn(),
-  //   ...numberColumn(),
-  // },
-  // {
   //   colId: 'role',
   //   field: 'role',
   //   headerName: 'Admin',
@@ -156,6 +149,23 @@ export const availableColumns = [
     colId: 'phone',
     field: 'phone',
     headerName: 'Telefono',
+  },
+  {
+    dataField: 'paymentMethod',
+    dataFieldParams: {
+      options: [
+        {
+          id: 1,
+          name: 'Cash',
+        },
+        { id: 2, name: 'Transfer' },
+        { id: 3, name: 'Credit Card' },
+      ],
+    },
+    colId: 'paymentMethod',
+    field: 'paymentMethod',
+    headerName: 'Payment Method',
+    enableRowGroup: true,
   },
   {
     dataFieldParams: { onFieldAdd: () => window.alert('add a field') },
@@ -226,6 +236,7 @@ export const fetchContacts = () => {
           age: faker.random.number(),
           gender: ['male', 'female', null][Math.floor(Math.random() * 3)],
           role: 'admin',
+          paymentMethod: Math.floor(Math.random() * 3) + 1,
           member: faker.helpers.userCard(),
           phone: faker.phone.phoneNumber(),
           progress: Math.random(),

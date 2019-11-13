@@ -17,6 +17,7 @@ import {
   memberColumn,
   multipleSelectColumn,
   numberColumn,
+  paymentMethodColumn,
   percentColumn,
   phoneColumn,
   primaryColumn,
@@ -61,6 +62,8 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
       return multipleSelectColumn(dataFieldParams);
     case 'number':
       return numberColumn();
+    case 'paymentMethod':
+      return paymentMethodColumn(dataFieldParams);
     case 'percent':
       return percentColumn();
     case 'phone':

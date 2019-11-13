@@ -13,6 +13,7 @@ export { default as linkRecordColumn } from './linkRecord';
 export { default as memberColumn } from './member';
 export { default as multipleSelectColumn } from './multipleSelect';
 export { default as numberColumn } from './number';
+export { default as paymentMethodColumn } from './paymentMethod';
 export { default as percentColumn } from './percent';
 export { default as phoneColumn } from './phone';
 export { default as primaryColumn } from './primary';
