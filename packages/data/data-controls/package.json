@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -19,7 +19,7 @@
     "@uidu/item": "^0.1.18",
     "@uidu/select": "^0.2.0",
     "@uidu/shell": "^0.1.31",
-    "@uidu/table": "^0.1.39",
+    "@uidu/table": "^0.1.44",
     "@uidu/toggle": "^0.1.19",
     "react-beautiful-dnd": "^12.0.0",
     "react-feather": "^2.0.3",
