@@ -19,7 +19,7 @@
     "@uidu/select": "^0.2.0",
     "@uidu/widgets": "^0.1.10",
     "react-feather": "^2.0.3",
-    "react-stripe-elements": "^5.0.0"
+    "react-stripe-elements": "^6.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34"

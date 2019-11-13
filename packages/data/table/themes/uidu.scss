@@ -130,7 +130,28 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
     align-items: center;
     // background-color: white;
     // border-right: 1px solid $border-color;
-    display: flex;
+    .ag-header-cell-resize {
+      width: 8px;
+      right: 0;
+      cursor: col-resize;
+    }
+
+    &:after {
+      border-right: 1px solid darken($color: $border-color, $amount: 8);
+      content: ' ';
+      height: 35%;
+      transform: translateY(-50%);
+      position: absolute;
+      text-indent: -2000px;
+      top: 50%;
+      right: 0;
+    }
+
+    &:hover {
+      &:after {
+        border-right: 1px solid darken($color: $border-color, $amount: 16);
+      }
+    }
   }
 
   .ag-react-container {

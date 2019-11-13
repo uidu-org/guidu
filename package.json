@@ -335,7 +335,7 @@
     "react-simple-timefield": "^3.0.0",
     "react-sortable-hoc": "^1.9.1",
     "react-spring": "^8.0.20",
-    "react-stripe-elements": "^5.0.0",
+    "react-stripe-elements": "^6.0.0",
     "react-switch": "^5.0.0",
     "react-syntax-highlighter": "^11.0.1",
     "react-test-renderer": "^16.8.3",
