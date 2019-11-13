@@ -24,9 +24,9 @@ const Table = ({
     className += ' ag-scrolled-top';
   }
 
-  console.log('sorters from props', sorters);
   const sortedById = sorters.map(s => s.colId);
-  console.log(sortedById);
+
+  console.log(columnDefs);
 
   return (
     <div className={`ag-theme-${theme} h-100${className}`}>
@@ -55,7 +55,7 @@ const Table = ({
           cellClassRules: {
             'ag-cell-sorter-active': params => {
               // const column = params.columnApi.getColumn(params.colDef.colId);
-              console.log('sorters in params', sorters);
+              // console.log('sorters in params', sorters);
               // console.log(column);
               // console.log(column ? column.getSort() : 'no column');
               return sortedById.includes(params.colDef.colId);

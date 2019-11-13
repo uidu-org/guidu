@@ -130,6 +130,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       data: [],
       sorters: [],
       filterModel: {},
+      filters: [],
       groupers: [],
       rowHeight: 64,
     };
@@ -224,7 +225,45 @@ export default class DataManager extends Component<DataManagerProps, any> {
   setFilterModel = async () => console.log;
 
   setGroupers = groupers => {
-    this.setState({ groupers });
+    console.log(groupers);
+    // this.setState({ groupers });
+  };
+
+  addGrouper = grouper => {
+    this.gridApi.showLoadingOverlay();
+    this.setState(
+      prevState => ({
+        groupers: [...prevState.groupers, grouper],
+      }),
+      () => {
+        this.updateRowGrouping();
+      },
+    );
+  };
+
+  removeGrouper = ({ colId }) => {
+    this.gridApi.showLoadingOverlay();
+    this.setState(
+      prevState => ({
+        groupers: prevState.groupers.filter(grouper => grouper.colId !== colId),
+      }),
+      () => {
+        this.updateRowGrouping();
+      },
+    );
+  };
+
+  updateRowGrouping = () => {
+    this.gridColumnApi.setRowGroupColumns(
+      this.state.groupers.map(g => g.colId),
+    );
+    setTimeout(() => this.gridApi.hideOverlay(), 600);
+  };
+
+  addFilter = ({ filter }) => {
+    this.setState(prevState => ({
+      filters: [...prevState.filter, filter],
+    }));
   };
 
   onFilterChanged = ({ api }) => {
@@ -347,7 +386,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       <Table
         rowDoubleClicked={() => null}
         rowSelection="multiple"
-        suppressRowClickSelection={true}
+        suppressRowClickSelection
         {...viewProps.table}
         // @ts-ignore
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
@@ -516,14 +555,17 @@ export default class DataManager extends Component<DataManagerProps, any> {
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}
             onChange={this.setFilterModel}
+            addFilter={this.addFilter}
             filterModel={filterModel}
             {...availableControls.filterer.props}
           />
         )}
-        {currentView.kind === 'list' && availableControls.grouper.visible && (
+        {currentView.kind === 'table' && availableControls.grouper.visible && (
           <Grouper
-            columnDefs={columnDefs}
+            columnDefs={columnDefs.filter(column => !!column.enableRowGroup)}
             onChange={this.setGroupers}
+            addGrouper={this.addGrouper}
+            removeGrouper={this.removeGrouper}
             groupers={groupers}
             {...availableControls.grouper.props}
           />

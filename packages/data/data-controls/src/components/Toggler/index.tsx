@@ -1,6 +1,6 @@
 import Drawer from '@uidu/drawer';
 import React, { Component } from 'react';
-import { Columns } from 'react-feather';
+import { Settings } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 import DrawerLayout from '../../utils/DrawerLayout';
@@ -25,23 +25,28 @@ export default class Toggler extends Component<TogglerProps, any> {
         <Trigger
           activeBg="#d0f0fd"
           active={!!hiddenCount}
-          className="btn mr-2"
+          className={`btn${hiddenCount > 0 ? ' mr-2' : ''}`}
           onClick={() => this.setState({ dialogOpen: true })}
         >
-          <Columns strokeWidth={2} size={14} className="mr-xl-2" />
+          <Settings
+            strokeWidth={2}
+            size={14}
+            className={hiddenCount > 0 ? 'mr-xl-2' : ''}
+          />
           <span
             style={{ textTransform: 'initial' }}
             className="d-none d-xl-block"
           >
-            <FormattedMessage
-              id="guidu.data_controls.sorter.label"
-              defaultMessage={`{hiddenCount, plural,
-                  =0 {Columns}
+            {hiddenCount > 0 && (
+              <FormattedMessage
+                id="guidu.data_controls.sorter.label"
+                defaultMessage={`{hiddenCount, plural,
                   one {1 field hidden}
                   other {# fields hidden}
                 }`}
-              values={{ hiddenCount }}
-            />
+                values={{ hiddenCount }}
+              />
+            )}
           </span>
         </Trigger>
         <Drawer

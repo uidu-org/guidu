@@ -101,9 +101,6 @@ export default class Basic extends Component<any, any> {
             onViewChange={this.toggleView}
             onViewAdd={this.addView}
             onFirstDataRendered={() => this.setState({ rendered: true })}
-            onItemClick={({ event, ...rest }) => {
-              console.log(rest);
-            }}
           >
             {({ renderControls, renderView, renderSidebar }) => (
               <>

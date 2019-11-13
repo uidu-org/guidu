@@ -3,8 +3,6 @@ import React, { PureComponent } from 'react';
 export default class CustomHeader extends PureComponent<any> {
   render() {
     const { enableMenu, displayName, menuIcon } = this.props;
-    console.log(this.props);
-
     return (
       <div
         className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"

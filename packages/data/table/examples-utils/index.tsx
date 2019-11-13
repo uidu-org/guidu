@@ -50,9 +50,10 @@ export const availableColumns = [
   },
   {
     dataField: 'country',
+    colId: 'country',
     field: 'country',
     headerName: 'Country',
-    // rowGroup: true,
+    enableRowGroup: true,
   },
   {
     dataField: 'percent',
@@ -85,6 +86,7 @@ export const availableColumns = [
     colId: 'gender',
     field: 'gender',
     headerName: 'Genere',
+    enableRowGroup: true,
   },
   {
     dataField: 'string',
@@ -97,6 +99,10 @@ export const availableColumns = [
     colId: 'donationCampaign',
     field: 'donationCampaign',
     headerName: 'Donation Campaign',
+    enableRowGroup: true,
+    keyCreator: function(params) {
+      return params.value.name;
+    },
   },
   // {
   //   colId: 'age',

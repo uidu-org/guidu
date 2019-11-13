@@ -8,7 +8,6 @@ export default field => ({
   cellEditorParams: {
     values: field.options,
     formatValue: option => {
-      console.log(option);
       return option ? option.name : '';
     },
   },
@@ -20,6 +19,7 @@ export default field => ({
   headerComponentParams: {
     menuIcon: singleSelectField.icon,
   },
+  keyCreator: params => params.value.name,
   valueGetter: ({ data }) =>
     field.options.filter(option => option.id === data[field.colId])[0],
 });

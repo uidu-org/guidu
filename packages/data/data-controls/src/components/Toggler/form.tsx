@@ -5,7 +5,6 @@ import { TogglerProps } from './types';
 
 export default class TogglerForm extends PureComponent<TogglerProps> {
   onDragEnd = result => {
-    console.log(result);
     // dropped outside the list
     if (!result.destination) {
       return;
@@ -44,7 +43,6 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
                       onClick={e => {
-                        console.log(columnDef.colId);
                         e.preventDefault();
                         onToggle(columnDef.colId, !!columnDef.hide);
                       }}

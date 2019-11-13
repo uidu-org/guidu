@@ -35,7 +35,6 @@ export default class MultipleSelect extends Component<any, any> {
       values,
     } = this.props;
     const { options } = params;
-    console.log(this.props);
 
     return (
       <div

@@ -1,19 +1,28 @@
-import { Form } from '@uidu/form';
-import Select from '@uidu/select';
+import Drawer from '@uidu/drawer';
 import React, { Component } from 'react';
-import { Server, X } from 'react-feather';
-import { List } from 'react-powerplug';
+import { Server } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
-import { DropdownMenu, PickField } from '../../utils';
+import DrawerLayout from '../../utils/DrawerLayout';
+import GrouperForm from './form';
 
 // this component should return an array of groupers https://www.ag-grid.com/javascript-grid-sorting/#sorting-api
 // example:
 // [{ colId: 'country', sort: 'asc' }, { colId: 'sport', sort: 'desc' }];
 
-export default class Sorter extends Component<any> {
+export default class Grouper extends Component<any, any> {
   static defaultProps = {
     onChange: console.log,
+    sorters: [],
   };
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      dialogOpen: false,
+    };
+  }
 
   private form = React.createRef();
   private selectContainer = React.createRef();
@@ -28,108 +37,49 @@ export default class Sorter extends Component<any> {
     const { groupers, columnDefs } = this.props;
     const groupersCount = groupers.length;
     return (
-      <DropdownMenu
-        trigger={
-          <Trigger activeBg="#ede2fe" className="btn" active={!!groupersCount}>
-            <Server strokeWidth={2} size={14} className="mr-2" />
-            <span style={{ textTransform: 'initial' }}>
-              {groupersCount
-                ? `Raggrupati da ${groupersCount} campi`
-                : 'Raggruppa'}
-            </span>
-          </Trigger>
-        }
-      >
-        <div className="p-3">
-          <Form
-            ref={this.form}
-            footerRenderer={() => null}
-            handleSubmit={this.handleSubmit}
+      <>
+        <Trigger
+          activeBg="#ede2fe"
+          className="btn mr-2"
+          active={groupersCount}
+          onClick={() => this.setState({ dialogOpen: true })}
+        >
+          <Server strokeWidth={2} size={14} className="mr-xl-2" />
+          <span
+            style={{ textTransform: 'initial' }}
+            className="d-none d-xl-block"
           >
-            <List initial={groupers}>
-              {({ list, pull, push }) => (
-                <div>
-                  {list.map((grouper: any, index: number) => (
-                    <div
-                      className="d-flex align-items-center mb-2"
-                      key={grouper.colId.colId}
-                    >
-                      <button
-                        type="button"
-                        className="btn btn-sm p-0 mr-2 d-flex align-items-center"
-                        onClick={() => {
-                          pull((value: any) => {
-                            return value.colId.colId === grouper.colId.colId;
-                          });
-                          (this.form.current as any).form.submit();
-                        }}
-                      >
-                        <X size={13} />
-                      </button>
-                      <span className="small mr-4">
-                        {index === 0 ? 'Group by' : 'then by'}
-                      </span>
-                      <div style={{ minWidth: 180 }} className="mr-2">
-                        <Select
-                          value={grouper.colId}
-                          layout="elementOnly"
-                          isSearchable
-                          isClearable={false}
-                          name={`groupers[${index}][colId]`}
-                          options={columnDefs}
-                          menuPosition="fixed"
-                          getOptionLabel={option => option.headerName}
-                          getOptionValue={option => option.colId}
-                          onChange={() =>
-                            (this.form.current as any).form.submit()
-                          }
-                          styles={{
-                            menuPortal: base => ({ ...base, zIndex: 9999 }),
-                          }}
-                        />
-                      </div>
-                      <Select
-                        layout="elementOnly"
-                        isClearable={false}
-                        name={`groupers[${index}][sort]`}
-                        value={grouper.sort}
-                        options={[
-                          { id: 'asc', name: 'asc' },
-                          { id: 'desc', name: 'desc' },
-                        ]}
-                        // https://github.com/OpusCapita/react-select/blob/2049ed35851b7f547a604995606384f307ca1675/src/client/components/MenuPortal__fix.react.js
-                        menuPosition="fixed"
-                        onChange={() => {
-                          (this.form.current as any).form.submit();
-                        }}
-                        styles={{
-                          menuPortal: base => ({ ...base, zIndex: 9999 }),
-                        }}
-                      />
-                    </div>
-                  ))}
-                  {!list.length && (
-                    <p className="text-muted">No groupings applied</p>
-                  )}
-                  <PickField
-                    label="Pick a field to group by"
-                    onClick={columnDef => {
-                      push({
-                        sort: { id: 'asc', name: 'asc' },
-                        index: list.length,
-                        colId: columnDef,
-                      });
-                      (this.form.current as any).form.submit();
-                    }}
-                    list={groupers}
-                    columnDefs={columnDefs}
-                  />
-                </div>
-              )}
-            </List>
-          </Form>
-        </div>
-      </DropdownMenu>
+            <FormattedMessage
+              id="guidu.data_controls.sorter.label"
+              defaultMessage={`{groupersCount, plural,
+                  =0 {Group}
+                  one {Grouped by 1 field}
+                  other {Grouped by # fields}
+                }`}
+              values={{ groupersCount }}
+            />
+          </span>
+        </Trigger>
+        <Drawer
+          isOpen={this.state.dialogOpen}
+          onClose={() => {
+            this.setState({ dialogOpen: false });
+          }}
+          origin="right"
+          size="medium"
+        >
+          <DrawerLayout
+            name={
+              <FormattedMessage
+                id="guidu.data_controls.grouper.label"
+                defaultMessage="Group by"
+              />
+            }
+          >
+            <GrouperForm {...this.props} />
+          </DrawerLayout>
+        </Drawer>
+      </>
     );
   }
 }

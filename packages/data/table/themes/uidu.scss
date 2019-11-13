@@ -240,4 +240,24 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   .ag-cell-filter-active {
     background-color: #d1f7c4;
   }
+
+  .ag-overlay-wrapper {
+    &.ag-overlay-loading-wrapper {
+      background: white;
+    }
+  }
+
+  // row grouping
+  .ag-group-child-count {
+    margin-left: 0.25rem;
+  }
+
+  .ag-row-group.ag-full-width-row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ag-row-group-indent-2 {
+    padding-left: 2rem;
+  }
 }

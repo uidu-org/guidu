@@ -32,7 +32,6 @@ export default class Filterer extends Component<
       ...filterModel[k],
       colId: k,
     }));
-    console.log(filters);
     const filtersCount = filters.length;
     return (
       <>

@@ -19,7 +19,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
   };
 
   render() {
-    const { filters, columnDefs } = this.props;
+    const { filters, columnDefs, addFilter } = this.props;
 
     return (
       <Form
@@ -92,6 +92,9 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
               //   index: list.length,
               //   colId: columnDef,
               // });
+              addFilter({
+                colId: columnDef.colId,
+              });
               setTimeout(() => {
                 (this.form.current as any).submit();
               }, 30);

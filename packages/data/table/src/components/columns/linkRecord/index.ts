@@ -6,4 +6,5 @@ export default () => ({
   filter: 'agTextColumnFilter',
   headerComponentParams: { menuIcon: linkRecordField.icon },
   cellRendererFramework: Renderer,
+  keyCreator: params => params.value.name,
 });

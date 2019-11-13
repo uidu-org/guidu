@@ -133,7 +133,6 @@ export default class SorterForm extends PureComponent<SorterProps> {
               )
             }
             onClick={columnDef => {
-              console.log(columnDef);
               // push({
               //   sort: { id: 'asc', name: 'asc' },
               //   index: list.length,
