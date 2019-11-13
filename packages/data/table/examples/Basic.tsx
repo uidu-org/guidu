@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Table from '../';
 import { availableColumns, fetchContacts } from '../examples-utils';
-import '../src/themes/uidu.scss';
+import '../themes/uidu.scss';
 
 export default class Basic extends Component<any, any> {
   constructor(props) {
