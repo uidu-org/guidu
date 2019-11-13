@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.35
+
+### Patch Changes
+
+- 6ed511e: Added linkRecord field
+- Updated dependencies [6ed511e]
+  - @uidu/table@0.1.43
+
 ## 0.1.34
 
 ### Patch Changes
