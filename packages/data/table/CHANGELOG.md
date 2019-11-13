@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.48
+
+### Patch Changes
+
+- f7bb8db: Bump dependencies
+
 ## 0.1.47
 
 ### Patch Changes

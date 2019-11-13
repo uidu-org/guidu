@@ -1,6 +1,6 @@
 {
   "name": "@uidu/attend",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": false,
   "description": "React component to attend to an event",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -13,7 +13,7 @@
     "@uidu/field-text": "^0.1.22",
     "@uidu/field-textarea": "^0.1.10",
     "@uidu/form": "^0.1.39",
-    "@uidu/payments": "^0.1.9",
+    "@uidu/payments": "^0.1.10",
     "@uidu/spinner": "^0.1.12",
     "@uidu/widgets": "^0.1.10",
     "moment": "^2.18.1",
