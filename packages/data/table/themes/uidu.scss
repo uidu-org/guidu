@@ -64,10 +64,12 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
     }
   }
 
-  .ag-add-field-header {
-    &.ag-column-hover {
-      background-color: $light;
-    }
+  .ag-header-cell.ag-add-field-header {
+    cursor: pointer;
+    padding: 0;
+    // &.ag-column-hover {
+    //   background-color: $light;
+    // }
   }
 }
 
@@ -260,7 +262,7 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
   // interactions
   .ag-cell-sorter-active {
-    background-color: rgba(254, 226, 213, 0.4);
+    background-color: rgba(254, 226, 213, 0.2);
   }
 
   .ag-cell-filter-active {

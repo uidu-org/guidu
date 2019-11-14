@@ -20,6 +20,7 @@
     "@uidu/data-fields": "^0.1.12",
     "@uidu/item": "^0.1.18",
     "@uidu/shell": "^0.1.31",
+    "@uidu/tooltip": "^0.1.18",
     "react-day-picker": "^7.3.2",
     "react-intl": "^3.1.7",
     "react-router-dom": "^5.0.0",

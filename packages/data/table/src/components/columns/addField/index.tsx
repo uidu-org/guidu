@@ -1,4 +1,5 @@
 import { addField } from '@uidu/data-fields';
+import Tooltip from '@uidu/tooltip';
 import React from 'react';
 
 export default ({ onFieldAdd }) => ({
@@ -14,13 +15,15 @@ export default ({ onFieldAdd }) => ({
   editable: false,
   headerComponentFramework: ({ onFieldAdd, displayName }) => {
     return (
-      <div
-        className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
-        style={{ minWidth: 0 }}
-        onClick={onFieldAdd}
-      >
-        <span style={{ opacity: 0.5 }}>{addField.icon}</span>
-      </div>
+      <Tooltip content={displayName} position="bottom" delay={0}>
+        <div
+          className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
+          style={{ minWidth: 0 }}
+          onClick={onFieldAdd}
+        >
+          <span style={{ opacity: 0.5 }}>{addField.icon}</span>
+        </div>
+      </Tooltip>
     );
   },
   headerClass: 'ag-add-field-header text-center',

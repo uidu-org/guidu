@@ -51,7 +51,7 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
     case 'currency':
       return currencyColumn();
     case 'date':
-      return dateColumn({});
+      return dateColumn(dataFieldParams);
     case 'email':
       return emailColumn();
     case 'linkRecord':

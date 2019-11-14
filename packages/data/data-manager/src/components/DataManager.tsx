@@ -130,7 +130,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
       data: [],
       sorters: [],
       filterModel: {},
-      filters: [],
       groupers: [],
       rowHeight: 64,
     };
@@ -264,9 +263,12 @@ export default class DataManager extends Component<DataManagerProps, any> {
     }, 600);
   };
 
-  addFilter = ({ filter }) => {
+  addFilter = filter => {
     this.setState(prevState => ({
-      filters: [...prevState.filter, filter],
+      filterModel: {
+        ...prevState.filterModel,
+        [filter.colId]: {},
+      },
     }));
   };
 
@@ -287,9 +289,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   addSorter = sorter => {
-    this.setState(prevState => ({
-      sorters: [...prevState.sorters, sorter],
-    }));
+    this.setState(
+      prevState => ({
+        sorters: [...prevState.sorters, sorter],
+      }),
+      () => {
+        this.gridApi.setSortModel(this.state.sorters);
+      },
+    );
   };
 
   removeSorter = ({ colId }) => {
