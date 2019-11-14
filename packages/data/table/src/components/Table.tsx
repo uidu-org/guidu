@@ -51,14 +51,12 @@ const Table = ({
           },
           cellClassRules: {
             'ag-cell-sorter-active': params => {
-              console.log(params.api.getSortModel());
               return params.api
                 .getSortModel()
                 .map(s => s.colId)
                 .includes(params.colDef.colId);
             },
             'ag-cell-filter-active': params => {
-              console.log(params);
               return false;
               // return params.api
               //   .getSortModel()

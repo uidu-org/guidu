@@ -133,7 +133,7 @@ export default class Basic extends Component<any, any> {
                     <ShellBodyWithSidebar
                       sidebar={
                         renderSidebar() && (
-                          <div className="col-xl-3">{renderSidebar({})}</div>
+                          <div className="col-sm-3">{renderSidebar({})}</div>
                         )
                       }
                     >

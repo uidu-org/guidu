@@ -71,11 +71,15 @@ export default class Gallery extends PureComponent<GalleryProps> {
     const visibleColumnDefs = columnDefs.filter(
       c => !c.hide && !c.pinned && !c.rowGroup,
     );
-    const items = this.chunkData(rowData.filter(d => !!d.data), columnCount);
+    const items = this.chunkData(
+      rowData.filter(d => !!d.data),
+      columnCount,
+    );
 
     const primary = getPrimary(columnDefs);
     const cover = getCover(visibleColumnDefs);
     const avatar = getAvatar(visibleColumnDefs);
+    console.log(avatar);
 
     const itemData = createItemData(
       items,

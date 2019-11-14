@@ -35,7 +35,7 @@ const Cover = ({
 const Avatar = ({ avatar, item }) => {
   return (
     <img
-      src={valueRenderer(item.data[avatar.field], avatar)}
+      src={valueRenderer(item.data, avatar)}
       style={{ borderRadius: '100%', width: '7rem' }}
     />
   );
@@ -44,7 +44,6 @@ const Avatar = ({ avatar, item }) => {
 export default class ItemHeader extends PureComponent<any> {
   render() {
     const { item, cover, avatar } = this.props;
-
     if (avatar || cover) {
       return (
         <Cover cover={cover} item={item}>
