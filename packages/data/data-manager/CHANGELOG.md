@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.38
+
+### Patch Changes
+
+- 4cb228f: Add tooltip to add field, fix filters errors"
+- Updated dependencies [4cb228f]
+  - @uidu/table@0.1.49
+
 ## 0.1.37
 
 ### Patch Changes
