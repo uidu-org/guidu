@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.49
+
+### Patch Changes
+
+- 4cb228f: Add tooltip to add field, fix filters errors"
+
 ## 0.1.48
 
 ### Patch Changes
