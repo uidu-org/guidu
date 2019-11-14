@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.1.10
+
+### Patch Changes
+
+- f7bb8db: Bump dependencies
+
 ## 0.1.9
 
 ### Patch Changes

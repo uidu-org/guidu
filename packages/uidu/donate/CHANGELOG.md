@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.1.14
+
+### Patch Changes
+
+- f7bb8db: Bump dependencies
+- Updated dependencies [f7bb8db]
+  - @uidu/payments@0.1.10
+
 ## 0.1.13
 
 ### Patch Changes

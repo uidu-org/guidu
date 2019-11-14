@@ -1,5 +1,11 @@
 # @uidu/payment-sources
 
+## 0.1.7
+
+### Patch Changes
+
+- f7bb8db: Bump dependencies
+
 ## 0.1.6
 
 ### Patch Changes
