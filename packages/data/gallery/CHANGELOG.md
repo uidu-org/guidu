@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.19
+
+### Patch Changes
+
+- 1fee487: Fix gallery avatar and list primary field
+- Updated dependencies [1fee487]
+  - @uidu/table@0.1.50
+
 ## 0.1.18
 
 ### Patch Changes

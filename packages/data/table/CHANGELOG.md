@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.50
+
+### Patch Changes
+
+- 1fee487: Fix gallery avatar and list primary field
+
 ## 0.1.49
 
 ### Patch Changes

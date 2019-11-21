@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.39
+
+### Patch Changes
+
+- 1fee487: Fix gallery avatar and list primary field
+- Updated dependencies [1fee487]
+  - @uidu/gallery@0.1.19
+  - @uidu/table@0.1.50
+
 ## 0.1.38
 
 ### Patch Changes
