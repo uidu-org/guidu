@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.16
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/table@0.1.51
+
 ## 0.1.15
 
 ### Patch Changes

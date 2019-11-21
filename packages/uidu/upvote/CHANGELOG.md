@@ -1,5 +1,13 @@
 # @uidu/upvote
 
+## 0.1.5
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/button@0.1.48
+
 ## 0.1.4
 
 ### Patch Changes

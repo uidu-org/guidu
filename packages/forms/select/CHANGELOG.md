@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.2.2
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/button@0.1.48
+  - @uidu/modal-dialog@0.1.22
+  - @uidu/tooltip@0.1.19
+  - @uidu/checkbox@0.1.53
+  - @uidu/field-base@0.1.47
+  - @uidu/form@0.1.42
+
 ## 0.2.1
 
 ### Patch Changes

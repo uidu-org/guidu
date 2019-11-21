@@ -1,5 +1,20 @@
 # @uidu/message
 
+## 0.1.23
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/avatar@0.2.21
+  - @uidu/drawer@0.2.7
+  - @uidu/tooltip@0.1.19
+  - @uidu/media-card@0.1.20
+  - @uidu/media-core@0.1.14
+  - @uidu/media-filmstrip@0.1.20
+  - @uidu/message-form@0.1.19
+  - @uidu/message-renderer@0.1.16
+
 ## 0.1.22
 
 ### Patch Changes

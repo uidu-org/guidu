@@ -1,5 +1,15 @@
 # @uidu/dashboard-manager
 
+## 0.1.19
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/blocks@0.1.20
+  - @uidu/dashboard-controls@0.1.17
+  - @uidu/shell@0.1.32
+
 ## 0.1.18
 
 ### Patch Changes

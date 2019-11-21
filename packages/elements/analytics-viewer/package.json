@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-viewer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Analytics viewer for the examples",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "access": "private"
   },
   "dependencies": {
-    "@uidu/analytics": "^0.1.15",
+    "@uidu/analytics": "^0.1.16",
     "styled-components": "^4.0.3"
   },
   "devDependencies": {},

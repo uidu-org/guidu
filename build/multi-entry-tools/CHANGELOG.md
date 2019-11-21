@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.9
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+
 ## 0.0.8
 
 ### Patch Changes

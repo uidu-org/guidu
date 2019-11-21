@@ -1,6 +1,6 @@
 {
   "name": "@uidu/popper",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Wrapper for react-popper with common config and some helpers",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -13,7 +13,7 @@
     "react-popper": "1.3.3"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.46",
+    "@uidu/button": "^0.1.48",
     "@uidu/docs": "^0.1.34",
     "@uidu/theme": "^0.1.18",
     "react-dom": "^16.4.0",

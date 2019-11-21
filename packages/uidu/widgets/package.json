@@ -1,15 +1,15 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Widgets components with zois",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/contact": "^0.1.6",
-    "@uidu/shell": "^0.1.31",
-    "@uidu/slider": "^1.0.2",
+    "@uidu/contact": "^0.1.7",
+    "@uidu/shell": "^0.1.32",
+    "@uidu/slider": "^1.0.3",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {

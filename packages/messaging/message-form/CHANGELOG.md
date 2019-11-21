@@ -1,5 +1,18 @@
 # @uidu/message-form
 
+## 0.1.19
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/field-mentions@0.1.21
+  - @uidu/field-text@0.1.23
+  - @uidu/form@0.1.42
+  - @uidu/media-filmstrip@0.1.20
+  - @uidu/media-picker@0.1.13
+  - @uidu/message@0.1.23
+
 ## 0.1.18
 
 ### Patch Changes

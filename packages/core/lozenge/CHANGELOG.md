@@ -1,5 +1,11 @@
 # @uidu/lozenge
 
+## 0.1.15
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+
 ## 0.1.14
 
 ### Patch Changes

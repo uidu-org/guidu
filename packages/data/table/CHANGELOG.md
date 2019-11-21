@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 0.1.51
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/tooltip@0.1.19
+  - @uidu/data-controls@0.2.6
+  - @uidu/data-fields@0.1.14
+  - @uidu/shell@0.1.32
+
 ## 0.1.50
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/task-decision
 
+## 0.1.3
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/avatar-group@2.1.30
+  - @uidu/avatar@0.2.21
+  - @uidu/button@0.1.48
+  - @uidu/editor-common@0.1.9
+  - @uidu/renderer@0.1.6
+  - @uidu/analytics-listeners@0.1.2
+  - @uidu/analytics-namespaced-context@0.1.2
+  - @uidu/elements-test-helpers@0.1.2
+  - @uidu/util-data-test@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

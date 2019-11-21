@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.2.7
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/blanket@0.1.14
+  - @uidu/button@0.1.48
+  - @uidu/shell@0.1.32
+
 ## 0.2.6
 
 ### Patch Changes

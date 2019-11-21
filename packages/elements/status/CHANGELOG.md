@@ -1,5 +1,17 @@
 # @atlaskit/status
 
+## 0.1.2
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/lozenge@0.1.15
+  - @uidu/analytics-gas-types@0.1.2
+  - @uidu/elements-test-helpers@0.1.2
+  - @uidu/field-text@0.1.23
+
 ## 0.1.1
 
 ### Patch Changes

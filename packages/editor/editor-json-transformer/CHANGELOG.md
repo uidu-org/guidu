@@ -1,5 +1,15 @@
 # @uidu/editor-json-transformer
 
+## 0.1.2
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/adf-schema@0.1.2
+  - @uidu/editor-common@0.1.9
+  - @uidu/editor-core@0.1.19
+
 ## 0.1.1
 
 ### Patch Changes

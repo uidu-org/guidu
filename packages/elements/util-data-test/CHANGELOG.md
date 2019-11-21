@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.1.3
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/emoji@0.1.4
+  - @uidu/task-decision@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

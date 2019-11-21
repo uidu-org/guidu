@@ -1,5 +1,17 @@
 # @uidu/portal
 
+## 0.1.12
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/button@0.1.48
+  - @uidu/inline-dialog@0.1.8
+  - @uidu/modal-dialog@0.1.22
+  - @uidu/onboarding@0.1.4
+  - @uidu/tooltip@0.1.19
+
 ## 0.1.11
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.1.19
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/button@0.1.48
+  - @uidu/popper@0.1.13
+  - @uidu/portal@0.1.12
+
 ## 0.1.18
 
 ### Patch Changes

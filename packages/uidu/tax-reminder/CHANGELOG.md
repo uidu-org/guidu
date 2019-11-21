@@ -1,5 +1,19 @@
 # @uidu/tax-reminder
 
+## 0.1.13
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/checkbox@0.1.53
+  - @uidu/field-date@0.1.10
+  - @uidu/field-text@0.1.23
+  - @uidu/field-textarea@0.1.12
+  - @uidu/form@0.1.42
+  - @uidu/select@0.2.2
+  - @uidu/widgets@0.1.11
+
 ## 0.1.12
 
 ### Patch Changes

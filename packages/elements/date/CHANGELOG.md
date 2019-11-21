@@ -1,5 +1,13 @@
 # @atlaskit/date
 
+## 0.1.2
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/elements-test-helpers@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/contact
 
+## 0.1.7
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/checkbox@0.1.53
+  - @uidu/field-text@0.1.23
+  - @uidu/form@0.1.42
+
 ## 0.1.6
 
 ### Patch Changes

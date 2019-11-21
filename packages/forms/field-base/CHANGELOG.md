@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.47
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/form@0.1.42
+
 ## 0.1.46
 
 ### Patch Changes

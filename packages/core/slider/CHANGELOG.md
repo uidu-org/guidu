@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.0.3
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+
 ## 1.0.2
 
 ### Patch Changes
