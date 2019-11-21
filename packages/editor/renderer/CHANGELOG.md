@@ -1,5 +1,11 @@
 # @atlaskit/renderer
 
+## 0.1.5
+
+### Patch Changes
+
+- ab9a25e: Added flags, wip filters
+
 ## 0.1.4
 
 ### Patch Changes

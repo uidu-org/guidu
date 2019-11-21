@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.40
+
+### Patch Changes
+
+- ab9a25e: Added flags, wip filters
+- Updated dependencies [ab9a25e]
+  - @uidu/calendar@0.1.13
+  - @uidu/data-controls@0.2.5
+
 ## 0.1.39
 
 ### Patch Changes

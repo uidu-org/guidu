@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 0.3.0
+
+### Minor Changes
+
+- ab9a25e: Added flags, wip filters
+
 ## 0.2.7
 
 ### Patch Changes
