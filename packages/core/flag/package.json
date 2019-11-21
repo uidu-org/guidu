@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "license": "MIT",
   "types": "index.d.ts",

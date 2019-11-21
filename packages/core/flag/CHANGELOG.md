@@ -1,5 +1,11 @@
 # @uidu/flag
 
+## 0.1.3
+
+### Patch Changes
+
+- 39ac0e4: Removed npmignore
+
 ## 0.1.2
 
 ### Patch Changes

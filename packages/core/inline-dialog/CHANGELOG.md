@@ -1,5 +1,11 @@
 # @uidu/inline-dialog
 
+## 0.1.7
+
+### Patch Changes
+
+- 39ac0e4: Removed npmignore
+
 ## 0.1.6
 
 ### Patch Changes
