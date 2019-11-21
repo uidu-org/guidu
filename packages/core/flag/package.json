@@ -7,6 +7,7 @@
   "module": "index.js",
   "uidu:src": "index.ts",
   "sideEffects": false,
+  "private": false,
   "author": "uidu",
   "dependencies": {
     "@uidu/analytics": "^0.1.15",

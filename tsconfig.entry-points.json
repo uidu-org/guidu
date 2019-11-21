@@ -219,6 +219,18 @@
         "../../core/fab/src/types",
         "./packages/core/fab/src/types"
       ],
+      "@uidu/flag/index": [
+        "../../core/flag/src/index",
+        "./packages/core/flag/src/index"
+      ],
+      "@uidu/flag/theme": [
+        "../../core/flag/src/theme",
+        "./packages/core/flag/src/theme"
+      ],
+      "@uidu/flag/types": [
+        "../../core/flag/src/types",
+        "./packages/core/flag/src/types"
+      ],
       "@uidu/inline-dialog/index": [
         "../../core/inline-dialog/src/index",
         "./packages/core/inline-dialog/src/index"
