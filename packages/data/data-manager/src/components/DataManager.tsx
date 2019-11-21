@@ -221,8 +221,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
     });
   };
 
-  setFilterModel = async () => console.log;
-
   setGroupers = groupers => {
     console.log(groupers);
     // this.setState({ groupers });
@@ -272,11 +270,32 @@ export default class DataManager extends Component<DataManagerProps, any> {
     }));
   };
 
+  setFilterModel = filters => {
+    this.setState(
+      prevState => ({
+        filterModel: filters.reduce((res, item) => {
+          return {
+            ...res,
+            [item.colId]: {
+              type: 'contains',
+              ...item,
+            },
+          };
+        }, prevState.filterModel),
+      }),
+      () => {
+        this.gridApi.setFilterModel(this.state.filterModel);
+        this.gridApi.onFilterChanged();
+      },
+    );
+  };
+
   onFilterChanged = ({ api }) => {
     const filterModel = api.getFilterModel();
+    console.log(filterModel);
     this.setState({
       data: api.getModel().rowsToDisplay,
-      filterModel,
+      // filterModel,
     });
   };
 

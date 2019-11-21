@@ -34,7 +34,6 @@
   },
   "devDependencies": {
     "@types/prosemirror-model": "^1.5.0",
-    "@types/puppeteer": "^1.12.1",
     "@types/react-loadable": "^5.4.1",
     "@uidu/avatar": "^0.2.20",
     "@uidu/button": "^0.1.46",

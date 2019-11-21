@@ -1,4 +1,4 @@
-import FieldText from '@uidu/field-text';
+import { byName } from '@uidu/data-fields';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
@@ -28,50 +28,68 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
         handleSubmit={this.handleSubmit}
       >
         <div className="list-group">
-          {filters.map((filter: any, index) => (
-            <div className="list-group-item px-3 px-xl-4" key={filter.colId}>
-              <div className="form-group mb-2">
-                <label htmlFor="" className="d-flex align-items-center">
-                  <FormattedMessage
-                    id="guidu.data_controls.filterer.where"
-                    defaultMessage="Where"
-                  />
-                </label>
-                <Select
-                  layout="elementOnly"
-                  value={filter.colId}
-                  name="filter[colId]"
-                  options={columnDefs.map(columnDef => ({
-                    id: columnDef.colId,
-                    name: columnDef.headerName,
-                    ...(columnDef.headerComponentParams
-                      ? {
-                          before: columnDef.headerComponentParams.menuIcon,
-                        }
-                      : {}),
-                  }))}
-                />
-              </div>
-              <div className="form-row">
-                <div className="col-3">
+          {filters.map((filter: any, index) => {
+            const field =
+              byName[
+                columnDefs.filter(c => c.colId === filter.colId)[0].type as any
+              ];
+            const { filterForm: FilterForm } = field;
+            return (
+              <div className="list-group-item px-3 px-xl-4" key={filter.colId}>
+                <div className="form-group mb-2">
+                  <label htmlFor="" className="d-flex align-items-center">
+                    <FormattedMessage
+                      id="guidu.data_controls.filterer.where"
+                      defaultMessage="Where"
+                    />
+                  </label>
                   <Select
-                    isClearable={false}
                     layout="elementOnly"
-                    defaultValue="is"
-                    name="field"
-                    options={[{ name: 'is', id: 'is' }]}
+                    value={filter.colId}
+                    name={`filters[${index}][colId]`}
+                    options={columnDefs.map(columnDef => ({
+                      id: columnDef.colId,
+                      name: columnDef.headerName,
+                      ...(columnDef.headerComponentParams
+                        ? {
+                            before: columnDef.headerComponentParams.menuIcon,
+                          }
+                        : {}),
+                    }))}
                   />
                 </div>
-                <div className="col-9">
-                  <FieldText
-                    layout="elementOnly"
-                    name="field"
-                    value={filter.filter}
+                {FilterForm && (
+                  <FilterForm
+                    index={index}
+                    filter={filter}
+                    onChange={() =>
+                      setTimeout(() => {
+                        (this.form.current as any).submit();
+                      }, 30)
+                    }
                   />
-                </div>
+                )}
+                {/* <div className="form-row">
+                  <div className="col-3">
+                    <Select
+                      isClearable={false}
+                      layout="elementOnly"
+                      defaultValue="is"
+                      name="field"
+                      options={[{ name: 'is', id: 'is' }]}
+                    />
+                  </div>
+                  <div className="col-9">
+                    <FieldText
+                      layout="elementOnly"
+                      name="field"
+                      value={filter.filter}
+                    />
+                  </div>
+                </div> */}
               </div>
-            </div>
-          ))}
+            );
+          })}
           <PickField
             label={
               filters.length ? (

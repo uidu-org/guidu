@@ -16,6 +16,7 @@ class RadioStateless extends Component<any> {
 
   render() {
     const {
+      value,
       label,
       id,
       name,
@@ -37,7 +38,7 @@ class RadioStateless extends Component<any> {
           name={name}
           className="custom-control-input"
           onChange={onChange}
-          value={id}
+          value={value}
           disabled={disabled}
           checked={checked}
         />

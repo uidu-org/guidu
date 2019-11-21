@@ -6,11 +6,11 @@ import {
 } from '@uidu/shell';
 import { buildColumns } from '@uidu/table';
 import React, { Component } from 'react';
-import 'react-big-calendar/lib/sass/styles.scss';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Transition } from 'react-transition-group';
 import DataManager from '../';
+import '../../calendar/themes/uidu.scss';
 import { availableColumns, fetchContacts } from '../../table/examples-utils';
 import '../../table/themes/uidu.scss';
 
