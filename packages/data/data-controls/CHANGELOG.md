@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.5
+
+### Patch Changes
+
+- ab9a25e: Added flags, wip filters
+- Updated dependencies [ab9a25e]
+  - @uidu/data-fields@0.1.13
+
 ## 0.2.4
 
 ### Patch Changes

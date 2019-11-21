@@ -1,5 +1,11 @@
 # @uidu/inline-dialog
 
+## 0.1.6
+
+### Patch Changes
+
+- ab9a25e: Added flags, wip filters
+
 ## 0.1.5
 
 ### Patch Changes

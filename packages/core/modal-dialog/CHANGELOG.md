@@ -1,5 +1,13 @@
 # @uidu/modal-dialog
 
+## 0.1.21
+
+### Patch Changes
+
+- Updated dependencies [ab9a25e]
+  - @uidu/radio@0.3.0
+  - @uidu/inline-dialog@0.1.6
+
 ## 0.1.20
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [ab9a25e]
+  - @uidu/radio@0.3.0
+  - @uidu/modal-dialog@0.1.21
+
 ## 0.1.14
 
 ### Patch Changes
