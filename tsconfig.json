@@ -32,15 +32,6 @@
       "es2015.iterable",
       "es2015.promise"
     ],
-    "types": [
-      "jest",
-      "react",
-      "css-color-names",
-      "jest-styled-components",
-      "styled-components",
-      "linkify-it"
-    ],
-    "typeRoots": ["./typings", "./node_modules/@types"],
     "esModuleInterop": true
   },
   "files": [

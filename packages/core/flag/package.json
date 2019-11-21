@@ -9,6 +9,9 @@
   "sideEffects": false,
   "private": false,
   "author": "uidu",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@uidu/analytics": "^0.1.15",
     "@uidu/button": "^0.1.47",

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "target": "es5",
     "declaration": true,
-    "outDir": "../../"
+    "outDir": "../../",
+    "paths": {}
   },
   "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
   "exclude": ["../../src/__tests__/unit/*.*", "../../src/**/__tests__/unit/*.*"]

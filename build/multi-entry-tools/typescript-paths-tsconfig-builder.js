@@ -1,25 +1,26 @@
+// @flow
 const getAlternativeEntryPointAliasMap = require('./module-resolve-map-builder');
 const fromEntries = require('./utils/fromEntries');
 
 async function main() {
-  const isProjectLevel = process.argv[2] === '--project';
-
   const mapping = await getAlternativeEntryPointAliasMap();
   const cwd = process.cwd();
   const paths = fromEntries(
     Object.entries(mapping)
+      // $FlowFixMe - better types
       .filter(([, path]) => path.includes('/packages/'))
       .map(([moduleName, modulePath]) => {
-        const modulePathWithoutExtension = modulePath.replace(
-          /(\.tsx?|\.js)$/,
-          '',
-        );
+        const modulePattern = moduleName.replace('/index', '');
+        const resolutionPath = modulePath
+          // $FlowFixMe - better types
+          .replace('/index', '/')
+          .replace(/(\.tsx?|\.js)$/, '');
 
         return [
-          [moduleName],
+          [modulePattern],
           [
-            modulePathWithoutExtension.replace(`${cwd}/packages`, '../..'),
-            modulePathWithoutExtension.replace(`${cwd}/`, './'),
+            resolutionPath.replace(`${cwd}/packages`, '../..'),
+            resolutionPath.replace(`${cwd}/`, './'),
           ],
         ];
       }),
@@ -29,7 +30,7 @@ async function main() {
     '/* This file is auto-generated to get multi entry points to type check correctly */',
   );
   console.log(
-    '/* When you add a new entry point in src/ rebuild it by running:  bolt build:multi-entry-point-tsconfig */',
+    '/* When you add a new entry point in src/ rebuild it by running:  yarn build:multi-entry-point-tsconfig */',
   );
 
   console.log(
@@ -37,7 +38,6 @@ async function main() {
       {
         compilerOptions: {
           paths,
-          baseUrl: '/',
         },
       },
       null,

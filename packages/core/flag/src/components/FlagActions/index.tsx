@@ -1,5 +1,4 @@
-import Button, { ButtonAppearances } from '@uidu/button';
-import { ButtonProps } from '@uidu/button/types';
+import Button, { ButtonAppearances, ButtonProps } from '@uidu/button';
 import React, { Component, ComponentType } from 'react';
 import uuid from 'uuid/v1';
 import { actionButtonStyles, getPseudos } from '../../theme';

@@ -1,23 +1,23 @@
 /* This file is auto-generated to get multi entry points to type check correctly */
-/* When you add a new entry point in src/ rebuild it by running:  bolt build:multi-entry-point-tsconfig */
+/* When you add a new entry point in src/ rebuild it by running:  yarn build:multi-entry-point-tsconfig */
 {
   "compilerOptions": {
     "paths": {
-      "@uidu/devise/index": [
-        "../../authentication/devise/src/index",
-        "./packages/authentication/devise/src/index"
+      "@uidu/devise": [
+        "../../authentication/devise/src/",
+        "./packages/authentication/devise/src/"
       ],
       "@uidu/devise/types": [
         "../../authentication/devise/src/types",
         "./packages/authentication/devise/src/types"
       ],
-      "@uidu/popup-campaigns/index": [
-        "../../campaigns/popup-campaigns/src/index",
-        "./packages/campaigns/popup-campaigns/src/index"
+      "@uidu/popup-campaigns": [
+        "../../campaigns/popup-campaigns/src/",
+        "./packages/campaigns/popup-campaigns/src/"
       ],
-      "@uidu/accordion/index": [
-        "../../core/accordion/src/index",
-        "./packages/core/accordion/src/index"
+      "@uidu/accordion": [
+        "../../core/accordion/src/",
+        "./packages/core/accordion/src/"
       ],
       "@uidu/accordion/types": [
         "../../core/accordion/src/types",
@@ -59,9 +59,9 @@
         "../../core/analytics/src/createAndFireEvent",
         "./packages/core/analytics/src/createAndFireEvent"
       ],
-      "@uidu/analytics/index": [
-        "../../core/analytics/src/index",
-        "./packages/core/analytics/src/index"
+      "@uidu/analytics": [
+        "../../core/analytics/src/",
+        "./packages/core/analytics/src/"
       ],
       "@uidu/analytics/types": [
         "../../core/analytics/src/types",
@@ -95,9 +95,9 @@
         "../../core/analytics/src/withAnalyticsHook",
         "./packages/core/analytics/src/withAnalyticsHook"
       ],
-      "@uidu/avatar/index": [
-        "../../core/avatar/src/index",
-        "./packages/core/avatar/src/index"
+      "@uidu/avatar": [
+        "../../core/avatar/src/",
+        "./packages/core/avatar/src/"
       ],
       "@uidu/avatar/types": [
         "../../core/avatar/src/types",
@@ -107,21 +107,21 @@
         "../../core/avatar/src/utils",
         "./packages/core/avatar/src/utils"
       ],
-      "@uidu/avatar-group/index": [
-        "../../core/avatar-group/src/index",
-        "./packages/core/avatar-group/src/index"
+      "@uidu/avatar-group": [
+        "../../core/avatar-group/src/",
+        "./packages/core/avatar-group/src/"
       ],
-      "@uidu/badge/index": [
-        "../../core/badge/src/index",
-        "./packages/core/badge/src/index"
+      "@uidu/badge": [
+        "../../core/badge/src/",
+        "./packages/core/badge/src/"
       ],
       "@uidu/badge/theme": [
         "../../core/badge/src/theme",
         "./packages/core/badge/src/theme"
       ],
-      "@uidu/banner/index": [
-        "../../core/banner/src/index",
-        "./packages/core/banner/src/index"
+      "@uidu/banner": [
+        "../../core/banner/src/",
+        "./packages/core/banner/src/"
       ],
       "@uidu/banner/styled": [
         "../../core/banner/src/styled",
@@ -131,17 +131,17 @@
         "../../core/blanket/src/Blanket",
         "./packages/core/blanket/src/Blanket"
       ],
-      "@uidu/blanket/index": [
-        "../../core/blanket/src/index",
-        "./packages/core/blanket/src/index"
+      "@uidu/blanket": [
+        "../../core/blanket/src/",
+        "./packages/core/blanket/src/"
       ],
       "@uidu/blanket/styled": [
         "../../core/blanket/src/styled",
         "./packages/core/blanket/src/styled"
       ],
-      "@uidu/button/index": [
-        "../../core/button/src/index",
-        "./packages/core/button/src/index"
+      "@uidu/button": [
+        "../../core/button/src/",
+        "./packages/core/button/src/"
       ],
       "@uidu/button/theme": [
         "../../core/button/src/theme",
@@ -151,9 +151,9 @@
         "../../core/button/src/types",
         "./packages/core/button/src/types"
       ],
-      "@uidu/code/index": [
-        "../../core/code/src/index",
-        "./packages/core/code/src/index"
+      "@uidu/code": [
+        "../../core/code/src/",
+        "./packages/core/code/src/"
       ],
       "@uidu/code/supportedLanguages": [
         "../../core/code/src/supportedLanguages",
@@ -175,9 +175,9 @@
         "../../core/docs/src/Example",
         "./packages/core/docs/src/Example"
       ],
-      "@uidu/docs/index": [
-        "../../core/docs/src/index",
-        "./packages/core/docs/src/index"
+      "@uidu/docs": [
+        "../../core/docs/src/",
+        "./packages/core/docs/src/"
       ],
       "@uidu/docs/replaceSrc": [
         "../../core/docs/src/replaceSrc",
@@ -187,41 +187,41 @@
         "../../core/drawer/src/constants",
         "./packages/core/drawer/src/constants"
       ],
-      "@uidu/drawer/index": [
-        "../../core/drawer/src/index",
-        "./packages/core/drawer/src/index"
+      "@uidu/drawer": [
+        "../../core/drawer/src/",
+        "./packages/core/drawer/src/"
       ],
       "@uidu/drawer/types": [
         "../../core/drawer/src/types",
         "./packages/core/drawer/src/types"
       ],
-      "@uidu/dropdown-menu/index": [
-        "../../core/dropdown-menu/src/index",
-        "./packages/core/dropdown-menu/src/index"
+      "@uidu/dropdown-menu": [
+        "../../core/dropdown-menu/src/",
+        "./packages/core/dropdown-menu/src/"
       ],
       "@uidu/dropdown-menu/types": [
         "../../core/dropdown-menu/src/types",
         "./packages/core/dropdown-menu/src/types"
       ],
-      "@uidu/droplist/index": [
-        "../../core/droplist/src/index",
-        "./packages/core/droplist/src/index"
+      "@uidu/droplist": [
+        "../../core/droplist/src/",
+        "./packages/core/droplist/src/"
       ],
       "@uidu/droplist/types": [
         "../../core/droplist/src/types",
         "./packages/core/droplist/src/types"
       ],
-      "@uidu/fab/index": [
-        "../../core/fab/src/index",
-        "./packages/core/fab/src/index"
+      "@uidu/fab": [
+        "../../core/fab/src/",
+        "./packages/core/fab/src/"
       ],
       "@uidu/fab/types": [
         "../../core/fab/src/types",
         "./packages/core/fab/src/types"
       ],
-      "@uidu/flag/index": [
-        "../../core/flag/src/index",
-        "./packages/core/flag/src/index"
+      "@uidu/flag": [
+        "../../core/flag/src/",
+        "./packages/core/flag/src/"
       ],
       "@uidu/flag/theme": [
         "../../core/flag/src/theme",
@@ -231,25 +231,25 @@
         "../../core/flag/src/types",
         "./packages/core/flag/src/types"
       ],
-      "@uidu/inline-dialog/index": [
-        "../../core/inline-dialog/src/index",
-        "./packages/core/inline-dialog/src/index"
+      "@uidu/inline-dialog": [
+        "../../core/inline-dialog/src/",
+        "./packages/core/inline-dialog/src/"
       ],
       "@uidu/inline-dialog/types": [
         "../../core/inline-dialog/src/types",
         "./packages/core/inline-dialog/src/types"
       ],
-      "@uidu/item/index": [
-        "../../core/item/src/index",
-        "./packages/core/item/src/index"
+      "@uidu/item": [
+        "../../core/item/src/",
+        "./packages/core/item/src/"
       ],
       "@uidu/item/types": [
         "../../core/item/src/types",
         "./packages/core/item/src/types"
       ],
-      "@uidu/layer/index": [
-        "../../core/layer/src/index",
-        "./packages/core/layer/src/index"
+      "@uidu/layer": [
+        "../../core/layer/src/",
+        "./packages/core/layer/src/"
       ],
       "@uidu/layer/styledContentContainer": [
         "../../core/layer/src/styledContentContainer",
@@ -259,21 +259,21 @@
         "../../core/layer/src/types",
         "./packages/core/layer/src/types"
       ],
-      "@uidu/lozenge/index": [
-        "../../core/lozenge/src/index",
-        "./packages/core/lozenge/src/index"
+      "@uidu/lozenge": [
+        "../../core/lozenge/src/",
+        "./packages/core/lozenge/src/"
       ],
       "@uidu/lozenge/theme": [
         "../../core/lozenge/src/theme",
         "./packages/core/lozenge/src/theme"
       ],
-      "@uidu/map/index": [
-        "../../core/map/src/index",
-        "./packages/core/map/src/index"
+      "@uidu/map": [
+        "../../core/map/src/",
+        "./packages/core/map/src/"
       ],
-      "@uidu/modal-dialog/index": [
-        "../../core/modal-dialog/src/index",
-        "./packages/core/modal-dialog/src/index"
+      "@uidu/modal-dialog": [
+        "../../core/modal-dialog/src/",
+        "./packages/core/modal-dialog/src/"
       ],
       "@uidu/modal-dialog/shared-variables": [
         "../../core/modal-dialog/src/shared-variables",
@@ -283,17 +283,17 @@
         "../../core/modal-dialog/src/types",
         "./packages/core/modal-dialog/src/types"
       ],
-      "@uidu/onboarding/index": [
-        "../../core/onboarding/src/index",
-        "./packages/core/onboarding/src/index"
+      "@uidu/onboarding": [
+        "../../core/onboarding/src/",
+        "./packages/core/onboarding/src/"
       ],
       "@uidu/onboarding/types": [
         "../../core/onboarding/src/types",
         "./packages/core/onboarding/src/types"
       ],
-      "@uidu/popper/index": [
-        "../../core/popper/src/index",
-        "./packages/core/popper/src/index"
+      "@uidu/popper": [
+        "../../core/popper/src/",
+        "./packages/core/popper/src/"
       ],
       "@uidu/popper/Popper": [
         "../../core/popper/src/Popper",
@@ -307,17 +307,17 @@
         "../../core/portal/src/constants",
         "./packages/core/portal/src/constants"
       ],
-      "@uidu/portal/index": [
-        "../../core/portal/src/index",
-        "./packages/core/portal/src/index"
+      "@uidu/portal": [
+        "../../core/portal/src/",
+        "./packages/core/portal/src/"
       ],
       "@uidu/range/FieldRange": [
         "../../core/range/src/FieldRange",
         "./packages/core/range/src/FieldRange"
       ],
-      "@uidu/range/index": [
-        "../../core/range/src/index",
-        "./packages/core/range/src/index"
+      "@uidu/range": [
+        "../../core/range/src/",
+        "./packages/core/range/src/"
       ],
       "@uidu/range/styled": [
         "../../core/range/src/styled",
@@ -327,9 +327,9 @@
         "../../core/range/src/theme",
         "./packages/core/range/src/theme"
       ],
-      "@uidu/section-message/index": [
-        "../../core/section-message/src/index",
-        "./packages/core/section-message/src/index"
+      "@uidu/section-message": [
+        "../../core/section-message/src/",
+        "./packages/core/section-message/src/"
       ],
       "@uidu/section-message/theme": [
         "../../core/section-message/src/theme",
@@ -339,13 +339,13 @@
         "../../core/section-message/src/types",
         "./packages/core/section-message/src/types"
       ],
-      "@uidu/slider/index": [
-        "../../core/slider/src/index",
-        "./packages/core/slider/src/index"
+      "@uidu/slider": [
+        "../../core/slider/src/",
+        "./packages/core/slider/src/"
       ],
-      "@uidu/spinner/index": [
-        "../../core/spinner/src/index",
-        "./packages/core/spinner/src/index"
+      "@uidu/spinner": [
+        "../../core/spinner/src/",
+        "./packages/core/spinner/src/"
       ],
       "@uidu/spinner/types": [
         "../../core/spinner/src/types",
@@ -371,9 +371,9 @@
         "../../core/theme/src/hoc",
         "./packages/core/theme/src/hoc"
       ],
-      "@uidu/theme/index": [
-        "../../core/theme/src/index",
-        "./packages/core/theme/src/index"
+      "@uidu/theme": [
+        "../../core/theme/src/",
+        "./packages/core/theme/src/"
       ],
       "@uidu/theme/math": [
         "../../core/theme/src/math",
@@ -391,9 +391,9 @@
         "../../core/toggle/src/defaultBaseProps",
         "./packages/core/toggle/src/defaultBaseProps"
       ],
-      "@uidu/toggle/index": [
-        "../../core/toggle/src/index",
-        "./packages/core/toggle/src/index"
+      "@uidu/toggle": [
+        "../../core/toggle/src/",
+        "./packages/core/toggle/src/"
       ],
       "@uidu/toggle/Toggle": [
         "../../core/toggle/src/Toggle",
@@ -407,9 +407,9 @@
         "../../core/toggle/src/types",
         "./packages/core/toggle/src/types"
       ],
-      "@uidu/tooltip/index": [
-        "../../core/tooltip/src/index",
-        "./packages/core/tooltip/src/index"
+      "@uidu/tooltip": [
+        "../../core/tooltip/src/",
+        "./packages/core/tooltip/src/"
       ],
       "@uidu/tooltip/styled": [
         "../../core/tooltip/src/styled",
@@ -419,121 +419,121 @@
         "../../core/tooltip/src/types",
         "./packages/core/tooltip/src/types"
       ],
-      "@uidu/blocks/index": [
-        "../../dashboards/blocks/src/index",
-        "./packages/dashboards/blocks/src/index"
+      "@uidu/blocks": [
+        "../../dashboards/blocks/src/",
+        "./packages/dashboards/blocks/src/"
       ],
       "@uidu/blocks/types": [
         "../../dashboards/blocks/src/types",
         "./packages/dashboards/blocks/src/types"
       ],
-      "@uidu/dashboard-controls/index": [
-        "../../dashboards/dashboard-controls/src/index",
-        "./packages/dashboards/dashboard-controls/src/index"
+      "@uidu/dashboard-controls": [
+        "../../dashboards/dashboard-controls/src/",
+        "./packages/dashboards/dashboard-controls/src/"
       ],
       "@uidu/dashboard-controls/types": [
         "../../dashboards/dashboard-controls/src/types",
         "./packages/dashboards/dashboard-controls/src/types"
       ],
-      "@uidu/dashboard-manager/index": [
-        "../../dashboards/dashboard-manager/src/index",
-        "./packages/dashboards/dashboard-manager/src/index"
+      "@uidu/dashboard-manager": [
+        "../../dashboards/dashboard-manager/src/",
+        "./packages/dashboards/dashboard-manager/src/"
       ],
       "@uidu/dashboard-manager/types": [
         "../../dashboards/dashboard-manager/src/types",
         "./packages/dashboards/dashboard-manager/src/types"
       ],
-      "@uidu/board/index": [
-        "../../data/board/src/index",
-        "./packages/data/board/src/index"
+      "@uidu/board": [
+        "../../data/board/src/",
+        "./packages/data/board/src/"
       ],
       "@uidu/board/types": [
         "../../data/board/src/types",
         "./packages/data/board/src/types"
       ],
-      "@uidu/calendar/index": [
-        "../../data/calendar/src/index",
-        "./packages/data/calendar/src/index"
+      "@uidu/calendar": [
+        "../../data/calendar/src/",
+        "./packages/data/calendar/src/"
       ],
-      "@uidu/data-controls/index": [
-        "../../data/data-controls/src/index",
-        "./packages/data/data-controls/src/index"
+      "@uidu/data-controls": [
+        "../../data/data-controls/src/",
+        "./packages/data/data-controls/src/"
       ],
-      "@uidu/data-fields/index": [
-        "../../data/data-fields/src/index",
-        "./packages/data/data-fields/src/index"
+      "@uidu/data-fields": [
+        "../../data/data-fields/src/",
+        "./packages/data/data-fields/src/"
       ],
       "@uidu/data-fields/types": [
         "../../data/data-fields/src/types",
         "./packages/data/data-fields/src/types"
       ],
-      "@uidu/data-manager/index": [
-        "../../data/data-manager/src/index",
-        "./packages/data/data-manager/src/index"
+      "@uidu/data-manager": [
+        "../../data/data-manager/src/",
+        "./packages/data/data-manager/src/"
       ],
       "@uidu/data-manager/types": [
         "../../data/data-manager/src/types",
         "./packages/data/data-manager/src/types"
       ],
-      "@uidu/data-views/index": [
-        "../../data/data-views/src/index",
-        "./packages/data/data-views/src/index"
+      "@uidu/data-views": [
+        "../../data/data-views/src/",
+        "./packages/data/data-views/src/"
       ],
       "@uidu/data-views/types": [
         "../../data/data-views/src/types",
         "./packages/data/data-views/src/types"
       ],
-      "@uidu/gallery/index": [
-        "../../data/gallery/src/index",
-        "./packages/data/gallery/src/index"
+      "@uidu/gallery": [
+        "../../data/gallery/src/",
+        "./packages/data/gallery/src/"
       ],
       "@uidu/gallery/types": [
         "../../data/gallery/src/types",
         "./packages/data/gallery/src/types"
       ],
-      "@uidu/list/index": [
-        "../../data/list/src/index",
-        "./packages/data/list/src/index"
+      "@uidu/list": [
+        "../../data/list/src/",
+        "./packages/data/list/src/"
       ],
-      "@uidu/table/index": [
-        "../../data/table/src/index",
-        "./packages/data/table/src/index"
+      "@uidu/table": [
+        "../../data/table/src/",
+        "./packages/data/table/src/"
       ],
       "@uidu/table/types": [
         "../../data/table/src/types",
         "./packages/data/table/src/types"
       ],
-      "@uidu/payment-sources/index": [
-        "../../ecommerce/payment-sources/src/index",
-        "./packages/ecommerce/payment-sources/src/index"
+      "@uidu/payment-sources": [
+        "../../ecommerce/payment-sources/src/",
+        "./packages/ecommerce/payment-sources/src/"
       ],
-      "@uidu/payments/index": [
-        "../../ecommerce/payments/src/index",
-        "./packages/ecommerce/payments/src/index"
+      "@uidu/payments": [
+        "../../ecommerce/payments/src/",
+        "./packages/ecommerce/payments/src/"
       ],
       "@uidu/payments/types": [
         "../../ecommerce/payments/src/types",
         "./packages/ecommerce/payments/src/types"
       ],
-      "@uidu/stripe-accounts/index": [
-        "../../ecommerce/stripe-accounts/src/index",
-        "./packages/ecommerce/stripe-accounts/src/index"
+      "@uidu/stripe-accounts": [
+        "../../ecommerce/stripe-accounts/src/",
+        "./packages/ecommerce/stripe-accounts/src/"
       ],
-      "@uidu/adf-schema/index": [
-        "../../editor/adf-schema/src/index",
-        "./packages/editor/adf-schema/src/index"
+      "@uidu/adf-schema": [
+        "../../editor/adf-schema/src/",
+        "./packages/editor/adf-schema/src/"
       ],
-      "@uidu/adf-utils/index": [
-        "../../editor/adf-utils/src/index",
-        "./packages/editor/adf-utils/src/index"
+      "@uidu/adf-utils": [
+        "../../editor/adf-utils/src/",
+        "./packages/editor/adf-utils/src/"
       ],
       "@uidu/editor-common/color": [
         "../../editor/editor-common/src/color",
         "./packages/editor/editor-common/src/color"
       ],
-      "@uidu/editor-common/index": [
-        "../../editor/editor-common/src/index",
-        "./packages/editor/editor-common/src/index"
+      "@uidu/editor-common": [
+        "../../editor/editor-common/src/",
+        "./packages/editor/editor-common/src/"
       ],
       "@uidu/editor-common/validator": [
         "../../editor/editor-common/src/validator",
@@ -543,9 +543,9 @@
         "../../editor/editor-core/src/editor",
         "./packages/editor/editor-core/src/editor"
       ],
-      "@uidu/editor-core/index": [
-        "../../editor/editor-core/src/index",
-        "./packages/editor/editor-core/src/index"
+      "@uidu/editor-core": [
+        "../../editor/editor-core/src/",
+        "./packages/editor/editor-core/src/"
       ],
       "@uidu/editor-core/messages": [
         "../../editor/editor-core/src/messages",
@@ -555,13 +555,13 @@
         "../../editor/editor-core/src/version-wrapper",
         "./packages/editor/editor-core/src/version-wrapper"
       ],
-      "@uidu/editor-json-transformer/index": [
-        "../../editor/editor-json-transformer/src/index",
-        "./packages/editor/editor-json-transformer/src/index"
+      "@uidu/editor-json-transformer": [
+        "../../editor/editor-json-transformer/src/",
+        "./packages/editor/editor-json-transformer/src/"
       ],
-      "@uidu/editor-markdown-transformer/index": [
-        "../../editor/editor-markdown-transformer/src/index",
-        "./packages/editor/editor-markdown-transformer/src/index"
+      "@uidu/editor-markdown-transformer": [
+        "../../editor/editor-markdown-transformer/src/",
+        "./packages/editor/editor-markdown-transformer/src/"
       ],
       "@uidu/editor-markdown-transformer/media": [
         "../../editor/editor-markdown-transformer/src/media",
@@ -571,9 +571,9 @@
         "../../editor/json-schema-generator/src/cli",
         "./packages/editor/json-schema-generator/src/cli"
       ],
-      "@uidu/json-schema-generator/index": [
-        "../../editor/json-schema-generator/src/index",
-        "./packages/editor/json-schema-generator/src/index"
+      "@uidu/json-schema-generator": [
+        "../../editor/json-schema-generator/src/",
+        "./packages/editor/json-schema-generator/src/"
       ],
       "@uidu/json-schema-generator/utils": [
         "../../editor/json-schema-generator/src/utils",
@@ -583,9 +583,9 @@
         "../../editor/renderer/src/consts",
         "./packages/editor/renderer/src/consts"
       ],
-      "@uidu/renderer/index": [
-        "../../editor/renderer/src/index",
-        "./packages/editor/renderer/src/index"
+      "@uidu/renderer": [
+        "../../editor/renderer/src/",
+        "./packages/editor/renderer/src/"
       ],
       "@uidu/renderer/messages": [
         "../../editor/renderer/src/messages",
@@ -607,9 +607,9 @@
         "../../editor/renderer/src/utils",
         "./packages/editor/renderer/src/utils"
       ],
-      "@uidu/analytics-gas-types/index": [
-        "../../elements/analytics-gas-types/src/index",
-        "./packages/elements/analytics-gas-types/src/index"
+      "@uidu/analytics-gas-types": [
+        "../../elements/analytics-gas-types/src/",
+        "./packages/elements/analytics-gas-types/src/"
       ],
       "@uidu/analytics-listeners/analytics-web-client-wrapper": [
         "../../elements/analytics-listeners/src/analytics-web-client-wrapper",
@@ -619,9 +619,9 @@
         "../../elements/analytics-listeners/src/FabricAnalyticsListeners",
         "./packages/elements/analytics-listeners/src/FabricAnalyticsListeners"
       ],
-      "@uidu/analytics-listeners/index": [
-        "../../elements/analytics-listeners/src/index",
-        "./packages/elements/analytics-listeners/src/index"
+      "@uidu/analytics-listeners": [
+        "../../elements/analytics-listeners/src/",
+        "./packages/elements/analytics-listeners/src/"
       ],
       "@uidu/analytics-listeners/types": [
         "../../elements/analytics-listeners/src/types",
@@ -635,29 +635,29 @@
         "../../elements/analytics-namespaced-context/src/FabricElementsAnalyticsContext",
         "./packages/elements/analytics-namespaced-context/src/FabricElementsAnalyticsContext"
       ],
-      "@uidu/analytics-namespaced-context/index": [
-        "../../elements/analytics-namespaced-context/src/index",
-        "./packages/elements/analytics-namespaced-context/src/index"
+      "@uidu/analytics-namespaced-context": [
+        "../../elements/analytics-namespaced-context/src/",
+        "./packages/elements/analytics-namespaced-context/src/"
       ],
       "@uidu/analytics-namespaced-context/NavigationAnalyticsContext": [
         "../../elements/analytics-namespaced-context/src/NavigationAnalyticsContext",
         "./packages/elements/analytics-namespaced-context/src/NavigationAnalyticsContext"
       ],
-      "@uidu/analytics-viewer/index": [
-        "../../elements/analytics-viewer/src/index",
-        "./packages/elements/analytics-viewer/src/index"
+      "@uidu/analytics-viewer": [
+        "../../elements/analytics-viewer/src/",
+        "./packages/elements/analytics-viewer/src/"
       ],
-      "@uidu/date/index": [
-        "../../elements/date/src/index",
-        "./packages/elements/date/src/index"
+      "@uidu/date": [
+        "../../elements/date/src/",
+        "./packages/elements/date/src/"
       ],
       "@uidu/elements-test-helpers/demo-ssr-hydrate": [
         "../../elements/elements-test-helpers/src/demo-ssr-hydrate",
         "./packages/elements/elements-test-helpers/src/demo-ssr-hydrate"
       ],
-      "@uidu/elements-test-helpers/index": [
-        "../../elements/elements-test-helpers/src/index",
-        "./packages/elements/elements-test-helpers/src/index"
+      "@uidu/elements-test-helpers": [
+        "../../elements/elements-test-helpers/src/",
+        "./packages/elements/elements-test-helpers/src/"
       ],
       "@uidu/elements-test-helpers/ssr-util": [
         "../../elements/elements-test-helpers/src/ssr-util",
@@ -671,9 +671,9 @@
         "../../elements/emoji/src/element",
         "./packages/elements/emoji/src/element"
       ],
-      "@uidu/emoji/index": [
-        "../../elements/emoji/src/index",
-        "./packages/elements/emoji/src/index"
+      "@uidu/emoji": [
+        "../../elements/emoji/src/",
+        "./packages/elements/emoji/src/"
       ],
       "@uidu/emoji/picker": [
         "../../elements/emoji/src/picker",
@@ -703,9 +703,9 @@
         "../../elements/mentions/src/i18n",
         "./packages/elements/mentions/src/i18n"
       ],
-      "@uidu/mentions/index": [
-        "../../elements/mentions/src/index",
-        "./packages/elements/mentions/src/index"
+      "@uidu/mentions": [
+        "../../elements/mentions/src/",
+        "./packages/elements/mentions/src/"
       ],
       "@uidu/mentions/shared-styles": [
         "../../elements/mentions/src/shared-styles",
@@ -719,9 +719,9 @@
         "../../elements/status/src/element",
         "./packages/elements/status/src/element"
       ],
-      "@uidu/status/index": [
-        "../../elements/status/src/index",
-        "./packages/elements/status/src/index"
+      "@uidu/status": [
+        "../../elements/status/src/",
+        "./packages/elements/status/src/"
       ],
       "@uidu/status/picker": [
         "../../elements/status/src/picker",
@@ -731,9 +731,9 @@
         "../../elements/task-decision/src/constants",
         "./packages/elements/task-decision/src/constants"
       ],
-      "@uidu/task-decision/index": [
-        "../../elements/task-decision/src/index",
-        "./packages/elements/task-decision/src/index"
+      "@uidu/task-decision": [
+        "../../elements/task-decision/src/",
+        "./packages/elements/task-decision/src/"
       ],
       "@uidu/task-decision/type-helpers": [
         "../../elements/task-decision/src/type-helpers",
@@ -743,129 +743,129 @@
         "../../elements/task-decision/src/types",
         "./packages/elements/task-decision/src/types"
       ],
-      "@uidu/util-data-test/index": [
-        "../../elements/util-data-test/src/index",
-        "./packages/elements/util-data-test/src/index"
+      "@uidu/util-data-test": [
+        "../../elements/util-data-test/src/",
+        "./packages/elements/util-data-test/src/"
       ],
       "@uidu/util-data-test/logger": [
         "../../elements/util-data-test/src/logger",
         "./packages/elements/util-data-test/src/logger"
       ],
-      "@uidu/checkbox/index": [
-        "../../forms/checkbox/src/index",
-        "./packages/forms/checkbox/src/index"
+      "@uidu/checkbox": [
+        "../../forms/checkbox/src/",
+        "./packages/forms/checkbox/src/"
       ],
       "@uidu/checkbox/types": [
         "../../forms/checkbox/src/types",
         "./packages/forms/checkbox/src/types"
       ],
-      "@uidu/field/index": [
-        "../../forms/field/src/index",
-        "./packages/forms/field/src/index"
+      "@uidu/field": [
+        "../../forms/field/src/",
+        "./packages/forms/field/src/"
       ],
-      "@uidu/field-base/index": [
-        "../../forms/field-base/src/index",
-        "./packages/forms/field-base/src/index"
+      "@uidu/field-base": [
+        "../../forms/field-base/src/",
+        "./packages/forms/field-base/src/"
       ],
       "@uidu/field-base/types": [
         "../../forms/field-base/src/types",
         "./packages/forms/field-base/src/types"
       ],
-      "@uidu/field-color-picker/index": [
-        "../../forms/field-color-picker/src/index",
-        "./packages/forms/field-color-picker/src/index"
+      "@uidu/field-color-picker": [
+        "../../forms/field-color-picker/src/",
+        "./packages/forms/field-color-picker/src/"
       ],
-      "@uidu/field-counter/index": [
-        "../../forms/field-counter/src/index",
-        "./packages/forms/field-counter/src/index"
+      "@uidu/field-counter": [
+        "../../forms/field-counter/src/",
+        "./packages/forms/field-counter/src/"
       ],
       "@uidu/field-counter/types": [
         "../../forms/field-counter/src/types",
         "./packages/forms/field-counter/src/types"
       ],
-      "@uidu/field-date/index": [
-        "../../forms/field-date/src/index",
-        "./packages/forms/field-date/src/index"
+      "@uidu/field-date": [
+        "../../forms/field-date/src/",
+        "./packages/forms/field-date/src/"
       ],
       "@uidu/field-date/types": [
         "../../forms/field-date/src/types",
         "./packages/forms/field-date/src/types"
       ],
-      "@uidu/field-date-range/index": [
-        "../../forms/field-date-range/src/index",
-        "./packages/forms/field-date-range/src/index"
+      "@uidu/field-date-range": [
+        "../../forms/field-date-range/src/",
+        "./packages/forms/field-date-range/src/"
       ],
       "@uidu/field-date-range/types": [
         "../../forms/field-date-range/src/types",
         "./packages/forms/field-date-range/src/types"
       ],
-      "@uidu/field-downshift/index": [
-        "../../forms/field-downshift/src/index",
-        "./packages/forms/field-downshift/src/index"
+      "@uidu/field-downshift": [
+        "../../forms/field-downshift/src/",
+        "./packages/forms/field-downshift/src/"
       ],
       "@uidu/field-downshift/types": [
         "../../forms/field-downshift/src/types",
         "./packages/forms/field-downshift/src/types"
       ],
-      "@uidu/field-file-uploader/index": [
-        "../../forms/field-file-uploader/src/index",
-        "./packages/forms/field-file-uploader/src/index"
+      "@uidu/field-file-uploader": [
+        "../../forms/field-file-uploader/src/",
+        "./packages/forms/field-file-uploader/src/"
       ],
       "@uidu/field-file-uploader/types": [
         "../../forms/field-file-uploader/src/types",
         "./packages/forms/field-file-uploader/src/types"
       ],
-      "@uidu/field-geosuggest/index": [
-        "../../forms/field-geosuggest/src/index",
-        "./packages/forms/field-geosuggest/src/index"
+      "@uidu/field-geosuggest": [
+        "../../forms/field-geosuggest/src/",
+        "./packages/forms/field-geosuggest/src/"
       ],
       "@uidu/field-geosuggest/types": [
         "../../forms/field-geosuggest/src/types",
         "./packages/forms/field-geosuggest/src/types"
       ],
-      "@uidu/field-image-uploader/index": [
-        "../../forms/field-image-uploader/src/index",
-        "./packages/forms/field-image-uploader/src/index"
+      "@uidu/field-image-uploader": [
+        "../../forms/field-image-uploader/src/",
+        "./packages/forms/field-image-uploader/src/"
       ],
       "@uidu/field-image-uploader/types": [
         "../../forms/field-image-uploader/src/types",
         "./packages/forms/field-image-uploader/src/types"
       ],
-      "@uidu/field-mentions/index": [
-        "../../forms/field-mentions/src/index",
-        "./packages/forms/field-mentions/src/index"
+      "@uidu/field-mentions": [
+        "../../forms/field-mentions/src/",
+        "./packages/forms/field-mentions/src/"
       ],
       "@uidu/field-mentions/types": [
         "../../forms/field-mentions/src/types",
         "./packages/forms/field-mentions/src/types"
       ],
-      "@uidu/field-month/index": [
-        "../../forms/field-month/src/index",
-        "./packages/forms/field-month/src/index"
+      "@uidu/field-month": [
+        "../../forms/field-month/src/",
+        "./packages/forms/field-month/src/"
       ],
       "@uidu/field-month/types": [
         "../../forms/field-month/src/types",
         "./packages/forms/field-month/src/types"
       ],
-      "@uidu/field-number/index": [
-        "../../forms/field-number/src/index",
-        "./packages/forms/field-number/src/index"
+      "@uidu/field-number": [
+        "../../forms/field-number/src/",
+        "./packages/forms/field-number/src/"
       ],
       "@uidu/field-number/types": [
         "../../forms/field-number/src/types",
         "./packages/forms/field-number/src/types"
       ],
-      "@uidu/field-password/index": [
-        "../../forms/field-password/src/index",
-        "./packages/forms/field-password/src/index"
+      "@uidu/field-password": [
+        "../../forms/field-password/src/",
+        "./packages/forms/field-password/src/"
       ],
       "@uidu/field-password/types": [
         "../../forms/field-password/src/types",
         "./packages/forms/field-password/src/types"
       ],
-      "@uidu/field-range/index": [
-        "../../forms/field-range/src/index",
-        "./packages/forms/field-range/src/index"
+      "@uidu/field-range": [
+        "../../forms/field-range/src/",
+        "./packages/forms/field-range/src/"
       ],
       "@uidu/field-range/styled": [
         "../../forms/field-range/src/styled",
@@ -875,29 +875,29 @@
         "../../forms/field-range/src/theme",
         "./packages/forms/field-range/src/theme"
       ],
-      "@uidu/field-text/index": [
-        "../../forms/field-text/src/index",
-        "./packages/forms/field-text/src/index"
+      "@uidu/field-text": [
+        "../../forms/field-text/src/",
+        "./packages/forms/field-text/src/"
       ],
       "@uidu/field-text/types": [
         "../../forms/field-text/src/types",
         "./packages/forms/field-text/src/types"
       ],
-      "@uidu/field-textarea/index": [
-        "../../forms/field-textarea/src/index",
-        "./packages/forms/field-textarea/src/index"
+      "@uidu/field-textarea": [
+        "../../forms/field-textarea/src/",
+        "./packages/forms/field-textarea/src/"
       ],
-      "@uidu/field-time/index": [
-        "../../forms/field-time/src/index",
-        "./packages/forms/field-time/src/index"
+      "@uidu/field-time": [
+        "../../forms/field-time/src/",
+        "./packages/forms/field-time/src/"
       ],
       "@uidu/field-time/types": [
         "../../forms/field-time/src/types",
         "./packages/forms/field-time/src/types"
       ],
-      "@uidu/field-toggle/index": [
-        "../../forms/field-toggle/src/index",
-        "./packages/forms/field-toggle/src/index"
+      "@uidu/field-toggle": [
+        "../../forms/field-toggle/src/",
+        "./packages/forms/field-toggle/src/"
       ],
       "@uidu/field-toggle/styled": [
         "../../forms/field-toggle/src/styled",
@@ -907,17 +907,17 @@
         "../../forms/field-toggle/src/types",
         "./packages/forms/field-toggle/src/types"
       ],
-      "@uidu/form/index": [
-        "../../forms/form/src/index",
-        "./packages/forms/form/src/index"
+      "@uidu/form": [
+        "../../forms/form/src/",
+        "./packages/forms/form/src/"
       ],
       "@uidu/form/types": [
         "../../forms/form/src/types",
         "./packages/forms/form/src/types"
       ],
-      "@uidu/radio/index": [
-        "../../forms/radio/src/index",
-        "./packages/forms/radio/src/index"
+      "@uidu/radio": [
+        "../../forms/radio/src/",
+        "./packages/forms/radio/src/"
       ],
       "@uidu/select/AsyncCreatableSelect": [
         "../../forms/select/src/AsyncCreatableSelect",
@@ -943,9 +943,9 @@
         "../../forms/select/src/createSelect",
         "./packages/forms/select/src/createSelect"
       ],
-      "@uidu/select/index": [
-        "../../forms/select/src/index",
-        "./packages/forms/select/src/index"
+      "@uidu/select": [
+        "../../forms/select/src/",
+        "./packages/forms/select/src/"
       ],
       "@uidu/select/RadioSelect": [
         "../../forms/select/src/RadioSelect",
@@ -955,25 +955,25 @@
         "../../forms/select/src/Select",
         "./packages/forms/select/src/Select"
       ],
-      "@uidu/media-card/index": [
-        "../../media/media-card/src/index",
-        "./packages/media/media-card/src/index"
+      "@uidu/media-card": [
+        "../../media/media-card/src/",
+        "./packages/media/media-card/src/"
       ],
       "@uidu/media-core/constants": [
         "../../media/media-core/src/constants",
         "./packages/media/media-core/src/constants"
       ],
-      "@uidu/media-core/index": [
-        "../../media/media-core/src/index",
-        "./packages/media/media-core/src/index"
+      "@uidu/media-core": [
+        "../../media/media-core/src/",
+        "./packages/media/media-core/src/"
       ],
       "@uidu/media-core/types": [
         "../../media/media-core/src/types",
         "./packages/media/media-core/src/types"
       ],
-      "@uidu/media-filmstrip/index": [
-        "../../media/media-filmstrip/src/index",
-        "./packages/media/media-filmstrip/src/index"
+      "@uidu/media-filmstrip": [
+        "../../media/media-filmstrip/src/",
+        "./packages/media/media-filmstrip/src/"
       ],
       "@uidu/media-filmstrip/styled": [
         "../../media/media-filmstrip/src/styled",
@@ -983,81 +983,81 @@
         "../../media/media-filmstrip/src/types",
         "./packages/media/media-filmstrip/src/types"
       ],
-      "@uidu/media-picker/index": [
-        "../../media/media-picker/src/index",
-        "./packages/media/media-picker/src/index"
+      "@uidu/media-picker": [
+        "../../media/media-picker/src/",
+        "./packages/media/media-picker/src/"
       ],
       "@uidu/media-picker/types": [
         "../../media/media-picker/src/types",
         "./packages/media/media-picker/src/types"
       ],
-      "@uidu/media-viewer/index": [
-        "../../media/media-viewer/src/index",
-        "./packages/media/media-viewer/src/index"
+      "@uidu/media-viewer": [
+        "../../media/media-viewer/src/",
+        "./packages/media/media-viewer/src/"
       ],
       "@uidu/media-viewer/types": [
         "../../media/media-viewer/src/types",
         "./packages/media/media-viewer/src/types"
       ],
-      "@uidu/chat-room/index": [
-        "../../messaging/chat-room/src/index",
-        "./packages/messaging/chat-room/src/index"
+      "@uidu/chat-room": [
+        "../../messaging/chat-room/src/",
+        "./packages/messaging/chat-room/src/"
       ],
-      "@uidu/chat-window/index": [
-        "../../messaging/chat-window/src/index",
-        "./packages/messaging/chat-window/src/index"
+      "@uidu/chat-window": [
+        "../../messaging/chat-window/src/",
+        "./packages/messaging/chat-window/src/"
       ],
       "@uidu/chat-window/types": [
         "../../messaging/chat-window/src/types",
         "./packages/messaging/chat-window/src/types"
       ],
-      "@uidu/link-preview/index": [
-        "../../messaging/link-preview/src/index",
-        "./packages/messaging/link-preview/src/index"
+      "@uidu/link-preview": [
+        "../../messaging/link-preview/src/",
+        "./packages/messaging/link-preview/src/"
       ],
       "@uidu/link-preview/types": [
         "../../messaging/link-preview/src/types",
         "./packages/messaging/link-preview/src/types"
       ],
-      "@uidu/message/index": [
-        "../../messaging/message/src/index",
-        "./packages/messaging/message/src/index"
+      "@uidu/message": [
+        "../../messaging/message/src/",
+        "./packages/messaging/message/src/"
       ],
       "@uidu/message/types": [
         "../../messaging/message/src/types",
         "./packages/messaging/message/src/types"
       ],
-      "@uidu/message-form/index": [
-        "../../messaging/message-form/src/index",
-        "./packages/messaging/message-form/src/index"
+      "@uidu/message-form": [
+        "../../messaging/message-form/src/",
+        "./packages/messaging/message-form/src/"
       ],
       "@uidu/message-form/types": [
         "../../messaging/message-form/src/types",
         "./packages/messaging/message-form/src/types"
       ],
-      "@uidu/message-renderer/index": [
-        "../../messaging/message-renderer/src/index",
-        "./packages/messaging/message-renderer/src/index"
+      "@uidu/message-renderer": [
+        "../../messaging/message-renderer/src/",
+        "./packages/messaging/message-renderer/src/"
       ],
       "@uidu/message-renderer/types": [
         "../../messaging/message-renderer/src/types",
         "./packages/messaging/message-renderer/src/types"
       ],
-      "@uidu/animated-menu/index": [
-        "../../navigation/animated-menu/src/index",
-        "./packages/navigation/animated-menu/src/index"
+      "@uidu/animated-menu": [
+        "../../navigation/animated-menu/src/",
+        "./packages/navigation/animated-menu/src/"
       ],
       "@uidu/animated-menu/types": [
         "../../navigation/animated-menu/src/types",
         "./packages/navigation/animated-menu/src/types"
       ],
-      "@uidu/navigation/index": [
-        "../../navigation/navigation/src/index",
-        "./packages/navigation/navigation/src/index"
+      "@uidu/navigation": [
+        "../../navigation/navigation/src/",
+        "./packages/navigation/navigation/src/"
       ],
-      "@uidu/responsivr/index": [
-        "../../navigation/responsivr/src/index",
-        "./packages/navigation/responsivr/src/index"
+      "@uidu/responsivr": [
+        "../../navigation/responsivr/src/",
+        "./packages/navigation/responsivr/src/"
       ],
       "@uidu/responsivr/Responsivr": [
         "../../navigation/responsivr/src/Responsivr",
@@ -1067,95 +1067,94 @@
         "../../navigation/responsivr/src/types",
         "./packages/navigation/responsivr/src/types"
       ],
-      "@uidu/shell/index": [
-        "../../navigation/shell/src/index",
-        "./packages/navigation/shell/src/index"
+      "@uidu/shell": [
+        "../../navigation/shell/src/",
+        "./packages/navigation/shell/src/"
       ],
       "@uidu/shell/types": [
         "../../navigation/shell/src/types",
         "./packages/navigation/shell/src/types"
       ],
-      "@uidu/stepper/index": [
-        "../../navigation/stepper/src/index",
-        "./packages/navigation/stepper/src/index"
+      "@uidu/stepper": [
+        "../../navigation/stepper/src/",
+        "./packages/navigation/stepper/src/"
       ],
       "@uidu/stepper/types": [
         "../../navigation/stepper/src/types",
         "./packages/navigation/stepper/src/types"
       ],
-      "@uidu/tabbar/index": [
-        "../../navigation/tabbar/src/index",
-        "./packages/navigation/tabbar/src/index"
+      "@uidu/tabbar": [
+        "../../navigation/tabbar/src/",
+        "./packages/navigation/tabbar/src/"
       ],
       "@uidu/tabbar/types": [
         "../../navigation/tabbar/src/types",
         "./packages/navigation/tabbar/src/types"
       ],
-      "@uidu/treenav/index": [
-        "../../navigation/treenav/src/index",
-        "./packages/navigation/treenav/src/index"
+      "@uidu/treenav": [
+        "../../navigation/treenav/src/",
+        "./packages/navigation/treenav/src/"
       ],
       "@uidu/treenav/types": [
         "../../navigation/treenav/src/types",
         "./packages/navigation/treenav/src/types"
       ],
-      "@uidu/attend/index": [
-        "../../uidu/attend/src/index",
-        "./packages/uidu/attend/src/index"
+      "@uidu/attend": [
+        "../../uidu/attend/src/",
+        "./packages/uidu/attend/src/"
       ],
-      "@uidu/comment/index": [
-        "../../uidu/comment/src/index",
-        "./packages/uidu/comment/src/index"
+      "@uidu/comment": [
+        "../../uidu/comment/src/",
+        "./packages/uidu/comment/src/"
       ],
       "@uidu/comment/types": [
         "../../uidu/comment/src/types",
         "./packages/uidu/comment/src/types"
       ],
-      "@uidu/contact/index": [
-        "../../uidu/contact/src/index",
-        "./packages/uidu/contact/src/index"
+      "@uidu/contact": [
+        "../../uidu/contact/src/",
+        "./packages/uidu/contact/src/"
       ],
-      "@uidu/donate/index": [
-        "../../uidu/donate/src/index",
-        "./packages/uidu/donate/src/index"
+      "@uidu/donate": [
+        "../../uidu/donate/src/",
+        "./packages/uidu/donate/src/"
       ],
       "@uidu/donate/types": [
         "../../uidu/donate/src/types",
         "./packages/uidu/donate/src/types"
       ],
-      "@uidu/propose/index": [
-        "../../uidu/propose/src/index",
-        "./packages/uidu/propose/src/index"
+      "@uidu/propose": [
+        "../../uidu/propose/src/",
+        "./packages/uidu/propose/src/"
       ],
       "@uidu/propose/types": [
         "../../uidu/propose/src/types",
         "./packages/uidu/propose/src/types"
       ],
-      "@uidu/tax-reminder/index": [
-        "../../uidu/tax-reminder/src/index",
-        "./packages/uidu/tax-reminder/src/index"
+      "@uidu/tax-reminder": [
+        "../../uidu/tax-reminder/src/",
+        "./packages/uidu/tax-reminder/src/"
       ],
       "@uidu/tax-reminder/types": [
         "../../uidu/tax-reminder/src/types",
         "./packages/uidu/tax-reminder/src/types"
       ],
-      "@uidu/upvote/index": [
-        "../../uidu/upvote/src/index",
-        "./packages/uidu/upvote/src/index"
+      "@uidu/upvote": [
+        "../../uidu/upvote/src/",
+        "./packages/uidu/upvote/src/"
       ],
       "@uidu/upvote/types": [
         "../../uidu/upvote/src/types",
         "./packages/uidu/upvote/src/types"
       ],
-      "@uidu/widgets/index": [
-        "../../uidu/widgets/src/index",
-        "./packages/uidu/widgets/src/index"
+      "@uidu/widgets": [
+        "../../uidu/widgets/src/",
+        "./packages/uidu/widgets/src/"
       ],
       "@uidu/widgets/types": [
         "../../uidu/widgets/src/types",
         "./packages/uidu/widgets/src/types"
       ]
-    },
-    "baseUrl": "/"
+    }
   }
 }
