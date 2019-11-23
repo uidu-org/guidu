@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "license": "MIT",
   "author": "uidu",
@@ -15,7 +15,7 @@
     "@loadable/component": "^5.10.1",
     "@uidu/downshift": "^0.1.4",
     "@uidu/field-color-picker": "^0.1.3",
-    "@uidu/field-number": "^0.1.19",
+    "@uidu/field-number": "^0.1.21",
     "@uidu/field-text": "^0.1.23",
     "@uidu/field-toggle": "^0.1.22",
     "@uidu/form": "^0.1.42",
