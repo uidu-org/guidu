@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.1.14
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+
 ## 0.1.13
 
 ### Patch Changes

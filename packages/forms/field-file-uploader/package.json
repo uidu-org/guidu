@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-file-uploader",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A file uploader",
   "module": "index.js",
   "types": "index.d.ts",
@@ -10,10 +10,10 @@
   "private": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.36",
-    "@uidu/form": "^0.1.40"
+    "@uidu/form": "^0.1.42"
   },
   "dependencies": {
-    "@uidu/field-base": "^0.1.45",
+    "@uidu/field-base": "^0.1.47",
     "@uppy/core": "^1.0.1",
     "@uppy/react": "^1.0.1",
     "@uppy/xhr-upload": "^1.0.1"

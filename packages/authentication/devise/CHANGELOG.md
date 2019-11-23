@@ -1,5 +1,19 @@
 # @uidu/devise
 
+## 0.1.13
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/avatar@0.2.21
+  - @uidu/slider@1.0.3
+  - @uidu/checkbox@0.1.53
+  - @uidu/field-password@0.1.21
+  - @uidu/field-text@0.1.23
+  - @uidu/form@0.1.42
+  - @uidu/shell@0.1.32
+
 ## 0.1.12
 
 ### Patch Changes

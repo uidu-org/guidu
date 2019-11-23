@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-json-transformer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "JSON transformer",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
@@ -9,14 +9,14 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/adf-schema": "^0.1.1",
+    "@uidu/adf-schema": "^0.1.2",
     "prosemirror-model": "^1.7.1"
   },
   "devDependencies": {
     "@types/prosemirror-model": "^1.5.0",
     "@uidu/docs": "^0.1.34",
-    "@uidu/editor-common": "^0.1.8",
-    "@uidu/editor-core": "^0.1.12",
+    "@uidu/editor-common": "^0.1.9",
+    "@uidu/editor-core": "^0.1.19",
     "prosemirror-view": "^1.9.10",
     "styled-components": "^4.0.3"
   },

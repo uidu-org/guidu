@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.4.1
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/adf-schema@0.1.2
+
 ## 0.4.0
 
 ### Minor Changes

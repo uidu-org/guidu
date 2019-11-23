@@ -1,5 +1,30 @@
 # @atlaskit/renderer
 
+## 0.1.6
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/avatar@0.2.21
+  - @uidu/button@0.1.48
+  - @uidu/code@0.1.16
+  - @uidu/tooltip@0.1.19
+  - @uidu/adf-schema@0.1.2
+  - @uidu/adf-utils@0.4.1
+  - @uidu/editor-common@0.1.9
+  - @uidu/editor-json-transformer@0.1.2
+  - @uidu/analytics-listeners@0.1.2
+  - @uidu/analytics-namespaced-context@0.1.2
+  - @uidu/status@0.1.2
+  - @uidu/task-decision@0.1.3
+  - @uidu/util-data-test@0.1.3
+  - @uidu/field-range@0.1.18
+  - @uidu/media-card@0.1.20
+  - @uidu/media-filmstrip@0.1.20
+  - @uidu/navigation@0.1.26
+
 ## 0.1.5
 
 ### Patch Changes

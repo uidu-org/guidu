@@ -1,5 +1,13 @@
 # @uidu/calendar
 
+## 0.1.14
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/shell@0.1.32
+
 ## 0.1.13
 
 ### Patch Changes

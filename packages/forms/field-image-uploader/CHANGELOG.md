@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.1.9
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/button@0.1.48
+  - @uidu/field-base@0.1.47
+  - @uidu/form@0.1.42
+  - @uidu/range@0.1.15
+
 ## 0.1.8
 
 ### Patch Changes

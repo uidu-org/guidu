@@ -1,5 +1,20 @@
 # @uidu/data-manager
 
+## 0.1.41
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/board@0.2.4
+  - @uidu/calendar@0.1.14
+  - @uidu/data-controls@0.2.6
+  - @uidu/data-views@0.1.4
+  - @uidu/gallery@0.1.20
+  - @uidu/list@0.1.16
+  - @uidu/table@0.1.51
+  - @uidu/shell@0.1.32
+
 ## 0.1.40
 
 ### Patch Changes

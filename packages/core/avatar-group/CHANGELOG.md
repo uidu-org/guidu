@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.1.30
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/avatar@0.2.21
+  - @uidu/button@0.1.48
+  - @uidu/code@0.1.16
+  - @uidu/tooltip@0.1.19
+  - @uidu/field-base@0.1.47
+
 ## 2.1.29
 
 ### Patch Changes

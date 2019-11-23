@@ -1,5 +1,23 @@
 # @uidu/modal-dialog
 
+## 0.1.22
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/avatar@0.2.21
+  - @uidu/blanket@0.1.14
+  - @uidu/button@0.1.48
+  - @uidu/inline-dialog@0.1.8
+  - @uidu/portal@0.1.12
+  - @uidu/checkbox@0.1.53
+  - @uidu/field-text@0.1.23
+  - @uidu/form@0.1.42
+  - @uidu/radio@0.3.1
+  - @uidu/select@0.2.2
+
 ## 0.1.21
 
 ### Patch Changes

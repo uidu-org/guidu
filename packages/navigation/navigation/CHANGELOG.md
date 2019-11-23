@@ -1,5 +1,17 @@
 # @uidu/navigation
 
+## 0.1.26
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/avatar@0.2.21
+  - @uidu/badge@0.1.14
+  - @uidu/lozenge@0.1.15
+  - @uidu/tooltip@0.1.19
+  - @uidu/shell@0.1.32
+
 ## 0.1.25
 
 ### Patch Changes

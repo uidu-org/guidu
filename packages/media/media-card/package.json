@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-card",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -8,12 +8,12 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/button": "^0.1.46",
+    "@uidu/button": "^0.1.48",
     "@uidu/dropdown-menu": "^0.1.17",
-    "@uidu/media-core": "^0.1.13",
+    "@uidu/media-core": "^0.1.14",
     "@uidu/spinner": "^0.1.12",
     "@uidu/theme": "^0.1.18",
-    "@uidu/tooltip": "^0.1.16",
+    "@uidu/tooltip": "^0.1.19",
     "@uifabric/file-type-icons": "^7.0.3",
     "office-ui-fabric-react": "^7.5.2",
     "react": "^16.8.3",

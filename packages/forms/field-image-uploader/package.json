@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": false,
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,10 +9,10 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.15",
-    "@uidu/button": "^0.1.47",
-    "@uidu/field-base": "^0.1.46",
-    "@uidu/range": "^0.1.13",
+    "@uidu/analytics": "^0.1.16",
+    "@uidu/button": "^0.1.48",
+    "@uidu/field-base": "^0.1.47",
+    "@uidu/range": "^0.1.15",
     "@uidu/spinner": "^0.1.12",
     "blueimp-load-image": "^2.20.1",
     "classnames": "^2.2.6",
@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.35",
-    "@uidu/form": "^0.1.40"
+    "@uidu/form": "^0.1.42"
   },
   "uidu:src": "index.ts"
 }

@@ -1,5 +1,17 @@
 # @uidu/data-fields
 
+## 0.1.14
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/field-color-picker@0.1.3
+  - @uidu/field-text@0.1.23
+  - @uidu/field-toggle@0.1.22
+  - @uidu/form@0.1.42
+  - @uidu/select@0.2.2
+
 ## 0.1.13
 
 ### Patch Changes

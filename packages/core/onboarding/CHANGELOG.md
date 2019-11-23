@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 0.1.4
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/button@0.1.48
+  - @uidu/modal-dialog@0.1.22
+  - @uidu/popper@0.1.13
+  - @uidu/portal@0.1.12
+
 ## 0.1.3
 
 ### Patch Changes

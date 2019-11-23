@@ -1,5 +1,20 @@
 # @uidu/data-controls
 
+## 0.2.6
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/drawer@0.2.7
+  - @uidu/data-fields@0.1.14
+  - @uidu/data-views@0.1.4
+  - @uidu/table@0.1.51
+  - @uidu/field-text@0.1.23
+  - @uidu/form@0.1.42
+  - @uidu/select@0.2.2
+  - @uidu/shell@0.1.32
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.1.8
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/form@0.1.42
+
 ## 0.1.7
 
 ### Patch Changes

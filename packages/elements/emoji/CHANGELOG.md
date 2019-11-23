@@ -1,5 +1,20 @@
 # @uidu/emoji
 
+## 0.1.4
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/button@0.1.48
+  - @uidu/code@0.1.16
+  - @uidu/section-message@0.1.15
+  - @uidu/tooltip@0.1.19
+  - @uidu/elements-test-helpers@0.1.2
+  - @uidu/util-data-test@0.1.3
+  - @uidu/field-text@0.1.23
+
 ## 0.1.3
 
 ### Patch Changes

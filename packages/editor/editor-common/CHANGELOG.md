@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 0.1.9
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/analytics@0.1.16
+  - @uidu/adf-schema@0.1.2
+  - @uidu/analytics-namespaced-context@0.1.2
+  - @uidu/emoji@0.1.4
+
 ## 0.1.8
 
 ### Patch Changes

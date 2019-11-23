@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.1.25
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/avatar@0.2.21
+  - @uidu/button@0.1.48
+  - @uidu/media-card@0.1.20
+  - @uidu/media-core@0.1.14
+  - @uidu/shell@0.1.32
+  - @uidu/comment@0.1.7
+
 ## 0.1.24
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/map
 
+## 0.2.1
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+
 ## 0.2.0
 
 ### Minor Changes

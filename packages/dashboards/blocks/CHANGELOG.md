@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.1.20
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/tooltip@0.1.19
+
 ## 0.1.19
 
 ### Patch Changes

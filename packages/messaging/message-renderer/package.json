@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-renderer",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "private": false,
   "description": "Message renderer",
   "repository": "https://github.com/uidu-org/guidu.git",

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/date",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Fabric Date React Components",
   "keywords": [
     "date",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34",
-    "@uidu/elements-test-helpers": "^0.1.1",
+    "@uidu/elements-test-helpers": "^0.1.2",
     "react": "^16.8.3"
   },
   "peerDependencies": {

@@ -1,5 +1,13 @@
 # @uidu/field-range
 
+## 0.1.18
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/section-message@0.1.15
+
 ## 0.1.17
 
 ### Patch Changes

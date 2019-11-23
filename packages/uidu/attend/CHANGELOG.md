@@ -1,5 +1,18 @@
 # @uidu/attend
 
+## 0.1.13
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/payments@0.1.11
+  - @uidu/field-counter@0.1.9
+  - @uidu/field-text@0.1.23
+  - @uidu/field-textarea@0.1.12
+  - @uidu/form@0.1.42
+  - @uidu/widgets@0.1.11
+
 ## 0.1.12
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/section-message
 
+## 0.1.15
+
+### Patch Changes
+
+- 8c80bd5: Changed how tsc compiles, should be faster to build
+- Updated dependencies [8c80bd5]
+  - @uidu/button@0.1.48
+  - @uidu/code@0.1.16
+  - @uidu/field-range@0.1.18
+
 ## 0.1.14
 
 ### Patch Changes
