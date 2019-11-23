@@ -22,7 +22,6 @@ class FieldNumberStateless extends Component<FieldNumberProps> {
 
     return (
       <FieldTextStatelessWithoutAnalytics
-        {...this.props}
         inputMode="numeric"
         component={StyledInput}
         options={{
@@ -33,6 +32,7 @@ class FieldNumberStateless extends Component<FieldNumberProps> {
           onValueChange,
           ...options,
         }}
+        {...this.props}
       />
     );
   }

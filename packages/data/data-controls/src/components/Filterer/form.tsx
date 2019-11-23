@@ -6,6 +6,18 @@ import { FormattedMessage } from 'react-intl';
 import PickField from '../../utils/PickField';
 import { FiltererProps } from './types';
 
+const getColumnDef = (columnDefs, filter) =>
+  columnDefs.filter(c => c.colId === filter.colId)[0];
+
+const getType = type => {
+  if (Array.isArray(type)) {
+    return type[type.length - 1];
+  }
+  return type;
+};
+
+const getField = columnDef => byName[getType(columnDef.type)];
+
 export default class FiltererForm extends PureComponent<FiltererProps> {
   static defaultProps = {
     onChange: console.log,
@@ -15,6 +27,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
 
   handleSubmit = async model => {
     const { onChange } = this.props;
+    console.log(model);
     onChange(model.filters || []);
   };
 
@@ -29,10 +42,9 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
       >
         <div className="list-group">
           {filters.map((filter: any, index) => {
-            const field =
-              byName[
-                columnDefs.filter(c => c.colId === filter.colId)[0].type as any
-              ];
+            const columnDef = getColumnDef(columnDefs, filter);
+            console.log(columnDef);
+            const field = getField(columnDef);
             const { filterForm: FilterForm } = field;
             return (
               <div className="list-group-item px-3 px-xl-4" key={filter.colId}>
@@ -56,12 +68,15 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                           }
                         : {}),
                     }))}
+                    isDisabled
                   />
                 </div>
                 {FilterForm && (
                   <FilterForm
                     index={index}
                     filter={filter}
+                    field={field}
+                    columnDef={columnDef}
                     onChange={() =>
                       setTimeout(() => {
                         (this.form.current as any).submit();
@@ -69,24 +84,6 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                     }
                   />
                 )}
-                {/* <div className="form-row">
-                  <div className="col-3">
-                    <Select
-                      isClearable={false}
-                      layout="elementOnly"
-                      defaultValue="is"
-                      name="field"
-                      options={[{ name: 'is', id: 'is' }]}
-                    />
-                  </div>
-                  <div className="col-9">
-                    <FieldText
-                      layout="elementOnly"
-                      name="field"
-                      value={filter.filter}
-                    />
-                  </div>
-                </div> */}
               </div>
             );
           })}
@@ -115,11 +112,13 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
               });
               setTimeout(() => {
                 (this.form.current as any).submit();
-              }, 30);
+              }, 300);
             }}
             isDefaultOpen={filters.length === 0}
             list={filters}
-            columnDefs={columnDefs}
+            columnDefs={columnDefs.filter(
+              f => filters.map(s => s.colId).indexOf(f.colId) < 0,
+            )}
           />
         </div>
       </Form>

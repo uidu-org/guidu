@@ -1,14 +1,20 @@
-import FieldText from '@uidu/field-text';
 import Select from '@uidu/select';
 import React from 'react';
-import { filterKinds } from '../../filters';
+import { injectIntl } from 'react-intl';
+import { filtersByType } from './utils';
 
-export default function StringFilterForm({
+function CurrencyFilterForm({
   onChange,
   filter = {} as any,
   index = 0,
+  intl,
+  columnDef: {
+    cellRendererParams: { options },
+  },
+  ...rest
 }) {
-  console.log(filter);
+  console.log(rest);
+  const filters = filtersByType(intl, 'number');
   return (
     <>
       <div className="form-row">
@@ -16,24 +22,17 @@ export default function StringFilterForm({
           <Select
             isClearable={false}
             layout="elementOnly"
-            value={filter.type || 'contains'}
+            value={filter.type || filters[0].id}
             name={`filters[${index}][type]`}
-            options={filterKinds([
-              'equals',
-              'notEqual',
-              'contains',
-              'notContains',
-              'startsWith',
-              'endsWith',
-              'empty',
-            ])}
+            options={filters}
           />
         </div>
         <div className="col-8">
-          <FieldText
+          <Select
             layout="elementOnly"
             name={`filters[${index}][filter]`}
-            value={filter.filter}
+            options={options}
+            value={filter.filter || options[0].id}
             onChange={(name, value) => {
               if (value !== '') {
                 onChange(name, value);
@@ -46,3 +45,5 @@ export default function StringFilterForm({
     </>
   );
 }
+
+export default injectIntl(CurrencyFilterForm);

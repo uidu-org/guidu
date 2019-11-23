@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import withOptions from '../../hoc/withOptions';
 
 export default withOptions({
-  id: 'multipleSelect',
+  kind: 'multipleSelect',
   name: (
     <FormattedMessage
       id="field.multipleselect.name"

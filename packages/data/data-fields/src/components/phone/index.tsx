@@ -1,8 +1,11 @@
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+
+const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
 
 const Phone: Field = {
   kind: 'phone',
@@ -14,6 +17,7 @@ const Phone: Field = {
       defaultMessage="A telephone number (e.g. (415) 555-9876)."
     />
   ),
+  filterForm: FilterForm,
 };
 
 export default Phone;

@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
 const StringForm = loadable(() => import('./form'));
-const StringFilterForm = loadable(() => import('./filterForm'));
+const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
 
 const String: Field = {
   kind: 'string',
@@ -19,7 +19,7 @@ const String: Field = {
     />
   ),
   form: StringForm,
-  filterForm: StringFilterForm,
+  filterForm: FilterForm,
 };
 
 export default String;

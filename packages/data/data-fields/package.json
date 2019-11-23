@@ -15,6 +15,7 @@
     "@loadable/component": "^5.10.1",
     "@uidu/downshift": "^0.1.4",
     "@uidu/field-color-picker": "^0.1.2",
+    "@uidu/field-number": "^0.1.19",
     "@uidu/field-text": "^0.1.22",
     "@uidu/field-toggle": "^0.1.21",
     "@uidu/form": "^0.1.40",

@@ -1,8 +1,11 @@
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+
+const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
 
 const Email: Field = {
   kind: 'email',
@@ -14,6 +17,7 @@ const Email: Field = {
       defaultMessage="A valid email address (e.g. andrew@example.com)."
     />
   ),
+  filterForm: FilterForm,
 };
 
 export default Email;
