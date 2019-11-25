@@ -2,11 +2,11 @@ import faker from 'faker';
 import numeral from 'numeral';
 
 export const availableColumns = [
-  // {
-  //   dataField: 'uid',
-  //   colId: 'id',
-  //   field: 'id',
-  // },
+  {
+    dataField: 'uid',
+    colId: 'id',
+    field: 'id',
+  },
   {
     dataField: 'cover',
     colId: 'cover',

@@ -235,7 +235,7 @@ module.exports = function createWebpackConfig(
           ),
         },
         {
-          test: /\.(gif|jpe?g|png|ico|woff|woff2)$/,
+          test: /\.(gif|jpe?g|png|ico|woff|woff2|eot|ttf)$/,
           loader: require.resolve('url-loader'),
           options: {
             limit: 10000,

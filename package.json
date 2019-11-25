@@ -73,6 +73,7 @@
     "@atlaskit/util-service-support": "^5.0.0",
     "@atlaskit/util-shared-styles": "^3.1.2",
     "@atlaskit/width-detector": "^2.0.0",
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",

@@ -5,18 +5,117 @@ $foreground-color: 'inherit'; // $body-color;
 $border-color: #f2f2f3; // $border-color;
 $odd-row-background-color: 'inherit'; // $white;
 $light: #f8f9fa;
-$highlight-color: yellow;
+$highlight-color: rgba(245, 255, 93, 0.09);
 $white: #fff;
 $text-muted: #6a758a;
 $primary: #ec8447;
 
-// $cell-horizontal-padding: 32px;
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
+
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+$icon-font-family: 'Font Awesome 5 Free';
+
+$icons: (
+  aggregation: '\f247',
+  arrows: '\f0b2',
+  asc: '\f062',
+  cancel: '\f057',
+  chart: '\f080',
+  checkbox-checked: '\f14a',
+  checkbox-indeterminate: '\f146',
+  checkbox-unchecked: '\f0c8',
+  color-picker: '\f576',
+  column: '\f142',
+  columns: '\f0db',
+  contracted: '\f146',
+  copy: '\f0c5',
+  cross: '\f00d',
+  cut: '\f0c4',
+  data: '\f1c0',
+  desc: '\f063',
+  expanded: '\f0fe',
+  eye-slash: '\f070',
+  eye: '\f06e',
+  filter: '\f0b0',
+  first: '\f100',
+  grip: '\f58e',
+  group: '\f5fd',
+  indeterminate: '\f06e',
+  last: '\f101',
+  left: '\f060',
+  loading: '\f110',
+  maximize: '\f2d0',
+  menu: '\f0c9',
+  minimize: '\f2d1',
+  minus: '\f068',
+  next: '\f105',
+  none: '\f338',
+  not-allowed: '\f05e',
+  paste: '\f0ea',
+  pin: '\f276',
+  pivot: '\f074',
+  plus: '\f067',
+  previous: '\f104',
+  radio-button-off: '\f111',
+  radio-button-on: '\f058',
+  right: '\f061',
+  save: '\f0c7',
+  small-down: '\f107',
+  small-left: '\f104',
+  small-right: '\f105',
+  small-up: '\f106',
+  tick: '\f00c',
+  tree-closed: '\f105',
+  tree-indeterminate: '\f068',
+  tree-open: '\f107',
+);
+
+// changes the default icon color
+$icon-color: $text-muted;
+
+// changes the selected checkbox check mark color
+$accent-color: #fffff1;
+
+$header-height: 50px;
+$row-height: 40px;
+$row-border-width: 1px;
+$hover-color: cornsilk;
 
 @import '@ag-grid-community/core/dist/styles/ag-grid.scss';
 
 $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
 .ag-theme-uidu {
+  @each $icon, $code in $icons {
+    .ag-icon.ag-icon-#{$icon} {
+      // @include icon-background($icon-path, $icon, 16px);
+      &:before {
+        content: $code;
+      }
+    }
+  }
+
+  .ag-tab-header {
+    display: none;
+  }
+
+  .ag-icon {
+    // font-awesome Free has font-weight bold
+    font-family: 'Font Awesome 5 Free';
+    font-weight: bold;
+    &.ag-icon-checkbox-checked,
+    &.ag-icon-checkbox-indeterminate,
+    &.ag-icon-checkbox-unchecked {
+      background-color: transparent;
+      border-radius: 0;
+      color: $icon-color;
+    }
+  }
+
   .ag-pinned-left-cols-container {
     &::before {
       width: 100%;

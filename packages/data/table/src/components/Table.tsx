@@ -110,11 +110,11 @@ const Table = ({
         rowData={rowData}
         animateRows
         enableCellChangeFlash
+        suppressContextMenu
         getMainMenuItems={getMainMenuItems}
         defaultColDef={{
           resizable: true,
           sortable: true,
-          // suppressMenu: true,
           editable: false,
           headerComponentFramework: CustomHeader,
           minWidth: 140,

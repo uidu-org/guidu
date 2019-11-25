@@ -123,7 +123,7 @@ export const Resizer = styled.div<{ hovered: boolean; isCollapsed: boolean }>`
   box-shadow: ${({ isCollapsed, hovered }) =>
     isCollapsed || hovered
       ? ' -3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075)'
-      : 'none'};
+      : ' -3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075)'};
 `;
 
 export const ResizerButton = styled.button<{
