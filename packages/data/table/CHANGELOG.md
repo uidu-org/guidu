@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 0.1.52
+
+### Patch Changes
+
+- 7f78eff: Country fields wip, update uidu theme for borders
+- Updated dependencies [7f78eff]
+  - @uidu/data-fields@0.1.16
+  - @uidu/select@0.2.3
+
 ## 0.1.51
 
 ### Patch Changes
