@@ -45,7 +45,7 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
     case 'checkbox':
       return checkboxColumn();
     case 'country':
-      return countryColumn();
+      return countryColumn(dataFieldParams);
     case 'cover':
       return coverColumn();
     case 'currency':

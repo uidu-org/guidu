@@ -228,6 +228,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   addGrouper = grouper => {
     this.gridApi.showLoadingOverlay();
+    this.gridColumnApi.setColumnVisible(grouper.colId, false);
     this.setState(
       prevState => ({
         groupers: [...prevState.groupers, grouper],

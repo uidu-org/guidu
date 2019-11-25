@@ -7,6 +7,7 @@ export { default as CheckboxSelect } from './CheckboxSelect';
 export { CheckboxOption, RadioOption } from './components/input-options';
 export { default as CountrySelect } from './CountrySelect';
 export { default as CreatableSelect } from './CreatableSelect';
+export { allCountries } from './data/countries';
 export { default as PopupSelect } from './PopupSelect';
 export { default as RadioSelect } from './RadioSelect';
 export { default } from './Select';

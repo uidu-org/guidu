@@ -19,6 +19,7 @@
     "@loadable/component": "^5.10.1",
     "@uidu/data-fields": "^0.1.14",
     "@uidu/item": "^0.1.18",
+    "@uidu/select": "^0.2.2",
     "@uidu/shell": "^0.1.32",
     "@uidu/tooltip": "^0.1.19",
     "react-day-picker": "^7.3.2",

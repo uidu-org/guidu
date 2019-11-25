@@ -33,7 +33,7 @@ function CurrencyFilterForm({
             name={`filters[${index}][filter]`}
             options={options}
             value={filter.filter || options[0].id}
-            onChange={(name, value) => {
+            onChange={(name, value, { option }) => {
               if (value !== '') {
                 onChange(name, value);
               }

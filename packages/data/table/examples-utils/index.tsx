@@ -227,7 +227,7 @@ export const fetchContacts = () => {
             scope: 'donations',
           },
           amount: parseInt(faker.commerce.price(), 10),
-          country: faker.address.country(),
+          country: faker.address.countryCode(),
           percent: faker.random.number(),
           createdAt: faker.date.past(),
           updatedAt: faker.date.recent(),

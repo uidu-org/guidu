@@ -28,9 +28,9 @@ const Table = ({
         modules={[ClientSideRowModelModule, RowGroupingModule]}
         // ref={innerRef}
         // enterprise features
-        groupDefaultExpanded={-1}
-        groupUseEntireRow
-        // suppressAggFuncInHeader
+        // groupDefaultExpanded={-1}
+        // groupUseEntireRow
+        suppressAggFuncInHeader
         // community features
         componentWrappingElement="span"
         columnDefs={columnDefs}
