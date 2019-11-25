@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "0.1.53",
+  "version": "0.1.54",
   "private": false,
   "description": "React ag-datagrid wrapper with default configurations",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -22,7 +22,7 @@
     "@uidu/data-fields": "^0.1.16",
     "@uidu/item": "^0.1.18",
     "@uidu/select": "^0.2.3",
-    "@uidu/shell": "^0.1.32",
+    "@uidu/shell": "^0.1.33",
     "@uidu/tooltip": "^0.1.19",
     "react-day-picker": "^7.3.2",
     "react-intl": "^3.1.7",
