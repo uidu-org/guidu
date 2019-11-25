@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.7
+
+### Patch Changes
+
+- 852abe7: Wip data fields filtering
+- Updated dependencies [852abe7]
+  - @uidu/data-fields@0.1.15
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 0.1.15
+
+### Patch Changes
+
+- 852abe7: Wip data fields filtering
+- Updated dependencies [852abe7]
+  - @uidu/field-number@0.1.21
+
 ## 0.1.14
 
 ### Patch Changes

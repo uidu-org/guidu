@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.1.21
+
+### Patch Changes
+
+- 852abe7: Wip data fields filtering
+
 ## 0.1.20
 
 ### Patch Changes
