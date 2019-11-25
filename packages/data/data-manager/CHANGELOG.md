@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.42
+
+### Patch Changes
+
+- 7f78eff: Country fields wip, update uidu theme for borders
+- Updated dependencies [7f78eff]
+  - @uidu/table@0.1.52
+
 ## 0.1.41
 
 ### Patch Changes

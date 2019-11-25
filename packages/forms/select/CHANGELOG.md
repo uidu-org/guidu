@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.3
+
+### Patch Changes
+
+- 7f78eff: Country fields wip, update uidu theme for borders
+
 ## 0.2.2
 
 ### Patch Changes
