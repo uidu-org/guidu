@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.42
+
+### Patch Changes
+
+- 340ee96: Added font awesome for row selection
+
 ## 0.1.41
 
 ### Patch Changes

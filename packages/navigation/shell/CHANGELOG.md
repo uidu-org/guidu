@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.1.33
+
+### Patch Changes
+
+- 340ee96: Added font awesome for row selection
+
 ## 0.1.32
 
 ### Patch Changes
