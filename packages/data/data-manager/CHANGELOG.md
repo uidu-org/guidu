@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.43
+
+### Patch Changes
+
+- e783f5b: Added header menu, WIP #53
+- Updated dependencies [e783f5b]
+  - @uidu/table@0.1.53
+
 ## 0.1.42
 
 ### Patch Changes

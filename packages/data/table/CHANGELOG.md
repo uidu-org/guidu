@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.53
+
+### Patch Changes
+
+- e783f5b: Added header menu, WIP #53
+
 ## 0.1.52
 
 ### Patch Changes
