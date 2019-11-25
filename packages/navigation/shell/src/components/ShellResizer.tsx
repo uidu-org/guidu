@@ -25,7 +25,7 @@ export default class ShellResizer extends PureComponent<any> {
   render() {
     const { isCollapsed, onClick, ...rest } = this.props;
     const { hovered } = this.state;
-    console.log(hovered);
+
     return (
       <Resizer
         onClick={onClick}

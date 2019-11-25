@@ -1,12 +1,19 @@
 export default params => {
-  if (!params || !params.value) {
-    console.log(params);
-    return '-';
-  }
-
   // if (params.node && params.node.group) {
   //   return null;
   // }
+
+  if (!params || !params.value) {
+    return null;
+  }
+
+  const value = params.countries.filter(
+    option => option.abbr === params.value,
+  )[0];
+
+  if (!value) {
+    return params.value;
+  }
 
   return `
     <span
@@ -20,8 +27,8 @@ export default params => {
       "
     >
       <div class="text-truncate">
-        <span class="mr-1">${params.value.before}</span>
-        ${params.value.name}
+        <span class="mr-1">${value.before}</span>
+        ${value.name}
       </div>
     </span>
   `;

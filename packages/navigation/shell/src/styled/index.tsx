@@ -115,6 +115,7 @@ export const Resizer = styled.div<{ hovered: boolean; isCollapsed: boolean }>`
   height: 100%;
   position: relative;
   left: 24px;
+  border-left: 1px solid #f2f2f3;
 
   &:hover {
     cursor: ew-resize;
@@ -123,7 +124,7 @@ export const Resizer = styled.div<{ hovered: boolean; isCollapsed: boolean }>`
   box-shadow: ${({ isCollapsed, hovered }) =>
     isCollapsed || hovered
       ? ' -3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075)'
-      : ' -3px 0.125rem 0.25rem -3px rgba(0, 0, 0, 0.075)'};
+      : 'none'};
 `;
 
 export const ResizerButton = styled.button<{

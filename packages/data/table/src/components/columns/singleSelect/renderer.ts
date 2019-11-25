@@ -1,6 +1,6 @@
 export default params => {
   if (params.node && params.node.group) {
-    return null;
+    return params.value;
   }
 
   if (!params) {

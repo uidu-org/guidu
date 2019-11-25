@@ -12,7 +12,8 @@ export default field => ({
     menuIcon: countryField.icon,
   },
   cellRenderer: Renderer,
-  keyCreator: params => params.value.name,
-  valueGetter: ({ data }) =>
-    allCountries.filter(option => option.abbr === data[field.colId])[0],
+  cellRendererParams: { countries: allCountries },
+  // keyCreator: params => params.value,
+  // valueGetter: ({ data }) =>
+  //   allCountries.filter(option => option.abbr === data[field.colId])[0],
 });

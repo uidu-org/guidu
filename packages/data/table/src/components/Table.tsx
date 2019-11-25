@@ -9,15 +9,19 @@ import {
   ChevronsDown,
   ChevronsRight,
   ChevronsUp,
+  EyeOff,
+  Server,
 } from 'react-feather';
 import CustomHeader from './headers';
 
 const getMainMenuItems = params => {
-  console.log(params);
+  console.log(params.defaultItems);
   const { api, columnApi, column } = params;
   const { colId } = column;
   return [
-    // ...params.defaultItems,
+    ...(params.defaultItems.includes('valueAggSubMenu')
+      ? ['valueAggSubMenu']
+      : []),
     {
       name: 'Autosize this column',
       action: () => columnApi.autoSizeColumn(colId),
@@ -55,18 +59,28 @@ const getMainMenuItems = params => {
     //   },
     //   icon: renderToStaticMarkup(<Filter size={14} />),
     // },
-    // {
-    //   name: 'Group by this field',
-    //   action: function() {
-    //     console.log('ag-Grid is great was selected');
-    //   },
-    //   icon: renderToStaticMarkup(<Server size={14} />),
-    // },
-    // {
-    //   name: 'Hide this field',
-    //   action: () => columnApi.setColumnVisible(colId, false),
-    //   icon: renderToStaticMarkup(<EyeOff size={14} />),
-    // },
+    ...(params.defaultItems.includes('rowGroup')
+      ? [
+          {
+            name: 'Group by this field',
+            action: () => {
+              columnApi.setColumnVisible(colId, false);
+              api.showLoadingOverlay();
+              columnApi.setRowGroupColumns([colId]);
+              setTimeout(() => {
+                api.refreshCells({ force: true });
+                api.hideOverlay();
+              }, 600);
+            },
+            icon: renderToStaticMarkup(<Server size={14} />),
+          },
+        ]
+      : []),
+    {
+      name: 'Hide this field',
+      action: () => columnApi.setColumnVisible(colId, false),
+      icon: renderToStaticMarkup(<EyeOff size={14} />),
+    },
     // {
     //   name: 'Delete this field',
     //   action: function() {
@@ -103,7 +117,7 @@ const Table = ({
         // enterprise features
         // groupDefaultExpanded={-1}
         // groupUseEntireRow
-        suppressAggFuncInHeader
+        // suppressAggFuncInHeader
         // community features
         componentWrappingElement="span"
         columnDefs={columnDefs}
