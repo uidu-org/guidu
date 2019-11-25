@@ -1,8 +1,81 @@
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
 import { AgGridReact } from '@ag-grid-community/react';
+import { MenuModule } from '@ag-grid-enterprise/menu';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import React, { useState } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import {
+  ChevronRight,
+  ChevronsDown,
+  ChevronsRight,
+  ChevronsUp,
+} from 'react-feather';
 import CustomHeader from './headers';
+
+const getMainMenuItems = params => {
+  console.log(params);
+  const { api, columnApi, column } = params;
+  const { colId } = column;
+  return [
+    // ...params.defaultItems,
+    {
+      name: 'Autosize this column',
+      action: () => columnApi.autoSizeColumn(colId),
+      icon: renderToStaticMarkup(<ChevronRight size={14} />),
+    },
+    {
+      name: 'Autosize all columns',
+      action: () => {
+        const allColumnIds = [];
+        columnApi.getAllColumns().forEach(column => {
+          allColumnIds.push(column.colId);
+        });
+        columnApi.autoSizeColumns(allColumnIds);
+      },
+      icon: renderToStaticMarkup(<ChevronsRight size={14} />),
+    },
+    {
+      name: 'Sort First-Last',
+      action: () => {
+        api.setSortModel([...api.getSortModel(), { colId, sort: 'asc' }]);
+      },
+      icon: renderToStaticMarkup(<ChevronsDown size={14} />),
+    },
+    {
+      name: 'Sort Last-First',
+      action: () => {
+        api.setSortModel([...api.getSortModel(), { colId, sort: 'desc' }]);
+      },
+      icon: renderToStaticMarkup(<ChevronsUp size={14} />),
+    },
+    // {
+    //   name: 'Add filter',
+    //   action: function() {
+    //     console.log('ag-Grid is great was selected');
+    //   },
+    //   icon: renderToStaticMarkup(<Filter size={14} />),
+    // },
+    // {
+    //   name: 'Group by this field',
+    //   action: function() {
+    //     console.log('ag-Grid is great was selected');
+    //   },
+    //   icon: renderToStaticMarkup(<Server size={14} />),
+    // },
+    // {
+    //   name: 'Hide this field',
+    //   action: () => columnApi.setColumnVisible(colId, false),
+    //   icon: renderToStaticMarkup(<EyeOff size={14} />),
+    // },
+    // {
+    //   name: 'Delete this field',
+    //   action: function() {
+    //     console.log('People who wear casio watches are cool');
+    //   },
+    //   icon: renderToStaticMarkup(<Trash size={14} />),
+    // },
+  ];
+};
 
 const Table = ({
   theme = 'uidu',
@@ -25,7 +98,7 @@ const Table = ({
   return (
     <div className={`ag-theme-${theme} h-100${className}`}>
       <AgGridReact
-        modules={[ClientSideRowModelModule, RowGroupingModule]}
+        modules={[ClientSideRowModelModule, RowGroupingModule, MenuModule]}
         // ref={innerRef}
         // enterprise features
         // groupDefaultExpanded={-1}
@@ -37,10 +110,11 @@ const Table = ({
         rowData={rowData}
         animateRows
         enableCellChangeFlash
+        getMainMenuItems={getMainMenuItems}
         defaultColDef={{
           resizable: true,
           sortable: true,
-          suppressMenu: true,
+          // suppressMenu: true,
           editable: false,
           headerComponentFramework: CustomHeader,
           minWidth: 140,

@@ -90,6 +90,7 @@ export default class Basic extends Component<any, any> {
 
   render() {
     const { loaded } = this.state;
+    console.log(this.state.rowData);
     return (
       <IntlProvider locale="en">
         <Router>

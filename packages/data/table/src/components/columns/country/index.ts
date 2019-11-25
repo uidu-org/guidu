@@ -12,8 +12,7 @@ export default field => ({
     menuIcon: countryField.icon,
   },
   cellRenderer: Renderer,
+  keyCreator: params => params.value.name,
   valueGetter: ({ data }) =>
-    data
-      ? allCountries.filter(option => option.abbr === data[field.colId])[0]
-      : null,
+    allCountries.filter(option => option.abbr === data[field.colId])[0],
 });

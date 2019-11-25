@@ -1,11 +1,12 @@
 export default params => {
-  if (params.node && params.node.group) {
-    return null;
-  }
-
   if (!params || !params.value) {
+    console.log(params);
     return '-';
   }
+
+  // if (params.node && params.node.group) {
+  //   return null;
+  // }
 
   return `
     <span
