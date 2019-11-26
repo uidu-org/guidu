@@ -1,0 +1,1 @@
+export type GrouperProps = any;

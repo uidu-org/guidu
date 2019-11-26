@@ -112,6 +112,7 @@ const Table = ({
   return (
     <div className={`ag-theme-${theme} h-100${className}`}>
       <AgGridReact
+        suppressMaxRenderedRowRestriction
         modules={[ClientSideRowModelModule, RowGroupingModule, MenuModule]}
         // ref={innerRef}
         // enterprise features
@@ -120,7 +121,24 @@ const Table = ({
         // suppressAggFuncInHeader
         // community features
         componentWrappingElement="span"
-        columnDefs={columnDefs}
+        columnDefs={columnDefs.map(columnDef => ({
+          ...columnDef,
+          cellClassRules: {
+            'ag-cell-sorter-active': params => {
+              return params.api
+                .getSortModel()
+                .map(s => s.colId)
+                .includes(params.colDef.colId);
+            },
+            'ag-cell-filter-active': params => {
+              return false;
+              // return params.api
+              //   .getSortModel()
+              //   .map(s => s.colId)
+              //   .includes(params.colDef.colId);
+            },
+          },
+        }))}
         rowData={rowData}
         animateRows
         enableCellChangeFlash
@@ -136,21 +154,6 @@ const Table = ({
             return {
               lineHeight: `${rowHeight}px`,
             };
-          },
-          cellClassRules: {
-            'ag-cell-sorter-active': params => {
-              return params.api
-                .getSortModel()
-                .map(s => s.colId)
-                .includes(params.colDef.colId);
-            },
-            'ag-cell-filter-active': params => {
-              return false;
-              // return params.api
-              //   .getSortModel()
-              //   .map(s => s.colId)
-              //   .includes(params.colDef.colId);
-            },
           },
         }}
         columnTypes={{

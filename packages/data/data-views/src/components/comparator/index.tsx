@@ -1,6 +1,9 @@
+import loadable from '@loadable/component';
 import React from 'react';
-import { Trello } from 'react-feather';
+import { BookOpen } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+
+const Configurator = loadable(() => import('./configurator'));
 
 export default {
   id: 'comparator',
@@ -10,7 +13,7 @@ export default {
       defaultMessage="Comparator"
     />
   ),
-  icon: Trello,
+  icon: BookOpen,
   color: '#D08770',
   description: (
     <FormattedMessage
@@ -18,4 +21,5 @@ export default {
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),
+  configurator: Configurator,
 };

@@ -52,6 +52,18 @@ const dataViews = [
     primaryField: 'country',
     kind: 'board',
   },
+  {
+    id: 6,
+    name: 'Timeline',
+    primaryField: 'country',
+    kind: 'timeline',
+  },
+  {
+    id: 7,
+    name: 'Map',
+    primaryField: 'country',
+    kind: 'map',
+  },
 ];
 
 export default class Basic extends Component<any, any> {

@@ -1,9 +1,9 @@
 import { ToggleStateless } from '@uidu/toggle';
 import React, { PureComponent } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
-import { TogglerProps } from './types';
+import { ConfiguratorProps } from './types';
 
-export default class TogglerForm extends PureComponent<TogglerProps> {
+export default class ConfiguratorForm extends PureComponent<ConfiguratorProps> {
   onDragEnd = result => {
     // dropped outside the list
     if (!result.destination) {
@@ -20,10 +20,6 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
   render() {
     const { onToggle, columnDefs } = this.props;
 
-    const cleanedColumnDefs = columnDefs.filter(
-      columnDef => !columnDef.lockVisible,
-    );
-
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <Droppable droppableId="droppable">
@@ -34,7 +30,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
               className="list-group"
               // style={getListStyle(snapshot.isDraggingOver)}
             >
-              {cleanedColumnDefs.map((columnDef, index) => (
+              {columnDefs.map((columnDef, index) => (
                 <Draggable
                   key={columnDef.colId}
                   draggableId={columnDef.colId}
@@ -56,7 +52,10 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
                         <div className="text-truncate flex-grow-1">
                           {columnDef.headerComponentParams && (
                             <span
-                              style={{ width: 22, display: 'inline-block' }}
+                              style={{
+                                width: 22,
+                                display: 'inline-block',
+                              }}
                               className="mr-2"
                             >
                               {columnDef.headerComponentParams.menuIcon}

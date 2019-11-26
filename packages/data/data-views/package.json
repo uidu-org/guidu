@@ -8,10 +8,13 @@
   "private": false,
   "devDependencies": {
     "@uidu/docs": "^0.1.36",
-    "@uidu/form": "^0.1.42"
+    "@uidu/form": "^0.1.42",
+    "@uidu/select": "^0.2.3"
   },
   "uidu:src": "index.ts",
   "dependencies": {
+    "@loadable/component": "^5.10.1",
+    "@uidu/data-controls": "^0.2.7",
     "react-feather": "^2.0.3"
   }
 }

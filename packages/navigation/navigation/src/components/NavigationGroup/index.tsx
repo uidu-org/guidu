@@ -24,7 +24,7 @@ export default class NavigationGroup extends PureComponent<any> {
       className += ' mb-4';
     }
     if (withPadding) {
-      className += ' px-3 px-xl-4';
+      className += ' px-3';
     }
 
     return (

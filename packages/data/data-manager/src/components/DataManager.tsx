@@ -1,14 +1,11 @@
 import loadable from '@loadable/component';
 import {
   CalendarToolbar,
-  Customizer,
+  Configurator,
   Filterer,
   Finder,
-  Grouper,
   More,
-  Resizer,
   Sorter,
-  Toggler,
   Viewer,
 } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
@@ -87,27 +84,11 @@ const defaultAvailableControls = {
     visible: true,
     props: {},
   },
-  toggler: {
-    visible: true,
-    props: {},
-  },
-  customizer: {
-    visible: true,
-    props: {},
-  },
   filterer: {
     visible: true,
     props: {},
   },
-  grouper: {
-    visible: true,
-    props: {},
-  },
   sorter: {
-    visible: true,
-    props: {},
-  },
-  resizer: {
     visible: true,
     props: {},
   },
@@ -565,90 +546,75 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     return (
       <>
-        {availableControls.finder.visible && (
-          <Finder
-            onChange={this.setSearch}
-            {...availableControls.finder.props}
-          />
-        )}
-        {availableControls.viewer.visible && (
-          <Viewer
+        <div className="d-flex align-items-center">
+          {availableControls.viewer.visible && (
+            <Viewer
+              currentView={currentView}
+              dataViews={dataViews}
+              onChange={onViewChange}
+              onAdd={onViewAdd}
+              {...availableControls.viewer.props}
+            />
+          )}
+          <Configurator
             currentView={currentView}
-            dataViews={dataViews}
-            onChange={onViewChange}
-            onAdd={onViewAdd}
-            {...availableControls.viewer.props}
-          />
-        )}
-        {availableControls.filterer.visible && (
-          <Filterer
             columnDefs={columnDefs.filter(
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}
-            onChange={this.setFilterModel}
-            addFilter={this.addFilter}
-            filterModel={filterModel}
-            {...availableControls.filterer.props}
-          />
-        )}
-        {currentView.kind === 'table' && availableControls.grouper.visible && (
-          <Grouper
-            columnDefs={columnDefs.filter(column => !!column.enableRowGroup)}
-            onChange={this.setGroupers}
             addGrouper={this.addGrouper}
             removeGrouper={this.removeGrouper}
             groupers={groupers}
-            {...availableControls.grouper.props}
-          />
-        )}
-        {availableControls.sorter.visible && (
-          <Sorter
-            columnDefs={columnDefs.filter(
-              column => column.type !== 'cover' && column.type !== 'avatar',
-            )}
-            onChange={this.setSorters}
-            addSorter={this.addSorter}
-            removeSorter={this.removeSorter}
-            sorters={sorters}
-            {...availableControls.sorter.props}
-          />
-        )}
-        {currentView.kind === 'table' && availableControls.toggler.visible && (
-          <Toggler
-            columnDefs={columnDefs.filter(
-              column => column.type !== 'cover' && column.type !== 'avatar',
-            )}
             onToggle={this.toggleColumn}
             onDragEnd={this.moveColumn}
-            {...availableControls.toggler.props}
-          />
-        )}
-        {(currentView.kind === 'gallery' || currentView.kind === 'list') &&
-          availableControls.customizer.visible && (
-            <Customizer
-              columnDefs={columnDefs}
-              onToggle={this.toggleColumn}
-              onSortEnd={this.moveColumn}
-              {...availableControls.customizer.props}
-            />
-          )}
-        {currentView.kind === 'table' && availableControls.resizer.visible && (
-          <Resizer
+            onSortEnd={this.moveColumn}
             onResize={this.setRowHeight}
             rowHeight={rowHeight}
-            {...availableControls.resizer.props}
           />
-        )}
-        {currentView.kind === 'calendar' &&
-          availableControls.calendarToolbar.visible && (
-            <div id="calendar-toolbar" className="d-flex align-items-center" />
+          {availableControls.more.visible && (
+            <More
+              onDownload={() => this.gridApi.exportDataAsCsv()}
+              {...availableControls.more.props}
+            />
           )}
-        {availableControls.more.visible && (
-          <More
-            onDownload={() => this.gridApi.exportDataAsCsv()}
-            {...availableControls.more.props}
-          />
-        )}
+        </div>
+        <div className="ml-auto d-flex align-items-center">
+          {currentView.kind === 'calendar' &&
+            availableControls.calendarToolbar.visible && (
+              <div
+                id="calendar-toolbar"
+                className="d-flex align-items-center mr-2"
+              />
+            )}
+          {availableControls.filterer.visible && (
+            <Filterer
+              columnDefs={columnDefs.filter(
+                column => column.type !== 'cover' && column.type !== 'avatar',
+              )}
+              onChange={this.setFilterModel}
+              addFilter={this.addFilter}
+              filterModel={filterModel}
+              {...availableControls.filterer.props}
+            />
+          )}
+          {availableControls.sorter.visible && (
+            <Sorter
+              columnDefs={columnDefs.filter(
+                column => column.type !== 'cover' && column.type !== 'avatar',
+              )}
+              onChange={this.setSorters}
+              addSorter={this.addSorter}
+              removeSorter={this.removeSorter}
+              sorters={sorters}
+              {...availableControls.sorter.props}
+            />
+          )}
+          {availableControls.finder.visible && (
+            <Finder
+              onChange={this.setSearch}
+              {...availableControls.finder.props}
+            />
+          )}
+        </div>
       </>
     );
   };
