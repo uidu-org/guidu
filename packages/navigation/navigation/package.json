@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
