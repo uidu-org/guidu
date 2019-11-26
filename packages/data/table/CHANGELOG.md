@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.55
+
+### Patch Changes
+
+- 85e3fe7: Resizer ui and table header menus
+- Updated dependencies [85e3fe7]
+  - @uidu/shell@0.1.34
+
 ## 0.1.54
 
 ### Patch Changes
