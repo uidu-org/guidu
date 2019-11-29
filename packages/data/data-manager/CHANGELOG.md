@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.46
+
+### Patch Changes
+
+- bc5cba1: Add missing dependency
+- Updated dependencies [bc5cba1]
+  - @uidu/table@0.1.58
+
 ## 0.1.45
 
 ### Patch Changes
