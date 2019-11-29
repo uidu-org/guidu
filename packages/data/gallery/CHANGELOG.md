@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.21
+
+### Patch Changes
+
+- b54640b: Move dataView logic outside data-manager
+- Updated dependencies [b54640b]
+  - @uidu/table@0.1.57
+
 ## 0.1.20
 
 ### Patch Changes

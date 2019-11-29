@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 0.1.57
+
+### Patch Changes
+
+- b54640b: Move dataView logic outside data-manager
+- Updated dependencies [b54640b]
+  - @uidu/data-controls@0.2.9
+  - @uidu/data-fields@0.1.17
+
 ## 0.1.56
 
 ### Patch Changes

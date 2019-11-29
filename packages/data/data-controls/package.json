@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,8 +11,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "@ag-grid-community/core": "^22.0.0",
-    "@uidu/data-fields": "^0.1.15",
-    "@uidu/data-views": "^0.1.6",
+    "@uidu/data-fields": "^0.1.17",
+    "@uidu/data-views": "^0.1.7",
     "@uidu/drawer": "^0.2.7",
     "@uidu/dropdown-menu": "^0.1.17",
     "@uidu/field-text": "^0.1.23",
@@ -20,7 +20,7 @@
     "@uidu/item": "^0.1.18",
     "@uidu/select": "^0.2.2",
     "@uidu/shell": "^0.1.32",
-    "@uidu/table": "^0.1.56",
+    "@uidu/table": "^0.1.57",
     "@uidu/toggle": "^0.1.19",
     "react-beautiful-dnd": "^12.0.0",
     "react-feather": "^2.0.3",

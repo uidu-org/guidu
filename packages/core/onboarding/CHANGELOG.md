@@ -1,5 +1,13 @@
 # @uidu/onboarding
 
+## 0.1.5
+
+### Patch Changes
+
+- b54640b: Move dataView logic outside data-manager
+- Updated dependencies [b54640b]
+  - @uidu/modal-dialog@0.1.23
+
 ## 0.1.4
 
 ### Patch Changes

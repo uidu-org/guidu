@@ -1,6 +1,6 @@
 {
   "name": "@uidu/onboarding",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
   "license": "MIT",
   "author": "uidu",
@@ -10,7 +10,7 @@
     "@atlaskit/progress-indicator": "^7.0.8",
     "@uidu/analytics": "^0.1.16",
     "@uidu/button": "^0.1.48",
-    "@uidu/modal-dialog": "^0.1.22",
+    "@uidu/modal-dialog": "^0.1.23",
     "@uidu/popper": "^0.1.13",
     "@uidu/portal": "^0.1.12",
     "@uidu/theme": "^0.1.18",

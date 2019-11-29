@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.1.19
+
+### Patch Changes
+
+- b54640b: Move dataView logic outside data-manager
+
 ## 0.1.18
 
 ### Patch Changes
