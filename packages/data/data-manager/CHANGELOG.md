@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.47
+
+### Patch Changes
+
+- 261af1f: WIP work on dataviews in datamanager
+- Updated dependencies [261af1f]
+  - @uidu/data-controls@0.2.10
+  - @uidu/gallery@0.1.22
+
 ## 0.1.46
 
 ### Patch Changes

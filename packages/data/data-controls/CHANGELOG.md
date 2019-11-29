@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.10
+
+### Patch Changes
+
+- 261af1f: WIP work on dataviews in datamanager
+
 ## 0.2.9
 
 ### Patch Changes
