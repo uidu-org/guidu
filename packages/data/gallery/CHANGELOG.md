@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.22
+
+### Patch Changes
+
+- 261af1f: WIP work on dataviews in datamanager
+
 ## 0.1.21
 
 ### Patch Changes
