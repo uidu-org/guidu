@@ -68,6 +68,7 @@ export default class Gallery extends PureComponent<GalleryProps> {
       gutterSize,
       onItemClick,
     } = this.props;
+
     const visibleColumnDefs = columnDefs.filter(
       c => !c.hide && !c.pinned && !c.rowGroup,
     );

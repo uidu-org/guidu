@@ -23,7 +23,7 @@ export default function Viewer({
   const [editingName, setEditingName] = useState(false);
   const { icon: Icon, color } = byName[currentView.kind];
   return (
-    <div className="d-flex align-items-center">
+    <div className="d-flex align-items-center mr-auto">
       <div className="d-flex align-items-center mr-4">
         <span className="mr-2 d-flex align-items-center">
           <Icon strokeWidth={2} size={18} color={color} />

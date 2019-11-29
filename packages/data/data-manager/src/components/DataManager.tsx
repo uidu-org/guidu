@@ -12,6 +12,7 @@ import moment from 'moment';
 import React, { Component } from 'react';
 import Media from 'react-media';
 import { DataManagerProps } from '../types';
+import { initializeDataView } from '../utils';
 
 const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
@@ -117,11 +118,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
   constructor(props) {
     super(props);
     this.state = {
-      columnDefs: props.columnDefs,
-      data: [],
-      sorters: [],
-      filterModel: {},
-      groupers: [],
+      columns: [],
+      data: null,
+      sorters: props.currentView.sorters || [],
+      filterModel: props.currentView.filterModel || {},
+      groupers: props.currentView.groupers || [],
       rowHeight: 64,
     };
   }
@@ -132,22 +133,38 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   onGridReady = params => {
     const { api, columnApi } = params;
-    const { onGridReady } = this.props;
+    const { onGridReady, currentView } = this.props;
     this.gridApi = api;
     this.gridColumnApi = columnApi;
-    this.resizeTable();
 
-    this.setState(
-      {
-        data: api.getModel().rowsToDisplay,
-      },
-      () => {
-        onGridReady(params);
-      },
-    );
+    console.log('onGridReady');
+
+    const newState = initializeDataView({
+      currentView,
+      gridApi: api,
+      gridColumnApi: columnApi,
+    });
+
+    this.setState(newState, () => {
+      onGridReady(params);
+      this.resizeTable();
+    });
   };
 
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   console.log('receivedProps');
+  //   if (nextProps.currentView.id !== this.props.currentView.id) {
+  //     const newState = initializeDataView({
+  //       currentView: nextProps.currentView,
+  //       gridApi: this.gridApi,
+  //       gridColumnApi: this.gridColumnApi,
+  //     });
+  //     this.setState(newState);
+  //   }
+  // }
+
   componentWillUnmount() {
+    console.log('unmount');
     // window.removeEventListener('resize', this.resizeTableOnWindowResize);
     this.gridApi && this.gridApi.destroy();
   }
@@ -186,14 +203,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
     this.gridColumnApi.setColumnVisible(name, active);
     this.setState(
       {
-        columnDefs: this.state.columnDefs.map(columnDef => {
-          if (columnDef.colId === name) {
+        columns: this.state.columns.map(column => {
+          if (column.colId === name) {
             return {
-              ...columnDef,
+              ...column,
               hide: !active,
             };
           }
-          return columnDef;
+          return column;
         }),
       },
       () => {
@@ -204,15 +221,10 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   moveColumn = ({ name, oldIndex, newIndex }) => {
     this.gridColumnApi.moveColumn(name, newIndex);
-    const columnDefs = reorder(this.state.columnDefs, oldIndex, newIndex);
+    const columns = reorder(this.state.columns, oldIndex, newIndex);
     this.setState({
-      columnDefs,
+      columns,
     });
-  };
-
-  setGroupers = groupers => {
-    // console.log(groupers);
-    // this.setState({ groupers });
   };
 
   addGrouper = grouper => {
@@ -389,11 +401,12 @@ export default class DataManager extends Component<DataManagerProps, any> {
       onFirstDataRendered,
       onAddField,
     } = this.props;
-    const { data, columnDefs, rowHeight, sorters } = this.state;
+    const { data, columns, rowHeight, sorters } = this.state;
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
     }
+    console.log('rerender');
 
     const table = (
       <Table
@@ -413,10 +426,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
           this.props.columnDefs.filter(
             column => column.type !== 'cover' && column.type !== 'avatar',
           )
-          // .map(column => ({
-          //   ...column,
-          //   hide: !currentView.fields.includes(column.colId),
-          // }))
         }
         rowData={rowData}
         onAddField={onAddField}
@@ -448,7 +457,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
                   //     .add(1, 'hour')
                   //     .toDate()
                   // }
-                  columnDefs={columnDefs}
+                  columnDefs={columns}
                   // toolbar={false}
                   components={{
                     toolbar: CalendarToolbar,
@@ -505,7 +514,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
                 rowData={data.map(datum => ({
                   data: datum.data,
                 }))}
-                columnDefs={columnDefs}
+                columnDefs={columns}
               />
             )}
           </LoadableGallery>
@@ -525,7 +534,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
                 rowData={data.map(datum => ({
                   data: datum.data,
                 }))}
-                columnDefs={columnDefs}
+                columnDefs={columns}
               />
             )}
           </LoadableList>
@@ -538,13 +547,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   renderControls = ({ controls }) => {
     const { currentView } = this.props;
-    const {
-      sorters,
-      filterModel,
-      groupers,
-      columnDefs,
-      rowHeight,
-    } = this.state;
+    const { sorters, filterModel, groupers, columns, rowHeight } = this.state;
 
     const availableControls = {
       ...defaultAvailableControls,
@@ -557,7 +560,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
           <Viewer
             availableControls={availableControls}
             currentView={currentView}
-            columnDefs={columnDefs.filter(
+            columnDefs={columns.filter(
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}
             addGrouper={this.addGrouper}
@@ -571,7 +574,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
             actions={availableControls.more.actions}
           />
         )}
-        <div className="ml-auto d-flex align-items-center">
+        <div className="d-flex align-items-center">
           {currentView.kind === 'calendar' &&
             availableControls.calendarToolbar.visible && (
               <div
@@ -581,7 +584,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
             )}
           {availableControls.filterer.visible && (
             <Filterer
-              columnDefs={columnDefs.filter(
+              columnDefs={columns.filter(
                 column => column.type !== 'cover' && column.type !== 'avatar',
               )}
               onChange={this.setFilterModel}
@@ -592,7 +595,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
           )}
           {availableControls.sorter.visible && (
             <Sorter
-              columnDefs={columnDefs.filter(
+              columnDefs={columns.filter(
                 column => column.type !== 'cover' && column.type !== 'avatar',
               )}
               onChange={this.setSorters}

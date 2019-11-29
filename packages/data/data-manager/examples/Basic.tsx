@@ -50,18 +50,20 @@ const dataViews = [
       'paymentMethod',
       'member',
       'amount',
-      'gender',
-      'createdAt',
       'firstName',
+      'gender',
       'phone',
       'addField',
     ],
+    groupers: [{ colId: 'country' }],
+    sorters: [{ colId: 'amount', sort: 'desc' }],
   },
   {
     id: 2,
     name: 'Galleria contatti',
     kind: 'gallery',
     fields: ['avatar', 'member', 'amount'],
+    sorters: [{ colId: 'amount', sort: 'desc' }],
   },
   {
     id: 4,
@@ -99,7 +101,6 @@ export default class Basic extends Component<any, any> {
     this.state = {
       dataViews,
       currentView: dataViews[0],
-      columnDefs: [...availableColumns],
       loaded: false,
       rendered: false,
     };
@@ -134,7 +135,7 @@ export default class Basic extends Component<any, any> {
       <IntlProvider locale="en">
         <Router>
           <DataManager
-            columnDefs={buildColumns(this.state.columnDefs)}
+            columnDefs={buildColumns(availableColumns)}
             rowData={this.state.rowData}
             currentView={this.state.currentView}
             onFirstDataRendered={() => this.setState({ rendered: true })}
