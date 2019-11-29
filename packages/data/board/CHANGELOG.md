@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.5
+
+### Patch Changes
+
+- b54640b: Move dataView logic outside data-manager
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.17
+
+### Patch Changes
+
+- b54640b: Move dataView logic outside data-manager
+
 ## 0.1.16
 
 ### Patch Changes
