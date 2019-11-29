@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.58
+
+### Patch Changes
+
+- bc5cba1: Add missing dependency
+
 ## 0.1.57
 
 ### Patch Changes
