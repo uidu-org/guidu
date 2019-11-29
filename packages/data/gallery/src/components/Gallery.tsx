@@ -79,7 +79,6 @@ export default class Gallery extends PureComponent<GalleryProps> {
     const primary = getPrimary(columnDefs);
     const cover = getCover(visibleColumnDefs);
     const avatar = getAvatar(visibleColumnDefs);
-    console.log(avatar);
 
     const itemData = createItemData(
       items,

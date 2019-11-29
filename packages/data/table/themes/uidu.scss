@@ -1,23 +1,16 @@
-$font-family: 'Avenir'; // $font-family-sans-serif;
-$font-size: 1rem; // $font-size-base;
-$secondary-font-size: 14px; // $font-size-base;
-$foreground-color: 'inherit'; // $body-color;
-$border-color: #f2f2f3; // $border-color;
-$odd-row-background-color: 'inherit'; // $white;
-$light: #f8f9fa;
-$highlight-color: rgba(245, 255, 93, 0.09);
-$white: #fff;
-$text-muted: #6a758a;
-$primary: #ec8447;
+$font-family: 'Avenir' !default; // $font-family-sans-serif;
+$font-size: 1rem !default; // $font-size-base;
+$secondary-font-size: 14px !default; // $font-size-base;
+$foreground-color: 'inherit' !default; // $body-color;
+$border-color: #f2f2f3 !default; // $border-color;
+$odd-row-background-color: 'inherit' !default; // $white;
+$light: #f8f9fa !default;
+$highlight-color: rgba(245, 255, 93, 0.09) !default;
+$white: #fff !default;
+$text-muted: #6a758a !default;
+$primary: #ec8447 !default;
 
-$fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
-
-@import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@import '~@fortawesome/fontawesome-free/scss/regular';
-@import '~@fortawesome/fontawesome-free/scss/solid';
-@import '~@fortawesome/fontawesome-free/scss/brands';
-
-$icon-font-family: 'Font Awesome 5 Free';
+$icon-font-family: 'Font Awesome 5 Free' !default;
 
 $icons: (
   aggregation: '\f247',

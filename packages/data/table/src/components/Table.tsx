@@ -1,4 +1,5 @@
 import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-model';
+import { CsvExportModule } from '@ag-grid-community/csv-export';
 import { AgGridReact } from '@ag-grid-community/react';
 import { MenuModule } from '@ag-grid-enterprise/menu';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
@@ -15,7 +16,6 @@ import {
 import CustomHeader from './headers';
 
 const getMainMenuItems = params => {
-  console.log(params.defaultItems);
   const { api, columnApi, column } = params;
   const { colId } = column;
   return [
@@ -113,7 +113,12 @@ const Table = ({
     <div className={`ag-theme-${theme} h-100${className}`}>
       <AgGridReact
         suppressMaxRenderedRowRestriction
-        modules={[ClientSideRowModelModule, RowGroupingModule, MenuModule]}
+        modules={[
+          ClientSideRowModelModule,
+          RowGroupingModule,
+          MenuModule,
+          CsvExportModule,
+        ]}
         // ref={innerRef}
         // enterprise features
         // groupDefaultExpanded={-1}

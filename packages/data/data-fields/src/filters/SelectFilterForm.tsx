@@ -13,7 +13,6 @@ function CurrencyFilterForm({
   },
   ...rest
 }) {
-  console.log(rest);
   const filters = filtersByType(intl, 'number');
   return (
     <>

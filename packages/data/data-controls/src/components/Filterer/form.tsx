@@ -27,7 +27,6 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
 
   handleSubmit = async model => {
     const { onChange } = this.props;
-    console.log(model);
     onChange(model.filters || []);
   };
 
@@ -43,7 +42,6 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
         <div className="list-group">
           {filters.map((filter: any, index) => {
             const columnDef = getColumnDef(columnDefs, filter);
-            console.log(columnDef);
             const field = getField(columnDef);
             const { filterForm: FilterForm } = field;
             return (

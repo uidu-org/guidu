@@ -3,16 +3,39 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
-import { MoreVertical } from 'react-feather';
+import { Clipboard, Download, Edit2, MoreVertical, Trash } from 'react-feather';
 import { Trigger } from '../../styled';
+import { MoreProps } from './types';
 
-export default class More extends Component<any> {
+export default class More extends Component<MoreProps> {
   static defaultProps = {
     actions: [],
   };
 
   render() {
-    const { onDownload, actions } = this.props;
+    const { onDownload, onDuplicate, onRename, onDestroy } = this.props;
+    const actions = [
+      {
+        text: 'Rename view',
+        onClick: onRename,
+        icon: Edit2,
+      },
+      {
+        text: 'Duplicate view',
+        onClick: onDuplicate,
+        icon: Clipboard,
+      },
+      {
+        text: 'Export .csv',
+        onClick: onDownload,
+        icon: Download,
+      },
+      {
+        text: 'Destroy view',
+        onClick: onDestroy,
+        icon: Trash,
+      },
+    ];
     return (
       <DropdownMenu
         trigger={
@@ -23,11 +46,8 @@ export default class More extends Component<any> {
         position="bottom left"
       >
         <DropdownItemGroup>
-          {actions.map(({ download, onClick, text, icon: Icon }) => (
-            <DropdownItem
-              onClick={download ? onDownload : onClick}
-              elemBefore={<Icon size={14} />}
-            >
+          {actions.map(({ onClick, text, icon: Icon }) => (
+            <DropdownItem onClick={onClick} elemBefore={<Icon size={14} />}>
               {text}
             </DropdownItem>
           ))}

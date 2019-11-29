@@ -2,11 +2,7 @@ import { DropdownItem, DropdownItemGroup } from '@uidu/dropdown-menu';
 import React, { PureComponent } from 'react';
 import { CheckCircle } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
-
-export type ResizerProps = {
-  onResize: (rowHeight: number) => void;
-  rowHeight: number;
-};
+import { ResizerProps } from './types';
 
 export default class Resizer extends PureComponent<ResizerProps> {
   render() {

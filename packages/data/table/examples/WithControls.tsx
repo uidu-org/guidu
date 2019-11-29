@@ -1,3 +1,7 @@
+import '@fortawesome/fontawesome-free/scss/brands.scss';
+import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+import '@fortawesome/fontawesome-free/scss/regular.scss';
+import '@fortawesome/fontawesome-free/scss/solid.scss';
 import {
   Filterer,
   Finder,
@@ -69,13 +73,10 @@ export default class WithControls extends Component<any, any> {
 
   onSortChanged = ({ api, columnApi }) => {
     const sortModel = api.getSortModel();
-    console.log(api.getModel().rowsToDisplay);
     // this.setState({ sorters: sortModel });
   };
 
-  onFilterChanged = ({ api, columnApi }) => {
-    console.log(api.getModel().rowsToDisplay);
-  };
+  onFilterChanged = ({ api, columnApi }) => {};
 
   setSorters = sorters => {
     this.setState({ sorters });

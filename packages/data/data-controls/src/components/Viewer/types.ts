@@ -1,9 +1,9 @@
 import { DataView } from '@uidu/data-views';
+import { ConfiguratorProps } from '../Configurator/types';
+import { MoreProps } from '../More/types';
 
-export type ViewerProps = {
-  dataViews?: Array<DataView>;
-  availableViews?: Array<DataView>;
-  currentView?: DataView;
-  onChange?: (dataView: DataView) => void;
-  onAdd?: (dataview: DataView) => void;
-};
+export type ViewerProps = ConfiguratorProps &
+  MoreProps & {
+    currentView?: DataView;
+    availableControls: any;
+  };

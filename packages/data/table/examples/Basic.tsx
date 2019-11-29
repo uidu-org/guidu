@@ -1,3 +1,7 @@
+import '@fortawesome/fontawesome-free/scss/brands.scss';
+import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
+import '@fortawesome/fontawesome-free/scss/regular.scss';
+import '@fortawesome/fontawesome-free/scss/solid.scss';
 import React, { Component } from 'react';
 import Table from '../';
 import { availableColumns, fetchContacts } from '../examples-utils';

@@ -1,10 +1,8 @@
 import loadable from '@loadable/component';
 import {
   CalendarToolbar,
-  Configurator,
   Filterer,
   Finder,
-  More,
   Sorter,
   Viewer,
 } from '@uidu/data-controls';
@@ -104,6 +102,18 @@ export default class DataManager extends Component<DataManagerProps, any> {
     onFirstDataRendered: _params => {},
   };
 
+  /*
+    we should split columnDefs and data view fields.
+    ColumnDefs are static list of all possible columns for all the views
+    DataViews contain info about how to render fields (eg: hidden fields), pass sort models and view configurations.
+
+    ==> Ideally we control DataView outside DataManager, eg: switch DataView from sidebar navigation, reloads the query to backend to fecth dataview details, and re-renders DataManager.
+
+    But, how do we handle local updates?
+    A. we dont': we pass everything on parent component, that manages DataView State auto-saving it. In this case we rely only on props and adjust views on render (Functional component)
+    B. we keep track of local state for toggler, sorters, filters etc., we derive state from props and we autosave every 5 seconds (or on change)
+  */
+
   constructor(props) {
     super(props);
     this.state = {
@@ -125,23 +135,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     const { onGridReady } = this.props;
     this.gridApi = api;
     this.gridColumnApi = columnApi;
-    this.resizeTable();
-
-    // setTimeout(() => {
-    //   const amountFilterComponent = api.getFilterInstance('displayName');
-    //   amountFilterComponent.setModel({
-    //     filterType: 'text',
-    //     type: 'contains',
-    //     filter: 'al',
-    //   });
-    //   const donorFilterComponent = api.getFilterInstance('member');
-    //   donorFilterComponent.setModel({
-    //     filterType: 'text',
-    //     type: 'contains',
-    //     filter: '@yahoo.com',
-    //   });
-    //   api.onFilterChanged();
-    // }, 5000);
+    // this.resizeTable();
 
     this.setState(
       {
@@ -154,7 +148,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.resizeTableOnWindowResize);
+    // window.removeEventListener('resize', this.resizeTableOnWindowResize);
     this.gridApi && this.gridApi.destroy();
   }
 
@@ -168,10 +162,24 @@ export default class DataManager extends Component<DataManagerProps, any> {
     const { currentView } = this.props;
     const { gridApi, gridColumnApi } = this;
     if (currentView.kind === 'table') {
-      gridColumnApi.autoSizeAllColumns();
-      window.addEventListener('resize', this.resizeTableOnWindowResize);
-      gridApi.sizeColumnsToFit();
+      // gridColumnApi.autoSizeAllColumns();
+      // window.addEventListener('resize', this.resizeTableOnWindowResize);
+      // gridApi.sizeColumnsToFit();
     }
+  };
+
+  filterVisibleColumnDefs = () => {
+    const { currentView, columnDefs } = this.props;
+    return columnDefs
+      .map(column => ({
+        ...column,
+        hide: !currentView.fields.includes(column.colId),
+      }))
+      .sort(
+        (a, b) =>
+          currentView.fields.indexOf(a.colId) -
+          currentView.fields.indexOf(b.colId),
+      );
   };
 
   toggleColumn = (name, active) => {
@@ -203,7 +211,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   setGroupers = groupers => {
-    console.log(groupers);
+    // console.log(groupers);
     // this.setState({ groupers });
   };
 
@@ -274,7 +282,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   onFilterChanged = ({ api }) => {
     const filterModel = api.getFilterModel();
-    console.log(filterModel);
     this.setState({
       data: api.getModel().rowsToDisplay,
       // filterModel,
@@ -318,12 +325,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   setSearch = e => {
     this.gridApi.setQuickFilter(e.target.value);
-  };
-
-  toggleView = view => {
-    this.setState({
-      currentView: view,
-    });
   };
 
   setRowHeight = rowHeight => {
@@ -388,7 +389,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       onFirstDataRendered,
       onAddField,
     } = this.props;
-    const { data, columnDefs, rowHeight } = this.state;
+    const { data, columnDefs, rowHeight, sorters } = this.state;
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
@@ -405,11 +406,18 @@ export default class DataManager extends Component<DataManagerProps, any> {
         innerRef={this.grid}
         onGridReady={this.onGridReady}
         onFirstDataRendered={onFirstDataRendered}
-        sorters={this.state.sorters}
+        sorters={sorters}
         // use columnDefs from props to avoid flickering on toggling/reordering columns
-        columnDefs={this.props.columnDefs.filter(
-          column => column.type !== 'cover' && column.type !== 'avatar',
-        )}
+        columnDefs={
+          // this.filterVisibleColumnDefs()
+          this.props.columnDefs.filter(
+            column => column.type !== 'cover' && column.type !== 'avatar',
+          )
+          // .map(column => ({
+          //   ...column,
+          //   hide: !currentView.fields.includes(column.colId),
+          // }))
+        }
         rowData={rowData}
         onAddField={onAddField}
         onSortChanged={this.onSortChanged}
@@ -463,7 +471,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
                 <Board
                   {...viewProps.board}
                   initial={rowData.reduce((res, item, index) => {
-                    console.log();
                     const key = item[currentView.primaryField];
                     if (res[key]) {
                       res[key] = [...res[key], { ...item, content: item.id }];
@@ -530,7 +537,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   renderControls = ({ controls }) => {
-    const { currentView, dataViews, onViewChange, onViewAdd } = this.props;
+    const { currentView } = this.props;
     const {
       sorters,
       filterModel,
@@ -546,17 +553,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
     return (
       <>
-        <div className="d-flex align-items-center">
-          {availableControls.viewer.visible && (
-            <Viewer
-              currentView={currentView}
-              dataViews={dataViews}
-              onChange={onViewChange}
-              onAdd={onViewAdd}
-              {...availableControls.viewer.props}
-            />
-          )}
-          <Configurator
+        {availableControls.viewer.visible && (
+          <Viewer
+            availableControls={availableControls}
             currentView={currentView}
             columnDefs={columnDefs.filter(
               column => column.type !== 'cover' && column.type !== 'avatar',
@@ -566,17 +565,12 @@ export default class DataManager extends Component<DataManagerProps, any> {
             groupers={groupers}
             onToggle={this.toggleColumn}
             onDragEnd={this.moveColumn}
-            onSortEnd={this.moveColumn}
             onResize={this.setRowHeight}
             rowHeight={rowHeight}
+            onDownload={() => this.gridApi.exportDataAsCsv()}
+            actions={availableControls.more.actions}
           />
-          {availableControls.more.visible && (
-            <More
-              onDownload={() => this.gridApi.exportDataAsCsv()}
-              {...availableControls.more.props}
-            />
-          )}
-        </div>
+        )}
         <div className="ml-auto d-flex align-items-center">
           {currentView.kind === 'calendar' &&
             availableControls.calendarToolbar.visible && (

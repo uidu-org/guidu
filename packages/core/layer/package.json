@@ -10,7 +10,7 @@
   "dependencies": {
     "popper.js": "^1.14.4",
     "raf-schd": "^4.0.0",
-    "react-scrolllock": "^4.0.1"
+    "react-scrolllock": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34",

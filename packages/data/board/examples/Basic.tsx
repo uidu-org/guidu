@@ -36,7 +36,6 @@ const Item = ({ item, provided, ...rest }) => {
 
 export default class Basic extends Component<any> {
   render() {
-    console.log(authorItemMap);
     return (
       <Board
         initial={authorItemMap}

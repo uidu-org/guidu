@@ -18,10 +18,7 @@ export default class Configurator extends Component<ConfiguratorProps, any> {
 
   render() {
     const { columnDefs, currentView } = this.props;
-    console.log(currentView);
-
     const dataView = byName[currentView.kind];
-    console.log(dataView);
 
     const { configurator: ConfiguratorForm } = dataView;
 
