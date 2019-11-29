@@ -25,7 +25,7 @@
   resolved "https://registry.yarnpkg.com/@ag-grid-community/core/-/core-22.0.0.tgz#645b7b9c5102db854d66dd1782109075de3526d3"
   integrity sha512-hHwUA2vMGcQWKHVwvu9QwCUPakaJ36fMIXfwnq4ZSNo0IkdpXxgWasfij7SI9povTz0CsrrlL4KGsV4mdOutXw==
 
-"@ag-grid-community/csv-export@~22.0.0":
+"@ag-grid-community/csv-export@^22.0.0", "@ag-grid-community/csv-export@~22.0.0":
   version "22.0.0"
   resolved "https://registry.yarnpkg.com/@ag-grid-community/csv-export/-/csv-export-22.0.0.tgz#b8fce62b0af332aa06fb1cfdd996dc773b487c6c"
   integrity sha512-DQXZjvCKIxmZiPaYCfdtCRVVmzkGjSeZ9q5TlcBqxOuhGdftwbsE0WzjspKFtA+5G3BEsyjqy/EdI1m8qXkUYg==
@@ -14172,7 +14172,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:

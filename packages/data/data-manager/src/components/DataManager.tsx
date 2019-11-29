@@ -135,7 +135,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     const { onGridReady } = this.props;
     this.gridApi = api;
     this.gridColumnApi = columnApi;
-    // this.resizeTable();
+    this.resizeTable();
 
     this.setState(
       {
@@ -152,17 +152,17 @@ export default class DataManager extends Component<DataManagerProps, any> {
     this.gridApi && this.gridApi.destroy();
   }
 
-  resizeTableOnWindowResize = () => {
-    setTimeout(() => {
-      this.gridApi.sizeColumnsToFit();
-    });
-  };
+  // resizeTableOnWindowResize = () => {
+  //   setTimeout(() => {
+  //     this.gridApi.sizeColumnsToFit();
+  //   });
+  // };
 
   resizeTable = () => {
     const { currentView } = this.props;
     const { gridApi, gridColumnApi } = this;
     if (currentView.kind === 'table') {
-      // gridColumnApi.autoSizeAllColumns();
+      gridColumnApi.autoSizeAllColumns();
       // window.addEventListener('resize', this.resizeTableOnWindowResize);
       // gridApi.sizeColumnsToFit();
     }
