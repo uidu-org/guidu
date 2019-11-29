@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.2.8
+
+### Patch Changes
+
+- 9dfb508: WIP data-views configurators
+- Updated dependencies [9dfb508]
+  - @uidu/data-views@0.1.6
+  - @uidu/table@0.1.56
+
 ## 0.2.7
 
 ### Patch Changes

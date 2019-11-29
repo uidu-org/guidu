@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.27
+
+### Patch Changes
+
+- 9dfb508: WIP data-views configurators
+
 ## 0.1.26
 
 ### Patch Changes
