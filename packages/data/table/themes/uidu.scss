@@ -342,10 +342,17 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   // interactions
   .ag-cell-sorter-active {
     background-color: rgba(254, 226, 213, 0.2);
+    &.ag-cell-filter-active {
+      background: linear-gradient(
+        90deg,
+        rgba(254, 226, 213, 0.2) 50%,
+        rgba(#d1f7c4, $alpha: 0.2) 50%
+      );
+    }
   }
 
   .ag-cell-filter-active {
-    background-color: #d1f7c4;
+    background-color: rgba(#d1f7c4, $alpha: 0.2);
   }
 
   .ag-overlay-wrapper {

@@ -136,11 +136,9 @@ const Table = ({
                 .includes(params.colDef.colId);
             },
             'ag-cell-filter-active': params => {
-              return false;
-              // return params.api
-              //   .getSortModel()
-              //   .map(s => s.colId)
-              //   .includes(params.colDef.colId);
+              return Object.keys(params.api.getFilterModel()).includes(
+                params.colDef.colId,
+              );
             },
           },
         }))}

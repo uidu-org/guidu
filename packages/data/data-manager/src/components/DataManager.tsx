@@ -260,7 +260,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
     setTimeout(() => {
       this.gridApi.refreshCells({ force: true });
       this.gridApi.hideOverlay();
-    }, 600);
+    }, 300);
   };
 
   addFilter = filter => {
@@ -294,18 +294,28 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   onFilterChanged = ({ api }) => {
     const filterModel = api.getFilterModel();
-    this.setState({
-      data: api.getModel().rowsToDisplay,
-      // filterModel,
-    });
+    this.setState(
+      {
+        data: api.getModel().rowsToDisplay,
+        // filterModel,
+      },
+      () => {
+        api.refreshCells({ force: true });
+      },
+    );
   };
 
   onSortChanged = ({ api }) => {
     const sortModel = api.getSortModel();
-    this.setState({
-      data: api.getModel().rowsToDisplay,
-      sorters: sortModel,
-    });
+    this.setState(
+      {
+        data: api.getModel().rowsToDisplay,
+        sorters: sortModel,
+      },
+      () => {
+        api.refreshCells({ force: true });
+      },
+    );
   };
 
   addSorter = sorter => {
@@ -431,6 +441,8 @@ export default class DataManager extends Component<DataManagerProps, any> {
         onAddField={onAddField}
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
+        onColumnVisible={console.log}
+        onColumnMoved={console.log}
         onRowClicked={onItemClick}
         accentedSort
       />

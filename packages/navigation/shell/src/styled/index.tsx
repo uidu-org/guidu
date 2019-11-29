@@ -97,10 +97,10 @@ export const Main = styled.main`
 export const Header = styled.header`
   display: flex;
   align-items: center;
-  height: 4.5rem;
+  height: 4rem;
 
   @media (min-width: 700px) {
-    height: 5.5rem;
+    height: 5rem;
   }
   flex-shrink: 0;
 `;
