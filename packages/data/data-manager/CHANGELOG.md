@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.48
+
+### Patch Changes
+
+- d635b74: Small fixes
+- Updated dependencies [d635b74]
+  - @uidu/table@0.1.59
+  - @uidu/shell@0.1.35
+
 ## 0.1.47
 
 ### Patch Changes
