@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.15
+
+### Patch Changes
+
+- 0c1f6d6: Better calendar view for data-manager
+
 ## 0.1.14
 
 ### Patch Changes
