@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.11
+
+### Patch Changes
+
+- 0b23379: Bump dependencies
+- Updated dependencies [0b23379]
+  - @uidu/docs@0.1.38
+
 ## 0.2.10
 
 ### Patch Changes
