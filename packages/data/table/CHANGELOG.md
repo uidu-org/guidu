@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.59
+
+### Patch Changes
+
+- d635b74: Small fixes
+- Updated dependencies [d635b74]
+  - @uidu/shell@0.1.35
+
 ## 0.1.58
 
 ### Patch Changes
