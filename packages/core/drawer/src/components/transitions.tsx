@@ -14,6 +14,7 @@ type TransitionProps = {
   shouldUnmountOnExit?: boolean;
   origin: DrawerOrigin;
   in: boolean;
+  isStacked?: boolean;
 };
 
 type HandlerProps = {
@@ -74,13 +75,13 @@ class TransitionHandler extends Component<TransitionProps & HandlerProps> {
   }
 }
 
-export const Fade = ({ ...props }: TransitionProps) => (
+export const Fade = ({ isStacked, ...props }: TransitionProps) => (
   <TransitionHandler
     defaultStyles={{
       transition: `opacity ${transitionDurationMs}ms ${transitionTimingFunction}`,
       opacity: 0,
       position: 'fixed',
-      zIndex: layers.blanket(),
+      zIndex: isStacked ? layers.blanket() + 1 : layers.blanket(),
     }}
     transitionStyles={{
       entering: { opacity: 0 },

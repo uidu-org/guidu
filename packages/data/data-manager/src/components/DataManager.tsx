@@ -2,7 +2,8 @@ import loadable from '@loadable/component';
 import {
   CalendarToolbar,
   Filterer,
-  Finder,
+  // Finder,
+  Grouper,
   Sorter,
   Viewer,
 } from '@uidu/data-controls';
@@ -13,6 +14,7 @@ import React, { Component } from 'react';
 import Media from 'react-media';
 import { DataManagerProps } from '../types';
 import { initializeDataView } from '../utils';
+import DataCard from './DataCard';
 
 const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
@@ -53,11 +55,11 @@ const Item = ({ item, provided, ...rest }) => {
     <a
       // to={item.data.id}
       onClick={() => history.push(`/apps/calls/proposals/${item.data.id}`)}
-      className="card card-body bg-white mb-2"
+      className="card bg-white mb-2"
       ref={provided.innerRef}
       {...rest}
     >
-      {item.content}
+      <DataCard item={item} {...rest} />
     </a>
   );
 };
@@ -81,6 +83,10 @@ const defaultAvailableControls = {
   },
   viewer: {
     visible: true,
+    props: {},
+  },
+  grouper: {
+    visibile: true,
     props: {},
   },
   filterer: {
@@ -124,6 +130,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       filterModel: props.currentView.filterModel || {},
       groupers: props.currentView.groupers || [],
       rowHeight: 64,
+      columnCount: 3,
     };
   }
 
@@ -229,7 +236,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   addGrouper = grouper => {
     this.gridApi.showLoadingOverlay();
-    this.gridColumnApi.setColumnVisible(grouper.colId, false);
+    // this.gridColumnApi.setColumnVisible(grouper.colId, false);
     this.setState(
       prevState => ({
         groupers: [...prevState.groupers, grouper],
@@ -360,6 +367,10 @@ export default class DataManager extends Component<DataManagerProps, any> {
     );
   };
 
+  setColumnCount = columnCount => {
+    this.setState({ columnCount });
+  };
+
   renderResponsiveView = ({ mobileView, desktopView }) => {
     return (
       <Media query={{ maxWidth: 768 }}>
@@ -411,7 +422,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
       onFirstDataRendered,
       onAddField,
     } = this.props;
-    const { data, columns, rowHeight, sorters } = this.state;
+    const { data, columns, rowHeight, sorters, columnCount } = this.state;
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
@@ -491,6 +502,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
               return (
                 <Board
                   {...viewProps.board}
+                  columnDefs={columns}
                   initial={rowData.reduce((res, item, index) => {
                     const key = item[currentView.primaryField];
                     if (res[key]) {
@@ -522,6 +534,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
             {({ default: Gallery }) => (
               <Gallery
                 {...viewProps.gallery}
+                columnCount={columnCount}
                 onItemClick={onItemClick}
                 rowData={data.map(datum => ({
                   data: datum.data,
@@ -583,6 +596,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
             onResize={this.setRowHeight}
             rowHeight={rowHeight}
             onDownload={() => this.gridApi.exportDataAsCsv()}
+            onSetColumnCount={this.setColumnCount}
             actions={availableControls.more.actions}
           />
         )}
@@ -617,12 +631,24 @@ export default class DataManager extends Component<DataManagerProps, any> {
               {...availableControls.sorter.props}
             />
           )}
-          {availableControls.finder.visible && (
+          {currentView.kind === 'table' &&
+            availableControls.grouper.visible && (
+              <Grouper
+                columnDefs={columns.filter(
+                  column => column.type !== 'cover' && column.type !== 'avatar',
+                )}
+                addGrouper={this.addGrouper}
+                removeGrouper={this.removeGrouper}
+                groupers={groupers}
+                {...availableControls.sorter.props}
+              />
+            )}
+          {/* {availableControls.finder.visible && (
             <Finder
               onChange={this.setSearch}
               {...availableControls.finder.props}
             />
-          )}
+          )} */}
         </div>
       </>
     );

@@ -13,6 +13,8 @@ export type BaseProps = {
   size: DrawerSize;
   /** Available drawer origins */
   origin: DrawerOrigin;
+  /** stacked drawers */
+  isStacked?: boolean;
 };
 
 export type DrawerPrimitiveProps = BaseProps & {

@@ -1,4 +1,4 @@
-import { Field } from '@uidu/data-fields';
+import { byName, Field } from '@uidu/data-fields';
 import numeral from 'numeral';
 import React from 'react';
 import {
@@ -183,3 +183,13 @@ export const numericComparator = (number1, number2) => {
 
   return numericNumber1 - numericNumber2;
 };
+
+export const extractColumnType = type => {
+  if (Array.isArray(type)) {
+    return type[type.length - 1];
+  }
+  return type;
+};
+
+export const getFieldFromColumnDef = columnDef =>
+  byName[extractColumnType(columnDef.type)];

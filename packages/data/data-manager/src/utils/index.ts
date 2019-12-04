@@ -16,6 +16,10 @@ export const initializeDataView = ({
   gridApi.setFilterModel(filterModel);
   // // handle groupers
   if (groupers.length > 0) {
+    // gridColumnApi.setColumnsVisible(
+    //   groupers.map(g => g.colId),
+    //   false,
+    // );
     gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
   } else {
     gridColumnApi.setRowGroupColumns([]);

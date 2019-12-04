@@ -160,6 +160,9 @@ export default class Basic extends Component<any, any> {
                       viewer: {
                         visible: true,
                       },
+                      grouper: {
+                        visible: true,
+                      },
                     },
                   })}
                   <DropdownMenu

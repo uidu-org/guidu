@@ -8,7 +8,7 @@ export const opacity = (p: any) => (p.isTinted ? 1 : 0);
 export const pointerEvents = (p: any) =>
   p.canClickThrough ? 'none' : 'initial';
 
-export default styled.div`
+export default styled.div<{ isStacked?: boolean }>`
   background: ${backgroundColor};
   bottom: 0;
   left: 0;
@@ -18,5 +18,6 @@ export default styled.div`
   right: 0;
   top: 0;
   transition: opacity 220ms;
-  z-index: ${layers.blanket};
+  z-index: ${({ isStacked }) =>
+    isStacked ? layers.blanket() + 1 : layers.blanket()};
 `;

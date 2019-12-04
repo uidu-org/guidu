@@ -8,6 +8,7 @@ type Props = {
   provided: DraggableProvided;
   isGroupedOver?: boolean;
   components: BoardComponents;
+  columnDefs?: any;
 };
 
 // Previously this extended React.Component
@@ -18,7 +19,14 @@ type Props = {
 // things we should be doing in the selector as we do not know if consumers
 // will be using PureComponent
 function ItemItem(props: Props) {
-  const { item, components, isDragging, isGroupedOver, provided } = props;
+  const {
+    item,
+    components,
+    isDragging,
+    isGroupedOver,
+    provided,
+    columnDefs,
+  } = props;
 
   const { item: Item } = components;
 
@@ -31,6 +39,7 @@ function ItemItem(props: Props) {
       ref={provided.innerRef}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
+      columnDefs={columnDefs}
     >
       {item.content}
     </Item>

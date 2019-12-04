@@ -1,6 +1,5 @@
-import { ToggleStateless } from '@uidu/toggle';
+import { CheckboxStateless } from '@uidu/checkbox';
 import React, { PureComponent } from 'react';
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { TogglerProps } from './types';
 
 export default class TogglerForm extends PureComponent<TogglerProps> {
@@ -25,60 +24,57 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
     );
 
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
-        <Droppable droppableId="droppable">
-          {(provided, snapshot) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              className="list-group"
-              // style={getListStyle(snapshot.isDraggingOver)}
-            >
-              {cleanedColumnDefs.map((columnDef, index) => (
-                <Draggable
-                  key={columnDef.colId}
-                  draggableId={columnDef.colId}
-                  index={index}
-                >
-                  {(provided, snapshot) => (
-                    <div
-                      key={columnDef.colId}
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      onClick={e => {
-                        e.preventDefault();
-                        onToggle(columnDef.colId, !!columnDef.hide);
-                      }}
-                      className="list-group-item px-3 px-xl-4"
-                    >
-                      <div className="d-flex align-items-center justify-content-between">
-                        <div className="text-truncate flex-grow-1">
-                          {columnDef.headerComponentParams && (
-                            <span
-                              style={{ width: 22, display: 'inline-block' }}
-                              className="mr-2"
-                            >
-                              {columnDef.headerComponentParams.menuIcon}
-                            </span>
-                          )}
-                          {columnDef.headerName}
-                        </div>
-                        <ToggleStateless
-                          isChecked={!columnDef.hide}
-                          className="ml-3"
-                          size="small"
-                        />
-                      </div>
-                    </div>
-                  )}
-                </Draggable>
-              ))}
-              {provided.placeholder}
+      <div
+        className="list-group"
+        // style={getListStyle(snapshot.isDraggingOver)}
+      >
+        <a
+          href="# "
+          className="list-group-item list-group-item-action px-3 px-xl-4 bg-light py-2"
+        >
+          <div className="d-flex align-items-center justify-content-between">
+            <span className="mr-2">
+              <CheckboxStateless checked={false} />
+            </span>
+            <div className="text-truncate flex-grow-1 text-muted text-uppercase small">
+              Default fields
             </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+          </div>
+        </a>
+        {cleanedColumnDefs.map((columnDef, index) => (
+          <a
+            href="#"
+            key={columnDef.colId}
+            className="list-group-item list-group-item-action px-3 px-xl-4 py-2"
+            onClick={e => {
+              e.preventDefault();
+              onToggle(columnDef.colId, !!columnDef.hide);
+            }}
+          >
+            <div className="d-flex align-items-center justify-content-between">
+              <span className="mr-2">
+                <CheckboxStateless checked={!columnDef.hide} />
+              </span>
+              <div className="text-truncate flex-grow-1">
+                {columnDef.headerComponentParams && (
+                  <span
+                    style={{
+                      width: 22,
+                      display: 'inline-block',
+                      textAlign: 'center',
+                      opacity: 0.5,
+                    }}
+                    className="mr-2"
+                  >
+                    {columnDef.headerComponentParams.menuIcon}
+                  </span>
+                )}
+                {columnDef.headerName}
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
     );
   }
 }

@@ -28,7 +28,7 @@ export const availableColumns = [
     headerName: 'Donor',
     field: 'member',
     valueGetter: props => {
-      return props.data ? props.data.member.email : '-';
+      return props.data ? props.data.member.email : null;
     },
   },
   {

@@ -37,11 +37,18 @@ const positionAndSizes = (size, origin) => {
   }
 };
 
-export default styled.div<{ children; shouldUnmountOnExit; origin; size }>`
+export default styled.div<{
+  children;
+  shouldUnmountOnExit;
+  origin;
+  size;
+  isStacked;
+}>`
   background-color: ${colors.N0};
   display: flex;
   overflow: hidden;
   position: fixed;
-  z-index: ${layers.blanket() + 1};
+  z-index: ${({ isStacked }) =>
+    isStacked ? layers.blanket() + 2 : layers.blanket() + 1}};
   ${({ size, origin }) => positionAndSizes(size, origin)};
 `;

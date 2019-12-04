@@ -15,6 +15,8 @@ interface Props extends WithAnalyticsEventsProps {
   isTinted?: boolean;
   /** Handler function to be called when the blanket is clicked */
   onBlanketClicked?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  /** Stacked blankets have higher z-index references */
+  isStacked?: boolean;
 }
 
 class Blanket extends React.Component<Props, {}> {
@@ -22,12 +24,18 @@ class Blanket extends React.Component<Props, {}> {
     canClickThrough: false,
     isTinted: false,
     onBlanketClicked: () => {},
+    isStacked: false,
   };
 
   render() {
-    const { canClickThrough, isTinted, onBlanketClicked } = this.props;
+    const {
+      canClickThrough,
+      isTinted,
+      onBlanketClicked,
+      isStacked,
+    } = this.props;
     const onClick = canClickThrough ? null : onBlanketClicked;
-    const containerProps = { canClickThrough, isTinted, onClick };
+    const containerProps = { canClickThrough, isTinted, onClick, isStacked };
 
     return <Div {...containerProps} />;
   }

@@ -34,6 +34,7 @@ export type BoardComponents = {
   innerListContainer?: any;
   innerListDropzone?: any;
   item?: any;
+  columnDefs?: any;
 };
 
 export type BoardProps = {
@@ -43,6 +44,7 @@ export type BoardProps = {
   isCombineEnabled?: boolean;
   containerHeight?: string;
   components?: BoardComponents;
+  columnDefs?: any;
 };
 
 export type BoardState = {
@@ -58,6 +60,7 @@ export type ColumnProps = {
   isDragDisabled?: boolean;
   isCombineEnabled?: boolean;
   components?: BoardComponents;
+  columnDefs?: any;
 };
 
 export type ItemsListProps = {
@@ -75,6 +78,7 @@ export type ItemsListProps = {
   components?: BoardComponents;
   header?: React.ReactNode;
   footer?: React.ReactNode;
+  columnDefs?: any;
 };
 
 type ItemListProps = {

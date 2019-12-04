@@ -1,18 +1,20 @@
-import { Grouper, Resizer, Toggler } from '@uidu/data-controls';
+import { Toggler } from '@uidu/data-controls';
 import React, { PureComponent } from 'react';
+import { CheckSquare } from 'react-feather';
 
 export default class Configurator extends PureComponent<any> {
   render() {
     const { onResize, rowHeight, columnDefs, onDragEnd, onToggle } = this.props;
+    console.log(this.props);
     return (
       <>
-        <Grouper {...this.props} />
-        <div className="px-4">
-          <h5>Maybe row height</h5>
-        </div>
-        <Resizer onResize={onResize} rowHeight={rowHeight} {...this.props} />
-        <div className="px-4">
-          <h5>Visible fields (old toggler)</h5>
+        <div className="list-group">
+          <div className="list-group-item px-3 px-xl-4 border-0">
+            <h6 className="m-0">
+              <CheckSquare size={16} className="mr-2" />
+              Visible fields
+            </h6>
+          </div>
         </div>
         <Toggler
           columnDefs={columnDefs}

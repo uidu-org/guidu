@@ -342,7 +342,8 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   // interactions
   .ag-cell-sorter-active {
     background-color: rgba(254, 226, 213, 0.2);
-    &.ag-cell-filter-active {
+    &.ag-cell-filter-active,
+    &.ag-header-cell-filtered {
       background: linear-gradient(
         90deg,
         rgba(254, 226, 213, 0.2) 50%,
@@ -353,6 +354,10 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
   .ag-cell-filter-active {
     background-color: rgba(#d1f7c4, $alpha: 0.2);
+  }
+
+  .ag-cell-grouper-active {
+    background-color: rgba(#ede2fe, $alpha: 0.2);
   }
 
   .ag-overlay-wrapper {

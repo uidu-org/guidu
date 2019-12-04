@@ -10,7 +10,14 @@ import ItemList from './ItemsList';
 
 export default class Column extends Component<ColumnProps> {
   render() {
-    const { components, title, items, index, isDragDisabled } = this.props;
+    const {
+      components,
+      title,
+      items,
+      index,
+      isDragDisabled,
+      columnDefs,
+    } = this.props;
     const {
       columnHeader: Header,
       columnContainer: Container,
@@ -39,6 +46,7 @@ export default class Column extends Component<ColumnProps> {
               items={items}
               internalScroll={this.props.isScrollable}
               isCombineEnabled={Boolean(this.props.isCombineEnabled)}
+              columnDefs={columnDefs}
               header={
                 <Header
                   isDragging={snapshot.isDragging}

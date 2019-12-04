@@ -128,6 +128,19 @@ const Table = ({
         componentWrappingElement="span"
         columnDefs={columnDefs.map(columnDef => ({
           ...columnDef,
+          // headerClass: params => {
+          //   console.log(params);
+          //   const classes = [];
+          //   if (
+          //     params.api
+          //       .getSortModel()
+          //       .map(s => s.colId)
+          //       .includes(params.colDef.colId)
+          //   ) {
+          //     classes.push('ag-cell-sorter-active');
+          //   }
+          //   return classes;
+          // },
           cellClassRules: {
             'ag-cell-sorter-active': params => {
               return params.api

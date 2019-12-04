@@ -13,11 +13,12 @@ import Item from './Item';
 type ItemListProps = {
   items: ItemProps[];
   components: BoardComponents;
+  columnDefs?: any;
 };
 
 class InnerItemListComponent extends Component<ItemListProps> {
   render() {
-    const { items, components } = this.props;
+    const { items, components, columnDefs } = this.props;
     return items.map((item: ItemProps, index: number) => (
       <Draggable key={item.id} draggableId={item.id} index={index}>
         {(
@@ -31,6 +32,7 @@ class InnerItemListComponent extends Component<ItemListProps> {
             isDragging={dragSnapshot.isDragging}
             isGroupedOver={Boolean(dragSnapshot.combineTargetFor)}
             provided={dragProvided}
+            columnDefs={columnDefs}
           />
         )}
       </Draggable>
@@ -44,10 +46,11 @@ type InnerListProps = {
   dropProvided: DroppableProvided;
   items: ItemProps[];
   components?: BoardComponents;
+  columnDefs?: any;
 };
 
 function InnerList(props: InnerListProps) {
-  const { items, dropProvided, components } = props;
+  const { items, dropProvided, components, columnDefs } = props;
 
   const {
     innerListContainer: Container,
@@ -57,7 +60,11 @@ function InnerList(props: InnerListProps) {
   return (
     <Container>
       <DropZone ref={dropProvided.innerRef}>
-        <InnerItemList items={items} components={components} />
+        <InnerItemList
+          items={items}
+          components={components}
+          columnDefs={columnDefs}
+        />
         {dropProvided.placeholder}
       </DropZone>
     </Container>
@@ -78,6 +85,7 @@ export default function ItemList(props: ItemsListProps) {
     items,
     header,
     footer,
+    columnDefs,
   } = props;
 
   const {
@@ -111,6 +119,7 @@ export default function ItemList(props: ItemsListProps) {
                 items={items}
                 components={components}
                 dropProvided={dropProvided}
+                columnDefs={columnDefs}
               />
             </ItemsListScrollContainer>
           ) : (
@@ -118,6 +127,7 @@ export default function ItemList(props: ItemsListProps) {
               items={items}
               components={components}
               dropProvided={dropProvided}
+              columnDefs={columnDefs}
             />
           )}
           {footer}

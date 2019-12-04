@@ -112,13 +112,18 @@ export class DrawerBase extends React.Component<DrawerProps> {
       shouldUnmountOnExit,
       onCloseComplete,
       origin,
+      isStacked,
     } = this.props;
 
     return createPortal(
       <TransitionGroup component={OnlyChild}>
         <>
-          <Fade in={isOpen} origin={origin}>
-            <Blanket isTinted onBlanketClicked={this.handleBlanketClick} />
+          <Fade in={isOpen} origin={origin} isStacked={isStacked}>
+            <Blanket
+              isStacked={isStacked}
+              isTinted
+              onBlanketClicked={this.handleBlanketClick}
+            />
           </Fade>
           <DrawerPrimitive
             icon={icon}
@@ -128,6 +133,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
             size={size}
             shouldUnmountOnExit={shouldUnmountOnExit}
             origin={origin}
+            isStacked={isStacked}
           >
             {children}
           </DrawerPrimitive>
