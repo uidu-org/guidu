@@ -66,8 +66,8 @@
     "recompose": "^0.30.0",
     "resolve": "^1.10.0",
     "semver": "^6.0.0",
-    "sentence-case": "^2.1.1",
-    "snake-case": "^2.1.0",
+    "sentence-case": "^3.0.1",
+    "snake-case": "^3.0.1",
     "styled-components": "^4.0.3",
     "tti-polyfill": "^0.2.2",
     "uuid": "^3.3.2"

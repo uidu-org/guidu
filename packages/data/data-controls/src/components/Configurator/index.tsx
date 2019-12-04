@@ -37,7 +37,7 @@ export default class Configurator extends Component<ConfiguratorProps, any> {
             this.setState({ dialogOpen: false });
           }}
           origin="right"
-          size="medium"
+          size="wide"
         >
           <DrawerLayout
             name={

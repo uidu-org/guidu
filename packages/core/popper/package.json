@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "memoize-one": "^5.0.0",
-    "react-popper": "1.3.3"
+    "react-popper": "^1.3.6"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.48",

@@ -93,7 +93,7 @@ export default class Example extends React.Component<Props, State> {
 
     return (
       <Fragment>
-        <Tooltip placement="left" content={toggleLabel}>
+        <Tooltip position="mouse" content={toggleLabel}>
           <Toggle
             ref={c => {
               this.toggleElement = c;

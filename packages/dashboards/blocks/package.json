@@ -18,7 +18,7 @@
     "react-animated-number": "^0.4.4",
     "react-countup": "^4.2.2",
     "react-google-charts": "^3.0.13",
-    "recharts": "^1.6.2"
+    "recharts": "^2.0.0-beta.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34"

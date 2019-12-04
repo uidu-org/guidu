@@ -3,7 +3,14 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
-import { Clipboard, Download, Edit2, MoreVertical, Trash } from 'react-feather';
+import {
+  Clipboard,
+  Download,
+  Edit2,
+  MoreVertical,
+  Settings,
+  Trash,
+} from 'react-feather';
 import { Trigger } from '../../styled';
 import { MoreProps } from './types';
 
@@ -24,6 +31,11 @@ export default class More extends Component<MoreProps> {
         text: 'Duplicate view',
         onClick: onDuplicate,
         icon: Clipboard,
+      },
+      {
+        text: "Copy another view's configuration",
+        onClick: onDuplicate,
+        icon: Settings,
       },
       {
         text: 'Export .csv',

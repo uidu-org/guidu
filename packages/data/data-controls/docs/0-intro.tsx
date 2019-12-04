@@ -25,12 +25,6 @@ export default md`
 
   ${(
     <Props
-      heading="Customizer"
-      props={require('!!extract-react-types-loader!../src/components/Customizer')}
-    />
-  )}
-  ${(
-    <Props
       heading="Filterer"
       props={require('!!extract-react-types-loader!../src/components/Filterer')}
     />

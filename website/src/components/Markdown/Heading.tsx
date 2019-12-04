@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as reactAddonsTextContent from 'react-addons-text-content';
 import { Helmet } from 'react-helmet';
-import snakeCase from 'snake-case';
+import { snakeCase } from 'snake-case';
 
 export type Props = {
   children?: React.ReactChild;

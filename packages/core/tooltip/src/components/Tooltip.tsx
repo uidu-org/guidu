@@ -317,7 +317,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
                 style,
                 placement,
               }: {
-                ref: (elm: HTMLElement) => void;
+                ref: any;
                 style: Object;
                 placement: Placement;
               }) =>

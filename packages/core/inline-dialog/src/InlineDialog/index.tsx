@@ -87,10 +87,7 @@ class InlineDialog extends Component<Props, {}> {
             onBlur={onContentBlur}
             onFocus={onContentFocus}
             onClick={onContentClick}
-            ref={node => {
-              this.containerRef = node;
-              ref(node);
-            }}
+            ref={ref}
             style={style}
           >
             {content}
@@ -102,16 +99,7 @@ class InlineDialog extends Component<Props, {}> {
     return (
       <Manager>
         <Reference>
-          {({ ref }) => (
-            <NodeResolver
-              innerRef={(node: HTMLElement) => {
-                this.triggerRef = node;
-                ref(node);
-              }}
-            >
-              {children}
-            </NodeResolver>
-          )}
+          {({ ref }) => <NodeResolver innerRef={ref}>{children}</NodeResolver>}
         </Reference>
         {popper}
       </Manager>

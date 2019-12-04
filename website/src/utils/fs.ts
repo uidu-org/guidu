@@ -1,4 +1,4 @@
-import sentenceCase from 'sentence-case';
+import { sentenceCase } from 'sentence-case';
 import { Directory, File } from '../types';
 
 export function getDirectories(
