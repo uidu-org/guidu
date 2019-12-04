@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.50
+
+### Patch Changes
+
+- a6e6442: Better nav styles, gallery spacing
+- Updated dependencies [a6e6442]
+  - @uidu/data-controls@0.2.13
+  - @uidu/data-views@0.1.9
+  - @uidu/gallery@0.1.23
+
 ## 0.1.49
 
 ### Patch Changes
