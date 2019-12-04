@@ -92,18 +92,17 @@ export default class Gallery extends PureComponent<GalleryProps> {
       avatar,
     );
 
+    console.log(columnCount);
+
     return (
       <AutoSizer>
         {({ height, width }) => {
+          const columnWidth = width / columnCount;
           return (
             <Grid
               useIsScrolling
               columnCount={columnCount}
-              columnWidth={
-                width / columnCount +
-                gutterSize -
-                (gutterSize / columnCount) * (columnCount + 1)
-              }
+              columnWidth={columnWidth}
               height={height}
               itemData={itemData}
               rowCount={items.length}

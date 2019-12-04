@@ -8,7 +8,13 @@ export default class Configurator extends PureComponent<any> {
   handleSubmit = async model => console.log(model);
 
   render() {
-    const { onResize, rowHeight, columnDefs, onDragEnd, onToggle } = this.props;
+    const {
+      columnDefs,
+      onDragEnd,
+      onToggle,
+      columnCount,
+      onSetColumnCount,
+    } = this.props;
     return (
       <>
         <div className="list-group mb-3">
@@ -20,7 +26,14 @@ export default class Configurator extends PureComponent<any> {
           </div>
           <div className="px-3 px-xl-4">
             <Form handleSubmit={this.handleSubmit} footerRenderer={() => null}>
-              <FieldNumber name="foo" layout="elementOnly" />
+              <FieldNumber
+                name="columnCount"
+                layout="elementOnly"
+                value={columnCount}
+                onChange={(_name, value) => onSetColumnCount(value)}
+                min={1}
+                max={5}
+              />
             </Form>
           </div>
         </div>

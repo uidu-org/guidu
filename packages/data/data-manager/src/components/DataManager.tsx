@@ -368,7 +368,9 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   setColumnCount = columnCount => {
-    this.setState({ columnCount });
+    this.setState({ columnCount }, () =>
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 300),
+    );
   };
 
   renderResponsiveView = ({ mobileView, desktopView }) => {
@@ -572,7 +574,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   renderControls = ({ controls }) => {
     const { currentView } = this.props;
-    const { sorters, filterModel, groupers, columns, rowHeight } = this.state;
+    const {
+      sorters,
+      filterModel,
+      groupers,
+      columns,
+      rowHeight,
+      columnCount,
+    } = this.state;
 
     const availableControls = {
       ...defaultAvailableControls,
@@ -596,6 +605,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
             onResize={this.setRowHeight}
             rowHeight={rowHeight}
             onDownload={() => this.gridApi.exportDataAsCsv()}
+            columnCount={columnCount}
             onSetColumnCount={this.setColumnCount}
             actions={availableControls.more.actions}
           />

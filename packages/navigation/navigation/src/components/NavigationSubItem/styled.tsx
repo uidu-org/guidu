@@ -12,7 +12,8 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   transition: background-color linear 300ms;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-  font-size: 0.9rem;
+  padding-left: 1.75rem;
+  font-size: 0.925rem;
 
   &:hover,
   &.active {

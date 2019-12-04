@@ -19,6 +19,8 @@ export default function Viewer({
   onResize,
   rowHeight,
   onDownload,
+  columnCount,
+  onSetColumnCount,
 }: ViewerProps) {
   const [editingName, setEditingName] = useState(false);
   const { icon: Icon, color } = byName[currentView.kind];
@@ -56,6 +58,8 @@ export default function Viewer({
         onDragEnd={onDragEnd}
         onResize={onResize}
         rowHeight={rowHeight}
+        columnCount={columnCount}
+        onSetColumnCount={onSetColumnCount}
       />
       <Starrer />
       {availableControls.more.visible && (

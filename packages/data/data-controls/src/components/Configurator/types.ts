@@ -8,4 +8,6 @@ export type ConfiguratorProps = GrouperProps &
   ResizerProps & {
     columnDefs: Column[];
     currentView: any;
+    onSetColumnCount: (columnCount: number) => void;
+    columnCount?: number;
   };

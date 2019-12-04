@@ -30,7 +30,7 @@ export default class Item extends PureComponent<any> {
           cursor: 'pointer',
           left: style.left + gutterSize,
           top: style.top + gutterSize,
-          width: style.width - gutterSize,
+          width: style.width - gutterSize * 2,
           height: style.height - gutterSize,
         }}
         key={item.data.id}
