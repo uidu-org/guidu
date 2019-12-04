@@ -1,5 +1,13 @@
 # @uidu/popper
 
+## 0.1.14
+
+### Patch Changes
+
+- 0b23379: Bump dependencies
+- Updated dependencies [0b23379]
+  - @uidu/docs@0.1.38
+
 ## 0.1.13
 
 ### Patch Changes

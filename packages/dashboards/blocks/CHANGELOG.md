@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 0.1.21
+
+### Patch Changes
+
+- 0b23379: Bump dependencies
+- Updated dependencies [0b23379]
+  - @uidu/docs@0.1.38
+  - @uidu/tooltip@0.1.20
+
 ## 0.1.20
 
 ### Patch Changes
