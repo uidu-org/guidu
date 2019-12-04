@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.6
+
+### Patch Changes
+
+- e2c88ce: Stacked drawers, board in data-manager reacts to toggling fields, cleaned up configurators and data-controls
+
 ## 0.2.5
 
 ### Patch Changes
