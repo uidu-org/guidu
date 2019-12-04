@@ -389,11 +389,20 @@ export default class DataManager extends Component<DataManagerProps, any> {
 
   renderSidebar = () => {
     const { rowData, onItemClick, currentView } = this.props;
+    const { data } = this.state;
+    console.log(data);
 
     if (currentView.kind === 'calendar') {
       return (
         <>
           <p>List of events</p>
+          {data.map(datum => (
+            <p>
+              {datum.data
+                ? `${datum.data.createdAt} - ${datum.data.id}`
+                : 'Group'}
+            </p>
+          ))}
         </>
       );
     }
@@ -472,18 +481,15 @@ export default class DataManager extends Component<DataManagerProps, any> {
                 <Calendar
                   {...viewProps.calendar}
                   onItemClick={onItemClick}
-                  events={data.map(datum => ({
-                    data: datum.data,
-                  }))}
+                  events={data.map(datum => datum.data)}
                   startAccessor={item => moment(item.createdAt).toDate()}
                   titleAccessor={item => item.email}
-                  // endAccessor={item =>
-                  //   moment(item.createdAt)
-                  //     .add(1, 'hour')
-                  //     .toDate()
-                  // }
+                  endAccessor={item =>
+                    moment(item.createdAt)
+                      .add(3, 'hour')
+                      .toDate()
+                  }
                   columnDefs={columns}
-                  // toolbar={false}
                   components={{
                     toolbar: CalendarToolbar,
                   }}

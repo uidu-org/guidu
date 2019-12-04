@@ -43,11 +43,11 @@ const calendarProps = ({ events, onEventDrop, onEventResize }) => ({
   //   moment(`${event.beginsAt} ${event.beginTime}`).toDate(),
   // endAccessor: event => moment(`${event.finishesAt} ${event.endTime}`).toDate(),
   // titleAccessor: 'name',
-  eventPropGetter: event => ({
-    style: {
-      backgroundColor: event.group ? event.group.color : 'white',
-    },
-  }),
+  // eventPropGetter: event => ({
+  //   style: {
+  //     backgroundColor: event.group ? event.group.color : 'white',
+  //   },
+  // }),
   // onSelectEvent: event => history.push(`/apps/agenda/events/${event.id}`),
   // onSelectSlot: ({ start, end }) =>
   //   history.push(

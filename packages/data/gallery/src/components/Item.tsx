@@ -39,13 +39,13 @@ export default class Item extends PureComponent<any> {
           <ItemHeader cover={cover} avatar={avatar} item={item} />
           {primary && (
             <div
-              className="card-header text-truncate border-bottom-0"
+              className="card-header text-truncate"
               style={{ fontWeight: 500 }}
             >
               {valueRenderer(item.data, primary)}
             </div>
           )}
-          <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
+          <div className="px-3 px-xl-4 py-3">
             <dl className="mb-0">
               {columnDefs
                 .filter(
@@ -54,26 +54,35 @@ export default class Item extends PureComponent<any> {
                     column.type !== 'primary' &&
                     column.type !== 'avatar',
                 )
-                .map(column => [
-                  <dt
-                    className="small text-muted text-truncate mt-3"
-                    key={`${item.data.id}-${column.field}-name`}
+                .map(column => (
+                  <div
+                    style={{
+                      height: 56,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                    }}
                   >
-                    {column.headerComponentParams &&
-                    column.headerComponentParams.menuIcon ? (
-                      <span className="mr-2">
-                        {column.headerComponentParams.menuIcon}
-                      </span>
-                    ) : null}
-                    {column.headerName}
-                  </dt>,
-                  <dd
-                    className="mb-0 text-truncate"
-                    key={`${item.data.id}-${column.field}-value`}
-                  >
-                    {valueRenderer(item.data, column)}
-                  </dd>,
-                ])}
+                    <dt
+                      className="small text-muted text-truncate"
+                      key={`${item.data.id}-${column.field}-name`}
+                    >
+                      {column.headerComponentParams &&
+                      column.headerComponentParams.menuIcon ? (
+                        <span className="mr-2">
+                          {column.headerComponentParams.menuIcon}
+                        </span>
+                      ) : null}
+                      {column.headerName}
+                    </dt>
+                    <dd
+                      className="mb-0 text-truncate"
+                      key={`${item.data.id}-${column.field}-value`}
+                    >
+                      {valueRenderer(item.data, column)}
+                    </dd>
+                  </div>
+                ))}
             </dl>
           </div>
         </div>

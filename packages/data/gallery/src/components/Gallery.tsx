@@ -6,9 +6,9 @@ import { FixedSizeGrid as Grid } from 'react-window';
 import { GalleryProps } from '../types';
 import Item from './Item';
 
-const ITEM_HEADER_HEIGHT = 24;
-const ITEM_COLUMN_ROW = 54;
-const ITEM_PADDING = 48;
+const ITEM_HEADER_HEIGHT = 58;
+const ITEM_COLUMN_ROW = 56;
+const ITEM_PADDING = 32;
 
 const createItemData = memoize(
   (
@@ -116,12 +116,9 @@ export default class Gallery extends PureComponent<GalleryProps> {
                       column.type !== 'avatar',
                   ).length +
                 ITEM_PADDING +
-                gutterSize +
-                this.getGutterSize({ avatar, cover }) +
-                2 // borders
+                gutterSize
               }
               width={width}
-              // innerElementType={innerElementType}
             >
               {Item}
             </Grid>
