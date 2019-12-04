@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.13
+
+### Patch Changes
+
+- a6e6442: Better nav styles, gallery spacing
+- Updated dependencies [a6e6442]
+  - @uidu/data-views@0.1.9
+
 ## 0.2.12
 
 ### Patch Changes

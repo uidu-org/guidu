@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.23
+
+### Patch Changes
+
+- a6e6442: Better nav styles, gallery spacing
+
 ## 0.1.22
 
 ### Patch Changes

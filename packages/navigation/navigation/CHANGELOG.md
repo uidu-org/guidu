@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.28
+
+### Patch Changes
+
+- a6e6442: Better nav styles, gallery spacing
+
 ## 0.1.27
 
 ### Patch Changes
