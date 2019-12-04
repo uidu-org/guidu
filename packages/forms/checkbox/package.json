@@ -1,6 +1,6 @@
 {
   "name": "@uidu/checkbox",
-  "version": "0.1.53",
+  "version": "0.1.54",
   "description": "Checkbox component for use in forms",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
