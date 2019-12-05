@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.1.36
+
+### Patch Changes
+
+- e653806: FIX #54
+
 ## 0.1.35
 
 ### Patch Changes
