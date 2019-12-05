@@ -8,9 +8,10 @@ import {
   Viewer,
 } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
+import Spinner from '@uidu/spinner';
 import Table from '@uidu/table';
 import moment from 'moment';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Media from 'react-media';
 import { DataManagerProps } from '../types';
 import { initializeDataView } from '../utils';
@@ -103,7 +104,9 @@ const defaultAvailableControls = {
   },
 };
 
-export default class DataManager extends Component<DataManagerProps, any> {
+export default class DataManager extends PureComponent<DataManagerProps, any> {
+  static whyDidYouRender = true;
+
   static defaultProps = {
     onGridReady: _params => {},
     onFirstDataRendered: _params => {},
@@ -432,19 +435,11 @@ export default class DataManager extends Component<DataManagerProps, any> {
       onFirstDataRendered,
       onAddField,
     } = this.props;
-    const {
-      data,
-      columns,
-      rowHeight,
-      sorters,
-      groupers,
-      columnCount,
-    } = this.state;
+    const { data, columns, rowHeight, columnCount, loaded } = this.state;
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
     }
-    console.log('rerender');
 
     const table = (
       <Table
@@ -464,121 +459,144 @@ export default class DataManager extends Component<DataManagerProps, any> {
             column => column.type !== 'cover' && column.type !== 'avatar',
           )
         }
+        loadingOverlayComponentFramework={() => <Spinner />}
         rowData={rowData}
         onAddField={onAddField}
         onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
-        onColumnVisible={console.log}
-        onColumnMoved={console.log}
+        // onColumnVisible={console.log}
+        // onColumnMoved={console.log}
         onRowClicked={onItemClick}
         accentedSort
       />
     );
 
-    let desktopView = table;
+    let desktopView = null;
+    let mobileView = null;
 
-    if (currentView.kind === 'calendar') {
-      desktopView = (
-        <>
-          <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
-            {({ default: Calendar }) => {
-              return (
-                <Calendar
-                  {...viewProps.calendar}
-                  onItemClick={onItemClick}
-                  events={data.map(datum => datum.data)}
-                  startAccessor={item => moment(item.createdAt).toDate()}
-                  titleAccessor={item => item.email}
-                  endAccessor={item =>
-                    moment(item.createdAt)
-                      .add(3, 'hour')
-                      .toDate()
-                  }
-                  columnDefs={columns}
-                  components={{
-                    toolbar: CalendarToolbar,
-                  }}
-                />
-              );
-            }}
-          </LoadableCalendar>
-          <div className="d-none">{table}</div>
-        </>
-      );
-    }
-
-    if (currentView.kind === 'board') {
-      desktopView = (
-        <>
-          <LoadableBoard fallback={<ShellBodyWithSpinner />}>
-            {({ default: Board }) => {
-              return (
-                <Board
-                  {...viewProps.board}
-                  columnDefs={columns}
-                  initial={rowData.reduce((res, item, index) => {
-                    const key = item[currentView.primaryField];
-                    if (res[key]) {
-                      res[key] = [...res[key], { ...item, content: item.id }];
-                    } else {
-                      res[key] = [{ ...item, content: item.id }];
+    switch (currentView.kind) {
+      case 'calendar':
+        desktopView = mobileView = (
+          <>
+            <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
+              {({ default: Calendar }) => {
+                return (
+                  <Calendar
+                    {...viewProps.calendar}
+                    onItemClick={onItemClick}
+                    events={data.map(datum => datum.data)}
+                    startAccessor={item => moment(item.createdAt).toDate()}
+                    titleAccessor={item => item.email}
+                    endAccessor={item =>
+                      moment(item.createdAt)
+                        .add(3, 'hour')
+                        .toDate()
                     }
-                    return res;
-                  }, {})}
+                    columnDefs={columns}
+                    components={{
+                      toolbar: CalendarToolbar,
+                    }}
+                  />
+                );
+              }}
+            </LoadableCalendar>
+            <div className="d-none">{table}</div>
+          </>
+        );
+        break;
+      case 'board':
+        desktopView = mobileView = (
+          <>
+            <LoadableBoard fallback={<ShellBodyWithSpinner />}>
+              {({ default: Board }) => {
+                return (
+                  <Board
+                    {...viewProps.board}
+                    columnDefs={columns}
+                    initial={rowData.reduce((res, item, index) => {
+                      const key = item[currentView.primaryField];
+                      if (res[key]) {
+                        res[key] = [...res[key], { ...item, content: item.id }];
+                      } else {
+                        res[key] = [{ ...item, content: item.id }];
+                      }
+                      return res;
+                    }, {})}
+                    onItemClick={onItemClick}
+                    components={{
+                      columnContainer: Column,
+                      columnHeader: ColumnHeader,
+                      item: Item,
+                    }}
+                  />
+                );
+              }}
+            </LoadableBoard>
+            <div className="d-none">{table}</div>
+          </>
+        );
+        break;
+      case 'gallery':
+        mobileView = (
+          <>
+            <LoadableList fallback={<ShellBodyWithSpinner />}>
+              {({ default: List }) => (
+                <List
+                  {...viewProps.list}
                   onItemClick={onItemClick}
-                  components={{
-                    columnContainer: Column,
-                    columnHeader: ColumnHeader,
-                    item: Item,
-                  }}
+                  rowData={data.map(datum => ({
+                    data: datum.data,
+                  }))}
+                  columnDefs={columns}
                 />
-              );
-            }}
-          </LoadableBoard>
-          <div className="d-none">{table}</div>
-        </>
-      );
-    }
-
-    if (currentView.kind === 'gallery') {
-      desktopView = (
-        <>
-          <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-            {({ default: Gallery }) => (
-              <Gallery
-                {...viewProps.gallery}
-                columnCount={columnCount}
-                onItemClick={onItemClick}
-                rowData={data.map(datum => ({
-                  data: datum.data,
-                }))}
-                columnDefs={columns}
-              />
-            )}
-          </LoadableGallery>
-          <div className="d-none">{table}</div>
-        </>
-      );
+              )}
+            </LoadableList>
+            <div className="d-none">{table}</div>
+          </>
+        );
+        desktopView = (
+          <>
+            <LoadableGallery fallback={<ShellBodyWithSpinner />}>
+              {({ default: Gallery }) => (
+                <Gallery
+                  {...viewProps.gallery}
+                  columnCount={columnCount}
+                  onItemClick={onItemClick}
+                  rowData={data.map(datum => ({
+                    data: datum.data,
+                  }))}
+                  columnDefs={columns}
+                />
+              )}
+            </LoadableGallery>
+            <div className="d-none">{table}</div>
+          </>
+        );
+        break;
+      default:
+        desktopView = table;
+        mobileView = (
+          <>
+            <LoadableList fallback={<ShellBodyWithSpinner />}>
+              {({ default: List }) => (
+                <List
+                  {...viewProps.list}
+                  onItemClick={onItemClick}
+                  rowData={data.map(datum => ({
+                    data: datum.data,
+                  }))}
+                  columnDefs={columns}
+                />
+              )}
+            </LoadableList>
+            <div className="d-none">{table}</div>
+          </>
+        );
+        break;
     }
 
     return this.renderResponsiveView({
-      mobileView: (
-        <>
-          <LoadableList fallback={<ShellBodyWithSpinner />}>
-            {({ default: List }) => (
-              <List
-                {...viewProps.list}
-                onItemClick={onItemClick}
-                rowData={data.map(datum => ({
-                  data: datum.data,
-                }))}
-                columnDefs={columns}
-              />
-            )}
-          </LoadableList>
-          <div className="d-none">{table}</div>
-        </>
-      ),
+      mobileView,
       desktopView,
     });
   };

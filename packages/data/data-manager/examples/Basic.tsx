@@ -107,9 +107,12 @@ export default class Basic extends Component<any, any> {
   }
 
   toggleView = view => {
-    this.setState({
-      currentView: view,
-    });
+    if (view.id !== this.state.currentView.id) {
+      this.setState({
+        rendered: false,
+        currentView: view,
+      });
+    }
   };
 
   addView = dataview => {
@@ -152,11 +155,13 @@ export default class Basic extends Component<any, any> {
       <IntlProvider locale="en">
         <Router>
           <DataManager
+            key={`table-for-${this.state.currentView.id}`}
             columnDefs={buildColumns(availableColumns)}
             rowData={this.state.rowData}
             currentView={this.state.currentView}
             updateView={this.updateView}
             onFirstDataRendered={() => this.setState({ rendered: true })}
+            onGridReady={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
               <>

@@ -31,7 +31,7 @@ export const initializeDataView = ({
     gridApi.hideOverlay();
     gridColumnApi.autoSizeAllColumns();
     // return state
-  }, 3000);
+  }, 600);
 
   return {
     loaded: true,

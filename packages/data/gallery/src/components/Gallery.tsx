@@ -92,8 +92,6 @@ export default class Gallery extends PureComponent<GalleryProps> {
       avatar,
     );
 
-    console.log(columnCount);
-
     return (
       <AutoSizer>
         {({ height, width }) => {
