@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.15
+
+### Patch Changes
+
+- 3e9b6b9: WIP #58
+
 ## 0.2.14
 
 ### Patch Changes
