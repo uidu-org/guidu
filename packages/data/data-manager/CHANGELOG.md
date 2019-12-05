@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.53
+
+### Patch Changes
+
+- e3166b9: FIX #57
+- Updated dependencies [e3166b9]
+  - @uidu/data-controls@0.2.14
+
 ## 0.1.52
 
 ### Patch Changes

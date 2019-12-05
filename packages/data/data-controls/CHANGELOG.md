@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.14
+
+### Patch Changes
+
+- e3166b9: FIX #57
+
 ## 0.2.13
 
 ### Patch Changes
