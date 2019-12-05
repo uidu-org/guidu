@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.61
+
+### Patch Changes
+
+- e653806: FIX #54
+- Updated dependencies [e653806]
+  - @uidu/shell@0.1.36
+
 ## 0.1.60
 
 ### Patch Changes
