@@ -584,7 +584,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
   };
 
   renderControls = ({ controls }) => {
-    const { currentView } = this.props;
+    const { currentView, updateView } = this.props;
     const {
       sorters,
       filterModel,
@@ -605,6 +605,7 @@ export default class DataManager extends Component<DataManagerProps, any> {
           <Viewer
             availableControls={availableControls}
             currentView={currentView}
+            updateView={updateView}
             columnDefs={columns.filter(
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}

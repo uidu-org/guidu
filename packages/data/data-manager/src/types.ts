@@ -3,6 +3,7 @@ import { Column } from '@uidu/table';
 
 export type DataManagerProps = {
   currentView?: DataView;
+  updateView?: (currentView: DataView) => void;
   columnDefs: Array<Column>;
   rowData: Array<any>;
   onAddField?: () => void;

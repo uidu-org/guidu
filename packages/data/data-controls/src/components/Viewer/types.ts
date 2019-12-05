@@ -5,6 +5,7 @@ import { MoreProps } from '../More/types';
 export type ViewerProps = ConfiguratorProps &
   MoreProps & {
     currentView?: DataView;
+    updateView?: (currentView: DataView) => void;
     availableControls: any;
     columnCount?: number;
     onSetColumnCount?: (columnCount: number) => void;

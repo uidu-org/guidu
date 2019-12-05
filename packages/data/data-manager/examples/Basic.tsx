@@ -129,6 +129,23 @@ export default class Basic extends Component<any, any> {
     fetchContacts().then(rowData => this.setState({ loaded: true, rowData }));
   }
 
+  updateView = currentView => {
+    const dataViews = this.state.dataViews.map(item => {
+      if (item.id !== currentView.id) {
+        return item;
+      }
+
+      return {
+        ...item,
+        ...currentView,
+      };
+    });
+    this.setState({
+      dataViews,
+      currentView,
+    });
+  };
+
   render() {
     const { loaded, dataViews } = this.state;
     return (
@@ -138,6 +155,7 @@ export default class Basic extends Component<any, any> {
             columnDefs={buildColumns(availableColumns)}
             rowData={this.state.rowData}
             currentView={this.state.currentView}
+            updateView={this.updateView}
             onFirstDataRendered={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
@@ -188,10 +206,22 @@ export default class Basic extends Component<any, any> {
                     <DropdownItemGroup title="Create new">
                       {[
                         { id: 0, kind: 'table', name: 'Table' },
-                        { id: 1, kind: 'gallery', name: 'Griglia' },
-                        { id: 2, kind: 'calendar', name: 'Calendario' },
+                        {
+                          id: 1,
+                          kind: 'gallery',
+                          name: 'Griglia',
+                        },
+                        {
+                          id: 2,
+                          kind: 'calendar',
+                          name: 'Calendario',
+                        },
                         { id: 3, kind: 'board', name: 'Kanban' },
-                        { id: 4, kind: 'timeline', name: 'Timeline' },
+                        {
+                          id: 4,
+                          kind: 'timeline',
+                          name: 'Timeline',
+                        },
                       ].map(view => (
                         <DropdownItem
                           onClick={() => this.addView(view)}

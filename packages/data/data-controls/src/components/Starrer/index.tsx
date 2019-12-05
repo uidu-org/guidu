@@ -1,16 +1,25 @@
-import React, { Component } from 'react';
+import Tooltip from '@uidu/tooltip';
+import React from 'react';
 import { Star } from 'react-feather';
 import { Trigger } from '../../styled';
 
-export default class Starrer extends Component<any> {
-  private input: React.RefObject<HTMLInputElement> = React.createRef();
-
-  render() {
-    const { onChange } = this.props;
-    return (
-      <Trigger activeBg="#fee2d5" className="btn" active={false}>
-        <Star strokeWidth={2} size={14} />
+export default function Starrer({ onToggle, currentView }) {
+  return (
+    <Tooltip content={'Add to favourites'} position="bottom">
+      <Trigger
+        activeBg="#f1f3f3"
+        className="btn"
+        active={currentView.favourite}
+        onClick={() =>
+          onToggle({ ...currentView, favourite: !currentView.favourite })
+        }
+      >
+        <Star
+          strokeWidth={2}
+          size={14}
+          {...(currentView.favourite ? { fill: 'yellow' } : {})}
+        />
       </Trigger>
-    );
-  }
+    </Tooltip>
+  );
 }

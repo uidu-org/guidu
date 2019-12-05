@@ -1,5 +1,6 @@
 import { byName } from '@uidu/data-views';
 import Drawer from '@uidu/drawer';
+import Tooltip from '@uidu/tooltip';
 import React, { Component } from 'react';
 import { Settings } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
@@ -24,13 +25,15 @@ export default class Configurator extends Component<ConfiguratorProps, any> {
 
     return (
       <>
-        <Trigger
-          activeBg="#d0f0fd"
-          className="btn"
-          onClick={() => this.setState({ dialogOpen: true })}
-        >
-          <Settings strokeWidth={2} size={14} />
-        </Trigger>
+        <Tooltip content={'Configure this view'} position="bottom">
+          <Trigger
+            activeBg="#d0f0fd"
+            className="btn"
+            onClick={() => this.setState({ dialogOpen: true })}
+          >
+            <Settings strokeWidth={2} size={14} />
+          </Trigger>
+        </Tooltip>
         <Drawer
           isOpen={this.state.dialogOpen}
           onClose={() => {
