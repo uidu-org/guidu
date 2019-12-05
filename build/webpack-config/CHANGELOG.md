@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.44
+
+### Patch Changes
+
+- abd3366: WIP #59
+
 ## 0.1.43
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.64
+
+### Patch Changes
+
+- abd3366: WIP #59
+- Updated dependencies [abd3366]
+  - @uidu/webpack-config@0.1.44
+
 ## 0.1.63
 
 ### Patch Changes

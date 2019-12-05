@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.1.63",
+  "version": "0.1.64",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "scripts": {
@@ -75,7 +75,7 @@
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.27",
     "@uidu/nav-info-loader": "^0.1.28",
-    "@uidu/webpack-config": "^0.1.40",
+    "@uidu/webpack-config": "^0.1.44",
     "bolt-query": "^1.1.4",
     "extract-react-types-loader": "^0.3.1",
     "netlify-cli": "^2.8.1",

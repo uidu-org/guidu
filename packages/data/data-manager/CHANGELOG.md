@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.54
+
+### Patch Changes
+
+- abd3366: WIP #59
+- Updated dependencies [abd3366]
+  - @uidu/gallery@0.1.25
+
 ## 0.1.53
 
 ### Patch Changes
