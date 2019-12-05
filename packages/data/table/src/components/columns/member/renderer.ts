@@ -1,6 +1,5 @@
 export default params => {
   if (params.node && params.node.group) {
-    console.log(params);
     return params.value;
   }
 

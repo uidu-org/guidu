@@ -10,22 +10,88 @@ import {
   ChevronsDown,
   ChevronsRight,
   ChevronsUp,
+  CornerLeftDown,
   EyeOff,
+  Maximize2,
+  Minimize2,
   Server,
 } from 'react-feather';
 import CustomHeader from './headers';
 
+const aggFuncs = [
+  {
+    id: 'avg',
+    name: 'Average',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+  {
+    id: 'count',
+    name: 'Count',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+  {
+    id: 'first',
+    name: 'First',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+  {
+    id: 'last',
+    name: 'Last',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+  {
+    id: 'max',
+    name: 'Max',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+  {
+    id: 'min',
+    name: 'Min',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+  {
+    id: 'sum',
+    name: 'Sum',
+    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+  },
+];
+
 const getMainMenuItems = params => {
   const { api, columnApi, column } = params;
   const { colId } = column;
+  console.log(params);
   return [
     ...(params.defaultItems.includes('valueAggSubMenu')
-      ? ['valueAggSubMenu']
+      ? [
+          {
+            name: 'Aggregation function',
+            icon: renderToStaticMarkup(<CornerLeftDown size={16} />),
+            subMenu: aggFuncs.map(aggFunc => ({
+              name: aggFunc.name,
+              action: () => columnApi.setColumnAggFunc(colId, aggFunc.id),
+              icon: aggFunc.icon,
+            })),
+          },
+        ]
+      : []),
+    ...(params.defaultItems.includes('expandAll')
+      ? [
+          {
+            name: 'Expand all groups',
+            action: () => api.expandAll(),
+            icon: renderToStaticMarkup(<Maximize2 size={16} />),
+          },
+          {
+            name: 'Collapse all groups',
+            action: () => api.collapseAll(),
+            icon: renderToStaticMarkup(<Minimize2 size={16} />),
+          },
+        ]
       : []),
     {
       name: 'Autosize this column',
       action: () => columnApi.autoSizeColumn(colId),
-      icon: renderToStaticMarkup(<ChevronRight size={14} />),
+      icon: renderToStaticMarkup(<ChevronRight size={16} />),
     },
     {
       name: 'Autosize all columns',
@@ -36,21 +102,21 @@ const getMainMenuItems = params => {
         });
         columnApi.autoSizeColumns(allColumnIds);
       },
-      icon: renderToStaticMarkup(<ChevronsRight size={14} />),
+      icon: renderToStaticMarkup(<ChevronsRight size={16} />),
     },
     {
       name: 'Sort First-Last',
       action: () => {
         api.setSortModel([...api.getSortModel(), { colId, sort: 'asc' }]);
       },
-      icon: renderToStaticMarkup(<ChevronsDown size={14} />),
+      icon: renderToStaticMarkup(<ChevronsDown size={16} />),
     },
     {
       name: 'Sort Last-First',
       action: () => {
         api.setSortModel([...api.getSortModel(), { colId, sort: 'desc' }]);
       },
-      icon: renderToStaticMarkup(<ChevronsUp size={14} />),
+      icon: renderToStaticMarkup(<ChevronsUp size={16} />),
     },
     // {
     //   name: 'Add filter',
@@ -64,30 +130,26 @@ const getMainMenuItems = params => {
           {
             name: 'Group by this field',
             action: () => {
-              columnApi.setColumnVisible(colId, false);
+              // columnApi.setColumnVisible(colId, false);
               api.showLoadingOverlay();
-              columnApi.setRowGroupColumns([colId]);
+              columnApi.setRowGroupColumns([
+                ...columnApi.getRowGroupColumns().map(g => g.colId),
+                colId,
+              ]);
               setTimeout(() => {
                 api.refreshCells({ force: true });
                 api.hideOverlay();
               }, 600);
             },
-            icon: renderToStaticMarkup(<Server size={14} />),
+            icon: renderToStaticMarkup(<Server size={16} />),
           },
         ]
       : []),
     {
       name: 'Hide this field',
       action: () => columnApi.setColumnVisible(colId, false),
-      icon: renderToStaticMarkup(<EyeOff size={14} />),
+      icon: renderToStaticMarkup(<EyeOff size={16} />),
     },
-    // {
-    //   name: 'Delete this field',
-    //   action: function() {
-    //     console.log('People who wear casio watches are cool');
-    //   },
-    //   icon: renderToStaticMarkup(<Trash size={14} />),
-    // },
   ];
 };
 
@@ -97,7 +159,6 @@ const Table = ({
   rowData,
   onAddField = () => {},
   rowHeight = 32,
-  sorters = [], // sync sorters from parents for styling
   ...otherProps
 }) => {
   const [scrolled, setScrolled] = useState({ left: 0, top: 0 });
@@ -128,20 +189,14 @@ const Table = ({
         componentWrappingElement="span"
         columnDefs={columnDefs.map(columnDef => ({
           ...columnDef,
-          // headerClass: params => {
-          //   console.log(params);
-          //   const classes = [];
-          //   if (
-          //     params.api
-          //       .getSortModel()
-          //       .map(s => s.colId)
-          //       .includes(params.colDef.colId)
-          //   ) {
-          //     classes.push('ag-cell-sorter-active');
-          //   }
-          //   return classes;
-          // },
+          cellStyle: params => {
+            return {
+              ...columnDef.cellStyle,
+              lineHeight: `${rowHeight}px`,
+            };
+          },
           cellClassRules: {
+            ...columnDef.cellClassRules,
             'ag-cell-sorter-active': params => {
               return params.api
                 .getSortModel()
@@ -152,6 +207,12 @@ const Table = ({
               return Object.keys(params.api.getFilterModel()).includes(
                 params.colDef.colId,
               );
+            },
+            'ag-cell-grouper-active': params => {
+              return params.columnApi
+                .getRowGroupColumns()
+                .map(g => g.colId)
+                .includes(params.colDef.colId);
             },
           },
         }))}

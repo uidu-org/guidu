@@ -115,7 +115,7 @@ export const Resizer = styled.div<{ hovered: boolean; isCollapsed: boolean }>`
   height: 100%;
   position: relative;
   left: 24px;
-  border-left: 1px solid #f2f2f3;
+  /* border-left: 1px solid #f2f2f3; */
 
   &:hover {
     cursor: ew-resize;

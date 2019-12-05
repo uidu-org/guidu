@@ -390,7 +390,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
   renderSidebar = () => {
     const { rowData, onItemClick, currentView } = this.props;
     const { data } = this.state;
-    console.log(data);
 
     if (currentView.kind === 'calendar') {
       return (
@@ -433,7 +432,14 @@ export default class DataManager extends Component<DataManagerProps, any> {
       onFirstDataRendered,
       onAddField,
     } = this.props;
-    const { data, columns, rowHeight, sorters, columnCount } = this.state;
+    const {
+      data,
+      columns,
+      rowHeight,
+      sorters,
+      groupers,
+      columnCount,
+    } = this.state;
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
@@ -451,7 +457,6 @@ export default class DataManager extends Component<DataManagerProps, any> {
         innerRef={this.grid}
         onGridReady={this.onGridReady}
         onFirstDataRendered={onFirstDataRendered}
-        sorters={sorters}
         // use columnDefs from props to avoid flickering on toggling/reordering columns
         columnDefs={
           // this.filterVisibleColumnDefs()
