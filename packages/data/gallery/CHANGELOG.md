@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.24
+
+### Patch Changes
+
+- 0c1f6d6: Better calendar view for data-manager
+
 ## 0.1.23
 
 ### Patch Changes

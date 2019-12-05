@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.51
+
+### Patch Changes
+
+- 0c1f6d6: Better calendar view for data-manager
+- Updated dependencies [0c1f6d6]
+  - @uidu/calendar@0.1.15
+  - @uidu/gallery@0.1.24
+
 ## 0.1.50
 
 ### Patch Changes
