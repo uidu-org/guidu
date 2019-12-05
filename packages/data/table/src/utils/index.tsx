@@ -7,6 +7,7 @@ import {
   attachmentsColumn,
   avatarColumn,
   checkboxColumn,
+  contactColumn,
   countryColumn,
   coverColumn,
   currencyColumn,
@@ -44,6 +45,8 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
       return avatarColumn();
     case 'checkbox':
       return checkboxColumn();
+    case 'contact':
+      return contactColumn(dataFieldParams);
     case 'country':
       return countryColumn(dataFieldParams);
     case 'cover':
@@ -150,7 +153,7 @@ export const valueRenderer = (data, column) => {
 };
 
 export const getPrimary = columnDefs =>
-  columnDefs.filter(column => column.type === 'primary')[0];
+  columnDefs.filter(column => !!column.lockVisible && column.type !== 'uid')[0];
 
 export const getCover = columnDefs =>
   columnDefs.filter(column => column.type === 'cover')[0];

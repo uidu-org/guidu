@@ -1,9 +1,9 @@
-import { memberField } from '@uidu/data-fields';
+import { contactField } from '@uidu/data-fields';
 import Editor from './editor';
 import Renderer from './renderer';
 
 export default field => ({
-  type: memberField.kind,
+  type: contactField.kind,
   cellRenderer: Renderer,
   cellRendererParams: field,
   cellEditorFramework: Editor,
@@ -12,7 +12,7 @@ export default field => ({
   },
   filter: 'agTextColumnFilter',
   headerComponentParams: {
-    menuIcon: memberField.icon,
+    menuIcon: contactField.icon,
   },
   // filterValueGetter: params => params.data[field.colId],
 });

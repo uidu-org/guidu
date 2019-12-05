@@ -54,8 +54,9 @@ const dataViews = [
       'gender',
       'phone',
       'addField',
+      'createdAt',
     ],
-    groupers: [{ colId: 'country' }],
+    // groupers: [{ colId: 'country' }],
     sorters: [{ colId: 'amount', sort: 'desc' }],
   },
   {

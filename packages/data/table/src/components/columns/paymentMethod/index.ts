@@ -8,6 +8,7 @@ export default field => ({
     menuIcon: paymentMethodField.icon,
   },
   keyCreator: params => params.value.name,
+  filterValueGetter: params => params.data[field.colId],
   cellRenderer: Renderer,
   cellRendererParams: {
     options: field.options,

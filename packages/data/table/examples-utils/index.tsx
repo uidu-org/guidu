@@ -19,7 +19,7 @@ export const availableColumns = [
     field: 'avatar',
   },
   {
-    dataField: 'member',
+    dataField: 'contact',
     dataFieldParams: {
       avatar: data => (data ? data.avatar : null),
     },

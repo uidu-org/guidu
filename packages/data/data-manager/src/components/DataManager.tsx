@@ -282,6 +282,26 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     }));
   };
 
+  removeFilter = filter => {
+    this.setState(
+      prevState => ({
+        filterModel: Object.keys(prevState.filterModel).reduce(
+          (object, key) => {
+            if (key !== filter.colId) {
+              object[key] = prevState.filterModel[key];
+            }
+            return object;
+          },
+          {},
+        ),
+      }),
+      () => {
+        this.gridApi.setFilterModel(this.state.filterModel);
+        this.gridApi.onFilterChanged();
+      },
+    );
+  };
+
   setFilterModel = filters => {
     this.setState(
       prevState => ({
@@ -655,6 +675,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
               )}
               onChange={this.setFilterModel}
               addFilter={this.addFilter}
+              removeFilter={this.removeFilter}
               filterModel={filterModel}
               {...availableControls.filterer.props}
             />

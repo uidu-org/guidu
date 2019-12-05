@@ -1,8 +1,11 @@
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+
+const FilterForm = loadable(() => import('../../filters/SelectFilterForm'));
 
 const Member: Field = {
   kind: 'member',
@@ -14,6 +17,7 @@ const Member: Field = {
       defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
     />
   ),
+  // filterForm: FilterForm,
 };
 
 export default Member;

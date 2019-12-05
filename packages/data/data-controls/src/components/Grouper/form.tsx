@@ -119,7 +119,7 @@ export default class Grouper extends Component<any> {
                 (this.form.current as any).submit();
               }, 300);
             }}
-            isDefaultOpen={false}
+            isDefaultOpen={groupers.length === 0}
             columnDefs={groupableColumnDefs.filter(
               f => groupers.map(s => s.colId).indexOf(f.colId) < 0,
             )}

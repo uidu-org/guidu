@@ -3,7 +3,7 @@ import React from 'react';
 import { injectIntl } from 'react-intl';
 import { filtersByType } from './utils';
 
-function CurrencyFilterForm({
+function SelectFilterForm({
   onChange,
   filter = {} as any,
   index = 0,
@@ -13,7 +13,7 @@ function CurrencyFilterForm({
   },
   ...rest
 }) {
-  const filters = filtersByType(intl, 'number');
+  const filters = filtersByType(intl, 'singleSelect');
   return (
     <>
       <div className="form-row">
@@ -45,4 +45,4 @@ function CurrencyFilterForm({
   );
 }
 
-export default injectIntl(CurrencyFilterForm);
+export default injectIntl(SelectFilterForm);

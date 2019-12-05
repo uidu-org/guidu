@@ -239,6 +239,7 @@ const Table = ({
           address: {},
           attachments: {},
           checkbox: {},
+          contact: {},
           country: {},
           cover: {},
           currency: {},

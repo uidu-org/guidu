@@ -7,9 +7,7 @@ export default params => {
     return null;
   }
 
-  const value = params.countries.filter(
-    option => option.abbr === params.value,
-  )[0];
+  const value = params.options.filter(option => option.id === params.value)[0];
 
   if (!value) {
     return params.value;

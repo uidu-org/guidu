@@ -18,7 +18,7 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
         </div>
       )}
       <div style={{ minWidth: 0 }}>
-        <p className="mb-0">{data.name}</p>
+        <p className="mb-0 text-truncate">{data.name}</p>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 // https://www.ag-grid.com/javascript-grid-filter-provided-simple/
 
-export type FilterType = 'text' | 'number' | 'date';
+export type FilterType = 'text' | 'number' | 'date' | 'singleSelect';
 
 const allFilters = ({ intl }) => [
   { kinds: ['text', 'number', 'date'], name: '=', id: 'equals' },
@@ -22,6 +22,8 @@ const allFilters = ({ intl }) => [
   { kinds: ['number'], name: '>=', id: 'greaterThanOrEqual' },
   { kinds: ['number', 'date'], name: 'In Range', id: 'inRange' },
   { kinds: ['text', 'number', 'date'], name: 'Empty', id: 'empty' },
+  { kinds: ['singleSelect'], name: 'Is', id: 'equals' },
+  { kinds: ['singleSelect'], name: 'Is not', id: 'notEqual' },
 ];
 
 export const pickFilters = (intl, list: String[]) =>

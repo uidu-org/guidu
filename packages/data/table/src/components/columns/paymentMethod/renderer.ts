@@ -1,7 +1,7 @@
 export default params => {
   // create the cell
   if (params.node && params.node.group) {
-    return null;
+    return params.value;
   }
 
   if (params.value) {

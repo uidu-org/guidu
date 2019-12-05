@@ -3,7 +3,7 @@ import { groupedCountries } from './data/countries';
 import Select from './Select';
 
 // flow stuff
-type OptionType = { abbr: string; code: number; icon: string; name: string };
+type OptionType = { id: string; code: number; icon: string; name: string };
 
 // custom option renderer
 const labelCSS = () => ({
@@ -28,16 +28,16 @@ const Opt = ({ children, icon }: any) => (
 const getOptionLabel = (opt: OptionType) => opt.name;
 
 // set the country's abbreviation for the option value, (also searchable)
-const getOptionValue = (opt: OptionType) => opt.abbr;
+const getOptionValue = (opt: OptionType) => opt.id;
 
 // the text node of the control
 const controlLabel = (opt: OptionType) => (
-  <Opt icon={opt.icon}>{opt.abbr.toUpperCase()}</Opt>
+  <Opt icon={opt.icon}>{opt.id.toUpperCase()}</Opt>
 );
 // the text node for an option
-const optionLabel = ({ abbr, code, icon, name }: OptionType) => (
+const optionLabel = ({ id, code, icon, name }: OptionType) => (
   <Opt icon={icon}>
-    {name} ({abbr.toUpperCase()}) +{code}
+    {name} ({id.toUpperCase()}) +{code}
   </Opt>
 );
 

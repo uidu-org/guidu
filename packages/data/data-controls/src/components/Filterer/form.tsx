@@ -2,6 +2,7 @@ import { byName } from '@uidu/data-fields';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
+import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import PickField from '../../utils/PickField';
 import { FiltererProps } from './types';
@@ -27,13 +28,17 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
 
   handleSubmit = async model => {
     const { onChange } = this.props;
+    console.log(model);
     onChange(model.filters || []);
   };
 
   render() {
-    const { filters, columnDefs, addFilter } = this.props;
+    const { filters, columnDefs, addFilter, removeFilter } = this.props;
+
+    console.log(columnDefs);
 
     const filterableColumnDefs = columnDefs.filter(c => !c.hide && !!c.filter);
+    console.log(filterableColumnDefs);
 
     return (
       <Form
@@ -49,12 +54,33 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
             return (
               <div className="list-group-item px-3 px-xl-4" key={filter.colId}>
                 <div className="form-group mb-2">
-                  <label htmlFor="" className="d-flex align-items-center">
-                    <FormattedMessage
-                      id="guidu.data_controls.filterer.where"
-                      defaultMessage="Where"
-                    />
-                  </label>
+                  <div className="form-group mb-0">
+                    <label htmlFor="" className="d-flex align-items-center">
+                      <FormattedMessage
+                        id="guidu.data_controls.filterer.where"
+                        defaultMessage={`{index, plural,
+                      =0 {Where}
+                      other {Then where}
+                    }`}
+                        values={{
+                          index,
+                        }}
+                      />
+                      <button
+                        type="button"
+                        className="btn btn-sm p-0 ml-auto d-flex align-items-center"
+                        onClick={e => {
+                          e.preventDefault();
+                          removeFilter(filter);
+                          // setTimeout(() => {
+                          //   (this.form.current as any).submit();
+                          // }, 300);
+                        }}
+                      >
+                        <X size={13} />
+                      </button>
+                    </label>
+                  </div>
                   <Select
                     layout="elementOnly"
                     value={filter.colId}

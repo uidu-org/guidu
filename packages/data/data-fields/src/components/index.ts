@@ -3,6 +3,7 @@ import addressField from './address';
 import attachmentsField from './attachments';
 import avatarField from './avatar';
 import checkboxField from './checkbox';
+import contactField from './contact';
 import countryField from './country';
 import coverField from './cover';
 import currencyField from './currency';
@@ -28,6 +29,7 @@ export { default as addressField } from './address';
 export { default as attachmentsField } from './attachments';
 export { default as avatarField } from './avatar';
 export { default as checkboxField } from './checkbox';
+export { default as contactField } from './contact';
 export { default as countryField } from './country';
 export { default as coverField } from './cover';
 export { default as currencyField } from './currency';
@@ -54,6 +56,7 @@ export const byName = {
   attachments: attachmentsField,
   avatar: avatarField,
   checkbox: checkboxField,
+  contact: contactField,
   country: countryField,
   cover: coverField,
   currency: currencyField,
@@ -81,6 +84,7 @@ export default [
   attachmentsField,
   avatarField,
   checkboxField,
+  contactField,
   countryField,
   coverField,
   currencyField,
