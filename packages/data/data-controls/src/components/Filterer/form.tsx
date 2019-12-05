@@ -33,6 +33,8 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
   render() {
     const { filters, columnDefs, addFilter } = this.props;
 
+    const filterableColumnDefs = columnDefs.filter(c => !c.hide && !!c.filter);
+
     return (
       <Form
         ref={this.form}
@@ -41,7 +43,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
       >
         <div className="list-group">
           {filters.map((filter: any, index) => {
-            const columnDef = getColumnDef(columnDefs, filter);
+            const columnDef = getColumnDef(filterableColumnDefs, filter);
             const field = getField(columnDef);
             const { filterForm: FilterForm } = field;
             return (
@@ -57,7 +59,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                     layout="elementOnly"
                     value={filter.colId}
                     name={`filters[${index}][colId]`}
-                    options={columnDefs.map(columnDef => ({
+                    options={filterableColumnDefs.map(columnDef => ({
                       id: columnDef.colId,
                       name: columnDef.headerName,
                       ...(columnDef.headerComponentParams
@@ -113,10 +115,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
               }, 300);
             }}
             isDefaultOpen={filters.length === 0}
-            list={filters}
-            columnDefs={columnDefs.filter(
-              f => filters.map(s => s.colId).indexOf(f.colId) < 0,
-            )}
+            columnDefs={filterableColumnDefs}
           />
         </div>
       </Form>

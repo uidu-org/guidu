@@ -24,6 +24,10 @@ export default class Grouper extends Component<any> {
   render() {
     const { groupers, columnDefs, addGrouper, removeGrouper } = this.props;
 
+    const groupableColumnDefs = columnDefs.filter(
+      c => !c.hide && c.enableRowGroup,
+    );
+
     return (
       <Form
         ref={this.form}
@@ -63,55 +67,32 @@ export default class Grouper extends Component<any> {
                   </button>
                 </label>
               </div>
-              <div className="form-row">
-                <div className="col-8">
-                  <Select
-                    layout="elementOnly"
-                    isClearable={false}
-                    name={`grouper[${index}][colId]`}
-                    value={grouper.colId}
-                    options={columnDefs.map(columnDef => ({
-                      id: columnDef.colId,
-                      name: columnDef.headerName,
-                      ...(columnDef.headerComponentParams
-                        ? {
-                            before: columnDef.headerComponentParams.menuIcon,
-                          }
-                        : {}),
-                    }))}
-                    onChange={(name, value, { option }) => {
-                      setTimeout(() => {
-                        (this.form.current as any).submit();
-                      }, 30);
-                    }}
-                  />
-                </div>
-                {/* <div className="col-4">
-                  <Select
-                  layout="elementOnly"
-                  isClearable={false}
-                  name={`sorters[${index}][sort]`}
-                  value={grouper.sort}
-                  options={[
-                    {
-                      id: 'asc',
-                      name: 'asc',
-                      before: <ArrowUp size={16} />,
-                    },
-                    {
-                      id: 'desc',
-                      name: 'desc',
-                      before: <ArrowDown size={16} />,
-                    },
-                  ]}
-                  onChange={(name, value, { option }) => {
-                    setTimeout(() => {
-                      (this.form.current as any).submit();
-                    }, 30);
-                  }}
-                  />
-                </div> */}
-              </div>
+              <Select
+                layout="elementOnly"
+                isClearable={false}
+                name={`grouper[${index}][colId]`}
+                value={grouper.colId}
+                options={groupableColumnDefs.map(columnDef => ({
+                  id: columnDef.colId,
+                  name: columnDef.headerName,
+                  ...(columnDef.headerComponentParams
+                    ? {
+                        before: columnDef.headerComponentParams.menuIcon,
+                      }
+                    : {}),
+                }))}
+                onChange={(name, value, { option }) => {
+                  setTimeout(() => {
+                    (this.form.current as any).submit();
+                  }, 30);
+                }}
+              />
+              <p>Choose agg func for all columns that can be aggregated</p>
+              {columnDefs
+                .filter(columnDef => !columnDef.hide && !!columnDef.aggFunc)
+                .map(columnDef => (
+                  <p>{columnDef.headerName}</p>
+                ))}
             </div>
           ))}
           <PickField
@@ -138,11 +119,9 @@ export default class Grouper extends Component<any> {
                 (this.form.current as any).submit();
               }, 300);
             }}
-            list={groupers}
             isDefaultOpen={false}
-            columnDefs={columnDefs.filter(
-              f =>
-                !!f.sortable && groupers.map(s => s.colId).indexOf(f.colId) < 0,
+            columnDefs={groupableColumnDefs.filter(
+              f => groupers.map(s => s.colId).indexOf(f.colId) < 0,
             )}
           />
         </div>

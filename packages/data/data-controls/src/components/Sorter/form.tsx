@@ -22,6 +22,8 @@ export default class SorterForm extends PureComponent<SorterProps> {
   render() {
     const { sorters, columnDefs, addSorter, removeSorter } = this.props;
 
+    const sortableColumnDefs = columnDefs.filter(f => !f.hide && !!f.sortable);
+
     return (
       <Form
         ref={this.form}
@@ -68,7 +70,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                         isClearable={false}
                         name={`sorters[${index}][colId]`}
                         value={sorter.colId}
-                        options={columnDefs.map(columnDef => ({
+                        options={sortableColumnDefs.map(columnDef => ({
                           id: columnDef.colId,
                           name: columnDef.headerName,
                           ...(columnDef.headerComponentParams
@@ -147,11 +149,9 @@ export default class SorterForm extends PureComponent<SorterProps> {
                 (this.form.current as any).submit();
               }, 30);
             }}
-            list={sorters}
             isDefaultOpen={sorters.length === 0}
-            columnDefs={columnDefs.filter(
-              f =>
-                !!f.sortable && sorters.map(s => s.colId).indexOf(f.colId) < 0,
+            columnDefs={sortableColumnDefs.filter(
+              f => sorters.map(s => s.colId).indexOf(f.colId) < 0,
             )}
           />
         </div>
