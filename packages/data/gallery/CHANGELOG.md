@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.25
+
+### Patch Changes
+
+- abd3366: WIP #59
+
 ## 0.1.24
 
 ### Patch Changes
