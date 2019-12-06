@@ -10,7 +10,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@ag-grid-community/core": "^22.0.0",
+    "@ag-grid-community/core": "22.0.0",
     "@uidu/checkbox": "^0.1.54",
     "@uidu/data-fields": "^0.1.18",
     "@uidu/data-views": "^0.1.9",
