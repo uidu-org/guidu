@@ -101,7 +101,7 @@ export default class Basic extends Component<any, any> {
     super(props);
     this.state = {
       dataViews,
-      currentView: dataViews[0],
+      currentView: dataViews[2],
       loaded: false,
       rendered: false,
     };
