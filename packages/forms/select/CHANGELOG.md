@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.4
+
+### Patch Changes
+
+- 3f4bbb9: Added contact field - different from member field - WIP #56
+
 ## 0.2.3
 
 ### Patch Changes

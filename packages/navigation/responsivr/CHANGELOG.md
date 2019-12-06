@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.1.8
+
+### Patch Changes
+
+- c5fa48b: Remove some dependencies
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 0.2.16
+
+### Patch Changes
+
+- 3f4bbb9: Bump dependencies
+- 3f4bbb9: Added contact field - different from member field - WIP #56
+- Updated dependencies [3f4bbb9]
+- Updated dependencies [3f4bbb9]
+  - @uidu/table@0.1.62
+  - @uidu/data-fields@0.1.19
+  - @uidu/select@0.2.4
+
 ## 0.2.15
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.65
+
+### Patch Changes
+
+- c5fa48b: Remove some dependencies
+- Updated dependencies [3f4bbb9]
+- Updated dependencies [3f4bbb9]
+  - @uidu/table@0.1.62
+  - @uidu/select@0.2.4
+
 ## 0.1.64
 
 ### Patch Changes
