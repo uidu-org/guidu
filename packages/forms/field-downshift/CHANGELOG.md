@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.1.20
+
+### Patch Changes
+
+- 3f4bbb9: Bump dependencies
+
 ## 0.1.19
 
 ### Patch Changes

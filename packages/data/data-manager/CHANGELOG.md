@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.1.55
+
+### Patch Changes
+
+- c5fa48b: Remove some dependencies
+- 3f4bbb9: Bump dependencies
+- 3f4bbb9: Added contact field - different from member field - WIP #56
+- Updated dependencies [3f4bbb9]
+- Updated dependencies [3f4bbb9]
+  - @uidu/data-controls@0.2.16
+  - @uidu/table@0.1.62
+
 ## 0.1.54
 
 ### Patch Changes
