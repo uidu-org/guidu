@@ -414,6 +414,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     const { rowData, onItemClick, currentView } = this.props;
     const { data } = this.state;
 
+    if (!data) {
+      return <Spinner />;
+    }
+
     if (currentView.kind === 'calendar') {
       return (
         <>
