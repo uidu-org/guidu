@@ -1,5 +1,6 @@
+import Tooltip from '@uidu/tooltip';
 import React, { Component } from 'react';
-import { Calendar, ChevronLeft, ChevronRight } from 'react-feather';
+import { ChevronLeft, ChevronRight } from 'react-feather';
 import { Trigger } from '../../styled';
 // import { NavigatorProps } from '../types';
 
@@ -22,16 +23,20 @@ export default class CalendarNavigator extends Component<any> {
         >
           <ChevronLeft strokeWidth={2} size={14} />
         </Trigger>
-        <Trigger
-          activeBg="#d0f0fd"
-          className="btn justify-content-center"
-          // style={{ width: 120 }}
-        >
-          <Calendar strokeWidth={2} size={14} className="mr-2 flex-shrink-0" />
-          <span style={{ textTransform: 'initial' }} className="text-truncate">
-            {label}
-          </span>
-        </Trigger>
+        <Tooltip content={label} position="bottom">
+          <Trigger
+            activeBg="#d0f0fd"
+            className="btn justify-content-center"
+            style={{ width: 140 }}
+          >
+            <span
+              style={{ textTransform: 'initial' }}
+              className="text-truncate"
+            >
+              {label}
+            </span>
+          </Trigger>
+        </Tooltip>
         <Trigger
           activeBg="#d0f0fd"
           className="btn"

@@ -7,7 +7,7 @@ export default field => ({
   headerComponentParams: {
     menuIcon: paymentMethodField.icon,
   },
-  keyCreator: params => params.value.name,
+  keyCreator: params => (params.value ? params.value.name : null),
   filterValueGetter: params => params.data[field.colId],
   cellRenderer: Renderer,
   cellRendererParams: {

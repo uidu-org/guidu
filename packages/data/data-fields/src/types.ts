@@ -5,4 +5,6 @@ export type Field = {
   description?: React.ReactNode;
   form?: React.FC<any>;
   filterForm?: React.FC<any>;
+  /** Grouper form allow for specifying grouping behavior for this field */
+  grouperForm?: React.FC<any>;
 };

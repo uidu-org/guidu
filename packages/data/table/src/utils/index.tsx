@@ -187,6 +187,9 @@ export const numericComparator = (number1, number2) => {
   return numericNumber1 - numericNumber2;
 };
 
+export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
+  columnDefs.filter(c => c.colId === filterOrGrouperOrSorter.colId)[0];
+
 export const extractColumnType = type => {
   if (Array.isArray(type)) {
     return type[type.length - 1];

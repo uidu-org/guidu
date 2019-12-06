@@ -1,5 +1,6 @@
 import { Form } from '@uidu/form';
 import Select from '@uidu/select';
+import { getColumnDef, getFieldFromColumnDef } from '@uidu/table';
 import React, { Component } from 'react';
 import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
@@ -35,66 +36,85 @@ export default class Grouper extends Component<any> {
         handleSubmit={this.handleSubmit}
       >
         <div className="list-group">
-          {groupers.map((grouper: any, index: number) => (
-            <div
-              className="list-group-item px-3 px-xl-4"
-              key={grouper.colId.colId}
-            >
-              <div className="form-group mb-0">
-                <label htmlFor="" className="d-flex align-items-center">
-                  <FormattedMessage
-                    id="guidu.data_controls.grouper.grouped_by"
-                    defaultMessage={`{index, plural,
+          {groupers.map((grouper: any, index: number) => {
+            const columnDef = getColumnDef(groupableColumnDefs, grouper);
+            const field = getFieldFromColumnDef(columnDef);
+            const { grouperForm: FieldGrouperForm } = field;
+
+            return (
+              <div
+                className="list-group-item px-3 px-xl-4"
+                key={grouper.colId.colId}
+              >
+                <div className="form-group mb-0">
+                  <label htmlFor="" className="d-flex align-items-center">
+                    <FormattedMessage
+                      id="guidu.data_controls.grouper.grouped_by"
+                      defaultMessage={`{index, plural,
                       =0 {Group by}
                       other {Then by}
                     }`}
-                    values={{
-                      index,
-                    }}
+                      values={{
+                        index,
+                      }}
+                    />
+                    <button
+                      type="button"
+                      className="btn btn-sm p-0 ml-auto d-flex align-items-center"
+                      onClick={e => {
+                        e.preventDefault();
+                        removeGrouper(grouper);
+                        // setTimeout(() => {
+                        //   (this.form.current as any).submit();
+                        // }, 300);
+                      }}
+                    >
+                      <X size={13} />
+                    </button>
+                  </label>
+                </div>
+                <Select
+                  layout="elementOnly"
+                  isClearable={false}
+                  name={`grouper[${index}][colId]`}
+                  value={grouper.colId}
+                  options={groupableColumnDefs.map(columnDef => ({
+                    id: columnDef.colId,
+                    name: columnDef.headerName,
+                    ...(columnDef.headerComponentParams
+                      ? {
+                          before: columnDef.headerComponentParams.menuIcon,
+                        }
+                      : {}),
+                  }))}
+                  onChange={(name, value, { option }) => {
+                    setTimeout(() => {
+                      (this.form.current as any).submit();
+                    }, 30);
+                  }}
+                />
+                <p>Choose agg func for all columns that can be aggregated</p>
+                {columnDefs
+                  .filter(columnDef => !columnDef.hide && !!columnDef.aggFunc)
+                  .map(columnDef => (
+                    <p>{columnDef.headerName}</p>
+                  ))}
+                {FieldGrouperForm && (
+                  <FieldGrouperForm
+                    index={index}
+                    grouper={grouper}
+                    field={field}
+                    columnDef={columnDef}
+                    onChange={() =>
+                      setTimeout(() => {
+                        (this.form.current as any).submit();
+                      }, 30)
+                    }
                   />
-                  <button
-                    type="button"
-                    className="btn btn-sm p-0 ml-auto d-flex align-items-center"
-                    onClick={e => {
-                      e.preventDefault();
-                      removeGrouper(grouper);
-                      // setTimeout(() => {
-                      //   (this.form.current as any).submit();
-                      // }, 300);
-                    }}
-                  >
-                    <X size={13} />
-                  </button>
-                </label>
+                )}
               </div>
-              <Select
-                layout="elementOnly"
-                isClearable={false}
-                name={`grouper[${index}][colId]`}
-                value={grouper.colId}
-                options={groupableColumnDefs.map(columnDef => ({
-                  id: columnDef.colId,
-                  name: columnDef.headerName,
-                  ...(columnDef.headerComponentParams
-                    ? {
-                        before: columnDef.headerComponentParams.menuIcon,
-                      }
-                    : {}),
-                }))}
-                onChange={(name, value, { option }) => {
-                  setTimeout(() => {
-                    (this.form.current as any).submit();
-                  }, 30);
-                }}
-              />
-              <p>Choose agg func for all columns that can be aggregated</p>
-              {columnDefs
-                .filter(columnDef => !columnDef.hide && !!columnDef.aggFunc)
-                .map(columnDef => (
-                  <p>{columnDef.headerName}</p>
-                ))}
-            </div>
-          ))}
+            );
+          })}
           <PickField
             label={
               groupers.length ? (

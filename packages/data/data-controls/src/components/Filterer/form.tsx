@@ -1,23 +1,11 @@
-import { byName } from '@uidu/data-fields';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
+import { getColumnDef, getFieldFromColumnDef } from '@uidu/table';
 import React, { PureComponent } from 'react';
 import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import PickField from '../../utils/PickField';
 import { FiltererProps } from './types';
-
-const getColumnDef = (columnDefs, filter) =>
-  columnDefs.filter(c => c.colId === filter.colId)[0];
-
-const getType = type => {
-  if (Array.isArray(type)) {
-    return type[type.length - 1];
-  }
-  return type;
-};
-
-const getField = columnDef => byName[getType(columnDef.type)];
 
 export default class FiltererForm extends PureComponent<FiltererProps> {
   static defaultProps = {
@@ -49,7 +37,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
         <div className="list-group">
           {filters.map((filter: any, index) => {
             const columnDef = getColumnDef(filterableColumnDefs, filter);
-            const field = getField(columnDef);
+            const field = getFieldFromColumnDef(columnDef);
             const { filterForm: FilterForm } = field;
             return (
               <div className="list-group-item px-3 px-xl-4" key={filter.colId}>

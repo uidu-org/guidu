@@ -414,31 +414,33 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     const { rowData, onItemClick, currentView } = this.props;
     const { data } = this.state;
 
-    if (!data) {
-      return <Spinner />;
-    }
+    if (['calendar', 'map'].includes(currentView.kind)) {
+      if (!data) {
+        return <Spinner />;
+      }
 
-    if (currentView.kind === 'calendar') {
-      return (
-        <>
-          <p>List of events</p>
-          {data.map(datum => (
-            <p>
-              {datum.data
-                ? `${datum.data.createdAt} - ${datum.data.id}`
-                : 'Group'}
-            </p>
-          ))}
-        </>
-      );
-    }
+      if (currentView.kind === 'calendar') {
+        return (
+          <>
+            <p>List of events</p>
+            {data.map(datum => (
+              <p>
+                {datum.data
+                  ? `${datum.data.createdAt} - ${datum.data.id}`
+                  : 'Group'}
+              </p>
+            ))}
+          </>
+        );
+      }
 
-    if (currentView.kind === 'map') {
-      return (
-        <>
-          <p>List of events</p>
-        </>
-      );
+      if (currentView.kind === 'map') {
+        return (
+          <>
+            <p>List of events</p>
+          </>
+        );
+      }
     }
     return null;
   };

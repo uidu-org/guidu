@@ -2,6 +2,7 @@ import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
+import Tooltip from '@uidu/tooltip';
 import React, { Component } from 'react';
 import { CheckCircle, Layout } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
@@ -56,10 +57,20 @@ export default class CalendarView extends Component<any> {
       <DropdownMenu
         shouldFitContent
         trigger={
-          <Trigger activeBg="#d1f7c4" className="btn">
-            <Layout strokeWidth={2} size={14} className="mr-2" />
-            <span style={{ textTransform: 'capitalize' }}>{view}</span>
-          </Trigger>
+          <Tooltip
+            content={
+              <FormattedMessage
+                defaultMessage="Choose calendar view"
+                id="guidu.data_controls.calendarView.view"
+              />
+            }
+            position="bottom"
+          >
+            <Trigger activeBg="#d1f7c4" className="btn">
+              <Layout strokeWidth={2} size={14} className="mr-2" />
+              <span style={{ textTransform: 'capitalize' }}>{view}</span>
+            </Trigger>
+          </Tooltip>
         }
       >
         <DropdownItemGroup>

@@ -64,9 +64,11 @@ export const availableColumns = [
   },
   {
     dataField: 'date',
+    dataFieldParams: { format: 'l' },
     colId: 'createdAt',
     field: 'createdAt',
     headerName: 'Data creazione',
+    enableRowGroup: true,
   },
   {
     dataField: 'date',

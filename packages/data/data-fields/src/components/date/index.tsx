@@ -5,6 +5,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
+const GrouperForm = loadable(() => import('./GrouperForm'));
 const FilterForm = loadable(() => import('../../filters/DateFilterForm'));
 
 const Date: Field = {
@@ -18,6 +19,7 @@ const Date: Field = {
     />
   ),
   filterForm: FilterForm,
+  grouperForm: GrouperForm,
 };
 
 export default Date;
