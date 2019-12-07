@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import ContentLoader from 'react-content-loader';
-import {
-  StyledNavigationItem,
-  StyledNavigationLink,
-} from '../NavigationItem/styled';
+import { StyledNavigationItem } from '../../../styled';
+import { StyledNavigationLink } from '../NavigationItem';
 
 const NavigationItemLoader = ({ hasBefore }) => (
   <ContentLoader

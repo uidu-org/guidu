@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import NavigationGroupHeading from '../NavigationGroupHeading';
+import NavigationGroupHeading from './NavigationGroupHeading';
 
 export default class NavigationGroup extends PureComponent<any> {
   static defaultProps = {

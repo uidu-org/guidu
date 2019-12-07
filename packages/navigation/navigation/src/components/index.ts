@@ -1,16 +1,12 @@
 export { default as GlobalNavigation } from './GlobalNavigation';
-export { default as GlobalNavigationItem } from './GlobalNavigationItem';
-export {
-  default as GlobalNavigationSkeleton,
-} from './GlobalNavigationSkeleton';
+export { default as GlobalNavigationItem } from './GlobalNavigation/GlobalNavigationItem';
+export { default as GlobalNavigationSkeleton } from './GlobalNavigation/GlobalNavigationSkeleton';
 // Navigation
-export { default as NavigationGroup } from './NavigationGroup';
-export { default as NavigationGroupHeading } from './NavigationGroupHeading';
-export { default as NavigationHeader } from './NavigationHeader';
-export {
-  default as NavigationHeaderSkeleton,
-} from './NavigationHeaderSkeleton';
-export { default as NavigationIconItem } from './NavigationIconItem';
-export { default as NavigationItem } from './NavigationItem';
-export { default as NavigationItemSkeleton } from './NavigationItemSkeleton';
-export { default as NavigationSubItem } from './NavigationSubItem';
+export { default as NavigationGroup } from './Navigation/NavigationGroup';
+export { default as NavigationGroupHeading } from './Navigation/NavigationGroup/NavigationGroupHeading';
+export { default as NavigationHeader } from './Navigation/NavigationHeader';
+export { default as NavigationHeaderSkeleton } from './Navigation/NavigationHeaderSkeleton';
+export { default as NavigationIconItem } from './Navigation/NavigationIconItem';
+export { default as NavigationItem } from './Navigation/NavigationItem';
+export { default as NavigationItemSkeleton } from './Navigation/NavigationItemSkeleton';
+export { default as NavigationSubItem } from './Navigation/NavigationSubItem';

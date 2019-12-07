@@ -13,11 +13,17 @@ import {
   Toggler,
 } from '@uidu/data-controls';
 import React, { Component, Fragment } from 'react';
-import { arrayMove } from 'react-sortable-hoc';
 import Table from '../';
 import { availableColumns, fetchContacts } from '../examples-utils';
 import '../themes/uidu.scss';
 
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
 export default class WithControls extends Component<any, any> {
   constructor(props) {
     super(props);
@@ -61,7 +67,7 @@ export default class WithControls extends Component<any, any> {
     const { columnDefs } = this.state;
 
     this.setState({
-      columnDefs: arrayMove(columnDefs, oldIndex, newIndex),
+      columnDefs: reorder(columnDefs, oldIndex, newIndex),
     });
   };
 

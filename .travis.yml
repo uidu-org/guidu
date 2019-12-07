@@ -8,7 +8,7 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
 
 install:
-  - yarn install --pure-lockfile
+  - travis_wait 20 yarn install --pure-lockfile
 
 script:
   - bash ./build-setup.sh

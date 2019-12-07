@@ -8,14 +8,9 @@ import Shell, {
   ShellResizer,
 } from '@uidu/shell';
 import React, { Component } from 'react';
-import {
-  Activity,
-  MoreHorizontal,
-  PlusCircle,
-  PlusSquare,
-  Settings,
-} from 'react-feather';
-import Navigation, { NavigationItem } from '../src';
+import { Activity, Bell, Grid, MoreHorizontal, Settings } from 'react-feather';
+import foo from '../examples-utils/assets/foo.svg';
+import Navigation, { GlobalNavigation, NavigationItem } from '../src';
 
 const schema = [
   {
@@ -38,61 +33,16 @@ const schema = [
             path: `/orders`,
             text: 'Ordini',
             type: 'NavigationItem',
-            // isOpen: true,
-            actions: [
-              {
-                icon: <MoreHorizontal size={14} />,
-                actions: [
-                  {
-                    text: 'test2',
-                    actions: [
-                      {
-                        text: 'test2',
-                        onClick: () => window.alert('clicked on dropdown'),
-                        icon: <PlusSquare size={14} color="red" />,
-                      },
-                      {
-                        text: 'test',
-                        onClick: () => window.alert('clicked on dropdown'),
-                        icon: <PlusSquare size={14} color="blue" />,
-                      },
-                      {
-                        text: 'test',
-                        onClick: () => window.alert('clicked on dropdown'),
-                        icon: <PlusSquare size={14} color="green" />,
-                      },
-                    ],
-                  },
-                  {
-                    text: 'test',
-                    onClick: () => window.alert('clicked on dropdown'),
-                  },
-                  {
-                    text: 'test',
-                    onClick: () => window.alert('clicked on dropdown'),
-                  },
-                ],
-              },
-              {
-                icon: <PlusCircle size={14} />,
-                tooltip: 'Create a campaign',
-                onClick: () => window.alert('clicked on plus button'),
-              },
-            ],
-            items: [
-              {
-                path: `/orders/done`,
-                text: 'Effettuati',
-              },
-              {
-                path: `/orders/todo`,
-                text: 'Inevasi',
-              },
-              {
-                path: `/orders/sent`,
-                text: 'Completati',
-              },
-            ],
+          },
+          {
+            path: `/orders`,
+            text: 'Ordini',
+            type: 'NavigationSubItem',
+          },
+          {
+            path: `/orders`,
+            text: 'Ordini',
+            type: 'NavigationSubItem',
           },
           {
             path: `/attendances`,
@@ -108,7 +58,8 @@ const schema = [
       },
       {
         type: 'NavigationGroup',
-        heading: 'Teams',
+        // heading: 'Teams',
+        after: <a className="text-transparent">Add</a>,
         items: [
           {
             path: `/`,
@@ -218,6 +169,81 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
     const { isCollapsed } = this.state;
     return (
       <Shell>
+        <GlobalNavigation
+          navigationWidth={20}
+          navigationMinWidth="17rem"
+          header={{
+            children: <Avatar borderColor="transparent" />,
+            name: 'Joydeed',
+          }}
+          body={[
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Team',
+            },
+            {
+              as: 'a',
+              children: (
+                <Avatar src={foo} size="small" borderColor="transparent" />
+              ),
+              name: 'Anagrafica',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Donazioni',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Eventi',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Annunci',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'CercaBandi',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Tesseramenti',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Tasks',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Website',
+            },
+            {
+              as: 'a',
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Moduli',
+            },
+          ]}
+          footer={[
+            { children: <Grid size={20} />, name: 'Applicazioni' },
+            {
+              children: <Bell size={20} />,
+              badge: <Badge appearance="important">{3}</Badge>,
+              name: 'Notifiche',
+            },
+            // { children: <Info size={20} />, name: 'Assistenza' },
+            {
+              children: <Avatar size="small" borderColor="transparent" />,
+              name: 'Andrea Vanini',
+            },
+          ]}
+        />
         <ShellContent>
           <ShellNavigation
             style={{

@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { StyledNavigationItem, StyledNavigationLink } from '../NavigationItem/styled';
+import { StyledNavigationItem } from '../../../styled';
+import { StyledNavigationLink } from '../NavigationItem';
 
 export const StyledNavigationIconItem = styled(StyledNavigationItem)``;
 
 export const StyledNavigationIconItemIcon = styled.div`
-align-items: center;
+  align-items: center;
   display: flex;
   margin-bottom: 0.5rem;
 
@@ -12,7 +13,7 @@ align-items: center;
     width: 20px;
     height: 20px;
   }
-  `;
+`;
 
 export const StyledNavigationIconLink = styled(StyledNavigationLink)`
   flex-direction: column;
@@ -30,5 +31,5 @@ export const StyledNavigationText = styled.div`
   font-size: 65%;
   text-transform: uppercase;
   text-align: center;
-      padding: 0 0.2rem;
+  padding: 0 0.2rem;
 `;

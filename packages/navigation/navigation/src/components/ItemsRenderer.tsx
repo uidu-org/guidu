@@ -2,14 +2,14 @@
 import { ShellBody, ShellFooter, ShellHeader } from '@uidu/shell';
 import { gridSize } from '@uidu/theme';
 import React, { PureComponent } from 'react';
-import NavigationGroupComponent from './NavigationGroup';
-import NavigationGroupHeadingComponent from './NavigationGroupHeading';
-import NavigationHeaderComponent from './NavigationHeader';
-import NavigationHeaderSkeletonComponent from './NavigationHeaderSkeleton';
-import NavigationIconItem from './NavigationIconItem';
-import NavigationItem from './NavigationItem';
-import NavigationItemSkeleton from './NavigationItemSkeleton';
-import NavigationSubItem from './NavigationSubItem';
+import NavigationGroupComponent from './Navigation/NavigationGroup';
+import NavigationGroupHeadingComponent from './Navigation/NavigationGroup/NavigationGroupHeading';
+import NavigationHeaderComponent from './Navigation/NavigationHeader';
+import NavigationHeaderSkeletonComponent from './Navigation/NavigationHeaderSkeleton';
+import NavigationIconItem from './Navigation/NavigationIconItem';
+import NavigationItem from './Navigation/NavigationItem';
+import NavigationItemSkeleton from './Navigation/NavigationItemSkeleton';
+import NavigationSubItem from './Navigation/NavigationSubItem';
 
 /**
  * ITEMS

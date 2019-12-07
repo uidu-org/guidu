@@ -1,7 +1,7 @@
 import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
 import { Transition } from 'react-transition-group';
-import GlobalItem from '../GlobalNavigationItem';
+import GlobalItem from './GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
 import { GlobalNavigationProps, GlobalNavigationState } from './types';
 
