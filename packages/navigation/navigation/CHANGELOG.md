@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 0.1.29
+
+### Patch Changes
+
+- c15edeb: Navigation improvements as of #60
+- c15edeb: Draggable subitems for navigation items. Need to be cleaned up and made optional
+
 ## 0.1.28
 
 ### Patch Changes

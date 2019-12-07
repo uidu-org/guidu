@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 0.1.63
+
+### Patch Changes
+
+- c15edeb: Navigation improvements as of #60
+- c15edeb: Fixes to group and calendar view
+- c15edeb: Fix grouping pinning
+- Updated dependencies [c15edeb]
+  - @uidu/data-controls@0.2.17
+  - @uidu/data-fields@0.1.20
+
 ## 0.1.62
 
 ### Patch Changes

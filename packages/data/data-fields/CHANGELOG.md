@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.20
+
+### Patch Changes
+
+- c15edeb: Fixes to group and calendar view
+
 ## 0.1.19
 
 ### Patch Changes

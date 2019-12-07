@@ -1,5 +1,16 @@
 # @uidu/data-controls
 
+## 0.2.17
+
+### Patch Changes
+
+- c15edeb: Fixes to group and calendar view
+- Updated dependencies [c15edeb]
+- Updated dependencies [c15edeb]
+- Updated dependencies [c15edeb]
+  - @uidu/table@0.1.63
+  - @uidu/data-fields@0.1.20
+
 ## 0.2.16
 
 ### Patch Changes

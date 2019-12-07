@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.1.56
+
+### Patch Changes
+
+- c15edeb: Fixes to group and calendar view
+- c15edeb: Fix grouping pinning
+- Updated dependencies [c15edeb]
+- Updated dependencies [c15edeb]
+- Updated dependencies [c15edeb]
+  - @uidu/table@0.1.63
+  - @uidu/data-controls@0.2.17
+
 ## 0.1.55
 
 ### Patch Changes
