@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.1
+
+### Patch Changes
+
+- b6af024: Fix useEffect loop for updating navigation subitems
+
 ## 0.2.0
 
 ### Minor Changes
