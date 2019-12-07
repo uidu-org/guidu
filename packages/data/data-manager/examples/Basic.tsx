@@ -58,6 +58,7 @@ const dataViews = [
     ],
     // groupers: [{ colId: 'country' }],
     sorters: [{ colId: 'amount', sort: 'desc' }],
+    filterModel: { amount: { type: 'greaterThan', filter: 100 } },
   },
   {
     id: 2,

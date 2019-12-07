@@ -27,6 +27,7 @@ export const availableColumns = [
     primary: true,
     headerName: 'Donor',
     field: 'member',
+    pinned: 'left',
     valueGetter: props => {
       return props.data ? props.data.member.email : null;
     },

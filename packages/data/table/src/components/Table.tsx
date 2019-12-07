@@ -102,6 +102,15 @@ const Table = ({
             };
           },
         }}
+        autoGroupColumnDef={{
+          pinned: 'left',
+          headerName: 'Grouped by',
+          minWidth: 300,
+          // lockPosition: true,
+          // lockVisible: true,
+          // lockPinned: true,
+          // suppressMovable: true,
+        }}
         columnTypes={{
           avatar: {},
           addField: {},

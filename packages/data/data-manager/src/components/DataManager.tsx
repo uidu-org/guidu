@@ -263,9 +263,21 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   };
 
   updateRowGrouping = () => {
-    this.gridColumnApi.setRowGroupColumns(
-      this.state.groupers.map(g => g.colId),
-    );
+    const { columnDefs } = this.props;
+    const { groupers } = this.state;
+    if (groupers.length > 0) {
+      this.gridColumnApi.setColumnsPinned(
+        columnDefs.filter(c => c.pinned).map(c => c.colId),
+        false,
+      );
+    } else {
+      this.gridColumnApi.setColumnsPinned(
+        columnDefs.filter(c => c.pinned).map(c => c.colId),
+        true,
+      );
+    }
+
+    this.gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
 
     setTimeout(() => {
       this.gridApi.refreshCells({ force: true });
