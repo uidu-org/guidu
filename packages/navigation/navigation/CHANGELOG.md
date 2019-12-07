@@ -1,5 +1,15 @@
 # @uidu/navigation
 
+## 0.2.0
+
+### Minor Changes
+
+- 28195e6: Sortable is now optional for navigational components, fix prevent default
+
+### Patch Changes
+
+- @uidu/shell@0.1.37
+
 ## 0.1.29
 
 ### Patch Changes
