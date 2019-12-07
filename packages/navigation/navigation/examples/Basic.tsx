@@ -1,9 +1,20 @@
 import Avatar from '@uidu/avatar';
 import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
-import Shell, { ShellContent, ShellMain, ShellNavigation, ShellResizer } from '@uidu/shell';
+import Shell, {
+  ShellContent,
+  ShellMain,
+  ShellNavigation,
+  ShellResizer,
+} from '@uidu/shell';
 import React, { Component } from 'react';
-import { Activity, MoreHorizontal, PlusCircle, PlusSquare, Settings } from 'react-feather';
+import {
+  Activity,
+  MoreHorizontal,
+  PlusCircle,
+  PlusSquare,
+  Settings,
+} from 'react-feather';
 import Navigation, { NavigationItem } from '../src';
 
 const schema = [
@@ -27,6 +38,8 @@ const schema = [
             path: `/orders`,
             text: 'Ordini',
             type: 'NavigationItem',
+            isSortable: true,
+            onSort: console.log,
             // isOpen: true,
             actions: [
               {
@@ -80,7 +93,7 @@ const schema = [
                 text: 'Inevasi',
               },
               {
-                id:'2',
+                id: '2',
                 path: `/orders/sent`,
                 text: 'Completati',
               },

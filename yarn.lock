@@ -2760,9 +2760,9 @@
     "@types/stripe-v3" "*"
 
 "@types/react-syntax-highlighter@^11.0.0":
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.2.tgz#a2e3ff657d7c47813f80ca930f3d959c31ec51e3"
-  integrity sha512-iMNcixH8330f2dq0RY+VOXCP8JFehgmOhLOtnO85Ty+qu0fHXJNEqWx5VuFv8v0aEq0U/N9d/k1yvA+c6PEmPw==
+  version "11.0.3"
+  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.3.tgz#ae1dac83010e4a7ca04a470bc1ca3c2df33decbb"
+  integrity sha512-vdT3fuApIM+b9IQgW1EgOyol4A0H3z+19+aOdU0T5PUiSzY24VqBfIlYrzvAotE6xOvfAZfjuF/L1QPNUSmgDw==
   dependencies:
     "@types/react" "*"
 
@@ -4434,9 +4434,9 @@ babel-plugin-lodash@^3.3.4:
     require-package-name "^2.0.1"
 
 babel-plugin-macros@^2.0.0:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.7.1.tgz#ee294383c1a38f9d6535be3d89734824cb3ed415"
-  integrity sha512-HNM284amlKSQ6FddI4jLXD+XTqF0cTYOe5uemOIZxHJHnamC+OhFQ57rMF9sgnYhkJQptVl9U1SKVZsV9/GLQQ==
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-macros/-/babel-plugin-macros-2.8.0.tgz#0f958a7cc6556b1e65344465d99111a1e5e10138"
+  integrity sha512-SEP5kJpfGYqYKpBrj5XU3ahw5p5GOHJ0U5ssOSQ/WBVdwkD2Dzlce95exQTs3jOVWPPKLBN2rlEWkCK7dSmLvg==
   dependencies:
     "@babel/runtime" "^7.7.2"
     cosmiconfig "^6.0.0"
@@ -14203,7 +14203,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-meow@sindresorhus/meow#43401c3:
+"meow@github:sindresorhus/meow#43401c3":
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
@@ -14530,9 +14530,9 @@ mixin-deep@^1.2.0:
     is-extendable "^1.0.1"
 
 mixme@^0.3.1:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/mixme/-/mixme-0.3.3.tgz#ff2d4aa6465dbad92d4890c273303146ac9ac14b"
-  integrity sha512-TuRDkNZGvkeDPEbhdJSnfVxREuCPFfvmRfdlWVSw29v0XfP+YWnXmBaPD7yugPIDamONvp69DA/vOLOKsToHXA==
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/mixme/-/mixme-0.3.5.tgz#304652cdaf24a3df0487205e61ac6162c6906ddd"
+  integrity sha512-SyV9uPETRig5ZmYev0ANfiGeB+g6N2EnqqEfBbCGmmJ6MgZ3E4qv5aPbnHVdZ60KAHHXV+T3sXopdrnIXQdmjQ==
 
 mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   version "0.5.1"
@@ -15315,9 +15315,9 @@ nps-utils@^1.7.0:
     rimraf "^2.6.1"
 
 nps@^5.9.3:
-  version "5.9.10"
-  resolved "https://registry.yarnpkg.com/nps/-/nps-5.9.10.tgz#40844e8b6d754f7b3408bec4385814c880c509e3"
-  integrity sha512-5HAn1cPzgtQ0XPwgRewZHtQ2+tBtPnqeI+vu99AxGZR+dfmHDaAgubLI1NgywUVnTTHtz5WsGhhc1cnrlJQUNg==
+  version "5.9.12"
+  resolved "https://registry.yarnpkg.com/nps/-/nps-5.9.12.tgz#fcd6bc30eb002166ea58e04a7be243628bb4e2aa"
+  integrity sha512-zuUAz/2VVp6kd1hJ4Fuq3p4ETTaj3zQ5/P4ck7c2O1NsG79BjQvRJprQvHbz2av7qFXmbR33UCp9y2PkcbW4TQ==
   dependencies:
     arrify "^1.0.1"
     chalk "^2.0.1"
