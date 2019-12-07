@@ -18,7 +18,7 @@ const DropdownActions = ({ onToggle, action: { icon, actions } }) => {
       trigger={
         <StyledNavigationAction
           type="button"
-          onClick={e => {
+          onClick={() => {
             setIsOpen(!isOpen);
           }}
           className="btn btn-sm px-2"

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import { NavigationSubItem } from '../..';
 import {
@@ -43,6 +44,26 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   }
 `;
 
+const getItemStyle = (isDragging, draggableStyle) => ({
+  borderRadius: '0.25rem',
+  // some basic styles to make the items look a bit nicer
+  userSelect: 'none',
+
+  // change background colour if dragging
+  background: isDragging ? 'rgba(76,86,106,0.125)' : '',
+
+  // styles we need to apply on draggables
+  ...draggableStyle,
+});
+
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
 export default function NavigationItem({
   text,
   before = null,
@@ -53,6 +74,22 @@ export default function NavigationItem({
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isActionOpen, setIsActionOpen] = useState(false);
+  const [orderedItems, setItems] = useState(items);
+
+  const onDragEnd = result => {
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    const items = reorder(
+      orderedItems,
+      result.source.index,
+      result.destination.index,
+    );
+
+    setItems(items);
+  };
 
   return (
     <>
@@ -82,10 +119,40 @@ export default function NavigationItem({
           {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
         </StyledNavigationLink>
       </StyledNavigationItem>
-      <AnimateHeight height={isOpen ? 'auto' : 0}>
-        {items.length > 0 &&
-          items.map(item => <NavigationSubItem {...item} visible />)}
-      </AnimateHeight>
+      {orderedItems.length > 0 && (
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="droppable">
+            {provided => (
+              <div {...provided.droppableProps} ref={provided.innerRef}>
+                <AnimateHeight height={isOpen ? 'auto' : 0}>
+                  {orderedItems.map((item, index) => (
+                    <Draggable
+                      key={item.id}
+                      draggableId={item.id}
+                      index={index}
+                    >
+                      {(provided, snapshot) => (
+                        <div
+                          ref={provided.innerRef}
+                          {...provided.draggableProps}
+                          {...provided.dragHandleProps}
+                          style={getItemStyle(
+                            snapshot.isDragging,
+                            provided.draggableProps.style,
+                          )}
+                        >
+                          <NavigationSubItem {...item} visible />
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  {provided.placeholder}
+                </AnimateHeight>
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+      )}
     </>
   );
 }
