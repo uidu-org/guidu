@@ -40,7 +40,7 @@ const schema = [
             type: 'NavigationItem',
             isSortable: true,
             onSort: console.log,
-            // isOpen: true,
+            isOpen: true,
             actions: [
               {
                 icon: <MoreHorizontal size={14} />,

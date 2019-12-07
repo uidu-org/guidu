@@ -71,15 +71,16 @@ export default function NavigationItem({
   actions = [],
   items = [],
   isSortable = false,
+  isOpen: isDefaultOpen = false,
   ...otherProps
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(isDefaultOpen);
   const [isActionOpen, setIsActionOpen] = useState(false);
   const [orderedItems, setItems] = useState(items);
 
   useEffect(() => {
     setItems(items);
-  }, [items]);
+  }, items);
 
   const onDragEnd = result => {
     // dropped outside the list
@@ -120,11 +121,14 @@ export default function NavigationItem({
     <>
       <StyledNavigationItem>
         <StyledNavigationLink
+          {...(orderedItems.length > 0
+            ? {
+                onClick: e => {
+                  setIsOpen(!isOpen);
+                },
+              }
+            : {})}
           {...otherProps}
-          onClick={e => {
-            // e.preventDefault();
-            setIsOpen(!isOpen);
-          }}
         >
           {!!before && (
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
