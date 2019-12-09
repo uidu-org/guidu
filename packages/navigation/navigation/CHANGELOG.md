@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.4
+
+### Patch Changes
+
+- 0b2000d: NAvigation actions boundariesElement
+
 ## 0.2.3
 
 ### Patch Changes
