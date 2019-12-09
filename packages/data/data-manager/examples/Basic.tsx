@@ -41,11 +41,27 @@ const transitionStyles = {
 
 const dataViews = [
   {
-    id: 1,
+    id: 0,
     name: 'Tutti i contatti',
     kind: 'table',
     fields: [
-      'avatar',
+      'id',
+      'member',
+      'amount',
+      'country',
+      'paymentMethod',
+      'firstName',
+      'gender',
+      'phone',
+      'addField',
+      'createdAt',
+    ],
+  },
+  {
+    id: 1,
+    name: 'Bigger donations',
+    kind: 'table',
+    fields: [
       'country',
       'paymentMethod',
       'member',
@@ -64,7 +80,7 @@ const dataViews = [
     id: 2,
     name: 'Galleria contatti',
     kind: 'gallery',
-    fields: ['avatar', 'member', 'amount'],
+    fields: ['avatar', 'cover', 'member', 'amount'],
     sorters: [{ colId: 'amount', sort: 'desc' }],
   },
   {

@@ -375,9 +375,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
             availableControls={availableControls}
             currentView={currentView}
             updateView={updateView}
-            columnDefs={columns.filter(
-              column => column.type !== 'cover' && column.type !== 'avatar',
-            )}
+            columnDefs={columns}
             groupers={groupers}
             onDragEnd={this.moveColumn}
             onResize={this.setRowHeight}
@@ -401,7 +399,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
               gridApi={this.gridApi}
               gridColumnApi={this.gridColumnApi}
               columnDefs={columns.filter(
-                column => column.type !== 'cover' && column.type !== 'avatar',
+                column =>
+                  column.viewType !== 'cover' && column.viewType !== 'avatar',
               )}
               filterModel={filterModel}
               {...availableControls.filterer.props}
@@ -412,7 +411,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
               gridApi={this.gridApi}
               gridColumnApi={this.gridColumnApi}
               columnDefs={columns.filter(
-                column => column.type !== 'cover' && column.type !== 'avatar',
+                column =>
+                  column.viewType !== 'cover' && column.viewType !== 'avatar',
               )}
               sorters={sorters}
               {...availableControls.sorter.props}
@@ -424,7 +424,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
                 gridApi={this.gridApi}
                 gridColumnApi={this.gridColumnApi}
                 columnDefs={columns.filter(
-                  column => column.type !== 'cover' && column.type !== 'avatar',
+                  column =>
+                    column.viewType !== 'cover' && column.viewType !== 'avatar',
                 )}
                 groupers={groupers}
                 {...availableControls.sorter.props}

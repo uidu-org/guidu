@@ -153,13 +153,13 @@ export const valueRenderer = (data, column) => {
 };
 
 export const getPrimary = columnDefs =>
-  columnDefs.filter(column => !!column.lockVisible && column.type !== 'uid')[0];
+  columnDefs.filter(column => column.viewType === 'primary')[0];
 
 export const getCover = columnDefs =>
-  columnDefs.filter(column => column.type === 'cover')[0];
+  columnDefs.filter(column => column.viewType === 'cover')[0];
 
 export const getAvatar = columnDefs =>
-  columnDefs.filter(column => column.type === 'avatar')[0];
+  columnDefs.filter(column => column.viewType === 'avatar')[0];
 
 export const numericComparator = (number1, number2) => {
   const numericNumber1 = numeral(number1).value();

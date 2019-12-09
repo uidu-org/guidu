@@ -74,9 +74,7 @@ export default function Viewer({
         gridApi={gridApi}
         gridColumnApi={gridColumnApi}
         currentView={currentView}
-        columnDefs={columnDefs.filter(
-          column => column.type !== 'cover' && column.type !== 'avatar',
-        )}
+        columnDefs={columnDefs}
         groupers={groupers}
         onDragEnd={onDragEnd}
         onResize={onResize}

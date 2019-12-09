@@ -5,6 +5,7 @@ export type Column = AgGridColumnProps & {
   dataField?: Field['kind'];
   dataFieldParams?: any;
   primary?: boolean;
+  viewType: string;
 };
 
 export type TableProps = {

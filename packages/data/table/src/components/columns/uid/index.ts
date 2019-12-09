@@ -1,14 +1,20 @@
+import { uidField } from '@uidu/data-fields';
+
 export default () => ({
-  type: 'uid',
+  type: uidField.kind,
+  headerComponentParams: { menuIcon: uidField.icon },
   headerName: 'ID',
   pinned: true,
   lockVisible: true,
-  checkboxSelection: true,
+  lockPosition: true,
+  resizable: false,
+  // checkboxSelection: true,
   // headerCheckboxSelection: true,
-  width: 80,
-  maxWidth: 80,
+  width: 60,
+  maxWidth: 60,
   suppressMenu: true,
   sortable: false,
-  // cellStyle: { borderRight: 0 },
+  // headerClass: 'border-right-0',
+  cellStyle: { fontSize: '14px' },
   headerValueGetter: () => null,
 });

@@ -19,9 +19,10 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
   render() {
     const { columnDefs, gridColumnApi } = this.props;
 
-    const cleanedColumnDefs = columnDefs.filter(
-      columnDef => !columnDef.lockVisible,
-    );
+    const cleanedColumnDefs = columnDefs;
+    // .filter(
+    //   columnDef => !columnDef.lockVisible,
+    // );
 
     return (
       <div

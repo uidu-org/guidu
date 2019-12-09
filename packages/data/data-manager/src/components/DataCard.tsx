@@ -45,9 +45,9 @@ export default class Item extends PureComponent<any> {
                 .filter(
                   column =>
                     !column.hide &&
-                    column.type !== 'cover' &&
-                    column.type !== 'primary' &&
-                    column.type !== 'avatar',
+                    column.viewType !== 'cover' &&
+                    column.viewType !== 'primary' &&
+                    column.viewType !== 'avatar',
                 )
                 .map(column => (
                   <>

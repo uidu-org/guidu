@@ -45,6 +45,15 @@ export default class Configurator extends PureComponent<any> {
             </h6>
           </div>
         </div>
+        <Toggler
+          {...this.props}
+          columnDefs={columnDefs.filter(
+            column =>
+              column.viewType === 'cover' || column.viewType === 'avatar',
+          )}
+          onDragEnd={onDragEnd}
+          gridColumnApi={gridColumnApi}
+        />
         <div className="list-group">
           <div className="list-group-item px-3 px-xl-4 border-0">
             <h6 className="m-0">
@@ -54,10 +63,13 @@ export default class Configurator extends PureComponent<any> {
           </div>
         </div>
         <Toggler
-          columnDefs={columnDefs}
+          {...this.props}
+          columnDefs={columnDefs.filter(
+            column =>
+              column.viewType !== 'cover' && column.viewType !== 'avatar',
+          )}
           onDragEnd={onDragEnd}
           gridColumnApi={gridColumnApi}
-          {...this.props}
         />
       </>
     );

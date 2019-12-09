@@ -21,6 +21,7 @@ import ratingField from './rating';
 import singleSelectField from './singleSelect';
 import stringField from './string';
 import textField from './text';
+import uidField from './uid';
 import urlField from './url';
 import voteField from './vote';
 
@@ -47,6 +48,7 @@ export { default as ratingField } from './rating';
 export { default as singleSelectField } from './singleSelect';
 export { default as stringField } from './string';
 export { default as textField } from './text';
+export { default as uidField } from './uid';
 export { default as urlField } from './url';
 export { default as voteField } from './vote';
 
@@ -74,6 +76,7 @@ export const byName = {
   singleSelect: singleSelectField,
   string: stringField,
   text: textField,
+  uid: uidField,
   url: urlField,
   vote: voteField,
 };
@@ -102,6 +105,7 @@ export default [
   singleSelectField,
   stringField,
   textField,
+  uidField,
   urlField,
   voteField,
 ];

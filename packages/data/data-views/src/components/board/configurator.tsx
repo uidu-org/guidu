@@ -59,10 +59,13 @@ export default class Configurator extends PureComponent<any> {
           </div>
         </div>
         <Toggler
-          columnDefs={columnDefs}
+          {...this.props}
+          columnDefs={columnDefs.filter(
+            column =>
+              column.viewType !== 'cover' && column.viewType !== 'avatar',
+          )}
           onDragEnd={onDragEnd}
           gridColumnApi={gridColumnApi}
-          {...this.props}
         />
       </>
     );

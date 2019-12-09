@@ -105,13 +105,14 @@ export default class Gallery extends PureComponent<GalleryProps> {
               itemData={itemData}
               rowCount={items.length}
               rowHeight={
+                this.getGutterSize({ avatar, cover }) +
                 ITEM_HEADER_HEIGHT +
                 ITEM_COLUMN_ROW *
                   visibleColumnDefs.filter(
                     column =>
-                      column.type !== 'cover' &&
-                      column.type !== 'primary' &&
-                      column.type !== 'avatar',
+                      column.viewType !== 'cover' &&
+                      column.viewType !== 'primary' &&
+                      column.viewType !== 'avatar',
                   ).length +
                 ITEM_PADDING +
                 gutterSize

@@ -80,6 +80,7 @@ export default class DataView extends PureComponent<any> {
         list: {},
         table: {},
       },
+      columnDefs,
       onGridReady,
       rowData,
       onItemClick,
@@ -97,6 +98,9 @@ export default class DataView extends PureComponent<any> {
       onColumnMoved,
     } = this.props;
 
+    console.log(columnDefs);
+    console.log(columns);
+
     if (!rowData) {
       return <ShellBodyWithSpinner />;
     }
@@ -111,12 +115,7 @@ export default class DataView extends PureComponent<any> {
         onGridReady={onGridReady}
         onFirstDataRendered={onFirstDataRendered}
         // use columnDefs from props to avoid flickering on toggling/reordering columns
-        columnDefs={
-          // this.filterVisibleColumnDefs()
-          this.props.columnDefs.filter(
-            column => column.type !== 'cover' && column.type !== 'avatar',
-          )
-        }
+        columnDefs={columnDefs}
         loadingOverlayComponentFramework={() => <Spinner />}
         rowData={rowData}
         onAddField={onAddField}
@@ -127,6 +126,7 @@ export default class DataView extends PureComponent<any> {
         onColumnMoved={onColumnMoved}
         onRowClicked={onItemClick}
         accentedSort
+        suppressPropertyNamesCheck
       />
     );
 
@@ -232,6 +232,25 @@ export default class DataView extends PureComponent<any> {
           </>
         );
         break;
+      // case 'list':
+      //   desktopView = mobileView = (
+      //     <>
+      //       <LoadableList fallback={<ShellBodyWithSpinner />}>
+      //         {({ default: List }) => (
+      //           <List
+      //             {...viewProps.list}
+      //             onItemClick={onItemClick}
+      //             rowData={data.map(datum => ({
+      //               data: datum.data,
+      //             }))}
+      //             columnDefs={columns}
+      //           />
+      //         )}
+      //       </LoadableList>
+      //       <div className="d-none">{table}</div>
+      //     </>
+      //   );
+      //   break;
       default:
         desktopView = table;
         mobileView = (
