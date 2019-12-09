@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.2
+
+### Patch Changes
+
+- af7a8fe: FIX #60
+
 ## 0.2.1
 
 ### Patch Changes
