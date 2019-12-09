@@ -230,6 +230,20 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     });
   };
 
+  /**
+   *
+   * Column Moving: Reorder
+   * @memberof DataManager
+   * OnColumnMoved reacts to ag-grid callback, and updates columns state
+   */
+  onColumnMoved = params => {
+    console.log(params);
+    // const columns = reorder(this.state.columns, oldIndex, newIndex);
+    // this.setState({
+    //   columns,
+    // });
+  };
+
   moveColumn = ({ name, oldIndex, newIndex }) => {
     this.gridColumnApi.moveColumn(name, newIndex);
     const columns = reorder(this.state.columns, oldIndex, newIndex);
@@ -317,7 +331,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         onGridReady={this.onGridReady}
         onFilterChanged={this.onFilterChanged}
         onSortChanged={this.onSortChanged}
+        onColumnVisible={this.onColumnVisible}
         onColumnRowGroupChanged={this.onColumnRowGroupChanged}
+        onColumnMoved={this.onColumnMoved}
         // props spreading
         columnDefs={columnDefs}
         rowData={rowData}

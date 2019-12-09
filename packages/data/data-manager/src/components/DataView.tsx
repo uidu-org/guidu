@@ -94,6 +94,7 @@ export default class DataView extends PureComponent<any> {
       onFilterChanged,
       onColumnVisible,
       onColumnRowGroupChanged,
+      onColumnMoved,
     } = this.props;
 
     if (!rowData) {
@@ -106,7 +107,6 @@ export default class DataView extends PureComponent<any> {
         rowSelection="multiple"
         suppressRowClickSelection
         {...viewProps.table}
-        // @ts-ignore
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
         onGridReady={onGridReady}
         onFirstDataRendered={onFirstDataRendered}
@@ -124,7 +124,7 @@ export default class DataView extends PureComponent<any> {
         onFilterChanged={onFilterChanged}
         onColumnVisible={onColumnVisible}
         onColumnRowGroupChanged={onColumnRowGroupChanged}
-        // onColumnMoved={console.log}
+        onColumnMoved={onColumnMoved}
         onRowClicked={onItemClick}
         accentedSort
       />
