@@ -25,13 +25,6 @@ export const initializeDataView = ({
     gridColumnApi.setRowGroupColumns([]);
   }
   // // handle other params
-  // // resize
-  // // hide Overlay
-  setTimeout(() => {
-    gridApi.hideOverlay();
-    gridColumnApi.autoSizeAllColumns();
-    // return state
-  }, 600);
 
   return {
     loaded: true,

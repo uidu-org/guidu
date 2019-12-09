@@ -179,7 +179,7 @@ export default class Basic extends Component<any, any> {
             currentView={this.state.currentView}
             updateView={this.updateView}
             onFirstDataRendered={() => this.setState({ rendered: true })}
-            onGridReady={() => this.setState({ rendered: true })}
+            // onGridReady={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
               <>

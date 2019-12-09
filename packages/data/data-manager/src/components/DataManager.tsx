@@ -131,12 +131,13 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
 
   resizeTable = () => {
     const { currentView } = this.props;
-    const { gridApi, gridColumnApi } = this;
+    const { gridColumnApi, gridApi } = this;
     if (currentView.kind === 'table') {
       gridColumnApi.autoSizeAllColumns();
       // window.addEventListener('resize', this.resizeTableOnWindowResize);
       // gridApi.sizeColumnsToFit();
     }
+    gridApi.hideOverlay();
   };
 
   filterVisibleColumnDefs = () => {

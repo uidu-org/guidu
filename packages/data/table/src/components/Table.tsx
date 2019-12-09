@@ -2,6 +2,7 @@ import { ClientSideRowModelModule } from '@ag-grid-community/client-side-row-mod
 import { CsvExportModule } from '@ag-grid-community/csv-export';
 import { AgGridReact } from '@ag-grid-community/react';
 import { MenuModule } from '@ag-grid-enterprise/menu';
+import { RangeSelectionModule } from '@ag-grid-enterprise/range-selection';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
 import { StatusBarModule } from '@ag-grid-enterprise/status-bar';
 import React, { useState } from 'react';
@@ -34,8 +35,8 @@ const Table = ({
           RowGroupingModule,
           MenuModule,
           CsvExportModule,
-          // @ts-ignore
           StatusBarModule,
+          RangeSelectionModule,
         ]}
         // ref={innerRef}
         // enterprise features

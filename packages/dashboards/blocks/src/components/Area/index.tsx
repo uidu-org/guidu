@@ -1,7 +1,7 @@
 import { rollup } from 'd3-array';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
-import CountUp from 'react-countup';
+import { CountUp } from 'react-countup';
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import { colors, format, manipulator } from '../../utils';
 import Loader from '../Loader';

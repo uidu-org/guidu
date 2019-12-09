@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import CountUp from 'react-countup';
+import { CountUp } from 'react-countup';
 import { format, manipulator } from '../../utils';
 import Loader from '../Loader';
 import { CounterProps } from './types';

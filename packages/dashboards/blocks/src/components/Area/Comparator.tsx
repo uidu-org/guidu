@@ -1,5 +1,5 @@
 import React from 'react';
-import CountUp from 'react-countup';
+import { CountUp } from 'react-countup';
 import { format, manipulator } from '../../utils';
 
 export default function Comparator({ comparatorData, currentValue, area }) {

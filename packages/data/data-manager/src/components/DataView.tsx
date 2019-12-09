@@ -127,6 +127,7 @@ export default class DataView extends PureComponent<any> {
         onRowClicked={onItemClick}
         accentedSort
         suppressPropertyNamesCheck
+        enableRangeSelection
         statusBar={{
           statusPanels: [
             {
