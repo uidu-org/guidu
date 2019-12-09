@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.26
+
+### Patch Changes
+
+- 6086bc9: WIP #61
+- Updated dependencies [6086bc9]
+  - @uidu/table@0.1.65
+
 ## 0.1.25
 
 ### Patch Changes
