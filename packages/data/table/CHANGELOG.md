@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.68
+
+### Patch Changes
+
+- e6fa9ed: Fix missing styles
+
 ## 0.1.67
 
 ### Patch Changes
