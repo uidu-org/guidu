@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.1.58
+
+### Patch Changes
+
+- b0c2181: FIX column visible api
+
 ## 0.1.57
 
 ### Patch Changes
