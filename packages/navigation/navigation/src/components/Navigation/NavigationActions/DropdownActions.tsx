@@ -9,6 +9,7 @@ const DropdownActions = ({ onToggle, action: { icon, actions } }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <DropdownMenu
+      boundariesElement="scrollParent"
       position="bottom right"
       isOpen={isOpen}
       onOpenChange={params => {
