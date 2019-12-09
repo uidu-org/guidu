@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.6
+
+### Patch Changes
+
+- fdda7be: Opacity on NavigationActions
+
 ## 0.2.5
 
 ### Patch Changes
