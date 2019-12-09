@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 0.2.19
+
+### Patch Changes
+
+- 6086bc9: WIP #61
+- Updated dependencies [6086bc9]
+  - @uidu/data-fields@0.1.22
+  - @uidu/data-views@0.1.11
+  - @uidu/table@0.1.65
+
 ## 0.2.18
 
 ### Patch Changes
