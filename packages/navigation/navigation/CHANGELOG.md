@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.3
+
+### Patch Changes
+
+- 9e99bbb: Add actions to sub items
+
 ## 0.2.2
 
 ### Patch Changes
