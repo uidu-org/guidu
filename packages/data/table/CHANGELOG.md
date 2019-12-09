@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 0.1.64
+
+### Patch Changes
+
+- 1f5f02d: WIP #58, reorder is missing only
+- Updated dependencies [1f5f02d]
+  - @uidu/data-controls@0.2.18
+  - @uidu/data-fields@0.1.21
+
 ## 0.1.63
 
 ### Patch Changes
