@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.61
+
+### Patch Changes
+
+- 0a30009: Updated ag-grid, footer agg and range selection
+- Updated dependencies [0a30009]
+  - @uidu/data-controls@0.2.20
+  - @uidu/table@0.1.67
+
 ## 0.1.60
 
 ### Patch Changes

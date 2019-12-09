@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.67
+
+### Patch Changes
+
+- 0a30009: Updated ag-grid, footer agg and range selection
+- Updated dependencies [0a30009]
+  - @uidu/data-controls@0.2.20
+
 ## 0.1.66
 
 ### Patch Changes
