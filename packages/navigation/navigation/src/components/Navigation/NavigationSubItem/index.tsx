@@ -47,7 +47,7 @@ export default function NavigationSubItem({
   before,
   after,
   visible,
-  actions,
+  actions = [],
   ...rest
 }) {
   const [isActionOpen, setIsActionOpen] = useState(false);
