@@ -15,18 +15,19 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
   private form = React.createRef();
 
   handleSubmit = async model => {
-    const { onChange } = this.props;
-    console.log(model);
-    onChange(model.filters || []);
+    const { gridApi, filterModel } = this.props;
+    const newFilterModel = (model.filters || []).reduce((res, item) => {
+      return {
+        ...res,
+        [item.colId]: item,
+      };
+    }, filterModel);
+    gridApi.setFilterModel(newFilterModel);
   };
 
   render() {
-    const { filters, columnDefs, addFilter, removeFilter } = this.props;
-
-    console.log(columnDefs);
-
+    const { filtersCount, columnDefs, gridApi, filterModel } = this.props;
     const filterableColumnDefs = columnDefs.filter(c => !c.hide && !!c.filter);
-    console.log(filterableColumnDefs);
 
     return (
       <Form
@@ -35,75 +36,87 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
         handleSubmit={this.handleSubmit}
       >
         <div className="list-group">
-          {filters.map((filter: any, index) => {
-            const columnDef = getColumnDef(filterableColumnDefs, filter);
-            const field = getFieldFromColumnDef(columnDef);
-            const { filterForm: FilterForm } = field;
-            return (
-              <div className="list-group-item px-3 px-xl-4" key={filter.colId}>
-                <div className="form-group mb-2">
-                  <div className="form-group mb-0">
-                    <label htmlFor="" className="d-flex align-items-center">
-                      <FormattedMessage
-                        id="guidu.data_controls.filterer.where"
-                        defaultMessage={`{index, plural,
+          {Object.keys(filterModel)
+            .map(k => ({
+              ...filterModel[k],
+              colId: k,
+            }))
+            .map((filter: any, index) => {
+              const columnDef = getColumnDef(filterableColumnDefs, filter);
+              const field = getFieldFromColumnDef(columnDef);
+              const { filterForm: FilterForm } = field;
+              return (
+                <div
+                  className="list-group-item px-3 px-xl-4"
+                  key={filter.colId}
+                >
+                  <div className="form-group mb-2">
+                    <div className="form-group mb-0">
+                      <label htmlFor="" className="d-flex align-items-center">
+                        <FormattedMessage
+                          id="guidu.data_controls.filterer.where"
+                          defaultMessage={`{index, plural,
                       =0 {Where}
                       other {Then where}
                     }`}
-                        values={{
-                          index,
-                        }}
-                      />
-                      <button
-                        type="button"
-                        className="btn btn-sm p-0 ml-auto d-flex align-items-center"
-                        onClick={e => {
-                          e.preventDefault();
-                          removeFilter(filter);
-                          // setTimeout(() => {
-                          //   (this.form.current as any).submit();
-                          // }, 300);
-                        }}
-                      >
-                        <X size={13} />
-                      </button>
-                    </label>
+                          values={{
+                            index,
+                          }}
+                        />
+                        <button
+                          type="button"
+                          className="btn btn-sm p-0 ml-auto d-flex align-items-center"
+                          onClick={e => {
+                            e.preventDefault();
+                            gridApi.setFilterModel(
+                              Object.keys(filterModel).reduce((object, key) => {
+                                if (key !== filter.colId) {
+                                  object[key] = filterModel[key];
+                                }
+                                return object;
+                              }, {}),
+                            );
+                          }}
+                        >
+                          <X size={13} />
+                        </button>
+                      </label>
+                    </div>
+                    <Select
+                      layout="elementOnly"
+                      value={filter.colId}
+                      name={`filters[${index}][colId]`}
+                      options={filterableColumnDefs.map(columnDef => ({
+                        id: columnDef.colId,
+                        name: columnDef.headerName,
+                        ...(columnDef.headerComponentParams
+                          ? {
+                              before: columnDef.headerComponentParams.menuIcon,
+                            }
+                          : {}),
+                      }))}
+                      isDisabled
+                    />
                   </div>
-                  <Select
-                    layout="elementOnly"
-                    value={filter.colId}
-                    name={`filters[${index}][colId]`}
-                    options={filterableColumnDefs.map(columnDef => ({
-                      id: columnDef.colId,
-                      name: columnDef.headerName,
-                      ...(columnDef.headerComponentParams
-                        ? {
-                            before: columnDef.headerComponentParams.menuIcon,
-                          }
-                        : {}),
-                    }))}
-                    isDisabled
-                  />
+                  {FilterForm && (
+                    <FilterForm
+                      index={index}
+                      filter={filter}
+                      field={field}
+                      columnDef={columnDef}
+                      onChange={() =>
+                        setTimeout(() => {
+                          (this.form.current as any).submit();
+                        }, 300)
+                      }
+                    />
+                  )}
                 </div>
-                {FilterForm && (
-                  <FilterForm
-                    index={index}
-                    filter={filter}
-                    field={field}
-                    columnDef={columnDef}
-                    onChange={() =>
-                      setTimeout(() => {
-                        (this.form.current as any).submit();
-                      }, 30)
-                    }
-                  />
-                )}
-              </div>
-            );
-          })}
+              );
+            })}
           <PickField
             label={
-              filters.length ? (
+              filtersCount > 0 ? (
                 <FormattedMessage
                   id="guidu.data_controls.filterer.no_filters"
                   defaultMessage="Add another filter"
@@ -116,19 +129,15 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
               )
             }
             onClick={columnDef => {
-              // push({
-              //   sort: { id: 'asc', name: 'asc' },
-              //   index: list.length,
-              //   colId: columnDef,
-              // });
-              addFilter({
-                colId: columnDef.colId,
+              gridApi.setFilterModel({
+                ...filterModel,
+                [columnDef.colId]: {
+                  type: 'greaterThan',
+                  filter: 10,
+                },
               });
-              setTimeout(() => {
-                (this.form.current as any).submit();
-              }, 300);
             }}
-            isDefaultOpen={filters.length === 0}
+            isDefaultOpen={filtersCount === 0}
             columnDefs={filterableColumnDefs}
           />
         </div>

@@ -15,12 +15,12 @@ export default class SorterForm extends PureComponent<SorterProps> {
   private form = React.createRef();
 
   handleSubmit = async model => {
-    const { onChange } = this.props;
-    onChange(model.sorters || []);
+    const { gridApi } = this.props;
+    gridApi.setSortModel(model.sorters || []);
   };
 
   render() {
-    const { sorters, columnDefs, addSorter, removeSorter } = this.props;
+    const { sorters, columnDefs, gridApi } = this.props;
 
     const sortableColumnDefs = columnDefs.filter(f => !f.hide && !!f.sortable);
 
@@ -33,10 +33,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
         <div className="list-group">
           {sorters.map((sorter: any, index: number) => {
             return (
-              <div
-                className="list-group-item px-3 px-xl-4"
-                key={sorter.colId.colId}
-              >
+              <div className="list-group-item px-3 px-xl-4" key={sorter.colId}>
                 <div className="form-group mb-0">
                   <label htmlFor="" className="d-flex align-items-center">
                     <FormattedMessage
@@ -54,10 +51,9 @@ export default class SorterForm extends PureComponent<SorterProps> {
                       className="btn btn-sm p-0 ml-auto d-flex align-items-center"
                       onClick={e => {
                         e.preventDefault();
-                        removeSorter(sorter);
-                        // setTimeout(() => {
-                        //   (this.form.current as any).submit();
-                        // }, 300);
+                        gridApi.setSortModel(
+                          sorters.filter(s => s.colId !== sorter.colId),
+                        );
                       }}
                     >
                       <X size={13} />
@@ -80,7 +76,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                               }
                             : {}),
                         }))}
-                        onChange={(name, value, { option }) => {
+                        onChange={() => {
                           setTimeout(() => {
                             (this.form.current as any).submit();
                           }, 30);
@@ -110,9 +106,6 @@ export default class SorterForm extends PureComponent<SorterProps> {
                             (this.form.current as any).submit();
                           }, 30);
                         }}
-                        // components={{
-                        //   DropdownIndicator: () => null,
-                        // }}
                       />
                     </div>
                   </div>
@@ -135,16 +128,13 @@ export default class SorterForm extends PureComponent<SorterProps> {
               )
             }
             onClick={columnDef => {
-              // push({
-              //   sort: { id: 'asc', name: 'asc' },
-              //   index: list.length,
-              //   colId: columnDef,
-              // });
-              addSorter({
-                sort: 'asc',
-                colId: columnDef.colId,
-                index: sorters.length,
-              });
+              gridApi.setSortModel([
+                ...sorters,
+                {
+                  colId: columnDef.colId,
+                  sort: 'asc',
+                },
+              ]);
               setTimeout(() => {
                 (this.form.current as any).submit();
               }, 30);

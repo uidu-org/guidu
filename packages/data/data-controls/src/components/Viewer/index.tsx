@@ -12,16 +12,15 @@ export default function Viewer({
   updateView,
   availableControls,
   columnDefs,
-  addGrouper,
-  removeGrouper,
   groupers,
-  onToggle,
   onDragEnd,
   onResize,
   rowHeight,
   onDownload,
   columnCount,
   onSetColumnCount,
+  gridApi,
+  gridColumnApi,
 }: ViewerProps) {
   const node: React.RefObject<HTMLDivElement> = useRef();
   const [editingName, setEditingName] = useState(false);
@@ -72,14 +71,13 @@ export default function Viewer({
         )}
       </div>
       <Configurator
+        gridApi={gridApi}
+        gridColumnApi={gridColumnApi}
         currentView={currentView}
         columnDefs={columnDefs.filter(
           column => column.type !== 'cover' && column.type !== 'avatar',
         )}
-        addGrouper={addGrouper}
-        removeGrouper={removeGrouper}
         groupers={groupers}
-        onToggle={onToggle}
         onDragEnd={onDragEnd}
         onResize={onResize}
         rowHeight={rowHeight}

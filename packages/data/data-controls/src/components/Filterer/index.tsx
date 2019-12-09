@@ -28,11 +28,8 @@ export default class Filterer extends Component<
 
   render() {
     const { filterModel } = this.props;
-    const filters = Object.keys(filterModel).map(k => ({
-      ...filterModel[k],
-      colId: k,
-    }));
-    const filtersCount = filters.length;
+    const filtersCount = Object.keys(filterModel).length;
+
     return (
       <>
         <Trigger
@@ -73,7 +70,11 @@ export default class Filterer extends Component<
               />
             }
           >
-            <FiltererForm {...this.props} filters={filters} />
+            <FiltererForm
+              {...this.props}
+              filtersCount={filtersCount}
+              filterModel={filterModel}
+            />
           </DrawerLayout>
         </Drawer>
       </>

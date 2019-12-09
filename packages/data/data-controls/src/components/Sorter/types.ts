@@ -1,3 +1,4 @@
+import { GridApi } from '@ag-grid-community/core';
 import { Column } from '@uidu/table';
 
 export type Sort = {
@@ -7,9 +8,7 @@ export type Sort = {
 };
 
 export type SorterProps = {
-  onChange: (sorters: Array<Sort>) => void;
-  addSorter: (sorter: Sort) => void;
-  removeSorter: (sorter: Sort) => void;
+  gridApi: GridApi;
   sorters: Array<Sort>;
   columnDefs: Column[];
 };

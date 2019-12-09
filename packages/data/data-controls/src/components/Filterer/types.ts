@@ -1,13 +1,11 @@
-import { ISimpleFilterModel } from '@ag-grid-community/core';
+import { GridApi, ISimpleFilterModel } from '@ag-grid-community/core';
 import { Column } from '@uidu/table';
 
 export type FilterModel = ISimpleFilterModel;
 
 export type FiltererProps = {
-  onChange: (filters: Array<any>) => void;
-  addFilter: (filter: any) => void;
-  removeFilter: (filter: any) => void;
+  gridApi: GridApi;
   filterModel: FilterModel;
-  filters?: Array<any>;
+  filtersCount: number;
   columnDefs: Column[];
 };

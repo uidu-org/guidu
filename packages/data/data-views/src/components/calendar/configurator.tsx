@@ -9,7 +9,13 @@ export default class Configurator extends PureComponent<any> {
   handleSubmit = async model => console.log(model);
 
   render() {
-    const { onResize, rowHeight, columnDefs, onDragEnd, onToggle } = this.props;
+    const {
+      onResize,
+      rowHeight,
+      columnDefs,
+      onDragEnd,
+      gridColumnApi,
+    } = this.props;
     return (
       <>
         <div className="list-group mb-3">
@@ -58,7 +64,7 @@ export default class Configurator extends PureComponent<any> {
         <Toggler
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          onToggle={onToggle}
+          gridColumnApi={gridColumnApi}
           {...this.props}
         />
       </>

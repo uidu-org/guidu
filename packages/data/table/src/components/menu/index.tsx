@@ -53,7 +53,6 @@ const aggFuncs = [
 export const getMainMenuItems = params => {
   const { api, columnApi, column } = params;
   const { colId } = column;
-  console.log(params);
   return [
     ...(params.defaultItems.includes('valueAggSubMenu')
       ? [

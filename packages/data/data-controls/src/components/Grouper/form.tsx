@@ -5,25 +5,49 @@ import React, { Component } from 'react';
 import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { PickField } from '../../utils';
+import { GrouperProps } from './types';
 
 // this component should return an array of groupers https://www.ag-grid.com/javascript-grid-sorting/#sorting-api
 // example:
 // [{ colId: 'country', sort: 'asc' }, { colId: 'sport', sort: 'desc' }];
 
-export default class Grouper extends Component<any> {
+export default class Grouper extends Component<GrouperProps> {
   static defaultProps = {
     onChange: console.log,
   };
 
   private form = React.createRef();
 
+  groupBy = groupers => {
+    const { gridApi, gridColumnApi, columnDefs } = this.props;
+    gridApi.showLoadingOverlay();
+
+    if (groupers.length > 0) {
+      gridColumnApi.setColumnsPinned(
+        columnDefs.filter(c => c.pinned).map(c => c.colId),
+        'false',
+      );
+    } else {
+      gridColumnApi.setColumnsPinned(
+        columnDefs.filter(c => c.pinned).map(c => c.colId),
+        'true',
+      );
+    }
+
+    gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
+
+    setTimeout(() => {
+      gridApi.refreshCells({ force: true });
+      gridApi.hideOverlay();
+    }, 300);
+  };
+
   handleSubmit = async model => {
-    const { onChange } = this.props;
-    onChange(model.groupers || []);
+    this.groupBy(model.groupers);
   };
 
   render() {
-    const { groupers, columnDefs, addGrouper, removeGrouper } = this.props;
+    const { groupers, columnDefs } = this.props;
 
     const groupableColumnDefs = columnDefs.filter(
       c => !c.hide && c.enableRowGroup,
@@ -42,10 +66,7 @@ export default class Grouper extends Component<any> {
             const { grouperForm: FieldGrouperForm } = field;
 
             return (
-              <div
-                className="list-group-item px-3 px-xl-4"
-                key={grouper.colId.colId}
-              >
+              <div className="list-group-item px-3 px-xl-4" key={grouper.colId}>
                 <div className="form-group mb-0">
                   <label htmlFor="" className="d-flex align-items-center">
                     <FormattedMessage
@@ -63,10 +84,9 @@ export default class Grouper extends Component<any> {
                       className="btn btn-sm p-0 ml-auto d-flex align-items-center"
                       onClick={e => {
                         e.preventDefault();
-                        removeGrouper(grouper);
-                        // setTimeout(() => {
-                        //   (this.form.current as any).submit();
-                        // }, 300);
+                        this.groupBy(
+                          groupers.filter(g => g.colId !== grouper.colId),
+                        );
                       }}
                     >
                       <X size={13} />
@@ -93,12 +113,12 @@ export default class Grouper extends Component<any> {
                     }, 30);
                   }}
                 />
-                <p>Choose agg func for all columns that can be aggregated</p>
+                {/* <p>Choose agg func for all columns that can be aggregated</p>
                 {columnDefs
                   .filter(columnDef => !columnDef.hide && !!columnDef.aggFunc)
                   .map(columnDef => (
-                    <p>{columnDef.headerName}</p>
-                  ))}
+                    <p >{columnDef.headerName}</p>
+                  ))} */}
                 {FieldGrouperForm && (
                   <FieldGrouperForm
                     index={index}
@@ -130,14 +150,7 @@ export default class Grouper extends Component<any> {
               )
             }
             onClick={columnDef => {
-              addGrouper({
-                sort: 'asc',
-                colId: columnDef.colId,
-                index: groupers.length,
-              });
-              setTimeout(() => {
-                (this.form.current as any).submit();
-              }, 300);
+              this.groupBy([...groupers, { colId: columnDef.colId }]);
             }}
             isDefaultOpen={groupers.length === 0}
             columnDefs={groupableColumnDefs.filter(

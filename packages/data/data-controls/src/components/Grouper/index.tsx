@@ -5,9 +5,10 @@ import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
 import DrawerLayout from '../../utils/DrawerLayout';
 import GrouperForm from './form';
+import { GrouperProps } from './types';
 
 export default class Grouper extends Component<
-  any,
+  GrouperProps,
   {
     dialogOpen: boolean;
   }
@@ -59,7 +60,6 @@ export default class Grouper extends Component<
           }}
           origin="right"
           size="medium"
-          isStacked={this.props.isStacked}
         >
           <DrawerLayout
             name={

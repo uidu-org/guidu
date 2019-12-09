@@ -13,7 +13,7 @@ function StringFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
           <Select
             isClearable={false}
             layout="elementOnly"
-            value={filter.type || filters[0].id}
+            defaultValue={filter.type || filters[0].id}
             name={`filters[${index}][type]`}
             options={filters}
             onChange={(name, value) => {
@@ -27,7 +27,7 @@ function StringFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
           <FieldText
             layout="elementOnly"
             name={`filters[${index}][filter]`}
-            value={filter.filter}
+            // value={filter.filter}
             onChange={(name, value) => {
               if (value !== '') {
                 onChange(name, value);

@@ -1,69 +1,15 @@
-import loadable from '@loadable/component';
 import {
-  CalendarToolbar,
   Filterer,
   // Finder,
   Grouper,
   Sorter,
   Viewer,
 } from '@uidu/data-controls';
-import { ShellBodyWithSpinner } from '@uidu/shell';
 import Spinner from '@uidu/spinner';
-import Table from '@uidu/table';
-import moment from 'moment';
 import React, { PureComponent } from 'react';
-import Media from 'react-media';
 import { DataManagerProps } from '../types';
 import { initializeDataView } from '../utils';
-import DataCard from './DataCard';
-
-const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
-const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
-const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
-const LoadableList = (loadable as any).lib(() => import('@uidu/list'));
-
-const Column = React.forwardRef<HTMLDivElement, any>((props, ref) => (
-  <div ref={ref}>
-    <div className="" {...props} />
-  </div>
-));
-
-const ColumnHeader = ({ title, items, ...rest }) => {
-  return (
-    <div
-      className="card-header px-0 bg-transparent border-bottom-0 d-flex align-items-center justify-content-between"
-      {...rest}
-    >
-      <div>
-        <span className="mr-2">{title}</span>
-        {/* <Badge>{items.length}</Badge> */}
-      </div>
-      {/* <div className="btn-group">
-        <button className="btn btn-sm p-2">
-          <Plus size={16} />
-        </button>
-        <button className="btn btn-sm p-2">
-          <MoreHorizontal size={16} />
-        </button>
-      </div> */}
-    </div>
-  );
-};
-
-const Item = ({ item, provided, ...rest }) => {
-  const { history } = item;
-  return (
-    <a
-      // to={item.data.id}
-      onClick={() => history.push(`/apps/calls/proposals/${item.data.id}`)}
-      className="card bg-white mb-2"
-      ref={provided.innerRef}
-      {...rest}
-    >
-      <DataCard item={item} {...rest} />
-    </a>
-  );
-};
+import DataView from './DataView';
 
 const reorder = (list, startIndex, endIndex) => {
   const result = Array.from(list);
@@ -147,8 +93,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     this.gridApi = api;
     this.gridColumnApi = columnApi;
 
-    console.log('onGridReady');
-
     const newState = initializeDataView({
       currentView,
       gridApi: api,
@@ -209,24 +153,81 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       );
   };
 
-  toggleColumn = (name, active) => {
-    this.gridColumnApi.setColumnVisible(name, active);
+  /**
+   *
+   * Column Visibility: Toggler
+   * @memberof DataManager
+   * OnColumnVisible reacts to ag-grid callback, and updates columns state
+   */
+  onColumnVisible = ({ columns, visible }) => {
     this.setState(
-      {
-        columns: this.state.columns.map(column => {
-          if (column.colId === name) {
+      prevState => ({
+        columns: prevState.columns.map(column => {
+          if (columns.map(c => c.colId).includes(column.colId)) {
             return {
               ...column,
-              hide: !active,
+              hide: !visible,
             };
           }
           return column;
         }),
-      },
+      }),
       () => {
         this.resizeTable();
       },
     );
+  };
+
+  /**
+   *
+   * Row Grouping: Sorter
+   * @memberof DataManager
+   * OnSortChanged is called everytime a sort is added or removed
+   */
+  onSortChanged = ({ api }) => {
+    const sorters = api.getSortModel();
+    this.setState(
+      {
+        data: api.getModel().rowsToDisplay,
+        sorters,
+      },
+      () => {
+        api.refreshCells({ force: true });
+      },
+    );
+  };
+
+  /**
+   *
+   * Row Filter: Filterer
+   * @memberof DataManager
+   * OnFilterChanged reacts to ag-grid callback, and updates columns state
+   */
+  onFilterChanged = ({ api, ...rest }) => {
+    const filterModel = api.getFilterModel();
+    this.setState(
+      {
+        data: api.getModel().rowsToDisplay,
+        filterModel,
+      },
+      () => {
+        api.refreshCells({ force: true });
+      },
+    );
+  };
+
+  /**
+   *
+   * Row Grouping: Grouper
+   * @memberof DataManager
+   * OnColumnVisible reacts to ag-grid callback, and updates columns state
+   */
+  onColumnRowGroupChanged = ({ columns }) => {
+    this.setState({
+      groupers: columns.map(c => ({
+        colId: c.colId,
+      })),
+    });
   };
 
   moveColumn = ({ name, oldIndex, newIndex }) => {
@@ -235,156 +236,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     this.setState({
       columns,
     });
-  };
-
-  addGrouper = grouper => {
-    this.gridApi.showLoadingOverlay();
-    // this.gridColumnApi.setColumnVisible(grouper.colId, false);
-    this.setState(
-      prevState => ({
-        groupers: [...prevState.groupers, grouper],
-      }),
-      () => {
-        this.updateRowGrouping();
-      },
-    );
-  };
-
-  removeGrouper = ({ colId }) => {
-    this.gridApi.showLoadingOverlay();
-    this.setState(
-      prevState => ({
-        groupers: prevState.groupers.filter(grouper => grouper.colId !== colId),
-      }),
-      () => {
-        this.updateRowGrouping();
-      },
-    );
-  };
-
-  updateRowGrouping = () => {
-    const { columnDefs } = this.props;
-    const { groupers } = this.state;
-    if (groupers.length > 0) {
-      this.gridColumnApi.setColumnsPinned(
-        columnDefs.filter(c => c.pinned).map(c => c.colId),
-        false,
-      );
-    } else {
-      this.gridColumnApi.setColumnsPinned(
-        columnDefs.filter(c => c.pinned).map(c => c.colId),
-        true,
-      );
-    }
-
-    this.gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
-
-    setTimeout(() => {
-      this.gridApi.refreshCells({ force: true });
-      this.gridApi.hideOverlay();
-    }, 300);
-  };
-
-  addFilter = filter => {
-    this.setState(prevState => ({
-      filterModel: {
-        ...prevState.filterModel,
-        [filter.colId]: {},
-      },
-    }));
-  };
-
-  removeFilter = filter => {
-    this.setState(
-      prevState => ({
-        filterModel: Object.keys(prevState.filterModel).reduce(
-          (object, key) => {
-            if (key !== filter.colId) {
-              object[key] = prevState.filterModel[key];
-            }
-            return object;
-          },
-          {},
-        ),
-      }),
-      () => {
-        this.gridApi.setFilterModel(this.state.filterModel);
-        this.gridApi.onFilterChanged();
-      },
-    );
-  };
-
-  setFilterModel = filters => {
-    this.setState(
-      prevState => ({
-        filterModel: filters.reduce((res, item) => {
-          return {
-            ...res,
-            [item.colId]: {
-              type: 'contains',
-              ...item,
-            },
-          };
-        }, prevState.filterModel),
-      }),
-      () => {
-        this.gridApi.setFilterModel(this.state.filterModel);
-        this.gridApi.onFilterChanged();
-      },
-    );
-  };
-
-  onFilterChanged = ({ api }) => {
-    const filterModel = api.getFilterModel();
-    this.setState(
-      {
-        data: api.getModel().rowsToDisplay,
-        // filterModel,
-      },
-      () => {
-        api.refreshCells({ force: true });
-      },
-    );
-  };
-
-  onSortChanged = ({ api }) => {
-    const sortModel = api.getSortModel();
-    this.setState(
-      {
-        data: api.getModel().rowsToDisplay,
-        sorters: sortModel,
-      },
-      () => {
-        api.refreshCells({ force: true });
-      },
-    );
-  };
-
-  addSorter = sorter => {
-    this.setState(
-      prevState => ({
-        sorters: [...prevState.sorters, sorter],
-      }),
-      () => {
-        this.gridApi.setSortModel(this.state.sorters);
-      },
-    );
-  };
-
-  removeSorter = ({ colId }) => {
-    this.setState(
-      prevState => ({
-        sorters: prevState.sorters.filter(sorter => sorter.colId !== colId),
-      }),
-      () => {
-        this.gridApi.setSortModel(this.state.sorters);
-      },
-    );
-  };
-
-  setSorters = sorters => {
-    // this.setState({ sorters });
-    this.gridApi.setSortModel(sorters);
   };
 
   setSearch = e => {
@@ -405,20 +256,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   setColumnCount = columnCount => {
     this.setState({ columnCount }, () =>
       setTimeout(() => window.dispatchEvent(new Event('resize')), 300),
-    );
-  };
-
-  renderResponsiveView = ({ mobileView, desktopView }) => {
-    return (
-      <Media query={{ maxWidth: 768 }}>
-        {matches => {
-          if (matches) {
-            return mobileView;
-          }
-
-          return desktopView;
-        }}
-      </Media>
     );
   };
 
@@ -472,171 +309,29 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       currentView,
       onFirstDataRendered,
       onAddField,
+      columnDefs,
     } = this.props;
     const { data, columns, rowHeight, columnCount, loaded } = this.state;
-
-    if (!rowData) {
-      return <ShellBodyWithSpinner />;
-    }
-
-    const table = (
-      <Table
-        rowDoubleClicked={() => null}
-        rowSelection="multiple"
-        suppressRowClickSelection
-        {...viewProps.table}
-        // @ts-ignore
-        rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
-        innerRef={this.grid}
+    return (
+      <DataView
         onGridReady={this.onGridReady}
-        onFirstDataRendered={onFirstDataRendered}
-        // use columnDefs from props to avoid flickering on toggling/reordering columns
-        columnDefs={
-          // this.filterVisibleColumnDefs()
-          this.props.columnDefs.filter(
-            column => column.type !== 'cover' && column.type !== 'avatar',
-          )
-        }
-        loadingOverlayComponentFramework={() => <Spinner />}
-        rowData={rowData}
-        onAddField={onAddField}
-        onSortChanged={this.onSortChanged}
         onFilterChanged={this.onFilterChanged}
-        // onColumnVisible={console.log}
-        // onColumnMoved={console.log}
-        onRowClicked={onItemClick}
-        accentedSort
+        onSortChanged={this.onSortChanged}
+        onColumnRowGroupChanged={this.onColumnRowGroupChanged}
+        // props spreading
+        columnDefs={columnDefs}
+        rowData={rowData}
+        onItemClick={onItemClick}
+        currentView={currentView}
+        onFirstDataRendered={onFirstDataRendered}
+        onAddField={onAddField}
+        viewProps={viewProps}
+        data={data}
+        columns={columns}
+        rowHeight={rowHeight}
+        columnCount={columnCount}
       />
     );
-
-    let desktopView = null;
-    let mobileView = null;
-
-    switch (currentView.kind) {
-      case 'calendar':
-        desktopView = mobileView = (
-          <>
-            <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
-              {({ default: Calendar }) => {
-                return (
-                  <Calendar
-                    {...viewProps.calendar}
-                    onItemClick={onItemClick}
-                    events={data.map(datum => datum.data)}
-                    startAccessor={item => moment(item.createdAt).toDate()}
-                    titleAccessor={item => item.email}
-                    endAccessor={item =>
-                      moment(item.createdAt)
-                        .add(3, 'hour')
-                        .toDate()
-                    }
-                    columnDefs={columns}
-                    components={{
-                      toolbar: CalendarToolbar,
-                    }}
-                  />
-                );
-              }}
-            </LoadableCalendar>
-            <div className="d-none">{table}</div>
-          </>
-        );
-        break;
-      case 'board':
-        desktopView = mobileView = (
-          <>
-            <LoadableBoard fallback={<ShellBodyWithSpinner />}>
-              {({ default: Board }) => {
-                return (
-                  <Board
-                    {...viewProps.board}
-                    columnDefs={columns}
-                    initial={rowData.reduce((res, item, index) => {
-                      const key = item[currentView.primaryField];
-                      if (res[key]) {
-                        res[key] = [...res[key], { ...item, content: item.id }];
-                      } else {
-                        res[key] = [{ ...item, content: item.id }];
-                      }
-                      return res;
-                    }, {})}
-                    onItemClick={onItemClick}
-                    components={{
-                      columnContainer: Column,
-                      columnHeader: ColumnHeader,
-                      item: Item,
-                    }}
-                  />
-                );
-              }}
-            </LoadableBoard>
-            <div className="d-none">{table}</div>
-          </>
-        );
-        break;
-      case 'gallery':
-        mobileView = (
-          <>
-            <LoadableList fallback={<ShellBodyWithSpinner />}>
-              {({ default: List }) => (
-                <List
-                  {...viewProps.list}
-                  onItemClick={onItemClick}
-                  rowData={data.map(datum => ({
-                    data: datum.data,
-                  }))}
-                  columnDefs={columns}
-                />
-              )}
-            </LoadableList>
-            <div className="d-none">{table}</div>
-          </>
-        );
-        desktopView = (
-          <>
-            <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-              {({ default: Gallery }) => (
-                <Gallery
-                  {...viewProps.gallery}
-                  columnCount={columnCount}
-                  onItemClick={onItemClick}
-                  rowData={data.map(datum => ({
-                    data: datum.data,
-                  }))}
-                  columnDefs={columns}
-                />
-              )}
-            </LoadableGallery>
-            <div className="d-none">{table}</div>
-          </>
-        );
-        break;
-      default:
-        desktopView = table;
-        mobileView = (
-          <>
-            <LoadableList fallback={<ShellBodyWithSpinner />}>
-              {({ default: List }) => (
-                <List
-                  {...viewProps.list}
-                  onItemClick={onItemClick}
-                  rowData={data.map(datum => ({
-                    data: datum.data,
-                  }))}
-                  columnDefs={columns}
-                />
-              )}
-            </LoadableList>
-            <div className="d-none">{table}</div>
-          </>
-        );
-        break;
-    }
-
-    return this.renderResponsiveView({
-      mobileView,
-      desktopView,
-    });
   };
 
   renderControls = ({ controls }) => {
@@ -659,16 +354,15 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       <>
         {availableControls.viewer.visible && (
           <Viewer
+            gridApi={this.gridApi}
+            gridColumnApi={this.gridColumnApi}
             availableControls={availableControls}
             currentView={currentView}
             updateView={updateView}
             columnDefs={columns.filter(
               column => column.type !== 'cover' && column.type !== 'avatar',
             )}
-            addGrouper={this.addGrouper}
-            removeGrouper={this.removeGrouper}
             groupers={groupers}
-            onToggle={this.toggleColumn}
             onDragEnd={this.moveColumn}
             onResize={this.setRowHeight}
             rowHeight={rowHeight}
@@ -688,24 +382,22 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
             )}
           {availableControls.filterer.visible && (
             <Filterer
+              gridApi={this.gridApi}
+              gridColumnApi={this.gridColumnApi}
               columnDefs={columns.filter(
                 column => column.type !== 'cover' && column.type !== 'avatar',
               )}
-              onChange={this.setFilterModel}
-              addFilter={this.addFilter}
-              removeFilter={this.removeFilter}
               filterModel={filterModel}
               {...availableControls.filterer.props}
             />
           )}
           {availableControls.sorter.visible && (
             <Sorter
+              gridApi={this.gridApi}
+              gridColumnApi={this.gridColumnApi}
               columnDefs={columns.filter(
                 column => column.type !== 'cover' && column.type !== 'avatar',
               )}
-              onChange={this.setSorters}
-              addSorter={this.addSorter}
-              removeSorter={this.removeSorter}
               sorters={sorters}
               {...availableControls.sorter.props}
             />
@@ -713,11 +405,11 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
           {currentView.kind === 'table' &&
             availableControls.grouper.visible && (
               <Grouper
+                gridApi={this.gridApi}
+                gridColumnApi={this.gridColumnApi}
                 columnDefs={columns.filter(
                   column => column.type !== 'cover' && column.type !== 'avatar',
                 )}
-                addGrouper={this.addGrouper}
-                removeGrouper={this.removeGrouper}
                 groupers={groupers}
                 {...availableControls.sorter.props}
               />

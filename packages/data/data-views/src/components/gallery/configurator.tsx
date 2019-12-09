@@ -11,7 +11,7 @@ export default class Configurator extends PureComponent<any> {
     const {
       columnDefs,
       onDragEnd,
-      onToggle,
+      gridColumnApi,
       columnCount,
       onSetColumnCount,
     } = this.props;
@@ -56,7 +56,7 @@ export default class Configurator extends PureComponent<any> {
         <Toggler
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          onToggle={onToggle}
+          gridColumnApi={gridColumnApi}
           {...this.props}
         />
       </>

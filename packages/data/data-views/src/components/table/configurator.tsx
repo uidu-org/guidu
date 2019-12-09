@@ -4,8 +4,7 @@ import { CheckSquare } from 'react-feather';
 
 export default class Configurator extends PureComponent<any> {
   render() {
-    const { onResize, rowHeight, columnDefs, onDragEnd, onToggle } = this.props;
-    console.log(this.props);
+    const { gridColumnApi, columnDefs, onDragEnd } = this.props;
     return (
       <>
         <div className="list-group">
@@ -19,7 +18,7 @@ export default class Configurator extends PureComponent<any> {
         <Toggler
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          onToggle={onToggle}
+          gridColumnApi={gridColumnApi}
           {...this.props}
         />
       </>

@@ -17,7 +17,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
   };
 
   render() {
-    const { onToggle, columnDefs } = this.props;
+    const { columnDefs, gridColumnApi } = this.props;
 
     const cleanedColumnDefs = columnDefs.filter(
       columnDef => !columnDef.lockVisible,
@@ -48,7 +48,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
             className="list-group-item list-group-item-action px-3 px-xl-4 py-2"
             onClick={e => {
               e.preventDefault();
-              onToggle(columnDef.colId, !!columnDef.hide);
+              gridColumnApi.setColumnVisible(columnDef.colId, !!columnDef.hide);
             }}
           >
             <div className="d-flex align-items-center justify-content-between">
