@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.60
+
+### Patch Changes
+
+- fdda7be: Added status bar examplee
+- Updated dependencies [fdda7be]
+  - @uidu/table@0.1.66
+
 ## 0.1.59
 
 ### Patch Changes

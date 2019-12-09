@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.66
+
+### Patch Changes
+
+- fdda7be: Added status bar examplee
+
 ## 0.1.65
 
 ### Patch Changes
