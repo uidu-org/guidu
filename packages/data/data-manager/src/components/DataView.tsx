@@ -127,6 +127,17 @@ export default class DataView extends PureComponent<any> {
         onRowClicked={onItemClick}
         accentedSort
         suppressPropertyNamesCheck
+        statusBar={{
+          statusPanels: [
+            {
+              statusPanel: 'agTotalAndFilteredRowCountComponent',
+              align: 'left',
+            },
+            { statusPanel: 'agFilteredRowCountComponent' },
+            { statusPanel: 'agSelectedRowCountComponent' },
+            { statusPanel: 'agAggregationComponent' },
+          ],
+        }}
       />
     );
 

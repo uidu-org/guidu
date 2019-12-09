@@ -3,6 +3,7 @@ import { CsvExportModule } from '@ag-grid-community/csv-export';
 import { AgGridReact } from '@ag-grid-community/react';
 import { MenuModule } from '@ag-grid-enterprise/menu';
 import { RowGroupingModule } from '@ag-grid-enterprise/row-grouping';
+import { StatusBarModule } from '@ag-grid-enterprise/status-bar';
 import React, { useState } from 'react';
 import CustomHeader from './headers';
 import { getMainMenuItems } from './menu';
@@ -33,6 +34,8 @@ const Table = ({
           RowGroupingModule,
           MenuModule,
           CsvExportModule,
+          // @ts-ignore
+          StatusBarModule,
         ]}
         // ref={innerRef}
         // enterprise features

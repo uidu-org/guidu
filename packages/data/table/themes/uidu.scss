@@ -441,4 +441,13 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   .ag-group-value {
     margin-left: 1rem;
   }
+
+  ////////////////////////////////////////
+  // Status bar
+  ////////////////////////////////////////
+  .ag-status-bar {
+    padding: 0.5rem 1.5rem;
+    border-top: 1px solid $border-color;
+    font-size: 14px;
+  }
 }

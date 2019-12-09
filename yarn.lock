@@ -25,6 +25,11 @@
   resolved "https://registry.yarnpkg.com/@ag-grid-community/core/-/core-22.0.0.tgz#645b7b9c5102db854d66dd1782109075de3526d3"
   integrity sha512-hHwUA2vMGcQWKHVwvu9QwCUPakaJ36fMIXfwnq4ZSNo0IkdpXxgWasfij7SI9povTz0CsrrlL4KGsV4mdOutXw==
 
+"@ag-grid-community/core@~22.1.0":
+  version "22.1.0"
+  resolved "https://registry.yarnpkg.com/@ag-grid-community/core/-/core-22.1.0.tgz#05bdbcfd47620bef7b067830c864c6e6a09e7323"
+  integrity sha512-+00r6I/ZwvFthaTsy8P4taEb1496WR3oZyK7HxeFBLrDD15CBfkGi54qlCesiM9mTQvPILydxhEF0gUXE2Abtw==
+
 "@ag-grid-community/csv-export@22.0.0", "@ag-grid-community/csv-export@~22.0.0":
   version "22.0.0"
   resolved "https://registry.yarnpkg.com/@ag-grid-community/csv-export/-/csv-export-22.0.0.tgz#b8fce62b0af332aa06fb1cfdd996dc773b487c6c"
@@ -103,6 +108,13 @@
   integrity sha512-UUqiq8nQqYnpQz6hgniaridVPWxK5Ygg87p7oojrI7B3bE4w2A9lKHedesaqAAb6EIfjKofEAdKSjtPtaypgNw==
   dependencies:
     "@ag-grid-community/core" "~22.0.0"
+
+"@ag-grid-enterprise/core@~22.1.0":
+  version "22.1.0"
+  resolved "https://registry.yarnpkg.com/@ag-grid-enterprise/core/-/core-22.1.0.tgz#3779177dc9812ca659df4edd612371fa2a9875fa"
+  integrity sha512-+Wd1cIXhAvy+JuJ+iX4hZ2erxPc8Q8xMgktS3pzHdIW5PXC3gu3jmziwlLGPoe+u2NDqIBBPbAX53AR0lC2fqQ==
+  dependencies:
+    "@ag-grid-community/core" "~22.1.0"
 
 "@ag-grid-enterprise/excel-export@~22.0.0":
   version "22.0.0"
@@ -185,6 +197,14 @@
   dependencies:
     "@ag-grid-community/core" "~22.0.0"
     "@ag-grid-enterprise/core" "~22.0.0"
+
+"@ag-grid-enterprise/status-bar@^22.1.0":
+  version "22.1.0"
+  resolved "https://registry.yarnpkg.com/@ag-grid-enterprise/status-bar/-/status-bar-22.1.0.tgz#96f2e0dc4171c7e0acbedfa9782d19f3c7690ae5"
+  integrity sha512-/QtKUVjQDgYoKfGXeQUq3qweAnz9wbdw2bNN+a0z7yl2VUc3Dbo8PDAGDp7bURPf3M+CntMWMtvd9Hm0+ob85Q==
+  dependencies:
+    "@ag-grid-community/core" "~22.1.0"
+    "@ag-grid-enterprise/core" "~22.1.0"
 
 "@ag-grid-enterprise/status-bar@~22.0.0":
   version "22.0.0"
@@ -14187,7 +14207,7 @@ meow@^5.0.0:
     trim-newlines "^2.0.0"
     yargs-parser "^10.0.0"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
