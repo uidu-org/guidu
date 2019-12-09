@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.5
+
+### Patch Changes
+
+- 7c2dd76: Fix missing default actions for NavigationSubItems
+
 ## 0.2.4
 
 ### Patch Changes
