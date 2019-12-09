@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.1.22
+
+### Patch Changes
+
+- 0a30009: Updated ag-grid, footer agg and range selection
+
 ## 0.1.21
 
 ### Patch Changes
