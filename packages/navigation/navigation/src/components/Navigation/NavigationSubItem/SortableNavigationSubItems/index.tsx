@@ -2,6 +2,7 @@ import React from 'react';
 import AnimateHeight from 'react-animate-height';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import NavigationSubItem from '..';
+import NavigationItemSkeleton from '../../NavigationItemSkeleton';
 
 const getItemStyle = (isDragging, draggableStyle) => ({
   borderRadius: '0.25rem',
@@ -38,7 +39,11 @@ export default function SortableNavigationSubItems({
                         provided.draggableProps.style,
                       )}
                     >
-                      <NavigationSubItem {...item} visible />
+                      {item.type === 'NavigationItemSkeleton' ? (
+                        <NavigationItemSkeleton {...item} />
+                      ) : (
+                        <NavigationSubItem {...item} visible />
+                      )}
                     </div>
                   )}
                 </Draggable>

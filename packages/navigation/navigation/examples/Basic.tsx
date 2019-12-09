@@ -17,210 +17,38 @@ import {
 } from 'react-feather';
 import Navigation, { NavigationItem } from '../src';
 
-const schema = [
-  {
-    type: 'NavigationHeader',
-    text: 'Team',
-    before: <Avatar borderColor="transparent" />,
-  },
-  {
-    type: 'NavigationSection',
-    items: [
-      {
-        type: 'NavigationGroup',
-        items: [
-          {
-            path: `/`,
-            text: 'Riepilogo',
-            type: 'NavigationItem',
-          },
-          {
-            path: `/orders`,
-            text: 'Ordini',
-            type: 'NavigationItem',
-            isSortable: true,
-            onSort: console.log,
-            isOpen: true,
-            actions: [
-              {
-                icon: <MoreHorizontal size={14} />,
-                actions: [
-                  {
-                    text: 'test2',
-                    actions: [
-                      {
-                        text: 'test2',
-                        onClick: () => window.alert('clicked on dropdown'),
-                        icon: <PlusSquare size={14} color="red" />,
-                      },
-                      {
-                        text: 'test',
-                        onClick: () => window.alert('clicked on dropdown'),
-                        icon: <PlusSquare size={14} color="blue" />,
-                      },
-                      {
-                        text: 'test',
-                        onClick: () => window.alert('clicked on dropdown'),
-                        icon: <PlusSquare size={14} color="green" />,
-                      },
-                    ],
-                  },
-                  {
-                    text: 'test',
-                    onClick: () => window.alert('clicked on dropdown'),
-                  },
-                  {
-                    text: 'test',
-                    onClick: () => window.alert('clicked on dropdown'),
-                  },
-                ],
-              },
-              {
-                icon: <PlusCircle size={14} />,
-                tooltip: 'Create a campaign',
-                onClick: () => window.alert('clicked on plus button'),
-              },
-            ],
-            items: [
-              {
-                id: '0',
-                path: `/orders/done`,
-                text: 'Effettuati',
-              },
-              {
-                id: '1',
-                path: `/orders/todo`,
-                text: 'Inevasi',
-              },
-              {
-                id: '2',
-                path: `/orders/sent`,
-                text: 'Completati',
-              },
-            ],
-          },
-          {
-            path: `/attendances`,
-            text: 'Partecipanti',
-            type: 'NavigationItem',
-          },
-          {
-            path: `/messages`,
-            text: 'Messaggi agli iscritti',
-            type: 'NavigationItem',
-          },
-        ],
-      },
-      {
-        type: 'NavigationGroup',
-        heading: 'Teams',
-        items: [
-          {
-            path: `/`,
-            type: 'NavigationItem',
-            text: '#general',
-            before: (
-              <div
-                style={{
-                  width: '18px',
-                  height: '18px',
-                  backgroundColor: 'cadetblue',
-                  borderRadius: '100%',
-                }}
-              />
-            ),
-            after: <Badge max={10}>{20}</Badge>,
-          },
-          {
-            path: `/`,
-            type: 'NavigationItem',
-            before: (
-              <div
-                style={{
-                  width: '18px',
-                  height: '18px',
-                  backgroundColor: 'cadetblue',
-                  borderRadius: '100%',
-                }}
-              />
-            ),
-            text: '#marketing',
-          },
-          {
-            path: `/`,
-            type: 'NavigationItem',
-            before: (
-              <div
-                style={{
-                  width: '18px',
-                  height: '18px',
-                  backgroundColor: 'cadetblue',
-                  borderRadius: '100%',
-                }}
-              />
-            ),
-            text: '#dev',
-          },
-          {
-            type: 'InlineComponent',
-            component: () => (
-              <NavigationItem
-                className="text-center"
-                text={<MoreHorizontal />}
-                onClick={console.log}
-              />
-            ),
-          },
-        ],
-      },
-      {
-        type: 'NavigationGroup',
-        before: <Activity size={14} />,
-        text: 'Browse',
-        heading: 'Browse',
-        items: [
-          {
-            path: `/`,
-            type: 'NavigationItem',
-            before: (
-              <Avatar
-                size="xsmall"
-                // src={contact.avatar.thumb}
-                // name={contact.name}
-                name="test with tooltip"
-              />
-            ),
-            text: '#dev',
-          },
-          {
-            type: 'NavigationItem',
-            before: <Settings size={18} />,
-            text: 'Ordini',
-          },
-          {
-            path: `/attendances`,
-            type: 'NavigationItem',
-            text: 'Ordini',
-            after: <Lozenge>Closed</Lozenge>,
-          },
-          {
-            path: `/messages`,
-            type: 'NavigationItem',
-            text: 'Messaggi agli iscritti',
-          },
-        ],
-      },
-    ],
-  },
-];
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
 
 export default class Basic extends Component<any, { isCollapsed: boolean }> {
   state = {
     isCollapsed: false,
+    items: [
+      {
+        id: '0',
+        path: `/orders/done`,
+        text: 'Effettuati',
+      },
+      {
+        id: '1',
+        path: `/orders/todo`,
+        text: 'Inevasi',
+      },
+      {
+        id: '2',
+        path: `/orders/sent`,
+        text: 'Completati',
+      },
+    ],
   };
 
   render() {
-    const { isCollapsed } = this.state;
+    const { isCollapsed, items } = this.state;
     return (
       <Shell>
         <ShellContent>
@@ -233,7 +61,214 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
                 : { width: '20%', minWidth: '17rem' }),
             }}
           >
-            <Navigation schema={schema} />
+            <Navigation
+              schema={[
+                {
+                  type: 'NavigationHeader',
+                  text: 'Team',
+                  before: <Avatar borderColor="transparent" />,
+                },
+                {
+                  type: 'NavigationSection',
+                  items: [
+                    {
+                      type: 'NavigationGroup',
+                      items: [
+                        {
+                          path: `/`,
+                          text: 'Riepilogo',
+                          type: 'NavigationItem',
+                        },
+                        {
+                          path: `/orders`,
+                          text: 'Ordini',
+                          type: 'NavigationItem',
+                          isSortable: true,
+                          onDragEnd: result => {
+                            if (!result.destination) {
+                              return;
+                            }
+
+                            const reorderedItems = reorder(
+                              items,
+                              result.source.index,
+                              result.destination.index,
+                            );
+
+                            this.setState({
+                              items: reorderedItems,
+                            });
+                          },
+                          isOpen: true,
+                          actions: [
+                            {
+                              icon: <MoreHorizontal size={14} />,
+                              actions: [
+                                {
+                                  text: 'test2',
+                                  actions: [
+                                    {
+                                      text: 'test2',
+                                      onClick: () =>
+                                        window.alert('clicked on dropdown'),
+                                      icon: (
+                                        <PlusSquare size={14} color="red" />
+                                      ),
+                                    },
+                                    {
+                                      text: 'test',
+                                      onClick: () =>
+                                        window.alert('clicked on dropdown'),
+                                      icon: (
+                                        <PlusSquare size={14} color="blue" />
+                                      ),
+                                    },
+                                    {
+                                      text: 'test',
+                                      onClick: () =>
+                                        window.alert('clicked on dropdown'),
+                                      icon: (
+                                        <PlusSquare size={14} color="green" />
+                                      ),
+                                    },
+                                  ],
+                                },
+                                {
+                                  text: 'test',
+                                  onClick: () =>
+                                    window.alert('clicked on dropdown'),
+                                },
+                                {
+                                  text: 'test',
+                                  onClick: () =>
+                                    window.alert('clicked on dropdown'),
+                                },
+                              ],
+                            },
+                            {
+                              icon: <PlusCircle size={14} />,
+                              tooltip: 'Create a campaign',
+                              onClick: () =>
+                                window.alert('clicked on plus button'),
+                            },
+                          ],
+                          items: items,
+                        },
+                        {
+                          path: `/attendances`,
+                          text: 'Partecipanti',
+                          type: 'NavigationItem',
+                        },
+                        {
+                          path: `/messages`,
+                          text: 'Messaggi agli iscritti',
+                          type: 'NavigationItem',
+                        },
+                      ],
+                    },
+                    {
+                      type: 'NavigationGroup',
+                      heading: 'Teams',
+                      items: [
+                        {
+                          path: `/`,
+                          type: 'NavigationItem',
+                          text: '#general',
+                          before: (
+                            <div
+                              style={{
+                                width: '18px',
+                                height: '18px',
+                                backgroundColor: 'cadetblue',
+                                borderRadius: '100%',
+                              }}
+                            />
+                          ),
+                          after: <Badge max={10}>{20}</Badge>,
+                        },
+                        {
+                          path: `/`,
+                          type: 'NavigationItem',
+                          before: (
+                            <div
+                              style={{
+                                width: '18px',
+                                height: '18px',
+                                backgroundColor: 'cadetblue',
+                                borderRadius: '100%',
+                              }}
+                            />
+                          ),
+                          text: '#marketing',
+                        },
+                        {
+                          path: `/`,
+                          type: 'NavigationItem',
+                          before: (
+                            <div
+                              style={{
+                                width: '18px',
+                                height: '18px',
+                                backgroundColor: 'cadetblue',
+                                borderRadius: '100%',
+                              }}
+                            />
+                          ),
+                          text: '#dev',
+                        },
+                        {
+                          type: 'InlineComponent',
+                          component: () => (
+                            <NavigationItem
+                              className="text-center"
+                              text={<MoreHorizontal />}
+                              onClick={console.log}
+                            />
+                          ),
+                        },
+                      ],
+                    },
+                    {
+                      type: 'NavigationGroup',
+                      before: <Activity size={14} />,
+                      text: 'Browse',
+                      heading: 'Browse',
+                      items: [
+                        {
+                          path: `/`,
+                          type: 'NavigationItem',
+                          before: (
+                            <Avatar
+                              size="xsmall"
+                              // src={contact.avatar.thumb}
+                              // name={contact.name}
+                              name="test with tooltip"
+                            />
+                          ),
+                          text: '#dev',
+                        },
+                        {
+                          type: 'NavigationItem',
+                          before: <Settings size={18} />,
+                          text: 'Ordini',
+                        },
+                        {
+                          path: `/attendances`,
+                          type: 'NavigationItem',
+                          text: 'Ordini',
+                          after: <Lozenge>Closed</Lozenge>,
+                        },
+                        {
+                          path: `/messages`,
+                          type: 'NavigationItem',
+                          text: 'Messaggi agli iscritti',
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ]}
+            />
             <ShellResizer
               isCollapsed={isCollapsed}
               onClick={() => {

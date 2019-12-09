@@ -21,7 +21,7 @@ export default class NavigationGroup extends PureComponent<any> {
     } = this.props;
     let className = 'nav flex-column';
     if (withMargin) {
-      className += ' mb-4';
+      className += ' mb-3';
     }
     if (withPadding) {
       className += ' px-3';

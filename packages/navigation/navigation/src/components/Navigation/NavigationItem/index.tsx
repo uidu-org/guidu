@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import styled from 'styled-components';
-import { NavigationSubItem } from '../..';
+import { NavigationItemSkeleton, NavigationSubItem } from '../..';
 import {
   StyledNavigationAfter,
   StyledNavigationBefore,
@@ -44,26 +44,6 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   }
 `;
 
-const getItemStyle = (isDragging, draggableStyle) => ({
-  borderRadius: '0.25rem',
-  // some basic styles to make the items look a bit nicer
-  userSelect: 'none',
-
-  // change background colour if dragging
-  background: isDragging ? 'rgba(76,86,106,0.125)' : '',
-
-  // styles we need to apply on draggables
-  ...draggableStyle,
-});
-
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
-
 export default function NavigationItem({
   text,
   before = null,
@@ -72,36 +52,17 @@ export default function NavigationItem({
   items = [],
   isSortable = false,
   isOpen: isDefaultOpen = false,
+  onDragEnd,
   ...otherProps
 }) {
   const [isOpen, setIsOpen] = useState(isDefaultOpen);
   const [isActionOpen, setIsActionOpen] = useState(false);
-  const [orderedItems, setItems] = useState(items);
-
-  useEffect(() => {
-    setItems(items);
-  }, items);
-
-  const onDragEnd = result => {
-    // dropped outside the list
-    if (!result.destination) {
-      return;
-    }
-
-    const items = reorder(
-      orderedItems,
-      result.source.index,
-      result.destination.index,
-    );
-
-    setItems(items);
-  };
 
   const renderSubItems = () => {
     if (isSortable) {
       return (
         <SortableNavigationSubItems
-          orderedItems={orderedItems}
+          orderedItems={items}
           onDragEnd={onDragEnd}
           isOpen={isOpen}
         />
@@ -110,9 +71,13 @@ export default function NavigationItem({
 
     return (
       <AnimateHeight height={isOpen ? 'auto' : 0}>
-        {orderedItems.map(item => (
-          <NavigationSubItem {...item} visible />
-        ))}
+        {items.map(item =>
+          item.type === 'NavigationItemSkeleton' ? (
+            <NavigationItemSkeleton {...item} visible />
+          ) : (
+            <NavigationSubItem {...item} visible />
+          ),
+        )}
       </AnimateHeight>
     );
   };
@@ -121,7 +86,7 @@ export default function NavigationItem({
     <>
       <StyledNavigationItem>
         <StyledNavigationLink
-          {...(orderedItems.length > 0
+          {...(items.length > 0
             ? {
                 onClick: e => {
                   setIsOpen(!isOpen);
@@ -148,7 +113,7 @@ export default function NavigationItem({
           {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
         </StyledNavigationLink>
       </StyledNavigationItem>
-      {orderedItems.length > 0 && renderSubItems()}
+      {items.length > 0 && renderSubItems()}
     </>
   );
 }
