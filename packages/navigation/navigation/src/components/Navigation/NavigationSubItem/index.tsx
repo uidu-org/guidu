@@ -1,5 +1,5 @@
 import { lighten } from 'polished';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   StyledNavigationAfter,
@@ -7,6 +7,13 @@ import {
   StyledNavigationItem,
   StyledNavigationText,
 } from '../../../styled';
+import NavigationActions from '../NavigationActions';
+
+const StyledNavigationActions = styled.div<{ isActionOpen: boolean }>`
+  position: absolute;
+  right: 0.25rem;
+  display: ${({ isActionOpen }) => (isActionOpen ? 'flex' : 'none')};
+`;
 
 const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   className: `nav-link${className ? ` ${className}` : ''}`,
@@ -21,6 +28,7 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   padding-bottom: 0.3rem;
   padding-left: 1.25rem;
   font-size: 0.935rem;
+  position: relative;
 
   &:hover,
   &.active {
@@ -28,30 +36,46 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
     color: #4c566a;
     transition: background-color linear 300ms;
   }
+
+  &:hover ${StyledNavigationActions} {
+    display: flex;
+  }
 `;
 
-export default class NavigationSubItem extends PureComponent<any> {
-  static defaultProps = {
-    before: null,
-    after: null,
-  };
+export default function NavigationSubItem({
+  text,
+  before,
+  after,
+  visible,
+  actions,
+  ...rest
+}) {
+  const [isActionOpen, setIsActionOpen] = useState(false);
 
-  render() {
-    const { text, before, after, visible, ...otherProps } = this.props;
-
-    if (visible) {
-      return (
-        <StyledNavigationItem>
-          <StyledNavigationLink {...otherProps}>
-            {!!before && (
-              <StyledNavigationBefore>{before}</StyledNavigationBefore>
-            )}
-            <StyledNavigationText>{text}</StyledNavigationText>
-            {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
-          </StyledNavigationLink>
-        </StyledNavigationItem>
-      );
-    }
-    return null;
+  if (visible) {
+    return (
+      <StyledNavigationItem>
+        <StyledNavigationLink {...rest}>
+          {!!before && (
+            <StyledNavigationBefore>{before}</StyledNavigationBefore>
+          )}
+          <StyledNavigationText>{text}</StyledNavigationText>
+          {actions.length > 0 && (
+            <StyledNavigationActions
+              onClick={e => e.stopPropagation()}
+              isActionOpen={isActionOpen}
+            >
+              <NavigationActions
+                actions={actions}
+                onToggle={({ isOpen }) => setIsActionOpen(isOpen)}
+                isCollapsed
+              />
+            </StyledNavigationActions>
+          )}
+          {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
+        </StyledNavigationLink>
+      </StyledNavigationItem>
+    );
   }
+  return null;
 }

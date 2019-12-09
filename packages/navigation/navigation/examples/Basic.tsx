@@ -33,16 +33,19 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
         id: '0',
         path: `/orders/done`,
         text: 'Effettuati',
+        actions: [{ text: 'More', icon: <MoreHorizontal size={14} /> }],
       },
       {
         id: '1',
         path: `/orders/todo`,
         text: 'Inevasi',
+        actions: [{ text: 'More', icon: <MoreHorizontal size={14} /> }],
       },
       {
         id: '2',
         path: `/orders/sent`,
         text: 'Completati',
+        actions: [{ text: 'More', icon: <MoreHorizontal size={14} /> }],
       },
     ],
   };
