@@ -83,7 +83,7 @@ $row-height: 40px;
 $row-border-width: 1px;
 $hover-color: cornsilk;
 
-@import '@ag-grid-enterprise/all-modules/dist/styles/ag-grid.scss';
+@import '@ag-grid-community/core/dist/styles/ag-grid.scss';
 
 $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
@@ -295,6 +295,7 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
 
   .ag-cell-focus {
     border-color: $primary;
+    outline: none;
   }
 
   .ag-cell-inline-editing {
