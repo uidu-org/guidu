@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.57
+
+### Patch Changes
+
+- 1f5f02d: WIP #58, reorder is missing only
+- Updated dependencies [1f5f02d]
+  - @uidu/data-controls@0.2.18
+  - @uidu/data-views@0.1.10
+  - @uidu/table@0.1.64
+
 ## 0.1.56
 
 ### Patch Changes
