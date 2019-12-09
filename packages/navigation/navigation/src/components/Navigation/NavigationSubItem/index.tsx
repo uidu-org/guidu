@@ -12,7 +12,9 @@ import NavigationActions from '../NavigationActions';
 const StyledNavigationActions = styled.div<{ isActionOpen: boolean }>`
   position: absolute;
   right: 0.25rem;
-  display: ${({ isActionOpen }) => (isActionOpen ? 'flex' : 'none')};
+  display: flex;
+  transition: opacity linear 300ms;
+  opacity: ${({ isActionOpen }) => (isActionOpen ? 1 : 0)};
 `;
 
 const StyledNavigationLink = styled.a.attrs(({ className }) => ({
@@ -38,7 +40,8 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   }
 
   &:hover ${StyledNavigationActions} {
-    display: flex;
+    transition: opacity linear 300ms;
+    opacity: 1;
   }
 `;
 
