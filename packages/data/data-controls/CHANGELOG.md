@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.2.21
+
+### Patch Changes
+
+- 22647d3: FIX #64
+- Updated dependencies [22647d3]
+  - @uidu/data-views@0.1.12
+  - @uidu/table@0.1.73
+
 ## 0.2.20
 
 ### Patch Changes

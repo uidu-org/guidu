@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.73
+
+### Patch Changes
+
+- 22647d3: FIX #64
+- Updated dependencies [22647d3]
+  - @uidu/data-controls@0.2.21
+
 ## 0.1.72
 
 ### Patch Changes
