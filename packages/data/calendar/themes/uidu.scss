@@ -1,14 +1,13 @@
-$font-family: 'Avenir'; // $font-family-sans-serif;
-$font-size: 1rem; // $font-size-base;
-$secondary-font-size: 14px; // $font-size-base;
-$foreground-color: 'inherit'; // $body-color;
-$border-color: #f1f3f5; // $border-color;
-$odd-row-background-color: 'inherit'; // $white;
-$light: #f3f3f3;
-$highlight-color: yellow;
-$white: #fff;
-$text-muted: lightgray;
-$primary: red;
+$font-family: 'Avenir' !default; // $font-family-sans-serif;
+$font-size: 1rem !default; // $font-size-base;
+$secondary-font-size: 14px !default; // $font-size-base;
+$foreground-color: 'inherit' !default; // $body-color;
+$border-color: #f2f2f3 !default; // $border-color;
+$light: #f8f9fa !default;
+$highlight-color: rgba(245, 255, 93, 0.09) !default;
+$white: #fff !default;
+$text-muted: #6a758a !default;
+$primary: #ec8447 !default;
 
 // @import '~react-big-calendar/lib/sass/styles';
 
