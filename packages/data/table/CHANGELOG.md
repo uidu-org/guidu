@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.72
+
+### Patch Changes
+
+- dee493e: Export group renderer from table
+
 ## 0.1.71
 
 ### Patch Changes
