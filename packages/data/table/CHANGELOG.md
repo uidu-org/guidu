@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.70
+
+### Patch Changes
+
+- 007afff: Fix line-height accounting for border
+
 ## 0.1.69
 
 ### Patch Changes
