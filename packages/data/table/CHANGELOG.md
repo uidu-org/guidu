@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.69
+
+### Patch Changes
+
+- bec601f: FIX #63
+
 ## 0.1.68
 
 ### Patch Changes
