@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.27
+
+### Patch Changes
+
+- fec538e: WIP #61
+
 ## 0.1.26
 
 ### Patch Changes
