@@ -4,4 +4,7 @@ export type GalleryProps = {
   columnDefs: Array<any>;
   gutterSize: number;
   onItemClick?: (item) => void;
+  sorters?: Array<any>;
+  groupers?: Array<any>;
+  filterModel?: any;
 };

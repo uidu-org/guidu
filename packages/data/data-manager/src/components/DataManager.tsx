@@ -79,11 +79,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       filterModel: props.currentView.filterModel || {},
       groupers: props.currentView.groupers || [],
       rowHeight: 64,
-      columnCount: 3,
+      columnCount: props.currentView.columCount || 5,
     };
   }
 
-  private grid = React.createRef();
   private gridApi = null;
   private gridColumnApi = null;
 
@@ -326,9 +325,22 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       onAddField,
       columnDefs,
     } = this.props;
-    const { data, columns, rowHeight, columnCount, loaded } = this.state;
+    const {
+      data,
+      columns,
+      rowHeight,
+      columnCount,
+      groupers,
+      sorters,
+      filterModel,
+    } = this.state;
     return (
       <DataView
+        // this.state
+        groupers={groupers}
+        sorters={sorters}
+        filterModel={filterModel}
+        // methods
         onGridReady={this.onGridReady}
         onFilterChanged={this.onFilterChanged}
         onSortChanged={this.onSortChanged}

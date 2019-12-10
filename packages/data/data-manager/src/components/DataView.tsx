@@ -96,10 +96,12 @@ export default class DataView extends PureComponent<any> {
       onColumnVisible,
       onColumnRowGroupChanged,
       onColumnMoved,
+      sorters,
+      groupers,
+      filterModel,
     } = this.props;
 
-    console.log(columnDefs);
-    console.log(columns);
+    console.log(columnCount);
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
@@ -237,6 +239,9 @@ export default class DataView extends PureComponent<any> {
                     data: datum.data,
                   }))}
                   columnDefs={columns}
+                  sorters={sorters}
+                  groupers={groupers}
+                  filterModel={filterModel}
                 />
               )}
             </LoadableGallery>

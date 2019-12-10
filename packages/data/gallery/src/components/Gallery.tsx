@@ -6,7 +6,7 @@ import { FixedSizeGrid as Grid } from 'react-window';
 import { GalleryProps } from '../types';
 import Item from './Item';
 
-const ITEM_HEADER_HEIGHT = 58;
+const ITEM_HEADER_HEIGHT = 42;
 const ITEM_COLUMN_ROW = 56;
 const ITEM_PADDING = 32;
 
@@ -20,6 +20,9 @@ const createItemData = memoize(
     primary,
     cover,
     avatar,
+    sorters,
+    groupers,
+    filterModel,
   ) => ({
     items,
     columnDefs,
@@ -29,6 +32,9 @@ const createItemData = memoize(
     primary,
     cover,
     avatar,
+    sorters,
+    groupers,
+    filterModel,
   }),
 );
 
@@ -67,6 +73,9 @@ export default class Gallery extends PureComponent<GalleryProps> {
       columnCount,
       gutterSize,
       onItemClick,
+      sorters,
+      groupers,
+      filterModel,
     } = this.props;
 
     const visibleColumnDefs = columnDefs.filter(
@@ -90,40 +99,51 @@ export default class Gallery extends PureComponent<GalleryProps> {
       primary,
       cover,
       avatar,
+      sorters,
+      groupers,
+      filterModel,
     );
 
     return (
-      <AutoSizer>
-        {({ height, width }) => {
-          const columnWidth = width / columnCount;
-          return (
-            <Grid
-              useIsScrolling
-              columnCount={columnCount}
-              columnWidth={columnWidth}
-              height={height}
-              itemData={itemData}
-              rowCount={items.length}
-              rowHeight={
-                this.getGutterSize({ avatar, cover }) +
-                ITEM_HEADER_HEIGHT +
-                ITEM_COLUMN_ROW *
-                  visibleColumnDefs.filter(
-                    column =>
-                      column.viewType !== 'cover' &&
-                      column.viewType !== 'primary' &&
-                      column.viewType !== 'avatar',
-                  ).length +
-                ITEM_PADDING +
-                gutterSize
-              }
-              width={width}
-            >
-              {Item}
-            </Grid>
-          );
+      <div
+        style={{
+          paddingLeft: gutterSize / 2,
+          paddingRight: gutterSize / 2,
+          height: '100%',
         }}
-      </AutoSizer>
+      >
+        <AutoSizer>
+          {({ height, width }) => {
+            const columnWidth = width / columnCount;
+            return (
+              <Grid
+                useIsScrolling
+                columnCount={columnCount}
+                columnWidth={columnWidth}
+                height={height}
+                itemData={itemData}
+                rowCount={items.length}
+                rowHeight={
+                  this.getGutterSize({ avatar, cover }) +
+                  ITEM_HEADER_HEIGHT +
+                  ITEM_COLUMN_ROW *
+                    visibleColumnDefs.filter(
+                      column =>
+                        column.viewType !== 'cover' &&
+                        column.viewType !== 'primary' &&
+                        column.viewType !== 'avatar',
+                    ).length +
+                  ITEM_PADDING +
+                  gutterSize
+                }
+                width={width}
+              >
+                {Item}
+              </Grid>
+            );
+          }}
+        </AutoSizer>
+      </div>
     );
   }
 }

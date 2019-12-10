@@ -84,6 +84,21 @@ const dataViews = [
     sorters: [{ colId: 'amount', sort: 'desc' }],
   },
   {
+    id: 3,
+    name: 'Galleria contatti',
+    kind: 'gallery',
+    fields: ['avatar', 'member', 'amount'],
+    sorters: [{ colId: 'amount', sort: 'desc' }],
+  },
+  {
+    id: 17,
+    name: 'Galleria contatti x5',
+    columnCount: 5,
+    kind: 'gallery',
+    fields: ['member', 'amount'],
+    sorters: [{ colId: 'amount', sort: 'desc' }],
+  },
+  {
     id: 4,
     name: 'Calendario contatti',
     kind: 'calendar',
@@ -118,7 +133,7 @@ export default class Basic extends Component<any, any> {
     super(props);
     this.state = {
       dataViews,
-      currentView: dataViews[0],
+      currentView: dataViews[3],
       loaded: false,
       rendered: false,
     };
@@ -281,7 +296,6 @@ export default class Basic extends Component<any, any> {
                               viewProps: {
                                 gallery: {
                                   gutterSize: 24,
-                                  columnCount: 4,
                                 },
                                 list: {
                                   rowHeight: 128,
