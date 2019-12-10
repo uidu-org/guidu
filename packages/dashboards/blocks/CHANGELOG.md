@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.1.23
+
+### Patch Changes
+
+- 4423590: FIX react-countup dependencies
+
 ## 0.1.22
 
 ### Patch Changes
