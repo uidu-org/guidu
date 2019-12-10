@@ -65,7 +65,8 @@ const Table = ({
           cellStyle: params => {
             return {
               ...columnDef.cellStyle,
-              lineHeight: `${rowHeight}px`,
+              // account for borders
+              lineHeight: `${rowHeight - 2}px`,
             };
           },
           cellClassRules: {
