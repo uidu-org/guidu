@@ -6,7 +6,7 @@ const prettierTsRules = require('eslint-config-prettier/@typescript-eslint')
 module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
   parser: 'babel-eslint',
-  plugins: ['flowtype', 'jest', 'prettier', 'react-hooks', '@wordpress'],
+  plugins: ['flowtype', 'jest', 'prettier', 'react-hooks'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
@@ -80,25 +80,25 @@ module.exports = {
 
     'react/no-multi-comp': [1, { ignoreStateless: false }],
     'react/forbid-prop-types': [
-      'on',
+      1,
       {
         forbid: ['any', 'array'],
         checkContextTypes: true,
         checkChildContextTypes: true,
       },
     ],
-    'react/prop-types': ['error', { ignore: ['children'] }],
+    'react/prop-types': [2, { ignore: ['children'] }],
 
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error',
+    'react-hooks/rules-of-hooks': 2,
+    'react-hooks/exhaustive-deps': 2,
 
-    eqeqeq: ['error', 'always', { null: 'ignore' }],
-    'no-console': 'error',
-    'no-restricted-globals': ['error', 'event', 'fdescribe'],
+    eqeqeq: [2, 'always', { null: 'ignore' }],
+    'no-console': 2,
+    'no-restricted-globals': [2, 'event', 'fdescribe'],
 
-    'jest/no-focused-tests': 'error',
-    'jest/no-identical-title': 'error',
-    'jest/valid-expect': 'error',
+    'jest/no-focused-tests': 2,
+    'jest/no-identical-title': 2,
+    'jest/valid-expect': 2,
   },
   env: {
     browser: true,

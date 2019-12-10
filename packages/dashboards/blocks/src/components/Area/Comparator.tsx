@@ -1,5 +1,5 @@
 import React from 'react';
-import { CountUp } from 'react-countup';
+import CountUp from 'react-countup';
 import { format, manipulator } from '../../utils';
 
 export default function Comparator({ comparatorData, currentValue, area }) {
@@ -21,7 +21,7 @@ export default function Comparator({ comparatorData, currentValue, area }) {
                 end={difference}
                 decimals={3}
                 suffix="%"
-                formattingFn={value => format(value, 'percent')}
+                formattingFn={(value: any) => format(value, 'percent')}
               />
             </h6>
           ) : (
@@ -34,7 +34,7 @@ export default function Comparator({ comparatorData, currentValue, area }) {
               start={0}
               end={previousValue}
               decimals={2}
-              formattingFn={value => format(value, area.formatter)}
+              formattingFn={(value: any) => format(value, area.formatter)}
             />
           </h6>
         </div>
