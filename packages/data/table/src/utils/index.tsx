@@ -12,7 +12,6 @@ import {
   coverColumn,
   currencyColumn,
   dateColumn,
-  defaultColumn,
   emailColumn,
   linkRecordColumn,
   memberColumn,
@@ -99,7 +98,6 @@ export const buildColumn = ({
   ...column
 }: Column) => {
   return {
-    ...defaultColumn(),
     ...(dataField
       ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
       : {}),
@@ -190,12 +188,4 @@ export const numericComparator = (number1, number2) => {
 export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
   columnDefs.filter(c => c.colId === filterOrGrouperOrSorter.colId)[0];
 
-export const extractColumnType = type => {
-  if (Array.isArray(type)) {
-    return type[type.length - 1];
-  }
-  return type;
-};
-
-export const getFieldFromColumnDef = columnDef =>
-  byName[extractColumnType(columnDef.type)];
+export const getFieldFromColumnDef = columnDef => byName[columnDef.viewType];

@@ -4,6 +4,7 @@ import Renderer from './renderer';
 
 export default field => ({
   type: contactField.kind,
+  viewType: contactField.kind,
   cellRenderer: Renderer,
   cellRendererParams: field,
   cellEditorFramework: Editor,

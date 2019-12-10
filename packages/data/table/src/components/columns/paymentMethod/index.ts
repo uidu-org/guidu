@@ -3,6 +3,7 @@ import Renderer from './renderer';
 
 export default field => ({
   type: paymentMethodField.kind,
+  viewType: paymentMethodField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: {
     menuIcon: paymentMethodField.icon,

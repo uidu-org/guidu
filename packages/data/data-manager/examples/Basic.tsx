@@ -168,15 +168,16 @@ export default class Basic extends Component<any, any> {
   };
 
   render() {
-    const { loaded, dataViews } = this.state;
+    const { loaded, dataViews, currentView, rowData } = this.state;
+    console.log(currentView);
     return (
       <IntlProvider locale="en">
         <Router>
           <DataManager
             key={`table-for-${this.state.currentView.id}`}
             columnDefs={buildColumns(availableColumns)}
-            rowData={this.state.rowData}
-            currentView={this.state.currentView}
+            rowData={rowData}
+            currentView={currentView}
             updateView={this.updateView}
             onFirstDataRendered={() => this.setState({ rendered: true })}
             // onGridReady={() => this.setState({ rendered: true })}

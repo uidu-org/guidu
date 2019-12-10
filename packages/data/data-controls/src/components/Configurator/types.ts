@@ -1,4 +1,5 @@
 import { ColumnApi, GridApi } from '@ag-grid-community/core';
+import { DataView } from '@uidu/data-views';
 import { Column } from '@uidu/table';
 import { GrouperProps } from '../Grouper/types';
 import { ResizerProps } from '../Resizer/types';
@@ -9,6 +10,7 @@ export type ConfiguratorProps = GrouperProps &
   ResizerProps & {
     columnDefs: Column[];
     currentView: any;
+    updateView: (dataView: DataView) => void;
     onSetColumnCount: (columnCount: number) => void;
     columnCount?: number;
     gridApi: GridApi;

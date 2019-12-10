@@ -100,6 +100,7 @@ const Table = ({
           resizable: true,
           sortable: true,
           editable: false,
+          suppressMenu: false,
           headerComponentFramework: CustomHeader,
           minWidth: 140,
           cellStyle: params => {
@@ -107,16 +108,6 @@ const Table = ({
               lineHeight: `${rowHeight}px`,
             };
           },
-        }}
-        autoGroupColumnDef={{
-          pinned: 'left',
-          headerName: 'Grouped by',
-          minWidth: 300,
-          // cellRendererFramework: GroupRowInnerRenderer,
-          // lockPosition: true,
-          // lockVisible: true,
-          // lockPinned: true,
-          // suppressMovable: true,
         }}
         columnTypes={{
           avatar: {},

@@ -1,7 +1,7 @@
 import { avatarField } from '@uidu/data-fields';
 
 export default () => ({
-  viewType: 'avatar',
+  viewType: avatarField.kind,
   type: avatarField.kind,
   sortable: false,
   headerComponentParams: {

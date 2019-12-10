@@ -5,6 +5,7 @@ import React from 'react';
 export default ({ onFieldAdd }) => ({
   colId: 'add',
   filter: false,
+  viewType: addField.kind,
   type: 'addField',
   suppressColumnsToolPanel: true,
   suppressFiltersToolPanel: true,

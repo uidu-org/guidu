@@ -4,6 +4,7 @@ import Renderer from './renderer';
 
 export default field => ({
   type: singleSelectField.kind,
+  viewType: singleSelectField.kind,
   cellEditorFramework: Editor,
   cellEditorParams: {
     values: field.options,

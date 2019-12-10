@@ -4,6 +4,7 @@ import Editor from './editor';
 
 export default field => ({
   type: dateField.kind,
+  viewType: dateField.kind,
   cellEditorFramework: Editor,
   filter: 'agDateColumnFilter',
   headerComponentParams: { menuIcon: dateField.icon },

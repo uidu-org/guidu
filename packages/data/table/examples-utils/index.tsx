@@ -111,14 +111,12 @@ export const availableColumns = [
   //   colId: 'role',
   //   field: 'role',
   //   headerName: 'Admin',
-  //   ...defaultColumn(),
   //   ...checkboxColumn(),
   // },
   // {
   //   colId: 'multiple-select',
   //   field: 'scope',
   //   headerName: 'Tags',
-  //   ...defaultColumn(),
   //   ...multipleSelectColumn({
   //     options: [
   //       { id: 'male', name: 'Maschio' },
@@ -131,7 +129,6 @@ export const availableColumns = [
   //   field: 'member',
   //   headerName: 'Assignee',
 
-  //   ...defaultColumn(),
   //   ...memberColumn({
   //     options: [
   //       { id: 'male', name: 'Maschio' },
@@ -144,7 +141,6 @@ export const availableColumns = [
   //   colId: 'address',
   //   field: 'uid',
   //   headerName: 'Indirizzo',
-  //   ...defaultColumn(),
   //   ...addressColumn(),
   // },
   {
@@ -180,14 +176,12 @@ export const availableColumns = [
   //   colId: 'progress',
   //   field: 'progress',
   //   headerName: 'Progress',
-  //   ...defaultColumn(),
   //   ...progressColumn(),
   // },
   // {
   //   colId: 'files',
   //   field: 'uid',
   //   headerName: 'Files',
-  //   ...defaultColumn(),
   //   ...attachmentsColumn({
   //     options: [
   //       { id: 'male', name: 'Maschio' },
@@ -199,14 +193,12 @@ export const availableColumns = [
   //   colId: 'votes',
   //   field: 'uid',
   //   headerName: 'Voto',
-  //   ...defaultColumn(),
   //   ...ratingColumn(),
   // },
   // {
   //   colId: 'assignee',
   //   field: 'uid',
   //   headerName: 'Assignee',
-  //   ...defaultColumn(),
   //   ...urlColumn(),
   // },
 ];

@@ -1,7 +1,6 @@
 import { Toggler } from '@uidu/data-controls';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
-import { extractColumnType } from '@uidu/table';
 import React, { PureComponent } from 'react';
 import { Calendar, CheckSquare, Layout } from 'react-feather';
 
@@ -31,7 +30,7 @@ export default class Configurator extends PureComponent<any> {
                 name="foo"
                 options={columnDefs
                   .filter(column => {
-                    return ['date'].includes(extractColumnType(column.type));
+                    return ['date'].includes(column.viewType);
                   })
                   .map(column => ({
                     id: column.colId,
@@ -63,10 +62,7 @@ export default class Configurator extends PureComponent<any> {
         </div>
         <Toggler
           {...this.props}
-          columnDefs={columnDefs.filter(
-            column =>
-              column.viewType !== 'cover' && column.viewType !== 'avatar',
-          )}
+          columnDefs={columnDefs}
           onDragEnd={onDragEnd}
           gridColumnApi={gridColumnApi}
         />

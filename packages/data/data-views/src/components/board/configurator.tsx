@@ -1,20 +1,25 @@
 import { Toggler } from '@uidu/data-controls';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
-import { extractColumnType } from '@uidu/table';
 import React, { PureComponent } from 'react';
 import { CheckSquare, Columns } from 'react-feather';
 
 export default class Configurator extends PureComponent<any> {
-  handleSubmit = async model => console.log(model);
+  handleSubmit = async model => {
+    const { currentView, updateView } = this.props;
+    updateView({
+      ...currentView,
+      ...model,
+    });
+  };
 
   render() {
     const {
-      onResize,
-      rowHeight,
+      updateView,
       columnDefs,
       onDragEnd,
       gridColumnApi,
+      currentView,
     } = this.props;
     return (
       <>
@@ -29,14 +34,16 @@ export default class Configurator extends PureComponent<any> {
             <Form handleSubmit={this.handleSubmit} footerRenderer={() => null}>
               <Select
                 name="primaryField"
+                value={currentView.primaryField}
                 options={columnDefs
                   .filter(column => {
                     return [
                       'singleSelect',
                       'country',
+                      'contact',
                       'member',
                       'linkRecord',
-                    ].includes(extractColumnType(column.type));
+                    ].includes(column.viewType);
                   })
                   .map(column => ({
                     id: column.colId,
@@ -45,6 +52,12 @@ export default class Configurator extends PureComponent<any> {
                       ? { before: column.headerComponentParams.menuIcon }
                       : {}),
                   }))}
+                onChange={(name, value) =>
+                  updateView({
+                    ...currentView,
+                    [name]: value,
+                  })
+                }
                 layout="elementOnly"
               />
             </Form>
@@ -60,10 +73,7 @@ export default class Configurator extends PureComponent<any> {
         </div>
         <Toggler
           {...this.props}
-          columnDefs={columnDefs.filter(
-            column =>
-              column.viewType !== 'cover' && column.viewType !== 'avatar',
-          )}
+          columnDefs={columnDefs}
           onDragEnd={onDragEnd}
           gridColumnApi={gridColumnApi}
         />

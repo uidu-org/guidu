@@ -399,10 +399,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
             <Filterer
               gridApi={this.gridApi}
               gridColumnApi={this.gridColumnApi}
-              columnDefs={columns.filter(
-                column =>
-                  column.viewType !== 'cover' && column.viewType !== 'avatar',
-              )}
+              columnDefs={columns}
               filterModel={filterModel}
               {...availableControls.filterer.props}
             />
@@ -411,10 +408,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
             <Sorter
               gridApi={this.gridApi}
               gridColumnApi={this.gridColumnApi}
-              columnDefs={columns.filter(
-                column =>
-                  column.viewType !== 'cover' && column.viewType !== 'avatar',
-              )}
+              columnDefs={columns}
               sorters={sorters}
               {...availableControls.sorter.props}
             />
@@ -424,10 +418,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
               <Grouper
                 gridApi={this.gridApi}
                 gridColumnApi={this.gridColumnApi}
-                columnDefs={columns.filter(
-                  column =>
-                    column.viewType !== 'cover' && column.viewType !== 'avatar',
-                )}
+                columnDefs={columns}
                 groupers={groupers}
                 {...availableControls.sorter.props}
               />

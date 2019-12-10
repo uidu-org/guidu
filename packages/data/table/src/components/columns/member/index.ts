@@ -4,6 +4,7 @@ import Renderer from './renderer';
 
 export default field => ({
   type: memberField.kind,
+  viewType: memberField.kind,
   cellRenderer: Renderer,
   cellRendererParams: field,
   cellEditorFramework: Editor,

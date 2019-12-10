@@ -2,6 +2,7 @@ import { uidField } from '@uidu/data-fields';
 
 export default () => ({
   type: uidField.kind,
+  viewType: uidField.kind,
   headerComponentParams: { menuIcon: uidField.icon },
   headerName: 'ID',
   pinned: true,

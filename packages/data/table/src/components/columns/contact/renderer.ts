@@ -1,8 +1,8 @@
-import { groupRowInnerRenderer } from '../../groups';
+import { groupRenderer } from '../../groups';
 
 export default params => {
   if (params.node && params.node.group) {
-    return groupRowInnerRenderer(params);
+    return groupRenderer(params);
   }
 
   const { value, avatar, data } = params;

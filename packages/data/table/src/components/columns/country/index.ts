@@ -4,6 +4,7 @@ import Renderer from './renderer';
 
 export default field => ({
   type: countryField.kind,
+  viewType: countryField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: {
     menuIcon: countryField.icon,

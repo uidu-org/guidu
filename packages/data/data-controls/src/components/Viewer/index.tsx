@@ -81,6 +81,7 @@ export default function Viewer({
         rowHeight={rowHeight}
         columnCount={columnCount}
         onSetColumnCount={onSetColumnCount}
+        updateView={updateView}
       />
       <Starrer onToggle={updateView} currentView={currentView} />
       {availableControls.more.visible && (
