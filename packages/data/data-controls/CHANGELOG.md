@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.2.22
+
+### Patch Changes
+
+- 074c822: Fix multiple grouping and NumberFilterForm
+- Updated dependencies [074c822]
+  - @uidu/data-fields@0.1.23
+  - @uidu/table@0.1.74
+
 ## 0.2.21
 
 ### Patch Changes

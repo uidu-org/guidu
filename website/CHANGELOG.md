@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.68
+
+### Patch Changes
+
+- 074c822: Fix multiple grouping and NumberFilterForm
+- Updated dependencies [074c822]
+  - @uidu/webpack-config@0.1.45
+  - @uidu/table@0.1.74
+
 ## 0.1.67
 
 ### Patch Changes

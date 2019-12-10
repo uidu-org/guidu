@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.1.3
+
+### Patch Changes
+
+- 074c822: Fix multiple grouping and NumberFilterForm
+
 ## 0.1.2
 
 ### Patch Changes

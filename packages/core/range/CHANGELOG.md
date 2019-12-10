@@ -1,5 +1,12 @@
 # @uidu/field-range
 
+## 0.1.16
+
+### Patch Changes
+
+- Updated dependencies [074c822]
+  - @uidu/section-message@0.1.16
+
 ## 0.1.15
 
 ### Patch Changes
