@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.71
+
+### Patch Changes
+
+- e4aee63: WIP #64
+
 ## 0.1.70
 
 ### Patch Changes
