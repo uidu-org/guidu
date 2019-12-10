@@ -6,6 +6,7 @@ export default params => {
   if (!params) {
     return '-';
   }
+
   return `
     <span
       style="

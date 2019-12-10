@@ -372,6 +372,10 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   }
 
   // row grouping
+  .ag-row-group {
+    background-color: rgba(#ede2fe, $alpha: 0.2);
+  }
+
   .ag-group-child-count {
     margin-left: 0.25rem;
   }

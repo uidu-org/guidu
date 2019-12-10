@@ -42,9 +42,10 @@ const Table = ({
         // enterprise features
         // groupDefaultExpanded={-1}
         // groupUseEntireRow
-        groupIncludeFooter
+        // groupIncludeFooter
         groupSuppressBlankHeader
         // suppressAggFuncInHeader
+        groupSuppressAutoColumn
         // community features
         componentWrappingElement="span"
         // defaultGroupSortComparator={(valueA, valueB) => {
@@ -111,6 +112,7 @@ const Table = ({
           pinned: 'left',
           headerName: 'Grouped by',
           minWidth: 300,
+          // cellRendererFramework: GroupRowInnerRenderer,
           // lockPosition: true,
           // lockVisible: true,
           // lockPinned: true,
