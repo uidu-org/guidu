@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.16
+
+### Patch Changes
+
+- bec601f: FIX #63
+
 ## 0.1.15
 
 ### Patch Changes
