@@ -7,18 +7,19 @@ export const groupRenderer = ({ api, value, node }) => {
     return null;
   }
 
-  console.log(node);
-
   const eDiv = document.createElement('div');
   eDiv.innerHTML = `
-    <div class="d-flex justify-content-between">
-      <span style="line-height: initial;display: flex; align-items: center; flex-grow: 1;">
-        <span class="d-flex flex-column justify-content-center" style="line-height: initial">
-          <span class="small text-muted">${node.rowGroupColumn.colDef.headerName}</span>
-          <span>${value}</span>
+    <div class="d-flex justify-content-between" style="padding-left: ${node.level *
+      1}rem;">
+      <span style="line-height: initial; display: flex; align-items: center; flex-grow: 1; white-space: normal; min-width: 0;">
+        <span class="d-flex flex-column justify-content-center" style="line-height: initial; min-width: 0;">
+          <span class="small text-muted text-truncate">${
+            node.rowGroupColumn.colDef.headerName
+          }</span>
+          <span class="text-truncate">${value}</span>
         </span>
       </span>
-      <span>
+      <span class="ml-2">
         <span class="badge badge-pill py-1 ag-group-child-count">
           ${node.allChildrenCount}
         </span>

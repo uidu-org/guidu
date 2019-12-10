@@ -43,7 +43,7 @@ export default class Grouper extends Component<GrouperProps> {
   };
 
   handleSubmit = async model => {
-    this.groupBy(model.groupers);
+    this.groupBy(model.groupers || []);
   };
 
   render() {

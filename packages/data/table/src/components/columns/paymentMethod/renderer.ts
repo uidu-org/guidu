@@ -1,7 +1,9 @@
+import { groupRenderer } from '../../groups';
+
 export default params => {
   // create the cell
   if (params.node && params.node.group) {
-    return params.value;
+    return groupRenderer(params);
   }
 
   if (params.value) {

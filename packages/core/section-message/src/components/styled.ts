@@ -1,10 +1,4 @@
-import {
-  borderRadius,
-  colors,
-  gridSize,
-  math,
-  typography,
-} from '@uidu/theme/constants';
+import { borderRadius, colors, gridSize, math, typography } from '@uidu/theme';
 import styled from 'styled-components';
 
 const { N500 } = colors;

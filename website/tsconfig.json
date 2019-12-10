@@ -1,6 +1,5 @@
 {
   "extends": "../tsconfig.json",
-  "moduleResolution": "node",
   "compilerOptions": {
     "baseUrl": "./"
   },

@@ -79,7 +79,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       filterModel: props.currentView.filterModel || {},
       groupers: props.currentView.groupers || [],
       rowHeight: 64,
-      columnCount: props.currentView.columCount || 5,
+      columnCount: props.currentView.columCount || 4,
     };
   }
 

@@ -27,7 +27,7 @@ function NumberFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
           <FieldNumber
             layout="elementOnly"
             name={`filters[${index}][filter]`}
-            value={filter.filter || ''}
+            value={filter.filter}
             onChange={(name, value) => {
               if (value !== '') {
                 onChange(name, value);

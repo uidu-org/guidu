@@ -346,7 +346,7 @@ function getOptimizations({ isProduction, noMinimizeFlag }) {
     return undefined;
   }
   const terserPlugin = new TerserPlugin({
-    // parallel: Math.max(os.cpus().length - 1, 1),
+    parallel: Math.max(os.cpus().length - 1, 1),
     terserOptions: {
       compress: {
         // Disabling following options speeds up minimization by 20 – 30s
@@ -399,6 +399,22 @@ function getOptimizations({ isProduction, noMinimizeFlag }) {
       // "Maximum number of parallel requests when on-demand loading. (default in production: 5)"
       // The default value of 5 causes the webpack process to crash, reason currently unknown
       maxAsyncRequests: Infinity,
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          enforce: true,
+          chunks: 'all',
+          test: (module /*: { context: string | null } */) => {
+            if (!module.context) {
+              return false;
+            }
+            return /node_modules\/(react|react-dom|styled-components|prop-types|@emotion|@babel\/runtime)($|\/)/.test(
+              module.context,
+            );
+          },
+          priority: 1,
+        },
+      },
     },
   };
 }
