@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.63
+
+### Patch Changes
+
+- fec538e: WIP #61
+- Updated dependencies [fec538e]
+  - @uidu/gallery@0.1.27
+
 ## 0.1.62
 
 ### Patch Changes
