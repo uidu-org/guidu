@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.67
+
+### Patch Changes
+
+- dee493e: Export group renderer from table
+- Updated dependencies [dee493e]
+  - @uidu/table@0.1.72
+
 ## 0.1.66
 
 ### Patch Changes
