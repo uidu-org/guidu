@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.23
+
+### Patch Changes
+
+- 2bf85a3: Fix broken Grouper
+
 ## 0.2.22
 
 ### Patch Changes
