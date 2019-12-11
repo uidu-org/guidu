@@ -32,10 +32,14 @@ export default field => ({
       momentObj,
     };
   },
-  valueFormatter: ({ value, aggData, node }) =>
-    node && node.group ? null : value.momentObj.format(field.format),
   keyCreator: params => {
     return params.value.month;
     return params.value.momentObj.format('LLL');
   },
+  cellRenderer: params =>
+    params.value
+      ? `<div class="text-truncate">${params.value.momentObj.format(
+          field.format,
+        )}</div>`
+      : null,
 });

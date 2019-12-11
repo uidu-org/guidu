@@ -73,6 +73,7 @@ export const availableColumns = [
   },
   {
     dataField: 'date',
+    dataFieldParams: { format: 'l' },
     colId: 'updatedAt',
     field: 'updatedAt',
     headerName: 'Ultimo aggiornamento',

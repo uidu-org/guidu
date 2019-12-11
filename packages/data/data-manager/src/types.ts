@@ -9,5 +9,5 @@ export type DataManagerProps = {
   onAddField?: () => void;
   onGridReady?: (params) => void;
   onFirstDataRendered?: (params) => void;
-  onItemClick?: (item) => void;
+  onItemClick?: ({ data }: { data: any}) => void;
 };

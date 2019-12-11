@@ -1,10 +1,13 @@
+import { FilterModel, Group, Sort } from '@uidu/data-controls';
+import { Column } from '@uidu/table';
+
 export type GalleryProps = {
   columnCount: number;
-  rowData: Array<any>;
-  columnDefs: Array<any>;
+  rowData: Array<{ data: any }>;
+  columnDefs: Array<Column>;
   gutterSize: number;
-  onItemClick?: (item) => void;
-  sorters?: Array<any>;
-  groupers?: Array<any>;
-  filterModel?: any;
+  onItemClick?: ({ data }: { data: any }) => void;
+  sorters?: Array<Sort>;
+  groupers?: Array<Group>;
+  filterModel?: FilterModel;
 };

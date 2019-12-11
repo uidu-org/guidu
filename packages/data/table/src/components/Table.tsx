@@ -15,6 +15,7 @@ const Table = ({
   rowData,
   onAddField = () => {},
   rowHeight = 32,
+  groupRowHeightIncrementRatio = 1.2,
   ...otherProps
 }) => {
   const [scrolled, setScrolled] = useState({ left: 0, top: 0 });
@@ -67,7 +68,11 @@ const Table = ({
             return {
               ...columnDef.cellStyle,
               // account for borders
-              lineHeight: `${rowHeight - 2}px`,
+              lineHeight: `${
+                params.node.group
+                  ? rowHeight * groupRowHeightIncrementRatio - 2
+                  : rowHeight - 2
+              }px`,
             };
           },
           cellClassRules: {
@@ -96,6 +101,13 @@ const Table = ({
         enableCellChangeFlash
         suppressContextMenu
         getMainMenuItems={getMainMenuItems}
+        getRowHeight={params => {
+          if (params.node.group) {
+            return rowHeight * groupRowHeightIncrementRatio;
+          } else {
+            return rowHeight;
+          }
+        }}
         defaultColDef={{
           resizable: true,
           sortable: true,
@@ -103,11 +115,6 @@ const Table = ({
           suppressMenu: false,
           headerComponentFramework: CustomHeader,
           minWidth: 140,
-          cellStyle: params => {
-            return {
-              lineHeight: `${rowHeight}px`,
-            };
-          },
         }}
         columnTypes={{
           avatar: {},

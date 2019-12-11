@@ -106,7 +106,7 @@ export const buildColumn = ({
   };
 };
 
-export const buildColumns = (columns: Array<Column>) =>
+export const buildColumns = (columns): Array<Column> =>
   columns.map(column => buildColumn(column));
 
 export const valueRenderer = (data, column) => {

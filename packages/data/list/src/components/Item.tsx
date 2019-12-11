@@ -30,7 +30,7 @@ export default class Item extends PureComponent<any> {
         key={item.data.id}
         onClick={e => {
           e.preventDefault();
-          onItemClick(item.data);
+          onItemClick({ data: item.data });
         }}
         style={{
           ...style,

@@ -1,54 +1,23 @@
-import { valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
-
-const Cover = ({
-  cover,
-  item,
-  children,
-}: {
-  cover: any;
-  item: any;
-  children?: any;
-}) => {
-  return (
-    <div
-      className="card-img-top"
-      style={{
-        height: cover && cover.width ? (cover.width * 3) / 2 : '200px',
-        backgroundSize: 'cover',
-        backgroundPosition: '50% 50%',
-        backgroundImage:
-          cover && valueRenderer(item.data, cover)
-            ? `url(${valueRenderer(item.data, cover)})`
-            : null,
-        backgroundColor: 'rgba(76,86,106,0.025)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Avatar = ({ avatar, item }) => {
-  return (
-    <img
-      src={valueRenderer(item.data, avatar)}
-      style={{ borderRadius: '100%', width: '7rem' }}
-    />
-  );
-};
 
 export default class ItemHeader extends PureComponent<any> {
   render() {
-    const { item, cover, avatar } = this.props;
-    if (avatar || cover) {
+    const { item, primary } = this.props;
+    if (primary) {
       return (
-        <Cover cover={cover} item={item}>
-          {avatar && <Avatar avatar={avatar} item={item} />}
-        </Cover>
+        <div
+          className="card-header border-0 d-flex align-items-center"
+          style={{ fontWeight: 500, height: 42 }}
+        >
+          <span className="text-truncate">
+            {primary.valueGetter
+              ? primary.valueGetter({
+                  data: item.data,
+                  value: item.data[primary.field],
+                })
+              : item.data[primary.field]}
+          </span>
+        </div>
       );
     }
 

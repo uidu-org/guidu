@@ -4,10 +4,10 @@ import React, { PureComponent } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
 import { FixedSizeGrid as Grid } from 'react-window';
 import { GalleryProps } from '../types';
-import Item from './Item';
+import GalleryItem from './GalleryItem';
 
 const ITEM_HEADER_HEIGHT = 42;
-const ITEM_COLUMN_ROW = 56;
+const ITEM_COLUMN_ROW = 64;
 const ITEM_PADDING = 32;
 
 const createItemData = memoize(
@@ -42,7 +42,10 @@ export default class Gallery extends PureComponent<GalleryProps> {
   static defaultProps = {
     columnCount: 4,
     gutterSize: 8,
-    onItemClick: console.log,
+    onItemClick: ({ data }) => {},
+    sorters: [],
+    groupers: [],
+    filterModel: {},
   };
 
   chunkData = (array, chunkSize) => {
@@ -81,6 +84,7 @@ export default class Gallery extends PureComponent<GalleryProps> {
     const visibleColumnDefs = columnDefs.filter(
       c => !c.hide && !c.pinned && !c.rowGroup,
     );
+
     const items = this.chunkData(
       rowData.filter(d => !!d.data),
       columnCount,
@@ -131,14 +135,15 @@ export default class Gallery extends PureComponent<GalleryProps> {
                       column =>
                         column.viewType !== 'cover' &&
                         column.viewType !== 'primary' &&
-                        column.viewType !== 'avatar',
+                        column.viewType !== 'avatar' &&
+                        column.viewType !== 'addField',
                     ).length +
                   ITEM_PADDING +
                   gutterSize
                 }
                 width={width}
               >
-                {Item}
+                {GalleryItem}
               </Grid>
             );
           }}

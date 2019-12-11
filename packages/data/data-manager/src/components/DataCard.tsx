@@ -17,15 +17,23 @@ export default class Item extends PureComponent<any> {
     // } = data;
     // const item = items[rowIndex] && items[rowIndex][columnIndex];
     const primary = null;
+
     if (!item) {
       return null;
     }
+
+    const visibleColumns = columnDefs.filter(
+      column =>
+        column.viewType !== 'cover' &&
+        column.viewType !== 'primary' &&
+        column.viewType !== 'avatar',
+    );
 
     return (
       <div
         onClick={e => {
           e.preventDefault();
-          // onItemClick(item.data);
+          // onItemClick({ data: item.data});
         }}
         key={item.id}
       >
@@ -41,36 +49,28 @@ export default class Item extends PureComponent<any> {
           )} */}
           <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
             <dl className="mb-0">
-              {columnDefs
-                .filter(
-                  column =>
-                    !column.hide &&
-                    column.viewType !== 'cover' &&
-                    column.viewType !== 'primary' &&
-                    column.viewType !== 'avatar',
-                )
-                .map(column => (
-                  <>
-                    <dt
-                      className="small text-muted text-truncate mt-3"
-                      key={`${item.id}-${column.field}-name`}
-                    >
-                      {column.headerComponentParams &&
-                      column.headerComponentParams.menuIcon ? (
-                        <span className="mr-2">
-                          {column.headerComponentParams.menuIcon}
-                        </span>
-                      ) : null}
-                      {column.headerName}
-                    </dt>
-                    <dd
-                      className="mb-0 text-truncate"
-                      key={`${item.id}-${column.field}-value`}
-                    >
-                      {valueRenderer(item, column)}
-                    </dd>
-                  </>
-                ))}
+              {visibleColumns.map(column => (
+                <>
+                  <dt
+                    className="small text-muted text-truncate mt-3"
+                    key={`${item.id}-${column.field}-name`}
+                  >
+                    {column.headerComponentParams &&
+                    column.headerComponentParams.menuIcon ? (
+                      <span className="mr-2">
+                        {column.headerComponentParams.menuIcon}
+                      </span>
+                    ) : null}
+                    {column.headerName}
+                  </dt>
+                  <dd
+                    className="mb-0 text-truncate"
+                    key={`${item.id}-${column.field}-value`}
+                  >
+                    {valueRenderer(item, column)}
+                  </dd>
+                </>
+              ))}
             </dl>
           </div>
         </div>

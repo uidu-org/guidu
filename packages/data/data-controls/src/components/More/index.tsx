@@ -59,7 +59,11 @@ export default class More extends Component<MoreProps> {
       >
         <DropdownItemGroup>
           {actions.map(({ onClick, text, icon: Icon }) => (
-            <DropdownItem onClick={onClick} elemBefore={<Icon size={14} />}>
+            <DropdownItem
+              key={text}
+              onClick={onClick}
+              elemBefore={<Icon size={14} />}
+            >
               {text}
             </DropdownItem>
           ))}

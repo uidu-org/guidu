@@ -240,7 +240,6 @@ export default class DataView extends PureComponent<any> {
                   }))}
                   columnDefs={columns}
                   sorters={sorters}
-                  groupers={groupers}
                   filterModel={filterModel}
                 />
               )}
