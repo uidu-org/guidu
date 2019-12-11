@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.23
+
+### Patch Changes
+
+- 074c822: Fix multiple grouping and NumberFilterForm
+
 ## 0.1.22
 
 ### Patch Changes

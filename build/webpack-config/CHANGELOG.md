@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.45
+
+### Patch Changes
+
+- 074c822: Fix multiple grouping and NumberFilterForm
+
 ## 0.1.44
 
 ### Patch Changes

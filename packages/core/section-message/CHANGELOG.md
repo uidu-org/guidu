@@ -1,5 +1,12 @@
 # @uidu/section-message
 
+## 0.1.16
+
+### Patch Changes
+
+- 074c822: Fix multiple grouping and NumberFilterForm
+  - @uidu/field-range@0.1.19
+
 ## 0.1.15
 
 ### Patch Changes

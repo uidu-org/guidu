@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "license": "MIT",
   "author": "uidu",
