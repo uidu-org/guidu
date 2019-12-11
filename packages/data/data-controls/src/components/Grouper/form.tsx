@@ -96,7 +96,7 @@ export default class Grouper extends Component<GrouperProps> {
                 <Select
                   layout="elementOnly"
                   isClearable={false}
-                  name={`grouper[${index}][colId]`}
+                  name={`groupers[${index}][colId]`}
                   value={grouper.colId}
                   options={groupableColumnDefs.map(columnDef => ({
                     id: columnDef.colId,
@@ -128,7 +128,7 @@ export default class Grouper extends Component<GrouperProps> {
                     onChange={() =>
                       setTimeout(() => {
                         (this.form.current as any).submit();
-                      }, 30)
+                      }, 300)
                     }
                   />
                 )}

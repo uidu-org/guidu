@@ -91,14 +91,14 @@ export default class SorterForm extends PureComponent<SorterProps> {
                         value={sorter.sort}
                         options={[
                           {
-                            id: 'asc',
-                            name: 'asc',
-                            before: <ArrowUp size={16} />,
-                          },
-                          {
                             id: 'desc',
                             name: 'desc',
                             before: <ArrowDown size={16} />,
+                          },
+                          {
+                            id: 'asc',
+                            name: 'asc',
+                            before: <ArrowUp size={16} />,
                           },
                         ]}
                         onChange={(name, value, { option }) => {
@@ -132,7 +132,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                 ...sorters,
                 {
                   colId: columnDef.colId,
-                  sort: 'asc',
+                  sort: 'desc',
                 },
               ]);
               setTimeout(() => {

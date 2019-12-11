@@ -16,6 +16,7 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
 
   handleSubmit = async model => {
     const { gridApi, filterModel } = this.props;
+    console.log(model);
     const newFilterModel = (model.filters || []).reduce((res, item) => {
       return {
         ...res,
@@ -24,6 +25,21 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
     }, filterModel);
     gridApi.setFilterModel(newFilterModel);
   };
+
+  // updateFilterModel = (newKey, oldKey) => {
+  //   const {
+  //     gridApi,
+  //     filterModel: { [oldKey]: old, ...rest },
+  //   } = this.props;
+  //   const newFilterModel = {
+  //     ...rest,
+  //     [newKey]: {
+  //       type: 'greaterThan',
+  //       filter: 10,
+  //     },
+  //   };
+  //   gridApi.setFilterModel(newFilterModel);
+  // };
 
   render() {
     const { filtersCount, columnDefs, gridApi, filterModel } = this.props;
@@ -95,7 +111,10 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
                             }
                           : {}),
                       }))}
-                      isDisabled
+                      onChange={(name, value) => {
+                        console.log(name, value);
+                        // this.updateFilterModel(value, filter.colId);
+                      }}
                     />
                   </div>
                   {FilterForm && (
