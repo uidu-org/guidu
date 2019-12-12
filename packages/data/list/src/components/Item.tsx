@@ -78,19 +78,21 @@ export default class Item extends PureComponent<any> {
               .filter(
                 column => column.type !== 'cover' && column.type !== 'primary',
               )
-              .map(column => (
-                <div
-                  key={`${item.data.id}-${column.colId}-value`}
-                  className="text-truncate data-list-cell px-3 px-xl-4"
-                  style={{
-                    width: column.width || '150px',
-                    minWidth: column.minWidth || 'auto',
-                    maxWidth: column.maxWidth || 'auto',
-                  }}
-                >
-                  {valueRenderer(item.data, column)}
-                </div>
-              ))}
+              .map(column => {
+                return (
+                  <div
+                    key={`${item.data.id}-${column.colId}-value`}
+                    className="text-truncate data-list-cell px-3 px-xl-4"
+                    style={{
+                      width: column.width || '150px',
+                      minWidth: column.minWidth || 'auto',
+                      maxWidth: column.maxWidth || 'auto',
+                    }}
+                  >
+                    {valueRenderer(item.data, column)}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </StyledItem>

@@ -298,11 +298,12 @@ export default class Basic extends Component<any, any> {
                                   gutterSize: 24,
                                 },
                                 list: {
-                                  rowHeight: 128,
+                                  rowHeight: 96,
                                 },
                                 board: {},
                                 table: {
                                   headerHeight: 48,
+                                  rowHeight: 56,
                                 },
                               },
                             })}
