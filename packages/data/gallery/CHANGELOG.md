@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.28
+
+### Patch Changes
+
+- 6170c31: Squash some bugs in data, WIP #61: isolate components
+- Updated dependencies [6170c31]
+  - @uidu/data-controls@0.2.24
+  - @uidu/table@0.1.75
+
 ## 0.1.27
 
 ### Patch Changes
