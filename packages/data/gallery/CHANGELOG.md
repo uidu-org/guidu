@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.29
+
+### Patch Changes
+
+- 3e00638: Minor fixes to gallery and list
+
 ## 0.1.28
 
 ### Patch Changes

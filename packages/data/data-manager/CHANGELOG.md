@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.66
+
+### Patch Changes
+
+- 3e00638: Minor fixes to gallery and list
+- Updated dependencies [3e00638]
+  - @uidu/gallery@0.1.29
+  - @uidu/list@0.1.18
+
 ## 0.1.65
 
 ### Patch Changes

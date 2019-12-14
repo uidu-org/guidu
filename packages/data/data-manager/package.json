@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.1.65",
+  "version": "0.1.66",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -14,8 +14,8 @@
     "@uidu/calendar": "^0.1.15",
     "@uidu/data-controls": "^0.2.24",
     "@uidu/data-views": "^0.1.12",
-    "@uidu/gallery": "^0.1.28",
-    "@uidu/list": "^0.1.17",
+    "@uidu/gallery": "^0.1.29",
+    "@uidu/list": "^0.1.18",
     "@uidu/shell": "^0.1.36",
     "@uidu/spinner": "^0.1.12",
     "@uidu/table": "^0.1.75",
