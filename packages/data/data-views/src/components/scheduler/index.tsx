@@ -1,23 +1,20 @@
 import loadable from '@loadable/component';
 import React from 'react';
-import { Shuffle } from 'react-feather';
+import { Clock } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 
 const Configurator = loadable(() => import('./configurator'));
 
 export default {
-  id: 'comparator',
+  id: 'scheduler',
   name: (
-    <FormattedMessage
-      id="dataView.comparator.name"
-      defaultMessage="Comparator"
-    />
+    <FormattedMessage id="dataView.scheduler.name" defaultMessage="Scheduler" />
   ),
-  icon: Shuffle,
-  color: '#D08770',
+  icon: Clock,
+  color: '#BF616A',
   description: (
     <FormattedMessage
-      id="dataView.comparator.description"
+      id="dataView.scheduler.description"
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),

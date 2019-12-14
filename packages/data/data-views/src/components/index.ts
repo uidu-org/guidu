@@ -2,7 +2,8 @@ import boardDataView from './board';
 import calendarDataView from './calendar';
 import comparatorDataView from './comparator';
 import galleryDataView from './gallery';
-import mapDataView from './map';
+import ganttDataView from './gantt';
+import schedulerDataView from './scheduler';
 import tableDataView from './table';
 import timelineDataView from './timeline';
 
@@ -10,7 +11,8 @@ export { default as boardDataView } from './board';
 export { default as calendarDataView } from './calendar';
 export { default as comparatorDataView } from './comparator';
 export { default as galleryDataView } from './gallery';
-export { default as mapDataView } from './map';
+export { default as ganttDataView } from './gantt';
+export { default as schedulerDataView } from './scheduler';
 export { default as tableDataView } from './table';
 export { default as timelineDataView } from './timeline';
 
@@ -19,7 +21,8 @@ export const byName = {
   calendar: calendarDataView,
   comparator: comparatorDataView,
   gallery: galleryDataView,
-  map: mapDataView,
+  gantt: ganttDataView,
+  scheduler: schedulerDataView,
   table: tableDataView,
   timeline: timelineDataView,
 };
@@ -29,7 +32,8 @@ export default [
   calendarDataView,
   comparatorDataView,
   galleryDataView,
-  mapDataView,
+  ganttDataView,
+  schedulerDataView,
   tableDataView,
   timelineDataView,
 ];

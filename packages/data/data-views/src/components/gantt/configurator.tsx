@@ -6,8 +6,8 @@ export default class Configurator extends PureComponent {
       <div>
         <p>Configure table view</p>
         <ul>
-          <li>Choose field for address</li>
-          <li>Visible fields</li>
+          <li>Visible fields (old toggler)</li>
+          <li>Grouping (Grouper)</li>
         </ul>
       </div>
     );

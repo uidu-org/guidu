@@ -1,6 +1,6 @@
 import loadable from '@loadable/component';
 import React from 'react';
-import { Activity } from 'react-feather';
+import { BookOpen } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 
 const Configurator = loadable(() => import('./configurator'));
@@ -10,7 +10,7 @@ export default {
   name: (
     <FormattedMessage id="dataView.timeline.name" defaultMessage="Timeline" />
   ),
-  icon: Activity,
+  icon: BookOpen,
   color: '#BF616A',
   description: (
     <FormattedMessage
