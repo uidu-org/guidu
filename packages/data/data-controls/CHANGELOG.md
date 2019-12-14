@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.2.25
+
+### Patch Changes
+
+- 8764178: Readd Finder data-controls
+- Updated dependencies [8764178]
+  - @uidu/inline-dialog@0.1.10
+  - @uidu/table@0.1.76
+
 ## 0.2.24
 
 ### Patch Changes
