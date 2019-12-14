@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "license": "MIT",
   "author": "uidu",

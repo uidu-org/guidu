@@ -1,5 +1,11 @@
 # @uidu/inline-dialog
 
+## 0.1.10
+
+### Patch Changes
+
+- 8764178: Readd Finder data-controls
+
 ## 0.1.9
 
 ### Patch Changes

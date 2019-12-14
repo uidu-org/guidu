@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.76
+
+### Patch Changes
+
+- 8764178: Readd Finder data-controls
+- Updated dependencies [8764178]
+  - @uidu/data-controls@0.2.25
+
 ## 0.1.75
 
 ### Patch Changes
