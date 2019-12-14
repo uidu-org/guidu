@@ -31,7 +31,7 @@ const cli = meow(
         type: 'string',
       },
     },
-  } as meow.Options,
+  } as meow.Options<any>,
 );
 
 const { input, flags } = cli;

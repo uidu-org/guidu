@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@types/react-grid-layout": "^0.16.7",
+    "@types/react-grid-layout": "^0.17.0",
     "@uidu/blocks": "^0.1.20",
     "@uidu/dashboard-controls": "^0.1.17",
     "d3-collection": "^1.0.7",

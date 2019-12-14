@@ -111,4 +111,4 @@ class PayWith extends PureComponent<PayWithProps, any> {
   }
 }
 
-export default injectStripe(PayWith);
+export default injectStripe(PayWith as any);
