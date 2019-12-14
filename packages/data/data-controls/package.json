@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.2.25",
+  "version": "0.2.26",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -13,7 +13,7 @@
     "@ag-grid-community/core": "^22.1.0",
     "@uidu/checkbox": "^0.1.54",
     "@uidu/data-fields": "^0.1.23",
-    "@uidu/data-views": "^0.1.12",
+    "@uidu/data-views": "^0.2.0",
     "@uidu/drawer": "^0.2.8",
     "@uidu/dropdown-menu": "^0.1.17",
     "@uidu/field-text": "^0.1.23",
