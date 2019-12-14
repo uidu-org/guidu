@@ -1,10 +1,4 @@
-import {
-  Filterer,
-  // Finder,
-  Grouper,
-  Sorter,
-  Viewer,
-} from '@uidu/data-controls';
+import { Filterer, Finder, Grouper, Sorter, Viewer } from '@uidu/data-controls';
 import Spinner from '@uidu/spinner';
 import React, { PureComponent } from 'react';
 import { DataManagerProps } from '../types';
@@ -435,12 +429,12 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
                 {...availableControls.sorter.props}
               />
             )}
-          {/* {availableControls.finder.visible && (
+          {availableControls.finder.visible && (
             <Finder
               onChange={this.setSearch}
               {...availableControls.finder.props}
             />
-          )} */}
+          )}
         </div>
       </>
     );

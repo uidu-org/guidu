@@ -18,6 +18,7 @@
     "@uidu/dropdown-menu": "^0.1.17",
     "@uidu/field-text": "^0.1.23",
     "@uidu/form": "^0.1.42",
+    "@uidu/inline-dialog": "^0.1.9",
     "@uidu/item": "^0.1.18",
     "@uidu/select": "^0.2.4",
     "@uidu/shell": "^0.1.32",

@@ -1,63 +1,63 @@
-import React, { Component } from 'react';
+import InlineDialog from '@uidu/inline-dialog';
+import Tooltip from '@uidu/tooltip';
+import React, { useEffect, useRef, useState } from 'react';
 import { Search } from 'react-feather';
-import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
+import { Trigger } from '../../styled';
 import { FinderProps } from './types';
 
-const Wrapper = styled.div`
-  position: relative;
-  margin-right: 0.25rem;
-`;
+export default function Finder({ onChange }: FinderProps) {
+  const node: React.RefObject<HTMLDivElement> = useRef();
+  const input: React.RefObject<HTMLInputElement> = useRef();
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-const Icon = styled.div`
-  position: absolute;
-  z-index: 2;
-  display: block;
-  width: 2.375rem;
-  height: 2.375rem;
-  /* line-height: 2.375rem; */
-  text-align: center;
-  pointer-events: none;
-  color: #aaa;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      // inside click
+      return;
+    }
+    // outside click
+    setIsDialogOpen(false);
+  };
 
-const StyledFieldText = styled.input`
-  padding-left: 2.375rem;
-  box-shadow: none;
-`;
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener('mousedown', handleClick);
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, []);
 
-export default class Finder extends Component<FinderProps> {
-  private input: React.RefObject<HTMLInputElement> = React.createRef();
-
-  render() {
-    const { onChange } = this.props;
-    return (
-      <Wrapper>
-        <Icon>
-          <Search size={16} strokeWidth={2} />
-        </Icon>
-        <FormattedMessage
-          id="guidu.data_controls.finder.placeholder"
-          defaultMessage="Search..."
-        >
-          {(placeholder: string) => (
-            <>
-              <StyledFieldText
-                ref={this.input}
-                className="form-control form-control-sm w-auto mr-2"
-                type="search"
-                name=""
-                placeholder={placeholder}
-                onChange={onChange}
-              />
-            </>
-          )}
-        </FormattedMessage>
-      </Wrapper>
-    );
-  }
+  return (
+    <div ref={node}>
+      <InlineDialog
+        content={
+          <input
+            ref={input}
+            className="form-control shadow-none border-0"
+            type="search"
+            name=""
+            placeholder="Cerca..."
+            onChange={onChange}
+          />
+        }
+        placement="bottom-end"
+        isOpen={isDialogOpen}
+      >
+        <Tooltip content={'Search in view'} position="bottom">
+          <Trigger
+            activeBg="#fee2d5"
+            className="btn mr-2"
+            active={false}
+            onClick={() => {
+              setIsDialogOpen(!isDialogOpen);
+              setTimeout(() => input.current.focus(), 200);
+            }}
+          >
+            <Search strokeWidth={2} size={14} />
+          </Trigger>
+        </Tooltip>
+      </InlineDialog>
+    </div>
+  );
 }

@@ -12,6 +12,7 @@ export default field => ({
   cellRenderer: Renderer,
   cellRendererParams: { options: allCountries },
   // keyCreator: params => params.value.name,
+  // getQuickFilterText: params => params.value.name,
   filterValueGetter: params => params.data[field.colId],
   // keyCreator: params => params.value,
   // valueGetter: ({ data }) =>

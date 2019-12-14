@@ -9,6 +9,7 @@ export default field => ({
     menuIcon: paymentMethodField.icon,
   },
   keyCreator: params => (params.value ? params.value.name : null),
+  getQuickFilterText: params => (params.value ? params.value.name : null),
   filterValueGetter: params => params.data[field.colId],
   cellRenderer: Renderer,
   cellRendererParams: {
