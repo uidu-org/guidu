@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.2.0
+
+### Minor Changes
+
+- 26216f6: From recharts and google chart to amcharts4
+
 ## 0.1.23
 
 ### Patch Changes

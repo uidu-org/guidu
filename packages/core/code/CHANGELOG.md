@@ -1,5 +1,11 @@
 # @uidu/code
 
+## 0.1.17
+
+### Patch Changes
+
+- 2785130: Bump dependencies, toggler with columnGroups
+
 ## 0.1.16
 
 ### Patch Changes
