@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.2.1
+
+### Patch Changes
+
+- 6c000d3: Draw charts on componentDidMount
+
 ## 0.2.0
 
 ### Minor Changes
