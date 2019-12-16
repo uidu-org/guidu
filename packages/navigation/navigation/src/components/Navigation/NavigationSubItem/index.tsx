@@ -29,6 +29,7 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
   padding-left: 1.25rem;
+  padding-right: 0.75rem;
   font-size: 0.935rem;
   position: relative;
 
@@ -42,6 +43,10 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   &:hover ${StyledNavigationActions} {
     transition: opacity linear 300ms;
     opacity: 1;
+  }
+
+  &:hover ${StyledNavigationText} {
+    width: calc(100% - 48px);
   }
 `;
 

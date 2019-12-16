@@ -5,7 +5,11 @@ import DropdownMenu, {
 import React, { useState } from 'react';
 import { StyledNavigationAction } from './styled';
 
-const DropdownActions = ({ onToggle, action: { icon, actions } }) => {
+const DropdownActions = ({
+  onToggle,
+  isCollapsed,
+  action: { icon, actions },
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <DropdownMenu
@@ -23,6 +27,7 @@ const DropdownActions = ({ onToggle, action: { icon, actions } }) => {
             setIsOpen(!isOpen);
           }}
           className="btn btn-sm px-2"
+          isCollapsed={isCollapsed}
         >
           {icon}
         </StyledNavigationAction>

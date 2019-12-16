@@ -12,7 +12,13 @@ export default function NavigationActions({
     <StyledNavigationActions>
       {actions.map(action => {
         if (action.actions) {
-          return <DropdownActions action={action} onToggle={onToggle} />;
+          return (
+            <DropdownActions
+              action={action}
+              onToggle={onToggle}
+              isCollapsed={isCollapsed}
+            />
+          );
         }
 
         return (
