@@ -1,5 +1,12 @@
 # @uidu/dashboard-manager
 
+## 0.1.20
+
+### Patch Changes
+
+- Updated dependencies [26216f6]
+  - @uidu/blocks@0.2.0
+
 ## 0.1.19
 
 ### Patch Changes

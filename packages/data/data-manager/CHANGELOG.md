@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.1.69
+
+### Patch Changes
+
+- 2785130: Bump dependencies, toggler with columnGroups
+- Updated dependencies [2785130]
+  - @uidu/data-controls@0.2.27
+  - @uidu/gallery@0.1.30
+  - @uidu/table@0.1.77
+
 ## 0.1.68
 
 ### Patch Changes

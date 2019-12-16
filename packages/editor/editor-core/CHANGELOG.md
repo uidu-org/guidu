@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.1.20
+
+### Patch Changes
+
+- 2785130: Bump dependencies, toggler with columnGroups
+
 ## 0.1.19
 
 ### Patch Changes

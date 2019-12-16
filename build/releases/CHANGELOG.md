@@ -1,5 +1,11 @@
 # @uidu/build-releases
 
+## 3.0.22
+
+### Patch Changes
+
+- 2785130: Bump dependencies, toggler with columnGroups
+
 ## 3.0.21
 
 ### Patch Changes

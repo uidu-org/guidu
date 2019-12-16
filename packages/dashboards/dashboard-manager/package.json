@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-manager",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@types/react-grid-layout": "^0.17.0",
-    "@uidu/blocks": "^0.1.20",
+    "@uidu/blocks": "^0.2.0",
     "@uidu/dashboard-controls": "^0.1.17",
     "d3-collection": "^1.0.7",
     "d3-time": "^1.0.11",
