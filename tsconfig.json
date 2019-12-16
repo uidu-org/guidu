@@ -46,7 +46,6 @@
     "./typings/node.d.ts",
     "./typings/webpack.d.ts",
     "./typings/uuid.d.ts",
-    "./typings/deep-equal.d.ts",
     "./typings/pdfjs-dist.d.ts",
     "./typings/events.d.ts",
     "./typings/lodash.last.d.ts",

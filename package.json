@@ -183,7 +183,6 @@
     "date-fns": "^2.0.0",
     "dateformat": "^3.0.3",
     "debounce": "^1.2.0",
-    "deep-equal": "^1.0.1",
     "deepcopy": "^2.0.0",
     "dotenv": "^8.0.0",
     "dotenv-expand": "^5.0.0",

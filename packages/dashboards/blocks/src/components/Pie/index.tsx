@@ -23,36 +23,46 @@ export default class PieBlock extends PureComponent<any, any> {
     };
   }
 
+  componentDidMount() {
+    this.drawChart();
+  }
+
   componentDidUpdate() {
+    this.drawChart();
+  }
+
+  drawChart = () => {
     const { rowData, loaded, comparatorData, namespace } = this.props;
     const { showPrevious } = this.state;
 
     if (loaded) {
-      if (!this.chart) {
-        const chart = am4core.create(this.id, am4charts.PieChart);
-        chart.innerRadius = am4core.percent(40);
-        chart.legend = new am4charts.Legend();
-        chart.legend.position = 'right';
-
-        const pieSeries = chart.series.push(new am4charts.PieSeries());
-        pieSeries.dataFields.value = 'value';
-        pieSeries.dataFields.category = 'key';
-        pieSeries.slices.template.propertyFields.fill = 'color';
-        pieSeries.labels.template.disabled = true;
-        pieSeries.ticks.template.disabled = true;
-
-        this.chart = chart;
-      }
-
       const manipulated = this.manipulate(
         comparatorData && showPrevious
           ? comparatorData[namespace]
           : rowData[namespace],
       );
-      this.chart.data = manipulated;
-      this.chart.invalidateData();
+      this.getChart().data = manipulated;
     }
-  }
+  };
+
+  getChart = () => {
+    if (!this.chart) {
+      const chart = am4core.create(this.id, am4charts.PieChart);
+      chart.innerRadius = am4core.percent(40);
+      chart.legend = new am4charts.Legend();
+      chart.legend.position = 'right';
+
+      const pieSeries = chart.series.push(new am4charts.PieSeries());
+      pieSeries.dataFields.value = 'value';
+      pieSeries.dataFields.category = 'key';
+      pieSeries.slices.template.propertyFields.fill = 'color';
+      pieSeries.labels.template.disabled = true;
+      pieSeries.ticks.template.disabled = true;
+
+      this.chart = chart;
+    }
+    return this.chart;
+  };
 
   manipulate = data => {
     const { groupBy, rollup: rollupper } = this.props;

@@ -52,55 +52,54 @@ export default class TreemapBlock extends PureComponent<any, any> {
     }
   }
 
-  componentDidUpdate() {
-    const {
-      rowData,
-      loaded,
-      limit,
-      formatter,
-      label,
-      datumRenderer,
-      comparatorData,
-      timeRange,
-      namespace,
-    } = this.props;
-    console.log(this.props);
+  componentDidMount() {
+    this.drawChart();
+  }
 
+  componentDidUpdate() {
+    this.drawChart();
+  }
+
+  drawChart = () => {
+    const { rowData, loaded, comparatorData, namespace } = this.props;
     const { showPrevious } = this.state;
 
     if (loaded) {
-      if (!this.chart) {
-        const chart = am4core.create(this.id, am4charts.TreeMap);
-        let level1 = chart.seriesTemplates.create('0');
-        let level1_column = level1.columns.template;
-        level1_column.column.cornerRadius(10, 10, 10, 10);
-        level1_column.fillOpacity = 0.8;
-        level1_column.stroke = am4core.color('#fff');
-        level1_column.strokeWidth = 5;
-        level1_column.strokeOpacity = 1;
-
-        let level1_bullet = level1.bullets.push(new am4charts.LabelBullet());
-        level1_bullet.locationY = 0.5;
-        level1_bullet.locationX = 0.5;
-        level1_bullet.label.text = '{name}';
-        level1_bullet.label.fill = am4core.color('#fff');
-
-        chart.dataFields.value = 'value';
-        chart.dataFields.name = 'name';
-        chart.dataFields.color = 'color';
-
-        this.chart = chart;
-      }
-
       const manipulated = this.manipulate(
         comparatorData && showPrevious
           ? comparatorData[namespace]
           : rowData[namespace],
       );
 
-      this.chart.data = manipulated;
+      this.getChart().data = manipulated;
     }
-  }
+  };
+
+  getChart = () => {
+    if (!this.chart) {
+      const chart = am4core.create(this.id, am4charts.TreeMap);
+      let level1 = chart.seriesTemplates.create('0');
+      let level1_column = level1.columns.template;
+      level1_column.column.cornerRadius(10, 10, 10, 10);
+      level1_column.fillOpacity = 0.8;
+      level1_column.stroke = am4core.color('#fff');
+      level1_column.strokeWidth = 5;
+      level1_column.strokeOpacity = 1;
+
+      let level1_bullet = level1.bullets.push(new am4charts.LabelBullet());
+      level1_bullet.locationY = 0.5;
+      level1_bullet.locationX = 0.5;
+      level1_bullet.label.text = '{name}';
+      level1_bullet.label.fill = am4core.color('#fff');
+
+      chart.dataFields.value = 'value';
+      chart.dataFields.name = 'name';
+      chart.dataFields.color = 'color';
+
+      this.chart = chart;
+    }
+    return this.chart;
+  };
 
   render() {
     const { loaded, label, comparatorData, timeRange, namespace } = this.props;
