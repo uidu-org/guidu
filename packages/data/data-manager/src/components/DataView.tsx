@@ -101,8 +101,6 @@ export default class DataView extends PureComponent<any> {
       filterModel,
     } = this.props;
 
-    console.log(columnCount);
-
     if (!rowData) {
       return <ShellBodyWithSpinner />;
     }
@@ -118,7 +116,11 @@ export default class DataView extends PureComponent<any> {
         onFirstDataRendered={onFirstDataRendered}
         // use columnDefs from props to avoid flickering on toggling/reordering columns
         columnDefs={columnDefs}
-        loadingOverlayComponentFramework={() => <Spinner />}
+        loadingOverlayComponentFramework={() => (
+          <div className="h-100 bg-white d-flex align-items-center justify-content-center w-100">
+            <Spinner />
+          </div>
+        )}
         rowData={rowData}
         onAddField={onAddField}
         onSortChanged={onSortChanged}

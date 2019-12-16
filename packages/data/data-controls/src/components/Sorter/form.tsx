@@ -15,8 +15,12 @@ export default class SorterForm extends PureComponent<SorterProps> {
   private form = React.createRef();
 
   handleSubmit = async model => {
+    this.sortBy(model.sorters || []);
+  };
+
+  sortBy = sorters => {
     const { gridApi } = this.props;
-    gridApi.setSortModel(model.sorters || []);
+    gridApi.setSortModel(sorters || []);
   };
 
   render() {
@@ -128,16 +132,13 @@ export default class SorterForm extends PureComponent<SorterProps> {
               )
             }
             onClick={columnDef => {
-              gridApi.setSortModel([
+              this.sortBy([
                 ...sorters,
                 {
                   colId: columnDef.colId,
                   sort: 'desc',
                 },
               ]);
-              setTimeout(() => {
-                (this.form.current as any).submit();
-              }, 30);
             }}
             isDefaultOpen={sorters.length === 0}
             columnDefs={sortableColumnDefs.filter(

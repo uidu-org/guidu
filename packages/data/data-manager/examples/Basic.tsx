@@ -53,8 +53,8 @@ const dataViews = [
       'firstName',
       'gender',
       'phone',
-      'addField',
       'createdAt',
+      'addField',
     ],
   },
   {
@@ -119,13 +119,6 @@ const dataViews = [
     kind: 'timeline',
     fields: ['avatar', 'member', 'amount'],
   },
-  {
-    id: 7,
-    name: 'Map',
-    primaryField: 'country',
-    kind: 'map',
-    fields: ['avatar', 'member', 'amount'],
-  },
 ];
 
 export default class Basic extends Component<any, any> {
@@ -184,13 +177,45 @@ export default class Basic extends Component<any, any> {
 
   render() {
     const { loaded, dataViews, currentView, rowData } = this.state;
-    console.log(currentView);
+
     return (
       <IntlProvider locale="en">
         <Router>
           <DataManager
             key={`table-for-${this.state.currentView.id}`}
-            columnDefs={buildColumns(availableColumns)}
+            columnDefs={buildColumns([
+              {
+                kind: 'default',
+                name: 'Default fields',
+                columns: availableColumns,
+              },
+              {
+                kind: 'custom',
+                name: 'custom fields',
+                columns: [
+                  {
+                    dataField: 'string',
+                    colId: 'custom-field-1',
+                    field: 'custom-field-1',
+                    headerName: 'custom field 1',
+                  },
+                ],
+              },
+              {
+                kind: 'system',
+                name: 'System fields',
+                columns: [
+                  {
+                    dataFieldParams: {
+                      onFieldAdd: () => window.alert('add a field'),
+                    },
+                    dataField: 'addField',
+                    colId: 'addField',
+                    headerName: 'Add field',
+                  },
+                ],
+              },
+            ])}
             rowData={rowData}
             currentView={currentView}
             updateView={this.updateView}
@@ -213,12 +238,6 @@ export default class Basic extends Component<any, any> {
                             rename: true,
                           },
                         ],
-                      },
-                      viewer: {
-                        visible: true,
-                      },
-                      grouper: {
-                        visible: true,
                       },
                     },
                   })}

@@ -4,7 +4,7 @@ import React, { PureComponent } from 'react';
 export default class Item extends PureComponent<any> {
   render() {
     const { columnDefs, item, ...rest } = this.props;
-    console.log(this.props);
+
     // console.log(this.props);
     // const {
     //   items,

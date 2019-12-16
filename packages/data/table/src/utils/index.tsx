@@ -30,7 +30,7 @@ import {
   urlColumn,
   voteColumn,
 } from '../components/columns';
-import { Column } from '../types';
+import { ColumnGroup } from '../types';
 
 const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
   switch (dataField) {
@@ -91,23 +91,24 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
   }
 };
 
-export const buildColumn = ({
-  primary,
-  dataField,
-  dataFieldParams,
-  ...column
-}: Column) => {
-  return {
-    ...(dataField
-      ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
-      : {}),
-    ...(primary ? { ...primaryColumn() } : {}),
-    ...column,
-  };
+export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
+  return columns.map(({ primary, dataField, dataFieldParams, ...column }) => {
+    return {
+      fieldGroup,
+      ...(dataField
+        ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
+        : {}),
+      ...(primary ? { ...primaryColumn() } : {}),
+      ...column,
+    };
+  });
 };
 
-export const buildColumns = (columns): Array<Column> =>
-  columns.map(column => buildColumn(column));
+export const buildColumns = (columns): Array<ColumnGroup> => {
+  return columns.reduce((arr, item) => {
+    return [...arr, ...buildColumn(item)];
+  }, []);
+};
 
 export const valueRenderer = (data, column) => {
   const {

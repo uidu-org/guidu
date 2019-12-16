@@ -167,12 +167,7 @@ export const availableColumns = [
     headerName: 'Payment Method',
     enableRowGroup: true,
   },
-  {
-    dataFieldParams: { onFieldAdd: () => window.alert('add a field') },
-    dataField: 'addField',
-    colId: 'addField',
-    headerName: 'Add field',
-  },
+
   // {
   //   colId: 'progress',
   //   field: 'progress',

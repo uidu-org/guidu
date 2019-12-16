@@ -47,7 +47,7 @@
     "prosemirror-model": "^1.7.1",
     "prosemirror-schema-list": "^1.0.3",
     "prosemirror-state": "^1.2.3",
-    "prosemirror-tables": "^0.9.1",
+    "prosemirror-tables": "^1.0.0",
     "prosemirror-utils": "^0.9.2",
     "prosemirror-view": "^1.9.10",
     "re-resizable": "^6.0.0",

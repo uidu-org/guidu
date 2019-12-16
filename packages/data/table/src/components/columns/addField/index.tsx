@@ -16,9 +16,14 @@ export default ({ onFieldAdd }) => ({
   editable: false,
   headerComponentFramework: ({ onFieldAdd, displayName }) => {
     return (
-      <Tooltip content={displayName} position="bottom" delay={0}>
+      <Tooltip
+        content={displayName}
+        position="bottom"
+        delay={0}
+        className="w-100 align-items-center justify-content-center d-flex"
+      >
         <div
-          className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
+          className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1 h-100"
           style={{ minWidth: 0 }}
           onClick={onFieldAdd}
         >

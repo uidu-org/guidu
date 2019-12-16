@@ -16,7 +16,6 @@ export default class Basic extends Component<any, any> {
   }
 
   render() {
-    console.log(this.state.rowData);
     return (
       <Router>
         <Gallery

@@ -27,7 +27,7 @@ const defaultAvailableControls = {
     props: {},
   },
   grouper: {
-    visibile: true,
+    visible: true,
     props: {},
   },
   filterer: {
@@ -131,20 +131,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       // gridApi.sizeColumnsToFit();
     }
     gridApi.hideOverlay();
-  };
-
-  filterVisibleColumnDefs = () => {
-    const { currentView, columnDefs } = this.props;
-    return columnDefs
-      .map(column => ({
-        ...column,
-        hide: !currentView.fields.includes(column.colId),
-      }))
-      .sort(
-        (a, b) =>
-          currentView.fields.indexOf(a.colId) -
-          currentView.fields.indexOf(b.colId),
-      );
   };
 
   /**
@@ -358,7 +344,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   };
 
   renderControls = ({ controls }) => {
-    const { currentView, updateView } = this.props;
+    const { columnDefs, currentView, updateView } = this.props;
     const {
       sorters,
       filterModel,
@@ -426,7 +412,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
                 gridColumnApi={this.gridColumnApi}
                 columnDefs={columns}
                 groupers={groupers}
-                {...availableControls.sorter.props}
+                {...availableControls.grouper.props}
               />
             )}
           {availableControls.finder.visible && (

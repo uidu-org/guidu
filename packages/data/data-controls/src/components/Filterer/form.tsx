@@ -26,20 +26,9 @@ export default class FiltererForm extends PureComponent<FiltererProps> {
     gridApi.setFilterModel(newFilterModel);
   };
 
-  // updateFilterModel = (newKey, oldKey) => {
-  //   const {
-  //     gridApi,
-  //     filterModel: { [oldKey]: old, ...rest },
-  //   } = this.props;
-  //   const newFilterModel = {
-  //     ...rest,
-  //     [newKey]: {
-  //       type: 'greaterThan',
-  //       filter: 10,
-  //     },
-  //   };
-  //   gridApi.setFilterModel(newFilterModel);
-  // };
+  filterBy = filterModel => {
+    const { gridApi } = this.props;
+  };
 
   render() {
     const { filtersCount, columnDefs, gridApi, filterModel } = this.props;
