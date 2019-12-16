@@ -24,7 +24,10 @@ export const manipulator = (record, [operation, key]) => {
     case 'sum':
       return sum(record, c => resolve(key, c));
     case 'count':
-      return group(record.filter(l => !l.fake), c => resolve(key, c)).size;
+      return group(
+        record.filter(l => !l.fake),
+        c => resolve(key, c),
+      ).size;
     case 'max':
       return max(record, c => resolve(key, c));
     case 'mean':

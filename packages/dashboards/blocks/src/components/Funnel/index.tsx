@@ -1,13 +1,11 @@
+import * as am4charts from '@amcharts/amcharts4/charts';
+import * as am4core from '@amcharts/amcharts4/core';
 import React, { PureComponent } from 'react';
-import {
-  Funnel,
-  FunnelChart,
-  LabelList,
-  ResponsiveContainer,
-  Tooltip,
-} from 'recharts';
+import uuid from 'uuid/v1';
 import { colors } from '../../utils';
 import Loader from '../Loader';
+
+am4core.options.commercialLicense = true;
 
 const data01 = [
   {
@@ -38,6 +36,39 @@ const data01 = [
 ];
 
 export default class PieBlock extends PureComponent<any> {
+  private chart: am4charts.SlicedChart;
+  private id: string;
+
+  constructor(props) {
+    super(props);
+    this.id = uuid();
+  }
+
+  componentWillUnmount() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  }
+
+  componentDidUpdate() {
+    const { rowData, loaded } = this.props;
+    if (loaded) {
+      if (!this.chart) {
+        const chart = am4core.create(this.id, am4charts.SlicedChart);
+
+        let series = chart.series.push(new am4charts.FunnelSeries());
+        series.dataFields.value = 'value';
+        series.dataFields.category = 'name';
+        series.sliceLinks.template.height = 0;
+        series.slices.template.slice.propertyFields.fill = 'fill';
+        series.alignLabels = true;
+        this.chart = chart;
+      }
+
+      this.chart.data = data01;
+    }
+  }
+
   render() {
     const { rowData, loaded } = this.props;
 
@@ -48,21 +79,7 @@ export default class PieBlock extends PureComponent<any> {
     return (
       <div className="card h-100">
         <div className="card-header">Graph title</div>
-        <div className="card-body">
-          <ResponsiveContainer>
-            <FunnelChart>
-              <Tooltip />
-              <Funnel dataKey="value" data={data01} isAnimationActive>
-                <LabelList
-                  position="right"
-                  fill="#000"
-                  stroke="none"
-                  dataKey="name"
-                />
-              </Funnel>
-            </FunnelChart>
-          </ResponsiveContainer>
-        </div>
+        <div id={this.id} style={{ width: '100%', height: '100%' }}></div>
       </div>
     );
   }

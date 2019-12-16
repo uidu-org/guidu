@@ -1,8 +1,13 @@
+import am4geodata_worldLow from '@amcharts/amcharts4-geodata/worldLow';
+import * as am4core from '@amcharts/amcharts4/core';
+import * as am4maps from '@amcharts/amcharts4/maps';
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import { Chart } from 'react-google-charts';
-import { colors, manipulator, resolve } from '../../utils';
+import uuid from 'uuid/v1';
+import { manipulator, resolve } from '../../utils';
 import Loader from '../Loader';
+
+am4core.options.commercialLicense = true;
 
 const data01 = [
   ['Country', 'Popularity'],
@@ -16,6 +21,14 @@ const data01 = [
 ];
 
 export default class GeoBlock extends PureComponent<any> {
+  private chart: am4maps.MapChart;
+  private id: string;
+
+  constructor(props) {
+    super(props);
+    this.id = uuid();
+  }
+
   manipulate = data => {
     const { groupBy, sortBy: sorter, rollup: rollupper, limit } = this.props;
     let manipulated = data;
@@ -29,6 +42,26 @@ export default class GeoBlock extends PureComponent<any> {
     return manipulated;
   };
 
+  componentDidUpdate() {
+    const { rowData, loaded, limit, formatter, label, namespace } = this.props;
+    if (loaded) {
+      if (!this.chart) {
+        const chart = am4core.create(this.id, am4maps.MapChart);
+        chart.geodata = am4geodata_worldLow;
+        // Set projection
+        chart.projection = new am4maps.projections.Mercator();
+
+        // Create map polygon series
+        var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+
+        // Make map load polygon (like country names) data from GeoJSON
+        polygonSeries.useGeodata = true;
+        polygonSeries.exclude = ['AQ'];
+        this.chart = chart;
+      }
+    }
+  }
+
   render() {
     const { rowData, loaded, limit, formatter, label, namespace } = this.props;
 
@@ -41,30 +74,7 @@ export default class GeoBlock extends PureComponent<any> {
     return (
       <div className="card h-100">
         <div className="card-header">Map</div>
-        <div className="card-body">
-          <Chart
-            options={{
-              fontName: 'Avenir',
-              colorAxis: { colors: [colors[0], colors[colors.length / 2 - 1]] },
-            }}
-            chartEvents={[
-              {
-                eventName: 'select',
-                callback: ({ chartWrapper }) => {
-                  const chart = chartWrapper.getChart();
-                  const selection = chart.getSelection();
-                  if (selection.length === 0) return;
-                  const region = rowData[selection[0].row + 1];
-                  console.log('Selected : ' + region);
-                },
-              },
-            ]}
-            chartType="GeoChart"
-            width="100%"
-            height="100%"
-            data={data01}
-          />
-        </div>
+        <div id={this.id} style={{ width: '100%', height: '100%' }}></div>
       </div>
     );
   }

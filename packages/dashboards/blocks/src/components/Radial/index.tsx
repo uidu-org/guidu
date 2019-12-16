@@ -1,14 +1,14 @@
+import * as am4charts from '@amcharts/amcharts4/charts';
+import * as am4core from '@amcharts/amcharts4/core';
+import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import {
-  Cell,
-  Legend,
-  RadialBar,
-  RadialBarChart,
-  ResponsiveContainer,
-} from 'recharts';
+import uuid from 'uuid/v1';
 import { colors, manipulator } from '../../utils';
 import Loader from '../Loader';
+
+am4core.useTheme(am4themes_animated);
+am4core.options.commercialLicense = true;
 
 const data01 = [
   {
@@ -56,6 +56,15 @@ const data01 = [
 ];
 
 export default class RadialBlock extends PureComponent<any> {
+  private chart: am4charts.PieChart;
+  private id: string;
+
+  constructor(props) {
+    super(props);
+
+    this.id = uuid();
+  }
+
   inBin = amount => {
     const { bins } = this.props;
     const foo = bins.map((bin, index) => {
@@ -81,6 +90,38 @@ export default class RadialBlock extends PureComponent<any> {
     }));
   };
 
+  componentDidUpdate() {
+    const { rowData, loaded, comparatorData, namespace } = this.props;
+    //  const { showPrevious } = this.state;
+    console.log(this.id);
+
+    if (loaded) {
+      if (!this.chart) {
+        const chart = am4core.create(this.id, am4charts.PieChart);
+        chart.radius = am4core.percent(70);
+        chart.innerRadius = am4core.percent(40);
+        chart.startAngle = 180;
+        chart.endAngle = 360;
+        chart.legend = new am4charts.Legend();
+        chart.legend.position = 'bottom';
+        const pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = 'pv';
+        pieSeries.dataFields.category = 'name';
+        pieSeries.slices.template.propertyFields.fill = 'fill';
+        pieSeries.labels.template.disabled = true;
+        pieSeries.ticks.template.disabled = true;
+        this.chart = chart;
+      }
+
+      //  const manipulated = this.manipulate(
+      //    comparatorData && showPrevious
+      //      ? comparatorData[namespace]
+      //      : rowData[namespace],
+      //  );
+      this.chart.data = data01;
+    }
+  }
+
   render() {
     const { rowData, loaded, namespace } = this.props;
 
@@ -88,47 +129,10 @@ export default class RadialBlock extends PureComponent<any> {
       return <Loader />;
     }
 
-    const manipulated = this.manipulate(rowData[namespace]);
-
     return (
       <div className="card h-100">
         <div className="card-header">Graph title</div>
-        <div className="card-body">
-          <ResponsiveContainer>
-            <RadialBarChart
-              // width={500}
-              // height={300}
-              // cx={150}
-              // cy={150}
-              startAngle={180}
-              endAngle={0}
-              innerRadius={20}
-              outerRadius={140}
-              barSize={10}
-              data={manipulated}
-            >
-              <RadialBar
-                minAngle={15}
-                label={{ position: 'insideStart', fill: '#fff' }}
-                background
-                clockWise
-                dataKey="value"
-              >
-                {manipulated.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={colors[index]} />
-                ))}
-              </RadialBar>
-              <Legend
-                iconSize={10}
-                width={120}
-                height={140}
-                layout="vertical"
-                verticalAlign="middle"
-                align="right"
-              />
-            </RadialBarChart>
-          </ResponsiveContainer>
-        </div>
+        <div id={this.id} style={{ width: '100%', height: '100%' }}></div>
       </div>
     );
   }

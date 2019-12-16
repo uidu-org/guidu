@@ -1,13 +1,23 @@
+import * as am4charts from '@amcharts/amcharts4/charts';
+import * as am4core from '@amcharts/amcharts4/core';
+import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import { Chart } from 'react-google-charts';
+import uuid from 'uuid/v1';
 import { colors, manipulator, resolve } from '../../utils';
 import Loader from '../Loader';
 import Switch from '../Switch';
 
+am4core.useTheme(am4themes_animated);
+am4core.options.commercialLicense = true;
+
 export default class TreemapBlock extends PureComponent<any, any> {
+  private chart: am4charts.TreeMap;
+  private id: string;
+
   constructor(props) {
     super(props);
+    this.id = uuid();
     this.state = {
       showPrevious: false,
     };
@@ -22,18 +32,27 @@ export default class TreemapBlock extends PureComponent<any, any> {
       c => (groupBy ? resolve(groupBy, c) : c.id),
     );
 
-    manipulated = Array.from(manipulated).reduce((arr: Array<any>, item) => {
-      arr.push([{ k: item[0], v: `${item[0]} - ${item[1]}` }, 'Root', item[1]]);
-      return arr;
-    }, []);
-    return [
-      ['Key', 'Parent', 'Value'], //, 'Increase'],
-      ['Root', null, 0], //, 0],
-      ...manipulated,
-    ];
+    manipulated = Array.from(manipulated).reduce(
+      (arr: Array<any>, item, index) => {
+        arr.push({
+          name: item[0],
+          value: item[1],
+          color: colors[index],
+        });
+        return arr;
+      },
+      [],
+    );
+    return manipulated;
   };
 
-  render() {
+  componentWillUnmount() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  }
+
+  componentDidUpdate() {
     const {
       rowData,
       loaded,
@@ -45,8 +64,52 @@ export default class TreemapBlock extends PureComponent<any, any> {
       timeRange,
       namespace,
     } = this.props;
+    console.log(this.props);
 
     const { showPrevious } = this.state;
+
+    if (loaded) {
+      if (!this.chart) {
+        const chart = am4core.create(this.id, am4charts.TreeMap);
+        let level1 = chart.seriesTemplates.create('0');
+        let level1_column = level1.columns.template;
+        level1_column.column.cornerRadius(10, 10, 10, 10);
+        level1_column.fillOpacity = 0.8;
+        level1_column.stroke = am4core.color('#fff');
+        level1_column.strokeWidth = 5;
+        level1_column.strokeOpacity = 1;
+
+        let level1_bullet = level1.bullets.push(new am4charts.LabelBullet());
+        level1_bullet.locationY = 0.5;
+        level1_bullet.locationX = 0.5;
+        level1_bullet.label.text = '{name}';
+        level1_bullet.label.fill = am4core.color('#fff');
+
+        chart.dataFields.value = 'value';
+        chart.dataFields.name = 'name';
+        chart.dataFields.color = 'color';
+
+        this.chart = chart;
+      }
+
+      const manipulated = this.manipulate(
+        comparatorData && showPrevious
+          ? comparatorData[namespace]
+          : rowData[namespace],
+      );
+
+      this.chart.data = manipulated;
+    }
+  }
+
+  render() {
+    const { loaded, label, comparatorData, timeRange, namespace } = this.props;
+
+    const { showPrevious } = this.state;
+
+    if (!loaded) {
+      return <Loader />;
+    }
 
     return (
       <div className="card h-100">
@@ -67,55 +130,7 @@ export default class TreemapBlock extends PureComponent<any, any> {
             }
           />
         </div>
-        <div
-          style={{
-            marginTop: -1,
-            height: '100%',
-            marginRight: -16,
-            marginBottom: -6,
-            marginLeft: -6,
-          }}
-        >
-          {loaded ? (
-            <Chart
-              options={{
-                fontFamily: 'Avenir',
-                fontSize: 14,
-                minHighlightColor: '#8c6bb1',
-                midHighlightColor: '#9ebcda',
-                maxHighlightColor: '#edf8fb',
-                minColor: colors[2],
-                midColor: '#f7f7f7',
-                maxColor: colors[0],
-                // hintOpacity: 0.3,
-                headerHeight: 0,
-              }}
-              chartEvents={[
-                {
-                  eventName: 'select',
-                  callback: ({ chartWrapper }) => {
-                    const chart = chartWrapper.getChart();
-                    const selection = chart.getSelection();
-                    if (selection.length === 0) return;
-                    console.log(selection);
-                    // const region = rowData[selection[0].row + 1];
-                    // console.log('Selected : ' + region);
-                  },
-                },
-              ]}
-              chartType="TreeMap"
-              width="100%"
-              height="100%"
-              data={this.manipulate(
-                comparatorData && showPrevious
-                  ? comparatorData[namespace]
-                  : rowData[namespace],
-              )}
-            />
-          ) : (
-            <Loader />
-          )}
-        </div>
+        <div id={this.id} style={{ width: '100%', height: '100%' }} />
       </div>
     );
   }
