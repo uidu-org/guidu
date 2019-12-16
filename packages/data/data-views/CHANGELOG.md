@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 0.2.0
+
+### Minor Changes
+
+- 15afe83: List proper data views, removing ones that will become data-blocks
+
+### Patch Changes
+
+- @uidu/data-controls@0.2.26
+
 ## 0.1.12
 
 ### Patch Changes
