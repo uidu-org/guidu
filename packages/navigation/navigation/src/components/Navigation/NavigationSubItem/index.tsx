@@ -32,6 +32,7 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   padding-right: 0.75rem;
   font-size: 0.935rem;
   position: relative;
+  letter-spacing: -0.02em;
 
   &:hover,
   &.active {

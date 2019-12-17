@@ -9,11 +9,15 @@ import DrawerLayout from '../../utils/DrawerLayout';
 import { ConfiguratorProps } from './types';
 
 export default class Configurator extends Component<ConfiguratorProps, any> {
+  static defaultProps = {
+    isConfiguratorOpen: false,
+  };
+
   constructor(props) {
     super(props);
 
     this.state = {
-      dialogOpen: false,
+      dialogOpen: props.isConfiguratorOpen,
     };
   }
 

@@ -10,6 +10,7 @@ import { ViewerProps } from './types';
 export default function Viewer({
   currentView,
   updateView,
+  isConfiguratorOpen,
   availableControls,
   columnDefs,
   groupers,
@@ -71,6 +72,7 @@ export default function Viewer({
         )}
       </div>
       <Configurator
+        isConfiguratorOpen={isConfiguratorOpen}
         gridApi={gridApi}
         gridColumnApi={gridColumnApi}
         currentView={currentView}

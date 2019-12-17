@@ -363,6 +363,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       <>
         {availableControls.viewer.visible && (
           <Viewer
+            isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
             gridApi={this.gridApi}
             gridColumnApi={this.gridColumnApi}
             availableControls={availableControls}

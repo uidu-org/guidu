@@ -227,6 +227,10 @@ export default class Basic extends Component<any, any> {
                 <ShellHeader className="px-3 px-xl-4">
                   {renderControls({
                     controls: {
+                      viewer: {
+                        visible: true,
+                        isConfiguratorOpen: true,
+                      },
                       finder: {
                         visible: true,
                       },

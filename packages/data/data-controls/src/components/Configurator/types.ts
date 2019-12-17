@@ -12,6 +12,7 @@ export type ConfiguratorProps = GrouperProps &
     currentView: any;
     updateView: (dataView: DataView) => void;
     onSetColumnCount: (columnCount: number) => void;
+    isConfiguratorOpen?: boolean;
     columnCount?: number;
     gridApi: GridApi;
     gridColumnApi: ColumnApi;
