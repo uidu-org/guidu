@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.78
+
+### Patch Changes
+
+- 5d7fa3e: Try updating and saving dataView with dataManager
+
 ## 0.1.77
 
 ### Patch Changes

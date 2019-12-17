@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.11
+
+### Patch Changes
+
+- 5d7fa3e: Try updating and saving dataView with dataManager
+
 ## 0.2.10
 
 ### Patch Changes

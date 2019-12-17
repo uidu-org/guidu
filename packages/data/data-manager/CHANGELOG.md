@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.71
+
+### Patch Changes
+
+- 5d7fa3e: Try updating and saving dataView with dataManager
+- Updated dependencies [5d7fa3e]
+  - @uidu/data-views@0.2.1
+  - @uidu/table@0.1.78
+
 ## 0.1.70
 
 ### Patch Changes
