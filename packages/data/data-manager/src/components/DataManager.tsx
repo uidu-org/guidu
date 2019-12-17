@@ -1,5 +1,6 @@
 import { Filterer, Finder, Grouper, Sorter, Viewer } from '@uidu/data-controls';
 import Spinner from '@uidu/spinner';
+import debounce from 'lodash/debounce';
 import React, { PureComponent } from 'react';
 import { DataManagerProps } from '../types';
 import { initializeDataView } from '../utils';
@@ -45,6 +46,7 @@ const defaultAvailableControls = {
 };
 
 export default class DataManager extends PureComponent<DataManagerProps, any> {
+  private autoSaveTimeout: number | undefined;
   static whyDidYouRender = true;
 
   static defaultProps = {
@@ -116,6 +118,24 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     this.gridApi && this.gridApi.destroy();
   }
 
+  updateView = debounce(() => {
+    const { updateView, currentView } = this.props;
+    const { sorters, groupers, filterModel, columns } = this.state;
+    window.clearTimeout(this.autoSaveTimeout);
+    return updateView({
+      ...currentView,
+      sorters,
+      groupers,
+      filterModel,
+      fields: columns.filter(c => !c.hide).map(c => c.colId),
+    }).then(() => {
+      this.setState({ isAutoSaving: 'done' });
+      this.autoSaveTimeout = window.setTimeout(() => {
+        this.setState({ isAutoSaving: null });
+      }, 3000);
+    });
+  }, 1500);
+
   // resizeTableOnWindowResize = () => {
   //   setTimeout(() => {
   //     this.gridApi.sizeColumnsToFit();
@@ -140,7 +160,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnColumnVisible reacts to ag-grid callback, and updates columns state
    */
   onColumnVisible = ({ columns, visible }) => {
-    const { updateView, currentView } = this.props;
     this.setState(
       prevState => ({
         columns: prevState.columns.map(column => {
@@ -152,13 +171,11 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
           }
           return column;
         }),
+        isAutoSaving: 'in-progress',
       }),
       () => {
         this.resizeTable();
-        updateView({
-          ...currentView,
-          fields: this.state.columns.filter(c => !c.hide).map(c => c.colId),
-        });
+        this.updateView();
       },
     );
   };
@@ -170,19 +187,16 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnSortChanged is called everytime a sort is added or removed
    */
   onSortChanged = ({ api }) => {
-    const { updateView, currentView } = this.props;
     const sorters = api.getSortModel();
     this.setState(
       {
         data: api.getModel().rowsToDisplay,
         sorters,
+        isAutoSaving: 'in-progress',
       },
       () => {
         api.refreshCells({ force: true });
-        updateView({
-          ...currentView,
-          sorters,
-        });
+        this.updateView();
       },
     );
   };
@@ -194,19 +208,16 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnFilterChanged reacts to ag-grid callback, and updates columns state
    */
   onFilterChanged = ({ api, ...rest }) => {
-    const { updateView, currentView } = this.props;
     const filterModel = api.getFilterModel();
     this.setState(
       {
         data: api.getModel().rowsToDisplay,
         filterModel,
+        isAutoSaving: 'in-progress',
       },
       () => {
         api.refreshCells({ force: true });
-        updateView({
-          ...currentView,
-          filterModel,
-        });
+        this.updateView();
       },
     );
   };
@@ -218,19 +229,16 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnColumnVisible reacts to ag-grid callback, and updates columns state
    */
   onColumnRowGroupChanged = ({ columns }) => {
-    const { updateView, currentView } = this.props;
     const groupers = columns.map(c => ({
       colId: c.colId,
     }));
     this.setState(
       {
         groupers,
+        isAutoSaving: 'in-progress',
       },
       () => {
-        updateView({
-          ...currentView,
-          groupers,
-        });
+        this.updateView();
       },
     );
   };
@@ -377,6 +385,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       columns,
       rowHeight,
       columnCount,
+      isAutoSaving,
     } = this.state;
 
     const availableControls = {
@@ -403,6 +412,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
             columnCount={columnCount}
             onSetColumnCount={this.setColumnCount}
             actions={availableControls.more.actions}
+            isAutoSaving={isAutoSaving}
           />
         )}
         <div className="d-flex align-items-center">

@@ -9,4 +9,5 @@ export type ViewerProps = ConfiguratorProps &
     availableControls: any;
     columnCount?: number;
     onSetColumnCount?: (columnCount: number) => void;
+    isAutoSaving: string;
   };

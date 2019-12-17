@@ -158,8 +158,7 @@ export default class Basic extends Component<any, any> {
     fetchContacts().then(rowData => this.setState({ loaded: true, rowData }));
   }
 
-  updateView = currentView => {
-    console.log(currentView);
+  updateView = async currentView => {
     const dataViews = this.state.dataViews.map(item => {
       if (item.id !== currentView.id) {
         return item;
@@ -170,10 +169,11 @@ export default class Basic extends Component<any, any> {
         ...currentView,
       };
     });
-    this.setState({
+    await this.setState({
       dataViews,
       currentView,
     });
+    return currentView;
   };
 
   render() {

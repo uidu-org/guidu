@@ -7,6 +7,27 @@ import More from '../More';
 import Starrer from '../Starrer';
 import { ViewerProps } from './types';
 
+const renderAutoSaving = ({ isAutoSaving }) => {
+  console.log(isAutoSaving);
+  if (!isAutoSaving) {
+    return null;
+  }
+
+  if (isAutoSaving === 'in-progress') {
+    return (
+      <div className="small text-muted">
+        <u>Saving now...</u>
+      </div>
+    );
+  }
+
+  return (
+    <div className="small text-muted">
+      <u>All changes have been saved</u>
+    </div>
+  );
+};
+
 export default function Viewer({
   currentView,
   updateView,
@@ -22,6 +43,7 @@ export default function Viewer({
   onSetColumnCount,
   gridApi,
   gridColumnApi,
+  isAutoSaving,
 }: ViewerProps) {
   const node: React.RefObject<HTMLDivElement> = useRef();
   const [editingName, setEditingName] = useState(false);
@@ -93,6 +115,7 @@ export default function Viewer({
           {...availableControls.more.props}
         />
       )}
+      {renderAutoSaving({ isAutoSaving })}
     </div>
   );
 }
