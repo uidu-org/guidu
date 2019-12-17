@@ -116,6 +116,7 @@ export const ItemBase = ({ theme }: any) => css`
     cursor: pointer;
     display: ${({ isHidden }) => (isHidden ? 'none' : 'flex')};
     flex: none;
+    letter-spacing: initial;
     ${getItemState(
       'default',
     )} ${getPadding} ${getInteractiveStyles} ${getHeightStyles} &:focus {

@@ -1,6 +1,6 @@
 // @flow
-import styled, { css } from 'styled-components';
 import { colors, fontSize, gridSize, math, themed } from '@uidu/theme';
+import styled, { css } from 'styled-components';
 
 const activeBackgroundColor = themed({ light: colors.B75, dark: colors.DN30 });
 const hoverBackgroundColor = themed({ light: colors.N20, dark: colors.DN60 });

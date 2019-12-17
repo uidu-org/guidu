@@ -2987,9 +2987,9 @@
   integrity sha512-6+BB0QTGrZ4WGdWyTRk1Ozg1vuQSDyeMNb14LJPT5MRjpc+DRduRUmETWofCNysfmGaiwiu8FqxY3Dt25m72kg==
 
 "@uifabric/file-type-icons@^7.0.3":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.2.0.tgz#2256dea40afc717d335dda912821d96c5d88a88d"
-  integrity sha512-eWdswJ5ksUZhj5aE7BqZBeYVYxklurGANQ1U07eWS2Mxi8ndoDcyK5UrpAqhCA7fKqe274i8P5ywzUAz1n+ROg==
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.2.1.tgz#4fbd56362865175ab484be6693a69b968be4235c"
+  integrity sha512-0l+isoJobx/xvdbW9K4tWUO3qznOhLC5cZOKJBB9D1VbG0pfAI9ldPhE+LGslzFZj9zdpBG+Tv9C1aUe+HQgKA==
   dependencies:
     "@uifabric/set-version" "^7.0.2"
     "@uifabric/styling" "^7.7.4"
@@ -3050,10 +3050,10 @@
     "@uifabric/utilities" "^7.6.0"
     tslib "^1.7.1"
 
-"@uifabric/utilities@^7.0.10", "@uifabric/utilities@^7.5.0", "@uifabric/utilities@^7.6.0", "@uifabric/utilities@^7.7.0":
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-7.7.0.tgz#5145b885512ed9558d994abaf9ae531aabe4872e"
-  integrity sha512-XRcimncrsxLi/YdwyVqjWlEdjvniYet5mL23Yhemgt/PnvVnjkB13qmufDUHfHZ8bYTLvYzVl9qNhaNWMT4gtQ==
+"@uifabric/utilities@^7.0.10", "@uifabric/utilities@^7.5.0", "@uifabric/utilities@^7.6.0", "@uifabric/utilities@^7.7.1":
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@uifabric/utilities/-/utilities-7.7.1.tgz#e0357c898ef8ecf5fb985dbb2f9eead0d193a666"
+  integrity sha512-5ggDSbaZt7wvjVy/ueKshg2u26froomE+WYJ88BnbXeXYvLeyUM+ma3AqfA08dKzmwbS2GdPRouWpcXN9XUyLw==
   dependencies:
     "@uifabric/merge-styles" "^7.8.1"
     "@uifabric/set-version" "^7.0.2"
@@ -10029,7 +10029,7 @@ find-cache-dir@^2.0.0, find-cache-dir@^2.1.0:
     make-dir "^2.0.0"
     pkg-dir "^3.0.0"
 
-find-cache-dir@^3.0.0, find-cache-dir@^3.1.0:
+find-cache-dir@^3.0.0, find-cache-dir@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-3.2.0.tgz#e7fe44c1abc1299f516146e563108fd1006c1874"
   integrity sha512-1JKclkYYsf1q9WIJKLZa9S9muC+08RIjzAlLrK4QcYLJMS6mk9yombQ9qf+zJ7H9LS800k0s44L4sDq9VYzqyg==
@@ -15805,9 +15805,9 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.74.0"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.74.0.tgz#efb8808f730fa20ebfe8637d7400fbcc138d680d"
-  integrity sha512-hkWS6YFJe5iWMWdaKM9wSI4tg62rb0+ahp94QeZf7bPVveKZt/dlHDHwmteVU9dcB8PENBHUNQZ/f5sNecY4JA==
+  version "7.74.1"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.74.1.tgz#24f3e280d279560fb385efe96b7d0841eafe9aaf"
+  integrity sha512-utG1E5QpSkQNGemgXwmiQiC2LBX15shm+GeYeG2+QvZ+wavWgBpeavi14WRNO+zHBKQ/1F92e+NLCEdngQkOoQ==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/foundation" "^7.5.0"
@@ -15816,7 +15816,7 @@ office-ui-fabric-react@^7.5.2:
     "@uifabric/react-hooks" "^7.0.1"
     "@uifabric/set-version" "^7.0.2"
     "@uifabric/styling" "^7.7.4"
-    "@uifabric/utilities" "^7.7.0"
+    "@uifabric/utilities" "^7.7.1"
     prop-types "^15.5.10"
     tslib "^1.7.1"
 
@@ -21133,9 +21133,9 @@ strip-outer@^1.0.0:
     escape-string-regexp "^1.0.2"
 
 style-loader@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-1.0.1.tgz#aec6d4c61d0ed8d0a442faed741d4dfc6573888a"
-  integrity sha512-CnpEkSR1C+REjudiTWCv4+ssP7SCiuaQZJTZDWBRwTJoS90mdqkB8uOGMHKgVeUzpaU7IfLWoyQbvvs5Joj3Xw==
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-1.0.2.tgz#433d72eab8d1dd7d64c648b8ad7d9cbff3184111"
+  integrity sha512-xehHGWeCPrr+R/bU82To0j7L7ENzH30RHYmMhmAumbuIpQ/bHmv3SAj1aTRfBSszkXoqNtpKnJyWXEDydS+KeA==
   dependencies:
     loader-utils "^1.2.3"
     schema-utils "^2.0.1"
@@ -21507,20 +21507,20 @@ terser-webpack-plugin@^1.4.3:
     worker-farm "^1.7.0"
 
 terser-webpack-plugin@^2.0.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-2.3.0.tgz#00fd8f792a330dc572e2e2b468fd7cb5ffd7ea51"
-  integrity sha512-yez0HdpDf/iQVYGf+e/o8ZYWLb1g9d1nRRi5FIOZ4KfXbfSPT259UoqxPiSLhCnr0mlDoh+bucpYQSFbU0cEsQ==
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/terser-webpack-plugin/-/terser-webpack-plugin-2.3.1.tgz#6a63c27debc15b25ffd2588562ee2eeabdcab923"
+  integrity sha512-dNxivOXmDgZqrGxOttBH6B4xaxT4zNC+Xd+2K8jwGDMK5q2CZI+KZMA1AAnSRT+BTRvuzKsDx+fpxzPAmAMVcA==
   dependencies:
     cacache "^13.0.1"
-    find-cache-dir "^3.1.0"
+    find-cache-dir "^3.2.0"
     jest-worker "^24.9.0"
     schema-utils "^2.6.1"
     serialize-javascript "^2.1.2"
     source-map "^0.6.1"
-    terser "^4.4.2"
+    terser "^4.4.3"
     webpack-sources "^1.4.3"
 
-terser@^4.1.2, terser@^4.4.2:
+terser@^4.1.2, terser@^4.4.3:
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/terser/-/terser-4.4.3.tgz#401abc52b88869cf904412503b1eb7da093ae2f0"
   integrity sha512-0ikKraVtRDKGzHrzkCv5rUNDzqlhmhowOBqC0XqUHFpW+vJ45+20/IFBcebwKfiS2Z9fJin6Eo+F1zLZsxi8RA==

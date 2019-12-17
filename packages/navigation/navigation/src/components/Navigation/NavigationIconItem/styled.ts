@@ -15,7 +15,9 @@ export const StyledNavigationIconItemIcon = styled.div`
   }
 `;
 
-export const StyledNavigationIconLink = styled(StyledNavigationLink)`
+export const StyledNavigationIconLink = styled(StyledNavigationLink)<{
+  actionsCount: number;
+}>`
   flex-direction: column;
   justify-content: center;
   height: 4rem;
