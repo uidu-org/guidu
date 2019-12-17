@@ -40,7 +40,7 @@ export default class NavigationItem extends PureComponent<any> {
 
     return (
       <StyledNavigationItem {...otherProps}>
-        <StyledNavigationLink className="d-block">
+        <StyledNavigationLink className="d-block" actionsCount={0}>
           <NavigationItemLoader hasBefore={hasBefore} />
         </StyledNavigationLink>
       </StyledNavigationItem>

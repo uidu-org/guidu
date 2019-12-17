@@ -23,7 +23,8 @@ const DropdownActions = ({
       trigger={
         <StyledNavigationAction
           type="button"
-          onClick={() => {
+          onClick={e => {
+            e.preventDefault();
             setIsOpen(!isOpen);
           }}
           className="btn btn-sm px-2"
@@ -38,7 +39,13 @@ const DropdownActions = ({
           return (
             <DropdownItemGroup title={action.text}>
               {action.actions.map(({ onClick, text, icon }) => (
-                <DropdownItem onClick={onClick} elemBefore={icon}>
+                <DropdownItem
+                  onClick={e => {
+                    e.preventDefault();
+                    onClick(e);
+                  }}
+                  elemBefore={icon}
+                >
                   {text}
                 </DropdownItem>
               ))}
@@ -46,7 +53,13 @@ const DropdownActions = ({
           );
         }
         return (
-          <DropdownItem onClick={action.onClick} elemBefore={action.icon}>
+          <DropdownItem
+            onClick={e => {
+              e.preventDefault();
+              action.onClick(e);
+            }}
+            elemBefore={action.icon}
+          >
             {action.text}
           </DropdownItem>
         );

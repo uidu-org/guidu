@@ -13,7 +13,7 @@ const StyledNavigationActions = styled.div<{ isActionOpen: boolean }>`
   position: absolute;
   right: 0.25rem;
   display: flex;
-  transition: opacity linear 300ms;
+  /* transition: opacity linear 300ms; */
   opacity: ${({ isActionOpen }) => (isActionOpen ? 1 : 0)};
 `;
 
@@ -47,7 +47,7 @@ const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   }
 
   &:hover ${StyledNavigationText} {
-    width: calc(100% - 48px);
+    padding-right: 2rem;
   }
 `;
 
@@ -68,7 +68,12 @@ export default function NavigationSubItem({
           {!!before && (
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
           )}
-          <StyledNavigationText>{text}</StyledNavigationText>
+          <StyledNavigationText
+            isActionOpen={isActionOpen}
+            actionsCount={actions.length}
+          >
+            {text}
+          </StyledNavigationText>
           {actions.length > 0 && (
             <StyledNavigationActions
               onClick={e => e.stopPropagation()}

@@ -285,9 +285,9 @@
     tslib "^1.9.3"
 
 "@atlaskit/calendar@^9.0.1":
-  version "9.2.1"
-  resolved "https://registry.yarnpkg.com/@atlaskit/calendar/-/calendar-9.2.1.tgz#982c2e097b43d9608a384255071bb7d373de12e4"
-  integrity sha512-wGEASNKVjVOfiwDPkzvbW1afjLeCWuVOqgjuLdkVU1s70sVhRDkobGKunw9xzDWcfKOUyLwATXJVtHkz08z1RA==
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/@atlaskit/calendar/-/calendar-9.2.2.tgz#cf3d7d7f27abb1d7a0d6a56257201fcd4efce099"
+  integrity sha512-wtQGZIu8w2SvFwsYu+YIJX+fjbSBEOC9pVTFj7MyISvbt1hi4e+h/pg/RreH5E1kjNH3RTctyGkG1uZdwAPnAA==
   dependencies:
     "@atlaskit/analytics-next" "^6.3.1"
     "@atlaskit/button" "^13.3.4"

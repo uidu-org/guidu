@@ -24,7 +24,10 @@ export default function NavigationActions({
         return (
           <StyledNavigationAction
             type="button"
-            onClick={action.onClick}
+            onClick={e => {
+              e.preventDefault();
+              action.onClick(e);
+            }}
             className="btn btn-sm px-2"
             isCollapsed={isCollapsed}
           >
