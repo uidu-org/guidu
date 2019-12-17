@@ -1,6 +1,6 @@
 {
   "name": "@uidu/droplist",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Droplist component",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -9,7 +9,7 @@
   "dependencies": {
     "@atlaskit/icon": "^19.0.6",
     "@uidu/analytics": "^0.1.15",
-    "@uidu/item": "^0.1.18",
+    "@uidu/item": "^0.1.19",
     "@uidu/layer": "^0.1.8",
     "@uidu/spinner": "^0.1.12",
     "@uidu/theme": "^0.1.18",

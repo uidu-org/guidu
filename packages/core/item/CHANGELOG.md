@@ -1,5 +1,11 @@
 # @uidu/item
 
+## 0.1.19
+
+### Patch Changes
+
+- 1f0a723: Slight fixes to navigation
+
 ## 0.1.18
 
 ### Patch Changes

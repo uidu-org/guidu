@@ -1,5 +1,13 @@
 # @uidu/droplist
 
+## 0.1.17
+
+### Patch Changes
+
+- 1f0a723: Slight fixes to navigation
+- Updated dependencies [1f0a723]
+  - @uidu/item@0.1.19
+
 ## 0.1.16
 
 ### Patch Changes

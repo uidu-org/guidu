@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.10
+
+### Patch Changes
+
+- 1f0a723: Slight fixes to navigation
+
 ## 0.2.9
 
 ### Patch Changes
