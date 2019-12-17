@@ -1,6 +1,8 @@
 import { byName } from '@uidu/data-views';
 import FieldText from '@uidu/field-text';
 import Form from '@uidu/form';
+import Spinner from '@uidu/spinner';
+import Tooltip from '@uidu/tooltip';
 import React, { useEffect, useRef, useState } from 'react';
 import { FormattedDate } from 'react-intl';
 import Configurator from '../Configurator';
@@ -8,33 +10,38 @@ import More from '../More';
 import Starrer from '../Starrer';
 import { ViewerProps } from './types';
 
-const renderAutoSaving = ({ isAutoSaving }) => {
+const renderAutoSaving = ({ isAutoSaving, icon }) => {
   if (!isAutoSaving) {
-    return null;
+    return icon;
   }
 
   if (isAutoSaving === 'in-progress') {
     return (
-      <div className="small text-muted">
-        <u>Saving now...</u>
-      </div>
+      <Tooltip content="Saving now..." className="d-flex">
+        <Spinner size={18} />
+      </Tooltip>
     );
   }
 
   if (isAutoSaving === 'done') {
     return (
-      <div className="small text-muted">
-        <u>All changes have been saved</u>
-      </div>
+      <Tooltip className="d-flex" content="All changes have been saved">
+        {icon}
+      </Tooltip>
     );
   }
 
   return (
-    <div className="small text-muted">
-      <u>
-        Last edited at <FormattedDate value={isAutoSaving} />
-      </u>
-    </div>
+    <Tooltip
+      className="d-flex"
+      content={
+        <span>
+          Last editeded at <FormattedDate value={isAutoSaving} />
+        </span>
+      }
+    >
+      {icon}
+    </Tooltip>
   );
 };
 
@@ -88,7 +95,10 @@ export default function Viewer({
     <div className="d-flex align-items-center mr-auto" ref={node}>
       <div className="d-flex align-items-center mr-4">
         <span className="mr-2 d-flex align-items-center">
-          <Icon strokeWidth={2} size={18} color={color} />
+          {renderAutoSaving({
+            isAutoSaving,
+            icon: <Icon strokeWidth={2} size={18} color={color} />,
+          })}
         </span>
         {editingName ? (
           <Form handleSubmit={handleSubmit} footerRenderer={() => null}>
@@ -125,7 +135,6 @@ export default function Viewer({
           {...availableControls.more.props}
         />
       )}
-      {renderAutoSaving({ isAutoSaving })}
     </div>
   );
 }

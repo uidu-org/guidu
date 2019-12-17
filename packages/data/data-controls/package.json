@@ -22,6 +22,7 @@
     "@uidu/item": "^0.1.18",
     "@uidu/select": "^0.2.4",
     "@uidu/shell": "^0.1.32",
+    "@uidu/spinner": "^0.1.12",
     "@uidu/table": "^0.1.77",
     "@uidu/toggle": "^0.1.19",
     "@uidu/tooltip": "^0.1.20",
