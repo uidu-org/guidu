@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.70
+
+### Patch Changes
+
+- 07fdb18: Add possibility to open configurator by default
+- Updated dependencies [07fdb18]
+  - @uidu/data-controls@0.2.28
+
 ## 0.1.69
 
 ### Patch Changes

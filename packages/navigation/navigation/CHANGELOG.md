@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.8
+
+### Patch Changes
+
+- 07fdb18: Add possibility to open configurator by default
+
 ## 0.2.7
 
 ### Patch Changes
