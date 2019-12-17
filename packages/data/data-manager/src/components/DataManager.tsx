@@ -140,6 +140,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnColumnVisible reacts to ag-grid callback, and updates columns state
    */
   onColumnVisible = ({ columns, visible }) => {
+    const { updateView, currentView } = this.props;
     this.setState(
       prevState => ({
         columns: prevState.columns.map(column => {
@@ -154,6 +155,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       }),
       () => {
         this.resizeTable();
+        updateView({
+          ...currentView,
+          fields: this.state.columns.filter(c => !c.hide).map(c => c.colId),
+        });
       },
     );
   };
@@ -165,6 +170,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnSortChanged is called everytime a sort is added or removed
    */
   onSortChanged = ({ api }) => {
+    const { updateView, currentView } = this.props;
     const sorters = api.getSortModel();
     this.setState(
       {
@@ -173,6 +179,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       },
       () => {
         api.refreshCells({ force: true });
+        updateView({
+          ...currentView,
+          sorters,
+        });
       },
     );
   };
@@ -184,6 +194,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnFilterChanged reacts to ag-grid callback, and updates columns state
    */
   onFilterChanged = ({ api, ...rest }) => {
+    const { updateView, currentView } = this.props;
     const filterModel = api.getFilterModel();
     this.setState(
       {
@@ -192,6 +203,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       },
       () => {
         api.refreshCells({ force: true });
+        updateView({
+          ...currentView,
+          filterModel,
+        });
       },
     );
   };
@@ -203,11 +218,21 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnColumnVisible reacts to ag-grid callback, and updates columns state
    */
   onColumnRowGroupChanged = ({ columns }) => {
-    this.setState({
-      groupers: columns.map(c => ({
-        colId: c.colId,
-      })),
-    });
+    const { updateView, currentView } = this.props;
+    const groupers = columns.map(c => ({
+      colId: c.colId,
+    }));
+    this.setState(
+      {
+        groupers,
+      },
+      () => {
+        updateView({
+          ...currentView,
+          groupers,
+        });
+      },
+    );
   };
 
   /**

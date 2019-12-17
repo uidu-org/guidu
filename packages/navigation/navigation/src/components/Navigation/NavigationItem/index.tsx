@@ -79,16 +79,14 @@ export default function NavigationItem({
     }
 
     return (
-      <AnimateHeight height={isOpen ? 'auto' : 0}>
-        <div className="w-100">
-          {items.map(item =>
-            item.type === 'NavigationItemSkeleton' ? (
-              <NavigationItemSkeleton {...item} visible />
-            ) : (
-              <NavigationSubItem {...item} visible />
-            ),
-          )}
-        </div>
+      <AnimateHeight height={isOpen ? 'auto' : 0} className="w-100">
+        {items.map(item =>
+          item.type === 'NavigationItemSkeleton' ? (
+            <NavigationItemSkeleton {...item} visible />
+          ) : (
+            <NavigationSubItem {...item} visible />
+          ),
+        )}
       </AnimateHeight>
     );
   };
