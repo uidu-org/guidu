@@ -1,5 +1,16 @@
 # @uidu/shell
 
+## 0.2.0
+
+### Minor Changes
+
+- 2ba8f63: ShellHeaderWithSidebar now has no padding by default
+
+### Patch Changes
+
+- Updated dependencies [2ba8f63]
+  - @uidu/navigation@0.2.12
+
 ## 0.1.37
 
 ### Patch Changes
