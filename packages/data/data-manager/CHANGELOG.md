@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.72
+
+### Patch Changes
+
+- 0097605: Try autosaving
+- Updated dependencies [0097605]
+  - @uidu/data-controls@0.2.29
+
 ## 0.1.71
 
 ### Patch Changes
