@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.9
+
+### Patch Changes
+
+- ced6ed8: Fix navigation actions and css
+
 ## 0.2.8
 
 ### Patch Changes
