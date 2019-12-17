@@ -47,7 +47,7 @@ export default function Finder({ onChange }: FinderProps) {
         <Tooltip content={'Search in view'} position="bottom">
           <Trigger
             activeBg="#fee2d5"
-            className="btn mr-2"
+            className="btn mr-n2"
             active={false}
             onClick={() => {
               setIsDialogOpen(!isDialogOpen);
