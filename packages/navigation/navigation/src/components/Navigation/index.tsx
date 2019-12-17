@@ -3,8 +3,11 @@ import ItemsRenderer from '../ItemsRenderer';
 import { NavigationProps } from './types';
 
 export default class Navigation extends PureComponent<NavigationProps> {
+  static defaultProps = {
+    position: 'absolute',
+  };
   render() {
-    const { schema, children } = this.props;
+    const { schema, children, position } = this.props;
 
     if (!schema && !children) {
       throw 'Navigation needs either a schema or children to render';
@@ -13,7 +16,7 @@ export default class Navigation extends PureComponent<NavigationProps> {
     if (schema) {
       return (
         <div
-          className="position-absolute w-100 d-flex flex-column h-100"
+          className={`position-${position} w-100 d-flex flex-column h-100`}
           style={{ overflow: 'hidden' }}
         >
           <ItemsRenderer items={schema} />
