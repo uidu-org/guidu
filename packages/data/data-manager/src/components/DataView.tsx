@@ -94,8 +94,9 @@ export default class DataView extends PureComponent<any> {
       onSortChanged,
       onFilterChanged,
       onColumnVisible,
-      onColumnRowGroupChanged,
       onColumnMoved,
+      onColumnResized,
+      onRowGroupOpened,
       sorters,
       groupers,
       filterModel,
@@ -126,8 +127,9 @@ export default class DataView extends PureComponent<any> {
         onSortChanged={onSortChanged}
         onFilterChanged={onFilterChanged}
         onColumnVisible={onColumnVisible}
-        onColumnRowGroupChanged={onColumnRowGroupChanged}
         onColumnMoved={onColumnMoved}
+        onColumnResized={onColumnResized}
+        onRowGroupOpened={onRowGroupOpened}
         onRowClicked={onItemClick}
         accentedSort
         suppressPropertyNamesCheck

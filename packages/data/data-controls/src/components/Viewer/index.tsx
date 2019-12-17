@@ -2,13 +2,13 @@ import { byName } from '@uidu/data-views';
 import FieldText from '@uidu/field-text';
 import Form from '@uidu/form';
 import React, { useEffect, useRef, useState } from 'react';
+import { FormattedDate } from 'react-intl';
 import Configurator from '../Configurator';
 import More from '../More';
 import Starrer from '../Starrer';
 import { ViewerProps } from './types';
 
 const renderAutoSaving = ({ isAutoSaving }) => {
-  console.log(isAutoSaving);
   if (!isAutoSaving) {
     return null;
   }
@@ -21,9 +21,19 @@ const renderAutoSaving = ({ isAutoSaving }) => {
     );
   }
 
+  if (isAutoSaving === 'done') {
+    return (
+      <div className="small text-muted">
+        <u>All changes have been saved</u>
+      </div>
+    );
+  }
+
   return (
     <div className="small text-muted">
-      <u>All changes have been saved</u>
+      <u>
+        Last edited at <FormattedDate value={isAutoSaving} />
+      </u>
     </div>
   );
 };

@@ -159,6 +159,7 @@ export default class Basic extends Component<any, any> {
   }
 
   updateView = async currentView => {
+    console.log(currentView);
     const dataViews = this.state.dataViews.map(item => {
       if (item.id !== currentView.id) {
         return item;

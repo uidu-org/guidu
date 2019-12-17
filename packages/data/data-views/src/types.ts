@@ -1,3 +1,4 @@
+import { ColumnState } from '@ag-grid-community/core/dist/es6/columnController/columnController';
 import { FilterModel, Group, Sort } from '@uidu/data-controls';
 
 export type DataView = {
@@ -8,5 +9,6 @@ export type DataView = {
   sorters: Sort[];
   groupers: Group[];
   filterModel: FilterModel;
+  state: ColumnState;
   primaryField?: any;
 };

@@ -121,20 +121,20 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   updateView = debounce(() => {
     const { updateView, currentView } = this.props;
     const { sorters, groupers, filterModel, columns } = this.state;
-    window.clearTimeout(this.autoSaveTimeout);
     return updateView({
       ...currentView,
       sorters,
       groupers,
       filterModel,
       fields: columns.filter(c => !c.hide).map(c => c.colId),
+      state: this.gridColumnApi.getColumnState(),
     }).then(() => {
       this.setState({ isAutoSaving: 'done' });
       this.autoSaveTimeout = window.setTimeout(() => {
-        this.setState({ isAutoSaving: null });
-      }, 3000);
+        this.setState({ isAutoSaving: Date.now() });
+      }, 4000);
     });
-  }, 1500);
+  }, 3000);
 
   // resizeTableOnWindowResize = () => {
   //   setTimeout(() => {
@@ -175,6 +175,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       }),
       () => {
         this.resizeTable();
+        window.clearTimeout(this.autoSaveTimeout);
         this.updateView();
       },
     );
@@ -196,6 +197,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       },
       () => {
         api.refreshCells({ force: true });
+        window.clearTimeout(this.autoSaveTimeout);
         this.updateView();
       },
     );
@@ -217,6 +219,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       },
       () => {
         api.refreshCells({ force: true });
+        window.clearTimeout(this.autoSaveTimeout);
         this.updateView();
       },
     );
@@ -238,6 +241,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         isAutoSaving: 'in-progress',
       },
       () => {
+        window.clearTimeout(this.autoSaveTimeout);
         this.updateView();
       },
     );
@@ -251,10 +255,34 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    */
   onColumnMoved = params => {
     console.log(params);
+    window.clearTimeout(this.autoSaveTimeout);
+    this.updateView();
     // const columns = reorder(this.state.columns, oldIndex, newIndex);
     // this.setState({
     //   columns,
     // });
+  };
+
+  /**
+   *
+   * Column Resize: UI
+   * @memberof DataManager
+   */
+  onColumnResized = params => {
+    console.log(params);
+    window.clearTimeout(this.autoSaveTimeout);
+    this.updateView();
+  };
+
+  /**
+   *
+   * Row Group Opened/Clodes: UI
+   * @memberof DataManager
+   */
+  onRowGroupOpened = params => {
+    console.log(params);
+    window.clearTimeout(this.autoSaveTimeout);
+    this.updateView();
   };
 
   moveColumn = ({ name, oldIndex, newIndex }) => {
@@ -360,6 +388,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         onColumnVisible={this.onColumnVisible}
         onColumnRowGroupChanged={this.onColumnRowGroupChanged}
         onColumnMoved={this.onColumnMoved}
+        onColumnResized={this.onColumnResized}
+        onRowGroupOpened={this.onRowGroupOpened}
         // props spreading
         columnDefs={columnDefs}
         rowData={rowData}
