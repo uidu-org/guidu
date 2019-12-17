@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.32
+
+### Patch Changes
+
+- ac47a42: Small fixes to spacing
+
 ## 0.2.31
 
 ### Patch Changes
