@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.2.30",
+  "version": "0.2.31",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",

@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.31
+
+### Patch Changes
+
+- f1bf2c0: Better autoSaving UI
+
 ## 0.2.30
 
 ### Patch Changes
