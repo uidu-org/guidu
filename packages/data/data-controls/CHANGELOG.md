@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.29
+
+### Patch Changes
+
+- 0097605: Try autosaving
+
 ## 0.2.28
 
 ### Patch Changes
