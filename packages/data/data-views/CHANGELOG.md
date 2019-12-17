@@ -1,5 +1,13 @@
 # @uidu/data-views
 
+## 0.2.2
+
+### Patch Changes
+
+- 5da326f: Pass column state from DataManager
+- Updated dependencies [5da326f]
+  - @uidu/data-controls@0.2.30
+
 ## 0.2.1
 
 ### Patch Changes
