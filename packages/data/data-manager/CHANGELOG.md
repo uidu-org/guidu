@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 0.1.75
+
+### Patch Changes
+
+- Updated dependencies [2ba8f63]
+- Updated dependencies [190e9da]
+  - @uidu/shell@0.2.0
+  - @uidu/data-controls@0.2.31
+  - @uidu/board@0.2.7
+  - @uidu/calendar@0.1.17
+  - @uidu/gallery@0.1.31
+  - @uidu/table@0.1.79
+
 ## 0.1.74
 
 ### Patch Changes

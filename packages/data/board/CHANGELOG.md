@@ -1,5 +1,12 @@
 # @uidu/board
 
+## 0.2.7
+
+### Patch Changes
+
+- Updated dependencies [2ba8f63]
+  - @uidu/shell@0.2.0
+
 ## 0.2.6
 
 ### Patch Changes

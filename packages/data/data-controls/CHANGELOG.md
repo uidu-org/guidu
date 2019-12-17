@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 0.2.31
+
+### Patch Changes
+
+- 190e9da: Better autoSaving UI
+- Updated dependencies [2ba8f63]
+  - @uidu/shell@0.2.0
+  - @uidu/drawer@0.2.9
+  - @uidu/table@0.1.79
+
 ## 0.2.30
 
 ### Patch Changes

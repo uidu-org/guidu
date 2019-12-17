@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tabbar",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/shell": "^0.1.32",
+    "@uidu/shell": "^0.2.0",
     "react-dom": "^16.4.0"
   },
   "devDependencies": {

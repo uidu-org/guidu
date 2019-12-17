@@ -1,5 +1,12 @@
 # @uidu/media-viewer
 
+## 0.1.26
+
+### Patch Changes
+
+- Updated dependencies [2ba8f63]
+  - @uidu/shell@0.2.0
+
 ## 0.1.25
 
 ### Patch Changes

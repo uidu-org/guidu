@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.70
+
+### Patch Changes
+
+- Updated dependencies [2ba8f63]
+  - @uidu/shell@0.2.0
+  - @uidu/navigation@0.2.12
+  - @uidu/drawer@0.2.9
+  - @uidu/table@0.1.79
+
 ## 0.1.69
 
 ### Patch Changes
