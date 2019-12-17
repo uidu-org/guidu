@@ -97,6 +97,7 @@ export default class DataView extends PureComponent<any> {
       onColumnMoved,
       onColumnResized,
       onRowGroupOpened,
+      onColumnRowGroupChanged,
       sorters,
       groupers,
       filterModel,
@@ -126,6 +127,7 @@ export default class DataView extends PureComponent<any> {
         onAddField={onAddField}
         onSortChanged={onSortChanged}
         onFilterChanged={onFilterChanged}
+        onColumnRowGroupChanged={onColumnRowGroupChanged}
         onColumnVisible={onColumnVisible}
         onColumnMoved={onColumnMoved}
         onColumnResized={onColumnResized}
