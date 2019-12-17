@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.1.74
+
+### Patch Changes
+
+- 70bf6dc: Fix grouping bug
+
 ## 0.1.73
 
 ### Patch Changes
