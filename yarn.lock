@@ -251,9 +251,9 @@
     tslib "^1.7.1"
 
 "@atlaskit/analytics-next@^6.3.1", "@atlaskit/analytics-next@^6.3.3":
-  version "6.3.3"
-  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-6.3.3.tgz#869e777d7e98576074bc09d7a0aedc5d16d5b25e"
-  integrity sha512-KhlY6cc6WpzpIBfjLAJsPr0wHiMzLESfDlVNJpO0j5saRNWZTjOuMbGGQc061BGfLTa81BbV7GVWlsEfi9CQOw==
+  version "6.3.4"
+  resolved "https://registry.yarnpkg.com/@atlaskit/analytics-next/-/analytics-next-6.3.4.tgz#29f2b4ba16c098333564937219ec5adaf5906dd5"
+  integrity sha512-960u9w4lTtCNJibD5mBeMuFke1xO4QJhZbOfhtDfAAlZR+kTOCMJ+C43Rhuqjva/+lieTttsnIIOjJ71SXYqvg==
   dependencies:
     "@atlaskit/type-helpers" "^4.2.2"
     prop-types "^15.5.10"
@@ -2148,9 +2148,9 @@
     lodash "^4.17.13"
 
 "@oclif/plugin-plugins@^1.7.8":
-  version "1.7.8"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.7.8.tgz#51e07cb85bf9cd36a6de8f3e441b7d705a5e7105"
-  integrity sha512-GxLxaf8Lk1RqHVAIBZyA7hmhU7u5oV97i/OsWgFPdjPaT+BmWlWXR8IpmtA8giNo6atR+JpfgDmYndMU75zYUQ==
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-plugins/-/plugin-plugins-1.7.9.tgz#e2ff7aa7f459780545330abeaf3287f7ceb6d577"
+  integrity sha512-o7qfmiUGl+NUyA2lM18/Ch5sasGGYPIINR3cZ/AjwtdQ3ooINnF00pUDcUOtbjW97gRmk6/j79tcyTo8i7rHZg==
   dependencies:
     "@oclif/color" "^0.0.0"
     "@oclif/command" "^1.5.12"
@@ -2163,7 +2163,7 @@
     npm-run-path "^3.0.0"
     semver "^5.6.0"
     tslib "^1.9.3"
-    yarn "^1.15.0"
+    yarn "^1.21.1"
 
 "@oclif/screen@^1.0.3":
   version "1.0.4"
@@ -19625,9 +19625,9 @@ resolve@1.1.7:
   integrity sha1-IDEU2CrSxe2ejgQRs5ModeiJ6Xs=
 
 resolve@^1.1.10, resolve@^1.1.5, resolve@^1.1.6, resolve@^1.10.0, resolve@^1.10.1, resolve@^1.12.0, resolve@^1.13.1, resolve@^1.3.2, resolve@^1.3.3, resolve@^1.5.0, resolve@^1.8.1:
-  version "1.13.1"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.13.1.tgz#be0aa4c06acd53083505abb35f4d66932ab35d16"
-  integrity sha512-CxqObCX8K8YtAhOBRg+lrcdn+LK+WYOS8tSjqSFbjtrI5PnS63QPhZl4+yKfrU9tdsbMu9Anr/amegT87M9Z6w==
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.14.0.tgz#6d14c6f9db9f8002071332b600039abf82053f64"
+  integrity sha512-uviWSi5N67j3t3UKFxej1loCH0VZn5XuqdNxoLShPcYPw6cUZn74K1VRj+9myynRX03bxIBEkwlkob/ujLsJVw==
   dependencies:
     path-parse "^1.0.6"
 
@@ -23450,7 +23450,7 @@ yargs@~1.2.6:
   dependencies:
     minimist "^0.1.0"
 
-yarn@^1.15.0, yarn@^1.6.0, yarn@^1.9.4:
+yarn@^1.21.1, yarn@^1.6.0, yarn@^1.9.4:
   version "1.21.1"
   resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.21.1.tgz#1d5da01a9a03492dc4a5957befc1fd12da83d89c"
   integrity sha512-dQgmJv676X/NQczpbiDtc2hsE/pppGDJAzwlRiADMTvFzYbdxPj2WO4PcNyriSt2c4jsCMpt8UFRKHUozt21GQ==

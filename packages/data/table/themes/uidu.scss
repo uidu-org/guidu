@@ -135,7 +135,6 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   &.ag-scrolled-left {
     .ag-pinned-left-cols-container {
       &::before {
-        z-index: 20;
         transition: opacity 300ms ease;
         opacity: 1;
       }
