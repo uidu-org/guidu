@@ -23,18 +23,6 @@ export default class Grouper extends Component<GrouperProps> {
     gridApi.showLoadingOverlay();
 
     setTimeout(() => {
-      if (groupers.length > 0) {
-        gridColumnApi.setColumnsPinned(
-          columnDefs.filter(c => c.pinned).map(c => c.colId),
-          'false',
-        );
-      } else {
-        gridColumnApi.setColumnsPinned(
-          columnDefs.filter(c => c.pinned).map(c => c.colId),
-          'true',
-        );
-      }
-
       gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
       gridApi.refreshCells({ force: true });
       gridApi.hideOverlay();

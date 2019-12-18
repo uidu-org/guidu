@@ -1,30 +1,38 @@
 export const initializeDataView = ({
-  currentView: { fields = [], sorters = [], filterModel = {}, groupers = [] },
+  currentView: {
+    fields = [],
+    sorters = [],
+    filterModel = {},
+    groupers = [],
+    state = null,
+  },
   gridApi,
   gridColumnApi,
 }) => {
   gridApi.showLoadingOverlay();
-  // handle fields
-  gridColumnApi.setColumnsVisible(
-    gridColumnApi.getAllColumns().map(c => c.colId),
-    false,
-  );
-  gridColumnApi.setColumnsVisible(fields, true);
-  // // handle sorters
-  gridApi.setSortModel(sorters);
-  // // handle filters
-  gridApi.setFilterModel(filterModel);
-  // // handle groupers
-  if (groupers.length > 0) {
+
+  // handle state
+  if (state) {
+    gridColumnApi.setColumnState(state);
+    // handle fields
+    // column visibility and order stays into column state
     // gridColumnApi.setColumnsVisible(
-    //   groupers.map(g => g.colId),
+    //   gridColumnApi.getAllColumns().map(c => c.colId),
     //   false,
     // );
+    // gridColumnApi.setColumnsVisible(fields, true);
+  }
+
+  // handle sorters
+  gridApi.setSortModel(sorters);
+  // handle filters
+  gridApi.setFilterModel(filterModel);
+  // handle groupers
+  if (groupers.length > 0) {
     gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
   } else {
     gridColumnApi.setRowGroupColumns([]);
   }
-  // // handle other params
 
   return {
     loaded: true,

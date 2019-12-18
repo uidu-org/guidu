@@ -96,7 +96,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
 
     this.setState(newState, () => {
       onGridReady(params);
-      this.resizeTable();
+      api.hideOverlay();
     });
   };
 
@@ -114,7 +114,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
 
   componentWillUnmount() {
     console.log('unmount');
-    // window.removeEventListener('resize', this.resizeTableOnWindowResize);
     this.gridApi && this.gridApi.destroy();
   }
 
@@ -135,23 +134,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       }, 4000);
     });
   }, 3000);
-
-  // resizeTableOnWindowResize = () => {
-  //   setTimeout(() => {
-  //     this.gridApi.sizeColumnsToFit();
-  //   });
-  // };
-
-  resizeTable = () => {
-    const { currentView } = this.props;
-    const { gridColumnApi, gridApi } = this;
-    if (currentView.kind === 'table') {
-      gridColumnApi.autoSizeAllColumns();
-      // window.addEventListener('resize', this.resizeTableOnWindowResize);
-      // gridApi.sizeColumnsToFit();
-    }
-    gridApi.hideOverlay();
-  };
 
   /**
    *
@@ -174,7 +156,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         isAutoSaving: 'in-progress',
       }),
       () => {
-        this.resizeTable();
         window.clearTimeout(this.autoSaveTimeout);
         this.updateView();
       },
