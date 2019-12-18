@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.76
+
+### Patch Changes
+
+- 6c77d97: Preserve data-view state
+- Updated dependencies [6c77d97]
+  - @uidu/data-controls@0.2.34
+
 ## 0.1.75
 
 ### Patch Changes
