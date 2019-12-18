@@ -112,10 +112,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   //   }
   // }
 
-  componentWillUnmount() {
-    console.log('unmount');
-    this.gridApi && this.gridApi.destroy();
-  }
+  // componentWillUnmount() {
+  //   console.log('unmount');
+  //   this.gridApi && this.gridApi.destroy();
+  // }
 
   updateView = debounce(() => {
     const { updateView, currentView } = this.props;
