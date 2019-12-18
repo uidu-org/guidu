@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.2.34
+
+### Patch Changes
+
+- 6c77d97: Preserve data-view state
+
 ## 0.2.33
 
 ### Patch Changes
