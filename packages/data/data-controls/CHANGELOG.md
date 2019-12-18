@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.2.33
+
+### Patch Changes
+
+- 59f3553: Small css tweaks
+- Updated dependencies [59f3553]
+  - @uidu/table@0.1.80
+
 ## 0.2.32
 
 ### Patch Changes
