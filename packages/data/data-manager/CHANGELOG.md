@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.1.77
+
+### Patch Changes
+
+- e910f86: Try fixing data-views in data-manager
+
 ## 0.1.76
 
 ### Patch Changes
