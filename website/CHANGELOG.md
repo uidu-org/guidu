@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.72
+
+### Patch Changes
+
+- 14f20c3: Navigation Sub Item Skeleton, data controls toggler console.log
+- Updated dependencies [14f20c3]
+  - @uidu/webpack-config@0.1.46
+  - @uidu/navigation@0.2.14
+
 ## 0.1.71
 
 ### Patch Changes
