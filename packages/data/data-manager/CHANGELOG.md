@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.1.78
+
+### Patch Changes
+
+- b4e1014: Unmount DataView
+
 ## 0.1.77
 
 ### Patch Changes

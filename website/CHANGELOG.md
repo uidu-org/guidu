@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.71
+
+### Patch Changes
+
+- b4e1014: Unmount DataView
+
 ## 0.1.70
 
 ### Patch Changes
