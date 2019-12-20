@@ -44,6 +44,23 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
         actions: [{ text: 'More', icon: <MoreHorizontal size={14} /> }],
       },
       {
+        id: '1',
+        to: `/orders/todo`,
+        as: Link,
+        type: 'NavigationSubItemSkeleton',
+        text: 'Inevasi',
+        actions: [{ text: 'More', icon: <MoreHorizontal size={14} /> }],
+      },
+      {
+        id: '1',
+        to: `/orders/todo`,
+        as: Link,
+        type: 'NavigationSubItemSkeleton',
+        text: 'Inevasi',
+        actions: [{ text: 'More', icon: <MoreHorizontal size={14} /> }],
+        hasBefore: true,
+      },
+      {
         id: '2',
         to: `/orders/sent`,
         as: Link,

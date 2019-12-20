@@ -340,6 +340,7 @@ export default class Basic extends Component<any, any> {
         <Router>
           <DataManager
             key={`table-for-${this.state.currentView.id}`}
+            onItemClick={console.log}
             columnDefs={buildColumns([
               {
                 kind: 'default',

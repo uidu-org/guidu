@@ -17,7 +17,7 @@ const StyledNavigationActions = styled.div<{ isActionOpen: boolean }>`
   opacity: ${({ isActionOpen }) => (isActionOpen ? 1 : 0)};
 `;
 
-const StyledNavigationLink = styled.a.attrs(({ className }) => ({
+export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   className: `nav-link${className ? ` ${className}` : ''}`,
 }))`
   align-items: center;

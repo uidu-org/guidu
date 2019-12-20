@@ -10,3 +10,4 @@ export { default as NavigationIconItem } from './Navigation/NavigationIconItem';
 export { default as NavigationItem } from './Navigation/NavigationItem';
 export { default as NavigationItemSkeleton } from './Navigation/NavigationItemSkeleton';
 export { default as NavigationSubItem } from './Navigation/NavigationSubItem';
+export { default as NavigationSubItemSkeleton } from './Navigation/NavigationSubItemSkeleton';

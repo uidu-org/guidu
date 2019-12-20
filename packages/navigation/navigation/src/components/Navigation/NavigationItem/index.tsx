@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import styled from 'styled-components';
-import { NavigationItemSkeleton, NavigationSubItem } from '../..';
+import { NavigationSubItem, NavigationSubItemSkeleton } from '../..';
 import {
   StyledNavigationAfter,
   StyledNavigationBefore,
@@ -78,11 +78,13 @@ export default function NavigationItem({
       );
     }
 
+    console.log('items', items);
+
     return (
       <AnimateHeight height={isOpen ? 'auto' : 0} className="w-100">
         {items.map(item =>
-          item.type === 'NavigationItemSkeleton' ? (
-            <NavigationItemSkeleton {...item} visible />
+          item.type === 'NavigationSubItemSkeleton' ? (
+            <NavigationSubItemSkeleton {...item} visible />
           ) : (
             <NavigationSubItem {...item} visible />
           ),

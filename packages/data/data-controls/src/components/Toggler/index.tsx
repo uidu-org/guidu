@@ -19,7 +19,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
   render() {
     const { columnDefs, gridColumnApi } = this.props;
     const columnGroups = [...new Set(columnDefs.map(cd => cd.fieldGroup.kind))];
-
+    console.log('columnGroups', columnGroups);
     return (
       <div className="list-group">
         {columnGroups.map(columnGroup => {
