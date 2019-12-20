@@ -45,6 +45,11 @@ const defaultAvailableControls = {
   },
 };
 
+const defaultColumns = [];
+const defaultSorters = [];
+const defaultGroupers = [];
+const defaultFilterModel = {};
+
 export default class DataManager extends PureComponent<DataManagerProps, any> {
   private autoSaveTimeout: number | undefined;
   static whyDidYouRender = true;
@@ -69,11 +74,11 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   constructor(props) {
     super(props);
     this.state = {
-      columns: [],
+      columns: defaultColumns,
       data: null,
-      sorters: props.currentView.sorters || [],
-      filterModel: props.currentView.filterModel || {},
-      groupers: props.currentView.groupers || [],
+      sorters: props.currentView.sorters || defaultSorters,
+      filterModel: props.currentView.filterModel || defaultFilterModel,
+      groupers: props.currentView.groupers || defaultGroupers,
       rowHeight: 64,
       columnCount: props.currentView.columCount || 4,
     };
@@ -112,11 +117,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   //   }
   // }
 
-  // componentWillUnmount() {
-  //   console.log('unmount');
-  //   this.gridApi && this.gridApi.destroy();
-  // }
-
   updateView = debounce(() => {
     const { updateView, currentView } = this.props;
     const { sorters, groupers, filterModel, columns } = this.state;
@@ -133,7 +133,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         this.setState({ isAutoSaving: Date.now() });
       }, 4000);
     });
-  }, 3000);
+  }, 1500);
 
   /**
    *
@@ -251,6 +251,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    */
   onColumnResized = params => {
     console.log(params);
+    this.setState({
+      isAutoSaving: 'in-progress',
+    });
     window.clearTimeout(this.autoSaveTimeout);
     this.updateView();
   };
@@ -262,6 +265,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    */
   onRowGroupOpened = params => {
     console.log(params);
+    this.setState({
+      isAutoSaving: 'in-progress',
+    });
     window.clearTimeout(this.autoSaveTimeout);
     this.updateView();
   };
@@ -363,6 +369,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         sorters={sorters}
         filterModel={filterModel}
         // methods
+        gridApi={this.gridApi}
         onGridReady={this.onGridReady}
         onFilterChanged={this.onFilterChanged}
         onSortChanged={this.onSortChanged}

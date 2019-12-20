@@ -71,6 +71,11 @@ export default class DataView extends PureComponent<any> {
     );
   };
 
+  componentWillUnmount() {
+    const { gridApi } = this.props;
+    gridApi && gridApi.destroy();
+  }
+
   render() {
     const {
       viewProps = {

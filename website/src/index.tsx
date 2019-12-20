@@ -4,10 +4,10 @@ import 'regenerator-runtime/runtime';
 import App from './containers/App';
 import './index.scss';
 
-// if (process.env.NODE_ENV !== 'production') {
-//   const whyDidYouRender = require('@welldone-software/why-did-you-render');
-//   console.log(whyDidYouRender);
-//   whyDidYouRender(React);
-// }
+if (process.env.NODE_ENV !== 'production') {
+  const whyDidYouRender = require('@welldone-software/why-did-you-render');
+  console.log(whyDidYouRender);
+  whyDidYouRender(React);
+}
 
 render(<App />, document.getElementById('app'));
