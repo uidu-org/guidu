@@ -1,5 +1,13 @@
 # @uidu/media-filmstrip
 
+## 0.1.21
+
+### Patch Changes
+
+- e6a3135: Bump dependencies
+- Updated dependencies [e6a3135]
+  - @uidu/media-viewer@0.1.27
+
 ## 0.1.20
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 0.1.27
+
+### Patch Changes
+
+- e6a3135: Bump dependencies
+
 ## 0.1.26
 
 ### Patch Changes
