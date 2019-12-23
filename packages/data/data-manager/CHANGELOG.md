@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.2.1
+
+### Patch Changes
+
+- e8921d0: Quick fix default filterModel for DataView
+
 ## 0.2.0
 
 ### Minor Changes
