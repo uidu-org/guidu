@@ -453,7 +453,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
               gridApi={this.gridApi}
               gridColumnApi={this.gridColumnApi}
               columnDefs={columns}
-              filterModel={filterModel}
+              filterModel={filterModel || {}}
               {...availableControls.filterer.props}
             />
           )}

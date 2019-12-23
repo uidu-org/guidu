@@ -211,6 +211,7 @@ const dataViews = [
         rowGroupIndex: null,
       },
     ],
+    filterModel: null,
   },
   {
     id: 1,
