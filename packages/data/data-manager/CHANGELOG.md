@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.2.3
+
+### Patch Changes
+
+- 6c9c313: Persist state with new props dataManager methods
+
 ## 0.2.2
 
 ### Patch Changes
