@@ -66,8 +66,7 @@ export default function Viewer({
   const [editingName, setEditingName] = useState(false);
   const { icon: Icon, color } = byName[currentView.kind];
   const handleSubmit = async model => {
-    updateView({
-      ...currentView,
+    updateView(currentView, {
       ...model,
     });
     setEditingName(false);

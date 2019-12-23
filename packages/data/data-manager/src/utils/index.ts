@@ -5,6 +5,7 @@ export const initializeDataView = ({
     filterModel = {},
     groupers = [],
     state = null,
+    preferences = {},
   },
   gridApi,
   gridColumnApi,
@@ -35,14 +36,14 @@ export const initializeDataView = ({
     gridColumnApi.setRowGroupColumns([]);
   }
 
-  return {
-    loaded: true,
-    data: gridApi.getModel().rowsToDisplay,
-    sorters: gridApi.getSortModel(),
-    groupers: gridColumnApi.getRowGroupColumns(),
-    columns: gridColumnApi
-      .getAllGridColumns()
-      .map(c => ({ ...c.colDef, hide: !c.visible })),
-    // .sort((a, b) => fields.indexOf(a.colId) - fields.indexOf(b.colId)),
-  };
+  // return {
+  //   loaded: true,
+  //   data: gridApi.getModel().rowsToDisplay,
+  //   sorters: gridApi.getSortModel(),
+  //   groupers: gridColumnApi.getRowGroupColumns(),
+  //   columns: gridColumnApi
+  //     .getAllGridColumns()
+  //     .map(c => ({ ...c.colDef, hide: !c.visible })),
+  //   // .sort((a, b) => fields.indexOf(a.colId) - fields.indexOf(b.colId)),
+  // };
 };

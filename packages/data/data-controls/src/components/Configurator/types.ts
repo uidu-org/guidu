@@ -10,7 +10,7 @@ export type ConfiguratorProps = GrouperProps &
   ResizerProps & {
     columnDefs: Column[];
     currentView: any;
-    updateView: (dataView: DataView) => void;
+    updateView: (dataView: DataView, props: keyof DataView) => void;
     onSetColumnCount: (columnCount: number) => void;
     isConfiguratorOpen?: boolean;
     columnCount?: number;

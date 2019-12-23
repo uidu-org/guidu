@@ -284,6 +284,7 @@ export default class Basic extends Component<any, any> {
       currentView: dataViews[0],
       loaded: false,
       rendered: false,
+      isAutoSaving: null,
     };
   }
 
@@ -313,32 +314,42 @@ export default class Basic extends Component<any, any> {
     fetchContacts().then(rowData => this.setState({ loaded: true, rowData }));
   }
 
-  updateView = async currentView => {
-    console.log(currentView);
+  updateView = async (currentView, props) => {
+    this.setState({ isAutoSaving: 'in-progress' });
     const dataViews = this.state.dataViews.map(item => {
       if (item.id !== currentView.id) {
         return item;
       }
-
       return {
         ...item,
-        ...currentView,
+        ...props,
       };
     });
     await this.setState({
       dataViews,
-      currentView,
+      isAutoSaving: 'done',
+      currentView: {
+        ...currentView,
+        ...props,
+      },
     });
     return currentView;
   };
 
   render() {
-    const { loaded, dataViews, currentView, rowData } = this.state;
+    const {
+      loaded,
+      dataViews,
+      currentView,
+      rowData,
+      isAutoSaving,
+    } = this.state;
 
     return (
       <IntlProvider locale="en">
         <Router>
           <DataManager
+            isAutoSaving={isAutoSaving}
             key={`table-for-${this.state.currentView.id}`}
             onItemClick={console.log}
             columnDefs={buildColumns([

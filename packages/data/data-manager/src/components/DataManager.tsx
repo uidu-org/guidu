@@ -1,6 +1,5 @@
 import { Filterer, Finder, Grouper, Sorter, Viewer } from '@uidu/data-controls';
 import Spinner from '@uidu/spinner';
-import debounce from 'lodash/debounce';
 import React, { PureComponent } from 'react';
 import { DataManagerProps } from '../types';
 import { initializeDataView } from '../utils';
@@ -45,10 +44,8 @@ const defaultAvailableControls = {
   },
 };
 
-const defaultColumns = [];
-const defaultSorters = [];
-const defaultGroupers = [];
-const defaultFilterModel = {};
+const defaultRowHeight = 56;
+const defaultColumnCount = 4;
 
 export default class DataManager extends PureComponent<DataManagerProps, any> {
   private autoSaveTimeout: number | undefined;
@@ -71,19 +68,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     B. we keep track of local state for toggler, sorters, filters etc., we derive state from props and we autosave every 5 seconds (or on change)
   */
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      columns: defaultColumns,
-      data: null,
-      sorters: props.currentView.sorters || defaultSorters,
-      filterModel: props.currentView.filterModel || defaultFilterModel,
-      groupers: props.currentView.groupers || defaultGroupers,
-      rowHeight: 64,
-      columnCount: props.currentView.columCount || 4,
-    };
-  }
-
   private gridApi = null;
   private gridColumnApi = null;
 
@@ -93,16 +77,14 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     this.gridApi = api;
     this.gridColumnApi = columnApi;
 
-    const newState = initializeDataView({
+    initializeDataView({
       currentView,
       gridApi: api,
       gridColumnApi: columnApi,
     });
 
-    this.setState(newState, () => {
-      onGridReady(params);
-      api.hideOverlay();
-    });
+    onGridReady(params);
+    api.hideOverlay();
   };
 
   // UNSAFE_componentWillReceiveProps(nextProps) {
@@ -117,23 +99,28 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   //   }
   // }
 
-  updateView = debounce(() => {
+  updateView = props => {
     const { updateView, currentView } = this.props;
-    const { sorters, groupers, filterModel, columns } = this.state;
-    return updateView({
-      ...currentView,
-      sorters,
-      groupers,
-      filterModel,
-      fields: columns.filter(c => !c.hide).map(c => c.colId),
-      state: this.gridColumnApi.getColumnState(),
-    }).then(() => {
-      this.setState({ isAutoSaving: 'done' });
-      this.autoSaveTimeout = window.setTimeout(() => {
-        this.setState({ isAutoSaving: Date.now() });
-      }, 4000);
-    });
-  }, 1500);
+    return updateView(currentView, props);
+  };
+
+  // updateView = debounce(() => {
+  //   const { updateView, currentView } = this.props;
+  //   const { sorters, groupers, filterModel, columns } = this.state;
+  //   return updateView({
+  //     ...currentView,
+  //     sorters,
+  //     groupers,
+  //     filterModel,
+  //     fields: columns.filter(c => !c.hide).map(c => c.colId),
+  //     state: this.gridColumnApi.getColumnState(),
+  //   }).then(() => {
+  //     this.setState({ isAutoSaving: 'done' });
+  //     this.autoSaveTimeout = window.setTimeout(() => {
+  //       this.setState({ isAutoSaving: Date.now() });
+  //     }, 4000);
+  //   });
+  // }, 1500);
 
   /**
    *
@@ -142,24 +129,28 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnColumnVisible reacts to ag-grid callback, and updates columns state
    */
   onColumnVisible = ({ columns, visible }) => {
-    this.setState(
-      prevState => ({
-        columns: prevState.columns.map(column => {
-          if (columns.map(c => c.colId).includes(column.colId)) {
-            return {
-              ...column,
-              hide: !visible,
-            };
-          }
-          return column;
-        }),
-        isAutoSaving: 'in-progress',
-      }),
-      () => {
-        window.clearTimeout(this.autoSaveTimeout);
-        this.updateView();
-      },
-    );
+    const fields = this.gridColumnApi.getAllColumns();
+    this.updateView({
+      fields: fields.filter(c => c.visible).map(c => c.colId),
+    });
+    // this.setState(
+    //   prevState => ({
+    //     columns: prevState.columns.map(column => {
+    //       if (columns.map(c => c.colId).includes(column.colId)) {
+    //         return {
+    //           ...column,
+    //           hide: !visible,
+    //         };
+    //       }
+    //       return column;
+    //     }),
+    //     isAutoSaving: 'in-progress',
+    //   }),
+    //   () => {
+    //     window.clearTimeout(this.autoSaveTimeout);
+    //     this.updateView();
+    //   },
+    // );
   };
 
   /**
@@ -170,18 +161,19 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    */
   onSortChanged = ({ api }) => {
     const sorters = api.getSortModel();
-    this.setState(
-      {
-        data: api.getModel().rowsToDisplay,
-        sorters,
-        isAutoSaving: 'in-progress',
-      },
-      () => {
-        api.refreshCells({ force: true });
-        window.clearTimeout(this.autoSaveTimeout);
-        this.updateView();
-      },
-    );
+    this.updateView({ sorters });
+    // this.setState(
+    //   {
+    //     data: api.getModel().rowsToDisplay,
+    //     sorters,
+    //     isAutoSaving: 'in-progress',
+    //   },
+    //   () => {
+    //     api.refreshCells({ force: true });
+    //     window.clearTimeout(this.autoSaveTimeout);
+    //     this.updateView();
+    //   },
+    // );
   };
 
   /**
@@ -192,18 +184,19 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    */
   onFilterChanged = ({ api, ...rest }) => {
     const filterModel = api.getFilterModel();
-    this.setState(
-      {
-        data: api.getModel().rowsToDisplay,
-        filterModel,
-        isAutoSaving: 'in-progress',
-      },
-      () => {
-        api.refreshCells({ force: true });
-        window.clearTimeout(this.autoSaveTimeout);
-        this.updateView();
-      },
-    );
+    this.updateView({ filterModel });
+    // this.setState(
+    //   {
+    //     data: api.getModel().rowsToDisplay,
+    //     filterModel,
+    //     isAutoSaving: 'in-progress',
+    //   },
+    //   () => {
+    //     api.refreshCells({ force: true });
+    //     window.clearTimeout(this.autoSaveTimeout);
+    //     this.updateView();
+    //   },
+    // );
   };
 
   /**
@@ -216,16 +209,17 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     const groupers = columns.map(c => ({
       colId: c.colId,
     }));
-    this.setState(
-      {
-        groupers,
-        isAutoSaving: 'in-progress',
-      },
-      () => {
-        window.clearTimeout(this.autoSaveTimeout);
-        this.updateView();
-      },
-    );
+    this.updateView({ groupers });
+    // this.setState(
+    //   {
+    //     groupers,
+    //     isAutoSaving: 'in-progress',
+    //   },
+    //   () => {
+    //     window.clearTimeout(this.autoSaveTimeout);
+    //     this.updateView();
+    //   },
+    // );
   };
 
   /**
@@ -237,7 +231,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   onColumnMoved = params => {
     console.log(params);
     window.clearTimeout(this.autoSaveTimeout);
-    this.updateView();
+    this.updateView({ state: this.gridColumnApi.getColumnState() });
+    // this.updateView();
     // const columns = reorder(this.state.columns, oldIndex, newIndex);
     // this.setState({
     //   columns,
@@ -250,12 +245,13 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * @memberof DataManager
    */
   onColumnResized = params => {
-    console.log(params);
-    this.setState({
-      isAutoSaving: 'in-progress',
-    });
-    window.clearTimeout(this.autoSaveTimeout);
-    this.updateView();
+    // console.log(params);
+    // this.setState({
+    //   isAutoSaving: 'in-progress',
+    // });
+    // window.clearTimeout(this.autoSaveTimeout);
+    this.updateView({ state: this.gridColumnApi.getColumnState() });
+    // this.updateView();
   };
 
   /**
@@ -264,20 +260,21 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * @memberof DataManager
    */
   onRowGroupOpened = params => {
-    console.log(params);
-    this.setState({
-      isAutoSaving: 'in-progress',
-    });
-    window.clearTimeout(this.autoSaveTimeout);
-    this.updateView();
+    // console.log(params);
+    // this.setState({
+    //   isAutoSaving: 'in-progress',
+    // });
+    // window.clearTimeout(this.autoSaveTimeout);
+    this.updateView({ state: this.gridColumnApi.getColumnState() });
+    // this.updateView();
   };
 
   moveColumn = ({ name, oldIndex, newIndex }) => {
     this.gridColumnApi.moveColumn(name, newIndex);
-    const columns = reorder(this.state.columns, oldIndex, newIndex);
-    this.setState({
-      columns,
-    });
+    // const columns = reorder(this.state.columns, oldIndex, newIndex);
+    // this.setState({
+    //   columns,
+    // });
   };
 
   setSearch = e => {
@@ -285,25 +282,24 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   };
 
   setRowHeight = rowHeight => {
-    this.setState(
-      {
-        rowHeight,
-      },
-      () => {
-        this.gridApi.resetRowHeights();
-      },
-    );
+    const { currentView } = this.props;
+    this.updateView({
+      preferences: { ...currentView.preferences, rowHeight },
+    }).then(() => this.gridApi.resetRowHeights());
   };
 
   setColumnCount = columnCount => {
-    this.setState({ columnCount }, () =>
-      setTimeout(() => window.dispatchEvent(new Event('resize')), 300),
-    );
+    const { currentView } = this.props;
+    this.updateView({
+      preferences: { ...currentView.preferences, columnCount },
+    }).then(() => {
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+    });
   };
 
   renderSidebar = () => {
     const { rowData, onItemClick, currentView } = this.props;
-    const { data } = this.state;
+    const data = this.gridApi ? this.gridApi.getModel().rowsToDisplay : [];
 
     if (['calendar', 'map'].includes(currentView.kind)) {
       if (!data) {
@@ -354,14 +350,19 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       columnDefs,
     } = this.props;
     const {
-      data,
-      columns,
-      rowHeight,
-      columnCount,
-      groupers,
       sorters,
       filterModel,
-    } = this.state;
+      groupers,
+      fields,
+      preferences = { rowHeight: defaultRowHeight },
+    } = currentView;
+    const columns = this.gridColumnApi
+      ? this.gridColumnApi
+          .getAllGridColumns()
+          .map(c => ({ ...c.colDef, hide: !c.visible }))
+      : [];
+    const data = this.gridApi ? this.gridApi.getModel().rowsToDisplay : [];
+    const { rowHeight, columnCount } = preferences;
     return (
       <DataView
         // this.state
@@ -395,16 +396,19 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   };
 
   renderControls = ({ controls }) => {
-    const { columnDefs, currentView, updateView } = this.props;
+    const { columnDefs, currentView, updateView, isAutoSaving } = this.props;
     const {
       sorters,
       filterModel,
       groupers,
-      columns,
-      rowHeight,
-      columnCount,
-      isAutoSaving,
-    } = this.state;
+      preferences = { rowHeight: defaultRowHeight },
+    } = currentView;
+    const columns = this.gridColumnApi
+      ? this.gridColumnApi
+          .getAllGridColumns()
+          .map(c => ({ ...c.colDef, hide: !c.visible }))
+      : [];
+    const { rowHeight, columnCount } = preferences;
 
     const availableControls = {
       ...defaultAvailableControls,
