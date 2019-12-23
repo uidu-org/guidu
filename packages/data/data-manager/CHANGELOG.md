@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.1.79
+
+### Patch Changes
+
+- 14f20c3: Navigation Sub Item Skeleton, data controls toggler console.log
+- Updated dependencies [14f20c3]
+  - @uidu/data-controls@0.2.35
+
 ## 0.1.78
 
 ### Patch Changes

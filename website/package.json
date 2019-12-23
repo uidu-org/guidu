@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.1.71",
+  "version": "0.1.72",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "scripts": {
@@ -31,7 +31,7 @@
     "@uidu/list": "^0.1.15",
     "@uidu/lozenge": "^0.1.14",
     "@uidu/modal-dialog": "^0.1.20",
-    "@uidu/navigation": "^0.2.12",
+    "@uidu/navigation": "^0.2.14",
     "@uidu/select": "^0.2.4",
     "@uidu/shell": "^0.2.0",
     "@uidu/spinner": "^0.1.12",
@@ -76,7 +76,7 @@
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.27",
     "@uidu/nav-info-loader": "^0.1.28",
-    "@uidu/webpack-config": "^0.1.45",
+    "@uidu/webpack-config": "^0.1.46",
     "bolt-query": "^1.1.4",
     "extract-react-types-loader": "^0.3.1",
     "netlify-cli": "^2.8.1",

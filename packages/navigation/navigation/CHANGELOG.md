@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.14
+
+### Patch Changes
+
+- 14f20c3: Navigation Sub Item Skeleton, data controls toggler console.log
+
 ## 0.2.13
 
 ### Patch Changes
