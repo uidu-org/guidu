@@ -1,5 +1,11 @@
 # @uidu/chat-window
 
+## 0.1.25
+
+### Patch Changes
+
+- 35064b9: Add editable select
+
 ## 0.1.24
 
 ### Patch Changes

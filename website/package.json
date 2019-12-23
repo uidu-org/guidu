@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.1.72",
+  "version": "0.1.73",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "scripts": {
@@ -32,10 +32,10 @@
     "@uidu/lozenge": "^0.1.14",
     "@uidu/modal-dialog": "^0.1.20",
     "@uidu/navigation": "^0.2.14",
-    "@uidu/select": "^0.2.4",
+    "@uidu/select": "^0.2.5",
     "@uidu/shell": "^0.2.0",
-    "@uidu/spinner": "^0.1.12",
-    "@uidu/table": "^0.1.79",
+    "@uidu/spinner": "^0.1.13",
+    "@uidu/table": "^0.1.81",
     "@uidu/theme": "^0.1.18",
     "@uidu/themes-uidu": "^0.1.37",
     "@uidu/tooltip": "^0.1.20",

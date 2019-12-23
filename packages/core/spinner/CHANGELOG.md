@@ -1,5 +1,11 @@
 # @uidu/spinner
 
+## 0.1.13
+
+### Patch Changes
+
+- 35064b9: Add editable select
+
 ## 0.1.12
 
 ### Patch Changes
