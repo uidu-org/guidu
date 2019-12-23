@@ -1,20 +1,18 @@
-import * as React from 'react';
-import * as H from 'history';
-import styled from 'styled-components';
-import Loadable from 'react-loadable';
-import { Helmet } from 'react-helmet';
-import { X } from 'react-feather';
-
 import Button from '@uidu/button';
-import { gridSize, math } from '@uidu/theme';
 import { FieldTextStateless as Input } from '@uidu/field-text';
 import Modal, { ModalHeader as OgModalHeader } from '@uidu/modal-dialog';
-
-import * as fs from '../../utils/fs';
-import Loading from '../../components/Loading';
+import { gridSize, math } from '@uidu/theme';
+import * as H from 'history';
+import * as React from 'react';
+import { X } from 'react-feather';
+import { Helmet } from 'react-helmet';
+import Loadable from 'react-loadable';
+import styled from 'styled-components';
 import Changelog, { NoMatch } from '../../components/ChangeLog';
+import Loading from '../../components/Loading';
 import { packages } from '../../site';
 import { divvyChangelog } from '../../utils/changelog';
+import * as fs from '../../utils/fs';
 
 // ==============================
 // STYLES

@@ -1,16 +1,13 @@
 import { singleSelectField } from '@uidu/data-fields';
-import Editor from '../multipleSelect/editor';
+import SelectEditor from '../../editors/SelectEditor';
 import Renderer from './renderer';
 
 export default field => ({
   type: singleSelectField.kind,
   viewType: singleSelectField.kind,
-  cellEditorFramework: Editor,
+  cellEditorFramework: SelectEditor,
   cellEditorParams: {
-    values: field.options,
-    formatValue: option => {
-      return option ? option.name : '';
-    },
+    options: field.options,
   },
   cellRendererParams: {
     options: field.options,

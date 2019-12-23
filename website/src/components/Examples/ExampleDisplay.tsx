@@ -46,7 +46,7 @@ export default class ExampleDisplay extends React.Component<Props> {
         this.iframeRef &&
         (this.iframeRef.contentWindow as
           | null
-          | Window & { unmountApp?: Function });
+          | (Window & { unmountApp?: Function }));
 
       if (contentWindow && contentWindow.unmountApp) {
         contentWindow.unmountApp();
@@ -59,7 +59,7 @@ export default class ExampleDisplay extends React.Component<Props> {
       this.iframeRef &&
       (this.iframeRef.contentWindow as
         | null
-        | Window & { unmountApp?: Function });
+        | (Window & { unmountApp?: Function }));
 
     if (contentWindow && contentWindow.unmountApp) {
       contentWindow.unmountApp();

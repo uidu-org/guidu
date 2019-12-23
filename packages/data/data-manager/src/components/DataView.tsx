@@ -117,6 +117,7 @@ export default class DataView extends PureComponent<any> {
         rowDoubleClicked={() => null}
         rowSelection="multiple"
         suppressRowClickSelection
+        // stopEditingWhenGridLosesFocus
         {...viewProps.table}
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
         onGridReady={onGridReady}

@@ -46,6 +46,7 @@
     "commonmark-react-renderer": "^4.3.4",
     "connect-history-api-fallback": "^1.6.0",
     "extract-react-types-loader": "^0.3.1",
+    "loadable-component": "^1.0.0",
     "lodash.debounce": "^4.0.8",
     "netlify-cli": "^2.8.1",
     "node-fetch": "^2.3.0",

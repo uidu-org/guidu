@@ -55,6 +55,7 @@ export const availableColumns = [
     field: 'country',
     headerName: 'Country',
     enableRowGroup: true,
+    editable: true,
   },
   {
     dataField: 'percent',
@@ -70,6 +71,7 @@ export const availableColumns = [
     field: 'createdAt',
     headerName: 'Data creazione',
     enableRowGroup: true,
+    editable: true,
   },
   {
     dataField: 'date',
@@ -91,6 +93,7 @@ export const availableColumns = [
     field: 'gender',
     headerName: 'Genere',
     enableRowGroup: true,
+    editable: true,
   },
   {
     dataField: 'string',

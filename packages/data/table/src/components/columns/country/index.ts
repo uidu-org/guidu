@@ -1,5 +1,6 @@
 import { countryField } from '@uidu/data-fields';
 import { allCountries } from '@uidu/select';
+import SelectEditor from '../../editors/SelectEditor';
 import Renderer from './renderer';
 
 export default field => ({
@@ -11,6 +12,10 @@ export default field => ({
   },
   cellRenderer: Renderer,
   cellRendererParams: { options: allCountries },
+  cellEditorFramework: SelectEditor,
+  cellEditorParams: {
+    options: allCountries,
+  },
   // keyCreator: params => params.value.name,
   // getQuickFilterText: params => params.value.name,
   filterValueGetter: params => params.data[field.colId],

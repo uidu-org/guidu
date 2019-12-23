@@ -302,7 +302,7 @@ const createSelect = <TOriginalProps extends {}>(
   type ResultProps = TOriginalProps & CreateSelectProps;
   const result = class UiduSelect extends React.Component<ResultProps> {
     components: {};
-    select: React.RefObject<any>;
+    select: any;
 
     constructor(props: ResultProps) {
       super(props);
@@ -346,11 +346,11 @@ const createSelect = <TOriginalProps extends {}>(
     };
 
     focus() {
-      this.select.current.focus();
+      this.select.focus();
     }
 
     blur() {
-      this.select.current.blur();
+      this.select.blur();
     }
 
     onSelectRef = (ref: React.RefObject<any>) => {
@@ -408,6 +408,7 @@ const createSelect = <TOriginalProps extends {}>(
         value,
         getOptionLabel,
         getOptionValue,
+        innerRef,
         ...props
       } = this.props; // eslint-disable-line
 
