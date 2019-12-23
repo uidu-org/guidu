@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.2.4
+
+### Patch Changes
+
+- 2178a26: Less updates and fix fields w/o addField
+
 ## 0.2.3
 
 ### Patch Changes
