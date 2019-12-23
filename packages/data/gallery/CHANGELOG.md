@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.32
+
+### Patch Changes
+
+- Updated dependencies [7655f68]
+  - @uidu/data-controls@0.3.0
+  - @uidu/table@0.1.82
+
 ## 0.1.31
 
 ### Patch Changes

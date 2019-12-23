@@ -1,5 +1,14 @@
 # @uidu/data-views
 
+## 0.2.3
+
+### Patch Changes
+
+- 7655f68: WIP #66, state for data-manager is up to parent component, whic makes sense since it's the one that stores dataview
+- Updated dependencies [7655f68]
+  - @uidu/data-controls@0.3.0
+  - @uidu/table@0.1.82
+
 ## 0.2.2
 
 ### Patch Changes
