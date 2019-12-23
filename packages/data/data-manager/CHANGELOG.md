@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.2.2
+
+### Patch Changes
+
+- 348ad45: Now fixed empty filter model
+
 ## 0.2.1
 
 ### Patch Changes
