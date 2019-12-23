@@ -326,15 +326,16 @@ export default class Basic extends Component<any, any> {
         ...props,
       };
     });
+    const updatedView = {
+      ...currentView,
+      ...props,
+    };
     await this.setState({
       dataViews,
       isAutoSaving: 'done',
-      currentView: {
-        ...currentView,
-        ...props,
-      },
+      currentView: updatedView,
     });
-    return currentView;
+    return updatedView;
   };
 
   render() {

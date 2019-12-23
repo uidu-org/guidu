@@ -14,6 +14,6 @@ export type DataView = {
   sorters: Sort[];
   groupers: Group[];
   filterModel: FilterModel;
-  state: ColumnState;
+  state: ColumnState[];
   preferences?: DataViewPreferences;
 };

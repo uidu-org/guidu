@@ -99,7 +99,7 @@ export default class DataView extends PureComponent<any> {
       onSortChanged,
       onFilterChanged,
       onColumnVisible,
-      onColumnMoved,
+      onDragStopped,
       onColumnResized,
       onRowGroupOpened,
       onColumnRowGroupChanged,
@@ -135,7 +135,7 @@ export default class DataView extends PureComponent<any> {
         onFilterChanged={onFilterChanged}
         onColumnRowGroupChanged={onColumnRowGroupChanged}
         onColumnVisible={onColumnVisible}
-        onColumnMoved={onColumnMoved}
+        onDragStopped={onDragStopped}
         onColumnResized={onColumnResized}
         onRowGroupOpened={onRowGroupOpened}
         onRowClicked={onItemClick}
@@ -252,7 +252,7 @@ export default class DataView extends PureComponent<any> {
                   }))}
                   columnDefs={columns}
                   sorters={sorters}
-                  filterModel={filterModel}
+                  filterModel={filterModel || {}}
                 />
               )}
             </LoadableGallery>

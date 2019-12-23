@@ -48,13 +48,21 @@ const defaultRowHeight = 56;
 const defaultColumnCount = 4;
 
 export default class DataManager extends PureComponent<DataManagerProps, any> {
-  private autoSaveTimeout: number | undefined;
   static whyDidYouRender = true;
 
   static defaultProps = {
     onGridReady: _params => {},
     onFirstDataRendered: _params => {},
   };
+
+  constructor(props) {
+    super(props);
+
+    // disable autosaving on first load
+    this.state = {
+      savingEnabled: false,
+    };
+  }
 
   /*
     we should split columnDefs and data view fields.
@@ -81,10 +89,15 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       currentView,
       gridApi: api,
       gridColumnApi: columnApi,
+    }).then(() => {
+      onGridReady(params);
+      api.hideOverlay();
     });
+  };
 
-    onGridReady(params);
-    api.hideOverlay();
+  onFirstDataRendered = params => {
+    const { onFirstDataRendered } = this.props;
+    this.setState({ savingEnabled: true }, () => onFirstDataRendered(params));
   };
 
   // UNSAFE_componentWillReceiveProps(nextProps) {
@@ -101,10 +114,14 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
 
   updateView = props => {
     const { updateView, currentView } = this.props;
-    return updateView(currentView, {
-      ...props,
-      state: this.gridColumnApi.getColumnState(),
-    });
+    const { savingEnabled } = this.state;
+    if (savingEnabled) {
+      return updateView(currentView, {
+        ...props,
+        state: this.gridColumnApi.getColumnState(),
+      });
+    }
+    return null;
   };
 
   // updateView = debounce(() => {
@@ -134,7 +151,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   onColumnVisible = ({ columns, visible }) => {
     const fields = this.gridColumnApi.getAllColumns();
     this.updateView({
-      fields: fields.filter(c => c.visible).map(c => c.colId),
+      fields: fields
+        .filter(c => c.colId !== 'addField' && c.visible)
+        .map(c => c.colId),
     });
     // this.setState(
     //   prevState => ({
@@ -231,8 +250,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * @memberof DataManager
    * OnColumnMoved reacts to ag-grid callback, and updates columns state
    */
-  onColumnMoved = params => {
-    console.log(params);
+  onDragStopped = params => {
     this.updateView({});
     // this.updateView();
     // const columns = reorder(this.state.columns, oldIndex, newIndex);
@@ -347,7 +365,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       rowData,
       onItemClick,
       currentView,
-      onFirstDataRendered,
       onAddField,
       columnDefs,
     } = this.props;
@@ -377,11 +394,12 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         // methods
         gridApi={this.gridApi}
         onGridReady={this.onGridReady}
+        onFirstDataRendered={this.onFirstDataRendered}
         onFilterChanged={this.onFilterChanged}
         onSortChanged={this.onSortChanged}
         onColumnVisible={this.onColumnVisible}
         onColumnRowGroupChanged={this.onColumnRowGroupChanged}
-        onColumnMoved={this.onColumnMoved}
+        onDragStopped={this.onDragStopped}
         onColumnResized={this.onColumnResized}
         onRowGroupOpened={this.onRowGroupOpened}
         // props spreading
@@ -389,7 +407,6 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         rowData={rowData}
         onItemClick={onItemClick}
         currentView={currentView}
-        onFirstDataRendered={onFirstDataRendered}
         onAddField={onAddField}
         viewProps={viewProps}
         data={data}
