@@ -350,11 +350,14 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       columnDefs,
     } = this.props;
     const {
-      sorters,
-      filterModel,
-      groupers,
-      fields,
-      preferences = { rowHeight: defaultRowHeight },
+      sorters = [],
+      filterModel = {},
+      groupers = [],
+      fields = [],
+      preferences = {
+        rowHeight: defaultRowHeight,
+        columnCount: defaultColumnCount,
+      },
     } = currentView;
     const columns = this.gridColumnApi
       ? this.gridColumnApi
@@ -398,9 +401,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   renderControls = ({ controls }) => {
     const { columnDefs, currentView, updateView, isAutoSaving } = this.props;
     const {
-      sorters,
-      filterModel,
-      groupers,
+      sorters = [],
+      filterModel = {},
+      groupers = [],
       preferences = { rowHeight: defaultRowHeight },
     } = currentView;
     const columns = this.gridColumnApi

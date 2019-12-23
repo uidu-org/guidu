@@ -2704,9 +2704,9 @@
     "@types/react" "*"
 
 "@types/react-native@*":
-  version "0.60.25"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.25.tgz#65cb0bf5dd0631079215b63525458e4123c1c90e"
-  integrity sha512-827dIVvSTxSH5uTpsJJH7O4wpRuw0rm3yIzRL3a2yKawA0nyhgC1GPKTXHFIn2GfSdXn1Gty2dJ+k6uDZF3MWQ==
+  version "0.60.26"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.60.26.tgz#cfbb02c39cd162240d59f4922b5bdeb0c212f90d"
+  integrity sha512-M2ZE5/65Z+cmnP0hz/ImsR4eeqgHenLPWIxhJiaWsTuIMYlTfOxSIqkJQ0SFm4BdklxDS1aaH4+3d8ve+0LHMQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/react" "*"
@@ -15766,9 +15766,9 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.76.0"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.76.0.tgz#0355432b03db17529d83f102ed3f4575adb15e0a"
-  integrity sha512-jaP5jrtHQF6kNlXS8BG1+JIGXhvZqPq7yXbys2FJQFzeLegd+xSjFC8grC288LPBDOfDxqnKuotsocKDwYNeLA==
+  version "7.76.1"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.76.1.tgz#1b2c7715470a22861feb6e081c4a0f1c5cce2937"
+  integrity sha512-wOsnQYXfoxkbp7AVDxZv2NOMER3/OAWoRRXt68j4AVarF+KGygrjAMtpun/1J2ewAGOsPlo6IEZc5/9uiu53fg==
   dependencies:
     "@microsoft/load-themed-styles" "^1.7.13"
     "@uifabric/foundation" "^7.5.0"
