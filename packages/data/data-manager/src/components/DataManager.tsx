@@ -101,7 +101,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
 
   updateView = props => {
     const { updateView, currentView } = this.props;
-    return updateView(currentView, props);
+    return updateView(currentView, {
+      ...props,
+      state: this.gridColumnApi.getColumnState(),
+    });
   };
 
   // updateView = debounce(() => {
@@ -230,8 +233,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    */
   onColumnMoved = params => {
     console.log(params);
-    window.clearTimeout(this.autoSaveTimeout);
-    this.updateView({ state: this.gridColumnApi.getColumnState() });
+    this.updateView({});
     // this.updateView();
     // const columns = reorder(this.state.columns, oldIndex, newIndex);
     // this.setState({
@@ -250,7 +252,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     //   isAutoSaving: 'in-progress',
     // });
     // window.clearTimeout(this.autoSaveTimeout);
-    this.updateView({ state: this.gridColumnApi.getColumnState() });
+    this.updateView({});
     // this.updateView();
   };
 
@@ -265,7 +267,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     //   isAutoSaving: 'in-progress',
     // });
     // window.clearTimeout(this.autoSaveTimeout);
-    this.updateView({ state: this.gridColumnApi.getColumnState() });
+    this.updateView({});
     // this.updateView();
   };
 
