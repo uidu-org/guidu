@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 0.2.5
+
+### Patch Changes
+
+- 35064b9: Add editable select
+- Updated dependencies [35064b9]
+  - @uidu/spinner@0.1.13
+
 ## 0.2.4
 
 ### Patch Changes

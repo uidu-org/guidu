@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.1.80
+
+### Patch Changes
+
+- 35064b9: Add editable select
+- Updated dependencies [35064b9]
+  - @uidu/spinner@0.1.13
+  - @uidu/table@0.1.81
+
 ## 0.1.79
 
 ### Patch Changes

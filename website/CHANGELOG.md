@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.73
+
+### Patch Changes
+
+- 35064b9: Add editable select
+- Updated dependencies [35064b9]
+  - @uidu/spinner@0.1.13
+  - @uidu/table@0.1.81
+  - @uidu/select@0.2.5
+
 ## 0.1.72
 
 ### Patch Changes

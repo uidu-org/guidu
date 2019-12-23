@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.81
+
+### Patch Changes
+
+- 35064b9: Add editable select
+- Updated dependencies [35064b9]
+  - @uidu/select@0.2.5
+
 ## 0.1.80
 
 ### Patch Changes

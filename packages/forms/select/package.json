@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Select Component",
   "keywords": [
     "react",
@@ -18,7 +18,7 @@
     "@uidu/checkbox": "^0.1.53",
     "@uidu/field-base": "^0.1.47",
     "@uidu/form": "^0.1.42",
-    "@uidu/spinner": "^0.1.12",
+    "@uidu/spinner": "^0.1.13",
     "@uidu/theme": "^0.1.18",
     "@uidu/tooltip": "^0.1.19",
     "focus-trap": "^5.0.0",
