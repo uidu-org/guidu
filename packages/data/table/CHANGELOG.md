@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.83
+
+### Patch Changes
+
+- cbedef4: Uid is now very important, since it contains onItemClick logic
+
 ## 0.1.82
 
 ### Patch Changes

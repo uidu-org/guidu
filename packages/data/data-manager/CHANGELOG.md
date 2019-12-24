@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.2.5
+
+### Patch Changes
+
+- cbedef4: Uid is now very important, since it contains onItemClick logic
+- Updated dependencies [cbedef4]
+  - @uidu/table@0.1.83
+
 ## 0.2.4
 
 ### Patch Changes
