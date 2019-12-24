@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Data view declarations and custom forms",
   "module": "index.js",
   "types": "index.d.ts",
