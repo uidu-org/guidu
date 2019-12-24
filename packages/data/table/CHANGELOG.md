@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.85
+
+### Patch Changes
+
+- de65522: Try fix default fields
+
 ## 0.1.84
 
 ### Patch Changes
