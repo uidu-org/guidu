@@ -2,8 +2,16 @@ import { ColumnState } from '@ag-grid-community/core/dist/es6/columnController/c
 import { FilterModel, Group, Sort } from '@uidu/data-controls';
 
 export type DataViewPreferences = {
+  // table
   rowHeight?: number;
+  // gallery
   columnCount?: number;
+  // calendar & gantt
+  startDateField?: string;
+  endDateField?: string;
+  calendarView?: string;
+  // board
+  primaryField?: string;
 };
 
 export type DataView = {

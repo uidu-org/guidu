@@ -5,14 +5,6 @@ import { DataManagerProps } from '../types';
 import { initializeDataView } from '../utils';
 import DataView from './DataView';
 
-const reorder = (list, startIndex, endIndex) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
-
 const defaultAvailableControls = {
   calendarToolbar: {
     visible: true,
@@ -46,6 +38,9 @@ const defaultAvailableControls = {
 
 const defaultRowHeight = 56;
 const defaultColumnCount = 4;
+const defaultStartDateField = 'createdAt';
+const defaultEndDateField = null;
+const defaultPrimaryField = null;
 
 export default class DataManager extends PureComponent<DataManagerProps, any> {
   static whyDidYouRender = true;
@@ -376,6 +371,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       preferences = {
         rowHeight: defaultRowHeight,
         columnCount: defaultColumnCount,
+        startDateField: defaultStartDateField,
+        endDateField: defaultEndDateField,
+        primaryField: defaultPrimaryField,
       },
     } = currentView;
     const columns = this.gridColumnApi
@@ -384,7 +382,13 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
           .map(c => ({ ...c.colDef, hide: !c.visible }))
       : [];
     const data = this.gridApi ? this.gridApi.getModel().rowsToDisplay : [];
-    const { rowHeight, columnCount } = preferences;
+    const {
+      rowHeight,
+      columnCount,
+      startDateField,
+      endDateField,
+      primaryField,
+    } = preferences;
     return (
       <DataView
         // this.state
@@ -413,6 +417,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         columns={columns}
         rowHeight={rowHeight}
         columnCount={columnCount}
+        startDateField={startDateField}
+        endDateField={endDateField}
+        primaryField={primaryField}
       />
     );
   };
@@ -423,14 +430,26 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
       sorters = [],
       filterModel = {},
       groupers = [],
-      preferences = { rowHeight: defaultRowHeight },
+      preferences = {
+        rowHeight: defaultRowHeight,
+        columnCount: defaultColumnCount,
+        startDateField: defaultStartDateField,
+        endDateField: defaultEndDateField,
+        primaryField: defaultPrimaryField,
+      },
     } = currentView;
     const columns = this.gridColumnApi
       ? this.gridColumnApi
           .getAllGridColumns()
           .map(c => ({ ...c.colDef, hide: !c.visible }))
       : [];
-    const { rowHeight, columnCount } = preferences;
+    const {
+      rowHeight,
+      columnCount,
+      startDateField,
+      endDateField,
+      primaryField,
+    } = preferences;
 
     const availableControls = {
       ...defaultAvailableControls,
@@ -457,6 +476,9 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
             onSetColumnCount={this.setColumnCount}
             actions={availableControls.more.actions}
             isAutoSaving={isAutoSaving}
+            startDateField={startDateField}
+            endDateField={endDateField}
+            primaryField={primaryField}
           />
         )}
         <div className="d-flex align-items-center">

@@ -106,6 +106,9 @@ export default class DataView extends PureComponent<any> {
       sorters,
       groupers,
       filterModel,
+      primaryField,
+      startDateField,
+      endDateField,
     } = this.props;
 
     if (!rowData) {
@@ -170,12 +173,16 @@ export default class DataView extends PureComponent<any> {
                     {...viewProps.calendar}
                     onItemClick={onItemClick}
                     events={data.map(datum => datum.data)}
-                    startAccessor={item => moment(item.createdAt).toDate()}
+                    startAccessor={item =>
+                      moment(item[startDateField]).toDate()
+                    }
                     titleAccessor={item => item.email}
                     endAccessor={item =>
-                      moment(item.createdAt)
-                        .add(3, 'hour')
-                        .toDate()
+                      endDateField
+                        ? moment(item[endDateField].toDate())
+                        : moment(item[startDateField])
+                            .add(3, 'hour')
+                            .toDate()
                     }
                     columnDefs={columns}
                     components={{
@@ -194,12 +201,15 @@ export default class DataView extends PureComponent<any> {
           <>
             <LoadableBoard fallback={<ShellBodyWithSpinner />}>
               {({ default: Board }) => {
+                if (!primaryField) {
+                  return null;
+                }
                 return (
                   <Board
                     {...viewProps.board}
                     columnDefs={columns}
                     initial={rowData.reduce((res, item, index) => {
-                      const key = item[currentView.primaryField];
+                      const key = item[primaryField];
                       if (res[key]) {
                         res[key] = [...res[key], { ...item, content: item.id }];
                       } else {

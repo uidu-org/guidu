@@ -12,6 +12,9 @@ export type ConfiguratorProps = GrouperProps &
     currentView: any;
     updateView: (dataView: DataView, props: keyof DataView) => void;
     onSetColumnCount: (columnCount: number) => void;
+    startDateField?: string;
+    endDateField?: string;
+    primaryField?: string;
     isConfiguratorOpen?: boolean;
     columnCount?: number;
     gridApi: GridApi;

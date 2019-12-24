@@ -61,6 +61,9 @@ export default function Viewer({
   gridApi,
   gridColumnApi,
   isAutoSaving,
+  startDateField,
+  endDateField,
+  primaryField,
 }: ViewerProps) {
   const node: React.RefObject<HTMLDivElement> = useRef();
   const [editingName, setEditingName] = useState(false);
@@ -125,6 +128,9 @@ export default function Viewer({
         columnCount={columnCount}
         onSetColumnCount={onSetColumnCount}
         updateView={updateView}
+        startDateField={startDateField}
+        endDateField={endDateField}
+        primaryField={primaryField}
       />
       <Starrer onToggle={updateView} currentView={currentView} />
       {availableControls.more.visible && (

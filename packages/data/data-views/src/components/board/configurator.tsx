@@ -20,6 +20,7 @@ export default class Configurator extends PureComponent<any> {
       onDragEnd,
       gridColumnApi,
       currentView,
+      primaryField,
     } = this.props;
     return (
       <>
@@ -34,7 +35,7 @@ export default class Configurator extends PureComponent<any> {
             <Form handleSubmit={this.handleSubmit} footerRenderer={() => null}>
               <Select
                 name="primaryField"
-                value={currentView.primaryField}
+                value={primaryField}
                 options={columnDefs
                   .filter(column => {
                     return [
@@ -53,10 +54,7 @@ export default class Configurator extends PureComponent<any> {
                       : {}),
                   }))}
                 onChange={(name, value) =>
-                  updateView({
-                    ...currentView,
-                    [name]: value,
-                  })
+                  updateView(currentView, { preferences: { [name]: value } })
                 }
                 layout="elementOnly"
               />

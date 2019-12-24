@@ -14,6 +14,7 @@ import {
 } from '@uidu/shell';
 import { buildColumns } from '@uidu/table';
 import React, { Component } from 'react';
+import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -249,7 +250,7 @@ const dataViews = [
   {
     id: 17,
     name: 'Galleria contatti x5',
-    columnCount: 5,
+    preferences: { columnCount: 5 },
     kind: 'gallery',
     fields: ['member', 'amount'],
     sorters: [{ colId: 'amount', sort: 'desc' }],
@@ -264,7 +265,7 @@ const dataViews = [
   {
     id: 5,
     name: 'Trello contatti',
-    primaryField: 'country',
+    preferences: { primaryField: 'country' },
     kind: 'board',
     fields: ['avatar', 'member', 'amount'],
   },

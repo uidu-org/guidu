@@ -14,6 +14,9 @@ export default class Configurator extends PureComponent<any> {
       columnDefs,
       onDragEnd,
       gridColumnApi,
+      currentView,
+      updateView,
+      startDateField,
     } = this.props;
     return (
       <>
@@ -39,7 +42,13 @@ export default class Configurator extends PureComponent<any> {
                       ? { before: column.headerComponentParams.menuIcon }
                       : {}),
                   }))}
+                value={startDateField}
                 layout="elementOnly"
+                onChange={(name, value) => {
+                  updateView(currentView, {
+                    preferences: { startDateField: value },
+                  });
+                }}
               />
             </Form>
           </div>

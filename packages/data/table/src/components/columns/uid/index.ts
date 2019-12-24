@@ -12,6 +12,7 @@ export default field => ({
   resizable: false,
   // checkboxSelection: true,
   // headerCheckboxSelection: true,
+  minWidth: 84,
   width: 84,
   maxWidth: 84,
   suppressMenu: true,

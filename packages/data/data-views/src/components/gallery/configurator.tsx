@@ -15,6 +15,7 @@ export default class Configurator extends PureComponent<any> {
       columnCount,
       onSetColumnCount,
     } = this.props;
+    console.log(this.props);
     return (
       <>
         <div className="list-group mb-3">

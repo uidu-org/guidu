@@ -207,9 +207,9 @@
   integrity sha512-DEMxDge+XQyq4uPNzEuJ2q7mSYFfM0ExRyYZ4WBrjoZgLbInSzzm9UJVZtBhMCp4Skp67rY/aJ4DoOflOUT4Iw==
 
 "@amcharts/amcharts4@^4.7.14":
-  version "4.7.17"
-  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4/-/amcharts4-4.7.17.tgz#bc82667da464f398f3b25e62df262e4767432018"
-  integrity sha512-Ah9UYEgKmP/NlKdym7okg6LVz4XD7cpElsdFQWgcAugAc5HXNxE2rCJ2ERRen/VeRDZ1Cr1r5cw/CX42R5yqig==
+  version "4.7.18"
+  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4/-/amcharts4-4.7.18.tgz#f274d61e464c17dfd23ee21a0d1ab9546cc1cce6"
+  integrity sha512-EbIIMklHV33/ZvAorgu+JkYQV8X8tfo7DjsVFfA1xGiPFz2/kxPWP0Z1Rf6nUUD5/EIHlBeIU0B0RiuVxisl8w==
   dependencies:
     "@types/regression" "^2.0.0"
     canvg "^2.0.0"
@@ -2203,9 +2203,9 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/rest@^16.28.1":
-  version "16.35.2"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.35.2.tgz#0098c9e2a895d4afb0fa6578479283553543143c"
-  integrity sha512-iijaNZpn9hBpUdh8YdXqNiWazmq4R1vCUsmxpBB0kCQ0asHZpCx+HNs22eiHuwYKRhO31ZSAGBJLi0c+3XHaKQ==
+  version "16.36.0"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.36.0.tgz#99892c57ba632c2a7b21845584004387b56c2cb7"
+  integrity sha512-zoZj7Ya4vWBK4fjTwK2Cnmu7XBB1p9ygSvTk2TthN6DVJXM4hQZQoAiknWFLJWSTix4dnA3vuHtjPZbExYoCZA==
   dependencies:
     "@octokit/request" "^5.2.0"
     "@octokit/request-error" "^1.0.2"
