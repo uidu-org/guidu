@@ -618,4 +618,42 @@ $scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
   .ag-cell-range-selected-4:not(.ag-cell-focus) {
     background-color: $ag-range-selected-color-4;
   }
+
+  ////////////////////////////////////////
+  // uid column
+  ////////////////////////////////////////
+  .ag-row {
+    &.ag-row-hover {
+      .ag-cell-uid-external-link {
+        opacity: 1;
+      }
+    }
+
+    .ag-cell-uid-external-link {
+      opacity: 0;
+      transition: opacity 300ms ease;
+      position: relative;
+
+      &:hover {
+        color: white;
+
+        &::before {
+          content: '';
+          background-color: $primary;
+          width: 24px;
+          height: 24px;
+          border-radius: 100%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%);
+          z-index: -1;
+          left: 50%;
+        }
+      }
+    }
+  }
+
+  .ag-header-cell-primary-with-uid {
+    padding-left: 0.75rem;
+  }
 }

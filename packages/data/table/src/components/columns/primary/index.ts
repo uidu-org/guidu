@@ -4,4 +4,7 @@ export default () => ({
   viewType: 'primary',
   showRowGroup: true,
   pinned: 'left',
+  cellStyle: {
+    'padding-left': '0.75rem',
+  },
 });

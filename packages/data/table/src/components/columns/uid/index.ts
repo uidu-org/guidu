@@ -1,6 +1,7 @@
 import { uidField } from '@uidu/data-fields';
+import Renderer from './renderer';
 
-export default () => ({
+export default field => ({
   type: uidField.kind,
   viewType: uidField.kind,
   headerComponentParams: { menuIcon: uidField.icon },
@@ -11,11 +12,20 @@ export default () => ({
   resizable: false,
   // checkboxSelection: true,
   // headerCheckboxSelection: true,
-  width: 60,
-  maxWidth: 60,
+  width: 84,
+  maxWidth: 84,
   suppressMenu: true,
   sortable: false,
-  // headerClass: 'border-right-0',
-  cellStyle: { fontSize: '14px' },
+  cellStyle: {
+    border: 0,
+    'padding-right': '0.75rem',
+    fontSize: '14px',
+  },
+  headerClass: 'border-right-0 pr-0',
   headerValueGetter: () => null,
+  cellRenderer: Renderer,
+  cellRendererParams: {
+    onItemClick: field.onItemClick,
+  },
+  valueGetter: ({ data }) => (data ? `${data.id.substring(0, 1)}.` : null),
 });

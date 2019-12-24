@@ -138,7 +138,7 @@ export default class DataView extends PureComponent<any> {
         onDragStopped={onDragStopped}
         onColumnResized={onColumnResized}
         onRowGroupOpened={onRowGroupOpened}
-        onRowClicked={onItemClick}
+        // onRowClicked={onItemClick}
         accentedSort
         suppressPropertyNamesCheck
         enableRangeSelection

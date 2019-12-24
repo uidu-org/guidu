@@ -81,7 +81,7 @@ const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
     case 'text':
       return textColumn();
     case 'uid':
-      return uidColumn();
+      return uidColumn(dataFieldParams);
     case 'url':
       return urlColumn();
     case 'vote':

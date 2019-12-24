@@ -6,6 +6,7 @@ export const availableColumns = [
     dataField: 'uid',
     colId: 'id',
     field: 'id',
+    dataFieldParams: { onItemClick: params => console.log(params) },
   },
   {
     dataField: 'cover',
@@ -26,6 +27,7 @@ export const availableColumns = [
     colId: 'member',
     primary: true,
     headerName: 'Donor',
+    headerClass: 'ag-header-cell-primary-with-uid',
     field: 'member',
     pinned: 'left',
     valueGetter: props => {
