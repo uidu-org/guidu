@@ -12,8 +12,8 @@ export default field => ({
   resizable: false,
   // checkboxSelection: true,
   // headerCheckboxSelection: true,
-  width: 84,
-  maxWidth: 84,
+  width: 96,
+  maxWidth: 96,
   suppressMenu: true,
   sortable: false,
   cellStyle: {
@@ -27,5 +27,4 @@ export default field => ({
   cellRendererParams: {
     onItemClick: field.onItemClick,
   },
-  valueGetter: ({ data }) => (data ? `${data.id.substring(0, 1)}.` : null),
 });

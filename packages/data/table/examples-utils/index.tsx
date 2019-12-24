@@ -209,7 +209,7 @@ export const fetchContacts = () => {
     let wait = setTimeout(() => {
       clearTimeout(wait);
       resolve(
-        Array.from(Array(100).keys()).map(i => ({
+        Array.from(Array(132).keys()).map(i => ({
           id: faker.random.uuid(),
           avatar: faker.image.avatar(),
           email: faker.internet.email(),

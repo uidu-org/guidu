@@ -5,6 +5,7 @@ export const toggleRow = ({ api, node }) => {
 
 export default params => {
   const { api, value, node } = params;
+  console.log(params);
   if (!value) {
     return null;
   }
@@ -14,7 +15,7 @@ export default params => {
   <div class="d-flex justify-content-between">
     <span style="line-height: initial; display: flex; align-items: center; flex-grow: 1; white-space: normal; min-width: 0;">
       <span class="d-flex flex-column justify-content-center" style="line-height: initial; min-width: 0;">
-        <span class="text-truncate text-muted">${value}</span>
+        <span class="text-muted">${params.rowIndex}.</span>
       </span>
     </span>
     <span class="ml-2 ag-cell-uid-external-link">
