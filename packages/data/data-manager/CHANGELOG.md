@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.2.6
+
+### Patch Changes
+
+- de65522: Try fix default fields
+- Updated dependencies [de65522]
+  - @uidu/table@0.1.85
+
 ## 0.2.5
 
 ### Patch Changes
