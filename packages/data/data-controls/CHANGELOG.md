@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.3.1
+
+### Patch Changes
+
+- 14ee6a1: WIP #55
+- Updated dependencies [14ee6a1]
+  - @uidu/data-views@0.2.5
+  - @uidu/table@0.1.86
+
 ## 0.3.0
 
 ### Minor Changes

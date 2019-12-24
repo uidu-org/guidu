@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.86
+
+### Patch Changes
+
+- 14ee6a1: WIP #55
+- Updated dependencies [14ee6a1]
+  - @uidu/data-controls@0.3.1
+
 ## 0.1.85
 
 ### Patch Changes
