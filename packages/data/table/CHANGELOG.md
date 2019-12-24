@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.84
+
+### Patch Changes
+
+- 0a2a4d2: Auto ID
+
 ## 0.1.83
 
 ### Patch Changes
