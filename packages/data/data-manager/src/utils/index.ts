@@ -20,17 +20,17 @@ export const initializeDataView = async ({
   gridApi.showLoadingOverlay();
 
   // handle fields
-  gridColumnApi.setColumnsVisible(
-    gridColumnApi.getAllColumns().map((c: any) => c.colId),
-    false,
-  );
-  gridColumnApi.setColumnsVisible(fields as any, true);
 
   // handle state
   if (state) {
     gridColumnApi.setColumnState(state);
     // column visibility and order stays into column state
   }
+  gridColumnApi.setColumnsVisible(
+    gridColumnApi.getAllColumns().map((c: any) => c.colId),
+    false,
+  );
+  gridColumnApi.setColumnsVisible(fields as any, true);
 
   // handle sorters
   gridApi.setSortModel(sorters);

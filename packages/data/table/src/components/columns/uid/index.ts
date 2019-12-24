@@ -12,8 +12,8 @@ export default field => ({
   resizable: false,
   // checkboxSelection: true,
   // headerCheckboxSelection: true,
-  width: 96,
-  maxWidth: 96,
+  width: 84,
+  maxWidth: 84,
   suppressMenu: true,
   sortable: false,
   cellStyle: {
