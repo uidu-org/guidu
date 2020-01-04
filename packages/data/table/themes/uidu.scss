@@ -84,7 +84,7 @@ $hover-color: cornsilk;
 
 @import '@ag-grid-community/core/dist/styles/ag-grid.scss';
 
-$scrolled-box-shadow: 1px 0 4px 4px rgba(0, 0, 0, 0.075);
+$scrolled-box-shadow: -3px 0 4px 7px rgba(0, 0, 0, 0.03);
 
 .ag-theme-uidu {
   @each $icon, $code in $icons {
