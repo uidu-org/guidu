@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.87
+
+### Patch Changes
+
+- 2d15d6c: Small fixes to box-shadow
+
 ## 0.1.86
 
 ### Patch Changes
