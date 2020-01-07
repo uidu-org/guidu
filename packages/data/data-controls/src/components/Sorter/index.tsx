@@ -47,7 +47,7 @@ export default class Sorter extends Component<SorterProps, any> {
               defaultMessage={`{sortersCount, plural,
                   =0 {Sort}
                   one {Sorted by 1 field}
-                  other {Sorted by # fields}
+                  other {Sorted by {sortersCount, number} fields}
                 }`}
               values={{ sortersCount }}
             />

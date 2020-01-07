@@ -16,53 +16,58 @@ const aggFuncs = [
   {
     id: 'avg',
     name: 'Average',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
   {
     id: 'count',
     name: 'Count',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
   {
     id: 'first',
     name: 'First',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
   {
     id: 'last',
     name: 'Last',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
   {
     id: 'max',
     name: 'Max',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
   {
     id: 'min',
     name: 'Min',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
   {
     id: 'sum',
     name: 'Sum',
-    icon: renderToStaticMarkup(<Maximize2 size={16} />),
+    icon: renderToStaticMarkup(<Maximize2 size={14} />),
   },
 ];
 
 export const getMainMenuItems = params => {
   const { api, columnApi, column } = params;
   const { colId } = column;
+  console.log(params);
   return [
     ...(params.defaultItems.includes('valueAggSubMenu')
       ? [
           {
             name: 'Aggregation function',
-            icon: renderToStaticMarkup(<CornerLeftDown size={16} />),
+            icon: renderToStaticMarkup(<CornerLeftDown size={14} />),
             subMenu: aggFuncs.map(aggFunc => ({
               name: aggFunc.name,
-              action: () => columnApi.setColumnAggFunc(colId, aggFunc.id),
-              icon: aggFunc.icon,
+              action: () => {
+                columnApi.setColumnAggFunc(column, aggFunc.id);
+                // call this to save aggfunc in state
+                api.onFilterChanged();
+              },
+              // icon: aggFunc.icon,
             })),
           },
         ]
@@ -72,19 +77,19 @@ export const getMainMenuItems = params => {
           {
             name: 'Expand all groups',
             action: () => api.expandAll(),
-            icon: renderToStaticMarkup(<Maximize2 size={16} />),
+            icon: renderToStaticMarkup(<Maximize2 size={14} />),
           },
           {
             name: 'Collapse all groups',
             action: () => api.collapseAll(),
-            icon: renderToStaticMarkup(<Minimize2 size={16} />),
+            icon: renderToStaticMarkup(<Minimize2 size={14} />),
           },
         ]
       : []),
     {
       name: 'Autosize this column',
       action: () => columnApi.autoSizeColumn(colId),
-      icon: renderToStaticMarkup(<ChevronRight size={16} />),
+      icon: renderToStaticMarkup(<ChevronRight size={14} />),
     },
     {
       name: 'Autosize all columns',
@@ -95,21 +100,21 @@ export const getMainMenuItems = params => {
         });
         columnApi.autoSizeColumns(allColumnIds);
       },
-      icon: renderToStaticMarkup(<ChevronsRight size={16} />),
+      icon: renderToStaticMarkup(<ChevronsRight size={14} />),
     },
     {
       name: 'Sort First-Last',
       action: () => {
         api.setSortModel([...api.getSortModel(), { colId, sort: 'asc' }]);
       },
-      icon: renderToStaticMarkup(<ChevronsDown size={16} />),
+      icon: renderToStaticMarkup(<ChevronsDown size={14} />),
     },
     {
       name: 'Sort Last-First',
       action: () => {
         api.setSortModel([...api.getSortModel(), { colId, sort: 'desc' }]);
       },
-      icon: renderToStaticMarkup(<ChevronsUp size={16} />),
+      icon: renderToStaticMarkup(<ChevronsUp size={14} />),
     },
     // {
     //   name: 'Add filter',
@@ -134,14 +139,14 @@ export const getMainMenuItems = params => {
                 api.hideOverlay();
               }, 600);
             },
-            icon: renderToStaticMarkup(<Server size={16} />),
+            icon: renderToStaticMarkup(<Server size={14} />),
           },
         ]
       : []),
     {
       name: 'Hide this field',
       action: () => columnApi.setColumnVisible(colId, false),
-      icon: renderToStaticMarkup(<EyeOff size={16} />),
+      icon: renderToStaticMarkup(<EyeOff size={14} />),
     },
   ];
 };

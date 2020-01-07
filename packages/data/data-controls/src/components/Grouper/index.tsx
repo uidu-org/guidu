@@ -29,6 +29,7 @@ export default class Grouper extends Component<
   render() {
     const { groupers } = this.props;
     const groupersCount = groupers.length;
+
     return (
       <>
         <Trigger
@@ -47,7 +48,7 @@ export default class Grouper extends Component<
               defaultMessage={`{groupersCount, plural,
                   =0 {Group by}
                   one {Grouped by 1 field}
-                  other {Grouped by # fields}
+                  other {Grouped by {groupersCount, number} fields}
                 }`}
               values={{ groupersCount }}
             />

@@ -48,7 +48,7 @@ export default class Filterer extends Component<
               defaultMessage={`{filtersCount, plural,
                   =0 {Filter}
                   one {Filtered by 1 field}
-                  other {Filtered by # fields}
+                  other {Filtered by {filtersCount, number} fields}
                 }`}
               values={{ filtersCount }}
             />

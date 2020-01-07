@@ -26,6 +26,7 @@ export const initializeDataView = async ({
     gridColumnApi.setColumnState(state);
     // column visibility and order stays into column state
   }
+
   gridColumnApi.setColumnsVisible(
     gridColumnApi.getAllColumns().map((c: any) => c.colId),
     false,
@@ -42,16 +43,5 @@ export const initializeDataView = async ({
   } else {
     gridColumnApi.setRowGroupColumns([]);
   }
-
-  // return {
-  //   loaded: true,
-  //   data: gridApi.getModel().rowsToDisplay,
-  //   sorters: gridApi.getSortModel(),
-  //   groupers: gridColumnApi.getRowGroupColumns(),
-  //   columns: gridColumnApi
-  //     .getAllGridColumns()
-  //     .map(c => ({ ...c.colDef, hide: !c.visible })),
-  //   // .sort((a, b) => fields.indexOf(a.colId) - fields.indexOf(b.colId)),
-  // };
   return true;
 };
