@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.1.74
+
+### Patch Changes
+
+- 0abb7ac: Bump dependencies, WIP #53
+- Updated dependencies [0abb7ac]
+- Updated dependencies [7bd5bbf]
+  - @uidu/fs-loader@0.1.28
+  - @uidu/nav-info-loader@0.1.29
+  - @uidu/table@0.1.89
+  - @uidu/list@0.1.19
+
 ## 0.1.73
 
 ### Patch Changes

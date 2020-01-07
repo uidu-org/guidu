@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.2.8
+
+### Patch Changes
+
+- 0abb7ac: Bump dependencies, WIP #53
+- Updated dependencies [0abb7ac]
+- Updated dependencies [7bd5bbf]
+  - @uidu/data-controls@0.3.2
+  - @uidu/table@0.1.89
+  - @uidu/data-views@0.2.6
+  - @uidu/list@0.1.19
+
 ## 0.2.7
 
 ### Patch Changes
