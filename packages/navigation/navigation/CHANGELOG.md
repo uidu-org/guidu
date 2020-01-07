@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.15
+
+### Patch Changes
+
+- 0ec2a27: Fix padding
+
 ## 0.2.14
 
 ### Patch Changes
