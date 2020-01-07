@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.88
+
+### Patch Changes
+
+- 7f6fbb7: lock pinned uid and primary columns
+
 ## 0.1.87
 
 ### Patch Changes
