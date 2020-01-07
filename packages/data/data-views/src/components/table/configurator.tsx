@@ -1,6 +1,5 @@
 import { Toggler } from '@uidu/data-controls';
 import React, { PureComponent } from 'react';
-import { CheckSquare } from 'react-feather';
 
 export default class Configurator extends PureComponent<any> {
   render() {
@@ -9,10 +8,7 @@ export default class Configurator extends PureComponent<any> {
       <>
         <div className="list-group">
           <div className="list-group-item px-3 px-xl-4 border-0">
-            <h6 className="m-0">
-              <CheckSquare size={16} className="mr-2" />
-              Visible fields
-            </h6>
+            <h6 className="m-0">Visible fields</h6>
           </div>
         </div>
         <Toggler

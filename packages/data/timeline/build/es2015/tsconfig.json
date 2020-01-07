@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "../../",
+    "target": "es5",
+    "module": "esnext",
+    "paths": {}
+  },
+  "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
+  "exclude": ["../../src/**/__tests__/*"]
+}

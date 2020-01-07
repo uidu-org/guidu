@@ -18,6 +18,7 @@ export const availableColumns = [
     dataField: 'avatar',
     colId: 'avatar',
     field: 'avatar',
+    headerName: 'Avatar',
   },
   {
     dataField: 'contact',

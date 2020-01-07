@@ -27,7 +27,7 @@ export default ({ onFieldAdd }) => ({
           style={{ minWidth: 0 }}
           onClick={onFieldAdd}
         >
-          <span style={{ opacity: 0.5 }}>{addField.icon}</span>
+          <span style={{ opacity: 0.4 }}>{addField.icon}</span>
         </div>
       </Tooltip>
     );

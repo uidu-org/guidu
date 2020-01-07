@@ -22,7 +22,7 @@ export default class Configurator extends Component<ConfiguratorProps, any> {
   }
 
   render() {
-    const { columnDefs, currentView } = this.props;
+    const { currentView } = this.props;
     const dataView = byName[currentView.kind];
 
     const { configurator: ConfiguratorForm } = dataView;

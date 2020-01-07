@@ -32,7 +32,7 @@ export default class Header extends PureComponent<any> {
               flexShrink: 0,
             }}
           >
-            <span className="mr-2" style={{ opacity: 0.5 }}>
+            <span className="mr-2" style={{ opacity: 0.4 }}>
               {cover.headerComponentParams.menuIcon}
             </span>
             Cover
@@ -68,7 +68,7 @@ export default class Header extends PureComponent<any> {
                       }}
                     >
                       {menuIcon && (
-                        <span className="mr-2" style={{ opacity: 0.5 }}>
+                        <span className="mr-2" style={{ opacity: 0.4 }}>
                           {menuIcon}
                         </span>
                       )}
