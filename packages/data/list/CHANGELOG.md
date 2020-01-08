@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 0.1.19
+
+### Patch Changes
+
+- 7bd5bbf: WIP #55 with finer toggler and gallery card preferences
+- Updated dependencies [0abb7ac]
+- Updated dependencies [7bd5bbf]
+  - @uidu/table@0.1.89
+
 ## 0.1.18
 
 ### Patch Changes

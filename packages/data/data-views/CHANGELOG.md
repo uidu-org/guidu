@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 0.2.6
+
+### Patch Changes
+
+- 7bd5bbf: WIP #55 with finer toggler and gallery card preferences
+- Updated dependencies [0abb7ac]
+- Updated dependencies [7bd5bbf]
+  - @uidu/data-controls@0.3.2
+  - @uidu/table@0.1.89
+
 ## 0.2.5
 
 ### Patch Changes

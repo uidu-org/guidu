@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.29
+
+### Patch Changes
+
+- 0abb7ac: Bump dependencies, WIP #53
+
 ## 0.1.28
 
 ### Patch Changes
