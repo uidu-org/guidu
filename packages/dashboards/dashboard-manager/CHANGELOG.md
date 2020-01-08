@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.2.1
+
+### Patch Changes
+
+- c446505: Layout tweaks for dashboard-manager
+- Updated dependencies [c446505]
+  - @uidu/blocks@0.3.1
+
 ## 0.2.0
 
 ### Minor Changes
