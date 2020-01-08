@@ -5,7 +5,7 @@ import { rollup } from 'd3-array';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
 import uuid from 'uuid/v1';
-import { colors, format, manipulator } from '../../utils';
+import { format, manipulator } from '../../utils';
 import Header from './Header';
 import { labelByTimeframeGroup } from './Tooltip';
 
@@ -95,13 +95,15 @@ export default class SingleArea extends PureComponent<any> {
   };
 
   getChart = () => {
-    const { formatter, rowData, name, timeFrameGrouping } = this.props;
+    const { formatter, rowData, name, timeFrameGrouping, color } = this.props;
     console.log(rowData);
 
     if (!this.chart) {
       const chart = am4core.create(this.id, am4charts.XYChart);
       // chart.paddingTop = 0;
-      // chart.paddingBottom = 0;
+      chart.paddingBottom = 0;
+      // chart.paddingLeft = 0;
+      // chart.paddingRight = 0;
       chart.cursor = new am4charts.XYCursor();
       chart.cursor.lineY.disabled = true;
       chart.cursor.lineX.disabled = true;
@@ -112,6 +114,7 @@ export default class SingleArea extends PureComponent<any> {
       dateAxis.renderer.disabled = true;
       dateAxis.renderer.grid.template.disabled = true;
       dateAxis.cursorTooltipEnabled = false;
+
       let comparatorDateAxis = chart.xAxes.push(new am4charts.DateAxis());
       comparatorDateAxis.renderer.opposite = true;
       comparatorDateAxis.dataFields.date = 'previousKey';
@@ -124,6 +127,7 @@ export default class SingleArea extends PureComponent<any> {
       valueAxis.renderer.grid.template.disabled = true;
       valueAxis.renderer.baseGrid.disabled = true;
       valueAxis.cursorTooltipEnabled = false;
+      valueAxis.min = 0;
 
       let comparator = chart.series.push(new am4charts.LineSeries());
       comparator.dataFields.valueY = 'previousValue';
@@ -140,8 +144,8 @@ export default class SingleArea extends PureComponent<any> {
       const series = chart.series.push(new am4charts.LineSeries());
       series.dataFields.valueY = 'value';
       series.dataFields.dateX = 'key';
-      series.fill = am4core.color(colors[0]);
-      series.stroke = am4core.color(colors[0]);
+      series.fill = am4core.color(color);
+      series.stroke = am4core.color(color);
       series.strokeWidth = 2;
       series.fillOpacity = 0.6;
       series.tensionX = 0.8;

@@ -98,8 +98,9 @@ export default class DashboardManager extends Component<
       <ResponsiveGridLayout
         autoSize
         measureBeforeMount
-        verticalCompact
+        // verticalCompact
         rowHeight={98.5}
+        useCSSTransforms
         layouts={{
           lg: layout,
           md: layout,
@@ -112,9 +113,9 @@ export default class DashboardManager extends Component<
           xs: 480,
           xxs: 0,
         }}
-        cols={{ lg: 4, md: 4, sm: 4, xs: 1, xxs: 1 } as any}
+        cols={{ lg: 12, md: 12, sm: 12, xs: 1, xxs: 1 } as any}
         margin={[24, 24]}
-        isResizable={false}
+        // isResizable={false}
         {...gridProps}
       >
         {blocks.map((block, index) => {

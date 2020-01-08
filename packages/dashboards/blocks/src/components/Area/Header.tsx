@@ -17,7 +17,7 @@ const renderDifference = ({ difference }) => {
           <span
             style={{ paddingTop: '0.15rem', paddingBottom: '0.15rem' }}
             className={`ml-2 px-1 badge ${
-              difference >= 0 ? 'badge-success' : 'badge-danger'
+              difference >= 0 ? 'badge-success' : 'badge-warning'
             }`}
             ref={countUpRef}
           />
@@ -49,7 +49,7 @@ export default function Header({
   console.log(difference);
 
   return (
-    <div className="card-header border-0 pb-0">
+    <div className="card-body">
       <h6 className="mb-1 text-muted font-weight-light d-flex align-items-center">
         {label}
         {comparatorData[namespace] ? renderDifference({ difference }) : null}
