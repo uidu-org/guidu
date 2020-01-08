@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.2.0
+
+### Minor Changes
+
+- 93b1883: Bump dependencies
+
+### Patch Changes
+
+- Updated dependencies [93b1883]
+  - @uidu/blocks@0.3.0
+
 ## 0.1.21
 
 ### Patch Changes
