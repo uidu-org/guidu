@@ -4,18 +4,9 @@ import React, { PureComponent } from 'react';
 export const labelByTimeframeGroup = (label, timeframeGrouping) => {
   switch (timeframeGrouping) {
     case 'week':
-      return (
-        <span>
-          {moment(label).format('DD MMM')}
-          <span>
-            {' '}
-            -{' '}
-            {moment(label)
-              .add(1, 'weeks')
-              .format('DD MMM')}
-          </span>
-        </span>
-      );
+      return `${moment(label).format('DD MMM')} - ${moment(label)
+        .add(1, 'weeks')
+        .format('DD MMM')}`;
     case 'month':
       return moment(label).format("MMM 'YY");
     case 'year':

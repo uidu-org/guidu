@@ -35,55 +35,42 @@ export default class Basic extends Component<any, any> {
         defaultTimeFrame="5Y"
         gridProps={{ isDraggable: true, onLayoutChange: console.log }}
       >
-        {({ renderControls, renderBlocks, renderStaticBlocks }) => (
+        {({ renderControls, renderBlocks }) => (
           <>
             <ShellHeader className="border-bottom">
               {renderControls({})}
             </ShellHeader>
             <ShellBody scrollable>
-              <div className="py-3 py-md-0 px-3" style={{ minHeight: '20rem' }}>
-                {renderStaticBlocks({
-                  loaded: loaded,
-                  blocks: [
-                    {
-                      kind: 'Area',
-                      namespace: 'donations',
-                      areas: [
-                        {
-                          label: 'Raccolta',
-                          name: 'donationsAmount',
-                          rollup: ['sum', 'amount'],
-                          formatter: 'currency',
-                        },
-                        {
-                          label: 'Donazioni',
-                          name: 'donationsCount',
-                          rollup: ['count', 'id'],
-                          formatter: 'integer',
-                        },
-                        {
-                          label: 'Donatori',
-                          name: 'donorsCount',
-                          rollup: ['count', 'contact.id'],
-                          formatter: 'integer',
-                        },
-                        {
-                          label: 'Media donazione',
-                          name: 'donationsAverage',
-                          rollup: ['mean', 'amount'],
-                          formatter: 'currency',
-                        },
-                      ],
-                    },
-                  ],
-                })}
-              </div>
               <div className="container px-0">
                 <div className="row">
                   <div className="col-12">
                     {renderBlocks({
                       loaded,
                       blocks: [
+                        {
+                          kind: 'Area',
+                          namespace: 'donations',
+                          label: 'Raccolta',
+                          name: 'donationsAmount',
+                          rollup: ['sum', 'amount'],
+                          formatter: 'currency',
+                          x: 0,
+                          y: 0,
+                          w: 2,
+                          h: 2,
+                        },
+                        {
+                          kind: 'Area',
+                          namespace: 'donations',
+                          label: 'Raccolta',
+                          name: 'donationsCount',
+                          rollup: ['count', 'id'],
+                          formatter: 'integer',
+                          x: 2,
+                          y: 0,
+                          w: 2,
+                          h: 2,
+                        },
                         {
                           kind: 'Counter',
                           namespace: 'donations',

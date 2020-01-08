@@ -1,17 +1,17 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import { CardWrap, CardMedia, CardContent, CardEmpty } from './components/Card';
 import axios from 'axios';
+import React, { Fragment, useEffect, useState } from 'react';
+import { CardContent, CardEmpty, CardMedia, CardWrap } from './components/Card';
 import {
-  defaultApiParameters,
-  isNil,
   createApiUrl,
-  fetchFromApiUrl,
+  defaultApiParameters,
+  extractFirstUrl,
   fetchFromApi,
+  fetchFromApiUrl,
   getUrlPath,
   imageProxy,
-  someProp,
   isFunction,
-  extractFirstUrl,
+  isNil,
+  someProp,
 } from './utils';
 
 const Card = ({ url, size, title, description, logo, ...props }) => (
