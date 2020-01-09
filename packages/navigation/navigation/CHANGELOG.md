@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.16
+
+### Patch Changes
+
+- 74abcc0: Prefer column to line for areas
+
 ## 0.2.15
 
 ### Patch Changes
