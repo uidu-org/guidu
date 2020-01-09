@@ -135,20 +135,19 @@ export default class SingleArea extends PureComponent<any> {
       comparator.strokeWidth = 2;
       comparator.fill = am4core.color('#f3f3f3');
       comparator.stroke = am4core.color('#f3f3f3');
-      comparator.fillOpacity = 0.6;
+      // comparator.fillOpacity = 0.6;
       comparator.tensionX = 0.8;
       comparator.name = name;
       comparator.xAxis = comparatorDateAxis;
       comparator.tooltipText = '{name}: [bold]{valueY}[/]';
 
-      const series = chart.series.push(new am4charts.LineSeries());
+      const series = chart.series.push(new am4charts.ColumnSeries());
       series.dataFields.valueY = 'value';
       series.dataFields.dateX = 'key';
       series.fill = am4core.color(color);
       series.stroke = am4core.color(color);
       series.strokeWidth = 2;
       series.fillOpacity = 0.6;
-      series.tensionX = 0.8;
       // series.tensionY = 0.8;
       series.name = name;
       series.tooltipText = `{dateX}\n[bold]{valueY}[/]`;
