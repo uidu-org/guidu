@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.3.1
+
+### Patch Changes
+
+- c446505: Layout tweaks for dashboard-manager
+
 ## 0.3.0
 
 ### Minor Changes
