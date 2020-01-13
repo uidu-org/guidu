@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.1.10
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/range@0.1.17
+  - @uidu/spinner@0.1.14
+  - @uidu/form@0.1.43
+
 ## 0.1.9
 
 ### Patch Changes

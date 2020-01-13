@@ -1,5 +1,19 @@
 # @uidu/drawer
 
+## 0.2.10
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/blanket@0.1.16
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/dropdown-menu@0.1.18
+  - @uidu/item@0.1.20
+  - @uidu/theme@0.1.19
+  - @uidu/shell@0.2.1
+
 ## 0.2.9
 
 ### Patch Changes

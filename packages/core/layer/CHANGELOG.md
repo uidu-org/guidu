@@ -1,5 +1,13 @@
 # @uidu/layer
 
+## 0.1.10
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/docs@0.1.39
+
 ## 0.1.9
 
 ### Patch Changes

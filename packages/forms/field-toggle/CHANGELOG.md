@@ -1,5 +1,17 @@
 # @uidu/toggle
 
+## 0.1.23
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/theme@0.1.19
+  - @uidu/toggle@0.1.20
+  - @uidu/form@0.1.43
+
 ## 0.1.22
 
 ### Patch Changes

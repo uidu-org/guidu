@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.2.6
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/modal-dialog@0.1.24
+  - @uidu/spinner@0.1.14
+  - @uidu/theme@0.1.19
+  - @uidu/tooltip@0.1.21
+  - @uidu/form@0.1.43
+
 ## 0.2.5
 
 ### Patch Changes

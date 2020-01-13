@@ -1,5 +1,19 @@
 # @uidu/portal
 
+## 0.1.13
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/inline-dialog@0.1.11
+  - @uidu/modal-dialog@0.1.24
+  - @uidu/onboarding@0.1.6
+  - @uidu/theme@0.1.19
+  - @uidu/tooltip@0.1.21
+
 ## 0.1.12
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/popper
 
+## 0.1.15
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/theme@0.1.19
+
 ## 0.1.14
 
 ### Patch Changes

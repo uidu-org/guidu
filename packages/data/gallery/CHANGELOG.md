@@ -1,5 +1,17 @@
 # @uidu/gallery
 
+## 0.1.33
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/docs@0.1.39
+  - @uidu/spinner@0.1.14
+  - @uidu/data-controls@0.3.3
+  - @uidu/table@0.1.90
+  - @uidu/shell@0.2.1
+
 ## 0.1.32
 
 ### Patch Changes

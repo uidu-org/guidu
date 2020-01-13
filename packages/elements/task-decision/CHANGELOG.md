@@ -1,5 +1,20 @@
 # @uidu/task-decision
 
+## 0.1.4
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/avatar-group@2.1.31
+  - @uidu/avatar@0.2.22
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/spinner@0.1.14
+  - @uidu/theme@0.1.19
+  - @uidu/editor-common@0.1.10
+  - @uidu/renderer@0.1.8
+
 ## 0.1.3
 
 ### Patch Changes

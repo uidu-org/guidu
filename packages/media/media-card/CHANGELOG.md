@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.1.21
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/dropdown-menu@0.1.18
+  - @uidu/spinner@0.1.14
+  - @uidu/theme@0.1.19
+  - @uidu/tooltip@0.1.21
+
 ## 0.1.20
 
 ### Patch Changes

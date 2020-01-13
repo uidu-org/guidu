@@ -1,5 +1,29 @@
 # Change Log
 
+## 0.1.75
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/badge@0.1.15
+  - @uidu/button@0.1.49
+  - @uidu/code@0.1.18
+  - @uidu/docs@0.1.39
+  - @uidu/drawer@0.2.10
+  - @uidu/lozenge@0.1.16
+  - @uidu/modal-dialog@0.1.24
+  - @uidu/spinner@0.1.14
+  - @uidu/theme@0.1.19
+  - @uidu/tooltip@0.1.21
+  - @uidu/list@0.1.20
+  - @uidu/table@0.1.90
+  - @uidu/field-text@0.1.24
+  - @uidu/form@0.1.43
+  - @uidu/select@0.2.6
+  - @uidu/navigation@0.2.17
+  - @uidu/shell@0.2.1
+
 ## 0.1.74
 
 ### Patch Changes
