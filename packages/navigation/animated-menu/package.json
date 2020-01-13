@@ -12,7 +12,7 @@
     "classnames": "^2.2.6",
     "react-flip-toolkit": "^7.0.0",
     "react-router-dom": "^5.0.0",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34"

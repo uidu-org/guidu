@@ -18,7 +18,7 @@
     "@uidu/editor-common": "^0.1.9",
     "@uidu/editor-core": "^0.1.19",
     "prosemirror-view": "^1.9.10",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3"

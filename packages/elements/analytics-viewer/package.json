@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.16",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {},
   "peerDependencies": {

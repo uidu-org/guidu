@@ -4,7 +4,7 @@ import Loader from '@uidu/spinner';
 import { Shell } from '@uidu/widgets';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
-import Countdown from 'react-countdown-now';
+import Countdown from 'react-countdown';
 import { ArrowLeft, X } from 'react-feather';
 import Attendance from './steps/Attendance';
 import Order from './steps/Order';

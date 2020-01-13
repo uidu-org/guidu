@@ -20,7 +20,7 @@
     "@uidu/modal-dialog": "^0.1.22",
     "@uidu/onboarding": "^0.1.4",
     "@uidu/tooltip": "^0.1.19",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

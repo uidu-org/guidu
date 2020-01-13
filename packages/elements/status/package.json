@@ -30,7 +30,7 @@
     "@uidu/field-text": "^0.1.23",
     "@uidu/lozenge": "^0.1.15",
     "@uidu/theme": "^0.1.18",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34",

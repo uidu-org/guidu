@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "react-feather": "^2.0.3",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34"

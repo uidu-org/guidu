@@ -22,7 +22,7 @@
     "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0",
     "react-transition-group": "^4.0.0",
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.2.21",

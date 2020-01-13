@@ -221,7 +221,7 @@
     "jest-emotion": "^10.0.10",
     "jest-fixtures": "^0.6.0",
     "jest-in-case": "^1.0.2",
-    "jest-styled-components": "^6.3.1",
+    "jest-styled-components": "^7.0.0",
     "js-search": "^1.4.3",
     "jsverify": "^0.8.4",
     "keycode": "^2.2.0",
@@ -297,7 +297,7 @@
     "react-color": "^2.17.3",
     "react-content-loader": "^4.2.1",
     "react-contextmenu": "^2.13.0",
-    "react-countdown-now": "^2.1.0",
+    "react-countdown": "^2.2.0",
     "react-countup": "^4.2.2",
     "react-dev-utils": "^10.0.0",
     "react-dom": "^16.4.0",
@@ -364,7 +364,7 @@
     "standard-changelog": "^2.0.7",
     "string-raw": "^1.0.1",
     "style-loader": "^1.0.0",
-    "styled-components": "^4.0.3",
+    "styled-components": "^5.0.0",
     "svg-inline-react": "^3.1.0",
     "svg-url-loader": "^3.0.0",
     "swiper": "^5.2.0",
@@ -478,7 +478,7 @@
     "use-clipboard-copy": "^0.1.0"
   },
   "resolutions": {
-    "styled-components": "^4.0.3"
+    "styled-components": "^5.0.0"
   },
   "engines": {
     "node": "^12.0.0",
