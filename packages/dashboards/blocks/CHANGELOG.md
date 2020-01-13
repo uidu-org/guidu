@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.3.2
+
+### Patch Changes
+
+- 74abcc0: Prefer column to line for areas
+
 ## 0.3.1
 
 ### Patch Changes
