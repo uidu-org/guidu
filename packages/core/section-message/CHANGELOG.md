@@ -1,5 +1,17 @@
 # @uidu/section-message
 
+## 0.1.17
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/code@0.1.18
+  - @uidu/docs@0.1.39
+  - @uidu/theme@0.1.19
+  - @uidu/field-range@0.1.20
+
 ## 0.1.16
 
 ### Patch Changes

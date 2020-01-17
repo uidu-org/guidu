@@ -1,5 +1,16 @@
 # @uidu/board
 
+## 0.2.8
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/badge@0.1.15
+  - @uidu/docs@0.1.39
+  - @uidu/theme@0.1.19
+  - @uidu/shell@0.2.1
+
 ## 0.2.7
 
 ### Patch Changes

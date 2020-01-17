@@ -1,5 +1,11 @@
 # @uidu/analytics-viewer
 
+## 0.1.3
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+
 ## 0.1.2
 
 ### Patch Changes

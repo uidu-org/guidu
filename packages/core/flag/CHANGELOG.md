@@ -1,5 +1,18 @@
 # @uidu/flag
 
+## 0.1.5
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/docs@0.1.39
+  - @uidu/portal@0.1.13
+  - @uidu/spinner@0.1.14
+  - @uidu/theme@0.1.19
+  - @uidu/form@0.1.43
+
 ## 0.1.4
 
 ### Patch Changes

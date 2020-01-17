@@ -1,5 +1,26 @@
 # @atlaskit/renderer
 
+## 0.1.8
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/avatar@0.2.22
+  - @uidu/button@0.1.49
+  - @uidu/code@0.1.18
+  - @uidu/docs@0.1.39
+  - @uidu/theme@0.1.19
+  - @uidu/tooltip@0.1.21
+  - @uidu/editor-common@0.1.10
+  - @uidu/editor-json-transformer@0.1.3
+  - @uidu/status@0.1.4
+  - @uidu/task-decision@0.1.4
+  - @uidu/field-range@0.1.20
+  - @uidu/media-card@0.1.21
+  - @uidu/media-filmstrip@0.1.22
+  - @uidu/navigation@0.2.17
+
 ## 0.1.7
 
 ### Patch Changes

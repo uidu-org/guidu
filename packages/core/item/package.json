@@ -1,6 +1,6 @@
 {
   "name": "@uidu/item",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "A generic item component to be used within other components",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -8,18 +8,18 @@
   "sideEffects": false,
   "module": "index.js",
   "dependencies": {
-    "@uidu/avatar": "^0.2.20",
-    "@uidu/theme": "^0.1.18",
+    "@uidu/avatar": "^0.2.22",
+    "@uidu/theme": "^0.1.19",
     "polished": "^3.0.3",
     "prop-types": "^15.6.0",
     "react-addons-text-content": "^0.0.4",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.2.20",
-    "@uidu/docs": "^0.1.34",
-    "@uidu/lozenge": "^0.1.14",
-    "@uidu/tooltip": "^0.1.16",
+    "@uidu/avatar": "^0.2.22",
+    "@uidu/docs": "^0.1.39",
+    "@uidu/lozenge": "^0.1.16",
+    "@uidu/tooltip": "^0.1.21",
     "polished": "^3.0.3",
     "react-dom": "^16.4.0",
     "react-router": "^5.0.0",

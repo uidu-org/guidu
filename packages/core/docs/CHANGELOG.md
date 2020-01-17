@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.39
+
+### Patch Changes
+
+- 8f92964: Bump styled-components
+- Updated dependencies [8f92964]
+  - @uidu/button@0.1.49
+  - @uidu/code@0.1.18
+  - @uidu/theme@0.1.19
+  - @uidu/tooltip@0.1.21
+
 ## 0.1.38
 
 ### Patch Changes
