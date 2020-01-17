@@ -448,7 +448,7 @@
     "eslint-plugin-react": "^7.4.0",
     "extract-react-intl-messages": "^2.2.1",
     "faker": "^4.1.0",
-    "flow-bin": "^0.115",
+    "flow-bin": "^0.116",
     "fs-extra": "^8.0.1",
     "husky": "^4.0.0",
     "jest": "^24.1.0",
