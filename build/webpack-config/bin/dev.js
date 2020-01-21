@@ -31,7 +31,6 @@ const minimatch = require('minimatch');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const historyApiFallback = require('connect-history-api-fallback');
-const fs = require('fs');
 const createConfig = require('../config');
 const utils = require('../config/utils');
 const { print, devServerBanner, errorMsg } = require('../banner');
@@ -46,7 +45,11 @@ if (process.env.VISUAL_REGRESSION) {
 const PORT = +process.env.UIDU_DEV_PORT || 9000;
 const stats = require('../config/statsOptions');
 
-async function runDevServer() {
+const runDevServer = async ({
+  serverOptions = {},
+  webpackOptions = {},
+  websiteOptions = {},
+}) => {
   const workspaceGlobs = process.argv
     .slice(2)
     .filter(arg => !arg.startsWith('--')) // in case we ever pass other flags to this script
@@ -97,6 +100,8 @@ async function runDevServer() {
     mode,
     websiteEnv,
     report,
+    webpackOptions,
+    websiteOptions,
   });
 
   const compiler = webpack(config);
@@ -109,21 +114,12 @@ async function runDevServer() {
     // Enable gzip compression of generated files.
     compress: true,
 
-    https: {
-      key: fs.readFileSync(
-        '/Users/andreavanini/Applications/uidu/config/certs/key.pem',
-      ),
-      cert: fs.readFileSync(
-        '/Users/andreavanini/Applications/uidu/config/certs/crt.pem',
-      ),
-      // ca: fs.readFileSync('C:/Users/User/AppData/Local/mkcert/rootCA.pem'),
-    },
-
     historyApiFallback: true,
     disableHostCheck,
 
     overlay: true,
     stats,
+    ...serverOptions,
   });
 
   return new Promise((resolve, reject) => {
@@ -141,9 +137,6 @@ async function runDevServer() {
       );
     });
   });
-}
+};
 
-runDevServer().catch(err => {
-  console.log(err);
-  process.exit(err);
-});
+module.exports = runDevServer;

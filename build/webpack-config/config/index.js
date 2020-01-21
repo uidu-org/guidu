@@ -66,6 +66,10 @@ module.exports = function createWebpackConfig(
     report = false,
     entry,
     output,
+    webpackOptions = {
+      resolve: {},
+    },
+    websiteOptions,
   } /*: {
     globs?: Array<string>,
     websiteDir?: string,
@@ -74,10 +78,14 @@ module.exports = function createWebpackConfig(
     noMinimize?: boolean,
     report?: boolean,
     entry?: any,
-    output?: any
+    output?: any,
+    webpackOptions?: any;
+    websiteOptions?: any;
   }*/,
 ) {
   const isProduction = mode === 'production';
+
+  console.log(webpackOptions);
 
   return {
     stats: statsOptions,
@@ -262,6 +270,7 @@ module.exports = function createWebpackConfig(
       alias: {
         'react-native$': 'react-native-web',
       },
+      ...webpackOptions.resolve,
     },
     resolveLoader: {
       modules: [
@@ -269,7 +278,13 @@ module.exports = function createWebpackConfig(
         'node_modules',
       ],
     },
-    plugins: getPlugins({ websiteDir, isProduction, websiteEnv, report }),
+    plugins: getPlugins({
+      websiteDir,
+      isProduction,
+      websiteEnv,
+      report,
+      websiteOptions,
+    }),
     optimization: getOptimizations({
       isProduction,
       noMinimizeFlag: noMinimize,
@@ -283,13 +298,16 @@ function getPlugins(
     isProduction,
     websiteEnv,
     report,
-  } /*: { websiteDir: string, websiteEnv: string, report: boolean, isProduction: boolean } */,
+    websiteOptions,
+  } /*: { websiteDir: string, websiteEnv: string, report: boolean, isProduction: boolean, websiteOptions: any } */,
 ) {
   const faviconPath = path.join(
     websiteDir,
     `public/favicon${!isProduction ? '-dev' : ''}.ico`,
   );
-  const HTMLPageTitle = `GUIdu by uidu${!isProduction ? ' - DEV' : ''}`;
+  const HTMLPageTitle =
+    websiteOptions.HTMLPageTitle ||
+    `GUIdu by uidu${!isProduction ? ' - DEV' : ''}`;
   const plugins = [
     new HtmlWebpackPlugin({
       template: path.join(websiteDir, 'public/index.html.ejs'),

@@ -1,14 +1,9 @@
 #!/usr/bin/env node
 
 // @flow
-
-const minimatch = require('minimatch');
-
-const bolt = require('bolt');
 const webpack = require('webpack');
 const createConfig = require('../config');
 const { print, buildBanner } = require('../banner');
-const utils = require('../config/utils');
 
 function runBuild() {
   const mode = 'production';

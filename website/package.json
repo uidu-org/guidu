@@ -11,7 +11,7 @@
     "build:report": "yarn build --report",
     "predeploy": "yarn build",
     "deploy": "netlify deploy --dir dist/ --prod",
-    "start": "node ../build/webpack-config/bin/dev.js"
+    "start": "node webpack.config.js"
   },
   "browserslist": [
     ">0.2%",
