@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.48
+
+### Patch Changes
+
+- 6b26a44: Added possibility to extend webpack-config
+
 ## 0.1.47
 
 ### Patch Changes

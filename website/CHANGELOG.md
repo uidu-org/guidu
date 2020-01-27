@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.76
+
+### Patch Changes
+
+- 6b26a44: Added possibility to extend webpack-config
+- Updated dependencies [6b26a44]
+  - @uidu/webpack-config@0.1.48
+
 ## 0.1.75
 
 ### Patch Changes
