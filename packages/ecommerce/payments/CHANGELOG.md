@@ -1,5 +1,15 @@
 # @uidu/payments
 
+## 0.1.12
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/slider@1.0.4
+  - @uidu/form@0.1.44
+
 ## 0.1.11
 
 ### Patch Changes

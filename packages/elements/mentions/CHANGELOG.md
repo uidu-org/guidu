@@ -1,5 +1,20 @@
 # @uidu/mentions
 
+## 0.1.10
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/avatar@0.2.23
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/lozenge@0.1.17
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+  - @uidu/analytics-gas-types@0.1.3
+
 ## 0.1.9
 
 ### Patch Changes

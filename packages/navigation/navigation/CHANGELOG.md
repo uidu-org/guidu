@@ -1,5 +1,21 @@
 # @uidu/navigation
 
+## 0.2.18
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/badge@0.1.16
+  - @uidu/docs@0.1.40
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/inline-dialog@0.1.12
+  - @uidu/lozenge@0.1.17
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+  - @uidu/shell@0.2.2
+
 ## 0.2.17
 
 ### Patch Changes

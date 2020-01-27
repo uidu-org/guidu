@@ -1,5 +1,20 @@
 # @uidu/attend
 
+## 0.1.15
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+  - @uidu/payments@0.1.12
+  - @uidu/field-counter@0.1.10
+  - @uidu/field-text@0.1.25
+  - @uidu/field-textarea@0.1.13
+  - @uidu/form@0.1.44
+  - @uidu/widgets@0.1.13
+
 ## 0.1.14
 
 ### Patch Changes

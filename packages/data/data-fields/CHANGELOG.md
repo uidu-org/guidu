@@ -1,5 +1,21 @@
 # @uidu/data-fields
 
+## 0.1.24
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/toggle@0.1.21
+  - @uidu/field-color-picker@0.1.4
+  - @uidu/field-date@0.1.11
+  - @uidu/field-number@0.1.23
+  - @uidu/field-text@0.1.25
+  - @uidu/field-toggle@0.1.24
+  - @uidu/form@0.1.44
+  - @uidu/select@0.2.7
+
 ## 0.1.23
 
 ### Patch Changes

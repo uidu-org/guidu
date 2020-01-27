@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.1.23
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/theme@0.1.20
+  - @uidu/media-card@0.1.22
+  - @uidu/media-core@0.1.15
+  - @uidu/media-viewer@0.1.29
+
 ## 0.1.22
 
 ### Patch Changes

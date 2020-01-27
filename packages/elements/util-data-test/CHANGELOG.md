@@ -1,5 +1,17 @@
 # @uidu/util-data-test
 
+## 0.1.4
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/docs@0.1.40
+  - @uidu/emoji@0.1.5
+  - @uidu/mentions@0.1.10
+  - @uidu/task-decision@0.1.5
+
 ## 0.1.3
 
 ### Patch Changes

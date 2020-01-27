@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.49
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/changelog-loader@0.1.17
+  - @uidu/fs-loader@0.1.29
+  - @uidu/nav-info-loader@0.1.30
+
 ## 0.1.48
 
 ### Patch Changes

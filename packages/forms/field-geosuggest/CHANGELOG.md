@@ -1,5 +1,15 @@
 # @uidu/field-geosuggest
 
+## 0.1.11
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/field-base@0.1.48
+  - @uidu/form@0.1.44
+
 ## 0.1.10
 
 ### Patch Changes

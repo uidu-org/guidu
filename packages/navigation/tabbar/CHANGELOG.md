@@ -1,5 +1,14 @@
 # @uidu/tabbar
 
+## 0.1.14
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/shell@0.2.2
+
 ## 0.1.13
 
 ### Patch Changes

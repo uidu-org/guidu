@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.17
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/media-viewer
 
+## 0.1.29
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/media-card@0.1.22
+  - @uidu/media-core@0.1.15
+  - @uidu/shell@0.2.2
+  - @uidu/comment@0.1.8
+
 ## 0.1.28
 
 ### Patch Changes

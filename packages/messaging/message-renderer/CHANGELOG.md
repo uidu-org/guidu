@@ -1,5 +1,15 @@
 # @uidu/message-renderer
 
+## 0.1.18
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/theme@0.1.20
+
 ## 0.1.17
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/data-views
 
+## 0.2.7
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/data-controls@0.3.4
+  - @uidu/table@0.1.91
+  - @uidu/field-number@0.1.23
+  - @uidu/form@0.1.44
+  - @uidu/select@0.2.7
+
 ## 0.2.6
 
 ### Patch Changes

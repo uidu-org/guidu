@@ -1,5 +1,21 @@
 # @uidu/droplist
 
+## 0.1.19
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/item@0.1.21
+  - @uidu/layer@0.1.11
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+  - @uidu/field-base@0.1.48
+
 ## 0.1.18
 
 ### Patch Changes

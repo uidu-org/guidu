@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.1.16
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/docs@0.1.40
+  - @uidu/slider@1.0.4
+  - @uidu/spinner@0.1.15
+  - @uidu/checkbox@0.1.55
+  - @uidu/field-password@0.1.23
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/shell@0.2.2
+
 ## 0.1.15
 
 ### Patch Changes

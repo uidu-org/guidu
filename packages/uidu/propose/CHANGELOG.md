@@ -1,5 +1,19 @@
 # @uidu/propose
 
+## 0.1.11
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/field@0.1.10
+  - @uidu/docs@0.1.40
+  - @uidu/checkbox@0.1.55
+  - @uidu/field-text@0.1.25
+  - @uidu/field-textarea@0.1.13
+  - @uidu/form@0.1.44
+  - @uidu/widgets@0.1.13
+
 ## 0.1.10
 
 ### Patch Changes

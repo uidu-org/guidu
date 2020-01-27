@@ -1,5 +1,24 @@
 # @uidu/emoji
 
+## 0.1.5
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/button@0.1.50
+  - @uidu/code@0.1.19
+  - @uidu/docs@0.1.40
+  - @uidu/layer@0.1.11
+  - @uidu/section-message@0.1.18
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+  - @uidu/elements-test-helpers@0.1.3
+  - @uidu/util-data-test@0.1.4
+  - @uidu/field-text@0.1.25
+
 ## 0.1.4
 
 ### Patch Changes

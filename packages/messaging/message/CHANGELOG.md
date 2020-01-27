@@ -1,5 +1,22 @@
 # @uidu/message
 
+## 0.1.25
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/docs@0.1.40
+  - @uidu/drawer@0.2.11
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/tooltip@0.1.22
+  - @uidu/media-card@0.1.22
+  - @uidu/media-core@0.1.15
+  - @uidu/media-filmstrip@0.1.23
+  - @uidu/message-form@0.1.20
+  - @uidu/message-renderer@0.1.18
+
 ## 0.1.24
 
 ### Patch Changes

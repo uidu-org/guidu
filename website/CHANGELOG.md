@@ -1,5 +1,34 @@
 # Change Log
 
+## 0.1.77
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/navigation@0.2.18
+  - @uidu/fs-loader@0.1.29
+  - @uidu/nav-info-loader@0.1.30
+  - @uidu/webpack-config@0.1.49
+  - @uidu/badge@0.1.16
+  - @uidu/button@0.1.50
+  - @uidu/code@0.1.19
+  - @uidu/docs@0.1.40
+  - @uidu/drawer@0.2.11
+  - @uidu/lozenge@0.1.17
+  - @uidu/modal-dialog@0.1.25
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+  - @uidu/list@0.1.21
+  - @uidu/table@0.1.91
+  - @uidu/checkbox@0.1.55
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/select@0.2.7
+  - @uidu/shell@0.2.2
+  - @uidu/themes-uidu@0.1.39
+
 ## 0.1.76
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/button
 
+## 0.1.50
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/checkbox@0.1.55
+  - @uidu/form@0.1.44
+
 ## 0.1.49
 
 ### Patch Changes

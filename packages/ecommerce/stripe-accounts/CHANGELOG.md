@@ -1,5 +1,20 @@
 # @uidu/stripe-accounts
 
+## 0.1.13
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/slider@1.0.4
+  - @uidu/spinner@0.1.15
+  - @uidu/payments@0.1.12
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/shell@0.2.2
+  - @uidu/stepper@0.1.17
+
 ## 0.1.12
 
 ### Patch Changes

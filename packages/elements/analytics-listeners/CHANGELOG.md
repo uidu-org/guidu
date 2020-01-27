@@ -1,5 +1,17 @@
 # @atlaskit/analytics-listeners
 
+## 0.1.3
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/analytics-gas-types@0.1.3
+  - @uidu/analytics-namespaced-context@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

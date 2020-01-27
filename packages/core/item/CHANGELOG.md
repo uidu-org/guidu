@@ -1,5 +1,17 @@
 # @uidu/item
 
+## 0.1.21
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/docs@0.1.40
+  - @uidu/lozenge@0.1.17
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+
 ## 0.1.20
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.2.2
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/blocks@0.3.3
+  - @uidu/dashboard-controls@0.1.18
+  - @uidu/shell@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

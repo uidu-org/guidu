@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.10
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+
 ## 0.0.9
 
 ### Patch Changes

@@ -1,17 +1,17 @@
 {
   "name": "@uidu/banner",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React component that displays a prominent banner message and icon",
   "license": "MIT",
   "sideEffects": false,
   "module": "src/index.ts",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.1.19"
+    "@uidu/theme": "^0.1.20"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.49",
-    "@uidu/docs": "^0.1.39"
+    "@uidu/button": "^0.1.50",
+    "@uidu/docs": "^0.1.40"
   },
   "peerDependencies": {
     "react": "^16.8.3",

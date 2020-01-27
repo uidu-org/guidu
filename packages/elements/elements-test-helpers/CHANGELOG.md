@@ -1,5 +1,14 @@
 # @uidu/elements-test-helpers
 
+## 0.1.3
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/build-utils@0.1.14
+  - @uidu/docs@0.1.40
+
 ## 0.1.2
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 0.1.11
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/analytics@0.1.17
+  - @uidu/theme@0.1.20
+  - @uidu/adf-schema@0.1.4
+  - @uidu/analytics-namespaced-context@0.1.3
+  - @uidu/emoji@0.1.5
+  - @uidu/mentions@0.1.10
+
 ## 0.1.10
 
 ### Patch Changes

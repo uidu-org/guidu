@@ -1,5 +1,25 @@
 # @uidu/task-decision
 
+## 0.1.5
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/editor-common@0.1.11
+  - @uidu/renderer@0.1.9
+  - @uidu/analytics@0.1.17
+  - @uidu/avatar@0.2.23
+  - @uidu/avatar-group@2.1.32
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/analytics-listeners@0.1.3
+  - @uidu/analytics-namespaced-context@0.1.3
+  - @uidu/elements-test-helpers@0.1.3
+  - @uidu/util-data-test@0.1.4
+
 ## 0.1.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.44
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+
 ## 0.1.43
 
 ### Patch Changes

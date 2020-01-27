@@ -1,5 +1,13 @@
 # @uidu/fab
 
+## 0.1.11
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+
 ## 0.1.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/changelog
 
+## 0.1.3
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+
 ## 0.1.2
 
 ### Patch Changes

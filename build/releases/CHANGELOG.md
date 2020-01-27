@@ -1,5 +1,13 @@
 # @uidu/build-releases
 
+## 3.0.23
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/build-utils@0.1.14
+
 ## 3.0.22
 
 ### Patch Changes

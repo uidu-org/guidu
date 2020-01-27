@@ -1,5 +1,19 @@
 # @uidu/comment
 
+## 0.1.8
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+  - @uidu/field-mentions@0.1.23
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/message-renderer@0.1.18
+
 ## 0.1.7
 
 ### Patch Changes

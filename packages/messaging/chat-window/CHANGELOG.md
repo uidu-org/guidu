@@ -1,5 +1,17 @@
 # @uidu/chat-window
 
+## 0.1.26
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/message@0.1.25
+  - @uidu/message-form@0.1.20
+  - @uidu/message-renderer@0.1.18
+  - @uidu/shell@0.2.2
+
 ## 0.1.25
 
 ### Patch Changes

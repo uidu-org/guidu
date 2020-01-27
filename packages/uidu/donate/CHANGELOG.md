@@ -1,5 +1,22 @@
 # @uidu/donate
 
+## 0.1.17
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/modal-dialog@0.1.25
+  - @uidu/payments@0.1.12
+  - @uidu/checkbox@0.1.55
+  - @uidu/field-text@0.1.25
+  - @uidu/field-textarea@0.1.13
+  - @uidu/form@0.1.44
+  - @uidu/radio@0.3.2
+  - @uidu/select@0.2.7
+  - @uidu/widgets@0.1.13
+
 ## 0.1.16
 
 ### Patch Changes

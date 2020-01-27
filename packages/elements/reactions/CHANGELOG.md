@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.1.8
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+
 ## 0.1.7
 
 ### Patch Changes

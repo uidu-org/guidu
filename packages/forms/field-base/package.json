@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.47",
+  "version": "0.1.48",
   "description": "Inputs using Formsy",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/form": "^0.1.42",
+    "@uidu/form": "^0.1.44",
     "classnames": "^2.2.6",
     "formsy-react": "^2.0.0-beta.3",
     "react-feather": "^2.0.3",

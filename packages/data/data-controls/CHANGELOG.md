@@ -1,5 +1,28 @@
 # @uidu/data-controls
 
+## 0.3.4
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/drawer@0.2.11
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/inline-dialog@0.1.12
+  - @uidu/item@0.1.21
+  - @uidu/spinner@0.1.15
+  - @uidu/toggle@0.1.21
+  - @uidu/tooltip@0.1.22
+  - @uidu/data-fields@0.1.24
+  - @uidu/data-views@0.2.7
+  - @uidu/table@0.1.91
+  - @uidu/checkbox@0.1.55
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/select@0.2.7
+  - @uidu/shell@0.2.2
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.1.20
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/lozenge@0.1.17
+  - @uidu/section-message@0.1.18
+
 ## 0.1.19
 
 ### Patch Changes

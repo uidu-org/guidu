@@ -1,5 +1,11 @@
 # @uidu/pipelines-docker-image
 
+## 0.1.9
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+
 ## 0.1.8
 
 ### Patch Changes

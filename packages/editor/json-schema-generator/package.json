@@ -1,6 +1,6 @@
 {
   "name": "@uidu/json-schema-generator",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "description": "A CLI tool for generating JSON Schema from typescript",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",

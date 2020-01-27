@@ -1,5 +1,15 @@
 # @uidu/shell
 
+## 0.2.2
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/navigation@0.2.18
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+
 ## 0.2.1
 
 ### Patch Changes

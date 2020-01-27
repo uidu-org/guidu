@@ -1,5 +1,16 @@
 # @uidu/widgets
 
+## 0.1.13
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/slider@1.0.4
+  - @uidu/shell@0.2.2
+  - @uidu/contact@0.1.8
+
 ## 0.1.12
 
 ### Patch Changes

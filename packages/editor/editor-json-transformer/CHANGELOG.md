@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 0.1.4
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/editor-common@0.1.11
+  - @uidu/docs@0.1.40
+  - @uidu/adf-schema@0.1.4
+  - @uidu/editor-core@0.1.22
+
 ## 0.1.3
 
 ### Patch Changes

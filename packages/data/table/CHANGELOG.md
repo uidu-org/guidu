@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 0.1.91
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/item@0.1.21
+  - @uidu/tooltip@0.1.22
+  - @uidu/data-controls@0.3.4
+  - @uidu/data-fields@0.1.24
+  - @uidu/form@0.1.44
+  - @uidu/select@0.2.7
+  - @uidu/shell@0.2.2
+
 ## 0.1.90
 
 ### Patch Changes

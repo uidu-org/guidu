@@ -1,5 +1,15 @@
 # @uidu/adf-utils
 
+## 0.4.2
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/adf-schema@0.1.4
+  - @uidu/json-schema-generator@0.1.3
+
 ## 0.4.1
 
 ### Patch Changes

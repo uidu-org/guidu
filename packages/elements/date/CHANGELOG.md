@@ -1,5 +1,15 @@
 # @atlaskit/date
 
+## 0.1.4
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/theme@0.1.20
+  - @uidu/elements-test-helpers@0.1.3
+
 ## 0.1.3
 
 ### Patch Changes

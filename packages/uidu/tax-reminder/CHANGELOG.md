@@ -1,5 +1,20 @@
 # @uidu/tax-reminder
 
+## 0.1.14
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/checkbox@0.1.55
+  - @uidu/field-date@0.1.11
+  - @uidu/field-text@0.1.25
+  - @uidu/field-textarea@0.1.13
+  - @uidu/form@0.1.44
+  - @uidu/select@0.2.7
+  - @uidu/widgets@0.1.13
+
 ## 0.1.13
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/downshift
 
+## 0.1.23
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/droplist@0.1.19
+  - @uidu/item@0.1.21
+  - @uidu/field-base@0.1.48
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/shell@0.2.2
+
 ## 0.1.22
 
 ### Patch Changes

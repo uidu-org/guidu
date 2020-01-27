@@ -1,5 +1,42 @@
 # @uidu/editor-core
 
+## 0.1.22
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/editor-common@0.1.11
+  - @uidu/analytics@0.1.17
+  - @uidu/avatar@0.2.23
+  - @uidu/avatar-group@2.1.32
+  - @uidu/button@0.1.50
+  - @uidu/docs@0.1.40
+  - @uidu/droplist@0.1.19
+  - @uidu/item@0.1.21
+  - @uidu/modal-dialog@0.1.25
+  - @uidu/spinner@0.1.15
+  - @uidu/theme@0.1.20
+  - @uidu/tooltip@0.1.22
+  - @uidu/adf-schema@0.1.4
+  - @uidu/adf-utils@0.4.2
+  - @uidu/editor-json-transformer@0.1.4
+  - @uidu/editor-markdown-transformer@0.1.4
+  - @uidu/analytics-gas-types@0.1.3
+  - @uidu/analytics-listeners@0.1.3
+  - @uidu/analytics-namespaced-context@0.1.3
+  - @uidu/date@0.1.4
+  - @uidu/emoji@0.1.5
+  - @uidu/mentions@0.1.10
+  - @uidu/status@0.1.5
+  - @uidu/task-decision@0.1.5
+  - @uidu/select@0.2.7
+  - @uidu/media-card@0.1.22
+  - @uidu/media-core@0.1.15
+  - @uidu/media-filmstrip@0.1.23
+  - @uidu/media-picker@0.1.14
+  - @uidu/shell@0.2.2
+
 ## 0.1.21
 
 ### Patch Changes

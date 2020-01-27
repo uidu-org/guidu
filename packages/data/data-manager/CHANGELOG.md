@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 0.2.9
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/spinner@0.1.15
+  - @uidu/board@0.2.9
+  - @uidu/calendar@0.1.19
+  - @uidu/data-controls@0.3.4
+  - @uidu/data-views@0.2.7
+  - @uidu/gallery@0.1.34
+  - @uidu/list@0.1.21
+  - @uidu/table@0.1.91
+  - @uidu/shell@0.2.2
+
 ## 0.2.8
 
 ### Patch Changes

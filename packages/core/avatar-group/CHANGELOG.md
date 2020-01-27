@@ -1,5 +1,22 @@
 # Change Log
 
+## 2.1.32
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/avatar@0.2.23
+  - @uidu/button@0.1.50
+  - @uidu/code@0.1.19
+  - @uidu/docs@0.1.40
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/item@0.1.21
+  - @uidu/theme@0.1.20
+  - @uidu/toggle@0.1.21
+  - @uidu/tooltip@0.1.22
+  - @uidu/field-base@0.1.48
+
 ## 2.1.31
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/message-form
 
+## 0.1.20
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/dropdown-menu@0.1.19
+  - @uidu/spinner@0.1.15
+  - @uidu/field-mentions@0.1.23
+  - @uidu/field-text@0.1.25
+  - @uidu/form@0.1.44
+  - @uidu/media-filmstrip@0.1.23
+  - @uidu/media-picker@0.1.14
+  - @uidu/message@0.1.25
+
 ## 0.1.19
 
 ### Patch Changes

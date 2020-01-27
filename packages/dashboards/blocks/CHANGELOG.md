@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.3.3
+
+### Patch Changes
+
+- 43566b7: Bump styled-components, bump all
+- Updated dependencies [43566b7]
+  - @uidu/docs@0.1.40
+  - @uidu/spinner@0.1.15
+  - @uidu/tooltip@0.1.22
+
 ## 0.3.2
 
 ### Patch Changes
