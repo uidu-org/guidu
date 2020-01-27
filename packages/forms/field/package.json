@@ -15,7 +15,7 @@
     "@uidu/field-text": "^0.1.23",
     "@uidu/field-textarea": "^0.1.12",
     "@uidu/select": "^0.2.2",
-    "react-content-loader": "^4.2.1"
+    "react-content-loader": "^5.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.34",

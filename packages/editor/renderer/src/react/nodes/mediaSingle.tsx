@@ -61,10 +61,10 @@ export default class MediaSingle extends Component<Props, State> {
     const { props } = this;
 
     const child = React.Children.only(
-      React.Children.toArray<React.ReactElement>(props.children)[0],
+      React.Children.toArray(props.children)[0],
     );
 
-    let { width, height, type } = child.props;
+    let { width, height, type } = child[0].props;
 
     if (type === 'external') {
       const { width: stateWidth, height: stateHeight } = this.state;

@@ -8,7 +8,7 @@ export const DEFAULT_IMAGE_WIDTH = 250;
 export const DEFAULT_IMAGE_HEIGHT = 200;
 
 export interface Props {
-  children: React.ReactChild;
+  children: React.ReactNode;
   layout: MediaSingleLayout;
   width: number;
   height: number;

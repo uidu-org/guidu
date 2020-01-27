@@ -1,12 +1,34 @@
 import { TableLayout, UrlType } from '@uidu/adf-schema';
-import { akEditorDefaultLayoutWidth, akEditorFullWidthLayoutWidth, akEditorTableLegacyCellMinWidth, akEditorTableNumberColumnWidth, akEditorWideLayoutWidth, calcTableWidth, compose, convertProsemirrorTableNodeToArrayOfRows, createCompareNodes, getBreakpoint, hasMergedCell, mapBreakpointToLayoutMaxWidth, overflowShadow, OverflowShadowProps, SortOrder, tableCellBorderWidth, tableCellMinWidth, TableSharedCssClassName, WidthConsumer } from '@uidu/editor-common';
+import {
+  akEditorDefaultLayoutWidth,
+  akEditorFullWidthLayoutWidth,
+  akEditorTableLegacyCellMinWidth,
+  akEditorTableNumberColumnWidth,
+  akEditorWideLayoutWidth,
+  calcTableWidth,
+  compose,
+  convertProsemirrorTableNodeToArrayOfRows,
+  createCompareNodes,
+  getBreakpoint,
+  hasMergedCell,
+  mapBreakpointToLayoutMaxWidth,
+  overflowShadow,
+  OverflowShadowProps,
+  SortOrder,
+  tableCellBorderWidth,
+  tableCellMinWidth,
+  TableSharedCssClassName,
+  WidthConsumer,
+} from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import * as React from 'react';
 import { FullPagePadding } from '../../ui/Renderer/style';
 import { RendererAppearance } from '../../ui/Renderer/types';
-import { withSmartCardStorage, WithSmartCardStorageProps } from '../../ui/SmartCardStorage';
+import {
+  withSmartCardStorage,
+  WithSmartCardStorageProps,
+} from '../../ui/SmartCardStorage';
 import { TableHeader } from './tableCell';
-
 
 type TableArrayMapped = {
   rowNodes: Array<PMNode | null>;
@@ -194,13 +216,11 @@ export class TableContainer extends React.Component<
       return null;
     }
 
-    let childrenArray = React.Children.toArray<React.ReactElement>(children);
+    let childrenArray = React.Children.toArray(children);
 
     return (
       <div
-        className={`${TableSharedCssClassName.TABLE_CONTAINER} ${
-          this.props.shadowClassNames
-        }`}
+        className={`${TableSharedCssClassName.TABLE_CONTAINER} ${this.props.shadowClassNames}`}
         data-layout={layout}
         ref={this.props.handleRef}
         style={{ width: calcTableWidth(layout, renderWidth, false) }}
@@ -212,7 +232,7 @@ export class TableContainer extends React.Component<
               {compose(
                 this.addNumberColumnIndexes,
                 this.addSortableColumn,
-              )(childrenArray)}
+              )(childrenArray as any)}
             </tbody>
           </table>
         </div>
@@ -354,9 +374,9 @@ const TableWithShadows = overflowShadow(TableContainer, {
   overflowSelector: `.${TableSharedCssClassName.TABLE_NODE_WRAPPER}`,
 });
 
-const TableWithWidth: React.FunctionComponent<
-  React.ComponentProps<typeof TableWithShadows>
-> = props => (
+const TableWithWidth: React.FunctionComponent<React.ComponentProps<
+  typeof TableWithShadows
+>> = props => (
   <WidthConsumer>
     {({ width }) => {
       const renderWidth =

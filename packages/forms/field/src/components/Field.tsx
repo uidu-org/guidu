@@ -7,10 +7,10 @@ const FieldLoader = ({ withLabel }) => (
     height={withLabel ? 74 : 44}
     width={400}
     speed={2}
-    primaryColor="rgb(76, 86, 106)"
-    primaryOpacity={0.085}
-    secondaryColor="rgb(76, 86, 106)"
-    secondaryOpacity={0.385}
+    backgroundColor="rgb(76, 86, 106)"
+    backgroundOpacity={0.085}
+    foregroungColor="rgb(76, 86, 106)"
+    foregroungOpacity={0.385}
   >
     {withLabel && (
       <rect

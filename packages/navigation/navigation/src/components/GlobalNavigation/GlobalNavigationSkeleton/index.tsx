@@ -14,10 +14,10 @@ const GlobalItemLoader = () => (
     height={22}
     // width={140}
     speed={2}
-    primaryColor="#deebff"
-    primaryOpacity={0.15}
-    secondaryColor="#b6d3ff"
-    secondaryOpacity={0.15}
+    backgroundColor="#deebff"
+    backgroundOpacity={0.15}
+    foregroundColor="#b6d3ff"
+    foregroundOpacity={0.15}
   >
     <rect
       x="0"
