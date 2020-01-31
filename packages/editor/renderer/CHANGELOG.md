@@ -1,5 +1,11 @@
 # @atlaskit/renderer
 
+## 0.1.10
+
+### Patch Changes
+
+- c586fa1: Bump some dependencies, responsive shell, Muli
+
 ## 0.1.9
 
 ### Patch Changes

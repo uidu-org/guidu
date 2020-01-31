@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.49
+
+### Patch Changes
+
+- c586fa1: Bump some dependencies, responsive shell, Muli
+
 ## 0.1.48
 
 ### Patch Changes
