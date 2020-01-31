@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Element, Link } from 'react-scroll';
 import Shell, {
   ShellBody,
   ShellContent,
@@ -9,7 +10,7 @@ import Shell, {
 
 export default function App() {
   return (
-    <Shell fixedHeight="mobileOnly">
+    <Shell fixedHeight="mobileOnly" id="desktop-scroller">
       <ShellContent>
         <ShellMain style={{ flex: '1 0 78%' }}>
           <ShellHeader>
@@ -25,6 +26,54 @@ export default function App() {
           <ShellBody scrollable="mobileOnly">
             <div className="row no-gutters justify-content-center my-5">
               <div className="col-lg-10">
+                <div className="bg-light sticky-top">
+                  <div className="container px-0">
+                    <ul className="nav nav-tabs">
+                      <li className="nav-item">
+                        <Link
+                          to="summary"
+                          className="nav-link py-3 px-4"
+                          containerId="desktop-scroller"
+                          smooth
+                          spy
+                        >
+                          Description
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          exact
+                          to="comments"
+                          className="nav-link py-3 px-4"
+                          smooth
+                          spy
+                        >
+                          Comments
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          to="gallery"
+                          className="nav-link py-3 px-4"
+                          smooth
+                          spy
+                        >
+                          Gallery
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          to="directions"
+                          className="nav-link py-3 px-4"
+                          smooth
+                          spy
+                        >
+                          Directions
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
                 <p>Content</p>
                 <p>Content</p>
                 <p>Content</p>
@@ -51,6 +100,10 @@ export default function App() {
                 <p>Content</p>
                 <p>Content</p>
                 <p>Content</p>
+                <Element name="summary">
+                  <h1>Summary</h1>
+                </Element>
+                <div className="sticky-top">Test sticky</div>
                 <p>Content</p>
                 <p>Content</p>
                 <p>Content</p>

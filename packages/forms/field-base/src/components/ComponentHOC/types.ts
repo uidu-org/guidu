@@ -1,7 +1,7 @@
 import { PassDownProps } from 'formsy-react/dist/Wrapper';
 import { FieldBaseLayout } from '../../types';
 
-export type ComponentHOCProps = PassDownProps & {
+export type ComponentHOCProps = PassDownProps<any> & {
   layout: FieldBaseLayout;
   disabled?: boolean;
   validateOnSubmit?: boolean;

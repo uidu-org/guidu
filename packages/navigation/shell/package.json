@@ -11,6 +11,7 @@
   "dependencies": {
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@uidu/spinner": "^0.1.15",
+    "react-intl": "^3.1.7",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
@@ -18,7 +19,8 @@
     "@uidu/navigation": "^0.2.18",
     "faker": "^4.1.0",
     "react-feather": "^2.0.3",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-scroll": "^1.7.11"
   },
   "uidu:src": "index.ts"
 }

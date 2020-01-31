@@ -25,7 +25,7 @@ const SwipeableMessage = ({
       onReply();
     }
     set({ xy: down ? delta : [0, 0] });
-  });
+  }, {});
   // {
   //   onDrag: ({ delta }) => {
   //     if (delta[0] > 0) {

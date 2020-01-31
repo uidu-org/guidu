@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
   if (fixedHeight === 'mobileOnly') {
     return css`
-      @media (max-width: 700px) {
+      @media (max-width: 991px) {
         height: 100%;
       }
       -webkit-overflow-scrolling: touch;
@@ -26,28 +26,6 @@ const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
     overflow-y: scroll;
     overscroll-behavior-y: contain;
   `;
-};
-
-const mobileOnlyScrollable = (scrollable: boolean | 'mobileOnly') => {
-  if (scrollable === 'mobileOnly') {
-    return css`
-      @media (max-width: 700px) {
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-        overflow-y: scroll;
-        overscroll-behavior-y: contain;
-      }
-    `;
-  }
-  if (scrollable) {
-    return css`
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      overflow-y: scroll;
-      overscroll-behavior-y: contain;
-    `;
-  }
-  return css``;
 };
 
 export const Wrapper = styled.div<{
