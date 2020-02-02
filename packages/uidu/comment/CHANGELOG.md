@@ -1,5 +1,11 @@
 # @uidu/comment
 
+## 0.1.9
+
+### Patch Changes
+
+- 82019b5: Refactor stepper and attend, WIP
+
 ## 0.1.8
 
 ### Patch Changes

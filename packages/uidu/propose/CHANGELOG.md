@@ -1,5 +1,13 @@
 # @uidu/propose
 
+## 0.1.12
+
+### Patch Changes
+
+- 82019b5: Refactor stepper and attend, WIP
+- Updated dependencies [82019b5]
+  - @uidu/widgets@0.1.14
+
 ## 0.1.11
 
 ### Patch Changes

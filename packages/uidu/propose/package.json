@@ -1,6 +1,6 @@
 {
   "name": "@uidu/propose",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": false,
   "description": "Job/volunteer proposals",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -14,7 +14,7 @@
     "@uidu/field-text": "^0.1.25",
     "@uidu/field-textarea": "^0.1.13",
     "@uidu/form": "^0.1.44",
-    "@uidu/widgets": "^0.1.13",
+    "@uidu/widgets": "^0.1.14",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {
