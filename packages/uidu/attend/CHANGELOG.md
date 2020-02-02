@@ -1,5 +1,12 @@
 # @uidu/attend
 
+## 0.1.17
+
+### Patch Changes
+
+- 212258e: Add missing dep
+- c1b300b: Fix attend build
+
 ## 0.1.16
 
 ### Patch Changes
