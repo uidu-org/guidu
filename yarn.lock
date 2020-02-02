@@ -202,9 +202,9 @@
     "@ag-grid-enterprise/core" "~22.1.1"
 
 "@amcharts/amcharts4-geodata@^4.1.9":
-  version "4.1.10"
-  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4-geodata/-/amcharts4-geodata-4.1.10.tgz#27624f6b4c5e91f37164873c319b6992d6c9d4f4"
-  integrity sha512-cFSEVGoDX4gqDxHvRSFlea6PcRRYUg6QrbvweFspcmn2k2Bx6kVLNkNQ+mWBVg1WmX5DxkDDnOVveoL4FDhvGg==
+  version "4.1.11"
+  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4-geodata/-/amcharts4-geodata-4.1.11.tgz#1e5a06ca2460f3a8967090cc2efd81241063b5c9"
+  integrity sha512-Xr+8sxkLfsXRRESwh/HRinR0+vmxlLXLwx0bEa3gg+ps8VBQXHFFyY0MAIQVWcn80uUp9RS99EbidyqVl8h8zg==
 
 "@amcharts/amcharts4@^4.7.14":
   version "4.8.6"
@@ -2328,9 +2328,9 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/plugin-paginate-rest@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-1.1.1.tgz#ea189a73af25b13fc1636d7adc334e8462af8f9d"
-  integrity sha512-Kf0bnNoOXK9EQLkc3rtXfPnu/bwiiUJ1nH3l7tmXYwdDJ7tk/Od2auFU9b86xxKZunPkV9SO1oeojT707q1l7A==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-paginate-rest/-/plugin-paginate-rest-1.1.2.tgz#004170acf8c2be535aba26727867d692f7b488fc"
+  integrity sha512-jbsSoi5Q1pj63sC16XIUboklNw+8tL9VOnJsWycWYR78TKss5PVpIPb1TUUcMQ+bBh7cY579cVAWmf5qG+dw+Q==
   dependencies:
     "@octokit/types" "^2.0.1"
 
@@ -3075,9 +3075,9 @@
     source-map "^0.6.1"
 
 "@types/webpack@*":
-  version "4.41.3"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.3.tgz#30c2251db1d69a45bbffd79c0577dd9baf50e7ba"
-  integrity sha512-dH+BZ6pHBZFrXpnif0YU/PbmUq3lQrvRPnqkxsciSIzvG/DE+Vm/Wrjn56T7V3+B5ryQa5fw0oGnHL8tk4ll6w==
+  version "4.41.4"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.4.tgz#6cd2d651d214c344640cbab1c82037289b0154cd"
+  integrity sha512-PlqTNzHzZ1UpBXKkq2wHAM8+jeMojJGfBFXjGB3/N4F4ESGeivdKsJuaS79rtbSofvjbwBIMOHP254mIq0ujiQ==
   dependencies:
     "@types/anymatch" "*"
     "@types/node" "*"
@@ -3529,9 +3529,9 @@
     "@xtuc/long" "4.2.2"
 
 "@welldone-software/why-did-you-render@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-4.0.0.tgz#cc98c996f5a06ea55bd07dc99ba4b4d68af93332"
-  integrity sha512-PjqriZ8Ak9biP2+kOcIrg+NwsFwWVhGV03Hm+ns84YBCArn+hWBKM9rMBEU6e62I1qyrYF2/G9yktNpEmfWfJA==
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-4.0.3.tgz#f44804f1dbc6d9593ed0ade190185f72ca6d8077"
+  integrity sha512-B5whN0kIIsxorQEAD5sj7BHhULa3BlqGhgRtD6guT1MvsC9S7aN6vBVdFiTDapLhQ6OCUTcAzAcuhDrWnuKD6A==
   dependencies:
     lodash "^4"
 
@@ -3921,9 +3921,9 @@ are-we-there-yet@~1.1.2:
     readable-stream "^2.0.6"
 
 arg@^4.1.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.2.tgz#e70c90579e02c63d80e3ad4e31d8bfdb8bd50064"
-  integrity sha512-+ytCkGcBtHZ3V2r2Z06AncYO8jz46UEamcspGoU8lHcEbpn6J77QK0vdWvChsclg/tM5XIJC5tnjmPp7Eq6Obg==
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/arg/-/arg-4.1.3.tgz#269fc7ad5b8e42cb63c896d5666017261c144089"
+  integrity sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==
 
 argparse@^1.0.7:
   version "1.0.10"
@@ -6105,9 +6105,9 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30001017:
-  version "1.0.30001023"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001023.tgz#f856f71af16a5a44e81f1fcefc1673912a43da72"
-  integrity sha512-EnlshvE6oAum+wWwKmJNVaoqJMjIc0bLUy4Dj77VVnz1o6bzSPr1Ze9iPy6g5ycg1xD6jGU6vBmo7pLEz2MbCQ==
+  version "1.0.30001024"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001024.tgz#64045c5d0d57b00c30e09323b578b2305c4737ad"
+  integrity sha512-dmwZ7u58E68UCexHf92QERFL8kwwCv0TVS1LCNluhZo+565AXU5uNtnPF+J5E2MExwWJeNnhTD63BH8ncMV09g==
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001020, caniuse-lite@^1.0.30001023:
   version "1.0.30001023"
@@ -9105,9 +9105,9 @@ eslint-plugin-flowtype@^4.2.0:
     lodash "^4.17.15"
 
 eslint-plugin-import@^2.7.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.0.tgz#d749a7263fb6c29980def8e960d380a6aa6aecaa"
-  integrity sha512-NK42oA0mUc8Ngn4kONOPsPB1XhbUvNHqF+g307dPV28aknPoiNnKLFd9em4nkswwepdF5ouieqv5Th/63U7YJQ==
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.20.1.tgz#802423196dcb11d9ce8435a5fc02a6d3b46939b3"
+  integrity sha512-qQHgFOTjguR+LnYRoToeZWT62XM55MBVXObHM6SKFd1VzDcX/vqT1kAz8ssqigh5eMj8qXcRoXXGZpPP6RfdCw==
   dependencies:
     array-includes "^3.0.3"
     array.prototype.flat "^1.2.1"
@@ -9158,9 +9158,9 @@ eslint-plugin-react-hooks@^2.3.0:
   integrity sha512-gLKCa52G4ee7uXzdLiorca7JIQZPPXRAQDXV83J4bUEeUuc5pIEyZYAZ45Xnxe5IuupxEqHS+hUhSLIimK1EMw==
 
 eslint-plugin-react@^7.4.0:
-  version "7.18.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.18.1.tgz#6e305532ccd8393f45f35f058903fb1d0bf83235"
-  integrity sha512-GTAhnWckqzzQzbbmqfoOPtpuVJAUPGliNyJRedvyboxAnZlui0INTmfVzQB0WjK9lbqKXixptMsd98LKamccPA==
+  version "7.18.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.18.2.tgz#83d52cd783524cb5f6616e029c892ec08ee59e23"
+  integrity sha512-6m1zFCSB8OKVIVyGipz1TJxVuNfgvbbUa7O9fxqyyT0b15tB2X/rxMNCGQv3LTD4XOKmG/ONr52FZHur0OKFkg==
   dependencies:
     array-includes "^3.1.1"
     doctrine "^2.1.0"
@@ -11841,7 +11841,7 @@ iconv-lite@0.4.24, iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@^0.4.4, ic
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-iconv-lite@^0.5.0:
+iconv-lite@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.5.1.tgz#b2425d3c7b18f7219f2ca663d103bddb91718d64"
   integrity sha512-ONHr16SQvKZNSqjQT9gy5z24Jw+uqfO02/ngBSBoqChZ+W8qXX7GPRa1RoUnzGADw8K63R1BXUMzarCVQBpY8Q==
@@ -15204,9 +15204,9 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
 netlify-cli@^2.8.1:
-  version "2.30.0"
-  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.30.0.tgz#e6a31291901dc51b262af2c66d046f56d784ac10"
-  integrity sha512-ZBb3Owm9dcoCoQv42WfaSpdm81O0+3LvxE/7PWs/hnDqAYQ3XbR1Qb8pkBJXSvjoZDnbbYcVGvIqSWDt2hBhlQ==
+  version "2.31.0"
+  resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.31.0.tgz#4bc1c6a7aef8eb4879a9f6e0441a740d9465cc4f"
+  integrity sha512-VeHBq3TKMXK+DBtveVfwyFtLNiO7BWucPV7yqQZVw90lPrsZSHwm/MD3SjV5bOBl4zuGGr1lmTnOJLz5DPboQQ==
   dependencies:
     "@netlify/build" "^0.1.7"
     "@netlify/config" "^0.1.7"
@@ -16644,11 +16644,11 @@ pdfkit@>=0.8.1, pdfkit@^0.11.0:
     png-js "^1.0.0"
 
 pdfmake@^0.1.36:
-  version "0.1.63"
-  resolved "https://registry.yarnpkg.com/pdfmake/-/pdfmake-0.1.63.tgz#0001ecffe4ab30843485ce08744393315721e3f1"
-  integrity sha512-TjchyLVDzaEmtaDNUrceNrm0QvNIFERYOeDwHwMUQ1twGy68Uhjd1MKsb9DGAh8SuB8MCWQXB7m4k7cUevLjoA==
+  version "0.1.64"
+  resolved "https://registry.yarnpkg.com/pdfmake/-/pdfmake-0.1.64.tgz#4ccc69968404d1b36e925189a157c7176dfcff06"
+  integrity sha512-mfI1+0lBRHYbi+NcB8tJaDAq33bd6NzrOmPxPregNN17M4EC5P+TEmGn3QBPLaTmKLhC+sV0WHV6sVx/KdK9GQ==
   dependencies:
-    iconv-lite "^0.5.0"
+    iconv-lite "^0.5.1"
     linebreak "^1.0.2"
     pdfkit "^0.11.0"
     svg-to-pdfkit "^0.1.8"
@@ -18427,9 +18427,9 @@ react-ga@^2.5.7:
   integrity sha512-AjC7UOZMvygrWTc2hKxTDvlMXEtbmA0IgJjmkhgmQQ3RkXrWR11xEagLGFGaNyaPnmg24oaIiaNPnEoftUhfXA==
 
 react-google-login@^5.0.4:
-  version "5.0.7"
-  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.0.7.tgz#6f4f117a234c6eca3132773ad051d1a36c95204d"
-  integrity sha512-e/OU8PcvtVetD73hZ9/g4k4K3GrOHb0bTXU1i2xZBzSCCfDY/QW6M7oQpwvPwyZ3C3clz0YWUFJkxX65PSdgQg==
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.1.0.tgz#ed9f1069310419dfe263ffcab986a246140752b7"
+  integrity sha512-G5sh6EWJbQxk2hAel0EUB6r1Nyz9BRW/fEyCHV8g108l37/k/ctXDi4I3v1NCYzGN8SQFWq1I2l4mqMkxIVHLQ==
   dependencies:
     "@types/react" "*"
     prop-types "^15.6.0"

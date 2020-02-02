@@ -1,4 +1,5 @@
 import Payments, { Pay } from '@uidu/payments';
+import { ShellBodyWithSidebar } from '@uidu/shell';
 import Loader from '@uidu/spinner';
 import Stepper, { Step } from '@uidu/stepper';
 import moment from 'moment';
@@ -7,7 +8,6 @@ import Countdown from 'react-countdown';
 // import { apiCall } from 'utils';
 import { FormattedMessage } from 'react-intl';
 import { withRouter } from 'react-router';
-import { ShellBodyWithSidebar } from '../../../../navigation/shell/src';
 import Attendance from './steps/Attendance';
 import Order from './steps/Order';
 

@@ -1,7 +1,7 @@
+import { ShellHeader } from '@uidu/shell';
 import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Attend from '..';
-import { ShellHeader } from '../../../navigation/shell/src';
 
 class Basic extends Component<any, any> {
   render() {
