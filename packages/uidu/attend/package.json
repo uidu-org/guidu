@@ -14,6 +14,7 @@
     "@uidu/field-textarea": "^0.1.13",
     "@uidu/form": "^0.1.44",
     "@uidu/payments": "^0.1.12",
+    "@uidu/shell": "^0.2.4",
     "@uidu/spinner": "^0.1.15",
     "@uidu/stepper": "^0.1.18",
     "@uidu/widgets": "^0.1.14",
