@@ -1,5 +1,13 @@
 # @uidu/stepper
 
+## 0.1.18
+
+### Patch Changes
+
+- 82019b5: Refactor stepper and attend, WIP
+- Updated dependencies [82019b5]
+  - @uidu/shell@0.2.4
+
 ## 0.1.17
 
 ### Patch Changes

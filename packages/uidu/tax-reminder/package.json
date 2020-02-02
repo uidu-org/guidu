@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tax-reminder",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": false,
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -14,7 +14,7 @@
     "@uidu/field-textarea": "^0.1.13",
     "@uidu/form": "^0.1.44",
     "@uidu/select": "^0.2.7",
-    "@uidu/widgets": "^0.1.13",
+    "@uidu/widgets": "^0.1.14",
     "moment": "^2.18.1",
     "react-feather": "^2.0.3"
   },

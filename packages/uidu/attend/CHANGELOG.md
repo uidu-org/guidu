@@ -1,5 +1,14 @@
 # @uidu/attend
 
+## 0.1.16
+
+### Patch Changes
+
+- 82019b5: Refactor stepper and attend, WIP
+- Updated dependencies [82019b5]
+  - @uidu/stepper@0.1.18
+  - @uidu/widgets@0.1.14
+
 ## 0.1.15
 
 ### Patch Changes

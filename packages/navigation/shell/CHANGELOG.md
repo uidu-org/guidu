@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.4
+
+### Patch Changes
+
+- 82019b5: Refactor stepper and attend, WIP
+
 ## 0.2.3
 
 ### Patch Changes

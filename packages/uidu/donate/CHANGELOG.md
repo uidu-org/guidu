@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.1.18
+
+### Patch Changes
+
+- 82019b5: Refactor stepper and attend, WIP
+- Updated dependencies [82019b5]
+  - @uidu/radio@0.3.3
+  - @uidu/widgets@0.1.14
+
 ## 0.1.17
 
 ### Patch Changes
