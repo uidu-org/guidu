@@ -11,7 +11,7 @@ export default md`
 
   ## Usage
 
-  ${code`import Stepper, { Step } from '@uidu/stepper';`}
+  ${code`import FieldRadio from '@uidu/field-radio';`}
 
   ${(
     <Example

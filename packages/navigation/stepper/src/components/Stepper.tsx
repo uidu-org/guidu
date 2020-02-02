@@ -36,7 +36,7 @@ class Stepper extends Component<StepperProps, any> {
     if (!scrollElement) {
       return step.getBoundingClientRect();
     }
-    const containerPos = scrollElement.getBoundingClientRect();
+    const containerPos = scrollElement.current.getBoundingClientRect();
     const stepPos = step.getBoundingClientRect();
     return {
       top: stepPos.top - containerPos.top,
@@ -94,14 +94,16 @@ class Stepper extends Component<StepperProps, any> {
     const that = this;
     history.replace(`${history.location.pathname}?s=${name}`);
     setTimeout(() => {
-      if (scrollElement) {
+      if (scrollElement.current) {
         scroll.scrollTo(
-          that.getStepRect(step).top + scrollElement.scrollTop - marginTop,
+          that.getStepRect(step).top +
+            scrollElement.current.scrollTop -
+            marginTop,
           {
-            duration: 300,
-            delay: 50,
-            smooth: 'easeInOutQuad',
-            container: scrollElement,
+            duration: 200,
+            delay: 30,
+            smooth: 'easeIn',
+            container: scrollElement.current,
           },
         );
       }
@@ -121,4 +123,4 @@ class Stepper extends Component<StepperProps, any> {
   }
 }
 
-export default withRouter(Stepper as any);
+export default withRouter(Stepper);

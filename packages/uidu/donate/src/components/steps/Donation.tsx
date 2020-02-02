@@ -1,10 +1,22 @@
+import FieldDownshift, {
+  DownshiftHorizontalCard,
+  DownshiftRadio,
+} from '@uidu/field-downshift';
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import { RadioGroup } from '@uidu/radio';
-import Select from '@uidu/select';
 import classNames from 'classnames';
 import React, { Component } from 'react';
-import { CheckCircle } from 'react-feather';
+
+const Menu = props => <div className="row" {...props} />;
+
+const Item = props => (
+  <div className="col-sm-4">
+    <DownshiftHorizontalCard
+      scope="donations"
+      {...props}
+    ></DownshiftHorizontalCard>
+  </div>
+);
 
 export default class Donation extends Component<any, any> {
   constructor(props) {
@@ -34,6 +46,7 @@ export default class Donation extends Component<any, any> {
   };
 
   handleRecurrence = (name, value) => {
+    console.log(value);
     this.setState({
       recurrence: value,
     });
@@ -93,8 +106,8 @@ export default class Donation extends Component<any, any> {
         ]}
       >
         <div className="form-group mb-0 p-3 p-xl-4">
-          <RadioGroup
-            options={[
+          <FieldDownshift
+            items={[
               {
                 id: 'once',
                 name: 'Una volta',
@@ -104,6 +117,7 @@ export default class Donation extends Component<any, any> {
                 name: 'Ogni mese',
               },
             ]}
+            item={DownshiftRadio}
             buttonClassName="btn border btn-sm w-50 mb-0"
             activeClassName="btn-donations"
             className="btn-group btn-group-toggle w-100"
@@ -134,9 +148,9 @@ export default class Donation extends Component<any, any> {
         </div>
         */}
         <div className="form-group container-fluid px-3">
-          <Select
+          <FieldDownshift
             name="donation[amount]"
-            options={[
+            items={[
               {
                 id: '10',
                 name: '10',
@@ -178,41 +192,42 @@ export default class Donation extends Component<any, any> {
             menuClassName="row no-gutters mb-0"
             // menuStyle={{ marginLeft: '-0.445rem', marginRight: '-0.445rem' }}
             onChange={this.handleSelection}
-            optionRenderer={(item, { getItemProps, value }) => {
-              const isSelected = !customAmount && value && value.id === item.id;
-              return (
-                <div className="col-6 d-flex" key={item.id}>
-                  <button
-                    {...getItemProps({ item })}
-                    type="button"
-                    key={item.id}
-                    className={classNames('card m-2 flex-row flex-grow-1 p-2', {
-                      'border-donations': isSelected,
-                    })}
-                    tabIndex={0}
-                  >
-                    {isSelected && (
-                      <div
-                        className="position-absolute d-flex align-items-center"
-                        style={{ top: 6, right: 6 }}
-                      >
-                        <CheckCircle size={13} color="#26a69a" />
-                      </div>
-                    )}
-                    <h5 className="text-medium m-0 text-nowrap flex-shrink-0 w-100">
-                      <sup
-                        className="small text-muted mr-1"
-                        style={{ top: '-.3em' }}
-                      >
-                        <small>€</small>
-                      </sup>
-                      {item.name}
-                    </h5>
-                  </button>
-                </div>
-              );
-            }}
-            exposed
+            item={Item}
+            menu={Menu}
+            // optionRenderer={(item, { getItemProps, value }) => {
+            //   const isSelected = !customAmount && value && value.id === item.id;
+            //   return (
+            //     <div className="col-6 d-flex" key={item.id}>
+            //       <button
+            //         {...getItemProps({ item })}
+            //         type="button"
+            //         key={item.id}
+            //         className={classNames('card m-2 flex-row flex-grow-1 p-2', {
+            //           'border-donations': isSelected,
+            //         })}
+            //         tabIndex={0}
+            //       >
+            //         {isSelected && (
+            //           <div
+            //             className="position-absolute d-flex align-items-center"
+            //             style={{ top: 6, right: 6 }}
+            //           >
+            //             <CheckCircle size={13} color="#26a69a" />
+            //           </div>
+            //         )}
+            //         <h5 className="text-medium m-0 text-nowrap flex-shrink-0 w-100">
+            //           <sup
+            //             className="small text-muted mr-1"
+            //             style={{ top: '-.3em' }}
+            //           >
+            //             <small>€</small>
+            //           </sup>
+            //           {item.name}
+            //         </h5>
+            //       </button>
+            //     </div>
+            //   );
+            // }}
             required={!customAmount}
           />
           <div className="m-2">

@@ -11,11 +11,11 @@ export default md`
 
   ## Usage
 
-  ${code`import Stepper, { Step } from '@uidu/stepper';`}
+  ${code`import Attend from '@uidu/attend';`}
 
   ${(
     <Example
-      packageName="@uidu/stepper"
+      packageName="@uidu/attend"
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic')}

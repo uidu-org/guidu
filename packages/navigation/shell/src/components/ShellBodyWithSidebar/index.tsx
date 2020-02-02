@@ -18,11 +18,20 @@ const Inner = styled.div`
   overscroll-behavior-y: contain;
 `;
 
-export default ({ children, sidebar, shadowOnScroll = true }) => (
+const ShellBodyWithSidebar = ({
+  children,
+  sidebar,
+  forwardedRef,
+  shadowOnScroll = true,
+}) => (
   <Wrapper>
-    <ShellBody scrollable shadowOnScroll={shadowOnScroll}>
+    <ShellBody ref={forwardedRef} scrollable shadowOnScroll={shadowOnScroll}>
       {children}
     </ShellBody>
     {sidebar}
   </Wrapper>
 );
+
+export default React.forwardRef((props: any, ref) => {
+  return <ShellBodyWithSidebar {...props} forwardedRef={ref} />;
+});

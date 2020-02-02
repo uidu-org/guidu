@@ -1,7 +1,6 @@
 import FieldCounter from '@uidu/field-counter';
 import FieldText from '@uidu/field-text';
-import { Form, FormFooter, FormSubmit } from '@uidu/form';
-import moment from 'moment';
+import { Form, FormSectionSubmit } from '@uidu/form';
 import React, { PureComponent } from 'react';
 
 export default class AttendancesOrder extends PureComponent<any> {
@@ -9,42 +8,16 @@ export default class AttendancesOrder extends PureComponent<any> {
     const { event, onSave } = this.props;
 
     return (
-      <div className="p-3 p-xl-4">
-        <h1 className="h4 font-weight-bold mb-1">{event.name}</h1>
-        <p className="mb-0">{event.location.address}</p>
-        <p>
-          {moment([event.beginsAt, event.beginTime].join(' ')).format('LL')} -{' '}
-          {moment([event.finishesAt, event.endTime].join(' ')).format('LL')}
-          <br />
-          <a href="">Aggiungi al calendario</a>
-        </p>
-        {event.tags && event.tags.length > 0 && (
-          <div>
-            <dt>{'views.events.show.tags.title'}</dt>
-            <dd>
-              {event.tags.map(elem => (
-                <a
-                  href={`/search?q=${elem.name}`}
-                  key={`tag_${elem.id}`}
-                  className="badge badge-info badge-pill mr-1"
-                >
-                  #{elem.name}
-                </a>
-              ))}
-            </dd>
-          </div>
-        )}
+      <div>
         <Form
           handleSubmit={onSave}
           footerRenderer={({ canSubmit, loading }) => (
-            <FormFooter>
-              <FormSubmit
-                className="btn-events btn-block"
-                canSubmit={canSubmit}
-                loading={loading}
-                label={'utils.actions.attend.default'}
-              />
-            </FormFooter>
+            <FormSectionSubmit
+              scope="events"
+              canSubmit={canSubmit}
+              loading={loading}
+              label={'utils.actions.attend.default'}
+            />
           )}
         >
           <FieldText type="hidden" name="order[kind]" value="event" />

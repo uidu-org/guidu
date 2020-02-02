@@ -1,6 +1,6 @@
 export type ShellBodyProps = {
   shadowOnScroll: boolean;
-  forwardRef?: React.RefObject<any>;
+  forwardedRef?: React.RefObject<any>;
 };
 
 export type ShellBodyState = {

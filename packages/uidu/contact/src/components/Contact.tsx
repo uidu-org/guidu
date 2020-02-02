@@ -1,7 +1,8 @@
-import { Checkbox } from '@uidu/checkbox';
+import Checkbox from '@uidu/checkbox';
 import FieldText from '@uidu/field-text';
-import { Form, FormSubmit } from '@uidu/form';
+import Form, { FormSubmit } from '@uidu/form';
 import React, { PureComponent } from 'react';
+import { FormattedMessage } from 'react-intl';
 import Recaptcha from 'react-recaptcha';
 
 export default class Contact extends PureComponent<any> {
@@ -38,26 +39,39 @@ export default class Contact extends PureComponent<any> {
             loading={loading}
             canSubmit={canSubmit}
             className={`px-5 btn-${scope} btn-block`}
+            label="Save"
           />
         )}
       >
         <FieldText
           type="text"
-          label="Nome"
+          label={
+            <FormattedMessage
+              defaultMessage="First name"
+              id="guidu.contact.firstName"
+            />
+          }
           name="contact[first_name]"
           autoComplete="given-name"
           required
         />
         <FieldText
           type="text"
-          label="Cognome"
+          label={
+            <FormattedMessage
+              defaultMessage="Last name"
+              id="guidu.contact.lastName"
+            />
+          }
           name="contact[last_name]"
           autoComplete="family-name"
           required
         />
         <FieldText
           type="text"
-          label="Email"
+          label={
+            <FormattedMessage defaultMessage="Email" id="guidu.contact.email" />
+          }
           name="contact[email]"
           autoComplete="email"
           required
@@ -65,7 +79,12 @@ export default class Contact extends PureComponent<any> {
         <div className="form-group">
           <Checkbox
             name="contact[privacy]"
-            label="Accetto le condizioni e i termini di utilizzo"
+            label={
+              <FormattedMessage
+                defaultMessage="I accept the terms of service and have read the privacy policy. I agree that Eventbrite may share my information with the event organizer."
+                id="guidu.contact.lastName"
+              />
+            }
             layout="elementOnly"
             required
           />

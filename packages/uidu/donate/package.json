@@ -10,6 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/checkbox": "^0.1.55",
+    "@uidu/field-downshift": "^0.1.23",
     "@uidu/field-text": "^0.1.25",
     "@uidu/field-textarea": "^0.1.13",
     "@uidu/form": "^0.1.44",

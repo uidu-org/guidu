@@ -21,16 +21,21 @@ class ShellBody extends PureComponent<ShellBodyProps, ShellBodyState> {
   };
 
   render() {
-    const { forwardRef, children, shadowOnScroll, ...otherProps } = this.props;
+    const {
+      forwardedRef,
+      children,
+      shadowOnScroll,
+      ...otherProps
+    } = this.props;
     const { shadowedHeader } = this.state;
 
     return (
-      <Body ref={forwardRef} {...otherProps}>
+      <Body {...otherProps} ref={forwardedRef}>
         {shadowOnScroll && (
           <>
             <Observer
               onChange={this.handleHeader}
-              root={forwardRef && forwardRef.current}
+              root={forwardedRef && forwardedRef.current}
             >
               <ObserverComponent />
             </Observer>
@@ -42,6 +47,7 @@ class ShellBody extends PureComponent<ShellBodyProps, ShellBodyState> {
     );
   }
 }
-export default React.forwardRef((props: any, ref) => (
-  <ShellBody forwardedRef={ref} {...props} />
-));
+
+export default React.forwardRef((props: any, ref) => {
+  return <ShellBody {...props} forwardedRef={ref} />;
+});
