@@ -1,5 +1,11 @@
 # @uidu/message
 
+## 0.1.26
+
+### Patch Changes
+
+- c586fa1: Bump some dependencies, responsive shell, Muli
+
 ## 0.1.25
 
 ### Patch Changes

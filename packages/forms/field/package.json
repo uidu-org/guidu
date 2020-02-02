@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "Load field-* based on field kind",
   "repository": "https://github.com/uidu-org/guidu.git",
