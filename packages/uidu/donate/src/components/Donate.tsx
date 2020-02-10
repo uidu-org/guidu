@@ -1,10 +1,13 @@
+import Contact from '@uidu/contact';
 import Payments, { Pay, PayWith } from '@uidu/payments';
 import { Shell } from '@uidu/widgets';
 // import AnimatedCheck from 'components/AnimatedCheck';
 // import ContactForm from 'organization/components/contacts/form';
 import React, { Component } from 'react';
 import { ArrowLeft, X } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 import { DonateProps, DonateState } from '../types';
+import Confirmation from './steps/Confirmation';
 import Donation from './steps/Donation';
 import Preferences from './steps/Preferences';
 
@@ -72,40 +75,142 @@ export default class Donate extends Component<DonateProps, DonateState> {
         key: 'donation',
         header: {
           itemBefore: (
-            <div className="navbar-header d-md-none">
+            <div className="navbar-header">
               <a className="navbar-brand d-flex align-items-center">
                 <X />
               </a>
             </div>
           ),
-          name: 'Dona ora',
+          name: (
+            <FormattedMessage
+              defaultMessage="Donate now"
+              id="guidu.donate.donation.name"
+            />
+          ),
         },
         component: (
-          <div>
-            <Donation
-              {...this.props}
-              submitted
-              onSave={newDonation => {
-                this.setState(
-                  {
-                    ...newDonation,
-                  },
-                  () =>
-                    setTimeout(() => (this.slider.current as any).next(), 500),
-                );
-              }}
-            />
+          <div className="container my-3 my-md-5">
+            <div className="row justify-content-center">
+              <div className="col-lg-8">
+                <Donation
+                  {...this.props}
+                  submitted
+                  onSave={newDonation => {
+                    this.setState(
+                      {
+                        ...newDonation,
+                      },
+                      () =>
+                        setTimeout(
+                          () => (this.slider.current as any).next(),
+                          500,
+                        ),
+                    );
+                  }}
+                />
+              </div>
+            </div>
           </div>
         ),
       },
     ];
+
+    slides.push({
+      key: 'preferences',
+      header: {
+        itemBefore: (
+          <div className="navbar-header">
+            <a
+              href="#"
+              className="navbar-brand d-flex align-items-center"
+              onClick={e => {
+                e.preventDefault();
+                (this.slider.current as any).prev();
+              }}
+            >
+              <ArrowLeft />
+            </a>
+          </div>
+        ),
+        name: (
+          <>
+            <h5 className="m-0">{donation.amount}</h5>
+            <span>Personalizza</span>
+          </>
+        ),
+      },
+      component: (
+        <div className="container my-3 my-md-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              {donation.subscription ? (
+                <p>Registrati</p>
+              ) : (
+                <Preferences
+                  {...this.props}
+                  // submitted={loadingSection !== 'contact'}
+                  donation={donation}
+                  onSave={newContact => {
+                    this.setState({
+                      contact: newContact,
+                    });
+                  }}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      ),
+    });
+
+    slides.push({
+      key: 'contact',
+      header: {
+        itemBefore: (
+          <div className="navbar-header">
+            <a
+              href="#"
+              className="navbar-brand d-flex align-items-center"
+              onClick={e => {
+                e.preventDefault();
+                (this.slider.current as any).prev();
+              }}
+            >
+              <ArrowLeft />
+            </a>
+          </div>
+        ),
+        name: (
+          <FormattedMessage
+            defaultMessage="Contact information"
+            id="guidu.donate.donation.contact"
+          />
+        ),
+      },
+      component: (
+        <div className="container my-3 my-md-5">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <Contact
+                {...this.props}
+                submitted
+                contact={currentMember}
+                onSave={() =>
+                  setTimeout(() => (this.slider.current as any).next(), 500)
+                }
+              />
+            </div>
+          </div>
+        </div>
+      ),
+    });
 
     if (providers.length > 1) {
       slides.push({
         key: 'pay-with',
         header: {
           itemBefore: (
-            <div className="navbar-header" key="payment-header">
+            <div className="navbar-header">
               <a
                 href="#"
                 className="navbar-brand d-flex align-items-center"
@@ -118,10 +223,15 @@ export default class Donate extends Component<DonateProps, DonateState> {
               </a>
             </div>
           ),
-          name: 'Metodo di pagamento',
+          name: (
+            <FormattedMessage
+              defaultMessage="Payment method"
+              id="guidu.donate.pay-with.name"
+            />
+          ),
         },
         component: (
-          <div className="p-3 p-xl-4">
+          <div className="container">
             {donation.amount && (
               <Payments
                 scope="donations"
@@ -151,7 +261,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
       key: 'pay',
       header: {
         itemBefore: (
-          <div className="navbar-header" key="payment-header">
+          <div className="navbar-header">
             <a
               href="#"
               className="navbar-brand d-flex align-items-center"
@@ -164,10 +274,15 @@ export default class Donate extends Component<DonateProps, DonateState> {
             </a>
           </div>
         ),
-        name: 'Pagamento',
+        name: (
+          <FormattedMessage
+            defaultMessage="Donate now"
+            id="guidu.donate.donation.payment"
+          />
+        ),
       },
       component: (
-        <div className="p-3 p-xl-4">
+        <div className="container px-0">
           {donation.amount && (
             <Payments
               scope="donations"
@@ -228,10 +343,10 @@ export default class Donate extends Component<DonateProps, DonateState> {
     });
 
     slides.push({
-      key: 'preferences',
+      key: 'confirmation',
       header: {
         itemBefore: (
-          <div className="navbar-header" key="preferences-header">
+          <div className="navbar-header">
             <a
               href="#"
               className="navbar-brand d-flex align-items-center"
@@ -243,84 +358,19 @@ export default class Donate extends Component<DonateProps, DonateState> {
             </a>
           </div>
         ),
-        name: 'Personalizza',
+        name: (
+          <FormattedMessage
+            defaultMessage="Done!"
+            id="guidu.donate.donation.done"
+          />
+        ),
       },
       component: (
-        <div>
-          <div className="p-3 p-xl-4 bg-donations">
-            <div className="media align-items-center">
-              {/* <AnimatedCheck
-                  className="mr-3 text-white"
-                  style={{ width: '28px' }}
-                /> */}
-              <div className="media-body">
-                <p className="mb-0 text-white text-medium">
-                  Donazione effettuata con successo
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="p-3 p-xl-4">
-            <p className="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <a className="card mb-3" href={donation.receiptPath}>
-              <div className="media align-items-stretch">
-                <div className="d-flex align-items-center py-2 px-3 bg-light">
-                  <div
-                    className="file-icon file-icon-xs d-flex mx-1 flex-shrink-0"
-                    data-type="pdf"
-                    style={{
-                      width: '11px',
-                      height: '16px',
-                      verticalAlign: 'sub',
-                    }}
-                  />
-                </div>
-                <div className="media-body text-medium py-2 px-3">
-                  Scarica la ricevuta
-                </div>
-              </div>
-            </a>
-            <a className="card" href={donation.receiptPath}>
-              <div className="media align-items-stretch">
-                <div className="d-flex align-items-center py-2 px-3 bg-light">
-                  <div
-                    className="file-icon file-icon-xs d-flex mx-1 flex-shrink-0"
-                    data-type="pdf"
-                    style={{
-                      width: '11px',
-                      height: '16px',
-                      verticalAlign: 'sub',
-                    }}
-                  />
-                </div>
-                <div className="media-body text-medium py-2 px-3">
-                  Condividi sui social
-                </div>
-              </div>
-            </a>
-          </div>
-          <hr />
-
-          <div className="p-3 p-xl-4">
-            {donation.subscription ? (
-              <p>Registrati</p>
-            ) : (
-              <Preferences
-                {...this.props}
-                // submitted={loadingSection !== 'contact'}
-                donation={donation}
-                onSave={newContact => {
-                  this.setState({
-                    contact: newContact,
-                  });
-                }}
-              />
-            )}
-          </div>
-        </div>
+        <Confirmation
+          {...this.props}
+          // submitted={loadingSection !== 'contact'}
+          donation={donation}
+        />
       ),
     });
 

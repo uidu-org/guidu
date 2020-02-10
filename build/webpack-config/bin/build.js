@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const createConfig = require('../config');
 const { print, buildBanner } = require('../banner');
 
-function runBuild() {
+function runBuild(webpackOptions = {}, websiteOptions = {}) {
   const mode = 'production';
   const websiteEnv = process.env.WEBSITE_ENV || 'local';
   const noMinimize = !!process.argv.find(arg =>
@@ -20,6 +20,8 @@ function runBuild() {
     websiteEnv,
     noMinimize,
     report,
+    webpackOptions,
+    websiteOptions,
   });
   const compiler = webpack(config);
 
@@ -44,7 +46,4 @@ function runBuild() {
   });
 }
 
-runBuild().catch(errCode => {
-  console.log(errCode);
-  process.exit(errCode);
-});
+module.exports = runBuild;

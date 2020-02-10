@@ -1,11 +1,13 @@
 import Contact from '@uidu/contact';
 import { ShellBody, ShellHeader } from '@uidu/shell';
-import Slider from '@uidu/slider';
+import Slider, { Slide } from '@uidu/slider';
 import React, { Component, forwardRef } from 'react';
 import { ArrowLeft, Circle } from 'react-feather';
 import { ShellProps, ShellState } from '../types';
 
 class Shell extends Component<ShellProps, ShellState> {
+  container: React.RefObject<HTMLDivElement> = React.createRef();
+
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +19,7 @@ class Shell extends Component<ShellProps, ShellState> {
     return (
       <>
         {header.itemBefore}
-        <div className="navbar-title text-md-left" key="donation-title">
+        <div className="navbar-title">
           <span className="navbar-brand m-0">{header.name}</span>
         </div>
       </>
@@ -49,7 +51,7 @@ class Shell extends Component<ShellProps, ShellState> {
           name: 'Contatto',
         },
         component: (
-          <div className="p-3 p-xl-4">
+          <div className="container px-0">
             <Contact
               {...this.props}
               submitted
@@ -84,23 +86,31 @@ class Shell extends Component<ShellProps, ShellState> {
             </ul>
           </div>
         </ShellHeader>
-        <ShellBody>
+        <ShellBody scrollable ref={this.container}>
           <Slider
             options={{
               slidesPerView: 1,
-              // allowTouchMove: false,
+              allowTouchMove: true,
+              autoHeight: true,
               on: {
                 slideChange: () => {
-                  this.setState({
-                    activeSlide: (forwardedRef.current as any).mySlider
-                      .activeIndex,
-                  });
+                  this.setState(
+                    {
+                      activeSlide: (forwardedRef.current as any).mySlider
+                        .activeIndex,
+                    },
+                    () => {
+                      this.container.current.scrollTop = 0;
+                    },
+                  );
                 },
               },
             }}
             ref={forwardedRef}
           >
-            {slides.map(slide => slide.component)}
+            {slides.map(slide => (
+              <Slide>{slide.component}</Slide>
+            ))}
           </Slider>
         </ShellBody>
       </>

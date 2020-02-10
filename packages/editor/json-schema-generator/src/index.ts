@@ -59,7 +59,7 @@ export default (
   program.getSourceFiles().forEach(walk);
 
   waitForTicks()
-    .then(() => mkdirp(flags.outDir, () => {}))
+    .then(() => mkdirp(flags.outDir))
     .then(() => {
       const { outDir, stage } = flags;
       const resolvedOutDir = resolve(outDir);

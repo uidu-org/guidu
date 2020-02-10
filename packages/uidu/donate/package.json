@@ -10,6 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/checkbox": "^0.1.55",
+    "@uidu/contact": "^0.1.9",
     "@uidu/field-downshift": "^0.1.23",
     "@uidu/field-text": "^0.1.25",
     "@uidu/field-textarea": "^0.1.13",
@@ -20,10 +21,12 @@
     "@uidu/select": "^0.2.7",
     "@uidu/widgets": "^0.1.14",
     "react-feather": "^2.0.3",
+    "react-intl": "^3.1.7",
     "react-stripe-elements": "^6.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40"
+    "@uidu/docs": "^0.1.40",
+    "@uidu/modal-dialog": "^0.1.25"
   },
   "uidu:src": "index.ts"
 }

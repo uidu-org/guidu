@@ -66,9 +66,7 @@ module.exports = function createWebpackConfig(
     report = false,
     entry,
     output,
-    webpackOptions = {
-      resolve: {},
-    },
+    webpackOptions,
     websiteOptions,
   } /*: {
     globs?: Array<string>,
@@ -84,8 +82,6 @@ module.exports = function createWebpackConfig(
   }*/,
 ) {
   const isProduction = mode === 'production';
-
-  console.log(webpackOptions);
 
   return {
     stats: statsOptions,
@@ -270,7 +266,7 @@ module.exports = function createWebpackConfig(
       alias: {
         'react-native$': 'react-native-web',
       },
-      ...webpackOptions.resolve,
+      ...(webpackOptions ? webpackOptions.resolve : {}),
     },
     resolveLoader: {
       modules: [
@@ -298,7 +294,7 @@ function getPlugins(
     isProduction,
     websiteEnv,
     report,
-    websiteOptions,
+    websiteOptions = {},
   } /*: { websiteDir: string, websiteEnv: string, report: boolean, isProduction: boolean, websiteOptions: any } */,
 ) {
   const faviconPath = path.join(

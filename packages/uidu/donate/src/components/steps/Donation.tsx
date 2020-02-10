@@ -1,19 +1,16 @@
-import FieldDownshift, {
-  DownshiftHorizontalCard,
-  DownshiftRadio,
-} from '@uidu/field-downshift';
+import FieldDownshift, { DownshiftHorizontalCard } from '@uidu/field-downshift';
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import classNames from 'classnames';
+import Select from '@uidu/select';
 import React, { Component } from 'react';
 
 const Menu = props => <div className="row" {...props} />;
 
 const Item = props => (
-  <div className="col-sm-4">
+  <div className="col-6 col-sm-3">
     <DownshiftHorizontalCard
-      scope="donations"
       {...props}
+      scope="donations"
     ></DownshiftHorizontalCard>
   </div>
 );
@@ -73,61 +70,41 @@ export default class Donation extends Component<any, any> {
       <Form
         handleSubmit={this.handleSubmit}
         submitted={submitted}
-        footerRenderer={({ canSubmit, loading }) => [
-          <div key="form-footer">
-            <div className="w-100 px-4">
-              <FormSubmit
-                label={
-                  <span>
-                    Dona {selectedAmount && `${selectedAmount} €`}{' '}
-                    {recurrence === 'month' && (
-                      <span className="small">
-                        <i>al mese</i>
-                      </span>
-                    )}
+        footerRenderer={({ canSubmit, loading }) => (
+          <FormSubmit
+            label={
+              <span>
+                Dona {selectedAmount && `${selectedAmount} €`}{' '}
+                {recurrence === 'month' && (
+                  <span className="small">
+                    <i>al mese</i>
                   </span>
-                }
-                loading={loading}
-                canSubmit={canSubmit}
-                className="px-5 btn-donations btn-block mb-3"
-              />
-            </div>
-          </div>,
-          selectedAmount && (
-            <p
-              className="text-muted mb-0 px-4"
-              key="month-recurring-suggestion"
-            >
-              {' '}
-              on hover dovrei mostrare la description del "Piano" qui sotto{' '}
-              {selectedAmount}
-            </p>
-          ),
-        ]}
-      >
-        <div className="form-group mb-0 p-3 p-xl-4">
-          <FieldDownshift
-            items={[
-              {
-                id: 'once',
-                name: 'Una volta',
-              },
-              {
-                id: 'month',
-                name: 'Ogni mese',
-              },
-            ]}
-            item={DownshiftRadio}
-            buttonClassName="btn border btn-sm w-50 mb-0"
-            activeClassName="btn-donations"
-            className="btn-group btn-group-toggle w-100"
-            layout="elementOnly"
-            name="donation[recurrence]"
-            value={recurrence}
-            onChange={this.handleRecurrence}
-            required
+                )}
+              </span>
+            }
+            loading={loading}
+            canSubmit={canSubmit}
+            className="px-5 btn-donations btn-block mb-3"
           />
-        </div>
+        )}
+      >
+        <Select
+          options={[
+            {
+              id: 'once',
+              name: 'Una volta',
+            },
+            {
+              id: 'month',
+              name: 'Ogni mese',
+            },
+          ]}
+          label="Frquency"
+          name="donation[recurrence]"
+          value={recurrence}
+          onChange={this.handleRecurrence}
+          required
+        />
         {recurrence === 'month' && (
           <p className="px-4 small text-muted">
             Potrai modificare la tua donazione ricorrente in ogni momento
@@ -147,49 +124,31 @@ export default class Donation extends Component<any, any> {
           />
         </div>
         */}
-        <div className="form-group container-fluid px-3">
+        <div className="form-group">
+          <label htmlFor="" className="form-label mb-2">
+            Amount
+          </label>
           <FieldDownshift
+            layout="elementOnly"
             name="donation[amount]"
             items={[
               {
-                id: '10',
-                name: '10',
-                description:
-                  'towards sharing safety skills worldwide to prepare families, schools, and organizations to protect their kids',
-              },
-              {
                 id: '25',
-                name: '25',
-                description:
-                  'to support and guide a family whose child has suffered abuse or bullying',
+                name: '25 €',
               },
               {
                 id: '50',
-                name: '50',
-                description:
-                  'to put our internationally-acclaimed prevention curriculum into the hands of educators and community leaders',
+                name: '50 €',
               },
               {
                 id: '100',
-                name: '100',
-                description:
-                  'to help plant seeds of safety skills every day of the year for young people with disabilities who face higher risks of abuse, bullying, and violence',
-              },
-              {
-                id: '250',
-                name: '250',
-                description:
-                  'to help plant seeds of safety skills every day of the year for young people with disabilities who face higher risks of abuse, bullying, and violence',
+                name: '100 €',
               },
               {
                 id: '500',
-                name: '500',
-                description:
-                  'to help plant seeds of safety skills every day of the year for young people with disabilities who face higher risks of abuse, bullying, and violence',
+                name: '500 €',
               },
             ]}
-            layout="elementOnly"
-            menuClassName="row no-gutters mb-0"
             // menuStyle={{ marginLeft: '-0.445rem', marginRight: '-0.445rem' }}
             onChange={this.handleSelection}
             item={Item}
@@ -230,38 +189,23 @@ export default class Donation extends Component<any, any> {
             // }}
             required={!customAmount}
           />
-          <div className="m-2">
-            <button
-              type="button"
-              className={classNames(
-                'card flex-row d-block p-3 w-100 text-center',
-                // {
-                //   'bg-primary text-white': customAmount,
-                // },
-              )}
-              tabIndex={0}
-              onClick={this.customize}
-            >
-              <p className="m-0 text-medium text-center text-nowrap flex-shrink-0">
-                Choose your amount
-              </p>
-            </button>
-          </div>
-          {customAmount && (
-            <div className="form-group mt-3 m-2">
-              <FieldText
-                type="number"
-                placeholder="Choose your donation amount"
-                name="donation[amount]"
-                layout="elementOnly"
-                onChange={this.handleCustomAmount}
-                min="5"
-                autoFocus
-                required
-              />
-            </div>
-          )}
+          <FieldText
+            addonBefore={
+              <span className="input-group-text" id="basic-addon1">
+                €
+              </span>
+            }
+            type="number"
+            placeholder="Or choose your donation amount"
+            name="donation[amount]"
+            layout="elementOnly"
+            onChange={this.handleCustomAmount}
+            value={selectedAmount}
+            min="5"
+            required
+          />
         </div>
+        <Select name="donation[payment_method]" label="Payment method" />
         {/* {recurrence !== 'month' && (
           <div className="px-4 form-group justify-content-center d-flex">
             <ModalTrigger

@@ -15,7 +15,7 @@
     "@uidu/field-text": "^0.1.25",
     "@uidu/item": "^0.1.21",
     "classnames": "^2.2.6",
-    "downshift": "^4.0.0",
+    "downshift": "^5.0.0",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {

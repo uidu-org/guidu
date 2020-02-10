@@ -55,13 +55,9 @@ export default class DonationPreferences extends Component<any, any> {
             className="mb-2 w-100 d-flex justify-content-between"
             htmlFor="donation-display-name"
           >
-            <span>
-              'activerecord.attributes.donation.preferences.display_name',
-            </span>
+            <span>display_name',</span>
             <a role="button" tabIndex={0} onClick={this.anonymize}>
-              {anonymous
-                ? 'Inserisci il nome'
-                : 'activerecord.attributes.donation.preferences.anonymous'}
+              {anonymous ? 'Inserisci il nome' : '.anonymous'}
             </a>
           </label>
           <FieldText
@@ -70,7 +66,7 @@ export default class DonationPreferences extends Component<any, any> {
             name="donation[preferences][display_name]"
             id="donation-display-name"
             value={anonymous ? '' : currentMember && currentMember.name}
-            help={'activerecord.hints.donation.preferences.display_name'}
+            // help={'activerecord.hints.donation.preferences.display_name'}
             disabled={anonymous}
           />
         </div>
