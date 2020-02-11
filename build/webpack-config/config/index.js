@@ -7,6 +7,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin;
 
+const moduleResolveMapBuilder = require('@uidu/multi-entry-tools/module-resolve-map-builder');
+
 const { createDefaultGlob } = require('./utils');
 const statsOptions = require('./statsOptions');
 
@@ -56,7 +58,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
   return loaders;
 };
 
-module.exports = function createWebpackConfig(
+module.exports = async function createWebpackConfig(
   {
     globs = createDefaultGlob(),
     mode = 'development',
@@ -261,12 +263,13 @@ module.exports = function createWebpackConfig(
       ],
     },
     resolve: {
-      mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
+      mainFields: ['uidu:src', 'module', 'browser', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
       alias: {
+        ...(await moduleResolveMapBuilder()),
         'react-native$': 'react-native-web',
+        // ...(webpackOptions ? webpackOptions.resolve : {}),
       },
-      ...(webpackOptions ? webpackOptions.resolve : {}),
     },
     resolveLoader: {
       modules: [
@@ -333,7 +336,7 @@ function getPlugins(
       generateStatsFile: true,
       openAnalyzer: report,
       logLevel: 'error',
-      statsOptions: statsOptions,
+      statsOptions: { ...statsOptions, assets: true, modules: true },
       defaultSizes: 'gzip',
     }),
   );

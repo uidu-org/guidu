@@ -1,4 +1,3 @@
-// @flow
 import * as colors from './colors';
 import themed from './utils/themed';
 

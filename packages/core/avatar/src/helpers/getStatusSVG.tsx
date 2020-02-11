@@ -1,5 +1,5 @@
-// @ts-ignore
-import { colors, themed, withTheme } from '@uidu/theme';
+import * as colors from '@uidu/theme/colors';
+import { themed, withTheme } from '@uidu/theme/components';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { StatusType } from '../types';

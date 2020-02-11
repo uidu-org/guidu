@@ -42,5 +42,4 @@ export const Aside = styled.div`
 
 export const Body = styled.div`
   margin-left: ${gridSize() * 2}px;
-  ${typography.p500};
 `;

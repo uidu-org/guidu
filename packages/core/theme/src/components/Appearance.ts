@@ -1,10 +1,8 @@
-// @flow
-
-type Props = {
-  children: Function,
-  props: {} | string,
-  theme: {},
-};
+interface Props {
+  children: Function;
+  props: Record<string, any> | string;
+  theme: Record<string, any>;
+}
 
 export default ({ children, props, theme }: Props) => {
   const appearance = typeof props === 'object' ? 'default' : props;

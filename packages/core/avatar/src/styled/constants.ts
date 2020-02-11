@@ -1,4 +1,4 @@
-import { gridSize } from '@uidu/theme';
+import { gridSize } from '@uidu/theme/constants';
 import { IndicatorSizeType, SizeType } from '../types';
 
 type AvatarSizeMap = Record<SizeType, number>;

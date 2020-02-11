@@ -1,5 +1,5 @@
 import { AnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
-import { ThemeProp } from '@uidu/theme';
+import { ThemeProp } from '@uidu/theme/components';
 import { ComponentType, ReactNode } from 'react';
 import { WithPseudoStateProps } from './hoc/withPseudoState';
 import { ThemeProps, ThemeTokens } from './theme';

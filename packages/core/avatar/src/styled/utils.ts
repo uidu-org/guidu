@@ -1,4 +1,6 @@
-import { colors, themed } from '@uidu/theme';
+import { ThemedValue } from '@uidu/theme';
+import { B200, background, DN80A, N200A, N70A } from '@uidu/theme/colors';
+import { themed } from '@uidu/theme/components';
 import { css } from 'styled-components';
 import { AppearanceType, AvatarClickType, SizeType } from '../types';
 import {
@@ -8,7 +10,6 @@ import {
   TRANSITION_DURATION,
 } from './constants';
 
-const { B200, N70A, N200A, DN80A, background } = colors;
 const backgroundColorFocus = B200;
 const overlayColorDefault = 'transparent';
 const overlayColorHover = N70A;
@@ -88,7 +89,7 @@ export function getInnerStyles(
   // Inherit cursor styles so we don't cancel out pointer cursors in places like avatar group more dropdown
   let cursor = 'inherit';
   let outline = 'none';
-  let overlayShade = overlayColorDefault;
+  let overlayShade: string | ThemedValue<string> = overlayColorDefault;
   let overlayOpacity = 0;
   let pointerEvents = 'auto';
   let position = 'static';

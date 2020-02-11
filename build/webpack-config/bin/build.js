@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const createConfig = require('../config');
 const { print, buildBanner } = require('../banner');
 
-function runBuild(webpackOptions = {}, websiteOptions = {}) {
+async function runBuild(webpackOptions = {}, websiteOptions = {}) {
   const mode = 'production';
   const websiteEnv = process.env.WEBSITE_ENV || 'local';
   const noMinimize = !!process.argv.find(arg =>
@@ -15,7 +15,7 @@ function runBuild(webpackOptions = {}, websiteOptions = {}) {
 
   print(buildBanner());
 
-  const config = createConfig({
+  const config = await createConfig({
     mode,
     websiteEnv,
     noMinimize,

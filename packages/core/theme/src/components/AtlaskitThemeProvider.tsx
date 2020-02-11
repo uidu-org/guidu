@@ -1,28 +1,28 @@
-// @flow
-
-import exenv from 'exenv';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import React, { Component, Node } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
+import exenv from 'exenv';
+import { ThemeModes, AtlaskitThemeProps } from '../types';
 import * as colors from '../colors';
+
 import { CHANNEL, DEFAULT_THEME_MODE } from '../constants';
+
 // For forward-compat until everything is upgraded.
 import Theme from './Theme';
-import type { ThemeModes, ThemeProps } from '../types';
 
-function getStylesheetResetCSS(state: ThemeProps) {
+function getStylesheetResetCSS(state: AtlaskitThemeProps) {
   const backgroundColor = colors.background(state);
   return `
     body { background: ${backgroundColor}; }
   `;
 }
 
-type Props = {
-  children: Node,
-  mode: ThemeModes,
-};
+interface Props {
+  children: React.ReactNode;
+  mode: ThemeModes;
+}
 
-function buildThemeState(mode): ThemeProps {
+function buildThemeState(mode: ThemeModes): AtlaskitThemeProps {
   return { theme: { [CHANNEL]: { mode } } };
 }
 
@@ -67,7 +67,7 @@ const LegacyReset = styled.div`
 
 export default class AtlaskitThemeProvider extends Component<
   Props,
-  ThemeProps,
+  AtlaskitThemeProps
 > {
   stylesheet: any;
 

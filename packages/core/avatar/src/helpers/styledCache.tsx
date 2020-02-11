@@ -1,5 +1,4 @@
-// @ts-ignore
-import { withTheme } from '@uidu/theme';
+import { withTheme } from '@uidu/theme/components';
 import { ComponentType } from 'react';
 import styled from 'styled-components';
 import CustomComponentProxy from '../components/CustomComponentProxy';
@@ -41,11 +40,11 @@ export default (styles: (props: any) => any) => {
     let Ret = StyledSpan;
 
     if (component) {
-      Ret = StyledCustomComponent;
+      Ret = StyledCustomComponent as any;
     } else if (href) {
-      Ret = StyledLink;
+      Ret = StyledLink as any;
     } else if (onClick) {
-      Ret = StyledButton;
+      Ret = StyledButton as any;
     }
 
     return Ret;

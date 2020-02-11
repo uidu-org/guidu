@@ -2,7 +2,7 @@ import React, { Component, ComponentType } from 'react';
 import { getDisplayName } from '../utils';
 
 interface Mapping<Props> {
-  [key: string]: (props: Props) => unknown;
+  [key: string]: (props: Props) => void;
 }
 
 export default function mapProps<Props extends Object>(

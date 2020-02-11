@@ -167,22 +167,6 @@
         "../../core/code/src/ThemedCodeBlock",
         "./packages/core/code/src/ThemedCodeBlock"
       ],
-      "@uidu/docs/ErrorBoundary": [
-        "../../core/docs/src/ErrorBoundary",
-        "./packages/core/docs/src/ErrorBoundary"
-      ],
-      "@uidu/docs/Example": [
-        "../../core/docs/src/Example",
-        "./packages/core/docs/src/Example"
-      ],
-      "@uidu/docs": [
-        "../../core/docs/src/",
-        "./packages/core/docs/src/"
-      ],
-      "@uidu/docs/replaceSrc": [
-        "../../core/docs/src/replaceSrc",
-        "./packages/core/docs/src/replaceSrc"
-      ],
       "@uidu/drawer/constants": [
         "../../core/drawer/src/constants",
         "./packages/core/drawer/src/constants"
@@ -351,6 +335,10 @@
         "../../core/spinner/src/types",
         "./packages/core/spinner/src/types"
       ],
+      "@uidu/theme/color-palettes": [
+        "../../core/theme/src/color-palettes",
+        "./packages/core/theme/src/color-palettes"
+      ],
       "@uidu/theme/colors": [
         "../../core/theme/src/colors",
         "./packages/core/theme/src/colors"
@@ -502,6 +490,10 @@
       "@uidu/table/types": [
         "../../data/table/src/types",
         "./packages/data/table/src/types"
+      ],
+      "@uidu/timeline": [
+        "../../data/timeline/src/",
+        "./packages/data/timeline/src/"
       ],
       "@uidu/payment-sources": [
         "../../ecommerce/payment-sources/src/",
@@ -1054,6 +1046,10 @@
       "@uidu/navigation": [
         "../../navigation/navigation/src/",
         "./packages/navigation/navigation/src/"
+      ],
+      "@uidu/navigation/types": [
+        "../../navigation/navigation/src/types",
+        "./packages/navigation/navigation/src/types"
       ],
       "@uidu/responsivr": [
         "../../navigation/responsivr/src/",

@@ -1,18 +1,19 @@
-// @ts-ignore
-import { colors, withTheme } from '@uidu/theme';
+import { background } from '@uidu/theme/colors';
+import { withTheme } from '@uidu/theme/components';
 import styled from 'styled-components';
 import { SizeType } from '../types';
 import { BORDER_WIDTH } from './constants';
 
 interface OuterProps {
   size?: SizeType;
-  bgColor?: string | (() => unknown);
+  bgColor?: string | (() => string);
+  children?: React.ReactNode;
 }
 
 export const Outer = withTheme(styled.span<OuterProps>`
   align-content: center;
   align-items: center;
-  background-color: ${props => props.bgColor || colors.background};
+  background-color: ${props => props.bgColor || background};
   border-radius: 50%;
   box-sizing: border-box;
   display: flex;

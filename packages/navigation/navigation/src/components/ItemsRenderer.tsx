@@ -82,7 +82,7 @@ const Debug = (props: any) => (
       backgroundColor: 'rgba(0, 0, 0, 0.1)',
       fontSize: '10px',
       overflowX: 'auto',
-      padding: `${gridSize / 2}px`,
+      padding: `${gridSize() / 2}px`,
     }}
   >
     {JSON.stringify(props, null, 2)}

@@ -4,11 +4,11 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import Blanket from '@uidu/blanket';
-import { AtlaskitThemeProvider } from '@uidu/theme';
 import { canUseDOM } from 'exenv';
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { TransitionGroup } from 'react-transition-group';
+import { ThemeProvider } from 'styled-components';
 import drawerItemTheme from '../theme/drawer-item-theme';
 import { CloseTrigger, DrawerProps } from '../types';
 import {
@@ -145,9 +145,7 @@ export class DrawerBase extends React.Component<DrawerProps> {
 }
 
 export const DrawerItemTheme = (props: { children: React.ReactNode }) => (
-  <AtlaskitThemeProvider theme={drawerItemTheme}>
-    {props.children}
-  </AtlaskitThemeProvider>
+  <ThemeProvider theme={drawerItemTheme}>{props.children}</ThemeProvider>
 );
 
 export default withAnalyticsContext({

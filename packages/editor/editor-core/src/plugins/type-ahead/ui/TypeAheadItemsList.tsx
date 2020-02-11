@@ -21,7 +21,7 @@ const itemTheme = {
     },
     borderRadius: () => 0,
     hover: {
-      background: colors.transparent,
+      // background: colors.transparent, transparent is not a thing
       text: colors.text,
       secondaryText: colors.N200,
     },

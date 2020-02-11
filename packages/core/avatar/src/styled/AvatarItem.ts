@@ -1,18 +1,22 @@
+import { ThemedValue } from '@uidu/theme';
 import {
-  borderRadius,
-  colors,
-  gridSize,
-  math,
-  themed,
-  // @ts-ignore
-  withTheme,
-} from '@uidu/theme';
+  B200,
+  B75,
+  background,
+  backgroundActive,
+  backgroundHover,
+  DN300,
+  DN600,
+  N200,
+  N900,
+} from '@uidu/theme/colors';
+import { themed, withTheme } from '@uidu/theme/components';
+import { borderRadius, gridSize } from '@uidu/theme/constants';
 import styled, { css } from 'styled-components';
 import { AvatarClickType } from '../types';
-
-const focusBorderColor = themed({ light: colors.B200, dark: colors.B75 });
-const textColors = themed({ light: colors.N900, dark: colors.DN600 });
-const subtleTextColors = themed({ light: colors.N200, dark: colors.DN300 });
+const focusBorderColor = themed({ light: B200, dark: B75 });
+const textColors = themed({ light: N900, dark: DN600 });
+const subtleTextColors = themed({ light: N200, dark: DN300 });
 
 interface GetBackgroundColorType {
   backgroundColor?: string;
@@ -34,40 +38,36 @@ export function getBackgroundColor({
 }: GetBackgroundColorType) {
   const isInteractive = href || onClick;
 
-  let themedBackgroundColor = backgroundColor || colors.background;
+  let themedBackgroundColor = backgroundColor || background;
 
   // Interaction: Hover
   if (isInteractive && (isHover || isSelected)) {
-    themedBackgroundColor = colors.backgroundHover;
+    themedBackgroundColor = backgroundHover;
   }
 
   // Interaction: Active
   if (isInteractive && isActive) {
-    themedBackgroundColor = colors.backgroundActive;
+    themedBackgroundColor = backgroundActive;
   }
 
   return themedBackgroundColor;
 }
 
 type getStylesType = {
-  href?: string;
+  isInteractive?: boolean;
   isActive?: boolean;
   isDisabled?: boolean;
   isFocus?: boolean;
   mode: 'dark' | 'light';
-  onClick?: AvatarClickType;
 };
 
 export function getStyles({
-  href,
+  isInteractive,
   isActive,
   isDisabled,
   isFocus,
-  onClick,
 }: getStylesType) {
-  const isInteractive = href || onClick;
-
-  let borderColor = 'transparent';
+  let borderColor: string | ThemedValue<string> = 'transparent';
   let cursor = 'auto';
   let opacity = 1;
   let outline = 'none';
@@ -90,6 +90,7 @@ export function getStyles({
   if (isInteractive) {
     cursor = 'pointer';
   }
+
   return css`
     align-items: center;
     background-color: ${getBackgroundColor};
@@ -106,7 +107,7 @@ export function getStyles({
     opacity: ${opacity};
     outline: ${outline};
     margin: 0;
-    padding: ${math.divide(gridSize, 2)}px;
+    padding: ${gridSize() * 2}px;
     pointer-events: ${pointerEvents};
     text-align: left;
     text-decoration: none;

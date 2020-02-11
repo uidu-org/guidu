@@ -34,6 +34,7 @@ const historyApiFallback = require('connect-history-api-fallback');
 const createConfig = require('../config');
 const utils = require('../config/utils');
 const { print, devServerBanner, errorMsg } = require('../banner');
+
 let HOST = 'localhost';
 let disableHostCheck = false;
 
@@ -95,7 +96,7 @@ const runDevServer = async ({
   // Creating webpack instance
   //
 
-  const config = createConfig({
+  const config = await createConfig({
     globs,
     mode,
     websiteEnv,
@@ -103,6 +104,8 @@ const runDevServer = async ({
     webpackOptions,
     websiteOptions,
   });
+
+  console.log(config);
 
   const compiler = webpack(config);
 

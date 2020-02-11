@@ -1,27 +1,26 @@
-// @flow
-
-import React, { Node } from 'react';
+import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import * as colors from '../colors';
 import { createTheme, ThemeProp } from '../utils/createTheme';
 
-export type ResetThemeProps = *;
-export type ResetThemeTokens = {
-  backgroundColor: string,
-  textColor: string,
-  linkColor?: string,
-  linkColorHover?: string,
-  linkColorActive?: string,
-  linkColorOutline?: string,
-  headingColor?: string,
-  subtleHeadingColor?: string,
-  subtleTextColor?: string,
-};
+export type ResetThemeProps = { children?: ReactNode } | undefined;
+export interface ResetThemeTokens {
+  backgroundColor: string;
+  textColor: string;
+  linkColor?: string;
+  linkColorHover?: string;
+  linkColorActive?: string;
+  linkColorOutline?: string;
+  headingColor?: string;
+  subtleHeadingColor?: string;
+  subtleTextColor?: string;
+}
 
-const orTextColor = (preferred: string) => (p: ResetThemeTokens) =>
-  p[preferred] || p.textColor;
+const orTextColor = (preferred: keyof ResetThemeTokens) => (
+  p: ResetThemeTokens,
+) => p[preferred] || p.textColor;
 const Div = styled.div`
-  ${p => css`
+  ${(p: ResetThemeTokens) => css`
     background-color: ${p.backgroundColor};
     color: ${p.textColor};
 
@@ -67,14 +66,16 @@ export const ResetTheme = createTheme<ResetThemeTokens, ResetThemeProps>(
   }),
 );
 
-export function Reset(props: {
-  children?: Node,
-  theme?: ThemeProp<ResetThemeTokens, ResetThemeProps>,
-}) {
+interface ResetProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: ReactNode;
+  theme?: ThemeProp<ResetThemeTokens, ResetThemeProps>;
+}
+
+export function Reset(props: ResetProps) {
   return (
     <ResetTheme.Provider value={props.theme}>
       <ResetTheme.Consumer>
-        {tokens => {
+        {(tokens: ResetThemeTokens) => {
           return (
             <Div {...{ ...tokens, mode: undefined }} {...props}>
               {props.children}

@@ -1,5 +1,5 @@
-// @ts-ignore
-import { colors, themed, withTheme } from '@uidu/theme';
+import { background, DN100, N50 } from '@uidu/theme/colors';
+import { themed, withTheme } from '@uidu/theme/components';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { Theme } from '../theme';
@@ -8,10 +8,10 @@ import { AppearanceType, SizeType } from '../types';
 export const ShapeGroup = withTheme(styled.g`
   & circle,
   & rect {
-    fill: ${themed({ light: colors.N50, dark: colors.DN100 })};
+    fill: ${themed({ light: N50, dark: DN100 })};
   }
   & g {
-    fill: ${colors.background};
+    fill: ${background};
   }
 `);
 

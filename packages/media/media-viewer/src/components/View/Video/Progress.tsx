@@ -23,7 +23,7 @@ const ProgressBar = ({ progress }: Props) => (
 const Progress = ({ progress }: Props) => (
   <div
     style={{
-      backgroundColor: colors.primary,
+      backgroundColor: colors.primary(),
       borderRadius: height / 2,
       top: 0,
       left: 0,

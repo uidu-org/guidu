@@ -1,5 +1,5 @@
-import * as React from 'react';
 import { borderRadius, colors, themed } from '@uidu/theme';
+import * as React from 'react';
 import styled from 'styled-components';
 
 export type Color = 'grey' | 'red' | 'blue' | 'green' | 'purple' | 'yellow';
@@ -10,6 +10,7 @@ export type Props = React.HTMLProps<HTMLSpanElement> & {
 };
 
 type ColoursTuple = [string, string, string];
+
 export const resolveColors = (
   color?: Color,
 ): { light: ColoursTuple; dark: ColoursTuple } => {
@@ -19,11 +20,13 @@ export const resolveColors = (
       dark: [colors.DN70, colors.DN800, colors.DN60],
     };
   }
+  const anyColors = colors as any;
   const letter = color.toUpperCase().charAt(0);
+  // NOTE: This isn't type safe. If colors change their API this may break.
   const resolvedColors: ColoursTuple = [
-    colors[`${letter}50`],
-    colors[`${letter}500`],
-    colors[`${letter}75`],
+    anyColors[`${letter}50`],
+    anyColors[`${letter}500`],
+    anyColors[`${letter}75`],
   ];
   return {
     light: resolvedColors,
@@ -31,11 +34,7 @@ export const resolveColors = (
   };
 };
 
-/**
- * TODO when update typescript to 2.9+
- * add custom props as Generic Parameter to span instead of casting
- */
-export const DateLozenge = styled.span`
+export const DateLozenge = styled.span<Props>`
   border-radius: ${borderRadius()}px;
   padding: 2px 4px;
   margin: 0 1px;
@@ -44,10 +43,10 @@ export const DateLozenge = styled.span`
   white-space: nowrap;
   cursor: ${(props: Props) => (props.onClick ? 'pointer' : 'unset')};
 
-  ${(props: Props) => {
-    const [background, color, hoverBackground]: ColoursTuple = themed(
-      resolveColors(props.color),
-    )(props);
+  ${props => {
+    var colors = themed(resolveColors(props.color))(props);
+    if (colors === '') colors = ['', '', ''];
+    const [background, color, hoverBackground]: ColoursTuple = colors;
     return `
       background: ${background};
       color: ${color};

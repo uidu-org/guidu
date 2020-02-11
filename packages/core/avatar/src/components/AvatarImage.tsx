@@ -1,4 +1,4 @@
-import GlobalTheme from '@uidu/theme';
+import GlobalTheme from '@uidu/theme/components';
 import React, { PureComponent } from 'react';
 import { ShapeGroup, Slot, Svg } from '../styled/AvatarImage';
 import { AppearanceType, SizeType } from '../types';

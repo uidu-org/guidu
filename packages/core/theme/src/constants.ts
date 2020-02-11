@@ -1,6 +1,5 @@
-// @flow
 import { css } from 'styled-components';
-import { B100 } from './colors';
+import { B100, N30, skeleton as skeletonColor } from './colors';
 
 export const FLATTENED = '__FLATTENED__';
 export const CHANNEL = '__ATLASKIT_THEME__';
@@ -57,3 +56,25 @@ export const assistive = () => css`
   width: 1px !important;
   white-space: nowrap !important;
 `;
+
+export const skeletonShimmer = () => ({
+  css: {
+    backgroundColor: skeletonColor(),
+    backgroundImage: `linear-gradient(to right, ${skeletonColor()} 0%, ${N30} 20%, ${skeletonColor()} 40%, ${skeletonColor()} 100%)`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '800px 104px',
+    animationDuration: '1.5s',
+    animationFillMode: 'forwards',
+    animationIterationCount: 'infinite',
+    animationTimingFunction: 'linear',
+  },
+  keyframes: {
+    '0%': {
+      backgroundPosition: '-468px 0',
+    },
+
+    '100%': {
+      backgroundPosition: '468px 0',
+    },
+  },
+});
