@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.93
+
+### Patch Changes
+
+- 8074238: FIX scss import
+
 ## 0.1.92
 
 ### Patch Changes
