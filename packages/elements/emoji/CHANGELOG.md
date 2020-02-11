@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+  - @uidu/code@0.1.20
+  - @uidu/section-message@0.1.19
+  - @uidu/spinner@0.1.16
+  - @uidu/tooltip@0.1.23
+  - @uidu/field-text@0.1.26
+
 ## 0.1.5
 
 ### Patch Changes

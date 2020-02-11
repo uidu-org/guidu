@@ -1,5 +1,19 @@
 # @uidu/task-decision
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/avatar-group@2.1.33
+  - @uidu/button@0.1.51
+  - @uidu/spinner@0.1.16
+  - @uidu/editor-common@0.1.12
+  - @uidu/renderer@0.1.11
+
 ## 0.1.5
 
 ### Patch Changes

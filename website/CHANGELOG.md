@@ -1,5 +1,25 @@
 # Change Log
 
+## 0.1.79
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/webpack-config@0.1.51
+  - @uidu/drawer@0.2.12
+  - @uidu/navigation@0.2.19
+  - @uidu/badge@0.1.17
+  - @uidu/button@0.1.51
+  - @uidu/code@0.1.20
+  - @uidu/lozenge@0.1.18
+  - @uidu/modal-dialog@0.1.26
+  - @uidu/spinner@0.1.16
+  - @uidu/tooltip@0.1.23
+  - @uidu/field-text@0.1.26
+  - @uidu/select@0.2.9
+
 ## 0.1.78
 
 ### Patch Changes

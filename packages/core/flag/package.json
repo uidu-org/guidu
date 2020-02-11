@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "license": "MIT",
   "types": "index.d.ts",
@@ -14,9 +14,9 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.17",
-    "@uidu/button": "^0.1.50",
-    "@uidu/portal": "^0.1.14",
-    "@uidu/theme": "^0.1.20",
+    "@uidu/button": "^0.1.51",
+    "@uidu/portal": "^0.1.15",
+    "@uidu/theme": "^0.2.0",
     "react-feather": "^2.0.3",
     "react-transition-group": "^4.0.0",
     "uuid": "^3.3.2"
@@ -26,10 +26,10 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40",
+    "@uidu/docs": "^0.1.41",
     "@uidu/form": "^0.1.44",
     "@uidu/radio": "^0.3.2",
-    "@uidu/spinner": "^0.1.15",
+    "@uidu/spinner": "^0.1.16",
     "react-dom": "^16.4.0"
   }
 }

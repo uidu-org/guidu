@@ -1,5 +1,19 @@
 # @uidu/theme
 
+## 0.2.0
+
+### Minor Changes
+
+- ef3e4c4: Migrate theme to typescript
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+  - @uidu/lozenge@0.1.18
+  - @uidu/section-message@0.1.19
+
 ## 0.1.20
 
 ### Patch Changes

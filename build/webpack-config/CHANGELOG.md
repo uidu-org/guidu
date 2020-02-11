@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.51
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+
 ## 0.1.50
 
 ### Patch Changes

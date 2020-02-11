@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 0.1.12
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/mentions@0.1.11
+  - @uidu/emoji@0.1.6
+
 ## 0.1.11
 
 ### Patch Changes

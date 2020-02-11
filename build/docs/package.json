@@ -1,17 +1,17 @@
 {
   "name": "@uidu/docs",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "description": "Utilities for building documentation",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
   "author": "uidu",
   "module": "index.js",
   "dependencies": {
-    "@uidu/button": "^0.1.50",
-    "@uidu/code": "^0.1.19",
-    "@uidu/section-message": "^0.1.18",
-    "@uidu/theme": "^0.1.20",
-    "@uidu/tooltip": "^0.1.22",
+    "@uidu/button": "^0.1.51",
+    "@uidu/code": "^0.1.20",
+    "@uidu/section-message": "^0.1.19",
+    "@uidu/theme": "^0.2.0",
+    "@uidu/tooltip": "^0.1.23",
     "pretty-proptypes": "^1.0.4",
     "react-markings": "^1.3.0",
     "string-raw": "^1.0.1"

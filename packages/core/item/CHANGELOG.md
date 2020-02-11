@@ -1,5 +1,16 @@
 # @uidu/item
 
+## 0.1.22
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/lozenge@0.1.18
+  - @uidu/tooltip@0.1.23
+
 ## 0.1.21
 
 ### Patch Changes

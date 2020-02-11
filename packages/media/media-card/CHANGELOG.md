@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+  - @uidu/dropdown-menu@0.1.20
+  - @uidu/spinner@0.1.16
+  - @uidu/tooltip@0.1.23
+
 ## 0.1.22
 
 ### Patch Changes

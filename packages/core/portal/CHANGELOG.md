@@ -1,5 +1,19 @@
 # @uidu/portal
 
+## 0.1.15
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+  - @uidu/inline-dialog@0.1.13
+  - @uidu/modal-dialog@0.1.26
+  - @uidu/onboarding@0.1.8
+  - @uidu/tooltip@0.1.23
+
 ## 0.1.14
 
 ### Patch Changes

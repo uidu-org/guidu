@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.1.41
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/button@0.1.51
+  - @uidu/code@0.1.20
+  - @uidu/section-message@0.1.19
+  - @uidu/tooltip@0.1.23
+
 ## 0.1.40
 
 ### Patch Changes

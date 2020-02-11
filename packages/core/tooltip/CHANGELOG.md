@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/portal@0.1.15
+  - @uidu/button@0.1.51
+  - @uidu/popper@0.1.17
+
 ## 0.1.22
 
 ### Patch Changes

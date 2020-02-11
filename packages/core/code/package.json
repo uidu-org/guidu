@@ -1,6 +1,6 @@
 {
   "name": "@uidu/code",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "Renders inline code snippets and code blocks",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -12,12 +12,12 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/theme": "^0.1.20",
+    "@uidu/theme": "^0.2.0",
     "memoize-one": "^5.0.0",
     "react-syntax-highlighter": "^12.2.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40",
+    "@uidu/docs": "^0.1.41",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {

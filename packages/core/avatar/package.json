@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "description": "A component that represents a user",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -10,15 +10,15 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.17",
-    "@uidu/theme": "^0.1.20",
-    "@uidu/tooltip": "^0.1.22"
+    "@uidu/theme": "^0.2.0",
+    "@uidu/tooltip": "^0.1.23"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.50",
-    "@uidu/docs": "^0.1.40",
+    "@uidu/button": "^0.1.51",
+    "@uidu/docs": "^0.1.41",
     "@uidu/field-base": "^0.1.48",
-    "@uidu/section-message": "^0.1.18",
-    "@uidu/toggle": "^0.1.21",
+    "@uidu/section-message": "^0.1.19",
+    "@uidu/toggle": "^0.1.22",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {

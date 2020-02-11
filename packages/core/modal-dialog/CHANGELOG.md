@@ -1,5 +1,20 @@
 # @uidu/modal-dialog
 
+## 0.1.26
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/portal@0.1.15
+  - @uidu/blanket@0.1.18
+  - @uidu/button@0.1.51
+  - @uidu/inline-dialog@0.1.13
+  - @uidu/field-text@0.1.26
+  - @uidu/select@0.2.9
+
 ## 0.1.25
 
 ### Patch Changes

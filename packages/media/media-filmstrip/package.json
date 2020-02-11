@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-filmstrip",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "Includes components that show media cards as a filmstrip",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -9,15 +9,15 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/media-card": "^0.1.22",
+    "@uidu/media-card": "^0.1.23",
     "@uidu/media-core": "^0.1.15",
-    "@uidu/media-viewer": "^0.1.29",
-    "@uidu/theme": "^0.1.20",
+    "@uidu/media-viewer": "^0.1.30",
+    "@uidu/theme": "^0.2.0",
     "react-images": "^1.1.0-beta.0",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40",
+    "@uidu/docs": "^0.1.41",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   },

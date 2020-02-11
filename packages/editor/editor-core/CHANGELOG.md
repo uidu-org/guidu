@@ -1,5 +1,31 @@
 # @uidu/editor-core
 
+## 0.1.23
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/date@0.1.5
+  - @uidu/mentions@0.1.11
+  - @uidu/avatar-group@2.1.33
+  - @uidu/button@0.1.51
+  - @uidu/droplist@0.1.20
+  - @uidu/item@0.1.22
+  - @uidu/modal-dialog@0.1.26
+  - @uidu/spinner@0.1.16
+  - @uidu/tooltip@0.1.23
+  - @uidu/editor-common@0.1.12
+  - @uidu/emoji@0.1.6
+  - @uidu/status@0.1.6
+  - @uidu/task-decision@0.1.6
+  - @uidu/select@0.2.9
+  - @uidu/media-card@0.1.23
+  - @uidu/media-filmstrip@0.1.24
+
 ## 0.1.22
 
 ### Patch Changes

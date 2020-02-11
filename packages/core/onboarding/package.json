@@ -1,6 +1,6 @@
 {
   "name": "@uidu/onboarding",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
   "license": "MIT",
   "author": "uidu",
@@ -9,11 +9,11 @@
   "dependencies": {
     "@atlaskit/progress-indicator": "^7.0.8",
     "@uidu/analytics": "^0.1.17",
-    "@uidu/button": "^0.1.50",
-    "@uidu/modal-dialog": "^0.1.25",
-    "@uidu/popper": "^0.1.16",
-    "@uidu/portal": "^0.1.14",
-    "@uidu/theme": "^0.1.20",
+    "@uidu/button": "^0.1.51",
+    "@uidu/modal-dialog": "^0.1.26",
+    "@uidu/popper": "^0.1.17",
+    "@uidu/portal": "^0.1.15",
+    "@uidu/theme": "^0.2.0",
     "exenv": "^1.2.2",
     "memoize-one": "^5.0.0",
     "react-focus-lock": "^2.0.0",
@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@atlaskit/progress-indicator": "^7.0.8",
-    "@uidu/docs": "^0.1.40",
+    "@uidu/docs": "^0.1.41",
     "react-dom": "^16.4.0",
     "react-feather": "^2.0.3",
     "react-lorem-component": "^0.13.0"

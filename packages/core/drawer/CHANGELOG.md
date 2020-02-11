@@ -1,5 +1,18 @@
 # @uidu/drawer
 
+## 0.2.12
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/blanket@0.1.18
+  - @uidu/button@0.1.51
+  - @uidu/dropdown-menu@0.1.20
+  - @uidu/item@0.1.22
+
 ## 0.2.11
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.1.11
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/button@0.1.51
+  - @uidu/lozenge@0.1.18
+  - @uidu/tooltip@0.1.23
+
 ## 0.1.10
 
 ### Patch Changes

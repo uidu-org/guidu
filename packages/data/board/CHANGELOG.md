@@ -1,5 +1,14 @@
 # @uidu/board
 
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/badge@0.1.17
+
 ## 0.2.9
 
 ### Patch Changes

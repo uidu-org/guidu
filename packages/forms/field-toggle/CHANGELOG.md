@@ -1,5 +1,15 @@
 # @uidu/toggle
 
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+  - @uidu/toggle@0.1.22
+
 ## 0.1.24
 
 ### Patch Changes

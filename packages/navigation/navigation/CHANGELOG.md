@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 0.2.19
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/badge@0.1.17
+  - @uidu/dropdown-menu@0.1.20
+  - @uidu/inline-dialog@0.1.13
+  - @uidu/lozenge@0.1.18
+  - @uidu/tooltip@0.1.23
+
 ## 0.2.18
 
 ### Patch Changes

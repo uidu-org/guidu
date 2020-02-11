@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 0.1.8
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/portal@0.1.15
+  - @uidu/button@0.1.51
+  - @uidu/modal-dialog@0.1.26
+  - @uidu/popper@0.1.17
+
 ## 0.1.7
 
 ### Patch Changes

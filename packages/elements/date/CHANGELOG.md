@@ -1,5 +1,14 @@
 # @atlaskit/date
 
+## 0.1.5
+
+### Patch Changes
+
+- ef3e4c4: Migrate theme to typescript
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+
 ## 0.1.4
 
 ### Patch Changes

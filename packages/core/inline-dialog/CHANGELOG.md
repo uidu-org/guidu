@@ -1,5 +1,16 @@
 # @uidu/inline-dialog
 
+## 0.1.13
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+  - @uidu/popper@0.1.17
+  - @uidu/select@0.2.9
+
 ## 0.1.12
 
 ### Patch Changes

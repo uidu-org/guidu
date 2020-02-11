@@ -1,5 +1,25 @@
 # @atlaskit/renderer
 
+## 0.1.11
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/mentions@0.1.11
+  - @uidu/navigation@0.2.19
+  - @uidu/button@0.1.51
+  - @uidu/code@0.1.20
+  - @uidu/tooltip@0.1.23
+  - @uidu/editor-common@0.1.12
+  - @uidu/status@0.1.6
+  - @uidu/task-decision@0.1.6
+  - @uidu/field-range@0.1.22
+  - @uidu/media-card@0.1.23
+  - @uidu/media-filmstrip@0.1.24
+
 ## 0.1.10
 
 ### Patch Changes

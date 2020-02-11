@@ -1,5 +1,14 @@
 # @uidu/popper
 
+## 0.1.17
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/button@0.1.51
+
 ## 0.1.16
 
 ### Patch Changes

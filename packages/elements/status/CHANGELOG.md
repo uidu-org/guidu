@@ -1,5 +1,15 @@
 # @atlaskit/status
 
+## 0.1.6
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/lozenge@0.1.18
+  - @uidu/field-text@0.1.26
+
 ## 0.1.5
 
 ### Patch Changes

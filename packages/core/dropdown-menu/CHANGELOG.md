@@ -1,5 +1,19 @@
 # @uidu/dropdown-menu
 
+## 0.1.20
+
+### Patch Changes
+
+- Updated dependencies [ef3e4c4]
+  - @uidu/theme@0.2.0
+  - @uidu/docs@0.1.41
+  - @uidu/avatar@0.2.24
+  - @uidu/button@0.1.51
+  - @uidu/droplist@0.1.20
+  - @uidu/item@0.1.22
+  - @uidu/lozenge@0.1.18
+  - @uidu/tooltip@0.1.23
+
 ## 0.1.19
 
 ### Patch Changes
