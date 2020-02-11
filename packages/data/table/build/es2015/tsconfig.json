@@ -4,8 +4,7 @@
     "declaration": true,
     "outDir": "../../",
     "target": "es5",
-    "module": "esnext",
-    "paths": {}
+    "module": "esnext"
   },
   "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
   "exclude": ["../../src/**/__tests__/*"]
