@@ -88,6 +88,8 @@ class AvatarItem extends Component<Props> {
       enableTextTruncate,
       primaryText,
       secondaryText,
+      href,
+      onClick,
     } = this.props;
 
     // distill props from context, props, and state
@@ -113,6 +115,7 @@ class AvatarItem extends Component<Props> {
                   <StyledComponent
                     ref={this.setNode}
                     {...enhancedProps}
+                    isInteractive={!!href || !!onClick}
                     onClick={this.guardedClick}
                   >
                     {React.isValidElement(avatar)
