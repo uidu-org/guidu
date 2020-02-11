@@ -20,7 +20,7 @@
     "build:pkg:new": "                       bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json tmp/package.json --only name,version,sideEffects && bolt workspaces exec --only-fs 'packages/**' -- mv ./tmp/package.json ./version.json",
     "build:typescript": "                    run-p build:typescript:es2015",
     "build:typescript:cli": "                NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescriptcli)\" -- tsc --project ./build/cli",
-    "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015",
+    "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- tsc --project ./build/es2015 --traceResolution",
     "build:website": "                       bolt install --pure-lockfile && cd website && yarn build",
     "changeset": "                           changeset",
     "delete": "                              yarn run delete:modules && yarn run delete:build",
