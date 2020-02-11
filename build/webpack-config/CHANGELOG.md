@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.50
+
+### Patch Changes
+
+- 10ea5c3: Bump dependencies, new donation steps
+
 ## 0.1.49
 
 ### Patch Changes

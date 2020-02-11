@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.45
+
+### Patch Changes
+
+- 10ea5c3: Minor fixes
+
 ## 0.1.44
 
 ### Patch Changes

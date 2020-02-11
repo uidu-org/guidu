@@ -1,5 +1,11 @@
 # @uidu/widgets
 
+## 0.1.15
+
+### Patch Changes
+
+- 10ea5c3: Bump dependencies, new donation steps
+
 ## 0.1.14
 
 ### Patch Changes
