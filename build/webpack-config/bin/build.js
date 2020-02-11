@@ -23,6 +23,9 @@ async function runBuild(webpackOptions = {}, websiteOptions = {}) {
     webpackOptions,
     websiteOptions,
   });
+
+  console.log(config);
+
   const compiler = webpack(config);
 
   //
