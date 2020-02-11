@@ -3,6 +3,7 @@
   "compilerOptions": {
     "declaration": true,
     "outDir": "../../"
-  },rc/**/*.ts", "../../src/**/*.tsx"],
+  },
+  "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
   "exclude": ["../../src/**/__tests__/*"]
 }
