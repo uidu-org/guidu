@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.1.78
+
+### Patch Changes
+
+- 10ea5c3: Bump dependencies, new donation steps
+- 10ea5c3: Minor fixes
+- Updated dependencies [10ea5c3]
+- Updated dependencies [10ea5c3]
+  - @uidu/webpack-config@0.1.50
+  - @uidu/table@0.1.92
+  - @uidu/select@0.2.8
+  - @uidu/form@0.1.45
+
 ## 0.1.77
 
 ### Patch Changes

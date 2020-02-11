@@ -1,5 +1,14 @@
 # @uidu/downshift
 
+## 0.1.24
+
+### Patch Changes
+
+- 10ea5c3: Bump dependencies, new donation steps
+- Updated dependencies [10ea5c3]
+  - @uidu/field-base@0.1.50
+  - @uidu/form@0.1.45
+
 ## 0.1.23
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 0.1.92
+
+### Patch Changes
+
+- 10ea5c3: Bump dependencies, new donation steps
+- Updated dependencies [10ea5c3]
+- Updated dependencies [10ea5c3]
+  - @uidu/select@0.2.8
+  - @uidu/form@0.1.45
+
 ## 0.1.91
 
 ### Patch Changes

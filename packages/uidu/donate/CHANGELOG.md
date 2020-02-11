@@ -1,5 +1,17 @@
 # @uidu/donate
 
+## 0.1.19
+
+### Patch Changes
+
+- 10ea5c3: Bump dependencies, new donation steps
+- Updated dependencies [10ea5c3]
+- Updated dependencies [10ea5c3]
+  - @uidu/field-downshift@0.1.24
+  - @uidu/select@0.2.8
+  - @uidu/widgets@0.1.15
+  - @uidu/form@0.1.45
+
 ## 0.1.18
 
 ### Patch Changes

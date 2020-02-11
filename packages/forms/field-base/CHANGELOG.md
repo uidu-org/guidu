@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.50
+
+### Patch Changes
+
+- 10ea5c3: Minor fixes
+- Updated dependencies [10ea5c3]
+  - @uidu/form@0.1.45
+
 ## 0.1.49
 
 ### Patch Changes
