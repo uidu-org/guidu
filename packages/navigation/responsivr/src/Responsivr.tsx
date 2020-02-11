@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Media from 'react-media';
+import { breakpoints as defaultBreakpoints } from './constants';
 import { ResponsivrProps } from './types';
 
 // example
@@ -8,12 +9,7 @@ import { ResponsivrProps } from './types';
 
 export default class Responsivr extends Component<ResponsivrProps> {
   static defaultProps = {
-    breakpoints: {
-      sm: { minWidth: 576, maxWidth: 767 },
-      md: { minWidth: 768, maxWidth: 991 },
-      lg: { minWidth: 992, maxWidth: 1199 },
-      xl: { minWidth: 1200 },
-    },
+    breakpoints: defaultBreakpoints,
     targetWindow: window,
   };
 

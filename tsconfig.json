@@ -24,7 +24,6 @@
     "module": "esnext",
     "lib": [
       "dom",
-      "es5",
       "es7",
       "scripthost",
       "es2015.core",

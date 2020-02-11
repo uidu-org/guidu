@@ -1,1 +1,2 @@
-export { default } from './Responsivr'
+export * from './constants';
+export { default } from './Responsivr';
