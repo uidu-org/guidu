@@ -235,6 +235,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
 const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(
+  // @ts-ignore
   (props, ref) => <Button {...props} consumerRef={ref} />,
 );
 ButtonWithRef.displayName = 'Button';

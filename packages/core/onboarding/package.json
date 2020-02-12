@@ -2,10 +2,12 @@
   "name": "@uidu/onboarding",
   "version": "0.1.8",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
+  "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
   "module": "index.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/progress-indicator": "^7.0.8",
     "@uidu/analytics": "^0.1.17",

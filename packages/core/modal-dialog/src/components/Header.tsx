@@ -15,6 +15,7 @@ const TitleIcon = ({ appearance }: { appearance?: 'danger' | 'warning' }) => {
   const Icon = appearance === 'danger' ? ErrorIcon : WarningIcon;
 
   return (
+    // @ts-ignore
     <span css={titleIconWrapperStyles(appearance)}>
       <Icon label={`${appearance} icon`} />
     </span>
