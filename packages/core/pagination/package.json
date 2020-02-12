@@ -21,8 +21,6 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.41",
     "@uidu/section-message": "^0.1.19",
-    "enzyme": "^3.10.0",
-    "exenv": "^1.2.2",
     "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0"
   },
