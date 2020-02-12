@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 0.1.13
+
+### Patch Changes
+
+- e28e4d9: Fix tsconfig
+- Updated dependencies [e28e4d9]
+- Updated dependencies [e28e4d9]
+  - @uidu/theme@0.2.1
+  - @uidu/emoji@0.1.7
+  - @uidu/mentions@0.1.12
+
 ## 0.1.12
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @uidu/editor-core
 
+## 0.1.24
+
+### Patch Changes
+
+- e28e4d9: Fix tsconfig
+- Updated dependencies [e28e4d9]
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+  - @uidu/modal-dialog@0.1.27
+  - @uidu/theme@0.2.1
+  - @uidu/editor-common@0.1.13
+  - @uidu/date@0.1.6
+  - @uidu/emoji@0.1.7
+  - @uidu/mentions@0.1.12
+  - @uidu/status@0.1.7
+  - @uidu/task-decision@0.1.7
+  - @uidu/select@0.2.10
+
 ## 0.1.23
 
 ### Patch Changes

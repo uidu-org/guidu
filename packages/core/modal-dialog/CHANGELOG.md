@@ -1,5 +1,17 @@
 # @uidu/modal-dialog
 
+## 0.1.27
+
+### Patch Changes
+
+- e28e4d9: Release pagination
+- Updated dependencies [e28e4d9]
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+  - @uidu/theme@0.2.1
+  - @uidu/field-text@0.1.27
+  - @uidu/select@0.2.10
+
 ## 0.1.26
 
 ### Patch Changes

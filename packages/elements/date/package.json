@@ -1,6 +1,6 @@
 {
   "name": "@uidu/date",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Fabric Date React Components",
   "keywords": [
     "date",
@@ -20,7 +20,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/theme": "^0.2.0",
+    "@uidu/theme": "^0.2.1",
     "date-fns": "^2.0.0",
     "styled-components": "^5.0.0"
   },

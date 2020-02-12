@@ -1,5 +1,15 @@
 # @uidu/onboarding
 
+## 0.1.9
+
+### Patch Changes
+
+- e28e4d9: Release pagination
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+  - @uidu/modal-dialog@0.1.27
+  - @uidu/theme@0.2.1
+
 ## 0.1.8
 
 ### Patch Changes

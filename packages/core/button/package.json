@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.51",
+  "version": "0.1.52",
   "description": "Button component for use in forms",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -10,7 +10,7 @@
   "dependencies": {
     "@uidu/analytics": "^0.1.17",
     "@uidu/spinner": "^0.1.16",
-    "@uidu/theme": "^0.2.0",
+    "@uidu/theme": "^0.2.1",
     "memoize-one": "^5.0.0"
   },
   "devDependencies": {

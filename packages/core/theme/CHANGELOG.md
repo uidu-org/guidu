@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.2.1
+
+### Patch Changes
+
+- e28e4d9: Release pagination
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+
 ## 0.2.0
 
 ### Minor Changes

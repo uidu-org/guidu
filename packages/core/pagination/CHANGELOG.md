@@ -1,5 +1,15 @@
 # @atlaskit/pagination
 
+## 0.1.10
+
+### Patch Changes
+
+- e28e4d9: Release pagination
+- c5aed24: FIX pagination tsconfig
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+  - @uidu/theme@0.2.1
+
 ## 12.0.16
 
 ### Patch Changes

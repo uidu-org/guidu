@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.1.7
+
+### Patch Changes
+
+- e28e4d9: Fix tsconfig
+- Updated dependencies [e28e4d9]
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+  - @uidu/theme@0.2.1
+  - @uidu/editor-common@0.1.13
+
 ## 0.1.6
 
 ### Patch Changes

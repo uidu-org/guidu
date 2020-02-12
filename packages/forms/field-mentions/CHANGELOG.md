@@ -1,5 +1,14 @@
 # @uidu/field-mentions
 
+## 0.1.25
+
+### Patch Changes
+
+- e28e4d9: Fix tsconfig
+- Updated dependencies [e28e4d9]
+  - @uidu/button@0.1.52
+  - @uidu/theme@0.2.1
+
 ## 0.1.24
 
 ### Patch Changes

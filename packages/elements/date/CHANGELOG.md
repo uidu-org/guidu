@@ -1,5 +1,13 @@
 # @atlaskit/date
 
+## 0.1.6
+
+### Patch Changes
+
+- e28e4d9: Fix tsconfig
+- Updated dependencies [e28e4d9]
+  - @uidu/theme@0.2.1
+
 ## 0.1.5
 
 ### Patch Changes
