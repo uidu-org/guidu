@@ -275,6 +275,14 @@
         "../../core/onboarding/src/types",
         "./packages/core/onboarding/src/types"
       ],
+      "@uidu/pagination": [
+        "../../core/pagination/src/",
+        "./packages/core/pagination/src/"
+      ],
+      "@uidu/pagination/types": [
+        "../../core/pagination/src/types",
+        "./packages/core/pagination/src/types"
+      ],
       "@uidu/popper": [
         "../../core/popper/src/",
         "./packages/core/popper/src/"
@@ -1050,6 +1058,10 @@
       "@uidu/navigation/types": [
         "../../navigation/navigation/src/types",
         "./packages/navigation/navigation/src/types"
+      ],
+      "@uidu/responsivr/constants": [
+        "../../navigation/responsivr/src/constants",
+        "./packages/navigation/responsivr/src/constants"
       ],
       "@uidu/responsivr": [
         "../../navigation/responsivr/src/",

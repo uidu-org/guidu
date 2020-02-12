@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.2.0"
+    "@uidu/theme": "^0.2.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.41",

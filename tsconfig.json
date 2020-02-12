@@ -2,10 +2,12 @@
   "extends": "./tsconfig.entry-points.json",
   "compilerOptions": {
     "allowJs": false,
-    "alwaysStrict": false,
+    "strict": false,
+    "allowSyntheticDefaultImports": true,
     "declaration": true,
-    "downlevelIteration": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
+    "downlevelIteration": true,
     "importHelpers": true,
     "jsx": "react",
     "moduleResolution": "node",
@@ -18,22 +20,22 @@
     "skipLibCheck": true,
     "noImplicitReturns": true,
     "noUnusedParameters": false,
-    "strict": false,
     "strictFunctionTypes": true,
     "target": "es5",
     "module": "esnext",
     "lib": [
       "dom",
+      "es5",
       "es7",
       "scripthost",
       "es2015.core",
       "es2015.collection",
       "es2015.symbol",
       "es2015.iterable",
-      "es2015.promise"
+      "es2015.promise",
+      "es2016.array.include"
     ],
-    "typeRoots": ["./typings", "./node_modules/@types"],
-    "esModuleInterop": true
+    "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "files": [
     "./typings/atlaskit.d.ts",
