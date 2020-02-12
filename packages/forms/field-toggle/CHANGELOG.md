@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 0.1.26
+
+### Patch Changes
+
+- 103f03b: Fix build
+
 ## 0.1.25
 
 ### Patch Changes
