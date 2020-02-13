@@ -5,6 +5,6 @@
     "outDir": "../../",
     "paths": {}
   },
-  "include": ["../src/**/*.ts", "../src/**/*.tsx"],
-  "exclude": ["../src/**/__tests__/*"]
+  "include": ["../../src/**/*.ts", "../../src/**/*.tsx"],
+  "exclude": ["../../src/__tests__/unit/*.*", "../../src/**/__tests__/unit/*.*"]
 }
