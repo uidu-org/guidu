@@ -1,5 +1,11 @@
 # @atlaskit/pagination
 
+## 0.1.11
+
+### Patch Changes
+
+- 03c2b34: Missing export for pagination
+
 ## 0.1.10
 
 ### Patch Changes

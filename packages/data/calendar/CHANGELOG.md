@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.20
+
+### Patch Changes
+
+- 03c2b34: Missing export for pagination
+
 ## 0.1.19
 
 ### Patch Changes
