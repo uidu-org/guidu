@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@uidu/build-utils": "^0.1.14",
-    "bolt": "^0.24.1",
+    "bolt": "^0.24.3",
     "boxen": "^4.0.0",
     "chalk": "^3.0.0",
     "fs-extra": "^8.0.1",

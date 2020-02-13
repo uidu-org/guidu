@@ -157,7 +157,7 @@
     "babel-plugin-lodash": "^3.3.4",
     "blueimp-load-image": "^2.20.1",
     "body-scroll-lock": "^2.6.1",
-    "bolt": "^0.24.1",
+    "bolt": "^0.24.3",
     "bolt-query": "^1.1.4",
     "bolt-webpack-analyzer": "^0.0.1",
     "bootstrap": "^4.4.1",
@@ -486,6 +486,7 @@
     "yarn": "^1.9.2"
   },
   "bolt": {
+    "version": "^0.24.3",
     "workspaces": [
       "packages/*/*",
       "themes/*",
