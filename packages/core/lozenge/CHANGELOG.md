@@ -1,5 +1,11 @@
 # @uidu/lozenge
 
+## 0.1.19
+
+### Patch Changes
+
+- 103f03b: Fix build
+
 ## 0.1.18
 
 ### Patch Changes

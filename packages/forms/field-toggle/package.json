@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-toggle",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "A component to view and switch between enabled or disabled states",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
