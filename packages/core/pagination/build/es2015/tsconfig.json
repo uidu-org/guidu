@@ -2,7 +2,7 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "declaration": true,
-    "target": "es5",
+    "outDir": "../../",
     "paths": {}
   },
   "include": ["../src/**/*.ts", "../src/**/*.tsx"],
