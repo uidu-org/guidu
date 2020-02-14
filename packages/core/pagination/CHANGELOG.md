@@ -1,5 +1,11 @@
 # @atlaskit/pagination
 
+## 0.1.12
+
+### Patch Changes
+
+- 9484b96: Ok, now pagination can be released
+
 ## 0.1.11
 
 ### Patch Changes
