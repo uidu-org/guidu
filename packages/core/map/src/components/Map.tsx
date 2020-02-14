@@ -1,6 +1,6 @@
 import GoogleMapReact, { Props } from 'google-map-react';
 import React, { Component } from 'react';
-import defaultMapOptions from '../utils';
+import { mapOptions } from '../utils';
 
 type LocationProps = {
   lat: number;
@@ -8,9 +8,8 @@ type LocationProps = {
 };
 
 type MapProps = {
-  bootstrapURLKeys: object;
+  bootstrapURLKeys?: object;
   location: LocationProps;
-  children?: Node;
 } & Props;
 
 export default class Map extends Component<MapProps> {
@@ -24,7 +23,7 @@ export default class Map extends Component<MapProps> {
       <GoogleMapReact
         defaultZoom={defaultZoom}
         defaultCenter={{ lat: location.lat, lng: location.lng }}
-        options={defaultMapOptions}
+        options={mapOptions}
         {...otherProps}
       >
         {children}

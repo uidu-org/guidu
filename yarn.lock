@@ -207,9 +207,9 @@
   integrity sha512-Xr+8sxkLfsXRRESwh/HRinR0+vmxlLXLwx0bEa3gg+ps8VBQXHFFyY0MAIQVWcn80uUp9RS99EbidyqVl8h8zg==
 
 "@amcharts/amcharts4@^4.7.14":
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4/-/amcharts4-4.9.0.tgz#7a35fa34a38121ec6317fabb9336d85c70361b58"
-  integrity sha512-l4Mzn1LTahw4Nu6iTWlKJTe1DkAIKl2kkL+MgQrANjeDINTU0oWByQI0I1frCwwE2eLho+8X8tPmqN8CAumUCw==
+  version "4.9.1"
+  resolved "https://registry.yarnpkg.com/@amcharts/amcharts4/-/amcharts4-4.9.1.tgz#2e285fa6e5da7f2e6aeb767482b0be906c6e0f78"
+  integrity sha512-7oPbpTw55GwGsRSkI7g6TOz8bEAiOtuKlx0BKoiY8NFqNy1rn1dIjpOJTIPdGnqqXLc1jWttq4DOMW6rm5Cnjw==
   dependencies:
     "@types/regression" "^2.0.0"
     canvg "^2.0.0"
@@ -2033,9 +2033,9 @@
     glob-to-regexp "^0.3.0"
 
 "@netlify/build@^0.1.7":
-  version "0.1.50"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.50.tgz#05d85bc2f637aa3d48b378f1d9b2ca64abab7983"
-  integrity sha512-EKVrvIwbBuWpbVlTpmiss8Eq3y+fFnQrjXitXXhZ+6g2GTfgmjMuE+kceMGa2B1/liax9+uv91v0FKlqZWb7tA==
+  version "0.1.51"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.51.tgz#1b4a917bb1a53717862637fd7243c974299f5afb"
+  integrity sha512-q19sqPJ6XZtkVLLLqntjD75AJdVCl6pQZhCelsFeMdXsD23ntEJ50WXj2TgzVY9FYEw/mgdXZMBFZJ3lYBI7rA==
   dependencies:
     "@netlify/cache-utils" "^0.2.0"
     "@netlify/config" "^0.1.18"
@@ -6915,9 +6915,9 @@ compare-func@^1.3.1:
     dot-prop "^3.0.0"
 
 compare-versions@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.5.1.tgz#26e1f5cf0d48a77eced5046b9f67b6b61075a393"
-  integrity sha512-9fGPIB7C6AyM18CJJBHt5EnCZDG3oiTJYy0NjfIAGjKpzv0tkxWko7TNQHF5ymqm7IH03tqmeuBxtvD+Izh6mg==
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/compare-versions/-/compare-versions-3.6.0.tgz#1a5689913685e5a87637b8d3ffca75514ec41d62"
+  integrity sha512-W6Af2Iw1z4CB7q4uU4hv646dW9GQuBM+YpC0UvUCWSD8w90SJjp+ujJuXaEMtAXBtSqGfMPuFOVn4/+FlaqfBA==
 
 component-emitter@^1.2.1:
   version "1.3.0"
@@ -7845,9 +7845,9 @@ cssstyle@^2.0.0:
     cssom "~0.3.6"
 
 csstype@^2.2.0, csstype@^2.4.0, csstype@^2.5.2, csstype@^2.5.7, csstype@^2.6.7:
-  version "2.6.8"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.8.tgz#0fb6fc2417ffd2816a418c9336da74d7f07db431"
-  integrity sha512-msVS9qTuMT5zwAGCVm4mxfrZ18BNc6Csd0oJAtiFMZ1FAx1CCvy2+5MDmYoix63LM/6NDbNtodCiGYGmFgO0dA==
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.6.9.tgz#05141d0cd557a56b8891394c1911c40c8a98d098"
+  integrity sha512-xz39Sb4+OaTsULgUERcCk+TJj8ylkL4aSVDQiX/ksxbELSqwkgt4d4RD7fovIdgJGSuNYqwZEiVjYY5l0ask+Q==
 
 csv-generate@^3.2.4:
   version "3.2.4"
@@ -11387,12 +11387,12 @@ group-by@^0.0.1:
   dependencies:
     to-function "*"
 
-grouped-queue@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/grouped-queue/-/grouped-queue-0.3.3.tgz#c167d2a5319c5a0e0964ef6a25b7c2df8996c85c"
-  integrity sha1-wWfSpTGcWg4JZO9qJbfC34mWyFw=
+grouped-queue@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/grouped-queue/-/grouped-queue-1.0.0.tgz#5bdb97934a9a17b19626ff3cc23c103f2622ef49"
+  integrity sha512-XslfWrAGCYovQjveHODR0hllUrsn3UtvPFTkamHbgVHmkUA6eCIDmw3JDWVLJvuntTvYjwaPGamlyzK4/HAEOA==
   dependencies:
-    lodash "^4.17.2"
+    lodash "^4.17.15"
 
 growly@^1.3.0:
   version "1.3.0"
@@ -14318,7 +14318,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-"lodash@>=3.5 <5", lodash@^4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.16.2, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.5.1, lodash@~4.17.12:
+"lodash@>=3.5 <5", lodash@^4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.16.2, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.1, lodash@^4.3.0, lodash@^4.5.1, lodash@~4.17.12:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
@@ -18572,9 +18572,9 @@ react-ga@^2.5.7:
   integrity sha512-AjC7UOZMvygrWTc2hKxTDvlMXEtbmA0IgJjmkhgmQQ3RkXrWR11xEagLGFGaNyaPnmg24oaIiaNPnEoftUhfXA==
 
 react-google-login@^5.0.4:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.1.0.tgz#ed9f1069310419dfe263ffcab986a246140752b7"
-  integrity sha512-G5sh6EWJbQxk2hAel0EUB6r1Nyz9BRW/fEyCHV8g108l37/k/ctXDi4I3v1NCYzGN8SQFWq1I2l4mqMkxIVHLQ==
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/react-google-login/-/react-google-login-5.1.1.tgz#9d479ccc0aca8ca4c81f4180b02af861869264fe"
+  integrity sha512-va/co9925tDrV3txX7PX9Uzht/vvfE0zPO4j/eyI8HAvdd0oY+QLDY6a8tKO6OD882Kz4ebX3tCES2yjkDwawg==
   dependencies:
     "@types/react" "*"
     prop-types "^15.6.0"
@@ -19585,9 +19585,9 @@ regjsparser@^0.1.4:
     jsesc "~0.5.0"
 
 regjsparser@^0.6.0:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/regjsparser/-/regjsparser-0.6.2.tgz#fd62c753991467d9d1ffe0a9f67f27a529024b96"
-  integrity sha512-E9ghzUtoLwDekPT0DYCp+c4h+bvuUpe6rRHCTYn6eGoqj1LgKXxT6I0Il4WbjhQkOghzi/V+y03bPKvbllL93Q==
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/regjsparser/-/regjsparser-0.6.3.tgz#74192c5805d35e9f5ebe3c1fb5b40d40a8a38460"
+  integrity sha512-8uZvYbnfAtEm9Ab8NTb3hdLwL4g/LQzEYP7Xs27T96abJCCE2d6r3cPZPQEsLKy0vRSGVNG+/zVGtLr86HQduA==
   dependencies:
     jsesc "~0.5.0"
 
@@ -20606,10 +20606,10 @@ slide@^1.1.5:
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
   integrity sha1-VusCfWW00tzmyy4tMsTUr8nh1wc=
 
-smartwrap@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/smartwrap/-/smartwrap-1.2.1.tgz#d999ae117a42ab2028f5296dda2c3287e3a6b8d4"
-  integrity sha512-Il2w1OE1iZFxkahdafzq31yqgqNj4egafxBHNTQ28Eo24+2KwvVBe9Hj7hX4azO6TntLD3/7Xkj7bg2z0QbEhw==
+smartwrap@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/smartwrap/-/smartwrap-1.2.2.tgz#f003419acaafd52df51df3584826537eb6de4816"
+  integrity sha512-61uQjPaEL770SilnKDJ6N0KTubVON0l71TiX/3kJO2RJ/QgzSotBbg2wZ4nlJ46ZlQpGcYaMaYZ/B5KHSaaYVA==
   dependencies:
     breakword "^1.0.5"
     wcwidth "^1.0.1"
@@ -22221,13 +22221,13 @@ tty-browserify@0.0.0:
   integrity sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY=
 
 tty-table@^2.7.0:
-  version "2.8.8"
-  resolved "https://registry.yarnpkg.com/tty-table/-/tty-table-2.8.8.tgz#7dd9ac5b393ed2fa947a1253f399f2e5236763be"
-  integrity sha512-G4OF9etnLntyKCphVhmCCE+2sWVUeGTY/85KBqyp6zbouW3Y9D1ahUoco4159C6qxnid7cz2ZdHyy532ypz/Gg==
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/tty-table/-/tty-table-2.8.9.tgz#449bb4fdedc5d6a420ac50b9286d7d3b8bbc2235"
+  integrity sha512-MeW7rIZCfnjne3TWP1OooUBH4hGzudnJ3joeXWu5+jLCIawX5lRdtYZi6gKwO5gknZeCMXrMo9YuHxu3rg0X5A==
   dependencies:
     chalk "^2.4.2"
     csv "^5.3.1"
-    smartwrap "^1.2.1"
+    smartwrap "^1.2.2"
     strip-ansi "^6.0.0"
     wcwidth "^1.0.1"
     yargs "^15.1.0"
@@ -23786,9 +23786,9 @@ yauzl@^2.4.2:
     fd-slicer "~1.1.0"
 
 yeoman-environment@^2.0.5, yeoman-environment@^2.1.1:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.7.0.tgz#d1b6679de883ce14a68b869c4b19d55a0d66f477"
-  integrity sha512-YNzSUWgJVSgnm0qgLON4Gb2nTm+kywBiWjK4MbvosjUP2YJJ30lNhEx7ukyzKRPUlsavd5IsuALtF6QaVrq81A==
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/yeoman-environment/-/yeoman-environment-2.8.0.tgz#003f7d3f506e868b86dbc1c1265a963a236807fa"
+  integrity sha512-BbJeEna23Qx90fBiJt1awcZ9okfPY/rP3xZYsk1rD3x8LuQgpo4BfegPvQT1sqqh2+gYVZmYZMv5pS8+Muyr9Q==
   dependencies:
     chalk "^2.4.1"
     cross-spawn "^6.0.5"
@@ -23796,7 +23796,7 @@ yeoman-environment@^2.0.5, yeoman-environment@^2.1.1:
     diff "^3.5.0"
     escape-string-regexp "^1.0.2"
     globby "^8.0.1"
-    grouped-queue "^0.3.3"
+    grouped-queue "^1.0.0"
     inquirer "^6.0.0"
     is-scoped "^1.0.0"
     lodash "^4.17.10"

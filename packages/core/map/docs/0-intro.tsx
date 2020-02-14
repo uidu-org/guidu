@@ -15,7 +15,7 @@ export default md`
       packageName="@uidu/map"
       Component={require('../examples/0-basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/0-basic')}
+      source={require('!!raw-loader!../examples/0-basic').default}
       fullWidth
     />
   )}
@@ -25,7 +25,7 @@ export default md`
       packageName="@uidu/map"
       Component={require('../examples/1-with-marker').default}
       title="With Marker"
-      source={require('!!raw-loader!../examples/1-with-marker')}
+      source={require('!!raw-loader!../examples/1-with-marker').default}
       fullWidth
     />
   )}
@@ -35,14 +35,26 @@ export default md`
       packageName="@uidu/map"
       Component={require('../examples/2-with-cluster').default}
       title="With Marker Cluster"
-      source={require('!!raw-loader!../examples/2-with-cluster')}
+      source={require('!!raw-loader!../examples/2-with-cluster').default}
+      fullWidth
+    />
+  )}
+
+  ${(
+    <Example
+      packageName="@uidu/map"
+      Component={require('../examples/3-with-hover').default}
+      title="With Hover"
+      source={require('!!raw-loader!../examples/3-with-hover').default}
       fullWidth
     />
   )}
 
   ${(
     <Props
-      props={require('!!extract-react-types-loader!../src/components/Map')}
+      props={
+        require('!!extract-react-types-loader!../src/components/Map').default
+      }
     />
   )}
 `;
