@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.1.17
+
+### Patch Changes
+
+- 5b3e05a: Fix devise signIn and drawer flex properties
+
 ## 0.1.16
 
 ### Patch Changes
