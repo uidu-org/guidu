@@ -1,5 +1,11 @@
 # @uidu/map
 
+## 0.2.5
+
+### Patch Changes
+
+- ac4ba63: Better map support
+
 ## 0.2.4
 
 ### Patch Changes
