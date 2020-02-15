@@ -80,7 +80,11 @@ export default class Providers extends PureComponent<any, any> {
   }
 
   handleSubmit = model => {
-    const { routes, checkExistence, history } = this.props;
+    const { routes, checkExistence, history, signIn } = this.props;
+    const { exist } = this.state;
+    if (exist) {
+      return signIn(model);
+    }
     return checkExistence(model.user.email).then(response => {
       if (response.data.exists) {
         return this.setState(
