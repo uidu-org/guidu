@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 0.1.6
+
+### Patch Changes
+
+- 5b3e05a: Fix devise signIn and drawer flex properties
+
 ## 0.1.5
 
 ### Patch Changes
