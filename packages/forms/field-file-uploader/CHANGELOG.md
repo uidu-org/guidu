@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 0.1.7
+
+### Patch Changes
+
+- e434195: Fix file uploader build
+
 ## 0.1.6
 
 ### Patch Changes
