@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.3.1
+
+### Patch Changes
+
+- 1b99f49: Fix dashboard manager build
+
 ## 0.3.0
 
 ### Minor Changes
