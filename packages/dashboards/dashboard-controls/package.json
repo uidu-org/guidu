@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-controls",
-  "version": "0.1.18",
+  "version": "0.2.0",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -19,7 +19,7 @@
     "react-intl": "^3.1.7"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40",
+    "@uidu/docs": "^0.1.42",
     "moment": "^2.18.1"
   },
   "uidu:src": "index.ts"

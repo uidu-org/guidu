@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.42
+
+### Patch Changes
+
+- 90d9e8e: New dashboard controls and dashlets
+
 ## 0.1.41
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/dashboard-manager
 
+## 0.3.0
+
+### Minor Changes
+
+- 90d9e8e: New dashboard controls and dashlets
+
+### Patch Changes
+
+- Updated dependencies [90d9e8e]
+  - @uidu/dashboard-controls@0.2.0
+  - @uidu/dashlets@0.2.0
+  - @uidu/docs@0.1.42
+
 ## 0.2.3
 
 ### Patch Changes

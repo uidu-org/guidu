@@ -1,5 +1,16 @@
 # @uidu/dashboard-controls
 
+## 0.2.0
+
+### Minor Changes
+
+- 90d9e8e: New dashboard controls and dashlets
+
+### Patch Changes
+
+- Updated dependencies [90d9e8e]
+  - @uidu/docs@0.1.42
+
 ## 0.1.18
 
 ### Patch Changes
