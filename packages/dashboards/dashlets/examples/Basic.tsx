@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchDonations } from '../../dashboard-manager/examples-utils';
-import { Blocks } from '../src';
+import { Dashlets } from '../src';
 
 export default class Basic extends Component<any> {
   constructor(props) {
@@ -27,7 +27,7 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <div className="p-3">
-        <Blocks
+        <Dashlets
           blocks={[
             { kind: 'Geo', namespace: 'donations', rollup: ['count', 'id'] },
             {

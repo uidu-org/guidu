@@ -1,4 +1,4 @@
-import { colors } from '@uidu/blocks';
+import { colors } from '@uidu/dashlets';
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';

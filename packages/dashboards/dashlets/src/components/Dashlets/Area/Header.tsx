@@ -1,6 +1,6 @@
 import React from 'react';
 import CountUp from 'react-countup';
-import { format, manipulator } from '../../utils';
+import { format, manipulator } from '../../../utils';
 
 const renderDifference = ({ difference }) => {
   if (difference) {

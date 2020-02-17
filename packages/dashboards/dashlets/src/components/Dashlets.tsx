@@ -1,21 +1,18 @@
 import loadable from '@loadable/component';
 import React, { PureComponent } from 'react';
-import { BlocksProps } from '../types';
+import { DashletsProps } from '../types';
 
-// const LoadableBlock = loadable(props => import(`./${props.kind}`));
-
-const LoadableArea = loadable(() => import(`./Area`));
-const LoadableBar = loadable(() => import(`./Bar`));
-const LoadableCounter = loadable(() => import(`./Counter`));
-const LoadableFunnel = loadable(() => import(`./Funnel`));
-const LoadableGeo = loadable(() => import(`./Geo`));
-const LoadableList = loadable(() => import(`./List`));
-const LoadablePie = loadable(() => import(`./Pie`));
-const LoadableRadial = loadable(() => import(`./Radial`));
-const LoadableTreemap = loadable(() => import(`./Treemap`));
+const LoadableArea = loadable(() => import(`./Dashlets/Area`));
+const LoadableBar = loadable(() => import(`./Dashlets/Bar`));
+const LoadableCounter = loadable(() => import(`./Dashlets/Counter`));
+const LoadableFunnel = loadable(() => import(`./Dashlets/Funnel`));
+const LoadableGeo = loadable(() => import(`./Dashlets/Geo`));
+const LoadableList = loadable(() => import(`./Dashlets/List`));
+const LoadablePie = loadable(() => import(`./Dashlets/Pie`));
+const LoadableRadial = loadable(() => import(`./Dashlets/Radial`));
+const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap`));
 
 export const renderBlock = ({ kind, ...block }, rowData, rest) => {
-  console.log(kind);
   switch (kind) {
     case 'Area':
       return <LoadableArea {...block} rowData={rowData} {...rest} />;
@@ -38,19 +35,9 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
     default:
       return null;
   }
-  // return (
-  //   <LoadableBlock
-  //     kind={kind}
-  //     rowData={rowData}
-  //     comparatorData={comparatorData}
-  //     namespace={namespace}
-  //     {...rest}
-  //     {...otherProps}
-  //   />
-  // );
 };
 
-export default class Blocks extends PureComponent<BlocksProps> {
+export default class Dashlets extends PureComponent<DashletsProps> {
   render() {
     const { blocks, rowData, ...rest } = this.props;
     return blocks.map(block => renderBlock(block, rowData, rest as any));

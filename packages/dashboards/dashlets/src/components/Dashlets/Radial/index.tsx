@@ -4,8 +4,8 @@ import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
 import uuid from 'uuid/v1';
-import { colors, manipulator } from '../../utils';
-import Loader from '../Loader';
+import { colors, manipulator } from '../../../utils';
+import Loader from '../../Loader';
 
 am4core.useTheme(am4themes_animated);
 am4core.options.commercialLicense = true;

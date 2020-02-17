@@ -3,11 +3,62 @@ import * as React from 'react';
 
 export default md`
 
-  Buttons are used as triggers for actions. They are used in forms, toolbars,
-  dialog footers and as stand-alone action triggers.
+  # Dashlets
+  Dashlets are dashboard components used to represent and analyze data. Dashlets are imagined as single analytics blocks, that can be edited and filtered according to its type.
 
-  Button also exports a chat-window-group component to make it easy to display
-  multiple chat-windows together.
+  ${(
+    <table className="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Counter</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>Funnel</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>Map</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>List</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>Pie</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>Radial</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>Treemap</td>
+          <td>Short description</td>
+        </tr>
+        <tr>
+          <td>XY Chart</td>
+          <td>
+            Inspired by{' '}
+            <a
+              href="https://www.amcharts.com/docs/v4/chart-types/xy-chart/"
+              target="_blank"
+            >
+              Amcharts
+            </a>{' '}
+            allows to create bar, line and area charts.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  )}
 
   ## Usage
 
@@ -18,7 +69,7 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 
@@ -27,16 +78,16 @@ export default md`
   ${(
     <Example
       packageName="@uidu/stepper"
-      Component={require('../examples/SingleBlocks').default}
-      title="Single Blocks"
-      source={require('!!raw-loader!../examples/SingleBlocks')}
+      Component={require('../examples/SingleDashlets').default}
+      title="Single Dashlet"
+      source={require('!!raw-loader!../examples/SingleDashlets').default}
     />
   )}
 
   ${(
     <Props
-      heading="Blocks"
-      props={require('!!extract-react-types-loader!../src/components/Blocks')}
+      heading="Dashlets"
+      props={require('!!extract-react-types-loader!../src/components/Dashlets')}
     />
   )}
 `;

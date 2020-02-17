@@ -1,8 +1,8 @@
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import { manipulator, resolve } from '../../utils';
-import Loader from '../Loader';
-import Switch from '../Switch';
+import { manipulator, resolve } from '../../../utils';
+import Loader from '../../Loader';
+import Switch from '../../Switch';
 import Items from './Items';
 
 export default class ListBlock extends PureComponent<

@@ -1,4 +1,3 @@
-import { renderBlock } from '@uidu/blocks';
 import {
   GroupersKeys,
   TimeFrame,
@@ -6,6 +5,7 @@ import {
   TimeFrameGrouper,
   TimeFrameKeys,
 } from '@uidu/dashboard-controls';
+import { renderBlock } from '@uidu/dashlets';
 import React, { Component, Fragment } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';

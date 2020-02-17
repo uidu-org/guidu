@@ -1,6 +1,6 @@
 import { Layout } from 'react-grid-layout';
 
-export type BlockProps = {
+export type DashletProps = {
   kind: string;
   namespace: string;
   label: string;
@@ -8,8 +8,8 @@ export type BlockProps = {
   formatter?: string;
 } & Layout;
 
-export type BlocksProps = {
-  blocks: Array<BlockProps>;
+export type DashletsProps = {
+  blocks: Array<DashletProps>;
   comparatorData?:
     | {
         [key: string]: Array<any>;

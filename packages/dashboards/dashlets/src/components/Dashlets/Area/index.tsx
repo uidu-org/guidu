@@ -5,7 +5,7 @@ import { rollup } from 'd3-array';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
 import uuid from 'uuid/v1';
-import { format, manipulator } from '../../utils';
+import { format, manipulator } from '../../../utils';
 import Header from './Header';
 import { labelByTimeframeGroup } from './Tooltip';
 

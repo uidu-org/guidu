@@ -1,3 +1,3 @@
 export * from './components';
-export { default as Blocks, renderBlock } from './components/Blocks';
+export { default as Dashlets, renderBlock } from './components/Dashlets';
 export * from './utils';

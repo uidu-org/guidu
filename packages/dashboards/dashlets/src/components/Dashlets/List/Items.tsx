@@ -1,5 +1,5 @@
 import React from 'react';
-import { format } from '../../utils';
+import { format } from '../../../utils';
 
 export default function Items({ data, datumRenderer, limit, formatter }) {
   return (

@@ -4,8 +4,8 @@ import * as am4maps from '@amcharts/amcharts4/maps';
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
 import uuid from 'uuid/v1';
-import { manipulator, resolve } from '../../utils';
-import Loader from '../Loader';
+import { manipulator, resolve } from '../../../utils';
+import Loader from '../../Loader';
 
 am4core.options.commercialLicense = true;
 

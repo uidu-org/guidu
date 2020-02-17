@@ -415,14 +415,6 @@
         "../../core/tooltip/src/types",
         "./packages/core/tooltip/src/types"
       ],
-      "@uidu/blocks": [
-        "../../dashboards/blocks/src/",
-        "./packages/dashboards/blocks/src/"
-      ],
-      "@uidu/blocks/types": [
-        "../../dashboards/blocks/src/types",
-        "./packages/dashboards/blocks/src/types"
-      ],
       "@uidu/dashboard-controls": [
         "../../dashboards/dashboard-controls/src/",
         "./packages/dashboards/dashboard-controls/src/"
@@ -438,6 +430,14 @@
       "@uidu/dashboard-manager/types": [
         "../../dashboards/dashboard-manager/src/types",
         "./packages/dashboards/dashboard-manager/src/types"
+      ],
+      "@uidu/dashlets": [
+        "../../dashboards/dashlets/src/",
+        "./packages/dashboards/dashlets/src/"
+      ],
+      "@uidu/dashlets/types": [
+        "../../dashboards/dashlets/src/types",
+        "./packages/dashboards/dashlets/src/types"
       ],
       "@uidu/board": [
         "../../data/board/src/",

@@ -22,7 +22,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40"
+    "@uidu/docs": "^0.1.41"
   },
   "publishConfig": {
     "access": "public"
