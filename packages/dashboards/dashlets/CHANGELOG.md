@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 0.1.1
+
+### Patch Changes
+
+- ccb9047: Rename @uidu/blocks into @uidu/dashlets
+- 9d385d8: Using dashlets instead of blocks
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.2.3
+
+### Patch Changes
+
+- 9d385d8: Using dashlets instead of blocks
+- Updated dependencies [ccb9047]
+- Updated dependencies [9d385d8]
+  - @uidu/dashlets@0.1.1
+
 ## 0.2.2
 
 ### Patch Changes
