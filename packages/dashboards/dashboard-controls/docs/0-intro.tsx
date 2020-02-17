@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 
@@ -27,25 +27,25 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/Navigator').default}
       title="Navigator"
-      source={require('!!raw-loader!../examples/Navigator')}
+      source={require('!!raw-loader!../examples/Navigator').default}
     />
   )}
 
   ${(
     <Props
-      heading="Sorter"
+      heading="Sorter Types"
       props={require('!!extract-react-types-loader!../src/components/TimeFrame')}
     />
   )}
   ${(
     <Props
-      heading="Sorter"
+      heading="Sorter Types"
       props={require('!!extract-react-types-loader!../src/components/TimeFrameGrouper')}
     />
   )}
   ${(
     <Props
-      heading="Sorter"
+      heading="Sorter Types"
       props={require('!!extract-react-types-loader!../src/components/TimeFrameComparator')}
     />
   )}

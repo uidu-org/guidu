@@ -1,7 +1,7 @@
 // @flow
 
 import Tooltip from '@uidu/tooltip';
-import React, { ComponentType, Fragment } from 'react';
+import React, { ComponentType } from 'react';
 import { Code } from 'react-feather';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
@@ -39,8 +39,9 @@ export const Toggle = styled.div`
 `;
 
 // NOTE: use of important necessary to override element targeted headings
-export const ToggleTitle = styled.h6`
+export const ToggleTitle = styled.h5`
   margin: 0;
+  color: #adb5bd;
 `;
 
 const Showcase = styled.div`
@@ -92,7 +93,7 @@ export default class Example extends React.Component<Props, State> {
     const mode = isSourceVisible ? 'open' : 'closed';
 
     return (
-      <Fragment>
+      <div className="my-5">
         <Tooltip position="mouse" content={toggleLabel}>
           <Toggle
             ref={c => {
@@ -102,11 +103,13 @@ export default class Example extends React.Component<Props, State> {
             title={toggleLabel}
             mode={mode}
           >
-            <ToggleTitle mode={mode}>{title}</ToggleTitle>
+            <ToggleTitle mode={mode}>
+              {title} <small>Example</small>
+            </ToggleTitle>
             <Code id="UncontrolledTooltipExample" label={toggleLabel} />
           </Toggle>
         </Tooltip>
-        <Wrapper className="border mb-5 card" mode={mode}>
+        <Wrapper className="border card" mode={mode}>
           {isSourceVisible && (
             <SyntaxHighlighter
               language="javascript"
@@ -132,7 +135,7 @@ export default class Example extends React.Component<Props, State> {
             </Showcase>
           </div>
         </Wrapper>
-      </Fragment>
+      </div>
     );
   }
 }

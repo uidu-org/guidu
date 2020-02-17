@@ -6,7 +6,6 @@ import React, { PureComponent } from 'react';
 import uuid from 'uuid/v1';
 import { colors, manipulator, resolve } from '../../../utils';
 import Loader from '../../Loader';
-import Switch from '../../Switch';
 
 am4core.useTheme(am4themes_animated);
 am4core.options.commercialLicense = true;
@@ -78,6 +77,8 @@ export default class TreemapBlock extends PureComponent<any, any> {
   getChart = () => {
     if (!this.chart) {
       const chart = am4core.create(this.id, am4charts.TreeMap);
+      chart.paddingLeft = 19;
+      chart.paddingRight = 19;
       let level1 = chart.seriesTemplates.create('0');
       let level1_column = level1.columns.template;
       level1_column.column.cornerRadius(10, 10, 10, 10);
@@ -111,8 +112,8 @@ export default class TreemapBlock extends PureComponent<any, any> {
     }
 
     return (
-      <div className="card h-100">
-        <div className="card-header d-flex align-items-center">
+      <>
+        {/* <div className="card-header d-flex align-items-center">
           <span className="text-truncate">{label}</span>
           <Switch
             isPrevious={showPrevious}
@@ -128,9 +129,9 @@ export default class TreemapBlock extends PureComponent<any, any> {
                 : timeRange.range
             }
           />
-        </div>
+        </div> */}
         <div id={this.id} style={{ width: '100%', height: '100%' }} />
-      </div>
+      </>
     );
   }
 }

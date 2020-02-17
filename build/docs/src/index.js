@@ -9,7 +9,7 @@ const customMd = defaultMd.customize({
       React.createElement(
         'h' + props.level,
         {
-          className: `h${props.level == 1 ? '2' : '6 mt-5'}`,
+          className: `h${props.level === 1 ? '2 mb-4' : '5 mt-5'}`,
         },
         props.children,
       ),

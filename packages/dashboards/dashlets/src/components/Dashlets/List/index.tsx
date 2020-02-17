@@ -2,7 +2,6 @@ import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
 import { manipulator, resolve } from '../../../utils';
 import Loader from '../../Loader';
-import Switch from '../../Switch';
 import Items from './Items';
 
 export default class ListBlock extends PureComponent<
@@ -12,7 +11,7 @@ export default class ListBlock extends PureComponent<
   static defaultProps = {
     groupBy: null,
     sortBy: 'createdAt',
-    limit: 5,
+    limit: 6,
   };
 
   constructor(props) {
@@ -67,8 +66,8 @@ export default class ListBlock extends PureComponent<
       );
 
     return (
-      <div className="card h-100">
-        <div className="card-header d-flex align-items-center">
+      <>
+        {/* <div className="card-header d-flex align-items-center">
           <span className="text-truncate">{label}</span>
           {comparatorData && (
             <Switch
@@ -86,14 +85,14 @@ export default class ListBlock extends PureComponent<
               }
             />
           )}
-        </div>
+        </div> */}
         <Items
           data={manipulated}
           limit={limit}
           datumRenderer={datumRenderer}
           formatter={formatter}
         />
-      </div>
+      </>
     );
   }
 }

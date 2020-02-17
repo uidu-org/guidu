@@ -1,6 +1,8 @@
 import loadable from '@loadable/component';
 import React, { PureComponent } from 'react';
 import { DashletsProps } from '../types';
+import DashletFooter from './DashletFooter';
+import DashletHeader from './DashletHeader';
 
 const LoadableArea = loadable(() => import(`./Dashlets/Area`));
 const LoadableBar = loadable(() => import(`./Dashlets/Bar`));
@@ -13,33 +15,58 @@ const LoadableRadial = loadable(() => import(`./Dashlets/Radial`));
 const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap`));
 
 export const renderBlock = ({ kind, ...block }, rowData, rest) => {
+  let content = null;
+
   switch (kind) {
     case 'Area':
-      return <LoadableArea {...block} rowData={rowData} {...rest} />;
+      content = <LoadableArea {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Bar':
-      return <LoadableBar {...block} rowData={rowData} {...rest} />;
+      content = <LoadableBar {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Counter':
-      return <LoadableCounter {...block} rowData={rowData} {...rest} />;
+      content = <LoadableCounter {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Funnel':
-      return <LoadableFunnel {...block} rowData={rowData} {...rest} />;
+      content = <LoadableFunnel {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Geo':
-      return <LoadableGeo {...block} rowData={rowData} {...rest} />;
+      content = <LoadableGeo {...block} rowData={rowData} {...rest} />;
+      break;
     case 'List':
-      return <LoadableList {...block} rowData={rowData} {...rest} />;
+      content = <LoadableList {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Pie':
-      return <LoadablePie {...block} rowData={rowData} {...rest} />;
+      content = <LoadablePie {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Radial':
-      return <LoadableRadial {...block} rowData={rowData} {...rest} />;
+      content = <LoadableRadial {...block} rowData={rowData} {...rest} />;
+      break;
     case 'Treemap':
-      return <LoadableTreemap {...block} rowData={rowData} {...rest} />;
-    default:
-      return null;
+      content = <LoadableTreemap {...block} rowData={rowData} {...rest} />;
+      break;
   }
+
+  console.log(content);
+
+  return (
+    <div className="card h-100">
+      <DashletHeader name={block.label} description={block.description} />
+      {content}
+      <DashletFooter />
+    </div>
+  );
 };
 
 export default class Dashlets extends PureComponent<DashletsProps> {
   render() {
     const { blocks, rowData, ...rest } = this.props;
-    return blocks.map(block => renderBlock(block, rowData, rest as any));
+    return blocks.map(block => (
+      <div className="card h-100">
+        <DashletHeader name={block.label} />
+        {renderBlock(block, rowData, rest as any)}
+        <DashletFooter />
+      </div>
+    ));
   }
 }

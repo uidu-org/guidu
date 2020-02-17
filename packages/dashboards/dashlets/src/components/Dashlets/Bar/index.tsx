@@ -89,11 +89,8 @@ export default class BarBlock extends PureComponent<any> {
     }
 
     return (
-      <div className="card h-100">
-        <div className="card-header">Graph title</div>
-        <div className="card-body">
-          <div id={this.id} style={{ width: '100%', height: '100%' }} />
-        </div>
+      <div className="card-body">
+        <div id={this.id} style={{ width: '100%', height: '100%' }} />
       </div>
     );
   }

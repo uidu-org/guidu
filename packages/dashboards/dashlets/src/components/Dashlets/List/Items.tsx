@@ -3,7 +3,10 @@ import { format } from '../../../utils';
 
 export default function Items({ data, datumRenderer, limit, formatter }) {
   return (
-    <ul className="list-group list-group-flush" style={{ overflow: 'scroll' }}>
+    <ul
+      className="list-group list-group-flush"
+      style={{ overflow: 'scroll', overscrollBehavior: 'contain' }}
+    >
       {data.slice(0, limit).map(datum => {
         if (datumRenderer) {
           return datumRenderer(datum);

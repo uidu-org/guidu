@@ -40,6 +40,10 @@ export default md`
           <td>Short description</td>
         </tr>
         <tr>
+          <td>Timeline</td>
+          <td>This a subset of XY charts with time into X axis.</td>
+        </tr>
+        <tr>
           <td>Treemap</td>
           <td>Short description</td>
         </tr>
@@ -62,11 +66,11 @@ export default md`
 
   ## Usage
 
-  ${code`import Stepper, { Step } from '@uidu/stepper';`}
+  ${code`import Dashlets, { List, Pie, XYChart } from '@uidu/dashlets';`}
 
   ${(
     <Example
-      packageName="@uidu/stepper"
+      packageName="@uidu/dashlets"
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic').default}
@@ -77,7 +81,7 @@ export default md`
 
   ${(
     <Example
-      packageName="@uidu/stepper"
+      packageName="@uidu/dashlets"
       Component={require('../examples/SingleDashlets').default}
       title="Single Dashlet"
       source={require('!!raw-loader!../examples/SingleDashlets').default}

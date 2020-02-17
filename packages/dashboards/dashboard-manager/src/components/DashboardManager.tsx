@@ -6,7 +6,7 @@ import {
   TimeFrameKeys,
 } from '@uidu/dashboard-controls';
 import { renderBlock } from '@uidu/dashlets';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
 import 'react-resizable/css/styles.css';
@@ -78,6 +78,8 @@ export default class DashboardManager extends Component<
     const { rowData, gridProps } = this.props;
     const { timeFrame, timeFrameGrouping, timeRange } = this.state;
 
+    console.log(gridProps);
+
     const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,
@@ -141,7 +143,7 @@ export default class DashboardManager extends Component<
     const { availableTimeFrames, availableGroupers } = this.props;
     const { timeFrame, timeRange, timeFrameGrouping } = this.state;
     return (
-      <Fragment>
+      <>
         <TimeFrame
           timeframes={availableTimeFrames}
           activeTimeFrame={timeFrame}
@@ -163,7 +165,7 @@ export default class DashboardManager extends Component<
           activeGrouper={timeFrameGrouping}
           onChange={this.onTimeFrameGroupingChange}
         />
-      </Fragment>
+      </>
     );
   };
 

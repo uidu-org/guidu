@@ -65,6 +65,12 @@ export default class RadialBlock extends PureComponent<any> {
     this.id = uuid();
   }
 
+  componentWillUnmount() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  }
+
   inBin = amount => {
     const { bins } = this.props;
     const foo = bins.map((bin, index) => {
@@ -98,12 +104,15 @@ export default class RadialBlock extends PureComponent<any> {
     if (loaded) {
       if (!this.chart) {
         const chart = am4core.create(this.id, am4charts.PieChart);
+        chart.paddingLeft = 24;
+        chart.paddingRight = 24;
+
         chart.radius = am4core.percent(70);
         chart.innerRadius = am4core.percent(40);
         chart.startAngle = 180;
         chart.endAngle = 360;
         chart.legend = new am4charts.Legend();
-        chart.legend.position = 'bottom';
+        chart.legend.position = 'right';
         const pieSeries = chart.series.push(new am4charts.PieSeries());
         pieSeries.dataFields.value = 'pv';
         pieSeries.dataFields.category = 'name';
@@ -129,11 +138,6 @@ export default class RadialBlock extends PureComponent<any> {
       return <Loader />;
     }
 
-    return (
-      <div className="card h-100">
-        <div className="card-header">Graph title</div>
-        <div id={this.id} style={{ width: '100%', height: '100%' }}></div>
-      </div>
-    );
+    return <div id={this.id} style={{ width: '100%', height: '100%' }}></div>;
   }
 }

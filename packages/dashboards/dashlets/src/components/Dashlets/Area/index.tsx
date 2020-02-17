@@ -6,7 +6,7 @@ import moment from 'moment';
 import React, { PureComponent } from 'react';
 import uuid from 'uuid/v1';
 import { format, manipulator } from '../../../utils';
-import Header from './Header';
+import Loader from '../../Loader';
 import { labelByTimeframeGroup } from './Tooltip';
 
 am4core.useTheme(am4themes_animated);
@@ -60,6 +60,12 @@ export default class SingleArea extends PureComponent<any> {
     this.drawChart();
   }
 
+  componentWillUnmount() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  }
+
   drawChart = () => {
     const {
       rowData,
@@ -100,55 +106,64 @@ export default class SingleArea extends PureComponent<any> {
 
     if (!this.chart) {
       const chart = am4core.create(this.id, am4charts.XYChart);
-      // chart.paddingTop = 0;
       chart.paddingBottom = 0;
-      // chart.paddingLeft = 0;
-      // chart.paddingRight = 0;
+      chart.paddingLeft = 24;
+      chart.paddingRight = 24;
+      chart.paddingTop = 24;
       chart.cursor = new am4charts.XYCursor();
       chart.cursor.lineY.disabled = true;
       chart.cursor.lineX.disabled = true;
       chart.cursor.behavior = 'none';
 
+      chart.numberFormatter.numberFormat = '#.0a';
+
       let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
       dateAxis.dataFields.date = 'key';
-      dateAxis.renderer.disabled = true;
-      dateAxis.renderer.grid.template.disabled = true;
+      // dateAxis.renderer.disabled = true;
+      // dateAxis.renderer.grid.template.disabled = true;
+      dateAxis.renderer.grid.template.strokeOpacity = 0.08;
+      dateAxis.renderer.fillOpacity = 0.3;
       dateAxis.cursorTooltipEnabled = false;
 
-      let comparatorDateAxis = chart.xAxes.push(new am4charts.DateAxis());
-      comparatorDateAxis.renderer.opposite = true;
-      comparatorDateAxis.dataFields.date = 'previousKey';
-      comparatorDateAxis.renderer.disabled = true;
-      comparatorDateAxis.renderer.grid.template.disabled = true;
-      comparatorDateAxis.cursorTooltipEnabled = false;
+      // let comparatorDateAxis = chart.xAxes.push(new am4charts.DateAxis());
+      // comparatorDateAxis.renderer.opposite = true;
+      // comparatorDateAxis.dataFields.date = 'previousKey';
+      // comparatorDateAxis.renderer.disabled = true;
+      // comparatorDateAxis.renderer.grid.template.disabled = true;
+      // comparatorDateAxis.cursorTooltipEnabled = false;
 
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-      valueAxis.renderer.disabled = true;
-      valueAxis.renderer.grid.template.disabled = true;
-      valueAxis.renderer.baseGrid.disabled = true;
+      // valueAxis.renderer.disabled = true;
+      // valueAxis.renderer.grid.template.disabled = true;
+      // valueAxis.renderer.baseGrid.disabled = true;
+      // valueAxis.renderer.opposite = true;
+      // valueAxis.renderer.grid.template.stroke = am4core.color('#ccc');
+      valueAxis.renderer.grid.template.strokeOpacity = 0.08;
+      valueAxis.renderer.fillOpacity = 0.3;
       valueAxis.cursorTooltipEnabled = false;
       valueAxis.min = 0;
 
-      let comparator = chart.series.push(new am4charts.LineSeries());
-      comparator.dataFields.valueY = 'previousValue';
-      comparator.dataFields.dateX = 'previousKey';
-      comparator.strokeWidth = 2;
-      comparator.fill = am4core.color('#f3f3f3');
-      comparator.stroke = am4core.color('#f3f3f3');
-      // comparator.fillOpacity = 0.6;
-      comparator.tensionX = 0.8;
-      comparator.name = name;
-      comparator.xAxis = comparatorDateAxis;
-      comparator.tooltipText = '{name}: [bold]{valueY}[/]';
+      // let comparator = chart.series.push(new am4charts.LineSeries());
+      // comparator.dataFields.valueY = 'previousValue';
+      // comparator.dataFields.dateX = 'previousKey';
+      // comparator.strokeWidth = 2;
+      // comparator.fill = am4core.color('#f3f3f3');
+      // comparator.stroke = am4core.color('#f3f3f3');
+      // // comparator.fillOpacity = 0.6;
+      // comparator.tensionX = 0.8;
+      // comparator.name = name;
+      // comparator.xAxis = comparatorDateAxis;
+      // comparator.tooltipText = '{name}: [bold]{valueY}[/]';
 
       const series = chart.series.push(new am4charts.ColumnSeries());
       series.dataFields.valueY = 'value';
       series.dataFields.dateX = 'key';
       series.fill = am4core.color(color);
       series.stroke = am4core.color(color);
-      series.strokeWidth = 2;
-      series.fillOpacity = 0.6;
+      series.strokeWidth = 1;
+      series.fillOpacity = 1;
       // series.tensionY = 0.8;
+      series.columns.template.column.cornerRadius(4, 4, 0, 0);
       series.name = name;
       series.tooltipText = `{dateX}\n[bold]{valueY}[/]`;
 
@@ -176,24 +191,29 @@ export default class SingleArea extends PureComponent<any> {
       namespace,
       rollup,
       rowData,
+      loaded,
     } = this.props;
 
+    if (!loaded) {
+      return <Loader />;
+    }
+
     return (
-      <div className="card h-100">
-        <Header
+      <>
+        {/* <Header
           label={label}
           rowData={rowData}
           comparatorData={comparatorData}
           namespace={namespace}
           rollup={rollup}
           formatter={formatter}
-        />
+        /> */}
 
         <div
           style={{ width: '100%', height: `calc(100% - 7px)` }}
           id={this.id}
         />
-      </div>
+      </>
     );
   }
 }

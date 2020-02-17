@@ -42,6 +42,12 @@ export default class GeoBlock extends PureComponent<any> {
     return manipulated;
   };
 
+  componentWillUnmount() {
+    if (this.chart) {
+      this.chart.dispose();
+    }
+  }
+
   componentDidUpdate() {
     const { rowData, loaded, limit, formatter, label, namespace } = this.props;
     if (loaded) {
@@ -71,11 +77,6 @@ export default class GeoBlock extends PureComponent<any> {
 
     const manipulated = this.manipulate(rowData[namespace]);
 
-    return (
-      <div className="card h-100">
-        <div className="card-header">Map</div>
-        <div id={this.id} style={{ width: '100%', height: '100%' }}></div>
-      </div>
-    );
+    return <div id={this.id} style={{ width: '100%', height: '100%' }}></div>;
   }
 }

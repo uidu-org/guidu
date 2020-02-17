@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';
-import { TimeFrame, TimeFrameComparator, TimeFrameGrouper } from '../src';
+import { More, TimeFrame, TimeFrameComparator, TimeFrameGrouper } from '../src';
 
 export default class Basic extends Component<any> {
   render() {
@@ -37,6 +37,7 @@ export default class Basic extends Component<any> {
           ]}
           onChange={console.log}
         />
+        <More />
       </div>
     );
   }

@@ -76,11 +76,6 @@ export default class PieBlock extends PureComponent<any> {
       return <Loader />;
     }
 
-    return (
-      <div className="card h-100">
-        <div className="card-header">Graph title</div>
-        <div id={this.id} style={{ width: '100%', height: '100%' }}></div>
-      </div>
-    );
+    return <div id={this.id} style={{ width: '100%', height: '100%' }}></div>;
   }
 }

@@ -1,3 +1,4 @@
+import { More, Shuffle } from '@uidu/dashboard-controls';
 import { colors } from '@uidu/dashlets';
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Component } from 'react';
@@ -14,6 +15,7 @@ export default class Basic extends Component<any, any> {
         donations: [],
       },
       loaded: false,
+      isEditing: false,
     };
   }
 
@@ -29,17 +31,32 @@ export default class Basic extends Component<any, any> {
   }
 
   render() {
-    const { rowData, loaded } = this.state;
+    const { rowData, loaded, isEditing } = this.state;
+    console.log(isEditing);
     return (
       <DashboardManager
         rowData={rowData}
         defaultTimeFrame="5Y"
-        gridProps={{ isDraggable: true, onLayoutChange: console.log }}
+        gridProps={{
+          isDraggable: isEditing,
+          isResizable: isEditing,
+          onLayoutChange: console.log,
+        }}
       >
         {({ renderControls, renderBlocks }) => (
           <>
-            <ShellHeader className="border-bottom">
-              {renderControls({})}
+            <ShellHeader className="border-bottom px-xl-4 px-3 d-flex align-items-center">
+              {/* {renderControls({})} */}
+              <h5 className="my-0 mr-2">Dashboard</h5>
+              <Shuffle
+                active={isEditing}
+                onClick={e => {
+                  this.setState({
+                    isEditing: !isEditing,
+                  });
+                }}
+              />
+              <More />
             </ShellHeader>
             <ShellBody scrollable>
               <div className="container px-0">
@@ -52,14 +69,15 @@ export default class Basic extends Component<any, any> {
                           kind: 'Area',
                           namespace: 'donations',
                           label: 'Raccolta',
+                          description: 'Donations amount by time',
                           name: 'donationsAmount',
                           rollup: ['sum', 'amount'],
                           formatter: 'currency',
                           color: colors[0],
                           x: 0,
                           y: 0,
-                          w: 6,
-                          h: 2,
+                          w: 12,
+                          h: 4,
                         },
                         {
                           kind: 'Area',
@@ -69,10 +87,10 @@ export default class Basic extends Component<any, any> {
                           rollup: ['count', 'id'],
                           formatter: 'integer',
                           color: colors[1],
-                          x: 6,
-                          y: 0,
-                          w: 6,
-                          h: 2,
+                          x: 0,
+                          y: 4,
+                          w: 12,
+                          h: 4,
                         },
                         {
                           kind: 'Counter',
@@ -81,7 +99,7 @@ export default class Basic extends Component<any, any> {
                           x: 0,
                           y: 2,
                           w: 4,
-                          h: 1,
+                          h: 2,
                           rollup: ['sum', 'amount'],
                           formatter: 'currency',
                         },
@@ -93,7 +111,7 @@ export default class Basic extends Component<any, any> {
                           x: 4,
                           y: 2,
                           w: 4,
-                          h: 1,
+                          h: 2,
                           rollup: ['count', 'id'],
                           formatter: 'integer',
                         },
@@ -104,7 +122,7 @@ export default class Basic extends Component<any, any> {
                           x: 8,
                           y: 2,
                           w: 4,
-                          h: 1,
+                          h: 2,
                           rollup: ['count', 'contact.id'],
                           formatter: 'integer',
                         },
@@ -116,7 +134,7 @@ export default class Basic extends Component<any, any> {
                           rollup: ['count', 'id'],
                           x: 0,
                           y: 4,
-                          w: 5,
+                          w: 12,
                           h: 3,
                         },
                         {
@@ -125,8 +143,8 @@ export default class Basic extends Component<any, any> {
                           kind: 'List',
                           x: 0,
                           y: 4,
-                          w: 5,
-                          h: 3,
+                          w: 6,
+                          h: 4,
                           groupBy: 'donationCampaignId',
                           rollup: ['sum', 'amount'],
                           formatter: 'currency',
@@ -137,8 +155,8 @@ export default class Basic extends Component<any, any> {
                           kind: 'List',
                           x: 0,
                           y: 4,
-                          w: 2,
-                          h: 3,
+                          w: 6,
+                          h: 4,
                           groupBy: 'donationCampaignId',
                           rollup: ['mean', 'amount'],
                           formatter: 'currency',
@@ -149,8 +167,8 @@ export default class Basic extends Component<any, any> {
                           kind: 'List',
                           x: 2,
                           y: 4,
-                          w: 2,
-                          h: 3,
+                          w: 6,
+                          h: 4,
                           groupBy: 'contact.id',
                           rollup: ['sum', 'amount'],
                           formatter: 'currency',
@@ -161,7 +179,7 @@ export default class Basic extends Component<any, any> {
                           kind: 'List',
                           x: 0,
                           y: 7,
-                          w: 2,
+                          w: 6,
                           h: 3,
                           rollup: ['max', 'amount'],
                           formatter: 'currency',
@@ -171,7 +189,7 @@ export default class Basic extends Component<any, any> {
                           namespace: 'donations',
                           x: 0,
                           y: 11,
-                          w: 4,
+                          w: 12,
                           h: 3,
                           groupBy: 'donationCampaignId',
                           bars: [
@@ -215,7 +233,7 @@ export default class Basic extends Component<any, any> {
                           ],
                           x: 0,
                           y: 5,
-                          w: 2,
+                          w: 12,
                           h: 3,
                         },
                         {
@@ -223,7 +241,7 @@ export default class Basic extends Component<any, any> {
                           namespace: 'donations',
                           x: 0,
                           y: 5,
-                          w: 2,
+                          w: 12,
                           h: 3,
                         },
                         {
@@ -231,7 +249,7 @@ export default class Basic extends Component<any, any> {
                           namespace: 'donations',
                           x: 0,
                           y: 5,
-                          w: 2,
+                          w: 12,
                           h: 3,
                           rollup: ['count', 'id'],
                         },
@@ -240,7 +258,7 @@ export default class Basic extends Component<any, any> {
                           namespace: 'donations',
                           x: 0,
                           y: 5,
-                          w: 2,
+                          w: 12,
                           h: 3,
                           label: 'Payment methods',
                           groupBy: 'paymentMethod',

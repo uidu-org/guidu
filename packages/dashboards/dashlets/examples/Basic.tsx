@@ -29,7 +29,12 @@ export default class Basic extends Component<any> {
       <div className="p-3">
         <Dashlets
           blocks={[
-            { kind: 'Geo', namespace: 'donations', rollup: ['count', 'id'] },
+            {
+              kind: 'Geo',
+              label: 'Donors by country',
+              namespace: 'donations',
+              rollup: ['count', 'id'],
+            },
             {
               kind: 'List',
               namespace: 'donations',
