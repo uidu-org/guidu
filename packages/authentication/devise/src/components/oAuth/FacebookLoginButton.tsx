@@ -18,7 +18,9 @@ const FacebookLoginButton = ({ label, onCompleted, onError }) => (
       >
         {loading ? (
           <div className="d-flex w-100 justify-content-center align-items-center">
-            <Spinner size="small" />
+            <div className="d-flex" style={{ width: 18, height: 18 }}>
+              <Spinner size="small" />
+            </div>
           </div>
         ) : (
           <div className="d-flex w-100 justify-content-center align-items-center">

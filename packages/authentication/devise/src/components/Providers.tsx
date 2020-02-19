@@ -60,6 +60,7 @@ export const messages = defineMessages({
 
 export default class Providers extends PureComponent<any, any> {
   private slider: any = React.createRef();
+  private passwordField = React.createRef();
 
   constructor(props) {
     super(props);
@@ -142,7 +143,7 @@ export default class Providers extends PureComponent<any, any> {
           options={{
             autoHeight: true,
             slidesPerView: 1,
-            allowTouchMove: true,
+            allowTouchMove: false,
             initialSlide: this.activeSlideByRoute(location), // step ? this.slideNames().indexOf(step) : 0,
           }}
           ref={this.slider}
@@ -218,11 +219,8 @@ export default class Providers extends PureComponent<any, any> {
               />
               <AnimateHeight
                 height={exist ? 'auto' : 0}
-                // onAnimationStart={({ newHeight }) => console.log(newHeight)}
                 onAnimationEnd={() => {
                   this.slider.current.mySlider.updateAutoHeight(300, false);
-                  // this.slider.current.mySlider.updateAutoHeight(500);
-                  console.log('TODO: focus password field');
                 }}
               >
                 {exist && (
@@ -236,7 +234,6 @@ export default class Providers extends PureComponent<any, any> {
                       id="new-password"
                       validations="minLength:8"
                       required
-                      autoFocus
                       help={
                         <Link
                           to={`${routes.passwords}?email=${currentUser.email}`}
