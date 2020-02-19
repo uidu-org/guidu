@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.1.18
+
+### Patch Changes
+
+- 734b7fe: Devise button re-organized
+
 ## 0.1.17
 
 ### Patch Changes

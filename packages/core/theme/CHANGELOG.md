@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.2.2
+
+### Patch Changes
+
+- 734b7fe: Devise button re-organized
+- Updated dependencies [734b7fe]
+  - @uidu/button@0.1.53
+
 ## 0.2.1
 
 ### Patch Changes
