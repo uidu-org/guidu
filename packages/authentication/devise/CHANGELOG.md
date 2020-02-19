@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.1.19
+
+### Patch Changes
+
+- 38bed5b: Alignment
+
 ## 0.1.18
 
 ### Patch Changes
