@@ -1,7 +1,7 @@
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
 import { Form, FormSubmit } from '@uidu/form';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { ArrowLeft } from 'react-feather';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import Recaptcha from 'react-recaptcha';
@@ -101,8 +101,14 @@ export default class DeviseForm extends PureComponent<any, any> {
     } = this.props;
 
     return (
-      <Fragment>
-        <div className="text-center mb-4">
+      <>
+        <div className="mb-4">
+          <Link to={match.path}>
+            <ArrowLeft className="mr-2" size={18} />
+            Indietro
+          </Link>
+        </div>
+        <div className="mb-4 text-center">
           <h3>
             <FormattedMessage
               {...messages[`email_${scope}_${step || 'email'}_title`]}
@@ -119,15 +125,8 @@ export default class DeviseForm extends PureComponent<any, any> {
           handleSubmit={this.handleSubmit}
           footerRenderer={({ canSubmit, loading }) => [
             <div className="d-flex justify-content-between">
-              <Link
-                to={match.path}
-                className="btn btn-sm d-flex align-items-center justify-content-center btn-light"
-              >
-                <ArrowLeft className="mr-2" size={18} />
-                Indietro
-              </Link>
               <FormSubmit
-                className="btn-primary"
+                className="btn-primary btn-block"
                 canSubmit={canSubmit}
                 loading={loading}
                 label={'utils.actions.sign_in'}
@@ -228,7 +227,7 @@ export default class DeviseForm extends PureComponent<any, any> {
             Policy.
           </p>
         </Form>
-      </Fragment>
+      </>
     );
   }
 }

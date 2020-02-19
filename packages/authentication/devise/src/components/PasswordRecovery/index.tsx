@@ -52,10 +52,7 @@ export default class PasswordRecovery extends Component<any> {
       <Form
         handleSubmit={this.handleSubmit}
         footerRenderer={({ canSubmit, loading }) => (
-          <div className="d-flex align-items-center justify-content-between">
-            <Link to={routes.sessions} className="btn btn-light">
-              <FormattedMessage {...messages.password_recovery_secondary_cta} />
-            </Link>
+          <div className="d-flex align-items-center">
             <FormSubmit
               className="btn-primary px-5"
               canSubmit={canSubmit}
@@ -64,6 +61,9 @@ export default class PasswordRecovery extends Component<any> {
                 <FormattedMessage {...messages.password_recovery_primary_cta} />
               }
             />
+            <Link to={routes.sessions} className="btn btn-light ml-3">
+              <FormattedMessage {...messages.password_recovery_secondary_cta} />
+            </Link>
           </div>
         )}
       >

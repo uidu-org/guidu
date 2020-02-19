@@ -150,10 +150,12 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     const specifiers = (styles: {}) => {
       if (StyledButton === 'a') {
         return {
+          ...styles,
           'a&': styles,
         };
       } else if (StyledButton === CustomComponent) {
         return {
+          ...styles,
           '&, a&, &:hover, &:active, &:focus': styles,
         };
       }
@@ -170,61 +172,63 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
               iconIsOnlyChild={iconIsOnlyChild}
               {...this.props}
             >
-              {({ buttonStyles, spinnerStyles }) => (
-                <StyledButton
-                  {...filterProps(rest, StyledButton)}
-                  ref={this.getComposedRefs(this.button, consumerRef)}
-                  onMouseEnter={this.onMouseEnter}
-                  onMouseLeave={this.onMouseLeave}
-                  onMouseDown={this.onMouseDown}
-                  onMouseUp={this.onMouseUp}
-                  onFocus={this.onFocus}
-                  onBlur={this.onBlur}
-                  disabled={isDisabled}
-                  className={className}
-                  css={specifiers(buttonStyles)}
-                >
-                  <InnerWrapper
-                    onClick={this.onInnerClick}
-                    fit={!!shouldFitContainer}
+              {({ buttonStyles, spinnerStyles }) => {
+                return (
+                  <StyledButton
+                    {...filterProps(rest, StyledButton)}
+                    ref={this.getComposedRefs(this.button, consumerRef)}
+                    onMouseEnter={this.onMouseEnter}
+                    onMouseLeave={this.onMouseLeave}
+                    onMouseDown={this.onMouseDown}
+                    onMouseUp={this.onMouseUp}
+                    onFocus={this.onFocus}
+                    onBlur={this.onBlur}
+                    disabled={isDisabled}
+                    className={className}
+                    style={specifiers(buttonStyles)}
                   >
-                    {isLoading && (
-                      <LoadingSpinner
-                        spacing={spacing}
-                        appearance={appearance}
-                        isSelected={isSelected}
-                        isDisabled={isDisabled}
-                        styles={spinnerStyles}
-                      />
-                    )}
-                    {iconBefore && (
-                      <IconWrapper
-                        isLoading={isLoading}
-                        spacing={spacing}
-                        isOnlyChild={iconIsOnlyChild}
-                        icon={iconBefore}
-                      />
-                    )}
-                    {children && (
-                      <Content
-                        isLoading={isLoading}
-                        followsIcon={!!iconBefore}
-                        spacing={spacing}
-                      >
-                        {children}
-                      </Content>
-                    )}
-                    {iconAfter && (
-                      <IconWrapper
-                        isLoading={isLoading}
-                        spacing={spacing}
-                        isOnlyChild={iconIsOnlyChild}
-                        icon={iconAfter}
-                      />
-                    )}
-                  </InnerWrapper>
-                </StyledButton>
-              )}
+                    <InnerWrapper
+                      onClick={this.onInnerClick}
+                      fit={!!shouldFitContainer}
+                    >
+                      {isLoading && (
+                        <LoadingSpinner
+                          spacing={spacing}
+                          appearance={appearance}
+                          isSelected={isSelected}
+                          isDisabled={isDisabled}
+                          styles={spinnerStyles}
+                        />
+                      )}
+                      {iconBefore && (
+                        <IconWrapper
+                          isLoading={isLoading}
+                          spacing={spacing}
+                          isOnlyChild={iconIsOnlyChild}
+                          icon={iconBefore}
+                        />
+                      )}
+                      {children && (
+                        <Content
+                          isLoading={isLoading}
+                          followsIcon={!!iconBefore}
+                          spacing={spacing}
+                        >
+                          {children}
+                        </Content>
+                      )}
+                      {iconAfter && (
+                        <IconWrapper
+                          isLoading={isLoading}
+                          spacing={spacing}
+                          isOnlyChild={iconIsOnlyChild}
+                          icon={iconAfter}
+                        />
+                      )}
+                    </InnerWrapper>
+                  </StyledButton>
+                );
+              }}
             </Theme.Consumer>
           )}
         </GlobalTheme.Consumer>

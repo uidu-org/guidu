@@ -24,13 +24,13 @@ export default class ButtonGroup extends React.Component<ButtonGroupProps> {
     const { appearance, children } = this.props;
 
     return (
-      <div css={{ display: 'inline-flex' }}>
+      <div style={{ display: 'inline-flex' }}>
         {React.Children.map(children, (child, idx) => {
           if (!child) {
             return null;
           }
           return (
-            <div key={idx} css={groupItemStyles}>
+            <div key={idx} style={groupItemStyles}>
               {appearance
                 ? React.cloneElement(child as JSX.Element, { appearance })
                 : child}

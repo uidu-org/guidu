@@ -11,7 +11,7 @@ interface Props {
 
 export default ({ spacing, icon, isOnlyChild, isLoading, ...rest }: Props) => (
   <span
-    css={{
+    style={{
       alignSelf: 'center',
       display: 'flex',
       flexShrink: 0,

@@ -1,8 +1,8 @@
 // @flow
 
-import React, { type Node } from 'react';
-import { md, Example, Props } from '@uidu/docs';
+import { Example, md, Props } from '@uidu/docs';
 import Lozenge from '@uidu/lozenge';
+import React, { Node } from 'react';
 
 const Deprecated = ({ children }: { children: Node }) => (
   <h3>
@@ -22,7 +22,7 @@ const Experimental = ({ children }: { children: Node }) => (
 export default md`
   The theme package is a combined component and utility set, exporting abstractions for creating and consuming themes, as well as utilities for both audiences.
 
-  ${<Experimental>Creating themes</Experimental>}
+  ${(<Experimental>Creating themes</Experimental>)}
 
   The \`createTheme\` function is at the heart of the theming API and is used in the global theme and reset theme. Much like React's \`createContext\`, the \`createTheme\` function returns you a \`Consumer\` and \`Provider\` that you use to get and set a theme, respectively.
 
@@ -30,12 +30,12 @@ export default md`
     <Example
       packageName="@uidu/theme"
       Component={require('../examples/creating-themes').default}
-      source={require('!!raw-loader!../examples/creating-themes')}
+      source={require('!!raw-loader!../examples/creating-themes').default}
       title="Creating themes"
     />
   )}
 
-  ${<Experimental>Theming components</Experimental>}
+  ${(<Experimental>Theming components</Experimental>)}
 
   Whenever you create a new theme, it provides you a context specific to that theme. When theming a component, you use this context to provide a theme for your component. It is recommended that you, at the very least, export the provider for your theme so consumers can customise the look and feel of your component.
 
@@ -43,12 +43,12 @@ export default md`
     <Example
       packageName="@uidu/theme"
       Component={require('../examples/theming-components').default}
-      source={require('!!raw-loader!../examples/theming-components')}
+      source={require('!!raw-loader!../examples/theming-components').default}
       title="Creating themes"
     />
   )}
 
-  ${<Experimental>The global theme</Experimental>}
+  ${(<Experimental>The global theme</Experimental>)}
 
   The global theme is the \`default\` export of the theme package. It is defined by using the \`createTheme\` function, so it will give you both a \`Consumer\` and \`Provider\` for you to use or customise as you see fit.
 
@@ -56,12 +56,12 @@ export default md`
     <Example
       packageName="@uidu/theme"
       Component={require('../examples/global-theme').default}
-      source={require('!!raw-loader!../examples/global-theme')}
+      source={require('!!raw-loader!../examples/global-theme').default}
       title="Creating themes"
     />
   )}
 
-  ${<Experimental>Reset</Experimental>}
+  ${(<Experimental>Reset</Experimental>)}
 
   The \`Reset\` component applies CSS reset styles to select descendant nodes according to the ADG.
 
@@ -69,7 +69,7 @@ export default md`
     <Example
       packageName="@uidu/theme"
       Component={require('../examples/reset').default}
-      source={require('!!raw-loader!../examples/reset')}
+      source={require('!!raw-loader!../examples/reset').default}
       title="Reset"
     />
   )}
@@ -80,7 +80,7 @@ export default md`
     <Example
       packageName="@uidu/theme"
       Component={require('../examples/themed-reset').default}
-      source={require('!!raw-loader!../examples/themed-reset')}
+      source={require('!!raw-loader!../examples/themed-reset').default}
       title="Themed reset"
     />
   )}
@@ -93,7 +93,7 @@ export default md`
 
   ___Unlike in the deprecated \`AtlaskitThemeProvider\`, this is not applied automatically - or globally - so it is up to you to put this in your app where appropriate.___
 
-  ${<Deprecated>AtlaskitThemeProvider</Deprecated>}
+  ${(<Deprecated>AtlaskitThemeProvider</Deprecated>)}
 
   Theme provider is a wrapper component that accepts a 'mode'. This mode is passed down to styled components below it, using the styled components library theme provider, while also providing some defaults.
 
@@ -105,7 +105,9 @@ export default md`
     <Example
       packageName="@uidu/theme"
       Component={require('../examples/deprecated-theme-provider').default}
-      source={require('!!raw-loader!../examples/deprecated-theme-provider')}
+      source={
+        require('!!raw-loader!../examples/deprecated-theme-provider').default
+      }
       title="DEPRECATED AtlaskitThemeProvider"
     />
   )}
@@ -116,19 +118,19 @@ export default md`
     />
   )}
 
-  ${<Deprecated>getTheme()</Deprecated>}
+  ${(<Deprecated>getTheme()</Deprecated>)}
 
   Returns the current theme based on props. This has been deprecated in favour of simply accessing whatever you need using the \`Consumer\` or \`Theme\` components.
 
   _Due to the fact that this helper was never documented and is now deprecated, we will not document its usage and this only serves as a notice that it will be removed in the future._
 
-  ${<Deprecated>math</Deprecated>}
+  ${(<Deprecated>math</Deprecated>)}
 
   Exports of curried functions that do math operations in styled component primitives. They have been deprecated in favour of performing your own mathematical operations using plain JavaScript.
 
   _Due to the fact that this helper was never documented and is now deprecated, we will not document its usage and this only serves as a notice that it will be removed in the future._
 
-  ${<Deprecated>themed()</Deprecated>}
+  ${(<Deprecated>themed()</Deprecated>)}
 
   The \`themed()\` function is a way to define a theme for usage exclusively within Styled Component's primitives. Since we're moving to using React Context, this has been deprecated in favour of defining a theme with the \`Theme\` component.
 

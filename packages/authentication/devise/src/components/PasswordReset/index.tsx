@@ -52,24 +52,26 @@ export default class PasswordReset extends Component<any> {
       <Form
         handleSubmit={this.handleSubmit}
         // submitted={false}
-        footerRenderer={({ canSubmit, loading }) => [
-          <FormFooter className="w-100">
-            <FormSubmit
-              className="btn-primary w-100"
-              label={
-                <FormattedMessage {...messages.password_reset_primary_cta} />
-              }
-              loading={loading}
-              canSubmit={canSubmit}
-            />
-          </FormFooter>,
-          <Link
-            to={routes.sessions}
-            className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
-          >
-            <FormattedMessage {...messages.password_reset_secondary_cta} />
-          </Link>,
-        ]}
+        footerRenderer={({ canSubmit, loading }) => (
+          <>
+            <FormFooter className="w-100">
+              <FormSubmit
+                className="btn-primary w-100"
+                label={
+                  <FormattedMessage {...messages.password_reset_primary_cta} />
+                }
+                loading={loading}
+                canSubmit={canSubmit}
+              />
+            </FormFooter>
+            <Link
+              to={routes.sessions}
+              className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
+            >
+              <FormattedMessage {...messages.password_reset_secondary_cta} />
+            </Link>
+          </>
+        )}
       >
         <div className="text-center mb-4">
           <h3>

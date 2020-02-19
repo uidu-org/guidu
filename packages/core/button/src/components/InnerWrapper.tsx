@@ -8,7 +8,7 @@ interface Props {
 
 export default ({ fit, children, ...rest }: Props) => (
   <span
-    css={{
+    style={{
       alignSelf: 'center',
       display: 'inline-flex',
       flexWrap: 'nowrap',

@@ -17,7 +17,7 @@ export default ({
   ...rest
 }: Props) => (
   <span
-    css={{
+    style={{
       alignItems: followsIcon ? 'baseline' : 'center',
       alignSelf: followsIcon ? 'baseline' : 'center',
       flex: '1 1 auto',

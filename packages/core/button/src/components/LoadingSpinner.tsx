@@ -33,7 +33,7 @@ export default class LoadingSpinner extends React.Component<Props> {
     let spinnerSize = spacing !== 'default' ? 'xsmall' : 'small';
 
     return (
-      <div css={styles}>
+      <div style={styles}>
         <Spinner size={spinnerSize} invertColor={this.invertSpinner()} />
       </div>
     );

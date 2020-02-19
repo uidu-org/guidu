@@ -8,8 +8,8 @@ import AnimateHeight from 'react-animate-height';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import DeviseForm from './DeviseForm';
-import FacebookLoginButton from './Providers/FacebookLoginButton';
-import GoogleLoginButton from './Providers/GoogleLoginButton';
+import FacebookLoginButton from './oAuth/FacebookLoginButton';
+import GoogleLoginButton from './oAuth/GoogleLoginButton';
 
 export const messages = defineMessages({
   privacy_intro: {
@@ -199,16 +199,8 @@ export default class Providers extends PureComponent<any, any> {
               handleSubmit={this.handleSubmit}
               footerRenderer={({ canSubmit, loading }) => (
                 <div className="d-flex align-items-center justify-content-between">
-                  {exist && (
-                    <Link
-                      to={`${routes.passwords}?email=${currentUser.email}`}
-                      className="btn btn-light"
-                    >
-                      Non ricordi la password
-                    </Link>
-                  )}
                   <FormSubmit
-                    className={`btn-primary${exist ? ' px-5' : ' w-100'}`}
+                    className="btn-primary w-100"
                     canSubmit={canSubmit}
                     loading={loading}
                     label="Avanti"
@@ -245,6 +237,13 @@ export default class Providers extends PureComponent<any, any> {
                       validations="minLength:8"
                       required
                       autoFocus
+                      help={
+                        <Link
+                          to={`${routes.passwords}?email=${currentUser.email}`}
+                        >
+                          Non ricordi la password
+                        </Link>
+                      }
                     />
                     <div className="form-group">
                       <Checkbox
