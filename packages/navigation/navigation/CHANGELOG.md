@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.20
+
+### Patch Changes
+
+- 75861a9: Move controls out of dashboard-controls and inside dashlet
+
 ## 0.2.19
 
 ### Patch Changes
