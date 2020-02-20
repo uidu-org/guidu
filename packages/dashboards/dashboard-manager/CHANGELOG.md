@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.3.3
+
+### Patch Changes
+
+- 5743bc3: FIX row height
+
 ## 0.3.2
 
 ### Patch Changes
