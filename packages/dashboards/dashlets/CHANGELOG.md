@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.2.2
+
+### Patch Changes
+
+- e2ebe53: Small fixes to dashlets and dashlet controls
+- Updated dependencies [e2ebe53]
+  - @uidu/dashlet-controls@0.1.2
+
 ## 0.2.1
 
 ### Patch Changes

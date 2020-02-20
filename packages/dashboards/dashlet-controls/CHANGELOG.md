@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.1.2
+
+### Patch Changes
+
+- e2ebe53: Small fixes to dashlets and dashlet controls
+
 ## 0.1.1
 
 ### Patch Changes
