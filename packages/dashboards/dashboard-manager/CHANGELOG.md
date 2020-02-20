@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.3.2
+
+### Patch Changes
+
+- 75861a9: Move controls out of dashboard-controls and inside dashlet
+- Updated dependencies [75861a9]
+  - @uidu/dashlets@0.2.1
+
 ## 0.3.1
 
 ### Patch Changes

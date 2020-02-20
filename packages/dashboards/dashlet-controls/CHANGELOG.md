@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.1.1
+
+### Patch Changes
+
+- 75861a9: Move controls out of dashboard-controls and inside dashlet
+
 ## 0.2.0
 
 ### Minor Changes
