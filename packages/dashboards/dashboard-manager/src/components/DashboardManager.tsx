@@ -101,7 +101,7 @@ export default class DashboardManager extends Component<
         autoSize
         measureBeforeMount
         // verticalCompact
-        rowHeight={160}
+        rowHeight={24}
         useCSSTransforms
         layouts={{
           lg: layout,
