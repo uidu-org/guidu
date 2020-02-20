@@ -24,21 +24,23 @@ export default class NavigationGroup extends PureComponent<any> {
       className += ' mb-3';
     }
     if (withPadding) {
-      className += ' px-3';
+      className += ' px-4';
     }
 
     return (
-      <ul className={className}>
-        {heading && (
-          <NavigationGroupHeading
-            before={before}
-            after={after}
-            text={heading}
-          />
-        )}
-        {children}
-        {separator && <hr />}
-      </ul>
+      <>
+        <ul className={className}>
+          {heading && (
+            <NavigationGroupHeading
+              before={before}
+              after={after}
+              text={heading}
+            />
+          )}
+          {children}
+        </ul>
+        {separator && <hr className="mx-4" />}
+      </>
     );
   }
 }

@@ -55,7 +55,7 @@ export default class PieBlock extends PureComponent<any, any> {
       const chart = am4core.create(this.id, am4charts.PieChart);
       chart.innerRadius = am4core.percent(40);
       chart.legend = new am4charts.Legend();
-      chart.legend.position = 'bottom';
+      chart.legend.position = 'right';
 
       const pieSeries = chart.series.push(new am4charts.PieSeries());
       pieSeries.dataFields.value = 'value';

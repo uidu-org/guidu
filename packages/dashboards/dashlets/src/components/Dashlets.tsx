@@ -1,8 +1,7 @@
 import loadable from '@loadable/component';
 import React, { PureComponent } from 'react';
 import { DashletsProps } from '../types';
-import DashletFooter from './DashletFooter';
-import DashletHeader from './DashletHeader';
+import Dashlet from './Dashlet';
 
 const LoadableArea = loadable(() => import(`./Dashlets/Area`));
 const LoadableBar = loadable(() => import(`./Dashlets/Bar`));
@@ -19,54 +18,42 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
 
   switch (kind) {
     case 'Area':
-      content = <LoadableArea {...block} rowData={rowData} {...rest} />;
+      content = LoadableArea;
       break;
     case 'Bar':
-      content = <LoadableBar {...block} rowData={rowData} {...rest} />;
+      content = LoadableBar;
       break;
     case 'Counter':
-      content = <LoadableCounter {...block} rowData={rowData} {...rest} />;
+      content = LoadableCounter;
       break;
     case 'Funnel':
-      content = <LoadableFunnel {...block} rowData={rowData} {...rest} />;
+      content = LoadableFunnel;
       break;
     case 'Geo':
-      content = <LoadableGeo {...block} rowData={rowData} {...rest} />;
+      content = LoadableGeo;
       break;
     case 'List':
-      content = <LoadableList {...block} rowData={rowData} {...rest} />;
+      content = LoadableList;
       break;
     case 'Pie':
-      content = <LoadablePie {...block} rowData={rowData} {...rest} />;
+      content = LoadablePie;
       break;
     case 'Radial':
-      content = <LoadableRadial {...block} rowData={rowData} {...rest} />;
+      content = LoadableRadial;
       break;
     case 'Treemap':
-      content = <LoadableTreemap {...block} rowData={rowData} {...rest} />;
+      content = LoadableTreemap;
       break;
   }
 
-  console.log(content);
-
   return (
-    <div className="card h-100">
-      <DashletHeader name={block.label} description={block.description} />
-      {content}
-      <DashletFooter />
-    </div>
+    <Dashlet rowData={rowData} {...rest} block={block} component={content} />
   );
 };
 
 export default class Dashlets extends PureComponent<DashletsProps> {
   render() {
     const { blocks, rowData, ...rest } = this.props;
-    return blocks.map(block => (
-      <div className="card h-100">
-        <DashletHeader name={block.label} />
-        {renderBlock(block, rowData, rest as any)}
-        <DashletFooter />
-      </div>
-    ));
+    return blocks.map(block => renderBlock(block, rowData, rest as any));
   }
 }
