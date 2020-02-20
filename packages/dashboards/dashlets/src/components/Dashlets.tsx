@@ -15,6 +15,7 @@ const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap`));
 
 export const renderBlock = ({ kind, ...block }, rowData, rest) => {
   let content = null;
+  let showFooter = true;
 
   switch (kind) {
     case 'Area':
@@ -25,12 +26,14 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
       break;
     case 'Counter':
       content = LoadableCounter;
+      showFooter = false;
       break;
     case 'Funnel':
       content = LoadableFunnel;
       break;
     case 'Geo':
       content = LoadableGeo;
+      showFooter = false;
       break;
     case 'List':
       content = LoadableList;
@@ -47,7 +50,13 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
   }
 
   return (
-    <Dashlet rowData={rowData} {...rest} block={block} component={content} />
+    <Dashlet
+      rowData={rowData}
+      {...rest}
+      block={block}
+      component={content}
+      showFooter={showFooter}
+    />
   );
 };
 

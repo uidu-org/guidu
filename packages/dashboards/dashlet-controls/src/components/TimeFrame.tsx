@@ -33,6 +33,7 @@ export default class TimeFrame extends Component<TimeFrameProps> {
               </span>
             </Trigger>
           }
+          boundariesElement="scrollParent"
         >
           <DropdownItemGroup>
             {timeframes.map(timeframe => (

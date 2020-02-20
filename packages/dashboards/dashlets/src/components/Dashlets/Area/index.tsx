@@ -106,7 +106,7 @@ export default class SingleArea extends PureComponent<any> {
 
     if (!this.chart) {
       const chart = am4core.create(this.id, am4charts.XYChart);
-      chart.paddingBottom = 24;
+      chart.paddingBottom = 0;
       chart.paddingLeft = 24;
       chart.paddingRight = 24;
       chart.paddingTop = 24;

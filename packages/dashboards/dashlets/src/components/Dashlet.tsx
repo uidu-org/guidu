@@ -1,8 +1,11 @@
 import {
   convertTimeframeToRange,
   groupByTimeframe,
+  Groupers,
+  groupersByTimeframe,
   GroupersKeys,
   TimeFrame,
+  TimeFrameGrouper,
   TimeFrameKeys,
 } from '@uidu/dashlet-controls';
 import React, { useState } from 'react';
@@ -36,19 +39,20 @@ import DashletHeader from './DashletHeader';
 //       { key: 'YTD', name: 'Anno corrente' },
 //       { key: '5Y', name: 'Tutto' },
 //     ],
-//     availableGroupers: [
-//       { key: 'day', name: 'Giornaliero' },
-//       { key: 'week', name: 'Settimanale' },
-//       { key: 'month', name: 'Mensile' },
-//       { key: 'year', name: 'Annuale' },
-//     ],
+const availableGroupers: Array<Groupers> = [
+  { key: 'day', name: 'Giornaliero' },
+  { key: 'week', name: 'Settimanale' },
+  { key: 'month', name: 'Mensile' },
+  { key: 'year', name: 'Annuale' },
+];
 
 export default function Dashlet({
   block,
   component: DashletContent,
   rowData,
+  showFooter = true,
   ...rest
-}) {
+}: any) {
   const [timeFrame, setTimeFrame] = useState<TimeFrameKeys>('5Y');
   const [timeFrameGrouping, setTimeFrameGrouping] = useState<GroupersKeys>(
     'month',
@@ -93,27 +97,42 @@ export default function Dashlet({
         rowData={data}
         timeframe={timeFrame}
       />
-      <DashletFooter>
-        <TimeFrame
-          activeTimeFrame={timeFrame}
-          onChange={setTimeFrame}
-          handleDateChange={setTimeFrame}
-          from={timeRange.range.from}
-          to={timeRange.range.to}
-          timeframes={[
-            {
-              key: '1W',
-              name: '1 settimana',
-            },
-            { key: '4W', name: '4 settimane' },
-            { key: '1Y', name: '1 anno' },
-            { key: 'MTD', name: 'Mese corrente' },
-            { key: 'QTD', name: 'Trimestre corrente' },
-            { key: 'YTD', name: 'Anno corrente' },
-            { key: '5Y', name: 'Tutto' },
-          ]}
-        />
-      </DashletFooter>
+      {showFooter && (
+        <DashletFooter>
+          <TimeFrame
+            activeTimeFrame={timeFrame}
+            onChange={setTimeFrame}
+            handleDateChange={setTimeFrame}
+            from={timeRange.range.from}
+            to={timeRange.range.to}
+            timeframes={[
+              {
+                key: '1W',
+                name: '1 settimana',
+              },
+              { key: '4W', name: '4 settimane' },
+              { key: '1Y', name: '1 anno' },
+              { key: 'MTD', name: 'Mese corrente' },
+              { key: 'QTD', name: 'Trimestre corrente' },
+              { key: 'YTD', name: 'Anno corrente' },
+              { key: '5Y', name: 'Tutto' },
+            ]}
+          />
+          {/* {timeFrame !== '5Y' && (
+            <TimeFrameComparator
+              onChange={this.onTimeFrameChange}
+              handleDateChange={this.onTimeFrameChange}
+              from={timeRange.previousRange.from}
+              to={timeRange.previousRange.to}
+            />
+          )} */}
+          <TimeFrameGrouper
+            groupers={groupersByTimeframe(availableGroupers, timeFrame)}
+            activeGrouper={timeFrameGrouping}
+            onChange={setTimeFrameGrouping}
+          />
+        </DashletFooter>
+      )}
     </div>
   );
 }

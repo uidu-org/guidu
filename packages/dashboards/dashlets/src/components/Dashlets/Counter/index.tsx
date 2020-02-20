@@ -29,7 +29,7 @@ export default class CounterBlock extends PureComponent<CounterProps> {
     const manipulated = data || this.manipulate(rowData[namespace]);
 
     return (
-      <div className="card-body h-100 d-flex align-items-center flex-row pt-0">
+      <div className="card-body h-100 d-flex align-items-center flex-row">
         {/* {itemBefore && <div className="flex-shrink-0 mr-3">{itemBefore}</div>} */}
         <div style={{ flex: 1, minWidth: 0 }}>
           <h3 className="my-0">

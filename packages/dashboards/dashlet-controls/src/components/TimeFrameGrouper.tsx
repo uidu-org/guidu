@@ -3,7 +3,6 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import React, { Component } from 'react';
-import { Server } from 'react-feather';
 import { Trigger } from '../styled';
 import { TimeFrameGrouperProps } from '../types';
 
@@ -16,8 +15,7 @@ export default class TimeFrameGrouper extends Component<TimeFrameGrouperProps> {
     return (
       <DropdownMenu
         trigger={
-          <Trigger activeBg="#d0f0fd" className="btn ml-3">
-            <Server strokeWidth={2} size={14} className="mr-2" />
+          <Trigger activeBg="#d0f0fd" className="btn">
             <span style={{ textTransform: 'initial' }}>
               {currentGrouper.name}
             </span>
