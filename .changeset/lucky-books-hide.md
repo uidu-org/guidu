@@ -1,5 +1,0 @@
----
-'@uidu/devise': patch
----
-
-Alignment
