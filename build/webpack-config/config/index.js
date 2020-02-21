@@ -268,8 +268,8 @@ module.exports = async function createWebpackConfig(
       alias: {
         ...(await moduleResolveMapBuilder()),
         'react-native$': 'react-native-web',
-        // ...(webpackOptions ? webpackOptions.resolve : {}),
       },
+      ...(webpackOptions ? webpackOptions.resolve : {}),
     },
     resolveLoader: {
       modules: [
