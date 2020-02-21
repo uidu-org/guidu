@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.11
+
+### Patch Changes
+
+- 3815f0a: Release multi-entry-tools
+
 ## 0.0.10
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.1.52
+
+### Patch Changes
+
+- Updated dependencies [3815f0a]
+  - @uidu/multi-entry-tools@0.0.11
+
 ## 0.1.51
 
 ### Patch Changes
