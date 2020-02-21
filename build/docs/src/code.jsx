@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import stringRaw from 'string-raw';
 
 /*
@@ -20,15 +20,13 @@ export default function code(
     <div className="my-4 mb-5">
       <SyntaxHighlighter
         language="javascript"
-        style={prism}
+        style={tomorrow}
         customStyle={{
-          backgroundColor: '#f8f9fa',
           border: 0,
           marginTop: 0,
           marginBottom: 0,
           padding: '1.5rem',
-          borderBottomRightRadius: 4,
-          borderBottomLeftRadius: 4,
+          borderRadius: 4,
         }}
       >
         {source}

@@ -4,7 +4,7 @@ import Tooltip from '@uidu/tooltip';
 import React, { ComponentType } from 'react';
 import { Code } from 'react-feather';
 import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import styled, { css } from 'styled-components';
 import ErrorBoundary from './ErrorBoundary';
 import replaceSrc from './replaceSrc';
@@ -113,15 +113,14 @@ export default class Example extends React.Component<Props, State> {
           {isSourceVisible && (
             <SyntaxHighlighter
               language="javascript"
-              style={prism}
+              style={tomorrow}
               customStyle={{
-                backgroundColor: '#f8f9fa',
                 border: 0,
                 marginTop: 0,
                 marginBottom: 0,
                 padding: '1.5rem',
-                borderBottomRightRadius: 4,
-                borderBottomLeftRadius: 4,
+                borderTopRightRadius: 4,
+                borderTopLeftRadius: 4,
               }}
             >
               {packageName ? replaceSrc(source, packageName) : source}
