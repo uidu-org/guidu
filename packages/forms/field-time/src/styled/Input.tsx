@@ -39,7 +39,7 @@ const overrideSafariDisabledStyles = `
 `;
 
 const InputElement = styled(TimeInput)`
-  background: transparent;
+  /* background: transparent; */
   min-width: 0;
 
   [disabled] {
