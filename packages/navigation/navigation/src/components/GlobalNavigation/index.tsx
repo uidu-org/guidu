@@ -1,5 +1,5 @@
 import { ShellBody, ShellFooter, ShellHeader, ShellSidebar } from '@uidu/shell';
-import React, { Fragment, PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { Transition } from 'react-transition-group';
 import GlobalItem from './GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
@@ -73,6 +73,7 @@ export default class GlobalNavigation extends PureComponent<
 
   render() {
     const {
+      style,
       backgroundColor,
       header,
       body,
@@ -85,12 +86,13 @@ export default class GlobalNavigation extends PureComponent<
     const { isOpen } = this.state;
 
     return (
-      <Fragment>
+      <>
         <ShellSidebar
           style={{
             width,
             backgroundColor,
             zIndex: 3,
+            ...style,
           }}
           // onMouseEnter={this.onMouseEnter}
         >
@@ -201,7 +203,7 @@ export default class GlobalNavigation extends PureComponent<
             )}
           </Transition>
         )}
-      </Fragment>
+      </>
     );
   }
 }

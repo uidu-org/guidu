@@ -1,4 +1,5 @@
 export type GlobalNavigationProps = {
+  style?: CSS;
   body?: Array<any>;
   backgroundColor: string;
   footer?: Array<any>;
