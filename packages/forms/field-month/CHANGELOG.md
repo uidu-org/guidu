@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.1.24
+
+### Patch Changes
+
+- f1f47a4: No transoarent input
+
 ## 0.1.23
 
 ### Patch Changes
