@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.21
+
+### Patch Changes
+
+- 043a4a7: Extend style
+
 ## 0.2.20
 
 ### Patch Changes
