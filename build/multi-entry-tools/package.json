@@ -1,7 +1,7 @@
 {
   "name": "@uidu/multi-entry-tools",
   "version": "0.0.10",
-  "private": true,
+  "private": false,
   "description": "Tools for supporting multiple entry points",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "Apache-2.0",
