@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.3.5
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/dashboard-controls@0.2.1
+  - @uidu/dashlets@0.2.3
+
 ## 0.3.4
 
 ### Patch Changes

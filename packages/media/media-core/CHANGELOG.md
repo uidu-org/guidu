@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.1.16
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.1.15
 
 ### Patch Changes

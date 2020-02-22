@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.1.4
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.1.3
 
 ### Patch Changes

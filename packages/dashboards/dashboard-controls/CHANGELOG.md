@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.2.1
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.2.0
 
 ### Minor Changes

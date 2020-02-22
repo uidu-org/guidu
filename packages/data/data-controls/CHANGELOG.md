@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.3.5
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/table@0.1.94
+
 ## 0.3.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/elements-test-helpers",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "description": "common test helpers",
   "repository": {

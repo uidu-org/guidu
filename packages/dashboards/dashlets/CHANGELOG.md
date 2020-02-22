@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.2.3
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/dashlet-controls@0.1.3
+
 ## 0.2.2
 
 ### Patch Changes

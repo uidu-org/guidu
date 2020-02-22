@@ -1,5 +1,11 @@
 # @uidu/code
 
+## 0.1.21
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.1.20
 
 ### Patch Changes

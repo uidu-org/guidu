@@ -1,5 +1,21 @@
 # @atlaskit/renderer
 
+## 0.1.12
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/analytics@0.1.18
+  - @uidu/code@0.1.21
+  - @uidu/adf-schema@0.1.5
+  - @uidu/adf-utils@0.4.3
+  - @uidu/editor-common@0.1.14
+  - @uidu/editor-json-transformer@0.1.5
+  - @uidu/analytics-namespaced-context@0.1.4
+  - @uidu/status@0.1.8
+  - @uidu/task-decision@0.1.8
+
 ## 0.1.11
 
 ### Patch Changes
