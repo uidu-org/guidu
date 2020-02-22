@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.43
+
+### Patch Changes
+
+- dfd58e3: Code color in docs
+
 ## 0.1.42
 
 ### Patch Changes
