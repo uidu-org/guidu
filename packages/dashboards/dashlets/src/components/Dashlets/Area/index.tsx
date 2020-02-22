@@ -106,10 +106,10 @@ export default class SingleArea extends PureComponent<any> {
 
     if (!this.chart) {
       const chart = am4core.create(this.id, am4charts.XYChart);
-      chart.paddingBottom = 0;
+      chart.paddingBottom = 24;
       chart.paddingLeft = 24;
       chart.paddingRight = 24;
-      chart.paddingTop = 24;
+      chart.paddingTop = 32;
       chart.cursor = new am4charts.XYCursor();
       chart.cursor.lineY.disabled = true;
       chart.cursor.lineX.disabled = true;
@@ -155,15 +155,15 @@ export default class SingleArea extends PureComponent<any> {
       // comparator.xAxis = comparatorDateAxis;
       // comparator.tooltipText = '{name}: [bold]{valueY}[/]';
 
-      const series = chart.series.push(new am4charts.ColumnSeries());
+      const series = chart.series.push(new am4charts.LineSeries());
       series.dataFields.valueY = 'value';
       series.dataFields.dateX = 'key';
       series.fill = am4core.color(color);
       series.stroke = am4core.color(color);
       series.strokeWidth = 1;
-      series.fillOpacity = 1;
-      // series.tensionY = 0.8;
-      series.columns.template.column.cornerRadius(4, 4, 0, 0);
+      series.fillOpacity = 0.6;
+      series.tensionX = 0.8;
+      // series.columns.template.column.cornerRadius(4, 4, 0, 0);
       series.name = name;
       series.tooltipText = `{dateX}\n[bold]{valueY}[/]`;
 
@@ -209,10 +209,7 @@ export default class SingleArea extends PureComponent<any> {
           formatter={formatter}
         /> */}
 
-        <div
-          style={{ width: '100%', height: `calc(100% - 7px)` }}
-          id={this.id}
-        />
+        <div style={{ width: '100%', height: '100%' }} id={this.id} />
       </>
     );
   }

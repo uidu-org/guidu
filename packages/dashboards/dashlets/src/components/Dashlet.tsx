@@ -9,7 +9,6 @@ import {
   TimeFrameKeys,
 } from '@uidu/dashlet-controls';
 import React, { useState } from 'react';
-import DashletFooter from './DashletFooter';
 import DashletHeader from './DashletHeader';
 
 // const onTimeFrameChange = timeFrame => {
@@ -51,11 +50,12 @@ export default function Dashlet({
   component: DashletContent,
   rowData,
   showFooter = true,
+  isCard = true,
   ...rest
 }: any) {
   const [timeFrame, setTimeFrame] = useState<TimeFrameKeys>('5Y');
   const [timeFrameGrouping, setTimeFrameGrouping] = useState<GroupersKeys>(
-    'month',
+    'year',
   );
   console.log(timeFrame);
   const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
@@ -69,70 +69,56 @@ export default function Dashlet({
   console.log(data);
 
   return (
-    <div className="card h-100">
-      <DashletHeader name={block.label} description={block.description}>
-        <TimeFrame
-          activeTimeFrame={timeFrame}
-          onChange={setTimeFrame}
-          handleDateChange={setTimeFrame}
-          from={timeRange.range.from}
-          to={timeRange.range.to}
-          timeframes={[
-            {
-              key: '1W',
-              name: '1 settimana',
-            },
-            { key: '4W', name: '4 settimane' },
-            { key: '1Y', name: '1 anno' },
-            { key: 'MTD', name: 'Mese corrente' },
-            { key: 'QTD', name: 'Trimestre corrente' },
-            { key: 'YTD', name: 'Anno corrente' },
-            { key: '5Y', name: 'Tutto' },
-          ]}
-        />
+    <div className={`h-100${isCard ? ' card' : ' card border-0'}`}>
+      <DashletHeader
+        name={block.label}
+        description={block.description}
+        isCard={isCard}
+      >
+        {showFooter && (
+          <div className="">
+            <TimeFrame
+              activeTimeFrame={timeFrame}
+              onChange={setTimeFrame}
+              handleDateChange={setTimeFrame}
+              from={timeRange.range.from}
+              to={timeRange.range.to}
+              timeframes={[
+                {
+                  key: '1W',
+                  name: '1 settimana',
+                },
+                { key: '4W', name: '4 settimane' },
+                { key: '1Y', name: '1 anno' },
+                { key: 'MTD', name: 'Mese corrente' },
+                { key: 'QTD', name: 'Trimestre corrente' },
+                { key: 'YTD', name: 'Anno corrente' },
+                { key: '5Y', name: 'Tutto' },
+              ]}
+            />
+            {/* {timeFrame !== '5Y' && (
+          <TimeFrameComparator
+          onChange={this.onTimeFrameChange}
+          handleDateChange={this.onTimeFrameChange}
+          from={timeRange.previousRange.from}
+          to={timeRange.previousRange.to}
+          />
+        )} */}
+            <TimeFrameGrouper
+              groupers={groupersByTimeframe(availableGroupers, timeFrame)}
+              activeGrouper={timeFrameGrouping}
+              onChange={setTimeFrameGrouping}
+            />
+          </div>
+        )}
       </DashletHeader>
       <DashletContent
         {...rest}
         {...block}
         rowData={data}
         timeframe={timeFrame}
+        timeFrameGrouping={timeFrameGrouping}
       />
-      {showFooter && (
-        <DashletFooter>
-          <TimeFrame
-            activeTimeFrame={timeFrame}
-            onChange={setTimeFrame}
-            handleDateChange={setTimeFrame}
-            from={timeRange.range.from}
-            to={timeRange.range.to}
-            timeframes={[
-              {
-                key: '1W',
-                name: '1 settimana',
-              },
-              { key: '4W', name: '4 settimane' },
-              { key: '1Y', name: '1 anno' },
-              { key: 'MTD', name: 'Mese corrente' },
-              { key: 'QTD', name: 'Trimestre corrente' },
-              { key: 'YTD', name: 'Anno corrente' },
-              { key: '5Y', name: 'Tutto' },
-            ]}
-          />
-          {/* {timeFrame !== '5Y' && (
-            <TimeFrameComparator
-              onChange={this.onTimeFrameChange}
-              handleDateChange={this.onTimeFrameChange}
-              from={timeRange.previousRange.from}
-              to={timeRange.previousRange.to}
-            />
-          )} */}
-          <TimeFrameGrouper
-            groupers={groupersByTimeframe(availableGroupers, timeFrame)}
-            activeGrouper={timeFrameGrouping}
-            onChange={setTimeFrameGrouping}
-          />
-        </DashletFooter>
-      )}
     </div>
   );
 }

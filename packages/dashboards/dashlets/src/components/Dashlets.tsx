@@ -12,6 +12,10 @@ const LoadableList = loadable(() => import(`./Dashlets/List`));
 const LoadablePie = loadable(() => import(`./Dashlets/Pie`));
 const LoadableRadial = loadable(() => import(`./Dashlets/Radial`));
 const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap`));
+const LoadableHorizontalRule = loadable(() =>
+  import(`./Dashlets/HorizontalRule`),
+);
+const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
 export const renderBlock = ({ kind, ...block }, rowData, rest) => {
   let content = null;
@@ -47,6 +51,10 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
     case 'Treemap':
       content = LoadableTreemap;
       break;
+    case 'HorizontalRule':
+      return <LoadableHorizontalRule />;
+    case 'VerticalRule':
+      return <LoadableVerticalRule />;
   }
 
   return (
@@ -54,6 +62,7 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
       rowData={rowData}
       {...rest}
       block={block}
+      isCard={block.isCard}
       component={content}
       showFooter={showFooter}
     />

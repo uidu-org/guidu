@@ -4,7 +4,12 @@ import * as React from 'react';
 export default md`
 
   # Dashlets
-  Dashlets are dashboard components used to represent and analyze data. Dashlets are imagined as single analytics blocks, that can be edited and filtered according to its type.
+  Dashlets are dashboard components used to represent and analyze data.
+  Dashlets are imagined either as single analytics blocks (AnalyticsDashlets), that can be edited and filtered according to its type or layout elements (LayoutDashlets), used for arranging blocks and design dashboards.
+  It's a super powerful tool.
+
+  ## AnalyticsDashlets
+  These dashlets represent and manipulate data, when needed.
 
   ${(
     <table className="table">
@@ -59,6 +64,38 @@ export default md`
             </a>{' '}
             allows to create bar, line and area charts.
           </td>
+        </tr>
+      </tbody>
+    </table>
+  )}
+
+  ## LayoutDashlets
+  With the help of these dashlets you can build amazing dashboards.
+
+  ${(
+    <table className="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DashletGroup</td>
+          <td>Creates a group (card) containing other dashlets</td>
+        </tr>
+        <tr>
+          <td>HorizontalRule</td>
+          <td>Adds an hr tag block</td>
+        </tr>
+        <tr>
+          <td>Spacer</td>
+          <td>Empty component to insert spacing</td>
+        </tr>
+        <tr>
+          <td>Text</td>
+          <td>Adds an editable text block</td>
         </tr>
       </tbody>
     </table>

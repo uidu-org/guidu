@@ -40,6 +40,8 @@ export default class Basic extends Component<any, any> {
         gridProps={{
           isDraggable: isEditing,
           isResizable: isEditing,
+          margin: [8, 8],
+          rowHeight: 8,
           onLayoutChange: console.log,
         }}
       >
@@ -78,7 +80,6 @@ export default class Basic extends Component<any, any> {
                           y: 0,
                           w: 12,
                           h: 10,
-                          isCard: false,
                         },
                         {
                           kind: 'Area',
@@ -92,13 +93,12 @@ export default class Basic extends Component<any, any> {
                           y: 4,
                           w: 12,
                           h: 10,
-                          isCard: false,
                         },
                         {
                           kind: 'HorizontalRule',
                           x: 0,
                           w: 12,
-                          h: 1,
+                          h: 10,
                           y: 4,
                         },
                         {
@@ -134,6 +134,13 @@ export default class Basic extends Component<any, any> {
                           h: 4,
                           rollup: ['count', 'contact.id'],
                           formatter: 'integer',
+                        },
+                        {
+                          kind: 'HorizontalRule',
+                          x: 0,
+                          w: 12,
+                          h: 2,
+                          y: 12,
                         },
                         {
                           kind: 'Pie',

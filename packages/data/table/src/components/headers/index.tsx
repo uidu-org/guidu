@@ -13,7 +13,7 @@ export default class CustomHeader extends PureComponent<any> {
       >
         <div className="customHeaderLabel flex-grow-1 text-truncate">
           {menuIcon && (
-            <span className="mr-2" style={{ opacity: 0.4 }}>
+            <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
               {menuIcon}
             </span>
           )}
