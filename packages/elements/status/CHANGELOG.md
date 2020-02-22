@@ -1,5 +1,15 @@
 # @atlaskit/status
 
+## 0.1.8
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/analytics@0.1.18
+  - @uidu/analytics-gas-types@0.1.4
+  - @uidu/elements-test-helpers@0.1.4
+
 ## 0.1.7
 
 ### Patch Changes

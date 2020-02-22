@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.4.3
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/adf-schema@0.1.5
+
 ## 0.4.2
 
 ### Patch Changes

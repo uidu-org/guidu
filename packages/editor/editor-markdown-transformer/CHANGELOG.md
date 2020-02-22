@@ -1,5 +1,15 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.5
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/adf-schema@0.1.5
+  - @uidu/editor-common@0.1.14
+  - @uidu/editor-core@0.1.25
+
 ## 0.1.4
 
 ### Patch Changes

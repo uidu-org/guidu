@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.51
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.1.50
 
 ### Patch Changes

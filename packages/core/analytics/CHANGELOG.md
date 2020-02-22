@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.1.18
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.1.17
 
 ### Patch Changes

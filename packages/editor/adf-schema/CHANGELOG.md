@@ -1,5 +1,13 @@
 # @uidu/adf-schema
 
+## 0.1.5
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+- Updated dependencies [d9f506a]
+  - @uidu/editor-json-transformer@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes

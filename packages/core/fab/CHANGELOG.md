@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.1.12
+
+### Patch Changes
+
+- d9f506a: Lots on dashlet docs and reasoning
+
 ## 0.1.11
 
 ### Patch Changes
