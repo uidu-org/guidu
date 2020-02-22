@@ -49,7 +49,7 @@ export default function Dashlet({
   block,
   component: DashletContent,
   rowData,
-  showFooter = true,
+  showHeader = true,
   isCard = true,
   ...rest
 }: any) {
@@ -69,13 +69,13 @@ export default function Dashlet({
   console.log(data);
 
   return (
-    <div className={`h-100${isCard ? ' card' : ' card border-0'}`}>
-      <DashletHeader
-        name={block.label}
-        description={block.description}
-        isCard={isCard}
-      >
-        {showFooter && (
+    <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
+      {showHeader && (
+        <DashletHeader
+          name={block.label}
+          description={block.description}
+          isCard={isCard}
+        >
           <div className="">
             <TimeFrame
               activeTimeFrame={timeFrame}
@@ -110,8 +110,8 @@ export default function Dashlet({
               onChange={setTimeFrameGrouping}
             />
           </div>
-        )}
-      </DashletHeader>
+        </DashletHeader>
+      )}
       <DashletContent
         {...rest}
         {...block}

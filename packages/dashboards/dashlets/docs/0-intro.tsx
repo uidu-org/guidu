@@ -97,6 +97,10 @@ export default md`
           <td>Text</td>
           <td>Adds an editable text block</td>
         </tr>
+        <tr>
+          <td>VerticalRule</td>
+          <td>Adds a vertical hr tag block</td>
+        </tr>
       </tbody>
     </table>
   )}

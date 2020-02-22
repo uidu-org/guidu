@@ -2,6 +2,7 @@ import loadable from '@loadable/component';
 import React, { PureComponent } from 'react';
 import { DashletsProps } from '../types';
 import Dashlet from './Dashlet';
+import DashletGroup from './Dashlets/DashletGroup';
 
 const LoadableArea = loadable(() => import(`./Dashlets/Area`));
 const LoadableBar = loadable(() => import(`./Dashlets/Bar`));
@@ -19,7 +20,7 @@ const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
 export const renderBlock = ({ kind, ...block }, rowData, rest) => {
   let content = null;
-  let showFooter = true;
+  let showHeader = true;
 
   switch (kind) {
     case 'Area':
@@ -30,14 +31,14 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
       break;
     case 'Counter':
       content = LoadableCounter;
-      showFooter = false;
+      showHeader = false;
       break;
     case 'Funnel':
       content = LoadableFunnel;
       break;
     case 'Geo':
       content = LoadableGeo;
-      showFooter = false;
+      showHeader = false;
       break;
     case 'List':
       content = LoadableList;
@@ -51,6 +52,16 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
     case 'Treemap':
       content = LoadableTreemap;
       break;
+    case 'DashletGroup':
+      return (
+        <DashletGroup
+          rowData={rowData}
+          block={block}
+          blocks={block.blocks}
+          isCard={block.isCard}
+          {...rest}
+        />
+      );
     case 'HorizontalRule':
       return <LoadableHorizontalRule />;
     case 'VerticalRule':
@@ -64,7 +75,7 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
       block={block}
       isCard={block.isCard}
       component={content}
-      showFooter={showFooter}
+      showHeader={showHeader}
     />
   );
 };
