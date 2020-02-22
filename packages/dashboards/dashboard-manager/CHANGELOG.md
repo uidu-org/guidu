@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.3.6
+
+### Patch Changes
+
+- 65bd788: Added dashlet group
+- Updated dependencies [65bd788]
+  - @uidu/dashlets@0.2.4
+
 ## 0.3.5
 
 ### Patch Changes
