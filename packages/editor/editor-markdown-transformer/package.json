@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-markdown-transformer",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Editor Markdown transformer",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "MIT",

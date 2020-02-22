@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.52
+
+### Patch Changes
+
+- 27d5d26: Fix missing tsconfig paths
+
 ## 0.1.51
 
 ### Patch Changes

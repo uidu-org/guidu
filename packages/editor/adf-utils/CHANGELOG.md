@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.4.4
+
+### Patch Changes
+
+- 470f931: Fix adf-utils paths
+
 ## 0.4.3
 
 ### Patch Changes
