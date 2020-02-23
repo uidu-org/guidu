@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-json-transformer",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "JSON transformer",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",

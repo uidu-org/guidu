@@ -1,5 +1,13 @@
 # @atlaskit/analytics-namespaced-context
 
+## 0.1.5
+
+### Patch Changes
+
+- 27d5d26: Fix missing tsconfig paths
+- Updated dependencies [27d5d26]
+  - @uidu/analytics-listeners@0.1.4
+
 ## 0.1.4
 
 ### Patch Changes

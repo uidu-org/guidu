@@ -1,5 +1,11 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.6
+
+### Patch Changes
+
+- 27d5d26: Fix missing tsconfig paths
+
 ## 0.1.5
 
 ### Patch Changes
