@@ -1,5 +1,11 @@
 # @uidu/task-decision
 
+## 0.1.10
+
+### Patch Changes
+
+- 3cb3f0c: Fix uuid import in task decision
+
 ## 0.1.9
 
 ### Patch Changes

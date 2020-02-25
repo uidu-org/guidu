@@ -1,6 +1,6 @@
 {
   "name": "@uidu/task-decision",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Tasks and decisions react components",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
