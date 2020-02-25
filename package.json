@@ -133,7 +133,7 @@
     "@types/styled-components": "^5.0.0",
     "@types/swiper": "^5.2.0",
     "@types/url-search-params": "^1.1.0",
-    "@types/uuid": "^3.4.4",
+    "@types/uuid": "^7.0.0",
     "@uidu/downshift": "^0.1.4",
     "@uifabric/file-type-icons": "^7.0.3",
     "@uppy/core": "^1.0.1",

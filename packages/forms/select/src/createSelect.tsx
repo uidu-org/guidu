@@ -166,7 +166,7 @@ function baseStyles(validationState, isCompact) {
     control: (base, state) => ({
       // none of react-selects styles are passed to <View />
       ...base,
-      backgroundColor: 'transparent',
+      backgroundColor: '#fff',
       borderRadius: '.25rem',
       borderColor: state.isFocused ? '#f8d1bb' : '#f2f2f3',
       boxShadow: state.isFocused
@@ -185,8 +185,8 @@ function baseStyles(validationState, isCompact) {
       ...base,
       padding:
         state.isMulti && state.hasValue
-          ? 'calc(.5rem - 3px) .5rem'
-          : '.5rem 1rem',
+          ? 'calc(.75rem - 3px) .5rem'
+          : '.75rem 1rem',
     }),
     clearIndicator: css => ({
       ...css,
@@ -214,8 +214,8 @@ function baseStyles(validationState, isCompact) {
         color,
         paddingBottom: isCompact ? 0 : 6,
         paddingTop: isCompact ? 0 : 6,
-        paddingLeft: '2px',
-        paddingRight: '2px',
+        paddingLeft: '6px',
+        paddingRight: '6px',
         ':hover': {
           color: colors.N200,
         },
@@ -229,7 +229,7 @@ function baseStyles(validationState, isCompact) {
     }),
     option: (base, { isSelected, isFocused, isDisabled }) => ({
       ...base,
-      padding: '.5rem 1rem',
+      padding: '.75rem 1rem',
       backgroundColor:
         isSelected || isFocused ? 'rgb(242, 249, 252)' : 'transparent',
       color: isDisabled ? '#ccc' : 'rgb(51, 51, 51)',
@@ -275,7 +275,7 @@ function baseStyles(validationState, isCompact) {
     // }),
     indicatorSeparator: base => ({
       ...base,
-      margin: '.5rem 0',
+      margin: '.75rem 0',
       backgroundColor: '#ced4da',
     }),
     indicatorsContainer: base => ({

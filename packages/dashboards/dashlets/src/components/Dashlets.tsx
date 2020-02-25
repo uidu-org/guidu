@@ -71,11 +71,11 @@ export const renderBlock = ({ kind, ...block }, rowData, rest) => {
   return (
     <Dashlet
       rowData={rowData}
-      {...rest}
       block={block}
       isCard={block.isCard}
       component={content}
       showHeader={showHeader}
+      {...rest}
     />
   );
 };

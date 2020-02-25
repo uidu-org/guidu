@@ -33,6 +33,10 @@ export default class Basic extends Component<any, any> {
   render() {
     const { rowData, loaded, isEditing } = this.state;
     console.log(isEditing);
+    // if (!loaded) {
+    //   return <div>Loading...</div>;
+    // }
+
     return (
       <DashboardManager
         rowData={rowData}
