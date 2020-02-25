@@ -1,5 +1,5 @@
 import { RequestServiceOptions, utils } from '@atlaskit/util-service-support';
-import uuid from 'uuid';
+import { v1 as uuid } from 'uuid';
 import { defaultLimit } from '../constants';
 import {
   objectKeyToString,
