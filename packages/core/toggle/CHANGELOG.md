@@ -1,5 +1,13 @@
 # @uidu/toggle
 
+## 0.1.23
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+
 ## 0.1.22
 
 ### Patch Changes

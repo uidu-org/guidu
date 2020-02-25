@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.2.5
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/tooltip@0.1.24
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/emoji
 
+## 0.1.8
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+  - @uidu/tooltip@0.1.24
+  - @uidu/util-data-test@0.1.6
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/tooltip
 
+## 0.1.24
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+  - @uidu/portal@0.1.16
+
 ## 0.1.23
 
 ### Patch Changes

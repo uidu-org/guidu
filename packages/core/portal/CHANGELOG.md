@@ -1,5 +1,16 @@
 # @uidu/portal
 
+## 0.1.16
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+  - @uidu/inline-dialog@0.1.14
+  - @uidu/modal-dialog@0.1.28
+  - @uidu/tooltip@0.1.24
+
 ## 0.1.15
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/data-controls
 
+## 0.3.6
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/dropdown-menu@0.1.21
+  - @uidu/inline-dialog@0.1.14
+  - @uidu/item@0.1.23
+  - @uidu/toggle@0.1.23
+  - @uidu/tooltip@0.1.24
+  - @uidu/data-fields@0.1.25
+
 ## 0.3.5
 
 ### Patch Changes

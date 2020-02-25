@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.1.6
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/emoji@0.1.8
+  - @uidu/mentions@0.1.13
+  - @uidu/task-decision@0.1.9
+
 ## 0.1.5
 
 ### Patch Changes

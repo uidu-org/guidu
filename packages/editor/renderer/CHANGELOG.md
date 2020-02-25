@@ -1,5 +1,19 @@
 # @atlaskit/renderer
 
+## 0.1.13
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+  - @uidu/tooltip@0.1.24
+  - @uidu/mentions@0.1.13
+  - @uidu/status@0.1.9
+  - @uidu/task-decision@0.1.9
+  - @uidu/util-data-test@0.1.6
+  - @uidu/navigation@0.2.22
+
 ## 0.1.12
 
 ### Patch Changes

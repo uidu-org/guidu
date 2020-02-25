@@ -1,5 +1,11 @@
 # @atlaskit/status
 
+## 0.1.9
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+
 ## 0.1.8
 
 ### Patch Changes

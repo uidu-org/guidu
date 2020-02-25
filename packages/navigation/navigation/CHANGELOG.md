@@ -1,5 +1,15 @@
 # @uidu/navigation
 
+## 0.2.22
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/dropdown-menu@0.1.21
+  - @uidu/inline-dialog@0.1.14
+  - @uidu/tooltip@0.1.24
+
 ## 0.2.21
 
 ### Patch Changes

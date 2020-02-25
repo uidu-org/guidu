@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "license": "MIT",
   "author": "uidu",
@@ -18,10 +18,10 @@
     "@uidu/field-date": "^0.1.11",
     "@uidu/field-number": "^0.1.23",
     "@uidu/field-text": "^0.1.25",
-    "@uidu/field-toggle": "^0.1.24",
+    "@uidu/field-toggle": "^0.1.27",
     "@uidu/form": "^0.1.44",
     "@uidu/select": "^0.2.7",
-    "@uidu/toggle": "^0.1.21",
+    "@uidu/toggle": "^0.1.23",
     "react-beautiful-dnd": "^13.0.0",
     "react-intl": "^3.1.7"
   },

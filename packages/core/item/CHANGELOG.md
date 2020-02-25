@@ -1,5 +1,13 @@
 # @uidu/item
 
+## 0.1.23
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/tooltip@0.1.24
+
 ## 0.1.22
 
 ### Patch Changes

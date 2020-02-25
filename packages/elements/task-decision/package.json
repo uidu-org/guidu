@@ -1,6 +1,6 @@
 {
   "name": "@uidu/task-decision",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Tasks and decisions react components",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
@@ -17,7 +17,7 @@
     "@uidu/analytics": "^0.1.18",
     "@uidu/analytics-namespaced-context": "^0.1.4",
     "@uidu/avatar-group": "^2.1.33",
-    "@uidu/button": "^0.1.52",
+    "@uidu/button": "^0.1.54",
     "@uidu/spinner": "^0.1.16",
     "@uidu/theme": "^0.2.1",
     "date-fns": "^2.0.0",
@@ -33,8 +33,8 @@
     "@uidu/docs": "^0.1.41",
     "@uidu/editor-common": "^0.1.14",
     "@uidu/elements-test-helpers": "^0.1.4",
-    "@uidu/renderer": "^0.1.12",
-    "@uidu/util-data-test": "^0.1.4",
+    "@uidu/renderer": "^0.1.13",
+    "@uidu/util-data-test": "^0.1.6",
     "react": "^16.8.3",
     "url-search-params": "^1.1.0"
   },

@@ -1,5 +1,13 @@
 # @uidu/inline-dialog
 
+## 0.1.14
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+
 ## 0.1.13
 
 ### Patch Changes
