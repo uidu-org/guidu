@@ -1,5 +1,14 @@
 # @uidu/data-fields
 
+## 0.1.25
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/toggle@0.1.23
+  - @uidu/field-toggle@0.1.27
+
 ## 0.1.24
 
 ### Patch Changes

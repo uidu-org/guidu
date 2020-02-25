@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.54
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+
 ## 0.1.53
 
 ### Patch Changes

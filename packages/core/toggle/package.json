@@ -1,6 +1,6 @@
 {
   "name": "@uidu/toggle",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "A component to view and switch between enabled or disabled states",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -14,7 +14,7 @@
     "uuid": "^7.0.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.51",
+    "@uidu/button": "^0.1.54",
     "@uidu/docs": "^0.1.41",
     "react-dom": "^16.4.0"
   },

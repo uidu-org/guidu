@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 0.1.26
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+  - @uidu/droplist@0.1.21
+  - @uidu/item@0.1.23
+  - @uidu/modal-dialog@0.1.28
+  - @uidu/tooltip@0.1.24
+  - @uidu/emoji@0.1.8
+  - @uidu/mentions@0.1.13
+  - @uidu/status@0.1.9
+  - @uidu/task-decision@0.1.9
+
 ## 0.1.25
 
 ### Patch Changes

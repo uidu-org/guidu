@@ -1,6 +1,6 @@
 {
   "name": "@uidu/build-utils",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "Collection of utilities to used during the release process of Atlaskit",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",

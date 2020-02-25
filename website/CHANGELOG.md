@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.80
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+- Updated dependencies [9f914d1]
+  - @uidu/button@0.1.54
+  - @uidu/modal-dialog@0.1.28
+  - @uidu/tooltip@0.1.24
+  - @uidu/navigation@0.2.22
+
 ## 0.1.79
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.11
+
+### Patch Changes
+
+- 9f914d1: Upgrade to latest uuid
+
 ## 0.2.10
 
 ### Patch Changes

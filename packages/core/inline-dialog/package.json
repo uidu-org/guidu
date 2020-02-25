@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "license": "MIT",
   "author": "uidu",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "@atlaskit/icon": "^20.0.2",
-    "@uidu/button": "^0.1.51",
+    "@uidu/button": "^0.1.54",
     "@uidu/docs": "^0.1.41",
     "@uidu/form": "^0.1.44",
     "@uidu/select": "^0.2.9",
