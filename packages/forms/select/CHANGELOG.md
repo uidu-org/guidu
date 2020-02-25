@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.11
+
+### Patch Changes
+
+- 52d9d40: Bigger selects
+
 ## 0.2.10
 
 ### Patch Changes
