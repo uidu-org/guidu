@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { PureComponent } from 'react';
-import uuid from 'uuid';
+import { v1 as uuid } from 'uuid';
 import { EmojiProvider, OnEmojiProviderChange } from '../../api/EmojiResource';
 import {
   EmojiDescription,

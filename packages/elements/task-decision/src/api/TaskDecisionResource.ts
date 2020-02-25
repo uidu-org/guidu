@@ -1,46 +1,42 @@
-import uuid from 'uuid';
 import { RequestServiceOptions, utils } from '@atlaskit/util-service-support';
-
+import uuid from 'uuid';
 import { defaultLimit } from '../constants';
-
-import {
-  convertServiceDecisionResponseToDecisionResponse,
-  convertServiceItemResponseToItemResponse,
-  convertServiceTaskResponseToTaskResponse,
-  convertServiceTaskToTask,
-  convertServiceTaskStateToBaseItem,
-  findIndex,
-  ResponseConverter,
-} from './TaskDecisionUtils';
-
-import {
-  BaseItem,
-  ServiceTaskState,
-  DecisionResponse,
-  DecisionState,
-  Handler,
-  ItemResponse,
-  ObjectKey,
-  PubSubSpecialEventType,
-  PubSubClient,
-  Query,
-  RecentUpdateContext,
-  RecentUpdatesId,
-  RecentUpdatesListener,
-  ServiceTask,
-  TaskDecisionProvider,
-  TaskDecisionResourceConfig,
-  TaskResponse,
-  TaskState,
-  User,
-  ServiceItem,
-} from '../types';
-
 import {
   objectKeyToString,
   toggleTaskState,
   toObjectKey,
 } from '../type-helpers';
+import {
+  BaseItem,
+  DecisionResponse,
+  DecisionState,
+  Handler,
+  ItemResponse,
+  ObjectKey,
+  PubSubClient,
+  PubSubSpecialEventType,
+  Query,
+  RecentUpdateContext,
+  RecentUpdatesId,
+  RecentUpdatesListener,
+  ServiceItem,
+  ServiceTask,
+  ServiceTaskState,
+  TaskDecisionProvider,
+  TaskDecisionResourceConfig,
+  TaskResponse,
+  TaskState,
+  User,
+} from '../types';
+import {
+  convertServiceDecisionResponseToDecisionResponse,
+  convertServiceItemResponseToItemResponse,
+  convertServiceTaskResponseToTaskResponse,
+  convertServiceTaskStateToBaseItem,
+  convertServiceTaskToTask,
+  findIndex,
+  ResponseConverter,
+} from './TaskDecisionUtils';
 
 interface RecentUpdateByIdValue {
   listener: RecentUpdatesListener;

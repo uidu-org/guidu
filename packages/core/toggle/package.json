@@ -11,7 +11,7 @@
     "@uidu/analytics": "^0.1.17",
     "@uidu/theme": "^0.2.0",
     "react-switch": "^5.0.0",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.51",

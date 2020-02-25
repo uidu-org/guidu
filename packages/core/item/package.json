@@ -13,7 +13,7 @@
     "polished": "^3.0.3",
     "prop-types": "^15.6.0",
     "react-addons-text-content": "^0.0.4",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.2.24",

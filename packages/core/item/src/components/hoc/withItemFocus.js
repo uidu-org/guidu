@@ -1,14 +1,13 @@
 // @flow
 
-import React, { Component, type Node } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component, Node } from 'react';
 import ReactDOM from 'react-dom';
-import uuid from 'uuid';
-
+import { v1 as uuid } from 'uuid';
+import type { ItemId } from '../../types';
+import { focusManagerContext } from '../../util/contextNamespace';
 import getDisplayName from '../../util/getDisplayName';
 import safeContextCall from '../../util/safeContextCall';
-import { focusManagerContext } from '../../util/contextNamespace';
-import type { ItemId } from '../../types';
 
 // HOC that typically wraps @uidu/item
 

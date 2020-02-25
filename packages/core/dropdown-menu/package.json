@@ -7,7 +7,7 @@
   "author": "uidu",
   "module": "index.js",
   "dependencies": {
-    "@atlaskit/icon": "^19.0.6",
+    "@atlaskit/icon": "^20.0.2",
     "@uidu/analytics": "^0.1.17",
     "@uidu/button": "^0.1.51",
     "@uidu/droplist": "^0.1.20",
@@ -15,7 +15,7 @@
     "@uidu/theme": "^0.2.0",
     "array-find": "^1.0.0",
     "prop-types": "^15.6.0",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.2.24",

@@ -71,7 +71,7 @@
     "snake-case": "^3.0.1",
     "styled-components": "^5.0.0",
     "tti-polyfill": "^0.2.2",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.29",

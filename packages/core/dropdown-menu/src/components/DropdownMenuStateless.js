@@ -6,8 +6,9 @@ import Droplist from '@uidu/droplist';
 import React, { Component, Fragment } from 'react';
 import { findDOMNode } from 'react-dom';
 import { ChevronDown } from 'react-feather';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import WidthConstrainer from '../styled/WidthConstrainer';
+import type { DropdownMenuStatelessProps } from '../types';
 import { KEY_DOWN, KEY_ENTER, KEY_SPACE } from '../util/keys';
 import {
   name as packageName,
@@ -16,8 +17,6 @@ import {
 import DropdownItemClickManager from './context/DropdownItemClickManager';
 import DropdownItemFocusManager from './context/DropdownItemFocusManager';
 import DropdownItemSelectionCache from './context/DropdownItemSelectionCache';
-
-import type { DropdownMenuStatelessProps } from '../types';
 
 type OpenCloseArgs = {
   event: SyntheticMouseEvent<any> | SyntheticKeyboardEvent<any>,

@@ -1,6 +1,6 @@
 import Button, { ButtonAppearances, ButtonProps } from '@uidu/button';
 import React, { Component, ComponentType } from 'react';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import { actionButtonStyles, getPseudos } from '../../theme';
 import { ActionsType, AppearanceTypes } from '../../types';
 import { DEFAULT_APPEARANCE } from '../Flag';

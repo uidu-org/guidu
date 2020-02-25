@@ -3,7 +3,7 @@ import * as am4core from '@amcharts/amcharts4/core';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import { manipulator, resolve } from '../../../utils';
 import Loader from '../../Loader';
 

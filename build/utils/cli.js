@@ -1,6 +1,6 @@
 const editor = require('editor');
 const fs = require('fs');
-const uuid = require('uuid/v1');
+const { v1: uuid } = require('uuid');
 const inquirer = require('inquirer');
 const fuzzy = require('fuzzy');
 

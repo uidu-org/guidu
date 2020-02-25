@@ -14,7 +14,7 @@
     "react-node-resolver": "^2.0.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^19.0.6",
+    "@atlaskit/icon": "^20.0.2",
     "@uidu/button": "^0.1.51",
     "@uidu/docs": "^0.1.41",
     "@uidu/form": "^0.1.44",

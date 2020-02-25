@@ -24,7 +24,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/icon": "^19.0.6",
+    "@atlaskit/icon": "^20.0.2",
     "@uidu/analytics": "^0.1.18",
     "@uidu/analytics-gas-types": "^0.1.4",
     "@uidu/field-text": "^0.1.27",

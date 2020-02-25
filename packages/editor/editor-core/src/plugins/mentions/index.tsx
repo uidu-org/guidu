@@ -19,7 +19,7 @@ import {
 import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';
-import uuid from 'uuid';
+import { v1 as uuid } from 'uuid';
 import { analyticsService } from '../../analytics';
 import { Dispatch } from '../../event-dispatcher';
 import { Command, EditorPlugin } from '../../types';

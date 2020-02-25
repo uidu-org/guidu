@@ -11,7 +11,7 @@
     "i18n:push": "i18n-tools push --resource emoji . --type ts"
   },
   "dependencies": {
-    "@atlaskit/icon": "^19.0.6",
+    "@atlaskit/icon": "^20.0.2",
     "@atlaskit/util-service-support": "^5.0.0",
     "@uidu/analytics": "^0.1.17",
     "@uidu/button": "^0.1.52",
@@ -28,7 +28,7 @@
     "tslib": "^1.10.0",
     "typestyle": "^2.0.4",
     "url": "^0.11.0",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@types/js-search": "^1.4.0",

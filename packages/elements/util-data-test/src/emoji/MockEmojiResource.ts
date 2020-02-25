@@ -14,7 +14,7 @@ import {
   UploadingEmojiProvider,
   User,
 } from '@uidu/emoji';
-import uuid from 'uuid/v1';
+import { v1 as uuid } from 'uuid';
 import { loggedUser } from './story-data';
 import {
   customCategory,

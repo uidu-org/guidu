@@ -20,7 +20,7 @@
     "numeral": "^2.0.6",
     "react-animated-number": "^0.4.4",
     "react-countup": "^4.2.2",
-    "uuid": "^3.3.2"
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.42"
