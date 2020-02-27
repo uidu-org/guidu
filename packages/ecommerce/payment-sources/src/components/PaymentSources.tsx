@@ -1,31 +1,9 @@
+import { CardElement, Elements } from '@stripe/react-stripe-js';
 import { Form } from '@uidu/form';
+import { createOptions } from '@uidu/payments';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import { Element } from 'react-scroll';
-import {
-  CardElement,
-  Elements,
-  injectStripe,
-  StripeProvider,
-} from 'react-stripe-elements';
-// import { SubmitButton } from 'user/utils/components';
-// import { apiCall } from 'utils';
-
-const createOptions = () => ({
-  style: {
-    base: {
-      fontSize: '16px',
-      color: '#495057',
-      fontFamily: 'Avenir',
-      '::placeholder': {
-        color: '#868e96',
-      },
-    },
-    invalid: {
-      color: '#9e2146',
-    },
-  },
-});
 
 class PaymentSources extends PureComponent<any, any> {
   constructor(props) {
@@ -156,9 +134,7 @@ class PaymentSources extends PureComponent<any, any> {
                 </label>
                 <CardElement
                   id="credit-card"
-                  {...createOptions()}
-                  className="form-control"
-                  hidePostalCode
+                  {...createOptions({ hidePostalCode: true })}
                 />
               </div>
             </Form>
@@ -169,12 +145,8 @@ class PaymentSources extends PureComponent<any, any> {
   }
 }
 
-const StripedPaymentSources = injectStripe(PaymentSources as any);
-
-export default ({ apiKey = 'pk_test_gxaXiVZYxYA1u1ZzqjVr71c5', ...rest }) => (
-  <StripeProvider apiKey={apiKey}>
-    <Elements>
-      <StripedPaymentSources {...rest} />
-    </Elements>
-  </StripeProvider>
+export default ({ stripe, ...rest }) => (
+  <Elements stripe={stripe}>
+    <PaymentSources stripe={stripe} {...rest} />
+  </Elements>
 );

@@ -1,21 +1,46 @@
-export type PaymentProviderTypes = 'card' | 'bank_account';
+import {
+  PaymentIntent,
+  Stripe,
+  StripeElementsOptions,
+  StripeError,
+} from '@stripe/stripe-js';
+
+export type PaymentProviderTypes = {
+  id: 'card' | 'bank_account';
+  name: string | React.ReactNode;
+};
 
 export type PaymentsProps = {
   amount: number;
   provider: PaymentProviderTypes;
-  stripe?: stripe.Stripe;
+  stripe?: Stripe;
+  stripeOptions?: StripeElementsOptions;
   scope?: string;
-  onSave: (token) => void;
-  onPaymentIntentSuccess: (intent) => void;
-  onPaymentIntentError: (intent) => void;
-  onSourceSuccess: (source) => void;
-  onSourceError: (source) => void;
+  onSuccess: ({
+    paymentIntent,
+    error,
+  }: {
+    paymentIntent?: PaymentIntent;
+    error?: StripeError;
+  }) => void;
+  clientSecret: PaymentIntent['client_secret'];
+  children: (paymentProps: any) => any;
 };
 
-export type PaymentsState = {
-  paymentIntent: any; // stripe.StripePaymentMethod;
-  loading: boolean;
-  formError: any;
+export type SubscriptionProps = {
+  provider: PaymentProviderTypes;
+  stripe?: Stripe;
+  stripeOptions?: StripeElementsOptions;
+  scope?: string;
+  createSubscription: any;
+  onSuccess: ({
+    paymentIntent,
+    error,
+  }: {
+    paymentIntent?: PaymentIntent;
+    error?: StripeError;
+  }) => void;
+  children: (paymentProps: any) => any;
 };
 
 export type PayWithProps = {
@@ -25,7 +50,19 @@ export type PayWithProps = {
   onChange: (provider: PaymentProviderTypes) => void;
 };
 
-export type PayProps = {
-  provider: PaymentProviderTypes;
-  providerProps?: any;
+export type PayWithCardProps = {
+  handleSubmit: () => void;
+  scope?: string;
 };
+export type PayWithBankProps = {
+  handleSubmit: () => void;
+  scope?: string;
+  mandate?: any;
+};
+
+export type PayProps = PayWithCardProps &
+  PayWithBankProps & {
+    stripe: Stripe;
+    provider: PaymentProviderTypes;
+    providerProps?: any;
+  };

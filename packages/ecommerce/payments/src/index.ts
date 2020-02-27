@@ -1,5 +1,6 @@
-export { default as Pay } from './components/Pay';
-export { default } from './components/Payments';
-export { default as PayWith } from './components/PayWith';
+export * from './components/Elements';
+export { default as PayWith } from './components/PaymentMethods';
+export { default as Payments } from './components/Payments';
+export { default as Subscription } from './components/Subscription';
 export { PaymentProviderTypes } from './types';
 export * from './utils';

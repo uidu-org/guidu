@@ -1,4 +1,4 @@
-import Payments, { Pay } from '@uidu/payments';
+import { Payments, PayWithCard } from '@uidu/payments';
 import { ShellBodyWithSidebar } from '@uidu/shell';
 import Loader from '@uidu/spinner';
 import Stepper, { Step } from '@uidu/stepper';
@@ -46,7 +46,7 @@ class Attend extends PureComponent<any, any> {
   createAttendance = token => console.log(token);
 
   render() {
-    const { currentMember, currentOrganization, event } = this.props;
+    const { currentMember, currentOrganization, event, stripe } = this.props;
     const { order, attendance } = this.state;
 
     if (!event) {
@@ -149,11 +149,14 @@ class Attend extends PureComponent<any, any> {
                     {order && order.stripeAmount > 0 && (
                       <Payments
                         {...this.props}
-                        apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
+                        stripe={stripe}
+                        provider={{ id: 'card', name: 'Credit card' }}
+                        onSuccess={console.log}
+                        clientSecret={null}
                         amount={order.stripeAmount}
                       >
                         {paymentProps => (
-                          <Pay {...paymentProps}>
+                          <PayWithCard {...paymentProps}>
                             <div className="card card-body mb-3 p-3">
                               <dl className="mb-0">
                                 <dt className="d-flex align-items-center justify-content-between">
@@ -187,7 +190,7 @@ class Attend extends PureComponent<any, any> {
                                 </dl>
                               </div>
                             )}
-                          </Pay>
+                          </PayWithCard>
                         )}
                       </Payments>
                     )}

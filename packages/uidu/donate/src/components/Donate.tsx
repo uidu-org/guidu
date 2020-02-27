@@ -1,5 +1,4 @@
 import Contact from '@uidu/contact';
-import Payments, { Pay, PayWith } from '@uidu/payments';
 import { Shell } from '@uidu/widgets';
 // import AnimatedCheck from 'components/AnimatedCheck';
 // import ContactForm from 'organization/components/contacts/form';
@@ -9,13 +8,10 @@ import { FormattedMessage } from 'react-intl';
 import { DonateProps, DonateState } from '../types';
 import Confirmation from './steps/Confirmation';
 import Donation from './steps/Donation';
+import Pay from './steps/Pay';
 import Preferences from './steps/Preferences';
 
 export default class Donate extends Component<DonateProps, DonateState> {
-  static defaultProps = {
-    providers: ['card'],
-  };
-
   private slider = React.createRef();
 
   constructor(props) {
@@ -23,7 +19,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
     this.state = {
       donation: props.donation,
       activeSlide: 0,
-      provider: 'card',
+      provider: null,
     };
   }
 
@@ -67,6 +63,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
       currentOrganization,
       donationCampaign,
       providers,
+      stripe,
     } = this.props;
     const { donation, activeSlide } = this.state;
 
@@ -94,7 +91,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
               <div className="col-lg-8">
                 <Donation
                   {...this.props}
-                  submitted
+                  providers={providers}
                   onSave={newDonation => {
                     this.setState(
                       {
@@ -205,58 +202,6 @@ export default class Donate extends Component<DonateProps, DonateState> {
       ),
     });
 
-    if (providers.length > 1) {
-      slides.push({
-        key: 'pay-with',
-        header: {
-          itemBefore: (
-            <div className="navbar-header">
-              <a
-                href="#"
-                className="navbar-brand d-flex align-items-center"
-                onClick={e => {
-                  e.preventDefault();
-                  (this.slider.current as any).prev();
-                }}
-              >
-                <ArrowLeft />
-              </a>
-            </div>
-          ),
-          name: (
-            <FormattedMessage
-              defaultMessage="Payment method"
-              id="guidu.donate.pay-with.name"
-            />
-          ),
-        },
-        component: (
-          <div className="container">
-            {donation.amount && (
-              <Payments
-                scope="donations"
-                amount={donation.amount}
-                apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
-                onPaymentIntentSuccess={this.createDonation}
-              >
-                {paymentProps => (
-                  <PayWith
-                    {...paymentProps}
-                    label="Donazione"
-                    onChange={provider =>
-                      this.setState({ provider }, () =>
-                        (this.slider.current as any).next(),
-                      )
-                    }
-                  ></PayWith>
-                )}
-              </Payments>
-            )}
-          </div>
-        ),
-      });
-    }
-
     slides.push({
       key: 'pay',
       header: {
@@ -283,61 +228,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
       },
       component: (
         <div className="container px-0">
-          {donation.amount && (
-            <Payments
-              scope="donations"
-              amount={donation.amount}
-              apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5"
-              onPaymentIntentSuccess={paymentIntent => {
-                console.log(paymentIntent);
-                (this.slider.current as any).next();
-              }}
-              provider={this.state.provider}
-            >
-              {paymentProps => (
-                <Pay {...paymentProps} providerProps={{ hidePostalCode: true }}>
-                  <div className="card card-body mb-3 p-3">
-                    <dl className="mb-0">
-                      <dt className="d-flex align-items-center justify-content-between">
-                        Donazione
-                        {donation.recurrence === 'month' && (
-                          <span className="badge badge-secondary p-1 px-3">
-                            ogni mese
-                          </span>
-                        )}
-                      </dt>
-                      <dd className="mb-0 text-muted">
-                        Stai per donare {donation.amount / 100} € a{' '}
-                        <span className="text-medium">
-                          {currentOrganization.name}
-                        </span>{' '}
-                        per il progetto{' '}
-                        <span className="text-medium">
-                          {donationCampaign.name}
-                        </span>
-                      </dd>
-                    </dl>
-                  </div>
-                  {currentMember && (
-                    <div className="card card-body mb-3 p-3">
-                      <dl className="mb-0">
-                        <dt>Contatto</dt>
-                        <dd className="mb-0 text-muted">
-                          <address className="mb-0">
-                            <span className="text-medium">
-                              Stai donando come {currentMember.name}
-                            </span>
-                            <br />
-                            {currentMember.email}
-                          </address>
-                        </dd>
-                      </dl>
-                    </div>
-                  )}
-                </Pay>
-              )}
-            </Payments>
-          )}
+          {donation.amount && <Pay provider={{ id: 'card' }} {...this.props} />}
         </div>
       ),
     });
@@ -365,13 +256,7 @@ export default class Donate extends Component<DonateProps, DonateState> {
           />
         ),
       },
-      component: (
-        <Confirmation
-          {...this.props}
-          // submitted={loadingSection !== 'contact'}
-          donation={donation}
-        />
-      ),
+      component: <Confirmation {...this.props} donation={donation} />,
     });
 
     return (

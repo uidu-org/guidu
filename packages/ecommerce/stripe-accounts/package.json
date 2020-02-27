@@ -9,6 +9,8 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@stripe/react-stripe-js": "^1.0.3",
+    "@stripe/stripe-js": "^1.0.2",
     "@uidu/field-text": "^0.1.25",
     "@uidu/form": "^0.1.44",
     "@uidu/payments": "^0.1.12",
@@ -16,8 +18,7 @@
     "@uidu/spinner": "^0.1.15",
     "@uidu/stepper": "^0.1.17",
     "moment": "^2.18.1",
-    "react-intl": "^3.1.7",
-    "react-stripe-elements": "^6.0.0"
+    "react-intl": "^3.1.7"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.40",

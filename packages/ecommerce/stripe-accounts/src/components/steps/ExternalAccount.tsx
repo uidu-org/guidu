@@ -1,9 +1,9 @@
+import { IbanElement } from '@stripe/react-stripe-js';
 import FieldText from '@uidu/field-text';
 import Form, { FormSubmit } from '@uidu/form';
 import { createOptions } from '@uidu/payments';
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { IbanElement } from 'react-stripe-elements';
 
 export default class BankAccount extends PureComponent<any> {
   render() {
@@ -37,9 +37,9 @@ export default class BankAccount extends PureComponent<any> {
               </label>
               <IbanElement
                 id="iban-element"
-                className="form-control"
-                supportedCountries={['SEPA']}
-                {...createOptions()}
+                {...createOptions({
+                  supportedCountries: ['SEPA'],
+                })}
               />
             </div>
           </div>

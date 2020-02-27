@@ -1,0 +1,37 @@
+.form-control,
+.Select-control,
+.md-RichEditor-root,
+.input-group-text {
+  box-shadow: $input-box-shadow;
+}
+
+.form-group {
+  & > label {
+    font-size: 90%;
+    color: $text-muted;
+  }
+}
+
+.custom-control {
+  min-height: 1.8rem;
+}
+
+[placeholder] {
+  text-overflow: ellipsis;
+}
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  text-overflow: ellipsis;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-overflow: ellipsis;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  text-overflow: ellipsis;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-overflow: ellipsis;
+}

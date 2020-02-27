@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { HashRouter as Router } from 'react-router-dom';
 import StripeAccounts from '../src';
 
+const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
+
 export default class Basic extends Component<any> {
   render() {
     return (
@@ -19,7 +21,7 @@ export default class Basic extends Component<any> {
             Prima di attivare la funzionalità è necessario completare le
             seguenti informazioni
           </div>
-          <StripeAccounts apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5" />
+          <StripeAccounts stripe={stripe} />
         </div>
       </Router>
     );

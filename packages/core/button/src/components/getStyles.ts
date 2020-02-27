@@ -109,7 +109,7 @@ export const getButtonStyles = (props: ThemeProps) => ({
   width: getWidth(props),
   WebkitAppearance: 'none',
 
-  '&::-moz-focus-inner': {
+  '&::MozFocusInner': {
     border: 0,
     margin: 0,
     padding: 0,

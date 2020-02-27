@@ -185,8 +185,8 @@ function baseStyles(validationState, isCompact) {
       ...base,
       padding:
         state.isMulti && state.hasValue
-          ? 'calc(.75rem - 3px) .5rem'
-          : '.75rem 1rem',
+          ? 'calc(.625rem - 3px) .5rem'
+          : '.625rem 1rem',
     }),
     clearIndicator: css => ({
       ...css,

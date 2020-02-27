@@ -1,0 +1,477 @@
+$card-img-width: 67%;
+
+a {
+  &.card {
+    color: $body-color;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      // transform: perspective(1px) translate3d(0, 0, 0) scale(1.02);
+      transition: box-shadow 0.3s ease;
+    }
+  }
+}
+
+.card {
+  // @extend .shadow-sm;
+  // border: 0;
+}
+
+.card-horizontal {
+  // @include media-breakpoint-up('md') {
+  //   height: 320px;
+
+  //   .card-img {
+  //     height: 100%;
+  //     position: absolute;
+  //   }
+  // }
+
+  @include media-breakpoint-down('sm') {
+    .card-img {
+      height: 170px;
+    }
+  }
+
+  flex-direction: row;
+  transition: transform 0.3s ease;
+
+  .card-img {
+    padding: 0;
+    right: 0;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      width: 100%;
+    }
+  }
+}
+
+$increment-default: $grid-gutter-width * 2;
+
+$card-height: $increment-default * 4 + $grid-gutter-width;
+
+$card-height-wide: $increment-default * 3 + $grid-gutter-width;
+
+$cover-height-tight: $increment-default * 4;
+$cover-height-sm: $card-height-wide - $card-height;
+
+$card-avatar-size: $grid-gutter-width;
+
+// fake cards for empty states
+.card.card-fake {
+  opacity: 0.4;
+}
+
+.card-not-clickable {
+  pointer-events: none;
+}
+
+.card-unselectable {
+  opacity: 0.4;
+}
+
+// Contents
+
+.card-meta {
+  clear: both;
+  width: 100%;
+  float: left;
+  margin-bottom: 4px;
+}
+
+.card-image {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  background-size: cover;
+  background-position: 50% 50%;
+  img {
+    width: 100%;
+  }
+}
+
+.card-avatar {
+  width: $card-avatar-size;
+  height: $card-avatar-size;
+  object-fit: cover;
+}
+
+.card-collection {
+  position: relative;
+  .card-image {
+    height: $card-height;
+  }
+  .card-header {
+    // border-bottom: 0;
+    // color: $white;
+    // border-bottom-color: rgba(255,255,255,.2);
+  }
+  .card-title {
+    // margin-top: 0px;
+    // font-weight: $font-weight-normal;
+    // @extend .card-name;
+    // font-size: 22px;
+  }
+}
+
+// User
+.card-user,
+.card-organization {
+  .card-content.no-bio {
+    .card-name {
+      margin: ($grid-gutter-width / 2) 0 ($grid-gutter-width / 4);
+    }
+  }
+}
+
+// Grant Source
+.card-grant-source {
+  // .card-content {
+  //   padding-top: $increment-default;
+  // }
+  .card-avatar {
+    margin-bottom: $grid-gutter-width / 2;
+  }
+  .card-cta {
+    margin-top: $grid-gutter-width / 2;
+  }
+}
+// Event
+.card-event {
+  &:hover {
+    color: inherit;
+  }
+  .card-image {
+    height: $increment-default * 2;
+    width: 100%;
+  }
+  .card-body {
+  }
+  .card-name {
+  }
+}
+
+.media-card {
+  // position: relative;
+  .card-image {
+    width: $increment-default;
+    height: $increment-default;
+  }
+  &.is-selectable {
+    cursor: pointer;
+  }
+  &.card-active {
+    background-color: $body-bg;
+  }
+  .card-filter {
+    // @include black-filter(0.75);
+  }
+}
+
+// Call
+.card-call {
+  .profile-attachments {
+    width: 200%;
+    .profile-attachment {
+      height: 89px;
+    }
+  }
+  &:hover {
+    color: inherit;
+    // border: 1px solid $calls-bg-color;
+  }
+  .card-author {
+    position: relative;
+    bottom: $grid-gutter-width;
+    left: 0;
+    padding: 0 $grid-gutter-width / 2;
+    .media-left {
+      padding-right: $grid-gutter-width / 4;
+    }
+  }
+  .card-content {
+    padding: $grid-gutter-width / 4 * 3 $grid-gutter-width / 2
+      $grid-gutter-width / 2;
+  }
+}
+.look_for {
+  background-color: cadetblue !important;
+  color: $white;
+}
+.offer {
+  background-color: darkgrey !important;
+  color: $white;
+}
+.card-kind {
+  // @extend .card-avatar;
+  line-height: $card-avatar-size;
+  text-align: center;
+  @include border-radius($border-radius);
+}
+
+.card-abstract {
+  // position: absolute;
+  // width: 100%;
+  // height: 100%;
+  // background-color: whitesmoke;
+  // color: #fff;
+  // font-size: $font-size-large - 2;
+  padding: $grid-gutter-width * 1.5 ($grid-gutter-width / 2) $grid-gutter-width;
+  // height: $card-height - $increment-default - 2;
+  // text-align: center;
+  // margin-top: $grid-gutter-width;
+  // @include vertical-align();
+}
+
+.card-story {
+  &:hover {
+    color: inherit;
+  }
+  position: relative;
+  .card-image {
+    height: $increment-default * 2;
+    // border: 6px solid $white;
+    // @include border-radius(0 ($border-radius - 1) ($border-radius - 1) 0);
+    .card-filter {
+      // @include border-radius(0 ($border-radius - 1) ($border-radius - 1) 0);
+    }
+  }
+  .card-content {
+    // padding: $grid-gutter-width * 1.5 $grid-gutter-width / 2 $grid-gutter-width / 2;
+    position: relative;
+    background-size: cover;
+    .card-name {
+      font-family: $font-family-sans-serif;
+    }
+  }
+
+  blockquote {
+    display: block;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    /*Font*/
+    // font-family: $font-family-serif;
+    font-size: $font-size-base;
+    color: $text-muted;
+    // font-style: italic;
+    /*Borders - (Optional)*/
+    border-left: 0;
+  }
+
+  &.card-lg {
+    .card-content {
+      width: 60%;
+    }
+  }
+
+  .card-author {
+    margin-top: $grid-gutter-width / 2;
+    .media-left {
+      padding-right: $grid-gutter-width / 4;
+    }
+  }
+}
+
+.card-comment {
+  .card-name {
+    margin: 0;
+    // @extend .h5;
+  }
+}
+
+// card admin
+/*
+  These cards are mainly used in dashboard panel lists
+*/
+
+.card-dashboard {
+  .card-name {
+    // @extend .h6;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+  .list-inline {
+    margin-bottom: 0;
+  }
+}
+
+.card-contact {
+  .card-avatar {
+    line-height: $grid-gutter-width;
+    text-align: center;
+    background-color: $body-bg;
+  }
+}
+
+.card-link {
+  height: auto;
+  // padding: $grid-gutter-width / 2 $grid-gutter-width;
+  .card-image {
+    height: $card-height / 2;
+    // max-height: $card-height / 2;
+    @include border-radius(($border-radius - 1) ($border-radius - 1) 0 0);
+    // & + .card-content {
+    //   padding: $grid-gutter-width / 2 $grid-gutter-width / 2 $grid-gutter-width * 1.5;
+    // }
+  }
+  // .card-content {
+  //   padding: $grid-gutter-width * 1.5 $grid-gutter-width / 2;
+  // }
+}
+
+// list of media cards
+.media-card-list {
+  .media-card {
+    padding: $grid-gutter-width / 2;
+    // @media (min-width: $screen-sm-min) {
+    //   padding: $grid-gutter-width / 2 ($grid-gutter-width / 4 * 3);
+    // }
+    // border-bottom: 1px solid $input-border;
+    padding-bottom: $grid-gutter-width / 2;
+    margin: 0;
+    // margin-right: -1px;
+    &:hover,
+    &:focus,
+    &.active {
+      color: inherit;
+      background-color: $body-bg;
+    }
+  }
+  & > :last-child,
+  & > :last-child .media-card {
+    border-bottom: 0;
+  }
+}
+
+.media-card.unread {
+  // background-color: $body-bg;
+  position: relative;
+  &:before {
+    background: transparent;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: $grid-gutter-width / 8;
+    right: $grid-gutter-width / 8;
+    // border-top: $grid-gutter-width / 8 solid $brand-primary;
+    border-bottom: $grid-gutter-width / 8 solid transparent;
+    border-left: $grid-gutter-width / 8 solid transparent;
+    // border-right: $grid-gutter-width / 8 solid $brand-primary;
+    content: '';
+    z-index: 1;
+    border-radius: 0;
+  }
+}
+
+.card.card-cta {
+  height: auto;
+  .card-content {
+    padding: $grid-gutter-width $grid-gutter-width / 2;
+  }
+  .card-image {
+    height: $increment-default * 3;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.card-selectable-wrapper {
+  color: inherit;
+  &:hover {
+    color: inherit;
+    .card {
+    }
+    .card-selectable-btn {
+      // @extend .btn-fill;
+    }
+  }
+}
+
+.contact-avatar {
+  text-align: center;
+  line-height: $card-avatar-size;
+  @include border-radius(100%);
+  // @extend .bg-color-contacts;
+}
+.feed-post-avatar.contact-avatar {
+  line-height: $card-avatar-size / 2;
+}
+.card-sm {
+  .contact-avatar {
+    line-height: $card-avatar-size / 2;
+  }
+}
+
+$tax_return_campaigns_cover_width: 40%;
+.card-tax-return-campaign {
+  padding-left: $tax_return_campaigns_cover_width;
+  .card-image {
+    width: $tax_return_campaigns_cover_width;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+// card-variants
+.card-cover {
+  color: $white;
+  .card-description,
+  blockquote {
+    // @extend .text-muted-inverse;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $white;
+    .card-description,
+    blockquote {
+      // @extend .text-muted-inverse;
+    }
+  }
+  .card-content {
+    padding-top: 20%;
+    position: relative;
+    padding-bottom: $grid-gutter-width / 4;
+  }
+  .card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    @include border-radius($border-radius);
+  }
+  .card-filter {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), transparent);
+    display: block;
+    content: '';
+    z-index: 1;
+  }
+}
+
+.card-fluid {
+  padding-left: 40%;
+  .card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    @include border-radius($border-radius 0 0 $border-radius);
+  }
+}

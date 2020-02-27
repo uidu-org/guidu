@@ -92,6 +92,7 @@ class Shell extends Component<ShellProps, ShellState> {
               slidesPerView: 1,
               allowTouchMove: true,
               autoHeight: true,
+              // simulateTouch: false,
               on: {
                 slideChange: () => {
                   this.setState(

@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Attend from '..';
 
+const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
+
 class Basic extends Component<any, any> {
   render() {
     return (
@@ -15,6 +17,7 @@ class Basic extends Component<any, any> {
                 Test navigation
               </ShellHeader>
               <Attend
+                stripe={stripe}
                 event={{
                   name: 'Pitch your failure - Berlin',
                   location: { address: 'Berlin' },

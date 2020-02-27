@@ -78,8 +78,6 @@ export default class DashboardManager extends Component<
     const { rowData, gridProps } = this.props;
     const { timeFrame, timeFrameGrouping, timeRange } = this.state;
 
-    console.log(gridProps);
-
     const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,

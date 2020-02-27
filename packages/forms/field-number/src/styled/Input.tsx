@@ -51,7 +51,7 @@ const InputElement = styled(NumberFormat)`
   }
 
   &:invalid {
-    box-shadow: none;
+    /* box-shadow: none; */
   }
   ${getPlaceholderStyle};
 `;

@@ -1,14 +1,15 @@
+import {
+  ElementsConsumer,
+  PaymentRequestButtonElement,
+} from '@stripe/react-stripe-js';
 import React, { PureComponent } from 'react';
 import { CreditCard, Server } from 'react-feather';
-import {
-  injectStripe,
-  PaymentRequestButtonElement,
-} from 'react-stripe-elements';
-import { PayWithProps } from '../../types';
+import { PayWithProps } from '../types';
 
 class PayWith extends PureComponent<PayWithProps, any> {
   constructor(props) {
     super(props);
+    console.log(props);
     const { label, amount, stripe, paymentIntent } = props;
     const paymentRequest = stripe.paymentRequest({
       country: 'IT',
@@ -62,7 +63,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
   select = (e, provider) => {
     const { onChange } = this.props;
     e.preventDefault();
-    onChange(provider);
+    onChange({ id: provider, name: provider });
   };
 
   render() {
@@ -72,14 +73,16 @@ class PayWith extends PureComponent<PayWithProps, any> {
       <div>
         {canMakePayment && (
           <PaymentRequestButtonElement
-            paymentRequest={paymentRequest}
-            className="PaymentRequestButton mb-3"
-            style={{
-              paymentRequestButton: {
-                theme: 'dark',
-                height: '48px',
+            options={{
+              paymentRequest,
+              style: {
+                paymentRequestButton: {
+                  theme: 'dark',
+                  height: 48,
+                },
               },
             }}
+            className="PaymentRequestButton mb-3"
           />
         )}
         <a
@@ -111,4 +114,10 @@ class PayWith extends PureComponent<PayWithProps, any> {
   }
 }
 
-export default injectStripe(PayWith as any);
+export default rest => (
+  <ElementsConsumer>
+    {({ stripe, elements }) => (
+      <PayWith stripe={stripe} elements={elements} {...rest} />
+    )}
+  </ElementsConsumer>
+);

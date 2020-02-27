@@ -51,7 +51,7 @@ const InputElement = styled(TimeInput)`
   }
 
   &:invalid {
-    box-shadow: none;
+    /* box-shadow: none; */
   }
   ${getPlaceholderStyle};
 `;

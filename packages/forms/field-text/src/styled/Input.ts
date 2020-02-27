@@ -50,7 +50,7 @@ const InputElement = styled.input`
   }
 
   &:invalid {
-    box-shadow: none;
+    /* box-shadow: none; */
   }
   ${getPlaceholderStyle};
 `;

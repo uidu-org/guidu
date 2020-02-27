@@ -1,9 +1,9 @@
 // https://stripe.com/docs/connect/required-verification-information
 
+import { Elements } from '@stripe/react-stripe-js';
 import Stepper, { Step } from '@uidu/stepper';
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { Elements, injectStripe, StripeProvider } from 'react-stripe-elements';
 import Business from './steps/Business';
 import ExternalAccount from './steps/ExternalAccount';
 import Individual from './steps/Individual';
@@ -283,12 +283,8 @@ class StripeAccounts extends PureComponent<any, any> {
   }
 }
 
-const StripeStripeAccounts = injectStripe(StripeAccounts);
-
-export default props => (
-  <StripeProvider apiKey="pk_test_gxaXiVZYxYA1u1ZzqjVr71c5">
-    <Elements>
-      <StripeStripeAccounts {...props} />
-    </Elements>
-  </StripeProvider>
+export default ({ stripe, ...rest }) => (
+  <Elements stripe={stripe}>
+    <StripeAccounts stripe={stripe} {...rest} />
+  </Elements>
 );
