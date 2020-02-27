@@ -18,5 +18,5 @@ export default styled.span<{
   letter-spacing: 0.05em;
   border-radius: ${BORDER_RADIUS};
   text-transform: uppercase;
-  margin: 0 3px 3px 0;
+  // margin: 0 3px 3px 0;
 `;
