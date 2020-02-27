@@ -24,17 +24,15 @@ export default styled.div`
     width: fit-content;
   }
 
-  &:hover {
-    &::after {
-      background: #f8f9fa;
-      bottom: -5px;
-      border-radius: 4px;
-      content: '';
-      left: -5px;
-      position: absolute;
-      right: -5px;
-      top: -3px;
-      z-index: -1;
-    }
+  &::after {
+    background: #f4f4f4;
+    bottom: -8px;
+    border-radius: 4px;
+    content: '';
+    left: -8px;
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    z-index: -1;
   }
 `;

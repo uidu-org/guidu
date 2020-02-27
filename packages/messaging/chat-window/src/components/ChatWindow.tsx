@@ -7,7 +7,7 @@ import Message, {
   MessageReactions,
 } from '@uidu/message';
 import MessagesForm from '@uidu/message-form';
-import React, { Component, Fragment } from 'react';
+import React, { PureComponent } from 'react';
 import Media from 'react-media';
 import Day from '../styled/Day';
 import { ChatWindowProps, ChatWindowState } from '../types';
@@ -32,7 +32,7 @@ function preventDefaultForScrollKeys(e) {
   return true;
 }
 
-export default class ChatWindow extends Component<
+export default class ChatWindow extends PureComponent<
   ChatWindowProps,
   ChatWindowState
 > {
@@ -159,9 +159,9 @@ export default class ChatWindow extends Component<
               {Object.keys(groupedByDay).map(day => {
                 const todayMessages = groupedByDay[day];
                 return (
-                  <Fragment key={day}>
+                  <>
                     <Day className="small text-muted py-3">
-                      <div className="bg-white px-2">{day}</div>
+                      <div className="px-2">{day}</div>
                     </Day>
                     {groupByMessager(todayMessages, betweenMinutes)
                       .reverse()
@@ -234,7 +234,7 @@ export default class ChatWindow extends Component<
                           </MessageGroup>
                         );
                       })}
-                  </Fragment>
+                  </>
                 );
               })}
             </ReactChatView>
