@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.1.10
+
+### Patch Changes
+
+- 5d99a9b: Update to @stripe/stripe-js, new payments helper
+- Updated dependencies [5d99a9b]
+  - @uidu/payments@0.2.0
+
 ## 0.1.9
 
 ### Patch Changes

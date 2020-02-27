@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-month",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "description": "Field Month Component",
   "keywords": [
     "react",
@@ -20,7 +20,7 @@
     "@uidu/theme": "^0.2.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.51",
+    "@uidu/button": "^0.1.55",
     "@uidu/docs": "^0.1.41",
     "react-dom": "^16.4.0"
   },

@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 0.2.12
+
+### Patch Changes
+
+- 5d99a9b: Update to @stripe/stripe-js, new payments helper
+- Updated dependencies [5d99a9b]
+  - @uidu/button@0.1.55
+
 ## 0.2.11
 
 ### Patch Changes
