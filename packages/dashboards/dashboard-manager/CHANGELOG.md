@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.3.9
+
+### Patch Changes
+
+- 07a4c43: Upgrade react-grid-layout
+
 ## 0.3.8
 
 ### Patch Changes
