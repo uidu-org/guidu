@@ -1,5 +1,11 @@
 # @uidu/lozenge
 
+## 0.1.20
+
+### Patch Changes
+
+- ce484ce: Remove margins from lozenge
+
 ## 0.1.19
 
 ### Patch Changes
