@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.3.7
+
+### Patch Changes
+
+- 52d9d40: Bigger selects
+- Updated dependencies [52d9d40]
+  - @uidu/dashlets@0.2.6
+
 ## 0.3.6
 
 ### Patch Changes

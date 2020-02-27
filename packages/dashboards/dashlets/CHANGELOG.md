@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.2.6
+
+### Patch Changes
+
+- 52d9d40: Bigger selects
+
 ## 0.2.5
 
 ### Patch Changes
