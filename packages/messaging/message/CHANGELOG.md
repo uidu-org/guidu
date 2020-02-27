@@ -1,5 +1,11 @@
 # @uidu/message
 
+## 0.1.27
+
+### Patch Changes
+
+- 199c5f4: Small fixes to messaging ui
+
 ## 0.1.26
 
 ### Patch Changes
