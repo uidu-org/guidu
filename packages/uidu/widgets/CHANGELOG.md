@@ -1,5 +1,11 @@
 # @uidu/widgets
 
+## 0.1.16
+
+### Patch Changes
+
+- 5d99a9b: Update to @stripe/stripe-js, new payments helper
+
 ## 0.1.15
 
 ### Patch Changes

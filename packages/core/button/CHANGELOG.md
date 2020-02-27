@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.55
+
+### Patch Changes
+
+- 5d99a9b: Update to @stripe/stripe-js, new payments helper
+
 ## 0.1.54
 
 ### Patch Changes

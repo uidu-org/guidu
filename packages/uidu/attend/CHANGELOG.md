@@ -1,5 +1,15 @@
 # @uidu/attend
 
+## 0.1.18
+
+### Patch Changes
+
+- 5d99a9b: Update to @stripe/stripe-js, new payments helper
+- Updated dependencies [5d99a9b]
+  - @uidu/payments@0.2.0
+  - @uidu/field-text@0.1.29
+  - @uidu/widgets@0.1.16
+
 ## 0.1.17
 
 ### Patch Changes
