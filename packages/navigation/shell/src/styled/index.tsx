@@ -11,7 +11,7 @@ const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
       scroll-behavior: smooth;
       overflow-y: scroll;
       overflow-x: hidden;
-      overscroll-behavior-y: contain;
+      overscroll-behavior-y: none;
     `;
   }
   if (fixedHeight) {
@@ -26,7 +26,7 @@ const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
     scroll-behavior: smooth;
     overflow-y: scroll;
     overflow-x: hidden;
-    overscroll-behavior-y: contain;
+    overscroll-behavior-y: none;
   `;
 };
 
