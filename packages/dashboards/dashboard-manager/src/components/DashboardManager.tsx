@@ -89,7 +89,7 @@ export default function DashboardManager({
     return (
       <ResponsiveGridLayout
         autoSize
-        // measureBeforeMount
+        measureBeforeMount
         // verticalCompact
         rowHeight={24}
         useCSSTransforms
