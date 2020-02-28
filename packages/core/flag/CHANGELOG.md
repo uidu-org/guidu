@@ -1,5 +1,11 @@
 # @uidu/flag
 
+## 0.1.9
+
+### Patch Changes
+
+- 4873ecf: Try fixing some flickering on iOS
+
 ## 0.1.8
 
 ### Patch Changes
