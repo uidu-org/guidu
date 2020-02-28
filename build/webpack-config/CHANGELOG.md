@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.54
+
+### Patch Changes
+
+- 411a158: Shell shadow is now fixed and not sticky, maybe fixing ios flickering
+
 ## 0.1.53
 
 ### Patch Changes

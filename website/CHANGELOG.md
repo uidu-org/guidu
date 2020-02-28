@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.81
+
+### Patch Changes
+
+- 411a158: Shell shadow is now fixed and not sticky, maybe fixing ios flickering
+- Updated dependencies [411a158]
+  - @uidu/webpack-config@0.1.54
+  - @uidu/shell@0.2.7
+
 ## 0.1.80
 
 ### Patch Changes
