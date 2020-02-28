@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.6
+
+### Patch Changes
+
+- 4873ecf: Try fixing some flickering on iOS
+
 ## 0.2.5
 
 ### Patch Changes
