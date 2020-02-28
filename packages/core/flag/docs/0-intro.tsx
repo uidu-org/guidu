@@ -22,7 +22,9 @@ export default md`
       packageName="@uidu/flag"
       Component={require('../examples/01-flag-without-flagGroup').default}
       title="Flag without group"
-      source={require('!!raw-loader!../examples/01-flag-without-flagGroup')}
+      source={
+        require('!!raw-loader!../examples/01-flag-without-flagGroup').default
+      }
     />
   )}
 
@@ -31,7 +33,9 @@ export default md`
       packageName="@uidu/flag"
       Component={require('../examples/11-bold-flag-component').default}
       title="Flag using bold"
-      source={require('!!raw-loader!../examples/11-bold-flag-component')}
+      source={
+        require('!!raw-loader!../examples/11-bold-flag-component').default
+      }
     />
   )}
 
@@ -40,7 +44,7 @@ export default md`
       packageName="@uidu/flag"
       Component={require('../examples/12-flag-group').default}
       title="Flag group"
-      source={require('!!raw-loader!../examples/12-flag-group')}
+      source={require('!!raw-loader!../examples/12-flag-group').default}
     />
   )}
 

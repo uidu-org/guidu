@@ -15,8 +15,8 @@ export const ObserverComponent = styled.div`
 `;
 
 export const Shadow = styled.div<{ active: boolean }>`
-  position: sticky;
-  top: 0;
+  position: fixed;
+  /* top: 0; */
   width: 100%;
   z-index: 1;
 
