@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.5
+
+### Patch Changes
+
+- 708a319: Small height adjustment on header mobile
+
 ## 0.2.4
 
 ### Patch Changes
