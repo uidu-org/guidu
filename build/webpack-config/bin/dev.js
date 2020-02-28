@@ -35,7 +35,7 @@ const createConfig = require('../config');
 const utils = require('../config/utils');
 const { print, devServerBanner, errorMsg } = require('../banner');
 
-let HOST = 'localhost';
+let HOST = '0.0.0.0';
 let disableHostCheck = false;
 
 if (process.env.VISUAL_REGRESSION) {
