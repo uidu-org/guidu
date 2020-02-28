@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.7
+
+### Patch Changes
+
+- 411a158: Shell shadow is now fixed and not sticky, maybe fixing ios flickering
+
 ## 0.2.6
 
 ### Patch Changes
