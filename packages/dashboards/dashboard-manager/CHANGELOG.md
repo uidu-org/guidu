@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.3.10
+
+### Patch Changes
+
+- 708a319: Small height adjustment on header mobile
+- Updated dependencies [708a319]
+  - @uidu/shell@0.2.5
+
 ## 0.3.9
 
 ### Patch Changes
