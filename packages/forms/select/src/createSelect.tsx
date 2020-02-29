@@ -87,6 +87,8 @@ type ReactSelectProps = {
   onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
   /* Array of options that populate the select menu */
   options: OptionsType;
+  /* ValueObj useful for async and creatable */
+  valueObj: OptionType;
   /* Placeholder text for the select value */
   placeholder: string;
   /* Status to relay to screen readers */
@@ -387,11 +389,11 @@ const createSelect = <TOriginalProps extends {}>(
     toString = arr => arr.join(',');
 
     getValue = () => {
-      const { value, options, multiple, getOptionValue } = this.props;
+      const { value, valueObj, options, multiple, getOptionValue } = this.props;
 
       // @ts-ignore
       if (Component === Async) {
-        return value;
+        return valueObj;
       }
 
       if (value === undefined) return undefined;
@@ -426,7 +428,7 @@ const createSelect = <TOriginalProps extends {}>(
           <Component
             ref={this.onSelectRef}
             isMulti={multiple}
-            defaultValue={this.getValue()}
+            value={this.getValue()}
             options={options}
             getOptionLabel={getOptionLabel}
             getOptionValue={getOptionValue}
