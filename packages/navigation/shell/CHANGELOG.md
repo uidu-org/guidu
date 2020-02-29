@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.8
+
+### Patch Changes
+
+- 7bb5816: FIX shadow on desktop
+
 ## 0.2.7
 
 ### Patch Changes
