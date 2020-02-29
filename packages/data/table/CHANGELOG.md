@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.96
+
+### Patch Changes
+
+- cbe6df6: Commented svg for postcsssvgo
+
 ## 0.1.95
 
 ### Patch Changes
