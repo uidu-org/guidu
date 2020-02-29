@@ -5,6 +5,7 @@ import React from 'react';
 import isEqual from 'react-fast-compare';
 import Select, { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
+import Async from 'react-select/async';
 import * as defaultComponents from './components';
 import MultiValueLabel from './components/MultiValueLabel';
 import Option from './components/Option';
@@ -387,6 +388,11 @@ const createSelect = <TOriginalProps extends {}>(
 
     getValue = () => {
       const { value, options, multiple, getOptionValue } = this.props;
+
+      // @ts-ignore
+      if (Component === Async) {
+        return value;
+      }
 
       if (value === undefined) return undefined;
 

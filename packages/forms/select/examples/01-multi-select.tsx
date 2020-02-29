@@ -16,7 +16,7 @@ const MultiExample = () => (
       multiple
       isSearchable={false}
       placeholder="Choose a City"
-      value={[cities[1].id]}
+      value={[cities[0].id]}
     />
   </Form>
 );
