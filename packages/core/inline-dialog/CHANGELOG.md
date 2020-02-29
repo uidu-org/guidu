@@ -1,5 +1,12 @@
 # @uidu/inline-dialog
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [a7d0ad4]
+  - @uidu/select@0.3.0
+
 ## 0.1.14
 
 ### Patch Changes

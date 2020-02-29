@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 0.3.0
+
+### Minor Changes
+
+- a7d0ad4: Make it controlled component, use value instead of defaultValue
+
+### Patch Changes
+
+- @uidu/modal-dialog@0.1.29
+
 ## 0.2.13
 
 ### Patch Changes

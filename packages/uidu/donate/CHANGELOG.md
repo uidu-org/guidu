@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.1.21
+
+### Patch Changes
+
+- Updated dependencies [a7d0ad4]
+  - @uidu/select@0.3.0
+  - @uidu/modal-dialog@0.1.29
+
 ## 0.1.20
 
 ### Patch Changes

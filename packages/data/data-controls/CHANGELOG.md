@@ -1,5 +1,16 @@
 # @uidu/data-controls
 
+## 0.3.7
+
+### Patch Changes
+
+- Updated dependencies [a7d0ad4]
+  - @uidu/select@0.3.0
+  - @uidu/inline-dialog@0.1.15
+  - @uidu/data-fields@0.1.26
+  - @uidu/data-views@0.2.8
+  - @uidu/table@0.1.97
+
 ## 0.3.6
 
 ### Patch Changes

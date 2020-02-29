@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "private": false,
   "description": "Donate form",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -15,10 +15,10 @@
     "@uidu/field-text": "^0.1.29",
     "@uidu/field-textarea": "^0.1.13",
     "@uidu/form": "^0.1.45",
-    "@uidu/modal-dialog": "^0.1.25",
+    "@uidu/modal-dialog": "^0.1.29",
     "@uidu/payments": "^0.2.0",
     "@uidu/radio": "^0.3.3",
-    "@uidu/select": "^0.2.12",
+    "@uidu/select": "^0.3.0",
     "@uidu/widgets": "^0.1.16",
     "react-feather": "^2.0.3",
     "react-intl": "^3.1.7",
@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.40",
-    "@uidu/modal-dialog": "^0.1.25"
+    "@uidu/modal-dialog": "^0.1.29"
   },
   "uidu:src": "index.ts"
 }
