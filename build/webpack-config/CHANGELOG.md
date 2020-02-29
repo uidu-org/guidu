@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.55
+
+### Patch Changes
+
+- 938c1e6: Fix table scss
+
 ## 0.1.54
 
 ### Patch Changes
