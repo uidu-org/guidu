@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.13
+
+### Patch Changes
+
+- 36e15b5: Fix react-select async value
+
 ## 0.2.12
 
 ### Patch Changes
