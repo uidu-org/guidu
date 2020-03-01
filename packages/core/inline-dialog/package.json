@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "license": "MIT",
   "author": "uidu",
@@ -18,7 +18,7 @@
     "@uidu/button": "^0.1.54",
     "@uidu/docs": "^0.1.41",
     "@uidu/form": "^0.1.44",
-    "@uidu/select": "^0.2.9",
+    "@uidu/select": "^0.3.0",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"
   },

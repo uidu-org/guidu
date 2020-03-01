@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.2.13",
+  "version": "0.3.0",
   "description": "Select Component",
   "keywords": [
     "react",
@@ -29,7 +29,7 @@
   "devDependencies": {
     "@uidu/button": "^0.1.55",
     "@uidu/docs": "^0.1.41",
-    "@uidu/modal-dialog": "^0.1.27",
+    "@uidu/modal-dialog": "^0.1.29",
     "faker": "^4.1.0",
     "react-dom": "^16.4.0"
   },

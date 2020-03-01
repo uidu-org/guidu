@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "private": false,
   "description": "Load field-* based on field kind",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -14,7 +14,7 @@
     "@uidu/field-number": "^0.1.23",
     "@uidu/field-text": "^0.1.25",
     "@uidu/field-textarea": "^0.1.13",
-    "@uidu/select": "^0.2.7",
+    "@uidu/select": "^0.3.0",
     "react-content-loader": "^5.0.0"
   },
   "devDependencies": {

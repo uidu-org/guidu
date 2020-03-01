@@ -1,5 +1,12 @@
 # @uidu/field
 
+## 0.1.12
+
+### Patch Changes
+
+- Updated dependencies [a7d0ad4]
+  - @uidu/select@0.3.0
+
 ## 0.1.11
 
 ### Patch Changes

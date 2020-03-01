@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "module": "index.js",
@@ -31,8 +31,8 @@
     "@uidu/media-filmstrip": "^0.1.24",
     "@uidu/media-picker": "^0.1.14",
     "@uidu/mentions": "^0.1.13",
-    "@uidu/modal-dialog": "^0.1.28",
-    "@uidu/select": "^0.2.10",
+    "@uidu/modal-dialog": "^0.1.29",
+    "@uidu/select": "^0.3.0",
     "@uidu/spinner": "^0.1.16",
     "@uidu/status": "^0.1.9",
     "@uidu/task-decision": "^0.1.9",

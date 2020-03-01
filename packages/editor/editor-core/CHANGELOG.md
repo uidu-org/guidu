@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.1.27
+
+### Patch Changes
+
+- Updated dependencies [a7d0ad4]
+  - @uidu/select@0.3.0
+  - @uidu/modal-dialog@0.1.29
+
 ## 0.1.26
 
 ### Patch Changes

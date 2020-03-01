@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.82
+
+### Patch Changes
+
+- Updated dependencies [a7d0ad4]
+  - @uidu/select@0.3.0
+  - @uidu/modal-dialog@0.1.29
+  - @uidu/table@0.1.97
+
 ## 0.1.81
 
 ### Patch Changes
