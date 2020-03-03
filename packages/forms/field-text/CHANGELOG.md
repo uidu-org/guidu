@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 0.1.30
+
+### Patch Changes
+
+- 900c9e0: Little accessibility fixes
+- Updated dependencies [900c9e0]
+  - @uidu/field-base@0.1.53
+
 ## 0.1.29
 
 ### Patch Changes

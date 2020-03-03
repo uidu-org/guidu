@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.53
+
+### Patch Changes
+
+- 900c9e0: Little accessibility fixes
+
 ## 0.1.52
 
 ### Patch Changes

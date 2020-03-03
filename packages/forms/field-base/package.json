@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.1.52",
+  "version": "0.1.53",
   "description": "Inputs using Formsy",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
