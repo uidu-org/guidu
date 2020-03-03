@@ -259,11 +259,7 @@ export default class Providers extends PureComponent<any, any> {
             </Form>
           </div>
           <div>
-            <DeviseForm
-              {...this.props}
-              scope="registrations"
-              currentUser={currentUser}
-            />
+            <DeviseForm {...(this.props as any)} scope="registrations" />
           </div>
         </Slider>
       </div>

@@ -1,6 +1,7 @@
 import { RouteComponentProps } from 'react-router-dom';
 
 export type DeviseProps = {
+  children: any;
   providers?: Array<any>;
   routes: {
     registrations: string;
@@ -21,9 +22,7 @@ export type DeviseProps = {
   // Footer
 } & RouteComponentProps;
 
-export type ProvidersProps = {
-  
-}
+export type ProvidersProps = {};
 
 export type DeviseWrapperProps = {
   header?: React.ReactNode;
