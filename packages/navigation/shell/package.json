@@ -11,6 +11,7 @@
   "dependencies": {
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@uidu/spinner": "^0.1.15",
+    "body-scroll-lock": "^2.6.1",
     "react-intl": "^3.1.7",
     "styled-components": "^5.0.0"
   },

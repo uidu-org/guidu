@@ -1,53 +1,50 @@
 import Observer from '@researchgate/react-intersection-observer';
-import React, { PureComponent } from 'react';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import React, { useEffect, useRef, useState } from 'react';
 import { Body, ObserverComponent, Shadow } from './styled';
-import { ShellBodyProps, ShellBodyState } from './types';
+import { ShellBodyProps } from './types';
 
-class ShellBody extends PureComponent<ShellBodyProps, ShellBodyState> {
-  static defaultProps = {
-    shadowOnScroll: true,
-  };
+function ShellBody({
+  forwardedRef,
+  children,
+  shadowOnScroll = true,
+  className = null,
+  scrollable,
+}: ShellBodyProps) {
+  const [shadowedHeader, setShadowedHeader] = useState(false);
+  const ref: React.RefObject<any> = useRef(forwardedRef);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      shadowedHeader: false,
+  useEffect(() => {
+    if (!!scrollable) {
+      disableBodyScroll(ref.current);
+    }
+    return () => {
+      enableBodyScroll(ref.current);
     };
-  }
-  handleHeader = e => {
-    this.setState({
-      shadowedHeader: !e.isIntersecting,
-    });
+  }, []);
+
+  const handleHeader = e => {
+    setShadowedHeader(!e.isIntersecting);
   };
 
-  render() {
-    const {
-      forwardedRef,
-      children,
-      shadowOnScroll,
-      ...otherProps
-    } = this.props;
-    const { shadowedHeader } = this.state;
-
-    return (
-      <Body {...otherProps} ref={forwardedRef}>
-        {shadowOnScroll && (
-          <>
-            <Observer
-              onChange={this.handleHeader}
-              root={forwardedRef && forwardedRef.current}
-            >
-              <ObserverComponent />
-            </Observer>
-            <Shadow active={shadowedHeader} />
-          </>
-        )}
-        {children}
-      </Body>
-    );
-  }
+  return (
+    <Body scrollable={scrollable} ref={ref} className={className}>
+      {shadowOnScroll && (
+        <>
+          <Observer
+            onChange={handleHeader}
+            root={forwardedRef && forwardedRef.current}
+          >
+            <ObserverComponent />
+          </Observer>
+          <Shadow active={shadowedHeader} width={ref.current?.offsetWidth} />
+        </>
+      )}
+      {children}
+    </Body>
+  );
 }
 
-export default React.forwardRef((props: any, ref) => {
-  return <ShellBody {...props} forwardedRef={ref} />;
+export default React.forwardRef((props: ShellBodyProps, ref: any) => {
+  return <ShellBody {...(props as ShellBodyProps)} forwardedRef={ref} />;
 });

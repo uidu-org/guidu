@@ -271,7 +271,7 @@ export default class Content extends React.Component<Props, State> {
               css={bodyStyles(shouldScroll)}
               {...(!Body.hasOwnProperty('styledComponentId')
                 ? { ref: this.getScrollContainer }
-                : { innerRef: this.getScrollContainer })}
+                : { ref: this.getScrollContainer })}
             >
               {children}
             </Body>

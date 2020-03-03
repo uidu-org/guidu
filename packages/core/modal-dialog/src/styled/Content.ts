@@ -63,7 +63,7 @@ export const TitleText = styled.span<TitleTextProps>`
   width: 100%;
   ${props =>
     !props.isHeadingMultiline &&
-    `
+    css`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -93,12 +93,12 @@ export const titleIconWrapperStyles = (appearance: AppearanceType) => css`
 export const bodyStyles = (shouldScroll?: boolean) => css`
   flex: 1 1 auto;
   ${shouldScroll
-    ? `
+    ? css`
         overflow-y: auto;
         overflow-x: hidden;
         padding: ${keylineHeight}px ${modalPadding}px;
       `
-    : `
+    : css`
         padding: 0 ${modalPadding}px;
       `}
 

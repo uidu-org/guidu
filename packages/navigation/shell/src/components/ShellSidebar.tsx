@@ -1,8 +1,6 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Sidebar } from '../styled';
 
-export default class Shell extends PureComponent<any> {
-  render() {
-    return <Sidebar {...this.props} className="d-none d-lg-flex" />;
-  }
+export default function ShellSidebar({ ...rest }) {
+  return <Sidebar {...rest} className="d-none d-lg-flex" />;
 }

@@ -14,12 +14,12 @@ export const ObserverComponent = styled.div`
   width: 100%;
 `;
 
-export const Shadow = styled.div<{ active: boolean }>`
+export const Shadow = styled.div<{ active: boolean; width: number }>`
   position: fixed;
   height: 10px;
   overflow: hidden;
   /* top: 0; */
-  width: 100%;
+  width: ${({ width }) => `${width}px`};
   z-index: 1;
   pointer-events: none;
 
