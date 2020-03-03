@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.1.21
+
+### Patch Changes
+
+- 323ff6b: Make devise extendable
+- Updated dependencies [900c9e0]
+  - @uidu/field-text@0.1.30
+
 ## 0.1.20
 
 ### Patch Changes
