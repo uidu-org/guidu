@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.10
+
+### Patch Changes
+
+- 521bb28: Shell is now using body-scroll-lock for mobile - seems to work. Body should not be fixed positioned
+
 ## 0.2.9
 
 ### Patch Changes

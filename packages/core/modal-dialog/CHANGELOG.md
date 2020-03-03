@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.1.30
+
+### Patch Changes
+
+- 521bb28: Shell is now using body-scroll-lock for mobile - seems to work. Body should not be fixed positioned
+
 ## 0.1.29
 
 ### Patch Changes
