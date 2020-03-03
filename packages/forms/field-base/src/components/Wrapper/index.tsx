@@ -69,7 +69,7 @@ export default class Wrapper extends PureComponent<
               {required && <RequiredSymbol required={required} />}
             </span>
           </FloatLabel>
-          {help ? <Help help={help} /> : null}
+          {help ? <Help id={id} help={help} /> : null}
         </Row>
       );
     }
@@ -82,7 +82,7 @@ export default class Wrapper extends PureComponent<
       <Row htmlFor={id} {...this.props}>
         {control}
         {showErrors ? <ErrorMessages messages={errorMessages} /> : null}
-        {help ? <Help help={help} /> : null}
+        {help ? <Help id={id} help={help} /> : null}
         {showErrors ? (
           <Icon symbol="remove" className="form-control-feedback" />
         ) : null}

@@ -62,4 +62,6 @@ export type FieldBaseProps = {
   onKeyPress?: (e: React.KeyboardEvent) => any;
   /** Standard input onkeyup event. */
   onKeyUp?: (e: React.KeyboardEvent) => any;
+  /** Standard input onkeyup event. */
+  ariaDescribedBy?: string;
 };

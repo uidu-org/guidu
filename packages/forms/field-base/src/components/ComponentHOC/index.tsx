@@ -107,6 +107,7 @@ const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
         label: propLabel,
         name: propName,
         componentRef,
+        help,
         ...props
       } = this.props;
 
@@ -141,6 +142,8 @@ const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
         layout,
         showErrors,
         onSetValue: setValue,
+        help,
+        ...(help ? { ariaDescribedBy: `${this.id}-desc` } : {}),
       };
 
       return <Component {...(props as TOriginalProps)} {...newProps} />;

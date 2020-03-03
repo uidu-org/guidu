@@ -5,7 +5,14 @@ const RequiredSymbol = (props: RequiredSymbolProps) => {
   if (props.required === false) {
     return null;
   }
-  return <span className="required-symbol">{props.symbol}</span>;
+  return (
+    <>
+      <span aria-hidden={true} className="required-symbol">
+        {props.symbol}
+      </span>
+      <span className="sr-only"> Required</span>
+    </>
+  );
 };
 
 RequiredSymbol.defaultProps = {

@@ -82,6 +82,7 @@ class FieldTextStateless extends Component<FieldTextProps> {
       isSpellCheckEnabled,
       type,
       value,
+      ariaDescribedBy,
     } = this.props;
 
     return (
@@ -112,6 +113,7 @@ class FieldTextStateless extends Component<FieldTextProps> {
         spellCheck={isSpellCheckEnabled}
         type={type}
         value={value}
+        aria-describedby={ariaDescribedBy}
         {...(this.getInputMode(type)
           ? { inputMode: this.getInputMode(type) }
           : {})}
