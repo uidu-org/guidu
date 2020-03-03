@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.42
+
+### Patch Changes
+
+- 521bb28: Shell is now using body-scroll-lock for mobile - seems to work. Body should not be fixed positioned
+
 ## 0.1.41
 
 ### Patch Changes
