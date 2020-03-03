@@ -5,6 +5,7 @@ import { Body, ObserverComponent, Shadow } from './styled';
 import { ShellBodyProps } from './types';
 
 function ShellBody({
+  id = null,
   forwardedRef,
   children,
   shadowOnScroll = true,
@@ -28,7 +29,7 @@ function ShellBody({
   };
 
   return (
-    <Body scrollable={scrollable} ref={ref} className={className}>
+    <Body id={id} scrollable={scrollable} ref={ref} className={className}>
       {shadowOnScroll && (
         <>
           <Observer
