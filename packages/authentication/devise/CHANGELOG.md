@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.1.20
+
+### Patch Changes
+
+- 6e83876: Try removing webkit overflow scroll
+- Updated dependencies [6e83876]
+  - @uidu/shell@0.2.9
+
 ## 0.1.19
 
 ### Patch Changes
