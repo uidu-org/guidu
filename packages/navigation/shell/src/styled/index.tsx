@@ -6,7 +6,7 @@ const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
       @media (max-width: 991px) {
         height: 100%;
       }
-      -webkit-overflow-scrolling: touch;
+      /* -webkit-overflow-scrolling: touch; */
       height: auto;
       scroll-behavior: smooth;
       overflow-y: scroll;
@@ -21,7 +21,7 @@ const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
     `;
   }
   return css`
-    -webkit-overflow-scrolling: touch;
+    /* -webkit-overflow-scrolling: touch; */
     height: auto;
     scroll-behavior: smooth;
     overflow-y: scroll;

@@ -98,6 +98,7 @@ export default class DeviseForm extends PureComponent<any, any> {
       match,
       currentUser,
       currentIdentity,
+      children,
     } = this.props;
 
     return (
@@ -210,6 +211,7 @@ export default class DeviseForm extends PureComponent<any, any> {
               />
             </div>
           )}
+          {children}
           <div className="form-group">
             <Recaptcha
               ref={this.recaptchaInstance}

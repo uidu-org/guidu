@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Inner = styled.div`
-  -webkit-overflow-scrolling: touch;
+  /* -webkit-overflow-scrolling: touch; */
   height: auto;
   flex: 1 1 auto;
   scroll-behavior: smooth;
