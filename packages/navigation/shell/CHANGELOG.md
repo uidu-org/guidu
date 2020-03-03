@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.9
+
+### Patch Changes
+
+- 6e83876: Try removing webkit overflow scroll
+
 ## 0.2.8
 
 ### Patch Changes
