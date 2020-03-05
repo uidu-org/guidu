@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.1.22
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/shell@0.2.12
+
 ## 0.1.21
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @atlaskit/renderer
 
+## 0.1.14
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/status@0.1.10
+
 ## 0.1.13
 
 ### Patch Changes

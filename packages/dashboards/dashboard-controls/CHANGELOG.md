@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.2.2
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+
 ## 0.2.1
 
 ### Patch Changes

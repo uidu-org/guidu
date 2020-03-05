@@ -1,5 +1,13 @@
 # @uidu/downshift
 
+## 0.2.1
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/shell@0.2.12
+
 ## 0.2.0
 
 ### Minor Changes

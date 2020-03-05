@@ -1,5 +1,15 @@
 # @uidu/attend
 
+## 0.1.19
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/payments@0.2.1
+  - @uidu/shell@0.2.12
+  - @uidu/widgets@0.1.17
+
 ## 0.1.18
 
 ### Patch Changes

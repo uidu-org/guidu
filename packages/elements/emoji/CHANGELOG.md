@@ -1,5 +1,13 @@
 # @uidu/emoji
 
+## 0.1.9
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/elements-test-helpers@0.1.6
+
 ## 0.1.8
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.2.10
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/data-controls@0.3.8
+  - @uidu/table@0.1.98
+  - @uidu/shell@0.2.12
+
 ## 0.2.9
 
 ### Patch Changes
