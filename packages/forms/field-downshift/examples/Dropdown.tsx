@@ -43,22 +43,15 @@ const Menu = ({ selectedItem, children, ref, ...rest }) => {
   );
 };
 
-const Item = ({
-  item,
-  highlightedIndex,
-  index,
-  selectedItem,
-  onClick,
-  ...rest
-}) => {
+const Item = ({ item, index, isSelected, getItemProps }) => {
+  const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <DropdownItem
       key={index}
       className={classNames(
         'd-flex align-items-center justify-content-center',
         {
-          'border border-primary':
-            selectedItem && selectedItem.value === item.value,
+          'border border-primary': isSelected,
         },
       )}
       onClick={e => {

@@ -16,31 +16,15 @@ const options = [
 
 const Menu = props => <div className="list-group" {...props} />;
 
-const Item = ({
-  item,
-  highlightedIndex,
-  index,
-  selectedItem,
-  onClick,
-  multiple,
-  getOptionValue,
-  ...rest
-}) => {
-  console.log(item);
-  console.log(selectedItem);
+const Item = ({ item, highlightedIndex, index, isSelected, getItemProps }) => {
+  const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <a
       key={index}
       href="#"
       className={classNames('list-group-item list-group-item-action', {
         'bg-light': highlightedIndex === index,
-        'list-group-item-primary': multiple
-          ? selectedItem &&
-            selectedItem
-              .map(s => getOptionValue(s))
-              .indexOf(getOptionValue(item)) >= 0
-          : selectedItem &&
-            getOptionValue(selectedItem) === getOptionValue(item),
+        'list-group-item-primary': isSelected,
       })}
       onClick={e => {
         e.preventDefault();

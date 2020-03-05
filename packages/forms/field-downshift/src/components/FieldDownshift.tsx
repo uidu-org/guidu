@@ -20,6 +20,7 @@ function FieldDownshift({
   scope,
   onSetValue,
   name,
+  ...otherProps
 }: FieldDownshiftProps) {
   const getValue = () => {
     if (value === undefined) return undefined;
@@ -72,11 +73,13 @@ function FieldDownshift({
     });
   };
 
+  const selectedItem = getValue();
+
   return (
     <Downshift
       onSelect={onSelect}
       itemToString={item => getOptionLabel({ item })}
-      selectedItem={getValue()}
+      selectedItem={selectedItem}
     >
       {({
         getRootProps,
@@ -88,7 +91,10 @@ function FieldDownshift({
         ...rest
       }) => {
         return (
-          <WrapperComponent {...getRootProps({ refKey: 'componentRef' })}>
+          <WrapperComponent
+            {...otherProps}
+            {...getRootProps({ refKey: 'componentRef' })}
+          >
             {input && input({ ...getInputProps() })}
             {menu({
               ...getMenuProps({}),
