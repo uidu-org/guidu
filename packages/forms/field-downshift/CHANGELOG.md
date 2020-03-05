@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.2.2
+
+### Patch Changes
+
+- 59b3f89: Fix downshift examples, added Row wrapper
+
 ## 0.2.1
 
 ### Patch Changes
