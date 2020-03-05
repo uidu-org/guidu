@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "private": false,
   "description": "Donate form",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@uidu/checkbox": "^0.1.55",
     "@uidu/contact": "^0.1.9",
-    "@uidu/field-downshift": "^0.1.24",
+    "@uidu/field-downshift": "^0.2.0",
     "@uidu/field-text": "^0.1.29",
     "@uidu/field-textarea": "^0.1.13",
     "@uidu/form": "^0.1.45",

@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.2.0
+
+### Minor Changes
+
+- 785a40f: Change API for field-downshift, now similar to uidu/select
+
 ## 0.1.24
 
 ### Patch Changes
