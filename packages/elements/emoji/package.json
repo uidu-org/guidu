@@ -40,12 +40,12 @@
     "@uidu/util-data-test": "^0.1.6",
     "p-wait-for": "^3.1.0",
     "react": "^16.8.3",
-    "react-intl": "^3.1.7"
+    "react-intl": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
-    "react-intl": "^3.1.7"
+    "react-intl": "^4.0.0"
   },
   "uidu:src": "index.ts"
 }

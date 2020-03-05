@@ -29,7 +29,7 @@
     "@uidu/shell": "^0.2.2",
     "@uidu/tooltip": "^0.1.22",
     "react-day-picker": "^7.3.2",
-    "react-intl": "^3.1.7",
+    "react-intl": "^4.0.0",
     "react-router-dom": "^5.0.0",
     "styled-components": "^5.0.0"
   },

@@ -27,7 +27,7 @@
     "@uidu/docs": "^0.1.41",
     "@uidu/media-card": "^0.1.23",
     "react-dom": "^16.4.0",
-    "react-intl": "^3.1.7"
+    "react-intl": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

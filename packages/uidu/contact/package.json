@@ -12,7 +12,7 @@
     "@uidu/checkbox": "^0.1.55",
     "@uidu/field-text": "^0.1.25",
     "@uidu/form": "^0.1.44",
-    "react-intl": "^3.1.7",
+    "react-intl": "^4.0.0",
     "react-recaptcha": "^2.3.10"
   },
   "devDependencies": {
