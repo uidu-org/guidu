@@ -1,5 +1,12 @@
 # @uidu/donate
 
+## 0.1.22
+
+### Patch Changes
+
+- Updated dependencies [785a40f]
+  - @uidu/field-downshift@0.2.0
+
 ## 0.1.21
 
 ### Patch Changes
