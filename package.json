@@ -447,7 +447,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.4.0",
-    "extract-react-intl-messages": "^2.2.1",
+    "extract-react-intl-messages": "^3.0.0",
     "faker": "^4.1.0",
     "flow-bin": "^0.119",
     "fs-extra": "^8.0.1",
