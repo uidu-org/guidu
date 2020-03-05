@@ -4,22 +4,18 @@ import { Check } from 'react-feather';
 
 export default function HorizontalCard({
   item,
-  highlightedIndex,
   index,
-  selectedItem,
-  onClick,
   scope,
-  ...rest
+  isSelected,
+  getItemProps,
 }) {
-  const isSelected = selectedItem && selectedItem.id === item.id;
-  const isHighlighted = highlightedIndex === index;
-
+  const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <a
       key={index}
       href="#"
       className={classNames('card mb-3', {
-        [`border-${scope}`]: isHighlighted || isSelected,
+        [`border-${scope}`]: isSelected,
       })}
       onClick={e => {
         e.preventDefault();

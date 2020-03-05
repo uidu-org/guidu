@@ -2,7 +2,7 @@ import DropdownMenu, { DropdownItem } from '@uidu/dropdown-menu';
 import { inputDefaultProps } from '@uidu/field-base/examples-utils';
 import { Form } from '@uidu/form';
 import classNames from 'classnames';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldDownshift from '../src';
 
@@ -15,6 +15,7 @@ const items = [
 ];
 
 const Menu = ({ selectedItem, children, ref, ...rest }) => {
+  console.log(selectedItem);
   return (
     <DropdownMenu
       ref={ref}
@@ -77,20 +78,20 @@ const Item = ({
   );
 };
 
-export default class Basic extends PureComponent {
-  render() {
-    return (
-      <Form {...formDefaultProps} footerRenderer={() => null}>
-        <FieldDownshift
-          {...inputDefaultProps}
-          value={items[2]}
-          onChange={(name, value) => console.log(value.value)}
-          layout="elementOnly"
-          menu={Menu}
-          item={Item}
-          items={items}
-        />
-      </Form>
-    );
-  }
+export default function Basic({}) {
+  const [selectedValue, setSelectedValue] = useState(items[2].value);
+  return (
+    <Form {...formDefaultProps} footerRenderer={() => null}>
+      <FieldDownshift
+        {...inputDefaultProps}
+        value={selectedValue}
+        onChange={(name, value) => setSelectedValue(value)}
+        layout="elementOnly"
+        menu={Menu}
+        option={Item}
+        getOptionValue={({ value }) => value}
+        options={items}
+      />
+    </Form>
+  );
 }

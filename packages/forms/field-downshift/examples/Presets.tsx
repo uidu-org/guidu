@@ -54,43 +54,43 @@ export default class Basic extends PureComponent {
             <FieldDownshift
               {...inputDefaultProps}
               scope="donations"
-              value={iconItems[2]}
+              value={iconItems[2].id}
               onChange={console.log}
               label="HorizontalCard"
               menu={props => <div {...props} />}
-              item={DownshiftHorizontalCard}
-              items={iconItems}
+              option={DownshiftHorizontalCard}
+              options={iconItems}
             />
             <FieldDownshift
               {...inputDefaultProps}
               scope="teams"
-              value={iconItems[2]}
+              value={iconItems[2].id}
               onChange={console.log}
               label="VerticalCard"
               menu={props => <div className="card-deck" {...props} />}
-              item={DownshiftVerticalCard}
-              items={iconItems}
+              option={DownshiftVerticalCard}
+              options={iconItems}
             />
             <FieldDownshift
               {...inputDefaultProps}
               scope="donations"
-              value={[iconItems[2]]}
+              value={[iconItems[2].id]}
               onChange={console.log}
               label="Checkbox"
               menu={props => <div {...props} />}
-              item={DownshiftCheckbox}
-              items={iconItems}
+              option={DownshiftCheckbox}
+              options={iconItems}
               multiple
             />
             <FieldDownshift
               {...inputDefaultProps}
               scope="secondary"
-              value={iconItems[2]}
+              value={iconItems[2].id}
               onChange={console.log}
               label="Radio"
               menu={props => <div {...props} />}
-              item={DownshiftRadio}
-              items={iconItems}
+              option={DownshiftRadio}
+              options={iconItems}
             />
           </Form>
         </div>

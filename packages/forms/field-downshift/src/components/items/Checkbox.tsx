@@ -2,16 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { CheckSquare, Square } from 'react-feather';
 
-export default function Checkbox({
-  item,
-  highlightedIndex,
-  index,
-  selectedItem,
-  onClick,
-  scope,
-  isSelected,
-  ...rest
-}) {
+export default function Checkbox({ item, index, isSelected, getItemProps }) {
   return (
     <button
       type="button"
@@ -19,14 +10,10 @@ export default function Checkbox({
       className={classNames(
         'd-flex card px-4 py-3 mb-2 align-items-center justify-content-start text-left flex-row w-100',
         {
-          'bg-primary text-white': isSelected,
+          'bg-primary text-white': !!isSelected,
         },
       )}
-      onClick={e => {
-        e.preventDefault();
-        onClick(e);
-      }}
-      {...rest}
+      {...getItemProps({ item, index })}
     >
       {isSelected ? (
         <div className="text-white mr-3 d-flex align-items-center">

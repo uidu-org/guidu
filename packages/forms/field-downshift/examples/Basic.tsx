@@ -6,7 +6,7 @@ import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldDownshift from '../src';
 
-const items = [
+const options = [
   { value: 'apple' },
   { value: 'pear' },
   { value: 'orange' },
@@ -22,16 +22,25 @@ const Item = ({
   index,
   selectedItem,
   onClick,
+  multiple,
+  getOptionValue,
   ...rest
 }) => {
+  console.log(item);
+  console.log(selectedItem);
   return (
     <a
       key={index}
       href="#"
       className={classNames('list-group-item list-group-item-action', {
         'bg-light': highlightedIndex === index,
-        'list-group-item-primary':
-          selectedItem && selectedItem.value === item.value,
+        'list-group-item-primary': multiple
+          ? selectedItem &&
+            selectedItem
+              .map(s => getOptionValue(s))
+              .indexOf(getOptionValue(item)) >= 0
+          : selectedItem &&
+            getOptionValue(selectedItem) === getOptionValue(item),
       })}
       onClick={e => {
         e.preventDefault();
@@ -54,9 +63,24 @@ export default class Basic extends PureComponent {
           {...inputDefaultProps}
           label="Enter a fruit"
           menu={Menu}
-          item={Item}
-          items={items}
-          // value={items[1]}
+          option={Item}
+          options={options}
+          value={options[0].value}
+          getOptionValue={({ value }) => value}
+          required
+        />
+        <br />
+        <h6>Multiple</h6>
+        <br />
+        <FieldDownshift
+          {...inputDefaultProps}
+          label="Enter a fruit"
+          menu={Menu}
+          option={Item}
+          options={options}
+          value={[options[0].value, options[2].value]}
+          getOptionValue={({ value }) => value}
+          multiple
           required
         />
         <br />
@@ -67,11 +91,13 @@ export default class Basic extends PureComponent {
           input={Input}
           label="Enter a fruit"
           menu={Menu}
-          item={Item}
-          items={items}
-          itemsGetter={({ items, inputValue, isOpen }) =>
+          option={Item}
+          options={options}
+          value={options[0].value}
+          getOptionValue={({ value }) => value}
+          filterOptions={({ options, inputValue, isOpen }) =>
             isOpen
-              ? items.filter(
+              ? options.filter(
                   item => !inputValue || item.value.includes(inputValue),
                 )
               : []

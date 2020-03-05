@@ -2,17 +2,8 @@ import classNames from 'classnames';
 import React from 'react';
 import { CheckCircle, Circle } from 'react-feather';
 
-export default function Checkbox({
-  item,
-  highlightedIndex,
-  index,
-  selectedItem,
-  onClick,
-  scope,
-  ...rest
-}) {
-  const isSelected = selectedItem && selectedItem.id === item.id;
-
+export default function Checkbox({ item, index, isSelected, getItemProps }) {
+  const { onClick, ...rest } = getItemProps({ item, index });
   return (
     <button
       type="button"
