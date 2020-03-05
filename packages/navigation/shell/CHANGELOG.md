@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.11
+
+### Patch Changes
+
+- fef6b2e: Added is back to shellbody
+
 ## 0.2.10
 
 ### Patch Changes
