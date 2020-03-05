@@ -1,5 +1,14 @@
 # @uidu/widgets
 
+## 0.1.17
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/shell@0.2.12
+  - @uidu/contact@0.1.10
+
 ## 0.1.16
 
 ### Patch Changes

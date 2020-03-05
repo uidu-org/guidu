@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.1.6
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+
 ## 0.1.5
 
 ### Patch Changes

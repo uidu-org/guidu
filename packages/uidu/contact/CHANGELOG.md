@@ -1,5 +1,11 @@
 # @uidu/contact
 
+## 0.1.10
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+
 ## 0.1.9
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/donate
 
+## 0.1.23
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+- Updated dependencies [79d7d02]
+  - @uidu/payments@0.2.1
+  - @uidu/field-downshift@0.2.1
+  - @uidu/contact@0.1.10
+  - @uidu/widgets@0.1.17
+
 ## 0.1.22
 
 ### Patch Changes

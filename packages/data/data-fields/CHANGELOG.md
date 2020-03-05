@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.27
+
+### Patch Changes
+
+- 79d7d02: Bump react-intl, fixed field downshift tsconfig
+
 ## 0.1.26
 
 ### Patch Changes
