@@ -1,6 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import FieldTextarea from '..';
+import Radio from '..';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 
@@ -31,12 +31,13 @@ export default class Basic extends Component<any, any> {
   render() {
     return (
       <Form {...formDefaultProps}>
-        <FieldTextarea
+        <Radio
           {...inputDefaultProps}
           onChange={this.onChange}
           // onBlur={this.onBlur}
           // onFocus={this.onFocus}
           label="With change, blur & focus handlers"
+          value="foo"
         />
 
         <div

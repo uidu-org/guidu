@@ -47,7 +47,6 @@ export default class Group extends Component<any, any> {
           {...inputDefaultProps}
           isInline={isInline}
           options={defaultOptions}
-          onChange={this.onChange}
           // onBlur={this.onBlur}
           // onFocus={this.onFocus}
           label="With change, blur & focus handlers"

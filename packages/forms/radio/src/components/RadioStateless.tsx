@@ -22,7 +22,7 @@ class RadioStateless extends Component<any> {
       name,
       onChange,
       disabled,
-      checked,
+      defaultChecked,
       isInline,
     } = this.props;
 
@@ -40,7 +40,7 @@ class RadioStateless extends Component<any> {
           onChange={onChange}
           value={value}
           disabled={disabled}
-          checked={checked}
+          defaultChecked={defaultChecked}
         />
         <label className="custom-control-label" htmlFor={id}>
           {label}

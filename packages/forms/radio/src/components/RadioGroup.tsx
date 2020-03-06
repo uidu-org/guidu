@@ -25,14 +25,7 @@ class RadioGroup extends PureComponent<any> {
   };
 
   render() {
-    const {
-      onChange,
-      options,
-      name,
-      value,
-      isInline,
-      ...otherProps
-    } = this.props;
+    const { options, name, value, isInline } = this.props;
 
     return (
       <Wrapper {...this.props}>
@@ -45,7 +38,7 @@ class RadioGroup extends PureComponent<any> {
             label={option.name}
             name={name}
             onChange={this.handleChange}
-            {...(option.id === value && { checked: true })}
+            {...(option.id === value && { defaultChecked: true })}
           />
         ))}
       </Wrapper>
