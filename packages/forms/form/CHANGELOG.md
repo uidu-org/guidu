@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.46
+
+### Patch Changes
+
+- bb99d50: Small fixes to input radio
+
 ## 0.1.45
 
 ### Patch Changes

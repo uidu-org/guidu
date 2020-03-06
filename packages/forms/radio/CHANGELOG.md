@@ -1,5 +1,13 @@
 # @uidu/radio
 
+## 0.3.4
+
+### Patch Changes
+
+- bb99d50: Small fixes to input radio
+- Updated dependencies [bb99d50]
+  - @uidu/form@0.1.46
+
 ## 0.3.3
 
 ### Patch Changes
