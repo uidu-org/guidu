@@ -27,4 +27,5 @@ export type ProvidersProps = {};
 export type DeviseWrapperProps = {
   header?: React.ReactNode;
   footer?: React.ReactNode;
+  children?: any;
 };

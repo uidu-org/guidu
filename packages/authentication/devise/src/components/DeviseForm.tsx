@@ -1,4 +1,5 @@
 import { Form, FormSubmit } from '@uidu/form';
+import queryString from 'query-string';
 import React from 'react';
 import { ArrowLeft } from 'react-feather';
 import { defineMessages, FormattedMessage } from 'react-intl';
@@ -75,6 +76,7 @@ export default function DeviseForm({
   match,
   children,
   signUp,
+  location,
 }) {
   // private recaptchaInstance = React.createRef();
   const form = React.createRef();
@@ -92,6 +94,11 @@ export default function DeviseForm({
   //     'g-recaptcha-response': captchaResponse,
   //   });
   // };
+
+  const email =
+    location.search !== ''
+      ? queryString.parse(location.search.slice(1)).email
+      : '';
 
   return (
     <>
@@ -127,7 +134,7 @@ export default function DeviseForm({
           </div>,
         ]}
       >
-        {children}
+        {children({ email })}
         {/* <div className="form-group">
             <Recaptcha
               ref={this.recaptchaInstance}

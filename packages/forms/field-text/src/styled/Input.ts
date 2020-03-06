@@ -32,9 +32,10 @@ const getPlaceholderStyle = () => css`
 
 // Safari puts on some difficult to remove styles, mainly for disabled inputs
 // but we want full control so need to override them in all cases
-const overrideSafariDisabledStyles = `
+const overrideSafariDisabledStyles = css`
   -webkit-text-fill-color: unset;
   -webkit-opacity: 1;
+  opacity: 1;
 `;
 
 const InputElement = styled.input`
@@ -52,6 +53,12 @@ const InputElement = styled.input`
   &:invalid {
     /* box-shadow: none; */
   }
+
+  &:-webkit-autofill::first-line {
+    font-family: var(--font-family-sans-serif);
+    font-size: 1rem;
+  }
+
   ${getPlaceholderStyle};
 `;
 

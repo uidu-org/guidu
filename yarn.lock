@@ -6154,9 +6154,9 @@ camelcase-keys@^4.0.0:
     quick-lru "^1.0.0"
 
 camelcase-keys@^6.1.1:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/camelcase-keys/-/camelcase-keys-6.2.0.tgz#07302c9a9b78ffda16169e4cee18ed104aa4e8ea"
-  integrity sha512-bwHzjmUuw92j16zHWIV1YjpDk9S4sq/gB0x4upHcNrdV/U5RU0NCg3bxo6Ymu0+kjhT5L0KTfqCMaMkP2RrXnQ==
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/camelcase-keys/-/camelcase-keys-6.2.1.tgz#cd3e2d2d7db767aa3f247e4c2df93b4661008945"
+  integrity sha512-BPCNVH56RVIxQQIXskp5tLQXUNGQ6sXr7iCv1FHDt81xBOQ/1r6H8SPxf19InVP6DexWar4s87q9thfuk8X9HA==
   dependencies:
     camelcase "^5.3.1"
     map-obj "^4.0.0"
@@ -18892,9 +18892,9 @@ react-intersection-observer@^8.24.1:
     tiny-invariant "^1.1.0"
 
 react-intl@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.1.0.tgz#7f1989bb7fe809a1f1c2cd4b60fea20a7ef59f0d"
-  integrity sha512-Zy87BSKy4t6JzEFYTiOOHGvpVsXowVJUspQpTSN+PZwpP9/EXx+ub4aKHIiYmY+26uFjgd8y0a/08jfV6iKOKw==
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-4.1.1.tgz#f6e409f6fb114740d603db9fe35881252cd78944"
+  integrity sha512-aQ3yzQJaLXALwBX1tV2Wllp2heNjDTfNJPbk2jX1Cc2mMI4O2DwI5A3BzqSvgTtiiaQN3jMYTYGQElWdNAZDwA==
   dependencies:
     "@formatjs/intl-displaynames" "^1.2.1"
     "@formatjs/intl-listformat" "^1.4.1"
@@ -24100,9 +24100,9 @@ yargs@~3.10.0:
     window-size "0.1.0"
 
 yarn@^1.21.1, yarn@^1.6.0, yarn@^1.9.4:
-  version "1.22.0"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.0.tgz#acf82906e36bcccd1ccab1cfb73b87509667c881"
-  integrity sha512-KMHP/Jq53jZKTY9iTUt3dIVl/be6UPs2INo96+BnZHLKxYNTfwMmlgHTaMWyGZoO74RI4AIFvnWhYrXq2USJkg==
+  version "1.22.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.1.tgz#888d8b01ac8547669b3bda5fe4b5b8b88c909e8c"
+  integrity sha512-hL7Fd2Psv4fOiE/JjVULDg+LckG0Ql7IPUh5wWC/4UEr6W+eF+VVEWfRu6Q7qbOnqk7+qY7CXYSSLBfJIyElXA==
 
 yauzl@^2.4.2:
   version "2.10.0"

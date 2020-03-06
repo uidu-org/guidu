@@ -100,7 +100,7 @@ export default class Providers extends PureComponent<any, any> {
         );
       }
       return this.update(model.user).then(() =>
-        history.push(routes.registrations),
+        history.push(`${routes.registrations}?email=${model.user.email}`),
       );
     });
   };
@@ -209,14 +209,28 @@ export default class Providers extends PureComponent<any, any> {
                 </div>
               )}
             >
-              <FieldText
-                type="email"
-                label="Inserisci la tua email"
-                name="user[email]"
-                autoComplete="email"
-                autoCorrect="off"
-                required
-              />
+              <div className="form-group">
+                <label
+                  htmlFor="user_email"
+                  className="d-flex align-items-center justify-content-between"
+                >
+                  <span>Inserisci la tua email</span>
+                  {exist && (
+                    <span onClick={() => this.setState({ exist: false })}>
+                      Edit
+                    </span>
+                  )}
+                </label>
+                <FieldText
+                  type="email"
+                  layout="elementOnly"
+                  name="user[email]"
+                  autoComplete="email"
+                  autoCorrect="off"
+                  required
+                  disabled={exist}
+                />
+              </div>
               <AnimateHeight
                 height={exist ? 'auto' : 0}
                 onAnimationEnd={() => {

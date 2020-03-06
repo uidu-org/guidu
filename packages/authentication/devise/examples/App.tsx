@@ -140,90 +140,96 @@ export default function App() {
                   }}
                   {...routeProps}
                 >
-                  <>
-                    {identity && (
-                      <>
-                        <FieldText
-                          type="hidden"
-                          name="identity_ids"
-                          value={identity.id}
-                        />
-                        <FieldText
-                          type="hidden"
-                          name="user[remote_avatar_url]"
-                          value={userDataFromIdentity(identity).avatar}
-                        />
-                      </>
-                    )}
-                    <FieldText
-                      type="email"
-                      label={
-                        identity && userDataFromIdentity(identity).email
-                          ? 'Conferma la tua email'
-                          : 'Inserisci la tua email'
-                      }
-                      name="user[email]"
-                      autoComplete="email"
-                      autoCorrect="off"
-                      value={
-                        currentUser
-                          ? currentUser.email
-                          : identity
-                          ? userDataFromIdentity(identity).email
-                          : ''
-                      }
-                      required
-                    />
-                    <FieldText
-                      type="text"
-                      label={
-                        identity
-                          ? 'Conferma il tuo nome'
-                          : 'Inserisci il tuo nome'
-                      }
-                      name="user[first_name]"
-                      autoComplete="given-name"
-                      value={
-                        identity ? userDataFromIdentity(identity).firstName : ''
-                      }
-                      required
-                      // autoFocus
-                    />
-                    <FieldText
-                      type="text"
-                      label={
-                        identity
-                          ? 'Conferma il tuo cognome'
-                          : 'Inserisci il tuo cognome'
-                      }
-                      name="user[last_name]"
-                      autoComplete="family-name"
-                      value={
-                        identity ? userDataFromIdentity(identity).lastName : ''
-                      }
-                      required
-                    />
-                    {!identity && (
-                      <div className="form-group">
-                        <FieldPassword
-                          measurePasswordStrength={false}
-                          autoComplete="current-password"
-                          label="Inserisci la tua password"
-                          name="user[password]"
-                          type="password"
-                          id="new-password"
-                          validations="minLength:8"
-                          required
-                        />
-                      </div>
-                    )}
-                    <p className="text-muted small">
-                      Per far funzionare uidu, registriamo i dati degli utenti e
-                      li condividiamo con alcuni provider. Registrandoti,
-                      accetti le Condizioni d'uso e confermi di aver letto e
-                      compreso la Privacy Policy.
-                    </p>
-                  </>
+                  {({ email }) => (
+                    <>
+                      {identity && (
+                        <>
+                          <FieldText
+                            type="hidden"
+                            name="identity_ids"
+                            value={identity.id}
+                          />
+                          <FieldText
+                            type="hidden"
+                            name="user[remote_avatar_url]"
+                            value={userDataFromIdentity(identity).avatar}
+                          />
+                        </>
+                      )}
+                      <FieldText
+                        type="email"
+                        label={
+                          identity && userDataFromIdentity(identity).email
+                            ? 'Conferma la tua email'
+                            : 'Inserisci la tua email'
+                        }
+                        name="user[email]"
+                        autoComplete="email"
+                        autoCorrect="off"
+                        value={
+                          email
+                            ? email
+                            : identity
+                            ? userDataFromIdentity(identity).email
+                            : ''
+                        }
+                        required
+                      />
+                      <FieldText
+                        type="text"
+                        label={
+                          identity
+                            ? 'Conferma il tuo nome'
+                            : 'Inserisci il tuo nome'
+                        }
+                        name="user[first_name]"
+                        autoComplete="given-name"
+                        value={
+                          identity
+                            ? userDataFromIdentity(identity).firstName
+                            : ''
+                        }
+                        required
+                        // autoFocus
+                      />
+                      <FieldText
+                        type="text"
+                        label={
+                          identity
+                            ? 'Conferma il tuo cognome'
+                            : 'Inserisci il tuo cognome'
+                        }
+                        name="user[last_name]"
+                        autoComplete="family-name"
+                        value={
+                          identity
+                            ? userDataFromIdentity(identity).lastName
+                            : ''
+                        }
+                        required
+                      />
+                      {!identity && (
+                        <div className="form-group">
+                          <FieldPassword
+                            measurePasswordStrength={false}
+                            autoComplete="current-password"
+                            label="Inserisci la tua password"
+                            name="user[password]"
+                            type="password"
+                            id="new-password"
+                            validations="minLength:8"
+                            required
+                          />
+                        </div>
+                      )}
+                      <p className="text-muted small">
+                        Per far funzionare uidu, registriamo i dati degli utenti
+                        e li condividiamo con alcuni provider. Registrandoti,
+                        accetti le Condizioni d'uso e confermi di aver letto e
+                        compreso la Privacy Policy.
+                      </p>
+                    </>
+                  )}
                 </Devise>
               </DeviseWrapper>
             )}
