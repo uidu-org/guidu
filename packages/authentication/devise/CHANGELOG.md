@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.2.1
+
+### Patch Changes
+
+- ba96cfc: Fix bugs
+
 ## 0.2.0
 
 ### Minor Changes

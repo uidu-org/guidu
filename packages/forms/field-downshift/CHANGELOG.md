@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.2.3
+
+### Patch Changes
+
+- ba96cfc: Fix bugs
+
 ## 0.2.2
 
 ### Patch Changes
