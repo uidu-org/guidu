@@ -1,6 +1,6 @@
 {
   "name": "@uidu/devise",
-  "version": "0.1.22",
+  "version": "0.2.0",
   "private": false,
   "description": "React component tied to devise for sign_in, sign_up and password recovery ",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -12,7 +12,7 @@
     "@uidu/avatar": "^0.2.23",
     "@uidu/checkbox": "^0.1.55",
     "@uidu/field-password": "^0.1.23",
-    "@uidu/field-text": "^0.1.30",
+    "@uidu/field-text": "^0.1.31",
     "@uidu/form": "^0.1.44",
     "@uidu/shell": "^0.2.12",
     "@uidu/slider": "^1.0.4",

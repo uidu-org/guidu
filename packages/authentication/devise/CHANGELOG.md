@@ -1,5 +1,16 @@
 # @uidu/devise
 
+## 0.2.0
+
+### Minor Changes
+
+- 796bbb4: Devise requires children as function to pass variables
+
+### Patch Changes
+
+- Updated dependencies [796bbb4]
+  - @uidu/field-text@0.1.31
+
 ## 0.1.22
 
 ### Patch Changes
