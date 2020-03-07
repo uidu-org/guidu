@@ -37,7 +37,7 @@ function FieldDownshift({
       if (value && value.indexOf(getOptionValue(selectedItem)) >= 0) {
         const newValue = value.filter(v => v !== getOptionValue(selectedItem));
         onSetValue(newValue);
-        onChange(name, newValue);
+        onChange(name, newValue, { option: selectedItem });
       } else {
         // add item
         const newValue = [
@@ -47,7 +47,7 @@ function FieldDownshift({
           getOptionValue(selectedItem),
         ];
         onSetValue(newValue);
-        onChange(name, newValue);
+        onChange(name, newValue, { option: selectedItem });
       }
     } else {
       if (selectedItem === '') {
@@ -55,7 +55,7 @@ function FieldDownshift({
         onChange(name, '');
       } else {
         onSetValue(getOptionValue(selectedItem));
-        onChange(name, getOptionValue(selectedItem));
+        onChange(name, getOptionValue(selectedItem), { option: selectedItem });
       }
     }
   };

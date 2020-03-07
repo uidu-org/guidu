@@ -100,7 +100,11 @@ export default class Providers extends PureComponent<any, any> {
         );
       }
       return this.update(model.user).then(() =>
-        history.push(`${routes.registrations}?email=${model.user.email}`),
+        history.push(
+          `${routes.registrations}?email=${encodeURIComponent(
+            model.user.email,
+          )}`,
+        ),
       );
     });
   };
@@ -250,7 +254,9 @@ export default class Providers extends PureComponent<any, any> {
                       required
                       help={
                         <Link
-                          to={`${routes.passwords}?email=${currentUser.email}`}
+                          to={`${routes.passwords}?email=${encodeURIComponent(
+                            currentUser.email,
+                          )}`}
                         >
                           Non ricordi la password
                         </Link>

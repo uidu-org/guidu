@@ -13,14 +13,11 @@ function Item({
   item,
   highlightedIndex,
   index,
-  selectedItem,
-  onClick,
+  isSelected,
   scope = 'donations',
-  ...rest
+  getItemProps,
 }) {
-  console.log(selectedItem);
-
-  const isSelected = selectedItem && selectedItem.id === item.id;
+  const { onClick, ...rest } = getItemProps({ item, index });
   const isHighlighted = highlightedIndex === index;
 
   return (
@@ -154,13 +151,13 @@ export default function Donation({
         <FieldDownshift
           layout="elementOnly"
           name="donation[amount]"
-          items={pledges}
-          onChange={(_name, value) => {
+          options={pledges}
+          onChange={(_name, value, { option }) => {
             setCustomAmount(null);
-            setSelectedAmount(value);
+            setSelectedAmount(option);
           }}
-          value={customAmount ? null : selectedAmount}
-          item={foo => <Item {...foo} />}
+          value={customAmount ? null : selectedAmount?.amout}
+          option={foo => <Item {...foo} />}
           menu={Menu}
           required={!customAmount}
         />
