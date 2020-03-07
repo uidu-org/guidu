@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 0.3.5
+
+### Patch Changes
+
+- c243c58: FIX radio build
+
 ## 0.3.4
 
 ### Patch Changes
