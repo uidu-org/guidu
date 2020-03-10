@@ -10,4 +10,10 @@ export { default as CreatableSelect } from './CreatableSelect';
 export { allCountries } from './data/countries';
 export { default as PopupSelect } from './PopupSelect';
 export { default as RadioSelect } from './RadioSelect';
-export { default } from './Select';
+import { ComponentHOC } from '@uidu/field-base';
+import { withFormsy } from 'formsy-react';
+import SelectComponent from './Select';
+
+const Select = withFormsy(ComponentHOC(SelectComponent));
+
+export default Select;

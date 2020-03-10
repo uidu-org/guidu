@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
 import { FieldNumberProps } from '../types';
 import InputControl from './FieldNumberStateless';
@@ -40,4 +40,4 @@ class FieldNumber extends PureComponent<FieldNumberProps> {
   }
 }
 
-export default ComponentHOC(FieldNumber);
+export default FieldNumber;

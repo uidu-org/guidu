@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { Component } from 'react';
 import InputControl from './FieldMonthStateless';
 
@@ -41,7 +41,7 @@ class FieldMonth extends Component<any> {
   }
 }
 
-export default ComponentHOC(FieldMonth);
+export default FieldMonth;
 
 // FieldMonth.propTypes = {
 //   ...InputControl.propTypes,

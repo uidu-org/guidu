@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import { MapPin } from 'react-feather';
@@ -494,7 +494,7 @@ class FieldGeosuggest extends PureComponent<any, any> {
    * @return {Function} The React element to render
    */
   render() {
-    const { layout, showErrors, errorMessages } = this.props;
+    const { layout, errorMessages } = this.props;
     const { help } = this.state;
     const element = this.renderElement();
 
@@ -510,4 +510,4 @@ class FieldGeosuggest extends PureComponent<any, any> {
 //   onGeocode: () => {},
 // };
 
-export default ComponentHOC(FieldGeosuggest);
+export default FieldGeosuggest;

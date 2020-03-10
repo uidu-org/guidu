@@ -57,14 +57,14 @@ export default class Search extends Component<Props, State> {
     } = this.props;
     return (
       <SelectWrapper width={width}>
-        <Select
-          options={options}
+        {/* <Select
+          options={options as any}
           value={defaultValue}
           onChange={onChange}
           placeholder={placeholder}
           spacing={'compact'}
-          menuPlacement="auto"
-        />
+          // menuPlacement="auto"
+        /> */}
       </SelectWrapper>
     );
   }

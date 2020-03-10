@@ -20,7 +20,7 @@ export type FieldMentionsProps = FieldBaseProps & {
   placeholder?: string;
   suggestionsPortalHost?: Element;
   onKeyDown?: (e: any) => void;
-  elementRef: React.RefObject<any>;
+  elementRef?: React.RefObject<any>;
 };
 
 export type FieldMentionsStatelessProps = Omit<

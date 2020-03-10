@@ -1,38 +1,28 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
-import React, { Component } from 'react';
-import InputControl from './FieldTextStateless';
+import { Wrapper } from '@uidu/field-base';
+import React from 'react';
 import { FieldTextProps } from '../types';
+import InputControl from './FieldTextStateless';
 
-class FieldText extends Component<FieldTextProps> {
-  private element: React.RefObject<any> = React.createRef();
+function FieldText({
+  component: StatelessInput = InputControl,
+  onChange,
+  onSetValue,
+  name,
+  ...rest
+}: FieldTextProps) {
+  const element: React.RefObject<any> = React.createRef();
 
-  static defaultProps = {
-    component: InputControl,
-    type: 'text',
-    value: '',
-    floatLabel: null,
-  };
-
-  handleChange = event => {
-    const { onChange, onSetValue, name } = this.props;
+  const handleChange = event => {
     const { value } = event.currentTarget;
     onChange(name, value);
     onSetValue(value);
   };
 
-  render() {
-    const { component: StatelessInput } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <StatelessInput
-          {...this.props}
-          onChange={this.handleChange}
-          ref={this.element}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <StatelessInput {...rest} onChange={handleChange} ref={element} />
+    </Wrapper>
+  );
 }
 
-export default ComponentHOC(FieldText);
+export default FieldText;

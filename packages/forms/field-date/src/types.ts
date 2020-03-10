@@ -1,11 +1,12 @@
 import { DayPickerInputProps } from 'react-day-picker';
 
 export type FieldDateProps = DayPickerInputProps & {
-  locale: string;
+  locale?: string;
   displayFormat?: string;
   inputClassName?: string;
   containerClassName?: string;
   wrapperClassName?: string;
-  innerRef: React.RefObject<any>;
-  formatSubmit: string;
+  innerRef?: React.RefObject<any>;
+  formatSubmit?: string;
+  selectMonths?: boolean;
 };

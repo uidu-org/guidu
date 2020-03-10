@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { Component } from 'react';
 import { FieldMentionsProps } from '../types';
 import FieldMentionsStateless from './FieldMentionsStateless';
@@ -41,4 +41,4 @@ class FieldMentions extends Component<FieldMentionsProps> {
   }
 }
 
-export default ComponentHOC(FieldMentions);
+export default FieldMentions;

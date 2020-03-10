@@ -1,4 +1,3 @@
-import { ComponentHOC } from '@uidu/field-base';
 import Spinner from '@uidu/spinner';
 import loadImage from 'blueimp-load-image';
 import debounce from 'lodash/debounce';
@@ -246,4 +245,4 @@ class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
   }
 }
 
-export default ComponentHOC(FieldImageUploader);
+export default FieldImageUploader;

@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
 import { FieldTimeProps } from '../types';
 import FieldTimeStateless from './FieldTimeStateless';
@@ -33,4 +33,4 @@ class FieldTime extends PureComponent<FieldTimeProps> {
   }
 }
 
-export default ComponentHOC(FieldTime);
+export default FieldTime;

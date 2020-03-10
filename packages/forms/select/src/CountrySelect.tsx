@@ -42,7 +42,7 @@ const optionLabel = ({ id, code, icon, name }: OptionType) => (
 );
 
 // switch formatters based on render context (menu | value)
-const formatOptionLabel = (opt: OptionType, { context }) =>
+const formatOptionLabel = (opt: OptionType, { context }): any =>
   context === 'value' ? controlLabel(opt) : optionLabel(opt);
 
 const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
@@ -68,13 +68,14 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
 
 // put it all together
 const CountrySelect = ({ components, ...otherProps }) => (
+  // @ts-ignore
   <Select
     {...otherProps}
     isClearable={false}
-    formatOptionLabel={formatOptionLabel}
+    // formatOptionLabel={formatOptionLabel}
     getOptionLabel={getOptionLabel}
     getOptionValue={getOptionValue}
-    isMulti={false}
+    // isMulti={false}
     options={groupedCountries}
     styles={{
       container: css => ({ ...css }),

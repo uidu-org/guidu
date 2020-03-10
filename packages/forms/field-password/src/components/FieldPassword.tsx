@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import Tooltip from '@uidu/tooltip';
 import classNames from 'classnames';
 import React, { Component } from 'react';
@@ -130,4 +130,4 @@ class FieldPassword extends Component<FieldPasswordProps, State> {
   }
 }
 
-export default ComponentHOC(FieldPassword);
+export default FieldPassword;

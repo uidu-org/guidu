@@ -1,10 +1,11 @@
+import { WrapperProps } from './components/Wrapper/types';
+
 export type FieldBaseLayout = 'horizontal' | 'vertical' | 'elementOnly';
 
-export type FieldBaseProps = {
-  errorMessages?: Array<string>;
+export type FieldBaseProps = WrapperProps & {
+  errorMessages: Array<string>;
+  errorMessage: any;
   help?: React.ReactNode | string;
-  label?: React.ReactNode | string;
-  layout?: FieldBaseLayout;
   /** Standard HTML input pattern attribute, used for validating using a regular expression. */
   pattern?: string;
   /** Sets the field as uneditable, with a changed hover state. */
@@ -26,7 +27,7 @@ export type FieldBaseProps = {
   /** The name of the submitted field. */
   name: string;
   /** Text to display in the input if the input is empty. */
-  placeholder?: string;
+  placeholder?: string | React.ReactNode;
 
   className?: string;
 

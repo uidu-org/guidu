@@ -7,12 +7,10 @@ import {
   RequiredSymbol,
   Row,
 } from '../../index';
-import InputGroup, { InputGroupProps } from '../InputGroup';
+import InputGroup from '../InputGroup';
 import { WrapperProps } from './types';
 
-export default class Wrapper extends PureComponent<
-  WrapperProps & InputGroupProps
-> {
+export default class Wrapper extends PureComponent<WrapperProps> {
   static defaultProps = {
     layout: 'vertical',
     floatLabel: false,

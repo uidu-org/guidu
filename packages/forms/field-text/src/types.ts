@@ -8,4 +8,7 @@ export type FieldTextProps = FieldBaseProps &
     inputMode?: string;
     min?: number;
     max?: number;
+    autoCorrect?: string;
+    autoCapitalize?: string;
+    mask?: string;
   };

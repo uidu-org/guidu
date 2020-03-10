@@ -1,37 +1,37 @@
 import { FormContext } from '@uidu/form';
-import { withFormsy } from 'formsy-react';
 import React from 'react';
 import shortid from 'shortid';
-import { FieldBaseProps } from '../../types';
+import { FieldBaseLayout } from '../../types';
 import {
   getDisplayName,
   getFallbackBoolean,
   shouldShowErrors,
 } from '../../utils';
 import { RequiredFromOriginalComponentProps } from './types';
-
 /**
  * Props coming from the `withFormsy` hoc.
  */
-interface ExternalProps {
+export interface ExternalProps {
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  errorMessage: any;
+  errorMessage?: any;
   hasValue: any;
-  innerRef: any;
+  innerRef?: any;
   isFormDisabled: boolean;
   isFormSubmitted: boolean;
   isPristine: boolean;
   isRequired: boolean;
   isValid: boolean;
-  isValidValue: boolean;
+  isValidValue:
+    | (false & ((value: any) => boolean))
+    | (true & ((value: any) => boolean));
   resetValue: any;
   setValidations: any;
   setValue: any;
   showError: boolean;
   showRequired: boolean;
-  validationError: any;
-  validationErrors: any;
-  validations: any;
+  validationError?: any;
+  validationErrors?: any;
+  validations?: any;
   /* eslint-enable @typescript-eslint/no-explicit-any */
 }
 
@@ -46,10 +46,8 @@ interface ExternalProps {
 // This allows us to set these properties 'as a whole' for each component in the
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
-const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
-  Component:
-    | React.ComponentClass<TOriginalProps>
-    | React.FunctionComponent<TOriginalProps>,
+const withFRC = <TOriginalProps extends {}>(
+  Component: React.ComponentType<TOriginalProps>,
 ) => {
   type ResultProps = TOriginalProps &
     ExternalProps &
@@ -63,7 +61,7 @@ const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
 
     static defaultProps = {
       onChange: () => {},
-      layout: 'vertical',
+      layout: 'vertical' as FieldBaseLayout,
     };
 
     public constructor(props: ResultProps) {
@@ -152,5 +150,4 @@ const withFRC = <TOriginalProps extends FieldBaseProps & unknown>(
   return result;
 };
 
-// @ts-ignore
-export default Component => withFormsy(withFRC(Component));
+export default withFRC;

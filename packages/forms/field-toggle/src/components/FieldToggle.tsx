@@ -1,4 +1,3 @@
-import { ComponentHOC } from '@uidu/field-base';
 import { ToggleStateless } from '@uidu/toggle';
 import React, { PureComponent } from 'react';
 import StyledWrapper from '../styled';
@@ -49,4 +48,4 @@ class FieldToggle extends PureComponent<any> {
   }
 }
 
-export default ComponentHOC(FieldToggle);
+export default FieldToggle;

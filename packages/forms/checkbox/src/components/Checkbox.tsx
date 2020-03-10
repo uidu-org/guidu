@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
 import { CheckboxProps } from '../types';
 import InputControl from './CheckboxStateless';
@@ -40,4 +40,4 @@ class Checkbox extends PureComponent<CheckboxProps> {
   };
 }
 
-export default ComponentHOC(Checkbox);
+export default Checkbox;

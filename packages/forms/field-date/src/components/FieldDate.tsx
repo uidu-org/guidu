@@ -1,4 +1,4 @@
-import { ComponentHOC, FieldBaseProps, Wrapper } from '@uidu/field-base';
+import { FieldBaseProps, Wrapper } from '@uidu/field-base';
 import moment from 'moment';
 import React, { PureComponent } from 'react';
 import { FieldDateProps } from '../types';
@@ -37,4 +37,4 @@ class FieldDate extends PureComponent<FieldBaseProps & FieldDateProps> {
   }
 }
 
-export default ComponentHOC(FieldDate);
+export default FieldDate;

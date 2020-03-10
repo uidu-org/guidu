@@ -1,11 +1,10 @@
-import { ComponentHOC, FieldBaseProps, Wrapper } from '@uidu/field-base';
+import { FieldBaseProps, Wrapper } from '@uidu/field-base';
 import { colors } from '@uidu/theme';
 import memoizeOne from 'memoize-one';
 import React from 'react';
 import isEqual from 'react-fast-compare';
 import Select, { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
-import Async from 'react-select/async';
 import * as defaultComponents from './components';
 import MultiValueLabel from './components/MultiValueLabel';
 import Option from './components/Option';
@@ -36,17 +35,17 @@ type ReactSelectProps = {
   /* Delimiter used to join multiple values into a single HTML Input value */
   delimiter?: string;
   /* enables default animated behaviour in components */
-  enableAnimation: boolean;
+  enableAnimation?: boolean;
   /* Clear all values when the user presses escape AND the menu is closed */
   escapeClearsValue?: boolean;
   /* Custom method to filter whether an option should be displayed in the menu */
-  filterOption: (({}, string) => boolean) | null;
+  filterOption?: (({}, string) => boolean) | null;
   /* Formats option labels in the menu and control as React components */
   formatOptionLabel?: (OptionType, {}) => React.ReactNode;
   /* Resolves option data to a string to be displayed as the label by components */
-  getOptionLabel: (OptionType) => string;
+  getOptionLabel?: (OptionType) => string;
   /* Resolves option data to a string to compare options and specify value attributes */
-  getOptionValue: (OptionType) => string;
+  getOptionValue?: (OptionType) => string;
   /* Hide the selected option from the menu */
   hideSelectedOptions?: boolean;
   /* Define an id prefix for the select components e.g. {your-id}-value */
@@ -58,7 +57,7 @@ type ReactSelectProps = {
   /* Is the select in a state of loading (async) */
   isLoading?: boolean;
   /* Override the built-in logic to detect whether an option is disabled */
-  isOptionDisabled: boolean;
+  isOptionDisabled?: boolean;
   /* Override the built-in logic to detect whether an option is selected */
   isOptionSelected?: (OptionType, OptionsType) => boolean;
   /* Support multiple selected options */
@@ -76,7 +75,7 @@ type ReactSelectProps = {
   /* Handle blur events on the control */
   onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
   /* Handle change events on the select */
-  onChange?: (ValueType, {}) => void;
+  onChange?: (name, value, { option }) => void;
   /* Click events by default have preventDefault & stopPropogation called on them. Use this prop to disable this behaviour  */
   onClickPreventDefault?: boolean;
   /* Handle focus events on the control */
@@ -86,11 +85,9 @@ type ReactSelectProps = {
   /* Handle key down events on the select */
   onKeyDown?: (e: React.KeyboardEvent<HTMLElement>) => void;
   /* Array of options that populate the select menu */
-  options: OptionsType;
-  /* ValueObj useful for async and creatable */
-  valueObj: OptionType;
+  options?: OptionsType;
   /* Placeholder text for the select value */
-  placeholder: string;
+  placeholder?: string | React.ReactNode;
   /* Status to relay to screen readers */
   screenReaderStatus?: ({ count: number }) => string;
   /* Style modifier methods */
@@ -103,13 +100,12 @@ type ReactSelectProps = {
   innerRef?: React.RefObject<any> | ((ref: any) => void);
 };
 
-type CreateSelectProps = Select &
-  ReactSelectProps & {
-    enableAnimation: boolean;
-    components: any;
-  } & FieldBaseProps & {
+type CreateSelectProps = ReactSelectProps & {
+  enableAnimation?: boolean;
+  components?: any;
+} & FieldBaseProps & {
     /* This prop affects the height of the select control. Compact is gridSize() * 4, default is gridSize * 5  */
-    spacing: 'compact' | 'default';
+    spacing?: 'compact' | 'default';
     /* The state of validation if used in a form */
     validationState?: any;
   };
@@ -298,9 +294,7 @@ function baseStyles(validationState, isCompact) {
 }
 
 const createSelect = <TOriginalProps extends {}>(
-  Component:
-    | React.ComponentClass<TOriginalProps>
-    | React.FunctionComponent<TOriginalProps>,
+  Component: React.ComponentType<TOriginalProps>,
 ) => {
   type ResultProps = TOriginalProps & CreateSelectProps;
   const result = class UiduSelect extends React.Component<ResultProps> {
@@ -389,12 +383,7 @@ const createSelect = <TOriginalProps extends {}>(
     toString = arr => arr.join(',');
 
     getValue = () => {
-      const { value, valueObj, options, multiple, getOptionValue } = this.props;
-
-      // @ts-ignore
-      if (Component === Async) {
-        return valueObj;
-      }
+      const { value, options, multiple, getOptionValue } = this.props;
 
       if (value === undefined) return undefined;
 
@@ -457,4 +446,4 @@ const createSelect = <TOriginalProps extends {}>(
   return result;
 };
 
-export default Component => ComponentHOC(createSelect(Component));
+export default Component => createSelect(Component);

@@ -6,13 +6,12 @@ import {
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import Input from '../styled/Input';
-import { FieldTextProps } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
 
-class FieldTextStateless extends Component<FieldTextProps> {
+class FieldTextStateless extends Component<any> {
   static defaultProps = {
     component: Input,
     disabled: false,

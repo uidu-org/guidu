@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import Uppy from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
@@ -75,4 +75,4 @@ class FieldFileUploader extends PureComponent<FieldFileUploaderProps> {
   }
 }
 
-export default ComponentHOC(FieldFileUploader);
+export default FieldFileUploader;

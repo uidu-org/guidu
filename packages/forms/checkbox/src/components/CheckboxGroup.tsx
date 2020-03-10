@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { Component } from 'react';
 import { CheckboxGroupProps } from '../types';
 import CheckboxStateless from './CheckboxStateless';
@@ -48,4 +48,4 @@ class CheckboxGroup extends Component<CheckboxGroupProps> {
   }
 }
 
-export default ComponentHOC(CheckboxGroup);
+export default CheckboxGroup;

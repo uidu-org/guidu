@@ -3,7 +3,7 @@ import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
 
 export default class SelectEditor extends PureComponent<any, any> {
-  private select: any;
+  private select: React.RefObject<any> = React.createRef();
 
   constructor(props) {
     super(props);
@@ -18,7 +18,7 @@ export default class SelectEditor extends PureComponent<any, any> {
 
   focus = () => {
     window.setTimeout(() => {
-      this.select.focus();
+      this.select.current.focus();
       // let container = ReactDOM.findDOMNode(this.refs.container);
       // if (container) {
       //   container.focus();
@@ -65,14 +65,12 @@ export default class SelectEditor extends PureComponent<any, any> {
         >
           <Select
             multiple={multiple}
-            componentRef={ref => {
-              this.select = ref;
-            }}
+            componentRef={this.select}
             layout="elementOnly"
             name="value"
             options={options}
-            menuPortalTarget={document.body}
-            isSearchable
+            // menuPortalTarget={document.body}
+            // isSearchable
             styles={{
               control: base => ({
                 ...base,
@@ -81,7 +79,7 @@ export default class SelectEditor extends PureComponent<any, any> {
             }}
             value={value}
             onChange={this.setValue}
-            menuIsOpen={true}
+            // menuIsOpen={true}
             // menuShouldBlockScroll
           />
         </Form>

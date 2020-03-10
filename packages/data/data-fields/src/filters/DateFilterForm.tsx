@@ -29,12 +29,12 @@ function DateFilterForm({
             layout="elementOnly"
             name={`filters[${index}][filter]`}
             value={filter.filter}
-            onChange={(name, value) => {
-              console.log(value);
-              if (value !== '') {
-                onChange(name, value);
-              }
-            }}
+            // onChange={(name, value) => {
+            //   console.log(value);
+            //   if (value !== '') {
+            //     onChange(name, value);
+            //   }
+            // }}
             autoFocus
           />
         </div>

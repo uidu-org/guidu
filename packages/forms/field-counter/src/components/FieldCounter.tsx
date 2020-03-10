@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
 import { FieldCounterProps } from '../types';
 import InputControl from './FieldCounterStateless';
@@ -31,4 +31,4 @@ class FieldCounter extends PureComponent<FieldCounterProps> {
   }
 }
 
-export default ComponentHOC(FieldCounter);
+export default FieldCounter;

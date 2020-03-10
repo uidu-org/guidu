@@ -22,9 +22,9 @@ const BasicUsageExample = class extends PureComponent {
         <Checkbox
           label="Basic checkbox"
           onChange={this.onChange}
-          name="checkbox-basic"
           layout="elementOnly"
           id="test"
+          name="checkbox-basic"
         />
         <Checkbox
           defaultChecked

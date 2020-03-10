@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
 import InputControl from './FieldDateRangeStateless';
 
@@ -34,4 +34,4 @@ class FieldDate extends PureComponent<any> {
   }
 }
 
-export default ComponentHOC(FieldDate);
+export default FieldDate;

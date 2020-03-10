@@ -26,7 +26,7 @@ export default class LinkRecordForm extends PureComponent<any> {
                 />
               }
               options={options}
-              defaultMenuIsOpen
+              // defaultMenuIsOpen
             />
           )}
         </FormattedMessage>

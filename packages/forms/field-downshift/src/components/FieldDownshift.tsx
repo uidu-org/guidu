@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper as FieldWrapper } from '@uidu/field-base';
+import { Wrapper as FieldWrapper } from '@uidu/field-base';
 import Downshift from 'downshift';
 import React from 'react';
 import { FieldDownshiftProps } from '../types';
@@ -116,4 +116,4 @@ function FieldDownshift({
   );
 }
 
-export default ComponentHOC(FieldDownshift);
+export default FieldDownshift;

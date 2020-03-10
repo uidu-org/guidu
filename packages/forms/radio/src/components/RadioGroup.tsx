@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import React, { PureComponent } from 'react';
 import RadioStateless from './RadioStateless';
 
@@ -46,4 +46,4 @@ class RadioGroup extends PureComponent<any> {
   }
 }
 
-export default ComponentHOC(RadioGroup);
+export default RadioGroup;

@@ -177,7 +177,7 @@ export default function Donation({
                 setSelectedAmount({ amount: value });
               }}
               value={selectedAmount?.amount}
-              min="5"
+              min={5}
               required
               {...(recurrence === 'month' && {
                 addonAfter: (

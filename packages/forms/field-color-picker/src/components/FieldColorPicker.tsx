@@ -1,4 +1,4 @@
-import { ComponentHOC, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import InlineDialog from '@uidu/inline-dialog';
 import React, { PureComponent } from 'react';
 import { EditableInput, Swatch } from 'react-color/lib/components/common';
@@ -136,4 +136,4 @@ class FieldColorPicker extends PureComponent<any, any> {
   }
 }
 
-export default ComponentHOC(FieldColorPicker);
+export default FieldColorPicker;
