@@ -4,6 +4,6 @@ import FieldMentionsComponent from './components/FieldMentions';
 export { default as FieldMentionsStateless } from './components/FieldMentionsStateless';
 export { defaultMentionStyle, defaultStyle } from './utils';
 
-const FieldMentions = withFormsy(ComponentHOC(FieldMentionsComponent));
+export const FieldMentions = withFormsy(ComponentHOC(FieldMentionsComponent));
 
 export default FieldMentions;

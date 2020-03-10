@@ -1,54 +1,54 @@
 import classNames from 'classnames';
-import React, { Component } from 'react';
+import React, {
+  forwardRef,
+  RefObject,
+  useImperativeHandle,
+  useRef,
+} from 'react';
 import { Mention, MentionsInput } from 'react-mentions';
 import { FieldMentionsStatelessProps } from '../types';
 import { defaultMentionStyle, defaultStyle } from '../utils';
 
-export default class FieldMentionsStateless extends Component<
-  FieldMentionsStatelessProps
-> {
-  public static defaultProps = {
-    placeholder: "Mention people using '@'",
-    allowSpaceInQuery: true,
-    style: defaultStyle,
-    value: {},
-    elementRef: React.createRef<HTMLSelectElement>(),
-  };
+function FieldMentionsStateless({
+  placeholder = "Mention people using '@'",
+  allowSpaceInQuery = true,
+  style = defaultStyle,
+  value = null,
+  items,
+  onChange,
+  onKeyDown,
+  className,
+  suggestionsPortalHost,
+  forwardedRef,
+}: FieldMentionsStatelessProps) {
+  const element: RefObject<any> = useRef();
 
-  render() {
-    const {
-      value,
-      placeholder,
-      allowSpaceInQuery,
-      items,
-      onChange,
-      onKeyDown,
-      className,
-      suggestionsPortalHost,
-      style,
-    } = this.props;
+  useImperativeHandle(forwardedRef, () => element.current);
 
-    return (
-      <MentionsInput
-        value={value.value || ''}
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-        style={style}
-        placeholder={placeholder}
-        allowSpaceInQuery={allowSpaceInQuery}
-        className={classNames('form-control h-auto', className)}
-        suggestionsPortalHost={suggestionsPortalHost}
-        inputRef={this.props.elementRef}
-      >
-        {items.map((item, index) => (
-          <Mention
-            {...item}
-            key={`mention-${index}`}
-            style={defaultMentionStyle}
-            appendSpaceOnAdd
-          />
-        ))}
-      </MentionsInput>
-    );
-  }
+  return (
+    <MentionsInput
+      value={value?.value || ''}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+      style={style}
+      placeholder={placeholder}
+      allowSpaceInQuery={allowSpaceInQuery}
+      className={classNames('form-control h-auto', className)}
+      suggestionsPortalHost={suggestionsPortalHost}
+      inputRef={element}
+    >
+      {items.map((item, index) => (
+        <Mention
+          {...item}
+          key={`mention-${index}`}
+          style={defaultMentionStyle}
+          appendSpaceOnAdd
+        />
+      ))}
+    </MentionsInput>
+  );
 }
+
+export default forwardRef((props: FieldMentionsStatelessProps, ref: any) => (
+  <FieldMentionsStateless {...props} forwardedRef={ref} />
+));

@@ -21,6 +21,7 @@ export function FieldRefTester({ component: Component, ...rest }) {
         <button
           onClick={e => {
             e.preventDefault();
+            console.log(ref);
             ref.current.focus();
           }}
         >

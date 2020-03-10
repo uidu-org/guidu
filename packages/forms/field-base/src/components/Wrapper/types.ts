@@ -1,15 +1,14 @@
-import { FieldBaseLayout } from '../../types';
 import { InputGroupProps } from '../InputGroup';
 import { RowProps } from '../Row/types';
 
 export type WrapperProps = RowProps &
   InputGroupProps & {
     errorMessages?: Array<any>;
-    floatLabel?: boolean;
+    floatLabel?: boolean | string | React.ReactNode;
     help?: string | React.ReactNode;
     id?: string;
-    layout?: FieldBaseLayout;
+    // layout?: FieldBaseLayout;
     type?: string;
-    showErrors?: boolean;
-    required?: boolean;
+    // showErrors?: boolean;
+    // required?: boolean;
   };

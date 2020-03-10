@@ -4,60 +4,51 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import autosize from 'autosize';
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
 
-class FieldTextareaStateless extends Component<any> {
-  private element: any = React.createRef();
-
-  static defaultProps = {
-    className: 'form-control',
-    autoSize: true,
-    rows: 4,
-    cols: 0,
-  };
-
-  componentDidMount() {
-    const { autoSize } = this.props;
+function FieldTextareaStateless({
+  className = 'form-control',
+  autoSize = true,
+  rows = 4,
+  cols = 0,
+  placeholder,
+  onFocus,
+  onBlur,
+  onChange,
+  onKeyDown,
+  onKeyUp,
+  value,
+}: any) {
+  const element = useRef(null);
+  useEffect(() => {
     if (autoSize) {
-      autosize(this.element.current);
+      autosize(element.current);
     }
-  }
+    return () => {
+      autosize.destroy(element.current);
+    };
+  }, []);
 
-  render() {
-    const {
-      placeholder,
-      className,
-      onFocus,
-      onBlur,
-      onChange,
-      onKeyDown,
-      onKeyUp,
-      rows,
-      cols,
-      value,
-    } = this.props;
-
-    return (
-      <textarea
-        rows={rows}
-        cols={cols}
-        ref={this.element}
-        placeholder={placeholder}
-        className={className}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onChange={onChange}
-        onKeyDown={onKeyDown}
-        onKeyUp={onKeyUp}
-      >
-        {value}
-      </textarea>
-    );
-  }
+  return (
+    <textarea
+      rows={rows}
+      cols={cols}
+      ref={element}
+      placeholder={placeholder}
+      className={className}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
+    >
+      {value}
+    </textarea>
+  );
 }
 
 export { FieldTextareaStateless as FieldTextareaStatelessWithoutAnalytics };

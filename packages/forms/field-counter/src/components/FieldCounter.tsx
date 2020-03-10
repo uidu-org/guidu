@@ -1,34 +1,27 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
+import React, { forwardRef } from 'react';
 import { FieldCounterProps } from '../types';
 import InputControl from './FieldCounterStateless';
 
-class FieldCounter extends PureComponent<FieldCounterProps> {
-  private element = React.createRef();
-
-  handleChange = value => {
-    const { onChange, onSetValue, name } = this.props;
+function FieldCounter({
+  onChange,
+  onSetValue,
+  name,
+  forwardedRef,
+  ...rest
+}: FieldCounterProps & { forwardedRef: any }) {
+  const handleChange = value => {
     onSetValue(value);
     onChange(name, value);
   };
 
-  initElementRef = control => {
-    this.element = control ? control.current.element : null;
-  };
-
-  render() {
-    const { onChange, ...otherProps } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <InputControl
-          {...otherProps}
-          onChange={this.handleChange}
-          ref={this.element}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <InputControl {...rest} onChange={handleChange} ref={forwardedRef} />
+    </Wrapper>
+  );
 }
 
-export default FieldCounter;
+export default forwardRef((props: FieldCounterProps, ref) => (
+  <FieldCounter {...props} forwardedRef={ref} />
+));

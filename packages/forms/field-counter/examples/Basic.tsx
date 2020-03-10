@@ -10,7 +10,7 @@ export default class Basic extends Component<any, any> {
       'Click into and out of the input above to trigger onBlur & onFocus in the Fieldbase',
   };
 
-  onChange = (name, value) => {
+  onChange = (name, value, _otherProps) => {
     this.setState({
       eventResult: `onChange called with value: ${value}`,
     });
@@ -37,6 +37,15 @@ export default class Basic extends Component<any, any> {
           // onBlur={this.onBlur}
           // onFocus={this.onFocus}
           label="With change, blur & focus handlers"
+        />
+
+        <FieldCounter
+          {...inputDefaultProps}
+          onChange={this.onChange}
+          // onBlur={this.onBlur}
+          // onFocus={this.onFocus}
+          label="With change, blur & focus handlers"
+          mobile
         />
 
         <div

@@ -2,23 +2,17 @@ import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
 
 export default md`
+  ### Field
+  <p class="lead">Field component includes all guidu fields, shows a loader before importing them.</p>
 
-  Buttons are used as triggers for actions. They are used in forms, toolbars,
-  dialog footers and as stand-alone action triggers.
-
-  Button also exports a chat-window-group component to make it easy to display
-  multiple chat-windows together.
-
-  ## Usage
-
-  ${code`import Stepper, { Step } from '@uidu/stepper';`}
+  ${code`import Field from '@uidu/field';`}
 
   ${(
     <Example
       packageName="@uidu/stepper"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 

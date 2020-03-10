@@ -3,7 +3,7 @@ import { colors } from '@uidu/theme';
 import memoizeOne from 'memoize-one';
 import React from 'react';
 import isEqual from 'react-fast-compare';
-import Select, { mergeStyles } from 'react-select';
+import { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import * as defaultComponents from './components';
 import MultiValueLabel from './components/MultiValueLabel';
@@ -97,7 +97,7 @@ type ReactSelectProps = {
   /* The value of the select; reflected by the selected option */
   value?: ValueType;
 
-  innerRef?: React.RefObject<any> | ((ref: any) => void);
+  componentRef?: React.RefObject<any> | ((ref: any) => void);
 };
 
 type CreateSelectProps = ReactSelectProps & {
@@ -353,13 +353,13 @@ const createSelect = <TOriginalProps extends {}>(
     onSelectRef = (ref: React.RefObject<any>) => {
       this.select = ref;
 
-      const { innerRef } = this.props;
+      const { componentRef } = this.props;
 
-      if (typeof innerRef === 'object') {
-        (innerRef as any).current = ref;
+      if (typeof componentRef === 'object') {
+        (componentRef as any).current = ref;
       }
-      if (typeof innerRef === 'function') {
-        (innerRef as any)(ref);
+      if (typeof componentRef === 'function') {
+        (componentRef as any)(ref);
       }
     };
 
@@ -405,7 +405,7 @@ const createSelect = <TOriginalProps extends {}>(
         value,
         getOptionLabel,
         getOptionValue,
-        innerRef,
+        componentRef,
         ...props
       } = this.props; // eslint-disable-line
 

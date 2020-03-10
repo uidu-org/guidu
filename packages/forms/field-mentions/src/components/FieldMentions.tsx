@@ -1,15 +1,16 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { Component } from 'react';
+import React, { forwardRef } from 'react';
 import { FieldMentionsProps } from '../types';
 import FieldMentionsStateless from './FieldMentionsStateless';
 
-class FieldMentions extends Component<FieldMentionsProps> {
-  static defaultProps = {
-    elementRef: React.createRef<any>(),
-  };
-
-  handleChange = (event, value, plainTextValue, mentions) => {
-    const { onSetValue, onChange, name } = this.props;
+function FieldMentions({
+  onSetValue,
+  onChange,
+  name,
+  forwardedRef,
+  ...rest
+}: FieldMentionsProps) {
+  const handleChange = (_event, value, plainTextValue, mentions) => {
     if (value === '') {
       onSetValue('');
       onChange(name, '');
@@ -27,18 +28,17 @@ class FieldMentions extends Component<FieldMentionsProps> {
     }
   };
 
-  render() {
-    const { onChange, ...otherProps } = this.props;
-    return (
-      <Wrapper {...this.props}>
-        <FieldMentionsStateless
-          {...otherProps}
-          onChange={this.handleChange}
-          elementRef={this.props.elementRef}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <FieldMentionsStateless
+        {...rest}
+        onChange={handleChange}
+        ref={forwardedRef}
+      />
+    </Wrapper>
+  );
 }
 
-export default FieldMentions;
+export default forwardRef((props: FieldMentionsProps, ref) => (
+  <FieldMentions {...props} forwardedRef={ref} />
+));

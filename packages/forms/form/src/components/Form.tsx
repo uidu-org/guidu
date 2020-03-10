@@ -1,116 +1,78 @@
 import Formsy from 'formsy-react';
-import React, { Component } from 'react';
+import React, { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { FormProps, FormState } from '../types';
+import { FormProps } from '../types';
 import FormContext from './FormContext';
 
-const Loading = styled.div<{ loading: boolean }>`
-  opacity: ${({ loading }) => (loading ? 0.4 : 1)};
+const Loading = styled.div<{ isLoading: boolean }>`
+  opacity: ${({ isLoading }) => (isLoading ? 0.4 : 1)};
   transition: opacity 0.3ms ease-in;
-  ${({ loading }) =>
-    loading &&
+  ${({ isLoading }) =>
+    isLoading &&
     css`
       pointer-events: none;
     `};
 `;
 
-class Form extends Component<FormProps, FormState> {
-  private form: React.RefObject<Formsy> = React.createRef();
+function Form({
+  footerRenderer = () => {},
+  handleSubmit = async model => {},
+  inputsWrapperProps = {},
+  submitted = false,
+  withLoader = true,
+  children,
+  forwardedRef,
+  ...rest
+}: FormProps & { forwardedRef: React.Ref<any> }) {
+  const form: React.RefObject<Formsy> = useRef(null);
+  const [canSubmit, setCanSubmit] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  static defaultProps = {
-    footerRenderer: () => {},
-    handleSubmit: () => {},
-    inputsWrapperProps: {},
-    submitted: false,
-    withLoader: true,
-  };
+  const enableButton = () => setCanSubmit(true);
 
-  state = {
-    canSubmit: false,
-    loading: false,
-  };
+  const disableButton = () => setCanSubmit(false);
 
-  static getDerivedStateFromProps(props, _state) {
-    if (props.submitted) {
-      return {
-        loading: false,
-      };
-    }
-    return null;
-  }
-
-  enableButton = () => {
-    this.setState({
-      canSubmit: true,
+  const onValidSubmit = (model, resetForm) => {
+    setIsLoading(true);
+    handleSubmit(model, resetForm).then(() => {
+      setIsLoading(false);
     });
   };
 
-  disableButton = () => {
-    this.setState({
-      canSubmit: false,
-    });
-  };
-
-  handleSubmit = (model, resetForm) => {
-    const { handleSubmit } = this.props;
-    this.setState(
-      {
-        // canSubmit: false,
-        loading: true,
-      },
-      () => {
-        handleSubmit(model, resetForm).then(() => {
-          this.setState({ loading: false });
-        });
-      },
-    );
-  };
-
-  render() {
-    const { loading, canSubmit } = this.state;
-
-    const {
-      footerRenderer,
-      children,
-      withLoader,
-      inputsWrapperProps,
-      handleSubmit,
-      submitted,
-      innerRef,
-      ...otherProps
-    } = this.props;
-
-    return (
-      <FormContext.Provider
-        value={{
-          layout: 'vertical',
-          validateBeforeSubmit: false,
-          validatePristine: false,
-          rowClassName: '',
-          labelClassName: '',
-          elementWrapperClassName: '',
-        }}
+  return (
+    <FormContext.Provider
+      value={{
+        layout: 'vertical',
+        validateBeforeSubmit: false,
+        validatePristine: false,
+        rowClassName: '',
+        labelClassName: '',
+        elementWrapperClassName: '',
+      }}
+    >
+      <Formsy
+        {...rest}
+        ref={forwardedRef}
+        onValidSubmit={onValidSubmit}
+        onValid={enableButton}
+        onInvalid={disableButton}
       >
-        <Formsy
-          {...otherProps}
-          ref={innerRef}
-          onValidSubmit={this.handleSubmit}
-          onValid={this.enableButton}
-          onInvalid={this.disableButton}
-        >
-          <Loading {...inputsWrapperProps} loading={loading || false}>
-            {children}
-          </Loading>
-          {footerRenderer({ loading, canSubmit }, this.form, this.handleSubmit)}
-        </Formsy>
-      </FormContext.Provider>
-    );
-  }
+        <Loading {...inputsWrapperProps} isLoading={isLoading || false}>
+          {children}
+        </Loading>
+        {footerRenderer(
+          { loading: isLoading, canSubmit },
+          form.current,
+          onValidSubmit,
+        )}
+      </Formsy>
+    </FormContext.Provider>
+  );
 }
 
-export default React.forwardRef<any, FormProps>(
-  ({ children, ...otherProps }, ref) => (
-    <Form innerRef={ref} {...otherProps}>
+export default React.forwardRef(
+  ({ children, ...otherProps }: FormProps, ref: React.Ref<any>) => (
+    <Form forwardedRef={ref} {...otherProps}>
       {children}
     </Form>
   ),

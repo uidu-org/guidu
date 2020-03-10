@@ -12,6 +12,7 @@ export default class Basic extends React.Component<{}> {
   };
 
   onChange = (name, value) => {
+    console.log(value);
     this.setState({
       eventResult: `onChange called with value: ${value}`,
     });
@@ -34,23 +35,21 @@ export default class Basic extends React.Component<{}> {
       <Form {...formDefaultProps}>
         <FieldMentions
           {...inputDefaultProps}
-          type="tel"
           onChange={this.onChange}
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           label="With change, blur & focus handlers"
           items={[
             {
-              type: 'Member',
               trigger: '@',
               data: users,
+              markup: '@[__display__](__id__)',
               // style: {
               //   ...mentionDefaultStyles,
               // },
               // renderSuggestion: renderContactSuggestion
             },
             {
-              type: 'Team',
               trigger: '#',
               data: teams,
             },
@@ -70,11 +69,10 @@ export default class Basic extends React.Component<{}> {
         </div>
         <FieldMentions
           {...inputDefaultProps}
-          value={{ value: 'Default value [John Doe](Member:johndoe)' }}
+          value={{ value: 'Default value @[John Doe](johndoe)' }}
           floatLabel="With default value"
           items={[
             {
-              type: 'Member',
               trigger: '@',
               data: users,
               // style: {
@@ -86,10 +84,8 @@ export default class Basic extends React.Component<{}> {
         />
         <FieldMentions
           {...inputDefaultProps}
-          type="tel"
           items={[
             {
-              type: 'Member',
               trigger: '@',
               data: users,
               // style: {

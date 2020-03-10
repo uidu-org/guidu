@@ -11,14 +11,4 @@ export type ComponentHOCProps = PassDownProps<any> & {
 
 export type ComponentValue = string | string[];
 
-export type RequiredFromOriginalComponentProps = FieldBaseProps & {
-  validateBeforeSubmit?: boolean;
-  validatePristine?: boolean;
-  layout?: FieldBaseLayout;
-  name: string;
-  value?: ComponentValue;
-  disabled?: boolean;
-  id?: string;
-  label?: React.ReactNode;
-  componentRef?: React.RefObject<any>;
-};
+export type RequiredFromOriginalComponentProps = FieldBaseProps;

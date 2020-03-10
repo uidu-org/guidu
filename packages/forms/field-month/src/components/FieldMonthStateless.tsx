@@ -15,7 +15,6 @@ class FieldMonthStateless extends Component<any> {
   static defaultProps = {
     disabled: false,
     isReadOnly: false,
-    isSpellCheckEnabled: true,
     isPristine: true,
     onChange: () => {},
     required: false,
@@ -55,7 +54,6 @@ class FieldMonthStateless extends Component<any> {
       placeholder,
       isReadOnly,
       required,
-      isSpellCheckEnabled,
       type,
       value,
     } = this.props;
@@ -79,7 +77,6 @@ class FieldMonthStateless extends Component<any> {
         readOnly={isReadOnly}
         ref={this.initElementRef}
         required={required}
-        spellCheck={isSpellCheckEnabled}
         type={type}
         value={value}
         className={classNames('form-control', className, {

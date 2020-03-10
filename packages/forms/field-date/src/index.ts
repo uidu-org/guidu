@@ -6,6 +6,6 @@ export {
   FieldDateStatelessWithoutAnalytics,
 } from './components/FieldDateStateless';
 
-const FieldDate = withFormsy(ComponentHOC(FieldDateComponent));
+export const FieldDate = withFormsy(ComponentHOC(FieldDateComponent));
 
 export default FieldDate;

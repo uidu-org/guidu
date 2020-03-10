@@ -1,5 +1,5 @@
 import { Wrapper } from '@uidu/field-base';
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { FieldTextProps } from '../types';
 import InputControl from './FieldTextStateless';
 
@@ -8,11 +8,9 @@ function FieldText({
   onChange,
   onSetValue,
   name,
-  componentRef,
+  forwardedRef,
   ...rest
-}: FieldTextProps) {
-  const element: React.RefObject<any> = React.createRef(componentRef);
-
+}: FieldTextProps & { forwardedRef: any }) {
   const handleChange = event => {
     const { value } = event.currentTarget;
     onChange(name, value);
@@ -21,9 +19,11 @@ function FieldText({
 
   return (
     <Wrapper {...rest}>
-      <StatelessInput {...rest} onChange={handleChange} ref={element} />
+      <StatelessInput {...rest} onChange={handleChange} ref={forwardedRef} />
     </Wrapper>
   );
 }
 
-export default FieldText;
+export default forwardRef((props: FieldTextProps, ref) => (
+  <FieldText {...props} forwardedRef={ref} />
+));

@@ -44,9 +44,7 @@ export default class MessagesForm extends React.Component<
   }
 
   focus = () => {
-    console.log(this.mentionsComponentInput);
     this.mentionsInput.current.focus();
-    // this.mentionsComponentInput.current.element.current.inputRef.current.focus();
   };
 
   isValid = (canSubmit: boolean): boolean => {
@@ -244,8 +242,7 @@ export default class MessagesForm extends React.Component<
             )}
             <div className="d-flex align-items-center flex-grow-1">
               <FieldMentions
-                elementRef={this.mentionsInput}
-                componentRef={this.mentionsComponentInput}
+                componentRef={this.mentionsInput}
                 className={classNames('border-0 shadow-none', {
                   'mr-2': !message.body,
                 })}
@@ -301,7 +298,6 @@ export default class MessagesForm extends React.Component<
                 </div>
               }
               mentionsInput={this.mentionsInput}
-              mentionsComponentInput={this.mentionsComponentInput}
             />
           )}
         </div>

@@ -54,8 +54,6 @@ export default class TimeFrame extends Component<TimeFrameProps> {
         </DropdownMenu>
         <div className="d-flex">
           <FieldDateRangeStateless
-            name="f"
-            layout="elementOnly"
             from={from.toDate()}
             to={to.toDate()}
             onChange={handleDateChange}

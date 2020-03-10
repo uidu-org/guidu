@@ -1,37 +1,28 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
+import React from 'react';
+import { FieldDateRangeProps } from '../types';
 import InputControl from './FieldDateRangeStateless';
 
-class FieldDate extends PureComponent<any> {
-  private element = React.createRef();
-
-  static defaultProps = {
-    formatSubmit: 'YYYY-MM-DD',
-  };
-
-  handleChange = (value: any) => {
-    const { onSetValue, onChange } = this.props;
+function FieldDateRange({
+  formatSubmit = 'YYYY-MM-DD',
+  onSetValue,
+  onChange,
+  ...rest
+}: FieldDateRangeProps) {
+  const handleChange = (value: any) => {
     onSetValue(value);
     onChange(name, value);
   };
 
-  initElementRef = control => {
-    this.element = control ? control.current.element : null;
-  };
-
-  render() {
-    const { onChange, ...otherProps } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <InputControl
-          {...otherProps}
-          onChange={this.handleChange}
-          ref={this.element}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <InputControl
+        {...rest}
+        onChange={handleChange}
+        // ref={this.element}
+      />
+    </Wrapper>
+  );
 }
 
-export default FieldDate;
+export default FieldDateRange;

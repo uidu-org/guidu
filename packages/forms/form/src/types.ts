@@ -13,10 +13,9 @@ export type FormProps = {
   inputsWrapperProps?: any;
   autoComplete?: string;
   className?: string;
-  innerRef?: React.Ref<any>;
 };
 
 export type FormState = {
   canSubmit: boolean;
-  loading: boolean;
+  isLoading: boolean;
 };

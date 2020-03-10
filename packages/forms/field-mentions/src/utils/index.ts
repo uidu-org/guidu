@@ -1,4 +1,4 @@
-import { colors, fontSize, gridSize, math, themed } from '@uidu/theme';
+import { colors, themed } from '@uidu/theme';
 
 const activeBackgroundColor = themed({ light: colors.B75, dark: colors.DN30 });
 const hoverBackgroundColor = themed({ light: colors.N20, dark: colors.DN60 });
@@ -41,7 +41,7 @@ export const defaultStyle = {
 
   input: {
     margin: 0,
-    padding: '0.5rem 1rem',
+    padding: '0.625rem 1rem',
     left: 0,
     border: 0,
     letterSpacing: 'inherit',
@@ -109,8 +109,8 @@ export const defaultStyle = {
 
 export const defaultMentionStyle = {
   backgroundColor: hoverBackgroundColor(),
-  padding: '0px 3px',
-  left: '-3px',
+  padding: '0px 2px',
+  left: '-2px',
   position: 'relative',
   borderRadius: '4px',
 };

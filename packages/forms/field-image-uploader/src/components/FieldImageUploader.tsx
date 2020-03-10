@@ -1,7 +1,7 @@
 import Spinner from '@uidu/spinner';
 import loadImage from 'blueimp-load-image';
 import debounce from 'lodash/debounce';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import AvatarEditor from 'react-avatar-editor';
 import Dropzone from 'react-dropzone';
 import { FieldImageUploaderProps } from '../types';
@@ -9,7 +9,7 @@ import Empty from './Empty';
 import Existing from './Existing';
 import Toolbar from './Toolbar';
 
-class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
+class FieldImageUploader extends PureComponent<FieldImageUploaderProps, any> {
   canvas: React.RefObject<HTMLDivElement> = React.createRef();
   editor: React.RefObject<any> = React.createRef();
 
@@ -65,6 +65,7 @@ class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
   handleMouseOver = () => this.setState({ isHovered: true });
 
   handleDrop = files => {
+    console.log(files);
     this.setState(
       {
         loading: true,
@@ -99,6 +100,7 @@ class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
   };
 
   evaluate = file => {
+    console.log(file);
     return loadImage.parseMetaData(file, data => {
       let orientation = 0;
       if (data.exif) {
@@ -109,6 +111,7 @@ class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
         file,
         canvas => {
           const image = new Image();
+          console.log(image);
           image.onload = () => {
             this.setState({
               imageName: file.name,
@@ -169,6 +172,9 @@ class FieldImageUploader extends Component<FieldImageUploaderProps, any> {
     } = this.props;
     const { data, imageUrl, loading, scale, errors, isHovered } = this.state;
     let control = null;
+
+    console.log(this.props);
+    console.log(this.state);
 
     if (data.length === 0) {
       control = (

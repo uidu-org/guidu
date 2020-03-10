@@ -3,6 +3,6 @@ import { withFormsy } from 'formsy-react';
 import FieldCounterComponent from './components/FieldCounter';
 export { default as FieldCounterStatelesss } from './components/FieldCounterStateless';
 
-const FieldCounter = withFormsy(ComponentHOC(FieldCounterComponent));
+export const FieldCounter = withFormsy(ComponentHOC(FieldCounterComponent));
 
 export default FieldCounter;

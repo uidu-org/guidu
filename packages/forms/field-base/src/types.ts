@@ -3,25 +3,32 @@ import { WrapperProps } from './components/Wrapper/types';
 export type FieldBaseLayout = 'horizontal' | 'vertical' | 'elementOnly';
 
 export type FieldBaseProps = WrapperProps & {
-  errorMessages: Array<string>;
-  errorMessage: any;
-  help?: React.ReactNode | string;
+  validateBeforeSubmit?: boolean;
+  validatePristine?: boolean;
+  // layout?: FieldBaseLayout;
+  // value?: ComponentValue;
+  // disabled?: boolean;
+  // id?: string;
+  // label?: React.ReactNode;
+  // errorMessages: Array<string>;
+  // errorMessage: any;
+  // help?: React.ReactNode | string;
   /** Standard HTML input pattern attribute, used for validating using a regular expression. */
   pattern?: string;
   /** Sets the field as uneditable, with a changed hover state. */
   disabled?: boolean;
   /** Add asterisk to label. Set required for form that the field is part of. */
-  required?: boolean;
+  // required?: boolean;
   /** Is Pristine */
   isPristine?: boolean;
   /** If true, prevents the value of the input from being edited. */
   isReadOnly?: boolean;
 
-  showErrors?: boolean;
+  // showErrors?: boolean;
   /** type assigned to input */
-  type?: string;
+  // type?: string;
   /** id assigned to input */
-  id?: string;
+  // id?: string;
   /** The name of the submitted field. */
   value?: any;
   /** The name of the submitted field. */

@@ -9,8 +9,6 @@ export default class TimeFrameComparator extends PureComponent<any> {
       <div className="d-flex align-items-center ml-2">
         <span className="text-muted small mx-2">vs.</span>
         <FieldDateRangeStateless
-          name="f"
-          layout="elementOnly"
           from={from.toDate()}
           to={to.toDate()}
           onChange={handleDateChange}

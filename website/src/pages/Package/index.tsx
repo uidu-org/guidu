@@ -11,7 +11,6 @@ import {
 } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import Media from 'react-media';
-import { RouteComponentProps } from 'react-router';
 import Loading from '../../components/Loading';
 import Page from '../../components/Page';
 import { Link } from '../../components/WrappedLink';
@@ -20,12 +19,6 @@ import Navigation from '../../containers/Nav';
 import * as fs from '../../utils/fs';
 import FourOhFour from '../FourOhFour';
 import fetchPackageData from './utils/fsOperations';
-
-export const NoDocs = props => {
-  return <div>Component "{props.name}" doesn't have any documentation.</div>;
-};
-
-export type PackageProps = {} & RouteComponentProps;
 
 export type Props = {
   description?: string;
@@ -263,7 +256,7 @@ class Package extends React.Component<Props> {
           </div>
         </ShellHeader>
         <ShellBody scrollable>
-          <div className="container my-3 my-sm-5">
+          <div className="container my-3 my-sm-4">
             <div className="row justify-content-center">
               <div className="col-lg-10">{doc || <NoDocs name={pkgId} />}</div>
             </div>

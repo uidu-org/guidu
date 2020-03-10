@@ -1,12 +1,16 @@
+import { FieldBaseProps } from '@uidu/field-base';
 import { DayPickerInputProps } from 'react-day-picker';
 
-export type FieldDateProps = DayPickerInputProps & {
+export type FieldDateProps = FieldBaseProps &
+  Omit<FieldDateStatelessProps, 'forwardedRef'>;
+
+export type FieldDateStatelessProps = DayPickerInputProps & {
   locale?: string;
   displayFormat?: string;
   inputClassName?: string;
   containerClassName?: string;
   wrapperClassName?: string;
-  innerRef?: React.RefObject<any>;
+  forwardedRef?: React.RefObject<any>;
   formatSubmit?: string;
   selectMonths?: boolean;
 };

@@ -1,40 +1,29 @@
-import { FieldBaseProps, Wrapper } from '@uidu/field-base';
+import { Wrapper } from '@uidu/field-base';
 import moment from 'moment';
-import React, { PureComponent } from 'react';
+import React, { forwardRef } from 'react';
 import { FieldDateProps } from '../types';
 import InputControl from './FieldDateStateless';
 
-class FieldDate extends PureComponent<FieldBaseProps & FieldDateProps> {
-  private element = React.createRef();
-
-  static defaultProps = {
-    formatSubmit: 'YYYY-MM-DD',
-  };
-
-  handleChange = (date: any) => {
-    const { onSetValue, onChange } = this.props;
-    const value = date ? moment(date).format(this.props.formatSubmit) : '';
+function FieldDate({
+  formatSubmit = 'YYYY-MM-DD',
+  onSetValue,
+  onChange,
+  forwardedRef,
+  ...rest
+}: FieldDateProps & { forwardedRef: any }) {
+  const handleChange = (date: any) => {
+    const value = date ? moment(date).format(formatSubmit) : '';
     onSetValue(value);
     onChange(name, value);
   };
 
-  initElementRef = control => {
-    this.element = control ? control.current.element : null;
-  };
-
-  render() {
-    const { onChange, ...otherProps } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <InputControl
-          {...otherProps}
-          onChange={this.handleChange}
-          ref={this.element}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <InputControl {...rest} onDayChange={handleChange} ref={forwardedRef} />
+    </Wrapper>
+  );
 }
 
-export default FieldDate;
+export default forwardRef((props: FieldDateProps, ref) => (
+  <FieldDate {...props} forwardedRef={ref} />
+));

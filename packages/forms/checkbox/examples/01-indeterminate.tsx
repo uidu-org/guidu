@@ -54,6 +54,8 @@ export default class IndeterminateExample extends PureComponent {
   render() {
     const { checkedItems } = this.state;
 
+    console.log(checkedItems);
+
     return (
       <Form>
         <p style={{ marginBottom: '8px' }}>

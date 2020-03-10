@@ -6,6 +6,7 @@ import {
 import React, {
   forwardRef,
   RefObject,
+  useEffect,
   useImperativeHandle,
   useRef,
 } from 'react';
@@ -41,6 +42,13 @@ function Checkbox({
 
   useImperativeHandle(forwardedRef, () => element.current);
 
+  useEffect(() => {
+    if (element) {
+      element.current.indeterminate = !!isIndeterminate;
+    }
+    return () => null;
+  }, [isIndeterminate]);
+
   return (
     <div
       className={`custom-control custom-checkbox${
@@ -55,7 +63,7 @@ function Checkbox({
         onChange={onChange}
         value={id}
         disabled={disabled}
-        defaultChecked={checked}
+        checked={checked}
         ref={element}
       />
       <label className="custom-control-label" htmlFor={id}>

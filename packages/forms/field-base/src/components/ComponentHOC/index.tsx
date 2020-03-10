@@ -1,4 +1,5 @@
 import { FormContext } from '@uidu/form';
+import { PassDownProps } from 'formsy-react/dist/Wrapper';
 import React from 'react';
 import shortid from 'shortid';
 import { FieldBaseLayout } from '../../types';
@@ -8,12 +9,13 @@ import {
   shouldShowErrors,
 } from '../../utils';
 import { RequiredFromOriginalComponentProps } from './types';
+
 /**
  * Props coming from the `withFormsy` hoc.
  */
 export interface ExternalProps {
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  errorMessage?: any;
+  errorMessage?: Array<any>;
   hasValue: any;
   innerRef?: any;
   isFormDisabled: boolean;
@@ -50,10 +52,10 @@ const withFRC = <TOriginalProps extends {}>(
   Component: React.ComponentType<TOriginalProps>,
 ) => {
   type ResultProps = TOriginalProps &
-    ExternalProps &
+    PassDownProps<TOriginalProps> &
     RequiredFromOriginalComponentProps;
 
-  const result = class FrcWrapper extends React.Component<ResultProps, {}> {
+  const result = class FrcWrapper extends React.PureComponent<ResultProps, {}> {
     public static displayName = `withFRC(${getDisplayName(Component)})`;
     public static contextType = FormContext;
 
@@ -81,15 +83,12 @@ const withFRC = <TOriginalProps extends {}>(
         /* eslint-disable @typescript-eslint/no-unused-vars */
         errorMessage,
         hasValue,
-        innerRef,
         isRequired,
         isValidValue,
         resetValue,
         setValidations,
         showError,
         showRequired,
-        validationError,
-        validationErrors,
         validations,
         /* eslint-enable @typescript-eslint/no-unused-vars */
         isFormDisabled,

@@ -5,136 +5,103 @@ import {
 } from '@uidu/analytics';
 import { FieldDateStateless } from '@uidu/field-date';
 import moment from 'moment';
-import React, { Component } from 'react';
+import React, { RefObject, useRef, useState } from 'react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 // @ts-ignore
 import { formatDate } from 'react-day-picker/moment';
 import { ArrowRight } from 'react-feather';
 import { Helmet } from 'react-helmet';
+import { FieldDateRangeStatelessProps } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
 
-moment.locale('it');
+function FieldDateRangeStateless({
+  locale = 'it',
+  displayFormat = 'L',
+  placeholders = {
+    from: `${formatDate(new Date(), 'LL', 'it')}`,
+    to: `${formatDate(new Date(), 'LL', 'it')}`,
+  },
+  from: propFrom,
+  to: propTo,
+  className = 'InputFromTo d-flex form-control align-items-center px-0',
+  onChange,
+}: FieldDateRangeStatelessProps) {
+  const fromElement: RefObject<DayPickerInput> = useRef(null);
+  const toElement: RefObject<DayPickerInput> = useRef(null);
+  const [from, setFrom] = useState(propFrom);
+  const [to, setTo] = useState(propTo);
 
-class FieldDateRangeStateless extends Component<any, any> {
-  private fromElement: any = React.createRef();
-  private toElement: any = React.createRef();
-
-  static defaultProps = {
-    locale: 'it',
-    displayFormat: 'L',
-    placeholder: {
-      from: `${formatDate(new Date(), 'LL', 'it')}`,
-      to: `${formatDate(new Date(), 'LL', 'it')}`,
-    },
-    className:
-      'InputFromTo d-flex form-control form-control-sm align-items-center px-0',
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      from: props.from,
-      to: props.to,
-    };
-  }
-
-  UNSAFE_componentWillReceiveProps({ from: nextFrom, to: nextTo }) {
-    const { from, to } = this.state;
-    if (
-      nextFrom &&
-      nextTo
-      // (nextFrom.getTime() !== from.getTime() ||
-      //   nextTo.getTime() !== to.getTime())
-    ) {
-      this.setState({ from: nextFrom, to: nextTo }, () => {
-        // onChange({ from: nextFrom, to: nextTo });
-      });
-    }
-  }
-
-  showFromMonth = () => {
-    const { from, to } = this.state;
+  const showFromMonth = () => {
     if (!from) {
       return;
     }
     if (moment(to).diff(moment(from), 'months') < 2) {
-      this.toElement.current.getDayPicker().showMonth(from);
+      toElement.current.getDayPicker().showMonth(from);
     }
   };
 
-  handleFromChange = from => {
-    const { onChange } = this.props;
+  const handleFromChange = newFrom => {
     // Change the from date and focus the "to" input field
-    this.setState({ from }, () => {
-      return onChange(this.state);
-    });
+    setFrom(newFrom);
+    onChange({ from: newFrom, to });
   };
 
-  handleToChange = to => {
-    const { onChange } = this.props;
-    this.setState({ to }, () => {
-      onChange(this.state);
-      this.showFromMonth();
-    });
+  const handleToChange = newTo => {
+    setTo(newTo);
+    onChange({ from, to: newTo });
+    showFromMonth();
+    toElement.current.getInput().blur();
   };
 
-  render() {
-    const {
-      placeholder,
-      onChange,
-      value,
-      displayFormat,
-      className,
-    } = this.props;
-    const { from, to } = this.state;
-    const modifiers = { start: from, end: to };
+  const modifiers = { start: from, end: to };
 
-    return (
-      <div className={className}>
+  return (
+    <div className={className}>
+      <FieldDateStateless
+        ref={fromElement}
+        value={from}
+        placeholder={placeholders.from}
+        wrapperClassName="position-static"
+        inputClassName="form-control shadow-none border-0 text-center"
+        dayPickerProps={{
+          selectedDays: [from, { from, to }],
+          disabledDays: { after: to },
+          toMonth: to,
+          modifiers,
+          numberOfMonths: 2,
+          onDayClick: () => {
+            toElement.current.getInput().focus();
+          },
+        }}
+        onDayChange={handleFromChange}
+        displayFormat={displayFormat}
+      />
+      <ArrowRight size={16} className="flex-shrink-0" />
+      <span className="InputFromTo-to">
         <FieldDateStateless
-          innerRef={this.fromElement}
-          value={from}
-          placeholder={placeholder.from}
+          ref={toElement}
+          value={to}
+          placeholder={placeholders.to}
           wrapperClassName="position-static"
-          inputClassName="form-control form-control-sm shadow-none border-0 text-center h-auto"
+          inputClassName="form-control shadow-none border-0 text-center"
           dayPickerProps={{
             selectedDays: [from, { from, to }],
-            disabledDays: { after: to },
-            toMonth: to,
+            disabledDays: { before: from },
             modifiers,
+            month: from,
+            fromMonth: from,
             numberOfMonths: 2,
-            onDayClick: () => {
-              this.toElement.current.getInput().focus();
-            },
           }}
-          onDayChange={this.handleFromChange}
+          onDayChange={handleToChange}
           displayFormat={displayFormat}
         />
-        <ArrowRight size={16} className="flex-shrink-0" />
-        <span className="InputFromTo-to">
-          <FieldDateStateless
-            innerRef={this.toElement}
-            value={to}
-            placeholder={placeholder.to}
-            wrapperClassName="position-static"
-            inputClassName="form-control form-control-sm shadow-none border-0 text-center h-auto"
-            dayPickerProps={{
-              selectedDays: [from, { from, to }],
-              disabledDays: { before: from },
-              modifiers,
-              month: from,
-              fromMonth: from,
-              numberOfMonths: 2,
-            }}
-            onDayChange={this.handleToChange}
-            displayFormat={displayFormat}
-          />
-        </span>
-        <Helmet>
-          <style>
-            {`
+      </span>
+      <Helmet>
+        <style>
+          {`
               .InputFromTo .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
                 background-color: #f0f8ff !important;
                 color: #4a90e2;
@@ -143,7 +110,8 @@ class FieldDateRangeStateless extends Component<any, any> {
                 color: red;
               }
               .InputFromTo .DayPickerInput input {
-                max-width: 90px;
+                max-width: 140px;
+                height: calc(100% - 2px);
               }
               .InputFromTo .DayPicker-Day {
                 border-radius: 0 !important;
@@ -160,11 +128,10 @@ class FieldDateRangeStateless extends Component<any, any> {
                 width: 100%;
               }
             `}
-          </style>
-        </Helmet>
-      </div>
-    );
-  }
+        </style>
+      </Helmet>
+    </div>
+  );
 }
 
 export { FieldDateRangeStateless as FieldDateRangeStatelessWithoutAnalytics };
