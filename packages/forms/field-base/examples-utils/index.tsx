@@ -13,14 +13,14 @@ export const inputDefaultProps = {
 
 export function FieldRefTester({ component: Component, ...rest }) {
   const ref = useRef(null);
+  const element = null;
   return (
     <Form {...formDefaultProps}>
-      <Component {...rest} innerRef={ref} />
+      <Component {...rest} componentRef={ref} />
       <div>
         <button
           onClick={e => {
             e.preventDefault();
-            console.log(ref);
             ref.current.focus();
           }}
         >

@@ -15,8 +15,6 @@ export type CheckboxGroupProps = FieldBaseProps &
 
 export type CheckboxProps = FieldBaseProps &
   WithAnalyticsEventsProps & {
-    /** Sets whether the checkbox begins checked. */
-    defaultChecked?: boolean;
     /** Sets whether the checkbox is checked or unchecked. */
     isChecked?: boolean;
     /** Sets whether the checkbox is disabled. */

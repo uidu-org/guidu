@@ -1,43 +1,37 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
+import React, { forwardRef } from 'react';
 import { CheckboxProps } from '../types';
 import InputControl from './CheckboxStateless';
 
-class Checkbox extends PureComponent<CheckboxProps> {
-  private element = React.createRef();
-
-  static defaultProps = {
-    isIndeterminate: false,
-  };
-
-  handleChange = e => {
-    const { onSetValue, onChange, name } = this.props;
+function Checkbox({
+  isIndeterminate = false,
+  onSetValue,
+  onChange,
+  name,
+  value,
+  forwardedRef,
+  ...rest
+}: CheckboxProps & { forwardedRef: any }) {
+  const handleChange = e => {
     const value = e.currentTarget.checked;
     onSetValue(value);
     onChange(name, value);
   };
 
-  render = () => {
-    const {
-      onChange,
-      isIndeterminate,
-      defaultChecked,
-      value,
-      ...otherProps
-    } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <InputControl
-          {...otherProps}
-          isIndeterminate={isIndeterminate}
-          checked={defaultChecked}
-          onChange={this.handleChange}
-          ref={this.element}
-        />
-      </Wrapper>
-    );
-  };
+  return (
+    <Wrapper {...rest}>
+      <InputControl
+        {...rest}
+        name={name}
+        isIndeterminate={isIndeterminate}
+        checked={!!value}
+        onChange={handleChange}
+        ref={forwardedRef}
+      />
+    </Wrapper>
+  );
 }
 
-export default Checkbox;
+export default forwardRef((props: CheckboxProps, ref) => (
+  <Checkbox {...props} forwardedRef={ref} />
+));

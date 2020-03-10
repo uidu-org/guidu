@@ -9,9 +9,9 @@ export default class CheckboxGroupExample extends PureComponent<void> {
       <div>
         <Form {...formDefaultProps}>
           <span>
-            <Checkbox label="One" value="One" name="one" />
-            <Checkbox label="Two" value="two" name="two" />
-            <Checkbox label="Three" value="Three" name="three" />
+            <Checkbox label="One" name="one" />
+            <Checkbox label="Two" name="two" value={true} />
+            <Checkbox label="Three" name="three" />
           </span>
 
           <p>

@@ -10,8 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.17",
-    "@uidu/field-base": "^0.1.48",
-    "classnames": "^2.2.6"
+    "@uidu/field-base": "^0.1.48"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.40",

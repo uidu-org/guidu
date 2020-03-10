@@ -8,9 +8,10 @@ function FieldText({
   onChange,
   onSetValue,
   name,
+  componentRef,
   ...rest
 }: FieldTextProps) {
-  const element: React.RefObject<any> = React.createRef();
+  const element: React.RefObject<any> = React.createRef(componentRef);
 
   const handleChange = event => {
     const { value } = event.currentTarget;

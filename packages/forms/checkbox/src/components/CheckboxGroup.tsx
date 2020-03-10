@@ -1,51 +1,47 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { Component } from 'react';
+import React from 'react';
 import { CheckboxGroupProps } from '../types';
 import CheckboxStateless from './CheckboxStateless';
 
-class CheckboxGroup extends Component<CheckboxGroupProps> {
-  private elements = {};
+function CheckboxGroup({
+  type = 'stacked',
+  options = [],
+  value = [],
+  onSetValue,
+  onChange,
+  name,
+  ...rest
+}: CheckboxGroupProps) {
+  const elements = {};
 
-  static defaultProps = {
-    type: 'stacked',
-    options: [],
-    value: [],
-  };
-
-  handleChange = () => {
-    const { options, name } = this.props;
+  const handleChange = () => {
     const checkedOptions = options.filter(
-      option => this.elements[option.id].current.checked,
+      option => elements[option.id].checked,
     );
     const value = checkedOptions.map(option => option.id);
-    this.props.onSetValue(value);
-    this.props.onChange(name, value);
+    onSetValue(value);
+    onChange(name, value);
   };
 
-  render() {
-    const { options, value } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        {options.map(option => (
-          <CheckboxStateless
-            ref={(c: any) => {
-              if (c) {
-                this.elements[option.id] = c.element;
-              }
-            }}
-            key={option.id}
-            id={option.id}
-            value={option.id}
-            label={option.name}
-            name={name}
-            checked={value.indexOf(option.id) >= 0}
-            onChange={this.handleChange}
-          />
-        ))}
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      {options.map(option => (
+        <CheckboxStateless
+          ref={(c: any) => {
+            if (c) {
+              elements[option.id] = c;
+            }
+          }}
+          key={option.id}
+          id={option.id}
+          label={option.name}
+          name={name}
+          checked={value.indexOf(option.id) >= 0}
+          onChange={handleChange}
+        />
+      ))}
+    </Wrapper>
+  );
 }
 
 export default CheckboxGroup;

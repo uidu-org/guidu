@@ -51,7 +51,7 @@ export type FieldBaseProps = WrapperProps & {
   onSetValue?: (value) => void;
 
   // /** Handler to be called when the input loses focus. */
-
+  componentRef?: React.RefObject<any>;
   // onBlur?: (e: React.FocusEvent) => any;
   // /** Handler to be called when the input changes. */
   // onChange?: (e: React.ChangeEvent) => any;
