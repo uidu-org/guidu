@@ -1,29 +1,33 @@
 import classNames from 'classnames';
 import React from 'react';
+import { FieldGeosuggestItemProps } from '../types';
 
-export default function GeosuggestItem({
-  userInput: term,
-  suggest,
+export default function FieldGeosuggestItem({
+  suggestion,
   onClick,
-  isActive,
-}) {
-  const text = suggest.label;
-  const cleanedTerm = term.replace(/(\s+)/, '(<[^>]+>)*$1(<[^>]+>)*');
-  const pattern = new RegExp(cleanedTerm, 'gi');
-  const cleanedText = text.replace(pattern, '<b>$&</b>');
+  isActive: active,
+}: FieldGeosuggestItemProps) {
+  const {
+    description,
+    structured_formatting: {
+      main_text,
+      main_text_matched_substrings,
+      secondary_text,
+    },
+  } = suggestion;
   return (
     <a
       role="button"
       tabIndex={0}
       className={classNames('dropdown-item', {
-        active: isActive,
+        active,
       })}
       onClick={e => {
         e.preventDefault();
-        onClick(suggest);
+        onClick(suggestion);
       }}
     >
-      <span dangerouslySetInnerHTML={{ __html: cleanedText }} />
+      <strong>{main_text}</strong> <small>{secondary_text}</small>
     </a>
   );
 }

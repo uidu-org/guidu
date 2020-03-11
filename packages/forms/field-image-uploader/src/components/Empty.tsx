@@ -1,20 +1,23 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Camera } from 'react-feather';
+import { useDropzone } from 'react-dropzone';
 
 export default function Empty({
   cropClassName,
   borderRadius,
+  text,
+  prompt: Prompt,
   label,
   help,
-  getRootProps,
-  getInputProps,
+  onDrop,
   errors,
 }) {
-  console.log(getRootProps());
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+  });
   return (
     <div {...getRootProps()} className="image-uploader h-100">
-      <input {...getInputProps()} />
+      <input {...(getInputProps() as any)} />
       <div
         className={classNames(
           'crop d-flex align-items-center justify-content-center h-100 flex-column',
@@ -24,17 +27,7 @@ export default function Empty({
           borderRadius,
         }}
       >
-        <div className="text-center">
-          <Camera size={64} strokeWidth={1} />
-          <br />
-          {label}
-          <br />
-          <small className="text-muted">{help}</small>
-        </div>
-        <p>Drag 'n' drop some files here, or click to select files</p>
-        {errors.length ? (
-          <p className="text-danger">{errors.join(', ')}</p>
-        ) : null}
+        <Prompt label={label} help={help} errors={errors} />
       </div>
     </div>
   );

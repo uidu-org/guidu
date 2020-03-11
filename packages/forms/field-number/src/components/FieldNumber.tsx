@@ -1,43 +1,29 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
+import React, { forwardRef } from 'react';
+import { NumberFormatValues } from 'react-number-format';
 import { FieldNumberProps } from '../types';
 import InputControl from './FieldNumberStateless';
 
-class FieldNumber extends PureComponent<FieldNumberProps> {
-  private element;
-
-  static defaultProps = {
-    type: 'tel',
-    value: '',
-    floatLabel: null,
-    onBlur: () => {},
-    onChange: () => {},
-  };
-
-  handleChange = values => {
-    const { onChange, onSetValue, name } = this.props;
+function FieldNumber({
+  onChange,
+  onSetValue,
+  name,
+  forwardedRef,
+  ...rest
+}: FieldNumberProps) {
+  const handleChange = (values: NumberFormatValues) => {
     const { value } = values;
     onSetValue(value);
     onChange(name, value);
   };
 
-  initElementRef = control => {
-    this.element = control ? control.element : null;
-  };
-
-  render() {
-    const { onChange, ...otherProps } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <InputControl
-          {...otherProps}
-          onValueChange={this.handleChange}
-          ref={this.initElementRef}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <InputControl {...rest} onValueChange={handleChange} ref={forwardedRef} />
+    </Wrapper>
+  );
 }
 
-export default FieldNumber;
+export default forwardRef((props: FieldNumberProps, ref) => (
+  <FieldNumber {...props} forwardedRef={ref} />
+));

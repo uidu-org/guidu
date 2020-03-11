@@ -5,6 +5,7 @@ export type FieldImageUploaderProps = FieldBaseProps & {
   toolbar?: React.FC<any>;
   existing?: React.FC<any>;
   empty?: React.FC<any>;
+  prompt?: React.FC<any>;
   borderRadius?: number;
   max?: number;
   ratio: string;

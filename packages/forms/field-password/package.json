@@ -14,6 +14,8 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@loadable/component": "^5.10.1",
+    "@types/zxcvbn": "^4.4.0",
     "@uidu/analytics": "^0.1.17",
     "@uidu/field-base": "^0.1.48",
     "@uidu/field-text": "^0.1.27",

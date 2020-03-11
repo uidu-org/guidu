@@ -1,41 +1,46 @@
 import classNames from 'classnames';
 import React from 'react';
+import { useDropzone } from 'react-dropzone';
 
-export default ({
+export default function Existing({
   cropClassName,
   defaultValue,
   className,
   borderRadius,
   children,
-  getRootProps,
-  getInputProps,
-}) => (
-  <div
-    {...getRootProps()}
-    className="image-uploader h-100"
-    style={{
-      borderRadius,
-    }}
-  >
-    <input {...getInputProps()} />
+  onDrop,
+}) {
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+  });
+  return (
     <div
-      className={classNames(
-        'crop d-flex align-items-center justify-content-center h-100',
-        cropClassName,
-      )}
+      {...getRootProps()}
+      className="image-uploader h-100"
+      style={{
+        borderRadius,
+      }}
     >
-      <img
-        alt={defaultValue}
-        className={className}
-        style={
-          {
-            // width: '100%',
-            // height: '100%',
+      <input {...(getInputProps() as any)} />
+      <div
+        className={classNames(
+          'crop d-flex align-items-center justify-content-center h-100',
+          cropClassName,
+        )}
+      >
+        <img
+          alt={defaultValue}
+          className={className}
+          style={
+            {
+              // width: '100%',
+              // height: '100%',
+            }
           }
-        }
-        src={defaultValue}
-      />
+          src={defaultValue}
+        />
+      </div>
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+}

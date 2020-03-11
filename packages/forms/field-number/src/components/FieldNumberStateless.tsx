@@ -4,39 +4,43 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
-import React, { Component } from 'react';
-import StyledInput from '../styled/Input';
-import { FieldNumberProps } from '../types';
+import React, { forwardRef } from 'react';
+import NumberFormat from 'react-number-format';
+import { FieldNumberStatelessProps } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
 
-class FieldNumberStateless extends Component<FieldNumberProps> {
-  static defaultProps = {
-    type: 'tel',
-  };
-
-  render() {
-    const { options, onValueChange } = this.props;
-
-    return (
-      <FieldTextStatelessWithoutAnalytics
-        inputMode="numeric"
-        component={StyledInput}
-        options={{
-          thousandSeparator: '.',
-          decimalSeparator: ',',
-          isNumericString: true,
-          decimalScale: 2,
-          onValueChange,
-          ...options,
-        }}
-        {...this.props}
-      />
-    );
-  }
+function FieldNumber({
+  options,
+  onValueChange,
+  forwardedRef,
+  ...rest
+}: FieldNumberStatelessProps) {
+  return (
+    <FieldTextStatelessWithoutAnalytics
+      inputMode="numeric"
+      as={NumberFormat}
+      options={{
+        thousandSeparator: '.',
+        decimalSeparator: ',',
+        isNumericString: true,
+        decimalScale: 2,
+        onValueChange,
+        getInputRef: forwardedRef,
+        ...options,
+      }}
+      {...rest}
+    />
+  );
 }
+
+const FieldNumberStateless = forwardRef(
+  (props: FieldNumberStatelessProps, ref) => (
+    <FieldNumber {...props} forwardedRef={ref} />
+  ),
+);
 
 export { FieldNumberStateless as FieldNumberStatelessWithoutAnalytics };
 const createAndFireEventOnGuidu = createAndFireEvent('uidu');

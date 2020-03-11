@@ -11,8 +11,9 @@ export default class Basic extends Component<any, any> {
   };
 
   onChange = (name, value) => {
+    console.log(value);
     this.setState({
-      eventResult: `onChange called with value: ${value}`,
+      eventResult: `onChange called with value`,
     });
   };
 
@@ -37,8 +38,8 @@ export default class Basic extends Component<any, any> {
           onChange={this.onChange}
           // onBlur={this.onBlur}
           // onFocus={this.onFocus}
-          label="With change, blur & focus handlers"
-          containerClassName="d-block"
+          label="Test"
+          help="Drag 'n' drop some files here, or click to select files"
         />
 
         <div
@@ -61,8 +62,8 @@ export default class Basic extends Component<any, any> {
           onChange={this.onChange}
           // onBlur={this.onBlur}
           // onFocus={this.onFocus}
-          label="With change, blur & focus handlers"
-          containerClassName="d-block"
+          label="Test"
+          help="Drag 'n' drop some files here, or click to select files"
         />
       </Form>
     );

@@ -5,7 +5,7 @@ import {
 } from '@uidu/analytics';
 import classNames from 'classnames';
 import React, { Component } from 'react';
-import Input from '../styled/Input';
+import StyledInput from '../styled/Input';
 import {
   name as packageName,
   version as packageVersion,
@@ -13,7 +13,6 @@ import {
 
 class FieldTextStateless extends Component<any> {
   static defaultProps = {
-    component: Input,
     disabled: false,
     isReadOnly: false,
     isSpellCheckEnabled: true,
@@ -55,7 +54,7 @@ class FieldTextStateless extends Component<any> {
 
   render() {
     const {
-      component: StyledComponent,
+      as,
       isPristine,
       showErrors,
       className,
@@ -85,7 +84,8 @@ class FieldTextStateless extends Component<any> {
     } = this.props;
 
     return (
-      <StyledComponent
+      <StyledInput
+        as={as}
         autoComplete={autoComplete}
         autoFocus={autoFocus}
         className={classNames('form-control', className, {

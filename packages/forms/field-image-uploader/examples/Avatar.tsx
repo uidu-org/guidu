@@ -41,8 +41,7 @@ export default class Avatar extends Component<any, any> {
             onChange={this.onChange}
             // onBlur={this.onBlur}
             // onFocus={this.onFocus}
-            label="With change, blur & focus handlers"
-            containerClassName="d-block"
+            label={null}
           />
         </div>
       </Form>
