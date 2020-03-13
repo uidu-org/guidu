@@ -1,6 +1,6 @@
 import React from 'react';
+import Select from '..';
 import { groupedCountries } from './data/countries';
-import Select from './Select';
 
 // flow stuff
 type OptionType = { id: string; code: number; icon: string; name: string };

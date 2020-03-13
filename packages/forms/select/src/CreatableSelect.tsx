@@ -1,4 +1,4 @@
-import Creatable from 'react-select/creatable';
+import CreatableSelect from 'react-select/creatable';
 import createSelect from './createSelect';
 
-export default createSelect(Creatable);
+export default createSelect(CreatableSelect);
