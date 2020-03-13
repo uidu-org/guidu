@@ -303,22 +303,6 @@
         "../../core/portal/src/",
         "./packages/core/portal/src/"
       ],
-      "@uidu/range/FieldRange": [
-        "../../core/range/src/FieldRange",
-        "./packages/core/range/src/FieldRange"
-      ],
-      "@uidu/range": [
-        "../../core/range/src/",
-        "./packages/core/range/src/"
-      ],
-      "@uidu/range/styled": [
-        "../../core/range/src/styled",
-        "./packages/core/range/src/styled"
-      ],
-      "@uidu/range/theme": [
-        "../../core/range/src/theme",
-        "./packages/core/range/src/theme"
-      ],
       "@uidu/section-message": [
         "../../core/section-message/src/",
         "./packages/core/section-message/src/"
@@ -383,26 +367,6 @@
         "../../core/theme/src/typography",
         "./packages/core/theme/src/typography"
       ],
-      "@uidu/toggle/defaultBaseProps": [
-        "../../core/toggle/src/defaultBaseProps",
-        "./packages/core/toggle/src/defaultBaseProps"
-      ],
-      "@uidu/toggle": [
-        "../../core/toggle/src/",
-        "./packages/core/toggle/src/"
-      ],
-      "@uidu/toggle/Toggle": [
-        "../../core/toggle/src/Toggle",
-        "./packages/core/toggle/src/Toggle"
-      ],
-      "@uidu/toggle/ToggleStateless": [
-        "../../core/toggle/src/ToggleStateless",
-        "./packages/core/toggle/src/ToggleStateless"
-      ],
-      "@uidu/toggle/types": [
-        "../../core/toggle/src/types",
-        "./packages/core/toggle/src/types"
-      ],
       "@uidu/tooltip": [
         "../../core/tooltip/src/",
         "./packages/core/tooltip/src/"
@@ -430,6 +394,14 @@
       "@uidu/dashboard-manager/types": [
         "../../dashboards/dashboard-manager/src/types",
         "./packages/dashboards/dashboard-manager/src/types"
+      ],
+      "@uidu/dashlet-controls": [
+        "../../dashboards/dashlet-controls/src/",
+        "./packages/dashboards/dashlet-controls/src/"
+      ],
+      "@uidu/dashlet-controls/types": [
+        "../../dashboards/dashlet-controls/src/types",
+        "./packages/dashboards/dashlet-controls/src/types"
       ],
       "@uidu/dashlets": [
         "../../dashboards/dashlets/src/",
@@ -775,6 +747,10 @@
         "../../forms/field-color-picker/src/",
         "./packages/forms/field-color-picker/src/"
       ],
+      "@uidu/field-color-picker/types": [
+        "../../forms/field-color-picker/src/types",
+        "./packages/forms/field-color-picker/src/types"
+      ],
       "@uidu/field-counter": [
         "../../forms/field-counter/src/",
         "./packages/forms/field-counter/src/"
@@ -867,13 +843,13 @@
         "../../forms/field-range/src/",
         "./packages/forms/field-range/src/"
       ],
-      "@uidu/field-range/styled": [
-        "../../forms/field-range/src/styled",
-        "./packages/forms/field-range/src/styled"
-      ],
       "@uidu/field-range/theme": [
         "../../forms/field-range/src/theme",
         "./packages/forms/field-range/src/theme"
+      ],
+      "@uidu/field-range/types": [
+        "../../forms/field-range/src/types",
+        "./packages/forms/field-range/src/types"
       ],
       "@uidu/field-text": [
         "../../forms/field-text/src/",
@@ -886,6 +862,10 @@
       "@uidu/field-textarea": [
         "../../forms/field-textarea/src/",
         "./packages/forms/field-textarea/src/"
+      ],
+      "@uidu/field-textarea/types": [
+        "../../forms/field-textarea/src/types",
+        "./packages/forms/field-textarea/src/types"
       ],
       "@uidu/field-time": [
         "../../forms/field-time/src/",
@@ -918,6 +898,10 @@
       "@uidu/radio": [
         "../../forms/radio/src/",
         "./packages/forms/radio/src/"
+      ],
+      "@uidu/radio/types": [
+        "../../forms/radio/src/types",
+        "./packages/forms/radio/src/types"
       ],
       "@uidu/select/AsyncCreatableSelect": [
         "../../forms/select/src/AsyncCreatableSelect",
@@ -954,6 +938,14 @@
       "@uidu/select/Select": [
         "../../forms/select/src/Select",
         "./packages/forms/select/src/Select"
+      ],
+      "@uidu/select/styles": [
+        "../../forms/select/src/styles",
+        "./packages/forms/select/src/styles"
+      ],
+      "@uidu/select/types": [
+        "../../forms/select/src/types",
+        "./packages/forms/select/src/types"
       ],
       "@uidu/media-card": [
         "../../media/media-card/src/",

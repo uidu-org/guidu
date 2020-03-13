@@ -12,7 +12,6 @@
     "@uidu/analytics": "^0.1.17",
     "@uidu/field-base": "^0.1.48",
     "@uidu/theme": "^0.2.0",
-    "@uidu/toggle": "^0.1.23",
     "react-switch": "^5.0.0",
     "uuid": "^7.0.0"
   },

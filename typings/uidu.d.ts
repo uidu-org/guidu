@@ -26,7 +26,6 @@ declare module '@uidu/single-select';
 declare module '@uidu/size-detector';
 declare module '@uidu/spinner';
 declare module '@uidu/textfield';
-declare module '@uidu/toggle';
 
 // Build
 declare module '@uidu/docs';

@@ -2,7 +2,7 @@ import { faGripVertical, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import FieldColorPicker from '@uidu/field-color-picker';
 import FieldText from '@uidu/field-text';
-import Toggle from '@uidu/toggle';
+import FieldToggle from '@uidu/field-toggle';
 import React, { PureComponent } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 import { FormattedMessage } from 'react-intl';
@@ -72,14 +72,14 @@ export default class SingleSelectForm extends PureComponent<any, any> {
         <div className="form-group">
           <div className="d-flex align-items-center justify-content-between py-2 mb-2 border-bottom">
             <div className="d-flex align-items-center">
-              <Toggle
+              <FieldToggle
                 name={`${prefix}[preferences][withColor]`}
                 onChange={() =>
                   this.setState(prevState => ({
                     withColor: !prevState.withColor,
                   }))
                 }
-                isDefaultChecked={!!withColor}
+                value={!!withColor}
                 size="xsmall"
               />
               <span className="text-muted small ml-2">

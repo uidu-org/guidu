@@ -1,5 +1,5 @@
+import { FieldToggleStateless } from '@uidu/field-toggle';
 import { AtlaskitThemeProvider } from '@uidu/theme';
-import Toggle from '@uidu/toggle';
 import React, { Component } from 'react';
 import { getAdorableAvatar, RANDOM_USERS } from '../examples-util/data';
 import AvatarGroup from '../src';
@@ -46,7 +46,7 @@ export default class AvatarGroupWithStatus extends Component<{}, State> {
     return (
       <AtlaskitThemeProvider mode={this.state.theme}>
         <p>Dark Mode</p>
-        <Toggle onChange={this.toggleTheme} />
+        <FieldToggleStateless onChange={this.toggleTheme} />
         <AvatarGroup
           appearance="stack"
           onAvatarClick={console.log}

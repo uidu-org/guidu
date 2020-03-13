@@ -24,7 +24,6 @@
     "@uidu/shell": "^0.2.12",
     "@uidu/spinner": "^0.1.15",
     "@uidu/table": "^0.1.98",
-    "@uidu/toggle": "^0.1.23",
     "@uidu/tooltip": "^0.1.24",
     "lodash": "^4.17.4",
     "react-beautiful-dnd": "^13.0.0",

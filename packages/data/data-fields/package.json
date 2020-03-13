@@ -21,7 +21,6 @@
     "@uidu/field-toggle": "^0.1.27",
     "@uidu/form": "^0.1.44",
     "@uidu/select": "^0.3.0",
-    "@uidu/toggle": "^0.1.23",
     "react-beautiful-dnd": "^13.0.0",
     "react-intl": "^4.0.0"
   },

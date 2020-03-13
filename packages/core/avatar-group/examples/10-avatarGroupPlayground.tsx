@@ -1,7 +1,7 @@
 import { AVATAR_SIZES } from '@uidu/avatar';
 import Button, { ButtonGroup } from '@uidu/button';
 import { Label } from '@uidu/field-base';
-import { ToggleStateless } from '@uidu/toggle';
+import { FieldToggleStateless } from '@uidu/field-toggle';
 import React, { Component } from 'react';
 import { ArrowDown, ArrowUp } from 'react-feather';
 import { avatarUrl } from '../examples-util/data';
@@ -282,7 +282,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
         <h5>Non-interactive</h5>
         <div>
           <Label label="Enable tooltips" />
-          <ToggleStateless
+          <FieldToggleStateless
             isChecked={this.state.tooltipsEnabled}
             onChange={this.toggleTooltips}
           />

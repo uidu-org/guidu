@@ -2498,9 +2498,9 @@
     prop-types "^15.7.2"
 
 "@stripe/stripe-js@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.0.3.tgz#512ed718d8b64c2965550581dde17642980e4baa"
-  integrity sha512-eixi4Ycc25HLZBrAjT6QYi7QxOAdMbIZkX38Iu4/s/8tAF4xJf+er69LzS0Wy+czVKsdyNGWJ0R0nvKTHaD/Cg==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.1.0.tgz#0cd2b88272b5932951989b24ed0faa2d58047015"
+  integrity sha512-FEg0lVsvAkP4nLLa/mTujTUQqyC657P9k1fZ8RzO2b7/GwswKdz2vaJr2os8wa5K8QY2qj/RnYZo2nQmshRDQQ==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"

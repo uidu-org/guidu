@@ -19,7 +19,7 @@
     "@uidu/code": "^0.1.20",
     "@uidu/docs": "^0.1.41",
     "@uidu/field-base": "^0.1.48",
-    "@uidu/toggle": "^0.1.22",
+    "@uidu/field-toggle": "^0.1.27",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {
