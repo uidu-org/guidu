@@ -1,5 +1,14 @@
 # @uidu/navigation
 
+## 0.2.23
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/avatar@0.3.0
+  - @uidu/dropdown-menu@0.1.22
+  - @uidu/inline-dialog@0.1.16
+
 ## 0.2.22
 
 ### Patch Changes

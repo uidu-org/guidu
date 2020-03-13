@@ -1,5 +1,19 @@
 # @uidu/toggle
 
+## 0.2.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-base@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/analytics@0.1.19
+  - @uidu/button@0.1.56
+
 ## 0.1.27
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @atlaskit/status
 
+## 0.1.11
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/analytics@0.1.19
+
 ## 0.1.10
 
 ### Patch Changes

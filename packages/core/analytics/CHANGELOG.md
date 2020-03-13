@@ -1,5 +1,14 @@
 # @uidu/analytics
 
+## 0.1.19
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/button@0.1.56
+
 ## 0.1.18
 
 ### Patch Changes

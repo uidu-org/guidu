@@ -1,5 +1,19 @@
 # @atlaskit/renderer
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/avatar@0.3.0
+  - @uidu/field-range@0.2.0
+  - @uidu/analytics@0.1.19
+  - @uidu/status@0.1.11
+  - @uidu/mentions@0.1.14
+  - @uidu/task-decision@0.1.11
+  - @uidu/navigation@0.2.23
+  - @uidu/button@0.1.56
+
 ## 0.1.14
 
 ### Patch Changes

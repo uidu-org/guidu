@@ -1,21 +1,21 @@
 {
   "name": "@uidu/field-date",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.17",
-    "@uidu/field-base": "^0.1.48",
-    "@uidu/field-text": "^0.1.31",
+    "@uidu/analytics": "^0.1.19",
+    "@uidu/field-base": "^0.2.0",
+    "@uidu/field-text": "^0.2.0",
     "moment": "^2.18.1",
     "react-day-picker": "^7.3.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.40",
-    "@uidu/form": "^0.1.44"
+    "@uidu/form": "^0.2.0"
   },
   "uidu:src": "index.ts"
 }

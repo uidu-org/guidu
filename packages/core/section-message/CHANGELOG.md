@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.1.20
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-range@0.2.0
+  - @uidu/button@0.1.56
+
 ## 0.1.19
 
 ### Patch Changes

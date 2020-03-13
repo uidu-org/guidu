@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.1.11
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/avatar@0.3.0
+  - @uidu/avatar-group@2.2.0
+  - @uidu/analytics@0.1.19
+  - @uidu/renderer@0.1.15
+  - @uidu/button@0.1.56
+
 ## 0.1.10
 
 ### Patch Changes

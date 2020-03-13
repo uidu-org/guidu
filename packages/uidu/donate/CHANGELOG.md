@@ -1,5 +1,21 @@
 # @uidu/donate
 
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/checkbox@0.2.0
+  - @uidu/field-downshift@0.3.0
+  - @uidu/field-textarea@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/radio@0.4.0
+  - @uidu/select@0.4.0
+  - @uidu/modal-dialog@0.1.31
+  - @uidu/contact@0.1.11
+  - @uidu/payments@0.2.2
+
 ## 0.1.24
 
 ### Patch Changes

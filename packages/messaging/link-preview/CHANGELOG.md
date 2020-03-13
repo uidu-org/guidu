@@ -1,5 +1,13 @@
 # @uidu/link-preview
 
+## 0.1.13
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/form@0.2.0
+
 ## 0.1.12
 
 ### Patch Changes

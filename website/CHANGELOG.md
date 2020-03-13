@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.1.83
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/checkbox@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/select@0.4.0
+  - @uidu/modal-dialog@0.1.31
+  - @uidu/navigation@0.2.23
+  - @uidu/button@0.1.56
+  - @uidu/table@0.1.99
+
 ## 0.1.82
 
 ### Patch Changes

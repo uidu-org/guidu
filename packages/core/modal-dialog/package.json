@@ -1,6 +1,6 @@
 {
   "name": "@uidu/modal-dialog",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -10,10 +10,10 @@
   "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^20.0.2",
-    "@uidu/analytics": "^0.1.17",
+    "@uidu/analytics": "^0.1.19",
     "@uidu/blanket": "^0.1.18",
-    "@uidu/button": "^0.1.54",
-    "@uidu/form": "^0.1.44",
+    "@uidu/button": "^0.1.56",
+    "@uidu/form": "^0.2.0",
     "@uidu/portal": "^0.1.16",
     "@uidu/theme": "^0.2.1",
     "exenv": "^1.2.2",
@@ -25,13 +25,13 @@
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.2.24",
-    "@uidu/checkbox": "^0.1.55",
+    "@uidu/avatar": "^0.3.0",
+    "@uidu/checkbox": "^0.2.0",
     "@uidu/docs": "^0.1.41",
-    "@uidu/field-text": "^0.1.27",
-    "@uidu/inline-dialog": "^0.1.15",
-    "@uidu/radio": "^0.3.2",
-    "@uidu/select": "^0.3.0",
+    "@uidu/field-text": "^0.2.0",
+    "@uidu/inline-dialog": "^0.1.16",
+    "@uidu/radio": "^0.4.0",
+    "@uidu/select": "^0.4.0",
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0"

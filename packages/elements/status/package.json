@@ -1,6 +1,6 @@
 {
   "name": "@uidu/status",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Fabric Status React Components",
   "keywords": [
     "date",
@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^20.0.2",
-    "@uidu/analytics": "^0.1.18",
+    "@uidu/analytics": "^0.1.19",
     "@uidu/analytics-gas-types": "^0.1.4",
-    "@uidu/field-text": "^0.1.27",
+    "@uidu/field-text": "^0.2.0",
     "@uidu/lozenge": "^0.1.18",
     "@uidu/theme": "^0.2.1",
     "styled-components": "^5.0.0"

@@ -1,5 +1,15 @@
 # @uidu/droplist
 
+## 0.1.22
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-base@0.2.0
+  - @uidu/analytics@0.1.19
+  - @uidu/item@0.1.24
+  - @uidu/button@0.1.56
+
 ## 0.1.21
 
 ### Patch Changes
