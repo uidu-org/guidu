@@ -1,5 +1,18 @@
 # @uidu/radio
 
+## 0.4.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-base@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/analytics@0.1.19
+
 ## 0.3.5
 
 ### Patch Changes

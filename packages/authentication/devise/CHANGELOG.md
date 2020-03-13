@@ -1,5 +1,16 @@
 # @uidu/devise
 
+## 0.2.2
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/avatar@0.3.0
+  - @uidu/checkbox@0.2.0
+  - @uidu/field-password@0.2.0
+  - @uidu/form@0.2.0
+
 ## 0.2.1
 
 ### Patch Changes

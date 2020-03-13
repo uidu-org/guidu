@@ -1,5 +1,18 @@
 # @uidu/field-color-picker
 
+## 0.2.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-base@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/inline-dialog@0.1.16
+
 ## 0.1.4
 
 ### Patch Changes

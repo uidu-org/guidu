@@ -1,5 +1,16 @@
 # @uidu/message-form
 
+## 0.1.21
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/field-mentions@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/dropdown-menu@0.1.22
+  - @uidu/message@0.1.28
+
 ## 0.1.20
 
 ### Patch Changes

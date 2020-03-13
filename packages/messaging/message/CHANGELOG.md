@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.1.28
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/avatar@0.3.0
+  - @uidu/message-form@0.1.21
+  - @uidu/dropdown-menu@0.1.22
+
 ## 0.1.27
 
 ### Patch Changes

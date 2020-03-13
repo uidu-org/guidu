@@ -1,5 +1,15 @@
 # @uidu/comment
 
+## 0.1.10
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/avatar@0.3.0
+  - @uidu/field-mentions@0.2.0
+  - @uidu/form@0.2.0
+
 ## 0.1.9
 
 ### Patch Changes

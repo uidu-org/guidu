@@ -1,5 +1,14 @@
 # @uidu/media-viewer
 
+## 0.1.32
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/avatar@0.3.0
+  - @uidu/comment@0.1.10
+  - @uidu/button@0.1.56
+
 ## 0.1.31
 
 ### Patch Changes

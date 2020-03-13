@@ -1,5 +1,21 @@
 # @uidu/field
 
+## 0.2.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/checkbox@0.2.0
+  - @uidu/field-number@0.2.0
+  - @uidu/field-textarea@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/select@0.4.0
+
 ## 0.1.12
 
 ### Patch Changes

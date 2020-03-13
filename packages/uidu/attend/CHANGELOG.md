@@ -1,5 +1,16 @@
 # @uidu/attend
 
+## 0.1.20
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/field-counter@0.2.0
+  - @uidu/field-textarea@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/payments@0.2.2
+
 ## 0.1.19
 
 ### Patch Changes

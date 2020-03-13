@@ -1,5 +1,14 @@
 # @uidu/button
 
+## 0.1.56
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/checkbox@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/analytics@0.1.19
+
 ## 0.1.55
 
 ### Patch Changes

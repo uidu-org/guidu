@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.2.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/form@0.2.0
+
 ## 0.1.53
 
 ### Patch Changes

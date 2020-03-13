@@ -1,5 +1,21 @@
 # @uidu/downshift
 
+## 0.3.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/field-base@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/dropdown-menu@0.1.22
+  - @uidu/item@0.1.24
+  - @uidu/droplist@0.1.22
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/contact",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "Basic contact form info",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,9 +9,9 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/checkbox": "^0.1.55",
-    "@uidu/field-text": "^0.1.25",
-    "@uidu/form": "^0.1.44",
+    "@uidu/checkbox": "^0.2.0",
+    "@uidu/field-text": "^0.2.0",
+    "@uidu/form": "^0.2.0",
     "react-intl": "^4.0.0",
     "react-recaptcha": "^2.3.10"
   },

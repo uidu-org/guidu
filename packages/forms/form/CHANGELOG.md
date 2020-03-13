@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.0
+
+### Minor Changes
+
+- f77424f: Reform, with typescript fixes and more consistency among props
+
 ## 0.1.46
 
 ### Patch Changes

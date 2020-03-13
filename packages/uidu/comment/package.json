@@ -1,6 +1,6 @@
 {
   "name": "@uidu/comment",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": false,
   "description": "Comment components",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,10 +9,10 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/avatar": "^0.2.23",
-    "@uidu/field-mentions": "^0.1.23",
-    "@uidu/field-text": "^0.1.25",
-    "@uidu/form": "^0.1.44",
+    "@uidu/avatar": "^0.3.0",
+    "@uidu/field-mentions": "^0.2.0",
+    "@uidu/field-text": "^0.2.0",
+    "@uidu/form": "^0.2.0",
     "@uidu/message-renderer": "^0.1.18",
     "@uidu/spinner": "^0.1.15",
     "lodash": "^4.17.4",

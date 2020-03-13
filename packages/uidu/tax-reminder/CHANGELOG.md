@@ -1,5 +1,17 @@
 # @uidu/tax-reminder
 
+## 0.1.17
+
+### Patch Changes
+
+- Updated dependencies [f77424f]
+  - @uidu/field-text@0.2.0
+  - @uidu/checkbox@0.2.0
+  - @uidu/field-date@0.2.0
+  - @uidu/field-textarea@0.2.0
+  - @uidu/form@0.2.0
+  - @uidu/select@0.4.0
+
 ## 0.1.16
 
 ### Patch Changes
