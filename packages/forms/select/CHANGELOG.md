@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.4.2
+
+### Patch Changes
+
+- 02a0b4e: Fix select import analytics
+
 ## 0.4.1
 
 ### Patch Changes
