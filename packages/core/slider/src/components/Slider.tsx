@@ -65,7 +65,6 @@ export default class Slider extends Component<any> {
 
     return Children.map(children, (child: any, index) => {
       if (child) {
-        console.log(child);
         return cloneElement(child, {
           key: index,
           className: classNames('swiper-slide', child.props.className),

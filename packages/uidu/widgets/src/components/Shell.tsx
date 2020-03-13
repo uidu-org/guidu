@@ -101,6 +101,7 @@ class Shell extends Component<ShellProps, ShellState> {
                         .activeIndex,
                     },
                     () => {
+                      console.log(this.container);
                       this.container.current.scrollTop = 0;
                     },
                   );
