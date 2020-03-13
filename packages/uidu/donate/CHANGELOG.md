@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.1.24
+
+### Patch Changes
+
+- ba96cfc: Fix bugs
+- Updated dependencies [ba96cfc]
+  - @uidu/field-downshift@0.2.3
+
 ## 0.1.23
 
 ### Patch Changes
