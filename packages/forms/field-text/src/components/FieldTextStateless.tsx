@@ -16,7 +16,6 @@ class FieldTextStateless extends Component<any> {
     disabled: false,
     isReadOnly: false,
     isSpellCheckEnabled: true,
-    isPristine: true,
     onChange: () => {},
     required: false,
     type: 'text',
@@ -55,7 +54,6 @@ class FieldTextStateless extends Component<any> {
   render() {
     const {
       as,
-      isPristine,
       showErrors,
       className,
       autoComplete,
@@ -83,14 +81,16 @@ class FieldTextStateless extends Component<any> {
       ariaDescribedBy,
     } = this.props;
 
+    console.log(name, showErrors);
+
     return (
       <StyledInput
         as={as}
         autoComplete={autoComplete}
         autoFocus={autoFocus}
         className={classNames('form-control', className, {
-          'is-valid': !isPristine && !showErrors,
-          'is-invalid': !isPristine && showErrors,
+          // 'is-valid': !showErrors,
+          'is-invalid': showErrors,
         })}
         disabled={disabled}
         id={id}

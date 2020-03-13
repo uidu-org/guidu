@@ -24,6 +24,7 @@ import {
 } from '../version.json';
 
 function FieldDate({
+  id,
   locale = 'it',
   displayFormat = 'LL',
   placeholder = `${formatDate(new Date(), 'LL', 'it')}`,
@@ -41,6 +42,7 @@ function FieldDate({
 
   return (
     <DayPickerInput
+      component={props => <input {...props} id={id} />}
       ref={element}
       classNames={{
         container: `DayPickerInput${

@@ -160,6 +160,7 @@ function FieldGeosuggest({
             ),
           }
         : {})}
+      id={id}
     >
       <input
         className={classNames('form-control', className)}

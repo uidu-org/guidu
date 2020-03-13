@@ -12,7 +12,6 @@ import { WrapperProps } from './types';
 
 export default class Wrapper extends PureComponent<WrapperProps> {
   static defaultProps = {
-    layout: 'vertical',
     floatLabel: false,
   };
 

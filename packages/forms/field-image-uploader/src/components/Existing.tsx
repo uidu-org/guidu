@@ -15,7 +15,7 @@ export default function Existing({
   });
   return (
     <div
-      {...getRootProps()}
+      {...(getRootProps() as any)}
       className="image-uploader h-100"
       style={{
         borderRadius,

@@ -1,6 +1,6 @@
+import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
 import { DayPickerInputProps } from 'react-day-picker';
-import { WithAnalyticsEventsProps } from '../../../core/analytics/src';
 
 export type FieldDateRangeProps = FieldBaseProps & FieldDateRangeStatelessProps;
 

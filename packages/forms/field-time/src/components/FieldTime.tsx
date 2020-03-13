@@ -1,36 +1,32 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
+import React, { forwardRef } from 'react';
 import { FieldTimeProps } from '../types';
 import FieldTimeStateless from './FieldTimeStateless';
 
-class FieldTime extends PureComponent<FieldTimeProps> {
-  element;
-
-  static defaultProps = {
-    value: undefined,
+function FieldTime({
+  onChange,
+  onSetValue,
+  name,
+  forwardedRef,
+  ...rest
+}: FieldTimeProps) {
+  const handleChange = e => {
+    onSetValue(e.target.value);
+    onChange(name, e.target.value);
   };
 
-  handleChange = value => {
-    const { onChange, onSetValue, name } = this.props;
-    onSetValue(value);
-    onChange(name, value);
-  };
-
-  initElementRef = control => {
-    this.element = control ? control.element : null;
-  };
-
-  render() {
-    return (
-      <Wrapper {...this.props}>
-        <FieldTimeStateless
-          {...this.props}
-          onChange={this.handleChange}
-          ref={this.initElementRef}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <FieldTimeStateless
+        {...rest}
+        name={name}
+        onChange={handleChange}
+        ref={forwardedRef}
+      />
+    </Wrapper>
+  );
 }
 
-export default FieldTime;
+export default forwardRef((props: FieldTimeProps, ref) => (
+  <FieldTime {...props} forwardedRef={ref} />
+));

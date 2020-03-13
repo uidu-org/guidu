@@ -15,7 +15,6 @@ class FieldMonthStateless extends Component<any> {
   static defaultProps = {
     disabled: false,
     isReadOnly: false,
-    isPristine: true,
     onChange: () => {},
     required: false,
     type: 'text',
@@ -35,7 +34,6 @@ class FieldMonthStateless extends Component<any> {
 
   render() {
     const {
-      isPristine,
       showErrors,
       className,
       autoComplete,
@@ -80,8 +78,8 @@ class FieldMonthStateless extends Component<any> {
         type={type}
         value={value}
         className={classNames('form-control', className, {
-          'is-valid': !isPristine && !showErrors,
-          'is-invalid': !isPristine && showErrors,
+          // 'is-valid': !showErrors,
+          'is-invalid': showErrors,
         })}
       />
     );

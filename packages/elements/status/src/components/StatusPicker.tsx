@@ -39,7 +39,6 @@ export class StatusPicker extends PureComponent<Props, any> {
       <>
         <FieldTextWrapper key={this.fieldTextWrapperKey}>
           <FieldTextStateless
-            name="status-picker"
             value={text}
             onChange={this.onChange}
             onKeyPress={this.onKeyPress}

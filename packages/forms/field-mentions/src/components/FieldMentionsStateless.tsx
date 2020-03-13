@@ -10,6 +10,7 @@ import { FieldMentionsStatelessProps } from '../types';
 import { defaultMentionStyle, defaultStyle } from '../utils';
 
 function FieldMentionsStateless({
+  id,
   placeholder = "Mention people using '@'",
   allowSpaceInQuery = true,
   style = defaultStyle,
@@ -27,6 +28,7 @@ function FieldMentionsStateless({
 
   return (
     <MentionsInput
+      id={id}
       value={value?.value || ''}
       onChange={onChange}
       onKeyDown={onKeyDown}

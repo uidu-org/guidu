@@ -12,7 +12,6 @@
     "@uidu/analytics": "^0.1.17",
     "@uidu/button": "^0.1.50",
     "@uidu/field-base": "^0.1.48",
-    "@uidu/range": "^0.1.18",
     "@uidu/spinner": "^0.1.15",
     "blueimp-load-image": "^2.20.1",
     "classnames": "^2.2.6",

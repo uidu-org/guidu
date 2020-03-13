@@ -5,6 +5,7 @@ export type FieldDateProps = FieldBaseProps &
   Omit<FieldDateStatelessProps, 'forwardedRef'>;
 
 export type FieldDateStatelessProps = DayPickerInputProps & {
+  id?: string;
   locale?: string;
   displayFormat?: string;
   inputClassName?: string;

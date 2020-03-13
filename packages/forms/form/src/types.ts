@@ -1,3 +1,7 @@
+import { ClassValue } from 'classnames/types';
+
+export type LayoutType = 'horizontal' | 'vertical' | 'elementOnly';
+
 export type FormHandleSubmit = (model, resetForm) => Promise<any>;
 
 export type FormProps = {
@@ -9,13 +13,15 @@ export type FormProps = {
     handleSubmit: (model, resetForm) => void,
   ) => void;
   withLoader?: boolean;
-  submitted?: boolean;
   inputsWrapperProps?: any;
   autoComplete?: string;
-  className?: string;
-};
-
-export type FormState = {
-  canSubmit: boolean;
-  isLoading: boolean;
+  className?: ClassValue;
+  // formsy
+  elementWrapperClassName?: ClassValue;
+  labelClassName?: ClassValue;
+  layout?: LayoutType;
+  rowClassName?: ClassValue;
+  validateBeforeSubmit?: boolean;
+  validatePristine?: boolean;
+  disabled?: boolean;
 };

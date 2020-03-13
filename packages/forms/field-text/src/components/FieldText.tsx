@@ -1,25 +1,34 @@
 import { Wrapper } from '@uidu/field-base';
 import React, { forwardRef } from 'react';
 import { FieldTextProps } from '../types';
-import InputControl from './FieldTextStateless';
+import FieldTextStateless from './FieldTextStateless';
 
 function FieldText({
-  component: StatelessInput = InputControl,
   onChange,
   onSetValue,
   name,
   forwardedRef,
   ...rest
-}: FieldTextProps & { forwardedRef: any }) {
+}: FieldTextProps) {
   const handleChange = event => {
     const { value } = event.currentTarget;
     onChange(name, value);
+    onSetValue(value, false);
+  };
+
+  const onBlur = event => {
+    const { value } = event.currentTarget;
     onSetValue(value);
   };
 
   return (
     <Wrapper {...rest}>
-      <StatelessInput {...rest} onChange={handleChange} ref={forwardedRef} />
+      <FieldTextStateless
+        {...rest}
+        onChange={handleChange}
+        onBlur={onBlur}
+        ref={forwardedRef}
+      />
     </Wrapper>
   );
 }

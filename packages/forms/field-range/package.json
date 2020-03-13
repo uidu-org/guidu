@@ -14,12 +14,12 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.2.0",
-    "prop-types": "^15.6.0"
+    "@uidu/field-base": "^0.1.53",
+    "@uidu/form": "^0.1.46",
+    "@uidu/theme": "^0.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.41",
-    "@uidu/section-message": "0.1.19",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {

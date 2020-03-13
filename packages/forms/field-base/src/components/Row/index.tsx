@@ -21,6 +21,7 @@ export default class Row extends PureComponent<RowProps> {
       rowClassName,
       layout,
       label,
+      showErrors,
     } = this.props;
 
     let element = this.props.children;
@@ -34,10 +35,10 @@ export default class Row extends PureComponent<RowProps> {
       elementWrapper: [],
     };
 
-    // if (showErrors) {
-    //   cssClasses.row.push('has-error');
-    //   cssClasses.row.push('has-feedback');
-    // }
+    if (showErrors) {
+      cssClasses.row.push('has-error');
+      cssClasses.row.push('has-feedback');
+    }
 
     // We should render the label if there is label text defined, or if the
     // component is required (so a required symbol is displayed in the label tag)

@@ -60,16 +60,25 @@ function FieldDownshift({
     }
   };
 
-  const renderItem = ({ item, index, ...rest }) => {
-    const isSelected = multiple
-      ? value.indexOf(getOptionValue(item)) >= 0
-      : value === getOptionValue(item);
+  const isSelected = ({ item }) => {
+    if (multiple) {
+      if (value) {
+        return value.indexOf(getOptionValue(item)) >= 0;
+      }
+      return null;
+    }
+    if (value) {
+      return value === getOptionValue(item);
+    }
+    return null;
+  };
 
+  const renderItem = ({ item, index, ...rest }) => {
     return itemRenderer({
       ...rest,
       item,
       index,
-      isSelected,
+      isSelected: isSelected({ item }),
     });
   };
 

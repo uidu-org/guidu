@@ -1,38 +1,21 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
-import InputControl from './RadioStateless';
+import React from 'react';
+import { RadioProps } from '../types';
+import RadioStateless from './RadioStateless';
 
-class Radio extends PureComponent<any> {
-  private element = React.createRef();
-
-  static defaultProps = {};
-
-  handleChange = event => {
+function Radio({ onChange, onSetValue, name, ...rest }: RadioProps) {
+  const handleChange = event => {
     const {
       target: { value },
     } = event;
-    const { onChange, onSetValue, name } = this.props;
     onSetValue(value);
     onChange(name, value);
   };
-
-  initElementRef = control => {
-    this.element = control ? control.current.element : null;
-  };
-
-  render() {
-    const { onChange, ...otherProps } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        <InputControl
-          {...otherProps}
-          onChange={this.handleChange}
-          ref={this.element}
-        />
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      <RadioStateless {...rest} onChange={handleChange} />
+    </Wrapper>
+  );
 }
 
 export default Radio;

@@ -84,7 +84,6 @@ export default class CommentForm extends Component<any, any> {
     return (
       <Form
         ref={this.form}
-        submitted={submitted}
         handleSubmit={async model => {
           const response = await this.handleSubmit(model);
           this.setState(

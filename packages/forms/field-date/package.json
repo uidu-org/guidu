@@ -9,6 +9,7 @@
   "dependencies": {
     "@uidu/analytics": "^0.1.17",
     "@uidu/field-base": "^0.1.48",
+    "@uidu/field-text": "^0.1.31",
     "moment": "^2.18.1",
     "react-day-picker": "^7.3.2"
   },

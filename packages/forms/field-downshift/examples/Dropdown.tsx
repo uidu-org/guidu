@@ -15,7 +15,6 @@ const items = [
 ];
 
 const Menu = ({ selectedItem, children, ref, ...rest }) => {
-  console.log(selectedItem);
   return (
     <DropdownMenu
       ref={ref}

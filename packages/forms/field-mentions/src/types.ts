@@ -10,6 +10,7 @@ export type FieldMentionsProps = FieldBaseProps &
   };
 
 export type FieldMentionsStatelessProps = {
+  id?: string;
   style?: any;
   /** Items to mention. */
   items: Array<MentionProps>;

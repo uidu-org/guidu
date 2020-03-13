@@ -1,7 +1,8 @@
+import { ClassValue } from 'classnames/types';
 import Formsy from 'formsy-react';
 import React, { useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import { FormProps } from '../types';
+import { FormProps, LayoutType } from '../types';
 import FormContext from './FormContext';
 
 const Loading = styled.div<{ isLoading: boolean }>`
@@ -18,10 +19,18 @@ function Form({
   footerRenderer = () => {},
   handleSubmit = async model => {},
   inputsWrapperProps = {},
-  submitted = false,
   withLoader = true,
   children,
   forwardedRef,
+  // formsy
+  layout = 'vertical' as LayoutType,
+  className = '' as ClassValue,
+  elementWrapperClassName = '' as ClassValue,
+  labelClassName = '' as ClassValue,
+  rowClassName = '' as ClassValue,
+  validateBeforeSubmit = true,
+  validatePristine = false,
+  disabled = false,
   ...rest
 }: FormProps & { forwardedRef: React.Ref<any> }) {
   const form: React.RefObject<Formsy> = useRef(null);
@@ -39,23 +48,25 @@ function Form({
     });
   };
 
+  const contextProps = {
+    elementWrapperClassName,
+    labelClassName,
+    layout,
+    rowClassName,
+    validateBeforeSubmit,
+    validatePristine,
+  };
+
   return (
-    <FormContext.Provider
-      value={{
-        layout: 'vertical',
-        validateBeforeSubmit: false,
-        validatePristine: false,
-        rowClassName: '',
-        labelClassName: '',
-        elementWrapperClassName: '',
-      }}
-    >
+    <FormContext.Provider value={contextProps}>
       <Formsy
         {...rest}
         ref={forwardedRef}
         onValidSubmit={onValidSubmit}
         onValid={enableButton}
         onInvalid={disableButton}
+        disabled={disabled}
+        // noValidate
       >
         <Loading {...inputsWrapperProps} isLoading={isLoading || false}>
           {children}

@@ -1,49 +1,41 @@
 import { Wrapper } from '@uidu/field-base';
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
+import { RadioGroupProps } from '../types';
 import RadioStateless from './RadioStateless';
 
-class RadioGroup extends PureComponent<any> {
-  private element = React.createRef();
-
-  static defaultProps = {
-    isInline: false,
-    onBlur: () => {},
-    onChange: () => {},
-  };
-
-  handleChange = event => {
+function RadioGroup({
+  isInline = false,
+  onChange,
+  onSetValue,
+  options,
+  name,
+  value,
+  ...rest
+}: RadioGroupProps) {
+  const handleChange = event => {
     const {
       target: { value },
     } = event;
-    const { onChange, onSetValue, name } = this.props;
     onSetValue(value);
     onChange(name, value);
   };
 
-  initElementRef = control => {
-    this.element = control ? control.current.element : null;
-  };
-
-  render() {
-    const { options, name, value, isInline } = this.props;
-
-    return (
-      <Wrapper {...this.props}>
-        {options.map(option => (
-          <RadioStateless
-            isInline={isInline}
-            key={`${name}-${option.id}`}
-            id={`${name}-${option.id}`}
-            value={option.id}
-            label={option.name}
-            name={name}
-            onChange={this.handleChange}
-            {...(option.id === value && { defaultChecked: true })}
-          />
-        ))}
-      </Wrapper>
-    );
-  }
+  return (
+    <Wrapper {...rest}>
+      {options.map(option => (
+        <RadioStateless
+          isInline={isInline}
+          key={`${name}-${option.id}`}
+          id={`${name}-${option.id}`}
+          value={option.id}
+          label={option.name}
+          name={name}
+          onChange={handleChange}
+          {...(option.id === value && { defaultChecked: true })}
+        />
+      ))}
+    </Wrapper>
+  );
 }
 
-export default RadioGroup;
+export default memo(RadioGroup);

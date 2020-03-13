@@ -1,3 +1,4 @@
+import { Wrapper } from '@uidu/field-base';
 import Spinner from '@uidu/spinner';
 import loadImage from 'blueimp-load-image';
 import debounce from 'lodash.debounce';
@@ -27,6 +28,7 @@ function FieldImageUploader({
   name,
   onChange,
   onSetValue,
+  ...rest
 }: FieldImageUploaderProps) {
   const canvas: React.RefObject<HTMLDivElement> = useRef(null);
   const editor: React.RefObject<any> = useRef(null);
@@ -194,16 +196,18 @@ function FieldImageUploader({
   }
 
   return (
-    <div
-      className={`embed-responsive embed-responsive-${ratio} card`}
-      style={{ borderRadius }}
-      onMouseOver={handleMouseOver}
-      onMouseOut={handleMouseOut}
-    >
-      <div className="embed-responsive-item" ref={canvas}>
-        {isLoading ? <Spinner /> : control}
+    <Wrapper label={label} {...rest}>
+      <div
+        className={`embed-responsive embed-responsive-${ratio} card`}
+        style={{ borderRadius }}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
+        <div className="embed-responsive-item" ref={canvas}>
+          {isLoading ? <Spinner /> : control}
+        </div>
       </div>
-    </div>
+    </Wrapper>
   );
 }
 

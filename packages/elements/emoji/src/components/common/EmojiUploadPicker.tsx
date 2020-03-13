@@ -109,7 +109,6 @@ class ChooseEmojiFile extends PureComponent<ChooseEmojiFileProps, {}> {
                       onKeyDown={this.onKeyDown}
                       value={name}
                       autoFocus
-                      name="emoji-upload-picker"
                     />
                   )}
                 </FormattedMessage>

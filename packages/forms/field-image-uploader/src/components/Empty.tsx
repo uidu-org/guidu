@@ -16,7 +16,7 @@ export default function Empty({
     onDrop,
   });
   return (
-    <div {...getRootProps()} className="image-uploader h-100">
+    <div {...(getRootProps() as any)} className="image-uploader h-100">
       <input {...(getInputProps() as any)} />
       <div
         className={classNames(

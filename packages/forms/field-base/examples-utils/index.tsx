@@ -114,7 +114,7 @@ export function FieldExampleRefs({ component: Component, ...rest }) {
 export function FieldExampleWithSubmit({ component: Component, ...rest }) {
   return (
     <Form {...formDefaultProps}>
-      <Component {...inputDefaultProps} />
+      <Component {...inputDefaultProps} required />
     </Form>
   );
 }

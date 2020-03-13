@@ -1,5 +1,5 @@
+import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps } from '@uidu/field-base';
-import { WithAnalyticsEventsProps } from '../../../core/analytics/src';
 
 export type FieldCounterProps = Omit<FieldCounterStatelessProps, 'onChange'> &
   FieldBaseProps;

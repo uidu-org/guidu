@@ -162,7 +162,6 @@ export default class MessagesForm extends React.Component<
           />
           <Form
             ref={this.form}
-            submitted={submitted}
             handleSubmit={async (model: any) => {
               await this.handleSubmit(model);
               this.setState(

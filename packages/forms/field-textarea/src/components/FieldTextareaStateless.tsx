@@ -4,26 +4,39 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import autosize from 'autosize';
-import React, { useEffect, useRef } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react';
+import { FieldTextareaStatelessProps } from '../types';
 import {
   name as packageName,
   version as packageVersion,
 } from '../version.json';
 
-function FieldTextareaStateless({
+function FieldTextarea({
+  id,
   className = 'form-control',
   autoSize = true,
   rows = 4,
   cols = 0,
+  value,
   placeholder,
   onFocus,
   onBlur,
   onChange,
   onKeyDown,
   onKeyUp,
-  value,
-}: any) {
+  disabled,
+  required,
+  forwardedRef,
+}: FieldTextareaStatelessProps) {
   const element = useRef(null);
+
+  useImperativeHandle(forwardedRef, () => element.current);
+
   useEffect(() => {
     if (autoSize) {
       autosize(element.current);
@@ -35,21 +48,29 @@ function FieldTextareaStateless({
 
   return (
     <textarea
+      id={id}
+      className={className}
       rows={rows}
       cols={cols}
       ref={element}
       placeholder={placeholder}
-      className={className}
       onFocus={onFocus}
       onBlur={onBlur}
       onChange={onChange}
       onKeyDown={onKeyDown}
       onKeyUp={onKeyUp}
-    >
-      {value}
-    </textarea>
+      defaultValue={value}
+      disabled={disabled}
+      required={required}
+    />
   );
 }
+
+const FieldTextareaStateless = forwardRef(
+  (props: FieldTextareaStatelessProps, ref) => (
+    <FieldTextarea {...props} forwardedRef={ref} />
+  ),
+);
 
 export { FieldTextareaStateless as FieldTextareaStatelessWithoutAnalytics };
 const createAndFireEventOnGuidu = createAndFireEvent('uidu');

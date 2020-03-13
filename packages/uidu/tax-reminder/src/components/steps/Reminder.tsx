@@ -57,7 +57,6 @@ export default class Donation extends Component<any, any> {
     return (
       <Form
         handleSubmit={this.handleSubmit}
-        submitted={submitted}
         footerRenderer={({ canSubmit, loading }) => [
           <div key="form-footer">
             <div className="w-100 px-4">

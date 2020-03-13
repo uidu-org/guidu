@@ -1,8 +1,15 @@
 import { Wrapper } from '@uidu/field-base';
-import React from 'react';
+import React, { forwardRef } from 'react';
+import { FieldTextareaProps } from '../types';
 import InputControl from './FieldTextareaStateless';
 
-function FieldTextarea({ onChange, onSetValue, name, ...rest }) {
+function FieldTextarea({
+  onChange,
+  onSetValue,
+  name,
+  forwardedRef,
+  ...rest
+}: FieldTextareaProps) {
   const handleChange = event => {
     const {
       target: { value },
@@ -16,10 +23,13 @@ function FieldTextarea({ onChange, onSetValue, name, ...rest }) {
       <InputControl
         {...rest}
         onChange={handleChange}
+        ref={forwardedRef}
         // ref={this.element}
       />
     </Wrapper>
   );
 }
 
-export default FieldTextarea;
+export default forwardRef((props: FieldTextareaProps, ref) => (
+  <FieldTextarea {...props} forwardedRef={ref} />
+));

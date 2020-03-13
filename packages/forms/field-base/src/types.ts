@@ -5,7 +5,6 @@ export type FieldBaseLayout = 'horizontal' | 'vertical' | 'elementOnly';
 export type FieldBaseProps = WrapperProps & {
   validateBeforeSubmit?: boolean;
   validatePristine?: boolean;
-  // layout?: FieldBaseLayout;
   // value?: ComponentValue;
   // disabled?: boolean;
   // id?: string;
@@ -19,12 +18,8 @@ export type FieldBaseProps = WrapperProps & {
   disabled?: boolean;
   /** Add asterisk to label. Set required for form that the field is part of. */
   // required?: boolean;
-  /** Is Pristine */
-  isPristine?: boolean;
   /** If true, prevents the value of the input from being edited. */
   isReadOnly?: boolean;
-
-  // showErrors?: boolean;
   /** type assigned to input */
   // type?: string;
   /** id assigned to input */
@@ -63,6 +58,19 @@ export type FieldBaseProps = WrapperProps & {
   // onBlur?: (e: React.FocusEvent) => any;
   // /** Handler to be called when the input changes. */
   // onChange?: (e: React.ChangeEvent) => any;
+  /** Handler to be called when the input receives focus. */
+  onFocus?: (e: React.FocusEvent) => any;
+  /** Standard input onkeydown event. */
+  onKeyDown?: (e: React.KeyboardEvent) => any;
+  /** Standard input onkeypress event. */
+  onKeyPress?: (e: React.KeyboardEvent) => any;
+  /** Standard input onkeyup event. */
+  onKeyUp?: (e: React.KeyboardEvent) => any;
+  /** Standard input onkeyup event. */
+  ariaDescribedBy?: string;
+};
+
+export type FieldBaseStatelessProps = {
   /** Handler to be called when the input receives focus. */
   onFocus?: (e: React.FocusEvent) => any;
   /** Standard input onkeydown event. */

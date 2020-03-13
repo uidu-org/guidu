@@ -1,14 +1,13 @@
-// @flow
 /* eslint-disable no-mixed-operators */
-import styled, { css } from 'styled-components';
 import { colors, elevation } from '@uidu/theme';
-import { thumb, track } from './theme';
+import styled, { css } from 'styled-components';
+import { thumb, track } from '../theme';
 
 const sliderThumbSize = 16;
 const sliderThumbBorderThickness = 2;
 const sliderLineThickness = 4;
 const transitionDuration = '0.2s';
-export const overallHeight = 40;
+export const overallHeight = 32;
 
 const sliderThumbStyle = css`
   background: ${thumb.default.background};
@@ -29,11 +28,9 @@ const sliderThumbDisabledStyle = css`
   box-shadow: 0 0 1px ${colors.N60A};
 `;
 
-const sliderDefaultBackground = css`
+const sliderDefaultBackground = css<{ valuePercent: number }>`
   background: ${props =>
-    `linear-gradient(${track.default.lower}, ${track.default.lower}) 0/ ${
-      props.valuePercent
-    }% 100% no-repeat ${track.default.upper}`};
+    `linear-gradient(${track.default.lower}, ${track.default.lower}) 0/ ${props.valuePercent}% 100% no-repeat ${track.default.upper}`};
 `;
 
 const sliderTrackStyle = css`
@@ -46,19 +43,15 @@ const sliderTrackStyle = css`
   ${sliderDefaultBackground};
 `;
 
-const sliderTrackDisabledStyle = css`
+const sliderTrackDisabledStyle = css<{ valuePercent: number }>`
   background: ${props =>
-    `linear-gradient(${track.disabled.lower}, ${track.disabled.lower}) 0/ ${
-      props.valuePercent
-    }% 100% no-repeat ${track.disabled.upper}`};
+    `linear-gradient(${track.disabled.lower}, ${track.disabled.lower}) 0/ ${props.valuePercent}% 100% no-repeat ${track.disabled.upper}`};
   cursor: not-allowed;
 `;
 
-const sliderTrackFocusedStyle = css`
+const sliderTrackFocusedStyle = css<{ valuePercent: number }>`
   background: ${props =>
-    `linear-gradient(${track.hover.lower}, ${track.hover.lower}) 0/ ${
-      props.valuePercent
-    }% 100% no-repeat ${track.hover.upper}`};
+    `linear-gradient(${track.hover.lower}, ${track.hover.lower}) 0/ ${props.valuePercent}% 100% no-repeat ${track.hover.upper}`};
 `;
 
 const chromeRangeInputStyle = css`
@@ -203,10 +196,12 @@ export const rangeInputStyle = css`
     cursor: not-allowed;
   }
 
-  ${chromeRangeInputStyle} ${firefoxRangeInputStyle} ${IERangeInputStyle};
+  ${chromeRangeInputStyle};
+  ${firefoxRangeInputStyle};
+  ${IERangeInputStyle};
 `;
 
-export const Input = styled.input`
+export const Input = styled.input<any>`
   ${rangeInputStyle};
 `;
 

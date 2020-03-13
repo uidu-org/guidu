@@ -2,7 +2,6 @@ import { FormContext } from '@uidu/form';
 import { PassDownProps } from 'formsy-react/dist/Wrapper';
 import React from 'react';
 import shortid from 'shortid';
-import { FieldBaseLayout } from '../../types';
 import {
   getDisplayName,
   getFallbackBoolean,
@@ -63,7 +62,7 @@ const withFRC = <TOriginalProps extends {}>(
 
     static defaultProps = {
       onChange: () => {},
-      layout: 'vertical' as FieldBaseLayout,
+      // layout: 'vertical' as FieldBaseLayout,
     };
 
     public constructor(props: ResultProps) {

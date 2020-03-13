@@ -115,9 +115,8 @@ export default class EmojiPickerListSearch extends PureComponent<Props> {
                 className={styles.input}
                 autoComplete="off"
                 disabled={false}
-                name="search"
                 placeholder={`${searchLabel as string}...`}
-                required={false}
+                // required={false}
                 onChange={this.onChange}
                 value={query || ''}
                 ref={this.handleInputRef}

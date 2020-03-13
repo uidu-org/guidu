@@ -7,8 +7,5 @@ export type WrapperProps = RowProps &
     floatLabel?: boolean | string | React.ReactNode;
     help?: string | React.ReactNode;
     id?: string;
-    // layout?: FieldBaseLayout;
     type?: string;
-    // showErrors?: boolean;
-    // required?: boolean;
   };

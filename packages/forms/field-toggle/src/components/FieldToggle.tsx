@@ -1,51 +1,50 @@
-import { ToggleStateless } from '@uidu/toggle';
-import React, { PureComponent } from 'react';
+import React, { forwardRef } from 'react';
 import StyledWrapper from '../styled';
+import { FieldToggleProps } from '../types';
+import FieldToggleStateless from './FieldToggleStateless';
 
-class FieldToggle extends PureComponent<any> {
-  private element;
-
-  static defaultProps = {
-    value: false,
-    className: 'list-group-item list-group-action',
-    onBlur: () => {},
-    onChange: () => {},
-  };
-
-  handleChange = value => {
-    const { onChange, onSetValue, name } = this.props;
+function FieldToggle({
+  onChange,
+  onSetValue,
+  name,
+  value = false,
+  id,
+  label,
+  className = 'list-group-item list-group-action',
+  forwardedRef,
+  size,
+  onColor,
+  offColor,
+}: FieldToggleProps) {
+  const handleChange = value => {
     onSetValue(value);
     onChange(name, value);
   };
 
-  initElementRef = control => {
-    this.element = control ? control.element : null;
-  };
-
-  handleClick = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    const { onChange, onSetValue, name, value } = this.props;
     onSetValue(!value);
     onChange(name, !value);
   };
 
-  render() {
-    const { onChange, className, label, id, value, ...otherProps } = this.props;
-
-    return (
-      <StyledWrapper className={className} onClick={this.handleClick}>
-        <label htmlFor={id} className="mb-0 mr-5">
-          {label}
-        </label>
-        <ToggleStateless
-          {...otherProps}
-          isChecked={value}
-          onChange={this.handleChange}
-          ref={this.initElementRef}
-        />
-      </StyledWrapper>
-    );
-  }
+  return (
+    <StyledWrapper className={className} onClick={handleClick}>
+      <label htmlFor={id} className="mb-0 mr-5">
+        {label}
+      </label>
+      <FieldToggleStateless
+        id={id}
+        size={size}
+        onColor={onColor}
+        offColor={offColor}
+        checked={value}
+        onChange={handleChange}
+        ref={forwardedRef}
+      />
+    </StyledWrapper>
+  );
 }
 
-export default FieldToggle;
+export default forwardRef((props: FieldToggleProps, ref) => (
+  <FieldToggle {...props} forwardedRef={ref} />
+));
