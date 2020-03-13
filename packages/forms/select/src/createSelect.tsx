@@ -1,10 +1,10 @@
+import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps, Wrapper } from '@uidu/field-base';
 import memoizeOne from 'memoize-one';
 import React from 'react';
 import isEqual from 'react-fast-compare';
 import { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { WithAnalyticsEventsProps } from '../../../core/analytics/src';
 import * as defaultComponents from './components';
 import MultiValueLabel from './components/MultiValueLabel';
 import Option from './components/Option';
