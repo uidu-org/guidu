@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.1
+
+### Patch Changes
+
+- c60fafb: FIX bugs
+
 ## 0.2.0
 
 ### Minor Changes
