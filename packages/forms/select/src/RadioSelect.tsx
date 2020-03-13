@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from '..';
+import Select from './';
 import { RadioOption } from './components/input-options';
 
 const RadioSelect = ({ components, ...props }: any) => (

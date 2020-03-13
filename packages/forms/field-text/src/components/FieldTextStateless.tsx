@@ -81,8 +81,6 @@ class FieldTextStateless extends Component<any> {
       ariaDescribedBy,
     } = this.props;
 
-    console.log(name, showErrors);
-
     return (
       <StyledInput
         as={as}

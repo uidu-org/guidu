@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from '..';
+import Select from './';
 import { groupedCountries } from './data/countries';
 
 // flow stuff

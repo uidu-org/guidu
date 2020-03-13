@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from '..';
+import Select from './';
 import { CheckboxOption } from './components/input-options';
 
 const CheckboxSelect = ({ components, ...props }: any) => (
