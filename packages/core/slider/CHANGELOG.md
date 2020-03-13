@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.0.5
+
+### Patch Changes
+
+- cbd8c50: Fix Shell Body forwarded Ref
+
 ## 1.0.4
 
 ### Patch Changes
