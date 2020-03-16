@@ -1,5 +1,15 @@
 # @uidu/tax-reminder
 
+## 0.1.18
+
+### Patch Changes
+
+- 2c4592e: Changed widgets api, more work on attend and donate, need to be wired to a back-end to sharpen API
+- Updated dependencies [2c4592e]
+  - @uidu/widgets@0.2.0
+  - @uidu/field-text@0.2.2
+  - @uidu/contact@0.1.12
+
 ## 0.1.17
 
 ### Patch Changes

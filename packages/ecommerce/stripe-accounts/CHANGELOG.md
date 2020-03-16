@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.1.17
+
+### Patch Changes
+
+- 2c4592e: Changed widgets api, more work on attend and donate, need to be wired to a back-end to sharpen API
+- Updated dependencies [2c4592e]
+  - @uidu/slider@1.1.0
+  - @uidu/field-text@0.2.2
+  - @uidu/stepper@0.1.20
+
 ## 0.1.16
 
 ### Patch Changes
