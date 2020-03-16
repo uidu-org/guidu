@@ -53,14 +53,9 @@ class StripeAccounts extends PureComponent<any, any> {
   stripeResponseHandler = response => {
     const { stripeAccount } = this.state;
     if (response.error) {
-      this.setState(
-        {
-          error: response.error,
-        },
-        () => {
-          (this.slider.current as any).prev();
-        },
-      );
+      this.setState({
+        error: response.error,
+      });
     } else {
       const formData = new FormData();
       // Organization data

@@ -3,7 +3,7 @@ import FieldText from '@uidu/field-text';
 import Form, { FormSubmit } from '@uidu/form';
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
-import Recaptcha from 'react-recaptcha';
+// import Recaptcha from 'react-recaptcha';
 
 export default class Contact extends PureComponent<any> {
   static defaultProps = {
@@ -15,7 +15,8 @@ export default class Contact extends PureComponent<any> {
   private form = React.createRef();
 
   handleSubmit = async () => {
-    (this.recaptchaInstance.current as any).execute();
+    // (this.recaptchaInstance.current as any).execute();
+    // console.log((this.recaptchaInstance.current as any).execute());
   };
 
   // executed once the captcha has been verified
@@ -23,7 +24,7 @@ export default class Contact extends PureComponent<any> {
   verifyCallback = captchaResponse => {
     const { onSave } = this.props;
     return onSave({
-      ...(this.form.current as any).form.getModel(),
+      ...(this.form.current as any).getModel(),
       'g-recaptcha-response': captchaResponse,
     });
   };
@@ -33,12 +34,12 @@ export default class Contact extends PureComponent<any> {
     return (
       <Form
         ref={this.form}
-        handleSubmit={this.handleSubmit}
+        handleSubmit={this.props.handleSubmit}
         footerRenderer={({ canSubmit, loading }) => (
           <FormSubmit
             loading={loading}
             canSubmit={canSubmit}
-            className={`px-5 btn-${scope} btn-block`}
+            className={`px-5 btn-${scope}`}
             label="Save"
           />
         )}
@@ -89,7 +90,7 @@ export default class Contact extends PureComponent<any> {
             required
           />
         </div>
-        <div className="form-group">
+        {/* <div className="form-group">
           <Recaptcha
             ref={this.recaptchaInstance}
             sitekey="6LdLkqgUAAAAAPNT6KJn0Emp5bgJw3N9CQ-n27Dg"
@@ -98,7 +99,7 @@ export default class Contact extends PureComponent<any> {
             badge="inline"
             verifyCallback={this.verifyCallback}
           />
-        </div>
+        </div> */}
       </Form>
     );
   }

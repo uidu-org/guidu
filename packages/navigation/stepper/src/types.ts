@@ -15,6 +15,7 @@ export type StepProps = {
   isCompleted: boolean;
   isDisabled?: boolean;
   isEditable?: boolean;
+  forwardedRef?: React.Ref<HTMLDivElement>;
 };
 
 export type StepperProps = {

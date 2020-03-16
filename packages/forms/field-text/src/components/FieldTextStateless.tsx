@@ -109,7 +109,7 @@ class FieldTextStateless extends Component<any> {
         required={required}
         spellCheck={isSpellCheckEnabled}
         type={type}
-        value={value}
+        defaultValue={value}
         aria-describedby={ariaDescribedBy}
         {...(this.getInputMode(type)
           ? { inputMode: this.getInputMode(type) }

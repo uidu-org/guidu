@@ -1,36 +1,24 @@
 import { Payments, PayWithCard } from '@uidu/payments';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 export default function Pay({
   stripe,
-  provider,
-  donation = null,
+  event,
+  order = null,
   currentOrganization,
-  donationCampaign = null,
   currentMember = null,
-  createPaymentIntent = async amount => ({
-    client_secret: 'foo',
-  }),
+  paymentIntent,
 }) {
-  const [paymentIntent, setPaymentIntent] = useState(null);
-
-  useEffect(() => {
-    createPaymentIntent(3000).then(setPaymentIntent);
-    return () => {
-      setPaymentIntent(null);
-    };
-  }, []);
-
   return (
     <Payments
       stripe={stripe}
-      scope="donations"
-      amount={donation.amount}
+      scope="events"
+      amount={order.stripeAmount}
       clientSecret={paymentIntent?.client_secret}
       onSuccess={payload => {
         console.log(payload.paymentIntent);
       }}
-      provider={provider}
+      provider={{ id: 'card', name: 'Credit card' }}
     >
       {paymentProps => (
         <>
@@ -38,17 +26,12 @@ export default function Pay({
             <dl className="mb-0">
               <dt className="d-flex align-items-center justify-content-between">
                 Donazione
-                {donation.recurrence === 'month' && (
-                  <span className="badge badge-secondary p-1 px-3">
-                    ogni mese
-                  </span>
-                )}
               </dt>
               <dd className="mb-0 text-muted">
-                Stai per donare {donation.amount / 100} € a{' '}
+                Stai per donare {order.stripeAmount / 100} € a{' '}
                 <span className="text-medium">{currentOrganization.name}</span>{' '}
                 per il progetto{' '}
-                <span className="text-medium">{donationCampaign.name}</span>
+                <span className="text-medium">{event.name}</span>
               </dd>
             </dl>
           </div>
@@ -68,10 +51,7 @@ export default function Pay({
               </dl>
             </div>
           )}
-          <PayWithCard
-            {...paymentProps}
-            providerProps={{ hidePostalCode: true }}
-          />
+          <PayWithCard {...paymentProps} />
         </>
       )}
     </Payments>

@@ -88,7 +88,7 @@ function FieldDownshift({
     <Downshift
       onSelect={onSelect}
       itemToString={item => getOptionLabel({ item })}
-      selectedItem={selectedItem}
+      initialSelectedItem={selectedItem}
     >
       {({
         getRootProps,

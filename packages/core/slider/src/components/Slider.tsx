@@ -1,68 +1,67 @@
 import classNames from 'classnames';
-import React, { Children, cloneElement, Component } from 'react';
-import Swiper from 'swiper';
+import React, {
+  Children,
+  cloneElement,
+  forwardRef,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+} from 'react';
+import Swiper, { SwiperOptions } from 'swiper';
 import 'swiper/css/swiper.min.css';
+import { SliderProps } from '../types';
 
-export default class Slider extends Component<any> {
-  private slider: React.RefObject<HTMLDivElement> = React.createRef();
-  private mySlider: Swiper = undefined;
+const defaultSwiperOptions: Partial<SwiperOptions> = {
+  direction: 'horizontal',
+  initialSlide: 0,
+  slidesPerView: 1,
+  keyboard: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    dynamicBullets: true,
+    clickable: true,
+  },
+  spaceBetween: 16,
+  watchSlidesProgress: true,
+  watchSlidesVisibility: true,
+  centeredSlides: false,
+};
 
-  static defaultProps = {
-    className: '',
-    slideClassName: '',
-    pagination: false,
-    navigation: false,
-    scrollbar: false,
-    options: {
-      direction: 'horizontal',
-      initialSlide: 0,
-      slidesPerView: 1,
-      keyboard: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        dynamicBullets: true,
-        clickable: true,
-      },
-      spaceBetween: 16,
-      watchSlidesProgress: true,
-      watchSlidesVisibility: true,
-      centeredSlides: false,
-      onSlideChangeEnd: () => {},
-      // breakpoints: {
-      //   // when window width is <= 480px
-      //   480: {
-      //     noSwiping: false,
-      //     slidesPerView: 1.2,
-      //   },
-      // },
-    },
+function Slider({
+  options,
+  className = '',
+  pagination = false,
+  navigation = false,
+  scrollbar = false,
+  children,
+  forwardedRef,
+}: SliderProps) {
+  const defaultOptions = {
+    ...defaultSwiperOptions,
+    ...options,
   };
+  const slider = useRef(null);
 
-  componentDidMount() {
-    const { options } = this.props;
-    const defaultOptions = {
-      ...Slider.defaultProps.options,
-      ...options,
-    };
-    this.mySlider = new Swiper(this.slider.current, defaultOptions);
-  }
+  const setSlider = useCallback(node => {
+    console.log('created new slider');
+    slider.current = new Swiper(node, defaultOptions);
+  }, []);
 
-  prev = () => this.mySlider.slidePrev();
+  useEffect(() => {
+    console.log('updates slider');
+    slider.current?.update();
+    return () => null;
+  }, [Children.count(children)]);
 
-  next = () => this.mySlider.slideNext();
+  useImperativeHandle(forwardedRef, () => slider.current);
 
-  to = index => this.mySlider.slideTo(index);
-
-  update = () => this.mySlider.update();
-
-  renderChildren() {
-    const { children } = this.props;
-
+  const renderChildren = useCallback(() => {
     return Children.map(children, (child: any, index) => {
       if (child) {
         return cloneElement(child, {
@@ -72,22 +71,19 @@ export default class Slider extends Component<any> {
       }
       return null;
     });
-  }
+  }, [Children.count(children)]);
 
-  render() {
-    const { className, pagination, navigation, scrollbar } = this.props;
-
-    return (
-      <div
-        className={classNames('swiper-container', className)}
-        ref={this.slider}
-      >
-        <div className="swiper-wrapper">{this.renderChildren()}</div>
-        {pagination && <div className="swiper-pagination" />}
-        {navigation && <div className="swiper-button-prev" />}
-        {navigation && <div className="swiper-button-next" />}
-        {scrollbar && <div className="swiper-scrollbar" />}
-      </div>
-    );
-  }
+  return (
+    <div className={classNames('swiper-container', className)} ref={setSlider}>
+      <div className="swiper-wrapper">{renderChildren()}</div>
+      {pagination && <div className="swiper-pagination" />}
+      {navigation && <div className="swiper-button-prev" />}
+      {navigation && <div className="swiper-button-next" />}
+      {scrollbar && <div className="swiper-scrollbar" />}
+    </div>
+  );
 }
+
+export default forwardRef((props: SliderProps, ref) => (
+  <Slider {...props} forwardedRef={ref} />
+));

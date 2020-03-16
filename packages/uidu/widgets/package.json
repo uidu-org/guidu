@@ -14,7 +14,8 @@
     "react-intl": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40"
+    "@uidu/docs": "^0.1.40",
+    "@uidu/modal-dialog": "^0.1.31"
   },
   "uidu:src": "index.ts"
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 // import { apiCall } from 'utils';
 
-export default function DonationConfirmation({ donation }) {
+export default function DonationConfirmation({ order = {} }) {
   return (
     <div className="w-100">
-      <div className="p-3 p-xl-4 bg-donations">
+      <div className="p-3 p-xl-4 bg-events">
         <div className="media align-items-center">
           {/* <AnimatedCheck
                     className="mr-3 text-white"
@@ -21,7 +21,7 @@ export default function DonationConfirmation({ donation }) {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
-      <a className="card mb-3" href={donation.receiptPath}>
+      <a className="card mb-3">
         <div className="media align-items-stretch">
           <div className="d-flex align-items-center py-2 px-3 bg-light">
             <div
@@ -39,7 +39,7 @@ export default function DonationConfirmation({ donation }) {
           </div>
         </div>
       </a>
-      <a className="card" href={donation.receiptPath}>
+      <a className="card">
         <div className="media align-items-stretch">
           <div className="d-flex align-items-center py-2 px-3 bg-light">
             <div

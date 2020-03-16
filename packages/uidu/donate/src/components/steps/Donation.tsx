@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import { Check } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import { DonationProps } from '../../types';
 
 const Menu = props => <div className="card-deck" {...props} />;
 
@@ -72,13 +73,14 @@ export default function Donation({
   providers = [],
   pledges = [],
   currency = '€',
-  onSave,
-}) {
-  const [selectedAmount, setSelectedAmount] = useState(null);
-  const [recurrence, setRecurrence] = useState('month');
-  const [customAmount, setCustomAmount] = useState(null);
-
-  const handleSubmit = async model => onSave(model);
+  donation,
+  handleSubmit,
+}: DonationProps) {
+  const [selectedAmount, setSelectedAmount] = useState(
+    donation?.amount || null,
+  );
+  const [recurrence, setRecurrence] = useState(donation?.recurrence || 'month');
+  const [customAmount, setCustomAmount] = useState(donation?.amount || null);
 
   return (
     <Form
@@ -92,12 +94,15 @@ export default function Donation({
                 once {}
                 month {each month}
               }`}
-              values={{ selectedAmount: selectedAmount?.amount, recurrence }}
+              values={{
+                selectedAmount: selectedAmount?.amount,
+                recurrence,
+              }}
             />
           }
           loading={loading}
           canSubmit={canSubmit}
-          className="px-5 btn-donations btn-block mb-3"
+          className="px-5 btn-donations mb-3"
         />
       )}
     >
@@ -128,7 +133,7 @@ export default function Donation({
             id="guidu.donate.recurrence.label"
           />
         }
-        name="donation[recurrence]"
+        name="recurrence"
         value={recurrence}
         onChange={(_name, value) => setRecurrence(value)}
         required
@@ -142,7 +147,7 @@ export default function Donation({
         </div>
       )}
       <div className="form-group">
-        <label htmlFor="donation[amount]" className="form-label mb-2">
+        <label htmlFor="amount" className="form-label mb-2">
           <FormattedMessage
             defaultMessage="Donation amount"
             id="guidu.donate.donation.amount.label"
@@ -150,7 +155,7 @@ export default function Donation({
         </label>
         <FieldDownshift
           layout="elementOnly"
-          name="donation[amount]"
+          name="amount"
           options={pledges}
           onChange={(_name, value, { option }) => {
             setCustomAmount(null);
@@ -170,7 +175,7 @@ export default function Donation({
               addonBefore={<span className="input-group-text">{currency}</span>}
               type="number"
               placeholder={placeholder}
-              name="donation[amount]"
+              name="amount"
               layout="elementOnly"
               onChange={(_name, value) => {
                 setCustomAmount(value);
@@ -194,7 +199,7 @@ export default function Donation({
         </FormattedMessage>
       </div>
       <Select
-        name="donation[payment_method]"
+        name="paymentMethod"
         label={
           <FormattedMessage
             defaultMessage="Payment method"

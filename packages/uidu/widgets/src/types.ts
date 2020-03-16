@@ -1,7 +1,18 @@
+export type ShellSlide = {
+  header: {
+    to: 'back' | string;
+    name: React.ReactNode;
+  };
+  component: any;
+  key: any;
+  'data-history': any;
+  unwrapped?: boolean;
+};
+
 export type ShellProps = {
-  slides: Array<any>;
+  baseUrl: string;
+  slides: Array<ShellSlide>;
   scope: string;
-  currentMember?: any;
   forwardedRef: React.RefObject<any>;
 };
 

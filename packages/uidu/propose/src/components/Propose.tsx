@@ -3,6 +3,7 @@ import { Shell } from '@uidu/widgets';
 // import ContactForm from 'organization/components/contacts/form';
 import React, { Component } from 'react';
 import { X } from 'react-feather';
+import Swiper from 'swiper';
 import Preferences from './steps/Preferences';
 import Proposal from './steps/Proposal';
 
@@ -11,7 +12,7 @@ export default class TaxReminder extends Component<any, any> {
     providers: ['card'],
   };
 
-  private slider = React.createRef();
+  private slider: React.RefObject<Swiper> = React.createRef();
 
   constructor(props) {
     super(props);
@@ -81,8 +82,7 @@ export default class TaxReminder extends Component<any, any> {
                 {
                   ...newDonation,
                 },
-                () =>
-                  setTimeout(() => (this.slider.current as any).next(), 500),
+                () => setTimeout(() => this.slider.current.slideNext(), 500),
               );
             }}
           />
