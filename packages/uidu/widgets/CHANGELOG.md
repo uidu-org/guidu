@@ -1,5 +1,14 @@
 # @uidu/widgets
 
+## 0.1.18
+
+### Patch Changes
+
+- cbd8c50: Fix Shell Body forwarded Ref
+- Updated dependencies [cbd8c50]
+  - @uidu/slider@1.0.5
+  - @uidu/shell@0.2.13
+
 ## 0.1.17
 
 ### Patch Changes

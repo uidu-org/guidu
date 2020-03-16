@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.13
+
+### Patch Changes
+
+- cbd8c50: Fix Shell Body forwarded Ref
+
 ## 0.2.12
 
 ### Patch Changes
