@@ -2080,12 +2080,12 @@
     glob-to-regexp "^0.3.0"
 
 "@netlify/build@^0.1.84":
-  version "0.1.94"
-  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.94.tgz#614f8ec2eb286402b1f86ac70f871af4ed5d61f5"
-  integrity sha512-onkEtlWN1bXRYopO8cJ/ALxfBF4GSBDcKdunFhJKZE+WamxEi8XBIfW8bFWZnHVfeNZllCZDhFjoi56EDozEmw==
+  version "0.1.95"
+  resolved "https://registry.yarnpkg.com/@netlify/build/-/build-0.1.95.tgz#303bec60c34bb09187c59fbc75d36282fc2c530d"
+  integrity sha512-pv70UNUi56rAxBGc8uewEge1MXDNUrbvej9CnSKMtCPQReAyss+V5CK2g/H4AM2ztHrr24hBKvqDIsc+GVhB3g==
   dependencies:
     "@netlify/cache-utils" "^0.2.2"
-    "@netlify/config" "^0.4.5"
+    "@netlify/config" "^0.4.6"
     "@netlify/functions-utils" "^0.2.1"
     "@netlify/git-utils" "^0.2.0"
     "@netlify/run-utils" "^0.1.0"
@@ -2143,10 +2143,10 @@
     path-exists "^4.0.0"
     readdirp "^3.3.0"
 
-"@netlify/config@^0.4.1", "@netlify/config@^0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.4.5.tgz#6ee57260a2bb60a3e357e96be7bc472d880ddf2c"
-  integrity sha512-QpaJtvFC9ls1nUMbxPUyPWdGZAMoDKS+VE5JMT2LJEbX/OaNzdo6jrodSTlnqbJNOkYz0S136f9E0I0Fwh3BOw==
+"@netlify/config@^0.4.1", "@netlify/config@^0.4.6":
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-0.4.6.tgz#f513394d69c3275e8a16d6000276e1394062f370"
+  integrity sha512-kSqNCpviaa0Xm28tN6XfZC6Y4dS+Cn9wBZgMMmS/jJTKBmhNOzS9/QTmknafDq3jdWOLN0JywAC+bcVQGwvhNQ==
   dependencies:
     array-flat-polyfill "^1.0.1"
     chalk "^3.0.0"
@@ -3143,9 +3143,9 @@
   integrity sha512-RbX9q0U00SLoV+l7loYX0Wrtv4QTClBC0QcdNts6x2b5G1HJN8NI9YlS1HNA6THrI9EH3OXSgya6eMQIlDjKFA==
 
 "@types/uuid@^7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-7.0.0.tgz#9f6993ccc8210efa90bda7e1afabbb06a9f860cd"
-  integrity sha512-RiX1I0lK9WFLFqy2xOxke396f0wKIzk5sAll0tL4J4XDYJXURI7JOs96XQb3nP+2gEpQ/LutBb66jgiT5oQshQ==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-7.0.2.tgz#d680a9c596ef84abf5c4c07a32ffd66d582526f8"
+  integrity sha512-8Ly3zIPTnT0/8RCU6Kg/G3uTICf9sRwYOpUzSIM3503tLIKcnJPRuinHhXngJUy2MntrEf6dlpOHXJju90Qh5w==
 
 "@types/webpack-sources@*":
   version "0.1.6"
@@ -4337,9 +4337,9 @@ avataaars@^1.2.1:
     prop-types "^15.6.0"
 
 aws-sdk@^2.488.0:
-  version "2.640.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.640.0.tgz#9162bbdcf9d52b61a0551f6b8c17c7ff666eee36"
-  integrity sha512-lcgCq8P+pJAag6IoIVyU1aiCNdxDIhH6GUHB7xRm01dhl/9akY8T8KE3x9ueIK+BouNWkcQEwNMk0djZzNP5sA==
+  version "2.641.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.641.0.tgz#edc1895f950b795fb0411d6e9333ee5b6659444f"
+  integrity sha512-9GYrBWR7ygIwwFBr0L+P+6tecNGsDuSe1mB18rv7CXSDLDdg6VPYwma1PSw5bUBs4wix9ganK6QLfW8D8ztBEQ==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -11407,9 +11407,9 @@ good-listener@^1.2.2:
     delegate "^3.1.2"
 
 google-map-react@^1.1.5:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-1.1.6.tgz#76bfe71bd337f67fc955725567544f4b96574fad"
-  integrity sha512-EREFO4F2UvywxcqD4Dr+qDkGKdikgK9yefN7cn32fRybfDyEnRNkMcQ4dx0LwElJ6o9PlNSxKWHpqAM2r+lQpQ==
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/google-map-react/-/google-map-react-1.1.7.tgz#381baa7d16273de0e981cf2b8f996fccef2ab4a4"
+  integrity sha512-OWwfvVlJG3aQbDZOezWPzT7b8uqk5iMya5yEfBcfGYBFONna5UYCWZl49/cS0j1DPigtwtN0YCzPKjXMQHOUeA==
   dependencies:
     "@mapbox/point-geometry" "^0.1.0"
     eventemitter3 "^1.1.0"
@@ -15366,12 +15366,19 @@ mixme@^0.3.1:
   resolved "https://registry.yarnpkg.com/mixme/-/mixme-0.3.5.tgz#304652cdaf24a3df0487205e61ac6162c6906ddd"
   integrity sha512-SyV9uPETRig5ZmYev0ANfiGeB+g6N2EnqqEfBbCGmmJ6MgZ3E4qv5aPbnHVdZ60KAHHXV+T3sXopdrnIXQdmjQ==
 
-mkdirp@0.5.1, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
+mkdirp@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+"mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.3.tgz#5a514b7179259287952881e94410ec5465659f8c"
+  integrity sha512-P+2gwrFqx8lhew375MQHHeTlY8AuOJSrGf0R5ddkEndUkmwpgUob/vQuBD1V22/Cw1/lJr4x+EjllSezBThzBg==
+  dependencies:
+    minimist "^1.2.5"
 
 mkdirp@^1.0.3:
   version "1.0.3"
@@ -16281,9 +16288,9 @@ octokit-pagination-methods@^1.1.0:
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
 office-ui-fabric-react@^7.5.2:
-  version "7.104.1"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.104.1.tgz#734555ee1176fd11161767546c8c5869b2ec0649"
-  integrity sha512-cCtywXoufWmTRM8GULaRp9Sx3F3HlSojDOcOs4buiRWZdkf4tpLsmXEX37xMawaUtvb2GXJjH14mmjSceuiX/A==
+  version "7.105.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.105.0.tgz#631db1cab5199f99fe2df8ae37e3289902c99ebe"
+  integrity sha512-RB2aHlE77SEI/B8cVem/CWfb6xiMmOXv40dlGK8ojWB6iBi8+252mtbeaExcVZJQkJHnt+uWiHvH4VMgjovDgA==
   dependencies:
     "@fluentui/react-focus" "^7.1.7"
     "@microsoft/load-themed-styles" "^1.10.26"
@@ -18811,9 +18818,9 @@ react-icons@^3.7.0:
     camelcase "^5.0.0"
 
 react-images@^1.1.0-beta.0:
-  version "1.1.0-beta.3"
-  resolved "https://registry.yarnpkg.com/react-images/-/react-images-1.1.0-beta.3.tgz#c146da05a66c6079f2f8911cb4fe55dfc91772fa"
-  integrity sha512-iVHdGBypwZJ0rrqMgq4bs+N8/sX0Sf1cxhXOw/fSBU/SCLW8yzHnq2ZcVM90v6DKEuwH59cveCCIXMEkI06wyw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-images/-/react-images-1.1.0.tgz#ee61ec8afaee26e351472d64b887883d397531e8"
+  integrity sha512-fCupOk2iXekAlkHM+mX0jXXD19qDTzg7YILNienycDJg/LI3k1fjGTPsBTCfmnfudg1m3C6H1c0SsULF17MAug==
   dependencies:
     a11y-focus-store "^1.0.0"
     cross-env "^6.0.3"
@@ -22007,9 +22014,9 @@ terser-webpack-plugin@^2.0.0:
     webpack-sources "^1.4.3"
 
 terser@^4.1.2, terser@^4.4.3:
-  version "4.6.6"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.6.tgz#da2382e6cafbdf86205e82fb9a115bd664d54863"
-  integrity sha512-4lYPyeNmstjIIESr/ysHg2vUPRGf2tzF9z2yYwnowXVuVzLEamPN1Gfrz7f8I9uEPuHcbFlW4PLIAsJoxXyJ1g==
+  version "4.6.7"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.7.tgz#478d7f9394ec1907f0e488c5f6a6a9a2bad55e72"
+  integrity sha512-fmr7M1f7DBly5cX2+rFDvmGBAaaZyPrHYK4mMdHEDAdNTqXSZgSOfqsfGq2HqPGT/1V0foZZuCZFx8CHKgAk3g==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
