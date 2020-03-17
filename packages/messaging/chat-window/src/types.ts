@@ -1,4 +1,4 @@
-import Message, { MessageableProps } from '@uidu/message';
+import { Message, MessageableProps } from '@uidu/message';
 import { MessageFormProps } from '@uidu/message-form';
 import * as React from 'react';
 

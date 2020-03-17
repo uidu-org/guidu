@@ -8,7 +8,10 @@ export default function MessageAttachments({
   className,
 }: MessageAttachmentsProps) {
   return (
-    <div className={classNames('mt-2 w-auto', className)}>
+    <div
+      className={classNames('mt-2 w-auto', className)}
+      style={{ maxWidth: '80%', minHeight: 140 }}
+    >
       <MediaFilmStrip files={attachments} />
     </div>
   );

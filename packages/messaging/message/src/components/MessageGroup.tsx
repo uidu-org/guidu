@@ -22,24 +22,18 @@ export default function MessageGroup({
   if (kind === 'message.create') {
     return (
       <div className={classNames('position-relative py-3 px-3 px-xl-4', {})}>
-        <div className="media align-items-end align-items-md-start">
-          {!reverse && (
-            <Avatar
-              src={messager.avatar.thumb}
-              name={messager.name}
-              enableTooltip={false}
-              size={mobileView ? 'small' : 'medium'}
-            />
-          )}
+        <div className="media align-items-end">
+          <Avatar
+            src={messager.avatar.thumb}
+            name={messager.name}
+            enableTooltip={false}
+            size={mobileView ? 'small' : 'medium'}
+          />
           <div
-            className={classNames('media-body', {
-              'ml-2 ml-md-3': !reverse,
-            })}
+            className={classNames('media-body ml-2 ml-md-3', {})}
             style={{ minWidth: 0 }}
           >
-            {!reverse && (
-              <p className="small mb-0 text-muted">{messager.name}</p>
-            )}
+            <p className="small mb-0 text-muted">{messager.name}</p>
             {children({ messages, messager, reverse })}
           </div>
         </div>

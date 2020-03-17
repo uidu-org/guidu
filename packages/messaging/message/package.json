@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.40",
+    "@uidu/shell": "^0.2.13",
     "faker": "^4.1.0"
   },
   "publishConfig": {

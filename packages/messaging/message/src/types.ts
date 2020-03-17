@@ -11,6 +11,7 @@ export type MessageableProps = {
 };
 
 export type Messager = {
+  id?: string;
   name: string;
   avatar: {
     thumb: string;
@@ -31,16 +32,11 @@ export type Message = {
   showAttachments?: boolean;
   mobileView?: boolean;
   reverse?: boolean;
+  reactions?: any;
   // Functions for mobile
   onReply?: () => void;
   onMessageDrag?: () => void;
   onMessageDragEnd?: () => void;
-};
-
-export type MessageState = {
-  editing: boolean;
-  hovered: boolean;
-  isDropdownOpen: boolean;
 };
 
 export type MessageGroupProps = {

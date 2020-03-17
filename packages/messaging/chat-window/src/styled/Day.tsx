@@ -6,4 +6,5 @@ export default styled.div`
   /* position: sticky; */
   z-index: 300;
   top: 0;
+  padding: 0.75rem 0.5rem;
 `;

@@ -6,7 +6,7 @@ export default function Reply({ onReply }) {
   return (
     <Tooltip position="top" content="Commenta" delay={0}>
       <button
-        className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
+        className="btn btn-sm bg-white text-muted p-2 d-flex align-items-center"
         onClick={onReply}
       >
         <MessageCircle size={16} />

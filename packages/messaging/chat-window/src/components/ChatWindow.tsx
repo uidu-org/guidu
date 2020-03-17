@@ -4,7 +4,6 @@ import Message, {
   MessageActionReply,
   MessageActions,
   MessageGroup,
-  MessageReactions,
 } from '@uidu/message';
 import MessagesForm from '@uidu/message-form';
 import React, { PureComponent } from 'react';
@@ -160,7 +159,7 @@ export default class ChatWindow extends PureComponent<
                 const todayMessages = groupedByDay[day];
                 return (
                   <>
-                    <Day className="small text-muted py-3">
+                    <Day className="small text-muted">
                       <div className="px-2">{day}</div>
                     </Day>
                     {groupByMessager(todayMessages, betweenMinutes)
@@ -206,12 +205,12 @@ export default class ChatWindow extends PureComponent<
                                   }) => (
                                     <>
                                       <MessageActions hovered={hovered}>
-                                        <MessageActionReply
-                                          onReply={() => this.reply(message)}
-                                        />
                                         <MessageActionReactions
                                           onOpenChange={onDropdownChange}
                                           onClick={console.log}
+                                        />
+                                        <MessageActionReply
+                                          onReply={() => this.reply(message)}
                                         />
                                         <MessageActionMore
                                           onOpenChange={onDropdownChange}
@@ -223,11 +222,6 @@ export default class ChatWindow extends PureComponent<
                                           })}
                                         />
                                       </MessageActions>
-                                      {message.reactions && (
-                                        <MessageReactions
-                                          reactions={message.reactions}
-                                        />
-                                      )}
                                     </>
                                   )}
                                 </Message>

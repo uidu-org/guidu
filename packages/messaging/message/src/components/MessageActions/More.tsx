@@ -13,7 +13,7 @@ export default function More({ actions, onOpenChange }) {
         trigger={
           <Tooltip
             tag="button"
-            className="btn btn-sm bg-white border py-1 px-3 d-flex align-items-center"
+            className="btn btn-sm bg-white text-muted p-2 d-flex align-items-center"
             position="top"
             content="More"
             delay={0}

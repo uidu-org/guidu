@@ -2,70 +2,70 @@ import MessageForm from '@uidu/message-form';
 import MessageRenderer from '@uidu/message-renderer';
 import classNames from 'classnames';
 import moment from 'moment';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
-import { Message as MessageProps, MessageState } from '../types';
+import { Message as MessageProps } from '../types';
 import { isOnlyEmojis } from '../utils';
 import MessagesAttachments from './MessageAttachments';
+import MessageReactions from './MessageReactions';
 import MobileViewMessage from './MobileView/Message';
 
-export default class Message extends PureComponent<MessageProps, MessageState> {
-  static defaultProps = {
-    showAttachments: true,
+export default function Message({
+  showAttachments = true,
+  message,
+  children,
+  mobileView,
+  reverse,
+  ...rest
+}: MessageProps) {
+  const [editing, setEditing] = useState(false);
+  const [hovered, setHovered] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const keepActionsVisible = ({ isOpen }) => {
+    setIsDropdownOpen(isOpen);
   };
+  if (isOnlyEmojis(message.body)) {
+    return (
+      <StyledMessageEmoji className={classNames('message mt-2', {})}>
+        <span>{message.body}</span>
+      </StyledMessageEmoji>
+    );
+  }
 
-  state = {
-    editing: false,
-    hovered: false,
-    isDropdownOpen: false,
-  };
-
-  keepActionsVisible = ({ isOpen }) => {
-    this.setState({
-      isDropdownOpen: isOpen,
-    });
-  };
-
-  setEditing = () => this.setState({ editing: true });
-
-  render() {
-    const {
-      message,
-      children,
-      showAttachments,
-      mobileView,
-      reverse,
-    } = this.props;
-    const { editing, hovered, isDropdownOpen } = this.state;
-
-    if (isOnlyEmojis(message.body)) {
-      return (
-        <StyledMessageEmoji
-          className={classNames('message mt-2', {
-            'text-right': reverse,
-          })}
+  if (mobileView) {
+    return (
+      <MobileViewMessage
+        message={message}
+        reverse={reverse}
+        showAttachments={showAttachments}
+        {...rest}
+      >
+        {children}
+      </MobileViewMessage>
+    );
+  } else {
+    return (
+      <>
+        <StyledMessage
+          className="message mt-1 hoverable position-relative"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(isDropdownOpen)}
         >
-          <span>{message.body}</span>
-        </StyledMessageEmoji>
-      );
-    }
-
-    if (mobileView) {
-      return <MobileViewMessage {...this.props} />;
-    } else {
-      return (
-        <>
-          <StyledMessage
-            className="message mt-1 hoverable position-relative"
-            onMouseEnter={() => this.setState({ hovered: true })}
-            onMouseLeave={() => this.setState({ hovered: isDropdownOpen })}
+          <div
+            style={{
+              background: reverse ? 'red' : '#f1f2f3',
+              borderRadius: '0.35rem',
+              padding: '0.5rem 0.75rem',
+              width: 'auto',
+              maxWidth: '80%',
+            }}
           >
             {editing ? (
               <MessageForm
-                {...this.props}
+                {...rest}
                 message={message}
-                onDismiss={() => this.setState({ editing: false })}
-                onSubmit={() => this.setState({ editing: false })}
+                onDismiss={() => setEditing(false)}
+                onSubmit={() => setEditing(false)}
               />
             ) : (
               <>
@@ -85,25 +85,28 @@ export default class Message extends PureComponent<MessageProps, MessageState> {
                 </div>
               </>
             )}
-            {!editing &&
-              children &&
-              children({
-                editing,
-                hovered,
-                onDropdownChange: this.keepActionsVisible,
-                setEditing: this.setEditing,
-              })}
-          </StyledMessage>
-          {(message.attachments || []).length > 0 && showAttachments && (
-            <MessagesAttachments
-              attachments={message.attachments.map(attachment => ({
-                ...attachment,
-                author: message.messager,
-              }))}
-            />
-          )}
-        </>
-      );
-    }
+          </div>
+          {!editing &&
+            children &&
+            children({
+              editing,
+              hovered,
+              onDropdownChange: keepActionsVisible,
+              setEditing: setEditing,
+            })}
+        </StyledMessage>
+        {(message.attachments || []).length > 0 && showAttachments && (
+          <MessagesAttachments
+            attachments={message.attachments.map(attachment => ({
+              ...attachment,
+              author: message.messager,
+            }))}
+          />
+        )}
+        {message.reactions && (
+          <MessageReactions reactions={message.reactions} />
+        )}
+      </>
+    );
   }
 }

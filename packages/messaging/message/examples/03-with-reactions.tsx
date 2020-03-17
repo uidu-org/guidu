@@ -1,15 +1,12 @@
 // @flow
 
 import React, { Component } from 'react';
-
-import Message, {
-  MessageGroup,
-  MessageActions,
-  MessageActionReactions,
-  MessageReactions,
-} from '../src';
-
 import { messageFactory, messagerFactory } from '../examples-utils';
+import Message, {
+  MessageActionReactions,
+  MessageActions,
+  MessageGroup,
+} from '../src';
 
 const message1 = messageFactory();
 const message2 = messageFactory();
@@ -40,15 +37,14 @@ export default class Demo extends Component {
         {({ messages, messager }) =>
           messages.map((message, index) => (
             <Message message={message} messager={messager}>
-              {({ editing, hovered, onDropdownChange }) => [
+              {({ editing, hovered, onDropdownChange }) => (
                 <MessageActions hovered={hovered}>
                   <MessageActionReactions
                     onOpenChange={onDropdownChange}
                     onClick={reaction => this.addReaction(reaction, index)}
                   />
-                </MessageActions>,
-                <MessageReactions reactions={reactions[index]} />,
-              ]}
+                </MessageActions>
+              )}
             </Message>
           ))
         }

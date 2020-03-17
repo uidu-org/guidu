@@ -3,13 +3,14 @@ import { code, Example, md } from '@uidu/docs';
 import React from 'react';
 
 export default md`
-  This package exports an number of different Message related components:
+  ### Message
+  <p class="lead">This package exports an number of different Message related components:</p>
 
   - Message (Default Export)
-  - [MessageLog](/packages/core/message/docs/log)
-  - [MessageActions](/packages/core/message/docs/actions)
-  - [MessageAttachments](/packages/core/message/docs/attachments)
-  - [Skeleton](/packages/core/avatar/docs/skeleton)
+  - MessageLog
+  - MessageActions
+  - MessageAttachments
+  - Skeleton
 
 
   Use the \`Message\` component to represent a message exhanged in teams and private messages.
@@ -31,7 +32,7 @@ export default md`
       packageName="@uidu/message"
       Component={require('../examples/00-basic').default}
       title="Message"
-      source={require('!!raw-loader!../examples/00-basic')}
+      source={require('!!raw-loader!../examples/00-basic').default}
     />
   )}
 `;

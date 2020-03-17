@@ -1,17 +1,15 @@
-// @flow
-import React from 'react';
+import { ShellBody } from '@uidu/shell';
 import faker from 'faker';
-
-import Message, { MessageGroup, MessageLog, MessageReactions } from '../src';
-
-import { messagerFactory, messageLogFactory } from '../examples-utils';
+import React from 'react';
+import { messageLogFactory, messagerFactory } from '../examples-utils';
+import Message, { MessageGroup, MessageLog } from '../src';
 
 const userA = messagerFactory();
 const userB = messagerFactory();
 const messageLog = messageLogFactory();
 
 export default () => (
-  <div>
+  <ShellBody scrollable>
     <MessageGroup
       messager={userA}
       messages={[
@@ -69,6 +67,7 @@ export default () => (
         {
           body: faker.lorem.paragraph(),
           createdAt: faker.date.past(),
+          reactions: [`😀`, `😀`, `❤️`],
           attachments: [
             {
               mediaItemType: 'file',
@@ -96,13 +95,9 @@ export default () => (
     >
       {({ messages, messager }) =>
         messages.map(message => (
-          <Message key={message.id} message={message} messager={messager}>
-            {({ editing, hovered }) => [
-              <MessageReactions reactions={[`😀`, `😀`, `❤️`]} />,
-            ]}
-          </Message>
+          <Message key={message.id} message={message} messager={messager} />
         ))
       }
     </MessageGroup>
-  </div>
+  </ShellBody>
 );

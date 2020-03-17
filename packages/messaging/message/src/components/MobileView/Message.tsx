@@ -130,9 +130,7 @@ export default class MobileViewMessage extends Component<
     return (
       <>
         <div
-          className={classNames('d-flex align-items-center', {
-            'justify-content-end': reverse,
-          })}
+          className={classNames('d-flex align-items-center', {})}
           style={{ minWidth: 0 }}
         >
           {viewReply && <MessageCircle className="mr-2 position-absolute" />}
