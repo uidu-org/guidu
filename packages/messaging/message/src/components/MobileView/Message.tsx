@@ -2,7 +2,7 @@ import Drawer from '@uidu/drawer';
 import MessageRenderer from '@uidu/message-renderer';
 import classNames from 'classnames';
 import moment from 'moment';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { MessageCircle } from 'react-feather';
 import { TouchableOpacity, Vibration, View } from 'react-native';
 import { animated, useSpring } from 'react-spring';
@@ -128,7 +128,7 @@ export default class MobileViewMessage extends Component<
     const { viewDetails, viewActions, viewReply } = this.state;
 
     return (
-      <Fragment>
+      <>
         <div
           className={classNames('d-flex align-items-center', {
             'justify-content-end': reverse,
@@ -196,7 +196,7 @@ export default class MobileViewMessage extends Component<
               hovered: true,
             })}
         </Drawer>
-      </Fragment>
+      </>
     );
   }
 }

@@ -57,7 +57,7 @@ function Slider({
     console.log('updates slider');
     slider.current?.update();
     return () => null;
-  }, [Children.count(children)]);
+  }, [children]);
 
   useImperativeHandle(forwardedRef, () => slider.current);
 
@@ -71,7 +71,7 @@ function Slider({
       }
       return null;
     });
-  }, [Children.count(children)]);
+  }, [children]);
 
   return (
     <div className={classNames('swiper-container', className)} ref={setSlider}>

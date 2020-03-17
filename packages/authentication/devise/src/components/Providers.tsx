@@ -7,6 +7,7 @@ import React, { PureComponent } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
+import Swiper from 'swiper';
 import DeviseForm from './DeviseForm';
 import FacebookLoginButton from './oAuth/FacebookLoginButton';
 import GoogleLoginButton from './oAuth/GoogleLoginButton';
@@ -59,7 +60,7 @@ export const messages = defineMessages({
 });
 
 export default class Providers extends PureComponent<any, any> {
-  private slider: any = React.createRef();
+  private slider: React.RefObject<Swiper> = React.createRef();
   private passwordField = React.createRef();
 
   constructor(props) {
@@ -73,11 +74,11 @@ export default class Providers extends PureComponent<any, any> {
 
   componentDidMount() {
     const { location } = this.props;
-    this.slider.current.to(this.activeSlideByRoute(location));
+    this.slider.current.slideTo(this.activeSlideByRoute(location));
   }
 
   UNSAFE_componentWillReceiveProps({ location }) {
-    this.slider.current.to(this.activeSlideByRoute(location));
+    this.slider.current.slideTo(this.activeSlideByRoute(location));
   }
 
   handleSubmit = model => {
@@ -94,8 +95,9 @@ export default class Providers extends PureComponent<any, any> {
             currentUser: model.user,
           },
           () => {
+            console.log(response.data);
             this.slider.current.update();
-            this.slider.current.mySlider.updateAutoHeight(500);
+            this.slider.current.updateAutoHeight(500);
           },
         );
       }
@@ -140,6 +142,8 @@ export default class Providers extends PureComponent<any, any> {
     } = this.props;
 
     const { currentUser, exist } = this.state;
+
+    console.log(exist);
 
     return (
       <div>
@@ -238,7 +242,7 @@ export default class Providers extends PureComponent<any, any> {
               <AnimateHeight
                 height={exist ? 'auto' : 0}
                 onAnimationEnd={() => {
-                  this.slider.current.mySlider.updateAutoHeight(300, false);
+                  this.slider.current.updateAutoHeight(300);
                 }}
               >
                 {exist && (

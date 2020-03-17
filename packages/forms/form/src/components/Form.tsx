@@ -66,6 +66,7 @@ function Form({
         onValid={enableButton}
         onInvalid={disableButton}
         disabled={disabled}
+        className={className as string}
         // noValidate
       >
         <Loading {...inputsWrapperProps} isLoading={isLoading || false}>

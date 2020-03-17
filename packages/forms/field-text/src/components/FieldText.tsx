@@ -13,11 +13,6 @@ function FieldText({
   const handleChange = event => {
     const { value } = event.currentTarget;
     onChange(name, value);
-    onSetValue(value, false);
-  };
-
-  const onBlur = event => {
-    const { value } = event.currentTarget;
     onSetValue(value);
   };
 
@@ -26,7 +21,6 @@ function FieldText({
       <FieldTextStateless
         {...rest}
         onChange={handleChange}
-        onBlur={onBlur}
         ref={forwardedRef}
       />
     </Wrapper>

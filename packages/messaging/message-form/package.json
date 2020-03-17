@@ -19,7 +19,7 @@
     "@uidu/media-filmstrip": "^0.1.23",
     "@uidu/message": "^0.1.28",
     "@uidu/spinner": "^0.1.15",
-    "emoji-mart": "^2.10.0",
+    "emoji-mart": "^3.0.0",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {

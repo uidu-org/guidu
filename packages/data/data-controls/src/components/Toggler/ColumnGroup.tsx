@@ -58,8 +58,8 @@ export default function ColumnGroup({
         height={isOpen ? 'auto' : 0}
         // onAnimationStart={({ newHeight }) => console.log(newHeight)}
         // onAnimationEnd={() => {
-        //   this.slider.current.mySlider.updateAutoHeight(300, false);
-        //   // this.slider.current.mySlider.updateAutoHeight(500);
+        //   this.slider.current.updateAutoHeight(300, false);
+        //   // this.slider.current.updateAutoHeight(500);
         //   console.log('TODO: focus password field');
         // }}
       >

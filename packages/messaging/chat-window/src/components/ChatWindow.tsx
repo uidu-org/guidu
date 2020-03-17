@@ -203,31 +203,33 @@ export default class ChatWindow extends PureComponent<
                                     setEditing,
                                     hovered,
                                     onDropdownChange,
-                                  }) => [
-                                    <MessageActions hovered={hovered}>
-                                      <MessageActionReply
-                                        onReply={() => this.reply(message)}
-                                      />
-                                      <MessageActionReactions
-                                        onOpenChange={onDropdownChange}
-                                        onClick={console.log}
-                                      />
-                                      <MessageActionMore
-                                        onOpenChange={onDropdownChange}
-                                        actions={actions({
-                                          onDropdownChange,
-                                          setEditing,
-                                          editing,
-                                          message,
-                                        })}
-                                      />
-                                    </MessageActions>,
-                                    message.reactions && (
-                                      <MessageReactions
-                                        reactions={message.reactions}
-                                      />
-                                    ),
-                                  ]}
+                                  }) => (
+                                    <>
+                                      <MessageActions hovered={hovered}>
+                                        <MessageActionReply
+                                          onReply={() => this.reply(message)}
+                                        />
+                                        <MessageActionReactions
+                                          onOpenChange={onDropdownChange}
+                                          onClick={console.log}
+                                        />
+                                        <MessageActionMore
+                                          onOpenChange={onDropdownChange}
+                                          actions={actions({
+                                            onDropdownChange,
+                                            setEditing,
+                                            editing,
+                                            message,
+                                          })}
+                                        />
+                                      </MessageActions>
+                                      {message.reactions && (
+                                        <MessageReactions
+                                          reactions={message.reactions}
+                                        />
+                                      )}
+                                    </>
+                                  )}
                                 </Message>
                               ))
                             }
