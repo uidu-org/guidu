@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.4
+
+### Patch Changes
+
+- 7921cd5: Remove css prop
+
 ## 0.2.3
 
 ### Patch Changes
