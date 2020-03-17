@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.3.10
+
+### Patch Changes
+
+- 62cb405: Small cleanup of message components, fix field-text blur validation, fix devise slider ref
+- Updated dependencies [62cb405]
+  - @uidu/field-text@0.2.3
+  - @uidu/form@0.2.1
+
 ## 0.3.9
 
 ### Patch Changes

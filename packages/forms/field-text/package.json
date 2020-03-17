@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-text",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Field Text Component",
   "keywords": [
     "react",
@@ -16,7 +16,7 @@
   "dependencies": {
     "@uidu/analytics": "^0.1.19",
     "@uidu/field-base": "^0.2.0",
-    "@uidu/form": "^0.2.0",
+    "@uidu/form": "^0.2.1",
     "@uidu/theme": "^0.2.1"
   },
   "devDependencies": {

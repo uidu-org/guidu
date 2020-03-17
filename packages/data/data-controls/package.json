@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -16,8 +16,8 @@
     "@uidu/data-views": "^0.2.9",
     "@uidu/drawer": "^0.2.11",
     "@uidu/dropdown-menu": "^0.1.22",
-    "@uidu/field-text": "^0.2.0",
-    "@uidu/form": "^0.2.0",
+    "@uidu/field-text": "^0.2.3",
+    "@uidu/form": "^0.2.1",
     "@uidu/inline-dialog": "^0.1.16",
     "@uidu/item": "^0.1.24",
     "@uidu/select": "^0.4.0",

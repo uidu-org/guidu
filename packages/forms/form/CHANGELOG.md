@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- 62cb405: Small cleanup of message components, fix field-text blur validation, fix devise slider ref
+
 ## 0.2.0
 
 ### Minor Changes
