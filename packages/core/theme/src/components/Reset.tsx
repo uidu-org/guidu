@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
-import {} from 'styled-components/cssprop';
+// import {} from 'styled-components/cssprop';
 import * as colors from '../colors';
 import { createTheme, ThemeProp } from '../utils/createTheme';
 
