@@ -1,5 +1,20 @@
 # @uidu/stripe-accounts
 
+## 0.1.18
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/slider@1.1.2
+  - @uidu/spinner@0.1.17
+  - @uidu/payments@0.2.3
+  - @uidu/field-text@0.2.5
+  - @uidu/form@0.2.2
+  - @uidu/shell@0.2.14
+  - @uidu/stepper@0.1.21
+
 ## 0.1.17
 
 ### Patch Changes

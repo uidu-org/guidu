@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 0.1.15
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/analytics@0.1.20
+  - @uidu/theme@0.2.3
+  - @uidu/adf-schema@0.1.6
+  - @uidu/analytics-namespaced-context@0.1.6
+  - @uidu/emoji@0.1.11
+  - @uidu/mentions@0.1.15
+
 ## 0.1.14
 
 ### Patch Changes

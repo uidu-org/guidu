@@ -1,5 +1,20 @@
 # @uidu/downshift
 
+## 0.3.2
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/droplist@0.1.23
+  - @uidu/item@0.1.25
+  - @uidu/field-base@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/form@0.2.2
+  - @uidu/shell@0.2.14
+
 ## 0.3.1
 
 ### Patch Changes

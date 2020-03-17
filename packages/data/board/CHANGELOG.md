@@ -1,5 +1,16 @@
 # @uidu/board
 
+## 0.2.12
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/badge@0.1.18
+  - @uidu/theme@0.2.3
+  - @uidu/shell@0.2.14
+
 ## 0.2.11
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/changelog
 
+## 0.1.4
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+
 ## 0.1.3
 
 ### Patch Changes

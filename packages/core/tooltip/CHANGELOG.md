@@ -1,5 +1,18 @@
 # @uidu/tooltip
 
+## 0.1.25
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/button@0.1.57
+  - @uidu/popper@0.1.19
+  - @uidu/portal@0.1.17
+  - @uidu/theme@0.2.3
+
 ## 0.1.24
 
 ### Patch Changes

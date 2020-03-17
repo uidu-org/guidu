@@ -1,5 +1,16 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.7
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/adf-schema@0.1.6
+  - @uidu/editor-common@0.1.15
+  - @uidu/editor-core@0.1.29
+
 ## 0.1.6
 
 ### Patch Changes

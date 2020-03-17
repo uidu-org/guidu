@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.1.44
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/button@0.1.57
+  - @uidu/code@0.1.22
+  - @uidu/section-message@0.1.21
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+
 ## 0.1.43
 
 ### Patch Changes

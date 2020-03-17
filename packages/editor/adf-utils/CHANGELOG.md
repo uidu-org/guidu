@@ -1,5 +1,15 @@
 # @uidu/adf-utils
 
+## 0.4.5
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/adf-schema@0.1.6
+  - @uidu/json-schema-generator@0.1.5
+
 ## 0.4.4
 
 ### Patch Changes

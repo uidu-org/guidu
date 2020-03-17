@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 0.3.11
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/drawer@0.2.14
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/inline-dialog@0.1.17
+  - @uidu/item@0.1.25
+  - @uidu/spinner@0.1.17
+  - @uidu/tooltip@0.1.25
+  - @uidu/data-fields@0.1.29
+  - @uidu/data-views@0.2.10
+  - @uidu/table@0.1.100
+  - @uidu/checkbox@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/form@0.2.2
+  - @uidu/select@0.4.3
+  - @uidu/shell@0.2.14
+
 ## 0.3.10
 
 ### Patch Changes

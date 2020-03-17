@@ -1,5 +1,23 @@
 # @uidu/attend
 
+## 0.2.1
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/spinner@0.1.17
+  - @uidu/payments@0.2.3
+  - @uidu/field-counter@0.2.2
+  - @uidu/field-text@0.2.5
+  - @uidu/field-textarea@0.2.1
+  - @uidu/form@0.2.2
+  - @uidu/shell@0.2.14
+  - @uidu/stepper@0.1.21
+  - @uidu/contact@0.1.13
+  - @uidu/widgets@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

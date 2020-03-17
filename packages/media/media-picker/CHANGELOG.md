@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 0.1.15
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/button@0.1.57
+  - @uidu/modal-dialog@0.1.32
+  - @uidu/media-core@0.1.17
+
 ## 0.1.14
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/drawer
 
+## 0.2.14
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/blanket@0.1.19
+  - @uidu/button@0.1.57
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/item@0.1.25
+  - @uidu/theme@0.2.3
+  - @uidu/shell@0.2.14
+
 ## 0.2.13
 
 ### Patch Changes

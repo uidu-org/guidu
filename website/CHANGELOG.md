@@ -1,5 +1,34 @@
 # Change Log
 
+## 0.1.84
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/fs-loader@0.1.30
+  - @uidu/nav-info-loader@0.1.31
+  - @uidu/webpack-config@0.1.56
+  - @uidu/badge@0.1.18
+  - @uidu/button@0.1.57
+  - @uidu/code@0.1.22
+  - @uidu/drawer@0.2.14
+  - @uidu/lozenge@0.1.21
+  - @uidu/modal-dialog@0.1.32
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/list@0.1.22
+  - @uidu/table@0.1.100
+  - @uidu/checkbox@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/form@0.2.2
+  - @uidu/select@0.4.3
+  - @uidu/navigation@0.2.24
+  - @uidu/shell@0.2.14
+  - @uidu/themes-uidu@0.1.43
+
 ## 0.1.83
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @atlaskit/analytics-namespaced-context
 
+## 0.1.6
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/analytics-listeners@0.1.5
+
 ## 0.1.5
 
 ### Patch Changes

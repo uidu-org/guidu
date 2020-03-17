@@ -1,5 +1,17 @@
 # @uidu/gallery
 
+## 0.1.35
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/spinner@0.1.17
+  - @uidu/data-controls@0.3.11
+  - @uidu/table@0.1.100
+  - @uidu/shell@0.2.14
+
 ## 0.1.34
 
 ### Patch Changes

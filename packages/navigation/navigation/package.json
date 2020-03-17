@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,11 +9,11 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/dropdown-menu": "^0.1.22",
-    "@uidu/inline-dialog": "^0.1.16",
-    "@uidu/shell": "^0.2.2",
-    "@uidu/theme": "^0.2.0",
-    "@uidu/tooltip": "^0.1.24",
+    "@uidu/dropdown-menu": "^0.1.23",
+    "@uidu/inline-dialog": "^0.1.17",
+    "@uidu/shell": "^0.2.14",
+    "@uidu/theme": "^0.2.3",
+    "@uidu/tooltip": "^0.1.25",
     "hoverintent": "^2.2.1",
     "polished": "^3.0.3",
     "react-animate-height": "^2.0.15",
@@ -25,10 +25,10 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.3.0",
-    "@uidu/badge": "^0.1.17",
-    "@uidu/docs": "^0.1.41",
-    "@uidu/lozenge": "^0.1.18",
+    "@uidu/avatar": "^0.3.1",
+    "@uidu/badge": "^0.1.18",
+    "@uidu/docs": "^0.1.44",
+    "@uidu/lozenge": "^0.1.21",
     "react-feather": "^2.0.3"
   },
   "uidu:src": "index.ts"

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/themes-uidu",
-  "version": "0.1.42",
+  "version": "0.1.43",
   "description": "uidu main theme",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -10,7 +10,7 @@
   ],
   "main": "index.scss",
   "devDependencies": {
-    "@uidu/docs": "^0.1.40"
+    "@uidu/docs": "^0.1.44"
   },
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,13 @@
 # @uidu/popup-campaigns
 
+## 0.1.4
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+
 ## 0.1.3
 
 ### Patch Changes

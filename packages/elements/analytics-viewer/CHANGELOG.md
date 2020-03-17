@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.1.7
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/analytics@0.1.20
+
 ## 0.1.6
 
 ### Patch Changes

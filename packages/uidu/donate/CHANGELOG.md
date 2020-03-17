@@ -1,5 +1,24 @@
 # @uidu/donate
 
+## 0.2.1
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/modal-dialog@0.1.32
+  - @uidu/payments@0.2.3
+  - @uidu/checkbox@0.2.1
+  - @uidu/field-downshift@0.3.2
+  - @uidu/field-text@0.2.5
+  - @uidu/field-textarea@0.2.1
+  - @uidu/form@0.2.2
+  - @uidu/radio@0.4.1
+  - @uidu/select@0.4.3
+  - @uidu/contact@0.1.13
+  - @uidu/widgets@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @uidu/propose
 
+## 0.1.15
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/checkbox@0.2.1
+  - @uidu/field@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/field-textarea@0.2.1
+  - @uidu/form@0.2.2
+  - @uidu/widgets@0.2.1
+
 ## 0.1.14
 
 ### Patch Changes

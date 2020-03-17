@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.56
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/changelog-loader@0.1.18
+  - @uidu/fs-loader@0.1.30
+  - @uidu/multi-entry-tools@0.0.12
+  - @uidu/nav-info-loader@0.1.31
+
 ## 0.1.55
 
 ### Patch Changes

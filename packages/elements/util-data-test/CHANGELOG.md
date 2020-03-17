@@ -1,5 +1,17 @@
 # @uidu/util-data-test
 
+## 0.1.7
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/emoji@0.1.11
+  - @uidu/mentions@0.1.15
+  - @uidu/task-decision@0.1.12
+
 ## 0.1.6
 
 ### Patch Changes

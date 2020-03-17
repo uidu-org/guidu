@@ -1,5 +1,13 @@
 # @uidu/animated-menu
 
+## 0.1.15
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+
 ## 0.1.14
 
 ### Patch Changes

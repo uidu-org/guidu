@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 0.1.29
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/field-color-picker@0.2.1
+  - @uidu/field-date@0.2.1
+  - @uidu/field-number@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/field-toggle@0.2.1
+  - @uidu/form@0.2.2
+  - @uidu/select@0.4.3
+
 ## 0.1.28
 
 ### Patch Changes

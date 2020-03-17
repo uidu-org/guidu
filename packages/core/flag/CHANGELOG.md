@@ -1,5 +1,20 @@
 # @uidu/flag
 
+## 0.1.11
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/button@0.1.57
+  - @uidu/portal@0.1.17
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/form@0.2.2
+  - @uidu/radio@0.4.1
+
 ## 0.1.10
 
 ### Patch Changes

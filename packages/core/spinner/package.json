@@ -1,6 +1,6 @@
 {
   "name": "@uidu/spinner",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A React component that displays a spinning icon to show a loading state",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -8,13 +8,13 @@
   "sideEffects": false,
   "module": "index.js",
   "dependencies": {
-    "@uidu/theme": "^0.2.0",
+    "@uidu/theme": "^0.2.3",
     "react-dom": "^16.4.0",
     "react-transition-group": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.51",
-    "@uidu/docs": "^0.1.41",
+    "@uidu/button": "^0.1.57",
+    "@uidu/docs": "^0.1.44",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {

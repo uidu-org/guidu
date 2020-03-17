@@ -1,6 +1,6 @@
 {
   "name": "@uidu/section-message",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "A react component used to alert users of a particular screen area that needs user action",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -9,13 +9,13 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/button": "^0.1.56",
-    "@uidu/theme": "^0.2.0"
+    "@uidu/button": "^0.1.57",
+    "@uidu/theme": "^0.2.3"
   },
   "devDependencies": {
-    "@uidu/code": "^0.1.20",
-    "@uidu/docs": "^0.1.41",
-    "@uidu/field-range": "^0.2.0",
+    "@uidu/code": "^0.1.22",
+    "@uidu/docs": "^0.1.44",
+    "@uidu/field-range": "^0.2.1",
     "react-dom": "^16.4.0"
   },
   "peerDependencies": {

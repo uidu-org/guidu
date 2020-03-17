@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.2.3
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/button@0.1.57
+  - @uidu/lozenge@0.1.21
+  - @uidu/section-message@0.1.21
+
 ## 0.2.2
 
 ### Patch Changes

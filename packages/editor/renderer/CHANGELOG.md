@@ -1,5 +1,33 @@
 # @atlaskit/renderer
 
+## 0.1.16
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/avatar@0.3.1
+  - @uidu/button@0.1.57
+  - @uidu/code@0.1.22
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/adf-schema@0.1.6
+  - @uidu/adf-utils@0.4.5
+  - @uidu/editor-common@0.1.15
+  - @uidu/editor-json-transformer@0.1.7
+  - @uidu/analytics-listeners@0.1.5
+  - @uidu/analytics-namespaced-context@0.1.6
+  - @uidu/mentions@0.1.15
+  - @uidu/status@0.1.12
+  - @uidu/task-decision@0.1.12
+  - @uidu/util-data-test@0.1.7
+  - @uidu/field-range@0.2.1
+  - @uidu/media-card@0.1.24
+  - @uidu/media-filmstrip@0.1.25
+  - @uidu/navigation@0.2.24
+
 ## 0.1.15
 
 ### Patch Changes

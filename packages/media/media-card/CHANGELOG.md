@@ -1,5 +1,19 @@
 # @uidu/media-card
 
+## 0.1.24
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/button@0.1.57
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/media-core@0.1.17
+
 ## 0.1.23
 
 ### Patch Changes
