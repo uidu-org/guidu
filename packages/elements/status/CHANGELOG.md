@@ -1,5 +1,19 @@
 # @atlaskit/status
 
+## 0.1.12
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/lozenge@0.1.21
+  - @uidu/theme@0.2.3
+  - @uidu/analytics-gas-types@0.1.6
+  - @uidu/elements-test-helpers@0.1.7
+  - @uidu/field-text@0.2.5
+
 ## 0.1.11
 
 ### Patch Changes

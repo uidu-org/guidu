@@ -1,5 +1,13 @@
 # @uidu/slider
 
+## 1.1.2
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+
 ## 1.1.1
 
 ### Patch Changes

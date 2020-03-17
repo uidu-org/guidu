@@ -1,5 +1,15 @@
 # @uidu/shell
 
+## 0.2.14
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/spinner@0.1.17
+  - @uidu/navigation@0.2.24
+
 ## 0.2.13
 
 ### Patch Changes

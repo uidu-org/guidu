@@ -1,5 +1,17 @@
 # @uidu/widgets
 
+## 0.2.1
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/modal-dialog@0.1.32
+  - @uidu/slider@1.1.2
+  - @uidu/shell@0.2.14
+  - @uidu/contact@0.1.13
+
 ## 0.2.0
 
 ### Minor Changes

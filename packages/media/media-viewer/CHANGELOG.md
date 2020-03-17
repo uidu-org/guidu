@@ -1,5 +1,21 @@
 # @uidu/media-viewer
 
+## 0.1.33
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/button@0.1.57
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/media-card@0.1.24
+  - @uidu/media-core@0.1.17
+  - @uidu/shell@0.2.14
+  - @uidu/comment@0.1.11
+
 ## 0.1.32
 
 ### Patch Changes

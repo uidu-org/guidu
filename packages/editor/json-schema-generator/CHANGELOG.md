@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.5
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+
 ## 0.1.4
 
 ### Patch Changes

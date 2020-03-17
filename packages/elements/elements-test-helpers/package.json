@@ -1,6 +1,6 @@
 {
   "name": "@uidu/elements-test-helpers",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "description": "common test helpers",
   "repository": {
@@ -12,11 +12,11 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/build-utils": "^0.1.14",
+    "@uidu/build-utils": "^0.1.16",
     "exenv": "^1.2.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.40"
+    "@uidu/docs": "^0.1.44"
   },
   "peerDependencies": {
     "react": "^16.8.3",

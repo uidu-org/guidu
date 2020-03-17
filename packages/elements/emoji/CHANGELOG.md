@@ -1,5 +1,24 @@
 # @uidu/emoji
 
+## 0.1.11
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/button@0.1.57
+  - @uidu/code@0.1.22
+  - @uidu/layer@0.1.12
+  - @uidu/section-message@0.1.21
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/elements-test-helpers@0.1.7
+  - @uidu/util-data-test@0.1.7
+  - @uidu/field-text@0.2.5
+
 ## 0.1.10
 
 ### Patch Changes

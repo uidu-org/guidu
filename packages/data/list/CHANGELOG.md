@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 0.1.22
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/table@0.1.100
+
 ## 0.1.21
 
 ### Patch Changes

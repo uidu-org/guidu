@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.12
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+
 ## 0.0.11
 
 ### Patch Changes

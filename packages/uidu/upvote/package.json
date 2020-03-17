@@ -1,6 +1,6 @@
 {
   "name": "@uidu/upvote",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -8,8 +8,8 @@
   "module": "index.js",
   "types": "index.d.ts",
   "devDependencies": {
-    "@uidu/button": "^0.1.50",
-    "@uidu/docs": "^0.1.40"
+    "@uidu/button": "^0.1.57",
+    "@uidu/docs": "^0.1.44"
   },
   "uidu:src": "index.ts"
 }

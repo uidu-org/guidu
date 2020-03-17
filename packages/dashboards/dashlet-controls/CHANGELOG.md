@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 0.1.6
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/avatar-group@2.2.1
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/field-date-range@0.2.1
+  - @uidu/form@0.2.2
+
 ## 0.1.5
 
 ### Patch Changes

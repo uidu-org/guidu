@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.1.9
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+
 ## 0.1.8
 
 ### Patch Changes

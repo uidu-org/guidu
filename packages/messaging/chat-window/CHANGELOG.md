@@ -1,5 +1,17 @@
 # @uidu/chat-window
 
+## 0.1.29
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/message@0.1.30
+  - @uidu/message-form@0.1.23
+  - @uidu/message-renderer@0.1.20
+  - @uidu/shell@0.2.14
+
 ## 0.1.28
 
 ### Patch Changes

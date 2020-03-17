@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.2.4
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/slider@1.1.2
+  - @uidu/spinner@0.1.17
+  - @uidu/checkbox@0.2.1
+  - @uidu/field-password@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/form@0.2.2
+  - @uidu/shell@0.2.14
+
 ## 0.2.3
 
 ### Patch Changes

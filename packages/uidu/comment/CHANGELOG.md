@@ -1,5 +1,19 @@
 # @uidu/comment
 
+## 0.1.11
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/spinner@0.1.17
+  - @uidu/field-mentions@0.2.1
+  - @uidu/field-text@0.2.5
+  - @uidu/form@0.2.2
+  - @uidu/message-renderer@0.1.20
+
 ## 0.1.10
 
 ### Patch Changes

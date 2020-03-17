@@ -1,5 +1,13 @@
 # @uidu/build-utils
 
+## 0.1.16
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/build-releases@3.0.24
+
 ## 0.1.15
 
 ### Patch Changes

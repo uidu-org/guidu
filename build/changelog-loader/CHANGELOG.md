@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.18
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+
 ## 0.1.17
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/banner
 
+## 0.1.7
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/button@0.1.57
+  - @uidu/theme@0.2.3
+
 ## 0.1.6
 
 ### Patch Changes

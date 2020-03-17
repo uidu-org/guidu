@@ -1,5 +1,14 @@
 # @uidu/elements-test-helpers
 
+## 0.1.7
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/build-utils@0.1.16
+
 ## 0.1.6
 
 ### Patch Changes

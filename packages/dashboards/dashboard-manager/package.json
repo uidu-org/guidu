@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-manager",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -10,8 +10,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "@types/react-grid-layout": "^0.17.0",
-    "@uidu/dashboard-controls": "^0.2.1",
-    "@uidu/dashlets": "^0.2.6",
+    "@uidu/dashboard-controls": "^0.2.4",
+    "@uidu/dashlets": "^0.2.7",
     "d3-collection": "^1.0.7",
     "d3-time": "^1.0.11",
     "lodash": "^4.17.4",
@@ -19,8 +19,8 @@
     "react-grid-layout": "^0.18.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.42",
-    "@uidu/shell": "^0.2.5"
+    "@uidu/docs": "^0.1.44",
+    "@uidu/shell": "^0.2.14"
   },
   "uidu:src": "index.ts"
 }

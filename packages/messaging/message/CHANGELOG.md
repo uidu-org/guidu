@@ -1,5 +1,22 @@
 # @uidu/message
 
+## 0.1.30
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/drawer@0.2.14
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/tooltip@0.1.25
+  - @uidu/media-card@0.1.24
+  - @uidu/media-core@0.1.17
+  - @uidu/media-filmstrip@0.1.25
+  - @uidu/message-form@0.1.23
+  - @uidu/message-renderer@0.1.20
+
 ## 0.1.29
 
 ### Patch Changes

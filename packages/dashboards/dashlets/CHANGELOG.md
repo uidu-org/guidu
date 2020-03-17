@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 0.2.7
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/spinner@0.1.17
+  - @uidu/tooltip@0.1.25
+  - @uidu/dashlet-controls@0.1.6
+
 ## 0.2.6
 
 ### Patch Changes

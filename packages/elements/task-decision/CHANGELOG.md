@@ -1,5 +1,25 @@
 # @uidu/task-decision
 
+## 0.1.12
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/avatar@0.3.1
+  - @uidu/avatar-group@2.2.1
+  - @uidu/button@0.1.57
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/editor-common@0.1.15
+  - @uidu/renderer@0.1.16
+  - @uidu/analytics-listeners@0.1.5
+  - @uidu/analytics-namespaced-context@0.1.6
+  - @uidu/elements-test-helpers@0.1.7
+  - @uidu/util-data-test@0.1.7
+
 ## 0.1.11
 
 ### Patch Changes

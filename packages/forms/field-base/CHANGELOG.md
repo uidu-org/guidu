@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/form@0.2.2
+
 ## 0.2.0
 
 ### Minor Changes

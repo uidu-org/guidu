@@ -1,5 +1,21 @@
 # @uidu/navigation
 
+## 0.2.24
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/badge@0.1.18
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/inline-dialog@0.1.17
+  - @uidu/lozenge@0.1.21
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/shell@0.2.14
+
 ## 0.2.23
 
 ### Patch Changes

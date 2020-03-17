@@ -1,5 +1,42 @@
 # @uidu/editor-core
 
+## 0.1.29
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/avatar@0.3.1
+  - @uidu/avatar-group@2.2.1
+  - @uidu/button@0.1.57
+  - @uidu/droplist@0.1.23
+  - @uidu/item@0.1.25
+  - @uidu/modal-dialog@0.1.32
+  - @uidu/spinner@0.1.17
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/adf-schema@0.1.6
+  - @uidu/adf-utils@0.4.5
+  - @uidu/editor-common@0.1.15
+  - @uidu/editor-json-transformer@0.1.7
+  - @uidu/editor-markdown-transformer@0.1.7
+  - @uidu/analytics-gas-types@0.1.6
+  - @uidu/analytics-listeners@0.1.5
+  - @uidu/analytics-namespaced-context@0.1.6
+  - @uidu/date@0.1.8
+  - @uidu/emoji@0.1.11
+  - @uidu/mentions@0.1.15
+  - @uidu/status@0.1.12
+  - @uidu/task-decision@0.1.12
+  - @uidu/select@0.4.3
+  - @uidu/media-card@0.1.24
+  - @uidu/media-core@0.1.17
+  - @uidu/media-filmstrip@0.1.25
+  - @uidu/media-picker@0.1.15
+  - @uidu/shell@0.2.14
+
 ## 0.1.28
 
 ### Patch Changes

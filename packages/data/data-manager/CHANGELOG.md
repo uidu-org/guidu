@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 0.2.11
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/spinner@0.1.17
+  - @uidu/board@0.2.12
+  - @uidu/calendar@0.1.21
+  - @uidu/data-controls@0.3.11
+  - @uidu/data-views@0.2.10
+  - @uidu/gallery@0.1.35
+  - @uidu/list@0.1.22
+  - @uidu/table@0.1.100
+  - @uidu/shell@0.2.14
+
 ## 0.2.10
 
 ### Patch Changes

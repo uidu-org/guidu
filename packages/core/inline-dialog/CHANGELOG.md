@@ -1,5 +1,19 @@
 # @uidu/inline-dialog
 
+## 0.1.17
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/button@0.1.57
+  - @uidu/popper@0.1.19
+  - @uidu/theme@0.2.3
+  - @uidu/form@0.2.2
+  - @uidu/select@0.4.3
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/tabbar
 
+## 0.1.15
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/shell@0.2.14
+
 ## 0.1.14
 
 ### Patch Changes

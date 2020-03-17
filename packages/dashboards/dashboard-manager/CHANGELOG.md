@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.3.11
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/dashboard-controls@0.2.4
+  - @uidu/dashlets@0.2.7
+  - @uidu/shell@0.2.14
+
 ## 0.3.10
 
 ### Patch Changes

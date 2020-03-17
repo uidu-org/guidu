@@ -1,5 +1,22 @@
 # Change Log
 
+## 2.2.1
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/button@0.1.57
+  - @uidu/code@0.1.22
+  - @uidu/dropdown-menu@0.1.23
+  - @uidu/item@0.1.25
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/field-base@0.2.1
+  - @uidu/field-toggle@0.2.1
+
 ## 2.2.0
 
 ### Minor Changes

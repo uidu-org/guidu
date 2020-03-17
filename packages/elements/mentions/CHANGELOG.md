@@ -1,5 +1,20 @@
 # @uidu/mentions
 
+## 0.1.15
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/avatar@0.3.1
+  - @uidu/button@0.1.57
+  - @uidu/lozenge@0.1.21
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+  - @uidu/analytics-gas-types@0.1.6
+
 ## 0.1.14
 
 ### Patch Changes

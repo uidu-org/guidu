@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.1.25
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/theme@0.2.3
+  - @uidu/media-card@0.1.24
+  - @uidu/media-core@0.1.17
+  - @uidu/media-viewer@0.1.33
+
 ## 0.1.24
 
 ### Patch Changes

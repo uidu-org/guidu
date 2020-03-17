@@ -1,5 +1,15 @@
 # @uidu/payments
 
+## 0.2.3
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/slider@1.1.2
+  - @uidu/form@0.2.2
+
 ## 0.2.2
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/item
 
+## 0.1.25
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/avatar@0.3.1
+  - @uidu/lozenge@0.1.21
+  - @uidu/theme@0.2.3
+  - @uidu/tooltip@0.1.25
+
 ## 0.1.24
 
 ### Patch Changes

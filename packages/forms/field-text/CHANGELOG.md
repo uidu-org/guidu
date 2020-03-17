@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 0.2.5
+
+### Patch Changes
+
+- e41e9e9: Remove css interop from theme
+- Updated dependencies [e41e9e9]
+  - @uidu/docs@0.1.44
+  - @uidu/analytics@0.1.20
+  - @uidu/button@0.1.57
+  - @uidu/theme@0.2.3
+  - @uidu/field-base@0.2.1
+  - @uidu/form@0.2.2
+
 ## 0.2.4
 
 ### Patch Changes
