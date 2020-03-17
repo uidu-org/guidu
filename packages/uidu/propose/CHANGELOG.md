@@ -1,5 +1,14 @@
 # @uidu/propose
 
+## 0.1.14
+
+### Patch Changes
+
+- 2c4592e: Changed widgets api, more work on attend and donate, need to be wired to a back-end to sharpen API
+- Updated dependencies [2c4592e]
+  - @uidu/widgets@0.2.0
+  - @uidu/field-text@0.2.2
+
 ## 0.1.13
 
 ### Patch Changes

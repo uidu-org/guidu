@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-counter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "A counter input element - good for plus-minus elements",
   "repository": "https://github.com/uidu-org/guidu.git",

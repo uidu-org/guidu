@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.1.0
+
+### Minor Changes
+
+- 2c4592e: Changed widgets api, more work on attend and donate, need to be wired to a back-end to sharpen API
+
 ## 1.0.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.1.20
+
+### Patch Changes
+
+- 2c4592e: Changed widgets api, more work on attend and donate, need to be wired to a back-end to sharpen API
+
 ## 0.1.19
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/widgets
 
+## 0.2.0
+
+### Minor Changes
+
+- 2c4592e: Changed widgets api, more work on attend and donate, need to be wired to a back-end to sharpen API
+
+### Patch Changes
+
+- Updated dependencies [2c4592e]
+  - @uidu/slider@1.1.0
+  - @uidu/contact@0.1.12
+
 ## 0.1.18
 
 ### Patch Changes
