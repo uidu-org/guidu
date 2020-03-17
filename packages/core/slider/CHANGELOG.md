@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.1.1
+
+### Patch Changes
+
+- 62cb405: Small cleanup of message components, fix field-text blur validation, fix devise slider ref
+
 ## 1.1.0
 
 ### Minor Changes

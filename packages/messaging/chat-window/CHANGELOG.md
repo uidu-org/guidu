@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.1.28
+
+### Patch Changes
+
+- 62cb405: Small cleanup of message components, fix field-text blur validation, fix devise slider ref
+- Updated dependencies [62cb405]
+  - @uidu/message-form@0.1.22
+  - @uidu/message@0.1.29
+
 ## 0.1.27
 
 ### Patch Changes

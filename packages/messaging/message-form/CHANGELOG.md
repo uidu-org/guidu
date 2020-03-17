@@ -1,5 +1,15 @@
 # @uidu/message-form
 
+## 0.1.22
+
+### Patch Changes
+
+- 62cb405: Small cleanup of message components, fix field-text blur validation, fix devise slider ref
+- Updated dependencies [62cb405]
+  - @uidu/field-text@0.2.3
+  - @uidu/form@0.2.1
+  - @uidu/message@0.1.29
+
 ## 0.1.21
 
 ### Patch Changes
