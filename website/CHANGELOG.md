@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.85
+
+### Patch Changes
+
+- e4a71f8: Small fixes to messages (style and interactions)
+
 ## 0.1.84
 
 ### Patch Changes

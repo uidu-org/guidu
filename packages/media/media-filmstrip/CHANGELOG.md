@@ -1,5 +1,11 @@
 # @uidu/media-filmstrip
 
+## 0.1.26
+
+### Patch Changes
+
+- e4a71f8: Small fixes to messages (style and interactions)
+
 ## 0.1.25
 
 ### Patch Changes
