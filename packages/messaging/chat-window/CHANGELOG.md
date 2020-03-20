@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.1.31
+
+### Patch Changes
+
+- dd64a29: Messaging components are still a WIP, release field geosuggest defaultt value
+- Updated dependencies [dd64a29]
+  - @uidu/message-form@0.1.24
+  - @uidu/message@0.1.32
+  - @uidu/shell@0.2.15
+
 ## 0.1.30
 
 ### Patch Changes

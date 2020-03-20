@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.57
+
+### Patch Changes
+
+- dd64a29: Messaging components are still a WIP, release field geosuggest defaultt value
+- Updated dependencies [dd64a29]
+  - @uidu/fs-loader@0.1.31
+  - @uidu/nav-info-loader@0.1.32
+
 ## 0.1.56
 
 ### Patch Changes

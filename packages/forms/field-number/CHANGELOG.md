@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 0.2.2
+
+### Patch Changes
+
+- dd64a29: Messaging components are still a WIP, release field geosuggest defaultt value
+- Updated dependencies [dd64a29]
+  - @uidu/field-base@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes
