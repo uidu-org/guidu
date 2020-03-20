@@ -1,10 +1,17 @@
 import { Form } from '@uidu/form';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldNumber from '../src';
 
 export default function BasicExample({}) {
+  const [defaultValue, setDefaultValue] = useState(null);
+  useEffect(() => {
+    setTimeout(() => {
+      setDefaultValue(1000);
+    }, 3000);
+  }, []);
+  console.log(defaultValue);
   return (
     <Form {...formDefaultProps}>
       <FieldNumber
@@ -18,7 +25,7 @@ export default function BasicExample({}) {
       />
       <FieldNumber
         {...inputDefaultProps}
-        value="123"
+        value={defaultValue}
         label="Fiscal Code"
         options={{
           allowEmptyFormatting: true,

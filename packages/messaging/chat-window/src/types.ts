@@ -41,7 +41,3 @@ export type ChatViewProps = {
   forwardedRef?: any;
   children?: any;
 };
-
-export type ChatViewState = {
-  isInfiniteLoading: boolean;
-};

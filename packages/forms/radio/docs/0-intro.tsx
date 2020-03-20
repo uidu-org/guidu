@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 
@@ -27,7 +27,16 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/Group').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Group')}
+      source={require('!!raw-loader!../examples/Group').default}
+    />
+  )}
+
+  ${(
+    <Example
+      packageName="@uidu/stepper"
+      Component={require('../examples/Grid').default}
+      title="Basic"
+      source={require('!!raw-loader!../examples/Grid').default}
     />
   )}
 

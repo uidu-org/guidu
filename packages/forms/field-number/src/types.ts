@@ -4,6 +4,8 @@ import { NumberFormatProps } from 'react-number-format';
 
 export type FieldNumberStatelessProps = {
   /** React-numeric-input options */
+  value?: number | string;
+  /** React-numeric-input options */
   options?: NumberFormatProps;
   /** React-numeric-input options */
   onValueChange?: (values) => void;

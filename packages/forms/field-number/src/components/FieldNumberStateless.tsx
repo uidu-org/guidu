@@ -16,6 +16,7 @@ function FieldNumber({
   options,
   onValueChange,
   forwardedRef,
+  value,
   ...rest
 }: FieldNumberStatelessProps) {
   return (
@@ -29,6 +30,7 @@ function FieldNumber({
         decimalScale: 2,
         onValueChange,
         getInputRef: forwardedRef,
+        value, // check https://github.com/s-yadav/react-number-format/issues/283
         ...options,
       }}
       {...rest}
