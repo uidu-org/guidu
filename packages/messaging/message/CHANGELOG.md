@@ -1,5 +1,11 @@
 # @uidu/message
 
+## 0.1.33
+
+### Patch Changes
+
+- 7f1e6fe: Fix chat example, better user testing available
+
 ## 0.1.32
 
 ### Patch Changes
