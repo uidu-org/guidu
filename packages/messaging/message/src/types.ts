@@ -25,7 +25,7 @@ export type Message = {
   replyTo?: Message;
   messager?: Messager;
   createdAt?: Date;
-  attachments?: Array<any>;
+  attachments?: Array<FileIdentifier>;
   mentionables?: Array<MentionProps>;
   children?: (props: any) => void;
   showAttachments?: boolean;

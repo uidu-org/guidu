@@ -7,6 +7,7 @@ const useInfiniteScroll = (
   callback,
 ) => {
   const [isFetching, setIsFetching] = useState(false);
+  const [lastY, setLastY] = useState(null);
 
   useEffect(() => {
     elementRef.current.addEventListener('scroll', handleScroll, {
@@ -20,10 +21,11 @@ const useInfiniteScroll = (
 
   useEffect(() => {
     if (!isFetching) return;
-    callback(elementRef.current.scrollHeight);
+    callback();
   }, [isFetching]);
 
   function handleScroll(e) {
+    setLastY(elementRef.current.scrollHeight);
     if (flipped) {
       if (elementRef.current.scrollTop > scrollLoadTreshold || isFetching)
         return;
@@ -41,7 +43,7 @@ const useInfiniteScroll = (
     }
   }
 
-  return [isFetching, setIsFetching];
+  return { isFetching, setIsFetching, lastY };
 };
 
 export default useInfiniteScroll;

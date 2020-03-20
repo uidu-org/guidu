@@ -310,6 +310,7 @@ export default class ExamplesModal extends React.Component<Props, State> {
       <Modal
         autoFocus={false}
         body={ModalBody}
+        scrollBehavior="outside"
         header={({ showKeyline }) => (
           <ModalHeaderComp
             showKeyline={showKeyline}

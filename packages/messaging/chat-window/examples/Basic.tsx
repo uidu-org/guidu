@@ -33,7 +33,7 @@ export default function Basic() {
   const [messages, setMessages] = useState(null);
   const [page, setPage] = useState(1);
   useEffect(() => {
-    fetchMessages(10, page, []).then(setMessages);
+    fetchMessages(30, page, []).then(setMessages);
     return () => null;
   }, []);
 
@@ -45,7 +45,9 @@ export default function Basic() {
         <ChatWindow
           onInfiniteLoad={async () => {
             setPage(page + 1);
-            return fetchMessages(10, page, messages);
+            return fetchMessages(50, page + 1, messages).then(response =>
+              setMessages([...messages, ...response]),
+            );
           }}
           ref={chatWindow}
           createMessage={model => {
@@ -104,7 +106,7 @@ export default function Basic() {
                 chatWindow.current.clientHeight;
             }, 20);
           }}
-          isSelf={messager => messager.id === 1306}
+          isSelf={messager => messager.id === '1306'}
           betweenMinutes={20}
           mentionables={[
             {

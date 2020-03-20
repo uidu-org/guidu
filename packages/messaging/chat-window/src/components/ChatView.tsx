@@ -21,7 +21,7 @@ try {
 
 function ChatView({
   flipped = false,
-  scrollLoadThreshold = 10,
+  scrollLoadThreshold = 0,
   onInfiniteLoad,
   shouldTriggerLoad = () => {
     return true;
@@ -34,20 +34,22 @@ function ChatView({
   const scrollable: React.RefObject<HTMLDivElement> = useRef(null);
   const loadingSpinner: React.RefObject<HTMLDivElement> = useRef(null);
 
-  const fetchMore = lastY => {
+  const fetchMore = () => {
     onInfiniteLoad().then(() => {
       // @ts-ignore
-      setIsFetching(false);
       scrollable.current.scrollTop = scrollable.current.scrollHeight - lastY;
+      setIsFetching(false);
     });
   };
 
-  const [isFetching, setIsFetching] = useInfiniteScroll(
+  const { isFetching, setIsFetching, lastY } = useInfiniteScroll(
     scrollable,
     scrollLoadThreshold,
     flipped,
     fetchMore,
   );
+
+  console.log(lastY);
 
   useImperativeHandle(forwardedRef, () => scrollable.current);
 
@@ -77,9 +79,9 @@ function ChatView({
       ref={scrollable}
       style={{
         overflowX: 'hidden',
-        overflowY: 'scroll',
+        // overflowY: 'scroll',
         // overflowScrolling: 'touch',
-        WebkitOverflowScrolling: 'touch',
+        WebkitOverflowScrolling: 'auto',
         overscrollBehavior: 'contain contain',
         WebkitBackfaceVisibility: 'hidden',
       }}

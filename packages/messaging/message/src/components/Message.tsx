@@ -57,7 +57,7 @@ export default function Message({
               borderRadius: '0.35rem',
               padding: '0.5rem 0.75rem',
               width: 'auto',
-              maxWidth: '80%',
+              maxWidth: '55%',
             }}
           >
             {editing ? (

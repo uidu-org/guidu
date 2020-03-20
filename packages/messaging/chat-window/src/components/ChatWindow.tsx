@@ -59,12 +59,12 @@ function ChatWindow({
   const reply = (message: any) => {
     setReplyTo(message);
     setTimeout(() => {
-      scrollable.current.scroll
-        ? scrollable.current.scroll({
-            top: scrollable.current.scrollHeight,
-            behavior: 'smooth',
-          })
-        : (scrollable.current.scrollTop = scrollable.current.scrollHeight);
+      // scrollable.current.scroll
+      //   ? scrollable.current.scroll({
+      //       top: scrollable.current.scrollHeight,
+      //       behavior: 'smooth',
+      //     })
+      //   : (scrollable.current.scrollTop = scrollable.current.scrollHeight);
       messageForm.current.focus();
     }, 100);
   };
