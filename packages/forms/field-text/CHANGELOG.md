@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.6
+
+### Patch Changes
+
+- fae2063: Adding FieldTextGrid
+
 ## 0.2.5
 
 ### Patch Changes

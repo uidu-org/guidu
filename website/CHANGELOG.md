@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.86
+
+### Patch Changes
+
+- fae2063: Adding FieldTextGrid
+- Updated dependencies [fae2063]
+  - @uidu/field-text@0.2.6
+
 ## 0.1.85
 
 ### Patch Changes
