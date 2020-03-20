@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.2
+
+### Patch Changes
+
+- dd64a29: Messaging components are still a WIP, release field geosuggest defaultt value
+
 ## 0.2.1
 
 ### Patch Changes
