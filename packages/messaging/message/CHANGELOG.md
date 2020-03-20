@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.1.31
+
+### Patch Changes
+
+- e4a71f8: Small fixes to messages (style and interactions)
+- Updated dependencies [e4a71f8]
+  - @uidu/media-filmstrip@0.1.26
+
 ## 0.1.30
 
 ### Patch Changes

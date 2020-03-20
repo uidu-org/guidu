@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.1.30
+
+### Patch Changes
+
+- e4a71f8: Small fixes to messages (style and interactions)
+- Updated dependencies [e4a71f8]
+  - @uidu/message@0.1.31
+
 ## 0.1.29
 
 ### Patch Changes
