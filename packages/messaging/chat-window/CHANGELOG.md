@@ -1,5 +1,11 @@
 # @uidu/chat-window
 
+## 0.1.32
+
+### Patch Changes
+
+- de4d86c: Add radio grid
+
 ## 0.1.31
 
 ### Patch Changes

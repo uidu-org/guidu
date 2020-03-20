@@ -1,5 +1,11 @@
 # @uidu/radio
 
+## 0.4.2
+
+### Patch Changes
+
+- de4d86c: Add radio grid
+
 ## 0.4.1
 
 ### Patch Changes
