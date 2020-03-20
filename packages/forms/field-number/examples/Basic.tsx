@@ -16,6 +16,16 @@ export default function BasicExample({}) {
           mask: '_',
         }}
       />
+      <FieldNumber
+        {...inputDefaultProps}
+        value="123"
+        label="Fiscal Code"
+        options={{
+          allowEmptyFormatting: true,
+          format: '################',
+          mask: '_',
+        }}
+      />
     </Form>
   );
 }

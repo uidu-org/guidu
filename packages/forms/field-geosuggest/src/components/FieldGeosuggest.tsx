@@ -1,6 +1,12 @@
 import { Wrapper } from '@uidu/field-base';
 import classNames from 'classnames';
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -26,10 +32,14 @@ function FieldGeosuggest({
   countryRestricted,
   onSetValue,
   onChange,
+  forwardedRef,
+  value: propValue,
   ...rest
 }: FieldGeosuggestProps) {
   const element = useRef(null);
   const [activeSuggestion, setActiveSuggestion] = useState(null);
+
+  useImperativeHandle(forwardedRef, () => element.current);
 
   const requestOptions: RequestOptions = {
     types: geocoderType || ['geocode', 'establishment'],
@@ -68,6 +78,11 @@ function FieldGeosuggest({
     }
     return () => null;
   }, []);
+
+  useEffect(() => {
+    setValue(propValue, false);
+    return () => null;
+  }, [propValue]);
 
   const activateSuggestion = (direction: string) => {
     const suggestsCount = data.length - 1;
@@ -153,6 +168,7 @@ function FieldGeosuggest({
   return (
     <Wrapper
       {...rest}
+      rowClassName="position-relative"
       {...(isGeolocationAvailable
         ? {
             addonAfter: (
@@ -267,4 +283,6 @@ function FieldGeosuggest({
 //   };
 // }
 
-export default FieldGeosuggest;
+export default forwardRef((props: FieldGeosuggestProps, ref) => (
+  <FieldGeosuggest {...props} forwardedRef={ref} />
+));

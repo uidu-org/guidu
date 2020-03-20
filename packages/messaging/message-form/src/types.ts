@@ -1,4 +1,4 @@
-import { Message, MessageableProps } from '@uidu/message';
+import { Message } from '@uidu/message';
 import * as React from 'react';
 import { MentionProps } from 'react-mentions';
 
@@ -22,19 +22,13 @@ export type MessageFormProps = {
   /** The base styling to apply to the button. */
   placeholder?: string;
   /** The base styling to apply to the button. */
-  messageable: MessageableProps;
-  /** The base styling to apply to the button. */
   message: Message;
   /** The base styling to apply to the button. */
   mentionables?: Array<MentionProps>;
   /** The base styling to apply to the button. */
-  createMessage?: (messageable: MessageableProps, model: any) => any;
+  createMessage?: (model: any) => any;
   /** The base styling to apply to the button. */
-  updateMessage?: (
-    messageable: MessageableProps,
-    message: Message,
-    model: any,
-  ) => any;
+  updateMessage?: (message: Message, model: any) => any;
   onReplyDismiss?: (event: React.MouseEvent) => void;
   /** The base styling to apply to the button. */
   onDismiss: () => void;

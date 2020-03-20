@@ -5,6 +5,7 @@ import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
 import MediaFilmStrip from '@uidu/media-filmstrip';
 import Spinner from '@uidu/spinner';
 import classNames from 'classnames';
+import Formsy from 'formsy-react';
 import React, { cloneElement, Fragment } from 'react';
 import { Send, Smile, ThumbsUp } from 'react-feather';
 import { MessageFormProps, MessageFormState } from '../types';
@@ -17,7 +18,7 @@ export default class MessagesForm extends React.Component<
   MessageFormProps,
   MessageFormState
 > {
-  private form: React.RefObject<any> = React.createRef();
+  private form: React.RefObject<Formsy> = React.createRef();
   private suggestionsPortal: React.RefObject<any> = React.createRef();
   private mentionsInput: React.RefObject<any> = React.createRef();
   private mentionsComponentInput: React.RefObject<any> = React.createRef();
@@ -72,7 +73,7 @@ export default class MessagesForm extends React.Component<
   };
 
   handleSubmit = (model: any): Promise<any> => {
-    const { createMessage, updateMessage, messageable, message } = this.props;
+    const { createMessage, updateMessage, message } = this.props;
     const { replyTo } = message;
     const modelToSubmit = {
       message: {
@@ -85,14 +86,14 @@ export default class MessagesForm extends React.Component<
       },
     };
     if (!message.id) {
-      return createMessage(messageable, modelToSubmit);
+      return createMessage(modelToSubmit);
     }
-    return updateMessage(messageable, message, modelToSubmit);
+    return updateMessage(message, modelToSubmit);
   };
 
   handleThumb = () => {
-    const { createMessage, messageable } = this.props;
-    return createMessage(messageable, {
+    const { createMessage } = this.props;
+    return createMessage({
       message: {
         body: '👍',
       },

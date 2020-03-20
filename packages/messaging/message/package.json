@@ -28,7 +28,7 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-"@uidu/docs": "^0.1.44",
+    "@uidu/docs": "^0.1.44",
     "@uidu/shell": "^0.2.13",
     "faker": "^4.1.0"
   },

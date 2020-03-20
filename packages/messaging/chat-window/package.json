@@ -12,7 +12,7 @@
     "@uidu/message": "^0.1.30",
     "@uidu/message-form": "^0.1.23",
     "@uidu/message-renderer": "^0.1.20",
-    "body-scroll-lock": "^2.6.1",
+    "body-scroll-lock": "^3.0.1",
     "d3-collection": "^1.0.7",
     "moment": "^2.18.1",
     "react-chatview": "^0.2.5",

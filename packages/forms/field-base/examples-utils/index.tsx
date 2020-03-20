@@ -1,6 +1,6 @@
-import { formDefaultProps } from '../../form/examples-utils';
 import { Form } from '@uidu/form';
 import React, { useRef, useState } from 'react';
+import { formDefaultProps } from '../../form/examples-utils';
 
 export const inputDefaultProps = {
   label: 'This is a form label',

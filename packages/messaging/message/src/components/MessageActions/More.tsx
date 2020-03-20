@@ -8,36 +8,34 @@ import { MoreHorizontal } from 'react-feather';
 
 export default function More({ actions, onOpenChange }) {
   return (
-    <div className="btn-group btn-group-sm" role="group">
-      <DropdownMenu
-        trigger={
-          <Tooltip
-            tag="button"
-            className="btn btn-sm bg-white text-muted p-2 d-flex align-items-center"
-            position="top"
-            content="More"
-            delay={0}
+    <DropdownMenu
+      trigger={
+        <Tooltip
+          tag="button"
+          className="btn btn-sm bg-white text-muted p-2 d-flex align-items-center"
+          position="top"
+          content="More"
+          delay={0}
+        >
+          <MoreHorizontal size={16} />
+        </Tooltip>
+      }
+      triggerType="default"
+      position="top middle"
+      boundariesElement="scrollParent"
+      onOpenChange={onOpenChange}
+    >
+      <DropdownItemGroup>
+        {actions.map(action => (
+          <DropdownItem
+            key={action.name}
+            onClick={action.onClick}
+            {...action.props}
           >
-            <MoreHorizontal size={16} />
-          </Tooltip>
-        }
-        triggerType="default"
-        position="top middle"
-        boundariesElement="scrollParent"
-        onOpenChange={onOpenChange}
-      >
-        <DropdownItemGroup>
-          {actions.map(action => (
-            <DropdownItem
-              key={action.name}
-              onClick={action.onClick}
-              {...action.props}
-            >
-              {action.name}
-            </DropdownItem>
-          ))}
-        </DropdownItemGroup>
-      </DropdownMenu>
-    </div>
+            {action.name}
+          </DropdownItem>
+        ))}
+      </DropdownItemGroup>
+    </DropdownMenu>
   );
 }

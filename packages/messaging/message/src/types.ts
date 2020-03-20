@@ -26,7 +26,6 @@ export type Message = {
   messager?: Messager;
   createdAt?: Date;
   attachments?: Array<any>;
-  messageable: MessageableProps;
   mentionables?: Array<MentionProps>;
   children?: (props: any) => void;
   showAttachments?: boolean;
