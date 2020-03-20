@@ -24,12 +24,8 @@ const RadioGridWrapper = styled.div`
 `;
 
 export default function RadioGrid({
-  layout,
   options,
   questions,
-  help,
-  showErrors,
-  errorMessages,
   name,
   onSetValue,
   onChange,
@@ -72,7 +68,7 @@ export default function RadioGrid({
     </tr>
   );
 
-  const renderElement = (options, questions) => (
+  const renderElement = () => (
     <table className="table table-hover">
       <thead>
         <tr>
@@ -88,11 +84,23 @@ export default function RadioGrid({
     </table>
   );
 
-  const element = renderElement(options, questions);
-
   return (
     <Wrapper {...rest}>
-      <RadioGridWrapper>{element}</RadioGridWrapper>
+      <RadioGridWrapper>
+        <table className="table table-hover">
+          <thead>
+            <tr>
+              <th className="border-top-0" />
+              {options.map(o => (
+                <th key={o.id} scope="col" className="text-center border-top-0">
+                  {o.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>{questions.map(renderQuestion)}</tbody>
+        </table>
+      </RadioGridWrapper>
     </Wrapper>
   );
 }
