@@ -14,9 +14,7 @@ export const message: () => Message = () => ({
   messager: {
     name: faker.name.findName(),
     id: faker.random.boolean() ? '1306' : '1206',
-    avatar: {
-      thumb: faker.image.avatar(),
-    },
+    avatar: faker.image.avatar(),
   },
   ...(faker.random.boolean()
     ? {
@@ -39,7 +37,6 @@ export const message: () => Message = () => ({
 });
 
 export const fetchMessages = (limit = 20, page, previuosMessage) => {
-  console.log(page);
   return new Promise((resolve, reject) => {
     let wait = setTimeout(() => {
       clearTimeout(wait);

@@ -13,9 +13,7 @@ export type MessageableProps = {
 export type Messager = {
   id?: string;
   name: string;
-  avatar: {
-    thumb: string;
-  };
+  avatar: string;
 };
 
 export type Message = {

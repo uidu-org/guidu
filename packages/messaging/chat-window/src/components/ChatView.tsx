@@ -49,8 +49,6 @@ function ChatView({
     fetchMore,
   );
 
-  console.log(lastY);
-
   useImperativeHandle(forwardedRef, () => scrollable.current);
 
   useEffect(() => {

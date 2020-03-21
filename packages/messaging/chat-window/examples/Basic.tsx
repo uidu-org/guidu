@@ -37,8 +37,6 @@ export default function Basic() {
     return () => null;
   }, []);
 
-  console.log(messages);
-
   return (
     <>
       {messages && (

@@ -6,7 +6,7 @@ import MediaFilmStrip from '@uidu/media-filmstrip';
 import Spinner from '@uidu/spinner';
 import classNames from 'classnames';
 import Formsy from 'formsy-react';
-import React, { cloneElement, Fragment } from 'react';
+import React, { cloneElement } from 'react';
 import { Send, Smile, ThumbsUp } from 'react-feather';
 import { MessageFormProps, MessageFormState } from '../types';
 import MessageFormActions from './MessageFormActions';
@@ -132,10 +132,8 @@ export default class MessagesForm extends React.Component<
 
     const { submitted, submitLabel } = this.state;
 
-    console.log(attachments);
-
     return (
-      <Fragment>
+      <>
         {replyTo && (
           <MessageFormReplyTo
             replyTo={replyTo}
@@ -301,7 +299,7 @@ export default class MessagesForm extends React.Component<
             />
           )}
         </div>
-      </Fragment>
+      </>
     );
   }
 }

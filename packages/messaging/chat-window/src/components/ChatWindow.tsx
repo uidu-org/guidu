@@ -9,6 +9,7 @@ import MessagesForm from '@uidu/message-form';
 import React, {
   forwardRef,
   useImperativeHandle,
+  useMemo,
   useRef,
   useState,
 } from 'react';
@@ -111,10 +112,9 @@ function ChatWindow({
   //   );
   // }
 
-  console.log(messages);
-  const groupedByDay = groupByDay(sortByDay(messages));
-
-  console.log(groupedByDay);
+  const groupedByDay = useMemo(() => groupByDay(sortByDay(messages)), [
+    messages,
+  ]);
 
   return (
     <Media query={{ maxWidth: 768 }}>
@@ -148,7 +148,6 @@ function ChatWindow({
                   {groupByMessager(todayMessages, betweenMinutes)
                     .reverse()
                     .map((messageGroup: any, index: number) => {
-                      console.log(messageGroup);
                       return (
                         <MessageGroup
                           key={`${day}-${index}`}

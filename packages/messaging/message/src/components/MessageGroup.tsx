@@ -12,19 +12,17 @@ export default function MessageGroup({
   children,
 }: MessageGroupProps) {
   const reverse = useMemo(() => {
-    if (!mobileView) {
-      return false;
-    }
-
     return !!isSelf(messager);
   }, [mobileView, messager]);
+
+  console.log(reverse);
 
   if (kind === 'message.create') {
     return (
       <div className={classNames('position-relative py-3 px-3 px-xl-4', {})}>
         <div className="media align-items-end">
           <Avatar
-            src={messager.avatar.thumb}
+            src={messager.avatar}
             name={messager.name}
             enableTooltip={false}
             size={mobileView ? 'small' : 'medium'}

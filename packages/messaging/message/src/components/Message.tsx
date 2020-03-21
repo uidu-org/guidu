@@ -53,7 +53,7 @@ export default function Message({
         >
           <div
             style={{
-              background: reverse ? 'red' : '#f1f2f3',
+              background: reverse ? '#dbeafd' : '#f1f2f3',
               borderRadius: '0.35rem',
               padding: '0.5rem 0.75rem',
               width: 'auto',
