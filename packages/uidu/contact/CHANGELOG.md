@@ -1,5 +1,16 @@
 # @uidu/contact
 
+## 0.1.14
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/checkbox@0.2.2
+  - @uidu/field-text@0.2.7
+  - @uidu/form@0.2.3
+
 ## 0.1.13
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 0.2.12
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/spinner@0.1.18
+  - @uidu/board@0.2.13
+  - @uidu/calendar@0.1.22
+  - @uidu/data-controls@0.3.12
+  - @uidu/data-views@0.2.11
+  - @uidu/gallery@0.1.36
+  - @uidu/list@0.1.23
+  - @uidu/table@0.1.101
+  - @uidu/shell@0.2.16
+
 ## 0.2.11
 
 ### Patch Changes

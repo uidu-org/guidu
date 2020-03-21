@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.2.5
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/avatar@0.3.2
+  - @uidu/slider@1.1.3
+  - @uidu/spinner@0.1.18
+  - @uidu/checkbox@0.2.2
+  - @uidu/field-password@0.2.2
+  - @uidu/field-text@0.2.7
+  - @uidu/form@0.2.3
+  - @uidu/shell@0.2.16
+
 ## 0.2.4
 
 ### Patch Changes

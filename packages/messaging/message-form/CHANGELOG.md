@@ -1,5 +1,23 @@
 # @uidu/message-form
 
+## 0.1.25
+
+### Patch Changes
+
+- 3084f08: Cleanup and add reverse for desktop messages
+- 0f69b06: Fix yarnclean
+- Updated dependencies [3084f08]
+- Updated dependencies [0f69b06]
+  - @uidu/message@0.1.34
+  - @uidu/docs@0.1.45
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/spinner@0.1.18
+  - @uidu/field-mentions@0.2.2
+  - @uidu/field-text@0.2.7
+  - @uidu/form@0.2.3
+  - @uidu/media-filmstrip@0.1.27
+  - @uidu/media-picker@0.1.16
+
 ## 0.1.24
 
 ### Patch Changes

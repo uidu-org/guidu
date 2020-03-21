@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 0.1.30
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/field-color-picker@0.2.2
+  - @uidu/field-date@0.2.2
+  - @uidu/field-number@0.2.4
+  - @uidu/field-text@0.2.7
+  - @uidu/field-toggle@0.2.2
+  - @uidu/form@0.2.3
+  - @uidu/select@0.4.4
+
 ## 0.1.29
 
 ### Patch Changes

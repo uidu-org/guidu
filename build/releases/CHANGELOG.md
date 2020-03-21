@@ -1,5 +1,13 @@
 # @uidu/build-releases
 
+## 3.0.25
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/build-utils@0.1.17
+
 ## 3.0.24
 
 ### Patch Changes

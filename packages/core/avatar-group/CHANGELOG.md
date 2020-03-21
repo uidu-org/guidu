@@ -1,5 +1,22 @@
 # Change Log
 
+## 2.2.2
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/avatar@0.3.2
+  - @uidu/button@0.1.58
+  - @uidu/code@0.1.23
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/item@0.1.26
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/field-base@0.2.3
+  - @uidu/field-toggle@0.2.2
+
 ## 2.2.1
 
 ### Patch Changes

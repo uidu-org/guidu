@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.6
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+
 ## 0.1.5
 
 ### Patch Changes

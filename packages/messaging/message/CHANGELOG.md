@@ -1,5 +1,25 @@
 # @uidu/message
 
+## 0.1.34
+
+### Patch Changes
+
+- 3084f08: Cleanup and add reverse for desktop messages
+- 0f69b06: Fix yarnclean
+- Updated dependencies [3084f08]
+- Updated dependencies [0f69b06]
+  - @uidu/message-form@0.1.25
+  - @uidu/docs@0.1.45
+  - @uidu/avatar@0.3.2
+  - @uidu/drawer@0.2.15
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/tooltip@0.1.26
+  - @uidu/media-card@0.1.25
+  - @uidu/media-core@0.1.18
+  - @uidu/media-filmstrip@0.1.27
+  - @uidu/message-renderer@0.1.21
+  - @uidu/shell@0.2.16
+
 ## 0.1.33
 
 ### Patch Changes

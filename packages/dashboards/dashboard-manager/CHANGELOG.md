@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.3.12
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/dashboard-controls@0.2.5
+  - @uidu/dashlets@0.2.8
+  - @uidu/shell@0.2.16
+
 ## 0.3.11
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 0.2.8
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/spinner@0.1.18
+  - @uidu/tooltip@0.1.26
+  - @uidu/dashlet-controls@0.1.7
+
 ## 0.2.7
 
 ### Patch Changes

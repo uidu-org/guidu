@@ -1,5 +1,42 @@
 # @uidu/editor-core
 
+## 0.1.30
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/avatar@0.3.2
+  - @uidu/avatar-group@2.2.2
+  - @uidu/button@0.1.58
+  - @uidu/droplist@0.1.24
+  - @uidu/item@0.1.26
+  - @uidu/modal-dialog@0.1.33
+  - @uidu/spinner@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/adf-schema@0.1.7
+  - @uidu/adf-utils@0.4.6
+  - @uidu/editor-common@0.1.16
+  - @uidu/editor-json-transformer@0.1.8
+  - @uidu/editor-markdown-transformer@0.1.8
+  - @uidu/analytics-gas-types@0.1.7
+  - @uidu/analytics-listeners@0.1.6
+  - @uidu/analytics-namespaced-context@0.1.7
+  - @uidu/date@0.1.9
+  - @uidu/emoji@0.1.12
+  - @uidu/mentions@0.1.16
+  - @uidu/status@0.1.13
+  - @uidu/task-decision@0.1.13
+  - @uidu/select@0.4.4
+  - @uidu/media-card@0.1.25
+  - @uidu/media-core@0.1.18
+  - @uidu/media-filmstrip@0.1.27
+  - @uidu/media-picker@0.1.16
+  - @uidu/shell@0.2.16
+
 ## 0.1.29
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 0.3.12
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/drawer@0.2.15
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/inline-dialog@0.1.18
+  - @uidu/item@0.1.26
+  - @uidu/spinner@0.1.18
+  - @uidu/tooltip@0.1.26
+  - @uidu/data-fields@0.1.30
+  - @uidu/data-views@0.2.11
+  - @uidu/table@0.1.101
+  - @uidu/checkbox@0.2.2
+  - @uidu/field-text@0.2.7
+  - @uidu/form@0.2.3
+  - @uidu/select@0.4.4
+  - @uidu/shell@0.2.16
+
 ## 0.3.11
 
 ### Patch Changes

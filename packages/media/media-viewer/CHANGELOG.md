@@ -1,5 +1,21 @@
 # @uidu/media-viewer
 
+## 0.1.34
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/avatar@0.3.2
+  - @uidu/button@0.1.58
+  - @uidu/spinner@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/media-card@0.1.25
+  - @uidu/media-core@0.1.18
+  - @uidu/shell@0.2.16
+  - @uidu/comment@0.1.12
+
 ## 0.1.33
 
 ### Patch Changes

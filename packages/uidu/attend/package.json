@@ -1,6 +1,6 @@
 {
   "name": "@uidu/attend",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "React component to attend to an event",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,23 +9,23 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/contact": "^0.1.13",
-    "@uidu/field-counter": "^0.2.2",
-    "@uidu/field-text": "^0.2.5",
-    "@uidu/field-textarea": "^0.2.1",
-    "@uidu/form": "^0.2.2",
-    "@uidu/payments": "^0.2.3",
-    "@uidu/shell": "^0.2.14",
-    "@uidu/spinner": "^0.1.17",
-    "@uidu/stepper": "^0.1.21",
-    "@uidu/widgets": "^0.2.1",
+    "@uidu/contact": "^0.1.14",
+    "@uidu/field-counter": "^0.2.3",
+    "@uidu/field-text": "^0.2.7",
+    "@uidu/field-textarea": "^0.2.2",
+    "@uidu/form": "^0.2.3",
+    "@uidu/payments": "^0.2.4",
+    "@uidu/shell": "^0.2.16",
+    "@uidu/spinner": "^0.1.18",
+    "@uidu/stepper": "^0.1.22",
+    "@uidu/widgets": "^0.2.2",
     "moment": "^2.18.1",
     "react-countdown": "^2.2.0",
     "react-feather": "^2.0.3",
     "react-intl": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.44"
+    "@uidu/docs": "^0.1.45"
   },
   "uidu:src": "index.ts"
 }

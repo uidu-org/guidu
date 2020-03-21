@@ -1,5 +1,14 @@
 # @uidu/chat-room
 
+## 0.1.9
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/shell@0.2.16
+
 ## 0.1.8
 
 ### Patch Changes

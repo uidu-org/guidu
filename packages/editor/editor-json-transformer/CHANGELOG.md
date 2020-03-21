@@ -1,5 +1,16 @@
 # @uidu/editor-json-transformer
 
+## 0.1.8
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/adf-schema@0.1.7
+  - @uidu/editor-common@0.1.16
+  - @uidu/editor-core@0.1.30
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/pipelines-docker-image
 
+## 0.1.11
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+
 ## 0.1.10
 
 ### Patch Changes

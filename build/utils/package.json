@@ -1,6 +1,6 @@
 {
   "name": "@uidu/build-utils",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Collection of utilities to used during the release process of Atlaskit",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@uidu/build-releases": "^3.0.24",
+    "@uidu/build-releases": "^3.0.25",
     "chalk": "^3.0.0",
     "editor": "^1.0.0",
     "fuzzy": "^0.1.3",

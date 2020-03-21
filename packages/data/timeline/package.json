@@ -1,12 +1,12 @@
 {
   "name": "@uidu/timeline",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Timeline view for data",
   "main": "index.js",
   "author": "uidu",
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.44"
+    "@uidu/docs": "^0.1.45"
   }
 }

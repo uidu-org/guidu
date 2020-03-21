@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.58
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/changelog-loader@0.1.19
+  - @uidu/fs-loader@0.1.32
+  - @uidu/multi-entry-tools@0.0.13
+  - @uidu/nav-info-loader@0.1.33
+
 ## 0.1.57
 
 ### Patch Changes

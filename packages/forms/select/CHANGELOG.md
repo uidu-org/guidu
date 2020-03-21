@@ -1,5 +1,22 @@
 # @uidu/field-text
 
+## 0.4.4
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/button@0.1.58
+  - @uidu/modal-dialog@0.1.33
+  - @uidu/spinner@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/checkbox@0.2.2
+  - @uidu/field-base@0.2.3
+  - @uidu/form@0.2.3
+
 ## 0.4.3
 
 ### Patch Changes

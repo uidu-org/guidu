@@ -1,5 +1,19 @@
 # @uidu/media-card
 
+## 0.1.25
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/button@0.1.58
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/spinner@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/media-core@0.1.18
+
 ## 0.1.24
 
 ### Patch Changes
