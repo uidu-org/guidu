@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.1.33
+
+### Patch Changes
+
+- 7f1e6fe: Fix chat example, better user testing available
+- Updated dependencies [7f1e6fe]
+  - @uidu/message@0.1.33
+
 ## 0.1.32
 
 ### Patch Changes
