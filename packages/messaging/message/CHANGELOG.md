@@ -1,5 +1,11 @@
 # @uidu/message
 
+## 0.1.35
+
+### Patch Changes
+
+- 7cdf1b6: Fix attend imports,
+
 ## 0.1.34
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/build-releases
 
+## 3.0.26
+
+### Patch Changes
+
+- 7cdf1b6: Fix attend imports,
+
 ## 3.0.25
 
 ### Patch Changes

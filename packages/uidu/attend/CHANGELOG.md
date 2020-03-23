@@ -1,5 +1,11 @@
 # @uidu/attend
 
+## 0.2.3
+
+### Patch Changes
+
+- 7cdf1b6: Fix attend imports,
+
 ## 0.2.2
 
 ### Patch Changes
