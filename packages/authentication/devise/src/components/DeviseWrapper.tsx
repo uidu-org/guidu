@@ -17,7 +17,7 @@ export default function DeviseWrapper({
           <div className="row align-items-center justify-content-center my-4 my-sm-5">
             <div className="col-sm-8 col-md-6 col-xl-4">
               {header}
-              <div className="card card-body py-5">{children}</div>
+              <div className="card px-3 py-5">{children}</div>
               {footer}
             </div>
           </div>

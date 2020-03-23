@@ -2,7 +2,7 @@ import { Checkbox } from '@uidu/checkbox';
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
 import Form, { FormSubmit } from '@uidu/form';
-import Slider from '@uidu/slider';
+import Slider, { Slide } from '@uidu/slider';
 import React, { PureComponent } from 'react';
 import AnimateHeight from 'react-animate-height';
 import { defineMessages, FormattedMessage } from 'react-intl';
@@ -81,13 +81,13 @@ export default class Providers extends PureComponent<any, any> {
     this.slider.current.slideTo(this.activeSlideByRoute(location));
   }
 
-  handleSubmit = model => {
+  handleSubmit = (model) => {
     const { routes, checkExistence, history, signIn } = this.props;
     const { exist } = this.state;
     if (exist) {
       return signIn(model);
     }
-    return checkExistence(model.user.email).then(response => {
+    return checkExistence(model.user.email).then((response) => {
       if (response.data.exists) {
         return this.setState(
           {
@@ -111,7 +111,7 @@ export default class Providers extends PureComponent<any, any> {
     });
   };
 
-  update = async model => {
+  update = async (model) => {
     const { currentUser } = this.state;
     await this.setState({
       currentUser: {
@@ -156,135 +156,141 @@ export default class Providers extends PureComponent<any, any> {
           }}
           ref={this.slider}
         >
-          <div>
-            <div className="text-center">
-              <h3>
-                <FormattedMessage {...messages[`${scope}_title`]} />
-              </h3>
-              <p>
-                <FormattedMessage {...messages[`${scope}_description`]} />
-              </p>
-            </div>
-            <FacebookLoginButton
-              onCompleted={auth =>
-                authSignIn(auth, 'facebook').then(response => {
-                  if (response.currentUser) {
-                    //
-                    return null;
-                  }
-                  return history.push(`${routes.registrations}/email`);
-                })
-              }
-              onError={onAuthSignInError}
-              label={
-                <FormattedMessage
-                  {...messages[`${scope}_with_provider`]}
-                  values={{
-                    provider: (
-                      <span className="font-weight-bold">Facebook</span>
-                    ),
-                  }}
-                />
-              }
-            />
-            <GoogleLoginButton
-              onCompleted={auth =>
-                authSignIn(auth, 'google').then(onAuthSignIn)
-              }
-              onError={onAuthSignInError}
-              label={
-                <FormattedMessage
-                  {...messages[`${scope}_with_provider`]}
-                  values={{
-                    provider: <span className="font-weight-bold">Google</span>,
-                  }}
-                />
-              }
-            />
-            <h6 className="small text-muted text-uppercase my-4 text-center">
-              Oppure
-            </h6>
-            <Form
-              handleSubmit={this.handleSubmit}
-              footerRenderer={({ canSubmit, loading }) => (
-                <div className="d-flex align-items-center justify-content-between">
-                  <FormSubmit
-                    className="btn-primary w-100"
-                    canSubmit={canSubmit}
-                    loading={loading}
-                    label="Avanti"
+          <Slide>
+            <div className="p-3">
+              <div className="text-center">
+                <h3>
+                  <FormattedMessage {...messages[`${scope}_title`]} />
+                </h3>
+                <p>
+                  <FormattedMessage {...messages[`${scope}_description`]} />
+                </p>
+              </div>
+              <FacebookLoginButton
+                onCompleted={(auth) =>
+                  authSignIn(auth, 'facebook').then((response) => {
+                    if (response.currentUser) {
+                      //
+                      return null;
+                    }
+                    return history.push(`${routes.registrations}/email`);
+                  })
+                }
+                onError={onAuthSignInError}
+                label={
+                  <FormattedMessage
+                    {...messages[`${scope}_with_provider`]}
+                    values={{
+                      provider: (
+                        <span className="font-weight-bold">Facebook</span>
+                      ),
+                    }}
+                  />
+                }
+              />
+              <GoogleLoginButton
+                onCompleted={(auth) =>
+                  authSignIn(auth, 'google').then(onAuthSignIn)
+                }
+                onError={onAuthSignInError}
+                label={
+                  <FormattedMessage
+                    {...messages[`${scope}_with_provider`]}
+                    values={{
+                      provider: (
+                        <span className="font-weight-bold">Google</span>
+                      ),
+                    }}
+                  />
+                }
+              />
+              <h6 className="small text-muted text-uppercase my-4 text-center">
+                Oppure
+              </h6>
+              <Form
+                handleSubmit={this.handleSubmit}
+                footerRenderer={({ canSubmit, loading }) => (
+                  <div className="d-flex align-items-center justify-content-between">
+                    <FormSubmit
+                      className="btn-primary w-100"
+                      canSubmit={canSubmit}
+                      loading={loading}
+                      label="Avanti"
+                    />
+                  </div>
+                )}
+              >
+                <div className="form-group">
+                  <label
+                    htmlFor="user_email"
+                    className="d-flex align-items-center justify-content-between"
+                  >
+                    <span>Inserisci la tua email</span>
+                    {exist && (
+                      <span onClick={() => this.setState({ exist: false })}>
+                        Edit
+                      </span>
+                    )}
+                  </label>
+                  <FieldText
+                    type="email"
+                    layout="elementOnly"
+                    name="user[email]"
+                    autoComplete="email"
+                    autoCorrect="off"
+                    required
+                    disabled={exist}
                   />
                 </div>
-              )}
-            >
-              <div className="form-group">
-                <label
-                  htmlFor="user_email"
-                  className="d-flex align-items-center justify-content-between"
+                <AnimateHeight
+                  height={exist ? 'auto' : 0}
+                  onAnimationEnd={() => {
+                    this.slider.current.updateAutoHeight(300);
+                  }}
                 >
-                  <span>Inserisci la tua email</span>
                   {exist && (
-                    <span onClick={() => this.setState({ exist: false })}>
-                      Edit
-                    </span>
-                  )}
-                </label>
-                <FieldText
-                  type="email"
-                  layout="elementOnly"
-                  name="user[email]"
-                  autoComplete="email"
-                  autoCorrect="off"
-                  required
-                  disabled={exist}
-                />
-              </div>
-              <AnimateHeight
-                height={exist ? 'auto' : 0}
-                onAnimationEnd={() => {
-                  this.slider.current.updateAutoHeight(300);
-                }}
-              >
-                {exist && (
-                  <>
-                    <FieldPassword
-                      measurePasswordStrength={false}
-                      autoComplete="current-password"
-                      label="Inserisci la tua password"
-                      name="user[password]"
-                      type="password"
-                      id="new-password"
-                      validations="minLength:8"
-                      required
-                      help={
-                        <Link
-                          to={`${routes.passwords}?email=${encodeURIComponent(
-                            currentUser.email,
-                          )}`}
-                        >
-                          Non ricordi la password
-                        </Link>
-                      }
-                    />
-                    <div className="form-group">
-                      <Checkbox
-                        layout="elementOnly"
-                        name="user[remember_me]"
-                        label={
-                          <FormattedMessage
-                            {...messages.simple_sessions_remember_me_label}
-                          />
+                    <>
+                      <FieldPassword
+                        measurePasswordStrength={false}
+                        autoComplete="current-password"
+                        label="Inserisci la tua password"
+                        name="user[password]"
+                        type="password"
+                        id="new-password"
+                        validations="minLength:8"
+                        required
+                        help={
+                          <Link
+                            to={`${routes.passwords}?email=${encodeURIComponent(
+                              currentUser.email,
+                            )}`}
+                          >
+                            Non ricordi la password
+                          </Link>
                         }
                       />
-                    </div>
-                  </>
-                )}
-              </AnimateHeight>
-            </Form>
-          </div>
-          <div>
-            <DeviseForm {...(this.props as any)} scope="registrations" />
-          </div>
+                      <div className="form-group">
+                        <Checkbox
+                          layout="elementOnly"
+                          name="user[remember_me]"
+                          label={
+                            <FormattedMessage
+                              {...messages.simple_sessions_remember_me_label}
+                            />
+                          }
+                        />
+                      </div>
+                    </>
+                  )}
+                </AnimateHeight>
+              </Form>
+            </div>
+          </Slide>
+          <Slide>
+            <div className="p-3">
+              <DeviseForm {...(this.props as any)} scope="registrations" />
+            </div>
+          </Slide>
         </Slider>
       </div>
     );
