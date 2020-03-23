@@ -50,6 +50,6 @@ export const fetchMessages = (limit = 20, page, previuosMessage) => {
           };
         }),
       );
-    }, 3000);
+    }, 300);
   });
 };

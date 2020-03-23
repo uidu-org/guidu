@@ -15,8 +15,6 @@ export default function MessageGroup({
     return !!isSelf(messager);
   }, [mobileView, messager]);
 
-  console.log(reverse);
-
   if (kind === 'message.create') {
     return (
       <div className={classNames('position-relative py-3 px-3 px-xl-4', {})}>

@@ -1,10 +1,9 @@
 import Contact from '@uidu/contact';
-import { Shell } from '@uidu/widgets';
+import { Shell, ShellSlide } from '@uidu/widgets';
 import React, { useRef } from 'react';
 import Countdown from 'react-countdown';
 import { FormattedMessage } from 'react-intl';
 import Swiper from 'swiper';
-import { ShellSlide } from '../../../widgets/src/types';
 import Attendances from './steps/Attendances';
 import Confirmation from './steps/Confirmation';
 import Order from './steps/Order';

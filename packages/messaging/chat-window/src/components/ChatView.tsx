@@ -7,18 +7,6 @@ import React, {
 import { ChatViewProps } from '../types';
 import useInfiniteScroll from '../utils/useInfiniteScroll';
 
-let supportsPassive = false;
-try {
-  const opts = Object.defineProperty({}, 'passive', {
-    get() {
-      supportsPassive = true;
-    },
-  });
-  window.addEventListener('test', null, opts);
-} catch (e) {
-  /* pass */
-}
-
 function ChatView({
   flipped = false,
   scrollLoadThreshold = 0,
@@ -35,11 +23,20 @@ function ChatView({
   const loadingSpinner: React.RefObject<HTMLDivElement> = useRef(null);
 
   const fetchMore = () => {
+    freezeScroll();
     onInfiniteLoad().then(() => {
-      // @ts-ignore
+      unfreezeScroll();
       scrollable.current.scrollTop = scrollable.current.scrollHeight - lastY;
       setIsFetching(false);
     });
+  };
+
+  const freezeScroll = () => {
+    scrollable.current.ontouchmove = e => e.preventDefault(); // mobile
+  };
+
+  const unfreezeScroll = () => {
+    scrollable.current.ontouchmove = e => true;
   };
 
   const { isFetching, setIsFetching, lastY } = useInfiniteScroll(

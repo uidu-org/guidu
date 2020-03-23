@@ -21,7 +21,7 @@
     "inquirer": "^7.0.0",
     "jest-fixtures": "^0.6.0",
     "outdent": "^0.7.0",
-    "prettier": "^1.8.2",
+    "prettier": "^2.0.0",
     "semver": "^7.0.0"
   },
   "devDependencies": {

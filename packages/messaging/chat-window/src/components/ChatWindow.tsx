@@ -19,24 +19,6 @@ import { ChatWindowProps } from '../types';
 import { groupByDay, groupByMessager, sortByDay } from '../utils';
 import ReactChatView from './ChatView';
 
-// import Loader from 'components/Loader';
-
-const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
-
-function preventDefault(e) {
-  e = e || window.event;
-  if (e.preventDefault) e.preventDefault();
-  e.returnValue = false;
-}
-
-function preventDefaultForScrollKeys(e) {
-  if (keys[e.keyCode]) {
-    preventDefault(e);
-    return false;
-  }
-  return true;
-}
-
 function ChatWindow({
   betweenMinutes = 5,
   formActions = [],
@@ -74,35 +56,6 @@ function ChatWindow({
     e.preventDefault();
     setReplyTo(null);
   };
-
-  // freezeScroll = () => {
-  //   if (window.addEventListener) {
-  //     // older FF
-  //     this.scrollable.addEventListener('DOMMouseScroll', preventDefault, false);
-  //   }
-  //   this.scrollable.addEventListener('wheel', preventDefault, {
-  //     passive: false,
-  //   }); // Disable scrolling in Chrome
-  //   this.scrollable.onwheel = preventDefault; // modern standard
-  //   this.scrollable.ontouchmove = preventDefault; // mobile
-  //   this.scrollable.onkeydown = preventDefaultForScrollKeys;
-  // };
-
-  // unfreezeScroll = () => {
-  //   if (this.scrollable.removeEventListener) {
-  //     this.scrollable.removeEventListener(
-  //       'DOMMouseScroll',
-  //       preventDefault,
-  //       false,
-  //     );
-  //   }
-  //   (this.scrollable as any).removeEventListener('wheel', preventDefault, {
-  //     passive: false,
-  //   }); // Enable scrolling in Chrome
-  //   this.scrollable.onwheel = null;
-  //   this.scrollable.ontouchmove = null;
-  //   this.scrollable.onkeydown = null;
-  // };
 
   // if (!messages || messages.isFetching) {
   //   return (

@@ -33,7 +33,7 @@ export default function Basic() {
   const [messages, setMessages] = useState(null);
   const [page, setPage] = useState(1);
   useEffect(() => {
-    fetchMessages(30, page, []).then(setMessages);
+    fetchMessages(10, page, []).then(setMessages);
     return () => null;
   }, []);
 
@@ -43,7 +43,7 @@ export default function Basic() {
         <ChatWindow
           onInfiniteLoad={async () => {
             setPage(page + 1);
-            return fetchMessages(50, page + 1, messages).then(response =>
+            return fetchMessages(20, page + 1, messages).then(response =>
               setMessages([...messages, ...response]),
             );
           }}
