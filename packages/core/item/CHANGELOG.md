@@ -1,5 +1,17 @@
 # @uidu/item
 
+## 0.1.26
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/avatar@0.3.2
+  - @uidu/lozenge@0.1.22
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+
 ## 0.1.25
 
 ### Patch Changes

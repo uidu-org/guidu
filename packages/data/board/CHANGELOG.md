@@ -1,5 +1,16 @@
 # @uidu/board
 
+## 0.2.13
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/badge@0.1.19
+  - @uidu/theme@0.2.4
+  - @uidu/shell@0.2.16
+
 ## 0.2.12
 
 ### Patch Changes

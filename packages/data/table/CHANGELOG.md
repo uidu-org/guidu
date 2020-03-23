@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 0.1.101
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/item@0.1.26
+  - @uidu/tooltip@0.1.26
+  - @uidu/data-controls@0.3.12
+  - @uidu/data-fields@0.1.30
+  - @uidu/form@0.2.3
+  - @uidu/select@0.4.4
+  - @uidu/shell@0.2.16
+
 ## 0.1.100
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-color-picker",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A color picker React Component",
   "module": "index.js",
   "types": "index.d.ts",
@@ -9,12 +9,12 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "@uidu/docs": "^0.1.44",
-    "@uidu/form": "^0.2.2"
+    "@uidu/docs": "^0.1.45",
+    "@uidu/form": "^0.2.3"
   },
   "dependencies": {
-    "@uidu/field-base": "^0.2.1",
-    "@uidu/inline-dialog": "^0.1.17",
+    "@uidu/field-base": "^0.2.3",
+    "@uidu/inline-dialog": "^0.1.18",
     "react-color": "^2.17.3"
   }
 }

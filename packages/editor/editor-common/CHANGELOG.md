@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 0.1.16
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/analytics@0.1.21
+  - @uidu/theme@0.2.4
+  - @uidu/adf-schema@0.1.7
+  - @uidu/analytics-namespaced-context@0.1.7
+  - @uidu/emoji@0.1.12
+  - @uidu/mentions@0.1.16
+
 ## 0.1.15
 
 ### Patch Changes

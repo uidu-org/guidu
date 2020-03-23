@@ -1,5 +1,20 @@
 # @uidu/downshift
 
+## 0.3.3
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/droplist@0.1.24
+  - @uidu/item@0.1.26
+  - @uidu/field-base@0.2.3
+  - @uidu/field-text@0.2.7
+  - @uidu/form@0.2.3
+  - @uidu/shell@0.2.16
+
 ## 0.3.2
 
 ### Patch Changes

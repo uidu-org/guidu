@@ -1,5 +1,17 @@
 # @uidu/section-message
 
+## 0.1.22
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/button@0.1.58
+  - @uidu/code@0.1.23
+  - @uidu/theme@0.2.4
+  - @uidu/field-range@0.2.2
+
 ## 0.1.21
 
 ### Patch Changes

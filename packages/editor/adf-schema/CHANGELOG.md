@@ -1,5 +1,14 @@
 # @uidu/adf-schema
 
+## 0.1.7
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/editor-json-transformer@0.1.8
+  - @uidu/json-schema-generator@0.1.6
+
 ## 0.1.6
 
 ### Patch Changes

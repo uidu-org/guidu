@@ -1,5 +1,15 @@
 # @uidu/payment-sources
 
+## 0.1.13
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/payments@0.2.4
+  - @uidu/form@0.2.3
+
 ## 0.1.12
 
 ### Patch Changes

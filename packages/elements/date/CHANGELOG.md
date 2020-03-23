@@ -1,5 +1,15 @@
 # @atlaskit/date
 
+## 0.1.9
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/theme@0.2.4
+  - @uidu/elements-test-helpers@0.1.8
+
 ## 0.1.8
 
 ### Patch Changes

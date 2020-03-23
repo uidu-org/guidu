@@ -1,5 +1,20 @@
 # @uidu/drawer
 
+## 0.2.15
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/blanket@0.1.20
+  - @uidu/button@0.1.58
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/item@0.1.26
+  - @uidu/theme@0.2.4
+  - @uidu/shell@0.2.16
+
 ## 0.2.14
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.3.2
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/button@0.1.58
+  - @uidu/section-message@0.1.22
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/field-base@0.2.3
+
 ## 0.3.1
 
 ### Patch Changes

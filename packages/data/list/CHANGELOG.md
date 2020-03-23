@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 0.1.23
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/table@0.1.101
+
 ## 0.1.22
 
 ### Patch Changes

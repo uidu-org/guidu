@@ -1,5 +1,17 @@
 # @uidu/util-data-test
 
+## 0.1.8
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/emoji@0.1.12
+  - @uidu/mentions@0.1.16
+  - @uidu/task-decision@0.1.13
+
 ## 0.1.7
 
 ### Patch Changes

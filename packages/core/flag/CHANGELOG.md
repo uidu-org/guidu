@@ -1,5 +1,20 @@
 # @uidu/flag
 
+## 0.1.12
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/button@0.1.58
+  - @uidu/portal@0.1.18
+  - @uidu/spinner@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/form@0.2.3
+  - @uidu/radio@0.4.4
+
 ## 0.1.11
 
 ### Patch Changes

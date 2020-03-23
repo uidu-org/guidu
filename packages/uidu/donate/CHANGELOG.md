@@ -1,5 +1,24 @@
 # @uidu/donate
 
+## 0.2.2
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/modal-dialog@0.1.33
+  - @uidu/payments@0.2.4
+  - @uidu/checkbox@0.2.2
+  - @uidu/field-downshift@0.3.3
+  - @uidu/field-text@0.2.7
+  - @uidu/field-textarea@0.2.2
+  - @uidu/form@0.2.3
+  - @uidu/radio@0.4.4
+  - @uidu/select@0.4.4
+  - @uidu/contact@0.1.14
+  - @uidu/widgets@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

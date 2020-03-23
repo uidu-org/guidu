@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.1.8
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/analytics@0.1.21
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/field-image-uploader
 
+## 0.2.2
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/button@0.1.58
+  - @uidu/spinner@0.1.18
+  - @uidu/field-base@0.2.3
+  - @uidu/form@0.2.3
+
 ## 0.2.1
 
 ### Patch Changes

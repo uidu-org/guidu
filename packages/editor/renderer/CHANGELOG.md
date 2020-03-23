@@ -1,5 +1,33 @@
 # @atlaskit/renderer
 
+## 0.1.17
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/avatar@0.3.2
+  - @uidu/button@0.1.58
+  - @uidu/code@0.1.23
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/adf-schema@0.1.7
+  - @uidu/adf-utils@0.4.6
+  - @uidu/editor-common@0.1.16
+  - @uidu/editor-json-transformer@0.1.8
+  - @uidu/analytics-listeners@0.1.6
+  - @uidu/analytics-namespaced-context@0.1.7
+  - @uidu/mentions@0.1.16
+  - @uidu/status@0.1.13
+  - @uidu/task-decision@0.1.13
+  - @uidu/util-data-test@0.1.8
+  - @uidu/field-range@0.2.2
+  - @uidu/media-card@0.1.25
+  - @uidu/media-filmstrip@0.1.27
+  - @uidu/navigation@0.2.25
+
 ## 0.1.16
 
 ### Patch Changes

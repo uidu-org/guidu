@@ -1,5 +1,23 @@
 # @uidu/attend
 
+## 0.2.2
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/spinner@0.1.18
+  - @uidu/payments@0.2.4
+  - @uidu/field-counter@0.2.3
+  - @uidu/field-text@0.2.7
+  - @uidu/field-textarea@0.2.2
+  - @uidu/form@0.2.3
+  - @uidu/shell@0.2.16
+  - @uidu/stepper@0.1.22
+  - @uidu/contact@0.1.14
+  - @uidu/widgets@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.3
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+
 ## 0.2.2
 
 ### Patch Changes

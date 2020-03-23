@@ -1,5 +1,25 @@
 # @uidu/modal-dialog
 
+## 0.1.33
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/avatar@0.3.2
+  - @uidu/blanket@0.1.20
+  - @uidu/button@0.1.58
+  - @uidu/inline-dialog@0.1.18
+  - @uidu/portal@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/checkbox@0.2.2
+  - @uidu/field-text@0.2.7
+  - @uidu/form@0.2.3
+  - @uidu/radio@0.4.4
+  - @uidu/select@0.4.4
+
 ## 0.1.32
 
 ### Patch Changes

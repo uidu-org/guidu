@@ -1,5 +1,24 @@
 # @uidu/emoji
 
+## 0.1.12
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/analytics@0.1.21
+  - @uidu/button@0.1.58
+  - @uidu/code@0.1.23
+  - @uidu/layer@0.1.13
+  - @uidu/section-message@0.1.22
+  - @uidu/spinner@0.1.18
+  - @uidu/theme@0.2.4
+  - @uidu/tooltip@0.1.26
+  - @uidu/elements-test-helpers@0.1.8
+  - @uidu/util-data-test@0.1.8
+  - @uidu/field-text@0.2.7
+
 ## 0.1.11
 
 ### Patch Changes

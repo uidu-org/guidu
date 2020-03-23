@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 0.2.5
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/avatar@0.3.2
+  - @uidu/avatar-group@2.2.2
+  - @uidu/dropdown-menu@0.1.24
+  - @uidu/field-date-range@0.2.2
+  - @uidu/form@0.2.3
+
 ## 0.2.4
 
 ### Patch Changes

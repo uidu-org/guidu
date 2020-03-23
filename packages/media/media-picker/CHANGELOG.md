@@ -1,5 +1,16 @@
 # @uidu/media-picker
 
+## 0.1.16
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/button@0.1.58
+  - @uidu/modal-dialog@0.1.33
+  - @uidu/media-core@0.1.18
+
 ## 0.1.15
 
 ### Patch Changes

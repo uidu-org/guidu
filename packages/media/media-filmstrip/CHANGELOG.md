@@ -1,5 +1,17 @@
 # @uidu/media-filmstrip
 
+## 0.1.27
+
+### Patch Changes
+
+- 0f69b06: Fix yarnclean
+- Updated dependencies [0f69b06]
+  - @uidu/docs@0.1.45
+  - @uidu/theme@0.2.4
+  - @uidu/media-card@0.1.25
+  - @uidu/media-core@0.1.18
+  - @uidu/media-viewer@0.1.34
+
 ## 0.1.26
 
 ### Patch Changes

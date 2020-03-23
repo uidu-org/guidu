@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Select Component",
   "keywords": [
     "react",
@@ -14,22 +14,22 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.20",
-    "@uidu/checkbox": "^0.2.1",
-    "@uidu/field-base": "^0.2.1",
-    "@uidu/form": "^0.2.2",
-    "@uidu/spinner": "^0.1.17",
-    "@uidu/theme": "^0.2.3",
-    "@uidu/tooltip": "^0.1.25",
+    "@uidu/analytics": "^0.1.21",
+    "@uidu/checkbox": "^0.2.2",
+    "@uidu/field-base": "^0.2.3",
+    "@uidu/form": "^0.2.3",
+    "@uidu/spinner": "^0.1.18",
+    "@uidu/theme": "^0.2.4",
+    "@uidu/tooltip": "^0.1.26",
     "focus-trap": "^5.0.0",
     "react-fast-compare": "^3.0.1",
     "react-number-format": "^4.0.6",
     "react-select": "^3.0.3"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.57",
-    "@uidu/docs": "^0.1.44",
-    "@uidu/modal-dialog": "^0.1.32",
+    "@uidu/button": "^0.1.58",
+    "@uidu/docs": "^0.1.45",
+    "@uidu/modal-dialog": "^0.1.33",
     "faker": "^4.1.0",
     "react-dom": "^16.4.0"
   },
