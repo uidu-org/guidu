@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.1.35
+
+### Patch Changes
+
+- 7cdf1b6: Fix attend imports,
+- Updated dependencies [7cdf1b6]
+  - @uidu/message@0.1.35
+
 ## 0.1.34
 
 ### Patch Changes

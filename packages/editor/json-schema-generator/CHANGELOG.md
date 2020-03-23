@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.7
+
+### Patch Changes
+
+- 7cdf1b6: Fix attend imports,
+
 ## 0.1.6
 
 ### Patch Changes
