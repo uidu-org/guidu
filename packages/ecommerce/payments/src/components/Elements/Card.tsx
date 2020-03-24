@@ -2,7 +2,7 @@ import { CardElement } from '@stripe/react-stripe-js';
 import { FormSubmit } from '@uidu/form';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { createOptions } from '../../utils';
+import { createCardElementOptions } from '../../utils';
 
 export default function Card({
   handleSubmit,
@@ -28,8 +28,7 @@ export default function Card({
             <CardElement
               id="credit-card"
               onChange={onChange}
-              {...createOptions()}
-              {...providerProps}
+              options={createCardElementOptions({ ...providerProps })}
             />
           </div>
         </div>

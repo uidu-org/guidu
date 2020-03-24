@@ -1,6 +1,6 @@
 import { CardElement, Elements } from '@stripe/react-stripe-js';
 import { Form } from '@uidu/form';
-import { createOptions } from '@uidu/payments';
+import { createCardElementOptions } from '@uidu/payments';
 import classNames from 'classnames';
 import React, { PureComponent } from 'react';
 import { Element } from 'react-scroll';
@@ -14,7 +14,7 @@ class PaymentSources extends PureComponent<any, any> {
     };
   }
 
-  handleCharge = token => {
+  handleCharge = (token) => {
     const { onSave, updateCurrentUser } = this.props;
     // this.disableButton();
     // apiCall('post', '/dashboard/sources', { token }).then(response =>
@@ -42,7 +42,7 @@ class PaymentSources extends PureComponent<any, any> {
     // );
   };
 
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     const { stripe, currentUser } = this.props;
     this.setState({
       loading: true,
@@ -76,7 +76,7 @@ class PaymentSources extends PureComponent<any, any> {
               }
               return -1;
             })
-            .map(stripeSource => (
+            .map((stripeSource) => (
               <div className="card p-3 mb-3">
                 <div className="media align-items-center">
                   <img
@@ -121,7 +121,7 @@ class PaymentSources extends PureComponent<any, any> {
           >
             <Form
               handleSubmit={this.handleSubmit}
-              footerRenderer={props => <button>Invia</button>}
+              footerRenderer={(props) => <button>Invia</button>}
             >
               {(formError || paymentFormError) && (
                 <div className="alert alert-danger animated zoomIn mb-3">
@@ -134,7 +134,7 @@ class PaymentSources extends PureComponent<any, any> {
                 </label>
                 <CardElement
                   id="credit-card"
-                  {...createOptions({ hidePostalCode: true })}
+                  options={createCardElementOptions({ hidePostalCode: true })}
                 />
               </div>
             </Form>

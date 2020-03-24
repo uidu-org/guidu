@@ -2,7 +2,7 @@ import { IbanElement } from '@stripe/react-stripe-js';
 import { FormSubmit } from '@uidu/form';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { createOptions } from '../../utils';
+import { createIbanElementOptions } from '../../utils';
 
 export default function Bank({
   mandate = (
@@ -39,10 +39,10 @@ export default function Bank({
             </label>
             <IbanElement
               id="credit-card"
-              {...createOptions({
+              options={createIbanElementOptions({
                 supportedCountries: ['SEPA'],
+                ...providerProps,
               })}
-              {...providerProps}
             />
           </div>
         </div>

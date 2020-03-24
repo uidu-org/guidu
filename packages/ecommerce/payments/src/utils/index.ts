@@ -1,32 +1,37 @@
-import axios from 'axios';
+import {
+  StripeCardElementOptions,
+  StripeIbanElementOptions,
+} from '@stripe/stripe-js';
 
-export const createOptions = (overrides = {}) => ({
-  options: {
-    classes: {
-      base: 'form-control',
-    },
-    style: {
-      base: {
-        fontSize: '16px',
-        color: '#495057',
-        fontFamily: 'Muli',
-        '::placeholder': {
-          color: '#868e96',
-        },
-      },
-      invalid: {
-        color: '#9e2146',
-      },
-    },
-    ...overrides,
+const defaultOptions = {
+  classes: {
+    base: 'form-control',
   },
+  style: {
+    base: {
+      fontSize: '16px',
+      color: '#495057',
+      fontFamily: 'Muli',
+      '::placeholder': {
+        color: '#868e96',
+      },
+    },
+    invalid: {
+      color: '#9e2146',
+    },
+  },
+};
+
+export const createCardElementOptions = (
+  overrides = {},
+): StripeCardElementOptions => ({
+  ...defaultOptions,
+  ...overrides,
 });
 
-export const createPaymentIntent = (stripeCustomerId, amount: number) => {
-  return axios
-    .post('https://uidu.local:8443/payment-intents', {
-      amount,
-      stripeCustomerId,
-    })
-    .then(res => res.data);
-};
+export const createIbanElementOptions = (
+  overrides = {},
+): StripeIbanElementOptions => ({
+  ...defaultOptions,
+  ...overrides,
+});
