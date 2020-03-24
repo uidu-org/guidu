@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.2.6
+
+### Patch Changes
+
+- b6ff9dc: Add extra padding for slides shadows
+
 ## 0.2.5
 
 ### Patch Changes
