@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.2.5
+
+### Patch Changes
+
+- 770e4de: Better payment options
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.1.14
+
+### Patch Changes
+
+- 770e4de: Better payment options
+- Updated dependencies [770e4de]
+  - @uidu/payments@0.2.5
+
 ## 0.1.13
 
 ### Patch Changes
