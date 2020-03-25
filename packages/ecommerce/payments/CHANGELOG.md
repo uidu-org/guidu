@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.2.6
+
+### Patch Changes
+
+- 8aaed38: FIX payments loading
+
 ## 0.2.5
 
 ### Patch Changes
