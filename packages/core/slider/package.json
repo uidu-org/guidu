@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "swiper": "^5.2.0"
+    "swiper": "^5.2.0",
+    "uuid": "^7.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45"

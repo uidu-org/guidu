@@ -10,19 +10,20 @@ import React, {
 } from 'react';
 import Swiper, { SwiperOptions } from 'swiper';
 import 'swiper/css/swiper.min.css';
+import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
 
-const defaultSwiperOptions: Partial<SwiperOptions> = {
+const defaultSwiperOptions = (id: string): Partial<SwiperOptions> => ({
   direction: 'horizontal',
   initialSlide: 0,
   slidesPerView: 1,
   keyboard: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: `#${id}-button-next`,
+    prevEl: `#${id}-button-prev`,
   },
   pagination: {
-    el: '.swiper-pagination',
+    el: `#${id}-pagination`,
     type: 'bullets',
     dynamicBullets: true,
     clickable: true,
@@ -31,7 +32,7 @@ const defaultSwiperOptions: Partial<SwiperOptions> = {
   watchSlidesProgress: true,
   watchSlidesVisibility: true,
   centeredSlides: false,
-};
+});
 
 function Slider({
   options,
@@ -42,19 +43,19 @@ function Slider({
   children,
   forwardedRef,
 }: SliderProps) {
+  const slider = useRef(null);
+  const id = useRef(uuid());
+
   const defaultOptions = {
-    ...defaultSwiperOptions,
+    ...defaultSwiperOptions(id.current),
     ...options,
   };
-  const slider = useRef(null);
 
-  const setSlider = useCallback(node => {
-    console.log('created new slider');
+  const setSlider = useCallback((node) => {
     slider.current = new Swiper(node, defaultOptions);
   }, []);
 
   useEffect(() => {
-    console.log('updates slider');
     slider.current?.update();
     return () => null;
   }, [children]);
@@ -74,12 +75,24 @@ function Slider({
   }, [children]);
 
   return (
-    <div className={classNames('swiper-container', className)} ref={setSlider}>
+    <div
+      className={classNames('swiper-container', className)}
+      ref={setSlider}
+      id={id.current}
+    >
       <div className="swiper-wrapper">{renderChildren()}</div>
-      {pagination && <div className="swiper-pagination" />}
-      {navigation && <div className="swiper-button-prev" />}
-      {navigation && <div className="swiper-button-next" />}
-      {scrollbar && <div className="swiper-scrollbar" />}
+      {pagination && (
+        <div id={`${id.current}-pagination`} className="swiper-pagination" />
+      )}
+      {navigation && (
+        <div id={`${id.current}-button-prev`} className="swiper-button-prev" />
+      )}
+      {navigation && (
+        <div id={`${id.current}-button-next`} className="swiper-button-next" />
+      )}
+      {scrollbar && (
+        <div id={`${id.current}-scrollbar`} className="swiper-scrollbar" />
+      )}
     </div>
   );
 }
