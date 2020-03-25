@@ -27,7 +27,7 @@ function Payments({
   const [cardComplete, setCardComplete] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleCardPayment = async formData => {
+  const handleCardPayment = async (formData) => {
     const cardElement = elements.getElement(CardElement);
 
     if (error) {
@@ -46,10 +46,9 @@ function Payments({
       setup_future_usage: 'off_session',
     });
 
-    setLoading(false);
-
     if (payload.error) {
       // Show error to your customer
+      setLoading(false);
       setError(payload.error);
     } else {
       if (payload.paymentIntent.status === 'succeeded') {
@@ -59,11 +58,12 @@ function Payments({
         // to save the card to a Customer
         // The PaymentMethod ID can be found on result.paymentIntent.payment_method
         onSuccess(payload);
+        setLoading(false);
       }
     }
   };
 
-  const handleBankPayment = async formData => {
+  const handleBankPayment = async (formData) => {
     const iban = elements.getElement(IbanElement);
 
     setLoading(true);
@@ -78,10 +78,9 @@ function Payments({
       },
     });
 
-    setLoading(false);
-
     if (payload.error) {
       // Show error to your customer.
+      setLoading(false);
       setError(payload.error);
     } else {
       // Show a confirmation message to your customer.
@@ -89,10 +88,11 @@ function Payments({
       // SEPA Direct Debit payments are asynchronous,
       // so funds are not immediately available.
       onSuccess(payload);
+      setLoading(false);
     }
   };
 
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
@@ -107,7 +107,7 @@ function Payments({
     }
   };
 
-  const onChange = e => {
+  const onChange = (e) => {
     setError(e.error);
     setCardComplete(e.complete);
   };
