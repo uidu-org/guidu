@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.1.20
+
+### Patch Changes
+
+- 770e4de: Better payment options
+- Updated dependencies [770e4de]
+  - @uidu/payments@0.2.5
+
 ## 0.1.19
 
 ### Patch Changes
