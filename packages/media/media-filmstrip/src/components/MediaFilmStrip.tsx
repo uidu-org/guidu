@@ -25,7 +25,7 @@ export default class MediaFilmStrip extends Component<
             <div
               key={image.id}
               style={{
-                width: `calc(35vw - 16px)`,
+                width: `calc(35% - 16px)`,
                 display: 'inline-flex',
                 marginRight: 8,
               }}
