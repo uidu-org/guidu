@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.1.4
+
+### Patch Changes
+
+- 67c8942: Allow multiple sliders per page, solved pagination conflicts
+
 ## 1.1.3
 
 ### Patch Changes
