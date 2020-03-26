@@ -1,5 +1,11 @@
 # @uidu/media-filmstrip
 
+## 0.1.28
+
+### Patch Changes
+
+- a7fb1e4: FIX attachments width
+
 ## 0.1.27
 
 ### Patch Changes
