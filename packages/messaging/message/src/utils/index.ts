@@ -1,3 +1,5 @@
+import { FileIdentifier } from '@uidu/media-core/types';
+
 const emojiRegex = require('emoji-regex');
 
 export const isOnlyEmojis = (message: string) => {
@@ -7,4 +9,8 @@ export const isOnlyEmojis = (message: string) => {
   const noSpace = noEmojis.replace(/[\s\n]/gm, '');
 
   return !noSpace;
+};
+
+export const isOnlyImages = (attachments: FileIdentifier[]) => {
+  return attachments.every((attachment) => attachment.kind === 'image');
 };

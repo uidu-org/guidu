@@ -81,6 +81,18 @@ export default function Message({
                   {moment(message.createdAt).format('HH:mm')}
                 </small>
                 <div className="mb-0">
+                  {message.replyTo && (
+                    <p
+                      className="small text-muted"
+                      style={{
+                        padding: '0rem .75rem',
+                        borderLeft: '2px solid #adb5bd57',
+                        margin: '0.5rem 0',
+                      }}
+                    >
+                      {message.replyTo.body}
+                    </p>
+                  )}
                   <MessageRenderer tagName="fragment" content={message.body} />
                 </div>
               </>
@@ -97,7 +109,7 @@ export default function Message({
         </StyledMessage>
         {(message.attachments || []).length > 0 && showAttachments && (
           <MessagesAttachments
-            attachments={message.attachments.map(attachment => ({
+            attachments={message.attachments.map((attachment) => ({
               ...attachment,
               author: message.messager,
             }))}

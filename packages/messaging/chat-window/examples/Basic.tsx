@@ -18,7 +18,7 @@ function fetchUsers(query: string, callback: () => void): any {
       .then((response: Response) => response.json())
       // Transform the users to what react-mentions expects
       .then((json: GitHubJSONResponse) =>
-        json.items.map(user => ({ display: user.login, id: user.login })),
+        json.items.map((user) => ({ display: user.login, id: user.login })),
       )
       .then(callback)
       .catch(() => [])
@@ -43,12 +43,12 @@ export default function Basic() {
         <ChatWindow
           onInfiniteLoad={async () => {
             setPage(page + 1);
-            return fetchMessages(20, page + 1, messages).then(response =>
+            return fetchMessages(20, page + 1, messages).then((response) =>
               setMessages([...messages, ...response]),
             );
           }}
           ref={chatWindow}
-          createMessage={model => {
+          createMessage={(model) => {
             const message = {
               kind: 'message.create',
               id: 144279,
@@ -60,8 +60,22 @@ export default function Basic() {
               isLoading: false,
               attachments: [],
               mentions: [],
-              body: model.message.body,
+              body: model.body,
               unread: false,
+              ...(model.replyToId
+                ? {
+                    replyTo: {
+                      id: 'foo',
+                      body: 'testo di prova',
+                      messager: {
+                        email: 'simobg@gmail.com',
+                        name: 'Lucia Oggioni',
+                        firstName: 'Lucia',
+                        lastName: 'Oggioni',
+                      },
+                    },
+                  }
+                : {}),
               messager: {
                 email: 'simobg@gmail.com',
                 name: 'Andrea Vanini',
@@ -104,7 +118,7 @@ export default function Basic() {
                 chatWindow.current.clientHeight;
             }, 20);
           }}
-          isSelf={messager => messager.id === '1306'}
+          isSelf={(messager) => messager.id === '1306'}
           betweenMinutes={20}
           mentionables={[
             {
@@ -129,7 +143,7 @@ export default function Basic() {
               props: {
                 href: '#',
               },
-              onClick: e => {
+              onClick: (e) => {
                 e.preventDefault();
                 clipboard.copy(message.body);
               },

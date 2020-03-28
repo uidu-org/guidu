@@ -52,8 +52,7 @@ function ChatWindow({
     }, 100);
   };
 
-  const replyDismiss = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const replyDismiss = () => {
     setReplyTo(null);
   };
 
@@ -71,7 +70,7 @@ function ChatWindow({
 
   return (
     <Media query={{ maxWidth: 768 }}>
-      {matches => (
+      {(matches) => (
         <div
           className="feed d-flex flex-column justify-content-end"
           style={{
@@ -91,7 +90,7 @@ function ChatWindow({
             shouldTriggerLoad={() => hasMore}
             flipped
           >
-            {Object.keys(groupedByDay).map(day => {
+            {Object.keys(groupedByDay).map((day) => {
               const todayMessages = groupedByDay[day];
               return (
                 <>
@@ -119,7 +118,7 @@ function ChatWindow({
                             messages: any;
                             reverse: boolean;
                           }) =>
-                            messages.reverse().map(message => (
+                            messages.reverse().map((message) => (
                               <Message
                                 reverse={reverse}
                                 key={message.id}
@@ -172,9 +171,9 @@ function ChatWindow({
           </ReactChatView>
           <MessagesForm
             {...rest}
+            ref={messageForm}
             actions={formActions}
             attachments={formAttachments}
-            ref={messageForm}
             mentionables={mentionables}
             message={{
               replyTo,

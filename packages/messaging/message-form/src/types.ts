@@ -29,13 +29,15 @@ export type MessageFormProps = {
   createMessage?: (model: any) => any;
   /** The base styling to apply to the button. */
   updateMessage?: (message: Message, model: any) => any;
-  onReplyDismiss?: (event: React.MouseEvent) => void;
+  onReplyDismiss?: () => void;
   /** The base styling to apply to the button. */
   onDismiss: () => void;
   /** The base styling to apply to the button. */
   onSubmit: () => void;
   /** The base styling to apply to the button. */
-  attachments: Array<any>;
+  attachments?: Array<any>;
+  /** ref to component */
+  forwardedRef?: React.Ref<any>;
 };
 
 export type MessageFormState = {

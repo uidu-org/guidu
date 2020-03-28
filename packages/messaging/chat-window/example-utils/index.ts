@@ -2,6 +2,17 @@ import { Message } from '@uidu/message';
 import faker from 'faker';
 import moment from 'moment';
 
+const fakeAttachments = () => {
+  return Array.from(Array(faker.random.number({ min: 1, max: 4 })).keys()).map(
+    (i) => ({
+      id: faker.random.uuid(),
+      src: faker.random.image(),
+      kind: faker.random.arrayElement(['file', 'image']),
+      filename: faker.random.words(),
+    }),
+  );
+};
+
 export const message: () => Message = () => ({
   klass: 'Message',
   scope: 'messages',
@@ -18,30 +29,17 @@ export const message: () => Message = () => ({
   },
   ...(faker.random.boolean()
     ? {
-        attachments: [
-          {
-            id: faker.random.uuid(),
-            src: faker.random.image(),
-            type: 'image',
-            filename: faker.random.words(),
-          },
-          {
-            id: faker.random.uuid(),
-            src: faker.random.image(),
-            type: 'image',
-            filename: faker.random.words(),
-          },
-        ],
+        attachments: fakeAttachments(),
       }
     : {}),
 });
 
-export const fetchMessages = (limit = 20, page, previuosMessage) => {
+export const fetchMessages = (limit = 40, page, previuosMessage) => {
   return new Promise((resolve, reject) => {
     let wait = setTimeout(() => {
       clearTimeout(wait);
       resolve(
-        Array.from(Array(limit).keys()).map(index => {
+        Array.from(Array(limit).keys()).map((index) => {
           return {
             ...message(),
             createdAt: moment()

@@ -197,7 +197,7 @@
     "emotion": "^10.0.9",
     "emotion-theming": "^10.0.9",
     "eslint-loader": "^3.0.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "eventemitter2": "^6.0.0",
     "exenv": "^1.2.2",
     "extract-react-types-loader": "^0.3.1",
