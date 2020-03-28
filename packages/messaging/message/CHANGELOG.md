@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.1.36
+
+### Patch Changes
+
+- 30fa67d: MessagesForm with function components and replyTo
+- Updated dependencies [30fa67d]
+  - @uidu/message-form@0.1.26
+
 ## 0.1.35
 
 ### Patch Changes
