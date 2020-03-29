@@ -1,8 +1,10 @@
 import MessageForm from '@uidu/message-form';
 import MessageRenderer from '@uidu/message-renderer';
+import Tooltip from '@uidu/tooltip';
 import classNames from 'classnames';
 import moment from 'moment';
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
 import { Message as MessageProps } from '../types';
 import { isOnlyEmojis } from '../utils';
@@ -10,12 +12,38 @@ import MessagesAttachments from './MessageAttachments';
 import MessageReactions from './MessageReactions';
 import MobileViewMessage from './MobileView/Message';
 
+const MESSAGE_WRAPPER_MAX_WIDTH = 66;
+const MESSAGE_BODY_MAX_WIDTH = 55;
+
+const MessageWrapper = styled.div`
+  /* width: 100%; */
+  max-width: ${MESSAGE_WRAPPER_MAX_WIDTH}%;
+  min-width: 0;
+`;
+
+const MessageBodyWrapper = styled.div<{ reverse: boolean }>`
+  background: ${({ reverse }) => (reverse ? '#dbeafd' : '#f1f2f3')};
+  border-radius: 0.35rem;
+  padding: 0.5rem 0.75rem;
+  width: fit-content;
+  /* max-width: ${
+    (MESSAGE_BODY_MAX_WIDTH / MESSAGE_WRAPPER_MAX_WIDTH) * 100
+  }%; */
+`;
+
+const MessageReplyToWrapper = styled.p`
+  padding: 0rem 0.75rem;
+  border-left: 2px solid #adb5bd57;
+  margin: 0.5rem 0;
+`;
+
 export default function Message({
   showAttachments = true,
   message,
   children,
   mobileView,
   reverse,
+  itemableProvider: Itemable,
   ...rest
 }: MessageProps) {
   const [editing, setEditing] = useState(false);
@@ -47,57 +75,53 @@ export default function Message({
     return (
       <>
         <StyledMessage
-          className="message mt-1 hoverable position-relative"
+          className="message mt-1 position-relative"
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(isDropdownOpen)}
         >
-          <div
-            style={{
-              background: reverse ? '#dbeafd' : '#f1f2f3',
-              borderRadius: '0.35rem',
-              padding: '0.5rem 0.75rem',
-              width: 'auto',
-              maxWidth: '55%',
-            }}
+          <Tooltip
+            tag={MessageWrapper}
+            content={moment(message.createdAt).format('LL HH:mm')}
+            position="left"
+            delay={0}
           >
-            {editing ? (
-              <MessageForm
-                {...rest}
-                message={message}
-                onDismiss={() => setEditing(false)}
-                onSubmit={() => setEditing(false)}
-              />
-            ) : (
-              <>
-                <small
-                  className="text-muted ml-2 d-hover position-absolute"
-                  style={{
-                    // backgroundColor: '#f8f9fa',
-                    right: '6px',
-                    bottom: '2px',
-                    padding: '0 0 0 1rem',
-                  }}
-                >
-                  {moment(message.createdAt).format('HH:mm')}
-                </small>
-                <div className="mb-0">
-                  {message.replyTo && (
-                    <p
-                      className="small text-muted"
-                      style={{
-                        padding: '0rem .75rem',
-                        borderLeft: '2px solid #adb5bd57',
-                        margin: '0.5rem 0',
-                      }}
-                    >
-                      {message.replyTo.body}
-                    </p>
-                  )}
-                  <MessageRenderer tagName="fragment" content={message.body} />
-                </div>
-              </>
-            )}
-          </div>
+            <>
+              {editing ? (
+                <MessageForm
+                  {...rest}
+                  message={message}
+                  onDismiss={() => setEditing(false)}
+                  onSubmit={() => setEditing(false)}
+                />
+              ) : (
+                <MessageBodyWrapper reverse={reverse}>
+                  <div className="mb-0">
+                    {message.replyTo && (
+                      <MessageReplyToWrapper className="small text-muted">
+                        {message.replyTo.body}
+                      </MessageReplyToWrapper>
+                    )}
+                    <MessageRenderer
+                      tagName="fragment"
+                      content={message.body}
+                    />
+                  </div>
+                </MessageBodyWrapper>
+              )}
+              {message.itemable && <Itemable itemable={Itemable} />}
+              {(message.attachments || []).length > 0 && showAttachments && (
+                <MessagesAttachments
+                  attachments={message.attachments.map((attachment) => ({
+                    ...attachment,
+                    author: message.messager,
+                  }))}
+                />
+              )}
+              {message.reactions && (
+                <MessageReactions reactions={message.reactions} />
+              )}
+            </>
+          </Tooltip>
           {!editing &&
             children &&
             children({
@@ -107,17 +131,6 @@ export default function Message({
               setEditing: setEditing,
             })}
         </StyledMessage>
-        {(message.attachments || []).length > 0 && showAttachments && (
-          <MessagesAttachments
-            attachments={message.attachments.map((attachment) => ({
-              ...attachment,
-              author: message.messager,
-            }))}
-          />
-        )}
-        {message.reactions && (
-          <MessageReactions reactions={message.reactions} />
-        )}
       </>
     );
   }

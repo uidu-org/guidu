@@ -1,1 +1,1 @@
-export { default } from './components/MediaFilmStrip';
+export { default } from './components/MediaFilmstrip';

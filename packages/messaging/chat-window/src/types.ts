@@ -3,6 +3,8 @@ import { MessageFormProps } from '@uidu/message-form';
 import * as React from 'react';
 
 export type ChatWindowProps = {
+  /** Itemable provider is a component that manages message itemables */
+  itemableProvider?: React.FC<any>;
   /** The base styling to apply to the button */
   hasMore: boolean;
   /** The base styling to apply to the button */

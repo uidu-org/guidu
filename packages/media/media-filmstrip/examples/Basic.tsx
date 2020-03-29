@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { fetchAttachments } from '../../media-card/example-helpers';
-import MediaFilmStrip from '../src';
+import MediaFilmstrip from '../src';
 
 export default class ViewStory extends PureComponent<any, any> {
   state = {
@@ -8,11 +8,11 @@ export default class ViewStory extends PureComponent<any, any> {
   };
 
   componentDidMount() {
-    fetchAttachments().then(files => this.setState({ files }));
+    fetchAttachments().then((files) => this.setState({ files }));
   }
 
   render() {
     const { files } = this.state;
-    return <MediaFilmStrip files={files} />;
+    return <MediaFilmstrip files={files} />;
   }
 }

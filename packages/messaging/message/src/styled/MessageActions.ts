@@ -5,6 +5,6 @@ export default styled.div<{ hovered: boolean }>`
   /* top: -25px; */
   /* position: absolute; */
   margin-left: 0.75rem;
-  ${props => (props.hovered ? 'visibility: visible' : 'visibility: hidden')}
-  ${props => (props.hovered ? 'opacity: 1' : 'opacity: 0')}
+  ${(props) => (props.hovered ? 'visibility: visible' : 'visibility: hidden')};
+  ${(props) => (props.hovered ? 'opacity: 1' : 'opacity: 0')};
 `;

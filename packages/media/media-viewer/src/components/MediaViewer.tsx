@@ -1,73 +1,55 @@
 import { ShellMain } from '@uidu/shell';
-import React, { PureComponent } from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-images';
-import { MediaViewerProps, MediaViewerState } from '../types';
+import { MediaViewerProps } from '../types';
+import Header from './Header';
 import { NavigationNext, NavigationPrev } from './Navigation';
-import Sidebar from './Sidebar';
 import View from './View';
 
-export default class MediaViewer extends PureComponent<
-  MediaViewerProps,
-  MediaViewerState
-> {
-  static defaultProps = {
-    currentIndex: 0,
-  };
+export default function MediaViewer({
+  currentIndex = 0,
+  files,
+  onClose,
+}: MediaViewerProps) {
+  const [currentView, setCurrentView] = useState(files[currentIndex]);
+  const onViewChange = (index: number) => setCurrentView(files[index]);
 
-  constructor(props) {
-    super(props);
-    const { files, currentIndex } = this.props;
-    this.state = {
-      currentView: files[currentIndex],
-    };
-  }
-
-  onViewChange = (index: number) => {
-    const { files } = this.props;
-    this.setState({ currentView: files[index] });
-  };
-
-  render() {
-    const { files, currentIndex } = this.props;
-    const { currentView } = this.state;
-
-    return (
-      <ShellMain className="flex-row">
-        <Carousel
-          trackProps={{
-            onViewChange: this.onViewChange,
-          }}
-          currentIndex={currentIndex}
-          components={{
-            Footer: null,
-            NavigationPrev,
-            NavigationNext,
-            View,
-          }}
-          isFullscreen
-          frameProps={{ autoSize: 'height' }}
-          views={files}
-          styles={{
-            container: (base: any) => ({
-              ...base,
-              height: '100vh',
-              flex: 1,
-            }),
-            view: (base: any) => ({
-              ...base,
-              backgroundColor: 'black',
-              alignItems: 'center',
-              display: 'flex ',
-              height: '100vh',
-              justifyContent: 'center',
-              '& > img': {
-                maxHeight: '100vh',
-              },
-            }),
-          }}
-        />
-        <Sidebar {...this.props} currentView={currentView} />
-      </ShellMain>
-    );
-  }
+  return (
+    <ShellMain>
+      <Header currentView={currentView} onClose={onClose} />
+      <Carousel
+        trackProps={{
+          onViewChange,
+        }}
+        currentIndex={currentIndex}
+        components={{
+          Footer: null,
+          NavigationPrev,
+          NavigationNext,
+          View,
+        }}
+        isFullscreen
+        frameProps={{ autoSize: 'height' }}
+        views={files}
+        styles={{
+          container: (base: any) => ({
+            ...base,
+            height: '100%',
+            flex: 1,
+          }),
+          view: (base: any) => ({
+            ...base,
+            backgroundColor: 'black',
+            alignItems: 'center',
+            display: 'flex',
+            height: '100vh',
+            justifyContent: 'center',
+            '& > img': {
+              maxHeight: '100%',
+            },
+          }),
+        }}
+      />
+    </ShellMain>
+  );
 }

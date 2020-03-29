@@ -8,13 +8,13 @@ export default md`
 
   ${code`
   import React from 'react';
-  import MediaFilmStrip from '@uidu/media-filmstrip';
+  import MediaFilmstrip from '@uidu/media-filmstrip';
 
   class FilmstripViewExample extends React.Component {
     render() {
       return (
-        <MediaFilmStrip files={[]}>
-        </MediaFilmStrip>
+        <MediaFilmstrip files={[]}>
+        </MediaFilmstrip>
       );
     }
   }
@@ -30,7 +30,7 @@ ${(
 
 ${(
   <Props
-    props={require('!!extract-react-types-loader!../src/components/MediaFilmStrip')}
+    props={require('!!extract-react-types-loader!../src/components/MediaFilmstrip')}
   />
 )}
 `;

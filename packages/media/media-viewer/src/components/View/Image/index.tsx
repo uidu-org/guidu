@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 export default class Image extends PureComponent<any> {
   render() {
     const { getStyles, innerProps, data } = this.props;
-    console.log('foo');
+
     return (
       <div
         style={getStyles('view', this.props)}
@@ -16,7 +16,7 @@ export default class Image extends PureComponent<any> {
           src={data.src}
           style={{
             height: 'auto',
-            maxHeight: '100vh',
+            maxHeight: '100&',
             maxWidth: '100%',
             userSelect: 'none',
           }}

@@ -2,7 +2,7 @@ import loadable from '@loadable/component';
 import FieldMentions, { defaultStyle } from '@uidu/field-mentions';
 import FieldText from '@uidu/field-text';
 import { Form, FormFooter, FormMeta, FormSubmit } from '@uidu/form';
-import MediaFilmStrip from '@uidu/media-filmstrip';
+import MediaFilmstrip from '@uidu/media-filmstrip';
 import Spinner from '@uidu/spinner';
 import classNames from 'classnames';
 import Formsy from 'formsy-react';
@@ -123,7 +123,7 @@ function MessagesForm({
           'border-top p-3': !message.body,
         })}
       >
-        {attachments.length > 0 && <MediaFilmStrip files={attachments} />}
+        {attachments.length > 0 && <MediaFilmstrip files={attachments} />}
         <div
           id="suggestionPortal"
           style={{

@@ -30,6 +30,7 @@ function ChatWindow({
   mentionables,
   isSelf,
   forwardedRef,
+  itemableProvider,
   ...rest
 }: ChatWindowProps) {
   const scrollable: React.RefObject<HTMLDivElement> = useRef(null);
@@ -131,6 +132,7 @@ function ChatWindow({
                                 //    this.unfreezeScroll
                                 //  }
                                 onReply={() => reply(message)}
+                                itemableProvider={itemableProvider}
                               >
                                 {({
                                   editing,

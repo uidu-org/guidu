@@ -9,7 +9,7 @@ export const Wrapper = styled.div<{ width: number }>`
   max-width: ${({ width }) => width};
   position: relative;
   text-align: center;
-  height: 100vh;
+  height: 100%;
   display: flex;
 `;
 

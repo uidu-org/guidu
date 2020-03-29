@@ -1,3 +1,4 @@
+import { ChatWindowProps } from '@uidu/chat-window';
 import { FileIdentifier } from '@uidu/media-core';
 import { MentionProps } from 'react-mentions';
 
@@ -24,6 +25,7 @@ export type Message = {
   messager?: Messager;
   createdAt?: Date;
   attachments?: Array<FileIdentifier>;
+  itemable?: any;
   mentionables?: Array<MentionProps>;
   children?: (props: any) => void;
   showAttachments?: boolean;
@@ -34,7 +36,7 @@ export type Message = {
   onReply?: () => void;
   onMessageDrag?: () => void;
   onMessageDragEnd?: () => void;
-};
+} & Pick<ChatWindowProps, 'itemableProvider'>;
 
 export type MessageGroupProps = {
   kind: string;
