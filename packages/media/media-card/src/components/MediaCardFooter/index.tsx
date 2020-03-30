@@ -1,5 +1,5 @@
+import { Icon } from '@fluentui/react/lib/Icon';
 import { getFileTypeIconProps } from '@uifabric/file-type-icons';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import React, { PureComponent } from 'react';
 import StyledMediaCardFooter from './styled';
 

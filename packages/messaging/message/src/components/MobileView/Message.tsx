@@ -53,7 +53,7 @@ const SwipeableMessage = ({
     <animated.div
       {...(!viewActions && bind())}
       style={{
-        transform: xy.interpolate(x => `translateX(${x}px)`),
+        transform: xy.interpolate((x) => `translateX(${x}px)`),
       }}
     >
       {children}
@@ -82,14 +82,14 @@ export default class MobileViewMessage extends Component<
   };
 
   toggleDetails = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       viewDetails: !prevState.viewDetails,
     }));
   };
 
   toggleActions = () => {
     this.setState(
-      prevState => ({
+      (prevState) => ({
         viewActions: !prevState.viewActions,
       }),
       () => Vibration.vibrate([0, 1000, 2000, 3000]),
@@ -124,7 +124,13 @@ export default class MobileViewMessage extends Component<
   };
 
   render() {
-    const { message, children, showAttachments, reverse } = this.props;
+    const {
+      message,
+      children,
+      showAttachments,
+      reverse,
+      scrollable,
+    } = this.props;
     const { viewDetails, viewActions, viewReply } = this.state;
 
     return (
@@ -171,6 +177,7 @@ export default class MobileViewMessage extends Component<
         </div>
         {(message.attachments || []).length > 0 && showAttachments && (
           <MessagesAttachments
+            scrollable={scrollable}
             attachments={message.attachments}
             className={reverse ? 'text-right' : undefined}
           />

@@ -1,7 +1,7 @@
+import { Icon } from '@fluentui/react/lib/Icon';
 import Button, { ButtonGroup } from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
 import { getFileTypeIconProps } from '@uifabric/file-type-icons';
-import { Icon } from 'office-ui-fabric-react/lib/Icon';
 import React, { PureComponent } from 'react';
 import { Download, ExternalLink, Play, Trash } from 'react-feather';
 import StyledMediaCardViewer, { Overlay, OverlayFilename } from './styled';

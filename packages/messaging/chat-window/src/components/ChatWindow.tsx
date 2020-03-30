@@ -127,6 +127,7 @@ function ChatWindow({
                                 messager={messager}
                                 mentionables={mentionables}
                                 mobileView={matches}
+                                scrollable={scrollable}
                                 //  onMessageDrag={this.freezeScroll}
                                 //  onMessageDragEnd={
                                 //    this.unfreezeScroll

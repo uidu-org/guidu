@@ -1,4 +1,4 @@
-import MessageForm from '@uidu/message-form';
+import loadable from '@loadable/component';
 import MessageRenderer from '@uidu/message-renderer';
 import Tooltip from '@uidu/tooltip';
 import classNames from 'classnames';
@@ -8,9 +8,11 @@ import styled from 'styled-components';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
 import { Message as MessageProps } from '../types';
 import { isOnlyEmojis } from '../utils';
-import MessagesAttachments from './MessageAttachments';
-import MessageReactions from './MessageReactions';
-import MobileViewMessage from './MobileView/Message';
+
+const MessageForm = loadable(() => import('@uidu/message-form'));
+const MessagesAttachments = loadable(() => import('./MessageAttachments'));
+const MessageReactions = loadable(() => import('./MessageReactions'));
+const MobileViewMessage = loadable(() => import('./MobileView/Message'));
 
 const MESSAGE_WRAPPER_MAX_WIDTH = 66;
 const MESSAGE_BODY_MAX_WIDTH = 55;
@@ -44,6 +46,7 @@ export default function Message({
   mobileView,
   reverse,
   itemableProvider: Itemable,
+  scrollable,
   ...rest
 }: MessageProps) {
   const [editing, setEditing] = useState(false);
@@ -66,6 +69,7 @@ export default function Message({
         message={message}
         reverse={reverse}
         showAttachments={showAttachments}
+        scrollable={scrollable}
         {...rest}
       >
         {children}
@@ -89,33 +93,37 @@ export default function Message({
               {editing ? (
                 <MessageForm
                   {...rest}
+                  attachments={message.attachments}
                   message={message}
                   onDismiss={() => setEditing(false)}
                   onSubmit={() => setEditing(false)}
                 />
               ) : (
-                <MessageBodyWrapper reverse={reverse}>
-                  <div className="mb-0">
-                    {message.replyTo && (
-                      <MessageReplyToWrapper className="small text-muted">
-                        {message.replyTo.body}
-                      </MessageReplyToWrapper>
-                    )}
-                    <MessageRenderer
-                      tagName="fragment"
-                      content={message.body}
+                <>
+                  <MessageBodyWrapper reverse={reverse}>
+                    <div className="mb-0">
+                      {message.replyTo && (
+                        <MessageReplyToWrapper className="small text-muted">
+                          {message.replyTo.body}
+                        </MessageReplyToWrapper>
+                      )}
+                      <MessageRenderer
+                        tagName="fragment"
+                        content={message.body}
+                      />
+                    </div>
+                  </MessageBodyWrapper>
+                  {message.itemable && <Itemable itemable={Itemable} />}
+                  {(message.attachments || []).length > 0 && showAttachments && (
+                    <MessagesAttachments
+                      scrollable={scrollable}
+                      attachments={message.attachments.map((attachment) => ({
+                        ...attachment,
+                        author: message.messager,
+                      }))}
                     />
-                  </div>
-                </MessageBodyWrapper>
-              )}
-              {message.itemable && <Itemable itemable={Itemable} />}
-              {(message.attachments || []).length > 0 && showAttachments && (
-                <MessagesAttachments
-                  attachments={message.attachments.map((attachment) => ({
-                    ...attachment,
-                    author: message.messager,
-                  }))}
-                />
+                  )}
+                </>
               )}
               {message.reactions && (
                 <MessageReactions reactions={message.reactions} />

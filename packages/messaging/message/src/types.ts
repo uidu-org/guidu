@@ -36,6 +36,7 @@ export type Message = {
   onReply?: () => void;
   onMessageDrag?: () => void;
   onMessageDragEnd?: () => void;
+  scrollable?: React.RefObject<HTMLDivElement>;
 } & Pick<ChatWindowProps, 'itemableProvider'>;
 
 export type MessageGroupProps = {
@@ -48,6 +49,7 @@ export type MessageGroupProps = {
 };
 
 export type MessageAttachmentsProps = {
+  scrollable: React.RefObject<HTMLDivElement>;
   attachments: Array<FileIdentifier>;
   className?: string;
 };

@@ -9,6 +9,13 @@ const fakeAttachments = () => {
       src: faker.random.image(),
       kind: faker.random.arrayElement(['file', 'image']),
       filename: faker.random.words(),
+      extension: faker.random.arrayElement([
+        'jpg',
+        'pdf',
+        'docx',
+        'xlsx',
+        'sql',
+      ]),
     }),
   );
 };
