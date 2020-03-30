@@ -1,5 +1,11 @@
 # @uidu/media-viewer
 
+## 0.1.35
+
+### Patch Changes
+
+- 1e04c34: Fixed message components WIP
+
 ## 0.1.34
 
 ### Patch Changes

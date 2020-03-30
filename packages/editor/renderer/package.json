@@ -1,6 +1,6 @@
 {
   "name": "@uidu/renderer",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "Renderer component",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "@uidu/editor-common": "^0.1.16",
     "@uidu/editor-json-transformer": "^0.1.8",
     "@uidu/media-card": "^0.1.25",
-    "@uidu/media-filmstrip": "^0.1.27",
+    "@uidu/media-filmstrip": "^0.1.29",
     "@uidu/mentions": "^0.1.16",
     "@uidu/status": "^0.1.13",
     "@uidu/task-decision": "^0.1.13",
