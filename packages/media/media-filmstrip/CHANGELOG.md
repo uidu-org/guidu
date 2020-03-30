@@ -1,5 +1,13 @@
 # @uidu/media-filmstrip
 
+## 0.1.29
+
+### Patch Changes
+
+- 1e04c34: Fixed message components WIP
+- Updated dependencies [1e04c34]
+  - @uidu/media-viewer@0.1.35
+
 ## 0.1.28
 
 ### Patch Changes

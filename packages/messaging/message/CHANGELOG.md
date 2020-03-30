@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.1.37
+
+### Patch Changes
+
+- 1e04c34: Fixed message components WIP
+- Updated dependencies [1e04c34]
+  - @uidu/media-filmstrip@0.1.29
+  - @uidu/message-form@0.1.27
+
 ## 0.1.36
 
 ### Patch Changes

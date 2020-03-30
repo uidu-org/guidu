@@ -1,5 +1,13 @@
 # @atlaskit/renderer
 
+## 0.1.18
+
+### Patch Changes
+
+- 1e04c34: Fixed message components WIP
+- Updated dependencies [1e04c34]
+  - @uidu/media-filmstrip@0.1.29
+
 ## 0.1.17
 
 ### Patch Changes

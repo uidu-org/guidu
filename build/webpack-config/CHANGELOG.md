@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.60
+
+### Patch Changes
+
+- 1e04c34: Fixed message components WIP
+
 ## 0.1.59
 
 ### Patch Changes
