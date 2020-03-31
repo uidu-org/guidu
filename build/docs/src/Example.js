@@ -94,9 +94,9 @@ export default class Example extends React.Component<Props, State> {
 
     return (
       <div className="my-5">
-        <Tooltip position="mouse" content={toggleLabel}>
+        <Tooltip position="mouse" content={toggleLabel} delay={0}>
           <Toggle
-            ref={c => {
+            ref={(c) => {
               this.toggleElement = c;
             }}
             onClick={this.toggleSource}

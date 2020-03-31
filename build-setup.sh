@@ -48,7 +48,3 @@ npm config list
 
 # We had issues where private registry where found in the yarn.lock. This test ensures, you are not adding it back.
 test -z "$(cat yarn.lock | grep "packages.atlassian")" || (echo "Private registry found in yarn.lock - check your local ~/.npmrc remove it and regenerate the lockfile" && false)
-
-# React Popper needs to be pinned to 1.0.2 until the recursion bugs with it are fixed
-# (check their repo https://github.com/FezVrasta/react-popper)
-# test -n "$(cat package.json | grep "\"react-popper\": \"1.0.2\"")" || (echo "React Popper needs to be pinned to 1.0.2 until the recursion bugs with it are fixed (check their repo https://github.com/FezVrasta/react-popper)" && false)

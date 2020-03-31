@@ -106,8 +106,8 @@ class SpotlightDialog extends Component<SpotlightDialogProps, State> {
 
     return (
       <Popper referenceElement={targetNode} placement={translatedPlacement}>
-        {({ ref, style, scheduleUpdate }) => (
-          <ValueChanged value={dialogWidth} onChange={scheduleUpdate}>
+        {({ ref, style, update }) => (
+          <ValueChanged value={dialogWidth} onChange={update}>
             <FocusLock
               disabled={focusLockDisabled}
               returnFocus={false}
@@ -115,7 +115,7 @@ class SpotlightDialog extends Component<SpotlightDialogProps, State> {
             >
               <SpotlightCard
                 ref={ref}
-                theme={parent => {
+                theme={(parent) => {
                   const { container, ...others } = parent({});
                   return {
                     ...others,

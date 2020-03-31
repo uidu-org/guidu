@@ -15,7 +15,7 @@ export interface Props {
   /** Returns the element to be positioned */
   children: (childrenProps: PopperChildrenProps) => React.ReactNode;
   /** Formatted like "0, 8px" — how far to offset the Popper from the Reference. Changes automatically based on the placement */
-  offset: number | string;
+  offset: [number, number];
   /** Which side of the Reference to show on. */
   placement: Placement;
   /** Replacement reference element to position popper relative to */
@@ -39,32 +39,37 @@ const getFlipBehavior = (side: string): Position[] => FlipBehavior[side];
 export class Popper extends React.Component<Props, State> {
   static defaultProps: Props = {
     children: () => null,
-    offset: '0, 8px',
+    offset: [0, 8],
     placement: 'bottom-start',
   };
 
   getModifiers = memoizeOne(
     (placement: Placement): PopperProps['modifiers'] => {
       const flipBehavior = getFlipBehavior(placement.split('-')[0]);
-      const modifiers: PopperProps['modifiers'] = {
-        flip: {
+      const modifiers: PopperProps['modifiers'] = [
+        {
+          name: 'flip',
           enabled: true,
-          behavior: flipBehavior,
-          boundariesElement: 'viewport',
+          options: {
+            behavior: flipBehavior,
+            boundariesElement: 'viewport',
+          },
         },
-        hide: {
+        { name: 'hide', enabled: true },
+        {
+          name: 'offset',
           enabled: true,
+          options: { offset: this.props.offset },
         },
-        offset: {
+        {
+          name: 'preventOverflow',
           enabled: true,
-          offset: this.props.offset,
+          options: {
+            escapeWithReference: false,
+            boundariesElement: 'window',
+          },
         },
-        preventOverflow: {
-          enabled: true,
-          escapeWithReference: false,
-          boundariesElement: 'window',
-        },
-      };
+      ];
 
       if (this.props.modifiers) {
         return { ...modifiers, ...this.props.modifiers };
@@ -82,7 +87,7 @@ export class Popper extends React.Component<Props, State> {
 
     return (
       <ReactPopper
-        positionFixed
+        strategy="fixed"
         modifiers={modifiers}
         placement={placement}
         {...(referenceElement ? { referenceElement } : {})}

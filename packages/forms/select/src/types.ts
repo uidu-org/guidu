@@ -27,8 +27,8 @@ export type ValidationState = 'default' | 'error' | 'success';
 
 export interface OptionType {
   [key: string]: any;
-  label: string;
-  value: string | number;
+  name: string;
+  id: string | number;
 }
 
 export type OptionsType<Option = OptionType> = RSOptionsType<Option>;

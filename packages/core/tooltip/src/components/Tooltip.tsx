@@ -131,7 +131,7 @@ const showTooltip = (
 };
 
 const hideTooltip = (fn: (flushed: boolean) => void, defaultDelay: number) => {
-  pendingHide = flushable(flushed => fn(flushed), defaultDelay);
+  pendingHide = flushable((flushed) => fn(flushed), defaultDelay);
   return pendingHide.cancel;
 };
 
@@ -223,7 +223,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
       });
     this.cancelPendingSetState();
     if (Boolean(this.props.content) && !this.state.isVisible) {
-      this.cancelPendingSetState = showTooltip(immediatelyShow => {
+      this.cancelPendingSetState = showTooltip((immediatelyShow) => {
         this.setState({
           isVisible: true,
           renderTooltip: true,
@@ -237,7 +237,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
     if (e.target === this.wrapperRef) return;
     this.cancelPendingSetState();
     if (this.state.isVisible) {
-      this.cancelPendingSetState = hideTooltip(immediatelyHide => {
+      this.cancelPendingSetState = hideTooltip((immediatelyHide) => {
         this.setState({ isVisible: false, immediatelyHide });
       }, this.props.delay || 0);
     }
@@ -277,7 +277,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
     } = this.state;
     return (
       /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-      <React.Fragment>
+      <>
         {TargetContainer && (
           <TargetContainer
             className={className}
@@ -328,12 +328,12 @@ class Tooltip extends React.Component<TooltipProps, State> {
                     onExited={() => this.setState({ renderTooltip: false })}
                     in={isVisible}
                   >
-                    {getAnimationStyles => (
+                    {(getAnimationStyles) => (
                       <TooltipContainer
+                        data-placement={placement}
                         ref={ref}
                         className="Tooltip"
                         style={{
-                          ...getAnimationStyles(placement as PositionTypeBase),
                           ...style,
                         }}
                         truncate={truncate || false}
@@ -347,7 +347,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
             </Popper>
           </Portal>
         ) : null}
-      </React.Fragment>
+      </>
       /* eslint-enable */
     );
   }
