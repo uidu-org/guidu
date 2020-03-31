@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.1.38
+
+### Patch Changes
+
+- 013ad4b: Better attachments
+- Updated dependencies [013ad4b]
+  - @uidu/media-card@0.1.26
+
 ## 0.1.37
 
 ### Patch Changes

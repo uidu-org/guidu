@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.1.38
+
+### Patch Changes
+
+- 013ad4b: Better attachments
+- Updated dependencies [013ad4b]
+  - @uidu/message@0.1.38
+
 ## 0.1.37
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.1.26
+
+### Patch Changes
+
+- 013ad4b: Better attachments
+
 ## 0.1.25
 
 ### Patch Changes
