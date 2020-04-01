@@ -264,6 +264,7 @@
     "pdfjs-dist": "^2.0.943",
     "png-chunks-extract": "^1.0.0",
     "polished": "^3.0.3",
+    "popper.js": "^1.16.1",
     "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0",

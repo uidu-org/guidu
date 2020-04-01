@@ -8,7 +8,7 @@
   "sideEffects": false,
   "module": "index.js",
   "dependencies": {
-    "popper.js": "^1.14.4",
+    "popper.js": "^1.16.1",
     "raf-schd": "^4.0.0",
     "react-scrolllock": "^5.0.0"
   },
