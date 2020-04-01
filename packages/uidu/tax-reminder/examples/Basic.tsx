@@ -5,6 +5,7 @@ import { WidgetsExampleScaffold } from '../../widgets/example-utils';
 export default function Basic() {
   return (
     <WidgetsExampleScaffold
+      baseUrl="/packages/uidu/tax-reminder"
       component={TaxReminder}
       donation={{}}
       currentOrganization={{ name: 'Charity Water' }}

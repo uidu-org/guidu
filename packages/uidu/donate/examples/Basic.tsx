@@ -1,12 +1,9 @@
-import Modal, { ModalTransition } from '@uidu/modal-dialog';
 import React, { useState } from 'react';
-import { IntlProvider } from 'react-intl';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Donate from '../';
+import { WidgetsExampleScaffold } from '../../widgets/example-utils';
 
-const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
-
-export default function Basic() {
-  const [isOpen, setIsOpen] = useState(false);
+function Basic() {
   const [currentMember, setCurrentMember] = useState({
     temporary: true,
     email: 'foo@uidu.org',
@@ -14,7 +11,7 @@ export default function Basic() {
   });
   const [donation, setDonation] = useState({});
 
-  const createDonation = async model => {
+  const createDonation = async (model) => {
     setDonation(model);
     return {
       donation: {
@@ -24,55 +21,51 @@ export default function Basic() {
       client_secret: 'foo',
     };
   };
-  const updateDonation = async model => setDonation({ ...donation, ...model });
-
-  const defaultProps = {
-    stripe,
-    donation,
-    currentMember,
-    currentOrganization: { name: 'Charity Water' },
-    donationCampaign: { name: 'The Spring' },
-    onCreate: (_donation, token) => console.log(token),
-    providers: [{ id: 'card', name: 'Credit Card' }],
-    createDonation,
-    updateDonation,
-    updateCurrentMember: async model => setCurrentMember(model),
-    currency: '€',
-    pledges: [
-      {
-        id: 1,
-        amount: 40,
-        // name: 'A small help',
-        // description: 'help buildind a school',
-      },
-      {
-        id: 2,
-        amount: 80,
-        // name: 'A small help',
-        // description: 'help buildind a school',
-      },
-      {
-        id: 3,
-        amount: 140,
-        // name: 'A small help',
-        // description: 'help buildind a school',
-      },
-    ],
-  };
+  const updateDonation = async (model) =>
+    setDonation({ ...donation, ...model });
 
   return (
-    <IntlProvider defaultLocale="en">
-      <Donate {...defaultProps} />
-      <button className="btn btn-primary" onClick={() => setIsOpen(true)}>
-        Modal view
-      </button>
-      <ModalTransition>
-        {isOpen && (
-          <Modal onClose={() => setIsOpen(false)} heading="Modal Title">
-            <Donate {...defaultProps} />
-          </Modal>
-        )}
-      </ModalTransition>
-    </IntlProvider>
+    <WidgetsExampleScaffold
+      baseUrl="/packages/uidu/donate"
+      component={Donate}
+      donation={donation}
+      currentMember={currentMember}
+      currentOrganization={{ name: 'Charity Water' }}
+      donationCampaign={{ name: 'The Spring' }}
+      onCreate={(_donation, token) => console.log(token)}
+      providers={[{ id: 'card', name: 'Credit Card' }]}
+      createDonation={createDonation}
+      updateDonation={updateDonation}
+      updateCurrentMember={async (model) => setCurrentMember(model)}
+      currency="€"
+      pledges={[
+        {
+          id: 1,
+          amount: 40,
+          // name: 'A small help',
+          // description: 'help buildind a school',
+        },
+        {
+          id: 2,
+          amount: 80,
+          // name: 'A small help',
+          // description: 'help buildind a school',
+        },
+        {
+          id: 3,
+          amount: 140,
+          // name: 'A small help',
+          // description: 'help buildind a school',
+        },
+      ]}
+    />
   );
 }
+
+export default (props) => (
+  <Router>
+    <Route path="/">
+      <Basic {...props}></Basic>
+    </Route>
+  </Router>
+);

@@ -12,6 +12,6 @@ export const Inner = styled.div`
   height: auto;
   flex: 1 1 auto;
   scroll-behavior: smooth;
-  overflow-y: scroll;
+  overflow-y: auto;
   overscroll-behavior-y: contain;
 `;

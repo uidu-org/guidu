@@ -13,14 +13,14 @@ import ShellHeaderCloseAndNavigate from './ShellHeaderCloseAndNavigate';
 import ShellHeaderSlideBack from './ShellHeaderSlideBack';
 import ShellSlideWrapper from './ShellSlideWrapper';
 
-function Shell({ forwardedRef, baseUrl, slides, scope }: ShellProps) {
+function Shell({ forwardedRef, baseUrl, slides, scope, embedded }: ShellProps) {
   const container: React.RefObject<HTMLDivElement> = useRef(null);
   const slider: React.RefObject<Swiper> = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
   useImperativeHandle(forwardedRef, () => slider.current);
 
-  const onSlideBack = e => {
+  const onSlideBack = (e) => {
     e.preventDefault();
     console.log(slider.current);
     slider.current.slidePrev();
@@ -73,10 +73,11 @@ function Shell({ forwardedRef, baseUrl, slides, scope }: ShellProps) {
         <Slider
           options={{
             slidesPerView: 1,
-            allowTouchMove: true,
+            allowTouchMove: false,
+            // uncomment simulateTouch to make selects work
+            // simulateTouch: false,
             autoHeight: true,
 
-            // simulateTouch: false,
             history: {
               key: baseUrl,
             },
@@ -92,12 +93,14 @@ function Shell({ forwardedRef, baseUrl, slides, scope }: ShellProps) {
           }}
           ref={slider}
         >
-          {slides.map(slide => (
+          {slides.map((slide) => (
             <Slide data-history={slide['data-history']}>
               {slide.unwrapped ? (
                 slide.component
               ) : (
-                <ShellSlideWrapper>{slide.component}</ShellSlideWrapper>
+                <ShellSlideWrapper embedded={embedded}>
+                  {slide.component}
+                </ShellSlideWrapper>
               )}
             </Slide>
           ))}

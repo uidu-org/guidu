@@ -38,7 +38,7 @@ FullPageEditorWrapper.displayName = 'FullPageEditorWrapper';
 
 const ScrollContainer = styled(ContentStyles)`
   flex-grow: 1;
-  overflow-y: scroll;
+  overflow-y: auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,9 +73,9 @@ const ContentArea = styled.div<{
     fullWidthMode &&
     `
     @media (min-width: ${akEditorFullWidthLayoutWidth + TOTAL_PADDING}px) {
-      margin-left: ${`calc(50% - ${(akEditorFullWidthLayoutWidth +
-        TOTAL_PADDING) /
-        2}px)`};
+      margin-left: ${`calc(50% - ${
+        (akEditorFullWidthLayoutWidth + TOTAL_PADDING) / 2
+      }px)`};
   }`}
 
   ${({ theme }) => `
@@ -140,9 +140,9 @@ const ContentArea = styled.div<{
         .pm-table-container,
         .code-block,
         .extension-container {
-          max-width: ${containerWidth -
-            TOTAL_PADDING -
-            tableMarginFullWidthMode * 2}px;
+          max-width: ${
+            containerWidth - TOTAL_PADDING - tableMarginFullWidthMode * 2
+          }px;
         }
 
         [data-layout-section] {

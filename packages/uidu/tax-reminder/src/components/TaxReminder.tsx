@@ -1,9 +1,5 @@
 import Contact from '@uidu/contact';
-import {
-  Shell,
-  ShellHeaderCloseAndNavigate,
-  ShellHeaderSlideBack,
-} from '@uidu/widgets';
+import { Shell, ShellSlide } from '@uidu/widgets';
 import React, { useRef } from 'react';
 import { FormattedMessage } from 'react-intl';
 import Swiper from 'swiper';
@@ -14,15 +10,18 @@ export default function TaxReminder({
   reminder,
   currentMember,
   updateCurrentMember,
+  baseUrl,
+  embedded,
   ...rest
 }: any) {
   const slider: React.RefObject<Swiper> = useRef(null);
 
-  const slides = [
+  const slides: ShellSlide[] = [
     {
       key: 'reminder',
+      'data-history': 'reminder',
       header: {
-        itemBefore: ShellHeaderCloseAndNavigate,
+        to: baseUrl,
         name: (
           <FormattedMessage
             defaultMessage="Set your reminder"
@@ -33,7 +32,7 @@ export default function TaxReminder({
       component: (
         <Reminder
           {...rest}
-          onSave={async newDonation => {
+          onSave={async (newDonation) => {
             setTimeout(() => slider.current.slideNext(), 500);
           }}
         />
@@ -41,8 +40,9 @@ export default function TaxReminder({
     },
     {
       key: 'contact',
+      'data-history': 'contact',
       header: {
-        itemBefore: ShellHeaderSlideBack,
+        to: 'back',
         name: (
           <FormattedMessage
             defaultMessage="Contact information"
@@ -55,7 +55,7 @@ export default function TaxReminder({
           {...rest}
           scope="tax-returns"
           contact={currentMember}
-          handleSubmit={async model => {
+          handleSubmit={async (model) => {
             return updateCurrentMember(model).then(() =>
               slider.current.slideNext(),
             );
@@ -65,8 +65,9 @@ export default function TaxReminder({
     },
     {
       key: 'preferences',
+      'data-history': 'contact',
       header: {
-        itemBefore: ShellHeaderSlideBack,
+        to: 'back',
         name: (
           <>
             <span>Personalizza</span>
@@ -77,5 +78,13 @@ export default function TaxReminder({
     },
   ];
 
-  return <Shell slides={slides} ref={slider} />;
+  return (
+    <Shell
+      slides={slides}
+      ref={slider}
+      baseUrl={baseUrl}
+      scope="tax-returns"
+      embedded={embedded}
+    />
+  );
 }

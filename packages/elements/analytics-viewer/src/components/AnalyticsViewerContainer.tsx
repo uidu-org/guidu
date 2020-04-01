@@ -26,7 +26,7 @@ const StyledAnalyticsViewer = styled(AnalyticsViewer)`
   flex-grow: 0;
   flex-shrink: 1;
   height: 100px;
-  overflow-y: scroll;
+  overflow-y: auto;
 `;
 
 export class AnalyticsViewerContainer extends React.Component<Props, State> {
@@ -42,7 +42,7 @@ export class AnalyticsViewerContainer extends React.Component<Props, State> {
   }
 
   handleOnEvent = (event: UIAnalyticsEvent, channel?: string) => {
-    this.setState(state => ({
+    this.setState((state) => ({
       events: [{ event, channel }, ...state.events],
     }));
   };

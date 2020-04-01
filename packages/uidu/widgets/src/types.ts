@@ -14,6 +14,7 @@ export type ShellProps = {
   slides: Array<ShellSlide>;
   scope: string;
   forwardedRef: React.RefObject<any>;
+  embedded?: boolean;
 };
 
 export type ShellState = {

@@ -20,6 +20,7 @@ export default function Donate({
   createSubscription,
   updateSubscription,
   updateCurrentMember,
+  embedded,
   ...rest
 }: DonateProps) {
   const slider: React.RefObject<Swiper> = useRef(null);
@@ -41,7 +42,7 @@ export default function Donate({
         <Donation
           {...rest}
           providers={providers}
-          handleSubmit={async model =>
+          handleSubmit={async (model) =>
             createDonation(model).then(() => slider.current.slideNext())
           }
         />
@@ -66,7 +67,7 @@ export default function Donate({
         {...rest}
         currentMember={currentMember}
         donation={donation}
-        handleSubmit={async model =>
+        handleSubmit={async (model) =>
           updateDonation(model).then(() => slider.current.slideNext())
         }
       />
@@ -90,7 +91,7 @@ export default function Donate({
         {...rest}
         scope="donations"
         contact={currentMember}
-        handleSubmit={async model => {
+        handleSubmit={async (model) => {
           return updateCurrentMember(model).then(() =>
             setTimeout(() => slider.current.slideNext(), 500),
           );
@@ -132,6 +133,12 @@ export default function Donate({
   });
 
   return (
-    <Shell slides={slides} ref={slider} baseUrl={baseUrl} scope="donations" />
+    <Shell
+      slides={slides}
+      ref={slider}
+      baseUrl={baseUrl}
+      scope="donations"
+      embedded={embedded}
+    />
   );
 }

@@ -6,7 +6,7 @@ export const mobileOnlyScrollable = (scrollable: boolean | 'mobileOnly') => {
       @media (max-width: 991px) {
         /* -webkit-overflow-scrolling: touch; */
         scroll-behavior: smooth;
-        overflow-y: scroll;
+        overflow-y: auto;
         overscroll-behavior-y: contain;
       }
     `;
@@ -15,7 +15,7 @@ export const mobileOnlyScrollable = (scrollable: boolean | 'mobileOnly') => {
     return css`
       /* -webkit-overflow-scrolling: touch; */
       scroll-behavior: smooth;
-      overflow-y: scroll;
+      overflow-y: auto;
       overscroll-behavior-y: contain;
     `;
   }
@@ -31,7 +31,7 @@ export const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
       /* -webkit-overflow-scrolling: touch; */
       height: auto;
       scroll-behavior: smooth;
-      overflow-y: scroll;
+      overflow-y: auto;
       overscroll-behavior-y: contain;
     `;
   }
@@ -45,7 +45,7 @@ export const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
     /* -webkit-overflow-scrolling: touch; */
     height: auto;
     scroll-behavior: smooth;
-    overflow-y: scroll;
+    overflow-y: auto;
     overscroll-behavior-y: contain;
   `;
 };

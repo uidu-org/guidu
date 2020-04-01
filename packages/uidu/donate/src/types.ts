@@ -17,6 +17,7 @@ export type DonationProps = {
 };
 
 export type DonateProps = {
+  embedded?: boolean;
   baseUrl: string;
   stripe: Stripe;
   donation?: any;

@@ -17,8 +17,12 @@ export function WidgetsExampleScaffold({ component: Component, ...rest }) {
         </button>
         <ModalTransition>
           {isOpen && (
-            <Modal onClose={() => setIsOpen(false)} heading="Modal Title">
-              <Component {...rest} stripe={stripe} />
+            <Modal
+              onClose={() => setIsOpen(false)}
+              body="div"
+              scrollBehavior="outside"
+            >
+              <Component {...rest} stripe={stripe} embedded />
             </Modal>
           )}
         </ModalTransition>
