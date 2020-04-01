@@ -176,7 +176,6 @@ function FieldGeosuggest({
   return (
     <Wrapper
       {...rest}
-      rowClassName="position-relative"
       {...(isGeolocationAvailable
         ? {
             addonAfter: (
@@ -186,39 +185,41 @@ function FieldGeosuggest({
         : {})}
       id={id}
     >
-      <input
-        className={classNames('form-control', className)}
-        disabled={!ready || disabled}
-        name={name}
-        ref={element}
-        type="search"
-        id={id}
-        value={value}
-        autoComplete="off"
-        autoFocus={autoFocus}
-        placeholder={placeholder as string}
-        onFocus={onInputFocus}
-        onKeyDown={onInputKeyDown}
-        onChange={onInputChange}
-        required={required}
-      />
-      {status === 'OK' && (
-        <ul className="dropdown-menu show">
-          {data.map((suggestion) => {
-            const isActive =
-              activeSuggestion && suggestion.id === activeSuggestion.id;
+      <div className="position-relative">
+        <input
+          className={classNames('form-control', className)}
+          disabled={!ready || disabled}
+          name={name}
+          ref={element}
+          type="search"
+          id={id}
+          value={value}
+          autoComplete="off"
+          autoFocus={autoFocus}
+          placeholder={placeholder as string}
+          onFocus={onInputFocus}
+          onKeyDown={onInputKeyDown}
+          onChange={onInputChange}
+          required={required}
+        />
+        {status === 'OK' && (
+          <ul className="dropdown-menu show">
+            {data.map((suggestion) => {
+              const isActive =
+                activeSuggestion && suggestion.id === activeSuggestion.id;
 
-            return (
-              <FieldGeosuggestItem
-                key={suggestion.id}
-                suggestion={suggestion}
-                isActive={isActive}
-                onClick={selectSuggestion}
-              />
-            );
-          })}
-        </ul>
-      )}
+              return (
+                <FieldGeosuggestItem
+                  key={suggestion.id}
+                  suggestion={suggestion}
+                  isActive={isActive}
+                  onClick={selectSuggestion}
+                />
+              );
+            })}
+          </ul>
+        )}
+      </div>
     </Wrapper>
   );
 }
