@@ -33,6 +33,8 @@ function FieldGeosuggest({
   onSetValue,
   onChange,
   forwardedRef,
+  geolocationEnabled = true,
+  valueGetter,
   value: propValue,
   ...rest
 }: FieldGeosuggestProps) {
@@ -67,14 +69,16 @@ function FieldGeosuggest({
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
 
   useEffect(() => {
-    if (
-      (window.location.protocol === 'https:' ||
-        window.location.hostname === 'localhost') &&
-      'geolocation' in navigator
-    ) {
-      setIsGeolocationAvailable(true);
-    } else {
-      setIsGeolocationAvailable(false);
+    if (geolocationEnabled) {
+      if (
+        (window.location.protocol === 'https:' ||
+          window.location.hostname === 'localhost') &&
+        'geolocation' in navigator
+      ) {
+        setIsGeolocationAvailable(true);
+      } else {
+        setIsGeolocationAvailable(false);
+      }
     }
     return () => null;
   }, []);
@@ -114,10 +118,14 @@ function FieldGeosuggest({
       description,
       structured_formatting: { main_text, main_text_matched_substrings },
     } = suggestion;
-    setValue(description, false);
+    let value = description;
+    if (valueGetter) {
+      value = valueGetter(suggestion);
+    }
+    setValue(value, false);
     // formsy
-    onSetValue(description);
-    onChange(name, description, suggestion);
+    onSetValue(value);
+    onChange(name, value, suggestion);
     // callbacks
     if (onGeocode) {
       geocodeSuggestion(suggestion);
@@ -127,14 +135,14 @@ function FieldGeosuggest({
 
   const geocodeSuggestion = ({ description }) => {
     getGeocode({ address: description })
-      .then(results => getLatLng(results[0]))
+      .then((results) => getLatLng(results[0]))
       .then(onGeocode)
-      .catch(error => {
+      .catch((error) => {
         console.log('😱 Error: ', error);
       });
   };
 
-  const onInputKeyDown = event => {
+  const onInputKeyDown = (event) => {
     switch (event.which) {
       case 40: // DOWN
         event.preventDefault();
@@ -163,7 +171,7 @@ function FieldGeosuggest({
     element.current.setSelectionRange(0, 9999);
   };
 
-  const onInputChange = e => setValue(e.target.value);
+  const onInputChange = (e) => setValue(e.target.value);
 
   return (
     <Wrapper
@@ -196,7 +204,7 @@ function FieldGeosuggest({
       />
       {status === 'OK' && (
         <ul className="dropdown-menu show">
-          {data.map(suggestion => {
+          {data.map((suggestion) => {
             const isActive =
               activeSuggestion && suggestion.id === activeSuggestion.id;
 

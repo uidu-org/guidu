@@ -8,7 +8,16 @@ export default class Basic extends PureComponent {
   render() {
     return (
       <Form {...formDefaultProps}>
-        <FieldGeosuggest {...inputDefaultProps} label="Enter a fruit" />
+        <FieldGeosuggest
+          {...inputDefaultProps}
+          label="Enter a fruit"
+          geolocationEnabled={false}
+          geocoderType={['(cities)']}
+          countryRestricted="it"
+          valueGetter={(suggestion) => {
+            return suggestion.structured_formatting.main_text;
+          }}
+        />
       </Form>
     );
   }

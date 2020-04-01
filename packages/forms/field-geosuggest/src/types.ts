@@ -6,7 +6,9 @@ export type FieldGeosuggestProps = {
   onGeocode?: (props: LatLng) => void;
   geocoderType?: Array<string>;
   bounds?: any;
-  countryRestricted: string;
+  countryRestricted?: string;
+  geolocationEnabled?: boolean;
+  valueGetter?: (suggestion: Suggestion) => string;
 } & FieldBaseProps;
 
 export type FieldGeosuggestItemProps = {
