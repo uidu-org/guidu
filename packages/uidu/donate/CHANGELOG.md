@@ -1,5 +1,17 @@
 # @uidu/donate
 
+## 0.2.3
+
+### Patch Changes
+
+- fefb53f: Better overflow auto instead of scroll, ability to embed uidu widgets in modals
+- Updated dependencies [fefb53f]
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+  - @uidu/modal-dialog@0.1.34
+  - @uidu/select@0.4.5
+  - @uidu/widgets@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes

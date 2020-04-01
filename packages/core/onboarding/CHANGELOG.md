@@ -1,5 +1,15 @@
 # @uidu/onboarding
 
+## 0.1.13
+
+### Patch Changes
+
+- fefb53f: Bump popper for tooltip, not for layers
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+  - @uidu/modal-dialog@0.1.34
+  - @uidu/popper@0.1.21
+
 ## 0.1.12
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.2.4
+
+### Patch Changes
+
+- fefb53f: Fix dropdown position
+- fefb53f: Better field-geosuggets customization props
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.2.17
+
+### Patch Changes
+
+- fefb53f: Better overflow auto instead of scroll, ability to embed uidu widgets in modals
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+
 ## 0.2.16
 
 ### Patch Changes

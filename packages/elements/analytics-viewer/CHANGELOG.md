@@ -1,5 +1,11 @@
 # @uidu/analytics-viewer
 
+## 0.1.9
+
+### Patch Changes
+
+- fefb53f: Better overflow auto instead of scroll, ability to embed uidu widgets in modals
+
 ## 0.1.8
 
 ### Patch Changes

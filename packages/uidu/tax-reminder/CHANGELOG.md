@@ -1,5 +1,16 @@
 # @uidu/tax-reminder
 
+## 0.1.21
+
+### Patch Changes
+
+- fefb53f: Better overflow auto instead of scroll, ability to embed uidu widgets in modals
+- Updated dependencies [fefb53f]
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+  - @uidu/select@0.4.5
+  - @uidu/widgets@0.2.3
+
 ## 0.1.20
 
 ### Patch Changes

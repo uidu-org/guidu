@@ -1,5 +1,14 @@
 # @uidu/modal-dialog
 
+## 0.1.34
+
+### Patch Changes
+
+- fefb53f: Bump popper for tooltip, not for layers
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+  - @uidu/select@0.4.5
+
 ## 0.1.33
 
 ### Patch Changes

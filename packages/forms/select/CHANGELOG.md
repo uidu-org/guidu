@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 0.4.5
+
+### Patch Changes
+
+- fefb53f: Bump popper for tooltip, not for layers
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+  - @uidu/modal-dialog@0.1.34
+  - @uidu/tooltip@0.1.27
+
 ## 0.4.4
 
 ### Patch Changes

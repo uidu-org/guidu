@@ -1,5 +1,13 @@
 # @uidu/layer
 
+## 0.1.14
+
+### Patch Changes
+
+- d8ec962: Restore layer dependencies
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+
 ## 0.1.13
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Select Component",
   "keywords": [
     "react",
@@ -20,7 +20,7 @@
     "@uidu/form": "^0.2.3",
     "@uidu/spinner": "^0.1.18",
     "@uidu/theme": "^0.2.4",
-    "@uidu/tooltip": "^0.1.26",
+    "@uidu/tooltip": "^0.1.27",
     "focus-trap": "^5.0.0",
     "react-fast-compare": "^3.0.1",
     "react-number-format": "^4.0.6",
@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@uidu/button": "^0.1.58",
-    "@uidu/docs": "^0.1.45",
-    "@uidu/modal-dialog": "^0.1.33",
+    "@uidu/docs": "^0.1.46",
+    "@uidu/modal-dialog": "^0.1.34",
     "faker": "^4.1.0",
     "react-dom": "^16.4.0"
   },
