@@ -145,6 +145,7 @@ class Modal extends React.Component<Props, State> {
               isEnabled={stackIndex === 0 && isOpen}
               autoFocus={autoFocus}
             >
+              {/* TODO: Blanket should account for right padding when scrollbeahiour is outside, for the fools who use scrollbar to scroll down. We should probably style the scrollbar, choosing a width, and then account for it in scrollable elements */}
               <Blanket isTinted onBlanketClicked={this.handleOverlayClick} />
               <Positioner
                 style={slide}
