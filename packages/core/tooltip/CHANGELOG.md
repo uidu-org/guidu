@@ -1,5 +1,14 @@
 # @uidu/tooltip
 
+## 0.1.27
+
+### Patch Changes
+
+- fefb53f: Bump popper for tooltip, not for layers
+- Updated dependencies [fefb53f]
+  - @uidu/docs@0.1.46
+  - @uidu/popper@0.1.21
+
 ## 0.1.26
 
 ### Patch Changes
