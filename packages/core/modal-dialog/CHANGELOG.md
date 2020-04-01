@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.1.35
+
+### Patch Changes
+
+- cfb4685: ShellBody overflow-x hidden
+
 ## 0.1.34
 
 ### Patch Changes

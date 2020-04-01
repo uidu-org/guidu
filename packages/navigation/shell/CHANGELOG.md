@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 0.2.18
+
+### Patch Changes
+
+- cfb4685: ShellBody overflow-x hidden
+
 ## 0.2.17
 
 ### Patch Changes
