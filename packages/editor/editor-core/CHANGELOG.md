@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 0.1.32
+
+### Patch Changes
+
+- 46b223a: Fix modal overflow and scrollbars, fix select creatable"
+- Updated dependencies [46b223a]
+- Updated dependencies [46b223a]
+- Updated dependencies [a51334f]
+  - @uidu/modal-dialog@0.1.36
+  - @uidu/select@0.4.6
+  - @uidu/shell@0.3.0
+
 ## 0.1.31
 
 ### Patch Changes

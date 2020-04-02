@@ -1,5 +1,12 @@
 # @uidu/calendar
 
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+
 ## 0.1.22
 
 ### Patch Changes

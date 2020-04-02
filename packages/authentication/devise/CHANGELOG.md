@@ -1,5 +1,12 @@
 # @uidu/devise
 
+## 0.2.7
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+
 ## 0.2.6
 
 ### Patch Changes

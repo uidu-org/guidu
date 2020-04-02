@@ -1,6 +1,6 @@
 {
   "name": "@uidu/gallery",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "private": false,
   "description": "React component to show data items as gallery card",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -9,9 +9,9 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/data-controls": "^0.3.12",
+    "@uidu/data-controls": "^0.3.13",
     "@uidu/spinner": "^0.1.18",
-    "@uidu/table": "^0.1.101",
+    "@uidu/table": "^0.1.102",
     "memoize-one": "^5.0.0",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.2",
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
-    "@uidu/shell": "^0.2.16",
+    "@uidu/shell": "^0.3.0",
     "react-router-dom": "^5.0.0"
   },
   "uidu:src": "index.ts"

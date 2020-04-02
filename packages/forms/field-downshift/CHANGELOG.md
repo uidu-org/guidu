@@ -1,5 +1,12 @@
 # @uidu/downshift
 
+## 0.3.4
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+
 ## 0.3.3
 
 ### Patch Changes

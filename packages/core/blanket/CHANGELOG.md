@@ -1,5 +1,11 @@
 # @uidu/blanket
 
+## 0.1.21
+
+### Patch Changes
+
+- 46b223a: Fix modal overflow and scrollbars, fix select creatable"
+
 ## 0.1.20
 
 ### Patch Changes

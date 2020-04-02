@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 0.4.6
+
+### Patch Changes
+
+- 46b223a: Fix modal overflow and scrollbars, fix select creatable"
+- Updated dependencies [46b223a]
+- Updated dependencies [46b223a]
+  - @uidu/modal-dialog@0.1.36
+
 ## 0.4.5
 
 ### Patch Changes

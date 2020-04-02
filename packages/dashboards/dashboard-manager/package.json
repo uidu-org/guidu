@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-manager",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
-    "@uidu/shell": "^0.2.16"
+    "@uidu/shell": "^0.3.0"
   },
   "uidu:src": "index.ts"
 }

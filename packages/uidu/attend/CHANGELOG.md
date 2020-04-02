@@ -1,5 +1,14 @@
 # @uidu/attend
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+  - @uidu/stepper@0.1.23
+  - @uidu/widgets@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/dashboard-manager
 
+## 0.3.13
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+
 ## 0.3.12
 
 ### Patch Changes
