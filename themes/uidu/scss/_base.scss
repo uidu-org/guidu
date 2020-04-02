@@ -2,10 +2,13 @@
 
 html,
 body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
   overscroll-behavior: none;
   overflow: hidden;
-  // position: fixed;
-  height: 100%;
 }
 
 #root {

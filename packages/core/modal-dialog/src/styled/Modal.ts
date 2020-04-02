@@ -53,12 +53,14 @@ export const dialogHeight = ({
 */
 interface FillScreenProps {
   scrollDistance: number;
+  overflowY: 'auto' | 'scroll';
 }
 
 export const FillScreen = styled.div<FillScreenProps>`
   height: 100vh;
   left: 0;
-  overflow-y: auto;
+  /** set to scroll to always show scrollbar */
+  overflow-y: ${({ overflowY }) => overflowY};
   position: absolute;
   top: ${(props: FillScreenProps) => props.scrollDistance}px;
   width: 100%;

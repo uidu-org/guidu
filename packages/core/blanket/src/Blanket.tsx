@@ -17,28 +17,31 @@ interface Props extends WithAnalyticsEventsProps {
   onBlanketClicked?: (event: React.MouseEvent<HTMLDivElement>) => void;
   /** Stacked blankets have higher z-index references */
   isStacked?: boolean;
+  /** Padding right is added by parent container if blanket shoul account for scrollbar */
+  paddingRight?: number;
 }
 
-class Blanket extends React.Component<Props, {}> {
-  static defaultProps = {
-    canClickThrough: false,
-    isTinted: false,
-    onBlanketClicked: () => {},
-    isStacked: false,
+function Blanket({
+  canClickThrough = false,
+  isTinted = false,
+  onBlanketClicked = () => {},
+  isStacked = false,
+  paddingRight = 0,
+}: Props) {
+  const onClick = canClickThrough ? null : onBlanketClicked;
+  const containerProps = {
+    canClickThrough,
+    isTinted,
+    onClick,
+    isStacked,
+    paddingRight,
   };
 
-  render() {
-    const {
-      canClickThrough,
-      isTinted,
-      onBlanketClicked,
-      isStacked,
-    } = this.props;
-    const onClick = canClickThrough ? null : onBlanketClicked;
-    const containerProps = { canClickThrough, isTinted, onClick, isStacked };
-
-    return <Div {...containerProps} />;
-  }
+  return (
+    <>
+      <Div {...containerProps} />
+    </>
+  );
 }
 
 export { Blanket as BlanketWithoutAnalytics };

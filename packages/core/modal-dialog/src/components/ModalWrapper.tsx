@@ -22,7 +22,7 @@ export interface WrapperProps extends WithAnalyticsEventsProps {
   /**
     Boolean indicating whether to focus on the first tabbable element inside the focus lock.
   */
-  autoFocus: boolean | (() => HTMLElement | null);
+  autoFocus?: boolean | (() => HTMLElement | null);
   /**
     Content of the modal
   */
@@ -121,49 +121,57 @@ interface State {
   modalVisible: boolean;
 }
 
-class ModalWrapper extends React.Component<WrapperProps, State> {
-  static defaultProps = {
-    autoFocus: true,
-    scrollBehavior: 'inside',
-    shouldCloseOnEscapePress: true,
-    shouldCloseOnOverlayClick: true,
-    isChromeless: false,
-    width: 'medium',
-    isHeadingMultiline: true,
-    onClose: () => {},
-  };
-
-  onModalClosed = (onExited?: () => any) => (e: HTMLElement) => {
+function ModalWrapper({
+  autoFocus = true,
+  scrollBehavior = 'inside',
+  shouldCloseOnEscapePress = true,
+  shouldCloseOnOverlayClick = true,
+  isChromeless = false,
+  width = 'medium',
+  isHeadingMultiline = true,
+  onClose = () => {},
+  stackIndex,
+  onCloseComplete,
+  children,
+  ...rest
+}: WrapperProps) {
+  const onModalClosed = (onExited?: () => any) => (e: HTMLElement) => {
     if (onExited) {
       onExited();
     }
-    if (this.props.onCloseComplete) {
-      this.props.onCloseComplete(e);
+    if (onCloseComplete) {
+      onCloseComplete(e);
     }
   };
 
-  render() {
-    return (
-      <ModalTransitionConsumer>
-        {({ isOpen, onExited }) => (
-          <Portal zIndex={layers.modal()}>
-            <StackConsumer isOpen={isOpen}>
-              {(naturalStackIndex) => (
-                <Modal
-                  {...this.props}
-                  isOpen={isOpen}
-                  stackIndex={this.props.stackIndex || naturalStackIndex}
-                  onCloseComplete={this.onModalClosed(onExited)}
-                >
-                  {this.props.children}
-                </Modal>
-              )}
-            </StackConsumer>
-          </Portal>
-        )}
-      </ModalTransitionConsumer>
-    );
-  }
+  return (
+    <ModalTransitionConsumer>
+      {({ isOpen, onExited }) => (
+        <Portal zIndex={layers.modal()}>
+          <StackConsumer isOpen={isOpen}>
+            {(naturalStackIndex) => (
+              <Modal
+                isHeadingMultiline={isHeadingMultiline}
+                shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+                shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+                isChromeless={isChromeless}
+                onClose={onClose}
+                width={width}
+                autoFocus={autoFocus}
+                scrollBehavior={scrollBehavior}
+                isOpen={isOpen}
+                stackIndex={stackIndex || naturalStackIndex}
+                onCloseComplete={onModalClosed(onExited)}
+                {...rest}
+              >
+                {children}
+              </Modal>
+            )}
+          </StackConsumer>
+        </Portal>
+      )}
+    </ModalTransitionConsumer>
+  );
 }
 
 export default ModalWrapper;

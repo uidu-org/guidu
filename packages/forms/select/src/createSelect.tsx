@@ -185,11 +185,12 @@ const createSelect = <TOriginalProps extends {}>(
 
     onChange = (value, option, actionMeta) => {
       const { name, onSetValue, onChange } = this.props;
+      console.log(value);
       onSetValue(value);
       onChange(name, value, { option, actionMeta });
     };
 
-    flatten = arr =>
+    flatten = (arr) =>
       arr.reduce(
         (acc, val) =>
           Array.isArray(val.options)
@@ -198,9 +199,9 @@ const createSelect = <TOriginalProps extends {}>(
         [],
       );
 
-    clean = x => x.trim();
-    toArray = str => str.split(',').map(this.clean);
-    toString = arr => arr.join(',');
+    clean = (x) => x.trim();
+    toArray = (str) => str.split(',').map(this.clean);
+    toString = (arr) => arr.join(',');
 
     getValue = () => {
       const { value, options, multiple, getOptionValue } = this.props;
@@ -209,8 +210,8 @@ const createSelect = <TOriginalProps extends {}>(
 
       const opts = this.flatten(options);
       const cleanedValue = multiple
-        ? opts.filter(o => value.includes(getOptionValue(o)))
-        : opts.find(o => getOptionValue(o) === value);
+        ? opts.filter((o) => value.includes(getOptionValue(o)))
+        : opts.find((o) => getOptionValue(o) === value);
 
       return cleanedValue;
     };
@@ -241,13 +242,19 @@ const createSelect = <TOriginalProps extends {}>(
             options={options}
             getOptionLabel={getOptionLabel}
             getOptionValue={getOptionValue}
+            formatCreateLabel={(inputValue) => `Create new...${inputValue}`}
+            getNewOptionData={(inputValue, optionLabel) => ({
+              id: inputValue,
+              name: optionLabel,
+              __isNew__: true,
+            })}
             {...(props as ResultProps)}
             components={this.components}
             styles={mergeStyles(baseStyles(validationState, isCompact), styles)}
             onChange={(option, actionMeta) => {
               if (multiple) {
                 return this.onChange(
-                  option ? option.map(v => getOptionValue(v)) : '',
+                  option ? option.map((v) => getOptionValue(v)) : '',
                   option,
                   actionMeta,
                 );
@@ -266,4 +273,4 @@ const createSelect = <TOriginalProps extends {}>(
   return result;
 };
 
-export default Component => createSelect(Component);
+export default (Component) => createSelect(Component);

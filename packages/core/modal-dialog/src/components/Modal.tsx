@@ -5,7 +5,7 @@ import {
 } from '@uidu/analytics';
 import Blanket from '@uidu/blanket';
 import { canUseDOM } from 'exenv';
-import React from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { WidthNames, WIDTH_ENUM } from '../shared-variables';
 import { Dialog, FillScreen as StyledFillScreen } from '../styled/Modal';
 import {
@@ -36,156 +36,167 @@ interface Props extends OuterProps {
   testId?: string;
 }
 
-interface State {
-  dialogNode: Node | null;
-  scrollDistance: number;
-}
+const _getScrollbarWidth = () => {
+  // thx d.walsh
+  const scrollDiv = document.createElement('div');
+  // scrollDiv.className = CLASS_NAME_SCROLLBAR_MEASURER;
+  scrollDiv.style.position = 'absolute';
+  scrollDiv.style.top = '-9999px';
+  scrollDiv.style.width = '50px';
+  scrollDiv.style.height = '50px';
+  scrollDiv.style.overflow = 'scroll';
+  document.body.appendChild(scrollDiv);
+  const scrollbarWidth =
+    scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+  document.body.removeChild(scrollDiv);
+  return scrollbarWidth;
+};
 
-class Modal extends React.Component<Props, State> {
-  static defaultProps = {
-    autoFocus: true,
-    scrollBehavior: 'inside' as 'inside' | 'outside',
-    shouldCloseOnEscapePress: true,
-    shouldCloseOnOverlayClick: true,
-    isChromeless: false,
-    isOpen: true,
-    stackIndex: 0,
-    width: 'medium' as WidthNames,
-    isHeadingMultiline: true,
-    onClose: () => {},
-  };
+function Modal({
+  autoFocus = true,
+  scrollBehavior = 'inside' as 'inside' | 'outside',
+  shouldCloseOnEscapePress = true,
+  shouldCloseOnOverlayClick = true,
+  isChromeless = false,
+  isOpen = true,
+  stackIndex = 0,
+  width = 'medium' as WidthNames,
+  isHeadingMultiline = true,
+  onClose = () => {},
+  actions,
+  appearance,
+  body,
+  children,
+  components,
+  footer,
+  header,
+  height,
+  onCloseComplete,
+  onOpenComplete,
+  onStackChange,
+  heading,
+  testId,
+}: Props) {
+  const [scrollDistance, setScrollDistance] = useState(
+    canUseDOM ? getScrollDistance() : 0,
+  );
+  const dialog: React.RefObject<HTMLDivElement> = useRef(null);
 
-  state = {
-    dialogNode: null,
-    scrollDistance: canUseDOM ? getScrollDistance() : 0,
-    isExiting: false,
-  };
-
-  componentDidMount() {
-    const scrollDistance = getScrollDistance();
-    if (getScrollDistance() !== this.state.scrollDistance) {
+  useEffect(() => {
+    const newScrollDistance = getScrollDistance();
+    if (getScrollDistance() !== scrollDistance) {
       // eslint-disable-next-line react/no-did-mount-set-state
-      this.setState({ scrollDistance });
+      setScrollDistance(newScrollDistance);
     }
-    window.addEventListener('scroll', this.handleWindowScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleWindowScroll);
-  }
+    window.addEventListener('scroll', handleWindowScroll);
+    return () => {
+      window.removeEventListener('scroll', handleWindowScroll);
+    };
+  }, []);
 
   /* Prevent window from being scrolled programatically so that the modal is positioned correctly
    * and to prevent scrollIntoView from scrolling the window.
    */
-  handleWindowScroll = () => {
-    if (getScrollDistance() !== this.state.scrollDistance) {
-      window.scrollTo(window.pageXOffset, this.state.scrollDistance);
+  const handleWindowScroll = () => {
+    if (getScrollDistance() !== scrollDistance) {
+      window.scrollTo(window.pageXOffset, scrollDistance);
     }
   };
 
-  handleOverlayClick = (e: React.MouseEvent) => {
-    if (this.props.shouldCloseOnOverlayClick) {
-      this.props.onClose(e);
+  const handleOverlayClick = (e: React.MouseEvent) => {
+    if (shouldCloseOnOverlayClick) {
+      onClose(e);
     }
   };
 
-  render() {
-    const {
-      actions,
-      appearance,
-      autoFocus,
-      body,
-      children,
-      components,
-      footer,
-      header,
-      height,
-      isChromeless,
-      isHeadingMultiline,
-      isOpen,
-      onClose,
-      onCloseComplete,
-      onOpenComplete,
-      onStackChange,
-      shouldCloseOnEscapePress,
-      stackIndex,
-      heading,
-      width,
-      scrollBehavior,
-      testId,
-    } = this.props;
+  const isBackground = stackIndex != null && stackIndex > 0;
 
-    const { scrollDistance } = this.state;
+  // If a custom width (number or percentage) is supplied, set inline style
+  // otherwise allow styled component to consume as named prop
+  const widthName = width
+    ? WIDTH_ENUM.values.indexOf(width.toString()) !== -1
+      ? (width as WidthNames)
+      : undefined
+    : undefined;
+  const widthValue = widthName ? undefined : width;
 
-    const isBackground = stackIndex != null && stackIndex > 0;
-
-    // If a custom width (number or percentage) is supplied, set inline style
-    // otherwise allow styled component to consume as named prop
-    const widthName = width
-      ? WIDTH_ENUM.values.indexOf(width.toString()) !== -1
-        ? (width as WidthNames)
-        : undefined
-      : undefined;
-    const widthValue = widthName ? undefined : width;
-
+  const hasOverflow = () => {
     return (
-      <Animation
-        in={isOpen}
-        onExited={onCloseComplete}
-        onEntered={onOpenComplete}
-        stackIndex={stackIndex}
-      >
-        {({ fade, slide }) => (
-          <StyledFillScreen
-            style={fade}
-            aria-hidden={isBackground}
-            scrollDistance={scrollDistance}
-          >
-            <FocusLock
-              isEnabled={stackIndex === 0 && isOpen}
-              autoFocus={autoFocus}
-            >
-              {/* TODO: Blanket should account for right padding when scrollbeahiour is outside, for the fools who use scrollbar to scroll down. We should probably style the scrollbar, choosing a width, and then account for it in scrollable elements */}
-              <Blanket isTinted onBlanketClicked={this.handleOverlayClick} />
-              <Positioner
-                style={slide}
-                scrollBehavior={scrollBehavior}
-                widthName={widthName}
-                widthValue={widthValue}
-              >
-                <Dialog
-                  heightValue={height}
-                  isChromeless={isChromeless}
-                  role="dialog"
-                  data-testid={testId}
-                  tabIndex={-1}
-                >
-                  <Content
-                    actions={actions}
-                    appearance={appearance}
-                    components={components}
-                    footer={footer}
-                    heading={heading}
-                    isHeadingMultiline={isHeadingMultiline}
-                    header={header}
-                    onClose={onClose}
-                    shouldScroll={scrollBehavior === 'inside'}
-                    shouldCloseOnEscapePress={shouldCloseOnEscapePress}
-                    onStackChange={onStackChange}
-                    isChromeless={isChromeless}
-                    stackIndex={stackIndex}
-                    body={body}
-                  >
-                    {children}
-                  </Content>
-                </Dialog>
-              </Positioner>
-            </FocusLock>
-          </StyledFillScreen>
-        )}
-      </Animation>
+      dialog.current &&
+      dialog.current.scrollHeight > document.documentElement.clientHeight &&
+      scrollBehavior === 'outside'
     );
-  }
+  };
+
+  const getPaddingRight = useCallback(() => {
+    if (hasOverflow) {
+      return _getScrollbarWidth();
+    }
+    return 0;
+  }, [hasOverflow]);
+
+  return (
+    <Animation
+      in={isOpen}
+      onExited={onCloseComplete}
+      onEntered={onOpenComplete}
+      stackIndex={stackIndex}
+    >
+      {({ fade, slide }) => (
+        <StyledFillScreen
+          style={fade}
+          aria-hidden={isBackground}
+          scrollDistance={scrollDistance}
+          overflowY={hasOverflow ? 'scroll' : 'auto'}
+        >
+          <FocusLock
+            isEnabled={stackIndex === 0 && isOpen}
+            autoFocus={autoFocus}
+          >
+            <Blanket
+              isTinted
+              onBlanketClicked={handleOverlayClick}
+              paddingRight={getPaddingRight()}
+            />
+            <Positioner
+              style={slide}
+              scrollBehavior={scrollBehavior}
+              widthName={widthName}
+              widthValue={widthValue}
+            >
+              <Dialog
+                ref={dialog}
+                heightValue={height}
+                isChromeless={isChromeless}
+                role="dialog"
+                data-testid={testId}
+                tabIndex={-1}
+              >
+                <Content
+                  actions={actions}
+                  appearance={appearance}
+                  components={components}
+                  footer={footer}
+                  heading={heading}
+                  isHeadingMultiline={isHeadingMultiline}
+                  header={header}
+                  onClose={onClose}
+                  shouldScroll={scrollBehavior === 'inside'}
+                  shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+                  onStackChange={onStackChange}
+                  isChromeless={isChromeless}
+                  stackIndex={stackIndex}
+                  body={body}
+                >
+                  {children}
+                </Content>
+              </Dialog>
+            </Positioner>
+          </FocusLock>
+        </StyledFillScreen>
+      )}
+    </Animation>
+  );
 }
 
 const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');

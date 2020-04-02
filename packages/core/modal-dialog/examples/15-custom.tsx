@@ -3,11 +3,12 @@ import Avatar from '@uidu/avatar';
 import Button, { ButtonGroup } from '@uidu/button';
 import InlineDialog from '@uidu/inline-dialog';
 import { colors } from '@uidu/theme';
-import React from 'react';
+import React, { FC } from 'react';
 import Lorem from 'react-lorem-component';
 import styled from 'styled-components';
 import ModalDialog, { ModalFooter, ModalTransition } from '../src';
-import { ButtonOnClick } from '../src/types';
+import { FooterComponentProps } from '../src/components/Footer';
+import { HeaderComponentProps } from '../src/components/Header';
 
 const defaults = ['header', 'footer', 'both', 'neither'];
 const custom = ['custom header', 'custom body', 'custom footer'];
@@ -34,7 +35,7 @@ const headerStyles: React.CSSProperties = {
   paddingTop: 170,
   position: 'relative',
 };
-const Header = ({ onClose }: { onClose: ButtonOnClick }) => (
+const Header: FC<HeaderComponentProps> = ({ onClose }) => (
   <div style={headerStyles}>
     <span style={{ position: 'absolute', right: 0, top: 4 }}>
       <Button onClick={onClose} appearance="link">
@@ -66,15 +67,11 @@ const Body = React.forwardRef<
   );
 });
 
-interface FooterProps {
-  onClose: ButtonOnClick;
-  showKeyline: boolean;
-}
 interface FooterState {
   isOpen: boolean;
 }
 
-class Footer extends React.Component<FooterProps, FooterState> {
+class Footer extends React.Component<FooterComponentProps, FooterState> {
   state = { isOpen: false };
 
   open = () => this.setState({ isOpen: true });
@@ -141,8 +138,8 @@ export default class ModalDemo extends React.Component<{}, State> {
 
         <ModalTransition>
           {variants
-            .filter(w => w === isOpen)
-            .map(name => (
+            .filter((w) => w === isOpen)
+            .map((name) => (
               <ModalDialog
                 key={name}
                 actions={
@@ -152,7 +149,6 @@ export default class ModalDemo extends React.Component<{}, State> {
                   Header: name === 'custom header' ? Header : undefined,
                   Body: name === 'custom body' ? Body : undefined,
                   Footer: name === 'custom footer' ? Footer : undefined,
-                  Container: 'div',
                 }}
                 heading={
                   ['header', 'both'].includes(name)

@@ -15,15 +15,15 @@ const defaultOptions = [
   { name: 'Sydney', id: 'sydney' },
 ];
 
-const createOption = name => ({
+const createOption = (name) => ({
   name,
   id: name.toLowerCase().replace(/\W/g, ''),
 });
 
 type State = {
-  isLoading: boolean,
-  options: Array<{ name: string, id: string }>,
-  value?: {},
+  isLoading: boolean;
+  options: Array<{ name: string; id: string }>;
+  value?: {};
 };
 
 export default class CreatableAdvanced extends Component<*, State> {
@@ -53,7 +53,7 @@ export default class CreatableAdvanced extends Component<*, State> {
     this.setState({
       isLoading: false,
       options: [...options, newOption],
-      value: newOption,
+      value: newOption.id,
     });
   };
   render() {
@@ -65,16 +65,16 @@ export default class CreatableAdvanced extends Component<*, State> {
           isClearable
           isDisabled={isLoading}
           isLoading={isLoading}
-          // onChange={this.handleChange}
+          onChange={this.handleChange}
           onCreateOption={this.handleCreate}
           options={options}
-          // formatCreateLabel={(inputText?: string) => {
-          //   console.log(inputText)
-          //   if (inputText) {
-          //     return inputText.trim();
-          //   }
-          //   return '';
-          // }}
+          formatCreateLabel={(inputText?: string) => {
+            console.log(inputText);
+            if (inputText) {
+              return `Crea new ${inputText.trim()}`;
+            }
+            return '';
+          }}
           isValidNewOption={() => true}
           value={value}
         />

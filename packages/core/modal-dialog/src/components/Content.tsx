@@ -254,7 +254,7 @@ export default class Content extends React.Component<Props, State> {
         {isChromeless ? (
           children
         ) : (
-          <React.Fragment>
+          <>
             <Header
               appearance={appearance}
               component={components.Header ? components.Header : header}
@@ -274,7 +274,7 @@ export default class Content extends React.Component<Props, State> {
               onClose={onClose}
               showKeyline={showFooterKeyline}
             />
-          </React.Fragment>
+          </>
         )}
         <ScrollLock />
       </Container>

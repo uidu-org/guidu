@@ -88,7 +88,7 @@ const messages = defineMessages({
   },
 });
 
-const AkModalDialog: React.ComponentClass<any> = Modal;
+const AkModalDialog: React.FC<any> = Modal;
 
 export interface Format {
   name: string;
@@ -385,7 +385,7 @@ export const getSupportedFormatting = (
   quickInsertEnabled?: boolean,
 ): Format[] => {
   const supportedBySchema = formatting(intl).filter(
-    format => schema.nodes[format.type] || schema.marks[format.type],
+    (format) => schema.nodes[format.type] || schema.marks[format.type],
   );
   return [
     ...supportedBySchema,
@@ -513,13 +513,13 @@ class HelpDialog extends React.Component<Props & WrappedComponentProps> {
                   </Title>
                   <div>
                     {this.formatting
-                      .filter(form => {
+                      .filter((form) => {
                         const keymap = form.keymap && form.keymap(this.props);
                         return (
                           keymap && keymap[browser.mac ? 'mac' : 'windows']
                         );
                       })
-                      .map(form => (
+                      .map((form) => (
                         <Row key={`textFormatting-${form.name}`}>
                           <span>{form.name}</span>
                           {getComponentFromKeymap(form.keymap!())}
@@ -528,11 +528,11 @@ class HelpDialog extends React.Component<Props & WrappedComponentProps> {
 
                     {this.formatting
                       .filter(
-                        form =>
+                        (form) =>
                           shortcutNamesWithoutKeymap.indexOf(form.type) !== -1,
                       )
-                      .filter(form => form.autoFormatting)
-                      .map(form => (
+                      .filter((form) => form.autoFormatting)
+                      .map((form) => (
                         <Row key={`autoFormatting-${form.name}`}>
                           <span>{form.name}</span>
                           {form.autoFormatting!()}
@@ -548,11 +548,11 @@ class HelpDialog extends React.Component<Props & WrappedComponentProps> {
                   <div>
                     {this.formatting
                       .filter(
-                        form =>
+                        (form) =>
                           shortcutNamesWithoutKeymap.indexOf(form.type) === -1,
                       )
                       .map(
-                        form =>
+                        (form) =>
                           form.autoFormatting && (
                             <Row key={`autoFormatting-${form.name}`}>
                               <span>{form.name}</span>
