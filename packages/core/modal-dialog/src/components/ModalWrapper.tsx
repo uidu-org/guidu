@@ -1,9 +1,11 @@
 import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import Portal from '@uidu/portal';
-import { layers } from '@uidu/theme';
+import { layers } from '@uidu/theme/constants';
 import React from 'react';
 import { WidthNames } from '../shared-variables';
-import { AppearanceType, ButtonOnClick, KeyboardOrMouseEvent } from '../types';
+import { ActionProps, AppearanceType, KeyboardOrMouseEvent } from '../types';
+import { FooterComponentProps } from './Footer';
+import { HeaderComponentProps } from './Header';
 import Modal from './Modal';
 import { ModalTransitionConsumer } from './ModalTransition';
 import StackConsumer from './StackConsumer';
@@ -12,10 +14,7 @@ export interface WrapperProps extends WithAnalyticsEventsProps {
   /**
     Buttons to render in the footer
   */
-  actions?: Array<{
-    onClick?: ButtonOnClick;
-    text?: string;
-  }>;
+  actions?: Array<ActionProps>;
   /**
     Appearance of the primary action. Also adds an icon to the heading, if provided.
   */
@@ -36,8 +35,8 @@ export interface WrapperProps extends WithAnalyticsEventsProps {
     - Container: wrapper around Header, Body and Footer components.
   */
   components?: {
-    Header?: React.ElementType;
-    Footer?: React.ElementType;
+    Header?: React.ElementType<HeaderComponentProps>;
+    Footer?: React.ElementType<FooterComponentProps>;
     Body?: React.ElementType;
     Container?: React.ElementType;
   };
@@ -48,11 +47,11 @@ export interface WrapperProps extends WithAnalyticsEventsProps {
   /**
     Deprecated, use components prop: Component to render the footer of the modal, replaces internal implementation.
   */
-  footer?: React.ElementType;
+  footer?: React.ElementType<FooterComponentProps>;
   /**
     Deprecated, use components prop: Component to render the header of the modal, replaces internal implementation.
   */
-  header?: React.ElementType;
+  header?: React.ElementType<HeaderComponentProps>;
   /**
     The modal title; rendered in the header.
   */
@@ -149,7 +148,7 @@ class ModalWrapper extends React.Component<WrapperProps, State> {
         {({ isOpen, onExited }) => (
           <Portal zIndex={layers.modal()}>
             <StackConsumer isOpen={isOpen}>
-              {naturalStackIndex => (
+              {(naturalStackIndex) => (
                 <Modal
                   {...this.props}
                   isOpen={isOpen}

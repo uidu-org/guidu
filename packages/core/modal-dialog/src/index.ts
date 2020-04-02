@@ -1,8 +1,10 @@
-export { default } from './components/ModalWrapper';
+export { FooterComponentProps } from './components/Footer';
+export { HeaderComponentProps } from './components/Header';
 export { default as ModalTransition } from './components/ModalTransition';
+export { default } from './components/ModalWrapper';
 export {
   Body as ModalBody,
-  Header as ModalHeader,
   Footer as ModalFooter,
+  Header as ModalHeader,
   Title as ModalTitle,
 } from './styled/Content';

@@ -1,13 +1,8 @@
 import ErrorIcon from '@atlaskit/icon/glyph/error';
 import WarningIcon from '@atlaskit/icon/glyph/warning';
 import React from 'react';
-import {
-  Header,
-  Title,
-  titleIconWrapperStyles,
-  TitleText,
-} from '../styled/Content';
-import { AppearanceType } from '../types';
+import { Header, Title, TitleIconWrapper, TitleText } from '../styled/Content';
+import { AppearanceType, KeyboardOrMouseEvent } from '../types';
 
 const TitleIcon = ({ appearance }: { appearance?: 'danger' | 'warning' }) => {
   if (!appearance) return null;
@@ -15,27 +10,30 @@ const TitleIcon = ({ appearance }: { appearance?: 'danger' | 'warning' }) => {
   const Icon = appearance === 'danger' ? ErrorIcon : WarningIcon;
 
   return (
-    // @ts-ignore
-    <span css={titleIconWrapperStyles(appearance)}>
+    <TitleIconWrapper appearance={appearance}>
       <Icon label={`${appearance} icon`} />
-    </span>
+    </TitleIconWrapper>
   );
 };
 
-export interface HeaderProps {
-  /** Appearance of the primary button. Also adds an icon to the heading, if provided. */
-  appearance?: AppearanceType;
+export interface HeaderProps extends HeaderComponentProps {
   /**
     Boolean OR Function indicating which element to focus when the component mounts
     TRUE will automatically find the first "tabbable" element within the modal
     Providing a function should return the element you want to focus
   */
   /** Component to render the header of the modal. */
-  component?: React.ElementType;
+  component?: React.ElementType<HeaderComponentProps>;
+}
+
+export interface HeaderComponentProps {
+  /** Appearance of the primary button. Also adds an icon to the heading, if provided. */
+  appearance?: AppearanceType;
+
   /** The modal heading */
   heading?: React.ReactNode;
   /** Function to close the dialog */
-  onClose: Function;
+  onClose: (e: KeyboardOrMouseEvent) => void;
   /** Whether or not to display a line under the header */
   showKeyline?: boolean;
   /**

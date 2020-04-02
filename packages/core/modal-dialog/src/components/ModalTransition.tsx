@@ -20,7 +20,7 @@ const { Consumer, Provider } = React.createContext({
 // checks if children exist and are truthy
 const hasChildren = (children: React.ReactNode) =>
   React.Children.count(children) > 0 &&
-  React.Children.map(children, child => !!child).filter(Boolean).length > 0;
+  React.Children.map(children, (child) => !!child).filter(Boolean).length > 0;
 
 class Transition extends React.Component<Props, State> {
   state = {

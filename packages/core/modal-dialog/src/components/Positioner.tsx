@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { WidthNames } from '../shared-variables';
 import { PositionerAbsolute, PositionerRelative } from '../styled/Modal';
 

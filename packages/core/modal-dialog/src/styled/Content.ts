@@ -1,10 +1,11 @@
-import { colors, gridSize, math, themed } from '@uidu/theme';
+import { DN30, N30, R400, Y400 } from '@uidu/theme/colors';
+import { themed } from '@uidu/theme/components';
+import { gridSize } from '@uidu/theme/constants';
+import { divide } from '@uidu/theme/math';
 import styled, { css } from 'styled-components';
 import { AppearanceType } from '../types';
 import { flexMaxHeightIEFix } from '../utils/flex-max-height-ie-fix';
 
-const { N30, DN30, R400, Y400 } = colors;
-const { divide } = math;
 // Constants
 // ==============================
 const modalPadding = gridSize() * 3;
@@ -14,7 +15,7 @@ export const keylineHeight = 2;
 // Wrapper
 // ==============================
 
-export const wrapperStyles = css`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -35,7 +36,7 @@ export const Header = styled.header<HeaderProps>`
   z-index: 1;
   padding: ${modalPadding}px ${modalPadding}px ${modalPadding - keylineHeight}px
     ${modalPadding}px;
-  box-shadow: ${props =>
+  box-shadow: ${(props) =>
     props.showKeyline
       ? `0 ${keylineHeight}px 0 0 ${keylineColor(props)}`
       : 'none'};
@@ -61,7 +62,7 @@ export const TitleText = styled.span<TitleTextProps>`
   min-width: 0;
   word-wrap: break-word;
   width: 100%;
-  ${props =>
+  ${(props) =>
     !props.isHeadingMultiline &&
     css`
       white-space: nowrap;
@@ -76,8 +77,8 @@ const iconColor: iconColorType = {
   warning: Y400,
 };
 
-export const titleIconWrapperStyles = (appearance: AppearanceType) => css`
-  color: ${iconColor[appearance]};
+export const TitleIconWrapper = styled.span<{ appearance: AppearanceType }>`
+  color: ${({ appearance }) => iconColor[appearance]};
   margin-right: ${gridSize()}px;
   flex: 0 0 auto;
 `;
@@ -112,7 +113,7 @@ interface BodyProps {
   shouldScroll?: boolean;
 }
 export const Body = styled.div<BodyProps>`
-  ${props => bodyStyles(props.shouldScroll)}
+  ${(props) => bodyStyles(props.shouldScroll)}
 `;
 
 // Footer
@@ -129,7 +130,7 @@ export const Footer = styled.footer<FooterProps>`
   z-index: 1;
   padding: ${modalPadding - keylineHeight}px ${modalPadding}px ${modalPadding}px
     ${modalPadding}px;
-  box-shadow: ${props =>
+  box-shadow: ${(props) =>
     props.showKeyline
       ? `0 -${keylineHeight}px 0 0 ${keylineColor(props)}`
       : 'none'};

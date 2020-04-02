@@ -3,13 +3,12 @@ import React from 'react';
 import ScrollLock from 'react-scrolllock';
 import {
   Body as DefaultBody,
-  bodyStyles,
+  Container as DefaultContainer,
   keylineHeight,
-  wrapperStyles,
 } from '../styled/Content';
-import { AppearanceType, ButtonOnClick, KeyboardOrMouseEvent } from '../types';
-import Footer from './Footer';
-import Header from './Header';
+import { ActionProps, AppearanceType, KeyboardOrMouseEvent } from '../types';
+import Footer, { FooterComponentProps } from './Footer';
+import Header, { HeaderComponentProps } from './Header';
 
 function getInitialState() {
   return {
@@ -23,10 +22,7 @@ interface Props {
   /**
     Buttons to render in the footer
   */
-  actions?: Array<{
-    onClick?: ButtonOnClick;
-    text?: string;
-  }>;
+  actions?: Array<ActionProps>;
   /**
     Appearance of the primary action. Also adds an icon to the heading, if provided.
   */
@@ -43,19 +39,19 @@ interface Props {
     Object describing internal components. Use this to swap out the default components.
   */
   components: {
-    Header?: React.ElementType;
+    Header?: React.ElementType<HeaderComponentProps>;
     Body?: React.ElementType;
-    Footer?: React.ElementType;
+    Footer?: React.ElementType<FooterComponentProps>;
     Container?: React.ElementType;
   };
   /**
     Deprecated, use components prop: Component to render the header of the modal.
   */
-  header?: React.ElementType;
+  header?: React.ElementType<HeaderComponentProps>;
   /**
     Deprecated, use components prop: Component to render the footer of the moda.l
   */
-  footer?: React.ElementType;
+  footer?: React.ElementType<FooterComponentProps>;
   /**
     Function that will be called to initiate the exit transition.
   */
@@ -248,12 +244,13 @@ export default class Content extends React.Component<Props, State> {
     } = this.props;
 
     const { showFooterKeyline, showHeaderKeyline } = this.state;
-    const { Container = 'div', Body: CustomBody } = components;
+    const { Container: CustomContainer, Body: CustomBody } = components;
 
     const Body = CustomBody || DeprecatedBody || DefaultBody;
+    const Container = CustomContainer || DefaultContainer;
 
     return (
-      <Container css={wrapperStyles} data-testid={testId}>
+      <Container data-testid={testId}>
         {isChromeless ? (
           children
         ) : (
@@ -267,12 +264,7 @@ export default class Content extends React.Component<Props, State> {
               showKeyline={showHeaderKeyline}
             />
             {/* Backwards compatibility for styled-components innerRefs */}
-            <Body
-              css={bodyStyles(shouldScroll)}
-              {...(!Body.hasOwnProperty('styledComponentId')
-                ? { ref: this.getScrollContainer }
-                : { ref: this.getScrollContainer })}
-            >
+            <Body shouldScroll={shouldScroll} ref={this.getScrollContainer}>
               {children}
             </Body>
             <Footer

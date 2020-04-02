@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 /* Used to adjust flex parent height to account for the subtraction in children below */
 export const IEMaxHeightCalcPx = 1;
 
@@ -5,9 +7,10 @@ export const IEMaxHeightCalcPx = 1;
  * The workaround is to set a pixel max-height on the flex children.
  * For more information see https://github.com/philipwalton/flexbugs/issues/216
  */
-export const flexMaxHeightIEFix = `
+export const flexMaxHeightIEFix = css`
   max-height: 100%;
-  @media only screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+  @media only screen and (-ms-high-contrast: active),
+    (-ms-high-contrast: none) {
     max-height: calc(100% - ${IEMaxHeightCalcPx}px);
   }
 `;

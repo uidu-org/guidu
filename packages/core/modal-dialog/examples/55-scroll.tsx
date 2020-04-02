@@ -1,4 +1,5 @@
 import Button from '@uidu/button';
+import Form from '@uidu/form';
 import { RadioGroup } from '@uidu/radio';
 import React from 'react';
 import Lorem from 'react-lorem-component';
@@ -11,12 +12,11 @@ const TallContainer = styled.div`
 
 const scrollBehaviors = [
   {
-    name: 'scrollBehavior',
-    value: 'inside',
-    label: 'inside',
+    id: 'inside',
+    name: 'inside',
     defaultSelected: true,
   },
-  { name: 'scrollBehavior', value: 'outside', label: 'outside' },
+  { name: 'outside', id: 'outside' },
 ];
 
 interface State {
@@ -37,9 +37,9 @@ export default class ExampleScroll extends React.PureComponent<{}, State> {
 
   scrollToBottom = () => this.bottomRef.scrollIntoView(true);
 
-  onScrollBehaviorChange = (e: any) => {
+  onScrollBehaviorChange = (name, value) => {
     this.setState({
-      scrollBehavior: e.target.value,
+      [name]: value,
     });
   };
 
@@ -63,11 +63,14 @@ export default class ExampleScroll extends React.PureComponent<{}, State> {
           such as <code>scrollIntoView</code> scrolling the window instead of
           only the closest scroll parent will be prevented.
         </p>
-        <RadioGroup
-          items={scrollBehaviors}
-          label="Scroll behavior:"
-          onRadioChange={this.onScrollBehaviorChange}
-        />
+        <Form>
+          <RadioGroup
+            name="scrollBehavior"
+            options={scrollBehaviors}
+            label="Scroll behavior:"
+            onChange={this.onScrollBehaviorChange}
+          />
+        </Form>
         <Button onClick={this.open}>Open Modal</Button>
         <ModalTransition>
           {isOpen && (
@@ -79,7 +82,7 @@ export default class ExampleScroll extends React.PureComponent<{}, State> {
             >
               <Lorem count={10} />
               <div
-                ref={r => {
+                ref={(r) => {
                   this.bottomRef = r;
                 }}
               />

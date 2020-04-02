@@ -1,5 +1,8 @@
 import Button, { Theme as ButtonTheme } from '@uidu/button';
-import Modal from '@uidu/modal-dialog';
+import Modal, {
+  FooterComponentProps,
+  HeaderComponentProps,
+} from '@uidu/modal-dialog';
 import React, { Component, ElementType, ReactNode } from 'react';
 import {
   ActionItem,
@@ -19,11 +22,13 @@ type Props = {
   /** Path to the the your image */
   image?: string;
   /** Optional element rendered above the body */
-  header?: ElementType;
+  header?: ElementType<HeaderComponentProps>;
   /** Optional element rendered below the body */
-  footer?: ElementType;
+  footer?: ElementType<FooterComponentProps>;
   /** Heading text rendered above the body */
   heading?: string;
+  /** Boolean prop to confirm if primary button in the footer should be shown on the right  */
+  experimental_shouldShowPrimaryButtonOnRight?: boolean;
 };
 
 function noop() {}
@@ -38,12 +43,20 @@ export default class OnboardingModal extends Component<Props> {
   };
 
   footerComponent = (props: Props) => {
-    const { footer: FooterElement, actions: actionList } = props;
+    const {
+      footer: FooterElement,
+      actions: actionList,
+      experimental_shouldShowPrimaryButtonOnRight = false,
+    } = props;
 
     const ActionsElement = () =>
       actionList ? (
         <ButtonTheme.Provider value={modalButtonTheme}>
-          <ModalActions>
+          <ModalActions
+            shouldReverseButtonOrder={
+              experimental_shouldShowPrimaryButtonOnRight
+            }
+          >
             {actionList.map(({ text, key, ...rest }, idx) => {
               const variant = idx ? 'subtle-link' : 'primary';
               return (

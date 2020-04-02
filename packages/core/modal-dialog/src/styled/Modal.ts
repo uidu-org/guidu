@@ -1,12 +1,13 @@
-import { borderRadius, colors, layers, themed } from '@uidu/theme';
-import styled from 'styled-components';
+import { DN50, N0, N30A, N60A, text } from '@uidu/theme/colors';
+import { themed } from '@uidu/theme/components';
+import { borderRadius, layers } from '@uidu/theme/constants';
+import styled, { css } from 'styled-components';
 import { gutter, WidthNames, WIDTH_ENUM } from '../shared-variables';
 import {
   flexMaxHeightIEFix,
   IEMaxHeightCalcPx,
 } from '../utils/flex-max-height-ie-fix';
 
-const { DN50, N0, N30A, N60A, text } = colors;
 const boxShadow = ({ isChromeless }: { isChromeless?: boolean }) =>
   isChromeless
     ? 'none'
@@ -120,7 +121,7 @@ export const Dialog = styled.div<DialogProps>`
   ${(props: DialogProps) =>
     props.isChromeless
       ? null
-      : `
+      : css`
           background-color: ${dialogBgColor(props)};
           border-radius: ${borderRadius()}px;
           box-shadow: ${boxShadow(props)};

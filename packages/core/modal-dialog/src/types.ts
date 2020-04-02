@@ -1,4 +1,4 @@
-import { UIAnalyticsEvent } from '@uidu/analytics';
+import { ButtonProps } from '@uidu/button';
 import React from 'react';
 
 export type KeyboardOrMouseEvent =
@@ -6,7 +6,4 @@ export type KeyboardOrMouseEvent =
   | React.KeyboardEvent<any>;
 export type AppearanceType = 'danger' | 'warning';
 
-export type ButtonOnClick = (
-  e: React.MouseEvent<HTMLElement>,
-  analyticsEvent: UIAnalyticsEvent,
-) => void;
+export type ActionProps = ButtonProps & { text: string };
