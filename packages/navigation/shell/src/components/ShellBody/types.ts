@@ -6,6 +6,7 @@ export type ShellBodyProps = {
   shadowOnScroll?: boolean;
   forwardedRef?: React.RefObject<HTMLDivElement>;
   children?: any;
+  enableCustomScrollbars?: boolean;
 };
 
 export type ShellBodyState = {
