@@ -4,21 +4,21 @@ export const mobileOnlyScrollable = (scrollable: boolean | 'mobileOnly') => {
   if (scrollable === 'mobileOnly') {
     return css`
       @media (max-width: 991px) {
-        /* -webkit-overflow-scrolling: touch; */
         scroll-behavior: smooth;
         overflow-y: auto;
         overflow-x: hidden;
-        overscroll-behavior-y: contain;
+        /* https://github.com/KingSora/OverlayScrollbars/issues/199 */
+        /* overscroll-behavior-y: contain; */
       }
     `;
   }
   if (scrollable) {
     return css`
-      /* -webkit-overflow-scrolling: touch; */
       scroll-behavior: smooth;
       overflow-x: hidden;
       overflow-y: auto;
-      overscroll-behavior-y: contain;
+      /* https://github.com/KingSora/OverlayScrollbars/issues/199 */
+      /* overscroll-behavior-y: contain; */
     `;
   }
   return css``;

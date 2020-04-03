@@ -14,6 +14,7 @@ function ShellBody({
   className = null,
   scrollable,
   enableCustomScrollbars = false,
+  customScrollbarProps = {},
 }: ShellBodyProps) {
   const [shadowedHeader, setShadowedHeader] = useState(false);
   const element: React.RefObject<any> = useRef();
@@ -21,13 +22,20 @@ function ShellBody({
   useImperativeHandle(forwardedRef, () => element.current);
 
   useEffect(() => {
+    const scrollableElement = getScrollable();
     if (!!scrollable) {
-      disableBodyScroll(element.current);
+      disableBodyScroll(scrollableElement);
     }
     return () => {
-      enableBodyScroll(element.current);
+      enableBodyScroll(scrollableElement);
     };
   }, []);
+
+  const getScrollable = () => {
+    return enableCustomScrollbars
+      ? element.current?.osInstance().getElements().viewport
+      : element.current;
+  };
 
   const handleHeader = (e) => {
     setShadowedHeader(!e.isIntersecting);
@@ -45,7 +53,7 @@ function ShellBody({
           </Observer>
           <Shadow
             active={shadowedHeader}
-            width={element.current?.offsetWidth}
+            width={getScrollable()?.offsetWidth}
           />
         </>
       )}
@@ -58,7 +66,9 @@ function ShellBody({
       <OverlayScrollbarsComponent
         options={{
           scrollbars: { autoHide: 'leave' },
+          ...customScrollbarProps,
         }}
+        ref={element}
       >
         {content}
       </OverlayScrollbarsComponent>

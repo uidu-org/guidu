@@ -34,7 +34,9 @@ function FieldGeosuggest({
   onChange,
   forwardedRef,
   geolocationEnabled = true,
+  option: OptionRenderer = FieldGeosuggestItem,
   valueGetter,
+  filterOption = (_option: Suggestion) => true,
   value: propValue,
   ...rest
 }: FieldGeosuggestProps) {
@@ -204,12 +206,12 @@ function FieldGeosuggest({
         />
         {status === 'OK' && (
           <ul className="dropdown-menu show">
-            {data.map((suggestion) => {
+            {data.filter(filterOption).map((suggestion) => {
               const isActive =
                 activeSuggestion && suggestion.id === activeSuggestion.id;
 
               return (
-                <FieldGeosuggestItem
+                <OptionRenderer
                   key={suggestion.id}
                   suggestion={suggestion}
                   isActive={isActive}
@@ -223,74 +225,6 @@ function FieldGeosuggest({
     </Wrapper>
   );
 }
-
-// class FieldGeosuggest extends PureComponent<any, any> {
-//   componentDidMount() {
-//     this.componentForm = {
-//       street_number: 'short_name',
-//       route: 'long_name',
-//       locality: 'long_name',
-//       administrative_area_level_1: 'short_name',
-//       country: 'long_name',
-//       postal_code: 'short_name',
-//     };
-//   }
-
-//   parseGoogleResponse = components =>
-//     components.reduce((acc, component) => {
-//       const type = component.types[0];
-//       acc[type] = {
-//         long_name: component.long_name,
-//         short_name: component.short_name,
-//       };
-//       return acc;
-//     }, {});
-
-//   getAddressFromCoordinates = (lat, lng) => {
-//     const {
-//       help,
-//       onSetValue,
-//       onChange,
-//       onGeocode,
-//       name,
-//       formatAddressFromCoordinates,
-//     } = this.props;
-//     const latLng = new this.googleMaps.LatLng(lat, lng);
-//     this.geocoder.geocode({ latLng }, (results, status) => {
-//       if (status === this.googleMaps.GeocoderStatus.OK) {
-//         if (results[1]) {
-//           const value = formatAddressFromCoordinates(
-//             this.parseGoogleResponse(results[0].address_components),
-//           );
-//           this.setState(
-//             {
-//               loading: false,
-//               help,
-//               value,
-//             },
-//             () => {
-//               onSetValue(value);
-//               onChange(name, value);
-//               onGeocode({ lat, lng });
-//             },
-//           );
-//         } else {
-//           this.setState({
-//             loading: false,
-//             value: '',
-//             help: 'No results found',
-//           });
-//         }
-//       } else {
-//         this.setState({
-//           loading: false,
-//           value: '',
-//           help: `Geocoder failed due to: ${status}`,
-//         });
-//       }
-//     });
-//   };
-// }
 
 export default forwardRef((props: FieldGeosuggestProps, ref) => (
   <FieldGeosuggest {...props} forwardedRef={ref} />
