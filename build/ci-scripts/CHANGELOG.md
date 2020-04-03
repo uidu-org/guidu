@@ -1,5 +1,13 @@
 # @uidu/ci-scripts
 
+## 0.1.16
+
+### Patch Changes
+
+- a38770e: Better field geosuggest and shell body with scrollbars (now works in desktop, mobile still needs a fix"
+- Updated dependencies [a38770e]
+  - @uidu/build-utils@0.1.18
+
 ## 0.1.15
 
 ### Patch Changes

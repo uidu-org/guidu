@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- a38770e: Better field geosuggest and shell body with scrollbars (now works in desktop, mobile still needs a fix"
+
 ## 0.2.0
 
 ### Minor Changes

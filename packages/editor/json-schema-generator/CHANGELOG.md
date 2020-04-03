@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.8
+
+### Patch Changes
+
+- a38770e: Better field geosuggest and shell body with scrollbars (now works in desktop, mobile still needs a fix"
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/build-utils
 
+## 0.1.18
+
+### Patch Changes
+
+- a38770e: Better field geosuggest and shell body with scrollbars (now works in desktop, mobile still needs a fix"
+- Updated dependencies [a38770e]
+  - @uidu/build-releases@3.0.27
+
 ## 0.1.17
 
 ### Patch Changes
