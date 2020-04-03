@@ -1,5 +1,13 @@
 # @uidu/chat-window
 
+## 0.1.39
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+  - @uidu/message@0.1.39
+
 ## 0.1.38
 
 ### Patch Changes

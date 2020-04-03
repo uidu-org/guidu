@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.1.21
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+  - @uidu/stepper@0.1.23
+
 ## 0.1.20
 
 ### Patch Changes

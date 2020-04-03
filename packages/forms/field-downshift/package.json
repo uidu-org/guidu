@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-downshift",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -22,7 +22,7 @@
     "@uidu/docs": "^0.1.45",
     "@uidu/dropdown-menu": "^0.1.24",
     "@uidu/form": "^0.2.3",
-    "@uidu/shell": "^0.2.16"
+    "@uidu/shell": "^0.3.0"
   },
   "uidu:src": "index.ts"
 }

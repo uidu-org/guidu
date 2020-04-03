@@ -1,5 +1,12 @@
 # @uidu/chat-room
 
+## 0.1.10
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+
 ## 0.1.9
 
 ### Patch Changes

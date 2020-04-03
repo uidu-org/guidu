@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.2.0
+
+### Minor Changes
+
+- a51334f: Added custom scrollbars to shellbody
+
+### Patch Changes
+
+- 46b223a: Fix modal overflow and scrollbars, fix select creatable"
+
 ## 0.1.45
 
 ### Patch Changes

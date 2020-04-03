@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.1.39
+
+### Patch Changes
+
+- Updated dependencies [a51334f]
+  - @uidu/shell@0.3.0
+  - @uidu/drawer@0.2.16
+  - @uidu/media-viewer@0.1.36
+
 ## 0.1.38
 
 ### Patch Changes

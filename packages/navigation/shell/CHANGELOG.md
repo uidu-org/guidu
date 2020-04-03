@@ -1,5 +1,15 @@
 # @uidu/shell
 
+## 0.3.0
+
+### Minor Changes
+
+- a51334f: Added custom scrollbars to shellbody
+
+### Patch Changes
+
+- @uidu/navigation@0.2.26
+
 ## 0.2.18
 
 ### Patch Changes

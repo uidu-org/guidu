@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 0.1.102
+
+### Patch Changes
+
+- Updated dependencies [46b223a]
+- Updated dependencies [a51334f]
+  - @uidu/select@0.4.6
+  - @uidu/shell@0.3.0
+  - @uidu/data-controls@0.3.13
+
 ## 0.1.101
 
 ### Patch Changes

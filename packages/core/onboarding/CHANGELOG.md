@@ -1,5 +1,14 @@
 # @uidu/onboarding
 
+## 0.1.14
+
+### Patch Changes
+
+- 46b223a: Some fixes to modals
+- Updated dependencies [46b223a]
+- Updated dependencies [46b223a]
+  - @uidu/modal-dialog@0.1.36
+
 ## 0.1.13
 
 ### Patch Changes

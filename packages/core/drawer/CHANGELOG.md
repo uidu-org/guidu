@@ -1,5 +1,14 @@
 # @uidu/drawer
 
+## 0.2.16
+
+### Patch Changes
+
+- Updated dependencies [46b223a]
+- Updated dependencies [a51334f]
+  - @uidu/blanket@0.1.21
+  - @uidu/shell@0.3.0
+
 ## 0.2.15
 
 ### Patch Changes

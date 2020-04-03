@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 0.1.36
+
+### Patch Changes
+
+- 46b223a: Some fixes to modals
+- 46b223a: Fix modal overflow and scrollbars, fix select creatable"
+- Updated dependencies [46b223a]
+  - @uidu/blanket@0.1.21
+  - @uidu/select@0.4.6
+
 ## 0.1.35
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/widgets
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [46b223a]
+- Updated dependencies [46b223a]
+- Updated dependencies [a51334f]
+  - @uidu/modal-dialog@0.1.36
+  - @uidu/shell@0.3.0
+
 ## 0.2.3
 
 ### Patch Changes

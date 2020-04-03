@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.1.89
+
+### Patch Changes
+
+- Updated dependencies [46b223a]
+- Updated dependencies [46b223a]
+- Updated dependencies [a51334f]
+  - @uidu/modal-dialog@0.1.36
+  - @uidu/select@0.4.6
+  - @uidu/themes-uidu@0.2.0
+  - @uidu/shell@0.3.0
+  - @uidu/drawer@0.2.16
+  - @uidu/table@0.1.102
+  - @uidu/navigation@0.2.26
+
 ## 0.1.88
 
 ### Patch Changes
