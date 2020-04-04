@@ -1,5 +1,11 @@
 # @uidu/build-releases
 
+## 3.0.28
+
+### Patch Changes
+
+- 0039026: Bump all dependencies
+
 ## 3.0.27
 
 ### Patch Changes
