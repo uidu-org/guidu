@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.3.14
+
+### Patch Changes
+
+- bfba3e4: Bump ag-grid to latest version
+- Updated dependencies [bfba3e4]
+  - @uidu/table@0.1.103
+
 ## 0.3.13
 
 ### Patch Changes
