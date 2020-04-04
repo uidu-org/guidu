@@ -17,7 +17,7 @@
     "bolt": "^0.24.3",
     "boxen": "^4.0.0",
     "chalk": "^4.0.0",
-    "fs-extra": "^8.0.1",
+    "fs-extra": "^9.0.0",
     "inquirer": "^7.0.0",
     "jest-fixtures": "^0.6.0",
     "outdent": "^0.7.0",
