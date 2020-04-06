@@ -1,7 +1,6 @@
 import { Wrapper } from '@uidu/field-base';
 import Spinner from '@uidu/spinner';
 import Uppy from '@uppy/core';
-import { ProgressBar } from '@uppy/react';
 import ThumbnailGenerator from '@uppy/thumbnail-generator';
 import XHRUpload from '@uppy/xhr-upload';
 import React, {
@@ -15,6 +14,7 @@ import AvatarEditor from 'react-avatar-editor';
 import { FieldImageUploaderProps } from '../types';
 import Empty from './Empty';
 import Existing from './Existing';
+import Progress from './Progress';
 import Prompt from './Prompt';
 import Toolbar from './Toolbar';
 
@@ -23,6 +23,7 @@ function FieldImageUploader({
   existing: ExistingComponent = Existing,
   empty: EmptyComponent = Empty,
   prompt: PromptComponent = Prompt,
+  progress: ProgressComponent = Progress,
   label,
   help,
   borderRadius = 0,
@@ -58,6 +59,7 @@ function FieldImageUploader({
   const [data, setData] = useState([]);
   const [imageUrl, setImageUrl] = useState(defaultValue);
   const [errors, setErrors] = useState([]);
+  const [progress, setProgress] = useState(null);
 
   const uppyInstance = useMemo(() => {
     return Uppy({
@@ -73,9 +75,13 @@ function FieldImageUploader({
         setImageUrl(preview);
         setData([file]);
         setErrors([]);
-        console.log(preview);
+      })
+      .on('upload', () => setProgress(0))
+      .on('upload-progress', (_file, progress) => {
+        setProgress(progress.bytesUploaded / progress.bytesTotal);
       })
       .on('complete', (result) => {
+        setProgress(null);
         const value = result.successful.map(
           ({ response: { body } }) => body,
         )[0];
@@ -113,10 +119,12 @@ function FieldImageUploader({
       ...value,
       metadata: {
         ...value.metadata,
-        crop: position,
-        scale,
-        width: calculateWidth(),
-        height: calculateHeight(),
+        crop: {
+          ...position,
+          scale,
+          width: calculateWidth(),
+          height: calculateHeight(),
+        },
       },
     };
   };
@@ -230,7 +238,6 @@ function FieldImageUploader({
 
   return (
     <Wrapper label={label} {...rest}>
-      <ProgressBar uppy={uppy.current} hideAfterFinish />
       <div
         className={`embed-responsive embed-responsive-${ratio} card`}
         style={{ borderRadius }}
@@ -238,6 +245,7 @@ function FieldImageUploader({
         onMouseOut={handleMouseOut}
       >
         <div className="embed-responsive-item" ref={canvas}>
+          <ProgressComponent progress={progress} />
           {isLoading ? <Spinner /> : control}
         </div>
       </div>
