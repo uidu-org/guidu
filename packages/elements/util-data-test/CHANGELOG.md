@@ -1,5 +1,13 @@
 # @uidu/util-data-test
 
+## 0.1.9
+
+### Patch Changes
+
+- 0039026: Bump all dependencies
+- Updated dependencies [0039026]
+  - @uidu/emoji@0.1.13
+
 ## 0.1.8
 
 ### Patch Changes

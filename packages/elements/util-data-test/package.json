@@ -1,6 +1,6 @@
 {
   "name": "@uidu/util-data-test",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Shared test and story data",
   "license": "MIT",
   "author": "uidu",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/util-service-support": "^5.0.0",
     "@uidu/analytics": "^0.1.21",
-    "@uidu/emoji": "^0.1.12",
+    "@uidu/emoji": "^0.1.13",
     "@uidu/mentions": "^0.1.16",
     "@uidu/task-decision": "^0.1.13",
     "date-fns": "^2.0.0",
