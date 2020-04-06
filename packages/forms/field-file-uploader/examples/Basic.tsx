@@ -8,8 +8,20 @@ export default class Basic extends PureComponent {
   render() {
     return (
       <Form {...formDefaultProps}>
-        <FieldFileUploader {...inputDefaultProps} />
-        <FieldFileUploader {...inputDefaultProps} height={200} />
+        <FieldFileUploader
+          {...inputDefaultProps}
+          XHRUploadOptions={{
+            formData: true,
+            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
+          }}
+        />
+        <FieldFileUploader
+          {...inputDefaultProps}
+          XHRUploadOptions={{
+            formData: true,
+            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
+          }}
+        />
       </Form>
     );
   }

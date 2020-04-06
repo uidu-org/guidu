@@ -1,8 +1,16 @@
 import { Wrapper } from '@uidu/field-base';
 import Spinner from '@uidu/spinner';
-import loadImage from 'blueimp-load-image';
-import debounce from 'lodash.debounce';
-import React, { useCallback, useRef, useState } from 'react';
+import Uppy from '@uppy/core';
+import { ProgressBar } from '@uppy/react';
+import ThumbnailGenerator from '@uppy/thumbnail-generator';
+import XHRUpload from '@uppy/xhr-upload';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import AvatarEditor from 'react-avatar-editor';
 import { FieldImageUploaderProps } from '../types';
 import Empty from './Empty';
@@ -17,7 +25,6 @@ function FieldImageUploader({
   prompt: PromptComponent = Prompt,
   label,
   help,
-  toBase64 = false,
   borderRadius = 0,
   max = 20000000, // 20 MB
   ratio = '16by9',
@@ -26,49 +33,95 @@ function FieldImageUploader({
   },
   defaultValue,
   name,
+  value,
   onChange,
   onSetValue,
+  XHRUploadOptions = {},
   ...rest
 }: FieldImageUploaderProps) {
   const canvas: React.RefObject<HTMLDivElement> = useRef(null);
   const editor: React.RefObject<any> = useRef(null);
 
+  const handleMouseOut = () => setIsHovered(false);
+  const handleMouseOver = () => setIsHovered(true);
+  const calculateWidth = useCallback(() => canvas.current?.offsetWidth, [
+    canvas.current,
+  ]);
+  const calculateHeight = useCallback(() => canvas.current?.offsetHeight, [
+    canvas.current,
+  ]);
+
   const [isLoading, setIsLoading] = useState(false);
   const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({});
   const [isHovered, setIsHovered] = useState(false);
   const [data, setData] = useState([]);
   const [imageUrl, setImageUrl] = useState(defaultValue);
   const [errors, setErrors] = useState([]);
-  const [imageMime, setImageMime] = useState(null);
-  const [imageName, setImageName] = useState(null);
 
-  const handleMouseOut = () => setIsHovered(false);
-  const handleMouseOver = () => setIsHovered(true);
-  const calculateWidth = () => canvas.current.offsetWidth;
-  const calculateHeight = () => canvas.current.offsetHeight;
+  const uppyInstance = useMemo(() => {
+    return Uppy({
+      autoProceed: true,
+    })
+      .use(XHRUpload, XHRUploadOptions)
+      .use(ThumbnailGenerator, {
+        thumbnailWidth: calculateWidth(),
+      })
+      .on('thumbnail:generated', (file, preview) => {
+        setIsLoading(false);
+        setScale(1);
+        setImageUrl(preview);
+        setData([file]);
+        setErrors([]);
+        console.log(preview);
+      })
+      .on('complete', (result) => {
+        const value = result.successful.map(
+          ({ response: { body } }) => body,
+        )[0];
+        const valueWithMetadata = mergeValueWithMetadata(value);
+        onSetValue(valueWithMetadata);
+        onChange(name, valueWithMetadata);
+      });
+  }, []);
 
-  const handleChange = _data => {
-    if (editor.current) {
-      const canvas = editor.current.getImage();
-      if (toBase64) {
-        const value = canvas.toDataURL(imageMime);
-        onSetValue(value);
-        onChange(name, value);
-      } else {
-        canvas.toBlob(blob => {
-          onSetValue(blob);
-          onChange(name, blob);
-        }, imageMime);
-      }
-    } else {
-      onSetValue(defaultValue);
-      onChange(name, defaultValue);
+  const uppy = useRef(uppyInstance);
+
+  useEffect(() => {
+    const currentUppyInstance = uppy.current;
+    return () => currentUppyInstance.close();
+  }, []);
+
+  useEffect(() => {
+    const currentUppyInstance = uppy.current;
+    currentUppyInstance.getPlugin('ThumbnailGenerator').setOptions({
+      thumbnailWidth: calculateWidth() * 2, // max scale
+    });
+    return () => null;
+  }, [canvas.current]);
+
+  const handleChange = () => {
+    if (value) {
+      const valueWithMetadata = mergeValueWithMetadata(value);
+      onSetValue(valueWithMetadata);
+      onChange(name, valueWithMetadata);
     }
   };
 
-  const delayedOnChange = useCallback(debounce(handleChange, 300), []);
+  const mergeValueWithMetadata = (value) => {
+    return {
+      ...value,
+      metadata: {
+        ...value.metadata,
+        crop: position,
+        scale,
+        width: calculateWidth(),
+        height: calculateHeight(),
+      },
+    };
+  };
 
-  const handleDrop = files => {
+  const handleDrop = (files) => {
     setIsLoading(true);
     const validationResults = validate(files[0]);
     if (validationResults.isValid) {
@@ -79,7 +132,7 @@ function FieldImageUploader({
     }
   };
 
-  const validate = file => {
+  const validate = (file) => {
     const errors = [];
     if (file.size < max) {
       return {
@@ -94,49 +147,29 @@ function FieldImageUploader({
     };
   };
 
-  const evaluate = async file => {
-    return loadImage.parseMetaData(file, data => {
-      let orientation = 0;
-      if (data.exif) {
-        orientation = data.exif.get('Orientation');
-      }
-
-      loadImage(
-        file,
-        canvas => {
-          const image = new Image();
-          image.onload = () => {
-            setIsLoading(false);
-            setImageUrl(image.src);
-            setImageMime(file.type);
-            setImageName(file.name);
-            setScale(1);
-            setData([file]);
-            setErrors([]);
-          };
-          image.src = canvas.toDataURL();
-        },
-        {
-          orientation,
-          canvas: true,
-          noRevoke: true,
-        },
-      );
+  const evaluate = async (file: File) => {
+    uppy.current.addFile({
+      name: file.name,
+      type: file.type,
+      data: file,
     });
   };
 
-  const handleScale = e => {
+  const handleScale = (e) => {
     setScale(parseFloat(e.currentTarget.value));
-    delayedOnChange(e.currentTarget.value);
   };
 
-  const dismiss = e => {
+  const handlePositionChange = (coordinates) => {
+    setPosition(coordinates);
+  };
+
+  const dismiss = (e) => {
     e.preventDefault();
     e.stopPropagation();
     setData([]);
     setScale(1);
     setImageUrl(data.length > 0 ? defaultValue : '');
-    delayedOnChange(data.length > 0 ? defaultValue : '');
+    // delayedOnChange(data.length > 0 ? defaultValue : '');
   };
 
   let control = null;
@@ -150,24 +183,25 @@ function FieldImageUploader({
           onDrop={handleDrop}
         >
           <ToolbarComponent
-            confirm={delayedOnChange}
+            confirm={handleChange}
             dismiss={dismiss}
             isHovered={isHovered}
           />
         </ExistingComponent>
       );
+    } else {
+      control = (
+        <EmptyComponent
+          loading={isLoading}
+          errors={errors}
+          borderRadius={borderRadius}
+          onDrop={handleDrop}
+          label={label}
+          help={help}
+          prompt={PromptComponent}
+        />
+      );
     }
-    control = (
-      <EmptyComponent
-        loading={isLoading}
-        errors={errors}
-        borderRadius={borderRadius}
-        onDrop={handleDrop}
-        label={label}
-        help={help}
-        prompt={PromptComponent}
-      />
-    );
   } else {
     control = (
       <div className="image-uploader h-100">
@@ -181,12 +215,11 @@ function FieldImageUploader({
             borderRadius={borderRadius}
             color={[0, 0, 0, 0.6]} // RGBA
             scale={scale}
-            onLoadSuccess={delayedOnChange}
-            onPositionChange={delayedOnChange}
+            onPositionChange={handlePositionChange}
           />
           <ToolbarComponent
             handleScale={handleScale}
-            confirm={delayedOnChange}
+            confirm={handleChange}
             dismiss={dismiss}
             isHovered={isHovered}
           />
@@ -197,6 +230,7 @@ function FieldImageUploader({
 
   return (
     <Wrapper label={label} {...rest}>
+      <ProgressBar uppy={uppy.current} hideAfterFinish />
       <div
         className={`embed-responsive embed-responsive-${ratio} card`}
         style={{ borderRadius }}

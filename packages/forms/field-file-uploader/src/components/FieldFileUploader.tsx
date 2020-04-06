@@ -4,7 +4,7 @@ import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import { Dashboard } from '@uppy/react';
 import XHRUpload from '@uppy/xhr-upload';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { FieldFileUploaderProps } from '../types';
 
 const defaultOptions = {
@@ -24,38 +24,27 @@ function FieldFileUploader({
   onChange,
   name,
   options = defaultOptions,
+  XHRUploadOptions,
   ...rest
 }: FieldFileUploaderProps) {
-  const uppy = useRef(
-    Uppy(options)
-      .use(XHRUpload, {
-        formData: true,
-        endpoint:
-          'https://uidufundraising.uidu.local:8443/rails/active_storage/direct_uploads',
-        withCredentials: true,
-      })
-      .on('complete', result => {
-        handleChange(
-          result.successful.map(
-            ({
-              response: {
-                body: { signed_id, filename },
-              },
-            }: any) => ({
-              signed_id,
-              filename,
-            }),
-          ),
-        );
-      }),
+  const uppyInstance = useMemo(
+    () =>
+      Uppy(options)
+        .use(XHRUpload, XHRUploadOptions)
+        .on('complete', (result) => {
+          handleChange(result.successful.map(({ response: { body } }) => body));
+        }),
+    [],
   );
+
+  const uppy = useRef(uppyInstance);
 
   useEffect(() => {
     const currentUppyInstance = uppy.current;
     return () => currentUppyInstance.close();
   }, []);
 
-  const handleChange = results => {
+  const handleChange = (results) => {
     onSetValue(results);
     onChange(name, results);
   };

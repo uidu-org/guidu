@@ -38,8 +38,7 @@ export default class MediaPicker extends Component<any> {
       .use(Webcam)
       .use(XHRUpload, {
         formData: true,
-        endpoint:
-          'https://uidufundraising.uidu.local:8443/rails/active_storage/direct_uploads',
+        endpoint: 'https://uidufundraising.uidu.local:8443/upload',
         withCredentials: true,
       })
       .use(Url, {
@@ -51,12 +50,12 @@ export default class MediaPicker extends Component<any> {
       .use(Dropbox, {
         companionUrl,
       });
-    this.uppy.on('file-added', file => {
+    this.uppy.on('file-added', (file) => {
       this.uppy.setFileMeta(file.id, {
         size: file.size,
       });
     });
-    this.uppy.on('complete', result => {
+    this.uppy.on('complete', (result) => {
       onComplete(result);
     });
   }

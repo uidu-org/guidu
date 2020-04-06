@@ -65,7 +65,8 @@ function ShellBody({
     return (
       <OverlayScrollbarsComponent
         options={{
-          scrollbars: { autoHide: 'leave' },
+          className: 'os-theme-dark',
+          scrollbars: { autoHide: 'leave', autoHideDelay: 300 },
           ...customScrollbarProps,
         }}
         ref={element}

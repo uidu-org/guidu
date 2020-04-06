@@ -12,9 +12,10 @@ export default class Basic extends PureComponent {
           {...inputDefaultProps}
           label="Enter a fruit"
           geolocationEnabled={false}
-          geocoderType={['(cities)']}
+          // geocoderType={['(cities)']}
           countryRestricted="it"
           valueGetter={(suggestion) => {
+            console.log(suggestion);
             return suggestion.structured_formatting.main_text;
           }}
         />

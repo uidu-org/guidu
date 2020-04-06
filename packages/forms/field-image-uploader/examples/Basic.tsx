@@ -1,4 +1,5 @@
 import { Form } from '@uidu/form';
+import axios from 'axios';
 import React, { Component } from 'react';
 import FieldImageUploader from '..';
 import { inputDefaultProps } from '../../field-base/examples-utils';
@@ -11,7 +12,7 @@ export default class Basic extends Component<any, any> {
   };
 
   onChange = (name, value) => {
-    console.log(value);
+    console.log(name, value);
     this.setState({
       eventResult: `onChange called with value`,
     });
@@ -40,6 +41,19 @@ export default class Basic extends Component<any, any> {
           // onFocus={this.onFocus}
           label="Test"
           help="Drag 'n' drop some files here, or click to select files"
+          XHRUploadOptions={{
+            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
+          }}
+          uploadFile={async (file) => {
+            const bodyFormData = new FormData();
+            bodyFormData.append('files[]', file);
+            return axios({
+              method: 'post',
+              url: 'https://uidufundraising.uidu.local:8443/upload',
+              data: bodyFormData,
+              headers: { 'Content-Type': 'multipart/form-data' },
+            });
+          }}
         />
 
         <div

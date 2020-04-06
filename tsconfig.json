@@ -60,7 +60,6 @@
     "./typings/url.d.ts",
     "./typings/postis.d.ts",
     "./typings/raf-schd.d.ts",
-    "./typings/blueimp-load-image.d.ts",
     "./typings/png-chunks-extract.d.ts",
     "./typings/static-assets.d.ts",
     "./typings/utf8-string-bytes.d.ts",

@@ -187,7 +187,7 @@ function FieldGeosuggest({
         : {})}
       id={id}
     >
-      <div className="position-relative">
+      <div className="position-relative flex-grow-1">
         <input
           className={classNames('form-control', className)}
           disabled={!ready || disabled}

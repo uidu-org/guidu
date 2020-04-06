@@ -1,7 +1,8 @@
 import { FieldBaseProps } from '@uidu/field-base';
+import { XHRUploadOptions } from '@uppy/xhr-upload';
 
 export type FieldImageUploaderProps = FieldBaseProps & {
-  toBase64?: boolean;
+  XHRUploadOptions: Partial<XHRUploadOptions>;
   toolbar?: React.FC<any>;
   existing?: React.FC<any>;
   empty?: React.FC<any>;

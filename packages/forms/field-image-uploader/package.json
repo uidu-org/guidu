@@ -13,7 +13,11 @@
     "@uidu/button": "^0.1.58",
     "@uidu/field-base": "^0.2.3",
     "@uidu/spinner": "^0.1.18",
-    "blueimp-load-image": "^2.20.1",
+    "@uppy/core": "^1.0.1",
+    "@uppy/drag-drop": "^1.0.1",
+    "@uppy/react": "^1.0.1",
+    "@uppy/thumbnail-generator": "^1.5.7",
+    "@uppy/xhr-upload": "^1.0.1",
     "classnames": "^2.2.6",
     "react-avatar-editor": "^12.0.0-beta.0",
     "react-dropzone": "^10.1.7",
@@ -22,7 +26,8 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
-    "@uidu/form": "^0.2.3"
+    "@uidu/form": "^0.2.3",
+    "axios": "^0.19.0"
   },
   "uidu:src": "index.ts"
 }
