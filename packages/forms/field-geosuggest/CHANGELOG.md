@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 0.2.6
+
+### Patch Changes
+
+- 73498fa: Field file and field image uploaders now behave consistently, with @uppy. Need to check how it behaves with backend to wrap it up
+
 ## 0.2.5
 
 ### Patch Changes
