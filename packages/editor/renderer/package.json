@@ -1,6 +1,6 @@
 {
   "name": "@uidu/renderer",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Renderer component",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "MIT",
@@ -36,7 +36,7 @@
     "@types/prosemirror-model": "^1.5.0",
     "@types/react-loadable": "^5.4.1",
     "@uidu/avatar": "^0.3.2",
-    "@uidu/button": "^0.1.58",
+    "@uidu/button": "^0.1.59",
     "@uidu/docs": "^0.1.45",
     "@uidu/field-range": "^0.2.2",
     "@uidu/navigation": "^0.2.25",

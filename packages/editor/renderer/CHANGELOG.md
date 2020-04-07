@@ -1,5 +1,13 @@
 # @atlaskit/renderer
 
+## 0.1.19
+
+### Patch Changes
+
+- 31613a6: FIX editor toolbar intl, field file and image limits, renderer"
+- Updated dependencies [31613a6]
+  - @uidu/button@0.1.59
+
 ## 0.1.18
 
 ### Patch Changes

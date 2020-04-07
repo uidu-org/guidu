@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 0.2.5
+
+### Patch Changes
+
+- 31613a6: FIX editor toolbar intl, field file and image limits, renderer"
+
 ## 0.2.4
 
 ### Patch Changes
