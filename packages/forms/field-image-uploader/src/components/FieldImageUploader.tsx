@@ -41,7 +41,7 @@ function FieldImageUploader({
   ...rest
 }: FieldImageUploaderProps) {
   const canvas: React.RefObject<HTMLDivElement> = useRef(null);
-  const editor: React.RefObject<any> = useRef(null);
+  const editor: React.RefObject<AvatarEditor> = useRef(null);
 
   const handleMouseOut = () => setIsHovered(false);
   const handleMouseOver = () => setIsHovered(true);
@@ -118,12 +118,7 @@ function FieldImageUploader({
       ...value,
       metadata: {
         ...value.metadata,
-        crop: {
-          ...position,
-          scale,
-          width: calculateWidth(),
-          height: calculateHeight(),
-        },
+        crop: editor.current.getCroppingRect(),
       },
     };
   };
@@ -167,6 +162,8 @@ function FieldImageUploader({
   };
 
   const handlePositionChange = (coordinates) => {
+    console.log(editor.current.getCroppingRect());
+    console.log(editor.current.getImage());
     setPosition(coordinates);
   };
 
