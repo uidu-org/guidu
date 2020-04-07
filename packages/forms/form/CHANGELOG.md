@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- 6c6f1f3: Fix renderer build path
+
 ## 0.2.3
 
 ### Patch Changes
