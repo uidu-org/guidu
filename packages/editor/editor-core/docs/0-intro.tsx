@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 
@@ -27,7 +27,7 @@ export default md`
       packageName="@uidu/stepper"
       Component={require('../examples/WithEditorActions').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/WithEditorActions')}
+      source={require('!!raw-loader!../examples/WithEditorActions').default}
     />
   )}
 
