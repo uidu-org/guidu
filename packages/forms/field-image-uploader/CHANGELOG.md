@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.2.6
+
+### Patch Changes
+
+- d2342f5: Fix cropping variables
+
 ## 0.2.5
 
 ### Patch Changes
