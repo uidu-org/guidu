@@ -90,9 +90,9 @@ export class Editor extends React.Component<EditorProps> {
   render() {
     return (
       <PresetConsumer>
-        {plugins => (
+        {(plugins) => (
           <PortalProvider
-            render={portalProviderAPI => (
+            render={(portalProviderAPI) => (
               <IntlProvider locale="en">
                 <>
                   <EditorInternal
@@ -146,6 +146,8 @@ export class EditorInternal extends React.Component<
       portalProviderAPI: this.props.portalProviderAPI,
       providerFactory,
       reactContext: () => this.context,
+      // @ts-ignore
+      intl: this.props.intl,
       dispatchAnalyticsEvent: () => {},
     });
     const state = EditorState.create({
@@ -160,7 +162,7 @@ export class EditorInternal extends React.Component<
         state,
         dispatchTransaction: this.dispatchTransaction,
         // Disables the contentEditable attribute of the editor if the editor is disabled
-        editable: _state => true,
+        editable: (_state) => true,
         attributes: { 'data-gramm': 'false' },
       },
     );
@@ -216,7 +218,7 @@ export class EditorInternal extends React.Component<
       if (onChange && transaction.docChanged && this.editorActions) {
         // TODO we should re-visit this, this should NOT be async. Waiting for media pending tasks
         // should happen in teardown, not when getting the editors value.
-        this.editorActions.getValue().then(value => {
+        this.editorActions.getValue().then((value) => {
           onChange(value);
         });
       }
@@ -281,7 +283,9 @@ export class EditorSharedConfigConsumer extends React.Component<
   render() {
     return (
       <Consumer>
-        {value => this.props.children(this.context.editorSharedConfig || value)}
+        {(value) =>
+          this.props.children(this.context.editorSharedConfig || value)
+        }
       </Consumer>
     );
   }

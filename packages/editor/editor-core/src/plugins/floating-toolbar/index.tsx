@@ -11,6 +11,7 @@ import { findDomRefAtPos, findSelectedNodeOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import rafSchedule from 'raf-schd';
 import * as React from 'react';
+import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
@@ -33,7 +34,7 @@ export const getRelevantConfig = (
 ): ConfigWithNodeInfo | undefined => {
   // node selections always take precedence, see if
   let configPair: ConfigWithNodeInfo | undefined;
-  configs.find(config => {
+  configs.find((config) => {
     const node = findSelectedNodeOfType(config.nodeType)(selection);
     if (node) {
       configPair = {
@@ -52,9 +53,9 @@ export const getRelevantConfig = (
 
   // create mapping of node type name to configs
   const configByNodeType: Record<string, FloatingToolbarConfig> = {};
-  configs.forEach(config => {
+  configs.forEach((config) => {
     if (Array.isArray(config.nodeType)) {
-      config.nodeType.forEach(nodeType => {
+      config.nodeType.forEach((nodeType) => {
         configByNodeType[nodeType.name] = config;
       });
     } else {
@@ -94,11 +95,11 @@ const floatingToolbarPlugin = (): EditorPlugin => ({
       {
         // Should be after all toolbar plugins
         name: 'floatingToolbar',
-        plugin: ({ dispatch, reactContext, providerFactory }) =>
+        plugin: ({ dispatch, intl, providerFactory }) =>
           floatingToolbarPluginFactory({
             dispatch,
             floatingToolbarHandlers,
-            reactContext,
+            intl,
             providerFactory,
           }),
       },
@@ -229,15 +230,10 @@ function sanitizeFloatingToolbarConfig(
 function floatingToolbarPluginFactory(options: {
   floatingToolbarHandlers: Array<FloatingToolbarHandler>;
   dispatch: Dispatch<ConfigWithNodeInfo | undefined>;
-  reactContext: () => { [key: string]: any };
+  intl: IntlShape;
   providerFactory: ProviderFactory;
 }) {
-  const {
-    floatingToolbarHandlers,
-    dispatch,
-    reactContext,
-    providerFactory,
-  } = options;
+  const { floatingToolbarHandlers, dispatch, intl, providerFactory } = options;
 
   const apply = (
     _tr: Transaction,
@@ -245,11 +241,10 @@ function floatingToolbarPluginFactory(options: {
     _oldState: EditorState<any>,
     newState: EditorState<any>,
   ) => {
-    const { intl } = reactContext();
     const activeConfigs = floatingToolbarHandlers
-      .map(handler => handler(newState, intl, providerFactory))
+      .map((handler) => handler(newState, intl, providerFactory))
       .filter(filterUndefined)
-      .map(config => sanitizeFloatingToolbarConfig(config));
+      .map((config) => sanitizeFloatingToolbarConfig(config));
 
     const relevantConfig =
       activeConfigs && getRelevantConfig(newState.selection, activeConfigs);

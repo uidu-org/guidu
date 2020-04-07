@@ -18,7 +18,7 @@ export function sortByRank(a: { rank: number }, b: { rank: number }): number {
 }
 
 export function sortByOrder(item: 'plugins' | 'nodes' | 'marks') {
-  return function(a: { name: string }, b: { name: string }): number {
+  return function (a: { name: string }, b: { name: string }): number {
     return Ranks[item].indexOf(a.name) - Ranks[item].indexOf(b.name);
   };
 }
@@ -27,14 +27,14 @@ export function fixExcludes(marks: {
   [key: string]: MarkSpec;
 }): { [key: string]: MarkSpec } {
   const markKeys = Object.keys(marks);
-  const markGroups = new Set(markKeys.map(mark => marks[mark].group));
+  const markGroups = new Set(markKeys.map((mark) => marks[mark].group));
 
-  markKeys.map(markKey => {
+  markKeys.map((markKey) => {
     const mark = marks[markKey];
     if (mark.excludes) {
       mark.excludes = mark.excludes
         .split(' ')
-        .filter(group => markGroups.has(group))
+        .filter((group) => markGroups.has(group))
         .join(' ');
     }
   });
@@ -48,21 +48,18 @@ export function processPluginsList(
   /**
    * First pass to collect pluginsOptions
    */
-  const pluginsOptions = plugins.reduce(
-    (acc, plugin) => {
-      if (plugin.pluginsOptions) {
-        Object.keys(plugin.pluginsOptions).forEach(pluginName => {
-          if (!acc[pluginName]) {
-            acc[pluginName] = [];
-          }
-          acc[pluginName].push(plugin.pluginsOptions![pluginName]);
-        });
-      }
+  const pluginsOptions = plugins.reduce((acc, plugin) => {
+    if (plugin.pluginsOptions) {
+      Object.keys(plugin.pluginsOptions).forEach((pluginName) => {
+        if (!acc[pluginName]) {
+          acc[pluginName] = [];
+        }
+        acc[pluginName].push(plugin.pluginsOptions![pluginName]);
+      });
+    }
 
-      return acc;
-    },
-    {} as PluginsOptions,
-  );
+    return acc;
+  }, {} as PluginsOptions);
 
   /**
    * Process plugins
@@ -112,22 +109,16 @@ export function processPluginsList(
 
 export function createSchema(editorConfig: EditorConfig) {
   const marks = fixExcludes(
-    editorConfig.marks.sort(sortByOrder('marks')).reduce(
-      (acc, mark) => {
-        acc[mark.name] = mark.mark;
-        return acc;
-      },
-      {} as { [nodeName: string]: MarkSpec },
-    ),
+    editorConfig.marks.sort(sortByOrder('marks')).reduce((acc, mark) => {
+      acc[mark.name] = mark.mark;
+      return acc;
+    }, {} as { [nodeName: string]: MarkSpec }),
   );
   const nodes = sanitizeNodes(
-    editorConfig.nodes.sort(sortByOrder('nodes')).reduce(
-      (acc, node) => {
-        acc[node.name] = node.node;
-        return acc;
-      },
-      {} as { [nodeName: string]: NodeSpec },
-    ),
+    editorConfig.nodes.sort(sortByOrder('nodes')).reduce((acc, node) => {
+      acc[node.name] = node.node;
+      return acc;
+    }, {} as { [nodeName: string]: NodeSpec }),
     marks,
   );
 
@@ -145,6 +136,7 @@ export function createPMPlugins({
   errorReporter,
   portalProviderAPI,
   reactContext,
+  intl,
   dispatchAnalyticsEvent,
 }: PMPluginCreateConfig): Plugin[] {
   return editorConfig.pmPlugins
@@ -160,10 +152,11 @@ export function createPMPlugins({
         eventDispatcher,
         portalProviderAPI,
         reactContext,
+        intl,
         dispatchAnalyticsEvent,
       }),
     )
-    .filter(plugin => !!plugin) as Plugin[];
+    .filter((plugin) => !!plugin) as Plugin[];
 }
 
 export function createErrorReporter(

@@ -5,6 +5,7 @@ import {
   TextSelection,
   Transaction,
 } from 'prosemirror-state';
+import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../../event-dispatcher';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import { dismissCommand } from '../commands/dismiss';
@@ -71,7 +72,7 @@ export function createInitialPluginState(
 
 export function createPlugin(
   dispatch: Dispatch,
-  reactContext: () => { [key: string]: any },
+  intl: IntlShape,
   typeAhead: Array<TypeAheadHandler>,
 ): Plugin {
   return new Plugin({
@@ -111,7 +112,7 @@ export function createPlugin(
             return tr.doc.rangeHasMark(from - 1, to, typeAheadQuery)
               ? defaultActionHandler({
                   dispatch,
-                  reactContext,
+                  intl,
                   typeAhead,
                   state,
                   pluginState,
@@ -125,7 +126,7 @@ export function createPlugin(
           default:
             return defaultActionHandler({
               dispatch,
-              reactContext,
+              intl,
               typeAhead,
               state,
               pluginState,
@@ -182,7 +183,7 @@ export function createPlugin(
 
           // Fetch type ahead items if handler returned a promise.
           if (pluginState.active && pluginState.itemsLoader) {
-            pluginState.itemsLoader.promise.then(items =>
+            pluginState.itemsLoader.promise.then((items) =>
               itemsListUpdated(items)(editorView.state, dispatch),
             );
           }
@@ -202,7 +203,7 @@ export function createPlugin(
         )
       ) {
         let newTr;
-        selectCurrentItem()(newState, tr => (newTr = tr));
+        selectCurrentItem()(newState, (tr) => (newTr = tr));
         return newTr;
       }
 
@@ -233,7 +234,7 @@ export function createPlugin(
           const { selection, schema } = state;
 
           const triggers = typeAhead.map(
-            typeAheadHandler => typeAheadHandler.trigger,
+            (typeAheadHandler) => typeAheadHandler.trigger,
           );
 
           if (
@@ -277,8 +278,8 @@ export function createItemsLoader(
   return {
     promise: new Promise((resolve, reject) => {
       promiseOfItems
-        .then(result => !canceled && resolve(result))
-        .catch(error => !canceled && reject(error));
+        .then((result) => !canceled && resolve(result))
+        .catch((error) => !canceled && reject(error));
     }),
     cancel() {
       canceled = true;
@@ -288,14 +289,14 @@ export function createItemsLoader(
 
 export function defaultActionHandler({
   dispatch,
-  reactContext,
+  intl,
   typeAhead,
   pluginState,
   state,
   tr,
 }: {
   dispatch: Dispatch;
-  reactContext: () => { [key: string]: any };
+  intl: IntlShape;
   typeAhead: Array<TypeAheadHandler>;
   pluginState: PluginState;
   state: EditorState;
@@ -350,13 +351,12 @@ export function defaultActionHandler({
     .replace(/^([^\x00-\xFF]|[\s\n])+/g, '')
     .replace(trigger, '');
 
-  const typeAheadHandler = typeAhead.find(t => t.trigger === trigger)!;
+  const typeAheadHandler = typeAhead.find((t) => t.trigger === trigger)!;
   let typeAheadItems: Array<TypeAheadItem> | Promise<Array<TypeAheadItem>> = [];
   let itemsLoader: TypeAheadItemsLoader = null;
   let highlight: JSX.Element | null = null;
 
   try {
-    const { intl } = reactContext();
     typeAheadItems = typeAheadHandler.getItems(
       query,
       state,
@@ -378,9 +378,9 @@ export function defaultActionHandler({
     }
 
     if ((typeAheadItems as Promise<Array<TypeAheadItem>>).then) {
-      itemsLoader = createItemsLoader(typeAheadItems as Promise<
-        Array<TypeAheadItem>
-      >);
+      itemsLoader = createItemsLoader(
+        typeAheadItems as Promise<Array<TypeAheadItem>>,
+      );
       typeAheadItems = pluginState.items;
     }
   } catch (e) {}

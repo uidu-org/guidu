@@ -104,7 +104,7 @@ export const getButtonStyles = (props: ThemeProps) => ({
   lineHeight: getLineHeight(props),
   padding: getPadding(props),
   transition: getTransition(props),
-  transitionDuration: getTransitionDuration(props),
+  // transitionDuration: getTransitionDuration(props),
   verticalAlign: getVerticalAlign(props),
   width: getWidth(props),
   WebkitAppearance: 'none',

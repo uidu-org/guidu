@@ -12,7 +12,7 @@ import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Selection, Transaction } from 'prosemirror-state';
 import { DirectEditorProps, EditorView } from 'prosemirror-view';
 import * as React from 'react';
-import { IntlContext } from 'react-intl';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { analyticsService } from '../analytics';
 import { createDispatch, Dispatch, EventDispatcher } from '../event-dispatcher';
 import {
@@ -55,7 +55,7 @@ import {
 } from './create-editor';
 import createPluginList from './create-plugins-list';
 
-export interface EditorViewProps {
+export type EditorViewProps = WrappedComponentProps & {
   editorProps: EditorProps;
   createAnalyticsEvent?: CreateUIAnalyticsEvent;
   providerFactory: ProviderFactory;
@@ -82,7 +82,7 @@ export interface EditorViewProps {
     eventDispatcher: EventDispatcher;
     transformer?: Transformer<string>;
   }) => void;
-}
+};
 
 function handleEditorFocus(view: EditorView): number | undefined {
   if (view.hasFocus()) {
@@ -94,9 +94,7 @@ function handleEditorFocus(view: EditorView): number | undefined {
   }, 0);
 }
 
-export default class ReactEditorView<T = {}> extends React.Component<
-  EditorViewProps & T
-> {
+class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
   view?: EditorView;
   eventDispatcher: EventDispatcher;
   contentTransformer?: Transformer<string>;
@@ -111,7 +109,6 @@ export default class ReactEditorView<T = {}> extends React.Component<
 
   static contextTypes = {
     getAtlaskitAnalyticsEventHandlers: PropTypes.func,
-    intl: IntlContext,
   };
 
   // ProseMirror is instantiated prior to the initial React render cycle,
@@ -164,7 +161,7 @@ export default class ReactEditorView<T = {}> extends React.Component<
       this.broadcastDisabled(!!nextProps.editorProps.disabled);
       // Disables the contentEditable attribute of the editor if the editor is disabled
       this.view.setProps({
-        editable: _state => !nextProps.editorProps.disabled,
+        editable: (_state) => !nextProps.editorProps.disabled,
       } as DirectEditorProps);
 
       if (
@@ -253,6 +250,7 @@ export default class ReactEditorView<T = {}> extends React.Component<
       providerFactory: props.providerFactory,
       portalProviderAPI: props.portalProviderAPI,
       reactContext: () => this.context,
+      intl: this.props.intl,
       dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
@@ -312,7 +310,7 @@ export default class ReactEditorView<T = {}> extends React.Component<
     if (this.view) {
       // Destroy the state if the Editor is being unmounted
       const editorState = this.view.state;
-      editorState.plugins.forEach(plugin => {
+      editorState.plugins.forEach((plugin) => {
         const state = plugin.getState(editorState);
         if (state && state.destroy) {
           state.destroy();
@@ -360,6 +358,8 @@ export default class ReactEditorView<T = {}> extends React.Component<
     );
     const schema = createSchema(this.config);
 
+    console.log(this.context);
+
     const {
       contentTransformerProvider,
       defaultValue,
@@ -375,6 +375,7 @@ export default class ReactEditorView<T = {}> extends React.Component<
       providerFactory: options.props.providerFactory,
       portalProviderAPI: this.props.portalProviderAPI,
       reactContext: () => this.context,
+      intl: this.props.intl,
       dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
@@ -463,7 +464,7 @@ export default class ReactEditorView<T = {}> extends React.Component<
         }
       },
       // Disables the contentEditable attribute of the editor if the editor is disabled
-      editable: _state => !this.props.editorProps.disabled,
+      editable: (_state) => !this.props.editorProps.disabled,
       attributes: { 'data-gramm': 'false' },
     };
   };
@@ -503,7 +504,8 @@ export default class ReactEditorView<T = {}> extends React.Component<
 
       if (
         this.props.editorProps.shouldFocus &&
-        (view.props.editable && view.props.editable(view.state))
+        view.props.editable &&
+        view.props.editable(view.state)
       ) {
         this.focusTimeoutId = handleEditorFocus(view);
       }
@@ -569,3 +571,5 @@ function getUAPrefix() {
 
   return '';
 }
+
+export default injectIntl(ReactEditorView);

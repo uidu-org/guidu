@@ -80,10 +80,8 @@ class ToolbarBlockType extends React.PureComponent<
       intl: { formatMessage },
     } = this.props;
 
-    console.log(this.props);
-
     const isHeadingDisabled = !availableBlockTypes.some(
-      blockType => blockType.nodeName === 'heading',
+      (blockType) => blockType.nodeName === 'heading',
     );
 
     if (isHeadingDisabled) {
@@ -91,8 +89,8 @@ class ToolbarBlockType extends React.PureComponent<
     }
 
     const blockTypeTitles = availableBlockTypes
-      .filter(blockType => blockType.name === currentBlockType.name)
-      .map(blockType => blockType.title);
+      .filter((blockType) => blockType.name === currentBlockType.name)
+      .map((blockType) => blockType.title);
 
     const longestDropdownMenuItem = [
       NORMAL_TEXT,
@@ -176,29 +174,26 @@ class ToolbarBlockType extends React.PureComponent<
       intl: { formatMessage },
     } = this.props;
     const { currentBlockType, availableBlockTypes } = this.props.pluginState;
-    const items = availableBlockTypes.reduce(
-      (acc, blockType, blockTypeNo) => {
-        const isActive = currentBlockType === blockType;
-        const tagName = blockType.tagName || 'p';
-        acc.push({
-          content: (
-            <BlockTypeMenuItem tagName={tagName} selected={isActive}>
-              {createElement(tagName, {}, formatMessage(blockType.title))}
-            </BlockTypeMenuItem>
-          ),
-          value: blockType,
-          key: `${blockType.name}-${blockTypeNo}`,
-          elemAfter: (
-            <KeyboardShortcut selected={isActive}>
-              {tooltip(findKeymapByDescription(blockType.title.defaultMessage))}
-            </KeyboardShortcut>
-          ),
-          isActive,
-        });
-        return acc;
-      },
-      [] as Array<DropdownItem>,
-    );
+    const items = availableBlockTypes.reduce((acc, blockType, blockTypeNo) => {
+      const isActive = currentBlockType === blockType;
+      const tagName = blockType.tagName || 'p';
+      acc.push({
+        content: (
+          <BlockTypeMenuItem tagName={tagName} selected={isActive}>
+            {createElement(tagName, {}, formatMessage(blockType.title))}
+          </BlockTypeMenuItem>
+        ),
+        value: blockType,
+        key: `${blockType.name}-${blockTypeNo}`,
+        elemAfter: (
+          <KeyboardShortcut selected={isActive}>
+            {tooltip(findKeymapByDescription(blockType.title.defaultMessage))}
+          </KeyboardShortcut>
+        ),
+        isActive,
+      });
+      return acc;
+    }, [] as Array<DropdownItem>);
     return [{ items }];
   };
 

@@ -61,9 +61,12 @@ function FieldImageUploader({
   const [errors, setErrors] = useState([]);
   const [progress, setProgress] = useState(null);
 
-  const uppyInstance = useMemo(() => {
+  const uppy = useMemo(() => {
     return Uppy({
       autoProceed: true,
+      restrictions: {
+        maxNumberOfFiles: 1,
+      },
     })
       .use(XHRUpload, XHRUploadOptions)
       .use(ThumbnailGenerator, {
@@ -91,16 +94,12 @@ function FieldImageUploader({
       });
   }, []);
 
-  const uppy = useRef(uppyInstance);
-
   useEffect(() => {
-    const currentUppyInstance = uppy.current;
-    return () => currentUppyInstance.close();
+    return () => uppy.close();
   }, []);
 
   useEffect(() => {
-    const currentUppyInstance = uppy.current;
-    currentUppyInstance.getPlugin('ThumbnailGenerator').setOptions({
+    uppy.getPlugin('ThumbnailGenerator').setOptions({
       thumbnailWidth: calculateWidth() * 2, // max scale
     });
     return () => null;
@@ -156,7 +155,7 @@ function FieldImageUploader({
   };
 
   const evaluate = async (file: File) => {
-    uppy.current.addFile({
+    uppy.addFile({
       name: file.name,
       type: file.type,
       data: file,

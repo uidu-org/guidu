@@ -3,6 +3,7 @@ import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
+import { IntlShape } from 'react-intl';
 import EditorActions from '../actions';
 import { Dispatch, EventDispatcher } from '../event-dispatcher';
 import { DispatchAnalyticsEvent } from '../plugins/analytics';
@@ -24,6 +25,7 @@ export type PMPluginFactoryParams = {
   errorReporter?: ErrorReporter;
   portalProviderAPI: PortalProviderAPI;
   reactContext: () => { [key: string]: any };
+  intl: IntlShape;
   dispatchAnalyticsEvent: DispatchAnalyticsEvent;
 };
 

@@ -59,6 +59,9 @@ export default class MediaSingle extends Component<Props, State> {
 
   render() {
     const { props } = this;
+    console.log(props);
+
+    return null;
 
     const child = React.Children.only(
       React.Children.toArray(props.children)[0],

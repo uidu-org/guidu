@@ -150,7 +150,7 @@ export default class WithPluginState extends React.Component<Props, State> {
     const pluginsStates = this.getPluginsStates(plugins, editorView);
     this.setState(pluginsStates);
 
-    Object.keys(plugins).forEach(propName => {
+    Object.keys(plugins).forEach((propName) => {
       const pluginKey = plugins[propName];
       if (!pluginKey) {
         return undefined;
@@ -181,7 +181,7 @@ export default class WithPluginState extends React.Component<Props, State> {
       return undefined;
     }
 
-    Object.keys(this.listeners).forEach(key => {
+    Object.keys(this.listeners).forEach((key) => {
       const pluginState = (this.listeners as any)[key].pluginKey.getState(
         editorView.state,
       );

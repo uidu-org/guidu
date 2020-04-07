@@ -1,9 +1,9 @@
+import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import {
   createLanguageList,
   DEFAULT_LANGUAGES,
   getLanguageIdentifier,
 } from '@uidu/adf-schema';
-import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { findParentNodeOfType } from 'prosemirror-utils';
 import { defineMessages } from 'react-intl';
 import commonMessages from '../../messages';
@@ -46,16 +46,16 @@ export const getToolbarConfig: FloatingToolbarHandler = (
     const language =
       parent && parent.node.attrs ? parent.node.attrs.language : undefined;
 
-    const options = languageList.map(lang => ({
+    const options = languageList.map((lang) => ({
       label: lang.name,
       value: getLanguageIdentifier(lang),
     }));
 
     const languageSelect: FloatingToolbarSelect<Command> = {
       type: 'select',
-      onChange: option => changeLanguage(option.value),
+      onChange: (option) => changeLanguage(option.value),
       defaultValue: language
-        ? options.find(option => option.value === language)
+        ? options.find((option) => option.value === language)
         : undefined,
       placeholder: formatMessage(messages.selectLanguage),
       options,

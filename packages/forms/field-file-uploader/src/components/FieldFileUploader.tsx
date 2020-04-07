@@ -4,7 +4,7 @@ import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import { Dashboard } from '@uppy/react';
 import XHRUpload from '@uppy/xhr-upload';
-import React, { useEffect, useMemo, useRef } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { FieldFileUploaderProps } from '../types';
 
 const defaultOptions = {
@@ -27,7 +27,7 @@ function FieldFileUploader({
   XHRUploadOptions,
   ...rest
 }: FieldFileUploaderProps) {
-  const uppyInstance = useMemo(
+  const uppy = useMemo(
     () =>
       Uppy(options)
         .use(XHRUpload, XHRUploadOptions)
@@ -37,11 +37,8 @@ function FieldFileUploader({
     [],
   );
 
-  const uppy = useRef(uppyInstance);
-
   useEffect(() => {
-    const currentUppyInstance = uppy.current;
-    return () => currentUppyInstance.close();
+    return () => uppy.close();
   }, []);
 
   const handleChange = (results) => {
@@ -52,7 +49,7 @@ function FieldFileUploader({
   return (
     <Wrapper {...rest}>
       <Dashboard
-        uppy={uppy.current}
+        uppy={uppy}
         height={350}
         locale={{
           strings: {

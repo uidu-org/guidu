@@ -86,14 +86,14 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     }
   };
 
-  onFocus: React.FocusEventHandler<HTMLButtonElement> = event => {
+  onFocus: React.FocusEventHandler<HTMLButtonElement> = (event) => {
     this.setState({ isFocus: true });
     if (this.props.onFocus) {
       this.props.onFocus(event);
     }
   };
 
-  onBlur: React.FocusEventHandler<HTMLButtonElement> = event => {
+  onBlur: React.FocusEventHandler<HTMLButtonElement> = (event) => {
     this.setState({ isFocus: false });
     if (this.props.onBlur) {
       this.props.onBlur(event);
@@ -110,7 +110,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
   // Swallow click events when the button is disabled
   // to prevent inner child clicks bubbling up.
-  onInnerClick: React.MouseEventHandler<HTMLElement> = e => {
+  onInnerClick: React.MouseEventHandler<HTMLElement> = (e) => {
     if (!this.isInteractive()) {
       e.stopPropagation();
     }

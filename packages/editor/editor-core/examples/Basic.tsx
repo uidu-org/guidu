@@ -1,6 +1,6 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
-import {Editor} from '..';
+import { Editor } from '..';
 
 export default class Basic extends PureComponent<any, any> {
   state = {
@@ -24,7 +24,7 @@ export default class Basic extends PureComponent<any, any> {
               {renderToolbar({})}
             </ShellHeader>
             <ShellBody
-              ref={c => {
+              ref={(c) => {
                 this.element = c;
               }}
             >
