@@ -17,7 +17,7 @@ import {
 } from '../consts';
 import { PanelSharedCssClassName } from './panel';
 
-export const tableMarginTop = 24;
+export const tableMarginTop = 0;
 export const tableMarginBottom = 16;
 export const tableMarginSides = 8;
 export const tableCellMinWidth = 48;
@@ -57,7 +57,7 @@ const tableSharedStyle = css`
   .${TableSharedCssClassName.TABLE_CONTAINER} > table,
   .${TableSharedCssClassName.TABLE_NODE_WRAPPER} > table {
     border-collapse: collapse;
-    margin: ${tableMarginTop}px ${tableMarginSides}px 0 0;
+    margin: ${tableMarginTop}px ${tableMarginSides}px ${tableMarginBottom};
     border: ${tableCellBorderWidth}px solid ${themed({
   light: akEditorTableBorder,
   dark: akEditorTableBorderDark,
@@ -73,6 +73,7 @@ const tableSharedStyle = css`
     & {
       * {
         box-sizing: border-box;
+        margin-bottom: 0;
       }
 
       tbody {

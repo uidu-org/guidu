@@ -48,71 +48,71 @@ export const headingSizes = {
 };
 
 export const h900 = () => css`
-  ${baseHeading(headingSizes.h900.size, headingSizes.h900.lineHeight)}
+  /* ${baseHeading(headingSizes.h900.size, headingSizes.h900.lineHeight)}
   color: ${colors.heading};
   font-weight: 500;
   letter-spacing: -0.01em;
-  margin-top: ${gridSize() * 6.5}px;
+  margin-top: ${gridSize() * 6.5}px; */
 `;
 
 export const h800 = () => css`
-  ${baseHeading(headingSizes.h800.size, headingSizes.h800.lineHeight)}
+  /* ${baseHeading(headingSizes.h800.size, headingSizes.h800.lineHeight)}
   color: ${colors.heading};
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin-top: ${gridSize() * 5}px;
+  margin-top: ${gridSize() * 5}px; */
 `;
 
 export const h700 = () => css`
-  ${baseHeading(headingSizes.h700.size, headingSizes.h700.lineHeight)}
+  /* ${baseHeading(headingSizes.h700.size, headingSizes.h700.lineHeight)}
   color: ${colors.heading};
   font-weight: 500;
   letter-spacing: -0.01em;
-  margin-top: ${gridSize() * 5}px;
+  margin-top: ${gridSize() * 5}px; */
 `;
 
 export const h600 = () => css`
-  ${baseHeading(headingSizes.h600.size, headingSizes.h600.lineHeight)}
+  /* ${baseHeading(headingSizes.h600.size, headingSizes.h600.lineHeight)}
   color: ${colors.heading};
   font-weight: 500;
   letter-spacing: -0.008em;
-  margin-top: ${gridSize() * 3.5}px;
+  margin-top: ${gridSize() * 3.5}px; */
 `;
 
 export const h500 = () => css`
-  ${baseHeading(headingSizes.h500.size, headingSizes.h500.lineHeight)}
+  /* ${baseHeading(headingSizes.h500.size, headingSizes.h500.lineHeight)}
   color: ${colors.heading};
   font-weight: 600;
   letter-spacing: -0.006em;
-  margin-top: ${gridSize() * 3}px;
+  margin-top: ${gridSize() * 3}px; */
 `;
 
 export const h400 = () => css`
-  ${baseHeading(headingSizes.h400.size, headingSizes.h400.lineHeight)}
+  /* ${baseHeading(headingSizes.h400.size, headingSizes.h400.lineHeight)}
   color: ${colors.heading};
   font-weight: 600;
   letter-spacing: -0.003em;
-  margin-top: ${gridSize() * 2}px;
+  margin-top: ${gridSize() * 2}px; */
 `;
 
 export const h300 = () => css`
-  ${baseHeading(headingSizes.h300.size, headingSizes.h300.lineHeight)}
+  /* ${baseHeading(headingSizes.h300.size, headingSizes.h300.lineHeight)}
   color: ${colors.heading};
   font-weight: 600;
   margin-top: ${gridSize() * 2.5}px;
-  text-transform: uppercase;
+  text-transform: uppercase; */
 `;
 
 export const h200 = () => css`
-  ${baseHeading(headingSizes.h200.size, headingSizes.h200.lineHeight)}
+  /* ${baseHeading(headingSizes.h200.size, headingSizes.h200.lineHeight)}
   color: ${colors.subtleHeading};
   font-weight: 600;
-  margin-top: ${gridSize() * 2}px;
+  margin-top: ${gridSize() * 2}px; */
 `;
 
 export const h100 = () => css`
-  ${baseHeading(headingSizes.h100.size, headingSizes.h100.lineHeight)}
+  /* ${baseHeading(headingSizes.h100.size, headingSizes.h100.lineHeight)}
   color: ${colors.subtleHeading};
   font-weight: 700;
-  margin-top: ${gridSize() * 2}px;
+  margin-top: ${gridSize() * 2}px; */
 `;

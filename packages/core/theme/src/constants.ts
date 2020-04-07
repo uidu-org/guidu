@@ -13,10 +13,12 @@ export const THEME_MODES = ['light', 'dark'];
 */
 export const borderRadius = () => 3;
 export const gridSize = () => 8;
-export const fontSize = () => 14;
-export const fontSizeSmall = () => 11;
+export const fontSize = () => 16;
+export const fontSizeSmall = () => 14;
 export const fontFamily = () =>
-  `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif`;
+  `'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol'`;
 export const codeFontFamily = () =>
   `'SFMono-Medium', 'SF Mono', 'Segoe UI Mono', 'Roboto Mono', 'Ubuntu Mono', Menlo, Consolas, Courier, monospace`;
 

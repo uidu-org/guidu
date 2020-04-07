@@ -17,7 +17,6 @@ import {
   Props as RendererProps,
 } from '../../src/ui/Renderer';
 import { RendererAppearance } from '../../src/ui/Renderer/types';
-import Sidebar from './NavigationNext';
 import { document as storyDataDocument } from './story-data';
 
 const { getMockProfileClient: getMockProfileClientUtil } = profilecardUtils;
@@ -68,7 +67,7 @@ const providerFactory = ProviderFactory.create({
 });
 
 const extensionHandlers: ExtensionHandlers = {
-  'com.atlassian.fabric': ext => {
+  'com.atlassian.fabric': (ext) => {
     const { extensionKey } = ext;
 
     switch (extensionKey) {
@@ -197,48 +196,45 @@ export default class RendererDemo extends React.Component<
 
   render() {
     return (
-      <Sidebar showSidebar={this.state.showSidebar}>
-        {(additionalRendererProps: object) => (
-          <div ref="root" style={{ padding: 20 }}>
-            <fieldset style={{ marginBottom: 20 }}>
-              <legend>Input</legend>
-              <textarea
-                id="renderer-value-input"
-                style={{
-                  boxSizing: 'border-box',
-                  border: '1px solid lightgray',
-                  fontFamily: 'monospace',
-                  fontSize: 16,
-                  padding: 10,
-                  width: '100%',
-                  height: 320,
-                }}
-                ref={ref => {
-                  this.inputBox = ref;
-                }}
-                onChange={this.onDocumentChange}
-                value={this.state.input}
-              />
-              <button onClick={this.toggleSidebar}>Toggle Sidebar</button>
-              <button onClick={this.toggleEventHandlers}>
-                Toggle Event handlers
-              </button>
-            </fieldset>
-            {this.renderRenderer(additionalRendererProps)}
-            {this.renderText()}
-          </div>
-        )}
-      </Sidebar>
+      <>
+        <div ref="root" style={{ padding: 20 }}>
+          <fieldset style={{ marginBottom: 20 }}>
+            <legend>Input</legend>
+            <textarea
+              id="renderer-value-input"
+              style={{
+                boxSizing: 'border-box',
+                border: '1px solid lightgray',
+                fontFamily: 'monospace',
+                fontSize: 14,
+                padding: 10,
+                width: '100%',
+                height: 220,
+              }}
+              ref={(ref) => {
+                this.inputBox = ref;
+              }}
+              onChange={this.onDocumentChange}
+              value={this.state.input}
+            />
+            <button onClick={this.toggleEventHandlers}>
+              Toggle Event handlers
+            </button>
+          </fieldset>
+          {this.renderRenderer()}
+          {this.renderText()}
+        </div>
+      </>
     );
   }
 
   private toggleTruncated() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       truncated: !prevState.truncated,
     }));
   }
 
-  private renderRenderer(additionalRendererProps: any) {
+  private renderRenderer(additionalRendererProps: any = {}) {
     const { shouldUseEventHandlers } = this.state;
     if (this.props.serializer !== 'react') {
       return null;
@@ -337,12 +333,8 @@ export default class RendererDemo extends React.Component<
     }
   }
 
-  private toggleSidebar = () => {
-    this.setState(prevState => ({ showSidebar: !prevState.showSidebar }));
-  };
-
   private toggleEventHandlers = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       shouldUseEventHandlers: !prevState.shouldUseEventHandlers,
     }));
   };

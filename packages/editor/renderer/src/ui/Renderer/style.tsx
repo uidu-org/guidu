@@ -164,9 +164,9 @@ const fullWidthStyles = ({ appearance }: RendererWrapperProps) => {
 
 // prettier-ignore
 export const Wrapper = styled.div<RendererWrapperProps & HTMLAttributes<{}>>`
-  font-size: ${editorFontSize}px;
+  /* font-size: ${editorFontSize}px;
   line-height: 24px;
-  color: ${themed({ light: colors.N800, dark: '#B8C7E0' })};
+  color: ${themed({ light: colors.N800, dark: '#B8C7E0' })}; */
 
   ${fullPageStyles}
   ${fullWidthStyles}

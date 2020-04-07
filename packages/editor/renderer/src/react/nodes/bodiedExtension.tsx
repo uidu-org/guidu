@@ -1,4 +1,8 @@
-import { ADNode, ExtensionHandlers, getExtensionRenderer } from '@uidu/editor-common';
+import {
+  ADNode,
+  ExtensionHandlers,
+  getExtensionRenderer,
+} from '@uidu/editor-common';
 import * as React from 'react';
 import { RendererContext } from '..';
 import { renderNodes, Serializer } from '../..';

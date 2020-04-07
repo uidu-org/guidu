@@ -23,7 +23,7 @@ const ContentArea = styled(ContentStyles)`
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  line-height: 24px;
+  /* line-height: 24px; */
 
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
@@ -164,7 +164,7 @@ export default class Editor extends PureComponent<EditorProps> {
       <IntlProvider locale="en">
         <EditorContext editorActions={this.editorActions}>
           <PortalProvider
-            render={portalProviderAPI => (
+            render={(portalProviderAPI) => (
               <>
                 <ReactEditorView
                   editorProps={{
@@ -192,14 +192,14 @@ export default class Editor extends PureComponent<EditorProps> {
                     dispatchAnalyticsEvent,
                   }) =>
                     children({
-                      renderToolbar: props =>
+                      renderToolbar: (props) =>
                         this.renderToolbar({
                           view,
                           config,
                           eventDispatcher,
                           ...props,
                         }),
-                      renderEditor: props =>
+                      renderEditor: (props) =>
                         this.renderEditor({
                           editor,
                           view,

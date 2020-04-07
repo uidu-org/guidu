@@ -1838,12 +1838,12 @@
     tslib "^1.10.0"
 
 "@fluentui/react@^7.105.6":
-  version "7.105.11"
-  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-7.105.11.tgz#34955de77f2b61cace9fad80d8c2284d94887624"
-  integrity sha512-Mo81YrVsaW7LzFKT+Y+uVi76xbqzcIvM2moPQ2dhAXX8F3bwFTwaf6HMU6/AqXc/18z/vizGUZEod/BQwSzCsA==
+  version "7.105.12"
+  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-7.105.12.tgz#ce72181e2fe5892c8b5388f641e19ae17e896f6d"
+  integrity sha512-cMx3LPPh5JRK5RCXg0VowfD1o012/tJu5T3HOH5psG55ES/jV5DiFnrWTFp6vduoFJCIPoxeweSW1TH8hicJ2w==
   dependencies:
     "@uifabric/set-version" "^7.0.9"
-    office-ui-fabric-react "^7.105.10"
+    office-ui-fabric-react "^7.105.11"
     tslib "^1.10.0"
 
 "@formatjs/intl-displaynames@^1.2.2":
@@ -3098,9 +3098,9 @@
     "@types/react" "*"
 
 "@types/react-native@*":
-  version "0.62.1"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.62.1.tgz#a51d50ade85420a68d594778316ed74e5040078c"
-  integrity sha512-4uKqYGek9/OstJWW0hEfF/6fx8BzNkzdAFxeY+VOxec+SPKK/hvGEjnX6+0jV1MnJDBHYKdWfWA4sYCQ8G3sqA==
+  version "0.62.2"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.62.2.tgz#f3e150f308c27089cefbcbfa3eb6cc14db279b2f"
+  integrity sha512-oIUIbqZNN9vRnGKWHYbTVp/GyTqdaM5mfy1s4zsi6BYvHAaFOPZ32IrhIHno/A5XOv4wuGfE7g5fliDk/H0+/Q==
   dependencies:
     "@types/react" "*"
 
@@ -3396,10 +3396,10 @@
     "@uifabric/set-version" "^7.0.9"
     tslib "^1.10.0"
 
-"@uifabric/react-hooks@^7.1.0":
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@uifabric/react-hooks/-/react-hooks-7.1.0.tgz#7332357961ddde0881a260336ba12d742013b9ec"
-  integrity sha512-0nefjbauRfwisiTOmjMk4IhKZdGoRDewWkYwDblRvm3ExGHK6D+gABvu7wX1QIU13REcvaxoKXzIklJA+8MJyw==
+"@uifabric/react-hooks@^7.1.1":
+  version "7.1.1"
+  resolved "https://registry.yarnpkg.com/@uifabric/react-hooks/-/react-hooks-7.1.1.tgz#f8e5800ed5e844be3612020d5fdfab59fc302b1f"
+  integrity sha512-tHY99Gf5z9AjkkkxSn3c5/6KOAB8rvjSZ7OV27YDQ5+2mjkg49QRRy8++4KpBvBrjJmkvYWaDUiEJJNVSbYSdg==
   dependencies:
     "@uifabric/set-version" "^7.0.9"
     "@uifabric/utilities" "^7.15.4"
@@ -7917,9 +7917,9 @@ css-in-js-utils@^2.0.0:
     isobject "^3.0.1"
 
 css-loader@^3.0.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.5.0.tgz#8c68736fbcba1a9b92a288277ba8998b709ac3ae"
-  integrity sha512-zed7D7JNZEq7htpu3H9oBUVWVgI6s8FgigejbVq+dc5zHV3SUPsyYBozXLIC9Eb73ahAYmnVdnn/SAB4WA75AQ==
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-3.5.1.tgz#db2b2336f4169edb68e6a829ad4fd36552647b77"
+  integrity sha512-0G4CbcZzQ9D1Q6ndOfjFuMDo8uLYMu5vc9Abs5ztyHcKvmil6GJrMiNjzzi3tQvUF+mVRuDg7bE6Oc0Prolgig==
   dependencies:
     camelcase "^5.3.1"
     cssesc "^3.0.0"
@@ -14814,9 +14814,9 @@ lodash.uniq@^4.5.0:
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
 log-process-errors@^5.0.3:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/log-process-errors/-/log-process-errors-5.1.0.tgz#6f1a4be3641f0fe82a943b731ef15f9bf71670ed"
-  integrity sha512-uY7ywoRiaO+q3mqvzpGQJ7/Lwg9r8mbIDFiFwAdW6cRu05kM4N7HD5iXkb8zcicTIdhFEufX93l2NaP8UvVAkA==
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/log-process-errors/-/log-process-errors-5.1.1.tgz#9d9f46d7d90cdc23030ab9bda8c2763a872b5732"
+  integrity sha512-Eb90xoU3AC0XtIiMBF4J8SUNHt8sPZNz6GEsP7kn0gcfCD/tqp21i6yFzpRvOxBaWu6ySgSQNRc8FmEq+OG6Tg==
   dependencies:
     chalk "^3.0.0-beta.2"
     core-js "^3.3.6"
@@ -16548,17 +16548,17 @@ octokit-pagination-methods@^1.1.0:
   resolved "https://registry.yarnpkg.com/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
-office-ui-fabric-react@^7.105.10, office-ui-fabric-react@^7.5.2:
-  version "7.105.10"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.105.10.tgz#07f8e931313c87bcb903b4f69a48f7e0ffe7c5cd"
-  integrity sha512-qyCHlsmJ0k1XiXagO4uKaWKIsh7HhVPxUQ4fRBShfANANlK0Yvk346aDRjekfv+LwIozsYbjI5TaSlr82OrTfw==
+office-ui-fabric-react@^7.105.11, office-ui-fabric-react@^7.5.2:
+  version "7.105.11"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.105.11.tgz#1979ea922ab0cd3005112d21aead90919ca3598f"
+  integrity sha512-xZ1gEoot5xH0SEHA6bt99zou1+4Ow2ZKguie81+Eme2L9tmkmjKaLLwqKX9LJNk1L0N3WIkyXgESW36NLwiy8w==
   dependencies:
     "@fluentui/react-focus" "^7.1.12"
     "@microsoft/load-themed-styles" "^1.10.26"
     "@uifabric/foundation" "^7.5.24"
     "@uifabric/icons" "^7.3.23"
     "@uifabric/merge-styles" "^7.8.11"
-    "@uifabric/react-hooks" "^7.1.0"
+    "@uifabric/react-hooks" "^7.1.1"
     "@uifabric/set-version" "^7.0.9"
     "@uifabric/styling" "^7.11.1"
     "@uifabric/utilities" "^7.15.4"
@@ -19013,9 +19013,9 @@ react-fast-compare@^3.0.1:
   integrity sha512-C5vP0J644ofZGd54P8++O7AvrqMEbrGf8Ue0eAUJLJyw168dAX2aiYyX/zcY/eSNwO0IDjsKUaLE6n83D+TnEg==
 
 react-feather@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-2.0.3.tgz#1453ff5d8c242f72b8c02846118fbd2d406375ad"
-  integrity sha512-XVjtxIyMxb2RFlqC2APoB/IZvXKDW9uLN1c264XEeZNYe8jIxjQVQpeTo3nxtHiLTgMfgf0ZYxJC6HwmY8+9BA==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-feather/-/react-feather-2.0.4.tgz#42f974ade8d2a7ce113aa8ede37f7ca3752f3b1d"
+  integrity sha512-XX+it8flg7ht3bjc5vvGC1RwqIf0YBdEzgGeTm6hNWkT613uTr/F4aah2cgY1n83/8W6qml5J9t+lAUQAUBlJQ==
   dependencies:
     prop-types "^15.7.2"
 

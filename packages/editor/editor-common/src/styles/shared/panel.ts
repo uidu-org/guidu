@@ -72,7 +72,7 @@ const iconDynamicStyles = (panelType: PanelType) => (props: any) => {
   const light = lightIconColor[panelType];
   const dark = darkIconColor[panelType];
   const color = themed({ light, dark })(props);
-  return `
+  return css`
     color: ${color};
   `;
 };
@@ -85,7 +85,7 @@ const mainDynamicStyles = (panelType: PanelType) => (props: any) => {
   const darkBorder = '1px solid ' + darkPanelBorderColor[panelType];
   const border = themed({ light: 'none', dark: darkBorder })(props);
   const text = themed({ light: 'inherit', dark: darkText })(props);
-  return `
+  return css`
     background-color: ${background};
     border: ${border};
     color: ${text};
@@ -122,6 +122,9 @@ export const panelSharedStyles = css`
     .ak-editor-panel__content {
       margin: 1px 0 1px;
       flex: 1 0 0;
+      p:last-of-type {
+        margin-bottom: 0;
+      }
     }
 
     &[data-panel-type='note'] {

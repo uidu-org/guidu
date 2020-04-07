@@ -43,7 +43,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
 
   .ProseMirror {
     outline: none;
-    font-size: ${editorFontSize}px;
+    /* font-size: ${editorFontSize}px; */
 
     ${whitespaceSharedStyles};
     ${paragraphSharedStyles};
