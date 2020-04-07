@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.1.33
+
+### Patch Changes
+
+- 31613a6: FIX editor toolbar intl, field file and image limits, renderer"
+- Updated dependencies [31613a6]
+  - @uidu/button@0.1.59
+
 ## 0.1.32
 
 ### Patch Changes

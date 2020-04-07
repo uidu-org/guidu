@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.59
+
+### Patch Changes
+
+- 31613a6: FIX editor toolbar intl, field file and image limits, renderer"
+
 ## 0.1.58
 
 ### Patch Changes
