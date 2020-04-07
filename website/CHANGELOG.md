@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.90
+
+### Patch Changes
+
+- dfe7dc6: Some fixes to editor and renderer styling
+- Updated dependencies [dfe7dc6]
+  - @uidu/theme@0.2.5
+  - @uidu/themes-uidu@0.2.2
+
 ## 0.1.89
 
 ### Patch Changes

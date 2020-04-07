@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.2.5
+
+### Patch Changes
+
+- dfe7dc6: Some fixes to editor and renderer styling
+
 ## 0.2.4
 
 ### Patch Changes
