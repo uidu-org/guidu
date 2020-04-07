@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 0.2.4
+
+### Patch Changes
+
+- 94b10d0: Add configurable progress bar, fix crop values
+
 ## 0.2.3
 
 ### Patch Changes
