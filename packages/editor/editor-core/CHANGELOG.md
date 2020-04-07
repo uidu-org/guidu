@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.1.34
+
+### Patch Changes
+
+- 6c6f1f3: Fix renderer build path
+
 ## 0.1.33
 
 ### Patch Changes
