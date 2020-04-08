@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 0.2.1
+
+### Patch Changes
+
+- 6099e0d: Better work with media picker, now able to add images
+- Updated dependencies [6099e0d]
+  - @uidu/adf-schema@0.1.8
+  - @uidu/adf-utils@0.4.7
+  - @uidu/editor-common@0.1.19
+  - @uidu/media-card@0.1.27
+  - @uidu/media-picker@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

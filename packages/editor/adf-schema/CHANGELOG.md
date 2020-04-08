@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.1.8
+
+### Patch Changes
+
+- 6099e0d: Better work with media picker, now able to add images
+
 ## 0.1.7
 
 ### Patch Changes
