@@ -8,9 +8,6 @@ export async function MediaPickerFactoryClass({
     import(
       /* webpackChunkName:"@uidu-internal_media-picker-popup" */ './components/popup'
     ),
-    //  import(
-    //    /* webpackChunkName:"@atlaskit-media-client" */ '@atlaskit/media-client'
-    //  ),
   ]);
 
   //  const mediaClient = getMediaClient(mediaClientConfig);
