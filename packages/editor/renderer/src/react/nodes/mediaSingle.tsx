@@ -8,7 +8,7 @@ import {
 } from '@uidu/editor-common';
 import * as React from 'react';
 import { Component, ReactElement } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FullPagePadding } from '../../ui/Renderer/style';
 import { RendererAppearance } from '../../ui/Renderer/types';
 
@@ -31,11 +31,12 @@ const DEFAULT_HEIGHT = 200;
 const ExtendedUIMediaSingle = styled(UIMediaSingle)`
   ${({ layout }) =>
     layout === 'full-width' || layout === 'wide'
-      ? `
-  margin-left: 50%;
-  transform: translateX(-50%);
-  `
-      : ``} transition: all 0.1s linear;
+      ? css`
+          margin-left: 50%;
+          transform: translateX(-50%);
+        `
+      : ``}
+  transition: all 0.1s linear;
 `;
 
 export default class MediaSingle extends Component<Props, State> {
