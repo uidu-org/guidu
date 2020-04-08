@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.2.7
+
+### Patch Changes
+
+- 58f3f27: Small fixes to ui
+
 ## 0.2.6
 
 ### Patch Changes

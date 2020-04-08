@@ -1,5 +1,11 @@
 # @atlaskit/renderer
 
+## 0.1.22
+
+### Patch Changes
+
+- 58f3f27: Small fixes to ui
+
 ## 0.1.21
 
 ### Patch Changes
