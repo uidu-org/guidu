@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.1.17",
+  "version": "0.2.0",
   "description": "uidu media picker, using Uppy",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@uidu/button": "^0.1.58",
     "@uidu/docs": "^0.1.45",
-    "@uidu/modal-dialog": "^0.1.33"
+    "@uidu/modal-dialog": "^0.1.37"
   },
   "publishConfig": {
     "access": "public"

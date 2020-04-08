@@ -1,5 +1,12 @@
 # @uidu/message-form
 
+## 0.1.28
+
+### Patch Changes
+
+- Updated dependencies [964451f]
+  - @uidu/media-picker@0.2.0
+
 ## 0.1.27
 
 ### Patch Changes

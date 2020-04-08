@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.1.37
+
+### Patch Changes
+
+- 964451f: Media WIP for editor, fix modal mobile scrolling
+
 ## 0.1.36
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 0.2.0
+
+### Minor Changes
+
+- 964451f: Media WIP for editor, fix modal mobile scrolling
+
+### Patch Changes
+
+- Updated dependencies [964451f]
+  - @uidu/media-picker@0.2.0
+  - @uidu/modal-dialog@0.1.37
+  - @uidu/editor-json-transformer@0.1.9
+  - @uidu/editor-markdown-transformer@0.1.9
+
 ## 0.1.35
 
 ### Patch Changes
