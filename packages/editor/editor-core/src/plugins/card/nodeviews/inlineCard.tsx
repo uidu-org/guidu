@@ -56,6 +56,7 @@ export class InlineCardComponent extends React.PureComponent<SmartCardProps> {
             file={{
               src: url,
               kind: 'image',
+              size: 3000,
             }}
             // data={data}
             // appearance="inline"

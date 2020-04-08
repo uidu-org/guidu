@@ -14,7 +14,7 @@ import {
 } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
-import { AlignmentState } from '../plugins/alignment/pm-plugins/main';
+import { AlignmentState } from '../plugins/alignment/pm-plugins/types';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -26,13 +26,13 @@ import { Command } from '../types';
 import { canMoveDown, canMoveUp } from '../utils';
 
 export function preventDefault(): Command {
-  return function() {
+  return function () {
     return true;
   };
 }
 
 export function insertNewLine(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { $from } = state.selection;
     const parent = $from.parent;
     const { hardBreak } = state.schema.nodes;
@@ -67,7 +67,7 @@ export const insertNewLineWithAnalytics = withAnalytics({
 })(insertNewLine());
 
 export function insertRule(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { to } = state.selection;
     const { rule } = state.schema.nodes;
     if (rule) {
@@ -112,7 +112,7 @@ function canCreateParagraphNear(state: EditorState): boolean {
 }
 
 export function createParagraphNear(append: boolean = true): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const paragraph = state.schema.nodes.paragraph;
 
     if (!paragraph) {
@@ -189,7 +189,7 @@ function topLevelNodeIsEmptyTextBlock(state: EditorState): boolean {
 }
 
 export function createParagraphAtEnd(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const {
       doc,
       tr,
@@ -270,7 +270,7 @@ export const createToggleBlockMarkOnRange = <T = object>(
           : allowedBlocks(state.schema, node, parent))) &&
       parent.type.allowsMarkType(markType)
     ) {
-      const oldMarks = node.marks.filter(mark => mark.type === markType);
+      const oldMarks = node.marks.filter((mark) => mark.type === markType);
 
       const prevAttrs = oldMarks.length ? (oldMarks[0].attrs as T) : undefined;
       const newAttrs = getAttrs(prevAttrs, node);
@@ -281,7 +281,7 @@ export const createToggleBlockMarkOnRange = <T = object>(
           node.type,
           node.attrs,
           node.marks
-            .filter(mark => !markType.excludes(mark.type))
+            .filter((mark) => !markType.excludes(mark.type))
             .concat(newAttrs === false ? [] : markType.create(newAttrs)),
         );
         markApplied = true;

@@ -5,6 +5,18 @@ import React, { useState } from 'react';
 import { MessageAttachmentsProps } from '../../types';
 import { isOnlyImages } from '../../utils';
 
+function formatBytes(bytes, decimals = 2) {
+  if (bytes === 0) return '0 Bytes';
+
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+}
+
 export default function MessageAttachments({
   attachments,
   className,
@@ -47,34 +59,50 @@ export default function MessageAttachments({
   }
 
   return (
-    <div
-      style={{
-        width: scrollable.current.offsetWidth * 0.45,
-      }}
-    >
-      {attachments.map(({ extension, filename }) => (
-        <div className="card p-2 mt-2">
-          <div className="d-flex align-items-center">
-            <Icon
-              {...getFileTypeIconProps({ extension, size: 48 })}
-              // style={{
-              //   display: 'flex',
-              //   marginRight: '.5rem',
-              //   alignItems: 'center',
-              //   justifyContent: 'center',
-              //   flexShrink: 0,
-              // }}
-            />
+    <>
+      <div
+        style={{
+          width: scrollable.current.offsetWidth * 0.45,
+        }}
+      >
+        {attachments.map(({ extension, filename, size }, index) => (
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              setCurrentModal(index);
+            }}
+            className="card p-2 mt-2"
+          >
+            <div className="d-flex align-items-center">
+              <div className="flex-shrink-0">
+                <Icon
+                  {...getFileTypeIconProps({ extension, size: 48 })}
+                  // style={{
+                  //   display: 'flex',
+                  //   marginRight: '.5rem',
+                  //   alignItems: 'center',
+                  //   justifyContent: 'center',
+                  //   flexShrink: 0,
+                  // }}
+                />
+              </div>
 
-            <div style={{ minWidth: 0 }} className="ml-2">
-              <p className="text-truncate mb-0">{filename}</p>
-              <p className="text-truncate text-muted mb-0">
-                323kb - .{extension}
-              </p>
+              <div style={{ minWidth: 0 }} className="ml-2">
+                <p className="text-truncate mb-0">{filename}</p>
+                <p className="text-truncate text-muted mb-0">
+                  {size ? `${formatBytes(size, 2)} - ` : ''}.{extension}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-    </div>
+          </a>
+        ))}
+      </div>
+      <ModalMediaViewer
+        currentIndex={currentModal}
+        files={attachments}
+        onClose={() => setCurrentModal(null)}
+      />
+    </>
   );
 }

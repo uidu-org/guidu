@@ -63,6 +63,7 @@ export class BlockCardComponent extends React.PureComponent<SmartCardProps> {
             kind: 'smart',
             createdAt: Date(),
             extension: 'png',
+            size: 200,
           }}
           // data={data}
           // appearance="inline"

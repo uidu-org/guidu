@@ -1,14 +1,10 @@
 import { alignment } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import { changeAlignment } from './commands';
-import {
-  AlignmentPluginState,
-  AlignmentState,
-  createPlugin,
-  pluginKey,
-} from './pm-plugins/main';
+import { createPlugin, pluginKey } from './pm-plugins/main';
+import { AlignmentPluginState, AlignmentState } from './pm-plugins/types';
 import ToolbarAlignment from './ui/ToolbarAlignment';
 
 export const defaultConfig: AlignmentPluginState = {

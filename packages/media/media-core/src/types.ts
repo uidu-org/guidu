@@ -8,4 +8,5 @@ export type FileIdentifier = {
   id?: number | string;
   filename?: string;
   extension?: string;
+  size?: number;
 };

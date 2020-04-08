@@ -1,33 +1,16 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import EditorAlignCenterIcon from '@atlaskit/icon/glyph/editor/align-center';
-import EditorAlignLeftIcon from '@atlaskit/icon/glyph/editor/align-left';
-import EditorAlignRightIcon from '@atlaskit/icon/glyph/editor/align-right';
-import * as React from 'react';
-import { defineMessages } from 'react-intl';
+import React from 'react';
 import Alignment from '../../../../ui/Alignment';
 import Dropdown from '../../../../ui/Dropdown';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { AlignmentPluginState, AlignmentState } from '../../pm-plugins/main';
+import { AlignmentPluginState, AlignmentState } from '../../pm-plugins/types';
+import { iconMap } from './icon-map';
 import {
   ExpandIconWrapper,
   Separator,
   TriggerWrapper,
   Wrapper,
 } from './styles';
-
-export const iconMap = {
-  start: <EditorAlignLeftIcon label="Align left" />,
-  end: <EditorAlignRightIcon label="Align right" />,
-  center: <EditorAlignCenterIcon label="Align center" />,
-};
-
-export const messages = defineMessages({
-  alignment: {
-    id: 'fabric.editor.alignment',
-    defaultMessage: 'Alignment',
-    description: 'Aligns text',
-  },
-});
 
 export interface State {
   isOpen: boolean;
@@ -44,6 +27,8 @@ export interface Props {
 }
 
 class AlignmentToolbar extends React.Component<Props, State> {
+  static displayName = 'AlignmentToolbar';
+
   state: State = {
     isOpen: false,
   };
@@ -91,7 +76,7 @@ class AlignmentToolbar extends React.Component<Props, State> {
           }
         >
           <Alignment
-            onClick={align => this.changeAlignment(align)}
+            onClick={(align) => this.changeAlignment(align)}
             selectedAlignment={pluginState.align}
           />
         </Dropdown>

@@ -33,13 +33,13 @@ export function cascadeCommands(cmds: Command[]): Command {
 
     const onDispatchAction = (tr: Transaction) => {
       baseTr.setSelection(tr.selection);
-      tr.steps.forEach(st => {
+      tr.steps.forEach((st) => {
         baseTr.step(st);
       });
       shouldDispatch = true;
     };
 
-    cmds.forEach(cmd => cmd(state, onDispatchAction));
+    cmds.forEach((cmd) => cmd(state, onDispatchAction));
 
     if (dispatch && shouldDispatch) {
       dispatch(baseTr);

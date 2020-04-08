@@ -1,24 +1,8 @@
-import { Plugin, PluginKey, Transaction, EditorState } from 'prosemirror-state';
+import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
 import { isAlignable } from '../commands';
 import { getActiveAlignment } from '../utils';
-
-export type AlignmentState = 'start' | 'end' | 'center';
-
-export type AlignmentPluginState = {
-  align: AlignmentState;
-  isEnabled?: boolean;
-};
-
-export type ActionHandlerParams = {
-  dispatch: Dispatch;
-  pluginState: AlignmentPluginState;
-  tr: Transaction;
-  params?: {
-    align?: string;
-    disabled?: boolean;
-  };
-};
+import { AlignmentPluginState } from './types';
 
 export function createInitialPluginState(
   editorState: EditorState,
