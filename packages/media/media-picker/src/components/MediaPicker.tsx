@@ -11,11 +11,12 @@ import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
 import '@uppy/webcam/dist/style.css';
 import XHRUpload from '@uppy/xhr-upload';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class MediaPicker extends Component<any> {
+export default class MediaPicker extends PureComponent<any> {
   static defaultProps = {
     onComplete: console.log,
+    open: false,
   };
 
   private uppy;
@@ -61,6 +62,7 @@ export default class MediaPicker extends Component<any> {
   }
 
   render() {
+    console.log(this.props);
     return (
       <DashboardModal
         uppy={this.uppy}

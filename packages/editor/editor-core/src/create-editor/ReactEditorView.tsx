@@ -358,8 +358,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     );
     const schema = createSchema(this.config);
 
-    console.log(this.context);
-
     const {
       contentTransformerProvider,
       defaultValue,

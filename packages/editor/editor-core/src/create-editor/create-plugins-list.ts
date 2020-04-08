@@ -20,6 +20,7 @@ import {
   insertBlockPlugin,
   layoutPlugin,
   listsPlugin,
+  mediaPlugin,
   pastePlugin,
   placeholderPlugin,
   placeholderTextPlugin,
@@ -120,22 +121,23 @@ export default function createPluginsList(
     plugins.push(rulePlugin());
   }
 
-  // if (props.media || props.mediaProvider) {
-  //   plugins.push(
-  //     mediaPlugin(props.media, {
-  //       allowLazyLoading: !isMobile,
-  //       allowBreakoutSnapPoints: isFullPage,
-  //       allowAdvancedToolBarOptions: isFullPage,
-  //       allowDropzoneDropLine: isFullPage,
-  //       allowMediaSingleEditable: !isMobile,
-  //       allowRemoteDimensionsFetch: !isMobile,
-  //       // This is a wild one. I didnt quite understand what the code was doing
-  //       // so a bit of guess for now.
-  //       allowMarkingUploadsAsIncomplete: isMobile,
-  //       fullWidthEnabled: props.appearance === 'full-width',
-  //     }),
-  //   );
-  // }
+  if (props.media || props.mediaProvider) {
+    plugins.push(
+      mediaPlugin(props.media),
+      // {
+      //   // allowLazyLoading: !isMobile,
+      //   // allowBreakoutSnapPoints: isFullPage,
+      //   // allowAdvancedToolBarOptions: isFullPage,
+      //   // allowDropzoneDropLine: isFullPage,
+      //   // allowMediaSingleEditable: !isMobile,
+      //   // allowRemoteDimensionsFetch: !isMobile,
+      //   // // This is a wild one. I didnt quite understand what the code was doing
+      //   // // so a bit of guess for now.
+      //   // allowMarkingUploadsAsIncomplete: isMobile,
+      //   // fullWidthEnabled: props.appearance === 'full-width',
+      // }
+    );
+  }
 
   // if (props.allowCodeBlocks) {
   //   const options = props.allowCodeBlocks !== true ? props.allowCodeBlocks : {};
@@ -230,7 +232,9 @@ export default function createPluginsList(
 
   if (props.allowExtension) {
     plugins.push(
-      extensionPlugin({ breakoutEnabled: props.appearance === 'full-page' }),
+      extensionPlugin({
+        breakoutEnabled: props.appearance === 'full-page',
+      }),
     );
   }
 

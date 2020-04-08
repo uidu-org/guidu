@@ -66,9 +66,13 @@ export default class Editor extends PureComponent<EditorProps> {
       (context || ({} as any)).editorActions || new EditorActions();
   }
 
+  componentDidMount() {
+    this.handleProviders(this.props);
+  }
+
   componentWillUnmount() {
     this.unregisterEditorFromActions();
-    //  this.providerFactory.destroy();
+    this.providerFactory.destroy();
   }
 
   onEditorCreated = (instance: {
@@ -108,6 +112,88 @@ export default class Editor extends PureComponent<EditorProps> {
     }
   };
 
+  private handleProviders(props: EditorProps) {
+    const {
+      emojiProvider,
+      mentionProvider,
+      taskDecisionProvider,
+      contextIdentifierProvider,
+      collabEditProvider,
+      activityProvider,
+      presenceProvider,
+      macroProvider,
+      legacyImageUploadProvider,
+      mediaProvider,
+      collabEdit,
+      quickInsert,
+      autoformattingProvider,
+      //  extensionProviders,
+      UNSAFE_cards,
+    } = props;
+
+    this.providerFactory.setProvider('emojiProvider', emojiProvider);
+    this.providerFactory.setProvider('mentionProvider', mentionProvider);
+    this.providerFactory.setProvider(
+      'taskDecisionProvider',
+      taskDecisionProvider,
+    );
+    this.providerFactory.setProvider(
+      'contextIdentifierProvider',
+      contextIdentifierProvider,
+    );
+    this.providerFactory.setProvider('mediaProvider', mediaProvider);
+    this.providerFactory.setProvider(
+      'imageUploadProvider',
+      legacyImageUploadProvider,
+    );
+    this.providerFactory.setProvider(
+      'collabEditProvider',
+      collabEdit && collabEdit.provider
+        ? collabEdit.provider
+        : collabEditProvider,
+    );
+    this.providerFactory.setProvider('activityProvider', activityProvider);
+    this.providerFactory.setProvider('presenceProvider', presenceProvider);
+    this.providerFactory.setProvider('macroProvider', macroProvider);
+
+    if (UNSAFE_cards && UNSAFE_cards.provider) {
+      this.providerFactory.setProvider('cardProvider', UNSAFE_cards.provider);
+    }
+
+    this.providerFactory.setProvider(
+      'autoformattingProvider',
+      autoformattingProvider,
+    );
+
+    // let extensionProvider: ExtensionProvider | undefined;
+
+    // if (extensionProviders) {
+    //   extensionProvider = combineExtensionProviders(extensionProviders);
+    //   this.providerFactory.setProvider(
+    //     'extensionProvider',
+    //     Promise.resolve(extensionProvider),
+    //   );
+    // }
+
+    // if (quickInsert && typeof quickInsert !== 'boolean') {
+    //   const quickInsertProvider = extensionProvider
+    //     ? combineQuickInsertProviders([
+    //         quickInsert.provider,
+    //         extensionProviderToQuickInsertProvider(
+    //           extensionProvider,
+    //           this.editorActions,
+    //           this.createAnalyticsEvent,
+    //         ),
+    //       ])
+    //     : quickInsert.provider;
+
+    //   this.providerFactory.setProvider(
+    //     'quickInsertProvider',
+    //     quickInsertProvider,
+    //   );
+    // }
+  }
+
   onEditorDestroyed = (_instance: {
     view: EditorView;
     transformer?: Transformer<string>;
@@ -116,6 +202,7 @@ export default class Editor extends PureComponent<EditorProps> {
   };
 
   renderToolbar = ({ view, eventDispatcher, config }) => {
+    console.log(config);
     return (
       <Toolbar
         appearance={this.props.appearance}
@@ -160,6 +247,7 @@ export default class Editor extends PureComponent<EditorProps> {
 
   render() {
     const { children, ...otherProps } = this.props;
+
     return (
       <IntlProvider locale="en">
         <EditorContext editorActions={this.editorActions}>
@@ -168,7 +256,7 @@ export default class Editor extends PureComponent<EditorProps> {
               <>
                 <ReactEditorView
                   editorProps={{
-                    appearance: 'comment',
+                    appearance: 'full-page',
                     allowTextAlignment: true,
                     allowTextColor: true,
                     allowLists: true,

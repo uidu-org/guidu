@@ -1,6 +1,6 @@
 import rafSchedule from 'raf-schd';
 import React from 'react';
-import ScrollLock from 'react-scrolllock';
+import ScrollLock, { TouchScrollable } from 'react-scrolllock';
 import {
   Body as DefaultBody,
   Container as DefaultContainer,
@@ -264,9 +264,11 @@ export default class Content extends React.Component<Props, State> {
               showKeyline={showHeaderKeyline}
             />
             {/* Backwards compatibility for styled-components innerRefs */}
-            <Body shouldScroll={shouldScroll} ref={this.getScrollContainer}>
-              {children}
-            </Body>
+            <TouchScrollable>
+              <Body shouldScroll={shouldScroll} ref={this.getScrollContainer}>
+                {children}
+              </Body>
+            </TouchScrollable>
             <Footer
               actions={actions}
               appearance={appearance}

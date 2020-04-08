@@ -17,6 +17,15 @@ export default class Basic extends PureComponent<any, any> {
         shouldFocus
         containerElement={this.element}
         onChange={console.log}
+        media={{
+          allowMediaGroup: true,
+          allowMediaSingle: true,
+        }}
+        mediaProvider={Promise.resolve({
+          uploadParams: { endpoint: '/upload' },
+          viewContext: Promise.resolve('test'),
+          uploadContext: Promise.resolve('test'),
+        })}
       >
         {({ renderToolbar, renderEditor }) => (
           <Fragment>

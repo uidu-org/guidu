@@ -9,11 +9,16 @@ type Props = {
 export default class ClipboardMediaPickerWrapper extends React.Component<
   Props
 > {
+  show = () => {
+    console.log('test');
+  };
+
   render() {
     const { mediaState } = this.props;
+    console.log(this.props);
     return (
       <MediaPicker
-        onComplete={result => {
+        onComplete={(result) => {
           mediaState.insertFile(result, {} as any);
           mediaState.trackNewMediaEvent('clipboard');
         }}

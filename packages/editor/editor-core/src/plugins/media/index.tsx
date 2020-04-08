@@ -64,7 +64,7 @@ const mediaPlugin = (
       { name: 'mediaGroup', node: mediaGroup },
       { name: 'mediaSingle', node: mediaSingle },
       { name: 'media', node: media },
-    ].filter(node => {
+    ].filter((node) => {
       const { allowMediaGroup = true, allowMediaSingle = false } =
         options || {};
 
@@ -210,6 +210,7 @@ const mediaPlugin = (
         ),
         action(insert, state) {
           const pluginState = pluginKey.getState(state);
+          console.log(pluginState);
           pluginState.showMediaPicker();
           const tr = insert('');
           return addAnalytics(tr, {
