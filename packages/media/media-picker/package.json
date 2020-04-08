@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "uidu media picker, using Uppy",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",

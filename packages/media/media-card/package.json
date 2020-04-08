@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-card",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
