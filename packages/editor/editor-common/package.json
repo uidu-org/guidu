@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "description": "A package that contains common classes and components for editor and renderer",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "Apache-2.0",
@@ -14,7 +14,7 @@
     "@uidu/analytics-namespaced-context": "^0.1.7",
     "@uidu/emoji": "^0.1.12",
     "@uidu/mentions": "^0.1.16",
-    "@uidu/theme": "^0.2.4",
+    "@uidu/theme": "^0.2.5",
     "css-color-names": "^1.0.1",
     "raf-schd": "^4.0.0",
     "styled-components": "^5.0.0"

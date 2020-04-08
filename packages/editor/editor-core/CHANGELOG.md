@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 0.1.35
+
+### Patch Changes
+
+- dfe7dc6: Some fixes to editor and renderer styling
+- Updated dependencies [dfe7dc6]
+  - @uidu/theme@0.2.5
+  - @uidu/editor-common@0.1.18
+
 ## 0.1.34
 
 ### Patch Changes
