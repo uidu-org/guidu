@@ -3,6 +3,7 @@ export { default } from './components/MediaPicker';
 export async function MediaPickerFactoryClass({
   uploadParams,
   proxyReactContext,
+  onComplete,
 }): Promise<any> {
   const [{ PopupImpl }] = await Promise.all([
     import(
@@ -12,5 +13,5 @@ export async function MediaPickerFactoryClass({
 
   //  const mediaClient = getMediaClient(mediaClientConfig);
 
-  return PopupImpl({ uploadParams, proxyReactContext });
+  return PopupImpl({ uploadParams, proxyReactContext, onComplete });
 }

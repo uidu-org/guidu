@@ -111,7 +111,6 @@ export default class MediaGroup extends React.Component<
       const identifier: any = {
         id: item.attrs.id,
         mediaItemType: 'file',
-        collectionName: item.attrs.collection,
       };
 
       const nodePos =

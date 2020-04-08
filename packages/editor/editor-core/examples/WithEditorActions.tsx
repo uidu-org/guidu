@@ -7,9 +7,8 @@ export default class Basic extends PureComponent<any, any> {
     portal: undefined,
   };
 
-  handleChange = actions => editorView => {
-    console.log(actions);
-    actions.getValue().then(value => {
+  handleChange = (actions) => (editorView) => {
+    actions.getValue().then((value) => {
       console.log(value);
     });
   };
@@ -22,7 +21,7 @@ export default class Basic extends PureComponent<any, any> {
     return (
       <EditorContext>
         <WithEditorActions
-          render={actions => (
+          render={(actions) => (
             <Editor
               shouldFocus
               containerElement={this.element}
@@ -34,7 +33,7 @@ export default class Basic extends PureComponent<any, any> {
                     {renderToolbar({})}
                   </ShellHeader>
                   <ShellBody
-                    ref={c => {
+                    ref={(c) => {
                       this.element = c;
                     }}
                   >

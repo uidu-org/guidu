@@ -1,6 +1,6 @@
-import { MarkSpec, Mark } from 'prosemirror-model';
-import { LINK, COLOR } from '../groups';
+import { Mark, MarkSpec } from 'prosemirror-model';
 import { isSafeUrl, normalizeUrl } from '../../utils/url';
+import { COLOR, LINK } from '../groups';
 
 export interface ConfluenceLinkMetadata {
   linkType: string;
@@ -18,7 +18,6 @@ export interface LinkAttributes {
   href: string;
   title?: string;
   id?: string;
-  collection?: string;
   occurrenceKey?: string;
 
   __confluenceMetadata?: ConfluenceLinkMetadata;
@@ -45,7 +44,7 @@ export const link: MarkSpec = {
   parseDOM: [
     {
       tag: 'a[href]',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLLinkElement;
         let href = dom.getAttribute('href') || '';
         const attrs: { __confluenceMetadata: string; href?: string } = {
@@ -92,13 +91,7 @@ export const link: MarkSpec = {
   },
 };
 
-const OPTIONAL_ATTRS = [
-  'title',
-  'id',
-  'collection',
-  'occurrenceKey',
-  '__confluenceMetadata',
-];
+const OPTIONAL_ATTRS = ['title', 'id', 'occurrenceKey', '__confluenceMetadata'];
 
 export const toJSON = (mark: Mark) => ({
   type: mark.type.name,

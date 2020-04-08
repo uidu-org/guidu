@@ -35,7 +35,7 @@ function shouldAddParagraph(state: EditorState) {
 }
 
 function insertNodesWithOptionalParagraph(nodes: PMNode[]): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { tr, schema } = state;
     const { paragraph } = schema.nodes;
 
@@ -85,17 +85,13 @@ export const insertMediaAsMediaSingle = (
 export const insertMediaSingleNode = (
   view: EditorView,
   mediaState: MediaState,
-  collection?: string,
 ): boolean => {
-  if (collection === undefined) {
-    return false;
-  }
-
   const { state, dispatch } = view;
   const grandParent = state.selection.$from.node(-1);
-  const node = createMediaSingleNode(state.schema, collection)(
+  const node = createMediaSingleNode(state.schema)(
     mediaState as MediaSingleState,
   );
+  console.log(node);
   const shouldSplit =
     grandParent && grandParent.type.validContent(Fragment.from(node));
 
@@ -114,11 +110,12 @@ export const insertMediaSingleNode = (
   return true;
 };
 
-export const createMediaSingleNode = (schema: Schema, collection: string) => (
+export const createMediaSingleNode = (schema: Schema) => (
   mediaState: MediaSingleState,
 ) => {
-  const { id, dimensions, scaleFactor = 1 } = mediaState;
-  const { width, height } = dimensions || {
+  const { url, data } = mediaState;
+  const { id, metadata, scaleFactor = 1 } = data;
+  const { width, height } = metadata || {
     height: undefined,
     width: undefined,
   };
@@ -127,10 +124,12 @@ export const createMediaSingleNode = (schema: Schema, collection: string) => (
   const mediaNode = media.create({
     id,
     type: 'file',
-    collection,
     width: width && Math.round(width / scaleFactor),
     height: height && Math.round(height / scaleFactor),
+    url,
   });
+
+  console.log('media node created', mediaNode);
 
   copyOptionalAttrsFromMediaState(mediaState, mediaNode);
   return mediaSingle.createChecked({}, mediaNode);
@@ -151,7 +150,7 @@ export function transformSliceForMedia(slice: Slice, schema: Schema) {
         selection,
       )
     ) {
-      return mapSlice(slice, node =>
+      return mapSlice(slice, (node) =>
         node.type.name === 'mediaSingle'
           ? mediaSingle.createChecked({}, node.content, node.marks)
           : node,

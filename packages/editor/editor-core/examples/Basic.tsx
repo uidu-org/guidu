@@ -1,6 +1,6 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
-import { Editor } from '..';
+import { Editor, EditorContext, WithEditorActions } from '..';
 
 export default class Basic extends PureComponent<any, any> {
   state = {
@@ -11,37 +11,50 @@ export default class Basic extends PureComponent<any, any> {
     this.setState({ portal });
   };
 
+  handleChange = (actions) => (editorView) => {
+    actions.getValue().then((value) => {
+      console.log(value);
+    });
+  };
+
   render() {
     return (
-      <Editor
-        shouldFocus
-        containerElement={this.element}
-        onChange={console.log}
-        media={{
-          allowMediaGroup: true,
-          allowMediaSingle: true,
-        }}
-        mediaProvider={Promise.resolve({
-          uploadParams: { endpoint: '/upload' },
-          viewContext: Promise.resolve('test'),
-          uploadContext: Promise.resolve('test'),
-        })}
-      >
-        {({ renderToolbar, renderEditor }) => (
-          <Fragment>
-            <ShellHeader className="border-bottom px-xl-4 px-3">
-              {renderToolbar({})}
-            </ShellHeader>
-            <ShellBody
-              ref={(c) => {
-                this.element = c;
+      <EditorContext>
+        <WithEditorActions
+          render={(actions) => (
+            <Editor
+              shouldFocus
+              containerElement={this.element}
+              onChange={this.handleChange(actions)}
+              media={{
+                allowMediaGroup: true,
+                allowMediaSingle: true,
               }}
+              mediaProvider={Promise.resolve({
+                uploadParams: { endpoint: '/upload' },
+                viewContext: Promise.resolve('test'),
+                uploadContext: Promise.resolve('test'),
+              })}
             >
-              {renderEditor({})}
-            </ShellBody>
-          </Fragment>
-        )}
-      </Editor>
+              {({ renderToolbar, renderEditor }) => (
+                <Fragment>
+                  <ShellHeader className="border-bottom px-xl-4 px-3">
+                    {renderToolbar({})}
+                  </ShellHeader>
+                  <ShellBody
+                    scrollable
+                    ref={(c) => {
+                      this.element = c;
+                    }}
+                  >
+                    {renderEditor({})}
+                  </ShellBody>
+                </Fragment>
+              )}
+            </Editor>
+          )}
+        />
+      </EditorContext>
     );
   }
 }

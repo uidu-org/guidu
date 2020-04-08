@@ -92,7 +92,7 @@ export const getValidDocument = (
 };
 
 const wrapInlineNodes = (nodes: ADNode[] = []): ADNode[] => {
-  return nodes.map(node =>
+  return nodes.map((node) =>
     inlineNodes.has(node.type) ? { type: 'paragraph', content: [node] } : node,
   );
 };
@@ -102,7 +102,7 @@ export const getValidContent = (
   schema: Schema = defaultSchema,
   adfStage: ADFStage = 'final',
 ): ADNode[] => {
-  return content.map(node => getValidNode(node, schema, adfStage));
+  return content.map((node) => getValidNode(node, schema, adfStage));
 };
 
 const TEXT_COLOR_PATTERN = /^#[0-9a-f]{6}$/i;
@@ -317,13 +317,11 @@ export const getValidNode = (
       case 'media': {
         let mediaId = '';
         let mediaType = '';
-        let mediaCollection = [];
         let mediaUrl = '';
         if (attrs) {
-          const { id, collection, type, url } = attrs;
+          const { id, type, url } = attrs;
           mediaId = id;
           mediaType = type;
-          mediaCollection = collection;
           mediaUrl = url;
         }
 
@@ -341,7 +339,6 @@ export const getValidNode = (
           const mediaAttrs: any = {
             type: mediaType,
             id: mediaId,
-            collection: mediaCollection,
           };
 
           if (attrs.width) {
@@ -360,7 +357,10 @@ export const getValidNode = (
         break;
       }
       case 'mediaGroup': {
-        if (Array.isArray(content) && !content.some(e => e.type !== 'media')) {
+        if (
+          Array.isArray(content) &&
+          !content.some((e) => e.type !== 'media')
+        ) {
           return {
             type,
             content,
@@ -433,17 +433,14 @@ export const getValidNode = (
         let { marks } = node;
         if (text) {
           if (marks) {
-            marks = marks.reduce(
-              (acc, mark) => {
-                const validMark = getValidMark(mark, adfStage);
-                if (validMark) {
-                  acc.push(validMark);
-                }
+            marks = marks.reduce((acc, mark) => {
+              const validMark = getValidMark(mark, adfStage);
+              if (validMark) {
+                acc.push(validMark);
+              }
 
-                return acc;
-              },
-              [] as ADMark[],
-            );
+              return acc;
+            }, [] as ADMark[]);
           }
           return marks ? { type, text, marks: marks } : { type, text };
         }
@@ -591,7 +588,7 @@ export const getValidNode = (
         if (
           Array.isArray(content) &&
           content.length > 0 &&
-          !content.some(e => e.type !== 'tableRow')
+          !content.some((e) => e.type !== 'tableRow')
         ) {
           return {
             type,
@@ -605,7 +602,9 @@ export const getValidNode = (
         if (
           Array.isArray(content) &&
           content.length > 0 &&
-          !content.some(e => e.type !== 'tableCell' && e.type !== 'tableHeader')
+          !content.some(
+            (e) => e.type !== 'tableCell' && e.type !== 'tableHeader',
+          )
         ) {
           return {
             type,

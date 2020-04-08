@@ -56,7 +56,6 @@ class MediaNode extends Component<MediaNodeProps> {
       this.props.viewContext !== nextProps.viewContext ||
       this.props.uploadComplete !== nextProps.uploadComplete ||
       this.props.node.attrs.id !== nextProps.node.attrs.id ||
-      this.props.node.attrs.collection !== nextProps.node.attrs.collection ||
       this.props.cardDimensions.height !== nextProps.cardDimensions.height ||
       this.props.cardDimensions.width !== nextProps.cardDimensions.width
     ) {
@@ -93,8 +92,9 @@ class MediaNode extends Component<MediaNodeProps> {
       uploadComplete,
     } = this.props;
 
-    const { id, type, collection, url } = node.attrs;
-    const isMobile = editorAppearance === 'mobile';
+    console.log(this.props);
+
+    const { id, type, url } = node.attrs;
 
     if (
       type !== 'external' &&

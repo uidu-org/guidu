@@ -8,10 +8,8 @@ import {
 } from '../../../../src/plugins/floating-toolbar/types';
 import { Command, EditorAppearance } from '../../../../src/types';
 import commonMessages from '../../../messages';
-import { isFullPage } from '../../../utils/is-full-page';
 import { hoverDecoration } from '../../base/pm-plugins/decoration';
 import { MediaPluginState, stateKey } from '../pm-plugins/main';
-import { renderAnnotationButton } from './annotation';
 import buildLayoutButtons from './buildMediaLayoutButtons';
 
 const remove: Command = (state, dispatch) => {
@@ -23,7 +21,7 @@ const remove: Command = (state, dispatch) => {
 
 export const floatingToolbar = (
   state: EditorState,
-  { formatMessage }: IntlShape,
+  intl: IntlShape,
   allowResizing?: boolean,
   allowAnnotation?: boolean,
   appearance?: EditorAppearance,
@@ -36,18 +34,9 @@ export const floatingToolbar = (
   }
 
   let layoutButtons: FloatingToolbarItem<Command>[] = [];
-  if (isFullPage(appearance)) {
-    layoutButtons = buildLayoutButtons(state, allowResizing);
-    if (layoutButtons.length) {
-      if (allowAnnotation) {
-        layoutButtons.push({
-          type: 'custom',
-          render: renderAnnotationButton(pluginState),
-        });
-      }
-
-      layoutButtons.push({ type: 'separator' });
-    }
+  layoutButtons = buildLayoutButtons(state, intl, allowResizing);
+  if (layoutButtons.length) {
+    layoutButtons.push({ type: 'separator' });
   }
 
   return {
@@ -62,7 +51,7 @@ export const floatingToolbar = (
         icon: RemoveIcon,
         onMouseEnter: hoverDecoration(mediaSingle, true),
         onMouseLeave: hoverDecoration(mediaSingle, false),
-        title: formatMessage(commonMessages.remove),
+        title: intl.formatMessage(commonMessages.remove),
         onClick: remove,
       },
     ],

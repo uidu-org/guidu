@@ -26,14 +26,9 @@ import {
   MediaState,
   stateKey as pluginKey,
 } from './pm-plugins/main';
-import {
-  createPlugin as createMediaEditorPlugin,
-  pluginKey as mediaEditorPluginKey,
-} from './pm-plugins/media-editor';
 import { floatingToolbar } from './toolbar';
-import { CustomMediaPicker, MediaEditorState, MediaProvider } from './types';
+import { CustomMediaPicker, MediaProvider } from './types';
 import ClipboardMediaPickerWrapper from './ui/ClipboardMediaPickerWrapper';
-import MediaEditor from './ui/MediaEditor';
 import ToolbarMedia from './ui/ToolbarMedia';
 
 export { insertMediaSingleNode } from './utils/media-single';
@@ -137,34 +132,10 @@ const mediaPlugin = (
               keymapMediaSinglePlugin(schema, props.appearance),
           }
         : [],
-      options && options.allowAnnotation
-        ? { name: 'mediaEditor', plugin: createMediaEditorPlugin }
-        : [],
     );
   },
 
   contentComponent({ editorView, eventDispatcher }) {
-    // render MediaEditor separately because it doesn't depend on media plugin state
-    // so we can utilise EventDispatcher-based rerendering
-    const mediaEditor =
-      options && options.allowAnnotation ? (
-        <WithPluginState
-          editorView={editorView}
-          plugins={{ mediaEditorState: mediaEditorPluginKey }}
-          eventDispatcher={eventDispatcher}
-          render={({
-            mediaEditorState,
-          }: {
-            mediaEditorState: MediaEditorState;
-          }) => (
-            <MediaEditor
-              mediaEditorState={mediaEditorState}
-              view={editorView}
-            />
-          )}
-        />
-      ) : null;
-
     return (
       <>
         <WithPluginState
@@ -178,8 +149,6 @@ const mediaPlugin = (
             </>
           )}
         />
-
-        {mediaEditor}
       </>
     );
   },

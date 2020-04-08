@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 import { N30 } from '../../utils/colors';
 
 export type MediaType = 'file' | 'link' | 'external';
@@ -7,7 +7,7 @@ export type DisplayType = 'file' | 'thumbnail';
 export type DefaultAttributes<T> = {
   [P in keyof T]: {
     default?: T[P] | null;
-  }
+  };
 };
 
 /**
@@ -26,7 +26,6 @@ export interface MediaBaseAttributes {
    * @minLength 1
    */
   id: string;
-  collection: string;
   height?: number;
   width?: number;
   /**
@@ -60,7 +59,6 @@ export const defaultAttrs: DefaultAttributes<
 > = {
   id: { default: '' },
   type: { default: 'file' },
-  collection: { default: null },
   occurrenceKey: { default: null },
   width: { default: null },
   height: { default: null },
@@ -78,11 +76,11 @@ export const media: NodeSpec = {
   parseDOM: [
     {
       tag: 'div[data-node-type="media"]',
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         const attrs = {} as Record<string, any>;
 
         (Object.keys(defaultAttrs) as Array<keyof MediaAttributes>).forEach(
-          k => {
+          (k) => {
             const key = camelCaseToKebabCase(k).replace(/^__/, '');
             const value =
               (dom as HTMLElement).getAttribute(`data-${key}`) || '';
@@ -115,7 +113,7 @@ export const media: NodeSpec = {
     },
     {
       tag: 'img',
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         return {
           type: 'external',
           url: (dom as HTMLElement).getAttribute('src') || '',
@@ -128,7 +126,6 @@ export const media: NodeSpec = {
       'data-id': node.attrs.id,
       'data-node-type': 'media',
       'data-type': node.attrs.type,
-      'data-collection': node.attrs.collection,
       'data-occurrence-key': node.attrs.occurrenceKey,
       'data-width': node.attrs.width,
       'data-height': node.attrs.height,
@@ -145,7 +142,7 @@ export const media: NodeSpec = {
     copyPrivateAttributes(
       node.attrs,
       attrs,
-      key => `data-${camelCaseToKebabCase(key.slice(2))}`,
+      (key) => `data-${camelCaseToKebabCase(key.slice(2))}`,
     );
 
     return ['div', attrs];
@@ -161,7 +158,7 @@ export const copyPrivateAttributes = (
   map?: (str: string) => string,
 ) => {
   if (media.attrs) {
-    Object.keys(media.attrs).forEach(key => {
+    Object.keys(media.attrs).forEach((key) => {
       if (key[0] === '_' && key[1] === '_' && from[key]) {
         to[map ? map(key) : key] = from[key];
       }
@@ -178,7 +175,7 @@ const externalOnlyAttributes = ['type', 'url', 'width', 'height'];
 
 export const toJSON = (node: PMNode) => ({
   attrs: Object.keys(node.attrs)
-    .filter(key => !(key[0] === '_' && key[1] === '_'))
+    .filter((key) => !(key[0] === '_' && key[1] === '_'))
     .reduce<Record<string, any>>((obj, key) => {
       if (
         node.attrs.type === 'external' &&

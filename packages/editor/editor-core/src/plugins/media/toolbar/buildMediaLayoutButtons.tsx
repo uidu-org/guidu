@@ -1,4 +1,3 @@
-import { MediaSingleAttributes, MediaSingleLayout } from '@uidu/adf-schema';
 import EditorAlignImageCenter from '@atlaskit/icon/glyph/editor/align-image-center';
 import EditorAlignImageLeft from '@atlaskit/icon/glyph/editor/align-image-left';
 import EditorAlignImageRight from '@atlaskit/icon/glyph/editor/align-image-right';
@@ -6,11 +5,11 @@ import FullWidthIcon from '@atlaskit/icon/glyph/editor/media-full-width';
 import WideIcon from '@atlaskit/icon/glyph/editor/media-wide';
 import WrapLeftIcon from '@atlaskit/icon/glyph/editor/media-wrap-left';
 import WrapRightIcon from '@atlaskit/icon/glyph/editor/media-wrap-right';
+import { MediaSingleAttributes, MediaSingleLayout } from '@uidu/adf-schema';
 import { Schema } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
 import { hasParentNodeOfType } from 'prosemirror-utils';
-import React from 'react';
-import { defineMessages } from 'react-intl';
+import { defineMessages, IntlShape } from 'react-intl';
 import commonMessages from '../../../messages';
 import { Command } from '../../../types';
 import {
@@ -80,33 +79,56 @@ const makeAlign = (layout: MediaSingleLayout): Command => {
       layout,
       mediaSingleNode.attrs as MediaSingleAttributes,
     );
-    dispatch(state.tr.setNodeMarkup(state.selection.from, undefined, newAttrs));
+    const tr = state.tr.setNodeMarkup(
+      state.selection.from,
+      undefined,
+      newAttrs,
+    );
+    tr.setMeta('scrollIntoView', false);
+    dispatch(tr);
     return true;
   };
 };
 
-const mapIconsToToolbarItem = (icons: Array<any>, layout: MediaSingleLayout) =>
-  icons.map<FloatingToolbarItem<Command>>(toolbarItem => {
+const mapIconsToToolbarItem = (
+  icons: Array<any>,
+  layout: MediaSingleLayout,
+  intl: IntlShape,
+) =>
+  icons.map<FloatingToolbarItem<Command>>((toolbarItem) => {
     const { value } = toolbarItem;
 
     return {
       type: 'button',
       icon: toolbarItem.icon,
-      title: layoutToMessages[value],
+      title: intl.formatMessage(layoutToMessages[value]),
       selected: layout === value,
       onClick: makeAlign(value),
     };
   });
 
-const shouldHideLayoutToolbar = (selection: NodeSelection, { nodes }: Schema) =>
-  hasParentNodeOfType([
-    nodes.bodiedExtension,
-    nodes.layoutSection,
-    nodes.listItem,
-    nodes.table,
-  ])(selection);
+const shouldHideLayoutToolbar = (
+  selection: NodeSelection,
+  { nodes }: Schema,
+  allowResizingInTables?: boolean,
+) => {
+  return hasParentNodeOfType(
+    [
+      nodes.bodiedExtension,
+      nodes.listItem,
+      nodes.expand,
+      nodes.nestedExpand,
+      ...(allowResizingInTables ? [] : [nodes.table]),
+    ].filter(Boolean),
+  )(selection);
+};
 
-const buildLayoutButtons = (state: EditorState, allowResizing?: boolean) => {
+const buildLayoutButtons = (
+  state: EditorState,
+  intl: IntlShape,
+  allowResizing?: boolean,
+  allowResizingInTables?: boolean,
+) => {
   const { selection } = state;
   const { mediaSingle } = state.schema.nodes;
 
@@ -114,7 +136,7 @@ const buildLayoutButtons = (state: EditorState, allowResizing?: boolean) => {
     !(selection instanceof NodeSelection) ||
     !selection.node ||
     !mediaSingle ||
-    shouldHideLayoutToolbar(selection, state.schema)
+    shouldHideLayoutToolbar(selection, state.schema, allowResizingInTables)
   ) {
     return [];
   }
@@ -122,15 +144,15 @@ const buildLayoutButtons = (state: EditorState, allowResizing?: boolean) => {
   const { layout } = selection.node.attrs;
 
   let toolbarItems = [
-    ...mapIconsToToolbarItem(alignmentIcons, layout),
+    ...mapIconsToToolbarItem(alignmentIcons, layout, intl),
     { type: 'separator' } as FloatingToolbarSeparator,
-    ...mapIconsToToolbarItem(wrappingIcons, layout),
+    ...mapIconsToToolbarItem(wrappingIcons, layout, intl),
   ];
 
   if (!allowResizing) {
     toolbarItems = toolbarItems.concat([
       { type: 'separator' } as FloatingToolbarSeparator,
-      ...mapIconsToToolbarItem(breakoutIcons, layout),
+      ...mapIconsToToolbarItem(breakoutIcons, layout, intl),
     ]);
   }
 

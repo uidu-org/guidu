@@ -1,29 +1,21 @@
-export type MediaStateStatus =
-  | 'unknown'
-  | 'ready'
-  | 'cancelled'
-  | 'preview'
-  | 'error'
-  | 'mobile-upload-end';
-
 export interface MediaState {
-  id: string;
-  status?: MediaStateStatus;
-  fileName?: string;
-  fileSize?: number;
-  fileMimeType?: string;
-  collection?: string;
-  dimensions?: {
-    width: number | undefined;
-    height: number | undefined;
+  url: string;
+  data: {
+    id: string;
+    storage: string;
+    metadata: {
+      size?: number;
+      filename: string;
+      mime_type?: string;
+      width: number | undefined;
+      height: number | undefined;
+    };
+    scaleFactor?: number;
+    error?: {
+      name: string;
+      description: string;
+    };
   };
-  scaleFactor?: number;
-  error?: {
-    name: string;
-    description: string;
-  };
-  /** still require to support Mobile */
-  publicId?: string;
 }
 
 export interface FeatureFlags {}
@@ -62,7 +54,6 @@ export interface CustomMediaPicker {
 
 export type MobileUploadEndEventPayload = {
   readonly file: any & {
-    readonly collectionName?: string;
     readonly publicId?: string;
   };
 };

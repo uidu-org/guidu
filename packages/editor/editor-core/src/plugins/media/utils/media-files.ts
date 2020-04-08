@@ -103,7 +103,6 @@ function shouldAppendParagraph(
 export const insertMediaGroupNode = (
   view: EditorView,
   mediaStates: MediaState[],
-  collection: string,
 ): void => {
   const { state, dispatch } = view;
   const { tr, schema } = state;
@@ -114,7 +113,7 @@ export const insertMediaGroupNode = (
     return undefined;
   }
 
-  const mediaNodes = createMediaFileNodes(mediaStates, collection, media);
+  const mediaNodes = createMediaFileNodes(mediaStates, media);
   const mediaInsertPos = findMediaInsertPos(state);
   const resolvedInsertPos = tr.doc.resolve(mediaInsertPos);
   const parent = resolvedInsertPos.parent;
@@ -166,15 +165,15 @@ export const insertMediaGroupNode = (
 
 const createMediaFileNodes = (
   mediaStates: MediaState[],
-  collection: string,
   media: NodeType,
 ): PMNode[] => {
-  const nodes = mediaStates.map(mediaState => {
-    const { id } = mediaState;
+  const nodes = mediaStates.map((mediaState) => {
+    const {
+      data: { id },
+    } = mediaState;
     const node = media.create({
       id,
       type: 'file',
-      collection,
     });
     copyOptionalAttrsFromMediaState(mediaState, node);
     return node;
@@ -212,7 +211,7 @@ export const getPosInList = (state: EditorState): number | undefined => {
   } = state;
 
   // 1. Check if I am inside a list.
-  if (hasParentNode(node => node.type === listItem)(state.selection)) {
+  if (hasParentNode((node) => node.type === listItem)(state.selection)) {
     // 2. Get end position of root list
     const rootListNode = findRootListNode(state);
 

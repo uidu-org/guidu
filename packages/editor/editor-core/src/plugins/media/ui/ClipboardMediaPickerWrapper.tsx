@@ -19,7 +19,7 @@ export default class ClipboardMediaPickerWrapper extends React.Component<
     return (
       <MediaPicker
         onComplete={(result) => {
-          mediaState.insertFile(result, {} as any);
+          mediaState.insertFile(result);
           mediaState.trackNewMediaEvent('clipboard');
         }}
       />

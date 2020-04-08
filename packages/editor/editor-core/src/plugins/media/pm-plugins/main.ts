@@ -38,13 +38,13 @@ import { MediaPluginOptions } from '../media-plugin-options';
 //   MediaStateEventSubscriber,
 //   PickerFacadeConfig,
 // } from '../picker-facade';
-import { MediaProvider, MediaState, MediaStateStatus } from '../types';
+import { MediaProvider, MediaState } from '../types';
 import DropPlaceholder, { PlaceholderType } from '../ui/Media/DropPlaceholder';
 import { removeMediaNode, splitMediaGroup } from '../utils/media-common';
 import { insertMediaGroupNode } from '../utils/media-files';
-import { insertMediaSingleNode, isMediaSingle } from '../utils/media-single';
+import { insertMediaSingleNode } from '../utils/media-single';
 
-export { MediaState, MediaProvider, MediaStateStatus };
+export { MediaState, MediaProvider };
 
 const MEDIA_RESOLVED_STATES = ['ready', 'error', 'cancelled'];
 
@@ -232,50 +232,13 @@ export class MediaPluginState {
    *
    * called when we insert a new file via the picker (connected via pickerfacade)
    */
-  insertFile = (mediaState: MediaState, onMediaStateChanged) => {
-    const collection = this.collectionFromProvider();
-    if (collection === undefined) {
-      return undefined;
-    }
-
-    if (this.editorAppearance === 'mobile') {
-      this.mobileUploadComplete[mediaState.id] = false;
-    }
-
+  insertFile = (files) => {
     this.allUploadsFinished = false;
 
-    if (isMediaSingle(this.view.state.schema, mediaState.fileMimeType)) {
-      insertMediaSingleNode(this.view, mediaState, collection);
+    if (files.length === 1) {
+      insertMediaSingleNode(this.view, files[0]);
     } else {
-      insertMediaGroupNode(this.view, [mediaState], collection);
-    }
-
-    // do events when media state changes
-    onMediaStateChanged(this.handleMediaState);
-
-    // handle waiting for upload complete
-    const isEndState = (state: MediaState) =>
-      state.status && MEDIA_RESOLVED_STATES.indexOf(state.status) !== -1;
-
-    if (!isEndState(mediaState)) {
-      const updater = (promise: Promise<any>) => {
-        // Chain the previous promise with a new one for this media item
-        return new Promise<MediaState | null>((resolve) => {
-          const onStateChange = (newState) => {
-            // When media item reaches its final state, remove listener and resolve
-            if (isEndState(newState)) {
-              resolve(newState);
-            }
-          };
-
-          onMediaStateChanged(onStateChange);
-        }).then(() => promise);
-      };
-      this.pendingTask = updater(this.pendingTask);
-
-      this.pendingTask.then(() => {
-        this.allUploadsFinished = true;
-      });
+      insertMediaGroupNode(this.view, files);
     }
 
     // refocus the view
@@ -295,7 +258,6 @@ export class MediaPluginState {
   };
 
   showMediaPicker = () => {
-    console.log(this.popupPicker);
     if (!this.popupPicker) {
       return undefined;
     }
@@ -303,47 +265,6 @@ export class MediaPluginState {
       this.dropzonePicker.deactivate();
     }
     this.popupPicker.show();
-  };
-
-  /**
-   * Returns a promise that is resolved after all pending operations have been finished.
-   * An optional timeout will cause the promise to reject if the operation takes too long
-   *
-   * NOTE: The promise will resolve even if some of the media have failed to process.
-   */
-  waitForPendingTasks = (
-    timeout?: number,
-    lastTask?: Promise<MediaState | null>,
-  ) => {
-    if (lastTask && this.pendingTask === lastTask) {
-      return lastTask;
-    }
-
-    const chainedPromise: Promise<any> = this.pendingTask.then(() =>
-      // Call ourselves to make sure that no new pending tasks have been
-      // added before the current promise has resolved.
-      this.waitForPendingTasks(undefined, this.pendingTask!),
-    );
-
-    if (!timeout) {
-      return chainedPromise;
-    }
-
-    let rejectTimeout: number;
-    const timeoutPromise = new Promise((_resolve, reject) => {
-      rejectTimeout = window.setTimeout(
-        () =>
-          reject(new Error(`Media operations did not finish in ${timeout} ms`)),
-        timeout,
-      );
-    });
-
-    return Promise.race([
-      timeoutPromise,
-      chainedPromise.then(() => {
-        clearTimeout(rejectTimeout);
-      }),
-    ]);
   };
 
   setView(view: EditorView) {
@@ -396,7 +317,8 @@ export class MediaPluginState {
   };
 
   private destroyAllPickers = (pickers: Array<any>) => {
-    pickers.forEach((picker) => picker.destroy());
+    console.log(pickers);
+    // pickers.forEach((picker) => picker.destroy());
     this.pickers.splice(0, this.pickers.length);
   };
 
@@ -423,35 +345,30 @@ export class MediaPluginState {
       return undefined;
     }
     const { errorReporter, pickers, pickerPromises } = this;
-    console.log(pickers);
+
     // create pickers if they don't exist, re-use otherwise
     if (!pickers.length) {
       const popupPicker = MediaPickerFactoryClass({
         proxyReactContext: reactContext(),
         uploadParams,
+        onComplete: (result) => {
+          this.insertFile(
+            result.successful.map(({ response }) => response.body),
+          );
+        },
+        // onClose: () => this.onPopupPickerClose(),
       });
       pickerPromises.push(popupPicker);
       pickers.push((this.popupPicker = await popupPicker));
-      // this.removeOnCloseListener = this.popupPicker.onClose(
-      //   this.onPopupPickerClose,
-      // );
     }
-
-    pickers.forEach((picker) => {
-      console.log(picker);
-      // picker.onNewMedia(this.insertFile);
-      // picker.onNewMedia(this.trackNewMediaEvent);
-    });
-
-    // set new upload params for the pickers
   }
 
   public trackNewMediaEvent(pickerType: string) {
     return (mediaState: MediaState) => {
       analyticsService.trackEvent(
         `atlassian.editor.media.file.${pickerType}`,
-        mediaState.fileMimeType
-          ? { fileMimeType: mediaState.fileMimeType }
+        mediaState.data.metadata.mime_type
+          ? { fileMimeType: mediaState.data.metadata.mime_type }
           : {},
       );
 
@@ -459,10 +376,12 @@ export class MediaPluginState {
         const inputMethod = this.getInputMethod(
           pickerType,
         ) as InputMethodInsertMedia;
-        const extensionIdx = mediaState.fileName!.lastIndexOf('.');
+        const extensionIdx = mediaState.data.metadata.filename!.lastIndexOf(
+          '.',
+        );
         const fileExtension =
           extensionIdx >= 0
-            ? mediaState.fileName!.substring(extensionIdx + 1)
+            ? mediaState.data.metadata.filename!.substring(extensionIdx + 1)
             : undefined;
 
         const payload: AnalyticsEventPayload = {
@@ -508,55 +427,14 @@ export class MediaPluginState {
     )(view.state, view.dispatch);
   };
 
-  private collectionFromProvider(): string | undefined {
-    return (
-      this.mediaProvider &&
-      this.mediaProvider.uploadParams &&
-      this.mediaProvider.uploadParams.collection
-    );
-  }
-
-  private handleMediaState = (state) => {
-    switch (state.status) {
-      case 'error':
-        const { uploadErrorHandler } = this.options;
-        if (uploadErrorHandler) {
-          uploadErrorHandler(state);
-        }
-        break;
-
-      case 'mobile-upload-end':
-        const attrs: { id: string; collection?: string } = {
-          id: state.publicId || state.id,
-        };
-
-        if (typeof state.collection === 'string') {
-          attrs.collection = state.collection;
-        }
-
-        this.updateMediaNodeAttrs(
-          state.id,
-          attrs,
-          isMediaSingle(this.view.state.schema, state.fileMimeType),
-        );
-
-        // mark mobile upload as complete
-        this.mobileUploadComplete[attrs.id] = true;
-
-        delete this.mediaGroupNodes[state.id];
-        break;
-    }
-  };
-
-  isMobileUploadCompleted = (mediaId: string) =>
-    helpers.isMobileUploadCompleted(this, mediaId);
-
   removeNodeById = (state: MediaState) => {
-    const { id } = state;
+    const {
+      data: { id },
+    } = state;
     const mediaNodeWithPos = helpers.findMediaNode(
       this,
       id,
-      isImage(state.fileMimeType),
+      isImage(state.data.metadata.mime_type),
     );
 
     if (mediaNodeWithPos) {

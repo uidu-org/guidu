@@ -28,7 +28,6 @@ import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection } from '../../../utils';
 import { pluginKey as widthPluginKey } from '../../width';
 import { updateMediaNodeAttrs } from '../commands';
-import { isMobileUploadCompleted } from '../commands/helpers';
 import {
   MediaPluginState,
   stateKey as mediaPluginKey,
@@ -107,34 +106,19 @@ export default class MediaSingleNode extends Component<
     if (type === 'external') {
       return false;
     }
-    const { id, collection } = firstChild.attrs as MediaAttributes;
+    const { id } = firstChild.attrs as MediaAttributes;
     if (height && width) {
       return false;
     }
 
     // can't fetch remote dimensions on mobile, so we'll default them
-    if (this.props.editorAppearance === 'mobile') {
-      return {
-        id,
-        height: DEFAULT_IMAGE_HEIGHT,
-        width: DEFAULT_IMAGE_WIDTH,
-      };
-    }
-
-    const viewContext = await mediaProvider.viewContext;
-    const state = await viewContext.getImageMetadata(id, {
-      collection,
-    });
-
-    if (!state || !state.original) {
-      return false;
-    }
-
+    // if (this.props.editorAppearance === 'mobile') {
     return {
       id,
-      height: state.original.height || DEFAULT_IMAGE_HEIGHT,
-      width: state.original.width || DEFAULT_IMAGE_WIDTH,
+      height: DEFAULT_IMAGE_HEIGHT,
+      width: DEFAULT_IMAGE_WIDTH,
     };
+    // }
   }
 
   private onExternalImageLoaded = ({
@@ -236,11 +220,6 @@ export default class MediaSingleNode extends Component<
       pctWidth: mediaSingleWidth,
     };
 
-    const uploadComplete = isMobileUploadCompleted(
-      this.props.mediaPluginState,
-      childNode.attrs.id,
-    );
-
     const MediaChild = (
       <MediaItem
         view={this.props.view}
@@ -252,7 +231,7 @@ export default class MediaSingleNode extends Component<
         onClick={this.selectMediaSingle}
         onExternalImageLoaded={this.onExternalImageLoaded}
         editorAppearance={editorAppearance}
-        uploadComplete={uploadComplete}
+        uploadComplete
         url={childNode.attrs.url}
       />
     );

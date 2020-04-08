@@ -6,7 +6,9 @@ import MediaPicker from './MediaPicker';
 export function PopupImpl({
   uploadParams, // tenant
   proxyReactContext,
+  onComplete,
 }) {
+  console.log('initiate popup impl');
   const container = document.body;
   // private container?: HTMLElement;
   // private tenantUploadParams;
@@ -32,6 +34,17 @@ export function PopupImpl({
   const show = async () => {
     const popup = renderPopup();
     document.body.append(popup);
+  };
+
+  const destroy = () => {
+    if (!container) {
+      return;
+    }
+
+    try {
+      unmountComponentAtNode(container);
+      container.remove();
+    } catch (error) {}
   };
 
   const teardown = () => {
@@ -64,15 +77,6 @@ export function PopupImpl({
   //   this.emit('closed', undefined);
   // }
 
-  const component = () => (
-    <MediaPicker
-      proxyReactContext={proxyReactContext}
-      uploadParams={uploadParams}
-      onComplete={console.log}
-      open
-    />
-  );
-
   const renderPopup = () => {
     if (!exenv.canUseDOM) {
       return null;
@@ -84,7 +88,7 @@ export function PopupImpl({
       <MediaPicker
         proxyReactContext={proxyReactContext}
         uploadParams={uploadParams}
-        onComplete={console.log}
+        onComplete={onComplete}
         open
       />,
       container,
@@ -92,5 +96,5 @@ export function PopupImpl({
     return container;
   };
 
-  return { show, hide, component };
+  return { show, hide };
 }

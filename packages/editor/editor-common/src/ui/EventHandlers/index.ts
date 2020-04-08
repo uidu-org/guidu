@@ -1,7 +1,6 @@
 import { SyntheticEvent } from 'react';
 
 export interface CardSurroundings {
-  collectionName: string;
   list: Array<any>;
 }
 

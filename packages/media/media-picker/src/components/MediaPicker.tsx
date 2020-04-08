@@ -50,15 +50,16 @@ export default class MediaPicker extends PureComponent<any> {
       })
       .use(Dropbox, {
         companionUrl,
+      })
+      .on('file-added', (file) => {
+        console.log(file);
+        this.uppy.setFileMeta(file.id, {
+          size: file.size,
+        });
+      })
+      .on('complete', (result) => {
+        onComplete(result);
       });
-    this.uppy.on('file-added', (file) => {
-      this.uppy.setFileMeta(file.id, {
-        size: file.size,
-      });
-    });
-    this.uppy.on('complete', (result) => {
-      onComplete(result);
-    });
   }
 
   render() {
@@ -66,8 +67,17 @@ export default class MediaPicker extends PureComponent<any> {
     return (
       <DashboardModal
         uppy={this.uppy}
-        plugins={['XHRUpload', 'Webcam', 'Url', 'Dropbox', 'GoogleDrive']}
+        plugins={[
+          'XHRUpload',
+          'Webcam',
+          'Url',
+          'Dropbox',
+          'GoogleDrive',
+          'ThumbnailGenerator',
+        ]}
         proudlyDisplayPoweredByUppy={false}
+        closeAfterFinish
+        closeModalOnClickOutside
         {...this.props}
       />
     );

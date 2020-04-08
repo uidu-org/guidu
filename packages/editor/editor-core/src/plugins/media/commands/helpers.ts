@@ -1,4 +1,4 @@
-import { MediaPluginState, MediaNodeWithPosHandler } from '../pm-plugins/main';
+import { MediaNodeWithPosHandler, MediaPluginState } from '../pm-plugins/main';
 
 export const findMediaSingleNode = (
   mediaPluginState: MediaPluginState,
@@ -37,12 +37,3 @@ export const findMediaNode = (
     : mediaPluginState.mediaGroupNodes[id];
   return mediaNodeWithPos;
 };
-
-export const isMobileUploadCompleted = (
-  mediaPluginState: MediaPluginState,
-  mediaId: string,
-) =>
-  mediaPluginState.editorAppearance === 'mobile' &&
-  typeof mediaPluginState.mobileUploadComplete[mediaId] === 'boolean'
-    ? mediaPluginState.mobileUploadComplete[mediaId]
-    : undefined;
