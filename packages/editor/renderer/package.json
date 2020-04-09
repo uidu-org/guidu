@@ -1,6 +1,6 @@
 {
   "name": "@uidu/renderer",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "Renderer component",
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "MIT",
