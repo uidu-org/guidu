@@ -15,9 +15,6 @@ import {
   HyperlinkState,
   stateKey as hyperlinkPluginKey,
 } from '../hyperlink/pm-plugins/main';
-import { startImageUpload } from '../image-upload/pm-plugins/commands';
-import { stateKey as imageUploadStateKey } from '../image-upload/pm-plugins/main';
-import { ImageUploadPluginState } from '../image-upload/types';
 import { pluginKey as layoutStateKey } from '../layout';
 import { LayoutState } from '../layout/pm-plugins/main';
 import {
@@ -98,7 +95,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             hyperlinkState: hyperlinkPluginKey,
             emojiState: emojiPluginKey,
             dateState: dateStateKey,
-            imageUpload: imageUploadStateKey,
             placeholderTextState: placeholderTextStateKey,
             layoutState: layoutStateKey,
           }}
@@ -111,7 +107,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             hyperlinkState,
             emojiState,
             dateState,
-            imageUpload,
             placeholderTextState,
             layoutState,
           }: {
@@ -124,7 +119,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
             hyperlinkState: HyperlinkState | undefined;
             emojiState: EmojiPluginState | undefined;
             dateState: DateState | undefined;
-            imageUpload: ImageUploadPluginState | undefined;
             placeholderTextState: PlaceholderPluginState | undefined;
             layoutState: LayoutState | undefined;
           }) => (
@@ -149,9 +143,6 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
               mediaUploadsEnabled={mediaState && mediaState.allowsUploads}
               onShowMediaPicker={mediaState && mediaState.showMediaPicker}
               mediaSupported={!!mediaState}
-              imageUploadSupported={!!imageUpload}
-              imageUploadEnabled={imageUpload && imageUpload.enabled}
-              handleImageUpload={startImageUpload}
               availableWrapperBlockTypes={
                 blockTypeState && blockTypeState.availableWrapperBlockTypes
               }

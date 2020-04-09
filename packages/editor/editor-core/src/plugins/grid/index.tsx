@@ -6,7 +6,7 @@ import {
 } from '@uidu/editor-common';
 import classnames from 'classnames';
 import { PluginKey } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import { withTheme } from 'styled-components';
 import { createDispatch, EventDispatcher } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types';
@@ -85,7 +85,7 @@ const gutterGridLines = (
 
   const wideSpacing =
     (editorMaxWidth * breakoutWideScaleRatio - editorMaxWidth) / 2;
-  sides.forEach(side => {
+  sides.forEach((side) => {
     gridLines.push(
       <div
         key={side}
@@ -106,8 +106,9 @@ const gutterGridLines = (
         )}
         style={{
           position: 'absolute',
-          [side]: `-${(editorWidth - editorMaxWidth - akEditorBreakoutPadding) /
-            2}px`,
+          [side]: `-${
+            (editorWidth - editorMaxWidth - akEditorBreakoutPadding) / 2
+          }px`,
         }}
       />,
     );

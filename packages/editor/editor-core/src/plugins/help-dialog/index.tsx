@@ -32,12 +32,12 @@ export const closeHelpCommand = (tr: Transaction, dispatch: Function): void => {
 
 export const stopPropagationCommand = (e: Event): void => e.stopPropagation();
 
-export function createPlugin(dispatch: Function, imageEnabled: boolean) {
+export function createPlugin(dispatch: Function) {
   return new Plugin({
     key: pluginKey,
     state: {
       init() {
-        return { isVisible: false, imageEnabled };
+        return { isVisible: false };
       },
       apply(tr: Transaction, _value: any, state: EditorState) {
         const isVisible = tr.getMeta(pluginKey);
@@ -60,8 +60,7 @@ const helpDialog = (): EditorPlugin => ({
     return [
       {
         name: 'helpDialog',
-        plugin: ({ dispatch, props: { legacyImageUploadProvider } }) =>
-          createPlugin(dispatch, !!legacyImageUploadProvider),
+        plugin: ({ dispatch }) => createPlugin(dispatch),
       },
       {
         name: 'helpDialogKeymap',
@@ -82,7 +81,6 @@ const helpDialog = (): EditorPlugin => ({
             editorView={editorView}
             isVisible={helpDialog.isVisible}
             quickInsertEnabled={!!quickInsert}
-            imageEnabled={helpDialog.imageEnabled}
           />
         )}
       />

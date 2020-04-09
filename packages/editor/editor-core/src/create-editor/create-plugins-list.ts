@@ -199,19 +199,6 @@ export default function createPluginsList(
   //   plugins.push(saveOnEnterPlugin());
   // }
 
-  // if (props.legacyImageUploadProvider) {
-  //   plugins.push(imageUploadPlugin());
-
-  //   if (!props.media && !props.mediaProvider) {
-  //     plugins.push(
-  //       mediaPlugin({
-  //         allowMediaSingle: { disableLayout: true },
-  //         allowMediaGroup: false,
-  //       }),
-  //     );
-  //   }
-  // }
-
   // if (props.collabEdit || props.collabEditProvider) {
   //   plugins.push(
   //     collabEditPlugin(props.collabEdit, props.sanitizePrivateContent),

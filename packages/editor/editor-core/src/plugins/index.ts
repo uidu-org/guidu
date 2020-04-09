@@ -9,9 +9,7 @@ export {
   pluginKey as blockPluginStateKey,
 } from './block-type';
 // export { default as cardPlugin } from './card';
-export {
-  default as clearMarksOnChangeToEmptyDocumentPlugin,
-} from './clear-marks-on-change-to-empty-document';
+export { default as clearMarksOnChangeToEmptyDocumentPlugin } from './clear-marks-on-change-to-empty-document';
 // export { default as codeBlockPlugin } from './code-block';
 // export { CollabEditProvider, default as collabEditPlugin } from './collab-edit';
 export { default as customAutoformatPlugin } from './custom-autoformat';
@@ -28,7 +26,6 @@ export { default as gridPlugin } from './grid';
 export { default as historyPlugin } from './history';
 export { default as hyperlinkPlugin } from './hyperlink';
 export { default as indentationPlugin } from './indentation';
-// export { default as imageUploadPlugin } from './image-upload';
 export { default as insertBlockPlugin } from './insert-block';
 // export { default as jiraIssuePlugin } from './jira-issue';
 export { default as layoutPlugin } from './layout';

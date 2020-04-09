@@ -22,7 +22,7 @@ class PaymentRequest extends PureComponent<PayWithProps, any> {
       requestPayerPhone: true,
     });
 
-    paymentRequest.on('paymentMethod', async ev => {
+    paymentRequest.on('paymentMethod', async (ev) => {
       const {
         error: confirmError,
         // paymentIntent,
@@ -50,7 +50,7 @@ class PaymentRequest extends PureComponent<PayWithProps, any> {
 
     paymentRequest
       .canMakePayment()
-      .then(result => this.setState({ canMakePayment: !!result }));
+      .then((result) => this.setState({ canMakePayment: !!result }));
 
     this.state = {
       canMakePayment: false,
@@ -71,7 +71,7 @@ class PaymentRequest extends PureComponent<PayWithProps, any> {
           style: {
             paymentRequestButton: {
               theme: 'dark',
-              height: 48,
+              height: '48',
             },
           },
         }}
@@ -81,7 +81,7 @@ class PaymentRequest extends PureComponent<PayWithProps, any> {
   }
 }
 
-export default rest => (
+export default (rest) => (
   <ElementsConsumer>
     {({ stripe, elements }) => (
       <PaymentRequest stripe={stripe} elements={elements} {...rest} />

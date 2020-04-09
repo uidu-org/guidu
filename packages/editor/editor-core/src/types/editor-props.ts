@@ -19,7 +19,6 @@ import { CodeBlockOptions } from '../plugins/code-block';
 import { CollabEditProvider } from '../plugins/collab-edit/provider';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
 import { AutoformattingProvider } from '../plugins/custom-autoformat/types';
-import { ImageUploadHandler } from '../plugins/image-upload/types';
 import { MacroProvider } from '../plugins/macro/types';
 import { MediaOptions } from '../plugins/media';
 import { MediaProvider, MediaState } from '../plugins/media/types';
@@ -209,7 +208,6 @@ export interface EditorProps {
   taskDecisionProvider?: Promise<TaskDecisionProvider>;
   contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
 
-  legacyImageUploadProvider?: Promise<ImageUploadHandler>;
   mentionProvider?: Promise<MentionProvider>;
   mediaProvider?: Promise<MediaProvider>;
 

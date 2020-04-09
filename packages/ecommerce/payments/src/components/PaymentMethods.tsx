@@ -23,7 +23,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
       requestPayerPhone: true,
     });
 
-    paymentRequest.on('paymentMethod', async ev => {
+    paymentRequest.on('paymentMethod', async (ev) => {
       const {
         error: confirmError,
         // paymentIntent,
@@ -51,7 +51,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
 
     paymentRequest
       .canMakePayment()
-      .then(result => this.setState({ canMakePayment: !!result }));
+      .then((result) => this.setState({ canMakePayment: !!result }));
 
     this.state = {
       canMakePayment: false,
@@ -78,7 +78,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
               style: {
                 paymentRequestButton: {
                   theme: 'dark',
-                  height: 48,
+                  height: '48',
                 },
               },
             }}
@@ -88,7 +88,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
         <a
           className="card card-body p-3 mb-3"
           href="#"
-          onClick={e => this.select(e, 'card')}
+          onClick={(e) => this.select(e, 'card')}
         >
           <div className="d-flex w-100 justify-content-start align-items-center">
             <CreditCard className="mr-2" size={18} />
@@ -100,7 +100,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
         <a
           className="card card-body p-3 mb-3"
           href="#"
-          onClick={e => this.select(e, 'bank_account')}
+          onClick={(e) => this.select(e, 'bank_account')}
         >
           <div className="d-flex w-100 justify-content-start align-items-center">
             <Server className="mr-2" size={18} />
@@ -114,7 +114,7 @@ class PayWith extends PureComponent<PayWithProps, any> {
   }
 }
 
-export default rest => (
+export default (rest) => (
   <ElementsConsumer>
     {({ stripe, elements }) => (
       <PayWith stripe={stripe} elements={elements} {...rest} />

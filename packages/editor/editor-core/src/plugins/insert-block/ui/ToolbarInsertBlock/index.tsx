@@ -17,7 +17,11 @@ import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
-import { EmojiId, EmojiPicker as AkEmojiPicker, EmojiProvider } from '@uidu/emoji';
+import {
+  EmojiId,
+  EmojiPicker as AkEmojiPicker,
+  EmojiProvider,
+} from '@uidu/emoji';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
@@ -26,13 +30,40 @@ import { ReactInstance } from 'react';
 import * as ReactDOM from 'react-dom';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import EditorActions from '../../../../actions';
-import { analyticsService as analytics, withAnalytics } from '../../../../analytics';
-import { addLink, findKeymapByDescription, findShortcutByDescription, renderTooltipContent, toggleTable, tooltip } from '../../../../keymaps';
-import { Command, CommandDispatch, InsertMenuCustomItem } from '../../../../types';
+import {
+  analyticsService as analytics,
+  withAnalytics,
+} from '../../../../analytics';
+import {
+  addLink,
+  findKeymapByDescription,
+  findShortcutByDescription,
+  renderTooltipContent,
+  toggleTable,
+  tooltip,
+} from '../../../../keymaps';
+import {
+  Command,
+  CommandDispatch,
+  InsertMenuCustomItem,
+} from '../../../../types';
 import DropdownMenu from '../../../../ui/DropdownMenu';
-import { ButtonGroup, ExpandIconWrapper, Shortcut, Wrapper } from '../../../../ui/styles';
+import {
+  ButtonGroup,
+  ExpandIconWrapper,
+  Shortcut,
+  Wrapper,
+} from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, DispatchAnalyticsEvent, EVENT_TYPE, INPUT_METHOD, withAnalytics as commandWithAnalytics } from '../../../analytics';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  DispatchAnalyticsEvent,
+  EVENT_TYPE,
+  INPUT_METHOD,
+  withAnalytics as commandWithAnalytics,
+} from '../../../analytics';
 import { BlockType } from '../../../block-type/types';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
 import { insertDate, openDatePicker } from '../../../date/actions';
@@ -209,9 +240,6 @@ export interface Props {
   insertMentionQuery?: () => void;
   mediaUploadsEnabled?: boolean;
   mediaSupported?: boolean;
-  imageUploadSupported?: boolean;
-  imageUploadEnabled?: boolean;
-  handleImageUpload?: (event?: Event) => Command;
   dateEnabled?: boolean;
   horizontalRuleEnabled?: boolean;
   placeholderTextEnabled?: boolean;
@@ -295,7 +323,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     inputMethod: TOOLBAR_MENU_TYPE = INPUT_METHOD.TOOLBAR,
   ) => {
     this.setState(
-      prevState => ({ emojiPickerOpen: !prevState.emojiPickerOpen }),
+      (prevState) => ({ emojiPickerOpen: !prevState.emojiPickerOpen }),
       () => {
         if (this.state.emojiPickerOpen) {
           const { dispatchAnalyticsEvent } = this.props;
@@ -355,7 +383,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     ref: ToolbarButton | null,
     items: Array<any>,
   ) => {
-    items.forEach(item => item.handleRef && item.handleRef(ref));
+    items.forEach((item) => item.handleRef && item.handleRef(ref));
   };
 
   private onPickerRef = (ref: any) => {
@@ -409,7 +437,7 @@ class ToolbarInsertBlock extends React.PureComponent<
 
     const toolbarButtonFactory = (disabled: boolean, items: Array<any>) => (
       <ToolbarButton
-        ref={el => this.handleDropDownButtonRef(el, items)}
+        ref={(el) => this.handleDropDownButtonRef(el, items)}
         selected={isOpen}
         disabled={disabled}
         onClick={this.handleTriggerClick}
@@ -428,7 +456,7 @@ class ToolbarInsertBlock extends React.PureComponent<
 
     return (
       <ButtonGroup width={isReducedSpacing ? 'small' : 'large'}>
-        {buttons.map(btn => (
+        {buttons.map((btn) => (
           <ToolbarButton
             ref={btn.handleRef || noop}
             key={btn.content}
@@ -472,8 +500,6 @@ class ToolbarInsertBlock extends React.PureComponent<
       tableSupported,
       mediaUploadsEnabled,
       mediaSupported,
-      imageUploadSupported,
-      imageUploadEnabled,
       mentionsSupported,
       availableWrapperBlockTypes,
       actionSupported,
@@ -524,15 +550,6 @@ class ToolbarInsertBlock extends React.PureComponent<
         elemBefore: <EditorImageIcon label={labelFilesAndImages} />,
       });
     }
-    if (imageUploadSupported) {
-      const labelImage = formatMessage(messages.image);
-      items.push({
-        content: labelImage,
-        value: { name: 'image upload' },
-        isDisabled: !imageUploadEnabled,
-        elemBefore: <EditorImageIcon label={labelImage} />,
-      });
-    }
     if (mentionsSupported) {
       const labelMention = formatMessage(messages.mention);
       items.push({
@@ -576,7 +593,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       });
     }
     if (availableWrapperBlockTypes) {
-      availableWrapperBlockTypes.forEach(blockType => {
+      availableWrapperBlockTypes.forEach((blockType) => {
         const BlockTypeIcon =
           blockTypeIcons[blockType.name as keyof typeof blockTypeIcons];
         const labelBlock = formatMessage(blockType.title);
@@ -823,7 +840,6 @@ class ToolbarInsertBlock extends React.PureComponent<
       editorActions,
       onInsertMacroFromMacroBrowser,
       macroProvider,
-      handleImageUpload,
     } = this.props;
 
     switch (item.value.name) {
@@ -832,12 +848,6 @@ class ToolbarInsertBlock extends React.PureComponent<
         break;
       case 'table':
         this.insertTable(inputMethod);
-        break;
-      case 'image upload':
-        if (handleImageUpload) {
-          const { state, dispatch } = editorView;
-          handleImageUpload()(state, dispatch);
-        }
         break;
       case 'media':
         this.openMediaPicker(inputMethod);

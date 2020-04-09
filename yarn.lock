@@ -2544,9 +2544,9 @@
     universal-user-agent "^4.0.0"
 
 "@octokit/types@^2.0.0", "@octokit/types@^2.0.1":
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-2.7.1.tgz#fbb470ca847da9f8c29ebc44e1dce75e3b73ba49"
-  integrity sha512-1c25UjziDzHqmuujfX6baw2xo/iM2iI2uEpAaREh/lYqyB5VmwW+tf+qJVQRDqjde2hlzNgE97n20wfKORiy2g==
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-2.8.0.tgz#4a7125e258f13317cb527ebf074cc102990d0d50"
+  integrity sha512-GH+0DPEQGPE9ABwQ48+nbnamegydVJCqWUNhL5lmpyiLJCFLn5jKWi2y+SRCZh8SW46WRAfWuyQNO3bMQrOdMw==
   dependencies:
     "@types/node" ">= 8"
 
@@ -2602,9 +2602,9 @@
     prop-types "^15.7.2"
 
 "@stripe/stripe-js@^1.0.2":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.3.1.tgz#fb7f93a9a1fd0d4c178c4633b2ab794d0636cf16"
-  integrity sha512-yBgeyujAr03OlAqx1SOkwmmh9zZ4spUoLoXdcEg5N5jbv88oErzBn+mtm9vONJe4+OgOXy5ftImMbNv7+E7kXA==
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.3.2.tgz#ddd9a34f732604909e0362b8b31d5584c5c8387a"
+  integrity sha512-m8WogAMX0EzGRfKhuXTTTxfet8G+UozoCs6gEhGlzvDIhteQUuuuESzWEhlEAlEJXJCa1l6qqa20uWR4jqCl3g==
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
@@ -6406,14 +6406,14 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30001017:
-  version "1.0.30001039"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001039.tgz#b5e8c3bb07a144341644729fa2a5eb2c0deaf47d"
-  integrity sha512-XVk5KMAi8/DI28tQXKuq1PDyuPoD9Ypnda3ctF04TlB+LYIb+bgHq0ZDfNOn0+4cwLENJC0093Vuf0dhkjXQ7Q==
+  version "1.0.30001040"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001040.tgz#dd0f810b5d078175e6bbddc860eb4e7917885362"
+  integrity sha512-rrwOYbMn4sTFNdqT4sD1gtrfOKr8CPyUEw3FMhlEYb4b+KHhBJY+a5NROsNTBDoABVHyW6v1EKG1iuJx+gosAg==
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001038, caniuse-lite@^1.0.30001039:
-  version "1.0.30001039"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001039.tgz#b3814a1c38ffeb23567f8323500c09526a577bbe"
-  integrity sha512-SezbWCTT34eyFoWHgx8UWso7YtvtM7oosmFoXbCkdC6qJzRfBTeTgE9REtKtiuKXuMwWTZEvdnFNGAyVMorv8Q==
+  version "1.0.30001040"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001040.tgz#103fc8e6eb1d7397e95134cd0e996743353d58ea"
+  integrity sha512-Ep0tEPeI5wCvmJNrXjE3etgfI+lkl1fTDU6Y3ZH1mhrjkPlVI9W4pcKbMo+BQLpEWKVYYp2EmYaRsqpPC3k7lQ==
 
 canvg@^3.0.0:
   version "3.0.6"
@@ -9122,9 +9122,9 @@ ejs@^2.5.9, ejs@^2.6.1:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.390:
-  version "1.3.398"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.398.tgz#4c01e29091bf39e578ac3f66c1f157d92fa5725d"
-  integrity sha512-BJjxuWLKFbM5axH3vES7HKMQgAknq9PZHBkMK/rEXUQG9i1Iw5R+6hGkm6GtsQSANjSUrh/a6m32nzCNDNo/+w==
+  version "1.3.401"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.401.tgz#4b84f80c68af9d23cebb8f2cc97b1479197ebffa"
+  integrity sha512-9tvSOS1++0EQP0tkgyD8KJergVZsld1/UqOusZVTbx9MWZHw5NCezkOjIQ5YWeB45jKdQerDfRrt28HwidI9Ow==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -13873,9 +13873,9 @@ jest-snapshot@^25.3.0:
     semver "^6.3.0"
 
 jest-styled-components@^7.0.0:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-7.0.1.tgz#a4072fbb0d4d0a528ea80fe0a500591670b9f3d2"
-  integrity sha512-/2/aBu6uOqnQQM3lyUA3zwgtLuox9FHwtuEt43sqIY+awOM4eeV9/9VMWbD/r29QXNsbsOdkheagbCL7nZgFvw==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/jest-styled-components/-/jest-styled-components-7.0.2.tgz#b7711871ea74a04491b12bad123fa35cc65a2a80"
+  integrity sha512-i1Qke8Jfgx0Why31q74ohVj9S2FmMLUE8bNRSoK4DgiurKkXG6HC4NPhcOLAz6VpVd9wXkPn81hOt4aAQedqsA==
   dependencies:
     css "^2.2.4"
 

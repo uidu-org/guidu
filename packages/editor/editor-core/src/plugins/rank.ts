@@ -8,8 +8,6 @@ export default {
     'submitEditor',
     'customAutoformatting',
     'newlinePreserveMarksPlugin',
-    'imageUpload',
-    'imageUploadInputRule',
     'paste',
     'pasteKeymap',
     'mention',

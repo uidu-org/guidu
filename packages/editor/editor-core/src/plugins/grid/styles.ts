@@ -1,4 +1,3 @@
-// @ts-ignore: unused variable
 import { akEditorGridLineZIndex } from '@uidu/editor-common';
 import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
