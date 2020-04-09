@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.2.2
+
+### Patch Changes
+
+- 908131a: Small fixes and cleanup
+
 ## 0.2.1
 
 ### Patch Changes

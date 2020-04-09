@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.1.40
+
+### Patch Changes
+
+- 908131a: Small fixes and cleanup
+- Updated dependencies [908131a]
+  - @uidu/message-renderer@0.1.22
+
 ## 0.1.39
 
 ### Patch Changes

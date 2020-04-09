@@ -1,5 +1,11 @@
 # @uidu/message-renderer
 
+## 0.1.22
+
+### Patch Changes
+
+- 908131a: Small fixes and cleanup
+
 ## 0.1.21
 
 ### Patch Changes
