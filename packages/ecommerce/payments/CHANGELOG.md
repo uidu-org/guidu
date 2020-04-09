@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.2.7
+
+### Patch Changes
+
+- 908131a: Small fixes and cleanup
+
 ## 0.2.6
 
 ### Patch Changes
