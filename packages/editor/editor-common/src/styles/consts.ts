@@ -2,6 +2,7 @@ import {
   codeFontFamily,
   colors,
   fontSize as defaultFontSize,
+  gridSize,
   layers,
 } from '@uidu/theme';
 
@@ -89,8 +90,11 @@ export const akEditorTableCellMinWidth = 48;
 export const akEditorTableLegacyCellMinWidth = 128;
 export const akEditorMediaResizeHandlerPaddingWide = 12;
 export const akEditorMediaResizeHandlerPadding = 4;
+export const akEditorSwoopCubicBezier = `cubic-bezier(0.15, 1, 0.3, 1)`;
 export const gridMediumMaxWidth = 1024;
 export const breakoutWideScaleRatio = 1.33;
+export const akMediaSingleResizeZIndex = akEditorUnitZIndex * 99;
+export const akLayoutGutterOffset = gridSize() * 1.5;
 
 export type EditorTheme = {
   baseFontSize?: number;
@@ -106,4 +110,4 @@ export const relativeSize = (multiplier: number) => ({
 }) => editorFontSize({ theme }) * multiplier;
 
 // @see typography spreadsheet: https://docs.google.com/spreadsheets/d/1iYusRGCT4PoPfvxbJ8NrgjtfFgXLm5lpDWXzjua1W2E/edit#gid=93913128
-export const blockNodesVerticalMargin = 1.143;
+export const blockNodesVerticalMargin = '1.143rem';

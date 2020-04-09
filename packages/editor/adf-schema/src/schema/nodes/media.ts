@@ -54,6 +54,8 @@ export interface ExternalMediaAttributes {
   height?: number;
 }
 
+export type MediaADFAttrs = MediaAttributes | ExternalMediaAttributes;
+
 export const defaultAttrs: DefaultAttributes<
   MediaAttributes | ExternalMediaAttributes
 > = {

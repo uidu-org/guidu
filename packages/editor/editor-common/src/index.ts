@@ -1,4 +1,5 @@
 export * from './contextIdentifier';
+export { linkMessages } from './messages/link';
 export {
   default as ProviderFactory,
   Providers,

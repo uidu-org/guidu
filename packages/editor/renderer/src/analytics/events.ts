@@ -1,5 +1,11 @@
 import { SortOrder } from '@uidu/editor-common';
-import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID, AEP, EVENT_TYPE } from './enums';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  AEP,
+  EVENT_TYPE,
+} from './enums';
 
 export enum PLATFORM {
   NATIVE = 'mobileNative',
@@ -84,10 +90,47 @@ type TableSortColumnAEP = AEP<
   EVENT_TYPE.TRACK
 >;
 
+type VisitLinkAEP = AEP<
+  ACTION.VISITED,
+  ACTION_SUBJECT.LINK,
+  undefined,
+  {
+    platform: PLATFORM.WEB;
+    mode: MODE.RENDERER;
+  },
+  EVENT_TYPE.TRACK
+>;
+
+type VisitMediaLinkAEP = AEP<
+  ACTION.VISITED,
+  ACTION_SUBJECT.MEDIA_SINGLE,
+  ACTION_SUBJECT_ID.MEDIA_LINK,
+  {
+    platform: PLATFORM.WEB;
+    mode: MODE.RENDERER;
+  },
+  EVENT_TYPE.TRACK
+>;
+
+type ExpandAEP = AEP<
+  ACTION.TOGGLE_EXPAND,
+  ACTION_SUBJECT.EXPAND | ACTION_SUBJECT.NESTED_EXPAND,
+  undefined,
+  {
+    platform: PLATFORM.WEB;
+    mode: MODE.RENDERER;
+    expanded: boolean;
+  },
+  EVENT_TYPE.TRACK
+>;
+
 export type AnalyticsEventPayload =
   | RendererStartAEP
   | RendererRenderedAEP
   | HeadingAnchorLinkButtonAEP
   | AnchorLinkAEP
   | TableSortColumnNotAllowedAEP
-  | TableSortColumnAEP;
+  | TableSortColumnAEP
+  | VisitLinkAEP
+  | VisitMediaLinkAEP
+  | ExpandAEP;

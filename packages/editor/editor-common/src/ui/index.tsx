@@ -15,6 +15,7 @@ export {
   layoutSupportsWidth,
   snapToGrid,
 } from './MediaSingle/grid';
+export { MediaLink, MediaLinkWrapper } from './MediaSingle/link';
 export {
   MediaSingleDimensionHelper,
   WrapperProps as MediaSingleDimensionHelperProps,

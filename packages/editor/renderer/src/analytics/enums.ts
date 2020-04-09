@@ -10,8 +10,10 @@ export enum ACTION {
   RENDERED = 'rendered',
   CLICKED = 'clicked',
   VIEWED = 'viewed',
+  VISITED = 'visited',
   SORT_COLUMN = 'sortedColumn',
   SORT_COLUMN_NOT_ALLOWED = 'sortColumnNotAllowed',
+  TOGGLE_EXPAND = 'toggleExpand',
 }
 
 export enum ACTION_SUBJECT {
@@ -19,10 +21,15 @@ export enum ACTION_SUBJECT {
   BUTTON = 'button',
   ANCHOR_LINK = 'anchorLink',
   TABLE = 'table',
+  EXPAND = 'expand',
+  NESTED_EXPAND = 'nestedExpand',
+  MEDIA_SINGLE = 'mediaSingle',
+  LINK = 'link',
 }
 
 export enum ACTION_SUBJECT_ID {
   HEADING_ANCHOR_LINK = 'headingAnchorLink',
+  MEDIA_LINK = 'mediaLink',
 }
 
 export type AEP<

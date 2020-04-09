@@ -2556,9 +2556,9 @@
   integrity sha512-BChdj3idQiLi+7vPhE6gEDiPzpozvSrUqbSMoSTlRbOQkU0p6u4si0UBydegTyphsYSZC2AUHGYYICP0gqmEVg==
 
 "@researchgate/react-intersection-observer@^1.0.1":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@researchgate/react-intersection-observer/-/react-intersection-observer-1.1.2.tgz#3cc51c217242af35aaf56b160318694a1d07dd4c"
-  integrity sha512-R8tnIfvtQyRyHT1a8szNdxiXi2Jn848iHFxtWrqeRZv/LI4q1dsB/9lI91XlCEKUv6kV+sDMZVzqnKiBf4qkEQ==
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/@researchgate/react-intersection-observer/-/react-intersection-observer-1.1.3.tgz#190b40d126af9a149ad8981d23e1ab07eddd9ad1"
+  integrity sha512-h47GLwbd7ANnX+Tw9uAYknczq+TONyiRv5cc/4I8LZORxNW5QUuyI3hkVBuj564FzTtoyzP4LcGmWjjs3dHv9A==
   dependencies:
     prop-types "^15.7.2"
 
@@ -3741,9 +3741,9 @@
     "@xtuc/long" "4.2.2"
 
 "@welldone-software/why-did-you-render@^4.0.0":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-4.0.6.tgz#51dc83be0ad4a9fe5faf7e4e93e3c8a386a57f8c"
-  integrity sha512-khH11lsu0MIV0aTRaH0n/80AwbulIoaXLu0mdCDwpYNjxbKhH3ypEFgsWdQyN0a+2IMVwC290icQ1ONojw+27A==
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@welldone-software/why-did-you-render/-/why-did-you-render-4.0.7.tgz#13c81eef665a34911c029dff821b23cd2495567b"
+  integrity sha512-Equ+x6Tp8ZaDcypdP36Ag/bzjIsYAUSQVScXWtRuOkBknP1UPM0Gc5plEeADLYRgrO8IEF/WGxJ7442EGbdyEA==
   dependencies:
     lodash "^4"
 

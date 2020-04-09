@@ -18,6 +18,7 @@ export interface Props {
   lineLength: number;
   pctWidth?: number;
   fullWidthMode?: boolean;
+  blockLink?: string;
 }
 
 export default function MediaSingle({
@@ -31,6 +32,7 @@ export default function MediaSingle({
   lineLength,
   className,
   fullWidthMode,
+  blockLink,
 }: Props) {
   const usePctWidth = pctWidth && layoutSupportsWidth(layout);
   if (pctWidth && usePctWidth) {
@@ -54,6 +56,7 @@ export default function MediaSingle({
       data-node-type="mediaSingle"
       data-layout={layout}
       data-width={pctWidth}
+      data-block-link={blockLink}
       className={classnames('media-single', `image-${layout}`, className, {
         'is-loading': isLoading,
         'media-wrapped': layout === 'wrap-left' || layout === 'wrap-right',
