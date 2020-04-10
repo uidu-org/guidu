@@ -1,12 +1,12 @@
 import { emoji } from '@uidu/adf-schema';
+import { CreateUIAnalyticsEvent } from '@uidu/analytics';
+import { ProviderFactory } from '@uidu/editor-common';
 import {
   EmojiDescription,
   EmojiProvider,
   EmojiTypeAheadItem,
   SearchSort,
 } from '@uidu/emoji';
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import { ProviderFactory } from '@uidu/editor-common';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
 import * as React from 'react';
 import { analyticsService } from '../../analytics';
@@ -83,7 +83,7 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           });
           const emojiText = state.schema.text(':', [mark]);
           const tr = insert(emojiText);
-          return addAnalytics(tr, {
+          return addAnalytics(state, tr, {
             action: ACTION.INVOKED,
             actionSubject: ACTION_SUBJECT.TYPEAHEAD,
             actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_EMOJI,
@@ -127,7 +127,7 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           });
         }
 
-        return emojis.map<TypeAheadItem>(emoji => ({
+        return emojis.map<TypeAheadItem>((emoji) => ({
           title: emoji.shortName || '',
           key: emoji.id || emoji.shortName,
           render({ isSelected, onClick, onHover }) {
@@ -150,7 +150,7 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
         const normalizedQuery = ':' + query;
         return (
           !!isFullShortName(normalizedQuery) &&
-          !!items.find(item => item.title.toLowerCase() === normalizedQuery)
+          !!items.find((item) => item.title.toLowerCase() === normalizedQuery)
         );
       },
       selectItem(state, item, insert, { mode }) {
@@ -183,6 +183,7 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
         });
 
         return addAnalytics(
+          state,
           insert(
             state.schema.nodes.emoji.createChecked({
               shortName,
@@ -326,7 +327,7 @@ export function emojiPluginFactory(
             }
 
             providerPromise
-              .then(provider => {
+              .then((provider) => {
                 if (emojiProvider && emojiProviderChangeHandler) {
                   emojiProvider.unsubscribe(emojiProviderChangeHandler);
                 }

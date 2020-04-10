@@ -255,7 +255,7 @@ export const backspaceKeyCommand = baseCommand.chainCommands(
  * Splits the list items, specific implementation take from PM
  */
 function splitListItem(itemType: NodeType): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const ref = state.selection as NodeSelection;
     const $from = ref.$from;
     const $to = ref.$to;
@@ -335,7 +335,7 @@ function splitListItem(itemType: NodeType): Command {
 function mergeLists(listItem: NodeType, range: NodeRange) {
   return (command: Command): Command => {
     return (state, dispatch) =>
-      command(state, tr => {
+      command(state, (tr) => {
         /* we now need to handle the case that we lifted a sublist out,
          * and any listItems at the current level get shifted out to
          * their own new list; e.g.:
@@ -389,7 +389,7 @@ function mergeLists(listItem: NodeType, range: NodeRange) {
 }
 
 export function outdentList(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { listItem } = state.schema.nodes;
     const { $from, $to } = state.selection;
     if (isInsideListItem(state)) {
@@ -401,7 +401,7 @@ export function outdentList(): Command {
       // to clear will include everything
       let range = $from.blockRange(
         $to,
-        node => node.childCount > 0 && node.firstChild!.type === listItem,
+        (node) => node.childCount > 0 && node.firstChild!.type === listItem,
       );
 
       if (!range) {
@@ -469,7 +469,7 @@ function canSink(initialIndentationLevel: number, state: EditorState): boolean {
 }
 
 export function indentList(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { listItem } = state.schema.nodes;
     if (isInsideListItem(state)) {
       // Record initial list indentation
@@ -504,7 +504,7 @@ export function indentList(): Command {
 }
 
 export function liftListItems(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { tr } = state;
     const { $from, $to } = state.selection;
 
@@ -629,7 +629,8 @@ export const toggleList = (
   if (
     !fromNode ||
     fromNode.type.name !== listType ||
-    (!endNode || endNode.type.name !== listType)
+    !endNode ||
+    endNode.type.name !== listType
   ) {
     return toggleListCommandWithAnalytics(inputMethod, listType)(
       state,
@@ -646,7 +647,7 @@ export const toggleList = (
       state.tr,
     );
     tr = liftSelectionList(state, tr);
-    tr = addAnalytics(tr, {
+    tr = addAnalytics(state, tr, {
       action: ACTION.FORMATTED,
       actionSubject: ACTION_SUBJECT.TEXT,
       actionSubjectId:
@@ -685,7 +686,7 @@ function isInsideList(
 export function toggleListCommand(
   listType: 'bulletList' | 'orderedList',
 ): Command {
-  return function(state, dispatch, view) {
+  return function (state, dispatch, view) {
     if (dispatch) {
       dispatch(
         state.tr.setSelection(
@@ -744,7 +745,7 @@ export const toggleListCommandWithAnalytics = (
     if (toggleListCommand(listType)(state, dispatch, view)) {
       if (view && dispatch) {
         dispatch(
-          addAnalytics(view.state.tr, {
+          addAnalytics(view.state, view.state.tr, {
             action: ACTION.FORMATTED,
             actionSubject: ACTION_SUBJECT.TEXT,
             actionSubjectId: listTypeActionSubjectId[listType] as

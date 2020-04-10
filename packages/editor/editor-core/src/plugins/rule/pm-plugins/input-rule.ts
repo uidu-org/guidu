@@ -42,9 +42,10 @@ export const createHorizontalRule = (
      **/
     tr = state.tr.replaceWith(start, end, Fragment.empty);
 
-    tr = safeInsert(state.schema.nodes.rule.createChecked(), tr.selection.from)(
-      tr,
-    );
+    tr = safeInsert(
+      state.schema.nodes.rule.createChecked(),
+      tr.selection.from,
+    )(tr);
   }
 
   if (!tr) {
@@ -65,7 +66,7 @@ export const createHorizontalRule = (
     );
   }
 
-  return addAnalytics(tr, {
+  return addAnalytics(state, tr, {
     action: ACTION.INSERTED,
     actionSubject: ACTION_SUBJECT.DOCUMENT,
     actionSubjectId: ACTION_SUBJECT_ID.DIVIDER,

@@ -303,7 +303,7 @@ export const handleCut = (
         } = getSelectedCellInfo(tr.selection);
 
         // Reassigning to make it more obvious and consistent
-        tr = addAnalytics(tr, {
+        tr = addAnalytics(newState, tr, {
           action: TABLE_ACTION.CUT,
           actionSubject: ACTION_SUBJECT.TABLE,
           actionSubjectId: null,

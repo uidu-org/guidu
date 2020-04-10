@@ -31,11 +31,11 @@ import {
   ACTION_SUBJECT_ID,
   addAnalytics,
   AnalyticsDispatch,
-  analyticsEventKey,
   analyticsPluginKey,
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
+import { analyticsEventKey } from '../analytics/consts';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock';
 import { IconMention } from '../quick-insert/assets';
 import {
@@ -141,7 +141,7 @@ const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
             });
             const mentionText = state.schema.text('@', [mark]);
             const tr = insert(mentionText);
-            return addAnalytics(tr, {
+            return addAnalytics(state, tr, {
               action: ACTION.INVOKED,
               actionSubject: ACTION_SUBJECT.TYPEAHEAD,
               actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_MENTION,
@@ -499,7 +499,7 @@ function mentionPluginFactory(
             }
 
             (providerPromise as Promise<MentionProvider>)
-              .then(provider => {
+              .then((provider) => {
                 if (mentionProvider) {
                   mentionProvider.unsubscribe('mentionPlugin');
                 }
@@ -521,16 +521,16 @@ function mentionPluginFactory(
                       duration = stats && stats.duration;
                       teams = null;
                       userIds = mentions
-                        .map(mention =>
+                        .map((mention) =>
                           isTeamType(mention.userType) ? null : mention.id,
                         )
-                        .filter(m => !!m) as string[];
+                        .filter((m) => !!m) as string[];
                     } else {
                       // is from team mention
                       duration = stats && stats.teamMentionDuration;
                       userIds = null;
                       teams = mentions
-                        .map(mention =>
+                        .map((mention) =>
                           isTeamType(mention.userType)
                             ? {
                                 teamId: mention.id,
@@ -539,7 +539,7 @@ function mentionPluginFactory(
                               }
                             : null,
                         )
-                        .filter(m => !!m) as TeamInfoAttrAnalytics[];
+                        .filter((m) => !!m) as TeamInfoAttrAnalytics[];
                     }
 
                     const payload = buildTypeAheadRenderedPayload(
@@ -565,7 +565,7 @@ function mentionPluginFactory(
               );
             }
             (providerPromise as Promise<ContextIdentifierProvider>).then(
-              provider => {
+              (provider) => {
                 setContext(provider)(editorView.state, editorView.dispatch);
               },
             );

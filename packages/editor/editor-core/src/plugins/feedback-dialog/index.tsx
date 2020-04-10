@@ -69,11 +69,11 @@ const feedbackDialog = (feedbackInfo: FeedbackInfo): EditorPlugin => {
           icon: () => (
             <IconFeedback label={formatMessage(messages.feedbackDialog)} />
           ),
-          action(insert, _state) {
+          action(insert, state) {
             const tr = insert('');
             openFeedbackDialog(feedbackInfo);
 
-            return addAnalytics(tr, {
+            return addAnalytics(state, tr, {
               action: ACTION.OPENED,
               actionSubject: ACTION_SUBJECT.FEEDBACK_DIALOG,
               attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },

@@ -1,4 +1,3 @@
-import { TrackAEP } from './events';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -6,6 +5,7 @@ import {
   INPUT_METHOD,
 } from './enums';
 import { InsertSmartLinkAEP } from './smart-links';
+import { InsertAEP, TrackAEP } from './utils';
 
 export enum PANEL_TYPE {
   INFO = 'info',
@@ -48,18 +48,6 @@ export enum LINK_RESOURCE {
   TWITTER = 'twitterTweet',
   OTHER = 'other',
 }
-
-export type InsertAEP<
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes
-> = TrackAEP<
-  ACTION.INSERTED,
-  ACTION_SUBJECT.DOCUMENT,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes
->;
 
 type InsertLineBreakAEP = TrackAEP<
   ACTION.INSERTED,
@@ -121,6 +109,14 @@ type InsertTableAEP = InsertAEP<
       | INPUT_METHOD.INSERT_MENU
       | INPUT_METHOD.FORMATTING
       | INPUT_METHOD.SHORTCUT;
+  },
+  undefined
+>;
+
+type InsertExpandAEP = InsertAEP<
+  ACTION_SUBJECT_ID.EXPAND | ACTION_SUBJECT_ID.NESTED_EXPAND,
+  {
+    inputMethod: INPUT_METHOD.QUICK_INSERT | INPUT_METHOD.INSERT_MENU;
   },
   undefined
 >;
@@ -256,12 +252,23 @@ type InsertDateAEP = InsertAEP<
   undefined
 >;
 
+type InsertExtensionAEP = InsertAEP<
+  ACTION_SUBJECT_ID.EXTENSION,
+  {
+    extensionType: string;
+    key: string;
+    inputMethod: INPUT_METHOD.QUICK_INSERT;
+  },
+  any
+>;
+
 export type InsertEventPayload =
   | InsertDividerAEP
   | InsertLineBreakAEP
   | InsertPanelAEP
   | InsertCodeBlockAEP
   | InsertTableAEP
+  | InsertExpandAEP
   | InsertActionDecisionAEP
   | InsertEmojiAEP
   | InsertStatusAEP
@@ -271,4 +278,5 @@ export type InsertEventPayload =
   | InsertMediaLinkAEP
   | InsertSmartLinkAEP
   | InsertLayoutAEP
+  | InsertExtensionAEP
   | InsertDateAEP;

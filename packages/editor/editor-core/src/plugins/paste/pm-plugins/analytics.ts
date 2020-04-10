@@ -244,7 +244,7 @@ export function sendPasteAnalyticsEvent(
 ) {
   const payload = createPasteAnalyticsPayload(view, event, slice, pasteContext);
 
-  view.dispatch(addAnalytics(view.state.tr, payload));
+  view.dispatch(addAnalytics(view.state, view.state.tr, payload));
 }
 
 export function pasteCommandWithAnalytics(

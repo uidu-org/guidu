@@ -1,5 +1,5 @@
-import { TrackAEP } from './events';
 import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID } from './enums';
+import { TrackAEP } from './utils';
 
 export enum SYMBOL {
   ARROW_RIGHT = 'rightArrow',

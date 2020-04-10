@@ -9,7 +9,7 @@ import { Plugin, PluginKey } from 'prosemirror-state';
 import { findDomRefAtPos, findSelectedNodeOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
-import { ExtensionConfig } from '../../types';
+import { ExtensionConfig } from '../../types/extension-config';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
 import { closestElement } from '../../utils';
 import ExtensionNodeView from './nodeviews/extension';

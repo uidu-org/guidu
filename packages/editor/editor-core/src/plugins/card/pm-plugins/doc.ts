@@ -29,7 +29,7 @@ export function shouldReplace(
   compareLinkText: boolean = true,
   compareToUrl?: string,
 ) {
-  const linkMark = node.marks.find(mark => mark.type.name === 'link');
+  const linkMark = node.marks.find((mark) => mark.type.name === 'link');
   if (!linkMark) {
     // not a link anymore
     return false;
@@ -116,7 +116,7 @@ export const replaceQueuedUrlWithCard = (
   }
 
   // find the requests for this URL
-  const requests = state.requests.filter(req => req.url === url);
+  const requests = state.requests.filter((req) => req.url === url);
 
   // try to transform response to ADF
   const schema: Schema = editorState.schema;
@@ -128,20 +128,20 @@ export const replaceQueuedUrlWithCard = (
   if (cardAdf) {
     // Should prevent any other node than cards? [inlineCard, blockCard].includes(cardAdf.type)
     const nodeContexts: Array<string | undefined> = requests
-      .map(request => replaceLinksToCards(tr, cardAdf, schema, request))
-      .filter(context => !!context); // context exist
+      .map((request) => replaceLinksToCards(tr, cardAdf, schema, request))
+      .filter((context) => !!context); // context exist
 
     // Send analytics information
     if (nodeContexts.length) {
       const nodeContext = nodeContexts.every(
-        context => context === nodeContexts[0],
+        (context) => context === nodeContexts[0],
       )
         ? nodeContexts[0]
         : 'mixed';
       const nodeType = cardAdf.type === inlineCard ? 'inlineCard' : 'blockCard';
       const [, , domainName] = url.split('/');
 
-      addAnalytics(tr, {
+      addAnalytics(editorState, tr, {
         action: ACTION.INSERTED,
         actionSubject: ACTION_SUBJECT.DOCUMENT,
         actionSubjectId: ACTION_SUBJECT_ID.SMART_LINK,
@@ -182,7 +182,7 @@ export const queueCardsFromChangedTr = (
       return true;
     }
 
-    const linkMark = node.marks.find(mark => mark.type === link);
+    const linkMark = node.marks.find((mark) => mark.type === link);
 
     if (linkMark) {
       if (!shouldReplace(node, normalizeLinkText)) {
@@ -250,7 +250,7 @@ export const changeSelectedCardToText = (text: string): Command => (
 
 export const setSelectedCardAppearance: (
   appearance: CardAppearance,
-) => Command = appearance => (state, dispatch) => {
+) => Command = (appearance) => (state, dispatch) => {
   const selectedNode =
     state.selection instanceof NodeSelection && state.selection.node;
   if (!selectedNode) {

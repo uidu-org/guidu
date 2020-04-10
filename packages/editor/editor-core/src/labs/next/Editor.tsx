@@ -50,7 +50,7 @@ export type EditorProps = {
   placeholder?: string;
 
   // Set for an on change callback.
-  onChange?: (value: any) => void;
+  onChange?: (value: any, meta: { source: 'remote' | 'local' }) => void;
 
   // Set for an on save callback.
   onSave?: (value: any) => void;
@@ -219,7 +219,7 @@ export class EditorInternal extends React.Component<
         // TODO we should re-visit this, this should NOT be async. Waiting for media pending tasks
         // should happen in teardown, not when getting the editors value.
         this.editorActions.getValue().then((value) => {
-          onChange(value);
+          onChange(value, { source: 'local' });
         });
       }
     } else {

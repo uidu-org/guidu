@@ -1,99 +1,17 @@
 import { Dispatch } from '../../../event-dispatcher';
-import { EVENT_TYPE, ACTION_SUBJECT } from './enums';
-import { GeneralEventPayload } from './general-events';
+import { SimplifiedNode } from '../../../utils/document-logger';
+import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID } from './enums';
+import { ExperimentalEventPayload } from './experimental-events';
 import { FormatEventPayload } from './format-events';
-import { SubstituteEventPayload } from './substitute-events';
-import { InsertEventPayload } from './insert-events';
-import { NodeEventPayload } from './node-events';
-import { MediaEventPayload } from './media-events';
-import { TableEventPayload } from './table-events';
-import { PasteEventPayload } from './paste-events';
-import { ErrorEventPayload } from './error-events';
+import { GeneralEventPayload } from './general-events';
 import { HistoryEventPayload } from './history-events';
-
-type AEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes,
-  EventType
-> = {
-  action: Action;
-  actionSubject: ActionSubject;
-  actionSubjectId?: ActionSubjectID;
-  attributes?: Attributes;
-  eventType: EventType;
-  nonPrivacySafeAttributes?: NonPrivacySafeAttributes;
-};
-
-export type UIAEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes
-> = AEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes,
-  EVENT_TYPE.UI
->;
-
-export type TrackAEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes
-> = AEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes,
-  EVENT_TYPE.TRACK
->;
-
-export type OperationalAEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes
-> = AEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes,
-  EVENT_TYPE.OPERATIONAL
->;
-
-export type ScreenAEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes
-> = AEP<
-  Action,
-  ActionSubject,
-  ActionSubjectID,
-  Attributes,
-  NonPrivacySafeAttributes,
-  EVENT_TYPE.SCREEN
->;
-
-export type TableAEP<Action, Attributes, NonPrivacySafeAttributes> = TrackAEP<
-  Action,
-  ACTION_SUBJECT.TABLE,
-  null,
-  Attributes,
-  NonPrivacySafeAttributes
->;
+import { InsertEventPayload } from './insert-events';
+import { MediaEventPayload } from './media-events';
+import { NodeEventPayload } from './node-events';
+import { PasteEventPayload } from './paste-events';
+import { SubstituteEventPayload } from './substitute-events';
+import { TableEventPayload } from './table-events';
+import { OperationalAEP } from './utils';
 
 export type AnalyticsEventPayload =
   | GeneralEventPayload
@@ -105,7 +23,8 @@ export type AnalyticsEventPayload =
   | TableEventPayload
   | PasteEventPayload
   | ErrorEventPayload
-  | HistoryEventPayload;
+  | HistoryEventPayload
+  | ExperimentalEventPayload; // Used for A/B testing
 
 export type AnalyticsEventPayloadWithChannel = {
   channel: string;
@@ -116,3 +35,32 @@ export type AnalyticsDispatch = Dispatch<{
   payload: AnalyticsEventPayload;
   channel?: string;
 }>;
+
+type InvalidTransactionErrorAEP = OperationalAEP<
+  ACTION.DISPATCHED_INVALID_TRANSACTION,
+  ACTION_SUBJECT.EDITOR,
+  undefined,
+  {
+    analyticsEventPayloads: AnalyticsEventPayloadWithChannel[];
+    invalidNodes: (SimplifiedNode | string)[];
+  },
+  undefined
+>;
+
+type FailedToUnmountErrorAEP = OperationalAEP<
+  ACTION.FAILED_TO_UNMOUNT,
+  ACTION_SUBJECT.EDITOR,
+  ACTION_SUBJECT_ID.REACT_NODE_VIEW,
+  {
+    error: Error;
+    domNodes: {
+      container?: string;
+      child?: string;
+    };
+  },
+  undefined
+>;
+
+export type ErrorEventPayload =
+  | InvalidTransactionErrorAEP
+  | FailedToUnmountErrorAEP;

@@ -194,7 +194,7 @@ function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
           // remove markdown decorator ```
           .delete(newStart, end)
           .scrollIntoView();
-        return addAnalytics(tr, analyticsPayload);
+        return addAnalytics(state, tr, analyticsPayload);
       }
       let { tr } = state;
       tr = tr.delete(newStart, end);
@@ -220,7 +220,7 @@ function getCodeBlockRules(schema: Schema): InputRuleWithHandler[] {
         attributes,
       );
       if (tr) {
-        tr = addAnalytics(tr, analyticsPayload);
+        tr = addAnalytics(state, tr, analyticsPayload);
       }
       return tr;
     },

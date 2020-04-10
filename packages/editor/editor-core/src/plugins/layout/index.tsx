@@ -59,7 +59,7 @@ const layoutPlugin = (): EditorPlugin => ({
         icon: () => <IconLayout label={formatMessage(messages.columns)} />,
         action(insert, state) {
           const tr = insert(createDefaultLayoutSection(state));
-          return addAnalytics(tr, {
+          return addAnalytics(state, tr, {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,
             actionSubjectId: ACTION_SUBJECT_ID.LAYOUT,

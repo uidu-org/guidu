@@ -1,10 +1,10 @@
-import { TrackAEP } from './events';
 import {
-  ACTION_SUBJECT,
-  INPUT_METHOD,
   ACTION,
+  ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
+  INPUT_METHOD,
 } from './enums';
+import { TrackAEP } from './utils';
 
 export enum PANEL_TYPE {
   INFO = 'info',
@@ -22,6 +22,11 @@ export enum LAYOUT_TYPE {
   THREE_WITH_SIDEBARS = 'threeColumnsWithSidebars ',
 }
 
+export enum SMART_LINK_TYPE {
+  INLINE_CARD = 'inline',
+  BLOCK_CARD = 'block',
+}
+
 type DeletePanelAEP = TrackAEP<
   ACTION.DELETED,
   ACTION_SUBJECT.PANEL,
@@ -35,6 +40,14 @@ type ChangePanelAEP = TrackAEP<
   ACTION_SUBJECT.PANEL,
   undefined,
   { newType: PANEL_TYPE; previousType: PANEL_TYPE },
+  undefined
+>;
+
+type ChangeSmartLinkAEP = TrackAEP<
+  ACTION.CHANGED_TYPE,
+  ACTION_SUBJECT.SMART_LINK,
+  undefined,
+  { newType: SMART_LINK_TYPE; previousType: SMART_LINK_TYPE },
   undefined
 >;
 
@@ -76,10 +89,22 @@ type DeletedLayoutAEP = TrackAEP<
   undefined
 >;
 
+type DeletedExpandAEP = TrackAEP<
+  ACTION.DELETED,
+  ACTION_SUBJECT.EXPAND | ACTION_SUBJECT.NESTED_EXPAND,
+  undefined,
+  {
+    inputMethod: INPUT_METHOD.TOOLBAR;
+  },
+  undefined
+>;
+
 export type NodeEventPayload =
   | ChangePanelAEP
   | DeletePanelAEP
   | DeletedSmartLink
   | VisitedSmartLink
   | ChangedLayoutAEP
-  | DeletedLayoutAEP;
+  | DeletedLayoutAEP
+  | DeletedExpandAEP
+  | ChangeSmartLinkAEP;

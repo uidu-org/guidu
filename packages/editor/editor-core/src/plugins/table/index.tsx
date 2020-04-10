@@ -129,7 +129,7 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
           pluginState: pluginKey,
           tableResizingPluginState: tableResizingPluginKey,
         }}
-        render={_ => {
+        render={(_) => {
           const { state } = editorView;
           const pluginState = getPluginState(state);
           const tableResizingPluginState = tableResizingPluginKey.getState(
@@ -222,7 +222,7 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         icon: () => <IconTable label={formatMessage(messages.table)} />,
         action(insert, state) {
           const tr = insert(createTable(state.schema));
-          return addAnalytics(tr, {
+          return addAnalytics(state, tr, {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,
             actionSubjectId: ACTION_SUBJECT_ID.TABLE,

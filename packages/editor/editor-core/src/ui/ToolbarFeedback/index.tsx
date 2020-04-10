@@ -12,9 +12,9 @@ import {
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   AnalyticsDispatch,
-  analyticsEventKey,
   EVENT_TYPE,
 } from '../../plugins/analytics';
+import { analyticsEventKey } from '../../plugins/analytics/consts';
 import { openFeedbackDialog } from '../../plugins/feedback-dialog';
 import { FeedbackInfo } from '../../types';
 import deprecationWarnings, {
@@ -142,9 +142,7 @@ export default class ToolbarFeedback extends PureComponent<Props, State> {
     } = this.props;
     const iconBefore = this.state.jiraIssueCollectorScriptLoading ? (
       <Spinner isCompleting={false} onComplete={this.handleSpinnerComplete} />
-    ) : (
-      undefined
-    );
+    ) : undefined;
 
     // JIRA issue collector script is using jQuery internally
     return this.hasJquery() ? (

@@ -7,3 +7,4 @@ export type Command = (
   dispatch?: CommandDispatch,
   view?: EditorView,
 ) => boolean;
+export type HigherOrderCommand = (command: Command) => Command;

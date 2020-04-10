@@ -27,6 +27,8 @@ import { QuickInsertOptions } from '../plugins/quick-insert/types';
 import { PluginConfig as TablesPluginConfig } from '../plugins/table/types';
 import { TextColorPluginConfig } from '../plugins/text-color/pm-plugins/main';
 import { TextFormattingOptions } from '../plugins/text-formatting';
+import { EditorOnChangeHandler } from './editor-onchange';
+import { ExtensionConfig } from './extension-config';
 
 export type EditorAppearance =
   | 'comment'
@@ -61,10 +63,6 @@ export type AllowedBlockTypes =
   | 'blockquote'
   | 'hardBreak'
   | 'codeBlock';
-export interface ExtensionConfig {
-  stickToolbarToBottom?: boolean;
-  allowBreakout?: boolean;
-}
 
 export interface EditorProps {
   /*
@@ -186,6 +184,10 @@ export interface EditorProps {
 
   UNSAFE_cards?: CardOptions;
 
+  allowExpand?:
+    | boolean
+    | { allowInsertion?: boolean; allowInteractiveExpand?: boolean };
+
   // Submits on the enter key. Probably useful for an inline comment editor use case.
   saveOnEnter?: boolean;
 
@@ -242,6 +244,12 @@ export interface EditorProps {
   // Default placeholder text to be displayed if the content is empty. e.g. 'Add a comment...'
   placeholder?: string;
 
+  // Default placeholder text to be displayed if line is empty but the document content is not. e.g. 'Type / to insert content'
+  placeholderHints?: string[];
+
+  // Default placeholder text to be displayed when a bracket '{' is typed and the line is empty e.g. 'Did you mean to use '/' to insert content?'
+  placeholderBracketHint?: string;
+
   // Set the default editor content.
   defaultValue?: Node | string | Object;
 
@@ -254,7 +262,7 @@ export interface EditorProps {
   editorActions?: EditorActions;
 
   // Set for an on change callback.
-  onChange?: (editorView: EditorView) => void;
+  onChange?: EditorOnChangeHandler;
 
   // Set for an on save callback.
   onSave?: (editorView: EditorView) => void;

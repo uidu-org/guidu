@@ -1,23 +1,22 @@
 import { EditorState, TextSelection } from 'prosemirror-state';
-
-import {
-  getLinesFromSelection,
-  getLineInfo,
-  forEachLine,
-  getStartOfCurrentLine,
-} from './line-handling';
 import { analyticsService } from '../../../analytics';
+import { CommandDispatch } from '../../../types';
 import {
-  addAnalytics,
   ACTION,
+  ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
+  addAnalytics,
   EVENT_TYPE,
-  INPUT_METHOD,
   INDENT_DIR,
   INDENT_TYPE,
-  ACTION_SUBJECT,
+  INPUT_METHOD,
 } from '../../analytics';
-import { CommandDispatch } from '../../../types';
+import {
+  forEachLine,
+  getLineInfo,
+  getLinesFromSelection,
+  getStartOfCurrentLine,
+} from './line-handling';
 
 /**
  * Return the current indentation level
@@ -45,7 +44,7 @@ export function indent(state: EditorState, dispatch?: CommandDispatch) {
     );
     tr.insertText(indentToAdd, tr.mapping.map(start + offset, -1));
 
-    addAnalytics(tr, {
+    addAnalytics(state, tr, {
       action: ACTION.FORMATTED,
       actionSubject: ACTION_SUBJECT.TEXT,
       actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
@@ -91,7 +90,7 @@ export function outdent(state: EditorState, dispatch?: CommandDispatch) {
         tr.mapping.map(start + offset + unindentLength),
       );
 
-      addAnalytics(tr, {
+      addAnalytics(state, tr, {
         action: ACTION.FORMATTED,
         actionSubject: ACTION_SUBJECT.TEXT,
         actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,

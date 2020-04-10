@@ -188,7 +188,7 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
           const pluginState = pluginKey.getState(state);
           pluginState.showMediaPicker();
           const tr = insert('');
-          return addAnalytics(tr, {
+          return addAnalytics(state, tr, {
             action: ACTION.OPENED,
             actionSubject: ACTION_SUBJECT.PICKER,
             actionSubjectId: ACTION_SUBJECT_ID.PICKER_CLOUD,

@@ -5,6 +5,8 @@ import {
   getResponseEndTime,
   measureRender,
   ProviderFactory,
+  startMeasure,
+  stopMeasure,
   Transformer,
 } from '@uidu/editor-common';
 import * as PropTypes from 'prop-types';
@@ -19,20 +21,23 @@ import {
   ACTION,
   ACTION_SUBJECT,
   AnalyticsDispatch,
-  analyticsEventKey,
   AnalyticsEventPayload,
-  AnalyticsEventPayloadWithChannel,
-  analyticsPluginKey,
   DispatchAnalyticsEvent,
   EVENT_TYPE,
   fireAnalyticsEvent,
   FULL_WIDTH_MODE,
+  getAnalyticsEventsFromTransaction,
   PLATFORMS,
 } from '../plugins/analytics';
+import { analyticsEventKey } from '../plugins/analytics/consts';
 import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
 } from '../plugins/editor-disabled';
+import {
+  createFeatureFlagsFromProps,
+  getEnabledFeatureFlagKeys,
+} from '../plugins/feature-flags-context/feature-flags-from-props';
 import {
   EditorAppearance,
   EditorConfig,
@@ -42,9 +47,13 @@ import {
 import { PortalProviderAPI } from '../ui/PortalProvider';
 import { processRawValue } from '../utils';
 import { getNodesCount } from '../utils/document';
-import { getDocStructure } from '../utils/document-logger';
+import { getDocStructure, SimplifiedNode } from '../utils/document-logger';
 import { isFullPage } from '../utils/is-full-page';
-import { findChangedNodesFromTransaction, validateNodes } from '../utils/nodes';
+import {
+  findChangedNodesFromTransaction,
+  validateNodes,
+  validNode,
+} from '../utils/nodes';
 import measurements from '../utils/performance/measure-enum';
 import {
   createErrorReporter,
@@ -132,11 +141,18 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
       this.activateAnalytics(createAnalyticsEvent);
     }
     initAnalytics(props.editorProps.analyticsHandler);
+    const featureFlags = createFeatureFlagsFromProps(this.props.editorProps);
+    const featureFlagsEnabled = featureFlags
+      ? getEnabledFeatureFlagKeys(featureFlags)
+      : [];
 
     this.dispatchAnalyticsEvent({
       action: ACTION.STARTED,
       actionSubject: ACTION_SUBJECT.EDITOR,
-      attributes: { platform: PLATFORMS.WEB },
+      attributes: {
+        platform: PLATFORMS.WEB,
+        featureFlags: featureFlagsEnabled,
+      },
       eventType: EVENT_TYPE.UI,
     });
   }
@@ -413,41 +429,84 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     });
   };
 
+  private onEditorViewStateUpdated = ({
+    transaction,
+    oldEditorState,
+    newEditorState,
+  }: {
+    transaction: Transaction;
+    oldEditorState: EditorState;
+    newEditorState: EditorState;
+  }) => {
+    this.config.onEditorViewStateUpdatedCallbacks.forEach((entry) => {
+      startMeasure(`🦉 ${entry.pluginName}::onEditorViewStateUpdated`);
+      entry.callback({ transaction, oldEditorState, newEditorState });
+      stopMeasure(`🦉 ${entry.pluginName}::onEditorViewStateUpdated`);
+    });
+  };
+
   private dispatchTransaction = (transaction: Transaction) => {
     if (!this.view) {
       return;
     }
 
+    startMeasure(`🦉 ReactEditorView::dispatchTransaction`);
+
     const nodes: PMNode[] = findChangedNodesFromTransaction(transaction);
-    if (validateNodes(nodes)) {
+    const changedNodesValid = validateNodes(nodes);
+
+    if (changedNodesValid) {
+      const oldEditorState = this.view.state;
+
       // go ahead and update the state now we know the transaction is good
+      startMeasure(`🦉 EditorView::state::apply`);
       const editorState = this.view.state.apply(transaction);
+      stopMeasure(`🦉 EditorView::state::apply`);
+
+      startMeasure(`🦉 EditorView::updateState`);
       this.view.updateState(editorState);
+      stopMeasure(`🦉 EditorView::updateState`);
+
+      startMeasure(`🦉 EditorView::onEditorViewStateUpdated`);
+      this.onEditorViewStateUpdated({
+        transaction,
+        oldEditorState,
+        newEditorState: editorState,
+      });
+      stopMeasure(`🦉 EditorView::onEditorViewStateUpdated`);
+
       if (this.props.editorProps.onChange && transaction.docChanged) {
-        this.props.editorProps.onChange(this.view);
+        const source = transaction.getMeta('isRemote') ? 'remote' : 'local';
+
+        startMeasure(`🦉 ReactEditorView::onChange`);
+        this.props.editorProps.onChange(this.view, { source });
+        stopMeasure(`🦉 ReactEditorView::onChange`);
       }
       this.editorState = editorState;
     } else {
-      const documents = {
-        new: getDocStructure(transaction.doc),
-        prev: getDocStructure(transaction.docs[0]),
-      };
+      const invalidNodes = nodes
+        .filter((node) => !validNode(node))
+        .map<SimplifiedNode | string>((node) => getDocStructure(node));
+
       analyticsService.trackEvent(
         'atlaskit.fabric.editor.invalidtransaction',
-        { documents: JSON.stringify(documents) }, // V2 events don't support object properties
+        { invalidNodes: JSON.stringify(invalidNodes) }, // V2 events don't support object properties
       );
+
       this.dispatchAnalyticsEvent({
         action: ACTION.DISPATCHED_INVALID_TRANSACTION,
         actionSubject: ACTION_SUBJECT.EDITOR,
         eventType: EVENT_TYPE.OPERATIONAL,
         attributes: {
-          analyticsEventPayloads: transaction.getMeta(
-            analyticsPluginKey,
-          ) as AnalyticsEventPayloadWithChannel[],
-          documents,
+          analyticsEventPayloads: getAnalyticsEventsFromTransaction(
+            transaction,
+          ),
+          invalidNodes,
         },
       });
     }
+
+    stopMeasure(`🦉 ReactEditorView::dispatchTransaction`, () => {});
   };
 
   getDirectEditorProps = (state?: EditorState): DirectEditorProps => {

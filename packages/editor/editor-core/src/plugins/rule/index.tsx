@@ -69,7 +69,7 @@ const rulePlugin = (): EditorPlugin => ({
             tr = insert(state.schema.nodes.rule.createChecked());
           }
 
-          return addAnalytics(tr, {
+          return addAnalytics(state, tr, {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,
             actionSubjectId: ACTION_SUBJECT_ID.DIVIDER,

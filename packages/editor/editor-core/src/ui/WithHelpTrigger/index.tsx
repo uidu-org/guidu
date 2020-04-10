@@ -1,17 +1,17 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import { openHelpCommand } from '../../plugins/help-dialog';
+import * as React from 'react';
 import { analyticsService } from '../../analytics';
+import { createDispatch } from '../../event-dispatcher';
 import {
-  analyticsEventKey,
-  AnalyticsDispatch,
   ACTION,
   ACTION_SUBJECT,
-  INPUT_METHOD,
-  EVENT_TYPE,
   ACTION_SUBJECT_ID,
+  AnalyticsDispatch,
+  EVENT_TYPE,
+  INPUT_METHOD,
 } from '../../plugins/analytics';
-import { createDispatch } from '../../event-dispatcher';
+import { analyticsEventKey } from '../../plugins/analytics/consts';
+import { openHelpCommand } from '../../plugins/help-dialog';
 
 export default class WithHelpTrigger extends React.Component<
   { render: (openHelp: () => void) => React.ReactNode },

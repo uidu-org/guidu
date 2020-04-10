@@ -208,12 +208,12 @@ export function showLinkToolbar(
     | INPUT_METHOD.SHORTCUT
     | INPUT_METHOD.INSERT_MENU = INPUT_METHOD.TOOLBAR,
 ): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     if (dispatch) {
       let tr = state.tr.setMeta(stateKey, {
         type: LinkAction.SHOW_INSERT_TOOLBAR,
       });
-      tr = addAnalytics(tr, {
+      tr = addAnalytics(state, tr, {
         action: ACTION.INVOKED,
         actionSubject: ACTION_SUBJECT.TYPEAHEAD,
         actionSubjectId: ACTION_SUBJECT_ID.TYPEAHEAD_LINK,
@@ -227,7 +227,7 @@ export function showLinkToolbar(
 }
 
 export function hideLinkToolbar(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     if (dispatch) {
       dispatch(state.tr.setMeta(stateKey, { type: LinkAction.HIDE_TOOLBAR }));
     }

@@ -1,5 +1,5 @@
 import { ACTION_SUBJECT_ID, INPUT_METHOD } from './enums';
-import { InsertAEP } from './insert-events';
+import { InsertAEP } from './utils';
 
 export type SmartLinkNodeContext =
   | 'doc'

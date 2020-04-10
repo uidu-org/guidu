@@ -39,11 +39,11 @@ export function clearFormattingWithAnalytics(
 export function clearFormatting(
   inputMethod?: INPUT_METHOD.TOOLBAR | INPUT_METHOD.SHORTCUT,
 ): Command {
-  return function(state, dispatch): boolean {
+  return function (state, dispatch): boolean {
     const { tr } = state;
     const formattingCleared: string[] = [];
 
-    FORMATTING_MARK_TYPES.forEach(mark => {
+    FORMATTING_MARK_TYPES.forEach((mark) => {
       const { from, to } = tr.selection;
       const markType = state.schema.marks[mark];
 
@@ -53,7 +53,7 @@ export function clearFormatting(
       }
     });
 
-    FORMATTING_NODE_TYPES.forEach(nodeName => {
+    FORMATTING_NODE_TYPES.forEach((nodeName) => {
       const formattedNodeType = state.schema.nodes[nodeName];
       const { $from, $to } = tr.selection;
       tr.doc.nodesBetween($from.pos, $to.pos, (node, pos) => {
@@ -83,7 +83,7 @@ export function clearFormatting(
     tr.setStoredMarks([]);
 
     if (formattingCleared.length && inputMethod) {
-      addAnalytics(tr, {
+      addAnalytics(state, tr, {
         action: ACTION.FORMATTED,
         eventType: EVENT_TYPE.TRACK,
         actionSubject: ACTION_SUBJECT.TEXT,

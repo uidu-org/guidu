@@ -1,8 +1,19 @@
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 import { Node as PMNode, Slice } from 'prosemirror-model';
-import { ReplaceStep, Step, StepMap, StepResult } from 'prosemirror-transform';
-import { ACTION, AnalyticsEventPayloadWithChannel, EVENT_TYPE, TABLE_ACTION } from './types';
-import { fireAnalyticsEvent } from './utils';
+import {
+  Mappable,
+  ReplaceStep,
+  Step,
+  StepMap,
+  StepResult,
+} from 'prosemirror-transform';
+import { fireAnalyticsEvent } from './fire-analytics-event';
+import {
+  ACTION,
+  AnalyticsEventPayloadWithChannel,
+  EVENT_TYPE,
+  TABLE_ACTION,
+} from './types';
 
 export const analyticsStepType = 'atlaskit-analytics';
 
@@ -48,14 +59,17 @@ const toggleEventAction = (analyticsEvent: AnalyticsEventPayloadWithChannel) =>
 export class AnalyticsStep extends Step {
   analyticsEvents: AnalyticsEventPayloadWithChannel[] = [];
   createAnalyticsEvent: CreateUIAnalyticsEvent;
+  pos?: number;
 
   constructor(
     createAnalyticsEvent: CreateUIAnalyticsEvent,
     analyticsEvents: AnalyticsEventPayloadWithChannel[],
+    pos?: number, // Used to create the map, prevent splitting history.
   ) {
     super();
     this.createAnalyticsEvent = createAnalyticsEvent;
     this.analyticsEvents = analyticsEvents;
+    this.pos = pos;
   }
 
   /**
@@ -64,10 +78,10 @@ export class AnalyticsStep extends Step {
   invert() {
     const analyticsEvents: AnalyticsEventPayloadWithChannel[] = this.analyticsEvents
       .filter(
-        analyticsEvent =>
+        (analyticsEvent) =>
           actionsToIgnore.indexOf(analyticsEvent.payload.action) === -1,
       )
-      .map(analyticsEvent => {
+      .map((analyticsEvent) => {
         if (
           analyticsEvent.payload.action === ACTION.UNDID ||
           analyticsEvent.payload.action === ACTION.REDID
@@ -89,12 +103,35 @@ export class AnalyticsStep extends Step {
     return StepResult.ok(doc);
   }
 
-  map() {
-    return null;
+  map(mapping: Mappable) {
+    let newPos = this.pos;
+    if (typeof newPos === 'number') {
+      newPos = mapping.map(newPos);
+    }
+    // Return the same events, this step will never be removed
+    return new AnalyticsStep(
+      this.createAnalyticsEvent,
+      this.analyticsEvents,
+      newPos,
+    );
   }
 
   getMap() {
-    return new StepMap([0, 0, 0]);
+    if (typeof this.pos === 'number') {
+      return new StepMap([this.pos, 0, 0]);
+    }
+    return new StepMap([]);
+  }
+
+  merge(other: Step) {
+    if (other instanceof AnalyticsStep) {
+      const otherAnalyticsEvents = (other as AnalyticsStep).analyticsEvents;
+      return new AnalyticsStep(this.createAnalyticsEvent, [
+        ...otherAnalyticsEvents,
+        ...this.analyticsEvents,
+      ]);
+    }
+    return null;
   }
 
   toJSON() {

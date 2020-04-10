@@ -125,7 +125,7 @@ const datePlugin = (): EditorPlugin => ({
           });
 
           const tr = insert(dateNode, { selectInlineNode: true });
-          addAnalytics(tr, {
+          addAnalytics(state, tr, {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,
             actionSubjectId: ACTION_SUBJECT_ID.DATE,

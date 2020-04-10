@@ -117,7 +117,7 @@ const decorateWithPluginOptions = (
         keywords: ['lozenge'],
         icon: () => <IconStatus label={formatMessage(messages.status)} />,
         action(insert, state) {
-          return addAnalytics(createStatus()(insert, state), {
+          return addAnalytics(state, createStatus()(insert, state), {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,
             actionSubjectId: ACTION_SUBJECT_ID.STATUS,

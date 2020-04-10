@@ -1,4 +1,3 @@
-import { CardEvent } from '@uidu/media-card';
 import { FileIdentifier as Identifier } from '@uidu/media-core';
 import { SyntheticEvent } from 'react';
 
@@ -13,7 +12,7 @@ export type MentionEventHandler = (
   event?: SyntheticEvent<HTMLSpanElement>,
 ) => void;
 export type CardEventClickHandler = (
-  result: CardEvent,
+  result: any,
   surroundings?: CardSurroundings,
   analyticsEvent?: any,
 ) => void;

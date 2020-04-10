@@ -1,15 +1,15 @@
 import { EmojiId } from '@uidu/emoji';
-import { safeInsert } from 'prosemirror-utils';
 import { Fragment } from 'prosemirror-model';
 import { Selection } from 'prosemirror-state';
+import { safeInsert } from 'prosemirror-utils';
 import { Command } from '../../../types';
 import {
-  INPUT_METHOD,
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
   addAnalytics,
   EVENT_TYPE,
-  ACTION_SUBJECT_ID,
-  ACTION_SUBJECT,
-  ACTION,
+  INPUT_METHOD,
 } from '../../analytics';
 
 export function insertEmoji(
@@ -33,7 +33,7 @@ export function insertEmoji(
         const fragment = Fragment.fromArray([node, textNode]);
         const tr = safeInsert(fragment)(state.tr);
         if (inputMethod) {
-          addAnalytics(tr, {
+          addAnalytics(state, tr, {
             action: ACTION.INSERTED,
             actionSubject: ACTION_SUBJECT.DOCUMENT,
             actionSubjectId: ACTION_SUBJECT_ID.EMOJI,

@@ -1,6 +1,6 @@
-import { ACTION, ACTION_SUBJECT_ID, ACTION_SUBJECT } from './enums';
+import { ACTION, ACTION_SUBJECT, ACTION_SUBJECT_ID } from './enums';
 import { TABLE_ACTION } from './table-events';
-import { TrackAEP } from './events';
+import { TrackAEP } from './utils';
 
 type HistoryAEP<Action> = TrackAEP<
   Action,

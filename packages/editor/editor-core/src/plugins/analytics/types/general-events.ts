@@ -1,15 +1,21 @@
-import { UIAEP, TrackAEP, OperationalAEP } from './events';
+import { FeatureFlagKey } from '../../feature-flags-context/types';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
+import { OperationalAEP, TrackAEP, UIAEP } from './utils';
 
 export enum PLATFORMS {
   NATIVE = 'mobileNative',
   HYBRID = 'mobileHybrid',
   WEB = 'web',
+}
+
+export enum MODE {
+  RENDERER = 'renderer',
+  EDITOR = 'editor',
 }
 
 export enum FULL_WIDTH_MODE {
@@ -53,7 +59,10 @@ type EditorStartAEP = UIAEP<
   ACTION.STARTED,
   ACTION_SUBJECT.EDITOR,
   undefined,
-  { platform: PLATFORMS.NATIVE | PLATFORMS.HYBRID | PLATFORMS.WEB },
+  {
+    platform: PLATFORMS.NATIVE | PLATFORMS.HYBRID | PLATFORMS.WEB;
+    featureFlags: FeatureFlagKey[];
+  },
   undefined
 >;
 
@@ -88,7 +97,39 @@ type SlowInputAEP = OperationalAEP<
   {
     time: number;
     nodeSize: number;
-    nodes?: Record<string, number>;
+  },
+  undefined
+>;
+
+type InputPerfSamlingAEP = OperationalAEP<
+  ACTION.INPUT_PERF_SAMPLING,
+  ACTION_SUBJECT.EDITOR,
+  undefined,
+  {
+    time: number;
+    nodeSize: number;
+  },
+  undefined
+>;
+
+type DispatchedTransactionAEP = OperationalAEP<
+  ACTION.TRANSACTION_DISPATCHED,
+  ACTION_SUBJECT.EDITOR,
+  undefined,
+  {
+    report: {
+      trigger: string;
+      duration: number;
+      nodes: { [name: string]: number };
+      plugins: { [name: string]: { stateApply: number } };
+      slowPlugins: { [name: string]: { stateApply: number } };
+      stepDurations: {
+        stateApply: number;
+        viewUpdate: number;
+        onChange: number;
+        countNodes: number;
+      };
+    };
   },
   undefined
 >;
@@ -162,6 +203,14 @@ type TypeAheadQuickInsertAEP = TypeAheadAEP<
   { inputMethod: INPUT_METHOD.KEYBOARD }
 >;
 
+type HelpQuickInsertAEP = UIAEP<
+  ACTION.HELP_OPENED,
+  ACTION_SUBJECT.HELP,
+  ACTION_SUBJECT_ID.HELP_QUICK_INSERT,
+  { inputMethod: INPUT_METHOD.QUICK_INSERT },
+  undefined
+>;
+
 type TypeAheadEmojiAEP = TypeAheadAEP<
   ACTION_SUBJECT_ID.TYPEAHEAD_EMOJI,
   { inputMethod: INPUT_METHOD.QUICK_INSERT | INPUT_METHOD.KEYBOARD }
@@ -200,6 +249,19 @@ type FullWidthModeAEP = TrackAEP<
   undefined
 >;
 
+// TODO: https://product-fabric.atlassian.net/browse/AFP-1418
+type ExpandToggleAEP = TrackAEP<
+  ACTION.TOGGLE_EXPAND,
+  ACTION_SUBJECT.EXPAND | ACTION_SUBJECT.NESTED_EXPAND,
+  undefined,
+  {
+    platform: PLATFORMS;
+    mode: MODE;
+    expanded: boolean;
+  },
+  undefined
+>;
+
 export type GeneralEventPayload =
   | EditorStartAEP
   | EditorStopAEP
@@ -217,4 +279,8 @@ export type GeneralEventPayload =
   | EditorPerfAEP
   | BrowserFreezePayload
   | SlowInputAEP
-  | UploadExternalFailedAEP;
+  | UploadExternalFailedAEP
+  | InputPerfSamlingAEP
+  | HelpQuickInsertAEP
+  | ExpandToggleAEP
+  | DispatchedTransactionAEP;

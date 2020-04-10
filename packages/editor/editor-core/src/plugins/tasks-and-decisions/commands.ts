@@ -218,6 +218,7 @@ export const insertTaskDecisionWithAnalytics = (
     });
     if (insertTr) {
       insertTr = addAnalytics(
+        state,
         insertTr,
         generateAnalyticsPayload(
           listType,

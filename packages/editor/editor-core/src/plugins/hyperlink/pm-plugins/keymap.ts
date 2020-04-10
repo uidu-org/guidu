@@ -92,6 +92,7 @@ const mayConvertLastWordToHyperlink: Command = (state, dispatch) => {
     if (dispatch) {
       dispatch(
         addAnalytics(
+          state,
           tr,
           getLinkCreationAnalyticsEvent(INPUT_METHOD.AUTO_DETECT, url),
         ),

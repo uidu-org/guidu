@@ -30,6 +30,8 @@ export type TextColorDefaultColor = {
 
 export interface TextColorPluginConfig {
   defaultColor: TextColorDefaultColor;
+  // Allow experimental testing for "show more colours" (ED-8368)
+  EXPERIMENTAL_allowMoreTextColors?: boolean;
 }
 
 export const DEFAULT_COLOR = {

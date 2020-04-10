@@ -53,7 +53,7 @@ const getWidthsForPreset = (presetLayout: PresetLayout): number[] => {
  * inside the layoutSection node
  */
 export const getPresetLayout = (section: Node): PresetLayout | undefined => {
-  const widths = mapChildren(section, column => column.attrs.width).join(',');
+  const widths = mapChildren(section, (column) => column.attrs.width).join(',');
 
   switch (widths) {
     case '33.33,33.33,33.33':
@@ -161,7 +161,7 @@ function forceColumnStructure(
 
 function columnWidth(node: Node, schema: Schema, widths: number[]): Fragment {
   const { layoutColumn } = schema.nodes;
-  const truncatedWidths: number[] = widths.map(w => Number(w.toFixed(2)));
+  const truncatedWidths: number[] = widths.map((w) => Number(w.toFixed(2)));
 
   return flatmap(node.content, (column, idx) =>
     layoutColumn.create(
@@ -229,7 +229,7 @@ export const setPresetLayout = (layout: PresetLayout): Command => (
 
   let tr = forceSectionToPresetLayout(state, node, pos, layout);
   if (tr) {
-    tr = addAnalytics(tr, {
+    tr = addAnalytics(state, tr, {
       action: ACTION.CHANGED_LAYOUT,
       actionSubject: ACTION_SUBJECT.LAYOUT,
       attributes: {
@@ -300,7 +300,7 @@ export const deleteActiveLayoutNode: Command = (state, dispatch) => {
     const node = state.doc.nodeAt(pos) as Node;
     if (dispatch) {
       let tr = state.tr.delete(pos, pos + node.nodeSize);
-      tr = addAnalytics(tr, {
+      tr = addAnalytics(state, tr, {
         action: ACTION.DELETED,
         actionSubject: ACTION_SUBJECT.LAYOUT,
         attributes: { layout: formatLayoutName(<PresetLayout>selectedLayout) },

@@ -97,7 +97,7 @@ const keymapPlugin = (): Plugin => {
       const isVisible = tr.getMeta(pluginKey);
       if (!isVisible) {
         analyticsService.trackEvent('atlassian.editor.help.keyboard');
-        tr = addAnalytics(tr, {
+        tr = addAnalytics(state, tr, {
           action: ACTION.CLICKED,
           actionSubject: ACTION_SUBJECT.BUTTON,
           actionSubjectId: ACTION_SUBJECT_ID.BUTTON_HELP,

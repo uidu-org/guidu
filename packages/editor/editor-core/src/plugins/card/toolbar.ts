@@ -1,7 +1,7 @@
-import { isSafeUrl } from '@uidu/adf-schema';
 import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import UnlinkIcon from '@atlaskit/icon/glyph/editor/unlink';
 import OpenIcon from '@atlaskit/icon/glyph/shortcut';
+import { isSafeUrl } from '@uidu/adf-schema';
 import { ProviderFactory } from '@uidu/editor-common';
 import { Node } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
@@ -78,7 +78,7 @@ export const removeCard: Command = (state, dispatch) => {
     eventType: EVENT_TYPE.TRACK,
   };
   if (dispatch) {
-    dispatch(addAnalytics(removeSelectedNode(state.tr), payload));
+    dispatch(addAnalytics(state, removeSelectedNode(state.tr), payload));
   }
   analyticsService.trackEvent('atlassian.editor.format.card.delete.button');
   return true;
@@ -110,7 +110,7 @@ export const visitCardLink: Command = (state, dispatch) => {
   window.open(url);
 
   if (dispatch) {
-    dispatch(addAnalytics(state.tr, payload));
+    dispatch(addAnalytics(state, state.tr, payload));
   }
   return true;
 };

@@ -42,8 +42,8 @@ function initMatcher(providerFactory: ProviderFactory) {
       return;
     }
 
-    provider.then(emojiProvider => {
-      emojiProvider.getAsciiMap().then(map => {
+    provider.then((emojiProvider) => {
+      emojiProvider.getAsciiMap().then((map) => {
         matcher = new RecordingAsciiEmojiMatcher(emojiProvider, map);
       });
     });
@@ -82,7 +82,7 @@ function isEnabled(state: EditorState) {
   const typeAheadQuery = state.schema.marks.typeAheadQuery;
   const isTypeAheadQueryActive = state.selection.$from
     .marks()
-    .some(mark => mark.type === typeAheadQuery);
+    .some((mark) => mark.type === typeAheadQuery);
   return (
     isTypeAheadQueryActive ||
     isMarkTypeAllowedInCurrentSelection(typeAheadQuery, state)
@@ -237,7 +237,7 @@ class AsciiEmojiTransactionCreator {
       this.to,
       this.createNodes(),
     );
-    return addAnalytics(tr, {
+    return addAnalytics(this.state, tr, {
       action: ACTION.INSERTED,
       actionSubject: ACTION_SUBJECT.DOCUMENT,
       actionSubjectId: ACTION_SUBJECT_ID.EMOJI,
@@ -289,7 +289,7 @@ export const stateKey = new PluginKey('asciiEmojiPlugin');
 
 const plugins = (schema: Schema, providerFactory?: ProviderFactory) => {
   return [inputRulePlugin(schema, providerFactory)].filter(
-    plugin => !!plugin,
+    (plugin) => !!plugin,
   ) as Plugin[];
 };
 

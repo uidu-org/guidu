@@ -3,13 +3,13 @@ import { isPerformanceAPIAvailable, measureRender } from '@uidu/editor-common';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { AnalyticsStep } from './analytics-step';
+import { fireAnalyticsEvent } from './fire-analytics-event';
 import {
   ACTION,
   AnalyticsEventPayload,
   AnalyticsEventPayloadWithChannel,
   EVENT_TYPE,
 } from './types';
-import { fireAnalyticsEvent } from './utils';
 
 export const analyticsPluginKey = new PluginKey('analyticsPlugin');
 
@@ -25,7 +25,7 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
     key: analyticsPluginKey,
     state: {
       init: () => null,
-      apply: tr => {
+      apply: (tr) => {
         const meta = tr.getMeta(analyticsPluginKey) as
           | { payload: AnalyticsEventPayload; channel?: string }[]
           | undefined;
@@ -42,7 +42,7 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
               payload.action !== ACTION.DELETED
             ) {
               const measureName = `${payload.actionSubject}:${payload.action}:${payload.actionSubjectId}`;
-              measureRender(measureName, duration => {
+              measureRender(measureName, (duration) => {
                 fireAnalyticsEvent(createAnalyticsEvent)({
                   payload: extendPayload(payload, duration),
                   channel,
@@ -62,7 +62,7 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
         .map((tr): AnalyticsEventPayloadWithChannel[] =>
           tr.getMeta(analyticsPluginKey),
         )
-        .filter(analyticsMeta => !!analyticsMeta)
+        .filter((analyticsMeta) => !!analyticsMeta)
         .reduce(
           (allAnalyticsEvents, trAnalyticsEvents) => [
             ...allAnalyticsEvents,
@@ -87,7 +87,7 @@ function createPlugin(createAnalyticsEvent?: CreateUIAnalyticsEvent) {
         // This is needed so undo of autoformatting works as expected, this is a special
         // case handled by prosemirror-inputrules plugin
         const activeInputRulePlugin = newState.plugins.find(
-          plugin =>
+          (plugin) =>
             (plugin.spec as any).isInputRules && plugin.getState(newState),
         );
         if (activeInputRulePlugin) {

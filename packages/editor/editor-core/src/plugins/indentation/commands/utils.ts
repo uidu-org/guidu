@@ -1,5 +1,5 @@
 import { IndentationMarkAttributes } from '@uidu/adf-schema';
-import { Transaction } from 'prosemirror-state';
+import { EditorState, Transaction } from 'prosemirror-state';
 import { GetAttrsChange } from '../../../utils/getAttrsWithChangesRecorder';
 import {
   ACTION,
@@ -66,6 +66,7 @@ export function createAnalyticsDispatch(
     IndentationMarkAttributes,
     IndentationChangesOptions
   >[],
+  state: EditorState,
   dispatch?: (tr: Transaction) => void,
 ): (tr: Transaction) => void {
   return (tr: Transaction) => {
@@ -79,7 +80,7 @@ export function createAnalyticsDispatch(
         return; // If no valid indent type continue
       }
 
-      currentTr = addAnalytics(currentTr, {
+      currentTr = addAnalytics(state, currentTr, {
         action: ACTION.FORMATTED,
         actionSubject: ACTION_SUBJECT.TEXT,
         actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,

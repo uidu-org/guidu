@@ -1,11 +1,11 @@
-import { TrackAEP } from './events';
+import { HeadingLevelsAndNormalText } from '../../block-type/types';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
-import { HeadingLevelsAndNormalText } from '../../block-type/types';
+import { TrackAEP } from './utils';
 
 export enum INDENT_DIR {
   INDENT = 'indent',
@@ -17,6 +17,7 @@ export enum INDENT_TYPE {
   LIST = 'list',
   HEADING = 'heading',
   CODE_BLOCK = 'codeBlock',
+  TASK_LIST = 'taskList',
 }
 
 type FormatAEP<ActionSubjectID, Attributes> = TrackAEP<
@@ -45,7 +46,10 @@ type FormatBasicAEP = FormatAEP<
 type FormatSuperSubAEP = FormatAEP<
   ACTION_SUBJECT_ID.FORMAT_SUPER | ACTION_SUBJECT_ID.FORMAT_SUB,
   {
-    inputMethod: INPUT_METHOD.TOOLBAR;
+    inputMethod:
+      | INPUT_METHOD.TOOLBAR
+      | INPUT_METHOD.SHORTCUT
+      | INPUT_METHOD.FORMATTING;
   }
 >;
 
@@ -60,7 +64,8 @@ type FormatIndentationAEP = FormatAEP<
       | INDENT_TYPE.PARAGRAPH
       | INDENT_TYPE.LIST
       | INDENT_TYPE.HEADING
-      | INDENT_TYPE.CODE_BLOCK;
+      | INDENT_TYPE.CODE_BLOCK
+      | INDENT_TYPE.TASK_LIST;
   }
 >;
 
@@ -69,8 +74,10 @@ type FormatHeadingAEP = FormatAEP<
   {
     inputMethod:
       | INPUT_METHOD.TOOLBAR
-      | INPUT_METHOD.SHORTCUT
+      | INPUT_METHOD.INSERT_MENU
+      | INPUT_METHOD.KEYBOARD
       | INPUT_METHOD.FORMATTING
+      | INPUT_METHOD.SHORTCUT
       | INPUT_METHOD.QUICK_INSERT;
     newHeadingLevel: HeadingLevelsAndNormalText;
     previousHeadingLevel?: HeadingLevelsAndNormalText;
@@ -82,8 +89,10 @@ type FormatBlockQuoteAEP = FormatAEP<
   {
     inputMethod:
       | INPUT_METHOD.TOOLBAR
+      | INPUT_METHOD.INSERT_MENU
       | INPUT_METHOD.KEYBOARD
       | INPUT_METHOD.FORMATTING
+      | INPUT_METHOD.SHORTCUT
       | INPUT_METHOD.QUICK_INSERT;
   }
 >;

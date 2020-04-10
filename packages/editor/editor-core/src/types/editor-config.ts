@@ -1,4 +1,5 @@
 import { MarkSpec, NodeSpec } from 'prosemirror-model';
+import { EditorState, Transaction } from 'prosemirror-state';
 import { NodeView } from 'prosemirror-view';
 import {
   PMPlugin,
@@ -21,6 +22,12 @@ export interface NodeViewConfig {
   nodeView: NodeView;
 }
 
+type EditorViewStateUpdatedCallbackProps = {
+  readonly transaction: Readonly<Transaction>;
+  readonly oldEditorState: Readonly<EditorState>;
+  readonly newEditorState: Readonly<EditorState>;
+};
+
 export interface EditorConfig {
   nodes: NodeConfig[];
   marks: MarkConfig[];
@@ -28,4 +35,8 @@ export interface EditorConfig {
   contentComponents: UIComponentFactory[];
   primaryToolbarComponents: ToolbarUIComponentFactory[];
   secondaryToolbarComponents: UIComponentFactory[];
+  onEditorViewStateUpdatedCallbacks: Array<{
+    pluginName: string;
+    callback: (props: EditorViewStateUpdatedCallbackProps) => void;
+  }>;
 }

@@ -44,6 +44,7 @@ export function createLinkInputRule(regexp: RegExp): InputRule {
           .insertText(' '),
       );
       return addAnalytics(
+        state,
         tr,
         getLinkCreationAnalyticsEvent(INPUT_METHOD.AUTO_DETECT, url),
       );
@@ -77,6 +78,7 @@ export function createInputRulePlugin(schema: Schema): Plugin | undefined {
         schema.text(linkText, [markType]),
       );
       return addAnalytics(
+        state,
         tr,
         getLinkCreationAnalyticsEvent(INPUT_METHOD.FORMATTING, url),
       );

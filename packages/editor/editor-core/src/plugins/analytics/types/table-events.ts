@@ -1,6 +1,6 @@
-import { TableAEP } from './events';
-import { INPUT_METHOD } from './enums';
 import { SortOrder } from '../../table/types';
+import { INPUT_METHOD } from './enums';
+import { TableAEP } from './utils';
 
 //#region Constants
 export enum TABLE_ACTION {

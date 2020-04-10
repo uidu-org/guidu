@@ -58,7 +58,7 @@ const headingPluginOptions = ({
       ),
       action(insert: QuickInsertActionInsert, state: EditorState) {
         const tr = insert(state.schema.nodes.heading.createChecked({ level }));
-        return addAnalytics(tr, {
+        return addAnalytics(state, tr, {
           action: ACTION.FORMATTED,
           actionSubject: ACTION_SUBJECT.TEXT,
           eventType: EVENT_TYPE.TRACK,
@@ -88,7 +88,7 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
 
     if (allowBlockType) {
       const exclude = allowBlockType.exclude ? allowBlockType.exclude : [];
-      return nodes.filter(node => exclude.indexOf(node.name) === -1);
+      return nodes.filter((node) => exclude.indexOf(node.name) === -1);
     }
 
     return nodes;
@@ -157,7 +157,7 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
   },
 
   pluginsOptions: {
-    quickInsert: intl => {
+    quickInsert: (intl) => {
       const { formatMessage } = intl;
       return [
         {
@@ -174,7 +174,7 @@ const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
               ),
             );
 
-            return addAnalytics(tr, {
+            return addAnalytics(state, tr, {
               action: ACTION.FORMATTED,
               actionSubject: ACTION_SUBJECT.TEXT,
               eventType: EVENT_TYPE.TRACK,

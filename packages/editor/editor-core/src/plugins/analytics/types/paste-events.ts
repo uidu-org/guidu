@@ -1,10 +1,10 @@
-import { TrackAEP } from './events';
 import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   INPUT_METHOD,
 } from './enums';
+import { TrackAEP } from './utils';
 
 export const PasteTypes: { [type: string]: PasteType } = {
   richText: 'richText',
@@ -44,6 +44,8 @@ export const PasteContents: { [P in PasteContent]: P } = {
   mediaCard: 'mediaCard',
   tableCells: 'tableCells',
   table: 'table',
+  expand: 'expand',
+  nestedExpand: 'nestedExpand',
   mixed: 'mixed',
   blockquote: 'blockquote',
   blockCard: 'blockCard',
@@ -80,6 +82,8 @@ export type PasteContent =
   | 'mediaCard'
   | 'tableCells'
   | 'table'
+  | 'expand'
+  | 'nestedExpand'
   | 'orderedList'
   | 'panel'
   | 'rule'
@@ -108,14 +112,16 @@ export type PASTE_ACTION_SUBJECT_ID =
   | ACTION_SUBJECT_ID.PASTE_TABLE_CELL
   | ACTION_SUBJECT_ID.PASTE_TABLE_HEADER
   | ACTION_SUBJECT_ID.PASTE_TABLE_ROW
-  | ACTION_SUBJECT_ID.PASTE_TASK_LIST;
+  | ACTION_SUBJECT_ID.PASTE_TASK_LIST
+  | ACTION_SUBJECT_ID.PASTE_EXPAND
+  | ACTION_SUBJECT_ID.PASTE_NESTED_EXPAND;
 
-type PasteBaseAEP<Action, Attributes> = TrackAEP<
+type PasteBaseAEP<Action, Attributes, NonPrivacySafeAttributes> = TrackAEP<
   Action,
   ACTION_SUBJECT.DOCUMENT,
   PASTE_ACTION_SUBJECT_ID,
   Attributes,
-  undefined
+  NonPrivacySafeAttributes
 >;
 
 type PasteAEP = PasteBaseAEP<
@@ -126,7 +132,11 @@ type PasteAEP = PasteBaseAEP<
     content: PasteContent;
     source?: PasteSource;
     pasteSize: number;
-  }
+  },
+  | {
+      linkDomain?: string[];
+    }
+  | undefined
 >;
 
 type PasteAsPlainAEP = PasteBaseAEP<
@@ -134,7 +144,8 @@ type PasteAsPlainAEP = PasteBaseAEP<
   {
     inputMethod: string;
     pasteSize: number;
-  }
+  },
+  undefined
 >;
 
 export type PasteEventPayload = PasteAEP | PasteAsPlainAEP;

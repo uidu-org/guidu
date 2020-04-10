@@ -9,10 +9,10 @@ import {
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   AnalyticsDispatch,
-  analyticsEventKey,
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
+import { analyticsEventKey } from '../analytics/consts';
 import { find } from './search';
 import {
   QuickInsertHandler,
@@ -62,13 +62,13 @@ const quickInsertPlugin = (): EditorPlugin => ({
 
         if (quickInsertState.provider) {
           return (quickInsertState.provider as Promise<Array<QuickInsertItem>>)
-            .then(items =>
+            .then((items) =>
               find(
                 query,
-                dedupe([...defaultItems, ...items], item => item.title),
+                dedupe([...defaultItems, ...items], (item) => item.title),
               ),
             )
-            .catch(err => {
+            .catch((err) => {
               // eslint-disable-next-line no-console
               console.error(err);
               return defaultSearch();
