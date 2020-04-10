@@ -8,7 +8,6 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@loadable/component": "^5.10.1",
     "@uidu/avatar": "^0.3.2",
     "@uidu/button": "^0.1.58",
     "@uidu/comment": "^0.1.12",

@@ -1,4 +1,5 @@
 import { Icon } from '@fluentui/react/lib/Icon';
+import MediaCard from '@uidu/media-card';
 import { ModalMediaViewer } from '@uidu/media-viewer';
 import { getFileTypeIconProps } from '@uifabric/file-type-icons';
 import React, { useState } from 'react';
@@ -17,22 +18,24 @@ function formatBytes(bytes, decimals = 2) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
-export default function MessageAttachments({
+export default React.memo(function MessageAttachments({
   attachments,
   className,
   scrollable,
 }: MessageAttachmentsProps) {
   const [currentModal, setCurrentModal] = useState(null);
 
+  const files = attachments.map(({ file }) => file);
+
   if (!scrollable.current) {
     return <div>Loading...</div>;
   }
-  if (isOnlyImages(attachments)) {
+  if (isOnlyImages(files)) {
     console.log('only images attachments');
     return (
       <>
         <div
-          className={`row no-gutters row-cols-${
+          className={`row no-gutters mt-2 row-cols-${
             attachments.length > 4 ? 4 : attachments.length
           }`}
           style={{
@@ -41,9 +44,8 @@ export default function MessageAttachments({
         >
           {attachments.map((attachment, index) => (
             <div className="col">
-              <img
-                src={attachment.src}
-                className="w-100"
+              <MediaCard
+                file={attachment.file}
                 onClick={() => setCurrentModal(index)}
               />
             </div>
@@ -51,7 +53,7 @@ export default function MessageAttachments({
         </div>
         <ModalMediaViewer
           currentIndex={currentModal}
-          files={attachments}
+          files={files}
           onClose={() => setCurrentModal(null)}
         />
       </>
@@ -65,44 +67,53 @@ export default function MessageAttachments({
           width: scrollable.current.offsetWidth * 0.45,
         }}
       >
-        {attachments.map(({ extension, filename, size }, index) => (
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              setCurrentModal(index);
-            }}
-            className="card p-2 mt-2"
-          >
-            <div className="d-flex align-items-center">
-              <div className="flex-shrink-0">
-                <Icon
-                  {...getFileTypeIconProps({ extension, size: 48 })}
-                  // style={{
-                  //   display: 'flex',
-                  //   marginRight: '.5rem',
-                  //   alignItems: 'center',
-                  //   justifyContent: 'center',
-                  //   flexShrink: 0,
-                  // }}
-                />
-              </div>
+        {attachments.map(
+          (
+            {
+              file: {
+                metadata: { extension, filename, size },
+              },
+            },
+            index,
+          ) => (
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setCurrentModal(index);
+              }}
+              className="card p-2 mt-2"
+            >
+              <div className="d-flex align-items-center">
+                <div className="flex-shrink-0 d-flex">
+                  <Icon
+                    {...getFileTypeIconProps({ extension, size: 40 })}
+                    // style={{
+                    //   display: 'flex',
+                    //   marginRight: '.5rem',
+                    //   alignItems: 'center',
+                    //   justifyContent: 'center',
+                    //   flexShrink: 0,
+                    // }}
+                  />
+                </div>
 
-              <div style={{ minWidth: 0 }} className="ml-2">
-                <p className="text-truncate mb-0">{filename}</p>
-                <p className="text-truncate text-muted mb-0">
-                  {size ? `${formatBytes(size, 2)} - ` : ''}.{extension}
-                </p>
+                <div style={{ minWidth: 0 }} className="ml-2">
+                  <p className="text-truncate mb-0">{filename}</p>
+                  <p className="text-truncate text-muted mb-0">
+                    {size ? `${formatBytes(size, 2)} - ` : ''}.{extension}
+                  </p>
+                </div>
               </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          ),
+        )}
       </div>
       <ModalMediaViewer
         currentIndex={currentModal}
-        files={attachments}
+        files={files}
         onClose={() => setCurrentModal(null)}
       />
     </>
   );
-}
+});

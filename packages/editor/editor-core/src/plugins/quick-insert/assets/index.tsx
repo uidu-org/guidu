@@ -1,213 +1,38 @@
+import loadable from '@loadable/component';
 import React from 'react';
-import Loadable from 'react-loadable';
 import { HeadingLevels } from '../../block-type/types';
 import { IconProps } from '../types';
 
-export const IconAction = Loadable({
-  loader: () =>
-    import('./action').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconCode = Loadable({
-  loader: () =>
-    import('./code').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconDate = Loadable({
-  loader: () =>
-    import('./date').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconDecision = Loadable({
-  loader: () =>
-    import('./decision').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconDivider = Loadable({
-  loader: () =>
-    import('./divider').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconEmoji = Loadable({
-  loader: () =>
-    import('./emoji').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconImages = Loadable({
-  loader: () =>
-    import('./images').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconLayout = Loadable({
-  loader: () =>
-    import('./layout').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconLink = Loadable({
-  loader: () =>
-    import('./link').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconListNumber = Loadable({
-  loader: () =>
-    import('./list-number').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconList = Loadable({
-  loader: () =>
-    import('./list').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconMention = Loadable({
-  loader: () =>
-    import('./mention').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconPanelError = Loadable({
-  loader: () =>
-    import('./panel-error').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconPanelNote = Loadable({
-  loader: () =>
-    import('./panel-note').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconPanelSuccess = Loadable({
-  loader: () =>
-    import('./panel-success').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconPanelWarning = Loadable({
-  loader: () =>
-    import('./panel-warning').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconPanel = Loadable({
-  loader: () =>
-    import('./panel').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconQuote = Loadable({
-  loader: () =>
-    import('./quote').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconStatus = Loadable({
-  loader: () =>
-    import('./status').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconTable = Loadable({
-  loader: () =>
-    import('./table').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
-
-export const IconFallback = Loadable({
-  loader: () =>
-    import('./fallback').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
+export const IconAction = loadable(() => import('./action'));
+export const IconCode = loadable(() => import('./code'));
+export const IconDate = loadable(() => import('./date'));
+export const IconDecision = loadable(() => import('./decision'));
+export const IconDivider = loadable(() => import('./divider'));
+export const IconEmoji = loadable(() => import('./emoji'));
+export const IconImages = loadable(() => import('./images'));
+export const IconLayout = loadable(() => import('./layout'));
+export const IconLink = loadable(() => import('./link'));
+export const IconListNumber = loadable(() => import('./list-number'));
+export const IconList = loadable(() => import('./list'));
+export const IconMention = loadable(() => import('./mention'));
+export const IconPanelError = loadable(() => import('./panel-error'));
+export const IconPanelNote = loadable(() => import('./panel-note'));
+export const IconPanelSuccess = loadable(() => import('./panel-success'));
+export const IconPanelWarning = loadable(() => import('./panel-warning'));
+export const IconPanel = loadable(() => import('./panel'));
+export const IconQuote = loadable(() => import('./quote'));
+export const IconStatus = loadable(() => import('./status'));
+export const IconTable = loadable(() => import('./table'));
+export const IconFallback = loadable(() => import('./fallback'));
 
 type HeadingProps = IconProps & {
   level: HeadingLevels;
 };
 
-function importHeading(level: HeadingLevels) {
-  switch (level) {
-    case 1:
-      return import(`./heading1`);
-    case 2:
-      return import(`./heading2`);
-    case 3:
-      return import(`./heading3`);
-    case 4:
-      return import(`./heading4`);
-    case 5:
-      return import(`./heading5`);
-    case 6:
-    default:
-      return import(`./heading6`);
-  }
-}
+const Icon = loadable((props) => import(`/heading${props.level}`));
 
 export const IconHeading = ({ level, ...props }: HeadingProps) => {
-  const Icon = Loadable({
-    loader: () =>
-      importHeading(level).then(module => module.default) as Promise<
-        React.ComponentType<IconProps>
-      >,
-    loading: () => null,
-  });
-  return <Icon {...props} />;
+  return <Icon {...props} level={level} />;
 };
 
-export const IconFeedback = Loadable({
-  loader: () =>
-    import('./feedback').then(module => module.default) as Promise<
-      React.ComponentType<IconProps>
-    >,
-  loading: () => null,
-});
+export const IconFeedback = loadable(() => import('./feedback'));

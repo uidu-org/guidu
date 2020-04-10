@@ -8,27 +8,31 @@ import Video from './Video';
 
 initializeFileTypeIcons();
 
-export default function MediaCard({ file, ...rest }: MediaCardProps) {
+export default function MediaCard(props: MediaCardProps) {
   let content;
+  const {
+    file,
+    file: { type, id },
+  } = props;
 
-  if (!file) {
+  if (!id) {
     content = 'File not found';
   } else {
-    switch (file.kind) {
+    switch (type) {
       case 'image':
-        content = <Image {...file} />;
+        content = <Image {...props} {...file} />;
         break;
       case 'video':
-        content = <Video {...file} />;
+        content = <Video {...props} {...file} />;
         break;
       default:
-        content = <File {...file} />;
+        content = <File {...props} {...file} />;
         break;
     }
   }
 
   return (
-    <MediaCardViewer file={file} {...rest}>
+    <MediaCardViewer {...props} file={file}>
       {content}
     </MediaCardViewer>
   );

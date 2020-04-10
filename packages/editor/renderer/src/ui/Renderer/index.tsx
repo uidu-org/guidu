@@ -96,7 +96,7 @@ export class Renderer extends PureComponent<Props, {}> {
     });
 
     this.rafID = requestAnimationFrame(() => {
-      stopMeasure('Renderer Render Time', duration => {
+      stopMeasure('Renderer Render Time', (duration) => {
         this.fireAnalyticsEvent({
           action: ACTION.RENDERED,
           actionSubject: ACTION_SUBJECT.RENDERER,
@@ -254,7 +254,7 @@ const RendererWithAnalytics = (props: Props) => (
     data={{ appearance: getAnalyticsAppearance(props.appearance) }}
   >
     <WithCreateAnalyticsEvent
-      render={createAnalyticsEvent => (
+      render={(createAnalyticsEvent) => (
         <Renderer {...props} createAnalyticsEvent={createAnalyticsEvent} />
       )}
     />

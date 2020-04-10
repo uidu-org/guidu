@@ -12,7 +12,6 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "@loadable/component": "^5.10.1",
     "@uidu/downshift": "^0.1.4",
     "@uidu/field-color-picker": "^0.2.2",
     "@uidu/field-date": "^0.2.2",

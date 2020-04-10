@@ -2,8 +2,10 @@ import React from 'react';
 import MediaCardFooter from '../MediaCardFooter';
 import { StyledPoster } from '../Video/styled';
 
-export default ({ src, ...rest }) => (
-  <StyledPoster poster={src} role="img">
-    <MediaCardFooter {...rest} />
-  </StyledPoster>
-);
+export default function File({ url = null, ...rest }) {
+  return (
+    <StyledPoster poster={url} role="img">
+      <MediaCardFooter {...rest} />
+    </StyledPoster>
+  );
+}

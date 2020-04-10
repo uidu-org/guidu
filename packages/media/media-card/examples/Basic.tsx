@@ -6,17 +6,17 @@ export default class Basic extends PureComponent {
   render() {
     return (
       <div className="card-columns">
-        <div style={{ width: '200px' }}>
-          <MediaCard file={fakeImage()} />
+        <div style={{ width: 320 }}>
+          <MediaCard file={fakeImage().file} />
         </div>
-        <div style={{ width: '200px' }}>
-          <MediaCard file={fakeVideo()} />
+        <div style={{ width: 320 }}>
+          <MediaCard file={fakeVideo().file} />
         </div>
-        <div style={{ width: '200px' }}>
-          <MediaCard file={fakeFile()} />
+        <div style={{ width: 320 }}>
+          <MediaCard file={fakeFile().file} />
         </div>
-        <div style={{ width: '200px' }}>
-          <MediaCard file={fakeLink()} />
+        <div style={{ width: 320 }}>
+          <MediaCard file={fakeLink().file} />
         </div>
       </div>
     );

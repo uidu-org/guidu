@@ -1,3 +1,4 @@
+import { FileIdentifier } from '@uidu/media-core';
 import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 import { N30 } from '../../utils/colors';
 
@@ -18,7 +19,7 @@ export interface MediaDefinition {
   /**
    * @minItems 1
    */
-  attrs: MediaAttributes | ExternalMediaAttributes;
+  attrs: MediaADFAttrs;
 }
 
 export interface MediaBaseAttributes {
@@ -26,12 +27,14 @@ export interface MediaBaseAttributes {
    * @minLength 1
    */
   id: string;
+  file: FileIdentifier;
   height?: number;
   width?: number;
   /**
    * @minLength 1
    */
   occurrenceKey?: string;
+  alt?: string;
   // For both CQ and JIRA
   __fileName?: string | null;
   // For CQ
@@ -41,6 +44,9 @@ export interface MediaBaseAttributes {
   __displayType?: DisplayType | null;
   // For copy & paste
   __contextId?: string;
+
+  // is set to true when new external media is inserted, false for external media in existing documents
+  __external?: boolean;
 }
 
 export interface MediaAttributes extends MediaBaseAttributes {
@@ -50,18 +56,20 @@ export interface MediaAttributes extends MediaBaseAttributes {
 export interface ExternalMediaAttributes {
   type: 'external';
   url: string;
+  alt?: string;
   width?: number;
   height?: number;
+  __external?: boolean;
 }
 
 export type MediaADFAttrs = MediaAttributes | ExternalMediaAttributes;
 
-export const defaultAttrs: DefaultAttributes<
-  MediaAttributes | ExternalMediaAttributes
-> = {
+export const defaultAttrs: DefaultAttributes<MediaADFAttrs> = {
   id: { default: '' },
   type: { default: 'file' },
+  file: { default: { id: '', type: 'file', metadata: {} } },
   occurrenceKey: { default: null },
+  alt: { default: null },
   width: { default: null },
   height: { default: null },
   url: { default: null },
@@ -70,39 +78,48 @@ export const defaultAttrs: DefaultAttributes<
   __fileMimeType: { default: null },
   __displayType: { default: null },
   __contextId: { default: null },
+  __external: { default: false },
 };
 
-export const media: NodeSpec = {
+interface MutableMediaAttributes extends MediaAttributes {
+  [key: string]: string | number | undefined | null | boolean | unknown;
+}
+
+export const createMediaSpec = (
+  attributes: Partial<NodeSpec['attrs']>,
+): NodeSpec => ({
   selectable: true,
-  attrs: defaultAttrs as any,
+  attrs: attributes as NodeSpec['attrs'],
   parseDOM: [
     {
       tag: 'div[data-node-type="media"]',
       getAttrs: (dom) => {
-        const attrs = {} as Record<string, any>;
+        const attrs = {} as MutableMediaAttributes;
 
-        (Object.keys(defaultAttrs) as Array<keyof MediaAttributes>).forEach(
-          (k) => {
+        if (attributes) {
+          Object.keys(attributes).forEach((k) => {
             const key = camelCaseToKebabCase(k).replace(/^__/, '');
             const value =
               (dom as HTMLElement).getAttribute(`data-${key}`) || '';
             if (value) {
               attrs[k] = value;
             }
-          },
-        );
+          });
+        }
 
         // Need to do validation & type conversion manually
         if (attrs.__fileSize) {
           attrs.__fileSize = +attrs.__fileSize;
         }
 
-        if (typeof attrs.width !== 'undefined' && !isNaN(attrs.width)) {
-          attrs.width = Number(attrs.width);
+        const width = Number(attrs.width);
+        if (typeof width !== 'undefined' && !isNaN(width)) {
+          attrs.width = width;
         }
 
-        if (typeof attrs.height !== 'undefined' && !isNaN(attrs.height)) {
-          attrs.height = Number(attrs.height);
+        const height = Number(attrs.height);
+        if (typeof height !== 'undefined' && !isNaN(height)) {
+          attrs.height = height;
         }
 
         return attrs as MediaAttributes;
@@ -114,11 +131,12 @@ export const media: NodeSpec = {
       ignore: true,
     },
     {
-      tag: 'img',
+      tag: 'img:not(.inline-card-icon)',
       getAttrs: (dom) => {
         return {
           type: 'external',
           url: (dom as HTMLElement).getAttribute('src') || '',
+          alt: (dom as HTMLElement).getAttribute('alt') || '',
         } as ExternalMediaAttributes;
       },
     },
@@ -132,6 +150,7 @@ export const media: NodeSpec = {
       'data-width': node.attrs.width,
       'data-height': node.attrs.height,
       'data-url': node.attrs.url,
+      'data-alt': node.attrs.alt,
       // toDOM is used for static rendering as well as editor rendering. This comes into play for
       // emails, copy/paste, etc, so the title and styling here *is* useful (despite a React-based
       // node view being used for editing).
@@ -149,7 +168,9 @@ export const media: NodeSpec = {
 
     return ['div', attrs];
   },
-};
+});
+
+export const media: NodeSpec = createMediaSpec(defaultAttrs);
 
 export const camelCaseToKebabCase = (str: string) =>
   str.replace(/([^A-Z]+)([A-Z])/g, (_, x, y) => `${x}-${y.toLowerCase()}`);
@@ -172,8 +193,15 @@ export const copyPrivateAttributes = (
  * There's no concept of optional property in ProseMirror. It sets value as `null`
  * when there's no use of any property. We are filtering out all private & optional attrs here.
  */
-const optionalAttributes = ['occurrenceKey', 'width', 'height', 'url'];
-const externalOnlyAttributes = ['type', 'url', 'width', 'height'];
+const optionalAttributes = [
+  'occurrenceKey',
+  'width',
+  'height',
+  'url',
+  'alt',
+  'file',
+];
+const externalOnlyAttributes = ['type', 'url', 'width', 'height', 'alt'];
 
 export const toJSON = (node: PMNode) => ({
   attrs: Object.keys(node.attrs)

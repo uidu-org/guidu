@@ -13,7 +13,6 @@
   },
   "uidu:src": "index.ts",
   "dependencies": {
-    "@loadable/component": "^5.10.1",
     "@uidu/data-controls": "^0.3.12",
     "@uidu/field-number": "^0.2.4",
     "@uidu/table": "^0.1.101",

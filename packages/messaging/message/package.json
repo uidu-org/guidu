@@ -10,7 +10,6 @@
   "types": "index.d.ts",
   "dependencies": {
     "@fluentui/react": "^7.105.6",
-    "@loadable/component": "^5.10.1",
     "@uidu/avatar": "^0.3.2",
     "@uidu/drawer": "^0.2.16",
     "@uidu/dropdown-menu": "^0.1.24",

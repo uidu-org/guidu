@@ -10,7 +10,6 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.7.14",
     "@amcharts/amcharts4-geodata": "^4.1.9",
-    "@loadable/component": "^5.10.1",
     "@uidu/dashlet-controls": "^0.1.7",
     "@uidu/spinner": "^0.1.18",
     "@uidu/tooltip": "^0.1.27",

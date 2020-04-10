@@ -318,11 +318,13 @@ export const getValidNode = (
         let mediaId = '';
         let mediaType = '';
         let mediaUrl = '';
+        let mediaFile = {};
         if (attrs) {
-          const { id, type, url } = attrs;
+          const { id, type, url, file } = attrs;
           mediaId = id;
           mediaType = type;
           mediaUrl = url;
+          mediaFile = file;
         }
 
         if (mediaType === 'external' && !!mediaUrl) {
@@ -339,6 +341,7 @@ export const getValidNode = (
           const mediaAttrs: any = {
             type: mediaType,
             id: mediaId,
+            file: mediaFile,
           };
 
           if (attrs.width) {

@@ -5,9 +5,8 @@ import { Component } from 'react';
 
 export class MediaCardInternal extends Component<MediaCardProps> {
   render() {
-    const { file } = this.props;
-
-    return <UiduMediaCard file={file} />;
+    console.log(this.props);
+    return <UiduMediaCard {...this.props} />;
   }
 }
 

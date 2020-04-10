@@ -1,8 +1,8 @@
+import loadable from '@loadable/component';
 import { date } from '@uidu/adf-schema';
 import { todayTimestampInUTC } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import * as React from 'react';
-import Loadable from 'react-loadable';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
@@ -26,13 +26,11 @@ import createDatePlugin, {
   pluginKey as datePluginKey,
 } from './plugin';
 
-const DatePicker = Loadable({
-  loader: () =>
-    import(
-      /* webpackChunkName:"@atlaskit-internal-editor-datepicker" */ './ui/DatePicker'
-    ),
-  loading: () => null,
-});
+const DatePicker = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-editor-datepicker" */ './ui/DatePicker'
+  ),
+);
 
 export type DateType = {
   year: number;
@@ -51,7 +49,7 @@ const datePlugin = (): EditorPlugin => ({
     return [
       {
         name: 'date',
-        plugin: options => {
+        plugin: (options) => {
           DatePicker.preload();
           return createDatePlugin(options);
         },

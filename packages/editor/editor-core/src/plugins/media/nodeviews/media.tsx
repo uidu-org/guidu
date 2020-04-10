@@ -4,7 +4,6 @@ import {
   withImageLoader,
 } from '@uidu/editor-common';
 import Card from '@uidu/media-card';
-import { FileIdentifier } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -94,7 +93,7 @@ class MediaNode extends Component<MediaNodeProps> {
 
     console.log(this.props);
 
-    const { id, type, url } = node.attrs;
+    const { id, type, url, file } = node.attrs;
 
     if (
       type !== 'external' &&
@@ -104,21 +103,12 @@ class MediaNode extends Component<MediaNodeProps> {
       // return <CardLoading dimensions={cardDimensions} />;
     }
 
-    const identifier: FileIdentifier = {
-      src: url!,
-      filename: url,
-      kind: 'image',
-      createdAt: 'now',
-      id: 'foo',
-      extension: 'png',
-    };
-
     return (
       <Card
         // context={viewContext as any}
         // resizeMode="stretchy-fit"
         // dimensions={cardDimensions}
-        file={identifier as any}
+        file={file}
         // selectable={true}
         // selected={selected}
         // disableOverlay={true}

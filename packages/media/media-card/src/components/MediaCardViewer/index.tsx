@@ -2,19 +2,24 @@ import { Icon } from '@fluentui/react/lib/Icon';
 import Button, { ButtonGroup } from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
 import { getFileTypeIconProps } from '@uifabric/file-type-icons';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Download, ExternalLink, Play, Trash } from 'react-feather';
 import StyledMediaCardViewer, { Overlay, OverlayFilename } from './styled';
 
-export default class MediaCardViewer extends PureComponent<any> {
-  render() {
-    const { children, onRemove, onOpen, file, ...otherProps } = this.props;
+export default function MediaCardViewer({
+  children,
+  file,
+  onRemove = () => {},
+  onOpen = () => {},
+  onClick = () => {},
+  disableOverlay = true,
+}) {
+  const { downloadUrl, kind, filename, extension } = file;
 
-    const { downloadUrl, kind, filename, extension } = file;
-
-    return (
-      <StyledMediaCardViewer className="card">
-        {children}
+  return (
+    <StyledMediaCardViewer className="card" onClick={onClick}>
+      {children}
+      {!disableOverlay && (
         <Overlay kind={kind}>
           <OverlayFilename>
             <Icon
@@ -57,7 +62,7 @@ export default class MediaCardViewer extends PureComponent<any> {
             )}
           </ButtonGroup>
         </Overlay>
-      </StyledMediaCardViewer>
-    );
-  }
+      )}
+    </StyledMediaCardViewer>
+  );
 }

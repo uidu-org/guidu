@@ -54,9 +54,12 @@ export class InlineCardComponent extends React.PureComponent<SmartCardProps> {
         <span className="card">
           <MediaCard
             file={{
-              src: url,
-              kind: 'image',
-              size: 3000,
+              id: 'test',
+              type: 'image',
+              url,
+              metadata: {
+                size: 3000,
+              },
             }}
             // data={data}
             // appearance="inline"

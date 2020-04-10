@@ -1,6 +1,6 @@
-import * as React from 'react';
+import loadable from '@loadable/component';
 import { Fragment, Node } from 'prosemirror-model';
-
+import * as React from 'react';
 import Blockquote from './blockquote';
 import BodiedExtension, {
   Props as BodiedExtensionProps,
@@ -15,8 +15,8 @@ import Image from './image';
 import InlineExtension, {
   Props as InlineExtensionProps,
 } from './inlineExtension';
-import LayoutSection from './layoutSection';
 import LayoutColumn from './layoutColumn';
+import LayoutSection from './layoutSection';
 import ListItem from './listItem';
 import MediaSingle from './mediaSingle';
 import OrderedList from './orderedList';
@@ -24,89 +24,67 @@ import Panel from './panel';
 import Paragraph from './paragraph';
 import Placeholder from './placeholder';
 import Rule from './rule';
-import TaskList from './taskList';
 import Table from './table';
 import { TableCell, TableHeader } from './tableCell';
 import TableRow from './tableRow';
+import TaskList from './taskList';
 import UnknownBlock from './unknownBlock';
-import Loadable from 'react-loadable';
 
-const CodeBlock = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_CodeBlock" */
-    './codeBlock'),
-  loading: () => null,
-});
-
-const TaskItem = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_TaskItem" */
-    './taskItem'),
-  loading: () => null,
-});
-
-const DecisionItem = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_DecisionItem" */
-    './decisionItem'),
-  loading: () => null,
-});
-
-const Date = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_Date" */
-    './date'),
-  loading: () => null,
-});
-
-const Status = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_Status" */
-    './status'),
-  loading: () => null,
-});
-
-const Emoji = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_Emoji" */
-    './emoji'),
-  loading: () => null,
-});
-
-const InlineCard = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_InlineCard" */
-    './inlineCard'),
-  loading: () => null,
-});
-
-const BlockCard = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_BlockCard" */
-    './blockCard'),
-  loading: () => null,
-});
-
-const Media = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_Media" */
-    './media'),
-  loading: () => null,
-});
-
-const MediaGroup = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_MediaGroup" */
-    './mediaGroup'),
-  loading: () => null,
-});
-
-const Mention = Loadable({
-  loader: () =>
-    import(/* webpackChunkName:"@atlaskit-internal-renderer-node_Mention" */
-    './mention'),
-  loading: () => null,
-});
+const CodeBlock = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_CodeBlock" */ './codeBlock'
+  ),
+);
+const TaskItem = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_TaskItem" */ './taskItem'
+  ),
+);
+const DecisionItem = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_DecisionItem" */ './decisionItem'
+  ),
+);
+const Date = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_Date" */ './date'
+  ),
+);
+const Status = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_Status" */ './status'
+  ),
+);
+const Emoji = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_Emoji" */ './emoji'
+  ),
+);
+const InlineCard = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_InlineCard" */ './inlineCard'
+  ),
+);
+const BlockCard = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_BlockCard" */ './blockCard'
+  ),
+);
+const Media = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_Media" */ './media'
+  ),
+);
+const MediaGroup = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_MediaGroup" */ './mediaGroup'
+  ),
+);
+const Mention = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-renderer-node_Mention" */ './mention'
+  ),
+);
 
 export const nodeToReact: { [key: string]: React.ComponentType<any> } = {
   blockquote: Blockquote,
@@ -252,7 +230,7 @@ export const isEmojiDoc = (doc: Fragment): boolean => {
     return false;
   }
   const parentNodes: Node[] = [];
-  doc.forEach(child => parentNodes.push(child));
+  doc.forEach((child) => parentNodes.push(child));
   const node = parentNodes[0];
   return node.type.name === 'paragraph' && isEmojiBlock(node.content);
 };
@@ -263,7 +241,7 @@ const isEmojiBlock = (pnode: Fragment): boolean => {
   if (pnode.childCount > 7) {
     return false;
   }
-  pnode.forEach(child => content.push(child));
+  pnode.forEach((child) => content.push(child));
   let emojiCount = 0;
   for (let i = 0; i < content.length; ++i) {
     const node = content[i];

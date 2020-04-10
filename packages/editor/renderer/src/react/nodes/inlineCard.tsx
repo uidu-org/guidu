@@ -1,5 +1,4 @@
 import { EventHandlers, UnsupportedInline } from '@uidu/editor-common';
-import MediaCard from '@uidu/media-card';
 import * as React from 'react';
 import {
   withSmartCardStorage,
@@ -17,12 +16,13 @@ export interface InlineCardProps {
 
 const InlineCard: React.FunctionComponent<
   InlineCardProps & WithSmartCardStorageProps
-> = props => {
+> = (props) => {
+  console.log(props);
   const { url, data, eventHandlers, portal } = props;
   const handler = getEventHandler(eventHandlers, 'smartCard');
   const onClick = url && handler ? () => handler(url) : undefined;
 
-  const cardProps = { src: url, data, onClick, container: portal };
+  const cardProps = { url, metadata: data, onClick, container: portal };
   return (
     <span
       data-inline-card
@@ -33,7 +33,7 @@ const InlineCard: React.FunctionComponent<
         unsupportedComponent={UnsupportedInline}
         {...cardProps}
       >
-        <MediaCard file={cardProps} {...cardProps} />
+        <div>TODO: what is inline card?</div>
       </CardErrorBoundary>
     </span>
   );

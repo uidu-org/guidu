@@ -1,10 +1,8 @@
-import Loadable from 'react-loadable';
+import loadable from '@loadable/component';
 
-export const HelpDialogLoader = Loadable({
-  loader: () =>
-    import(
-      /* webpackChunkName:"@atlaskit-internal-editor-core-helpdialog" */
-      './index'
-    ),
-  loading: () => null,
-});
+export const HelpDialogLoader = loadable(() =>
+  import(
+    /* webpackChunkName:"@atlaskit-internal-editor-core-helpdialog" */
+    './index'
+  ),
+);

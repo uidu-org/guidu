@@ -354,6 +354,7 @@ export const story = {
     },
   ],
 };
+
 export const document = {
   type: 'doc',
   version: 1,
@@ -1132,7 +1133,17 @@ export const document = {
           attrs: {
             id: '2aa22582-ca0e-4bd4-b1bc-9369d10a0719',
             type: 'file',
-            collection: 'MediaServicesSample',
+            file: {
+              type: 'image',
+              id: '2aa22582-ca0e-4bd4-b1bc-9369d10a0719',
+              url:
+                'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png',
+              metadata: {
+                width: 5845,
+                height: 1243,
+                filename: 'Test immagine',
+              },
+            },
             width: 5845,
             height: 1243,
           },
@@ -1219,32 +1230,32 @@ System.out.println("There are " + count + " values >= 5");`,
       type: 'mediaSingle',
       attrs: {},
       content: [
-        // {
-        //   type: 'media',
-        //   attrs: {
-        //     type: 'file',
-        //     id: videoLargeFileId.id,
-        //     collection: 'MediaServicesSample',
-        //     height: 200,
-        //     width: 400,
-        //   },
-        // },
+        {
+          type: 'media',
+          attrs: {
+            type: 'file',
+            id: 'bar',
+            collection: 'MediaServicesSample',
+            height: 200,
+            width: 400,
+          },
+        },
       ],
     },
     {
       type: 'mediaSingle',
       attrs: {},
       content: [
-        // {
-        //   type: 'media',
-        //   attrs: {
-        //     type: 'file',
-        //     id: videoSquareFileId.id,
-        //     collection: 'MediaServicesSample',
-        //     height: 200,
-        //     width: 400,
-        //   },
-        // },
+        {
+          type: 'media',
+          attrs: {
+            type: 'file',
+            id: 'foo',
+            collection: 'MediaServicesSample',
+            height: 200,
+            width: 400,
+          },
+        },
       ],
     },
     {
@@ -2146,6 +2157,37 @@ map.put(3, 10);`,
             type: 'file',
             id: '5556346b-b081-482b-bc4a-4faca8ecd2de',
             collection: 'MediaServicesSample',
+          },
+        },
+      ],
+    },
+    {
+      type: 'heading',
+      attrs: { level: 1 },
+      content: [
+        {
+          type: 'text',
+          text: 'Media single with link',
+        },
+      ],
+    },
+    {
+      type: 'mediaSingle',
+      content: [
+        {
+          type: 'media',
+          attrs: {
+            type: 'file',
+            id: '5556346b-b081-482b-bc4a-4faca8ecd2de',
+            collection: 'MediaServicesSample',
+          },
+        },
+      ],
+      marks: [
+        {
+          type: 'link',
+          attrs: {
+            href: 'http://www.google.com',
           },
         },
       ],

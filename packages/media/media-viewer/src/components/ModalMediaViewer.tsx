@@ -12,21 +12,21 @@ export default function ModalMediaViewer({
     <ModalGateway>
       {Number.isInteger(currentIndex as any) ? (
         <Modal
-          isFullscreen
+          allowFullscreen
           closeOnBackdropClick
           onClose={onClose}
-          styles={{
-            blanket: (base: any) => ({
-              ...base,
-              // backgroundColor: colors.N90,
-              zIndex: 3000,
-            }),
-            positioner: (base: any) => ({
-              ...base,
-              display: 'block',
-              zIndex: 3000,
-            }),
-          }}
+          // styles={{
+          //   blanket: (base: any) => ({
+          //     ...base,
+          //     // backgroundColor: colors.N90,
+          //     zIndex: 3000,
+          //   }),
+          //   positioner: (base: any) => ({
+          //     ...base,
+          //     display: 'block',
+          //     zIndex: 3000,
+          //   }),
+          // }}
         >
           <MediaViewer
             files={files}

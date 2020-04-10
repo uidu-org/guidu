@@ -6,6 +6,7 @@ export default {
         props: {
           type: { type: 'enum', values: ['link', 'file'] },
           id: { type: 'string', minLength: 1 },
+          file: { id: { type: 'string' } },
           height: { type: 'number', optional: true },
           width: { type: 'number', optional: true },
           occurrenceKey: { type: 'string', minLength: 1, optional: true },

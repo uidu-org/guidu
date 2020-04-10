@@ -1,5 +1,5 @@
 import ShortcutIcon from '@atlaskit/icon/glyph/shortcut';
-import { MediaADFAttrs, MediaSingleLayout } from '@uidu/adf-schema';
+import { MediaAttributes, MediaSingleLayout } from '@uidu/adf-schema';
 import {
   akEditorFullPageMaxWidth,
   akEditorFullWidthLayoutWidth,
@@ -16,7 +16,7 @@ import Tooltip from '@uidu/tooltip';
 import { Mark } from 'prosemirror-model';
 import React, { Component, ReactElement, SyntheticEvent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -97,10 +97,10 @@ const ExtendedUIMediaSingle = styled(UIMediaSingle)`
 
   ${({ layout }) =>
     layout === 'full-width' || layout === 'wide'
-      ? `
-  margin-left: 50%;
-  transform: translateX(-50%);
-  `
+      ? css`
+          margin-left: 50%;
+          transform: translateX(-50%);
+        `
       : ``} transition: all 0.1s linear;
 `;
 
@@ -155,20 +155,24 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
     );
 
     let {
-      width = DEFAULT_WIDTH,
-      height = DEFAULT_HEIGHT,
+      // width = DEFAULT_WIDTH,
+      // height = DEFAULT_HEIGHT,
       type,
-    } = (child as React.ReactElement).props as MediaADFAttrs;
+      file,
+      file: {
+        metadata: { width = DEFAULT_WIDTH, height = DEFAULT_HEIGHT },
+      },
+    } = (child as React.ReactElement).props as MediaAttributes;
 
-    if (type === 'external') {
-      const { width: stateWidth, height: stateHeight } = this.state;
-      if (width === null) {
-        width = stateWidth || DEFAULT_WIDTH;
-      }
-      if (height === null) {
-        height = stateHeight || DEFAULT_HEIGHT;
-      }
-    }
+    // if (type === 'external') {
+    //   const { width: stateWidth, height: stateHeight } = this.state;
+    //   if (width === null) {
+    //     width = stateWidth || DEFAULT_WIDTH;
+    //   }
+    //   if (height === null) {
+    //     height = stateHeight || DEFAULT_HEIGHT;
+    //   }
+    // }
 
     if (width === null) {
       width = DEFAULT_WIDTH;
@@ -255,9 +259,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
                 {React.cloneElement(
                   child as React.ReactElement,
                   {
-                    file: {
-                      url: '',
-                    },
+                    file,
                     resizeMode: 'stretchy-fit',
                     cardDimensions,
                     originalDimensions,

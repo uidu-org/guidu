@@ -2,9 +2,6 @@ import { ShellMain } from '@uidu/shell';
 import React, { useState } from 'react';
 import Carousel from 'react-images';
 import { MediaViewerProps } from '../types';
-import Header from './Header';
-import { NavigationNext, NavigationPrev } from './Navigation';
-import View from './View';
 
 export default function MediaViewer({
   currentIndex = 0,
@@ -16,7 +13,7 @@ export default function MediaViewer({
 
   return (
     <ShellMain>
-      <Header currentView={currentView} onClose={onClose} />
+      {/* <Header currentView={currentView} onClose={onClose} /> */}
       <Carousel
         trackProps={{
           onViewChange,
@@ -24,31 +21,34 @@ export default function MediaViewer({
         currentIndex={currentIndex}
         components={{
           Footer: null,
-          NavigationPrev,
-          NavigationNext,
-          View,
+          // NavigationPrev,
+          // NavigationNext,
+          // View,
         }}
-        isFullscreen
-        frameProps={{ autoSize: 'height' }}
-        views={files}
-        styles={{
-          container: (base: any) => ({
-            ...base,
-            height: '100%',
-            flex: 1,
-          }),
-          view: (base: any) => ({
-            ...base,
-            backgroundColor: 'black',
-            alignItems: 'center',
-            display: 'flex',
-            height: '100vh',
-            justifyContent: 'center',
-            '& > img': {
-              maxHeight: '100%',
-            },
-          }),
-        }}
+        // frameProps={{ autoSize: 'height' }}
+        views={files.map(({ url }) => ({
+          source: url,
+        }))}
+        styles={
+          {
+            // container: (base: any) => ({
+            //   ...base,
+            //   height: '100%',
+            //   flex: 1,
+            // }),
+            // view: (base: any) => ({
+            //   ...base,
+            //   backgroundColor: 'black',
+            //   alignItems: 'center',
+            //   display: 'flex',
+            //   height: '100vh',
+            //   justifyContent: 'center',
+            //   '& > img': {
+            //     maxHeight: '100%',
+            //   },
+            // }),
+          }
+        }
       />
     </ShellMain>
   );

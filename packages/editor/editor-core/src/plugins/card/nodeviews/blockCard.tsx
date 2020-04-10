@@ -58,12 +58,13 @@ export class BlockCardComponent extends React.PureComponent<SmartCardProps> {
         <MediaCard
           file={{
             id: 'foo',
-            filename: 'devo toglierle',
-            src: url,
-            kind: 'smart',
-            createdAt: Date(),
-            extension: 'png',
-            size: 200,
+            type: 'smart',
+            metadata: {
+              filename: 'devo toglierle',
+              extension: 'png',
+              size: 200,
+            },
+            url,
           }}
           // data={data}
           // appearance="inline"

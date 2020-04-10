@@ -32,7 +32,7 @@ export default class MediaFilmstrip extends Component<
             >
               <MediaCard
                 onOpen={() => this.toggleModal(index)}
-                file={image}
+                {...image}
                 {...otherProps}
               />
             </div>

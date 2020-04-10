@@ -6,16 +6,21 @@ const fakeAttachments = () => {
   return Array.from(Array(faker.random.number({ min: 1, max: 4 })).keys()).map(
     (i) => ({
       id: faker.random.uuid(),
-      src: faker.random.image(),
-      kind: faker.random.arrayElement(['file', 'image']),
-      filename: faker.random.words(),
-      extension: faker.random.arrayElement([
-        'jpg',
-        'pdf',
-        'docx',
-        'xlsx',
-        'sql',
-      ]),
+      file: {
+        id: faker.random.uuid(),
+        url: faker.random.image(),
+        type: faker.random.arrayElement(['file', 'image']),
+        metadata: {
+          filename: faker.random.words(),
+          extension: faker.random.arrayElement([
+            'jpg',
+            'pdf',
+            'docx',
+            'xlsx',
+            'sql',
+          ]),
+        },
+      },
     }),
   );
 };

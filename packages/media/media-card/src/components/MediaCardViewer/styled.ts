@@ -32,7 +32,8 @@ export const OverlayFilename = styled.div`
 
 export default styled.div`
   width: 100%;
-  padding-top: 75%;
+  /* height: 100%; */
+  /* padding-top: 75%; */
 
   &:hover {
     ${Overlay} {

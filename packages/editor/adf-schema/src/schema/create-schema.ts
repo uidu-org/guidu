@@ -1,66 +1,64 @@
-import { NodeSpec, MarkSpec, Schema } from 'prosemirror-model';
-import { COLOR, FONT_STYLE, SEARCH_QUERY, LINK } from './groups';
-
+import { MarkSpec, NodeSpec, Schema } from 'prosemirror-model';
+import { COLOR, FONT_STYLE, LINK, SEARCH_QUERY } from './groups';
 import {
-  link,
-  em,
-  strong,
-  textColor,
-  strike,
-  subsup,
-  underline,
-  code,
-  typeAheadQuery,
-  confluenceInlineComment,
-  breakout,
   alignment,
-  indentation,
   annotation,
+  breakout,
+  code,
+  confluenceInlineComment,
+  em,
+  indentation,
+  link,
+  strike,
+  strong,
+  subsup,
+  textColor,
+  typeAheadQuery,
+  underline,
 } from './marks';
-
 import {
+  blockCard,
+  blockquote,
+  bodiedExtension,
+  bulletList,
+  codeBlock,
   confluenceJiraIssue,
   confluenceUnsupportedBlock,
   confluenceUnsupportedInline,
+  date,
+  decisionItem,
+  decisionList,
   doc,
-  paragraph,
-  text,
-  bulletList,
-  orderedList,
-  listItem,
+  emoji,
+  extension,
+  hardBreak,
   heading,
-  blockquote,
-  codeBlock,
-  panel,
-  rule,
   image,
-  mention,
+  inlineCard,
+  inlineExtension,
+  layoutColumn,
+  layoutSection,
+  listItem,
   media,
   mediaGroup,
   mediaSingle,
-  hardBreak,
-  emoji,
+  mention,
+  orderedList,
+  panel,
+  paragraph,
+  placeholder,
+  rule,
+  status,
   table,
   tableCell,
   tableHeader,
   tableRow,
-  decisionList,
-  decisionItem,
-  taskList,
   taskItem,
+  taskList,
+  text,
   unknownBlock,
-  extension,
-  inlineExtension,
-  bodiedExtension,
-  date,
-  placeholder,
-  layoutSection,
-  layoutColumn,
-  inlineCard,
-  blockCard,
   unsupportedBlock,
   unsupportedInline,
-  status,
 } from './nodes';
 
 function addItems(
@@ -124,7 +122,7 @@ const markGroupDeclarations = [
 ];
 
 const markGroupDeclarationsNames = markGroupDeclarations.map(
-  groupMark => groupMark.name,
+  (groupMark) => groupMark.name,
 );
 
 const nodesInOrder: SchemaBuiltInItem[] = [
@@ -220,19 +218,19 @@ export function sanitizeNodes(
   supportedMarks: { [key: string]: MarkSpec },
 ): { [key: string]: NodeSpec } {
   const nodeNames = Object.keys(nodes);
-  nodeNames.forEach(nodeKey => {
+  nodeNames.forEach((nodeKey) => {
     const nodeSpec = { ...nodes[nodeKey] };
     if (nodeSpec.marks && nodeSpec.marks !== '_') {
       nodeSpec.marks = nodeSpec.marks
         .split(' ')
-        .filter(mark => !!supportedMarks[mark])
+        .filter((mark) => !!supportedMarks[mark])
         .join(' ');
     }
     if (nodeSpec.content) {
       const content = nodeSpec.content.replace(/\W/g, ' ');
       const contentKeys = content.split(' ');
       const unsupportedContentKeys = contentKeys.filter(
-        contentKey => !isContentSupported(nodes, contentKey),
+        (contentKey) => !isContentSupported(nodes, contentKey),
       );
       nodeSpec.content = unsupportedContentKeys.reduce(
         (newContent, nodeName) => sanitizedContent(newContent, nodeName),

@@ -9,7 +9,6 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@loadable/component": "^5.10.1",
     "@uidu/board": "^0.2.14",
     "@uidu/calendar": "^0.1.23",
     "@uidu/data-controls": "^0.3.13",

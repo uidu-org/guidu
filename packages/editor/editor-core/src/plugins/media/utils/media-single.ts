@@ -124,12 +124,14 @@ export const createMediaSingleNode = (schema: Schema) => (
   const mediaNode = media.create({
     id,
     type: 'file',
-    width: width && Math.round(width / scaleFactor),
-    height: height && Math.round(height / scaleFactor),
-    url,
+    file: {
+      id,
+      type: 'image',
+      width: width && Math.round(width / scaleFactor),
+      height: height && Math.round(height / scaleFactor),
+      url,
+    },
   });
-
-  console.log('media node created', mediaNode);
 
   copyOptionalAttrsFromMediaState(mediaState, mediaNode);
   return mediaSingle.createChecked({}, mediaNode);

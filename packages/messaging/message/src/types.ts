@@ -17,6 +17,11 @@ export type Messager = {
   avatar: string;
 };
 
+export type Attachment = {
+  id: string;
+  file: FileIdentifier;
+};
+
 export type Message = {
   id?: string | number;
   body?: string;
@@ -24,7 +29,7 @@ export type Message = {
   replyTo?: Message;
   messager?: Messager;
   createdAt?: Date;
-  attachments?: Array<FileIdentifier>;
+  attachments?: Array<Attachment>;
   itemable?: any;
   mentionables?: Array<MentionProps>;
   children?: (props: any) => void;
@@ -50,6 +55,6 @@ export type MessageGroupProps = {
 
 export type MessageAttachmentsProps = {
   scrollable: React.RefObject<HTMLDivElement>;
-  attachments: Array<FileIdentifier>;
+  attachments: Array<Attachment>;
   className?: string;
 };

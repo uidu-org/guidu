@@ -12,5 +12,5 @@ export const isOnlyEmojis = (message: string) => {
 };
 
 export const isOnlyImages = (attachments: FileIdentifier[]) => {
-  return attachments.every((attachment) => attachment.kind === 'image');
+  return attachments.every((attachment) => attachment.type === 'image');
 };
