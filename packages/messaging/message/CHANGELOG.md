@@ -1,5 +1,16 @@
 # @uidu/message
 
+## 0.1.41
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/media-card@0.1.28
+  - @uidu/media-core@0.1.19
+  - @uidu/media-viewer@0.1.37
+  - @uidu/message-form@0.1.29
+
 ## 0.1.40
 
 ### Patch Changes

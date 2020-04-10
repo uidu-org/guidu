@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.1.29
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/media-filmstrip@0.1.30
+  - @uidu/message@0.1.41
+
 ## 0.1.28
 
 ### Patch Changes

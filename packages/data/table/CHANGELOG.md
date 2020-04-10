@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.104
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/data-fields@0.1.31
+
 ## 0.1.103
 
 ### Patch Changes

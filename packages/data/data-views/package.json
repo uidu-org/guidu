@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "description": "Data view declarations and custom forms",
   "module": "index.js",
   "types": "index.d.ts",
@@ -15,7 +15,7 @@
   "dependencies": {
     "@uidu/data-controls": "^0.3.12",
     "@uidu/field-number": "^0.2.4",
-    "@uidu/table": "^0.1.101",
+    "@uidu/table": "^0.1.104",
     "react-feather": "^2.0.3"
   }
 }

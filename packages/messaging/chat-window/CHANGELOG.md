@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.1.40
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/message-form@0.1.29
+  - @uidu/message@0.1.41
+
 ## 0.1.39
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 0.1.20
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/adf-schema@0.1.9
+
 ## 0.1.19
 
 ### Patch Changes
