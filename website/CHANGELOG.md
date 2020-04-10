@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.91
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/table@0.1.104
+
 ## 0.1.90
 
 ### Patch Changes

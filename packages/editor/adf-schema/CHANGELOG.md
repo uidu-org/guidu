@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.1.9
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+
 ## 0.1.8
 
 ### Patch Changes

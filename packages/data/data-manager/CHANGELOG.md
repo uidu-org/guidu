@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.2.14
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/data-views@0.2.12
+  - @uidu/table@0.1.104
+
 ## 0.2.13
 
 ### Patch Changes

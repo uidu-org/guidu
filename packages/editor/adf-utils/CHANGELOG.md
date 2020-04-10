@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.4.8
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/adf-schema@0.1.9
+
 ## 0.4.7
 
 ### Patch Changes

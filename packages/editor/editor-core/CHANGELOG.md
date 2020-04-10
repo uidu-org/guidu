@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 0.2.3
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/adf-schema@0.1.9
+  - @uidu/adf-utils@0.4.8
+  - @uidu/editor-common@0.1.20
+  - @uidu/task-decision@0.1.14
+  - @uidu/media-card@0.1.28
+  - @uidu/media-core@0.1.19
+  - @uidu/media-filmstrip@0.1.30
+
 ## 0.2.2
 
 ### Patch Changes

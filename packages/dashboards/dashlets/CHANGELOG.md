@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.2.10
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+
 ## 0.2.9
 
 ### Patch Changes

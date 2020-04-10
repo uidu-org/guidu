@@ -1,5 +1,14 @@
 # @uidu/task-decision
 
+## 0.1.14
+
+### Patch Changes
+
+- b1761c8: Modified how medias are handled in many components
+- Updated dependencies [b1761c8]
+  - @uidu/editor-common@0.1.20
+  - @uidu/renderer@0.1.23
+
 ## 0.1.13
 
 ### Patch Changes

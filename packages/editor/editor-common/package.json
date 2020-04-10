@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "0.1.19",
+  "version": "0.1.20",
   "description": "A package that contains common classes and components for editor and renderer",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "Apache-2.0",
@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/adf-schema": "^0.1.8",
+    "@uidu/adf-schema": "^0.1.9",
     "@uidu/analytics": "^0.1.21",
     "@uidu/analytics-namespaced-context": "^0.1.7",
     "@uidu/emoji": "^0.1.12",
