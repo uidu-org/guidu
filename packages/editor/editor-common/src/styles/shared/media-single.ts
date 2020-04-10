@@ -1,5 +1,3 @@
-// @ts-ignore: unused variable
-
 import { css } from 'styled-components';
 
 const mediaSingleClassName = 'media-single';
@@ -20,6 +18,11 @@ const mediaSingleSharedStyle = css`
   table .${mediaSingleClassName} {
     margin-top: 12px;
     margin-bottom: 12px;
+    clear: both;
+  }
+
+  .${mediaSingleClassName}.image-wrap-right
+    + .${mediaSingleClassName}.image-wrap-left {
     clear: both;
   }
 

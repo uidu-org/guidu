@@ -1,6 +1,5 @@
 import {
   tableCellContentDomSelector,
-  TableLayout,
   tablePrefixSelector,
 } from '@uidu/adf-schema';
 import { colors, fontSize, themed } from '@uidu/theme';
@@ -15,9 +14,8 @@ import {
   akEditorTableToolbarDark,
   akEditorWideLayoutWidth,
 } from '../consts';
-import { PanelSharedCssClassName } from './panel';
 
-export const tableMarginTop = 0;
+export const tableMarginTop = 24;
 export const tableMarginBottom = 16;
 export const tableMarginSides = 8;
 export const tableCellMinWidth = 48;
@@ -43,8 +41,6 @@ const tableSharedStyle = css`
     /**
      * Fix block top alignment inside table cells.
      */
-    .code-block,
-    .${PanelSharedCssClassName.PANEL_CONTAINER},
     .taskItemView-content-wrap > div,
     .decisionItemView-content-wrap > div {
       margin-top: 0;
@@ -57,7 +53,7 @@ const tableSharedStyle = css`
   .${TableSharedCssClassName.TABLE_CONTAINER} > table,
   .${TableSharedCssClassName.TABLE_NODE_WRAPPER} > table {
     border-collapse: collapse;
-    margin: ${tableMarginTop}px ${tableMarginSides}px ${tableMarginBottom};
+    margin: ${tableMarginTop}px ${tableMarginSides}px 0 0;
     border: ${tableCellBorderWidth}px solid ${themed({
   light: akEditorTableBorder,
   dark: akEditorTableBorderDark,
@@ -73,7 +69,6 @@ const tableSharedStyle = css`
     & {
       * {
         box-sizing: border-box;
-        margin-bottom: 0;
       }
 
       tbody {
@@ -96,6 +91,18 @@ const tableSharedStyle = css`
         padding: ${tableCellPadding}px;
         /* https://stackoverflow.com/questions/7517127/borders-not-shown-in-firefox-with-border-collapse-on-table-position-relative-o */
         background-clip: padding-box;
+
+        > *:first-child {
+          margin-top: 0;
+        }
+
+        > .ProseMirror-gapcursor.-right:first-child + * {
+          margin-top: 0;
+        }
+
+        > .ProseMirror-gapcursor:first-child + span + * {
+          margin-top: 0;
+        }
 
         th p:not(:first-of-type),
         td p:not(:first-of-type) {

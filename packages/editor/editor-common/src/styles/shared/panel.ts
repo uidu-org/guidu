@@ -7,7 +7,7 @@ import {
   akEditorDeleteIconColor,
   akEditorSelectedBorderSize,
   akEditorTableCellMinWidth,
-  relativeSize,
+  blockNodesVerticalMargin,
 } from '../consts';
 
 const lightPanelColor = {
@@ -94,7 +94,7 @@ const mainDynamicStyles = (panelType: PanelType) => (props: any) => {
 export const panelSharedStyles = css`
   .${PanelSharedCssClassName.PANEL_CONTAINER} {
     border-radius: ${borderRadius()}px;
-    margin: ${relativeSize(1.142)}px 0;
+    margin: ${blockNodesVerticalMargin} 0 0;
     padding: ${gridSize()}px;
     min-width: ${akEditorTableCellMinWidth}px;
     display: flex;

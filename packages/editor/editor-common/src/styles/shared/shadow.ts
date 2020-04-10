@@ -1,7 +1,7 @@
 import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
-import { akEditorSmallZIndex } from '../../styles';
 import { shadowClassNames } from '../../ui/OverflowShadow';
+import { akEditorSmallZIndex } from '../consts';
 
 const shadowWidth = 8;
 
