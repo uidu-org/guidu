@@ -1,4 +1,4 @@
-import { MarkSpec, DOMOutputSpec } from 'prosemirror-model';
+import { DOMOutputSpec, MarkSpec } from 'prosemirror-model';
 import { FONT_STYLE } from '../groups';
 
 /**

@@ -1,14 +1,16 @@
 import { NodeSpec } from 'prosemirror-model';
-import { ParagraphDefinition as Paragraph } from './paragraph';
-import { OrderedListDefinition as OrderedList } from './ordered-list';
+// eslint-disable-next-line import/no-cycle
 import { BulletListDefinition as BulletList } from './bullet-list';
-import { MediaSingleDefinition as MediaSingle } from './media-single';
 import { CodeBlockDefinition as CodeBlock } from './code-block';
+import { MediaSingleDefinition as MediaSingle } from './media-single';
+// eslint-disable-next-line import/no-cycle
+import { OrderedListDefinition as OrderedList } from './ordered-list';
+import { ParagraphDefinition as Paragraph } from './paragraph';
 
 export interface ListItemArray
   extends Array<
-      Paragraph | OrderedList | BulletList | MediaSingle | CodeBlock
-    > {
+    Paragraph | OrderedList | BulletList | MediaSingle | CodeBlock
+  > {
   0: Paragraph | MediaSingle | CodeBlock;
 }
 
@@ -26,6 +28,7 @@ export interface ListItemDefinition {
 export const listItem: NodeSpec = {
   content:
     '(paragraph | mediaSingle | codeBlock) (paragraph | bulletList | orderedList | mediaSingle | codeBlock)*',
+  marks: 'link',
   defining: true,
   parseDOM: [{ tag: 'li' }],
   toDOM() {

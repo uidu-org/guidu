@@ -1,44 +1,44 @@
-export { em, EmDefinition } from './em';
-export { code, CodeDefinition } from './code';
-export { strike, StrikeDefinition } from './strike';
-export { strong, StrongDefinition } from './strong';
-export { underline, UnderlineDefinition } from './underline';
 export {
-  link,
-  LinkAttributes,
-  LinkDefinition,
-  toJSON as linkToJSON,
-} from './link';
-export { typeAheadQuery } from './type-ahead-query';
-export { subsup, SubSupDefinition, SubSupAttributes } from './subsup';
+  alignment,
+  AlignmentAttributes,
+  AlignmentMarkDefinition,
+  alignmentPositionMap,
+} from './alignment';
 export {
-  textColor,
-  colorPalette,
-  borderColorPalette,
-  TextColorDefinition,
-  TextColorAttributes,
-} from './text-color';
-export { confluenceInlineComment } from './confluence-inline-comment';
+  annotation,
+  AnnotationMarkAttributes,
+  AnnotationMarkDefinition,
+  AnnotationType,
+  INLINE_COMMENT,
+} from './annotation';
 export {
   breakout,
   BreakoutMarkAttrs,
   BreakoutMarkDefinition,
 } from './breakout';
-export {
-  alignment,
-  alignmentPositionMap,
-  AlignmentAttributes,
-  AlignmentMarkDefinition,
-} from './alignment';
+export { code, CodeDefinition } from './code';
+export { confluenceInlineComment } from './confluence-inline-comment';
+export { em, EmDefinition } from './em';
 export {
   indentation,
   IndentationMarkAttributes,
   IndentationMarkDefinition,
 } from './indentation';
 export {
-  annotation,
-  AnnotationMarkDefinition,
-  AnnotationMarkAttributes,
-  INLINE_COMMENT,
-  AnnotationType,
-} from './annotation';
+  link,
+  LinkAttributes,
+  LinkDefinition,
+  toJSON as linkToJSON,
+} from './link';
+export { strike, StrikeDefinition } from './strike';
+export { strong, StrongDefinition } from './strong';
+export { subsup, SubSupAttributes, SubSupDefinition } from './subsup';
+export {
+  colorPalette,
+  colorPaletteExperimental,
+  textColor,
+  TextColorAttributes,
+  TextColorDefinition,
+} from './text-color';
+export { typeAheadQuery } from './type-ahead-query';
+export { underline, UnderlineDefinition } from './underline';

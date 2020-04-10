@@ -1,7 +1,7 @@
-import { createSchema } from './create-schema';
 import { Schema } from 'prosemirror-model';
+import { createSchema, SchemaConfig } from './create-schema';
 
-export const defaultSchema: Schema = createSchema({
+export const defaultSchemaConfig: SchemaConfig = {
   nodes: [
     'doc',
     'paragraph',
@@ -22,6 +22,8 @@ export const defaultSchema: Schema = createSchema({
     'confluenceUnsupportedBlock',
     'confluenceUnsupportedInline',
     'confluenceJiraIssue',
+    'expand',
+    'nestedExpand',
     'extension',
     'inlineExtension',
     'bodiedExtension',
@@ -61,4 +63,10 @@ export const defaultSchema: Schema = createSchema({
     'indentation',
     'annotation',
   ],
-});
+};
+
+export const getSchemaBasedOnStage = (stage = 'final') => {
+  return createSchema(defaultSchemaConfig);
+};
+
+export const defaultSchema: Schema = getSchemaBasedOnStage();

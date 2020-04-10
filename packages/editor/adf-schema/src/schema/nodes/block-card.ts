@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 
 export interface UrlType {
   url: string;
@@ -37,7 +37,7 @@ export const blockCard: NodeSpec = {
       // bump priority higher than hyperlink
       priority: 100,
 
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         const anchor = dom as HTMLAnchorElement;
         const data = anchor.getAttribute('data-card-data');
 
@@ -51,7 +51,7 @@ export const blockCard: NodeSpec = {
     {
       tag: 'div[data-block-card]',
 
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         const anchor = dom as HTMLDivElement;
         const data = anchor.getAttribute('data-card-data');
 

@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 
 export const unsupportedBlock: NodeSpec = {
   inline: false,
@@ -11,7 +11,7 @@ export const unsupportedBlock: NodeSpec = {
   parseDOM: [
     {
       tag: '[data-node-type="unsupportedBlock"]',
-      getAttrs: dom => ({
+      getAttrs: (dom) => ({
         originalValue: JSON.parse(
           (dom as HTMLElement).getAttribute('data-original-value') || '{}',
         ),

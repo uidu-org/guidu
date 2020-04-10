@@ -15,10 +15,8 @@ export interface BreakoutMarkDefinition {
 }
 
 export const breakout: MarkSpec = {
-  // @ts-ignore
-  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/32611
   spanning: false,
-
+  inclusive: false,
   parseDOM: [
     {
       tag: 'div.fabric-editor-breakout-mark',

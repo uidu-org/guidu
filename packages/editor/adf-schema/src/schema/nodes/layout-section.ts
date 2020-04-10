@@ -1,6 +1,6 @@
 import { NodeSpec } from 'prosemirror-model';
-import { LayoutColumnDefinition } from './layout-column';
 import { BreakoutMarkDefinition } from '../marks';
+import { LayoutColumnDefinition } from './layout-column';
 
 /**
  * @name layoutSection_node
@@ -19,7 +19,6 @@ export type LayoutSectionDefinition = {
 export const layoutSection: NodeSpec = {
   content: 'layoutColumn{2,3}',
   isolating: true,
-  marks: 'breakout',
   parseDOM: [
     {
       context: 'layoutSection//|layoutColumn//',

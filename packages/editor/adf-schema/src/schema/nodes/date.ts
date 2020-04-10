@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 
 /**
  * @name date_node
@@ -23,7 +23,7 @@ export const date: NodeSpec = {
   parseDOM: [
     {
       tag: 'span[data-node-type="date"]',
-      getAttrs: dom => ({
+      getAttrs: (dom) => ({
         timestamp: (dom as HTMLElement).getAttribute('data-timestamp'),
       }),
     },

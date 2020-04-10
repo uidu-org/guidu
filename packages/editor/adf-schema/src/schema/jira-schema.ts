@@ -1,5 +1,5 @@
-import { createSchema } from './create-schema';
 import { Schema } from 'prosemirror-model';
+import { createSchema } from './create-schema';
 
 export interface JIRASchemaConfig {
   allowLists?: boolean;

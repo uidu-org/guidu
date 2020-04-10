@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 import { uuid } from '../../utils/uuid';
 
 /**
@@ -33,7 +33,7 @@ export const status: NodeSpec = {
   parseDOM: [
     {
       tag: 'span[data-node-type="status"]',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         return {
           text: dom.textContent!.replace(/\n/, '').trim(),

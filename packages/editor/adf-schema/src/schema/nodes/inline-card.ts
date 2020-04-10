@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 import { CardAttributes } from './block-card';
 
 export interface UrlType {
@@ -31,17 +31,21 @@ export const inlineCard: NodeSpec = {
   },
   parseDOM: [
     {
-      tag: 'a[data-inline-card]',
+      tag: 'a[data-inline-card], span[data-inline-card]',
 
       // bump priority higher than hyperlink
       priority: 100,
 
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         const anchor = dom as HTMLAnchorElement;
         const data = anchor.getAttribute('data-card-data');
 
+        /* Support attrs from Editor and Renderer */
         return {
-          url: anchor.getAttribute('href') || null,
+          url:
+            anchor.getAttribute('href') ||
+            anchor.getAttribute('data-card-url') ||
+            null,
           data: data ? JSON.parse(data) : null,
         };
       },
@@ -51,7 +55,7 @@ export const inlineCard: NodeSpec = {
     {
       tag: 'div[data-inline-card]',
 
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         const anchor = dom as HTMLDivElement;
         const data = anchor.getAttribute('data-card-data');
 

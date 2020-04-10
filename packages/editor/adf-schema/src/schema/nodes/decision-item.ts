@@ -1,6 +1,6 @@
 import { Node, NodeSpec } from 'prosemirror-model';
-import { Inline } from './doc';
 import { uuid } from '../../utils/uuid';
+import { Inline } from './types/inline-content';
 
 /**
  * @name decisionItem_node
@@ -33,7 +33,7 @@ export const decisionItem: NodeSpec = {
       // also used by list-item we need to make sure that we run this parser first.
       priority: 100,
 
-      getAttrs: dom => ({
+      getAttrs: (dom) => ({
         localId: uuid.generate(),
         state: (dom as HTMLElement).getAttribute('data-decision-state')!,
       }),

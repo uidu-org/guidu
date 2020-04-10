@@ -1,7 +1,7 @@
-import { TaskListDefinition, TaskItemDefinition } from '@uidu/adf-schema';
+import { TaskListContent, TaskListDefinition } from '@uidu/adf-schema';
 
 export const taskList = (attrs: TaskListDefinition['attrs']) => (
-  ...content: Array<TaskItemDefinition>
+  ...content: TaskListContent
 ): TaskListDefinition => ({
   type: 'taskList',
   attrs,

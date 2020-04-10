@@ -1,5 +1,5 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
-import { ExtensionContent } from './doc';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
+import { ExtensionContent } from './extension';
 export type ExtensionLayout = 'default' | 'wide' | 'full-width';
 /**
  * @name bodiedExtension_node
@@ -45,7 +45,7 @@ export const bodiedExtension: NodeSpec = {
     },
     {
       tag: '[data-node-type="bodied-extension"]',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         return {
           extensionType: dom.getAttribute('data-extension-type'),

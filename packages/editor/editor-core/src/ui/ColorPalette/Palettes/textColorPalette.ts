@@ -1,4 +1,4 @@
-import { borderColorPalette, colorPalette } from '@uidu/adf-schema';
+import { colorPalette } from '@uidu/adf-schema';
 import { defineMessages } from 'react-intl';
 import getColorMessage from './getColorMessage';
 import { PaletteColor } from './type';
@@ -39,8 +39,8 @@ const messages = defineMessages({
 const textColorPalette: Array<PaletteColor> = [];
 
 colorPalette.forEach((label, color) => {
-  const border =
-    borderColorPalette[color.toUpperCase() as keyof typeof borderColorPalette];
+  const border = null;
+  // borderColorPalette[color.toUpperCase() as keyof typeof borderColorPalette];
 
   const key = label.toLowerCase().replace(' ', '-');
   const message = getColorMessage(messages, key);

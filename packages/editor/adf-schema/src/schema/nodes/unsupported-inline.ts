@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 
 export const unsupportedInline: NodeSpec = {
   inline: true,
@@ -10,7 +10,7 @@ export const unsupportedInline: NodeSpec = {
   parseDOM: [
     {
       tag: '[data-node-type="unsupportedInline"]',
-      getAttrs: dom => ({
+      getAttrs: (dom) => ({
         originalValue: JSON.parse(
           (dom as HTMLElement).getAttribute('data-original-value') || '{}',
         ),

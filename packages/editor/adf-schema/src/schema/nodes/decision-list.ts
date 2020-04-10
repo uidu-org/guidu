@@ -1,6 +1,6 @@
 import { Node, NodeSpec } from 'prosemirror-model';
-import { DecisionItemDefinition as DecisionItemNode } from './decision-item';
 import { uuid } from '../../utils/uuid';
+import { DecisionItemDefinition as DecisionItemNode } from './decision-item';
 
 /**
  * @name decisionList_node

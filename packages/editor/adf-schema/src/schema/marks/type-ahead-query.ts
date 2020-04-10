@@ -1,6 +1,6 @@
 import { MarkSpec } from 'prosemirror-model';
-import { SEARCH_QUERY } from '../groups';
 import { B400 } from '../../utils/colors';
+import { SEARCH_QUERY } from '../groups';
 
 export const typeAheadQuery: MarkSpec = {
   inclusive: true,

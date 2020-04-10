@@ -1,4 +1,20 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
+import { BlockCardDefinition as BlockCard } from './block-card';
+import { BlockQuoteDefinition as Blockquote } from './blockquote';
+import { BulletListDefinition as BulletList } from './bullet-list';
+import { CodeBlockDefinition as CodeBlock } from './code-block';
+import { DecisionListDefinition as DecisionList } from './decision-list';
+import { HeadingDefinition as Heading } from './heading';
+import { MediaGroupDefinition as MediaGroup } from './media-group';
+import { MediaSingleDefinition as MediaSingle } from './media-single';
+import { OrderedListDefinition as OrderedList } from './ordered-list';
+import { PanelDefinition as Panel } from './panel';
+import { ParagraphDefinition as Paragraph } from './paragraph';
+import { RuleDefinition as Rule } from './rule';
+// eslint-disable-next-line import/no-cycle
+import { TableDefinition as Table } from './tableNodes';
+import { TaskListDefinition as TaskList } from './task-list';
+
 export type Layout = 'default' | 'wide' | 'full-width';
 
 /**
@@ -36,7 +52,7 @@ export const extension: NodeSpec = {
   parseDOM: [
     {
       tag: '[data-node-type="extension"]',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         return {
           extensionType: dom.getAttribute('data-extension-type'),
@@ -60,3 +76,26 @@ export const extension: NodeSpec = {
     return ['div', attrs];
   },
 };
+// exclude BodiedExtension
+/**
+ * @name extension_content
+ * @minItems 1
+ * @allowUnsupportedBlock true
+ */
+export type ExtensionContent = Array<
+  | Panel
+  | Paragraph
+  | Blockquote
+  | OrderedList
+  | BulletList
+  | Rule
+  | Heading
+  | CodeBlock
+  | MediaGroup
+  | MediaSingle
+  | DecisionList
+  | TaskList
+  | Table
+  | ExtensionDefinition
+  | BlockCard
+>;

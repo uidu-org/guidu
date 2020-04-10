@@ -1,5 +1,5 @@
 import { NodeSpec } from 'prosemirror-model';
-import { BlockContent } from './doc';
+import { BlockContent } from './types/block-content';
 
 /**
  * @name layoutColumn_node
@@ -23,7 +23,7 @@ export interface LayoutColumnDefinition {
 export const layoutColumn: NodeSpec = {
   content: 'block+',
   isolating: true,
-  marks: 'alignment',
+  marks: 'link alignment',
   attrs: {
     width: {
       default: undefined,
@@ -37,7 +37,7 @@ export const layoutColumn: NodeSpec = {
     },
     {
       tag: 'div[data-layout-column]',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         return {
           width: Number(dom.getAttribute('data-column-width')) || undefined,

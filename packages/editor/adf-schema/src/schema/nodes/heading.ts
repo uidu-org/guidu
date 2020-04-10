@@ -1,6 +1,7 @@
 import { NodeSpec } from 'prosemirror-model';
-import { Inline, MarksObject, NoMark } from './doc';
 import { AlignmentMarkDefinition, IndentationMarkDefinition } from '../marks';
+import { Inline } from './types/inline-content';
+import { MarksObject, NoMark } from './types/mark';
 
 /**
  * @name heading_node

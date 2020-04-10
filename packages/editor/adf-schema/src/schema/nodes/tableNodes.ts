@@ -1,32 +1,53 @@
 import { Node as PmNode } from 'prosemirror-model';
 import {
+  B100,
+  B50,
+  B75,
+  G200,
+  G50,
+  G75,
+  hexToRgba,
   isRgb,
-  rgbToHex,
   N0,
   N20,
   N60,
-  B50,
-  B75,
-  B100,
-  T50,
-  T75,
-  T100,
+  N800,
+  P100,
   P50,
   P75,
-  P100,
+  R100,
   R50,
   R75,
-  R100,
-  G50,
-  G75,
-  G200,
+  rgbToHex,
+  T100,
+  T50,
+  T75,
+  Y200,
   Y50,
   Y75,
-  Y200,
-  hexToRgba,
-  N800,
 } from '../../utils/colors';
-import { TableCellContent } from './doc';
+import { BlockCardDefinition as BlockCard } from './block-card';
+import { BlockQuoteDefinition as Blockquote } from './blockquote';
+import { BulletListDefinition as BulletList } from './bullet-list';
+import { CodeBlockDefinition as CodeBlock } from './code-block';
+import { DecisionListDefinition as DecisionList } from './decision-list';
+// eslint-disable-next-line import/no-cycle
+import { ExtensionDefinition as Extension } from './extension';
+import {
+  HeadingDefinition as Heading,
+  HeadingWithMarksDefinition as HeadingWithMarks,
+} from './heading';
+import { MediaGroupDefinition as MediaGroup } from './media-group';
+import { MediaSingleDefinition as MediaSingle } from './media-single';
+import { NestedExpandDefinition as NestedExpand } from './nested-expand';
+import { OrderedListDefinition as OrderedList } from './ordered-list';
+import { PanelDefinition as Panel } from './panel';
+import {
+  ParagraphDefinition as Paragraph,
+  ParagraphWithAlignmentDefinition as ParagraphWithMarks,
+} from './paragraph';
+import { RuleDefinition as Rule } from './rule';
+import { TaskListDefinition as TaskList } from './task-list';
 
 export const tablePrefixSelector = 'pm-table';
 
@@ -41,7 +62,7 @@ const getCellAttrs = (dom: HTMLElement, defaultValues: CellAttributes = {}) => {
   const widthAttr = dom.getAttribute('data-colwidth');
   const width =
     widthAttr && /^\d+(,\d+)*$/.test(widthAttr)
-      ? widthAttr.split(',').map(str => Number(str))
+      ? widthAttr.split(',').map((str) => Number(str))
       : null;
   const colspan = Number(dom.getAttribute('colspan') || 1);
   let { backgroundColor } = dom.style;
@@ -178,6 +199,31 @@ export interface TableRow {
 }
 
 /**
+ * @name table_cell_content
+ * @minItems 1
+ * @allowUnsupportedBlock true
+ */
+export type TableCellContent = Array<
+  | Panel
+  | Paragraph
+  | ParagraphWithMarks
+  | Blockquote
+  | OrderedList
+  | BulletList
+  | Rule
+  | Heading
+  | HeadingWithMarks
+  | CodeBlock
+  | MediaGroup
+  | MediaSingle
+  | DecisionList
+  | TaskList
+  | Extension
+  | BlockCard
+  | NestedExpand
+>;
+
+/**
  * @name table_cell_node
  */
 export interface TableCell {
@@ -237,7 +283,7 @@ export const table: any = {
 
 export const tableToJSON = (node: PmNode) => ({
   attrs: Object.keys(node.attrs)
-    .filter(key => !key.startsWith('__'))
+    .filter((key) => !key.startsWith('__'))
     .reduce<typeof node.attrs>((obj, key) => {
       obj[key] = node.attrs[key];
       return obj;
@@ -262,10 +308,10 @@ const cellAttrs = {
 
 export const tableCell = {
   content:
-    '(paragraph | panel | blockquote | orderedList | bulletList | rule | heading | codeBlock | mediaSingle |  mediaGroup | decisionList | taskList | blockCard | extension | unsupportedBlock)+',
+    '(paragraph | panel | blockquote | orderedList | bulletList | rule | heading | codeBlock | mediaSingle |  mediaGroup | decisionList | taskList | blockCard | extension | nestedExpand | unsupportedBlock)+',
   attrs: cellAttrs,
   tableRole: 'cell',
-  marks: 'alignment',
+  marks: 'link alignment',
   isolating: true,
   parseDOM: [
     // Ignore number cell copied from renderer
@@ -295,11 +341,11 @@ export const toJSONTableCell = (node: PmNode) => ({
 
 export const tableHeader = {
   content:
-    '(paragraph | panel | blockquote | orderedList | bulletList | rule | heading | codeBlock | mediaSingle |  mediaGroup | decisionList | taskList | blockCard | extension)+',
+    '(paragraph | panel | blockquote | orderedList | bulletList | rule | heading | codeBlock | mediaSingle |  mediaGroup | decisionList | taskList | blockCard | extension | nestedExpand)+',
   attrs: cellAttrs,
   tableRole: 'header_cell',
   isolating: true,
-  marks: 'alignment',
+  marks: 'link alignment',
   parseDOM: [
     {
       tag: 'th',

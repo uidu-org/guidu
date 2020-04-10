@@ -1,4 +1,4 @@
-import { NodeSpec, DOMOutputSpec } from 'prosemirror-model';
+import { DOMOutputSpec, NodeSpec } from 'prosemirror-model';
 
 /**
  * @name rule_node

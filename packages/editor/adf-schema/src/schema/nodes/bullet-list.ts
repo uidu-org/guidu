@@ -1,4 +1,5 @@
 import { NodeSpec } from 'prosemirror-model';
+// eslint-disable-next-line import/no-cycle
 import { ListItemDefinition as ListItemNode } from './list-item';
 
 /**

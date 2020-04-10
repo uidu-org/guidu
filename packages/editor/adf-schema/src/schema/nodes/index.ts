@@ -34,21 +34,10 @@ export {
   DecisionListDefinition,
   decisionListSelector,
 } from './decision-list';
-export {
-  BlockContent,
-  doc,
-  DocNode,
-  ExtensionContent,
-  Inline,
-  InlineAtomic,
-  InlineCode,
-  InlineFormattedText,
-  InlineLinkText,
-  MarksObject,
-  NoMark,
-} from './doc';
+export { doc, DocNode } from './doc';
 export { emoji, EmojiAttributes, EmojiDefinition } from './emoji';
-export { extension, ExtensionDefinition } from './extension';
+export { expand, ExpandDefinition, toJSON as expandToJSON } from './expand';
+export { extension, ExtensionContent, ExtensionDefinition } from './extension';
 export { hardBreak, HardBreakDefinition } from './hard-break';
 export {
   heading,
@@ -92,6 +81,11 @@ export {
   UserType as MentionUserType,
 } from './mention';
 export {
+  nestedExpand,
+  NestedExpandContent,
+  NestedExpandDefinition,
+} from './nested-expand';
+export {
   orderedList,
   OrderedListDefinition,
   orderedListSelector,
@@ -134,8 +128,22 @@ export {
   toJSONTableHeader,
 } from './tableNodes';
 export { taskItem, TaskItemDefinition } from './task-item';
-export { taskList, TaskListDefinition, taskListSelector } from './task-list';
+export {
+  taskList,
+  TaskListContent,
+  TaskListDefinition,
+  taskListSelector,
+} from './task-list';
 export { text, TextDefinition } from './text';
+export { BlockContent } from './types/block-content';
+export {
+  Inline,
+  InlineAtomic,
+  InlineCode,
+  InlineFormattedText,
+  InlineLinkText,
+} from './types/inline-content';
+export { MarksObject, NoMark } from './types/mark';
 export { default as unknownBlock } from './unknown-block';
 export { unsupportedBlock } from './unsupported-block';
 export { unsupportedInline } from './unsupported-inline';

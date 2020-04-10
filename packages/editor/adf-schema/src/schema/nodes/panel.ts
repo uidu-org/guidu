@@ -1,8 +1,8 @@
-import { NodeSpec, Node } from 'prosemirror-model';
-import { ParagraphDefinition as Paragraph } from './paragraph';
-import { OrderedListDefinition as OrderedList } from './ordered-list';
+import { Node, NodeSpec } from 'prosemirror-model';
 import { BulletListDefinition as BulletList } from './bullet-list';
 import { HeadingDefinition as Heading } from './heading';
+import { OrderedListDefinition as OrderedList } from './ordered-list';
+import { ParagraphDefinition as Paragraph } from './paragraph';
 
 export type PanelType =
   | 'info'
@@ -41,7 +41,7 @@ export const panel: NodeSpec = {
   parseDOM: [
     {
       tag: 'div[data-panel-type]',
-      getAttrs: dom => ({
+      getAttrs: (dom) => ({
         panelType: (dom as HTMLElement).getAttribute('data-panel-type')!,
       }),
     },

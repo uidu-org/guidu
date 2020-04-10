@@ -108,7 +108,7 @@ export function findMatchedLanguage(
     return undefined;
   }
 
-  const matches = supportedLanguages.filter(supportedLanguage => {
+  const matches = supportedLanguages.filter((supportedLanguage) => {
     return supportedLanguage.alias.indexOf(language.toLowerCase()) !== -1;
   });
 
@@ -126,7 +126,7 @@ export function filterSupportedLanguages(
     return DEFAULT_LANGUAGES;
   }
 
-  return DEFAULT_LANGUAGES.filter(language => {
+  return DEFAULT_LANGUAGES.filter((language) => {
     let i = language.alias.length;
     while (i--) {
       if (supportedLanguages.indexOf(language.alias[i]) > -1) {

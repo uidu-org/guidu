@@ -1,4 +1,4 @@
-import { NodeSpec, Node as PMNode } from 'prosemirror-model';
+import { Node as PMNode, NodeSpec } from 'prosemirror-model';
 
 /**
  * @name inlineExtension_node
@@ -32,7 +32,7 @@ export const inlineExtension: NodeSpec = {
   parseDOM: [
     {
       tag: 'span[data-extension-type]',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         return {
           extensionType: dom.getAttribute('data-extension-type'),

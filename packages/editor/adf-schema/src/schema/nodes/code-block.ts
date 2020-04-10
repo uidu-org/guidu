@@ -1,7 +1,7 @@
 import { Fragment, Node as PMNode, NodeSpec } from 'prosemirror-model';
 import { BreakoutMarkDefinition } from '../marks/breakout';
-import { MarksObject, NoMark } from './doc';
 import { TextDefinition as Text } from './text';
+import { MarksObject, NoMark } from './types/mark';
 
 /**
  * @name codeBlock_node
@@ -81,7 +81,7 @@ export const codeBlock: NodeSpec = {
     {
       tag: 'pre',
       preserveWhitespace: 'full',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         let dom = domNode as HTMLElement;
         const language =
           getLanguageFromBitbucketStyle(dom.parentElement!) ||
@@ -97,7 +97,7 @@ export const codeBlock: NodeSpec = {
     {
       tag: 'div[style]',
       preserveWhitespace: 'full',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         if (
           dom.style.whiteSpace === 'pre' ||
@@ -112,8 +112,8 @@ export const codeBlock: NodeSpec = {
       getContent: (domNode, schema) => {
         const dom = domNode as HTMLElement;
         const code = Array.from(dom.children)
-          .map(child => child.textContent)
-          .filter(x => x !== undefined)
+          .map((child) => child.textContent)
+          .filter((x) => x !== undefined)
           .join('\n');
         return code ? Fragment.from(schema.text(code)) : Fragment.empty;
       },
@@ -122,7 +122,7 @@ export const codeBlock: NodeSpec = {
     {
       tag: 'table[style]',
       preserveWhitespace: 'full',
-      getAttrs: dom => {
+      getAttrs: (dom) => {
         if ((dom as HTMLElement).querySelector('td[class*="blob-code"]')) {
           return {};
         }
@@ -132,7 +132,7 @@ export const codeBlock: NodeSpec = {
     {
       tag: 'div.code-block',
       preserveWhitespace: 'full',
-      getAttrs: domNode => {
+      getAttrs: (domNode) => {
         const dom = domNode as HTMLElement;
         // TODO: ED-5604 Fix it inside `react-syntax-highlighter`
         // Remove line numbers

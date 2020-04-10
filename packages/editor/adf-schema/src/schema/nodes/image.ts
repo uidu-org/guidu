@@ -1,4 +1,4 @@
-import { NodeSpec, Node } from 'prosemirror-model';
+import { Node, NodeSpec } from 'prosemirror-model';
 
 export const image: NodeSpec = {
   group: 'inline',

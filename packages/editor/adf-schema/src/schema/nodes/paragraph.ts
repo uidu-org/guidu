@@ -1,6 +1,7 @@
-import { NodeSpec, DOMOutputSpec } from 'prosemirror-model';
-import { Inline, MarksObject, NoMark } from './doc';
+import { DOMOutputSpec, NodeSpec } from 'prosemirror-model';
 import { AlignmentMarkDefinition, IndentationMarkDefinition } from '../marks';
+import { Inline } from './types/inline-content';
+import { MarksObject, NoMark } from './types/mark';
 
 /**
  * @name paragraph_node
