@@ -1,11 +1,12 @@
 import {
   akEditorBreakoutPadding,
   akEditorDefaultLayoutWidth,
-  breakoutWideScaleRatio,
   akEditorFullWidthLayoutWidth,
   akEditorWideLayoutWidth,
-} from '../styles';
-import { getBreakpoint, mapBreakpointToLayoutMaxWidth } from '../ui';
+  breakoutWideScaleRatio,
+} from '../styles/consts';
+import { mapBreakpointToLayoutMaxWidth } from '../ui/BaseTheme';
+import { getBreakpoint } from '../ui/WidthProvider';
 
 export const calcBreakoutWidth = (
   layout: 'full-width' | 'wide' | string,

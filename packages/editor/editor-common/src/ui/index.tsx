@@ -1,6 +1,21 @@
 export { BaseTheme, mapBreakpointToLayoutMaxWidth } from './BaseTheme';
+export { ClearNextSiblingMarginTop } from './clear-next-sibling-margin-top';
 export { default as Emoji } from './Emoji';
-export * from './EventHandlers';
+export {
+  CardEventClickHandler,
+  CardSurroundings,
+  EventHandlers,
+  LinkEventClickHandler,
+  MentionEventHandler,
+  MentionEventHandlers,
+  SmartCardEventClickHandler,
+} from './EventHandlers';
+export {
+  ExpandIconWrapper,
+  ExpandLayoutWrapper,
+  messages as expandMessages,
+  sharedExpandStyles,
+} from './Expand';
 export {
   default as MediaSingle,
   DEFAULT_IMAGE_HEIGHT,
@@ -21,6 +36,7 @@ export {
   WrapperProps as MediaSingleDimensionHelperProps,
 } from './MediaSingle/styled';
 export { default as Mention } from './Mention';
+export { ErrorMessage, HelperMessage, ValidMessage } from './Messages';
 export {
   default as overflowShadow,
   OverflowShadowOptions,
@@ -35,6 +51,16 @@ export {
 } from './Popup';
 export { default as UnsupportedBlock } from './UnsupportedBlock';
 export { default as UnsupportedInline } from './UnsupportedInline';
-export { getBreakpoint, WidthConsumer, WidthProvider } from './WidthProvider';
+export {
+  IframeWidthObserverFallbackWrapper,
+  IframeWrapperConsumer,
+  WidthObserver,
+} from './WidthObserver';
+export {
+  getBreakpoint,
+  WidthConsumer,
+  WidthConsumerContext,
+  WidthProvider,
+} from './WidthProvider';
 export { default as withOuterListeners } from './with-outer-listeners';
 export { WithCreateAnalyticsEvent } from './WithCreateAnalyticsEvent';

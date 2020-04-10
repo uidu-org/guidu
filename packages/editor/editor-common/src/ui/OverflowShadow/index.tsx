@@ -1,6 +1,6 @@
 import rafSchedule from 'raf-schd';
-import * as React from 'react';
-import { browser } from '../../utils';
+import React from 'react';
+import browser from '../../utils/browser';
 
 export const shadowClassNames = {
   RIGHT_SHADOW: 'right-shadow',

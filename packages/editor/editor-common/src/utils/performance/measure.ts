@@ -6,34 +6,37 @@ export function startMeasure(measureName: string) {
   if (!isPerformanceAPIAvailable()) {
     return;
   }
-  performance.mark(measureName);
+  performance.mark(`${measureName}::start`);
   measureMap.set(measureName, performance.now());
 }
 
 export function stopMeasure(
   measureName: string,
-  onMeasureComplete: (duration: number, startTime: number) => void,
+  onMeasureComplete?: (duration: number, startTime: number) => void,
 ) {
   if (!isPerformanceAPIAvailable()) {
     return;
   }
-
-  const start = measureMap.get(measureName);
+  performance.mark(`${measureName}::end`);
+  const start = onMeasureComplete ? measureMap.get(measureName) : undefined;
   try {
-    performance.measure(measureName, measureName);
-    const entry = performance.getEntriesByName(measureName).pop();
-    if (entry) {
-      onMeasureComplete(entry.duration, entry.startTime);
-    } else if (start) {
-      onMeasureComplete(performance.now() - start, start);
-    }
+    performance.measure(
+      measureName,
+      `${measureName}::start`,
+      `${measureName}::end`,
+    );
   } catch (error) {
-    if (start) {
-      onMeasureComplete(performance.now() - start, start);
+  } finally {
+    if (onMeasureComplete) {
+      const entry = performance.getEntriesByName(measureName).pop();
+      if (entry) {
+        onMeasureComplete(entry.duration, entry.startTime);
+      } else if (start) {
+        onMeasureComplete(performance.now() - start, start);
+      }
     }
+    clearMeasure(measureName);
   }
-
-  clearMeasure(measureName);
 }
 
 export function clearMeasure(measureName: string) {
@@ -42,6 +45,7 @@ export function clearMeasure(measureName: string) {
   }
 
   measureMap.delete(measureName);
-  performance.clearMarks(measureName);
+  performance.clearMarks(`${measureName}::start`);
+  performance.clearMarks(`${measureName}::end`);
   performance.clearMeasures(measureName);
 }

@@ -1,4 +1,4 @@
-import { ADNode } from '../';
+import { ADNode } from '../../utils';
 
 export interface ExtensionParams<T> {
   extensionKey: string;

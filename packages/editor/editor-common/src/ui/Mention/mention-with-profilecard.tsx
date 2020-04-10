@@ -1,13 +1,12 @@
-import { MentionUserType as UserType } from '@uidu/adf-schema';
 import ProfileCard, { ProfileCardAction } from '@atlaskit/profilecard';
+import { MentionUserType as UserType } from '@uidu/adf-schema';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
-import * as React from 'react';
-import { PureComponent, ReactInstance, SyntheticEvent } from 'react';
+import React, { PureComponent, ReactInstance, SyntheticEvent } from 'react';
 import { findDOMNode } from 'react-dom';
+import { ProfilecardProvider } from '../../provider-factory/profile-card-provider';
 import { MentionEventHandler } from '../EventHandlers';
 import Popup from '../Popup';
 import withOuterListeners from '../with-outer-listeners';
-import { ProfilecardProvider } from './types';
 
 const ProfilecardResourcedWithListeners = withOuterListeners(ProfileCard);
 
@@ -99,7 +98,7 @@ export default class MentionWithProfileCard extends PureComponent<
     const { profilecardProvider } = this.props;
     const actions = profilecardProvider.getActions(id, text, accessLevel);
 
-    return actions.map(action => {
+    return actions.map((action) => {
       return {
         ...action,
         callback: () => {

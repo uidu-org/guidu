@@ -1,4 +1,4 @@
-import { Extension, ExtensionHandler } from '../types/extension-handler';
+import { Extension, ExtensionHandler } from '../extensions/types';
 
 export function getExtensionRenderer<T>(
   extensionHandler: Extension<T> | ExtensionHandler<T>,

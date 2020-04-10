@@ -1,5 +1,5 @@
 import { fontSize } from '@uidu/theme';
-import * as React from 'react';
+import React, { useMemo } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Breakpoints, WidthConsumer } from '../WidthProvider';
 
@@ -25,28 +25,46 @@ export function mapBreakpointToLayoutMaxWidth(breakpoint: string) {
   }
 }
 
-export function BaseTheme({
-  children,
+type BaseThemeWrapperProps = {
+  breakpoint: string;
+  dynamicTextSizing?: boolean;
+  children: React.ReactNode;
+};
+export function BaseThemeWrapper({
+  breakpoint,
   dynamicTextSizing,
-}: {
+  children,
+}: BaseThemeWrapperProps) {
+  const memoizedTheme = useMemo(
+    () => ({
+      baseFontSize: dynamicTextSizing
+        ? mapBreakpointToFontSize(breakpoint)
+        : mapBreakpointToFontSize(Breakpoints.S),
+      layoutMaxWidth: dynamicTextSizing
+        ? mapBreakpointToLayoutMaxWidth(breakpoint)
+        : mapBreakpointToLayoutMaxWidth(Breakpoints.S),
+    }),
+    [breakpoint, dynamicTextSizing],
+  );
+
+  return <ThemeProvider theme={memoizedTheme}>{children}</ThemeProvider>;
+}
+
+type BaseThemeProps = {
   children: React.ReactNode;
   dynamicTextSizing?: boolean;
-}) {
+};
+
+export function BaseTheme({ children, dynamicTextSizing }: BaseThemeProps) {
   return (
     <WidthConsumer>
       {({ breakpoint }) => (
-        <ThemeProvider
-          theme={{
-            baseFontSize: dynamicTextSizing
-              ? mapBreakpointToFontSize(breakpoint)
-              : mapBreakpointToFontSize(Breakpoints.S),
-            layoutMaxWidth: dynamicTextSizing
-              ? mapBreakpointToLayoutMaxWidth(breakpoint)
-              : mapBreakpointToLayoutMaxWidth(Breakpoints.S),
-          }}
+        <BaseThemeWrapper
+          dynamicTextSizing={dynamicTextSizing}
+          breakpoint={breakpoint}
         >
           <>{children}</>
-        </ThemeProvider>
+        </BaseThemeWrapper>
       )}
     </WidthConsumer>
   );

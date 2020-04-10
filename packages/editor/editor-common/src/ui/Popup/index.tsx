@@ -1,7 +1,7 @@
 import rafSchedule from 'raf-schd';
-import * as React from 'react';
+import React from 'react';
 import { createPortal } from 'react-dom';
-import { akEditorFloatingPanelZIndex } from '../../styles';
+import { akEditorFloatingPanelZIndex } from '../../styles/consts';
 import {
   calculatePlacement,
   calculatePosition,
@@ -131,7 +131,8 @@ export default class Popup extends React.Component<Props, State> {
     return (
       !target ||
       (document.body.contains(target) &&
-        (popup.offsetParent && !popup.offsetParent.contains(target!))) ||
+        popup.offsetParent &&
+        !popup.offsetParent.contains(target!)) ||
       (overflowScrollParent &&
         !overflowScrollParent.contains(popup.offsetParent))
     );

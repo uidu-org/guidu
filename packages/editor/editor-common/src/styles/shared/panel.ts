@@ -1,7 +1,6 @@
-import { PanelType } from '@uidu/adf-schema';
+import { hexToRgba, PanelType } from '@uidu/adf-schema';
 import { borderRadius, colors, gridSize, themed } from '@uidu/theme';
 import { css } from 'styled-components';
-import { hexToRgba } from '../../utils';
 import {
   akEditorDeleteBackground,
   akEditorDeleteBorder,

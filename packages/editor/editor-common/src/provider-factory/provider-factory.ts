@@ -1,15 +1,23 @@
-export { WithProviders } from './withProviders';
-export { Providers } from '../types';
+import {
+  ProviderHandler,
+  ProviderName,
+  Providers,
+  ProviderType,
+} from './types';
 
-export type ProviderHandler = (name: string, provider?: Promise<any>) => void;
-
+function isUndefined(x: any): x is undefined {
+  return x === undefined;
+}
 export default class ProviderFactory {
   private providers: Map<string, Promise<any>> = new Map();
   private subscribers: Map<string, ProviderHandler[]> = new Map();
 
-  static create(providers: { [name: string]: Promise<any> }) {
+  static create(
+    providers: Providers & { [key: string]: Promise<any> | undefined },
+  ): ProviderFactory {
     const providerFactory = new ProviderFactory();
-    Object.keys(providers).forEach(name => {
+    const keys = Object.keys(providers) as Array<ProviderName>;
+    keys.forEach(name => {
       providerFactory.setProvider(name, providers[name]);
     });
     return providerFactory;
@@ -24,13 +32,13 @@ export default class ProviderFactory {
     return !this.providers.size && !this.subscribers.size;
   }
 
-  setProvider(name: string, provider?: Promise<any>) {
+  setProvider<T extends string>(name: T, provider?: ProviderType<T>): void {
     // Do not trigger notifyUpdate if provider is the same.
     if (this.providers.get(name) === provider) {
       return;
     }
 
-    if (provider) {
+    if (!isUndefined(provider)) {
       this.providers.set(name, provider);
     } else {
       this.providers.delete(name);
@@ -39,12 +47,15 @@ export default class ProviderFactory {
     this.notifyUpdated(name, provider);
   }
 
-  removeProvider(name: string) {
+  removeProvider<T extends string>(name: T | ProviderName): void {
     this.providers.delete(name);
     this.notifyUpdated(name);
   }
 
-  subscribe(name: string, handler: ProviderHandler) {
+  subscribe<T extends string>(
+    name: T,
+    handler: ProviderHandler<typeof name>,
+  ): void {
     const handlers = this.subscribers.get(name) || [];
     handlers.push(handler);
 
@@ -53,11 +64,14 @@ export default class ProviderFactory {
     const provider = this.providers.get(name);
 
     if (provider) {
-      handler(name, provider);
+      handler(name as T, provider as ProviderType<T>);
     }
   }
 
-  unsubscribe(name: string, handler: ProviderHandler) {
+  unsubscribe<T extends string>(
+    name: T,
+    handler: ProviderHandler<typeof name>,
+  ): void {
     const handlers = this.subscribers.get(name);
     if (!handlers) {
       return;
@@ -76,7 +90,7 @@ export default class ProviderFactory {
     }
   }
 
-  unsubscribeAll(name: string) {
+  unsubscribeAll<T extends string>(name: T | ProviderName): void {
     const handlers = this.subscribers.get(name);
     if (!handlers) {
       return;
@@ -85,11 +99,14 @@ export default class ProviderFactory {
     this.subscribers.delete(name);
   }
 
-  hasProvider(name: string) {
+  hasProvider<T extends string>(name: T | ProviderName): boolean {
     return this.providers.has(name);
   }
 
-  private notifyUpdated(name: string, provider?: Promise<any>) {
+  notifyUpdated<T extends string>(
+    name: T,
+    provider?: ProviderType<typeof name>,
+  ): void {
     const handlers = this.subscribers.get(name);
     if (!handlers) {
       return;

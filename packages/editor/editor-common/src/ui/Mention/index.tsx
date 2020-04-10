@@ -1,14 +1,13 @@
-import * as React from 'react';
 import { MentionUserType as UserType } from '@uidu/adf-schema';
-import { PureComponent } from 'react';
-import MentionWithProviders from './mention-with-providers';
-
-import { MentionEventHandlers } from '../EventHandlers';
-import { ProfilecardProvider } from './types';
+import React, { PureComponent } from 'react';
 import {
-  default as ProviderFactory,
+  ProviderFactory,
+  Providers,
   WithProviders,
-} from '../../providerFactory';
+} from '../../provider-factory';
+import { ProfilecardProvider } from '../../provider-factory/profile-card-provider';
+import { MentionEventHandlers } from '../EventHandlers';
+import MentionWithProviders from './mention-with-providers';
 
 export interface MentionProps {
   id: string;
@@ -40,7 +39,7 @@ export default class Mention extends PureComponent<MentionProps, {}> {
     }
   }
 
-  private renderWithProvider = (providers: Record<string, Promise<any>>) => {
+  private renderWithProvider = (providers: Providers) => {
     const { accessLevel, eventHandlers, id, portal, text } = this.props;
 
     const { mentionProvider, profilecardProvider } = providers;

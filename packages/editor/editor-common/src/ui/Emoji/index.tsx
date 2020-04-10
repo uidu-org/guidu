@@ -1,7 +1,10 @@
 import { EmojiId, ResourcedEmoji } from '@uidu/emoji';
-import * as React from 'react';
-import { PureComponent } from 'react';
-import ProviderFactory, { WithProviders } from '../../providerFactory';
+import React, { PureComponent } from 'react';
+import {
+  ProviderFactory,
+  Providers,
+  WithProviders,
+} from '../../provider-factory';
 
 export interface EmojiProps extends EmojiId {
   allowTextFallback?: boolean;
@@ -25,7 +28,7 @@ export default class EmojiNode extends PureComponent<EmojiProps, {}> {
     }
   }
 
-  private renderWithProvider = (providers: Record<string, Promise<any>>) => {
+  private renderWithProvider = (providers: Providers) => {
     const {
       allowTextFallback,
       shortName,
@@ -36,6 +39,10 @@ export default class EmojiNode extends PureComponent<EmojiProps, {}> {
 
     if (allowTextFallback && !providers.emojiProvider) {
       return <span>{fallback || shortName}</span>;
+    }
+
+    if (!providers.emojiProvider) {
+      return null;
     }
 
     return (

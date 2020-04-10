@@ -1,10 +1,9 @@
 import { MentionUserType as UserType } from '@uidu/adf-schema';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
+import { ProfilecardProvider } from '../../provider-factory/profile-card-provider';
 import { MentionEventHandlers } from '../EventHandlers';
 import ResourcedMentionWithProfilecard from './mention-with-profilecard';
-import { ProfilecardProvider } from './types';
 
 export interface Props {
   id: string;
@@ -44,7 +43,7 @@ export default class MentionWithProviders extends PureComponent<Props, State> {
     // rerendering
     if (props.profilecardProvider) {
       props.profilecardProvider
-        .then(profilecardProvider => {
+        .then((profilecardProvider) => {
           this.setState({ profilecardProvider });
         })
         .catch(() => {
@@ -71,7 +70,7 @@ export default class MentionWithProviders extends PureComponent<Props, State> {
     const actionHandlers: MentionEventHandlers = {} as any;
     (['onClick', 'onMouseEnter', 'onMouseLeave'] as Array<
       keyof MentionEventHandlers
-    >).forEach(handler => {
+    >).forEach((handler) => {
       actionHandlers[handler] =
         (eventHandlers && eventHandlers[handler]) || noop;
     });

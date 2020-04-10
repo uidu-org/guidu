@@ -1,4 +1,4 @@
-import { hexToRgba } from '@uidu/editor-common';
+import { hexToRgba } from '@uidu/adf-schema';
 import { colors } from '@uidu/theme';
 
 interface Property {

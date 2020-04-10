@@ -1,4 +1,5 @@
-import { hexToRgba, ProviderFactory } from '@uidu/editor-common';
+import { hexToRgba } from '@uidu/adf-schema';
+import { ProviderFactory } from '@uidu/editor-common';
 import { colors as themeColors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
@@ -33,7 +34,7 @@ export const colors: Color[] = [
   themeColors.N70,
   themeColors.N200,
   themeColors.N800,
-].map(solid => ({
+].map((solid) => ({
   solid,
   selection: hexToRgba(solid, 0.2)!,
 }));
@@ -141,7 +142,7 @@ export const replaceDocument = (
     tr.replaceWith(0, state.doc.nodeSize - 2, content!);
     tr.setSelection(Selection.atStart(tr.doc));
 
-    if (typeof version !== undefined && (options && options.useNativePlugin)) {
+    if (typeof version !== undefined && options && options.useNativePlugin) {
       const collabState = { version, unconfirmed: [] };
       tr.setMeta('collab$', collabState);
     }

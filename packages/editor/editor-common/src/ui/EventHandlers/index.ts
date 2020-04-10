@@ -1,7 +1,10 @@
+import { CardEvent } from '@uidu/media-card';
+import { Identifier } from '@uidu/media-client';
 import { SyntheticEvent } from 'react';
 
 export interface CardSurroundings {
-  list: Array<any>;
+  collectionName: string;
+  list: Identifier[];
 }
 
 export type MentionEventHandler = (
@@ -10,7 +13,7 @@ export type MentionEventHandler = (
   event?: SyntheticEvent<HTMLSpanElement>,
 ) => void;
 export type CardEventClickHandler = (
-  result: any,
+  result: CardEvent,
   surroundings?: CardSurroundings,
   analyticsEvent?: any,
 ) => void;

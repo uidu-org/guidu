@@ -1,14 +1,16 @@
-import { PureComponent } from 'react';
-import ProviderFactory from './';
-import { Providers } from '../types';
+import { PureComponent, ReactNode } from 'react';
+import ProviderFactory from './provider-factory';
+import { ProviderName, Providers } from './types';
 
 export interface Props {
   providerFactory: ProviderFactory;
-  providers: string[];
-  renderNode: (providers: Providers) => JSX.Element;
+  providers: ProviderName[];
+  renderNode: (providers: Providers) => ReactNode;
 }
 
 export class WithProviders extends PureComponent<Props, { providers: any }> {
+  static displayName = 'WithProviders';
+
   constructor(props: Props) {
     super(props);
 
