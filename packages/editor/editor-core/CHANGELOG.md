@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 0.2.4
+
+### Patch Changes
+
+- 2ef3695: More on media, now seems to work quite ok
+- Updated dependencies [2ef3695]
+  - @uidu/editor-common@0.1.21
+  - @uidu/media-card@0.1.29
+
 ## 0.2.3
 
 ### Patch Changes

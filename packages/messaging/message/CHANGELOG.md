@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.1.42
+
+### Patch Changes
+
+- 2ef3695: More on media, now seems to work quite ok
+- Updated dependencies [2ef3695]
+  - @uidu/media-card@0.1.29
+
 ## 0.1.41
 
 ### Patch Changes
