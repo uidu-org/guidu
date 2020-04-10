@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 0.1.21
+
+### Patch Changes
+
+- 2ef3695: More on media, now seems to work quite ok
+
 ## 0.1.20
 
 ### Patch Changes

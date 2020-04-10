@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.1.29
+
+### Patch Changes
+
+- 2ef3695: More on media, now seems to work quite ok
+
 ## 0.1.28
 
 ### Patch Changes

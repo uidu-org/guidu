@@ -1,5 +1,14 @@
 # @atlaskit/renderer
 
+## 0.1.24
+
+### Patch Changes
+
+- 2ef3695: More on media, now seems to work quite ok
+- Updated dependencies [2ef3695]
+  - @uidu/editor-common@0.1.21
+  - @uidu/media-card@0.1.29
+
 ## 0.1.23
 
 ### Patch Changes
