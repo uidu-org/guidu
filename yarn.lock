@@ -9072,9 +9072,9 @@ ejs@^2.5.9, ejs@^2.6.1:
   integrity sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==
 
 electron-to-chromium@^1.3.378, electron-to-chromium@^1.3.390:
-  version "1.3.401"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.401.tgz#4b84f80c68af9d23cebb8f2cc97b1479197ebffa"
-  integrity sha512-9tvSOS1++0EQP0tkgyD8KJergVZsld1/UqOusZVTbx9MWZHw5NCezkOjIQ5YWeB45jKdQerDfRrt28HwidI9Ow==
+  version "1.3.402"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.402.tgz#9ad93c0c8ea2e571431739e0d76bd6bc9788a846"
+  integrity sha512-gaCDfX7IUH0s3JmBiHCDPrvVcdnTTP1r4WLJc2dHkYYbLmXZ2XHiJCcGQ9Balf91aKTvuCKCyu2JjJYRykoI1w==
 
 elegant-spinner@^1.0.1:
   version "1.0.1"
@@ -19347,9 +19347,9 @@ react-popper@^1.3.6:
     warning "^4.0.2"
 
 react-popper@^2.0.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.0.tgz#807174c0a6f01a83a7809d7e974b3ca1d4419d5f"
-  integrity sha512-9tHnjmTr0J3iavYSt0jXiieRTD/j8Mi1C0Fck0Di2ENkiTm7ADmievZmpMzChOQH+CF+4susx+dcXe9CW1htuA==
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-2.2.1.tgz#c5fdd3f58450f1144850381dca2aa0cb8db62248"
+  integrity sha512-nkO8lDzj2ZPO+fSK+gqo/dxEHBw4JZAE57tlS0Dm2EaPd7/C7Qs2bWXQUNAvzMf6X2s7LlyhQSzuvycOSyACPQ==
   dependencies:
     react-fast-compare "^3.0.1"
     warning "^4.0.2"
