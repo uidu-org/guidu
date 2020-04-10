@@ -1,5 +1,11 @@
 # @uidu/attend
 
+## 0.2.5
+
+### Patch Changes
+
+- 086c009: Attachments should check file existence, removed console.log, tried fix warning for dynamic imports
+
 ## 0.2.4
 
 ### Patch Changes

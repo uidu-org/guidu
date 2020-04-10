@@ -1,5 +1,13 @@
 # @atlaskit/renderer
 
+## 0.1.25
+
+### Patch Changes
+
+- 086c009: Attachments should check file existence, removed console.log, tried fix warning for dynamic imports
+- Updated dependencies [086c009]
+  - @uidu/navigation@0.2.27
+
 ## 0.1.24
 
 ### Patch Changes
