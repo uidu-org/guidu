@@ -91,8 +91,6 @@ class MediaNode extends Component<MediaNodeProps> {
       uploadComplete,
     } = this.props;
 
-    console.log(this.props);
-
     const { id, type, url, file } = node.attrs;
 
     if (

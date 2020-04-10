@@ -48,9 +48,8 @@ export default function Attend({
         <Order
           {...rest}
           event={event}
-          handleSubmit={async model =>
+          handleSubmit={async (model) =>
             createOrder(model).then(() => {
-              console.log(slider);
               slider.current.slideNext();
             })
           }
@@ -79,7 +78,7 @@ export default function Attend({
         {...rest}
         scope="events"
         contact={currentMember}
-        handleSubmit={async model => {
+        handleSubmit={async (model) => {
           return updateCurrentMember(model).then(() =>
             setTimeout(() => slider.current.slideNext(), 500),
           );

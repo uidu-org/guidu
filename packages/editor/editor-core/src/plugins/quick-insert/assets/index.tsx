@@ -29,7 +29,7 @@ type HeadingProps = IconProps & {
   level: HeadingLevels;
 };
 
-const Icon = loadable((props) => import(`/heading${props.level}`));
+const Icon = loadable((props) => import(`/heading${props.level}.tsx`));
 
 export const IconHeading = ({ level, ...props }: HeadingProps) => {
   return <Icon {...props} level={level} />;

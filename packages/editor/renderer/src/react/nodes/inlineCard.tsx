@@ -17,7 +17,6 @@ export interface InlineCardProps {
 const InlineCard: React.FunctionComponent<
   InlineCardProps & WithSmartCardStorageProps
 > = (props) => {
-  console.log(props);
   const { url, data, eventHandlers, portal } = props;
   const handler = getEventHandler(eventHandlers, 'smartCard');
   const onClick = url && handler ? () => handler(url) : undefined;

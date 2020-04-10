@@ -9,13 +9,10 @@ type Props = {
 export default class ClipboardMediaPickerWrapper extends React.Component<
   Props
 > {
-  show = () => {
-    console.log('test');
-  };
+  show = () => {};
 
   render() {
     const { mediaState } = this.props;
-    console.log(this.props);
     return (
       <MediaPicker
         onComplete={(result) => {

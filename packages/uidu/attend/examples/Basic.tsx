@@ -45,12 +45,11 @@ function Basic() {
       }}
       order={order}
       attendance={{}}
-      createOrder={async model => {
-        console.log(model);
+      createOrder={async (model) => {
         setOrder({
           ...model,
           attendances: model.items
-            .filter(item => item.quantity && item.quantity > 0)
+            .filter((item) => item.quantity && item.quantity > 0)
             .reduce((res, item) => {
               res.push({ sku: item });
               return res;
@@ -62,7 +61,7 @@ function Basic() {
   );
 }
 
-export default props => (
+export default (props) => (
   <Router>
     <Route path="/">
       <Basic {...props}></Basic>

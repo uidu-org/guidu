@@ -48,8 +48,6 @@ export type RendererWrapperProps = {
   theme?: any;
 };
 
-console.log(typography);
-
 const getLineHeight = (fontCode: string): number =>
   typography[fontCode].lineHeight / typography[fontCode].size;
 

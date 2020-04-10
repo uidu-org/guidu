@@ -197,7 +197,6 @@ export default class Editor extends PureComponent<EditorProps> {
   };
 
   renderToolbar = ({ view, eventDispatcher, config }) => {
-    console.log(config);
     return (
       <Toolbar
         appearance={this.props.appearance}

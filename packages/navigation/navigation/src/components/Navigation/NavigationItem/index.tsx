@@ -78,11 +78,9 @@ export default function NavigationItem({
       );
     }
 
-    console.log('items', items);
-
     return (
       <AnimateHeight height={isOpen ? 'auto' : 0} className="w-100">
-        {items.map(item =>
+        {items.map((item) =>
           item.type === 'NavigationSubItemSkeleton' ? (
             <NavigationSubItemSkeleton {...item} visible />
           ) : (
@@ -99,7 +97,7 @@ export default function NavigationItem({
         <StyledNavigationLink
           {...(items.length > 0
             ? {
-                onClick: e => {
+                onClick: (e) => {
                   setIsOpen(!isOpen);
                 },
               }
@@ -118,7 +116,7 @@ export default function NavigationItem({
           </StyledNavigationText>
           {actions.length > 0 && (
             <StyledNavigationActions
-              onClick={e => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
               isActionOpen={isActionOpen}
             >
               <NavigationActions

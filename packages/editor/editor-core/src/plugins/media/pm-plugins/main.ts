@@ -317,7 +317,6 @@ export class MediaPluginState {
   };
 
   private destroyAllPickers = (pickers: Array<any>) => {
-    console.log(pickers);
     // pickers.forEach((picker) => picker.destroy());
     this.pickers.splice(0, this.pickers.length);
   };

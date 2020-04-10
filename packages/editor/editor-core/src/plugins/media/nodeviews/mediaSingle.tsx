@@ -216,8 +216,6 @@ export default class MediaSingleNode extends Component<
       height: `${cardHeight}px`,
     };
 
-    console.log(cardDimensions);
-
     const props = {
       layout,
       width,

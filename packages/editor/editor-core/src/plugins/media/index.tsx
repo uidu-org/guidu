@@ -179,7 +179,6 @@ const mediaPlugin = (
         ),
         action(insert, state) {
           const pluginState = pluginKey.getState(state);
-          console.log(pluginState);
           pluginState.showMediaPicker();
           const tr = insert('');
           return addAnalytics(tr, {
