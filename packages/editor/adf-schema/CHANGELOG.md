@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.1.10
+
+### Patch Changes
+
+- 7e54643: Fix shema export
+
 ## 0.1.9
 
 ### Patch Changes
