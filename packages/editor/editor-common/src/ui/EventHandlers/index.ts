@@ -1,5 +1,5 @@
 import { CardEvent } from '@uidu/media-card';
-import { Identifier } from '@uidu/media-client';
+import { FileIdentifier as Identifier } from '@uidu/media-core';
 import { SyntheticEvent } from 'react';
 
 export interface CardSurroundings {

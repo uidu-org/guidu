@@ -3,6 +3,7 @@ import {
   ContextIdentifierProvider,
   ErrorReportingHandler,
   ExtensionHandlers,
+  Providers,
   Transformer,
 } from '@uidu/editor-common';
 import { EmojiProvider } from '@uidu/emoji';
@@ -20,8 +21,7 @@ import { CollabEditProvider } from '../plugins/collab-edit/provider';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
 import { AutoformattingProvider } from '../plugins/custom-autoformat/types';
 import { MacroProvider } from '../plugins/macro/types';
-import { MediaOptions } from '../plugins/media';
-import { MediaProvider, MediaState } from '../plugins/media/types';
+import { MediaOptions, MediaState } from '../plugins/media/types';
 import { PlaceholderTextOptions } from '../plugins/placeholder-text';
 import { QuickInsertOptions } from '../plugins/quick-insert/types';
 import { PluginConfig as TablesPluginConfig } from '../plugins/table/types';
@@ -209,7 +209,7 @@ export interface EditorProps {
   contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
 
   mentionProvider?: Promise<MentionProvider>;
-  mediaProvider?: Promise<MediaProvider>;
+  mediaProvider?: Providers['mediaProvider'];
 
   // Allows you to define custom autoformatting rules.
   autoformattingProvider?: Promise<AutoformattingProvider>;

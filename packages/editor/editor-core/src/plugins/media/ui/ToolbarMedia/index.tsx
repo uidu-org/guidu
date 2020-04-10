@@ -6,7 +6,7 @@ import { withAnalytics } from '../../../../analytics';
 import { EventDispatcher } from '../../../../event-dispatcher';
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import WithPluginState from '../../../../ui/WithPluginState';
-import { MediaPluginState } from '../../pm-plugins/main';
+import { MediaPluginState } from '../../pm-plugins/types';
 
 export interface Props {
   editorView: EditorView;

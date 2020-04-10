@@ -1,4 +1,5 @@
 export { default } from './components/MediaPicker';
+export * from './types';
 
 export async function MediaPickerFactoryClass({
   uploadParams,

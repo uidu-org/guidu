@@ -14,10 +14,8 @@ import {
   MaxContentSizePluginState,
   pluginKey as maxContentSizePluginKey,
 } from '../../plugins/max-content-size';
-import {
-  MediaPluginState,
-  stateKey as mediaPluginKey,
-} from '../../plugins/media/pm-plugins/main';
+import { stateKey as mediaPluginKey } from '../../plugins/media/pm-plugins/plugin-key';
+import { MediaPluginState } from '../../plugins/media/pm-plugins/types';
 import { tableCommentEditorStyles } from '../../plugins/table/ui/styles';
 import { EditorAppearance, EditorAppearanceComponentProps } from '../../types';
 import { ClickAreaBlock } from '../Addon';
@@ -206,7 +204,7 @@ class Editor extends React.Component<
               {({ width }) => {
                 return (
                   <ContentArea
-                    ref={ref => (this.containerElement = ref)}
+                    ref={(ref) => (this.containerElement = ref)}
                     className={classnames('ak-editor-content-area', {
                       'less-margin': width < akEditorMobileBreakoutPoint,
                     })}

@@ -6,6 +6,7 @@ import {
   UrlType,
 } from '@uidu/adf-schema';
 import { Mark, Node as PMNode } from 'prosemirror-model';
+import { SortOrder } from '../types';
 
 enum ContentType {
   NUMBER = 0,
@@ -34,14 +35,17 @@ type NodeMeta =
   | NodeMetaGenerator<ContentType.LINK, string>;
 
 function getLinkMark(node: PMNode): Mark | null {
-  const [linkMark] = node.marks.filter(mark => mark.type.name === 'link');
+  const [linkMark] = node.marks.filter((mark) => mark.type.name === 'link');
   return linkMark || null;
 }
 
 function getMetaFromNode(
-  node: PMNode,
+  node: PMNode | null,
   options: CompareOptions,
 ): NodeMeta | null {
+  if (!node) {
+    return null;
+  }
   const firstChild = node.firstChild;
   if (!firstChild) {
     return null;
@@ -49,6 +53,12 @@ function getMetaFromNode(
 
   switch (firstChild.type.name) {
     // Text case
+    /*
+      Get Meta value from the first child if the cell is of type
+        * Heading (Any cell where the text is set to a heading type)
+        * Paragraph (Normal text)
+     */
+    case 'heading':
     case 'paragraph': {
       return getMetaFromNode(firstChild, options);
     }
@@ -67,6 +77,7 @@ function getMetaFromNode(
         value: url ? url : '',
       };
     }
+
     case 'text': {
       // treat as a link if contain a link
       const linkMark = getLinkMark(firstChild);
@@ -137,34 +148,64 @@ function compareValue(
 
 /**
  * Compare 2 prosemirror nodes and check if it's greater, equal or less than the other node
+ * based on the sort order.
  *
  * @param {Node} nodeA
  * @param {Node} nodeB
  * @returns {(1 | 0 | -1)}
+ *
+ * For Ascending order:
  *    1  -> NodeA > NodeB
  *    0  -> NodeA === NodeB
  *    -1 -> Node A < NodeB
+ * For Descending order:
+ *   1  -> NodeA < NodeB
+ *   0  -> NodeA === NodeB
+ *   -1 -> Node A > NodeB
+ *
+ * If either node is empty:
+ * The empty node is always treated as lower priority,
+ * irrespective of the order.
+ *
+ * If no order is provided the method defaults to Ascending order,
+ * like a regular JS sort method.
  */
-export const createCompareNodes = (options: CompareOptions) => {
+export const createCompareNodes = (
+  options: CompareOptions,
+  order: SortOrder = SortOrder.ASC,
+): Function => {
   return (nodeA: PMNode | null, nodeB: PMNode | null): number => {
-    if (nodeA === null || nodeB === null) {
-      return nodeB === null ? 1 : -1;
-    }
-
     const metaNodeA = getMetaFromNode(nodeA, options);
     const metaNodeB = getMetaFromNode(nodeB, options);
-    if (metaNodeA === metaNodeB) {
-      return 0;
-    }
-
+    /*
+      Donot switch the order (Asec or Desc) if either node is null.
+      This will ensure that empty cells are always at the bottom during sorting.
+    */
     if (metaNodeA === null || metaNodeB === null) {
-      return metaNodeB === null ? 1 : -1;
+      return compareMetaFromNode(metaNodeA, metaNodeB);
     }
-
-    if (metaNodeA.type !== metaNodeB.type) {
-      return metaNodeA.type > metaNodeB.type ? 1 : -1;
-    }
-
-    return compareValue(metaNodeA.value, metaNodeB.value);
+    return (
+      (order === SortOrder.DESC ? -1 : 1) *
+      compareMetaFromNode(metaNodeA, metaNodeB)
+    );
   };
 };
+
+function compareMetaFromNode(
+  metaNodeA: NodeMeta | null,
+  metaNodeB: NodeMeta | null,
+): number {
+  if (metaNodeA === metaNodeB) {
+    return 0;
+  }
+
+  if (metaNodeA === null || metaNodeB === null) {
+    return metaNodeB === null ? -1 : 1;
+  }
+
+  if (metaNodeA.type !== metaNodeB.type) {
+    return metaNodeA.type > metaNodeB.type ? 1 : -1;
+  }
+
+  return compareValue(metaNodeA.value, metaNodeB.value);
+}

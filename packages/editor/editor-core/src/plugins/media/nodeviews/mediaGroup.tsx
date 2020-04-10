@@ -1,4 +1,5 @@
 import EditorCloseIcon from '@atlaskit/icon/glyph/editor/close';
+import { ProviderFactory } from '@uidu/editor-common';
 import MediaFilmstrip from '@uidu/media-filmstrip';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
@@ -6,7 +7,6 @@ import * as React from 'react';
 import { getPosHandler } from '../../../nodeviews';
 import ReactNodeView, { ForwardRef } from '../../../nodeviews/ReactNodeView';
 import { stateKey as reactNodeViewStateKey } from '../../../plugins/base/pm-plugins/react-nodeview';
-import { EditorAppearance } from '../../../types';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection } from '../../../utils';
@@ -14,10 +14,8 @@ import {
   EditorDisabledPluginState,
   pluginKey as editorDisabledPluginKey,
 } from '../../editor-disabled';
-import {
-  MediaPluginState,
-  stateKey as mediaStateKey,
-} from '../pm-plugins/main';
+import { stateKey as mediaStateKey } from '../pm-plugins/plugin-key';
+import { MediaPluginState } from '../pm-plugins/types';
 
 export interface Props {
   children?: React.ReactNode;
@@ -32,11 +30,10 @@ export type MediaGroupProps = {
   getPos: getPosHandler;
   selected: number | null;
   disabled?: boolean;
-  editorAppearance: EditorAppearance;
 };
 
 export interface MediaGroupState {
-  viewContext?: any;
+  viewMediaClientConfig?: any;
 }
 
 export default class MediaGroup extends React.Component<
@@ -47,7 +44,7 @@ export default class MediaGroup extends React.Component<
   private mediaNodes: PMNode[];
 
   state: MediaGroupState = {
-    viewContext: undefined,
+    viewMediaClientConfig: undefined,
   };
 
   constructor(props: MediaGroupProps) {
@@ -70,7 +67,8 @@ export default class MediaGroup extends React.Component<
     if (
       this.props.selected !== nextProps.selected ||
       this.props.node !== nextProps.node ||
-      this.state.viewContext !== this.mediaPluginState.mediaContext
+      this.state.viewMediaClientConfig !==
+        this.mediaPluginState.mediaClientConfig
     ) {
       return true;
     }
@@ -79,11 +77,11 @@ export default class MediaGroup extends React.Component<
   }
 
   updateMediaContext() {
-    const { viewContext } = this.state;
-    const { mediaContext } = this.mediaPluginState;
-    if (!viewContext && mediaContext) {
+    const { viewMediaClientConfig } = this.state;
+    const { mediaClientConfig } = this.mediaPluginState;
+    if (!viewMediaClientConfig && mediaClientConfig) {
       this.setState({
-        viewContext: mediaContext,
+        viewMediaClientConfig: mediaClientConfig,
       });
     }
   }
@@ -106,7 +104,7 @@ export default class MediaGroup extends React.Component<
   };
 
   renderChildNodes = () => {
-    const { viewContext } = this.state;
+    const { viewMediaClientConfig } = this.state;
     const items = this.mediaNodes.map((item, idx) => {
       const identifier: any = {
         id: item.attrs.id,
@@ -122,7 +120,7 @@ export default class MediaGroup extends React.Component<
       return {
         identifier,
         selectable: true,
-        isLazy: this.props.editorAppearance !== 'mobile',
+        isLazy: false,
         selected: this.props.selected === nodePos,
         onClick: () => {
           setNodeSelection(this.props.view, nodePos);
@@ -152,7 +150,6 @@ export default class MediaGroup extends React.Component<
 
 class MediaGroupNodeView extends ReactNodeView {
   render(_props: any, forwardRef: ForwardRef) {
-    const { editorAppearance } = this.reactComponentProps;
     return (
       <WithPluginState
         editorView={this.view}
@@ -178,7 +175,6 @@ class MediaGroupNodeView extends ReactNodeView {
               forwardRef={forwardRef}
               selected={isSelected ? $anchor.pos : null}
               disabled={(editorDisabledPlugin || ({} as any)).editorDisabled}
-              editorAppearance={editorAppearance}
             />
           );
         }}
@@ -189,9 +185,13 @@ class MediaGroupNodeView extends ReactNodeView {
 
 export const ReactMediaGroupNode = (
   portalProviderAPI: PortalProviderAPI,
-  editorAppearance?: EditorAppearance,
+  providerFactory: ProviderFactory,
+  allowLazyLoading?: boolean,
+  isCopyPasteEnabled?: boolean,
 ) => (node: PMNode, view: EditorView, getPos: getPosHandler): NodeView => {
   return new MediaGroupNodeView(node, view, getPos, portalProviderAPI, {
-    editorAppearance,
+    allowLazyLoading,
+    providerFactory,
+    isCopyPasteEnabled,
   }).init();
 };

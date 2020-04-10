@@ -16,3 +16,5 @@ export type FileIdentifier = {
   metadata: FileMetadata;
   url?: string | undefined;
 };
+
+export type MediaClientConfig = any;

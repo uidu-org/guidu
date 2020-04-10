@@ -16,7 +16,8 @@ import {
   FloatingToolbarItem,
   FloatingToolbarSeparator,
 } from '../../floating-toolbar/types';
-import { MediaPluginState, stateKey } from '../pm-plugins/main';
+import { stateKey } from '../pm-plugins/plugin-key';
+import { MediaPluginState } from '../pm-plugins/types';
 import { alignAttributes } from '../utils/media-single';
 
 type IconMap = Array<

@@ -1,6 +1,6 @@
 import MediaPicker from '@uidu/media-picker';
 import * as React from 'react';
-import { MediaPluginState } from '../pm-plugins/main';
+import { MediaPluginState } from '../pm-plugins/types';
 
 type Props = {
   mediaState: MediaPluginState;
@@ -17,7 +17,6 @@ export default class ClipboardMediaPickerWrapper extends React.Component<
       <MediaPicker
         onComplete={(result) => {
           mediaState.insertFile(result);
-          mediaState.trackNewMediaEvent('clipboard');
         }}
       />
     );

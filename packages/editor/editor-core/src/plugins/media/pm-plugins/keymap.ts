@@ -1,9 +1,9 @@
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
-
 import * as keymaps from '../../../keymaps';
-import { MediaPluginState, stateKey } from '../pm-plugins/main';
 import { Command } from '../../../types';
+import { stateKey } from '../pm-plugins/plugin-key';
+import { MediaPluginState } from '../pm-plugins/types';
 
 export function keymapPlugin(): Plugin {
   const list = {};
@@ -19,13 +19,13 @@ export function keymapPlugin(): Plugin {
   return keymap(list);
 }
 
-const ignoreLinksInSteps: Command = state => {
+const ignoreLinksInSteps: Command = (state) => {
   const mediaPluginState = stateKey.getState(state) as MediaPluginState;
   mediaPluginState.ignoreLinks = true;
   return false;
 };
 
-const splitMediaGroup: Command = state => {
+const splitMediaGroup: Command = (state) => {
   const mediaPluginState = stateKey.getState(state) as MediaPluginState;
   return mediaPluginState.splitMediaGroup();
 };

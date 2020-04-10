@@ -9,12 +9,9 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
 import { ProsemirrorGetPosHandler, ReactNodeProps } from '../../../nodeviews';
-import { EditorAppearance } from '../../../types';
-import {
-  MediaPluginState,
-  MediaProvider,
-  stateKey as mediaStateKey,
-} from '../pm-plugins/main';
+import { MediaProvider } from '../pm-plugins/main';
+import { stateKey as mediaStateKey } from '../pm-plugins/plugin-key';
+import { MediaPluginState } from '../pm-plugins/types';
 
 // This is being used by DropPlaceholder now
 export const MEDIA_HEIGHT = 125;
@@ -34,7 +31,6 @@ export interface MediaNodeProps extends ReactNodeProps, ImageLoaderProps {
     width: number;
     height: number;
   }) => void;
-  editorAppearance: EditorAppearance;
   mediaProvider?: Promise<MediaProvider>;
   viewContext?: any;
   uploadComplete?: boolean;
@@ -86,7 +82,6 @@ class MediaNode extends Component<MediaNodeProps> {
       selected,
       cardDimensions,
       onClick,
-      editorAppearance,
       viewContext,
       uploadComplete,
     } = this.props;

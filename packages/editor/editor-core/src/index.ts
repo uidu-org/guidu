@@ -55,12 +55,12 @@ export {
   CustomMediaPicker,
   default as mediaPlugin,
   insertMediaSingleNode,
-  MediaOptions,
   MediaProvider,
   MediaState,
 } from './plugins/media';
 // Used in mobile bridge
 export { stateKey as mediaPluginKey } from './plugins/media/pm-plugins/main';
+export { MediaOptions } from './plugins/media/types';
 export { mentionPluginKey, MentionPluginState } from './plugins/mentions';
 export {
   QuickInsertItem,

@@ -1,15 +1,15 @@
+import { selectNodeBackward } from 'prosemirror-commands';
 import { keymap } from 'prosemirror-keymap';
-import { Schema, NodeType, Node } from 'prosemirror-model';
-import { Plugin, EditorState, Selection } from 'prosemirror-state';
+import { Node, NodeType, Schema } from 'prosemirror-model';
+import { EditorState, Plugin, Selection } from 'prosemirror-state';
+import { safeInsert } from 'prosemirror-utils';
 import * as keymaps from '../../../keymaps';
+import { Command, CommandDispatch } from '../../../types';
 import {
   isEmptyNode,
-  atTheEndOfDoc,
   isSelectionInsideLastNodeInDocument,
 } from '../../../utils';
-import { Command, CommandDispatch, EditorAppearance } from '../../../types';
-import { safeInsert } from 'prosemirror-utils';
-import { selectNodeBackward } from 'prosemirror-commands';
+import { atTheEndOfDoc } from '../../../utils/prosemirror/position';
 
 /**
  * Check if is an empty selection at the start of the node
@@ -187,7 +187,7 @@ const maybeRemoveMediaSingleNode = (schema: Schema): Command => {
 
     if (dispatch) {
       // Select media single, and remove paragraph if it's empty.
-      selectNodeBackward(state, tr => {
+      selectNodeBackward(state, (tr) => {
         if (isEmptyNodeInSchema($from.parent) && !atTheEndOfDoc(state)) {
           tr.replace($from.pos - 1, $from.pos + $from.parent.nodeSize - 1); // Remove node
         }
@@ -199,10 +199,7 @@ const maybeRemoveMediaSingleNode = (schema: Schema): Command => {
   };
 };
 
-export default function keymapPlugin(
-  schema: Schema,
-  appearance?: EditorAppearance,
-): Plugin {
+export default function keymapPlugin(schema: Schema): Plugin {
   const list = {};
   const removeMediaSingleCommand = maybeRemoveMediaSingleNode(schema);
 

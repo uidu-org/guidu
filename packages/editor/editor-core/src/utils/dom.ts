@@ -47,7 +47,7 @@ export function removeNestedEmptyEls(el: HTMLElement) {
  * IE11 doesn't support classList to SVGElements
  **/
 export const containsClassName = (
-  node: HTMLElement | SVGElement,
+  node: HTMLElement | SVGElement | null,
   className: string,
 ): boolean => {
   if (!node) {
@@ -68,3 +68,43 @@ export const containsClassName = (
       : node.className;
   return classNames.split(' ').indexOf(className) !== -1;
 };
+
+export function closest(
+  node: HTMLElement | null | undefined,
+  s: string,
+): HTMLElement | null {
+  let el = node as HTMLElement;
+
+  if (!el) {
+    return null;
+  }
+  if (!document.documentElement || !document.documentElement.contains(el)) {
+    return null;
+  }
+
+  if (el.closest) {
+    return el.closest(s);
+  }
+
+  const matches = el.matches ? 'matches' : 'msMatchesSelector';
+
+  do {
+    // @ts-ignore
+    if (el[matches] && el[matches](s)) {
+      return el;
+    }
+    el = (el.parentElement || el.parentNode) as HTMLElement;
+  } while (el !== null && el.nodeType === 1);
+  return null;
+}
+
+/**
+ * Replacement for Element.closest, until it becomes widely implemented
+ * Returns the ancestor element of a particular type if exists or null
+ */
+export function closestElement(
+  node: HTMLElement | null | undefined,
+  s: string,
+): HTMLElement | null {
+  return closest(node, s);
+}

@@ -22,10 +22,8 @@ import {
   MacroState,
   pluginKey as macroStateKey,
 } from '../macro';
-import {
-  MediaPluginState,
-  stateKey as mediaStateKey,
-} from '../media/pm-plugins/main';
+import { stateKey as mediaStateKey } from '../media/pm-plugins/plugin-key';
+import { MediaPluginState } from '../media/pm-plugins/types';
 import { mentionPluginKey, MentionPluginState } from '../mentions';
 import {
   pluginKey as placeholderTextStateKey,

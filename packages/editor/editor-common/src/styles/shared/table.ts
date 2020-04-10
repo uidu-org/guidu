@@ -1,5 +1,6 @@
 import {
   tableCellContentDomSelector,
+  TableLayout,
   tablePrefixSelector,
 } from '@uidu/adf-schema';
 import { colors, fontSize, themed } from '@uidu/theme';

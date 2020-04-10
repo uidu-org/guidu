@@ -9,7 +9,8 @@ import {
 import { Command, EditorAppearance } from '../../../../src/types';
 import commonMessages from '../../../messages';
 import { hoverDecoration } from '../../base/pm-plugins/decoration';
-import { MediaPluginState, stateKey } from '../pm-plugins/main';
+import { stateKey } from '../pm-plugins/plugin-key';
+import { MediaPluginState } from '../pm-plugins/types';
 import buildLayoutButtons from './buildMediaLayoutButtons';
 
 const remove: Command = (state, dispatch) => {

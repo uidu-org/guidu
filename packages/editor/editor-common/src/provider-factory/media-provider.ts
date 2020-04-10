@@ -2,6 +2,7 @@ import { MediaClientConfig } from '@uidu/media-core';
 import { UploadParams } from '@uidu/media-picker';
 
 export interface FeatureFlags {}
+
 export type MediaProvider = {
   uploadParams?: UploadParams;
 

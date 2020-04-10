@@ -8,7 +8,8 @@ import {
 import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { setDatePickerAt } from '../actions';
 
@@ -31,13 +32,17 @@ const SelectableDate = styled(Date)`
   }
 `;
 
+const Span = styled.span`
+  line-height: initial;
+`;
+
 export interface Props {
   children?: React.ReactNode;
   view: EditorView;
   node: PMNode;
 }
 
-export default class DateNodeView extends React.Component<Props> {
+class DateNodeView extends React.Component<Props & WrappedComponentProps> {
   render() {
     const {
       node: {
@@ -46,6 +51,7 @@ export default class DateNodeView extends React.Component<Props> {
       view: {
         state: { schema, selection },
       },
+      intl,
     } = this.props;
 
     const parent = selection.$from.parent;
@@ -56,16 +62,16 @@ export default class DateNodeView extends React.Component<Props> {
       withinIncompleteTask && isPastDate(timestamp) ? 'red' : undefined;
 
     return (
-      <span
+      <Span
         className={DateSharedCssClassName.DATE_WRAPPER}
         onClick={this.handleClick}
       >
         <SelectableDate color={color} value={timestamp}>
           {withinIncompleteTask
-            ? timestampToTaskContext(timestamp)
-            : timestampToString(timestamp)}
+            ? timestampToTaskContext(timestamp, intl)
+            : timestampToString(timestamp, intl)}
         </SelectableDate>
-      </span>
+      </Span>
     );
   }
 
@@ -75,3 +81,5 @@ export default class DateNodeView extends React.Component<Props> {
     setDatePickerAt(state.selection.from)(state, dispatch);
   };
 }
+
+export default injectIntl(DateNodeView);

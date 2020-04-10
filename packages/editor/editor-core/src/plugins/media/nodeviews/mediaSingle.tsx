@@ -17,39 +17,21 @@ import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import { Decoration, EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
-import { MediaOptions } from '../';
 import { EventDispatcher } from '../../../event-dispatcher';
-import { getPosHandler, ProsemirrorGetPosHandler } from '../../../nodeviews';
+import { getPosHandler } from '../../../nodeviews';
 import { SelectionBasedNodeView } from '../../../nodeviews/ReactNodeView';
 import { createDisplayGrid } from '../../../plugins/grid';
-import { EditorAppearance } from '../../../types';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
 import { setNodeSelection } from '../../../utils';
+import { DispatchAnalyticsEvent } from '../../analytics';
 import { pluginKey as widthPluginKey } from '../../width';
 import { updateMediaNodeAttrs } from '../commands';
-import {
-  MediaPluginState,
-  stateKey as mediaPluginKey,
-} from '../pm-plugins/main';
-import { MediaProvider } from '../types';
+import { stateKey as mediaPluginKey } from '../pm-plugins/main';
+import { MediaOptions } from '../types';
 import ResizableMediaSingle from '../ui/ResizableMediaSingle';
 import MediaItem from './media';
-
-export interface MediaSingleNodeProps {
-  view: EditorView;
-  node: PMNode;
-  getPos: ProsemirrorGetPosHandler;
-  eventDispatcher: EventDispatcher;
-  width: number;
-  selected: Function;
-  lineLength: number;
-  editorAppearance: EditorAppearance;
-  mediaOptions: MediaOptions;
-  mediaProvider?: Promise<MediaProvider>;
-  fullWidthMode?: boolean;
-  mediaPluginState: MediaPluginState;
-}
+import { MediaSingleNodeProps } from './types';
 
 export interface MediaSingleNodeState {
   width?: number;
@@ -74,7 +56,7 @@ export default class MediaSingleNode extends Component<
   async componentDidMount() {
     const mediaProvider = await this.props.mediaProvider;
     if (mediaProvider) {
-      const viewContext = await mediaProvider.viewContext;
+      const viewContext = await mediaProvider.viewMediaClientConfig;
       this.setState({
         viewContext,
       });
@@ -111,14 +93,11 @@ export default class MediaSingleNode extends Component<
       return false;
     }
 
-    // can't fetch remote dimensions on mobile, so we'll default them
-    // if (this.props.editorAppearance === 'mobile') {
     return {
       id,
       height: DEFAULT_IMAGE_HEIGHT,
       width: DEFAULT_IMAGE_WIDTH,
     };
-    // }
   }
 
   private onExternalImageLoaded = ({
@@ -168,7 +147,6 @@ export default class MediaSingleNode extends Component<
       getPos,
       node,
       view: { state },
-      editorAppearance,
       fullWidthMode,
     } = this.props;
 
@@ -236,7 +214,6 @@ export default class MediaSingleNode extends Component<
         selected={selected()}
         onClick={this.selectMediaSingle}
         onExternalImageLoaded={this.onExternalImageLoaded}
-        editorAppearance={editorAppearance}
         uploadComplete
         url={childNode.attrs.url}
       />
@@ -253,7 +230,6 @@ export default class MediaSingleNode extends Component<
         gridSize={12}
         viewContext={this.state.viewContext}
         state={this.props.view.state}
-        appearance={this.props.editorAppearance}
         selected={this.props.selected()}
       >
         {MediaChild}
@@ -270,10 +246,7 @@ class MediaSingleNodeView extends SelectionBasedNodeView {
 
   createDomRef(): HTMLElement {
     const domRef = document.createElement('div');
-    if (
-      browser.chrome &&
-      this.reactComponentProps.editorAppearance !== 'mobile'
-    ) {
+    if (browser.chrome) {
       // workaround Chrome bug in https://product-fabric.atlassian.net/browse/ED-5379
       // see also: https://github.com/ProseMirror/prosemirror/issues/884
       domRef.contentEditable = 'true';
@@ -316,7 +289,6 @@ class MediaSingleNodeView extends SelectionBasedNodeView {
   render() {
     const {
       eventDispatcher,
-      editorAppearance,
       fullWidthMode,
       providerFactory,
       mediaOptions,
@@ -356,7 +328,6 @@ class MediaSingleNodeView extends SelectionBasedNodeView {
                     fullWidthMode={fullWidthMode}
                     selected={isSelected}
                     eventDispatcher={eventDispatcher}
-                    editorAppearance={editorAppearance}
                     mediaPluginState={mediaPluginState}
                   />
                 );
@@ -390,14 +361,16 @@ export const ReactMediaSingleNode = (
   eventDispatcher: EventDispatcher,
   providerFactory: ProviderFactory,
   mediaOptions: MediaOptions = {},
-  editorAppearance?: EditorAppearance,
   fullWidthMode?: boolean,
+  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
+  isCopyPasteEnabled?: boolean,
 ) => (node: PMNode, view: EditorView, getPos: getPosHandler) => {
   return new MediaSingleNodeView(node, view, getPos, portalProviderAPI, {
     eventDispatcher,
-    editorAppearance,
     fullWidthMode,
     providerFactory,
     mediaOptions,
+    dispatchAnalyticsEvent,
+    isCopyPasteEnabled,
   }).init();
 };

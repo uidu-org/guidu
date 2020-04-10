@@ -37,8 +37,8 @@ export default class Basic extends PureComponent<any, any> {
                 defaultValue={storyDataDocument}
                 mediaProvider={Promise.resolve({
                   uploadParams: { endpoint: '/upload' },
-                  viewContext: Promise.resolve('test'),
-                  uploadContext: Promise.resolve('test'),
+                  viewMediaClientConfig: Promise.resolve('test'),
+                  uploadMediaClientConfig: Promise.resolve('test'),
                 })}
               >
                 {({ renderToolbar, renderEditor }) => (

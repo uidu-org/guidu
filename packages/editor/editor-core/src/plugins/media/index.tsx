@@ -1,11 +1,8 @@
 import { media, mediaGroup, mediaSingle } from '@uidu/adf-schema';
+import { MediaProvider } from '@uidu/editor-common';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
-import {
-  EditorAppearance,
-  EditorPlugin,
-  PMPluginFactoryParams,
-} from '../../types';
+import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
@@ -20,49 +17,30 @@ import { IconImages } from '../quick-insert/assets';
 import { ReactMediaGroupNode } from './nodeviews/mediaGroup';
 import { ReactMediaSingleNode } from './nodeviews/mediaSingle';
 import keymapPlugin from './pm-plugins/keymap';
-import keymapMediaSinglePlugin from './pm-plugins/keymap-media-single';
 import {
   createPlugin,
   MediaState,
   stateKey as pluginKey,
 } from './pm-plugins/main';
 import { floatingToolbar } from './toolbar';
-import { CustomMediaPicker, MediaProvider } from './types';
+import { CustomMediaPicker, MediaOptions } from './types';
 import ClipboardMediaPickerWrapper from './ui/ClipboardMediaPickerWrapper';
 import ToolbarMedia from './ui/ToolbarMedia';
 
 export { insertMediaSingleNode } from './utils/media-single';
 export { MediaState, MediaProvider, CustomMediaPicker };
 
-export interface MediaOptions {
-  provider?: Promise<MediaProvider>;
-  allowMediaSingle?: boolean | MediaSingleOptions;
-  allowMediaGroup?: boolean;
-  customDropzoneContainer?: HTMLElement;
-  customMediaPicker?: CustomMediaPicker;
-  allowResizing?: boolean;
-  allowAnnotation?: boolean;
-}
-
-export interface MediaSingleOptions {
-  disableLayout?: boolean;
-}
-
-const mediaPlugin = (
-  options?: MediaOptions,
-  appearance?: EditorAppearance,
-): EditorPlugin => ({
+const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
   name: 'media',
 
   nodes() {
+    const { allowMediaGroup = true, allowMediaSingle = false } = options || {};
+
     return [
       { name: 'mediaGroup', node: mediaGroup },
       { name: 'mediaSingle', node: mediaSingle },
       { name: 'media', node: media },
     ].filter((node) => {
-      const { allowMediaGroup = true, allowMediaSingle = false } =
-        options || {};
-
       if (node.name === 'mediaGroup') {
         return allowMediaGroup;
       }
@@ -76,7 +54,7 @@ const mediaPlugin = (
   },
 
   pmPlugins() {
-    return [
+    const pmPlugins = [
       {
         name: 'media',
         plugin: ({
@@ -97,15 +75,18 @@ const mediaPlugin = (
               nodeViews: {
                 mediaGroup: ReactMediaGroupNode(
                   portalProviderAPI,
-                  props.appearance,
+                  providerFactory,
+                  options && options.allowLazyLoading,
+                  options && options.isCopyPasteEnabled,
                 ),
                 mediaSingle: ReactMediaSingleNode(
                   portalProviderAPI,
                   eventDispatcher,
                   providerFactory,
                   options,
-                  props.appearance,
-                  props.appearance === 'full-width',
+                  options && options.fullWidthEnabled,
+                  dispatchAnalyticsEvent,
+                  options && options.isCopyPasteEnabled,
                 ),
               },
               errorReporter,
@@ -119,20 +100,46 @@ const mediaPlugin = (
             },
             reactContext,
             dispatch,
-            props.appearance,
-            dispatchAnalyticsEvent,
+            options,
           ),
       },
       { name: 'mediaKeymap', plugin: () => keymapPlugin() },
-    ].concat(
-      options && options.allowMediaSingle
-        ? {
-            name: 'mediaSingleKeymap',
-            plugin: ({ schema, props }) =>
-              keymapMediaSinglePlugin(schema, props.appearance),
-          }
-        : [],
-    );
+    ];
+    // if (options && options.allowMediaSingle) {
+    //   pmPlugins.push({
+    //     name: 'mediaSingleKeymap',
+    //     plugin: ({ schema }) => keymapMediaSinglePlugin(schema),
+    //   });
+    // }
+
+    // if (options && options.allowAnnotation) {
+    //   pmPlugins.push({ name: 'mediaEditor', plugin: createMediaEditorPlugin });
+    // }
+
+    // if (options && options.allowAltTextOnImages) {
+    //   pmPlugins.push({
+    //     name: 'mediaAltText',
+    //     plugin: createMediaAltTextPlugin,
+    //   });
+    //   pmPlugins.push({
+    //     name: 'mediaAltTextKeymap',
+    //     plugin: ({ schema }) => keymapMediaAltTextPlugin(schema),
+    //   });
+    // }
+
+    // if (options && options.allowLinking) {
+    //   pmPlugins.push({
+    //     name: 'mediaLinking',
+    //     plugin: ({ dispatch }: PMPluginFactoryParams) =>
+    //       linkingPlugin(dispatch),
+    //   });
+    //   pmPlugins.push({
+    //     name: 'mediaLinkingKeymap',
+    //     plugin: ({ schema }) => keymapLinkingPlugin(schema),
+    //   });
+    // }
+
+    return pmPlugins;
   },
 
   contentComponent({ editorView, eventDispatcher }) {
@@ -192,13 +199,13 @@ const mediaPlugin = (
       },
     ],
 
-    floatingToolbar: (state, intl) =>
+    floatingToolbar: (state, intl, providerFactory) =>
       floatingToolbar(
         state,
         intl,
-        options && options.allowResizing,
-        options && options.allowAnnotation,
-        appearance,
+        // options && options.allowResizing,
+        // options && options.allowAnnotation,
+        // appearance,
       ),
   },
 });

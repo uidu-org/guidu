@@ -1,3 +1,9 @@
+import { ProviderFactory, Providers } from '@uidu/editor-common';
+import { FileIdentifier, MediaClientConfig } from '@uidu/media-core';
+import { MediaFile, UploadParams } from '@uidu/media-picker';
+import { NodeType } from 'prosemirror-model';
+import { EditorView } from 'prosemirror-view';
+
 export interface MediaState {
   url: string;
   data: {
@@ -17,30 +23,40 @@ export interface MediaState {
     };
   };
 }
+export interface MediaOptions {
+  provider?: Providers['mediaProvider'];
+  allowMediaSingle?: boolean | MediaSingleOptions;
+  allowMediaGroup?: boolean;
+  customDropzoneContainer?: HTMLElement;
+  customMediaPicker?: CustomMediaPicker;
+  allowResizing?: boolean;
+  allowResizingInTables?: boolean;
+  allowAnnotation?: boolean;
+  allowLinking?: boolean;
+  allowLazyLoading?: boolean;
+  allowBreakoutSnapPoints?: boolean;
+  allowAdvancedToolBarOptions?: boolean;
+  allowMediaSingleEditable?: boolean;
+  allowRemoteDimensionsFetch?: boolean;
+  allowDropzoneDropLine?: boolean;
+  allowMarkingUploadsAsIncomplete?: boolean;
+  fullWidthEnabled?: boolean;
+  uploadErrorHandler?: (state: MediaState) => void;
+  waitForMediaUpload?: boolean;
+  isCopyPasteEnabled?: boolean;
+  // This enables the option to add an alt-text attribute to images contained in the Editor.
+  allowAltTextOnImages?: boolean;
+  // returns array of validation errors based on value, if no errors returned - value is considered to be valid
+  altTextValidator?: (value: string) => string[];
+  useForgePlugins?: boolean;
+  useMediaPickerPopup?: boolean;
+}
+
+export interface MediaSingleOptions {
+  disableLayout?: boolean;
+}
 
 export interface FeatureFlags {}
-
-export interface MediaProvider {
-  uploadParams?: any;
-
-  /**
-   * Used for displaying Media Cards and downloading files.
-   * This is context config is required.
-   */
-  viewContext: Promise<any>;
-
-  /**
-   * (optional) Used for creating new uploads and finalizing files.
-   * NOTE: We currently don't accept Context instance, because we need config properties
-   *       to initialize
-   */
-  uploadContext?: Promise<any>;
-
-  /**
-   * (optional) For any additional feature to be enabled
-   */
-  featureFlags?: FeatureFlags;
-}
 
 export type Listener = (data: any) => void;
 
@@ -49,45 +65,63 @@ export interface CustomMediaPicker {
   removeAllListeners(event: any): void;
   emit(event: string, data: any): void;
   destroy(): void;
-  setUploadParams(uploadParams: any): void;
+  setUploadParams(uploadParams: UploadParams): void;
 }
 
 export type MobileUploadEndEventPayload = {
-  readonly file: any & {
+  readonly file: MediaFile & {
+    readonly collectionName?: string;
     readonly publicId?: string;
   };
 };
 
 export type MediaEditorState = {
-  context?: any;
+  mediaClientConfig?: MediaClientConfig;
   editor?: {
     pos: number;
-    identifier: any;
+    identifier: FileIdentifier;
   };
 };
 
 export type OpenMediaEditor = {
   type: 'open';
   pos: number;
-  identifier: any;
+  identifier: FileIdentifier;
 };
 
 export type UploadAnnotation = {
   type: 'upload';
-  newIdentifier: any;
+  newIdentifier: FileIdentifier;
 };
 
 export type CloseMediaEditor = {
   type: 'close';
 };
 
-export type SetMediaContext = {
-  type: 'setContext';
-  context?: any;
+export type SetMediaMediaClientConfig = {
+  type: 'setMediaClientConfig';
+  mediaClientConfig?: MediaClientConfig;
 };
 
 export type MediaEditorAction =
   | OpenMediaEditor
   | CloseMediaEditor
   | UploadAnnotation
-  | SetMediaContext;
+  | SetMediaMediaClientConfig;
+
+export type MediaToolbarBaseConfig = {
+  title: string;
+  getDomRef?: (view: EditorView) => HTMLElement | undefined;
+  nodeType: NodeType | NodeType[];
+};
+
+export type MediaFloatingToolbarOptions = {
+  providerFactory?: ProviderFactory;
+  allowResizing?: boolean;
+  allowAnnotation?: boolean;
+  allowLinking?: boolean;
+  allowAdvancedToolBarOptions?: boolean;
+  allowResizingInTables?: boolean;
+  allowAltTextOnImages?: boolean;
+  altTextValidator?: (value: string) => string[];
+};

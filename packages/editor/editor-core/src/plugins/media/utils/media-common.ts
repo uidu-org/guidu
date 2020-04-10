@@ -13,23 +13,22 @@ import {
   createParagraphNear,
 } from '../../../commands';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
-import {
-  atTheBeginningOfBlock,
-  atTheBeginningOfDoc,
-  atTheEndOfBlock,
-  endPositionOfParent,
-  isImage,
-  isTemporary,
-  moveLeft,
-  startPositionOfParent,
-} from '../../../utils';
+import { isTemporary, moveLeft } from '../../../utils';
 import {
   removeNestedEmptyEls,
   unwrap,
   walkUpTreeUntil,
 } from '../../../utils/dom';
+import {
+  atTheBeginningOfBlock,
+  atTheBeginningOfDoc,
+  atTheEndOfBlock,
+  endPositionOfParent,
+  startPositionOfParent,
+} from '../../../utils/prosemirror/position';
 import { mapSlice } from '../../../utils/slice';
 import { MediaState } from '../types';
+import { isImage } from './is-image';
 
 export const posOfMediaGroupNearby = (
   state: EditorState,
@@ -45,6 +44,12 @@ export const isSelectionNonMediaBlockNode = (state: EditorState): boolean => {
   const { node } = state.selection as NodeSelection;
 
   return node && node.type !== state.schema.nodes.media && node.isBlock;
+};
+
+export const isSelectionMediaSingleNode = (state: EditorState): boolean => {
+  const { node } = state.selection as NodeSelection;
+
+  return node && node.type === state.schema.nodes.mediaSingle;
 };
 
 export const posOfPrecedingMediaGroup = (
@@ -223,7 +228,7 @@ export const copyOptionalAttrsFromMediaState = (
 ) => {
   Object.keys(node.attrs)
     .filter(isOptionalAttr)
-    .forEach(key => {
+    .forEach((key) => {
       const mediaStateKey = key.substring(2);
       const attrValue = mediaState[mediaStateKey as keyof typeof mediaState];
       if (attrValue !== undefined) {
@@ -279,8 +284,9 @@ function canContainImage(element: HTMLElement | null): boolean {
  * @param html
  */
 export const unwrapNestedMediaElements = (html: string) => {
-  const wrapper = document.createElement('div');
-  wrapper.innerHTML = html;
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+  const wrapper = doc.body;
 
   // Remove Google Doc's wrapper <b> el
   const docsWrapper = wrapper.querySelector<HTMLElement>(
@@ -295,7 +301,7 @@ export const unwrapNestedMediaElements = (html: string) => {
     return html;
   }
 
-  imageTags.forEach(imageTag => {
+  imageTags.forEach((imageTag) => {
     // Capture the immediate parent, we may remove the media from here later.
     const mediaParent = imageTag.parentElement;
     if (!mediaParent) {
@@ -317,7 +323,7 @@ export const unwrapNestedMediaElements = (html: string) => {
 
     // Find the top most element that the parent has a valid container for the image.
     // Stop just before found the wrapper
-    const insertBeforeElement = walkUpTreeUntil(mediaParent, element => {
+    const insertBeforeElement = walkUpTreeUntil(mediaParent, (element) => {
       // If is at the top just use this element as reference
       if (element.parentElement === wrapper) {
         return true;
@@ -348,4 +354,22 @@ export const unwrapNestedMediaElements = (html: string) => {
   }
 
   return wrapper.innerHTML;
+};
+
+export const getMediaNodeFromSelection = (
+  state: EditorState,
+): PMNode | null => {
+  if (!isSelectionMediaSingleNode(state)) {
+    return null;
+  }
+
+  const tr = state.tr;
+  const pos = tr.selection.from + 1;
+  const mediaNode = tr.doc.nodeAt(pos);
+
+  if (mediaNode && mediaNode.type === state.schema.nodes.media) {
+    return mediaNode;
+  }
+
+  return null;
 };

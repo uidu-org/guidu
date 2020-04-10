@@ -1,7 +1,11 @@
 import { differenceInCalendarDays, isBefore } from 'date-fns';
+import { IntlShape } from 'react-intl';
 
-const ISO_FORMAT = 'YYYY-MM-DD';
-const DEFAULT_FORMAT = 'DD MMM YYYY';
+enum FORMATS {
+  ISO_FORMAT = 'YYYY-MM-DD',
+  CURRENT_YEAR_FORMAT_WITHOUT_YEAR = 'CURRENT_YEAR_FORMAT_WITHOUT_YEAR',
+  LOCALIZED_FORMAT = 'LOCALIZED_FORMAT',
+}
 
 export interface Date {
   day: number;
@@ -18,7 +22,7 @@ export const timestampToUTCDate = (timestamp: string | number): Date => {
 };
 
 export const todayTimestampInUTC = (): string => {
-  const today = new Date();
+  const today = new Date(Date.now());
   const todayInUTC = Date.UTC(
     today.getFullYear(),
     today.getMonth(),
@@ -34,74 +38,71 @@ const addLeadingZero = (val: number) => {
   return val;
 };
 
-const months = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec',
-];
-const week_days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const capitalizeFirstLetter = (str: string): string => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 
 // example: "23 Jan 2018"
 export const timestampToString = (
   timestamp: string | number,
-  pattern?: string,
+  intl: IntlShape | null,
+  pattern?: FORMATS,
 ): string => {
-  const date = new Date(Number(timestamp));
-  switch (pattern) {
-    case 'ddd, DD MMM':
-      return `${week_days[date.getUTCDay()]}, ${addLeadingZero(
-        date.getUTCDate(),
-      )} ${months[date.getUTCMonth()]}`;
-    case ISO_FORMAT:
-      return `${date.getUTCFullYear()}-${addLeadingZero(
-        date.getUTCMonth() + 1,
-      )}-${date.getUTCDate()}`;
-    default:
-      return `${addLeadingZero(date.getUTCDate())} ${
-        months[date.getUTCMonth()]
-      } ${date.getUTCFullYear()}`;
+  if (!intl || pattern === FORMATS.ISO_FORMAT) {
+    return timestampToIsoFormat(timestamp);
   }
+
+  const date = new Date(Number(timestamp));
+
+  const showWeekday = pattern === FORMATS.CURRENT_YEAR_FORMAT_WITHOUT_YEAR;
+  const showYear = !showWeekday;
+  return intl.formatDate(date, {
+    timeZone: 'UTC',
+    weekday: showWeekday ? 'short' : undefined,
+    month: 'short',
+    day: 'numeric',
+    year: showYear ? 'numeric' : undefined,
+    formatMatcher: 'best fit',
+  });
 };
 
 // example: "2018-01-23"
 export const timestampToIsoFormat = (timestamp: string | number): string => {
-  return timestampToString(timestamp, ISO_FORMAT);
+  const date = new Date(Number(timestamp));
+  return `${date.getUTCFullYear()}-${addLeadingZero(
+    date.getUTCMonth() + 1,
+  )}-${date.getUTCDate()}`;
 };
 
 export const isPastDate = (timestamp: string | number): boolean => {
   return isBefore(
-    // @ts-ignore
     timestampToIsoFormat(Number(timestamp)),
     timestampToIsoFormat(new Date().valueOf()),
   );
 };
 
-export const timestampToTaskContext = (timestamp: string | number): string => {
-  const curDate = new Date();
+export const timestampToTaskContext = (
+  timestamp: string | number,
+  intl: IntlShape,
+): string => {
+  const curDate = new Date(Number(todayTimestampInUTC()));
   const givenDate = new Date(Number(timestamp));
   const distance = differenceInCalendarDays(givenDate, curDate);
   const sameYear = givenDate.getUTCFullYear() === curDate.getUTCFullYear();
-  let pattern = '';
 
-  if (distance === 0) {
-    return 'Today';
-  } else if (distance === 1) {
-    return 'Tomorrow';
-  } else if (distance === -1) {
-    pattern = 'Yesterday';
-  } else if (sameYear) {
-    pattern = 'ddd, DD MMM';
-  } else {
-    pattern = DEFAULT_FORMAT;
+  if (intl && [-1, 0, 1].indexOf(distance) > -1) {
+    return capitalizeFirstLetter(
+      intl.formatRelative(givenDate, {
+        units: 'day',
+      }),
+    );
   }
-  return timestampToString(timestamp, pattern);
+
+  return timestampToString(
+    timestamp,
+    intl,
+    sameYear
+      ? FORMATS.CURRENT_YEAR_FORMAT_WITHOUT_YEAR
+      : FORMATS.LOCALIZED_FORMAT,
+  );
 };

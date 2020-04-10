@@ -105,7 +105,7 @@ export const getValidContent = (
   return content.map((node) => getValidNode(node, schema, adfStage));
 };
 
-const TEXT_COLOR_PATTERN = /^#[0-9a-f]{6}$/i;
+const TEXT_COLOR_PATTERN = /^#[0-9a-fA-F]{6}$/;
 const RELATIVE_LINK = /^\//;
 
 const flattenUnknownBlockTree = (
@@ -178,6 +178,23 @@ export const getValidUnknownNode = (node: ADNode): ADNode => {
     type: 'unknownBlock',
     content: flattenUnknownBlockTree(node),
   };
+};
+
+const getValidMarks = (
+  marks: ADMark[] | undefined,
+  adfStage: ADFStage = 'final',
+): ADMark[] | undefined => {
+  if (marks && marks.length > 0) {
+    return marks.reduce((acc, mark) => {
+      const validMark = getValidMark(mark, adfStage);
+      if (validMark) {
+        acc.push(validMark);
+      }
+
+      return acc;
+    }, [] as ADMark[]);
+  }
+  return marks;
 };
 
 /*
@@ -319,6 +336,7 @@ export const getValidNode = (
         let mediaType = '';
         let mediaUrl = '';
         let mediaFile = {};
+
         if (attrs) {
           const { id, type, url, file } = attrs;
           mediaId = id;
@@ -328,14 +346,20 @@ export const getValidNode = (
         }
 
         if (mediaType === 'external' && !!mediaUrl) {
+          const mediaAttrs: any = {
+            type: mediaType,
+            url: mediaUrl,
+            width: attrs.width,
+            height: attrs.height,
+          };
+
+          if (attrs.alt) {
+            mediaAttrs.alt = attrs.alt;
+          }
+
           return {
             type,
-            attrs: {
-              type: mediaType,
-              url: mediaUrl,
-              width: attrs.width,
-              height: attrs.height,
-            },
+            attrs: mediaAttrs,
           };
         } else if (mediaId && mediaType) {
           const mediaAttrs: any = {
@@ -350,6 +374,10 @@ export const getValidNode = (
 
           if (attrs.height) {
             mediaAttrs.height = attrs.height;
+          }
+
+          if (attrs.alt) {
+            mediaAttrs.alt = attrs.alt;
           }
 
           return {
@@ -381,7 +409,7 @@ export const getValidNode = (
             type,
             attrs,
             content,
-            marks,
+            marks: getValidMarks(marks, adfStage),
           };
         }
         break;
@@ -435,17 +463,9 @@ export const getValidNode = (
       case 'text': {
         let { marks } = node;
         if (text) {
-          if (marks) {
-            marks = marks.reduce((acc, mark) => {
-              const validMark = getValidMark(mark, adfStage);
-              if (validMark) {
-                acc.push(validMark);
-              }
-
-              return acc;
-            }, [] as ADMark[]);
-          }
-          return marks ? { type, text, marks: marks } : { type, text };
+          return marks
+            ? { type, text, marks: getValidMarks(marks, adfStage) }
+            : { type, text };
         }
         break;
       }
@@ -663,6 +683,11 @@ export const getValidNode = (
 
         break;
       }
+
+      case 'expand':
+      case 'nestedExpand': {
+        return { type, attrs, content, marks };
+      }
     }
   }
 
@@ -700,7 +725,6 @@ export const getValidMark = (
         if (attrs) {
           const { href, url, __confluenceMetadata } = attrs;
           let linkHref = href || url;
-
           if (
             linkHref &&
             linkHref.indexOf(':') === -1 &&

@@ -1,35 +1,27 @@
 import { MediaSingleLayout } from '@uidu/adf-schema';
-import { ErrorReporter } from '@uidu/editor-common';
+import {
+  ContextIdentifierProvider,
+  ErrorReporter,
+  MediaProvider,
+} from '@uidu/editor-common';
+import { MediaClientConfig } from '@uidu/media-core';
 import { MediaPickerFactoryClass } from '@uidu/media-picker';
 import assert from 'assert';
 import { Node, Node as PMNode, Schema } from 'prosemirror-model';
-import {
-  EditorState,
-  NodeSelection,
-  Plugin,
-  PluginKey,
-} from 'prosemirror-state';
+import { EditorState, NodeSelection, Plugin } from 'prosemirror-state';
 import { insertPoint } from 'prosemirror-transform';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import analyticsService from '../../../analytics/service';
 import { Dispatch } from '../../../event-dispatcher';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
 import {
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  AnalyticsEventPayload,
-  DispatchAnalyticsEvent,
-  EVENT_TYPE,
   InputMethodInsertMedia,
   INPUT_METHOD,
 } from '../../../plugins/analytics';
-import { EditorAppearance } from '../../../types/editor-props';
 import { isImage } from '../../../utils';
-import { isFullPage } from '../../../utils/is-full-page';
 import { updateMediaNodeAttrs } from '../commands';
 import * as helpers from '../commands/helpers';
 import { MediaPluginOptions } from '../media-plugin-options';
@@ -38,65 +30,82 @@ import { MediaPluginOptions } from '../media-plugin-options';
 //   MediaStateEventSubscriber,
 //   PickerFacadeConfig,
 // } from '../picker-facade';
-import { MediaProvider, MediaState } from '../types';
+import { MediaOptions, MediaState } from '../types';
 import DropPlaceholder, { PlaceholderType } from '../ui/Media/DropPlaceholder';
 import { removeMediaNode, splitMediaGroup } from '../utils/media-common';
 import { insertMediaGroupNode } from '../utils/media-files';
 import { insertMediaSingleNode } from '../utils/media-single';
+import { stateKey } from './plugin-key';
+import { MediaNodeWithPosHandler, MediaPluginState } from './types';
 
+export { stateKey } from './plugin-key';
 export { MediaState, MediaProvider };
+
+const createDropPlaceholder = (allowDropLine?: boolean) => {
+  const dropPlaceholder = document.createElement('div');
+  if (allowDropLine) {
+    ReactDOM.render(
+      React.createElement(DropPlaceholder, { type: 'single' } as {
+        type: PlaceholderType;
+      }),
+      dropPlaceholder,
+    );
+  } else {
+    ReactDOM.render(React.createElement(DropPlaceholder), dropPlaceholder);
+  }
+  return dropPlaceholder;
+};
 
 const MEDIA_RESOLVED_STATES = ['ready', 'error', 'cancelled'];
 
-export interface MediaNodeWithPosHandler {
-  node: PMNode;
-  getPos: ProsemirrorGetPosHandler;
-}
+export class MediaPluginStateImplementation implements MediaPluginState {
+  allowsUploads: boolean = false;
+  mediaClientConfig?: MediaClientConfig;
+  uploadMediaClientConfig?: MediaClientConfig;
+  ignoreLinks: boolean = false;
+  waitForMediaUpload: boolean = true;
+  allUploadsFinished: boolean = true;
+  showDropzone: boolean = false;
+  element?: HTMLElement;
+  layout: MediaSingleLayout = 'center';
+  mediaNodes: MediaNodeWithPosHandler[] = [];
+  mediaGroupNodes: Record<string, any> = {};
+  mobileUploadComplete: Record<string, boolean> = {};
+  options: MediaPluginOptions;
+  mediaProvider?: MediaProvider;
 
-export class MediaPluginState {
-  public allowsUploads: boolean = true;
-  public mediaContext?: any;
-  public uploadContext?: any;
-  public ignoreLinks: boolean = false;
-  public waitForMediaUpload: boolean = true;
-  public allUploadsFinished: boolean = true;
-  public showDropzone: boolean = false;
-  public element?: HTMLElement;
-  public layout: MediaSingleLayout = 'center';
-  public mediaNodes: MediaNodeWithPosHandler[] = [];
-  public mediaGroupNodes: Record<string, any> = {};
-  public mobileUploadComplete: Record<string, boolean> = {};
   private pendingTask = Promise.resolve<MediaState | null>(null);
-  public options: MediaPluginOptions;
   private view!: EditorView;
   private destroyed = false;
-  public mediaProvider?: MediaProvider;
+  private contextIdentifierProvider?: ContextIdentifierProvider;
   private errorReporter: ErrorReporter;
-
-  public pickers = [];
-  public pickerPromises: Array<Promise<any>> = [];
-  private popupPicker?;
-  private dropzonePicker?;
-
-  public editingMediaSinglePos?: number;
-  public showEditingDialog?: boolean;
-
-  public editorAppearance: EditorAppearance;
+  private popupPicker?: any;
+  // @ts-ignore
+  private customPicker?: any;
   private removeOnCloseListener: () => void = () => {};
-  private dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
-
+  private openMediaPickerBrowser?: () => void;
+  private onPopupToogleCallback: (isOpen: boolean) => void = () => {};
   private reactContext: () => {};
+
+  pickers: [] = [];
+  pickerPromises: Array<Promise<any>> = [];
+
+  editingMediaSinglePos?: number;
+  showEditingDialog?: boolean;
+  mediaOptions?: MediaOptions;
+  dispatch?: Dispatch;
 
   constructor(
     state: EditorState,
     options: MediaPluginOptions,
     reactContext: () => {},
-    editorAppearance?: EditorAppearance,
-    dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
+    mediaOptions?: MediaOptions,
+    dispatch?: Dispatch,
   ) {
     this.reactContext = reactContext;
     this.options = options;
-    this.editorAppearance = editorAppearance!;
+    this.mediaOptions = mediaOptions;
+    this.dispatch = dispatch;
     this.waitForMediaUpload =
       options.waitForMediaUpload === undefined
         ? true
@@ -110,14 +119,26 @@ export class MediaPluginState {
 
     options.providerFactory.subscribe(
       'mediaProvider',
-      (_name, provider?: Promise<MediaProvider>) => {
-        return this.setMediaProvider(provider);
-      },
+      (_name: string, provider?: Promise<MediaProvider>) =>
+        this.setMediaProvider(provider),
+    );
+
+    options.providerFactory.subscribe(
+      'contextIdentifierProvider',
+      this.onContextIdentifierProvider,
     );
 
     this.errorReporter = options.errorReporter || new ErrorReporter();
-    this.dispatchAnalyticsEvent = dispatchAnalyticsEvent;
   }
+
+  onContextIdentifierProvider = async (
+    _name: string,
+    provider?: Promise<ContextIdentifierProvider>,
+  ) => {
+    if (provider) {
+      this.contextIdentifierProvider = await provider;
+    }
+  };
 
   setMediaProvider = async (mediaProvider?: Promise<MediaProvider>) => {
     if (!mediaProvider) {
@@ -137,11 +158,23 @@ export class MediaPluginState {
 
     // TODO disable (not destroy!) pickers until mediaProvider is resolved
     try {
-      let resolvedMediaProvider: MediaProvider = (this.mediaProvider = await mediaProvider);
+      this.mediaProvider = await mediaProvider;
 
+      if (!this.mediaProvider.viewMediaClientConfig) {
+        const viewMediaClientConfig = this.mediaProvider.viewMediaClientConfig;
+
+        if (viewMediaClientConfig) {
+          (this
+            .mediaProvider as MediaProvider).viewMediaClientConfig = viewMediaClientConfig;
+        }
+      }
+
+      if (!this.mediaProvider.uploadMediaClientConfig) {
+        this.mediaProvider.uploadMediaClientConfig = this.mediaProvider.uploadMediaClientConfig;
+      }
       assert(
-        resolvedMediaProvider && resolvedMediaProvider.viewContext,
-        `MediaProvider promise did not resolve to a valid instance of MediaProvider - ${resolvedMediaProvider}`,
+        this.mediaProvider.viewMediaClientConfig,
+        `MediaProvider promise did not resolve to a valid instance of MediaProvider - ${this.mediaProvider}`,
       );
     } catch (err) {
       const wrappedError = new Error(
@@ -163,9 +196,9 @@ export class MediaPluginState {
       return undefined;
     }
 
-    this.mediaContext = await this.mediaProvider.viewContext;
+    this.mediaClientConfig = this.mediaProvider.viewMediaClientConfig;
 
-    this.allowsUploads = !!this.mediaProvider.uploadContext;
+    this.allowsUploads = !!this.mediaProvider.uploadMediaClientConfig;
     const { view, allowsUploads } = this;
 
     // make sure editable DOM node is mounted
@@ -175,6 +208,7 @@ export class MediaPluginState {
     }
 
     if (this.allowsUploads) {
+      this.uploadMediaClientConfig = this.mediaProvider.uploadMediaClientConfig;
       if (this.mediaProvider.uploadParams) {
         await this.initPickers(
           this.mediaProvider.uploadParams,
@@ -252,19 +286,19 @@ export class MediaPluginState {
 
   // TODO [MSW-454]: remove this logic from Editor
   onPopupPickerClose = () => {
-    if (this.dropzonePicker && this.popupPicker) {
-      this.dropzonePicker.activate();
-    }
+    this.onPopupToogleCallback(false);
   };
 
   showMediaPicker = () => {
     if (!this.popupPicker) {
       return undefined;
     }
-    if (this.dropzonePicker) {
-      this.dropzonePicker.deactivate();
-    }
     this.popupPicker.show();
+    this.onPopupToogleCallback(true);
+  };
+
+  onPopupToggle = (onPopupToogleCallback: (isOpen: boolean) => void) => {
+    this.onPopupToogleCallback = onPopupToogleCallback;
   };
 
   setView(view: EditorView) {
@@ -335,8 +369,8 @@ export class MediaPluginState {
       );
     }
 
-    this.popupPicker = undefined;
-    this.dropzonePicker = undefined;
+    this.popupPicker = null;
+    this.customPicker = undefined;
   };
 
   private async initPickers(uploadParams: any, reactContext: () => {}) {
@@ -358,41 +392,18 @@ export class MediaPluginState {
         // onClose: () => this.onPopupPickerClose(),
       });
       pickerPromises.push(popupPicker);
+      // @ts-ignore
       pickers.push((this.popupPicker = await popupPicker));
     }
   }
 
-  public trackNewMediaEvent(pickerType: string) {
-    return (mediaState: MediaState) => {
-      analyticsService.trackEvent(
-        `atlassian.editor.media.file.${pickerType}`,
-        mediaState.data.metadata.mime_type
-          ? { fileMimeType: mediaState.data.metadata.mime_type }
-          : {},
-      );
-
-      if (this.dispatchAnalyticsEvent) {
-        const inputMethod = this.getInputMethod(
-          pickerType,
-        ) as InputMethodInsertMedia;
-        const extensionIdx = mediaState.data.metadata.filename!.lastIndexOf(
-          '.',
-        );
-        const fileExtension =
-          extensionIdx >= 0
-            ? mediaState.data.metadata.filename!.substring(extensionIdx + 1)
-            : undefined;
-
-        const payload: AnalyticsEventPayload = {
-          action: ACTION.INSERTED,
-          actionSubject: ACTION_SUBJECT.DOCUMENT,
-          actionSubjectId: ACTION_SUBJECT_ID.MEDIA,
-          attributes: { inputMethod, fileExtension },
-          eventType: EVENT_TYPE.TRACK,
-        };
-        this.dispatchAnalyticsEvent(payload);
-      }
-    };
+  public trackNewMediaEvent(mediaState: MediaState) {
+    return analyticsService.trackEvent(
+      `atlassian.editor.media.file`,
+      mediaState.data.metadata.mime_type
+        ? { fileMimeType: mediaState.data.metadata.mime_type }
+        : {},
+    );
   }
 
   private getInputMethod = (
@@ -470,7 +481,7 @@ export class MediaPluginState {
     return undefined;
   };
 
-  private handleDrag = (dragState: 'enter' | 'leave') => {
+  handleDrag = (dragState: 'enter' | 'leave') => {
     const isActive = dragState === 'enter';
     if (this.showDropzone === isActive) {
       return undefined;
@@ -483,22 +494,6 @@ export class MediaPluginState {
   };
 }
 
-const createDropPlaceholder = (editorAppearance?: EditorAppearance) => {
-  const dropPlaceholder = document.createElement('div');
-  if (isFullPage(editorAppearance)) {
-    ReactDOM.render(
-      React.createElement(DropPlaceholder, { type: 'single' } as {
-        type: PlaceholderType;
-      }),
-      dropPlaceholder,
-    );
-  } else {
-    ReactDOM.render(React.createElement(DropPlaceholder), dropPlaceholder);
-  }
-  return dropPlaceholder;
-};
-
-export const stateKey = new PluginKey('mediaPlugin');
 export const getMediaPluginState = (state: EditorState) =>
   stateKey.getState(state) as MediaPluginState;
 
@@ -507,20 +502,21 @@ export const createPlugin = (
   options: MediaPluginOptions,
   reactContext: () => {},
   dispatch?: Dispatch,
-  editorAppearance?: EditorAppearance,
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
+  mediaOptions?: MediaOptions,
 ) => {
-  const dropPlaceholder = createDropPlaceholder(editorAppearance);
+  const dropPlaceholder = createDropPlaceholder(
+    mediaOptions && mediaOptions.allowDropzoneDropLine,
+  );
 
   return new Plugin({
     state: {
       init(_config, state) {
-        return new MediaPluginState(
+        return new MediaPluginStateImplementation(
           state,
           options,
           reactContext,
-          editorAppearance,
-          dispatchAnalyticsEvent,
+          mediaOptions,
+          dispatch,
         );
       },
       apply(tr, pluginState: MediaPluginState) {
@@ -560,9 +556,6 @@ export const createPlugin = (
       return {
         update: () => {
           pluginState.updateElement();
-        },
-        destroy: () => {
-          pluginState.destroy();
         },
       };
     },
@@ -610,7 +603,9 @@ export const createPlugin = (
         }
 
         const dropPlaceholders: Decoration[] = [
-          Decoration.widget(pos, dropPlaceholder, { key: 'drop-placeholder' }),
+          Decoration.widget(pos, dropPlaceholder, {
+            key: 'drop-placeholder',
+          }),
         ];
         return DecorationSet.create(state.doc, dropPlaceholders);
       },
