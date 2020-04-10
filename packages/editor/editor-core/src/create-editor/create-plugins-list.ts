@@ -30,7 +30,7 @@ import {
   textColorPlugin,
   textFormattingPlugin,
   typeAheadPlugin,
-  // unsupportedContentPlugin,
+  unsupportedContentPlugin,
   widthPlugin,
 } from '../plugins';
 import { EditorPlugin, EditorProps } from '../types';
@@ -57,7 +57,7 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
     textFormattingPlugin(textFormatting || {}),
     widthPlugin(),
     typeAheadPlugin(),
-    // unsupportedContentPlugin(),
+    unsupportedContentPlugin(),
     editorDisabledPlugin(),
     gapCursorPlugin(),
     gridPlugin({ shouldCalcBreakoutGridLines: isFullPage }),

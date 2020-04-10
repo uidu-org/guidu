@@ -49,5 +49,5 @@ export { default as tablesPlugin } from './table';
 export { default as textColorPlugin } from './text-color';
 export { default as textFormattingPlugin } from './text-formatting';
 export { default as typeAheadPlugin } from './type-ahead';
-// export { default as unsupportedContentPlugin } from './unsupported-content';
+export { default as unsupportedContentPlugin } from './unsupported-content';
 export { default as widthPlugin } from './width';

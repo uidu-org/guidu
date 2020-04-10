@@ -262,7 +262,6 @@ export default class ReactSerializer implements Serializer<JSX.Element> {
   }
 
   private getProps(node: Node) {
-    console.log(node.attrs);
     return {
       text: node.text,
       providers: this.providers,

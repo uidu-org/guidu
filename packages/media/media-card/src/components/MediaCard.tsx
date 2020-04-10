@@ -8,6 +8,8 @@ import Video from './Video';
 
 initializeFileTypeIcons();
 
+const NotFound = () => <p>File not found</p>;
+
 export default function MediaCard(props: MediaCardProps) {
   let content;
   const {
@@ -16,24 +18,20 @@ export default function MediaCard(props: MediaCardProps) {
   } = props;
 
   if (!id) {
-    content = 'File not found';
+    content = NotFound;
   } else {
     switch (type) {
       case 'image':
-        content = <Image {...props} {...file} />;
+        content = Image;
         break;
       case 'video':
-        content = <Video {...props} {...file} />;
+        content = Video;
         break;
       default:
-        content = <File {...props} {...file} />;
+        content = File;
         break;
     }
   }
 
-  return (
-    <MediaCardViewer {...props} file={file}>
-      {content}
-    </MediaCardViewer>
-  );
+  return <MediaCardViewer {...props} file={file} component={content} />;
 }

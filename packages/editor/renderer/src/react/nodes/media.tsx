@@ -8,7 +8,6 @@ export interface MediaProps {
 
 export default class Media extends PureComponent<MediaProps, {}> {
   render() {
-    console.log('...');
     return <MediaCard {...this.props} />;
   }
 }

@@ -139,7 +139,8 @@ export default class MediaSingleNode extends Component<
     );
   };
 
-  selectMediaSingle = ({ event }: any) => {
+  selectMediaSingle = (event: React.MouseEvent) => {
+    event.persist();
     // We need to call "stopPropagation" here in order to prevent the browser from navigating to
     // another URL if the media node is wrapped in a link mark.
     event.stopPropagation();
@@ -174,7 +175,12 @@ export default class MediaSingleNode extends Component<
     const { layout, width: mediaSingleWidth } = node.attrs;
     const childNode = node.firstChild!;
 
-    let { width, height, type } = childNode.attrs;
+    let {
+      file: {
+        metadata: { width, height },
+      },
+      type,
+    } = childNode.attrs;
 
     if (type === 'external') {
       const { width: stateWidth, height: stateHeight } = this.state;
@@ -209,6 +215,8 @@ export default class MediaSingleNode extends Component<
       width: `${cardWidth}px`,
       height: `${cardHeight}px`,
     };
+
+    console.log(cardDimensions);
 
     const props = {
       layout,

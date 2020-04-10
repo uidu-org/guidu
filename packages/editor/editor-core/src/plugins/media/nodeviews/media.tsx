@@ -107,7 +107,7 @@ class MediaNode extends Component<MediaNodeProps> {
       <Card
         // context={viewContext as any}
         // resizeMode="stretchy-fit"
-        // dimensions={cardDimensions}
+        cardDimensions={cardDimensions}
         file={file}
         // selectable={true}
         // selected={selected}

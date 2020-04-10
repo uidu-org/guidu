@@ -1,14 +1,17 @@
 import React from 'react';
+import { Play } from 'react-feather';
+import Image from '../Image';
 import MediaCardFooter from '../MediaCardFooter';
-import { StyledPoster } from './styled';
+import { StyledPlayButton } from './styled';
 
-export default function Video({ url = null, ...rest }) {
+export default function Video(props) {
+  const { file } = props;
   return (
-    <StyledPoster poster={url} role="img">
-      {/* <StyledPlayButton type="button">
-      <Play />
-    </StyledPlayButton> */}
-      <MediaCardFooter {...rest} />
-    </StyledPoster>
+    <>
+      <Image file={file} />
+      <StyledPlayButton type="button">
+        <Play />
+      </StyledPlayButton>
+    </>
   );
 }

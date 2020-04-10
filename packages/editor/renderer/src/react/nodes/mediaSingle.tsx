@@ -154,6 +154,8 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
       React.Children.toArray(props.children)[0],
     );
 
+    console.log(child);
+
     let {
       // width = DEFAULT_WIDTH,
       // height = DEFAULT_HEIGHT,
@@ -176,7 +178,7 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
 
     if (width === null) {
       width = DEFAULT_WIDTH;
-      height = DEFAULT_HEIGHT;
+      // height = DEFAULT_HEIGHT;
     }
 
     const linkMark = props.marks?.find(props.isLinkMark);
@@ -191,12 +193,13 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
     return (
       <WidthConsumer>
         {({ width: containerWidth, breakpoint }) => {
+          console.log('containerWidth', containerWidth);
           const { isInsideOfBlockNode, allowDynamicTextSizing } = this.props;
           const cardWidth = containerWidth;
           const cardHeight = (height / width) * cardWidth;
           const cardDimensions = {
-            width: `${cardWidth}px`,
-            height: `${cardHeight}px`,
+            width: cardWidth,
+            height: cardHeight,
           };
 
           const isFullWidth = rendererAppearance === 'full-width';

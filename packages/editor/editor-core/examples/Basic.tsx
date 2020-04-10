@@ -1,6 +1,7 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
 import { Editor, EditorContext, WithEditorActions } from '..';
+import { document as storyDataDocument } from '../../renderer/examples/helper/story-data';
 import { DevTools } from '../examples-utils/DevTools';
 
 export default class Basic extends PureComponent<any, any> {
@@ -33,6 +34,7 @@ export default class Basic extends PureComponent<any, any> {
                   allowMediaGroup: true,
                   allowMediaSingle: true,
                 }}
+                defaultValue={storyDataDocument}
                 mediaProvider={Promise.resolve({
                   uploadParams: { endpoint: '/upload' },
                   viewContext: Promise.resolve('test'),

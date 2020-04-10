@@ -103,12 +103,16 @@ function calcMargin(layout: MediaSingleLayout): string {
   }
 }
 
-function isImageAligned(layout: MediaSingleLayout): string {
+function isImageAligned(layout: MediaSingleLayout) {
   switch (layout) {
     case 'align-end':
-      return 'margin-right: 0';
+      return css`
+        margin-right: 0;
+      `;
     case 'align-start':
-      return 'margin-left: 0';
+      return css`
+        margin-left: 0;
+      `;
     default:
       return '';
   }
@@ -160,7 +164,7 @@ const Wrapper = styled.div<WrapperProps>`
   &::after {
     content: '';
     display: block;
-    padding-bottom: ${p => (p.height / p.width) * 100}%;
+    padding-bottom: ${(p) => (p.height / p.width) * 100}%;
 
     /* Fixes extra padding problem in Firefox */
     font-size: 0;

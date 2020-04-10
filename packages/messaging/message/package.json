@@ -21,7 +21,7 @@
     "@uidu/tooltip": "^0.1.26",
     "@uifabric/file-type-icons": "^7.0.3",
     "classnames": "^2.2.6",
-    "emoji-regex": "^8.0.0",
+    "emoji-regex": "^9.0.0",
     "moment": "^2.18.1",
     "prop-types": "^15.6.0",
     "react-feather": "^2.0.3",

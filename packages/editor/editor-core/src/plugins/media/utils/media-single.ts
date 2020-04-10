@@ -91,7 +91,6 @@ export const insertMediaSingleNode = (
   const node = createMediaSingleNode(state.schema)(
     mediaState as MediaSingleState,
   );
-  console.log(node);
   const shouldSplit =
     grandParent && grandParent.type.validContent(Fragment.from(node));
 
@@ -127,6 +126,7 @@ export const createMediaSingleNode = (schema: Schema) => (
     file: {
       id,
       type: 'image',
+      metadata,
       width: width && Math.round(width / scaleFactor),
       height: height && Math.round(height / scaleFactor),
       url,
