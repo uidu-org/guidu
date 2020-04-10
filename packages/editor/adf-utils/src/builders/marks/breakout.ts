@@ -4,8 +4,8 @@ import {
   CodeBlockDefinition,
   LayoutSectionDefinition,
 } from '@uidu/adf-schema';
-import { applyMark } from '../utils/apply-mark';
 import { WithAppliedMark } from '../types';
+import { applyMark } from '../utils/apply-mark';
 
 export const breakout = (attrs: BreakoutMarkAttrs) => (
   maybeNode: CodeBlockDefinition | LayoutSectionDefinition,

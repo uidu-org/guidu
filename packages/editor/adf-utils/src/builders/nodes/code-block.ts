@@ -1,8 +1,4 @@
-import {
-  CodeBlockDefinition,
-  TextDefinition,
-  NoMark,
-} from '@uidu/adf-schema';
+import { CodeBlockDefinition, NoMark, TextDefinition } from '@uidu/adf-schema';
 
 export type CodeBlockContent = TextDefinition & NoMark;
 

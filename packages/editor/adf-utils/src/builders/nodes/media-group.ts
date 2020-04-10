@@ -1,4 +1,4 @@
-import { MediaGroupDefinition, MediaDefinition } from '@uidu/adf-schema';
+import { MediaDefinition, MediaGroupDefinition } from '@uidu/adf-schema';
 
 export const mediaGroup = (
   ...content: Array<MediaDefinition>

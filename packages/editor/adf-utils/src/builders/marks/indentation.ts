@@ -1,10 +1,10 @@
 import {
-  IndentationMarkDefinition,
   IndentationMarkAttributes,
+  IndentationMarkDefinition,
   ParagraphDefinition,
 } from '@uidu/adf-schema';
+import { WithAppliedMark, WithMark } from '../types';
 import { applyMark } from '../utils/apply-mark';
-import { WithMark, WithAppliedMark } from '../types';
 
 export const indentation = (attrs: IndentationMarkAttributes) => (
   maybeNode: WithMark | string,

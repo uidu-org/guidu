@@ -1,6 +1,6 @@
 import {
-  DecisionListDefinition,
   DecisionItemDefinition,
+  DecisionListDefinition,
 } from '@uidu/adf-schema';
 
 export const decisionList = (attrs: DecisionListDefinition['attrs']) => (

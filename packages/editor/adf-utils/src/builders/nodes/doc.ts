@@ -1,6 +1,6 @@
 import {
-  DocNode,
   BlockContent,
+  DocNode,
   LayoutSectionDefinition,
 } from '@uidu/adf-schema';
 

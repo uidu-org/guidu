@@ -26,6 +26,8 @@ export default {
           'table',
           'extension',
           'bodiedExtension',
+          'expand_with_no_mark',
+          'expand_with_breakout_definition',
           'blockCard',
           'layoutSection',
         ],

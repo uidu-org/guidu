@@ -1,11 +1,11 @@
 import {
-  AlignmentMarkDefinition,
   AlignmentAttributes,
-  ParagraphDefinition,
+  AlignmentMarkDefinition,
   HeadingDefinition,
+  ParagraphDefinition,
 } from '@uidu/adf-schema';
+import { WithAppliedMark, WithMark } from '../types';
 import { applyMark } from '../utils/apply-mark';
-import { WithMark, WithAppliedMark } from '../types';
 
 export const alignment = (attrs: AlignmentAttributes) => (
   maybeNode: WithMark | string,

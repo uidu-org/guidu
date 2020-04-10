@@ -1,4 +1,4 @@
-import { TableHeaderDefinition, CellAttributes } from '@uidu/adf-schema';
+import { CellAttributes, TableHeaderDefinition } from '@uidu/adf-schema';
 
 export const tableHeader = (attrs?: CellAttributes) => (
   ...content: TableHeaderDefinition['content']

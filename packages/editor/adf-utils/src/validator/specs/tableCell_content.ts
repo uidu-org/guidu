@@ -4,7 +4,6 @@ export default {
     [
       'paragraph_with_no_marks',
       'paragraph_with_alignment',
-      'paragraph_with_indentation',
       'bulletList',
       'mediaSingle',
       'codeBlock_with_no_marks',
@@ -19,6 +18,7 @@ export default {
       'decisionList',
       'taskList',
       'extension',
+      'nestedExpand_with_no_marks',
       'blockCard',
     ],
   ],

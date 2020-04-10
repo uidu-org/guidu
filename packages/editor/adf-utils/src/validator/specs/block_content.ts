@@ -1,7 +1,6 @@
 export default [
   'paragraph_with_no_marks',
   'paragraph_with_alignment',
-  'paragraph_with_indentation',
   'bulletList',
   'mediaSingle',
   'codeBlock_with_no_marks',
@@ -18,5 +17,6 @@ export default [
   'table',
   'extension',
   'bodiedExtension',
+  'expand_with_no_mark',
   'blockCard',
 ];

@@ -1,4 +1,4 @@
-import { PanelDefinition, PanelAttributes } from '@uidu/adf-schema';
+import { PanelAttributes, PanelDefinition } from '@uidu/adf-schema';
 
 export const panel = (attrs: PanelAttributes) => (
   ...content: PanelDefinition['content']

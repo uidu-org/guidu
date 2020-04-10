@@ -1,7 +1,7 @@
 import {
-  TableRowDefinition,
-  TableHeaderDefinition,
   TableCellDefinition,
+  TableHeaderDefinition,
+  TableRowDefinition,
 } from '@uidu/adf-schema';
 
 export const tableRow = (

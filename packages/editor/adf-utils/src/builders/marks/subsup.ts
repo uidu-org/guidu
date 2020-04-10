@@ -1,6 +1,6 @@
-import { SubSupDefinition, SubSupAttributes } from '@uidu/adf-schema';
-import { applyMark } from '../utils/apply-mark';
+import { SubSupAttributes, SubSupDefinition } from '@uidu/adf-schema';
 import { WithMark } from '../types';
+import { applyMark } from '../utils/apply-mark';
 
 export const subsup = (attrs: SubSupAttributes) => (
   maybeNode: WithMark | string,

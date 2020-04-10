@@ -14,12 +14,8 @@ export { default as indentation } from './indentation';
 export { default as annotation } from './annotation';
 export { default as paragraph } from './paragraph';
 export { default as paragraph_with_no_marks } from './paragraph_with_no_marks';
-export {
-  default as paragraph_with_alignment,
-} from './paragraph_with_alignment';
-export {
-  default as paragraph_with_indentation,
-} from './paragraph_with_indentation';
+export { default as paragraph_with_alignment } from './paragraph_with_alignment';
+export { default as paragraph_with_indentation } from './paragraph_with_indentation';
 export { default as bulletList } from './bulletList';
 export { default as media } from './media';
 export { default as mediaSingle } from './mediaSingle';
@@ -32,9 +28,7 @@ export { default as orderedList } from './orderedList';
 export { default as heading } from './heading';
 export { default as heading_with_no_marks } from './heading_with_no_marks';
 export { default as heading_with_alignment } from './heading_with_alignment';
-export {
-  default as heading_with_indentation,
-} from './heading_with_indentation';
+export { default as heading_with_indentation } from './heading_with_indentation';
 export { default as panel } from './panel';
 export { default as blockquote } from './blockquote';
 export { default as rule } from './rule';
@@ -50,6 +44,11 @@ export { default as tableHeader } from './tableHeader';
 export { default as extension } from './extension';
 export { default as inlineExtension } from './inlineExtension';
 export { default as bodiedExtension } from './bodiedExtension';
+export { default as expand } from './expand';
+export { default as expand_with_no_mark } from './expand_with_no_mark';
+export { default as expand_with_breakout_definition } from './expand_with_breakout_definition';
+export { default as nestedExpand } from './nestedExpand';
+export { default as nestedExpand_with_no_marks } from './nestedExpand_with_no_marks';
 export { default as hardBreak } from './hardBreak';
 export { default as mention } from './mention';
 export { default as emoji } from './emoji';
@@ -63,6 +62,7 @@ export { default as layoutSection } from './layoutSection';
 export { default as block_content } from './block_content';
 export { default as tableCell_content } from './tableCell_content';
 export { default as extension_content } from './extension_content';
+export { default as nestedExpand_content } from './nestedExpand_content';
 export { default as formatted_text_inline } from './formatted_text_inline';
 export { default as link_text_inline } from './link_text_inline';
 export { default as code_inline } from './code_inline';
