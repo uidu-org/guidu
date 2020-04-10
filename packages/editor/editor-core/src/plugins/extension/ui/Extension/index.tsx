@@ -1,6 +1,7 @@
 import {
   ExtensionHandlers,
   ProviderFactory,
+  Providers,
   WithProviders,
 } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
@@ -33,7 +34,7 @@ export default class Extension extends Component<Props, any> {
     }
   }
 
-  private renderWithProvider = (providers: Record<string, Promise<any>>) => {
+  private renderWithProvider = (providers: Providers) => {
     const {
       node,
       editorView,

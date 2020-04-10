@@ -167,7 +167,6 @@ export class AltTextEditComponent extends React.Component<
             />
           </ButtonWrapper>
           <PanelTextInput
-            testId="alt-text-input"
             placeholder={formatMessage(messages.placeholder)}
             defaultValue={this.state.lastValue}
             onCancel={this.dispatchCancelEvent}

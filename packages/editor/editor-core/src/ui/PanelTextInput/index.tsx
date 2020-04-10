@@ -7,12 +7,13 @@ export interface Props {
   defaultValue?: string;
   onChange?: (value: string) => void;
   onSubmit?: (value: string) => void;
-  onCancel?: () => void;
+  onCancel?: (e: KeyboardEvent) => void;
   placeholder?: string;
   onMouseDown?: Function;
   onKeyDown?: (e: KeyboardEvent<any>) => void;
   onBlur?: Function;
   width?: number;
+  maxLength?: number;
 }
 
 export interface State {
@@ -100,7 +101,7 @@ export default class PanelTextInput extends PureComponent<Props, State> {
       e.preventDefault(); // Prevent from submitting if an editor is inside a form.
       this.props.onSubmit(this.input!.value);
     } else if (e.keyCode === 27 && this.props.onCancel) {
-      this.props.onCancel();
+      this.props.onCancel(e);
     }
 
     if (this.props.onKeyDown) {

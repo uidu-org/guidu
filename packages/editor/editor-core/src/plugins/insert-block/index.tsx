@@ -1,5 +1,5 @@
-import { WithProviders } from '@uidu/editor-common';
-import * as React from 'react';
+import { Providers, WithProviders } from '@uidu/editor-common';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import { ToolbarSize } from '../../ui/Toolbar';
 import WithPluginState from '../../ui/WithPluginState';
@@ -52,6 +52,7 @@ const toolbarSizeToButtons = (toolbarSize: ToolbarSize) => {
 
 export interface InsertBlockOptions {
   allowTables?: boolean;
+  allowExpand?: boolean;
   insertMenuItems?: any;
   horizontalRuleEnabled?: boolean;
   nativeStatusSupported?: boolean;
@@ -65,7 +66,7 @@ function handleInsertBlockType(name: string) {
   return insertBlockTypesWithAnalytics(name, INPUT_METHOD.TOOLBAR);
 }
 
-const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
+const insertBlockPlugin = (options: InsertBlockOptions = {}): EditorPlugin => ({
   name: 'insertBlock',
 
   primaryToolbarComponent({
@@ -81,7 +82,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
     isToolbarReducedSpacing,
   }) {
     const buttons = toolbarSizeToButtons(toolbarSize);
-    const renderNode = (providers: Record<string, Promise<any>>) => {
+    const renderNode = (providers: Providers) => {
       return (
         <WithPluginState
           plugins={{
@@ -138,6 +139,7 @@ const insertBlockPlugin = (options: InsertBlockOptions): EditorPlugin => ({
                 placeholderTextState && placeholderTextState.allowInserting
               }
               layoutSectionEnabled={!!layoutState}
+              expandEnabled={!!options.allowExpand}
               mediaUploadsEnabled={mediaState && mediaState.allowsUploads}
               onShowMediaPicker={mediaState && mediaState.showMediaPicker}
               mediaSupported={!!mediaState}

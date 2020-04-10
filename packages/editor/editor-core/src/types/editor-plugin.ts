@@ -1,6 +1,6 @@
 import { ErrorReporter, ProviderFactory } from '@uidu/editor-common';
 import { Schema } from 'prosemirror-model';
-import { Plugin } from 'prosemirror-state';
+import { EditorState, Plugin, Transaction } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { IntlShape } from 'react-intl';
@@ -76,6 +76,12 @@ export type PMPlugin = {
   plugin: PMPluginFactory;
 };
 
+type EditorViewStateUpdatedCallbackProps = {
+  readonly transaction: Readonly<Transaction>;
+  readonly oldEditorState: Readonly<EditorState>;
+  readonly newEditorState: Readonly<EditorState>;
+};
+
 export interface EditorPlugin {
   /**
    * Name of a plugin, that other plugins can use to provide options to it or exclude via a preset.
@@ -117,4 +123,8 @@ export interface EditorPlugin {
    * In compact mode this toolbar lives on the right-hand side of the editor.
    */
   secondaryToolbarComponent?: UIComponentFactory;
+
+  onEditorViewStateUpdated?: (
+    props: EditorViewStateUpdatedCallbackProps,
+  ) => void;
 }

@@ -76,6 +76,7 @@ export const timestampToIsoFormat = (timestamp: string | number): string => {
 
 export const isPastDate = (timestamp: string | number): boolean => {
   return isBefore(
+    // @ts-ignore
     timestampToIsoFormat(Number(timestamp)),
     timestampToIsoFormat(new Date().valueOf()),
   );
@@ -91,11 +92,7 @@ export const timestampToTaskContext = (
   const sameYear = givenDate.getUTCFullYear() === curDate.getUTCFullYear();
 
   if (intl && [-1, 0, 1].indexOf(distance) > -1) {
-    return capitalizeFirstLetter(
-      intl.formatRelative(givenDate, {
-        units: 'day',
-      }),
-    );
+    return capitalizeFirstLetter(intl.formatRelativeTime(distance, 'days'));
   }
 
   return timestampToString(

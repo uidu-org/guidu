@@ -244,6 +244,7 @@ export interface Props {
   horizontalRuleEnabled?: boolean;
   placeholderTextEnabled?: boolean;
   layoutSectionEnabled?: boolean;
+  expandEnabled?: boolean;
   emojiProvider?: Promise<EmojiProvider>;
   availableWrapperBlockTypes?: BlockType[];
   linkSupported?: boolean;

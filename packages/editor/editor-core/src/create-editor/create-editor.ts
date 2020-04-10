@@ -64,7 +64,7 @@ export function processPluginsList(
   /**
    * Process plugins
    */
-  return plugins.reduce(
+  return plugins.reduce<EditorConfig>(
     (acc, plugin) => {
       if (plugin.pmPlugins) {
         acc.pmPlugins.push(
@@ -94,6 +94,13 @@ export function processPluginsList(
         acc.secondaryToolbarComponents.push(plugin.secondaryToolbarComponent);
       }
 
+      if (plugin.onEditorViewStateUpdated) {
+        acc.onEditorViewStateUpdatedCallbacks.push({
+          pluginName: plugin.name,
+          callback: plugin.onEditorViewStateUpdated,
+        });
+      }
+
       return acc;
     },
     {
@@ -103,6 +110,7 @@ export function processPluginsList(
       contentComponents: [],
       primaryToolbarComponents: [],
       secondaryToolbarComponents: [],
+      onEditorViewStateUpdatedCallbacks: [],
     } as EditorConfig,
   );
 }
