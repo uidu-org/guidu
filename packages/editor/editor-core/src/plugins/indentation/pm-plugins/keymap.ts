@@ -1,8 +1,7 @@
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
-
-import * as keymaps from '../../../keymaps';
 import { trackAndInvoke } from '../../../analytics';
+import * as keymaps from '../../../keymaps';
 import { isTextSelection } from '../../../utils';
 import { indent, outdent } from '../commands';
 

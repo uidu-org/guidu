@@ -14,8 +14,8 @@ import {
 } from '../../analytics';
 
 // Analytics GAS v3 Utils
-type PrevAttributes = IndentationMarkAttributes | undefined;
-type NewAttributes = IndentationMarkAttributes | undefined | false;
+export type PrevAttributes = IndentationMarkAttributes | undefined;
+export type NewAttributes = IndentationMarkAttributes | undefined | false;
 export type IndentationChangesOptions = {
   direction: INDENT_DIR;
 };
@@ -35,7 +35,7 @@ export function getNewIndentLevel(
   newAttrs: NewAttributes,
 ): number {
   if (newAttrs === undefined) {
-    return prevAttrs!.level;
+    return getPrevIndentLevel(prevAttrs);
   } else if (newAttrs === false) {
     return 0;
   }
@@ -58,6 +58,7 @@ export function getPrevIndentLevel(prevAttrs: PrevAttributes): number {
  *
  * @export
  * @param {*} getAttrsChanges
+ * @param {*} state
  * @param dispatch
  * @returns
  */
