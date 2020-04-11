@@ -1,5 +1,6 @@
 import { Command } from '../../../types';
-import { pluginKey, ACTIONS } from '../pm-plugins/main';
+import { ACTIONS } from '../pm-plugins/actions';
+import { pluginKey } from '../pm-plugins/plugin-key';
 import { TypeAheadItem } from '../types';
 
 export const itemsListUpdated = (items: Array<TypeAheadItem>): Command => (

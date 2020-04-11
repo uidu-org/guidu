@@ -1,7 +1,7 @@
 import { akEditorFloatingDialogZIndex, Popup } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize, math } from '@uidu/theme';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { selectByIndex } from '../commands/select-item';
 import { setCurrentIndex } from '../commands/set-current-index';
@@ -34,6 +34,31 @@ export type TypeAheadProps = {
 };
 
 export class TypeAhead extends React.Component<TypeAheadProps> {
+  static displayName = 'TypeAhead';
+
+  composing: boolean = false;
+
+  handleKeyPress = () => {
+    // When user starts typing, they are not using their mouse
+    // Marks as composing, to prevent false positive mouse events
+    this.composing = true;
+  };
+
+  handleMouseMove = () => {
+    // User is actively moving mouse, hence can enable mouse events again
+    this.composing = false;
+  };
+
+  componentDidMount = () => {
+    window.addEventListener('keypress', this.handleKeyPress);
+    window.addEventListener('mousemove', this.handleMouseMove);
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('keypress', this.handleKeyPress);
+    window.removeEventListener('mousemove', this.handleMouseMove);
+  };
+
   insertByIndex = (index: number) => {
     selectByIndex(index)(
       this.props.editorView.state,
@@ -42,6 +67,11 @@ export class TypeAhead extends React.Component<TypeAheadProps> {
   };
 
   setCurrentIndex = (index: number) => {
+    if (this.composing) {
+      // User is typing, mouse events are false positives
+      return;
+    }
+
     if (index !== this.props.currentIndex) {
       setCurrentIndex(index)(
         this.props.editorView.state,

@@ -7,17 +7,11 @@ import {
   isChromeWithSelectionBug,
   normaliseNestedLayout,
 } from '../../../utils';
-import { ACTIONS, pluginKey } from '../pm-plugins/main';
-import { TypeAheadHandler, TypeAheadItem } from '../types';
+import { ACTIONS } from '../pm-plugins/actions';
+import { pluginKey } from '../pm-plugins/plugin-key';
+import { SelectItemMode, TypeAheadHandler, TypeAheadItem } from '../types';
 import { findTypeAheadQuery } from '../utils/find-query-mark';
 import { dismissCommand } from './dismiss';
-
-export type SelectItemMode =
-  | 'shift-enter'
-  | 'enter'
-  | 'space'
-  | 'selected'
-  | 'tab';
 
 export const selectCurrentItem = (
   mode: SelectItemMode = 'selected',
@@ -36,10 +30,11 @@ export const selectCurrentItem = (
     );
   }
 
-  return selectItem(typeAheadHandler, items[currentIndex], mode)(
-    state,
-    dispatch,
-  );
+  return selectItem(
+    typeAheadHandler,
+    items[currentIndex],
+    mode,
+  )(state, dispatch);
 };
 
 export const selectSingleItemOrDismiss = (

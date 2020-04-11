@@ -1,4 +1,4 @@
-import { Node, MarkType } from 'prosemirror-model';
+import { MarkType, Node } from 'prosemirror-model';
 
 export function isQueryActive(
   mark: MarkType,
@@ -8,7 +8,7 @@ export function isQueryActive(
 ) {
   let active = false;
 
-  doc.nodesBetween(from, to, node => {
+  doc.nodesBetween(from, to, (node) => {
     if (!active && mark.isInSet(node.marks)) {
       active = true;
     }
