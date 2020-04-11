@@ -1,6 +1,6 @@
-import { setParentNodeMarkup, removeParentNodeOfType } from 'prosemirror-utils';
-import { Command } from '../../types';
 import { CodeBlockAttrs } from '@uidu/adf-schema';
+import { removeParentNodeOfType, setParentNodeMarkup } from 'prosemirror-utils';
+import { Command } from '../../types';
 
 export type DomAtPos = (pos: number) => { node: HTMLElement; offset: number };
 export const removeCodeBlock: Command = (state, dispatch) => {
@@ -26,8 +26,15 @@ export const changeLanguage = (language: string): Command => (
   // setParentNodeMarkup doesn't typecheck the attributes
   const attrs: CodeBlockAttrs = { language };
 
+  const changeLanguageTr = setParentNodeMarkup(
+    nodes.codeBlock,
+    null,
+    attrs,
+  )(tr);
+  changeLanguageTr.setMeta('scrollIntoView', false);
+
   if (dispatch) {
-    dispatch(setParentNodeMarkup(nodes.codeBlock, null, attrs)(tr));
+    dispatch(changeLanguageTr);
   }
   return true;
 };

@@ -1,12 +1,12 @@
 import { keymap } from 'prosemirror-keymap';
 import { ResolvedPos, Schema } from 'prosemirror-model';
-import { Plugin, EditorState, Transaction, Selection } from 'prosemirror-state';
+import { EditorState, Plugin, Selection, Transaction } from 'prosemirror-state';
 import {
   findParentNodeOfTypeClosestToPos,
   hasParentNodeOfType,
 } from 'prosemirror-utils';
-import { getCursor, isEmptyNode, pipe } from '../../../utils';
 import { CommandDispatch } from '../../../types';
+import { getCursor, isEmptyNode, pipe } from '../../../utils';
 
 const deleteCurrentItem = ($from: ResolvedPos) => (
   tr: Transaction,

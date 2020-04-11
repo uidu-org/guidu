@@ -1,27 +1,27 @@
-import { EditorState, Plugin, TextSelection } from 'prosemirror-state';
 import { keydownHandler } from 'prosemirror-keymap';
+import { EditorState, Plugin, TextSelection } from 'prosemirror-state';
 import { setTextSelection } from 'prosemirror-utils';
+import { CommandDispatch } from '../../../types';
 import { getCursor } from '../../../utils';
 import { filter } from '../../../utils/commands';
 import {
   getAutoClosingBracketInfo,
-  isCursorBeforeClosingBracket,
   isClosingBracket,
+  isCursorBeforeClosingBracket,
 } from '../ide-ux/bracket-handling';
 import {
+  indent,
+  insertIndent,
+  insertNewlineWithIndent,
+  outdent,
+} from '../ide-ux/commands';
+import {
   getEndOfCurrentLine,
+  getLineInfo,
   getStartOfCurrentLine,
   isCursorInsideCodeBlock,
   isSelectionEntirelyInsideCodeBlock,
-  getLineInfo,
 } from '../ide-ux/line-handling';
-import {
-  insertIndent,
-  outdent,
-  indent,
-  insertNewlineWithIndent,
-} from '../ide-ux/commands';
-import { CommandDispatch } from '../../../types';
 
 export default new Plugin({
   props: {

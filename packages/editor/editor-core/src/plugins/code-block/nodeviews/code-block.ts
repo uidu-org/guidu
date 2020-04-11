@@ -45,7 +45,7 @@ export class CodeBlockView {
 
   private ensureLineNumbers = rafSchedule(() => {
     let lines = 1;
-    this.node.forEach(node => {
+    this.node.forEach((node) => {
       const text = node.text;
       if (text) {
         lines += (node.text!.match(MATCH_NEWLINES) || []).length;
@@ -77,7 +77,9 @@ export class CodeBlockView {
     return true;
   }
 
-  ignoreMutation(record: any) {
+  ignoreMutation(
+    record: MutationRecord | { type: 'selection'; target: Element },
+  ) {
     // Ensure updating the line-number gutter doesn't trigger reparsing the codeblock
     return (
       record.target === this.lineNumberGutter ||

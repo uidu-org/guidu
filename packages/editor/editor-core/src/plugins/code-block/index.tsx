@@ -1,5 +1,5 @@
 import { codeBlock } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import {
   ACTION,
@@ -16,11 +16,7 @@ import keymap from './pm-plugins/keymaps';
 import { createPlugin } from './pm-plugins/main';
 import { getToolbarConfig } from './toolbar';
 
-export interface CodeBlockOptions {
-  enableKeybindingsForIDE?: boolean;
-}
-
-const codeBlockPlugin = (options: CodeBlockOptions = {}): EditorPlugin => ({
+const codeBlockPlugin = (): EditorPlugin => ({
   name: 'codeBlock',
 
   nodes() {
@@ -32,7 +28,7 @@ const codeBlockPlugin = (options: CodeBlockOptions = {}): EditorPlugin => ({
       { name: 'codeBlock', plugin: createPlugin },
       {
         name: 'codeBlockIDEKeyBindings',
-        plugin: () => (options.enableKeybindingsForIDE ? ideUX : undefined),
+        plugin: () => ideUX,
       },
       {
         name: 'codeBlockKeyMap',
