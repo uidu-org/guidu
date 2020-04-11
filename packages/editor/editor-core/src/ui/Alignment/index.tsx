@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { AlignmentState } from '../../plugins/alignment/pm-plugins/types';
 import { iconMap } from '../../plugins/alignment/ui/ToolbarAlignment/icon-map';
 import AlignmentButton from './AlignmentButton';
@@ -22,7 +21,7 @@ export default class Alignment extends PureComponent<Props, any> {
     const { onClick, selectedAlignment, className } = this.props;
 
     return (
-      <AlignmentWrapper className={className} style={{ maxWidth: 4 * 32 }}>
+      <AlignmentWrapper className={className} style={{ maxWidth: 3 * 32 }}>
         {alignmentOptions.map((alignment) => {
           const { value, title } = alignment;
           return (

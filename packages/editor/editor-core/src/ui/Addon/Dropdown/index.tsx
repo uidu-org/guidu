@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Dropdown } from './styles';
-import { RenderOnClickHandler } from '../../Addon';
+import React from 'react';
 import EditorActions from '../../../actions';
+import { RenderOnClickHandler } from '../../Addon/types';
 import { AddonActions } from '../types';
+import { Dropdown } from './styles';
 
 export interface Props {
   onClick: (
@@ -16,7 +16,7 @@ export interface Props {
 export default class DropdownWrapper extends React.Component<Props, any> {
   render() {
     // adding onClick handler to each DropdownItem component
-    const children = React.Children.map(this.props.children, child =>
+    const children = React.Children.map(this.props.children, (child) =>
       React.cloneElement(child as React.ReactElement<any>, {
         onClick: this.handleClick,
       }),

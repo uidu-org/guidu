@@ -5,7 +5,7 @@ import {
 } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize } from '@uidu/theme';
 import classnames from 'classnames';
-import * as React from 'react';
+import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import messages from '../../messages';
@@ -134,7 +134,7 @@ class Editor extends React.Component<
   static displayName = 'CommentEditorAppearance';
 
   private appearance: EditorAppearance = 'comment';
-  private containerElement: HTMLElement | undefined;
+  private containerElement: HTMLElement | null = null;
 
   private handleSave = () => {
     if (this.props.editorView && this.props.onSave) {
@@ -230,10 +230,7 @@ class Editor extends React.Component<
               }}
             </WidthConsumer>
           </ClickAreaBlock>
-          <WidthEmitter
-            editorView={editorView!}
-            contentArea={this.containerElement}
-          />
+          <WidthEmitter editorView={editorView!} />
         </CommentEditor>
         <SecondaryToolbar>
           <ButtonGroup>

@@ -1,5 +1,5 @@
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { createParagraphAtEnd } from '../../../commands';
 
@@ -9,15 +9,8 @@ import { createParagraphAtEnd } from '../../../commands';
  * doesn't exceed the viewport, or whether it overflows it).
  */
 const ClickWrapper = styled.div`
-  /*
-    100vh exceeds the visible viewport because it doesn't account
-    for contextually available browser chrome (address bar, footer).
-    80vh was chosen as a compromise, as it fills the majority of the
-    visible viewport, without causing overflow (which would negatively
-    impact various calculations).
-  */
   height: 100%;
-  min-height: 80vh;
+  min-height: 100vh;
 `;
 ClickWrapper.displayName = 'ClickWrapper';
 
@@ -37,11 +30,11 @@ export interface Props {
  * viewport height, and if the last content node captures text selection
  * e.g. table, layouts, codeblock, etc.
  *
- * This relies on the Scroll Gutter plugin which inserts addtional
+ * This relies on the Scroll Gutter plugin which inserts additional
  * whitespace at the end of the document when it overflows the viewport.
  */
 export default class ClickAreaMobile extends React.Component<Props> {
-  private clickElementRef = React.createRef<any>();
+  private clickElementRef = React.createRef<HTMLDivElement>();
 
   private handleClick = (event: React.MouseEvent<any>) => {
     const { editorView: view } = this.props;

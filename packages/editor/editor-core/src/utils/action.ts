@@ -34,7 +34,7 @@ export function cascadeCommands(cmds: Command[]): Command {
     let shouldDispatch = false;
 
     const onDispatchAction = (tr: Transaction) => {
-      baseTr.setSelection(tr.selection);
+      baseTr.setSelection(tr.selection.map(baseTr.doc, baseTr.mapping));
       tr.steps.forEach((st) => {
         baseTr.step(st);
       });

@@ -1,50 +1,85 @@
-import { WidthConsumer } from '@uidu/editor-common';
+import { WidthConsumer, WidthConsumerContext } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { Component } from 'react';
+import React from 'react';
 import { pluginKey as widthPluginKey } from '../../plugins/width';
+import {
+  ContextPanelConsumer,
+  ContextPanelContext,
+} from '../ContextPanel/context';
 
 export interface Props {
   editorView: EditorView;
-  contentArea?: HTMLElement | null;
 }
 
-export default class WidthEmitter extends Component<Props> {
-  private width?: number;
-  private debounce: number | null = null;
+type CallbacksType = {
+  setContextPanelWidth: React.Dispatch<React.SetStateAction<number>>;
+  setContainerWidth: React.Dispatch<React.SetStateAction<number>>;
+};
 
-  componentWillUnmount() {
-    if (this.debounce) window.clearTimeout(this.debounce);
-  }
+type CallbacksReturn = [
+  (props: ContextPanelContext) => null,
+  (props: WidthConsumerContext) => null,
+];
 
-  render() {
-    return (
-      <WidthConsumer>{({ width }) => this.broadcastWidth(width)}</WidthConsumer>
-    );
-  }
+function useCreateWidthCallbacks({
+  setContextPanelWidth,
+  setContainerWidth,
+}: CallbacksType): CallbacksReturn {
+  const contextPanelWidthCallback = React.useCallback(
+    ({ width }: ContextPanelContext) => {
+      setContextPanelWidth(width);
+      return null;
+    },
+    [setContextPanelWidth],
+  );
 
-  private broadcastWidth = (width: number) => {
-    const { editorView } = this.props;
-    if (editorView && this.width !== width) {
-      if (this.debounce) {
-        window.clearTimeout(this.debounce);
-      }
+  const containerWidthCallback = React.useCallback(
+    ({ width }: WidthConsumerContext) => {
+      setContainerWidth(width);
+      return null;
+    },
+    [setContainerWidth],
+  );
 
-      // NodeViews will trigger multiple state change error without this debounce
-      this.debounce = window.setTimeout(() => {
-        const pmDom = this.props.contentArea
-          ? this.props.contentArea.querySelector('.ProseMirror')
-          : undefined;
-        const tr = editorView.state.tr.setMeta(widthPluginKey, {
-          width,
-          lineLength: pmDom ? pmDom.clientWidth : undefined,
-        });
+  return [contextPanelWidthCallback, containerWidthCallback];
+}
 
-        editorView.dispatch(tr);
-        this.width = width;
-        this.debounce = null;
-      }, 10);
+const WidthEmitter = ({ editorView }: Props) => {
+  const [contextPanelWidth, setContextPanelWidth] = React.useState(0);
+  const [containerWidth, setContainerWidth] = React.useState(0);
+  const [
+    contextPanelWidthCallback,
+    containerWidthCallback,
+  ] = useCreateWidthCallbacks({ setContextPanelWidth, setContainerWidth });
+
+  React.useEffect(() => {
+    const width = containerWidth - contextPanelWidth;
+    if (width <= 0 || isNaN(width) || !editorView) {
+      return null;
     }
-    return null;
-  };
-}
+
+    const {
+      dom,
+      state: { tr },
+      dispatch,
+    } = editorView;
+
+    tr.setMeta(widthPluginKey, {
+      width,
+      lineLength: dom ? dom.clientWidth : undefined,
+    });
+
+    dispatch(tr);
+
+    return () => {};
+  }, [editorView, contextPanelWidth, containerWidth]);
+
+  return (
+    <>
+      <ContextPanelConsumer>{contextPanelWidthCallback}</ContextPanelConsumer>
+      <WidthConsumer>{containerWidthCallback}</WidthConsumer>
+    </>
+  );
+};
+
+export default WidthEmitter;

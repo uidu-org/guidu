@@ -1,6 +1,6 @@
 import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
-import Tooltip from '@atlaskit/tooltip';
 import { colors } from '@uidu/theme';
+import Tooltip from '@uidu/tooltip';
 import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { Button, ButtonWrapper } from './styles';

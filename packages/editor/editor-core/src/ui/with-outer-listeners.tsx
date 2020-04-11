@@ -1,6 +1,9 @@
-import * as React from 'react';
-import { ComponentClass, StatelessComponent, PureComponent } from 'react';
-import * as ReactDOM from 'react-dom';
+import React, {
+  ComponentClass,
+  PureComponent,
+  StatelessComponent,
+} from 'react';
+import ReactDOM from 'react-dom';
 
 export type SimpleEventHandler = (event: Event) => void;
 
@@ -56,7 +59,7 @@ export default function withOuterListeners<P>(
     };
 
     render() {
-      return <Component {...this.props as any} />;
+      return <Component {...(this.props as any)} />;
     }
   };
 }

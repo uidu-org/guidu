@@ -1,6 +1,5 @@
 import { Popup } from '@uidu/editor-common';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { Container } from './styles';
 
 export type Coordinates = {
@@ -25,7 +24,11 @@ export interface Props {
   onPositionCalculated?: (position: Coordinates) => any;
 }
 
-export { getNearestNonTextNode, getOffsetParent, handlePositionCalculatedWith } from './utils';
+export {
+  getNearestNonTextNode,
+  getOffsetParent,
+  handlePositionCalculatedWith,
+} from './utils';
 
 export default class FloatingToolbar extends PureComponent<Props, any> {
   render() {

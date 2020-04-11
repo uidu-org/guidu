@@ -1,6 +1,6 @@
 import { ButtonProps } from '@uidu/button';
-import Tooltip from '@uidu/tooltip';
-import * as React from 'react';
+import Tooltip, { PositionType } from '@uidu/tooltip';
+import React from 'react';
 import Button from './styles';
 
 export type Props = {
@@ -15,12 +15,13 @@ export type Props = {
   spacing?: 'default' | 'compact' | 'none';
   target?: string;
   title?: React.ReactNode;
-  titlePosition?: any;
+  titlePosition?: PositionType;
 } & Pick<ButtonProps, 'theme' | 'aria-label'>;
 
 export default class ToolbarButton extends React.PureComponent<Props, {}> {
   static defaultProps = {
     className: '',
+    titlePosition: 'top' as PositionType,
   };
 
   private handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -53,14 +54,13 @@ export default class ToolbarButton extends React.PureComponent<Props, {}> {
       </Button>
     );
 
-    const position = this.props.titlePosition || 'top';
     const tooltipContent = !this.props.hideTooltip ? this.props.title : null;
 
     return this.props.title ? (
       <Tooltip
         content={tooltipContent}
         hideTooltipOnClick={true}
-        position={position}
+        position={this.props.titlePosition}
       >
         {button}
       </Tooltip>

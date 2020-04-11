@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { AlignmentState } from '../../../plugins/alignment/pm-plugins/types';
 import ToolbarButton from '../../ToolbarButton';
 

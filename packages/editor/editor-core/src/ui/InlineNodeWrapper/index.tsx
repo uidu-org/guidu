@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 /**
@@ -29,5 +29,7 @@ const InlineNodeWrapper: React.StatelessComponent<{
   ) : (
     <>{children}</>
   );
+
+InlineNodeWrapper.displayName = 'InlineNodeWrapper';
 
 export default InlineNodeWrapper;

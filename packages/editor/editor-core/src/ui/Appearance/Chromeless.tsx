@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   MaxContentSizePluginState,
@@ -48,7 +48,7 @@ export default class Editor extends React.Component<
   static displayName = 'ChromelessEditorAppearance';
 
   private appearance: EditorAppearance = 'chromeless';
-  private containerElement: HTMLElement | undefined;
+  private containerElement: HTMLElement | null = null;
 
   private renderChrome = ({
     maxContentSize,
@@ -77,9 +77,7 @@ export default class Editor extends React.Component<
       <WithFlash animate={maxContentSizeReached}>
         <ChromelessEditor
           maxHeight={maxHeight}
-          innerRef={(ref: HTMLElement | undefined) =>
-            (this.containerElement = ref)
-          }
+          innerRef={(ref: HTMLElement | null) => (this.containerElement = ref)}
         >
           <ContentArea>
             {customContentComponents}

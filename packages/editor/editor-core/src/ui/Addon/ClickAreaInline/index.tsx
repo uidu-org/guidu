@@ -1,6 +1,6 @@
-import * as React from 'react';
-import styled from 'styled-components';
 import { EditorView } from 'prosemirror-view';
+import React from 'react';
+import styled from 'styled-components';
 import { createParagraphAtEnd } from '../../../commands';
 
 const ClickArea: any = styled.div`

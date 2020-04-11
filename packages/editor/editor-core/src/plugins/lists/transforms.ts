@@ -148,6 +148,7 @@ const getListType = (node: Node, schema: Schema): [NodeType, number] | null => {
       node: orderedList,
       matcher: numbers,
     },
+    // @ts-ignore
   ].reduce((lastMatch: [NodeType, number] | null, listType) => {
     if (lastMatch) {
       return lastMatch;

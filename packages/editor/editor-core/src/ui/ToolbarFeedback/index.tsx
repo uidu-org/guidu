@@ -1,10 +1,9 @@
 import Button, { ButtonGroup } from '@uidu/button';
 import { Popup } from '@uidu/editor-common';
 import Spinner from '@uidu/spinner';
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import { PureComponent } from 'react';
-import * as ReactDOM from 'react-dom';
+import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import ReactDOM from 'react-dom';
 import { withAnalytics } from '../../analytics';
 import { createDispatch } from '../../event-dispatcher';
 import {
