@@ -1,5 +1,5 @@
-import getDeviceInfo from './getDeviceInfo';
 import getBrowserInfo from './getBrowserInfo';
+import getDeviceInfo from './getDeviceInfo';
 
 declare global {
   interface Window {
