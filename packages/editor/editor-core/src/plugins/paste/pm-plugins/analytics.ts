@@ -5,6 +5,7 @@ import { EditorView } from 'prosemirror-view';
 import { commandWithAnalytics as commandWithV2Analytics } from '../../../analytics';
 import { Command } from '../../../types';
 import { pipe } from '../../../utils';
+import { mapSlice } from '../../../utils/slice';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -21,8 +22,10 @@ import {
   PASTE_ACTION_SUBJECT_ID,
   withAnalytics,
 } from '../../analytics';
+import { getLinkDomain } from '../../hyperlink/utils';
 import {
   handleCodeBlock,
+  handleExpand,
   handleMarkdown,
   handleMediaSingle,
   handlePasteAsPlainText,
@@ -182,6 +185,7 @@ function createPasteAsPlainPayload(
 function createPastePayload(
   actionSubjectId: PASTE_ACTION_SUBJECT_ID,
   attributes: PastePayloadAttributes,
+  linkDomain?: string[],
 ): AnalyticsEventPayload {
   return {
     action: ACTION.PASTED,
@@ -192,6 +196,9 @@ function createPastePayload(
       inputMethod: INPUT_METHOD.KEYBOARD,
       ...attributes,
     },
+    ...(linkDomain && linkDomain.length > 0
+      ? { nonPrivacySafeAttributes: { linkDomain } }
+      : {}),
   };
 }
 
@@ -202,7 +209,8 @@ export function createPasteAnalyticsPayload(
   pasteContext: PasteContext,
 ): AnalyticsEventPayload {
   const text = event.clipboardData
-    ? event.clipboardData.getData('text/plain')
+    ? event.clipboardData.getData('text/plain') ||
+      event.clipboardData.getData('text/uri-list')
     : '';
 
   const actionSubjectId = getActionSubjectId(view);
@@ -224,13 +232,31 @@ export function createPasteAnalyticsPayload(
 
   const pasteSize = slice.size;
   const content = getContent(view.state, slice);
+  const linkUrls: string[] = [];
 
-  return createPastePayload(actionSubjectId, {
-    type: pasteContext.type,
-    pasteSize,
-    content,
-    source,
-  });
+  // If we have a link among the pasted content, grab the
+  // domain and send it up with the analytics event
+  if (content === PasteContents.url || content === PasteContents.mixed) {
+    mapSlice(slice, (node) => {
+      const linkMark = node.marks.find((mark) => mark.type.name === 'link');
+      if (linkMark) {
+        linkUrls.push(linkMark.attrs.href);
+      }
+      return node;
+    });
+  }
+
+  const linkDomains = linkUrls.map(getLinkDomain);
+  return createPastePayload(
+    actionSubjectId,
+    {
+      type: pasteContext.type,
+      pasteSize,
+      content,
+      source,
+    },
+    linkDomains,
+  );
 }
 
 // TODO: ED-6612 We should not dispatch only analytics, it's preferred to wrap each command with his own analytics.
@@ -360,6 +386,21 @@ export const handleRichTextWithAnalytics = (
 ): Command =>
   pipe(
     handleRichText,
+    commandWithV2Analytics('atlassian.editor.paste', {
+      source: getPasteSource(event),
+    }),
+    pasteCommandWithAnalytics(view, event, slice, {
+      type: PasteTypes.richText,
+    }),
+  )(slice);
+
+export const handleExpandWithAnalytics = (
+  view: EditorView,
+  event: ClipboardEvent,
+  slice: Slice,
+): Command =>
+  pipe(
+    handleExpand,
     commandWithV2Analytics('atlassian.editor.paste', {
       source: getPasteSource(event),
     }),

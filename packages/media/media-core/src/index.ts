@@ -11,3 +11,9 @@ export * from './constants';
 export * from './types';
 
 export const getMediaClient = (media) => null;
+
+const mediaBlobUrlIdentifier = 'media-blob-url';
+
+export const isMediaBlobUrl = (url: string): boolean => {
+  return url.indexOf(`${mediaBlobUrlIdentifier}=true`) > -1;
+};

@@ -1,4 +1,5 @@
-import { Slice, Mark, Node, NodeType, Schema } from 'prosemirror-model';
+import { isMediaBlobUrl } from '@uidu/media-core';
+import { Mark, Node, NodeType, Schema, Slice } from 'prosemirror-model';
 import { PasteSource } from '../analytics';
 
 export function isPastedFromWord(html?: string): boolean {
@@ -33,6 +34,10 @@ export const isSingleLine = (text: string): boolean => {
   return !!text && text.trim().split('\n').length === 1;
 };
 
+export function htmlContainsSingleFile(html: string): boolean {
+  return !!html.match(/<img .*>/) && !isMediaBlobUrl(html);
+}
+
 export function getPasteSource(event: ClipboardEvent): PasteSource {
   const html = event.clipboardData!.getData('text/html');
 
@@ -62,7 +67,7 @@ export function isCode(str: string) {
     return false;
   }
   let weight = 0;
-  lines.forEach(line => {
+  lines.forEach((line) => {
     // Ends with : or ;
     if (/[:;]$/.test(line)) {
       weight++;
@@ -98,7 +103,7 @@ export function isCode(str: string) {
 // @see https://product-fabric.atlassian.net/browse/ED-3159
 // @see https://github.com/markdown-it/markdown-it/issues/38
 export function escapeLinks(text: string) {
-  return text.replace(/(\[([^\]]+)\]\()?((https?|ftp):\/\/[^\s]+)/g, str => {
+  return text.replace(/(\[([^\]]+)\]\()?((https?|ftp):\/\/[^\s]+)/g, (str) => {
     return str.match(/^(https?|ftp):\/\/[^\s]+$/) ? `<${str}>` : str;
   });
 }
@@ -140,11 +145,11 @@ export function applyTextMarksToSlice(
         node.marks = [
           ...((node.marks &&
             !codeMark.isInSet(marks) &&
-            node.marks.filter(mark => mark.type === linkMark)) ||
+            node.marks.filter((mark) => mark.type === linkMark)) ||
             []),
           ...parent.type
             .allowedMarks(marks)
-            .filter(mark => mark.type !== linkMark),
+            .filter((mark) => mark.type !== linkMark),
         ];
         return false;
       }

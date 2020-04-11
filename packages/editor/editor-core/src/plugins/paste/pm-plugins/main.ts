@@ -1,5 +1,5 @@
+// @ts-ignore
 import { MarkdownTransformer } from '@uidu/editor-markdown-transformer';
-import MarkdownIt from 'markdown-it';
 import { Fragment, Node, Schema, Slice } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 // @ts-ignore
@@ -8,36 +8,49 @@ import { insideTable } from '../../../utils';
 import * as clipboard from '../../../utils/clipboard';
 import { PasteTypes } from '../../analytics';
 import { CardOptions } from '../../card';
-import { transformSingleLineCodeBlockToCodeMark, transformSliceToJoinAdjacentCodeBlocks } from '../../code-block/utils';
+import {
+  transformSingleLineCodeBlockToCodeMark,
+  transformSliceToJoinAdjacentCodeBlocks,
+} from '../../code-block/utils';
+import { transformSliceNestedExpandToExpand } from '../../expand/utils';
 import { transformSliceToRemoveOpenBodiedExtension } from '../../extension/actions';
 import { linkifyContent } from '../../hyperlink/utils';
 import { transformSliceToRemoveOpenLayoutNodes } from '../../layout/utils';
-import { transformSliceToCorrectMediaWrapper, unwrapNestedMediaElements } from '../../media/utils/media-common';
+import { splitParagraphs, upgradeTextToLists } from '../../lists/transforms';
+import {
+  transformSliceToCorrectMediaWrapper,
+  unwrapNestedMediaElements,
+} from '../../media/utils/media-common';
 import { transformSliceForMedia } from '../../media/utils/media-single';
 import { transformSliceToAddTableHeaders } from '../../table/commands';
-import { transformSliceRemoveCellBackgroundColor, transformSliceToRemoveColumnsWidths } from '../../table/commands/misc';
-import { getPluginState as getTablePluginState } from '../../table/pm-plugins/main';
-import { transformSliceToCorrectEmptyTableCells, transformSliceToFixHardBreakProblemOnCopyFromCell, transformSliceToRemoveOpenTable } from '../../table/utils';
+import {
+  transformSliceRemoveCellBackgroundColor,
+  transformSliceToRemoveColumnsWidths,
+} from '../../table/commands/misc';
+import { getPluginState as getTablePluginState } from '../../table/pm-plugins/plugin-factory';
+import {
+  transformSliceToCorrectEmptyTableCells,
+  transformSliceToFixHardBreakProblemOnCopyFromCell,
+  transformSliceToRemoveOpenTable,
+} from '../../table/utils';
 import { handleMacroAutoConvert, handleMention } from '../handlers';
-import linkify from '../linkify-md-plugin';
-import { escapeLinks } from '../util';
-import { handleCodeBlockWithAnalytics, handleMarkdownWithAnalytics, handleMediaSingleWithAnalytics, handlePasteAsPlainTextWithAnalytics, handlePasteIntoTaskAndDecisionWithAnalytics, handlePastePreservingMarksWithAnalytics, handleRichTextWithAnalytics, sendPasteAnalyticsEvent } from './analytics';
+import { md } from '../md';
+import { escapeLinks, htmlContainsSingleFile } from '../util';
+import {
+  handleCodeBlockWithAnalytics,
+  handleExpandWithAnalytics,
+  handleMarkdownWithAnalytics,
+  handleMediaSingleWithAnalytics,
+  handlePasteAsPlainTextWithAnalytics,
+  handlePasteIntoTaskAndDecisionWithAnalytics,
+  handlePastePreservingMarksWithAnalytics,
+  handleRichTextWithAnalytics,
+  sendPasteAnalyticsEvent,
+} from './analytics';
+
 export const stateKey = new PluginKey('pastePlugin');
 
-export const md = MarkdownIt('zero', { html: false });
-
-md.enable([
-  // Process html entity - &#123;, &#xAF;, &quot;, ...
-  'entity',
-  // Process escaped chars and hardbreaks
-  'escape',
-
-  'newline',
-]);
-
-// enable modified version of linkify plugin
-// @see https://product-fabric.atlassian.net/browse/ED-3097
-md.use(linkify);
+export { md } from '../md';
 
 function isHeaderRowRequired(state: EditorState) {
   const tableState = getTablePluginState(state);
@@ -82,8 +95,17 @@ export function createPlugin(
           return false;
         }
 
-        const text = event.clipboardData.getData('text/plain');
+        let text = event.clipboardData.getData('text/plain');
         const html = event.clipboardData.getData('text/html');
+        const uriList = event.clipboardData.getData('text/uri-list');
+
+        // Links copied from iOS Safari share button only have the text/uri-list data type
+        // ProseMirror don't do anything with this type so we want to make our own open slice
+        // with url as text content so link is pasted inline
+        if (uriList && !text && !html) {
+          text = uriList;
+          slice = new Slice(Fragment.from(schema.text(text)), 1, 1);
+        }
 
         const isPastedFile = clipboard.isPastedFile(event);
         const isPlainText = text && !html;
@@ -92,12 +114,25 @@ export function createPlugin(
         // Bail if copied content has files
         if (isPastedFile) {
           if (!html) {
+            /**
+             * Microsoft Office, Number, Pages, etc. adds an image to clipboard
+             * with other mime-types so we don't let the event reach media.
+             * The detection ration here is that if the payload has both `html` and
+             * `files`, then it could be one of above or an image copied from web.
+             * Here, we don't have html, so we return true to allow default event behaviour
+             */
             return true;
           }
+
           /**
-           * Microsoft Office, Number, Pages, etc. adds an image to clipboard
-           * with other mime-types so we don't let the event reach media
+           * We want to return false for external copied image to allow
+           * it to be uploaded by the client.
            */
+
+          if (htmlContainsSingleFile(html)) {
+            return true;
+          }
+
           event.stopPropagation();
         }
 
@@ -154,10 +189,12 @@ export function createPlugin(
 
         // If we're in a code block, append the text contents of clipboard inside it
         if (
-          handleCodeBlockWithAnalytics(view, event, slice, text)(
-            state,
-            dispatch,
-          )
+          handleCodeBlockWithAnalytics(
+            view,
+            event,
+            slice,
+            text,
+          )(state, dispatch)
         ) {
           return true;
         }
@@ -186,10 +223,11 @@ export function createPlugin(
             return true;
           }
 
-          return handleMarkdownWithAnalytics(view, event, markdownSlice)(
-            state,
-            dispatch,
-          );
+          return handleMarkdownWithAnalytics(
+            view,
+            event,
+            markdownSlice,
+          )(state, dispatch);
         }
 
         // finally, handle rich-text copy-paste
@@ -252,10 +290,19 @@ export function createPlugin(
             return true;
           }
 
-          return handleRichTextWithAnalytics(view, event, slice)(
-            state,
-            dispatch,
-          );
+          if (handleExpandWithAnalytics(view, event, slice)(state, dispatch)) {
+            return true;
+          }
+
+          if (!insideTable(state)) {
+            slice = transformSliceNestedExpandToExpand(slice, state.schema);
+          }
+
+          return handleRichTextWithAnalytics(
+            view,
+            event,
+            slice,
+          )(state, dispatch);
         }
 
         return false;
@@ -287,6 +334,11 @@ export function createPlugin(
         slice = transformSliceToCorrectMediaWrapper(slice, schema);
 
         slice = transformSliceToCorrectEmptyTableCells(slice, schema);
+
+        // this must happen before upgrading text to lists
+        slice = splitParagraphs(slice, schema);
+
+        slice = upgradeTextToLists(slice, schema);
 
         if (
           slice.content.childCount &&
