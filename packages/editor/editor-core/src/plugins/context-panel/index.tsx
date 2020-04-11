@@ -1,8 +1,8 @@
+import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import React from 'react';
-import { Plugin, PluginKey, EditorState } from 'prosemirror-state';
+import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types';
 import { ContextPanelHandler } from './types';
-import { Dispatch } from '../../event-dispatcher';
 
 export const pluginKey = new PluginKey('contextPanelPluginKey');
 
@@ -27,7 +27,7 @@ function contextPanelPluginFactory(
         return {
           visible: false,
           handlers: contextPanels,
-          contents: contextPanels.map(panelContent => panelContent(state)),
+          contents: contextPanels.map((panelContent) => panelContent(state)),
         };
       },
 
@@ -50,7 +50,7 @@ function contextPanelPluginFactory(
         if (tr.docChanged || tr.selectionSet || (meta && meta.changed)) {
           newPluginState = {
             ...newPluginState,
-            contents: pluginState.handlers.map(panelContent =>
+            contents: pluginState.handlers.map((panelContent) =>
               panelContent(newState),
             ),
           };
