@@ -61,9 +61,15 @@ const widthPlugin = (): EditorPlugin => ({
       ? containerElement.querySelector('.ProseMirror')
       : undefined;
 
-    const tr = editorView.state.tr.setMeta(pluginKey, {
+    const newState: Partial<WidthPluginState> = {
       lineLength: pmDom ? pmDom.clientWidth : undefined,
-    });
+    };
+
+    if (containerElement) {
+      newState.width = containerElement.offsetWidth;
+    }
+
+    const tr = editorView.state.tr.setMeta(pluginKey, newState);
     editorView.dispatch(tr);
     return null;
   },
