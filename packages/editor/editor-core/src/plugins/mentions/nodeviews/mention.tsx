@@ -1,14 +1,14 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { getPosHandler, ReactNodeView } from '../../../nodeviews';
 import InlineNodeWrapper, {
   createMobileInlineDomRef,
 } from '../../../ui/InlineNodeWrapper';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import { ZeroWidthSpace } from '../../../utils';
-import { MentionPluginOptions } from '../index';
+import { MentionPluginOptions } from '../types';
 import Mention from '../ui/Mention';
 
 export interface Props {

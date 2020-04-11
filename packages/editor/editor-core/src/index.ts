@@ -66,7 +66,8 @@ export {
 // Used in mobile bridge
 export { stateKey as mediaPluginKey } from './plugins/media/pm-plugins/main';
 export { MediaOptions } from './plugins/media/types';
-export { mentionPluginKey, MentionPluginState } from './plugins/mentions';
+export { mentionPluginKey } from './plugins/mentions';
+export { MentionPluginState } from './plugins/mentions/types';
 export {
   QuickInsertItem,
   QuickInsertProvider,

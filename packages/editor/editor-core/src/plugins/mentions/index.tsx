@@ -1,5 +1,5 @@
 import { mention } from '@uidu/adf-schema';
-import { AnalyticsEventPayload, CreateUIAnalyticsEvent } from '@uidu/analytics';
+import { AnalyticsEventPayload } from '@uidu/analytics';
 import {
   ContextIdentifierProvider,
   ProviderFactory,
@@ -18,7 +18,7 @@ import {
 } from '@uidu/mentions';
 import { Fragment, Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import { v1 as uuid } from 'uuid';
 import { analyticsService } from '../../analytics';
 import { Dispatch } from '../../event-dispatcher';
@@ -50,22 +50,13 @@ import {
   buildTypeAheadRenderedPayload,
 } from './analytics';
 import mentionNodeView from './nodeviews/mention';
+import {
+  MentionPluginOptions,
+  MentionPluginState,
+  TeamInfoAttrAnalytics,
+} from './types';
 import ToolbarMention from './ui/ToolbarMention';
 import { isTeamStats, isTeamType } from './utils';
-
-export interface TeamInfoAttrAnalytics {
-  teamId: String;
-  includesYou: boolean;
-  memberCount: number;
-}
-
-export interface MentionPluginOptions {
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
-  sanitizePrivateContent?: boolean;
-  mentionInsertDisplayName?: boolean;
-  useInlineWrapper?: boolean;
-  allowZeroWidthSpaceAfter?: boolean;
-}
 
 const mentionsPlugin = (options?: MentionPluginOptions): EditorPlugin => {
   let sessionId = uuid();
@@ -420,12 +411,6 @@ export function getMentionPluginState(state: EditorState) {
   return mentionPluginKey.getState(state) as MentionPluginState;
 }
 
-export type MentionPluginState = {
-  mentionProvider?: MentionProvider | TeamMentionProvider;
-  contextIdentifierProvider?: ContextIdentifierProvider;
-  mentions?: Array<MentionDescription>;
-};
-
 function mentionPluginFactory(
   dispatch: Dispatch,
   providerFactory: ProviderFactory,
@@ -434,6 +419,16 @@ function mentionPluginFactory(
   options?: MentionPluginOptions,
 ) {
   let mentionProvider: MentionProvider;
+
+  // const sendAnalytics = (
+  //   event: string,
+  //   actionSubject: string,
+  //   action: string,
+  // ): void => {
+  //   if (event === SLI_EVENT_TYPE) {
+  //     fireEvent(buildSliPayload(actionSubject, action));
+  //   }
+  // };
 
   return new Plugin({
     key: mentionPluginKey,
@@ -550,6 +545,10 @@ function mentionPluginFactory(
                     );
                     fireEvent(payload);
                   },
+                  // undefined,
+                  // undefined,
+                  // undefined,
+                  // sendAnalytics,
                 );
               })
               .catch(() =>

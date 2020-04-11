@@ -1,27 +1,21 @@
+import { TypeAheadItem } from '@uidu/editor-common/provider-factory';
 import { Node } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
-import { ReactElement } from 'react';
 import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../event-dispatcher';
-import { SelectItemMode } from './commands/select-item';
 
-export type TypeAheadItemRenderProps = {
-  onClick: () => void;
-  onHover: () => void;
-  isSelected: boolean;
-};
+// Re-export typeahead types
+export {
+  TypeAheadItem,
+  TypeAheadItemRenderProps,
+} from '@uidu/editor-common/provider-factory';
 
-export type TypeAheadItem = {
-  title: string;
-  description?: string;
-  keyshortcut?: string;
-  key?: string | number;
-  icon?: () => ReactElement<any>;
-  render?: (
-    props: TypeAheadItemRenderProps,
-  ) => React.ReactElement<TypeAheadItemRenderProps> | null;
-  [key: string]: any;
-};
+export type SelectItemMode =
+  | 'shift-enter'
+  | 'enter'
+  | 'space'
+  | 'selected'
+  | 'tab';
 
 export type TypeAheadInsert = (
   node?: Node | Object | string,

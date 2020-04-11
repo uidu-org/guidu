@@ -5,8 +5,7 @@ import {
   WithProviders,
 } from '@uidu/editor-common';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 export interface MentionProps {
   id: string;
@@ -17,6 +16,8 @@ export interface MentionProps {
 }
 
 export default class Mention extends PureComponent<MentionProps, {}> {
+  static displayName = 'Mention';
+
   private providerFactory: ProviderFactory;
 
   constructor(props: MentionProps) {
@@ -39,7 +40,7 @@ export default class Mention extends PureComponent<MentionProps, {}> {
     };
 
     const actionHandlers: Record<string, any> = {};
-    ['onClick', 'onMouseEnter', 'onMouseLeave'].forEach(handler => {
+    ['onClick', 'onMouseEnter', 'onMouseLeave'].forEach((handler) => {
       actionHandlers[handler] =
         (eventHandlers && (eventHandlers as any)[handler]) || (() => {});
     });

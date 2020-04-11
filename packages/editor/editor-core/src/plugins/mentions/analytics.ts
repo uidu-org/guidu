@@ -9,8 +9,8 @@ import {
   name as packageName,
   version as packageVersion,
 } from '../../version.json';
-import { SelectItemMode } from '../type-ahead/commands/select-item.js';
-import { TeamInfoAttrAnalytics } from './index';
+import { SelectItemMode } from '../type-ahead/types';
+import { TeamInfoAttrAnalytics } from './types';
 import { isTeamType } from './utils';
 
 const componentName = 'mention';
@@ -83,7 +83,7 @@ const getPosition = (
 ): number | undefined => {
   if (mentionList) {
     const index = mentionList.findIndex(
-      mention => mention.id === selectedMention.id,
+      (mention) => mention.id === selectedMention.id,
     );
     return index === -1 ? undefined : index;
   }
