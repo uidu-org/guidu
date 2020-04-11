@@ -197,7 +197,7 @@ const findRootListNode = (state: EditorState): ContentNodeWithPos | null => {
 
   return findFarthestParentNode(
     (node: PMNode) => node.type === bulletList || node.type === orderedList,
-  )(state.selection);
+  )(state.selection.$from);
 };
 
 /**

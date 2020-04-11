@@ -22,11 +22,10 @@ import {
 import { EditorView } from 'prosemirror-view';
 import { Command, CommandDispatch } from '../../types';
 import { compose, insideTable, processRawValue } from '../../utils';
-import { taskDecisionSliceFilter } from '../../utils/filter';
 import { mapSlice } from '../../utils/slice';
 import { InputMethodInsertMedia, INPUT_METHOD } from '../analytics';
-import { CardOptions } from '../card';
 import { insertCard, queueCardsFromChangedTr } from '../card/pm-plugins/doc';
+import { CardOptions } from '../card/types';
 import { GapCursorSelection, Side } from '../gap-cursor/';
 import { linkifyContent } from '../hyperlink/utils';
 import { runMacroAutoConvert } from '../macro';
@@ -39,7 +38,7 @@ import { applyTextMarksToSlice, hasOnlyNodesOfType } from './util';
 
 // remove text attribute from mention for copy/paste (GDPR)
 export function handleMention(slice: Slice, schema: Schema): Slice {
-  return mapSlice(slice, node => {
+  return mapSlice(slice, (node) => {
     if (node.type.name === schema.nodes.mention.name) {
       const mention = node.attrs as MentionAttributes;
       const newMention = { ...mention, text: '' };
@@ -82,10 +81,7 @@ export function handlePasteIntoTaskAndDecision(slice: Slice): Command {
     }
 
     type Fn = (slice: Slice) => Slice;
-    const filters: [Fn, ...Array<Fn>] = [
-      linkifyContent(schema),
-      taskDecisionSliceFilter(schema),
-    ];
+    const filters: [Fn, ...Array<Fn>] = [linkifyContent(schema)];
 
     const selectionMarks = selection.$head.marks();
 
@@ -133,9 +129,10 @@ export function handlePasteAsPlainText(
 
       // <- using the same internal flag that prosemirror-view is using
 
+      const { selection } = tr;
       tr.replaceSelection(slice);
-      (state.storedMarks || []).forEach(mark => {
-        tr.addMark(tr.selection.from, tr.selection.from + slice.size, mark);
+      (state.storedMarks || []).forEach((mark) => {
+        tr.addMark(selection.from, selection.from + slice.size, mark);
       });
       tr.scrollIntoView();
       if (dispatch) {
@@ -225,9 +222,10 @@ export function handlePastePreservingMarks(slice: Slice): Command {
         orderedList,
       )(slice)
     ) {
-      const transformedSlice = applyTextMarksToSlice(schema, selectionMarks)(
-        slice,
-      );
+      const transformedSlice = applyTextMarksToSlice(
+        schema,
+        selectionMarks,
+      )(slice);
 
       const tr = closeHistory(state.tr)
         .replaceSelection(transformedSlice)
@@ -364,7 +362,7 @@ function isOnlyMediaSingle(state: EditorState, slice: Slice) {
 }
 
 export function handleMediaSingle(inputMethod: InputMethodInsertMedia) {
-  return function(slice: Slice): Command {
+  return function (slice: Slice): Command {
     return (state, dispatch, view) => {
       if (view) {
         if (isOnlyMedia(state, slice)) {
@@ -390,6 +388,50 @@ export function handleMediaSingle(inputMethod: InputMethodInsertMedia) {
       }
       return false;
     };
+  };
+}
+
+export function handleExpand(slice: Slice): Command {
+  return (state, dispatch) => {
+    if (!insideTable(state)) {
+      return false;
+    }
+
+    const { expand, nestedExpand } = state.schema.nodes;
+    let { tr } = state;
+    let hasExpand = false;
+
+    const newSlice = mapSlice(slice, (maybeNode) => {
+      if (maybeNode.type === expand) {
+        hasExpand = true;
+        try {
+          return nestedExpand.createChecked(
+            maybeNode.attrs,
+            maybeNode.content,
+            maybeNode.marks,
+          );
+        } catch (e) {
+          tr = safeInsert(maybeNode, tr.selection.$to.pos)(tr);
+          return Fragment.empty;
+        }
+      }
+      return maybeNode;
+    });
+
+    if (hasExpand && dispatch) {
+      // If the slice is a subset, we can let PM replace the selection
+      // it will insert as text where it can't place the node.
+      // Otherwise we use safeInsert to insert below instead of
+      // replacing/splitting the current node.
+      if (slice.openStart > 1 && slice.openEnd > 1) {
+        dispatch(tr.replaceSelection(newSlice));
+      } else {
+        dispatch(safeInsert(newSlice.content)(tr));
+      }
+      return true;
+    }
+
+    return false;
   };
 }
 
@@ -432,7 +474,7 @@ function isList(schema: Schema, node: PMNode | null | undefined) {
 
 function flattenList(state: EditorState, node: PMNode, nodesArr: PMNode[]) {
   const { listItem } = state.schema.nodes;
-  node.content.forEach(child => {
+  node.content.forEach((child) => {
     if (
       isList(state.schema, child) ||
       (child.type === listItem && isList(state.schema, child.firstChild))

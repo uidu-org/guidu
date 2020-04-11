@@ -9,17 +9,17 @@ export function removeMarks(node: ADFEntity) {
 
 export function sanitizeNode(json: JSONDocNode): JSONDocNode {
   const sanitizedJSON = traverse(json as any, {
-    text: node => {
+    text: (node) => {
       if (!node || !Array.isArray(node.marks)) {
         return node;
       }
 
       return {
         ...node,
-        marks: node.marks.filter(mark => mark.type !== 'typeAheadQuery'),
+        marks: node.marks.filter((mark) => mark.type !== 'typeAheadQuery'),
       };
     },
-    status: node => {
+    status: (node) => {
       if (node.attrs && !!node.attrs.text) {
         return removeMarks(node);
       }

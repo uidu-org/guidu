@@ -1,7 +1,9 @@
 import { Node } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import { Command, CommandDispatch } from '../types';
+import { stateKey as mediaStateKey } from '../plugins/media/pm-plugins/plugin-key';
+import { MediaPluginState } from '../plugins/media/pm-plugins/types';
+import { Command, CommandDispatch } from '../types/command';
 
 export async function getEditorValueWithMedia(
   editorView?: EditorView,
@@ -12,12 +14,12 @@ export async function getEditorValueWithMedia(
 
   const { state } = editorView;
 
-  // const mediaPluginState =
-  //   state && (mediaStateKey.getState(state) as MediaPluginState);
+  const mediaPluginState =
+    state && (mediaStateKey.getState(state) as MediaPluginState);
 
-  // if (mediaPluginState && mediaPluginState.waitForMediaUpload) {
-  //   await mediaPluginState.waitForPendingTasks();
-  // }
+  if (mediaPluginState && mediaPluginState.waitForMediaUpload) {
+    // await mediaPluginState.waitForPendingTasks();
+  }
 
   return editorView.state.doc;
 }
@@ -32,7 +34,7 @@ export function cascadeCommands(cmds: Command[]): Command {
     let shouldDispatch = false;
 
     const onDispatchAction = (tr: Transaction) => {
-      baseTr.setSelection(tr.selection.map(baseTr.doc, baseTr.mapping));
+      baseTr.setSelection(tr.selection);
       tr.steps.forEach((st) => {
         baseTr.step(st);
       });

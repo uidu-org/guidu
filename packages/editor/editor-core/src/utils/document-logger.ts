@@ -1,4 +1,4 @@
-import { Node as PMNode, Fragment } from 'prosemirror-model';
+import { Fragment, Node as PMNode } from 'prosemirror-model';
 
 export type SimplifiedNode = {
   type: string;
@@ -47,7 +47,7 @@ const getBlockNodeContent = (
   if (content[0].isBlock) {
     // children are block nodes
     let prevNode: PMNode;
-    blockNodeContent = content.map(node => {
+    blockNodeContent = content.map((node) => {
       pos += prevNode ? prevNode.nodeSize : 1;
       prevNode = node;
       return getBlockNode(node, pos);
@@ -66,7 +66,7 @@ const getInlineNodes = (
   nodes: PMNode[],
   pos: number,
 ): { inlineNodes: SimplifiedNode[]; pos: number } => {
-  let inlineNodes: SimplifiedNode[] = nodes.map(node => {
+  let inlineNodes: SimplifiedNode[] = nodes.map((node) => {
     const { nodeSize } = node;
     const inlineNode: SimplifiedNode = {
       type: node.type.name,
@@ -85,4 +85,4 @@ const getInlineNodes = (
 };
 
 const getMarks = (node: PMNode): string[] =>
-  node.marks.map(mark => mark.type.name);
+  node.marks.map((mark) => mark.type.name);

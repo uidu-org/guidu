@@ -1,10 +1,10 @@
 import { ADFEntity, ValidationError, validator } from '@uidu/adf-utils';
-import { ProviderFactory } from '@uidu/editor-common';
-import { Node, Schema } from 'prosemirror-model';
-import { EditorState, Selection, Transaction } from 'prosemirror-state';
+import { ProviderFactory, Transformer } from '@uidu/editor-common';
+import { JSONDocNode } from '@uidu/editor-json-transformer';
+import { Node, ResolvedPos, Schema } from 'prosemirror-model';
+import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
 import { ContentNodeWithPos } from 'prosemirror-utils';
 import { analyticsService } from '../analytics';
-import { JSONDocNode } from '../utils';
 import { sanitizeNodeForPrivacy } from '../utils/filter/privacy-filter';
 
 const FALSE_POSITIVE_MARKS = ['code', 'alignment', 'indentation'];
@@ -13,10 +13,7 @@ const FALSE_POSITIVE_MARKS = ['code', 'alignment', 'indentation'];
  * Checks if node is an empty paragraph.
  */
 export function isEmptyParagraph(node?: Node | null): boolean {
-  return (
-    !node ||
-    (node.type.name === 'paragraph' && !node.textContent && !node.childCount)
-  );
+  return !!node && node.type.name === 'paragraph' && !node.childCount;
 }
 
 /**
@@ -67,14 +64,14 @@ export function isNodeEmpty(node?: Node): boolean {
   const block: Node[] = [];
   const nonBlock: Node[] = [];
 
-  node.forEach(child => {
+  node.forEach((child) => {
     child.isInline ? nonBlock.push(child) : block.push(child);
   });
 
   return (
     !nonBlock.length &&
     !block.filter(
-      childNode =>
+      (childNode) =>
         (!!childNode.childCount &&
           !(
             childNode.childCount === 1 && isEmptyParagraph(childNode.firstChild)
@@ -89,16 +86,52 @@ export function isNodeEmpty(node?: Node): boolean {
  */
 export function isEmptyDocument(node: Node): boolean {
   const nodeChild = node.content.firstChild;
-
   if (node.childCount !== 1 || !nodeChild) {
     return false;
   }
-  return (
-    nodeChild.type.name === 'paragraph' &&
-    !nodeChild.childCount &&
-    nodeChild.nodeSize === 2 &&
-    (!nodeChild.marks || nodeChild.marks.length === 0)
-  );
+  return isEmptyParagraph(nodeChild);
+}
+
+// Checks to see if the parent node is the document, ie not contained within another entity
+export function hasDocAsParent($anchor: ResolvedPos): boolean {
+  return $anchor.depth === 1;
+}
+
+export function isInEmptyLine(state: EditorState) {
+  const { selection } = state;
+  const { $cursor, $anchor } = selection as TextSelection;
+
+  if (!$cursor) {
+    return false;
+  }
+
+  const node = $cursor.node();
+
+  if (!node) {
+    return false;
+  }
+  return isEmptyParagraph(node) && hasDocAsParent($anchor);
+}
+
+export function bracketTyped(state: EditorState) {
+  const { selection } = state;
+  const { $cursor, $anchor } = selection as TextSelection;
+
+  if (!$cursor) {
+    return false;
+  }
+  const node = $cursor.nodeBefore;
+
+  if (!node) {
+    return false;
+  }
+
+  if (node.type.name === 'text' && node.text === '{') {
+    const paragraphNode = $anchor.node();
+    return paragraphNode.marks.length === 0 && hasDocAsParent($anchor);
+  }
+
+  return false;
 }
 
 function wrapWithUnsupported(
@@ -130,6 +163,7 @@ export function processRawValue(
   value?: string | object,
   providerFactory?: ProviderFactory,
   sanitizePrivateContent?: boolean,
+  contentTransformer?: Transformer<string>,
 ): Node | undefined {
   if (!value) {
     return undefined;
@@ -141,7 +175,12 @@ export function processRawValue(
 
   if (typeof value === 'string') {
     try {
-      node = JSON.parse(value);
+      if (contentTransformer) {
+        const doc = contentTransformer.parse(value);
+        node = doc.toJSON();
+      } else {
+        node = JSON.parse(value);
+      }
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(`Error processing value: ${value} isn't a valid JSON`);
@@ -159,11 +198,6 @@ export function processRawValue(
     return undefined;
   }
   try {
-    const nodes = Object.keys(schema.nodes);
-    const marks = Object.keys(schema.marks);
-    const validate = validator(nodes, marks, { allowPrivateAttributes: true });
-    const emptyDoc: ADFEntity = { type: 'doc', content: [] };
-
     // ProseMirror always require a child under doc
     if (node.type === 'doc') {
       if (Array.isArray(node.content) && node.content.length === 0) {
@@ -177,6 +211,15 @@ export function processRawValue(
         node.version = 1;
       }
     }
+
+    if (contentTransformer) {
+      return Node.fromJSON(schema, node);
+    }
+
+    const nodes = Object.keys(schema.nodes);
+    const marks = Object.keys(schema.marks);
+    const validate = validator(nodes, marks, { allowPrivateAttributes: true });
+    const emptyDoc: ADFEntity = { type: 'doc', content: [] };
 
     const { entity = emptyDoc } = validate(
       node as ADFEntity,
@@ -263,7 +306,7 @@ export const getStepRange = (
   let from = -1;
   let to = -1;
 
-  transaction.steps.forEach(step => {
+  transaction.steps.forEach((step) => {
     step.getMap().forEach((_oldStart, _oldEnd, newStart, newEnd) => {
       from = newStart < from || from === -1 ? newStart : from;
       to = newEnd < to || to === -1 ? newEnd : to;
@@ -282,18 +325,16 @@ export const getStepRange = (
  * @param predicate Function to check the node
  */
 export const findFarthestParentNode = (predicate: (node: Node) => boolean) => (
-  selection: Selection,
+  $pos: ResolvedPos,
 ): ContentNodeWithPos | null => {
-  const { $from } = selection;
-
   let candidate: ContentNodeWithPos | null = null;
 
-  for (let i = $from.depth; i > 0; i--) {
-    const node = $from.node(i);
+  for (let i = $pos.depth; i > 0; i--) {
+    const node = $pos.node(i);
     if (predicate(node)) {
       candidate = {
-        pos: i > 0 ? $from.before(i) : 0,
-        start: $from.start(i),
+        pos: i > 0 ? $pos.before(i) : 0,
+        start: $pos.start(i),
         depth: i,
         node,
       };
@@ -327,7 +368,7 @@ export function nodesBetweenChanged(
 export function getNodesCount(node: Node): Record<string, number> {
   let count: Record<string, number> = {};
 
-  node.nodesBetween(0, node.nodeSize - 2, node => {
+  node.nodesBetween(0, node.nodeSize - 2, (node) => {
     count[node.type.name] = (count[node.type.name] || 0) + 1;
   });
 

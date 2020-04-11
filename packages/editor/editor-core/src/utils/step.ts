@@ -1,5 +1,5 @@
-import { Fragment, Slice, Node as PMNode, Schema } from 'prosemirror-model';
-import { Step, StepResult, Mappable } from 'prosemirror-transform';
+import { Fragment, Node as PMNode, Schema, Slice } from 'prosemirror-model';
+import { Mappable, Step, StepResult } from 'prosemirror-transform';
 
 /**
  * For more context on what this is about:

@@ -1,6 +1,7 @@
 import {
   absoluteBreakoutWidth,
   akEditorFullWidthLayoutWidth,
+  akLayoutGutterOffset,
   gridMediumMaxWidth,
 } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
@@ -9,7 +10,6 @@ import { findParentNodeOfTypeClosestToPos } from 'prosemirror-utils';
 import { BODIED_EXT_PADDING } from '../plugins/extension/ui/Extension/styles';
 import {
   LAYOUT_COLUMN_PADDING,
-  LAYOUT_OFFSET,
   LAYOUT_SECTION_MARGIN,
 } from '../plugins/layout/styles';
 import { WidthPluginState } from '../plugins/width';
@@ -47,7 +47,7 @@ export const getParentNodeWidth = (
   );
 
   if (node.type === schema.nodes.layoutSection) {
-    parentWidth += LAYOUT_OFFSET * 2; // extra width that gets added to layout
+    parentWidth += akLayoutGutterOffset * 2; // extra width that gets added to layout
 
     if (containerWidth.width > gridMediumMaxWidth) {
       parentWidth -= (LAYOUT_SECTION_MARGIN + 2) * (node.childCount - 1); // margin between sections
@@ -87,6 +87,7 @@ const getNestedParentNode = (
   const parent = findParentNodeOfTypeClosestToPos($pos, [
     state.schema.nodes.bodiedExtension,
     state.schema.nodes.layoutSection,
+    state.schema.nodes.expand,
   ]);
 
   return parent ? parent.node : null;

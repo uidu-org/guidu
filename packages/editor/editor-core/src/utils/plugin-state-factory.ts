@@ -1,7 +1,7 @@
 import {
   EditorState,
-  StateField,
   PluginKey,
+  StateField,
   Transaction,
 } from 'prosemirror-state';
 import { Dispatch } from '../event-dispatcher';
@@ -83,7 +83,7 @@ export function pluginFactory<
 ): {
   createPluginState: (
     dispatch: Dispatch,
-    initialState: InitialState,
+    initialState: InitialState | ((state: EditorState) => InitialState),
   ) => StateField<PluginState>;
   createCommand: (
     action: Action | ((state: Readonly<EditorState>) => Action | false),
@@ -94,8 +94,12 @@ export function pluginFactory<
   const { mapping, onDocChanged, onSelectionChanged } = options;
 
   return {
-    createPluginState: (dispatch, initialState) => ({
-      init: () => initialState,
+    createPluginState: (
+      dispatch,
+      initialState: InitialState | ((state: EditorState) => InitialState),
+    ) => ({
+      init: (_, state): InitialState =>
+        isFunction(initialState) ? initialState(state) : initialState,
 
       apply(tr, _pluginState) {
         const oldState = mapping ? mapping(tr, _pluginState) : _pluginState;
@@ -132,6 +136,6 @@ export function pluginFactory<
       return true;
     },
 
-    getPluginState: state => pluginKey.getState(state),
+    getPluginState: (state) => pluginKey.getState(state),
   };
 }
