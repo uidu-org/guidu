@@ -1,5 +1,4 @@
 import {
-  inputRules,
   textblockTypeInputRule,
   wrappingInputRule,
 } from 'prosemirror-inputrules';
@@ -11,6 +10,7 @@ import {
   createInputRule,
   defaultInputRuleHandler,
   InputRuleWithHandler,
+  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import {
@@ -246,7 +246,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return inputRules({ rules });
+    return instrumentedInputRule('block-type', { rules });
   }
   return undefined;
 }

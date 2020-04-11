@@ -1,139 +1,158 @@
-import { ExtensionLayout } from '@uidu/adf-schema';
 import {
   ExtensionHandlers,
+  ExtensionProvider,
+  getExtensionModuleNode,
   ProviderFactory,
   UpdateExtension,
 } from '@uidu/editor-common';
-import { Node as PMNode } from 'prosemirror-model';
-import { Plugin, PluginKey } from 'prosemirror-state';
-import { findDomRefAtPos, findSelectedNodeOfType } from 'prosemirror-utils';
+import { Plugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
-import { ExtensionConfig } from '../../types/extension-config';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
-import { closestElement } from '../../utils/dom';
+import { updateState } from './commands';
 import ExtensionNodeView from './nodeviews/extension';
-import { getExtensionNode } from './utils';
+import {
+  createCommand,
+  createPluginState,
+  getPluginState,
+} from './plugin-factory';
+import { pluginKey } from './plugin-key';
+import {
+  getSelectedDomElement,
+  getSelectedExtension,
+  getSelectedNonContentExtension,
+} from './utils';
 
-export const pluginKey = new PluginKey('extensionPlugin');
-
-export type ExtensionState = {
-  element: HTMLElement | undefined;
-  layout: ExtensionLayout;
-  node: { pos: number; node: PMNode };
-  allowBreakout: boolean;
-  stickToolbarToBottom: boolean;
-  showEditButton: boolean;
-  updateExtension: UpdateExtension<object>;
+const updateEditButton = (
+  view: EditorView,
+  extensionProvider: ExtensionProvider,
+) => {
+  const nodeWithPos = getSelectedExtension(view.state, true);
+  if (nodeWithPos) {
+    const { extensionType, extensionKey } = nodeWithPos.node.attrs;
+    getExtensionModuleNode(extensionProvider, extensionType, extensionKey)
+      .then((extensionModuleNode) => {
+        const newNodeWithPos = getSelectedExtension(view.state, true);
+        if (
+          newNodeWithPos &&
+          newNodeWithPos.node.attrs.extensionType === extensionType &&
+          newNodeWithPos.node.attrs.extensionKey === extensionKey &&
+          newNodeWithPos.pos === nodeWithPos.pos &&
+          extensionModuleNode.update
+        ) {
+          updateState({
+            showEditButton: true,
+            updateExtension: extensionModuleNode.update,
+          })(view.state, view.dispatch);
+        }
+      })
+      .catch(() => {
+        updateState({
+          showEditButton: true,
+        })(view.state, view.dispatch);
+      });
+  }
 };
 
-export default (
+const createPlugin = (
   dispatch: Dispatch,
   providerFactory: ProviderFactory,
   extensionHandlers: ExtensionHandlers,
   portalProviderAPI: PortalProviderAPI,
-  allowExtension?: ExtensionConfig | boolean,
-) =>
-  new Plugin({
-    state: {
-      init: () => {
-        let stickToolbarToBottom = true;
-        let allowBreakout = false;
+) => {
+  const state = createPluginState(dispatch, {
+    layout: 'default',
+    showEditButton: false,
+    showContextPanel: false,
+  });
 
-        if (typeof allowExtension === 'object') {
-          stickToolbarToBottom = !!allowExtension.stickToolbarToBottom;
-          allowBreakout = !!allowExtension.allowBreakout;
-        }
-
-        return {
-          element: null,
-          layout: 'default',
-          showLayoutOptions: true,
-          stickToolbarToBottom,
-          node: null,
-          allowBreakout,
-        };
-      },
-      apply(tr, state: ExtensionState) {
-        const nextPluginState = tr.getMeta(pluginKey);
-        if (nextPluginState) {
-          dispatch(pluginKey, nextPluginState);
-          return nextPluginState;
-        }
-
-        return state;
-      },
-    },
-    view: (editorView: EditorView) => {
+  return new Plugin({
+    state,
+    view: (editorView) => {
       const domAtPos = editorView.domAtPos.bind(editorView);
 
+      const providerHandler = (
+        name: string,
+        provider?: Promise<ExtensionProvider>,
+      ) => {
+        if (name === 'extensionProvider' && provider) {
+          provider
+            .then((extensionProvider) => {
+              updateState({ extensionProvider })(
+                editorView.state,
+                editorView.dispatch,
+              );
+
+              updateEditButton(editorView, extensionProvider);
+            })
+            .catch(() =>
+              updateState({ extensionProvider: undefined })(
+                editorView.state,
+                editorView.dispatch,
+              ),
+            );
+        }
+      };
+
+      providerFactory.subscribe('extensionProvider', providerHandler);
+
       return {
-        update: (view: EditorView) => {
-          const {
-            dispatch: editorDispatch,
-            state,
-            state: { schema },
-          } = view;
+        update: (view) => {
+          const { state, dispatch } = view;
+          const { element, extensionProvider } = getPluginState(state);
 
-          /** this fetches the selected extn node, either by keyboard selection or click for all types of extns */
-          const selectedExtNode = getExtensionNode(state);
-          const selectedExtDomNode =
-            selectedExtNode &&
-            (findDomRefAtPos(selectedExtNode.pos, domAtPos) as HTMLElement);
-          const pluginState = pluginKey.getState(state);
-
-          if (!selectedExtNode && !pluginState.element) {
+          // This fetches the selected extension node, either by keyboard selection or click for all types of extensions
+          const selectedExtension = getSelectedExtension(state, true);
+          if (!selectedExtension && !element) {
             return undefined;
           }
 
-          const { extension, inlineExtension } = schema.nodes;
+          const isContentExtension = !!getSelectedNonContentExtension(state);
 
-          const isNonContentExt = findSelectedNodeOfType([
-            inlineExtension,
-            extension,
-          ])(state.selection);
+          const newElement = getSelectedDomElement(
+            domAtPos,
+            selectedExtension,
+            isContentExtension,
+          );
 
-          /** Non-content extension can be nested in bodied-extension, the following check is necessary for that case */
-          const newElement =
-            selectedExtNode && selectedExtDomNode!.querySelector
-              ? isNonContentExt
-                ? selectedExtDomNode!.querySelector('.extension-container') ||
-                  selectedExtDomNode
-                : closestElement(selectedExtDomNode!, '.extension-container') ||
-                  selectedExtDomNode!.querySelector('.extension-container') ||
-                  selectedExtDomNode
-              : undefined;
+          if (element !== newElement) {
+            let showEditButton = false;
+            let updateExtension: UpdateExtension<object> | undefined;
 
-          if (pluginState.element !== newElement && selectedExtNode) {
-            const { extensionType, layout } = selectedExtNode.node.attrs;
-            const extensionHandler = extensionHandlers[extensionType];
+            if (selectedExtension) {
+              const { extensionType } = selectedExtension.node.attrs;
 
-            let showEditButton = true;
-            let updateExtension;
-
-            if (extensionHandler && typeof extensionHandler === 'object') {
-              showEditButton = !!extensionHandler.update;
-              updateExtension = extensionHandler.update;
+              const extensionHandler = extensionHandlers[extensionType];
+              if (extensionHandler && typeof extensionHandler === 'object') {
+                // Old API with the `update` function
+                showEditButton = !!extensionHandler.update;
+                updateExtension = extensionHandler.update;
+              } else if (extensionProvider) {
+                // New API with or without the `update` function, we don't know at this point
+                updateEditButton(view, extensionProvider);
+              } else {
+                // Old API without the `update` function
+                showEditButton = true;
+              }
             }
 
-            editorDispatch(
-              state.tr.setMeta(pluginKey, {
-                ...pluginState,
-                element: newElement,
-                layout,
-                node: selectedExtNode,
-                showEditButton,
-                updateExtension,
-              }),
-            );
-            return true;
-          }
+            const layout = selectedExtension
+              ? selectedExtension.node.attrs.layout
+              : 'default';
 
-          /** Required toolbar re-positioning */
-          dispatch(pluginKey, {
-            ...pluginState,
-          });
+            updateState({
+              nodeWithPos: selectedExtension,
+              showContextPanel: false,
+              element: newElement,
+              showEditButton,
+              updateExtension,
+              layout,
+            })(state, dispatch);
+          }
           return true;
+        },
+        destroy: () => {
+          providerFactory.unsubscribe('extensionProvider', providerHandler);
         },
       };
     },
@@ -158,3 +177,6 @@ export default (
       },
     },
   });
+};
+
+export { pluginKey, createPlugin, createCommand, getPluginState };

@@ -1,8 +1,7 @@
 import EditorFileIcon from '@atlaskit/icon/glyph/editor/file';
 import { getExtensionLozengeData } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import {
   PlaceholderFallback,
   PlaceholderFallbackParams,
@@ -65,7 +64,7 @@ export default class ExtensionLozenge extends Component<Props, any> {
         {params && !isBlockExtension && (
           <PlaceholderFallbackParams>
             {Object.keys(params).map(
-              key => key && ` | ${key} = ${params[key].value}`,
+              (key) => key && ` | ${key} = ${params[key].value}`,
             )}
           </PlaceholderFallbackParams>
         )}

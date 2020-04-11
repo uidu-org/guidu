@@ -1,8 +1,7 @@
 import MoreIcon from '@atlaskit/icon/glyph/editor/more';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { analyticsService } from '../../../../analytics';
 import {
@@ -12,7 +11,8 @@ import {
   toggleUnderline,
   tooltip,
 } from '../../../../keymaps';
-import DropdownMenu, { MenuItem } from '../../../../ui/DropdownMenu';
+import DropdownMenu from '../../../../ui/DropdownMenu';
+import { MenuItem } from '../../../../ui/DropdownMenu/types';
 import {
   Separator,
   Shortcut,
@@ -81,8 +81,6 @@ export const messages = defineMessages({
 export interface State {
   isOpen?: boolean;
 }
-
-type ToolbarItem = MenuItem & { value: string };
 
 class ToolbarAdvancedTextFormatting extends PureComponent<
   Props & WrappedComponentProps,
@@ -200,7 +198,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
       intl: { formatMessage },
     } = this.props;
     const { code, underline, subsup, strike } = editorView.state.schema.marks;
-    let items: ToolbarItem[] = [];
+    let items: MenuItem[] = [];
 
     if (textFormattingState) {
       const {
@@ -262,7 +260,7 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
   };
 
   private addRecordToItems = (
-    items: ToolbarItem[],
+    items: MenuItem[],
     content: string,
     value: string,
     tooltip?: string,
@@ -285,18 +283,22 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
     items.push({
       key: value,
       content,
-      elemAfter: tooltip && <Shortcut>{tooltip}</Shortcut>,
-      value,
+      elemAfter: tooltip ? <Shortcut>{tooltip}</Shortcut> : undefined,
+      value: {
+        name: value,
+      },
       isActive: active,
       isDisabled: disabled,
     });
   };
 
-  private onItemActivated = ({ item }: { item: ToolbarItem }) => {
-    analyticsService.trackEvent(`atlassian.editor.format.${item.value}.button`);
+  private onItemActivated = ({ item }: { item: MenuItem }) => {
+    analyticsService.trackEvent(
+      `atlassian.editor.format.${item.value.name}.button`,
+    );
 
     const { state, dispatch } = this.props.editorView;
-    switch (item.value) {
+    switch (item.value.name) {
       case 'underline':
         commands.toggleUnderlineWithAnalytics({
           inputMethod: INPUT_METHOD.TOOLBAR,
@@ -314,10 +316,14 @@ class ToolbarAdvancedTextFormatting extends PureComponent<
         })(state, dispatch);
         break;
       case 'subscript':
-        commands.toggleSubscriptWithAnalytics()(state, dispatch);
+        commands.toggleSubscriptWithAnalytics({
+          inputMethod: INPUT_METHOD.TOOLBAR,
+        })(state, dispatch);
         break;
       case 'superscript':
-        commands.toggleSuperscriptWithAnalytics()(state, dispatch);
+        commands.toggleSuperscriptWithAnalytics({
+          inputMethod: INPUT_METHOD.TOOLBAR,
+        })(state, dispatch);
         break;
       case 'clearFormatting':
         clearFormattingWithAnalytics(INPUT_METHOD.TOOLBAR)(state, dispatch);

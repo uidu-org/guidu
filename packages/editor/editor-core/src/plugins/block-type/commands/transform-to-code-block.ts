@@ -1,6 +1,6 @@
+import { Mark } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
 import { mapSlice } from '../../../utils/slice';
-import { Mark } from 'prosemirror-model';
 
 export function transformToCodeBlockAction(
   state: EditorState,
@@ -18,7 +18,7 @@ export function transformToCodeBlockAction(
 
   const codeBlockSlice = mapSlice(
     state.doc.slice(startOfCodeBlockText.pos, end),
-    node => {
+    (node) => {
       if (node.type === state.schema.nodes.hardBreak) {
         return state.schema.text('\n');
       }

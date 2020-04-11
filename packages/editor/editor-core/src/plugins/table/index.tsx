@@ -13,7 +13,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconTable } from '../quick-insert/assets';
 import { keymapPlugin } from './pm-plugins/keymap';
 import { createPlugin, getPluginState, pluginKey } from './pm-plugins/main';

@@ -1,15 +1,26 @@
-import { ProviderFactory } from '@uidu/editor-common';
-import { Plugin, PluginKey } from 'prosemirror-state';
+import {
+  MacroProvider,
+  ProviderFactory,
+  Providers,
+} from '@uidu/editor-common/provider-factory';
+import { Plugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import { setMacroProvider } from './actions';
-import { MacroProvider } from './types';
+import { pluginKey } from './plugin-key';
 
-export * from './actions';
-export * from './types';
-
-export const pluginKey = new PluginKey('macroPlugin');
+export {
+  ExtensionType,
+  MacroAttributes,
+  MacroProvider,
+} from '@uidu/editor-common/provider-factory';
+export {
+  insertMacroFromMacroBrowser,
+  resolveMacro,
+  runMacroAutoConvert,
+  setMacroProvider,
+} from './actions';
 
 export type MacroState = {
   macroProvider: MacroProvider | null;
@@ -39,7 +50,7 @@ export const createPlugin = (
     view: (view: EditorView) => {
       const handleProvider = (
         _name: string,
-        provider?: Promise<MacroProvider>,
+        provider?: Providers['macroProvider'],
       ) => provider && setMacroProvider(provider)(view);
       // make sure editable DOM node is mounted
       if (view.dom.parentNode) {

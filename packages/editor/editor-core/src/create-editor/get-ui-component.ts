@@ -6,7 +6,9 @@ import Mobile from '../ui/Appearance/Mobile';
 
 export default function getUiComponent(
   appearance: EditorAppearance,
-): React.ComponentClass<EditorAppearanceComponentProps> {
+):
+  | React.ComponentClass<EditorAppearanceComponentProps>
+  | React.FunctionComponent<EditorAppearanceComponentProps> {
   appearance = appearance || 'comment';
 
   switch (appearance) {
@@ -16,7 +18,7 @@ export default function getUiComponent(
     case 'chromeless':
       return Chromeless;
     case 'comment':
-      return Comment as any;
+      return Comment;
     case 'mobile':
       return Mobile;
     default:

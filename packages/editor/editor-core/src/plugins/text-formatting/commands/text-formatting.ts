@@ -145,8 +145,8 @@ export const moveLeft = (): Command => {
   };
 };
 
-type InputMethodToolbar = INPUT_METHOD.TOOLBAR;
-type InputMethodBasic =
+export type InputMethodToolbar = INPUT_METHOD.TOOLBAR;
+export type InputMethodBasic =
   | InputMethodToolbar
   | INPUT_METHOD.SHORTCUT
   | INPUT_METHOD.FORMATTING;
@@ -261,14 +261,18 @@ export const toggleSuperscript = (): Command => {
   };
 };
 
-export const toggleSuperscriptWithAnalytics = (): Command =>
+export const toggleSuperscriptWithAnalytics = ({
+  inputMethod,
+}: {
+  inputMethod: InputMethodBasic;
+}): Command =>
   withAnalytics({
     action: ACTION.FORMATTED,
     actionSubject: ACTION_SUBJECT.TEXT,
     eventType: EVENT_TYPE.TRACK,
     actionSubjectId: ACTION_SUBJECT_ID.FORMAT_SUPER,
     attributes: {
-      inputMethod: INPUT_METHOD.TOOLBAR,
+      inputMethod,
     },
   })(toggleSuperscript());
 
@@ -282,14 +286,18 @@ export const toggleSubscript = (): Command => {
   };
 };
 
-export const toggleSubscriptWithAnalytics = (): Command =>
+export const toggleSubscriptWithAnalytics = ({
+  inputMethod,
+}: {
+  inputMethod: InputMethodBasic;
+}): Command =>
   withAnalytics({
     action: ACTION.FORMATTED,
     actionSubject: ACTION_SUBJECT.TEXT,
     eventType: EVENT_TYPE.TRACK,
     actionSubjectId: ACTION_SUBJECT_ID.FORMAT_SUB,
     attributes: {
-      inputMethod: INPUT_METHOD.TOOLBAR,
+      inputMethod,
     },
   })(toggleSubscript());
 

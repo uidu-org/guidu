@@ -15,7 +15,7 @@ import {
   EVENT_TYPE,
   withAnalytics,
 } from '../analytics';
-import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock';
+import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import { pluginKey, StatusType } from './plugin';
 
 export const DEFAULT_STATUS: StatusType = {

@@ -11,7 +11,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconStatus } from '../quick-insert/assets';
 import { commitStatusPicker, createStatus, updateStatus } from './actions';
 import { keymapPlugin } from './keymap';

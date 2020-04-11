@@ -1,7 +1,7 @@
 import { ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
-import { EmojiId, ResourcedEmoji } from '@uidu/emoji';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import { ResourcedEmoji } from '@uidu/emoji/element';
+import { EmojiId } from '@uidu/emoji/types';
+import React, { PureComponent } from 'react';
 import { ClickSelectWrapper } from '../../../../ui/styles';
 
 export interface EmojiProps extends EmojiId {
@@ -11,6 +11,8 @@ export interface EmojiProps extends EmojiId {
 }
 
 export default class EmojiNode extends PureComponent<EmojiProps, {}> {
+  static displayName = 'EmojiNode';
+
   private providerFactory: ProviderFactory;
 
   constructor(props: EmojiProps) {
@@ -37,6 +39,10 @@ export default class EmojiNode extends PureComponent<EmojiProps, {}> {
 
     if (allowTextFallback && !providers.emojiProvider) {
       return <span>{fallback || shortName}</span>;
+    }
+
+    if (!providers.emojiProvider) {
+      return null;
     }
 
     return (

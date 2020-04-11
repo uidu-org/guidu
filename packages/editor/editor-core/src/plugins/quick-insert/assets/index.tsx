@@ -9,6 +9,7 @@ export const IconDate = loadable(() => import('./date'));
 export const IconDecision = loadable(() => import('./decision'));
 export const IconDivider = loadable(() => import('./divider'));
 export const IconEmoji = loadable(() => import('./emoji'));
+export const IconExpand = loadable(() => import('./expand'));
 export const IconImages = loadable(() => import('./images'));
 export const IconLayout = loadable(() => import('./layout'));
 export const IconLink = loadable(() => import('./link'));

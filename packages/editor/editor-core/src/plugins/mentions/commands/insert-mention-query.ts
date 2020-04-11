@@ -1,12 +1,12 @@
-import { insertTypeAheadQuery } from '../../type-ahead/commands/insert-query';
 import {
   ACTION,
   ACTION_SUBJECT,
-  EVENT_TYPE,
   ACTION_SUBJECT_ID,
+  EVENT_TYPE,
   withAnalytics,
 } from '../../analytics';
-import { TOOLBAR_MENU_TYPE } from '../../insert-block/ui/ToolbarInsertBlock';
+import { TOOLBAR_MENU_TYPE } from '../../insert-block/ui/ToolbarInsertBlock/types';
+import { insertTypeAheadQuery } from '../../type-ahead/commands/insert-query';
 
 export function insertMentionQuery(inputMethod: TOOLBAR_MENU_TYPE) {
   return withAnalytics({

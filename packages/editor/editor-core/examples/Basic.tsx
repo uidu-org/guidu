@@ -31,15 +31,15 @@ export default class Basic extends PureComponent<any, any> {
                 containerElement={this.element}
                 onChange={this.handleChange(actions)}
                 media={{
+                  provider: Promise.resolve({
+                    uploadParams: { endpoint: '/upload' },
+                    viewMediaClientConfig: Promise.resolve('test'),
+                    uploadMediaClientConfig: Promise.resolve('test'),
+                  }),
                   allowMediaGroup: true,
                   allowMediaSingle: true,
                 }}
                 defaultValue={storyDataDocument}
-                mediaProvider={Promise.resolve({
-                  uploadParams: { endpoint: '/upload' },
-                  viewMediaClientConfig: Promise.resolve('test'),
-                  uploadMediaClientConfig: Promise.resolve('test'),
-                })}
               >
                 {({ renderToolbar, renderEditor }) => (
                   <Fragment>

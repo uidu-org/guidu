@@ -1,7 +1,8 @@
 import { Providers, WithProviders } from '@uidu/editor-common';
 import React from 'react';
+import { MentionPluginState } from '../..';
 import { EditorPlugin } from '../../types';
-import { ToolbarSize } from '../../ui/Toolbar';
+import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
 import { INPUT_METHOD } from '../analytics';
 import { insertBlockTypesWithAnalytics } from '../block-type/commands';
@@ -9,26 +10,23 @@ import {
   BlockTypeState,
   pluginKey as blockTypeStateKey,
 } from '../block-type/pm-plugins/main';
-import { DateState, pluginKey as dateStateKey } from '../date/plugin';
-import { emojiPluginKey, EmojiPluginState } from '../emoji';
+import { pluginKey as dateStateKey } from '../date/pm-plugins/plugin-key';
+import { DateState } from '../date/pm-plugins/types';
+import { emojiPluginKey } from '../emoji';
+import { EmojiPluginState } from '../emoji/types';
 import {
   HyperlinkState,
   stateKey as hyperlinkPluginKey,
 } from '../hyperlink/pm-plugins/main';
 import { pluginKey as layoutStateKey } from '../layout';
-import { LayoutState } from '../layout/pm-plugins/main';
-import {
-  insertMacroFromMacroBrowser,
-  MacroState,
-  pluginKey as macroStateKey,
-} from '../macro';
+import { LayoutState } from '../layout/pm-plugins/types';
+import { insertMacroFromMacroBrowser, MacroState } from '../macro';
+import { pluginKey as macroStateKey } from '../macro/plugin-key';
 import { stateKey as mediaStateKey } from '../media/pm-plugins/plugin-key';
 import { MediaPluginState } from '../media/pm-plugins/types';
-import { mentionPluginKey, MentionPluginState } from '../mentions';
-import {
-  pluginKey as placeholderTextStateKey,
-  PluginState as PlaceholderPluginState,
-} from '../placeholder-text';
+import { mentionPluginKey } from '../mentions';
+import { pluginKey as placeholderTextStateKey } from '../placeholder-text/plugin-key';
+import { PluginState as PlaceholderPluginState } from '../placeholder-text/types';
 import { TablePluginState } from '../table/types';
 import { TypeAheadPluginState } from '../type-ahead';
 import { pluginKey as typeAheadPluginKey } from '../type-ahead/pm-plugins/main';

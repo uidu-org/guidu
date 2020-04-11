@@ -1,14 +1,13 @@
-import { NodeType } from 'prosemirror-model';
-import { DecorationSet, Decoration } from 'prosemirror-view';
+import { Node, NodeType } from 'prosemirror-model';
 import {
-  PluginKey,
-  Plugin,
   EditorState,
   NodeSelection,
+  Plugin,
+  PluginKey,
 } from 'prosemirror-state';
-import { Command } from '../../../types';
 import { findParentNodeOfType } from 'prosemirror-utils';
-import { Node } from 'prosemirror-model';
+import { Decoration, DecorationSet } from 'prosemirror-view';
+import { Command } from '../../../types';
 
 export const decorationStateKey = new PluginKey('decorationPlugin');
 

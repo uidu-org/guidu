@@ -1,92 +1,60 @@
-import * as React from 'react';
-import styled from 'styled-components';
 import {
-  MaxContentSizePluginState,
-  pluginKey as maxContentSizePluginKey,
-} from '../../plugins/max-content-size';
-import { EditorProps } from '../../types';
-import { ClickAreaMobile as ClickArea } from '../../ui/Addon';
-import ContentStyles from '../../ui/ContentStyles';
-import WithFlash from '../../ui/WithFlash';
-import WithPluginState from '../../ui/WithPluginState';
-import { ContentComponents } from './ContentComponents';
-import { Editor, EditorSharedConfigConsumer } from './Editor';
-import { EditorContent } from './EditorContent';
+  withAnalyticsEvents,
+  WithAnalyticsEventsProps,
+} from '@atlaskit/analytics-next';
+// import { Context as CardContext } from '@atlaskit/smart-card';
+import React, { useCallback } from 'react';
+// import { createContextAdapter } from '../../nodeviews';
+import { MobileAppearance } from '../../ui/AppearanceComponents/Mobile';
+import {
+  Editor,
+  EditorContent,
+  EditorSharedConfig,
+  EditorSharedConfigConsumer,
+} from './Editor';
+import { EditorProps } from './internal/editor-props-type';
+import { useCreateAnalyticsHandler } from './internal/hooks/use-analytics';
 
-export interface MobileEditorProps {
+export interface MobileEditorProps extends EditorProps {
   isMaxContentSizeReached?: boolean;
   maxHeight?: number;
 }
 
-const MobileEditor: any = styled.div`
-  min-height: 30px;
-  width: 100%;
-  max-width: inherit;
-  box-sizing: border-box;
-  word-wrap: break-word;
+// allows connecting external React.Context through to nodeviews
+// const ContextAdapter = createContextAdapter({
+//   card: CardContext,
+// });
 
-  div > .ProseMirror {
-    outline: none;
-    white-space: pre-wrap;
-    padding: 0;
-    margin: 0;
-  }
-`;
-MobileEditor.displayName = 'MobileEditor';
-const ContentArea = styled(ContentStyles)``;
-ContentArea.displayName = 'ContentArea';
+export function MobileEditor(
+  props: MobileEditorProps & WithAnalyticsEventsProps,
+) {
+  const { maxHeight, createAnalyticsEvent } = props;
+  const handleAnalyticsEvent = useCreateAnalyticsHandler(createAnalyticsEvent);
+  const renderWithConfig = useCallback(
+    (config: EditorSharedConfig | null) => {
+      return (
+        <MobileAppearance
+          editorView={config && config.editorView}
+          maxHeight={maxHeight}
+        >
+          <EditorContent />
+        </MobileAppearance>
+      );
+    },
+    [maxHeight],
+  );
 
-export class Mobile extends React.Component<EditorProps, any> {
-  static displayName = 'MobileEditor';
-
-  private renderMobile = ({
-    maxContentSize,
-  }: {
-    maxContentSize: MaxContentSizePluginState;
-  }) => {
-    const { maxHeight } = this.props;
-    const maxContentSizeReached =
-      maxContentSize && maxContentSize.maxContentSizeReached;
-
-    return (
+  return (
+    // <ContextAdapter>
+    <Editor {...props} onAnalyticsEvent={handleAnalyticsEvent}>
       <EditorSharedConfigConsumer>
-        {config => (
-          <WithFlash animate={maxContentSizeReached}>
-            <MobileEditor
-              isMaxContentSizeReached={maxContentSizeReached}
-              maxHeight={maxHeight}
-            >
-              <ClickArea
-                editorView={(config && config.editorView) || undefined}
-              >
-                <ContentArea>
-                  <ContentComponents />
-                  <EditorContent />
-                </ContentArea>
-              </ClickArea>
-            </MobileEditor>
-          </WithFlash>
-        )}
+        {renderWithConfig}
       </EditorSharedConfigConsumer>
-    );
-  };
-
-  render() {
-    return (
-      <Editor {...this.props}>
-        <EditorSharedConfigConsumer>
-          {config => (
-            <WithPluginState
-              editorView={(config && config.editorView) || undefined}
-              eventDispatcher={(config && config.eventDispatcher) || undefined}
-              plugins={{
-                maxContentSize: maxContentSizePluginKey,
-              }}
-              render={this.renderMobile}
-            />
-          )}
-        </EditorSharedConfigConsumer>
-      </Editor>
-    );
-  }
+    </Editor>
+    // </ContextAdapter>
+  );
 }
+
+MobileEditor.displayName = 'MobileEditor';
+
+export const Mobile = withAnalyticsEvents()(MobileEditor);

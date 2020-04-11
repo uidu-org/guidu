@@ -1,10 +1,14 @@
-import { INPUT_METHOD } from '../analytics';
+import {
+  CardAppearance,
+  CardProvider,
+  Providers,
+} from '@uidu/editor-common/provider-factory';
+import { INPUT_METHOD } from '../analytics/types/enums';
 
-export type CardAppearance = 'inline' | 'block';
-
-export interface CardProvider {
-  resolve(url: string, appearance: CardAppearance): Promise<any>;
-}
+export {
+  CardAppearance,
+  CardProvider,
+} from '@uidu/editor-common/provider-factory';
 
 export type CardInfo = {
   title?: string;
@@ -14,8 +18,9 @@ export type CardInfo = {
 };
 
 export interface CardOptions {
-  provider?: Promise<CardProvider>;
+  provider?: Providers['cardProvider'];
   resolveBeforeMacros?: string[];
+  allowBlockCards?: boolean;
 }
 
 export type Request = {

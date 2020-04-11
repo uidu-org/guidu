@@ -8,7 +8,10 @@ import { EditorState, NodeSelection } from 'prosemirror-state';
 import { removeSelectedNode } from 'prosemirror-utils';
 import { defineMessages, IntlShape } from 'react-intl';
 import { analyticsService } from '../../analytics';
-import commonMessages, { linkToolbarMessages } from '../../messages';
+import commonMessages, {
+  linkMessages,
+  linkToolbarMessages,
+} from '../../messages';
 import { Command } from '../../types';
 import {
   ACTION,
@@ -24,15 +27,19 @@ import {
   FloatingToolbarConfig,
   FloatingToolbarItem,
 } from '../floating-toolbar/types';
-import { changeSelectedCardToText } from './pm-plugins/doc';
+import {
+  changeSelectedCardToText,
+  setSelectedCardAppearance,
+} from './pm-plugins/doc';
 import { pluginKey } from './pm-plugins/main';
-import { CardPluginState } from './types';
+import { CardOptions, CardPluginState } from './types';
 import {
   buildEditLinkToolbar,
   editLink,
   editLinkToolbarConfig,
 } from './ui/EditLinkToolbar';
 import {
+  appearanceForNodeType,
   displayInfoForCard,
   findCardInfo,
   titleUrlPairFromNode,
@@ -47,13 +54,23 @@ export const messages = defineMessages({
   },
   inline: {
     id: 'fabric.editor.displayInline',
-    defaultMessage: 'Display as link',
+    defaultMessage: 'Display inline',
     description: 'Display link with the title only.',
+  },
+  embed: {
+    id: 'fabric.editor.displayEmbed',
+    defaultMessage: 'Display as embed',
+    description: 'Display link as an embedded object',
   },
   link: {
     id: 'fabric.editor.displayLink',
     defaultMessage: 'Display as text',
     description: 'Convert the card to become a regular text-based hyperlink.',
+  },
+  card: {
+    id: 'fabric.editor.cardFloatingControls',
+    defaultMessage: 'Card options',
+    description: 'Options to change card type',
   },
 });
 
@@ -131,7 +148,6 @@ const generateDeleteButton = (
   intl: IntlShape,
 ): FloatingToolbarItem<Command> => {
   const { inlineCard } = state.schema.nodes;
-
   if (node.type === inlineCard) {
     return {
       type: 'button',
@@ -156,6 +172,7 @@ const generateToolbarItems = (
   state: EditorState,
   intl: IntlShape,
   providerFactory: ProviderFactory,
+  cardOptions: CardOptions,
 ) => (node: Node): Array<FloatingToolbarItem<Command>> => {
   const { url } = titleUrlPairFromNode(node);
   if (url && !isSafeUrl(url)) {
@@ -163,6 +180,8 @@ const generateToolbarItems = (
   }
 
   const pluginState: CardPluginState = pluginKey.getState(state);
+
+  const currentAppearance = appearanceForNodeType(node.type);
 
   if (pluginState.showLinkingToolbar) {
     return [
@@ -172,7 +191,7 @@ const generateToolbarItems = (
       }),
     ];
   } else {
-    return [
+    const toolbarItems: Array<FloatingToolbarItem<Command>> = [
       {
         type: 'button',
         selected: false,
@@ -185,29 +204,57 @@ const generateToolbarItems = (
         type: 'button',
         icon: OpenIcon,
         className: 'hyperlink-open-link',
-        title: intl.formatMessage(linkToolbarMessages.openLink),
+        title: intl.formatMessage(linkMessages.openLink),
         onClick: visitCardLink,
       },
       { type: 'separator' },
       generateDeleteButton(node, state, intl),
     ];
+
+    if (cardOptions.allowBlockCards && currentAppearance) {
+      const options = [
+        {
+          title: intl.formatMessage(messages.block),
+          onClick: setSelectedCardAppearance('block'),
+          selected: currentAppearance === 'block',
+          hidden: false,
+        },
+        {
+          title: intl.formatMessage(messages.inline),
+          onClick: setSelectedCardAppearance('inline'),
+          selected: currentAppearance === 'inline',
+          hidden: false,
+        },
+      ];
+
+      toolbarItems.unshift({
+        type: 'dropdown',
+        options,
+        hidden: false,
+        title: intl.formatMessage(messages[currentAppearance]),
+      });
+    }
+
+    return toolbarItems;
   }
 };
 
-export const floatingToolbar = (
-  state: EditorState,
-  intl: IntlShape,
-  providerFactory: ProviderFactory,
-): FloatingToolbarConfig | undefined => {
-  const { inlineCard, blockCard } = state.schema.nodes;
-  const nodeType = [inlineCard, blockCard];
+export const floatingToolbar = (cardOptions: CardOptions) => {
+  return (
+    state: EditorState,
+    intl: IntlShape,
+    providerFactory: ProviderFactory,
+  ): FloatingToolbarConfig | undefined => {
+    const { inlineCard, blockCard } = state.schema.nodes;
+    const nodeType = [inlineCard, blockCard];
 
-  const pluginState: CardPluginState = pluginKey.getState(state);
+    const pluginState: CardPluginState = pluginKey.getState(state);
 
-  return {
-    title: 'Card floating controls',
-    nodeType,
-    items: generateToolbarItems(state, intl, providerFactory),
-    ...(pluginState.showLinkingToolbar ? editLinkToolbarConfig : {}),
+    return {
+      title: intl.formatMessage(messages.card),
+      nodeType,
+      items: generateToolbarItems(state, intl, providerFactory, cardOptions),
+      ...(pluginState.showLinkingToolbar ? editLinkToolbarConfig : {}),
+    };
   };
 };

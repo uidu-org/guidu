@@ -58,11 +58,11 @@ import measurements from '../utils/performance/measure-enum';
 import {
   createErrorReporter,
   createPMPlugins,
-  createSchema,
   initAnalytics,
   processPluginsList,
 } from './create-editor';
 import createPluginList from './create-plugins-list';
+import { createSchema } from './create-schema';
 
 export type EditorViewProps = WrappedComponentProps & {
   editorProps: EditorProps;
@@ -251,7 +251,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
         this.props.editorProps,
         props.createAnalyticsEvent,
       ),
-      props.editorProps,
     );
 
     const state = this.editorState;
@@ -260,13 +259,13 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
       dispatch: this.dispatch,
       errorReporter: this.errorReporter,
       editorConfig: this.config,
-      props: props.editorProps,
-      prevProps: this.props.editorProps,
       eventDispatcher: this.eventDispatcher,
       providerFactory: props.providerFactory,
       portalProviderAPI: props.portalProviderAPI,
-      reactContext: () => this.context,
-      intl: this.props.intl,
+      reactContext: () => ({
+        ...this.context,
+        intl: this.props.intl,
+      }),
       dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 
@@ -370,7 +369,6 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
         undefined,
         options.props.createAnalyticsEvent,
       ),
-      options.props.editorProps,
     );
     const schema = createSchema(this.config);
 
@@ -384,12 +382,13 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
       dispatch: this.dispatch,
       errorReporter: this.errorReporter,
       editorConfig: this.config,
-      props: options.props.editorProps,
       eventDispatcher: this.eventDispatcher,
       providerFactory: options.props.providerFactory,
       portalProviderAPI: this.props.portalProviderAPI,
-      reactContext: () => this.context,
-      intl: this.props.intl,
+      reactContext: () => ({
+        ...this.context,
+        intl: this.props.intl,
+      }),
       dispatchAnalyticsEvent: this.dispatchAnalyticsEvent,
     });
 

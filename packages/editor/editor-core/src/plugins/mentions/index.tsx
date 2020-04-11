@@ -36,7 +36,7 @@ import {
   INPUT_METHOD,
 } from '../analytics';
 import { analyticsEventKey } from '../analytics/consts';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconMention } from '../quick-insert/assets';
 import {
   createInitialPluginState,

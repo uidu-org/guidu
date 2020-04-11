@@ -1,4 +1,9 @@
 import { getValidNode } from '@uidu/editor-common';
+import {
+  MacroAttributes,
+  MacroProvider,
+  Providers,
+} from '@uidu/editor-common/provider-factory';
 import assert from 'assert';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
@@ -10,8 +15,7 @@ import {
 import { EditorView } from 'prosemirror-view';
 import { CommandDispatch } from '../../types';
 import { normaliseNestedLayout } from '../../utils';
-import { pluginKey } from './';
-import { MacroAttributes, MacroProvider } from './types';
+import { pluginKey } from './plugin-key';
 
 export const insertMacroFromMacroBrowser = (
   macroProvider: MacroProvider,
@@ -112,10 +116,10 @@ export const runMacroAutoConvert = (
   return resolveMacro(macroAttributes, state);
 };
 
-export const setMacroProvider = (provider: Promise<MacroProvider>) => async (
-  view: EditorView,
-): Promise<boolean> => {
-  let resolvedProvider: MacroProvider | null;
+export const setMacroProvider = (
+  provider: Providers['macroProvider'],
+) => async (view: EditorView): Promise<boolean> => {
+  let resolvedProvider: MacroProvider | undefined | null;
   try {
     resolvedProvider = await provider;
     assert(

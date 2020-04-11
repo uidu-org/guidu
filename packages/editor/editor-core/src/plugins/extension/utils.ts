@@ -1,47 +1,53 @@
-import { Node as PmNode, Schema } from 'prosemirror-model';
-import { EditorState, NodeSelection, Selection } from 'prosemirror-state';
+import { EditorState } from 'prosemirror-state';
 import {
+  DomAtPos,
+  findDomRefAtPos,
   findParentNodeOfType,
   findSelectedNodeOfType,
-  isNodeSelection,
+  NodeWithPos,
 } from 'prosemirror-utils';
+import { closestElement } from '../../utils/dom';
 
-type ExtensionNode =
-  | {
-      node: PmNode;
-      pos: number;
-    }
-  | undefined;
-
-export const getExtensionNode = (state: EditorState): ExtensionNode => {
-  const { selection } = state;
-  const { extension, inlineExtension, bodiedExtension } = state.schema.nodes;
-
-  if (
-    isNodeSelection(selection) &&
-    findSelectedNodeOfType([extension, bodiedExtension, inlineExtension])(
-      selection,
-    )
-  ) {
-    return {
-      node: (selection as NodeSelection).node,
-      pos: selection.$from.pos,
-    };
-  }
-
-  return findParentNodeOfType([extension, inlineExtension, bodiedExtension])(
-    selection,
+export const getSelectedExtension = (
+  state: EditorState,
+  searchParent: boolean = false,
+) => {
+  const { inlineExtension, extension, bodiedExtension } = state.schema.nodes;
+  const nodeTypes = [extension, bodiedExtension, inlineExtension];
+  return (
+    findSelectedNodeOfType(nodeTypes)(state.selection) ||
+    (searchParent && findParentNodeOfType(nodeTypes)(state.selection)) ||
+    undefined
   );
 };
 
-export const isSelectionNodeExtension = (
-  selection: Selection,
-  schema: Schema,
-): boolean => {
-  return (
-    selection instanceof NodeSelection &&
-    (selection.node.type === schema.nodes.inlineExtension ||
-      selection.node.type === schema.nodes.extension ||
-      selection.node.type === schema.nodes.bodiedExtension)
-  );
+export const getSelectedNonContentExtension = ({
+  schema,
+  selection,
+}: EditorState): NodeWithPos | undefined => {
+  const { inlineExtension, extension } = schema.nodes;
+  return findSelectedNodeOfType([inlineExtension, extension])(selection);
+};
+
+export const getSelectedDomElement = (
+  domAtPos: DomAtPos,
+  selectedExtensionNode?: NodeWithPos,
+  isContentExtension: boolean = false,
+) => {
+  const selectedExtensionDomNode =
+    selectedExtensionNode &&
+    (findDomRefAtPos(selectedExtensionNode.pos, domAtPos) as HTMLElement);
+
+  // Non-content extension can be nested in bodied-extension, the following check is necessary for that case
+  return selectedExtensionNode && selectedExtensionDomNode!.querySelector
+    ? isContentExtension
+      ? selectedExtensionDomNode!.querySelector<HTMLElement>(
+          '.extension-container',
+        ) || selectedExtensionDomNode
+      : closestElement(selectedExtensionDomNode!, '.extension-container') ||
+        selectedExtensionDomNode!.querySelector<HTMLElement>(
+          '.extension-container',
+        ) ||
+        selectedExtensionDomNode
+    : undefined;
 };

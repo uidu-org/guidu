@@ -1,5 +1,5 @@
-import { Transaction, EditorState } from 'prosemirror-state';
 import { NodeType } from 'prosemirror-model';
+import { EditorState, Transaction } from 'prosemirror-state';
 import { INPUT_METHOD, USER_CONTEXT } from '../analytics';
 
 export type TaskDecisionListType = 'taskList' | 'decisionList';
@@ -17,13 +17,11 @@ export type ContextData = {
   userContext: USER_CONTEXT;
 };
 
-export type AddItemTransactionCreator = (
-  opts: {
-    state: EditorState;
-    tr: Transaction;
-    list: NodeType;
-    item: NodeType;
-    listLocalId: string;
-    itemLocalId: string;
-  },
-) => Transaction | null;
+export type AddItemTransactionCreator = (opts: {
+  state: EditorState;
+  tr: Transaction;
+  list: NodeType;
+  item: NodeType;
+  listLocalId: string;
+  itemLocalId: string;
+}) => Transaction | null;

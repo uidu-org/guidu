@@ -6,11 +6,11 @@ import {
 } from '@uidu/adf-schema';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { EditorPlugin } from '../../types';
 import { INPUT_METHOD } from '../analytics';
-import { messages as insertBlockMessages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages as insertBlockMessages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconAction, IconDecision } from '../quick-insert/assets';
 import { getListTypes, insertTaskDecisionWithAnalytics } from './commands';
 import inputRulePlugin from './pm-plugins/input-rules';
@@ -53,14 +53,19 @@ const quickInsertItem = (
   ) as Transaction;
 };
 
-const tasksAndDecisionsPlugin = (): EditorPlugin => ({
+const tasksAndDecisionsPlugin = (
+  allowNestedTasks?: boolean,
+  consumeTabs?: boolean,
+): EditorPlugin => ({
   name: 'taskDecision',
-
   nodes() {
     return [
       { name: 'decisionList', node: decisionList },
       { name: 'decisionItem', node: decisionItem },
-      { name: 'taskList', node: taskList },
+      {
+        name: 'taskList',
+        node: taskList,
+      },
       { name: 'taskItem', node: taskItem },
     ];
   },
@@ -79,7 +84,7 @@ const tasksAndDecisionsPlugin = (): EditorPlugin => ({
       },
       {
         name: 'tasksAndDecisionsKeyMap',
-        plugin: ({ schema }) => keymap(schema),
+        plugin: ({ schema }) => keymap(schema, allowNestedTasks, consumeTabs),
       }, // Needs to be after "save-on-enter"
     ];
   },

@@ -51,25 +51,25 @@ export default class ResizableMediaSingle extends React.Component<
   }
 
   async componentDidMount() {
-    const { viewContext } = this.props;
-    if (viewContext) {
-      this.checkVideoFile(viewContext);
+    const { viewMediaClientConfig } = this.props;
+    if (viewMediaClientConfig) {
+      this.checkVideoFile(viewMediaClientConfig);
     }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps: Props) {
-    if (this.props.viewContext !== nextProps.viewContext) {
-      this.checkVideoFile(nextProps.viewContext);
+    if (this.props.viewMediaClientConfig !== nextProps.viewMediaClientConfig) {
+      this.checkVideoFile(nextProps.viewMediaClientConfig);
     }
   }
 
-  async checkVideoFile(viewContext?: any) {
+  async checkVideoFile(viewMediaClientConfig?: any) {
     const $pos = this.$pos;
-    if (!$pos || !viewContext) {
+    if (!$pos || !viewMediaClientConfig) {
       return undefined;
     }
     const getMediaNode = this.props.state.doc.nodeAt($pos.pos + 1);
-    const state = await viewContext.file.getCurrentState(
+    const state = await viewMediaClientConfig.file.getCurrentState(
       getMediaNode!.attrs.id,
     );
     if (state && state.status !== 'error' && state.mediaType === 'image') {
@@ -174,7 +174,7 @@ export default class ResizableMediaSingle extends React.Component<
       this.props.gridSize,
     );
 
-    let snapPoints = snapTargets.filter(width => width >= minimumWidth);
+    let snapPoints = snapTargets.filter((width) => width >= minimumWidth);
     const $pos = this.$pos;
     if (!$pos) {
       return snapPoints;
@@ -183,7 +183,7 @@ export default class ResizableMediaSingle extends React.Component<
     const { isVideoFile } = this.state;
 
     snapPoints = isVideoFile
-      ? snapPoints.filter(width => width > 320)
+      ? snapPoints.filter((width) => width > 320)
       : snapPoints;
 
     const isTopLevel = $pos.parent.type.name === 'doc';
@@ -285,7 +285,7 @@ export default class ResizableMediaSingle extends React.Component<
     const width = pxWidth;
 
     const enable: EnabledHandles = {};
-    handleSides.forEach(side => {
+    handleSides.forEach((side) => {
       const oppositeSide = side === 'left' ? 'right' : 'left';
       enable[side] =
         ['full-width', 'wide', 'center']
@@ -307,7 +307,7 @@ export default class ResizableMediaSingle extends React.Component<
         layout={layout}
         isResized={!!pctWidth}
         containerWidth={containerWidth || origWidth}
-        innerRef={elem => (this.wrapper = elem)}
+        innerRef={(elem) => (this.wrapper = elem)}
         fullWidthMode={fullWidthMode}
       >
         <Resizer

@@ -9,3 +9,5 @@
 // export type ImageResizeMode = 'crop' | 'fit' | 'full-fit' | 'stretchy-fit';
 export * from './constants';
 export * from './types';
+
+export const getMediaClient = (media) => null;

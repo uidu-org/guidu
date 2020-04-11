@@ -1,6 +1,6 @@
 import { Node, NodeType } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
-import { pluginKey } from './pm-plugins/main';
+import { pluginKey } from './pm-plugins/plugin-key';
 import { CardAppearance, CardInfo, CardPluginState } from './types';
 
 export const appearanceForNodeType = (
@@ -50,6 +50,6 @@ export const displayInfoForCard = (node: Node, info?: CardInfo) =>
 export const findCardInfo = (state: EditorState) => {
   const pluginState: CardPluginState = pluginKey.getState(state);
   return pluginState.cards.find(
-    cardInfo => cardInfo.pos === state.selection.from,
+    (cardInfo) => cardInfo.pos === state.selection.from,
   );
 };

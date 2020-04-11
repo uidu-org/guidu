@@ -50,8 +50,12 @@ export const findSpecialNodeBefore = ($pos: ResolvedPos, tr: Transaction) => {
   return undefined;
 };
 
+export interface InlineCursorTargetState {
+  positions: number[];
+}
+
 export default () => {
-  return new Plugin({
+  return new Plugin<InlineCursorTargetState>({
     key: inlineCursorTargetStateKey,
 
     state: {

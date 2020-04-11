@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as EditorImports from '../../';
+import React from 'react';
 import ChromeCollapsed from '../../ui/ChromeCollapsed';
+import * as EditorImports from '../../';
 
 export type EditorModule = {
   // Subset of most common imports expected to be used
@@ -13,7 +13,7 @@ export interface Props {
   isExpanded?: boolean;
   onClickToExpand?: () => void;
   renderEditor: (
-    Editor: typeof EditorImports.ReactEditorView,
+    Editor: typeof EditorImports.Editor,
     modules: EditorModule,
   ) => JSX.Element;
 }

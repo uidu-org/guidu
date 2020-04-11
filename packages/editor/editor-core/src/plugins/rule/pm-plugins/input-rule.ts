@@ -1,9 +1,10 @@
-import { InputRule, inputRules } from 'prosemirror-inputrules';
+import { InputRule } from 'prosemirror-inputrules';
 import { Fragment, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, Transaction } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
+  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import { safeInsert } from '../../../utils/insert';
@@ -15,7 +16,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../../analytics';
-import { getEditorProps } from '../../shared-context';
+import { getFeatureFlags } from '../../feature-flags-context';
 
 export const createHorizontalRule = (
   state: EditorState,
@@ -33,8 +34,8 @@ export const createHorizontalRule = (
   }
 
   let tr: Transaction<any> | null = null;
-  const { allowNewInsertionBehaviour } = getEditorProps(state);
-  if (allowNewInsertionBehaviour) {
+  const { newInsertionBehaviour } = getFeatureFlags(state);
+  if (newInsertionBehaviour) {
     /**
      * This is a workaround to get rid of the typeahead text when using quick insert
      * Once we insert *nothing*, we get a new transaction, so we can use the new selection
@@ -119,7 +120,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return inputRules({ rules });
+    return instrumentedInputRule('rule', { rules });
   }
 
   return undefined;

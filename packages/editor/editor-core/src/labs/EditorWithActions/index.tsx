@@ -1,11 +1,11 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import EditorActions from '../../actions';
-import Editor from '../../editor';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Editor, { EditorProps } from '../../editor';
 import EditorContext from '../../ui/EditorContext';
 import WithEditorActions from '../../ui/WithEditorActions';
+import EditorActions from '../../actions';
 
-export interface EditorWithActionsPropsOverride {
+export interface EditorWithActionsPropsOverride extends EditorProps {
   onSave?: any;
   onChange?: any;
   onCancel?: any;
@@ -16,7 +16,10 @@ export interface EditorWithActionsProps extends EditorWithActionsPropsOverride {
   onCancel?: (actions: EditorActions) => void;
 }
 
-export default class EditorWithActions extends React.Component<any, {}> {
+export default class EditorWithActions extends React.Component<
+  EditorWithActionsProps,
+  {}
+> {
   static contextTypes = {
     editorActions: PropTypes.object.isRequired,
   };
@@ -47,14 +50,7 @@ export default class EditorWithActions extends React.Component<any, {}> {
           onCancel={
             this.props.onCancel ? this.handleCancel(actions) : undefined
           }
-        >
-          {({ renderEditor, renderToolbar }) => (
-            <>
-              {renderToolbar({})}
-              {renderEditor({})}
-            </>
-          )}
-        </Editor>
+        />
       );
     }
     return (
@@ -70,14 +66,7 @@ export default class EditorWithActions extends React.Component<any, {}> {
               onCancel={
                 this.props.onCancel ? this.handleCancel(actions) : undefined
               }
-            >
-              {({ renderEditor, renderToolbar }) => (
-                <>
-                  {renderToolbar({})}
-                  {renderEditor({})}
-                </>
-              )}
-            </Editor>
+            />
           )}
         />
       </EditorContext>

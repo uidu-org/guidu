@@ -1,23 +1,27 @@
+import { withAnalyticsEvents, WithAnalyticsEventsProps } from '@uidu/analytics';
 import { akEditorMenuZIndex, BaseTheme } from '@uidu/editor-common';
 import { colors } from '@uidu/theme';
 import rafSchedule from 'raf-schd';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import EditorActions from '../../actions';
 import Avatars from '../../plugins/collab-edit/ui/avatars';
 import { tableFullPageEditorStyles } from '../../plugins/table/ui/styles';
 import { akEditorToolbarKeylineHeight } from '../../styles';
 import { EditorProps } from '../../types';
 import { ClickAreaBlock } from '../../ui/Addon';
 import ContentStyles from '../../ui/ContentStyles';
+import { ContextPanelWidthProvider } from '../../ui/ContextPanel/context';
 import { scrollbarStyles } from '../../ui/styles';
 import WidthEmitter from '../../ui/WidthEmitter';
 import { ContentComponents } from './ContentComponents';
 import {
   Editor,
+  EditorContent,
   EditorSharedConfig,
-  EditorSharedConfigConsumer,
+  useEditorSharedConfig,
 } from './Editor';
-import { EditorContent } from './EditorContent';
+import { useCreateAnalyticsHandler } from './internal/hooks/use-analytics';
 import { Toolbar } from './Toolbar';
 
 const FullPageEditorWrapper = styled.div`
@@ -43,6 +47,14 @@ ScrollContainer.displayName = 'ScrollContainer';
 const GUTTER_PADDING = 32;
 
 const ContentArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  box-sizing: border-box;
+`;
+ContentArea.displayName = 'ContentArea';
+
+const EditorContentArea = styled.div`
   line-height: 24px;
   height: 100%;
   width: 100%;
@@ -77,7 +89,7 @@ const ContentArea = styled.div`
   }
   ${tableFullPageEditorStyles};
 `;
-ContentArea.displayName = 'ContentArea';
+EditorContentArea.displayName = 'EditorContentArea';
 
 interface MainToolbarProps {
   showKeyline: boolean;
@@ -119,138 +131,122 @@ const SecondaryToolbar = styled.div`
 `;
 SecondaryToolbar.displayName = 'SecondaryToolbar';
 
-interface State {
-  showKeyline: boolean;
-  containerWidth?: number;
+const SidebarArea = styled.div`
+  height: 100%;
+  box-sizing: border-box;
+`;
+SidebarArea.displayName = 'SidebarArea';
+
+function useKeyline() {
+  const [showKeyline, setShowKeyline] = React.useState<boolean>(false);
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    let current = scrollContainerRef.current;
+
+    const handleScroll = rafSchedule(() => {
+      if (!current) {
+        return;
+      }
+
+      const { scrollTop } = current;
+      setShowKeyline(scrollTop > akEditorToolbarKeylineHeight);
+    });
+
+    if (!current) {
+      return null;
+    }
+
+    window.addEventListener('resize', handleScroll);
+    current.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      if (current) {
+        current.removeEventListener('scroll', handleScroll);
+      }
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
+  return [showKeyline, scrollContainerRef] as const;
 }
 
-export class FullPage extends React.Component<EditorProps, State> {
-  state = { showKeyline: false };
+export type FullPageProps = EditorProps & {
+  onMount?: (actions: EditorActions) => void;
+} & WithAnalyticsEventsProps;
 
-  static displayName = 'FullPageEditor';
-  private scrollContainer: HTMLElement | undefined;
-  private scheduledKeylineUpdate: number | undefined;
+function FullPage(props: FullPageProps) {
+  const {
+    primaryToolbarComponents,
+    contentComponents,
+    allowDynamicTextSizing,
+    collabEdit,
+    createAnalyticsEvent,
+    contextPanel,
+  } = props;
+  const handleAnalyticsEvent = useCreateAnalyticsHandler(createAnalyticsEvent);
+  const [showKeyline, scrollContainerRef] = useKeyline();
+  const config = useEditorSharedConfig();
 
-  scrollContainerRef = (ref: HTMLElement | null) => {
-    const previousScrollContainer = this.scrollContainer;
-
-    // remove existing handler
-    if (previousScrollContainer) {
-      previousScrollContainer.removeEventListener(
-        'scroll',
-        this.scheduleUpdateToolbarKeyline,
-      );
-    }
-
-    this.scrollContainer = ref ? ref : undefined;
-
-    if (this.scrollContainer) {
-      this.scrollContainer.addEventListener(
-        'scroll',
-        this.scheduleUpdateToolbarKeyline,
-        false,
-      );
-      this.updateToolbarKeyline();
-    }
-  };
-
-  updateToolbarKeyline = () => {
-    if (!this.scrollContainer) {
-      return false;
-    }
-
-    const { scrollTop } = this.scrollContainer;
-    this.setState({ showKeyline: scrollTop > akEditorToolbarKeylineHeight });
-
-    return false;
-  };
-
-  private scheduleUpdateToolbarKeyline = rafSchedule(this.updateToolbarKeyline);
-
-  componentDidMount() {
-    window.addEventListener('resize', this.scheduleUpdateToolbarKeyline, false);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.scheduleUpdateToolbarKeyline);
-
-    if (this.scheduledKeylineUpdate) {
-      cancelAnimationFrame(this.scheduledKeylineUpdate);
-    }
-  }
-
-  render() {
-    const {
-      primaryToolbarComponents,
-      contentComponents,
-      allowDynamicTextSizing,
-      collabEdit,
-    } = this.props;
-
-    return (
-      <Editor {...this.props}>
+  return (
+    <ContextPanelWidthProvider>
+      <Editor {...props} onAnalyticsEvent={handleAnalyticsEvent}>
         <BaseTheme dynamicTextSizing={allowDynamicTextSizing}>
           <FullPageEditorWrapper className="akEditor">
-            <MainToolbar showKeyline={this.state.showKeyline}>
+            <MainToolbar showKeyline={showKeyline}>
               <Toolbar />
               <MainToolbarCustomComponentsSlot>
-                <EditorSharedConfigConsumer>
-                  {config =>
-                    !config ? null : (
-                      <Avatars
-                        editorView={config.editorView}
-                        eventDispatcher={config.eventDispatcher}
-                        inviteToEditHandler={
-                          collabEdit && collabEdit.inviteToEditHandler
-                        }
-                        isInviteToEditButtonSelected={
-                          collabEdit && collabEdit.isInviteToEditButtonSelected
-                        }
-                      />
-                    )
-                  }
-                </EditorSharedConfigConsumer>
+                {!config ? null : (
+                  <Avatars
+                    editorView={config.editorView}
+                    eventDispatcher={config.eventDispatcher}
+                    inviteToEditHandler={
+                      collabEdit && collabEdit.inviteToEditHandler
+                    }
+                    isInviteToEditButtonSelected={
+                      collabEdit && collabEdit.isInviteToEditButtonSelected
+                    }
+                  />
+                )}
+
                 {primaryToolbarComponents}
               </MainToolbarCustomComponentsSlot>
             </MainToolbar>
-            <ScrollContainer
-              ref={this.scrollContainerRef}
-              className="fabric-editor-popup-scroll-parent"
-            >
-              <EditorSharedConfigConsumer>
-                {config => (
-                  <ClickAreaBlock
-                    editorView={
-                      (config || ({} as EditorSharedConfig)).editorView
-                    }
-                  >
-                    <ContentArea>
-                      <div
-                        style={{ padding: `0 ${GUTTER_PADDING}px` }}
-                        className="ak-editor-content-area"
-                      >
-                        {contentComponents}
-                        <EditorContent />
-                        <ContentComponents />
-                      </div>
-                    </ContentArea>
-                  </ClickAreaBlock>
-                )}
-              </EditorSharedConfigConsumer>
-            </ScrollContainer>
-            <EditorSharedConfigConsumer>
-              {config => (
-                <WidthEmitter
-                  editorView={
-                    (config || ({} as EditorSharedConfig)).editorView!
-                  }
-                  contentArea={this.scrollContainer}
-                />
-              )}
-            </EditorSharedConfigConsumer>
+            <ContentArea>
+              <ScrollContainer
+                ref={scrollContainerRef}
+                className="fabric-editor-popup-scroll-parent"
+              >
+                <ClickAreaBlock
+                  editorView={(config || ({} as EditorSharedConfig)).editorView}
+                >
+                  <EditorContentArea>
+                    <div
+                      style={{ padding: `0 ${GUTTER_PADDING}px` }}
+                      className="ak-editor-content-area"
+                    >
+                      {contentComponents}
+                      <EditorContent />
+                      <ContentComponents />
+                    </div>
+                  </EditorContentArea>
+                </ClickAreaBlock>
+              </ScrollContainer>
+              {contextPanel && <SidebarArea>{contextPanel}</SidebarArea>}
+              <WidthEmitter
+                editorView={(config || ({} as EditorSharedConfig)).editorView!}
+              />
+            </ContentArea>
           </FullPageEditorWrapper>
         </BaseTheme>
       </Editor>
-    );
-  }
+    </ContextPanelWidthProvider>
+  );
 }
+
+FullPage.displayName = 'FullPageEditor';
+
+const FullPageWithAnalytics = withAnalyticsEvents()(FullPage);
+
+export { FullPageWithAnalytics as FullPage };

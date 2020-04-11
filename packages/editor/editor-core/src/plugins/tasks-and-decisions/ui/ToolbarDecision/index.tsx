@@ -5,7 +5,7 @@ import { PureComponent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import ToolbarButton from '../../../../ui/ToolbarButton';
-import { messages } from '../../../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../../../insert-block/ui/ToolbarInsertBlock/messages';
 import { insertTaskDecision } from '../../commands';
 
 export interface Props {

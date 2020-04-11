@@ -4,15 +4,16 @@ import {
   ProviderFactory,
 } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
-import { Plugin, PluginKey } from 'prosemirror-state';
+import { Plugin } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
 import { Command } from '../../../types';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import { nodesBetweenChanged } from '../../../utils';
 import { decisionItemNodeView } from '../nodeviews/decisionItem';
 import { taskItemNodeViewFactory } from '../nodeviews/taskItem';
+import { stateKey } from './plugin-key';
 
-export const stateKey = new PluginKey('tasksAndDecisionsPlugin');
+export { stateKey } from './plugin-key';
 
 enum ACTIONS {
   SET_CONTEXT_PROVIDER,
@@ -86,7 +87,7 @@ export function createPlugin(
             );
           } else {
             (providerPromise as Promise<ContextIdentifierProvider>).then(
-              provider => {
+              (provider) => {
                 setContextIdentifierProvider(provider)(
                   editorView.state,
                   editorView.dispatch,
@@ -112,7 +113,7 @@ export function createPlugin(
     appendTransaction: (transactions, _oldState, newState) => {
       const tr = newState.tr;
       let modified = false;
-      transactions.forEach(transaction => {
+      transactions.forEach((transaction) => {
         if (!transaction.docChanged) {
           return;
         }

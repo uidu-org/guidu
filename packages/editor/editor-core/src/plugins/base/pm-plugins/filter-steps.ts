@@ -1,10 +1,10 @@
-import { Step } from 'prosemirror-transform';
 import { Plugin, Transaction } from 'prosemirror-state';
+import { Step } from 'prosemirror-transform';
 import { sendLogs } from '../../../utils/sendLogs';
 
 const hasInvalidSteps = (tr: Transaction) =>
   ((tr.steps || []) as (Step & { from: number; to: number })[]).some(
-    step => step.from > step.to,
+    (step) => step.from > step.to,
   );
 
 export default () => {

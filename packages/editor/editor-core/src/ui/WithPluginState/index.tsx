@@ -1,7 +1,7 @@
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { PluginKey } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import EditorActions from '../../actions';
 import { EventDispatcher } from '../../event-dispatcher';
 import { EditorSharedConfig } from '../../labs/next/Editor';
@@ -40,6 +40,8 @@ export interface Props {
  * renderComponent: ({ hyperlink }) => React.Component;
  */
 export default class WithPluginState extends React.Component<Props, State> {
+  static displayName = 'WithPluginState';
+
   private listeners = {};
   private debounce: number | null = null;
   private notAppliedState = {};
@@ -142,7 +144,7 @@ export default class WithPluginState extends React.Component<Props, State> {
     const editorView = this.getEditorView(props);
 
     if (!eventDispatcher || !editorView || this.isSubscribed) {
-      return undefined;
+      return;
     }
 
     this.isSubscribed = true;
@@ -153,7 +155,7 @@ export default class WithPluginState extends React.Component<Props, State> {
     Object.keys(plugins).forEach((propName) => {
       const pluginKey = plugins[propName];
       if (!pluginKey) {
-        return undefined;
+        return;
       }
 
       const pluginState = (pluginsStates as any)[propName];
@@ -178,7 +180,7 @@ export default class WithPluginState extends React.Component<Props, State> {
     const editorView = this.getEditorView();
 
     if (!eventDispatcher || !editorView || !this.isSubscribed) {
-      return undefined;
+      return;
     }
 
     Object.keys(this.listeners).forEach((key) => {

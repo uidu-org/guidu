@@ -1,17 +1,22 @@
-import {
-  bodiedExtension,
-  extension,
-  inlineExtension,
-} from '@uidu/adf-schema';
+import { bodiedExtension, extension, inlineExtension } from '@uidu/adf-schema';
+import { ExtensionHandlers } from '@uidu/editor-common';
+import React from 'react';
 import { EditorPlugin } from '../../types';
-import createPlugin from './plugin';
+import { createPlugin, getPluginState } from './plugin';
 import { getToolbarConfig } from './toolbar';
+import { getSelectedExtension } from './utils';
 
 interface ExtensionPluginOptions {
+  allowNewConfigPanel?: boolean;
   breakoutEnabled?: boolean;
+  extensionHandlers?: ExtensionHandlers;
+  // TODO: Remove this @see ED-8585
+  stickToolbarToBottom?: boolean;
 }
 
-const extensionPlugin = (options?: ExtensionPluginOptions): EditorPlugin => ({
+const extensionPlugin = (
+  options: ExtensionPluginOptions = {},
+): EditorPlugin => ({
   name: 'extension',
 
   nodes() {
@@ -26,23 +31,14 @@ const extensionPlugin = (options?: ExtensionPluginOptions): EditorPlugin => ({
     return [
       {
         name: 'extension',
-        plugin: ({ props, dispatch, providerFactory, portalProviderAPI }) => {
-          let allowBreakout =
-            (typeof props.allowExtension === 'object'
-              ? props.allowExtension
-              : { allowBreakout: false }
-            ).allowBreakout &&
-            options &&
-            options.breakoutEnabled;
+        plugin: ({ dispatch, providerFactory, portalProviderAPI }) => {
+          const extensionHandlers = options.extensionHandlers || {};
 
           return createPlugin(
             dispatch,
             providerFactory,
-            props.extensionHandlers || {},
+            extensionHandlers,
             portalProviderAPI,
-            typeof props.allowExtension === 'object'
-              ? { ...props.allowExtension, allowBreakout }
-              : props.allowExtension,
           );
         },
       },
@@ -50,7 +46,28 @@ const extensionPlugin = (options?: ExtensionPluginOptions): EditorPlugin => ({
   },
 
   pluginsOptions: {
-    floatingToolbar: getToolbarConfig(options && options.breakoutEnabled),
+    floatingToolbar: getToolbarConfig(
+      options.breakoutEnabled,
+      !!options.allowNewConfigPanel,
+    ),
+    contextPanel: options.allowNewConfigPanel
+      ? (state) => {
+          // Adding checks to bail out early
+          if (!state.selection.empty && getSelectedExtension(state)) {
+            const extensionState = getPluginState(state);
+
+            if (extensionState && extensionState.showContextPanel) {
+              // New config panel
+              return (
+                <div>
+                  <pre>{JSON.stringify(state.selection.toJSON(), null, 2)}</pre>
+                </div>
+              );
+            }
+          }
+          return null;
+        }
+      : undefined,
   },
 });
 

@@ -13,7 +13,6 @@ import {
   Transaction,
 } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
-import { EditorView } from 'prosemirror-view';
 import { AlignmentState } from '../plugins/alignment/pm-plugins/types';
 import {
   ACTION,
@@ -213,17 +212,10 @@ export function createParagraphAtEnd(): Command {
   };
 }
 
-export interface CommandInterface {
-  (
-    state: EditorState,
-    dispatch: (tr: Transaction) => void,
-    view?: EditorView,
-  ): boolean;
-}
-
-export const changeImageAlignment = (
-  align?: AlignmentState,
-): CommandInterface => (state, dispatch) => {
+export const changeImageAlignment = (align?: AlignmentState): Command => (
+  state,
+  dispatch,
+) => {
   const { from, to } = state.selection;
 
   const tr = state.tr;
@@ -305,7 +297,7 @@ export const toggleBlockMark = <T = object>(
   allowedBlocks?:
     | Array<NodeType>
     | ((schema: Schema, node: PMNode, parent: PMNode) => boolean),
-): CommandInterface => (state, dispatch) => {
+): Command => (state, dispatch) => {
   let markApplied = false;
   const tr = state.tr;
 
@@ -334,7 +326,7 @@ export const toggleBlockMark = <T = object>(
   return false;
 };
 
-export const clearEditorContent: CommandInterface = (state, dispatch) => {
+export const clearEditorContent: Command = (state, dispatch) => {
   const tr = state.tr;
   tr.replace(0, state.doc.nodeSize - 2);
   tr.setSelection(Selection.atStart(tr.doc));

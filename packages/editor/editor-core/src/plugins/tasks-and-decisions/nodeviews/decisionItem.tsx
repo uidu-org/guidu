@@ -1,6 +1,6 @@
 import { Node as PMNode } from 'prosemirror-model';
 import { Decoration, NodeView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { ForwardRef, getPosHandler, ReactNodeView } from '../../../nodeviews';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import DecisionItem from '../ui/Decision';
@@ -17,7 +17,11 @@ class Decision extends ReactNodeView {
   }
 
   getContentDOM() {
-    return { dom: document.createElement('div') };
+    const dom = document.createElement('div');
+    // setting a className prevents PM/Chrome mutation observer from
+    // incorrectly deleting nodes
+    dom.className = 'decision-item';
+    return { dom };
   }
 
   render(_props: never, forwardRef: ForwardRef) {

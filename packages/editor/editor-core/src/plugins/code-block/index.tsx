@@ -9,7 +9,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../block-type/types';
+import { messages } from '../block-type/messages';
 import { IconCode } from '../quick-insert/assets';
 import ideUX from './pm-plugins/ide-ux';
 import keymap from './pm-plugins/keymaps';

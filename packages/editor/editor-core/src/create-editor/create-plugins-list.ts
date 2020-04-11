@@ -1,11 +1,11 @@
 import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import { EditorView } from 'prosemirror-view';
 import {
   alignmentPlugin,
   analyticsPlugin,
   basePlugin,
   blockTypePlugin,
   clearMarksOnChangeToEmptyDocumentPlugin,
+  contextPanelPlugin,
   datePlugin,
   editorDisabledPlugin,
   extensionPlugin,
@@ -33,6 +33,7 @@ import {
   unsupportedContentPlugin,
   widthPlugin,
 } from '../plugins';
+import { ScrollGutterPluginOptions } from '../plugins/base/pm-plugins/scroll-gutter';
 import { EditorPlugin, EditorProps } from '../types';
 import { isFullPage as fullPageCheck } from '../utils/is-full-page';
 
@@ -40,18 +41,35 @@ import { isFullPage as fullPageCheck } from '../utils/is-full-page';
  * Returns list of plugins that are absolutely necessary for editor to work
  */
 export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
-  const { appearance, textFormatting, placeholder } = props;
+  const {
+    appearance,
+    textFormatting,
+    placeholder,
+    placeholderHints,
+    placeholderBracketHint,
+  } = props;
   const isFullPage = fullPageCheck(appearance);
 
   return [
-    pastePlugin(),
+    pastePlugin({
+      cardOptions: props.UNSAFE_cards,
+      sanitizePrivateContent: props.sanitizePrivateContent,
+    }),
     basePlugin({
       allowInlineCursorTarget: appearance !== 'mobile',
-      allowScrollGutter: allowScrollGutter(props),
+      allowScrollGutter: getScrollGutterOptions(props),
       addRunTimePerformanceCheck: isFullPage,
+      inputSamplingLimit: props.inputSamplingLimit,
     }),
-    blockTypePlugin({ lastNodeMustBeParagraph: appearance === 'comment' }),
-    placeholderPlugin({ placeholder }),
+    blockTypePlugin({
+      lastNodeMustBeParagraph: appearance === 'comment',
+      allowBlockType: props.allowBlockType,
+    }),
+    placeholderPlugin({
+      placeholder,
+      // placeholderHints,
+      // placeholderBracketHint,
+    }),
     clearMarksOnChangeToEmptyDocumentPlugin(),
     hyperlinkPlugin(),
     textFormattingPlugin(textFormatting || {}),
@@ -64,21 +82,27 @@ export function getDefaultPluginsList(props: EditorProps): EditorPlugin[] {
     // submitEditorPlugin(),
     fakeTextCursorPlugin(),
     floatingToolbarPlugin(),
-    // sharedContextPlugin(),
+    contextPanelPlugin(),
   ];
 }
 
-function allowScrollGutter(
+function getScrollGutterOptions(
   props: EditorProps,
-): ((view: EditorView) => HTMLElement | null) | undefined {
+): ScrollGutterPluginOptions | undefined {
   const { appearance } = props;
   if (fullPageCheck(appearance)) {
     // Full Page appearance uses a scrollable div wrapper
-    return () => document.querySelector('.fabric-editor-popup-scroll-parent');
+    return {
+      getScrollElement: () =>
+        document.querySelector('.fabric-editor-popup-scroll-parent'),
+    };
   }
   if (appearance === 'mobile') {
     // Mobile appearance uses body scrolling for improved performance on low powered devices.
-    return () => document.body;
+    return {
+      getScrollElement: () => document.body,
+      allowCustomScrollHandler: false,
+    };
   }
   return undefined;
 }
@@ -113,29 +137,30 @@ export default function createPluginsList(
     plugins.push(textColorPlugin());
   }
 
-  if (props.allowLists) {
-    plugins.push(listsPlugin());
-  }
+  plugins.push(listsPlugin());
 
   if (props.allowRule) {
     plugins.push(rulePlugin());
   }
 
-  if (props.media || props.mediaProvider) {
+  if (props.media) {
     plugins.push(
-      mediaPlugin(props.media),
-      // {
-      //   // allowLazyLoading: !isMobile,
-      //   // allowBreakoutSnapPoints: isFullPage,
-      //   // allowAdvancedToolBarOptions: isFullPage,
-      //   // allowDropzoneDropLine: isFullPage,
-      //   // allowMediaSingleEditable: !isMobile,
-      //   // allowRemoteDimensionsFetch: !isMobile,
-      //   // // This is a wild one. I didnt quite understand what the code was doing
-      //   // // so a bit of guess for now.
-      //   // allowMarkingUploadsAsIncomplete: isMobile,
-      //   // fullWidthEnabled: props.appearance === 'full-width',
-      // }
+      mediaPlugin({
+        ...props.media,
+        allowLazyLoading: !isMobile,
+        allowBreakoutSnapPoints: isFullPage,
+        allowAdvancedToolBarOptions: isFullPage,
+        allowDropzoneDropLine: isFullPage,
+        allowMediaSingleEditable: !isMobile,
+        allowRemoteDimensionsFetch: !isMobile,
+        // This is a wild one. I didnt quite understand what the code was doing
+        // so a bit of guess for now.
+        allowMarkingUploadsAsIncomplete: isMobile,
+        fullWidthEnabled: props.appearance === 'full-width',
+        uploadErrorHandler: props.uploadErrorHandler,
+        waitForMediaUpload: props.waitForMediaUpload,
+        isCopyPasteEnabled: !isMobile,
+      }),
     );
   }
 
@@ -218,9 +243,16 @@ export default function createPluginsList(
   // }
 
   if (props.allowExtension) {
+    const extensionConfig =
+      typeof props.allowExtension === 'object' ? props.allowExtension : {};
     plugins.push(
       extensionPlugin({
-        breakoutEnabled: props.appearance === 'full-page',
+        breakoutEnabled:
+          props.appearance === 'full-page' &&
+          extensionConfig.allowBreakout !== false,
+        stickToolbarToBottom: extensionConfig.stickToolbarToBottom,
+        allowNewConfigPanel: extensionConfig.allowNewConfigPanel,
+        extensionHandlers: props.extensionHandlers,
       }),
     );
   }

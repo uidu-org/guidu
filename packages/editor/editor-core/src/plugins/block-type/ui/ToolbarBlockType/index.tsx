@@ -1,8 +1,7 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import TextStyleIcon from '@atlaskit/icon/glyph/editor/text-style';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
-import * as React from 'react';
-import { createElement } from 'react';
+import React, { createElement } from 'react';
 import {
   defineMessages,
   FormattedMessage,
@@ -11,7 +10,8 @@ import {
 } from 'react-intl';
 import { analyticsService as analytics } from '../../../../analytics';
 import { findKeymapByDescription, tooltip } from '../../../../keymaps';
-import DropdownMenu, { MenuItem } from '../../../../ui/DropdownMenu';
+import DropdownMenu from '../../../../ui/DropdownMenu';
+import { MenuItem } from '../../../../ui/DropdownMenu/types';
 import {
   ButtonContent,
   ExpandIconWrapper,

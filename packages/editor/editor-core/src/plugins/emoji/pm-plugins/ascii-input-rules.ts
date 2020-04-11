@@ -1,11 +1,12 @@
 import { ProviderFactory } from '@uidu/editor-common';
-import { EmojiDescription, EmojiProvider } from '@uidu/emoji';
-import { inputRules } from 'prosemirror-inputrules';
+import { EmojiProvider } from '@uidu/emoji/resource';
+import { EmojiDescription } from '@uidu/emoji/types';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import {
   createInputRule,
+  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import {
@@ -29,7 +30,8 @@ export function inputRulePlugin(
       AsciiEmojiMatcher.REGEX,
       inputRuleHandler,
     );
-    return inputRules({
+
+    return instrumentedInputRule('emoji', {
       rules: [asciiEmojiRule],
     });
   }

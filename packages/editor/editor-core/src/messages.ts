@@ -1,5 +1,8 @@
 // Common Translations will live here
+import { linkMessages } from '@uidu/editor-common';
 import { defineMessages } from 'react-intl';
+
+export { linkMessages };
 
 export const linkToolbarMessages = defineMessages({
   addLink: {
@@ -7,10 +10,10 @@ export const linkToolbarMessages = defineMessages({
     defaultMessage: 'Add link',
     description: 'Add link',
   },
-  openLink: {
-    id: 'fabric.editor.openLink',
-    defaultMessage: 'Open link in a new tab',
-    description: 'Opens the link in a new tab',
+  unableToOpenLink: {
+    id: 'fabric.editor.unableToOpenLink',
+    defaultMessage: 'Unable to open this link',
+    description: 'Unable to open this link',
   },
   unlink: {
     id: 'fabric.editor.unlink',
@@ -36,6 +39,16 @@ export const linkToolbarMessages = defineMessages({
     id: 'fabric.editor.linkAddress',
     defaultMessage: 'Link address',
     description: 'Insert the address of the link',
+  },
+  invalidLink: {
+    id: 'fabric.editor.invalidLink',
+    defaultMessage: 'Please enter a valid link.',
+    description: 'Please enter a valid link.',
+  },
+  emptyLink: {
+    id: 'fabric.editor.invalidLink',
+    defaultMessage: 'Please enter a link.',
+    description: 'Please enter a link.',
   },
 });
 

@@ -6,8 +6,7 @@ import {
 } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import ExtensionComponent from './ExtensionComponent';
 
 export interface Props {
@@ -19,6 +18,8 @@ export interface Props {
 }
 
 export default class Extension extends Component<Props, any> {
+  static displayName = 'Extension';
+
   private providerFactory: ProviderFactory;
 
   constructor(props: Props) {
@@ -34,20 +35,19 @@ export default class Extension extends Component<Props, any> {
     }
   }
 
-  private renderWithProvider = (providers: Providers) => {
+  private renderWithProvider = ({ extensionProvider }: Providers) => {
     const {
       node,
       editorView,
       handleContentDOMRef,
       extensionHandlers,
     } = this.props;
-    const { macroProvider } = providers;
 
     return (
       <ExtensionComponent
         editorView={editorView}
         node={node}
-        macroProvider={macroProvider}
+        extensionProvider={extensionProvider}
         handleContentDOMRef={handleContentDOMRef}
         extensionHandlers={extensionHandlers}
       />
@@ -57,7 +57,7 @@ export default class Extension extends Component<Props, any> {
   render() {
     return (
       <WithProviders
-        providers={['macroProvider']}
+        providers={['extensionProvider']}
         providerFactory={this.providerFactory}
         renderNode={this.renderWithProvider}
       />

@@ -3,53 +3,34 @@ import {
   ContextIdentifierProvider,
   ErrorReportingHandler,
   ExtensionHandlers,
+  ExtensionProvider,
   Providers,
   Transformer,
 } from '@uidu/editor-common';
-import { EmojiProvider } from '@uidu/emoji';
 import { MentionProvider } from '@uidu/mentions';
 import { TaskDecisionProvider } from '@uidu/task-decision';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { ReactElement } from 'react';
-import EditorActions from '../actions/index';
+import EditorActions from '../actions';
 import { AnalyticsHandler } from '../analytics/handler';
 import { AnnotationProvider } from '../plugins/annotation/types';
-import { CardOptions, CardProvider } from '../plugins/card/types';
-import { CodeBlockOptions } from '../plugins/code-block';
-import { CollabEditProvider } from '../plugins/collab-edit/provider';
+import { BlockTypePluginOptions } from '../plugins/block-type/types';
+import { CardOptions } from '../plugins/card/types';
 import { CollabEditOptions } from '../plugins/collab-edit/types';
-import { AutoformattingProvider } from '../plugins/custom-autoformat/types';
-import { MacroProvider } from '../plugins/macro/types';
+import { LayoutsConfig } from '../plugins/layout/types';
 import { MediaOptions, MediaState } from '../plugins/media/types';
-import { PlaceholderTextOptions } from '../plugins/placeholder-text';
+import { PlaceholderTextOptions } from '../plugins/placeholder-text/types';
 import { QuickInsertOptions } from '../plugins/quick-insert/types';
 import { PluginConfig as TablesPluginConfig } from '../plugins/table/types';
 import { TextColorPluginConfig } from '../plugins/text-color/pm-plugins/main';
-import { TextFormattingOptions } from '../plugins/text-formatting';
+import { TextFormattingOptions } from '../plugins/text-formatting/types';
+import { MenuItem } from '../ui/DropdownMenu/types';
+import { EditorAppearance } from './editor-appearance';
 import { EditorOnChangeHandler } from './editor-onchange';
 import { ExtensionConfig } from './extension-config';
 
-export type EditorAppearance =
-  | 'comment'
-  | 'full-page'
-  | 'full-width'
-  | 'chromeless'
-  | 'mobile';
-
 export type ReactComponents = ReactElement<any> | ReactElement<any>[];
-
-export type InsertMenuCustomItem = {
-  content: string;
-  value: { name: string | null };
-  tooltipDescription?: string;
-  tooltipPosition?: string;
-  elemBefore?: ReactComponents | string;
-  elemAfter?: ReactComponents | string;
-  isDisabled?: boolean;
-  className?: string;
-  onClick?: (editorActions: EditorActions) => void;
-};
 
 export type FeedbackInfo = {
   product?: string;
@@ -57,12 +38,6 @@ export type FeedbackInfo = {
   packageName?: string;
   labels?: Array<string>;
 };
-
-export type AllowedBlockTypes =
-  | 'heading'
-  | 'blockquote'
-  | 'hardBreak'
-  | 'codeBlock';
 
 export interface EditorProps {
   /*
@@ -76,17 +51,15 @@ export interface EditorProps {
   appearance?: EditorAppearance;
   children?: (editorProps) => any;
   containerElement?: HTMLElement | undefined;
-
   // Legacy analytics support handler, which will be removed soon. **Do not use**.
   analyticsHandler?: AnalyticsHandler;
 
   contentComponents?: ReactComponents;
   primaryToolbarComponents?: ReactComponents;
   secondaryToolbarComponents?: ReactComponents;
-  addonToolbarComponents?: ReactComponents;
   allowAnalyticsGASV3?: boolean;
   // Configure allowed blocks in the editor, currently only supports `heading`, `blockquote`, `hardBreak` and `codeBlock`.
-  allowBlockType?: { exclude?: Array<AllowedBlockTypes> };
+  allowBlockType?: BlockTypePluginOptions['allowBlockType'];
 
   // Whether or not you want to allow Action and Decision elements in the editor. You can currently only enable both or disable both.
   // To enable, you need to also provide a `taskDecisionProvider`. You will most likely need backend ADF storage for this feature.
@@ -98,12 +71,6 @@ export interface EditorProps {
 
   // Enables horizontal rules.
   allowRule?: boolean;
-
-  // Enables code blocks. This is different to inline code, it is a block element and support languages.
-  allowCodeBlocks?: boolean | CodeBlockOptions;
-
-  // Enables bullet and numbered lists.
-  allowLists?: boolean;
 
   // Enables text colour. Ew are you sure you want to enable this?
   allowTextColor?: boolean | TextColorPluginConfig;
@@ -136,7 +103,6 @@ export interface EditorProps {
   allowExtension?: boolean | ExtensionConfig;
 
   allowConfluenceInlineComment?: boolean;
-  allowPlaceholderCursor?: boolean;
 
   // Enable placeholder text which is handy for things like a template editor.
   // Placeholder text is an inline text element that is removed when a user clicks on it.
@@ -149,12 +115,7 @@ export interface EditorProps {
 
   // Temporary flag to enable layouts while it's under development
   // Use object form to enable breakout for layouts, and to enable the newer layouts - left sidebar & right sidebar
-  allowLayouts?:
-    | boolean
-    | {
-        allowBreakout: boolean;
-        UNSAFE_addSidebarLayouts?: boolean;
-      };
+  allowLayouts?: boolean | LayoutsConfig;
 
   // Enable status, if menuDisabled is passed then plugin is enabled by default
   allowStatus?:
@@ -177,6 +138,12 @@ export interface EditorProps {
    **/
   allowNewInsertionBehaviour?: boolean;
 
+  /**
+   * Set this to false to opt out of the default behaviour of auto scrolling into view
+   * whenever the document is changed
+   */
+  autoScrollIntoView?: boolean;
+
   // Set to enable the quick insert menu i.e. '/' key trigger.
   // You can also provide your own insert menu options that will be shown in addition to the enabled
   // editor features e.g. Confluence uses this to provide its macros.
@@ -197,6 +164,10 @@ export interface EditorProps {
   // Set if the editor should be disabled.
   disabled?: boolean;
 
+  // Content to appear in the context panel. Displays as a right sidebar in the full-page appearance.
+  // You'll want to pass it a `ContextPanel` component from this package, and your content as its children.
+  contextPanel?: ReactComponents;
+
   errorReporterHandler?: ErrorReportingHandler;
   uploadErrorHandler?: (state: MediaState) => void;
 
@@ -204,21 +175,21 @@ export interface EditorProps {
 
   annotationProvider?: AnnotationProvider;
 
-  collabEditProvider?: Promise<CollabEditProvider>;
+  collabEditProvider?: Providers['collabEditProvider'];
   presenceProvider?: Promise<any>;
-  emojiProvider?: Promise<EmojiProvider>;
+  emojiProvider?: Providers['emojiProvider'];
   taskDecisionProvider?: Promise<TaskDecisionProvider>;
+  allowNestedTasks?: boolean;
   contextIdentifierProvider?: Promise<ContextIdentifierProvider>;
 
+  legacyImageUploadProvider?: Providers['imageUploadProvider'];
   mentionProvider?: Promise<MentionProvider>;
-  mediaProvider?: Providers['mediaProvider'];
 
   // Allows you to define custom autoformatting rules.
-  autoformattingProvider?: Promise<AutoformattingProvider>;
+  autoformattingProvider?: Providers['autoformattingProvider'];
 
   // This is temporary for Confluence. **Please do not use**.
-  macroProvider?: Promise<MacroProvider>;
-  cardProvider?: Promise<CardProvider>;
+  macroProvider?: Providers['macroProvider'];
 
   // Set if you want to wait for media file uploads before save.
   waitForMediaUpload?: boolean;
@@ -241,7 +212,7 @@ export interface EditorProps {
   // Understandably this isn’t the best logical max parameter for content, but its the cheapest for now.
   maxContentSize?: number;
 
-  // Default placeholder text to be displayed if the content is empty. e.g. 'Add a comment...'
+  // Default placeholder text to be displayed if the document content is empty. e.g. 'Add a comment...'
   placeholder?: string;
 
   // Default placeholder text to be displayed if line is empty but the document content is not. e.g. 'Type / to insert content'
@@ -258,10 +229,18 @@ export interface EditorProps {
   popupsScrollableElement?: HTMLElement;
 
   // Set to add custom menu items to the insert (plus) menu dropdown.
-  insertMenuItems?: InsertMenuCustomItem[];
+  insertMenuItems?: MenuItem[];
   editorActions?: EditorActions;
 
+  // Set a callback for the editor when users are able to interact.
+  // Also provides access to `EditorActions` for controlling editor.
+  onEditorReady?: (editorActions: EditorActions) => void;
+
+  // Called when editor is being unmounted
+  onDestroy?: () => void;
+
   // Set for an on change callback.
+  // `meta.source === 'remote'` means that a change is coming from remote source, e.g. collab editing session.
   onChange?: EditorOnChangeHandler;
 
   // Set for an on save callback.
@@ -279,4 +258,51 @@ export interface EditorProps {
   // flag to indicate display name instead of nick name should be inserted for mentions
   // default: false, which inserts the nick name
   mentionInsertDisplayName?: boolean;
+
+  // The nth keystroke after which an input time taken event is sent, 0 to disable it
+  // default: 100
+  inputSamplingLimit?: number;
+
+  // New extension API
+  // This eventually is going to replace `quickInsert.provider`, `extensionHandlers`, `macroProvider`.
+  extensionProviders?: Array<ExtensionProvider>;
+
+  // Control transaction tracking
+  // default:
+  // {
+  //   enabled: false,
+  //   countNodes: true,
+  //   samplingRate: 100,
+  //   slowThreshold: 300,
+  //   slowOutlierThreshold: 3,
+  //   pluginMethodThreshold: 1,
+  //   outlierFactor: 3
+  // }
+  transactionTracking?: {
+    // Wether transactionTracking should be enabled
+    // default: false
+    enabled: boolean;
+
+    // The nth transaction after which a `dispatchTransaction` event is sent.
+    // default: 100
+    samplingRate?: number;
+
+    // Transactions that need longer to dispatch than this generate a `dispatchTransaction` event
+    // unit: ms
+    // default: 300
+    slowThreshold?: number;
+
+    // Transactions that need longer to dispatch than AND have outlier plugins
+    // generate a `dispatchTransaction` event
+    // unit: ms
+    // default: 30
+    outlierThreshold?: number;
+
+    // The factor by which statistically significant outliers in plugin execution times are computed
+    // where t = p75 + (p75 - p25) * outlierFactor
+    // minor outliers: 1.5
+    // majour outliers: 3.0
+    // default: 3
+    outlierFactor?: number;
+  };
 }

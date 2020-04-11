@@ -12,7 +12,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconImages } from '../quick-insert/assets';
 import { ReactMediaGroupNode } from './nodeviews/mediaGroup';
 import { ReactMediaSingleNode } from './nodeviews/mediaSingle';
@@ -59,7 +59,6 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
         name: 'media',
         plugin: ({
           schema,
-          props,
           dispatch,
           eventDispatcher,
           providerFactory,
@@ -90,12 +89,11 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
                 ),
               },
               errorReporter,
-              uploadErrorHandler: props.uploadErrorHandler,
-              waitForMediaUpload: props.waitForMediaUpload,
+              uploadErrorHandler: options && options.uploadErrorHandler,
+              waitForMediaUpload: options && options.waitForMediaUpload,
               customDropzoneContainer:
                 options && options.customDropzoneContainer,
               customMediaPicker: options && options.customMediaPicker,
-              appearance: props.appearance,
               allowResizing: !!(options && options.allowResizing),
             },
             reactContext,

@@ -1,30 +1,17 @@
 import { keydownHandler } from 'prosemirror-keymap';
-import { Node, Slice } from 'prosemirror-model';
-import {
-  EditorState,
-  Plugin,
-  PluginKey,
-  TextSelection,
-} from 'prosemirror-state';
+import { Node } from 'prosemirror-model';
+import { EditorState, Plugin, TextSelection } from 'prosemirror-state';
 import { findParentNodeOfType } from 'prosemirror-utils';
 import { Decoration, DecorationSet } from 'prosemirror-view';
-import { Command } from '../../../types';
+import { Command } from '../../../types/command';
 import { filter } from '../../../utils/commands';
 import {
   fixColumnSizes,
   fixColumnStructure,
   getSelectedLayout,
-  PresetLayout,
 } from '../actions';
-
-export type LayoutState = {
-  pos: number | null;
-  allowBreakout: boolean;
-  addSidebarLayouts: boolean;
-  selectedLayout: PresetLayout | undefined;
-};
-
-type Change = { from: number; to: number; slice: Slice };
+import { pluginKey } from './plugin-key';
+import { Change, LayoutState } from './types';
 
 export const DEFAULT_LAYOUT = 'two_equal';
 
@@ -92,8 +79,6 @@ const getInitialPluginState = (
   return { pos, allowBreakout, addSidebarLayouts, selectedLayout };
 };
 
-export const pluginKey = new PluginKey('layout');
-
 export default (
   pluginConfig?:
     | { allowBreakout: boolean; UNSAFE_addSidebarLayouts?: boolean }
@@ -130,9 +115,10 @@ export default (
         if (layoutState.pos !== null) {
           return DecorationSet.create(
             state.doc,
-            getNodeDecoration(layoutState.pos, state.doc.nodeAt(
+            getNodeDecoration(
               layoutState.pos,
-            ) as Node),
+              state.doc.nodeAt(layoutState.pos) as Node,
+            ),
           );
         }
         return undefined;
@@ -143,9 +129,9 @@ export default (
     },
     appendTransaction: (transactions, _oldState, newState) => {
       let changes: Change[] = [];
-      transactions.forEach(prevTr => {
+      transactions.forEach((prevTr) => {
         // remap change segments across the transaction set
-        changes.map(change => {
+        changes.forEach((change) => {
           return {
             from: prevTr.mapping.map(change.from),
             to: prevTr.mapping.map(change.to),
@@ -155,7 +141,7 @@ export default (
 
         // don't consider transactions that don't mutate
         if (!prevTr.docChanged) {
-          return undefined;
+          return;
         }
 
         const change = fixColumnSizes(prevTr, newState);
@@ -168,7 +154,7 @@ export default (
         let tr = newState.tr;
         const selection = newState.selection;
 
-        changes.forEach(change => {
+        changes.forEach((change) => {
           tr.replaceRange(change.from, change.to, change.slice);
         });
 

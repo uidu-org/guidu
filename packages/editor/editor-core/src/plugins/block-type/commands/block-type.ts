@@ -22,10 +22,12 @@ import {
   PANEL,
 } from '../types';
 
-type InputMethod =
+export type InputMethod =
   | INPUT_METHOD.TOOLBAR
+  | INPUT_METHOD.INSERT_MENU
   | INPUT_METHOD.SHORTCUT
-  | INPUT_METHOD.FORMATTING;
+  | INPUT_METHOD.FORMATTING
+  | INPUT_METHOD.KEYBOARD;
 
 export function setBlockType(name: string): Command {
   return (state, dispatch) => {
@@ -66,7 +68,7 @@ export function setBlockTypeWithAnalytics(
 }
 
 export function setNormalText(): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const {
       tr,
       selection: { $from, $to },
@@ -111,7 +113,7 @@ function withCurrentHeadingLevel(
 }
 
 export function setNormalTextWithAnalytics(inputMethod: InputMethod): Command {
-  return withCurrentHeadingLevel(previousHeadingLevel =>
+  return withCurrentHeadingLevel((previousHeadingLevel) =>
     withAnalytics({
       action: ACTION.FORMATTED,
       actionSubject: ACTION_SUBJECT.TEXT,
@@ -126,7 +128,7 @@ export function setNormalTextWithAnalytics(inputMethod: InputMethod): Command {
   );
 }
 export function setHeading(level: HeadingLevelsAndNormalText): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const {
       tr,
       selection: { $from, $to },
@@ -145,7 +147,7 @@ export const setHeadingWithAnalytics = (
   newHeadingLevel: HeadingLevelsAndNormalText,
   inputMethod: InputMethod,
 ) => {
-  return withCurrentHeadingLevel(previousHeadingLevel =>
+  return withCurrentHeadingLevel((previousHeadingLevel) =>
     withAnalytics({
       action: ACTION.FORMATTED,
       actionSubject: ACTION_SUBJECT.TEXT,
@@ -161,7 +163,7 @@ export const setHeadingWithAnalytics = (
 };
 
 export function insertBlockType(name: string): Command {
-  return function(state, dispatch) {
+  return function (state, dispatch) {
     const { nodes } = state.schema;
 
     switch (name) {
@@ -188,7 +190,7 @@ export function insertBlockType(name: string): Command {
 
 export const insertBlockTypesWithAnalytics = (
   name: string,
-  inputMethod: INPUT_METHOD.TOOLBAR | INPUT_METHOD.KEYBOARD,
+  inputMethod: InputMethod,
 ) => {
   switch (name) {
     case BLOCK_QUOTE.name:
@@ -232,7 +234,7 @@ export const insertBlockTypesWithAnalytics = (
  *  and set selection on it.
  */
 function wrapSelectionIn(type: NodeType<any>): Command {
-  return function(state: EditorState, dispatch) {
+  return function (state: EditorState, dispatch) {
     let { tr } = state;
     const { $from, $to } = state.selection;
     const { paragraph } = state.schema.nodes;
@@ -266,7 +268,7 @@ function wrapSelectionIn(type: NodeType<any>): Command {
  * Function will insert code block at current selection if block is empty or below current selection and set focus on it.
  */
 function insertCodeBlock(): Command {
-  return function(state: EditorState, dispatch) {
+  return function (state: EditorState, dispatch) {
     const { tr } = state;
     const { $to } = state.selection;
     const { codeBlock } = state.schema.nodes;

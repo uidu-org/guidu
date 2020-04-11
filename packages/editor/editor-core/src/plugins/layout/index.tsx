@@ -1,5 +1,5 @@
 import { layoutColumn, layoutSection } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import {
   ACTION,
@@ -10,19 +10,24 @@ import {
   INPUT_METHOD,
 } from '../analytics';
 import { FloatingToolbarConfig } from '../floating-toolbar/types';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconLayout } from '../quick-insert/assets';
 import { createDefaultLayoutSection } from './actions';
-import {
-  default as createLayoutPlugin,
-  LayoutState,
-  pluginKey,
-} from './pm-plugins/main';
+import { default as createLayoutPlugin } from './pm-plugins/main';
+import { pluginKey } from './pm-plugins/plugin-key';
+import { LayoutState } from './pm-plugins/types';
 import { buildToolbar } from './toolbar';
 
 export { pluginKey };
 
-const layoutPlugin = (): EditorPlugin => ({
+const layoutPlugin = (
+  layoutsConfig?:
+    | {
+        allowBreakout: boolean;
+        UNSAFE_addSidebarLayouts?: boolean;
+      }
+    | boolean,
+): EditorPlugin => ({
   name: 'layout',
 
   nodes() {
@@ -36,7 +41,7 @@ const layoutPlugin = (): EditorPlugin => ({
     return [
       {
         name: 'layout',
-        plugin: ({ props }) => createLayoutPlugin(props.allowLayouts),
+        plugin: () => createLayoutPlugin(layoutsConfig),
       },
     ];
   },

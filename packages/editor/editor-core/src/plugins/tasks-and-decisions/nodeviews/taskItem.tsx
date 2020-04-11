@@ -6,18 +6,12 @@ import {
 import { ProviderFactory } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { Decoration, NodeView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { ForwardRef, getPosHandler, ReactNodeView } from '../../../nodeviews';
+import { getPosHandlerNode } from '../../../nodeviews/ReactNodeView';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
-import {
-  EditorDisabledPluginState,
-  pluginKey as editorDisabledPluginKey,
-} from '../../editor-disabled';
-import {
-  stateKey as taskPluginKey,
-  TaskDecisionPluginState,
-} from '../pm-plugins/main';
+import { stateKey as taskPluginKey } from '../pm-plugins/plugin-key';
 import TaskItem from '../ui/Task';
 
 export interface Props {
@@ -31,8 +25,7 @@ class Task extends ReactNodeView<Props> {
 
   private handleOnChange = (taskId: string, isChecked: boolean) => {
     const { tr } = this.view.state;
-    const nodePos =
-      typeof this.getPos === 'function' ? this.getPos() : +this.getPos;
+    const nodePos = (this.getPos as getPosHandlerNode)();
 
     tr.setNodeMarkup(nodePos, undefined, {
       state: isChecked ? 'DONE' : 'TODO',
@@ -54,7 +47,7 @@ class Task extends ReactNodeView<Props> {
   private addListAnalyticsData = (event: UIAnalyticsEvent) => {
     try {
       const resolvedPos = this.view.state.doc.resolve(
-        typeof this.getPos === 'function' ? this.getPos() : +this.getPos,
+        (this.getPos as getPosHandlerNode)(),
       );
       const position = resolvedPos.index();
       const listSize = resolvedPos.parent.childCount;
@@ -84,13 +77,17 @@ class Task extends ReactNodeView<Props> {
   };
 
   createDomRef() {
-    const domRef = document.createElement('li');
+    const domRef = document.createElement('div');
     domRef.style['list-style-type' as any] = 'none';
     return domRef;
   }
 
   getContentDOM() {
-    return { dom: document.createElement('div') };
+    const dom = document.createElement('div');
+    // setting a className prevents PM/Chrome mutation observer from
+    // incorrectly deleting nodes
+    dom.className = 'task-item';
+    return { dom };
   }
 
   render(props: Props, forwardRef: ForwardRef) {
@@ -102,15 +99,9 @@ class Task extends ReactNodeView<Props> {
       >
         <WithPluginState
           plugins={{
-            editorDisabledPlugin: editorDisabledPluginKey,
             taskDecisionPlugin: taskPluginKey,
           }}
-          render={({
-            editorDisabledPlugin,
-          }: {
-            editorDisabledPlugin: EditorDisabledPluginState;
-            taskDecisionPlugin: TaskDecisionPluginState;
-          }) => {
+          render={() => {
             return (
               <TaskItem
                 taskId={localId}
@@ -119,7 +110,6 @@ class Task extends ReactNodeView<Props> {
                 onChange={this.handleOnChange}
                 showPlaceholder={this.isContentEmpty(this.node)}
                 providers={props.providerFactory}
-                disabled={(editorDisabledPlugin || {}).editorDisabled}
               />
             );
           }}

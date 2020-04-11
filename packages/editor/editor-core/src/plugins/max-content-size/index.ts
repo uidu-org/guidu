@@ -30,15 +30,14 @@ export function createPlugin(
   });
 }
 
-const maxContentSizePlugin = (): EditorPlugin => ({
+const maxContentSizePlugin = (maxContentSize?: number): EditorPlugin => ({
   name: 'maxContentSize',
 
   pmPlugins() {
     return [
       {
         name: 'maxContentSize',
-        plugin: ({ dispatch, props }) =>
-          createPlugin(dispatch, props.maxContentSize),
+        plugin: ({ dispatch }) => createPlugin(dispatch, maxContentSize),
       },
     ];
   },

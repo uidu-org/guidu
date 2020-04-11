@@ -62,7 +62,7 @@ export interface ExternalMediaAttributes {
   __external?: boolean;
 }
 
-export type MediaADFAttrs = MediaAttributes | ExternalMediaAttributes;
+export type MediaADFAttrs = MediaAttributes;
 
 export const defaultAttrs: DefaultAttributes<MediaADFAttrs> = {
   id: { default: '' },
@@ -72,7 +72,6 @@ export const defaultAttrs: DefaultAttributes<MediaADFAttrs> = {
   alt: { default: null },
   width: { default: null },
   height: { default: null },
-  url: { default: null },
   __fileName: { default: null },
   __fileSize: { default: null },
   __fileMimeType: { default: null },

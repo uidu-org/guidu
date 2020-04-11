@@ -1,7 +1,7 @@
 import { rule } from '@uidu/adf-schema';
 import { Fragment } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import { safeInsert } from '../../utils/insert';
 import {
@@ -12,9 +12,9 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { getFeatureFlags } from '../feature-flags-context';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconDivider } from '../quick-insert/assets';
-import { getEditorProps } from '../shared-context';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
 
@@ -51,8 +51,8 @@ const rulePlugin = (): EditorPlugin => ({
         ),
         action(insert, state) {
           let tr: Transaction<any> | null = null;
-          const { allowNewInsertionBehaviour } = getEditorProps(state);
-          if (allowNewInsertionBehaviour) {
+          const { newInsertionBehaviour } = getFeatureFlags(state);
+          if (newInsertionBehaviour) {
             /**
              * This is a workaround to get rid of the typeahead text when using quick insert
              * Once we insert *nothing*, we get a new transaction, so we can use the new selection

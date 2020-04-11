@@ -1,4 +1,5 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
+import ExpandNodeIcon from '@atlaskit/icon/glyph/chevron-right-circle';
 import AddIcon from '@atlaskit/icon/glyph/editor/add';
 import CodeIcon from '@atlaskit/icon/glyph/editor/code';
 import DateIcon from '@atlaskit/icon/glyph/editor/date';
@@ -17,19 +18,11 @@ import PlaceholderTextIcon from '@atlaskit/icon/glyph/media-services/text';
 import QuoteIcon from '@atlaskit/icon/glyph/quote';
 import StatusIcon from '@atlaskit/icon/glyph/status';
 import { akEditorMenuZIndex, Popup } from '@uidu/editor-common';
-import {
-  EmojiId,
-  EmojiPicker as AkEmojiPicker,
-  EmojiProvider,
-} from '@uidu/emoji';
-import { Node as PMNode } from 'prosemirror-model';
-import { EditorState } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { ReactInstance } from 'react';
-import * as ReactDOM from 'react-dom';
-import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
-import EditorActions from '../../../../actions';
+import { EmojiPicker as AkEmojiPicker } from '@uidu/emoji/picker';
+import { EmojiId } from '@uidu/emoji/types';
+import React, { ReactInstance } from 'react';
+import ReactDOM from 'react-dom';
+import { injectIntl, WrappedComponentProps } from 'react-intl';
 import {
   analyticsService as analytics,
   withAnalytics,
@@ -42,12 +35,8 @@ import {
   toggleTable,
   tooltip,
 } from '../../../../keymaps';
-import {
-  Command,
-  CommandDispatch,
-  InsertMenuCustomItem,
-} from '../../../../types';
 import DropdownMenu from '../../../../ui/DropdownMenu';
+import { MenuItem } from '../../../../ui/DropdownMenu/types';
 import {
   ButtonGroup,
   ExpandIconWrapper,
@@ -59,7 +48,6 @@ import {
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
-  DispatchAnalyticsEvent,
   EVENT_TYPE,
   INPUT_METHOD,
   withAnalytics as commandWithAnalytics,
@@ -68,210 +56,18 @@ import { BlockType } from '../../../block-type/types';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
 import { insertDate, openDatePicker } from '../../../date/actions';
 import { insertEmoji } from '../../../emoji/commands/insert-emoji';
+import { insertExpand } from '../../../expand/commands';
 import { showLinkToolbar } from '../../../hyperlink/commands';
 import { insertLayoutColumnsWithAnalytics } from '../../../layout/actions';
-import { MacroProvider } from '../../../macro/types';
 import { insertMentionQuery } from '../../../mentions/commands/insert-mention-query';
 import { showPlaceholderFloatingToolbar } from '../../../placeholder-text/actions';
 import { createHorizontalRule } from '../../../rule/pm-plugins/input-rule';
 import { updateStatusWithAnalytics } from '../../../status/actions';
 import { createTable } from '../../../table/commands';
 import { insertTaskDecision } from '../../../tasks-and-decisions/commands';
+import { messages } from './messages';
 import { TriggerWrapper } from './styles';
-
-export const messages = defineMessages({
-  action: {
-    id: 'fabric.editor.action',
-    defaultMessage: 'Action item',
-    description: 'Also known as a “task”, “to do item”, or a checklist',
-  },
-  actionDescription: {
-    id: 'fabric.editor.action.description',
-    defaultMessage: 'Create and assign action items',
-    description: '',
-  },
-  link: {
-    id: 'fabric.editor.link',
-    defaultMessage: 'Link',
-    description: 'Insert a hyperlink',
-  },
-  linkDescription: {
-    id: 'fabric.editor.link.description',
-    defaultMessage: 'Insert a link',
-    description: 'Insert a hyperlink',
-  },
-  filesAndImages: {
-    id: 'fabric.editor.filesAndImages',
-    defaultMessage: 'Files & images',
-    description: 'Insert one or more files or images',
-  },
-  filesAndImagesDescription: {
-    id: 'fabric.editor.filesAndImages.description',
-    defaultMessage: 'Add images and other files to your page',
-    description: 'Insert one or more files or images',
-  },
-  image: {
-    id: 'fabric.editor.image',
-    defaultMessage: 'Image',
-    description: 'Insert an image.',
-  },
-  mention: {
-    id: 'fabric.editor.mention',
-    defaultMessage: 'Mention',
-    description: 'Reference another person in your document',
-  },
-  mentionDescription: {
-    id: 'fabric.editor.mention.description',
-    defaultMessage: 'Mention someone to send them a notification',
-    description: 'Reference another person in your document',
-  },
-  emoji: {
-    id: 'fabric.editor.emoji',
-    defaultMessage: 'Emoji',
-    description: 'Insert an emoticon or smiley :-)',
-  },
-  emojiDescription: {
-    id: 'fabric.editor.emoji.description',
-    defaultMessage: 'Use emojis to express ideas 🎉 and emotions 😄',
-    description: 'Insert an emoticon or smiley :-)',
-  },
-  table: {
-    id: 'fabric.editor.table',
-    defaultMessage: 'Table',
-    description: 'Inserts a table in the document',
-  },
-  tableDescription: {
-    id: 'fabric.editor.table.description',
-    defaultMessage: 'Insert a table',
-    description: 'Inserts a table in the document',
-  },
-  decision: {
-    id: 'fabric.editor.decision',
-    defaultMessage: 'Decision',
-    description: 'Capture a decision you’ve made',
-  },
-  decisionDescription: {
-    id: 'fabric.editor.decision.description',
-    defaultMessage: 'Capture decisions so they’re easy to track',
-    description: 'Capture a decision you’ve made',
-  },
-  feedbackDialog: {
-    id: 'fabric.editor.feedbackDialog',
-    defaultMessage: 'Give feedback',
-    description: 'Open the feedback dialog from editor',
-  },
-  feedbackDialogDescription: {
-    id: 'fabric.editor.feedbackDialog.description',
-    defaultMessage: 'Tell us about your experience using the new editor',
-    description: 'Description for feedback option under quick insert dropdown',
-  },
-  horizontalRule: {
-    id: 'fabric.editor.horizontalRule',
-    defaultMessage: 'Divider',
-    description: 'A horizontal rule or divider',
-  },
-  horizontalRuleDescription: {
-    id: 'fabric.editor.horizontalRule.description',
-    defaultMessage: 'Separate content with a horizontal line',
-    description: 'A horizontal rule or divider',
-  },
-  date: {
-    id: 'fabric.editor.date',
-    defaultMessage: 'Date',
-    description: 'Opens a date picker that lets you select a date',
-  },
-  dateDescription: {
-    id: 'fabric.editor.date.description',
-    defaultMessage: 'Add a date using a calendar',
-    description: 'Opens a date picker that lets you select a date',
-  },
-  placeholderText: {
-    id: 'fabric.editor.placeholderText',
-    defaultMessage: 'Placeholder text',
-    description: '',
-  },
-  columns: {
-    id: 'fabric.editor.columns',
-    defaultMessage: 'Layouts',
-    description: 'Create a multi column section or layout',
-  },
-  columnsDescription: {
-    id: 'fabric.editor.columns.description',
-    defaultMessage: 'Structure your page using sections',
-    description: 'Create a multi column section or layout',
-  },
-  status: {
-    id: 'fabric.editor.status',
-    defaultMessage: 'Status',
-    description:
-      'Inserts an item representing the status of an activity to task.',
-  },
-  statusDescription: {
-    id: 'fabric.editor.status.description',
-    defaultMessage: 'Add a custom status label',
-    description:
-      'Inserts an item representing the status of an activity to task.',
-  },
-  viewMore: {
-    id: 'fabric.editor.viewMore',
-    defaultMessage: 'View more',
-    description: '',
-  },
-  insertMenu: {
-    id: 'fabric.editor.insertMenu',
-    defaultMessage: 'Insert',
-    description:
-      'Opens a menu of additional items that can be inserted into your document.',
-  },
-});
-
-export interface Props {
-  buttons: number;
-  isReducedSpacing: boolean;
-  isDisabled?: boolean;
-  isTypeAheadAllowed?: boolean;
-  editorView: EditorView;
-  editorActions?: EditorActions;
-  tableSupported?: boolean;
-  mentionsEnabled?: boolean;
-  actionSupported?: boolean;
-  decisionSupported?: boolean;
-  mentionsSupported?: boolean;
-  insertMentionQuery?: () => void;
-  mediaUploadsEnabled?: boolean;
-  mediaSupported?: boolean;
-  dateEnabled?: boolean;
-  horizontalRuleEnabled?: boolean;
-  placeholderTextEnabled?: boolean;
-  layoutSectionEnabled?: boolean;
-  expandEnabled?: boolean;
-  emojiProvider?: Promise<EmojiProvider>;
-  availableWrapperBlockTypes?: BlockType[];
-  linkSupported?: boolean;
-  linkDisabled?: boolean;
-  emojiDisabled?: boolean;
-  nativeStatusSupported?: boolean;
-  popupsMountPoint?: HTMLElement;
-  popupsBoundariesElement?: HTMLElement;
-  popupsScrollableElement?: HTMLElement;
-  macroProvider?: MacroProvider | null;
-  insertMenuItems?: InsertMenuCustomItem[];
-  onShowMediaPicker?: () => void;
-  onInsertBlockType?: (name: string) => Command;
-  onInsertMacroFromMacroBrowser?: (
-    macroProvider: MacroProvider,
-    node?: PMNode,
-    isEditing?: boolean,
-  ) => (state: EditorState, dispatch: CommandDispatch) => void;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
-}
-
-export interface State {
-  isOpen: boolean;
-  emojiPickerOpen: boolean;
-}
-
-export type TOOLBAR_MENU_TYPE = INPUT_METHOD.TOOLBAR | INPUT_METHOD.INSERT_MENU;
+import { Props, State, TOOLBAR_MENU_TYPE } from './types';
 
 const blockTypeIcons = {
   codeblock: CodeIcon,
@@ -412,6 +208,54 @@ class ToolbarInsertBlock extends React.PureComponent<
     }
   };
 
+  private getShortcutBlock = (blockType: BlockType) => {
+    switch (blockType.name) {
+      case 'blockquote':
+        return '>';
+      case 'codeblock':
+        return '```';
+      default:
+        return tooltip(findKeymapByDescription(blockType.title.defaultMessage));
+    }
+  };
+
+  private sanitizeProductMenuItems(dropdownItems: MenuItem[]) {
+    // Confluence specific sorting:
+    // These value names are hard coded and unlikely to change.
+    const viewMoreItem = dropdownItems.find(
+      (item) => item.value.name === 'macro-browser',
+    );
+    if (viewMoreItem) {
+      // Ensure the view more button for optional product macro browsers is put at the end,
+      // regardless of alphabetical ordering from internationalised labelling.
+      dropdownItems.splice(dropdownItems.indexOf(viewMoreItem), 1);
+      dropdownItems.push(viewMoreItem);
+    }
+    const slashOnboardingItem = dropdownItems.find(
+      (item) => item.value.name === 'slash-onboarding',
+    );
+    if (slashOnboardingItem) {
+      // Sometimes products augment an additional react component at the end of the list
+      // so we ensure its last.
+      dropdownItems.splice(dropdownItems.indexOf(slashOnboardingItem), 1);
+      dropdownItems.push(slashOnboardingItem);
+    }
+  }
+
+  private sortMenuItems(dropdownItems: MenuItem[]) {
+    // sort list, remove macros and then reattach (this ensures the macros are still sorted alphabetically)
+    dropdownItems.sort((a, b) => (a.content < b.content ? -1 : 1));
+    const macros = dropdownItems.filter(
+      (item) =>
+        typeof item.content === 'string' && item.content.includes('macro'),
+    );
+    dropdownItems = dropdownItems.filter(
+      (item) =>
+        typeof item.content === 'string' && !item.content.includes('macro'),
+    );
+    return dropdownItems.concat(macros);
+  }
+
   render() {
     const { isOpen } = this.state;
     const {
@@ -425,16 +269,15 @@ class ToolbarInsertBlock extends React.PureComponent<
     } = this.props;
 
     const items = this.createItems();
-    const buttons = items.slice(0, numberOfButtons);
-    const dropdownItems = items.slice(numberOfButtons);
-
     if (items.length === 0) {
       return null;
     }
-
+    const buttons = items.slice(0, numberOfButtons);
+    const dropdownItems = this.sortMenuItems(items.slice(numberOfButtons));
+    this.sanitizeProductMenuItems(dropdownItems);
     const labelInsertMenu = formatMessage(messages.insertMenu);
 
-    findShortcutByDescription(messages.insertMenu.description as string);
+    findShortcutByDescription(messages.insertMenu.description);
 
     const toolbarButtonFactory = (disabled: boolean, items: Array<any>) => (
       <ToolbarButton
@@ -460,7 +303,7 @@ class ToolbarInsertBlock extends React.PureComponent<
         {buttons.map((btn) => (
           <ToolbarButton
             ref={btn.handleRef || noop}
-            key={btn.content}
+            key={btn.value.name}
             spacing={isReducedSpacing ? 'none' : 'default'}
             disabled={isDisabled || btn.isDisabled}
             iconBefore={btn.elemBefore}
@@ -501,6 +344,8 @@ class ToolbarInsertBlock extends React.PureComponent<
       tableSupported,
       mediaUploadsEnabled,
       mediaSupported,
+      imageUploadSupported,
+      imageUploadEnabled,
       mentionsSupported,
       availableWrapperBlockTypes,
       actionSupported,
@@ -516,9 +361,10 @@ class ToolbarInsertBlock extends React.PureComponent<
       placeholderTextEnabled,
       horizontalRuleEnabled,
       layoutSectionEnabled,
+      expandEnabled,
       intl: { formatMessage },
     } = this.props;
-    let items: any[] = [];
+    let items: MenuItem[] = [];
 
     if (actionSupported) {
       const labelAction = formatMessage(messages.action);
@@ -539,7 +385,9 @@ class ToolbarInsertBlock extends React.PureComponent<
         value: { name: 'link' },
         isDisabled: linkDisabled,
         elemBefore: <LinkIcon label={labelLink} />,
-        elemAfter: shortcutLink && <Shortcut>{shortcutLink}</Shortcut>,
+        elemAfter: shortcutLink ? (
+          <Shortcut>{shortcutLink}</Shortcut>
+        ) : undefined,
         shortcut: shortcutLink,
       });
     }
@@ -549,6 +397,15 @@ class ToolbarInsertBlock extends React.PureComponent<
         content: labelFilesAndImages,
         value: { name: 'media' },
         elemBefore: <EditorImageIcon label={labelFilesAndImages} />,
+      });
+    }
+    if (imageUploadSupported) {
+      const labelImage = formatMessage(messages.image);
+      items.push({
+        content: labelImage,
+        value: { name: 'image upload' },
+        isDisabled: !imageUploadEnabled,
+        elemBefore: <EditorImageIcon label={labelImage} />,
       });
     }
     if (mentionsSupported) {
@@ -581,7 +438,9 @@ class ToolbarInsertBlock extends React.PureComponent<
         content: labelTable,
         value: { name: 'table' },
         elemBefore: <TableIcon label={labelTable} />,
-        elemAfter: shortcutTable && <Shortcut>{shortcutTable}</Shortcut>,
+        elemAfter: shortcutTable ? (
+          <Shortcut>{shortcutTable}</Shortcut>
+        ) : undefined,
         shortcut: shortcutTable,
       });
     }
@@ -598,14 +457,14 @@ class ToolbarInsertBlock extends React.PureComponent<
         const BlockTypeIcon =
           blockTypeIcons[blockType.name as keyof typeof blockTypeIcons];
         const labelBlock = formatMessage(blockType.title);
-        const shortcutBlock = tooltip(
-          findKeymapByDescription(blockType.title.defaultMessage),
-        );
+        const shortcutBlock = this.getShortcutBlock(blockType);
         items.push({
           content: labelBlock,
           value: blockType,
           elemBefore: <BlockTypeIcon label={labelBlock} />,
-          elemAfter: shortcutBlock && <Shortcut>{shortcutBlock}</Shortcut>,
+          elemAfter: shortcutBlock ? (
+            <Shortcut>{shortcutBlock}</Shortcut>
+          ) : undefined,
           shortcut: shortcutBlock,
         });
       });
@@ -634,12 +493,23 @@ class ToolbarInsertBlock extends React.PureComponent<
       });
     }
 
+    if (expandEnabled && this.props.editorView.state.schema.nodes.expand) {
+      const labelExpand = formatMessage(messages.expand);
+      items.push({
+        content: labelExpand,
+        value: { name: 'expand' },
+        elemBefore: <ExpandNodeIcon label={labelExpand} />,
+      });
+    }
+
     if (dateEnabled) {
       const labelDate = formatMessage(messages.date);
       items.push({
         content: labelDate,
         value: { name: 'date' },
         elemBefore: <DateIcon label={labelDate} />,
+        elemAfter: <Shortcut>//</Shortcut>,
+        shortcut: '//',
       });
     }
 
@@ -782,7 +652,11 @@ class ToolbarInsertBlock extends React.PureComponent<
         return false;
       }
       const listType = name === 'action' ? 'taskList' : 'decisionList';
-      insertTaskDecision(editorView, listType, inputMethod);
+      insertTaskDecision(
+        editorView,
+        listType,
+        inputMethod,
+      )(editorView.state, editorView.dispatch);
       return true;
     });
 
@@ -807,6 +681,11 @@ class ToolbarInsertBlock extends React.PureComponent<
     },
   );
 
+  private insertExpand = (): boolean => {
+    const { state, dispatch } = this.props.editorView;
+    return insertExpand(state, dispatch);
+  };
+
   private insertBlockType = (itemName: string) =>
     withAnalytics(`atlassian.editor.format.${itemName}.button`, () => {
       const { editorView, onInsertBlockType } = this.props;
@@ -819,11 +698,11 @@ class ToolbarInsertBlock extends React.PureComponent<
   private handleSelectedEmoji = withAnalytics(
     'atlassian.editor.emoji.button',
     (emojiId: EmojiId): boolean => {
+      this.props.editorView.focus();
       insertEmoji(emojiId, INPUT_METHOD.PICKER)(
         this.props.editorView.state,
         this.props.editorView.dispatch,
       );
-      this.props.editorView.focus();
       this.toggleEmojiPicker();
       return true;
     },
@@ -841,7 +720,14 @@ class ToolbarInsertBlock extends React.PureComponent<
       editorActions,
       onInsertMacroFromMacroBrowser,
       macroProvider,
+      handleImageUpload,
+      expandEnabled,
     } = this.props;
+
+    // need to do this before inserting nodes so scrollIntoView works properly
+    if (!editorView.hasFocus()) {
+      editorView.focus();
+    }
 
     switch (item.value.name) {
       case 'link':
@@ -849,6 +735,12 @@ class ToolbarInsertBlock extends React.PureComponent<
         break;
       case 'table':
         this.insertTable(inputMethod);
+        break;
+      case 'image upload':
+        if (handleImageUpload) {
+          const { state, dispatch } = editorView;
+          handleImageUpload()(state, dispatch);
+        }
         break;
       case 'media':
         this.openMediaPicker(inputMethod);
@@ -868,6 +760,7 @@ class ToolbarInsertBlock extends React.PureComponent<
       case 'decision':
         this.insertTaskDecision(item.value.name, inputMethod)();
         break;
+
       case 'horizontalrule':
         this.insertHorizontalRule(inputMethod);
         break;
@@ -892,6 +785,17 @@ class ToolbarInsertBlock extends React.PureComponent<
       case 'status':
         this.createStatus(inputMethod);
         break;
+
+      // https://product-fabric.atlassian.net/browse/ED-8053
+      // It's expected to fall through to default
+      // @ts-ignore
+      case 'expand':
+        if (expandEnabled) {
+          this.insertExpand();
+          break;
+        }
+
+      // eslint-disable-next-line no-fallthrough
       default:
         if (item && item.onClick) {
           item.onClick(editorActions);
@@ -899,9 +803,6 @@ class ToolbarInsertBlock extends React.PureComponent<
         }
     }
     this.setState({ isOpen: false });
-    if (!editorView.hasFocus()) {
-      editorView.focus();
-    }
   };
 
   private insertToolbarMenuItem = (btn: any) =>

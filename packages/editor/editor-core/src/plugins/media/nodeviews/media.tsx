@@ -1,6 +1,7 @@
 import {
+  ContextIdentifierProvider,
   ImageLoaderProps,
-  ProviderFactory,
+  MediaProvider,
   withImageLoader,
 } from '@uidu/editor-common';
 import Card from '@uidu/media-card';
@@ -9,7 +10,6 @@ import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { Component } from 'react';
 import { ProsemirrorGetPosHandler, ReactNodeProps } from '../../../nodeviews';
-import { MediaProvider } from '../pm-plugins/main';
 import { stateKey as mediaStateKey } from '../pm-plugins/plugin-key';
 import { MediaPluginState } from '../pm-plugins/types';
 
@@ -23,17 +23,20 @@ export interface MediaNodeProps extends ReactNodeProps, ImageLoaderProps {
   view: EditorView;
   node: PMNode;
   getPos: ProsemirrorGetPosHandler;
-  providerFactory?: ProviderFactory;
+  contextIdentifierProvider?: ContextIdentifierProvider;
   cardDimensions: any;
+  originalDimensions?: any;
   isMediaSingle?: boolean;
   onClick?: any;
   onExternalImageLoaded?: (dimensions: {
     width: number;
     height: number;
   }) => void;
+  allowLazyLoading?: boolean;
   mediaProvider?: Promise<MediaProvider>;
-  viewContext?: any;
+  viewMediaClientConfig?: any;
   uploadComplete?: boolean;
+  isLoading?: boolean;
 }
 
 class MediaNode extends Component<MediaNodeProps> {
@@ -48,11 +51,15 @@ class MediaNode extends Component<MediaNodeProps> {
   shouldComponentUpdate(nextProps: MediaNodeProps & ImageLoaderProps) {
     if (
       this.props.selected !== nextProps.selected ||
-      this.props.viewContext !== nextProps.viewContext ||
+      this.props.viewMediaClientConfig !== nextProps.viewMediaClientConfig ||
       this.props.uploadComplete !== nextProps.uploadComplete ||
       this.props.node.attrs.id !== nextProps.node.attrs.id ||
+      this.props.node.attrs.collection !== nextProps.node.attrs.collection ||
       this.props.cardDimensions.height !== nextProps.cardDimensions.height ||
-      this.props.cardDimensions.width !== nextProps.cardDimensions.width
+      this.props.cardDimensions.width !== nextProps.cardDimensions.width ||
+      this.props.contextIdentifierProvider !==
+        nextProps.contextIdentifierProvider ||
+      this.props.isLoading !== nextProps.isLoading
     ) {
       return true;
     }
@@ -82,15 +89,20 @@ class MediaNode extends Component<MediaNodeProps> {
       selected,
       cardDimensions,
       onClick,
-      viewContext,
+      allowLazyLoading,
+      viewMediaClientConfig,
       uploadComplete,
+      contextIdentifierProvider,
+      originalDimensions,
+      isLoading,
     } = this.props;
 
     const { id, type, url, file } = node.attrs;
 
     if (
       type !== 'external' &&
-      (!viewContext || (typeof uploadComplete === 'boolean' && !uploadComplete))
+      (!viewMediaClientConfig ||
+        (typeof uploadComplete === 'boolean' && !uploadComplete))
     ) {
       return <div>Loading...</div>;
       // return <CardLoading dimensions={cardDimensions} />;

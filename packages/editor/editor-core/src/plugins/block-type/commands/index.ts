@@ -1,3 +1,17 @@
-export * from './block-type';
-export * from './insert-block';
-export * from './transform-to-code-block';
+export {
+  cleanUpAtTheStartOfDocument,
+  InputMethod,
+  insertBlockType,
+  insertBlockTypesWithAnalytics,
+  setBlockType,
+  setBlockTypeWithAnalytics,
+  setHeading,
+  setHeadingWithAnalytics,
+  setNormalText,
+  setNormalTextWithAnalytics,
+} from './block-type';
+export { insertBlock } from './insert-block';
+export {
+  isConvertableToCodeBlock,
+  transformToCodeBlockAction,
+} from './transform-to-code-block';

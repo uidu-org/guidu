@@ -1,11 +1,11 @@
+import { startMeasure, stopMeasure } from '@uidu/editor-common';
+import { Schema } from 'prosemirror-model';
 import {
   EditorState,
-  Transaction,
   Plugin,
   PluginSpec,
+  Transaction,
 } from 'prosemirror-state';
-import { Schema } from 'prosemirror-model';
-import { startMeasure, stopMeasure } from '@atlaskit/editor-common';
 import { EditorView } from 'prosemirror-view';
 
 export class InstrumentedPlugin<

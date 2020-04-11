@@ -1,11 +1,9 @@
 import {
   EditorState,
   Plugin,
-  PluginKey,
   TextSelection,
   Transaction,
 } from 'prosemirror-state';
-import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../../event-dispatcher';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';
 import { dismissCommand } from '../commands/dismiss';
@@ -20,8 +18,11 @@ import {
 } from '../types';
 import { findTypeAheadQuery } from '../utils/find-query-mark';
 import { isQueryActive } from '../utils/is-query-active';
+import { ACTIONS } from './actions';
+import { pluginKey } from './plugin-key';
 
-export const pluginKey = new PluginKey('typeAheadPlugin');
+export { ACTIONS } from './actions';
+export { pluginKey } from './plugin-key';
 
 export type PluginState = {
   isAllowed: boolean;
@@ -39,16 +40,6 @@ export type PluginState = {
   downKeyCount: number;
   highlight?: JSX.Element | null;
 };
-
-export const ACTIONS = {
-  SELECT_PREV: 'SELECT_PREV',
-  SELECT_NEXT: 'SELECT_NEXT',
-  SELECT_CURRENT: 'SELECT_CURRENT',
-  SET_CURRENT_INDEX: 'SET_CURRENT_INDEX',
-  SET_QUERY: 'SET_QUERY',
-  ITEMS_LIST_UPDATED: 'ITEMS_LIST_UPDATED',
-};
-
 export function createInitialPluginState(
   prevActiveState = false,
   isAllowed = true,
@@ -72,7 +63,7 @@ export function createInitialPluginState(
 
 export function createPlugin(
   dispatch: Dispatch,
-  intl: IntlShape,
+  reactContext: () => { [key: string]: any },
   typeAhead: Array<TypeAheadHandler>,
 ): Plugin {
   return new Plugin({
@@ -85,7 +76,6 @@ export function createPlugin(
       apply(tr, pluginState, _oldState, state) {
         const meta = tr.getMeta(pluginKey) || {};
         const { action, params } = meta;
-
         switch (action) {
           case ACTIONS.SET_CURRENT_INDEX:
             return setCurrentItemIndex({
@@ -112,7 +102,7 @@ export function createPlugin(
             return tr.doc.rangeHasMark(from - 1, to, typeAheadQuery)
               ? defaultActionHandler({
                   dispatch,
-                  intl,
+                  reactContext,
                   typeAhead,
                   state,
                   pluginState,
@@ -126,7 +116,7 @@ export function createPlugin(
           default:
             return defaultActionHandler({
               dispatch,
-              intl,
+              reactContext,
               typeAhead,
               state,
               pluginState,
@@ -178,7 +168,7 @@ export function createPlugin(
             !doc.rangeHasMark(from - 1, to, typeAheadQuery)
           ) {
             dismissCommand()(state, dispatch);
-            return undefined;
+            return;
           }
 
           // Fetch type ahead items if handler returned a promise.
@@ -289,14 +279,14 @@ export function createItemsLoader(
 
 export function defaultActionHandler({
   dispatch,
-  intl,
+  reactContext,
   typeAhead,
   pluginState,
   state,
   tr,
 }: {
   dispatch: Dispatch;
-  intl: IntlShape;
+  reactContext: () => { [key: string]: any };
   typeAhead: Array<TypeAheadHandler>;
   pluginState: PluginState;
   state: EditorState;
@@ -309,6 +299,13 @@ export function defaultActionHandler({
   const isAllowed = isMarkTypeAllowedInCurrentSelection(typeAheadQuery, state);
 
   if (!isAllowed && !isActive) {
+    if (
+      pluginState &&
+      pluginState.active === isActive &&
+      pluginState.isAllowed === isAllowed
+    ) {
+      return pluginState;
+    }
     const newPluginState = createInitialPluginState(
       pluginState.active,
       isAllowed,
@@ -357,13 +354,15 @@ export function defaultActionHandler({
   let highlight: JSX.Element | null = null;
 
   try {
+    const { intl } = reactContext();
     typeAheadItems = typeAheadHandler.getItems(
       query,
       state,
       intl,
       {
         prevActive: pluginState.prevActiveState,
-        queryChanged: query !== pluginState.query,
+        queryChanged:
+          query !== pluginState.query || trigger !== pluginState.trigger,
       },
       tr,
       dispatch,
@@ -485,8 +484,8 @@ export function itemsListUpdatedActionHandler({
     ...pluginState,
     items,
     itemsLoader: null,
-    currentIndex:
-      pluginState.currentIndex > items.length ? 0 : pluginState.currentIndex,
+    // Set to 0 to always reset the query to the top of the typeahead
+    currentIndex: 0,
   };
   dispatch(pluginKey, newPluginState);
   return newPluginState;

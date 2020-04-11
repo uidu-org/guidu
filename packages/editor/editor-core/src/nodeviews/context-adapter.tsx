@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export type ContextAdapter = Record<string, React.Context<any>>;
 
@@ -40,7 +40,7 @@ export const createContextAdapter = (createContextAdapter: ContextAdapter) => {
         const Consumer = createContextAdapter[name].Consumer;
         return (
           <Consumer key={idx}>
-            {value => {
+            {(value) => {
               // update local copy of value provided from Consumer
               if (this.contextState[name] !== value) {
                 this.contextState[name] = value;

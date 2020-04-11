@@ -1,30 +1,29 @@
-import { EditorPlugin } from '../../../types';
+import { ProviderFactory } from '@uidu/editor-common/provider-factory';
 import { EditorPresetProps } from './types';
 
-export const removeExcludes = (
-  plugins: EditorPlugin[],
-  excludes: EditorPresetProps['excludes'],
+export const addExcludesFromProviderFactory = (
+  providerFactory: ProviderFactory,
+  excludes: EditorPresetProps['excludes'] = new Set(),
 ) => {
-  if (excludes) {
-    return plugins.filter(plugin => excludes.indexOf(plugin.name) === -1);
+  // TODO: Should I make this function pure?
+  if (!providerFactory.hasProvider('mentionProvider')) {
+    excludes.add('mention');
   }
-  return plugins;
-};
-
-export type ExperimentalPluginMap = Map<string, EditorPlugin>;
-export const enableExperimental = (
-  plugins: EditorPlugin[],
-  experimental: EditorPresetProps['experimental'],
-  experimentalPluginMap: ExperimentalPluginMap,
-) => {
-  if (experimental && experimental.length) {
-    experimental.map(pluginName => {
-      const plugin = experimentalPluginMap.get(pluginName);
-      if (plugin) {
-        plugins.push(plugin);
-      }
-    });
+  if (!providerFactory.hasProvider('emojiProvider')) {
+    excludes.add('emoji');
+  }
+  if (!providerFactory.hasProvider('macroProvider')) {
+    excludes.add('macro');
+  }
+  if (!providerFactory.hasProvider('autoformattingProvider')) {
+    excludes.add('customAutoformat');
+  }
+  if (!providerFactory.hasProvider('taskDecisionProvider')) {
+    excludes.add('taskDecision');
+  }
+  if (!providerFactory.hasProvider('cardProvider')) {
+    excludes.add('card');
   }
 
-  return plugins;
+  return excludes;
 };

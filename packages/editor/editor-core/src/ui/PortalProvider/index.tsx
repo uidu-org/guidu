@@ -1,11 +1,23 @@
-import * as React from 'react';
-import { createPortal, unmountComponentAtNode, unstable_renderSubtreeIntoContainer } from 'react-dom';
+import React from 'react';
+import {
+  createPortal,
+  unmountComponentAtNode,
+  unstable_renderSubtreeIntoContainer,
+} from 'react-dom';
 import { EventDispatcher } from '../../event-dispatcher';
+import { FireAnalyticsCallback } from '../../plugins/analytics/fire-analytics-event';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  EVENT_TYPE,
+} from '../../plugins/analytics/types/enums';
 
 export type PortalProviderProps = {
   render: (
     portalProviderAPI: PortalProviderAPI,
   ) => React.ReactChild | JSX.Element | null;
+  onAnalyticsEvent?: FireAnalyticsCallback;
 };
 
 export type Portals = Map<HTMLElement, React.ReactChild>;
@@ -22,6 +34,12 @@ type MountedPortal = {
 export class PortalProviderAPI extends EventDispatcher {
   portals: Map<HTMLElement, MountedPortal> = new Map();
   context: any;
+  onAnalyticsEvent?: FireAnalyticsCallback;
+
+  constructor(onAnalyticsEvent?: FireAnalyticsCallback) {
+    super();
+    this.onAnalyticsEvent = onAnalyticsEvent;
+  }
 
   setContext = (context: any) => {
     this.context = context;
@@ -46,7 +64,7 @@ export class PortalProviderAPI extends EventDispatcher {
   forceUpdate() {
     this.portals.forEach((portal, container) => {
       if (!portal.hasReactContext) {
-        return undefined;
+        return;
       }
 
       unstable_renderSubtreeIntoContainer(
@@ -59,16 +77,47 @@ export class PortalProviderAPI extends EventDispatcher {
 
   remove(container: HTMLElement) {
     this.portals.delete(container);
-    unmountComponentAtNode(container);
+
+    // There is a race condition that can happen caused by Prosemirror vs React,
+    // where Prosemirror removes the container from the DOM before React gets
+    // around to removing the child from the container
+    // This will throw a NotFoundError: The node to be removed is not a child of this node
+    // Both Prosemirror and React remove the elements asynchronously, and in edge
+    // cases Prosemirror beats React
+    try {
+      unmountComponentAtNode(container);
+    } catch (error) {
+      if (this.onAnalyticsEvent) {
+        this.onAnalyticsEvent({
+          payload: {
+            action: ACTION.FAILED_TO_UNMOUNT,
+            actionSubject: ACTION_SUBJECT.EDITOR,
+            actionSubjectId: ACTION_SUBJECT_ID.REACT_NODE_VIEW,
+            attributes: {
+              error,
+              domNodes: {
+                container: container ? container.className : undefined,
+                child: container.firstElementChild
+                  ? container.firstElementChild.className
+                  : undefined,
+              },
+            },
+            eventType: EVENT_TYPE.OPERATIONAL,
+          },
+        });
+      }
+    }
   }
 }
 
 export class PortalProvider extends React.Component<PortalProviderProps> {
+  static displayName = 'PortalProvider';
+
   portalProviderAPI: PortalProviderAPI;
 
   constructor(props: PortalProviderProps) {
     super(props);
-    this.portalProviderAPI = new PortalProviderAPI();
+    this.portalProviderAPI = new PortalProviderAPI(props.onAnalyticsEvent);
   }
 
   render() {

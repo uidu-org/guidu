@@ -9,7 +9,7 @@ import { css } from 'styled-components';
 export const extensionStyles = css`
   .extensionView-content-wrap,
   .bodiedExtensionView-content-wrap {
-    margin: ${blockNodesVerticalMargin}rem 0;
+    margin: ${blockNodesVerticalMargin} 0;
 
     &:first-of-type {
       margin-top: 0;

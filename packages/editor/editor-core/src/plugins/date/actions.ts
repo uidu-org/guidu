@@ -1,4 +1,5 @@
 import { todayTimestampInUTC } from '@uidu/editor-common';
+import { Fragment } from 'prosemirror-model';
 import {
   EditorState,
   NodeSelection,
@@ -13,9 +14,9 @@ import {
   addAnalytics,
   EVENT_TYPE,
 } from '../analytics';
-import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock';
-import { DateType } from './index';
-import { pluginKey } from './plugin';
+import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
+import { pluginKey } from './pm-plugins/plugin-key';
+import { DateType } from './types';
 
 export const insertDate = (
   date?: DateType,
@@ -43,9 +44,12 @@ export const insertDate = (
 
   if (!showDatePickerAt) {
     const dateNode = schema.nodes.date.createChecked({ timestamp });
+    const textNode = state.schema.text(' ');
+    const fragment = Fragment.fromArray([dateNode, textNode]);
+    const { from, to } = state.selection;
     dispatch(
       tr
-        .replaceSelectionWith(dateNode)
+        .replaceWith(from, to, fragment)
         .setSelection(NodeSelection.create(tr.doc, state.selection.$from.pos))
         .scrollIntoView(),
     );

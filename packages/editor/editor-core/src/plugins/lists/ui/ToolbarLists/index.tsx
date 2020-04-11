@@ -23,7 +23,7 @@ import {
 import ToolbarButton from '../../../../ui/ToolbarButton';
 import { INPUT_METHOD } from '../../../analytics';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
-import { TOOLBAR_MENU_TYPE } from '../../../insert-block/ui/ToolbarInsertBlock';
+import { TOOLBAR_MENU_TYPE } from '../../../insert-block/ui/ToolbarInsertBlock/types';
 import { toggleBulletList, toggleOrderedList } from '../../commands';
 import { messages } from '../../messages';
 

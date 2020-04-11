@@ -1,4 +1,10 @@
 // Used in products integration code
+export {
+  CardProvider,
+  ExtensionType,
+  MacroAttributes,
+  MacroProvider,
+} from '@uidu/editor-common/provider-factory';
 export { EmojiResource } from '@uidu/emoji';
 export {
   AbstractMentionResource,
@@ -21,7 +27,6 @@ export {
   AnnotationProvider,
 } from './plugins/annotation';
 export { insertBlockType, setBlockType } from './plugins/block-type/commands';
-export { CardProvider } from './plugins/card';
 export { CollabEditProvider } from './plugins/collab-edit';
 export {
   GapCursorSelection,
@@ -50,7 +55,6 @@ export {
   ListsPluginState as ListsState,
   pluginKey as listsStateKey,
 } from './plugins/lists/pm-plugins/main';
-export { ExtensionType, MacroAttributes, MacroProvider } from './plugins/macro';
 export {
   CustomMediaPicker,
   default as mediaPlugin,

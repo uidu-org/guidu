@@ -1,6 +1,6 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import EditorActions from '../../actions';
 import { EventDispatcher } from '../../event-dispatcher';
@@ -22,13 +22,15 @@ export interface Props {
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;
   popupsScrollableElement?: HTMLElement;
-  containerElement: HTMLElement | undefined;
+  containerElement: HTMLElement | null;
   disabled: boolean;
   dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
   contentArea?: HTMLElement;
 }
 
 export default class PluginSlot extends React.Component<Props, any> {
+  static displayName = 'PluginSlot';
+
   transitionEvent = whichTransitionEvent<'transitionend'>();
 
   shouldComponentUpdate(nextProps: Props) {
@@ -85,7 +87,7 @@ export default class PluginSlot extends React.Component<Props, any> {
   removeModeChangeListener = (contentArea?: HTMLElement) => {
     if (contentArea && this.transitionEvent) {
       contentArea.removeEventListener(
-        this.transitionEvent as any,
+        this.transitionEvent,
         this.forceComponentUpdate,
       );
     }
@@ -98,7 +100,7 @@ export default class PluginSlot extends React.Component<Props, any> {
        * to full width / default mode completes
        */
       contentArea.addEventListener(
-        this.transitionEvent as any,
+        this.transitionEvent,
         this.forceComponentUpdate,
       );
     }

@@ -126,10 +126,13 @@ export const insertMediaGroupNode = (
     grandParentAcceptMediaGroup(state, mediaNodes);
   const withParagraph = shouldAppendParagraph(state, nodeAtInsertionPoint);
 
+  let content: PMNode[] =
+    parent.type === schema.nodes.mediaGroup
+      ? mediaNodes // If parent is a mediaGroup do not wrap items again.
+      : [schema.nodes.mediaGroup.createChecked({}, mediaNodes)];
+
   if (shouldSplit) {
-    const content: PMNode[] = withParagraph
-      ? mediaNodes.concat(paragraph.create())
-      : mediaNodes;
+    content = withParagraph ? content.concat(paragraph.create()) : content;
 
     // delete the selection or empty paragraph
     // delete the selection or empty paragraph
@@ -151,11 +154,6 @@ export const insertMediaGroupNode = (
     setSelectionAfterMediaInsertion(view);
     return undefined;
   }
-
-  const content =
-    parent.type === schema.nodes.mediaGroup
-      ? mediaNodes // If parent is a mediaGroup do not wrap items again.
-      : [schema.nodes.mediaGroup.createChecked({}, mediaNodes)];
 
   // Don't append new paragraph when adding media to a existing mediaGroup
   if (withParagraph && parent.type !== schema.nodes.mediaGroup) {

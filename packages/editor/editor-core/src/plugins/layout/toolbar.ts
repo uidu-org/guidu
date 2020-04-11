@@ -7,22 +7,22 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { EditorState } from 'prosemirror-state';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { defineMessages, IntlShape, MessageDescriptor } from 'react-intl';
+import commonMessages from '../../messages';
 import {
   FloatingToolbarButton,
   FloatingToolbarConfig,
   FloatingToolbarItem,
   FloatingToolbarSeparator,
   Icon,
-} from '../../../src/plugins/floating-toolbar/types';
-import { Command } from '../../../src/types';
-import commonMessages from '../../messages';
+} from '../../plugins/floating-toolbar/types';
+import { Command } from '../../types';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
 import {
   deleteActiveLayoutNode,
   getPresetLayout,
-  PresetLayout,
   setPresetLayout,
 } from './actions';
+import { PresetLayout } from './types';
 
 export const messages = defineMessages({
   twoColumns: {
@@ -128,13 +128,13 @@ export const buildToolbar = (
 
     return {
       title: 'Layout floating controls',
-      getDomRef: view =>
+      getDomRef: (view) =>
         findDomRefAtPos(pos, view.domAtPos.bind(view)) as HTMLElement,
       nodeType,
       items: [
-        ...LAYOUT_TYPES.map(i => buildLayoutButton(intl, i, currentLayout)),
+        ...LAYOUT_TYPES.map((i) => buildLayoutButton(intl, i, currentLayout)),
         ...(addSidebarLayouts
-          ? SIDEBAR_LAYOUT_TYPES.map(i =>
+          ? SIDEBAR_LAYOUT_TYPES.map((i) =>
               buildLayoutButton(intl, i, currentLayout),
             )
           : []),

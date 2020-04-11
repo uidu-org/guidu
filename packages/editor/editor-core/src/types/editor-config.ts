@@ -1,26 +1,10 @@
-import { MarkSpec, NodeSpec } from 'prosemirror-model';
 import { EditorState, Transaction } from 'prosemirror-state';
-import { NodeView } from 'prosemirror-view';
-import {
-  PMPlugin,
-  ToolbarUIComponentFactory,
-  UIComponentFactory,
-} from './editor-plugin';
-
-export interface NodeConfig {
-  name: string;
-  node: NodeSpec;
-}
-
-export interface MarkConfig {
-  name: string;
-  mark: MarkSpec;
-}
-
-export interface NodeViewConfig {
-  name: string;
-  nodeView: NodeView;
-}
+import { ToolbarUIComponentFactory } from '../ui/Toolbar/types';
+import { MarkConfig, NodeConfig } from './pm-config';
+// TODO: Check if this circular dependency is still needed or is just legacy
+// eslint-disable-next-line import/no-cycle
+import { PMPlugin } from './pm-plugin';
+import { UIComponentFactory } from './ui-components';
 
 type EditorViewStateUpdatedCallbackProps = {
   readonly transaction: Readonly<Transaction>;

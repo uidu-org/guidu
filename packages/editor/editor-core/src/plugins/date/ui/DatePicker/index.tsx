@@ -6,10 +6,10 @@ import {
   timestampToUTCDate,
 } from '@uidu/editor-common';
 import { borderRadius, colors } from '@uidu/theme';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import withOuterListeners from '../../../../ui/with-outer-listeners';
-import { DateType } from '../../index';
+import { DateType } from '../../types';
 
 const PopupWithListeners = withOuterListeners(Popup);
 

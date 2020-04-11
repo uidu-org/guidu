@@ -1,8 +1,8 @@
-import { Transformer } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import { EventDispatcher } from '../event-dispatcher';
-import { InsertMenuCustomItem } from '../types';
-import { ToolbarUIComponentFactory, UIComponentFactory } from './editor-plugin';
+import { MenuItem } from '../ui/DropdownMenu/types';
+import { ToolbarUIComponentFactory } from '../ui/Toolbar/types';
+import { UIComponentFactory } from './ui-components';
 
 export interface EditorInstance {
   editorView: EditorView;
@@ -11,5 +11,5 @@ export interface EditorInstance {
   primaryToolbarComponents: ToolbarUIComponentFactory[];
   secondaryToolbarComponents: UIComponentFactory[];
   contentTransformer?: Transformer<string>;
-  insertMenuItems?: InsertMenuCustomItem[];
+  insertMenuItems?: MenuItem[];
 }

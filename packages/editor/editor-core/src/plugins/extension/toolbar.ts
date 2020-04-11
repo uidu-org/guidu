@@ -6,7 +6,7 @@ import RemoveIcon from '@atlaskit/icon/glyph/editor/remove';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { hasParentNodeOfType } from 'prosemirror-utils';
-import { defineMessages, WrappedComponentProps } from 'react-intl';
+import { defineMessages, IntlShape } from 'react-intl';
 import commonMessages from '../../messages';
 import { Command } from '../../types';
 import { hoverDecoration } from '../base/pm-plugins/decoration';
@@ -14,13 +14,12 @@ import {
   FloatingToolbarHandler,
   FloatingToolbarItem,
 } from '../floating-toolbar/types';
-import { MacroState, pluginKey as macroPluginKey } from '../macro';
-import {
-  editExtension,
-  removeExtension,
-  updateExtensionLayout,
-} from './actions';
-import { ExtensionState, pluginKey } from './plugin';
+import { MacroState } from '../macro';
+import { pluginKey as macroPluginKey } from '../macro/plugin-key';
+import { editExtension } from './actions';
+import { removeExtension, updateExtensionLayout } from './commands';
+import { getPluginState } from './plugin';
+import { ExtensionState } from './types';
 
 export const messages = defineMessages({
   edit: {
@@ -36,7 +35,7 @@ const isLayoutSupported = (
 ) => {
   const {
     schema: {
-      nodes: { bodiedExtension, extension, layoutSection, table },
+      nodes: { bodiedExtension, extension, layoutSection, table, expand },
     },
     selection,
   } = state;
@@ -48,19 +47,21 @@ const isLayoutSupported = (
   return !!(
     (selectedExtNode.node.type === bodiedExtension ||
       (selectedExtNode.node.type === extension &&
-        !hasParentNodeOfType([bodiedExtension, table])(selection))) &&
+        !hasParentNodeOfType([bodiedExtension, table, expand].filter(Boolean))(
+          selection,
+        ))) &&
     !hasParentNodeOfType([layoutSection])(selection)
   );
 };
 
 const breakoutOptions = (
   state: EditorState,
-  formatMessage: WrappedComponentProps['intl']['formatMessage'],
+  formatMessage: IntlShape['formatMessage'],
   extensionState: ExtensionState,
   breakoutEnabled: boolean,
 ): Array<FloatingToolbarItem<Command>> => {
-  const { layout, allowBreakout, node } = extensionState;
-  return breakoutEnabled && allowBreakout && isLayoutSupported(state, node)
+  const { layout, nodeWithPos } = extensionState;
+  return nodeWithPos && breakoutEnabled && isLayoutSupported(state, nodeWithPos)
     ? [
         {
           type: 'button',
@@ -88,9 +89,9 @@ const breakoutOptions = (
 };
 
 const editButton = (
-  formatMessage: WrappedComponentProps['intl']['formatMessage'],
-  macroState: MacroState,
+  formatMessage: IntlShape['formatMessage'],
   extensionState: ExtensionState,
+  allowNewConfigPanel: boolean,
 ): Array<FloatingToolbarItem<Command>> => {
   if (!extensionState.showEditButton) {
     return [];
@@ -100,10 +101,15 @@ const editButton = (
     {
       type: 'button',
       icon: EditIcon,
-      onClick: editExtension(
-        macroState && macroState.macroProvider,
-        extensionState.updateExtension,
-      ),
+      // Taking the latest `updateExtension` from plugin state to avoid race condition @see ED-8501
+      onClick: (state, dispatch) => {
+        const macroState: MacroState = macroPluginKey.getState(state);
+        return editExtension(
+          macroState && macroState.macroProvider,
+          allowNewConfigPanel,
+          getPluginState(state).updateExtension,
+        )(state, dispatch);
+      },
       title: formatMessage(messages.edit),
     },
   ];
@@ -111,30 +117,44 @@ const editButton = (
 
 export const getToolbarConfig = (
   breakoutEnabled: boolean = true,
+  allowNewConfigPanel: boolean = false,
 ): FloatingToolbarHandler => (state, { formatMessage }) => {
-  const extensionState: ExtensionState = pluginKey.getState(state);
-  const macroState: MacroState = macroPluginKey.getState(state);
-  if (extensionState && extensionState.element) {
+  const extensionState = getPluginState(state);
+
+  if (
+    extensionState &&
+    !extensionState.showContextPanel &&
+    extensionState.element
+  ) {
     const nodeType = [
       state.schema.nodes.extension,
       state.schema.nodes.inlineExtension,
       state.schema.nodes.bodiedExtension,
     ];
 
+    const editButtonArray = editButton(
+      formatMessage,
+      extensionState,
+      allowNewConfigPanel,
+    );
+    const breakoutButtonArray = breakoutOptions(
+      state,
+      formatMessage,
+      extensionState,
+      breakoutEnabled,
+    );
+
     return {
       title: 'Extension floating controls',
       getDomRef: () => extensionState.element!.parentElement || undefined,
       nodeType,
       items: [
-        ...editButton(formatMessage, macroState, extensionState),
-        ...breakoutOptions(
-          state,
-          formatMessage,
-          extensionState,
-          breakoutEnabled,
-        ),
+        ...editButtonArray,
+        ...breakoutButtonArray,
         {
           type: 'separator',
+          hidden:
+            editButtonArray.length === 0 && breakoutButtonArray.length === 0,
         },
         {
           type: 'button',

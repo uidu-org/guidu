@@ -2,48 +2,14 @@ import DropList from '@uidu/droplist';
 import { akEditorFloatingPanelZIndex, Popup } from '@uidu/editor-common';
 import Item, { ItemGroup } from '@uidu/item';
 import Tooltip from '@uidu/tooltip';
-import * as React from 'react';
-import { PureComponent, ReactElement } from 'react';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import withOuterListeners from '../with-outer-listeners';
+import { Props, State } from './types';
 
 const Wrapper = styled.div`
   line-height: 0;
 `;
-
-export interface Props {
-  mountTo?: HTMLElement;
-  boundariesElement?: HTMLElement;
-  scrollableElement?: HTMLElement;
-  isOpen?: boolean;
-  onOpenChange?: (attrs: any) => void;
-  onItemActivated?: (attrs: any) => void;
-  onMouseEnter?: (attrs: any) => void;
-  onMouseLeave?: (attrs: any) => void;
-  fitWidth?: number;
-  fitHeight?: number;
-  offset?: Array<number>;
-  zIndex?: number;
-  items: Array<{
-    items: MenuItem[];
-  }>;
-}
-
-export interface MenuItem {
-  key?: string;
-  content: string | ReactElement<any>;
-  elemBefore?: React.ReactNode;
-  elemAfter?: React.ReactNode;
-  tooltipDescription?: string;
-  tooltipPosition?: string;
-  isActive: boolean;
-  isDisabled?: boolean;
-}
-
-export interface State {
-  target?: HTMLElement;
-  popupPlacement: [string, string];
-}
 
 const DropListWithOutsideListeners: any = withOuterListeners(DropList);
 
@@ -62,7 +28,7 @@ const ItemContentWrapper: any = styled.span`
 `;
 
 /**
- * Wrapper around @uidu/droplist which uses Popup and Portal to render
+ * Wrapper around @atlaskit/droplist which uses Popup and Portal to render
  * dropdown-menu outside of "overflow: hidden" containers when needed.
  *
  * Also it controls popper's placement.
@@ -116,7 +82,7 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
     if (item.tooltipDescription) {
       return (
         <Tooltip
-          key={item.content}
+          key={item.key || item.content}
           content={item.tooltipDescription}
           position={item.tooltipPosition}
         >
@@ -164,14 +130,12 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
           handleClickOutside={this.handleClose}
           handleEscapeKeydown={this.handleClose}
         >
-          <div>
-            <div style={{ height: 0, minWidth: fitWidth || 0 }} />
-            {items.map((group, index) => (
-              <ItemGroup key={index}>
-                {group.items.map(item => this.renderItem(item))}
-              </ItemGroup>
-            ))}
-          </div>
+          <div style={{ height: 0, minWidth: fitWidth || 0 }} />
+          {items.map((group, index) => (
+            <ItemGroup key={index}>
+              {group.items.map((item) => this.renderItem(item))}
+            </ItemGroup>
+          ))}
         </DropListWithOutsideListeners>
       </Popup>
     );

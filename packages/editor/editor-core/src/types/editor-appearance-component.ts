@@ -3,18 +3,15 @@ import { EditorView } from 'prosemirror-view';
 import EditorActions from '../actions';
 import { EventDispatcher } from '../event-dispatcher';
 import { DispatchAnalyticsEvent } from '../plugins/analytics';
-import { CollabEditOptions } from '../plugins/collab-edit';
-import {
-  InsertMenuCustomItem,
-  ReactComponents,
-  ToolbarUIComponentFactory,
-  UIComponentFactory,
-} from '../types';
-import { EditorAppearance } from './editor-props';
+import { CollabEditOptions } from '../plugins/collab-edit/types';
+import { ReactComponents } from '../types/editor-props';
+import { UIComponentFactory } from '../types/ui-components';
+import { MenuItem } from '../ui/DropdownMenu/types';
+import { ToolbarUIComponentFactory } from '../ui/Toolbar/types';
+import { EditorAppearance } from './editor-appearance';
 
 export interface EditorAppearanceComponentProps {
   appearance?: EditorAppearance;
-  onUiReady?: (ref: HTMLElement) => void;
   onSave?: (editorView: EditorView) => void;
   onCancel?: (editorView: EditorView) => void;
 
@@ -35,9 +32,8 @@ export interface EditorAppearanceComponentProps {
   customContentComponents?: ReactComponents;
   customPrimaryToolbarComponents?: ReactComponents;
   customSecondaryToolbarComponents?: ReactComponents;
-  insertMenuItems?: InsertMenuCustomItem[];
-
-  addonToolbarComponents?: ReactComponents;
+  insertMenuItems?: MenuItem[];
+  contextPanel?: ReactComponents;
 
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;

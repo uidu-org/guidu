@@ -10,6 +10,7 @@ export {
 } from './block-type';
 // export { default as cardPlugin } from './card';
 export { default as clearMarksOnChangeToEmptyDocumentPlugin } from './clear-marks-on-change-to-empty-document';
+export { default as contextPanelPlugin } from './context-panel';
 // export { default as codeBlockPlugin } from './code-block';
 // export { CollabEditProvider, default as collabEditPlugin } from './collab-edit';
 export { default as customAutoformatPlugin } from './custom-autoformat';

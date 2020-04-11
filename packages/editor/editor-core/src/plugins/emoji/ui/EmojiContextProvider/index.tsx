@@ -1,5 +1,5 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 export class EmojiContextProvider extends React.Component<any, any> {
   static childContextTypes = {

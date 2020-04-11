@@ -1,6 +1,5 @@
 import { emoji } from '@uidu/adf-schema';
-import { CreateUIAnalyticsEvent } from '@uidu/analytics';
-import { ProviderFactory } from '@uidu/editor-common';
+import { ProviderFactory } from '@uidu/editor-common/provider-factory';
 import {
   EmojiDescription,
   EmojiProvider,
@@ -8,7 +7,7 @@ import {
   SearchSort,
 } from '@uidu/emoji';
 import { EditorState, Plugin, PluginKey, StateField } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import { analyticsService } from '../../analytics';
 import { Dispatch } from '../../event-dispatcher';
 import { Command, EditorPlugin } from '../../types';
@@ -21,12 +20,13 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconEmoji } from '../quick-insert/assets';
 import { typeAheadPluginKey, TypeAheadPluginState } from '../type-ahead';
 import { TypeAheadItem } from '../type-ahead/types';
 import emojiNodeView from './nodeviews/emoji';
 import { inputRulePlugin as asciiInputRulePlugin } from './pm-plugins/ascii-input-rules';
+import { EmojiPluginOptions, EmojiPluginState } from './types';
 import { EmojiContextProvider } from './ui/EmojiContextProvider';
 
 export const defaultListLimit = 50;
@@ -35,12 +35,6 @@ const isFullShortName = (query?: string) =>
   query.length > 1 &&
   query.charAt(0) === ':' &&
   query.charAt(query.length - 1) === ':';
-
-export interface EmojiPluginOptions {
-  createAnalyticsEvent?: CreateUIAnalyticsEvent;
-  allowZeroWidthSpaceAfter?: boolean;
-  useInlineWrapper?: boolean;
-}
 
 const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
   name: 'emoji',
@@ -172,6 +166,8 @@ const emojiPlugin = (options?: EmojiPluginOptions): EditorPlugin => ({
           item.emoji
         ) {
           emojiPluginState.emojiProvider.recordSelection(item.emoji);
+          // .then(recordSelectionSucceededSli(options))
+          // .catch(recordSelectionFailedSli(options));
         }
 
         analyticsService.trackEvent('atlassian.fabric.emoji.typeahead.select', {
@@ -248,11 +244,6 @@ export const setResults = (results: {
     );
   }
   return true;
-};
-
-export type EmojiPluginState = {
-  emojiProvider?: EmojiProvider;
-  emojis?: Array<EmojiDescription>;
 };
 
 export const emojiPluginKey = new PluginKey('emojiPlugin');

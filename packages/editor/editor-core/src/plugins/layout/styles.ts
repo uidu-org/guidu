@@ -1,8 +1,9 @@
-// @ts-ignore: unused variable
 import {
   akEditorDeleteBackground,
   akEditorDeleteBorder,
   akEditorSelectedBorderSize,
+  akEditorSwoopCubicBezier,
+  akLayoutGutterOffset,
   columnLayoutSharedStyle,
   gridMediumMaxWidth,
 } from '@uidu/editor-common';
@@ -11,7 +12,6 @@ import { css } from 'styled-components';
 import { TableCssClassName } from '../table/types';
 import { tableMarginFullWidthMode } from '../table/ui/styles';
 
-export const LAYOUT_OFFSET = 13;
 export const LAYOUT_SECTION_MARGIN = gridSize() - 2;
 export const LAYOUT_COLUMN_PADDING = gridSize() * 1.5;
 
@@ -19,17 +19,47 @@ export const layoutStyles = css`
   .ProseMirror {
     ${columnLayoutSharedStyle} [data-layout-section] {
       position: relative;
-      margin: ${gridSize() - 1}px -${LAYOUT_OFFSET}px 0;
+      margin: ${gridSize() - 1}px -${akLayoutGutterOffset}px 0;
+      transition: border-color 0.3s ${akEditorSwoopCubicBezier};
 
       /* Inner cursor located 26px from left */
       & > * {
         flex: 1;
         min-width: 0;
-        border: 1px solid ${colors.N40};
-        border-radius: 5px;
+        border: 1px solid ${colors.N40A};
+        border-radius: 4px;
 
         > div {
           padding: ${LAYOUT_COLUMN_PADDING}px;
+
+          > *:first-child {
+            margin-top: 0;
+          }
+
+          > .ProseMirror-gapcursor.-right:first-child + * {
+            margin-top: 0;
+          }
+
+          > .ProseMirror-gapcursor:first-child + span + * {
+            margin-top: 0;
+          }
+
+          > .mediaSingleView-content-wrap:first-child .media-single {
+            margin-top: 0;
+          }
+
+          > .ProseMirror-gapcursor.-right:first-child
+            + .mediaSingleView-content-wrap
+            .media-single {
+            margin-top: 0;
+          }
+
+          > .ProseMirror-gapcursor:first-child
+            + span
+            + .mediaSingleView-content-wrap
+            .media-single {
+            margin-top: 0;
+          }
         }
       }
 
@@ -51,8 +81,9 @@ export const layoutStyles = css`
         border-color: ${colors.B200};
       }
       /* Shows the border when cursor is inside a layout */
-      &.selected > * {
-        border-color: ${colors.N50};
+      &.selected > *,
+      &:hover > * {
+        border-color: ${colors.N50A};
       }
 
       &.selected.danger > [data-layout-column] {

@@ -1,11 +1,14 @@
 import { blockquote, hardBreak, heading } from '@uidu/adf-schema';
-import { NodeSpec } from 'prosemirror-model';
+import {
+  QuickInsertActionInsert,
+  QuickInsertItem,
+} from '@uidu/editor-common/provider-factory';
 import { EditorState } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import { IntlShape } from 'react-intl';
 import * as keymaps from '../../keymaps';
-import { AllowedBlockTypes, EditorPlugin } from '../../types';
-import { ToolbarSize } from '../../ui/Toolbar';
+import { EditorPlugin } from '../../types';
+import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,
@@ -16,21 +19,13 @@ import {
   INPUT_METHOD,
 } from '../analytics';
 import { IconHeading, IconQuote } from '../quick-insert/assets';
-import {
-  QuickInsertActionInsert,
-  QuickInsertItem,
-} from '../quick-insert/types';
 import { setBlockTypeWithAnalytics } from './commands';
+import { messages } from './messages';
 import inputRulePlugin from './pm-plugins/input-rule';
 import keymapPlugin from './pm-plugins/keymap';
 import { createPlugin, pluginKey } from './pm-plugins/main';
-import { HeadingLevels, messages } from './types';
+import { BlockTypeNode, BlockTypePluginOptions, HeadingLevels } from './types';
 import ToolbarBlockType from './ui/ToolbarBlockType';
-
-interface BlockTypeNode {
-  name: AllowedBlockTypes;
-  node: NodeSpec;
-}
 
 const headingPluginOptions = ({
   formatMessage,
@@ -72,22 +67,20 @@ const headingPluginOptions = ({
     };
   });
 
-interface BlockTypePluginOptions {
-  lastNodeMustBeParagraph?: boolean;
-}
-
 const blockTypePlugin = (options?: BlockTypePluginOptions): EditorPlugin => ({
   name: 'blockType',
 
-  nodes({ allowBlockType }) {
+  nodes() {
     const nodes: BlockTypeNode[] = [
       { name: 'heading', node: heading },
       { name: 'blockquote', node: blockquote },
       { name: 'hardBreak', node: hardBreak },
     ];
 
-    if (allowBlockType) {
-      const exclude = allowBlockType.exclude ? allowBlockType.exclude : [];
+    if (options && options.allowBlockType) {
+      const exclude = options.allowBlockType.exclude
+        ? options.allowBlockType.exclude
+        : [];
       return nodes.filter((node) => exclude.indexOf(node.name) === -1);
     }
 

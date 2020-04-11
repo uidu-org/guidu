@@ -1,14 +1,13 @@
 import {
   calcBreakoutWidth,
+  ExtensionProvider,
   overflowShadow,
   OverflowShadowProps,
 } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import WithPluginState from '../../../../../ui/WithPluginState';
-import { MacroProvider } from '../../../../macro';
 import {
   pluginKey as widthPluginKey,
   WidthPluginState,
@@ -19,11 +18,11 @@ import { Content, ContentWrapper, Header, Wrapper } from './styles';
 
 export interface Props {
   node: PmNode;
-  macroProvider?: MacroProvider;
+  view: EditorView;
+  extensionProvider?: ExtensionProvider;
   handleContentDOMRef: (node: HTMLElement | null) => void;
   onSelectExtension: (hasBody: boolean) => void;
   children?: React.ReactNode;
-  view: EditorView;
 }
 
 class Extension extends Component<Props & OverflowShadowProps, any> {

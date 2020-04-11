@@ -1,7 +1,7 @@
 import { PluginKey } from 'prosemirror-state';
 
 export interface Listeners {
-  [name: string]: Listener[];
+  [name: string]: Set<Listener>;
 }
 export type Listener<T = any> = (data: T) => void;
 export type Dispatch<T = any> = (
@@ -14,28 +14,28 @@ export class EventDispatcher<T = any> {
 
   on(event: string, cb: Listener<T>): void {
     if (!this.listeners[event]) {
-      this.listeners[event] = [];
+      this.listeners[event] = new Set();
     }
 
-    this.listeners[event].push(cb);
+    this.listeners[event].add(cb);
   }
 
   off(event: string, cb: Listener<T>): void {
     if (!this.listeners[event]) {
-      return undefined;
+      return;
     }
 
-    this.listeners[event] = this.listeners[event].filter(
-      callback => callback !== cb,
-    );
+    if (this.listeners[event].has(cb)) {
+      this.listeners[event].delete(cb);
+    }
   }
 
   emit(event: string, data: T): void {
     if (!this.listeners[event]) {
-      return undefined;
+      return;
     }
 
-    this.listeners[event].forEach(cb => cb(data));
+    this.listeners[event].forEach((cb) => cb(data));
   }
 
   destroy(): void {

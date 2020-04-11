@@ -1,4 +1,7 @@
+import { FeatureFlags } from '../../../plugins/feature-flags-context/types';
+
 export interface EditorPresetProps {
-  excludes?: Array<string>;
+  excludes?: Set<string>;
   experimental?: Array<string>;
+  featureFlags?: FeatureFlags;
 }

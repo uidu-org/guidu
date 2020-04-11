@@ -1,125 +1,113 @@
+// #region Imports
 import { MentionProvider } from '@uidu/mentions';
-import * as React from 'react';
+import React from 'react';
 import {
   basePlugin,
-  blockTypePlugin,
-  clearMarksOnChangeToEmptyDocumentPlugin,
-  datePlugin,
-  editorDisabledPlugin,
   // breakoutPlugin,
-  // jiraIssuePlugin,
-  extensionPlugin,
-  floatingToolbarPlugin,
-  gapCursorPlugin,
-  hyperlinkPlugin,
-  indentationPlugin,
-  // mentionsPlugin,
-  // tasksAndDecisionsPlugin,
-  insertBlockPlugin,
-  layoutPlugin,
+  // cardPlugin,
   // codeBlockPlugin,
-  // panelPlugin,
+  datePlugin,
+  extensionPlugin,
+  indentationPlugin,
+  insertBlockPlugin,
+  // jiraIssuePlugin,
+  layoutPlugin,
   listsPlugin,
   mediaPlugin,
-  pastePlugin,
+  // mentionsPlugin,
+  // panelPlugin,
   placeholderPlugin,
-  // unsupportedContentPlugin,
   quickInsertPlugin,
   rulePlugin,
-  // cardPlugin,
   statusPlugin,
   tablesPlugin,
+  // tasksAndDecisionsPlugin,
   textColorPlugin,
-  textFormattingPlugin,
-  typeAheadPlugin,
-  widthPlugin,
 } from '../../../plugins';
 import { MediaProvider } from '../../../plugins/media';
 import { PresetProvider } from '../Editor';
+import { useDefaultPreset } from './default';
 import { EditorPresetProps } from './types';
-import {
-  enableExperimental,
-  ExperimentalPluginMap,
-  removeExcludes,
-} from './utils';
 
-interface EditorPresetCXHTMLProps {
+// #endregion
+
+export type EditorPresetCXHTMLProps = {
   children?: React.ReactNode;
   placeholder?: string;
   mentionProvider?: Promise<MentionProvider>;
   mediaProvider?: Promise<MediaProvider>;
-}
+} & EditorPresetProps;
 
-export function EditorPresetCXHTML({
-  children,
+export function useCXHTMLPreset({
   mentionProvider,
   mediaProvider,
   placeholder,
-  excludes,
-  experimental,
-}: EditorPresetCXHTMLProps & EditorPresetProps) {
-  let plugins = [
-    pastePlugin(),
-    blockTypePlugin(),
-    clearMarksOnChangeToEmptyDocumentPlugin(),
-    hyperlinkPlugin(),
-    textFormattingPlugin({}),
-    widthPlugin(),
-    quickInsertPlugin(),
-    tablesPlugin({
-      tableOptions: { advanced: true },
-    }),
-    // codeBlockPlugin(),
-    // panelPlugin(),
-    listsPlugin(),
-    textColorPlugin(),
-    // breakoutPlugin(),
-    // jiraIssuePlugin(),
-    extensionPlugin(),
-    rulePlugin(),
-    datePlugin(),
-    layoutPlugin(),
-    indentationPlugin(),
-    // cardPlugin(),
-    statusPlugin({ menuDisabled: false }),
-    // tasksAndDecisionsPlugin(),
-    insertBlockPlugin({}),
-    placeholderPlugin({ placeholder }),
-    editorDisabledPlugin(),
-    typeAheadPlugin(),
-    floatingToolbarPlugin(),
-    gapCursorPlugin(),
-  ];
+  featureFlags,
+}: EditorPresetCXHTMLProps) {
+  const [preset] = useDefaultPreset({
+    featureFlags,
+  });
+
+  // @ts-ignore
+  preset.add([
+    basePlugin,
+    {
+      allowInlineCursorTarget: true,
+      allowScrollGutter: {
+        getScrollElement: (_view) =>
+          document.querySelector('.fabric-editor-popup-scroll-parent') || null,
+      },
+    },
+  ]);
+  preset.add(quickInsertPlugin);
+  preset.add([tablesPlugin, { tableOptions: { advanced: true } }]);
+  // preset.add(codeBlockPlugin);
+  // preset.add(panelPlugin);
+  preset.add(listsPlugin);
+  preset.add(textColorPlugin);
+  // preset.add(breakoutPlugin);
+  // preset.add(jiraIssuePlugin);
+  preset.add(extensionPlugin);
+  preset.add(rulePlugin);
+  preset.add(datePlugin);
+  // @ts-ignore
+  preset.add(layoutPlugin);
+  preset.add(indentationPlugin);
+  // preset.add([cardPlugin, { allowBlockCards: true }]);
+  preset.add([statusPlugin, { menuDisabled: false }]);
+  // preset.add(tasksAndDecisionsPlugin);
+  preset.add(insertBlockPlugin);
+  // @ts-ignore
+  preset.add([placeholderPlugin, { placeholder }]);
 
   // if (mentionProvider) {
-  //   plugins.push(mentionsPlugin());
+  //   preset.add(mentionsPlugin);
   // }
 
   if (mediaProvider) {
-    plugins.push(
-      mediaPlugin({
+    // @ts-ignore
+    preset.add([
+      mediaPlugin,
+      {
         provider: mediaProvider,
         allowMediaSingle: true,
         allowMediaGroup: true,
         allowAnnotation: true,
         allowResizing: true,
-      }),
-    );
+        allowLinking: true,
+        allowResizingInTables: true,
+        allowAltTextOnImages: true,
+      },
+    ]);
   }
 
-  const experimentalMap: ExperimentalPluginMap = new Map();
-  plugins = removeExcludes(plugins, excludes);
-  plugins = enableExperimental(plugins, experimental, experimentalMap);
+  return [preset];
+}
 
-  // Add plugins that cannot be excluded for this preset.
-  plugins.push(
-    // unsupportedContentPlugin(),
-    basePlugin({
-      allowInlineCursorTarget: true,
-      allowScrollGutter: () =>
-        document.querySelector('.fabric-editor-popup-scroll-parent'),
-    }),
-  );
+export function EditorPresetCXHTML(props: EditorPresetCXHTMLProps) {
+  const { children, excludes } = props;
+  const [preset] = useCXHTMLPreset(props);
+  const plugins = preset.getEditorPlugins(excludes);
 
   return <PresetProvider value={plugins}>{children}</PresetProvider>;
 }

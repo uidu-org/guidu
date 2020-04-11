@@ -1,15 +1,16 @@
 import { Node as PMNode } from 'prosemirror-model';
 import { NodeSelection, Selection } from 'prosemirror-state';
 import { Decoration, EditorView, NodeView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import {
   ReactNodeViewState,
   stateKey as SelectionChangePluginKey,
 } from '../plugins/base/pm-plugins/react-nodeview';
 import { PortalProviderAPI } from '../ui/PortalProvider';
 
-export type getPosHandler = (() => number) | boolean;
-export type ReactComponentProps = { [key: string]: any };
+export type getPosHandler = getPosHandlerNode | boolean;
+export type getPosHandlerNode = () => number;
+export type ReactComponentProps = { [key: string]: unknown };
 export type ForwardRef = (node: HTMLElement | null) => void;
 export type shouldUpdate = (nextNode: PMNode) => boolean;
 
@@ -90,7 +91,7 @@ export default class ReactNodeView<P = ReactComponentProps>
     component: () => React.ReactElement<any> | null,
   ) {
     if (!this.domRef || !component) {
-      return undefined;
+      return;
     }
 
     this.portalProviderAPI.render(component, this.domRef!, this.hasContext);
@@ -176,7 +177,7 @@ export default class ReactNodeView<P = ReactComponentProps>
    * @param node The Prosemirror Node from which to source the attributes
    */
   setDomAttrs(node: PMNode, element: HTMLElement) {
-    Object.keys(node.attrs || {}).forEach(attr => {
+    Object.keys(node.attrs || {}).forEach((attr) => {
       element.setAttribute(attr, node.attrs[attr]);
     });
   }
@@ -187,7 +188,7 @@ export default class ReactNodeView<P = ReactComponentProps>
 
   destroy() {
     if (!this.domRef) {
-      return undefined;
+      return;
     }
 
     this.portalProviderAPI.remove(this.domRef);
@@ -284,7 +285,10 @@ export class SelectionBasedNodeView<
    * expensive, unless you know you're definitely going to render.
    */
   private updatePos() {
-    this.pos = typeof this.getPos === 'function' ? this.getPos() : +this.getPos;
+    if (typeof this.getPos === 'boolean') {
+      return;
+    }
+    this.pos = this.getPos();
     this.posEnd = this.pos + this.node.nodeSize;
   }
 
@@ -304,13 +308,31 @@ export class SelectionBasedNodeView<
     return pos < from && to < posEnd;
   };
 
-  insideSelection = () => {
-    const selection = this.view.state.selection;
-    const { from, to } = selection;
+  private isSelectedNode = (selection: Selection): boolean => {
     if (selection instanceof NodeSelection) {
-      return selection.node === this.node;
+      const {
+        selection: { from, to },
+      } = this.view.state;
+      return (
+        selection.node === this.node ||
+        // If nodes are not the same object, we check if they are referring to the same document node
+        (this.pos === from &&
+          this.posEnd === to &&
+          selection.node.eq(this.node))
+      );
     }
-    return this.isSelectionInsideNode(from, to);
+    return false;
+  };
+
+  insideSelection = () => {
+    const {
+      selection: { from, to },
+    } = this.view.state;
+
+    return (
+      this.isSelectedNode(this.view.state.selection) ||
+      this.isSelectionInsideNode(from, to)
+    );
   };
 
   viewShouldUpdate(_nextNode: PMNode) {

@@ -9,7 +9,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconFeedback } from '../quick-insert/assets';
 import loadJiraCollectorDialogScript from './loadJiraCollectorDialogScript';
 

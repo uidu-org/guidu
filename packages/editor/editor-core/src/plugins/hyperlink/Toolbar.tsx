@@ -1,10 +1,14 @@
 import UnlinkIcon from '@atlaskit/icon/glyph/editor/unlink';
 import OpenIcon from '@atlaskit/icon/glyph/shortcut';
+import { isSafeUrl } from '@uidu/adf-schema';
 import { Mark } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { linkToolbarMessages as linkToolbarCommonMessages } from '../../messages';
+import React from 'react';
+import {
+  linkMessages,
+  linkToolbarMessages as linkToolbarCommonMessages,
+} from '../../messages';
 import {
   RECENT_SEARCH_HEIGHT_IN_PX,
   RECENT_SEARCH_WIDTH_IN_PX,
@@ -78,10 +82,12 @@ const handleBlur = (
     case 'text': {
       if (text && url) {
         return activeLinkMark.type === 'INSERT'
-          ? insertLink(activeLinkMark.from, activeLinkMark.to, url, text)(
-              view.state,
-              view.dispatch,
-            )
+          ? insertLink(
+              activeLinkMark.from,
+              activeLinkMark.to,
+              url,
+              text,
+            )(view.state, view.dispatch)
           : setLinkText(text, (activeLinkMark as EditInsertedState).pos)(
               view.state,
               view.dispatch,
@@ -113,7 +119,7 @@ export const getToolbarConfig: FloatingToolbarHandler = (
         state.schema.nodes.heading,
         state.schema.nodes.taskItem,
         state.schema.nodes.decisionItem,
-      ].filter(nodeType => !!nodeType), // Use only the node types existing in the schema ED-6745
+      ].filter((nodeType) => !!nodeType), // Use only the node types existing in the schema ED-6745
       align: 'left' as AlignType,
       className: activeLinkMark.type.match('INSERT|EDIT_INSERTED')
         ? 'hyperlink-floating-toolbar'
@@ -124,11 +130,16 @@ export const getToolbarConfig: FloatingToolbarHandler = (
       case 'EDIT': {
         const { pos, node } = activeLinkMark;
         const linkMark = node.marks.filter(
-          mark => mark.type === state.schema.marks.link,
+          (mark) => mark.type === state.schema.marks.link,
         );
         const link = linkMark[0] && linkMark[0].attrs.href;
+        const isValidUrl = isSafeUrl(link);
 
-        const labelOpenLink = formatMessage(linkToolbarCommonMessages.openLink);
+        const labelOpenLink = formatMessage(
+          isValidUrl
+            ? linkMessages.openLink
+            : linkToolbarCommonMessages.unableToOpenLink,
+        );
         const labelUnlink = formatMessage(linkToolbarCommonMessages.unlink);
 
         const editLink = formatMessage(linkToolbarCommonMessages.editLink);
@@ -150,8 +161,9 @@ export const getToolbarConfig: FloatingToolbarHandler = (
             },
             {
               type: 'button',
+              disabled: !isValidUrl,
               target: '_blank',
-              href: link,
+              href: isValidUrl ? link : null,
               onClick: () => true,
               selected: false,
               title: labelOpenLink,
@@ -212,10 +224,11 @@ export const getToolbarConfig: FloatingToolbarHandler = (
                     providerFactory={providerFactory}
                     onSubmit={(href, text, inputMethod) => {
                       isEditLink(activeLinkMark)
-                        ? updateLink(href, text, activeLinkMark.pos)(
-                            view.state,
-                            view.dispatch,
-                          )
+                        ? updateLink(
+                            href,
+                            text,
+                            activeLinkMark.pos,
+                          )(view.state, view.dispatch)
                         : insertLinkWithAnalytics(
                             inputMethod,
                             activeLinkMark.from,

@@ -1,11 +1,7 @@
 import { uuid } from '@uidu/adf-schema';
 import { ContextIdentifierProvider } from '@uidu/editor-common';
-import {
-  Node as PMNode,
-  NodeType,
-  ResolvedPos,
-  Schema,
-} from 'prosemirror-model';
+import { autoJoin } from 'prosemirror-commands';
+import { NodeType, ResolvedPos, Schema } from 'prosemirror-model';
 import {
   EditorState,
   Selection,
@@ -17,8 +13,10 @@ import {
   hasParentNodeOfType,
   replaceParentNodeOfType,
   safeInsert,
+  setTextSelection,
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
+import { Command } from '../../types';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -30,7 +28,7 @@ import {
   USER_CONTEXT,
 } from '../analytics';
 import { GapCursorSelection } from '../gap-cursor';
-import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock';
+import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
 import { stateKey as taskDecisionStateKey } from './pm-plugins/main';
 import {
   AddItemTransactionCreator,
@@ -113,7 +111,9 @@ export const insertTaskDecision = (
   view: EditorView,
   listType: TaskDecisionListType,
   inputMethod: TOOLBAR_MENU_TYPE = INPUT_METHOD.TOOLBAR,
-): boolean => {
+  listLocalId?: string,
+  itemLocalId?: string,
+): Command => {
   const { state } = view;
   const { schema } = state;
   const addAndCreateList = ({
@@ -162,12 +162,22 @@ export const insertTaskDecision = (
     inputMethod,
     addAndCreateList,
     addToList,
+    listLocalId,
+    itemLocalId,
   );
-  if (tr) {
-    view.dispatch(tr);
-    return true;
-  }
-  return false;
+
+  return autoJoin(
+    (state, dispatch) => {
+      if (tr) {
+        if (dispatch) {
+          dispatch(tr);
+        }
+        return true;
+      }
+      return false;
+    },
+    ['taskList', 'decisionList'],
+  );
 };
 
 export const insertTaskDecisionWithAnalytics = (
@@ -176,36 +186,38 @@ export const insertTaskDecisionWithAnalytics = (
   inputMethod: TaskDecisionInputMethod,
   addAndCreateList: AddItemTransactionCreator,
   addToList?: AddItemTransactionCreator,
+  listLocalId?: string,
+  itemLocalId?: string,
 ): Transaction | null => {
   const { schema } = state;
   const { list, item } = getListTypes(listType, schema);
   const { tr } = state;
   const { $to } = state.selection;
   const listNode = findParentNodeOfType(list)(state.selection);
-  const itemLocalId = uuid.generate() as string;
   const contextIdentifierProvider = taskDecisionStateKey.getState(state)
     .contextIdentifierProvider;
   const contextData = getContextData(contextIdentifierProvider);
-  let listLocalId;
   let insertTrCreator;
   let itemIdx;
   let listSize;
 
   if (!listNode) {
     // Not a list - convert to one.
-    listLocalId = uuid.generate() as string;
     itemIdx = 0;
     listSize = 1;
     insertTrCreator = addAndCreateList;
-  } else if ($to.node().textContent.length > 0) {
+  } else if ($to.node().textContent.length >= 0) {
     listSize = listNode.node.childCount + 1;
-    listLocalId = listNode.node.attrs.localId;
+    listLocalId = listLocalId || listNode.node.attrs.localId;
     const listItemNode = findParentNodeOfType(item)(state.selection); // finds current item in list
     itemIdx = listItemNode
       ? state.doc.resolve(listItemNode.pos).index() + 1
       : 0;
     insertTrCreator = addToList ? addToList : addAndCreateList;
   }
+
+  listLocalId = listLocalId || (uuid.generate() as string);
+  itemLocalId = itemLocalId || (uuid.generate() as string);
 
   if (insertTrCreator) {
     let insertTr = insertTrCreator({
@@ -272,6 +284,8 @@ export const createListAtSelection = (
     blockquote,
     decisionList,
     taskList,
+    decisionItem,
+    taskItem,
     mediaGroup,
   } = schema.nodes;
   if ($from.parent.type === mediaGroup) {
@@ -287,26 +301,58 @@ export const createListAtSelection = (
     return safeInsert(emptyList)(tr);
   }
 
-  // try to replace any of the given nodeTypes
+  // try to replace when selection is in nodes which support it
   if (isSupportedSourceNode(schema, selection)) {
-    // A text selection within one of these node types converts the node type.
-    const nodeTypesToReplace = [blockquote, decisionList, taskList];
     const { type: nodeType, childCount } = selection.$from.node();
+    const newListNode = list.create({ localId: uuid.generate() }, [
+      item.create(
+        { localId: uuid.generate() },
+        $from.node($from.depth).content,
+      ),
+    ]);
+    const listParent =
+      findParentNodeOfType(taskList)(selection) ||
+      findParentNodeOfType(decisionList)(selection);
+    const listItem =
+      findParentNodeOfType(taskItem)(selection) ||
+      findParentNodeOfType(decisionItem)(selection);
+
+    // For a selection inside a task/decision list, we can't just simply replace the
+    // node type as it will mess up lists with > 1 item
+    if (listParent && listItem) {
+      let start: number;
+      let end: number;
+      let selectionPos = selection.from;
+
+      // if selection is in first item in list, we need to delete extra so that
+      // this list isn't split
+      if (listParent.node.firstChild === listItem.node) {
+        start = listParent.start - 1;
+        end = listItem.start + listItem.node.nodeSize;
+        if (listParent.node.childCount === 1) {
+          end = listParent.start + listParent.node.nodeSize - 1;
+        }
+      } else {
+        start = listItem.start - 1;
+        end = listItem.start + listItem.node.nodeSize;
+        selectionPos += 2; // as we have added the new list node
+      }
+
+      tr.replaceWith(start, end, newListNode);
+      tr = setTextSelection(selectionPos)(tr);
+      return tr;
+    }
+
+    // For a selection inside one of these node types we can just convert the node type
+    const nodeTypesToReplace = [blockquote];
     if (nodeType === paragraph && childCount > 0) {
       // Only convert paragraphs containing content.
       // Empty paragraphs use the default flow.
       // This distinction ensures the text selection remains in the correct location.
       nodeTypesToReplace.push(paragraph);
     }
-    const newTr = replaceParentNodeOfType(
-      nodeTypesToReplace,
-      list.create({ localId: uuid.generate() }, [
-        item.create(
-          { localId: uuid.generate() },
-          $from.node($from.depth).content,
-        ),
-      ]),
-    )(tr);
+    let newTr = tr;
+    newTr = replaceParentNodeOfType(nodeTypesToReplace, newListNode)(tr);
 
     // Adjust depth for new selection, if it has changed (e.g. paragraph to list (ol > li))
     const depthAdjustment = changeInDepth($to, newTr.selection.$to);
@@ -322,93 +368,4 @@ export const createListAtSelection = (
   }
 
   return safeInsert(emptyList)(tr);
-};
-
-export const splitListAtSelection = (
-  tr: Transaction,
-  schema: Schema,
-  // state: EditorState,
-): Transaction => {
-  const { selection } = tr;
-  const { $from, $to } = selection;
-  if ($from.parent !== $to.parent) {
-    // ignore selections across multiple nodes
-    return tr;
-  }
-
-  const {
-    decisionItem,
-    decisionList,
-    paragraph,
-    taskItem,
-    taskList,
-  } = schema.nodes;
-
-  const parentList = findParentNodeOfType([decisionList, taskList])(selection);
-
-  if (!parentList) {
-    return tr;
-  }
-
-  const item = findParentNodeOfType([decisionItem, taskItem])(selection);
-  if (!item) {
-    return tr;
-  }
-
-  const resolvedItemPos = tr.doc.resolve(item.pos);
-
-  const newListIds = [
-    parentList.node.attrs['localId'] || uuid.generate(), // first new list keeps list id
-    uuid.generate(), // second list gets new id
-  ];
-
-  const beforeItems: PMNode[] = [];
-  const afterItems: PMNode[] = [];
-  parentList.node.content.forEach((item, offset, _index) => {
-    if (offset < resolvedItemPos.parentOffset) {
-      beforeItems.push(item);
-    } else if (offset > resolvedItemPos.parentOffset) {
-      afterItems.push(item);
-    }
-  });
-
-  const content: PMNode[] = [];
-
-  if (beforeItems.length) {
-    content.push(
-      parentList.node.type.createChecked(
-        {
-          localId: newListIds.shift(),
-        },
-        beforeItems,
-      ),
-    );
-  }
-
-  content.push(paragraph.createChecked({}, item.node.content));
-
-  if (afterItems.length) {
-    content.push(
-      parentList.node.type.createChecked(
-        {
-          localId: newListIds.shift(),
-        },
-        afterItems,
-      ),
-    );
-  }
-
-  // If no list remains at start, then the new selection is different relative to the original selection.
-  const posAdjust = beforeItems.length === 0 ? -1 : 1;
-
-  tr = tr.replaceWith(
-    resolvedItemPos.start() - 1,
-    resolvedItemPos.end() + 1,
-    content,
-  );
-  tr = tr.setSelection(
-    new TextSelection(tr.doc.resolve($from.pos + posAdjust)),
-  );
-
-  return tr;
 };

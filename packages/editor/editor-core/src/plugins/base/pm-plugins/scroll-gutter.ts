@@ -24,7 +24,7 @@ function listenForGutterVisibilityChanges(
   if (supportsIntersectionObserver()) {
     const observer = new IntersectionObserver(
       (entries: IntersectionObserverEntry[], _: IntersectionObserver) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           gutterIsVisible(entry.intersectionRatio > 0);
         });
       },
@@ -152,9 +152,19 @@ function scrollToGutterElement(
   return true;
 }
 
-export default (
-  getScrollElement: ((view: EditorView) => HTMLElement | null) | undefined,
-) => {
+export type ScrollGutterPluginOptions = {
+  /** Element the page uses for scrolling */
+  getScrollElement?: (view: EditorView) => HTMLElement | null;
+  /**
+   * Whether to allow custom functionality to scroll to gutter element in
+   * plugin's handleScrollToSelection function
+   * Default is true
+   */
+  allowCustomScrollHandler?: boolean;
+};
+
+export default (pluginOptions: ScrollGutterPluginOptions = {}) => {
+  const { getScrollElement, allowCustomScrollHandler } = pluginOptions;
   if (!getScrollElement) return undefined;
 
   const gutter = createGutter();
@@ -172,6 +182,9 @@ export default (
       // Called when the view, after updating its state, tries to scroll the selection into view
       // https://prosemirror.net/docs/ref/#view.EditorProps.handleScrollToSelection
       handleScrollToSelection: (): boolean => {
+        if (allowCustomScrollHandler === false) {
+          return false;
+        }
         if (!gutter.isMounted() || !gutter.visible() || !scrollElement) {
           // Avoid scrolling until applicable
           return false;

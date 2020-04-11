@@ -1,61 +1,13 @@
 import { UpdateExtension } from '@uidu/editor-common';
+import { MacroProvider } from '@uidu/editor-common/provider-factory';
 import { Node as PmNode, Schema, Slice } from 'prosemirror-model';
 import { EditorState, NodeSelection } from 'prosemirror-state';
-import {
-  findParentNodeOfType,
-  findSelectedNodeOfType,
-  removeParentNodeOfType,
-  removeSelectedNode,
-  replaceSelectedNode,
-} from 'prosemirror-utils';
+import { replaceSelectedNode } from 'prosemirror-utils';
 import { Command, CommandDispatch } from '../../types';
 import { mapFragment } from '../../utils/slice';
-import { insertMacroFromMacroBrowser, MacroProvider } from '../macro';
-import { pluginKey } from './plugin';
-import { getExtensionNode, isSelectionNodeExtension } from './utils';
-
-export const updateExtensionLayout = (layout: string): Command => (
-  state,
-  dispatch,
-) => {
-  const { selection, schema, tr } = state;
-  const { bodiedExtension, extension, inlineExtension } = schema.nodes;
-  const parentExtNode = findParentNodeOfType([bodiedExtension])(selection);
-
-  let extPosition;
-  let extNode;
-
-  const selectedNode = findSelectedNodeOfType([
-    bodiedExtension,
-    inlineExtension,
-    extension,
-  ])(selection);
-
-  if (!parentExtNode && !selectedNode) {
-    return false;
-  }
-
-  if (selectedNode) {
-    extPosition = selectedNode.pos;
-    extNode = selectedNode.node;
-  } else {
-    extPosition = parentExtNode!.pos;
-    extNode = parentExtNode!.node;
-  }
-
-  const pluginState = pluginKey.getState(state);
-
-  tr.setNodeMarkup(extPosition, undefined, {
-    ...extNode!.attrs,
-    layout,
-  }).setMeta(pluginKey, { ...pluginState, layout });
-
-  if (dispatch) {
-    dispatch(tr);
-  }
-
-  return true;
-};
+import { insertMacroFromMacroBrowser } from '../macro';
+import { showContextPanel } from './commands';
+import { getSelectedExtension } from './utils';
 
 export const updateExtensionParams = (
   updateExtension: UpdateExtension<object>,
@@ -95,42 +47,33 @@ export const updateExtensionParams = (
 
 export const editExtension = (
   macroProvider: MacroProvider | null,
+  allowNewConfigPanel: boolean = false,
   updateExtension?: UpdateExtension<object>,
 ): Command => (state, dispatch): boolean => {
-  const node = getExtensionNode(state);
+  const nodeWithPos = getSelectedExtension(state, true);
 
-  if (!node) {
+  if (!nodeWithPos) {
     return false;
   }
 
   if (updateExtension) {
-    updateExtensionParams(updateExtension, node)(state, dispatch);
-    return true;
+    if (allowNewConfigPanel) {
+      return showContextPanel(state, dispatch);
+    } else {
+      updateExtensionParams(updateExtension, nodeWithPos)(state, dispatch);
+      return true;
+    }
   }
 
   if (!macroProvider) {
     return false;
   }
 
-  insertMacroFromMacroBrowser(macroProvider, node.node, true)(state, dispatch);
-  return true;
-};
-
-export const removeExtension = (): Command => (state, dispatch) => {
-  const { schema, selection } = state;
-  const pluginState = pluginKey.getState(state);
-  let tr = state.tr.setMeta(pluginKey, { ...pluginState, element: null });
-
-  if (isSelectionNodeExtension(selection, schema)) {
-    tr = removeSelectedNode(tr);
-  } else {
-    tr = removeParentNodeOfType(schema.nodes.bodiedExtension)(tr);
-  }
-
-  if (dispatch) {
-    dispatch(tr);
-  }
-
+  insertMacroFromMacroBrowser(
+    macroProvider,
+    nodeWithPos.node,
+    true,
+  )(state, dispatch);
   return true;
 };
 

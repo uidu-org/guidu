@@ -1,79 +1,19 @@
-import { ErrorReporter, ProviderFactory } from '@uidu/editor-common';
-import { Schema } from 'prosemirror-model';
-import { EditorState, Plugin, Transaction } from 'prosemirror-state';
-import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { IntlShape } from 'react-intl';
-import EditorActions from '../actions';
-import { Dispatch, EventDispatcher } from '../event-dispatcher';
-import { DispatchAnalyticsEvent } from '../plugins/analytics';
+import { EditorState, Transaction } from 'prosemirror-state';
+import { ContextPanelHandler } from '../plugins/context-panel/types';
 import { FloatingToolbarHandler } from '../plugins/floating-toolbar/types';
 import { QuickInsertHandler } from '../plugins/quick-insert/types';
 import { TypeAheadHandler } from '../plugins/type-ahead/types';
-import { PortalProviderAPI } from '../ui/PortalProvider';
-import { ToolbarSize } from '../ui/Toolbar';
-import { EditorConfig, MarkConfig, NodeConfig } from './editor-config';
-import { EditorAppearance, EditorProps } from './editor-props';
-
-export type PMPluginFactoryParams = {
-  schema: Schema;
-  props: EditorProps;
-  prevProps?: EditorProps;
-  dispatch: Dispatch;
-  eventDispatcher: EventDispatcher;
-  providerFactory: ProviderFactory;
-  errorReporter?: ErrorReporter;
-  portalProviderAPI: PortalProviderAPI;
-  reactContext: () => { [key: string]: any };
-  intl: IntlShape;
-  dispatchAnalyticsEvent: DispatchAnalyticsEvent;
-};
-
-export type PMPluginCreateConfig = PMPluginFactoryParams & {
-  editorConfig: EditorConfig;
-};
-
-export type PMPluginFactory = (
-  params: PMPluginFactoryParams,
-) => Plugin | undefined;
-
-export type UiComponentFactoryParams = {
-  editorView: EditorView;
-  editorActions: EditorActions;
-  eventDispatcher: EventDispatcher;
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
-  providerFactory: ProviderFactory;
-  appearance: EditorAppearance;
-  popupsMountPoint?: HTMLElement;
-  popupsBoundariesElement?: HTMLElement;
-  popupsScrollableElement?: HTMLElement;
-  containerElement: HTMLElement | undefined;
-  disabled: boolean;
-};
-
-export type ToolbarUiComponentFactoryParams = UiComponentFactoryParams & {
-  toolbarSize: ToolbarSize;
-  isToolbarReducedSpacing: boolean;
-};
-
-export type UIComponentFactory = (
-  params: UiComponentFactoryParams,
-) => React.ReactElement<any> | null;
-
-export type ToolbarUIComponentFactory = (
-  params: ToolbarUiComponentFactoryParams,
-) => React.ReactElement<any> | null;
+import { ToolbarUIComponentFactory } from '../ui/Toolbar/types';
+import { MarkConfig, NodeConfig } from './pm-config';
+import { PMPlugin } from './pm-plugin';
+import { UIComponentFactory } from './ui-components';
 
 export type PluginsOptions = {
   [pluginName: string]: any;
   quickInsert?: QuickInsertHandler;
   typeAhead?: TypeAheadHandler;
   floatingToolbar?: FloatingToolbarHandler;
-};
-
-export type PMPlugin = {
-  name: string;
-  plugin: PMPluginFactory;
+  contextPanel?: ContextPanelHandler;
 };
 
 type EditorViewStateUpdatedCallbackProps = {
@@ -101,12 +41,12 @@ export interface EditorPlugin {
   /**
    * List of Nodes to add to the schema.
    */
-  nodes?: (editorProps: EditorProps) => NodeConfig[];
+  nodes?: () => NodeConfig[];
 
   /**
    * List of Marks to add to the schema.
    */
-  marks?: (editorProps: EditorProps) => MarkConfig[];
+  marks?: () => MarkConfig[];
 
   /**
    * Optional UI-component that lives inside the actual content-area (like mention-picker, floating toolbar for links, etc.)

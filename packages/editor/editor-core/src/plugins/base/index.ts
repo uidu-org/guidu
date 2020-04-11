@@ -1,7 +1,6 @@
 import { doc, paragraph, text } from '@uidu/adf-schema';
 import { baseKeymap } from 'prosemirror-commands';
 import { history } from 'prosemirror-history';
-import { EditorView } from 'prosemirror-view';
 import { EditorPlugin, PMPluginFactory } from '../../types';
 import { keymap } from '../../utils/keymap';
 import decorationPlugin from './pm-plugins/decoration';
@@ -11,12 +10,15 @@ import frozenEditor from './pm-plugins/frozen-editor';
 import inlineCursorTargetPlugin from './pm-plugins/inline-cursor-target';
 import newlinePreserveMarksPlugin from './pm-plugins/newline-preserve-marks';
 import { plugin as reactNodeView } from './pm-plugins/react-nodeview';
-import scrollGutter from './pm-plugins/scroll-gutter';
+import scrollGutter, {
+  ScrollGutterPluginOptions,
+} from './pm-plugins/scroll-gutter';
 
 interface BasePluginOptions {
-  allowScrollGutter?: ((view: EditorView) => HTMLElement | null) | undefined;
+  allowScrollGutter?: ScrollGutterPluginOptions;
   allowInlineCursorTarget?: boolean;
   addRunTimePerformanceCheck?: boolean;
+  inputSamplingLimit?: number;
 }
 
 const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
@@ -48,7 +50,7 @@ const basePlugin = (options?: BasePluginOptions): EditorPlugin => ({
         name: 'frozenEditor',
         plugin: ({ dispatchAnalyticsEvent }) =>
           options && options.addRunTimePerformanceCheck
-            ? frozenEditor(dispatchAnalyticsEvent)
+            ? frozenEditor(dispatchAnalyticsEvent, options.inputSamplingLimit)
             : undefined,
       },
       { name: 'decorationPlugin', plugin: () => decorationPlugin() },

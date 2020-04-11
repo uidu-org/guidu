@@ -1,22 +1,47 @@
-import { Node } from 'prosemirror-model';
-import { Plugin, PluginKey } from 'prosemirror-state';
+import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { EditorPlugin } from '../../types';
-import { isEmptyDocument } from '../../utils';
+import {
+  bracketTyped,
+  isEmptyDocument,
+  isInEmptyLine,
+} from '../../utils/document';
+import { pluginKey as alignmentPluginKey } from '../alignment/pm-plugins/main';
+import { focusStateKey } from '../base/pm-plugins/focus-handler';
+import { placeHolderClassName } from './styles';
 
 export const pluginKey = new PluginKey('placeholderPlugin');
 
+interface PlaceHolderState {
+  hasPlaceholder: boolean;
+  placeholderText?: string;
+  pos?: number;
+}
+
+function getPlaceholderState(editorState: EditorState): PlaceHolderState {
+  return pluginKey.getState(editorState);
+}
+
 export function createPlaceholderDecoration(
-  doc: Node,
+  editorState: EditorState,
   placeholderText: string,
+  pos: number = 1,
 ): DecorationSet {
   const placeholderDecoration = document.createElement('span');
-  placeholderDecoration.className = 'placeholder-decoration';
+  let placeHolderClass = placeHolderClassName;
+
+  const alignment = alignmentPluginKey.getState(editorState);
+  if (alignment && alignment.align === 'end') {
+    placeHolderClass = placeHolderClass + ' align-end';
+  } else if (alignment && alignment.align === 'center') {
+    placeHolderClass = placeHolderClass + ' align-center';
+  }
+  placeholderDecoration.className = placeHolderClass;
   const placeholderNode = document.createElement('span');
   placeholderNode.textContent = placeholderText;
   placeholderDecoration.appendChild(placeholderNode);
-  return DecorationSet.create(doc, [
-    Decoration.widget(1, placeholderDecoration, {
+  return DecorationSet.create(editorState.doc, [
+    Decoration.widget(pos, placeholderDecoration, {
       side: -1,
       key: 'placeholder',
     }),
@@ -24,14 +49,14 @@ export function createPlaceholderDecoration(
 }
 
 function removePlaceholderIfData(view: EditorView, event: Event) {
-  const havePlaceholder = pluginKey.getState(view.state);
+  const placeHolderState = getPlaceholderState(view.state);
   const compositionEvent = event as CompositionEvent;
 
   const hasData =
     compositionEvent.type === 'compositionstart' ||
     (compositionEvent.type === 'compositionupdate' && !!compositionEvent.data);
 
-  if (havePlaceholder && hasData) {
+  if (placeHolderState.hasPlaceholder && hasData) {
     view.dispatch(
       view.state.tr.setMeta(pluginKey, { removePlaceholder: true }),
     );
@@ -41,12 +66,12 @@ function removePlaceholderIfData(view: EditorView, event: Event) {
 }
 
 function applyPlaceholderIfEmpty(view: EditorView, event: Event) {
-  const havePlaceholder = pluginKey.getState(view.state);
+  const placeHolderState = getPlaceholderState(view.state);
   const compositionEvent = event as CompositionEvent;
 
   const emptyData = compositionEvent.data === '';
 
-  if (!havePlaceholder && emptyData) {
+  if (!placeHolderState.hasPlaceholder && emptyData) {
     view.dispatch(
       view.state.tr.setMeta(pluginKey, {
         applyPlaceholderIfEmpty: true,
@@ -57,43 +82,120 @@ function applyPlaceholderIfEmpty(view: EditorView, event: Event) {
   return false;
 }
 
-export function createPlugin(placeholderText?: string): Plugin | undefined {
-  if (!placeholderText) {
-    return undefined;
+function setPlaceHolderState(
+  placeholderText: string,
+  pos?: number,
+): PlaceHolderState {
+  return {
+    hasPlaceholder: true,
+    placeholderText,
+    pos: pos ? pos : 1,
+  };
+}
+
+const emptyPlaceholder: PlaceHolderState = { hasPlaceholder: false };
+
+function createPlaceHolderStateFrom(
+  editorState: EditorState,
+  getPlaceholderHintMessage: () => string | undefined,
+  defaultPlaceholderText?: string,
+  bracketPlaceholderText?: string,
+): PlaceHolderState {
+  const isEditorFocused = focusStateKey.getState(editorState);
+
+  if (defaultPlaceholderText && isEmptyDocument(editorState.doc)) {
+    return setPlaceHolderState(defaultPlaceholderText);
   }
 
-  return new Plugin({
+  const placeholderHint = getPlaceholderHintMessage();
+  if (placeholderHint && isInEmptyLine(editorState) && isEditorFocused) {
+    const { $from } = editorState.selection;
+    return setPlaceHolderState(placeholderHint, $from.pos);
+  }
+
+  if (bracketPlaceholderText && bracketTyped(editorState) && isEditorFocused) {
+    const { $from } = editorState.selection;
+    // Space is to account for positioning of the bracket
+    const bracketHint = '  ' + bracketPlaceholderText;
+    return setPlaceHolderState(bracketHint, $from.pos - 1);
+  }
+  return emptyPlaceholder;
+}
+
+function createGetPlaceholderHintMessage(
+  placeholderHints?: string[],
+): () => string | undefined {
+  let index = 0;
+
+  return () => {
+    if (!placeholderHints || placeholderHints.length === 0) {
+      return undefined;
+    }
+    const { length } = placeholderHints;
+
+    const placeholder = placeholderHints[index++];
+    index = index % length;
+
+    return placeholder;
+  };
+}
+
+export function createPlugin(
+  defaultPlaceholderText?: string,
+  placeholderHints?: string[],
+  bracketPlaceholderText?: string,
+): Plugin | undefined {
+  if (!defaultPlaceholderText && !placeholderHints && !bracketPlaceholderText) {
+    return undefined;
+  }
+  const getPlaceholderHintMessage = createGetPlaceholderHintMessage(
+    placeholderHints,
+  );
+
+  return new Plugin<PlaceHolderState>({
     key: pluginKey,
     state: {
-      init: (_, state) => isEmptyDocument(state.doc),
+      init: (_, state) =>
+        createPlaceHolderStateFrom(
+          state,
+          getPlaceholderHintMessage,
+          defaultPlaceholderText,
+          bracketPlaceholderText,
+        ),
       apply: (tr, _oldPluginState, _oldEditorState, newEditorState) => {
         const meta = tr.getMeta(pluginKey);
 
         if (meta) {
           if (meta.removePlaceholder) {
-            return false;
+            return emptyPlaceholder;
           }
 
           if (meta.applyPlaceholderIfEmpty) {
-            return isEmptyDocument(newEditorState.doc);
+            return createPlaceHolderStateFrom(
+              newEditorState,
+              getPlaceholderHintMessage,
+              defaultPlaceholderText,
+              bracketPlaceholderText,
+            );
           }
         }
 
-        // non-plugin specific transaction; don't excessively recalculate
-        // if the document is empty
-        if (!tr.docChanged) {
-          return _oldPluginState;
-        }
-
-        return isEmptyDocument(newEditorState.doc);
+        return createPlaceHolderStateFrom(
+          newEditorState,
+          getPlaceholderHintMessage,
+          defaultPlaceholderText,
+          bracketPlaceholderText,
+        );
       },
     },
     props: {
       decorations(editorState): DecorationSet | undefined {
-        const havePlaceholder = pluginKey.getState(editorState);
+        const { hasPlaceholder, placeholderText, pos } = getPlaceholderState(
+          editorState,
+        );
 
-        if (havePlaceholder) {
-          return createPlaceholderDecoration(editorState.doc, placeholderText);
+        if (hasPlaceholder && placeholderText && pos !== undefined) {
+          return createPlaceholderDecoration(editorState, placeholderText, pos);
         }
         return undefined;
       },
@@ -113,6 +215,8 @@ export function createPlugin(placeholderText?: string): Plugin | undefined {
 
 interface PlaceholderPluginOptions {
   placeholder?: string;
+  placeholderHints?: string[];
+  placeholderBracketHint?: string;
 }
 
 const placeholderPlugin = (
@@ -124,7 +228,12 @@ const placeholderPlugin = (
     return [
       {
         name: 'placeholder',
-        plugin: () => createPlugin(options && options.placeholder),
+        plugin: () =>
+          createPlugin(
+            options && options.placeholder,
+            options && options.placeholderHints,
+            options && options.placeholderBracketHint,
+          ),
       },
     ];
   },

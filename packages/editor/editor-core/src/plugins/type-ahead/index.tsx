@@ -1,5 +1,5 @@
 import { typeAheadQuery } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import { inputRulePlugin } from './pm-plugins/input-rules';
@@ -24,7 +24,8 @@ const typeAheadPlugin = (): EditorPlugin => ({
     return [
       {
         name: 'typeAhead',
-        plugin: ({ dispatch, intl }) => createPlugin(dispatch, intl, typeAhead),
+        plugin: ({ dispatch, reactContext }) =>
+          createPlugin(dispatch, reactContext, typeAhead),
       },
       {
         name: 'typeAheadInputRule',

@@ -10,7 +10,7 @@ import {
   EVENT_TYPE,
   INPUT_METHOD,
 } from '../analytics';
-import { messages } from '../insert-block/ui/ToolbarInsertBlock';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconLink } from '../quick-insert/assets';
 import fakeCursorToolbarPlugin from './pm-plugins/fake-cursor-for-toolbar';
 import { createInputRulePlugin } from './pm-plugins/input-rule';
