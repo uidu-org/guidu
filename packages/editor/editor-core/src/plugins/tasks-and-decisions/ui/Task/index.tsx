@@ -1,7 +1,6 @@
-import { ContentRef } from '@uidu/task-decision';
 import { ProviderFactory, Providers, WithProviders } from '@uidu/editor-common';
-import * as React from 'react';
-import { PureComponent, ReactElement } from 'react';
+import { ContentRef } from '@uidu/task-decision';
+import React, { PureComponent, ReactElement } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import TaskItemWithProviders from './task-item-with-providers';
 
@@ -29,6 +28,8 @@ export class TaskItem extends PureComponent<
   TaskProps & WrappedComponentProps,
   {}
 > {
+  static displayName = 'TaskItem';
+
   private providerFactory: ProviderFactory;
 
   constructor(props: TaskProps & WrappedComponentProps) {

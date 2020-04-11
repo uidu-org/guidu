@@ -1,12 +1,11 @@
 import { FabricElementsAnalyticsContext } from '@uidu/analytics-namespaced-context';
+import { ContextIdentifierProvider } from '@uidu/editor-common';
 import {
   ContentRef,
   ResourcedTaskItem,
   TaskDecisionProvider,
 } from '@uidu/task-decision';
-import { ContextIdentifierProvider } from '@uidu/editor-common';
-import * as React from 'react';
-import { Component, ReactElement } from 'react';
+import React, { Component, ReactElement } from 'react';
 
 export interface Props {
   taskId: string;
@@ -25,6 +24,8 @@ export interface State {
 }
 
 export default class TaskItemWithProviders extends Component<Props, State> {
+  static displayName = 'TaskItemWithProviders';
+
   state: State = { resolvedContextProvider: undefined };
 
   // Storing the mounted state is an anti-pattern, however the asynchronous state
@@ -67,7 +68,7 @@ export default class TaskItemWithProviders extends Component<Props, State> {
 
   render() {
     const { contextIdentifierProvider, ...otherProps } = this.props;
-    const { objectId, containerId } =
+    const { objectId } =
       this.state.resolvedContextProvider || ({} as ContextIdentifierProvider);
     const userContext = objectId ? 'edit' : 'new';
 
@@ -77,11 +78,7 @@ export default class TaskItemWithProviders extends Component<Props, State> {
           userContext,
         }}
       >
-        <ResourcedTaskItem
-          {...otherProps}
-          objectAri={objectId}
-          containerAri={containerId}
-        />
+        <ResourcedTaskItem {...otherProps} objectAri={objectId} />
       </FabricElementsAnalyticsContext>
     );
   }

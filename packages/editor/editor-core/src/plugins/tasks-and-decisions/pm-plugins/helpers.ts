@@ -131,7 +131,6 @@ export const subtreeHeight = (
       if (types.indexOf(descendent.type) > -1) {
         return true;
       }
-
       return false;
     },
   );

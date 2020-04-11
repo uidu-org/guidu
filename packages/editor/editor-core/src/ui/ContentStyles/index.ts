@@ -10,12 +10,15 @@ import {
   listsSharedStyles,
   paragraphSharedStyles,
   shadowSharedStyle,
+  tasksAndDecisionsStyles,
   whitespaceSharedStyles,
 } from '@uidu/editor-common';
 import styled from 'styled-components';
 import { blocktypeStyles } from '../../plugins/block-type/styles';
+import { breakoutStyles } from '../../plugins/breakout/';
 import { codeBlockStyles } from '../../plugins/code-block/styles';
 import { telepointerStyle } from '../../plugins/collab-edit/styles';
+import { expandStyles } from '../../plugins/expand/ui/styles';
 import { extensionStyles } from '../../plugins/extension/ui/styles';
 import { fakeCursorStyles } from '../../plugins/fake-text-cursor/styles';
 import { gapCursorStyles } from '../../plugins/gap-cursor/styles';
@@ -23,13 +26,14 @@ import { gridStyles } from '../../plugins/grid/styles';
 import { linkStyles } from '../../plugins/hyperlink/styles';
 import { layoutStyles } from '../../plugins/layout/styles';
 import { listsStyles } from '../../plugins/lists/styles';
+import { ClassNames } from '../../plugins/media/pm-plugins/alt-text/style';
 import { mediaStyles } from '../../plugins/media/styles';
 import { mentionsStyles } from '../../plugins/mentions/styles';
+import { panelStyles } from '../../plugins/panel/styles';
 import { placeholderTextStyles } from '../../plugins/placeholder-text/styles';
 import { placeholderStyles } from '../../plugins/placeholder/styles';
 import { ruleStyles } from '../../plugins/rule/styles';
 import { tableStyles } from '../../plugins/table/ui/styles';
-import { tasksAndDecisionsStyles } from '../../plugins/tasks-and-decisions/ui/styles';
 import { textFormattingStyles } from '../../plugins/text-formatting/styles';
 
 const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
@@ -51,6 +55,11 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     ${indentationSharedStyles};
     ${shadowSharedStyle};
     ${inlineNodeSharedStyle};
+  }
+
+  .ProseMirror[contenteditable=false] .taskItemView-content-wrap {
+    pointer-events: none;
+    opacity: 0.7;
   }
 
   .ProseMirror-hideselection *::selection {
@@ -107,6 +116,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
   ${telepointerStyle}
   ${gapCursorStyles};
   ${tableStyles};
+  ${panelStyles}
   ${fakeCursorStyles}
   ${mentionsStyles}
   ${tasksAndDecisionsStyles}
@@ -115,6 +125,8 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
   ${blockMarksSharedStyles}
   ${dateSharedStyle}
   ${extensionStyles}
+  ${expandStyles}
+  ${breakoutStyles}
 
   /** Global selector for extensions, as .danger tag is assigned to root level node which is unaccessible from triggered child node **/
   /* Danger when nested node */
@@ -139,12 +151,6 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
 
   /** Needed to override any cleared floats, e.g. image wrapping */
 
-  span.fabric-editor-annotation {
-    /* Y200 with 40% opacity */
-    background-color: ${({ allowAnnotation }: any) =>
-      allowAnnotation ? 'rgba(255, 196, 0, 0.4)' : 'transparent'};
-  }
-
   div.fabric-editor-block-mark[class^='fabric-editor-align'] {
     clear: none !important;
   }
@@ -161,7 +167,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     text-align: center;
   }
 
-  .hyperlink-floating-toolbar {
+  .hyperlink-floating-toolbar, .${ClassNames.FLOATING_TOOLBAR_COMPONENT} {
     padding: 0;
   }
 

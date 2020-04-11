@@ -1,7 +1,6 @@
 import DecisionIcon from '@atlaskit/icon/glyph/editor/decision';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import ToolbarButton from '../../../../ui/ToolbarButton';
@@ -52,7 +51,10 @@ export class ToolbarDecision extends PureComponent<
       if (!editorView) {
         return false;
       }
-      insertTaskDecision(editorView, 'decisionList');
+      insertTaskDecision(editorView, 'decisionList')(
+        editorView.state,
+        editorView.dispatch,
+      );
       return true;
     },
   );

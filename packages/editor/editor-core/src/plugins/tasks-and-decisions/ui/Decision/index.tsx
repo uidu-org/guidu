@@ -1,5 +1,5 @@
 import { DecisionItem } from '@uidu/task-decision';
-import * as React from 'react';
+import React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 
 const messages = defineMessages({
@@ -19,6 +19,8 @@ export class Decision extends React.Component<
   Props & WrappedComponentProps,
   {}
 > {
+  static displayName = 'Decision';
+
   render() {
     const {
       contentRef,

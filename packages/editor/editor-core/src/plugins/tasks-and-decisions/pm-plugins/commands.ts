@@ -1,12 +1,11 @@
 import { ResolvedPos } from 'prosemirror-model';
 import { findWrapping, ReplaceAroundStep } from 'prosemirror-transform';
-import { findCutBefore } from '../../../utils/commands';
 import { Command } from '../../../types';
-
+import { findCutBefore } from '../../../utils/commands';
 import {
-  isActionOrDecisionList,
-  isActionOrDecisionItem,
   getBlockRange,
+  isActionOrDecisionItem,
+  isActionOrDecisionList,
   liftBlock,
 } from './helpers';
 
