@@ -1,9 +1,9 @@
-import { inputRules } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
+  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import { TypeAheadHandler } from '../types';
@@ -12,12 +12,16 @@ import {
   PluginState as TypeAheadPluginState,
 } from './main';
 
+// We cannot set a proper plugin key on input rule plugins, so instead, once
+// the plugin is created we save its key to this variable
+export let typeAheadInputRulesPluginKey = '';
+
 export function inputRulePlugin(
   schema: Schema,
   typeAheads: TypeAheadHandler[],
 ): Plugin | undefined {
   const triggersRegex = typeAheads
-    .map(t => t.customRegex || t.trigger)
+    .map((t) => t.customRegex || t.trigger)
     .join('|');
 
   if (!triggersRegex.length) {
@@ -58,7 +62,12 @@ export function inputRulePlugin(
     );
   });
 
-  return inputRules({ rules: [typeAheadInputRule] });
+  const plugin = instrumentedInputRule('type-ahead', {
+    rules: [typeAheadInputRule],
+  });
+  typeAheadInputRulesPluginKey = (plugin as any).key;
+
+  return plugin;
 }
 
 export default inputRulePlugin;

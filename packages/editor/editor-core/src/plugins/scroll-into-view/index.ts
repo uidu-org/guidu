@@ -19,7 +19,7 @@ const createPlugin = () =>
     key: scrollIntoViewPluginKey,
     appendTransaction: (transactions, oldState, newState) => {
       if (!transactions.length) {
-        return;
+        return undefined;
       }
 
       const [tr] = transactions;
@@ -38,6 +38,7 @@ const createPlugin = () =>
       ) {
         return newState.tr.scrollIntoView();
       }
+      return undefined;
     },
   });
 
