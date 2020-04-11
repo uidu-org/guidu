@@ -1,5 +1,5 @@
 import { borderRadius, colors, fontSize } from '@uidu/theme';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const BlockNode = styled.div`

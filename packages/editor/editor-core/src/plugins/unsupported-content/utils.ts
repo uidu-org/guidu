@@ -1,5 +1,5 @@
-import { Schema, Node as PMNode } from 'prosemirror-model';
-import { analyticsService, AnalyticsProperties } from '../../analytics';
+import { Node as PMNode, Schema } from 'prosemirror-model';
+import { AnalyticsProperties, analyticsService } from '../../analytics';
 
 export const traverseNode = (node: PMNode, schema: Schema): void => {
   let cxhtml = '';
@@ -25,6 +25,6 @@ export const traverseNode = (node: PMNode, schema: Schema): void => {
       data,
     );
   } else {
-    node.content.forEach(node => traverseNode(node, schema));
+    node.content.forEach((node) => traverseNode(node, schema));
   }
 };
