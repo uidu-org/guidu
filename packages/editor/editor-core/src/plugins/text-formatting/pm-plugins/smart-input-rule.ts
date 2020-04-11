@@ -1,10 +1,11 @@
-import { InputRule, inputRules } from 'prosemirror-inputrules';
+import { InputRule } from 'prosemirror-inputrules';
 import { Plugin, Selection, Transaction } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import {
   createInputRule,
   InputRuleHandler,
   InputRuleWithHandler,
+  instrumentedInputRule,
 } from '../../../utils/input-rules';
 import {
   ACTION,
@@ -71,7 +72,7 @@ function createReplacementRules(
     replacement: string,
   ) => (rule: InputRuleWithHandler) => InputRuleWithHandler,
 ): Array<InputRule> {
-  return Object.keys(replMap).map(replacement => {
+  return Object.keys(replMap).map((replacement) => {
     const regex = replMap[replacement];
     const rule = createReplacementRule(replacement, regex, trackingEventName);
 
@@ -222,12 +223,12 @@ function getPunctuationRules() {
   return [
     ...dashEllipsisRules,
     ...doubleQuoteRules,
-    ...singleQuoteRules.map(rule =>
+    ...singleQuoteRules.map((rule) =>
       punctuationRuleWithAnalytics(PUNC.QUOTE_SINGLE)(rule),
     ),
   ];
 }
 
-export default inputRules({
+export default instrumentedInputRule('text-formatting:smart-input', {
   rules: [...getProductRules(), ...getSymbolRules(), ...getPunctuationRules()],
 }) as Plugin;

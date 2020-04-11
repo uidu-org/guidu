@@ -126,10 +126,11 @@ export const plugin = (dispatch: Dispatch) =>
         text: string,
       ) {
         const { state, dispatch } = view;
-        return createInlineCodeFromTextInputWithAnalytics(from, to, text)(
-          state,
-          dispatch,
-        );
+        return createInlineCodeFromTextInputWithAnalytics(
+          from,
+          to,
+          text,
+        )(state, dispatch);
       },
     },
   });

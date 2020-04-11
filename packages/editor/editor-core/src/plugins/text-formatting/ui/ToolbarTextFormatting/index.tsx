@@ -1,8 +1,7 @@
 import BoldIcon from '@atlaskit/icon/glyph/editor/bold';
 import ItalicIcon from '@atlaskit/icon/glyph/editor/italic';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { withAnalytics } from '../../../../analytics';
 import {

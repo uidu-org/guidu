@@ -1,12 +1,5 @@
-import {
-  code,
-  em,
-  strike,
-  strong,
-  subsup,
-  underline,
-} from '@uidu/adf-schema';
-import * as React from 'react';
+import { code, em, strike, strong, subsup, underline } from '@uidu/adf-schema';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import { ButtonGroup } from '../../ui/styles';
 import WithPluginState from '../../ui/WithPluginState';
@@ -23,17 +16,11 @@ import {
   pluginKey as textFormattingPluginKey,
 } from './pm-plugins/main';
 import textFormattingSmartInputRulePlugin from './pm-plugins/smart-input-rule';
+import { TextFormattingOptions } from './types';
 import ToolbarAdvancedTextFormatting from './ui/ToolbarAdvancedTextFormatting';
 import ToolbarTextFormatting from './ui/ToolbarTextFormatting';
 
-export interface TextFormattingOptions {
-  disableSuperscriptAndSubscript?: boolean;
-  disableUnderline?: boolean;
-  disableCode?: boolean;
-  disableSmartTextCompletion?: boolean;
-}
-
-const textFormatting = (options: TextFormattingOptions): EditorPlugin => ({
+const textFormatting = (options: TextFormattingOptions = {}): EditorPlugin => ({
   name: 'textFormatting',
 
   marks() {

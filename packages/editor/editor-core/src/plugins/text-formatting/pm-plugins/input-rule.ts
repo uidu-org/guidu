@@ -1,9 +1,13 @@
-import { InputRule, inputRules } from 'prosemirror-inputrules';
+import { InputRule } from 'prosemirror-inputrules';
 import { MarkType, Schema } from 'prosemirror-model';
 import { Plugin } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
 import { applyMarkOnRange } from '../../../utils/commands';
-import { createInputRule, InputRuleHandler } from '../../../utils/input-rules';
+import {
+  createInputRule,
+  InputRuleHandler,
+  instrumentedInputRule,
+} from '../../../utils/input-rules';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -71,7 +75,7 @@ function addMark(
 
     // Prevent autoformatting across hardbreaks
     let containsHardBreak: boolean | undefined;
-    state.doc.nodesBetween(from, to, node => {
+    state.doc.nodesBetween(from, to, (node) => {
       if (node.type === schema.nodes.hardBreak) {
         containsHardBreak = true;
         return false;
@@ -132,7 +136,7 @@ function addCodeMark(
         },
       ];
 
-      if (allowedPrefixConditions.every(condition => !condition(match[1]))) {
+      if (allowedPrefixConditions.every((condition) => !condition(match[1]))) {
         return null;
       }
     }
@@ -163,8 +167,8 @@ function addCodeMark(
 
 export const strongRegex1 = /(\S*)(\_\_([^\_\s](\_(?!\_)|[^\_])*[^\_\s]|[^\_\s])\_\_)$/;
 export const strongRegex2 = /(\S*)(\*\*([^\*\s](\*(?!\*)|[^\*])*[^\*\s]|[^\*\s])\*\*)$/;
-export const italicRegex1 = /(\S*[^\s\_]*)(\_([^\s\_][^\_]*[^\s\_]|[^\s\_])\_)$/;
-export const italicRegex2 = /(\S*[^\s\*]*)(\*([^\s\*][^\*]*[^\s\*]|[^\s\*])\*)$/;
+export const italicRegex1 = /(\S*)(\_([^\_\s]([^\_])*[^\_\s]|[^\_\s])\_)$/;
+export const italicRegex2 = /(\S*)(\*([^\*\s]([^\*])*[^\*\s]|[^\*\s])\*)$/;
 export const strikeRegex = /(\S*)(\~\~([^\s\~](\~(?!\~)|[^\~])*[^\s\~]|[^\s\~])\~\~)$/;
 export const codeRegex = /(\S*)(`[^\s][^`]*`)$/;
 
@@ -310,7 +314,7 @@ export function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return inputRules({ rules });
+    return instrumentedInputRule('text-formatting', { rules });
   }
   return undefined;
 }
