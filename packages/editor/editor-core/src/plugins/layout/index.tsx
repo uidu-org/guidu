@@ -20,14 +20,10 @@ import { buildToolbar } from './toolbar';
 
 export { pluginKey };
 
-const layoutPlugin = (
-  layoutsConfig?:
-    | {
-        allowBreakout: boolean;
-        UNSAFE_addSidebarLayouts?: boolean;
-      }
-    | boolean,
-): EditorPlugin => ({
+const layoutPlugin = (layoutsConfig?: {
+  allowBreakout: boolean;
+  UNSAFE_addSidebarLayouts?: boolean;
+}): EditorPlugin => ({
   name: 'layout',
 
   nodes() {
