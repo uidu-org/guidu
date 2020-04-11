@@ -1,12 +1,11 @@
 import { Plugin } from 'prosemirror-state';
-import DateNodeView from '../nodeviews/date';
 import { ReactNodeView } from '../../../nodeviews';
 import { PMPluginFactory } from '../../../types';
 import { pluginFactory } from '../../../utils/plugin-state-factory';
-
-import { mapping, onSelectionChanged, reducer } from './utils';
+import DateNodeView from '../nodeviews/date';
 import { pluginKey } from './plugin-key';
 import { DateMeta, DateState } from './types';
+import { mapping, onSelectionChanged, reducer } from './utils';
 
 const { createPluginState, getPluginState } = pluginFactory<
   DateState,
