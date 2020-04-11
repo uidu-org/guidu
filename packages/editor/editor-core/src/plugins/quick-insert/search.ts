@@ -91,8 +91,8 @@ export function distanceByWords(search: string, content: string): number {
     .replace(/\s/g, ' ')
     .toLowerCase()
     .split(' ')
-    .filter(word => lowerSearch[0] === word[0])
-    .map(word => trimChunk(word))
+    .filter((word) => lowerSearch[0] === word[0])
+    .map((word) => trimChunk(word))
     .reduce(
       (minDist, word) => Math.min(minDist, distance(lowerSearch, word)),
       Infinity,
@@ -122,13 +122,13 @@ export function find(
       // pre-sort items by title ascending, putting prioritary items first
       .sort(
         buildSortPredicateWith(
-          item => item.title,
-          item => item.priority || Number.POSITIVE_INFINITY,
+          (item) => item.title,
+          (item) => item.priority || Number.POSITIVE_INFINITY,
           SortMode.PRIORITY_FIRST,
         ),
       )
       // calculate lowest items distance to query
-      .map(item => ({
+      .map((item) => ({
         item,
         distance: getSearchChunks(item).reduce((acc, chunk) => {
           const chunkDistance = distanceByWords(query, chunk);
@@ -146,11 +146,11 @@ export function find(
       // post-sort items by distance ascending, putting prioritary items last
       .sort(
         buildSortPredicateWith(
-          agg => agg.distance,
-          agg => agg.item.priority || Number.POSITIVE_INFINITY,
+          (agg) => agg.distance,
+          (agg) => agg.item.priority || Number.POSITIVE_INFINITY,
           SortMode.PRIORITY_LAST,
         ),
       )
-      .map(agg => agg.item)
+      .map((agg) => agg.item)
   );
 }
