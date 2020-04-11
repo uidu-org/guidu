@@ -11,7 +11,7 @@ import {
   deleteColumnsWithAnalytics,
   deleteRowsWithAnalytics,
 } from '../../commands-with-analytics';
-import { getPluginState as getTablePluginState } from '../../pm-plugins/main';
+import { getPluginState as getTablePluginState } from '../../pm-plugins/plugin-factory';
 import { TableCssClassName as ClassName } from '../../types';
 import {
   getColumnDeleteButtonParams,
@@ -56,6 +56,8 @@ export function getSelectionType(
 }
 
 class FloatingDeleteButton extends Component<Props, State> {
+  static displayName = 'FloatingDeleteButton';
+
   constructor(props: Props) {
     super(props);
 

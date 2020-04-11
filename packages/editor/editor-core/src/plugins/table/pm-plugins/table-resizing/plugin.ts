@@ -1,21 +1,15 @@
 import classnames from 'classnames';
-import { Plugin, PluginKey } from 'prosemirror-state';
+import { Plugin } from 'prosemirror-state';
 import { Dispatch } from '../../../../event-dispatcher';
-import { pluginFactory } from '../../../../utils/plugin-state-factory';
 import {
   ColumnResizingPluginState,
   TableCssClassName as ClassName,
 } from '../../types';
+import { setResizeHandlePos } from './commands';
 import { handleMouseDown } from './event-handlers';
-import reducer from './reducer';
+import { createPluginState, getPluginState } from './plugin-factory';
+import { pluginKey } from './plugin-key';
 import { getResizeCellPos } from './utils';
-
-export const pluginKey = new PluginKey('tableFlexiColumnResizing');
-
-const { createPluginState, createCommand, getPluginState } = pluginFactory(
-  pluginKey,
-  reducer,
-);
 
 export function createPlugin(
   dispatch: Dispatch<ColumnResizingPluginState>,
@@ -50,18 +44,23 @@ export function createPlugin(
         mousedown(view, event) {
           const { state } = view;
           const resizeHandlePos =
-            // we're setting `resizeHandlePos` via command in integration tests
+            // we're setting `resizeHandlePos` via command in unit tests
             getPluginState(state).resizeHandlePos ||
             getResizeCellPos(view, event as MouseEvent, lastColumnResizable);
 
           const { dragging } = getPluginState(state);
           if (resizeHandlePos !== null && !dragging) {
-            return handleMouseDown(
-              view,
-              event as MouseEvent,
-              resizeHandlePos,
-              dynamicTextSizing,
-            );
+            if (
+              handleMouseDown(
+                view,
+                event as MouseEvent,
+                resizeHandlePos,
+                dynamicTextSizing,
+              )
+            ) {
+              const { state, dispatch } = view;
+              return setResizeHandlePos(resizeHandlePos)(state, dispatch);
+            }
           }
 
           return false;
@@ -70,5 +69,3 @@ export function createPlugin(
     },
   });
 }
-
-export { createCommand, getPluginState };

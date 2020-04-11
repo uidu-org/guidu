@@ -2,17 +2,10 @@
 import { CellAttributes } from '@uidu/adf-schema';
 import { Node as PMNode, Schema, Slice } from 'prosemirror-model';
 import { Selection, TextSelection, Transaction } from 'prosemirror-state';
-import {
-  CellSelection,
-  goToNextCell as baseGotoNextCell,
-  selectionCell,
-  splitCellWithType,
-  TableMap,
-} from 'prosemirror-tables';
+import { CellSelection, selectionCell, TableMap } from 'prosemirror-tables';
 import {
   ContentNodeWithPos,
   findCellClosestToPos,
-  findParentNodeOfType,
   findTable,
   getCellsInColumn,
   getCellsInRow,
@@ -23,34 +16,29 @@ import {
   selectRow as selectRowTransform,
   setCellAttrs,
 } from 'prosemirror-utils';
-import { DecorationSet, EditorView } from 'prosemirror-view';
-import { analyticsService } from '../../../analytics';
+import { EditorView } from 'prosemirror-view';
 import { Command } from '../../../types';
 import { isNodeTypeParagraph, isTextSelection } from '../../../utils';
 import { closestElement } from '../../../utils/dom';
 import { mapSlice } from '../../../utils/slice';
-import { INPUT_METHOD } from '../../analytics';
 import { outdentList } from '../../lists/commands';
-import { insertRowWithAnalytics } from '../commands-with-analytics';
-import { createCommand, getPluginState } from '../pm-plugins/main';
+import { buildColumnResizingDecorationSet } from '../decorations';
+import { createCommand, getPluginState } from '../pm-plugins/plugin-factory';
 import { fixAutoSizedTable } from '../transforms';
+import { TableCssClassName as ClassName, TableDecorations } from '../types';
 import {
-  TableCssClassName as ClassName,
-  TableDecorations,
-  TablePluginState,
-} from '../types';
+  createColumnControlsDecoration,
+  createColumnSelectedDecorations,
+} from '../utils/decoration';
 import {
   checkIfHeaderColumnEnabled,
   checkIfHeaderRowEnabled,
-  createColumnControlsDecoration,
   isIsolating,
-  updatePluginStateDecorations,
-} from '../utils';
+} from '../utils/nodes';
+import { updatePluginStateDecorations } from '../utils/update-plugin-state-decorations';
+
 // #endregion
 
-// #region Constants
-const TAB_FORWARD_DIRECTION = 1;
-const TAB_BACKWARD_DIRECTION = -1;
 // #endregion
 
 // #region Commands
@@ -71,19 +59,11 @@ export const setTableRef = (ref?: HTMLElement | null) =>
         closestElement(tableRef, `.${ClassName.TABLE_NODE_WRAPPER}`) ||
         undefined;
       const layout = tableNode ? tableNode.attrs.layout : undefined;
-      const {
-        pluginConfig: { allowControls = true },
-      } = getPluginState(state);
-
-      let decorationSet = DecorationSet.empty;
-
-      if (allowControls && tableRef) {
-        decorationSet = updatePluginStateDecorations(
-          state,
-          createColumnControlsDecoration(state.selection),
-          TableDecorations.COLUMN_CONTROLS_DECORATIONS,
-        );
-      }
+      const decorationSet = updatePluginStateDecorations(
+        state,
+        createColumnControlsDecoration(state.selection),
+        TableDecorations.COLUMN_CONTROLS_DECORATIONS,
+      );
 
       return {
         type: 'SET_TABLE_REF',
@@ -95,6 +75,7 @@ export const setTableRef = (ref?: HTMLElement | null) =>
           isHeaderRowEnabled: checkIfHeaderRowEnabled(state),
           isHeaderColumnEnabled: checkIfHeaderColumnEnabled(state),
           decorationSet,
+          resizeHandleColumnIndex: undefined,
         },
       };
     },
@@ -260,40 +241,6 @@ export const convertFirstRowToHeader = (schema: Schema) => (
   return tr;
 };
 
-export const goToNextCell = (direction: number): Command => (
-  state,
-  dispatch,
-) => {
-  const table = findTable(state.selection);
-  if (!table) {
-    return false;
-  }
-  const map = TableMap.get(table.node);
-  const { tableCell, tableHeader } = state.schema.nodes;
-  const cell = findParentNodeOfType([tableCell, tableHeader])(state.selection)!;
-  const firstCellPos = map.positionAt(0, 0, table.node) + table.start;
-  const lastCellPos =
-    map.positionAt(map.height - 1, map.width - 1, table.node) + table.start;
-
-  if (firstCellPos === cell.pos && direction === TAB_BACKWARD_DIRECTION) {
-    insertRowWithAnalytics(INPUT_METHOD.KEYBOARD, 0)(state, dispatch);
-    return true;
-  }
-
-  if (lastCellPos === cell.pos && direction === TAB_FORWARD_DIRECTION) {
-    insertRowWithAnalytics(INPUT_METHOD.KEYBOARD, map.height)(state, dispatch);
-    return true;
-  }
-
-  const event =
-    direction === TAB_FORWARD_DIRECTION ? 'next_cell' : 'previous_cell';
-  analyticsService.trackEvent(
-    `atlassian.editor.format.table.${event}.keyboard`,
-  );
-
-  return baseGotoNextCell(direction)(state, dispatch);
-};
-
 export const moveCursorBackward: Command = (state, dispatch) => {
   const { $cursor } = state.selection as TextSelection;
   // if cursor is in the middle of a text node, do nothing
@@ -390,15 +337,27 @@ export const setMultipleCellAttrs = (
 export const selectColumn = (column: number, expand?: boolean) =>
   createCommand(
     (state) => {
-      let targetCellPosition;
       const cells = getCellsInColumn(column)(state.tr.selection);
-      if (cells && cells.length) {
-        targetCellPosition = cells[0].pos;
+      if (!cells || !cells.length || typeof cells[0].pos !== 'number') {
+        return false;
       }
 
-      return { type: 'SET_TARGET_CELL_POSITION', data: { targetCellPosition } };
+      const decorations = createColumnSelectedDecorations(
+        selectColumnTransform(column, expand)(state.tr),
+      );
+      const decorationSet = updatePluginStateDecorations(
+        state,
+        decorations,
+        TableDecorations.COLUMN_SELECTED,
+      );
+      const targetCellPosition = cells[0].pos;
+
+      return {
+        type: 'SELECT_COLUMN',
+        data: { targetCellPosition, decorationSet },
+      };
     },
-    (tr) =>
+    (tr: Transaction) =>
       selectColumnTransform(column, expand)(tr).setMeta('addToHistory', false),
   );
 
@@ -448,6 +407,32 @@ export const hideInsertColumnOrRowButton = () =>
     (tr) => tr.setMeta('addToHistory', false),
   );
 
+export const addResizeHandleDecorations = (columnIndex: number) =>
+  createCommand(
+    (state) => {
+      const tableNode = findTable(state.selection);
+      const {
+        pluginConfig: { allowColumnResizing },
+      } = getPluginState(state);
+
+      if (!tableNode || !allowColumnResizing) {
+        return false;
+      }
+
+      return {
+        type: 'ADD_RESIZE_HANDLE_DECORATIONS',
+        data: {
+          decorationSet: buildColumnResizingDecorationSet(columnIndex)({
+            tr: state.tr,
+            decorationSet: getPluginState(state).decorationSet,
+          }),
+          resizeHandleColumnIndex: columnIndex,
+        },
+      };
+    },
+    (tr: Transaction) => tr.setMeta('addToHistory', false),
+  );
+
 export const autoSizeTable = (
   view: EditorView,
   node: PMNode,
@@ -466,6 +451,7 @@ export const addBoldInEmptyHeaderCells = (
   if (
     // Avoid infinite loop when the current selection is not a TextSelection
     isTextSelection(tr.selection) &&
+    tr.selection.$cursor &&
     // When storedMark is null that means this is the initial state
     // if the user press to remove the mark storedMark will be an empty array
     // and we shouldn't apply the strong mark
@@ -489,22 +475,3 @@ export const addBoldInEmptyHeaderCells = (
   return false;
 };
 // #endregion
-
-/**
- * We need to split cell keeping the right type of cell given current table configuration.
- * We are using prosemirror-tables splitCellWithType that allows you to choose what cell type should be.
- */
-export const splitCell: Command = (state, dispatch) => {
-  const tableState: TablePluginState = getPluginState(state);
-  const { tableHeader, tableCell } = state.schema.nodes;
-  return splitCellWithType(({ row, col }: { row: number; col: number }) => {
-    if (
-      (row === 0 && tableState.isHeaderRowEnabled) ||
-      (col === 0 && tableState.isHeaderColumnEnabled)
-    ) {
-      return tableHeader;
-    }
-
-    return tableCell;
-  })(state, dispatch);
-};

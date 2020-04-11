@@ -1,7 +1,7 @@
 import { table, tableCell, tableHeader, tableRow } from '@uidu/adf-schema';
 import { tableEditing } from 'prosemirror-tables';
 import { createTable } from 'prosemirror-utils';
-import * as React from 'react';
+import React from 'react';
 import { toggleTable, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
@@ -15,41 +15,22 @@ import {
 } from '../analytics';
 import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconTable } from '../quick-insert/assets';
+import { pluginConfig } from './create-plugin-config';
 import { keymapPlugin } from './pm-plugins/keymap';
-import { createPlugin, getPluginState, pluginKey } from './pm-plugins/main';
+import { createPlugin } from './pm-plugins/main';
+import { getPluginState, pluginKey } from './pm-plugins/plugin-factory';
 import {
   createPlugin as createFlexiResizingPlugin,
   pluginKey as tableResizingPluginKey,
 } from './pm-plugins/table-resizing';
 import { getToolbarConfig } from './toolbar';
-import {
-  ColumnResizingPluginState,
-  PermittedLayoutsDescriptor,
-  PluginConfig,
-} from './types';
+import { ColumnResizingPluginState, PluginConfig } from './types';
 import FloatingContextualButton from './ui/FloatingContextualButton';
 import FloatingContextualMenu from './ui/FloatingContextualMenu';
 import FloatingDeleteButton from './ui/FloatingDeleteButton';
 import FloatingInsertButton from './ui/FloatingInsertButton';
 import LayoutButton from './ui/LayoutButton';
 import { isLayoutSupported } from './utils';
-
-export const pluginConfig = (config: PluginConfig = {}) => {
-  return config.advanced
-    ? {
-        allowBackgroundColor: true,
-        allowColumnResizing: true,
-        allowHeaderColumn: true,
-        allowHeaderRow: true,
-        allowMergeCells: true,
-        allowNumberColumn: true,
-        stickToolbarToBottom: true,
-        permittedLayouts: 'all' as PermittedLayoutsDescriptor,
-        allowControls: true,
-        ...config,
-      }
-    : config;
-};
 
 interface TablePluginOptions {
   tableOptions: PluginConfig;
@@ -132,39 +113,51 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
         render={(_) => {
           const { state } = editorView;
           const pluginState = getPluginState(state);
-          const tableResizingPluginState = tableResizingPluginKey.getState(
-            state,
-          );
+          const resizingPluginState = tableResizingPluginKey.getState(state);
           const isDragging =
-            tableResizingPluginState && tableResizingPluginState.dragging;
-          const allowControls =
-            pluginState &&
-            pluginState.pluginConfig &&
-            pluginState.pluginConfig.allowControls;
+            resizingPluginState && resizingPluginState.dragging;
+          const {
+            tableNode,
+            targetCellPosition,
+            isContextualMenuOpen,
+            layout,
+            tableRef,
+            pluginConfig,
+            insertColumnButtonIndex,
+            insertRowButtonIndex,
+            isHeaderColumnEnabled,
+            isHeaderRowEnabled,
+            tableWrapperTarget,
+          } = pluginState || {};
+          const allowControls = pluginConfig && pluginConfig.allowControls;
 
           return (
             <>
-              {pluginState.targetCellPosition &&
+              {targetCellPosition &&
+                tableRef &&
                 !isDragging &&
                 options &&
                 options.allowContextualMenu && (
                   <FloatingContextualButton
+                    isNumberColumnEnabled={
+                      tableNode && tableNode.attrs.isNumberColumnEnabled
+                    }
                     editorView={editorView}
                     mountPoint={popupsMountPoint}
-                    targetCellPosition={pluginState.targetCellPosition}
+                    targetCellPosition={targetCellPosition}
                     scrollableElement={popupsScrollableElement}
-                    isContextualMenuOpen={pluginState.isContextualMenuOpen}
-                    layout={pluginState.layout}
+                    isContextualMenuOpen={isContextualMenuOpen}
+                    layout={layout}
                   />
                 )}
               {allowControls && (
                 <FloatingInsertButton
-                  tableNode={pluginState.tableNode}
-                  tableRef={pluginState.tableRef}
-                  insertColumnButtonIndex={pluginState.insertColumnButtonIndex}
-                  insertRowButtonIndex={pluginState.insertRowButtonIndex}
-                  isHeaderColumnEnabled={pluginState.isHeaderColumnEnabled}
-                  isHeaderRowEnabled={pluginState.isHeaderRowEnabled}
+                  tableNode={tableNode}
+                  tableRef={tableRef}
+                  insertColumnButtonIndex={insertColumnButtonIndex}
+                  insertRowButtonIndex={insertRowButtonIndex}
+                  isHeaderColumnEnabled={isHeaderColumnEnabled}
+                  isHeaderRowEnabled={isHeaderRowEnabled}
                   editorView={editorView}
                   mountPoint={popupsMountPoint}
                   boundariesElement={popupsBoundariesElement}
@@ -175,15 +168,15 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
                 editorView={editorView}
                 mountPoint={popupsMountPoint}
                 boundariesElement={popupsBoundariesElement}
-                targetCellPosition={pluginState.targetCellPosition}
-                isOpen={Boolean(pluginState.isContextualMenuOpen)}
-                pluginConfig={pluginState.pluginConfig}
+                targetCellPosition={targetCellPosition}
+                isOpen={Boolean(isContextualMenuOpen)}
+                pluginConfig={pluginConfig}
               />
               {allowControls && (
                 <FloatingDeleteButton
                   editorView={editorView}
                   selection={editorView.state.selection}
-                  tableRef={pluginState.tableRef as HTMLTableElement}
+                  tableRef={tableRef as HTMLTableElement}
                   mountPoint={popupsMountPoint}
                   boundariesElement={popupsBoundariesElement}
                   scrollableElement={popupsScrollableElement}
@@ -197,11 +190,10 @@ const tablesPlugin = (options?: TablePluginOptions): EditorPlugin => ({
                     mountPoint={popupsMountPoint}
                     boundariesElement={popupsBoundariesElement}
                     scrollableElement={popupsScrollableElement}
-                    targetRef={pluginState.tableWrapperTarget!}
-                    layout={pluginState.layout}
+                    targetRef={tableWrapperTarget!}
+                    layout={layout}
                     isResizing={
-                      !!tableResizingPluginState &&
-                      !!tableResizingPluginState.dragging
+                      !!resizingPluginState && !!resizingPluginState.dragging
                     }
                   />
                 )}

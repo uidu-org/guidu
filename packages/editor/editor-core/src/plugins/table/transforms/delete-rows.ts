@@ -1,8 +1,8 @@
-import { Transaction, Selection } from 'prosemirror-state';
-import { TableMap, Rect } from 'prosemirror-tables';
-import { findTable } from 'prosemirror-utils';
-import { Node as PMNode } from 'prosemirror-model';
 import { CellAttributes } from '@uidu/adf-schema';
+import { Node as PMNode } from 'prosemirror-model';
+import { Selection, Transaction } from 'prosemirror-state';
+import { Rect, TableMap } from 'prosemirror-tables';
+import { findTable } from 'prosemirror-utils';
 import { removeEmptyColumns } from './merge';
 import { setMeta } from './metadata';
 
@@ -59,7 +59,7 @@ export const deleteRows = (
         // decrement rowspans for row-spanning cells that overlap deleted rows
         if (cellsInRow.indexOf(cellPos) > -1) {
           let overlappingRows = 0;
-          rowsToDelete.forEach(rowIndexToDelete => {
+          rowsToDelete.forEach((rowIndexToDelete) => {
             if (
               rowIndex < rowIndexToDelete &&
               cell.attrs.rowspan + rowIndex - 1 >= rowIndexToDelete

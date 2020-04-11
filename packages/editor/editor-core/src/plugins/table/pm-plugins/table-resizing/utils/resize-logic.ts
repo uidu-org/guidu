@@ -1,5 +1,6 @@
 import { ColumnState, getFreeSpace } from './column-state';
-import { ResizeState, getTotalWidth, bulkColumnsResize } from './resize-state';
+import { bulkColumnsResize, getTotalWidth } from './resize-state';
+import { ResizeState } from './types';
 
 export const growColumn = (
   state: ResizeState,
@@ -64,7 +65,7 @@ export function reduceSpace(
   // or nothing to resize
   while (remaining > 0) {
     // filter candidates only with free space
-    const candidates = state.cols.filter(column => {
+    const candidates = state.cols.filter((column) => {
       return getFreeSpace(column) && ignoreCols.indexOf(column.index) === -1;
     });
     if (candidates.length === 0) {
@@ -75,7 +76,7 @@ export function reduceSpace(
       break;
     }
 
-    candidates.forEach(candidate => {
+    candidates.forEach((candidate) => {
       let newWidth = candidate.width - requestedResize;
       if (newWidth < candidate.minWidth) {
         // If the new requested width is less than our min
@@ -199,7 +200,7 @@ function stackSpace(
       break;
     }
 
-    const column = candidates.find(col => col.index === candidateIdx);
+    const column = candidates.find((col) => col.index === candidateIdx);
     if (!column || getFreeSpace(column) <= 0) {
       // no more columns with free space remain
       break;
@@ -209,7 +210,7 @@ function stackSpace(
     state = res.state;
     amount -= res.amount;
 
-    candidates = candidates.filter(col => col.index !== candidateIdx);
+    candidates = candidates.filter((col) => col.index !== candidateIdx);
   }
 
   return {
@@ -228,7 +229,7 @@ function findNextFreeColumn(columns: ColumnState[], amount: number): number {
   }
 
   let freeIndex = -1;
-  columns.forEach(column => {
+  columns.forEach((column) => {
     if (getFreeSpace(column) && freeIndex === -1) {
       freeIndex = column.index;
     }
@@ -242,7 +243,7 @@ function findNextFreeColumn(columns: ColumnState[], amount: number): number {
 }
 
 function amountFor(colType: ColType): (amount: number) => number {
-  return amount =>
+  return (amount) =>
     colType === ColType.SOURCE
       ? amount > 0
         ? -amount

@@ -11,8 +11,8 @@ import { pluginKey as editorDisabledPluginKey } from '../../../editor-disabled';
 import { pluginKey as widthPluginKey } from '../../../width';
 import { updateColumnWidths } from '../../transforms';
 import { getSelectedColumnIndexes, updateResizeHandles } from '../../utils';
-import { evenColumns, setDragging } from './commands';
-import { getPluginState } from './plugin';
+import { evenColumns, setDragging, stopResizing } from './commands';
+import { getPluginState } from './plugin-factory';
 import {
   currentColWidth,
   getLayoutSize,
@@ -25,7 +25,7 @@ import {
 export const handleMouseDown = (
   view: EditorView,
   event: MouseEvent,
-  resizeHandlePos: number,
+  localResizeHandlePos: number,
   dynamicTextSizing: boolean,
 ): boolean => {
   const { state, dispatch } = view;
@@ -34,14 +34,14 @@ export const handleMouseDown = (
 
   if (
     editorDisabled ||
-    resizeHandlePos === null ||
-    !pointsAtCell(state.doc.resolve(resizeHandlePos))
+    localResizeHandlePos === null ||
+    !pointsAtCell(state.doc.resolve(localResizeHandlePos))
   ) {
     return false;
   }
   event.preventDefault();
-  const cell = state.doc.nodeAt(resizeHandlePos);
-  const $cell = state.doc.resolve(resizeHandlePos);
+  const cell = state.doc.nodeAt(localResizeHandlePos);
+  const $cell = state.doc.resolve(localResizeHandlePos);
   const originalTable = $cell.node(-1);
   const start = $cell.start(-1);
 
@@ -88,8 +88,11 @@ export const handleMouseDown = (
     return true;
   }
 
-  const width = currentColWidth(view, resizeHandlePos, cell!
-    .attrs as CellAttributes);
+  const width = currentColWidth(
+    view,
+    localResizeHandlePos,
+    cell!.attrs as CellAttributes,
+  );
 
   setDragging({ startX: event.clientX, startWidth: width })(state, dispatch);
 
@@ -99,12 +102,13 @@ export const handleMouseDown = (
 
     const { clientX } = event;
     const { state, dispatch } = view;
-    const { dragging } = getPluginState(state);
-    if (
-      resizeHandlePos === null ||
-      !pointsAtCell(state.doc.resolve(resizeHandlePos))
-    ) {
-      return;
+    const { dragging, resizeHandlePos } = getPluginState(state);
+    if (resizeHandlePos === null) {
+      return stopResizing()(state, dispatch);
+    }
+
+    if (!pointsAtCell(state.doc.resolve(resizeHandlePos))) {
+      return undefined;
     }
     // resizeHandlePos could be remapped via a collab change.
     // Fetch a fresh reference of the table.
@@ -114,8 +118,7 @@ export const handleMouseDown = (
 
     // If we let go in the same place we started, dont need to do anything.
     if (dragging && clientX === dragging.startX) {
-      setDragging(null)(state, dispatch);
-      return;
+      return stopResizing()(state, dispatch);
     }
 
     let { tr } = state;
@@ -149,14 +152,15 @@ export const handleMouseDown = (
         tr = updateColumnWidths(newResizeState, table, start)(tr);
       }
 
-      setDragging(null, tr)(view.state, dispatch);
+      return stopResizing(tr)(state, dispatch);
     }
+    return undefined;
   }
 
   function move(event: MouseEvent) {
     const { clientX, which } = event;
     const { state } = view;
-    const { dragging } = getPluginState(state);
+    const { dragging, resizeHandlePos } = getPluginState(state);
     if (
       !which ||
       !dragging ||
@@ -178,6 +182,7 @@ export const handleMouseDown = (
 
     updateControls(state);
     updateResizeHandles(dom);
+    return true;
   }
 
   window.addEventListener('mouseup', finish);

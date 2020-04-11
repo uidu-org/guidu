@@ -9,7 +9,7 @@ import {
   toggleHeaderRowWithAnalytics,
   toggleNumberColumnWithAnalytics,
 } from './commands-with-analytics';
-import { pluginKey } from './pm-plugins/main';
+import { pluginKey } from './pm-plugins/plugin-factory';
 import { pluginKey as tableResizingPluginKey } from './pm-plugins/table-resizing/index';
 import { ColumnResizingPluginState, TablePluginState } from './types';
 import { checkIfNumberColumnEnabled } from './utils';

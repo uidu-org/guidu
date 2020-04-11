@@ -11,7 +11,7 @@ import {
 import { NodeSpec, ResolvedPos } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 import { containsClassName } from '../../../../../utils';
-import { TableOptions } from '../../../nodeviews/table';
+import { TableOptions } from '../../../nodeviews/types';
 
 export const tableLayoutToSize: Record<string, number> = {
   default: akEditorDefaultLayoutWidth,

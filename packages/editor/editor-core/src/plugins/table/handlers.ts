@@ -1,108 +1,153 @@
 // #region Imports
-import { Node as PmNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
-import { findParentNodeOfType, findTable } from 'prosemirror-utils';
+import {
+  ContentNodeWithPos,
+  findParentNodeOfType,
+  findTable,
+} from 'prosemirror-utils';
 import { DecorationSet } from 'prosemirror-view';
-import { defaultTableSelection } from './pm-plugins/main';
 import {
-  TableColumnOrdering,
-  TableDecorations,
-  TablePluginState,
-} from './types';
-import {
-  createColumnControlsDecoration,
-  createColumnSelectedDecorations,
-  findControlsHoverDecoration,
-  TableSortStep,
-  updateNodeDecorations,
-} from './utils';
-import { findColumnControlSelectedDecoration } from './utils/decoration';
+  buildTableDecorationSet,
+  hasColumnSelectedDecorations,
+  removeColumnControlsSelected as removeColumnControlsSelectedDecorations,
+} from './decorations';
+import { defaultTableSelection } from './pm-plugins/default-table-selection';
+import { pluginKey as tableResizingPluginKey } from './pm-plugins/table-resizing';
+import { TableColumnOrdering, TablePluginState } from './types';
+import { TableSortStep } from './utils/sort-step';
 // #endregion
 
-const getDecorationSet = (
+const nextTableSorting = (
   tr: Transaction,
-  allowControls: boolean,
-  tableNode?: PmNode,
-): DecorationSet => {
-  let decorationSet = DecorationSet.empty;
+  table?: ContentNodeWithPos,
+): TableColumnOrdering | undefined => {
+  const tableSortStep: TableSortStep = tr.steps.find(
+    (step) => step instanceof TableSortStep,
+  ) as TableSortStep;
 
-  if (allowControls && tableNode) {
-    decorationSet = updateNodeDecorations(
-      tr.doc,
-      decorationSet,
-      createColumnControlsDecoration(tr.selection),
-      TableDecorations.COLUMN_CONTROLS_DECORATIONS,
-    );
-  }
-
-  if (tr.selection instanceof CellSelection && tr.selection.isColSelection()) {
-    decorationSet = updateNodeDecorations(
-      tr.doc,
-      decorationSet,
-      createColumnSelectedDecorations(tr),
-      TableDecorations.COLUMN_SELECTED,
-    );
-  }
-
-  return decorationSet;
+  return tableSortStep && table && table.pos === tableSortStep.pos
+    ? tableSortStep.next
+    : undefined;
 };
+
+const nextResizeHandleColumnIndex = (
+  tr: Transaction,
+  resizeHandleColumnIndex?: number,
+): number | undefined => {
+  if (tr.getMeta(tableResizingPluginKey)) {
+    return undefined;
+  }
+
+  return resizeHandleColumnIndex;
+};
+
+type BuilderTablePluginStateProps = {
+  tr: Transaction;
+  table?: ContentNodeWithPos;
+};
+type BuilderTablePluginState = (
+  props: BuilderTablePluginStateProps,
+) => (pluginState: TablePluginState) => TablePluginState;
+
+const updateTargetCellPosition: BuilderTablePluginState = ({ tr, table }) => (
+  pluginState: TablePluginState,
+) => {
+  const tableNode = table && table.node;
+  if (!tableNode) {
+    return {
+      ...pluginState,
+      targetCellPosition: undefined,
+    };
+  }
+
+  const { tableCell, tableHeader } = tr.doc.type.schema.nodes;
+  const cell = findParentNodeOfType([tableCell, tableHeader])(tr.selection);
+  const targetCellPosition = cell ? cell.pos : undefined;
+
+  if (pluginState.targetCellPosition === targetCellPosition) {
+    return pluginState;
+  }
+
+  return {
+    ...pluginState,
+    targetCellPosition,
+  };
+};
+
+const updateTableNodePluginState: BuilderTablePluginState = ({ tr, table }) => (
+  pluginState,
+) => {
+  const tableNode = table && table.node;
+
+  if (!tableNode) {
+    return pluginState;
+  }
+
+  return {
+    ...pluginState,
+    ...defaultTableSelection,
+    tableNode,
+    ordering: nextTableSorting(tr, table),
+    resizeHandleColumnIndex: nextResizeHandleColumnIndex(
+      tr,
+      pluginState.resizeHandleColumnIndex,
+    ),
+  };
+};
+
+const updateDecorationSet: BuilderTablePluginState = ({ tr, table }) => (
+  pluginState,
+) => {
+  if (!(tr.docChanged || tr.selection instanceof CellSelection)) {
+    return pluginState;
+  }
+
+  return {
+    ...pluginState,
+    decorationSet: buildTableDecorationSet(true)({
+      decorationSet: DecorationSet.empty,
+      tr,
+    }),
+  };
+};
+
+const updateColumnControlsSelectedDecorations: BuilderTablePluginState = ({
+  tr,
+}) => (pluginState) => {
+  const isTransactionFromMouseClick =
+    !tr.docChanged && tr.selectionSet && tr.getMeta('pointer');
+
+  if (
+    !isTransactionFromMouseClick ||
+    !hasColumnSelectedDecorations(pluginState.decorationSet)
+  ) {
+    return pluginState;
+  }
+
+  return {
+    ...pluginState,
+    decorationSet: removeColumnControlsSelectedDecorations(
+      pluginState.decorationSet,
+    ),
+  };
+};
+
+const buildPluginState = (
+  builders: Array<BuilderTablePluginState>,
+): BuilderTablePluginState => (props) => (pluginState) =>
+  builders.reduce(
+    (_pluginState, transform) => transform(props)(_pluginState),
+    pluginState,
+  );
 
 export const handleDocOrSelectionChanged = (
   tr: Transaction,
   pluginState: TablePluginState,
-): TablePluginState => {
-  let tableNode;
-  let targetCellPosition;
-  const table = findTable(tr.selection);
-  if (table) {
-    tableNode = table.node;
-    const { tableCell, tableHeader } = tr.doc.type.schema.nodes;
-    const cell = findParentNodeOfType([tableCell, tableHeader])(tr.selection);
-    targetCellPosition = cell ? cell.pos : undefined;
-  }
-
-  const {
-    pluginConfig: { allowControls = true },
-  } = pluginState;
-
-  const hoverDecoration = findControlsHoverDecoration(
-    pluginState.decorationSet,
-  );
-
-  // @see: https://product-fabric.atlassian.net/browse/ED-7304
-  const selectedColumnControlsDecoration = findColumnControlSelectedDecoration(
-    pluginState.decorationSet,
-  );
-
-  const tableSortStep: TableSortStep = tr.steps.find(
-    step => step instanceof TableSortStep,
-  ) as TableSortStep;
-  let ordering: TableColumnOrdering | undefined;
-  if (tableSortStep && table && table.pos === tableSortStep.pos) {
-    ordering = tableSortStep.next;
-  }
-
-  if (
-    pluginState.tableNode !== tableNode ||
-    pluginState.targetCellPosition !== targetCellPosition ||
-    hoverDecoration.length ||
-    selectedColumnControlsDecoration.length
-  ) {
-    const decorationSet = getDecorationSet(tr, allowControls, tableNode);
-
-    const nextPluginState = {
-      ...pluginState,
-      ...defaultTableSelection,
-      // @see: https://product-fabric.atlassian.net/browse/ED-3796
-      decorationSet: decorationSet.remove(hoverDecoration),
-      targetCellPosition,
-      tableNode,
-      ordering,
-    };
-
-    return nextPluginState;
-  }
-
-  return pluginState;
-};
+): TablePluginState =>
+  buildPluginState([
+    updateTargetCellPosition,
+    updateTableNodePluginState,
+    updateColumnControlsSelectedDecorations,
+    updateDecorationSet,
+  ])({ tr, table: findTable(tr.selection) })(pluginState);

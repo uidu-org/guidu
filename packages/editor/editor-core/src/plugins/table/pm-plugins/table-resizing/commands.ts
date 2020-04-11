@@ -1,69 +1,19 @@
-import { tableCellMinWidth } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
-import { TableMap } from 'prosemirror-tables';
 import { isTableSelected } from 'prosemirror-utils';
 import { Command, DomAtPos } from '../../../../types';
 import { updateColumnWidths } from '../../transforms';
-import { createCommand, getPluginState } from './plugin';
+import { createCommand, getPluginState } from './plugin-factory';
 import {
-  addContainerLeftRightPadding,
   evenAllColumnsWidths,
-  getResizeState,
   hasTableBeenResized,
   insertColgroupFromNode as recreateResizeColsByNode,
   isClickNear,
-  resizeColumn,
   ResizeState,
   scale,
   ScaleOptions,
   scaleWithParent,
 } from './utils';
-
-export const handleBreakoutContent = (
-  tableRef: HTMLTableElement,
-  cellPos: number,
-  start: number,
-  minWidth: number,
-  table: PMNode,
-  domAtPos: DomAtPos,
-): Command => (state, dispatch) => {
-  const map = TableMap.get(table);
-  // Investigate Math.max fallback for tests using JSDOM: https://product-fabric.atlassian.net/browse/ED-7000
-  const rect = map.findCell(Math.max(cellPos - start, 1));
-  const cellStyle = getComputedStyle(tableRef);
-  const amount = addContainerLeftRightPadding(
-    minWidth - tableRef.offsetWidth,
-    cellStyle,
-  );
-
-  while (tableRef.nodeName !== 'TABLE') {
-    tableRef = tableRef.parentNode as HTMLTableElement;
-  }
-
-  const resizeState = resizeColumn(
-    getResizeState({
-      minWidth: tableCellMinWidth,
-      maxSize: tableRef.offsetWidth,
-      table,
-      tableRef,
-      start,
-      domAtPos,
-    }),
-    rect.left,
-    amount,
-    tableRef,
-  );
-
-  const { tr } = state;
-  updateColumnWidths(resizeState, table, start)(tr);
-
-  if (dispatch && tr.docChanged) {
-    dispatch(tr);
-  }
-
-  return true;
-};
 
 // Scale the table to meet new requirements (col, layout change etc)
 export const scaleTable = (
@@ -97,6 +47,11 @@ export const scaleTable = (
     tr = updateColumnWidths(resizeState, node, start)(tr);
 
     if (tr.docChanged && dispatch) {
+      tr.setMeta('scrollIntoView', false);
+      // TODO: ED-8995
+      // We need to do this check to reduce the number of race conditions when working with tables.
+      // This metadata is been used in the sendTransaction function in the Collab plugin
+      tr.setMeta('scaleTable', true);
       dispatch(tr);
       return true;
     }
@@ -130,7 +85,7 @@ export const evenColumns = ({
     isClickNear(event, lastClick)
   ) {
     const newState = evenAllColumnsWidths(resizeState);
-    setLastClick(null, tr => updateColumnWidths(newState, table, start)(tr))(
+    setLastClick(null, (tr) => updateColumnWidths(newState, table, start)(tr))(
       state,
       dispatch,
     );
@@ -154,6 +109,14 @@ export const setResizeHandlePos = (resizeHandlePos: number | null) =>
     },
   });
 
+export const stopResizing = (tr?: Transaction) =>
+  createCommand(
+    {
+      type: 'STOP_RESIZING',
+    },
+    (originalTr) => (tr || originalTr).setMeta('scrollIntoView', false),
+  );
+
 export const setDragging = (
   dragging: { startX: number; startWidth: number } | null,
   tr?: Transaction,
@@ -165,7 +128,7 @@ export const setDragging = (
         dragging,
       },
     },
-    originalTr => tr || originalTr,
+    (originalTr) => tr || originalTr,
   );
 
 export const setLastClick = (

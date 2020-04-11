@@ -3,7 +3,7 @@ import { Node as PmNode } from 'prosemirror-model';
 import { CellSelection, TableMap } from 'prosemirror-tables';
 import { findDomRefAtPos, findTable } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import { closestElement } from '../../../../utils/dom';
 import { INPUT_METHOD } from '../../../analytics';
@@ -33,6 +33,8 @@ class FloatingInsertButton extends React.Component<
   Props & WrappedComponentProps,
   any
 > {
+  static displayName = 'FloatingInsertButton';
+
   constructor(props: Props & WrappedComponentProps) {
     super(props);
     this.insertColumn = this.insertColumn.bind(this);
@@ -184,10 +186,10 @@ class FloatingInsertButton extends React.Component<
       event.preventDefault();
 
       const { state, dispatch } = editorView;
-      insertRowWithAnalytics(INPUT_METHOD.BUTTON, insertRowButtonIndex)(
-        state,
-        dispatch,
-      );
+      insertRowWithAnalytics(INPUT_METHOD.BUTTON, {
+        index: insertRowButtonIndex,
+        moveCursorToInsertedRow: true,
+      })(state, dispatch);
     }
   }
 

@@ -1,5 +1,10 @@
 import { browser } from '@uidu/editor-common';
-import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  Plugin,
+  TextSelection,
+  Transaction,
+} from 'prosemirror-state';
 import {
   findParentDomRefOfType,
   findParentNodeOfType,
@@ -8,7 +13,6 @@ import {
 import { DecorationSet, EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../../event-dispatcher';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
-import { pluginFactory } from '../../../utils/plugin-state-factory';
 import {
   addBoldInEmptyHeaderCells,
   clearHoverSelection,
@@ -27,46 +31,17 @@ import {
   handleTripleClick,
   whenTableInFocus,
 } from '../event-handlers';
-import { handleDocOrSelectionChanged } from '../handlers';
 import { createTableView } from '../nodeviews/table';
-import reducer from '../reducer';
 import { fixTables } from '../transforms';
 import { PluginConfig, TableCssClassName as ClassName } from '../types';
 import { findControlsHoverDecoration, updateResizeHandles } from '../utils';
-
-export const pluginKey = new PluginKey('tablePlugin');
-
-export const defaultTableSelection = {
-  hoveredColumns: [],
-  hoveredRows: [],
-  isInDanger: false,
-};
+import { defaultTableSelection } from './default-table-selection';
+import { createPluginState, getPluginState, pluginKey } from './plugin-factory';
 
 let isBreakoutEnabled: boolean | undefined;
 let isDynamicTextSizingEnabled: boolean | undefined;
 let isFullWidthModeEnabled: boolean | undefined;
 let wasFullWidthModeEnabled: boolean | undefined;
-
-const { createPluginState, createCommand, getPluginState } = pluginFactory(
-  pluginKey,
-  reducer,
-  {
-    mapping: (tr, pluginState) => {
-      if (tr.docChanged && pluginState.targetCellPosition) {
-        const { pos, deleted } = tr.mapping.mapResult(
-          pluginState.targetCellPosition,
-        );
-        return {
-          ...pluginState,
-          targetCellPosition: deleted ? undefined : pos,
-        };
-      }
-      return pluginState;
-    },
-    onDocChanged: handleDocOrSelectionChanged,
-    onSelectionChanged: handleDocOrSelectionChanged,
-  },
-);
 
 export const createPlugin = (
   dispatch: Dispatch,
@@ -101,13 +76,13 @@ export const createPlugin = (
       oldState: EditorState,
       newState: EditorState,
     ) => {
-      const tr = transactions.find(tr => tr.getMeta('uiEvent') === 'cut');
+      const tr = transactions.find((tr) => tr.getMeta('uiEvent') === 'cut');
       if (tr) {
         // "fixTables" removes empty rows as we don't allow that in schema
         const updatedTr = handleCut(tr, oldState, newState);
         return fixTables(updatedTr) || updatedTr;
       }
-      if (transactions.find(tr => tr.docChanged)) {
+      if (transactions.find((tr) => tr.docChanged)) {
         return fixTables(newState.tr);
       }
       return undefined;
@@ -142,19 +117,23 @@ export const createPlugin = (
           }
 
           if (pluginState.editorHasFocus && pluginState.tableRef) {
-            const tableCellHeader = findParentNodeOfType(
-              state.schema.nodes.tableHeader,
-            )(state.selection);
+            const { $cursor } = state.selection as TextSelection;
+            if ($cursor) {
+              // Only update bold when it's a cursor
+              const tableCellHeader = findParentNodeOfType(
+                state.schema.nodes.tableHeader,
+              )(state.selection);
 
-            if (tableCellHeader) {
-              addBoldInEmptyHeaderCells(tableCellHeader)(state, dispatch);
+              if (tableCellHeader) {
+                addBoldInEmptyHeaderCells(tableCellHeader)(state, dispatch);
+              }
             }
           }
         },
       };
     },
     props: {
-      decorations: state => getPluginState(state).decorationSet,
+      decorations: (state) => getPluginState(state).decorationSet,
 
       handleClick: ({ state, dispatch }, _pos, event: MouseEvent) => {
         const { decorationSet } = getPluginState(state);
@@ -191,7 +170,7 @@ export const createPlugin = (
 
       handleDOMEvents: {
         focus: handleFocus,
-        blur: whenTableInFocus(handleBlur),
+        blur: handleBlur,
         mousedown: handleMouseDown,
         mouseover: whenTableInFocus(handleMouseOver),
         mouseleave: whenTableInFocus(handleMouseLeave),
@@ -204,5 +183,3 @@ export const createPlugin = (
     },
   });
 };
-
-export { createCommand, getPluginState };

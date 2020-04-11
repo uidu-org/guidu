@@ -21,6 +21,7 @@ export {
   pointsAtCell,
   tableLayoutToSize,
 } from './misc';
+export { resizeColumn } from './resize-column';
 export { growColumn, reduceSpace, shrinkColumn } from './resize-logic';
 export {
   adjustColumnsWidths,
@@ -29,8 +30,7 @@ export {
   evenAllColumnsWidths,
   getResizeState,
   getTotalWidth,
-  resizeColumn,
-  ResizeState,
   updateColgroup,
 } from './resize-state';
 export { scale, ScaleOptions, scaleWithParent } from './scale-table';
+export { ResizeState } from './types';

@@ -7,16 +7,32 @@ import {
 import { TableSharedCssClassName } from '@uidu/editor-common';
 import { Node as PmNode } from 'prosemirror-model';
 import { Transaction } from 'prosemirror-state';
+import { Rect } from 'prosemirror-tables';
 import { DecorationSet } from 'prosemirror-view';
+import { INPUT_METHOD } from '../analytics/types/enums';
 
 export enum SortOrder {
   ASC = 'asc',
   DESC = 'desc',
 }
 
+export const RESIZE_HANDLE_AREA_DECORATION_GAP = 30;
+export type RowInsertPosition = 'TOP' | 'BOTTOM';
+
 export type PermittedLayoutsDescriptor = TableLayout[] | 'all';
 export type Cell = { pos: number; start: number; node: PmNode };
 export type CellTransform = (cell: Cell) => (tr: Transaction) => Transaction;
+
+export interface InsertRowOptions {
+  index: number;
+  moveCursorToInsertedRow: boolean;
+}
+
+export type InsertRowMethods =
+  | INPUT_METHOD.CONTEXT_MENU
+  | INPUT_METHOD.BUTTON
+  | INPUT_METHOD.SHORTCUT
+  | INPUT_METHOD.KEYBOARD;
 
 export interface PluginConfig {
   advanced?: boolean;
@@ -39,7 +55,34 @@ export interface ColumnResizingPluginState {
   lastClick: { x: number; y: number; time: number } | null;
   lastColumnResizable?: boolean;
   dynamicTextSizing?: boolean;
+  decorationSet?: DecorationSet;
 }
+
+/*
+ * This type represents the start and end from a cell in a column,
+ * for example, on this table the cell C1 will have
+ * `left: 1` and `right: 3`.
+ *
+ * ```
+ *      left          right
+ *        1             3
+ *        |             |
+ *        |             |
+ *        |             |
+ * _______∨_____________∨_______
+ * |      |             |      |
+ * |  B1  |     C1      |  A1  |
+ * |______|______ ______|______|
+ * |             |      |      |
+ * |     B2      |  D1  |  A2  |
+ * |______ ______|______|______|
+ * |      |      |             |
+ * |  B3  |  C2  |      D2     |
+ * |______|______|_____________|
+ * ```
+ *
+ */
+export type CellColumnPositioning = Pick<Rect, 'right' | 'left'>;
 
 export interface TableColumnOrdering {
   columnIndex: number;
@@ -68,6 +111,7 @@ export interface TablePluginState {
   isFullWidthModeEnabled?: boolean;
   layout?: TableLayout;
   ordering?: TableColumnOrdering;
+  resizeHandleColumnIndex?: number;
 }
 
 export type TablePluginAction =
@@ -117,8 +161,18 @@ export type TablePluginAction =
         isInDanger?: boolean;
       };
     }
+  | {
+      type: 'ADD_RESIZE_HANDLE_DECORATIONS';
+      data: { decorationSet: DecorationSet; resizeHandleColumnIndex: number };
+    }
   | { type: 'CLEAR_HOVER_SELECTION'; data: { decorationSet: DecorationSet } }
+  | { type: 'SHOW_RESIZE_HANDLE_LINE'; data: { decorationSet: DecorationSet } }
+  | { type: 'HIDE_RESIZE_HANDLE_LINE'; data: { decorationSet: DecorationSet } }
   | { type: 'SET_TARGET_CELL_POSITION'; data: { targetCellPosition?: number } }
+  | {
+      type: 'SELECT_COLUMN';
+      data: { targetCellPosition: number; decorationSet: DecorationSet };
+    }
   | {
       type: 'SET_TABLE_LAYOUT';
       data: { layout: TableLayout };
@@ -138,6 +192,7 @@ export type ColumnResizingPluginAction =
       type: 'SET_RESIZE_HANDLE_POSITION';
       data: { resizeHandlePos: number | null };
     }
+  | { type: 'STOP_RESIZING' }
   | {
       type: 'SET_DRAGGING';
       data: { dragging: { startX: number; startWidth: number } | null };
@@ -156,6 +211,10 @@ export enum TableDecorations {
 
   COLUMN_CONTROLS_DECORATIONS = 'COLUMN_CONTROLS_DECORATIONS',
   COLUMN_SELECTED = 'COLUMN_SELECTED',
+  COLUMN_RESIZING_HANDLE = 'COLUMN_RESIZING_HANDLE',
+  COLUMN_RESIZING_HANDLE_LINE = 'COLUMN_RESIZING_HANDLE_LINE',
+
+  LAST_CELL_ELEMENT = 'LAST_CELL_ELEMENT',
 }
 
 export const TableCssClassName = {
@@ -212,6 +271,7 @@ export const TableCssClassName = {
   IS_RESIZING: `${tablePrefixSelector}-is-resizing`,
 
   RESIZE_HANDLE: `${tablePrefixSelector}-resize-handle`,
+  RESIZE_HANDLE_DECORATION: `${tablePrefixSelector}-resize-decoration`,
 
   CONTEXTUAL_SUBMENU: `${tablePrefixSelector}-contextual-submenu`,
   CONTEXTUAL_MENU_BUTTON_WRAP: `${tablePrefixSelector}-contextual-menu-button-wrap`,
@@ -229,4 +289,7 @@ export const TableCssClassName = {
   TABLE_HEADER_CELL: tableHeaderSelector,
 
   TOP_LEFT_CELL: 'table > tbody > tr:nth-child(2) > td:nth-child(1)',
+  LAST_ITEM_IN_CELL: `${tablePrefixSelector}-last-item-in-cell`,
+
+  WITH_RESIZE_LINE: `${tablePrefixSelector}-column-resize-line`,
 };

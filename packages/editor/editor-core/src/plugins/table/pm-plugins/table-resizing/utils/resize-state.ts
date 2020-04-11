@@ -5,17 +5,8 @@ import {
 } from '@uidu/editor-common';
 import { Node as PMNode } from 'prosemirror-model';
 import { hasTableBeenResized, insertColgroupFromNode } from './colgroup';
-import {
-  ColumnState,
-  getCellsRefsInColumn,
-  getColumnStateFromDOM,
-} from './column-state';
-import { growColumn, shrinkColumn } from './resize-logic';
-
-export interface ResizeState {
-  cols: ColumnState[];
-  maxSize: number;
-}
+import { getCellsRefsInColumn, getColumnStateFromDOM } from './column-state';
+import { ResizeState } from './types';
 
 export const getResizeState = ({
   minWidth,
@@ -54,26 +45,6 @@ export const getResizeState = ({
   };
 };
 
-// Resize a given column by an amount from the current state
-export const resizeColumn = (
-  resizeState: ResizeState,
-  colIndex: number,
-  amount: number,
-  tableRef: HTMLElement,
-  selectedColumns?: number[],
-): ResizeState => {
-  const newState =
-    amount > 0
-      ? growColumn(resizeState, colIndex, amount, selectedColumns)
-      : amount < 0
-      ? shrinkColumn(resizeState, colIndex, amount, selectedColumns)
-      : resizeState;
-
-  updateColgroup(newState, tableRef);
-
-  return newState;
-};
-
 // updates Colgroup DOM node with new widths
 export const updateColgroup = (
   state: ResizeState,
@@ -81,7 +52,7 @@ export const updateColgroup = (
 ): void => {
   const cols = tableRef.querySelectorAll('col');
   state.cols
-    .filter(column => column && !!column.width) // if width is 0, we dont want to apply that.
+    .filter((column) => column && !!column.width) // if width is 0, we dont want to apply that.
     .forEach((column, i) => {
       if (cols[i]) {
         cols[i].style.width = `${column.width}px`;
@@ -105,7 +76,7 @@ export const adjustColumnsWidths = (
     let updated = false;
     return {
       ...resizeState,
-      cols: resizeState.cols.map(col => {
+      cols: resizeState.cols.map((col) => {
         if (!updated && col.width + diff > col.minWidth) {
           updated = true;
           return { ...col, width: col.width + diff };
@@ -121,7 +92,7 @@ export const adjustColumnsWidths = (
 export const evenAllColumnsWidths = (resizeState: ResizeState): ResizeState => {
   const maxSize = getTotalWidth(resizeState);
   const evenWidth = Math.floor(maxSize / resizeState.cols.length);
-  const cols = resizeState.cols.map(col => ({ ...col, width: evenWidth }));
+  const cols = resizeState.cols.map((col) => ({ ...col, width: evenWidth }));
 
   return adjustColumnsWidths({ ...resizeState, cols }, maxSize);
 };
@@ -141,7 +112,7 @@ export const bulkColumnsResize = (
     [key: number]: { width: number; minWidth: number; index: number };
   } = {};
   const widthsDiffs: number[] = [];
-  const cols = resizeState.cols.map(col => {
+  const cols = resizeState.cols.map((col) => {
     if (columnsIndexes.indexOf(col.index) > -1) {
       const diff = col.width - sourceCol.width;
       if (diff !== 0) {
@@ -154,7 +125,7 @@ export const bulkColumnsResize = (
 
   let newState = {
     ...resizeState,
-    cols: cols.map(col => {
+    cols: cols.map((col) => {
       if (
         columnsIndexes.indexOf(col.index) > -1 ||
         // take from prev columns only if dragging the first handle to the left
@@ -200,7 +171,7 @@ export const bulkColumnsResize = (
       );
       newState = {
         ...resizeState,
-        cols: newState.cols.map(col => {
+        cols: newState.cols.map((col) => {
           if (col.index === sourceCol.index) {
             return col;
           }

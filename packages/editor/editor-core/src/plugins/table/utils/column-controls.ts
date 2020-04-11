@@ -1,16 +1,16 @@
-import { EditorView } from 'prosemirror-view';
+import { Selection } from 'prosemirror-state';
+import { CellSelection, TableMap } from 'prosemirror-tables';
 import {
+  findDomRefAtPos,
   findTable,
   getCellsInColumn,
-  findDomRefAtPos,
   getSelectionRect,
   isColumnSelected,
   isTableSelected,
 } from 'prosemirror-utils';
-import { Selection } from 'prosemirror-state';
-import { TableMap, CellSelection } from 'prosemirror-tables';
-import { tableDeleteButtonSize } from '../ui/styles';
+import { EditorView } from 'prosemirror-view';
 import { TableCssClassName as ClassName } from '../types';
+import { tableDeleteButtonSize } from '../ui/styles';
 
 export const getColumnsWidths = (
   view: EditorView,
@@ -41,7 +41,8 @@ export const getColumnsWidths = (
 export const isColumnDeleteButtonVisible = (selection: Selection): boolean => {
   if (
     !isTableSelected(selection) &&
-    (selection instanceof CellSelection && selection.isColSelection())
+    selection instanceof CellSelection &&
+    selection.isColSelection()
   ) {
     return true;
   }

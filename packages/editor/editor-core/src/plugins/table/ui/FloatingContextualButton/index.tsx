@@ -3,7 +3,7 @@ import { TableLayout } from '@uidu/adf-schema';
 import { Popup } from '@uidu/editor-common';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import ToolbarButton from '../../../../ui/ToolbarButton';
@@ -21,6 +21,7 @@ export interface Props {
   boundariesElement?: HTMLElement;
   scrollableElement?: HTMLElement;
   layout?: TableLayout;
+  isNumberColumnEnabled?: boolean;
 }
 
 const ButtonWrapper = styled.div`
@@ -31,6 +32,8 @@ class FloatingContextualButton extends React.Component<
   Props & WrappedComponentProps,
   any
 > {
+  static displayName = 'FloatingContextualButton';
+
   render() {
     const {
       mountPoint,
@@ -82,14 +85,22 @@ class FloatingContextualButton extends React.Component<
     return (
       this.props.targetCellPosition !== nextProps.targetCellPosition ||
       this.props.layout !== nextProps.layout ||
-      this.props.isContextualMenuOpen !== nextProps.isContextualMenuOpen
+      this.props.isContextualMenuOpen !== nextProps.isContextualMenuOpen ||
+      this.props.isNumberColumnEnabled !== nextProps.isNumberColumnEnabled
     );
   }
 
   private handleClick = () => {
     const { state, dispatch } = this.props.editorView;
 
-    toggleContextualMenu()(state, dispatch);
+    // Clicking outside the dropdown handles toggling the menu closed
+    // (otherwise these two toggles combat each other).
+    // In the event a user clicks the chevron button again
+    // That will count as clicking outside the dropdown and
+    // will be toggled appropriately
+    if (!this.props.isContextualMenuOpen) {
+      toggleContextualMenu()(state, dispatch);
+    }
   };
 }
 

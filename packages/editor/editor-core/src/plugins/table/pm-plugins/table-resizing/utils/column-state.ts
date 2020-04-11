@@ -3,6 +3,7 @@ import { Node as PMNode } from 'prosemirror-model';
 import { TableMap } from 'prosemirror-tables';
 import { findDomRefAtPos } from 'prosemirror-utils';
 import { contentWidth } from './content-width';
+import { unitToNumber } from './unit-to-number';
 
 export interface ColumnState {
   index: number;
@@ -50,7 +51,7 @@ export const getCellsRefsInColumn = (
     bottom: map.height,
   });
   const cells: HTMLElement[] = [];
-  cellsPositions.forEach(pos => {
+  cellsPositions.forEach((pos) => {
     const col = findDomRefAtPos(pos + tableStart, domAtPos) as HTMLElement;
     if (col) {
       cells.push(col);
@@ -71,7 +72,7 @@ export const calculateColumnWidth = (
   let maxColWidth = 0;
   let colSpanWidth = 0;
 
-  cells.forEach(cellRef => {
+  cells.forEach((cellRef) => {
     const css = getComputedStyle(cellRef);
     const colspan = Number(cellRef.getAttribute('colspan') || 1);
 
@@ -94,9 +95,6 @@ export const addContainerLeftRightPadding = (
   css: CSSStyleDeclaration,
 ): number =>
   amount + unitToNumber(css.paddingLeft) + unitToNumber(css.paddingRight);
-
-export const unitToNumber = (unit: string | null): number =>
-  unit ? parseInt(unit, 10) : 0;
 
 function calculateColumnWidthCallback(css: CSSStyleDeclaration): number {
   return unitToNumber(css.width);

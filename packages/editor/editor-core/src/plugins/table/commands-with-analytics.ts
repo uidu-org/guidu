@@ -1,10 +1,15 @@
 import { tableBackgroundColorPalette, TableLayout } from '@uidu/adf-schema';
-import { Rect } from 'prosemirror-tables';
-import { findCellClosestToPos } from 'prosemirror-utils';
+import { CellSelection, Rect } from 'prosemirror-tables';
+import {
+  findCellClosestToPos,
+  findCellRectClosestToPos,
+  getSelectionRect,
+} from 'prosemirror-utils';
 import {
   analyticsService as analyticsV2,
   withAnalytics as withV2Analytics,
 } from '../../analytics';
+import { Command } from '../../types';
 import {
   ACTION_SUBJECT,
   EVENT_TYPE,
@@ -13,23 +18,26 @@ import {
   TABLE_BREAKOUT,
   withAnalytics,
 } from '../analytics';
+import { clearMultipleCells } from './commands/clear';
+import { insertColumn, insertRow } from './commands/insert';
+import { deleteTable, setMultipleCellAttrs } from './commands/misc';
+import { sortByColumn } from './commands/sort';
+import { splitCell } from './commands/split-cell';
 import {
-  clearMultipleCells,
-  deleteTable,
   getNextLayout,
-  insertColumn,
-  insertRow,
-  setMultipleCellAttrs,
-  sortByColumn,
   toggleHeaderColumn,
   toggleHeaderRow,
   toggleNumberColumn,
   toggleTableLayout,
-} from './commands';
-import { splitCell } from './commands/misc';
-import { getPluginState } from './pm-plugins/main';
+} from './commands/toggle';
+import { getPluginState } from './pm-plugins/plugin-factory';
 import { deleteColumns, deleteRows, mergeCells } from './transforms';
-import { SortOrder } from './types';
+import {
+  InsertRowMethods,
+  InsertRowOptions,
+  RowInsertPosition,
+  SortOrder,
+} from './types';
 import {
   checkIfNumberColumnEnabled,
   getSelectedCellInfo,
@@ -41,7 +49,6 @@ const TABLE_BREAKOUT_NAME_MAPPING = {
   wide: TABLE_BREAKOUT.WIDE,
   'full-width': TABLE_BREAKOUT.FULL_WIDTH,
 };
-
 // #region Analytics wrappers
 export const emptyMultipleCellsWithAnalytics = (
   inputMethod: INPUT_METHOD.CONTEXT_MENU | INPUT_METHOD.KEYBOARD,
@@ -171,15 +178,36 @@ export const setColorWithAnalytics = (
     ),
   );
 
+export const addRowAroundSelection = (side: RowInsertPosition): Command => (
+  state,
+  dispatch,
+) => {
+  const { selection } = state;
+  const isCellSelection = selection instanceof CellSelection;
+  const rect = isCellSelection
+    ? getSelectionRect(selection)
+    : findCellRectClosestToPos(selection.$from);
+
+  if (!rect) {
+    return false;
+  }
+
+  const position =
+    isCellSelection && side === 'TOP' ? rect.top : rect.bottom - 1;
+
+  const offset = side === 'BOTTOM' ? 1 : 0;
+
+  return insertRowWithAnalytics(INPUT_METHOD.SHORTCUT, {
+    index: position + offset,
+    moveCursorToInsertedRow: false,
+  })(state, dispatch);
+};
+
 export const insertRowWithAnalytics = (
-  inputMethod:
-    | INPUT_METHOD.CONTEXT_MENU
-    | INPUT_METHOD.BUTTON
-    | INPUT_METHOD.SHORTCUT
-    | INPUT_METHOD.KEYBOARD,
-  position: number,
+  inputMethod: InsertRowMethods,
+  options: InsertRowOptions,
 ) =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );
@@ -189,7 +217,7 @@ export const insertRowWithAnalytics = (
       actionSubjectId: null,
       attributes: {
         inputMethod,
-        position,
+        position: options.index,
         totalRowCount,
         totalColumnCount,
       },
@@ -200,7 +228,7 @@ export const insertRowWithAnalytics = (
       `atlassian.editor.format.table.row.${
         inputMethod === INPUT_METHOD.KEYBOARD ? 'keyboard' : 'button'
       }`,
-      insertRow(position),
+      insertRow(options.index, options.moveCursorToInsertedRow),
     ),
   );
 
@@ -211,7 +239,7 @@ export const insertColumnWithAnalytics = (
     | INPUT_METHOD.SHORTCUT,
   position: number,
 ) =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );
@@ -312,7 +340,7 @@ export const deleteTableWithAnalytics = () =>
   );
 
 export const toggleHeaderRowWithAnalytics = () =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );
@@ -337,7 +365,7 @@ export const toggleHeaderRowWithAnalytics = () =>
   );
 
 export const toggleHeaderColumnWithAnalytics = () =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );
@@ -362,7 +390,7 @@ export const toggleHeaderColumnWithAnalytics = () =>
   );
 
 export const toggleNumberColumnWithAnalytics = () =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );
@@ -385,7 +413,7 @@ export const toggleNumberColumnWithAnalytics = () =>
   );
 
 export const toggleTableLayoutWithAnalytics = () =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { table, totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );
@@ -413,7 +441,7 @@ export const sortColumnWithAnalytics = (
   columnIndex: number,
   sortOrder: SortOrder,
 ) =>
-  withAnalytics(state => {
+  withAnalytics((state) => {
     const { totalRowCount, totalColumnCount } = getSelectedTableInfo(
       state.selection,
     );

@@ -1,4 +1,4 @@
-import { defaultTableSelection } from './pm-plugins/main';
+import { defaultTableSelection } from './pm-plugins/default-table-selection';
 import { TablePluginAction, TablePluginState } from './types';
 
 export default (
@@ -20,6 +20,9 @@ export default (
 
     case 'CLEAR_HOVER_SELECTION':
       return { ...pluginState, ...action.data, ...defaultTableSelection };
+
+    case 'SELECT_COLUMN':
+      return { ...pluginState, ...action.data, isContextualMenuOpen: false };
 
     case 'SET_TARGET_CELL_POSITION':
       return { ...pluginState, ...action.data, isContextualMenuOpen: false };
@@ -72,11 +75,20 @@ export default (
       }
       return pluginState;
 
+    case 'HIDE_RESIZE_HANDLE_LINE':
+      return {
+        ...pluginState,
+        ...action.data,
+        resizeHandleColumnIndex: undefined,
+      };
+
+    case 'ADD_RESIZE_HANDLE_DECORATIONS':
     case 'SET_TABLE_REF':
     case 'HOVER_ROWS':
     case 'HOVER_COLUMNS':
     case 'HOVER_TABLE':
     case 'HOVER_CELLS':
+    case 'SHOW_RESIZE_HANDLE_LINE':
     case 'SET_EDITOR_FOCUS':
       return { ...pluginState, ...action.data };
     default:

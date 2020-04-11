@@ -33,7 +33,8 @@ export const getRowHeights = (tableRef: HTMLTableElement): number[] => {
 export const isRowDeleteButtonVisible = (selection: Selection): boolean => {
   if (
     !isTableSelected(selection) &&
-    (selection instanceof CellSelection && selection.isRowSelection())
+    selection instanceof CellSelection &&
+    selection.isRowSelection()
   ) {
     return true;
   }
@@ -205,7 +206,7 @@ export const copyPreviousRow = (schema: Schema) => (
     i++;
   }
 
-  fixRowspans.forEach(cell => {
+  fixRowspans.forEach((cell) => {
     tr.setNodeMarkup(cell.pos, undefined, {
       ...cell.node.attrs,
       rowspan: cell.node.attrs.rowspan + 1,

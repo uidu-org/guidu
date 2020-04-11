@@ -1,10 +1,10 @@
-import { TableLayout } from '@uidu/adf-schema';
 import CollapseIcon from '@atlaskit/icon/glyph/editor/collapse';
 import ExpandIcon from '@atlaskit/icon/glyph/editor/expand';
+import { TableLayout } from '@uidu/adf-schema';
 import { Popup } from '@uidu/editor-common';
 import classnames from 'classnames';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import commonMessages from '../../../../messages';
 import ToolbarButton from '../../../../ui/ToolbarButton';
@@ -40,6 +40,8 @@ const getTitle = (layout: TableLayout) => {
 };
 
 class LayoutButton extends React.Component<Props & WrappedComponentProps, any> {
+  static displayName = 'LayoutButton';
+
   render() {
     const {
       intl: { formatMessage },

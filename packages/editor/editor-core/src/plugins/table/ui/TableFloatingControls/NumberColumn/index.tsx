@@ -1,8 +1,7 @@
-import * as React from 'react';
-import { Component } from 'react';
+import { Selection } from 'prosemirror-state';
 import { isRowSelected } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { Selection } from 'prosemirror-state';
+import React, { Component } from 'react';
 import { clearHoverSelection } from '../../../commands';
 import { TableCssClassName as ClassName } from '../../../types';
 
@@ -29,7 +28,7 @@ export default class NumberColumn extends Component<Props, any> {
 
     return (
       <div className={ClassName.NUMBERED_COLUMN}>
-        {Array.from(Array(rows.length).keys()).map(index => (
+        {Array.from(Array(rows.length).keys()).map((index) => (
           <div
             key={`wrapper-${index}`}
             className={this.getClassNames(index)}
@@ -37,7 +36,7 @@ export default class NumberColumn extends Component<Props, any> {
             style={{
               height: (rows[index] as HTMLElement).offsetHeight + 1,
             }}
-            onClick={event => this.selectRow(index, event)}
+            onClick={(event) => this.selectRow(index, event)}
             onMouseOver={() => this.hoverRows(index)}
             onMouseOut={this.clearHoverSelection}
           >

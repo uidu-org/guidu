@@ -9,7 +9,7 @@ import {
   safeInsert,
 } from 'prosemirror-utils';
 import { Command } from '../../../types';
-import { getPluginState } from '../pm-plugins/main';
+import { getPluginState } from '../pm-plugins/plugin-factory';
 import { checkIfHeaderRowEnabled, copyPreviousRow } from '../utils';
 // #endregion
 
@@ -30,11 +30,20 @@ export const insertColumn = (column: number): Command => (state, dispatch) => {
   return true;
 };
 
-export const insertRow = (row: number): Command => (state, dispatch) => {
+export const insertRow = (
+  row: number,
+  moveCursorToTheNewRow: boolean,
+): Command => (state, dispatch) => {
   // Don't clone the header row
   const headerRowEnabled = checkIfHeaderRowEnabled(state);
   const clonePreviousRow =
     (headerRowEnabled && row > 1) || (!headerRowEnabled && row > 0);
+
+  // When the table have header row
+  // we should not add row on the position zero
+  if (row === 0 && headerRowEnabled) {
+    return false;
+  }
 
   const tr = clonePreviousRow
     ? copyPreviousRow(state.schema)(row)(state.tr)
@@ -44,13 +53,17 @@ export const insertRow = (row: number): Command => (state, dispatch) => {
   if (!table) {
     return false;
   }
-  // move the cursor to the newly created row
-  const pos = TableMap.get(table.node).positionAt(row, 0, table.node);
-
   if (dispatch) {
-    dispatch(
-      tr.setSelection(Selection.near(tr.doc.resolve(table.start + pos))),
-    );
+    const { selection } = state;
+    if (moveCursorToTheNewRow) {
+      // move the cursor to the newly created row
+      const pos = TableMap.get(table.node).positionAt(row, 0, table.node);
+      tr.setSelection(Selection.near(tr.doc.resolve(table.start + pos)));
+    } else {
+      tr.setSelection(selection.map(tr.doc, tr.mapping));
+    }
+
+    dispatch(tr);
   }
   return true;
 };

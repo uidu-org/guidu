@@ -2,7 +2,7 @@ import { Node as PmNode } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
 import { TableMap } from 'prosemirror-tables';
 import { findTable, hasParentNodeOfType } from 'prosemirror-utils';
-import { pluginKey } from '../pm-plugins/main';
+import { pluginKey } from '../pm-plugins/plugin-factory';
 
 export const isIsolating = (node: PmNode): boolean => {
   return !!node.type.spec.isolating;
@@ -65,10 +65,12 @@ export const checkIfNumberColumnEnabled = (state: EditorState): boolean =>
 
 export const isLayoutSupported = (state: EditorState): boolean => {
   const { permittedLayouts } = pluginKey.getState(state).pluginConfig;
-  const { bodiedExtension, layoutSection } = state.schema.nodes;
+  const { bodiedExtension, layoutSection, expand } = state.schema.nodes;
 
   return (
-    !hasParentNodeOfType([layoutSection, bodiedExtension])(state.selection) &&
+    !hasParentNodeOfType([expand, layoutSection, bodiedExtension])(
+      state.selection,
+    ) &&
     permittedLayouts &&
     (permittedLayouts === 'all' ||
       (permittedLayouts.indexOf('default') > -1 &&
@@ -127,7 +129,7 @@ function getTableWidths(node: PmNode): number[] {
   }
 
   let tableWidths: Array<number> = [];
-  node.content.firstChild.content.forEach(cell => {
+  node.content.firstChild.content.forEach((cell) => {
     if (Array.isArray(cell.attrs.colwidth)) {
       const colspan = cell.attrs.colspan || 1;
       tableWidths.push(...cell.attrs.colwidth.slice(0, colspan));

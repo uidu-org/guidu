@@ -1,10 +1,11 @@
 // #region Imports
 import { TableMap } from 'prosemirror-tables';
 import { findTable, getCellsInColumn, getCellsInRow } from 'prosemirror-utils';
-import { createCommand } from '../pm-plugins/main';
-import { Cell, TableDecorations } from '../types';
+import { createCommand } from '../pm-plugins/plugin-factory';
+import { Cell, CellColumnPositioning, TableDecorations } from '../types';
 import {
   createCellHoverDecoration,
+  createColumnLineResize,
   createControlsHoverDecoration,
   getMergedCellsPositions,
   updatePluginStateDecorations,
@@ -18,7 +19,7 @@ const makeArray = (n: number) => Array.from(Array(n).keys());
 // #region Commands
 export const hoverMergedCells = () =>
   createCommand(
-    state => {
+    (state) => {
       const mergedCellsPositions = getMergedCellsPositions(state.tr);
       if (!mergedCellsPositions.length) {
         return false;
@@ -28,7 +29,7 @@ export const hoverMergedCells = () =>
         return false;
       }
 
-      const mergedCells: Cell[] = mergedCellsPositions.map(pos => ({
+      const mergedCells: Cell[] = mergedCellsPositions.map((pos) => ({
         pos: pos + table.start,
         start: pos + table.start + 1,
         node: table.node.nodeAt(pos)!,
@@ -47,12 +48,12 @@ export const hoverMergedCells = () =>
         },
       };
     },
-    tr => tr.setMeta('addToHistory', false),
+    (tr) => tr.setMeta('addToHistory', false),
   );
 
 export const hoverColumns = (hoveredColumns: number[], isInDanger?: boolean) =>
   createCommand(
-    state => {
+    (state) => {
       const cells = getCellsInColumn(hoveredColumns)(state.selection);
       if (!cells) {
         return false;
@@ -76,12 +77,12 @@ export const hoverColumns = (hoveredColumns: number[], isInDanger?: boolean) =>
         },
       };
     },
-    tr => tr.setMeta('addToHistory', false),
+    (tr) => tr.setMeta('addToHistory', false),
   );
 
 export const hoverRows = (hoveredRows: number[], isInDanger?: boolean) =>
   createCommand(
-    state => {
+    (state) => {
       const cells = getCellsInRow(hoveredRows)(state.selection);
       if (!cells) {
         return false;
@@ -105,12 +106,12 @@ export const hoverRows = (hoveredRows: number[], isInDanger?: boolean) =>
         },
       };
     },
-    tr => tr.setMeta('addToHistory', false),
+    (tr) => tr.setMeta('addToHistory', false),
   );
 
 export const hoverTable = (isInDanger?: boolean) =>
   createCommand(
-    state => {
+    (state) => {
       const table = findTable(state.selection);
       if (!table) {
         return false;
@@ -142,17 +143,43 @@ export const hoverTable = (isInDanger?: boolean) =>
         },
       };
     },
-    tr => tr.setMeta('addToHistory', false),
+    (tr) => tr.setMeta('addToHistory', false),
   );
 
 export const clearHoverSelection = () =>
-  createCommand(state => ({
+  createCommand((state) => ({
     type: 'CLEAR_HOVER_SELECTION',
     data: {
       decorationSet: updatePluginStateDecorations(
         state,
         [],
         TableDecorations.ALL_CONTROLS_HOVER,
+      ),
+    },
+  }));
+
+export const showResizeHandleLine = (
+  cellColumnPositioning: CellColumnPositioning,
+) =>
+  createCommand((state) => ({
+    type: 'SHOW_RESIZE_HANDLE_LINE',
+    data: {
+      decorationSet: updatePluginStateDecorations(
+        state,
+        createColumnLineResize(state.selection, cellColumnPositioning),
+        TableDecorations.COLUMN_RESIZING_HANDLE_LINE,
+      ),
+    },
+  }));
+
+export const hideResizeHandleLine = () =>
+  createCommand((state) => ({
+    type: 'HIDE_RESIZE_HANDLE_LINE',
+    data: {
+      decorationSet: updatePluginStateDecorations(
+        state,
+        [],
+        TableDecorations.COLUMN_RESIZING_HANDLE_LINE,
       ),
     },
   }));

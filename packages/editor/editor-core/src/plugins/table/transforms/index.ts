@@ -1,6 +1,6 @@
-export { mergeCells, canMergeCells, removeEmptyColumns } from './merge';
-export { fireAnalytics, fixTables, fixAutoSizedTable } from './fix-tables';
+export { updateColumnWidths } from './column-width';
 export { deleteColumns } from './delete-columns';
 export { deleteRows } from './delete-rows';
-export { updateColumnWidths } from './column-width';
+export { fireAnalytics, fixAutoSizedTable, fixTables } from './fix-tables';
+export { canMergeCells, mergeCells, removeEmptyColumns } from './merge';
 export { setMeta } from './metadata';

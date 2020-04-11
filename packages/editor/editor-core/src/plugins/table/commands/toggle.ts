@@ -1,10 +1,10 @@
 //#region Imports
+import { TableLayout } from '@uidu/adf-schema';
+import { Transaction } from 'prosemirror-state';
 import { toggleHeader } from 'prosemirror-tables';
 import { findTable } from 'prosemirror-utils';
-import { Transaction } from 'prosemirror-state';
-import { TableLayout } from '@uidu/adf-schema';
-import { createCommand } from '../pm-plugins/main';
 import { Command } from '../../../types';
+import { createCommand } from '../pm-plugins/plugin-factory';
 //#endregion
 
 // #region Utils
@@ -28,13 +28,17 @@ export const getNextLayout = (currentLayout: TableLayout): TableLayout => {
 
 // #region Actions
 export const toggleHeaderRow: Command = (state, dispatch): boolean =>
-  toggleHeader('row')(state, tr =>
-    createCommand({ type: 'TOGGLE_HEADER_ROW' }, () => tr)(state, dispatch),
+  toggleHeader('row')(state, (tr) =>
+    createCommand({ type: 'TOGGLE_HEADER_ROW' }, () =>
+      tr.setMeta('scrollIntoView', false),
+    )(state, dispatch),
   );
 
 export const toggleHeaderColumn: Command = (state, dispatch): boolean =>
-  toggleHeader('column')(state, tr =>
-    createCommand({ type: 'TOGGLE_HEADER_COLUMN' }, () => tr)(state, dispatch),
+  toggleHeader('column')(state, (tr) =>
+    createCommand({ type: 'TOGGLE_HEADER_COLUMN' }, () =>
+      tr.setMeta('scrollIntoView', false),
+    )(state, dispatch),
   );
 
 export const toggleNumberColumn: Command = (state, dispatch) => {
@@ -45,6 +49,7 @@ export const toggleNumberColumn: Command = (state, dispatch) => {
     ...node.attrs,
     isNumberColumnEnabled: !node.attrs.isNumberColumnEnabled,
   });
+  tr.setMeta('scrollIntoView', false);
 
   if (dispatch) {
     dispatch(tr);
@@ -67,10 +72,11 @@ export const toggleTableLayout: Command = (state, dispatch): boolean => {
       },
     },
     (tr: Transaction) => {
-      return tr.setNodeMarkup(table.pos, state.schema.nodes.table, {
+      tr.setNodeMarkup(table.pos, state.schema.nodes.table, {
         ...table.node.attrs,
         layout,
       });
+      return tr.setMeta('scrollIntoView', false);
     },
   )(state, dispatch);
 };
@@ -80,6 +86,6 @@ export const toggleContextualMenu = () =>
     {
       type: 'TOGGLE_CONTEXTUAL_MENU',
     },
-    tr => tr.setMeta('addToHistory', false),
+    (tr) => tr.setMeta('addToHistory', false),
   );
 // #endregion

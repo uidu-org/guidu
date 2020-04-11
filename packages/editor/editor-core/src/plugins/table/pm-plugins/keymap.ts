@@ -1,28 +1,25 @@
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
+import { addColumnAfter, addColumnBefore } from 'prosemirror-tables';
+import * as keymaps from '../../../keymaps';
 import {
-  addColumnBefore,
-  addColumnAfter,
-  addRowBefore,
-  addRowAfter,
-} from 'prosemirror-tables';
-
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  EVENT_TYPE,
+  INPUT_METHOD,
+  withAnalytics,
+} from '../../analytics';
 import {
   createTable,
   goToNextCell,
   moveCursorBackward,
   triggerUnlessTableHeader,
 } from '../commands';
-import * as keymaps from '../../../keymaps';
 import {
-  withAnalytics,
-  ACTION,
-  ACTION_SUBJECT,
-  ACTION_SUBJECT_ID,
-  INPUT_METHOD,
-  EVENT_TYPE,
-} from '../../analytics';
-import { emptyMultipleCellsWithAnalytics } from '../commands-with-analytics';
+  addRowAroundSelection,
+  emptyMultipleCellsWithAnalytics,
+} from '../commands-with-analytics';
 
 const createTableWithAnalytics = () =>
   withAnalytics({
@@ -65,11 +62,15 @@ export function keymapPlugin(): Plugin {
   // Add row/column shortcuts
   keymaps.bindKeymapWithCommand(
     keymaps.addRowBefore.common!,
-    triggerUnlessTableHeader(addRowBefore),
+    addRowAroundSelection('TOP'),
     list,
   );
 
-  keymaps.bindKeymapWithCommand(keymaps.addRowAfter.common!, addRowAfter, list);
+  keymaps.bindKeymapWithCommand(
+    keymaps.addRowAfter.common!,
+    addRowAroundSelection('BOTTOM'),
+    list,
+  );
 
   keymaps.bindKeymapWithCommand(
     keymaps.addColumnBefore.common!,

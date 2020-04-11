@@ -1,6 +1,6 @@
 import {
-  ColumnResizingPluginState,
   ColumnResizingPluginAction,
+  ColumnResizingPluginState,
 } from '../../types';
 
 export default (
@@ -8,6 +8,13 @@ export default (
   action: ColumnResizingPluginAction,
 ): ColumnResizingPluginState => {
   switch (action.type) {
+    case 'STOP_RESIZING':
+      return {
+        ...pluginState,
+        resizeHandlePos: null,
+        dragging: null,
+      };
+
     case 'SET_RESIZE_HANDLE_POSITION':
       return {
         ...pluginState,

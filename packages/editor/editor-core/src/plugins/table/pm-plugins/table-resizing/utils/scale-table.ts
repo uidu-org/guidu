@@ -5,14 +5,14 @@ import {
 import { Node as PMNode } from 'prosemirror-model';
 import { DomAtPos } from '../../../../../types';
 import { getTableWidth } from '../../../utils';
+import { getLayoutSize } from '../utils/misc';
+import { reduceSpace } from '../utils/resize-logic';
 import {
   adjustColumnsWidths,
-  getLayoutSize,
   getResizeState,
   getTotalWidth,
-  reduceSpace,
-  ResizeState,
-} from '../utils';
+} from '../utils/resize-state';
+import { ResizeState } from '../utils/types';
 
 export interface ScaleOptions {
   node: PMNode;
@@ -126,7 +126,7 @@ function scaleTableTo(state: ResizeState, maxSize: number): ResizeState {
   let newState = {
     ...state,
     maxSize,
-    cols: state.cols.map(col => {
+    cols: state.cols.map((col) => {
       const { minWidth, width } = col;
       let newColWidth = Math.floor(width * scaleFactor);
       if (newColWidth < minWidth) {

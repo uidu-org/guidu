@@ -8,17 +8,17 @@ import { Node as PmNode } from 'prosemirror-model';
 import { isTableSelected } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import rafSchedule from 'raf-schd';
-import * as React from 'react';
+import React from 'react';
 import { getParentNodeWidth } from '../../../utils/node-width';
 import { WidthPluginState } from '../../width';
 import { autoSizeTable } from '../commands';
-import { getPluginState } from '../pm-plugins/main';
+import { getPluginState } from '../pm-plugins/plugin-factory';
 import { scaleTable } from '../pm-plugins/table-resizing';
 import {
   getLayoutSize,
   insertColgroupFromNode as recreateResizeColsByNode,
-  updateControls,
 } from '../pm-plugins/table-resizing/utils';
+import { updateControls } from '../pm-plugins/table-resizing/utils/dom';
 import {
   ColumnResizingPluginState,
   TableCssClassName as ClassName,
@@ -30,7 +30,8 @@ import {
   tablesHaveDifferentColumnWidths,
   tablesHaveDifferentNoOfColumns,
 } from '../utils';
-import { Props, TableOptions } from './table';
+import { Props, TableOptions } from './types';
+import { updateOverflowShadows } from './update-overflow-shadows';
 
 const isIE11 = browser.ie_version === 11;
 
@@ -50,13 +51,17 @@ interface TableState {
   scroll: number;
   tableContainerWidth: string;
   parentWidth?: number;
+  isLoading: boolean;
 }
 
 class TableComponent extends React.Component<ComponentProps, TableState> {
+  static displayName = 'TableComponent';
+
   state = {
     scroll: 0,
     tableContainerWidth: 'inherit',
     parentWidth: undefined,
+    isLoading: true,
   };
 
   private wrapper?: HTMLDivElement | null;
@@ -88,12 +93,17 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     // Disable inline table editing and resizing controls in Firefox
     // https://github.com/ProseMirror/prosemirror/issues/432
     if ('execCommand' in document) {
-      ['enableObjectResizing', 'enableInlineTableEditing'].forEach(cmd => {
+      ['enableObjectResizing', 'enableInlineTableEditing'].forEach((cmd) => {
         if (document.queryCommandSupported(cmd)) {
           document.execCommand(cmd, false, 'false');
         }
       });
     }
+
+    // @see ED-7945
+    requestAnimationFrame(() => {
+      this.setState({ isLoading: false });
+    });
   }
 
   componentDidMount() {
@@ -164,7 +174,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
       tableResizingPluginState,
       width,
     } = this.props;
-
+    const { isLoading, tableContainerWidth } = this.state;
     const {
       pluginConfig: { allowControls = true },
     } = pluginState;
@@ -201,7 +211,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     return (
       <div
         style={{
-          width: this.state.tableContainerWidth,
+          width: tableContainerWidth,
         }}
         className={classnames(ClassName.TABLE_CONTAINER, {
           [ClassName.WITH_CONTROLS]: allowControls && tableActive,
@@ -212,16 +222,16 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
         data-number-column={node.attrs.isNumberColumnEnabled}
         data-layout={node.attrs.layout}
       >
-        {allowControls && rowControls}
+        {allowControls && !isLoading && rowControls}
         <div
-          ref={elem => {
+          ref={(elem) => {
             this.leftShadow = elem;
           }}
           className={ClassName.TABLE_LEFT_SHADOW}
         />
         <div
           className={classnames(ClassName.TABLE_NODE_WRAPPER)}
-          ref={elem => {
+          ref={(elem) => {
             this.wrapper = elem;
             this.props.contentDOM(elem ? elem : undefined);
             if (elem) {
@@ -230,7 +240,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
           }}
         />
         <div
-          ref={elem => {
+          ref={(elem) => {
             this.rightShadow = elem;
           }}
           className={ClassName.TABLE_RIGHT_SHADOW}
@@ -241,7 +251,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
 
   private handleScroll = (event: Event) => {
     if (!this.wrapper || event.target !== this.wrapper) {
-      return undefined;
+      return;
     }
 
     this.setState({ scroll: this.wrapper.scrollLeft });
@@ -310,7 +320,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
         ...scaleOptions,
         node,
         prevNode: this.node || node,
-        start: (typeof getPos === 'function' ? getPos() : +getPos) + 1,
+        start: getPos() + 1,
         containerWidth: width,
         previousContainerWidth: this.containerWidth!.width || width,
         ...options,
@@ -323,16 +333,10 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     if (this.table) {
       const { view, node, getPos, options, containerWidth } = this.props;
 
-      autoSizeTable(
-        view,
-        node,
-        this.table,
-        typeof getPos === 'function' ? getPos() : +getPos,
-        {
-          dynamicTextSizing: (options && options.dynamicTextSizing) || false,
-          containerWidth: containerWidth.width,
-        },
-      );
+      autoSizeTable(view, node, this.table, getPos(), {
+        dynamicTextSizing: (options && options.dynamicTextSizing) || false,
+        containerWidth: containerWidth.width,
+      });
     }
   };
 
@@ -342,7 +346,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     const layoutSize = this.tableNodeLayoutSize(node);
 
     if (containerWidth.width > layoutSize) {
-      return undefined;
+      return;
     }
 
     const parentWidth = this.getParentNodeWidth();
@@ -353,25 +357,24 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
     const { node, containerWidth, options } = this.props;
 
     if (options && options.isBreakoutEnabled === false) {
-      return undefined;
+      return;
+    }
+    const tableContainerWidth = calcTableWidth(
+      node.attrs.layout,
+      containerWidth.width,
+    );
+
+    if (this.state.tableContainerWidth === tableContainerWidth) {
+      return null;
     }
 
     this.setState((prevState: TableState) => {
-      const tableContainerWidth = calcTableWidth(
-        node.attrs.layout,
-        containerWidth.width,
-      );
-
       if (
         options &&
         options.isBreakoutEnabled === false &&
         prevState.tableContainerWidth !== 'inherit'
       ) {
         return { tableContainerWidth: 'inherit' };
-      }
-
-      if (prevState.tableContainerWidth === tableContainerWidth) {
-        return null;
       }
 
       return {
@@ -382,9 +385,7 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
 
   private getParentNodeWidth = () =>
     getParentNodeWidth(
-      typeof this.props.getPos === 'function'
-        ? this.props.getPos()
-        : +this.props.getPos,
+      this.props.getPos(),
       this.props.view.state,
       this.props.containerWidth,
       this.props.options && this.props.options.isFullWidthModeEnabled,
@@ -411,25 +412,5 @@ class TableComponent extends React.Component<ComponentProps, TableState> {
   private handleAutoSizeDebounced = rafSchedule(this.handleAutoSize);
   private handleWindowResizeDebounced = rafSchedule(this.handleWindowResize);
 }
-
-export const updateOverflowShadows = (
-  wrapper?: HTMLElement | null,
-  table?: HTMLElement | null,
-  rightShadow?: HTMLElement | null,
-  leftShadow?: HTMLElement | null,
-) => {
-  // Right shadow
-  if (table && wrapper) {
-    if (rightShadow) {
-      const diff = table.offsetWidth - wrapper.offsetWidth;
-      rightShadow.style.display =
-        diff > 0 && diff > wrapper.scrollLeft ? 'block' : 'none';
-    }
-    if (leftShadow) {
-      leftShadow.style.display = wrapper.scrollLeft > 0 ? 'block' : 'none';
-    }
-  }
-  return undefined;
-};
 
 export default TableComponent;

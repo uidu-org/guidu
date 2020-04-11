@@ -1,4 +1,4 @@
-// @ts-ignore: unused variable
+import { borderRadius, colors, fontSize } from '@atlaskit/theme';
 import { tableBackgroundBorderColor } from '@uidu/adf-schema';
 import {
   akEditorSmallZIndex,
@@ -6,17 +6,19 @@ import {
   akEditorTableNumberColumnWidth,
   akEditorTableToolbarSize,
   akEditorUnitZIndex,
+  akMediaSingleResizeZIndex,
   browser,
   tableCellBorderWidth,
   tableMarginBottom,
   tableMarginTop,
-  tableResizeHandleWidth,
   tableSharedStyle,
 } from '@uidu/editor-common';
-import { borderRadius, colors, fontSize } from '@uidu/theme';
 import { css } from 'styled-components';
 import { scrollbarStyles } from '../../../ui/styles';
-import { TableCssClassName as ClassName } from '../types';
+import {
+  RESIZE_HANDLE_AREA_DECORATION_GAP,
+  TableCssClassName as ClassName,
+} from '../types';
 
 const {
   N40A,
@@ -66,6 +68,10 @@ export const columnControlsDecorationHeight = 25;
 export const columnControlsZIndex = akEditorUnitZIndex * 10;
 export const columnControlsSelectedZIndex = columnControlsZIndex + 1;
 export const columnResizeHandleZIndex = columnControlsSelectedZIndex + 1;
+export const resizeHandlerAreaWidth = RESIZE_HANDLE_AREA_DECORATION_GAP / 3;
+export const resizeLineWidth = 2;
+export const resizeHandlerZIndex =
+  columnControlsZIndex + akMediaSingleResizeZIndex;
 
 const isIE11 = browser.ie_version === 11;
 
@@ -264,10 +270,9 @@ const OverflowShadow = `
 .${ClassName.TABLE_RIGHT_SHADOW},
 .${ClassName.TABLE_LEFT_SHADOW}{
   display: block;
-  height: calc(100% - ${tableMarginTop +
-    tableMarginBottom +
-    tableToolbarSize -
-    2}px);
+  height: calc(100% - ${
+    tableMarginTop + tableMarginBottom + tableToolbarSize - 2
+  }px);
   position: absolute;
   pointer-events: none;
   top: ${tableMarginTop + tableToolbarSize - 1}px;
@@ -350,20 +355,6 @@ const columnControlsDecoration = `
     }
   }
 
-
-  .${ClassName.TABLE_CONTAINER} {
-    td, th {
-      overflow: hidden;
-    }
-
-    &.${ClassName.WITH_CONTROLS} tr:first-child {
-      td, th {
-        overflow: visible;
-      }
-    }
-  }
-
-
   .${ClassName.WITH_CONTROLS} .${ClassName.COLUMN_CONTROLS_DECORATIONS} {
     display: block;
   }
@@ -394,31 +385,6 @@ const columnControlsDecoration = `
 } {
     .${ClassName.COLUMN_CONTROLS_DECORATIONS}::after {
       ${columnHeaderButtonSelected};
-    }
-  }
-
-  table .${ClassName.RESIZE_HANDLE} {
-    position: absolute;
-    top: ${columnControlsDecorationHeight - tableToolbarSize}px;
-    right: -${tableResizeHandleWidth / 2 + 2}px;
-    width: ${tableResizeHandleWidth * 2}px;
-    cursor: col-resize;
-    z-index: ${1000};
-
-    :after {
-      background: ${tableBorderSelectedColor};
-      display: none;
-      content: '';
-      height: 100%;
-      width: 2px;
-      position: absolute;
-      left: 50%;
-    }
-
-    :hover {
-      :after {
-        display: block;
-      }
     }
   }
 `;
@@ -454,6 +420,45 @@ const hoveredWarningCell = `
   }
 `;
 
+const resizeHandle = `
+  .${ClassName.TABLE_CONTAINER} {
+    .${ClassName.RESIZE_HANDLE_DECORATION} {
+      background-color: transparent;
+      position: absolute;
+      width: ${resizeHandlerAreaWidth}px;
+      height: 100%;
+      top: 0;
+      right: -${resizeHandlerAreaWidth / 2}px;
+      cursor: col-resize;
+      z-index: ${resizeHandlerZIndex};
+    }
+
+    td.${ClassName.WITH_RESIZE_LINE},
+    th.${ClassName.WITH_RESIZE_LINE} {
+      .${ClassName.RESIZE_HANDLE_DECORATION}::after {
+        content: ' ';
+        right: ${(resizeHandlerAreaWidth - resizeLineWidth) / 2}px;
+        position: absolute;
+        width: ${resizeLineWidth}px;
+        height: calc(100% + 1px);
+        background-color: ${tableBorderSelectedColor};
+        z-index: ${columnControlsZIndex * 2};
+        top: 0;
+      }
+    }
+
+    table tr:first-child th.${ClassName.WITH_RESIZE_LINE} .${
+  ClassName.RESIZE_HANDLE_DECORATION
+}::after,
+    table tr:first-child td.${ClassName.WITH_RESIZE_LINE} .${
+  ClassName.RESIZE_HANDLE_DECORATION
+}::after {
+      top: -${tableToolbarSize + tableCellBorderWidth}px;
+      height: calc(100% + ${tableToolbarSize + tableCellBorderWidth}px);
+    }
+  }
+`;
+
 export const tableStyles = css`
   .${ClassName.LAYOUT_BUTTON} button {
     background: ${N20A};
@@ -474,6 +479,23 @@ export const tableStyles = css`
     ${hoveredDeleteButton};
     ${hoveredCell};
     ${hoveredWarningCell};
+    ${resizeHandle};
+
+    .${ClassName.LAST_ITEM_IN_CELL} {
+      margin-bottom: 0;
+    }
+
+    .${ClassName.TABLE_NODE_WRAPPER} {
+      td.${ClassName.TABLE_CELL},
+      th.${ClassName.TABLE_HEADER_CELL} {
+        position: relative;
+        overflow: visible;
+      }
+
+      td.${ClassName.TABLE_CELL} {
+        background-color: #ffffff; // basic color to avoid overflow content on cell
+      }
+    }
 
     .${ClassName.CONTROLS_FLOATING_BUTTON_COLUMN} {
       ${insertColumnButtonWrapper}
@@ -498,6 +520,24 @@ export const tableStyles = css`
       &.${ClassName.TABLE_CONTAINER}[data-number-column='true'] {
         padding-left: ${akEditorTableNumberColumnWidth + tablePadding - 1}px;
       }
+
+      .${ClassName.TABLE_LEFT_SHADOW} {
+        left: 6px;
+      }
+
+      .${ClassName.TABLE_RIGHT_SHADOW} {
+        left: calc(100% - 6px);
+      }
+    }
+
+    > .${ClassName.NODEVIEW_WRAPPER} {
+      /**
+       * Prevent margins collapsing, aids with placing the gap-cursor correctly
+       * @see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing
+       *
+       * TODO: Enable this, many tests will fail!
+       * border-top: 1px solid transparent;
+       */
     }
 
     /* Breakout only works on top level */

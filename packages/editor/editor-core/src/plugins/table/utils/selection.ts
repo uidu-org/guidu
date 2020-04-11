@@ -1,11 +1,11 @@
-import { Transaction, Selection } from 'prosemirror-state';
-import { CellSelection, TableMap, Rect } from 'prosemirror-tables';
+import { Selection, Transaction } from 'prosemirror-state';
+import { CellSelection, Rect, TableMap } from 'prosemirror-tables';
 import {
   findTable,
-  isCellSelection,
-  getSelectionRect,
   getSelectionRangeInColumn,
   getSelectionRangeInRow,
+  getSelectionRect,
+  isCellSelection,
 } from 'prosemirror-utils';
 
 export const isSelectionUpdated = (
@@ -13,10 +13,10 @@ export const isSelectionUpdated = (
   newSelection?: Selection,
 ) =>
   !!(!newSelection && oldSelection) ||
-  (isCellSelection(oldSelection) !== isCellSelection(newSelection!) ||
-    (isCellSelection(oldSelection) &&
-      isCellSelection(newSelection!) &&
-      oldSelection.ranges !== newSelection!.ranges));
+  isCellSelection(oldSelection) !== isCellSelection(newSelection!) ||
+  (isCellSelection(oldSelection) &&
+    isCellSelection(newSelection!) &&
+    oldSelection.ranges !== newSelection!.ranges);
 
 const isRectangularCellSelection = (
   selection: Selection,

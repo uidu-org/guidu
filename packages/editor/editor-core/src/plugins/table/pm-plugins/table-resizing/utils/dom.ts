@@ -1,12 +1,9 @@
 import { EditorState } from 'prosemirror-state';
-import { TableMap } from 'prosemirror-tables';
-import { getCellsInRow } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { containsClassName } from '../../../../../utils';
-import { closestElement } from '../../../../../utils/dom';
-import { updateOverflowShadows } from '../../../nodeviews/TableComponent';
+import { closestElement, containsClassName } from '../../../../../utils/dom';
+import { updateOverflowShadows } from '../../../nodeviews/update-overflow-shadows';
 import { TableCssClassName as ClassName } from '../../../types';
-import { getPluginState as getMainPluginState } from '../../main';
+import { getPluginState as getMainPluginState } from '../../plugin-factory';
 
 function getHeights(
   children: NodeListOf<HTMLElement>,
@@ -87,32 +84,18 @@ export const getResizeCellPos = (
   event: MouseEvent,
   lastColumnResizable: boolean,
 ): number | null => {
-  const { state } = view;
   const target = event.target as HTMLElement;
 
-  if (!containsClassName(target, ClassName.RESIZE_HANDLE)) {
+  if (!containsClassName(target, ClassName.RESIZE_HANDLE_DECORATION)) {
     return null;
-  }
-  const parent = closestElement(target, '[data-start-index]');
-  if (!parent) {
-    return null;
-  }
-  const index = parseInt(parent.getAttribute('data-start-index') || '-1', 10);
-  if (index === -1) {
-    return null;
-  }
-  const cells = getCellsInRow(0)(state.selection);
-  if (!cells) {
-    return null;
-  }
-  const cellPos = cells[index].pos;
-  if (!lastColumnResizable) {
-    const $cell = state.doc.resolve(cellPos);
-    const map = TableMap.get($cell.node(-1));
-    if (map.width === index + 1) {
-      return null;
-    }
   }
 
-  return cellPos;
+  const tableCell = closestElement(target, 'td, th');
+
+  if (!tableCell) {
+    return null;
+  }
+
+  const cellStartPosition = view.posAtDOM(tableCell, 0);
+  return cellStartPosition - 1;
 };

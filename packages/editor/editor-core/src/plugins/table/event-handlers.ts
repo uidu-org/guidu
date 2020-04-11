@@ -7,7 +7,12 @@ import {
   Transaction,
 } from 'prosemirror-state';
 import { cellAround, CellSelection, TableMap } from 'prosemirror-tables';
-import { findTable, getSelectionRect, removeTable } from 'prosemirror-utils';
+import {
+  findCellRectClosestToPos,
+  findTable,
+  getSelectionRect,
+  removeTable,
+} from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import rafSchedule from 'raf-schd';
 import { analyticsService } from '../../analytics';
@@ -15,7 +20,7 @@ import {
   isElementInTableCell,
   isLastItemMediaGroup,
   setNodeSelection,
-} from '../../utils';
+} from '../../utils/';
 import { closestElement } from '../../utils/dom';
 import {
   ACTION_SUBJECT,
@@ -24,26 +29,32 @@ import {
   TABLE_ACTION,
 } from '../analytics';
 import {
+  addResizeHandleDecorations,
   clearHoverSelection,
   hideInsertColumnOrRowButton,
+  hideResizeHandleLine,
   hoverColumns,
   selectColumn,
   setEditorFocus,
   showInsertColumnButton,
   showInsertRowButton,
+  showResizeHandleLine,
 } from './commands';
-import { getPluginState } from './pm-plugins/main';
-import { getPluginState as getResizePluginState } from './pm-plugins/table-resizing/plugin';
+import { getPluginState } from './pm-plugins/plugin-factory';
+import { getPluginState as getResizePluginState } from './pm-plugins/table-resizing/plugin-factory';
 import { deleteColumns, deleteRows } from './transforms';
+import { RESIZE_HANDLE_AREA_DECORATION_GAP } from './types';
 import {
   getColumnOrRowIndex,
   getMousePositionHorizontalRelativeByElement,
   getMousePositionVerticalRelativeByElement,
   getSelectedCellInfo,
+  hasResizeHandler,
   isCell,
   isColumnControlsDecorations,
   isCornerButton,
   isInsertRowButton,
+  isResizeHandleDecoration,
   isRowControlsButton,
   isTableControlsButton,
 } from './utils';
@@ -66,7 +77,10 @@ export const handleFocus = (view: EditorView, event: Event): boolean => {
 };
 
 export const handleClick = (view: EditorView, event: Event): boolean => {
-  const element = event.target as HTMLElement;
+  if (!(event.target instanceof HTMLElement)) {
+    return false;
+  }
+  const element = event.target;
   const table = findTable(view.state.selection)!;
 
   if (event instanceof MouseEvent && isColumnControlsDecorations(element)) {
@@ -122,8 +136,11 @@ export const handleMouseOver = (
   view: EditorView,
   mouseEvent: Event,
 ): boolean => {
+  if (!(mouseEvent.target instanceof HTMLElement)) {
+    return false;
+  }
   const { state, dispatch } = view;
-  const target = mouseEvent.target as HTMLElement;
+  const target = mouseEvent.target;
   const { insertColumnButtonIndex, insertRowButtonIndex } = getPluginState(
     state,
   );
@@ -154,6 +171,14 @@ export const handleMouseOver = (
     return hideInsertColumnOrRowButton()(state, dispatch);
   }
 
+  if (isResizeHandleDecoration(target)) {
+    const [startIndex, endIndex] = getColumnOrRowIndex(target);
+    return showResizeHandleLine({ left: startIndex, right: endIndex })(
+      state,
+      dispatch,
+    );
+  }
+
   return false;
 };
 
@@ -178,23 +203,45 @@ export const handleMouseOut = (
   view: EditorView,
   mouseEvent: Event,
 ): boolean => {
-  const target = mouseEvent.target as HTMLElement;
+  if (
+    !(mouseEvent instanceof MouseEvent) ||
+    !(mouseEvent.target instanceof HTMLElement)
+  ) {
+    return false;
+  }
+
+  const target = mouseEvent.target;
 
   if (isColumnControlsDecorations(target)) {
     const { state, dispatch } = view;
     return clearHoverSelection()(state, dispatch);
   }
 
+  const relatedTarget = mouseEvent.relatedTarget as HTMLElement | null;
+  // In case the user is moving between cell at the same column
+  // we don't need to hide the resize handle decoration
+  if (
+    isResizeHandleDecoration(target) &&
+    !isResizeHandleDecoration(relatedTarget)
+  ) {
+    const { state, dispatch } = view;
+    return hideResizeHandleLine()(state, dispatch);
+  }
+
   return false;
 };
 
 export const handleMouseLeave = (view: EditorView, event: Event): boolean => {
+  if (!(event.target instanceof HTMLElement)) {
+    return false;
+  }
+
   const { state, dispatch } = view;
   const { insertColumnButtonIndex, insertRowButtonIndex } = getPluginState(
     state,
   );
 
-  const target = event.target as HTMLElement;
+  const target = event.target;
   if (isTableControlsButton(target)) {
     return true;
   }
@@ -206,11 +253,15 @@ export const handleMouseLeave = (view: EditorView, event: Event): boolean => {
   ) {
     return true;
   }
+
   return false;
 };
 
 export const handleMouseMove = (view: EditorView, event: Event) => {
-  const element = event.target as HTMLElement;
+  if (!(event.target instanceof HTMLElement)) {
+    return false;
+  }
+  const element = event.target;
 
   if (isColumnControlsDecorations(element)) {
     const { state, dispatch } = view;
@@ -241,6 +292,41 @@ export const handleMouseMove = (view: EditorView, event: Event) => {
 
     if (positionRow !== insertRowButtonIndex) {
       return showInsertRowButton(positionRow)(state, dispatch);
+    }
+  }
+
+  if (!isResizeHandleDecoration(element) && isCell(element)) {
+    const positionColumn = getMousePositionHorizontalRelativeByElement(
+      event as MouseEvent,
+      RESIZE_HANDLE_AREA_DECORATION_GAP,
+    );
+
+    if (positionColumn !== null) {
+      const { state, dispatch } = view;
+      const { resizeHandleColumnIndex } = getPluginState(state);
+      const tableCell = closestElement(
+        element,
+        'td, th',
+      ) as HTMLTableCellElement;
+      const cellStartPosition = view.posAtDOM(tableCell, 0);
+      const rect = findCellRectClosestToPos(
+        state.doc.resolve(cellStartPosition),
+      );
+
+      if (rect) {
+        const columnEndIndexTarget =
+          positionColumn === 'left' ? rect.left : rect.right;
+
+        if (
+          columnEndIndexTarget !== resizeHandleColumnIndex ||
+          !hasResizeHandler({ target: element, columnEndIndexTarget })
+        ) {
+          return addResizeHandleDecorations(columnEndIndexTarget)(
+            state,
+            dispatch,
+          );
+        }
+      }
     }
   }
 

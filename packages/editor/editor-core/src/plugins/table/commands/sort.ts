@@ -14,7 +14,7 @@ import {
 import { Command } from '../../../types';
 import { pluginKey } from '../../card/pm-plugins/main';
 import { CardPluginState } from '../../card/types';
-import { createCommand, getPluginState } from '../pm-plugins/main';
+import { createCommand, getPluginState } from '../pm-plugins/plugin-factory';
 import { SortOrder, TablePluginState } from '../types';
 import { TableSortStep } from '../utils';
 
@@ -42,7 +42,7 @@ export const sortByColumn = (
   order: SortOrder = SortOrder.DESC,
 ): Command =>
   createCommand(
-    state => ({
+    (state) => ({
       type: 'SORT_TABLE',
       data: {
         ordering: {
@@ -72,14 +72,16 @@ export const sortByColumn = (
       if (tablePluginState.isHeaderRowEnabled) {
         headerRow = tableArray.shift();
       }
-      const compareNodes = createCompareNodes({
-        getInlineCardTextFromStore: createGetInlineCardTextFromStore(state),
-      });
+      const compareNodesInOrder = createCompareNodes(
+        {
+          getInlineCardTextFromStore: createGetInlineCardTextFromStore(state),
+        },
+        order,
+      );
 
       const sortedTable = tableArray.sort(
         (rowA: Array<PMNode | null>, rowB: Array<PMNode | null>) =>
-          (order === SortOrder.DESC ? -1 : 1) *
-          compareNodes(rowA[columnIndex], rowB[columnIndex]),
+          compareNodesInOrder(rowA[columnIndex], rowB[columnIndex]),
       );
 
       if (headerRow) {

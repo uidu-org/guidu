@@ -7,9 +7,9 @@ import {
   isCellSelection,
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { pluginKey } from '../../pm-plugins/main';
+import { getPluginState, pluginKey } from '../../pm-plugins/plugin-factory';
 import { PluginConfig } from '../../types';
 import {
   contextualMenuDropdownWidth,
@@ -54,10 +54,15 @@ const FloatingContextualMenu = ({
   scrollableElement,
   editorView,
   isOpen,
-  targetCellPosition,
   pluginConfig,
 }: Props) => {
-  if (!isOpen || !targetCellPosition) {
+  // TargetCellPosition could be outdated: https://product-fabric.atlassian.net/browse/ED-8129
+  const { targetCellPosition } = getPluginState(editorView.state);
+  if (
+    !isOpen ||
+    !targetCellPosition ||
+    editorView.state.doc.nodeSize <= targetCellPosition
+  ) {
     return null;
   }
 
@@ -109,5 +114,7 @@ const FloatingContextualMenu = ({
     </Popup>
   );
 };
+
+FloatingContextualMenu.displayName = 'FloatingContextualMenu';
 
 export default FloatingContextualMenu;

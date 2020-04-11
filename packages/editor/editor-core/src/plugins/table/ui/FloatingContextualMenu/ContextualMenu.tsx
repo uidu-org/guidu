@@ -1,7 +1,6 @@
 import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import {
   addColumnAfter,
@@ -34,7 +33,7 @@ import {
   sortColumnWithAnalytics,
   splitCellWithAnalytics,
 } from '../../commands-with-analytics';
-import { getPluginState } from '../../pm-plugins/main';
+import { getPluginState } from '../../pm-plugins/plugin-factory';
 import { canMergeCells } from '../../transforms';
 import { SortOrder, TableCssClassName as ClassName } from '../../types';
 import {
@@ -88,7 +87,7 @@ export interface Props {
   editorView: EditorView;
   isOpen: boolean;
   selectionRect: Rect;
-  targetCellPosition?: number;
+  targetCellPosition?: number; // We keep this because we need to know when to rerender
   mountPoint?: HTMLElement;
   allowMergeCells?: boolean;
   allowColumnSorting?: boolean;
@@ -157,13 +156,15 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
       allowColumnSorting,
       allowBackgroundColor,
       editorView: { state },
-      targetCellPosition,
       isOpen,
       selectionRect,
       intl: { formatMessage },
+      editorView,
     } = this.props;
     const items: any[] = [];
     const { isSubmenuOpen } = this.state;
+    // TargetCellPosition could be outdated: https://product-fabric.atlassian.net/browse/ED-8129
+    const { targetCellPosition } = getPluginState(editorView.state);
     if (allowBackgroundColor) {
       const node =
         isOpen && targetCellPosition
@@ -276,7 +277,9 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
   };
 
   private onMenuItemActivated = ({ item }: { item: DropdownItem }) => {
-    const { editorView, selectionRect, targetCellPosition } = this.props;
+    const { editorView, selectionRect } = this.props;
+    // TargetCellPosition could be outdated: https://product-fabric.atlassian.net/browse/ED-8129
+    const { targetCellPosition } = getPluginState(editorView.state);
     const { state, dispatch } = editorView;
 
     switch (item.value.name) {
@@ -319,10 +322,10 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
         this.toggleOpen();
         break;
       case 'insert_row':
-        insertRowWithAnalytics(INPUT_METHOD.CONTEXT_MENU, selectionRect.bottom)(
-          state,
-          dispatch,
-        );
+        insertRowWithAnalytics(INPUT_METHOD.CONTEXT_MENU, {
+          index: selectionRect.bottom,
+          moveCursorToInsertedRow: true,
+        })(state, dispatch);
         this.toggleOpen();
         break;
       case 'delete_column':
@@ -423,7 +426,9 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
   };
 
   private setColor = (color: string) => {
-    const { targetCellPosition, editorView } = this.props;
+    const { editorView } = this.props;
+    // TargetCellPosition could be outdated: https://product-fabric.atlassian.net/browse/ED-8129
+    const { targetCellPosition } = getPluginState(editorView.state);
     const { state, dispatch } = editorView;
     setColorWithAnalytics(color, targetCellPosition)(state, dispatch);
     this.toggleOpen();

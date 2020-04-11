@@ -1,13 +1,12 @@
-import * as React from 'react';
-import { Component } from 'react';
 import { EditorView } from 'prosemirror-view';
+import React, { Component } from 'react';
 import { clearHoverSelection } from '../../../commands';
 import { TableCssClassName as ClassName } from '../../../types';
 import {
-  RowParams,
+  getRowClassNames,
   getRowHeights,
   getRowsParams,
-  getRowClassNames,
+  RowParams,
 } from '../../../utils';
 
 export interface Props {
@@ -59,7 +58,7 @@ export default class RowControls extends Component<Props, any> {
                 className={`${ClassName.ROW_CONTROLS_BUTTON}
                   ${ClassName.CONTROLS_BUTTON}
                 `}
-                onClick={event =>
+                onClick={(event) =>
                   this.props.selectRow(startIndex, event.shiftKey)
                 }
                 onMouseOver={() => this.props.hoverRows([startIndex])}

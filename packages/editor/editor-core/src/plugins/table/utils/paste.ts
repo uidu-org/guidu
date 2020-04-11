@@ -1,4 +1,4 @@
-import { Node as PMNode, Schema, Slice, Fragment } from 'prosemirror-model';
+import { Fragment, Node as PMNode, Schema, Slice } from 'prosemirror-model';
 import { flatten } from 'prosemirror-utils';
 import { flatmap, mapSlice } from '../../../utils/slice';
 
@@ -10,9 +10,9 @@ export const unwrapContentFromTable = (
   if (maybeTable.type === schema.nodes.table) {
     const content: PMNode[] = [];
     const { tableCell, tableHeader } = schema.nodes;
-    maybeTable.descendants(maybeCell => {
+    maybeTable.descendants((maybeCell) => {
       if (maybeCell.type === tableCell || maybeCell.type === tableHeader) {
-        content.push(...flatten(maybeCell, false).map(child => child.node));
+        content.push(...flatten(maybeCell, false).map((child) => child.node));
       }
       return true;
     });
@@ -134,7 +134,7 @@ export const transformSliceToCorrectEmptyTableCells = (
   schema: Schema,
 ): Slice => {
   const { tableCell, tableHeader } = schema.nodes;
-  return mapSlice(slice, node => {
+  return mapSlice(slice, (node) => {
     if (
       node &&
       (node.type === tableCell || node.type === tableHeader) &&

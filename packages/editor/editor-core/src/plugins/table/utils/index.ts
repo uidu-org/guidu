@@ -8,20 +8,23 @@ export {
 export {
   createCellHoverDecoration,
   createColumnControlsDecoration,
+  createColumnLineResize,
   createColumnSelectedDecorations,
   createControlsHoverDecoration,
+  createResizeHandleDecoration,
   findControlsHoverDecoration,
   updateNodeDecorations,
-  updatePluginStateDecorations,
 } from './decoration';
 export {
   getColumnOrRowIndex,
   getMousePositionHorizontalRelativeByElement,
   getMousePositionVerticalRelativeByElement,
+  hasResizeHandler,
   isCell,
   isColumnControlsDecorations,
   isCornerButton,
   isInsertRowButton,
+  isResizeHandleDecoration,
   isRowControlsButton,
   isTableControlsButton,
   updateResizeHandles,
@@ -63,3 +66,4 @@ export {
 } from './selection';
 export { TableSortStep } from './sort-step';
 export { getMergedCellsPositions } from './table';
+export { updatePluginStateDecorations } from './update-plugin-state-decorations';

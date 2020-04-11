@@ -1,8 +1,7 @@
 import { browser } from '@uidu/editor-common';
 import { Selection } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { hoverRows, selectRow } from '../../commands';
 import { TableColumnOrdering } from '../../types';
 import { isSelectionUpdated } from '../../utils';
@@ -27,6 +26,8 @@ export interface Props {
 }
 
 export default class TableFloatingControls extends Component<Props> {
+  static displayName = 'TableFloatingControls';
+
   shouldComponentUpdate(nextProps: Props) {
     const {
       tableRef,
@@ -76,7 +77,7 @@ export default class TableFloatingControls extends Component<Props> {
     }
 
     return (
-      <div onMouseDown={e => e.preventDefault()}>
+      <div onMouseDown={(e) => e.preventDefault()}>
         {isNumberColumnEnabled ? (
           <NumberColumn
             editorView={editorView}

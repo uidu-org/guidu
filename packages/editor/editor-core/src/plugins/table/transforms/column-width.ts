@@ -44,7 +44,7 @@ export const updateColumnWidths = (
 
       let colwidth = attrs.colwidth
         ? attrs.colwidth.slice()
-        : Array.from({ length: colspan }, _ => 0);
+        : Array.from({ length: colspan }, (_) => 0);
 
       colwidth[colspanIndex] = width;
       if (colwidth.length > colspan) {

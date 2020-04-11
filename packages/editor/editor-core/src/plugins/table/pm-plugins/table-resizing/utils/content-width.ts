@@ -1,4 +1,4 @@
-import { unitToNumber } from './column-state';
+import { unitToNumber } from './unit-to-number';
 
 // calculates content width of a cell
 export function contentWidth(
