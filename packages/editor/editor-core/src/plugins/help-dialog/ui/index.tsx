@@ -3,7 +3,7 @@ import { browser } from '@uidu/editor-common';
 import Modal, { ModalTransition } from '@uidu/modal-dialog';
 import { Schema } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import {
   defineMessages,
   FormattedMessage,
@@ -11,7 +11,6 @@ import {
   IntlShape,
   WrappedComponentProps,
 } from 'react-intl';
-import { closeHelpCommand } from '../';
 import * as keymaps from '../../../keymaps';
 import ToolbarButton from '../../../ui/ToolbarButton';
 import { messages as blockTypeMessages } from '../../block-type/messages';
@@ -19,6 +18,7 @@ import { messages as insertBlockMessages } from '../../insert-block/ui/ToolbarIn
 import { messages as listMessages } from '../../lists/messages';
 import { messages as advancedTextFormattingMessages } from '../../text-formatting/ui/ToolbarAdvancedTextFormatting';
 import { messages as textFormattingMessages } from '../../text-formatting/ui/ToolbarTextFormatting';
+import { closeHelpCommand } from '../commands';
 import {
   CodeLg,
   CodeMd,
@@ -463,6 +463,8 @@ const ModalFooter = ({ showKeyline }: { showKeyline: boolean }) => (
 );
 
 class HelpDialog extends React.Component<Props & WrappedComponentProps> {
+  static displayName = 'HelpDialog';
+
   private formatting: Format[] = [];
 
   closeDialog = () => {

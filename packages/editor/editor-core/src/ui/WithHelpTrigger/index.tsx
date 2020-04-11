@@ -1,5 +1,5 @@
-import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import { analyticsService } from '../../analytics';
 import { createDispatch } from '../../event-dispatcher';
 import {
@@ -11,7 +11,7 @@ import {
   INPUT_METHOD,
 } from '../../plugins/analytics';
 import { analyticsEventKey } from '../../plugins/analytics/consts';
-import { openHelpCommand } from '../../plugins/help-dialog';
+import { openHelpCommand } from '../../plugins/help-dialog/commands';
 
 export default class WithHelpTrigger extends React.Component<
   { render: (openHelp: () => void) => React.ReactNode },

@@ -1,8 +1,11 @@
+import QuestionCircleIcon from '@atlaskit/icon/glyph/question-circle';
+import { Providers } from '@uidu/editor-common/provider-factory';
 import { keymap } from 'prosemirror-keymap';
-import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
-import * as React from 'react';
+import { EditorState, Plugin, Transaction } from 'prosemirror-state';
+import React from 'react';
 import { analyticsService } from '../../analytics';
 import * as keymaps from '../../keymaps';
+import { openHelp, tooltip } from '../../keymaps';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -13,31 +16,18 @@ import {
 } from '../../plugins/analytics';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
+import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { pluginKey as quickInsertPluginKey } from '../quick-insert';
+import { openHelpCommand } from './commands';
+import { pluginKey } from './plugin-key';
 import { HelpDialogLoader } from './ui/HelpDialogLoader';
 
-export const pluginKey = new PluginKey('helpDialogPlugin');
-
-export const openHelpCommand = (tr: Transaction, dispatch?: Function): void => {
-  tr = tr.setMeta(pluginKey, true);
-  if (dispatch) {
-    dispatch(tr);
-  }
-};
-
-export const closeHelpCommand = (tr: Transaction, dispatch: Function): void => {
-  tr = tr.setMeta(pluginKey, false);
-  dispatch(tr);
-};
-
-export const stopPropagationCommand = (e: Event): void => e.stopPropagation();
-
-export function createPlugin(dispatch: Function) {
+export function createPlugin(dispatch: Function, imageEnabled: boolean) {
   return new Plugin({
     key: pluginKey,
     state: {
       init() {
-        return { isVisible: false };
+        return { isVisible: false, imageEnabled };
       },
       apply(tr: Transaction, _value: any, state: EditorState) {
         const isVisible = tr.getMeta(pluginKey);
@@ -53,20 +43,47 @@ export function createPlugin(dispatch: Function) {
   });
 }
 
-const helpDialog = (): EditorPlugin => ({
+const helpDialog = (
+  legacyImageUploadProvider?: Providers['imageUploadProvider'],
+): EditorPlugin => ({
   name: 'helpDialog',
 
   pmPlugins() {
     return [
       {
         name: 'helpDialog',
-        plugin: ({ dispatch }) => createPlugin(dispatch),
+        plugin: ({ dispatch }) =>
+          createPlugin(dispatch, !!legacyImageUploadProvider),
       },
       {
         name: 'helpDialogKeymap',
         plugin: () => keymapPlugin(),
       },
     ];
+  },
+
+  pluginsOptions: {
+    quickInsert: ({ formatMessage }) => [
+      {
+        title: formatMessage(messages.help),
+        description: formatMessage(messages.helpDescription),
+        keywords: ['help', '?'],
+        priority: 4000,
+        keyshortcut: tooltip(openHelp),
+        icon: () => <QuestionCircleIcon label={formatMessage(messages.help)} />,
+        action(insert, state) {
+          const tr = insert('');
+          openHelpCommand(tr);
+          return addAnalytics(state, tr, {
+            action: ACTION.HELP_OPENED,
+            actionSubject: ACTION_SUBJECT.HELP,
+            actionSubjectId: ACTION_SUBJECT_ID.HELP_QUICK_INSERT,
+            attributes: { inputMethod: INPUT_METHOD.QUICK_INSERT },
+            eventType: EVENT_TYPE.UI,
+          });
+        },
+      },
+    ],
   },
 
   contentComponent({ editorView }) {
@@ -81,6 +98,7 @@ const helpDialog = (): EditorPlugin => ({
             editorView={editorView}
             isVisible={helpDialog.isVisible}
             quickInsertEnabled={!!quickInsert}
+            imageEnabled={helpDialog.imageEnabled}
           />
         )}
       />
