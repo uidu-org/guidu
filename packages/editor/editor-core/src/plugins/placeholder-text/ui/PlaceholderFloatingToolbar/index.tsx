@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import FloatingToolbar, {
   Coordinates,

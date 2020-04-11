@@ -1,5 +1,5 @@
 import { EditorState, Transaction } from 'prosemirror-state';
-import { pluginKey } from './index';
+import { pluginKey } from './plugin-key';
 
 export const showPlaceholderFloatingToolbar = (
   state: EditorState,

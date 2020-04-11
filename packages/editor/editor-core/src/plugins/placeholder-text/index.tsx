@@ -2,11 +2,10 @@ import { placeholder } from '@uidu/adf-schema';
 import {
   NodeSelection,
   Plugin,
-  PluginKey,
   TextSelection,
   Transaction,
 } from 'prosemirror-state';
-import * as React from 'react';
+import React from 'react';
 import { Dispatch } from '../../event-dispatcher';
 import { EditorPlugin } from '../../types/editor-plugin';
 import WithPluginState from '../../ui/WithPluginState';
@@ -16,20 +15,9 @@ import {
   hidePlaceholderFloatingToolbar,
   insertPlaceholderTextAtSelection,
 } from './actions';
-import PlaceholderTextNodeView from './nodeviews/placeholder-text';
+import { pluginKey } from './plugin-key';
+import { PlaceholderTextOptions, PluginState } from './types';
 import PlaceholderFloatingToolbar from './ui/PlaceholderFloatingToolbar';
-
-export const pluginKey = new PluginKey('placeholderTextPlugin');
-
-export interface PlaceholderTextOptions {
-  allowInserting?: boolean;
-}
-
-export interface PluginState {
-  showInsertPanelAt: number | null;
-  // Enables the "Insert Placeholder Text" dropdown item
-  allowInserting: boolean;
-}
 
 export function createPlugin(
   dispatch: Dispatch<PluginState>,
@@ -64,15 +52,8 @@ export function createPlugin(
         return state;
       },
     },
-    props: {
-      nodeViews: {
-        placeholder(node, view, getPos) {
-          return new PlaceholderTextNodeView(node, view, getPos);
-        },
-      },
-    },
     appendTransaction(transactions, oldState, newState) {
-      if (transactions.some(txn => txn.docChanged)) {
+      if (transactions.some((txn) => txn.docChanged)) {
         const didPlaceholderExistBeforeTxn =
           oldState.selection.$head.nodeAfter ===
           newState.selection.$head.nodeAfter;
