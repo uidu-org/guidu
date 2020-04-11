@@ -16,7 +16,8 @@ import {
   withAnalytics,
 } from '../analytics';
 import { TOOLBAR_MENU_TYPE } from '../insert-block/ui/ToolbarInsertBlock/types';
-import { pluginKey, StatusType } from './plugin';
+import { pluginKey } from './plugin-key';
+import { StatusType } from './types';
 
 export const DEFAULT_STATUS: StatusType = {
   text: '',

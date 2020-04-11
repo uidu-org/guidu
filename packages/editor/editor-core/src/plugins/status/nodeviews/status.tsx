@@ -1,8 +1,8 @@
-import { Color, Status, StatusStyle } from '@uidu/status';
+import { Color, Status, StatusStyle } from '@uidu/status/element';
 import { borderRadius, colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView, NodeView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { EventDispatcher } from '../../../event-dispatcher';
@@ -11,10 +11,8 @@ import InlineNodeWrapper, {
   createMobileInlineDomRef,
 } from '../../../ui/InlineNodeWrapper';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
-import WithPluginState from '../../../ui/WithPluginState';
 import { ZeroWidthSpace } from '../../../utils';
-import { StatusPluginOptions } from '../index';
-import { pluginKey } from '../plugin';
+import { StatusPluginOptions } from '../types';
 
 export const messages = defineMessages({
   placeholder: {
@@ -77,43 +75,33 @@ class StatusContainerView extends React.Component<
   ContainerProps & WrappedComponentProps,
   {}
 > {
+  static displayName = 'StatusContainerView';
+
   constructor(props: ContainerProps & WrappedComponentProps) {
     super(props);
   }
 
   render() {
-    const { eventDispatcher, view } = this.props;
+    const {
+      text,
+      color,
+      localId,
+      style,
+      intl: { formatMessage },
+    } = this.props;
+
+    const statusText = text ? text : formatMessage(messages.placeholder);
+
     return (
-      <WithPluginState
-        plugins={{
-          pluginState: pluginKey,
-        }}
-        editorView={view}
-        eventDispatcher={eventDispatcher}
-        render={() => {
-          const {
-            text,
-            color,
-            localId,
-            style,
-            intl: { formatMessage },
-          } = this.props;
-
-          const statusText = text ? text : formatMessage(messages.placeholder);
-
-          return (
-            <StyledStatus placeholderStyle={!text}>
-              <Status
-                text={statusText}
-                color={color}
-                localId={localId}
-                style={style}
-                onClick={this.handleClick}
-              />
-            </StyledStatus>
-          );
-        }}
-      />
+      <StyledStatus placeholderStyle={!text}>
+        <Status
+          text={statusText}
+          color={color}
+          localId={localId}
+          style={style}
+          onClick={this.handleClick}
+        />
+      </StyledStatus>
     );
   }
 

@@ -1,6 +1,5 @@
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
-
 import * as keymaps from '../../keymaps';
 import { Command } from '../../types';
 import { mayGetStatusAtSelection } from './utils';

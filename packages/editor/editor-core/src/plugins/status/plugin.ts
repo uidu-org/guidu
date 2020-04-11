@@ -1,26 +1,20 @@
-import { Color as ColorType } from '@uidu/status';
-import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
+import {
+  EditorState,
+  NodeSelection,
+  Plugin,
+  Transaction,
+} from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
 import { ZeroWidthSpace } from '../../utils';
-import { StatusPluginOptions } from './index';
 import statusNodeView from './nodeviews/status';
+import { pluginKey } from './plugin-key';
+import { StatusPluginOptions, StatusState } from './types';
 import { isEmptyStatus, mayGetStatusAtSelection } from './utils';
 
-export const pluginKeyName = 'statusPlugin';
-export const pluginKey = new PluginKey('statusPlugin');
-
-export type StatusType = {
-  color: ColorType;
-  text: string;
-  localId?: string;
-};
-
-export type StatusState = {
-  isNew: boolean;
-  showStatusPickerAt: number | null;
-};
+export { pluginKey, pluginKeyName } from './plugin-key';
+export { StatusState, StatusType } from './types';
 
 const createPlugin = (
   dispatch: Dispatch,
@@ -69,7 +63,8 @@ const createPlugin = (
           let showStatusPickerAt = null;
           if (
             nodeAtSelection &&
-            nodeAtSelection.type === oldEditorState.schema.nodes.status
+            nodeAtSelection.type === oldEditorState.schema.nodes.status &&
+            tr.selection instanceof NodeSelection
           ) {
             showStatusPickerAt = selectionFrom;
           }
@@ -95,7 +90,7 @@ const createPlugin = (
       let tr = newEditorState.tr;
 
       // user leaves the StatusPicker with empty text and selects a new node
-      if (transactions.find(tr => tr.selectionSet)) {
+      if (transactions.find((tr) => tr.selectionSet)) {
         let oldStatus = mayGetStatusAtSelection(oldEditorState.selection);
         let newStatus = mayGetStatusAtSelection(newEditorState.selection);
         if (

@@ -1,6 +1,6 @@
 import { status } from '@uidu/adf-schema';
 import { findDomRefAtPos } from 'prosemirror-utils';
-import * as React from 'react';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
@@ -15,18 +15,10 @@ import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconStatus } from '../quick-insert/assets';
 import { commitStatusPicker, createStatus, updateStatus } from './actions';
 import { keymapPlugin } from './keymap';
-import createStatusPlugin, {
-  pluginKey,
-  StatusState,
-  StatusType,
-} from './plugin';
+import createStatusPlugin from './plugin';
+import { pluginKey } from './plugin-key';
+import { StatusPluginOptions, StatusState, StatusType } from './types';
 import StatusPicker from './ui/statusPicker';
-
-export interface StatusPluginOptions {
-  menuDisabled: boolean;
-  useInlineWrapper?: boolean;
-  allowZeroWidthSpaceAfter?: boolean;
-}
 
 const baseStatusPlugin = (options?: StatusPluginOptions): EditorPlugin => ({
   name: 'status',
