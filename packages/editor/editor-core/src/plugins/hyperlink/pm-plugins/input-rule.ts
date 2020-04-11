@@ -1,8 +1,11 @@
-import { InputRule, inputRules } from 'prosemirror-inputrules';
+import { InputRule } from 'prosemirror-inputrules';
 import { Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import { analyticsService } from '../../../analytics';
-import { createInputRule } from '../../../utils/input-rules';
+import {
+  createInputRule,
+  instrumentedInputRule,
+} from '../../../utils/input-rules';
 import { addAnalytics, INPUT_METHOD } from '../../analytics';
 import { queueCards } from '../../card/pm-plugins/actions';
 import { getLinkCreationAnalyticsEvent } from '../analytics';
@@ -85,7 +88,7 @@ export function createInputRulePlugin(schema: Schema): Plugin | undefined {
     },
   );
 
-  return inputRules({
+  return instrumentedInputRule('hyperlink', {
     rules: [urlWithASpaceRule, markdownLinkRule],
   });
 }

@@ -4,8 +4,7 @@ import EditorAlignLeftIcon from '@atlaskit/icon/glyph/editor/align-left';
 import LinkIcon from '@atlaskit/icon/glyph/link';
 import { colors } from '@uidu/theme';
 import Tooltip from '@uidu/tooltip';
-import * as React from 'react';
-import { KeyboardEvent, PureComponent } from 'react';
+import React, { KeyboardEvent, PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import { analyticsService } from '../../../../analytics';
@@ -68,7 +67,7 @@ export interface Props {
   popupsMountPoint?: HTMLElement;
   popupsBoundariesElement?: HTMLElement;
   autoFocus?: boolean;
-  provider: Promise<ActivityProvider>;
+  provider?: Promise<ActivityProvider>;
   displayText?: string;
   displayUrl?: string;
 }
@@ -101,10 +100,11 @@ class LinkAddToolbar extends PureComponent<
 
   constructor(props: Props & WrappedComponentProps) {
     super(props);
+
     this.state = {
       selectedIndex: -1,
       isLoading: false,
-      text: props.displayUrl || '',
+      text: normalizeUrl(props.displayUrl),
       displayText: props.displayText || '',
       items: [],
     };
@@ -117,16 +117,16 @@ class LinkAddToolbar extends PureComponent<
     this.handleClearDisplayText = this.createClearHandler('displayText');
   }
 
-  async resolveProvider() {
-    const provider = await this.props.provider;
+  async resolveProvider(unresolvedProvider: Promise<ActivityProvider>) {
+    const provider = await unresolvedProvider;
     this.setState({ provider });
     return provider;
   }
 
   async componentDidMount() {
     if (this.props.provider) {
-      const activityProvider = await this.resolveProvider();
-      this.loadRecentItems(activityProvider);
+      const activityProvider = await this.resolveProvider(this.props.provider);
+      await this.loadRecentItems(activityProvider);
     }
   }
 
@@ -211,11 +211,11 @@ class LinkAddToolbar extends PureComponent<
               </Tooltip>
             </IconWrapper>
             <PanelTextInput
-              ref={ele => (this.urlInputContainer = ele)}
+              ref={(ele) => (this.urlInputContainer = ele)}
               placeholder={placeholder}
               onSubmit={this.handleSubmit}
               onChange={this.updateInput}
-              autoFocus={true}
+              autoFocus={{ preventScroll: true }}
               onCancel={this.urlBlur}
               onBlur={this.urlBlur}
               defaultValue={text}
@@ -243,8 +243,10 @@ class LinkAddToolbar extends PureComponent<
               </Tooltip>
             </IconWrapper>
             <PanelTextInput
-              ref={ele => (this.displayTextInputContainer = ele)}
+              ref={(ele) => (this.displayTextInputContainer = ele)}
               placeholder={formatDisplayText}
+              ariaLabel={'Link label'}
+              testId={'Link label'}
               onChange={this.handleTextKeyDown}
               onCancel={this.textBlur}
               onBlur={this.textBlur}
@@ -288,7 +290,7 @@ class LinkAddToolbar extends PureComponent<
     const { items } = this.state;
 
     if (items) {
-      const index = findIndex(items, item => item.objectId === objectId);
+      const index = findIndex(items, (item) => item.objectId === objectId);
       this.setState({
         selectedIndex: index,
       });
@@ -300,9 +302,10 @@ class LinkAddToolbar extends PureComponent<
     // add the link selected in the dropdown if there is one, otherwise submit the value of the input field
     if (items && items.length > 0 && selectedIndex > -1) {
       const item = items[selectedIndex];
+      const url = normalizeUrl(item.url);
       if (this.props.onSubmit) {
         this.props.onSubmit(
-          item.url,
+          url,
           this.state.displayText || item.name,
           INPUT_METHOD.TYPEAHEAD,
         );
@@ -311,10 +314,11 @@ class LinkAddToolbar extends PureComponent<
         );
       }
     } else if (text && text.length > 0) {
-      if (this.props.onSubmit) {
+      const url = normalizeUrl(text);
+      if (this.props.onSubmit && url) {
         this.submitted = true;
         this.props.onSubmit(
-          text,
+          url,
           this.state.displayText || text,
           INPUT_METHOD.MANUAL,
         );
@@ -357,7 +361,7 @@ class LinkAddToolbar extends PureComponent<
 
   private handleBlur = (type: string) => {
     const url = normalizeUrl(this.state.text);
-    if (this.props.onBlur && !this.submitted) {
+    if (this.props.onBlur && !this.submitted && url) {
       this.props.onBlur(
         type,
         url,

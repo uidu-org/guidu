@@ -1,5 +1,5 @@
 import { ProviderFactory, WithProviders } from '@uidu/editor-common';
-import * as React from 'react';
+import React from 'react';
 import HyperlinkAddToolbar, { LinkInputType } from './HyperlinkAddToolbar';
 
 export interface Props {

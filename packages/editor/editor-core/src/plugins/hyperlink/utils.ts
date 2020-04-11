@@ -86,7 +86,7 @@ export function linkifyContent(schema: Schema): (slice: Slice) => Slice {
         const text = node.text!;
         const matches: any[] = findLinkMatches(text);
         let pos = 0;
-        matches.forEach(match => {
+        matches.forEach((match) => {
           if (match.start > 0) {
             linkified.push(node.cut(pos, match.start));
           }
@@ -110,6 +110,15 @@ export function linkifyContent(schema: Schema): (slice: Slice) => Slice {
     });
 }
 
+export function getLinkDomain(url: string): string {
+  // Remove protocol and www., if either exists
+  const withoutProtocol = url.toLowerCase().replace(/^(.*):\/\//, '');
+  const withoutWWW = withoutProtocol.replace(/^(www\.)/, '');
+
+  // Remove port, fragment, path, query string
+  return withoutWWW.replace(/[:\/?#](.*)$/, '');
+}
+
 interface LinkMatch {
   start: number;
   end: number;
@@ -121,7 +130,7 @@ function findLinkMatches(text: string): LinkMatch[] {
   const matches: LinkMatch[] = [];
   let linkMatches: '' | null | Match[] = text && linkify.match(text);
   if (linkMatches && linkMatches.length > 0) {
-    linkMatches.forEach(match => {
+    linkMatches.forEach((match) => {
       matches.push({
         start: match.index,
         end: match.lastIndex,

@@ -1,5 +1,5 @@
 import { link } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 import { addLink, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
 import {

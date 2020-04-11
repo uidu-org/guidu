@@ -1,3 +1,4 @@
+import { LinkAttributes } from '@uidu/adf-schema';
 import { Mark, Node, ResolvedPos } from 'prosemirror-model';
 import { EditorState, Selection } from 'prosemirror-state';
 import { Command } from '../../types';
@@ -13,11 +14,7 @@ import {
 } from '../analytics';
 import { queueCardsFromChangedTr } from '../card/pm-plugins/doc';
 import { getLinkCreationAnalyticsEvent } from './analytics';
-import {
-  canLinkBeCreatedInRange,
-  LinkAction,
-  stateKey,
-} from './pm-plugins/main';
+import { LinkAction, stateKey } from './pm-plugins/main';
 import { LinkInputType } from './ui/HyperlinkAddToolbar/HyperlinkAddToolbar';
 import { normalizeUrl } from './utils';
 
@@ -90,6 +87,12 @@ export function updateLink(
     if (!node) {
       return false;
     }
+    const url = normalizeUrl(href);
+
+    if (!url) {
+      return false;
+    }
+
     const mark: Mark = state.schema.marks.link.isInSet(node.marks);
     const linkMark = state.schema.marks.link;
 
@@ -97,14 +100,12 @@ export function updateLink(
       to && pos !== to ? to : pos - $pos.textOffset + node.nodeSize;
     const tr = state.tr;
     tr.insertText(text, pos, rightBound);
-    tr.addMark(
-      pos,
-      pos + text.length,
-      linkMark.create({
-        ...((mark && mark.attrs) || {}),
-        href,
-      }),
-    );
+    // Casting to LinkAttributes to prevent wrong attributes been passed (Example ED-7951)
+    const linkAttrs: LinkAttributes = {
+      ...((mark && (mark.attrs as LinkAttributes)) || {}),
+      href: url,
+    };
+    tr.addMark(pos, pos + text.length, linkMark.create(linkAttrs));
     tr.setMeta(stateKey, { type: LinkAction.HIDE_TOOLBAR });
     if (dispatch) {
       dispatch(tr);
@@ -143,23 +144,22 @@ export function insertLink(
   text?: string,
   source?: INPUT_METHOD.MANUAL | INPUT_METHOD.TYPEAHEAD,
 ): Command {
-  return filter(canLinkBeCreatedInRange(from, to), (state, dispatch) => {
+  return (state, dispatch) => {
     const link = state.schema.marks.link;
     if (href.trim()) {
       const { tr } = state;
       const normalizedUrl = normalizeUrl(href);
-      if (from === to) {
-        const textContent = text || href;
-        tr.insertText(textContent, from, to);
-        tr.addMark(
-          from,
-          from + textContent.length,
-          link.create({ href: normalizedUrl }),
-        );
-      } else {
-        tr.addMark(from, to, link.create({ href: normalizedUrl }));
-        tr.setSelection(Selection.near(tr.doc.resolve(to)));
-      }
+      const textContent = text || href;
+
+      tr.insertText(textContent, from, to);
+      tr.addMark(
+        from,
+        from + textContent.length,
+        link.create({ href: normalizedUrl }),
+      );
+      tr.setSelection(
+        Selection.near(tr.doc.resolve(from + textContent.length)),
+      );
 
       queueCardsFromChangedTr(state, tr, source!, false);
 
@@ -170,7 +170,7 @@ export function insertLink(
       return true;
     }
     return false;
-  });
+  };
 }
 
 export const insertLinkWithAnalytics = (

@@ -1,5 +1,6 @@
 import { EditorState, Plugin } from 'prosemirror-state';
 import { Decoration, DecorationSet } from 'prosemirror-view';
+import { fakeCursorForToolbarPluginKey } from './fake-curor-for-toolbar-plugin-key';
 import {
   HyperlinkState,
   InsertStatus,
@@ -26,6 +27,7 @@ const getInsertLinkToolbarState = (editorState: EditorState) => {
 };
 
 const fakeCursorToolbarPlugin: Plugin = new Plugin({
+  key: fakeCursorForToolbarPluginKey,
   state: {
     init() {
       return DecorationSet.empty;
@@ -54,7 +56,7 @@ const fakeCursorToolbarPlugin: Plugin = new Plugin({
   },
   props: {
     decorations(state) {
-      return fakeCursorToolbarPlugin.getState(state);
+      return fakeCursorForToolbarPluginKey.getState(state);
     },
   },
 });
