@@ -1,14 +1,14 @@
-import { ProviderFactory } from '@uidu/editor-common';
+import { ProviderFactory } from '@uidu/editor-common/provider-factory';
 import { Node, NodeType } from 'prosemirror-model';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import React from 'react';
 import { IntlShape } from 'react-intl';
-import { Command } from '../../types';
-import { DispatchAnalyticsEvent } from '../analytics';
+import { Command } from '../../types/command';
+import { DispatchAnalyticsEvent } from '../analytics/types/dispatch-analytics-event';
 import { ButtonAppearance } from './ui/Button';
-import { DropdownOptions, RenderOptionsPropsT } from './ui/Dropdown';
-import { SelectOption, SelectOptions } from './ui/Select';
+import { SelectOption } from './ui/Select';
+import { DropdownOptions, RenderOptionsPropsT } from './ui/types';
 
 export type Icon = React.ComponentType<{ label: string }>;
 export type RenderOptionsProps = RenderOptionsPropsT<Command>;
@@ -30,6 +30,8 @@ export type FloatingToolbarButton<T> = {
   href?: string;
   target?: string;
   className?: string;
+  tooltipContent?: React.ReactNode;
+  testId?: string;
 };
 
 export type FloatingToolbarInput<T> = {
@@ -54,7 +56,7 @@ export type FloatingToolbarCustom = {
 
 export type FloatingToolbarSelect<T> = {
   type: 'select';
-  options: SelectOptions<T>;
+  options: SelectOption[];
   hidden?: boolean;
   hideExpandIcon?: boolean;
   defaultValue?: SelectOption;

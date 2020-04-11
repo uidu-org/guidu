@@ -1,11 +1,26 @@
+import { createParagraphNear } from 'prosemirror-commands';
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
 import * as keymaps from '../../../keymaps';
 import { arrow, deleteNode } from '../actions';
 import { Direction } from '../direction';
+import { GapCursorSelection } from '../selection';
 
 export default function keymapPlugin(): Plugin {
   const map = {};
+
+  keymaps.bindKeymapWithCommand(
+    keymaps.insertNewLine.common!,
+    (state, dispatch, view) => {
+      const isInGapCursor = state.selection instanceof GapCursorSelection;
+      // Only operate in gap cursor
+      if (!isInGapCursor) {
+        return false;
+      }
+      return createParagraphNear(state, dispatch);
+    },
+    map,
+  );
 
   keymaps.bindKeymapWithCommand(
     keymaps.moveLeft.common!,

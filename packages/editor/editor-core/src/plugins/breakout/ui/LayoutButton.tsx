@@ -5,7 +5,7 @@ import { colors } from '@uidu/theme';
 import { Node as PMNode } from 'prosemirror-model';
 import { findParentDomRefOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import styled from 'styled-components';
 import commonMessages from '../../../messages';
@@ -13,7 +13,7 @@ import ToolbarButton from '../../../ui/ToolbarButton';
 import { removeBreakout } from '../commands/remove-breakout';
 import { BreakoutMode, setBreakoutMode } from '../commands/set-breakout-mode';
 import { BreakoutCssClassName } from '../constants';
-import { getPluginState } from '../index';
+import { getPluginState } from '../plugin-key';
 import { getBreakoutMode } from '../utils/get-breakout-mode';
 import { isBreakoutMarkAllowed } from '../utils/is-breakout-mark-allowed';
 
@@ -67,6 +67,8 @@ const getTitle = (layout?: BreakoutMode) => {
 };
 
 class LayoutButton extends React.Component<Props & WrappedComponentProps, {}> {
+  static displayName = 'LayoutButton';
+
   private handleClick = (breakoutMode: BreakoutMode) => () => {
     const { state, dispatch } = this.props.editorView;
     if (

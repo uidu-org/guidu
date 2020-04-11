@@ -1,6 +1,4 @@
-import Select from '@uidu/select';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 export interface RenderOptionsPropsT<T> {
@@ -16,24 +14,17 @@ export interface SelectOption {
   hidden?: boolean;
 }
 
-export type SelectOptions<T> =
-  | Array<SelectOption>
-  | {
-      render: (props: RenderOptionsPropsT<T>) => React.ReactElement<any> | null;
-      height: number;
-      width: number;
-    };
-
 export interface Props {
   hideExpandIcon?: boolean;
-  options: SelectOptions<Function>;
+  options: SelectOption[];
   dispatchCommand: (command: Function) => void;
   mountPoint?: HTMLElement;
   boundariesElement?: HTMLElement;
   scrollableElement?: HTMLElement;
   defaultValue?: SelectOption;
   placeholder?: string;
-  onChange?: (change: SelectOption) => void;
+  // onChange?: (change: ValueType<SelectOption>) => void;
+  onChange?: (change: any) => void;
   width?: number;
 }
 
@@ -41,8 +32,10 @@ export interface State {
   isOpen: boolean;
 }
 
-const SelectWrapper = styled.div<{ width: number }>`
-  width: ${props => props.width}px;
+const SelectWrapper = styled.div<{
+  width: number;
+}>`
+  width: ${(props) => props.width}px;
 `;
 
 export default class Search extends Component<Props, State> {
@@ -58,7 +51,7 @@ export default class Search extends Component<Props, State> {
     return (
       <SelectWrapper width={width}>
         {/* <Select
-          options={options as any}
+          options={options}
           value={defaultValue}
           onChange={onChange}
           placeholder={placeholder}

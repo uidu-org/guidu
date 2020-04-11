@@ -1,51 +1,40 @@
 import { ResolvedPos } from 'prosemirror-model';
-import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
+import { EditorState, Plugin } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { findPositionOfNodeBefore } from 'prosemirror-utils';
 import { Decoration, DecorationSet, EditorView } from 'prosemirror-view';
 import { deleteNode, setGapCursorAtPos } from '../actions';
 import { Direction } from '../direction';
 import { GapCursorSelection, JSON_ID, Side } from '../selection';
-import { fixCursorAlignment, isIgnoredClick } from '../utils';
-
-export const pluginKey = new PluginKey('gapCursorPlugin');
+import { getBreakoutModeFromTargetNode, isIgnoredClick } from '../utils';
+import { toDOM } from '../utils/place-gap-cursor';
+import { pluginKey } from './plugin-key';
 
 const plugin = new Plugin({
   key: pluginKey,
-
-  // this hack fixes gap cursor alignment on each cursor movement after its been rendered to DOM
-  view: () => {
-    return {
-      update(view: EditorView) {
-        if (view.state.selection instanceof GapCursorSelection) {
-          fixCursorAlignment(view);
-        }
-      },
-    };
-  },
-
   props: {
     decorations: ({ doc, selection }: EditorState) => {
       if (selection instanceof GapCursorSelection) {
         const { $from, side } = selection;
-        const node = document.createElement('span');
-        node.className = `ProseMirror-gapcursor ${
-          side === Side.LEFT ? '-left' : '-right'
-        }`;
-        node.appendChild(document.createElement('span'));
 
         // render decoration DOM node always to the left of the target node even if selection points to the right
         // otherwise positioning of the right gap cursor is a nightmare when the target node has a nodeView with vertical margins
         let position = selection.head;
-        if (side === Side.RIGHT && $from.nodeBefore) {
+        const isRightCursor = side === Side.RIGHT;
+        if (isRightCursor && $from.nodeBefore) {
           const nodeBeforeStart = findPositionOfNodeBefore(selection);
           if (typeof nodeBeforeStart === 'number') {
             position = nodeBeforeStart;
           }
         }
 
+        const node = isRightCursor ? $from.nodeBefore : $from.nodeAfter;
+        const breakoutMode = node && getBreakoutModeFromTargetNode(node);
         return DecorationSet.create(doc, [
-          Decoration.widget(position, node, { key: `${JSON_ID}`, side: -1 }),
+          Decoration.widget(position, toDOM, {
+            key: `${JSON_ID}-${side}-${breakoutMode}`,
+            side: breakoutMode ? -1 : 0,
+          }),
         ]);
       }
 

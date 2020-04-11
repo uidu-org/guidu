@@ -1,10 +1,9 @@
 import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
 import Item, { itemThemeNamespace } from '@uidu/item';
 import { colors, gridSize } from '@uidu/theme';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { DropdownOptionT } from './Dropdown';
+import { DropdownOptionT } from './types';
 
 export const menuItemDimensions = {
   width: 175,
@@ -55,7 +54,7 @@ export default class Dropdown extends Component<Props> {
       <ThemeProvider theme={{ [itemThemeNamespace]: editorItemTheme }}>
         <MenuContainer>
           {items
-            .filter(item => !item.hidden)
+            .filter((item) => !item.hidden)
             .map((item, idx) => (
               <Item
                 key={idx}

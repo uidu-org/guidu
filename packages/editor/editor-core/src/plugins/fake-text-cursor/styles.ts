@@ -1,4 +1,3 @@
-// @ts-ignore: unused variable
 import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
 
@@ -8,7 +7,6 @@ export const fakeCursorStyles = css`
       display: inline;
       pointer-events: none;
       position: relative;
-      height: 15px;
     }
 
     .ProseMirror-fake-text-cursor::after {
@@ -16,7 +14,6 @@ export const fakeCursorStyles = css`
       display: inline;
       top: 0;
       position: absolute;
-      height: 100%;
       border-right: 1px solid rgba(0, 0, 0, 0.4);
     }
 

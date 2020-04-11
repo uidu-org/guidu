@@ -3,8 +3,7 @@ import { ProviderFactory } from '@uidu/editor-common';
 import { borderRadius, colors, gridSize, themed } from '@uidu/theme';
 import { Node } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
-import { Component } from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { DispatchAnalyticsEvent } from '../../analytics';
 import { FloatingToolbarItem } from '../types';
@@ -60,8 +59,8 @@ const compareItemWithKeys = <T, U extends keyof T>(
   excludedKeys: Array<U> = [],
 ): boolean =>
   (Object.keys(leftItem) as Array<U>)
-    .filter(key => excludedKeys.indexOf(key) === -1)
-    .every(key =>
+    .filter((key) => excludedKeys.indexOf(key) === -1)
+    .every((key) =>
       leftItem[key] instanceof Object
         ? shallowEqual(leftItem[key], rightItem[key])
         : leftItem[key] === rightItem[key],
@@ -173,7 +172,7 @@ export default class Toolbar extends Component<Props> {
       >
         <ButtonGroup>
           {items
-            .filter(item => !item.hidden)
+            .filter((item) => !item.hidden)
             .map((item, idx) => {
               switch (item.type) {
                 case 'button':
@@ -187,9 +186,7 @@ export default class Toolbar extends Component<Props> {
                       icon={
                         item.icon ? (
                           <ButtonIcon label={item.title} />
-                        ) : (
-                          undefined
-                        )
+                        ) : undefined
                       }
                       appearance={item.appearance}
                       target={item.target}
@@ -198,6 +195,8 @@ export default class Toolbar extends Component<Props> {
                       onMouseLeave={() => dispatchCommand(item.onMouseLeave)}
                       selected={item.selected}
                       disabled={item.disabled}
+                      tooltipContent={item.tooltipContent}
+                      testId={item.testId}
                     >
                       {item.showTitle && item.title}
                     </Button>
@@ -211,8 +210,10 @@ export default class Toolbar extends Component<Props> {
                       boundariesElement={popupsBoundariesElement}
                       defaultValue={item.defaultValue}
                       placeholder={item.placeholder}
-                      onSubmit={value => dispatchCommand(item.onSubmit(value))}
-                      onBlur={value => dispatchCommand(item.onBlur(value))}
+                      onSubmit={(value) =>
+                        dispatchCommand(item.onSubmit(value))
+                      }
+                      onBlur={(value) => dispatchCommand(item.onBlur(value))}
                     />
                   );
 
@@ -248,8 +249,8 @@ export default class Toolbar extends Component<Props> {
                       scrollableElement={popupsScrollableElement}
                       defaultValue={item.defaultValue}
                       placeholder={item.placeholder}
-                      onChange={(selected: SelectOption) =>
-                        dispatchCommand(item.onChange(selected))
+                      onChange={(selected) =>
+                        dispatchCommand(item.onChange(selected as SelectOption))
                       }
                     />
                   );

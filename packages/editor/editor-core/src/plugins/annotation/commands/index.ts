@@ -1,5 +1,12 @@
 import { INLINE_COMMENT } from '@uidu/adf-schema';
 import { Command } from '../../../types';
+import { createCommand } from '../pm-plugins/plugin-factory';
+
+export const setInlineCommentState = (newState: any): Command =>
+  createCommand({
+    type: 'SET_INLINE_COMMENT_STATE',
+    data: newState,
+  });
 
 export const removeInlineCommentNearSelection = (id: string): Command => (
   state,
@@ -13,7 +20,7 @@ export const removeInlineCommentNearSelection = (id: string): Command => (
 
   const hasAnnotation = $from
     .marks()
-    .some(mark => mark.type === annotationMarkType);
+    .some((mark) => mark.type === annotationMarkType);
 
   if (!hasAnnotation) {
     return false;
@@ -35,3 +42,6 @@ export const removeInlineCommentNearSelection = (id: string): Command => (
 
   return true;
 };
+
+export const resolveInlineComment = (id: string): Command =>
+  createCommand({ type: 'INLINE_COMMENT_RESOLVE', data: { id } });

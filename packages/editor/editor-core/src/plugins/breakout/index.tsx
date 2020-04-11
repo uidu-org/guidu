@@ -1,66 +1,92 @@
 import { breakout } from '@uidu/adf-schema';
 import { calcBreakoutWidth } from '@uidu/editor-common';
-import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
+import { Node as PMNode } from 'prosemirror-model';
+import { Plugin } from 'prosemirror-state';
 import { findParentNode } from 'prosemirror-utils';
-import * as React from 'react';
-import styled from 'styled-components';
-import { ReactNodeView } from '../../nodeviews';
-import { ForwardRef } from '../../nodeviews/ReactNodeView';
+import { EditorView } from 'prosemirror-view';
+import React from 'react';
+import { css } from 'styled-components';
+import { EventDispatcher } from '../../';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import { pluginKey as widthPluginKey, WidthPluginState } from '../width';
+import { pluginKey as widthPluginKey } from '../width';
 import { BreakoutCssClassName } from './constants';
+import { pluginKey } from './plugin-key';
 import LayoutButton from './ui/LayoutButton';
 import { isSupportedNodeForBreakout } from './utils/is-supported-node';
 
-export const Wrapper = styled.div`
-  .ProseMirror > .breakoutView-content-wrap &[data-layout='full-width'],
-  .ProseMirror > .breakoutView-content-wrap &[data-layout='wide'] {
+export const breakoutStyles = css`
+  .ProseMirror > .${BreakoutCssClassName.BREAKOUT_MARK}[data-layout='full-width'],
+  .ProseMirror > .${BreakoutCssClassName.BREAKOUT_MARK}[data-layout='wide'] {
     margin-left: 50%;
     transform: translateX(-50%);
   }
 `;
 
-export const pluginKey = new PluginKey('breakoutPlugin');
-export const getPluginState = (state: EditorState) => pluginKey.getState(state);
+let debounce: number | null = null;
 
-class BreakoutView extends ReactNodeView {
-  getContentDOM() {
+class BreakoutView {
+  dom: HTMLElement;
+  contentDOM: HTMLElement;
+  view: EditorView;
+  node: PMNode;
+  eventDispatcher: EventDispatcher;
+
+  constructor(
+    node: PMNode,
+    view: EditorView,
+    eventDispatcher: EventDispatcher,
+  ) {
+    const contentDOM = document.createElement('div');
+    contentDOM.className = BreakoutCssClassName.BREAKOUT_MARK_DOM;
+
     const dom = document.createElement('div');
-    // MutationObserver bug with nodeviews @see ED-6062
-    dom.className = BreakoutCssClassName.BREAKOUT_MARK_DOM;
-    return { dom };
+    dom.className = BreakoutCssClassName.BREAKOUT_MARK;
+    dom.setAttribute('data-layout', node.attrs.mode);
+    dom.appendChild(contentDOM);
+
+    this.dom = dom;
+    this.node = node;
+    this.view = view;
+    this.contentDOM = contentDOM;
+    this.eventDispatcher = eventDispatcher;
+
+    eventDispatcher.on((widthPluginKey as any).key, this.updateWidth);
+    this.updateWidth();
+    this.updateState();
   }
 
-  render(_props: any, forwardRef: ForwardRef) {
-    const { mode } = this.node.attrs;
-    return (
-      <WithPluginState
-        editorView={this.view}
-        plugins={{ widthState: widthPluginKey }}
-        render={({
-          widthState = { width: 0 },
-        }: {
-          widthState?: WidthPluginState;
-        }) => (
-          <Wrapper
-            className="fabric-editor-breakout-mark"
-            data-layout={mode}
-            style={{ width: calcBreakoutWidth(mode, widthState.width) }}
-          >
-            <div ref={forwardRef} />
-          </Wrapper>
-        )}
-      />
-    );
+  private updateWidth = () => {
+    const widthState = widthPluginKey.getState(this.view.state);
+    const width = calcBreakoutWidth(this.node.attrs.mode, widthState.width);
+    this.dom.style.width = width;
+  };
+
+  // update pluginState on each nodeView update in order to reposition layout button relatively the updated node
+  private updateState = () => {
+    if (debounce) {
+      clearTimeout(debounce);
+    }
+
+    debounce = setTimeout(() => {
+      const pluginState = pluginKey.getState(this.view.state);
+      if (this.node !== pluginState.breakoutNode) {
+        const nextPluginState = {
+          ...pluginState,
+          breakoutNode: this.node,
+        };
+        this.eventDispatcher.emit((pluginKey as any).key, nextPluginState);
+      }
+      debounce = null;
+    });
+  };
+
+  destroy() {
+    this.eventDispatcher.off((widthPluginKey as any).key, this.updateWidth);
   }
 }
 
-function createPlugin({
-  portalProviderAPI,
-  providerFactory,
-  dispatch,
-}: PMPluginFactoryParams) {
+function createPlugin({ dispatch, eventDispatcher }: PMPluginFactoryParams) {
   return new Plugin({
     state: {
       init() {
@@ -89,10 +115,8 @@ function createPlugin({
     key: pluginKey,
     props: {
       nodeViews: {
-        breakout: (node, view, getPos) => {
-          return new BreakoutView(node, view, getPos, portalProviderAPI, {
-            providerFactory,
-          }).init();
+        breakout: (node, view) => {
+          return new BreakoutView(node, view, eventDispatcher);
         },
       },
     },

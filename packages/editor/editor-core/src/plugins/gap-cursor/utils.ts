@@ -1,47 +1,10 @@
 import { Node as PMNode, ResolvedPos, Schema } from 'prosemirror-model';
-import { findDomRefAtPos, findPositionOfNodeBefore } from 'prosemirror-utils';
-import { EditorView } from 'prosemirror-view';
 import { closestElement } from '../../utils/dom';
 import { TableCssClassName } from '../table/types';
-import { tableInsertColumnButtonSize } from '../table/ui/styles';
-import { GapCursorSelection, Side } from './selection';
+import { Side } from './selection';
 
-// we don't show gap cursor for those nodes
-const IGNORED_NODES = [
-  'paragraph',
-  'bulletList',
-  'orderedList',
-  'listItem',
-  'taskItem',
-  'decisionItem',
-  'heading',
-  'blockquote',
-];
-
-// Returns DOM node's vertical margin. It descents into the node and reads margins of nested DOM nodes
-const getDomNodeVerticalMargin = (
-  ref: HTMLElement | null,
-  side: 'top' | 'bottom',
-): number => {
-  let margin = 0;
-  while (ref && ref.nodeType === 1) {
-    const css = window.getComputedStyle(ref);
-    const curMargin = parseInt((css as any)[`margin-${side}`], 10);
-    if (curMargin > margin) {
-      margin = curMargin;
-    }
-    ref = ref[side === 'top' ? 'firstChild' : 'lastChild'] as HTMLElement;
-  }
-  return margin;
-};
-
-export const isIgnored = (node?: PMNode | null): boolean => {
-  return !!node && IGNORED_NODES.indexOf(node.type.name) !== -1;
-};
-
-export const isValidTargetNode = (node?: PMNode | null): boolean => {
-  return !!node && !isIgnored(node);
-};
+export const isLeftCursor = (side: Side): side is Side.LEFT =>
+  side === Side.LEFT;
 
 export function getMediaNearPos(
   doc: PMNode,
@@ -89,7 +52,13 @@ export const isTextBlockNearPos = (
   dir: number,
 ) => {
   let $currentPos = $pos;
-  let currentNode: PMNode | null = null;
+  let currentNode: PMNode | null | undefined =
+    dir === -1 ? $currentPos.nodeBefore : $currentPos.nodeAfter;
+
+  // If next node is a text or a text block bail out early.
+  if (currentNode && (currentNode.isTextblock || currentNode.isText)) {
+    return true;
+  }
 
   while ($currentPos.depth > 0) {
     $currentPos = doc.resolve(
@@ -113,11 +82,11 @@ export const isTextBlockNearPos = (
     }
   }
 
-  let childNode: PMNode | null = currentNode;
+  let childNode: PMNode | null | undefined = currentNode;
 
   while (childNode && childNode.firstChild) {
     childNode = childNode.firstChild;
-    if (childNode && childNode.isTextblock) {
+    if (childNode && (childNode.isTextblock || childNode.isText)) {
       return true;
     }
   }
@@ -125,200 +94,26 @@ export const isTextBlockNearPos = (
   return false;
 };
 
-const isMediaSingle = (node?: HTMLElement | null): boolean => {
-  if (!node) {
-    return false;
-  }
-  const firstChild = node.firstChild as HTMLElement;
-  return (
-    !!firstChild &&
-    firstChild.nodeType === Node.ELEMENT_NODE &&
-    firstChild.classList.contains('media-single')
-  );
-};
-
-const isNodeViewWrapper = (node?: HTMLElement | null): boolean => {
-  if (!node) {
-    return false;
-  }
-  return (
-    !!node &&
-    node.nodeType === Node.ELEMENT_NODE &&
-    node.className.indexOf('-content-wrap') !== -1
-  );
-};
-
-function getBreakoutModeFromTargetNode(node: PMNode): string {
+export function getBreakoutModeFromTargetNode(node: PMNode): string {
+  let layout;
   if (node.attrs.layout) {
-    return node.attrs.layout;
+    layout = node.attrs.layout;
   }
 
   if (node.marks && node.marks.length) {
-    return (
+    layout = (
       node.marks.find((mark) => mark.type.name === 'breakout') || {
         attrs: { mode: '' },
       }
     ).attrs.mode;
   }
 
-  return '';
+  if (['wide', 'full-width'].indexOf(layout) === -1) {
+    return '';
+  }
+
+  return layout;
 }
-
-// incapsulated this hack into a separate util function
-export const fixCursorAlignment = (view: EditorView) => {
-  const {
-    state: { selection, schema },
-    domAtPos,
-  } = view;
-
-  if (!(selection instanceof GapCursorSelection)) {
-    return undefined;
-  }
-
-  const { side, $from } = selection;
-
-  // gap cursor is positioned relative to that node
-  const targetNode = side === Side.LEFT ? $from.nodeAfter! : $from.nodeBefore!;
-  if (!targetNode) {
-    return undefined;
-  }
-  const targetNodePos =
-    side === Side.LEFT ? $from.pos + 1 : findPositionOfNodeBefore(selection);
-  if (targetNodePos === undefined) {
-    return undefined;
-  }
-
-  let targetNodeRef = findDomRefAtPos(
-    targetNodePos,
-    domAtPos.bind(view),
-  ) as HTMLElement | null;
-
-  const gapCursorRef = view.dom.querySelector<HTMLSpanElement>(
-    '.ProseMirror-gapcursor span',
-  );
-  if (!gapCursorRef) {
-    return undefined;
-  }
-
-  const gapCursorParentNodeRef = gapCursorRef.parentElement;
-  if (!gapCursorParentNodeRef) {
-    return undefined;
-  }
-
-  const previousSibling = gapCursorParentNodeRef.previousSibling as HTMLElement | null;
-  const isTargetNodeMediaSingle = isMediaSingle(targetNodeRef);
-  const isMediaWithWrapping =
-    isTargetNodeMediaSingle &&
-    /wrap-[right|left]/i.test(targetNode.attrs.layout);
-  const prevNodeMarginBottom = getDomNodeVerticalMargin(
-    previousSibling,
-    'bottom',
-  );
-
-  const minHeight = 20;
-  let height = 0;
-  let width = 0;
-  let marginTop = 0;
-  let breakoutWidth = 0;
-  let paddingLeft = 0;
-
-  // gets width and height of the prevNode DOM element, or its nodeView wrapper DOM element
-  do {
-    if (!targetNodeRef) {
-      break;
-    }
-
-    const isTargetNodeNodeViewWrapper = isNodeViewWrapper(targetNodeRef);
-    const firstChild = targetNodeRef.firstElementChild;
-    const css = window.getComputedStyle(
-      isTargetNodeNodeViewWrapper && !isTargetNodeMediaSingle
-        ? firstChild || targetNodeRef
-        : targetNodeRef,
-    );
-
-    const isInTableCell =
-      !!targetNodeRef.parentElement &&
-      /td|th/i.test(targetNodeRef.parentElement.nodeName);
-
-    height = parseInt(css.height!, 10);
-    width = parseInt(css.width!, 10);
-
-    width += parseInt(css.paddingLeft!, 10);
-    width += parseInt(css.paddingRight!, 10);
-    height += parseInt(css.paddingTop!, 10);
-    height += parseInt(css.paddingBottom!, 10);
-
-    // padding is cumulative
-    paddingLeft += parseInt(css.paddingLeft!, 10);
-
-    if (previousSibling || isMediaWithWrapping || isInTableCell) {
-      const curNodeMarginTop = getDomNodeVerticalMargin(targetNodeRef, 'top');
-      if (curNodeMarginTop > prevNodeMarginBottom) {
-        marginTop = curNodeMarginTop - prevNodeMarginBottom;
-      }
-      if (isMediaWithWrapping) {
-        marginTop = curNodeMarginTop;
-      }
-    }
-
-    if (isTargetNodeNodeViewWrapper || isTargetNodeMediaSingle) {
-      breakoutWidth = width;
-    }
-
-    if (
-      targetNodeRef.parentElement &&
-      targetNodeRef.parentElement.classList.contains('ProseMirror')
-    ) {
-      break;
-    }
-    targetNodeRef = targetNodeRef.parentElement;
-  } while (targetNodeRef && !targetNodeRef.contains(gapCursorRef));
-
-  // height of the rule (<hr>) is 0, that's why we set minHeight
-  if (height < minHeight) {
-    height = minHeight;
-    marginTop -= Math.round(minHeight / 2) - 1;
-  }
-
-  // breakout mode
-  const breakoutMode = getBreakoutModeFromTargetNode(targetNode);
-  const hasBreakoutEnable = /full-width|wide/i.test(breakoutMode);
-  if (hasBreakoutEnable) {
-    gapCursorRef.setAttribute('layout', breakoutMode);
-  }
-
-  // table nodeView margin fix
-  if (targetNodeRef && targetNode.type === schema.nodes.table) {
-    const tableNode = targetNodeRef.querySelector('table');
-    if (!tableNode) {
-      return undefined;
-    }
-    const style = window.getComputedStyle(tableNode);
-    const halfPlusButtonSize = tableInsertColumnButtonSize / 2;
-    marginTop = parseInt(style.marginTop!, 10);
-    paddingLeft =
-      side === Side.RIGHT
-        ? hasBreakoutEnable
-          ? tableInsertColumnButtonSize
-          : halfPlusButtonSize
-        : 0;
-    height = parseInt(style.height!, 10);
-
-    gapCursorRef.style.paddingLeft = `${paddingLeft}px`;
-  }
-
-  // mediaSingle with layout="wrap-left" or "wrap-right"
-  if (isMediaWithWrapping) {
-    gapCursorParentNodeRef.setAttribute('layout', targetNode.attrs.layout);
-    if (targetNode.attrs.layout === 'wrap-right') {
-      gapCursorRef.style.marginLeft = `-${width}px`;
-    }
-  }
-
-  gapCursorRef.style.height = `${height}px`;
-  gapCursorRef.style.marginTop = `${marginTop}px`;
-  gapCursorRef.style.width = `${breakoutWidth || width}px`;
-};
 
 export const isIgnoredClick = (elem: HTMLElement) => {
   if (elem.nodeName === 'BUTTON' || closestElement(elem, 'button')) {

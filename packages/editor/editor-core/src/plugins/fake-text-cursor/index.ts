@@ -1,6 +1,7 @@
 import { Plugin, PluginKey } from 'prosemirror-state';
 import { EditorPlugin } from '../../types';
 import { drawFakeTextCursor } from './cursor';
+
 export const stateKey = new PluginKey('fakeTextCursorPlugin');
 
 export const createPlugin = () =>

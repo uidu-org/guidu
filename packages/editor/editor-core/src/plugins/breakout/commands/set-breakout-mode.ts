@@ -11,13 +11,16 @@ export function setBreakoutMode(mode: BreakoutMode): Command {
     if (!node) {
       return false;
     }
+    const tr = state.tr.setNodeMarkup(
+      node.pos,
+      node.node.type,
+      node.node.attrs,
+      [state.schema.marks.breakout.create({ mode })],
+    );
+    tr.setMeta('scrollIntoView', false);
 
     if (dispatch) {
-      dispatch(
-        state.tr.setNodeMarkup(node.pos, node.node.type, node.node.attrs, [
-          state.schema.marks.breakout.create({ mode }),
-        ]),
-      );
+      dispatch(tr);
     }
 
     return true;

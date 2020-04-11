@@ -1,13 +1,13 @@
+import { Node, ResolvedPos, Slice } from 'prosemirror-model';
 import {
   EditorState,
-  TextSelection,
   Selection,
   SelectionBookmark,
+  TextSelection,
   Transaction,
 } from 'prosemirror-state';
-import { Decoration, DecorationSet } from 'prosemirror-view';
-import { Slice, Node, ResolvedPos } from 'prosemirror-model';
 import { Mappable } from 'prosemirror-transform';
+import { Decoration, DecorationSet } from 'prosemirror-view';
 
 export class FakeTextCursorBookmark {
   pos: undefined | number = undefined;

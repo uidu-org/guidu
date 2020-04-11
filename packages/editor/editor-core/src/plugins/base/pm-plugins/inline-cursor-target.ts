@@ -27,7 +27,7 @@ export const findSpecialNodeAfter = ($pos: ResolvedPos, tr: Transaction) => {
       return $pos.pos + 2;
     }
   }
-  return undefined;
+  return 0;
 };
 
 export const findSpecialNodeBefore = ($pos: ResolvedPos, tr: Transaction) => {
@@ -36,7 +36,7 @@ export const findSpecialNodeBefore = ($pos: ResolvedPos, tr: Transaction) => {
   }
 
   if ($pos.pos === 0) {
-    return undefined;
+    return 0;
   }
 
   const { parentOffset } = $pos;
@@ -47,7 +47,7 @@ export const findSpecialNodeBefore = ($pos: ResolvedPos, tr: Transaction) => {
       return $pos.pos - 2;
     }
   }
-  return undefined;
+  return 0;
 };
 
 export interface InlineCursorTargetState {

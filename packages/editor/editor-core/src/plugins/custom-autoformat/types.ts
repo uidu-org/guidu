@@ -1,19 +1,11 @@
-import { ADFEntity } from '@uidu/adf-utils';
 import { Node as ProsemirrorNode } from 'prosemirror-model';
 
-export type AutoformatReplacement = ADFEntity;
-
-export type AutoformatHandler = (
-  match: Array<string>,
-) => Promise<AutoformatReplacement>;
-
-export type Ruleset = {
-  [regex: string]: AutoformatHandler;
-};
-
-export interface AutoformattingProvider {
-  getRules(): Promise<Ruleset>;
-}
+export {
+  AutoformatHandler,
+  AutoformatReplacement,
+  AutoformatRuleset as Ruleset,
+  AutoformattingProvider,
+} from '@uidu/editor-common/provider-factory';
 
 export type AutoformatCandidate = {
   start: number;

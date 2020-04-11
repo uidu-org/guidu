@@ -1,6 +1,6 @@
 import Button from '@uidu/button';
 import Tooltip from '@uidu/tooltip';
-import * as React from 'react';
+import React from 'react';
 import { baseStyles, getButtonStyles } from './styles';
 
 export type ButtonAppearance = 'subtle' | 'danger';
@@ -18,6 +18,8 @@ export interface Props {
   target?: string;
   children?: React.ReactNode;
   className?: string;
+  tooltipContent?: React.ReactNode;
+  testId?: string;
 }
 
 export default ({
@@ -34,9 +36,15 @@ export default ({
   appearance = 'subtle',
   children,
   className,
+  tooltipContent,
+  testId,
 }: Props) => {
   return (
-    <Tooltip content={title} hideTooltipOnClick={true} position="top">
+    <Tooltip
+      content={tooltipContent || title}
+      hideTooltipOnClick={true}
+      position="top"
+    >
       <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <Button
           className={className}
@@ -67,6 +75,7 @@ export default ({
           onClick={onClick}
           isSelected={selected}
           isDisabled={disabled}
+          // testId={testId}
         >
           {children}
         </Button>

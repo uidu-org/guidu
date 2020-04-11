@@ -1,4 +1,7 @@
 import { Mark, ResolvedPos } from 'prosemirror-model';
+import { EditorState } from 'prosemirror-state';
+import { sum } from '../../utils';
+import { AnnotationInfo } from './types';
 
 /**
  * Finds the marks in the nodes to the left and right.
@@ -28,6 +31,40 @@ export const filterAnnotationIds = (marks: Array<Mark>): Array<string> => {
 
   const { annotation } = marks[0].type.schema.marks;
   return marks
-    .filter(mark => mark.type === annotation)
-    .map(mark => mark.attrs.id);
+    .filter((mark) => mark.type === annotation)
+    .map((mark) => mark.attrs.id);
+};
+
+/**
+ * Re-orders the annotation array based on the order in the document.
+ *
+ * This places the marks that do not appear in the surrounding nodes
+ * higher in the list. That is, the inner-most one appears first.
+ *
+ * Undo, for example, can re-order annotation marks in the document.
+ * @param annotations annotation metadata
+ * @param $from location to look around (usually the selection)
+ */
+export const reorderAnnotations = (
+  annotations: Array<AnnotationInfo>,
+  $from: ResolvedPos,
+) => {
+  const idSet = surroundingMarks($from).map(filterAnnotationIds);
+
+  annotations.sort(
+    (a, b) =>
+      sum(idSet, (ids) => ids.indexOf(a.id)) -
+      sum(idSet, (ids) => ids.indexOf(b.id)),
+  );
+};
+
+export const getAllAnnotations = (doc: EditorState['doc']): string[] => {
+  const allAnnotationIds: Set<string> = new Set();
+  doc.nodesBetween(0, doc.content.size, (node) =>
+    node.marks
+      .filter((mark) => mark.type.name === 'annotation')
+      .forEach((m) => allAnnotationIds.add(m.attrs.id)),
+  );
+
+  return Array.from(allAnnotationIds);
 };

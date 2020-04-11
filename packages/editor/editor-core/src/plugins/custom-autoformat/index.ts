@@ -1,3 +1,4 @@
+import { Providers } from '@uidu/editor-common/provider-factory';
 import { keydownHandler } from 'prosemirror-keymap';
 import { EditorState, Plugin as PMPlugin } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
@@ -5,11 +6,7 @@ import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import { buildHandler, completeReplacements } from './doc';
 import { InputRule, triggerInputRule } from './input-rules';
 import reducers from './reducers';
-import {
-  AutoformattingProvider,
-  CustomAutoformatAction,
-  CustomAutoformatState,
-} from './types';
+import { CustomAutoformatAction, CustomAutoformatState } from './types';
 import { getPluginState, pluginKey } from './utils';
 
 export const createPMPlugin = ({ providerFactory }: PMPluginFactoryParams) => {
@@ -32,7 +29,7 @@ export const createPMPlugin = ({ providerFactory }: PMPluginFactoryParams) => {
         // remap positions
         const remappedPluginState: CustomAutoformatState = {
           ...prevPluginState,
-          resolving: prevPluginState.resolving.map(candidate => ({
+          resolving: prevPluginState.resolving.map((candidate) => ({
             ...candidate,
             start: tr.mapping.map(candidate.start),
             end: tr.mapping.map(candidate.end, -1),
@@ -67,26 +64,27 @@ export const createPMPlugin = ({ providerFactory }: PMPluginFactoryParams) => {
     },
 
     view() {
-      const handleProvider = (name: string, provider?: Promise<any>) => {
+      const handleProvider = (
+        name: string,
+        provider?: Providers['autoformattingProvider'],
+      ) => {
         if (name !== 'autoformattingProvider' || !provider) {
           return;
         }
 
-        provider.then(
-          async (autoformattingProvider: AutoformattingProvider) => {
-            const ruleset = await autoformattingProvider.getRules();
+        provider.then(async (autoformattingProvider) => {
+          const ruleset = await autoformattingProvider.getRules();
 
-            Object.keys(ruleset).forEach(rule => {
-              const inputRule: InputRule = {
-                matchTyping: new RegExp('(\\s+|^)' + rule + '(\\s)$'),
-                matchEnter: new RegExp('(\\s+|^)' + rule + '()$'),
-                handler: buildHandler(rule, ruleset[rule]),
-              };
+          Object.keys(ruleset).forEach((rule) => {
+            const inputRule: InputRule = {
+              matchTyping: new RegExp('(\\s+|^)' + rule + '(\\s)$'),
+              matchEnter: new RegExp('(\\s+|^)' + rule + '()$'),
+              handler: buildHandler(rule, ruleset[rule]),
+            };
 
-              rules.push(inputRule);
-            });
-          },
-        );
+            rules.push(inputRule);
+          });
+        });
       };
 
       providerFactory.subscribe('autoformattingProvider', handleProvider);

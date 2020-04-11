@@ -1,117 +1,146 @@
 import { annotation } from '@uidu/adf-schema';
-import { ResolvedPos } from 'prosemirror-model';
 import { findDomRefAtPos } from 'prosemirror-utils';
-import * as React from 'react';
+import React from 'react';
 import { stateKey as reactPluginKey } from '../../plugins/base/pm-plugins/react-nodeview';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
-import { sum } from '../../utils';
-import { removeInlineCommentNearSelection } from './commands';
+import {
+  removeInlineCommentNearSelection,
+  resolveInlineComment,
+} from './commands';
+import {
+  getPluginState,
+  inlineCommentPlugin,
+} from './pm-plugins/inline-comment';
+import { pluginKey as inlineCommentPluginKey } from './pm-plugins/plugin-factory';
 import {
   AnnotationComponentProps,
   AnnotationInfo,
   AnnotationProvider,
+  AnnotationState,
+  AnnotationTypeProvider,
+  InlineCommentState,
 } from './types';
-import { filterAnnotationIds, surroundingMarks } from './utils';
-
-/**
- * Re-orders the annotation array based on the order in the document.
- *
- * This places the marks that do not appear in the surrounding nodes
- * higher in the list. That is, the inner-most one appears first.
- *
- * Undo, for example, can re-order annotation marks in the document.
- * @param annotations annotation metadata
- * @param $from location to look around (usually the selection)
- */
-const reorderAnnotations = (
-  annotations: Array<AnnotationInfo>,
-  $from: ResolvedPos,
-) => {
-  const idSet = surroundingMarks($from).map(filterAnnotationIds);
-
-  annotations.sort(
-    (a, b) =>
-      sum(idSet, ids => ids.indexOf(a.id)) -
-      sum(idSet, ids => ids.indexOf(b.id)),
-  );
-};
+import { reorderAnnotations } from './utils';
 
 const annotationPlugin = (
   annotationProvider?: AnnotationProvider,
-): EditorPlugin => ({
-  name: 'annotation',
+): EditorPlugin => {
+  return {
+    name: 'annotation',
 
-  marks() {
-    return [
+    marks() {
+      return [
+        {
+          name: 'annotation',
+          mark: annotation,
+        },
+      ];
+    },
+
+    pmPlugins: () => [
       {
         name: 'annotation',
-        mark: annotation,
+        plugin: ({ dispatch, portalProviderAPI }) => {
+          return annotationProvider &&
+            annotationProvider.providers &&
+            annotationProvider.providers.inlineComment
+            ? inlineCommentPlugin({
+                dispatch,
+                portalProviderAPI,
+                inlineCommentProvider:
+                  annotationProvider.providers.inlineComment,
+                pollingInterval:
+                  annotationProvider.providers.inlineComment.pollingInterval,
+              })
+            : undefined;
+        },
       },
-    ];
-  },
+    ],
 
-  contentComponent({ editorView }) {
-    const { annotation: annotationMarkType } = editorView.state.schema.marks;
-    if (!annotationProvider) {
-      return null;
-    }
+    contentComponent({ editorView }) {
+      const { annotation: annotationMarkType } = editorView.state.schema.marks;
+      if (!annotationProvider) {
+        return null;
+      }
 
-    const Component = annotationProvider.component;
-    if (!Component) {
-      return null;
-    }
+      const { component: Component, providers } = annotationProvider;
+      if (!Component || !providers || !providers.inlineComment) {
+        return null;
+      }
 
-    return (
-      <WithPluginState
-        plugins={{
-          selectionState: reactPluginKey,
-        }}
-        render={() => {
-          const { state } = editorView;
-          const { from, $from } = state.selection;
-          const node = state.doc.nodeAt(from);
-          if (!node) {
-            return null;
-          }
+      return (
+        <WithPluginState
+          plugins={{
+            selectionState: reactPluginKey,
+            annotationState: inlineCommentPluginKey,
+          }}
+          render={() => {
+            const { state, dispatch } = editorView;
+            const { from, $from } = state.selection;
+            const node = state.doc.nodeAt(from);
+            if (!node) {
+              return null;
+            }
 
-          const annotationsMarks = node.marks.filter(
-            mark => mark.type === annotationMarkType,
-          );
-          if (!annotationsMarks.length) {
-            return null;
-          }
+            const annotationsMarks = node.marks.filter(
+              (mark) => mark.type === annotationMarkType,
+            );
 
-          const annotations = annotationsMarks.map(mark => ({
-            id: mark.attrs.id,
-            type: mark.attrs.annotationType,
-          }));
+            if (!annotationsMarks.length) {
+              return null;
+            }
 
-          // re-order to handle nested annotations
-          reorderAnnotations(annotations, $from);
+            let annotations = annotationsMarks.map((mark) => {
+              return {
+                id: mark.attrs.id,
+                type: mark.attrs.annotationType,
+              };
+            });
 
-          const dom = findDomRefAtPos(
-            from,
-            editorView.domAtPos.bind(editorView),
-          ) as HTMLElement;
+            const inlineCommentState = getPluginState(state);
+            // This is currently specific to inlineComments. In future this will need to check all providers, not just one.
+            annotations = annotations.filter(
+              (mark) => inlineCommentState[mark.id] === false,
+            );
 
-          return (
-            <Component
-              annotations={annotations}
-              dom={dom}
-              onDelete={(id: string) =>
-                removeInlineCommentNearSelection(id)(
-                  editorView.state,
-                  editorView.dispatch,
-                )
-              }
-            />
-          );
-        }}
-      />
-    );
-  },
-});
+            if (!annotations.length) {
+              return null;
+            }
+
+            // re-order to handle nested annotations
+            reorderAnnotations(annotations, $from);
+
+            const dom = findDomRefAtPos(
+              from,
+              editorView.domAtPos.bind(editorView),
+            ) as HTMLElement;
+
+            return (
+              <Component
+                annotations={annotations}
+                dom={dom}
+                onDelete={(id: string) =>
+                  removeInlineCommentNearSelection(id)(state, dispatch)
+                }
+                onResolve={(id: string) =>
+                  resolveInlineComment(id)(state, dispatch)
+                }
+              />
+            );
+          }}
+        />
+      );
+    },
+  };
+};
 
 export default annotationPlugin;
-export { AnnotationProvider, AnnotationComponentProps, AnnotationInfo };
+export {
+  AnnotationProvider,
+  AnnotationComponentProps,
+  AnnotationTypeProvider,
+  AnnotationInfo,
+  AnnotationState,
+  InlineCommentState,
+};

@@ -1,7 +1,7 @@
 import { Node as PMNode, ResolvedPos, Slice } from 'prosemirror-model';
 import { Selection } from 'prosemirror-state';
 import { Mapping } from 'prosemirror-transform';
-import { isValidTargetNode } from './utils';
+import { isValidTargetNode } from './utils/is-valid-target-node';
 
 export enum Side {
   LEFT = 'left',

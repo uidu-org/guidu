@@ -1,31 +1,10 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import * as React from 'react';
-import { Component, ReactElement } from 'react';
+import React, { Component, ReactElement } from 'react';
 import styled from 'styled-components';
 import UiDropdown from '../../../ui/Dropdown';
 import Button from './Button';
 import DropdownMenu, { itemSpacing, menuItemDimensions } from './DropdownMenu';
-
-export interface RenderOptionsPropsT<T> {
-  hide: () => void;
-  dispatchCommand: (command: T) => void;
-}
-
-export interface DropdownOptionT<T> {
-  title: string;
-  onClick: T;
-  selected?: boolean;
-  disabled?: boolean;
-  hidden?: boolean;
-}
-
-export type DropdownOptions<T> =
-  | Array<DropdownOptionT<T>>
-  | {
-      render: (props: RenderOptionsPropsT<T>) => React.ReactElement<any> | null;
-      height: number;
-      width: number;
-    };
+import { DropdownOptions, DropdownOptionT } from './types';
 
 const DropdownExpandContainer = styled.span`
   margin-left: -8px;

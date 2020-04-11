@@ -1,5 +1,5 @@
 import { AnnotationType } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 
 export type AnnotationInfo = {
   id: string;
@@ -27,8 +27,47 @@ export type AnnotationComponentProps = {
    * Deletes an annotation with the given ID around the selection.
    */
   onDelete: (id: string) => void;
+
+  /**
+   * Resolves an annotation with the given ID around the selection.
+   */
+  onResolve: (id: string) => void;
+};
+
+export interface AnnotationState<Type, State> {
+  annotationType: Type;
+  id: string;
+  state: State;
+}
+
+export interface AnnotationTypeProvider<Type, State> {
+  getState: (
+    annotationIds: string[],
+  ) => Promise<AnnotationState<Type, State>[]>;
+  pollingInterval?: number;
+}
+
+export type InlineCommentState = { resolved: boolean };
+export type ReactionState = {};
+
+export type InlineCommentAction =
+  | {
+      type: 'INLINE_COMMENT_RESOLVE';
+      data: { id: string };
+    }
+  | {
+      type: 'SET_INLINE_COMMENT_STATE';
+      data: InlineCommentPluginState;
+    };
+
+export type AnnotationTypeProviders = {
+  inlineComment: AnnotationTypeProvider<'inlineComment', InlineCommentState>;
+  // reaction?: AnnotationTypeProvider<'reaction', ReactionState>; // REMOVED FOR EXPERIMENT
 };
 
 export interface AnnotationProvider {
+  providers?: AnnotationTypeProviders;
   component?: React.ComponentType<AnnotationComponentProps>;
 }
+
+export type InlineCommentPluginState = { [key: string]: boolean };

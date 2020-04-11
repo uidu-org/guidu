@@ -1,5 +1,5 @@
+import { AutoformatReplacement } from '@uidu/editor-common/provider-factory';
 import { EditorView } from 'prosemirror-view';
-import { AutoformatReplacement } from './types';
 
 export type InputRuleHander = (
   view: EditorView,
