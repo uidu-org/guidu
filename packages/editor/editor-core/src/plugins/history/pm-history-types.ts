@@ -1,4 +1,4 @@
-import { StepMap, Step } from 'prosemirror-transform';
+import { Step, StepMap } from 'prosemirror-transform';
 
 // prosemirror-history does not export its plugin key
 export const pmHistoryPluginKey = 'history$';

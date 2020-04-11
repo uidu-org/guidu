@@ -4,6 +4,7 @@ import { EditorPlugin } from '../../types';
 import { pluginFactory } from '../../utils/plugin-state-factory';
 import { HistoryActionTypes } from './actions';
 import reducer from './reducer';
+import { HistoryPluginState } from './types';
 import { getPmHistoryPluginState } from './utils';
 
 /**
@@ -15,11 +16,6 @@ import { getPmHistoryPluginState } from './utils';
  */
 
 export const historyPluginKey = new PluginKey('historyPlugin');
-
-export interface HistoryPluginState {
-  canUndo: boolean;
-  canRedo: boolean;
-}
 
 const getInitialState = (): HistoryPluginState => ({
   canUndo: false,
@@ -33,12 +29,12 @@ const { createPluginState, getPluginState } = pluginFactory(
 
 const createPlugin = (dispatch: Dispatch) =>
   new Plugin({
-    state: createPluginState(dispatch, getInitialState()),
+    state: createPluginState(dispatch, getInitialState),
     key: historyPluginKey,
     appendTransaction: (transactions, oldState, newState) => {
       if (
         transactions.find(
-          tr => tr.docChanged && tr.getMeta('addToHistory') !== false,
+          (tr) => tr.docChanged && tr.getMeta('addToHistory') !== false,
         )
       ) {
         const pmHistoryPluginState = getPmHistoryPluginState(newState);

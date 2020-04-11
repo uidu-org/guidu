@@ -32,7 +32,8 @@ export {
   GapCursorSelection,
   Side as GapCursorSide,
 } from './plugins/gap-cursor';
-export { historyPluginKey, HistoryPluginState } from './plugins/history';
+export { historyPluginKey } from './plugins/history';
+export { HistoryPluginState } from './plugins/history/types';
 export {
   insertLink,
   isLinkAtPos,
