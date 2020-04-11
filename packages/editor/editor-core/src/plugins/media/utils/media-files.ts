@@ -7,17 +7,19 @@ import {
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import {
-  atTheBeginningOfBlock,
-  atTheEndOfBlock,
-  atTheEndOfDoc,
-  endPositionOfParent,
   findFarthestParentNode,
   insideTableCell,
   isInListItem,
   setNodeSelection,
   setTextSelection,
-  startPositionOfParent,
 } from '../../../utils';
+import {
+  atTheBeginningOfBlock,
+  atTheEndOfBlock,
+  atTheEndOfDoc,
+  endPositionOfParent,
+  startPositionOfParent,
+} from '../../../utils/prosemirror/position';
 import { MediaState } from '../types';
 import {
   copyOptionalAttrsFromMediaState,

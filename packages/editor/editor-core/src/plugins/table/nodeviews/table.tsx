@@ -11,7 +11,8 @@ import ReactNodeView, {
 } from '../../../nodeviews/ReactNodeView';
 import { PortalProviderAPI } from '../../../ui/PortalProvider';
 import WithPluginState from '../../../ui/WithPluginState';
-import { closestElement, containsClassName } from '../../../utils';
+import { containsClassName } from '../../../utils';
+import { closestElement } from '../../../utils/dom';
 import { pluginKey as widthPluginKey } from '../../width';
 import { pluginConfig as getPluginConfig } from '../index';
 import { getPluginState, pluginKey } from '../pm-plugins/main';
@@ -108,7 +109,7 @@ export default class TableView extends ReactNodeView<Props> {
     }
 
     const attrs = tableAttributes(node);
-    (Object.keys(attrs) as Array<keyof typeof attrs>).forEach(attr => {
+    (Object.keys(attrs) as Array<keyof typeof attrs>).forEach((attr) => {
       this.table!.setAttribute(attr, attrs[attr]);
     });
   }
@@ -122,7 +123,7 @@ export default class TableView extends ReactNodeView<Props> {
           tableResizingPluginState: tableResizingPluginKey,
         }}
         editorView={props.view}
-        render={pluginStates => (
+        render={(pluginStates) => (
           <TableComponent
             {...props}
             {...pluginStates}
@@ -211,7 +212,7 @@ export default class TableView extends ReactNodeView<Props> {
     }
 
     const uniqueTargets: Set<HTMLElement> = new Set();
-    records.forEach(record => {
+    records.forEach((record) => {
       const target = record.target as HTMLElement;
       // ED-7344: ignore mutations that happen inside anything other than DIV or SPAN elements
       if (

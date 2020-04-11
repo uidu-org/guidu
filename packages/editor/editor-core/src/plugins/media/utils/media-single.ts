@@ -9,17 +9,14 @@ import { EditorState, Selection } from 'prosemirror-state';
 import { hasParentNodeOfType, safeInsert } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command } from '../../../types';
-import {
-  atTheBeginningOfBlock,
-  checkNodeDown,
-  isEmptyParagraph,
-  isImage,
-} from '../../../utils';
+import { checkNodeDown, isEmptyParagraph } from '../../../utils';
 import { getParentNodeWidth } from '../../../utils/node-width';
+import { atTheBeginningOfBlock } from '../../../utils/prosemirror/position';
 import { mapSlice } from '../../../utils/slice';
 import { WidthPluginState } from '../../width';
 import { MediaState } from '../types';
 import { alignmentLayouts } from '../ui/ResizableMediaSingle/utils';
+import { isImage } from '../utils/is-image';
 import { copyOptionalAttrsFromMediaState } from '../utils/media-common';
 
 export interface MediaSingleState extends MediaState {

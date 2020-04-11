@@ -4,7 +4,7 @@ import { CellSelection } from 'prosemirror-tables';
 import { getSelectionRect, isTableSelected } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import React, { Component } from 'react';
-import { closestElement } from '../../../../utils';
+import { closestElement } from '../../../../utils/dom';
 import { INPUT_METHOD } from '../../../analytics';
 import { clearHoverSelection, hoverColumns, hoverRows } from '../../commands';
 import {

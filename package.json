@@ -104,7 +104,7 @@
     "@types/linkify-it": "^2.0.4",
     "@types/lodash.debounce": "^4.0.4",
     "@types/lodash.sample": "^4.2.4",
-    "@types/markdown-it": "^0.0.9",
+    "@types/markdown-it": "^10.0.0",
     "@types/markerclustererplus": "^2.1.33",
     "@types/meow": "^5.0.0",
     "@types/mkdirp": "^1.0.0",

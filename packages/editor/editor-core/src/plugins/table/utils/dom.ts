@@ -1,4 +1,5 @@
-import { closestElement, containsClassName } from '../../../utils';
+import { containsClassName } from '../../../utils';
+import { closestElement } from '../../../utils/dom';
 import { TableCssClassName as ClassName } from '../types';
 import { tableToolbarSize } from '../ui/styles';
 
@@ -78,14 +79,16 @@ export const updateResizeHandles = (
   }
   const height = tableRef.offsetHeight + tableToolbarSize;
   // see ED-7600
-  const nodes = Array.from(tableRef.querySelectorAll(
-    `.${ClassName.RESIZE_HANDLE}`,
-  ) as NodeListOf<HTMLElement>);
+  const nodes = Array.from(
+    tableRef.querySelectorAll(`.${ClassName.RESIZE_HANDLE}`) as NodeListOf<
+      HTMLElement
+    >,
+  );
   if (!nodes || !nodes.length) {
     return;
   }
 
-  nodes.forEach(node => {
+  nodes.forEach((node) => {
     node.style.height = `${height}px`;
   });
 };

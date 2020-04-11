@@ -1,64 +1,43 @@
-import { colorPalette } from '@uidu/adf-schema';
-import { defineMessages } from 'react-intl';
+import { colorPalette, colorPaletteExperimental } from '@uidu/adf-schema';
+import { colors } from '@uidu/theme';
+import { convert } from 'chromatism';
 import getColorMessage from './getColorMessage';
+import paletteMessages from './paletteMessages';
 import { PaletteColor } from './type';
 
-const messages = defineMessages({
-  'light-gray': {
-    id: 'fabric.theme.light-gray',
-    defaultMessage: 'Light gray',
-    description: 'Name of a color.',
-  },
-  purple: {
-    id: 'fabric.theme.purple',
-    defaultMessage: 'Purple',
-    description: 'Name of a color.',
-  },
-  teal: {
-    id: 'fabric.theme.teal',
-    defaultMessage: 'Teal',
-    description: 'Name of a color.',
-  },
-  green: {
-    id: 'fabric.theme.green',
-    defaultMessage: 'Green',
-    description: 'Name of a color.',
-  },
-  red: {
-    id: 'fabric.theme.red',
-    defaultMessage: 'Red',
-    description: 'Name of a color.',
-  },
-  orange: {
-    id: 'fabric.theme.orange',
-    defaultMessage: 'Orange',
-    description: 'Name of a color.',
-  },
-});
+/**
+ * For a given color set the alpha channel to alpha
+ *
+ * @param color color string, suppports HEX, RGB, RGBA etc.
+ * @param alpha Alpha channel value as fraction of 1
+ * @return CSS RGBA string with applied alpha channel
+ */
+function setAlpha(color: string, alpha: number): string {
+  const { r, g, b } = convert(color).rgb;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
 
-const textColorPalette: Array<PaletteColor> = [];
+export const DEFAULT_BORDER_COLOR = setAlpha(colors.N800, 0.12);
 
-colorPalette.forEach((label, color) => {
-  const border = null;
-  // borderColorPalette[color.toUpperCase() as keyof typeof borderColorPalette];
-
+const mapPaletteColor = (label: string, color: string) => {
   const key = label.toLowerCase().replace(' ', '-');
-  const message = getColorMessage(messages, key);
+  const message = getColorMessage(paletteMessages, key);
 
-  if (!border) {
-    // eslint-disable-next-line no-console
-    console.warn(`Text color palette doest not have a border for ${color} color.
-You must add the respective border color in 'borderColorPalette' in 'adf-schema'.
-This could be happen when someone change the colorPalette from 'adf-schema', without updating 'borderColorPalette'.
-`);
-  }
-
-  textColorPalette.push({
+  return {
     value: color,
     label,
-    border,
+    border: DEFAULT_BORDER_COLOR,
     message,
-  });
-});
+  };
+};
 
-export default textColorPalette;
+// row 1
+export const textColorPalette: Array<PaletteColor> = [];
+export const textColorPaletteExperimental: Array<PaletteColor> = [];
+
+colorPalette.forEach((label, color) => {
+  textColorPalette.push(mapPaletteColor(label, color));
+});
+colorPaletteExperimental.forEach((label, color) => {
+  textColorPaletteExperimental.push(mapPaletteColor(label, color));
+});

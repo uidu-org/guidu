@@ -1,6 +1,11 @@
+import { colors } from '@uidu/theme';
 import { Mark, MarkType } from 'prosemirror-model';
-import { TextSelection, EditorState } from 'prosemirror-state';
-import { DEFAULT_COLOR } from '../pm-plugins/main';
+import { EditorState, TextSelection } from 'prosemirror-state';
+
+export const DEFAULT_COLOR = {
+  color: colors.N800.toLowerCase(),
+  label: 'Dark gray',
+};
 
 export const getActiveColor = (state: EditorState): string | null => {
   const { $from, $to, $cursor } = state.selection as TextSelection;
@@ -13,7 +18,7 @@ export const getActiveColor = (state: EditorState): string | null => {
       textColor.isInSet(state.storedMarks || $cursor.marks()) || undefined,
     );
   } else {
-    state.doc.nodesBetween($from.pos, $to.pos, currentNode => {
+    state.doc.nodesBetween($from.pos, $to.pos, (currentNode) => {
       if (currentNode.isLeaf) {
         const mark = textColor.isInSet(currentNode.marks) || undefined;
         marks.push(mark);
@@ -25,7 +30,7 @@ export const getActiveColor = (state: EditorState): string | null => {
 
   // Merge consecutive same color marks
   let prevMark: Mark | undefined;
-  marks = marks.filter(mark => {
+  marks = marks.filter((mark) => {
     if (mark && prevMark && mark.attrs.color === prevMark.attrs.color) {
       return false;
     }
@@ -33,7 +38,7 @@ export const getActiveColor = (state: EditorState): string | null => {
     return true;
   });
 
-  const marksWithColor = marks.filter(mark => !!mark) as Array<Mark>;
+  const marksWithColor = marks.filter((mark) => !!mark) as Array<Mark>;
   // When multiple colors are selected revert back to default color
   if (
     marksWithColor.length > 1 ||

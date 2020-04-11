@@ -11,7 +11,7 @@ import { EditorView } from 'prosemirror-view';
 import { Dispatch } from '../../event-dispatcher';
 import { ExtensionConfig } from '../../types/extension-config';
 import { PortalProviderAPI } from '../../ui/PortalProvider';
-import { closestElement } from '../../utils';
+import { closestElement } from '../../utils/dom';
 import ExtensionNodeView from './nodeviews/extension';
 import { getExtensionNode } from './utils';
 

@@ -1,4 +1,4 @@
-import { Node, Fragment, Slice } from 'prosemirror-model';
+import { Fragment, Node, Slice } from 'prosemirror-model';
 
 /**
  * A helper to get the underlying array of a fragment.
@@ -44,7 +44,7 @@ export function mapFragment(
 export function mapSlice(
   slice: Slice,
   callback: (
-    nodes: Node,
+    node: Node,
     parent: Node | null,
     index: number,
   ) => Node | Node[] | Fragment | null,
@@ -82,12 +82,18 @@ export type MapWithCallback<T> = (
 ) => T;
 
 export function mapChildren<T>(
-  node: Node,
+  node: Node | Fragment,
   callback: MapWithCallback<T>,
 ): Array<T> {
   const array: Array<T> = [];
   for (let i = 0; i < node.childCount; i++) {
-    array.push(callback(node.child(i), i, node.content));
+    array.push(
+      callback(
+        node.child(i),
+        i,
+        node instanceof Fragment ? node : node.content,
+      ),
+    );
   }
 
   return array;

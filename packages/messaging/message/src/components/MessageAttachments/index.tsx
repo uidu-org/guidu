@@ -24,10 +24,8 @@ export default React.memo(function MessageAttachments({
   scrollable,
 }: MessageAttachmentsProps) {
   const [currentModal, setCurrentModal] = useState(null);
-
-  const files = attachments
-    .filter(({ file }) => !!file) // cleanup attachments with no files attached
-    .map(({ file }) => file);
+  const validAttachments = attachments.filter(({ file }) => !!file); // cleanup attachments with no files attached
+  const files = validAttachments.map(({ file }) => file);
 
   if (!scrollable.current) {
     return <div>Loading...</div>;
@@ -37,13 +35,13 @@ export default React.memo(function MessageAttachments({
       <>
         <div
           className={`row no-gutters mt-2 row-cols-${
-            attachments.length > 4 ? 4 : attachments.length
+            validAttachments.length > 4 ? 4 : validAttachments.length
           }`}
           style={{
             maxWidth: scrollable.current.offsetWidth * 0.66,
           }}
         >
-          {attachments.map((attachment, index) => (
+          {validAttachments.map((attachment, index) => (
             <div className="col">
               <MediaCard
                 file={attachment.file}
@@ -68,7 +66,7 @@ export default React.memo(function MessageAttachments({
           width: scrollable.current.offsetWidth * 0.45,
         }}
       >
-        {attachments.map(
+        {validAttachments.map(
           (
             {
               file: {
@@ -88,7 +86,10 @@ export default React.memo(function MessageAttachments({
               <div className="d-flex align-items-center">
                 <div className="flex-shrink-0 d-flex">
                   <Icon
-                    {...getFileTypeIconProps({ extension, size: 40 })}
+                    {...getFileTypeIconProps({
+                      extension,
+                      size: 40,
+                    })}
                     // style={{
                     //   display: 'flex',
                     //   marginRight: '.5rem',

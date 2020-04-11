@@ -12,11 +12,11 @@ import { EditorView } from 'prosemirror-view';
 import rafSchedule from 'raf-schd';
 import { analyticsService } from '../../analytics';
 import {
-  closestElement,
   isElementInTableCell,
   isLastItemMediaGroup,
   setNodeSelection,
-} from '../../utils/';
+} from '../../utils';
+import { closestElement } from '../../utils/dom';
 import {
   ACTION_SUBJECT,
   addAnalytics,

@@ -6,11 +6,11 @@ import {
 } from 'prosemirror-state';
 import { findDomRefAtPos, removeNodeBefore } from 'prosemirror-utils';
 import { Command } from '../../types';
+import { ZeroWidthSpace } from '../../utils';
 import {
   atTheBeginningOfDoc,
   atTheEndOfDoc,
-  ZeroWidthSpace,
-} from '../../utils';
+} from '../../utils/prosemirror/position';
 import { Direction, isBackward, isForward } from './direction';
 import { pluginKey } from './pm-plugins/main';
 import { GapCursorSelection, Side } from './selection';

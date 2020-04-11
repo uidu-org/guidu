@@ -21,7 +21,6 @@ import {
   InputMethodInsertMedia,
   INPUT_METHOD,
 } from '../../../plugins/analytics';
-import { isImage } from '../../../utils';
 import { updateMediaNodeAttrs } from '../commands';
 import * as helpers from '../commands/helpers';
 import { MediaPluginOptions } from '../media-plugin-options';
@@ -32,6 +31,7 @@ import { MediaPluginOptions } from '../media-plugin-options';
 // } from '../picker-facade';
 import { MediaOptions, MediaState } from '../types';
 import DropPlaceholder, { PlaceholderType } from '../ui/Media/DropPlaceholder';
+import { isImage } from '../utils/is-image';
 import { removeMediaNode, splitMediaGroup } from '../utils/media-common';
 import { insertMediaGroupNode } from '../utils/media-files';
 import { insertMediaSingleNode } from '../utils/media-single';

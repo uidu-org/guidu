@@ -1,8 +1,8 @@
 import { bulletList, listItem, orderedList } from '@uidu/adf-schema';
-import * as React from 'react';
+import React from 'react';
 import { toggleBulletList, toggleOrderedList, tooltip } from '../../keymaps';
 import { EditorPlugin } from '../../types';
-import { ToolbarSize } from '../../ui/Toolbar';
+import { ToolbarSize } from '../../ui/Toolbar/types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
   ACTION,

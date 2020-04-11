@@ -1,4 +1,10 @@
-import { Mark, MarkType, Node as PmNode, ResolvedPos } from 'prosemirror-model';
+import {
+  Fragment,
+  Mark,
+  MarkType,
+  Node as PmNode,
+  ResolvedPos,
+} from 'prosemirror-model';
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
 import { CellSelection } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
@@ -9,12 +15,12 @@ import { Command } from '../types';
 type Predicate = (state: EditorState, view?: EditorView) => boolean;
 
 const filter = (predicates: Predicate[] | Predicate, cmd: Command): Command => {
-  return function(state, dispatch, view): boolean {
+  return function (state, dispatch, view): boolean {
     if (!Array.isArray(predicates)) {
       predicates = [predicates];
     }
 
-    if (predicates.some(pred => !pred(state, view))) {
+    if (predicates.some((pred) => !pred(state, view))) {
       return false;
     }
 
@@ -27,6 +33,14 @@ const isEmptySelectionAtStart = (state: EditorState): boolean => {
   return (
     empty &&
     ($from.parentOffset === 0 || state.selection instanceof GapCursorSelection)
+  );
+};
+
+const isEmptySelectionAtEnd = (state: EditorState): boolean => {
+  const { empty, $from } = state.selection;
+  return (
+    empty &&
+    ($from.end() === $from.pos || state.selection instanceof GapCursorSelection)
   );
 };
 
@@ -198,13 +212,101 @@ const toggleMark = (
   return toggleMarkInRange(mark)(state, dispatch);
 };
 
+export type WalkNode = {
+  $pos: ResolvedPos;
+  foundNode: boolean;
+};
+
+/**
+ * Walk forwards from a position until we encounter the (inside) start of
+ * the next node, or reach the end of the document.
+ *
+ * @param $startPos Position to start walking from.
+ */
+const walkNextNode = ($startPos: ResolvedPos): WalkNode => {
+  let $pos = $startPos;
+
+  // invariant 1: don't walk past the end of the document
+  // invariant 2: we are at the beginning or
+  //              we haven't walked to the start of *any* node
+  //              parentOffset includes textOffset.
+  while (
+    $pos.pos < $pos.doc.nodeSize - 2 &&
+    ($pos.pos === $startPos.pos || $pos.parentOffset > 0)
+  ) {
+    $pos = $pos.doc.resolve($pos.pos + 1);
+  }
+
+  return {
+    $pos: $pos,
+    foundNode: $pos.pos < $pos.doc.nodeSize - 2,
+  };
+};
+
+/**
+ * Walk backwards from a position until we encounter the (inside) end of
+ * the previous node, or reach the start of the document.
+ *
+ * @param $startPos Position to start walking from.
+ */
+const walkPrevNode = ($startPos: ResolvedPos): WalkNode => {
+  let $pos = $startPos;
+
+  while (
+    $pos.pos > 0 &&
+    ($pos.pos === $startPos.pos || $pos.parentOffset < $pos.parent.nodeSize - 2)
+  ) {
+    $pos = $pos.doc.resolve($pos.pos - 1);
+  }
+
+  return {
+    $pos: $pos,
+    foundNode: $pos.pos > 0,
+  };
+};
+
+/**
+ * Insert content, delete a range and create a new selection
+ * This function automatically handles the mapping of positions for insertion and deletion.
+ * The new selection is handled as a function since it may not always be necessary to resolve a position to the transactions mapping
+ *
+ * @param getSelectionResolvedPos get the resolved position to create a new selection
+ * @param insertions content to insert at the specified position
+ * @param deletions the ranges to delete
+ */
+
+const insertContentDeleteRange = (
+  tr: Transaction,
+  getSelectionResolvedPos: (tr: Transaction) => ResolvedPos,
+  insertions: [Fragment, number][],
+  deletions: [number, number][],
+) => {
+  insertions.forEach((contentInsert) => {
+    let [content, pos] = contentInsert;
+
+    tr.insert(tr.mapping.map(pos), content);
+  });
+
+  deletions.forEach((deleteRange) => {
+    let [firstPos, lastPos] = deleteRange;
+
+    tr.delete(tr.mapping.map(firstPos), tr.mapping.map(lastPos));
+  });
+
+  tr.setSelection(new TextSelection(getSelectionResolvedPos(tr)));
+};
+
 export {
   Predicate,
   filter,
   isEmptySelectionAtStart,
+  isEmptySelectionAtEnd,
   isFirstChildOfParent,
   isNthParentOfType,
   findCutBefore,
   toggleMark,
   applyMarkOnRange,
+  walkNextNode,
+  walkPrevNode,
+  insertContentDeleteRange,
 };

@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { createParagraphAtEnd } from '../../../commands';
 import { setCursorForTopLevelBlocks } from '../../../plugins/gap-cursor';
-import { closestElement } from '../../../utils';
+import { closestElement } from '../../../utils/dom';
 
 const ClickWrapper = styled.div`
   flex-grow: 1;

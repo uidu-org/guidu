@@ -1,8 +1,4 @@
-import {
-  InputRule,
-  inputRules,
-  wrappingInputRule,
-} from 'prosemirror-inputrules';
+import { InputRule, wrappingInputRule } from 'prosemirror-inputrules';
 import { Node as PMNode, NodeRange, NodeType, Schema } from 'prosemirror-model';
 import { EditorState, Plugin } from 'prosemirror-state';
 import { analyticsService, trackAndInvoke } from '../../../analytics';
@@ -10,6 +6,7 @@ import {
   createInputRule as defaultCreateInputRule,
   defaultInputRuleHandler,
   InputRuleWithHandler,
+  instrumentedInputRule,
   leafNodeReplacementCharacter,
 } from '../../../utils/input-rules';
 import {
@@ -176,7 +173,7 @@ export default function inputRulePlugin(schema: Schema): Plugin | undefined {
   }
 
   if (rules.length !== 0) {
-    return inputRules({ rules });
+    return instrumentedInputRule('lists', { rules });
   }
 
   return undefined;

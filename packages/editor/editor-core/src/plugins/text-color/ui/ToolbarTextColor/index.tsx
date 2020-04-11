@@ -1,12 +1,13 @@
-import { akEditorMenuZIndex } from '@uidu/editor-common';
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
-import { borderRadius, colors } from '@uidu/theme';
+import EditorBackgroundColorIcon from '@atlaskit/icon/glyph/editor/background-color';
+import Button from '@uidu/button';
+import { akEditorMenuZIndex } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
-import * as React from 'react';
+import React from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
-import styled from 'styled-components';
 import { withAnalytics } from '../../../../analytics';
 import ColorPalette from '../../../../ui/ColorPalette';
+import { textColorPalette as originalTextColors } from '../../../../ui/ColorPalette/Palettes/textColorPalette';
 import Dropdown from '../../../../ui/Dropdown';
 import {
   ExpandIconWrapper,
@@ -15,9 +16,36 @@ import {
   TriggerWrapper,
 } from '../../../../ui/styles';
 import ToolbarButton from '../../../../ui/ToolbarButton';
+import {
+  ACTION,
+  ACTION_SUBJECT,
+  ACTION_SUBJECT_ID,
+  AnalyticsEventPayload,
+  DispatchAnalyticsEvent,
+  EVENT_TYPE,
+} from '../../../analytics';
+import {
+  ExperimentalTextColorSelectedAEP,
+  ExperimentalTextColorShowMoreToggleAEP,
+  ExperimentalTextColorShowPaletteToggleAEP,
+  TextColorSelectedAttr,
+  TextColorShowMoreToggleAttr,
+  TextColorShowPaletteToggleAttr,
+} from '../../../analytics/types/experimental-events';
 import * as commands from '../../commands/change-color';
 import { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
+import {
+  disabledRainbow,
+  rainbow,
+  ShowMoreWrapper,
+  TextColorIconBar,
+  TextColorIconWrapper,
+} from './styles';
+
+const EXPERIMENT_NAME: string = 'editor.toolbarTextColor.moreColors';
+const EXPERIMENT_GROUP_CONTROL: string = 'control';
+const EXPERIMENT_GROUP_SUBJECT: string = 'subject';
 
 export const messages = defineMessages({
   textColor: {
@@ -25,78 +53,21 @@ export const messages = defineMessages({
     defaultMessage: 'Text color',
     description: '',
   },
+  moreColors: {
+    id: 'fabric.editor.textColor.moreColors',
+    defaultMessage: 'More colors',
+    description: 'More colors',
+  },
+  lessColors: {
+    id: 'fabric.editor.textColor.lessColors',
+    defaultMessage: 'Fewer colors',
+    description: 'Fewer colors',
+  },
 });
-
-const TextColorIconWrapper = styled.div`
-  position: relative;
-`;
-
-const TextColorIconBar = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 16px;
-  margin: auto;
-  width: 12px;
-  height: 3px;
-  border-radius: ${borderRadius() + 'px'};
-
-  ${({
-    gradientColors,
-    selectedColor,
-  }: {
-    gradientColors: string;
-    selectedColor?: string | false | null;
-  }) => {
-    if (selectedColor) {
-      return `background: ${selectedColor}`;
-    }
-    return `background: ${gradientColors}`;
-  }};
-`;
-
-const createSteppedRainbow = (colors: string[]) => {
-  return `
-    linear-gradient(
-      to right,
-      ${colors
-        .map((color, i) => {
-          const inc = 100 / colors.length;
-          const pos = i + 1;
-
-          if (i === 0) {
-            return `${color} ${pos * inc}%,`;
-          }
-
-          if (i === colors.length - 1) {
-            return `${color} ${(pos - 1) * inc}%`;
-          }
-
-          return `
-            ${color} ${(pos - 1) * inc}%,
-            ${color} ${pos * inc}%,
-          `;
-        })
-        .join('\n')}
-    );
-    `;
-};
-
-const rainbow = createSteppedRainbow([
-  colors.P300,
-  colors.T300,
-  colors.Y400,
-  colors.R400,
-]);
-const disabledRainbow = createSteppedRainbow([
-  colors.N80,
-  colors.N60,
-  colors.N40,
-  colors.N60,
-]);
 
 export interface State {
   isOpen: boolean;
+  isShowingMoreColors: boolean;
 }
 
 export interface Props {
@@ -106,6 +77,14 @@ export interface Props {
   popupsBoundariesElement?: HTMLElement;
   popupsScrollableElement?: HTMLElement;
   isReducedSpacing?: boolean;
+  showMoreColorsToggle?: boolean;
+  dispatchAnalyticsEvent?: DispatchAnalyticsEvent;
+  disabled?: boolean;
+}
+
+interface HandleOpenChangeData {
+  isOpen: boolean;
+  logCloseEvent: boolean;
 }
 
 class ToolbarTextColor extends React.Component<
@@ -114,6 +93,7 @@ class ToolbarTextColor extends React.Component<
 > {
   state: State = {
     isOpen: false,
+    isShowingMoreColors: false,
   };
 
   changeColor = (color: string) =>
@@ -123,17 +103,26 @@ class ToolbarTextColor extends React.Component<
     );
 
   render() {
-    const { isOpen } = this.state;
+    const { isOpen, isShowingMoreColors } = this.state;
     const {
       popupsMountPoint,
       popupsBoundariesElement,
       popupsScrollableElement,
       isReducedSpacing,
       pluginState,
+      pluginState: { paletteExpanded },
       intl: { formatMessage },
+      showMoreColorsToggle,
+      disabled,
     } = this.props;
 
     const labelTextColor = formatMessage(messages.textColor);
+
+    const palette =
+      isShowingMoreColors && paletteExpanded
+        ? paletteExpanded
+        : pluginState.palette;
+
     return (
       <MenuWrapper>
         <Dropdown
@@ -149,8 +138,9 @@ class ToolbarTextColor extends React.Component<
           trigger={
             <ToolbarButton
               spacing={isReducedSpacing ? 'none' : 'default'}
-              disabled={pluginState.disabled}
+              disabled={disabled || pluginState.disabled}
               selected={isOpen}
+              aria-label={labelTextColor}
               title={labelTextColor}
               onClick={this.toggleOpen}
               iconBefore={
@@ -176,10 +166,27 @@ class ToolbarTextColor extends React.Component<
           }
         >
           <ColorPalette
-            palette={pluginState.palette}
-            onClick={color => this.changeTextColor(color, pluginState.disabled)}
+            palette={palette}
+            onClick={(color) =>
+              this.changeTextColor(color, pluginState.disabled)
+            }
             selectedColor={pluginState.color}
           />
+          {showMoreColorsToggle && (
+            <ShowMoreWrapper>
+              <Button
+                appearance="subtle"
+                onClick={this.handleShowMoreToggle}
+                iconBefore={<EditorBackgroundColorIcon label="" />}
+              >
+                {formatMessage(
+                  isShowingMoreColors
+                    ? messages.lessColors
+                    : messages.moreColors,
+                )}
+              </Button>
+            </ShowMoreWrapper>
+          )}
         </Dropdown>
         <Separator />
       </MenuWrapper>
@@ -190,7 +197,31 @@ class ToolbarTextColor extends React.Component<
     'atlassian.editor.format.textcolor.button',
     (color: string, disabled: boolean) => {
       if (!disabled) {
-        this.toggleOpen();
+        const {
+          pluginState: { palette, paletteExpanded, defaultColor },
+        } = this.props;
+        const { isShowingMoreColors } = this.state;
+
+        // we store color names in analytics
+        const swatch = (paletteExpanded || palette).find(
+          (sw) => sw.value === color,
+        );
+        const isNewColor =
+          color !== defaultColor &&
+          !originalTextColors.some((col) => col.value === color);
+
+        this.dispatchAnalyticsEvent(
+          this.buildExperimentalAnalyticsSelectColor({
+            color: (swatch ? swatch.label : color).toLowerCase(),
+            isShowingMoreColors,
+            isNewColor,
+          }),
+        );
+
+        this.handleOpenChange({
+          isOpen: false,
+          logCloseEvent: false,
+        });
         return this.changeColor(color);
       }
 
@@ -199,18 +230,139 @@ class ToolbarTextColor extends React.Component<
   );
 
   private toggleOpen = () => {
-    this.handleOpenChange({ isOpen: !this.state.isOpen });
+    this.handleOpenChange({ isOpen: !this.state.isOpen, logCloseEvent: true });
   };
 
-  private handleOpenChange = ({ isOpen }: { isOpen: boolean }) => {
-    this.setState({ isOpen });
+  private handleOpenChange = ({
+    isOpen,
+    logCloseEvent,
+  }: HandleOpenChangeData) => {
+    const {
+      pluginState: { palette, color },
+    } = this.props;
+    const { isShowingMoreColors } = this.state;
+
+    // pre-expand if a non-standard colour has been selected
+    const isExtendedPaletteSelected: boolean = !palette.find(
+      (swatch) => swatch.value === color,
+    );
+
+    this.setState({
+      isOpen,
+      isShowingMoreColors: isExtendedPaletteSelected || isShowingMoreColors,
+    });
+
+    if (logCloseEvent) {
+      this.dispatchAnalyticsEvent(
+        this.buildExperimentalAnalyticsPalette(
+          isOpen ? ACTION.OPENED : ACTION.CLOSED,
+          {
+            isShowingMoreColors:
+              isExtendedPaletteSelected || isShowingMoreColors,
+            noSelect: isOpen === false,
+          },
+        ),
+      );
+    }
   };
 
   private hide = () => {
-    if (this.state.isOpen === true) {
+    const { isOpen, isShowingMoreColors } = this.state;
+
+    if (isOpen === true) {
+      this.dispatchAnalyticsEvent(
+        this.buildExperimentalAnalyticsPalette(ACTION.CLOSED, {
+          isShowingMoreColors,
+          noSelect: true,
+        }),
+      );
+
       this.setState({ isOpen: false });
     }
   };
+
+  private handleShowMoreToggle = () => {
+    this.setState((state) => {
+      this.dispatchAnalyticsEvent(
+        this.buildExperimentalAnalyticsShowMore(
+          state.isShowingMoreColors ? ACTION.CLOSED : ACTION.OPENED,
+          {
+            showMoreButton: !state.isShowingMoreColors,
+            showLessButton: state.isShowingMoreColors,
+          },
+        ),
+      );
+
+      return {
+        isShowingMoreColors: !state.isShowingMoreColors,
+      };
+    });
+  };
+
+  private getCommonExperimentalAnalyticsAttributes() {
+    const { showMoreColorsToggle } = this.props;
+    return {
+      experiment: EXPERIMENT_NAME,
+      experimentGroup: showMoreColorsToggle
+        ? EXPERIMENT_GROUP_SUBJECT
+        : EXPERIMENT_GROUP_CONTROL,
+    };
+  }
+
+  private buildExperimentalAnalyticsPalette(
+    action: ACTION.OPENED | ACTION.CLOSED,
+    data: TextColorShowPaletteToggleAttr,
+  ): ExperimentalTextColorShowPaletteToggleAEP {
+    return {
+      action,
+      actionSubject: ACTION_SUBJECT.TOOLBAR,
+      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_COLOR,
+      eventType: EVENT_TYPE.TRACK,
+      attributes: {
+        ...this.getCommonExperimentalAnalyticsAttributes(),
+        ...data,
+      },
+    };
+  }
+
+  private buildExperimentalAnalyticsShowMore(
+    action: ACTION.OPENED | ACTION.CLOSED,
+    data: TextColorShowMoreToggleAttr,
+  ): ExperimentalTextColorShowMoreToggleAEP {
+    return {
+      action,
+      actionSubject: ACTION_SUBJECT.TOOLBAR,
+      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_COLOR,
+      eventType: EVENT_TYPE.TRACK,
+      attributes: {
+        ...this.getCommonExperimentalAnalyticsAttributes(),
+        ...data,
+      },
+    };
+  }
+
+  private buildExperimentalAnalyticsSelectColor(
+    data: TextColorSelectedAttr,
+  ): ExperimentalTextColorSelectedAEP {
+    return {
+      action: ACTION.FORMATTED,
+      actionSubject: ACTION_SUBJECT.TEXT,
+      actionSubjectId: ACTION_SUBJECT_ID.FORMAT_COLOR,
+      eventType: EVENT_TYPE.TRACK,
+      attributes: {
+        ...this.getCommonExperimentalAnalyticsAttributes(),
+        ...data,
+      },
+    };
+  }
+
+  private dispatchAnalyticsEvent(payload: AnalyticsEventPayload) {
+    const { dispatchAnalyticsEvent } = this.props;
+
+    if (dispatchAnalyticsEvent) {
+      dispatchAnalyticsEvent(payload);
+    }
+  }
 }
 
 export default injectIntl(ToolbarTextColor);

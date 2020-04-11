@@ -1,17 +1,17 @@
 import { Command } from '../../../types';
-import { toggleColor } from './toggle-color';
-import { removeColor } from './remove-color';
-import { pluginKey } from '../pm-plugins/main';
-import { getActiveColor } from '../utils/color';
+import { PaletteColor } from '../../../ui/ColorPalette/Palettes/type';
 import {
-  withAnalytics,
   ACTION,
   ACTION_SUBJECT,
   ACTION_SUBJECT_ID,
   EVENT_TYPE,
   HigherOrderCommand,
+  withAnalytics,
 } from '../../analytics';
-import { PaletteColor } from '../../../ui/ColorPalette/Palettes/type';
+import { pluginKey } from '../pm-plugins/main';
+import { getActiveColor } from '../utils/color';
+import { removeColor } from './remove-color';
+import { toggleColor } from './toggle-color';
 
 /**
  * Helper to create a higher order analytics command
@@ -58,7 +58,8 @@ export const changeColor = (color: string): Command => (state, dispatch) => {
     const withColorAnalytics = createWithColorAnalytics(
       color,
       activeColor,
-      pluginState.palette,
+      // palette is a subset of paletteExpanded
+      pluginState.paletteExpanded || pluginState.palette,
     );
 
     if (pluginState.disabled) {

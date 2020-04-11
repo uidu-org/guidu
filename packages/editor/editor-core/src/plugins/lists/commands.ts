@@ -16,17 +16,21 @@ import {
 } from 'prosemirror-state';
 import { liftTarget, ReplaceAroundStep } from 'prosemirror-transform';
 import {
+  findParentNodeOfTypeClosestToPos,
   findPositionOfNodeBefore,
   hasParentNodeOfType,
 } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import { Command } from '../../types';
-import { compose, isRangeOfType, sanitizeSelectionMarks } from '../../utils';
+import { compose, sanitiseSelectionMarksForWrapping } from '../../utils';
 import {
   filter,
   findCutBefore,
+  insertContentDeleteRange,
+  isEmptySelectionAtEnd,
   isEmptySelectionAtStart,
   isFirstChildOfParent,
+  walkNextNode,
 } from '../../utils/commands';
 import { hasVisibleContent, isNodeEmpty } from '../../utils/document';
 import {
@@ -42,6 +46,8 @@ import {
 } from '../analytics';
 import { GapCursorSelection } from '../gap-cursor';
 import { liftFollowingList, liftSelectionList } from './transforms';
+
+export type InputMethod = INPUT_METHOD.KEYBOARD | INPUT_METHOD.TOOLBAR;
 
 const maxIndentation = 5;
 
@@ -218,12 +224,87 @@ export const enterKeyCommand: Command = (state, dispatch): boolean => {
       /** Check if the wrapper has any visible content */
       const wrapperHasContent = hasVisibleContent(wrapper);
       if (isNodeEmpty(node) && !wrapperHasContent) {
-        return outdentList()(state, dispatch);
+        return outdentList(INPUT_METHOD.KEYBOARD)(state, dispatch);
       } else if (!hasParentNodeOfType(codeBlock)(selection)) {
         return splitListItem(listItem)(state, dispatch);
       }
     }
   }
+  return false;
+};
+
+export const deleteKeyCommand: Command = (state, dispatch): boolean => {
+  const { tr } = state;
+  const { $head } = state.selection;
+
+  const headGrandParent = $head.node(-1);
+  const headGreatGrandParent = $head.node(-2);
+
+  if (
+    isEmptySelectionAtEnd(state) &&
+    headGrandParent &&
+    headGrandParent.type.name === 'listItem'
+  ) {
+    const { $pos: $next, foundNode } = walkNextNode($head);
+
+    const nextGrandParent = $next.node(-1);
+
+    if (foundNode) {
+      if ($next.parent && $next.parent.type.name === 'paragraph') {
+        //Next is a paragraph
+
+        const content = $next.parent.content;
+
+        insertContentDeleteRange(
+          tr,
+          (tr) => tr.doc.resolve($head.pos),
+          [
+            [content, $head.pos], //Insert text content into the current paragraph
+          ],
+          [
+            [$next.before(), $next.before() + $next.parent.nodeSize], //Delete range for next node
+          ],
+        );
+
+        if (dispatch) {
+          dispatch(tr);
+        }
+
+        return true;
+      } else if (
+        headGreatGrandParent === nextGrandParent &&
+        headGreatGrandParent !== undefined &&
+        $next.parent.firstChild &&
+        $next.parent.firstChild.type.name === 'paragraph'
+      ) {
+        //Next is a node with a paragraph inside, with the same list as the parent
+
+        const content = $next.parent.firstChild.content;
+        const childrenContent = $next.parent.content.cut(
+          $next.parent.firstChild.nodeSize,
+        );
+
+        insertContentDeleteRange(
+          tr,
+          (tr) => tr.doc.resolve($head.pos),
+          [
+            [content, $head.pos], //Insert text content into the current paragraph
+            [childrenContent, $head.after()], //Insert children nodes of the next list element, after this paragraph
+          ],
+          [
+            [$next.before(), $next.before() + $next.parent.nodeSize], //Delete range for next node
+          ],
+        );
+
+        if (dispatch) {
+          dispatch(tr);
+        }
+
+        return true;
+      }
+    }
+  }
+
   return false;
 };
 
@@ -238,7 +319,10 @@ export const backspaceKeyCommand = baseCommand.chainCommands(
       isFirstChildOfParent,
       canOutdent,
     ],
-    baseCommand.chainCommands(deletePreviousEmptyListItem, outdentList()),
+    baseCommand.chainCommands(
+      deletePreviousEmptyListItem,
+      outdentList(INPUT_METHOD.KEYBOARD),
+    ),
   ),
 
   // if we're just inside a paragraph node (or gapcursor is shown) and backspace, then try to join
@@ -388,7 +472,9 @@ function mergeLists(listItem: NodeType, range: NodeRange) {
   };
 }
 
-export function outdentList(): Command {
+export function outdentList(
+  inputMethod: InputMethod = INPUT_METHOD.KEYBOARD,
+): Command {
   return function (state, dispatch) {
     const { listItem } = state.schema.nodes;
     const { $from, $to } = state.selection;
@@ -419,7 +505,7 @@ export function outdentList(): Command {
           actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
           eventType: EVENT_TYPE.TRACK,
           attributes: {
-            inputMethod: INPUT_METHOD.KEYBOARD,
+            inputMethod,
             previousIndentationLevel: initialIndentationLevel,
             newIndentLevel: initialIndentationLevel - 1,
             direction: INDENT_DIR.OUTDENT,
@@ -468,7 +554,9 @@ function canSink(initialIndentationLevel: number, state: EditorState): boolean {
   return true;
 }
 
-export function indentList(): Command {
+export function indentList(
+  inputMethod: InputMethod = INPUT_METHOD.KEYBOARD,
+): Command {
   return function (state, dispatch) {
     const { listItem } = state.schema.nodes;
     if (isInsideListItem(state)) {
@@ -487,7 +575,7 @@ export function indentList(): Command {
             actionSubjectId: ACTION_SUBJECT_ID.FORMAT_INDENT,
             eventType: EVENT_TYPE.TRACK,
             attributes: {
-              inputMethod: INPUT_METHOD.KEYBOARD,
+              inputMethod,
               previousIndentationLevel: initialIndentationLevel,
               newIndentLevel: initialIndentationLevel + 1,
               direction: INDENT_DIR.INDENT,
@@ -621,7 +709,7 @@ export const toggleList = (
   dispatch: (tr: Transaction) => void,
   view: EditorView,
   listType: 'bulletList' | 'orderedList',
-  inputMethod: INPUT_METHOD.KEYBOARD | INPUT_METHOD.TOOLBAR,
+  inputMethod: InputMethod,
 ): boolean => {
   const { selection } = state;
   const fromNode = selection.$from.node(selection.$from.depth - 2);
@@ -701,32 +789,40 @@ export function toggleListCommand(
 
     state = view.state;
 
-    const { $from, $to } = state.selection;
-    const isRangeOfSingleType = isRangeOfType(
-      state.doc,
-      $from,
-      $to,
-      state.schema.nodes[listType],
-    );
+    const {
+      doc,
+      selection: { $from, $to },
+    } = state;
+    const listNodeType = state.schema.nodes[listType];
 
-    if (isInsideList(state, listType) && isRangeOfSingleType) {
+    // find closest parent of listNodeType from start of selection
+    const listParentPos = findParentNodeOfTypeClosestToPos(
+      doc.resolve($from.pos),
+      listNodeType,
+    );
+    // determine if end of selection is outside of that list (if selection is in a list at all)
+    const isSameListTypeSelected =
+      listParentPos &&
+      $to.pos <= listParentPos.pos + listParentPos.node.nodeSize;
+
+    if (isInsideList(state, listType) && isSameListTypeSelected) {
       // Untoggles list
       return liftListItems()(state, dispatch);
     } else {
       // Converts list type e.g. bullet_list -> ordered_list if needed
-      if (!isRangeOfSingleType) {
+      if (!isSameListTypeSelected) {
         liftListItems()(state, dispatch);
         state = view.state;
       }
 
       // Remove any invalid marks that are not supported
-      const tr = sanitizeSelectionMarks(state);
-      if (tr) {
-        dispatch!(tr);
+      const tr = sanitiseSelectionMarksForWrapping(state, listNodeType);
+      if (tr && dispatch) {
+        dispatch(tr);
         state = view.state;
       }
       // Wraps selection in list
-      return wrapInList(state.schema.nodes[listType])(state, dispatch);
+      return wrapInList(listNodeType)(state, dispatch);
     }
   };
 }
@@ -734,7 +830,7 @@ export function toggleListCommand(
 // TODO: Toggle list command dispatch more than one time, so commandWithAnalytics doesn't work as expected.
 // This is a helper to fix that.
 export const toggleListCommandWithAnalytics = (
-  inputMethod: INPUT_METHOD.KEYBOARD | INPUT_METHOD.TOOLBAR,
+  inputMethod: InputMethod,
   listType: 'bulletList' | 'orderedList',
 ): Command => {
   const listTypeActionSubjectId = {
@@ -745,7 +841,7 @@ export const toggleListCommandWithAnalytics = (
     if (toggleListCommand(listType)(state, dispatch, view)) {
       if (view && dispatch) {
         dispatch(
-          addAnalytics(view.state, view.state.tr, {
+          addAnalytics(state, view.state.tr, {
             action: ACTION.FORMATTED,
             actionSubject: ACTION_SUBJECT.TEXT,
             actionSubjectId: listTypeActionSubjectId[listType] as
@@ -766,18 +862,14 @@ export const toggleListCommandWithAnalytics = (
 
 export function toggleBulletList(
   view: EditorView,
-  inputMethod:
-    | INPUT_METHOD.TOOLBAR
-    | INPUT_METHOD.KEYBOARD = INPUT_METHOD.TOOLBAR,
+  inputMethod: InputMethod = INPUT_METHOD.TOOLBAR,
 ) {
   return toggleList(view.state, view.dispatch, view, 'bulletList', inputMethod);
 }
 
 export function toggleOrderedList(
   view: EditorView,
-  inputMethod:
-    | INPUT_METHOD.TOOLBAR
-    | INPUT_METHOD.KEYBOARD = INPUT_METHOD.TOOLBAR,
+  inputMethod: InputMethod = INPUT_METHOD.TOOLBAR,
 ) {
   return toggleList(
     view.state,

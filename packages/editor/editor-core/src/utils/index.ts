@@ -1,23 +1,61 @@
 import { browser } from '@uidu/editor-common';
-import { JSONDocNode, JSONNode, JSONTransformer } from '@uidu/editor-json-transformer';
+import {
+  JSONDocNode,
+  JSONNode,
+  JSONTransformer,
+} from '@uidu/editor-json-transformer';
 import { toggleMark } from 'prosemirror-commands';
-import { Fragment, Mark, Mark as PMMark, MarkType, Node, NodeRange, NodeType, ResolvedPos, Schema, Slice } from 'prosemirror-model';
-import { EditorState, NodeSelection, Selection, TextSelection, Transaction } from 'prosemirror-state';
+import {
+  Fragment,
+  Mark,
+  Mark as PMMark,
+  MarkType,
+  Node,
+  NodeRange,
+  NodeType,
+  ResolvedPos,
+  Schema,
+  Slice,
+} from 'prosemirror-model';
+import {
+  EditorState,
+  NodeSelection,
+  Selection,
+  TextSelection,
+  Transaction,
+} from 'prosemirror-state';
 import { findWrapping, liftTarget } from 'prosemirror-transform';
 import { hasParentNodeOfType } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { LEFT } from '../keymaps';
+import { LEFT } from '../keymaps/consts';
 import { FakeTextCursorSelection } from '../plugins/fake-text-cursor/cursor';
 import { GapCursorSelection, Side } from '../plugins/gap-cursor/selection';
 import { isNodeEmpty } from './document';
+import { closest } from './dom';
+import { atTheBeginningOfDoc, atTheEndOfDoc } from './prosemirror/position';
 
-export * from './action';
-export { findFarthestParentNode, getNodesCount, getStepRange, hasVisibleContent, isEmptyDocument, isEmptyParagraph, isNodeEmpty, isSelectionEndOfParagraph, nodesBetweenChanged, processRawValue } from './document';
+export { cascadeCommands, getEditorValueWithMedia } from './action';
+export {
+  findFarthestParentNode,
+  getNodesCount,
+  getStepRange,
+  hasVisibleContent,
+  isEmptyDocument,
+  isEmptyParagraph,
+  isNodeEmpty,
+  isSelectionEndOfParagraph,
+  nodesBetweenChanged,
+  processRawValue,
+} from './document';
 export { containsClassName } from './dom';
-export { filterContentByType } from './filter';
-export * from './mark';
+export {
+  isMarkAllowedInRange,
+  isMarkExcluded,
+  removeBlockMarks,
+  sanitiseSelectionMarksForWrapping,
+} from './mark';
 export { isNodeTypeParagraph } from './nodes';
-export * from './step';
+export { SetAttrsStep } from './step';
 export { JSONDocNode, JSONNode };
 
 export const ZeroWidthSpace = '\u200b';
@@ -39,36 +77,6 @@ function isMarkTypeAllowedInNode(
 ): boolean {
   return toggleMark(markType)(state);
 }
-
-function closest(
-  node: HTMLElement | null | undefined,
-  s: string,
-): HTMLElement | null {
-  let el = node as HTMLElement;
-  if (!el) {
-    return null;
-  }
-  if (!document.documentElement || !document.documentElement.contains(el)) {
-    return null;
-  }
-  const matches = el.matches ? 'matches' : 'msMatchesSelector';
-
-  do {
-    // @ts-ignore
-    if (el[matches] && el[matches](s)) {
-      return el;
-    }
-    el = (el.parentElement || el.parentNode) as HTMLElement;
-  } while (el !== null && el.nodeType === 1);
-  return null;
-}
-
-export const isImage = (fileType?: string): boolean => {
-  return (
-    !!fileType &&
-    (fileType.indexOf('image/') > -1 || fileType.indexOf('video/') > -1)
-  );
-};
 
 export function canMoveUp(state: EditorState): boolean {
   const { selection, doc } = state;
@@ -139,48 +147,6 @@ export function isSelectionInsideLastNodeInDocument(
   return docNode.lastChild === rootNode;
 }
 
-export function atTheEndOfDoc(state: EditorState): boolean {
-  const { selection, doc } = state;
-  return doc.nodeSize - selection.$to.pos - 2 === selection.$to.depth;
-}
-
-export function atTheBeginningOfDoc(state: EditorState): boolean {
-  const { selection } = state;
-  return selection.$from.pos === selection.$from.depth;
-}
-
-export function atTheEndOfBlock(state: EditorState): boolean {
-  const { selection } = state;
-  const { $to } = selection;
-  if (selection instanceof GapCursorSelection) {
-    return false;
-  }
-  if (selection instanceof NodeSelection && selection.node.isBlock) {
-    return true;
-  }
-  return endPositionOfParent($to) === $to.pos + 1;
-}
-
-export function atTheBeginningOfBlock(state: EditorState): boolean {
-  const { selection } = state;
-  const { $from } = selection;
-  if (selection instanceof GapCursorSelection) {
-    return false;
-  }
-  if (selection instanceof NodeSelection && selection.node.isBlock) {
-    return true;
-  }
-  return startPositionOfParent($from) === $from.pos;
-}
-
-export function startPositionOfParent(resolvedPos: ResolvedPos): number {
-  return resolvedPos.start(resolvedPos.depth);
-}
-
-export function endPositionOfParent(resolvedPos: ResolvedPos): number {
-  return resolvedPos.end(resolvedPos.depth) + 1;
-}
-
 export function getCursor(selection: Selection): ResolvedPos | undefined {
   return (selection as TextSelection).$cursor || undefined;
 }
@@ -228,30 +194,13 @@ export function isMarkTypeAllowedInCurrentSelection(
     let allowedInActiveMarks =
       $from.depth === 0 ? state.doc.marks.every(isCompatibleMarkType) : true;
 
-    state.doc.nodesBetween($from.pos, $to.pos, node => {
+    state.doc.nodesBetween($from.pos, $to.pos, (node) => {
       allowedInActiveMarks =
         allowedInActiveMarks && node.marks.every(isCompatibleMarkType);
     });
 
     return allowedInActiveMarks;
   });
-}
-
-/**
- * Step through block-nodes between $from and $to and returns false if a node is
- * found that isn't of the specified type
- */
-export function isRangeOfType(
-  doc: Node,
-  $from: ResolvedPos,
-  $to: ResolvedPos,
-  nodeType: NodeType,
-): boolean {
-  return (
-    getAncestorNodesBetween(doc, $from, $to).filter(
-      node => node.type !== nodeType,
-    ).length === 0
-  );
 }
 
 export function createSliceWithContent(content: string, state: EditorState) {
@@ -267,7 +216,7 @@ export function canJoinDown(
   doc: any,
   nodeType: NodeType,
 ): boolean {
-  return checkNodeDown(selection, doc, node => node.type === nodeType);
+  return checkNodeDown(selection, doc, (node) => node.type === nodeType);
 }
 
 export function checkNodeDown(
@@ -290,7 +239,7 @@ export const setNodeSelection = (view: EditorView, pos: number) => {
   const { state, dispatch } = view;
 
   if (!isFinite(pos)) {
-    return undefined;
+    return;
   }
 
   const tr = state.tr.setSelection(NodeSelection.create(state.doc, pos));
@@ -333,49 +282,6 @@ export function canJoinUp(
     selection.$from.before(findAncestorPosition(doc, selection.$from).depth),
   );
   return res.nodeBefore && res.nodeBefore.type === nodeType;
-}
-
-/**
- * Returns all top-level ancestor-nodes between $from and $to
- */
-export function getAncestorNodesBetween(
-  doc: Node,
-  $from: ResolvedPos,
-  $to: ResolvedPos,
-): Node[] {
-  const nodes = Array<Node>();
-  const maxDepth = findAncestorPosition(doc, $from).depth;
-  let current = doc.resolve($from.start(maxDepth));
-
-  while (current.pos <= $to.start($to.depth)) {
-    const depth = Math.min(current.depth, maxDepth);
-    const node = current.node(depth);
-
-    if (node) {
-      nodes.push(node);
-    }
-
-    if (depth === 0) {
-      break;
-    }
-
-    let next: ResolvedPos = doc.resolve(current.after(depth));
-    if (next.start(depth) >= doc.nodeSize - 2) {
-      break;
-    }
-
-    if (next.depth !== current.depth) {
-      next = doc.resolve(next.pos + 2);
-    }
-
-    if (next.depth) {
-      current = doc.resolve(next.start(next.depth));
-    } else {
-      current = doc.resolve(next.end(next.depth));
-    }
-  }
-
-  return nodes;
 }
 
 /**
@@ -598,17 +504,6 @@ export function arrayFrom(obj: any): any[] {
   return Array.prototype.slice.call(obj);
 }
 
-/**
- * Replacement for Element.closest, until it becomes widely implemented
- * Returns the ancestor element of a particular type if exists or null
- */
-export function closestElement(
-  node: HTMLElement | null | undefined,
-  s: string,
-): HTMLElement | null {
-  return closest(node, s);
-}
-
 /*
  * From Modernizr
  * Returns the kind of transitionevent available for the element
@@ -632,7 +527,7 @@ export function whichTransitionEvent<TransitionEventName extends string>() {
     }
   }
 
-  return false;
+  return undefined;
 }
 
 export function moveLeft(view: EditorView) {
@@ -659,14 +554,26 @@ function getSelectedWrapperNodes(state: EditorState): NodeType[] {
       bulletList,
       listItem,
       codeBlock,
+      decisionItem,
+      decisionList,
+      taskItem,
+      taskList,
     } = state.schema.nodes;
-    state.doc.nodesBetween($from.pos, $to.pos, node => {
+    state.doc.nodesBetween($from.pos, $to.pos, (node) => {
       if (
-        (node.isBlock &&
-          [blockquote, panel, orderedList, bulletList, listItem].indexOf(
-            node.type,
-          ) >= 0) ||
-        node.type === codeBlock
+        node.isBlock &&
+        [
+          blockquote,
+          panel,
+          orderedList,
+          bulletList,
+          listItem,
+          codeBlock,
+          decisionItem,
+          decisionList,
+          taskItem,
+          taskList,
+        ].indexOf(node.type) >= 0
       ) {
         nodes.push(node.type);
       }
@@ -681,7 +588,7 @@ function getSelectedWrapperNodes(state: EditorState): NodeType[] {
 export function areBlockTypesDisabled(state: EditorState): boolean {
   const nodesTypes: NodeType[] = getSelectedWrapperNodes(state);
   const { panel } = state.schema.nodes;
-  return nodesTypes.filter(type => type !== panel).length > 0;
+  return nodesTypes.filter((type) => type !== panel).length > 0;
 }
 
 export const isTemporary = (id: string): boolean => {
@@ -743,7 +650,7 @@ export const isEmptyNode = (schema: Schema) => {
         );
       case doc:
         let isEmpty = true;
-        node.content.forEach(child => {
+        node.content.forEach((child) => {
           isEmpty = isEmpty && innerIsEmptyNode(child);
         });
         return isEmpty;
@@ -931,4 +838,8 @@ export function shallowEqual(obj1: any = {}, obj2: any = {}) {
 
 export function sum<T>(arr: Array<T>, f: (val: T) => number) {
   return arr.reduce((val, x) => val + f(x), 0);
+}
+
+export function nonNullable<T>(value: T): value is NonNullable<T> {
+  return value !== null && value !== undefined;
 }

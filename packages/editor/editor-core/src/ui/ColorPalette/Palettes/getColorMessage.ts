@@ -3,8 +3,8 @@ import { MessageDescriptor } from 'react-intl';
 export default function getColorMessage(
   messages,
   color: string,
-): MessageDescriptor {
-  let message = messages[color as keyof typeof messages];
+): MessageDescriptor | undefined {
+  let message: MessageDescriptor = messages[color as keyof typeof messages];
 
   if (!message) {
     // eslint-disable-next-line no-console

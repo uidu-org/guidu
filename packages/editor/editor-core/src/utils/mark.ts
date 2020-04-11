@@ -1,4 +1,4 @@
-import { Mark, MarkType, Node } from 'prosemirror-model';
+import { Mark, MarkType, Node, NodeType } from 'prosemirror-model';
 import { EditorState, SelectionRange, Transaction } from 'prosemirror-state';
 
 export const isMarkAllowedInRange = (
@@ -9,7 +9,7 @@ export const isMarkAllowedInRange = (
   for (let i = 0; i < ranges.length; i++) {
     const { $from, $to } = ranges[i];
     let can = $from.depth === 0 ? doc.type.allowsMarkType(type) : false;
-    doc.nodesBetween($from.pos, $to.pos, node => {
+    doc.nodesBetween($from.pos, $to.pos, (node) => {
       if (can) {
         return false;
       }
@@ -28,7 +28,7 @@ export const isMarkExcluded = (
   marks?: Array<Mark> | null,
 ): boolean => {
   if (marks) {
-    return marks.some(mark => mark.type !== type && mark.type.excludes(type));
+    return marks.some((mark) => mark.type !== type && mark.type.excludes(type));
   }
   return false;
 };
@@ -75,24 +75,40 @@ export const removeBlockMarks = (
 /**
  * Removes marks from nodes in the current selection that are not supported
  */
-export const sanitizeSelectionMarks = (
+export const sanitiseSelectionMarksForWrapping = (
   state: EditorState,
+  newParentType?: NodeType,
 ): Transaction | undefined => {
   let tr: Transaction | undefined;
-  const { $from, $to } = state.tr.selection;
-  state.doc.nodesBetween($from.pos, $to.pos, (node, pos) => {
-    node.marks.forEach(mark => {
-      if (!node.type.allowsMarkType(mark.type)) {
-        const filteredMarks = node.marks.filter(m => m.type !== mark.type);
-        const position = pos > 0 ? pos - 1 : 0;
-        tr = (tr || state.tr).setNodeMarkup(
-          position,
-          undefined,
-          node.attrs,
-          filteredMarks,
-        );
+  const { from, to } = state.tr.selection;
+
+  state.doc.nodesBetween(
+    from,
+    to,
+    (node, pos, parent) => {
+      // If iterate over a node thats out of our defined range
+      // We skip here but continue to iterate over its children.
+      if (node.isText || pos < from || pos > to) {
+        return true;
       }
-    });
-  });
+      node.marks.forEach((mark) => {
+        if (
+          !parent.type.allowsMarkType(mark.type) ||
+          (newParentType && !newParentType.allowsMarkType(mark.type))
+        ) {
+          const filteredMarks = node.marks.filter((m) => m.type !== mark.type);
+          const position = pos > 0 ? pos - 1 : 0;
+          tr = (tr || state.tr).setNodeMarkup(
+            position,
+            undefined,
+            node.attrs,
+            filteredMarks,
+          );
+        }
+      });
+      return false;
+    },
+    from,
+  );
   return tr;
 };

@@ -1,15 +1,16 @@
 import { keymap } from 'prosemirror-keymap';
 import { Plugin } from 'prosemirror-state';
-import * as keymaps from '../../../keymaps';
 import { trackAndInvoke } from '../../../analytics';
+import * as keymaps from '../../../keymaps';
+import { INPUT_METHOD } from '../../analytics';
 import {
+  backspaceKeyCommand,
+  deleteKeyCommand,
+  enterKeyCommand,
   indentList,
   outdentList,
-  backspaceKeyCommand,
-  enterKeyCommand,
   toggleListCommandWithAnalytics,
 } from '../commands';
-import { INPUT_METHOD } from '../../analytics';
 
 export function keymapPlugin(): Plugin | undefined {
   const list = {};
@@ -34,7 +35,7 @@ export function keymapPlugin(): Plugin | undefined {
     keymaps.indentList.common!!,
     trackAndInvoke(
       'atlassian.editor.format.list.indent.keyboard',
-      indentList(),
+      indentList(INPUT_METHOD.KEYBOARD),
     ),
     list,
   );
@@ -42,7 +43,7 @@ export function keymapPlugin(): Plugin | undefined {
     keymaps.outdentList.common!!,
     trackAndInvoke(
       'atlassian.editor.format.list.outdent.keyboard',
-      outdentList(),
+      outdentList(INPUT_METHOD.KEYBOARD),
     ),
     list,
   );
@@ -50,6 +51,12 @@ export function keymapPlugin(): Plugin | undefined {
   keymaps.bindKeymapWithCommand(
     keymaps.backspace.common!!,
     backspaceKeyCommand,
+    list,
+  );
+
+  keymaps.bindKeymapWithCommand(
+    keymaps.deleteKey.common!!,
+    deleteKeyCommand,
     list,
   );
 

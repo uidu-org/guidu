@@ -1,7 +1,7 @@
 import { Node as PMNode, ResolvedPos, Schema } from 'prosemirror-model';
 import { findDomRefAtPos, findPositionOfNodeBefore } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
-import { closestElement } from '../../utils';
+import { closestElement } from '../../utils/dom';
 import { TableCssClassName } from '../table/types';
 import { tableInsertColumnButtonSize } from '../table/ui/styles';
 import { GapCursorSelection, Side } from './selection';
@@ -155,7 +155,7 @@ function getBreakoutModeFromTargetNode(node: PMNode): string {
 
   if (node.marks && node.marks.length) {
     return (
-      node.marks.find(mark => mark.type.name === 'breakout') || {
+      node.marks.find((mark) => mark.type.name === 'breakout') || {
         attrs: { mode: '' },
       }
     ).attrs.mode;

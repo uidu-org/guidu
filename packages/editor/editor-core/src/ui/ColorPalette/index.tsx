@@ -1,5 +1,6 @@
-import * as React from 'react';
-import { PureComponent } from 'react';
+import * as colors from '@uidu/theme/colors';
+import { difference } from 'chromatism';
+import React, { PureComponent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import Color from './Color';
 import { PaletteColor } from './Palettes/type';
@@ -11,7 +12,17 @@ export interface Props {
   onClick: (value: string) => void;
   cols?: number;
   className?: string;
-  checkMarkColor?: string;
+}
+
+/**
+ * For a given color pick the color from a list of colors with
+ * the highest contrast
+ *
+ * @param color color string, suppports HEX, RGB, RGBA etc.
+ * @return Highest contrast color in pool
+ */
+export function getContrastColor(color: string, pool: string[]): string {
+  return pool.sort((a, b) => difference(b, color) - difference(a, color))[0];
 }
 
 class ColorPalette extends PureComponent<Props & WrappedComponentProps, any> {
@@ -22,7 +33,6 @@ class ColorPalette extends PureComponent<Props & WrappedComponentProps, any> {
       onClick,
       selectedColor,
       className,
-      checkMarkColor,
       intl: { formatMessage },
     } = this.props;
 
@@ -39,7 +49,7 @@ class ColorPalette extends PureComponent<Props & WrappedComponentProps, any> {
             label={message ? formatMessage(message) : label}
             onClick={onClick}
             isSelected={value === selectedColor}
-            checkMarkColor={checkMarkColor}
+            checkMarkColor={getContrastColor(value, [colors.N0, colors.N500])}
           />
         ))}
       </ColorPaletteWrapper>

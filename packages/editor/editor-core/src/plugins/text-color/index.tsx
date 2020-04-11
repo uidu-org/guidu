@@ -1,10 +1,10 @@
-import * as React from 'react';
 import { textColor } from '@uidu/adf-schema';
+import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import {
-  pluginKey as textColorPluginKey,
   createPlugin,
+  pluginKey as textColorPluginKey,
   TextColorPluginConfig,
   TextColorPluginState,
 } from './pm-plugins/main';
@@ -20,7 +20,9 @@ const pluginConfig = (
   return textColorConfig;
 };
 
-const textColorPlugin = (): EditorPlugin => ({
+const textColorPlugin = (
+  textColorConfig?: TextColorPluginConfig | boolean,
+): EditorPlugin => ({
   name: 'textColor',
 
   marks() {
@@ -31,8 +33,8 @@ const textColorPlugin = (): EditorPlugin => ({
     return [
       {
         name: 'textColor',
-        plugin: ({ props, dispatch }) =>
-          createPlugin(dispatch, pluginConfig(props.allowTextColor)),
+        plugin: ({ dispatch }) =>
+          createPlugin(dispatch, pluginConfig(textColorConfig)),
       },
     ];
   },
@@ -43,7 +45,13 @@ const textColorPlugin = (): EditorPlugin => ({
     popupsBoundariesElement,
     popupsScrollableElement,
     isToolbarReducedSpacing,
+    dispatchAnalyticsEvent,
+    disabled,
   }) {
+    const config = pluginConfig(textColorConfig);
+    const showMoreColorsToggle =
+      config && config.EXPERIMENTAL_allowMoreTextColors;
+
     return (
       <WithPluginState
         plugins={{
@@ -57,6 +65,9 @@ const textColorPlugin = (): EditorPlugin => ({
             popupsMountPoint={popupsMountPoint}
             popupsBoundariesElement={popupsBoundariesElement}
             popupsScrollableElement={popupsScrollableElement}
+            showMoreColorsToggle={showMoreColorsToggle}
+            dispatchAnalyticsEvent={dispatchAnalyticsEvent}
+            disabled={disabled}
           />
         )}
       />

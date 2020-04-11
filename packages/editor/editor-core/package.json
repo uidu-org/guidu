@@ -38,6 +38,7 @@
     "@uidu/task-decision": "^0.1.14",
     "@uidu/theme": "^0.2.5",
     "@uidu/tooltip": "^0.1.27",
+    "chromatism": "^3.0.0",
     "markdown-it": "^10.0.0",
     "prosemirror-collab": "^1.1.2",
     "prosemirror-commands": "^1.0.8",

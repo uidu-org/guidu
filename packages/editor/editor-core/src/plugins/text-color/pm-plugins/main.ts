@@ -1,13 +1,19 @@
-import { colors } from '@uidu/theme';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import { Dispatch } from '../../../event-dispatcher';
-import textColorPalette from '../../../ui/ColorPalette/Palettes/textColorPalette';
+import {
+  DEFAULT_BORDER_COLOR,
+  textColorPalette,
+  textColorPaletteExperimental,
+} from '../../../ui/ColorPalette/Palettes/textColorPalette';
 import { PaletteColor } from '../../../ui/ColorPalette/Palettes/type';
-import { getActiveColor } from '../utils/color';
+import { DEFAULT_COLOR, getActiveColor } from '../utils/color';
 import { getDisabledState } from '../utils/disabled';
+
+export { DEFAULT_COLOR } from '../utils/color';
 
 export type TextColorPluginState = {
   palette: Array<PaletteColor>;
+  paletteExpanded?: Array<PaletteColor>;
   defaultColor: string;
   disabled?: boolean;
   color: string | null;
@@ -29,15 +35,10 @@ export type TextColorDefaultColor = {
 };
 
 export interface TextColorPluginConfig {
-  defaultColor: TextColorDefaultColor;
+  defaultColor?: TextColorDefaultColor;
   // Allow experimental testing for "show more colours" (ED-8368)
   EXPERIMENTAL_allowMoreTextColors?: boolean;
 }
-
-export const DEFAULT_COLOR = {
-  color: colors.N800.toLowerCase(),
-  label: 'Dark gray',
-};
 
 export function createInitialPluginState(
   editorState: EditorState,
@@ -45,21 +46,47 @@ export function createInitialPluginState(
 ): TextColorPluginState {
   const defaultColor =
     (pluginConfig && pluginConfig.defaultColor) || DEFAULT_COLOR;
+  const showMoreColorsToggle =
+    (pluginConfig && pluginConfig.EXPERIMENTAL_allowMoreTextColors) || false;
 
   const palette: Array<PaletteColor> = [
     {
       value: defaultColor.color,
       label: defaultColor.label,
+      border: DEFAULT_BORDER_COLOR,
     },
-    ...textColorPalette,
+    ...(showMoreColorsToggle ? textColorPaletteExperimental : textColorPalette),
   ];
 
-  return {
+  const state = {
     color: getActiveColor(editorState),
     disabled: getDisabledState(editorState),
     palette,
-    defaultColor: palette[0].value,
+    defaultColor: defaultColor.color,
   };
+
+  // break up the palette for A/B testing experiment ED-8368
+  if (showMoreColorsToggle) {
+    // defined palette order: [normal, dark, light] (but normal[0] is default/dark)
+    // expanded palette: [dark, normal, light] with normal[0] on the dark row
+    const normalRow = palette.slice(0, 7);
+    const darkRow = palette.slice(7, 14);
+    const lightRow = palette.slice(14);
+
+    const paletteExpanded = darkRow.concat(normalRow).concat(lightRow);
+    // swap default back and slot 7
+    const defaultSwatch = paletteExpanded[0];
+    paletteExpanded[0] = paletteExpanded[7];
+    paletteExpanded[7] = defaultSwatch;
+
+    return {
+      ...state,
+      palette: normalRow,
+      paletteExpanded,
+    };
+  }
+
+  return state;
 }
 
 export enum ACTIONS {

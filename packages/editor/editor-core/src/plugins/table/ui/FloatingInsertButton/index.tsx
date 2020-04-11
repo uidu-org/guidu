@@ -5,7 +5,7 @@ import { findDomRefAtPos, findTable } from 'prosemirror-utils';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
-import { closestElement } from '../../../../utils';
+import { closestElement } from '../../../../utils/dom';
 import { INPUT_METHOD } from '../../../analytics';
 import {
   insertColumnWithAnalytics,

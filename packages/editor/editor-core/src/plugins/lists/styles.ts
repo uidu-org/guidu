@@ -1,4 +1,3 @@
-// @ts-ignore: unused variable
 import { css } from 'styled-components';
 
 export const listsStyles = css`

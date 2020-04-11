@@ -1,4 +1,3 @@
-import { colors } from '@uidu/theme';
 import { Rect, splitCell } from 'prosemirror-tables';
 import { EditorView } from 'prosemirror-view';
 import * as React from 'react';
@@ -14,7 +13,7 @@ import ColorPalette from '../../../../ui/ColorPalette';
 import cellBackgroundColorPalette from '../../../../ui/ColorPalette/Palettes/cellBackgroundColorPalette';
 import DropdownMenu from '../../../../ui/DropdownMenu';
 import { Shortcut } from '../../../../ui/styles';
-import { closestElement } from '../../../../utils';
+import { closestElement } from '../../../../utils/dom';
 import { INPUT_METHOD } from '../../../analytics';
 import { DropdownItem } from '../../../block-type/ui/ToolbarBlockType';
 import {
@@ -191,7 +190,6 @@ class ContextualMenu extends Component<Props & WrappedComponentProps, State> {
                   palette={cellBackgroundColorPalette}
                   onClick={this.setColor}
                   selectedColor={background}
-                  checkMarkColor={colors.N500}
                 />
               </div>
             )}

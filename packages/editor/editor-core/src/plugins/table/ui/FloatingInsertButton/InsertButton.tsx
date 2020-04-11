@@ -4,7 +4,7 @@ import * as React from 'react';
 import { SyntheticEvent } from 'react';
 import { injectIntl, WrappedComponentProps } from 'react-intl';
 import * as keymaps from '../../../../keymaps';
-import { closestElement } from '../../../../utils';
+import { closestElement } from '../../../../utils/dom';
 import { TableCssClassName as ClassName } from '../../types';
 import tableMessages from '../messages';
 import { tableToolbarSize } from '../styles';
