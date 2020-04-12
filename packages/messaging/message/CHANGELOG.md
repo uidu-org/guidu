@@ -1,5 +1,11 @@
 # @uidu/message
 
+## 0.1.43
+
+### Patch Changes
+
+- 086c009: Attachments should check file existence, removed console.log, tried fix warning for dynamic imports
+
 ## 0.1.42
 
 ### Patch Changes
