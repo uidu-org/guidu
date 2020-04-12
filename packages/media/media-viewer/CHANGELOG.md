@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.1.38
+
+### Patch Changes
+
+- Updated dependencies [de873fc]
+  - @uidu/media-card@0.2.0
+  - @uidu/media-core@0.1.20
+
 ## 0.1.37
 
 ### Patch Changes

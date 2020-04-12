@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.4.9
+
+### Patch Changes
+
+- de873fc: Bump some dependencies, rewrite editor-core
+- Updated dependencies [de873fc]
+  - @uidu/adf-schema@0.2.0
+
 ## 0.4.8
 
 ### Patch Changes

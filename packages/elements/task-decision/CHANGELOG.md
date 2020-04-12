@@ -1,5 +1,13 @@
 # @uidu/task-decision
 
+## 0.1.15
+
+### Patch Changes
+
+- Updated dependencies [de873fc]
+  - @uidu/editor-common@0.2.0
+  - @uidu/renderer@0.1.26
+
 ## 0.1.14
 
 ### Patch Changes
