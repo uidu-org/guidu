@@ -1,5 +1,16 @@
 # @uidu/media-card
 
+## 0.2.0
+
+### Minor Changes
+
+- de873fc: Bump some dependencies, rewrite editor-core
+
+### Patch Changes
+
+- Updated dependencies [de873fc]
+  - @uidu/media-core@0.1.20
+
 ## 0.1.29
 
 ### Patch Changes

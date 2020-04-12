@@ -1,5 +1,18 @@
 # @atlaskit/renderer
 
+## 0.1.26
+
+### Patch Changes
+
+- Updated dependencies [de873fc]
+  - @uidu/adf-schema@0.2.0
+  - @uidu/editor-common@0.2.0
+  - @uidu/media-card@0.2.0
+  - @uidu/adf-utils@0.4.9
+  - @uidu/editor-json-transformer@0.1.10
+  - @uidu/task-decision@0.1.15
+  - @uidu/media-filmstrip@0.1.31
+
 ## 0.1.25
 
 ### Patch Changes

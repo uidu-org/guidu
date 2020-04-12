@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.1.20
+
+### Patch Changes
+
+- de873fc: Bump some dependencies, rewrite editor-core
+
 ## 0.1.19
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @uidu/editor-core
 
+## 0.3.0
+
+### Minor Changes
+
+- de873fc: Bump some dependencies, rewrite editor-core
+
+### Patch Changes
+
+- Updated dependencies [de873fc]
+  - @uidu/adf-schema@0.2.0
+  - @uidu/editor-common@0.2.0
+  - @uidu/media-card@0.2.0
+  - @uidu/adf-utils@0.4.9
+  - @uidu/editor-json-transformer@0.1.10
+  - @uidu/editor-markdown-transformer@0.1.10
+  - @uidu/media-core@0.1.20
+  - @uidu/task-decision@0.1.15
+  - @uidu/media-filmstrip@0.1.31
+
 ## 0.2.5
 
 ### Patch Changes
