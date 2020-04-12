@@ -1,3 +1,4 @@
+import { colors } from '@atlaskit/theme';
 import {
   akEditorDeleteBackground,
   akEditorDeleteBorder,
@@ -7,7 +8,6 @@ import {
   mediaSingleClassName,
   mediaSingleSharedStyle,
 } from '@uidu/editor-common';
-import { colors } from '@uidu/theme';
 import { css } from 'styled-components';
 
 export const mediaStyles = css`
@@ -36,6 +36,10 @@ export const mediaStyles = css`
         margin-left: 0;
         margin-right: 0;
       }
+    }
+
+    .mediaSingleView-content-wrap[layout^='wrap-'] {
+      max-width: 100%;
     }
 
     .mediaSingleView-content-wrap[layout='wrap-left'] {

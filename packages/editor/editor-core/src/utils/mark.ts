@@ -14,7 +14,7 @@ export const isMarkAllowedInRange = (
         return false;
       }
       can = node.inlineContent && node.type.allowsMarkType(type);
-      return false;
+      return undefined;
     });
     if (can) {
       return can;
@@ -106,7 +106,7 @@ export const sanitiseSelectionMarksForWrapping = (
           );
         }
       });
-      return false;
+      return undefined;
     },
     from,
   );
