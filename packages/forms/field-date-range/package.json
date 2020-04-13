@@ -11,7 +11,7 @@
     "@uidu/field-base": "^0.2.3",
     "@uidu/field-date": "^0.2.2",
     "moment": "^2.18.1",
-    "react-day-picker": "^7.3.2",
+    "react-day-picker": "7.4.0",
     "react-feather": "^2.0.3",
     "react-helmet": "^6.0.0"
   },
