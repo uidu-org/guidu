@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.92
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+- Updated dependencies [fb507da]
+  - @uidu/modal-dialog@0.1.38
+
 ## 0.1.91
 
 ### Patch Changes

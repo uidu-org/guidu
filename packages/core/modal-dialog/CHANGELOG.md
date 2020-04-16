@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.1.38
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+
 ## 0.1.37
 
 ### Patch Changes

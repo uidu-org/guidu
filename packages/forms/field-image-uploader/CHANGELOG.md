@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.2.8
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+
 ## 0.2.7
 
 ### Patch Changes

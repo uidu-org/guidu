@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.1.21
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+
 ## 0.1.20
 
 ### Patch Changes

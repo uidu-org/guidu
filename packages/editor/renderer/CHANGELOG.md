@@ -1,5 +1,14 @@
 # @atlaskit/renderer
 
+## 0.1.27
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+- Updated dependencies [fb507da]
+  - @uidu/media-card@0.2.1
+  - @uidu/media-filmstrip@0.1.32
+
 ## 0.1.26
 
 ### Patch Changes
