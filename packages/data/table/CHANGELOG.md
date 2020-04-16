@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.105
+
+### Patch Changes
+
+- d93e5b2: Lock verion on react-day-picker
+
 ## 0.1.104
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-date-range
 
+## 0.2.4
+
+### Patch Changes
+
+- d93e5b2: Lock verion on react-day-picker
+- Updated dependencies [d93e5b2]
+  - @uidu/field-date@0.2.3
+
 ## 0.2.3
 
 ### Patch Changes

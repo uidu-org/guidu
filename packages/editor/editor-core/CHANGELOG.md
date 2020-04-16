@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.3.2
+
+### Patch Changes
+
+- d93e5b2: Fix quick-insert
+
 ## 0.3.1
 
 ### Patch Changes

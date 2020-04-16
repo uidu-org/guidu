@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
   "sideEffects": false,
