@@ -29,6 +29,7 @@ export default class Basic extends PureComponent<any, any> {
                 shouldFocus
                 containerElement={this.element}
                 onChange={this.handleChange(actions)}
+                analyticsHandler={console.log}
               >
                 {({ renderToolbar, renderEditor }) => (
                   <Fragment>

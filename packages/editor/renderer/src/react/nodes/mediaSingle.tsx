@@ -155,8 +155,6 @@ class MediaSingle extends Component<Props & WrappedComponentProps, State> {
     );
 
     let {
-      // width = DEFAULT_WIDTH,
-      // height = DEFAULT_HEIGHT,
       type,
       file,
       file: {

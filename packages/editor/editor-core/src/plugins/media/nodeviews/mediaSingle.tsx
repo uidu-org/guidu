@@ -105,30 +105,6 @@ export default class MediaSingleNode extends Component<
     if (!node) {
       return;
     }
-
-    const updatedDimensions = await mediaNodeUpdater.getRemoteDimensions();
-    if (updatedDimensions) {
-      mediaNodeUpdater.updateDimensions(updatedDimensions);
-    }
-
-    const contextId = mediaNodeUpdater.getNodeContextId();
-    if (!contextId) {
-      await mediaNodeUpdater.updateContextId();
-    }
-
-    const hasDifferentContextId = await mediaNodeUpdater.hasDifferentContextId();
-
-    if (hasDifferentContextId) {
-      this.setState({ isCopying: true });
-      try {
-        const copyNode = mediaNodeUpdater.copyNode();
-        // addPendingTask(copyNode);
-        await copyNode;
-      } catch (e) {
-        // if copyNode fails, let's set isCopying false so we can show the eventual error
-        this.setState({ isCopying: false });
-      }
-    }
   };
 
   async componentDidMount() {
@@ -221,7 +197,6 @@ export default class MediaSingleNode extends Component<
       file: {
         metadata: { width, height },
       },
-      type,
     } = childNode.attrs as MediaADFAttrs;
 
     if (!width || !height) {
@@ -230,6 +205,7 @@ export default class MediaSingleNode extends Component<
     }
     const cardWidth = this.props.width;
     const cardHeight = (height / width) * cardWidth;
+    console.log(cardHeight);
     const cardDimensions = {
       width: `${cardWidth}px`,
       height: `${cardHeight}px`,

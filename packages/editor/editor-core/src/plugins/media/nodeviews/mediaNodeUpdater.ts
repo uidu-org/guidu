@@ -48,26 +48,6 @@ export class MediaNodeUpdater {
     return false;
   }
 
-  // Updates the node with contextId if it doesn't have one already
-  // TODO [MS-2258]: remove updateContextId in order to only use updateFileAttrs
-  updateContextId = async () => {
-    const attrs = this.getAttrs();
-    if (!attrs || attrs.type !== 'file') {
-      return;
-    }
-
-    const { id } = attrs;
-    const objectId = await this.getObjectId();
-
-    updateAllMediaNodesAttrs(
-      id,
-      {
-        __contextId: objectId,
-      },
-      this.props.isMediaSingle,
-    )(this.props.view.state, this.props.view.dispatch);
-  };
-
   hasFileAttributesDefined = () => {
     const attrs = this.getAttrs();
     return (
@@ -81,46 +61,41 @@ export class MediaNodeUpdater {
   };
 
   updateFileAttrs = async (isMediaSingle: boolean = true) => {
-    const attrs = this.getAttrs();
-    const mediaProvider = await this.props.mediaProvider;
-    if (
-      !mediaProvider ||
-      !mediaProvider.uploadParams ||
-      !attrs ||
-      attrs.type !== 'file' ||
-      this.hasFileAttributesDefined()
-    ) {
-      return;
-    }
-    const mediaClientConfig = mediaProvider.viewMediaClientConfig;
-    const mediaClient = getMediaClient(mediaClientConfig);
-
-    const options = {};
-
-    const fileState = await mediaClient.file.getCurrentState(attrs.id, options);
-
-    if (fileState.status === 'error') {
-      return;
-    }
-
-    const contextId = this.getNodeContextId() || (await this.getObjectId());
-    const { name, mimeType, size } = fileState;
-    const newAttrs = {
-      __fileName: name,
-      __fileMimeType: mimeType,
-      __fileSize: size,
-      __contextId: contextId,
-    };
-    const attrsChanged = hasPrivateAttrsChanged(attrs, newAttrs);
-
-    if (attrsChanged) {
-      // TODO [MS-2258]: we should pass this.props.isMediaSingle and remove hardcoded "true"
-      updateAllMediaNodesAttrs(
-        attrs.id,
-        newAttrs,
-        isMediaSingle,
-      )(this.props.view.state, this.props.view.dispatch);
-    }
+    // const attrs = this.getAttrs();
+    // const mediaProvider = await this.props.mediaProvider;
+    // if (
+    //   !mediaProvider ||
+    //   !mediaProvider.uploadParams ||
+    //   !attrs ||
+    //   attrs.type !== 'file' ||
+    //   this.hasFileAttributesDefined()
+    // ) {
+    //   return;
+    // }
+    // const mediaClientConfig = mediaProvider.viewMediaClientConfig;
+    // const mediaClient = getMediaClient(mediaClientConfig);
+    // const options = {};
+    // const fileState = await mediaClient.file.getCurrentState(attrs.id, options);
+    // if (fileState.status === 'error') {
+    //   return;
+    // }
+    // const contextId = this.getNodeContextId() || (await this.getObjectId());
+    // const { name, mimeType, size } = fileState;
+    // const newAttrs = {
+    //   __fileName: name,
+    //   __fileMimeType: mimeType,
+    //   __fileSize: size,
+    //   __contextId: contextId,
+    // };
+    // const attrsChanged = hasPrivateAttrsChanged(attrs, newAttrs);
+    // if (attrsChanged) {
+    //   // TODO [MS-2258]: we should pass this.props.isMediaSingle and remove hardcoded "true"
+    //   updateAllMediaNodesAttrs(
+    //     attrs.id,
+    //     newAttrs,
+    //     isMediaSingle,
+    //   )(this.props.view.state, this.props.view.dispatch);
+    // }
   };
 
   getAttrs = (): MediaADFAttrs | undefined => {
@@ -315,15 +290,3 @@ export class MediaNodeUpdater {
     }
   };
 }
-
-const hasPrivateAttrsChanged = (
-  currentAttrs: MediaAttributes,
-  newAttrs: Partial<MediaAttributes>,
-): Boolean => {
-  return (
-    currentAttrs.__fileName !== newAttrs.__fileName ||
-    currentAttrs.__fileMimeType !== newAttrs.__fileMimeType ||
-    currentAttrs.__fileSize !== newAttrs.__fileSize ||
-    currentAttrs.__contextId !== newAttrs.__contextId
-  );
-};

@@ -1,5 +1,4 @@
 import { Form } from '@uidu/form';
-import axios from 'axios';
 import React, { Component } from 'react';
 import FieldImageUploader from '..';
 import { inputDefaultProps } from '../../field-base/examples-utils';
@@ -43,16 +42,6 @@ export default class Basic extends Component<any, any> {
           help="Drag 'n' drop some files here, or click to select files"
           XHRUploadOptions={{
             endpoint: 'https://uidufundraising.uidu.local:8443/upload',
-          }}
-          uploadFile={async (file) => {
-            const bodyFormData = new FormData();
-            bodyFormData.append('files[]', file);
-            return axios({
-              method: 'post',
-              url: 'https://uidufundraising.uidu.local:8443/upload',
-              data: bodyFormData,
-              headers: { 'Content-Type': 'multipart/form-data' },
-            });
           }}
         />
 

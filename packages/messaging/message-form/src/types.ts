@@ -18,13 +18,13 @@ export type MessageFormActionsProps = {
 
 export type MessageFormProps = {
   /** The base styling to apply to the button. */
-  actions?: Array<MessageFormActionsProps>;
+  actions?: MessageFormActionsProps[];
   /** The base styling to apply to the button. */
   placeholder?: string;
   /** The base styling to apply to the button. */
   message: Message;
   /** The base styling to apply to the button. */
-  mentionables?: Array<MentionProps>;
+  mentionables?: MentionProps[];
   /** The base styling to apply to the button. */
   createMessage?: (model: any) => any;
   /** The base styling to apply to the button. */

@@ -21,7 +21,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.46",
-    "@uidu/section-message": "^0.1.22",
     "faker": "^4.1.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"

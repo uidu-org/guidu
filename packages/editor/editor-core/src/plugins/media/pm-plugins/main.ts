@@ -267,7 +267,9 @@ export class MediaPluginStateImplementation implements MediaPluginState {
    * called when we insert a new file via the picker (connected via pickerfacade)
    */
   insertFile = (files) => {
-    this.allUploadsFinished = false;
+    this.allUploadsFinished = true;
+
+    console.log(files);
 
     if (files.length === 1) {
       insertMediaSingleNode(this.view, files[0]);
@@ -400,8 +402,8 @@ export class MediaPluginStateImplementation implements MediaPluginState {
   public trackNewMediaEvent(mediaState: MediaState) {
     return analyticsService.trackEvent(
       `atlassian.editor.media.file`,
-      mediaState.data.metadata.mime_type
-        ? { fileMimeType: mediaState.data.metadata.mime_type }
+      mediaState.metadata.mime_type
+        ? { fileMimeType: mediaState.metadata.mime_type }
         : {},
     );
   }
@@ -438,13 +440,11 @@ export class MediaPluginStateImplementation implements MediaPluginState {
   };
 
   removeNodeById = (state: MediaState) => {
-    const {
-      data: { id },
-    } = state;
+    const { id } = state;
     const mediaNodeWithPos = helpers.findMediaNode(
       this,
       id,
-      isImage(state.data.metadata.mime_type),
+      isImage(state.metadata.mime_type),
     );
 
     if (mediaNodeWithPos) {

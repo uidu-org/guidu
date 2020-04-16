@@ -157,11 +157,11 @@ export const insertMediaSingleNode = (
   const shouldSplit =
     grandParent && grandParent.type.validContent(Fragment.from(node));
   let fileExtension: string | undefined;
-  if (mediaState.data.metadata.filename) {
-    const extensionIdx = mediaState.data.metadata.filename.lastIndexOf('.');
+  if (mediaState.metadata.filename) {
+    const extensionIdx = mediaState.metadata.filename.lastIndexOf('.');
     fileExtension =
       extensionIdx >= 0
-        ? mediaState.data.metadata.filename.substring(extensionIdx + 1)
+        ? mediaState.metadata.filename.substring(extensionIdx + 1)
         : undefined;
   }
 
@@ -200,8 +200,7 @@ export const insertMediaSingleNode = (
 export const createMediaSingleNode = (schema: Schema) => (
   mediaState: MediaSingleState,
 ) => {
-  const { url, data } = mediaState;
-  const { id, metadata, scaleFactor = 1 } = data;
+  const { id, url, metadata, scaleFactor = 1 } = mediaState;
   const { width, height } = metadata || {
     height: undefined,
     width: undefined,

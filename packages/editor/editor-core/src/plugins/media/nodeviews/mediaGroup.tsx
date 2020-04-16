@@ -108,6 +108,7 @@ export default class MediaGroup extends React.Component<
     const items = this.mediaNodes.map((item, idx) => {
       const identifier: any = {
         id: item.attrs.id,
+        file: item.attrs.file,
         mediaItemType: 'file',
       };
 
@@ -140,7 +141,9 @@ export default class MediaGroup extends React.Component<
       };
     });
 
-    return <MediaFilmstrip files={items as any} />;
+    return (
+      <MediaFilmstrip files={items.map(({ identifier }) => identifier.file)} />
+    );
   };
 
   render() {

@@ -8,3 +8,12 @@ export type MediaCardProps = {
   onRemove?: () => void;
   style?: any;
 };
+
+export type GridOptions = {};
+
+export type MediaCardGroupProps = {
+  files: FileIdentifier[];
+  layout: 'slider' | 'grid';
+  gridOptions?: GridOptions;
+  // sliderProps?: SliderOptions;
+};

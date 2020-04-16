@@ -16,5 +16,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "index.ts",
+  "devDependencies": {
+    "@uidu/section-message": "^0.1.22"
+  }
 }

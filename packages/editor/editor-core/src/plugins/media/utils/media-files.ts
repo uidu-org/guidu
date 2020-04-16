@@ -168,12 +168,19 @@ const createMediaFileNodes = (
   media: NodeType,
 ): PMNode[] => {
   const nodes = mediaStates.map((mediaState) => {
-    const {
-      data: { id },
-    } = mediaState;
+    const { id, metadata, scaleFactor = 1, url } = mediaState;
+    const { width, height } = metadata;
     const node = media.create({
       id,
       type: 'file',
+      file: {
+        id,
+        type: 'image',
+        metadata,
+        width: width && Math.round(width / scaleFactor),
+        height: height && Math.round(height / scaleFactor),
+        url,
+      },
     });
     copyOptionalAttrsFromMediaState(mediaState, node);
     return node;

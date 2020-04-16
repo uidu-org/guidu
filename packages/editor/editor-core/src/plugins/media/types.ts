@@ -5,14 +5,6 @@ import { MediaFile, UploadParams } from '@uidu/media-picker/types';
 import { NodeType } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 
-export type MediaStateStatus =
-  | 'unknown'
-  | 'ready'
-  | 'cancelled'
-  | 'preview'
-  | 'error'
-  | 'mobile-upload-end';
-
 export interface MediaOptions {
   provider?: Providers['mediaProvider'];
   allowMediaSingle?: boolean | MediaSingleOptions;
@@ -47,23 +39,21 @@ export interface MediaSingleOptions {
 }
 
 export interface MediaState {
-  url: string;
-  data: {
-    id: string;
-    storage: string;
-    metadata: {
-      size?: number;
-      filename: string;
-      mime_type?: string;
-      width: number | undefined;
-      height: number | undefined;
-    };
-    scaleFactor?: number;
-    error?: {
-      name: string;
-      description: string;
-    };
+  id: string;
+  storage: string;
+  metadata: {
+    size?: number;
+    filename: string;
+    mime_type?: string;
+    width: number | undefined;
+    height: number | undefined;
   };
+  scaleFactor?: number;
+  error?: {
+    name: string;
+    description: string;
+  };
+  url: string;
 }
 
 export type Listener = (data: any) => void;

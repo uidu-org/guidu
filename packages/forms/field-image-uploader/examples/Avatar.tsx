@@ -42,6 +42,9 @@ export default class Avatar extends Component<any, any> {
             // onBlur={this.onBlur}
             // onFocus={this.onFocus}
             label={null}
+            XHRUploadOptions={{
+              endpoint: 'https://uidufundraising.uidu.local:8443/upload',
+            }}
           />
         </div>
       </Form>

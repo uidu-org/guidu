@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import Formsy from 'formsy-react';
 import React, {
   forwardRef,
+  useEffect,
   useImperativeHandle,
   useRef,
   useState,
@@ -67,22 +68,29 @@ function MessagesForm({
   useImperativeHandle(forwardedRef, () => mentionsInput.current);
 
   const [emojiPicker, setEmojiPicker] = useState(false);
-  const [isThumbMessageAllowed, setIsThumMesssageAllowed] = useState(
-    message.body ? false : true,
+  const [isThumbMessageAllowed, setIsThumbMesssageAllowed] = useState(
+    message.body || attachments.length > 0 ? false : true,
   );
+
+  useEffect(() => {
+    if (attachments.length > 0) {
+      setIsThumbMesssageAllowed(false);
+    }
+    return () => null;
+  }, [attachments.length]);
 
   const isValid = (canSubmit: boolean): boolean => {
     if (attachments.length > 0) {
-      return attachments.filter((a) => !a.signed_id).length === 0 && canSubmit;
+      return attachments.filter((a) => !a.id).length === 0 && canSubmit;
     }
     return canSubmit;
   };
 
   const handleSubmitLabel = (_name: string, value: string | Object): void => {
     if (value !== '') {
-      setIsThumMesssageAllowed(false);
+      setIsThumbMesssageAllowed(false);
     } else {
-      setIsThumMesssageAllowed(message.body ? false : true);
+      setIsThumbMesssageAllowed(message.body ? false : true);
     }
   };
 
@@ -123,7 +131,9 @@ function MessagesForm({
           'border-top p-3': !message.body,
         })}
       >
-        {attachments.length > 0 && <MediaFilmstrip files={attachments} />}
+        {attachments.length > 0 && (
+          <MediaFilmstrip files={attachments.map(({ file }) => file)} />
+        )}
         <div
           id="suggestionPortal"
           style={{
@@ -140,7 +150,7 @@ function MessagesForm({
           ref={form}
           handleSubmit={async (model: any) => {
             await handleSubmit(model);
-            setIsThumMesssageAllowed(true);
+            setIsThumbMesssageAllowed(true);
             setEmojiPicker(false);
             onReplyDismiss();
             form.current.reset();
@@ -248,10 +258,10 @@ function MessagesForm({
             />
             {attachments.map((attachment, index) => (
               <FieldText
-                key={attachment.signed_id}
+                key={attachment.id}
                 type="hidden"
-                name={`attachments[${index}][signed_blob_id]`}
-                value={attachment.signed_id}
+                name={`attachments[${index}][file]`}
+                value={attachment}
               />
             ))}
           </div>

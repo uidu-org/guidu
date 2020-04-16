@@ -50,7 +50,7 @@ export const sendPerformanceMetrics = (opts: PerformanceMetrictsOpts) => {
     isInitial: opts.isInitial || false,
   };
   request.addEvent(`atlaskit.website.performance`, attributes);
-  request.send();
+  // request.send();
 };
 
 export const sendApdex = (
@@ -82,7 +82,7 @@ export const observePerformanceMetrics = (location: string) => {
   }
 
   // 'first-paint' and 'first-contentful-paint'
-  const observer = new PerformanceObserver(list => {
+  const observer = new PerformanceObserver((list) => {
     for (const entry of list.getEntries()) {
       const metricName = entry.name;
       const timing = Math.round(entry.startTime + entry.duration);
@@ -104,7 +104,7 @@ export const observePerformanceMetrics = (location: string) => {
   // time to interactive, more details: https://goo.gl/OSmrPk
   ttiPolyfill
     .getFirstConsistentlyInteractive({ useMutationObserver: false })
-    .then(tti => {
+    .then((tti) => {
       const timing = Math.round(tti);
       sendPerformanceMetrics({
         location,

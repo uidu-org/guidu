@@ -16,7 +16,12 @@ import { messages } from '../insert-block/ui/ToolbarInsertBlock/messages';
 import { IconImages } from '../quick-insert/assets';
 import { ReactMediaGroupNode } from './nodeviews/mediaGroup';
 import { ReactMediaSingleNode } from './nodeviews/mediaSingle';
+import { createPlugin as createMediaAltTextPlugin } from './pm-plugins/alt-text';
+import keymapMediaAltTextPlugin from './pm-plugins/alt-text/keymap';
 import keymapPlugin from './pm-plugins/keymap';
+import keymapMediaSinglePlugin from './pm-plugins/keymap-media-single';
+import linkingPlugin from './pm-plugins/linking';
+import keymapLinkingPlugin from './pm-plugins/linking/keymap';
 import {
   createPlugin,
   MediaState,
@@ -103,39 +108,39 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
       },
       { name: 'mediaKeymap', plugin: () => keymapPlugin() },
     ];
-    // if (options && options.allowMediaSingle) {
-    //   pmPlugins.push({
-    //     name: 'mediaSingleKeymap',
-    //     plugin: ({ schema }) => keymapMediaSinglePlugin(schema),
-    //   });
-    // }
+    if (options && options.allowMediaSingle) {
+      pmPlugins.push({
+        name: 'mediaSingleKeymap',
+        plugin: ({ schema }) => keymapMediaSinglePlugin(schema),
+      });
+    }
 
     // if (options && options.allowAnnotation) {
     //   pmPlugins.push({ name: 'mediaEditor', plugin: createMediaEditorPlugin });
     // }
 
-    // if (options && options.allowAltTextOnImages) {
-    //   pmPlugins.push({
-    //     name: 'mediaAltText',
-    //     plugin: createMediaAltTextPlugin,
-    //   });
-    //   pmPlugins.push({
-    //     name: 'mediaAltTextKeymap',
-    //     plugin: ({ schema }) => keymapMediaAltTextPlugin(schema),
-    //   });
-    // }
+    if (options && options.allowAltTextOnImages) {
+      pmPlugins.push({
+        name: 'mediaAltText',
+        plugin: createMediaAltTextPlugin,
+      });
+      pmPlugins.push({
+        name: 'mediaAltTextKeymap',
+        plugin: ({ schema }) => keymapMediaAltTextPlugin(schema),
+      });
+    }
 
-    // if (options && options.allowLinking) {
-    //   pmPlugins.push({
-    //     name: 'mediaLinking',
-    //     plugin: ({ dispatch }: PMPluginFactoryParams) =>
-    //       linkingPlugin(dispatch),
-    //   });
-    //   pmPlugins.push({
-    //     name: 'mediaLinkingKeymap',
-    //     plugin: ({ schema }) => keymapLinkingPlugin(schema),
-    //   });
-    // }
+    if (options && options.allowLinking) {
+      pmPlugins.push({
+        name: 'mediaLinking',
+        plugin: ({ dispatch }: PMPluginFactoryParams) =>
+          linkingPlugin(dispatch),
+      });
+      pmPlugins.push({
+        name: 'mediaLinkingKeymap',
+        plugin: ({ schema }) => keymapLinkingPlugin(schema),
+      });
+    }
 
     return pmPlugins;
   },
@@ -198,13 +203,17 @@ const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
     ],
 
     floatingToolbar: (state, intl, providerFactory) =>
-      floatingToolbar(
-        state,
-        intl,
-        // options && options.allowResizing,
-        // options && options.allowAnnotation,
-        // appearance,
-      ),
+      floatingToolbar(state, intl, {
+        providerFactory,
+        allowResizing: options && options.allowResizing,
+        allowResizingInTables: options && options.allowResizingInTables,
+        allowAnnotation: options && options.allowAnnotation,
+        allowLinking: options && options.allowLinking,
+        allowAdvancedToolBarOptions:
+          options && options.allowAdvancedToolBarOptions,
+        allowAltTextOnImages: options && options.allowAltTextOnImages,
+        altTextValidator: options && options.altTextValidator,
+      }),
   },
 });
 

@@ -1,5 +1,5 @@
 import MediaPicker from '@uidu/media-picker';
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { BarChart2, Clock, Mic, Paperclip } from 'react-feather';
 import MessageForm from '../src';
 
@@ -17,7 +17,7 @@ function fetchUsers(query: string, callback: () => void): any {
       .then((response: Response) => response.json())
       // Transform the users to what react-mentions expects
       .then((json: GitHubJSONResponse) =>
-        json.items.map(user => ({ display: user.login, id: user.login })),
+        json.items.map((user) => ({ display: user.login, id: user.login })),
       )
       .then(callback)
       .catch(() => [])
@@ -32,8 +32,9 @@ export default class Basic extends Component<any> {
 
   render() {
     return (
-      <Fragment>
+      <>
         <MessageForm
+          createMessage={console.log}
           attachments={this.state.attachments}
           actions={[
             {
@@ -41,26 +42,26 @@ export default class Basic extends Component<any> {
               children: [
                 {
                   children: (
-                    <React.Fragment>
+                    <>
                       <Mic size="1rem" className="mr-2" />
                       Audio message
-                    </React.Fragment>
+                    </>
                   ),
                 },
                 {
                   children: (
-                    <React.Fragment>
+                    <>
                       <BarChart2 size="1rem" className="mr-2" />
                       Poll
-                    </React.Fragment>
+                    </>
                   ),
                 },
                 {
                   children: (
-                    <React.Fragment>
+                    <>
                       <Clock size="1rem" className="mr-2" />
                       Reminder
-                    </React.Fragment>
+                    </>
                   ),
                 },
               ],
@@ -69,22 +70,22 @@ export default class Basic extends Component<any> {
               name: 'Add a file from...',
               children: [
                 {
-                  onClick: e => {
+                  onClick: (e) => {
                     this.setState({ pickerOpen: true });
                   },
                   children: (
-                    <React.Fragment>
+                    <>
                       <Paperclip size="1rem" className="mr-2" />
                       Your computer
-                    </React.Fragment>
+                    </>
                   ),
                 },
                 {
                   children: (
-                    <React.Fragment>
+                    <>
                       <BarChart2 size="1rem" className="mr-2" />
                       Google Drive
-                    </React.Fragment>
+                    </>
                   ),
                 },
               ],
@@ -104,12 +105,12 @@ export default class Basic extends Component<any> {
           <MediaPicker
             open={this.state.pickerOpen}
             onRequestClose={() => this.setState({ pickerOpen: false })}
-            onComplete={result => {
+            onComplete={(result) => {
               this.setState({
                 attachments: [
                   ...this.state.attachments,
-                  ...result.successful.map(r => ({
-                    ...r.response.body[0],
+                  ...result.successful.map((r) => ({
+                    ...r.response.body.data,
                     preview: r.preview,
                   })),
                 ],
@@ -117,7 +118,7 @@ export default class Basic extends Component<any> {
             }}
           />
         )}
-      </Fragment>
+      </>
     );
   }
 }

@@ -1,3 +1,5 @@
+import { XHRUploadOptions } from '@uppy/xhr-upload';
+
 export type FileMetadata = {
   extension?: string;
   filename?: string;
@@ -18,3 +20,11 @@ export type FileIdentifier = {
 };
 
 export type MediaClientConfig = any;
+
+export type MediaXHRUploadParams = Partial<XHRUploadOptions>;
+
+export interface Media {
+  id: number | string;
+  file: FileIdentifier;
+  [x: string]: any;
+}
