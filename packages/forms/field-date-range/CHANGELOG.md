@@ -1,5 +1,13 @@
 # @uidu/field-date-range
 
+## 0.2.6
+
+### Patch Changes
+
+- b48e5e0: Fix table and field-image-uploader
+- Updated dependencies [b48e5e0]
+  - @uidu/field-date@0.2.5
+
 ## 0.2.5
 
 ### Patch Changes
