@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.106
+
+### Patch Changes
+
+- 1951699: Bump day-picker and fix field-image-uploader for large images
+
 ## 0.1.105
 
 ### Patch Changes
