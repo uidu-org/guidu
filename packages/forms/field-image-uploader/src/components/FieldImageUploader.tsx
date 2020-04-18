@@ -118,7 +118,7 @@ function FieldImageUploader({
       ...value,
       metadata: {
         ...value.metadata,
-        crop: editor.current.getCroppingRect(),
+        crop: editor.current?.getCroppingRect(),
       },
     };
   };

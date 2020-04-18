@@ -1,6 +1,6 @@
 import { groupRenderer } from '../../groups';
 
-export default params => {
+export default (params) => {
   // create the cell
   if (params.node && params.node.group) {
     return groupRenderer(params);
@@ -19,12 +19,12 @@ export default params => {
           padding-right: .5rem;
           padding-top: .15rem;
           padding-bottom: .15rem;
-          background-color: ${params.value.color || '#f1f3f5'};
+          background-color: ${params.value?.color || '#f1f3f5'};
           display: inline-flex;
           line-height: normal;
         "
       >
-        <div class="text-truncate">${params.value.name}</div>
+        <div class="text-truncate">${params.value?.name}</div>
       </span>
     `;
   }

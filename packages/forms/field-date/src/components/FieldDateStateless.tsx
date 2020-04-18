@@ -11,12 +11,7 @@ import React, {
   useRef,
 } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import MomentLocaleUtils, {
-  // @ts-ignore
-  formatDate,
-  // @ts-ignore
-  parseDate,
-} from 'react-day-picker/moment';
+import MomentLocaleUtils from 'react-day-picker/moment';
 import { FieldDateStatelessProps } from '../types';
 import {
   name as packageName,
@@ -27,7 +22,7 @@ function FieldDate({
   id,
   locale = 'it',
   displayFormat = 'LL',
-  placeholder = `${formatDate(new Date(), 'LL', 'it')}`,
+  placeholder = `${moment().format('LL')}`,
   inputClassName = 'form-control',
   value,
   containerClassName,
@@ -42,7 +37,7 @@ function FieldDate({
 
   return (
     <DayPickerInput
-      component={props => <input {...props} id={id} />}
+      component={(props) => <input {...props} id={id} />}
       ref={element}
       classNames={{
         container: `DayPickerInput${
@@ -55,12 +50,11 @@ function FieldDate({
       }}
       value={value && value !== '' ? moment(value).format(displayFormat) : ''}
       onDayChange={onDayChange}
-      formatDate={formatDate}
-      parseDate={parseDate}
       format={displayFormat}
       placeholder={placeholder}
       dayPickerProps={{
         locale,
+        // @ts-ignore
         localeUtils: MomentLocaleUtils,
         showOutsideDays: true,
         enableOutsideDaysClick: true,
