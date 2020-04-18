@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.62
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+
 ## 0.1.61
 
 ### Patch Changes

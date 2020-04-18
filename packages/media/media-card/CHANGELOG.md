@@ -1,5 +1,13 @@
 # @uidu/media-card
 
+## 0.2.1
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+- Updated dependencies [fb507da]
+  - @uidu/media-core@0.1.21
+
 ## 0.2.0
 
 ### Minor Changes

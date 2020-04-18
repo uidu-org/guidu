@@ -1,5 +1,13 @@
 # @uidu/message-form
 
+## 0.1.30
+
+### Patch Changes
+
+- fb507da: Interface consistency for medias, documentation, WIP media groups
+- Updated dependencies [fb507da]
+  - @uidu/media-filmstrip@0.1.32
+
 ## 0.1.29
 
 ### Patch Changes
