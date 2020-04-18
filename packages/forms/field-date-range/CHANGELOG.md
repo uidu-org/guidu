@@ -1,5 +1,13 @@
 # @uidu/field-date-range
 
+## 0.2.5
+
+### Patch Changes
+
+- 1951699: Bump day-picker and fix field-image-uploader for large images
+- Updated dependencies [1951699]
+  - @uidu/field-date@0.2.4
+
 ## 0.2.4
 
 ### Patch Changes
