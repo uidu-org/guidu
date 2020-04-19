@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.3.0
+
+### Minor Changes
+
+- 183364b: Rename blocks in dashlets
+
 ## 0.2.10
 
 ### Patch Changes
