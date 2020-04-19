@@ -25,24 +25,19 @@ export default class SingleArea extends PureComponent<any> {
     const { timeFrameGrouping, rollup: rollupper, formatter } = this.props;
     // let manipulated = data;
     const listWithKeys = [
-      ...range.map(l => ({
+      ...range.map((l) => ({
         fake: true,
-        createdAt: moment(l)
-          .startOf(timeFrameGrouping)
-          .format(),
+        createdAt: moment(l).startOf(timeFrameGrouping).format(),
       })),
       ...data,
     ];
 
     const manipulated = rollup(
       listWithKeys,
-      c => {
+      (c) => {
         return manipulator(c, rollupper);
       },
-      c =>
-        moment(c.createdAt)
-          .startOf(timeFrameGrouping)
-          .format(),
+      (c) => moment(c.createdAt).startOf(timeFrameGrouping).format(),
     );
     console.log(manipulated);
 
@@ -115,15 +110,16 @@ export default class SingleArea extends PureComponent<any> {
       chart.cursor.lineX.disabled = true;
       chart.cursor.behavior = 'none';
 
-      chart.numberFormatter.numberFormat = '#.0a';
+      chart.numberFormatter.numberFormat = '#a';
 
       let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
       dateAxis.dataFields.date = 'key';
       // dateAxis.renderer.disabled = true;
       // dateAxis.renderer.grid.template.disabled = true;
-      dateAxis.renderer.grid.template.strokeOpacity = 0.08;
+      dateAxis.renderer.grid.template.strokeOpacity = 0.04;
       dateAxis.renderer.fillOpacity = 0.3;
       dateAxis.cursorTooltipEnabled = false;
+      dateAxis.renderer.fontSize = 12;
 
       // let comparatorDateAxis = chart.xAxes.push(new am4charts.DateAxis());
       // comparatorDateAxis.renderer.opposite = true;
@@ -138,10 +134,11 @@ export default class SingleArea extends PureComponent<any> {
       // valueAxis.renderer.baseGrid.disabled = true;
       // valueAxis.renderer.opposite = true;
       // valueAxis.renderer.grid.template.stroke = am4core.color('#ccc');
-      valueAxis.renderer.grid.template.strokeOpacity = 0.08;
+      valueAxis.renderer.grid.template.strokeOpacity = 0.04;
       valueAxis.renderer.fillOpacity = 0.3;
       valueAxis.cursorTooltipEnabled = false;
       valueAxis.min = 0;
+      valueAxis.renderer.fontSize = 12;
 
       // let comparator = chart.series.push(new am4charts.LineSeries());
       // comparator.dataFields.valueY = 'previousValue';

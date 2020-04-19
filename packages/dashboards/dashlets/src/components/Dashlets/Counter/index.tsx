@@ -1,12 +1,11 @@
 import React, { PureComponent } from 'react';
 import CountUp from 'react-countup';
-import { ArrowDown } from 'react-feather';
 import { format, manipulator } from '../../../utils';
 import Loader from '../../Loader';
 import { CounterProps } from './types';
 
 export default class CounterBlock extends PureComponent<CounterProps> {
-  manipulate = data => {
+  manipulate = (data) => {
     const { rollup } = this.props;
     return manipulator(data, rollup);
   };
@@ -40,15 +39,15 @@ export default class CounterBlock extends PureComponent<CounterProps> {
               start={0}
               end={manipulated}
               decimals={0}
-              formattingFn={value => format(value, formatter)}
+              formattingFn={(value) => format(value, formatter)}
             />
           </h3>
-          <div className="d-flex mt-1 text-danger align-items-center">
+          {/* <div className="d-flex mt-1 text-danger align-items-center">
             <div style={{ display: 'flex', transform: 'rotate(-45deg)' }}>
               <ArrowDown size={16} color="red" className="mr-1 text-danger" />
             </div>
             -300%
-          </div>
+          </div> */}
         </div>
       </div>
     );
