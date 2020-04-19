@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.4.0
+
+### Minor Changes
+
+- 183364b: Rename blocks in dashlets
+
+### Patch Changes
+
+- Updated dependencies [183364b]
+  - @uidu/dashlets@0.3.0
+
 ## 0.3.13
 
 ### Patch Changes
