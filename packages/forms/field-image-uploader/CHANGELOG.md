@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.2.10
+
+### Patch Changes
+
+- b48e5e0: Fix table and field-image-uploader
+
 ## 0.2.9
 
 ### Patch Changes
