@@ -20,7 +20,7 @@ export default class Basic extends Component<any, any> {
   }
 
   componentDidMount() {
-    fetchDonations().then(response =>
+    fetchDonations().then((response) =>
       this.setState({
         rowData: {
           donations: response,
@@ -45,14 +45,14 @@ export default class Basic extends Component<any, any> {
           onLayoutChange: console.log,
         }}
       >
-        {({ renderControls, renderBlocks }) => (
+        {({ renderControls, renderDashlets }) => (
           <>
             <ShellHeader className="border-bottom px-xl-4 px-3 d-flex align-items-center">
               {/* {renderControls({})} */}
               <h5 className="my-0 mr-2">Dashboard</h5>
               <Shuffle
                 active={isEditing}
-                onClick={e => {
+                onClick={(e) => {
                   this.setState({
                     isEditing: !isEditing,
                   });
@@ -64,9 +64,9 @@ export default class Basic extends Component<any, any> {
               <div className="container px-0">
                 <div className="row">
                   <div className="col-12">
-                    {renderBlocks({
+                    {renderDashlets({
                       loaded,
-                      blocks: [
+                      dashlets: [
                         {
                           kind: 'Area',
                           namespace: 'donations',

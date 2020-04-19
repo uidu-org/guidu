@@ -7,7 +7,7 @@ import {
 import { ReactGridLayoutProps } from 'react-grid-layout';
 
 export type DashboardManagerProps = {
-  children: () => any;
+  children: ({ renderControls, renderDashlets }) => any;
   rowData: any;
   defaultTimeFrame: string;
   defaultTimeFrameGrouping: string;

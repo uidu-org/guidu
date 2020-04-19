@@ -9,7 +9,7 @@ export type DashletProps = {
 } & Layout;
 
 export type DashletsProps = {
-  blocks: Array<DashletProps>;
+  dashlets: Array<DashletProps>;
   comparatorData?:
     | {
         [key: string]: Array<any>;

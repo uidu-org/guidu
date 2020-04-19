@@ -14,7 +14,7 @@ export default class Basic extends Component<any> {
   }
 
   componentDidMount() {
-    fetchDonations().then(response =>
+    fetchDonations().then((response) =>
       this.setState({
         rowData: {
           donations: response,
@@ -28,7 +28,7 @@ export default class Basic extends Component<any> {
     return (
       <div className="p-3">
         <Dashlets
-          blocks={[
+          dashlets={[
             {
               kind: 'Geo',
               label: 'Donors by country',

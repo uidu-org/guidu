@@ -4,22 +4,22 @@ import Dashlets from '../../Dashlets';
 
 export default function DashletGroup({
   isCard = true,
-  block,
-  blocks,
+  dashlet,
+  dashlets,
   rowData,
   ...rest
 }) {
   return (
     <div className={`h-100${isCard ? ' card' : ' card border-0'}`}>
-      {block.label && (
+      {dashlet.label && (
         <DashletHeader
-          name={block.label}
-          description={block.description}
+          name={dashlet.label}
+          description={dashlet.description}
           isCard={isCard}
         />
       )}
       <Dashlets
-        blocks={blocks.map(b => ({ ...b, isCard: false }))}
+        dashlets={dashlets.map((b) => ({ ...b, isCard: false }))}
         rowData={rowData}
         {...rest}
       />

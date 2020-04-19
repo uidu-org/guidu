@@ -5,7 +5,7 @@ export default md`
 
   # Dashlets
   Dashlets are dashboard components used to represent and analyze data.
-  Dashlets are imagined either as single analytics blocks (AnalyticsDashlets), that can be edited and filtered according to its type or layout elements (LayoutDashlets), used for arranging blocks and design dashboards.
+  Dashlets are imagined either as single analytics dashlets (AnalyticsDashlets), that can be edited and filtered according to its type or layout elements (LayoutDashlets), used for arranging dashlets and design dashboards.
   It's a super powerful tool.
 
   ## AnalyticsDashlets
@@ -87,7 +87,7 @@ export default md`
         </tr>
         <tr>
           <td>HorizontalRule</td>
-          <td>Adds an hr tag block</td>
+          <td>Adds an hr tag dashlet</td>
         </tr>
         <tr>
           <td>Spacer</td>
@@ -95,11 +95,11 @@ export default md`
         </tr>
         <tr>
           <td>Text</td>
-          <td>Adds an editable text block</td>
+          <td>Adds an editable text dashlet</td>
         </tr>
         <tr>
           <td>VerticalRule</td>
-          <td>Adds a vertical hr tag block</td>
+          <td>Adds a vertical hr tag dashlet</td>
         </tr>
       </tbody>
     </table>
@@ -118,7 +118,7 @@ export default md`
     />
   )}
 
-  You can pass \`data\` attribute to use same components without built-in manipulators. Each block has different data requirements.
+  You can pass \`data\` attribute to use same components without built-in manipulators. Each dashlet has different data requirements.
 
   ${(
     <Example

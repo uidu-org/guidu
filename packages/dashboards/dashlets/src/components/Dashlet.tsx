@@ -46,7 +46,7 @@ const availableGroupers: Array<Groupers> = [
 ];
 
 export default function Dashlet({
-  block,
+  dashlet,
   component: DashletContent,
   rowData,
   showHeader = true,
@@ -72,8 +72,8 @@ export default function Dashlet({
     <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
       {showHeader && (
         <DashletHeader
-          name={block.label}
-          description={block.description}
+          name={dashlet.label}
+          description={dashlet.description}
           isCard={isCard}
         >
           <div className="">
@@ -114,7 +114,7 @@ export default function Dashlet({
       )}
       <DashletContent
         {...rest}
-        {...block}
+        {...dashlet}
         rowData={data}
         timeframe={timeFrame}
         timeFrameGrouping={timeFrameGrouping}

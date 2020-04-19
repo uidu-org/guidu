@@ -5,7 +5,7 @@ import {
   TimeFrameGrouper,
   TimeFrameKeys,
 } from '@uidu/dashboard-controls';
-import { renderBlock } from '@uidu/dashlets';
+import { renderDashlet } from '@uidu/dashlets';
 import React, { useState } from 'react';
 import { Responsive, WidthProvider } from 'react-grid-layout';
 import 'react-grid-layout/css/styles.css';
@@ -54,25 +54,25 @@ export default function DashboardManager({
     convertTimeframeToRange(defaultTimeFrame as TimeFrameKeys),
   );
 
-  const onTimeFrameChange = newTimeFrame => {
+  const onTimeFrameChange = (newTimeFrame) => {
     const groupers = groupersByTimeframe(availableGroupers, newTimeFrame);
     setTimeFrame(newTimeFrame);
     setTimeRange(convertTimeframeToRange(newTimeFrame));
     setTimeFrameGrouping(
-      groupers.map(g => g.key).indexOf(timeFrameGrouping) > 0
+      groupers.map((g) => g.key).indexOf(timeFrameGrouping) > 0
         ? timeFrameGrouping
         : groupers[groupers.length - 1].key,
     );
   };
 
-  const renderBlocks = ({ blocks = [], ...rest }) => {
+  const renderDashlets = ({ dashlets = [], ...rest }) => {
     const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
       timeFrame,
       timeFrameGrouping,
       rowData,
     );
 
-    const layout = blocks.map(({ x, y, w, h, minW, minH }, index) => ({
+    const layout = dashlets.map(({ x, y, w, h, minW, minH }, index) => ({
       i: `${index}`,
       x,
       y,
@@ -118,10 +118,10 @@ export default function DashboardManager({
         // isResizable={false}
         {...gridProps}
       >
-        {blocks.map((block, index) => {
+        {dashlets.map((dashlet, index) => {
           return (
             <div key={`${index}`}>
-              {renderBlock(block, data, {
+              {renderDashlet(dashlet, data, {
                 ...rest,
                 range,
                 comparatorRange: timeFrame != '5Y' ? comparatorRange : {},
@@ -166,6 +166,7 @@ export default function DashboardManager({
   };
   return (children as any)({
     renderControls,
-    renderBlocks,
+    renderBlocks: renderDashlets,
+    renderDashlets,
   });
 }
