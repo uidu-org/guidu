@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.3.1
+
+### Patch Changes
+
+- da65205: small fixes to dashlets
+
 ## 0.3.0
 
 ### Minor Changes
