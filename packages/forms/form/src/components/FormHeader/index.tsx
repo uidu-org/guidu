@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export default function FormHeader({ name, children }) {
+export default function FormHeader({ name, children = null }) {
   return (
     <Wrapper>
       <h5 className="my-0 mr-2">{name}</h5>

@@ -16,7 +16,7 @@ export const StyledStepNumber = styled.div`
 `;
 
 export const StyledStepHeader = styled.div`
-  background-color: white;
+  background-color: var(--body-bg);
   cursor: pointer;
   outline: none;
   text-decoration: none;
@@ -30,7 +30,7 @@ export const StyledStepHeader = styled.div`
 
 export const StyledStepBody = styled.div`
   font-size: 0;
-  background-color: ${colors.N0};
+  background-color: var(--body-bg);
   margin: 0;
   opacity: 0;
   padding-bottom: 1rem;

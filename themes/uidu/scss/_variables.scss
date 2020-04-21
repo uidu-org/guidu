@@ -48,7 +48,12 @@ $social-linkedin: #0077b5;
 $social-twitter: #1da1f2;
 $social-whatsapp: #25d366;
 
+// Body
+$body-bg: rgba(226, 235, 225, 0.05); // #fff;
+$body-color: rgb(76, 86, 106);
+
 $theme-colors: (
+  body-bg: $body-bg,
   primary: $primary,
   calls: $calls,
   campaigns: $campaigns,
@@ -83,6 +88,7 @@ $rfs-base-font-size: 1rem;
 
 // Spacing
 $spacer: 1rem;
+
 $sizes: (
   10: 10%,
   25: 25%,
@@ -91,10 +97,6 @@ $sizes: (
   90: 90%,
   100: 100%,
 );
-
-// Body
-$body-bg: rgba(226, 235, 225, 0.05); // #fff;
-$body-color: rgb(76, 86, 106);
 
 // Links
 

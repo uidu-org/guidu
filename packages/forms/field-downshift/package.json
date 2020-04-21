@@ -21,7 +21,11 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
     "@uidu/dropdown-menu": "^0.1.24",
+    "@uidu/field-counter": "^0.2.3",
+    "@uidu/field-date": "^0.2.5",
+    "@uidu/field-time": "^0.2.2",
     "@uidu/form": "^0.2.3",
+    "@uidu/radio": "^0.4.4",
     "@uidu/shell": "^0.3.0"
   },
   "uidu:src": "index.ts"

@@ -40,7 +40,7 @@ function FieldDate({
       component={(props) => <input {...props} id={id} />}
       ref={element}
       classNames={{
-        container: `DayPickerInput${
+        container: `DayPickerInput d-block${
           containerClassName ? ` ${containerClassName}` : ''
         }`,
         overlayWrapper: `DayPickerInput-OverlayWrapper${

@@ -7,11 +7,12 @@ export default function FormSection({
   children = null,
   isFirst = false,
   isLast = false,
+  hideDescriptionOnMobile = false,
 }) {
   return (
     <Media query={{ maxWidth: 768 }}>
       {(matches) => {
-        if (matches) {
+        if (matches && hideDescriptionOnMobile) {
           return children || null;
         }
         return (
