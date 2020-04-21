@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.3
+
+### Patch Changes
+
+- 6c84023: Some fixes to UI
+
 ## 0.2.2
 
 ### Patch Changes

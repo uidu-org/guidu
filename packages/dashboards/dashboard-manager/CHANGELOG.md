@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.4.1
+
+### Patch Changes
+
+- 6c84023: Some fixes to UI
+
 ## 0.4.0
 
 ### Minor Changes

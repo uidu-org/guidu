@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 0.2.6
+
+### Patch Changes
+
+- 6c84023: Some fixes to UI
+
 ## 0.2.5
 
 ### Patch Changes
