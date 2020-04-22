@@ -1,5 +1,11 @@
 # @uidu/donate
 
+## 0.2.4
+
+### Patch Changes
+
+- e87337a: small fixes in uid
+
 ## 0.2.3
 
 ### Patch Changes
