@@ -152,6 +152,7 @@ export default class Providers extends PureComponent<any, any> {
             autoHeight: true,
             slidesPerView: 1,
             allowTouchMove: false,
+            simulateTouch: false,
             initialSlide: this.activeSlideByRoute(location), // step ? this.slideNames().indexOf(step) : 0,
           }}
           ref={this.slider}
