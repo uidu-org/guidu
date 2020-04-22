@@ -1,5 +1,11 @@
 # @uidu/stepper
 
+## 0.1.24
+
+### Patch Changes
+
+- 6c84023: Some fixes to UI
+
 ## 0.1.23
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/downshift
 
+## 0.3.5
+
+### Patch Changes
+
+- 6c84023: Some fixes to UI
+
 ## 0.3.4
 
 ### Patch Changes
