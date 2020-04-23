@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.2.8
+
+### Patch Changes
+
+- e87337a: small fixes in uid
+
 ## 0.2.7
 
 ### Patch Changes
