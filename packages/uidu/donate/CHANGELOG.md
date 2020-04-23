@@ -1,5 +1,11 @@
 # @uidu/donate
 
+## 0.2.5
+
+### Patch Changes
+
+- 8967865: Variable payment intent
+
 ## 0.2.4
 
 ### Patch Changes
