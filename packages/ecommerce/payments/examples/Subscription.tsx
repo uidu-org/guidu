@@ -5,21 +5,13 @@ import { PayWithBank, PayWithCard, Subscription } from '../src';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
-const createPaymentIntent = (amount: number) => {
-  return axios
-    .post('https://uidu.local:8443/payment-intents', {
-      amount,
-    })
-    .then(res => res.data);
-};
-
-const createSubscription = payload => {
+const createSubscription = (payload) => {
   return axios
     .post('https://uidu.local:8443/create-customer', {
       payment_method_id: payload.paymentMethod.id,
       plan: 1,
     })
-    .then(res => res.data);
+    .then((res) => res.data);
 };
 
 export default function SubscriptionExample({}) {
@@ -34,12 +26,12 @@ export default function SubscriptionExample({}) {
           methods
         </p>
         <ul className="nav nav-pills mb-3">
-          {['card', 'bank_account'].map(p => (
+          {['card', 'bank_account'].map((p) => (
             <li className="nav-item" key={p}>
               <a
                 href="#"
                 className={`nav-link${provider === p ? ' active' : ''}`}
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   setProvider(p);
                 }}
@@ -54,13 +46,13 @@ export default function SubscriptionExample({}) {
           label="Test"
           amount={3000}
           provider={{ id: provider }}
-          createSubscription={payload => createSubscription(payload)}
-          onSuccess={payload => {
+          createSubscription={(payload) => createSubscription(payload)}
+          onSuccess={(payload) => {
             console.log(payload);
             window.alert('success');
           }}
         >
-          {paymentProps => {
+          {(paymentProps) => {
             if (provider === 'bank_account') {
               return (
                 <PayWithBank

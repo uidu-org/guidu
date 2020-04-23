@@ -18,6 +18,7 @@ const defaultSwiperOptions = (id: string): Partial<SwiperOptions> => ({
   initialSlide: 0,
   slidesPerView: 1,
   keyboard: true,
+  simulateTouch: false,
   navigation: {
     nextEl: `#${id}-button-next`,
     prevEl: `#${id}-button-prev`,

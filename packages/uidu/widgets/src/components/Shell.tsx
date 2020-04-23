@@ -74,7 +74,6 @@ function Shell({ forwardedRef, baseUrl, slides, scope, embedded }: ShellProps) {
           options={{
             slidesPerView: 1,
             allowTouchMove: false,
-            // uncomment simulateTouch to make selects work
             simulateTouch: false,
             autoHeight: true,
 
