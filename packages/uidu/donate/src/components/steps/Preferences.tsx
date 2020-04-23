@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 export default function Preferences({ handleSubmit, currentMember, donation }) {
   const [isAnonymous, setIsAnonymous] = useState(false);
 
-  const anonymize = e => {
+  const anonymize = (e) => {
     e.preventDefault();
     setIsAnonymous(!isAnonymous);
   };
@@ -30,7 +30,7 @@ export default function Preferences({ handleSubmit, currentMember, donation }) {
         label="Lascia un messaggio (opzionale)"
         name="body"
         className="form-control form-control-autosize"
-        value={donation.body}
+        value={donation?.body}
       />
       <div className="form-group">
         <label

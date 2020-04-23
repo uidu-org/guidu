@@ -15,7 +15,7 @@ export default function Pay({
   const [paymentIntent, setPaymentIntent] = useState(null);
 
   useEffect(() => {
-    createPaymentIntent(3000).then(setPaymentIntent);
+    createPaymentIntent(donation?.amount).then(setPaymentIntent);
     return () => {
       setPaymentIntent(null);
     };

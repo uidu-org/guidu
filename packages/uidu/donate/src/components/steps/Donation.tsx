@@ -8,7 +8,7 @@ import { Check } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { DonationProps } from '../../types';
 
-const Menu = props => <div className="card-deck" {...props} />;
+const Menu = (props) => <div className="card-deck" {...props} />;
 
 function Item({
   item,
@@ -28,36 +28,36 @@ function Item({
       className={classNames('card mb-3', {
         [`border-${scope}`]: isHighlighted || isSelected,
       })}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
       {...rest}
     >
-      <div className="card-header position-absolute w-100 bg-transparent border-0 text-right p-2">
-        <span
-          className={classNames('', {
-            border: !isSelected,
-            [`bg-${scope} text-white`]: isSelected,
-          })}
-          style={{
-            height: 20,
-            width: 20,
-            borderRadius: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginLeft: 'auto',
-          }}
-        >
-          {isSelected && <Check size={16} />}
-        </span>
-      </div>
-      <div className="card-body p-3 p-md-4">
+      <span
+        className={classNames('', {
+          [`bg-${scope} text-white`]: isSelected,
+        })}
+        style={{
+          position: 'absolute',
+          height: 20,
+          width: 20,
+          borderRadius: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginLeft: 'auto',
+          right: -8,
+          top: -8,
+        }}
+      >
+        {isSelected && <Check size={16} />}
+      </span>
+      <div className="card-body p-3 py-md-4">
         <div className="d-flex align-items-center">
           {item.before && <div className="mr-3">{item.before}</div>}
-          <div>
-            <h4 className="m-0">{item.amount} €</h4>
+          <div className="text-center flex-grow-1">
+            <h5 className="m-0">{item.amount} €</h5>
             <h6 className="m-0">{item.name}</h6>
             {item.description && (
               <p className="mb-0 mt-1 text-muted">{item.description}</p>
@@ -162,7 +162,7 @@ export default function Donation({
             setSelectedAmount(option);
           }}
           value={customAmount ? null : selectedAmount?.amout}
-          option={foo => <Item {...foo} />}
+          option={(foo) => <Item {...foo} />}
           menu={Menu}
           required={!customAmount}
         />
@@ -170,9 +170,11 @@ export default function Donation({
           defaultMessage="Or choose your donation amount"
           id="guidu.donate.amount.custom"
         >
-          {placeholder => (
+          {(placeholder) => (
             <FieldText
-              addonBefore={<span className="input-group-text">{currency}</span>}
+              addonBefore={
+                <span className="input-group-text bg-white">{currency}</span>
+              }
               type="number"
               placeholder={placeholder}
               name="amount"
