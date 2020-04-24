@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.2.9
+
+### Patch Changes
+
+- c2e48ac: Fix devise providers and locale
+
 ## 0.2.8
 
 ### Patch Changes
