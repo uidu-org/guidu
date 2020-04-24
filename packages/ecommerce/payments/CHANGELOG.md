@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 0.2.8
+
+### Patch Changes
+
+- d3ba387: Do not simulate touch on slider
+- Updated dependencies [d3ba387]
+  - @uidu/slider@1.2.0
+
 ## 0.2.7
 
 ### Patch Changes

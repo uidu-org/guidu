@@ -1,5 +1,13 @@
 # @uidu/widgets
 
+## 0.2.5
+
+### Patch Changes
+
+- d3ba387: Do not simulate touch on slider
+- Updated dependencies [d3ba387]
+  - @uidu/slider@1.2.0
+
 ## 0.2.4
 
 ### Patch Changes

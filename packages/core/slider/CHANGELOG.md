@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.2.0
+
+### Minor Changes
+
+- d3ba387: Do not simulate touch on slider
+
 ## 1.1.4
 
 ### Patch Changes
