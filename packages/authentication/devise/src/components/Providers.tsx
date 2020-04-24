@@ -9,8 +9,6 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import Swiper from 'swiper';
 import DeviseForm from './DeviseForm';
-import FacebookLoginButton from './oAuth/FacebookLoginButton';
-import GoogleLoginButton from './oAuth/GoogleLoginButton';
 
 export const messages = defineMessages({
   privacy_intro: {
@@ -57,11 +55,20 @@ export const messages = defineMessages({
     defaultMessage: 'Remember me for next sessions',
     description: 'simple_sessions_email_label',
   },
+  sessions_forgot_password: {
+    id: 'guidu.devise.sessions_forgot_password',
+    defaultMessage: 'Forgot password?',
+    description: 'sessions_forgot_password',
+  },
 });
 
 export default class Providers extends PureComponent<any, any> {
   private slider: React.RefObject<Swiper> = React.createRef();
   private passwordField = React.createRef();
+
+  static defaultProps = {
+    providers: [],
+  };
 
   constructor(props) {
     super(props);
@@ -139,6 +146,7 @@ export default class Providers extends PureComponent<any, any> {
       onAuthSignInError,
       history,
       location,
+      providers,
     } = this.props;
 
     const { currentUser, exist } = this.state;
@@ -167,47 +175,28 @@ export default class Providers extends PureComponent<any, any> {
                   <FormattedMessage {...messages[`${scope}_description`]} />
                 </p>
               </div>
-              <FacebookLoginButton
-                onCompleted={(auth) =>
-                  authSignIn(auth, 'facebook').then((response) => {
-                    if (response.currentUser) {
-                      //
-                      return null;
+              {providers.map(
+                ({ name, label, component: Component, ...rest }) => (
+                  <Component
+                    onCompleted={(auth) =>
+                      authSignIn(auth, name).then((response) => {
+                        if (response.currentUser) {
+                          return null;
+                        }
+                        return history.push(`${routes.registrations}/email`);
+                      })
                     }
-                    return history.push(`${routes.registrations}/email`);
-                  })
-                }
-                onError={onAuthSignInError}
-                label={
-                  <FormattedMessage
-                    {...messages[`${scope}_with_provider`]}
-                    values={{
-                      provider: (
-                        <span className="font-weight-bold">Facebook</span>
-                      ),
-                    }}
+                    onError={onAuthSignInError}
+                    label={label}
+                    {...rest}
                   />
-                }
-              />
-              <GoogleLoginButton
-                onCompleted={(auth) =>
-                  authSignIn(auth, 'google').then(onAuthSignIn)
-                }
-                onError={onAuthSignInError}
-                label={
-                  <FormattedMessage
-                    {...messages[`${scope}_with_provider`]}
-                    values={{
-                      provider: (
-                        <span className="font-weight-bold">Google</span>
-                      ),
-                    }}
-                  />
-                }
-              />
-              <h6 className="small text-muted text-uppercase my-4 text-center">
-                Oppure
-              </h6>
+                ),
+              )}
+              {providers.length > 0 && (
+                <h6 className="small text-muted text-uppercase my-4 text-center">
+                  Oppure
+                </h6>
+              )}
               <Form
                 handleSubmit={this.handleSubmit}
                 footerRenderer={({ canSubmit, loading }) => (
@@ -251,25 +240,33 @@ export default class Providers extends PureComponent<any, any> {
                 >
                   {exist && (
                     <>
-                      <FieldPassword
-                        measurePasswordStrength={false}
-                        autoComplete="current-password"
-                        label="Inserisci la tua password"
-                        name="user[password]"
-                        type="password"
-                        id="new-password"
-                        validations="minLength:8"
-                        required
-                        help={
+                      <div className="form-group">
+                        <label
+                          htmlFor="new-password"
+                          className="d-flex align-items-center justify-content-between"
+                        >
+                          Inserisci la tua password
                           <Link
                             to={`${routes.passwords}?email=${encodeURIComponent(
                               currentUser.email,
                             )}`}
                           >
-                            Non ricordi la password
+                            <FormattedMessage
+                              {...messages.sessions_forgot_password}
+                            />
                           </Link>
-                        }
-                      />
+                        </label>
+                        <FieldPassword
+                          layout="elementOnly"
+                          measurePasswordStrength={false}
+                          autoComplete="current-password"
+                          name="user[password]"
+                          type="password"
+                          id="new-password"
+                          validations="minLength:8"
+                          required
+                        />
+                      </div>
                       <div className="form-group">
                         <Checkbox
                           layout="elementOnly"

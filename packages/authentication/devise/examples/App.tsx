@@ -5,7 +5,12 @@ import * as React from 'react';
 import { FacebookProvider } from 'react-facebook';
 import { IntlProvider } from 'react-intl';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Devise, { DeviseWrapper, userDataFromIdentity } from '../src';
+import Devise, {
+  DeviseWrapper,
+  FacebookLoginButton,
+  GoogleLoginButton,
+  userDataFromIdentity,
+} from '../src';
 
 export default function App() {
   const [identity, setIdentity] = React.useState(null);
@@ -22,7 +27,7 @@ export default function App() {
         <Router>
           <Route
             path="/"
-            render={routeProps => (
+            render={(routeProps) => (
               <DeviseWrapper
                 header={
                   <div className="d-flex justify-content-center w-100 mb-4">
@@ -80,8 +85,29 @@ export default function App() {
                 }
               >
                 <Devise
+                  providers={[
+                    {
+                      name: 'facebook',
+                      label: (
+                        <span>
+                          Login with <b>Facebook</b>
+                        </span>
+                      ),
+                      component: FacebookLoginButton,
+                    },
+                    {
+                      name: 'google',
+                      label: (
+                        <span>
+                          Login with <b>Google</b>
+                        </span>
+                      ),
+                      component: GoogleLoginButton,
+                      clientId: 'foo',
+                    },
+                  ]}
                   currentIdentity={identity}
-                  checkExistence={email => {
+                  checkExistence={(email) => {
                     return new Promise((resolve, reject) => {
                       let wait = setTimeout(() => {
                         if (email === 'andrea.vanini@uidu.org') {
@@ -110,7 +136,7 @@ export default function App() {
                       }, 400);
                     });
                   }}
-                  signUp={model => {
+                  signUp={(model) => {
                     // if needed use recaptcha here
                     return new Promise((resolve, reject) => {
                       let wait = setTimeout(() => {
@@ -121,9 +147,11 @@ export default function App() {
                       }, 400);
                     });
                   }}
-                  recoverPassword={model => Promise.resolve(console.log(model))}
-                  resetPassword={model => Promise.resolve(console.log(model))}
-                  signIn={model => {
+                  recoverPassword={(model) =>
+                    Promise.resolve(console.log(model))
+                  }
+                  resetPassword={(model) => Promise.resolve(console.log(model))}
+                  signIn={(model) => {
                     return new Promise((resolve, reject) => {
                       let wait = setTimeout(() => {
                         clearTimeout(wait);

@@ -1,8 +1,9 @@
 import FieldPassword from '@uidu/field-password';
 import FieldText from '@uidu/field-text';
-import { Form, FormFooter, FormSubmit } from '@uidu/form';
+import { Form, FormSubmit } from '@uidu/form';
 import queryString from 'query-string';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import { ArrowLeft } from 'react-feather';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
@@ -34,8 +35,8 @@ export const messages = defineMessages({
   },
 });
 
-export default class PasswordReset extends Component<any> {
-  handleSubmit = model => {
+export default class PasswordReset extends PureComponent<any> {
+  handleSubmit = (model) => {
     const { resetPassword, onResetPassword } = this.props;
     return resetPassword(model).then(onResetPassword);
   };
@@ -49,12 +50,12 @@ export default class PasswordReset extends Component<any> {
         : '';
 
     return (
-      <Form
-        handleSubmit={this.handleSubmit}
-        // submitted={false}
-        footerRenderer={({ canSubmit, loading }) => (
-          <>
-            <FormFooter className="w-100">
+      <div className="p-3">
+        <Form
+          handleSubmit={this.handleSubmit}
+          // submitted={false}
+          footerRenderer={({ canSubmit, loading }) => (
+            <div className="d-flex align-items-center justify-content-between">
               <FormSubmit
                 className="btn-primary w-100"
                 label={
@@ -63,39 +64,39 @@ export default class PasswordReset extends Component<any> {
                 loading={loading}
                 canSubmit={canSubmit}
               />
-            </FormFooter>
-            <Link
-              to={routes.sessions}
-              className="btn btn-sm shadow-none d-flex align-items-center justify-content-center mt-3"
-            >
-              <FormattedMessage {...messages.password_reset_secondary_cta} />
+            </div>
+          )}
+        >
+          <div className="mb-4">
+            <Link to={routes.sessions}>
+              <ArrowLeft className="mr-2" size={18} />
+              Indietro
             </Link>
-          </>
-        )}
-      >
-        <div className="text-center mb-4">
-          <h3>
-            <FormattedMessage {...messages.password_reset_title} />
-          </h3>
-          <p className="mb-0">
-            <FormattedMessage {...messages.password_reset_description} />
-          </p>
-        </div>
-        <FieldText
-          type="hidden"
-          name="user[reset_password_token]"
-          value={token}
-          required
-        />
-        <FieldPassword
-          type="password"
-          label={
-            <FormattedMessage {...messages.password_reset_password_label} />
-          }
-          name="user[password]"
-          required
-        />
-      </Form>
+          </div>
+          <div className="text-center mb-4">
+            <h3>
+              <FormattedMessage {...messages.password_reset_title} />
+            </h3>
+            <p className="mb-0">
+              <FormattedMessage {...messages.password_reset_description} />
+            </p>
+          </div>
+          <FieldText
+            type="hidden"
+            name="user[reset_password_token]"
+            value={token}
+            required
+          />
+          <FieldPassword
+            type="password"
+            label={
+              <FormattedMessage {...messages.password_reset_password_label} />
+            }
+            name="user[password]"
+            required
+          />
+        </Form>
+      </div>
     );
   }
 }

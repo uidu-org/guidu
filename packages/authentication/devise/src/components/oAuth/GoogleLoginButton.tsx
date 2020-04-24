@@ -1,9 +1,9 @@
 import React from 'react';
 import { GoogleLogin } from 'react-google-login';
 
-const GoogleLoginButton = ({ label, onCompleted, onError }) => (
+const GoogleLoginButton = ({ clientId, label, onCompleted, onError }) => (
   <GoogleLogin
-    clientId="976719939044-tal6qqajsfn194olqge25308pnfvfbjg.apps.googleusercontent.com"
+    clientId={clientId}
     onSuccess={onCompleted}
     onFailure={onError}
     render={({ onClick }) => (

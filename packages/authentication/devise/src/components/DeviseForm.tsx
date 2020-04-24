@@ -66,6 +66,11 @@ export const messages = defineMessages({
     defaultMessage: 'email_registrations_password_description',
     description: 'email_registrations_password_description',
   },
+  email_registrations_email_cta: {
+    id: 'guidu.devise.email_registrations_email_cta',
+    defaultMessage: 'Sign up',
+    description: 'email_registrations_email_cta',
+  },
 });
 
 export default function DeviseForm({
@@ -129,7 +134,11 @@ export default function DeviseForm({
               className="btn-primary btn-block"
               canSubmit={canSubmit}
               loading={loading}
-              label={'utils.actions.sign_in'}
+              label={
+                <FormattedMessage
+                  {...messages[`email_${scope}_${step || 'email'}_cta`]}
+                />
+              }
             />
           </div>,
         ]}

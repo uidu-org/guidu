@@ -1,8 +1,15 @@
 import { RouteComponentProps } from 'react-router-dom';
 
+export type Provider = {
+  name: string;
+  label: React.ReactNode | string;
+  component: React.FC<any>;
+  clientId?: string;
+};
+
 export type DeviseProps = {
   children: any;
-  providers?: Array<any>;
+  providers?: Array<Provider>;
   routes: {
     registrations: string;
     sessions: string;
