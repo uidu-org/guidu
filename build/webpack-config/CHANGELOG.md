@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.63
+
+### Patch Changes
+
+- bbbb87e: Small ui fixes
+
 ## 0.1.62
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.108
+
+### Patch Changes
+
+- bbbb87e: Small ui fixes
+
 ## 0.1.107
 
 ### Patch Changes
