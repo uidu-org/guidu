@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Popper as ReactPopper,
   PopperChildrenProps,
-  PopperProps,
+  StrictModifier,
 } from 'react-popper';
 import { Placement } from './types';
 
@@ -21,7 +21,7 @@ export interface Props {
   /** Replacement reference element to position popper relative to */
   referenceElement?: HTMLElement;
   /** Additional modifiers and modifier overwrites */
-  modifiers?: PopperProps['modifiers'];
+  modifiers?: StrictModifier[];
 }
 
 type Position = 'top' | 'right' | 'bottom' | 'left';
@@ -43,47 +43,43 @@ export class Popper extends React.Component<Props, State> {
     placement: 'bottom-start',
   };
 
-  getModifiers = memoizeOne(
-    (placement: Placement): PopperProps['modifiers'] => {
-      const flipBehavior = getFlipBehavior(placement.split('-')[0]);
-      const modifiers: PopperProps['modifiers'] = [
-        {
-          name: 'flip',
-          enabled: true,
-          options: {
-            behavior: flipBehavior,
-            boundariesElement: 'viewport',
-          },
+  getModifiers = memoizeOne((placement: Placement): StrictModifier[] => {
+    const flipBehavior = getFlipBehavior(placement.split('-')[0]);
+    const modifiers: StrictModifier[] = [
+      {
+        name: 'flip',
+        enabled: true,
+        options: {
+          // flipVariations: flipBehavior,
+          // rootBoundary: 'viewport',
         },
-        { name: 'hide', enabled: true },
-        {
-          name: 'offset',
-          enabled: true,
-          options: { offset: this.props.offset },
+      },
+      { name: 'hide', enabled: true },
+      {
+        name: 'offset',
+        enabled: true,
+        options: { offset: this.props.offset },
+      },
+      {
+        name: 'preventOverflow',
+        enabled: true,
+        options: {
+          // escapeWithReference: false,
+          // boundariesElement: 'window',
         },
-        {
-          name: 'preventOverflow',
-          enabled: true,
-          options: {
-            escapeWithReference: false,
-            boundariesElement: 'window',
-          },
-        },
-      ];
+      },
+    ];
 
-      if (this.props.modifiers) {
-        return { ...modifiers, ...this.props.modifiers };
-      }
+    if (this.props.modifiers) {
+      return { ...modifiers, ...this.props.modifiers };
+    }
 
-      return modifiers;
-    },
-  );
+    return modifiers;
+  });
 
   render() {
     const { placement, children, referenceElement } = this.props;
-    const modifiers: PopperProps['modifiers'] = this.getModifiers(
-      this.props.placement,
-    );
+    const modifiers: StrictModifier[] = this.getModifiers(this.props.placement);
 
     return (
       <ReactPopper

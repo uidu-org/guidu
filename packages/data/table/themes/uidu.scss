@@ -1,6 +1,6 @@
-$font-family: 'Avenir' !default; // $font-family-sans-serif;
-$font-size: 1rem !default; // $font-size-base;
-$secondary-font-size: 14px !default; // $font-size-base;
+$font-family: 'Muli' !default; // $font-family-sans-serif;
+$font-size: 0.9375rem !default; // $font-size-base;
+$secondary-font-size: 0.875rem !default; // $font-size-base;
 $foreground-color: 'inherit' !default; // $body-color;
 $border-color: #f2f2f3 !default; // $border-color;
 $light: #f8f9fa !default;
@@ -203,7 +203,7 @@ $scrolled-box-shadow: -3px 0 4px 7px rgba(0, 0, 0, 0.03);
   .ag-cell {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    font-size: 1rem;
+    font-size: $font-size;
     // align-items: center;
     // background-color: white;
     border: 1px solid transparent;
@@ -220,7 +220,7 @@ $scrolled-box-shadow: -3px 0 4px 7px rgba(0, 0, 0, 0.03);
     color: rgb(76, 86, 106);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    font-size: 14px;
+    font-size: $secondary-font-size;
     align-items: center;
     // background-color: rgba($color: $border-color, $alpha: 0.4);
     // border-right: 1px solid $border-color;
@@ -459,7 +459,7 @@ $scrolled-box-shadow: -3px 0 4px 7px rgba(0, 0, 0, 0.03);
   .ag-status-bar {
     padding: 0.5rem 1.5rem;
     border-top: 1px solid $border-color;
-    font-size: 14px;
+    font-size: $secondary-font-size;
 
     .ag-status-bar-right {
       .ag-name-value {

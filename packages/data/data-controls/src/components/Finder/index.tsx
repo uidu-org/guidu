@@ -10,7 +10,7 @@ export default function Finder({ onChange }: FinderProps) {
   const input: React.RefObject<HTMLInputElement> = useRef();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       // inside click
       return;
@@ -47,7 +47,7 @@ export default function Finder({ onChange }: FinderProps) {
         <Tooltip content={'Search in view'} position="bottom">
           <Trigger
             activeBg="#fee2d5"
-            className="btn mr-n3"
+            className="btn mr-2"
             active={false}
             onClick={() => {
               setIsDialogOpen(!isDialogOpen);
