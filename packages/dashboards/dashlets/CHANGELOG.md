@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 0.4.0
+
+### Minor Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
+### Patch Changes
+
+- Updated dependencies [5cfbe51]
+  - @uidu/dashlet-controls@0.2.0
+
 ## 0.3.1
 
 ### Patch Changes

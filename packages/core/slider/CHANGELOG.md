@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.2.1
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
 ## 1.2.0
 
 ### Minor Changes

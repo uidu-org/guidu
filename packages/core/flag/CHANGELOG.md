@@ -1,5 +1,11 @@
 # @uidu/flag
 
+## 0.1.13
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
 ## 0.1.12
 
 ### Patch Changes

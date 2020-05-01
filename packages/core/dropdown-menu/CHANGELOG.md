@@ -1,5 +1,13 @@
 # @uidu/dropdown-menu
 
+## 0.1.25
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+- Updated dependencies [5cfbe51]
+  - @uidu/item@0.1.27
+
 ## 0.1.24
 
 ### Patch Changes

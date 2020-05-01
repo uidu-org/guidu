@@ -1,5 +1,11 @@
 # @uidu/task-decision
 
+## 0.1.16
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
 ## 0.1.15
 
 ### Patch Changes
