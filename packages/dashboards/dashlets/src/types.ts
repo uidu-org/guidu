@@ -1,21 +1,38 @@
 import { Layout } from 'react-grid-layout';
 
+export type DashletFilter = {
+  dimension: string;
+  operator: string;
+  values: string[];
+};
+
+export type DashletTimeDimension = {
+  dimension: string;
+  dateRange?: string | string[];
+  granularity?: string;
+};
+
 export type DashletProps = {
   kind: string;
-  namespace: string;
-  label: string;
-  rollup?: Array<any>;
-  formatter?: string;
-} & Layout;
+  label?: string;
+  dashlets?: DashletProps[];
+  itemBefore?: React.ReactNode;
+  query?: {
+    measures?: string[];
+    dimensions?: string[];
+    segments?: string[];
+    filters?: DashletFilter[];
+    timeDimensions?: DashletTimeDimension[];
+    limit?: number;
+    offset?: number;
+    order?: {
+      [k: string]: 'asc' | 'desc';
+    };
+    timezone?: string;
+  };
+  layout: Omit<Layout, 'i'>;
+};
 
 export type DashletsProps = {
-  dashlets: Array<DashletProps>;
-  comparatorData?:
-    | {
-        [key: string]: Array<any>;
-      }
-    | {};
-  rowData: {
-    [key: string]: Array<any>;
-  };
+  dashlets: DashletProps[];
 };

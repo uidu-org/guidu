@@ -18,7 +18,7 @@ const LoadableHorizontalRule = loadable(() =>
 );
 const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
-export const renderDashlet = ({ kind, ...dashlet }, rowData, rest) => {
+export const renderDashlet = ({ kind, ...dashlet }) => {
   let content = null;
   let showHeader = true;
 
@@ -55,11 +55,9 @@ export const renderDashlet = ({ kind, ...dashlet }, rowData, rest) => {
     case 'DashletGroup':
       return (
         <DashletGroup
-          rowData={rowData}
           dashlet={dashlet}
           dashlets={dashlet.dashlets}
           isCard={dashlet.isCard}
-          {...rest}
         />
       );
     case 'HorizontalRule':
@@ -70,21 +68,17 @@ export const renderDashlet = ({ kind, ...dashlet }, rowData, rest) => {
 
   return (
     <Dashlet
-      rowData={rowData}
       dashlet={dashlet}
       isCard={dashlet.isCard}
       component={content}
       showHeader={showHeader}
-      {...rest}
     />
   );
 };
 
 export default class Dashlets extends PureComponent<DashletsProps> {
   render() {
-    const { dashlets, rowData, ...rest } = this.props;
-    return dashlets.map((dashlet) =>
-      renderDashlet(dashlet, rowData, rest as any),
-    );
+    const { dashlets } = this.props;
+    return dashlets.map((dashlet) => renderDashlet(dashlet));
   }
 }

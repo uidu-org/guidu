@@ -13,7 +13,7 @@
     "@uidu/field-base": "^0.2.3",
     "@uidu/theme": "^0.2.4",
     "react-switch": "^5.0.0",
-    "uuid": "^7.0.0"
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.58",

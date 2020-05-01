@@ -1,15 +1,14 @@
 import * as am4charts from '@amcharts/amcharts4/charts';
 import * as am4core from '@amcharts/amcharts4/core';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
-import { rollup } from 'd3-array';
-import moment from 'moment';
+import am4themes_material from '@amcharts/amcharts4/themes/material';
+import am4themes_patterns from '@amcharts/amcharts4/themes/patterns';
 import React, { PureComponent } from 'react';
 import { v1 as uuid } from 'uuid';
-import { format, manipulator } from '../../../utils';
-import Loader from '../../Loader';
-import { labelByTimeframeGroup } from './Tooltip';
 
 am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_patterns);
+am4core.useTheme(am4themes_material);
 am4core.options.commercialLicense = true;
 
 export default class SingleArea extends PureComponent<any> {
@@ -21,105 +20,98 @@ export default class SingleArea extends PureComponent<any> {
     this.id = uuid();
   }
 
-  manipulate = (data, { range }) => {
-    const { timeFrameGrouping, rollup: rollupper, formatter } = this.props;
-    // let manipulated = data;
-    const listWithKeys = [
-      ...range.map((l) => ({
-        fake: true,
-        createdAt: moment(l).startOf(timeFrameGrouping).format(),
-      })),
-      ...data,
-    ];
+  // manipulate = (data, { range }) => {
+  //   const { timeFrameGrouping, rollup: rollupper, formatter } = this.props;
+  //   // let manipulated = data;
+  //   const listWithKeys = [
+  //     ...range.map((l) => ({
+  //       fake: true,
+  //       createdAt: moment(l).startOf(timeFrameGrouping).format(),
+  //     })),
+  //     ...data,
+  //   ];
 
-    const manipulated = rollup(
-      listWithKeys,
-      (c) => {
-        return manipulator(c, rollupper);
-      },
-      (c) => moment(c.createdAt).startOf(timeFrameGrouping).format(),
-    );
-    console.log(manipulated);
+  //   const manipulated = rollup(
+  //     listWithKeys,
+  //     (c) => {
+  //       return manipulator(c, rollupper);
+  //     },
+  //     (c) => moment(c.createdAt).startOf(timeFrameGrouping).format(),
+  //   );
 
-    return Array.from(manipulated, ([key, value]) => ({
-      key,
-      value,
-    }));
-  };
+  //   return Array.from(manipulated, ([key, value]) => ({
+  //     key,
+  //     value,
+  //   }));
+  // };
 
   componentDidMount() {
     this.drawChart();
   }
 
   componentDidUpdate() {
+    console.log(this.props);
     this.drawChart();
   }
 
   componentWillUnmount() {
+    console.log('unmount?');
     if (this.chart) {
       this.chart.dispose();
     }
   }
 
   drawChart = () => {
-    const {
-      rowData,
-      loaded,
-      comparatorData,
-      comparatorRange,
-      namespace,
-      range,
-    } = this.props;
+    const { resultSet } = this.props;
     // const { showPrevious } = this.state;
 
-    if (loaded) {
-      const manipulated = this.manipulate(rowData[namespace], {
-        range,
-      });
-      let data = manipulated;
-      if (comparatorData[namespace]) {
-        const manipulatedPrevious = this.manipulate(comparatorData[namespace], {
-          range: comparatorRange,
-        });
-        data = manipulated.reduce((acc, item, index) => {
-          acc.push({
-            ...item,
-            previousKey: manipulatedPrevious[index].key,
-            previousValue: manipulatedPrevious[index].value,
-          });
-          return acc;
-        }, []);
-      }
+    if (resultSet) {
+      // if (comparatorData[namespace]) {
+      //   const manipulatedPrevious = this.manipulate(comparatorData[namespace], {
+      //     range: comparatorRange,
+      //   });
+      //   data = manipulated.reduce((acc, item, index) => {
+      //     acc.push({
+      //       ...item,
+      //       previousKey: manipulatedPrevious[index].key,
+      //       previousValue: manipulatedPrevious[index].value,
+      //     });
+      //     return acc;
+      //   }, []);
+      // }
 
-      this.getChart().data = data;
+      this.getChart().data = resultSet.chartPivot();
     }
   };
 
   getChart = () => {
-    const { formatter, rowData, name, timeFrameGrouping, color } = this.props;
-    console.log(rowData);
+    const { name, color, resultSet } = this.props;
 
     if (!this.chart) {
       const chart = am4core.create(this.id, am4charts.XYChart);
       chart.paddingBottom = 24;
       chart.paddingLeft = 24;
       chart.paddingRight = 24;
-      chart.paddingTop = 32;
+      chart.paddingTop = 24;
       chart.cursor = new am4charts.XYCursor();
       chart.cursor.lineY.disabled = true;
       chart.cursor.lineX.disabled = true;
-      chart.cursor.behavior = 'none';
+      // chart.cursor.behavior = 'none';
+
+      const legend = (chart.legend = new am4charts.Legend());
+      legend.labels.template.fillOpacity = 0.3;
+      legend.labels.template.fontSize = 14;
 
       chart.numberFormatter.numberFormat = '#a';
 
       let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-      dateAxis.dataFields.date = 'key';
+      dateAxis.dataFields.date = 'category';
       // dateAxis.renderer.disabled = true;
       // dateAxis.renderer.grid.template.disabled = true;
       dateAxis.renderer.grid.template.strokeOpacity = 0.04;
       dateAxis.renderer.fillOpacity = 0.3;
       dateAxis.cursorTooltipEnabled = false;
-      dateAxis.renderer.fontSize = 12;
+      dateAxis.renderer.fontSize = 14;
 
       // let comparatorDateAxis = chart.xAxes.push(new am4charts.DateAxis());
       // comparatorDateAxis.renderer.opposite = true;
@@ -138,7 +130,7 @@ export default class SingleArea extends PureComponent<any> {
       valueAxis.renderer.fillOpacity = 0.3;
       valueAxis.cursorTooltipEnabled = false;
       valueAxis.min = 0;
-      valueAxis.renderer.fontSize = 12;
+      valueAxis.renderer.fontSize = 14;
 
       // let comparator = chart.series.push(new am4charts.LineSeries());
       // comparator.dataFields.valueY = 'previousValue';
@@ -152,62 +144,37 @@ export default class SingleArea extends PureComponent<any> {
       // comparator.xAxis = comparatorDateAxis;
       // comparator.tooltipText = '{name}: [bold]{valueY}[/]';
 
-      const series = chart.series.push(new am4charts.LineSeries());
-      series.dataFields.valueY = 'value';
-      series.dataFields.dateX = 'key';
-      series.fill = am4core.color(color);
-      series.stroke = am4core.color(color);
-      series.strokeWidth = 1;
-      series.fillOpacity = 0.6;
-      series.tensionX = 0.8;
-      // series.columns.template.column.cornerRadius(4, 4, 0, 0);
-      series.name = name;
-      series.tooltipText = `{dateX}\n[bold]{valueY}[/]`;
+      resultSet.series().map((line) => {
+        const series = chart.series.push(new am4charts.LineSeries());
+        series.dataFields.valueY = line.key;
+        series.dataFields.dateX = 'category';
+        // series.fill = am4core.color(color);
+        // series.stroke = am4core.color(color);
+        series.strokeWidth = 1;
+        series.fillOpacity = 0.6;
+        series.tensionX = 0.8;
+        // series.columns.template.column.cornerRadius(4, 4, 0, 0);
+        series.name = line.title;
+        series.tooltipText = `{dateX}\n[bold]{valueY}[/]`;
+      });
 
       this.chart = chart;
     }
 
-    this.chart.series.getIndex(0).adapter.remove('tooltipText');
-    this.chart.series
-      .getIndex(0)
-      .adapter.add('tooltipText', (text, target, key) => {
-        let data: any = target.tooltipDataItem.dataContext;
-        return `[bold]${labelByTimeframeGroup(
-          data.key,
-          timeFrameGrouping,
-        )}[/]\n${format(data.value, formatter)}`;
-      });
+    // this.chart.series.getIndex(0).adapter.remove('tooltipText');
+    // this.chart.series
+    //   .getIndex(0)
+    //   .adapter.add('tooltipText', (text, target, key) => {
+    //     let data: any = target.tooltipDataItem.dataContext;
+    //     return `[bold]${labelByTimeframeGroup(
+    //       data.key,
+    //       timeFrameGrouping,
+    //     )}[/]\n${format(data.value, formatter)}`;
+    //   });
     return this.chart;
   };
 
   render() {
-    const {
-      label,
-      formatter,
-      comparatorData,
-      namespace,
-      rollup,
-      rowData,
-      loaded,
-    } = this.props;
-
-    if (!loaded) {
-      return <Loader />;
-    }
-
-    return (
-      <>
-        {/* <Header
-          label={label}
-          rowData={rowData}
-          comparatorData={comparatorData}
-          namespace={namespace}
-          rollup={rollup}
-          formatter={formatter}
-        /> */}
-
-        <div style={{ width: '100%', height: '100%' }} id={this.id} />
-      </>
-    );
+    return <div style={{ width: '100%', height: '100%' }} id={this.id} />;
   }
 }

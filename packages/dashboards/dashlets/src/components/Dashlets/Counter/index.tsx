@@ -1,35 +1,20 @@
 import React, { PureComponent } from 'react';
 import CountUp from 'react-countup';
-import { format, manipulator } from '../../../utils';
+import { format } from '../../../utils';
 import Loader from '../../Loader';
 import { CounterProps } from './types';
 
 export default class CounterBlock extends PureComponent<CounterProps> {
-  manipulate = (data) => {
-    const { rollup } = this.props;
-    return manipulator(data, rollup);
-  };
-
   render() {
-    const {
-      data,
-      rowData,
-      loaded,
-      label,
-      formatter,
-      itemBefore,
-      namespace,
-    } = this.props;
+    const { label, formatter, itemBefore, resultSet } = this.props;
 
-    if (!loaded) {
+    if (!resultSet) {
       return <Loader />;
     }
 
-    const manipulated = data || this.manipulate(rowData[namespace]);
-
     return (
       <div className="card-body h-100 d-flex align-items-center flex-row">
-        {/* {itemBefore && <div className="flex-shrink-0 mr-3">{itemBefore}</div>} */}
+        {itemBefore && <div className="flex-shrink-0 mr-3">{itemBefore}</div>}
         <div style={{ flex: 1, minWidth: 0 }}>
           <h6 className="mb-1 text-muted text-truncate font-weight-light">
             {label}
@@ -37,7 +22,9 @@ export default class CounterBlock extends PureComponent<CounterProps> {
           <h3 className="my-0">
             <CountUp
               start={0}
-              end={manipulated}
+              end={resultSet
+                .seriesNames()
+                .map((s) => resultSet.totalRow()[s.key])}
               decimals={0}
               formattingFn={(value) => format(value, formatter)}
             />

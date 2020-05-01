@@ -12,7 +12,6 @@ export default class Members extends Component<MembersProps> {
 
   render() {
     const { label, members } = this.props;
-    console.log(this.props);
 
     return (
       <div className="d-flex align-items-center ml-2">

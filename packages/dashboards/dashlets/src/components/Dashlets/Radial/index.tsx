@@ -71,7 +71,7 @@ export default class RadialBlock extends PureComponent<any> {
     }
   }
 
-  inBin = amount => {
+  inBin = (amount) => {
     const { bins } = this.props;
     const foo = bins.map((bin, index) => {
       if (amount >= bin[0] && amount <= bin[1]) {
@@ -82,12 +82,12 @@ export default class RadialBlock extends PureComponent<any> {
     return foo.indexOf(true);
   };
 
-  manipulate = data => {
+  manipulate = (data) => {
     const { bins, groupBy, rollup: rollupper } = this.props;
     let manipulated = rollup(
       data,
-      c => manipulator(c, rollupper),
-      c => this.inBin(c.amount),
+      (c) => manipulator(c, rollupper),
+      (c) => this.inBin(c.amount),
     );
 
     return Array.from(manipulated, ([key, value]) => ({
@@ -99,7 +99,6 @@ export default class RadialBlock extends PureComponent<any> {
   componentDidUpdate() {
     const { rowData, loaded, comparatorData, namespace } = this.props;
     //  const { showPrevious } = this.state;
-    console.log(this.id);
 
     if (loaded) {
       if (!this.chart) {

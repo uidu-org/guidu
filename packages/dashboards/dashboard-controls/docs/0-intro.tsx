@@ -1,4 +1,4 @@
-import { code, Example, md, Props } from '@uidu/docs';
+import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
 
 export default md`
@@ -30,24 +30,4 @@ export default md`
       source={require('!!raw-loader!../examples/Navigator').default}
     />
   )}
-
-  ${(
-    <Props
-      heading="Sorter Types"
-      props={require('!!extract-react-types-loader!../src/components/TimeFrame')}
-    />
-  )}
-  ${(
-    <Props
-      heading="Sorter Types"
-      props={require('!!extract-react-types-loader!../src/components/TimeFrameGrouper')}
-    />
-  )}
-  ${(
-    <Props
-      heading="Sorter Types"
-      props={require('!!extract-react-types-loader!../src/components/TimeFrameComparator')}
-    />
-  )}
-
 `;

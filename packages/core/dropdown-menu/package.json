@@ -15,7 +15,7 @@
     "@uidu/theme": "^0.2.4",
     "array-find": "^1.0.0",
     "prop-types": "^15.6.0",
-    "uuid": "^7.0.0"
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@uidu/avatar": "^0.3.2",

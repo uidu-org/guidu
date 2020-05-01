@@ -37,16 +37,12 @@ export default function Header({
   formatter,
 }) {
   const currentValue = manipulator(rowData[namespace], rollup);
-  console.log(comparatorData);
   let previousValue, difference;
   if (comparatorData[namespace]) {
     previousValue = manipulator(comparatorData[namespace], rollup);
-    console.log(previousValue);
     difference =
       currentValue && previousValue ? currentValue / previousValue - 1 : null;
   }
-
-  console.log(difference);
 
   return (
     <div className="card-body">
@@ -60,7 +56,7 @@ export default function Header({
             start={0}
             end={currentValue}
             delay={0}
-            formattingFn={value => format(value, formatter)}
+            formattingFn={(value) => format(value, formatter)}
           >
             {({ countUpRef }) => <h5 className="m-0" ref={countUpRef}></h5>}
           </CountUp>

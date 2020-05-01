@@ -6,7 +6,6 @@ export default function DashletGroup({
   isCard = true,
   dashlet,
   dashlets,
-  rowData,
   ...rest
 }) {
   return (
@@ -20,7 +19,6 @@ export default function DashletGroup({
       )}
       <Dashlets
         dashlets={dashlets.map((b) => ({ ...b, isCard: false }))}
-        rowData={rowData}
         {...rest}
       />
     </div>

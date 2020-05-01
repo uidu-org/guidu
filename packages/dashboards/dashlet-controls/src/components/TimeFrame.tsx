@@ -2,26 +2,14 @@ import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Trigger } from '../styled';
 import { TimeFrameProps } from '../types';
 
-export default class TimeFrame extends Component<TimeFrameProps> {
+export default class TimeFrame extends PureComponent<TimeFrameProps> {
   render() {
-    const {
-      timeframes,
-      activeTimeFrame,
-      handleDateChange,
-      onChange,
-      from,
-      to,
-    } = this.props;
-    console.log(this.props);
-
-    const currentTimeFrame =
-      typeof activeTimeFrame == 'string'
-        ? timeframes.filter(t => t.key === activeTimeFrame)[0]
-        : activeTimeFrame;
+    const { timeframes, activeTimeFrame, onChange } = this.props;
+    const currentTimeFrame = timeframes.find((t) => t.name === activeTimeFrame);
 
     return (
       <>
@@ -29,39 +17,30 @@ export default class TimeFrame extends Component<TimeFrameProps> {
           trigger={
             <Trigger activeBg="#d0f0fd" className="btn">
               <span style={{ textTransform: 'initial' }}>
-                {currentTimeFrame.key ? currentTimeFrame.name : 'Custom'}
+                {currentTimeFrame?.title ? currentTimeFrame.title : 'Custom'}
               </span>
             </Trigger>
           }
           boundariesElement="scrollParent"
         >
           <DropdownItemGroup>
-            {timeframes.map(timeframe => (
+            {timeframes.map((timeframe) => (
               <DropdownItem
-                key={timeframe.key}
-                onClick={e => {
+                key={timeframe.name}
+                onClick={(e) => {
                   e.preventDefault();
-                  onChange(timeframe.key);
+                  onChange(timeframe.name);
                 }}
                 isSelected={
-                  currentTimeFrame.key && timeframe.key === currentTimeFrame.key
+                  currentTimeFrame?.name &&
+                  timeframe.name === currentTimeFrame.name
                 }
               >
-                {timeframe.name}
+                {timeframe.title}
               </DropdownItem>
             ))}
           </DropdownItemGroup>
         </DropdownMenu>
-        {/* <div className="d-flex">
-          <FieldDateRangeStateless
-            name="f"
-            layout="elementOnly"
-            from={from.toDate()}
-            to={to.toDate()}
-            onChange={handleDateChange}
-            displayFormat="DD/MM/YY"
-          />
-        </div> */}
       </>
     );
   }

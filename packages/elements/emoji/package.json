@@ -28,7 +28,7 @@
     "tslib": "^1.10.0",
     "typestyle": "^2.0.4",
     "url": "^0.11.0",
-    "uuid": "^7.0.0"
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@types/js-search": "^1.4.0",

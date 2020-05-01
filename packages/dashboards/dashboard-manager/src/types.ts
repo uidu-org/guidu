@@ -1,32 +1,15 @@
-import {
-  Groupers,
-  GroupersKeys,
-  TimeFrameKeys,
-  TimeFrames,
-} from '@uidu/dashboard-controls';
+import { DashletProps } from '@uidu/dashlets';
 import { ReactGridLayoutProps } from 'react-grid-layout';
 
 export type DashboardManagerProps = {
-  children: ({ renderControls, renderDashlets }) => any;
-  rowData: any;
-  defaultTimeFrame: string;
-  defaultTimeFrameGrouping: string;
+  children: ({
+    renderControls,
+    renderDashlets,
+  }: {
+    renderControls: () => any;
+    renderDashlets: ({ dashlets }: { dashlets: DashletProps[] }) => any;
+  }) => any;
   gridProps?: ReactGridLayoutProps;
-  availableTimeFrames: Array<TimeFrames>;
-  availableGroupers: Array<Groupers>;
-};
-
-export type DashboardManagerState = {
-  timeFrame: TimeFrameKeys;
-  timeFrameGrouping: GroupersKeys;
-  timeRange: {
-    range: {
-      from: any;
-      to: any;
-    };
-    previousRange?: {
-      from: any;
-      to: any;
-    };
-  };
+  cubejsToken?: string;
+  cubejsOptions?: any;
 };

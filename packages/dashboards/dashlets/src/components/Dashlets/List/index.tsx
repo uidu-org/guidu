@@ -1,69 +1,14 @@
-import { rollup } from 'd3-array';
 import React, { PureComponent } from 'react';
-import { manipulator, resolve } from '../../../utils';
 import Loader from '../../Loader';
 import Items from './Items';
 
-export default class ListBlock extends PureComponent<
-  any,
-  { showPrevious: boolean }
-> {
-  static defaultProps = {
-    groupBy: null,
-    sortBy: 'createdAt',
-    limit: 6,
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      showPrevious: false,
-    };
-  }
-
-  manipulate = data => {
-    const { groupBy, rollup: rollupper } = this.props;
-    let manipulated = data;
-    manipulated = rollup(
-      data,
-      c => manipulator(c, rollupper),
-      c => (groupBy ? resolve(groupBy, c) : c.id),
-    );
-
-    manipulated = Array.from(manipulated, ([key, value]) => ({
-      key,
-      value,
-    })).sort((a, b) => b.value - a.value);
-    return manipulated;
-  };
-
+export default class ListBlock extends PureComponent<any> {
   render() {
-    const {
-      data,
-      rowData,
-      loaded,
-      limit,
-      formatter,
-      label,
-      datumRenderer,
-      comparatorData,
-      timeRange,
-      namespace,
-    } = this.props;
+    const { formatter, datumRenderer, resultSet } = this.props;
 
-    const { showPrevious } = this.state;
-
-    if (!loaded) {
+    if (!resultSet) {
       return <Loader />;
     }
-
-    const manipulated =
-      data ||
-      this.manipulate(
-        comparatorData && showPrevious
-          ? comparatorData[namespace]
-          : rowData[namespace],
-      );
 
     return (
       <>
@@ -87,8 +32,9 @@ export default class ListBlock extends PureComponent<
           )}
         </div> */}
         <Items
-          data={manipulated}
-          limit={limit}
+          resultSet={resultSet}
+          tableColumns={resultSet.tableColumns()}
+          data={resultSet.loadResponse.data}
           datumRenderer={datumRenderer}
           formatter={formatter}
         />

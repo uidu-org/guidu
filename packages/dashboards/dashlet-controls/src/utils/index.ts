@@ -1,8 +1,8 @@
 import { timeDay, timeMonth, timeWeek, timeYear } from 'd3-time';
 import moment from 'moment';
-import { Groupers, GroupersKeys, TimeFrameKeys } from '../types';
+import { Groupers } from '../types';
 
-export const convertTimeframeToRange = (timeframe: TimeFrameKeys) => {
+export const convertTimeframeToRange = (timeframe: string) => {
   const range = {
     to: moment().startOf('day'),
     from: null,
@@ -16,51 +16,37 @@ export const convertTimeframeToRange = (timeframe: TimeFrameKeys) => {
       range.from = previousRange.to = moment()
         .subtract(1, 'week')
         .startOf('day');
-      previousRange.from = moment()
-        .subtract(2, 'weeks')
-        .startOf('day');
+      previousRange.from = moment().subtract(2, 'weeks').startOf('day');
       break;
     case '4W':
       range.from = previousRange.to = moment()
         .subtract(4, 'week')
         .startOf('day');
-      previousRange.from = moment()
-        .subtract(8, 'weeks')
-        .startOf('day');
+      previousRange.from = moment().subtract(8, 'weeks').startOf('day');
       break;
     case '1Y':
       range.from = previousRange.to = moment()
         .subtract(1, 'year')
         .startOf('day');
-      previousRange.from = moment()
-        .subtract(2, 'year')
-        .startOf('day');
+      previousRange.from = moment().subtract(2, 'year').startOf('day');
       break;
     case 'MTD':
       range.from = moment().startOf('month');
-      previousRange.from = moment()
-        .subtract(1, 'month')
-        .startOf('month');
+      previousRange.from = moment().subtract(1, 'month').startOf('month');
       previousRange.to = moment().subtract(1, 'month');
       break;
     case 'QTD':
       range.from = moment().startOf('quarter');
-      previousRange.from = moment()
-        .subtract(1, 'quarter')
-        .startOf('quarter');
+      previousRange.from = moment().subtract(1, 'quarter').startOf('quarter');
       previousRange.to = moment().subtract(1, 'quarter');
       break;
     case 'YTD':
       range.from = moment().startOf('year');
-      previousRange.from = moment()
-        .subtract(1, 'year')
-        .startOf('year');
+      previousRange.from = moment().subtract(1, 'year').startOf('year');
       previousRange.to = moment().subtract(1, 'year');
       break;
     default:
-      range.from = moment()
-        .subtract(5, 'year')
-        .startOf('day');
+      range.from = moment().subtract(5, 'year').startOf('day');
   }
   return {
     range,
@@ -70,17 +56,14 @@ export const convertTimeframeToRange = (timeframe: TimeFrameKeys) => {
 
 export const groupByTimeframe = (
   timeframe,
-  timeframeGrouping: GroupersKeys,
+  timeframeGrouping,
   list,
   key = 'createdAt',
 ) => {
   const {
     range: { from, to },
     previousRange: { from: previousFrom, to: previousTo },
-  } =
-    typeof timeframe === 'string'
-      ? convertTimeframeToRange(timeframe as TimeFrameKeys)
-      : timeframe;
+  } = convertTimeframeToRange(timeframe);
   const startDate = moment(from).startOf(timeframeGrouping);
   const endDate = moment(to).endOf(timeframeGrouping);
 
@@ -122,10 +105,9 @@ export const groupByTimeframe = (
 
   const data = Object.keys(list).reduce((acc, namespace) => {
     acc[namespace] = list[namespace].filter(
-      l =>
-        moment(l[key])
-          .startOf(timeframeGrouping)
-          .diff(moment(startDate)) >= 0 &&
+      (l) =>
+        moment(l[key]).startOf(timeframeGrouping).diff(moment(startDate)) >=
+          0 &&
         moment(endDate).diff(moment(l[key]).startOf(timeframeGrouping)) >= 0,
     );
     return acc;
@@ -133,7 +115,7 @@ export const groupByTimeframe = (
 
   const comparatorData = Object.keys(list).reduce((acc, namespace) => {
     acc[namespace] = list[namespace].filter(
-      l =>
+      (l) =>
         moment(l[key])
           .startOf(timeframeGrouping)
           .diff(moment(previousStartDate)) >= 0 &&
@@ -154,7 +136,7 @@ export const groupByTimeframe = (
 
 export const groupersByTimeframe = (
   defaultGroupers: Array<Groupers>,
-  timeframe: TimeFrameKeys,
+  timeframe: string,
 ) => {
   switch (timeframe) {
     case '1W':

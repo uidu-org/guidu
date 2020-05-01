@@ -1,12 +1,18 @@
 import React from 'react';
 import { format } from '../../../utils';
 
-export default function Items({ data, datumRenderer, limit, formatter }) {
+export default function Items({
+  resultSet,
+  data,
+  datumRenderer,
+  tableColumns,
+  formatter,
+}) {
   return (
     <ul className="list-group list-group-flush" style={{ overflow: 'auto' }}>
-      {data.slice(0, limit).map((datum) => {
+      {data.map((datum) => {
         if (datumRenderer) {
-          return datumRenderer(datum);
+          return datumRenderer(datum, resultSet);
         }
 
         return (
@@ -15,10 +21,18 @@ export default function Items({ data, datumRenderer, limit, formatter }) {
             href="#"
             className="list-group-item list-group-item-action d-flex"
           >
-            {datum.key}
-            <span className="text-muted ml-auto">
-              {formatter ? format(datum.value, formatter) : datum.value}
-            </span>
+            {tableColumns.map((tableColumn, index) => {
+              if (index === 0) {
+                return datum[tableColumn.key];
+              }
+              return (
+                <span className="text-muted ml-auto">
+                  {formatter
+                    ? format(datum[tableColumn.key], formatter)
+                    : datum[tableColumn.key]}
+                </span>
+              );
+            })}
           </a>
         );
       })}

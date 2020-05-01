@@ -1,124 +1,100 @@
-import {
-  convertTimeframeToRange,
-  groupByTimeframe,
-  Groupers,
-  groupersByTimeframe,
-  GroupersKeys,
-  TimeFrame,
-  TimeFrameGrouper,
-  TimeFrameKeys,
-} from '@uidu/dashlet-controls';
-import React, { useState } from 'react';
+import { QueryBuilder } from '@cubejs-client/react';
+import { Groupers, TimeFrame, TimeFrameGrouper } from '@uidu/dashlet-controls';
+import React from 'react';
 import DashletHeader from './DashletHeader';
 
-// const onTimeFrameChange = timeFrame => {
-//   const { availableGroupers } = props;
-//   const groupers = groupersByTimeframe(availableGroupers, timeFrame);
-//   return this.setState(prevState => ({
-//     timeFrame,
-//     timeRange: convertTimeframeToRange(timeFrame),
-//     timeFrameGrouping:
-//       groupers.map(g => g.key).indexOf(prevState.timeFrameGrouping) > 0
-//         ? prevState.timeFrameGrouping
-//         : groupers[groupers.length - 1].key,
-//   }));
-// };
+const DateRanges = [
+  { name: undefined, title: 'All time' },
+  { name: 'Today', title: 'Today' },
+  { name: 'Yesterday', title: 'Yesterday' },
+  { name: 'This week', title: 'This week' },
+  { name: 'This month', title: 'This month' },
+  { name: 'This quarter', title: 'This quarter' },
+  { name: 'This year', title: 'This year' },
+  { name: 'Last 7 days', title: 'Last 7 days' },
+  { name: 'Last 30 days', title: 'Last 30 days' },
+  { name: 'Last week', title: 'Last week' },
+  { name: 'Last month', title: 'Last month' },
+  { name: 'Last quarter', title: 'Last quarter' },
+  { name: 'Last year', title: 'Last year' },
+];
 
-// defaultTimeFrame: '1Y',
-//     defaultTimeFrameGrouping: 'month',
-//     availableTimeFrames: [
-//       {
-//         key: '1W',
-//         name: '1 settimana',
-//       },
-//       { key: '4W', name: '4 settimane' },
-//       { key: '1Y', name: '1 anno' },
-//       { key: 'MTD', name: 'Mese corrente' },
-//       { key: 'QTD', name: 'Trimestre corrente' },
-//       { key: 'YTD', name: 'Anno corrente' },
-//       { key: '5Y', name: 'Tutto' },
-//     ],
 const availableGroupers: Array<Groupers> = [
-  { key: 'day', name: 'Giornaliero' },
-  { key: 'week', name: 'Settimanale' },
-  { key: 'month', name: 'Mensile' },
-  { key: 'year', name: 'Annuale' },
+  { name: 'day', title: 'Giornaliero' },
+  { name: 'week', title: 'Settimanale' },
+  { name: 'month', title: 'Mensile' },
+  { name: 'year', title: 'Annuale' },
 ];
 
 export default function Dashlet({
   dashlet,
   component: DashletContent,
-  rowData,
   showHeader = true,
   isCard = true,
+  rowData,
   ...rest
 }: any) {
-  const [timeFrame, setTimeFrame] = useState<TimeFrameKeys>('5Y');
-  const [timeFrameGrouping, setTimeFrameGrouping] = useState<GroupersKeys>(
-    'year',
-  );
-  console.log(timeFrame);
-  const { data, range, comparatorData, comparatorRange } = groupByTimeframe(
-    timeFrame,
-    timeFrameGrouping,
-    rowData,
-  );
-
-  const timeRange = convertTimeframeToRange(timeFrame);
-
-  console.log(data);
-
   return (
-    <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
-      {showHeader && (
-        <DashletHeader
-          name={dashlet.label}
-          description={dashlet.description}
-          isCard={isCard}
-        >
-          <div className="">
-            <TimeFrame
-              activeTimeFrame={timeFrame}
-              onChange={setTimeFrame}
-              handleDateChange={setTimeFrame}
-              from={timeRange.range.from}
-              to={timeRange.range.to}
-              timeframes={[
-                {
-                  key: '1W',
-                  name: '1 settimana',
-                },
-                { key: '4W', name: '4 settimane' },
-                { key: '1Y', name: '1 anno' },
-                { key: 'MTD', name: 'Mese corrente' },
-                { key: 'QTD', name: 'Trimestre corrente' },
-                { key: 'YTD', name: 'Anno corrente' },
-                { key: '5Y', name: 'Tutto' },
-              ]}
-            />
-            {/* {timeFrame !== '5Y' && (
-          <TimeFrameComparator
-          onChange={this.onTimeFrameChange}
-          handleDateChange={this.onTimeFrameChange}
-          from={timeRange.previousRange.from}
-          to={timeRange.previousRange.to}
-          />
-        )} */}
-            <TimeFrameGrouper
-              groupers={groupersByTimeframe(availableGroupers, timeFrame)}
-              activeGrouper={timeFrameGrouping}
-              onChange={setTimeFrameGrouping}
-            />
+    <QueryBuilder
+      query={
+        dashlet.query || {
+          measures: ['Donations.amount'],
+          timeDimensions: [
+            {
+              dimension: 'Donations.createdAt',
+              granularity: 'month',
+            },
+          ],
+          filters: [],
+        }
+      }
+      render={(cubejsQueryProps) => {
+        const { timeDimensions, updateTimeDimensions } = cubejsQueryProps;
+        let timeDimension;
+        if (timeDimensions.length > 0) {
+          timeDimension = timeDimensions[0];
+        }
+
+        return (
+          <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
+            {showHeader && (
+              <DashletHeader
+                name={dashlet.label}
+                description={dashlet.description}
+                isCard={isCard}
+              >
+                <div className="">
+                  {timeDimension && (
+                    <TimeFrame
+                      activeTimeFrame={timeDimension.dateRange}
+                      onChange={(name) => {
+                        updateTimeDimensions.update(timeDimension, {
+                          ...timeDimension,
+                          dateRange: name,
+                        });
+                      }}
+                      timeframes={DateRanges}
+                    />
+                  )}
+                  {timeDimension && (
+                    <TimeFrameGrouper
+                      groupers={timeDimension.dimension.granularities}
+                      activeGrouper={timeDimension.granularity}
+                      onChange={(name) => {
+                        updateTimeDimensions.update(timeDimension, {
+                          ...timeDimension,
+                          granularity: name,
+                        });
+                      }}
+                    />
+                  )}
+                </div>
+              </DashletHeader>
+            )}
+            <DashletContent {...rest} {...dashlet} {...cubejsQueryProps} />
           </div>
-        </DashletHeader>
-      )}
-      <DashletContent
-        {...rest}
-        {...dashlet}
-        rowData={data}
-        timeframe={timeFrame}
-        timeFrameGrouping={timeFrameGrouping}
-      />
-    </div>
+        );
+      }}
+    />
   );
 }
