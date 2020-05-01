@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.3.15
+
+### Patch Changes
+
+- bbbb87e: Small ui fixes
+- Updated dependencies [bbbb87e]
+  - @uidu/table@0.1.108
+
 ## 0.3.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.1.22
+
+### Patch Changes
+
+- bbbb87e: Small ui fixes
+
 ## 0.1.21
 
 ### Patch Changes
