@@ -357,7 +357,6 @@
     "react-virtualized": "^9.21.1",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.2",
-    "reactstrap": "^8.0.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",

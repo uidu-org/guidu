@@ -8,7 +8,7 @@ import {
 import { getMediaClient } from '@uidu/media-core';
 import { Node as PMNode } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
-import uuidV4 from 'uuid/v4';
+import { v4 as uuidV4 } from 'uuid';
 import { ProsemirrorGetPosHandler } from '../../../nodeviews';
 import {
   ACTION,
