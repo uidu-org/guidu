@@ -92,7 +92,7 @@ export default class SingleArea extends PureComponent<any> {
       chart.paddingBottom = 24;
       chart.paddingLeft = 24;
       chart.paddingRight = 24;
-      chart.paddingTop = 24;
+      chart.paddingTop = 32;
       chart.cursor = new am4charts.XYCursor();
       chart.cursor.lineY.disabled = true;
       chart.cursor.lineX.disabled = true;

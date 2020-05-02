@@ -14,7 +14,8 @@ export type DashletTimeDimension = {
 
 export type DashletProps = {
   kind: string;
-  label?: string;
+  label?: string | React.ReactNode;
+  formatter?: string;
   dashlets?: DashletProps[];
   itemBefore?: React.ReactNode;
   query?: {

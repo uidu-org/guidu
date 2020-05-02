@@ -22,16 +22,16 @@ export const colors = [
 export const manipulator = (record, [operation, key]) => {
   switch (operation) {
     case 'sum':
-      return sum(record, c => resolve(key, c));
+      return sum(record, (c) => resolve(key, c));
     case 'count':
       return group(
-        record.filter(l => !l.fake),
-        c => resolve(key, c),
+        record.filter((l) => !l.fake),
+        (c) => resolve(key, c),
       ).size;
     case 'max':
-      return max(record, c => resolve(key, c));
+      return max(record, (c) => resolve(key, c));
     case 'mean':
-      return mean(record, c => resolve(key, c) || 0);
+      return mean(record, (c) => resolve(key, c) || 0);
     default:
       return record.length;
   }
@@ -45,7 +45,7 @@ export const resolve = (path, obj) =>
 export const format = (value, formatter) => {
   switch (formatter) {
     case 'currency':
-      return numeral(value / 100).format('$ 0,0.00');
+      return numeral(value).format('$ 0,0.00');
     case 'integer':
       return numeral(value).format();
     case 'percent':
