@@ -1,5 +1,14 @@
 # @uidu/util-data-test
 
+## 0.1.10
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+- Updated dependencies [5cfbe51]
+  - @uidu/emoji@0.1.14
+  - @uidu/task-decision@0.1.16
+
 ## 0.1.9
 
 ### Patch Changes

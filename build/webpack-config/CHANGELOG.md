@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.64
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
 ## 0.1.63
 
 ### Patch Changes

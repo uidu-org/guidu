@@ -1,5 +1,17 @@
 # @uidu/dashboard-manager
 
+## 0.5.0
+
+### Minor Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
+### Patch Changes
+
+- Updated dependencies [5cfbe51]
+  - @uidu/dashboard-controls@0.3.0
+  - @uidu/dashlets@0.4.0
+
 ## 0.4.1
 
 ### Patch Changes

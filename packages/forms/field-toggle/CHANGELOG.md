@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 0.2.3
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
 ## 0.2.2
 
 ### Patch Changes

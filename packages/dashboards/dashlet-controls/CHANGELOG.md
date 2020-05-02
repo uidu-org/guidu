@@ -1,5 +1,16 @@
 # @uidu/dashboard-controls
 
+## 0.2.0
+
+### Minor Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
+### Patch Changes
+
+- Updated dependencies [5cfbe51]
+  - @uidu/dropdown-menu@0.1.25
+
 ## 0.1.7
 
 ### Patch Changes

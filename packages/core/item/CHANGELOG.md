@@ -1,5 +1,11 @@
 # @uidu/item
 
+## 0.1.27
+
+### Patch Changes
+
+- 5cfbe51: Breaking change: dashlet are now wired to cubejs, you should change basically all the dashboard, for the best :)
+
 ## 0.1.26
 
 ### Patch Changes
