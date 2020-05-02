@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.4.1
+
+### Patch Changes
+
+- fa9880a: Fix padding, types, and formatting fn
+
 ## 0.4.0
 
 ### Minor Changes
