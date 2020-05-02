@@ -23,10 +23,14 @@ export default function Items({
           >
             {tableColumns.map((tableColumn, index) => {
               if (index === 0) {
-                return datum[tableColumn.key];
+                return (
+                  <span className="text-truncate">
+                    {datum[tableColumn.key]}
+                  </span>
+                );
               }
               return (
-                <span className="text-muted ml-auto">
+                <span className="text-muted ml-auto text-nowrap">
                   {formatter
                     ? format(datum[tableColumn.key], formatter)
                     : datum[tableColumn.key]}

@@ -1,7 +1,13 @@
 import { QueryBuilder } from '@cubejs-client/react';
 import { Groupers, TimeFrame, TimeFrameGrouper } from '@uidu/dashlet-controls';
 import React from 'react';
+import styled from 'styled-components';
 import DashletHeader from './DashletHeader';
+
+const TimeDimensionControls = styled.div`
+  position: absolute;
+  right: 1rem;
+`;
 
 const DateRanges = [
   { name: undefined, title: 'All time' },
@@ -63,7 +69,7 @@ export default function Dashlet({
                 description={dashlet.description}
                 isCard={isCard}
               >
-                <div className="">
+                <TimeDimensionControls>
                   {timeDimension && (
                     <TimeFrame
                       activeTimeFrame={timeDimension.dateRange}
@@ -88,7 +94,7 @@ export default function Dashlet({
                       }}
                     />
                   )}
-                </div>
+                </TimeDimensionControls>
               </DashletHeader>
             )}
             <DashletContent {...rest} {...dashlet} {...cubejsQueryProps} />
