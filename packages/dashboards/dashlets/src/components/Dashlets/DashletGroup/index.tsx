@@ -4,6 +4,7 @@ import Dashlets from '../../Dashlets';
 
 export default function DashletGroup({
   isCard = true,
+  showHeader,
   dashlet,
   dashlets,
   ...rest

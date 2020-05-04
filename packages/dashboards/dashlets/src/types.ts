@@ -36,4 +36,5 @@ export type DashletProps = {
 
 export type DashletsProps = {
   dashlets: DashletProps[];
+  showHeader?: boolean;
 };

@@ -5,42 +5,20 @@ import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';
 import { UserCheck } from 'react-feather';
 import DashboardManager from '../';
-import { fetchDonations } from '../examples-utils';
 
 export default class Basic extends Component<any, any> {
   constructor(props) {
     super(props);
     this.state = {
-      rowData: {
-        donations: [],
-      },
-      loaded: false,
       isEditing: false,
     };
   }
 
-  componentDidMount() {
-    fetchDonations().then((response) =>
-      this.setState({
-        rowData: {
-          donations: response,
-        },
-        loaded: true,
-      }),
-    );
-  }
-
   render() {
-    const { rowData, loaded, isEditing } = this.state;
-    console.log(isEditing);
-    // if (!loaded) {
-    //   return <div>Loading...</div>;
-    // }
+    const { isEditing } = this.state;
 
     return (
       <DashboardManager
-        rowData={rowData}
-        defaultTimeFrame="5Y"
         gridProps={{
           isDraggable: isEditing,
           isResizable: isEditing,
@@ -67,7 +45,6 @@ export default class Basic extends Component<any, any> {
                 <div className="row">
                   <div className="col-12">
                     {renderDashlets({
-                      loaded,
                       dashlets: [
                         {
                           kind: 'Area',

@@ -21,7 +21,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
 
   return (
     <div
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onItemClick({ data: item.data });
       }}
@@ -37,7 +37,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
       key={item.data.id}
     >
       <div
-        className="card bg-white shadow-sm"
+        className="card bg-white"
         style={{
           marginLeft: gutterSize / 2,
           marginRight: gutterSize / 2,

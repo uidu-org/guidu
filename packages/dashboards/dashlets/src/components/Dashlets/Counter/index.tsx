@@ -13,29 +13,20 @@ export default class CounterBlock extends PureComponent<CounterProps> {
     }
 
     return (
-      <div className="card-body h-100 d-flex align-items-center flex-row">
-        {itemBefore && <div className="flex-shrink-0 mr-3">{itemBefore}</div>}
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <h6 className="mb-1 text-muted text-truncate font-weight-light">
-            {label}
-          </h6>
-          <h3 className="my-0">
-            <CountUp
-              start={0}
-              end={resultSet
-                .seriesNames()
-                .map((s) => resultSet.totalRow()[s.key])}
-              decimals={0}
-              formattingFn={(value) => format(value, formatter)}
-            />
-          </h3>
-          {/* <div className="d-flex mt-1 text-danger align-items-center">
-            <div style={{ display: 'flex', transform: 'rotate(-45deg)' }}>
-              <ArrowDown size={16} color="red" className="mr-1 text-danger" />
-            </div>
-            -300%
-          </div> */}
-        </div>
+      <div className="card-body h-100 d-flex align-items-center justify-content-center">
+        <h2 className="my-0 d-flex align-items-center">
+          {itemBefore && (
+            <div className="d-flex flex-shrink-0 mr-3">{itemBefore}</div>
+          )}
+          <CountUp
+            start={0}
+            end={resultSet
+              .seriesNames()
+              .map((s) => resultSet.totalRow()[s.key])}
+            decimals={0}
+            formattingFn={(value) => format(value, formatter)}
+          />
+        </h2>
       </div>
     );
   }

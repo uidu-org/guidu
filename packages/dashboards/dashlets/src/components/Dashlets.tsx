@@ -18,9 +18,8 @@ const LoadableHorizontalRule = loadable(() =>
 );
 const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
-export const renderDashlet = ({ kind, ...dashlet }) => {
+export const renderDashlet = ({ kind, showHeader = true, ...dashlet }) => {
   let content = null;
-  let showHeader = true;
 
   switch (kind) {
     case 'Area':
@@ -31,7 +30,6 @@ export const renderDashlet = ({ kind, ...dashlet }) => {
       break;
     case 'Counter':
       content = LoadableCounter;
-      showHeader = false;
       break;
     case 'Funnel':
       content = LoadableFunnel;
@@ -55,6 +53,7 @@ export const renderDashlet = ({ kind, ...dashlet }) => {
     case 'DashletGroup':
       return (
         <DashletGroup
+          showHeader={showHeader}
           dashlet={dashlet}
           dashlets={dashlet.dashlets}
           isCard={dashlet.isCard}
