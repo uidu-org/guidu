@@ -1,5 +1,11 @@
 # @uidu/message-form
 
+## 0.1.31
+
+### Patch Changes
+
+- f30b14a: Fix counter and gallery items
+
 ## 0.1.30
 
 ### Patch Changes
