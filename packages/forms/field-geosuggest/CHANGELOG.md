@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 0.2.7
+
+### Patch Changes
+
+- a9a9235: Adding required to field-geosuggest, dashlets loaders
+
 ## 0.2.6
 
 ### Patch Changes
