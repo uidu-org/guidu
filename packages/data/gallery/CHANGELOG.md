@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.38
+
+### Patch Changes
+
+- f30b14a: Fix counter and gallery items
+
 ## 0.1.37
 
 ### Patch Changes

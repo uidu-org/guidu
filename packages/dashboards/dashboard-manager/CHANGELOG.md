@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.5.1
+
+### Patch Changes
+
+- f30b14a: Fix counter and gallery items
+- Updated dependencies [f30b14a]
+  - @uidu/dashlets@0.4.3
+
 ## 0.5.0
 
 ### Minor Changes

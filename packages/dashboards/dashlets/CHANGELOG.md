@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.4.3
+
+### Patch Changes
+
+- f30b14a: Fix counter and gallery items
+
 ## 0.4.2
 
 ### Patch Changes
