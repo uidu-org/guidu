@@ -3,6 +3,7 @@ import * as am4core from '@amcharts/amcharts4/core';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import React, { PureComponent } from 'react';
 import { v1 as uuid } from 'uuid';
+import Loader from '../../Loader';
 
 am4core.useTheme(am4themes_animated);
 am4core.options.commercialLicense = true;
@@ -61,6 +62,12 @@ export default class PieBlock extends PureComponent<any, any> {
   };
 
   render() {
+    const { resultSet } = this.props;
+
+    if (!resultSet) {
+      return <Loader />;
+    }
+
     return (
       <>
         {/* <div className="card-header d-flex align-items-center">

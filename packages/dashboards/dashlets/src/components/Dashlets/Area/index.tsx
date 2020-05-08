@@ -5,6 +5,7 @@ import am4themes_material from '@amcharts/amcharts4/themes/material';
 import am4themes_patterns from '@amcharts/amcharts4/themes/patterns';
 import React, { PureComponent } from 'react';
 import { v1 as uuid } from 'uuid';
+import Loader from '../../Loader';
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_patterns);
@@ -175,6 +176,12 @@ export default class SingleArea extends PureComponent<any> {
   };
 
   render() {
+    const { resultSet } = this.props;
+
+    if (!resultSet) {
+      return <Loader />;
+    }
+
     return <div style={{ width: '100%', height: '100%' }} id={this.id} />;
   }
 }

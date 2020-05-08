@@ -1,6 +1,6 @@
 import { QueryBuilder } from '@cubejs-client/react';
 import { Groupers, TimeFrame, TimeFrameGrouper } from '@uidu/dashlet-controls';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import DashletHeader from './DashletHeader';
 
@@ -40,20 +40,22 @@ export default function Dashlet({
   rowData,
   ...rest
 }: any) {
+  const [query, setQuery] = useState(
+    dashlet.query || {
+      measures: ['Donations.amount'],
+      timeDimensions: [
+        {
+          dimension: 'Donations.createdAt',
+          granularity: 'month',
+        },
+      ],
+      filters: [],
+    },
+  );
+
   return (
     <QueryBuilder
-      query={
-        dashlet.query || {
-          measures: ['Donations.amount'],
-          timeDimensions: [
-            {
-              dimension: 'Donations.createdAt',
-              granularity: 'month',
-            },
-          ],
-          filters: [],
-        }
-      }
+      query={query}
       render={(cubejsQueryProps) => {
         const { timeDimensions, updateTimeDimensions } = cubejsQueryProps;
         let timeDimension;

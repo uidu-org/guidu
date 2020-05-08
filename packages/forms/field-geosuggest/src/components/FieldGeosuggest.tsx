@@ -185,6 +185,7 @@ function FieldGeosuggest({
             ),
           }
         : {})}
+      required={required}
       id={id}
     >
       <div className="position-relative flex-grow-1">

@@ -6,7 +6,7 @@ import { CounterProps } from './types';
 
 export default class CounterBlock extends PureComponent<CounterProps> {
   render() {
-    const { label, formatter, itemBefore, resultSet } = this.props;
+    const { formatter, itemBefore, resultSet } = this.props;
 
     if (!resultSet) {
       return <Loader />;
