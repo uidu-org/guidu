@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.9
+
+### Patch Changes
+
+- a9a9235: Adding required to field-geosuggest, dashlets loaders
+
 ## 0.1.8
 
 ### Patch Changes
