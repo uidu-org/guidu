@@ -42,9 +42,10 @@ export default function Donate({
         <Donation
           {...rest}
           providers={providers}
-          handleSubmit={async (model) =>
-            createDonation(model).then(() => slider.current.slideNext())
-          }
+          handleSubmit={async (model) => {
+            console.log(model);
+            return createDonation(model).then(() => slider.current.slideNext());
+          }}
         />
       ),
     },
@@ -57,7 +58,9 @@ export default function Donate({
       to: 'back',
       name: (
         <>
-          <h5 className="m-0">{donation.amount}</h5>
+          <h5 className="m-0">
+            {donation.amount ? donation.amount / 100 : null}
+          </h5>
           <span>Personalizza</span>
         </>
       ),

@@ -1,19 +1,11 @@
 import { PaymentIntent, Stripe } from '@stripe/stripe-js';
 import { PaymentProviderTypes } from '@uidu/payments';
 
-export type Pledge = {
-  id?: string | number;
-  amount: number;
-  name?: string;
-  description?: string;
-};
-
 export type DonationProps = {
   donation?: any;
+  donationCampaign?: any;
   handleSubmit?: any;
   providers: Array<PaymentProviderTypes>;
-  pledges: Array<Pledge>;
-  currency: string;
 };
 
 export type DonateProps = {
@@ -26,7 +18,6 @@ export type DonateProps = {
   currentMember?: any;
   currentOrganization: any;
   providers: Array<PaymentProviderTypes>;
-  pledges: Array<Pledge>;
   currency: string;
   createContact?: (model: any) => Promise<any>;
   updateCurrentMember?: (model: any) => Promise<any>;

@@ -1,42 +1,71 @@
-import FieldDownshift from '@uidu/field-downshift';
-import FieldText from '@uidu/field-text';
-import { Form, FormSubmit } from '@uidu/form';
-import Select from '@uidu/select';
 import classNames from 'classnames';
+import Downshift from 'downshift';
 import React, { useState } from 'react';
 import { Check } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
 import { DonationProps } from '../../types';
+import PlansForm from '../forms/PlansForm';
+import SkusForm from '../forms/SkusForm';
 
-const Menu = (props) => <div className="card-deck" {...props} />;
+const Option = styled.div`
+  cursor: pointer;
+  transition: all 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
 
-function Item({
-  item,
-  highlightedIndex,
-  index,
-  isSelected,
-  scope = 'donations',
-  getItemProps,
-}) {
+  &:hover,
+  &.active {
+    transition: all 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform: scale(1.05);
+  }
+`;
+
+function RecurrenceOption({ item, index, isSelected, getItemProps }) {
   const { onClick, ...rest } = getItemProps({ item, index });
-  const isHighlighted = highlightedIndex === index;
-
   return (
-    <a
-      key={index}
-      href="#"
-      className={classNames('card mb-3', {
-        [`border-${scope}`]: isHighlighted || isSelected,
-      })}
+    <button
+      className={`btn border${isSelected ? ' btn-light' : ''}`}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
+      type="button"
+      {...rest}
+    >
+      {item.name}
+    </button>
+  );
+}
+
+function OptionScaffold({
+  item,
+  highlightedIndex,
+  index,
+  isSelected,
+  getItemProps,
+  children,
+}) {
+  const { onClick, onMouseDown, ...rest } = getItemProps({ item, index });
+  const isHighlighted = highlightedIndex === index;
+
+  return (
+    <Option
+      key={index}
+      className={classNames('card mb-3', {
+        'border-donations active': isHighlighted || isSelected,
+      })}
+      {...(!isSelected && {
+        onMouseDown,
+        onClick: (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onClick(e);
+        },
+      })}
       {...rest}
     >
       <span
         className={classNames('', {
-          [`bg-${scope} text-white`]: isSelected,
+          'bg-donations text-white': isSelected,
         })}
         style={{
           position: 'absolute',
@@ -53,154 +82,153 @@ function Item({
       >
         {isSelected && <Check size={16} />}
       </span>
-      <div className="card-body p-3 py-md-4">
-        <div className="d-flex align-items-center">
-          {item.before && <div className="mr-3">{item.before}</div>}
-          <div className="text-center flex-grow-1">
-            <h5 className="m-0">{item.amount} €</h5>
-            <h6 className="m-0">{item.name}</h6>
-            {item.description && (
-              <p className="mb-0 mt-1 text-muted">{item.description}</p>
-            )}
-          </div>
-        </div>
-      </div>
-    </a>
+      <div className="card-body p-3 py-md-4">{children}</div>
+    </Option>
   );
 }
 
+const recurrences = [
+  {
+    id: 'once',
+    name: (
+      <FormattedMessage
+        defaultMessage="Once"
+        id="guidu.donate.recurrence.once"
+      />
+    ),
+  },
+  {
+    id: 'month',
+    name: (
+      <FormattedMessage
+        defaultMessage="Recurring"
+        id="guidu.donate.recurrence.monthly"
+      />
+    ),
+  },
+];
+
 export default function Donation({
   providers = [],
-  pledges = [],
-  currency = '€',
+  donationCampaign,
   donation,
   handleSubmit,
 }: DonationProps) {
-  const [selectedAmount, setSelectedAmount] = useState(
-    donation?.amount || null,
-  );
   const [recurrence, setRecurrence] = useState(donation?.recurrence || 'month');
-  const [customAmount, setCustomAmount] = useState(donation?.amount || null);
 
   return (
-    <Form
-      handleSubmit={handleSubmit}
-      footerRenderer={({ canSubmit, loading }) => (
-        <FormSubmit
-          label={
-            <FormattedMessage
-              id="guidu.donate.donation.submit"
-              defaultMessage={`Donate {selectedAmount} {recurrence, select,
-                once {}
-                month {each month}
-              }`}
-              values={{
-                selectedAmount: selectedAmount?.amount,
-                recurrence,
-              }}
-            />
-          }
-          loading={loading}
-          canSubmit={canSubmit}
-          className="px-5 btn-donations mb-3"
-        />
-      )}
-    >
-      <Select
-        options={[
-          {
-            id: 'once',
-            name: (
-              <FormattedMessage
-                defaultMessage="Once"
-                id="guidu.donate.recurrence.once"
-              />
-            ),
-          },
-          {
-            id: 'month',
-            name: (
-              <FormattedMessage
-                defaultMessage="Monthly"
-                id="guidu.donate.recurrence.monthly"
-              />
-            ),
-          },
-        ]}
-        label={
-          <FormattedMessage
-            defaultMessage="Frequency"
-            id="guidu.donate.recurrence.label"
-          />
-        }
-        name="recurrence"
-        value={recurrence}
-        onChange={(_name, value) => setRecurrence(value)}
-        required
-      />
+    <>
+      <Downshift
+        onChange={(selection) => setRecurrence(selection.id)}
+        itemToString={(item) => (item ? item.id : '')}
+        initialSelectedItem={recurrences[1]}
+      >
+        {({ getItemProps, getMenuProps, selectedItem, getRootProps }) => (
+          <div {...getRootProps({ refKey: 'ref' }, { suppressRefError: true })}>
+            <div className="btn-group w-100 mb-4" {...getMenuProps()}>
+              {recurrences.map((item, index) => (
+                <RecurrenceOption
+                  key={item.id}
+                  isSelected={selectedItem?.id === item.id}
+                  index={index}
+                  item={item}
+                  getItemProps={getItemProps}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+      </Downshift>
       {recurrence === 'month' && (
-        <div className="alert alert-warning">
+        <div className="alert alert-warning mb-4">
           <FormattedMessage
             defaultMessage="You can edit your recurring donation anytime"
             id="guidu.donate.recurring.warning"
           />
         </div>
       )}
-      <div className="form-group">
-        <label htmlFor="amount" className="form-label mb-2">
-          <FormattedMessage
-            defaultMessage="Donation amount"
-            id="guidu.donate.donation.amount.label"
-          />
-        </label>
-        <FieldDownshift
-          layout="elementOnly"
-          name="amount"
-          options={pledges}
-          onChange={(_name, value, { option }) => {
-            setCustomAmount(null);
-            setSelectedAmount(option);
-          }}
-          value={customAmount ? null : selectedAmount?.amout}
-          option={(foo) => <Item {...foo} />}
-          menu={Menu}
-          required={!customAmount}
-        />
-        <FormattedMessage
-          defaultMessage="Or choose your donation amount"
-          id="guidu.donate.amount.custom"
-        >
-          {(placeholder) => (
-            <FieldText
-              addonBefore={
-                <span className="input-group-text bg-white">{currency}</span>
-              }
-              type="number"
-              placeholder={placeholder}
-              name="amount"
-              layout="elementOnly"
-              onChange={(_name, value) => {
-                setCustomAmount(value);
-                setSelectedAmount({ amount: value });
-              }}
-              value={selectedAmount?.amount}
-              min={5}
-              required
-              {...(recurrence === 'month' && {
-                addonAfter: (
-                  <span className="input-group-text">
-                    <FormattedMessage
-                      defaultMessage="Monthly"
-                      id="guidu.donate.recurrence.monthly"
-                    />
-                  </span>
-                ),
-              })}
-            />
+      {recurrence === 'month' ? (
+        <Downshift itemToString={(item) => item.id}>
+          {({
+            getItemProps,
+            getMenuProps,
+            highlightedIndex,
+            selectedItem,
+            getRootProps,
+          }) => (
+            <div
+              {...getRootProps({ refKey: 'ref' }, { suppressRefError: true })}
+            >
+              <div {...getMenuProps()}>
+                {donationCampaign.products
+                  .find((p) => p.stripeKind === 'service')
+                  .plans.map((item, index) => {
+                    const isSelected = selectedItem?.id === item.id;
+                    return (
+                      <OptionScaffold
+                        key={item.id}
+                        item={item}
+                        getItemProps={getItemProps}
+                        index={index}
+                        isSelected={isSelected}
+                        highlightedIndex={highlightedIndex}
+                      >
+                        <PlansForm
+                          plan={item}
+                          isSelected={isSelected}
+                          recurrence={recurrence}
+                          handleSubmit={handleSubmit}
+                        />
+                      </OptionScaffold>
+                    );
+                  })}
+              </div>
+            </div>
           )}
-        </FormattedMessage>
-      </div>
-      <Select
+        </Downshift>
+      ) : (
+        <Downshift itemToString={(item) => item.id}>
+          {({
+            getItemProps,
+            getMenuProps,
+            highlightedIndex,
+            selectedItem,
+            getRootProps,
+          }) => (
+            <div
+              {...getRootProps({ refKey: 'ref' }, { suppressRefError: true })}
+            >
+              <div {...getMenuProps()}>
+                {donationCampaign.products
+                  .find((p) => p.stripeKind === 'good')
+                  .skus.map((item, index) => {
+                    const isSelected = selectedItem?.id === item.id;
+                    return (
+                      <OptionScaffold
+                        key={item.id}
+                        item={item}
+                        getItemProps={getItemProps}
+                        index={index}
+                        isSelected={isSelected}
+                        highlightedIndex={highlightedIndex}
+                      >
+                        <SkusForm
+                          sku={item}
+                          isSelected={isSelected}
+                          handleSubmit={handleSubmit}
+                        />
+                      </OptionScaffold>
+                    );
+                  })}
+              </div>
+            </div>
+          )}
+        </Downshift>
+      )}
+    </>
+  );
+  {
+    /* <Select
         name="paymentMethod"
         label={
           <FormattedMessage
@@ -211,7 +239,6 @@ export default function Donation({
         options={providers}
         value={providers[0].id}
         required
-      />
-    </Form>
-  );
+      /> */
+  }
 }
