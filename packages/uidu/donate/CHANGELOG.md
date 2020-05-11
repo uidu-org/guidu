@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.2.6
+
+### Patch Changes
+
+- d79d0df: Donations widget
+- Updated dependencies [d79d0df]
+  - @uidu/widgets@0.2.6
+
 ## 0.2.5
 
 ### Patch Changes

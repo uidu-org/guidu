@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.94
+
+### Patch Changes
+
+- d79d0df: Donations widget
+
 ## 0.1.93
 
 ### Patch Changes
