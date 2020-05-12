@@ -3,6 +3,7 @@ import { GoogleLogin } from 'react-google-login';
 
 const GoogleLoginButton = ({ clientId, label, onCompleted, onError }) => (
   <GoogleLogin
+    onAutoLoadFinished={console.log}
     clientId={clientId}
     onSuccess={onCompleted}
     onFailure={onError}

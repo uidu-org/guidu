@@ -11,11 +11,12 @@ import SkusForm from '../forms/SkusForm';
 const Option = styled.div`
   cursor: pointer;
   transition: all 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  *zoom: 1;
 
   &:hover,
   &.active {
     transition: all 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
-    transform: scale(1.05);
+    transform: scale(0.98);
   }
 `;
 

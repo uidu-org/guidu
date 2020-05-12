@@ -10,6 +10,7 @@ import Pay from './steps/Pay';
 import Preferences from './steps/Preferences';
 
 export default function Donate({
+  sliderOptions,
   donation,
   currentMember,
   providers,
@@ -61,7 +62,10 @@ export default function Donate({
           <h5 className="m-0">
             {donation.amount ? donation.amount / 100 : null}
           </h5>
-          <span>Personalizza</span>
+          <FormattedMessage
+            defaultMessage="Customize"
+            id="guidu.donate.preferences.title"
+          />
         </>
       ),
     },
@@ -138,6 +142,7 @@ export default function Donate({
   return (
     <Shell
       slides={slides}
+      sliderOptions={{ initialSlide: donation.id ? 1 : 0 }}
       ref={slider}
       baseUrl={baseUrl}
       scope="donations"

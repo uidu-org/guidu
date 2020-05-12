@@ -1,5 +1,6 @@
 import { PaymentIntent, Stripe } from '@stripe/stripe-js';
 import { PaymentProviderTypes } from '@uidu/payments';
+import { ShellProps } from '@uidu/widgets';
 
 export type DonationProps = {
   donation?: any;
@@ -8,7 +9,7 @@ export type DonationProps = {
   providers: Array<PaymentProviderTypes>;
 };
 
-export type DonateProps = {
+export type DonateProps = Pick<ShellProps, 'sliderOptions'> & {
   embedded?: boolean;
   baseUrl: string;
   stripe: Stripe;

@@ -13,16 +13,24 @@ import ShellHeaderCloseAndNavigate from './ShellHeaderCloseAndNavigate';
 import ShellHeaderSlideBack from './ShellHeaderSlideBack';
 import ShellSlideWrapper from './ShellSlideWrapper';
 
-function Shell({ forwardedRef, baseUrl, slides, scope, embedded }: ShellProps) {
+function Shell({
+  forwardedRef,
+  baseUrl,
+  slides,
+  scope,
+  embedded,
+  sliderOptions = {},
+}: ShellProps) {
   const container: React.RefObject<HTMLDivElement> = useRef(null);
   const slider: React.RefObject<Swiper> = useRef(null);
-  const [activeSlide, setActiveSlide] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(
+    sliderOptions?.initialSlide || 0,
+  );
 
   useImperativeHandle(forwardedRef, () => slider.current);
 
   const onSlideBack = (e) => {
     e.preventDefault();
-    console.log(slider.current);
     slider.current.slidePrev();
   };
 
@@ -83,17 +91,17 @@ function Shell({ forwardedRef, baseUrl, slides, scope, embedded }: ShellProps) {
             on: {
               slideChange: () => {
                 if (slider.current) {
-                  console.log(slider.current.activeIndex);
                   setActiveSlide(slider.current.activeIndex);
                   container.current.scrollTop = 0;
                 }
               },
             },
+            ...sliderOptions,
           }}
           ref={slider}
         >
           {slides.map((slide) => (
-            <Slide data-history={slide['data-history']}>
+            <Slide key={slide.key} data-history={slide['data-history']}>
               {slide.unwrapped ? (
                 slide.component
               ) : (

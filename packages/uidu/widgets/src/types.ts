@@ -1,3 +1,5 @@
+import { SwiperOptions } from 'swiper';
+
 export type ShellSlide = {
   header: {
     to: 'back' | string;
@@ -12,6 +14,7 @@ export type ShellSlide = {
 export type ShellProps = {
   baseUrl: string;
   slides: Array<ShellSlide>;
+  sliderOptions?: Partial<SwiperOptions>;
   scope: string;
   forwardedRef: React.RefObject<any>;
   embedded?: boolean;

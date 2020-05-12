@@ -3,6 +3,7 @@ import FieldText from '@uidu/field-text';
 import FieldTextarea from '@uidu/field-textarea';
 import { Form, FormFooter, FormSubmit } from '@uidu/form';
 import React, { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export default function Preferences({ handleSubmit, currentMember, donation }) {
   const [isAnonymous, setIsAnonymous] = useState(false);
@@ -18,7 +19,12 @@ export default function Preferences({ handleSubmit, currentMember, donation }) {
       footerRenderer={({ canSubmit }) => (
         <FormFooter>
           <FormSubmit
-            label="Salva"
+            label={
+              <FormattedMessage
+                defaultMessage="Next"
+                id="guidu.donate.preferences.submit"
+              />
+            }
             canSubmit={canSubmit}
             className="px-5 btn-donations"
           />
@@ -27,37 +33,48 @@ export default function Preferences({ handleSubmit, currentMember, donation }) {
     >
       <FieldTextarea
         rows={3}
-        label="Lascia un messaggio (opzionale)"
+        label={
+          <FormattedMessage
+            defaultMessage="Leave a message (<small>optional</small>)"
+            id="guidu.donate.preferences.submit"
+            values={{
+              small: (small) => <small className="text-muted">{small}</small>,
+            }}
+          />
+        }
         name="body"
         className="form-control form-control-autosize"
         value={donation?.body}
       />
       <div className="form-group">
         <label
-          className="mb-2 w-100 d-flex justify-content-between"
-          htmlFor="donation-display-name"
+          htmlFor="preferences_displayName"
+          className="w-100 mb-2 d-flex align-items-center justify-content-between"
         >
-          <span>display_name',</span>
-          <a role="button" tabIndex={0} onClick={anonymize}>
-            {isAnonymous ? 'Inserisci il nome' : '.anonymous'}
-          </a>
+          <span>
+            <FormattedMessage
+              id="guidu.donate.preferences.displayName"
+              defaultMessage="Display name"
+            />
+          </span>
+          <Checkbox
+            layout="elementOnly"
+            name="preferences[isAnonymous]"
+            value={isAnonymous}
+            onChange={(_name, value) => setIsAnonymous(value)}
+            label={
+              <FormattedMessage
+                id="guidu.donate.preferences.isAnonymous"
+                defaultMessage="Anonymous"
+              />
+            }
+          />
         </label>
         <FieldText
-          type="text"
+          name="preferences[displayName]"
           layout="elementOnly"
-          name="preferences[display_name]"
-          id="donation-display-name"
           value={isAnonymous ? '' : currentMember && currentMember.name}
-          // help={'activerecord.hints.donation.preferences.display_name'}
           disabled={isAnonymous}
-        />
-      </div>
-      <div className="form-group">
-        <Checkbox
-          label="Anonimo"
-          name="preferences[anonymous]"
-          layout="elementOnly"
-          value={isAnonymous ? 'true' : 'false'}
         />
       </div>
     </Form>
