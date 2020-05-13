@@ -1,5 +1,13 @@
 # @uidu/attend
 
+## 0.2.6
+
+### Patch Changes
+
+- fad83c2: Allow for subscribing to recurring plans (donations)
+- Updated dependencies [fad83c2]
+  - @uidu/payments@0.2.9
+
 ## 0.2.5
 
 ### Patch Changes

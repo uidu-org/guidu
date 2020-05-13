@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.2.8
+
+### Patch Changes
+
+- fad83c2: Allow for subscribing to recurring plans (donations)
+- Updated dependencies [fad83c2]
+  - @uidu/payments@0.2.9
+  - @uidu/schema.d.ts@0.1.1
+
 ## 0.2.7
 
 ### Patch Changes

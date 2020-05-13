@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.28
+
+### Patch Changes
+
+- fad83c2: Allow for subscribing to recurring plans (donations)
+
 ## 0.2.27
 
 ### Patch Changes

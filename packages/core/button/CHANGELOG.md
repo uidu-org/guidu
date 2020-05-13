@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.60
+
+### Patch Changes
+
+- fad83c2: Allow for subscribing to recurring plans (donations)
+
 ## 0.1.59
 
 ### Patch Changes

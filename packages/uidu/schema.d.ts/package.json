@@ -1,6 +1,6 @@
 {
   "name": "@uidu/schema.d.ts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "uidu Graphql schema type definition",
   "repository": "https://github.com/uidu-org/guidu.git",

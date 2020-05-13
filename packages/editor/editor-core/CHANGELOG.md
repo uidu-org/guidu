@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.3.5
+
+### Patch Changes
+
+- fad83c2: Allow for subscribing to recurring plans (donations)
+- Updated dependencies [fad83c2]
+  - @uidu/button@0.1.60
+
 ## 0.3.4
 
 ### Patch Changes
