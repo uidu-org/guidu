@@ -86,6 +86,7 @@ export default function Pay({
           )}
           <PayWithCard
             {...paymentProps}
+            scope="donations"
             providerProps={{ hidePostalCode: true }}
           />
         </>
