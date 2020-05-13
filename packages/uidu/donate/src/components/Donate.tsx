@@ -8,6 +8,7 @@ import Confirmation from './steps/Confirmation';
 import Donation from './steps/Donation';
 import Pay from './steps/Pay';
 import Preferences from './steps/Preferences';
+import Subscribe from './steps/Subscribe';
 
 export default function Donate({
   sliderOptions,
@@ -15,16 +16,15 @@ export default function Donate({
   currentMember,
   providers,
   baseUrl = '/',
-  donation: propDonation,
   createDonation,
   updateDonation,
-  createSubscription,
-  updateSubscription,
   updateCurrentMember,
   embedded,
   ...rest
 }: DonateProps) {
   const slider: React.RefObject<Swiper> = useRef(null);
+
+  console.log(donation);
 
   const slides: ShellSlide[] = [
     {
@@ -44,7 +44,6 @@ export default function Donate({
           {...rest}
           providers={providers}
           handleSubmit={async (model) => {
-            console.log(model);
             return createDonation(model).then(() => slider.current.slideNext());
           }}
         />
@@ -100,7 +99,7 @@ export default function Donate({
         contact={currentMember}
         handleSubmit={async (model) => {
           return updateCurrentMember(model).then(() =>
-            setTimeout(() => slider.current.slideNext(), 500),
+            slider.current.slideNext(),
           );
         }}
       />
@@ -120,7 +119,22 @@ export default function Donate({
       ),
     },
     component: donation.amount ? (
-      <Pay {...rest} provider={{ id: 'card' }} donation={donation} />
+      <>
+        {donation.subscriptionItem ? (
+          <Subscribe
+            {...rest}
+            donation={donation}
+            onSuccess={() => slider.current.slideNext()}
+          />
+        ) : (
+          <Pay
+            {...rest}
+            provider={{ id: 'card' }}
+            donation={donation}
+            onSuccess={() => slider.current.slideNext()}
+          />
+        )}
+      </>
     ) : null,
   });
 

@@ -12,15 +12,16 @@ export default function Pay({
   return (
     <Payments
       stripe={stripe}
+      stripeBillingDetails={currentMember?.stripeBillingDetails}
       scope="events"
       amount={order.stripeAmount}
       clientSecret={paymentIntent?.client_secret}
-      onSuccess={payload => {
-        console.log(payload.paymentIntent);
+      onSuccess={(paymentIntent) => {
+        console.log(paymentIntent);
       }}
       provider={{ id: 'card', name: 'Credit card' }}
     >
-      {paymentProps => (
+      {(paymentProps) => (
         <>
           <div className="card card-body mb-3 p-3">
             <dl className="mb-0">

@@ -237,7 +237,7 @@ export const formatting: (intl: IntlShape) => Format[] = ({
     keymap: () => keymaps.toggleBlockQuote,
     autoFormatting: () => (
       <span>
-        <CodeLg>></CodeLg> <CodeLg>Space</CodeLg>
+        <CodeLg>&gt;</CodeLg> <CodeLg>Space</CodeLg>
       </span>
     ),
   },

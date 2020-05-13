@@ -115,7 +115,9 @@ export default function Donation({
   donation,
   handleSubmit,
 }: DonationProps) {
-  const [recurrence, setRecurrence] = useState(donation?.recurrence || 'month');
+  const [recurrence, setRecurrence] = useState(
+    donation?.orderItem ? 'once' : 'month',
+  );
 
   return (
     <>
@@ -149,7 +151,10 @@ export default function Donation({
         </div>
       )}
       {recurrence === 'month' ? (
-        <Downshift itemToString={(item) => item.id}>
+        <Downshift
+          itemToString={(item) => item.id}
+          initialSelectedItem={donation?.subscriptionItem?.plan}
+        >
           {({
             getItemProps,
             getMenuProps,
@@ -188,7 +193,10 @@ export default function Donation({
           )}
         </Downshift>
       ) : (
-        <Downshift itemToString={(item) => item.id}>
+        <Downshift
+          itemToString={(item) => item.id}
+          initialSelectedItem={donation?.orderItem?.sku}
+        >
           {({
             getItemProps,
             getMenuProps,

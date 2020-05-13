@@ -58,14 +58,17 @@ const quickInsertPlugin = (): EditorPlugin => ({
         }
         const quickInsertState = pluginKey.getState(state);
         const defaultItems = processItems(quickInsertState.items, intl);
-        const defaultSearch = () => find(query, defaultItems);
+        const defaultSearch = () => find(query, defaultItems as any);
 
         if (quickInsertState.provider) {
           return (quickInsertState.provider as Promise<Array<QuickInsertItem>>)
             .then((items) =>
               find(
                 query,
-                dedupe([...defaultItems, ...items], (item) => item.title),
+                dedupe(
+                  [...(defaultItems as any), ...items],
+                  (item) => item.title,
+                ),
               ),
             )
             .catch((err) => {

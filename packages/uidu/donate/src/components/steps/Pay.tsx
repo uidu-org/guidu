@@ -1,21 +1,38 @@
-import { Payments, PayWithCard } from '@uidu/payments';
+import { Stripe } from '@stripe/stripe-js';
+import {
+  PaymentProviderTypes,
+  Payments,
+  PaymentsProps,
+  PayWithCard,
+} from '@uidu/payments';
+import { Donation, DonationCampaign, Organization } from '@uidu/schema.d.ts';
 import React, { useEffect, useState } from 'react';
+
+export type PayProps = {
+  provider: PaymentProviderTypes;
+  donation: Donation;
+  donationCampaign?: DonationCampaign;
+  currentOrganization: Organization;
+  stripe: Stripe | Promise<Stripe | null>;
+  createPaymentIntent: (donation: Donation, model: any) => Promise<any>;
+  onSuccess: PaymentsProps['onSuccess'];
+};
 
 export default function Pay({
   stripe,
   provider,
   donation = null,
   currentOrganization,
-  donationCampaign = null,
-  currentMember = null,
-  createPaymentIntent = async amount => ({
+  donationCampaign,
+  createPaymentIntent = async (amount) => ({
     client_secret: 'foo',
   }),
-}) {
+  onSuccess,
+}: PayProps) {
   const [paymentIntent, setPaymentIntent] = useState(null);
 
   useEffect(() => {
-    createPaymentIntent(donation?.amount).then(setPaymentIntent);
+    createPaymentIntent(donation, donation?.amount).then(setPaymentIntent);
     return () => {
       setPaymentIntent(null);
     };
@@ -24,21 +41,20 @@ export default function Pay({
   return (
     <Payments
       stripe={stripe}
+      stripeBillingDetails={donation.contact.stripeBillingDetails}
       scope="donations"
       amount={donation.amount}
       clientSecret={paymentIntent?.client_secret}
-      onSuccess={payload => {
-        console.log(payload.paymentIntent);
-      }}
+      onSuccess={onSuccess}
       provider={provider}
     >
-      {paymentProps => (
+      {(paymentProps) => (
         <>
           <div className="card card-body mb-3 p-3">
             <dl className="mb-0">
               <dt className="d-flex align-items-center justify-content-between">
                 Donazione
-                {donation.recurrence === 'month' && (
+                {donation.subscriptionItem && (
                   <span className="badge badge-secondary p-1 px-3">
                     ogni mese
                   </span>
@@ -52,17 +68,17 @@ export default function Pay({
               </dd>
             </dl>
           </div>
-          {currentMember && (
+          {donation.contact && (
             <div className="card card-body mb-3 p-3">
               <dl className="mb-0">
                 <dt>Contatto</dt>
                 <dd className="mb-0 text-muted">
                   <address className="mb-0">
                     <span className="text-medium">
-                      Stai donando come {currentMember.name}
+                      Stai donando come {donation.contact.name}
                     </span>
                     <br />
-                    {currentMember.email}
+                    {donation.contact.email}
                   </address>
                 </dd>
               </dl>

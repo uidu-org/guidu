@@ -30,7 +30,7 @@ function CustomSkuForm({ sku, handleSubmit }) {
     >
       <FieldText
         type="hidden"
-        name="order[orderItemsAttributes][0][skuId]"
+        name="orderAttributes[itemsAttributes][0][skuId]"
         value={sku.id}
       />
       <div className="mt-3">
@@ -47,7 +47,7 @@ function CustomSkuForm({ sku, handleSubmit }) {
               }
               type="number"
               placeholder={placeholder}
-              name="order[orderItemsAttributes][0][quantity]"
+              name="orderAttributes[itemsAttributes][0][quantity]"
               label={
                 <FormattedMessage
                   id="guidu.donate.sku.custom.label"
@@ -88,12 +88,12 @@ function SkuForm({ sku, handleSubmit }) {
     >
       <FieldText
         type="hidden"
-        name="order[orderItemsAttributes][0][skuId]"
+        name="orderAttributes[itemsAttributes][0][skuId]"
         value={sku.id}
       />
       <FieldText
         type="hidden"
-        name="order[orderItemsAttributes][0][quantity]"
+        name="orderAttributes[itemsAttributes][0][quantity]"
         value={1}
       />
     </Form>

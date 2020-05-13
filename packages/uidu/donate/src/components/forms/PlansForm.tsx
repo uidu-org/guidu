@@ -34,7 +34,7 @@ function CustomPlanForm({ plan, handleSubmit, recurrence }) {
     >
       <FieldText
         type="hidden"
-        name="subscription[subscriptionItemsAttributes][0][planId]"
+        name="subscriptionAttributes[itemsAttributes][0][planId]"
         value={plan.id}
       />
       <div className="mt-3">
@@ -51,7 +51,7 @@ function CustomPlanForm({ plan, handleSubmit, recurrence }) {
               }
               type="number"
               placeholder={placeholder}
-              name="subscription[subscriptionItemsAttributes][0][quantity]"
+              name="subscriptionAttributes[itemsAttributes][0][quantity]"
               label={
                 <FormattedMessage
                   id="guidu.donate.plan.custom.label"
@@ -106,12 +106,12 @@ function PlanForm({ plan, handleSubmit, recurrence }) {
     >
       <FieldText
         type="hidden"
-        name="subscription[subscriptionItemsAttributes][0][planId]"
+        name="subscriptionAttributes[itemsAttributes][0][planId]"
         value={plan.id}
       />
       <FieldText
         type="hidden"
-        name="subscription[subscriptionItemsAttributes][0][quantity]"
+        name="subscriptionAttributes[itemsAttributes][0][quantity]"
         value={1}
       />
     </Form>

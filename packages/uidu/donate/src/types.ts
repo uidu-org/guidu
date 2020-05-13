@@ -1,10 +1,16 @@
-import { PaymentIntent, Stripe } from '@stripe/stripe-js';
+import { Stripe } from '@stripe/stripe-js';
 import { PaymentProviderTypes } from '@uidu/payments';
+import {
+  Contact,
+  Donation,
+  DonationCampaign,
+  Subscription,
+} from '@uidu/schema.d.ts';
 import { ShellProps } from '@uidu/widgets';
 
 export type DonationProps = {
-  donation?: any;
-  donationCampaign?: any;
+  donation?: Donation;
+  donationCampaign?: DonationCampaign;
   handleSubmit?: any;
   providers: Array<PaymentProviderTypes>;
 };
@@ -12,35 +18,16 @@ export type DonationProps = {
 export type DonateProps = Pick<ShellProps, 'sliderOptions'> & {
   embedded?: boolean;
   baseUrl: string;
-  stripe: Stripe;
-  donation?: any;
-  donationCampaign?: any;
+  stripe: Stripe | Promise<Stripe | null>;
+  donation?: Donation;
+  donationCampaign?: DonationCampaign;
   onCreate: (donation, token) => void;
   currentMember?: any;
   currentOrganization: any;
   providers: Array<PaymentProviderTypes>;
-  currency: string;
-  createContact?: (model: any) => Promise<any>;
-  updateCurrentMember?: (model: any) => Promise<any>;
-  createDonation?: (
-    model: any,
-  ) => Promise<{
-    donation: any;
-    client_secret: PaymentIntent['client_secret'];
-  }>;
-  updateDonation?: (model: any) => Promise<any>;
-  createSubscription?: (
-    model: any,
-  ) => Promise<{
-    subscription: any;
-    client_secret: PaymentIntent['client_secret'];
-  }>;
-  updateSubscription?: (model: any) => Promise<any>;
-};
-
-export type DonateState = {
-  donation: any;
-  contact?: any;
-  activeSlide: number;
-  provider: PaymentProviderTypes;
+  createPaymentIntent: (model: any) => Promise<any>;
+  createDonation: (model: any) => Promise<Donation>;
+  updateDonation: (model: any) => Promise<Donation>;
+  updateCurrentMember: (model: any) => Promise<Contact>;
+  subscribeToPlan: (model: any) => Promise<Subscription>;
 };

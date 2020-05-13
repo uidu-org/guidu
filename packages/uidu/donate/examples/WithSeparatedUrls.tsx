@@ -9,78 +9,9 @@ import {
   useRouteMatch,
 } from 'react-router-dom';
 import Donate, { DonateDonation } from '../';
+import { createDonation, donationCampaign } from '../example-helpers';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
-
-const donationCampaign = {
-  name: 'The Spring',
-  products: [
-    {
-      id: 'Z2lkOi8vdWlkdS9Qcm9kdWN0Lzk',
-      stripeKind: 'service',
-      skus: [],
-      plans: [
-        {
-          id: 'Z2lkOi8vdWlkdS9QbGFuLzE2',
-          name: 'Custom plan',
-          interval: 'month',
-          description: null,
-          amount: 100,
-          currency: '€',
-        },
-        {
-          id: 'Z2lkOi8vdWlkdS9QbGFuLzI3',
-          name: 'Bronze',
-          interval: 'month',
-          description: 'This allow us to purchase school materials for 1 kid ',
-          amount: 1000,
-          currency: '€',
-        },
-        {
-          id: 'Z2lkOi8vdWlkdS9QbGFuLzI4',
-          name: 'Silver',
-          interval: 'month',
-          description: 'With silver support you help 2 kids\n',
-          amount: 2000,
-          currency: '€',
-        },
-      ],
-    },
-    {
-      id: 'Z2lkOi8vdWlkdS9Qcm9kdWN0LzMy',
-      stripeKind: 'good',
-      skus: [
-        {
-          id: 'Z2lkOi8vdWlkdS9Ta3UvMjQ',
-          price: 100,
-          stripeAttributes: {
-            name: 'Custom donation',
-          },
-          currency: '€',
-        },
-        {
-          id: 'Z2lkOi8vdWlkdS9Ta3UvMjU',
-          price: 1000,
-          stripeAttributes: {
-            name: 'One-time bronze',
-          },
-          currency: '€',
-        },
-      ],
-      plans: [],
-    },
-  ],
-};
-
-const createDonation = async (model) => {
-  return {
-    donation: {
-      id: 'newly-created',
-      ...model,
-    },
-    client_secret: 'foo',
-  };
-};
 
 function NewDonation({}) {
   const history = useHistory();
@@ -107,8 +38,6 @@ function Basic({}) {
     firstName: 'Andrea',
   });
   const [donation, setDonation] = useState({ id, amount: 3000 });
-
-  console.log(donation);
 
   const updateDonation = async (model) =>
     setDonation({ ...donation, ...model });

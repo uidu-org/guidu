@@ -139,6 +139,7 @@ const getListType = (node: Node, schema: Schema): [NodeType, number] | null => {
 
   const { bulletList, orderedList } = schema.nodes;
 
+  // @ts-ignore
   return [
     {
       node: bulletList,

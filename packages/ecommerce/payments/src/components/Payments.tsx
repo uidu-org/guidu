@@ -18,6 +18,7 @@ function Payments({
   amount,
   clientSecret,
   onSuccess,
+  stripeBillingDetails,
   ...rest
 }: PaymentsProps) {
   const stripe = useStripe();
@@ -39,25 +40,28 @@ function Payments({
       setLoading(true);
     }
 
-    const payload = await stripe.confirmCardPayment(clientSecret, {
+    const {
+      error: stripeError,
+      paymentIntent,
+    } = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {
         card: cardElement,
       },
       setup_future_usage: 'off_session',
     });
 
-    if (payload.error) {
+    if (stripeError) {
       // Show error to your customer
       setLoading(false);
-      setError(payload.error);
+      setError(stripeError);
     } else {
-      if (payload.paymentIntent.status === 'succeeded') {
+      if (paymentIntent.status === 'succeeded') {
         // Show a success message to your customer
         // There's a risk of the customer closing the window before callback execution
         // Set up a webhook or plugin to listen for the payment_intent.succeeded event
         // to save the card to a Customer
         // The PaymentMethod ID can be found on result.paymentIntent.payment_method
-        onSuccess(payload);
+        onSuccess(paymentIntent);
         setLoading(false);
       }
     }
@@ -68,26 +72,26 @@ function Payments({
 
     setLoading(true);
 
-    const payload = await stripe.confirmSepaDebitPayment(clientSecret, {
+    const {
+      error: stripeError,
+      paymentIntent,
+    } = await stripe.confirmSepaDebitPayment(clientSecret, {
       payment_method: {
         sepa_debit: iban,
-        billing_details: {
-          name: 'test',
-          email: 'andrea.vanini@uidu.org',
-        },
+        billing_details: stripeBillingDetails,
       },
     });
 
-    if (payload.error) {
+    if (stripeError) {
       // Show error to your customer.
       setLoading(false);
-      setError(payload.error);
+      setError(stripeError);
     } else {
       // Show a confirmation message to your customer.
       // The PaymentIntent is in the 'processing' state.
       // SEPA Direct Debit payments are asynchronous,
       // so funds are not immediately available.
-      onSuccess(payload);
+      onSuccess(paymentIntent);
       setLoading(false);
     }
   };
@@ -95,8 +99,6 @@ function Payments({
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
-    console.log(formData);
 
     if (provider.id === 'card') {
       handleCardPayment(formData);

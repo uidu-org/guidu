@@ -14,6 +14,7 @@ function Subscription({
   provider,
   onSuccess,
   createSubscription,
+  stripeBillingDetails,
   ...rest
 }: SubscriptionProps) {
   const stripe = useStripe();
@@ -23,7 +24,7 @@ function Subscription({
   const [cardComplete, setCardComplete] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const stripePaymentIntentHandler = subscription => {
+  const stripePaymentIntentHandler = async (subscription) => {
     const { latest_invoice } = subscription;
     const { payment_intent } = latest_invoice;
 
@@ -31,28 +32,30 @@ function Subscription({
       const { client_secret, status } = payment_intent;
 
       if (status === 'requires_action') {
-        stripe.confirmCardPayment(client_secret).then(payload => {
-          if (payload.error) {
-            // Display error message in your UI.
-            // The card was declined (i.e. insufficient funds, card has expired, etc)
-            setError(payload.error);
-            setLoading(false);
-          } else {
-            // Show a success message to your customer
-            setLoading(false);
-            onSuccess(payload);
-          }
-        });
+        const {
+          error: stripeError,
+          paymentIntent,
+        } = await stripe.confirmCardPayment(client_secret);
+        if (stripeError) {
+          // Display error message in your UI.
+          // The card was declined (i.e. insufficient funds, card has expired, etc)
+          setError(stripeError);
+          setLoading(false);
+        } else {
+          // Show a success message to your customer
+          setLoading(false);
+          onSuccess(paymentIntent);
+        }
       } else {
         // No additional information was needed
         // Show a success message to your customer
         setLoading(false);
-        onSuccess({ paymentIntent: payment_intent });
+        onSuccess(payment_intent);
       }
     }
   };
 
-  const stripePaymentMethodHandler = payload => {
+  const stripePaymentMethodHandler = (payload) => {
     if (payload.error) {
       // Show error in payment form
       setError(payload.error);
@@ -60,14 +63,14 @@ function Subscription({
     } else {
       createSubscription(payload)
         .then(stripePaymentIntentHandler)
-        .catch(error => {
+        .catch((error) => {
           setLoading(false);
           setError(error);
         });
     }
   };
 
-  const handleCardPayment = async formData => {
+  const handleCardPayment = async (formData) => {
     const cardElement = elements.getElement(CardElement);
 
     if (error) {
@@ -86,7 +89,7 @@ function Subscription({
     stripePaymentMethodHandler(payload);
   };
 
-  const handleBankPayment = async formData => {
+  const handleBankPayment = async (formData) => {
     const iban = elements.getElement(IbanElement);
 
     setLoading(true);
@@ -94,19 +97,14 @@ function Subscription({
     const payload = await stripe.createPaymentMethod({
       sepa_debit: iban,
       type: 'sepa_debit',
-      billing_details: {
-        name: 'foo',
-        email: 'andrea.vanini@uidu.org',
-      },
+      billing_details: stripeBillingDetails,
     });
     stripePaymentMethodHandler(payload);
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-
-    console.log(formData);
 
     if (provider.id === 'card') {
       handleCardPayment(formData);
@@ -117,7 +115,7 @@ function Subscription({
     }
   };
 
-  const onChange = e => {
+  const onChange = (e) => {
     setError(e.error);
     setCardComplete(e.complete);
   };

@@ -1,45 +1,33 @@
 import {
   PaymentIntent,
+  PaymentMethod,
   Stripe,
   StripeElementsOptions,
-  StripeError,
 } from '@stripe/stripe-js';
 
 export type PaymentProviderTypes = {
   id: 'card' | 'bank_account';
-  name: string | React.ReactNode;
+  name?: string | React.ReactNode;
 };
 
-export type PaymentsProps = {
-  amount: number;
+export interface SharedPaymentProps {
   provider: PaymentProviderTypes;
-  stripe?: Stripe;
+  stripe?: Stripe | Promise<Stripe | null>;
   stripeOptions?: StripeElementsOptions;
+  stripeBillingDetails: PaymentMethod['billing_details'];
   scope?: string;
-  onSuccess: ({
-    paymentIntent,
-    error,
-  }: {
-    paymentIntent?: PaymentIntent;
-    error?: StripeError;
-  }) => void;
+}
+
+export type PaymentsProps = SharedPaymentProps & {
+  amount: number;
+  onSuccess: (paymentIntent: PaymentIntent) => void;
   clientSecret: PaymentIntent['client_secret'];
   children: (paymentProps: any) => any;
 };
 
-export type SubscriptionProps = {
-  provider: PaymentProviderTypes;
-  stripe?: Stripe;
-  stripeOptions?: StripeElementsOptions;
-  scope?: string;
+export type SubscriptionProps = SharedPaymentProps & {
   createSubscription: any;
-  onSuccess: ({
-    paymentIntent,
-    error,
-  }: {
-    paymentIntent?: PaymentIntent;
-    error?: StripeError;
-  }) => void;
+  onSuccess: (paymentIntent: PaymentIntent) => void;
   children: (paymentProps: any) => any;
 };
 

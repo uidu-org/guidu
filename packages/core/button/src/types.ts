@@ -26,7 +26,7 @@ export type OnlyButtonProps = {
   /** Add a classname to the button */
   className?: string;
   /** A custom component to use instead of the default button */
-  component?: React.ComponentType<React.AllHTMLAttributes<HTMLElement>>;
+  component?: React.ComponentType<any>;
   /** Internal use only. Please use `ref` to forward refs */
   consumerRef?: ConsumerRef;
   /** Provides a url for buttons being used as a link */
