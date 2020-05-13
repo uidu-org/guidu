@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "private": false,
   "description": "Donate form",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -20,7 +20,7 @@
     "@uidu/radio": "^0.4.4",
     "@uidu/schema.d.ts": "^0.1.0",
     "@uidu/select": "^0.4.5",
-    "@uidu/widgets": "^0.2.6",
+    "@uidu/widgets": "^0.2.7",
     "react-feather": "^2.0.3",
     "react-intl": "^4.0.0",
     "styled-components": "^5.0.0"
