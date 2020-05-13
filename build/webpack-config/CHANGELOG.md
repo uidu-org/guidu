@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.65
+
+### Patch Changes
+
+- 19b30b6: Allow for splitting donations form in two, bump dependencies
+
 ## 0.1.64
 
 ### Patch Changes

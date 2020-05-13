@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 0.2.8
+
+### Patch Changes
+
+- 19b30b6: Allow for splitting donations form in two, bump dependencies
+
 ## 0.2.7
 
 ### Patch Changes

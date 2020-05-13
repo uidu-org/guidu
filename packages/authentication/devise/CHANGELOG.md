@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.2.10
+
+### Patch Changes
+
+- 19b30b6: Allow for splitting donations form in two, bump dependencies
+
 ## 0.2.9
 
 ### Patch Changes
