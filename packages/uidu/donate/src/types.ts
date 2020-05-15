@@ -7,12 +7,14 @@ import {
   Subscription,
 } from '@uidu/schema.d.ts';
 import { ShellProps } from '@uidu/widgets';
+import Swiper from 'swiper';
 
 export type DonationProps = {
   donation?: Donation;
   donationCampaign?: DonationCampaign;
   handleSubmit?: any;
   providers: Array<PaymentProviderTypes>;
+  slider: React.RefObject<Swiper>;
 };
 
 export type DonateProps = Pick<ShellProps, 'sliderOptions'> & {

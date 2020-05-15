@@ -8,10 +8,30 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import Swiper, { SwiperOptions } from 'swiper';
 import 'swiper/css/swiper.min.css';
+import {
+  A11y,
+  Autoplay,
+  History,
+  Keyboard,
+  Navigation,
+  Pagination,
+  Scrollbar,
+  Swiper,
+  SwiperOptions,
+} from 'swiper/js/swiper.esm.js';
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
+
+Swiper.use([
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  History,
+  Keyboard,
+  Autoplay,
+]);
 
 const defaultSwiperOptions = (id: string): Partial<SwiperOptions> => ({
   direction: 'horizontal',

@@ -24,8 +24,6 @@ export default function Donate({
 }: DonateProps) {
   const slider: React.RefObject<Swiper> = useRef(null);
 
-  console.log(donation);
-
   const slides: ShellSlide[] = [
     {
       key: 'donation',
@@ -42,6 +40,7 @@ export default function Donate({
       component: (
         <Donation
           {...rest}
+          slider={slider}
           providers={providers}
           handleSubmit={async (model) => {
             return createDonation(model).then(() => slider.current.slideNext());

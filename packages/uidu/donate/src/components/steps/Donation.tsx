@@ -114,15 +114,27 @@ export default function Donation({
   donationCampaign,
   donation,
   handleSubmit,
+  slider,
 }: DonationProps) {
   const [recurrence, setRecurrence] = useState(
     donation?.orderItem ? 'once' : 'month',
   );
 
+  const updateSlider = () => {
+    if (slider?.current) {
+      setTimeout(() => {
+        slider.current.updateAutoHeight(300);
+      }, 0);
+    }
+  };
+
   return (
     <>
       <Downshift
-        onChange={(selection) => setRecurrence(selection.id)}
+        onChange={(selection) => {
+          setRecurrence(selection.id);
+          updateSlider();
+        }}
         itemToString={(item) => (item ? item.id : '')}
         initialSelectedItem={recurrences[1]}
       >
@@ -154,6 +166,7 @@ export default function Donation({
         <Downshift
           itemToString={(item) => item.id}
           initialSelectedItem={donation?.subscriptionItem?.plan}
+          onChange={updateSlider}
         >
           {({
             getItemProps,
@@ -196,6 +209,7 @@ export default function Donation({
         <Downshift
           itemToString={(item) => item.id}
           initialSelectedItem={donation?.orderItem?.sku}
+          onChange={updateSlider}
         >
           {({
             getItemProps,
@@ -236,18 +250,4 @@ export default function Donation({
       )}
     </>
   );
-  {
-    /* <Select
-        name="paymentMethod"
-        label={
-          <FormattedMessage
-            defaultMessage="Payment method"
-            id="guidu.donate.paymentMethod.label"
-          />
-        }
-        options={providers}
-        value={providers[0].id}
-        required
-      /> */
-  }
 }

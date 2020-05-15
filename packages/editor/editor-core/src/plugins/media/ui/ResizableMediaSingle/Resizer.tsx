@@ -36,7 +36,7 @@ export default class Resizer extends React.Component<
   }
 
   handleResizeStart = (
-    event: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
+    event: React.MouseEvent<HTMLElement> | React.TouchEvent<HTMLElement>,
   ) => {
     // prevent creating a drag event on Firefox
     event.preventDefault();
@@ -52,7 +52,7 @@ export default class Resizer extends React.Component<
   handleResize = (
     _event: MouseEvent | TouchEvent,
     _direction: ResizeDirection,
-    _elementRef: HTMLDivElement,
+    _elementRef: HTMLElement,
     delta: Size,
   ) => {
     const resizable = this.resizable.current;
@@ -114,7 +114,7 @@ export default class Resizer extends React.Component<
   render() {
     const handleStyles: Record<string, {}> = {};
     const handles: Record<string, string> = {};
-    handleSides.forEach(side => {
+    handleSides.forEach((side) => {
       handles[side] = `mediaSingle-resize-handle-${side}`;
       handleStyles[side] = {
         width: '24px',

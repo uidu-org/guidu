@@ -25,7 +25,7 @@
     "lru-fast": "^0.2.2",
     "prop-types": "^15.6.0",
     "react-virtualized": "^9.21.1",
-    "tslib": "^1.10.0",
+    "tslib": "^2.0.0",
     "typestyle": "^2.0.4",
     "url": "^0.11.0",
     "uuid": "^8.0.0"
