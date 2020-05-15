@@ -1,5 +1,11 @@
 # @uidu/donate
 
+## 0.2.10
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+
 ## 0.2.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @atlaskit/analytics-gas-types
 
+## 0.1.8
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+
 ## 0.1.7
 
 ### Patch Changes

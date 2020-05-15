@@ -1,5 +1,14 @@
 # @uidu/util-data-test
 
+## 0.1.11
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+- Updated dependencies [ed33d45]
+  - @uidu/emoji@0.1.15
+  - @uidu/task-decision@0.1.17
+
 ## 0.1.10
 
 ### Patch Changes

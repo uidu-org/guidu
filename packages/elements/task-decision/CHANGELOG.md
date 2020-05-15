@@ -1,5 +1,13 @@
 # @uidu/task-decision
 
+## 0.1.17
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+- Updated dependencies [ed33d45]
+  - @uidu/analytics-namespaced-context@0.1.8
+
 ## 0.1.16
 
 ### Patch Changes

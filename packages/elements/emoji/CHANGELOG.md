@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.1.15
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+
 ## 0.1.14
 
 ### Patch Changes

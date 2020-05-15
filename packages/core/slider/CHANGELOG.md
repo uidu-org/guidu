@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.2.2
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+
 ## 1.2.1
 
 ### Patch Changes

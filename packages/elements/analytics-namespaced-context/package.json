@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-namespaced-context",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Provides a namespace for AnalyticsContext data (@uidu/analytics)",
   "license": "Apache-2.0",
   "module": "index.js",
@@ -10,7 +10,7 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@uidu/analytics-listeners": "^0.1.6",
+    "@uidu/analytics-listeners": "^0.1.7",
     "@uidu/docs": "^0.1.45",
     "react": "^16.8.3"
   },

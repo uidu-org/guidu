@@ -1,5 +1,14 @@
 # @atlaskit/analytics-listeners
 
+## 0.1.7
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+- Updated dependencies [ed33d45]
+  - @uidu/analytics-gas-types@0.1.8
+  - @uidu/analytics-namespaced-context@0.1.8
+
 ## 0.1.6
 
 ### Patch Changes

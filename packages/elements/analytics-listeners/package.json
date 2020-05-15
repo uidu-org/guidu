@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-listeners",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Fabric analytics listeners to be used by the products",
   "keywords": [
     "fabric",
@@ -19,8 +19,8 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.1.21",
-    "@uidu/analytics-gas-types": "^0.1.7",
-    "@uidu/analytics-namespaced-context": "^0.1.7",
+    "@uidu/analytics-gas-types": "^0.1.8",
+    "@uidu/analytics-namespaced-context": "^0.1.8",
     "lodash.last": "^3.0.0",
     "lodash.merge": "^4.6.2",
     "tslib": "^2.0.0"
