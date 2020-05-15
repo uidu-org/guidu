@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.2.9
+
+### Patch Changes
+
+- d93507a: Make schema public
+- Updated dependencies [d93507a]
+  - @uidu/schema.d.ts@0.1.2
+
 ## 0.2.8
 
 ### Patch Changes
