@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.4.10
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+
 ## 0.4.9
 
 ### Patch Changes

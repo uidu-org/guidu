@@ -1,5 +1,18 @@
 # @uidu/editor-core
 
+## 0.3.6
+
+### Patch Changes
+
+- ed33d45: Bump dependencies and fix donations slider autoheight
+- Updated dependencies [ed33d45]
+  - @uidu/adf-utils@0.4.10
+  - @uidu/analytics-gas-types@0.1.8
+  - @uidu/analytics-listeners@0.1.7
+  - @uidu/analytics-namespaced-context@0.1.8
+  - @uidu/emoji@0.1.15
+  - @uidu/task-decision@0.1.17
+
 ## 0.3.5
 
 ### Patch Changes
