@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.3
+
+### Patch Changes
+
+- 2b4d518: Prevent double payment (to be tested)
+
 ## 0.1.2
 
 ### Patch Changes

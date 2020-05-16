@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.2.11
+
+### Patch Changes
+
+- 2b4d518: Prevent double payment (to be tested)
+- Updated dependencies [2b4d518]
+  - @uidu/payments@0.2.10
+  - @uidu/schema.d.ts@0.1.3
+
 ## 0.2.10
 
 ### Patch Changes
