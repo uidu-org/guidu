@@ -36,6 +36,10 @@ function Payments({
       return;
     }
 
+    if (loading) {
+      return;
+    }
+
     if (cardComplete) {
       setLoading(true);
     }
@@ -62,7 +66,7 @@ function Payments({
         // to save the card to a Customer
         // The PaymentMethod ID can be found on result.paymentIntent.payment_method
         onSuccess(paymentIntent);
-        setLoading(false);
+        // setLoading(false);
       }
     }
   };
@@ -92,12 +96,13 @@ function Payments({
       // SEPA Direct Debit payments are asynchronous,
       // so funds are not immediately available.
       onSuccess(paymentIntent);
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.target);
 
     if (provider.id === 'card') {
@@ -118,7 +123,7 @@ function Payments({
     handleSubmit,
     loading,
     error,
-    canSubmit: !!stripe,
+    canSubmit: !!stripe && !loading,
     onChange,
     ...rest,
   });

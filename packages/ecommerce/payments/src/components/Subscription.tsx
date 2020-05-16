@@ -43,13 +43,13 @@ function Subscription({
           setLoading(false);
         } else {
           // Show a success message to your customer
-          setLoading(false);
+          // setLoading(false);
           onSuccess(paymentIntent);
         }
       } else {
         // No additional information was needed
         // Show a success message to your customer
-        setLoading(false);
+        // setLoading(false);
         onSuccess(payment_intent);
       }
     }
@@ -75,6 +75,10 @@ function Subscription({
 
     if (error) {
       cardElement.focus();
+      return;
+    }
+
+    if (loading) {
       return;
     }
 

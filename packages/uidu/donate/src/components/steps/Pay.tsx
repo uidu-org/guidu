@@ -10,11 +10,14 @@ import React, { useEffect, useState } from 'react';
 
 export type PayProps = {
   provider: PaymentProviderTypes;
-  donation: Donation;
-  donationCampaign?: DonationCampaign;
-  currentOrganization: Organization;
+  donation: Partial<Donation>;
+  donationCampaign?: Partial<DonationCampaign>;
+  currentOrganization: Partial<Organization>;
   stripe: Stripe | Promise<Stripe | null>;
-  createPaymentIntent: (donation: Donation, model: any) => Promise<any>;
+  createPaymentIntent: (
+    donation: Partial<Donation>,
+    model: any,
+  ) => Promise<any>;
   onSuccess: PaymentsProps['onSuccess'];
 };
 
@@ -41,7 +44,7 @@ export default function Pay({
   return (
     <Payments
       stripe={stripe}
-      stripeBillingDetails={donation.contact.stripeBillingDetails}
+      stripeBillingDetails={donation.contact?.stripeBillingDetails}
       scope="donations"
       amount={donation.amount}
       clientSecret={paymentIntent?.client_secret}

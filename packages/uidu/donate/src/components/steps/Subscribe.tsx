@@ -10,9 +10,9 @@ import { Donation } from '@uidu/schema.d.ts';
 import React, { useState } from 'react';
 
 export type SubscribeProps = {
-  donation: Donation;
+  donation: Partial<Donation>;
   stripe: Stripe | Promise<Stripe | null>;
-  subscribeToPlan: (donation: Donation, model: any) => Promise<any>;
+  subscribeToPlan: (donation: Partial<Donation>, model: any) => Promise<any>;
   onSuccess: SubscriptionProps['onSuccess'];
 };
 
@@ -46,7 +46,7 @@ export default function Subscribe({
       </ul>
       <Subscription
         stripe={stripe}
-        stripeBillingDetails={donation.contact.stripeBillingDetails}
+        stripeBillingDetails={donation.contact?.stripeBillingDetails}
         provider={{ id: provider, name: provider }}
         createSubscription={async (payload) =>
           subscribeToPlan(donation, payload)
