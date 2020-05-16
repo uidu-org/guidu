@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.2.10
+
+### Patch Changes
+
+- 2b4d518: Prevent double payment (to be tested)
+
 ## 0.2.9
 
 ### Patch Changes
