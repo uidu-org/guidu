@@ -2426,6 +2426,7 @@ export type Organization = ActiveRecordTimestamp & Node & WithAddresses & WithAv
   name: Scalars['String'];
   path: Scalars['String'];
   post?: Maybe<Post>;
+  products?: Maybe<Array<Product>>;
   related?: Maybe<Array<Organization>>;
   search?: Maybe<SearchResult>;
   services?: Maybe<Array<Service>>;
@@ -2449,6 +2450,11 @@ export type OrganizationAudiencesArgs = {
 
 export type OrganizationAvatarArgs = {
   variant?: Maybe<Scalars['String']>;
+};
+
+
+export type OrganizationProductsArgs = {
+  kind?: Maybe<Scalars['String']>;
 };
 
 
@@ -2626,6 +2632,8 @@ export type Query = {
   contact: Contact;
   /** Get all organizations contacts */
   contacts: Array<Contact>;
+  /** Current organization */
+  currentOrganization?: Maybe<Organization>;
   /** Current user */
   currentUser?: Maybe<User>;
   /** Get current Data View */
@@ -2682,10 +2690,6 @@ export type Query = {
   plans: Array<Plan>;
   /** Find a product by ID */
   product: Product;
-  /** Find a product by kind */
-  productByKind: Product;
-  /** Get all organizations products */
-  products: Array<Product>;
   /** Find a project by id */
   project: Project;
   /** Get all organizations projects */
@@ -2848,11 +2852,6 @@ export type QueryPlanArgs = {
 
 export type QueryProductArgs = {
   id: Scalars['ID'];
-};
-
-
-export type QueryProductByKindArgs = {
-  kind: Scalars['String'];
 };
 
 

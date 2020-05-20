@@ -15,7 +15,8 @@
     "@uidu/slider": "^1.2.0",
     "axios": "^0.19.0",
     "react-feather": "^2.0.3",
-    "react-intl": "^4.0.0"
+    "react-intl": "^4.0.0",
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45"

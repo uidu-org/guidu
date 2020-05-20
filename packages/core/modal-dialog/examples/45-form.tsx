@@ -87,7 +87,6 @@ export default class AtlaskitFormDemo extends React.Component<{}, State> {
             >
               <p>Enter some text then submit the form to see the response.</p>
               <FieldText label="Name" name="my-name" defaultValue="" />
-              )}
               <FieldText
                 autoComplete="off"
                 placeholder="gbelson@hooli.com"
@@ -101,12 +100,10 @@ export default class AtlaskitFormDemo extends React.Component<{}, State> {
                 name="checkbox"
                 defaultIsChecked
               />
-              )}
               <RadioGroup
                 items={radioItems}
                 label="Basic Radio Group Example"
               ></RadioGroup>
-              )}
             </ModalDialog>
           )}
         </ModalTransition>

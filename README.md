@@ -33,7 +33,39 @@ TODO: Fill out this long description.
 
 ## Contributing
 
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+Clone the repository
+
+```
+git clone https://github.com/uidu-org/guidu
+cd guidu
+```
+
+Install bolt
+
+```
+yarn global add bolt
+bolt install
+```
+
+Start all packages
+
+```
+bolt start
+```
+
+Start specific folders
+
+```
+bolt start:forms
+bolt start:data
+bolt start:dashboards
+```
+
+or specific packages
+
+```
+bolt start modal-dialog field-geosuggest
+```
 
 ## License
 
