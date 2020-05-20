@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.1.95
+
+### Patch Changes
+
+- 91c9a94: Readme
+- Updated dependencies [91c9a94]
+  - @uidu/modal-dialog@0.1.39
+
 ## 0.1.94
 
 ### Patch Changes
