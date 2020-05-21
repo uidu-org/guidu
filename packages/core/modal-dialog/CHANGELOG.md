@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.1.39
+
+### Patch Changes
+
+- 91c9a94: Readme
+
 ## 0.1.38
 
 ### Patch Changes

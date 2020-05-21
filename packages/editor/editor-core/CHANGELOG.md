@@ -1,5 +1,15 @@
 # @uidu/editor-core
 
+## 0.3.7
+
+### Patch Changes
+
+- 91c9a94: Readme
+- Updated dependencies [91c9a94]
+  - @uidu/modal-dialog@0.1.39
+  - @uidu/adf-schema@0.2.1
+  - @uidu/editor-markdown-transformer@0.1.11
+
 ## 0.3.6
 
 ### Patch Changes

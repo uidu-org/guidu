@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.1
+
+### Patch Changes
+
+- 91c9a94: Readme
+
 ## 0.2.0
 
 ### Minor Changes
