@@ -1,5 +1,16 @@
 # @uidu/field-image-uploader
 
+## 0.3.0
+
+### Minor Changes
+
+- d1c1dd6: Changed how we pass uploadOptions, to allow for local and aws-s3 uploads
+
+### Patch Changes
+
+- Updated dependencies [d1c1dd6]
+  - @uidu/media-core@0.2.0
+
 ## 0.2.11
 
 ### Patch Changes

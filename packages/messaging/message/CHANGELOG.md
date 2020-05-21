@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.1.45
+
+### Patch Changes
+
+- Updated dependencies [d1c1dd6]
+  - @uidu/media-core@0.2.0
+  - @uidu/media-card@0.2.2
+  - @uidu/media-viewer@0.1.39
+
 ## 0.1.44
 
 ### Patch Changes
