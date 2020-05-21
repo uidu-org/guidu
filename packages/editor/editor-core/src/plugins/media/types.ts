@@ -1,7 +1,11 @@
 import { ProviderFactory } from '@uidu/editor-common';
 import { Providers } from '@uidu/editor-common/provider-factory';
-import { FileIdentifier, MediaClientConfig } from '@uidu/media-core';
-import { MediaFile, UploadParams } from '@uidu/media-picker/types';
+import {
+  FileIdentifier,
+  MediaClientConfig,
+  MediaUploadOptions,
+} from '@uidu/media-core';
+import { MediaFile } from '@uidu/media-picker/types';
 import { NodeType } from 'prosemirror-model';
 import { EditorView } from 'prosemirror-view';
 
@@ -63,7 +67,7 @@ export interface CustomMediaPicker {
   removeAllListeners(event: any): void;
   emit(event: string, data: any): void;
   destroy(): void;
-  setUploadParams(uploadParams: UploadParams): void;
+  setUploadOptions(uploadOptions: MediaUploadOptions): void;
 }
 
 export type MobileUploadEndEventPayload = {

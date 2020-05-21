@@ -2,6 +2,7 @@ import { ShellBody, ShellHeader } from '@uidu/shell';
 import { AtlaskitThemeProvider } from '@uidu/theme';
 import React, { Fragment, PureComponent } from 'react';
 import { Editor, EditorContext, WithEditorActions } from '..';
+import { localUploadOptions } from '../../../media/media-core/src';
 import { document as storyDataDocument } from '../../renderer/examples/helper/story-data';
 import { DevTools } from '../examples-utils/DevTools';
 
@@ -35,7 +36,9 @@ export default class Basic extends PureComponent<any, any> {
                   onChange={this.handleChange(actions)}
                   media={{
                     provider: Promise.resolve({
-                      uploadParams: { endpoint: '/upload' },
+                      uploadOptions: localUploadOptions({
+                        url: 'https://uidu.local:8443/upload',
+                      }),
                       viewMediaClientConfig: Promise.resolve('test'),
                       uploadMediaClientConfig: Promise.resolve('test'),
                     }),

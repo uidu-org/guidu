@@ -1,3 +1,4 @@
+import { AwsS3Options } from '@uppy/aws-s3';
 import { XHRUploadOptions } from '@uppy/xhr-upload';
 
 export type FileMetadata = {
@@ -21,7 +22,11 @@ export type FileIdentifier = {
 
 export type MediaClientConfig = any;
 
-export type MediaXHRUploadParams = Partial<XHRUploadOptions>;
+export type MediaUploadOptions = {
+  module: any;
+  options: Partial<XHRUploadOptions> | Partial<AwsS3Options>;
+  responseHandler: (response) => FileIdentifier;
+};
 
 export interface Media {
   id: number | string;

@@ -1,6 +1,7 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
 import FieldImageUploader from '..';
+import { s3UploadOptions } from '../../../media/media-core/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 
@@ -40,9 +41,10 @@ export default class Basic extends Component<any, any> {
           // onFocus={this.onFocus}
           label="Test"
           help="Drag 'n' drop some files here, or click to select files"
-          XHRUploadOptions={{
-            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
-          }}
+          uploadOptions={s3UploadOptions({
+            url: 'https://uidu-it.org',
+            type: 'image',
+          })}
         />
 
         <div
@@ -60,6 +62,10 @@ export default class Basic extends Component<any, any> {
 
         <FieldImageUploader
           {...inputDefaultProps}
+          uploadOptions={s3UploadOptions({
+            url: 'https://uidu-it.org',
+            type: 'image',
+          })}
           ratio="16by9"
           defaultValue="https://images.unsplash.com/photo-1496016943515-7d33598c11e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
           onChange={this.onChange}

@@ -3,7 +3,6 @@ import Uppy from '@uppy/core';
 import '@uppy/core/dist/style.css';
 import '@uppy/dashboard/dist/style.css';
 import { Dashboard } from '@uppy/react';
-import XHRUpload from '@uppy/xhr-upload';
 import React, { useEffect, useMemo } from 'react';
 import { FieldFileUploaderProps } from '../types';
 
@@ -24,15 +23,15 @@ function FieldFileUploader({
   onChange,
   name,
   options = defaultOptions,
-  XHRUploadOptions,
+  uploadOptions,
   ...rest
 }: FieldFileUploaderProps) {
   const uppy = useMemo(
     () =>
       Uppy(options)
-        .use(XHRUpload, XHRUploadOptions)
+        .use(uploadOptions.module, uploadOptions.options)
         .on('complete', (result) => {
-          handleChange(result.successful.map(({ response: { body } }) => body));
+          handleChange(result.successful.map(uploadOptions.responseHandler));
         }),
     [],
   );

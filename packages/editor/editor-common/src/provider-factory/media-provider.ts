@@ -1,10 +1,9 @@
-import { MediaClientConfig } from '@uidu/media-core';
-import { UploadParams } from '@uidu/media-picker';
+import { MediaClientConfig, MediaUploadOptions } from '@uidu/media-core';
 
 export interface FeatureFlags {}
 
 export type MediaProvider = {
-  uploadParams?: UploadParams;
+  uploadOptions?: MediaUploadOptions;
 
   /**
    * (optional) Used for creating new uploads and finalizing files.

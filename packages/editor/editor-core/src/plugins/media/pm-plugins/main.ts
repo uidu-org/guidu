@@ -209,9 +209,9 @@ export class MediaPluginStateImplementation implements MediaPluginState {
 
     if (this.allowsUploads) {
       this.uploadMediaClientConfig = this.mediaProvider.uploadMediaClientConfig;
-      if (this.mediaProvider.uploadParams) {
+      if (this.mediaProvider.uploadOptions) {
         await this.initPickers(
-          this.mediaProvider.uploadParams,
+          this.mediaProvider.uploadOptions,
           this.reactContext,
         );
       } else {
@@ -375,7 +375,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     this.customPicker = undefined;
   };
 
-  private async initPickers(uploadParams: any, reactContext: () => {}) {
+  private async initPickers(uploadOptions: any, reactContext: () => {}) {
     if (this.destroyed) {
       return undefined;
     }
@@ -385,7 +385,7 @@ export class MediaPluginStateImplementation implements MediaPluginState {
     if (!pickers.length) {
       const popupPicker = MediaPickerFactoryClass({
         proxyReactContext: reactContext(),
-        uploadParams,
+        uploadOptions,
         onComplete: (result) => {
           this.insertFile(
             result.successful.map(({ response }) => response.body),

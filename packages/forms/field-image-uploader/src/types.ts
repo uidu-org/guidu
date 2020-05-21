@@ -1,8 +1,8 @@
 import { FieldBaseProps } from '@uidu/field-base';
-import { XHRUploadOptions } from '@uppy/xhr-upload';
+import { MediaUploadOptions } from '@uidu/media-core';
 
 export type FieldImageUploaderProps = FieldBaseProps & {
-  XHRUploadOptions: Partial<XHRUploadOptions>;
+  uploadOptions: MediaUploadOptions;
   toolbar?: React.FC<any>;
   existing?: React.FC<any>;
   empty?: React.FC<any>;

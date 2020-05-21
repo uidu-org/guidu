@@ -2,7 +2,7 @@ export { default } from './components/MediaPicker';
 export * from './types';
 
 export async function MediaPickerFactoryClass({
-  uploadParams,
+  uploadOptions,
   proxyReactContext,
   onComplete,
 }): Promise<any> {
@@ -14,5 +14,5 @@ export async function MediaPickerFactoryClass({
 
   //  const mediaClient = getMediaClient(mediaClientConfig);
 
-  return PopupImpl({ uploadParams, proxyReactContext, onComplete });
+  return PopupImpl({ uploadOptions, proxyReactContext, onComplete });
 }

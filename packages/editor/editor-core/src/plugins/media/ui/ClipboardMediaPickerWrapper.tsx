@@ -11,10 +11,20 @@ export default class ClipboardMediaPickerWrapper extends React.Component<
 > {
   show = () => {};
 
+  setUploadOptions = async () => {
+    const {
+      mediaState: { mediaProvider },
+    } = this.props;
+    return await mediaProvider?.uploadOptions;
+  };
+
   render() {
     const { mediaState } = this.props;
+    if (!mediaState.mediaProvider) return null;
+
     return (
       <MediaPicker
+        uploadOptions={mediaState.mediaProvider.uploadOptions}
         onComplete={(result) => {
           mediaState.insertFile(result);
         }}

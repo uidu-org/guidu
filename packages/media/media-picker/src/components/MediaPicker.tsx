@@ -10,7 +10,6 @@ import Url from '@uppy/url';
 import '@uppy/url/dist/style.css';
 import Webcam from '@uppy/webcam';
 import '@uppy/webcam/dist/style.css';
-import XHRUpload from '@uppy/xhr-upload';
 import React, { PureComponent } from 'react';
 
 export default class MediaPicker extends PureComponent<any> {
@@ -23,7 +22,8 @@ export default class MediaPicker extends PureComponent<any> {
 
   constructor(props) {
     super(props);
-    const { onComplete } = props;
+    const { onComplete, uploadOptions } = props;
+    console.log(props);
     this.uppy = Uppy({
       debug: true,
       allowMultipleUploads: true,
@@ -37,11 +37,7 @@ export default class MediaPicker extends PureComponent<any> {
     });
     this.uppy
       .use(Webcam)
-      .use(XHRUpload, {
-        formData: true,
-        endpoint: 'https://uidufundraising.uidu.local:8443/upload',
-        withCredentials: true,
-      })
+      .use(uploadOptions.module, uploadOptions.options)
       .use(Url, {
         companionUrl,
       })
@@ -67,14 +63,14 @@ export default class MediaPicker extends PureComponent<any> {
     return (
       <DashboardModal
         uppy={this.uppy}
-        plugins={[
-          'XHRUpload',
-          'Webcam',
-          'Url',
-          'Dropbox',
-          'GoogleDrive',
-          'ThumbnailGenerator',
-        ]}
+        // plugins={[
+        //   'XHRUpload',
+        //   'Webcam',
+        //   'Url',
+        //   'Dropbox',
+        //   'GoogleDrive',
+        //   'ThumbnailGenerator',
+        // ]}
         proudlyDisplayPoweredByUppy={false}
         closeAfterFinish
         closeModalOnClickOutside

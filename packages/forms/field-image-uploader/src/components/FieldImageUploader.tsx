@@ -2,7 +2,6 @@ import { Wrapper } from '@uidu/field-base';
 import Spinner from '@uidu/spinner';
 import Uppy from '@uppy/core';
 import ThumbnailGenerator from '@uppy/thumbnail-generator';
-import XHRUpload from '@uppy/xhr-upload';
 import React, {
   useCallback,
   useEffect,
@@ -37,7 +36,7 @@ function FieldImageUploader({
   value,
   onChange,
   onSetValue,
-  XHRUploadOptions = {},
+  uploadOptions,
   ...rest
 }: FieldImageUploaderProps) {
   const canvas: React.RefObject<HTMLDivElement> = useRef(null);
@@ -68,7 +67,7 @@ function FieldImageUploader({
         maxNumberOfFiles: 1,
       },
     })
-      .use(XHRUpload, XHRUploadOptions)
+      .use(uploadOptions.module, uploadOptions.options)
       .use(ThumbnailGenerator, {
         thumbnailWidth: calculateWidth(),
       })
@@ -83,11 +82,11 @@ function FieldImageUploader({
       .on('upload-progress', (_file, progress) => {
         setProgress(progress.bytesUploaded / progress.bytesTotal);
       })
+
       .on('complete', (result) => {
+        console.log(result);
         setProgress(null);
-        const value = result.successful.map(
-          ({ response: { body } }) => body,
-        )[0];
+        const value = result.successful.map(uploadOptions.responseHandler)[0];
         const valueWithMetadata = mergeValueWithMetadata(value);
         onSetValue(valueWithMetadata);
         onChange(name, valueWithMetadata);

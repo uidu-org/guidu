@@ -65,7 +65,7 @@ export class MediaNodeUpdater {
     // const mediaProvider = await this.props.mediaProvider;
     // if (
     //   !mediaProvider ||
-    //   !mediaProvider.uploadParams ||
+    //   !mediaProvider.uploadOptions ||
     //   !attrs ||
     //   attrs.type !== 'file' ||
     //   this.hasFileAttributesDefined()
@@ -225,11 +225,10 @@ export class MediaNodeUpdater {
 
   isNodeFromDifferentCollection = async (): Promise<boolean> => {
     const mediaProvider = await this.props.mediaProvider;
-    if (!mediaProvider || !mediaProvider.uploadParams) {
+    if (!mediaProvider || !mediaProvider.uploadOptions) {
       return false;
     }
 
-    const currentCollectionName = mediaProvider.uploadParams.collection;
     const attrs = this.getAttrs();
     if (!attrs || attrs.type !== 'file') {
       return false;
@@ -248,7 +247,7 @@ export class MediaNodeUpdater {
     const attrs = this.getAttrs();
     if (
       !mediaProvider ||
-      !mediaProvider.uploadParams ||
+      !mediaProvider.uploadOptions ||
       !attrs ||
       attrs.type !== 'file'
     ) {

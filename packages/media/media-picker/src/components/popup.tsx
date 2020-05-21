@@ -4,7 +4,7 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import MediaPicker from './MediaPicker';
 
 export function PopupImpl({
-  uploadParams, // tenant
+  uploadOptions, // tenant
   proxyReactContext,
   onComplete,
 }) {
@@ -18,7 +18,7 @@ export function PopupImpl({
 
   // constructor({
   //   container = exenv.canUseDOM ? document.body : undefined,
-  //   uploadParams, // tenant
+  //   uploadOptions, // tenant
   //   proxyReactContext,
   //   singleSelect,
   //   plugins,
@@ -67,9 +67,9 @@ export function PopupImpl({
     document.body.removeChild(el);
   };
 
-  const setUploadParams = () => {
+  const setUploadOptions = () => {
     // this.tenantUploadParams = {
-    //   ...uploadParams,
+    //   ...uploadOptions,
     // };
   };
 
@@ -87,7 +87,7 @@ export function PopupImpl({
     render(
       <MediaPicker
         proxyReactContext={proxyReactContext}
-        uploadParams={uploadParams}
+        uploadOptions={uploadOptions}
         onComplete={onComplete}
         open
       />,

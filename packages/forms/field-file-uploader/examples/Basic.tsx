@@ -1,6 +1,10 @@
 import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
 import FieldFileUploader from '..';
+import {
+  localUploadOptions,
+  s3UploadOptions,
+} from '../../../media/media-core/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 
@@ -10,17 +14,16 @@ export default class Basic extends PureComponent {
       <Form {...formDefaultProps}>
         <FieldFileUploader
           {...inputDefaultProps}
-          XHRUploadOptions={{
-            formData: true,
-            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
-          }}
+          uploadOptions={localUploadOptions({
+            url: 'https://uidufundraising.uidu.local:8443/upload',
+          })}
         />
         <FieldFileUploader
           {...inputDefaultProps}
-          XHRUploadOptions={{
-            formData: true,
-            endpoint: 'https://uidufundraising.uidu.local:8443/upload',
-          }}
+          uploadOptions={s3UploadOptions({
+            url: 'https://uidu-it.org',
+            type: 'file',
+          })}
         />
       </Form>
     );

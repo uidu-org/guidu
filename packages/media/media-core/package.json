@@ -8,7 +8,9 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/docs": "^0.1.45"
+    "@uidu/docs": "^0.1.45",
+    "@uppy/aws-s3": "^1.6.4",
+    "@uppy/xhr-upload": "^1.0.1"
   },
   "peerDependencies": {
     "react": "^16.8.3"
