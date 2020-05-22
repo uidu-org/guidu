@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 0.4.0
+
+### Minor Changes
+
+- d1c1dd6: Changed how we pass uploadOptions, to allow for local and aws-s3 uploads
+
+### Patch Changes
+
+- Updated dependencies [d1c1dd6]
+  - @uidu/editor-common@0.3.0
+  - @uidu/media-core@0.2.0
+  - @uidu/media-picker@0.3.0
+  - @uidu/editor-markdown-transformer@0.1.12
+  - @uidu/media-card@0.2.2
+  - @uidu/media-filmstrip@0.1.33
+
 ## 0.3.7
 
 ### Patch Changes

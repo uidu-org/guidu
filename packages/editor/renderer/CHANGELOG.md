@@ -1,5 +1,14 @@
 # @atlaskit/renderer
 
+## 0.1.28
+
+### Patch Changes
+
+- Updated dependencies [d1c1dd6]
+  - @uidu/editor-common@0.3.0
+  - @uidu/media-card@0.2.2
+  - @uidu/media-filmstrip@0.1.33
+
 ## 0.1.27
 
 ### Patch Changes

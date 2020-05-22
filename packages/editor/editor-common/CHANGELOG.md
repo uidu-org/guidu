@@ -1,5 +1,11 @@
 # @uidu/editor-common
 
+## 0.3.0
+
+### Minor Changes
+
+- d1c1dd6: Changed how we pass uploadOptions, to allow for local and aws-s3 uploads
+
 ## 0.2.0
 
 ### Minor Changes

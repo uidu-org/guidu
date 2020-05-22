@@ -1,5 +1,12 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.12
+
+### Patch Changes
+
+- Updated dependencies [d1c1dd6]
+  - @uidu/editor-common@0.3.0
+
 ## 0.1.11
 
 ### Patch Changes
