@@ -1,5 +1,11 @@
 # @uidu/drawer
 
+## 0.2.17
+
+### Patch Changes
+
+- 3fef5f2: Fix donations custom amount
+
 ## 0.2.16
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/donate
 
+## 0.2.12
+
+### Patch Changes
+
+- 3fef5f2: Fix donations custom amount
+- Updated dependencies [3fef5f2]
+  - @uidu/modal-dialog@0.1.40
+
 ## 0.2.11
 
 ### Patch Changes
