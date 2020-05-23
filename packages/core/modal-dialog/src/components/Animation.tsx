@@ -13,8 +13,8 @@ const verticalOffset = 16;
 
 interface AnimationProps {
   in: boolean;
-  onExited?: (node: HTMLElement) => void;
-  onEntered?: (node: HTMLElement, isAppearing: boolean) => void;
+  onExited?: () => void;
+  onEntered?: (isAppearing: boolean) => void;
   stackIndex?: number;
   children: ({
     fade,

@@ -6,7 +6,7 @@ const plans = [
     name: 'Custom plan',
     interval: 'month',
     description: null,
-    amount: 100,
+    amount: 1,
     currency: '€',
   },
   {
@@ -30,7 +30,7 @@ const plans = [
 const skus = [
   {
     id: 'Z2lkOi8vdWlkdS9Ta3UvMjQ',
-    price: 100,
+    price: 1,
     stripeAttributes: {
       name: 'Custom donation',
     },

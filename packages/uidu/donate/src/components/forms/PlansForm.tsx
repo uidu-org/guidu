@@ -58,7 +58,8 @@ function CustomPlanForm({ plan, handleSubmit, recurrence }) {
                   defaultMessage="Donation amount"
                 />
               }
-              onChange={(name, value) => setCustomAmount(value * 100)}
+              value={customAmount}
+              onChange={(_name, value) => setCustomAmount(value * 100)}
               min={5}
               required
               addonAfter={

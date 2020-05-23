@@ -54,7 +54,8 @@ function CustomSkuForm({ sku, handleSubmit }) {
                   defaultMessage="Donation amount"
                 />
               }
-              onChange={(name, value) => setCustomAmount(value * 100)}
+              onChange={(_name, value) => setCustomAmount(value * 100)}
+              value={customAmount}
               min={5}
               required
             />

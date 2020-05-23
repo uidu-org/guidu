@@ -10,7 +10,7 @@ import { DrawerOrigin } from '../types';
 type TransitionProps = {
   children?: React.ReactNode;
   component?: any;
-  onExited?: (node: HTMLElement) => void;
+  onExited?: () => void;
   shouldUnmountOnExit?: boolean;
   origin: DrawerOrigin;
   in: boolean;
@@ -62,7 +62,7 @@ class TransitionHandler extends Component<TransitionProps & HandlerProps> {
         timeout={timeout}
         {...transitionProps}
       >
-        {state => {
+        {(state) => {
           const style = {
             ...defaultStyles,
             ...transitionStyles[state],
@@ -91,7 +91,7 @@ export const Fade = ({ isStacked, ...props }: TransitionProps) => (
   />
 );
 
-const getTransform = origin => {
+const getTransform = (origin) => {
   switch (origin) {
     case 'right':
       return 'translate3d(100%,0,0)';

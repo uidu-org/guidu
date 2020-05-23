@@ -76,11 +76,11 @@ export interface WrapperProps extends WithAnalyticsEventsProps {
   /**
     Function that will be called when the exit transition is complete.
   */
-  onCloseComplete?: (element: HTMLElement) => void;
+  onCloseComplete?: () => void;
   /**
     Function that will be called when the enter transition is complete.
   */
-  onOpenComplete?: (node: HTMLElement, isAppearing: boolean) => void;
+  onOpenComplete?: (isAppearing: boolean) => void;
   /**
     Function that will be called when the modal changes position in the stack.
   */
@@ -135,12 +135,12 @@ function ModalWrapper({
   children,
   ...rest
 }: WrapperProps) {
-  const onModalClosed = (onExited?: () => any) => (e: HTMLElement) => {
+  const onModalClosed = (onExited?: () => any) => () => {
     if (onExited) {
       onExited();
     }
     if (onCloseComplete) {
-      onCloseComplete(e);
+      onCloseComplete();
     }
   };
 

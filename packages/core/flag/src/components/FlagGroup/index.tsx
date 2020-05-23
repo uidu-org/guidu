@@ -17,6 +17,7 @@ type Props = {
 
 export default class FlagGroup extends Component<Props, {}> {
   private animationTimeoutId: number | undefined;
+  private nodeRef: any = React.createRef();
 
   componentWillUnmount() {
     window.clearTimeout(this.animationTimeoutId);
@@ -33,18 +34,22 @@ export default class FlagGroup extends Component<Props, {}> {
         // @ts-ignore: Bug in types - 'timeout' prop should not be required when addEndListener is provided
         <Transition
           key={id}
-          addEndListener={(node, done: (a?: any) => void) => {
+          nodeRef={this.nodeRef}
+          addEndListener={(done: (a?: any) => void) => {
             if (index > 0) {
               done();
               return;
             }
-            node.addEventListener('animationstart', (...args) => {
-              this.animationTimeoutId = window.setTimeout(
-                () => done(...args),
-                flagAnimationTime,
-              );
-            });
-            node.addEventListener('animationend', done);
+            this.nodeRef.current.addEventListener(
+              'animationstart',
+              (...args) => {
+                this.animationTimeoutId = window.setTimeout(
+                  () => done(...args),
+                  flagAnimationTime,
+                );
+              },
+            );
+            this.nodeRef.current.addEventListener('animationend', done);
           }}
         >
           {(transitionState: string) => (

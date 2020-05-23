@@ -1,7 +1,7 @@
 export function isCustomSku(sku) {
-  return sku.price === 100;
+  return sku.price === 1;
 }
 
 export function isCustomPlan(plan) {
-  return plan.amount === 100;
+  return plan.amount === 1;
 }
