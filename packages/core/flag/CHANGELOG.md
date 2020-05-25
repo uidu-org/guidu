@@ -1,5 +1,11 @@
 # @uidu/flag
 
+## 0.1.14
+
+### Patch Changes
+
+- 3fef5f2: Fix donations custom amount
+
 ## 0.1.13
 
 ### Patch Changes
