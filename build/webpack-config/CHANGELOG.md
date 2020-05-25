@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.66
+
+### Patch Changes
+
+- 4154b07: Bump svg-url-loader
+
 ## 0.1.65
 
 ### Patch Changes
