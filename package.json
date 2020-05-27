@@ -397,7 +397,7 @@
     "webpack-bundle-analyzer": "^3.0.4",
     "webpack-dev-server": "^3.2.1",
     "webpack-manifest-plugin": "^2.0.4",
-    "zoid": "^6.0.79",
+    "zoid": "^9.0.43",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {

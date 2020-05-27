@@ -5,10 +5,10 @@
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
   "author": "",
+  "main": "index.scss",
   "files": [
     "index.scss"
   ],
-  "main": "index.scss",
   "devDependencies": {
     "@uidu/docs": "^0.1.46"
   },

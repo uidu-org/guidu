@@ -6,14 +6,14 @@
   "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
-  "files": [
-    "src",
-    "bin.js"
-  ],
   "main": "bin.js",
   "bin": {
     "json-schema-generator": "bin.js"
   },
+  "files": [
+    "src",
+    "bin.js"
+  ],
   "dependencies": {
     "@types/meow": "^5.0.0",
     "@types/mkdirp": "^1.0.0",

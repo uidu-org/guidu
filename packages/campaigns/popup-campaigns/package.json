@@ -1,11 +1,11 @@
 {
   "name": "@uidu/popup-campaigns",
   "version": "0.1.5",
-  "description": "Popus for capturing user attention on websites",
-  "main": "index.js",
-  "author": "uidu",
-  "license": "MIT",
   "private": false,
+  "description": "Popus for capturing user attention on websites",
+  "license": "MIT",
+  "author": "uidu",
+  "main": "index.js",
   "devDependencies": {
     "@uidu/docs": "^0.1.45"
   }

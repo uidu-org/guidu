@@ -47,7 +47,7 @@ yarn global add bolt
 bolt install
 ```
 
-Start all packages
+Start all packages (not reccommended)
 
 ```
 bolt start
@@ -66,6 +66,12 @@ or specific packages
 ```
 bolt start modal-dialog field-geosuggest
 ```
+
+## Common pitfalls
+
+Missing packageId
+
+App keep reloading
 
 ## License
 

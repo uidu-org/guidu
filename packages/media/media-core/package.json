@@ -12,14 +12,14 @@
     "@uppy/aws-s3": "^1.6.4",
     "@uppy/xhr-upload": "^1.0.1"
   },
+  "devDependencies": {
+    "@uidu/section-message": "^0.1.22"
+  },
   "peerDependencies": {
     "react": "^16.8.3"
   },
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts",
-  "devDependencies": {
-    "@uidu/section-message": "^0.1.22"
-  }
+  "uidu:src": "index.ts"
 }
