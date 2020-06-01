@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/navigation"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
       overflowHidden
       fullWidth
     />

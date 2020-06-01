@@ -42,7 +42,7 @@ export default md`
       packageName="@uidu/navigation"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
       overflowHidden
       fullWidth
     />
@@ -53,7 +53,7 @@ export default md`
       packageName="@uidu/navigation"
       Component={require('../examples/Full').default}
       title="Kitchen Sink"
-      source={require('!!raw-loader!../examples/Full')}
+      source={require('!!raw-loader!../examples/Full').default}
       overflowHidden
       fullWidth
     />
@@ -65,7 +65,7 @@ export default md`
       packageName="@uidu/navigation"
       Component={require('../examples/Icon').default}
       title="Icon Navigation"
-      source={require('!!raw-loader!../examples/Icon')}
+      source={require('!!raw-loader!../examples/Icon').default}
       overflowHidden
       fullWidth
     />

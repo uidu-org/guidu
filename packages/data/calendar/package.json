@@ -13,7 +13,7 @@
     "@uidu/shell": "^0.3.0",
     "classnames": "^2.2.6",
     "moment": "^2.18.1",
-    "react-big-calendar": "^0.24.0",
+    "react-big-calendar": "^0.25.0",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {

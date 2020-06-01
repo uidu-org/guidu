@@ -14,7 +14,7 @@ export default md`
       packageName="@uidu/tabbar"
       Component={require('../examples/Basic').default}
       title="Accordion allowMultipleExpanded"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
       fullWidth
       overflowHidden
     />
