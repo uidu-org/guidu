@@ -1,5 +1,5 @@
+import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/link-preview"
       Component={require('../examples/Basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 
@@ -27,7 +27,7 @@ export default md`
       packageName="@uidu/link-preview"
       Component={require('../examples/OnKeyDown').default}
       title="OnKeyDown"
-      source={require('!!raw-loader!../examples/OnKeyDown')}
+      source={require('!!raw-loader!../examples/OnKeyDown').default}
     />
   )}
 

@@ -27,7 +27,7 @@ export default React.memo(function MessageAttachments({
   const validAttachments = attachments.filter(({ file }) => !!file); // cleanup attachments with no files attached
   const files = validAttachments.map(({ file }) => file);
 
-  if (!scrollable.current) {
+  if (!scrollable?.current) {
     return <div>Loading...</div>;
   }
   if (isOnlyImages(files)) {

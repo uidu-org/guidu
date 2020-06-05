@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/chat-room"
       Component={require('../examples/Basic').default}
       title="Your Appearance Options"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 

@@ -1,5 +1,5 @@
+import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/message-renderer"
       Component={require('../examples/Basic').default}
       title="Your Appearance Options"
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 

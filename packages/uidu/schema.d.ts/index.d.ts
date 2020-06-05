@@ -1454,11 +1454,15 @@ export type DonationAttributes = {
   subscriptionId?: Maybe<Scalars['Int']>;
 };
 
-export type DonationCampaign = ActiveRecordTimestamp & Node & WithAddresses & WithCover & WithDataViews & WithEnhancements & WithOrganization & WithPost & WithPreferences & WithProducts & WithPublishable & WithWysiwyg & {
+export type DonationCampaign = ActiveRecordTimestamp & Node & WithAddresses & WithCover & WithDataViews & WithEnhancements & WithOrganization & WithPaths & WithPost & WithPreferences & WithProducts & WithPublishable & WithWysiwyg & {
   abstract?: Maybe<Scalars['String']>;
   addresses: Array<Address>;
+  adminPath?: Maybe<Scalars['String']>;
+  adminUrl?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['JSON']>;
   category?: Maybe<Scalars['String']>;
+  communityPath?: Maybe<Scalars['String']>;
+  communityUrl?: Maybe<Scalars['String']>;
   cover?: Maybe<Scalars['String']>;
   createdAt: Scalars['ISO8601DateTime'];
   dataViews: Array<Maybe<DataView>>;
@@ -1474,9 +1478,12 @@ export type DonationCampaign = ActiveRecordTimestamp & Node & WithAddresses & Wi
   kind?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   organization?: Maybe<Organization>;
+  paths?: Maybe<Scalars['JSON']>;
   post?: Maybe<Post>;
   preferences?: Maybe<Scalars['JSON']>;
   products?: Maybe<Array<Product>>;
+  publicPath?: Maybe<Scalars['String']>;
+  publicUrl?: Maybe<Scalars['String']>;
   publishableStatus: Scalars['String'];
   published?: Maybe<Scalars['Boolean']>;
   publishedAt?: Maybe<Scalars['ISO8601DateTime']>;
@@ -1485,6 +1492,7 @@ export type DonationCampaign = ActiveRecordTimestamp & Node & WithAddresses & Wi
   scheduled?: Maybe<Scalars['Boolean']>;
   undestinated?: Maybe<Scalars['Boolean']>;
   updatedAt: Scalars['ISO8601DateTime'];
+  urls?: Maybe<Scalars['JSON']>;
   viewsCount?: Maybe<Scalars['Int']>;
 };
 
@@ -3678,6 +3686,18 @@ export type WithMembers = {
 /** This object refers to an organization */
 export type WithOrganization = {
   organization?: Maybe<Organization>;
+};
+
+/** This object's paths */
+export type WithPaths = {
+  adminPath?: Maybe<Scalars['String']>;
+  adminUrl?: Maybe<Scalars['String']>;
+  communityPath?: Maybe<Scalars['String']>;
+  communityUrl?: Maybe<Scalars['String']>;
+  paths?: Maybe<Scalars['JSON']>;
+  publicPath?: Maybe<Scalars['String']>;
+  publicUrl?: Maybe<Scalars['String']>;
+  urls?: Maybe<Scalars['JSON']>;
 };
 
 /** Object with post */
