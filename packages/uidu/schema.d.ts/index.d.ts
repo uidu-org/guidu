@@ -25,6 +25,11 @@ export type ActiveRecordTimestamp = {
   updatedAt: Scalars['ISO8601DateTime'];
 };
 
+/** Object with many addresses */
+export type ActsAsNotifiable = {
+  printableNotifiableName?: Maybe<Scalars['String']>;
+};
+
 export type Address = ActiveRecordTimestamp & Node & {
   address?: Maybe<Scalars['String']>;
   administrativeAreaLevel1?: Maybe<Scalars['String']>;
@@ -400,6 +405,7 @@ export type Contact = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar 
   lastSignInAt?: Maybe<Scalars['ISO8601DateTime']>;
   lastSignInIp?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
+  notifications?: Maybe<NotificationConnection>;
   online?: Maybe<Scalars['Boolean']>;
   organizationId?: Maybe<Scalars['Int']>;
   phone?: Maybe<Scalars['String']>;
@@ -424,6 +430,14 @@ export type ContactAddressesArgs = {
 
 export type ContactAvatarArgs = {
   variant?: Maybe<Scalars['String']>;
+};
+
+
+export type ContactNotificationsArgs = {
+  after?: Maybe<Scalars['String']>;
+  before?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
 };
 
 export type ContactAttributes = {
@@ -1414,7 +1428,7 @@ export type DestroyImportMatchPayload = {
   importMatch?: Maybe<ImportMatch>;
 };
 
-export type Donation = ActiveRecordTimestamp & Node & WithContact & WithPreferences & WithWysiwyg & {
+export type Donation = ActiveRecordTimestamp & ActsAsNotifiable & Node & WithContact & WithPreferences & WithWysiwyg & {
   /** Donation amount in cents */
   amount: Scalars['Int'];
   body?: Maybe<Scalars['JSON']>;
@@ -1432,6 +1446,7 @@ export type Donation = ActiveRecordTimestamp & Node & WithContact & WithPreferen
   paidAt?: Maybe<Scalars['ISO8601DateTime']>;
   paymentMethod?: Maybe<Scalars['String']>;
   preferences?: Maybe<Scalars['JSON']>;
+  printableNotifiableName?: Maybe<Scalars['String']>;
   refundedAt?: Maybe<Scalars['ISO8601DateTime']>;
   /** Recurring donations */
   subscriptionItem?: Maybe<SubscriptionItem>;
@@ -1710,6 +1725,9 @@ export type GraphqlSubscription = {
 export type GraphqlSubscriptionNodeArgs = {
   id: Scalars['ID'];
 };
+
+/** Objects can be applied to */
+export type Group = Contact | DonationCampaign;
 
 export type Grouper = {
   colId: Scalars['String'];
@@ -2357,6 +2375,47 @@ export type Node = {
   /** ID of the object. */
   id: Scalars['ID'];
 };
+
+/** Objects can be applied to */
+export type Notifiable = Contact | Donation;
+
+export type Notification = ActiveRecordTimestamp & Node & {
+  createdAt: Scalars['ISO8601DateTime'];
+  groupMemberNotifierCount?: Maybe<Scalars['Int']>;
+  groupMemberNotifierExists?: Maybe<Scalars['Boolean']>;
+  groupNotificationCount?: Maybe<Scalars['Int']>;
+  groupOwnerId?: Maybe<Scalars['Int']>;
+  groupType?: Maybe<Group>;
+  id: Scalars['ID'];
+  key: Scalars['String'];
+  notifiable: Notifiable;
+  notifier?: Maybe<Notifier>;
+  openedAt?: Maybe<Scalars['ISO8601DateTime']>;
+  parameters?: Maybe<Scalars['String']>;
+  target: Target;
+  updatedAt: Scalars['ISO8601DateTime'];
+};
+
+/** The connection type for Notification. */
+export type NotificationConnection = {
+  /** A list of edges. */
+  edges?: Maybe<Array<Maybe<NotificationEdge>>>;
+  /** A list of nodes. */
+  nodes?: Maybe<Array<Maybe<Notification>>>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+/** An edge in a connection. */
+export type NotificationEdge = {
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node?: Maybe<Notification>;
+};
+
+/** Objects can be applied to */
+export type Notifier = Contact;
 
 export type Opportunity = ActiveRecordTimestamp & Node & WithAddresses & WithOrganization & WithPost & WithWysiwyg & {
   addresses: Array<Address>;
@@ -3076,6 +3135,9 @@ export type Tag = Node & {
   name?: Maybe<Scalars['String']>;
   taggingsCount?: Maybe<Scalars['Int']>;
 };
+
+/** Objects can be applied to */
+export type Target = Contact;
 
 export type Task = ActiveRecordTimestamp & Node & WithMembers & {
   assignee?: Maybe<Contact>;
