@@ -26,12 +26,9 @@ const selectedPrimaryTextColor = themed({
 });
 
 export const defaultStyle = {
-  // control: {
-  //   backgroundColor: '#fff',
-
-  //   fontSize: 12,
-  //   fontWeight: 'normal',
-  // },
+  control: {
+    lineHeight: 'normal',
+  },
 
   highlighter: {
     padding: 0,
@@ -42,6 +39,7 @@ export const defaultStyle = {
   input: {
     margin: 0,
     padding: '0.625rem 1rem',
+    lineHeight: 'normal',
     left: 0,
     border: 0,
     letterSpacing: 'inherit',

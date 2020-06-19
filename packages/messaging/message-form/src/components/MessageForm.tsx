@@ -247,7 +247,7 @@ function MessagesForm({
                   list: {
                     ...defaultStyle.suggestions.list,
                     boxShadow: 'none',
-                    borderTop: '1px solid #e7e7e7',
+                    // borderTop: '1px solid #e7e7e7',
                     borderBottom: '1px solid #e7e7e7',
                     maxHeight: '13rem',
                     overflow: 'auto',

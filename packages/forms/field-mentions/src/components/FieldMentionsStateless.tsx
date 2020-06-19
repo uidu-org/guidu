@@ -37,6 +37,7 @@ function FieldMentionsStateless({
       allowSpaceInQuery={allowSpaceInQuery}
       className={classNames('form-control h-auto', className)}
       suggestionsPortalHost={suggestionsPortalHost}
+      allowSuggestionsAboveCursor
       inputRef={element}
     >
       {items.map((item, index) => (

@@ -19,7 +19,7 @@
     "@uidu/form": "^0.2.3",
     "@uidu/theme": "^0.2.4",
     "classnames": "^2.2.6",
-    "react-mentions": "^3.0.0"
+    "react-mentions": "^4.0.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.58",
