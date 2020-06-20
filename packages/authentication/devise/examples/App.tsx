@@ -12,6 +12,16 @@ import Devise, {
   userDataFromIdentity,
 } from '../src';
 
+function AdditionalSignInInfo({ currentUser }) {
+  console.log(currentUser);
+  return (
+    <p>
+      You must also do this when signin in{' '}
+      <small className="text-muted">(optional)</small>
+    </p>
+  );
+}
+
 export default function App() {
   const [identity, setIdentity] = React.useState(null);
   const currentUser = null;
@@ -166,6 +176,7 @@ export default function App() {
                     sessions: '/sign_in',
                     passwords: '/passwords',
                   }}
+                  additionalSignInInfo={AdditionalSignInInfo}
                   {...routeProps}
                 >
                   {({ email }) => (

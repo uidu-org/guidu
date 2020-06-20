@@ -26,6 +26,8 @@ export type DeviseProps = {
   recoverPassword: (model) => Promise<any>;
   resetPassword: (model) => Promise<any>;
 
+  additionalSignInInfo?: React.FC<any>;
+
   // Footer
 } & RouteComponentProps;
 

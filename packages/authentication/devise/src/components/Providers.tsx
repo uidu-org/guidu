@@ -102,7 +102,6 @@ export default class Providers extends PureComponent<any, any> {
             currentUser: model.user,
           },
           () => {
-            console.log(response.data);
             this.slider.current.update();
             this.slider.current.updateAutoHeight(500);
           },
@@ -147,11 +146,10 @@ export default class Providers extends PureComponent<any, any> {
       history,
       location,
       providers,
+      additionalSignInInfo: AdditionalSignInInfo,
     } = this.props;
 
     const { currentUser, exist } = this.state;
-
-    console.log(exist);
 
     return (
       <div>
@@ -278,6 +276,9 @@ export default class Providers extends PureComponent<any, any> {
                           }
                         />
                       </div>
+                      {AdditionalSignInInfo && (
+                        <AdditionalSignInInfo currentUser={currentUser} />
+                      )}
                     </>
                   )}
                 </AnimateHeight>
