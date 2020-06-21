@@ -29,7 +29,6 @@ export default md`
     />
   )}
 
-
   ${(
     <Props
       heading="Field Geosuggest Props"

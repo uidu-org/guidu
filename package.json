@@ -338,6 +338,7 @@
     "react-node-resolver": "^2.0.1",
     "react-number-format": "^4.0.6",
     "react-numeric-input": "^2.2.3",
+    "react-phone-number-input": "^3.0.23",
     "react-popper": "^2.0.0",
     "react-powerplug": "^1.0.0",
     "react-recaptcha": "^2.3.10",
