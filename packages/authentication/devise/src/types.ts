@@ -34,6 +34,7 @@ export type DeviseProps = {
 export type ProvidersProps = {};
 
 export type DeviseWrapperProps = {
+  className?: string;
   header?: React.ReactNode;
   footer?: React.ReactNode;
   children?: any;

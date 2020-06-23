@@ -1,7 +1,7 @@
 // @flow
 
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 The dropdown menu has two exports, a default stateful component, and a stateless component when you want to have more direct control over all actions.
@@ -17,7 +17,9 @@ ${(
     packageName="@uidu/dropdown-menu"
     Component={require('../examples/01-default-dropdown-menu').default}
     title="Default Dropdown"
-    source={require('!!raw-loader!../examples/01-default-dropdown-menu')}
+    source={
+      require('!!raw-loader!../examples/01-default-dropdown-menu').default
+    }
   />
 )}
 
@@ -26,7 +28,9 @@ ${(
     packageName="@uidu/dropdown-menu"
     Component={require('../examples/02-complex-dropdown-menu').default}
     title="Complex Dropdown"
-    source={require('!!raw-loader!../examples/02-complex-dropdown-menu')}
+    source={
+      require('!!raw-loader!../examples/02-complex-dropdown-menu').default
+    }
   />
 )}
 
@@ -35,7 +39,9 @@ ${(
     packageName="@uidu/dropdown-menu"
     Component={require('../examples/03-stateless-dropdown-menu').default}
     title="Stateless Dropdown"
-    source={require('!!raw-loader!../examples/03-stateless-dropdown-menu')}
+    source={
+      require('!!raw-loader!../examples/03-stateless-dropdown-menu').default
+    }
   />
 )}
 

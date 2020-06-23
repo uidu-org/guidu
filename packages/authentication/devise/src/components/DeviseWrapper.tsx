@@ -6,6 +6,7 @@ export default function DeviseWrapper({
   children,
   header,
   footer,
+  className = 'col-sm-8 col-md-6 col-xl-4',
 }: DeviseWrapperProps) {
   return (
     <>
@@ -15,7 +16,7 @@ export default function DeviseWrapper({
           style={{ flex: '1 1 auto' }}
         >
           <div className="row align-items-center justify-content-center my-4 my-sm-5">
-            <div className="col-sm-8 col-md-6 col-xl-4">
+            <div className={className}>
               {header}
               <div className="card px-3 py-5">{children}</div>
               {footer}
