@@ -11,5 +11,5 @@ yarn build:pkg
 echo -e "\e[32m Setting git configs..."
 yarn changeset publish --otp=$NPM_TOKEN
 echo -e "\e[32m Setting git configs..."
-git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --tags > /dev/null 2>&1
+git push https://${GH_TOKEN}@github.com/uidu-org/guidu.git --follow-tags > /dev/null 2>&1
 echo -e "\e[32m Setting git configs..."
