@@ -419,7 +419,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/register": "^7.0.0",
-    "@changesets/cli": "2.8.0",
+    "@changesets/cli": "2.7.2",
     "@loadable/babel-plugin": "^5.10.0",
     "@types/chai": "^4.0.4",
     "@types/classnames": "^2.2.7",
