@@ -144,16 +144,6 @@ export default function DeviseForm({
         ]}
       >
         {children({ phone })}
-        {/* <div className="form-group">
-            <Recaptcha
-              ref={this.recaptchaInstance}
-              sitekey="6LdLkqgUAAAAAPNT6KJn0Emp5bgJw3N9CQ-n27Dg"
-              size="invisible"
-              render="explicit"
-              badge="inline"
-              verifyCallback={this.verifyCallback}
-            />
-          </div> */}
       </Form>
     </>
   );
