@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "private": false,
   "description": "Message form",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,12 +11,12 @@
   "dependencies": {
     "@types/emoji-mart": "^3.0.0",
     "@types/react-mentions": "^3.0.0",
-    "@uidu/dropdown-menu": "^0.1.24",
-    "@uidu/field-mentions": "^0.2.2",
+    "@uidu/dropdown-menu": "^0.1.26",
+    "@uidu/field-mentions": "^0.2.3",
     "@uidu/field-text": "^0.2.7",
     "@uidu/form": "^0.2.3",
     "@uidu/media-filmstrip": "^0.1.33",
-    "@uidu/message": "^0.1.45",
+    "@uidu/message": "^0.1.46",
     "@uidu/spinner": "^0.1.18",
     "emoji-mart": "^3.0.0",
     "react-feather": "^2.0.3"

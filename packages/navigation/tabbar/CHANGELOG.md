@@ -1,5 +1,11 @@
 # @uidu/tabbar
 
+## 0.1.18
+
+### Patch Changes
+
+- c7f9dc2: Bump dependencies
+
 ## 0.1.17
 
 ### Patch Changes

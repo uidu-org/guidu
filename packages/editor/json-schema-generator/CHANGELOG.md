@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.10
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.1.9
 
 ### Patch Changes

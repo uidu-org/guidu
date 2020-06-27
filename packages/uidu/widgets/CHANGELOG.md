@@ -1,5 +1,14 @@
 # @uidu/widgets
 
+## 0.2.8
+
+### Patch Changes
+
+- c7f9dc2: Some order
+- c7f9dc2: Fix widgets zoid
+- Updated dependencies [c7f9dc2]
+  - @uidu/slider@1.2.3
+
 ## 0.2.7
 
 ### Patch Changes

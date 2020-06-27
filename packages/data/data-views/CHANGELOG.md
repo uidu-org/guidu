@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.2.13
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.2.12
 
 ### Patch Changes

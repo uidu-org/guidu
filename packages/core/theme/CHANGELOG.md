@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.2.6
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.2.5
 
 ### Patch Changes

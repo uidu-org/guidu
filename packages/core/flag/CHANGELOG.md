@@ -1,5 +1,13 @@
 # @uidu/flag
 
+## 0.1.15
+
+### Patch Changes
+
+- c7f9dc2: Some order
+- Updated dependencies [c7f9dc2]
+  - @uidu/theme@0.2.6
+
 ## 0.1.14
 
 ### Patch Changes

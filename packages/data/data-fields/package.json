@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "private": false,
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@uidu/downshift": "^0.1.4",
-    "@uidu/field-color-picker": "^0.2.2",
+    "@uidu/field-color-picker": "^0.2.3",
     "@uidu/field-date": "^0.2.2",
     "@uidu/field-number": "^0.2.4",
     "@uidu/field-text": "^0.2.7",

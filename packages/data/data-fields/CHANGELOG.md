@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 0.1.32
+
+### Patch Changes
+
+- c7f9dc2: Some order
+- Updated dependencies [c7f9dc2]
+  - @uidu/field-color-picker@0.2.3
+
 ## 0.1.31
 
 ### Patch Changes

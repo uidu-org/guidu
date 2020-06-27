@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 0.2.3
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.2.2
 
 ### Patch Changes

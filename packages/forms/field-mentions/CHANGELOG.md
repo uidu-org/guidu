@@ -1,5 +1,13 @@
 # @uidu/field-mentions
 
+## 0.2.3
+
+### Patch Changes
+
+- c7f9dc2: Fix schema and bump react-mentions
+- Updated dependencies [c7f9dc2]
+  - @uidu/theme@0.2.6
+
 ## 0.2.2
 
 ### Patch Changes

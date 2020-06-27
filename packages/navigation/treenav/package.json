@@ -1,6 +1,6 @@
 {
   "name": "@uidu/treenav",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "description": "Treenav component allows nested card navigation for mobile and desktop (eg: settings page)",
   "license": "MIT",

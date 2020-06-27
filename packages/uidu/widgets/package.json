@@ -1,6 +1,6 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Widgets components with zois",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "dependencies": {
     "@uidu/contact": "^0.1.14",
     "@uidu/shell": "^0.3.0",
-    "@uidu/slider": "^1.2.0",
+    "@uidu/slider": "^1.2.3",
     "react-feather": "^2.0.3",
     "react-intl": "^4.0.0",
     "zoid": "^9.0.43"

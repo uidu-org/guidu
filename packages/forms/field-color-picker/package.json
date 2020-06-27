@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-color-picker",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "description": "A color picker React Component",
   "license": "MIT",

@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 0.1.1
+
+### Patch Changes
+
+- c7f9dc2: Adding phone field
+
 ## 0.2.6
 
 ### Patch Changes

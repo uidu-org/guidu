@@ -1,5 +1,18 @@
 # @uidu/message-form
 
+## 0.1.32
+
+### Patch Changes
+
+- c7f9dc2: Fix schema and bump react-mentions
+- c7f9dc2: Bump dependencies
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+  - @uidu/field-mentions@0.2.3
+  - @uidu/dropdown-menu@0.1.26
+  - @uidu/message@0.1.46
+
 ## 0.1.31
 
 ### Patch Changes

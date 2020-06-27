@@ -1,5 +1,13 @@
 # @uidu/schema.d.ts
 
+## 0.1.5
+
+### Patch Changes
+
+- c7f9dc2: Bump dependencies
+- c7f9dc2: Fix schema and bump react-mentions
+- c7f9dc2: Bump dependencies
+
 ## 0.1.4
 
 ### Patch Changes

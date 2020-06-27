@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.2.3
 
 ### Patch Changes

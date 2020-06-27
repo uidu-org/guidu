@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.1.46
+
+### Patch Changes
+
+- c7f9dc2: Bump dependencies
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+  - @uidu/drawer@0.2.18
+  - @uidu/message-form@0.1.32
+  - @uidu/dropdown-menu@0.1.26
+  - @uidu/media-core@0.2.1
+  - @uidu/message-renderer@0.1.23
+
 ## 0.1.45
 
 ### Patch Changes

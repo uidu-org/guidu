@@ -1,5 +1,11 @@
 # @uidu/field-file-uploader
 
+## 0.3.1
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.3.0
 
 ### Minor Changes

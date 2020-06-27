@@ -1,5 +1,15 @@
 # @uidu/navigation
 
+## 0.2.29
+
+### Patch Changes
+
+- c7f9dc2: Bump dependencies
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+  - @uidu/dropdown-menu@0.1.26
+  - @uidu/theme@0.2.6
+
 ## 0.2.28
 
 ### Patch Changes

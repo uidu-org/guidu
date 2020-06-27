@@ -1,5 +1,18 @@
 # @uidu/devise
 
+## 0.2.14
+
+### Patch Changes
+
+- c7f9dc2: Try redeploy
+- c7f9dc2: Added additional sign in info to devise
+- c7f9dc2: Added DevisePhone to Devise
+- c7f9dc2: Try publish devise again
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+  - @uidu/field-phone@0.1.1
+  - @uidu/slider@1.2.3
+
 ## 0.2.10
 
 ### Patch Changes

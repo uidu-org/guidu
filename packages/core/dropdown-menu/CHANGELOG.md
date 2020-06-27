@@ -1,5 +1,13 @@
 # @uidu/dropdown-menu
 
+## 0.1.26
+
+### Patch Changes
+
+- c7f9dc2: Added DevisePhone to Devise
+- Updated dependencies [c7f9dc2]
+  - @uidu/theme@0.2.6
+
 ## 0.1.25
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/media-core
 
+## 0.2.1
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.2.0
 
 ### Minor Changes

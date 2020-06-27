@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "@uidu/analytics": "^0.1.21",
     "@uidu/button": "^0.1.58",
     "@uidu/portal": "^0.1.18",
-    "@uidu/theme": "^0.2.4",
+    "@uidu/theme": "^0.2.6",
     "react-feather": "^2.0.3",
     "react-transition-group": "^4.0.0",
     "uuid": "^8.0.0"

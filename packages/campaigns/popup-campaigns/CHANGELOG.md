@@ -1,5 +1,11 @@
 # @uidu/popup-campaigns
 
+## 0.1.6
+
+### Patch Changes
+
+- c7f9dc2: Some order
+
 ## 0.1.5
 
 ### Patch Changes

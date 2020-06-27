@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.2.18
+
+### Patch Changes
+
+- c7f9dc2: Try redeploy
+- Updated dependencies [c7f9dc2]
+  - @uidu/theme@0.2.6
+
 ## 0.2.17
 
 ### Patch Changes

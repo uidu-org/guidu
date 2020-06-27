@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 0.2.9
+
+### Patch Changes
+
+- c7f9dc2: Adding phone field
+
 ## 0.2.8
 
 ### Patch Changes

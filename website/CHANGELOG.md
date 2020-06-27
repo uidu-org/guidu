@@ -1,5 +1,19 @@
 # Change Log
 
+## 0.1.96
+
+### Patch Changes
+
+- c7f9dc2: Bump dependencies
+- c7f9dc2: Bump dependencies
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+- Updated dependencies [c7f9dc2]
+  - @uidu/drawer@0.2.18
+  - @uidu/theme@0.2.6
+  - @uidu/themes-uidu@0.2.4
+  - @uidu/navigation@0.2.29
+
 ## 0.1.95
 
 ### Patch Changes
