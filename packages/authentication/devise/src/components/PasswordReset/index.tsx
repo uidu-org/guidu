@@ -88,11 +88,15 @@ export default class PasswordReset extends PureComponent<any> {
             required
           />
           <FieldPassword
-            type="password"
             label={
               <FormattedMessage {...messages.password_reset_password_label} />
             }
+            measurePasswordStrength={false}
+            autoComplete="current-password"
             name="user[password]"
+            type="password"
+            id="new-password"
+            validations="minLength:8"
             required
           />
         </Form>
