@@ -1,5 +1,11 @@
 # @uidu/devise
 
+## 0.2.15
+
+### Patch Changes
+
+- f5dc610: Bump uidu devise
+
 ## 0.2.14
 
 ### Patch Changes
