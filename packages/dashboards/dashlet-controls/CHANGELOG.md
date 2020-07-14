@@ -1,5 +1,15 @@
 # @uidu/dashboard-controls
 
+## 0.2.1
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+  - @uidu/avatar-group@2.2.3
+  - @uidu/dropdown-menu@0.1.27
+
 ## 0.2.0
 
 ### Minor Changes

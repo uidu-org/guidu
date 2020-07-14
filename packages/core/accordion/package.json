@@ -1,6 +1,6 @@
 {
   "name": "@uidu/accordion",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "description": "React accessible accordion component",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",

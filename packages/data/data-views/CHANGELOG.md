@@ -1,5 +1,14 @@
 # @uidu/data-views
 
+## 0.2.14
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/data-controls@0.3.16
+  - @uidu/table@0.1.109
+
 ## 0.2.13
 
 ### Patch Changes

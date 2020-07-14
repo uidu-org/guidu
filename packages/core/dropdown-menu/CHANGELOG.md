@@ -1,5 +1,15 @@
 # @uidu/dropdown-menu
 
+## 0.1.27
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/button@0.1.61
+  - @uidu/droplist@0.1.25
+  - @uidu/item@0.1.28
+
 ## 0.1.26
 
 ### Patch Changes

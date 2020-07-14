@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.1.6
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.5
 
 ### Patch Changes

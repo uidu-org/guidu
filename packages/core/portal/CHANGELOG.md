@@ -1,5 +1,11 @@
 # @uidu/portal
 
+## 0.1.19
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.18
 
 ### Patch Changes

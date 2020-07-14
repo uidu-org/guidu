@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@types/overlayscrollbars": "^1.9.0",
-    "@uidu/spinner": "^0.1.18",
+    "@uidu/spinner": "^0.1.19",
     "body-scroll-lock": "^3.0.1",
     "overlayscrollbars": "^1.11.0",
     "overlayscrollbars-react": "^0.2.1",

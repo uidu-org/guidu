@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 0.3.3
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/spinner@0.1.19
+
 ## 0.3.2
 
 ### Patch Changes

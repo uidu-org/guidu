@@ -1,5 +1,14 @@
 # @uidu/tax-reminder
 
+## 0.1.22
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/contact@0.1.15
+  - @uidu/widgets@0.2.9
+
 ## 0.1.21
 
 ### Patch Changes

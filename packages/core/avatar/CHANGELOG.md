@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.3.3
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/tooltip@0.1.28
+
 ## 0.3.2
 
 ### Patch Changes

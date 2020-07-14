@@ -1,6 +1,6 @@
 {
   "name": "@uidu/board",
-  "version": "0.2.14",
+  "version": "0.2.15",
   "private": false,
   "description": "Trello-like Kanban boards",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -15,9 +15,9 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/badge": "^0.1.19",
+    "@uidu/badge": "^0.1.20",
     "@uidu/docs": "^0.1.45",
-    "@uidu/shell": "^0.3.0",
+    "@uidu/shell": "^0.3.3",
     "faker": "^4.1.0"
   },
   "uidu:src": "index.ts"

@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.1.40
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+  - @uidu/button@0.1.61
+  - @uidu/spinner@0.1.19
+  - @uidu/shell@0.3.3
+  - @uidu/comment@0.1.13
+
 ## 0.1.39
 
 ### Patch Changes

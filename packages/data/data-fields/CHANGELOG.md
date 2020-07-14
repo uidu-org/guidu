@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.33
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.32
 
 ### Patch Changes

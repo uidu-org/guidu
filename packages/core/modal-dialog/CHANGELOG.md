@@ -1,5 +1,15 @@
 # @uidu/modal-dialog
 
+## 0.1.41
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/blanket@0.1.22
+  - @uidu/button@0.1.61
+  - @uidu/portal@0.1.19
+
 ## 0.1.40
 
 ### Patch Changes

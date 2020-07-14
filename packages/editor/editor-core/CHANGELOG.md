@@ -1,5 +1,27 @@
 # @uidu/editor-core
 
+## 0.4.1
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+  - @uidu/avatar-group@2.2.3
+  - @uidu/button@0.1.61
+  - @uidu/droplist@0.1.25
+  - @uidu/item@0.1.28
+  - @uidu/modal-dialog@0.1.41
+  - @uidu/spinner@0.1.19
+  - @uidu/tooltip@0.1.28
+  - @uidu/editor-json-transformer@0.1.11
+  - @uidu/editor-markdown-transformer@0.1.13
+  - @uidu/date@0.1.10
+  - @uidu/emoji@0.1.16
+  - @uidu/mentions@0.1.17
+  - @uidu/status@0.1.14
+  - @uidu/task-decision@0.1.18
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.1.11
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.10
 
 ### Patch Changes

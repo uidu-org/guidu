@@ -1,6 +1,6 @@
 {
   "name": "@uidu/chat-window",
-  "version": "0.1.41",
+  "version": "0.1.42",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
-    "@uidu/shell": "^0.3.0",
+    "@uidu/shell": "^0.3.3",
     "faker": "^4.1.0",
     "use-clipboard-copy": "^0.1.0"
   },

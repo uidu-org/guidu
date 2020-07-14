@@ -1,5 +1,18 @@
 # @atlaskit/renderer
 
+## 0.1.29
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/code@0.1.24
+  - @uidu/tooltip@0.1.28
+  - @uidu/editor-json-transformer@0.1.11
+  - @uidu/mentions@0.1.17
+  - @uidu/status@0.1.14
+  - @uidu/task-decision@0.1.18
+
 ## 0.1.28
 
 ### Patch Changes

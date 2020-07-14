@@ -1,5 +1,13 @@
 # @uidu/tooltip
 
+## 0.1.28
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/portal@0.1.19
+
 ## 0.1.27
 
 ### Patch Changes

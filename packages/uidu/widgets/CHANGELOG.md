@@ -1,5 +1,15 @@
 # @uidu/widgets
 
+## 0.2.9
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/slider@1.2.4
+  - @uidu/shell@0.3.3
+  - @uidu/contact@0.1.15
+
 ## 0.2.8
 
 ### Patch Changes

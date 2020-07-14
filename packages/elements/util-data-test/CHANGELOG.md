@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.1.12
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/emoji@0.1.16
+  - @uidu/mentions@0.1.17
+  - @uidu/task-decision@0.1.18
+
 ## 0.1.11
 
 ### Patch Changes

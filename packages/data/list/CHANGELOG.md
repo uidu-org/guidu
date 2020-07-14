@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.24
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/table@0.1.109
+
 ## 0.1.23
 
 ### Patch Changes

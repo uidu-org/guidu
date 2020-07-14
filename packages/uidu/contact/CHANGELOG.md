@@ -1,5 +1,11 @@
 # @uidu/contact
 
+## 0.1.15
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.2.4
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 1.2.3
 
 ### Patch Changes

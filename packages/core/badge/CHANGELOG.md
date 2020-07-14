@@ -1,5 +1,11 @@
 # @uidu/badge
 
+## 0.1.20
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.19
 
 ### Patch Changes

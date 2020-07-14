@@ -1,6 +1,6 @@
 {
   "name": "@uidu/code",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "Renders inline code snippets and code blocks",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",

@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 0.1.109
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/item@0.1.28
+  - @uidu/tooltip@0.1.28
+  - @uidu/data-fields@0.1.33
+  - @uidu/shell@0.3.3
+
 ## 0.1.108
 
 ### Patch Changes

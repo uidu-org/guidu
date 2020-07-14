@@ -1,5 +1,16 @@
 # @uidu/devise
 
+## 0.2.16
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+  - @uidu/slider@1.2.4
+  - @uidu/spinner@0.1.19
+  - @uidu/shell@0.3.3
+
 ## 0.2.15
 
 ### Patch Changes

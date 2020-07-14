@@ -1,5 +1,17 @@
 # @uidu/attend
 
+## 0.2.7
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/spinner@0.1.19
+  - @uidu/payments@0.2.12
+  - @uidu/shell@0.3.3
+  - @uidu/contact@0.1.15
+  - @uidu/widgets@0.2.9
+
 ## 0.2.6
 
 ### Patch Changes

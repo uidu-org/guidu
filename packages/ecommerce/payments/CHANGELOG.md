@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 0.2.12
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/slider@1.2.4
+
 ## 0.2.11
 
 ### Patch Changes
