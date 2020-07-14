@@ -26,7 +26,7 @@ export default md`
       packageName="@uidu/avatar"
       Component={require('../examples/01-basicAvatar').default}
       title="Avatar"
-      source={require('!!raw-loader!../examples/01-basicAvatar')}
+      source={require('!!raw-loader!../examples/01-basicAvatar').default}
     />
   )}
 

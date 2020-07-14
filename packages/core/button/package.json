@@ -14,8 +14,8 @@
     "memoize-one": "^5.0.0"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^20.0.2",
-    "@atlaskit/logo": "^12.2.0",
+    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/logo": "^13.0.0",
     "@uidu/checkbox": "^0.2.2",
     "@uidu/docs": "^0.1.45",
     "@uidu/form": "^0.2.3",

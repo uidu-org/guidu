@@ -21,7 +21,7 @@ export default md`
       packageName="@uidu/section-message"
       title="Basic"
       Component={require('../examples/00-basic-example').default}
-      source={require('!!raw-loader!../examples/00-basic-example')}
+      source={require('!!raw-loader!../examples/00-basic-example').default}
     />
   )}
 
@@ -32,7 +32,9 @@ export default md`
       packageName="@uidu/section-message"
       title="Appearance Variations"
       Component={require('../examples/01-appearance-variations').default}
-      source={require('!!raw-loader!../examples/01-appearance-variations')}
+      source={
+        require('!!raw-loader!../examples/01-appearance-variations').default
+      }
     />
   )}
 

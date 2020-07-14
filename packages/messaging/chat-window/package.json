@@ -17,7 +17,7 @@
     "moment": "^2.18.1",
     "react-chatview": "^0.2.5",
     "react-media": "^1.9.2",
-    "react-native-web": "^0.12.0"
+    "react-native-web": "^0.13.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",

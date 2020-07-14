@@ -77,6 +77,6 @@ export default md`
     />
   )}
 
-  ${<Props props={MentionProps} />}
+  ${(<Props props={MentionProps} />)}
 
 `;

@@ -17,7 +17,9 @@ Use the component in your React app as follows:
       packageName="@uidu/editor-markdown-transformer"
       Component={require('../examples/0-markdown-transformer').default}
       title="Markdown Transformer"
-      source={require('!!raw-loader!../examples/0-markdown-transformer')}
+      source={
+        require('!!raw-loader!../examples/0-markdown-transformer').default
+      }
     />
   )}
 `;

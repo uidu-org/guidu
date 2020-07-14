@@ -21,7 +21,7 @@ export default md`
       packageName="@uidu/slider"
       title="Basic"
       Component={require('../examples/Basic').default}
-      source={require('!!raw-loader!../examples/Basic')}
+      source={require('!!raw-loader!../examples/Basic').default}
     />
   )}
 

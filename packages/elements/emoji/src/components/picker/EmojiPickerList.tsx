@@ -218,7 +218,7 @@ export default class EmojiPickerVirtualList extends PureComponent<
           ...items,
           ...this.buildVirtualItemFromGroup({
             category: 'SEARCH',
-            title: search.name,
+            title: search.name as string,
             emojis,
             order: search.order,
           }),
@@ -227,7 +227,7 @@ export default class EmojiPickerVirtualList extends PureComponent<
         // Group by category
 
         // Not searching show in categories.
-        this.allEmojiGroups.forEach(group => {
+        this.allEmojiGroups.forEach((group) => {
           // Optimisation - avoid re-rendering unaffected groups for the current selectedShortcut
           // by not passing it to irrelevant groups
           this.categoryTracker.add(
@@ -267,7 +267,7 @@ export default class EmojiPickerVirtualList extends PureComponent<
       const categoryDefinition = CategoryDescriptionMap[category];
       categoryToGroupMap[category] = {
         emojis: [],
-        title: categoryDefinition.name,
+        title: categoryDefinition.name as string,
         category,
         order: categoryDefinition.order,
       };
@@ -309,7 +309,7 @@ export default class EmojiPickerVirtualList extends PureComponent<
       categoryToGroupMap,
     ) as CategoryGroupKey[])
       .map((key: CategoryGroupKey) => categoryToGroupMap[key])
-      .map(group => {
+      .map((group) => {
         if (group.category !== 'FREQUENT') {
           group.emojis.sort(byOrder);
         }

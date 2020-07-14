@@ -4,11 +4,15 @@ import CustomColorExample from '../examples/00-custom-colors';
 import DateStyledExample from '../examples/01-date-with-style';
 import CustomFormatExample from '../examples/02-custom-format';
 
-const DateStyledSource = require('!!raw-loader!../examples/01-date-with-style');
-const CustomColorSource = require('!!raw-loader!../examples/00-custom-colors');
-const CustomFormatSource = require('!!raw-loader!../examples/02-custom-format');
+const DateStyledSource = require('!!raw-loader!../examples/01-date-with-style')
+  .default;
+const CustomColorSource = require('!!raw-loader!../examples/00-custom-colors')
+  .default;
+const CustomFormatSource = require('!!raw-loader!../examples/02-custom-format')
+  .default;
 
-const DateProps = require('!!extract-react-types-loader!../src/components/Date');
+const DateProps = require('!!extract-react-types-loader!../src/components/Date')
+  .default;
 
 export default md`
 
@@ -27,7 +31,7 @@ This component is the implementation of the Date element in React.
     />
   )}
 
-  ${<Props props={DateProps} />}
+  ${(<Props props={DateProps} />)}
 
   ### You can also use Date lozenge
   Lozenge is available in the [ADG3 Lozenge colors](https://atlassian.design/guidelines/product/components/lozenges).

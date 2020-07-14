@@ -13,7 +13,7 @@ export default md`
       packageName="@uidu/accordion"
       Component={require('../examples/01-basicAccordion').default}
       title="Accordion allowMultipleExpanded"
-      source={require('!!raw-loader!../examples/01-basicAccordion')}
+      source={require('!!raw-loader!../examples/01-basicAccordion').default}
     />
   )}
 
@@ -23,7 +23,9 @@ export default md`
       packageName="@uidu/accordion"
       Component={require('../examples/02-basicNoCollapseAccordion').default}
       title="Accordion no allowMultipleExpanded"
-      source={require('!!raw-loader!../examples/02-basicNoCollapseAccordion')}
+      source={
+        require('!!raw-loader!../examples/02-basicNoCollapseAccordion').default
+      }
     />
   )}
 
@@ -32,7 +34,7 @@ export default md`
       packageName="@uidu/accordion"
       Component={require('../examples/03-reverse').default}
       title="Accordion no allowMultipleExpanded"
-      source={require('!!raw-loader!../examples/03-reverse')}
+      source={require('!!raw-loader!../examples/03-reverse').default}
     />
   )}
 

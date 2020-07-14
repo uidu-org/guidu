@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   Spinners are used for showing a system process of unknown length going on
@@ -20,7 +20,7 @@ export default md`
       packageName="@uidu/spinner"
       Component={require('../examples/0-basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/0-basic')}
+      source={require('!!raw-loader!../examples/0-basic').default}
     />
   )}
 
@@ -29,7 +29,7 @@ export default md`
       packageName="@uidu/spinner"
       Component={require('../examples/1-usage').default}
       title="Animation Options"
-      source={require('!!raw-loader!../examples/1-usage')}
+      source={require('!!raw-loader!../examples/1-usage').default}
     />
   )}
 

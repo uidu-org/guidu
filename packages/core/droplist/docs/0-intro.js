@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -25,7 +25,7 @@ import DropList, {
       packageName="@uidu/droplist"
       Component={require('../examples/00-basic-example').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/00-basic-example')}
+      source={require('!!raw-loader!../examples/00-basic-example').default}
     />
   )}
 
@@ -34,7 +34,7 @@ import DropList, {
       packageName="@uidu/droplist"
       Component={require('../examples/01-bound-example').default}
       title="With Label"
-      source={require('!!raw-loader!../examples/01-bound-example')}
+      source={require('!!raw-loader!../examples/01-bound-example').default}
     />
   )}
 

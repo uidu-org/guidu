@@ -16,7 +16,7 @@ ${(
     packageName="@uidu/banner"
     Component={require('../examples/AnimationExample').default}
     title="Animation"
-    source={require('!!raw-loader!../examples/AnimationExample')}
+    source={require('!!raw-loader!../examples/AnimationExample').default}
   />
 )}
 

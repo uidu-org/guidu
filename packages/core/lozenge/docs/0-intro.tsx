@@ -15,9 +15,9 @@ export default md`
       packageName="@uidu/lozenge"
       Component={require('../examples/0-basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/0-basic')}
+      source={require('!!raw-loader!../examples/0-basic').default}
     />
   )}
 
-  ${<Props props={require('!!extract-react-types-loader!../src/Lozenge')} />}
+  ${(<Props props={require('!!extract-react-types-loader!../src/Lozenge')} />)}
 `;

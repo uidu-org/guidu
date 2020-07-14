@@ -13,7 +13,7 @@ export default function DeviseWrapper({
       <ShellBody scrollable className="d-flex flex-column">
         <div
           className="container-fluid d-flex flex-column justify-content-center"
-          style={{ flex: '1 1 auto' }}
+          style={{ flex: '1 1 auto', minHeight: '100vh' }}
         >
           <div className="row align-items-center justify-content-center my-4 my-sm-5">
             <div className={className}>

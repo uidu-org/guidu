@@ -16,7 +16,7 @@ ${(
     packageName="@uidu/avatar"
     Component={require('../examples/04-basicPresence').default}
     title="Presence"
-    source={require('!!raw-loader!../examples/04-basicPresence')}
+    source={require('!!raw-loader!../examples/04-basicPresence').default}
   />
 )}
 

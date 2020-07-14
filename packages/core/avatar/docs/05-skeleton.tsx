@@ -14,7 +14,7 @@ ${(
     packageName="@uidu/avatar"
     Component={require('../examples/15-skeleton').default}
     title="Skeleton"
-    source={require('!!raw-loader!../examples/15-skeleton')}
+    source={require('!!raw-loader!../examples/15-skeleton').default}
   />
 )}
 

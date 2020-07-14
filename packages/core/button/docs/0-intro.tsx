@@ -1,5 +1,5 @@
+import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
 
@@ -18,7 +18,7 @@ export default md`
       packageName="@uidu/button"
       Component={require('../examples/10-Button').default}
       title="Basic Button"
-      source={require('!!raw-loader!../examples/10-Button')}
+      source={require('!!raw-loader!../examples/10-Button').default}
     />
   )}
 
@@ -27,7 +27,7 @@ export default md`
       packageName="@uidu/button"
       Component={require('../examples/30-Appearances').default}
       title="Your Appearance Options"
-      source={require('!!raw-loader!../examples/30-Appearances')}
+      source={require('!!raw-loader!../examples/30-Appearances').default}
     />
   )}
 
@@ -38,7 +38,7 @@ export default md`
       packageName="@uidu/button"
       Component={require('../examples/20-ButtonGroup').default}
       title="Simple Button Group"
-      source={require('!!raw-loader!../examples/20-ButtonGroup')}
+      source={require('!!raw-loader!../examples/20-ButtonGroup').default}
     />
   )}
 

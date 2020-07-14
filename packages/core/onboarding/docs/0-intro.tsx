@@ -28,7 +28,7 @@ export default md`
       packageName="@uidu/onboarding"
       Component={require('../examples/10-spotlight-basic').default}
       title="Spotlight Tour"
-      source={require('!!raw-loader!../examples/10-spotlight-basic')}
+      source={require('!!raw-loader!../examples/10-spotlight-basic').default}
     />
   )}
 
@@ -48,7 +48,9 @@ export default md`
       packageName="@uidu/onboarding"
       Component={require('../examples/00-different-spotlights').default}
       title="Spotlight Cards"
-      source={require('!!raw-loader!../examples/00-different-spotlights')}
+      source={
+        require('!!raw-loader!../examples/00-different-spotlights').default
+      }
     />
   )}
 
@@ -69,7 +71,7 @@ export default md`
       packageName="@uidu/onboarding"
       Component={require('../examples/99-modal-basic').default}
       title="Benefits Modal"
-      source={require('!!raw-loader!../examples/99-modal-basic')}
+      source={require('!!raw-loader!../examples/99-modal-basic').default}
     />
   )}
 

@@ -18,7 +18,7 @@ This transformer allows encoding ProseMirror Node in JSON format.
       packageName="@uidu/editor-json-transformer"
       Component={require('../examples/0-json-transformer').default}
       title="Json Transformer"
-      source={require('!!raw-loader!../examples/0-json-transformer')}
+      source={require('!!raw-loader!../examples/0-json-transformer').default}
     />
   )}
 `;

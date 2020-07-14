@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { md, Example, Props, code } from '@uidu/docs';
 
 export default md`
   This package exports \`Tooltip\` and \`TooltipPrimitive\` components.
@@ -21,7 +21,7 @@ export default md`
     <Example
       packageName="@uidu/tooltip"
       Component={require('../examples/basic').default}
-      source={require('!!raw-loader!../examples/basic')}
+      source={require('!!raw-loader!../examples/basic').default}
       title="Basic"
     />
   )}
@@ -32,7 +32,7 @@ export default md`
     <Example
       packageName="@uidu/tooltip"
       Component={require('../examples/position').default}
-      source={require('!!raw-loader!../examples/position')}
+      source={require('!!raw-loader!../examples/position').default}
       title="Position"
       componentProps={{ test: true }}
     />
@@ -48,7 +48,7 @@ export default md`
     <Example
       packageName="@uidu/tooltip"
       Component={require('../examples/hover-intent').default}
-      source={require('!!raw-loader!../examples/hover-intent')}
+      source={require('!!raw-loader!../examples/hover-intent').default}
       title="Intent"
     />
   )}

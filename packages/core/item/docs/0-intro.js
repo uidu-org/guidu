@@ -1,6 +1,6 @@
 // @flow
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
-import { code, md, Example, Props } from '@uidu/docs';
 
 export default md`
 
@@ -20,7 +20,7 @@ Item is generally a layout component, concerned with visual presentation of the 
       packageName="@uidu/item"
       Component={require('../examples/00-basic').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/00-basic')}
+      source={require('!!raw-loader!../examples/00-basic').default}
     />
   )}
 

@@ -20,7 +20,7 @@ ${(
   <Example
     Component={require('../examples/1-with-providers').default}
     title="With Providers"
-    source={require('!!raw-loader!../examples/1-with-providers')}
+    source={require('!!raw-loader!../examples/1-with-providers').default}
   />
 )}
 

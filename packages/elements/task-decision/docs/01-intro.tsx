@@ -2,7 +2,8 @@ import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
 import TaskDecisionExample from '../examples/00-decision-item';
 
-const TaskDecisionSource = require('!!raw-loader!../examples/00-decision-item');
+const TaskDecisionSource = require('!!raw-loader!../examples/00-decision-item')
+  .default;
 
 const TaskDecisionProps = require('!!extract-react-types-loader!../src/components/DecisionItem');
 
@@ -33,6 +34,6 @@ export default md`
      />
    )}
 
-  ${<Props heading="Decision Props" props={TaskDecisionProps} />}
+  ${(<Props heading="Decision Props" props={TaskDecisionProps} />)}
 `;
 // TODO: Add more information for task.

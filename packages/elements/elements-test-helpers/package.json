@@ -21,7 +21,7 @@
   "peerDependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
-    "react-intl": "^4.0.0"
+    "react-intl": "^5.1.0"
   },
   "atlaskit": {
     "internal": true,

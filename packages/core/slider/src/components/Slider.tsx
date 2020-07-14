@@ -8,7 +8,7 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import 'swiper/css/swiper.min.css';
+import 'swiper/swiper-bundle.css';
 import {
   A11y,
   Autoplay,
@@ -19,7 +19,7 @@ import {
   Scrollbar,
   Swiper,
   SwiperOptions,
-} from 'swiper/js/swiper.esm.js';
+} from 'swiper';
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
 

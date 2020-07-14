@@ -30,7 +30,7 @@ ${(
     packageName="@uidu/avatar-group"
     Component={require('../examples/02-basicAvatarGroup').default}
     title="AvatarGroup"
-    source={require('!!raw-loader!../examples/02-basicAvatarGroup')}
+    source={require('!!raw-loader!../examples/02-basicAvatarGroup').default}
   />
 )}
 
@@ -40,7 +40,7 @@ ${(
     props={require('!!extract-react-types-loader!../src/components/AvatarGroup')}
     overrides={{
       // @ts-ignore
-      data: props => {
+      data: (props) => {
         if (
           props &&
           props.typeValue &&
@@ -55,7 +55,7 @@ ${(
         return <Prop {...props} interface="Array<@uidu/avatar props>" />;
       },
       // @ts-ignore
-      avatar: props => {
+      avatar: (props) => {
         // Currently pretty-propinterfaces does not have a good print interface for function
         // calls, so we are overriding how this is printed. AK-5133 should resolve
         // this.

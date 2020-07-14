@@ -28,7 +28,7 @@
     "lodash": "^4.17.4",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.3",
-    "react-intl": "^4.0.0",
+    "react-intl": "^5.1.0",
     "react-powerplug": "^1.0.0",
     "styled-components": "^5.0.0"
   },

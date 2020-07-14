@@ -20,7 +20,7 @@ export default md`
       packageName="@uidu/inline-dialog"
       title="Basic"
       Component={require('../examples/01-basic').default}
-      source={require('!!raw-loader!../examples/01-basic')}
+      source={require('!!raw-loader!../examples/01-basic').default}
     />
   )}
 

@@ -13,7 +13,7 @@
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^20.0.2",
+    "@atlaskit/icon": "^21.0.0",
     "@uidu/button": "^0.1.58",
     "@uidu/docs": "^0.1.45",
     "@uidu/inline-dialog": "^0.1.18",

@@ -20,7 +20,7 @@ import FieldMonth, { FieldMonthStateless } from '@uidu/field-text';
       packageName="@uidu/field-text"
       Component={require('../examples/00-basic-example').default}
       title="Basic"
-      source={require('!!raw-loader!../examples/00-basic-example')}
+      source={require('!!raw-loader!../examples/00-basic-example').default}
     />
   )}
 
@@ -29,7 +29,7 @@ import FieldMonth, { FieldMonthStateless } from '@uidu/field-text';
       packageName="@uidu/field-text"
       Component={require('../examples/01-stateless-example').default}
       title="Stateless Example"
-      source={require('!!raw-loader!../examples/01-stateless-example')}
+      source={require('!!raw-loader!../examples/01-stateless-example').default}
     />
   )}
 
@@ -38,7 +38,7 @@ import FieldMonth, { FieldMonthStateless } from '@uidu/field-text';
       packageName="@uidu/field-text"
       Component={require('../examples/02-form-example').default}
       title="Form Example"
-      source={require('!!raw-loader!../examples/02-form-example')}
+      source={require('!!raw-loader!../examples/02-form-example').default}
     />
   )}
 
