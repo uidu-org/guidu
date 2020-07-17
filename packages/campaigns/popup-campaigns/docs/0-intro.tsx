@@ -13,8 +13,6 @@ export default md`
   - *availableQuestions*: array of question kinds allowed for this field (eg: singleSelectField can have Select, RadioGroup or a FieldDownshift)
   - *availableFilters*: array of filters (eg: euquals, moreThan, contains, notEqual)
 
-  ## Usage
-
   ${code`import fields, { dateField } from '@uidu/data-fields';`}
 
   ${(

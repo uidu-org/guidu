@@ -7,8 +7,6 @@ The \`Presence\` component is the status dot. In most cases, you will not need t
 the presence component directly, as passing string values of 'presence' to \`Avatar\` will
 use the selected presence. Presence is displayed at the bottom right of the avatar.
 
-## Usage
-
 ${code`import { Presence } from '@uidu/avatar';`}
 
 ${(

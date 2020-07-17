@@ -49,7 +49,7 @@ $social-twitter: #1da1f2;
 $social-whatsapp: #25d366;
 
 // Body
-$body-bg: rgba(226, 235, 225, 0.05); // #fff;
+$body-bg: #fff; // rgba(226, 235, 225, 0.05);
 $body-color: rgb(76, 86, 106);
 
 $theme-colors: (
@@ -129,7 +129,7 @@ $border-color: #f2f3f3; // better for inputs $gray-200; // #f2f2f3;
 $hr-border-color: $border-color;
 $hr-margin-y: 0.75rem;
 
-$box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
+$box-shadow-sm: 0px 0px 22px -9px #e7e7e7;
 $box-shadow: 0 0rem 1rem rgba($black, 0.15);
 $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 

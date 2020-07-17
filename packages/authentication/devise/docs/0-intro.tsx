@@ -9,8 +9,6 @@ export default md`
   Button also exports a chat-window-group component to make it easy to display
   multiple chat-windows together.
 
-  ## Usage
-
   ${code`import Devise from '@uidu/devise';`}
 
   ${(

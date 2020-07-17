@@ -9,7 +9,7 @@ export type AccordionPropTypesBase = {
   /** Open only one item at a time or not */
   items: Array<any>;
   /** Display a tooltip on hover */
-  enableTooltip: boolean;
+  enableTooltip?: boolean;
   /** Assign specific tabIndex order to the underlying node. */
   tabIndex?: number;
   /** Assign specific tabIndex order to the underlying node. */
@@ -17,6 +17,7 @@ export type AccordionPropTypesBase = {
 };
 
 export type AccordionPropTypes = AccordionPropTypesBase & {
+  onChange?: (expanded: string[]) => void;
   /** Handler to be called on click. */
   onClick?: (
     { event, item }: { event: KeyboardEvent | MouseEvent; item: any },

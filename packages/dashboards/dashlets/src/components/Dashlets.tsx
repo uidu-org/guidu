@@ -1,32 +1,31 @@
 import loadable from '@loadable/component';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { DashletsProps } from '../types';
 import Dashlet from './Dashlet';
 import DashletGroup from './Dashlets/DashletGroup';
 
-const LoadableArea = loadable(() => import(`./Dashlets/Area`));
-const LoadableBar = loadable(() => import(`./Dashlets/Bar`));
-const LoadableCounter = loadable(() => import(`./Dashlets/Counter`));
-const LoadableFunnel = loadable(() => import(`./Dashlets/Funnel`));
-const LoadableGeo = loadable(() => import(`./Dashlets/Geo`));
-const LoadableList = loadable(() => import(`./Dashlets/List`));
-const LoadablePie = loadable(() => import(`./Dashlets/Pie`));
-const LoadableRadial = loadable(() => import(`./Dashlets/Radial`));
-const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap`));
+const LoadableCounter = loadable(() => import(`./Dashlets/Counter/Counter`));
+const LoadableFunnel = loadable(() => import(`./Dashlets/Funnel/Funnel`));
+const LoadableGeo = loadable(() => import(`./Dashlets/Geo/Geo`));
+const LoadableTable = loadable(() => import(`./Dashlets/Table/Table`));
+const LoadablePie = loadable(() => import(`./Dashlets/Pie/Pie`));
+const LoadableRadar = loadable(() => import(`./Dashlets/Radar/Radar`));
+const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap/Treemap`));
+const LoadableXY = loadable(() => import(`./Dashlets/XY/XY`));
 const LoadableHorizontalRule = loadable(() =>
   import(`./Dashlets/HorizontalRule`),
 );
 const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 
-export const renderDashlet = ({ kind, showHeader = true, ...dashlet }) => {
+export function renderDashlet({ kind, showHeader = true, ...dashlet }) {
   let content = null;
 
   switch (kind) {
     case 'Area':
-      content = LoadableArea;
+      content = LoadableXY;
       break;
     case 'Bar':
-      content = LoadableBar;
+      content = LoadableXY;
       break;
     case 'Counter':
       content = LoadableCounter;
@@ -39,16 +38,22 @@ export const renderDashlet = ({ kind, showHeader = true, ...dashlet }) => {
       showHeader = false;
       break;
     case 'List':
-      content = LoadableList;
+      content = LoadableTable;
       break;
     case 'Pie':
       content = LoadablePie;
       break;
-    case 'Radial':
-      content = LoadableRadial;
+    case 'Radar':
+      content = LoadableRadar;
+      break;
+    case 'Table':
+      content = LoadableTable;
       break;
     case 'Treemap':
       content = LoadableTreemap;
+      break;
+    case 'XY':
+      content = LoadableXY;
       break;
     case 'DashletGroup':
       return (
@@ -73,11 +78,8 @@ export const renderDashlet = ({ kind, showHeader = true, ...dashlet }) => {
       showHeader={showHeader}
     />
   );
-};
+}
 
-export default class Dashlets extends PureComponent<DashletsProps> {
-  render() {
-    const { dashlets } = this.props;
-    return dashlets.map((dashlet) => renderDashlet(dashlet));
-  }
+export default function Dashlets({ dashlets }: DashletsProps) {
+  return dashlets.map((dashlet) => renderDashlet(dashlet));
 }

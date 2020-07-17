@@ -12,8 +12,6 @@ export default md`
 
   A section message will fill the width of its container.
 
-  ## Usage
-
   ${code`import SectionMessage from '@uidu/section-message';`}
 
   ${(

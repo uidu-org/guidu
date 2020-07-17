@@ -2,7 +2,7 @@ import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 
 export default md`
-  ### FieldTime
+  ### Field Time
   <p class="lead">Select time in a field</p>
 
   Text Field exports both a stateful default component, and a stateless component.

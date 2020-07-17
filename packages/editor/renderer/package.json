@@ -29,7 +29,7 @@
     "@uidu/tooltip": "^0.1.26",
     "prosemirror-model": "^1.7.1",
     "raf-schd": "^4.0.0",
-    "react-intl": "^5.1.0",
+    "react-intl": "^5.2.1",
     "url-parse": "^1.4.7"
   },
   "devDependencies": {

@@ -15,9 +15,13 @@ export type DashletTimeDimension = {
 export type DashletProps = {
   kind: string;
   label?: string | React.ReactNode;
+  description?: string | React.ReactNode;
   formatter?: string;
   dashlets?: DashletProps[];
   itemBefore?: React.ReactNode;
+  /** Config is AmCharts JSON config */
+  config?: any;
+  /** Quewry is CubeJs query props */
   query?: {
     measures?: string[];
     dimensions?: string[];

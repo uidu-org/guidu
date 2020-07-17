@@ -4,8 +4,6 @@ import React from 'react';
 export default md`
   Accordion component that uses [react-accessible-accordion](https://github.com/springload/react-accessible-accordion)
 
-  ## Usage
-
   ${code`import Accordion from '@uidu/accordion';`}
 
   ${(

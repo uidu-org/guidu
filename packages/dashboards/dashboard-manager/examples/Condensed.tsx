@@ -68,7 +68,7 @@ export default class Basic extends Component<any, any> {
                       loaded,
                       dashlets: [
                         {
-                          kind: 'Area',
+                          kind: 'XY',
                           namespace: 'donations',
                           label: 'Raccolta',
                           description: 'Donations amount by time',
@@ -82,7 +82,7 @@ export default class Basic extends Component<any, any> {
                           h: 10,
                         },
                         {
-                          kind: 'Area',
+                          kind: 'XY',
                           namespace: 'donations',
                           label: 'Raccolta',
                           name: 'donationsCount',
@@ -238,7 +238,7 @@ export default class Basic extends Component<any, any> {
                           ],
                         },
                         {
-                          kind: 'Radial',
+                          kind: 'Radar',
                           namespace: 'donations',
                           rollup: ['count', 'id'],
                           bins: [

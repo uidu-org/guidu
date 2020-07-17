@@ -12,8 +12,6 @@ export default md`
   * Use labels to call out tags and high-visibility attributes.
   * Use a tooltip if you want to indicate units.
 
-  ## Usage
-
   The \`default\` export gives you full badge functionality and automatically formats the number you priovide it.
 
 ${code`

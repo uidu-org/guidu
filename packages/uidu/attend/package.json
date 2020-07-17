@@ -22,7 +22,7 @@
     "moment": "^2.18.1",
     "react-countdown": "^2.2.0",
     "react-feather": "^2.0.3",
-    "react-intl": "^5.1.0"
+    "react-intl": "^5.2.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45"

@@ -9,8 +9,6 @@ export default md`
   Button also exports a button-group component to make it easy to display
   multiple buttons together.
 
-  ## Usage
-
   ${code`import Button, { ButtonGroup } from '@uidu/button';`}
 
   ${(

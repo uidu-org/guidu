@@ -5,8 +5,6 @@ export default md`
 
 Blanket provides the overlay layer for components such as a modal dialog or a tooltip.
 
-## Usage
-
 ${code`import Blanket from '@uidu/blanket';`}
 
 The blanket component is designed to be used with a modal or popup, and

@@ -18,7 +18,7 @@
     "@uidu/spinner": "^0.1.18",
     "@uidu/stepper": "^0.1.23",
     "moment": "^2.18.1",
-    "react-intl": "^5.1.0"
+    "react-intl": "^5.2.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",

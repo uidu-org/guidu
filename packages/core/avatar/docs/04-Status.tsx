@@ -7,8 +7,6 @@ export default md`
 cases, you can pass the string of the status you want directly to avatar instead
 of using this component directly.
 
-## Usage
-
 ${code`import { Status } from '@uidu/avatar';`}
 
 ${(

@@ -5,8 +5,6 @@ export default md`
 Pagination is helpful when you do not want to bloat your page by showing all the data at once. In this case we expect user to
 navigate through different pages of the component.
 
-## Usage:
-
 ${code`
 import Pagination from '@uidu/pagination';
 `}

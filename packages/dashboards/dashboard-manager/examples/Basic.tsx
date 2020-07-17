@@ -42,12 +42,13 @@ export default class Basic extends Component<any, any> {
             </ShellHeader>
             <ShellBody scrollable>
               <div className="container px-0">
+                <h5 className="my-5">Dashboard</h5>
                 <div className="row">
                   <div className="col-12">
                     {renderDashlets({
                       dashlets: [
                         {
-                          kind: 'Area',
+                          kind: 'XY',
                           label: 'Raccolta',
                           description: 'Donations amount by time',
                           query: {
@@ -67,11 +68,33 @@ export default class Basic extends Component<any, any> {
                             w: 12,
                             h: 10,
                           },
-                          color: colors[0],
-                          isCard: false,
+                          config: {
+                            series: [
+                              {
+                                type: 'ColumnSeries',
+                                dataFields: {
+                                  valueY: 'Donations.amount',
+                                  dateX: 'category',
+                                },
+                                name: 'Total donations received',
+                              },
+                              {
+                                type: 'ColumnSeries',
+                                dataFields: {
+                                  valueY: 'Donations.amount',
+                                  dateX: 'category',
+                                },
+                                name: 'Total donations received',
+                              },
+                            ],
+                            // colors: {
+                            //   list: colors,
+                            // },
+                          },
+                          // isCard: false,
                         },
                         {
-                          kind: 'Area',
+                          kind: 'XY',
                           label: 'Raccolta',
                           query: {
                             measures: ['Donations.count'],
@@ -90,7 +113,7 @@ export default class Basic extends Component<any, any> {
                             w: 12,
                             h: 10,
                           },
-                          isCard: false,
+                          // isCard: false,
                         },
                         {
                           kind: 'HorizontalRule',
@@ -271,15 +294,17 @@ export default class Basic extends Component<any, any> {
                           ],
                         },
                         {
-                          kind: 'Radial',
-                          namespace: 'donations',
-                          rollup: ['count', 'id'],
-                          bins: [
-                            [0, 10000],
-                            [10001, 20000],
-                            [20001, 30000],
-                            [30001],
-                          ],
+                          kind: 'Radar',
+                          query: {
+                            dimensions: ['Donations.paymentMethod'],
+                            timeDimensions: [
+                              {
+                                dimension: 'Donations.createdAt',
+                              },
+                            ],
+                            measures: ['Donations.count'],
+                            filters: [],
+                          },
                           layout: { x: 0, y: 5, w: 12, h: 3 },
                         },
                         {

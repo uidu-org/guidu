@@ -5,8 +5,6 @@ export default md`
 
 The \`Skeleton\`component is used for loading states.
 
-## Usage
-
 ${code`import { Skeleton } from '@uidu/avatar';`}
 
 ${(

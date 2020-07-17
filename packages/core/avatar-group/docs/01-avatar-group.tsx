@@ -21,8 +21,6 @@ export default md`
   - \`size\` will get the \`AvatarGroup\`'s \`size\`
   - \`groupAppearance\` will get the \`AvatarGroup\`'s \`appearance\`
 
-  ## Usage
-
   ${code`import AvatarGroup from '@uidu/avatar-group';`}
 
 ${(

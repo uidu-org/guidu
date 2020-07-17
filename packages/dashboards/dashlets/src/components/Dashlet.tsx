@@ -1,6 +1,6 @@
-import { QueryBuilder } from '@cubejs-client/react';
+import { useCubeQuery } from '@cubejs-client/react';
 import { Groupers, TimeFrame, TimeFrameGrouper } from '@uidu/dashlet-controls';
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import DashletHeader from './DashletHeader';
 
@@ -40,69 +40,61 @@ export default function Dashlet({
   rowData,
   ...rest
 }: any) {
-  const [query, setQuery] = useState(
-    dashlet.query || {
-      measures: ['Donations.amount'],
-      timeDimensions: [
-        {
-          dimension: 'Donations.createdAt',
-          granularity: 'month',
-        },
-      ],
-      filters: [],
-    },
-  );
+  // const [query, setQuery] = useState(
+  //   dashlet.query || {
+  //     measures: ['Donations.amount'],
+  //     timeDimensions: [
+  //       {
+  //         dimension: 'Donations.createdAt',
+  //         granularity: 'month',
+  //       },
+  //     ],
+  //     filters: [],
+  //   },
+  // );
+
+  console.log(dashlet.query);
+  const { resultSet, isLoading, error } = useCubeQuery(dashlet.query);
 
   return (
-    <QueryBuilder
-      query={query}
-      render={(cubejsQueryProps) => {
-        const { timeDimensions, updateTimeDimensions } = cubejsQueryProps;
-        let timeDimension;
-        if (timeDimensions.length > 0) {
-          timeDimension = timeDimensions[0];
-        }
-
-        return (
-          <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
-            {showHeader && (
-              <DashletHeader
-                name={dashlet.label}
-                description={dashlet.description}
-                isCard={isCard}
-              >
-                <TimeDimensionControls>
-                  {timeDimension && (
-                    <TimeFrame
-                      activeTimeFrame={timeDimension.dateRange}
-                      onChange={(name) => {
-                        updateTimeDimensions.update(timeDimension, {
-                          ...timeDimension,
-                          dateRange: name,
-                        });
-                      }}
-                      timeframes={DateRanges}
-                    />
-                  )}
-                  {timeDimension && (
-                    <TimeFrameGrouper
-                      groupers={timeDimension.dimension.granularities}
-                      activeGrouper={timeDimension.granularity}
-                      onChange={(name) => {
-                        updateTimeDimensions.update(timeDimension, {
-                          ...timeDimension,
-                          granularity: name,
-                        });
-                      }}
-                    />
-                  )}
-                </TimeDimensionControls>
-              </DashletHeader>
-            )}
-            <DashletContent {...rest} {...dashlet} {...cubejsQueryProps} />
-          </div>
-        );
-      }}
-    />
+    <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
+      {showHeader && (
+        <DashletHeader
+          name={dashlet.label}
+          description={dashlet.description}
+          isCard={isCard}
+        >
+          {false && (
+            <TimeDimensionControls>
+              {timeDimension && (
+                <TimeFrame
+                  activeTimeFrame={timeDimension.dateRange}
+                  onChange={(name) => {
+                    updateTimeDimensions.update(timeDimension, {
+                      ...timeDimension,
+                      dateRange: name,
+                    });
+                  }}
+                  timeframes={DateRanges}
+                />
+              )}
+              {timeDimension && (
+                <TimeFrameGrouper
+                  groupers={timeDimension.dimension.granularities}
+                  activeGrouper={timeDimension.granularity}
+                  onChange={(name) => {
+                    updateTimeDimensions.update(timeDimension, {
+                      ...timeDimension,
+                      granularity: name,
+                    });
+                  }}
+                />
+              )}
+            </TimeDimensionControls>
+          )}
+        </DashletHeader>
+      )}
+      <DashletContent {...rest} {...dashlet} resultSet={resultSet} />
+    </div>
   );
 }

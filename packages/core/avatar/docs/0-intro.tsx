@@ -17,8 +17,6 @@ export default md`
   You can use the \`Presence\` component independently for contexts where the
   profile picture is not required (e.g. next to a username).
 
-  ## Usage
-
   ${code`import Avatar from '@uidu/avatar';`}
 
   ${(

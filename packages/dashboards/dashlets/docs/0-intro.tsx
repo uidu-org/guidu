@@ -1,75 +1,57 @@
 import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
+import { IntlProvider } from 'react-intl';
+import dashlets from '..';
+
+console.log(dashlets);
 
 export default md`
+  ### Dashlets
+  <p class="lead">Dashlets for building dashboards</p>
 
-  # Dashlets
   Dashlets are dashboard components used to represent and analyze data.
   Dashlets are imagined either as single analytics dashlets (AnalyticsDashlets), that can be edited and filtered according to its type or layout elements (LayoutDashlets), used for arranging dashlets and design dashboards.
   It's a super powerful tool.
 
-  ## AnalyticsDashlets
+  <div class="my-5"></div>
+
+  #### AnalyticsDashlets
   These dashlets represent and manipulate data, when needed.
 
   ${(
-    <table className="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Counter</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>Funnel</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>Map</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>List</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>Pie</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>Radial</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>Timeline</td>
-          <td>This a subset of XY charts with time into X axis.</td>
-        </tr>
-        <tr>
-          <td>Treemap</td>
-          <td>Short description</td>
-        </tr>
-        <tr>
-          <td>XY Chart</td>
-          <td>
-            Inspired by{' '}
-            <a
-              href="https://www.amcharts.com/docs/v4/chart-types/xy-chart/"
-              target="_blank"
-            >
-              Amcharts
-            </a>{' '}
-            allows to create bar, line and area charts.
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <IntlProvider>
+      <table className="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {dashlets.map(({ id, icon: Icon, name, description, color }) => (
+            <tr>
+              <td className="text-nowrap">
+                <code>{id}</code>
+              </td>
+              <td className="text-nowrap">
+                <div className="d-flex align-items-center">
+                  <span className="mr-2 d-flex">
+                    <Icon size={16} color={color} />
+                  </span>
+                  {name}
+                </div>
+              </td>
+              <td>{description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </IntlProvider>
   )}
 
-  ## LayoutDashlets
+  <div class="my-5"></div>
+
+  #### LayoutDashlets
   With the help of these dashlets you can build amazing dashboards.
 
   ${(
