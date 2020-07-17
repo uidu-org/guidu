@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.3
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.2.2
 
 ### Patch Changes

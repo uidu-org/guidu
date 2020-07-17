@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.15
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.2.14
 
 ### Patch Changes

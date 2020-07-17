@@ -1,5 +1,13 @@
 # @uidu/item
 
+## 0.1.28
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+
 ## 0.1.27
 
 ### Patch Changes

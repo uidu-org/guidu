@@ -1,5 +1,21 @@
 # @uidu/data-controls
 
+## 0.3.16
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/dropdown-menu@0.1.27
+  - @uidu/inline-dialog@0.1.19
+  - @uidu/item@0.1.28
+  - @uidu/spinner@0.1.19
+  - @uidu/tooltip@0.1.28
+  - @uidu/data-fields@0.1.33
+  - @uidu/data-views@0.2.14
+  - @uidu/table@0.1.109
+  - @uidu/shell@0.3.3
+
 ## 0.3.15
 
 ### Patch Changes

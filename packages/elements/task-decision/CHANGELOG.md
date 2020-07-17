@@ -1,5 +1,15 @@
 # @uidu/task-decision
 
+## 0.1.18
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar-group@2.2.3
+  - @uidu/button@0.1.61
+  - @uidu/spinner@0.1.19
+
 ## 0.1.17
 
 ### Patch Changes

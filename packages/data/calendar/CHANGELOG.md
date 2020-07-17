@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.1.25
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/dropdown-menu@0.1.27
+  - @uidu/shell@0.3.3
+
 ## 0.1.24
 
 ### Patch Changes

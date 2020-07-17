@@ -1,5 +1,17 @@
 # @uidu/donate
 
+## 0.2.13
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/modal-dialog@0.1.41
+  - @uidu/payments@0.2.12
+  - @uidu/contact@0.1.15
+  - @uidu/schema.d.ts@0.1.6
+  - @uidu/widgets@0.2.9
+
 ## 0.2.12
 
 ### Patch Changes

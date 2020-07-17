@@ -1,5 +1,16 @@
 # @uidu/emoji
 
+## 0.1.16
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/button@0.1.61
+  - @uidu/code@0.1.24
+  - @uidu/spinner@0.1.19
+  - @uidu/tooltip@0.1.28
+
 ## 0.1.15
 
 ### Patch Changes

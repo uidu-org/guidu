@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.2.3
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+  - @uidu/dropdown-menu@0.1.27
+  - @uidu/item@0.1.28
+  - @uidu/tooltip@0.1.28
+
 ## 2.2.2
 
 ### Patch Changes

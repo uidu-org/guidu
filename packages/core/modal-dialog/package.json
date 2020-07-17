@@ -1,6 +1,6 @@
 {
   "name": "@uidu/modal-dialog",
-  "version": "0.1.40",
+  "version": "0.1.41",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",
@@ -11,10 +11,10 @@
   "dependencies": {
     "@atlaskit/icon": "^21.0.0",
     "@uidu/analytics": "^0.1.21",
-    "@uidu/blanket": "^0.1.21",
-    "@uidu/button": "^0.1.58",
+    "@uidu/blanket": "^0.1.22",
+    "@uidu/button": "^0.1.61",
     "@uidu/form": "^0.2.3",
-    "@uidu/portal": "^0.1.18",
+    "@uidu/portal": "^0.1.19",
     "@uidu/theme": "^0.2.4",
     "exenv": "^1.2.2",
     "prop-types": "^15.6.0",
@@ -25,11 +25,11 @@
     "tiny-invariant": "^1.0.3"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.3.2",
+    "@uidu/avatar": "^0.3.3",
     "@uidu/checkbox": "^0.2.2",
     "@uidu/docs": "^0.1.46",
     "@uidu/field-text": "^0.2.7",
-    "@uidu/inline-dialog": "^0.1.18",
+    "@uidu/inline-dialog": "^0.1.19",
     "@uidu/radio": "^0.4.4",
     "@uidu/select": "^0.4.6",
     "react-beautiful-dnd": "^13.0.0",

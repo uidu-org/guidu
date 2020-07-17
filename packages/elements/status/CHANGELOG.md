@@ -1,5 +1,13 @@
 # @atlaskit/status
 
+## 0.1.14
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/lozenge@0.1.23
+
 ## 0.1.13
 
 ### Patch Changes

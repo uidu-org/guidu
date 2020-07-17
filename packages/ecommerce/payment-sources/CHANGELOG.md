@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.1.15
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/payments@0.2.12
+
 ## 0.1.14
 
 ### Patch Changes

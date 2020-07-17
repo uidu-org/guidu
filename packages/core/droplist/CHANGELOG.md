@@ -1,5 +1,15 @@
 # @uidu/droplist
 
+## 0.1.25
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/item@0.1.28
+  - @uidu/spinner@0.1.19
+  - @uidu/tooltip@0.1.28
+
 ## 0.1.24
 
 ### Patch Changes

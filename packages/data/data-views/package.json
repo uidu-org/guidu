@@ -1,15 +1,15 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "private": false,
   "description": "Data view declarations and custom forms",
   "license": "MIT",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/data-controls": "^0.3.12",
+    "@uidu/data-controls": "^0.3.16",
     "@uidu/field-number": "^0.2.4",
-    "@uidu/table": "^0.1.104",
+    "@uidu/table": "^0.1.109",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {

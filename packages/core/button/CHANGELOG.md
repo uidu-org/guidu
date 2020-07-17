@@ -1,5 +1,13 @@
 # @uidu/button
 
+## 0.1.61
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/spinner@0.1.19
+
 ## 0.1.60
 
 ### Patch Changes

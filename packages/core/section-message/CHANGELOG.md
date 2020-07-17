@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.1.23
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/button@0.1.61
+
 ## 0.1.22
 
 ### Patch Changes

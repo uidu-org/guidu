@@ -1,5 +1,15 @@
 # @uidu/onboarding
 
+## 0.1.15
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/button@0.1.61
+  - @uidu/modal-dialog@0.1.41
+  - @uidu/portal@0.1.19
+
 ## 0.1.14
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.1.22
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/slider@1.2.4
+  - @uidu/spinner@0.1.19
+  - @uidu/payments@0.2.12
+
 ## 0.1.21
 
 ### Patch Changes

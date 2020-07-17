@@ -1,5 +1,11 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.13
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.12
 
 ### Patch Changes

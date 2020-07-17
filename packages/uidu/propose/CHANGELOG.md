@@ -1,5 +1,13 @@
 # @uidu/propose
 
+## 0.1.17
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/widgets@0.2.9
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/mentions
 
+## 0.1.17
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/avatar@0.3.3
+  - @uidu/button@0.1.61
+  - @uidu/lozenge@0.1.23
+  - @uidu/tooltip@0.1.28
+
 ## 0.1.16
 
 ### Patch Changes

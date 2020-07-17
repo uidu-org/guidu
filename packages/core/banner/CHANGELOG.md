@@ -1,5 +1,11 @@
 # @uidu/banner
 
+## 0.1.9
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+
 ## 0.1.8
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 0.2.15
+
+### Patch Changes
+
+- 2108758: Bump dependencies, fix some broken docs examples
+- Updated dependencies [2108758]
+  - @uidu/spinner@0.1.19
+  - @uidu/board@0.2.15
+  - @uidu/calendar@0.1.25
+  - @uidu/data-controls@0.3.16
+  - @uidu/data-views@0.2.14
+  - @uidu/gallery@0.1.39
+  - @uidu/list@0.1.24
+  - @uidu/table@0.1.109
+  - @uidu/shell@0.3.3
+
 ## 0.2.14
 
 ### Patch Changes
