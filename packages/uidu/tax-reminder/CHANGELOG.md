@@ -1,5 +1,16 @@
 # @uidu/tax-reminder
 
+## 0.1.23
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [5e4223b]
+- Updated dependencies [6249ea1]
+  - @uidu/select@0.4.7
+  - @uidu/contact@0.1.16
+  - @uidu/widgets@0.2.10
+
 ## 0.1.22
 
 ### Patch Changes

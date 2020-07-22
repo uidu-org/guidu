@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 0.5.0
+
+### Minor Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
+### Patch Changes
+
+- 5e4223b: Fix slider id clashing, bump dependencies
+- Updated dependencies [6249ea1]
+  - @uidu/dashlet-controls@0.2.2
+
 ## 0.4.4
 
 ### Patch Changes

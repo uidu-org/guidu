@@ -1,5 +1,13 @@
 # @atlaskit/renderer
 
+## 0.1.30
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/status@0.1.15
+
 ## 0.1.29
 
 ### Patch Changes

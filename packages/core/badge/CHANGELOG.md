@@ -1,5 +1,11 @@
 # @uidu/badge
 
+## 0.1.21
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
 ## 0.1.20
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.2.4
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/avatar@0.3.4
+
 ## 2.2.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
 ## 0.2.4
 
 ### Patch Changes

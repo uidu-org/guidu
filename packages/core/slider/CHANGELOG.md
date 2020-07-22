@@ -1,5 +1,12 @@
 # @uidu/slider
 
+## 1.2.5
+
+### Patch Changes
+
+- 5e4223b: Fix slider id clashing, bump dependencies
+- 6249ea1: Bump dashlets to newer formats
+
 ## 1.2.4
 
 ### Patch Changes

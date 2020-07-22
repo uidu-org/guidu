@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.4.7
+
+### Patch Changes
+
+- 5e4223b: Fix slider id clashing, bump dependencies
+
 ## 0.4.6
 
 ### Patch Changes

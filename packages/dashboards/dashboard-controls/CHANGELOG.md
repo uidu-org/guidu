@@ -1,5 +1,14 @@
 # @uidu/dashboard-controls
 
+## 0.3.2
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/avatar@0.3.4
+  - @uidu/avatar-group@2.2.4
+
 ## 0.3.1
 
 ### Patch Changes

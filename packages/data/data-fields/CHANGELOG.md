@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 0.1.34
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [5e4223b]
+  - @uidu/select@0.4.7
+
 ## 0.1.33
 
 ### Patch Changes

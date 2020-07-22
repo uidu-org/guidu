@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-time",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Field Time Component",
   "keywords": [
     "react",
@@ -22,7 +22,7 @@
     "react-simple-timefield": "^3.0.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.58",
+    "@uidu/button": "^0.1.62",
     "@uidu/docs": "^0.1.45",
     "react-dom": "^16.4.0"
   },

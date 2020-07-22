@@ -1,5 +1,18 @@
 # @uidu/donate
 
+## 0.2.14
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [5e4223b]
+- Updated dependencies [6249ea1]
+  - @uidu/field-downshift@0.3.6
+  - @uidu/select@0.4.7
+  - @uidu/payments@0.2.13
+  - @uidu/contact@0.1.16
+  - @uidu/widgets@0.2.10
+
 ## 0.2.13
 
 ### Patch Changes

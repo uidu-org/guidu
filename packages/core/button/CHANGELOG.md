@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.62
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
 ## 0.1.61
 
 ### Patch Changes
