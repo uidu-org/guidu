@@ -14,7 +14,8 @@
     "@uidu/field-downshift": "^0.3.5",
     "@uidu/field-toggle": "^0.2.3",
     "@uidu/form": "^0.2.5",
-    "@uidu/select": "^0.4.6"
+    "@uidu/select": "^0.4.6",
+    "@uidu/shell": "^0.3.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.46"

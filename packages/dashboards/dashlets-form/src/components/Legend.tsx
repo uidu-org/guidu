@@ -1,43 +1,44 @@
-import FieldToggle from '@uidu/field-toggle';
 import Select from '@uidu/select';
 import React from 'react';
 
+const legendOptions = {
+  none: {
+    disabled: true,
+  },
+  left: {
+    position: 'left',
+    disabled: false,
+    fillOpacity: 0.3,
+    fontSize: 14,
+  },
+  right: {
+    position: 'right',
+    disabled: false,
+    fillOpacity: 0.3,
+    fontSize: 14,
+  },
+  bottom: {
+    position: 'bottom',
+    disabled: false,
+    fillOpacity: 0.3,
+    fontSize: 14,
+  },
+  top: {
+    position: 'top',
+    disabled: false,
+    fillOpacity: 0.3,
+    fontSize: 14,
+  },
+};
+
 export default function Legend({ config, setConfig }) {
   return (
-    <div
-      onKeyDown={(e) => {
-        console.log(e);
-        e.stopPropagation();
-      }}
-    >
-      <FieldToggle
-        label="Show legend"
-        name="legend"
-        className="py-3"
-        onChange={(name, value) => {
-          if (value) {
-            setConfig({
-              ...config,
-              [name]: {
-                disabled: false,
-                fillOpacity: 0.3,
-                fontSize: 14,
-              },
-            });
-          } else {
-            setConfig({
-              ...config,
-              [name]: {
-                disabled: true,
-              },
-            });
-          }
-        }}
-      />
+    <>
       <Select
-        label="Position"
+        label="Legend"
         name="position"
         options={[
+          { id: 'none', name: 'none' },
           { id: 'left', name: 'left' },
           { id: 'right', name: 'right' },
           { id: 'top', name: 'top' },
@@ -46,12 +47,10 @@ export default function Legend({ config, setConfig }) {
         onChange={(name, value) => {
           setConfig({
             ...config,
-            legend: {
-              [name]: value,
-            },
+            legend: legendOptions[value],
           });
         }}
       />
-    </div>
+    </>
   );
 }

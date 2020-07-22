@@ -1,7 +1,7 @@
 import cubejs from '@cubejs-client/core';
 import { CubeProvider, QueryBuilder } from '@cubejs-client/react';
-import Accordion from '@uidu/accordion';
 import { renderDashlet } from '@uidu/dashlets';
+import FieldDownshift, { DownshiftVerticalCard } from '@uidu/field-downshift';
 import Form, { FormSubmit } from '@uidu/form';
 import Select from '@uidu/select';
 import React, { useRef, useState } from 'react';
@@ -23,6 +23,30 @@ export default function DashletsForm({
 
   const [config, setConfig] = useState({});
   const [kind, setKind] = useState('XY');
+
+  const addMeasure = (updateMeasures, measure) => {
+    updateMeasures.add({
+      name: measure.id,
+      shortTitle: measure.name,
+      title: measure.name,
+    });
+    setConfig({
+      ...config,
+      series: [
+        {
+          dataFields: {
+            valueY: measure.id,
+            dateX: 'category',
+          },
+          strokeWidth: 1,
+          fillOpacity: 0.6,
+          tensionX: 0.8,
+          name: measure.name,
+          tooltipText: `{dateX}\n[bold]{valueY}[/]`,
+        },
+      ],
+    });
+  };
 
   return (
     <CubeProvider cubejsApi={cubejsApi.current}>
@@ -52,6 +76,7 @@ export default function DashletsForm({
           updateChartType,
           validatedQuery,
         }) => {
+          console.log(measures);
           return (
             <Form
               handleSubmit={async (model) => console.log(model)}
@@ -75,12 +100,27 @@ export default function DashletsForm({
                       id: measure.name,
                       name: measure.title,
                     }))}
-                    onChange={(name, value, { option }) => {
-                      updateMeasures.add({
-                        name: option[0].id,
-                        shortTitle: option[0].name,
-                        title: option[0].name,
-                      });
+                    onChange={(
+                      name,
+                      value,
+                      {
+                        actionMeta,
+                        actionMeta: { action, option, removedValue },
+                      },
+                    ) => {
+                      switch (action) {
+                        case 'select-option':
+                          addMeasure(updateMeasures, option);
+                          break;
+                        case 'remove-value':
+                          console.log(actionMeta);
+                          updateMeasures.remove({
+                            name: removedValue.id,
+                            shortTitle: removedValue.name,
+                            title: removedValue.title,
+                          });
+                          break;
+                      }
                     }}
                     multiple
                   />
@@ -127,79 +167,34 @@ export default function DashletsForm({
                           kind,
                           query: validatedQuery,
                           config,
-                          // config: {
-                          // series: measures.map((measure) => {
-                          //   return {
-                          //     type:
-                          //       chartType === 'table'
-                          //         ? 'PieSeries'
-                          //         : 'LineSeries',
-                          //     dataFields: {
-                          //       valueY: measure.name,
-                          //       dateX: 'category',
-                          //     },
-                          //     strokeWidth: 1,
-                          //     fillOpacity: 0.6,
-                          //     tensionX: 0.8,
-                          //     name: measure.title,
-                          //     tooltipText: `{dateX}\n[bold]{valueY}[/]`,
-                          //   };
-                          // }),
-                          // },
                         })}
                     </div>
                     <div className="col-lg-4 py-3 border-left">
-                      <Select
-                        label="Chart kind"
-                        name="kind"
-                        options={chartTypeToDashletKinds(
-                          chartType,
-                        ).map((k) => ({ id: k, name: k }))}
-                        onChange={(name, value) => setKind(value)}
-                      />
-                      <Accordion
-                        key="accordion"
-                        allowMultipleExpanded={false}
-                        // allowZeroExpanded={true}
-                        items={[
-                          {
-                            uuid: 'appearance',
-                            title: () => 'Apperarance',
-                            body: (
-                              <>
-                                <p>Padding</p>
-                              </>
-                            ),
-                          },
-                          {
-                            uuid: 'axes',
-                            title: () => 'Axes',
-                            body: (
-                              <>
-                                <p>Padding</p>
-                              </>
-                            ),
-                          },
-                          {
-                            uuid: 'series',
-                            title: () => 'Series',
-                            body: (
-                              <>
-                                <Series measures={measures} />
-                              </>
-                            ),
-                          },
-                          {
-                            uuid: 'legend',
-                            title: () => 'Legend',
-                            body: (
-                              <>
-                                <Legend config={config} setConfig={setConfig} />
-                              </>
-                            ),
-                          },
-                        ]}
-                      />
+                      {!!isQueryPresent && (
+                        <>
+                          <FieldDownshift
+                            label="Chart kind"
+                            name="kind"
+                            scope="primary"
+                            menu={(props) => (
+                              <div className="d-flex" {...props} />
+                            )}
+                            option={DownshiftVerticalCard}
+                            options={chartTypeToDashletKinds(
+                              chartType,
+                            ).map((k) => ({ id: k, name: k }))}
+                            onChange={(name, value) => setKind(value)}
+                          />
+                          <hr style={{ borderTopWidth: 2 }} />
+                          <Series
+                            measures={measures}
+                            config={config}
+                            setConfig={setConfig}
+                          />
+                          <hr style={{ borderTopWidth: 2 }} />
+                          <Legend config={config} setConfig={setConfig} />
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -8,8 +8,7 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import 'swiper/swiper-bundle.css';
-import {
+import Swiper, {
   A11y,
   Autoplay,
   History,
@@ -17,9 +16,9 @@ import {
   Navigation,
   Pagination,
   Scrollbar,
-  Swiper,
   SwiperOptions,
 } from 'swiper';
+import 'swiper/swiper-bundle.css';
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
 
@@ -65,7 +64,7 @@ function Slider({
   forwardedRef,
 }: SliderProps) {
   const slider = useRef(null);
-  const id = useRef(uuid());
+  const id = useRef(`slider-${uuid()}`);
 
   const defaultOptions = {
     ...defaultSwiperOptions(id.current),

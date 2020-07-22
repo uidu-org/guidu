@@ -16,7 +16,6 @@ export default function XY({ resultSet, config }) {
 
   useLayoutEffect(() => {
     if (resultSet) {
-      console.log(resultSet);
       let x = am4core.createFromConfig(
         {
           paddingBottom: 24,
@@ -63,18 +62,18 @@ export default function XY({ resultSet, config }) {
               },
             },
           ],
-          series: resultSet.series().map((line) => ({
-            type: 'LineSeries',
-            dataFields: {
-              valueY: line.key,
-              dateX: 'category',
-            },
-            strokeWidth: 1,
-            fillOpacity: 0.6,
-            tensionX: 0.8,
-            name: line.title,
-            tooltipText: `{dateX}\n[bold]{valueY}[/]`,
-          })),
+          // series: resultSet.series().map((line) => ({
+          //   type: 'LineSeries',
+          //   dataFields: {
+          //     valueY: line.key,
+          //     dateX: 'category',
+          //   },
+          //   strokeWidth: 1,
+          //   fillOpacity: 0.6,
+          //   tensionX: 0.8,
+          //   name: line.title,
+          //   tooltipText: `{dateX}\n[bold]{valueY}[/]`,
+          // })),
           numberFormat: '#a',
           data: resultSet.chartPivot(),
           ...config,
@@ -92,6 +91,8 @@ export default function XY({ resultSet, config }) {
   }, [resultSet]);
 
   useLayoutEffect(() => {
+    console.log(chart.current);
+    console.log(config);
     if (chart.current) {
       chart.current.config = config;
     }

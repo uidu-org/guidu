@@ -76,7 +76,7 @@ type ReactSelectProps = {
   /* Handle blur events on the control */
   onBlur?: (e: React.FocusEvent<HTMLElement>) => void;
   /* Handle change events on the select */
-  onChange?: (name, value, { option }) => void;
+  onChange?: (name, value, { option, actionMeta }) => void;
   /* Click events by default have preventDefault & stopPropogation called on them. Use this prop to disable this behaviour  */
   onClickPreventDefault?: boolean;
   /* Handle focus events on the control */
