@@ -24,7 +24,7 @@
     "chalk": "^4.0.0",
     "compression-webpack-plugin": "^4.0.0",
     "connect-history-api-fallback": "^1.6.0",
-    "css-loader": "^3.0.0",
+    "css-loader": "^4.0.0",
     "eslint-loader": "^4.0.0",
     "extract-react-types-loader": "^0.3.1",
     "file-loader": "^6.0.0",

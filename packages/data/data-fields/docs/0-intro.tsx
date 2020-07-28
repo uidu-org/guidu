@@ -1,5 +1,6 @@
 import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
+import { IntlProvider } from 'react-intl';
 import fields from '..';
 
 export default md`
@@ -19,29 +20,31 @@ export default md`
   ${code`import fields, { dateField } from '@uidu/data-fields';`}
 
   ${(
-    <table className="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {fields.map((field: any) => (
+    <IntlProvider>
+      <table className="table">
+        <thead>
           <tr>
-            <td className="text-nowrap">
-              <code>{field.id}</code>
-            </td>
-            <td className="text-nowrap">
-              <span className="mr-3">{field.icon}</span>
-              {field.name}
-            </td>
-            <td>{field.description}</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {fields.map((field: any) => (
+            <tr>
+              <td className="text-nowrap">
+                <code>{field.id}</code>
+              </td>
+              <td className="text-nowrap">
+                <span className="mr-3">{field.icon}</span>
+                {field.name}
+              </td>
+              <td>{field.description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </IntlProvider>
   )}
 
   ${(
