@@ -1,5 +1,11 @@
 # @atlaskit/status
 
+## 0.1.15
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
 ## 0.1.14
 
 ### Patch Changes

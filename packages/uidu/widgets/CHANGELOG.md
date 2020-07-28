@@ -1,5 +1,16 @@
 # @uidu/widgets
 
+## 0.2.10
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [5e4223b]
+- Updated dependencies [6249ea1]
+  - @uidu/slider@1.2.5
+  - @uidu/shell@0.3.4
+  - @uidu/contact@0.1.16
+
 ## 0.2.9
 
 ### Patch Changes

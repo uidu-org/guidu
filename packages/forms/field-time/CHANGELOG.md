@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.2.3
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
 ## 0.2.2
 
 ### Patch Changes

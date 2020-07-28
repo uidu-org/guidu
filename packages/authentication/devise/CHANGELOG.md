@@ -1,5 +1,16 @@
 # @uidu/devise
 
+## 0.2.17
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [5e4223b]
+- Updated dependencies [6249ea1]
+  - @uidu/slider@1.2.5
+  - @uidu/avatar@0.3.4
+  - @uidu/shell@0.3.4
+
 ## 0.2.16
 
 ### Patch Changes

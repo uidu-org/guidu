@@ -1,5 +1,13 @@
 # @uidu/emoji
 
+## 0.1.17
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/button@0.1.62
+
 ## 0.1.16
 
 ### Patch Changes

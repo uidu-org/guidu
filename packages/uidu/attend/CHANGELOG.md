@@ -1,5 +1,16 @@
 # @uidu/attend
 
+## 0.2.8
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/payments@0.2.13
+  - @uidu/shell@0.3.4
+  - @uidu/contact@0.1.16
+  - @uidu/widgets@0.2.10
+
 ## 0.2.7
 
 ### Patch Changes

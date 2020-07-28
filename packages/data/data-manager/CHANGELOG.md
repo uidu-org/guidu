@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.2.16
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/data-controls@0.3.17
+  - @uidu/table@0.1.110
+  - @uidu/shell@0.3.4
+
 ## 0.2.15
 
 ### Patch Changes

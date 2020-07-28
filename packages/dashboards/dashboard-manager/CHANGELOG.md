@@ -1,5 +1,19 @@
 # @uidu/dashboard-manager
 
+## 0.6.0
+
+### Minor Changes
+
+- 6249ea1: Bump dashlets to newer formats
+
+### Patch Changes
+
+- 5e4223b: Fix slider id clashing, bump dependencies
+- Updated dependencies [5e4223b]
+- Updated dependencies [6249ea1]
+  - @uidu/dashlets@0.5.0
+  - @uidu/dashboard-controls@0.3.2
+
 ## 0.5.1
 
 ### Patch Changes

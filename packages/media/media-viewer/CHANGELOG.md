@@ -1,5 +1,15 @@
 # @uidu/media-viewer
 
+## 0.1.41
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [6249ea1]
+  - @uidu/avatar@0.3.4
+  - @uidu/button@0.1.62
+  - @uidu/shell@0.3.4
+
 ## 0.1.40
 
 ### Patch Changes

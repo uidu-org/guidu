@@ -1,6 +1,6 @@
 {
   "name": "@uidu/pagination",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "A react component to be used for pagination in components like tables.",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "MIT",
@@ -10,13 +10,13 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.1.21",
-    "@uidu/button": "^0.1.58",
+    "@uidu/button": "^0.1.62",
     "@uidu/theme": "^0.2.6",
     "react-feather": "^2.0.3"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
-    "@uidu/section-message": "^0.1.22",
+    "@uidu/section-message": "^0.1.24",
     "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0"
   },

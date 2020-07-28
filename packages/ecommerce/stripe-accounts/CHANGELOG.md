@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.1.23
+
+### Patch Changes
+
+- 6249ea1: Bump dashlets to newer formats
+- Updated dependencies [5e4223b]
+- Updated dependencies [6249ea1]
+  - @uidu/slider@1.2.5
+  - @uidu/payments@0.2.13
+
 ## 0.1.22
 
 ### Patch Changes
