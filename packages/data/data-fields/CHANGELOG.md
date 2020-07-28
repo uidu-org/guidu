@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 0.1.35
+
+### Patch Changes
+
+- 1c2ac3e: Bump dependencies
+- Updated dependencies [1c2ac3e]
+  - @uidu/form@0.2.6
+
 ## 0.1.34
 
 ### Patch Changes
