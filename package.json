@@ -278,7 +278,7 @@
     "postcss-safe-parser": "^4.0.1",
     "postis": "^2.2.0",
     "pretty-proptypes": "^1.0.4",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.21.0",
     "projector-spawn": "^1.0.1",
     "prosemirror-collab": "^1.1.2",
     "prosemirror-commands": "^1.0.8",
