@@ -1,6 +1,6 @@
 {
   "name": "@uidu/map",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A React component for maps",
   "repository": "https://github.com/uidu-org/guidu.git",
   "license": "ISC",

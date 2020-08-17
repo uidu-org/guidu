@@ -1,5 +1,11 @@
 # @uidu/map
 
+## 0.2.8
+
+### Patch Changes
+
+- 1cfbfc5: Bump dependencies
+
 ## 0.2.7
 
 ### Patch Changes
