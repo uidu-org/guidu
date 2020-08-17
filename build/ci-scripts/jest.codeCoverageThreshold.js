@@ -1,5 +1,3 @@
-// @flow
-
 module.exports = {
   'packages/media/media-core/src': {
     statements: 96,

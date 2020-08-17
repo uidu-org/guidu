@@ -1,5 +1,3 @@
-// @flow
-
 import Spinner from '@uidu/spinner';
 import orderBy from 'lodash/orderBy';
 import React, { PureComponent } from 'react';
@@ -15,7 +13,7 @@ export default class Comments extends PureComponent<any> {
 
     return (
       <div className="comments-wrapper">
-        {orderBy(comments, 'createdAt', 'desc').map(comment => (
+        {orderBy(comments, 'createdAt', 'desc').map((comment) => (
           <Comment {...this.props} key={comment.uid} comment={comment} />
         ))}
       </div>

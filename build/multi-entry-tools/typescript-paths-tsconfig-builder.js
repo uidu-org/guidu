@@ -1,4 +1,3 @@
-// @flow
 const getAlternativeEntryPointAliasMap = require('./module-resolve-map-builder');
 const fromEntries = require('./utils/fromEntries');
 

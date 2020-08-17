@@ -1,5 +1,3 @@
-// @flow
-
 const path = require('path');
 const loaderUtils = require('loader-utils');
 const globby = require('globby');
@@ -54,8 +52,7 @@ function addWebpackDependencies(
   }
 
   dir.children.forEach(
-    // Making flow happy otherwise it doesn't understand that child here can only by a directory
-    child =>
+    (child) =>
       child.type === 'dir' &&
       addWebpackDependencies(child, addContextDependency),
   );
@@ -78,7 +75,7 @@ module.exports = async function boltFsLoader() {
   // which blocks us from using it inside import statement
   let patterns = []
     .concat(opts.include)
-    .concat((opts.exclude || []).map(p => `!${p}`));
+    .concat((opts.exclude || []).map((p) => `!${p}`));
   const files /*: Array<string> */ = await globby(patterns, {
     cwd: projectRoot,
   });

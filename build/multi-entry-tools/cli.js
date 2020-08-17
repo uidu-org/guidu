@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// @flow
 const getAlternativeEntryPointAliasMap = require('./module-resolve-map-builder');
 
 async function main() {

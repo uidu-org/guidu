@@ -1,4 +1,3 @@
-// @flow
 const glob = require('glob');
 const bolt = require('bolt');
 const path = require('path');
@@ -18,8 +17,8 @@ function getAliasesForWorkspace({ name: packageName, dir }) {
       const tsxOrJsRegex = /^.*\.(js|ts(x)?)$/;
       resolve(
         paths
-          .filter(pathName => pathName.match(tsxOrJsRegex))
-          .map(pathName => {
+          .filter((pathName) => pathName.match(tsxOrJsRegex))
+          .map((pathName) => {
             const { name: entryName } = path.parse(pathName);
 
             return [`${packageName}/${entryName}`, pathName];
@@ -32,13 +31,13 @@ function getAliasesForWorkspace({ name: packageName, dir }) {
 module.exports = async function getAlternativeEntryPointAliasMap() {
   const workspaces = await bolt.getWorkspaces();
 
-  const aliasPromises = workspaces.map(workspace =>
+  const aliasPromises = workspaces.map((workspace) =>
     getAliasesForWorkspace(workspace),
   );
   const aliases = fromEntries(
     flatten(
       (await Promise.all(aliasPromises)).filter(
-        aliasesP => aliasesP.length > 0,
+        (aliasesP) => aliasesP.length > 0,
       ),
     ),
   );

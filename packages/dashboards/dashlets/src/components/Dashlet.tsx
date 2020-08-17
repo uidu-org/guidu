@@ -1,5 +1,5 @@
 import { useCubeQuery } from '@cubejs-client/react';
-import { Groupers, TimeFrame, TimeFrameGrouper } from '@uidu/dashlet-controls';
+import { Groupers } from '@uidu/dashlet-controls';
 import React from 'react';
 import styled from 'styled-components';
 import DashletHeader from './DashletHeader';
@@ -64,7 +64,7 @@ export default function Dashlet({
           description={dashlet.description}
           isCard={isCard}
         >
-          {false && (
+          {/* {false && (
             <TimeDimensionControls>
               {timeDimension && (
                 <TimeFrame
@@ -91,7 +91,7 @@ export default function Dashlet({
                 />
               )}
             </TimeDimensionControls>
-          )}
+          )} */}
         </DashletHeader>
       )}
       <DashletContent {...rest} {...dashlet} resultSet={resultSet} />

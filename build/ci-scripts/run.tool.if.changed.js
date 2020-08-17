@@ -1,4 +1,3 @@
-// @flow
 const { getChangedPackagesSinceMaster } = require('../utils/packages');
 const spawndamnit = require('spawndamnit');
 const { getPackagesWithKarmaTests } = require('../karma-config');
@@ -30,7 +29,7 @@ const {
     throw process.exit(1);
   }
 
-  let filters = toolNames.map(toolName => {
+  let filters = toolNames.map((toolName) => {
     let filterFn = TOOL_NAME_TO_FILTERS[toolName];
 
     if (!filterFn) {
@@ -50,11 +49,13 @@ const {
     getChangedPackagesSinceMaster(),
   ]);
 
-  let changedPackageDirs = changedPackages.map(pkg => pkg.dir);
+  let changedPackageDirs = changedPackages.map((pkg) => pkg.dir);
 
-  filters.push(pkg => changedPackageDirs.includes(pkg.dir));
+  filters.push((pkg) => changedPackageDirs.includes(pkg.dir));
 
-  let matched = !!packages.find(pkg => filters.every(filter => filter(pkg)));
+  let matched = !!packages.find((pkg) =>
+    filters.every((filter) => filter(pkg)),
+  );
 
   if (!matched) {
     throw process.exit(0);

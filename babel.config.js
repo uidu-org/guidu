@@ -1,6 +1,4 @@
-// @flow
-
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache(true);
 
   const plugins = [
@@ -19,7 +17,7 @@ module.exports = function(api) {
     'babel-plugin-add-module-exports',
   ];
 
-  const presets = ['@babel/react', '@babel/flow', '@babel/preset-typescript'];
+  const presets = ['@babel/react', '@babel/preset-typescript'];
 
   return {
     env: {

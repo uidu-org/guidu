@@ -1,4 +1,3 @@
-// @flow
 const bolt = require('bolt');
 const path = require('path');
 const { exists } = require('./fs');
@@ -8,7 +7,7 @@ async function getPackagesInfo(cwd /*: string */) {
   let packages = await bolt.getWorkspaces({ cwd });
 
   return await Promise.all(
-    packages.map(async pkg => {
+    packages.map(async (pkg) => {
       let relativeDir = path.relative(project.dir, pkg.dir);
       let srcExists = await exists(path.join(pkg.dir, 'src'));
       let tsConfigExists = await exists(path.join(pkg.dir, 'tsconfig.json'));
@@ -72,26 +71,26 @@ async function getPackagesInfo(cwd /*: string */) {
 }
 
 const TOOL_NAME_TO_FILTERS /*: { [key: string]: (pkg: Object) => boolean } */ = {
-  typescript: pkg => pkg.isTypeScript,
-  typescriptcli: pkg => pkg.isTypeScriptCLI,
-  babel: pkg => pkg.isBabel,
-  flow: pkg => pkg.isFlow,
-  eslint: pkg => pkg.isESLint,
-  karma: pkg => pkg.isKarma,
-  browserstack: pkg => pkg.isBrowserStack,
-  stylelint: pkg => pkg.isStylelint,
-  webdriver: pkg => pkg.isWebdriver,
-  vr: pkg => pkg.isVisualRegression,
+  typescript: (pkg) => pkg.isTypeScript,
+  typescriptcli: (pkg) => pkg.isTypeScriptCLI,
+  babel: (pkg) => pkg.isBabel,
+  flow: (pkg) => pkg.isFlow,
+  eslint: (pkg) => pkg.isESLint,
+  karma: (pkg) => pkg.isKarma,
+  browserstack: (pkg) => pkg.isBrowserStack,
+  stylelint: (pkg) => pkg.isStylelint,
+  webdriver: (pkg) => pkg.isWebdriver,
+  vr: (pkg) => pkg.isVisualRegression,
 };
 
 async function getPackageDirsForTools(cwd /*: string */) {
   let packages = await getPackagesInfo(cwd);
   let toolGroups = {};
 
-  Object.keys(TOOL_NAME_TO_FILTERS).map(toolName => {
+  Object.keys(TOOL_NAME_TO_FILTERS).map((toolName) => {
     toolGroups[toolName] = packages
       .filter(TOOL_NAME_TO_FILTERS[toolName])
-      .map(pkg => pkg.relativeDir);
+      .map((pkg) => pkg.relativeDir);
   });
 
   return toolGroups;

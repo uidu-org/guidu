@@ -1,10 +1,7 @@
-// @flow
-import React from 'react';
 import faker from 'faker';
-
-import Message, { MessageGroup, MessageLog, MessageReactions } from '../src';
-
-import { messagerFactory, messageLogFactory } from '../examples-utils';
+import React from 'react';
+import { messageLogFactory, messagerFactory } from '../examples-utils';
+import Message, { MessageGroup } from '../src';
 
 const userA = messagerFactory();
 const userB = messagerFactory();
@@ -43,7 +40,7 @@ export default () => (
     ]}
   >
     {({ messages, messager }) =>
-      messages.map(message => (
+      messages.map((message) => (
         <Message key={message.id} message={message} messager={messager} />
       ))
     }

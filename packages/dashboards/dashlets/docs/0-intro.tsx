@@ -19,7 +19,7 @@ export default md`
   These dashlets represent and manipulate data, when needed.
 
   ${(
-    <IntlProvider>
+    <IntlProvider locale="en">
       <table className="table">
         <thead>
           <tr>

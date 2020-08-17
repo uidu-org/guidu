@@ -1,4 +1,3 @@
-// @flow
 const {
   getPackagesInfo,
   TOOL_NAME_TO_FILTERS,
@@ -17,7 +16,7 @@ const {
     throw process.exit(1);
   }
 
-  let filters = toolNames.map(toolName => {
+  let filters = toolNames.map((toolName) => {
     let filterFn = TOOL_NAME_TO_FILTERS[toolName];
 
     if (!filterFn) {
@@ -34,8 +33,8 @@ const {
 
   let packages = await getPackagesInfo(cwd);
   let relativePaths = packages
-    .filter(pkg => filters.every(filter => filter(pkg)))
-    .map(pkg => pkg.relativeDir);
+    .filter((pkg) => filters.every((filter) => filter(pkg)))
+    .map((pkg) => pkg.relativeDir);
 
   console.log(
     relativePaths.length > 1 ? `{${relativePaths.join()}}` : relativePaths[0],

@@ -1,4 +1,3 @@
-// @flow
 const {
   getChangedPackagesSinceMaster,
   getChangedPackagesSincePublishCommit,
@@ -19,8 +18,10 @@ async function getAllFSChangesets(cwd) {
   const dirs = fse.readdirSync(changesetBase);
   // this needs to support just not dealing with dirs that aren't set up properly
   return dirs
-    .filter(file => fse.lstatSync(path.join(changesetBase, file)).isDirectory())
-    .map(changesetDir => {
+    .filter((file) =>
+      fse.lstatSync(path.join(changesetBase, file)).isDirectory(),
+    )
+    .map((changesetDir) => {
       const jsonPath = path.join(changesetBase, changesetDir, 'changes.json');
       // $ExpectError
       return require(jsonPath);
@@ -32,7 +33,7 @@ async function getNewFSChangesets(cwd) {
   const paths = await git.getChangedChangesetFilesSinceMaster();
 
   // $ExpectError
-  return paths.map(filePath => require(path.join(projectRoot, filePath)));
+  return paths.map((filePath) => require(path.join(projectRoot, filePath)));
 }
 
 /**
@@ -75,7 +76,7 @@ async function getNewFSChangesets(cwd) {
         acc.concat(changeset.releases).concat(changeset.dependents),
       [],
     )
-    .filter(change => change.type !== 'none');
+    .filter((change) => change.type !== 'none');
   let changedPackages =
     branch === 'master'
       ? await getChangedPackagesSincePublishCommit()
@@ -83,7 +84,7 @@ async function getNewFSChangesets(cwd) {
 
   let matched = !!changedPackages
     .concat(packagesToRelease)
-    .find(pkg => packageNames.includes(pkg.name));
+    .find((pkg) => packageNames.includes(pkg.name));
 
   if (!matched) {
     process.exit(0);

@@ -1,5 +1,3 @@
-// @flow
-
 import React, { Component } from 'react';
 import { messageFactory, messagerFactory } from '../examples-utils';
 import Message, {
@@ -22,7 +20,7 @@ export default class Demo extends Component {
   };
 
   addReaction = (reaction, index) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       reactions: {
         ...prevState.reactions,
         [index]: [...(prevState.reactions[index] || []), reaction],
@@ -41,7 +39,7 @@ export default class Demo extends Component {
                 <MessageActions hovered={hovered}>
                   <MessageActionReactions
                     onOpenChange={onDropdownChange}
-                    onClick={reaction => this.addReaction(reaction, index)}
+                    onClick={(reaction) => this.addReaction(reaction, index)}
                   />
                 </MessageActions>
               )}

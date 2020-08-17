@@ -3,7 +3,6 @@ node_modules/*
 **/vendor/*
 coverage
 dist/*
-flow-typed
 
 # the docs template
 docs/templates/**
@@ -28,9 +27,6 @@ packages/bitbucket/codemod-util-shared-styles-to-theme/__fixtures__
 packages/core/icon-priority/glyph/**
 packages/core/icon-priority/cjs/**
 packages/core/icon-priority/utils/**
-
-# flow tests
-packages/**/__tests__/flow/
 
 # tmp
 build

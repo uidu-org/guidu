@@ -1,4 +1,3 @@
-// @flow
 const path = require('path');
 
 function createGlob(glob /*: string */) /*: Array<string> */ {

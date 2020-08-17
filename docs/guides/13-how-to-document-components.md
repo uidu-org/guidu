@@ -170,7 +170,6 @@ There are several different kinds of examples, which will have different use-cas
 Here is an example of a simple example file:
 
 ```js
-// @flow
 import React from 'react';
 import Button, { ButtonGroup } from '../src';
 

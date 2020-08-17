@@ -1,5 +1,3 @@
-/* @flow */
-
 export type File = {
   type: 'file',
   id: string,

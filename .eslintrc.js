@@ -6,7 +6,7 @@ const prettierTsRules = require('eslint-config-prettier/@typescript-eslint')
 module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
   parser: 'babel-eslint',
-  plugins: ['flowtype', 'jest', 'prettier', 'react-hooks'],
+  plugins: ['jest', 'prettier', 'react-hooks'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
@@ -104,17 +104,6 @@ module.exports = {
     browser: true,
   },
   overrides: [
-    {
-      files: ['**/*.js'],
-      rules: {
-        'flowtype/require-valid-file-annotation': [
-          2,
-          'always',
-          { annotationStyle: 'line' },
-        ],
-        'flowtype/define-flow-type': 1,
-      },
-    },
     {
       files: ['**/*.{ts,tsx}'],
       parser: '@typescript-eslint/parser',

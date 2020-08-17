@@ -20,7 +20,7 @@ export default md`
   ${code`import fields, { dateField } from '@uidu/data-fields';`}
 
   ${(
-    <IntlProvider>
+    <IntlProvider locale="en">
       <table className="table">
         <thead>
           <tr>

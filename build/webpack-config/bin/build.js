@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-// @flow
 const webpack = require('webpack');
 const createConfig = require('../config');
 const { print, buildBanner } = require('../banner');
@@ -8,10 +7,10 @@ const { print, buildBanner } = require('../banner');
 async function runBuild(webpackOptions = {}, websiteOptions = {}) {
   const mode = 'production';
   const websiteEnv = process.env.WEBSITE_ENV || 'local';
-  const noMinimize = !!process.argv.find(arg =>
+  const noMinimize = !!process.argv.find((arg) =>
     arg.startsWith('--no-minimize'),
   );
-  const report = !!process.argv.find(arg => arg.startsWith('--report'));
+  const report = !!process.argv.find((arg) => arg.startsWith('--report'));
 
   print(buildBanner());
 

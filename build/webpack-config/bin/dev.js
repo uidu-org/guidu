@@ -1,13 +1,11 @@
 #!/usr/bin/env node
 
-// @flow
-
 // Start of the hack for the issue with the webpack watcher that leads to it dying in attempt of watching files
 // in node_modules folder which contains circular symbolic links
 
 const DirectoryWatcher = require('watchpack/lib/DirectoryWatcher');
 const _oldSetDirectory = DirectoryWatcher.prototype.setDirectory;
-DirectoryWatcher.prototype.setDirectory = function(
+DirectoryWatcher.prototype.setDirectory = function (
   directoryPath,
   exist,
   initial,
@@ -53,9 +51,9 @@ const runDevServer = async ({
 }) => {
   const workspaceGlobs = process.argv
     .slice(2)
-    .filter(arg => !arg.startsWith('--')) // in case we ever pass other flags to this script
-    .map(arg => arg.replace(/["']/g, '')); // remove all quotes (users add them to prevent early glob expansion)
-  const report = !!process.argv.find(arg => arg.startsWith('--report'));
+    .filter((arg) => !arg.startsWith('--')) // in case we ever pass other flags to this script
+    .map((arg) => arg.replace(/["']/g, '')); // remove all quotes (users add them to prevent early glob expansion)
+  const report = !!process.argv.find((arg) => arg.startsWith('--report'));
 
   const mode = 'development';
   const websiteEnv = 'local';
@@ -63,8 +61,8 @@ const runDevServer = async ({
   const workspaces = await bolt.getWorkspaces();
 
   const filteredWorkspaces = workspaceGlobs.length
-    ? workspaces.filter(ws =>
-        workspaceGlobs.some(glob =>
+    ? workspaces.filter((ws) =>
+        workspaceGlobs.some((glob) =>
           minimatch(ws.dir, glob, { matchBase: true }),
         ),
       )
@@ -126,7 +124,7 @@ const runDevServer = async ({
   });
 
   return new Promise((resolve, reject) => {
-    server.listen(PORT, HOST, err => {
+    server.listen(PORT, HOST, (err) => {
       if (err) {
         console.log(err.stack || err);
         return reject(1);

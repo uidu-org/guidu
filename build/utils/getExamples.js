@@ -1,4 +1,3 @@
-//@flow
 'use strict';
 /*
  * Utilities helper to return all the examples and filter them by packages
@@ -18,7 +17,7 @@ async function getExamplesFor(
     },
   });
   let examplesArr = [];
-  project.workspaces.forEach(workspace => {
+  project.workspaces.forEach((workspace) => {
     if (workspace.pkg && workspace.pkg.name.split('/')[1] === pkgName) {
       examplesArr.push(...workspace.files.examples);
     }

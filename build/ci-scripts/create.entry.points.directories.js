@@ -1,4 +1,3 @@
-// @flow
 /* This script creates the folder per entry point and add a package.json that maps the path to the entry point .*/
 /**
  * Input:

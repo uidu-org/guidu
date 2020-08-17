@@ -1,4 +1,3 @@
-// @flow
 const path = require('path');
 const loaderUtils = require('loader-utils');
 const globby = require('globby');

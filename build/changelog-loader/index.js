@@ -1,4 +1,3 @@
-// @flow
 'use strict';
 
 function getChangeLog(changelog) {
@@ -7,7 +6,7 @@ function getChangeLog(changelog) {
     ? changelog
         .replace(/## /g, `${splitToken}## `)
         .split(splitToken)
-        .map(md => {
+        .map((md) => {
           // This should only allow us to skip the first chunk which is the name, as
           // well as the unreleased section.
           const match = md.match(/\d+\.\d+\.\d+/);
@@ -18,7 +17,7 @@ function getChangeLog(changelog) {
             md,
           };
         })
-        .filter(t => t)
+        .filter((t) => t)
     : [''];
   return toReturn;
 }

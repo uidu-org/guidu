@@ -1,5 +1,3 @@
-/* @flow */
-
 /*::
 import type { Directory, File } from './types';
 */
@@ -15,11 +13,11 @@ function file(id /*: string */, path /*: string */, rootDir /*: string */) {
 }
 
 function findInDir(dir /*: Directory */, id /*: string */) {
-  return dir.children.find(c => c.id === id);
+  return dir.children.find((c) => c.id === id);
 }
 
 function isDirHasFiles(dir /*: Directory */) /*: boolean */ {
-  return dir.children.some(child => child.type === 'file');
+  return dir.children.some((child) => child.type === 'file');
 }
 
 function appendToDir(dir /*: Directory */, child /*: Directory | File */) {

@@ -3,6 +3,7 @@
 /*::
 import type { Directory, File } from './types';
 */
+
 const nodePath = require('path');
 
 function pad(str /*: string */, depth /*: number */) {

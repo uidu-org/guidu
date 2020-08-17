@@ -1,4 +1,3 @@
-// @flow
 /* This helper creates the folder per entry point and add a package.json that maps the path to the entry point .*/
 const path = require('path');
 const fs = require('fs');
@@ -24,7 +23,7 @@ async function writeEntryPointsPathInPkgJson(
   return writeFile(
     `${entryPointDirName}/package.json`,
     JSON.stringify(entryPointJson, null, 2),
-    err => {
+    (err) => {
       if (err) console.log(err);
     },
   );
@@ -34,15 +33,15 @@ async function createEntryPointsDirWithPkgJson() {
   const cwd = process.cwd();
   const packages = await getPackagesInfo(cwd);
   const pkgContents = packages
-    .filter(pkg => pkg.dir.includes('/packages/core'))
-    .map(pkg => {
+    .filter((pkg) => pkg.dir.includes('/packages/core'))
+    .map((pkg) => {
       return {
         name: pkg.name,
         pkgDirPath: pkg.dir,
         files: fs
           .readdirSync(path.join(pkg.dir, 'src'))
           .filter(
-            file =>
+            (file) =>
               file.includes('.') &&
               !file.includes('index') &&
               path.parse(file).name &&
