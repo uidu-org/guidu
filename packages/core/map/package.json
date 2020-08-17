@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/theme": "^0.2.4",
-    "google-map-react": "^1.1.5",
+    "google-map-react": "^2.0.4",
     "recompose": "^0.30.0"
   },
   "devDependencies": {

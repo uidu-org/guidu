@@ -1,5 +1,5 @@
 import { FormContext } from '@uidu/form';
-import { PassDownProps } from 'formsy-react/dist/Wrapper';
+import { FormsyInjectedProps } from 'formsy-react';
 import React from 'react';
 import shortid from 'shortid';
 import {
@@ -51,7 +51,7 @@ const withFRC = <TOriginalProps extends {}>(
   Component: React.ComponentType<TOriginalProps>,
 ) => {
   type ResultProps = TOriginalProps &
-    PassDownProps<TOriginalProps> &
+    FormsyInjectedProps<TOriginalProps> &
     RequiredFromOriginalComponentProps;
 
   const result = class FrcWrapper extends React.PureComponent<ResultProps, {}> {
