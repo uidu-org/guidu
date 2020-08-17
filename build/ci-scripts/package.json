@@ -1,6 +1,6 @@
 {
   "name": "@uidu/ci-scripts",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "private": true,
   "description": "A collection of scripts for use in CI",
   "repository": "https://github.com/uidu-org/guidu.git",
@@ -12,7 +12,7 @@
     "stop-if-older-build": "node ./release.stop.pipeline.if.older.build.running.js"
   },
   "dependencies": {
-    "@uidu/build-utils": "^0.1.18",
+    "@uidu/build-utils": "^0.1.20",
     "adf-builder": "^3.3.0",
     "axios": "^0.19.0",
     "bolt-webpack-analyzer": "^0.0.1",

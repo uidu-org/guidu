@@ -1,5 +1,15 @@
 # @uidu/drawer
 
+## 0.2.19
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/docs@0.1.47
+  - @uidu/item@0.1.29
+  - @uidu/theme@0.2.7
+
 ## 0.2.18
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/message
 
+## 0.1.47
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/drawer@0.2.19
+  - @uidu/dropdown-menu@0.1.28
+  - @uidu/tooltip@0.1.29
+  - @uidu/message-form@0.1.33
+
 ## 0.1.46
 
 ### Patch Changes

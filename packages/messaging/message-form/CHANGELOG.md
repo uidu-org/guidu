@@ -1,5 +1,15 @@
 # @uidu/message-form
 
+## 0.1.33
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/dropdown-menu@0.1.28
+  - @uidu/spinner@0.1.20
+  - @uidu/message@0.1.47
+
 ## 0.1.32
 
 ### Patch Changes

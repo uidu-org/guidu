@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.18
+
+### Patch Changes
+
+- 017bded: Drop flow
+
 ## 0.1.17
 
 ### Patch Changes
