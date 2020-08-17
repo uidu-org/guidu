@@ -1,8 +1,11 @@
-import { layers } from '@uidu/theme';
-import { canUseDOM } from 'exenv';
 import React, { ReactNode } from 'react';
+
+import { canUseDOM } from 'exenv';
 import ReactDOM from 'react-dom';
 import invariant from 'tiny-invariant';
+
+import { layers } from '@uidu/theme/constants';
+
 import { PORTAL_MOUNT_EVENT, PORTAL_UNMOUNT_EVENT } from '../constants';
 
 type Props = {
@@ -94,7 +97,9 @@ const firePortalEvent = (eventName: string, zIndex: number): void => {
 };
 
 const getPortalParent = () => {
-  const parentElement = document.querySelector('body > .uidu-portal-container');
+  const parentElement = document.querySelector(
+    'body > .uidu-portal-container',
+  );
   if (!parentElement) {
     const parent = document.createElement('div');
     parent.setAttribute('class', 'uidu-portal-container');

@@ -1,5 +1,9 @@
 /* eslint-disable react/no-multi-comp */
+import React, { ReactNode } from 'react';
+
 import Button from '@uidu/button';
+import Flag, { FlagGroup } from '@uidu/flag';
+import EmojiIcon from '@atlaskit/icon/glyph/emoji';
 import InlineDialog from '@uidu/inline-dialog';
 import ModalDialog, { ModalTransition } from '@uidu/modal-dialog';
 import {
@@ -9,7 +13,6 @@ import {
   SpotlightTransition,
 } from '@uidu/onboarding';
 import Tooltip from '@uidu/tooltip';
-import React, { ReactNode } from 'react';
 
 const TooltipButton = ({
   children,
@@ -110,7 +113,7 @@ class Modal extends React.Component<ModalProps, ModalState> {
   addFlag = () =>
     this.setState({ flags: [this.state.flags.length, ...this.state.flags] });
 
-  removeFlag = (id: number) =>
+  removeFlag = (id: number | string) =>
     this.setState({ flags: this.state.flags.filter(v => v !== id) });
 
   render() {
@@ -121,8 +124,8 @@ class Modal extends React.Component<ModalProps, ModalState> {
           heading="Modal dialog 🔥"
           onClose={this.props.onClose}
           actions={[
-            { text: 'Open another', onClick: this.props.onOpen },
             { text: 'Close', onClick: this.props.onClose },
+            { text: 'Open another', onClick: this.props.onOpen },
           ]}
         >
           <p>This dialog has three great features:</p>
@@ -151,6 +154,16 @@ class Modal extends React.Component<ModalProps, ModalState> {
             }
           />
         </ModalDialog>
+        <FlagGroup onDismissed={(id: number | string) => this.removeFlag(id)}>
+          {flags.map(id => (
+            <Flag
+              id={id}
+              key={`${id}`}
+              icon={<EmojiIcon label="Smiley face" />}
+              title={`${id + 1}: Whoa a new flag!`}
+            />
+          ))}
+        </FlagGroup>
       </React.Fragment>
     );
   }

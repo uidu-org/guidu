@@ -10,12 +10,14 @@
   "types": "index.td.ts",
   "dependencies": {
     "@uidu/theme": "^0.2.4",
-    "tiny-invariant": "^1.0.3"
+    "tiny-invariant": "^1.0.3",
+    "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.0.0",
     "@uidu/button": "^0.1.61",
     "@uidu/docs": "^0.1.45",
+    "@uidu/flag": "^0.1.15",
     "@uidu/inline-dialog": "^0.1.19",
     "@uidu/modal-dialog": "^0.1.41",
     "@uidu/onboarding": "^0.1.15",
