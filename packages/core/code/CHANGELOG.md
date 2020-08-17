@@ -1,5 +1,11 @@
 # @uidu/code
 
+## 0.1.25
+
+### Patch Changes
+
+- 1c2ac3e: Bump dependencies
+
 ## 0.1.24
 
 ### Patch Changes
