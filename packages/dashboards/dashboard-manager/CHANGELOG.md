@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.6.1
+
+### Patch Changes
+
+- 1cfbfc5: Bump dependencies
+- Updated dependencies [1cfbfc5]
+  - @uidu/dashlets@0.5.1
+
 ## 0.6.0
 
 ### Minor Changes
