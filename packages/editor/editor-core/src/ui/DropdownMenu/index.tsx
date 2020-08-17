@@ -28,7 +28,7 @@ const ItemContentWrapper: any = styled.span`
 `;
 
 /**
- * Wrapper around @atlaskit/droplist which uses Popup and Portal to render
+ * Wrapper around @uidu/droplist which uses Popup and Portal to render
  * dropdown-menu outside of "overflow: hidden" containers when needed.
  *
  * Also it controls popper's placement.

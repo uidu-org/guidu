@@ -1,4 +1,4 @@
-import { borderRadius, colors, fontSize } from '@atlaskit/theme';
+import { borderRadius, colors, fontSize } from '@uidu/theme';
 import { tableBackgroundBorderColor } from '@uidu/adf-schema';
 import {
   akEditorSmallZIndex,

@@ -1,7 +1,7 @@
 import {
   withAnalyticsEvents,
   WithAnalyticsEventsProps,
-} from '@atlaskit/analytics-next';
+} from '@uidu/analytics';
 // import { Context as CardContext } from '@atlaskit/smart-card';
 import React, { useCallback } from 'react';
 // import { createContextAdapter } from '../../nodeviews';

@@ -53,7 +53,7 @@ export const uploadAnnotation = (
       const attrs: MediaBaseAttributes = {
         ...oldMediaNode.attrs,
         file: newIdentifier.file,
-        // @atlaskit/media-editor always gives id as string (better types would be nice...)
+        // @uidu/media-editor always gives id as string (better types would be nice...)
         id: newIdentifier.id as string,
         occurrenceKey: newIdentifier.occurrenceKey,
 

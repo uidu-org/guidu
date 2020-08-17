@@ -1,5 +1,5 @@
 const prefix = (key: string): string =>
-  `@atlaskit-private-do-not-use/dropdown-menu:${key}`;
+  `@uidu-private-do-not-use/dropdown-menu:${key}`;
 
 export const focusManagerContext = prefix('focus-manager');
 export const selectionCacheContext = prefix('selection-cache');

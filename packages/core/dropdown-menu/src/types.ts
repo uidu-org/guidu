@@ -62,7 +62,7 @@ interface DropdownMenuBaseProps {
   items: Array<DeprecatedItemGroup>;
   /** Deprecated. Called when an item is activated. Receives an object with the activated item. */
   onItemActivated: (args: OnItemActivatedArgs) => void;
-  /** Position of the menu. See the documentation of @atlaskit/layer for more details. */
+  /** Position of the menu. See the documentation of @uidu/layer for more details. */
   position: string;
   /** Determines if the dropdown menu should be positioned fixed. Useful for breaking out of overflow scroll/hidden containers, however, extra layout
    management will be required to control scroll behaviour when this property is enabled as the menu will not update position with the target on scroll. */
@@ -79,7 +79,7 @@ interface DropdownMenuBaseProps {
   /** Content which will trigger the dropdown menu to open and close. Use with `triggerType`
    * to easily get a button trigger. */
   trigger?: ReactNode;
-  /** Props to pass through to the trigger button. See @atlaskit/button for allowed props. */
+  /** Props to pass through to the trigger button. See @uidu/button for allowed props. */
   triggerButtonProps?: ButtonProps;
   /** Controls the interface of trigger to be used for the dropdown menu. The default trigger allows
    * you to supply your own trigger component. Setting this prop to `button` will render a

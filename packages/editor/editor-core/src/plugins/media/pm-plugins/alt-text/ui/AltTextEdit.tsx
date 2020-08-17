@@ -1,6 +1,6 @@
 import ChevronLeftLargeIcon from '@atlaskit/icon/glyph/chevron-left-large';
 import CrossCircleIcon from '@atlaskit/icon/glyph/cross-circle';
-import { colors } from '@atlaskit/theme';
+import { colors } from '@uidu/theme';
 import { withAnalyticsEvents, WithAnalyticsEventsProps } from '@uidu/analytics';
 import { ErrorMessage } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';

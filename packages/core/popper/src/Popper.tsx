@@ -1,95 +1,130 @@
-import memoizeOne from 'memoize-one';
-import React from 'react';
+import React, { useMemo } from 'react';
+
+import { Placement, VirtualElement } from '@popperjs/core';
 import {
+  Modifier,
+  PopperChildrenProps,
+  PopperProps,
   Popper as ReactPopper,
+} from 'react-popper';
+
+// Export types from PopperJS / React Popper
+export { Placement, VirtualElement } from '@popperjs/core';
+export {
+  ManagerProps,
+  ReferenceProps,
+  PopperProps,
+  PopperArrowProps,
   PopperChildrenProps,
   StrictModifier,
+  Modifier,
 } from 'react-popper';
-import { Placement } from './types';
 
-export { Manager, Reference } from 'react-popper';
+type Offset = [number | null | undefined, number | null | undefined];
 
-interface State {}
+export interface Props<Modifiers> {
+  /**
+   * Returns the element to be positioned.
+   */
+  children?: (childrenProps: PopperChildrenProps) => React.ReactNode;
 
-export interface Props {
-  /** Returns the element to be positioned */
-  children: (childrenProps: PopperChildrenProps) => React.ReactNode;
-  /** Formatted like "0, 8px" — how far to offset the Popper from the Reference. Changes automatically based on the placement */
-  offset: [number, number];
-  /** Which side of the Reference to show on. */
-  placement: Placement;
-  /** Replacement reference element to position popper relative to */
-  referenceElement?: HTMLElement;
-  /** Additional modifiers and modifier overwrites */
-  modifiers?: StrictModifier[];
+  /**
+   * Distance the popup should be offset from the reference in the format of [along, away] (units in px).
+   * Defaults to [0, 8] - which means the popup will be 8px away from the edge of the reference specified
+   * by the `placement` prop.
+   */
+  offset?: Offset;
+
+  /**
+   * Which side of the Reference to show on.
+   */
+  placement?: Placement;
+
+  /**
+   * Replacement reference element to position popper relative to.
+   */
+  referenceElement?: HTMLElement | VirtualElement;
+
+  /**
+   * Additional modifiers and modifier overwrites.
+   */
+  modifiers?: PopperProps<Modifiers>['modifiers'];
+
+  /**
+   * Placement strategy used. Can be 'fixed' or 'absolute'
+   */
+  strategy?: PopperProps<Modifiers>['strategy'];
 }
 
-type Position = 'top' | 'right' | 'bottom' | 'left';
+type InternalModifierNames = 'flip' | 'hide' | 'offset' | 'preventOverflow';
+type ModifierProps = Modifier<InternalModifierNames>[];
 
-const FlipBehavior: { [index: string]: Position[] } = {
-  auto: [],
-  top: ['top', 'bottom', 'top'],
-  right: ['right', 'left', 'right'],
-  bottom: ['bottom', 'top', 'bottom'],
-  left: ['left', 'right', 'left'],
-};
+const constantModifiers: ModifierProps = [
+  {
+    name: 'flip',
+    options: {
+      flipVariations: false,
+      padding: 5,
+      boundary: 'clippingParents',
+      rootBoundary: 'viewport',
+    },
+  },
+  {
+    name: 'preventOverflow',
+    options: {
+      padding: 5,
+      rootBoundary: 'document',
+    },
+  },
+];
 
-const getFlipBehavior = (side: string): Position[] => FlipBehavior[side];
+function defaultChildrenFn() {
+  return null;
+}
+const defaultOffset: Offset = [0, 8];
 
-export class Popper extends React.Component<Props, State> {
-  static defaultProps: Props = {
-    children: () => null,
-    offset: [0, 8],
-    placement: 'bottom-start',
-  };
+export function Popper<CustomModifiers>({
+  children = defaultChildrenFn,
+  offset = defaultOffset,
+  placement = 'bottom-start',
+  referenceElement = undefined,
+  modifiers,
+  strategy = 'fixed',
+}: Props<CustomModifiers>) {
+  const [offsetX, offsetY] = offset;
 
-  getModifiers = memoizeOne((placement: Placement): StrictModifier[] => {
-    const flipBehavior = getFlipBehavior(placement.split('-')[0]);
-    const modifiers: StrictModifier[] = [
-      {
-        name: 'flip',
-        enabled: true,
-        options: {
-          // flipVariations: flipBehavior,
-          // rootBoundary: 'viewport',
-        },
+  type CombinedModifiers = Partial<
+    Modifier<InternalModifierNames | CustomModifiers>
+  >[];
+
+  // Merge a new offset modifier only if new offset values passed in
+  const internalModifiers = useMemo((): CombinedModifiers => {
+    const offsetModifier: Modifier<'offset'> = {
+      name: 'offset',
+      options: {
+        offset: [offsetX, offsetY],
       },
-      { name: 'hide', enabled: true },
-      {
-        name: 'offset',
-        enabled: true,
-        options: { offset: this.props.offset },
-      },
-      {
-        name: 'preventOverflow',
-        enabled: true,
-        options: {
-          // escapeWithReference: false,
-          // boundariesElement: 'window',
-        },
-      },
-    ];
+    };
 
-    if (this.props.modifiers) {
-      return { ...modifiers, ...this.props.modifiers };
+    return [...constantModifiers, offsetModifier];
+  }, [offsetX, offsetY]);
+
+  // Merge custom props and memoize
+  const mergedModifiers = useMemo(() => {
+    if (modifiers == null) {
+      return internalModifiers;
     }
+    return [...internalModifiers, ...modifiers];
+  }, [internalModifiers, modifiers]);
 
-    return modifiers;
-  });
-
-  render() {
-    const { placement, children, referenceElement } = this.props;
-    const modifiers: StrictModifier[] = this.getModifiers(this.props.placement);
-
-    return (
-      <ReactPopper
-        strategy="fixed"
-        modifiers={modifiers}
-        placement={placement}
-        {...(referenceElement ? { referenceElement } : {})}
-      >
-        {children}
-      </ReactPopper>
-    );
-  }
+  return (
+    <ReactPopper
+      modifiers={mergedModifiers}
+      placement={placement}
+      strategy={strategy}
+      referenceElement={referenceElement}
+    >
+      {children}
+    </ReactPopper>
+  );
 }

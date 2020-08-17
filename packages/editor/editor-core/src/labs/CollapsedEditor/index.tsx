@@ -34,7 +34,7 @@ export default class CollapsedEditor extends React.Component<Props, State> {
 
   loadEditorModules() {
     import(
-      /* webpackChunkName:"@atlaskit-internal_editor-core-async" */ '../../'
+      /* webpackChunkName:"@uidu-internal_editor-core-async" */ '../../'
     ).then(modules => {
       CollapsedEditor.editorModules = modules;
       this.setState({ editorModules: modules });

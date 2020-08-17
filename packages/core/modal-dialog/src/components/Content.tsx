@@ -133,22 +133,22 @@ export default class Content extends React.Component<Props, State> {
     // Check for deprecated props
     if (this.props.header)
       console.warn(
-        "@atlaskit/modal-dialog: Deprecation warning - Use of the header prop in ModalDialog is deprecated. Please compose your ModalDialog using the 'components' prop instead",
+        "@uidu/modal-dialog: Deprecation warning - Use of the header prop in ModalDialog is deprecated. Please compose your ModalDialog using the 'components' prop instead",
       );
     if (this.props.footer)
       console.warn(
-        "@atlaskit/modal-dialog: Deprecation warning - Use of the footer prop in ModalDialog is deprecated. Please compose your ModalDialog using the 'components' prop instead",
+        "@uidu/modal-dialog: Deprecation warning - Use of the footer prop in ModalDialog is deprecated. Please compose your ModalDialog using the 'components' prop instead",
       );
     if (this.props.body)
       console.warn(
-        "@atlaskit/modal-dialog: Deprecation warning - Use of the body prop in ModalDialog is deprecated. Please compose your ModalDialog using the 'components' prop instead",
+        "@uidu/modal-dialog: Deprecation warning - Use of the body prop in ModalDialog is deprecated. Please compose your ModalDialog using the 'components' prop instead",
       );
 
     // Check that custom body components have used ForwardRef to attach to a DOM element
     if (this.props.components.Body) {
       if (!(this.scrollContainer instanceof HTMLElement)) {
         console.warn(
-          '@atlaskit/modal-dialog: Warning - Ref must attach to a DOM element; check you are using forwardRef and attaching the ref to an appropriate element. Check the examples for more details.',
+          '@uidu/modal-dialog: Warning - Ref must attach to a DOM element; check you are using forwardRef and attaching the ref to an appropriate element. Check the examples for more details.',
         );
       }
     }

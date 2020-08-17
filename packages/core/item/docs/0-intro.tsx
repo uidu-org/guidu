@@ -1,4 +1,3 @@
-// @flow
 import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 

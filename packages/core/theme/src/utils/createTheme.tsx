@@ -1,4 +1,10 @@
-import React, { createContext, ComponentType, ReactNode } from 'react';
+import React, {
+  ComponentType,
+  createContext,
+  ReactNode,
+  useCallback,
+  useContext,
+} from 'react';
 
 export type ThemeProp<ThemeTokens, ThemeProps> = (
   getTokens: (props: ThemeProps) => ThemeTokens,
@@ -42,17 +48,14 @@ export function createTheme<ThemeTokens, ThemeProps>(
     props: ThemeProps & { children: (tokens: ThemeTokens) => ReactNode },
   ) {
     const { children, ...themeProps } = props;
-    return (
-      <ThemeContext.Consumer>
-        {theme => {
-          const themeFn = theme || emptyThemeFn;
-          // @ts-ignore See issue for more info: https://github.com/Microsoft/TypeScript/issues/10727
-          // Argument of type 'Pick<ThemeProps & { children: (tokens: ThemeTokens) => ReactNode; }, Exclude<keyof ThemeProps, "children">>' is not assignable to parameter of type 'ThemeProps'.ts(2345)
-          const tokens = themeFn(themeProps);
-          return children(tokens);
-        }}
-      </ThemeContext.Consumer>
-    );
+    const theme = useContext(ThemeContext);
+    const themeFn = theme || emptyThemeFn;
+    // @ts-ignore See issue for more info: https://github.com/Microsoft/TypeScript/issues/10727
+    // Argument of type 'Pick<ThemeProps & { children: (tokens: ThemeTokens) => ReactNode; }, Exclude<keyof ThemeProps, "children">>' is not assignable to parameter of type 'ThemeProps'.ts(2345)
+    const tokens = themeFn(themeProps);
+    // We add a fragment to ensure we don't break people upgrading.
+    // Previously they may have been able to pass in undefined without things blowing up.
+    return <>{children(tokens)}</>;
   }
 
   /* The Theme Provider takes regular nodes as its child, but also takes a *theme function*
@@ -66,19 +69,17 @@ export function createTheme<ThemeTokens, ThemeProps>(
     children?: ReactNode;
     value?: ThemeProp<ThemeTokens, ThemeProps>;
   }) {
+    const themeFn = useContext(ThemeContext);
+    const valueFn = props.value || emptyThemeFn;
+    const mixedFn = useCallback(
+      (themeProps: ThemeProps) => valueFn(themeFn, themeProps),
+      [themeFn, valueFn],
+    );
+
     return (
-      <ThemeContext.Consumer>
-        {themeFn => {
-          const valueFn = props.value || emptyThemeFn;
-          const mixedFn = (themeProps: ThemeProps) =>
-            valueFn(themeFn, themeProps);
-          return (
-            <ThemeContext.Provider value={mixedFn}>
-              {props.children}
-            </ThemeContext.Provider>
-          );
-        }}
-      </ThemeContext.Consumer>
+      <ThemeContext.Provider value={mixedFn}>
+        {props.children}
+      </ThemeContext.Provider>
     );
   }
 

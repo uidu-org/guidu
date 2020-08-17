@@ -26,7 +26,7 @@ const dropOffset = `0, ${gridSize()}px`;
 if (process.env.NODE_ENV !== 'production' && !process.env.CI) {
   // eslint-disable-next-line no-console
   console.warn(
-    '@atlaskit/droplist has been deprecated. It is an internal component and should not be used directly.',
+    '@uidu/droplist has been deprecated. It is an internal component and should not be used directly.',
   );
 }
 

@@ -1,14 +1,12 @@
-// @flow
-
-import React, { Component } from 'react';
 import Button from '@uidu/button';
+import React, { Component } from 'react';
 import { AtlaskitThemeProvider } from '../src';
 
-type Props = {};
+interface Props {}
 type State = { themeMode: 'light' | 'dark' };
 
 export default class extends Component<Props, State> {
-  state = { themeMode: 'light' };
+  state: State = { themeMode: 'light' };
 
   switchTheme = () => {
     const { themeMode } = this.state;

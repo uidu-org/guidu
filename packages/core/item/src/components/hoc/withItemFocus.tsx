@@ -7,7 +7,7 @@ import { focusManagerContext } from '../../util/contextNamespace';
 import getDisplayName from '../../util/getDisplayName';
 import safeContextCall from '../../util/safeContextCall';
 
-// HOC that typically wraps @atlaskit/item
+// HOC that typically wraps @uidu/item
 
 const withItemFocus = (WrappedComponent) =>
   class WithItemFocus extends Component<any> {

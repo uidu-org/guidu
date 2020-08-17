@@ -11,7 +11,7 @@ export interface WithDropdownItemSelectionManagerProps {
   id: string;
 }
 
-// HOC that typically wraps @atlaskit/item/ItemGroup
+// HOC that typically wraps @uidu/item/ItemGroup
 const withDropdownItemSelectionManager = <BaseProps extends {}>(
   WrappedComponent: ComponentType<BaseProps>,
   selectionBehavior: Behaviors,

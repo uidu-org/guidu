@@ -1,12 +1,10 @@
-// @flow
-
+import SectionMessage from '@uidu/section-message';
 import React from 'react';
 import styled from 'styled-components';
-import SectionMessage from '@uidu/section-message';
-import { assistive } from '../src';
+import { visuallyHidden } from '../src';
 
 const AssitiveText = styled.span`
-  ${assistive()};
+  ${visuallyHidden()};
 `;
 
 export default () => (

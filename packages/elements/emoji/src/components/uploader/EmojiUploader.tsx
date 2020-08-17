@@ -16,7 +16,7 @@ import {
 } from '@uidu/analytics';
 
 const emojiUploadModuleLoader = () =>
-  import(/* webpackChunkName:"@atlaskit-internal_emojiUploadComponent" */ './EmojiUploadComponent');
+  import(/* webpackChunkName:"@uidu-internal_emojiUploadComponent" */ './EmojiUploadComponent');
 
 const emojiUploadLoader: () => Promise<ComponentClass<ComponentProps>> = () =>
   emojiUploadModuleLoader().then(module => module.default);

@@ -4,7 +4,7 @@ import debounce from 'lodash.debounce';
 
 export type ThresholdReachedEventHandler = () => void;
 
-// FIXME make common atlaskit component. This is (mostly) duplicated from @atlaskit/media-card/list/InfiniteScroll.tsx
+// FIXME make common atlaskit component. This is (mostly) duplicated from @uidu/media-card/list/InfiniteScroll.tsx
 
 export interface InfiniteScrollProps {
   readonly height?: number | string;

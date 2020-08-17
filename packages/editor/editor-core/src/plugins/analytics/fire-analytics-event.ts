@@ -1,6 +1,6 @@
 import { editorAnalyticsChannel } from './consts';
 import { AnalyticsEventPayload } from './types';
-import { CreateUIAnalyticsEvent } from '@atlaskit/analytics-next';
+import { CreateUIAnalyticsEvent } from '@uidu/analytics';
 
 export type FireAnalyticsCallback = ({
   payload,

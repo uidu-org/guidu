@@ -16,7 +16,7 @@ import {
 export interface Props extends BaseResourcedEmojiProps, LoadingProps {}
 
 const resourcedEmojiModuleLoader = () =>
-  import(/* webpackChunkName:"@atlaskit-internal_resourcedEmojiComponent" */ './ResourcedEmojiComponent');
+  import(/* webpackChunkName:"@uidu-internal_resourcedEmojiComponent" */ './ResourcedEmojiComponent');
 
 const resourcedEmojiComponentLoader: () => Promise<
   ComponentClass<ComponentProps>

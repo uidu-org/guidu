@@ -32,57 +32,57 @@ import UnknownBlock from './unknownBlock';
 
 const CodeBlock = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_CodeBlock" */ './codeBlock'
+    /* webpackChunkName:"@uidu-internal-renderer-node_CodeBlock" */ './codeBlock'
   ),
 );
 const TaskItem = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_TaskItem" */ './taskItem'
+    /* webpackChunkName:"@uidu-internal-renderer-node_TaskItem" */ './taskItem'
   ),
 );
 const DecisionItem = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_DecisionItem" */ './decisionItem'
+    /* webpackChunkName:"@uidu-internal-renderer-node_DecisionItem" */ './decisionItem'
   ),
 );
 const Date = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_Date" */ './date'
+    /* webpackChunkName:"@uidu-internal-renderer-node_Date" */ './date'
   ),
 );
 const Status = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_Status" */ './status'
+    /* webpackChunkName:"@uidu-internal-renderer-node_Status" */ './status'
   ),
 );
 const Emoji = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_Emoji" */ './emoji'
+    /* webpackChunkName:"@uidu-internal-renderer-node_Emoji" */ './emoji'
   ),
 );
 const InlineCard = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_InlineCard" */ './inlineCard'
+    /* webpackChunkName:"@uidu-internal-renderer-node_InlineCard" */ './inlineCard'
   ),
 );
 const BlockCard = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_BlockCard" */ './blockCard'
+    /* webpackChunkName:"@uidu-internal-renderer-node_BlockCard" */ './blockCard'
   ),
 );
 const Media = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_Media" */ './media'
+    /* webpackChunkName:"@uidu-internal-renderer-node_Media" */ './media'
   ),
 );
 const MediaGroup = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_MediaGroup" */ './mediaGroup'
+    /* webpackChunkName:"@uidu-internal-renderer-node_MediaGroup" */ './mediaGroup'
   ),
 );
 const Mention = loadable(() =>
   import(
-    /* webpackChunkName:"@atlaskit-internal-renderer-node_Mention" */ './mention'
+    /* webpackChunkName:"@uidu-internal-renderer-node_Mention" */ './mention'
   ),
 );
 

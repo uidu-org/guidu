@@ -397,6 +397,7 @@
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
+    "@atlaskit/datetime-picker": "^10.0.2",
     "@babel/cli": "^7.1.0",
     "@babel/core": "^7.1.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",

@@ -13,6 +13,7 @@
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
+    "@atlaskit/datetime-picker": "^10.0.2",
     "@uidu/button": "^0.1.58",
     "@uidu/docs": "^0.1.45",
     "@uidu/lozenge": "^0.1.22",

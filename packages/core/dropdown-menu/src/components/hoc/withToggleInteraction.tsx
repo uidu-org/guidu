@@ -9,7 +9,7 @@ import { KEY_ENTER, KEY_SPACE } from '../../util/keys';
 import safeContextCall from '../../util/safeContextCall';
 
 export interface Props {
-  /** Content to be displayed inside the item. Same as `@atlaskit/item` `children` prop. */
+  /** Content to be displayed inside the item. Same as `@uidu/item` `children` prop. */
   children?: ReactNode;
   /** Unique identifier for the item, so that selection state can be tracked when the dropdown
    * is opened/closed. */
@@ -24,7 +24,7 @@ export interface Props {
   onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
-// HOC that typically wraps @atlaskit/item
+// HOC that typically wraps @uidu/item
 const withToggleInteraction = (
   WrappedComponent: ComponentType,
   SelectionIcon: ComponentType<IconProps>,

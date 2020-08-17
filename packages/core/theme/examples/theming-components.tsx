@@ -1,40 +1,51 @@
-import { Component, Node } from 'react';
+import React, { Component } from 'react';
 import { createTheme, ThemeProp } from '../src';
 
-type ThemeProps = {
+interface LocalThemeProps {
   hover: boolean;
-};
-type ThemeTokens = {
+}
+
+interface ThemeTokens {
   backgroundColor: string;
   textColor: string;
-};
+}
 
-const defaultButtonTheme = (props) => ({
+const defaultButtonTheme = (props: LocalThemeProps) => ({
   backgroundColor: props.hover ? '#ddd' : '#eee',
   textColor: '#333',
 });
 
-const contextButtonTheme = (theme, props) => ({
-  ...theme(props),
-  backgroundColor: props.hover ? 'rebeccapurple' : 'palevioletred',
-  textColor: props.hover ? '#fff' : 'papayawhip',
-});
-
-const propButtonTheme = (theme, props) => ({
-  ...theme(props),
-  backgroundColor: props.hover ? 'palevioletred' : 'rebeccapurple',
-});
-
-const Theme = createTheme<ThemeTokens, ThemeProps>(defaultButtonTheme);
-
-type Props = {
-  children?: Node;
-  theme?: ThemeProp<ThemeTokens, ThemeProps>;
+const contextButtonTheme: ThemeProp<ThemeTokens, LocalThemeProps> = (
+  theme,
+  props,
+) => {
+  return {
+    ...theme(props),
+    backgroundColor: props.hover ? 'rebeccapurple' : 'palevioletred',
+    textColor: props.hover ? '#fff' : 'papayawhip',
+  };
 };
 
-type State = {
+const propButtonTheme: ThemeProp<ThemeTokens, LocalThemeProps> = (
+  theme,
+  props,
+) => {
+  return {
+    ...theme(props),
+    backgroundColor: props.hover ? 'palevioletred' : 'rebeccapurple',
+  };
+};
+
+const Theme = createTheme<ThemeTokens, LocalThemeProps>(defaultButtonTheme);
+
+interface Props {
+  children?: React.ReactNode;
+  theme?: ThemeProp<ThemeTokens, LocalThemeProps>;
+}
+
+interface State {
   hover: boolean;
-};
+}
 
 class Button extends Component<Props, State> {
   state = {
@@ -49,7 +60,7 @@ class Button extends Component<Props, State> {
     return (
       <Theme.Provider value={this.props.theme}>
         <Theme.Consumer hover={this.state.hover}>
-          {(tokens) => {
+          {tokens => {
             const { backgroundColor, textColor: color } = tokens;
             return (
               <button
@@ -78,11 +89,11 @@ class Button extends Component<Props, State> {
 }
 
 export default () => (
-  <Fragment>
+  <>
     <Button>Default</Button>
     <Theme.Provider value={contextButtonTheme}>
       <Button>Context</Button>
       <Button theme={propButtonTheme}>Custom</Button>
     </Theme.Provider>
-  </Fragment>
+  </>
 );

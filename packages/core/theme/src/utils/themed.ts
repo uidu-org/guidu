@@ -1,8 +1,7 @@
 /* eslint-disable prefer-rest-params */
 
+import { DefaultValue, ThemedValue, ThemeModes, ThemeProps } from '../types';
 import getTheme from './getTheme';
-import { ThemedValue, ThemeProps, ThemeModes, DefaultValue } from '../types';
-import { __values } from 'tslib';
 
 type Modes<V> = { [key in ThemeModes]?: V };
 type VariantModes<V> = { [index: string]: Modes<V> };
@@ -15,7 +14,9 @@ function themedVariants<V>(variantProp: string, variants?: VariantModes<V>) {
       const modes = variants[props[variantProp]];
       if (modes && modes[theme.mode]) {
         const value = modes[theme.mode];
-        if (value) return value; // TS believes value can be undefined
+        if (value) {
+          return value;
+        } // TS believes value can be undefined
       }
     }
     return '';
@@ -36,7 +37,9 @@ export default function themed<V = DefaultValue>(
     // User isn't required to provide both light and dark values
     if (theme.mode in modes) {
       const value = modes[theme.mode]; // TS believes value can be undefined
-      if (value) return value;
+      if (value) {
+        return value;
+      }
     }
     return '';
   };

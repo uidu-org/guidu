@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react';
 import { defineMessages, injectIntl, WrappedComponentProps } from 'react-intl';
 import { Button, ButtonWrapper } from './styles';
 
-// IMO these should live inside @atlaskit/theme
+// IMO these should live inside @uidu/theme
 const messages = defineMessages({
   selected: {
     id: 'fabric.editor.selected',
