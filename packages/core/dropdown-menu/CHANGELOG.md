@@ -1,5 +1,15 @@
 # @uidu/dropdown-menu
 
+## 0.1.28
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/droplist@0.1.26
+  - @uidu/item@0.1.29
+  - @uidu/theme@0.2.7
+
 ## 0.1.27
 
 ### Patch Changes

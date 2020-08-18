@@ -1,5 +1,13 @@
 # @uidu/ci-scripts
 
+## 0.1.17
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/build-utils@0.1.20
+
 ## 0.1.16
 
 ### Patch Changes

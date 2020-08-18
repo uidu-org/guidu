@@ -1,6 +1,6 @@
 {
   "name": "@uidu/droplist",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "description": "Droplist component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/droplist",
   "license": "ISC",
@@ -9,18 +9,18 @@
   "dependencies": {
     "@atlaskit/icon": "^21.0.0",
     "@uidu/analytics": "^0.1.21",
-    "@uidu/item": "^0.1.28",
-    "@uidu/layer": "^0.1.13",
-    "@uidu/spinner": "^0.1.19",
-    "@uidu/theme": "^0.2.4",
-    "@uidu/tooltip": "^0.1.28",
+    "@uidu/item": "^0.1.29",
+    "@uidu/layer": "^0.1.15",
+    "@uidu/spinner": "^0.1.20",
+    "@uidu/theme": "^0.2.7",
+    "@uidu/tooltip": "^0.1.29",
     "classnames": "^2.2.6",
     "keycode": "^2.2.0",
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.1.61",
-    "@uidu/docs": "^0.1.45",
+    "@uidu/docs": "^0.1.47",
     "@uidu/field-base": "^0.2.3",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",

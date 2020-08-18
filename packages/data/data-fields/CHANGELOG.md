@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.36
+
+### Patch Changes
+
+- 017bded: Drop flow
+
 ## 0.1.35
 
 ### Patch Changes

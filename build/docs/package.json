@@ -1,6 +1,6 @@
 {
   "name": "@uidu/docs",
-  "version": "0.1.46",
+  "version": "0.1.47",
   "description": "Utilities for building documentation",
   "repository": "https://github.com/uidu-org/guidu/tree/master/build/docs",
   "license": "ISC",
@@ -10,8 +10,8 @@
     "@uidu/button": "^0.1.58",
     "@uidu/code": "^0.1.23",
     "@uidu/section-message": "^0.1.22",
-    "@uidu/theme": "^0.2.4",
-    "@uidu/tooltip": "^0.1.27",
+    "@uidu/theme": "^0.2.7",
+    "@uidu/tooltip": "^0.1.29",
     "pretty-proptypes": "^1.0.4",
     "react-markings": "^1.3.0",
     "string-raw": "^1.0.1"

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.1.47
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/theme@0.2.7
+  - @uidu/tooltip@0.1.29
+
 ## 0.1.46
 
 ### Patch Changes

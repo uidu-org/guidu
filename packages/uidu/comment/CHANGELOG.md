@@ -1,5 +1,13 @@
 # @uidu/comment
 
+## 0.1.14
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/spinner@0.1.20
+
 ## 0.1.13
 
 ### Patch Changes

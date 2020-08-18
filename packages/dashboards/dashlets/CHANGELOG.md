@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 0.5.2
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/spinner@0.1.20
+  - @uidu/tooltip@0.1.29
+
 ## 0.5.1
 
 ### Patch Changes

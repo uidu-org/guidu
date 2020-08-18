@@ -148,31 +148,31 @@ module.exports = async function createWebpackConfig(
             },
           ],
         },
-        {
-          test: /\.(ts|tsx)?$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'cache-loader',
-              options: {
-                cacheDirectory: path.resolve(baseCacheDir, 'ts'),
-              },
-            },
-            {
-              loader: require.resolve('ts-loader'),
-              options: {
-                transpileOnly: true,
-                getCustomTransformers: path.join(
-                  __dirname,
-                  './ts-transformers.js',
-                ),
-              },
-            },
-          ],
-          // options: {
-          //   transpileOnly: true,
-          // },
-        },
+        // {
+        //   test: /\.(ts|tsx)?$/,
+        //   exclude: /node_modules/,
+        //   use: [
+        //     {
+        //       loader: 'cache-loader',
+        //       options: {
+        //         cacheDirectory: path.resolve(baseCacheDir, 'ts'),
+        //       },
+        //     },
+        //     {
+        //       loader: require.resolve('ts-loader'),
+        //       options: {
+        //         transpileOnly: true,
+        //         getCustomTransformers: path.join(
+        //           __dirname,
+        //           './ts-transformers.js',
+        //         ),
+        //       },
+        //     },
+        //   ],
+        //   // options: {
+        //   //   transpileOnly: true,
+        //   // },
+        // },
         {
           test: /\.css$/i,
           use: [

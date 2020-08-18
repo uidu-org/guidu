@@ -1,5 +1,17 @@
 # @uidu/droplist
 
+## 0.1.26
+
+### Patch Changes
+
+- 017bded: Drop flow
+- Updated dependencies [017bded]
+  - @uidu/item@0.1.29
+  - @uidu/layer@0.1.15
+  - @uidu/spinner@0.1.20
+  - @uidu/theme@0.2.7
+  - @uidu/tooltip@0.1.29
+
 ## 0.1.25
 
 ### Patch Changes
