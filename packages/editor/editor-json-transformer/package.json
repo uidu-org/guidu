@@ -16,7 +16,7 @@
     "@types/prosemirror-model": "^1.5.0",
     "@uidu/docs": "^0.1.48",
     "@uidu/editor-common": "^0.3.1",
-    "@uidu/editor-core": "^0.4.2",
+    "@uidu/editor-core": "^0.5.0",
     "prosemirror-view": "^1.9.10",
     "react": "^16.8.3",
     "styled-components": "^5.0.0"
