@@ -14,7 +14,6 @@ module.exports = function (api) {
     '@babel/plugin-syntax-export-default-from',
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
-    '@babel/plugin-transform-typescript',
     'babel-plugin-add-module-exports',
   ];
 

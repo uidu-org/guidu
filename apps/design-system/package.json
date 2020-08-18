@@ -15,7 +15,7 @@
     "@uidu/analytics": "^0.1.22",
     "@uidu/button": "^0.1.63",
     "@uidu/theme": "^0.2.8",
-    "next": "9.5.2",
+    "next": "^9.5.2",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   },

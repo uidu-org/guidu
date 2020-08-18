@@ -2,6 +2,7 @@ import Button from '@uidu/button';
 import Head from 'next/head';
 import React from 'react';
 import styles from '../styles/Home.module.css';
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <Link href="/doc"><a>Next.js!</a></Link>
           <Button appearance="primary">Test</Button>
         </h1>
 
