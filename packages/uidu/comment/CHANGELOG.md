@@ -1,5 +1,16 @@
 # @uidu/comment
 
+## 0.1.16
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/avatar@0.3.6
+  - @uidu/field-mentions@0.2.5
+  - @uidu/field-text@0.2.9
+  - @uidu/message-renderer@0.1.25
+
 ## 0.1.15
 
 ### Patch Changes

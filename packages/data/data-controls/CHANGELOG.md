@@ -1,5 +1,21 @@
 # @uidu/data-controls
 
+## 0.3.19
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/drawer@0.2.21
+  - @uidu/dropdown-menu@0.1.30
+  - @uidu/inline-dialog@0.1.21
+  - @uidu/tooltip@0.1.31
+  - @uidu/checkbox@0.2.4
+  - @uidu/field-text@0.2.9
+  - @uidu/select@0.4.9
+  - @uidu/shell@0.3.6
+  - @uidu/item@0.1.31
+
 ## 0.3.18
 
 ### Patch Changes

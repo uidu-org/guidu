@@ -1,5 +1,14 @@
 # @uidu/stripe-accounts
 
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/field-text@0.2.9
+  - @uidu/stepper@0.1.28
+
 ## 0.1.24
 
 ### Patch Changes

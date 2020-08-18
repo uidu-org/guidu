@@ -14,9 +14,9 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.63",
-    "@uidu/docs": "^0.1.48",
-    "@uidu/theme": "^0.2.8",
+    "@uidu/button": "^0.2.0",
+    "@uidu/docs": "^0.1.49",
+    "@uidu/theme": "^0.3.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0",

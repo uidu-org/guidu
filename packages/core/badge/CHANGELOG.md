@@ -1,5 +1,12 @@
 # @uidu/badge
 
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.1.22
 
 ### Patch Changes

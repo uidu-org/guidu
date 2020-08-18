@@ -1,5 +1,13 @@
 # @uidu/message-renderer
 
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+  - @uidu/dropdown-menu@0.1.30
+
 ## 0.1.24
 
 ### Patch Changes

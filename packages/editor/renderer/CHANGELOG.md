@@ -1,5 +1,23 @@
 # @uidu/renderer
 
+## 0.1.32
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/tooltip@0.1.31
+  - @uidu/editor-common@0.3.2
+  - @uidu/analytics-listeners@0.1.9
+  - @uidu/analytics-namespaced-context@0.1.10
+  - @uidu/mentions@0.1.19
+  - @uidu/status@0.1.17
+  - @uidu/task-decision@0.1.20
+  - @uidu/media-card@0.2.4
+  - @uidu/code@0.1.27
+  - @uidu/media-filmstrip@0.1.35
+
 ## 0.1.31
 
 ### Patch Changes

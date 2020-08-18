@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.3.0
+
+### Minor Changes
+
+- fb9a093: Packages built with rollup should bump their dependents
+
 ## 0.2.9
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/section-message
 
+## 0.1.26
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/button@0.2.0
+  - @uidu/theme@0.3.0
+
 ## 0.1.25
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/field-text
 
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/tooltip@0.1.31
+  - @uidu/field-text@0.2.9
+
 ## 0.2.4
 
 ### Patch Changes

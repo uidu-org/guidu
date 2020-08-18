@@ -1,5 +1,12 @@
 # @uidu/lozenge
 
+## 0.1.25
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.1.24
 
 ### Patch Changes

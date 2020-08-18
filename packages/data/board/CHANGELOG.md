@@ -1,5 +1,12 @@
 # @uidu/board
 
+## 0.2.17
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.2.16
 
 ### Patch Changes

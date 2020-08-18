@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.1.43
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/button@0.2.0
+  - @uidu/spinner@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/avatar@0.3.6
+  - @uidu/shell@0.3.6
+  - @uidu/comment@0.1.16
+
 ## 0.1.42
 
 ### Patch Changes

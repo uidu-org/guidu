@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.2.6
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+  - @uidu/avatar@0.3.6
+  - @uidu/dropdown-menu@0.1.30
+  - @uidu/tooltip@0.1.31
+  - @uidu/item@0.1.31
+
 ## 2.2.5
 
 ### Patch Changes

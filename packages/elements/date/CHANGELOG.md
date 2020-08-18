@@ -1,5 +1,12 @@
 # @uidu/date
 
+## 0.1.12
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.1.11
 
 ### Patch Changes

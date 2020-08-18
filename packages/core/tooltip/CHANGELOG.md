@@ -1,5 +1,14 @@
 # @uidu/tooltip
 
+## 0.1.31
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/portal@0.1.21
+
 ## 0.1.30
 
 ### Patch Changes

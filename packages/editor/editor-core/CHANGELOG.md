@@ -1,5 +1,33 @@
 # @uidu/editor-core
 
+## 0.5.2
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/button@0.2.0
+  - @uidu/spinner@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/avatar@0.3.6
+  - @uidu/droplist@0.1.28
+  - @uidu/modal-dialog@0.1.43
+  - @uidu/tooltip@0.1.31
+  - @uidu/editor-common@0.3.2
+  - @uidu/analytics-gas-types@0.1.10
+  - @uidu/analytics-listeners@0.1.9
+  - @uidu/analytics-namespaced-context@0.1.10
+  - @uidu/emoji@0.1.19
+  - @uidu/mentions@0.1.19
+  - @uidu/status@0.1.17
+  - @uidu/task-decision@0.1.20
+  - @uidu/select@0.4.9
+  - @uidu/avatar-group@2.2.6
+  - @uidu/media-card@0.2.4
+  - @uidu/item@0.1.31
+  - @uidu/date@0.1.12
+  - @uidu/media-filmstrip@0.1.35
+
 ## 0.5.1
 
 ### Patch Changes

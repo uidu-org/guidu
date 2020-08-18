@@ -1,5 +1,12 @@
 # @uidu/shell
 
+## 0.3.6
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+
 ## 0.3.5
 
 ### Patch Changes

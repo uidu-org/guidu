@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.2.0
+
+### Minor Changes
+
+- fb9a093: Packages built with rollup should bump their dependents
+
 ## 0.1.23
 
 ### Patch Changes

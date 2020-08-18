@@ -1,5 +1,16 @@
 # @uidu/droplist
 
+## 0.1.28
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/spinner@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/tooltip@0.1.31
+  - @uidu/item@0.1.31
+
 ## 0.1.27
 
 ### Patch Changes
