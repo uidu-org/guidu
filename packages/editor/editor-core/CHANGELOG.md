@@ -1,5 +1,14 @@
 # @uidu/editor-core
 
+## 0.5.1
+
+### Patch Changes
+
+- db77544: Bump editor core
+- Updated dependencies [db77544]
+  - @uidu/editor-json-transformer@0.1.13
+  - @uidu/editor-markdown-transformer@0.1.15
+
 ## 0.4.2
 
 ### Patch Changes

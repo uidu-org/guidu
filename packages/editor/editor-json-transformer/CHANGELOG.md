@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.1.13
+
+### Patch Changes
+
+- db77544: Bump editor core
+
 ## 0.1.12
 
 ### Patch Changes
