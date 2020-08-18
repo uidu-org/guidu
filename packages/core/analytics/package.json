@@ -2,10 +2,11 @@
   "name": "@uidu/analytics",
   "version": "0.1.22",
   "description": "The uidu component analytics framework",
+  "main": "dist/analytics.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/analytics",
   "license": "ISC",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/analytics.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/type-helpers": "^4.1.6",
@@ -27,5 +28,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

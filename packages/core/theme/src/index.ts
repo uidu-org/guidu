@@ -8,12 +8,7 @@ import * as math from './utils/math';
 import themed from './utils/themed';
 
 export { default as Appearance } from './components/Appearance';
-export {
-  Reset,
-  ResetTheme,
-  ResetThemeProps,
-  ResetThemeTokens,
-} from './components/Reset';
+export * from './components/Reset';
 export { default } from './components/Theme';
 export {
   assistive,
@@ -34,20 +29,8 @@ export {
   visuallyHidden,
 } from './constants';
 export { withTheme } from './hoc';
-export {
-  AtlaskitThemeProps,
-  colorPaletteType,
-  CustomThemeProps,
-  DefaultValue,
-  Elevation,
-  GlobalThemeTokens,
-  NoThemeProps,
-  Theme,
-  ThemedValue,
-  ThemeModes,
-  ThemeProps,
-} from './types';
-export { createTheme, ThemeProp } from './utils/createTheme';
+export * from './types';
+export * from './utils/createTheme';
 export {
   colors,
   colorPalettes,

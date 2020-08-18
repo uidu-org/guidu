@@ -1,43 +1,33 @@
 // AnalyticsContext component and HOC
 export { default as AnalyticsContext } from './AnalyticsContext';
 // AnalyticsErrorBoundary component
-export {
-  AnalyticsErrorBoundaryProps,
-  default as AnalyticsErrorBoundary,
-} from './AnalyticsErrorBoundary';
+export { default as AnalyticsErrorBoundary } from './AnalyticsErrorBoundary';
+export type { AnalyticsErrorBoundaryProps } from './AnalyticsErrorBoundary';
+export { default as AnalyticsEvent } from './AnalyticsEvent';
 // Analytics event classes
-export {
-  AnalyticsEventPayload,
-  default as AnalyticsEvent,
-} from './AnalyticsEvent';
+export type { AnalyticsEventPayload } from './AnalyticsEvent';
 // AnalyticsListener component
 export { default as AnalyticsListener } from './AnalyticsListener';
+export { AnalyticsReactContext } from './AnalyticsReactContext';
 // React context
-export {
-  AnalyticsReactContext,
-  AnalyticsReactContextInterface,
-} from './AnalyticsReactContext';
+export type { AnalyticsReactContextInterface } from './AnalyticsReactContext';
 export { default as cleanProps } from './cleanProps';
 // Helper functions
 export { default as createAndFireEvent } from './createAndFireEvent';
-export { CreateUIAnalyticsEvent } from './types';
+export type { CreateUIAnalyticsEvent } from './types';
 export {
   default as UIAnalyticsEvent,
+} from './UIAnalyticsEvent';
+export type {
   UIAnalyticsEventHandler,
   UIAnalyticsEventProps,
 } from './UIAnalyticsEvent';
 // Hook for creating and firing analytics events
-export {
-  useAnalyticsEvents,
-  UseAnalyticsEventsHook,
-} from './useAnalyticsEvents';
-export {
-  useCallbackWithAnalytics,
-  UseCallbackWithAnalyticsHook,
-} from './useCallbackWithAnalytics';
+export { useAnalyticsEvents } from './useAnalyticsEvents';
+export type { UseAnalyticsEventsHook } from './useAnalyticsEvents';
+export { useCallbackWithAnalytics } from './useCallbackWithAnalytics';
+export type { UseCallbackWithAnalyticsHook } from './useCallbackWithAnalytics';
 export { default as withAnalyticsContext } from './withAnalyticsContext';
+export { default as withAnalyticsEvents } from './withAnalyticsEvents';
 // createAnalyticsEvent HOC
-export {
-  default as withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-} from './withAnalyticsEvents';
+export type { WithAnalyticsEventsProps } from './withAnalyticsEvents';

@@ -7,12 +7,13 @@
   "sideEffects": false,
   "workspaces": [
     "packages/*/*",
+    "apps/*",
     "themes/*",
     "build/*",
     "website"
   ],
   "scripts": {
-    "build": "                               run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
+    "build": "                               run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error && yarn preconstruct build",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:babel": "                         run-p build:babel:esm",
@@ -104,6 +105,7 @@
     "@babel/plugin-transform-destructuring": "^7.1.3",
     "@babel/plugin-transform-regenerator": "^7.0.0",
     "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/plugin-transform-typescript": "^7.11.0",
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
@@ -123,8 +125,10 @@
     "@loadable/component": "^5.12.0",
     "@manypkg/cli": "^0.15.0",
     "@mdx-js/loader": "^1.6.16",
+    "@next/mdx": "^9.5.2",
     "@popperjs/core": "^2.1.1",
     "@preconstruct/cli": "^1.1.22",
+    "@preconstruct/next": "^1.0.1",
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@stripe/react-stripe-js": "^1.0.3",
     "@stripe/stripe-js": "^1.0.2",
@@ -507,13 +511,17 @@
     "workspaces": [
       "packages/*/*",
       "themes/*",
+      "apps/*",
       "build/*",
       "website"
     ]
   },
   "preconstruct": {
     "packages": [
-      "packages/core/button"
+      "packages/core/analytics",
+      "packages/core/button",
+      "packages/core/spinner",
+      "packages/core/theme"
     ]
   }
 }
