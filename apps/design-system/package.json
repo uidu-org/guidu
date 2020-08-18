@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.16",
+    "@mdx-js/mdx": "^1.6.16",
     "@next/mdx": "^9.5.2",
     "@preconstruct/next": "^1.0.1",
     "@uidu/analytics": "^0.1.22",

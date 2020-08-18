@@ -13,7 +13,7 @@
     "website"
   ],
   "scripts": {
-    "build": "                               run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error && yarn preconstruct build",
+    "build": "                               yarn preconstruct build && run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:babel": "                         run-p build:babel:esm",

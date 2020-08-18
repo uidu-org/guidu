@@ -2717,7 +2717,7 @@
     "@mdx-js/react" "1.6.16"
     loader-utils "2.0.0"
 
-"@mdx-js/mdx@1.6.16":
+"@mdx-js/mdx@1.6.16", "@mdx-js/mdx@^1.6.16":
   version "1.6.16"
   resolved "https://registry.yarnpkg.com/@mdx-js/mdx/-/mdx-1.6.16.tgz#f01af0140539c1ce043d246259d8becd2153b2bb"
   integrity sha512-jnYyJ0aCafCIehn3GjYcibIapaLBgs3YkoenNQBPcPFyyuUty7B3B07OE+pMllhJ6YkWeP/R5Ax19x0nqTzgJw==
