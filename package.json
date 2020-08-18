@@ -5,15 +5,8 @@
   "repository": "https://github.com/uidu-org/guidu",
   "author": "uidu",
   "sideEffects": false,
-  "workspaces": [
-    "packages/*/*",
-    "apps/*",
-    "themes/*",
-    "build/*",
-    "website"
-  ],
   "scripts": {
-    "build": "                               run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
+    "build": "                               bolt preconstruct build && run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:babel": "                         run-p build:babel:esm",
