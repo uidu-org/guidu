@@ -1,5 +1,13 @@
 # @uidu/spinner
 
+## 0.2.1
+
+### Patch Changes
+
+- 57a52b8: Smaller packages to npm with .npmignore, avoid building twice
+- Updated dependencies [57a52b8]
+  - @uidu/theme@0.3.1
+
 ## 0.2.0
 
 ### Minor Changes

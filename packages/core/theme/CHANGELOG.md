@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.3.1
+
+### Patch Changes
+
+- 57a52b8: Smaller packages to npm with .npmignore, avoid building twice
+
 ## 0.3.0
 
 ### Minor Changes
