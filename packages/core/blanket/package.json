@@ -1,6 +1,6 @@
 {
   "name": "@uidu/blanket",
-  "version": "0.1.23",
+  "version": "0.1.24",
   "description": "A React component that covers the underlying UI for a layered component.",
   "keywords": [
     "atlaskit",
@@ -13,12 +13,12 @@
   "sideEffects": false,
   "module": "index.js",
   "dependencies": {
-    "@uidu/analytics": "^0.1.21",
-    "@uidu/theme": "^0.2.4"
+    "@uidu/analytics": "^0.1.22",
+    "@uidu/theme": "^0.2.8"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.62",
-    "@uidu/docs": "^0.1.45",
+    "@uidu/button": "^0.1.63",
+    "@uidu/docs": "^0.1.48",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0"

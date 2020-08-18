@@ -1,5 +1,15 @@
 # @uidu/dashboard-manager
 
+## 0.6.2
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/dashboard-controls@0.3.3
+  - @uidu/dashlets@0.5.3
+
 ## 0.6.1
 
 ### Patch Changes

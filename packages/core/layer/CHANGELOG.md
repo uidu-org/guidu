@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.1.16
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.1.15
 
 ### Patch Changes

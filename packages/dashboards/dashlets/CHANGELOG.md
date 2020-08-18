@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 0.5.3
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/spinner@0.1.21
+  - @uidu/tooltip@0.1.30
+  - @uidu/dashlet-controls@0.2.3
+
 ## 0.5.2
 
 ### Patch Changes

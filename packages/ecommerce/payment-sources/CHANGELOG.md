@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.1.16
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/payments@0.2.14
+  - @uidu/form@0.2.7
+
 ## 0.1.15
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/donate
 
+## 0.2.15
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/modal-dialog@0.1.42
+  - @uidu/payments@0.2.14
+  - @uidu/checkbox@0.2.3
+  - @uidu/field-downshift@0.3.7
+  - @uidu/field-text@0.2.8
+  - @uidu/field-textarea@0.2.3
+  - @uidu/form@0.2.7
+  - @uidu/radio@0.4.5
+  - @uidu/select@0.4.8
+  - @uidu/contact@0.1.17
+  - @uidu/schema.d.ts@0.1.7
+  - @uidu/widgets@0.2.11
+
 ## 0.2.14
 
 ### Patch Changes

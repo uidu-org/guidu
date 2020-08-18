@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.1.2
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/analytics@0.1.22
+  - @uidu/field-base@0.2.5
+  - @uidu/field-text@0.2.8
+
 ## 0.1.1
 
 ### Patch Changes

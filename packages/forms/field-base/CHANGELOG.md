@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/form@0.2.7
+
 ## 0.2.4
 
 ### Patch Changes

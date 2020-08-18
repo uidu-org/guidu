@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.7
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.1.6
 
 ### Patch Changes

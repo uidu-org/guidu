@@ -1,5 +1,19 @@
 # @uidu/status
 
+## 0.1.16
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/analytics@0.1.22
+  - @uidu/lozenge@0.1.24
+  - @uidu/theme@0.2.8
+  - @uidu/analytics-gas-types@0.1.9
+  - @uidu/field-text@0.2.8
+
 ## 0.1.15
 
 ### Patch Changes

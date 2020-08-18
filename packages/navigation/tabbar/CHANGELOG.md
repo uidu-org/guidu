@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.1.20
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/shell@0.3.5
+
 ## 0.1.19
 
 ### Patch Changes

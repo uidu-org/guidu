@@ -1,22 +1,22 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "Widgets components with zois",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/contact": "^0.1.16",
-    "@uidu/shell": "^0.3.4",
-    "@uidu/slider": "^1.2.5",
+    "@uidu/contact": "^0.1.17",
+    "@uidu/shell": "^0.3.5",
+    "@uidu/slider": "^1.2.6",
     "react-feather": "^2.0.3",
     "react-intl": "^5.2.1",
     "zoid": "^9.0.43"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.46",
-    "@uidu/modal-dialog": "^0.1.41"
+    "@uidu/docs": "^0.1.48",
+    "@uidu/modal-dialog": "^0.1.42"
   },
   "uidu:src": "index.ts"
 }

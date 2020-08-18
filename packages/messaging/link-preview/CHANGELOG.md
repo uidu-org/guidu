@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.17
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.1.16
 
 ### Patch Changes

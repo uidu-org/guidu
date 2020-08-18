@@ -1,5 +1,13 @@
 # @uidu/elements-test-helpers
 
+## 0.1.11
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/build-utils@0.1.21
+
 ## 0.1.10
 
 ### Patch Changes

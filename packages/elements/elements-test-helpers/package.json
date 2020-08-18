@@ -1,6 +1,6 @@
 {
   "name": "@uidu/elements-test-helpers",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": true,
   "description": "common test helpers",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/elements-test-helpers",
@@ -9,11 +9,11 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/build-utils": "^0.1.17",
+    "@uidu/build-utils": "^0.1.21",
     "exenv": "^1.2.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.45",
+    "@uidu/docs": "^0.1.48",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-intl": "^5.2.1"

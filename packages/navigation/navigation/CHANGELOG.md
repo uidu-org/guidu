@@ -1,5 +1,19 @@
 # @uidu/navigation
 
+## 0.2.30
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/inline-dialog@0.1.20
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+  - @uidu/shell@0.3.5
+
 ## 0.2.29
 
 ### Patch Changes

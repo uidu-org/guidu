@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 0.2.14
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/slider@1.2.6
+  - @uidu/form@0.2.7
+
 ## 0.2.13
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.15
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.0.14
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/util-data-test
 
+## 0.1.13
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/emoji@0.1.18
+  - @uidu/mentions@0.1.18
+  - @uidu/task-decision@0.1.19
+
 ## 0.1.12
 
 ### Patch Changes

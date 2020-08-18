@@ -1,5 +1,15 @@
 # @uidu/widgets
 
+## 0.2.11
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/slider@1.2.6
+  - @uidu/shell@0.3.5
+  - @uidu/contact@0.1.17
+
 ## 0.2.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.19
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.1.18
 
 ### Patch Changes

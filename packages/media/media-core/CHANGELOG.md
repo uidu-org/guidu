@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.2.2
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/docs@0.1.48
+
 ## 0.2.1
 
 ### Patch Changes

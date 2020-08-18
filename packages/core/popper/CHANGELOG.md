@@ -1,5 +1,12 @@
 # @uidu/popper
 
+## 0.1.23
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+
 ## 0.1.22
 
 ### Patch Changes

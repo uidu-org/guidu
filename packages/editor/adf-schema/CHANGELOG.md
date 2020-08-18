@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.2
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.2.1
 
 ### Patch Changes

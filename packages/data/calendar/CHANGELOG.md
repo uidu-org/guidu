@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.1.26
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/shell@0.3.5
+
 ## 0.1.25
 
 ### Patch Changes

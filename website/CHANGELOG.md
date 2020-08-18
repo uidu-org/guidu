@@ -1,5 +1,35 @@
 # Change Log
 
+## 0.1.97
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- 335a6f2: Bump dependencies
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/docs@0.1.48
+  - @uidu/badge@0.1.22
+  - @uidu/button@0.1.63
+  - @uidu/code@0.1.26
+  - @uidu/drawer@0.2.20
+  - @uidu/lozenge@0.1.24
+  - @uidu/modal-dialog@0.1.42
+  - @uidu/spinner@0.1.21
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+  - @uidu/list@0.1.25
+  - @uidu/table@0.1.111
+  - @uidu/checkbox@0.2.3
+  - @uidu/field-text@0.2.8
+  - @uidu/form@0.2.7
+  - @uidu/select@0.4.8
+  - @uidu/navigation@0.2.30
+  - @uidu/shell@0.3.5
+  - @uidu/themes-uidu@0.2.6
+
 ## 0.1.96
 
 ### Patch Changes

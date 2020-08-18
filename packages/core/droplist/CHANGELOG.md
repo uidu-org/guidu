@@ -1,5 +1,21 @@
 # @uidu/droplist
 
+## 0.1.27
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/item@0.1.30
+  - @uidu/layer@0.1.16
+  - @uidu/spinner@0.1.21
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+
 ## 0.1.26
 
 ### Patch Changes

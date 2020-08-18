@@ -1,5 +1,17 @@
 # @uidu/chat-window
 
+## 0.1.43
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/message@0.1.48
+  - @uidu/message-form@0.1.34
+  - @uidu/message-renderer@0.1.24
+
 ## 0.1.42
 
 ### Patch Changes

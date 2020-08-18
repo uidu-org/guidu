@@ -1,5 +1,21 @@
 # @uidu/data-fields
 
+## 0.1.37
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/field-color-picker@0.2.4
+  - @uidu/field-date@0.2.7
+  - @uidu/field-number@0.2.5
+  - @uidu/field-text@0.2.8
+  - @uidu/field-toggle@0.2.4
+  - @uidu/form@0.2.7
+  - @uidu/select@0.4.8
+
 ## 0.1.36
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 0.1.111
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/item@0.1.30
+  - @uidu/tooltip@0.1.30
+  - @uidu/data-fields@0.1.37
+  - @uidu/form@0.2.7
+  - @uidu/select@0.4.8
+  - @uidu/shell@0.3.5
+
 ## 0.1.110
 
 ### Patch Changes

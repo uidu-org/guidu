@@ -1,5 +1,15 @@
 # @uidu/analytics-namespaced-context
 
+## 0.1.9
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+  - @uidu/analytics@0.1.22
+
 ## 0.1.8
 
 ### Patch Changes

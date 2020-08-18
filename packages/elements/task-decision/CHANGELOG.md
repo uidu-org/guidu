@@ -1,5 +1,21 @@
 # @uidu/task-decision
 
+## 0.1.19
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/avatar-group@2.2.5
+  - @uidu/button@0.1.63
+  - @uidu/spinner@0.1.21
+  - @uidu/theme@0.2.8
+  - @uidu/analytics-namespaced-context@0.1.9
+
 ## 0.1.18
 
 ### Patch Changes

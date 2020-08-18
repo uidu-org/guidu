@@ -1,5 +1,14 @@
 # @uidu/field-file-uploader
 
+## 0.3.2
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+  - @uidu/field-base@0.2.5
+
 ## 0.3.1
 
 ### Patch Changes

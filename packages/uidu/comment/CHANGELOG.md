@@ -1,5 +1,20 @@
 # @uidu/comment
 
+## 0.1.15
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+- Updated dependencies [335a6f2]
+  - @uidu/avatar@0.3.5
+  - @uidu/spinner@0.1.21
+  - @uidu/field-mentions@0.2.4
+  - @uidu/field-text@0.2.8
+  - @uidu/form@0.2.7
+  - @uidu/message-renderer@0.1.24
+
 ## 0.1.14
 
 ### Patch Changes

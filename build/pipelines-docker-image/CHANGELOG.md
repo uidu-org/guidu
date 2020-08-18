@@ -1,5 +1,11 @@
 # @uidu/pipelines-docker-image
 
+## 0.1.12
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.1.11
 
 ### Patch Changes

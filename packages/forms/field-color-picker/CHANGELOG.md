@@ -1,5 +1,16 @@
 # @uidu/field-color-picker
 
+## 0.2.4
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/inline-dialog@0.1.20
+  - @uidu/field-base@0.2.5
+
 ## 0.2.3
 
 ### Patch Changes

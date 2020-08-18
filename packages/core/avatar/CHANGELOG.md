@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.3.5
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+
 ## 0.3.4
 
 ### Patch Changes

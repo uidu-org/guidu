@@ -1,21 +1,21 @@
 {
   "name": "@uidu/field-date",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.1.21",
-    "@uidu/field-base": "^0.2.3",
-    "@uidu/field-text": "^0.2.7",
+    "@uidu/analytics": "^0.1.22",
+    "@uidu/field-base": "^0.2.5",
+    "@uidu/field-text": "^0.2.8",
     "moment": "^2.18.1",
     "react-day-picker": "^7.4.5"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.45",
-    "@uidu/form": "^0.2.5"
+    "@uidu/docs": "^0.1.48",
+    "@uidu/form": "^0.2.7"
   },
   "uidu:src": "index.ts"
 }

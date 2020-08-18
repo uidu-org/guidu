@@ -1,5 +1,18 @@
 # @uidu/downshift
 
+## 0.3.7
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/droplist@0.1.27
+  - @uidu/item@0.1.30
+  - @uidu/field-base@0.2.5
+  - @uidu/field-text@0.2.8
+
 ## 0.3.6
 
 ### Patch Changes

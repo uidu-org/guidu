@@ -1,5 +1,21 @@
 # @uidu/media-viewer
 
+## 0.1.42
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/avatar@0.3.5
+  - @uidu/button@0.1.63
+  - @uidu/spinner@0.1.21
+  - @uidu/theme@0.2.8
+  - @uidu/media-core@0.2.2
+  - @uidu/shell@0.3.5
+  - @uidu/comment@0.1.15
+
 ## 0.1.41
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/media-card
 
+## 0.2.3
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/button@0.1.63
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/spinner@0.1.21
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+  - @uidu/media-core@0.2.2
+
 ## 0.2.2
 
 ### Patch Changes

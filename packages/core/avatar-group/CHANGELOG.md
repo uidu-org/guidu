@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.2.5
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/avatar@0.3.5
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/item@0.1.30
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+
 ## 2.2.4
 
 ### Patch Changes

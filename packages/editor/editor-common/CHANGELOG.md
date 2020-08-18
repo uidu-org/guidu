@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.3.1
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/theme@0.2.8
+  - @uidu/adf-schema@0.2.2
+  - @uidu/analytics-namespaced-context@0.1.9
+  - @uidu/emoji@0.1.18
+  - @uidu/mentions@0.1.18
+
 ## 0.3.0
 
 ### Minor Changes

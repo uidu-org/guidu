@@ -1,5 +1,12 @@
 # @uidu/timeline
 
+## 0.1.7
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+
 ## 0.1.6
 
 ### Patch Changes

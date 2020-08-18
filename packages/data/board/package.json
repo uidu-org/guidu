@@ -1,6 +1,6 @@
 {
   "name": "@uidu/board",
-  "version": "0.2.15",
+  "version": "0.2.16",
   "private": false,
   "description": "Trello-like Kanban boards",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/board",
@@ -9,15 +9,15 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.2.4",
+    "@uidu/theme": "^0.2.8",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.3",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/badge": "^0.1.20",
-    "@uidu/docs": "^0.1.45",
-    "@uidu/shell": "^0.3.3",
+    "@uidu/badge": "^0.1.22",
+    "@uidu/docs": "^0.1.48",
+    "@uidu/shell": "^0.3.5",
     "faker": "^4.1.0"
   },
   "uidu:src": "index.ts"

@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.1.22
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.1.21
 
 ### Patch Changes

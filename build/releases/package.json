@@ -1,6 +1,6 @@
 {
   "name": "@uidu/build-releases",
-  "version": "3.0.28",
+  "version": "3.0.29",
   "description": "This will definitely get split up at some point, just using for testing",
   "repository": "https://github.com/uidu-org/guidu/tree/master/build/releases",
   "license": "Apache-2.0",
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@uidu/build-utils": "^0.1.18",
+    "@uidu/build-utils": "^0.1.21",
     "bolt": "^0.24.3",
     "boxen": "^4.0.0",
     "chalk": "^4.0.0",

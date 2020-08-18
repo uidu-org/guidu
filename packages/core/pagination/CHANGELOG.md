@@ -1,5 +1,18 @@
 # @uidu/pagination
 
+## 0.1.17
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/button@0.1.63
+  - @uidu/theme@0.2.8
+
 ## 0.1.16
 
 ### Patch Changes

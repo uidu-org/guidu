@@ -1,5 +1,15 @@
 # @uidu/portal
 
+## 0.1.20
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump portal
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/theme@0.2.8
+
 ## 0.1.19
 
 ### Patch Changes

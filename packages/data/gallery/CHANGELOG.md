@@ -1,5 +1,17 @@
 # @uidu/gallery
 
+## 0.1.40
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+- Updated dependencies [335a6f2]
+  - @uidu/spinner@0.1.21
+  - @uidu/data-controls@0.3.18
+  - @uidu/table@0.1.111
+
 ## 0.1.39
 
 ### Patch Changes

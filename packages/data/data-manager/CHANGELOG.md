@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 0.2.17
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+- Updated dependencies [335a6f2]
+  - @uidu/spinner@0.1.21
+  - @uidu/board@0.2.16
+  - @uidu/calendar@0.1.26
+  - @uidu/data-controls@0.3.18
+  - @uidu/data-views@0.2.15
+  - @uidu/gallery@0.1.40
+  - @uidu/list@0.1.25
+  - @uidu/table@0.1.111
+  - @uidu/shell@0.3.5
+
 ## 0.2.16
 
 ### Patch Changes

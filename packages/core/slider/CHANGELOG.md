@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.2.6
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 1.2.5
 
 ### Patch Changes

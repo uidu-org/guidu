@@ -1,5 +1,19 @@
 # @atlaskit/popup
 
+## 0.1.1
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- 335a6f2: Bump dependencies
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/popper@0.1.23
+  - @uidu/portal@0.1.20
+  - @uidu/theme@0.2.8
+
 ## 1.0.0
 
 ### Major Changes

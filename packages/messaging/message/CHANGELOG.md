@@ -1,5 +1,25 @@
 # @uidu/message
 
+## 0.1.48
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+- Updated dependencies [335a6f2]
+  - @uidu/avatar@0.3.5
+  - @uidu/drawer@0.2.20
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/tooltip@0.1.30
+  - @uidu/media-card@0.2.3
+  - @uidu/media-core@0.2.2
+  - @uidu/media-viewer@0.1.42
+  - @uidu/message-form@0.1.34
+  - @uidu/message-renderer@0.1.24
+
 ## 0.1.47
 
 ### Patch Changes

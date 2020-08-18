@@ -1,5 +1,15 @@
 # @uidu/contact
 
+## 0.1.17
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/checkbox@0.2.3
+  - @uidu/field-text@0.2.8
+  - @uidu/form@0.2.7
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/message-form
 
+## 0.1.34
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependencies
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/spinner@0.1.21
+  - @uidu/field-mentions@0.2.4
+  - @uidu/field-text@0.2.8
+  - @uidu/form@0.2.7
+  - @uidu/media-filmstrip@0.1.34
+  - @uidu/message@0.1.48
+
 ## 0.1.33
 
 ### Patch Changes

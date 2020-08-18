@@ -1,5 +1,21 @@
 # @uidu/mentions
 
+## 0.1.18
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/avatar@0.3.5
+  - @uidu/button@0.1.63
+  - @uidu/lozenge@0.1.24
+  - @uidu/theme@0.2.8
+  - @uidu/tooltip@0.1.30
+  - @uidu/analytics-gas-types@0.1.9
+
 ## 0.1.17
 
 ### Patch Changes

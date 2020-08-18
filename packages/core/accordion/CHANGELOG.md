@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.1.23
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/docs@0.1.48
+
 ## 0.1.22
 
 ### Patch Changes

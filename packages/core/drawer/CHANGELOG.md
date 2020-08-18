@@ -1,5 +1,20 @@
 # @uidu/drawer
 
+## 0.2.20
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/docs@0.1.48
+  - @uidu/analytics@0.1.22
+  - @uidu/blanket@0.1.24
+  - @uidu/item@0.1.30
+  - @uidu/theme@0.2.8
+
 ## 0.2.19
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/section-message
 
+## 0.1.25
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/button@0.1.63
+  - @uidu/theme@0.2.8
+
 ## 0.1.24
 
 ### Patch Changes

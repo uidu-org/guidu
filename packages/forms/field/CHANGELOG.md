@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.2.3
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/checkbox@0.2.3
+  - @uidu/field-number@0.2.5
+  - @uidu/field-text@0.2.8
+  - @uidu/field-textarea@0.2.3
+  - @uidu/select@0.4.8
+
 ## 0.2.2
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/build-releases
 
+## 3.0.29
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/build-utils@0.1.21
+
 ## 3.0.28
 
 ### Patch Changes

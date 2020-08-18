@@ -1,5 +1,14 @@
 # @uidu/code
 
+## 0.1.26
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/theme@0.2.8
+
 ## 0.1.25
 
 ### Patch Changes

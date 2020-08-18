@@ -1,5 +1,14 @@
 # @uidu/editor-json-transformer
 
+## 0.1.12
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+  - @uidu/adf-schema@0.2.2
+
 ## 0.1.11
 
 ### Patch Changes

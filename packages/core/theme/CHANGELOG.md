@@ -1,5 +1,12 @@
 # @uidu/theme
 
+## 0.2.8
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+
 ## 0.2.7
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/blanket
 
+## 0.1.24
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/analytics@0.1.22
+  - @uidu/theme@0.2.8
+
 ## 0.1.23
 
 ### Patch Changes

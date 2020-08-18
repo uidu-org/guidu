@@ -1,5 +1,17 @@
 # @uidu/inline-dialog
 
+## 0.1.20
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/analytics@0.1.22
+  - @uidu/popper@0.1.23
+  - @uidu/theme@0.2.8
+
 ## 0.1.19
 
 ### Patch Changes

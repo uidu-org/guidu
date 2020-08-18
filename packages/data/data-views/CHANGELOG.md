@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.2.15
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/data-controls@0.3.18
+  - @uidu/table@0.1.111
+  - @uidu/field-number@0.2.5
+
 ## 0.2.14
 
 ### Patch Changes

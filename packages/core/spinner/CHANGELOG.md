@@ -1,5 +1,15 @@
 # @uidu/spinner
 
+## 0.1.21
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/theme@0.2.8
+
 ## 0.1.20
 
 ### Patch Changes

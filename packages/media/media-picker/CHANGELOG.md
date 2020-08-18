@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.3.1
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/media-core@0.2.2
+
 ## 0.3.0
 
 ### Minor Changes

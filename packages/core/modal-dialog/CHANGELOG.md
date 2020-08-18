@@ -1,5 +1,22 @@
 # @uidu/modal-dialog
 
+## 0.1.42
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/blanket@0.1.24
+  - @uidu/button@0.1.63
+  - @uidu/portal@0.1.20
+  - @uidu/theme@0.2.8
+  - @uidu/form@0.2.7
+
 ## 0.1.41
 
 ### Patch Changes

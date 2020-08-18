@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.25
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+  - @uidu/table@0.1.111
+
 ## 0.1.24
 
 ### Patch Changes

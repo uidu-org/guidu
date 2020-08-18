@@ -1,5 +1,23 @@
 # @uidu/attend
 
+## 0.2.9
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/spinner@0.1.21
+  - @uidu/payments@0.2.14
+  - @uidu/field-counter@0.2.4
+  - @uidu/field-text@0.2.8
+  - @uidu/field-textarea@0.2.3
+  - @uidu/form@0.2.7
+  - @uidu/shell@0.3.5
+  - @uidu/stepper@0.1.27
+  - @uidu/contact@0.1.17
+  - @uidu/widgets@0.2.11
+
 ## 0.2.8
 
 ### Patch Changes

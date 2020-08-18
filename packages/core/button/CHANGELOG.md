@@ -1,5 +1,19 @@
 # @uidu/button
 
+## 0.1.63
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- 7e701de: Sort packages
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+- Updated dependencies [7e701de]
+  - @uidu/analytics@0.1.22
+  - @uidu/spinner@0.1.21
+  - @uidu/theme@0.2.8
+
 ## 0.1.62
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.7
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+
 ## 0.2.6
 
 ### Patch Changes

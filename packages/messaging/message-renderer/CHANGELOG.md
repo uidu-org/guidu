@@ -1,5 +1,16 @@
 # @uidu/message-renderer
 
+## 0.1.24
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependencies
+- Updated dependencies [335a6f2]
+- Updated dependencies [335a6f2]
+  - @uidu/dropdown-menu@0.1.29
+  - @uidu/theme@0.2.8
+
 ## 0.1.23
 
 ### Patch Changes

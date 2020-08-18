@@ -1,5 +1,14 @@
 # @uidu/analytics-gas-types
 
+## 0.1.9
+
+### Patch Changes
+
+- 335a6f2: Bump all components
+- 335a6f2: Bump dependendies and cleanup
+- Updated dependencies [335a6f2]
+  - @uidu/analytics@0.1.22
+
 ## 0.1.8
 
 ### Patch Changes
