@@ -2,7 +2,7 @@
   "name": "@uidu/responsivr",
   "version": "0.1.12",
   "description": "Responsivr manages media query component logics",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/responsivr",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

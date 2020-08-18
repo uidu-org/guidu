@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "private": false,
   "description": "An image uploader with preview",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-image-uploader",
   "license": "MIT",
   "sideEffects": false,
   "module": "index.js",

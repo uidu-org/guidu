@@ -3,7 +3,7 @@
   "version": "0.2.8",
   "private": false,
   "description": "React component to attend to an event",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/attend",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

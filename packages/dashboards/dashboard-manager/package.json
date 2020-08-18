@@ -3,7 +3,7 @@
   "version": "0.6.1",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/dashboards/dashboard-manager",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

@@ -16,5 +16,6 @@
     "@uidu/docs": "^0.1.45",
     "@uidu/shell": "^0.3.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/treenav"
 }

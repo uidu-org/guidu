@@ -2,7 +2,7 @@
   "name": "@uidu/message",
   "version": "0.1.46",
   "description": "A React component that renders a message",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

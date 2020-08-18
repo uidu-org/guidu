@@ -2,7 +2,7 @@
   "name": "@uidu/field-textarea",
   "version": "0.2.2",
   "description": "Simple Textarea component",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-textarea",
   "license": "MIT",
   "sideEffects": false,
   "module": "index.js",

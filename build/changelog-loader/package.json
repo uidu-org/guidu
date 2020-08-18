@@ -1,7 +1,7 @@
 {
   "name": "@uidu/changelog-loader",
   "version": "0.1.19",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/changelog-loader",
   "license": "ISC",
   "author": "uidu",
   "main": "index.js",

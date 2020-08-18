@@ -3,7 +3,7 @@
   "version": "0.2.16",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

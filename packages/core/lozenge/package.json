@@ -2,7 +2,7 @@
   "name": "@uidu/lozenge",
   "version": "0.1.23",
   "description": "A React component that highlights status for quick recognition",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/lozenge",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
@@ -13,8 +13,10 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.45",
+    "react": "^16.8.3",
     "react-dom": "^16.4.0",
-    "react-test-renderer": "^16.8.3"
+    "react-test-renderer": "^16.8.3",
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

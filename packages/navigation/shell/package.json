@@ -3,7 +3,7 @@
   "version": "0.3.4",
   "private": false,
   "description": "Downshift React component",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/shell",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

@@ -3,7 +3,7 @@
   "version": "0.2.17",
   "private": false,
   "description": "React component tied to devise for sign_in, sign_up and password recovery ",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/authentication/devise",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

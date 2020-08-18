@@ -3,7 +3,7 @@
   "version": "0.1.16",
   "private": true,
   "description": "A collection of scripts for use in CI",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/ci-scripts",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "main": "index.js",

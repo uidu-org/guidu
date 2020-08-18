@@ -21,12 +21,16 @@
     "uuid": "^8.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.45"
+    "@uidu/docs": "^0.1.45",
+    "js-search": "^2.0.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0"
   },
   "peerDependencies": {
     "js-search": "^2.0.0",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test"
 }

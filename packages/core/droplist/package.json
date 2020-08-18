@@ -2,7 +2,7 @@
   "name": "@uidu/droplist",
   "version": "0.1.25",
   "description": "Droplist component",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/droplist",
   "license": "ISC",
   "author": "uidu",
   "module": "index.js",
@@ -22,7 +22,9 @@
     "@uidu/button": "^0.1.61",
     "@uidu/docs": "^0.1.45",
     "@uidu/field-base": "^0.2.3",
-    "react-dom": "^16.4.0"
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

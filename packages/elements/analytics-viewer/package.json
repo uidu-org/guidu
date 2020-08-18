@@ -2,10 +2,7 @@
   "name": "@uidu/analytics-viewer",
   "version": "0.1.9",
   "description": "Analytics viewer for the examples",
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
-  },
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "module": "index.js",
@@ -17,7 +14,9 @@
     "@uidu/analytics": "^0.1.21",
     "styled-components": "^5.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react": "^16.8.3"
+  },
   "peerDependencies": {
     "react": "^16.8.3"
   },

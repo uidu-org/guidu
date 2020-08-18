@@ -3,7 +3,7 @@
   "version": "0.1.16",
   "private": false,
   "description": "Basic contact form info",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/contact",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

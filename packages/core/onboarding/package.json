@@ -2,7 +2,7 @@
   "name": "@uidu/onboarding",
   "version": "0.1.15",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/onboarding",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
@@ -25,11 +25,12 @@
     "scroll-into-view-if-needed": "^2.2.20"
   },
   "devDependencies": {
-    "@atlaskit/progress-indicator": "^8.0.0",
     "@uidu/docs": "^0.1.46",
+    "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-feather": "^2.0.3",
-    "react-lorem-component": "^0.13.0"
+    "react-lorem-component": "^0.13.0",
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

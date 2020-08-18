@@ -2,7 +2,7 @@
   "name": "@uidu/build-utils",
   "version": "0.1.19",
   "description": "Collection of utilities to used during the release process of Atlaskit",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/utils",
   "license": "ISC",
   "author": "uidu",
   "main": "index.js",

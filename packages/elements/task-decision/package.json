@@ -2,7 +2,7 @@
   "name": "@uidu/task-decision",
   "version": "0.1.18",
   "description": "Tasks and decisions react components",
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/task-decision",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "sideEffects": false,
@@ -35,6 +35,8 @@
     "@uidu/renderer": "^0.1.29",
     "@uidu/util-data-test": "^0.1.12",
     "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "styled-components": "^5.0.0",
     "url-search-params": "^1.1.0"
   },
   "peerDependencies": {

@@ -3,7 +3,7 @@
   "version": "0.1.17",
   "private": false,
   "description": "Job/volunteer proposals",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/propose",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

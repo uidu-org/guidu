@@ -2,7 +2,7 @@
   "name": "@uidu/menu",
   "version": "0.1.0",
   "description": "A collection of composable menu components that can be used anywhere.",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/menu",
   "license": "ISC",
   "author": "uidu",
   "module": "index.js",
@@ -25,6 +25,8 @@
     "@uidu/button": "^0.1.62",
     "@uidu/docs": "^0.1.46",
     "@uidu/section-message": "^0.1.24",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0"
   }
 }

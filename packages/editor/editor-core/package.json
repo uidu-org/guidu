@@ -1,7 +1,7 @@
 {
   "name": "@uidu/editor-core",
   "version": "0.4.1",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-core",
   "license": "MIT",
   "module": "index.js",
   "types": "index.d.ts",

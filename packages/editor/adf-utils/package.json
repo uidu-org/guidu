@@ -2,7 +2,7 @@
   "name": "@uidu/adf-utils",
   "version": "0.4.10",
   "description": "Set of utilities to traverse, modify and create ADF documents.",
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/adf-utils",
   "license": "Apache-2.0",
   "author": "uidu",
   "sideEffects": false,

@@ -3,7 +3,7 @@
   "version": "0.0.13",
   "private": false,
   "description": "Tools for supporting multiple entry points",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/multi-entry-tools",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "bin": {

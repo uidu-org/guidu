@@ -2,7 +2,7 @@
   "name": "@uidu/upvote",
   "version": "0.1.10",
   "private": false,
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/upvote",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

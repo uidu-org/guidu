@@ -2,7 +2,7 @@
   "name": "@uidu/build-releases",
   "version": "3.0.28",
   "description": "This will definitely get split up at some point, just using for testing",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/releases",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "main": "bin/build-releases.js",
@@ -23,9 +23,6 @@
     "outdent": "^0.7.0",
     "prettier": "^2.0.0",
     "semver": "^7.0.0"
-  },
-  "devDependencies": {
-    "jest-fixtures": "^0.6.0"
   },
   "publishConfig": {
     "access": "public"

@@ -3,10 +3,7 @@
   "version": "0.1.10",
   "private": true,
   "description": "common test helpers",
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
-  },
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/elements-test-helpers",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "module": "index.js",
@@ -16,7 +13,10 @@
     "exenv": "^1.2.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.45"
+    "@uidu/docs": "^0.1.45",
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0",
+    "react-intl": "^5.2.1"
   },
   "peerDependencies": {
     "react": "^16.8.3",

@@ -40,6 +40,7 @@
     "@uidu/util-data-test": "^0.1.12",
     "p-wait-for": "^3.1.0",
     "react": "^16.8.3",
+    "react-dom": "^16.4.0",
     "react-intl": "^5.2.1"
   },
   "peerDependencies": {
@@ -47,5 +48,6 @@
     "react-dom": "^16.4.0",
     "react-intl": "^5.2.1"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/emoji"
 }

@@ -8,10 +8,7 @@
     "teams",
     "ui"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/atlassian/atlaskit-mk-2"
-  },
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/date",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "module": "index.js",

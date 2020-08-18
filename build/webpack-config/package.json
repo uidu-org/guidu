@@ -2,7 +2,7 @@
   "name": "@uidu/webpack-config",
   "version": "0.1.69",
   "description": "Configurations for webpack used in Guidu",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/webpack-config",
   "license": "ISC",
   "author": "uidu",
   "main": "config/index.js",

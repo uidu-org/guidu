@@ -3,7 +3,7 @@
   "version": "0.2.3",
   "private": false,
   "description": "A counter input element - good for plus-minus elements",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-counter",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

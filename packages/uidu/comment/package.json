@@ -3,7 +3,7 @@
   "version": "0.1.13",
   "private": false,
   "description": "Comment components",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/comment",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

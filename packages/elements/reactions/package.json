@@ -2,7 +2,7 @@
   "name": "@uidu/reactions",
   "version": "0.1.10",
   "description": "A React component that renders a message",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/reactions",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

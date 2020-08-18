@@ -2,7 +2,7 @@
   "name": "@uidu/popper",
   "version": "0.1.22",
   "description": "Wrapper for react-popper with common config and some helpers",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/popper",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
@@ -17,6 +17,7 @@
     "@uidu/button": "^0.1.58",
     "@uidu/docs": "^0.1.46",
     "@uidu/theme": "^0.2.4",
+    "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.0.0"

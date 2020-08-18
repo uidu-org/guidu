@@ -2,7 +2,7 @@
   "name": "@uidu/themes-uidu",
   "version": "0.2.5",
   "description": "uidu main theme",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/themes/uidu",
   "license": "ISC",
   "author": "",
   "main": "index.scss",

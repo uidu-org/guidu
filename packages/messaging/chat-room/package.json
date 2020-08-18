@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "private": false,
   "description": "A video-chat room",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-room",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

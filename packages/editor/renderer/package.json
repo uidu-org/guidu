@@ -2,7 +2,7 @@
   "name": "@uidu/renderer",
   "version": "0.1.30",
   "description": "Renderer component",
-  "repository": "https://bitbucket.org/atlassian/atlaskit-mk-2",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/renderer",
   "license": "MIT",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
@@ -42,7 +42,8 @@
     "@uidu/util-data-test": "^0.1.12",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
-    "react-live-clock": "^4.0.0-beta"
+    "react-live-clock": "^4.0.0-beta",
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

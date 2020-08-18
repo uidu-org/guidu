@@ -3,7 +3,7 @@
   "version": "0.2.2",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/dashboards/dashlet-controls",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",
@@ -19,8 +19,7 @@
     "react-intl": "^5.2.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.45",
-    "moment": "^2.18.1"
+    "@uidu/docs": "^0.1.45"
   },
   "uidu:src": "index.ts"
 }

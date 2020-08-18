@@ -3,7 +3,7 @@
   "version": "0.1.11",
   "private": true,
   "description": "Docker image used to set up the guidu repo in pipelines",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/pipelines-docker-image",
   "license": "Apache-2.0",
   "author": "Andrea Vanini",
   "scripts": {

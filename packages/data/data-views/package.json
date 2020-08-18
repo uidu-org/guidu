@@ -17,5 +17,6 @@
     "@uidu/form": "^0.2.3",
     "@uidu/select": "^0.4.4"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "index.ts",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views"
 }

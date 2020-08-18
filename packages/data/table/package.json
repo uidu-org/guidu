@@ -3,7 +3,7 @@
   "version": "0.1.110",
   "private": false,
   "description": "React ag-datagrid wrapper with default configurations",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/table",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

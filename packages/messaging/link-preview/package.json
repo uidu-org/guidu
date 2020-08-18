@@ -2,7 +2,7 @@
   "name": "@uidu/link-preview",
   "version": "0.1.16",
   "description": "A link preview regex and rendering",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/link-preview",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

@@ -3,7 +3,7 @@
   "version": "0.1.23",
   "private": false,
   "description": "Message renderer",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-renderer",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

@@ -3,7 +3,7 @@
   "version": "0.1.25",
   "private": false,
   "description": "Animated menu like Stripe",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/stepper",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

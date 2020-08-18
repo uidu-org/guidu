@@ -3,7 +3,7 @@
   "version": "0.2.14",
   "private": false,
   "description": "Donate form",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/donate",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",
@@ -26,8 +26,7 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.46",
-    "@uidu/modal-dialog": "^0.1.41"
+    "@uidu/docs": "^0.1.46"
   },
   "uidu:src": "index.ts"
 }

@@ -3,7 +3,7 @@
   "version": "0.2.9",
   "private": false,
   "description": "Suggest addresses with google autocompletge",
-  "repository": "https://github.com/uidu-org/guidu.git",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-geosuggest",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
