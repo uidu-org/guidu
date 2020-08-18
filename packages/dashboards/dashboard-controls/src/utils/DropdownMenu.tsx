@@ -8,7 +8,7 @@ export default class DropdownMenu extends Component<any> {
       <Dropdown
         trigger={trigger}
         position="bottom left"
-        className="mr-2"
+        // className="mr-2"
         // boundariesElement="window"
       >
         {children}

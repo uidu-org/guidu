@@ -14,6 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.16",
     "@uidu/changelog-loader": "^0.1.19",
     "@uidu/fs-loader": "^0.1.32",
     "@uidu/multi-entry-tools": "^0.0.13",

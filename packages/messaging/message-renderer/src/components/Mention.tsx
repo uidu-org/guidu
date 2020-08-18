@@ -10,7 +10,7 @@ export interface MentionProps {
 export default props => {
   return (
     <Dropdown
-      className="align-text-top"
+      // className="align-text-top"
       boundariesElement="scrollParent"
       trigger={
         <StyledMention>

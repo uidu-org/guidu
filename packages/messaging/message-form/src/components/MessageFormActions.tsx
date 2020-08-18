@@ -5,7 +5,7 @@ import { Plus } from 'react-feather';
 export default function MessageFormActions({ actions }) {
   return (
     <Dropdown
-      className="align-self-center"
+      // className="align-self-center"
       trigger={
         <button
           className="btn btn-sm d-none d-md-flex align-items-center mb-0 text-muted px-2 px-xl-3 shadow-none"

@@ -55,7 +55,7 @@ export default class CalendarView extends Component<any> {
 
     return (
       <DropdownMenu
-        shouldFitContent
+        shouldFitContainer
         trigger={
           <Tooltip
             content={
@@ -74,10 +74,10 @@ export default class CalendarView extends Component<any> {
         }
       >
         <DropdownItemGroup>
-          {views.map(calendarView => (
+          {views.map((calendarView) => (
             <DropdownItem
               key={calendarView.id}
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 onView(calendarView);
               }}

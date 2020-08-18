@@ -117,6 +117,17 @@ module.exports = async function createWebpackConfig(
           loader: require.resolve('gray-matter-loader'),
         },
         {
+          test: /\.mdx$/,
+          use: [
+            {
+              loader: require.resolve('babel-loader'),
+            },
+            {
+              loader: require.resolve('@mdx-js/loader'),
+            },
+          ],
+        },
+        {
           test: /\.(js|jsx|mjs)$/,
           exclude: /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
           use: [

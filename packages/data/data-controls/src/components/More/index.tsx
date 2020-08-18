@@ -50,7 +50,7 @@ export default class More extends Component<MoreProps> {
     ];
     return (
       <DropdownMenu
-        className="mr-2"
+        // className="mr-2"
         trigger={
           <Trigger activeBg="#fee2d5" className="btn" active={false}>
             <MoreVertical strokeWidth={2} size={14} />

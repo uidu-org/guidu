@@ -3,7 +3,6 @@
  */
 declare module '@uidu/codemod-util-shared-styles-to-theme';
 declare module '@uidu/comment';
-declare module '@uidu/dropdown-menu';
 declare module '@uidu/droplist';
 declare module '@uidu/feedback-collector';
 declare module '@uidu/field-range';
@@ -17,14 +16,12 @@ declare module '@uidu/icon-priority';
 declare module '@uidu/icon-priority/*';
 declare module '@uidu/input';
 declare module '@uidu/item';
-declare module '@uidu/layer-manager';
 declare module '@uidu/layer';
 declare module '@uidu/nps';
 declare module '@uidu/panel';
 declare module '@uidu/polyfills';
 declare module '@uidu/single-select';
 declare module '@uidu/size-detector';
-declare module '@uidu/spinner';
 declare module '@uidu/textfield';
 
 // Build

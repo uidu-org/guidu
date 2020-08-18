@@ -100,6 +100,7 @@ export default class App extends React.Component<{}, State> {
               />
               <Route>
                 <Shell>
+                  <div>Header</div>
                   <ShellContent>
                     <ShellNavigation
                       className="d-lg-flex d-none shadow-sm"
