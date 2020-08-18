@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.1.23
+
+### Patch Changes
+
+- 63049ea: Initial design system setup with next.js
+
 ## 0.1.22
 
 ### Patch Changes

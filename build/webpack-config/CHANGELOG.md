@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.72
+
+### Patch Changes
+
+- 63049ea: Initial design system setup with next.js
+
 ## 0.1.71
 
 ### Patch Changes

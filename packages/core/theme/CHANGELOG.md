@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.2.9
+
+### Patch Changes
+
+- 63049ea: Initial design system setup with next.js
+
 ## 0.2.8
 
 ### Patch Changes
