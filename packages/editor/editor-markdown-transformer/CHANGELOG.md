@@ -1,5 +1,11 @@
 # @uidu/editor-markdown-transformer
 
+## 0.1.15
+
+### Patch Changes
+
+- db77544: Bump editor core
+
 ## 0.1.14
 
 ### Patch Changes
