@@ -1,5 +1,11 @@
 # @uidu/button
 
+## 0.1.65
+
+### Patch Changes
+
+- 55ad0c8: Button should now be built with preconstruct (rollup)
+
 ## 0.1.64
 
 ### Patch Changes

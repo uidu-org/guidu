@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.8
+
+### Patch Changes
+
+- 55ad0c8: Button should now be built with preconstruct (rollup)
+
 ## 0.1.7
 
 ### Patch Changes
