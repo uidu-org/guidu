@@ -1,5 +1,15 @@
 # @uidu/button
 
+## 0.1.64
+
+### Patch Changes
+
+- 63049ea: Initial design system setup with next.js
+- Updated dependencies [63049ea]
+  - @uidu/analytics@0.1.23
+  - @uidu/spinner@0.1.22
+  - @uidu/theme@0.2.9
+
 ## 0.1.63
 
 ### Patch Changes

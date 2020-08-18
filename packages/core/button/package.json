@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.1.63",
+  "version": "0.1.64",
   "description": "Button component for use in forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/button",
   "license": "ISC",
@@ -8,9 +8,9 @@
   "main": "dist/button.cjs.js",
   "module": "dist/button.esm.js",
   "dependencies": {
-    "@uidu/analytics": "^0.1.22",
-    "@uidu/spinner": "^0.1.21",
-    "@uidu/theme": "^0.2.8",
+    "@uidu/analytics": "^0.1.23",
+    "@uidu/spinner": "^0.1.22",
+    "@uidu/theme": "^0.2.9",
     "memoize-one": "^5.0.0"
   },
   "devDependencies": {

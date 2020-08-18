@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "description": "The uidu component analytics framework",
   "main": "dist/analytics.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/analytics",
@@ -13,7 +13,7 @@
     "prop-types": "^15.6.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.63",
+    "@uidu/button": "^0.1.64",
     "@uidu/docs": "^0.1.48",
     "@uidu/field-text": "^0.2.8",
     "@uidu/form": "^0.2.7",

@@ -1,5 +1,13 @@
 # @uidu/spinner
 
+## 0.1.22
+
+### Patch Changes
+
+- 63049ea: Initial design system setup with next.js
+- Updated dependencies [63049ea]
+  - @uidu/theme@0.2.9
+
 ## 0.1.21
 
 ### Patch Changes
