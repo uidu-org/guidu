@@ -2,11 +2,11 @@
   "name": "@uidu/spinner",
   "version": "0.1.22",
   "description": "A React component that displays a spinning icon to show a loading state",
-  "main": "dist/spinner.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/spinner",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/spinner.cjs.js",
   "module": "dist/spinner.esm.js",
   "dependencies": {
     "@uidu/theme": "^0.2.9",

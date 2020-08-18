@@ -5,8 +5,15 @@
   "repository": "https://github.com/uidu-org/guidu",
   "author": "uidu",
   "sideEffects": false,
+  "workspaces": [
+    "packages/*/*",
+    "apps/*",
+    "themes/*",
+    "build/*",
+    "website"
+  ],
   "scripts": {
-    "build": "                               bolt preconstruct build && run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
+    "build": "                               yarn preconstruct build && run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:babel": "                         run-p build:babel:esm",
@@ -19,11 +26,12 @@
     "build:typescript": "                    run-p build:typescript:es2015",
     "build:typescript:cli": "                NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescriptcli)\" -- tsc --project ./build/cli",
     "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --no-bail --excludeFromGraph devDependencies --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- bash -c 'tsc --project ./build/es2015 && echo Success || true'",
-    "build:website": "                       bolt install --pure-lockfile && cd website && yarn build",
+    "build:website": "                       yarn install --pure-lockfile && cd website && yarn build",
     "changeset": "                           changeset",
-    "delete": "                              yarn run delete:modules && yarn run delete:build",
-    "delete:build": "                        bolt ws exec --parallel -- rm -rf dist",
-    "delete:modules": "                      bolt ws exec --parallel -- rm -rf node_modules && rm -rf node_modules",
+    "delete": "                              yarn run delete:modules && yarn run delete:build && yarn run delete:tmp",
+    "delete:build": "                        yarn manypkg exec rm -rf dist",
+    "delete:tmp": "                          yarn manypkg exec rm -rf tmp",
+    "delete:modules": "                      yarn manypkg exec rm -rf node_modules && rm -rf node_modules",
     "deploy": "                              cd website && yarn deploy",
     "postinstall": "                         manypkg check && preconstruct dev",
     "lint": "                                yarn run lint:eslint && yarn run lint:stylelint",
@@ -33,7 +41,7 @@
     "measure": "                             measure",
     "measure:changed": "                     yarn measure $(node build/ci-scripts/get.changed.packages.since.master.js --spaceDelimited --only='packages') --lint",
     "measure:updateSnapshot": "              yarn measure $(node build/ci-scripts/get.changed.packages.since.master.js --spaceDelimited --only='packages') --updateSnapshot",
-    "pkg:sort": "                            bolt ws exec -- npx sort-package-json package.json",
+    "pkg:sort": "                            yarn manypkg exec npx sort-package-json package.json",
     "start": "                               dotenv yarn run website:start",
     "start:authentication": "                dotenv yarn run website:start **/packages/authentication/**",
     "start:campaigns": "                     dotenv yarn run website:start **/packages/campaigns/**",
@@ -54,7 +62,8 @@
     "test:watch": "                          node ./build/jest-config/index.js --watch",
     "typecheck": "                           yarn run typecheck:typescript",
     "typecheck:typescript": "                tsc --noEmit --project ./tsconfig.typecheck.json",
-    "website:start": "                       cd website && yarn start"
+    "website:start": "                       cd website && yarn start",
+    "design-system:start": "                 cd apps/design-system && yarn dev"
   },
   "resolutions": {
     "styled-components": "^5.0.0"

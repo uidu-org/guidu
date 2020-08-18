@@ -12,7 +12,7 @@ install:
 
 script:
   - bash ./build-setup.sh
-  - bolt install --pure-lockfile
+  - yarn install --pure-lockfile
   - yarn build
 
 deploy:

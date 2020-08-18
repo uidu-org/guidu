@@ -2,10 +2,10 @@
   "name": "@uidu/analytics",
   "version": "0.1.23",
   "description": "The uidu component analytics framework",
-  "main": "dist/analytics.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/analytics",
   "license": "ISC",
   "author": "uidu",
+  "main": "dist/analytics.cjs.js",
   "module": "dist/analytics.esm.js",
   "types": "index.d.ts",
   "dependencies": {
