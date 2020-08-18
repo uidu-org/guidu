@@ -2,6 +2,7 @@
   "name": "@uidu/banner",
   "version": "0.1.11",
   "description": "React component that displays a prominent banner message and icon",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/banner",
   "license": "MIT",
   "sideEffects": false,
   "module": "src/index.ts",
@@ -11,15 +12,14 @@
   },
   "devDependencies": {
     "@uidu/button": "^0.1.62",
+    "@uidu/docs": "^0.1.47",
     "react": "^16.8.3",
-    "styled-components": "^5.0.0",
-    "@uidu/docs": "^0.1.47"
+    "styled-components": "^5.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "styled-components": "^5.0.0"
   },
   "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/banners",
-  "uidu:src": "index.ts",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/banner"
+  "uidu:src": "index.ts"
 }

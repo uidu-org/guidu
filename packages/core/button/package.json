@@ -5,8 +5,8 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/button",
   "license": "ISC",
   "author": "uidu",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/button.cjs.js",
+  "module": "dist/button.esm.js",
   "dependencies": {
     "@uidu/analytics": "^0.1.21",
     "@uidu/spinner": "^0.1.19",

@@ -3,6 +3,7 @@
   "version": "0.3.1",
   "private": false,
   "description": "A file uploader",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-file-uploader",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",
@@ -17,6 +18,5 @@
     "@uidu/docs": "^0.1.45",
     "@uidu/form": "^0.2.3"
   },
-  "uidu:src": "index.ts",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-file-uploader"
+  "uidu:src": "index.ts"
 }

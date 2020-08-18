@@ -3,6 +3,7 @@
   "version": "0.2.14",
   "private": false,
   "description": "Data view declarations and custom forms",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
   "license": "MIT",
   "module": "index.js",
   "types": "index.d.ts",
@@ -17,6 +18,5 @@
     "@uidu/form": "^0.2.3",
     "@uidu/select": "^0.4.4"
   },
-  "uidu:src": "index.ts",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views"
+  "uidu:src": "index.ts"
 }

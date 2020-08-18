@@ -5,17 +5,12 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/menu",
   "license": "ISC",
   "author": "uidu",
+  "sideEffects": false,
   "module": "index.js",
   "types": "index.d.ts",
-  "sideEffects": false,
-  "uidu:src": "src/index.ts",
   "dependencies": {
     "@emotion/core": "^10.0.34",
     "tslib": "^2.0.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.0.0",
@@ -28,5 +23,10 @@
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0"
+  },
+  "uidu:src": "src/index.ts"
 }

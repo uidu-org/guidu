@@ -2,6 +2,7 @@
   "name": "@uidu/util-data-test",
   "version": "0.1.12",
   "description": "Shared test and story data",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",
@@ -31,6 +32,5 @@
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   },
-  "uidu:src": "index.ts",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test"
+  "uidu:src": "index.ts"
 }

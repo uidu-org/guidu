@@ -3,6 +3,7 @@
   "version": "0.1.36",
   "private": false,
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-fields",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",
@@ -25,6 +26,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.47"
   },
-  "uidu:src": "index.ts",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-fields"
+  "uidu:src": "index.ts"
 }

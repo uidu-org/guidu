@@ -23,7 +23,6 @@
     "strictFunctionTypes": true,
     "target": "es5",
     "module": "esnext",
-    "noEmit": true,
     "lib": [
       "dom",
       "es5",

@@ -2,18 +2,13 @@
   "name": "@uidu/popup",
   "version": "0.1.0",
   "description": "A portalled popup primitive that is tied to a trigger element.",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/popup",
-  "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
+  "sideEffects": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "module:es2019": "dist/es2019/index.js",
   "types": "dist/cjs/index.d.ts",
-  "sideEffects": false,
-  "uidu:src": "src/index.ts",
   "dependencies": {
     "@emotion/core": "^10.0.34",
     "@uidu/popper": "^0.1.22",
@@ -21,10 +16,6 @@
     "@uidu/theme": "^0.2.6",
     "focus-trap": "^5.0.0",
     "tslib": "^2.0.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "react-dom": "^16.4.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.0.0",
@@ -36,5 +27,14 @@
     "@uidu/spinner": "^0.1.19",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.4.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "module:es2019": "dist/es2019/index.js",
+  "uidu:src": "src/index.ts"
 }

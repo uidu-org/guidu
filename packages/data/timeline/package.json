@@ -3,11 +3,11 @@
   "version": "0.1.6",
   "private": false,
   "description": "Timeline view for data",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/timeline",
   "license": "MIT",
   "author": "uidu",
   "main": "index.js",
   "devDependencies": {
     "@uidu/docs": "^0.1.45"
-  },
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/timeline"
+  }
 }

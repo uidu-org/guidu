@@ -8,10 +8,7 @@ import memoize from 'memoize-one';
 import * as React from 'react';
 import { Theme } from '../theme';
 import { ButtonProps, ThemeMode, ThemeProps, ThemeTokens } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import Content from './Content';
 import IconWrapper from './IconWrapper';
 import InnerWrapper from './InnerWrapper';
@@ -247,8 +244,8 @@ ButtonWithRef.displayName = 'Button';
 // @ts-ignore
 export default withAnalyticsContext({
   componentName: 'button',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onClick: createAndFireEventOnAtlaskit({
@@ -256,8 +253,8 @@ export default withAnalyticsContext({
       actionSubject: 'button',
       attributes: {
         componentName: 'button',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(ButtonWithRef),

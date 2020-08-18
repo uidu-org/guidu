@@ -1,7 +1,7 @@
 {
   "name": "@uidu/fs-loader",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/build/fs-loader",
   "version": "0.1.33",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/fs-loader",
   "license": "ISC",
   "author": "uidu",
   "main": "index.js",

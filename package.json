@@ -31,6 +31,7 @@
     "delete:build": "                        bolt ws exec --parallel -- rm -rf dist",
     "delete:modules": "                      bolt ws exec --parallel -- rm -rf node_modules && rm -rf node_modules",
     "deploy": "                              cd website && yarn deploy",
+    "postinstall": "                         manypkg check && preconstruct dev",
     "lint": "                                yarn run lint:eslint && yarn run lint:stylelint",
     "lint:checkPrettier": "                  eslint --print-config .eslintrc.json | eslint-config-prettier-check",
     "lint:eslint": "                         eslint '**/*.{js,ts,tsx}'",
@@ -512,7 +513,7 @@
   },
   "preconstruct": {
     "packages": [
-      "packages/*/*"
+      "packages/core/button"
     ]
   }
 }

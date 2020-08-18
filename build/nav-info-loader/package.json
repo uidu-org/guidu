@@ -1,7 +1,7 @@
 {
   "name": "@uidu/nav-info-loader",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/build/nav-info-loader",
   "version": "0.1.34",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/build/nav-info-loader",
   "license": "ISC",
   "author": "uidu",
   "main": "index.js",

@@ -16,12 +16,10 @@
     "uuid": "^8.0.0"
   },
   "devDependencies": {
-    "react": "^16.8.3",
-    "@uidu/avatar": "^0.3.3",
     "@uidu/docs": "^0.1.47",
     "@uidu/lozenge": "^0.1.23",
     "@uidu/tooltip": "^0.1.29",
-    "polished": "^3.0.3",
+    "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
