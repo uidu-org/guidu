@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.1.14
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/emoji@0.1.19
+  - @uidu/mentions@0.1.19
+  - @uidu/task-decision@0.1.20
+
 ## 0.1.13
 
 ### Patch Changes

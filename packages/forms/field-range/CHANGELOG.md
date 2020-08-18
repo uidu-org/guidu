@@ -1,5 +1,12 @@
 # @uidu/field-range
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.2.3
 
 ### Patch Changes

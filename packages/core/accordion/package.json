@@ -9,12 +9,12 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/docs": "^0.1.48",
+    "@uidu/docs": "^0.1.49",
     "react-accessible-accordion": "^3.0.0",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/theme": "^0.2.8"
+    "@uidu/theme": "^0.3.0"
   },
   "publishConfig": {
     "access": "public"

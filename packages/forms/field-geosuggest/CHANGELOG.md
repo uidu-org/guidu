@@ -1,5 +1,12 @@
 # @uidu/field-geosuggest
 
+## 0.2.11
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+
 ## 0.2.10
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 0.2.18
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/data-controls@0.3.19
+  - @uidu/gallery@0.1.41
+  - @uidu/shell@0.3.6
+  - @uidu/board@0.2.17
+
 ## 0.2.17
 
 ### Patch Changes

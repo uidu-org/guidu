@@ -1,5 +1,12 @@
 # @uidu/analytics-viewer
 
+## 0.1.11
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+
 ## 0.1.10
 
 ### Patch Changes

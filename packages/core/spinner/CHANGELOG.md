@@ -1,5 +1,16 @@
 # @uidu/spinner
 
+## 0.2.0
+
+### Minor Changes
+
+- fb9a093: Packages built with rollup should bump their dependents
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.1.22
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/dropdown-menu
 
+## 0.1.30
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/button@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/droplist@0.1.28
+  - @uidu/item@0.1.31
+
 ## 0.1.29
 
 ### Patch Changes

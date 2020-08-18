@@ -1,5 +1,12 @@
 # @uidu/radio
 
+## 0.4.6
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+
 ## 0.4.5
 
 ### Patch Changes

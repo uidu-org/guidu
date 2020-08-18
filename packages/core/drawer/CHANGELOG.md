@@ -1,5 +1,16 @@
 # @uidu/drawer
 
+## 0.2.21
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/blanket@0.1.25
+  - @uidu/docs@0.1.49
+  - @uidu/item@0.1.31
+
 ## 0.2.20
 
 ### Patch Changes

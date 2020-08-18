@@ -1,6 +1,6 @@
 {
   "name": "@uidu/map",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "description": "A React component for maps",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/map",
   "license": "ISC",
@@ -9,12 +9,12 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.2.8",
+    "@uidu/theme": "^0.3.0",
     "google-map-react": "^2.0.4",
     "recompose": "^0.30.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.48",
+    "@uidu/docs": "^0.1.49",
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0"

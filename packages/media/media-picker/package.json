@@ -19,9 +19,9 @@
     "@uppy/xhr-upload": "^1.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.1.63",
-    "@uidu/docs": "^0.1.48",
-    "@uidu/modal-dialog": "^0.1.42"
+    "@uidu/button": "^0.2.0",
+    "@uidu/docs": "^0.1.49",
+    "@uidu/modal-dialog": "^0.1.43"
   },
   "publishConfig": {
     "access": "public"

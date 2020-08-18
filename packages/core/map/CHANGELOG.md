@@ -1,5 +1,12 @@
 # @uidu/map
 
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.2.9
 
 ### Patch Changes

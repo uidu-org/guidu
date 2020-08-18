@@ -1,5 +1,12 @@
 # @uidu/portal
 
+## 0.1.21
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.1.20
 
 ### Patch Changes

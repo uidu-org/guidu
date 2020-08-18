@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.49
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/button@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/tooltip@0.1.31
+  - @uidu/section-message@0.1.26
+  - @uidu/code@0.1.27
+
 ## 0.1.48
 
 ### Patch Changes

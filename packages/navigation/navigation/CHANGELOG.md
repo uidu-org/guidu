@@ -1,5 +1,16 @@
 # @uidu/navigation
 
+## 0.2.31
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+  - @uidu/dropdown-menu@0.1.30
+  - @uidu/inline-dialog@0.1.21
+  - @uidu/tooltip@0.1.31
+  - @uidu/shell@0.3.6
+
 ## 0.2.30
 
 ### Patch Changes

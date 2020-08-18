@@ -1,5 +1,13 @@
 # @atlaskit/popup
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+  - @uidu/portal@0.1.21
+
 ## 0.1.1
 
 ### Patch Changes

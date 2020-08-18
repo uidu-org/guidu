@@ -1,5 +1,13 @@
 # @uidu/item
 
+## 0.1.31
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+  - @uidu/avatar@0.3.6
+
 ## 0.1.30
 
 ### Patch Changes

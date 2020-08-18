@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.41
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/data-controls@0.3.19
+
 ## 0.1.40
 
 ### Patch Changes

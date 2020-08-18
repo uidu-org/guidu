@@ -1,5 +1,16 @@
 # @uidu/message-form
 
+## 0.1.35
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/dropdown-menu@0.1.30
+  - @uidu/field-mentions@0.2.5
+  - @uidu/field-text@0.2.9
+  - @uidu/media-filmstrip@0.1.35
+
 ## 0.1.34
 
 ### Patch Changes

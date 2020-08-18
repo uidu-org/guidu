@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.5.4
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/tooltip@0.1.31
+
 ## 0.5.3
 
 ### Patch Changes

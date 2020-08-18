@@ -1,5 +1,17 @@
 # @uidu/attend
 
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/spinner@0.2.0
+  - @uidu/field-counter@0.2.5
+  - @uidu/field-text@0.2.9
+  - @uidu/field-textarea@0.2.4
+  - @uidu/shell@0.3.6
+  - @uidu/stepper@0.1.28
+
 ## 0.2.9
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/stepper
 
+## 0.1.28
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/theme@0.3.0
+
 ## 0.1.27
 
 ### Patch Changes

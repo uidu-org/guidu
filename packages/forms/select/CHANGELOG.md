@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 0.4.9
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/spinner@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/tooltip@0.1.31
+  - @uidu/checkbox@0.2.4
+
 ## 0.4.8
 
 ### Patch Changes

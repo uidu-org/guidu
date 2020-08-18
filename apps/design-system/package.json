@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,9 +12,9 @@
     "@mdx-js/mdx": "^1.6.16",
     "@next/mdx": "^9.5.2",
     "@preconstruct/next": "^1.0.1",
-    "@uidu/analytics": "^0.1.23",
-    "@uidu/button": "^0.1.64",
-    "@uidu/theme": "^0.2.9",
+    "@uidu/analytics": "^0.2.0",
+    "@uidu/button": "^0.2.0",
+    "@uidu/theme": "^0.3.0",
     "next": "^9.5.2",
     "react": "^16.8.3",
     "react-dom": "^16.4.0"

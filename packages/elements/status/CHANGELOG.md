@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.1.17
+
+### Patch Changes
+
+- Updated dependencies [fb9a093]
+  - @uidu/analytics@0.2.0
+  - @uidu/theme@0.3.0
+  - @uidu/analytics-gas-types@0.1.10
+  - @uidu/field-text@0.2.9
+  - @uidu/lozenge@0.1.25
+
 ## 0.1.16
 
 ### Patch Changes
