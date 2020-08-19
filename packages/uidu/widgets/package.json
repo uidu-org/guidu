@@ -9,14 +9,14 @@
   "dependencies": {
     "@uidu/contact": "^0.1.17",
     "@uidu/shell": "^0.3.5",
-    "@uidu/slider": "^1.2.6",
+    "@uidu/slider": "^1.3.0",
     "react-feather": "^2.0.3",
     "react-intl": "^5.2.1",
     "zoid": "^9.0.43"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.48",
-    "@uidu/modal-dialog": "^0.1.42"
+    "@uidu/docs": "^0.1.50",
+    "@uidu/modal-dialog": "^0.2.0"
   },
   "uidu:src": "index.ts"
 }

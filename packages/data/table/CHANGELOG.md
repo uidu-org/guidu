@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 0.1.112
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/item@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/select@0.4.10
+
 ## 0.1.111
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/comment
 
+## 0.1.17
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/avatar@0.4.0
+  - @uidu/message-renderer@0.1.26
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/dashboard-controls
 
+## 0.3.4
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/avatar@0.4.0
+  - @uidu/avatar-group@2.3.0
+  - @uidu/dropdown-menu@0.2.0
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/downshift
 
+## 0.3.8
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/droplist@0.2.0
+  - @uidu/item@0.2.0
+
 ## 0.3.7
 
 ### Patch Changes

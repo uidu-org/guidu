@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.1.36
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/dropdown-menu@0.2.0
+  - @uidu/message@0.1.49
+
 ## 0.1.35
 
 ### Patch Changes

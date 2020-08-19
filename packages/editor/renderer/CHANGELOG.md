@@ -1,5 +1,18 @@
 # @uidu/renderer
 
+## 0.1.33
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/code@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/theme@0.3.2
+  - @uidu/mentions@0.1.20
+  - @uidu/media-card@0.2.5
+  - @uidu/status@0.1.18
+
 ## 0.1.32
 
 ### Patch Changes

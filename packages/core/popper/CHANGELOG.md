@@ -1,5 +1,15 @@
 # @uidu/popper
 
+## 0.2.0
+
+### Minor Changes
+
+- 30e4244: All core components are now built with preconstruct (rollup)
+
+### Patch Changes
+
+- 30e4244: Fix core packages build
+
 ## 0.1.23
 
 ### Patch Changes

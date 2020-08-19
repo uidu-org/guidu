@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.50
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/code@0.2.0
+  - @uidu/section-message@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/theme@0.3.2
+
 ## 0.1.49
 
 ### Patch Changes

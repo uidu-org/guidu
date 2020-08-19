@@ -1,5 +1,15 @@
 # @uidu/donate
 
+## 0.2.16
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/modal-dialog@0.2.0
+  - @uidu/field-downshift@0.3.8
+  - @uidu/select@0.4.10
+
 ## 0.2.15
 
 ### Patch Changes

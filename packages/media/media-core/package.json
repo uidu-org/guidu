@@ -8,12 +8,12 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/docs": "^0.1.48",
+    "@uidu/docs": "^0.1.50",
     "@uppy/aws-s3": "^1.6.4",
     "@uppy/xhr-upload": "^1.0.1"
   },
   "devDependencies": {
-    "@uidu/section-message": "^0.1.25",
+    "@uidu/section-message": "^0.2.0",
     "react": "^16.8.3"
   },
   "peerDependencies": {

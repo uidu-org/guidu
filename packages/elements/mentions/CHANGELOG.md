@@ -1,5 +1,16 @@
 # @uidu/mentions
 
+## 0.1.20
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/avatar@0.4.0
+  - @uidu/lozenge@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/theme@0.3.2
+
 ## 0.1.19
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/status
 
+## 0.1.18
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/lozenge@0.2.0
+  - @uidu/theme@0.3.2
+
 ## 0.1.17
 
 ### Patch Changes

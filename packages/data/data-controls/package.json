@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.3.19",
+  "version": "0.3.20",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
@@ -14,17 +14,17 @@
     "@uidu/checkbox": "^0.2.4",
     "@uidu/data-fields": "^0.1.37",
     "@uidu/data-views": "^0.2.15",
-    "@uidu/drawer": "^0.2.21",
-    "@uidu/dropdown-menu": "^0.1.30",
+    "@uidu/drawer": "^0.3.0",
+    "@uidu/dropdown-menu": "^0.2.0",
     "@uidu/field-text": "^0.2.9",
     "@uidu/form": "^0.2.7",
-    "@uidu/inline-dialog": "^0.1.21",
-    "@uidu/item": "^0.1.31",
-    "@uidu/select": "^0.4.9",
+    "@uidu/inline-dialog": "^0.2.0",
+    "@uidu/item": "^0.2.0",
+    "@uidu/select": "^0.4.10",
     "@uidu/shell": "^0.3.6",
     "@uidu/spinner": "^0.2.0",
-    "@uidu/table": "^0.1.111",
-    "@uidu/tooltip": "^0.1.31",
+    "@uidu/table": "^0.1.112",
+    "@uidu/tooltip": "^0.2.0",
     "lodash": "^4.17.4",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.3",
@@ -33,7 +33,7 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.49"
+    "@uidu/docs": "^0.1.50"
   },
   "uidu:src": "index.ts"
 }

@@ -1,5 +1,24 @@
 # @uidu/editor-core
 
+## 0.5.3
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/avatar@0.4.0
+  - @uidu/avatar-group@2.3.0
+  - @uidu/droplist@0.2.0
+  - @uidu/item@0.2.0
+  - @uidu/modal-dialog@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/theme@0.3.2
+  - @uidu/mentions@0.1.20
+  - @uidu/emoji@0.1.20
+  - @uidu/media-card@0.2.5
+  - @uidu/status@0.1.18
+  - @uidu/select@0.4.10
+
 ## 0.5.2
 
 ### Patch Changes

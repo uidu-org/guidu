@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.3.2
+
+### Patch Changes
+
+- 30e4244: Fix core packages build
+
 ## 0.3.1
 
 ### Patch Changes

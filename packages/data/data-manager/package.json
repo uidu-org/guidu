@@ -10,22 +10,22 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/board": "^0.2.17",
-    "@uidu/calendar": "^0.1.26",
-    "@uidu/data-controls": "^0.3.19",
+    "@uidu/calendar": "^0.1.27",
+    "@uidu/data-controls": "^0.3.20",
     "@uidu/data-views": "^0.2.15",
     "@uidu/gallery": "^0.1.41",
     "@uidu/list": "^0.1.25",
     "@uidu/shell": "^0.3.6",
     "@uidu/spinner": "^0.2.0",
-    "@uidu/table": "^0.1.111",
+    "@uidu/table": "^0.1.112",
     "d3-array": "^2.2.0",
     "lodash": "^4.17.4",
     "react-media": "^1.9.2",
     "react-transition-group": "^4.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.49",
-    "@uidu/dropdown-menu": "^0.1.30",
+    "@uidu/docs": "^0.1.50",
+    "@uidu/dropdown-menu": "^0.2.0",
     "react-intl": "^5.2.1"
   },
   "uidu:src": "index.ts"
