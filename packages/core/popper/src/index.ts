@@ -1,13 +1,12 @@
-export {
-  Popper,
+export { Manager, Reference } from 'react-popper';
+export { Popper } from './Popper';
+export type {
   ManagerProps,
-  ReferenceProps,
-  PopperProps,
-  PopperArrowProps,
-  PopperChildrenProps,
-  StrictModifier,
   Modifier,
   Placement,
+  PopperArrowProps,
+  PopperChildrenProps,
+  PopperProps,
+  ReferenceProps,
+  StrictModifier,
 } from './Popper';
-
-export { Manager, Reference } from 'react-popper';
