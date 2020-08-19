@@ -9,14 +9,14 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.3.0",
+    "@uidu/theme": "^0.3.2",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.3",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/badge": "^0.1.23",
-    "@uidu/docs": "^0.1.49",
+    "@uidu/badge": "^0.2.0",
+    "@uidu/docs": "^0.1.50",
     "@uidu/shell": "^0.3.6",
     "faker": "^4.1.0"
   },

@@ -1,5 +1,21 @@
 # @uidu/drawer
 
+## 0.3.0
+
+### Minor Changes
+
+- 30e4244: All core components are now built with preconstruct (rollup)
+
+### Patch Changes
+
+- 30e4244: Fix core packages build
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/blanket@0.2.0
+  - @uidu/item@0.2.0
+  - @uidu/theme@0.3.2
+  - @uidu/docs@0.1.50
+
 ## 0.2.21
 
 ### Patch Changes

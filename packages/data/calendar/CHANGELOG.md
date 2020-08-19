@@ -1,5 +1,13 @@
 # @uidu/calendar
 
+## 0.1.27
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/dropdown-menu@0.2.0
+
 ## 0.1.26
 
 ### Patch Changes

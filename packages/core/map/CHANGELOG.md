@@ -1,5 +1,17 @@
 # @uidu/map
 
+## 0.3.0
+
+### Minor Changes
+
+- 30e4244: All core components are now built with preconstruct (rollup)
+
+### Patch Changes
+
+- 30e4244: Fix core packages build
+- Updated dependencies [30e4244]
+  - @uidu/theme@0.3.2
+
 ## 0.2.10
 
 ### Patch Changes

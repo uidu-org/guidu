@@ -1,5 +1,13 @@
 # @uidu/field-color-picker
 
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/inline-dialog@0.2.0
+
 ## 0.2.4
 
 ### Patch Changes

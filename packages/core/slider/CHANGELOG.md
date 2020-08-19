@@ -1,5 +1,15 @@
 # @uidu/slider
 
+## 1.3.0
+
+### Minor Changes
+
+- 30e4244: All core components are now built with preconstruct (rollup)
+
+### Patch Changes
+
+- 30e4244: Fix core packages build
+
 ## 1.2.6
 
 ### Patch Changes

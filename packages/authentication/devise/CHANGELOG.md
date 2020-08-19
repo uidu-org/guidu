@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.2.20
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/avatar@0.4.0
+  - @uidu/slider@1.3.0
+  - @uidu/field-password@0.2.6
+
 ## 0.2.19
 
 ### Patch Changes

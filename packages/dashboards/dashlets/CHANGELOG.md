@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 0.5.5
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/tooltip@0.2.0
+  - @uidu/dashlet-controls@0.2.4
+
 ## 0.5.4
 
 ### Patch Changes

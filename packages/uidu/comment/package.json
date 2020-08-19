@@ -1,6 +1,6 @@
 {
   "name": "@uidu/comment",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "private": false,
   "description": "Comment components",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/comment",
@@ -9,18 +9,18 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/avatar": "^0.3.6",
+    "@uidu/avatar": "^0.4.0",
     "@uidu/field-mentions": "^0.2.5",
     "@uidu/field-text": "^0.2.9",
     "@uidu/form": "^0.2.7",
-    "@uidu/message-renderer": "^0.1.25",
+    "@uidu/message-renderer": "^0.1.26",
     "@uidu/spinner": "^0.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.49"
+    "@uidu/docs": "^0.1.50"
   },
   "uidu:src": "index.ts"
 }

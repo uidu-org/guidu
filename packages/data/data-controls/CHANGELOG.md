@@ -1,5 +1,19 @@
 # @uidu/data-controls
 
+## 0.3.20
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/drawer@0.3.0
+  - @uidu/dropdown-menu@0.2.0
+  - @uidu/inline-dialog@0.2.0
+  - @uidu/item@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/table@0.1.112
+  - @uidu/select@0.4.10
+
 ## 0.3.19
 
 ### Patch Changes

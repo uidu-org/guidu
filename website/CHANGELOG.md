@@ -1,5 +1,24 @@
 # Change Log
 
+## 0.1.99
+
+### Patch Changes
+
+- 30e4244: Fix core packages build
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/badge@0.2.0
+  - @uidu/code@0.2.0
+  - @uidu/drawer@0.3.0
+  - @uidu/lozenge@0.2.0
+  - @uidu/modal-dialog@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/theme@0.3.2
+  - @uidu/navigation@0.2.32
+  - @uidu/docs@0.1.50
+  - @uidu/table@0.1.112
+  - @uidu/select@0.4.10
+
 ## 0.1.98
 
 ### Patch Changes

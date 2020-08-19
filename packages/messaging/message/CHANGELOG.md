@@ -1,5 +1,20 @@
 # @uidu/message
 
+## 0.1.49
+
+### Patch Changes
+
+- Updated dependencies [30e4244]
+- Updated dependencies [30e4244]
+  - @uidu/avatar@0.4.0
+  - @uidu/drawer@0.3.0
+  - @uidu/dropdown-menu@0.2.0
+  - @uidu/tooltip@0.2.0
+  - @uidu/media-viewer@0.1.44
+  - @uidu/media-card@0.2.5
+  - @uidu/message-form@0.1.36
+  - @uidu/message-renderer@0.1.26
+
 ## 0.1.48
 
 ### Patch Changes
