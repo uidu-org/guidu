@@ -1,7 +1,4 @@
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../../version.json';
+import pkg from '../../version.json';
 
 export const hoveredPayload = {
   action: 'displayed',
@@ -9,8 +6,8 @@ export const hoveredPayload = {
 
   attributes: {
     componentName: 'tooltip',
-    packageName,
-    packageVersion,
+    packageName: pkg.name,
+    packageVersion: pkg.version,
   },
 };
 
@@ -20,7 +17,7 @@ export const unhoveredPayload = {
 
   attributes: {
     componentName: 'tooltip',
-    packageName,
-    packageVersion,
+    packageName: pkg.name,
+    packageVersion: pkg.version,
   },
 };

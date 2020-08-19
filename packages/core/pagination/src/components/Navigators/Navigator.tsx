@@ -1,5 +1,5 @@
-import Button, { ButtonProps } from '@atlaskit/button';
-import { gridSize } from '@atlaskit/theme/constants';
+import Button, { ButtonProps } from '@uidu/button';
+import { gridSize } from '@uidu/theme/constants';
 import React, { FC, SyntheticEvent } from 'react';
 
 export type NavigatorPropsType = {
@@ -18,7 +18,7 @@ export type NavigatorPropsType = {
   component?: React.ElementType<any>;
 };
 
-const Navigator: FC<ButtonProps> = props => (
+const Navigator: FC<ButtonProps> = (props) => (
   // @ts-ignore
   <Button
     {...props}

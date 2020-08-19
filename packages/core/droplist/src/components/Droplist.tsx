@@ -15,10 +15,7 @@ import Wrapper, {
   Trigger,
 } from '../styled/Droplist';
 import itemTheme from '../theme/item-theme';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 const halfFocusRing = 1;
 const dropOffset = `0, ${gridSize()}px`;
@@ -202,8 +199,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'droplist',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onOpenChange: createAndFireEventOnAtlaskit({
@@ -212,8 +209,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'droplist',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(Droplist),

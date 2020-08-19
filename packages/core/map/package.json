@@ -2,11 +2,11 @@
   "name": "@uidu/map",
   "version": "0.2.10",
   "description": "A React component for maps",
-  "main": "dist/map.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/map",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/map.cjs.js",
   "module": "dist/map.esm.js",
   "types": "index.d.ts",
   "dependencies": {

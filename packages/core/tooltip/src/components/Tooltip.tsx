@@ -15,10 +15,7 @@ import NodeResolver from 'react-node-resolver';
 import { StyledComponentBase } from 'styled-components';
 import { Tooltip as StyledTooltip } from '../styled';
 import { FakeMouseElement, PositionType, PositionTypeBase } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import Animation from './Animation';
 import { hoveredPayload, unhoveredPayload } from './utils/analytics-payloads';
 
@@ -360,8 +357,8 @@ export type TooltipType = Tooltip;
 
 export default withAnalyticsContext({
   componentName: 'tooltip',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onHide: unhoveredPayload,

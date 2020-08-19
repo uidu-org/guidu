@@ -6,10 +6,7 @@ import {
 import React, { Component, Fragment, SyntheticEvent } from 'react';
 import { PaginationPropTypes } from '../types';
 import collapseRangeHelper from '../util/collapseRange';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import { LeftNavigator, RightNavigator } from './Navigators';
 import PageComponent from './Page';
 import renderDefaultEllipsis from './renderEllipsis';
@@ -168,6 +165,6 @@ class Pagination extends Component<PaginationPropTypes, State> {
 
 export default withAnalyticsContext({
   componentName: 'pagination',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(withAnalyticsEvents()(Pagination));

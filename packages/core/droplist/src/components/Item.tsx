@@ -18,10 +18,7 @@ import {
   InputWrapper,
 } from '../styled/Item';
 import { getInputBackground, getInputFill } from '../utils';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import Element from './Element';
 
 const inputTypes = { checkbox: Checkbox, radio: Radio };
@@ -167,8 +164,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'droplistItem',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onActivate: createAndFireEventOnAtlaskit({
@@ -177,8 +174,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'droplistItem',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(Item),

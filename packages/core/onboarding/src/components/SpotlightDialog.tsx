@@ -9,10 +9,7 @@ import React, { Component, ComponentType, ReactNode } from 'react';
 import FocusLock from 'react-focus-lock';
 import { Image } from '../styled/Dialog';
 import { Actions } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import { CardTokens } from './Card.js';
 import SpotlightCard from './SpotlightCard';
 import ValueChanged from './ValueChanged';
@@ -150,8 +147,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'spotlight',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     targetOnClick: createAndFireEventOnAtlaskit({
@@ -159,8 +156,8 @@ export default withAnalyticsContext({
       actionSubject: 'spotlight',
       attributes: {
         componentName: 'spotlight',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(SpotlightDialog),

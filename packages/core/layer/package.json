@@ -2,11 +2,11 @@
   "name": "@uidu/layer",
   "version": "0.1.16",
   "description": "A React layer component responsible for the position of an element on a page",
-  "main": "dist/layer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/layer",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/layer.cjs.js",
   "module": "dist/layer.esm.js",
   "dependencies": {
     "popper.js": "^1.16.1",

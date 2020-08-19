@@ -11,10 +11,7 @@ import { TransitionGroup } from 'react-transition-group';
 import { ThemeProvider } from 'styled-components';
 import drawerItemTheme from '../theme/drawer-item-theme';
 import { CloseTrigger, DrawerProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import DrawerPrimitive from './DrawerPrimitive';
 import { Fade } from './transitions';
 
@@ -150,6 +147,6 @@ export const DrawerItemTheme = (props: { children: React.ReactNode }) => (
 
 export default withAnalyticsContext({
   componentName: 'drawer',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(withAnalyticsEvents()(DrawerBase));

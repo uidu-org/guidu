@@ -8,10 +8,7 @@ import { canUseDOM } from 'exenv';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { WidthNames, WIDTH_ENUM } from '../shared-variables';
 import { Dialog, FillScreen as StyledFillScreen } from '../styled/Modal';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import { Animation } from './Animation';
 import Content from './Content';
 import FocusLock from './FocusLock';
@@ -205,8 +202,8 @@ export const ModalDialogWithoutAnalytics = Modal;
 
 export default withAnalyticsContext({
   componentName: 'modalDialog',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onClose: createAndFireEventOnAtlaskit({
@@ -215,8 +212,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'modalDialog',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(Modal),

@@ -2,11 +2,11 @@
   "name": "@uidu/code",
   "version": "0.1.27",
   "description": "Renders inline code snippets and code blocks",
-  "main": "dist/code.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/code",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/code.cjs.js",
   "module": "dist/code.esm.js",
   "types": "index.d.ts",
   "config": {

@@ -1,7 +1,7 @@
 import {
   createAndFireEvent,
   withAnalyticsContext,
-  withAnalyticsEvents,
+  withAnalyticsEvents
 } from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
 import React, { Component, ReactNode } from 'react';
@@ -14,13 +14,10 @@ import {
   AppearanceType,
   AvatarPropTypes,
   IndicatorSizeType,
-  SizeType,
+  SizeType
 } from '../types';
 import { omit } from '../utils';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import AvatarImage from './AvatarImage';
 import { propsOmittedFromClickData } from './constants';
 import Presence from './Presence';
@@ -206,8 +203,8 @@ class Avatar extends Component<AvatarPropTypes> {
 }
 
 export const AvatarWithoutAnalytics = mapProps<AvatarPropTypes>({
-  appearance: props => props.appearance || Avatar.defaultProps.appearance,
-  isInteractive: props =>
+  appearance: (props) => props.appearance || Avatar.defaultProps.appearance,
+  isInteractive: (props) =>
     Boolean(
       (typeof props.enableTooltip !== 'undefined'
         ? props.enableTooltip
@@ -217,6 +214,6 @@ export const AvatarWithoutAnalytics = mapProps<AvatarPropTypes>({
 
 export default withAnalyticsContext({
   componentName: 'avatar',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(withAnalyticsEvents()(AvatarWithoutAnalytics));

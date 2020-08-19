@@ -2,11 +2,11 @@
   "name": "@uidu/tooltip",
   "version": "0.1.31",
   "description": "A React Component for displaying Tooltips",
-  "main": "dist/tooltip.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/tooltip",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/tooltip.cjs.js",
   "module": "dist/tooltip.esm.js",
   "types": "index.d.ts",
   "dependencies": {

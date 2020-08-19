@@ -10,4 +10,4 @@ export { default as DropdownItem } from './components/item/DropdownItem';
 export { default as DropdownItemCheckbox } from './components/item/DropdownItemCheckbox';
 export { default as DropdownItemRadio } from './components/item/DropdownItemRadio';
 // Types
-export { DropdownMenuStatefulProps } from './types';
+export * from './types';

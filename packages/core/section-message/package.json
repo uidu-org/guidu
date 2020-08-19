@@ -2,14 +2,15 @@
   "name": "@uidu/section-message",
   "version": "0.1.26",
   "description": "A react component used to alert users of a particular screen area that needs user action",
-  "main": "dist/section-message.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/section-message",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/section-message.cjs.js",
   "module": "dist/section-message.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@atlaskit/icon": "^21.0.0",
     "@uidu/button": "^0.2.0",
     "@uidu/theme": "^0.3.0"
   },

@@ -1,5 +1,5 @@
-export { FooterComponentProps } from './components/Footer';
-export { HeaderComponentProps } from './components/Header';
+export type { FooterComponentProps } from './components/Footer';
+export type { HeaderComponentProps } from './components/Header';
 export { default as ModalTransition } from './components/ModalTransition';
 export { default } from './components/ModalWrapper';
 export {

@@ -7,10 +7,7 @@ import { Manager, Popper, Reference } from '@uidu/popper';
 import React, { Component } from 'react';
 import NodeResolver from 'react-node-resolver';
 import { Placement, Props } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import { Container } from './styled';
 
 class InlineDialog extends Component<Props, {}> {
@@ -112,8 +109,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'inlineDialog',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onClose: createAndFireEventOnAtlaskit({
@@ -122,8 +119,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'inlineDialog',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(InlineDialog),

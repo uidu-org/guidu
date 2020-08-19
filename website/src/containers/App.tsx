@@ -78,7 +78,7 @@ export default class App extends React.Component<{}, State> {
     if (process.env.NODE_ENV === 'development') {
       const canHandleKey = document.activeElement === document.body;
       if (canHandleKey && e.key === 'd') {
-        this.setState(state => ({
+        this.setState((state) => ({
           mode: state.mode === 'light' ? 'dark' : 'light',
         }));
       }
@@ -100,7 +100,6 @@ export default class App extends React.Component<{}, State> {
               />
               <Route>
                 <Shell>
-                  <div>Header</div>
                   <ShellContent>
                     <ShellNavigation
                       className="d-lg-flex d-none shadow-sm"
@@ -145,7 +144,7 @@ export default class App extends React.Component<{}, State> {
 
                         <Route
                           path="/packages/:groupId/:pkgId/changelog/:semver?"
-                          children={props => (
+                          children={(props) => (
                             <ModalTransition>
                               {props.match && <ChangelogModal {...props} />}
                             </ModalTransition>
@@ -153,7 +152,7 @@ export default class App extends React.Component<{}, State> {
                         />
                         <Route
                           path="/packages/:groupId/:pkgId/example/:exampleId"
-                          children={props => (
+                          children={(props) => (
                             <ModalTransition>
                               {props.match && <ExamplesModal {...props} />}
                             </ModalTransition>

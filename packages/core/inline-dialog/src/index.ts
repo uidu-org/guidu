@@ -1,2 +1,2 @@
 export { default } from './InlineDialog';
-export { Placement } from './types';
+export * from './types';

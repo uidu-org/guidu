@@ -3,11 +3,11 @@
   "version": "0.1.17",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
-  "main": "dist/flag.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/flag",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/flag.cjs.js",
   "module": "dist/flag.esm.js",
   "types": "index.d.ts",
   "dependencies": {

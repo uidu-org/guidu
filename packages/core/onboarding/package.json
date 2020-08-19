@@ -2,11 +2,11 @@
   "name": "@uidu/onboarding",
   "version": "0.1.17",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
-  "main": "dist/onboarding.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/onboarding",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/onboarding.cjs.js",
   "module": "dist/onboarding.esm.js",
   "types": "index.d.ts",
   "dependencies": {

@@ -6,7 +6,7 @@ import {
 } from '@uidu/analytics';
 import React from 'react';
 import Div from './styled';
-import { name as packageName, version as packageVersion } from './version.json';
+import pkg from './version.json';
 
 interface Props extends WithAnalyticsEventsProps {
   /** Whether mouse events can pierce the blanket. If true, onBlanketClicked will not be fired */
@@ -49,8 +49,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'blanket',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlanketClicked: createAndFireEventOnAtlaskit({
@@ -59,8 +59,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'blanket',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(Blanket),

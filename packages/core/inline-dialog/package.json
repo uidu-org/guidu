@@ -2,11 +2,11 @@
   "name": "@uidu/inline-dialog",
   "version": "0.1.21",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
-  "main": "dist/inline-dialog.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/inline-dialog",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/inline-dialog.cjs.js",
   "module": "dist/inline-dialog.esm.js",
   "types": "index.d.ts",
   "dependencies": {

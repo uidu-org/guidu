@@ -2,11 +2,11 @@
   "name": "@uidu/avatar-group",
   "version": "2.2.6",
   "description": "A component to display avatars as a group, either as a stack or in a grid.",
-  "main": "dist/avatar-group.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/avatar-group",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/avatar-group.cjs.js",
   "module": "dist/avatar-group.esm.js",
   "dependencies": {
     "@uidu/avatar": "^0.3.6",

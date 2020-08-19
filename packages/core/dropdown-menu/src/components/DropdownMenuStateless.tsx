@@ -18,10 +18,7 @@ import {
   OnOpenChangeArgs,
 } from '../types';
 import { KEY_DOWN, KEY_ENTER, KEY_SPACE } from '../util/keys';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import DropdownItemClickManager from './context/DropdownItemClickManager';
 import DropdownItemFocusManager from './context/DropdownItemFocusManager';
 import DropdownItemSelectionCache from './context/DropdownItemSelectionCache';
@@ -512,8 +509,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'dropdownMenu',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onOpenChange: createAndFireEventOnAtlaskit({
@@ -522,8 +519,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'dropdownMenu',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(DropdownMenuStateless),

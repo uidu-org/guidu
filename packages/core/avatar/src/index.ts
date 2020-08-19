@@ -9,12 +9,8 @@ export { withPseudoState } from './hoc';
 export { AVATAR_SIZES, BORDER_WIDTH } from './styled/constants';
 export { getBorderRadius, getInnerStyles } from './styled/utils';
 // Theming is currently experimental.
-export { Theme, ThemeProps, ThemeTokens } from './theme';
-export { ThemeItem, ThemeItemTokens } from './theme/item';
-export {
-  AppearanceType,
-  AvatarClickType,
-  AvatarPropTypes,
-  IndicatorSizeType,
-  SizeType,
-} from './types';
+export { Theme } from './theme';
+export type { ThemeProps, ThemeTokens } from './theme';
+export { ThemeItem } from './theme/item';
+export type { ThemeItemTokens } from './theme/item';
+export * from './types';

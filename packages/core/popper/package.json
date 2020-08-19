@@ -2,11 +2,11 @@
   "name": "@uidu/popper",
   "version": "0.1.23",
   "description": "Wrapper for react-popper with common config and some helpers",
-  "main": "dist/popper.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/popper",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/popper.cjs.js",
   "module": "dist/popper.esm.js",
   "types": "index.d.ts",
   "dependencies": {

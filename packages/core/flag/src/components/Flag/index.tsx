@@ -7,10 +7,7 @@ import React, { Component, MouseEventHandler } from 'react';
 import { ChevronDown, ChevronUp, X } from 'react-feather';
 import { flagFocusRingColor } from '../../theme';
 import { AppearanceTypes, FlagProps } from '../../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../../version.json';
+import pkg from '../../version.json';
 import Expander from '../Expander';
 import Actions from '../FlagActions';
 import Container, {
@@ -190,8 +187,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'flag',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -201,8 +198,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'flag',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(Flag),
