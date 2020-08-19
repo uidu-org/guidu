@@ -33,8 +33,11 @@
     "entrypoints": [
       ".",
       "colors",
+      "components",
       "constants",
-      "typography"
+      "elevation",
+      "typography",
+      "math"
     ]
   },
   "uidu:src": "src/index.ts"

@@ -34,6 +34,7 @@ export const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
       height: auto;
       scroll-behavior: smooth;
       overflow-y: auto;
+      overflow-x: hidden;
       overscroll-behavior-y: contain;
     `;
   }
@@ -48,6 +49,7 @@ export const mobileOnlyHeight = (fixedHeight: boolean | 'mobileOnly') => {
     height: auto;
     scroll-behavior: smooth;
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior-y: contain;
   `;
 };
