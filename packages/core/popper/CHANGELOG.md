@@ -1,5 +1,12 @@
 # @uidu/popper
 
+## 0.2.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+- 2b445b6: Try to fix popper build
+
 ## 0.2.0
 
 ### Minor Changes

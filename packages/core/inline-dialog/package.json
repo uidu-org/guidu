@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/inline-dialog",
   "license": "MIT",
@@ -11,8 +11,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.2.0",
-    "@uidu/popper": "^0.2.0",
-    "@uidu/theme": "^0.3.2",
+    "@uidu/popper": "^0.2.1",
+    "@uidu/theme": "^0.3.3",
     "react-node-resolver": "^2.0.1"
   },
   "devDependencies": {

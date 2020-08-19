@@ -1,5 +1,17 @@
 # @uidu/onboarding
 
+## 0.2.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+- Updated dependencies [0ccd041]
+- Updated dependencies [2b445b6]
+  - @uidu/modal-dialog@0.2.1
+  - @uidu/popper@0.2.1
+  - @uidu/portal@0.2.1
+  - @uidu/theme@0.3.3
+
 ## 0.2.0
 
 ### Minor Changes

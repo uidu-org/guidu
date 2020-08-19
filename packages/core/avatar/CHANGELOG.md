@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.4.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+- Updated dependencies [0ccd041]
+  - @uidu/theme@0.3.3
+  - @uidu/tooltip@0.2.1
+
 ## 0.4.0
 
 ### Minor Changes

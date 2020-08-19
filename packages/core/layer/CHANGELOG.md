@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.2.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+
 ## 0.2.0
 
 ### Minor Changes

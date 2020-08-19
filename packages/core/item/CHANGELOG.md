@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.2.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+- Updated dependencies [0ccd041]
+  - @uidu/avatar@0.4.1
+  - @uidu/theme@0.3.3
+
 ## 0.2.0
 
 ### Minor Changes
