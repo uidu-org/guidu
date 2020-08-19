@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.3.4
+
+### Patch Changes
+
+- ccab220: Added more entrypoints for theme
+
 ## 0.3.3
 
 ### Patch Changes
