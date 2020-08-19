@@ -1,6 +1,6 @@
 {
   "name": "@uidu/code",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Renders inline code snippets and code blocks",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/code",
   "license": "ISC",
@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/theme": "^0.3.2",
+    "@uidu/theme": "^0.3.3",
     "memoize-one": "^5.0.0",
     "react-syntax-highlighter": "^13.0.0"
   },

@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.3.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+- Updated dependencies [0ccd041]
+  - @uidu/theme@0.3.3
+
 ## 0.3.0
 
 ### Minor Changes

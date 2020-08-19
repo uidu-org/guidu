@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.3.1
+
+### Patch Changes
+
+- 0ccd041: Remove tsconfig build
+
 ## 1.3.0
 
 ### Minor Changes

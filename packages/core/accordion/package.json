@@ -1,6 +1,6 @@
 {
   "name": "@uidu/accordion",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React accessible accordion component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/accordion",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/theme": "^0.3.2"
+    "@uidu/theme": "^0.3.3"
   },
   "publishConfig": {
     "access": "public"
