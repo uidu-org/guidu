@@ -476,8 +476,8 @@ export class DropdownMenuStateless extends Component<
           {...deprecatedProps}
           analyticsContext={{
             componentName: 'dropdownMenu',
-            packageName,
-            packageVersion,
+            packageName: pkg.name,
+            packageVersion: pkg.version,
           }}
           testId={testId}
         >

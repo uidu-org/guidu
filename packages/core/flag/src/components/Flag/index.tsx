@@ -121,7 +121,7 @@ class Flag extends Component<FlagProps, State> {
 
   // We prevent default on mouse down to avoid focus ring when the flag is clicked,
   // while still allowing it to be focused with the keyboard.
-  handleMouseDown: MouseEventHandler<HTMLElement> = e => {
+  handleMouseDown: MouseEventHandler<HTMLElement> = (e) => {
     e.preventDefault();
   };
 
@@ -166,8 +166,8 @@ const createAndFireEventOnUidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'flag',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnUidu({
@@ -176,8 +176,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'flag',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 

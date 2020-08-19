@@ -28,8 +28,8 @@ const createAndFireOnClick = (
     actionSubject: 'drawer',
     attributes: {
       componentName: 'drawer',
-      packageName,
-      packageVersion,
+      packageName: pkg.name,
+      packageVersion: pkg.version,
       trigger,
     },
   })(createAnalyticsEvent);

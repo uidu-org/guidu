@@ -1,7 +1,7 @@
 import {
   createAndFireEvent,
   withAnalyticsContext,
-  withAnalyticsEvents
+  withAnalyticsEvents,
 } from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
 import React, { Component, ReactNode } from 'react';
@@ -14,7 +14,7 @@ import {
   AppearanceType,
   AvatarPropTypes,
   IndicatorSizeType,
-  SizeType
+  SizeType,
 } from '../types';
 import { omit } from '../utils';
 import pkg from '../version.json';
@@ -52,8 +52,8 @@ class Avatar extends Component<AvatarPropTypes> {
 
           attributes: {
             componentName: 'avatar',
-            packageName,
-            packageVersion,
+            packageName: pkg.name,
+            packageVersion: pkg.version,
           },
         })(createAnalyticsEvent)
       : undefined;

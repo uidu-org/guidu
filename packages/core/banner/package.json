@@ -22,5 +22,5 @@
     "styled-components": "^5.0.0"
   },
   "atlaskit:designLink": "https://atlassian.design/guidelines/product/components/banners",
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

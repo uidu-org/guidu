@@ -1,23 +1,22 @@
-import React, { useMemo } from 'react';
-
 import { Placement, VirtualElement } from '@popperjs/core';
+import React, { useMemo } from 'react';
 import {
   Modifier,
+  Popper as ReactPopper,
   PopperChildrenProps,
   PopperProps,
-  Popper as ReactPopper,
 } from 'react-popper';
 
 // Export types from PopperJS / React Popper
-export { Placement, VirtualElement } from '@popperjs/core';
-export {
+export type { Placement, VirtualElement } from '@popperjs/core';
+export type {
   ManagerProps,
-  ReferenceProps,
-  PopperProps,
+  Modifier,
   PopperArrowProps,
   PopperChildrenProps,
+  PopperProps,
+  ReferenceProps,
   StrictModifier,
-  Modifier,
 } from 'react-popper';
 
 type Offset = [number | null | undefined, number | null | undefined];

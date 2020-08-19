@@ -56,8 +56,8 @@ class Pagination extends Component<PaginationPropTypes, State> {
 
         attributes: {
           componentName: 'pagination',
-          packageName,
-          packageVersion,
+          packageName: pkg.name,
+          packageVersion: pkg.version,
         },
       })(createAnalyticsEvent);
     }
@@ -89,7 +89,7 @@ class Pagination extends Component<PaginationPropTypes, State> {
           key={`page-${getPageLabel ? getPageLabel(page, index) : index}`}
           // @ts-ignore
           component={components!.Page}
-          onClick={event => this.onChange(event, index)}
+          onClick={(event) => this.onChange(event, index)}
           isSelected={selectedIndex === index}
           page={page}
         >
@@ -123,7 +123,7 @@ class Pagination extends Component<PaginationPropTypes, State> {
       <LeftNavigator
         key="left-navigator"
         component={components!.Previous}
-        onClick={event => this.onChange(event, selectedIndex - 1)}
+        onClick={(event) => this.onChange(event, selectedIndex - 1)}
         isDisabled={selectedIndex === 0}
         {...props}
       />
@@ -141,7 +141,7 @@ class Pagination extends Component<PaginationPropTypes, State> {
       <RightNavigator
         key="right-navigator"
         component={components!.Next}
-        onClick={event => this.onChange(event, selectedIndex + 1)}
+        onClick={(event) => this.onChange(event, selectedIndex + 1)}
         isDisabled={selectedIndex === pages.length - 1}
         {...props}
       />

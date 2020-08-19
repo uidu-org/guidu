@@ -30,5 +30,5 @@
     "react": "^16.8.3",
     "styled-components": "^5.0.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }
