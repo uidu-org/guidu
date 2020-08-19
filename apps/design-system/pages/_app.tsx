@@ -1,5 +1,5 @@
-import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import React from 'react';
 import '../styles/globals.css';
 
 const mdComponents = {
@@ -7,7 +7,6 @@ const mdComponents = {
 };
 
 function MyApp({ Component, pageProps }) {
-
   return (
     <MDXProvider components={mdComponents}>
       <Component {...pageProps} />
@@ -15,4 +14,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+export default MyApp;

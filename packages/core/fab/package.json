@@ -3,10 +3,11 @@
   "version": "0.1.16",
   "private": false,
   "description": "Floating action buttons",
+  "main": "dist/fab.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/fab",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/fab.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "react-feather": "^2.0.3",

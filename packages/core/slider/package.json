@@ -2,11 +2,12 @@
   "name": "@uidu/slider",
   "version": "1.2.6",
   "description": "Inputs using Formsy",
+  "main": "dist/slider.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/slider",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/slider.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "classnames": "^2.2.6",

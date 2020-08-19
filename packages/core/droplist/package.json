@@ -2,10 +2,11 @@
   "name": "@uidu/droplist",
   "version": "0.1.28",
   "description": "Droplist component",
+  "main": "dist/droplist.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/droplist",
   "license": "ISC",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/droplist.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.0.0",
     "@uidu/analytics": "^0.2.0",

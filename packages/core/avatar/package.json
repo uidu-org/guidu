@@ -2,11 +2,12 @@
   "name": "@uidu/avatar",
   "version": "0.3.6",
   "description": "A component that represents a user",
+  "main": "dist/avatar.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/avatar",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/avatar.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.2.0",

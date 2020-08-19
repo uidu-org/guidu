@@ -2,11 +2,12 @@
   "name": "@uidu/portal",
   "version": "0.1.21",
   "description": "Atlaskit wrapper for rendering components in React portals",
+  "main": "dist/portal.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/portal",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
     "@uidu/theme": "^0.3.0",

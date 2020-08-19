@@ -521,10 +521,7 @@
   },
   "preconstruct": {
     "packages": [
-      "packages/core/analytics",
-      "packages/core/button",
-      "packages/core/spinner",
-      "packages/core/theme"
+      "packages/core/*"
     ]
   }
 }

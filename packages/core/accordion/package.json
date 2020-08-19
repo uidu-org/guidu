@@ -2,11 +2,12 @@
   "name": "@uidu/accordion",
   "version": "0.1.23",
   "description": "React accessible accordion component",
+  "main": "dist/accordion.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/accordion",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/accordion.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/docs": "^0.1.49",
