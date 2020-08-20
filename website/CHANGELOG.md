@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/button@0.3.1
+  - @uidu/drawer@0.4.1
+  - @uidu/table@0.1.114
+  - @uidu/navigation@0.3.1
+  - @uidu/shell@1.0.1
+
 ## 0.2.0
 
 ### Minor Changes

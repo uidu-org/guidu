@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.4.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/item@0.3.1
+
 ## 0.4.0
 
 ### Minor Changes

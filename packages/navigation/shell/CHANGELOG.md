@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.0.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+
 ## 1.0.0
 
 ### Major Changes

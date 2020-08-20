@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.2.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 0.3.4
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/button@0.3.1
+  - @uidu/field-base@0.3.1
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/field-geosuggest
 
+## 0.2.13
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/field-base@0.3.1
+
 ## 0.2.12
 
 ### Patch Changes

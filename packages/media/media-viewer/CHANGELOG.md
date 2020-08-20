@@ -1,5 +1,15 @@
 # @uidu/media-viewer
 
+## 0.2.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/button@0.3.1
+  - @uidu/shell@1.0.1
+  - @uidu/comment@0.1.19
+
 ## 0.2.0
 
 ### Minor Changes

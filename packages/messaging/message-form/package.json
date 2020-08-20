@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "Message form",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-form",
@@ -17,7 +17,7 @@
     "@uidu/field-text": "^0.3.0",
     "@uidu/form": "^0.3.0",
     "@uidu/media-filmstrip": "^0.2.0",
-    "@uidu/message": "^0.2.0",
+    "@uidu/message": "^0.2.1",
     "@uidu/spinner": "^0.3.0",
     "classnames": "^2.2.6",
     "emoji-mart": "^3.0.0",

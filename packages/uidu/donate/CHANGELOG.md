@@ -1,5 +1,15 @@
 # @uidu/donate
 
+## 0.2.18
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/payments@0.2.16
+  - @uidu/field-downshift@0.4.1
+  - @uidu/widgets@0.3.1
+
 ## 0.2.17
 
 ### Patch Changes

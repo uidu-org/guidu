@@ -1,6 +1,6 @@
 {
   "name": "@uidu/onboarding",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/onboarding",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@atlaskit/progress-indicator": "^8.0.0",
     "@uidu/analytics": "^0.3.0",
-    "@uidu/button": "^0.3.0",
+    "@uidu/button": "^0.3.1",
     "@uidu/modal-dialog": "^0.3.0",
     "@uidu/popper": "^0.3.0",
     "@uidu/portal": "^0.3.0",
