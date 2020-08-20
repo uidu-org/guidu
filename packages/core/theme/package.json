@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "The Atlaskit theme framework",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/theme",
   "license": "Apache-2.0",
