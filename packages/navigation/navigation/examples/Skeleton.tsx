@@ -1,4 +1,4 @@
-import Shell, { ShellContent, ShellNavigation } from '@uidu/shell';
+import { ShellSidebar } from '@uidu/shell';
 import React, { Component } from 'react';
 import Navigation, { GlobalNavigationSkeleton } from '../src';
 
@@ -28,17 +28,15 @@ const schema = [
 export default class Basic extends Component<any> {
   render() {
     return (
-      <Shell>
+      <>
         <GlobalNavigationSkeleton navigationWidth={25} />
-        <ShellContent>
-          <ShellNavigation
-            style={{ display: 'flex', flex: '0 1 25%' }}
-            className="bg-light border-right"
-          >
-            <Navigation schema={schema} />
-          </ShellNavigation>
-        </ShellContent>
-      </Shell>
+        <ShellSidebar
+          style={{ display: 'flex', flex: '0 1 25%' }}
+          className="bg-light border-right"
+        >
+          <Navigation schema={schema} />
+        </ShellSidebar>
+      </>
     );
   }
 }

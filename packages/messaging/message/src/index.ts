@@ -13,4 +13,4 @@ export { default as MessageGroup } from './components/MessageGroup';
 export { default as MessageLog } from './components/MessageLog';
 // Other components
 export { default as MessageReactions } from './components/MessageReactions';
-export { Message, MessageableProps, MessageGroupProps } from './types';
+export * from './types';

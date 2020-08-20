@@ -13,7 +13,7 @@
   "devDependencies": {
     "@uidu/analytics-listeners": "^0.1.9",
     "@uidu/docs": "^0.1.49",
-    "react": "^16.8.3"
+    "react": "^16.13.1"
   },
   "peerDependencies": {
     "react": "^16.8.3"

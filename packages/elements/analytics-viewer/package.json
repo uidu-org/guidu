@@ -15,7 +15,7 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "react": "^16.8.3"
+    "react": "^16.13.1"
   },
   "peerDependencies": {
     "react": "^16.8.3"

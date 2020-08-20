@@ -1,4 +1,4 @@
-import Shell, { ShellContent, ShellMain } from '@uidu/shell';
+import Shell from '@uidu/shell';
 import qs from 'query-string';
 import * as React from 'react';
 import {
@@ -107,11 +107,7 @@ function ExampleLoader(props: ExampleLoaderProps) {
 
   return (
     <Shell>
-      <ShellContent>
-        <ShellMain>
-          <ExampleComponent />
-        </ShellMain>
-      </ShellContent>
+      <ExampleComponent />
     </Shell>
   );
 }

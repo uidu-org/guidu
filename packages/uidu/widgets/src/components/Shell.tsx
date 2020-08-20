@@ -1,4 +1,4 @@
-import { ShellBody, ShellHeader } from '@uidu/shell';
+import { ShellBody, ShellHeader, ShellMain, ScrollableContainer } from '@uidu/shell';
 import Slider, { Slide } from '@uidu/slider';
 import React, {
   forwardRef,
@@ -77,7 +77,10 @@ function Shell({
           </ul>
         </div>
       </ShellHeader>
-      <ShellBody scrollable ref={container}>
+      <ShellBody>
+        <ShellMain>
+          <ScrollableContainer ref={container}>
+
         <Slider
           options={{
             slidesPerView: 1,
@@ -104,14 +107,16 @@ function Shell({
             <Slide key={slide.key} data-history={slide['data-history']}>
               {slide.unwrapped ? (
                 slide.component
-              ) : (
-                <ShellSlideWrapper embedded={embedded}>
+                ) : (
+                  <ShellSlideWrapper embedded={embedded}>
                   {slide.component}
                 </ShellSlideWrapper>
               )}
             </Slide>
           ))}
         </Slider>
+          </ScrollableContainer>
+        </ShellMain>
       </ShellBody>
     </>
   );

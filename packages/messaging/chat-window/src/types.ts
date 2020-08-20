@@ -1,4 +1,4 @@
-import { Message } from '@uidu/message';
+import { MessageProps } from '@uidu/message';
 import { MessageFormProps } from '@uidu/message-form';
 import * as React from 'react';
 
@@ -10,7 +10,7 @@ export type ChatWindowProps = {
   /** The base styling to apply to the button */
   isLoading: boolean;
   /** The base styling to apply to the button */
-  messages: Array<Message>;
+  messages: Array<MessageProps>;
   /** The base styling to apply to the button */
   onInfiniteLoad: () => Promise<any>;
   /** The base styling to apply to the button */
@@ -29,7 +29,7 @@ export type ChatWindowProps = {
 } & MessageFormProps;
 
 export type ChatWindowState = {
-  replyTo: Message | null;
+  replyTo: MessageProps | null;
 };
 
 export type ChatViewProps = {

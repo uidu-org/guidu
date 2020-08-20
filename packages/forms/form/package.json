@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "classnames": "^2.2.6",
-    "formsy-react": "^2.0.0",
+    "formsy-react": "^2.1.0",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

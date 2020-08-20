@@ -7,7 +7,7 @@
   "author": "uidu",
   "module": "index.js",
   "dependencies": {
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-media": "^1.9.2"
   },
   "devDependencies": {

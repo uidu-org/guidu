@@ -1,5 +1,6 @@
 import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
+import { IntlProvider } from 'react-intl';
 import dataViews from '..';
 
 export default md`
@@ -15,33 +16,35 @@ export default md`
   ${code`import dataViews, { dateField } from '@uidu/data-views';`}
 
   ${(
-    <table className="table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        {dataViews.map(({ id, icon: Icon, name, description, color }) => (
+    <IntlProvider locale="en">
+      <table className="table">
+        <thead>
           <tr>
-            <td className="text-nowrap">
-              <code>{id}</code>
-            </td>
-            <td className="text-nowrap">
-              <div className="d-flex align-items-center">
-                <span className="mr-2 d-flex">
-                  <Icon size={16} color={color} />
-                </span>
-                {name}
-              </div>
-            </td>
-            <td>{description}</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {dataViews.map(({ id, icon: Icon, name, description, color }) => (
+            <tr>
+              <td className="text-nowrap">
+                <code>{id}</code>
+              </td>
+              <td className="text-nowrap">
+                <div className="d-flex align-items-center">
+                  <span className="mr-2 d-flex">
+                    <Icon size={16} color={color} />
+                  </span>
+                  {name}
+                </div>
+              </td>
+              <td>{description}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </IntlProvider>
   )}
 
   ${(

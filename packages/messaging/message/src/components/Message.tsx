@@ -6,7 +6,7 @@ import moment from 'moment';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
-import { Message as MessageProps } from '../types';
+import { MessageProps } from '../types';
 import { isOnlyEmojis } from '../utils';
 
 const MessageForm = loadable(() => import('@uidu/message-form'));

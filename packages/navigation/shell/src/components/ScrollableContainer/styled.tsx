@@ -1,9 +1,10 @@
 import styled from 'styled-components';
-import { mobileOnlyScrollable } from '../../utils';
 
-export const Body = styled.div<{ scrollable?: boolean | 'mobileOnly' }>`
+export const StyledScrollableContainer = styled.div`
   flex: 1 1 auto;
-  ${({ scrollable }) => mobileOnlyScrollable(scrollable)};
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
   // to fix chrome flex
   min-width: 0;
   min-height: 0;

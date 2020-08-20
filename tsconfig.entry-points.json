@@ -11,10 +11,6 @@
         "../../authentication/devise/src/types",
         "./packages/authentication/devise/src/types"
       ],
-      "@uidu/popup-campaigns": [
-        "../../campaigns/popup-campaigns/src/",
-        "./packages/campaigns/popup-campaigns/src/"
-      ],
       "@uidu/accordion": [
         "../../core/accordion/src/",
         "./packages/core/accordion/src/"
@@ -95,7 +91,10 @@
         "../../core/analytics/src/withAnalyticsHook",
         "./packages/core/analytics/src/withAnalyticsHook"
       ],
-      "@uidu/avatar": ["../../core/avatar/src/", "./packages/core/avatar/src/"],
+      "@uidu/avatar": [
+        "../../core/avatar/src/",
+        "./packages/core/avatar/src/"
+      ],
       "@uidu/avatar/types": [
         "../../core/avatar/src/types",
         "./packages/core/avatar/src/types"
@@ -108,12 +107,18 @@
         "../../core/avatar-group/src/",
         "./packages/core/avatar-group/src/"
       ],
-      "@uidu/badge": ["../../core/badge/src/", "./packages/core/badge/src/"],
+      "@uidu/badge": [
+        "../../core/badge/src/",
+        "./packages/core/badge/src/"
+      ],
       "@uidu/badge/theme": [
         "../../core/badge/src/theme",
         "./packages/core/badge/src/theme"
       ],
-      "@uidu/banner": ["../../core/banner/src/", "./packages/core/banner/src/"],
+      "@uidu/banner": [
+        "../../core/banner/src/",
+        "./packages/core/banner/src/"
+      ],
       "@uidu/banner/styled": [
         "../../core/banner/src/styled",
         "./packages/core/banner/src/styled"
@@ -130,7 +135,10 @@
         "../../core/blanket/src/styled",
         "./packages/core/blanket/src/styled"
       ],
-      "@uidu/button": ["../../core/button/src/", "./packages/core/button/src/"],
+      "@uidu/button": [
+        "../../core/button/src/",
+        "./packages/core/button/src/"
+      ],
       "@uidu/button/theme": [
         "../../core/button/src/theme",
         "./packages/core/button/src/theme"
@@ -139,7 +147,10 @@
         "../../core/button/src/types",
         "./packages/core/button/src/types"
       ],
-      "@uidu/code": ["../../core/code/src/", "./packages/core/code/src/"],
+      "@uidu/code": [
+        "../../core/code/src/",
+        "./packages/core/code/src/"
+      ],
       "@uidu/code/supportedLanguages": [
         "../../core/code/src/supportedLanguages",
         "./packages/core/code/src/supportedLanguages"
@@ -156,7 +167,10 @@
         "../../core/drawer/src/constants",
         "./packages/core/drawer/src/constants"
       ],
-      "@uidu/drawer": ["../../core/drawer/src/", "./packages/core/drawer/src/"],
+      "@uidu/drawer": [
+        "../../core/drawer/src/",
+        "./packages/core/drawer/src/"
+      ],
       "@uidu/drawer/types": [
         "../../core/drawer/src/types",
         "./packages/core/drawer/src/types"
@@ -177,12 +191,18 @@
         "../../core/droplist/src/types",
         "./packages/core/droplist/src/types"
       ],
-      "@uidu/fab": ["../../core/fab/src/", "./packages/core/fab/src/"],
+      "@uidu/fab": [
+        "../../core/fab/src/",
+        "./packages/core/fab/src/"
+      ],
       "@uidu/fab/types": [
         "../../core/fab/src/types",
         "./packages/core/fab/src/types"
       ],
-      "@uidu/flag": ["../../core/flag/src/", "./packages/core/flag/src/"],
+      "@uidu/flag": [
+        "../../core/flag/src/",
+        "./packages/core/flag/src/"
+      ],
       "@uidu/flag/theme": [
         "../../core/flag/src/theme",
         "./packages/core/flag/src/theme"
@@ -199,12 +219,14 @@
         "../../core/inline-dialog/src/types",
         "./packages/core/inline-dialog/src/types"
       ],
-      "@uidu/item": ["../../core/item/src/", "./packages/core/item/src/"],
-      "@uidu/item/types": [
-        "../../core/item/src/types",
-        "./packages/core/item/src/types"
+      "@uidu/item": [
+        "../../core/item/src/",
+        "./packages/core/item/src/"
       ],
-      "@uidu/layer": ["../../core/layer/src/", "./packages/core/layer/src/"],
+      "@uidu/layer": [
+        "../../core/layer/src/",
+        "./packages/core/layer/src/"
+      ],
       "@uidu/layer/styledContentContainer": [
         "../../core/layer/src/styledContentContainer",
         "./packages/core/layer/src/styledContentContainer"
@@ -221,7 +243,14 @@
         "../../core/lozenge/src/theme",
         "./packages/core/lozenge/src/theme"
       ],
-      "@uidu/map": ["../../core/map/src/", "./packages/core/map/src/"],
+      "@uidu/map": [
+        "../../core/map/src/",
+        "./packages/core/map/src/"
+      ],
+      "@uidu/menu": [
+        "../../core/menu/src/",
+        "./packages/core/menu/src/"
+      ],
       "@uidu/modal-dialog": [
         "../../core/modal-dialog/src/",
         "./packages/core/modal-dialog/src/"
@@ -250,20 +279,50 @@
         "../../core/pagination/src/types",
         "./packages/core/pagination/src/types"
       ],
-      "@uidu/popper": ["../../core/popper/src/", "./packages/core/popper/src/"],
+      "@uidu/popper": [
+        "../../core/popper/src/",
+        "./packages/core/popper/src/"
+      ],
       "@uidu/popper/Popper": [
         "../../core/popper/src/Popper",
         "./packages/core/popper/src/Popper"
       ],
-      "@uidu/popper/types": [
-        "../../core/popper/src/types",
-        "./packages/core/popper/src/types"
+      "@uidu/popup": [
+        "../../core/popup/src/",
+        "./packages/core/popup/src/"
+      ],
+      "@uidu/popup/Popup": [
+        "../../core/popup/src/Popup",
+        "./packages/core/popup/src/Popup"
+      ],
+      "@uidu/popup/RepositionOnUpdate": [
+        "../../core/popup/src/RepositionOnUpdate",
+        "./packages/core/popup/src/RepositionOnUpdate"
+      ],
+      "@uidu/popup/styles": [
+        "../../core/popup/src/styles",
+        "./packages/core/popup/src/styles"
+      ],
+      "@uidu/popup/types": [
+        "../../core/popup/src/types",
+        "./packages/core/popup/src/types"
+      ],
+      "@uidu/popup/useCloseManager": [
+        "../../core/popup/src/useCloseManager",
+        "./packages/core/popup/src/useCloseManager"
+      ],
+      "@uidu/popup/useFocusManager": [
+        "../../core/popup/src/useFocusManager",
+        "./packages/core/popup/src/useFocusManager"
       ],
       "@uidu/portal/constants": [
         "../../core/portal/src/constants",
         "./packages/core/portal/src/constants"
       ],
-      "@uidu/portal": ["../../core/portal/src/", "./packages/core/portal/src/"],
+      "@uidu/portal": [
+        "../../core/portal/src/",
+        "./packages/core/portal/src/"
+      ],
       "@uidu/section-message": [
         "../../core/section-message/src/",
         "./packages/core/section-message/src/"
@@ -276,7 +335,10 @@
         "../../core/section-message/src/types",
         "./packages/core/section-message/src/types"
       ],
-      "@uidu/slider": ["../../core/slider/src/", "./packages/core/slider/src/"],
+      "@uidu/slider": [
+        "../../core/slider/src/",
+        "./packages/core/slider/src/"
+      ],
       "@uidu/slider/types": [
         "../../core/slider/src/types",
         "./packages/core/slider/src/types"
@@ -313,7 +375,10 @@
         "../../core/theme/src/hoc",
         "./packages/core/theme/src/hoc"
       ],
-      "@uidu/theme": ["../../core/theme/src/", "./packages/core/theme/src/"],
+      "@uidu/theme": [
+        "../../core/theme/src/",
+        "./packages/core/theme/src/"
+      ],
       "@uidu/theme/math": [
         "../../core/theme/src/math",
         "./packages/core/theme/src/math"
@@ -370,7 +435,18 @@
         "../../dashboards/dashlets/src/types",
         "./packages/dashboards/dashlets/src/types"
       ],
-      "@uidu/board": ["../../data/board/src/", "./packages/data/board/src/"],
+      "@uidu/dashlets-form": [
+        "../../dashboards/dashlets-form/src/",
+        "./packages/dashboards/dashlets-form/src/"
+      ],
+      "@uidu/dashlets-form/types": [
+        "../../dashboards/dashlets-form/src/types",
+        "./packages/dashboards/dashlets-form/src/types"
+      ],
+      "@uidu/board": [
+        "../../data/board/src/",
+        "./packages/data/board/src/"
+      ],
       "@uidu/board/types": [
         "../../data/board/src/types",
         "./packages/data/board/src/types"
@@ -415,8 +491,14 @@
         "../../data/gallery/src/types",
         "./packages/data/gallery/src/types"
       ],
-      "@uidu/list": ["../../data/list/src/", "./packages/data/list/src/"],
-      "@uidu/table": ["../../data/table/src/", "./packages/data/table/src/"],
+      "@uidu/list": [
+        "../../data/list/src/",
+        "./packages/data/list/src/"
+      ],
+      "@uidu/table": [
+        "../../data/table/src/",
+        "./packages/data/table/src/"
+      ],
       "@uidu/table/types": [
         "../../data/table/src/types",
         "./packages/data/table/src/types"
@@ -492,6 +574,10 @@
       "@uidu/editor-core": [
         "../../editor/editor-core/src/",
         "./packages/editor/editor-core/src/"
+      ],
+      "@uidu/editor-core/labs-next": [
+        "../../editor/editor-core/src/labs-next",
+        "./packages/editor/editor-core/src/labs-next"
       ],
       "@uidu/editor-core/messages": [
         "../../editor/editor-core/src/messages",
@@ -705,7 +791,10 @@
         "../../forms/checkbox/src/types",
         "./packages/forms/checkbox/src/types"
       ],
-      "@uidu/field": ["../../forms/field/src/", "./packages/forms/field/src/"],
+      "@uidu/field": [
+        "../../forms/field/src/",
+        "./packages/forms/field/src/"
+      ],
       "@uidu/field-base": [
         "../../forms/field-base/src/",
         "./packages/forms/field-base/src/"
@@ -810,6 +899,14 @@
         "../../forms/field-password/src/types",
         "./packages/forms/field-password/src/types"
       ],
+      "@uidu/field-phone": [
+        "../../forms/field-phone/src/",
+        "./packages/forms/field-phone/src/"
+      ],
+      "@uidu/field-phone/types": [
+        "../../forms/field-phone/src/types",
+        "./packages/forms/field-phone/src/types"
+      ],
       "@uidu/field-range": [
         "../../forms/field-range/src/",
         "./packages/forms/field-range/src/"
@@ -858,12 +955,18 @@
         "../../forms/field-toggle/src/types",
         "./packages/forms/field-toggle/src/types"
       ],
-      "@uidu/form": ["../../forms/form/src/", "./packages/forms/form/src/"],
+      "@uidu/form": [
+        "../../forms/form/src/",
+        "./packages/forms/form/src/"
+      ],
       "@uidu/form/types": [
         "../../forms/form/src/types",
         "./packages/forms/form/src/types"
       ],
-      "@uidu/radio": ["../../forms/radio/src/", "./packages/forms/radio/src/"],
+      "@uidu/radio": [
+        "../../forms/radio/src/",
+        "./packages/forms/radio/src/"
+      ],
       "@uidu/radio/types": [
         "../../forms/radio/src/types",
         "./packages/forms/radio/src/types"
@@ -1068,7 +1171,10 @@
         "../../navigation/treenav/src/types",
         "./packages/navigation/treenav/src/types"
       ],
-      "@uidu/attend": ["../../uidu/attend/src/", "./packages/uidu/attend/src/"],
+      "@uidu/attend": [
+        "../../uidu/attend/src/",
+        "./packages/uidu/attend/src/"
+      ],
       "@uidu/comment": [
         "../../uidu/comment/src/",
         "./packages/uidu/comment/src/"
@@ -1081,7 +1187,10 @@
         "../../uidu/contact/src/",
         "./packages/uidu/contact/src/"
       ],
-      "@uidu/donate": ["../../uidu/donate/src/", "./packages/uidu/donate/src/"],
+      "@uidu/donate": [
+        "../../uidu/donate/src/",
+        "./packages/uidu/donate/src/"
+      ],
       "@uidu/donate/types": [
         "../../uidu/donate/src/types",
         "./packages/uidu/donate/src/types"
@@ -1102,7 +1211,10 @@
         "../../uidu/tax-reminder/src/types",
         "./packages/uidu/tax-reminder/src/types"
       ],
-      "@uidu/upvote": ["../../uidu/upvote/src/", "./packages/uidu/upvote/src/"],
+      "@uidu/upvote": [
+        "../../uidu/upvote/src/",
+        "./packages/uidu/upvote/src/"
+      ],
       "@uidu/upvote/types": [
         "../../uidu/upvote/src/types",
         "./packages/uidu/upvote/src/types"

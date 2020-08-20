@@ -1,6 +1,7 @@
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
+import { IntlProvider } from 'react-intl';
 import dataViews from '..';
 import { formDefaultProps } from '../../../forms/form/examples-utils';
 
@@ -31,7 +32,7 @@ export default class Basic extends PureComponent<any, any> {
   render() {
     const { currentDataView } = this.state;
     return (
-      <>
+      <IntlProvider locale="en">
         <Form {...formDefaultProps}>
           <Select
             name="dataview"
@@ -48,7 +49,7 @@ export default class Basic extends PureComponent<any, any> {
           />
           {currentDataView ? this.renderConfigurator() : null}
         </Form>
-      </>
+      </IntlProvider>
     );
   }
 }

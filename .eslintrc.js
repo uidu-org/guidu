@@ -78,7 +78,7 @@ module.exports = {
       },
     ],
 
-    'react/no-multi-comp': [1, { ignoreStateless: false }],
+    'react/no-multi-comp': [0, { ignoreStateless: false }],
     'react/forbid-prop-types': [
       1,
       {

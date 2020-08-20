@@ -1,4 +1,4 @@
-import { Message } from '@uidu/message';
+import { MessageProps } from '@uidu/message';
 import faker from 'faker';
 import moment from 'moment';
 
@@ -25,7 +25,7 @@ const fakeAttachments = () => {
   );
 };
 
-export const message: () => Message = () => ({
+export const message: () => MessageProps = () => ({
   klass: 'Message',
   scope: 'messages',
   kind: 'message.create',

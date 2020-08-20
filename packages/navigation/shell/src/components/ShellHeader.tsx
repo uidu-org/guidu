@@ -1,6 +1,17 @@
 import React from 'react';
-import { Header } from '../styled';
+import styled from 'styled-components';
 
-export default function(props) {
-  return <Header {...props} />;
+export const ShellHeader = styled.header`
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+
+  @media (min-width: 700px) {
+    height: 5rem;
+  }
+  flex-shrink: 0;
+`;
+
+export default function (props) {
+  return <ShellHeader {...props} />;
 }

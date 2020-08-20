@@ -1,12 +1,7 @@
 import Avatar from '@uidu/avatar';
 import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
-import Shell, {
-  ShellContent,
-  ShellMain,
-  ShellNavigation,
-  ShellResizer,
-} from '@uidu/shell';
+import { ShellMain, ShellResizer, ShellSidebar } from '@uidu/shell';
 import React, { Component } from 'react';
 import { Activity, Bell, Grid, MoreHorizontal, Settings } from 'react-feather';
 import foo from '../examples-utils/assets/foo.svg';
@@ -168,7 +163,7 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
   render() {
     const { isCollapsed } = this.state;
     return (
-      <Shell>
+      <>
         <GlobalNavigation
           navigationWidth={20}
           navigationMinWidth="17rem"
@@ -244,30 +239,28 @@ export default class Basic extends Component<any, { isCollapsed: boolean }> {
             },
           ]}
         />
-        <ShellContent>
-          <ShellNavigation
-            style={{
-              transition:
-                'width 300ms cubic-bezier(0.2, 0, 0, 1) 0s, min-width 300ms cubic-bezier(0.2, 0, 0, 1) 0s',
-              ...(isCollapsed
-                ? { width: '24px', minWidth: 0 }
-                : { width: '20%', minWidth: '17rem' }),
+        <ShellSidebar
+          style={{
+            transition:
+              'width 300ms cubic-bezier(0.2, 0, 0, 1) 0s, min-width 300ms cubic-bezier(0.2, 0, 0, 1) 0s',
+            ...(isCollapsed
+              ? { width: '24px', minWidth: 0 }
+              : { width: '20%', minWidth: '17rem' }),
+          }}
+        >
+          <Navigation schema={schema} />
+          <ShellResizer
+            isCollapsed={isCollapsed}
+            onClick={() => {
+              console.log('clicked');
+              this.setState((prevState) => ({
+                isCollapsed: !prevState.isCollapsed,
+              }));
             }}
-          >
-            <Navigation schema={schema} />
-            <ShellResizer
-              isCollapsed={isCollapsed}
-              onClick={() => {
-                console.log('clicked');
-                this.setState(prevState => ({
-                  isCollapsed: !prevState.isCollapsed,
-                }));
-              }}
-            />
-          </ShellNavigation>
-          <ShellMain className="bg-light" />
-        </ShellContent>
-      </Shell>
+          />
+        </ShellSidebar>
+        <ShellMain className="bg-light" />
+      </>
     );
   }
 }

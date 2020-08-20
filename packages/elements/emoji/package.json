@@ -40,7 +40,7 @@
     "@uidu/section-message": "^0.2.0",
     "@uidu/util-data-test": "^0.1.14",
     "p-wait-for": "^3.1.0",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "react-intl": "^5.2.1"
   },

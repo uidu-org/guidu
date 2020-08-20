@@ -1,4 +1,9 @@
-import { ShellBody, ShellHeader } from '@uidu/shell';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import React from 'react';
 
 export default function DrawerLayout({ children, name }) {
@@ -7,7 +12,11 @@ export default function DrawerLayout({ children, name }) {
       <ShellHeader className="px-3 px-xl-4">
         <h5 className="m-0">{name}</h5>
       </ShellHeader>
-      <ShellBody scrollable>{children}</ShellBody>
+      <ShellBody>
+        <ShellMain>
+          <ScrollableContainer>{children}</ScrollableContainer>
+        </ShellMain>
+      </ShellBody>
     </>
   );
 }

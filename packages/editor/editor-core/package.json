@@ -9,7 +9,7 @@
     "@atlaskit/calendar": "^10.0.0",
     "@atlaskit/profilecard": "^13.0.0",
     "@atlaskit/width-detector": "^3.0.0",
-    "@loadable/component": "^5.12.0",
+    "@loadable/component": "^5.13.1",
     "@uidu/adf-schema": "^0.2.2",
     "@uidu/adf-utils": "^0.4.11",
     "@uidu/analytics": "^0.2.0",

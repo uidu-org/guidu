@@ -7,7 +7,7 @@ import { MessageCircle } from 'react-feather';
 import { TouchableOpacity, Vibration, View } from 'react-native';
 import { animated, useSpring } from 'react-spring';
 import { useDrag } from 'react-use-gesture';
-import { Message } from '../../types';
+import { MessageProps } from '../../types';
 import MessagesAttachments from '../MessageAttachments';
 import { StyledMobileViewMessage } from './styled';
 
@@ -62,7 +62,7 @@ const SwipeableMessage = ({
 };
 
 export default class MobileViewMessage extends Component<
-  Message,
+  MessageProps,
   {
     viewDetails: boolean;
     viewActions: boolean;

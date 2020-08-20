@@ -8,9 +8,10 @@ import DropdownMenu, {
 } from '@uidu/dropdown-menu';
 import {
   ShellBody,
-  ShellBodyWithSidebar,
   ShellBodyWithSpinner,
   ShellHeader,
+  ShellMain,
+  ShellSidebar,
 } from '@uidu/shell';
 import { buildColumns } from '@uidu/table';
 import React, { Component } from 'react';
@@ -290,7 +291,7 @@ export default class Basic extends Component<any, any> {
     };
   }
 
-  toggleView = view => {
+  toggleView = (view) => {
     if (view.id !== this.state.currentView.id) {
       this.setState({
         rendered: false,
@@ -299,7 +300,7 @@ export default class Basic extends Component<any, any> {
     }
   };
 
-  addView = dataview => {
+  addView = (dataview) => {
     const newView = {
       id: this.state.dataViews.length + 1,
       kind: dataview.kind,
@@ -313,12 +314,12 @@ export default class Basic extends Component<any, any> {
   };
 
   componentDidMount() {
-    fetchContacts().then(rowData => this.setState({ loaded: true, rowData }));
+    fetchContacts().then((rowData) => this.setState({ loaded: true, rowData }));
   }
 
   updateView = async (currentView, props) => {
     this.setState({ isAutoSaving: 'in-progress' });
-    const dataViews = this.state.dataViews.map(item => {
+    const dataViews = this.state.dataViews.map((item) => {
       if (item.id !== currentView.id) {
         return item;
       }
@@ -395,7 +396,7 @@ export default class Basic extends Component<any, any> {
             // onGridReady={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
-              <>
+              <ShellMain>
                 <ShellHeader className="px-3 px-xl-4">
                   {renderControls({
                     controls: {
@@ -423,7 +424,7 @@ export default class Basic extends Component<any, any> {
                     position="bottom right"
                   >
                     <DropdownItemGroup>
-                      {dataViews.map(dataView => {
+                      {dataViews.map((dataView) => {
                         const d = byName[dataView.kind];
                         const { icon: Icon, color } = d;
                         return (
@@ -455,7 +456,7 @@ export default class Basic extends Component<any, any> {
                           kind: 'timeline',
                           name: 'Timeline',
                         },
-                      ].map(view => (
+                      ].map((view) => (
                         <DropdownItem
                           onClick={() => this.addView(view)}
                           elemBefore={<PlusCircle size={14} />}
@@ -467,47 +468,48 @@ export default class Basic extends Component<any, any> {
                   </DropdownMenu>
                 </ShellHeader>
 
-                <ShellBody scrollable>
+                <ShellBody>
                   {!loaded ? (
                     <ShellBodyWithSpinner></ShellBodyWithSpinner>
                   ) : (
-                    <ShellBodyWithSidebar
-                      sidebar={
-                        renderSidebar() && (
+                    <>
+                      <ShellMain>
+                        <Transition in={this.state.rendered} timeout={duration}>
+                          {(state) => (
+                            <div
+                              style={{
+                                ...defaultStyle,
+                                ...transitionStyles[state],
+                              }}
+                            >
+                              {renderView({
+                                viewProps: {
+                                  gallery: {
+                                    gutterSize: 24,
+                                  },
+                                  list: {
+                                    rowHeight: 96,
+                                  },
+                                  board: {},
+                                  table: {
+                                    headerHeight: 48,
+                                    rowHeight: 56,
+                                  },
+                                },
+                              })}
+                            </div>
+                          )}
+                        </Transition>
+                      </ShellMain>
+                      {renderSidebar() && (
+                        <ShellSidebar>
                           <div className="col-sm-3">{renderSidebar({})}</div>
-                        )
-                      }
-                    >
-                      <Transition in={this.state.rendered} timeout={duration}>
-                        {state => (
-                          <div
-                            style={{
-                              ...defaultStyle,
-                              ...transitionStyles[state],
-                            }}
-                          >
-                            {renderView({
-                              viewProps: {
-                                gallery: {
-                                  gutterSize: 24,
-                                },
-                                list: {
-                                  rowHeight: 96,
-                                },
-                                board: {},
-                                table: {
-                                  headerHeight: 48,
-                                  rowHeight: 56,
-                                },
-                              },
-                            })}
-                          </div>
-                        )}
-                      </Transition>
-                    </ShellBodyWithSidebar>
+                        </ShellSidebar>
+                      )}
+                    </>
                   )}
                 </ShellBody>
-              </>
+              </ShellMain>
             )}
           </DataManager>
         </Router>

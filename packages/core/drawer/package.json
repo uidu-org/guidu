@@ -24,7 +24,7 @@
     "@uidu/button": "^0.2.0",
     "@uidu/dropdown-menu": "^0.2.1",
     "@uidu/shell": "^0.3.6",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.0.0"
   },

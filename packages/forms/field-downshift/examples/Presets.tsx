@@ -48,7 +48,6 @@ const iconItems = [
 export default class Basic extends PureComponent {
   render() {
     return (
-      <ShellBody scrollable>
         <div className="container py-4">
           <Form {...formDefaultProps} footerRenderer={() => null}>
             <FieldDownshift
@@ -94,7 +93,6 @@ export default class Basic extends PureComponent {
             />
           </Form>
         </div>
-      </ShellBody>
     );
   }
 }

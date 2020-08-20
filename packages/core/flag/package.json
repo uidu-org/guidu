@@ -24,7 +24,7 @@
     "@uidu/form": "^0.2.7",
     "@uidu/radio": "^0.4.6",
     "@uidu/spinner": "^0.2.0",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0"
   },

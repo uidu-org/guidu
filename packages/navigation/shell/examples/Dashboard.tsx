@@ -5,103 +5,101 @@ import {
   SidebarLogo,
   SidebarMenu,
 } from '../examples-utils';
-import Shell, {
+import {
+  ScrollableContainer,
   ShellBody,
-  ShellBodyWithSidebar,
-  ShellContent,
   ShellFooter,
   ShellHeader,
   ShellMain,
-  ShellNavigation,
   ShellSidebar,
 } from '../src';
 
 export default function Dashboard() {
   return (
-    <Shell>
+    <>
       <ShellSidebar style={{ width: '4rem', backgroundColor: '#4C566A' }}>
         <ShellHeader>
-          <SidebarLogo />
+          <SidebarLogo size="large" />
         </ShellHeader>
-        <ShellBody scrollable className="d-flex flex-column my-2">
+        <ScrollableContainer>
           <SidebarMenu />
-        </ShellBody>
+        </ScrollableContainer>
         <ShellFooter>
           <SidebarFooter />
         </ShellFooter>
       </ShellSidebar>
-      <ShellContent>
-        <ShellNavigation
-          style={{
-            flex: '1 0 22%',
-            maxWidth: '22%',
-            minWidth: 'fit-content',
-          }}
-          // className="border-right"
-        >
-          <NavigationMenu />
-        </ShellNavigation>
-        <ShellMain style={{ flex: '1 0 78%' }} className="border-left">
-          <ShellHeader>
-            <div className="d-flex px-4 border-bottom h-100 w-100 align-items-center">
-              Long navigation with search bar & actions
-            </div>
-          </ShellHeader>
-          <ShellBodyWithSidebar
-            sidebar={
-              <ShellNavigation
-                className="bg-white border-left p-4 flex-shrink-0 d-none d-lg-flex"
-                style={{ width: '30%' }}
-              >
-                Group sidebar
-              </ShellNavigation>
-            }
+      <ShellMain>
+        <ShellHeader>
+          <div className="d-flex px-4 border-bottom h-100 w-100 align-items-center">
+            Long navigation with search bar & actions
+          </div>
+        </ShellHeader>
+        <ShellBody style={{ flex: '1 0 78%' }} className="border-left">
+          <ShellSidebar
+            className="border-right"
+            style={{
+              flex: '1 0 22%',
+              maxWidth: '22%',
+              minWidth: 'fit-content',
+            }}
+            // className="border-right"
           >
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-            <p>Content</p>
-          </ShellBodyWithSidebar>
-        </ShellMain>
-      </ShellContent>
-    </Shell>
+            <NavigationMenu />
+          </ShellSidebar>
+          <ShellMain>
+            <ScrollableContainer>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+              <p>Content</p>
+            </ScrollableContainer>
+          </ShellMain>
+          <ShellSidebar
+            className="bg-white border-left p-4 flex-shrink-0 d-none d-lg-flex"
+            style={{ width: '20%' }}
+          >
+            Group sidebar
+          </ShellSidebar>
+        </ShellBody>
+      </ShellMain>
+    </>
   );
 }

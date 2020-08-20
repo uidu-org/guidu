@@ -1,5 +1,11 @@
 // based on schema type we render different components
-import { ShellBody, ShellFooter, ShellHeader } from '@uidu/shell';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellFooter,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import { gridSize } from '@uidu/theme';
 import React, { PureComponent } from 'react';
 import NavigationGroupComponent from './Navigation/NavigationGroup';
@@ -34,8 +40,12 @@ const NavigationHeaderSkeleton = ({ text, after, before }) => (
 
 // Section
 const NavigationSection = ({ items, ...props }) => (
-  <ShellBody scrollable {...props}>
-    <ItemsRenderer items={items} />
+  <ShellBody>
+    <ShellMain>
+      <ScrollableContainer {...props}>
+        <ItemsRenderer items={items} />
+      </ScrollableContainer>
+    </ShellMain>
   </ShellBody>
 );
 

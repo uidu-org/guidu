@@ -7,7 +7,7 @@ export type MessageableProps = {
   messages: {
     hasMore: boolean;
     isFetching: boolean;
-    messages: Array<Message>;
+    messages: Array<MessageProps>;
   };
 };
 
@@ -22,11 +22,11 @@ export type Attachment = {
   file: FileIdentifier;
 };
 
-export type Message = {
+export type MessageProps = {
   id?: string | number;
   body?: string;
-  message?: Message;
-  replyTo?: Message;
+  message?: MessageProps;
+  replyTo?: MessageProps;
   messager?: Messager;
   createdAt?: Date;
   attachments?: Array<Attachment>;
@@ -46,9 +46,9 @@ export type Message = {
 
 export type MessageGroupProps = {
   kind: string;
-  messages: Array<Message>;
+  messages: Array<MessageProps>;
   messager: Messager;
-  children: (props: any) => Array<Message>;
+  children: (props: any) => Array<MessageProps>;
   mobileView?: boolean;
   isSelf?: (messager: Messager) => boolean;
 };

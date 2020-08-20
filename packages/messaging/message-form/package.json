@@ -9,6 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@loadable/component": "^5.13.1",
     "@types/emoji-mart": "^3.0.0",
     "@types/react-mentions": "^3.0.0",
     "@uidu/dropdown-menu": "^0.2.0",
@@ -18,12 +19,16 @@
     "@uidu/media-filmstrip": "^0.1.35",
     "@uidu/message": "^0.1.49",
     "@uidu/spinner": "^0.2.0",
+    "classnames": "^2.2.6",
     "emoji-mart": "^3.0.0",
-    "react-feather": "^2.0.3"
+    "formsy-react": "^2.1.0",
+    "react": "^16.13.1",
+    "react-feather": "^2.0.3",
+    "react-mentions": "^4.0.2"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.50",
     "@uidu/media-picker": "^0.3.1"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

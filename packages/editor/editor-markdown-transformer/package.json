@@ -19,7 +19,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.48",
     "@uidu/editor-core": "^0.5.1",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "styled-components": "^5.0.0"
   },
   "peerDependencies": {

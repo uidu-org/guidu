@@ -19,7 +19,7 @@
     "@uidu/docs": "^0.1.50",
     "@uidu/field-base": "^0.2.5",
     "@uidu/section-message": "^0.2.1",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0"
   },

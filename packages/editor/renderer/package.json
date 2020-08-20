@@ -11,7 +11,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.0.0",
     "@atlaskit/type-helpers": "^4.1.6",
-    "@loadable/component": "^5.12.0",
+    "@loadable/component": "^5.13.1",
     "@uidu/adf-schema": "^0.2.2",
     "@uidu/adf-utils": "^0.4.11",
     "@uidu/analytics": "^0.2.0",
@@ -40,7 +40,7 @@
     "@uidu/field-range": "^0.2.4",
     "@uidu/navigation": "^0.2.32",
     "@uidu/util-data-test": "^0.1.14",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "react-live-clock": "^4.0.0-beta",
     "styled-components": "^5.0.0"

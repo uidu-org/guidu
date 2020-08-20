@@ -1,6 +1,14 @@
 import React from 'react';
-import { Sidebar } from '../styled';
+import styled from 'styled-components';
 
-export default function ShellSidebar({ ...rest }) {
-  return <Sidebar {...rest} className="d-none d-lg-flex" />;
+export const ShellSidebar = styled.aside`
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-between;
+  position: relative;
+  /* flex-grow: 1; */
+`;
+
+export default function ({ ...rest }) {
+  return <ShellSidebar {...rest} />;
 }

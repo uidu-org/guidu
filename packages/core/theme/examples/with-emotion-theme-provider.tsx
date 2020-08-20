@@ -1,10 +1,8 @@
-import React from 'react';
-
 import { DateTimePicker } from '@atlaskit/datetime-picker';
-import { ThemeProvider } from 'emotion-theming';
 import styled from '@emotion/styled';
-
-import { gridSize, colors } from '../index';
+import { ThemeProvider } from 'emotion-theming';
+import React from 'react';
+import { colors, gridSize } from '../src';
 
 const Description = styled.p`
   padding: ${gridSize()}px;

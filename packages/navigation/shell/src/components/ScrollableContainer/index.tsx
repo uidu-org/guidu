@@ -3,20 +3,20 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
 import 'overlayscrollbars/css/OverlayScrollbars.css';
 import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
-import { Body, ObserverComponent, Shadow } from './styled';
+import { ObserverComponent, Shadow, StyledScrollableContainer } from './styled';
 import { ShellBodyProps } from './types';
 
-function ShellBody({
+function ScrollableContainer({
   id = null,
   forwardedRef,
   children,
   shadowOnScroll = true,
   className = null,
-  scrollable,
+  scrollable = true,
   enableCustomScrollbars = false,
   customScrollbarProps = {},
 }: ShellBodyProps) {
-  const [shadowedHeader, setShadowedHeader] = useState(false);
+  const [shadowedHeader, setShadowedHeader] = useState(true);
   const element: React.RefObject<any> = useRef();
 
   useImperativeHandle(forwardedRef, () => element.current);
@@ -42,7 +42,12 @@ function ShellBody({
   };
 
   const content = (
-    <Body id={id} scrollable={scrollable} ref={element} className={className}>
+    <StyledScrollableContainer
+      id={id}
+      scrollable={scrollable}
+      ref={element}
+      className={className}
+    >
       {shadowOnScroll && (
         <>
           <Observer
@@ -57,8 +62,8 @@ function ShellBody({
           />
         </>
       )}
-      {children}
-    </Body>
+      <div>{children}</div>
+    </StyledScrollableContainer>
   );
 
   if (enableCustomScrollbars && scrollable) {
@@ -80,5 +85,7 @@ function ShellBody({
 }
 
 export default React.forwardRef((props: ShellBodyProps, ref: any) => {
-  return <ShellBody {...(props as ShellBodyProps)} forwardedRef={ref} />;
+  return (
+    <ScrollableContainer {...(props as ShellBodyProps)} forwardedRef={ref} />
+  );
 });

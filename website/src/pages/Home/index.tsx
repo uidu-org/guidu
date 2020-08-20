@@ -1,4 +1,4 @@
-import { ShellBody } from '@uidu/shell';
+import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import { colors } from '@uidu/theme';
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
@@ -28,18 +28,22 @@ const Intro = styled.div`
 export default class HomePage extends React.Component {
   render() {
     return (
-      <ShellBody scrollable>
-        <Helmet>
-          <title>{`${BASE_TITLE}`}</title>
-        </Helmet>
-        <div className="jumbotron rounded-0">
-          <Title>Guidu</Title>
-          <Intro>
-            Uidu&#39;s official UI library, built according to the
-            uidu&nbsp;Design&nbsp;Guidelines.
-          </Intro>
-        </div>
-        <Cards />
+      <ShellBody>
+        <ShellMain>
+          <ScrollableContainer>
+            <Helmet>
+              <title>{`${BASE_TITLE}`}</title>
+            </Helmet>
+            <div className="jumbotron rounded-0">
+              <Title>Guidu</Title>
+              <Intro>
+                Uidu&#39;s official UI library, built according to the
+                uidu&nbsp;Design&nbsp;Guidelines.
+              </Intro>
+            </div>
+            <Cards />
+          </ScrollableContainer>
+        </ShellMain>
       </ShellBody>
     );
   }

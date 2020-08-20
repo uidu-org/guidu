@@ -1,6 +1,11 @@
 import React from 'react';
-import { Footer } from '../styled';
+import styled from 'styled-components';
 
-export default function(props) {
-  return <Footer {...props} />;
+export const ShellFooter = styled.footer`
+  // height: 3rem;
+  flex-shrink: 0;
+`;
+
+export default function (props) {
+  return <ShellFooter {...props} />;
 }

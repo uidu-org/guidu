@@ -19,7 +19,7 @@
     "@uidu/checkbox": "^0.2.4",
     "@uidu/docs": "^0.1.49",
     "@uidu/form": "^0.2.7",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "react-router-dom": "^5.0.0",
     "styled-components": "^5.0.0"

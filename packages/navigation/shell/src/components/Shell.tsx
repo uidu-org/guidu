@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ShellProps } from '../types';
-import { mobileOnlyHeight } from '../utils';
-
-export const Wrapper = styled.div<{
-  fixedHeight: boolean | 'mobileOnly';
-}>`
+export const Shell = styled.div`
   display: flex;
   overscroll-behavior: none;
 
-  ${({ fixedHeight }) => mobileOnlyHeight(fixedHeight)};
+  overflow: hidden;
+  height: 100%;
   max-height: 100vh;
   width: 100vw;
 
@@ -17,14 +14,6 @@ export const Wrapper = styled.div<{
   min-height: 0;
 `;
 
-export default function Shell({
-  fixedHeight = true,
-  children,
-  ...otherProps
-}: ShellProps) {
-  return (
-    <Wrapper fixedHeight={fixedHeight} {...otherProps}>
-      {children}
-    </Wrapper>
-  );
+export default function ({ id, children }: ShellProps) {
+  return <Shell id={id}>{children}</Shell>;
 }

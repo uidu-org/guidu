@@ -24,7 +24,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.1.49",
     "@uidu/elements-test-helpers": "^0.1.11",
-    "react": "^16.8.3"
+    "react": "^16.13.1"
   },
   "peerDependencies": {
     "react": "^16.8.3"

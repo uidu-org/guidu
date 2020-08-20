@@ -1,10 +1,10 @@
-import { ArrowLeft, Code, Link } from 'react-feather';
 import Button from '@uidu/button';
 import { Form } from '@uidu/form';
 import Select from '@uidu/select';
 import Tooltip from '@uidu/tooltip';
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import { ArrowLeft, Code, Link } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import { match, withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
@@ -37,7 +37,7 @@ function PackageSelector(props) {
   const packagesSelectOptions = externalPackages.children.map(
     ({ id, children }) => ({
       label: fs.titleize(id),
-      options: fs.getDirectories(children).map(pkg => {
+      options: fs.getDirectories(children).map((pkg) => {
         const item = {
           label: fs.titleize(pkg.id),
           value: `${id}/${pkg.id}`,
@@ -58,11 +58,11 @@ function PackageSelector(props) {
         <Select
           name="foo"
           styles={{
-            container: styles => ({
+            container: (styles) => ({
               ...styles,
               flex: '1 1 0px',
             }),
-            control: styles => ({
+            control: (styles) => ({
               ...styles,
               backgroundColor: '#fff',
             }),
@@ -108,11 +108,11 @@ function ExampleSelector(props) {
         <Select
           name="foo"
           styles={{
-            container: styles => ({
+            container: (styles) => ({
               ...styles,
               flex: '1 1 0px',
             }),
-            control: styles => ({
+            control: (styles) => ({
               ...styles,
               backgroundColor: '#fff',
             }),
@@ -160,7 +160,8 @@ class ExampleNavigation extends React.Component<ExampleNavigationProps> {
       onCodeToggle,
     } = this.props;
     const error: Error = this.state;
-    const example = examples && examples.children.find(e => e.id === exampleId);
+    const example =
+      examples && examples.children.find((e) => e.id === exampleId);
 
     return (
       <Nav>
@@ -195,7 +196,7 @@ class ExampleNavigation extends React.Component<ExampleNavigationProps> {
               groupId={groupId}
               packageId={packageId}
               pkgJSON={config}
-              afterDeployError={error => this.setState({ error })}
+              afterDeployError={(error) => this.setState({ error })}
               loadingButton={() => (
                 <NavButton style={{ marginRight: 8 }} type="Submit" disabled>
                   <CodeSandboxLogo />
@@ -296,7 +297,7 @@ class Examples extends React.Component<Props, State> {
   }
 
   onCodeToggle = () =>
-    this.setState(state => ({ displayCode: !state.displayCode }));
+    this.setState((state) => ({ displayCode: !state.displayCode }));
 
   deploySandbox = async () => {
     const props = packageResolver(
@@ -310,10 +311,7 @@ class Examples extends React.Component<Props, State> {
     }
 
     const component = props.packageId;
-    const example = props.example.id
-      .split('.')
-      .slice(0, -1)
-      .join('.');
+    const example = props.example.id.split('.').slice(0, -1).join('.');
     this.setState({ loadingSandbox: true });
     const response = await fetch(
       `${SANDBOX_DEPLOY_ENDPOINT}/${component}/${example}`,

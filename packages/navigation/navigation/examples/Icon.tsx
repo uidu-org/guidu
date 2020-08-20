@@ -1,4 +1,4 @@
-import Shell, { ShellContent, ShellMain, ShellNavigation } from '@uidu/shell';
+import { ShellMain, ShellSidebar } from '@uidu/shell';
 import React, { Component } from 'react';
 import { CheckSquare, Grid, Info } from 'react-feather';
 import Navigation from '../src';
@@ -67,17 +67,15 @@ const schema = [
 export default class Basic extends Component<any> {
   render() {
     return (
-      <Shell>
-        <ShellContent>
-          <ShellNavigation
-            style={{ display: 'flex', width: '4rem' }}
-            // className="bg-light"
-          >
-            <Navigation schema={schema} />
-          </ShellNavigation>
-          <ShellMain />
-        </ShellContent>
-      </Shell>
+      <>
+        <ShellSidebar
+          style={{ display: 'flex', width: '4rem' }}
+          // className="bg-light"
+        >
+          <Navigation schema={schema} />
+        </ShellSidebar>
+        <ShellMain />
+      </>
     );
   }
 }

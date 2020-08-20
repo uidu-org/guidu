@@ -14,7 +14,7 @@
   "devDependencies": {
     "@uidu/button": "^0.2.0",
     "@uidu/docs": "^0.1.50",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "styled-components": "^5.0.0"
   },
   "peerDependencies": {

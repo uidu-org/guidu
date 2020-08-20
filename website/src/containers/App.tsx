@@ -1,5 +1,5 @@
 import { ModalTransition } from '@uidu/modal-dialog';
-import Shell, { ShellContent, ShellMain, ShellNavigation } from '@uidu/shell';
+import Shell, { ShellMain, ShellSidebar } from '@uidu/shell';
 import GlobalTheme from '@uidu/theme';
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
@@ -100,67 +100,65 @@ export default class App extends React.Component<{}, State> {
               />
               <Route>
                 <Shell>
-                  <ShellContent>
-                    <ShellNavigation
-                      className="d-lg-flex d-none shadow-sm"
-                      style={{
-                        flex: '1 0 22%',
-                        maxWidth: '18rem',
-                        minWidth: 'fit-content',
-                      }}
-                    >
-                      <Nav />
-                    </ShellNavigation>
-                    <ShellMain>
-                      <Boundary>
-                        <Switch>
-                          <Route exact path="/" component={Home} />
-                          <Route path="/docs/:docId*" component={Document} />
-                          <Route
-                            path="/packages/examples"
-                            component={({ location }) => (
-                              <Redirect
-                                to={location.pathname.replace('/examples', '')}
-                              />
-                            )}
-                          />
-                          <Route
-                            path="/packages/:groupId/:pkgId/docs/:docId"
-                            component={PackageDocument}
-                          />
-
-                          <Route
-                            path="/packages/:groupId/:pkgId"
-                            component={Package}
-                          />
-                          <Route path="/packages" component={PackagesList} />
-                          <Route
-                            path="/changelog/:groupId/:pkgId/:semver?"
-                            component={ChangeLogExplorer}
-                          />
-                          <Route path="/error" component={FourOhFour} />
-                          <Route component={FourOhFour} />
-                        </Switch>
-
+                  <ShellSidebar
+                    className="d-lg-flex d-none shadow-sm"
+                    style={{
+                      flex: '1 0 22%',
+                      maxWidth: '18rem',
+                      minWidth: 'fit-content',
+                    }}
+                  >
+                    <Nav />
+                  </ShellSidebar>
+                  <ShellMain>
+                    <Boundary>
+                      <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route path="/docs/:docId*" component={Document} />
                         <Route
-                          path="/packages/:groupId/:pkgId/changelog/:semver?"
-                          children={(props) => (
-                            <ModalTransition>
-                              {props.match && <ChangelogModal {...props} />}
-                            </ModalTransition>
+                          path="/packages/examples"
+                          component={({ location }) => (
+                            <Redirect
+                              to={location.pathname.replace('/examples', '')}
+                            />
                           )}
                         />
                         <Route
-                          path="/packages/:groupId/:pkgId/example/:exampleId"
-                          children={(props) => (
-                            <ModalTransition>
-                              {props.match && <ExamplesModal {...props} />}
-                            </ModalTransition>
-                          )}
+                          path="/packages/:groupId/:pkgId/docs/:docId"
+                          component={PackageDocument}
                         />
-                      </Boundary>
-                    </ShellMain>
-                  </ShellContent>
+
+                        <Route
+                          path="/packages/:groupId/:pkgId"
+                          component={Package}
+                        />
+                        <Route path="/packages" component={PackagesList} />
+                        <Route
+                          path="/changelog/:groupId/:pkgId/:semver?"
+                          component={ChangeLogExplorer}
+                        />
+                        <Route path="/error" component={FourOhFour} />
+                        <Route component={FourOhFour} />
+                      </Switch>
+
+                      <Route
+                        path="/packages/:groupId/:pkgId/changelog/:semver?"
+                        children={(props) => (
+                          <ModalTransition>
+                            {props.match && <ChangelogModal {...props} />}
+                          </ModalTransition>
+                        )}
+                      />
+                      <Route
+                        path="/packages/:groupId/:pkgId/example/:exampleId"
+                        children={(props) => (
+                          <ModalTransition>
+                            {props.match && <ExamplesModal {...props} />}
+                          </ModalTransition>
+                        )}
+                      />
+                    </Boundary>
+                  </ShellMain>
                 </Shell>
               </Route>
             </Switch>

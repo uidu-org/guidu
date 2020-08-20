@@ -1,6 +1,11 @@
 import Button, { ButtonGroup } from '@uidu/button';
 import Drawer from '@uidu/drawer';
-import { ShellBody, ShellHeader } from '@uidu/shell';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import React, { Fragment } from 'react';
 import {
   GitHub,
@@ -51,7 +56,7 @@ function getExamplesPaths(groupId, pkgId, examples) {
   if (!examples || !examples.length) return {};
 
   const regex = /^[a-zA-Z0-9]/; // begins with letter or number, avoid "special" files
-  const filtered = examples.map(a => a.id).filter(id => id.match(regex));
+  const filtered = examples.map((a) => a.id).filter((id) => id.match(regex));
   const res = filtered[0];
 
   if (!res) return {};
@@ -75,9 +80,9 @@ export default function LoadData({ match }) {
     ),
     loader: () =>
       fetchPackageData(groupId, pkgId).catch(
-        error => console.log(error) || { error },
+        (error) => console.log(error) || { error },
       ),
-    render: props => {
+    render: (props) => {
       const { missing, error } = props;
       if (missing || error) return <FourOhFour />;
 
@@ -184,7 +189,7 @@ class Package extends React.Component<Props> {
                 </h1>
                 {examplePath && (
                   <Media query={{ maxWidth: 768 }}>
-                    {matches => {
+                    {(matches) => {
                       if (matches) {
                         return (
                           <ButtonGroup>
@@ -255,12 +260,18 @@ class Package extends React.Component<Props> {
             </div>
           </div>
         </ShellHeader>
-        <ShellBody scrollable>
-          <div className="container my-3 my-sm-4">
-            <div className="row justify-content-center">
-              <div className="col-lg-10">{doc || <NoDocs name={pkgId} />}</div>
-            </div>
-          </div>
+        <ShellBody>
+          <ShellMain>
+            <ScrollableContainer>
+              <div className="container my-3 my-sm-4">
+                <div className="row justify-content-center">
+                  <div className="col-lg-10">
+                    {doc || <NoDocs name={pkgId} />}
+                  </div>
+                </div>
+              </div>
+            </ScrollableContainer>
+          </ShellMain>
         </ShellBody>
       </Fragment>
     );

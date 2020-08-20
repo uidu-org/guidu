@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.50",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0"
   },

@@ -12,9 +12,8 @@ export default md`
   ## Usage
 
   ${code`import Shell, {
-  ShellContent,
+  ScrollableContainer,
   ShellSidebar,
-  ShellNavigation,
   ShellHeader,
   ShellMain,
   ShellBody,

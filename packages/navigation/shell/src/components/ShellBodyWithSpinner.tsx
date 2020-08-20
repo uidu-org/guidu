@@ -4,10 +4,7 @@ import ShellBody from './ShellBody';
 
 export default () => {
   return (
-    <ShellBody
-      shadowOnScroll={false}
-      className="d-flex align-items-center justify-content-center"
-    >
+    <ShellBody className="h-100 d-flex align-items-center justify-content-center">
       <Spinner />
     </ShellBody>
   );

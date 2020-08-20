@@ -1,4 +1,9 @@
-import { ShellBody, ShellHeader } from '@uidu/shell';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { externalPackages as packages, getConfig } from '../site';
@@ -25,7 +30,7 @@ const StatRows = () =>
     .reduce<Array<ReturnType<typeof renderRow>>>(
       (acc, team) =>
         acc.concat(
-          fs.getDirectories(team.children).map(pkg => {
+          fs.getDirectories(team.children).map((pkg) => {
             const pkgJSON = getConfig(team.id, pkg.id).config;
             return renderRow(pkgJSON, pkg, team.id);
           }),
@@ -40,29 +45,33 @@ export default function PackagesList() {
         <title>{`Browse all packages - ${BASE_TITLE}`}</title>
       </Helmet>
       <ShellHeader className="px-3 px-xl-4">Packages</ShellHeader>
-      <ShellBody scrollable>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Version</th>
-            </tr>
-          </thead>
-          <tbody>
-            {StatRows().map(row => (
-              <tr>
-                <td>
-                  <a href={row.url}>{row.name}</a>
-                </td>
-                <td>{row.description}</td>
-                <td>
-                  <a href={row.package}>{row.version}</a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <ShellBody>
+        <ShellMain>
+          <ScrollableContainer>
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Version</th>
+                </tr>
+              </thead>
+              <tbody>
+                {StatRows().map((row) => (
+                  <tr>
+                    <td>
+                      <a href={row.url}>{row.name}</a>
+                    </td>
+                    <td>{row.description}</td>
+                    <td>
+                      <a href={row.package}>{row.version}</a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </ScrollableContainer>
+        </ShellMain>
       </ShellBody>
     </Fragment>
   );

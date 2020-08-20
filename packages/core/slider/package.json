@@ -11,7 +11,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "classnames": "^2.2.6",
-    "react": "^16.8.3",
+    "react": "^16.13.1",
     "styled-components": "^5.0.0",
     "swiper": "^6.0.3",
     "uuid": "^8.0.0"

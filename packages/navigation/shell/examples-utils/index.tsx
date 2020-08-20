@@ -3,9 +3,9 @@ import faker from 'faker';
 import React from 'react';
 import { Activity, Bell, Grid } from 'react-feather';
 
-export const SidebarLogo = () => (
+export const SidebarLogo = ({ size = 'small' }) => (
   <img
-    style={{ width: '36px' }}
+    style={{ width: size === 'small' ? '24px' : '36px' }}
     className="img-responsive mx-auto rounded-circle"
     src="https://uidu.org/assets/icon-6ec32d4e9ab95f54d401a527d558ef16d7b23db42efecb906614e62c74b68366.png"
   />
@@ -23,10 +23,6 @@ export const NavigationHeader = ({ app }) => (
 );
 
 const schema = [
-  {
-    type: 'NavigationHeader',
-    text: 'Contatti',
-  },
   {
     type: 'NavigationSection',
     items: [

@@ -1,5 +1,10 @@
 import Button from '@uidu/button';
-import { ShellBody, ShellHeader } from '@uidu/shell';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import React, { Component } from 'react';
 import Lorem from 'react-lorem-component';
 import Drawer from '../src';
@@ -38,8 +43,12 @@ export default class DrawersExample extends Component<{}, State> {
           size="wide"
         >
           <ShellHeader>Titolo</ShellHeader>
-          <ShellBody scrollable>
-            <Lorem count={100} />
+          <ShellBody>
+            <ShellMain>
+              <ScrollableContainer>
+                <Lorem count={100} />
+              </ScrollableContainer>
+            </ShellMain>
           </ShellBody>
         </Drawer>
         <Button type="button" onClick={this.openDrawer}>
