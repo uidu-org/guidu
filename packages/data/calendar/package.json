@@ -14,7 +14,7 @@
     "classnames": "^2.2.6",
     "moment": "^2.18.1",
     "react-big-calendar": "^0.26.0",
-    "react-feather": "^2.0.3"
+    "react-feather": "^2.0.8"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.50"

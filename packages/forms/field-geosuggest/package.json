@@ -12,7 +12,7 @@
   "dependencies": {
     "@uidu/field-base": "^0.2.5",
     "@uidu/spinner": "^0.2.0",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.8",
     "use-places-autocomplete": "^1.0.2"
   },
   "devDependencies": {

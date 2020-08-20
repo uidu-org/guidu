@@ -25,7 +25,7 @@
     "@uidu/section-message": "^0.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.4.0",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

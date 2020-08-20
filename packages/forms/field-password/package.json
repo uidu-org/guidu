@@ -22,7 +22,7 @@
     "@uidu/theme": "^0.3.2",
     "@uidu/tooltip": "^0.2.0",
     "classnames": "^2.2.6",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.8",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {

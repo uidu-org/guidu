@@ -10,7 +10,7 @@
     "@uidu/contact": "^0.1.17",
     "@uidu/shell": "^0.3.5",
     "@uidu/slider": "^1.3.0",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
     "zoid": "^9.0.43"
   },

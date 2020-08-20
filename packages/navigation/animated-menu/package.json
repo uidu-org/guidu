@@ -3,15 +3,17 @@
   "version": "0.1.19",
   "private": false,
   "description": "Animated menu like Stripe",
+  "main": "dist/animated-menu.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/animated-menu",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/animated-menu.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "classnames": "^2.2.6",
+    "react": "^16.13.1",
     "react-flip-toolkit": "^7.0.0",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.2.0",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

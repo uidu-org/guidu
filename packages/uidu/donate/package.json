@@ -21,7 +21,7 @@
     "@uidu/schema.d.ts": "^0.1.7",
     "@uidu/select": "^0.4.10",
     "@uidu/widgets": "^0.2.11",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
     "styled-components": "^5.0.0"
   },

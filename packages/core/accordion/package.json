@@ -13,7 +13,7 @@
     "@uidu/docs": "^0.1.50",
     "react": "^16.13.1",
     "react-accessible-accordion": "^3.0.0",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.8",
     "styled-components": "^5.0.0"
   },
   "devDependencies": {

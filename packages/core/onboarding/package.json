@@ -29,7 +29,7 @@
     "@uidu/docs": "^0.1.50",
     "react": "^16.13.1",
     "react-dom": "^16.4.0",
-    "react-feather": "^2.0.3",
+    "react-feather": "^2.0.8",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.0.0"
   },

@@ -15,7 +15,7 @@
     "@uidu/field-textarea": "^0.2.3",
     "@uidu/form": "^0.2.7",
     "@uidu/widgets": "^0.2.11",
-    "react-feather": "^2.0.3"
+    "react-feather": "^2.0.8"
   },
   "devDependencies": {
     "@uidu/docs": "^0.1.48"

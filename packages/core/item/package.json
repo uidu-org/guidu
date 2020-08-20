@@ -23,7 +23,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
+    "react-router-dom": "^5.2.0",
     "recompose": "^0.30.0",
     "styled-components": "^5.0.0"
   },
