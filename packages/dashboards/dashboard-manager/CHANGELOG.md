@@ -1,5 +1,22 @@
 # @uidu/dashboard-manager
 
+## 0.7.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/dashlets@0.6.0
+  - @uidu/dashboard-controls@0.3.5
+
 ## 0.6.2
 
 ### Patch Changes

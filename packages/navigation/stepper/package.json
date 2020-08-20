@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stepper",
-  "version": "0.1.28",
+  "version": "0.2.0",
   "private": false,
   "description": "Animated menu like Stripe",
   "main": "dist/stepper.cjs.js",
@@ -10,7 +10,7 @@
   "module": "dist/stepper.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.3.0",
+    "@uidu/theme": "^0.4.0",
     "classnames": "^2.2.6",
     "query-string": "^6.13.1",
     "react": "^16.13.1",
@@ -20,8 +20,8 @@
     "styled-components": "^5.0.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.49",
-    "@uidu/shell": "^0.3.6"
+    "@uidu/docs": "^0.2.0",
+    "@uidu/shell": "^1.0.0"
   },
   "uidu:src": "index.ts"
 }

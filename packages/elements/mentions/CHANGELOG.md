@@ -1,5 +1,18 @@
 # @uidu/mentions
 
+## 0.1.21
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+  - @uidu/avatar@0.5.0
+  - @uidu/button@0.3.0
+  - @uidu/lozenge@0.3.0
+  - @uidu/theme@0.4.0
+  - @uidu/tooltip@0.3.0
+  - @uidu/analytics-gas-types@0.1.11
+
 ## 0.1.20
 
 ### Patch Changes

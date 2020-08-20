@@ -1,6 +1,6 @@
 {
   "name": "@uidu/responsivr",
-  "version": "0.1.13",
+  "version": "0.2.0",
   "description": "Responsivr manages media query component logics",
   "main": "dist/responsivr.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/responsivr",
@@ -12,7 +12,7 @@
     "react-media": "^1.9.2"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.48"
+    "@uidu/docs": "^0.2.0"
   },
   "uidu:src": "index.ts"
 }

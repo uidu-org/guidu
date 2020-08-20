@@ -1,5 +1,14 @@
 # @uidu/contact
 
+## 0.1.18
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/field-text@0.3.0
+  - @uidu/form@0.3.0
+  - @uidu/checkbox@0.2.5
+
 ## 0.1.17
 
 ### Patch Changes

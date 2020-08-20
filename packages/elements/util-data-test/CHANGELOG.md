@@ -1,5 +1,24 @@
 # @uidu/util-data-test
 
+## 0.2.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+  - @uidu/emoji@0.2.0
+  - @uidu/task-decision@0.2.0
+  - @uidu/mentions@0.1.21
+
 ## 0.1.14
 
 ### Patch Changes

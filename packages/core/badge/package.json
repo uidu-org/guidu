@@ -1,6 +1,6 @@
 {
   "name": "@uidu/badge",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "A React component that indicates values",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/badge",
   "license": "ISC",
@@ -9,10 +9,10 @@
   "main": "dist/badge.cjs.js",
   "module": "dist/badge.esm.js",
   "dependencies": {
-    "@uidu/theme": "^0.3.3"
+    "@uidu/theme": "^0.4.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.50",
+    "@uidu/docs": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "react-test-renderer": "^16.8.3",

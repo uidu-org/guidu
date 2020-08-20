@@ -1,5 +1,23 @@
 # @uidu/blocks
 
+## 0.6.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/spinner@0.3.0
+  - @uidu/tooltip@0.3.0
+  - @uidu/dashlet-controls@0.2.5
+
 ## 0.5.5
 
 ### Patch Changes

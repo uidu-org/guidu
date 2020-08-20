@@ -1,5 +1,21 @@
 # @uidu/analytics-viewer
 
+## 0.2.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+
 ## 0.1.11
 
 ### Patch Changes

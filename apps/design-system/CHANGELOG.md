@@ -1,5 +1,14 @@
 # design-system
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+  - @uidu/button@0.3.0
+  - @uidu/theme@0.4.0
+
 ## 0.1.2
 
 ### Patch Changes
