@@ -1,7 +1,7 @@
 {
   "name": "@uidu/widgets",
   "version": "0.3.0",
-  "description": "Widgets components with zois",
+  "description": "Widgets components with zoid",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",
   "module": "index.js",

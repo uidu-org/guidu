@@ -29,5 +29,5 @@
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.7.11"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

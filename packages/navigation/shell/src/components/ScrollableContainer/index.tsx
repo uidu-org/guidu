@@ -12,7 +12,6 @@ function ScrollableContainer({
   children,
   shadowOnScroll = true,
   className = null,
-  scrollable = true,
   enableCustomScrollbars = false,
   customScrollbarProps = {},
 }: ShellBodyProps) {
@@ -23,9 +22,7 @@ function ScrollableContainer({
 
   useEffect(() => {
     const scrollableElement = getScrollable();
-    if (!!scrollable) {
-      disableBodyScroll(scrollableElement);
-    }
+    disableBodyScroll(scrollableElement);
     return () => {
       enableBodyScroll(scrollableElement);
     };
@@ -42,12 +39,7 @@ function ScrollableContainer({
   };
 
   const content = (
-    <StyledScrollableContainer
-      id={id}
-      scrollable={scrollable}
-      ref={element}
-      className={className}
-    >
+    <StyledScrollableContainer id={id} ref={element} className={className}>
       {shadowOnScroll && (
         <>
           <Observer
@@ -66,7 +58,7 @@ function ScrollableContainer({
     </StyledScrollableContainer>
   );
 
-  if (enableCustomScrollbars && scrollable) {
+  if (enableCustomScrollbars) {
     return (
       <OverlayScrollbarsComponent
         options={{
