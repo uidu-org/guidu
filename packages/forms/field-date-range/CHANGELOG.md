@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 0.2.9
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+  - @uidu/field-base@0.3.0
+  - @uidu/field-date@0.2.9
+
 ## 0.2.8
 
 ### Patch Changes

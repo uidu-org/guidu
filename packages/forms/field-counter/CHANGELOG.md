@@ -1,5 +1,13 @@
 # @uidu/field-counter
 
+## 0.2.6
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+  - @uidu/field-base@0.3.0
+
 ## 0.2.5
 
 ### Patch Changes

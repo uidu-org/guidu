@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "description": "The Atlaskit theme framework",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/theme",
   "license": "Apache-2.0",
@@ -15,10 +15,10 @@
   },
   "devDependencies": {
     "@atlaskit/datetime-picker": "^10.0.2",
-    "@uidu/button": "^0.2.1",
-    "@uidu/docs": "^0.1.50",
-    "@uidu/lozenge": "^0.2.1",
-    "@uidu/section-message": "^0.2.1",
+    "@uidu/button": "^0.3.0",
+    "@uidu/docs": "^0.2.0",
+    "@uidu/lozenge": "^0.3.0",
+    "@uidu/section-message": "^0.3.0",
     "color": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.4.0",

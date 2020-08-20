@@ -1,5 +1,23 @@
 # @uidu/data-views
 
+## 0.3.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/data-controls@0.4.0
+  - @uidu/field-number@0.3.0
+  - @uidu/table@0.1.113
+
 ## 0.2.15
 
 ### Patch Changes

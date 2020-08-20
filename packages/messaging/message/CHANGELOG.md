@@ -1,5 +1,29 @@
 # @uidu/message
 
+## 0.2.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/avatar@0.5.0
+  - @uidu/drawer@0.4.0
+  - @uidu/dropdown-menu@0.3.0
+  - @uidu/tooltip@0.3.0
+  - @uidu/media-card@0.3.0
+  - @uidu/media-core@0.3.0
+  - @uidu/media-viewer@0.2.0
+  - @uidu/message-form@0.2.0
+  - @uidu/message-renderer@0.2.0
+
 ## 0.1.49
 
 ### Patch Changes

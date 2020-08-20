@@ -1,5 +1,47 @@
 # @uidu/editor-core
 
+## 0.6.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/analytics@0.3.0
+  - @uidu/avatar@0.5.0
+  - @uidu/avatar-group@2.4.0
+  - @uidu/button@0.3.0
+  - @uidu/droplist@0.3.0
+  - @uidu/item@0.3.0
+  - @uidu/modal-dialog@0.3.0
+  - @uidu/spinner@0.3.0
+  - @uidu/theme@0.4.0
+  - @uidu/tooltip@0.3.0
+  - @uidu/adf-utils@0.5.0
+  - @uidu/editor-json-transformer@0.2.0
+  - @uidu/editor-markdown-transformer@0.2.0
+  - @uidu/analytics-listeners@0.2.0
+  - @uidu/analytics-namespaced-context@0.2.0
+  - @uidu/date@0.2.0
+  - @uidu/emoji@0.2.0
+  - @uidu/status@0.2.0
+  - @uidu/task-decision@0.2.0
+  - @uidu/select@0.5.0
+  - @uidu/media-card@0.3.0
+  - @uidu/media-core@0.3.0
+  - @uidu/media-filmstrip@0.2.0
+  - @uidu/analytics-gas-types@0.1.11
+  - @uidu/mentions@0.1.21
+  - @uidu/media-picker@0.3.2
+  - @uidu/editor-common@0.3.3
+
 ## 0.5.3
 
 ### Patch Changes

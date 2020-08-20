@@ -1,6 +1,6 @@
 {
   "name": "@uidu/portal",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Atlaskit wrapper for rendering components in React portals",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/portal",
   "license": "ISC",
@@ -10,20 +10,20 @@
   "module": "dist/portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
-    "@uidu/theme": "^0.3.3",
+    "@uidu/theme": "^0.4.0",
     "exenv": "^1.2.2",
     "tiny-invariant": "^1.0.3",
     "tslib": "^2.0.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.0.0",
-    "@uidu/button": "^0.2.0",
-    "@uidu/docs": "^0.1.50",
-    "@uidu/flag": "^0.2.1",
-    "@uidu/inline-dialog": "^0.2.1",
-    "@uidu/modal-dialog": "^0.2.1",
-    "@uidu/onboarding": "^0.2.1",
-    "@uidu/tooltip": "^0.2.1",
+    "@uidu/button": "^0.3.0",
+    "@uidu/docs": "^0.2.0",
+    "@uidu/flag": "^0.3.0",
+    "@uidu/inline-dialog": "^0.3.0",
+    "@uidu/modal-dialog": "^0.3.0",
+    "@uidu/onboarding": "^0.3.0",
+    "@uidu/tooltip": "^0.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0"

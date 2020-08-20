@@ -1,5 +1,27 @@
 # @uidu/media-viewer
 
+## 0.2.0
+
+### Minor Changes
+
+- 7cd4d7c: Shell is now more flexible than ever
+
+  ### Breaking changes
+
+  - ShellBody was intended as a scrollable container, now, instead of <ShellBody scrollable></ShellBody> you should use <ScrollableContainer />
+  - Shell components did change name and functionality. Look at documentation on how to use them
+
+### Patch Changes
+
+- Updated dependencies [7cd4d7c]
+  - @uidu/shell@1.0.0
+  - @uidu/avatar@0.5.0
+  - @uidu/button@0.3.0
+  - @uidu/spinner@0.3.0
+  - @uidu/theme@0.4.0
+  - @uidu/media-core@0.3.0
+  - @uidu/comment@0.1.18
+
 ## 0.1.44
 
 ### Patch Changes

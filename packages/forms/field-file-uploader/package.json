@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-file-uploader",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "description": "A file uploader",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-file-uploader",
@@ -9,14 +9,14 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/field-base": "^0.2.5",
+    "@uidu/field-base": "^0.3.0",
     "@uppy/core": "^1.0.1",
     "@uppy/react": "^1.0.1",
     "@uppy/xhr-upload": "^1.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.1.48",
-    "@uidu/form": "^0.2.7"
+    "@uidu/docs": "^0.2.0",
+    "@uidu/form": "^0.3.0"
   },
   "uidu:src": "index.ts"
 }
