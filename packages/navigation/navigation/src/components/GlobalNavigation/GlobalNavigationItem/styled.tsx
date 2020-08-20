@@ -38,7 +38,7 @@ export default styled.div`
   justify-content: center;
   width: 40px;
   height: 40px;
-  margin: 0px;
+  margin: 0px auto;
   background: none;
   border-width: initial;
   border-style: none;

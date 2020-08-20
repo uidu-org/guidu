@@ -15,7 +15,7 @@ function ScrollableContainer({
   enableCustomScrollbars = false,
   customScrollbarProps = {},
 }: ShellBodyProps) {
-  const [shadowedHeader, setShadowedHeader] = useState(true);
+  const [shadowedHeader, setShadowedHeader] = useState(false);
   const element: React.RefObject<any> = useRef();
 
   useImperativeHandle(forwardedRef, () => element.current);
