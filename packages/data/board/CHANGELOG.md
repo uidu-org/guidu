@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.19
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+
 ## 0.2.18
 
 ### Patch Changes

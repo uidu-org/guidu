@@ -1,6 +1,6 @@
 {
   "name": "@uidu/navigation",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "Downshift React component",
   "main": "dist/navigation.cjs.js",
@@ -13,7 +13,7 @@
     "@uidu/avatar": "^0.5.0",
     "@uidu/dropdown-menu": "^0.3.0",
     "@uidu/inline-dialog": "^0.3.0",
-    "@uidu/shell": "^1.0.0",
+    "@uidu/shell": "^1.0.1",
     "@uidu/theme": "^0.4.0",
     "@uidu/tooltip": "^0.3.0",
     "hoverintent": "^2.2.1",

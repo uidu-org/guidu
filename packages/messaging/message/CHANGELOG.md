@@ -1,5 +1,16 @@
 # @uidu/message
 
+## 0.2.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/drawer@0.4.1
+  - @uidu/media-viewer@0.2.1
+  - @uidu/message-form@0.2.1
+  - @uidu/message-renderer@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

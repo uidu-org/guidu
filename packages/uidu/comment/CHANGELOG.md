@@ -1,5 +1,13 @@
 # @uidu/comment
 
+## 0.1.19
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/message-renderer@0.2.1
+
 ## 0.1.18
 
 ### Patch Changes

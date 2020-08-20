@@ -10,4 +10,4 @@
 '@uidu/widgets': patch
 ---
 
-Remove useless files from navigation packages builsd
+Remove useless files from navigation packages builds

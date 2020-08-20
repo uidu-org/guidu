@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.20
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+
 ## 0.1.19
 
 ### Patch Changes

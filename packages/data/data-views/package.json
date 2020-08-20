@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "Data view declarations and custom forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
@@ -8,9 +8,9 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/data-controls": "^0.4.0",
+    "@uidu/data-controls": "^0.4.1",
     "@uidu/field-number": "^0.3.0",
-    "@uidu/table": "^0.1.113",
+    "@uidu/table": "^0.1.114",
     "react-feather": "^2.0.8"
   },
   "devDependencies": {

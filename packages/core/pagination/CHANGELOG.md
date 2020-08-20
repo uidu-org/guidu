@@ -1,5 +1,13 @@
 # @uidu/pagination
 
+## 0.3.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/button@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

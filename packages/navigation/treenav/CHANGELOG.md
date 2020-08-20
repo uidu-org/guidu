@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.1.13
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+
 ## 0.1.12
 
 ### Patch Changes

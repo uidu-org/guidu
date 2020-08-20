@@ -1,5 +1,13 @@
 # @uidu/dashboard-controls
 
+## 0.2.6
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+- Updated dependencies [f6490ed]
+  - @uidu/field-date-range@0.2.10
+
 ## 0.2.5
 
 ### Patch Changes

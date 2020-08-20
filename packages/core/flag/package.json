@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/flag",
@@ -12,7 +12,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.3.0",
-    "@uidu/button": "^0.3.0",
+    "@uidu/button": "^0.3.1",
     "@uidu/portal": "^0.3.0",
     "@uidu/theme": "^0.4.0",
     "react-feather": "^2.0.8",

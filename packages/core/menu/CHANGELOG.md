@@ -1,5 +1,11 @@
 # @atlaskit/menu
 
+## 0.3.1
+
+### Patch Changes
+
+- f6490ed: Bump dependencies for navigation to be built with preconstruct
+
 ## 0.3.0
 
 ### Minor Changes
