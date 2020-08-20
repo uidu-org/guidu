@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-form",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "Message form",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-form",

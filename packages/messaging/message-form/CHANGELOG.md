@@ -1,5 +1,11 @@
 # @uidu/message-form
 
+## 0.2.2
+
+### Patch Changes
+
+- ab1545d: Remove useless files from navigation packages builds
+
 ## 0.2.1
 
 ### Patch Changes

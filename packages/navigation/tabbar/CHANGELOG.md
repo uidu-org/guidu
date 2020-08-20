@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.2.2
+
+### Patch Changes
+
+- ab1545d: Remove useless files from navigation packages builds
+- Updated dependencies [ab1545d]
+  - @uidu/shell@1.0.2
+
 ## 0.2.1
 
 ### Patch Changes

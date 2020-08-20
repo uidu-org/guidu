@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.21
+
+### Patch Changes
+
+- ab1545d: Remove useless files from navigation packages builds
+
 ## 0.1.20
 
 ### Patch Changes

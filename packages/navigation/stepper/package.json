@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stepper",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "Animated menu like Stripe",
   "main": "dist/stepper.cjs.js",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
-    "@uidu/shell": "^1.0.1"
+    "@uidu/shell": "^1.0.2"
   },
   "uidu:src": "src/index.ts"
 }

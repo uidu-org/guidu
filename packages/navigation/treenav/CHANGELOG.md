@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.1.14
+
+### Patch Changes
+
+- ab1545d: Remove useless files from navigation packages builds
+
 ## 0.1.13
 
 ### Patch Changes

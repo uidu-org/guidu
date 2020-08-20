@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.0.2
+
+### Patch Changes
+
+- ab1545d: Remove useless files from navigation packages builds
+
 ## 1.0.1
 
 ### Patch Changes
