@@ -23,7 +23,7 @@
     "bolt": "^0.24.3",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "chalk": "^4.0.0",
-    "compression-webpack-plugin": "^4.0.0",
+    "compression-webpack-plugin": "^5.0.0",
     "connect-history-api-fallback": "^1.6.0",
     "css-loader": "^4.0.0",
     "eslint-loader": "^4.0.0",
