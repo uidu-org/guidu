@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.3.3
+
+### Patch Changes
+
+- 4b432c0: Fix global navigation icon centering
+- Updated dependencies [e72ac1b]
+  - @uidu/shell@1.0.3
+
 ## 0.3.2
 
 ### Patch Changes

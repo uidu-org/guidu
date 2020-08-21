@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.0.3
+
+### Patch Changes
+
+- e72ac1b: No initial shadow for shell ScrollableContainer
+
 ## 1.0.2
 
 ### Patch Changes
