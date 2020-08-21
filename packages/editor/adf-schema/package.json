@@ -1,6 +1,6 @@
 {
   "name": "@uidu/adf-schema",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Shared package that contains the ADF-schema (json) and ProseMirror node/mark specs",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/adf-schema",
   "license": "MIT",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@uidu/editor-json-transformer": "^0.2.0",
-    "@uidu/json-schema-generator": "^0.1.11",
+    "@uidu/json-schema-generator": "^0.1.12",
     "axios": "^0.20.0",
     "json-schema-diff-validator": "^0.4.1",
     "prosemirror-state": "^1.2.3"

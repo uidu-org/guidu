@@ -1,6 +1,6 @@
 {
   "name": "@uidu/ci-scripts",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "private": true,
   "description": "A collection of scripts for use in CI",
   "repository": "https://github.com/uidu-org/guidu/tree/master/build/ci-scripts",

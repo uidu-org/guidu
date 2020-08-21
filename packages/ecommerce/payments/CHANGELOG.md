@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.2.17
+
+### Patch Changes
+
+- 4ebf235: Bump dependencies
+
 ## 0.2.16
 
 ### Patch Changes

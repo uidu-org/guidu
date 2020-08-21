@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.3
+
+### Patch Changes
+
+- 4ebf235: Bump dependencies
+
 ## 0.2.2
 
 ### Patch Changes
