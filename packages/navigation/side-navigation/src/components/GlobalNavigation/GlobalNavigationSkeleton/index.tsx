@@ -38,11 +38,11 @@ export default function GlobalNavigationSkeleton(props: GlobalNavigationProps) {
         children: <Skeleton />,
         name: 'Joydeed',
       }}
-      body={Array.from(Array(10).keys()).map(i => ({
+      body={Array.from(Array(10).keys()).map((i) => ({
         children: <Skeleton size="small" />,
         name: <GlobalItemLoader />,
       }))}
-      footer={Array.from(Array(4).keys()).map(i => ({
+      footer={Array.from(Array(4).keys()).map((i) => ({
         children: <Skeleton size="small" />,
         name: <GlobalItemLoader />,
       }))}

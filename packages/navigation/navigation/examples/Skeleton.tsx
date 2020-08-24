@@ -1,6 +1,6 @@
 import { ShellSidebar } from '@uidu/shell';
 import React, { Component } from 'react';
-import Navigation, { GlobalNavigationSkeleton } from '../src';
+import Navigation from '../src';
 
 const schema = [
   { type: 'NavigationHeaderSkeleton', text: 'Skeleton' },
@@ -29,7 +29,6 @@ export default class Basic extends Component<any> {
   render() {
     return (
       <>
-        <GlobalNavigationSkeleton navigationWidth={25} />
         <ShellSidebar
           style={{ display: 'flex', flex: '0 1 25%' }}
           className="bg-light border-right"
