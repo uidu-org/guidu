@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-viewer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Analytics viewer for the examples",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
   "license": "Apache-2.0",

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message",
   "license": "ISC",
@@ -10,15 +10,15 @@
   "types": "index.d.ts",
   "dependencies": {
     "@fluentui/react": "^7.105.6",
-    "@uidu/avatar": "^0.5.0",
-    "@uidu/drawer": "^0.4.1",
-    "@uidu/dropdown-menu": "^0.3.0",
-    "@uidu/media-card": "^0.3.0",
+    "@uidu/avatar": "^0.5.1",
+    "@uidu/drawer": "^0.4.2",
+    "@uidu/dropdown-menu": "^0.3.1",
+    "@uidu/media-card": "^0.3.1",
     "@uidu/media-core": "^0.3.0",
-    "@uidu/media-viewer": "^0.2.1",
+    "@uidu/media-viewer": "^0.2.2",
     "@uidu/message-form": "^0.2.1",
-    "@uidu/message-renderer": "^0.2.1",
-    "@uidu/tooltip": "^0.3.0",
+    "@uidu/message-renderer": "^0.2.2",
+    "@uidu/tooltip": "^0.3.1",
     "@uifabric/file-type-icons": "^7.0.3",
     "classnames": "^2.2.6",
     "emoji-regex": "^9.0.0",
@@ -30,8 +30,8 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0",
-    "@uidu/shell": "^1.0.1",
+    "@uidu/docs": "^0.2.1",
+    "@uidu/shell": "^1.0.4",
     "faker": "^4.1.0"
   },
   "publishConfig": {

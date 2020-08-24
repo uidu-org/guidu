@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 0.3.4
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/theme@0.4.1
+
 ## 0.3.3
 
 ### Patch Changes

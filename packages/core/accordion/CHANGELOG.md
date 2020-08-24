@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/docs@0.2.1
+
 ## 0.3.1
 
 ### Patch Changes

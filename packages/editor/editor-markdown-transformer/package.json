@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-markdown-transformer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Editor Markdown transformer",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-markdown-transformer",
   "license": "MIT",
@@ -10,14 +10,14 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/adf-schema": "^0.2.2",
-    "@uidu/editor-common": "^0.3.3",
+    "@uidu/editor-common": "^0.3.4",
     "markdown-it": "^11.0.0",
     "markdown-it-table": "^2.0.4",
     "prosemirror-markdown": "^1.3.1",
     "prosemirror-model": "^1.7.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0",
+    "@uidu/docs": "^0.2.1",
     "@uidu/editor-core": "^0.6.0",
     "react": "^16.13.1",
     "styled-components": "^5.1.1"

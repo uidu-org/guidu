@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 0.4.0
+
+### Minor Changes
+
+- ff7af9c: Navigation is now an horizontal menu, creted a new component @uidu/side-navigation for aside menu
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar@0.5.1
+  - @uidu/dropdown-menu@0.3.1
+  - @uidu/inline-dialog@0.3.1
+  - @uidu/theme@0.4.1
+  - @uidu/tooltip@0.3.1
+  - @uidu/shell@1.0.4
+
 ## 0.3.3
 
 ### Patch Changes

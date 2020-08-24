@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.3.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+
 ## 0.3.0
 
 ### Minor Changes

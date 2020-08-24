@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- ff7af9c: Navigation is now an horizontal menu, creted a new component @uidu/side-navigation for aside menu
+- Updated dependencies [ff7af9c]
+- Updated dependencies [ff7af9c]
+  - @uidu/docs@0.2.1
+  - @uidu/badge@0.3.1
+  - @uidu/button@0.3.2
+  - @uidu/code@0.3.1
+  - @uidu/drawer@0.4.2
+  - @uidu/lozenge@0.3.1
+  - @uidu/modal-dialog@0.3.1
+  - @uidu/spinner@0.3.1
+  - @uidu/theme@0.4.1
+  - @uidu/tooltip@0.3.1
+  - @uidu/list@0.1.26
+  - @uidu/table@0.1.115
+  - @uidu/field-text@0.3.1
+  - @uidu/form@0.3.1
+  - @uidu/select@0.5.1
+  - @uidu/navigation@0.4.0
+  - @uidu/shell@1.0.4
+
 ## 0.2.1
 
 ### Patch Changes

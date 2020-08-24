@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message-renderer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "Message renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-renderer",
@@ -9,15 +9,15 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/dropdown-menu": "^0.3.0",
-    "@uidu/theme": "^0.4.0",
+    "@uidu/dropdown-menu": "^0.3.1",
+    "@uidu/theme": "^0.4.1",
     "interweave": "^12.0.0",
     "interweave-autolink": "^4.0.0",
     "react-feather": "^2.0.8",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0"
+    "@uidu/docs": "^0.2.1"
   },
   "uidu:src": "index.ts"
 }

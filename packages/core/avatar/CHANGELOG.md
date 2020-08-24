@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.5.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/theme@0.4.1
+  - @uidu/tooltip@0.3.1
+
 ## 0.5.0
 
 ### Minor Changes

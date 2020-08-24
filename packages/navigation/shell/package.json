@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "Downshift React component",
   "main": "dist/shell.cjs.js",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@types/overlayscrollbars": "^1.9.0",
-    "@uidu/spinner": "^0.3.0",
+    "@uidu/spinner": "^0.3.1",
     "body-scroll-lock": "^3.0.1",
     "hoverintent": "^2.2.1",
     "overlayscrollbars": "^1.11.0",
@@ -23,8 +23,8 @@
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0",
-    "@uidu/navigation": "^0.3.3",
+    "@uidu/docs": "^0.2.1",
+    "@uidu/navigation": "^0.4.0",
     "faker": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.7.11"
