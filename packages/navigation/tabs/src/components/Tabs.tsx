@@ -4,10 +4,7 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import React, { Component } from 'react';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../../version.json';
+import pkg from '../../version.json';
 import { Tabs as StyledTabs } from '../styled';
 import {
   IsSelectedTestFunction,
@@ -128,8 +125,8 @@ const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'tabs',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onSelect: createAndFireEventOnAtlaskit({
@@ -138,8 +135,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'tabs',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(Tabs),

@@ -1,5 +1,5 @@
-import Navigation from '@uidu/navigation';
 import { ShellHeader } from '@uidu/shell';
+import SideNavigation from '@uidu/side-navigation';
 import Avatar from 'avataaars';
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
@@ -89,7 +89,7 @@ export default class Nav extends React.Component<{}, State> {
               },
             ];
 
-            return <Navigation schema={schema} />;
+            return <SideNavigation schema={schema} />;
           }}
         />
       </Switch>

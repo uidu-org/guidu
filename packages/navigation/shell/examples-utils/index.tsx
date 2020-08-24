@@ -1,4 +1,4 @@
-import Navigation from '@uidu/navigation';
+import SideNavigation from '@uidu/side-navigation';
 import faker from 'faker';
 import React from 'react';
 import { Activity, Bell, Grid } from 'react-feather';
@@ -57,7 +57,7 @@ const schema = [
   },
 ];
 
-export const NavigationMenu = () => <Navigation schema={schema} />;
+export const NavigationMenu = () => <SideNavigation schema={schema} />;
 
 export const SidebarMenu = () => [
   <div className="my-2 text-center">

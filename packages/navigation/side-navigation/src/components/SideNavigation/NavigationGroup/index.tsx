@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import NavigationGroupHeading from './NavigationGroupHeading';
 
 export default class NavigationGroup extends PureComponent<any> {
   static defaultProps = {
@@ -18,14 +19,28 @@ export default class NavigationGroup extends PureComponent<any> {
       withMargin,
       children,
     } = this.props;
-    let className = 'nav flex-nowrap';
+    let className = 'nav flex-column';
     if (withMargin) {
-      className += ' mr-3';
+      className += ' mb-3';
     }
     if (withPadding) {
       className += ' px-4';
     }
 
-    return <>{children}</>;
+    return (
+      <>
+        <ul className={className}>
+          {heading && (
+            <NavigationGroupHeading
+              before={before}
+              after={after}
+              text={heading}
+            />
+          )}
+          {children}
+        </ul>
+        {separator && <hr className="mx-4" />}
+      </>
+    );
   }
 }

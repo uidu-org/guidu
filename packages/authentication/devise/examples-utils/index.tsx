@@ -1,8 +1,7 @@
-import React from 'react';
-import { Grid, Bell, Activity } from 'react-feather';
+import SideNavigation from '@uidu/side-navigation';
 import faker from 'faker';
-
-import Navigation from '@uidu/navigation';
+import React from 'react';
+import { Activity, Bell, Grid } from 'react-feather';
 
 export const SidebarLogo = () => (
   <img
@@ -48,7 +47,7 @@ const schema = [
   },
 ];
 
-export const NavigationMenu = () => <Navigation schema={schema} />;
+export const NavigationMenu = () => <SideNavigation schema={schema} />;
 
 export const SidebarMenu = () => [
   <div className="my-2 text-center">

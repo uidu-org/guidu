@@ -5,14 +5,12 @@ export const StyledGlobalItemButton = styled.button`
   color: rgb(222, 235, 255);
   background-color: transparent;
   fill: rgb(7, 71, 166);
-  -webkit-box-align: center;
   align-items: center;
   cursor: pointer;
   display: flex;
   line-height: 1;
   width: 40px;
   height: 40px;
-  -webkit-box-pack: center;
   justify-content: center;
   margin-top: 0px;
   text-align: center;

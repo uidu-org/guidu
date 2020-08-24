@@ -1,14 +1,21 @@
 // based on schema type we render different components
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellFooter,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import { gridSize } from '@uidu/theme';
 import React, { PureComponent } from 'react';
-import NavigationGroupComponent from './Navigation/NavigationGroup';
-import NavigationHeaderComponent from './Navigation/NavigationHeader';
-import NavigationHeaderSkeletonComponent from './Navigation/NavigationHeaderSkeleton';
-import NavigationIconItem from './Navigation/NavigationIconItem';
-import NavigationItem from './Navigation/NavigationItem';
-import NavigationItemSkeleton from './Navigation/NavigationItemSkeleton';
-import PrimaryActions from './Navigation/PrimaryActions';
-import SecondaryActions from './Navigation/SecondaryActions';
+import NavigationGroupComponent from './SideNavigation/NavigationGroup';
+import NavigationGroupHeadingComponent from './SideNavigation/NavigationGroup/NavigationGroupHeading';
+import NavigationHeaderComponent from './SideNavigation/NavigationHeader';
+import NavigationHeaderSkeletonComponent from './SideNavigation/NavigationHeaderSkeleton';
+import NavigationIconItem from './SideNavigation/NavigationIconItem';
+import NavigationItem from './SideNavigation/NavigationItem';
+import NavigationItemSkeleton from './SideNavigation/NavigationItemSkeleton';
+import NavigationSubItem from './SideNavigation/NavigationSubItem';
 
 /**
  * ITEMS
@@ -16,47 +23,45 @@ import SecondaryActions from './Navigation/SecondaryActions';
 
 // Header
 const NavigationHeader = ({ text, after, before }) => (
-  <NavigationHeaderComponent text={text} after={after} before={before} />
+  <ShellHeader>
+    <NavigationHeaderComponent text={text} after={after} before={before} />
+  </ShellHeader>
 );
 
 const NavigationHeaderSkeleton = ({ text, after, before }) => (
-  <NavigationHeaderSkeletonComponent
-    text={text}
-    after={after}
-    before={before}
-  />
+  <ShellHeader>
+    <NavigationHeaderSkeletonComponent
+      text={text}
+      after={after}
+      before={before}
+    />
+  </ShellHeader>
 );
 
 // Section
-const PrimarySection = ({ items, ...props }) => (
-  <PrimaryActions>
-    <ItemsRenderer items={items} />
-    <div
-      style={{
-        width: '100%',
-        position: 'relative',
-        flexShrink: 1,
-        minWidth: '1px',
-        margin: '0px',
-      }}
-    >
-      <object
-        type="text/html"
-        aria-hidden="true"
-        tabindex="-1"
-        // style="display: block; position: absolute; top: 0px; left: 0px; height: 0px; width: 100%; opacity: 0; overflow: hidden; pointer-events: none; z-index: -1;"
-        data="about:blank"
-      ></object>
-    </div>
-  </PrimaryActions>
+const NavigationSection = ({ items, ...props }) => (
+  <ShellBody>
+    <ShellMain>
+      <ScrollableContainer {...props}>
+        <ItemsRenderer items={items} />
+      </ScrollableContainer>
+    </ShellMain>
+  </ShellBody>
 );
 
-const SecondarySection = ({ items, ...props }) => (
-  <SecondaryActions>
+// Footer
+const NavigationFooter = ({ items, ...props }) => (
+  <ShellFooter {...props}>
     <ItemsRenderer items={items} />
-  </SecondaryActions>
+  </ShellFooter>
 );
+
 // Group
+const NavigationGroupHeading = ({ text, ...props }) => (
+  <NavigationGroupHeadingComponent {...props}>
+    {text}
+  </NavigationGroupHeadingComponent>
+);
 
 const NavigationGroup = ({
   heading,
@@ -98,8 +103,10 @@ const itemComponents = {
   NavigationHeader,
   NavigationIconItem,
   NavigationItem,
+  NavigationSubItem,
   NavigationHeaderSkeleton,
   NavigationItemSkeleton,
+  NavigationGroupHeading,
   // Item: ConnectedItem,
   // SortableItem,
   // SectionHeading,
@@ -110,9 +117,25 @@ const itemComponents = {
 
 const renderItemComponent = (props: any, key: string, index: number) => {
   let element = null;
+  // We need an explicit conditional against each type for flow type refinement to work
+  // if (props.type === 'BackItem') {
+  //   const { type, ...compProps } = props;
+  //   element = <BackItem key={key} {...compProps} index={index} />;
+  // } else if (props.type === 'ContainerHeader') {
+  //   const { type, ...compProps } = props;
+  //   element = <ContainerHeader key={key} {...compProps} />;
+  // } else if (props.type === 'Debug') {
+  //   const { type, ...compProps } = props;
+  //   element = <Debug key={key} {...compProps} />;
+  // } else if (props.type === 'GoToItem') {
+  //   const { type, ...compProps } = props;
+  //   element = <GoToItem key={key} {...compProps} index={index} />;
   if (props.type === 'NavigationItem') {
     const { type, ...compProps } = props;
     element = <NavigationItem key={key} {...compProps} index={index} />;
+  } else if (props.type === 'NavigationSubItem') {
+    const { type, ...compProps } = props;
+    element = <NavigationSubItem key={key} {...compProps} index={index} />;
   } else if (props.type === 'NavigationIconItem') {
     const { type, ...compProps } = props;
     element = <NavigationIconItem key={key} {...compProps} index={index} />;
@@ -126,14 +149,30 @@ const renderItemComponent = (props: any, key: string, index: number) => {
     const { type, ...compProps } = props;
     element = <NavigationHeaderSkeleton key={key} {...compProps} />;
   }
+  // } else if (props.type === 'SortableItem') {
+  //   const { type, ...compProps } = props;
+  //   element = <SortableItem key={key} {...compProps} index={index} />;
+  // } else if (props.type === 'SectionHeading') {
+  //   const { type, id, ...compProps } = props;
+  //   element = <SectionHeading key={key} {...compProps} />;
+  // } else if (props.type === 'Separator') {
+  //   const { type, id, ...compProps } = props;
+  //   element = <Separator key={key} {...compProps} />;
+  // } else if (props.type === 'Switcher') {
+  //   const { type, ...compProps } = props;
+  //   element = <Switcher key={key} {...compProps} />;
+  // } else if (props.type === 'Wordmark') {
+  //   const { type, id, ...compProps } = props;
+  //   element = <Wordmark key={key} {...compProps} />;
+  // }
 
   return element;
 };
 
 const groupComponents = {
   NavigationGroup,
-  PrimarySection,
-  SecondarySection,
+  NavigationSection,
+  NavigationFooter,
   // HeaderSection,
   // MenuSection,
   // Section,
@@ -157,12 +196,12 @@ const renderGroupComponent = (
         customComponents={customComponents}
       />
     );
-  } else if (props.type === 'PrimarySection') {
+  } else if (props.type === 'NavigationSection') {
     const { type, ...compProps } = props;
-    element = <PrimarySection key={key} {...compProps} />;
-  } else if (props.type === 'SecondarySection') {
+    element = <NavigationSection key={key} {...compProps} />;
+  } else if (props.type === 'NavigationFooter') {
     const { type, ...compProps } = props;
-    element = <SecondarySection key={key} {...compProps} />;
+    element = <NavigationFooter key={key} {...compProps} />;
   }
   // } else if (props.type === 'HeaderSection') {
   //   const { type, ...compProps } = props;
@@ -264,7 +303,7 @@ export default class ItemsRenderer extends PureComponent<any> {
       //     />
       //   );
       // }
-      console.log(props);
+
       return <Debug key={key} type={props.type} {...props} />;
     });
   }

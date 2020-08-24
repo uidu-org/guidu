@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
-export const StyledNavigationItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative;
+export const StyledNavigationItem = styled.li.attrs(({ className }) => ({
+  className: `nav-item${className ? ` ${className}` : ''}`,
+}))`
+  width: 100%;
 `;
 
 export const StyledNavigationBefore = styled.div`

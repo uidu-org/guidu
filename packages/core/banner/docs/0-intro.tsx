@@ -24,7 +24,7 @@ to a maximum height of 88 pixels, and after that they allow you to scroll to see
 the rest of the content.
 
 We recommend using banner with [@uidu/page](./page), particularly if you are
-using [@uidu/navigation](./navigation) alongside it.
+using [@uidu/side-navigation](./navigation) alongside it.
 
 ${(
   <Props
