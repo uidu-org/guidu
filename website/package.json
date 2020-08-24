@@ -69,7 +69,7 @@
     "semver": "^7.0.0",
     "sentence-case": "^3.0.1",
     "snake-case": "^3.0.1",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.1.1",
     "tti-polyfill": "^0.2.2",
     "uuid": "^8.0.0"
   },

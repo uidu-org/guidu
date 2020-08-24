@@ -17,7 +17,7 @@
     "@uidu/theme": "^0.4.0",
     "css-color-names": "^1.0.1",
     "raf-schd": "^4.0.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.1.1"
   },
   "uidu:src": "index.ts"
 }

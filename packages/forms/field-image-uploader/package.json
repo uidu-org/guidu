@@ -24,7 +24,7 @@
     "react-avatar-editor": "^12.0.0-beta.0",
     "react-dropzone": "^11.0.1",
     "react-feather": "^2.0.8",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

@@ -27,7 +27,7 @@
     "react-feather": "^2.0.8",
     "react-spring": "^8.0.20",
     "react-use-gesture": "^7.0.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

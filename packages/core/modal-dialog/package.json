@@ -37,7 +37,7 @@
     "react-beautiful-dnd": "^13.0.0",
     "react-dom": "^16.4.0",
     "react-lorem-component": "^0.13.0",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.1.1"
   },
   "peerDependencies": {
     "react": "^16.8.3",

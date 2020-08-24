@@ -20,7 +20,7 @@
     "@uidu/docs": "^0.2.0",
     "@uidu/editor-core": "^0.6.0",
     "react": "^16.13.1",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.1.1"
   },
   "peerDependencies": {
     "styled-components": "^5.0.0"

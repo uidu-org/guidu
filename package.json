@@ -473,7 +473,7 @@
     "standard-changelog": "^2.0.7",
     "string-raw": "^1.0.1",
     "style-loader": "^1.0.0",
-    "styled-components": "^5.0.0",
+    "styled-components": "^5.1.1",
     "svg-inline-react": "^3.1.0",
     "svg-url-loader": "^6.0.0",
     "swiper": "^6.0.3",
@@ -504,6 +504,10 @@
     "webpack-manifest-plugin": "^2.0.4",
     "zoid": "^9.0.43",
     "zxcvbn": "^4.4.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "engines": {
     "node": "^12.0.0",

@@ -15,7 +15,7 @@
     "memoize-one": "^5.0.0",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.2",
-    "styled-components": "^5.0.0"
+    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
