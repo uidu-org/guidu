@@ -1,8 +1,8 @@
-import Logger from './helpers/logger';
 import {
   GasPurePayload,
   GasPureScreenEventPayload,
 } from '@uidu/analytics-gas-types';
+import Logger from './helpers/logger';
 
 export type AnalyticsWebClient = {
   sendUIEvent: (event: GasPurePayload) => void;
@@ -18,7 +18,7 @@ export type ListenerProps = {
 };
 
 export enum FabricChannel {
-  atlaskit = 'atlaskit',
+  guidu = 'guidu',
   elements = 'fabric-elements',
   navigation = 'navigation',
   editor = 'editor',

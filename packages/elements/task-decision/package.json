@@ -12,7 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/icon": "^21.0.3",
     "@atlaskit/util-service-support": "^6.0.0",
     "@uidu/analytics": "^0.3.0",
     "@uidu/analytics-namespaced-context": "^0.2.0",
@@ -22,7 +22,7 @@
     "@uidu/theme": "^0.4.0",
     "date-fns": "^2.0.0",
     "lodash.debounce": "^4.0.8",
-    "tslib": "^2.0.0",
+    "tslib": "^2.0.1",
     "uuid": "^8.0.0"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "@uidu/renderer": "^0.2.0",
     "@uidu/util-data-test": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1",
     "url-search-params": "^1.1.0"
   },
@@ -44,10 +44,6 @@
     "react-dom": "^16.4.0",
     "styled-components": "^5.0.0",
     "url-search-params": "^1.1.0"
-  },
-  "atlaskit": {
-    "name": "Task Decision",
-    "team": "editor"
   },
   "maintainers": [],
   "uidu:src": "index.ts"

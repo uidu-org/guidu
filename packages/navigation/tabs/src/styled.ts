@@ -96,7 +96,7 @@ export const NavLine = styled.span<{ status: string }>`
 export const NavItem = styled.div<NavItem>`
   color: ${labelColor};
   cursor: pointer;
-  line-height: 1.8;
+  /* line-height: 1.8; */
   margin: 0;
   padding: ${divide(gridSize, 2)}px ${gridSize}px;
   position: relative;

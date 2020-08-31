@@ -6,8 +6,8 @@ If you find an issue that isnt addressed in this page, feel free to add it!
 
 Related reading:
 
-* [versioning](./versioning)
-* [releasing-packages](./releasing-packages)
+- [versioning](./versioning)
+- [releasing-packages](./releasing-packages)
 
 ## Why can't I create a branch to create a pull request? Should I fork this repository?
 
@@ -25,9 +25,9 @@ We're planning to prevent you from doing this, but for now, simply create a new 
 
 ## The changeset command is asking me about "bump types" of packages I didn't touch... Is it broken?
 
-No. The changeset command will ask you about the bump types of all packages you are releasing and also all of their dependents. In general if you are presented with a "none" option, this *should* be safe to select as it measn the change you are making to a package will not cause it to leave a dependents semver range.
+No. The changeset command will ask you about the bump types of all packages you are releasing and also all of their dependents. In general if you are presented with a "none" option, this _should_ be safe to select as it measn the change you are making to a package will not cause it to leave a dependents semver range.
 
-> i.e. if `pkg-a` depends on `pkg-b@^1.1.3` and you are releasing `pkg-b@1.2.0`, then hypothetically, it should be safe to not bump `pkg-a`'s dependency. The exception to this would be when you then want to *consume* a change in `pkg-b` that came in at a certain version. At this point, you'd want to update `pkg-a` to depend on the correct range.
+> i.e. if `pkg-a` depends on `pkg-b@^1.1.3` and you are releasing `pkg-b@1.2.0`, then hypothetically, it should be safe to not bump `pkg-a`'s dependency. The exception to this would be when you then want to _consume_ a change in `pkg-b` that came in at a certain version. At this point, you'd want to update `pkg-a` to depend on the correct range.
 
 ## The changeset command is asking about a **lot** of packages that I haven't touched... Is it broken?
 
@@ -37,7 +37,7 @@ There are times when it might ask you about the same package twice. This can hap
 
 ## I created a changeset commit, but after rebasing, I can't see it anymore. Am I crazy?
 
-No (most likely). Unfortunately the default behaviour of rebasing is to remove empty commits, which changeset commits *can* be.
+No (most likely). Unfortunately the default behaviour of rebasing is to remove empty commits, which changeset commits _can_ be.
 
 One solution is to not make empty changeset commits (**reccomended**) or to use the `--keep-empty` flag when rebasing.
 
@@ -79,6 +79,6 @@ Our stance is very similar to the [stance](https://github.com/atlassian/react-be
 
 We acknowledge that types provide a certain level of convenience on top of documentation that is nice to have. However, it places a great deal of maintenance burden on our teams to maintain. Therefore, we will not be providing types for other JavaScript supersets besides Flow for the forseeable future.
 
-We will not discourage others from maintaining types for our components, but we will not be supporting their maintenance, including having them co-located with the components within Atlaskit. We suggest types go in the canonical [definitely-typed](https://github.com/DefinitelyTyped/DefinitelyTyped) repository.
+We will not discourage others from maintaining types for our components, but we will not be supporting their maintenance, including having them co-located with the components within Guidu. We suggest types go in the canonical [definitely-typed](https://github.com/DefinitelyTyped/DefinitelyTyped) repository.
 
 Types are definitely nice to have, and we realise that maintaining them in a separate repo may be more difficult than co-located with the components. However, we kindly ask that you respect our decision. Thank you.

@@ -27,8 +27,8 @@ class ButtonBase extends Component<ButtonProps, { counter: number }> {
       action: 'click',
     });
 
-    // Fire our analytics event on the 'atlaskit' channel
-    analyticsEvent.fire('atlaskit');
+    // Fire our analytics event on the 'uidu' channel
+    analyticsEvent.fire('uidu');
 
     if (this.props.onClick) {
       this.props.onClick(e);
@@ -55,9 +55,9 @@ export default class App extends Component<{}> {
 
   render() {
     return (
-      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+      <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
         <AnalyticsErrorBoundary
-          channel="atlaskit"
+          channel="uidu"
           data={{
             componentName: 'button',
             packageName: '@uidu/button',

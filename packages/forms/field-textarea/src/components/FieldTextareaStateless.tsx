@@ -11,10 +11,7 @@ import React, {
   useRef,
 } from 'react';
 import { FieldTextareaStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldTextarea({
   id,
@@ -77,8 +74,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldTextarea',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -87,8 +84,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldTextarea',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -98,8 +95,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldTextarea',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldTextareaStateless),

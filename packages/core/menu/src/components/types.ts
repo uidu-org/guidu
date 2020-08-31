@@ -1,6 +1,6 @@
-import { ComponentType, ReactNode, Ref } from 'react';
-
 import { CSSObject } from '@emotion/core';
+import { ComponentType, ReactNode, Ref } from 'react';
+import { ComponentType, ReactNode, Ref } from 'react';
 
 export interface RenderFunction<TProps = {}> {
   (Component: ComponentType | string, props: TProps): React.ReactNode;
@@ -78,7 +78,7 @@ export interface SectionBaseProps {
   /**
    * Children of the section,
    * should generally be `Item` or `Heading` components,
-   * but can also be [`EmptyState`](https://atlaskit.atlassian.com/packages/design-system/empty-state)s when wanting to render errors.
+   * but can also be [`EmptyState`](https://uidu.design/packages/design-system/empty-state)s when wanting to render errors.
    */
   children: React.ReactNode;
 
@@ -117,13 +117,13 @@ export interface BaseItemProps {
 
   /**
    * Element to render before the item text.
-   * Generally should be an [icon](https://atlaskit.atlassian.com/packages/design-system/icon) component.
+   * Generally should be an [icon](https://uidu.design/packages/design-system/icon) component.
    */
   iconBefore?: React.ReactNode;
 
   /**
    * Element to render after the item text.
-   * Generally should be an [icon](https://atlaskit.atlassian.com/packages/design-system/icon) component.
+   * Generally should be an [icon](https://uidu.design/packages/design-system/icon) component.
    */
   iconAfter?: React.ReactNode;
 

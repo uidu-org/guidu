@@ -1,6 +1,6 @@
 import * as React from 'react';
 // @ts-ignore
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import { Date, Color } from '../src';
 
 const DateInParagraph = ({ color }: { color?: Color }) => (
@@ -10,12 +10,12 @@ const DateInParagraph = ({ color }: { color?: Color }) => (
 );
 
 export default () => (
-  <AtlaskitThemeProvider mode={'dark'}>
+  <GuiduThemeProvider mode={'dark'}>
     <DateInParagraph />
     <DateInParagraph color="red" />
     <DateInParagraph color="green" />
     <DateInParagraph color="blue" />
     <DateInParagraph color="purple" />
     <DateInParagraph color="yellow" />
-  </AtlaskitThemeProvider>
+  </GuiduThemeProvider>
 );

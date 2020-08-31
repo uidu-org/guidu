@@ -10,7 +10,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/type-helpers": "^4.1.6",
-    "prop-types": "^15.6.0"
+    "prop-types": "^15.6.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",
@@ -19,7 +20,7 @@
     "@uidu/form": "^0.3.0",
     "lodash.isequal": "^4.5.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "redux": "^4.0.1"
   },
   "peerDependencies": {

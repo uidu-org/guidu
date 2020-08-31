@@ -83,7 +83,7 @@ export default class ErrorBoundary extends React.Component<
       const context = await contextIdentifierProvider;
       if (context.product) return context.product;
     }
-    return 'atlaskit';
+    return 'uidu';
   };
 
   componentDidCatch(error: Error, errorInfo: AnalyticsErrorBoundaryErrorInfo) {

@@ -10,4 +10,4 @@ yarn add @uidu/inline-dialog
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/inline-dialog).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/inline-dialog).

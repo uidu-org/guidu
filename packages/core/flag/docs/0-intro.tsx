@@ -11,7 +11,7 @@ export default md`
   ${code`import Flag, { AutoDismissFlag, FlagGroup } from '@uidu/flag';`}
 
   It is recommended to wrap your application with the
-  [Layer Manager](https://uidu.atlassian.com/components/layer-manager) component to
+  [Layer Manager](https://uidu.design/components/layer-manager) component to
   control where the flag is rendered and to ensure layered components like flag and modal stack
   in the correct order.
 

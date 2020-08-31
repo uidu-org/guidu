@@ -7,10 +7,7 @@ import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
 import React, { forwardRef } from 'react';
 import NumberFormat from 'react-number-format';
 import { FieldNumberStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldNumber({
   options,
@@ -49,8 +46,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldNumber',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -59,8 +56,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldNumber',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -70,8 +67,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldNumber',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldNumberStateless),

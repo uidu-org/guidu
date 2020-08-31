@@ -1,0 +1,32 @@
+---
+order: 0
+---
+
+import BreadcrumbsDefault from '../../examples/constellation/breadcrumbs-default';
+import BreadcrumbsLong from '../../examples/constellation/breadcrumbs-long';
+import BreadcrumbsMaxItems from '../../examples/constellation/breadcrumbs-max-items';
+import BreadcrumbsExpanded from '../../examples/constellation/breadcrumbs-expanded';
+
+## Default
+
+The default form of breadcrumbs.
+
+<Example Component={BreadcrumbsDefault} packageName="@uidu/breadcrumbs" />
+
+## Long breadcrumbs
+
+When a breadcrumb contains more than eight items, the breadcrumb auto-collapses and uses ellipses to indicate more information. The first and last items are shown by default. Users expand the breadcrumb by clicking on the ellipsis.
+
+<Example Component={BreadcrumbsLong} packageName="@uidu/breadcrumbs" />
+
+## Max items
+
+The maximum number of items in a breadcrumb can be customized. When there are more than the maximum number, the breadcrumb auto-collapses.
+
+<Example Component={BreadcrumbsMaxItems} packageName="@uidu/breadcrumbs" />
+
+## Expanded overflow
+
+When expanded, breadcrumbs that exceed the page width will overflow to the next line.
+
+<Example Component={BreadcrumbsExpanded} packageName="@uidu/breadcrumbs" />

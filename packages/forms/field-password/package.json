@@ -2,6 +2,7 @@
   "name": "@uidu/field-password",
   "version": "0.3.1",
   "description": "Field Password Component",
+  "main": "dist/field-password.cjs.js",
   "keywords": [
     "react",
     "ui",
@@ -11,9 +12,10 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/field-password.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@loadable/component": "^5.13.1",
     "@types/zxcvbn": "^4.4.0",
     "@uidu/analytics": "^0.3.0",
     "@uidu/field-base": "^0.3.1",
@@ -22,14 +24,16 @@
     "@uidu/theme": "^0.4.0",
     "@uidu/tooltip": "^0.3.0",
     "classnames": "^2.2.6",
+    "formsy-react": "^2.1.0",
     "react-feather": "^2.0.8",
+    "tslib": "^2.0.1",
     "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.1",
     "@uidu/docs": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "peerDependencies": {

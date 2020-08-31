@@ -6,10 +6,7 @@ import {
 import classNames from 'classnames';
 import React, { Component } from 'react';
 import StyledInput from '../styled/Input';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 class FieldTextStateless extends Component<any> {
   static defaultProps = {
@@ -125,8 +122,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldText',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -135,8 +132,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldText',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -146,8 +143,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldText',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldTextStateless),

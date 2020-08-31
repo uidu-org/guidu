@@ -10,4 +10,4 @@ yarn add @uidu/onboarding
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/onboarding).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/onboarding).

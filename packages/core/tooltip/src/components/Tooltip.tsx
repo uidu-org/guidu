@@ -351,7 +351,7 @@ class Tooltip extends React.Component<TooltipProps, State> {
 }
 
 export { Tooltip as TooltipWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export type TooltipType = Tooltip;
 
@@ -362,6 +362,6 @@ export default withAnalyticsContext({
 })(
   withAnalyticsEvents({
     onHide: unhoveredPayload,
-    onShow: createAndFireEventOnAtlaskit({ ...hoveredPayload }),
+    onShow: createAndFireEventOnGuidu({ ...hoveredPayload }),
   })(Tooltip),
 );

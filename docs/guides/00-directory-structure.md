@@ -4,10 +4,10 @@ Related reading:
 
 - [Component design](./component-design)
 
-The top-level directory structure for Atlaskit looks like the following diagram:
+The top-level directory structure for Guidu looks like the following diagram:
 
 ```
-Atlaskit
+Guidu
 ├─ build ·········· Build packages
 ├─ docs ··········· Project documentation
 ├─ flow-typed ····· Flow types for untyped dependencies
@@ -25,7 +25,7 @@ The `build` directory is where all build tooling goes that isn't handled by our 
 
 ## Docs
 
-The `docs` directory is where all project documentation lives. It is displayed on the website under "Getting started > Documentation" and is the main source of Atlaskit's documentation.
+The `docs` directory is where all project documentation lives. It is displayed on the website under "Getting started > Documentation" and is the main source of Guidu's documentation.
 
 ## Packages
 
@@ -177,4 +177,4 @@ Contains the documentation for releases containing significant changes along wit
 
 ## Website
 
-The Atlaskit website is how we dogfood our components and also serves as our public documentation.
+The Guidu website is how we dogfood our components and also serves as our public documentation.

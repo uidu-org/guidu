@@ -1,5 +1,6 @@
-import { DateTimePicker } from '@atlaskit/datetime-picker';
 import styled from '@emotion/styled';
+import FieldDate from '@uidu/field-date';
+import Form from '@uidu/form';
 import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import { colors, gridSize } from '../src';
@@ -19,20 +20,22 @@ export default () => (
         With default (<strong>light</strong>) theme mode (when mode is not
         specified)
       </Description>
-      <DateTimePicker testId="picker-1" defaultValue="2020-01-01" />
+      <Form>
+        <FieldDate testId="picker-1" defaultValue="2020-01-01" />
+      </Form>
     </ThemeProvider>
     <ThemeProvider theme={{ mode: 'dark' }}>
       <Description>
         With <strong>dark</strong> theme mode
       </Description>
-      <DateTimePicker testId="picker-2" defaultValue="2020-01-01" />
+      <FieldDate testId="picker-2" defaultValue="2020-01-01" />
     </ThemeProvider>
     <ThemeProvider theme={{ mode: {} }}>
       <Description>
         With default (<strong>light</strong>) theme mode (when mode is other
         than <strong>light</strong> or <strong>dark</strong>)
       </Description>
-      <DateTimePicker testId="picker-3" defaultValue="2020-01-01" />
+      <FieldDate testId="picker-3" defaultValue="2020-01-01" />
     </ThemeProvider>
   </div>
 );

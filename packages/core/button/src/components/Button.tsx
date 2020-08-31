@@ -234,7 +234,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
   }
 }
 
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 const ButtonWithRef = React.forwardRef<HTMLElement, ButtonProps>(
   // @ts-ignore
   (props, ref) => <Button {...props} consumerRef={ref} />,
@@ -248,7 +248,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onClick: createAndFireEventOnAtlaskit({
+    onClick: createAndFireEventOnGuidu({
       action: 'clicked',
       actionSubject: 'button',
       attributes: {

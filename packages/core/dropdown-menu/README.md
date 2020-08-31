@@ -10,4 +10,4 @@ yarn add @uidu/dropdown-menu
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://uidu.atlassian.com/packages/core/dropdown-menu).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/dropdown-menu).

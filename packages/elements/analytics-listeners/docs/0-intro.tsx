@@ -10,10 +10,10 @@ export default md`
 
   * Fabric Editor
   * Fabric elements
-  * Atlaskit (core)
+  * Guidu (core)
   * Navigation
 
-  Atlaskit (core) events may result in multiple events being fired for the same action if you have instrumented AK components with your own analytics. In this case we recommend temporarily excluding the atlaskit listener via the 'excludedChannels' prop until we have a fix for this on the backend.
+  Guidu (core) events may result in multiple events being fired for the same action if you have instrumented AK components with your own analytics. In this case we recommend temporarily excluding the atlaskit listener via the 'excludedChannels' prop until we have a fix for this on the backend.
 
   ## Installation
 

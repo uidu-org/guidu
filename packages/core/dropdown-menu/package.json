@@ -8,7 +8,7 @@
   "main": "dist/dropdown-menu.cjs.js",
   "module": "dist/dropdown-menu.esm.js",
   "dependencies": {
-    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/icon": "^21.0.3",
     "@uidu/analytics": "^0.3.0",
     "@uidu/button": "^0.3.0",
     "@uidu/droplist": "^0.3.0",
@@ -17,6 +17,7 @@
     "array-find": "^1.0.0",
     "prop-types": "^15.6.0",
     "react-uid": "^2.2.0",
+    "tslib": "^2.0.1",
     "uuid": "^8.0.0"
   },
   "devDependencies": {
@@ -25,7 +26,7 @@
     "@uidu/lozenge": "^0.3.0",
     "@uidu/tooltip": "^0.3.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "peerDependencies": {

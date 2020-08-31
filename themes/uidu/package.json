@@ -21,5 +21,8 @@
       "maxSize": "300 kB"
     }
   ],
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
+  "dependencies": {
+    "tslib": "^2.0.1"
+  }
 }

@@ -68,7 +68,6 @@ export default function NavigationItem({
                 },
               }
             : {})}
-          actionsCount={actions.length}
           {...otherProps}
         >
           {!!before && (
@@ -76,7 +75,6 @@ export default function NavigationItem({
           )}
           <StyledNavigationText
             isActionOpen={isActionOpen}
-            actionsCount={actions.length}
           >
             {text}
           </StyledNavigationText>

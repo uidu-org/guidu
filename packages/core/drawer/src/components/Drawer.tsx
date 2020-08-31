@@ -17,13 +17,13 @@ import { Fade } from './transitions';
 
 const OnlyChild = ({ children }) => React.Children.toArray(children)[0] || null;
 
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 const createAndFireOnClick = (
   createAnalyticsEvent: any,
   trigger: CloseTrigger,
 ) =>
-  createAndFireEventOnAtlaskit({
+  createAndFireEventOnGuidu({
     action: 'dismissed',
     actionSubject: 'drawer',
     attributes: {

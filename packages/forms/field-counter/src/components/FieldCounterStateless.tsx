@@ -11,10 +11,7 @@ import React, {
 } from 'react';
 import NumericInput from 'react-numeric-input';
 import { FieldCounterStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldCounter({
   className = 'form-control',
@@ -106,8 +103,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldNumeric',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -117,8 +114,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldNumeric',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldCounterStateless),

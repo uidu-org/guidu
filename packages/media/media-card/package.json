@@ -16,12 +16,13 @@
     "@uidu/tooltip": "^0.3.0",
     "@uifabric/file-type-icons": "^7.0.3",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
-    "styled-components": "^5.1.1"
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
-    "faker": "^4.1.0"
+    "faker": "^5.1.0"
   },
   "uidu:src": "index.ts"
 }

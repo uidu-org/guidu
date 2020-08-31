@@ -19,7 +19,8 @@
   "dependencies": {
     "@uidu/theme": "^0.4.0",
     "date-fns": "^2.0.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
@@ -28,10 +29,6 @@
   },
   "peerDependencies": {
     "react": "^16.8.3"
-  },
-  "atlaskit": {
-    "name": "Date",
-    "team": "teams"
   },
   "uidu:src": "index.ts"
 }

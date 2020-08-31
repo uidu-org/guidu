@@ -10,4 +10,4 @@ yarn add @uidu/flag
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/flag).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/flag).

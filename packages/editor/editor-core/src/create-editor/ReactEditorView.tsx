@@ -117,7 +117,7 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
   }) => void;
 
   static contextTypes = {
-    getAtlaskitAnalyticsEventHandlers: PropTypes.func,
+    getGuiduAnalyticsEventHandlers: PropTypes.func,
   };
 
   // ProseMirror is instantiated prior to the initial React render cycle,
@@ -488,7 +488,7 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
         .map<SimplifiedNode | string>((node) => getDocStructure(node));
 
       analyticsService.trackEvent(
-        'atlaskit.fabric.editor.invalidtransaction',
+        'uidu.fabric.editor.invalidtransaction',
         { invalidNodes: JSON.stringify(invalidNodes) }, // V2 events don't support object properties
       );
 

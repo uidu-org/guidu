@@ -20,14 +20,14 @@ export default function FieldTextGrid({
   };
 
   const renderQuestions = () =>
-    questions.map(question => (
+    questions.map((question) => (
       <div key={question.id} className="form-group row">
         <label htmlFor={question.id} className="col-sm-3 col-form-label">
           {question.name}
         </label>
         <div className="col-sm-9">
           <input
-            onChange={e => handleChange(e, question)}
+            onChange={(e) => handleChange(e, question)}
             type="text"
             className="form-control"
             id={question.id}

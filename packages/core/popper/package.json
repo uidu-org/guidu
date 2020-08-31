@@ -11,15 +11,15 @@
   "types": "index.d.ts",
   "dependencies": {
     "@popperjs/core": "^2.1.1",
-    "react-popper": "^2.0.0",
-    "tslib": "^2.0.0"
+    "react-popper": "^2.2.3",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",
     "@uidu/docs": "^0.2.0",
     "@uidu/theme": "^0.4.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.1.1"
   },

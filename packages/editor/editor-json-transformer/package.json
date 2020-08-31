@@ -10,7 +10,8 @@
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/adf-schema": "^0.2.2",
-    "prosemirror-model": "^1.7.1"
+    "prosemirror-model": "^1.7.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@types/prosemirror-model": "^1.5.0",
@@ -23,10 +24,6 @@
   },
   "peerDependencies": {
     "react": "^16.8.3"
-  },
-  "atlaskit": {
-    "name": "Editor Json Transformer",
-    "team": "editor"
   },
   "maintainers": [
     "Rifat N"

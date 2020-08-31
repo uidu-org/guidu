@@ -10,7 +10,7 @@ import { FooterProps } from '../src/components/Footer';
 interface State {
   isOpen: boolean;
 }
-export default class AtlaskitFormDemo extends React.Component<{}, State> {
+export default class GuiduFormDemo extends React.Component<{}, State> {
   state = { isOpen: false };
 
   open = () => this.setState({ isOpen: true });

@@ -16,9 +16,10 @@
     "@uidu/theme": "^0.4.0",
     "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.0.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.1",

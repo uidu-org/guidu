@@ -43,7 +43,7 @@ const PrimarySection = ({ items, ...props }) => (
       <object
         type="text/html"
         aria-hidden="true"
-        tabindex="-1"
+        tabIndex="-1"
         // style="display: block; position: absolute; top: 0px; left: 0px; height: 0px; width: 100%; opacity: 0; overflow: hidden; pointer-events: none; z-index: -1;"
         data="about:blank"
       ></object>

@@ -15,7 +15,7 @@ import {
   TABLE_ACTION,
 } from './types';
 
-export const analyticsStepType = 'atlaskit-analytics';
+export const analyticsStepType = 'uidu-analytics';
 
 const actionsToIgnore: (ACTION | TABLE_ACTION)[] = [
   ACTION.INVOKED,

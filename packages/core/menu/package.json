@@ -13,10 +13,10 @@
     "@emotion/core": "^10.0.34",
     "@uidu/theme": "^0.4.0",
     "styled-components": "^5.1.1",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/icon": "^21.0.3",
     "@atlaskit/icon-file-type": "^6.0.1",
     "@atlaskit/icon-object": "^6.0.1",
     "@uidu/avatar": "^0.5.0",
@@ -24,7 +24,7 @@
     "@uidu/docs": "^0.2.0",
     "@uidu/section-message": "^0.3.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0"
   },
   "peerDependencies": {

@@ -9,12 +9,12 @@ export interface Theme {
 }
 export interface GlobalThemeTokens extends Theme {}
 
-export type ThemeProps = AtlaskitThemeProps | CustomThemeProps | NoThemeProps;
+export type ThemeProps = GuiduThemeProps | CustomThemeProps | NoThemeProps;
 export interface CustomThemeProps {
   theme: Theme;
   [index: string]: any;
 }
-export interface AtlaskitThemeProps {
+export interface GuiduThemeProps {
   theme: { __ATLASKIT_THEME__: Theme };
   [index: string]: any;
 }

@@ -26,8 +26,8 @@ class AnalyticsContextConsumer<
   Props extends Record<string, any>
 > extends React.Component<AnalyticsContextConsumerProps<Props>> {
   static contextTypes = {
-    getAtlaskitAnalyticsEventHandlers: PropTypes.func,
-    getAtlaskitAnalyticsContext: PropTypes.func,
+    getGuiduAnalyticsEventHandlers: PropTypes.func,
+    getGuiduAnalyticsContext: PropTypes.func,
   };
 
   static defaultProps = {
@@ -44,7 +44,7 @@ class AnalyticsContextConsumer<
   constructor(props: AnalyticsContextConsumerProps<Props>) {
     super(props);
 
-    Object.keys(this.props.createEventMap).forEach(p => {
+    Object.keys(this.props.createEventMap).forEach((p) => {
       this.originalEventProps[p] = props.wrappedComponentProps[p];
     });
 
@@ -57,14 +57,14 @@ class AnalyticsContextConsumer<
   // Update patched event props only if the original props have changed
   updatePatchedEventProps = (props: Props) => {
     const changedPropCallbacks = Object.keys(this.props.createEventMap).filter(
-      p => this.originalEventProps[p] !== props[p],
+      (p) => this.originalEventProps[p] !== props[p],
     );
     if (changedPropCallbacks.length > 0) {
       this.patchedEventProps = {
         ...this.patchedEventProps,
         ...this.mapCreateEventsToProps(changedPropCallbacks, props),
       };
-      changedPropCallbacks.forEach(p => {
+      changedPropCallbacks.forEach((p) => {
         this.originalEventProps[p] = props[p];
       });
     }
@@ -103,18 +103,18 @@ class AnalyticsContextConsumer<
 
   createAnalyticsEvent = (payload: AnalyticsEventPayload): UIAnalyticsEvent => {
     const {
-      getAtlaskitAnalyticsEventHandlers,
-      getAtlaskitAnalyticsContext,
+      getGuidulyticsEventHandlers,
+      getGuiduAnalyticsContext,
     } = this.context;
 
     return new UIAnalyticsEvent({
       context:
-        (typeof getAtlaskitAnalyticsContext === 'function' &&
-          getAtlaskitAnalyticsContext()) ||
+        (typeof getGuiduAnalyticsContext === 'function' &&
+          getGuiduAnalyticsContext()) ||
         [],
       handlers:
-        (typeof getAtlaskitAnalyticsEventHandlers === 'function' &&
-          getAtlaskitAnalyticsEventHandlers()) ||
+        (typeof getGuidulyticsEventHandlers === 'function' &&
+          getGuidulyticsEventHandlers()) ||
         [],
       payload,
     });

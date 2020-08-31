@@ -13,10 +13,7 @@ import React, {
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils from 'react-day-picker/moment';
 import { FieldDateStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldDate({
   id,
@@ -79,8 +76,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldDate',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -89,8 +86,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldDate',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -100,8 +97,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldDate',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldDateStateless),

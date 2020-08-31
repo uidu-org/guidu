@@ -1,14 +1,14 @@
-import * as React from 'react';
 import {
   AnalyticsListener,
-  UIAnalyticsEventHandler,
   UIAnalyticsEvent,
+  UIAnalyticsEventHandler,
 } from '@uidu/analytics';
 import { DEFAULT_SOURCE, GasPayload } from '@uidu/analytics-gas-types';
+import * as React from 'react';
 import { sendEvent } from '../analytics-web-client-wrapper';
-import { ListenerProps, FabricChannel } from '../types';
+import { FabricChannel, ListenerProps } from '../types';
+import { getPackageHierarchy } from '../uidu/extract-data-from-event';
 import { mergeEventData } from './mergeData';
-import { getPackageHierarchy } from '../atlaskit/extract-data-from-event';
 
 // This function will attach a packageHierarchy value inside of 'attributes' attribute payload.
 // It won't attach it if getPackageHierarchy returns undefined (that's in the case when no context data provided a package name/version)
@@ -30,7 +30,7 @@ function attachPackageHierarchy(
 export default class MediaAnalyticsListener extends React.Component<
   ListenerProps
 > {
-  listenerHandler: UIAnalyticsEventHandler = event => {
+  listenerHandler: UIAnalyticsEventHandler = (event) => {
     const { client, logger } = this.props;
     logger.debug('Received Media event', event);
     const mergedPayloadWithContext = mergeEventData(event);

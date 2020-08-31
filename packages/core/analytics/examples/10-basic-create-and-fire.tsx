@@ -17,8 +17,8 @@ class ButtonBase extends Component<Props> {
       action: 'click',
     });
 
-    // Fire our analytics event on the 'atlaskit' channel
-    analyticsEvent.fire('atlaskit');
+    // Fire our analytics event on the 'uidu' channel
+    analyticsEvent.fire('uidu');
 
     if (this.props.onClick) {
       this.props.onClick(e);
@@ -41,7 +41,7 @@ export default class App extends Component<void> {
 
   render() {
     return (
-      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+      <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
         <Button onClick={() => console.log('onClick callback')}>
           Click me
         </Button>

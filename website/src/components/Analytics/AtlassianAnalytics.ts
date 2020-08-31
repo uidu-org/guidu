@@ -12,7 +12,7 @@ class AtlassianAnalyticsClient {
   addEvent(eventName, properties: Record<string, string | number | boolean>) {
     if (
       // Make sure our JSON object is flat
-      Object.keys(properties).some(key => typeof properties[key] === 'object')
+      Object.keys(properties).some((key) => typeof properties[key] === 'object')
     ) {
       console.warn('Analytic properties are expected to be a flat JSON object');
     }
@@ -28,11 +28,11 @@ class AtlassianAnalyticsClient {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        events: this.payload.map(event => ({
+        events: this.payload.map((event) => ({
           name: event.name,
           properties: event.properties,
           server: WEBSITE_ENV, //Set by webpack
-          product: 'atlaskit',
+          product: 'guidu',
           subproduct: 'website',
           version: this.version,
           user: '-',

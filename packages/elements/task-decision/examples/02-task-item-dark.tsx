@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { ReactRenderer as Renderer } from '@uidu/renderer';
 // @ts-ignore
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 
 import TaskItem from '../src/components/TaskItem';
 import { dumpRef, action, document } from '../example-helpers/story-utils';
 
 export default () => (
-  <AtlaskitThemeProvider mode={'dark'}>
+  <GuiduThemeProvider mode={'dark'}>
     <div style={{ padding: '10px' }}>
       <h3>Simple TaskItem</h3>
       <TaskItem
@@ -57,5 +57,5 @@ export default () => (
         placeholder="Placeholder text"
       />
     </div>
-  </AtlaskitThemeProvider>
+  </GuiduThemeProvider>
 );

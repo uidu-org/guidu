@@ -196,7 +196,7 @@ function Modal({
   );
 }
 
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export const ModalDialogWithoutAnalytics = Modal;
 
@@ -206,7 +206,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onClose: createAndFireEventOnAtlaskit({
+    onClose: createAndFireEventOnGuidu({
       action: 'closed',
       actionSubject: 'modalDialog',
 

@@ -13,17 +13,12 @@
   },
   "dependencies": {
     "@uidu/adf-schema": "^0.2.2",
-    "tslib": "^2.0.0"
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
     "@uidu/json-schema-generator": "^0.1.11",
     "react": "^16.13.1"
-  },
-  "atlaskit": {
-    "internal": true,
-    "name": "Adf utils",
-    "team": "editor"
   },
   "maintainers": [
     "Stanislav S"

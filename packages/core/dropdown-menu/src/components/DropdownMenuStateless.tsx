@@ -505,7 +505,7 @@ export class DropdownMenuStateless extends Component<
 }
 
 export { DropdownMenuStateless as DropdownMenuStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'dropdownMenu',
@@ -513,7 +513,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onOpenChange: createAndFireEventOnAtlaskit({
+    onOpenChange: createAndFireEventOnGuidu({
       action: 'toggled',
       actionSubject: 'dropdownMenu',
 

@@ -4,20 +4,18 @@ import { AnalyticsReactContext } from './AnalyticsReactContext';
 import { CreateUIAnalyticsEvent } from './types';
 import UIAnalyticsEvent from './UIAnalyticsEvent';
 
-
 export type UseAnalyticsEventsHook = {
   createAnalyticsEvent: CreateUIAnalyticsEvent;
 };
 
 export function useAnalyticsEvents(): UseAnalyticsEventsHook {
   const {
-    getAtlaskitAnalyticsEventHandlers,
-    getAtlaskitAnalyticsContext,
+    getGuiduAnalyticsEventHandlers,
+    getGuiduAnalyticsContext,
   } = useContext(AnalyticsReactContext);
 
   if (
-    (getAtlaskitAnalyticsEventHandlers === null ||
-      getAtlaskitAnalyticsContext === null) &&
+    (getGuiduAnalyticsEventHandlers === null || getGuiduAnalyticsContext === null) &&
     process.env.NODE_ENV !== 'production'
   ) {
     /* eslint-disable-next-line no-console */
@@ -29,11 +27,11 @@ export function useAnalyticsEvents(): UseAnalyticsEventsHook {
   const createAnalyticsEvent = useCallback(
     (payload: AnalyticsEventPayload): UIAnalyticsEvent =>
       new UIAnalyticsEvent({
-        context: getAtlaskitAnalyticsContext(),
-        handlers: getAtlaskitAnalyticsEventHandlers(),
+        context: getGuiduAnalyticsContext(),
+        handlers: getGuiduAnalyticsEventHandlers(),
         payload,
       }),
-    [getAtlaskitAnalyticsEventHandlers, getAtlaskitAnalyticsContext],
+    [getGuiduAnalyticsEventHandlers, getGuiduAnalyticsContext],
   );
 
   return {

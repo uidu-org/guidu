@@ -14,13 +14,14 @@
   },
   "dependencies": {
     "@uidu/theme": "^0.4.0",
-    "memoize-one": "^5.0.0",
-    "react-syntax-highlighter": "^13.0.0"
+    "memoize-one": "^5.1.1",
+    "react-syntax-highlighter": "^13.0.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "peerDependencies": {

@@ -3,16 +3,20 @@
   "version": "0.2.6",
   "private": false,
   "description": "A counter input element - good for plus-minus elements",
+  "main": "dist/field-counter.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-counter",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/field-counter.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.3.0",
     "@uidu/field-base": "^0.3.0",
-    "react-numeric-input": "^2.2.3"
+    "formsy-react": "^2.1.0",
+    "react": "^16.13.1",
+    "react-numeric-input": "^2.2.3",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

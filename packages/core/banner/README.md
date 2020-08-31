@@ -11,4 +11,4 @@ yarn add @uidu/banner
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/banner).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/banner).

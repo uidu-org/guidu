@@ -1,4 +1,4 @@
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import React from 'react';
 import { AkCodeBlock } from '../src';
 
@@ -21,8 +21,8 @@ const exampleCodeBlock = `  // React component
 
 export default function Component() {
   return (
-    <AtlaskitThemeProvider mode="dark">
+    <GuidumeProvider mode="dark">
       <AkCodeBlock language="java" text={exampleCodeBlock} />
-    </AtlaskitThemeProvider>
+    </GuidumeProvider>
   );
 }

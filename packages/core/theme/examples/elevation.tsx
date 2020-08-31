@@ -1,11 +1,7 @@
 import Button from '@uidu/button';
 import React from 'react';
 import styled from 'styled-components';
-import {
-  AtlaskitThemeProvider,
-  elevation as AkElevations,
-  themed,
-} from '../src';
+import { GuiduThemeProvider, elevation as AkElevations, themed } from '../src';
 import { Elevation } from '../src/types';
 
 const elevations = { ...AkElevations };
@@ -45,7 +41,7 @@ export default class extends React.Component<Props, State> {
     const { themeMode } = this.state;
 
     return (
-      <AtlaskitThemeProvider mode={themeMode}>
+      <GuiduThemeProvider mode={themeMode}>
         <Wrapper>
           <Box elevation="e100">Cards on a board (e100)</Box>
           <Box elevation="e200">Inline dialogs (e200)</Box>
@@ -59,7 +55,7 @@ export default class extends React.Component<Props, State> {
             Switch theme ({themeMode})
           </Button>
         </div>
-      </AtlaskitThemeProvider>
+      </GuiduThemeProvider>
     );
   }
 }

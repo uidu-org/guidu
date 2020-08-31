@@ -66,13 +66,13 @@ export interface DropdownItemProps {
 
   /**
    * Element to render before the item text.
-   * Generally should be an [icon](https://atlaskit.atlassian.com/packages/design-system/icon) component.
+   * Generally should be an [icon](https://uidu.design/packages/design-system/icon) component.
    */
   elemBefore?: React.ReactNode;
 
   /**
    * Element to render after the item text.
-   * Generally should be an [icon](https://atlaskit.atlassian.com/packages/design-system/icon) component.
+   * Generally should be an [icon](https://uidu.design/packages/design-system/icon) component.
    */
   elemAfter?: React.ReactNode;
 }

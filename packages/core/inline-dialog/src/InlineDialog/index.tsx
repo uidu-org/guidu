@@ -105,7 +105,7 @@ class InlineDialog extends Component<Props, {}> {
 }
 
 export { InlineDialog as InlineDialogWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'inlineDialog',
@@ -113,7 +113,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onClose: createAndFireEventOnAtlaskit({
+    onClose: createAndFireEventOnGuidu({
       action: 'closed',
       actionSubject: 'inlineDialog',
 

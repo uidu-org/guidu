@@ -74,7 +74,7 @@ export default md`
   ${(
     <Props
       heading="Button Props"
-      props={require('!!extract-react-types-loader!../src/components/GlobalNavigation')}
+      props={require('!!extract-react-types-loader!../src/components/Navigation')}
     />
   )}
 `;

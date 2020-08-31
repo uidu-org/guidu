@@ -5,7 +5,7 @@
 */
 
 export { default as Appearance } from './components/Appearance';
-export { default as AtlaskitThemeProvider } from './components/AtlaskitThemeProvider';
+export { default as GuiduThemeProvider } from './components/GuiduThemeProvider';
 // New API
 export { Reset, ResetTheme } from './components/Reset';
 export type { ResetThemeProps, ResetThemeTokens } from './components/Reset';

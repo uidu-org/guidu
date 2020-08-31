@@ -11,7 +11,8 @@
     "@uidu/docs": "^0.2.0",
     "@uidu/theme": "^0.4.0",
     "react": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/tabs"
 }

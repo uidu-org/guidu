@@ -2,16 +2,12 @@
   "name": "@uidu/field-time",
   "version": "0.3.0",
   "description": "Field Time Component",
-  "keywords": [
-    "react",
-    "ui",
-    "uidu"
-  ],
+  "main": "dist/field-time.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-time",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/field-time.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/analytics": "^0.3.0",
@@ -19,18 +15,16 @@
     "@uidu/field-text": "^0.3.0",
     "@uidu/form": "^0.3.0",
     "@uidu/theme": "^0.4.0",
-    "react-simple-timefield": "^3.0.0"
+    "formsy-react": "^2.1.0",
+    "react": "^16.13.1",
+    "react-simple-timefield": "^3.0.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",
     "@uidu/docs": "^0.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.3",
-    "styled-components": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -9,7 +9,8 @@
   "module": "dist/banner.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.4.0"
+    "@uidu/theme": "^0.4.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",

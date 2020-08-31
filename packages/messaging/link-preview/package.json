@@ -9,8 +9,9 @@
   "types": "index.d.ts",
   "dependencies": {
     "axios": "^0.20.0",
-    "get-urls": "^9.1.0",
-    "nanoclamp": "^1.2.9"
+    "get-urls": "^10.0.0",
+    "nanoclamp": "^1.2.9",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

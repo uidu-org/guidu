@@ -7,15 +7,11 @@ import { FieldDateStateless } from '@uidu/field-date';
 import moment from 'moment';
 import React, { RefObject, useRef, useState } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-// @ts-ignore
 import { formatDate } from 'react-day-picker/moment';
 import { ArrowRight } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import { FieldDateRangeStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldDateRangeStateless({
   locale = 'it',
@@ -139,8 +135,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldDate',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -149,8 +145,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldDate',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -160,8 +156,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldDate',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldDateRangeStateless),

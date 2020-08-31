@@ -16,7 +16,8 @@
     "@uppy/react": "^1.0.1",
     "@uppy/url": "^1.0.1",
     "@uppy/webcam": "^1.0.1",
-    "@uppy/xhr-upload": "^1.0.1"
+    "@uppy/xhr-upload": "^1.0.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",

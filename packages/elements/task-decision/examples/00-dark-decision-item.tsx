@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { ReactRenderer as Renderer } from '@uidu/renderer';
 // @ts-ignore
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import DecisionItem from '../src/components/DecisionItem';
 import { dumpRef, document } from '../example-helpers/story-utils';
 
 export default () => (
-  <AtlaskitThemeProvider mode={'dark'}>
+  <GuiduThemeProvider mode={'dark'}>
     <div style={{ padding: '10px' }}>
       <h3>Simple DecisionItem</h3>
       <DecisionItem contentRef={dumpRef}>
@@ -32,5 +32,5 @@ export default () => (
       <h3>Simple DecisionItem with placeholder</h3>
       <DecisionItem contentRef={dumpRef} showPlaceholder={true} />
     </div>
-  </AtlaskitThemeProvider>
+  </GuiduThemeProvider>
 );

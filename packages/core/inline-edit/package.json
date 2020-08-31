@@ -1,0 +1,38 @@
+{
+  "name": "@uidu/inline-edit",
+  "version": "0.1.0",
+  "description": "A base component used to build inline-editable components that match the Atlassian Design Guidelines",
+  "main": "dist/inline-edit.cjs.js",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/inline-edit",
+  "author": "uidu",
+  "license": "MIT",
+  "types": "index.d.ts",
+  "sideEffects": false,
+  "uidu:src": "src/index.ts",
+  "dependencies": {
+    "@atlaskit/icon": "^21.0.3",
+    "@loadable/component": "^5.13.1",
+    "@uidu/analytics": "^0.3.0",
+    "@uidu/button": "^0.3.1",
+    "@uidu/field": "^0.2.4",
+    "@uidu/field-text": "^0.3.0",
+    "@uidu/form": "^0.3.0",
+    "@uidu/inline-dialog": "^0.3.0",
+    "@uidu/theme": "^0.4.0",
+    "react-loadable": "^5.5.0",
+    "tslib": "^2.0.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@atlaskit/tag": "^10.0.0",
+    "@atlaskit/tag-group": "^10.0.0",
+    "@uidu/docs": "^0.2.0",
+    "@uidu/field-textarea": "^0.2.5",
+    "@uidu/select": "^0.5.0",
+    "react": "^16.13.1",
+    "styled-components": "^5.1.1"
+  }
+}

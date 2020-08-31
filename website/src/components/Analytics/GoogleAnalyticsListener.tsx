@@ -49,7 +49,7 @@ export const sendPerformanceMetrics = (opts: PerformanceMetrictsOpts) => {
     path: opts.location,
     isInitial: opts.isInitial || false,
   };
-  request.addEvent(`atlaskit.website.performance`, attributes);
+  request.addEvent(`guidu.website.performance`, attributes);
   // request.send();
 };
 

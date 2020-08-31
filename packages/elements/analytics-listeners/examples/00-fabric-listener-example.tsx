@@ -14,9 +14,7 @@ const DummyElementsComponent = createComponentWithAnalytics(
 const DummyElementsComponentWithAttributes = createComponentWithAttributesWithAnalytics(
   FabricChannel.elements,
 );
-const DummyAtlaskitComponent = createComponentWithAnalytics(
-  FabricChannel.atlaskit,
-);
+const DummyGuiduComponent = createComponentWithAnalytics(FabricChannel.guidu);
 const DummyNavigationComponent = createComponentWithAnalytics(
   FabricChannel.navigation,
 );
@@ -37,7 +35,7 @@ function Example() {
           </AnalyticsContext>
         </AnalyticsContext>
 
-        <DummyAtlaskitComponent onClick={myOnClickHandler} />
+        <DummyGuiduComponent onClick={myOnClickHandler} />
 
         <AnalyticsContext
           data={{

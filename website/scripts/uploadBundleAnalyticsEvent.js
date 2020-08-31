@@ -12,15 +12,15 @@ const knownSplits = [
 ];
 
 const knownSplitsAssets = stats.assets
-  .filter(asset => knownSplits.includes(asset.name))
-  .map(asset => ({ ...asset, sizeInKb: (asset.size / 1000).toFixed(2) }));
+  .filter((asset) => knownSplits.includes(asset.name))
+  .map((asset) => ({ ...asset, sizeInKb: (asset.size / 1000).toFixed(2) }));
 
 console.log(knownSplitsAssets);
 
 console.log('Sending analytics events...');
 
-const events = knownSplitsAssets.map(asset => ({
-  name: 'atlaskit.build.website.bundle.chunkSizeKb',
+const events = knownSplitsAssets.map((asset) => ({
+  name: 'guidu.build.website.bundle.chunkSizeKb',
   properties: {
     chunkName: asset.name,
     chunkSizeKb: parseFloat(asset.sizeInKb),
@@ -29,7 +29,7 @@ const events = knownSplitsAssets.map(asset => ({
 
 sendAnalyticsEvents(events)
   .then(() => console.log('Success!'))
-  .catch(err => {
+  .catch((err) => {
     console.log(err);
     process.exit(1);
   });
@@ -42,11 +42,11 @@ function sendAnalyticsEvents(events) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      events: events.map(event => ({
+      events: events.map((event) => ({
         name: event.name,
         properties: event.properties,
         server: 'dev',
-        product: 'atlaskit',
+        product: 'guidu',
         subproduct: 'website-bundle-splits',
         user: '-',
         serverTime: Date.now(),

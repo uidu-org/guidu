@@ -19,8 +19,8 @@ export const fireAnalytics = (properties = {}) =>
   sendLogs({
     events: [
       {
-        name: 'atlaskit.fabric.editor.fixtable',
-        product: 'atlaskit',
+        name: 'uidu.fabric.editor.fixtable',
+        product: 'uidu',
         properties,
         serverTime: new Date().getTime(),
         server: 'local',

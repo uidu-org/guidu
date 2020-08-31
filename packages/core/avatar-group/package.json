@@ -13,7 +13,8 @@
     "@uidu/dropdown-menu": "^0.3.0",
     "@uidu/item": "^0.3.0",
     "@uidu/theme": "^0.4.0",
-    "@uidu/tooltip": "^0.3.0"
+    "@uidu/tooltip": "^0.3.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",
@@ -22,7 +23,7 @@
     "@uidu/field-base": "^0.3.0",
     "@uidu/field-toggle": "^0.3.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "peerDependencies": {

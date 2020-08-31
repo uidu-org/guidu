@@ -1,5 +1,5 @@
 import { FieldToggleStateless } from '@uidu/field-toggle';
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import React, { Component } from 'react';
 import { getAdorableAvatar, RANDOM_USERS } from '../examples-util/data';
 import AvatarGroup from '../src';
@@ -16,7 +16,7 @@ function getStatus() {
   }
 }
 
-const data = RANDOM_USERS.slice(0, 10).map(user => ({
+const data = RANDOM_USERS.slice(0, 10).map((user) => ({
   ...user,
   appearance: 'circle' as AppearanceType,
   enableTooltip: true,
@@ -44,7 +44,7 @@ export default class AvatarGroupWithStatus extends Component<{}, State> {
 
   render() {
     return (
-      <AtlaskitThemeProvider mode={this.state.theme}>
+      <GuidumeProvider mode={this.state.theme}>
         <p>Dark Mode</p>
         <FieldToggleStateless onChange={this.toggleTheme} />
         <AvatarGroup
@@ -53,7 +53,7 @@ export default class AvatarGroupWithStatus extends Component<{}, State> {
           data={data}
           size="large"
         />
-      </AtlaskitThemeProvider>
+      </GuidumeProvider>
     );
   }
 }

@@ -21,7 +21,8 @@
     "d3-array": "^2.2.0",
     "lodash": "^4.17.4",
     "react-media": "^1.9.2",
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.0.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

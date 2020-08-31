@@ -1,6 +1,6 @@
 import * as colorPalettes from './color-palettes';
 import * as colors from './colors';
-import AtlaskitThemeProvider from './components/AtlaskitThemeProvider';
+import GuiduThemeProvider from './components/GuiduThemeProvider';
 import * as elevation from './elevation';
 import * as typography from './typography';
 import getTheme from './utils/getTheme';
@@ -39,8 +39,8 @@ export {
   math,
   getTheme,
   themed,
-  AtlaskitThemeProvider,
+  GuiduThemeProvider,
 };
 
-// backwards-compatible export with old Atlaskit case
-export const AtlasKitThemeProvider = AtlaskitThemeProvider;
+// backwards-compatible export with old Guidu case
+export const AtlasKitThemeProvider = GuiduThemeProvider;

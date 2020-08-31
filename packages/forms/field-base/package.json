@@ -2,18 +2,22 @@
   "name": "@uidu/field-base",
   "version": "0.3.1",
   "description": "Inputs using Formsy",
+  "main": "dist/field-base.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-base",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/field-base.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/form": "^0.3.0",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
+    "react": "^16.13.1",
     "react-feather": "^2.0.8",
-    "shortid": "^2.2.14"
+    "shortid": "^2.2.14",
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {},
   "publishConfig": {

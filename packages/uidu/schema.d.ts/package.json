@@ -6,6 +6,8 @@
   "license": "MIT",
   "author": "uidu",
   "types": "index.d.ts",
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^2.0.1"
+  },
   "devDependencies": {}
 }

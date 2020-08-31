@@ -147,9 +147,9 @@ class ButtonWithAnalyticsErrorBoundary extends React.Component {
 
   render() {
     return (
-      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+      <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
         <AnalyticsErrorBoundary
-          channel="atlaskit"
+          channel="uidu"
           data={{
             componentName: 'button',
             packageName: '@uidu/button',
@@ -245,11 +245,11 @@ const Form = (props) => (
 
 ${code`
 const ButtonWithAnalytics = withAnalyticsEvents({
-  onClick: createAndFireEvent('atlaskit')({ action: 'click' }),
+  onClick: createAndFireEvent('uidu')({ action: 'click' }),
 })(Button);
 `}
 
-This will create an event with the payload, fire it on the \`'atlaskit'\`
+This will create an event with the payload, fire it on the \`'uidu'\`
 channel and return a clone of the event.
 
 <a name="useAnalyticsEvents"></a>

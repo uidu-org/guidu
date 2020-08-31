@@ -10,4 +10,4 @@ yarn add @uidu/spinner
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/spinner)
+Detailed docs and example usage can be found [here](https://uidu.atlassian.com/packages/core/spinner)

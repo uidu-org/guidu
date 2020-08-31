@@ -10,4 +10,4 @@ yarn add @uidu/droplist
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://uidu.atlassian.com/packages/core/droplist).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/droplist).

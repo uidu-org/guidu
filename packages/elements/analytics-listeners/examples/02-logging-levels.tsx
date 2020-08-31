@@ -12,10 +12,10 @@ import { FabricChannel } from '../src/types';
 const DummyElementsComponentWithAnalytics = createComponentWithAnalytics(
   FabricChannel.elements,
 );
-const DummyAtlaskitComponentWithAnalytics = createComponentWithAnalytics(
-  FabricChannel.atlaskit,
+const DummyGuiduComponentWithAnalytics = createComponentWithAnalytics(
+  FabricChannel.guidu,
 );
-const AtlaskitIncorrectEventType = IncorrectEventType(FabricChannel.atlaskit);
+const GuiduIncorrectEventType = IncorrectEventType(FabricChannel.uidu);
 
 const myOnClickHandler = () => {
   console.log('Button clicked');
@@ -58,10 +58,10 @@ class Example extends React.Component {
             <DummyElementsComponentWithAnalytics onClick={myOnClickHandler} />
           </div>
           <div style={{ display: 'block' }}>
-            <DummyAtlaskitComponentWithAnalytics onClick={myOnClickHandler} />
+            <DummyGuiduComponentWithAnalytics onClick={myOnClickHandler} />
           </div>
           <div style={{ display: 'block' }}>
-            <AtlaskitIncorrectEventType onClick={myOnClickHandler} />
+            <GuiduIncorrectEventType onClick={myOnClickHandler} />
           </div>
         </div>
       </FabricAnalyticsListeners>

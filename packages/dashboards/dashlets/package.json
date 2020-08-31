@@ -10,8 +10,8 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.7.14",
     "@amcharts/amcharts4-geodata": "^4.1.9",
-    "@cubejs-client/core": "^0.19.14",
-    "@cubejs-client/react": "^0.19.13",
+    "@cubejs-client/core": "^0.20.0",
+    "@cubejs-client/react": "^0.20.0",
     "@loadable/component": "^5.13.1",
     "@uidu/dashlet-controls": "^0.2.5",
     "@uidu/spinner": "^0.3.0",
@@ -23,6 +23,7 @@
     "react-animated-number": "^0.4.4",
     "react-countup": "^4.2.2",
     "react-intl": "^5.2.1",
+    "tslib": "^2.0.1",
     "uuid": "^8.0.0"
   },
   "devDependencies": {

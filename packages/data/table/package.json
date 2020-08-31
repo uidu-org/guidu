@@ -30,12 +30,13 @@
     "react-day-picker": "^7.4.5",
     "react-intl": "^5.2.1",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/data-controls": "^0.4.1",
     "@uidu/docs": "^0.2.0",
-    "faker": "^4.1.0",
+    "faker": "^5.1.0",
     "moment": "^2.18.1",
     "numeral": "^2.0.6"
   },

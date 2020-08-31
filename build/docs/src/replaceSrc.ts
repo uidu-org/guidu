@@ -6,10 +6,6 @@ const srcEntryPointRegexString = /((?:import|export)[^'"\`]*['"\`])(..\/src\/)([
 
 export default function replaceSrc(content /*: string*/, name /*: string*/) {
   let replacedCode = content;
-  if (name === '@atlaskit/css-reset') {
-    replacedCode = replacedCode.replace(cssResetRegexString, `$1${name}$3`);
-  }
-
   if (name) {
     // Replace ../src/<entry-point> with ${name}/<entry-point>
     replacedCode = replacedCode.replace(

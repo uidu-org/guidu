@@ -22,10 +22,11 @@
     "react-animate-height": "^2.0.15",
     "react-beautiful-dnd": "^13.0.0",
     "react-content-loader": "^5.0.0",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-transition-group": "^4.0.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/badge": "^0.3.0",

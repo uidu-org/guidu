@@ -1,11 +1,11 @@
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import React from 'react';
 import Badge from '../src';
 
 export default function Example() {
   return (
     <div>
-      <AtlaskitThemeProvider mode="dark">
+      <GuidumeProvider mode="dark">
         <p>
           Default: <Badge>{1}</Badge>
         </p>
@@ -24,7 +24,7 @@ export default function Example() {
             {4}
           </Badge>
         </p>
-      </AtlaskitThemeProvider>
+      </GuidumeProvider>
     </div>
   );
 }

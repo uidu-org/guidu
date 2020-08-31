@@ -10,10 +10,7 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 type CheckboxStatelessProps = {
   label?: string | React.ReactNode;
@@ -84,8 +81,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldRadio',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -94,8 +91,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldRadio',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -105,8 +102,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldRadio',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(CheckboxStateless),

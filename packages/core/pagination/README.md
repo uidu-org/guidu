@@ -5,9 +5,9 @@ This package provides component used for pagination. It truncates the total numb
 ## Installation
 
 ```sh
-yarn add @atlaskit/pagination
+yarn add @uidu/pagination
 ```
 
 ## Usage
 
-Detailed docs and example usage can be found [here](https://atlaskit.atlassian.com/packages/core/pagination).
+Detailed docs and example usage can be found [here](https://uidu.design/packages/core/pagination).

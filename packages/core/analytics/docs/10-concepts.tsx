@@ -116,7 +116,7 @@ const App = () => (
   ## Creating your own events
 
   If you have an interaction that you want to capture that is not covered by
-  the analytics that come with Atlaskit components, you can use either the \`withAnalyticsEvents\`
+  the analytics that come with Guidu components, you can use either the \`withAnalyticsEvents\`
   HOC or the \`useAnalyticsEvents\` hook to create your own.
 
   The \`withAnalyticsEvents\` HOC injects a \`createAnalyticsEvent\` function onto the props
@@ -214,8 +214,8 @@ handleClick = e => {
   // Create our analytics event
   const analyticsEvent = this.props.createAnalyticsEvent({ action: 'click' });
 
-  // Fire our analytics event on the 'atlaskit' channel
-  analyticsEvent.fire('atlaskit');
+  // Fire our analytics event on the 'uidu' channel
+  analyticsEvent.fire('uidu');
 
   if (this.props.onClick) {
     this.props.onClick(e);
@@ -223,7 +223,7 @@ handleClick = e => {
 };
 `}
 
-  In the above example, we fire events on the \`'atlaskit'\` channel. To listen
+  In the above example, we fire events on the \`'uidu'\` channel. To listen
   on this channel we would set up our App like:
 
   ##### App.js (render method)
@@ -231,7 +231,7 @@ handleClick = e => {
 ${code`
 render() {
   return (
-    <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+    <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
       <Button>Click me</Button>
     </AnalyticsListener>
   );
@@ -251,7 +251,7 @@ render() {
   of your component. The consumer then has a chance to add more information and fire
   the event when they're ready.
 
-  This is exactly the approach we took to instrument our own Atlaskit components.
+  This is exactly the approach we took to instrument our own Guidu components.
   This section will show you how we did it and how to use the same approach in
   your components.
 
@@ -333,7 +333,7 @@ onSubmit = analyticsEvent => {
   const publicEvent = analyticsEvent.clone();
 
   // Add whatever data we want to know about to our event and fire it
-  analyticsEvent.update({ value }).fire('atlaskit');
+  analyticsEvent.update({ value }).fire('uidu');
 
   if (this.props.onSubmit) {
     // Pass the cloned event to the callback prop for consumers to use
@@ -351,7 +351,7 @@ ${code`
 import { withAnalyticsEvents, createAndFireEvent } from '@uidu/analytics';
 
 const FormWithAnalytics = withAnalyticsEvents({
-  onSubmit: createAndFireEvent('atlaskit')({ action: 'submit' })
+  onSubmit: createAndFireEvent('uidu')({ action: 'submit' })
 })(Form);
 `}
 

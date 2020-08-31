@@ -12,7 +12,8 @@
     "@stripe/react-stripe-js": "^1.0.3",
     "@stripe/stripe-js": "^1.0.2",
     "@uidu/form": "^0.3.0",
-    "@uidu/payments": "^0.2.15"
+    "@uidu/payments": "^0.2.15",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0"

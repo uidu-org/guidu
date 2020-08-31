@@ -121,7 +121,7 @@ class Tabs extends Component<TabsProps, TabsState> {
 }
 
 export { Tabs as TabsWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'tabs',
@@ -129,7 +129,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onSelect: createAndFireEventOnAtlaskit({
+    onSelect: createAndFireEventOnGuidu({
       action: 'clicked',
       actionSubject: 'tab',
 

@@ -9,7 +9,7 @@ const THEME_MODES = ['light', 'dark'];
 // Resolves the different types of theme objects in the current API
 export default function getTheme(props?: ThemeProps): Theme {
   if (props && props.theme) {
-    // Theme is the global Atlaskit theme
+    // Theme is the global Guidu theme
     if ('__ATLASKIT_THEME__' in props.theme) {
       return props.theme.__ATLASKIT_THEME__;
     }

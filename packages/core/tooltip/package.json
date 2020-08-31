@@ -10,20 +10,21 @@
   "module": "dist/tooltip.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/icon": "^21.0.3",
     "@uidu/analytics": "^0.3.0",
     "@uidu/popper": "^0.3.0",
     "@uidu/portal": "^0.3.0",
     "@uidu/theme": "^0.4.0",
     "flushable": "^1.0.0",
     "react-node-resolver": "^2.0.1",
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.0.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.0",
     "@uidu/docs": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
   "peerDependencies": {

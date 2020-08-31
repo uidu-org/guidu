@@ -3,19 +3,23 @@
   "version": "0.2.4",
   "private": false,
   "description": "Load field-* based on field kind",
+  "main": "dist/field.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/field.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@loadable/component": "^5.13.1",
     "@uidu/checkbox": "^0.2.5",
     "@uidu/field-number": "^0.3.0",
     "@uidu/field-text": "^0.3.0",
     "@uidu/field-textarea": "^0.2.5",
     "@uidu/select": "^0.5.0",
-    "react-content-loader": "^5.0.0"
+    "react": "^16.13.1",
+    "react-content-loader": "^5.0.0",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

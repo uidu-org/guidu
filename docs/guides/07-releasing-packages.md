@@ -55,7 +55,7 @@ the changeset object and confirm if you wish to commit it.
 
 Hotfix releases are possible but should be avoided where **at all possible**. They introduce lots of room for mistakes and create a manual maintenance problem that we'd like to avoid.
 
-> **All hotfixes must be approved by either the build team or that Atlaskit architect**
+> **All hotfixes must be approved by either the build team or that Guidu architect**
 
 **Process**
 

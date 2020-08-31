@@ -10,7 +10,7 @@ export default class NavigationIconItem extends PureComponent<any> {
   render() {
     const { text, icon, ...otherProps } = this.props;
     return (
-      <StyledNavigationIconLink actionsCount={0} {...otherProps}>
+      <StyledNavigationIconLink {...otherProps}>
         {!!icon && (
           <StyledNavigationIconItemIcon>{icon}</StyledNavigationIconItemIcon>
         )}

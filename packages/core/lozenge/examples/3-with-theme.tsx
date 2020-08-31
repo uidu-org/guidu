@@ -1,11 +1,11 @@
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import React from 'react';
 import Lozenge from '../src';
 
 export default function Example() {
   return (
     <div>
-      <AtlaskitThemeProvider mode="light">
+      <GuidumeProvider mode="light">
         <p>
           default: <Lozenge>default</Lozenge>
         </p>
@@ -24,7 +24,7 @@ export default function Example() {
             Custom
           </Lozenge>
         </p>
-      </AtlaskitThemeProvider>
+      </GuidumeProvider>
     </div>
   );
 }

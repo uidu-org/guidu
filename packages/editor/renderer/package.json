@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/icon": "^21.0.3",
     "@atlaskit/type-helpers": "^4.1.6",
     "@loadable/component": "^5.13.1",
     "@uidu/adf-schema": "^0.2.2",
@@ -30,6 +30,7 @@
     "prosemirror-model": "^1.7.1",
     "raf-schd": "^4.0.0",
     "react-intl": "^5.2.1",
+    "tslib": "^2.0.1",
     "url-parse": "^1.4.7"
   },
   "devDependencies": {
@@ -41,7 +42,7 @@
     "@uidu/navigation": "^0.3.0",
     "@uidu/util-data-test": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-live-clock": "^4.0.0-beta",
     "styled-components": "^5.1.1"
   },

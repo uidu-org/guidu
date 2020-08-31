@@ -15,29 +15,31 @@ export default md`
 Here you'll find API's that are no longer supported.
 Please don't use them.
 
-${(<Deprecated>AtlaskitThemeProvider</Deprecated>)}
+${(<Deprecated>GuiduThemeProvider</Deprecated>)}
 
 Theme provider is a wrapper component that accepts a 'mode'. This mode is passed down to styled components below it, using the styled components library theme provider, while also providing some defaults.
 
-Native Atlaskit components are set up to have both a 'light' mode and a 'dark' mode, and will respond to this, defaulting to the 'light' mode if no theme is provided.
+Native Guidu components are set up to have both a 'light' mode and a 'dark' mode, and will respond to this, defaulting to the 'light' mode if no theme is provided.
 
-The AtlaskitThemeProvider should wrap your entire app, to ensure all components are set to the same theme. Mixing dark and light moded components will severely impact accessibility.
+The GuiduThemeProvider should wrap your entire app, to ensure all components are set to the same theme. Mixing dark and light moded components will severely impact accessibility.
 
 ${(
   <Example
     packageName="@uidu/theme"
     Component={require('../examples/deprecated-theme-provider').default}
-    source={require('!!raw-loader!../examples/deprecated-theme-provider').default}
-    title="DEPRECATED AtlaskitThemeProvider"
+    source={
+      require('!!raw-loader!../examples/deprecated-theme-provider').default
+    }
+    title="DEPRECATED GuiduThemeProvider"
   />
 )}
 
-### AtlaskitThemeProvider Props
+### GuiduThemeProvider Props
 
 ${(
   <Props
     heading=""
-    props={require('!!extract-react-types-loader!../src/components/AtlaskitThemeProvider')}
+    props={require('!!extract-react-types-loader!../src/components/GuiduThemeProvider')}
   />
 )}
 

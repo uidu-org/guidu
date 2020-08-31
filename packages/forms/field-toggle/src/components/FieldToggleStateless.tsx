@@ -6,10 +6,7 @@ import {
 import React, { forwardRef, useImperativeHandle, useMemo, useRef } from 'react';
 import Switch from 'react-switch';
 import { FieldToggleStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldToggle({
   id,
@@ -61,44 +58,44 @@ const FieldToggleStateless = forwardRef(
 );
 
 export { FieldToggleStateless as ToggleStatelessWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'toggle',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+        packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onBlur: createAndFireEventOnAtlaskit({
+    onBlur: createAndFireEventOnGuidu({
       action: 'blurred',
       actionSubject: 'toggle',
 
       attributes: {
         componentName: 'toggle',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
-    onChange: createAndFireEventOnAtlaskit({
+    onChange: createAndFireEventOnGuidu({
       action: 'changed',
       actionSubject: 'toggle',
 
       attributes: {
         componentName: 'toggle',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
-    onFocus: createAndFireEventOnAtlaskit({
+    onFocus: createAndFireEventOnGuidu({
       action: 'focused',
       actionSubject: 'toggle',
 
       attributes: {
         componentName: 'toggle',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldToggleStateless),

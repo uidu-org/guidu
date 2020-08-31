@@ -57,7 +57,7 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     ${inlineNodeSharedStyle};
   }
 
-  .ProseMirror[contenteditable=false] .taskItemView-content-wrap {
+  .ProseMirror[contenteditable='false'] .taskItemView-content-wrap {
     pointer-events: none;
     opacity: 0.7;
   }
@@ -138,7 +138,8 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
   /* Danger when top level node */
   .danger > span > .extension-container {
     background: ${akEditorDeleteBackground};
-    box-shadow: 0 0 0 ${akEditorSelectedBorderBoldSize}px ${akEditorDeleteBorder};
+    box-shadow: 0 0 0 ${akEditorSelectedBorderBoldSize}px
+      ${akEditorDeleteBorder};
   }
 
   .panelView-content-wrap {
@@ -167,11 +168,12 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
     text-align: center;
   }
 
-  .hyperlink-floating-toolbar, .${ClassNames.FLOATING_TOOLBAR_COMPONENT} {
+  .hyperlink-floating-toolbar,
+  .${ClassNames.FLOATING_TOOLBAR_COMPONENT} {
     padding: 0;
   }
 
-  /* Link icon in the Atlaskit package
+  /* Link icon in the Guidu package
      is bigger than the others
   */
   .hyperlink-open-link {
@@ -182,7 +184,6 @@ const ContentStyles = styled.div<{ theme: any; allowAnnotation?: boolean }>`
       padding: 0 4px;
     }
   }
-
 `;
 
 export default ContentStyles;

@@ -44,13 +44,13 @@ class Pagination extends Component<PaginationPropTypes, State> {
     return null;
   }
 
-  createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+  createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
   onChangeAnalyticsCaller = () => {
     const { createAnalyticsEvent } = this.props;
 
     if (createAnalyticsEvent) {
-      return this.createAndFireEventOnAtlaskit({
+      return this.createAndFireEventOnGuidu({
         action: 'changed',
         actionSubject: 'pageNumber',
 

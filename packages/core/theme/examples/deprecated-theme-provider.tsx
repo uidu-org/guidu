@@ -1,6 +1,6 @@
 import Button from '@uidu/button';
 import React, { Component } from 'react';
-import { AtlaskitThemeProvider } from '../src';
+import { GuiduThemeProvider } from '../src';
 
 interface Props {}
 type State = { themeMode: 'light' | 'dark' };
@@ -18,12 +18,12 @@ export default class extends Component<Props, State> {
   render() {
     const { themeMode } = this.state;
     return (
-      <AtlaskitThemeProvider mode={themeMode}>
+      <GuiduThemeProvider mode={themeMode}>
         <div style={{ padding: 8 }}>
           <Button onClick={this.switchTheme}>Switch theme ({themeMode})</Button>
           <p>This is the old theming API</p>
         </div>
-      </AtlaskitThemeProvider>
+      </GuiduThemeProvider>
     );
   }
 }

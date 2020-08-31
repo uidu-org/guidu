@@ -1,9 +1,9 @@
 import React, { FC, MouseEvent } from 'react';
 import {
   AnalyticsListener,
+  UIAnalyticsEvent,
   withAnalyticsEvents,
   WithAnalyticsEventsProps,
-  UIAnalyticsEvent,
 } from '../src';
 
 interface ButtonProps extends WithAnalyticsEventsProps {
@@ -17,9 +17,9 @@ const Button: FC<ButtonProps> = ({ createAnalyticsEvent, ...props }) => (
   <button {...props} />
 );
 
-const AtlaskitButton = withAnalyticsEvents({
-  onClick: create => {
-    create({ action: 'click', version: '1.2.3' }).fire('atlaskit');
+const GuiduButton = withAnalyticsEvents({
+  onClick: (create) => {
+    create({ action: 'click', version: '1.2.3' }).fire('uidu');
     return create({ action: 'click' });
   },
 })(Button);
@@ -31,7 +31,7 @@ interface MediaProps {
   ) => void;
 }
 
-const MediaComponent: FC<MediaProps> = props => {
+const MediaComponent: FC<MediaProps> = (props) => {
   const onClick = (
     e: MouseEvent<HTMLButtonElement>,
     analyticsEvent?: UIAnalyticsEvent,
@@ -42,14 +42,14 @@ const MediaComponent: FC<MediaProps> = props => {
     props.onClick(e, publicEvent);
   };
 
-  return <AtlaskitButton {...props} onClick={onClick} />;
+  return <GuiduButton {...props} onClick={onClick} />;
 };
 
 interface JiraProps {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const JiraApp: FC<JiraProps> = props => {
+const JiraApp: FC<JiraProps> = (props) => {
   const onClick = (
     e: MouseEvent<HTMLButtonElement>,
     analyticsEvent?: UIAnalyticsEvent | null,
@@ -82,7 +82,7 @@ const onEvent = (event: UIAnalyticsEvent, channel: string = 'undefined') => {
 export default () => (
   <AnalyticsListener channel="jira" onEvent={onEvent}>
     <AnalyticsListener channel="media" onEvent={onEvent}>
-      <AnalyticsListener channel="atlaskit" onEvent={onEvent}>
+      <AnalyticsListener channel="uidu" onEvent={onEvent}>
         <JiraApp />
       </AnalyticsListener>
     </AnalyticsListener>

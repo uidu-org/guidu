@@ -160,7 +160,7 @@ class Item extends PureComponent<any> {
 }
 
 export { Item as DroplistItemWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'droplistItem',
@@ -168,7 +168,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onActivate: createAndFireEventOnAtlaskit({
+    onActivate: createAndFireEventOnGuidu({
       action: 'selected',
       actionSubject: 'droplistItem',
 

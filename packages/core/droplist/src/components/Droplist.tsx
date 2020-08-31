@@ -195,7 +195,7 @@ class Droplist extends Component<any> {
 }
 
 export { Droplist as DroplistWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'droplist',
@@ -203,7 +203,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onOpenChange: createAndFireEventOnAtlaskit({
+    onOpenChange: createAndFireEventOnGuidu({
       action: 'toggled',
       actionSubject: 'droplist',
 

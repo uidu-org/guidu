@@ -3,8 +3,8 @@ import React, { Children, Component } from 'react';
 import { AnalyticsReactContext } from './AnalyticsReactContext';
 
 const ContextTypes = {
-  getAtlaskitAnalyticsContext: PropTypes.func,
-  getAtlaskitAnalyticsEventHandlers: PropTypes.func,
+  getGuiduAnalyticsContext: PropTypes.func,
+  getGuidulyticsEventHandlers: PropTypes.func,
 };
 
 interface Props {
@@ -16,8 +16,8 @@ interface Props {
 }
 
 interface State {
-  getAtlaskitAnalyticsContext: () => any[];
-  getAtlaskitAnalyticsEventHandlers: () => any[];
+  getGuiduAnalyticsContext: () => any[];
+  getGuiduAnalyticsEventHandlers: () => any[];
 }
 
 class AnalyticsContext extends Component<Props, State> {
@@ -27,31 +27,31 @@ class AnalyticsContext extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.state = {
-      getAtlaskitAnalyticsContext: this.getAnalyticsContext,
-      getAtlaskitAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
+      getGuiduAnalyticsContext: this.getAnalyticsContext,
+      getGuiduAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
     };
   }
 
   getChildContext = () => ({
-    getAtlaskitAnalyticsContext: this.getAnalyticsContext,
+    getGuiduAnalyticsContext: this.getAnalyticsContext,
   });
 
   getAnalyticsContext = () => {
     const { data } = this.props;
-    const { getAtlaskitAnalyticsContext } = this.context;
+    const { getGuiduAnalyticsContext } = this.context;
     const ancestorData =
-      (typeof getAtlaskitAnalyticsContext === 'function' &&
-        getAtlaskitAnalyticsContext()) ||
+      (typeof getGuiduAnalyticsContext === 'function' &&
+        getGuiduAnalyticsContext()) ||
       [];
 
     return [...ancestorData, data];
   };
 
   getAnalyticsEventHandlers = () => {
-    const { getAtlaskitAnalyticsEventHandlers } = this.context;
+    const { getGuiduAnalyticsEventHandlers } = this.context;
     const ancestorHandlers =
-      (typeof getAtlaskitAnalyticsEventHandlers === 'function' &&
-        getAtlaskitAnalyticsEventHandlers()) ||
+      (typeof getGuiduAnalyticsEventHandlers === 'function' &&
+        getGuiduAnalyticsEventHandlers()) ||
       [];
     return ancestorHandlers;
   };

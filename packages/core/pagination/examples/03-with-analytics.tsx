@@ -45,7 +45,7 @@ export default class extends Component<{}, State> {
   render() {
     const { analyticEventContext, analyticEventPayload, items } = this.state;
     return (
-      <AnalyticsListener channel="atlaskit" onEvent={this.sendAnalytics}>
+      <AnalyticsListener channel="uidu" onEvent={this.sendAnalytics}>
         <Pagination
           getPageLabel={(page: any) =>
             typeof page === 'object' ? page.value : page

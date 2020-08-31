@@ -20,8 +20,8 @@ export default () => {
         sendLogs({
           events: [
             {
-              name: 'atlaskit.fabric.editor.invalidstep',
-              product: 'atlaskit',
+              name: 'uidu.fabric.editor.invalidstep',
+              product: 'uidu',
               properties: {
                 message: 'Blocked transaction with invalid steps',
               },

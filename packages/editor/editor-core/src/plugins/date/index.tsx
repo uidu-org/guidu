@@ -26,10 +26,11 @@ import { pluginKey as datePluginKey } from './pm-plugins/plugin-key';
 import { DateState } from './pm-plugins/types';
 import { DateType } from './types';
 
-const DatePicker = loadable(() =>
-  import(
-    /* webpackChunkName:"@atlaskit-internal-editor-datepicker" */ './ui/DatePicker'
-  ),
+const DatePicker = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-editor-datepicker" */ './ui/DatePicker'
+    ),
 );
 
 const datePlugin = (): EditorPlugin => ({

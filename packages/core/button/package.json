@@ -11,16 +11,17 @@
     "@uidu/analytics": "^0.3.0",
     "@uidu/spinner": "^0.3.0",
     "@uidu/theme": "^0.4.0",
-    "memoize-one": "^5.0.0"
+    "memoize-one": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.0.0",
+    "@atlaskit/icon": "^21.0.3",
     "@atlaskit/logo": "^13.0.0",
     "@uidu/checkbox": "^0.2.5",
     "@uidu/docs": "^0.2.0",
     "@uidu/form": "^0.3.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1"
   },

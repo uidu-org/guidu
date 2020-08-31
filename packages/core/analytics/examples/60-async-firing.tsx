@@ -18,7 +18,7 @@ const Button: FC<ButtonProps> = ({ createAnalyticsEvent, ...props }) => (
   <button {...props} />
 );
 
-const AtlaskitButton = withAnalyticsEvents({
+const GuiduButton = withAnalyticsEvents({
   onClick: { action: 'click ' },
 })(Button);
 
@@ -43,9 +43,7 @@ class Everything extends Component<EverythingProps> {
       <AnalyticsListener channel="jira" onEvent={onEvent}>
         <AnalyticsContext data={{ foo: 'bar' }}>
           <AnalyticsContext data={{ abc: 123 }}>
-            <AtlaskitButton onClick={this.props.onClick}>
-              Click me
-            </AtlaskitButton>
+            <Guiduton onClick={this.props.onClick}>Click me</Guiduton>
           </AnalyticsContext>
         </AnalyticsContext>
       </AnalyticsListener>

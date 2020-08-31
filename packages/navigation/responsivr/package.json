@@ -9,7 +9,8 @@
   "module": "dist/responsivr.esm.js",
   "dependencies": {
     "react": "^16.13.1",
-    "react-media": "^1.9.2"
+    "react-media": "^1.9.2",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0"

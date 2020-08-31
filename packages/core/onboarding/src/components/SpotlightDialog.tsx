@@ -143,7 +143,7 @@ class SpotlightDialog extends Component<SpotlightDialogProps, State> {
   }
 }
 
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'spotlight',
@@ -151,7 +151,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    targetOnClick: createAndFireEventOnAtlaskit({
+    targetOnClick: createAndFireEventOnGuidu({
       action: 'clicked',
       actionSubject: 'spotlight',
       attributes: {

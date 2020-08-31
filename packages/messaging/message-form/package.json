@@ -24,7 +24,8 @@
     "formsy-react": "^2.1.0",
     "react": "^16.13.1",
     "react-feather": "^2.0.8",
-    "react-mentions": "^4.0.2"
+    "react-mentions": "^4.0.2",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

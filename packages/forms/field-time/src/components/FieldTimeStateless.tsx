@@ -7,10 +7,7 @@ import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import TimeField from 'react-simple-timefield';
 import { FieldTimeProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldTime({
   className = 'form-control',
@@ -40,8 +37,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldNumber',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -50,8 +47,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldNumber',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -61,8 +58,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldNumber',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldTimeStateless),

@@ -3,11 +3,12 @@
   "version": "0.4.1",
   "private": false,
   "description": "Downshift React component",
+  "main": "dist/field-downshift.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-downshift",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/field-downshift.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@uidu/droplist": "^0.3.0",
@@ -16,7 +17,10 @@
     "@uidu/item": "^0.3.1",
     "classnames": "^2.2.6",
     "downshift": "^6.0.0",
-    "react-feather": "^2.0.8"
+    "formsy-react": "^2.1.0",
+    "react": "^16.13.1",
+    "react-feather": "^2.0.8",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

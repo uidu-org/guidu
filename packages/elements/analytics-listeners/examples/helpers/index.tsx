@@ -1,15 +1,15 @@
 import {
+  AnalyticsEventPayload,
+  createAndFireEvent,
+  withAnalyticsContext,
+  withAnalyticsEvents,
+  WithAnalyticsEventsProps,
+} from '@uidu/analytics';
+import {
   EventType,
   GasPurePayload,
   GasPureScreenEventPayload,
 } from '@uidu/analytics-gas-types';
-import {
-  createAndFireEvent,
-  withAnalyticsEvents,
-  WithAnalyticsEventsProps,
-  AnalyticsEventPayload,
-  withAnalyticsContext,
-} from '@uidu/analytics';
 import Button from '@uidu/button';
 import * as React from 'react';
 import { FabricChannel } from '../../src/types';
@@ -45,14 +45,11 @@ export class DummyElementsComponent extends React.Component<Props> {
   }
 }
 
-export class DummyAtlaskitComponent extends React.Component<Props> {
-  static displayName = 'DummyAtlaskitComponent';
+export class DummyGuiduComponent extends React.Component<Props> {
+  static displayName = 'DummyGuiduComponent';
   render() {
     return (
-      <CustomButton
-        text={FabricChannel.atlaskit}
-        onClick={this.props.onClick}
-      />
+      <CustomButton text={FabricChannel.uidu} onClick={this.props.onClick} />
     );
   }
 }
@@ -99,7 +96,7 @@ class MyButton extends React.Component<Props> {
 }
 
 const componentChannels = {
-  [FabricChannel.atlaskit]: DummyAtlaskitComponent,
+  [FabricChannel.guidu]: DummyGuiduComponent,
   [FabricChannel.elements]: DummyElementsComponent,
   [FabricChannel.navigation]: DummyNavigationComponent,
   [FabricChannel.editor]: DummyEditorComponent,

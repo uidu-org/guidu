@@ -93,5 +93,5 @@ ${(
   />
 )}
 
-___Unlike in the deprecated \`AtlaskitThemeProvider\`, this is not applied automatically - or globally - so it is up to you to put this in your app where appropriate.___
+___Unlike in the deprecated \`GuiduThemeProvider\`, this is not applied automatically - or globally - so it is up to you to put this in your app where appropriate.___
 `;

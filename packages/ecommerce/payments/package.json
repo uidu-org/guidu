@@ -16,6 +16,7 @@
     "axios": "^0.20.0",
     "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
+    "tslib": "^2.0.1",
     "uuid": "^8.0.0"
   },
   "devDependencies": {

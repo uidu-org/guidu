@@ -45,7 +45,7 @@ function Blanket({
 }
 
 export { Blanket as BlanketWithoutAnalytics };
-const createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+const createAndFireEventOnGuidu = createAndFireEvent('atlaskit');
 
 export default withAnalyticsContext({
   componentName: 'blanket',
@@ -53,7 +53,7 @@ export default withAnalyticsContext({
   packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onBlanketClicked: createAndFireEventOnAtlaskit({
+    onBlanketClicked: createAndFireEventOnGuidu({
       action: 'clicked',
       actionSubject: 'blanket',
 

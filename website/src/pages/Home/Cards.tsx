@@ -19,7 +19,7 @@ import {
 
 const CardIcon = styled.span`
   align-items: center;
-  background-color: ${p => p.color};
+  background-color: ${(p) => p.color};
   border-radius: 4px;
   border: 2px solid ${colors.N0};
   display: flex;
@@ -165,7 +165,7 @@ const cards = [
     icon: () => (
       <CardIcon color={colors.R400}>
         <MediaDocIcon
-          label="Get started with Atlaskit!"
+          label="Get started with Guidu!"
           primaryColor={colors.N0}
           secondaryColor={colors.R400}
           size="small"
@@ -173,7 +173,7 @@ const cards = [
       </CardIcon>
     ),
     image: rocket,
-    title: 'Get started with Atlaskit!',
+    title: 'Get started with Guidu!',
     text: 'Everything you need to get up and running.',
   },
   {
@@ -191,7 +191,7 @@ const cards = [
       </CardIcon>
     ),
     text:
-      'Check out the documentation and usage guides for the Atlaskit packages.',
+      'Check out the documentation and usage guides for the Guidu packages.',
   },
   {
     to: '/docs/guides/contributing',
@@ -211,11 +211,11 @@ const cards = [
   },
   {
     href: 'https://bitbucket.org/atlassian/atlaskit-mk-2',
-    title: 'Atlaskit Repository',
+    title: 'Guidu Repository',
     icon: () => (
       <CardIcon color={colors.Y400}>
         <CodeIcon
-          label="Atlaskit Repository"
+          label="Guidu Repository"
           primaryColor={colors.N0}
           secondaryColor={colors.Y400}
           size="small"
@@ -273,9 +273,15 @@ export default class Cards extends React.Component {
     if (columnCount === 1) {
       return [[0, 1, 2, 3, 4]];
     } else if (columnCount === 2) {
-      return [[0, 2], [1, 3, 4]];
+      return [
+        [0, 2],
+        [1, 3, 4],
+      ];
     }
-    return [[0, 2], [1, 4, 3]];
+    return [
+      [0, 2],
+      [1, 4, 3],
+    ];
   };
 
   render() {

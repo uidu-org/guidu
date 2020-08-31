@@ -5,12 +5,12 @@ export default md`
 ## v11 to v12
 
 ### ⚡️ Highlights
-- **New theming API** - Button now supports the new Atlaskit theming API, which allows for powerful custom theming of Buttons and
+- **New theming API** - Button now supports the new Guidu theming API, which allows for powerful custom theming of Buttons and
   its internal components.
 - **Speed improvements** - Button has been re-written from the ground up - on heavy-load benchmarks, Button is twice as fast
   (taking 48% of the time to load).
 - **Emotion support** - Button is now built using Emotion 10! This is part of a wider push
-  for Emotion across all Atlaskit components.
+  for Emotion across all Guidumponents.
 
 ### 💥 Breaking Changes:
 - The old theming API is no longer supported.
@@ -64,7 +64,7 @@ const CustomButton = styled(Button)\`
 
 The recommended action is to move your project from Styled Components to Emotion. We have created a codemod which aims to reduce the amount of busy work to upgrade, as much of the syntax is very similar. Here is how to get up and running:
 
-1. Clone the [Atlaskit Codemod repository](https://bitbucket.org/atlassian/uidu-codemods/src/master/).
+1. Clone the [Guidudemod repository](https://bitbucket.org/atlassian/uidu-codemods/src/master/).
 2. Follow the setup instructions on the [README](https://bitbucket.org/atlassian/uidu-codemods/src/master/README.md).
 3. The codemod created for this upgrade is the [styled-components-to-emotion](https://bitbucket.org/atlassian/uidu-codemods/src/master/src/styled-components-to-emotion/README.md) codemod. The README in that directory contains all the information about setting up and running the codemod.
 

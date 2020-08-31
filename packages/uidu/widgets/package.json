@@ -12,6 +12,7 @@
     "@uidu/slider": "^1.4.0",
     "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
+    "tslib": "^2.0.1",
     "zoid": "^9.0.43"
   },
   "devDependencies": {

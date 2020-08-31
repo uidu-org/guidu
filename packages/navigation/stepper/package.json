@@ -17,7 +17,8 @@
     "react-feather": "^2.0.8",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.7.11",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",

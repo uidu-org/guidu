@@ -18,17 +18,18 @@
     "@uidu/portal": "^0.3.0",
     "@uidu/theme": "^0.4.0",
     "exenv": "^1.2.2",
-    "memoize-one": "^5.0.0",
+    "memoize-one": "^5.1.1",
     "react-focus-lock": "^2.0.0",
     "react-node-resolver": "^2.0.1",
     "react-scrolllock": "^5.0.0",
     "react-transition-group": "^4.0.0",
-    "scroll-into-view-if-needed": "^2.2.20"
+    "scroll-into-view-if-needed": "^2.2.20",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
     "react": "^16.13.1",
-    "react-dom": "^16.4.0",
+    "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.1.1"

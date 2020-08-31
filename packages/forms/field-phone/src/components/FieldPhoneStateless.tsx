@@ -7,10 +7,7 @@ import { FieldTextStatelessWithoutAnalytics } from '@uidu/field-text';
 import React, { forwardRef } from 'react';
 import Input from 'react-phone-number-input/input';
 import { FieldPhoneStatelessProps } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 function FieldPhone({
   id,
@@ -47,8 +44,8 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default withAnalyticsContext({
   componentName: 'fieldDate',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({
@@ -57,8 +54,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldDate',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
 
@@ -68,8 +65,8 @@ export default withAnalyticsContext({
 
       attributes: {
         componentName: 'fieldDate',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(FieldPhoneStateless),

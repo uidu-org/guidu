@@ -57,7 +57,7 @@ export type AutoDismissFlagProps = {
   title: ReactNode;
   /** A link component that is passed down to the `@uidu/button` used by actions,
   to allow custom routers to be used. See the
-  [button with router](https://uidu.atlassian.com/packages/core/button/example/ButtonWithRouter)
+  [button with router](https://uidu.design/packages/core/button/example/ButtonWithRouter)
   example of what this component should look like. */
   linkComponent?: ElementType;
   /** A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests */

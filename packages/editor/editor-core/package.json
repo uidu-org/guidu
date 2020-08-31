@@ -53,6 +53,7 @@
     "prosemirror-view": "^1.9.10",
     "re-resizable": "^6.0.0",
     "react-loadable": "^5.5.0",
+    "tslib": "^2.0.1",
     "w3c-keyname": "^2.1.0"
   },
   "devDependencies": {

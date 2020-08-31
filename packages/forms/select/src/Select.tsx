@@ -5,24 +5,24 @@ import {
 } from '@uidu/analytics';
 import Select from 'react-select';
 import createSelect from './createSelect';
-import { name as packageName, version as packageVersion } from './version.json';
+import pkg from './version.json';
 
 export const SelectWithoutAnalytics = createSelect(Select);
-const createAndFireEventOnAtlaskit = createAndFireEvent('uidu');
+const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
 export default (withAnalyticsContext({
   componentName: 'select',
-  packageName,
-  packageVersion,
+  packageName: pkg.name,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
-    onChange: createAndFireEventOnAtlaskit({
+    onChange: createAndFireEventOnGuidu({
       action: 'changed',
       actionSubject: 'option',
       attributes: {
         componentName: 'select',
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
       },
     }),
   })(SelectWithoutAnalytics),

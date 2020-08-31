@@ -10,5 +10,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "src/index.jsx"
+  "uidu:src": "src/index.jsx",
+  "dependencies": {
+    "tslib": "^2.0.1"
+  }
 }

@@ -13,9 +13,7 @@ const DummyElementsComponent = createComponentWithAnalytics(
 const DummyElementsComponentWithAttributes = createComponentWithAttributesWithAnalytics(
   FabricChannel.elements,
 );
-const DummyAtlaskitComponent = createComponentWithAnalytics(
-  FabricChannel.atlaskit,
-);
+const DummyGuiduComponent = createComponentWithAnalytics(FabricChannel.guidu);
 
 const myOnClickHandler = () => {
   console.log('Button clicked ! Yay!');
@@ -25,7 +23,7 @@ function Example() {
   return (
     <FabricAnalyticsListeners
       client={createAnalyticsWebClientMock()}
-      excludedChannels={[FabricChannel.atlaskit]}
+      excludedChannels={[FabricChannel.guidu]}
     >
       <div>
         <p>Excluding analytics listener</p>
@@ -37,7 +35,7 @@ function Example() {
           </AnalyticsContext>
         </AnalyticsContext>
 
-        <DummyAtlaskitComponent onClick={myOnClickHandler} />
+        <DummyGuiduComponent onClick={myOnClickHandler} />
       </div>
     </FabricAnalyticsListeners>
   );

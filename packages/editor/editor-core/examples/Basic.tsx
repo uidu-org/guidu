@@ -1,5 +1,5 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
-import { AtlaskitThemeProvider } from '@uidu/theme';
+import { GuiduThemeProvider } from '@uidu/theme';
 import React, { Fragment, PureComponent } from 'react';
 import { Editor, EditorContext, WithEditorActions } from '..';
 import { localUploadOptions } from '../../../media/media-core/src';
@@ -24,7 +24,7 @@ export default class Basic extends PureComponent<any, any> {
 
   render() {
     return (
-      <AtlaskitThemeProvider>
+      <GuiduThemeProvider>
         <EditorContext>
           <>
             <DevTools />
@@ -70,7 +70,7 @@ export default class Basic extends PureComponent<any, any> {
             />
           </>
         </EditorContext>
-      </AtlaskitThemeProvider>
+      </GuiduThemeProvider>
     );
   }
 }

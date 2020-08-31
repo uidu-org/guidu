@@ -21,7 +21,8 @@
     "@uidu/form": "^0.3.0",
     "@uidu/select": "^0.5.0",
     "react-beautiful-dnd": "^13.0.0",
-    "react-intl": "^5.2.1"
+    "react-intl": "^5.2.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0"

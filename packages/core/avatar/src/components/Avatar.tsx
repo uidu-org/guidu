@@ -40,13 +40,13 @@ class Avatar extends Component<AvatarPropTypes> {
     size: 'medium' as SizeType,
   };
 
-  createAndFireEventOnAtlaskit = createAndFireEvent('atlaskit');
+  createAndFireEventOnGuidu = createAndFireEvent('uidu');
 
   clickAnalyticsCaller = () => {
     const { createAnalyticsEvent } = this.props;
 
     return createAnalyticsEvent
-      ? this.createAndFireEventOnAtlaskit({
+      ? this.createAndFireEventOnGuidu({
           action: 'clicked',
           actionSubject: 'avatar',
 

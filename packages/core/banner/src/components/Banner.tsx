@@ -6,7 +6,7 @@ interface Props {
   /** Visual style to be used for the banner */
   /** Content to be shown next to the icon. Typically text content but can contain links. */
   children?: React.ReactNode;
-  /** Icon to be shown left of the main content. Typically an Atlaskit [@atlaskit/icon](packages/core/icon) */
+  /** Icon to be shown left of the main content. Typically an Guidu [@atlaskit/icon](packages/core/icon) */
   icon?: React.ReactChild;
   /** Defines whether the banner is shown. An animation is used when the value is changed. */
   isOpen?: boolean;

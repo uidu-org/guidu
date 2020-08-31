@@ -41,7 +41,7 @@ class ButtonBase extends Component<ButtonBaseProps> {
 
 const ManualButton = withAnalyticsEvents()(ManualButtonBase);
 const VerboseButton = withAnalyticsEvents({
-  onClick: create => create({ action: 'click' }),
+  onClick: (create) => create({ action: 'click' }),
 })(ButtonBase);
 const ShorthandButton = withAnalyticsEvents({
   onClick: { action: 'click' },
@@ -51,7 +51,7 @@ const ButtonGroup = () => {
   const onClick = (
     e: MouseEvent<HTMLButtonElement>,
     analyticsEvent?: UIAnalyticsEvent,
-  ) => analyticsEvent && analyticsEvent.fire('atlaskit');
+  ) => analyticsEvent && analyticsEvent.fire('uidu');
 
   return (
     <div>
@@ -82,7 +82,7 @@ export default class App extends Component<void> {
 
   render() {
     return (
-      <AnalyticsListener channel="atlaskit" onEvent={this.handleEvent}>
+      <AnalyticsListener channel="uidu" onEvent={this.handleEvent}>
         <ButtonGroup />
       </AnalyticsListener>
     );

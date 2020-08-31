@@ -12,18 +12,14 @@
   },
   "dependencies": {
     "@uidu/analytics": "^0.3.0",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "tslib": "^2.0.1"
   },
   "devDependencies": {
     "react": "^16.13.1"
   },
   "peerDependencies": {
     "react": "^16.8.3"
-  },
-  "atlaskit": {
-    "internal": true,
-    "name": "Analytics Viewers",
-    "team": "elements"
   },
   "uidu:src": "index.ts"
 }

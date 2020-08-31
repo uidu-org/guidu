@@ -14,7 +14,7 @@ type Props = {
 };
 
 const ContextTypes = {
-  getAtlaskitAnalyticsEventHandlers: PropTypes.func,
+  getGuiduAnalyticsEventHandlers: PropTypes.func,
 };
 
 class AnalyticsListener extends Component<Props> {
@@ -22,15 +22,15 @@ class AnalyticsListener extends Component<Props> {
   static childContextTypes = ContextTypes;
 
   getChildContext = () => ({
-    getAtlaskitAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
+    getGuidulyticsEventHandlers: this.getAnalyticsEventHandlers,
   });
 
   getAnalyticsEventHandlers = () => {
     const { channel, onEvent } = this.props;
-    const { getAtlaskitAnalyticsEventHandlers } = this.context;
+    const { getGuidulyticsEventHandlers } = this.context;
     const parentEventHandlers =
-      (typeof getAtlaskitAnalyticsEventHandlers === 'function' &&
-        getAtlaskitAnalyticsEventHandlers()) ||
+      (typeof getGuidulyticsEventHandlers === 'function' &&
+        getGuidulyticsEventHandlers()) ||
       [];
     const handler: UIAnalyticsEventHandler = (event, eventChannel) => {
       if (channel === '*' || channel === eventChannel) {
@@ -42,13 +42,13 @@ class AnalyticsListener extends Component<Props> {
   };
 
   render() {
-    const { getAtlaskitAnalyticsContext = () => [] } = this.context;
+    const { getGuiduAnalyticsContext = () => [] } = this.context;
     const { children } = this.props;
     return (
       <AnalyticsReactContext.Provider
         value={{
-          getAtlaskitAnalyticsEventHandlers: this.getAnalyticsEventHandlers,
-          getAtlaskitAnalyticsContext,
+          getGuidulyticsEventHandlers: this.getAnalyticsEventHandlers,
+          getGuiduAnalyticsContext,
         }}
       >
         {children}

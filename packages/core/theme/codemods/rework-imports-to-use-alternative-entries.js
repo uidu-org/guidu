@@ -6,7 +6,7 @@ WIP This codemod was build during shipit it's changes should be carefully scruti
 const themeIndexImports = [
   'themed',
   'withTheme',
-  'AtlaskitThemeProvider',
+  'GuiduThemeProvider',
   'getTheme',
   'createTheme',
   'GlobalThemeTokens',
@@ -33,7 +33,7 @@ const constants = [
 
 const akTheme = '@uidu/theme';
 
-const constantsPredicate = specifier =>
+const constantsPredicate = (specifier) =>
   !specifier ||
   !specifier.imported ||
   constants.indexOf(specifier.imported.name) > -1;
@@ -52,7 +52,7 @@ function getConstantsImport(j, path) {
     j.literal(`${akTheme}/constants`),
   );
 }
-const indexPredicate = specifier =>
+const indexPredicate = (specifier) =>
   !specifier ||
   !specifier.imported ||
   themeIndexImports.indexOf(specifier.imported.name) > -1;
@@ -73,22 +73,23 @@ function getIndexImport(j, path) {
 function getUsesOfImport(j, fileSource, importVarname) {
   return fileSource
     .find(j.MemberExpression)
-    .filter(spec => spec.value.object.name === importVarname);
+    .filter((spec) => spec.value.object.name === importVarname);
 }
 
 function getOtherImports(j, path, fileSource) {
   return path.value.specifiers
     .filter(
-      specifier => !indexPredicate(specifier) && !constantsPredicate(specifier),
+      (specifier) =>
+        !indexPredicate(specifier) && !constantsPredicate(specifier),
     )
-    .map(specifier => {
+    .map((specifier) => {
       const usesOfImport = getUsesOfImport(j, fileSource, specifier.local.name);
 
       if (usesOfImport.size() > 0 && usesOfImport.size() < 7) {
         const importSpecifiers = [];
         const names = [];
 
-        usesOfImport.forEach(lowerPath => {
+        usesOfImport.forEach((lowerPath) => {
           // Make stupid lint rule happy
           const propertyName = lowerPath.value.property.name;
           if (!names.includes(propertyName)) {
@@ -98,7 +99,7 @@ function getOtherImports(j, path, fileSource) {
           j(lowerPath).replaceWith(j.identifier(lowerPath.value.property.name));
         });
 
-        names.forEach(name => {
+        names.forEach((name) => {
           importSpecifiers.push(j.importSpecifier(j.identifier(name)));
         });
 
@@ -122,14 +123,14 @@ export default function transformer(file, api) {
   // Fixup imports
   fileSource
     .find(j.ImportDeclaration)
-    .filter(path => path.node.source.value === akTheme)
-    .forEach(path => {
+    .filter((path) => path.node.source.value === akTheme)
+    .forEach((path) => {
       const otherImports = getOtherImports(j, path, fileSource);
       const [firstImport, ...importsAfter] = [
         getIndexImport(j, path),
         getConstantsImport(j, path),
         ...otherImports,
-      ].filter(importStat => importStat);
+      ].filter((importStat) => importStat);
 
       if (!firstImport) {
         return;
@@ -137,9 +138,7 @@ export default function transformer(file, api) {
 
       firstImport.comments = path.value.comments;
 
-      j(path)
-        .replaceWith(firstImport)
-        .insertAfter(importsAfter);
+      j(path).replaceWith(firstImport).insertAfter(importsAfter);
     });
 
   return fileSource.toSource();
