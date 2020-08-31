@@ -24,10 +24,5 @@
     "react": "^16.8.3",
     "styled-components": "^5.0.0"
   },
-  "uidu": {
-    "internal": true,
-    "name": "Layer",
-    "team": "core"
-  },
-  "uidu:src": "src/index.js"
+  "uidu:src": "src/index.ts"
 }

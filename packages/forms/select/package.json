@@ -3,11 +3,6 @@
   "version": "0.5.1",
   "description": "Select Component",
   "main": "dist/select.cjs.js",
-  "keywords": [
-    "react",
-    "ui",
-    "uidu"
-  ],
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/select",
   "license": "MIT",
   "author": "uidu",
@@ -51,5 +46,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

@@ -189,6 +189,6 @@ function ChatWindow({
   );
 }
 
-export default forwardRef((props: ChatWindowProps, ref) => (
-  <ChatWindow {...props} forwardedRef={ref} />
+export default forwardRef((props, ref) => (
+  <ChatWindow {...(props as ChatWindowProps)} forwardedRef={ref} />
 ));

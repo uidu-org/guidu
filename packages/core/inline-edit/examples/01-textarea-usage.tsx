@@ -1,4 +1,4 @@
-import TextArea from '@uidu/textarea';
+import FieldTextarea from '@uidu/field-textarea';
 import { fontSize, gridSize } from '@uidu/theme/constants';
 import React from 'react';
 import styled from 'styled-components';
@@ -41,7 +41,7 @@ export default class InlineEditExample extends React.Component<void, State> {
           label="Inline edit textarea + keep edit view open on blur"
           editView={(fieldProps, ref) => (
             // @ts-ignore - textarea does not currently correctly pass through ref as a prop
-            <TextArea {...fieldProps} ref={ref} />
+            <FieldTextarea {...fieldProps} ref={ref} />
           )}
           readView={() => (
             <ReadViewContainer>

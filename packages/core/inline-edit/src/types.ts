@@ -1,5 +1,4 @@
 import { UIAnalyticsEvent, WithAnalyticsEventsProps } from '@uidu/analytics';
-import { FieldProps } from '@uidu/form';
 import React from 'react';
 
 interface CommonProps extends WithAnalyticsEventsProps {
@@ -28,11 +27,12 @@ interface CommonProps extends WithAnalyticsEventsProps {
   cancelButtonLabel?: string;
 }
 
-export interface InlineEditUncontrolledProps<FieldValue> extends CommonProps {
+export interface InlineEditUncontrolledProps<FieldBaseProps>
+  extends CommonProps {
   /** Component to be shown when not in edit view. */
   readView: () => React.ReactNode;
   /** Component to be shown when editing. */
-  editView: (fieldProps: FieldProps<FieldValue>) => React.ReactNode;
+  editView: (fieldProps: FieldBaseProps) => React.ReactNode;
   /** Whether the component shows the readView or the editView. */
   isEditing: boolean;
   /** The value shown in the editView when it is entered. Should be updated by onConfirm. */
@@ -48,12 +48,12 @@ export interface InlineEditUncontrolledProps<FieldValue> extends CommonProps {
   onCancel: () => void;
 }
 
-export interface InlineEditProps<FieldValue> extends CommonProps {
+export interface InlineEditProps<FieldBaseProps> extends CommonProps {
   /** Component to be shown when not in edit view. */
   readView: () => React.ReactNode;
   /** Component to be shown when editing. */
   editView: (
-    fieldProps: FieldProps<FieldValue>,
+    fieldProps: FieldBaseProps,
     ref: React.RefObject<any>,
   ) => React.ReactNode;
   /**

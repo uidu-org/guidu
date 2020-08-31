@@ -6,8 +6,8 @@ import {
 import { DEFAULT_SOURCE, GasPayload } from '@uidu/analytics-gas-types';
 import * as React from 'react';
 import { sendEvent } from '../analytics-web-client-wrapper';
+import { getPackageHierarchy } from '../guidu/extract-data-from-event';
 import { FabricChannel, ListenerProps } from '../types';
-import { getPackageHierarchy } from '../uidu/extract-data-from-event';
 import { mergeEventData } from './mergeData';
 
 // This function will attach a packageHierarchy value inside of 'attributes' attribute payload.

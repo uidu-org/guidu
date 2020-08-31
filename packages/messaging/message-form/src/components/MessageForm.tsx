@@ -281,6 +281,6 @@ function MessagesForm({
   );
 }
 
-export default forwardRef((props: MessageFormProps, ref) => (
+export default forwardRef((props, ref) => (
   <MessagesForm {...(props as MessageFormProps)} forwardedRef={ref} />
 ));

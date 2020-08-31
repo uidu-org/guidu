@@ -1,8 +1,7 @@
-import { AtlassianInternalWarning, code, Example, md, Props } from '@uidu/docs';
+import { code, Example, md, Props } from '@uidu/docs';
 import React from 'react';
 
 export default md`
-  ${(<AtlassianInternalWarning />)}
 
   The progress bar is used to display progress of some process.
 

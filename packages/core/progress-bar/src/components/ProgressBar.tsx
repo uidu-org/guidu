@@ -1,8 +1,6 @@
 /** @jsx jsx */
-import React from 'react';
-
 import { jsx } from '@emotion/core';
-
+import React from 'react';
 import { Theme } from '../theme';
 import { DefaultProgressBarProps, ThemeTokens } from '../types';
 
@@ -43,7 +41,7 @@ export default class ProgressBar extends React.PureComponent<
     return (
       <Theme.Provider value={theme}>
         <Theme.Consumer value={value}>
-          {tokens => (
+          {(tokens) => (
             <div
               css={tokens.container}
               role="progressbar"

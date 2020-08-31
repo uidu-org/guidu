@@ -15,6 +15,7 @@
   "module": "dist/field-range.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@uidu/field-base": "^0.3.1",
     "@uidu/form": "^0.3.1",
     "@uidu/theme": "^0.4.1",
     "formsy-react": "^2.1.0",

@@ -3,9 +3,6 @@
  */
 declare module '@uidu/codemod-util-shared-styles-to-theme';
 declare module '@uidu/comment';
-declare module '@uidu/droplist';
-declare module '@uidu/feedback-collector';
-declare module '@uidu/field-range';
 // TODO - Add icon import paths to entry-points.tsconfig.json
 declare module '@uidu/icon/*';
 declare module '@uidu/icon-file-type';
@@ -15,8 +12,6 @@ declare module '@uidu/icon-object/*';
 declare module '@uidu/icon-priority';
 declare module '@uidu/icon-priority/*';
 declare module '@uidu/input';
-declare module '@uidu/item';
-declare module '@uidu/layer';
 declare module '@uidu/nps';
 declare module '@uidu/panel';
 declare module '@uidu/polyfills';
