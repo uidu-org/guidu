@@ -1,11 +1,9 @@
-import loadable from '@loadable/component';
 import Tooltip from '@uidu/tooltip';
 import React, { forwardRef, useState } from 'react';
 import { Eye, EyeOff } from 'react-feather';
 import { FieldPasswordProps } from '../types';
 import FieldPasswordStateless from './FieldPasswordStateless';
-
-const FieldPasswordStrength = loadable(() => import('./FieldPasswordStrength'));
+import FieldPasswordStrength from './FieldPasswordStrength';
 
 function FieldPassword({
   tooltipProps = {
