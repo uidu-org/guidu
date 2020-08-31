@@ -1,9 +1,11 @@
+import loadable from '@loadable/component';
 import Tooltip from '@uidu/tooltip';
 import React, { forwardRef, useState } from 'react';
 import { Eye, EyeOff } from 'react-feather';
 import { FieldPasswordProps } from '../types';
 import FieldPasswordStateless from './FieldPasswordStateless';
-import FieldPasswordStrength from './FieldPasswordStrength';
+
+const FieldPasswordStrength = loadable(() => import('./FieldPasswordStrength'));
 
 function FieldPassword({
   tooltipProps = {
@@ -23,7 +25,7 @@ function FieldPassword({
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [showInstructions, setShowInstructions] = useState(false);
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { value } = event.currentTarget;
     onSetValue(value);
     onChange(name, value);

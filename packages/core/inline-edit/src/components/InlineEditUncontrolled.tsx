@@ -1,6 +1,5 @@
 import ConfirmIcon from '@atlaskit/icon/glyph/check';
 import CancelIcon from '@atlaskit/icon/glyph/cross';
-import loadable from '@loadable/component';
 import {
   createAndFireEvent,
   withAnalyticsContext,
@@ -9,6 +8,8 @@ import {
 import Button from '@uidu/button';
 import Field from '@uidu/field';
 import Form from '@uidu/form';
+/** This means that InlineDialog is only loaded if necessary */
+import InlineDialog from '@uidu/inline-dialog';
 import React from 'react';
 import ButtonsWrapper from '../styled/ButtonsWrapper';
 import ButtonWrapper from '../styled/ButtonWrapper';
@@ -28,9 +29,6 @@ interface State {
   wasFocusReceivedSinceLastBlur: boolean;
   preventFocusOnEditButton: boolean;
 }
-
-/** This means that InlineDialog is only loaded if necessary */
-const InlineDialog = loadable.lib(() => import('@uidu/inline-dialog'));
 
 class InlineEditUncontrolled<FieldValue = string> extends React.Component<
   InlineEditUncontrolledProps<FieldValue>,
