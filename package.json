@@ -480,7 +480,7 @@
     "thread-loader": "^2.1.2",
     "tiny-invariant": "^1.0.3",
     "ts-loader": "^8.0.0",
-    "ts-node": "^8.4.1",
+    "ts-node": "^9.0.0",
     "tslib": "^2.0.1",
     "tti-polyfill": "^0.2.2",
     "typescript": "^4.0.2",

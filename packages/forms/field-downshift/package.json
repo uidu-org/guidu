@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0",
-    "@uidu/dropdown-menu": "^0.3.0",
+    "@uidu/dropdown-menu": "^0.3.1",
     "@uidu/field-counter": "^0.2.6",
     "@uidu/field-date": "^0.2.9",
     "@uidu/field-time": "^0.3.0",
