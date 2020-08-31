@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.3.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- ff7af9c: Navigation is now an horizontal menu, creted a new component @uidu/side-navigation for aside menu
+- Updated dependencies [ff7af9c]
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar@0.5.1
+  - @uidu/slider@1.4.1
+  - @uidu/spinner@0.3.1
+  - @uidu/field-password@0.3.2
+  - @uidu/field-text@0.3.1
+  - @uidu/form@0.3.1
+  - @uidu/shell@1.0.4
+
 ## 0.3.1
 
 ### Patch Changes

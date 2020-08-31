@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.4.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar@0.5.1
+  - @uidu/dropdown-menu@0.3.1
+  - @uidu/item@0.3.2
+  - @uidu/theme@0.4.1
+  - @uidu/tooltip@0.3.1
+
 ## 2.4.0
 
 ### Minor Changes

@@ -1,5 +1,17 @@
 # @uidu/modal-dialog
 
+## 0.3.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/blanket@0.3.1
+  - @uidu/button@0.3.2
+  - @uidu/portal@0.3.1
+  - @uidu/theme@0.4.1
+  - @uidu/form@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

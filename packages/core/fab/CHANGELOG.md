@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.3.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+
 ## 0.3.1
 
 ### Patch Changes

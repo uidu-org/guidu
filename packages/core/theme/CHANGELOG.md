@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.4.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,24 @@
 # @uidu/data-controls
 
+## 0.4.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+- Updated dependencies [ff7af9c]
+  - @uidu/drawer@0.4.2
+  - @uidu/dropdown-menu@0.3.1
+  - @uidu/inline-dialog@0.3.1
+  - @uidu/item@0.3.2
+  - @uidu/spinner@0.3.1
+  - @uidu/tooltip@0.3.1
+  - @uidu/table@0.1.115
+  - @uidu/field-text@0.3.1
+  - @uidu/form@0.3.1
+  - @uidu/select@0.5.1
+  - @uidu/shell@1.0.4
+
 ## 0.4.1
 
 ### Patch Changes

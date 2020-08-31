@@ -1,5 +1,21 @@
 # @uidu/renderer
 
+## 0.2.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/code@0.3.1
+  - @uidu/theme@0.4.1
+  - @uidu/tooltip@0.3.1
+  - @uidu/editor-common@0.3.4
+  - @uidu/editor-json-transformer@0.2.1
+  - @uidu/status@0.2.1
+  - @uidu/task-decision@0.2.1
+  - @uidu/media-card@0.3.1
+  - @uidu/media-filmstrip@0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

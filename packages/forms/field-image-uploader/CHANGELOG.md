@@ -1,5 +1,14 @@
 # @uidu/field-image-uploader
 
+## 0.3.6
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/button@0.3.2
+  - @uidu/spinner@0.3.1
+
 ## 0.3.5
 
 ### Patch Changes

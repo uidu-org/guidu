@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.2.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar-group@2.4.1
+  - @uidu/button@0.3.2
+  - @uidu/spinner@0.3.1
+  - @uidu/theme@0.4.1
+
 ## 0.2.0
 
 ### Minor Changes

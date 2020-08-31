@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.1.44
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/spinner@0.3.1
+  - @uidu/data-controls@0.4.2
+  - @uidu/table@0.1.115
+
 ## 0.1.43
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/message
 
+## 0.2.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar@0.5.1
+  - @uidu/drawer@0.4.2
+  - @uidu/dropdown-menu@0.3.1
+  - @uidu/tooltip@0.3.1
+  - @uidu/media-card@0.3.1
+  - @uidu/media-viewer@0.2.2
+  - @uidu/message-renderer@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

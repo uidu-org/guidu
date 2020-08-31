@@ -1,5 +1,16 @@
 # @uidu/donate
 
+## 0.2.19
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/modal-dialog@0.3.1
+  - @uidu/field-text@0.3.1
+  - @uidu/form@0.3.1
+  - @uidu/select@0.5.1
+
 ## 0.2.18
 
 ### Patch Changes

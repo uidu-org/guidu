@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.26
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/table@0.1.115
+
 ## 0.1.25
 
 ### Patch Changes

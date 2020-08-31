@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.3.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar@0.5.1
+  - @uidu/theme@0.4.1
+
 ## 0.3.1
 
 ### Patch Changes

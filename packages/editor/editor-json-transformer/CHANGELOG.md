@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.2.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+
 ## 0.2.0
 
 ### Minor Changes

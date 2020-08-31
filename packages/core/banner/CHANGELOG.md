@@ -1,5 +1,14 @@
 # @uidu/banner
 
+## 0.3.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- ff7af9c: Navigation is now an horizontal menu, creted a new component @uidu/side-navigation for aside menu
+- Updated dependencies [ff7af9c]
+  - @uidu/theme@0.4.1
+
 ## 0.3.0
 
 ### Minor Changes

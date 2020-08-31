@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.22
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+
 ## 0.1.21
 
 ### Patch Changes

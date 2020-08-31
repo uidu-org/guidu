@@ -1,6 +1,6 @@
 {
   "name": "@uidu/animated-menu",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "private": false,
   "description": "Animated menu like Stripe",
   "main": "dist/animated-menu.cjs.js",
@@ -18,7 +18,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0"
+    "@uidu/docs": "^0.2.1"
   },
   "uidu:src": "src/index.ts"
 }

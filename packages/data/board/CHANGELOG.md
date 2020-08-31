@@ -1,5 +1,13 @@
 # @uidu/board
 
+## 0.2.20
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+  - @uidu/theme@0.4.1
+
 ## 0.2.19
 
 ### Patch Changes

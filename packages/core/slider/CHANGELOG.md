@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.4.1
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+
 ## 1.4.0
 
 ### Minor Changes

@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.2.2
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- Updated dependencies [ff7af9c]
+- Updated dependencies [ff7af9c]
+  - @uidu/avatar@0.5.1
+  - @uidu/button@0.3.2
+  - @uidu/spinner@0.3.1
+  - @uidu/theme@0.4.1
+  - @uidu/shell@1.0.4
+
 ## 0.2.1
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/tabs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tabs component",
   "main": "dist/tabs.cjs.js",
   "author": "uidu",
@@ -8,8 +8,8 @@
   "private": false,
   "dependencies": {
     "@uidu/analytics": "^0.3.0",
-    "@uidu/docs": "^0.2.0",
-    "@uidu/theme": "^0.4.0",
+    "@uidu/docs": "^0.2.1",
+    "@uidu/theme": "^0.4.1",
     "react": "^16.13.1",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"

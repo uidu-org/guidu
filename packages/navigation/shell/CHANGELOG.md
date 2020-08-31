@@ -1,5 +1,14 @@
 # @uidu/shell
 
+## 1.0.4
+
+### Patch Changes
+
+- ff7af9c: Bump dependencies
+- ff7af9c: Navigation is now an horizontal menu, creted a new component @uidu/side-navigation for aside menu
+- Updated dependencies [ff7af9c]
+  - @uidu/spinner@0.3.1
+
 ## 1.0.3
 
 ### Patch Changes
