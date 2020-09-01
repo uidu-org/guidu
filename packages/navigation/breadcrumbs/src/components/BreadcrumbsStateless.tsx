@@ -60,7 +60,7 @@ class BreadcrumbsStateless extends React.Component<
 
     // Not a chance this will trigger, but TS is complaining about items* possibly being undefined.
     if (itemsBeforeCollapse === undefined || itemsAfterCollapse === undefined) {
-      return;
+      return undefined;
     }
 
     const allItems = this.renderAllItems();

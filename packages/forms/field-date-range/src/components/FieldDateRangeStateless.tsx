@@ -7,7 +7,7 @@ import { FieldDateStateless } from '@uidu/field-date';
 import moment from 'moment';
 import React, { RefObject, useRef, useState } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { formatDate } from 'react-day-picker/moment';
+// import { formatDate } from 'react-day-picker/moment';
 import { ArrowRight } from 'react-feather';
 import { Helmet } from 'react-helmet';
 import { FieldDateRangeStatelessProps } from '../types';
@@ -17,8 +17,8 @@ function FieldDateRangeStateless({
   locale = 'it',
   displayFormat = 'L',
   placeholders = {
-    from: `${formatDate(new Date(), 'LL', 'it')}`,
-    to: `${formatDate(new Date(), 'LL', 'it')}`,
+    from: undefined, // `${formatDate(new Date(), 'LL', 'it')}`,
+    to: undefined, // `${formatDate(new Date(), 'LL', 'it')}`,
   },
   from: propFrom,
   to: propTo,
@@ -39,13 +39,13 @@ function FieldDateRangeStateless({
     }
   };
 
-  const handleFromChange = newFrom => {
+  const handleFromChange = (newFrom) => {
     // Change the from date and focus the "to" input field
     setFrom(newFrom);
     onChange({ from: newFrom, to });
   };
 
-  const handleToChange = newTo => {
+  const handleToChange = (newTo) => {
     setTo(newTo);
     onChange({ from, to: newTo });
     showFromMonth();

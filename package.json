@@ -504,10 +504,8 @@
     ]
   },
   "preconstruct": {
-    "___experimentalFlags_WILL_CHANGE_IN_PATCH": {
-      "logCompiledFiles": true
-    },
     "packages": [
+      "packages/core/*",
       "packages/forms/*",
       "packages/navigation/*"
     ]

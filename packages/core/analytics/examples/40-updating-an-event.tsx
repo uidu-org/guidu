@@ -4,7 +4,7 @@ import Form from '@uidu/form';
 import React, { Component, FormEvent, MouseEvent } from 'react';
 import { AnalyticsListener, UIAnalyticsEvent } from '../src';
 
-class Form extends Component<{}, { value: string }> {
+class ExampleForm extends Component<{}, { value: string }> {
   state = {
     value: 'Joe Bloggs',
   };
@@ -17,7 +17,7 @@ class Form extends Component<{}, { value: string }> {
     analyticsEvent: UIAnalyticsEvent,
   ) => {
     analyticsEvent
-      .update(payload => ({
+      .update((payload) => ({
         ...payload,
         value: this.state.value,
       }))
@@ -47,7 +47,7 @@ const App = () => (
   <AnalyticsListener
     onEvent={({ payload }) => console.log('Event payload:', payload)}
   >
-    <Form />
+    <ExampleForm />
   </AnalyticsListener>
 );
 

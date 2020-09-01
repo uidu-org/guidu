@@ -1,8 +1,7 @@
 import { NavigationItemBaseProps } from '../../../types';
-import { NavigationSubItemProps } from '../NavigationSubItem/types';
 
 export type NavigationItemProps = NavigationItemBaseProps & {
-  items?: Array<NavigationSubItemProps>;
+  items?: Array<any>;
   actions?: Array<any>;
   isSortable?: boolean;
   onDragEnd?: (result: any) => void;

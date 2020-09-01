@@ -20,7 +20,7 @@ export default class GuiduListener extends React.Component<ListenerProps> {
     return (
       <AnalyticsListener
         onEvent={this.listenerHandler}
-        channel={FabricChannel.uidu}
+        channel={FabricChannel.guidu}
       >
         {this.props.children}
       </AnalyticsListener>
