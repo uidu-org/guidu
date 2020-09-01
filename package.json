@@ -525,7 +525,8 @@
   },
   "preconstruct": {
     "packages": [
-      "packages/core/*"
+      "packages/core/*",
+      "packages/navigation/*"
     ]
   }
 }
