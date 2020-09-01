@@ -2317,13 +2317,21 @@
     "@uifabric/utilities" "^7.31.0"
     tslib "^1.10.0"
 
-"@fluentui/react@^7.105.6":
-  version "7.133.1"
-  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-7.133.1.tgz#2d434f85fa4861ff67c6fb6c3c56aa7211ed5730"
-  integrity sha512-vCrhZfNKxQhQ991Eg76aAO7S0P1/oGVrnZUfipx5V3QRWAvOcwtrExmnJPunoiMZLbaFlg+5LjJskvcJs5iM7g==
+"@fluentui/react-window-provider@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@fluentui/react-window-provider/-/react-window-provider-0.3.0.tgz#6dc90a9826306816ddb5b2961e48546c1cb3d93f"
+  integrity sha512-zHeH1PAmoFB3OkgU8f51E3oGHrL/CjuvdPBlb1SGpByUGNihAgH/CwvJohV9z0yPDkq+chfNUmxWA/oDVpbh6Q==
   dependencies:
     "@uifabric/set-version" "^7.0.22"
-    office-ui-fabric-react "^7.133.1"
+    tslib "^1.10.0"
+
+"@fluentui/react@^7.105.6":
+  version "7.134.0"
+  resolved "https://registry.yarnpkg.com/@fluentui/react/-/react-7.134.0.tgz#513bfeeda97fa883af2f72f9c663093777820164"
+  integrity sha512-8HW1j03o6QwWBZbol3KKrGkP66iWq2CuAt+0DWuiF6VQFjELdwf9aL3TXbX001I4EyFe0X1EiIElllmldGzm7w==
+  dependencies:
+    "@uifabric/set-version" "^7.0.22"
+    office-ui-fabric-react "^7.134.0"
     tslib "^1.10.0"
 
 "@fluentui/theme@^0.2.0":
@@ -3731,9 +3739,9 @@
     "@types/react" "*"
 
 "@types/react-native@*":
-  version "0.63.12"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.12.tgz#fa4aea76220cd11220c4a7c1b7e14e00886539a2"
-  integrity sha512-EPZ4C9OImXDg59entU0wcg/yCelj+XhgvUpPz85VSKia01DULoGwHOyCH3Y3ZdVcijebSR58ekqAz7zHT8o3Tg==
+  version "0.63.13"
+  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.63.13.tgz#e119c6921c78abdde52a68d0bd7f0effc6191f51"
+  integrity sha512-diqOQUlMB4+l5tldIP38fTkjtPn6pnFMMLfewiMtpUYwB1ID7snQ/ePN98a+3BFG87v8H62Rp/Q1xuudvG4MSg==
   dependencies:
     "@types/react" "*"
 
@@ -4043,9 +4051,9 @@
   integrity sha512-6+BB0QTGrZ4WGdWyTRk1Ozg1vuQSDyeMNb14LJPT5MRjpc+DRduRUmETWofCNysfmGaiwiu8FqxY3Dt25m72kg==
 
 "@uifabric/file-type-icons@^7.0.3":
-  version "7.6.0"
-  resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.6.0.tgz#c468c981fc0856ad68771861ad4a3184d3c245e1"
-  integrity sha512-0BxiO9erkgncJ01fCb9wwdmK8Bc8kF2kTGGe7ZS+RDSEpa/Fe8TujUEysETTErofexTCXXpWWYs9dms7iQL/NQ==
+  version "7.6.1"
+  resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.6.1.tgz#1ffe4b1731c94a28e709ba378e2c46b9aa6f5ba9"
+  integrity sha512-nOCZzUqgPgi5g1jsnOaOPWW7qJR0ewGDsA3XDS2hhB44Ysy/g4Xkyi38rCforgeAgGphaN82Z6beAJ2qMg+xBA==
   dependencies:
     "@uifabric/set-version" "^7.0.22"
     "@uifabric/styling" "^7.16.0"
@@ -7203,14 +7211,14 @@ caniuse-api@^3.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30001090:
-  version "1.0.30001121"
-  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001121.tgz#0e6aa5566d91887ae59809a2d6ca66202a3c4a5f"
-  integrity sha512-/c8Jvzxrum8OvXrhB0JnECucSyulPzX/73FgA4bPSLv03nqnaDcQD+2smAOV+vssKIS8OuuKRw7P4YO4QicmZA==
+  version "1.0.30001122"
+  resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30001122.tgz#ba9089b546e5542df57f3e07de5b0c7aa6b47cf8"
+  integrity sha512-Tq8Jgc6ec8F7fLCEPtS23Wb8p2gGZTAT9fA4ymCeLlyYnZNslpQaa8LR7uynXwpwXqor/8rdCZyG2yKYxdc+yw==
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30001035, caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001109, caniuse-lite@^1.0.30001111:
-  version "1.0.30001120"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001120.tgz#cd21d35e537214e19f7b9f4f161f7b0f2710d46c"
-  integrity sha512-JBP68okZs1X8D7MQTY602jxMYBmXEKOFkzTBaNSkubooMPFOAv2TXWaKle7qgHpjLDhUzA/TMT0qsNleVyXGUQ==
+  version "1.0.30001122"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001122.tgz#2c8ff631330d986a07a7ba7125cce77a1373b475"
+  integrity sha512-pxjw28CThdrqfz06nJkpAc5SXM404TXB/h5f4UJX+rrXJKE/1bu/KAILc2AY+O6cQIFtRjV9qOR2vaEp9LDGUA==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -17387,14 +17395,15 @@ octokit-pagination-methods@^1.1.0:
   resolved "https://registry.yarnpkg.com/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
-office-ui-fabric-react@^7.133.1, office-ui-fabric-react@^7.5.2:
-  version "7.133.1"
-  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.133.1.tgz#22125025fad6e6bd8b5761bbbbf81f6b8fedae79"
-  integrity sha512-rd5fFzL0yzjWYtE8VQV3LxI6FXMJSa9zVA+/PM4BXwZJDe4EHQzpYgOUqUdZcU/HDfq6DiVMTRYP/w2mlZSfXQ==
+office-ui-fabric-react@^7.134.0, office-ui-fabric-react@^7.5.2:
+  version "7.134.0"
+  resolved "https://registry.yarnpkg.com/office-ui-fabric-react/-/office-ui-fabric-react-7.134.0.tgz#ab4e7becdfe3844fd24caf835b0e8e54b027f1d3"
+  integrity sha512-vIm/N5zL/IXHxzDKQ/5KLgaQruPa3nntSfcnxSXqRYUfysoh1wy2qEk2ZvCLddvqnzoL0eVtcC3YBNmHRBYfFA==
   dependencies:
     "@fluentui/date-time-utilities" "^7.6.1"
     "@fluentui/react-focus" "^7.14.0"
     "@fluentui/react-icons" "^0.3.0"
+    "@fluentui/react-window-provider" "^0.3.0"
     "@microsoft/load-themed-styles" "^1.10.26"
     "@uifabric/foundation" "^7.9.0"
     "@uifabric/icons" "^7.5.0"
@@ -18353,9 +18362,9 @@ postcss-attribute-case-insensitive@^4.0.1:
     postcss-selector-parser "^6.0.2"
 
 postcss-calc@^7.0.1:
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-7.0.3.tgz#d65cca92a3c52bf27ad37a5f732e0587b74f1623"
-  integrity sha512-IB/EAEmZhIMEIhG7Ov4x+l47UaXOS1n2f4FBUk/aKllQhtSCxWhTzn0nJgkqN7fo/jcWySvWTSB6Syk9L+31bA==
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-7.0.4.tgz#5e177ddb417341e6d4a193c5d9fd8ada79094f8b"
+  integrity sha512-0I79VRAd1UTkaHzY9w83P39YGO/M3bG7/tNLrHGEunBolfoGM0hSjrGvjoeaj0JE/zIw5GsI2KZ0UwDJqv5hjw==
   dependencies:
     postcss "^7.0.27"
     postcss-selector-parser "^6.0.2"

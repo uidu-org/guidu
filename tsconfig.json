@@ -21,8 +21,8 @@
     "noImplicitReturns": true,
     "noUnusedParameters": false,
     "strictFunctionTypes": true,
-    "target": "es5",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "lib": [
       "dom",
       "es5",
