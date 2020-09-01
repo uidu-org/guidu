@@ -506,7 +506,6 @@
   "preconstruct": {
     "packages": [
       "packages/core/*",
-      "packages/forms/*",
       "packages/navigation/*"
     ]
   }
