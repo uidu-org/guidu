@@ -17,7 +17,6 @@
     "string-raw": "^1.0.1"
   },
   "devDependencies": {
-    "jest-in-case": "^1.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.8.3",

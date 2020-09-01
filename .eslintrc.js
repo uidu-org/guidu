@@ -6,7 +6,7 @@ const prettierTsRules = require('eslint-config-prettier/@typescript-eslint')
 module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
   parser: 'babel-eslint',
-  plugins: ['jest', 'prettier', 'react-hooks'],
+  plugins: ['prettier', 'react-hooks'],
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
@@ -95,10 +95,6 @@ module.exports = {
     eqeqeq: [2, 'always', { null: 'ignore' }],
     'no-console': 2,
     'no-restricted-globals': [2, 'event', 'fdescribe'],
-
-    'jest/no-focused-tests': 2,
-    'jest/no-identical-title': 2,
-    'jest/valid-expect': 2,
   },
   env: {
     browser: true,
@@ -185,9 +181,6 @@ module.exports = {
         'import/no-useless-path-segments': 'off',
         'import/no-webpack-loader-syntax': 'off',
         'import/order': 'off',
-        'jest/no-identical-title': 'off',
-        'jest/no-focused-tests': 'off',
-        'jest/valid-expect': 'off',
         'jsx-a11y/accessible-emoji': 'off',
         'jsx-a11y/alt-text': 'off',
         'jsx-a11y/anchor-is-valid': 'off',
@@ -294,9 +287,6 @@ module.exports = {
         '**/*-test-helpers/**',
         '**/__tests-karma__/**',
       ],
-      env: {
-        jest: true,
-      },
       globals: {
         fail: 'readonly',
         jasmine: 'readonly',
