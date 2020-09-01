@@ -1,4 +1,3 @@
-
 import { Checkbox } from '@uidu/checkbox';
 import { Form } from '@uidu/form';
 import React, { Component, Fragment } from 'react';
@@ -8,8 +7,8 @@ import { AsyncCreatableSelect as AsyncCreatable } from '../src';
 import { cities } from './common/data';
 
 type State = {
-  allowCreateWhileLoading: boolean,
-  options: Array<any>,
+  allowCreateWhileLoading: boolean;
+  options: Array<any>;
 };
 
 const createOption = (inputValue: string) => ({
@@ -17,7 +16,7 @@ const createOption = (inputValue: string) => ({
   value: inputValue.toLowerCase().replace(/\W/g, ''),
 });
 
-export default class AsyncCreatableExample extends Component<*, State> {
+export default class AsyncCreatableExample extends Component<any, State> {
   state = {
     allowCreateWhileLoading: false,
     options: cities,
@@ -30,7 +29,7 @@ export default class AsyncCreatableExample extends Component<*, State> {
   };
   // you control how the options are filtered
   filterOptions = (inputValue: string) => {
-    return this.state.options.filter(option =>
+    return this.state.options.filter((option) =>
       option.label.toLowerCase().includes(inputValue.toLowerCase()),
     );
   };
@@ -43,7 +42,7 @@ export default class AsyncCreatableExample extends Component<*, State> {
   };
 
   toggleValue = ({ value }: Object) => {
-    this.setState(state => ({ ...state, [value]: !state[value] }));
+    this.setState((state) => ({ ...state, [value]: !state[value] }));
   };
   render() {
     const { allowCreateWhileLoading } = this.state;

@@ -15,7 +15,7 @@
     "noImplicitAny": false,
     "noImplicitThis": true,
     "noUnusedLocals": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "strictNullChecks": false,
     "skipLibCheck": true,
     "noImplicitReturns": true,

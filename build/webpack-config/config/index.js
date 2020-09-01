@@ -159,19 +159,15 @@ module.exports = async function createWebpackConfig(
               },
             },
             {
-              loader: require.resolve('ts-loader'),
+              loader: require.resolve('babel-loader'),
               options: {
-                transpileOnly: true,
-                getCustomTransformers: path.join(
-                  __dirname,
-                  './ts-transformers.js',
-                ),
+                configFile: '../babel.config.js',
+                rootMode: 'upward',
+                envName: 'production:esm',
+                cacheDirectory: path.resolve(baseCacheDir, 'babel'),
               },
             },
           ],
-          // options: {
-          //   transpileOnly: true,
-          // },
         },
         {
           test: /\.css$/i,

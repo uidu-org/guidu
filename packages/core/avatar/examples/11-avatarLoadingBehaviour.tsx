@@ -4,15 +4,15 @@ import React, { Component } from 'react';
 import { Note } from '../examples-util/helpers';
 import Avatar from '../src';
 
-const Btn = props => (
+const Btn = (props) => (
   <span style={{ marginLeft: gridSize() }}>
     <Button type="button" {...props} />
   </span>
 );
 
 type State = {
-  inputValue: string,
-  imageUrl: string,
+  inputValue: string;
+  imageUrl: string;
 };
 
 const initialState: State = {
@@ -22,7 +22,7 @@ const initialState: State = {
 };
 
 // eslint-disable-next-line react/no-multi-comp
-export default class ExternalSrcAvatar extends Component<*, State> {
+export default class ExternalSrcAvatar extends Component<any, State> {
   state: State = initialState;
 
   changeUrl = (event: SyntheticInputEvent<HTMLInputElement>) =>

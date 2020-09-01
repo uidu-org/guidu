@@ -7,15 +7,16 @@ module.exports = function (api) {
       'babel-plugin-styled-components',
       { ssr: true, displayName: true, preprocess: false },
     ],
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-object-rest-spread',
     '@babel/plugin-transform-destructuring',
-    '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-proposal-export-default-from',
-    // '@babel/plugin-syntax-export-default-from',
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
-    // 'babel-plugin-add-module-exports',
+    '@babel/plugin-syntax-dynamic-import',
+    '@babel/plugin-syntax-export-default-from',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-object-rest-spread',
+    '@babel/plugin-proposal-optional-chaining',
+    '@babel/plugin-proposal-export-default-from',
+    'babel-plugin-add-module-exports',
   ];
 
   const presets = [

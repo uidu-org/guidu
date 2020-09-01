@@ -27,12 +27,12 @@ const defaults = {
 };
 
 type State = {
-  values: Array<Object>,
-  valuesString: string,
-  placeholder: string,
-  controlShouldRenderValue: boolean,
+  values: Array<Object>;
+  valuesString: string;
+  placeholder: string;
+  controlShouldRenderValue: boolean;
 };
-class MultiPopupSelectExample extends Component<*, State> {
+class MultiPopupSelectExample extends Component<any, State> {
   state = {
     values: [options[0]],
     valuesString: '',
@@ -40,14 +40,14 @@ class MultiPopupSelectExample extends Component<*, State> {
     controlShouldRenderValue: false,
   };
   componentWillMount() {
-    this.setState(state => ({
-      valuesString: state.values.map(v => v.label).join(', '),
+    this.setState((state) => ({
+      valuesString: state.values.map((v) => v.label).join(', '),
     }));
   }
   onChange = (values: any) => {
     this.setState({
       values,
-      valuesString: values.map(v => v.label).join(', '),
+      valuesString: values.map((v) => v.label).join(', '),
     });
   };
   toggleConfig = (event: any) => {

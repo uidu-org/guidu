@@ -26,7 +26,7 @@ type State = {
   value?: {};
 };
 
-export default class CreatableAdvanced extends Component<*, State> {
+export default class CreatableAdvanced extends Component<any, State> {
   state: State = {
     isLoading: false,
     options: defaultOptions,

@@ -16,16 +16,12 @@
     "build": "                               yarn preconstruct build && run-p build:pkg build:babel && run-p build:typescript --print-label --continue-on-error",
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
-    "build:babel": "                         run-p build:babel:esm",
-    "build:babel:esm": "                     NODE_ENV=production BABEL_ENV=production:esm bolt workspaces exec --parallel --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js babel)\" -- babel --root-mode upward src -d ./",
+    "build:babel": "                         NODE_ENV=production BABEL_ENV=production:esm bolt workspaces exec --parallel --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js babel)\" -- babel --root-mode upward src -d ./",
     "build:bundle-analysis": "               node ./build/ci-scripts/run.bundle.analysis",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
     "build:multi-entry-point-tsconfig": "    node ./build/multi-entry-tools/typescript-paths-tsconfig-builder.js > tsconfig.entry-points.json",
-    "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects && yarn build:pkg:new && echo \"TODO: Remove pkg:new when everything has dropped cjs\"",
-    "build:pkg:new": "                       bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json tmp/package.json --only name,version,sideEffects && bolt workspaces exec --only-fs 'packages/**' -- mv ./tmp/package.json ./version.json",
-    "build:typescript": "                    run-p build:typescript:es2015",
-    "build:typescript:cli": "                NODE_ENV=production bolt workspaces exec --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescriptcli)\" -- tsc --project ./build/cli",
-    "build:typescript:es2015": "             NODE_ENV=production bolt workspaces exec --no-bail --excludeFromGraph devDependencies --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- bash -c 'tsc --project ./build/es2015 && echo Success || true'",
+    "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
+    "build:typescript": "                    NODE_ENV=production bolt workspaces exec --no-bail --excludeFromGraph devDependencies --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- bash -c 'tsc --project ./build/es2015 && echo Success || true'",
     "build:website": "                       yarn install --pure-lockfile && cd website && yarn build",
     "changeset": "                           changeset",
     "delete": "                              yarn run delete:build && yarn run delete:tmp && yarn run delete:modules",
@@ -38,9 +34,6 @@
     "lint:checkPrettier": "                  eslint --print-config .eslintrc.json | eslint-config-prettier-check",
     "lint:eslint": "                         eslint '**/*.{js,ts,tsx}'",
     "lint:stylelint": "                      stylelint '**/*.{js,ts,tsx}'",
-    "measure": "                             measure",
-    "measure:changed": "                     yarn measure $(node build/ci-scripts/get.changed.packages.since.master.js --spaceDelimited --only='packages') --lint",
-    "measure:updateSnapshot": "              yarn measure $(node build/ci-scripts/get.changed.packages.since.master.js --spaceDelimited --only='packages') --updateSnapshot",
     "pkg:sort": "                            yarn manypkg exec npx sort-package-json package.json",
     "start": "                               dotenv yarn run website:start",
     "start:authentication": "                dotenv yarn run website:start **/packages/authentication/**",
@@ -96,6 +89,7 @@
     "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/plugin-proposal-export-default-from": "^7.5.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
     "@babel/plugin-syntax-async-generators": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-export-default-from": "^7.2.0",
@@ -466,7 +460,6 @@
     "terser-webpack-plugin": "^4.0.0",
     "thread-loader": "^2.1.2",
     "tiny-invariant": "^1.0.3",
-    "ts-loader": "^8.0.0",
     "ts-node": "^9.0.0",
     "tslib": "^2.0.1",
     "tti-polyfill": "^0.2.2",
@@ -511,8 +504,10 @@
     ]
   },
   "preconstruct": {
+    "___experimentalFlags_WILL_CHANGE_IN_PATCH": {
+      "logCompiledFiles": true
+    },
     "packages": [
-      "packages/core/*",
       "packages/forms/*",
       "packages/navigation/*"
     ]

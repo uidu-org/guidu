@@ -3,17 +3,17 @@ import { Note } from '../examples-util/helpers';
 import { Presence } from '../src';
 
 type State = {
-  width: number,
+  width: number;
 };
 
-export default class PresenceWidthExample extends Component<*, State> {
+export default class PresenceWidthExample extends Component<any, State> {
   state: State = {
     width: 60,
   };
   decrement = (key: string) =>
-    this.setState(state => ({ [key]: state[key] - 1 }));
+    this.setState((state) => ({ [key]: state[key] - 1 }));
   increment = (key: string) =>
-    this.setState(state => ({ [key]: state[key] + 1 }));
+    this.setState((state) => ({ [key]: state[key] + 1 }));
   render() {
     const { width } = this.state;
 
@@ -33,7 +33,9 @@ export default class PresenceWidthExample extends Component<*, State> {
         <input
           min="10"
           max="130"
-          onChange={e => this.setState({ width: parseInt(e.target.value, 10) })}
+          onChange={(e) =>
+            this.setState({ width: parseInt(e.target.value, 10) })
+          }
           step="10"
           title="Width"
           type="range"

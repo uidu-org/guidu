@@ -14,11 +14,11 @@ const createOption = (label: string) => ({
 });
 
 type State = {
-  inputValue: string,
-  value: Array<any>,
+  inputValue: string;
+  value: Array<any>;
 };
 
-export default class MultiLineSearchInput extends Component<*, State> {
+export default class MultiLineSearchInput extends Component<any, State> {
   state = {
     inputValue: '',
     value: [],

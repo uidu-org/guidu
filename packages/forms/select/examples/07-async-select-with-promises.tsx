@@ -6,18 +6,20 @@ import { AsyncSelect } from '../src';
 import { cities } from './common/data';
 
 type State = {
-  inputValue: string,
+  inputValue: string;
 };
 
 const filterCities = (inputValue: string) =>
-  cities.filter(i => i.name.toLowerCase().includes(inputValue.toLowerCase()));
+  cities.filter((i) => i.name.toLowerCase().includes(inputValue.toLowerCase()));
 
-const promiseOptions = async inputValue => {
-  const response = await fetch(`http://stipendiogiusto.local:5500/jobs?q=${inputValue}`)
-  return response.json()
-}
+const promiseOptions = async (inputValue) => {
+  const response = await fetch(
+    `http://stipendiogiusto.local:5500/jobs?q=${inputValue}`,
+  );
+  return response.json();
+};
 
-export default class WithPromises extends Component<*, State> {
+export default class WithPromises extends Component<any, State> {
   state = { inputValue: '', value: '', options: [] };
   handleInputChange = (newValue: string) => {
     const inputValue = newValue.replace(/\W/g, '');
@@ -26,12 +28,12 @@ export default class WithPromises extends Component<*, State> {
   };
 
   setValue = (option) => {
-    console.log(option)
+    console.log(option);
     this.setState({
       value: { name: option.name, id: option.id },
-      options: [option]
-    })
-  }
+      options: [option],
+    });
+  };
 
   render() {
     const { inputValue, value, options } = this.state;
@@ -42,15 +44,15 @@ export default class WithPromises extends Component<*, State> {
           value={value.id}
           objValue={value}
           inputValue={inputValue}
-          onInputChange={v => {
+          onInputChange={(v) => {
             console.log(v);
-            this.setState({ inputValue: v })
+            this.setState({ inputValue: v });
           }}
           cacheOptions
           loadOptions={promiseOptions}
           onChange={(_name, _value, { option }) => {
-            console.log(_value)
-            this.setValue(option)
+            console.log(_value);
+            this.setValue(option);
           }}
         />
       </Form>

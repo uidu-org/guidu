@@ -7,20 +7,20 @@ import { CheckboxSelect } from '../src';
 
 // data imported for brevity; equal to the options from Single Select example
 
-const customGetOptionLabel = option => {
+const customGetOptionLabel = (option) => {
   return option.label.length >= 10
     ? `${option.label.substring(0, 7)}...`
     : option.label;
 };
 export default class withCustomGetOptionLabel extends Component<
-  *,
-  { useCustomOptionLabel: boolean },
+  any,
+  { useCustomOptionLabel: boolean }
 > {
   state = {
     useCustomOptionLabel: true,
   };
   toggleValue = ({ value }: Object) =>
-    this.setState(state => ({ ...state, [value]: !state[value] }));
+    this.setState((state) => ({ ...state, [value]: !state[value] }));
   render() {
     return (
       <Form {...formDefaultProps}>

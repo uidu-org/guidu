@@ -11,14 +11,13 @@ import ItemThemeDemo from './00-basic';
 import {
   DropImitation,
   GroupsWrapper,
-  ItemsNarrowContainer
+  ItemsNarrowContainer,
 } from './styled/StoryHelpers';
-
 
 // eslint-disable-next-line react/prop-types
 const Icon = () => <Question label="test question" />;
 
-const RouterLink = class RouterLinkBase extends Component<*> {
+const RouterLink = class RouterLinkBase extends Component<any> {
   render() {
     const { children, className, href } = this.props;
     return (
