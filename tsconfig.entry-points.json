@@ -219,6 +219,14 @@
         "../../core/inline-dialog/src/types",
         "./packages/core/inline-dialog/src/types"
       ],
+      "@uidu/inline-edit": [
+        "../../core/inline-edit/src/",
+        "./packages/core/inline-edit/src/"
+      ],
+      "@uidu/inline-edit/types": [
+        "../../core/inline-edit/src/types",
+        "./packages/core/inline-edit/src/types"
+      ],
       "@uidu/item": [
         "../../core/item/src/",
         "./packages/core/item/src/"
@@ -322,6 +330,18 @@
       "@uidu/portal": [
         "../../core/portal/src/",
         "./packages/core/portal/src/"
+      ],
+      "@uidu/progress-bar": [
+        "../../core/progress-bar/src/",
+        "./packages/core/progress-bar/src/"
+      ],
+      "@uidu/progress-bar/theme": [
+        "../../core/progress-bar/src/theme",
+        "./packages/core/progress-bar/src/theme"
+      ],
+      "@uidu/progress-bar/types": [
+        "../../core/progress-bar/src/types",
+        "./packages/core/progress-bar/src/types"
       ],
       "@uidu/section-message": [
         "../../core/section-message/src/",
@@ -1115,6 +1135,14 @@
         "../../navigation/animated-menu/src/types",
         "./packages/navigation/animated-menu/src/types"
       ],
+      "@uidu/breadcrumbs": [
+        "../../navigation/breadcrumbs/src/",
+        "./packages/navigation/breadcrumbs/src/"
+      ],
+      "@uidu/breadcrumbs/types": [
+        "../../navigation/breadcrumbs/src/types",
+        "./packages/navigation/breadcrumbs/src/types"
+      ],
       "@uidu/navigation": [
         "../../navigation/navigation/src/",
         "./packages/navigation/navigation/src/"
@@ -1122,6 +1150,10 @@
       "@uidu/navigation/types": [
         "../../navigation/navigation/src/types",
         "./packages/navigation/navigation/src/types"
+      ],
+      "@uidu/page-header": [
+        "../../navigation/page-header/src/",
+        "./packages/navigation/page-header/src/"
       ],
       "@uidu/responsivr/constants": [
         "../../navigation/responsivr/src/constants",
@@ -1147,6 +1179,14 @@
         "../../navigation/shell/src/types",
         "./packages/navigation/shell/src/types"
       ],
+      "@uidu/side-navigation": [
+        "../../navigation/side-navigation/src/",
+        "./packages/navigation/side-navigation/src/"
+      ],
+      "@uidu/side-navigation/types": [
+        "../../navigation/side-navigation/src/types",
+        "./packages/navigation/side-navigation/src/types"
+      ],
       "@uidu/stepper": [
         "../../navigation/stepper/src/",
         "./packages/navigation/stepper/src/"
@@ -1162,6 +1202,18 @@
       "@uidu/tabbar/types": [
         "../../navigation/tabbar/src/types",
         "./packages/navigation/tabbar/src/types"
+      ],
+      "@uidu/tabs": [
+        "../../navigation/tabs/src/",
+        "./packages/navigation/tabs/src/"
+      ],
+      "@uidu/tabs/styled": [
+        "../../navigation/tabs/src/styled",
+        "./packages/navigation/tabs/src/styled"
+      ],
+      "@uidu/tabs/types": [
+        "../../navigation/tabs/src/types",
+        "./packages/navigation/tabs/src/types"
       ],
       "@uidu/treenav": [
         "../../navigation/treenav/src/",
