@@ -13,7 +13,7 @@ install:
 script:
   - bash ./build-setup.sh
   - yarn install --pure-lockfile
-  - travis_wait 30 yarn build
+  - yarn build
 
 deploy:
   provider: script
