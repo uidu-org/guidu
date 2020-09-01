@@ -12,10 +12,10 @@ module.exports = function (api) {
     '@babel/plugin-transform-destructuring',
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-export-default-from',
-    '@babel/plugin-syntax-export-default-from',
+    // '@babel/plugin-syntax-export-default-from',
     ['@babel/plugin-transform-runtime', { helpers: false, regenerator: true }],
     ['@babel/plugin-transform-regenerator', { async: false }],
-    'babel-plugin-add-module-exports',
+    // 'babel-plugin-add-module-exports',
   ];
 
   const presets = [
