@@ -21,9 +21,7 @@
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
     "build:multi-entry-point-tsconfig": "    node ./build/multi-entry-tools/typescript-paths-tsconfig-builder.js > tsconfig.entry-points.json",
     "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
-    "build:typescript": "                    yarn build:typescript:cjs && yarn build:typescript:esm",
-    "build:typescript:cjs": "                NODE_ENV=production bolt workspaces exec --no-bail --excludeFromGraph devDependencies --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- bash -c 'tsc --project ./build/es2015 --outDir ./dist/cjs --module commonjs && echo Success || true'",
-    "build:typescript:esm": "                NODE_ENV=production bolt workspaces exec --no-bail --excludeFromGraph devDependencies --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- bash -c 'tsc --project ./build/es2015 --outDir ./dist/esm --module esnext && echo Success || true'",
+    "build:typescript": "                    NODE_ENV=production bolt workspaces exec --no-bail --excludeFromGraph devDependencies --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js typescript)\"  -- bash -c 'tsc --project ./build/es2015 && echo Success || true'",
     "build:website": "                       yarn install --pure-lockfile && cd website && yarn build",
     "changeset": "                           changeset",
     "delete": "                              yarn run delete:build && yarn run delete:tmp && yarn run delete:modules",
@@ -508,6 +506,7 @@
   "preconstruct": {
     "packages": [
       "packages/core/*",
+      "packages/forms/*",
       "packages/navigation/*"
     ]
   }
