@@ -3,10 +3,10 @@
   "version": "0.2.2",
   "private": false,
   "description": "Downshift React component",
-  "main": "dist/tabbar.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/tabbar",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/tabbar.cjs.js",
   "module": "dist/tabbar.esm.js",
   "types": "index.d.ts",
   "dependencies": {

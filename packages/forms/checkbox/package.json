@@ -2,11 +2,11 @@
   "name": "@uidu/checkbox",
   "version": "0.2.5",
   "description": "Checkbox component for use in forms",
-  "main": "dist/checkbox.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/checkbox",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/checkbox.cjs.js",
   "module": "dist/checkbox.esm.js",
   "types": "index.d.ts",
   "dependencies": {

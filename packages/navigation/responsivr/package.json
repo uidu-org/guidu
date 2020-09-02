@@ -2,10 +2,10 @@
   "name": "@uidu/responsivr",
   "version": "0.2.2",
   "description": "Responsivr manages media query component logics",
-  "main": "dist/responsivr.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/responsivr",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/responsivr.cjs.js",
   "module": "dist/responsivr.esm.js",
   "dependencies": {
     "react": "^16.13.1",

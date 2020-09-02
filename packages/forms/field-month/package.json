@@ -2,7 +2,6 @@
   "name": "@uidu/field-month",
   "version": "0.3.1",
   "description": "Field Month Component",
-  "main": "dist/field-month.cjs.js",
   "keywords": [
     "react",
     "ui",
@@ -12,6 +11,7 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-month.cjs.js",
   "module": "dist/field-month.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -33,5 +33,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

@@ -6,9 +6,11 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/comment",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "main": "dist/comment.cjs.js",
+  "module": "dist/comment.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.0",
     "@uidu/field-mentions": "^0.3.0",
     "@uidu/field-text": "^0.3.0",
@@ -17,11 +19,12 @@
     "@uidu/spinner": "^0.3.0",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",
+    "react": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

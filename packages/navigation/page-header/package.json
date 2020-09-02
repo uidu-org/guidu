@@ -2,21 +2,16 @@
   "name": "@uidu/page-header",
   "version": "0.1.0",
   "description": "A React component that represents Header of an application page",
-  "main": "dist/page-header.cjs.js",
-  "author": "uidu",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/page-header",
   "license": "MIT",
-  "types": "index.d.ts",
+  "author": "uidu",
   "sideEffects": false,
-  "uidu:src": "src/index.ts",
+  "main": "dist/page-header.cjs.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@uidu/shell": "^1.0.3",
     "@uidu/theme": "^0.4.0",
     "tslib": "^2.0.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0",
-    "styled-components": "^5.1.1"
   },
   "devDependencies": {
     "@uidu/breadcrumbs": "^0.1.0",
@@ -31,5 +26,10 @@
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/page-header"
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "styled-components": "^5.1.1"
+  },
+  "uidu:src": "src/index.ts"
 }

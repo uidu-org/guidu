@@ -1,7 +1,7 @@
 /* eslint-env node, browser */
 
 import * as React from 'react';
-import Form from '..';
+import Form from '../src';
 import { CheckboxGroup } from '../../checkbox/src';
 import { RadioGroup } from '../../radio/src';
 

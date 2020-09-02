@@ -3,10 +3,10 @@
   "version": "1.0.4",
   "private": false,
   "description": "Downshift React component",
-  "main": "dist/shell.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/shell",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/shell.cjs.js",
   "module": "dist/shell.esm.js",
   "types": "index.d.ts",
   "dependencies": {

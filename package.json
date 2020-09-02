@@ -505,9 +505,8 @@
   },
   "preconstruct": {
     "packages": [
-      "packages/core/*",
-      "packages/forms/*",
-      "packages/navigation/*"
+      "packages/uidu/*",
+      "!packages/uidu/schema.d.ts"
     ]
   }
 }

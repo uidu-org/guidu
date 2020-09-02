@@ -2,11 +2,11 @@
   "name": "@uidu/form",
   "version": "0.3.1",
   "description": "Forms using Formsy",
-  "main": "dist/form.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/form",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/form.cjs.js",
   "module": "dist/form.esm.js",
   "types": "index.d.ts",
   "dependencies": {

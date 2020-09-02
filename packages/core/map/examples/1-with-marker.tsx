@@ -1,10 +1,10 @@
 import React from 'react';
-import Map, { bindResizeListener, getMapBounds, Marker } from '..';
 import {
   defaultMapProps,
   generateMarkers,
   susolvkaCoords,
 } from '../examples-utils';
+import Map, { bindResizeListener, getMapBounds, Marker } from '../src';
 
 const apiIsLoaded = (map, maps, places) => {
   // Get bounds by our places
@@ -27,7 +27,7 @@ export default () => (
       onChildMouseEnter={console.log}
       onChildMouseLeave={console.log}
     >
-      {markers.map(marker => (
+      {markers.map((marker) => (
         <Marker {...marker} />
       ))}
     </Map>

@@ -2,7 +2,6 @@
   "name": "@uidu/field-range",
   "version": "0.3.1",
   "description": "Component which renders a slider and is a substitute of the native input[range] element",
-  "main": "dist/field-range.cjs.js",
   "keywords": [
     "react",
     "ui",
@@ -12,6 +11,7 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-range.cjs.js",
   "module": "dist/field-range.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -34,5 +34,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

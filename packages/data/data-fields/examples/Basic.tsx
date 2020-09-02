@@ -5,7 +5,7 @@ import {
   multipleSelectField,
   singleSelectField,
   stringField,
-} from '..';
+} from '../src';
 import { formDefaultProps } from '../../../forms/form/examples-utils';
 
 const { form: LinkRecordForm } = linkRecordField;
@@ -56,7 +56,7 @@ export default class Basic extends PureComponent {
         <p>{stringField.description}</p>
         <Form
           footerRenderer={() => {}}
-          handleSubmit={async model => console.log(model)}
+          handleSubmit={async (model) => console.log(model)}
         >
           <StringForm onSave={console.log} />
         </Form>

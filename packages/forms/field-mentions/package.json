@@ -2,7 +2,6 @@
   "name": "@uidu/field-mentions",
   "version": "0.3.1",
   "description": "Field Mentions Component",
-  "main": "dist/field-mentions.cjs.js",
   "keywords": [
     "react",
     "ui",
@@ -12,6 +11,7 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-mentions.cjs.js",
   "module": "dist/field-mentions.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -34,5 +34,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

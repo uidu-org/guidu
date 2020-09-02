@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import Slider from '..';
+import Slider from '../src';
 
 const Slide = styled.div`
   text-align: center;

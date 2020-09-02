@@ -1,7 +1,7 @@
 import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
-import fields from '..';
+import fields from '../src';
 
 export default md`
   # DataFields

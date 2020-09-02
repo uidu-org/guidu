@@ -2,11 +2,11 @@
   "name": "@uidu/field-time",
   "version": "0.3.1",
   "description": "Field Time Component",
-  "main": "dist/field-time.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-time",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-time.cjs.js",
   "module": "dist/field-time.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -29,5 +29,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

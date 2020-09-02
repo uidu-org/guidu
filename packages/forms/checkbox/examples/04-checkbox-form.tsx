@@ -1,6 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
-import Checkbox, { CheckboxGroup } from '..';
+import Checkbox, { CheckboxGroup } from '../src';
 import { formDefaultProps } from '../../form/examples-utils';
 
 export default class CheckboxGroupExample extends PureComponent<void> {

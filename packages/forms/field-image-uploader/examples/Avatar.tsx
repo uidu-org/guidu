@@ -1,6 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import FieldImageUploader from '..';
+import FieldImageUploader from '../src';
 import { localUploadOptions } from '../../../media/media-core/src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';

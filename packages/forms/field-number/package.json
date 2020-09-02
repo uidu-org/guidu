@@ -2,7 +2,6 @@
   "name": "@uidu/field-number",
   "version": "0.3.1",
   "description": "Field Number Component",
-  "main": "dist/field-number.cjs.js",
   "keywords": [
     "react",
     "ui",
@@ -12,6 +11,7 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-number.cjs.js",
   "module": "dist/field-number.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -38,5 +38,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

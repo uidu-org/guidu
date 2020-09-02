@@ -6,9 +6,11 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/donate",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "main": "dist/donate.cjs.js",
+  "module": "dist/donate.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.5",
     "@uidu/contact": "^0.1.18",
     "@uidu/field-downshift": "^0.4.1",
@@ -21,6 +23,9 @@
     "@uidu/schema.d.ts": "^0.1.7",
     "@uidu/select": "^0.5.1",
     "@uidu/widgets": "^0.3.1",
+    "classnames": "^2.2.6",
+    "downshift": "^6.0.0",
+    "react": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
     "styled-components": "^5.1.1",
@@ -29,5 +34,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.1"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

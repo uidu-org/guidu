@@ -1,7 +1,7 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import { GuiduThemeProvider } from '@uidu/theme';
 import React, { Fragment, PureComponent } from 'react';
-import { Editor, EditorContext, WithEditorActions } from '..';
+import { Editor, EditorContext, WithEditorActions } from '../src';
 import { localUploadOptions } from '../../../media/media-core/src';
 import { document as storyDataDocument } from '../../renderer/examples/helper/story-data';
 import { DevTools } from '../examples-utils/DevTools';

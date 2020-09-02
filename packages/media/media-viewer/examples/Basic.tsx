@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import MediaViewer from '..';
 import { fetchAttachments } from '../../media-card/example-helpers';
+import MediaViewer from '../src';
 
 export default class Basic extends PureComponent {
   state = {
@@ -8,7 +8,7 @@ export default class Basic extends PureComponent {
   };
 
   componentDidMount() {
-    fetchAttachments().then(response => this.setState({ files: response }));
+    fetchAttachments().then((response) => this.setState({ files: response }));
   }
 
   render() {

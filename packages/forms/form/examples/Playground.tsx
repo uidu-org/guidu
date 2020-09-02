@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Form from '..';
+import Form from '../src';
 import Checkbox, { CheckboxGroup } from '../../checkbox/src';
 import FieldColorPicker from '../../field-color-picker/src';
 import FieldCounter from '../../field-counter/src';
@@ -49,7 +49,7 @@ const Playground: React.FunctionComponent<Props> = ({
     }
   };
 
-  const submitForm = async data => {
+  const submitForm = async (data) => {
     console.log(data); // eslint-disable-line no-console
   };
 

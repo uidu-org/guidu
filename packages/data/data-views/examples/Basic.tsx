@@ -2,7 +2,7 @@ import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
 import { IntlProvider } from 'react-intl';
-import dataViews from '..';
+import dataViews from '../src';
 import { formDefaultProps } from '../../../forms/form/examples-utils';
 
 export default class Basic extends PureComponent<any, any> {

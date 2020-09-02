@@ -1,5 +1,5 @@
 import React from 'react';
-import FieldTextarea from '..';
+import FieldTextarea from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
 
 export default function Basic() {

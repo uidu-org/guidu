@@ -2,7 +2,7 @@ import { Form } from '@uidu/form';
 import moment from 'moment';
 import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';
-import FieldPhone from '..';
+import FieldPhone from '../src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 

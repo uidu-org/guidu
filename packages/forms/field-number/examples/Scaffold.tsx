@@ -1,5 +1,5 @@
 import React from 'react';
-import FieldNumber from '..';
+import FieldNumber from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
 
 export default function Basic() {

@@ -2,26 +2,18 @@
   "name": "@uidu/progress-bar",
   "version": "0.3.2",
   "description": "A React component that is a progress bar",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/progress-bar",
-  "author": "Atlassian Pty Ltd",
   "license": "Apache-2.0",
+  "author": "Atlassian Pty Ltd",
+  "sideEffects": false,
   "main": "dist/progress-bar.cjs.js",
   "module": "dist/progress-bar.esm.js",
-  "module:es2019": "dist/es2019/index.js",
   "types": "dist/cjs/index.d.ts",
-  "sideEffects": false,
-  "uidu:src": "src/index.ts",
   "dependencies": {
     "@emotion/core": "^10.0.34",
     "@uidu/theme": "^0.4.0",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.1",
@@ -29,5 +21,13 @@
     "enzyme": "^3.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "module:es2019": "dist/es2019/index.js",
+  "uidu:src": "src/index.ts"
 }

@@ -3,10 +3,10 @@
   "version": "0.1.22",
   "private": false,
   "description": "Animated menu like Stripe",
-  "main": "dist/animated-menu.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/animated-menu",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/animated-menu.cjs.js",
   "module": "dist/animated-menu.esm.js",
   "types": "index.d.ts",
   "dependencies": {

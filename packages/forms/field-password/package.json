@@ -2,7 +2,6 @@
   "name": "@uidu/field-password",
   "version": "0.3.2",
   "description": "Field Password Component",
-  "main": "dist/field-password.cjs.js",
   "keywords": [
     "react",
     "ui",
@@ -12,6 +11,7 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-password.cjs.js",
   "module": "dist/field-password.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -43,5 +43,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

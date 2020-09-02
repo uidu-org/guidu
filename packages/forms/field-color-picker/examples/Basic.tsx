@@ -1,6 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
-import FieldColorPicker from '..';
+import FieldColorPicker from '../src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import { DeviseWrapper, Passwordless } from '..';
+import { DeviseWrapper, Passwordless } from '../src';
 
 export default class PasswordlessExample extends PureComponent {
   render() {
@@ -8,7 +8,7 @@ export default class PasswordlessExample extends PureComponent {
       <Router>
         <Route
           path="/"
-          render={routeProps => (
+          render={(routeProps) => (
             <DeviseWrapper>
               <Passwordless
                 {...routeProps}

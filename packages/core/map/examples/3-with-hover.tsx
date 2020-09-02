@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Map, { bindResizeListener, getMapBounds, Marker } from '..';
 import {
   defaultMapProps,
   generateMarkers,
   susolvkaCoords,
 } from '../examples-utils';
+import Map, { bindResizeListener, getMapBounds, Marker } from '../src';
 
 const apiIsLoaded = (map, maps, places) => {
   // Get bounds by our places
@@ -24,12 +24,12 @@ export default function WithHover() {
     <div className="row no-gutters" style={{ height: '400px', width: '100%' }}>
       <div className="col-4 overflow-auto h-100">
         <ul className="list-group">
-          {markers.map(marker => (
+          {markers.map((marker) => (
             <li
               className="list-group-item list-group-item-action"
               key={marker.id}
-              onMouseEnter={e => setHighlightedId(marker.id)}
-              onMouseLeave={e => setHighlightedId(null)}
+              onMouseEnter={(e) => setHighlightedId(marker.id)}
+              onMouseLeave={(e) => setHighlightedId(null)}
             >
               {marker.id}
             </li>

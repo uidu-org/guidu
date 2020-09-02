@@ -2,10 +2,10 @@
   "name": "@uidu/radio",
   "version": "0.4.7",
   "description": "Radio component for forms",
-  "main": "dist/radio.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/radio",
   "license": "MIT",
   "sideEffects": false,
+  "main": "dist/radio.cjs.js",
   "module": "dist/radio.esm.js",
   "types": "index.d.ts",
   "dependencies": {

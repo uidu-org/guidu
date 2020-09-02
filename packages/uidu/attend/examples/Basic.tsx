@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Attend from '..';
+import Attend from '../src';
 import { WidgetsExampleScaffold } from '../../widgets/example-utils';
 
 function Basic() {

@@ -1,6 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { PureComponent } from 'react';
-import FieldFileUploader from '..';
+import FieldFileUploader from '../src';
 import {
   localUploadOptions,
   s3UploadOptions,

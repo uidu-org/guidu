@@ -2,11 +2,11 @@
   "name": "@uidu/select",
   "version": "0.5.1",
   "description": "Select Component",
-  "main": "dist/select.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/select",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/select.cjs.js",
   "module": "dist/select.esm.js",
   "types": "index.d.ts",
   "dependencies": {

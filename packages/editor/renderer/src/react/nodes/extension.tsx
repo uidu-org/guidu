@@ -1,5 +1,13 @@
 import { ExtensionLayout } from '@uidu/adf-schema';
-import { ADNode, calcBreakoutWidth, ExtensionHandlers, getExtensionRenderer, overflowShadow, OverflowShadowProps, WidthConsumer } from '@uidu/editor-common';
+import {
+  ADNode,
+  calcBreakoutWidth,
+  ExtensionHandlers,
+  getExtensionRenderer,
+  overflowShadow,
+  OverflowShadowProps,
+  WidthConsumer,
+} from '@uidu/editor-common';
 import * as React from 'react';
 import { RendererContext } from '..';
 import { renderNodes, Serializer } from '../..';
@@ -26,8 +34,9 @@ export const renderExtension = (
       {({ width }) => (
         <div
           ref={options && options.handleRef}
-          className={`${RendererCssClassName.EXTENSION} ${options &&
-            options.shadowClassNames}`}
+          className={`${RendererCssClassName.EXTENSION} ${
+            options && options.shadowClassNames
+          }`}
           style={{
             width: calcBreakoutWidth(layout, width),
           }}

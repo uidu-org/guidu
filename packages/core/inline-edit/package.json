@@ -2,13 +2,12 @@
   "name": "@uidu/inline-edit",
   "version": "0.1.0",
   "description": "A base component used to build inline-editable components that match the Atlassian Design Guidelines",
-  "main": "dist/inline-edit.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/inline-edit",
-  "author": "uidu",
   "license": "MIT",
-  "types": "index.d.ts",
+  "author": "uidu",
   "sideEffects": false,
-  "uidu:src": "src/index.ts",
+  "main": "dist/inline-edit.cjs.js",
+  "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.0.3",
     "@loadable/component": "^5.13.1",
@@ -22,10 +21,6 @@
     "react-loadable": "^5.5.0",
     "tslib": "^2.0.1"
   },
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "styled-components": "^5.1.1"
-  },
   "devDependencies": {
     "@atlaskit/tag": "^10.0.0",
     "@atlaskit/tag-group": "^10.0.0",
@@ -34,5 +29,10 @@
     "@uidu/select": "^0.5.0",
     "react": "^16.13.1",
     "styled-components": "^5.1.1"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "styled-components": "^5.1.1"
+  },
+  "uidu:src": "src/index.ts"
 }

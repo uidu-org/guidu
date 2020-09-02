@@ -1,5 +1,5 @@
 import React from 'react';
-import FieldText from '..';
+import FieldText from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
 
 export default function Basic() {

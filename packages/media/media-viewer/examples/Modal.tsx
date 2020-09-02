@@ -1,7 +1,7 @@
 import MediaCard from '@uidu/media-card';
 import React, { Fragment, PureComponent } from 'react';
-import { ModalMediaViewer } from '..';
 import { fetchAttachments } from '../../media-card/example-helpers';
+import { ModalMediaViewer } from '../src';
 
 export default class Basic extends PureComponent {
   state = {
@@ -10,7 +10,7 @@ export default class Basic extends PureComponent {
   };
 
   componentDidMount() {
-    fetchAttachments().then(response => this.setState({ files: response }));
+    fetchAttachments().then((response) => this.setState({ files: response }));
   }
 
   render() {

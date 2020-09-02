@@ -6,9 +6,11 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/attend",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "main": "dist/attend.cjs.js",
+  "module": "dist/attend.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/contact": "^0.1.18",
     "@uidu/field-counter": "^0.2.6",
     "@uidu/field-text": "^0.3.0",
@@ -20,6 +22,7 @@
     "@uidu/stepper": "^0.2.1",
     "@uidu/widgets": "^0.3.1",
     "moment": "^2.18.1",
+    "react": "^16.13.1",
     "react-countdown": "^2.2.0",
     "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
@@ -28,5 +31,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

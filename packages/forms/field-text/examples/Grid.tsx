@@ -1,6 +1,6 @@
 import { Form } from '@uidu/form';
 import React, { Component } from 'react';
-import { FieldTextGrid } from '..';
+import { FieldTextGrid } from '../src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 

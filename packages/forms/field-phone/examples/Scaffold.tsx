@@ -1,5 +1,5 @@
 import React from 'react';
-import FieldPhone from '..';
+import FieldPhone from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
 
 export default function Basic() {

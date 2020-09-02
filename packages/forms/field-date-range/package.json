@@ -1,10 +1,10 @@
 {
   "name": "@uidu/field-date-range",
   "version": "0.2.10",
-  "main": "dist/field-date-range.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date-range",
   "license": "MIT",
   "sideEffects": false,
+  "main": "dist/field-date-range.cjs.js",
   "module": "dist/field-date-range.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -23,5 +23,5 @@
     "@uidu/docs": "^0.2.0",
     "@uidu/form": "^0.3.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

@@ -3,10 +3,10 @@
   "version": "0.3.6",
   "private": false,
   "description": "An image uploader with preview",
-  "main": "dist/field-image-uploader.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-image-uploader",
   "license": "MIT",
   "sideEffects": false,
+  "main": "dist/field-image-uploader.cjs.js",
   "module": "dist/field-image-uploader.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -36,5 +36,5 @@
     "@uidu/form": "^0.3.1",
     "axios": "^0.20.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

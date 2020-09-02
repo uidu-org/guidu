@@ -1,7 +1,7 @@
 import { code, Example, md } from '@uidu/docs';
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
-import dataViews from '..';
+import dataViews from '../src';
 
 export default md`
 

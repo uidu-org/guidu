@@ -1,6 +1,6 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
 import React, { Fragment, PureComponent } from 'react';
-import { Editor, EditorContext, WithEditorActions } from '..';
+import { Editor, EditorContext, WithEditorActions } from '../src';
 import { DevTools } from '../examples-utils/DevTools';
 
 export default class Basic extends PureComponent<any, any> {

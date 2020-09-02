@@ -24,7 +24,7 @@ export default function SortableNavigationSubItems({
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <Droppable droppableId="droppable">
-        {provided => (
+        {(provided) => (
           <div {...provided.droppableProps} ref={provided.innerRef}>
             <AnimateHeight height={isOpen ? 'auto' : 0}>
               {orderedItems.map((item, index) => (

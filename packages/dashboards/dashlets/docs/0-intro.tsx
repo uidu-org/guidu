@@ -1,7 +1,7 @@
 import { code, Example, md, Props } from '@uidu/docs';
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
-import dashlets from '..';
+import dashlets from '../src';
 
 console.log(dashlets);
 

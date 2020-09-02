@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import Map, { MarkerCluster } from '..';
 import { defaultMapProps } from '../examples-utils';
+import Map, { MarkerCluster } from '../src';
 
 export default class DemoApp extends PureComponent {
   UNSAFE_componentWillMount() {
@@ -16,10 +16,10 @@ export default class DemoApp extends PureComponent {
     ].join('');
 
     fetch(url)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         this.setState({
-          markers: data.photos.map(p => ({
+          markers: data.photos.map((p) => ({
             id: p.photo_id,
             location: {
               lat: p.latitude,

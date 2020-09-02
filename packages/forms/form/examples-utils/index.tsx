@@ -1,8 +1,8 @@
 import React from 'react';
-import { FormSubmit } from '..';
+import { FormSubmit } from '../src';
 
 const later = (delay, value) =>
-  new Promise(resolve => setTimeout(resolve, delay, value));
+  new Promise((resolve) => setTimeout(resolve, delay, value));
 
 export const formDefaultProps = {
   footerRenderer: ({
@@ -12,5 +12,5 @@ export const formDefaultProps = {
     canSubmit: boolean;
     loading: boolean;
   }) => <FormSubmit label="Save" canSubmit={canSubmit} loading={loading} />,
-  handleSubmit: model => later(3000, model).then(console.log),
+  handleSubmit: (model) => later(3000, model).then(console.log),
 };

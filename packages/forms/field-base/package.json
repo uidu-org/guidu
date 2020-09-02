@@ -2,11 +2,11 @@
   "name": "@uidu/field-base",
   "version": "0.3.1",
   "description": "Inputs using Formsy",
-  "main": "dist/field-base.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-base",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-base.cjs.js",
   "module": "dist/field-base.esm.js",
   "types": "index.d.ts",
   "dependencies": {

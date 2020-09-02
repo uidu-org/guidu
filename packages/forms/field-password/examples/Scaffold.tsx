@@ -1,5 +1,5 @@
 import React from 'react';
-import FieldPassword from '..';
+import FieldPassword from '../src';
 import { FieldExampleScaffold } from '../../field-base/examples-utils';
 
 export default function Basic() {

@@ -2,11 +2,11 @@
   "name": "@uidu/field-toggle",
   "version": "0.3.1",
   "description": "A component to view and switch between enabled or disabled states",
-  "main": "dist/field-toggle.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-toggle",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/field-toggle.cjs.js",
   "module": "dist/field-toggle.esm.js",
   "types": "index.d.ts",
   "dependencies": {
@@ -33,5 +33,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

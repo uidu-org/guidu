@@ -9,7 +9,7 @@ import {
   Search,
   Star,
 } from 'react-feather';
-import { Action, Fab } from '..';
+import { Action, Fab } from '../src';
 
 const components = [
   {
@@ -69,7 +69,7 @@ const components = [
   },
 ];
 
-const renderComponents = c =>
+const renderComponents = (c) =>
   c.map(({ mainButtonStyles, actionButtonStyles, position, event }, i) => (
     <Fab
       mainButtonStyles={mainButtonStyles}
@@ -81,7 +81,7 @@ const renderComponents = c =>
       <Action
         style={actionButtonStyles}
         text="Email"
-        onClick={e => {
+        onClick={(e) => {
           alert('I printed the event to the console.');
           console.log(e);
         }}
@@ -112,7 +112,7 @@ const renderComponents = c =>
       <Action
         style={actionButtonStyles}
         text="Editor"
-        onClick={e => console.log(e)}
+        onClick={(e) => console.log(e)}
       >
         <Code size={16} />
       </Action>
