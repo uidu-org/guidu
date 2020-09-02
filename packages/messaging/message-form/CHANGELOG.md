@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.2.4
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/dropdown-menu@0.3.3
+  - @uidu/spinner@0.3.3
+  - @uidu/field-mentions@0.3.3
+  - @uidu/field-text@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/media-filmstrip@0.2.3
+  - @uidu/message@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes

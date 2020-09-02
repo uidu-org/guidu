@@ -1,5 +1,16 @@
 # @uidu/downshift
 
+## 0.4.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/droplist@0.3.3
+  - @uidu/item@0.3.4
+  - @uidu/field-base@0.3.3
+  - @uidu/field-text@0.3.3
+
 ## 0.4.2
 
 ### Patch Changes

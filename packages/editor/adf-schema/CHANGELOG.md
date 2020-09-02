@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.5
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.2.4
 
 ### Patch Changes

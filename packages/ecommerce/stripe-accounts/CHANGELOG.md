@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.1.28
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/slider@1.4.3
+  - @uidu/spinner@0.3.3
+  - @uidu/payments@0.2.19
+  - @uidu/field-text@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/stepper@0.2.5
+
 ## 0.1.27
 
 ### Patch Changes

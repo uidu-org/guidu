@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.3.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/docs@0.2.3
+
 ## 0.3.1
 
 ### Patch Changes

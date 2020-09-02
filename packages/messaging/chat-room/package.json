@@ -1,6 +1,6 @@
 {
   "name": "@uidu/chat-room",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "A video-chat room",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-room",
@@ -9,11 +9,11 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/shell": "^1.0.5",
+    "@uidu/shell": "^1.0.6",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.2"
+    "@uidu/docs": "^0.2.3"
   },
   "uidu:src": "index.ts"
 }

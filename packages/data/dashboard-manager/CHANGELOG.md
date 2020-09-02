@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/dashboard-controls@0.3.8
+  - @uidu/dashlets@0.6.2
+
 ## 0.7.1
 
 ### Patch Changes

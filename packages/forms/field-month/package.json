@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-month",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Field Month Component",
   "keywords": [
     "react",
@@ -15,10 +15,10 @@
   "module": "dist/field-month.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.3.1",
-    "@uidu/field-base": "^0.3.2",
-    "@uidu/form": "^0.3.2",
-    "@uidu/theme": "^0.4.2",
+    "@uidu/analytics": "^0.3.2",
+    "@uidu/field-base": "^0.3.3",
+    "@uidu/form": "^0.3.3",
+    "@uidu/theme": "^0.4.3",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
     "react": "^16.13.1",
@@ -26,8 +26,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.3",
-    "@uidu/docs": "^0.2.2",
+    "@uidu/button": "^0.3.4",
+    "@uidu/docs": "^0.2.3",
     "react-dom": "^16.13.1"
   },
   "publishConfig": {

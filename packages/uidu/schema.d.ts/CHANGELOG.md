@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.10
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.1.9
 
 ### Patch Changes

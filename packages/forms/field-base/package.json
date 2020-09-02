@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-base",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Inputs using Formsy",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-base",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "module": "dist/field-base.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/form": "^0.3.2",
+    "@uidu/form": "^0.3.3",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
     "react-feather": "^2.0.8",

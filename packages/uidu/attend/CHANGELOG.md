@@ -1,5 +1,22 @@
 # @uidu/attend
 
+## 0.3.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/spinner@0.3.3
+  - @uidu/payments@0.2.19
+  - @uidu/field-counter@0.2.8
+  - @uidu/field-text@0.3.3
+  - @uidu/field-textarea@0.2.7
+  - @uidu/form@0.3.3
+  - @uidu/shell@1.0.6
+  - @uidu/stepper@0.2.5
+  - @uidu/contact@0.1.20
+  - @uidu/widgets@0.3.4
+
 ## 0.3.2
 
 ### Patch Changes

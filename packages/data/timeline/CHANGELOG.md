@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.1.9
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.1.8
 
 ### Patch Changes

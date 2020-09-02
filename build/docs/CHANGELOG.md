@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.2.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/button@0.3.4
+  - @uidu/code@0.3.3
+  - @uidu/section-message@0.3.3
+  - @uidu/theme@0.4.3
+  - @uidu/tooltip@0.3.3
+
 ## 0.2.2
 
 ### Patch Changes

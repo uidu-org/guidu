@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.22
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.1.21
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.2.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/message@0.2.4
+  - @uidu/message-form@0.2.4
+  - @uidu/message-renderer@0.2.4
+
 ## 0.2.1
 
 ### Patch Changes

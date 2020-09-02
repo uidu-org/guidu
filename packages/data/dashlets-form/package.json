@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets-form",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashlets-form",
@@ -9,17 +9,17 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/accordion": "^0.3.3",
-    "@uidu/dashlets": "^0.6.1",
-    "@uidu/field-downshift": "^0.4.2",
-    "@uidu/field-toggle": "^0.3.2",
-    "@uidu/form": "^0.3.2",
-    "@uidu/select": "^0.5.2",
-    "@uidu/shell": "^1.0.5",
+    "@uidu/accordion": "^0.3.4",
+    "@uidu/dashlets": "^0.6.2",
+    "@uidu/field-downshift": "^0.4.3",
+    "@uidu/field-toggle": "^0.3.3",
+    "@uidu/form": "^0.3.3",
+    "@uidu/select": "^0.5.3",
+    "@uidu/shell": "^1.0.6",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.2"
+    "@uidu/docs": "^0.2.3"
   },
   "uidu:src": "index.ts"
 }

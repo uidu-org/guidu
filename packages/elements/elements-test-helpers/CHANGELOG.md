@@ -1,5 +1,13 @@
 # @uidu/elements-test-helpers
 
+## 0.2.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/build-utils@0.1.23
+
 ## 0.2.1
 
 ### Patch Changes

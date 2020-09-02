@@ -1,5 +1,13 @@
 # @uidu/build-utils
 
+## 0.1.23
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/build-releases@3.0.31
+
 ## 0.1.22
 
 ### Patch Changes

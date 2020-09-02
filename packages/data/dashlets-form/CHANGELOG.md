@@ -1,5 +1,19 @@
 # @uidu/dashlets-form
 
+## 0.1.6
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/dashlets@0.6.2
+  - @uidu/accordion@0.3.4
+  - @uidu/field-downshift@0.4.3
+  - @uidu/field-toggle@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/select@0.5.3
+  - @uidu/shell@1.0.6
+
 ## 0.1.5
 
 ### Patch Changes

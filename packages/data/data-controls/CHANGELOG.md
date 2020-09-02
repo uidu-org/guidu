@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.4.4
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/drawer@0.4.4
+  - @uidu/dropdown-menu@0.3.3
+  - @uidu/inline-dialog@0.3.3
+  - @uidu/item@0.3.4
+  - @uidu/spinner@0.3.3
+  - @uidu/tooltip@0.3.3
+  - @uidu/data-fields@0.1.40
+  - @uidu/data-views@0.3.3
+  - @uidu/table@0.1.117
+  - @uidu/checkbox@0.2.7
+  - @uidu/field-text@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/select@0.5.3
+  - @uidu/shell@1.0.6
+
 ## 0.4.3
 
 ### Patch Changes

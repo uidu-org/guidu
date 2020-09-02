@@ -1,5 +1,15 @@
 # @uidu/contact
 
+## 0.1.20
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/checkbox@0.2.7
+  - @uidu/field-text@0.3.3
+  - @uidu/form@0.3.3
+
 ## 0.1.19
 
 ### Patch Changes

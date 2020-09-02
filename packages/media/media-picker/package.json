@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-picker",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "uidu media picker, using Uppy",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-picker",
   "license": "ISC",
@@ -8,7 +8,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/media-core": "^0.3.1",
+    "@uidu/media-core": "^0.3.2",
     "@uppy/core": "^1.0.1",
     "@uppy/drag-drop": "^1.0.1",
     "@uppy/dropbox": "^1.0.1",
@@ -20,9 +20,9 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.3",
-    "@uidu/docs": "^0.2.2",
-    "@uidu/modal-dialog": "^0.3.2"
+    "@uidu/button": "^0.3.4",
+    "@uidu/docs": "^0.2.3",
+    "@uidu/modal-dialog": "^0.3.3"
   },
   "publishConfig": {
     "access": "public"

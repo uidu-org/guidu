@@ -1,6 +1,6 @@
 {
   "name": "@uidu/progress-bar",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A React component that is a progress bar",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/progress-bar",
   "license": "Apache-2.0",
@@ -11,13 +11,13 @@
   "types": "dist/cjs/index.d.ts",
   "dependencies": {
     "@emotion/core": "^10.0.34",
-    "@uidu/theme": "^0.4.2",
+    "@uidu/theme": "^0.4.3",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.3",
-    "@uidu/docs": "^0.2.2",
+    "@uidu/button": "^0.3.4",
+    "@uidu/docs": "^0.2.3",
     "enzyme": "^3.10.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-toggle",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "A component to view and switch between enabled or disabled states",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-toggle",
   "license": "MIT",
@@ -10,18 +10,18 @@
   "module": "dist/field-toggle.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.3.1",
-    "@uidu/field-base": "^0.3.2",
-    "@uidu/theme": "^0.4.2",
+    "@uidu/analytics": "^0.3.2",
+    "@uidu/field-base": "^0.3.3",
+    "@uidu/theme": "^0.4.3",
     "formsy-react": "^2.1.0",
     "react-switch": "^5.0.0",
     "tslib": "^2.0.1",
     "uuid": "^8.0.0"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.3",
-    "@uidu/docs": "^0.2.2",
-    "@uidu/form": "^0.3.2",
+    "@uidu/button": "^0.3.4",
+    "@uidu/docs": "^0.2.3",
+    "@uidu/form": "^0.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"

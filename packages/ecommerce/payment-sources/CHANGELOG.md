@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.1.19
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/payments@0.2.19
+  - @uidu/form@0.3.3
+
 ## 0.1.18
 
 ### Patch Changes

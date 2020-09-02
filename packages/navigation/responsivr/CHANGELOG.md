@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.2.4
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.2.3
 
 ### Patch Changes

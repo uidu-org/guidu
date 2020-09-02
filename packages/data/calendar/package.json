@@ -1,6 +1,6 @@
 {
   "name": "@uidu/calendar",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "private": false,
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/calendar",
@@ -9,8 +9,8 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/dropdown-menu": "^0.3.2",
-    "@uidu/shell": "^1.0.5",
+    "@uidu/dropdown-menu": "^0.3.3",
+    "@uidu/shell": "^1.0.6",
     "classnames": "^2.2.6",
     "moment": "^2.18.1",
     "react-big-calendar": "^0.27.0",
@@ -18,7 +18,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.2"
+    "@uidu/docs": "^0.2.3"
   },
   "uidu:src": "index.ts"
 }

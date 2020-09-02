@@ -1,5 +1,18 @@
 # @uidu/comment
 
+## 0.1.21
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/avatar@0.5.3
+  - @uidu/spinner@0.3.3
+  - @uidu/field-mentions@0.3.3
+  - @uidu/field-text@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/message-renderer@0.2.4
+
 ## 0.1.20
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.2.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/avatar-group@2.4.3
+  - @uidu/button@0.3.4
+  - @uidu/spinner@0.3.3
+  - @uidu/theme@0.4.3
+  - @uidu/analytics-namespaced-context@0.2.2
+
 ## 0.2.2
 
 ### Patch Changes

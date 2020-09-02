@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 0.2.19
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/slider@1.4.3
+  - @uidu/form@0.3.3
+
 ## 0.2.18
 
 ### Patch Changes

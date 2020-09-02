@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.4.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 1.4.2
 
 ### Patch Changes

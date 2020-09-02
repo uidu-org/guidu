@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
@@ -8,9 +8,9 @@
   "module": "dist/field-date.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.3.1",
-    "@uidu/field-base": "^0.3.2",
-    "@uidu/field-text": "^0.3.2",
+    "@uidu/analytics": "^0.3.2",
+    "@uidu/field-base": "^0.3.3",
+    "@uidu/field-text": "^0.3.3",
     "formsy-react": "^2.1.0",
     "moment": "^2.18.1",
     "react": "^16.13.1",
@@ -18,8 +18,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.2",
-    "@uidu/form": "^0.3.2"
+    "@uidu/docs": "^0.2.3",
+    "@uidu/form": "^0.3.3"
   },
   "uidu:src": "src/index.ts"
 }

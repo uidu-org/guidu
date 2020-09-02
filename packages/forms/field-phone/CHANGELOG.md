@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.1.6
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/field-base@0.3.3
+  - @uidu/field-text@0.3.3
+
 ## 0.1.5
 
 ### Patch Changes

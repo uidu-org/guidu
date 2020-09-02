@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.1.46
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/spinner@0.3.3
+  - @uidu/data-controls@0.4.4
+  - @uidu/table@0.1.117
+
 ## 0.1.45
 
 ### Patch Changes
