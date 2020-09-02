@@ -1,5 +1,13 @@
 # @uidu/build-utils
 
+## 0.1.22
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/build-releases@3.0.30
+
 ## 0.1.21
 
 ### Patch Changes

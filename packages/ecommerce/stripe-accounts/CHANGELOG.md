@@ -1,5 +1,19 @@
 # @uidu/stripe-accounts
 
+## 0.1.27
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/slider@1.4.2
+  - @uidu/spinner@0.3.2
+  - @uidu/payments@0.2.18
+  - @uidu/field-text@0.3.2
+  - @uidu/form@0.3.2
+  - @uidu/stepper@0.2.4
+
 ## 0.1.26
 
 ### Patch Changes

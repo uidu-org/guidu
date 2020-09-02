@@ -1,5 +1,16 @@
 # @uidu/field-geosuggest
 
+## 0.2.14
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/spinner@0.3.2
+  - @uidu/field-base@0.3.2
+
 ## 0.2.13
 
 ### Patch Changes

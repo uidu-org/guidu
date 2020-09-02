@@ -1,5 +1,17 @@
 # @uidu/util-data-test
 
+## 0.2.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/emoji@0.2.1
+  - @uidu/mentions@0.1.22
+  - @uidu/task-decision@0.2.2
+
 ## 0.2.0
 
 ### Minor Changes

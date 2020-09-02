@@ -1,5 +1,14 @@
 # @uidu/chat-room
 
+## 0.2.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/shell@1.0.5
+
 ## 0.2.0
 
 ### Minor Changes

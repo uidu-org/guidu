@@ -1,6 +1,19 @@
 # @uidu/tabs
 
+## 0.1.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/docs@0.2.2
+  - @uidu/analytics@0.3.1
+  - @uidu/theme@0.4.2
+
 ## 0.1.1
+
 ### Patch Changes
 
 - ff7af9c: Bump dependencies

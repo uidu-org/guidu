@@ -1,5 +1,16 @@
 # @uidu/radio
 
+## 0.4.8
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/field-base@0.3.2
+
 ## 0.4.7
 
 ### Patch Changes

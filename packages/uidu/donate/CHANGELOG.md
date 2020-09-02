@@ -1,5 +1,25 @@
 # @uidu/donate
 
+## 0.2.20
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/modal-dialog@0.3.2
+  - @uidu/payments@0.2.18
+  - @uidu/checkbox@0.2.6
+  - @uidu/field-downshift@0.4.2
+  - @uidu/field-text@0.3.2
+  - @uidu/field-textarea@0.2.6
+  - @uidu/form@0.3.2
+  - @uidu/radio@0.4.8
+  - @uidu/select@0.5.2
+  - @uidu/contact@0.1.19
+  - @uidu/schema.d.ts@0.1.9
+  - @uidu/widgets@0.3.3
+
 ## 0.2.19
 
 ### Patch Changes

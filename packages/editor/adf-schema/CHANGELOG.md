@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.4
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-controls",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/dashboards/dashboard-controls",
@@ -9,18 +9,18 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/avatar": "^0.5.0",
-    "@uidu/avatar-group": "^2.4.0",
-    "@uidu/dropdown-menu": "^0.3.0",
-    "@uidu/field-date-range": "^0.2.10",
-    "@uidu/form": "^0.3.0",
+    "@uidu/avatar": "^0.5.2",
+    "@uidu/avatar-group": "^2.4.2",
+    "@uidu/dropdown-menu": "^0.3.2",
+    "@uidu/field-date-range": "^0.2.11",
+    "@uidu/form": "^0.3.2",
     "moment": "^2.18.1",
     "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0"
+    "@uidu/docs": "^0.2.2"
   },
   "uidu:src": "index.ts"
 }

@@ -1,5 +1,16 @@
 # @uidu/contact
 
+## 0.1.19
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/checkbox@0.2.6
+  - @uidu/field-text@0.3.2
+  - @uidu/form@0.3.2
+
 ## 0.1.18
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/message
 
+## 0.2.3
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/avatar@0.5.2
+  - @uidu/drawer@0.4.3
+  - @uidu/dropdown-menu@0.3.2
+  - @uidu/tooltip@0.3.2
+  - @uidu/media-card@0.3.2
+  - @uidu/media-core@0.3.1
+  - @uidu/media-viewer@0.2.3
+  - @uidu/message-form@0.2.3
+  - @uidu/message-renderer@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes

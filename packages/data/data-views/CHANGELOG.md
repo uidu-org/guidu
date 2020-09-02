@@ -1,5 +1,16 @@
 # @uidu/data-views
 
+## 0.3.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/data-controls@0.4.3
+  - @uidu/table@0.1.116
+  - @uidu/field-number@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/stepper
 
+## 0.2.4
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/theme@0.4.2
+
 ## 0.2.3
 
 ### Patch Changes

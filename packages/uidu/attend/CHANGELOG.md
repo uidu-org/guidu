@@ -1,5 +1,23 @@
 # @uidu/attend
 
+## 0.3.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/spinner@0.3.2
+  - @uidu/payments@0.2.18
+  - @uidu/field-counter@0.2.7
+  - @uidu/field-text@0.3.2
+  - @uidu/field-textarea@0.2.6
+  - @uidu/form@0.3.2
+  - @uidu/shell@1.0.5
+  - @uidu/stepper@0.2.4
+  - @uidu/contact@0.1.19
+  - @uidu/widgets@0.3.3
+
 ## 0.3.1
 
 ### Patch Changes

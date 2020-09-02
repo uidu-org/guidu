@@ -1,5 +1,20 @@
 # @uidu/media-viewer
 
+## 0.2.3
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/avatar@0.5.2
+  - @uidu/button@0.3.3
+  - @uidu/spinner@0.3.2
+  - @uidu/theme@0.4.2
+  - @uidu/media-core@0.3.1
+  - @uidu/shell@1.0.5
+  - @uidu/comment@0.1.20
+
 ## 0.2.2
 
 ### Patch Changes

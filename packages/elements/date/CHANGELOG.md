@@ -1,5 +1,14 @@
 # @uidu/date
 
+## 0.2.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/theme@0.4.2
+
 ## 0.2.1
 
 ### Patch Changes

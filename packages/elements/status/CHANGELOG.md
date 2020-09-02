@@ -1,5 +1,18 @@
 # @uidu/status
 
+## 0.2.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/lozenge@0.3.2
+  - @uidu/theme@0.4.2
+  - @uidu/analytics-gas-types@0.1.12
+  - @uidu/field-text@0.3.2
+
 ## 0.2.1
 
 ### Patch Changes

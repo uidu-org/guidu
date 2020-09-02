@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.1.30
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/dropdown-menu@0.3.2
+  - @uidu/shell@1.0.5
+
 ## 0.1.29
 
 ### Patch Changes

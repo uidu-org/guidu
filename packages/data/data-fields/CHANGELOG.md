@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 0.1.39
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/field-color-picker@0.2.7
+  - @uidu/field-date@0.2.10
+  - @uidu/field-number@0.3.2
+  - @uidu/field-text@0.3.2
+  - @uidu/field-toggle@0.3.2
+  - @uidu/form@0.3.2
+  - @uidu/select@0.5.2
+
 ## 0.1.38
 
 ### Patch Changes

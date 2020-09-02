@@ -1,5 +1,41 @@
 # @uidu/editor-core
 
+## 0.6.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/avatar@0.5.2
+  - @uidu/avatar-group@2.4.2
+  - @uidu/button@0.3.3
+  - @uidu/droplist@0.3.2
+  - @uidu/item@0.3.3
+  - @uidu/modal-dialog@0.3.2
+  - @uidu/spinner@0.3.2
+  - @uidu/theme@0.4.2
+  - @uidu/tooltip@0.3.2
+  - @uidu/adf-schema@0.2.4
+  - @uidu/adf-utils@0.5.1
+  - @uidu/editor-common@0.3.5
+  - @uidu/editor-json-transformer@0.2.2
+  - @uidu/editor-markdown-transformer@0.2.2
+  - @uidu/analytics-gas-types@0.1.12
+  - @uidu/analytics-listeners@0.2.1
+  - @uidu/analytics-namespaced-context@0.2.1
+  - @uidu/date@0.2.2
+  - @uidu/emoji@0.2.1
+  - @uidu/mentions@0.1.22
+  - @uidu/status@0.2.2
+  - @uidu/task-decision@0.2.2
+  - @uidu/select@0.5.2
+  - @uidu/media-card@0.3.2
+  - @uidu/media-core@0.3.1
+  - @uidu/media-filmstrip@0.2.2
+  - @uidu/media-picker@0.3.3
+
 ## 0.6.0
 
 ### Minor Changes
