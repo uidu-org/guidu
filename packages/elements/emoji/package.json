@@ -2,18 +2,19 @@
   "name": "@uidu/emoji",
   "version": "0.2.1",
   "description": "Fabric emoji React components",
+  "main": "dist/emoji.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/emoji",
   "license": "Apache-2.0",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/emoji.esm.js",
   "types": "index.d.ts",
   "scripts": {
     "i18n:pull": "i18n-tools pull --resource emoji . --type ts",
     "i18n:push": "i18n-tools push --resource emoji . --type ts"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.0.3",
-    "@atlaskit/util-service-support": "^6.0.0",
+    "@atlaskit/icon": "^21.1.2",
+    "@atlaskit/util-service-support": "^6.0.1",
     "@uidu/analytics": "^0.3.1",
     "@uidu/button": "^0.3.3",
     "@uidu/code": "^0.3.2",
@@ -29,7 +30,7 @@
     "tslib": "^2.0.1",
     "typestyle": "^2.0.4",
     "url": "^0.11.0",
-    "uuid": "^8.0.0"
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@types/js-search": "^1.4.0",
@@ -49,5 +50,5 @@
     "react-dom": "^16.4.0",
     "react-intl": "^5.2.1"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

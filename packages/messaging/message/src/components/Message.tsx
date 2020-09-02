@@ -1,4 +1,5 @@
 import loadable from '@loadable/component';
+import MessageForm from '@uidu/message-form';
 import MessageRenderer from '@uidu/message-renderer';
 import Tooltip from '@uidu/tooltip';
 import classNames from 'classnames';
@@ -9,7 +10,6 @@ import StyledMessage, { StyledMessageEmoji } from '../styled/Message';
 import { MessageProps } from '../types';
 import { isOnlyEmojis } from '../utils';
 
-const MessageForm = loadable(() => import('@uidu/message-form'));
 const MessagesAttachments = loadable(() => import('./MessageAttachments'));
 const MessageReactions = loadable(() => import('./MessageReactions'));
 const MobileViewMessage = loadable(() => import('./MobileView/Message'));
@@ -28,9 +28,8 @@ const MessageBodyWrapper = styled.div<{ reverse: boolean }>`
   border-radius: 0.35rem;
   padding: 0.5rem 0.75rem;
   width: fit-content;
-  /* max-width: ${
-    (MESSAGE_BODY_MAX_WIDTH / MESSAGE_WRAPPER_MAX_WIDTH) * 100
-  }%; */
+  /* max-width: ${(MESSAGE_BODY_MAX_WIDTH / MESSAGE_WRAPPER_MAX_WIDTH) *
+  100}%; */
 `;
 
 const MessageReplyToWrapper = styled.p`

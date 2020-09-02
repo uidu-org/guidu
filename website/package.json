@@ -72,7 +72,7 @@
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1",
     "tti-polyfill": "^0.2.2",
-    "uuid": "^8.0.0"
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.34",

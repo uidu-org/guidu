@@ -2,28 +2,26 @@
  * Inspired by analytics-web-react
  */
 
-import last from 'lodash.last';
-import merge from 'lodash.merge';
-
+import { UIAnalyticsEvent } from '@uidu/analytics';
 import {
   DEFAULT_SOURCE,
-  UI_EVENT_TYPE,
-  SCREEN_EVENT_TYPE,
-  TRACK_EVENT_TYPE,
-  OPERATIONAL_EVENT_TYPE,
   GasPayload,
   GasScreenEventPayload,
+  OPERATIONAL_EVENT_TYPE,
+  SCREEN_EVENT_TYPE,
+  TRACK_EVENT_TYPE,
+  UI_EVENT_TYPE,
 } from '@uidu/analytics-gas-types';
-
+import last from 'lodash.last';
+import merge from 'lodash.merge';
+import Logger from '../helpers/logger';
+import listenerVersion from '../version.json';
 import {
-  getSources,
+  getComponents,
   getExtraAttributes,
   getPackageInfo,
-  getComponents,
+  getSources,
 } from './extract-data-from-event';
-import Logger from '../helpers/logger';
-import { version as listenerVersion } from '../version.json';
-import { UIAnalyticsEvent } from '@uidu/analytics';
 
 const NAVIGATION_TAG = 'navigation';
 
@@ -66,7 +64,7 @@ export default (
   const packages = getPackageInfo(event);
   const { packageName, packageVersion } =
     last(getPackageInfo(event)) || ({} as any);
-  const packageHierarchy = packages.map(p =>
+  const packageHierarchy = packages.map((p) =>
     p.packageVersion ? `${p.packageName}@${p.packageVersion}` : p.packageName,
   );
 

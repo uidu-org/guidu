@@ -1,15 +1,13 @@
-export {
-  default as ContextMentionResource,
-} from './api/ContextMentionResource';
-export { MentionNameClient } from './api/MentionNameClient';
-export {
-  DefaultMentionNameResolver,
-  MentionNameResolver,
-} from './api/MentionNameResolver';
+export { default as ContextMentionResource } from './api/ContextMentionResource';
+export type { MentionNameClient } from './api/MentionNameClient';
+export { DefaultMentionNameResolver } from './api/MentionNameResolver';
+export type { MentionNameResolver } from './api/MentionNameResolver';
 export {
   AbstractMentionResource,
   default as MentionResource,
   isResolvingMentionProvider,
+} from './api/MentionResource';
+export type {
   MentionContextIdentifier,
   MentionProvider,
   MentionResourceConfig,
@@ -20,31 +18,18 @@ export {
 export {
   AbstractPresenceResource,
   default as PresenceResource,
-  PresenceProvider,
 } from './api/PresenceResource';
+export type { PresenceProvider } from './api/PresenceResource';
 export { default as TeamMentionResource } from './api/TeamMentionResource';
 export { default as Mention } from './components/Mention';
-export {
-  default as ResourcedMention,
-} from './components/Mention/ResourcedMention';
+export { default as ResourcedMention } from './components/Mention/ResourcedMention';
 export { default as MentionItem } from './components/MentionItem';
 export { default as MentionList } from './components/MentionList';
 export {
   default,
   default as MentionTypeAhead,
 } from './components/MentionPicker';
-export {
-  default as TeamMentionHighlight,
-} from './components/TeamMentionHighlight';
-export {
-  default as TeamMentionHighlightController,
-} from './components/TeamMentionHighlight/TeamMentionHighlightController';
-export {
-  isSpecialMention,
-  MentionDescription,
-  MentionNameDetails,
-  MentionNameStatus,
-  MentionsResult,
-  TeamMember,
-} from './types';
+export { default as TeamMentionHighlight } from './components/TeamMentionHighlight';
+export { default as TeamMentionHighlightController } from './components/TeamMentionHighlight/TeamMentionHighlightController';
+export * from './types';
 export { ELEMENTS_CHANNEL } from './_constants';

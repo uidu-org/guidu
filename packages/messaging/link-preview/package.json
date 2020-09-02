@@ -2,15 +2,18 @@
   "name": "@uidu/link-preview",
   "version": "0.1.19",
   "description": "A link preview regex and rendering",
+  "main": "dist/link-preview.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/link-preview",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/link-preview.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "axios": "^0.20.0",
     "get-urls": "^10.0.0",
     "nanoclamp": "^1.2.9",
+    "react": "^16.13.1",
+    "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
@@ -22,5 +25,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

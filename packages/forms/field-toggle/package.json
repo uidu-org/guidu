@@ -16,7 +16,7 @@
     "formsy-react": "^2.1.0",
     "react-switch": "^5.0.0",
     "tslib": "^2.0.1",
-    "uuid": "^8.0.0"
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.3.3",

@@ -9,7 +9,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.0.3",
+    "@atlaskit/icon": "^21.1.2",
     "@atlaskit/type-helpers": "^4.1.6",
     "@loadable/component": "^5.13.1",
     "@uidu/adf-schema": "^0.2.4",

@@ -2,16 +2,17 @@
   "name": "@uidu/util-data-test",
   "version": "0.2.1",
   "description": "Shared test and story data",
+  "main": "dist/util-data-test.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/util-data-test.esm.js",
   "types": "index.d.ts",
   "scripts": {
     "ak-postbuild": "cp -r src/json-data dist/esm/json-data && cp -r src/json-data dist/cjs/json-data"
   },
   "dependencies": {
-    "@atlaskit/util-service-support": "^6.0.0",
+    "@atlaskit/util-service-support": "^6.0.1",
     "@uidu/analytics": "^0.3.1",
     "@uidu/emoji": "^0.2.1",
     "@uidu/mentions": "^0.1.22",
@@ -19,7 +20,7 @@
     "date-fns": "^2.0.0",
     "lodash.sample": "^4.2.1",
     "tslib": "^2.0.1",
-    "uuid": "^8.0.0"
+    "uuid": "^8.3.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.2",
@@ -32,5 +33,5 @@
     "react": "^16.8.3",
     "react-dom": "^16.4.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

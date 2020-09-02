@@ -1,8 +1,5 @@
 import { AnalyticsEventPayload, CreateUIAnalyticsEvent } from '@uidu/analytics';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../../version.json';
+import pkg from '../../version.json';
 
 export const FABRIC_CHANNEL = 'fabric-elements';
 
@@ -17,8 +14,8 @@ export const createStatusAnalyticsAndFire = (
     if (!statusPayload.attributes) {
       statusPayload.attributes = {};
     }
-    statusPayload.attributes.packageName = packageName;
-    statusPayload.attributes.packageVersion = packageVersion;
+    statusPayload.attributes.packageName = pkg.name;
+    statusPayload.attributes.packageVersion = pkg.version;
     statusPayload.attributes.componentName = 'status';
 
     createAnalyticsEvent(statusPayload).fire(FABRIC_CHANNEL);

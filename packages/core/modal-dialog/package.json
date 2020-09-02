@@ -10,7 +10,7 @@
   "module": "dist/modal-dialog.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.0.3",
+    "@atlaskit/icon": "^21.1.2",
     "@uidu/analytics": "^0.3.1",
     "@uidu/blanket": "^0.3.2",
     "@uidu/button": "^0.3.3",

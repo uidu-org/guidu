@@ -2,6 +2,7 @@
   "name": "@uidu/status",
   "version": "0.2.2",
   "description": "Fabric Status React Components",
+  "main": "dist/status.cjs.js",
   "keywords": [
     "date",
     "editor",
@@ -11,7 +12,7 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/status",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
-  "module": "index.js",
+  "module": "dist/status.esm.js",
   "types": "index.d.ts",
   "scripts": {
     "i18n:pull": "i18n-tools pull --resource status . --type ts",
@@ -21,7 +22,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.0.3",
+    "@atlaskit/icon": "^21.1.2",
     "@uidu/analytics": "^0.3.1",
     "@uidu/analytics-gas-types": "^0.1.12",
     "@uidu/field-text": "^0.3.2",
@@ -40,5 +41,5 @@
     "react": "^16.8.3",
     "react-intl": "^5.2.1"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

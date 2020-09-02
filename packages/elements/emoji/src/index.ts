@@ -1,30 +1,37 @@
 import { AbstractResource } from '@atlaskit/util-service-support';
+import EmojiLoader from './api/EmojiLoader';
+import EmojiRepository from './api/EmojiRepository';
+import type {
+  EmojiProvider,
+  EmojiResourceConfig,
+  UploadingEmojiProvider,
+} from './api/EmojiResource';
+import EmojiResource from './api/EmojiResource';
+import { denormaliseEmojiServiceResponse } from './api/EmojiUtils';
+import { UsageFrequencyTracker } from './api/internal/UsageFrequencyTracker';
 import Emoji from './components/common/Emoji';
 import EmojiPlaceholder from './components/common/EmojiPlaceholder';
 import ResourcedEmoji from './components/common/ResourcedEmoji';
 import EmojiPicker from './components/picker/EmojiPicker';
-import EmojiUploader from './components/uploader/EmojiUploader';
 import EmojiTypeAhead from './components/typeahead/EmojiTypeAhead';
 import EmojiTypeAheadItem from './components/typeahead/EmojiTypeAheadItem';
-import EmojiResource, {
-  EmojiProvider,
-  UploadingEmojiProvider,
-  EmojiResourceConfig,
-} from './api/EmojiResource';
-import EmojiRepository from './api/EmojiRepository';
-import EmojiLoader from './api/EmojiLoader';
-import { denormaliseEmojiServiceResponse } from './api/EmojiUtils';
-import { toEmojiId, toOptionalEmojiId } from './util/type-helpers';
+import EmojiUploader from './components/uploader/EmojiUploader';
 import {
   customCategory,
   defaultEmojiHeight,
-  emojiPickerWidth,
   emojiPickerHeight,
+  emojiPickerWidth,
 } from './util/constants';
-import { UsageFrequencyTracker } from './api/internal/UsageFrequencyTracker';
+import { toEmojiId, toOptionalEmojiId } from './util/type-helpers';
 
+export * from './types';
+export type {
+  // interfaces
+  EmojiProvider,
+  UploadingEmojiProvider,
+  EmojiResourceConfig,
+};
 export {
-  // Classes
   AbstractResource,
   Emoji,
   EmojiPlaceholder,
@@ -39,19 +46,13 @@ export {
   denormaliseEmojiServiceResponse,
   toEmojiId,
   toOptionalEmojiId,
-  // interfaces
-  EmojiProvider,
-  UploadingEmojiProvider,
   // Constants
   emojiPickerWidth,
   emojiPickerHeight,
   defaultEmojiHeight,
   customCategory,
-  EmojiResourceConfig,
   UsageFrequencyTracker,
   EmojiTypeAheadItem,
 };
-
-export * from './types';
 
 export default EmojiPicker;

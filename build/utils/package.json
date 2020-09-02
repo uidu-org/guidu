@@ -19,7 +19,7 @@
     "inquirer-checkbox-plus-prompt": "^1.0.1",
     "npm-run": "^5.0.1",
     "projector-spawn": "^1.0.1",
-    "uuid": "^8.0.0"
+    "uuid": "^8.3.0"
   },
   "publishConfig": {
     "access": "public"

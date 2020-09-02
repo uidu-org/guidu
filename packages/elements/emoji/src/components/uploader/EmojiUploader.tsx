@@ -1,25 +1,23 @@
+import { CreateUIAnalyticsEvent, withAnalyticsEvents } from '@uidu/analytics';
 import * as React from 'react';
 import { ComponentClass } from 'react';
-
+import { EmojiProvider } from '../../api/EmojiResource';
 import LoadingEmojiComponent, {
   Props as LoadingProps,
   State as LoadingState,
 } from '../common/LoadingEmojiComponent';
 import {
-  UploadRefHandler,
   Props as ComponentProps,
+  UploadRefHandler,
 } from './EmojiUploadComponent';
-import { EmojiProvider } from '../../api/EmojiResource';
-import {
-  CreateUIAnalyticsEvent,
-  withAnalyticsEvents,
-} from '@uidu/analytics';
 
 const emojiUploadModuleLoader = () =>
-  import(/* webpackChunkName:"@uidu-internal_emojiUploadComponent" */ './EmojiUploadComponent');
+  import(
+    /* webpackChunkName:"@uidu-internal_emojiUploadComponent" */ './EmojiUploadComponent'
+  );
 
 const emojiUploadLoader: () => Promise<ComponentClass<ComponentProps>> = () =>
-  emojiUploadModuleLoader().then(module => module.default);
+  emojiUploadModuleLoader().then((module) => module.default);
 
 export interface Props extends LoadingProps {
   onUploaderRef?: UploadRefHandler;
@@ -42,7 +40,7 @@ export class EmojiUploaderInternal extends LoadingEmojiComponent<
   }
 
   asyncLoadComponent() {
-    emojiUploadLoader().then(component => {
+    emojiUploadLoader().then((component) => {
       EmojiUploaderInternal.AsyncLoadedComponent = component;
       this.setAsyncState(component);
     });
@@ -63,6 +61,7 @@ export class EmojiUploaderInternal extends LoadingEmojiComponent<
 }
 
 type EmojiUploader = EmojiUploaderInternal;
+
 const EmojiUploader = withAnalyticsEvents()(EmojiUploaderInternal);
 
 export default EmojiUploader;

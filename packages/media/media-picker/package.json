@@ -2,14 +2,17 @@
   "name": "@uidu/media-picker",
   "version": "0.3.3",
   "description": "uidu media picker, using Uppy",
+  "main": "dist/media-picker.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-picker",
   "license": "ISC",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/media-picker.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/media-core": "^0.3.1",
     "@uppy/core": "^1.0.1",
+    "@uppy/dashboard": "^1.12.5",
     "@uppy/drag-drop": "^1.0.1",
     "@uppy/dropbox": "^1.0.1",
     "@uppy/google-drive": "^1.0.1",
@@ -17,6 +20,9 @@
     "@uppy/url": "^1.0.1",
     "@uppy/webcam": "^1.0.1",
     "@uppy/xhr-upload": "^1.0.1",
+    "exenv": "^1.2.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
@@ -27,5 +33,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

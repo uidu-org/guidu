@@ -3,11 +3,12 @@
   "version": "0.1.116",
   "private": false,
   "description": "React ag-datagrid wrapper with default configurations",
+  "main": "dist/table.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/table",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/table.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@ag-grid-community/client-side-row-model": "^23.0.2",
@@ -17,17 +18,24 @@
     "@ag-grid-enterprise/range-selection": "^23.0.2",
     "@ag-grid-enterprise/row-grouping": "^23.0.2",
     "@ag-grid-enterprise/status-bar": "^23.0.2",
+    "@babel/runtime": "^7.11.2",
     "@fortawesome/fontawesome-free": "^5.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "@loadable/component": "^5.13.1",
     "@uidu/data-fields": "^0.1.39",
     "@uidu/form": "^0.3.2",
     "@uidu/item": "^0.3.3",
     "@uidu/select": "^0.5.2",
     "@uidu/shell": "^1.0.5",
     "@uidu/tooltip": "^0.3.2",
+    "moment": "^2.27.0",
+    "numeral": "^2.0.6",
+    "react": "^16.13.1",
     "react-day-picker": "^7.4.5",
+    "react-dom": "^16.13.1",
+    "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.1.1",
@@ -36,9 +44,7 @@
   "devDependencies": {
     "@uidu/data-controls": "^0.4.3",
     "@uidu/docs": "^0.2.2",
-    "faker": "^5.1.0",
-    "moment": "^2.18.1",
-    "numeral": "^2.0.6"
+    "faker": "^5.1.0"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

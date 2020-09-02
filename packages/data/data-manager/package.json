@@ -3,12 +3,15 @@
   "version": "0.3.1",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
+  "main": "dist/data-manager.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
   "license": "MIT",
   "author": "uidu",
-  "module": "index.js",
+  "module": "dist/data-manager.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "@loadable/component": "^5.13.1",
     "@uidu/board": "^0.2.21",
     "@uidu/calendar": "^0.1.30",
     "@uidu/data-controls": "^0.4.3",
@@ -20,6 +23,8 @@
     "@uidu/table": "^0.1.116",
     "d3-array": "^2.2.0",
     "lodash": "^4.17.4",
+    "moment": "^2.27.0",
+    "react": "^16.13.1",
     "react-media": "^1.9.2",
     "react-transition-group": "^4.0.0",
     "tslib": "^2.0.1"
@@ -29,5 +34,5 @@
     "@uidu/dropdown-menu": "^0.3.2",
     "react-intl": "^5.2.1"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

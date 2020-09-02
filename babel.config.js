@@ -2,7 +2,7 @@ module.exports = function (api) {
   api.cache(true);
 
   const plugins = [
-    '@loadable/babel-plugin',
+    // '@loadable/babel-plugin',
     [
       'babel-plugin-styled-components',
       { ssr: true, displayName: true, preprocess: false },

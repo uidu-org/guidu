@@ -2,14 +2,11 @@
   "name": "@uidu/analytics-listeners",
   "version": "0.2.1",
   "description": "Fabric analytics listeners to be used by the products",
-  "keywords": [
-    "fabric",
-    "ui"
-  ],
+  "main": "dist/analytics-listeners.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-listeners",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
-  "module": "index.js",
+  "module": "dist/analytics-listeners.esm.js",
   "types": "index.d.ts",
   "config": {
     "access": "public"
@@ -30,6 +27,5 @@
   "peerDependencies": {
     "react": "^16.8.3"
   },
-  "maintainers": [],
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

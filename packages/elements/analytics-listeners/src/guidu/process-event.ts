@@ -14,7 +14,7 @@ import {
 import last from 'lodash.last';
 import merge from 'lodash.merge';
 import Logger from '../helpers/logger';
-import { version as listenerVersion } from '../version.json';
+import pkg from '../version.json';
 import {
   getActionSubject,
   getComponents,
@@ -69,7 +69,7 @@ export default (event: UIAnalyticsEvent, logger: Logger): GasPayload | null => {
     attributes: payloadAttributes,
   } = event.payload;
   const attributes = {
-    listenerVersion,
+    listenerVersion: pkg.version,
     sourceHierarchy: sources.join('.') || undefined,
     componentHierarchy: components.join('.') || undefined,
     packageHierarchy: getPackageHierarchy(event) || undefined,

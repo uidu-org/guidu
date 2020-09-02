@@ -10,7 +10,7 @@
   "module": "dist/section-message.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.0.3",
+    "@atlaskit/icon": "^21.1.2",
     "@uidu/button": "^0.3.3",
     "@uidu/theme": "^0.4.2",
     "tslib": "^2.0.1"

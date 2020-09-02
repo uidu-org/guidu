@@ -5,10 +5,7 @@ import {
   UI_EVENT_TYPE,
 } from '@uidu/analytics-gas-types';
 import { isSpecialMentionText } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 import { ELEMENTS_CHANNEL } from '../_constants';
 
 export enum ComponentNames {
@@ -36,8 +33,8 @@ export const fireAnalyticsMentionTypeaheadEvent = (
       action,
       actionSubject: ComponentNames.TYPEAHEAD,
       attributes: {
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
         componentName: ComponentNames.MENTION,
         duration: Math.round(duration),
         userIds,
@@ -67,8 +64,8 @@ export const fireAnalyticsTeamMentionHighlightEvent = (createEvent: any) => (
       eventType: UI_EVENT_TYPE,
       attributes: {
         source,
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
         componentName: ComponentNames.TEAM_MENTION_HIGHLIGHT,
         viewedCount,
       },
@@ -92,8 +89,8 @@ export const fireAnalyticsMentionEvent = (
     actionSubject,
     eventType: UI_EVENT_TYPE,
     attributes: {
-      packageName,
-      packageVersion,
+      packageName: pkg.name,
+      packageVersion: pkg.version,
       componentName: ComponentNames.MENTION,
       accessLevel,
       isSpecial: isSpecialMentionText(text),
@@ -119,8 +116,8 @@ export const fireAnalyticsMentionHydrationEvent = (
       actionSubject: ComponentNames.MENTION,
       actionSubjectId: 'hydration',
       attributes: {
-        packageName,
-        packageVersion,
+        packageName: pkg.name,
+        packageVersion: pkg.version,
         componentName: ComponentNames.MENTION,
         userId,
         fromCache,

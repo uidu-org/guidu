@@ -1,9 +1,6 @@
 import { AnalyticsEventPayload, createAndFireEvent } from '@uidu/analytics';
 import { EmojiDescription } from '../types';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../version.json';
+import pkg from '../version.json';
 
 export const createAndFireEventInElementsChannel = createAndFireEvent(
   'fabric-elements',
@@ -21,8 +18,8 @@ const createEvent = (
   actionSubject,
   actionSubjectId,
   attributes: {
-    packageName,
-    packageVersion,
+    packageName: pkg.name,
+    packageVersion: pkg.version,
     ...attributes,
   },
 });
@@ -161,7 +158,7 @@ const extractCommonAttributes = (
     spaceInQuery: query ? query.indexOf(' ') !== -1 : false,
     emojiIds: emojiList
       ? emojiList
-          .map(emoji => emoji.id!)
+          .map((emoji) => emoji.id!)
           .filter(Boolean)
           .slice(0, 20)
       : [],
@@ -183,7 +180,7 @@ const getPosition = (
   selectedEmoji: EmojiDescription,
 ): number | undefined => {
   if (emojiList) {
-    const index = emojiList.findIndex(emoji => emoji.id === selectedEmoji.id);
+    const index = emojiList.findIndex((emoji) => emoji.id === selectedEmoji.id);
     return index === -1 ? undefined : index;
   }
   return undefined;

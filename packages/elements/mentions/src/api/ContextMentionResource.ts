@@ -1,7 +1,7 @@
-import { MentionDescription } from '../types';
+import type { MentionDescription } from '../types';
 import { padArray } from '../utils';
 import { MentionContextIdentifier, MentionProvider } from './MentionResource';
-export { MentionDescription };
+export type { MentionDescription };
 
 export type MentionProviderFunctions = {
   [Key in keyof MentionProvider]: MentionProvider[Key] extends Function

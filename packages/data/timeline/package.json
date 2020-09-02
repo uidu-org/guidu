@@ -6,11 +6,13 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/timeline",
   "license": "MIT",
   "author": "uidu",
-  "main": "index.js",
+  "main": "dist/timeline.cjs.js",
   "dependencies": {
+    "react": "^16.13.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.2"
-  }
+  },
+  "uidu:src": "src/index.ts"
 }

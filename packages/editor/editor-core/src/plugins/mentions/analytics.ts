@@ -5,10 +5,7 @@ import {
   UI_EVENT_TYPE,
 } from '@uidu/analytics-gas-types';
 import { isSpecialMention, MentionDescription } from '@uidu/mentions';
-import {
-  name as packageName,
-  version as packageVersion,
-} from '../../version.json';
+import pkg from '../../version.json';
 import { SelectItemMode } from '../type-ahead/types';
 import { TeamInfoAttrAnalytics } from './types';
 import { isTeamType } from './utils';
@@ -26,8 +23,8 @@ export const buildAnalyticsPayload = (
   actionSubject,
   eventType,
   attributes: {
-    packageName,
-    packageVersion,
+    packageName: pkg.name,
+    packageVersion: pkg.version,
     componentName,
     sessionId,
     ...otherAttributes,
@@ -146,8 +143,8 @@ export const buildTypeAheadRenderedPayload = (
     actionSubject,
     eventType: OPERATIONAL_EVENT_TYPE,
     attributes: {
-      packageName,
-      packageVersion,
+      packageName: pkg.name,
+      packageVersion: pkg.version,
       componentName,
       duration,
       userIds,

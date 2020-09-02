@@ -28,7 +28,7 @@
     "@uidu/navigation": "^0.4.1",
     "faker": "^5.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scroll": "^1.7.11"
+    "react-scroll": "^1.8.1"
   },
   "uidu:src": "src/index.ts"
 }

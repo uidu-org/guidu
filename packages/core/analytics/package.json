@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/analytics.cjs.js",
   "module": "dist/analytics.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/analytics.cjs.d.ts",
   "dependencies": {
     "@atlaskit/type-helpers": "^4.1.6",
     "prop-types": "^15.6.0",
