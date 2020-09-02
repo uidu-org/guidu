@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "description": "Data view declarations and custom forms",
   "main": "dist/data-views.cjs.js",
@@ -11,18 +11,18 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.13.1",
-    "@uidu/data-controls": "^0.4.3",
-    "@uidu/field-number": "^0.3.2",
+    "@uidu/data-controls": "^0.4.4",
+    "@uidu/field-number": "^0.3.3",
     "@uidu/form": "^0.3.2",
     "@uidu/select": "^0.5.2",
-    "@uidu/table": "^0.1.116",
+    "@uidu/table": "^0.1.117",
     "react": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-intl": "^5.2.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.2"
+    "@uidu/docs": "^0.2.3"
   },
   "uidu:src": "src/index.ts"
 }

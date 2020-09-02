@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.2.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/analytics-gas-types@0.1.13
+  - @uidu/analytics-namespaced-context@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

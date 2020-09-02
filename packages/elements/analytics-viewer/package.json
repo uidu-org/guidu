@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-viewer",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Analytics viewer for the examples",
   "main": "dist/analytics-viewer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
@@ -12,7 +12,7 @@
     "access": "private"
   },
   "dependencies": {
-    "@uidu/analytics": "^0.3.1",
+    "@uidu/analytics": "^0.3.2",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },

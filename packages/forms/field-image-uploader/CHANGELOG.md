@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.3.8
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/button@0.3.4
+  - @uidu/spinner@0.3.3
+  - @uidu/field-base@0.3.3
+  - @uidu/media-core@0.3.2
+
 ## 0.3.7
 
 ### Patch Changes

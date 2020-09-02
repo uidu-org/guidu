@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 0.3.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/data-controls@0.4.4
+  - @uidu/table@0.1.117
+  - @uidu/field-number@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes

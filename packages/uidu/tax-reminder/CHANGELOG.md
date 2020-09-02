@@ -1,5 +1,20 @@
 # @uidu/tax-reminder
 
+## 0.1.28
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/checkbox@0.2.7
+  - @uidu/field-date@0.2.11
+  - @uidu/field-text@0.3.3
+  - @uidu/field-textarea@0.2.7
+  - @uidu/form@0.3.3
+  - @uidu/select@0.5.3
+  - @uidu/contact@0.1.20
+  - @uidu/widgets@0.3.4
+
 ## 0.1.27
 
 ### Patch Changes

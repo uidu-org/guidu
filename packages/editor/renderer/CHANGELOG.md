@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.2.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/code@0.3.3
+  - @uidu/theme@0.4.3
+  - @uidu/tooltip@0.3.3
+  - @uidu/adf-schema@0.2.5
+  - @uidu/adf-utils@0.5.2
+  - @uidu/editor-common@0.3.6
+  - @uidu/editor-json-transformer@0.2.3
+  - @uidu/analytics-listeners@0.2.2
+  - @uidu/analytics-namespaced-context@0.2.2
+  - @uidu/mentions@0.1.23
+  - @uidu/status@0.2.3
+  - @uidu/task-decision@0.2.3
+  - @uidu/media-card@0.3.3
+  - @uidu/media-filmstrip@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes

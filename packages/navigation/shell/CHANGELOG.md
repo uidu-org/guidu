@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.0.6
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/spinner@0.3.3
+
 ## 1.0.5
 
 ### Patch Changes

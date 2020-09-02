@@ -1,5 +1,11 @@
 # @uidu/changelog
 
+## 0.1.7
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.1.6
 
 ### Patch Changes

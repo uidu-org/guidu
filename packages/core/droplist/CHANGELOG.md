@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.3.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/item@0.3.4
+  - @uidu/layer@0.3.3
+  - @uidu/spinner@0.3.3
+  - @uidu/theme@0.4.3
+  - @uidu/tooltip@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes

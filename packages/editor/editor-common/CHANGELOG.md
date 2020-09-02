@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 0.3.6
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/theme@0.4.3
+  - @uidu/adf-schema@0.2.5
+  - @uidu/analytics-namespaced-context@0.2.2
+  - @uidu/emoji@0.2.2
+  - @uidu/mentions@0.1.23
+
 ## 0.3.5
 
 ### Patch Changes

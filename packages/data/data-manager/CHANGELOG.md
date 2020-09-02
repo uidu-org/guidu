@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 0.3.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/spinner@0.3.3
+  - @uidu/board@0.2.22
+  - @uidu/calendar@0.1.31
+  - @uidu/data-controls@0.4.4
+  - @uidu/data-views@0.3.3
+  - @uidu/gallery@0.1.46
+  - @uidu/list@0.1.28
+  - @uidu/table@0.1.117
+  - @uidu/shell@1.0.6
+
 ## 0.3.1
 
 ### Patch Changes

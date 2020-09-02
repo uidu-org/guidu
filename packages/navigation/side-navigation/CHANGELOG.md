@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.1.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/avatar@0.5.3
+  - @uidu/dropdown-menu@0.3.3
+  - @uidu/inline-dialog@0.3.3
+  - @uidu/theme@0.4.3
+  - @uidu/tooltip@0.3.3
+  - @uidu/shell@1.0.6
+
 ## 0.1.2
 
 ### Patch Changes

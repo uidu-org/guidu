@@ -1,5 +1,15 @@
 # @uidu/widgets
 
+## 0.3.4
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/slider@1.4.3
+  - @uidu/shell@1.0.6
+  - @uidu/contact@0.1.20
+
 ## 0.3.3
 
 ### Patch Changes

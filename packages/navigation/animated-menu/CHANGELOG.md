@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.24
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.1.23
 
 ### Patch Changes

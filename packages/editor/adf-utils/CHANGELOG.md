@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.5.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/adf-schema@0.2.5
+
 ## 0.5.1
 
 ### Patch Changes

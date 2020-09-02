@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.16
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.0.15
 
 ### Patch Changes

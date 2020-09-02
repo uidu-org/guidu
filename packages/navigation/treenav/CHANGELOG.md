@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.1.16
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.1.15
 
 ### Patch Changes

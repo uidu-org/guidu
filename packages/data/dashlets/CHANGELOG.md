@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.6.2
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/dashlet-controls@0.2.8
+  - @uidu/spinner@0.3.3
+  - @uidu/tooltip@0.3.3
+
 ## 0.6.1
 
 ### Patch Changes

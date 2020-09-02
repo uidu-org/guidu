@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/docs@0.2.3
+  - @uidu/badge@0.3.3
+  - @uidu/button@0.3.4
+  - @uidu/code@0.3.3
+  - @uidu/drawer@0.4.4
+  - @uidu/lozenge@0.3.3
+  - @uidu/modal-dialog@0.3.3
+  - @uidu/spinner@0.3.3
+  - @uidu/theme@0.4.3
+  - @uidu/tooltip@0.3.3
+  - @uidu/list@0.1.28
+  - @uidu/table@0.1.117
+  - @uidu/checkbox@0.2.7
+  - @uidu/field-text@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/select@0.5.3
+  - @uidu/navigation@0.4.2
+  - @uidu/shell@1.0.6
+  - @uidu/themes-uidu@0.3.2
+
 ## 0.2.3
 
 ### Patch Changes

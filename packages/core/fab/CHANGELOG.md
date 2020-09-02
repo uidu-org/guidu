@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.3.4
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+
 ## 0.3.3
 
 ### Patch Changes

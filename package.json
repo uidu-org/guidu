@@ -183,7 +183,6 @@
     "@types/zxcvbn": "^4.4.0",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
-    "@uidu/downshift": "^0.1.4",
     "@uifabric/file-type-icons": "^7.0.3",
     "@uppy/aws-s3": "^1.6.4",
     "@uppy/core": "^1.0.1",

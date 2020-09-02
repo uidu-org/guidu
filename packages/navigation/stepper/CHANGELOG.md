@@ -1,5 +1,13 @@
 # @uidu/stepper
 
+## 0.2.5
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/theme@0.4.3
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/propose
 
+## 0.1.22
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/checkbox@0.2.7
+  - @uidu/field@0.2.6
+  - @uidu/field-text@0.3.3
+  - @uidu/field-textarea@0.2.7
+  - @uidu/form@0.3.3
+  - @uidu/widgets@0.3.4
+
 ## 0.1.21
 
 ### Patch Changes

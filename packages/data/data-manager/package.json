@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "main": "dist/data-manager.cjs.js",
@@ -12,15 +12,15 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.13.1",
-    "@uidu/board": "^0.2.21",
-    "@uidu/calendar": "^0.1.30",
-    "@uidu/data-controls": "^0.4.3",
-    "@uidu/data-views": "^0.3.2",
-    "@uidu/gallery": "^0.1.45",
-    "@uidu/list": "^0.1.27",
-    "@uidu/shell": "^1.0.5",
-    "@uidu/spinner": "^0.3.2",
-    "@uidu/table": "^0.1.116",
+    "@uidu/board": "^0.2.22",
+    "@uidu/calendar": "^0.1.31",
+    "@uidu/data-controls": "^0.4.4",
+    "@uidu/data-views": "^0.3.3",
+    "@uidu/gallery": "^0.1.46",
+    "@uidu/list": "^0.1.28",
+    "@uidu/shell": "^1.0.6",
+    "@uidu/spinner": "^0.3.3",
+    "@uidu/table": "^0.1.117",
     "d3-array": "^2.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.27.0",
@@ -30,8 +30,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.2",
-    "@uidu/dropdown-menu": "^0.3.2",
+    "@uidu/docs": "^0.2.3",
+    "@uidu/dropdown-menu": "^0.3.3",
     "react-intl": "^5.2.1"
   },
   "uidu:src": "src/index.ts"

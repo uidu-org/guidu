@@ -4111,11 +4111,6 @@
     "@typescript-eslint/types" "4.0.1"
     eslint-visitor-keys "^2.0.0"
 
-"@uidu/downshift@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@uidu/downshift/-/downshift-0.1.4.tgz#8669b28b87c593a71ac00139c724f290fe5909b3"
-  integrity sha512-6+BB0QTGrZ4WGdWyTRk1Ozg1vuQSDyeMNb14LJPT5MRjpc+DRduRUmETWofCNysfmGaiwiu8FqxY3Dt25m72kg==
-
 "@uifabric/file-type-icons@^7.0.3":
   version "7.6.1"
   resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.6.1.tgz#1ffe4b1731c94a28e709ba378e2c46b9aa6f5ba9"

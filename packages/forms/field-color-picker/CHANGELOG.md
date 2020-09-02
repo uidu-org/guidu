@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.2.8
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/inline-dialog@0.3.3
+  - @uidu/field-base@0.3.3
+
 ## 0.2.7
 
 ### Patch Changes

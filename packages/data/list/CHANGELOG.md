@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.28
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/table@0.1.117
+
 ## 0.1.27
 
 ### Patch Changes

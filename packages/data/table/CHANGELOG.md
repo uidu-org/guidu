@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 0.1.117
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/item@0.3.4
+  - @uidu/tooltip@0.3.3
+  - @uidu/data-fields@0.1.40
+  - @uidu/form@0.3.3
+  - @uidu/select@0.5.3
+  - @uidu/shell@1.0.6
+
 ## 0.1.116
 
 ### Patch Changes

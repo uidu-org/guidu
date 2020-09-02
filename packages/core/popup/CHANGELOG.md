@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.3.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/popper@0.3.3
+  - @uidu/portal@0.3.3
+  - @uidu/theme@0.4.3
+
 ## 0.3.2
 
 ### Patch Changes

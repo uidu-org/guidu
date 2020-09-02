@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 0.1.40
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/field-color-picker@0.2.8
+  - @uidu/field-date@0.2.11
+  - @uidu/field-number@0.3.3
+  - @uidu/field-text@0.3.3
+  - @uidu/field-toggle@0.3.3
+  - @uidu/form@0.3.3
+  - @uidu/select@0.5.3
+
 ## 0.1.39
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.2.3
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/adf-schema@0.2.5
+
 ## 0.2.2
 
 ### Patch Changes

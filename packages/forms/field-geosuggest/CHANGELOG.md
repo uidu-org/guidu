@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.2.15
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/spinner@0.3.3
+  - @uidu/field-base@0.3.3
+
 ## 0.2.14
 
 ### Patch Changes

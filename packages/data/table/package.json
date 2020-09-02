@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "0.1.116",
+  "version": "0.1.117",
   "private": false,
   "description": "React ag-datagrid wrapper with default configurations",
   "main": "dist/table.cjs.js",
@@ -24,12 +24,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@loadable/component": "^5.13.1",
-    "@uidu/data-fields": "^0.1.39",
-    "@uidu/form": "^0.3.2",
-    "@uidu/item": "^0.3.3",
-    "@uidu/select": "^0.5.2",
-    "@uidu/shell": "^1.0.5",
-    "@uidu/tooltip": "^0.3.2",
+    "@uidu/data-fields": "^0.1.40",
+    "@uidu/form": "^0.3.3",
+    "@uidu/item": "^0.3.4",
+    "@uidu/select": "^0.5.3",
+    "@uidu/shell": "^1.0.6",
+    "@uidu/tooltip": "^0.3.3",
     "moment": "^2.27.0",
     "numeral": "^2.0.6",
     "react": "^16.13.1",
@@ -42,8 +42,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/data-controls": "^0.4.3",
-    "@uidu/docs": "^0.2.2",
+    "@uidu/data-controls": "^0.4.4",
+    "@uidu/docs": "^0.2.3",
     "faker": "^5.1.0"
   },
   "uidu:src": "src/index.ts"

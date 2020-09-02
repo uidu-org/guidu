@@ -1,5 +1,14 @@
 # @uidu/radio
 
+## 0.4.9
+
+### Patch Changes
+
+- ce58773: Try bump all packages
+- Updated dependencies [ce58773]
+  - @uidu/analytics@0.3.2
+  - @uidu/field-base@0.3.3
+
 ## 0.4.8
 
 ### Patch Changes
