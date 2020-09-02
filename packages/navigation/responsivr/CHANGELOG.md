@@ -1,5 +1,12 @@
 # @uidu/responsivr
 
+## 0.2.3
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+
 ## 0.2.2
 
 ### Patch Changes

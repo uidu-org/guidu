@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.3.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/docs@0.2.2
+
 ## 0.3.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @uidu/field
 
+## 0.2.5
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/checkbox@0.2.6
+  - @uidu/field-number@0.3.2
+  - @uidu/field-text@0.3.2
+  - @uidu/field-textarea@0.2.6
+  - @uidu/select@0.5.2
+
 ## 0.2.4
 
 ### Patch Changes

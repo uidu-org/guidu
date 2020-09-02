@@ -1,18 +1,18 @@
 {
   "name": "@uidu/analytics-namespaced-context",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Provides a namespace for AnalyticsContext data (@uidu/analytics)",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-namespaced-context",
   "license": "Apache-2.0",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.3.0",
+    "@uidu/analytics": "^0.3.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/analytics-listeners": "^0.2.0",
-    "@uidu/docs": "^0.2.0",
+    "@uidu/analytics-listeners": "^0.2.1",
+    "@uidu/docs": "^0.2.2",
     "react": "^16.13.1"
   },
   "peerDependencies": {

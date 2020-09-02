@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 0.4.3
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/drawer@0.4.3
+  - @uidu/dropdown-menu@0.3.2
+  - @uidu/inline-dialog@0.3.2
+  - @uidu/item@0.3.3
+  - @uidu/spinner@0.3.2
+  - @uidu/tooltip@0.3.2
+  - @uidu/data-fields@0.1.39
+  - @uidu/data-views@0.3.2
+  - @uidu/table@0.1.116
+  - @uidu/checkbox@0.2.6
+  - @uidu/field-text@0.3.2
+  - @uidu/form@0.3.2
+  - @uidu/select@0.5.2
+  - @uidu/shell@1.0.5
+
 ## 0.4.2
 
 ### Patch Changes

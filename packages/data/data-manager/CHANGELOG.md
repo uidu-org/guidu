@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.3.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/spinner@0.3.2
+  - @uidu/board@0.2.21
+  - @uidu/calendar@0.1.30
+  - @uidu/data-controls@0.4.3
+  - @uidu/data-views@0.3.2
+  - @uidu/gallery@0.1.45
+  - @uidu/list@0.1.27
+  - @uidu/table@0.1.116
+  - @uidu/shell@1.0.5
+
 ## 0.3.0
 
 ### Minor Changes

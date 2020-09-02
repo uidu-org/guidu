@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 0.6.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/spinner@0.3.2
+  - @uidu/tooltip@0.3.2
+  - @uidu/dashlet-controls@0.2.7
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @uidu/task-decision
 
+## 0.2.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/avatar-group@2.4.2
+  - @uidu/button@0.3.3
+  - @uidu/spinner@0.3.2
+  - @uidu/theme@0.4.2
+  - @uidu/analytics-namespaced-context@0.2.1
+
 ## 0.2.1
 
 ### Patch Changes

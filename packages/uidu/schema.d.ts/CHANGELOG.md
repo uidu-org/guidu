@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.9
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+
 ## 0.1.8
 
 ### Patch Changes

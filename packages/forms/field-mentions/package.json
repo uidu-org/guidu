@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Field Mentions Component",
   "keywords": [
     "react",
@@ -15,10 +15,10 @@
   "module": "dist/field-mentions.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.3.0",
-    "@uidu/field-base": "^0.3.0",
-    "@uidu/form": "^0.3.1",
-    "@uidu/theme": "^0.4.1",
+    "@uidu/analytics": "^0.3.1",
+    "@uidu/field-base": "^0.3.2",
+    "@uidu/form": "^0.3.2",
+    "@uidu/theme": "^0.4.2",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
     "react": "^16.13.1",
@@ -26,8 +26,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.2",
-    "@uidu/docs": "^0.2.1",
+    "@uidu/button": "^0.3.3",
+    "@uidu/docs": "^0.2.2",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"
   },

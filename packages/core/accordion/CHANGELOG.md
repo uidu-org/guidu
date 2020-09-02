@@ -1,5 +1,14 @@
 # @uidu/accordion
 
+## 0.3.3
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+  - @uidu/docs@0.2.2
+
 ## 0.3.2
 
 ### Patch Changes

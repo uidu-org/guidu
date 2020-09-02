@@ -1,5 +1,18 @@
 # @uidu/dashboard-controls
 
+## 0.3.7
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/avatar@0.5.2
+  - @uidu/avatar-group@2.4.2
+  - @uidu/dropdown-menu@0.3.2
+  - @uidu/field-date-range@0.2.11
+  - @uidu/form@0.3.2
+
 ## 0.3.6
 
 ### Patch Changes

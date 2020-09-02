@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.3.3
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/media-core@0.3.1
+
 ## 0.3.2
 
 ### Patch Changes

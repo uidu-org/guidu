@@ -1,5 +1,12 @@
 # @uidu/animated-menu
 
+## 0.1.23
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+
 ## 0.1.22
 
 ### Patch Changes

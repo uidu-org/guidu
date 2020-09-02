@@ -1,5 +1,20 @@
 # @uidu/mentions
 
+## 0.1.22
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/avatar@0.5.2
+  - @uidu/button@0.3.3
+  - @uidu/lozenge@0.3.2
+  - @uidu/theme@0.4.2
+  - @uidu/tooltip@0.3.2
+  - @uidu/analytics-gas-types@0.1.12
+
 ## 0.1.21
 
 ### Patch Changes

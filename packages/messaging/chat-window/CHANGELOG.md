@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.2.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/message@0.2.3
+  - @uidu/message-form@0.2.3
+  - @uidu/message-renderer@0.2.3
+
 ## 0.2.0
 
 ### Minor Changes

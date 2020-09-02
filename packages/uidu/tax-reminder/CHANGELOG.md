@@ -1,5 +1,21 @@
 # @uidu/tax-reminder
 
+## 0.1.27
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/checkbox@0.2.6
+  - @uidu/field-date@0.2.10
+  - @uidu/field-text@0.3.2
+  - @uidu/field-textarea@0.2.6
+  - @uidu/form@0.3.2
+  - @uidu/select@0.5.2
+  - @uidu/contact@0.1.19
+  - @uidu/widgets@0.3.3
+
 ## 0.1.26
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/analytics-gas-types
 
+## 0.1.12
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+
 ## 0.1.11
 
 ### Patch Changes

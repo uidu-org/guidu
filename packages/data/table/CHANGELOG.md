@@ -1,5 +1,19 @@
 # @uidu/table
 
+## 0.1.116
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/item@0.3.3
+  - @uidu/tooltip@0.3.2
+  - @uidu/data-fields@0.1.39
+  - @uidu/form@0.3.2
+  - @uidu/select@0.5.2
+  - @uidu/shell@1.0.5
+
 ## 0.1.115
 
 ### Patch Changes

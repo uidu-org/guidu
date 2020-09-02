@@ -1,5 +1,28 @@
 # @uidu/renderer
 
+## 0.2.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/code@0.3.2
+  - @uidu/theme@0.4.2
+  - @uidu/tooltip@0.3.2
+  - @uidu/adf-schema@0.2.4
+  - @uidu/adf-utils@0.5.1
+  - @uidu/editor-common@0.3.5
+  - @uidu/editor-json-transformer@0.2.2
+  - @uidu/analytics-listeners@0.2.1
+  - @uidu/analytics-namespaced-context@0.2.1
+  - @uidu/mentions@0.1.22
+  - @uidu/status@0.2.2
+  - @uidu/task-decision@0.2.2
+  - @uidu/media-card@0.3.2
+  - @uidu/media-filmstrip@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

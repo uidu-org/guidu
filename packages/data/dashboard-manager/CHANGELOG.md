@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/dashboard-controls@0.3.7
+  - @uidu/dashlets@0.6.1
+
 ## 0.7.0
 
 ### Minor Changes

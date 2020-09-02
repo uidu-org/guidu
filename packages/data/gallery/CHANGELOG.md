@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.1.45
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/spinner@0.3.2
+  - @uidu/data-controls@0.4.3
+  - @uidu/table@0.1.116
+
 ## 0.1.44
 
 ### Patch Changes

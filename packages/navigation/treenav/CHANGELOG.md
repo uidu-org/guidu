@@ -1,5 +1,12 @@
 # @uidu/treenav
 
+## 0.1.15
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+
 ## 0.1.14
 
 ### Patch Changes

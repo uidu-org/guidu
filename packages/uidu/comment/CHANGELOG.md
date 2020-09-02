@@ -1,5 +1,19 @@
 # @uidu/comment
 
+## 0.1.20
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/avatar@0.5.2
+  - @uidu/spinner@0.3.2
+  - @uidu/field-mentions@0.3.2
+  - @uidu/field-text@0.3.2
+  - @uidu/form@0.3.2
+  - @uidu/message-renderer@0.2.3
+
 ## 0.1.19
 
 ### Patch Changes

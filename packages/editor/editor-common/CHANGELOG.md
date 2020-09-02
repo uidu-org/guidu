@@ -1,5 +1,19 @@
 # @uidu/editor-common
 
+## 0.3.5
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/theme@0.4.2
+  - @uidu/adf-schema@0.2.4
+  - @uidu/analytics-namespaced-context@0.2.1
+  - @uidu/emoji@0.2.1
+  - @uidu/mentions@0.1.22
+
 ## 0.3.4
 
 ### Patch Changes

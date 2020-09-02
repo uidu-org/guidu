@@ -1,5 +1,17 @@
 # @uidu/field-date-range
 
+## 0.2.11
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- e4db094: Try rebuild with new preconstruct version
+- Updated dependencies [e4db094]
+- Updated dependencies [e4db094]
+  - @uidu/analytics@0.3.1
+  - @uidu/field-base@0.3.2
+  - @uidu/field-date@0.2.10
+
 ## 0.2.10
 
 ### Patch Changes

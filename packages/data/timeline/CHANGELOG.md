@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.1.8
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+
 ## 0.1.7
 
 ### Patch Changes

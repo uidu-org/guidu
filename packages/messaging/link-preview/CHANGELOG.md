@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.19
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+
 ## 0.1.18
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/contact",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "private": false,
   "description": "Basic contact form info",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/contact",
@@ -11,16 +11,16 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/checkbox": "^0.2.5",
-    "@uidu/field-text": "^0.3.0",
-    "@uidu/form": "^0.3.0",
+    "@uidu/checkbox": "^0.2.6",
+    "@uidu/field-text": "^0.3.2",
+    "@uidu/form": "^0.3.2",
     "react": "^16.13.1",
     "react-intl": "^5.2.1",
     "react-recaptcha": "^2.3.10",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.0"
+    "@uidu/docs": "^0.2.2"
   },
   "uidu:src": "src/index.ts"
 }

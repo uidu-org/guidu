@@ -1,5 +1,13 @@
 # @uidu/elements-test-helpers
 
+## 0.2.1
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/build-utils@0.1.22
+
 ## 0.2.0
 
 ### Minor Changes

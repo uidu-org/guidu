@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.2.2
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+- Updated dependencies [e4db094]
+  - @uidu/adf-schema@0.2.4
+
 ## 0.2.1
 
 ### Patch Changes

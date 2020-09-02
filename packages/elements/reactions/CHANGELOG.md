@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.1.12
+
+### Patch Changes
+
+- e4db094: Tried preconstruct all forms elements
+
 ## 0.1.11
 
 ### Patch Changes
