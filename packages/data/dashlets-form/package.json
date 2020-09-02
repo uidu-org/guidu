@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/dashboards/dashlets-form",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashlets-form",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

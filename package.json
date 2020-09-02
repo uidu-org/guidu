@@ -37,9 +37,7 @@
     "pkg:sort": "                            yarn manypkg exec npx sort-package-json package.json",
     "start": "                               dotenv yarn run website:start",
     "start:authentication": "                dotenv yarn run website:start **/packages/authentication/**",
-    "start:campaigns": "                     dotenv yarn run website:start **/packages/campaigns/**",
     "start:core": "                          dotenv yarn run website:start **/packages/core/**",
-    "start:dashboards": "                    dotenv yarn run website:start **/packages/dashboards/**",
     "start:data": "                          dotenv yarn run website:start **/packages/data/**",
     "start:ecommerce": "                     dotenv yarn run website:start **/packages/ecommerce/**",
     "start:editor": "                        dotenv yarn run website:start **/packages/editor/**",
@@ -505,6 +503,7 @@
   },
   "preconstruct": {
     "packages": [
+      "packages/authentication/*",
       "packages/core/*",
       "packages/forms/*",
       "packages/navigation/*",

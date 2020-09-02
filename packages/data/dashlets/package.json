@@ -2,7 +2,7 @@
   "name": "@uidu/dashlets",
   "version": "0.6.0",
   "description": "Elements to filter, sort, group data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/dashboards/dashlets",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashlets",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",

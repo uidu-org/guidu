@@ -3,7 +3,7 @@
   "version": "0.3.6",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/dashboards/dashboard-controls",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashboard-controls",
   "license": "MIT",
   "author": "uidu",
   "module": "index.js",
