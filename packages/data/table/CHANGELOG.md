@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 0.1.118
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/item@0.3.5
+  - @uidu/data-fields@0.1.41
+  - @uidu/select@0.5.4
+  - @uidu/shell@1.0.7
+  - @uidu/tooltip@0.3.4
+  - @uidu/form@0.3.4
+
 ## 0.1.117
 
 ### Patch Changes

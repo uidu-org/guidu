@@ -1,6 +1,6 @@
 {
   "name": "@uidu/changelog-loader",
-  "version": "0.1.22",
+  "version": "0.1.23",
   "repository": "https://github.com/uidu-org/guidu/tree/master/build/changelog-loader",
   "license": "ISC",
   "author": "uidu",

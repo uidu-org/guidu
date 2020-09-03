@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.0.7
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/spinner@0.3.4
+
 ## 1.0.6
 
 ### Patch Changes

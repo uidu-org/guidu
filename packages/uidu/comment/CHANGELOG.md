@@ -1,5 +1,18 @@
 # @uidu/comment
 
+## 0.1.22
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/avatar@0.5.4
+  - @uidu/spinner@0.3.4
+  - @uidu/field-mentions@0.3.4
+  - @uidu/field-text@0.3.4
+  - @uidu/form@0.3.4
+  - @uidu/message-renderer@0.2.5
+
 ## 0.1.21
 
 ### Patch Changes

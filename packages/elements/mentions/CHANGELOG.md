@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.1.24
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/theme@0.4.4
+  - @uidu/avatar@0.5.4
+  - @uidu/button@0.3.5
+  - @uidu/lozenge@0.3.4
+  - @uidu/tooltip@0.3.4
+  - @uidu/analytics-gas-types@0.1.14
+
 ## 0.1.23
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/dashboard-controls@0.3.9
+  - @uidu/dashlets@0.6.3
+
 ## 0.7.2
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/board",
-  "version": "0.2.22",
+  "version": "0.2.23",
   "private": false,
   "description": "Trello-like Kanban boards",
   "main": "dist/board.cjs.js",
@@ -10,7 +10,7 @@
   "module": "dist/board.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/theme": "^0.4.3",
+    "@uidu/theme": "^0.4.4",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.8",
@@ -18,9 +18,9 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/badge": "^0.3.3",
-    "@uidu/docs": "^0.2.3",
-    "@uidu/shell": "^1.0.6",
+    "@uidu/badge": "^0.3.4",
+    "@uidu/docs": "^0.2.4",
+    "@uidu/shell": "^1.0.7",
     "faker": "^5.1.0"
   },
   "uidu:src": "src/index.ts"

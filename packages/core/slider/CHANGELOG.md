@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.4.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 1.4.3
 
 ### Patch Changes

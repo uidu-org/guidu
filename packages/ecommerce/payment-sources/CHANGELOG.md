@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.1.20
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/payments@0.2.20
+  - @uidu/form@0.3.4
+
 ## 0.1.19
 
 ### Patch Changes

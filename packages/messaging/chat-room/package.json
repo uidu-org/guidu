@@ -1,6 +1,6 @@
 {
   "name": "@uidu/chat-room",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "description": "A video-chat room",
   "main": "dist/chat-room.cjs.js",
@@ -10,12 +10,12 @@
   "module": "dist/chat-room.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/shell": "^1.0.6",
+    "@uidu/shell": "^1.0.7",
     "react": "^16.13.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.3"
+    "@uidu/docs": "^0.2.4"
   },
   "uidu:src": "src/index.ts"
 }

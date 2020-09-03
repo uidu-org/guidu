@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.3.9
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/field-base@0.3.4
+  - @uidu/button@0.3.5
+  - @uidu/spinner@0.3.4
+  - @uidu/media-core@0.3.3
+
 ## 0.3.8
 
 ### Patch Changes

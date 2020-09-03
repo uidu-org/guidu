@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.5.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/adf-schema@0.2.6
+
 ## 0.5.2
 
 ### Patch Changes

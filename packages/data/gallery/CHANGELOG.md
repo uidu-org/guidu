@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.1.47
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/data-controls@0.4.5
+  - @uidu/table@0.1.118
+  - @uidu/spinner@0.3.4
+
 ## 0.1.46
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.3.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/form@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

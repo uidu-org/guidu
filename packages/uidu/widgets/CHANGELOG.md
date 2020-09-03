@@ -1,5 +1,15 @@
 # @uidu/widgets
 
+## 0.3.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/shell@1.0.7
+  - @uidu/contact@0.1.21
+  - @uidu/slider@1.4.4
+
 ## 0.3.4
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @uidu/donate
 
+## 0.2.22
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/modal-dialog@0.3.4
+  - @uidu/payments@0.2.20
+  - @uidu/select@0.5.4
+  - @uidu/contact@0.1.21
+  - @uidu/widgets@0.3.5
+  - @uidu/checkbox@0.2.8
+  - @uidu/field-downshift@0.4.4
+  - @uidu/field-text@0.3.4
+  - @uidu/field-textarea@0.2.8
+  - @uidu/form@0.3.4
+  - @uidu/radio@0.4.10
+  - @uidu/schema.d.ts@0.1.11
+
 ## 0.2.21
 
 ### Patch Changes

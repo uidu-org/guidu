@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/docs@0.2.4
+
 ## 0.3.4
 
 ### Patch Changes

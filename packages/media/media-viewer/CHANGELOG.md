@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 0.2.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/theme@0.4.4
+  - @uidu/shell@1.0.7
+  - @uidu/avatar@0.5.4
+  - @uidu/button@0.3.5
+  - @uidu/spinner@0.3.4
+  - @uidu/media-core@0.3.3
+  - @uidu/comment@0.1.22
+
 ## 0.2.4
 
 ### Patch Changes

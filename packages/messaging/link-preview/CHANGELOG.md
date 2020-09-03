@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.21
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.1.20
 
 ### Patch Changes

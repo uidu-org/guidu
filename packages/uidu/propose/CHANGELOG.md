@@ -1,5 +1,18 @@
 # @uidu/propose
 
+## 0.1.23
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/widgets@0.3.5
+  - @uidu/checkbox@0.2.8
+  - @uidu/field@0.2.7
+  - @uidu/field-text@0.3.4
+  - @uidu/field-textarea@0.2.8
+  - @uidu/form@0.3.4
+
 ## 0.1.22
 
 ### Patch Changes

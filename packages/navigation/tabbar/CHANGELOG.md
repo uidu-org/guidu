@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.2.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/shell@1.0.7
+
 ## 0.2.4
 
 ### Patch Changes

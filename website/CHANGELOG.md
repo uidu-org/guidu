@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/docs@0.2.4
+  - @uidu/modal-dialog@0.3.4
+  - @uidu/theme@0.4.4
+  - @uidu/table@0.1.118
+  - @uidu/select@0.5.4
+  - @uidu/shell@1.0.7
+  - @uidu/badge@0.3.4
+  - @uidu/button@0.3.5
+  - @uidu/code@0.3.4
+  - @uidu/drawer@0.4.5
+  - @uidu/lozenge@0.3.4
+  - @uidu/spinner@0.3.4
+  - @uidu/tooltip@0.3.4
+  - @uidu/list@0.1.29
+  - @uidu/checkbox@0.2.8
+  - @uidu/field-text@0.3.4
+  - @uidu/form@0.3.4
+  - @uidu/navigation@0.4.3
+  - @uidu/themes-uidu@0.3.3
+
 ## 0.2.4
 
 ### Patch Changes

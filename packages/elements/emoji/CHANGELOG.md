@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.2.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/theme@0.4.4
+  - @uidu/button@0.3.5
+  - @uidu/code@0.3.4
+  - @uidu/spinner@0.3.4
+  - @uidu/tooltip@0.3.4
+  - @uidu/field-text@0.3.4
+
 ## 0.2.2
 
 ### Patch Changes

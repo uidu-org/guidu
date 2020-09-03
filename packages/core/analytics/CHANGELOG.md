@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.3.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.3.2
 
 ### Patch Changes

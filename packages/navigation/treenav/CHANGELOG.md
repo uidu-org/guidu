@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.1.17
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.1.16
 
 ### Patch Changes

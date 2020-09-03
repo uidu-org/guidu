@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.76
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/changelog-loader@0.1.23
+  - @uidu/fs-loader@0.1.36
+  - @uidu/multi-entry-tools@0.0.17
+  - @uidu/nav-info-loader@0.1.37
+
 ## 0.1.75
 
 ### Patch Changes

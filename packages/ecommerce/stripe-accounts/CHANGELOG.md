@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.1.29
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/payments@0.2.20
+  - @uidu/slider@1.4.4
+  - @uidu/spinner@0.3.4
+  - @uidu/field-text@0.3.4
+  - @uidu/form@0.3.4
+  - @uidu/stepper@0.2.6
+
 ## 0.1.28
 
 ### Patch Changes

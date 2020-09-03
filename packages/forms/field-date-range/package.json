@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date-range",
-  "version": "0.2.12",
+  "version": "0.2.13",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date-range",
   "license": "MIT",
   "sideEffects": false,
@@ -8,9 +8,9 @@
   "module": "dist/field-date-range.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/analytics": "^0.3.2",
-    "@uidu/field-base": "^0.3.3",
-    "@uidu/field-date": "^0.2.11",
+    "@uidu/analytics": "^0.3.3",
+    "@uidu/field-base": "^0.3.4",
+    "@uidu/field-date": "^0.2.12",
     "formsy-react": "^2.1.0",
     "moment": "^2.27.0",
     "react": "^16.13.1",
@@ -20,8 +20,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.3",
-    "@uidu/form": "^0.3.3"
+    "@uidu/docs": "^0.2.4",
+    "@uidu/form": "^0.3.4"
   },
   "uidu:src": "src/index.ts"
 }

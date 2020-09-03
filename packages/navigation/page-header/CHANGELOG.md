@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.1.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/theme@0.4.4
+  - @uidu/shell@1.0.7
+
 ## 0.1.2
 
 ### Patch Changes

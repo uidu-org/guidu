@@ -1,6 +1,6 @@
 {
   "name": "@uidu/button",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Button component for use in forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/button",
   "license": "ISC",
@@ -8,18 +8,18 @@
   "main": "dist/button.cjs.js",
   "module": "dist/button.esm.js",
   "dependencies": {
-    "@uidu/analytics": "^0.3.2",
-    "@uidu/spinner": "^0.3.3",
-    "@uidu/theme": "^0.4.3",
+    "@uidu/analytics": "^0.3.3",
+    "@uidu/spinner": "^0.3.4",
+    "@uidu/theme": "^0.4.4",
     "memoize-one": "^5.1.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@atlaskit/logo": "^13.0.0",
-    "@uidu/checkbox": "^0.2.7",
-    "@uidu/docs": "^0.2.3",
-    "@uidu/form": "^0.3.3",
+    "@uidu/checkbox": "^0.2.8",
+    "@uidu/docs": "^0.2.4",
+    "@uidu/form": "^0.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",

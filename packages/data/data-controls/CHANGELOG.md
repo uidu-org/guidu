@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.4.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/dropdown-menu@0.3.4
+  - @uidu/item@0.3.5
+  - @uidu/data-fields@0.1.41
+  - @uidu/data-views@0.3.4
+  - @uidu/table@0.1.118
+  - @uidu/select@0.5.4
+  - @uidu/shell@1.0.7
+  - @uidu/drawer@0.4.5
+  - @uidu/inline-dialog@0.3.4
+  - @uidu/spinner@0.3.4
+  - @uidu/tooltip@0.3.4
+  - @uidu/checkbox@0.2.8
+  - @uidu/field-text@0.3.4
+  - @uidu/form@0.3.4
+
 ## 0.4.4
 
 ### Patch Changes

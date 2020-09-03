@@ -1,5 +1,20 @@
 # @uidu/tax-reminder
 
+## 0.1.29
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/select@0.5.4
+  - @uidu/contact@0.1.21
+  - @uidu/widgets@0.3.5
+  - @uidu/checkbox@0.2.8
+  - @uidu/field-date@0.2.12
+  - @uidu/field-text@0.3.4
+  - @uidu/field-textarea@0.2.8
+  - @uidu/form@0.3.4
+
 ## 0.1.28
 
 ### Patch Changes

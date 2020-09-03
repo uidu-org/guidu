@@ -1,6 +1,6 @@
 {
   "name": "@uidu/stripe-accounts",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "private": false,
   "description": "Payment form using Stripe",
   "main": "dist/stripe-accounts.cjs.js",
@@ -13,20 +13,20 @@
     "@babel/runtime": "^7.11.2",
     "@stripe/react-stripe-js": "^1.0.3",
     "@stripe/stripe-js": "^1.0.2",
-    "@uidu/field-text": "^0.3.3",
-    "@uidu/form": "^0.3.3",
-    "@uidu/payments": "^0.2.19",
-    "@uidu/slider": "^1.4.3",
-    "@uidu/spinner": "^0.3.3",
-    "@uidu/stepper": "^0.2.5",
+    "@uidu/field-text": "^0.3.4",
+    "@uidu/form": "^0.3.4",
+    "@uidu/payments": "^0.2.20",
+    "@uidu/slider": "^1.4.4",
+    "@uidu/spinner": "^0.3.4",
+    "@uidu/stepper": "^0.2.6",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-intl": "^5.8.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.3",
-    "@uidu/shell": "^1.0.6"
+    "@uidu/docs": "^0.2.4",
+    "@uidu/shell": "^1.0.7"
   },
   "uidu:src": "src/index.ts"
 }

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/attend",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "private": false,
   "description": "React component to attend to an event",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/attend",
@@ -11,16 +11,16 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/contact": "^0.1.20",
-    "@uidu/field-counter": "^0.2.8",
-    "@uidu/field-text": "^0.3.3",
-    "@uidu/field-textarea": "^0.2.7",
-    "@uidu/form": "^0.3.3",
-    "@uidu/payments": "^0.2.19",
-    "@uidu/shell": "^1.0.6",
-    "@uidu/spinner": "^0.3.3",
-    "@uidu/stepper": "^0.2.5",
-    "@uidu/widgets": "^0.3.4",
+    "@uidu/contact": "^0.1.21",
+    "@uidu/field-counter": "^0.2.9",
+    "@uidu/field-text": "^0.3.4",
+    "@uidu/field-textarea": "^0.2.8",
+    "@uidu/form": "^0.3.4",
+    "@uidu/payments": "^0.2.20",
+    "@uidu/shell": "^1.0.7",
+    "@uidu/spinner": "^0.3.4",
+    "@uidu/stepper": "^0.2.6",
+    "@uidu/widgets": "^0.3.5",
     "moment": "^2.27.0",
     "react": "^16.13.1",
     "react-countdown": "^2.2.0",
@@ -29,7 +29,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.3"
+    "@uidu/docs": "^0.2.4"
   },
   "uidu:src": "src/index.ts"
 }
