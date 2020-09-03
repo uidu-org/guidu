@@ -10,7 +10,7 @@
   "types": "dist/analytics.cjs.d.ts",
   "dependencies": {
     "@atlaskit/type-helpers": "^4.1.6",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 export { BaseTheme, mapBreakpointToLayoutMaxWidth } from './BaseTheme';
 export { ClearNextSiblingMarginTop } from './clear-next-sibling-margin-top';
 export { default as Emoji } from './Emoji';
-export {
+export type {
   CardEventClickHandler,
   CardSurroundings,
   EventHandlers,
@@ -20,8 +20,8 @@ export {
   default as MediaSingle,
   DEFAULT_IMAGE_HEIGHT,
   DEFAULT_IMAGE_WIDTH,
-  Props as MediaSingleProps,
 } from './MediaSingle';
+export type { Props as MediaSingleProps } from './MediaSingle';
 export {
   calcColumnsFromPx,
   calcPctFromPx,
@@ -31,24 +31,17 @@ export {
   snapToGrid,
 } from './MediaSingle/grid';
 export { MediaLink, MediaLinkWrapper } from './MediaSingle/link';
-export {
-  MediaSingleDimensionHelper,
-  WrapperProps as MediaSingleDimensionHelperProps,
-} from './MediaSingle/styled';
+export { MediaSingleDimensionHelper } from './MediaSingle/styled';
+export type { WrapperProps as MediaSingleDimensionHelperProps } from './MediaSingle/styled';
 export { default as Mention } from './Mention';
 export { ErrorMessage, HelperMessage, ValidMessage } from './Messages';
-export {
-  default as overflowShadow,
+export { default as overflowShadow, shadowClassNames } from './OverflowShadow';
+export type {
   OverflowShadowOptions,
   OverflowShadowProps,
-  shadowClassNames,
 } from './OverflowShadow';
-export {
-  default as Popup,
-  findOverflowScrollParent,
-  Position as PopupPosition,
-  Props as PopupProps,
-} from './Popup';
+export { default as Popup, findOverflowScrollParent } from './Popup';
+export type { Position as PopupPosition, Props as PopupProps } from './Popup';
 export { default as UnsupportedBlock } from './UnsupportedBlock';
 export { default as UnsupportedInline } from './UnsupportedInline';
 export {
@@ -56,11 +49,7 @@ export {
   IframeWrapperConsumer,
   WidthObserver,
 } from './WidthObserver';
-export {
-  getBreakpoint,
-  WidthConsumer,
-  WidthConsumerContext,
-  WidthProvider,
-} from './WidthProvider';
+export { getBreakpoint, WidthConsumer, WidthProvider } from './WidthProvider';
+export type { WidthConsumerContext } from './WidthProvider';
 export { default as withOuterListeners } from './with-outer-listeners';
 export { WithCreateAnalyticsEvent } from './WithCreateAnalyticsEvent';

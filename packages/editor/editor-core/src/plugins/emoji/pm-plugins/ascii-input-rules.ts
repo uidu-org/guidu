@@ -1,6 +1,6 @@
 import { ProviderFactory } from '@uidu/editor-common';
-import { EmojiProvider } from '@uidu/emoji/resource';
-import { EmojiDescription } from '@uidu/emoji/types';
+import type { EmojiProvider } from '@uidu/emoji/resource';
+import type { EmojiDescription } from '@uidu/emoji/types';
 import { Node, Schema } from 'prosemirror-model';
 import { EditorState, Plugin, PluginKey, Transaction } from 'prosemirror-state';
 import { isMarkTypeAllowedInCurrentSelection } from '../../../utils';

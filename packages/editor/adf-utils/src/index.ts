@@ -59,8 +59,11 @@ export {
   ul,
   underline,
 } from './builders';
+export { getEmptyADF } from './empty-adf';
 export { filter, map, reduce, traverse } from './traverse';
-export {
+export type { ADFEntity, ADFEntityMark } from './types';
+export { validateAttrs, validator } from './validator';
+export type {
   Content,
   ErrorCallback,
   Output,
@@ -68,8 +71,4 @@ export {
   ValidationErrorType,
   ValidationMode,
   ValidationOptions,
-  validateAttrs,
-  validator,
 } from './validator';
-export { ADFEntity, ADFEntityMark } from './types';
-export { getEmptyADF } from './empty-adf';

@@ -2,11 +2,11 @@ import rafSchedule from 'raf-schd';
 import React from 'react';
 import { createPortal } from 'react-dom';
 import { akEditorFloatingPanelZIndex } from '../../styles/consts';
+import type { Position } from './utils';
 import {
   calculatePlacement,
   calculatePosition,
   findOverflowScrollParent,
-  Position,
   validatePosition,
 } from './utils';
 
@@ -242,4 +242,5 @@ export default class Popup extends React.Component<Props, State> {
   }
 }
 
-export { findOverflowScrollParent, Position } from './utils';
+export { findOverflowScrollParent } from './utils';
+export type { Position } from './utils';

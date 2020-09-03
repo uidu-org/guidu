@@ -17,7 +17,7 @@
     "@uidu/emoji": "^0.2.2",
     "@uidu/mentions": "^0.1.23",
     "@uidu/task-decision": "^0.2.3",
-    "date-fns": "^2.0.0",
+    "date-fns": "^2.16.1",
     "lodash.sample": "^4.2.1",
     "tslib": "^2.0.1",
     "uuid": "^8.3.0"

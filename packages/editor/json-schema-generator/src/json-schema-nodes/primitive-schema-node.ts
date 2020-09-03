@@ -21,4 +21,4 @@ export default class PrimitiveSchemaNode<
   }
 }
 
-export { Indexed };
+export type { Indexed };

@@ -12,9 +12,9 @@ type Props = {
   language: string;
   source: string;
   title: string;
-  packageName: string;
-  overflowHidden: boolean;
-  fullWidth: boolean;
+  packageName?: string;
+  overflowHidden?: boolean;
+  fullWidth?: boolean;
 };
 
 type State = {

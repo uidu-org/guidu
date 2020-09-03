@@ -1,5 +1,5 @@
 import { MediaSingleLayout } from '@uidu/adf-schema';
-import {
+import type {
   ContextIdentifierProvider,
   ErrorReporter,
   MediaProvider,
@@ -29,17 +29,17 @@ import { MediaPluginOptions } from '../media-plugin-options';
 //   MediaStateEventSubscriber,
 //   PickerFacadeConfig,
 // } from '../picker-facade';
-import { MediaOptions, MediaState } from '../types';
+import type { MediaOptions, MediaState } from '../types';
 import DropPlaceholder, { PlaceholderType } from '../ui/Media/DropPlaceholder';
 import { isImage } from '../utils/is-image';
 import { removeMediaNode, splitMediaGroup } from '../utils/media-common';
 import { insertMediaGroupNode } from '../utils/media-files';
 import { insertMediaSingleNode } from '../utils/media-single';
 import { stateKey } from './plugin-key';
-import { MediaNodeWithPosHandler, MediaPluginState } from './types';
+import type { MediaNodeWithPosHandler, MediaPluginState } from './types';
 
 export { stateKey } from './plugin-key';
-export { MediaState, MediaProvider };
+export type { MediaState, MediaProvider };
 
 const createDropPlaceholder = (allowDropLine?: boolean) => {
   const dropPlaceholder = document.createElement('div');

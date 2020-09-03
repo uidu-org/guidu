@@ -25,7 +25,7 @@
     "classnames": "^2.2.6",
     "js-search": "^2.0.0",
     "lru-fast": "^0.2.2",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "react-virtualized": "^9.21.1",
     "tslib": "^2.0.1",
     "typestyle": "^2.0.4",
@@ -43,12 +43,22 @@
     "p-wait-for": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-intl": "^5.2.1"
+    "react-intl": "^5.8.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.4.0",
     "react-intl": "^5.2.1"
+  },
+  "preconstruct": {
+    "source": "src/index.ts",
+    "entrypoints": [
+      ".",
+      "element",
+      "picker",
+      "resource",
+      "types"
+    ]
   },
   "uidu:src": "src/index.ts"
 }

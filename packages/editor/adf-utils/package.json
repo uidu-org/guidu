@@ -2,11 +2,12 @@
   "name": "@uidu/adf-utils",
   "version": "0.5.2",
   "description": "Set of utilities to traverse, modify and create ADF documents.",
+  "main": "dist/adf-utils.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/adf-utils",
   "license": "Apache-2.0",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/adf-utils.esm.js",
   "types": "index.d.ts",
   "scripts": {
     "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
@@ -23,5 +24,5 @@
   "maintainers": [
     "Stanislav S"
   ],
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

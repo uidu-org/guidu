@@ -5,7 +5,7 @@ import { IntlShape } from 'react-intl';
 import { Dispatch } from '../../event-dispatcher';
 
 // Re-export typeahead types
-export {
+export type {
   TypeAheadItem,
   TypeAheadItemRenderProps,
 } from '@uidu/editor-common/provider-factory';

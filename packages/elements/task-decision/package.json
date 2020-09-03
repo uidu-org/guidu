@@ -21,7 +21,7 @@
     "@uidu/button": "^0.3.4",
     "@uidu/spinner": "^0.3.3",
     "@uidu/theme": "^0.4.3",
-    "date-fns": "^2.0.0",
+    "date-fns": "^2.16.1",
     "lodash.debounce": "^4.0.8",
     "tslib": "^2.0.1",
     "uuid": "^8.3.0"

@@ -10,7 +10,7 @@ import { closestElement } from '../../../../utils/dom';
 import { pluginFactory } from '../../../../utils/plugin-state-factory';
 import { MediaLinkingActions } from './actions';
 import reducer from './reducer';
-import { InitialState, MediaLinkingState } from './types';
+import type { InitialState, MediaLinkingState } from './types';
 
 const mediaLinkingPluginKey = new PluginKey('mediaLinking');
 
@@ -75,7 +75,7 @@ export const {
   getPluginState: getMediaLinkingState,
 } = mediaLinkingPluginFactory;
 
-export { MediaLinkingState } from './types';
+export type { MediaLinkingState } from './types';
 
 export default (dispatch: Dispatch) =>
   new Plugin({

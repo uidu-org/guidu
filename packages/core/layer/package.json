@@ -10,7 +10,7 @@
   "module": "dist/layer.esm.js",
   "dependencies": {
     "popper.js": "^1.16.1",
-    "raf-schd": "^4.0.0",
+    "raf-schd": "^4.0.2",
     "react-scrolllock": "^5.0.0",
     "tslib": "^2.0.1"
   },

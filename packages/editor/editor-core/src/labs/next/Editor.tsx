@@ -1,17 +1,17 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { PortalRenderer, PortalProvider } from '../../ui/PortalProvider';
+import { PortalProvider, PortalRenderer } from '../../ui/PortalProvider';
+import { EditorContent } from './internal/components/EditorContent';
 import { EditorInternal } from './internal/components/EditorInternal';
 import {
-  usePresetContext,
   PresetProvider,
+  usePresetContext,
 } from './internal/context/preset-context';
 import {
   EditorSharedConfig,
   EditorSharedConfigConsumer,
   useEditorSharedConfig,
 } from './internal/context/shared-config';
-import { EditorContent } from './internal/components/EditorContent';
 import { EditorProps } from './internal/editor-props-type';
 
 /**
@@ -35,7 +35,7 @@ function Editor(props: EditorProps) {
     <IntlProvider locale="en">
       <PortalProvider
         onAnalyticsEvent={props.onAnalyticsEvent}
-        render={portalProviderAPI => (
+        render={(portalProviderAPI) => (
           <>
             <EditorInternal
               {...props}
@@ -57,13 +57,10 @@ function Editor(props: EditorProps) {
  *
  */
 export {
-  // Components
   PresetProvider,
   Editor,
   EditorContent,
   EditorSharedConfigConsumer,
   useEditorSharedConfig,
-  // Types
-  EditorProps,
-  EditorSharedConfig,
 };
+export type { EditorProps, EditorSharedConfig };

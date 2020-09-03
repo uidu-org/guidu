@@ -1,10 +1,47 @@
-export { Params, getExtensionLozengeData } from './macro';
+export { getAnalyticsAppearance } from './analytics';
+export { default as browser } from './browser';
 export {
-  ADDoc,
-  ADFStage,
-  ADMark,
-  ADMarkSimple,
-  ADNode,
+  absoluteBreakoutWidth,
+  calcBreakoutWidth,
+  calcWideWidth,
+} from './calc-breakout-width';
+export { createCompareNodes } from './compareNodes';
+export { compose } from './compose';
+export {
+  isPastDate,
+  timestampToIsoFormat,
+  timestampToString,
+  timestampToTaskContext,
+  timestampToUTCDate,
+  todayTimestampInUTC,
+} from './date';
+export type { Date } from './date';
+export { default as ErrorReporter } from './error-reporter';
+export type { ErrorReportingHandler } from './error-reporter';
+export { getExtensionRenderer } from './extension-handler';
+export { withImageLoader } from './imageLoader';
+export type {
+  ImageLoaderProps,
+  ImageLoaderState,
+  ImageStatus,
+} from './imageLoader';
+export { getExtensionLozengeData } from './macro';
+export type { Params } from './macro';
+export {
+  isPerformanceAPIAvailable,
+  isPerformanceObserverAvailable,
+} from './performance/is-performance-api-available';
+export { clearMeasure, startMeasure, stopMeasure } from './performance/measure';
+export { measureRender } from './performance/measure-render';
+export { getResponseEndTime } from './performance/navigation';
+export {
+  calcTableColumnWidths,
+  convertProsemirrorTableNodeToArrayOfRows,
+  hasMergedCell,
+} from './table';
+export { default as ADFTraversor } from './traversor';
+export type { Diff } from './types';
+export {
   getMarksByOrder,
   getValidContent,
   getValidDocument,
@@ -15,48 +52,10 @@ export {
   isSubSupType,
   markOrder,
 } from './validator';
-export { default as browser } from './browser';
-export {
-  default as ErrorReporter,
-  ErrorReportingHandler,
-} from './error-reporter';
-export {
-  Date,
-  isPastDate,
-  timestampToIsoFormat,
-  timestampToString,
-  timestampToTaskContext,
-  timestampToUTCDate,
-  todayTimestampInUTC,
-} from './date';
-export {
-  ImageLoaderProps,
-  ImageLoaderState,
-  ImageStatus,
-  withImageLoader,
-} from './imageLoader';
-export {
-  absoluteBreakoutWidth,
-  calcBreakoutWidth,
-  calcWideWidth,
-} from './calc-breakout-width';
-export { default as ADFTraversor } from './traversor';
-export { getAnalyticsAppearance } from './analytics';
-export { measureRender } from './performance/measure-render';
-export { startMeasure, stopMeasure, clearMeasure } from './performance/measure';
-export {
-  isPerformanceAPIAvailable,
-  isPerformanceObserverAvailable,
-} from './performance/is-performance-api-available';
-export { getResponseEndTime } from './performance/navigation';
-export { getExtensionRenderer } from './extension-handler';
-
-export {
-  hasMergedCell,
-  calcTableColumnWidths,
-  convertProsemirrorTableNodeToArrayOfRows,
-} from './table';
-export { createCompareNodes } from './compareNodes';
-export { compose } from './compose';
-
-export { Diff } from './types';
+export type {
+  ADDoc,
+  ADFStage,
+  ADMark,
+  ADMarkSimple,
+  ADNode,
+} from './validator';

@@ -1,5 +1,5 @@
 import { ProviderFactory } from '@uidu/editor-common';
-import { Providers } from '@uidu/editor-common/provider-factory';
+import type { Providers } from '@uidu/editor-common/provider-factory';
 import {
   FileIdentifier,
   MediaClientConfig,

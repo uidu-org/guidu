@@ -35,11 +35,19 @@
     "@uidu/docs": "^0.2.3",
     "@uidu/elements-test-helpers": "^0.2.2",
     "react": "^16.13.1",
-    "react-intl": "^5.2.1"
+    "react-intl": "^5.8.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",
     "react-intl": "^5.2.1"
+  },
+  "preconstruct": {
+    "source": "src/index.ts",
+    "entrypoints": [
+      ".",
+      "element",
+      "picker"
+    ]
   },
   "uidu:src": "src/index.ts"
 }

@@ -1,0 +1,7 @@
+{
+  "main": "dist/status.cjs.js",
+  "module": "dist/status.esm.js",
+  "preconstruct": {
+    "source": "../src/element.ts"
+  }
+}

@@ -25,7 +25,7 @@
     "react-animated-number": "^0.4.4",
     "react-countup": "^4.2.2",
     "react-feather": "^2.0.8",
-    "react-intl": "^5.2.1",
+    "react-intl": "^5.8.0",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1",
     "uuid": "^8.3.0"

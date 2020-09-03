@@ -1,4 +1,4 @@
-import {
+import type {
   MacroProvider,
   ProviderFactory,
   Providers,
@@ -10,7 +10,7 @@ import { EditorPlugin, PMPluginFactoryParams } from '../../types';
 import { setMacroProvider } from './actions';
 import { pluginKey } from './plugin-key';
 
-export {
+export type {
   ExtensionType,
   MacroAttributes,
   MacroProvider,

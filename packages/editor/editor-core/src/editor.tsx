@@ -14,7 +14,7 @@ import { ReactEditorView } from './create-editor';
 import { EventDispatcher } from './event-dispatcher';
 import { FireAnalyticsCallback, fireAnalyticsEvent } from './plugins/analytics';
 import { tableCommentEditorStyles } from './plugins/table/ui/styles';
-import { EditorProps } from './types/editor-props';
+import type { EditorProps } from './types/editor-props';
 import ContentStyles from './ui/ContentStyles';
 import EditorContext from './ui/EditorContext';
 import PluginSlot from './ui/PluginSlot';
@@ -26,7 +26,7 @@ import {
 } from './utils/extensions';
 import { nextMajorVersion } from './version-wrapper';
 
-export {
+export type {
   AllowedBlockTypes,
   Command,
   CommandDispatch,

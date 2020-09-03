@@ -4,11 +4,11 @@ import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
 import { inputRulePlugin } from './pm-plugins/input-rules';
 import { keymapPlugin } from './pm-plugins/keymap';
+import type { PluginState as TypeAheadPluginState } from './pm-plugins/main';
 import {
   createInitialPluginState,
   createPlugin,
   pluginKey as typeAheadPluginKey,
-  PluginState as TypeAheadPluginState,
 } from './pm-plugins/main';
 import { TypeAheadHandler } from './types';
 import { TypeAhead } from './ui/TypeAhead';
@@ -83,5 +83,6 @@ const typeAheadPlugin = (): EditorPlugin => ({
   },
 });
 
-export { typeAheadPluginKey, TypeAheadPluginState };
+export { typeAheadPluginKey };
+export type { TypeAheadPluginState };
 export default typeAheadPlugin;

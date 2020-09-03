@@ -32,7 +32,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.3",
     "@uidu/dropdown-menu": "^0.3.3",
-    "react-intl": "^5.2.1"
+    "react-intl": "^5.8.0"
   },
   "uidu:src": "src/index.ts"
 }

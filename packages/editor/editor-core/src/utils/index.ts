@@ -56,7 +56,7 @@ export {
 } from './mark';
 export { isNodeTypeParagraph } from './nodes';
 export { SetAttrsStep } from './step';
-export { JSONDocNode, JSONNode };
+export type { JSONDocNode, JSONNode };
 
 export const ZeroWidthSpace = '\u200b';
 

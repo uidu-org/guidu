@@ -2,11 +2,13 @@ import { textColor } from '@uidu/adf-schema';
 import React from 'react';
 import { EditorPlugin } from '../../types';
 import WithPluginState from '../../ui/WithPluginState';
+import type {
+  TextColorPluginConfig,
+  TextColorPluginState,
+} from './pm-plugins/main';
 import {
   createPlugin,
   pluginKey as textColorPluginKey,
-  TextColorPluginConfig,
-  TextColorPluginState,
 } from './pm-plugins/main';
 import ToolbarTextColor from './ui/ToolbarTextColor';
 
@@ -75,5 +77,7 @@ const textColorPlugin = (
   },
 });
 
-export { TextColorPluginState, textColorPluginKey };
+export { textColorPluginKey };
+export type { TextColorPluginState };
+
 export default textColorPlugin;

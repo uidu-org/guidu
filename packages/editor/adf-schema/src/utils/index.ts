@@ -56,15 +56,16 @@ export {
   acShortcutToEmoji,
   emojiIdToAcName,
   getEmojiAcName,
-  NameToEmoji,
 } from './confluence/emoji';
+export type { NameToEmoji } from './confluence/emoji';
 export {
   createLanguageList,
   DEFAULT_LANGUAGES,
   filterSupportedLanguages,
   findMatchedLanguage,
   getLanguageIdentifier,
-  Language,
 } from './languageList';
-export { getLinkMatch, isSafeUrl, Match, normalizeUrl } from './url';
+export type { Language } from './languageList';
+export { getLinkMatch, isSafeUrl, normalizeUrl } from './url';
+export type { Match } from './url';
 export { generateUuid, uuid } from './uuid';

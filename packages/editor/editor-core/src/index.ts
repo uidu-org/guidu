@@ -1,5 +1,5 @@
 // Used in products integration code
-export {
+export type {
   CardProvider,
   ExtensionType,
   MacroAttributes,
@@ -20,20 +20,21 @@ export { ReactEditorView } from './create-editor';
 export { getDefaultPluginsList } from './create-editor/create-plugins-list';
 export { default as Editor } from './editor';
 export { EventDispatcher } from './event-dispatcher';
-export { blockPluginStateKey, BlockTypeState } from './plugins';
-export {
+export { blockPluginStateKey } from './plugins';
+export type { BlockTypeState } from './plugins';
+export type {
   AnnotationComponentProps,
   AnnotationInfo,
   AnnotationProvider,
 } from './plugins/annotation';
 export { insertBlockType, setBlockType } from './plugins/block-type/commands';
-export { CollabEditProvider } from './plugins/collab-edit';
+export type { CollabEditProvider } from './plugins/collab-edit';
 export {
   GapCursorSelection,
   Side as GapCursorSide,
 } from './plugins/gap-cursor';
 export { historyPluginKey } from './plugins/history';
-export { HistoryPluginState } from './plugins/history/types';
+export type { HistoryPluginState } from './plugins/history/types';
 export {
   insertLink,
   isLinkAtPos,
@@ -42,33 +43,30 @@ export {
   setLinkText,
 } from './plugins/hyperlink/commands';
 export {
-  HyperlinkState,
   InsertStatus as HyperlinkInsertStatus,
   stateKey as hyperlinkStateKey,
 } from './plugins/hyperlink/pm-plugins/main';
+export type { HyperlinkState } from './plugins/hyperlink/pm-plugins/main';
 export {
   indentList,
   outdentList,
   toggleBulletList,
   toggleOrderedList,
 } from './plugins/lists/commands';
-export {
-  ListsPluginState as ListsState,
-  pluginKey as listsStateKey,
-} from './plugins/lists/pm-plugins/main';
-export {
+export { pluginKey as listsStateKey } from './plugins/lists/pm-plugins/main';
+export type { ListsPluginState as ListsState } from './plugins/lists/pm-plugins/main';
+export { default as mediaPlugin, insertMediaSingleNode } from './plugins/media';
+export type {
   CustomMediaPicker,
-  default as mediaPlugin,
-  insertMediaSingleNode,
   MediaProvider,
   MediaState,
 } from './plugins/media';
 // Used in mobile bridge
 export { stateKey as mediaPluginKey } from './plugins/media/pm-plugins/main';
-export { MediaOptions } from './plugins/media/types';
+export type { MediaOptions } from './plugins/media/types';
 export { mentionPluginKey } from './plugins/mentions';
-export { MentionPluginState } from './plugins/mentions/types';
-export {
+export type { MentionPluginState } from './plugins/mentions/types';
+export type {
   QuickInsertItem,
   QuickInsertProvider,
 } from './plugins/quick-insert/types';
@@ -77,14 +75,12 @@ export {
   setStatusPickerAt,
   updateStatus,
 } from './plugins/status/actions';
-export {
-  pluginKey as statusPluginKey,
-  StatusState,
-  StatusType,
-} from './plugins/status/plugin';
+export { pluginKey as statusPluginKey } from './plugins/status/plugin';
+export type { StatusState, StatusType } from './plugins/status/plugin';
 export { createTable } from './plugins/table/commands';
 export { insertTaskDecision } from './plugins/tasks-and-decisions/commands';
-export { textColorPluginKey, TextColorPluginState } from './plugins/text-color';
+export { textColorPluginKey } from './plugins/text-color';
+export type { TextColorPluginState } from './plugins/text-color';
 export { changeColor } from './plugins/text-color/commands/change-color';
 export {
   toggleCode,
@@ -95,14 +91,18 @@ export {
   toggleSuperscript,
   toggleUnderline,
 } from './plugins/text-formatting/commands/text-formatting';
-export {
-  pluginKey as textFormattingStateKey,
-  TextFormattingState,
-} from './plugins/text-formatting/pm-plugins/main';
-export { typeAheadPluginKey, TypeAheadPluginState } from './plugins/type-ahead';
+export { pluginKey as textFormattingStateKey } from './plugins/text-formatting/pm-plugins/main';
+export type { TextFormattingState } from './plugins/text-formatting/pm-plugins/main';
+export { typeAheadPluginKey } from './plugins/type-ahead';
+export type { TypeAheadPluginState } from './plugins/type-ahead';
 export { selectItem } from './plugins/type-ahead/commands/select-item';
-export { TypeAheadItem } from './plugins/type-ahead/types';
-export { Command, EditorInstance, EditorPlugin, EditorProps } from './types';
+export type { TypeAheadItem } from './plugins/type-ahead/types';
+export type {
+  Command,
+  EditorInstance,
+  EditorPlugin,
+  EditorProps,
+} from './types';
 export { default as CollapsedEditor } from './ui/CollapsedEditor';
 export { default as EditorContext } from './ui/EditorContext';
 export {

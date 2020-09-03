@@ -1,7 +1,7 @@
 import { PluginKey } from 'prosemirror-state';
 import React from 'react';
 import { EditorPlugin, FeedbackInfo } from '../../types';
-import { version as coreVersion } from '../../version.json';
+import pkg from '../../version.json';
 import {
   ACTION,
   ACTION_SUBJECT,
@@ -39,7 +39,7 @@ export const openFeedbackDialog = async (feedbackInfo?: FeedbackInfo) =>
             ...(combinedFeedbackInfo.labels || []),
           ],
           combinedFeedbackInfo.packageName || '',
-          coreVersion,
+          pkg.version,
           combinedFeedbackInfo.packageVersion || '',
         );
 

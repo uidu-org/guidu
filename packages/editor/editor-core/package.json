@@ -1,14 +1,18 @@
 {
   "name": "@uidu/editor-core",
   "version": "0.6.2",
+  "main": "dist/editor-core.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-core",
   "license": "MIT",
-  "module": "index.js",
+  "module": "dist/editor-core.esm.js",
   "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/calendar": "^10.0.0",
-    "@atlaskit/profilecard": "^13.0.0",
+    "@atlaskit/icon": "^21.1.2",
+    "@atlaskit/profilecard": "^13.0.4",
+    "@atlaskit/util-service-support": "^6.0.1",
     "@atlaskit/width-detector": "^3.0.0",
+    "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.13.1",
     "@uidu/adf-schema": "^0.2.5",
     "@uidu/adf-utils": "^0.5.2",
@@ -39,7 +43,12 @@
     "@uidu/theme": "^0.4.3",
     "@uidu/tooltip": "^0.3.3",
     "chromatism": "^3.0.0",
+    "classnames": "^2.2.6",
+    "eventemitter2": "^6.4.3",
+    "linkify-it": "^3.0.2",
     "markdown-it": "^11.0.0",
+    "memoize-one": "^5.1.1",
+    "prop-types": "^15.7.2",
     "prosemirror-collab": "^1.1.2",
     "prosemirror-commands": "^1.0.8",
     "prosemirror-history": "^1.0.4",
@@ -49,16 +58,23 @@
     "prosemirror-schema-list": "^1.0.3",
     "prosemirror-state": "^1.2.3",
     "prosemirror-tables": "^1.0.0",
+    "prosemirror-transform": "^1.2.8",
     "prosemirror-utils": "^0.9.2",
     "prosemirror-view": "^1.9.10",
+    "raf-schd": "^4.0.2",
     "re-resizable": "^6.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-intl": "^5.8.0",
     "react-loadable": "^5.5.0",
+    "styled-components": "^5.1.1",
     "tslib": "^2.0.1",
+    "uuid": "^8.3.0",
     "w3c-keyname": "^2.1.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.3",
     "@uidu/shell": "^1.0.6"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

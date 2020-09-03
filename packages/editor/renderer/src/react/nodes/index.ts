@@ -2,19 +2,18 @@ import loadable from '@loadable/component';
 import { Fragment, Node } from 'prosemirror-model';
 import * as React from 'react';
 import Blockquote from './blockquote';
-import BodiedExtension, {
-  Props as BodiedExtensionProps,
-} from './bodiedExtension';
+import type { Props as BodiedExtensionProps } from './bodiedExtension';
+import BodiedExtension from './bodiedExtension';
 import BulletList from './bulletList';
 import DecisionList from './decisionList';
 import Doc from './doc';
-import Extension, { Props as ExtensionProps } from './extension';
+import type { Props as ExtensionProps } from './extension';
+import Extension from './extension';
 import HardBreak from './hardBreak';
 import Heading from './heading';
 import Image from './image';
-import InlineExtension, {
-  Props as InlineExtensionProps,
-} from './inlineExtension';
+import type { Props as InlineExtensionProps } from './inlineExtension';
+import InlineExtension from './inlineExtension';
 import LayoutColumn from './layoutColumn';
 import LayoutSection from './layoutSection';
 import ListItem from './listItem';
@@ -30,60 +29,69 @@ import TableRow from './tableRow';
 import TaskList from './taskList';
 import UnknownBlock from './unknownBlock';
 
-const CodeBlock = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_CodeBlock" */ './codeBlock'
-  ),
+const CodeBlock = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_CodeBlock" */ './codeBlock'
+    ),
 );
-const TaskItem = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_TaskItem" */ './taskItem'
-  ),
+const TaskItem = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_TaskItem" */ './taskItem'
+    ),
 );
-const DecisionItem = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_DecisionItem" */ './decisionItem'
-  ),
+const DecisionItem = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_DecisionItem" */ './decisionItem'
+    ),
 );
-const Date = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_Date" */ './date'
-  ),
+const Date = loadable(
+  () =>
+    import(/* webpackChunkName:"@uidu-internal-renderer-node_Date" */ './date'),
 );
-const Status = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_Status" */ './status'
-  ),
+const Status = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_Status" */ './status'
+    ),
 );
-const Emoji = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_Emoji" */ './emoji'
-  ),
+const Emoji = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_Emoji" */ './emoji'
+    ),
 );
-const InlineCard = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_InlineCard" */ './inlineCard'
-  ),
+const InlineCard = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_InlineCard" */ './inlineCard'
+    ),
 );
-const BlockCard = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_BlockCard" */ './blockCard'
-  ),
+const BlockCard = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_BlockCard" */ './blockCard'
+    ),
 );
-const Media = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_Media" */ './media'
-  ),
+const Media = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_Media" */ './media'
+    ),
 );
-const MediaGroup = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_MediaGroup" */ './mediaGroup'
-  ),
+const MediaGroup = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_MediaGroup" */ './mediaGroup'
+    ),
 );
-const Mention = loadable(() =>
-  import(
-    /* webpackChunkName:"@uidu-internal-renderer-node_Mention" */ './mention'
-  ),
+const Mention = loadable(
+  () =>
+    import(
+      /* webpackChunkName:"@uidu-internal-renderer-node_Mention" */ './mention'
+    ),
 );
 
 export const nodeToReact: { [key: string]: React.ComponentType<any> } = {
@@ -267,7 +275,6 @@ const isEmojiBlock = (pnode: Fragment): boolean => {
 export {
   Blockquote,
   BodiedExtension,
-  BodiedExtensionProps,
   BulletList,
   BlockCard,
   CodeBlock,
@@ -277,14 +284,12 @@ export {
   Doc,
   Emoji,
   Extension,
-  ExtensionProps,
   HardBreak,
   Heading,
   ListItem,
   Image,
   InlineCard,
   InlineExtension,
-  InlineExtensionProps,
   LayoutSection,
   LayoutColumn,
   Media,
@@ -304,3 +309,4 @@ export {
   TableRow,
   UnknownBlock,
 };
+export type { BodiedExtensionProps, ExtensionProps, InlineExtensionProps };

@@ -297,7 +297,6 @@ const insertContentDeleteRange = (
 };
 
 export {
-  Predicate,
   filter,
   isEmptySelectionAtStart,
   isEmptySelectionAtEnd,
@@ -310,3 +309,4 @@ export {
   walkPrevNode,
   insertContentDeleteRange,
 };
+export type { Predicate };

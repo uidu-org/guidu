@@ -10,11 +10,11 @@ import { PortalProviderAPI } from '../../ui/PortalProvider';
 import { ZeroWidthSpace } from '../../utils';
 import statusNodeView from './nodeviews/status';
 import { pluginKey } from './plugin-key';
-import { StatusPluginOptions, StatusState } from './types';
+import type { StatusPluginOptions, StatusState } from './types';
 import { isEmptyStatus, mayGetStatusAtSelection } from './utils';
 
 export { pluginKey, pluginKeyName } from './plugin-key';
-export { StatusState, StatusType } from './types';
+export type { StatusState, StatusType } from './types';
 
 const createPlugin = (
   dispatch: Dispatch,

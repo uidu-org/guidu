@@ -2,8 +2,10 @@ import { collab } from 'prosemirror-collab';
 import { EditorPlugin } from '../../types';
 import { createPlugin, pluginKey } from './plugin';
 import { CollabEditOptions } from './types';
-export { CollabEditProvider, CollabProvider } from './provider';
-export { CollabEditOptions, pluginKey };
+export { CollabProvider } from './provider';
+export type { CollabEditProvider } from './provider';
+export { pluginKey };
+export type { CollabEditOptions };
 
 const collabEditPlugin = (
   options?: CollabEditOptions,

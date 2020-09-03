@@ -2,11 +2,12 @@
   "name": "@uidu/adf-schema",
   "version": "0.2.5",
   "description": "Shared package that contains the ADF-schema (json) and ProseMirror node/mark specs",
+  "main": "dist/adf-schema.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/adf-schema",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/adf-schema.esm.js",
   "types": "index.d.ts",
   "scripts": {
     "ak-postbuild": "yarn build:json-schema",
@@ -21,7 +22,7 @@
     "@types/prosemirror-state": "^1.2.0",
     "@types/prosemirror-view": "^1.3.0",
     "css-color-names": "^1.0.1",
-    "linkify-it": "^3.0.0",
+    "linkify-it": "^3.0.2",
     "prosemirror-model": "^1.7.1",
     "prosemirror-view": "^1.9.10",
     "tslib": "^2.0.1"
@@ -33,5 +34,5 @@
     "json-schema-diff-validator": "^0.4.1",
     "prosemirror-state": "^1.2.3"
   },
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

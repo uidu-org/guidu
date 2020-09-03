@@ -1,5 +1,5 @@
 import { media, mediaGroup, mediaSingle } from '@uidu/adf-schema';
-import { MediaProvider } from '@uidu/editor-common';
+import type { MediaProvider } from '@uidu/editor-common';
 import * as React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { EditorPlugin, PMPluginFactoryParams } from '../../types';
@@ -22,18 +22,15 @@ import keymapPlugin from './pm-plugins/keymap';
 import keymapMediaSinglePlugin from './pm-plugins/keymap-media-single';
 import linkingPlugin from './pm-plugins/linking';
 import keymapLinkingPlugin from './pm-plugins/linking/keymap';
-import {
-  createPlugin,
-  MediaState,
-  stateKey as pluginKey,
-} from './pm-plugins/main';
+import type { MediaState } from './pm-plugins/main';
+import { createPlugin, stateKey as pluginKey } from './pm-plugins/main';
 import { floatingToolbar } from './toolbar';
-import { CustomMediaPicker, MediaOptions } from './types';
+import type { CustomMediaPicker, MediaOptions } from './types';
 import ClipboardMediaPickerWrapper from './ui/ClipboardMediaPickerWrapper';
 import ToolbarMedia from './ui/ToolbarMedia';
 
 export { insertMediaSingleNode } from './utils/media-single';
-export { MediaState, MediaProvider, CustomMediaPicker };
+export type { MediaState, MediaProvider, CustomMediaPicker };
 
 const mediaPlugin = (options?: MediaOptions): EditorPlugin => ({
   name: 'media',

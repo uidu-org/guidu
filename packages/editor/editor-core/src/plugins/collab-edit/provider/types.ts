@@ -1,16 +1,16 @@
 import { ServiceConfig } from '@atlaskit/util-service-support';
-import { Transaction, EditorState } from 'prosemirror-state';
+import { EditorState, Transaction } from 'prosemirror-state';
 import { Step } from 'prosemirror-transform';
-import {
-  InitData,
+import type {
   ConnectionData,
+  InitData,
+  Participant,
+  PresenceData,
   RemoteData,
   TelepointerData,
-  PresenceData,
-  Participant,
 } from '../types';
 
-export { TelepointerData, Participant };
+export type { TelepointerData, Participant };
 
 export type CollabEvent =
   | 'init'

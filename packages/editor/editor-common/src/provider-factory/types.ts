@@ -4,7 +4,7 @@ import { TaskDecisionProvider } from '@uidu/task-decision';
 import { ExtensionProvider } from '../extensions/types';
 import { AutoformattingProvider } from './autoformatting-provider';
 import { CardProvider } from './card-provider';
-import { CollabEditProvider } from './collab-edit-provider';
+import type { CollabEditProvider } from './collab-edit-provider';
 import { ContextIdentifierProvider } from './context-identifier-provider';
 import { ImageUploadProvider } from './image-upload-provider';
 import { MacroProvider } from './macro-provider';

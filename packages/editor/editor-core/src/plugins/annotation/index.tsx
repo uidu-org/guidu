@@ -13,7 +13,7 @@ import {
   inlineCommentPlugin,
 } from './pm-plugins/inline-comment';
 import { pluginKey as inlineCommentPluginKey } from './pm-plugins/plugin-factory';
-import {
+import type {
   AnnotationComponentProps,
   AnnotationInfo,
   AnnotationProvider,
@@ -136,7 +136,7 @@ const annotationPlugin = (
 };
 
 export default annotationPlugin;
-export {
+export type {
   AnnotationProvider,
   AnnotationComponentProps,
   AnnotationTypeProvider,

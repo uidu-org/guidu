@@ -80,7 +80,8 @@ const expandPlugin = (options?: ExpandPluginOptions): EditorPlugin => ({
 
 export default expandPlugin;
 export { pluginKey } from './pm-plugins/plugin-factory';
-export { ExpandPluginState } from './types';
+export type { ExpandPluginState } from './types';
+
 export function isExpandInsertionEnabled({ allowExpand }: EditorProps) {
   if (allowExpand && typeof allowExpand === 'object') {
     return !!allowExpand.allowInsertion;

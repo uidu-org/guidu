@@ -1,0 +1,7 @@
+{
+  "main": "dist/editor-common.cjs.js",
+  "module": "dist/editor-common.esm.js",
+  "preconstruct": {
+    "source": "../src/provider-factory.ts"
+  }
+}

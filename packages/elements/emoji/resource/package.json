@@ -1,0 +1,7 @@
+{
+  "main": "dist/emoji.cjs.js",
+  "module": "dist/emoji.esm.js",
+  "preconstruct": {
+    "source": "../src/resource.ts"
+  }
+}

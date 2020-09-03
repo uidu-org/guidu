@@ -1,5 +1,6 @@
-export * from './types';
 export { CollabProvider } from './collab-provider';
+export * from './types';
+
 export const logger = (
   msg: string,
   data: any = null,

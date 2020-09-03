@@ -14,7 +14,7 @@ import {
   handleTelePointer,
 } from './actions';
 import { Participants, ReadOnlyParticipants } from './participants';
-import { CollabEditProvider, CollabEvent } from './provider';
+import type { CollabEditProvider, CollabEvent } from './provider';
 import {
   CollabEditOptions,
   ConnectionData,
@@ -24,7 +24,7 @@ import {
 } from './types';
 import { createTelepointers, findPointers } from './utils';
 
-export { CollabEditProvider };
+export type { CollabEditProvider };
 
 export const pluginKey = new PluginKey('collabEditPlugin');
 
@@ -39,7 +39,7 @@ const unsubscribeAllEvents = (provider: CollabEditProvider) => {
     'error',
   ];
 
-  collabEvents.forEach(evt => {
+  collabEvents.forEach((evt) => {
     provider.unsubscribeAll(evt);
   });
 };
@@ -50,7 +50,7 @@ const initCollab = (
 ) => {
   collabEditProvider.initialize(
     () => view.state,
-    json => Step.fromJSON(view.state.schema, json),
+    (json) => Step.fromJSON(view.state.schema, json),
   );
 };
 
@@ -155,7 +155,7 @@ export const createPlugin = (
 
             // Initialize provider
             collabEditProvider
-              .on('init', data => {
+              .on('init', (data) => {
                 view.dispatch(view.state.tr.setMeta('collabInitialised', true));
                 handleInit(
                   data,
@@ -165,11 +165,11 @@ export const createPlugin = (
                   sanitizePrivateContent,
                 );
               })
-              .on('connected', data => handleConnection(data, view))
-              .on('data', data => applyRemoteData(data, view, options))
-              .on('presence', data => handlePresence(data, view))
-              .on('telepointer', data => handleTelePointer(data, view))
-              .on('local-steps', data => {
+              .on('connected', (data) => handleConnection(data, view))
+              .on('data', (data) => applyRemoteData(data, view, options))
+              .on('presence', (data) => handlePresence(data, view))
+              .on('telepointer', (data) => handleTelePointer(data, view))
+              .on('local-steps', (data) => {
                 const { steps } = data;
                 const { state } = view;
 
@@ -287,11 +287,11 @@ export class PluginState {
         left = [] as { sessionId: string }[],
       } = presenceData;
 
-      participants = participants.remove(left.map(i => i.sessionId));
+      participants = participants.remove(left.map((i) => i.sessionId));
       participants = participants.add(joined);
 
       // Remove telepointers for users that left
-      left.forEach(i => {
+      left.forEach((i) => {
         const pointers = findPointers(i.sessionId, decorationSet);
         if (pointers) {
           remove = remove.concat(pointers);
@@ -344,7 +344,7 @@ export class PluginState {
       try {
         decorationSet = decorationSet.map(tr.mapping, tr.doc, {
           // Reapplies decorators those got removed by the state change
-          onRemove: spec => {
+          onRemove: (spec) => {
             if (spec.pointer && spec.pointer.sessionId) {
               const step = tr.steps.filter(isReplaceStep)[0];
               if (step) {
@@ -379,7 +379,7 @@ export class PluginState {
 
       // Remove any selection decoration within the change range,
       // takes care of the issue when after pasting we end up with a dead selection
-      tr.steps.filter(isReplaceStep).forEach(s => {
+      tr.steps.filter(isReplaceStep).forEach((s) => {
         const { from, to } = s as any;
         decorationSet.find(from, to).forEach((deco: any) => {
           // `type` is private, `from` and `to` are public in latest version

@@ -12,7 +12,7 @@
     "@uidu/avatar": "^0.5.3",
     "@uidu/theme": "^0.4.3",
     "polished": "^3.0.3",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.7.2",
     "react-addons-text-content": "^0.0.4",
     "tslib": "^2.0.1",
     "uuid": "^8.3.0"

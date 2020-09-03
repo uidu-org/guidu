@@ -1,45 +1,41 @@
-export {
-  ExtensionParams,
-  ExtensionHandler,
-  UpdateExtension,
+export type {
   Extension,
+  ExtensionHandler,
   ExtensionHandlers,
+  ExtensionParams,
+  UpdateExtension,
 } from './extension-handler';
-
-export { ExtensionProvider } from './extension-provider';
-
-export {
-  ExtensionModuleType,
+export type {
+  Deserializer,
+  ExtensionKey,
+  ExtensionManifest,
+  ExtensionModule,
+  ExtensionModuleAction,
+  ExtensionModuleActionHandler,
+  ExtensionModuleActionObject,
   ExtensionModuleNode,
   ExtensionModuleNodes,
-  ExtensionManifest,
   ExtensionModules,
-  ExtensionModule,
-  ExtensionKey,
+  ExtensionModuleType,
   ExtensionType,
-  ExtensionModuleActionObject,
-  ExtensionModuleActionHandler,
-  ExtensionModuleAction,
-  MaybeADFEntity,
   FieldResolver,
-  Serializer,
-  Deserializer,
+  MaybeADFEntity,
   Parameters,
+  Serializer,
 } from './extension-manifest';
-
-export { MenuItem, MenuItemMap } from './utils';
-
-export {
+export type { ExtensionProvider } from './extension-provider';
+export { isFieldset } from './field-definitions';
+export type {
   BooleanField,
   CustomField,
   DateField,
   EnumField,
   FieldDefinition,
+  FieldHandlerLink,
   Fieldset,
   NativeField,
   NumberField,
   Option,
   StringField,
-  isFieldset,
-  FieldHandlerLink,
 } from './field-definitions';
+export type { MenuItem, MenuItemMap } from './utils';

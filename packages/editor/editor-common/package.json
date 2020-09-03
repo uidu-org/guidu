@@ -2,23 +2,40 @@
   "name": "@uidu/editor-common",
   "version": "0.3.6",
   "description": "A package that contains common classes and components for editor and renderer",
+  "main": "dist/editor-common.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-common",
   "license": "Apache-2.0",
   "author": "uidu",
   "sideEffects": false,
-  "module": "index.js",
+  "module": "dist/editor-common.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@atlaskit/icon": "^21.1.2",
+    "@atlaskit/profilecard": "^13.0.4",
+    "@babel/runtime": "^7.11.2",
     "@uidu/adf-schema": "^0.2.5",
     "@uidu/analytics": "^0.3.2",
     "@uidu/analytics-namespaced-context": "^0.2.2",
     "@uidu/emoji": "^0.2.2",
     "@uidu/mentions": "^0.1.23",
     "@uidu/theme": "^0.4.3",
+    "classnames": "^2.2.6",
     "css-color-names": "^1.0.1",
-    "raf-schd": "^4.0.0",
+    "date-fns": "^2.16.1",
+    "raf-schd": "^4.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-intl": "^5.8.0",
+    "react-loadable": "^5.5.0",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },
-  "uidu:src": "index.ts"
+  "preconstruct": {
+    "source": "src/index.ts",
+    "entrypoints": [
+      ".",
+      "provider-factory"
+    ]
+  },
+  "uidu:src": "src/index.ts"
 }

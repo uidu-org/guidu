@@ -33,7 +33,7 @@ import {
   TextColorShowPaletteToggleAttr,
 } from '../../../analytics/types/experimental-events';
 import * as commands from '../../commands/change-color';
-import { TextColorPluginState } from '../../pm-plugins/main';
+import type { TextColorPluginState } from '../../pm-plugins/main';
 import { EditorTextColorIcon } from './icon';
 import {
   disabledRainbow,

@@ -4,10 +4,10 @@ export { default as analyticsPlugin } from './analytics';
 export { default as annotationPlugin } from './annotation';
 export { default as basePlugin } from './base';
 export {
-  BlockTypeState,
   default as blockTypePlugin,
   pluginKey as blockPluginStateKey,
 } from './block-type';
+export type { BlockTypeState } from './block-type';
 // export { default as cardPlugin } from './card';
 export { default as clearMarksOnChangeToEmptyDocumentPlugin } from './clear-marks-on-change-to-empty-document';
 export { default as contextPanelPlugin } from './context-panel';

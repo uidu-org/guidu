@@ -21,7 +21,7 @@
     "@uidu/stepper": "^0.2.5",
     "moment": "^2.27.0",
     "react": "^16.13.1",
-    "react-intl": "^5.2.1",
+    "react-intl": "^5.8.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

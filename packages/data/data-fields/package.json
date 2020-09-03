@@ -24,7 +24,7 @@
     "@uidu/select": "^0.5.3",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
-    "react-intl": "^5.2.1",
+    "react-intl": "^5.8.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

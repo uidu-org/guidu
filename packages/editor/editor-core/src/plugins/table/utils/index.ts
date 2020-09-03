@@ -56,8 +56,8 @@ export {
   getRowHeights,
   getRowsParams,
   isRowDeleteButtonVisible,
-  RowParams,
 } from './row-controls';
+export type { RowParams } from './row-controls';
 export {
   getSelectedColumnIndexes,
   getSelectedRowIndexes,
