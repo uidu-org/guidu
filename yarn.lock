@@ -16434,7 +16434,7 @@ meow@^7.0.0, meow@^7.1.0:
     type-fest "^0.13.1"
     yargs-parser "^18.1.3"
 
-"meow@github:sindresorhus/meow#43401c3":
+meow@sindresorhus/meow#43401c3:
   version "3.6.0"
   resolved "https://codeload.github.com/sindresorhus/meow/tar.gz/43401c39ee442db308288f50d6f213cd0e6e602c"
   dependencies:
