@@ -17,7 +17,6 @@
     "build:adf-schema:checkuptodate": "      cd packages/editor/adf-schema && yarn run generate:json-schema && git diff --exit-code",
     "build:adf-schema:json-schema": "        cd packages/editor/adf-schema && yarn run build:json-schema && echo 'Done.'",
     "build:babel": "                         NODE_ENV=production BABEL_ENV=production:esm bolt workspaces exec --parallel --only-fs \"$(node ./build/ci-scripts/get.glob.packages.for.tools.js babel)\" -- babel --root-mode upward src -d ./",
-    "build:bundle-analysis": "               node ./build/ci-scripts/run.bundle.analysis",
     "build:editor-mobile-bridge": "          cd packages/editor/editor-mobile-bridge && yarn build:minimize",
     "build:multi-entry-point-tsconfig": "    node ./build/multi-entry-tools/typescript-paths-tsconfig-builder.js > tsconfig.entry-points.json",
     "build:pkg": "                           bolt workspaces exec --only-fs 'packages/**' -- copy-pkg package.json dist/package.json --only name,version,sideEffects",
@@ -495,7 +494,6 @@
     "workspaces": [
       "packages/*/*",
       "themes/*",
-      "apps/*",
       "build/*",
       "website"
     ]

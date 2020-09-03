@@ -423,46 +423,6 @@
         "../../core/tooltip/src/types",
         "./packages/core/tooltip/src/types"
       ],
-      "@uidu/dashboard-controls": [
-        "../../dashboards/dashboard-controls/src/",
-        "./packages/dashboards/dashboard-controls/src/"
-      ],
-      "@uidu/dashboard-controls/types": [
-        "../../dashboards/dashboard-controls/src/types",
-        "./packages/dashboards/dashboard-controls/src/types"
-      ],
-      "@uidu/dashboard-manager": [
-        "../../dashboards/dashboard-manager/src/",
-        "./packages/dashboards/dashboard-manager/src/"
-      ],
-      "@uidu/dashboard-manager/types": [
-        "../../dashboards/dashboard-manager/src/types",
-        "./packages/dashboards/dashboard-manager/src/types"
-      ],
-      "@uidu/dashlet-controls": [
-        "../../dashboards/dashlet-controls/src/",
-        "./packages/dashboards/dashlet-controls/src/"
-      ],
-      "@uidu/dashlet-controls/types": [
-        "../../dashboards/dashlet-controls/src/types",
-        "./packages/dashboards/dashlet-controls/src/types"
-      ],
-      "@uidu/dashlets": [
-        "../../dashboards/dashlets/src/",
-        "./packages/dashboards/dashlets/src/"
-      ],
-      "@uidu/dashlets/types": [
-        "../../dashboards/dashlets/src/types",
-        "./packages/dashboards/dashlets/src/types"
-      ],
-      "@uidu/dashlets-form": [
-        "../../dashboards/dashlets-form/src/",
-        "./packages/dashboards/dashlets-form/src/"
-      ],
-      "@uidu/dashlets-form/types": [
-        "../../dashboards/dashlets-form/src/types",
-        "./packages/dashboards/dashlets-form/src/types"
-      ],
       "@uidu/board": [
         "../../data/board/src/",
         "./packages/data/board/src/"
@@ -474,6 +434,46 @@
       "@uidu/calendar": [
         "../../data/calendar/src/",
         "./packages/data/calendar/src/"
+      ],
+      "@uidu/dashboard-controls": [
+        "../../data/dashboard-controls/src/",
+        "./packages/data/dashboard-controls/src/"
+      ],
+      "@uidu/dashboard-controls/types": [
+        "../../data/dashboard-controls/src/types",
+        "./packages/data/dashboard-controls/src/types"
+      ],
+      "@uidu/dashboard-manager": [
+        "../../data/dashboard-manager/src/",
+        "./packages/data/dashboard-manager/src/"
+      ],
+      "@uidu/dashboard-manager/types": [
+        "../../data/dashboard-manager/src/types",
+        "./packages/data/dashboard-manager/src/types"
+      ],
+      "@uidu/dashlet-controls": [
+        "../../data/dashlet-controls/src/",
+        "./packages/data/dashlet-controls/src/"
+      ],
+      "@uidu/dashlet-controls/types": [
+        "../../data/dashlet-controls/src/types",
+        "./packages/data/dashlet-controls/src/types"
+      ],
+      "@uidu/dashlets": [
+        "../../data/dashlets/src/",
+        "./packages/data/dashlets/src/"
+      ],
+      "@uidu/dashlets/types": [
+        "../../data/dashlets/src/types",
+        "./packages/data/dashlets/src/types"
+      ],
+      "@uidu/dashlets-form": [
+        "../../data/dashlets-form/src/",
+        "./packages/data/dashlets-form/src/"
+      ],
+      "@uidu/dashlets-form/types": [
+        "../../data/dashlets-form/src/types",
+        "./packages/data/dashlets-form/src/types"
       ],
       "@uidu/data-controls": [
         "../../data/data-controls/src/",
@@ -766,6 +766,10 @@
       "@uidu/mentions/types": [
         "../../elements/mentions/src/types",
         "./packages/elements/mentions/src/types"
+      ],
+      "@uidu/reactions": [
+        "../../elements/reactions/src/",
+        "./packages/elements/reactions/src/"
       ],
       "@uidu/status/element": [
         "../../elements/status/src/element",
