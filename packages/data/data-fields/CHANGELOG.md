@@ -1,5 +1,20 @@
 # @uidu/data-fields
 
+## 0.1.41
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/select@0.5.4
+  - @uidu/field-color-picker@0.2.9
+  - @uidu/field-date@0.2.12
+  - @uidu/field-downshift@0.4.4
+  - @uidu/field-number@0.3.4
+  - @uidu/field-text@0.3.4
+  - @uidu/field-toggle@0.3.4
+  - @uidu/form@0.3.4
+
 ## 0.1.40
 
 ### Patch Changes

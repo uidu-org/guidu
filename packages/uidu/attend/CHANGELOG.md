@@ -1,5 +1,22 @@
 # @uidu/attend
 
+## 0.3.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/payments@0.2.20
+  - @uidu/shell@1.0.7
+  - @uidu/contact@0.1.21
+  - @uidu/widgets@0.3.5
+  - @uidu/spinner@0.3.4
+  - @uidu/field-counter@0.2.9
+  - @uidu/field-text@0.3.4
+  - @uidu/field-textarea@0.2.8
+  - @uidu/form@0.3.4
+  - @uidu/stepper@0.2.6
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/multi-entry-tools
 
+## 0.0.17
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.0.16
 
 ### Patch Changes

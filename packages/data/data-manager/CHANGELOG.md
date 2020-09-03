@@ -1,5 +1,21 @@
 # @uidu/data-manager
 
+## 0.3.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/data-controls@0.4.5
+  - @uidu/data-views@0.3.4
+  - @uidu/table@0.1.118
+  - @uidu/shell@1.0.7
+  - @uidu/spinner@0.3.4
+  - @uidu/board@0.2.23
+  - @uidu/calendar@0.1.32
+  - @uidu/gallery@0.1.47
+  - @uidu/list@0.1.29
+
 ## 0.3.2
 
 ### Patch Changes

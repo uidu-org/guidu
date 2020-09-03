@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.3.9
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/dropdown-menu@0.3.4
+  - @uidu/avatar@0.5.4
+  - @uidu/avatar-group@2.4.4
+  - @uidu/field-date-range@0.2.13
+  - @uidu/form@0.3.4
+
 ## 0.3.8
 
 ### Patch Changes

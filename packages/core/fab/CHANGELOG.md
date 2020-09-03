@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.3.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.3.4
 
 ### Patch Changes

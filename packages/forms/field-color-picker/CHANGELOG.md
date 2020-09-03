@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.2.9
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/field-base@0.3.4
+  - @uidu/inline-dialog@0.3.4
+
 ## 0.2.8
 
 ### Patch Changes

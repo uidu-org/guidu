@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.2.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/theme@0.4.4
+  - @uidu/adf-schema@0.2.6
+  - @uidu/adf-utils@0.5.3
+  - @uidu/editor-common@0.3.7
+  - @uidu/editor-json-transformer@0.2.4
+  - @uidu/mentions@0.1.24
+  - @uidu/status@0.2.4
+  - @uidu/task-decision@0.2.4
+  - @uidu/code@0.3.4
+  - @uidu/tooltip@0.3.4
+  - @uidu/analytics-listeners@0.2.3
+  - @uidu/analytics-namespaced-context@0.2.3
+  - @uidu/media-card@0.3.4
+  - @uidu/media-filmstrip@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes

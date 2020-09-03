@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.3.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/shell@1.0.7
+  - @uidu/avatar@0.5.4
+  - @uidu/slider@1.4.4
+  - @uidu/spinner@0.3.4
+  - @uidu/checkbox@0.2.8
+  - @uidu/field-password@0.3.5
+  - @uidu/field-phone@0.1.7
+  - @uidu/field-text@0.3.4
+  - @uidu/form@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.2.7
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/select@0.5.4
+  - @uidu/checkbox@0.2.8
+  - @uidu/field-number@0.3.4
+  - @uidu/field-text@0.3.4
+  - @uidu/field-textarea@0.2.8
+
 ## 0.2.6
 
 ### Patch Changes

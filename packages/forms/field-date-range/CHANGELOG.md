@@ -1,5 +1,15 @@
 # @uidu/field-date-range
 
+## 0.2.13
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/field-base@0.3.4
+  - @uidu/field-date@0.2.12
+
 ## 0.2.12
 
 ### Patch Changes

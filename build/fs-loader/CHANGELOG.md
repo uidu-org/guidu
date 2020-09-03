@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.36
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.1.35
 
 ### Patch Changes

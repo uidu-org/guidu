@@ -1,5 +1,13 @@
 # @uidu/build-releases
 
+## 3.0.32
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/build-utils@0.1.24
+
 ## 3.0.31
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.4.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/dropdown-menu@0.3.4
+  - @uidu/theme@0.4.4
+  - @uidu/shell@1.0.7
+  - @uidu/avatar@0.5.4
+  - @uidu/inline-dialog@0.3.4
+  - @uidu/tooltip@0.3.4
+
 ## 0.4.2
 
 ### Patch Changes

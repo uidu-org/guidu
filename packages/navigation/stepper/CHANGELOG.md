@@ -1,5 +1,13 @@
 # @uidu/stepper
 
+## 0.2.6
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/theme@0.4.4
+
 ## 0.2.5
 
 ### Patch Changes

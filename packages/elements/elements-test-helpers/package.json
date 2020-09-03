@@ -1,6 +1,6 @@
 {
   "name": "@uidu/elements-test-helpers",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "description": "common test helpers",
   "main": "dist/elements-test-helpers.cjs.js",
@@ -11,12 +11,12 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/build-utils": "^0.1.23",
+    "@uidu/build-utils": "^0.1.24",
     "exenv": "^1.2.2",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.3",
+    "@uidu/docs": "^0.2.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intl": "^5.8.0"

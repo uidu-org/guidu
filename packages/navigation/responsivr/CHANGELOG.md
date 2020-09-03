@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.2.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/pipelines-docker-image
 
+## 0.1.15
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+
 ## 0.1.14
 
 ### Patch Changes

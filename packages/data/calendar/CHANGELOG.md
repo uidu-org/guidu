@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.1.32
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/dropdown-menu@0.3.4
+  - @uidu/shell@1.0.7
+
 ## 0.1.31
 
 ### Patch Changes

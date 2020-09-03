@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-json-transformer",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "JSON transformer",
   "main": "dist/editor-json-transformer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-json-transformer",
@@ -10,15 +10,15 @@
   "module": "dist/editor-json-transformer.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/adf-schema": "^0.2.5",
+    "@uidu/adf-schema": "^0.2.6",
     "prosemirror-model": "^1.7.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@types/prosemirror-model": "^1.5.0",
-    "@uidu/docs": "^0.2.3",
-    "@uidu/editor-common": "^0.3.6",
-    "@uidu/editor-core": "^0.6.2",
+    "@uidu/docs": "^0.2.4",
+    "@uidu/editor-common": "^0.3.7",
+    "@uidu/editor-core": "^0.6.3",
     "prosemirror-view": "^1.9.10",
     "react": "^16.13.1",
     "styled-components": "^5.1.1"

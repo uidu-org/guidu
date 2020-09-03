@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.2.5
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/dropdown-menu@0.3.4
+  - @uidu/media-viewer@0.2.5
+  - @uidu/avatar@0.5.4
+  - @uidu/drawer@0.4.5
+  - @uidu/tooltip@0.3.4
+  - @uidu/media-card@0.3.4
+  - @uidu/media-core@0.3.3
+  - @uidu/message-form@0.2.5
+  - @uidu/message-renderer@0.2.5
+
 ## 0.2.4
 
 ### Patch Changes

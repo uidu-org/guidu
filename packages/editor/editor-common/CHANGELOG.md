@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 0.3.7
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/theme@0.4.4
+  - @uidu/adf-schema@0.2.6
+  - @uidu/emoji@0.2.3
+  - @uidu/mentions@0.1.24
+  - @uidu/analytics-namespaced-context@0.2.3
+
 ## 0.3.6
 
 ### Patch Changes

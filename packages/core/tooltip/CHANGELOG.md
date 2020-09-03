@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.3.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/theme@0.4.4
+  - @uidu/popper@0.3.4
+  - @uidu/portal@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

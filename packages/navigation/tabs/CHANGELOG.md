@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.1.4
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/docs@0.2.4
+  - @uidu/analytics@0.3.3
+  - @uidu/theme@0.4.4
+
 ## 0.1.3
 
 ### Patch Changes

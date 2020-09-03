@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.29
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/table@0.1.118
+
 ## 0.1.28
 
 ### Patch Changes

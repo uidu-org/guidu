@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.2.16
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/field-base@0.3.4
+  - @uidu/spinner@0.3.4
+
 ## 0.2.15
 
 ### Patch Changes

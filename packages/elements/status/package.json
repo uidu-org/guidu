@@ -1,6 +1,6 @@
 {
   "name": "@uidu/status",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Fabric Status React Components",
   "main": "dist/status.cjs.js",
   "keywords": [
@@ -23,17 +23,17 @@
   },
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
-    "@uidu/analytics": "^0.3.2",
-    "@uidu/analytics-gas-types": "^0.1.13",
-    "@uidu/field-text": "^0.3.3",
-    "@uidu/lozenge": "^0.3.3",
-    "@uidu/theme": "^0.4.3",
+    "@uidu/analytics": "^0.3.3",
+    "@uidu/analytics-gas-types": "^0.1.14",
+    "@uidu/field-text": "^0.3.4",
+    "@uidu/lozenge": "^0.3.4",
+    "@uidu/theme": "^0.4.4",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.3",
-    "@uidu/elements-test-helpers": "^0.2.2",
+    "@uidu/docs": "^0.2.4",
+    "@uidu/elements-test-helpers": "^0.2.3",
     "react": "^16.13.1",
     "react-intl": "^5.8.0"
   },

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/popup",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "A portalled popup primitive that is tied to a trigger element.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/popup",
   "license": "Apache-2.0",
@@ -11,21 +11,21 @@
   "types": "dist/popup.cjs.d.ts",
   "dependencies": {
     "@emotion/core": "^10.0.34",
-    "@uidu/popper": "^0.3.3",
-    "@uidu/portal": "^0.3.3",
-    "@uidu/theme": "^0.4.3",
+    "@uidu/popper": "^0.3.4",
+    "@uidu/portal": "^0.3.4",
+    "@uidu/theme": "^0.4.4",
     "focus-trap": "^5.0.0",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.1.2",
-    "@uidu/button": "^0.3.4",
-    "@uidu/docs": "^0.2.3",
-    "@uidu/menu": "^0.3.4",
-    "@uidu/radio": "^0.4.9",
-    "@uidu/select": "^0.5.3",
-    "@uidu/spinner": "^0.3.3",
+    "@uidu/button": "^0.3.5",
+    "@uidu/docs": "^0.2.4",
+    "@uidu/menu": "^0.3.5",
+    "@uidu/radio": "^0.4.10",
+    "@uidu/select": "^0.5.4",
+    "@uidu/spinner": "^0.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },

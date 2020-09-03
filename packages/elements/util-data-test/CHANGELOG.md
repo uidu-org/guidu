@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.2.3
+
+### Patch Changes
+
+- 4d06c6b: Bump all packages, now built with preconstruct
+- Updated dependencies [4d06c6b]
+  - @uidu/analytics@0.3.3
+  - @uidu/emoji@0.2.3
+  - @uidu/mentions@0.1.24
+  - @uidu/task-decision@0.2.4
+
 ## 0.2.2
 
 ### Patch Changes
