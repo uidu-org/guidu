@@ -32,21 +32,21 @@ export default class Basic extends Component<any, any> {
       >
         {({ renderControls, renderDashlets }) => (
           <>
-            <ShellHeader className="border-bottom px-xl-4 px-3 d-flex align-items-center">
-              {/* {renderControls({})} */}
-              <h5 className="my-0 mr-2">Dashboard</h5>
-              <Shuffle
-                active={isEditing}
-                onClick={(e) => {
-                  this.setState({
-                    isEditing: !isEditing,
-                  });
-                }}
-              />
-              <More />
-            </ShellHeader>
-            <ShellBody>
-              <ShellMain>
+            <ShellMain>
+              <ShellHeader className="border-bottom px-xl-4 px-3 d-flex align-items-center">
+                {/* {renderControls({})} */}
+                <h5 className="my-0 mr-2">Dashboard</h5>
+                <Shuffle
+                  active={isEditing}
+                  onClick={(e) => {
+                    this.setState({
+                      isEditing: !isEditing,
+                    });
+                  }}
+                />
+                <More />
+              </ShellHeader>
+              <ShellBody>
                 <ScrollableContainer>
                   <div className="container px-0">
                     <h5 className="my-5">Dashboard</h5>
@@ -339,8 +339,8 @@ export default class Basic extends Component<any, any> {
                     </div>
                   </div>
                 </ScrollableContainer>
-              </ShellMain>
-            </ShellBody>
+              </ShellBody>
+            </ShellMain>
           </>
         )}
       </DashboardManager>

@@ -3,8 +3,6 @@ import * as React from 'react';
 import { IntlProvider } from 'react-intl';
 import dashlets from '../src';
 
-console.log(dashlets);
-
 export default md`
   ### Dashlets
   <p class="lead">Dashlets for building dashboards</p>

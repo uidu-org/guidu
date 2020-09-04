@@ -2,7 +2,6 @@ import Select from '@uidu/select';
 import React from 'react';
 
 export default function Series({ measures, config, setConfig }) {
-  console.log(config.series);
   return (
     <div className="form-group">
       <label htmlFor="">Series</label>
@@ -20,7 +19,6 @@ export default function Series({ measures, config, setConfig }) {
                 setConfig({
                   ...config,
                   series: (config.series || []).map((serie) => {
-                    console.log(serie);
                     if (serie.name === measure.title) {
                       return {
                         ...serie,

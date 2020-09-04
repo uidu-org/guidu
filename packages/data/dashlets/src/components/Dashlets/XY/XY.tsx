@@ -12,8 +12,6 @@ export default function XY({ resultSet, config }) {
   const chart = useRef(null);
   const id = useRef(uuid());
 
-  console.log(config);
-
   useLayoutEffect(() => {
     if (resultSet) {
       let x = am4core.createFromConfig(
@@ -91,8 +89,6 @@ export default function XY({ resultSet, config }) {
   }, [resultSet]);
 
   useLayoutEffect(() => {
-    console.log(chart.current);
-    console.log(config);
     if (chart.current) {
       chart.current.config = config;
     }

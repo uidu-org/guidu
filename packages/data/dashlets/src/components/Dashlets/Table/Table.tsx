@@ -34,7 +34,7 @@ export default class ListBlock extends PureComponent<any> {
         <Items
           resultSet={resultSet}
           tableColumns={resultSet.tableColumns()}
-          data={resultSet.loadResponse.data}
+          data={resultSet.loadResponse.results}
           datumRenderer={datumRenderer}
           formatter={formatter}
         />

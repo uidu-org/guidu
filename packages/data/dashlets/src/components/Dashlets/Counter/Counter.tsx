@@ -13,6 +13,9 @@ export default function Counter({
     return <Loader />;
   }
 
+  console.log(resultSet.seriesNames());
+  console.log(resultSet.seriesNames().map((s) => resultSet.totalRow()[s.key]));
+
   return (
     <div className="card-body h-100 d-flex align-items-center justify-content-center">
       <h2 className="my-0 d-flex align-items-center">

@@ -53,7 +53,6 @@ export default function Dashlet({
   //   },
   // );
 
-  console.log(dashlet.query);
   const { resultSet, isLoading, error } = useCubeQuery(dashlet.query);
 
   return (

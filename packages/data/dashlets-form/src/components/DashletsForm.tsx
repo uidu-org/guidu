@@ -76,7 +76,6 @@ export default function DashletsForm({
           updateChartType,
           validatedQuery,
         }) => {
-          console.log(measures);
           return (
             <Form
               handleSubmit={async (model) => console.log(model)}
@@ -113,7 +112,6 @@ export default function DashletsForm({
                           addMeasure(updateMeasures, option);
                           break;
                         case 'remove-value':
-                          console.log(actionMeta);
                           updateMeasures.remove({
                             name: removedValue.id,
                             shortTitle: removedValue.name,
