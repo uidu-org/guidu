@@ -27,6 +27,6 @@ deploy:
     branch: master
 
 cache:
-  timeout: 1200
+  # timeout: 1200
   yarn: true
   npm: true
