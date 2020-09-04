@@ -500,6 +500,7 @@
   },
   "preconstruct": {
     "packages": [
+      "build/docs",
       "packages/authentication/*",
       "packages/core/*",
       "packages/data/*",
