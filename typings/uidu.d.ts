@@ -20,7 +20,6 @@ declare module '@uidu/size-detector';
 declare module '@uidu/textfield';
 
 // Build
-declare module '@uidu/docs';
 declare module '@uidu/ssr';
 declare module '@uidu/build-utils';
 declare module '@uidu/build-utils/*';

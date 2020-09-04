@@ -1,0 +1,7 @@
+{
+  "main": "dist/media-core.cjs.js",
+  "module": "dist/media-core.esm.js",
+  "preconstruct": {
+    "source": "../src/types.ts"
+  }
+}

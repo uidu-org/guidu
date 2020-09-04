@@ -11,7 +11,7 @@ type Props = {
   Component: ComponentType<any>;
   language: string;
   source: string;
-  title: string;
+  title?: string;
   packageName?: string;
   overflowHidden?: boolean;
   fullWidth?: boolean;

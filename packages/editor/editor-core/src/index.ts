@@ -8,12 +8,11 @@ export type {
 export { EmojiResource } from '@uidu/emoji';
 export {
   AbstractMentionResource,
-  MentionProvider,
   MentionResource,
-  PresenceProvider,
   PresenceResource,
   TeamMentionResource,
 } from '@uidu/mentions';
+export type { MentionProvider, PresenceProvider } from '@uidu/mentions';
 export { default as EditorActions } from './actions';
 export { clearEditorContent } from './commands';
 export { ReactEditorView } from './create-editor';

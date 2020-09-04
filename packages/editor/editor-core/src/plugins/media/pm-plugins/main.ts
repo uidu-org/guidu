@@ -1,9 +1,9 @@
 import { MediaSingleLayout } from '@uidu/adf-schema';
 import type {
   ContextIdentifierProvider,
-  ErrorReporter,
   MediaProvider,
 } from '@uidu/editor-common';
+import { ErrorReporter } from '@uidu/editor-common';
 import { MediaClientConfig } from '@uidu/media-core';
 import { MediaPickerFactoryClass } from '@uidu/media-picker';
 import assert from 'assert';

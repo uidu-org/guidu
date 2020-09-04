@@ -1,4 +1,4 @@
-import { code, DevPreviewWarning, Example, md } from '@uidu/docs';
+import { code, Example, md } from '@uidu/docs';
 import React from 'react';
 
 export default md`

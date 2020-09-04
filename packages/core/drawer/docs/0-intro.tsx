@@ -39,7 +39,6 @@ export default md`
       Component={require('../examples/05-drawer-widths').default}
       source={require('!!raw-loader!../examples/05-drawer-widths').default}
       title="Drawer Width"
-      componentProps={{ test: true }}
     />
   )}
 

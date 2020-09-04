@@ -8,7 +8,6 @@
   "sideEffects": false,
   "main": "dist/tooltip.cjs.js",
   "module": "dist/tooltip.esm.js",
-  "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@uidu/analytics": "^0.3.3",

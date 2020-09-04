@@ -61,10 +61,10 @@ export {
   blockNodesVerticalMargin,
   breakoutWideScaleRatio,
   editorFontSize,
-  EditorTheme,
   gridMediumMaxWidth,
   relativeSize,
 } from './consts';
+export type { EditorTheme } from './consts';
 export { blockMarksSharedStyles } from './shared/block-marks';
 export { blockquoteSharedStyles } from './shared/blockquote';
 export { codeMarkSharedStyles } from './shared/code-mark';

@@ -24,5 +24,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "preconstruct": {
+    "source": "src/index.ts",
+    "entrypoints": [
+      ".",
+      "types"
+    ]
+  },
   "uidu:src": "src/index.ts"
 }
