@@ -492,10 +492,10 @@
     lru-fast "^0.2.2"
     react-node-resolver "^1.0.1"
 
-"@atlaskit/progress-indicator@^8.0.0":
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/@atlaskit/progress-indicator/-/progress-indicator-8.0.3.tgz#93b033938c5421632b4920d86c1fdd052ed17368"
-  integrity sha512-FcgIv+ZPXwr5EQc9jcNehXgk7A4AKX9aIMEfqHu48z4AO6zENbMTuQPOyebxzTsKva/W3iZpiUTzkqx0NnBkfw==
+"@atlaskit/progress-indicator@^9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@atlaskit/progress-indicator/-/progress-indicator-9.0.0.tgz#a240504b6d4a7b8c8a0933ed457141849ab4baf0"
+  integrity sha512-wzpGSEXK7o3BQo0WjYycFyBu+bq5PGYc8JtxyRAvtkgkJWT3G61dBNmvuvfSqYU5g7HSNVN49oGJcYnvHx+/Mw==
   dependencies:
     "@atlaskit/analytics-next" "^7.0.0"
     "@atlaskit/theme" "^10.0.0"

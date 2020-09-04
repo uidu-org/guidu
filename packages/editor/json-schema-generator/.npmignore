@@ -1,4 +1,8 @@
 src/
-example-helpers/
+examples-utils/
 examples/
-__tests-karma__/
+index.ts
+constellation/
+docs/
+build/
+tsconfig.json

@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {
-  isResolvingMentionProvider,
-  MentionProvider,
-} from '../../api/MentionResource';
+import type { MentionProvider } from '../../api/MentionResource';
+import { isResolvingMentionProvider } from '../../api/MentionResource';
 import {
   isPromise,
   MentionEventHandler,
@@ -71,14 +69,14 @@ export default class ResourcedMention extends React.PureComponent<
     const { id, mentionProvider, text } = props;
     if (mentionProvider) {
       mentionProvider
-        .then(provider => {
+        .then((provider) => {
           const newState: State = {
             isHighlighted: provider.shouldHighlightMention({ id }),
           };
           if (!text && isResolvingMentionProvider(provider)) {
             const nameDetail = provider.resolveMentionName(id);
             if (isPromise(nameDetail)) {
-              nameDetail.then(nameDetailResult => {
+              nameDetail.then((nameDetailResult) => {
                 this.setState({
                   resolvedMentionName: this.processName(nameDetailResult),
                 });
