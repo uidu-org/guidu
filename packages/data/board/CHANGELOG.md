@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.24
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.2.23
 
 ### Patch Changes

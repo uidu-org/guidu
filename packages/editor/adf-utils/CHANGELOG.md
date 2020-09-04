@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.5.4
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/adf-schema@0.2.8
+
 ## 0.5.3
 
 ### Patch Changes

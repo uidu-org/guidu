@@ -1,5 +1,11 @@
 # @uidu/page-header
 
+## 0.1.4
+
+### Patch Changes
+
+- 12ae0e1: Remove useless dependencies
+
 ## 0.1.3
 
 ### Patch Changes

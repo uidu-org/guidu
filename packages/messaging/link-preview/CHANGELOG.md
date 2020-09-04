@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.22
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.1.21
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.1.21
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/payments@0.2.21
+
 ## 0.1.20
 
 ### Patch Changes

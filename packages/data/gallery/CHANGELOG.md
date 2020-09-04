@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.48
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/data-controls@0.4.6
+  - @uidu/table@0.1.119
+
 ## 0.1.47
 
 ### Patch Changes

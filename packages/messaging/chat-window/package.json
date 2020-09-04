@@ -1,6 +1,6 @@
 {
   "name": "@uidu/chat-window",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-window",
@@ -10,9 +10,9 @@
   "module": "dist/chat-window.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/message": "^0.2.5",
-    "@uidu/message-form": "^0.2.5",
-    "@uidu/message-renderer": "^0.2.5",
+    "@uidu/message": "^0.2.6",
+    "@uidu/message-form": "^0.2.6",
+    "@uidu/message-renderer": "^0.2.6",
     "body-scroll-lock": "^3.0.1",
     "d3-collection": "^1.0.7",
     "moment": "^2.27.0",
@@ -24,7 +24,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.4",
+    "@uidu/docs": "^0.2.6",
     "@uidu/shell": "^1.0.7",
     "faker": "^5.1.0",
     "use-clipboard-copy": "^0.1.0"

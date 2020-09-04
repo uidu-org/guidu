@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.2.6
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/media-filmstrip@0.2.5
+  - @uidu/message@0.2.6
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.2.5
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/adf-schema@0.2.8
+  - @uidu/editor-common@0.3.9
+
 ## 0.2.4
 
 ### Patch Changes

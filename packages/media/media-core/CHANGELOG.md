@@ -1,5 +1,15 @@
 # @uidu/media-core
 
+## 0.3.5
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+- Updated dependencies [babbada]
+- Updated dependencies [12ae0e1]
+  - @uidu/docs@0.2.6
+
 ## 0.3.4
 
 ### Patch Changes

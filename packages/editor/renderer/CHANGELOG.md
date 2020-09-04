@@ -1,5 +1,24 @@
 # @uidu/renderer
 
+## 0.2.5
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/code@0.3.5
+  - @uidu/adf-schema@0.2.8
+  - @uidu/adf-utils@0.5.4
+  - @uidu/editor-common@0.3.9
+  - @uidu/editor-json-transformer@0.2.5
+  - @uidu/analytics-listeners@0.2.4
+  - @uidu/analytics-namespaced-context@0.2.4
+  - @uidu/mentions@0.1.26
+  - @uidu/status@0.2.5
+  - @uidu/task-decision@0.2.5
+  - @uidu/media-card@0.3.5
+  - @uidu/media-filmstrip@0.2.5
+
 ## 0.2.4
 
 ### Patch Changes

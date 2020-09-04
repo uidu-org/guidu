@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.6.5
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/dashlet-controls@0.2.10
+
 ## 0.6.4
 
 ### Patch Changes

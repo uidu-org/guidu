@@ -1,5 +1,11 @@
 # @uidu/code
 
+## 0.3.5
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.3.4
 
 ### Patch Changes

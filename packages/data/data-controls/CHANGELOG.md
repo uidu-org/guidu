@@ -1,5 +1,15 @@
 # @uidu/data-controls
 
+## 0.4.6
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/data-fields@0.1.42
+  - @uidu/data-views@0.3.5
+  - @uidu/table@0.1.119
+
 ## 0.4.5
 
 ### Patch Changes

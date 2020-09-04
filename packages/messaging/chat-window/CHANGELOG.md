@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.2.4
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/message@0.2.6
+  - @uidu/message-form@0.2.6
+  - @uidu/message-renderer@0.2.6
+
 ## 0.2.3
 
 ### Patch Changes

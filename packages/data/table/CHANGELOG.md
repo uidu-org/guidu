@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.1.119
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/data-fields@0.1.42
+
 ## 0.1.118
 
 ### Patch Changes

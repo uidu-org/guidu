@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.3.10
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.3.9
 
 ### Patch Changes

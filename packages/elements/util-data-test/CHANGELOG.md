@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.2.4
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/emoji@0.2.4
+  - @uidu/mentions@0.1.26
+  - @uidu/task-decision@0.2.5
+
 ## 0.2.3
 
 ### Patch Changes

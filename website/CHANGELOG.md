@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.2.7
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+- Updated dependencies [babbada]
+- Updated dependencies [12ae0e1]
+  - @uidu/docs@0.2.6
+  - @uidu/code@0.3.5
+  - @uidu/list@0.1.30
+  - @uidu/table@0.1.119
+
 ## 0.2.6
 
 ### Patch Changes

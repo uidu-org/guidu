@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.33
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.1.32
 
 ### Patch Changes

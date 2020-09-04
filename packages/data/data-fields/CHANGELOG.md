@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.1.42
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.1.41
 
 ### Patch Changes

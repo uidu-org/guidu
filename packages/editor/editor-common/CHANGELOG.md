@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 0.3.9
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/adf-schema@0.2.8
+  - @uidu/analytics-namespaced-context@0.2.4
+  - @uidu/emoji@0.2.4
+  - @uidu/mentions@0.1.26
+
 ## 0.3.8
 
 ### Patch Changes

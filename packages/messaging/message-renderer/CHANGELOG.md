@@ -1,5 +1,11 @@
 # @uidu/message-renderer
 
+## 0.2.6
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/mentions
 
+## 0.1.26
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/analytics-gas-types@0.1.15
+
 ## 0.1.25
 
 ### Patch Changes

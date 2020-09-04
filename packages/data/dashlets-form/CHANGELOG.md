@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 0.1.9
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/dashlets@0.6.5
+
 ## 0.1.8
 
 ### Patch Changes

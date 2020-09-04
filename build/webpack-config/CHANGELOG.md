@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.77
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.1.76
 
 ### Patch Changes

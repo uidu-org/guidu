@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashboard-controls",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashboard-controls",
@@ -23,7 +23,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.4"
+    "@uidu/docs": "^0.2.6"
   },
   "uidu:src": "src/index.ts"
 }

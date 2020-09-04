@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.1.30
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/payments@0.2.21
+
 ## 0.1.29
 
 ### Patch Changes

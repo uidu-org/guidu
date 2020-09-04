@@ -1,5 +1,13 @@
 # @uidu/emoji
 
+## 0.2.4
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/code@0.3.5
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.5
+
+### Patch Changes
+
+- 12ae0e1: Bump dependencies and sort package json
+- Updated dependencies [12ae0e1]
+  - @uidu/dashboard-controls@0.3.10
+  - @uidu/dashlets@0.6.5
+
 ## 0.7.4
 
 ### Patch Changes

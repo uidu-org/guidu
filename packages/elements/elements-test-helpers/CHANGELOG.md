@@ -1,5 +1,12 @@
 # @uidu/elements-test-helpers
 
+## 0.2.4
+
+### Patch Changes
+
+- 12ae0e1: Remove useless dependencies
+- 12ae0e1: Bump dependencies and sort package json
+
 ## 0.2.3
 
 ### Patch Changes
