@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@uidu/breadcrumbs": "^0.1.3",
-    "@uidu/build-utils": "*",
     "@uidu/button": "^0.3.5",
     "@uidu/docs": "^0.2.4",
     "@uidu/field-text": "^0.3.4",

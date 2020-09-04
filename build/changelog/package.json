@@ -1,7 +1,0 @@
-{
-  "name": "@uidu/changelog",
-  "version": "0.1.8",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/build/changelog",
-  "license": "MIT",
-  "main": "index.js"
-}

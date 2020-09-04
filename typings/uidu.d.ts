@@ -21,8 +21,6 @@ declare module '@uidu/textfield';
 
 // Build
 declare module '@uidu/ssr';
-declare module '@uidu/build-utils';
-declare module '@uidu/build-utils/*';
 declare module '@uidu/visual-regression';
 declare module '@uidu/visual-regression/*';
 declare module '@uidu/webdriver-runner';

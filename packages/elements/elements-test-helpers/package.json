@@ -11,7 +11,6 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/build-utils": "^0.1.24",
     "exenv": "^1.2.2",
     "tslib": "^2.0.1"
   },
