@@ -1,5 +1,13 @@
 # @uidu/editor-common
 
+## 0.3.8
+
+### Patch Changes
+
+- fabc5c1: Small fixes for (maybe) better build
+- Updated dependencies [fabc5c1]
+  - @uidu/mentions@0.1.25
+
 ## 0.3.7
 
 ### Patch Changes

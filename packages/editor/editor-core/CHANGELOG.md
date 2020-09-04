@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 0.6.4
+
+### Patch Changes
+
+- fabc5c1: Small fixes for (maybe) better build
+- Updated dependencies [fabc5c1]
+  - @uidu/tooltip@0.3.5
+  - @uidu/editor-common@0.3.8
+  - @uidu/media-core@0.3.4
+  - @uidu/mentions@0.1.25
+
 ## 0.6.3
 
 ### Patch Changes

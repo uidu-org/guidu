@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "A package that contains common classes and components for editor and renderer",
   "main": "dist/editor-common.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-common",
@@ -17,7 +17,7 @@
     "@uidu/analytics": "^0.3.3",
     "@uidu/analytics-namespaced-context": "^0.2.3",
     "@uidu/emoji": "^0.2.3",
-    "@uidu/mentions": "^0.1.24",
+    "@uidu/mentions": "^0.1.25",
     "@uidu/theme": "^0.4.4",
     "classnames": "^2.2.6",
     "css-color-names": "^1.0.1",

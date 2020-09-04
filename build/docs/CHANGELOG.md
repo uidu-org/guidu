@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- fabc5c1: Small fixes for (maybe) better build
+- Updated dependencies [fabc5c1]
+  - @uidu/tooltip@0.3.5
+
 ## 0.2.4
 
 ### Patch Changes

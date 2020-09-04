@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.3.4
+
+### Patch Changes
+
+- fabc5c1: Small fixes for (maybe) better build
+- Updated dependencies [fabc5c1]
+  - @uidu/docs@0.2.5
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/tooltip
 
+## 0.3.5
+
+### Patch Changes
+
+- fabc5c1: Small fixes for (maybe) better build
+
 ## 0.3.4
 
 ### Patch Changes
