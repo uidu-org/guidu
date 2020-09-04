@@ -1,9 +1,9 @@
 {
   "name": "@uidu/editor-core",
   "version": "0.6.4",
-  "main": "dist/editor-core.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-core",
   "license": "MIT",
+  "main": "dist/editor-core.cjs.js",
   "module": "dist/editor-core.esm.js",
   "types": "index.d.ts",
   "dependencies": {

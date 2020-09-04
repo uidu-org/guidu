@@ -3,11 +3,11 @@
   "version": "0.4.5",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "main": "dist/data-controls.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/data-controls.cjs.js",
   "module": "dist/data-controls.esm.js",
   "types": "index.d.ts",
   "dependencies": {

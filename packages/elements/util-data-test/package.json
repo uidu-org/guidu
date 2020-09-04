@@ -2,10 +2,10 @@
   "name": "@uidu/util-data-test",
   "version": "0.2.3",
   "description": "Shared test and story data",
-  "main": "dist/util-data-test.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/util-data-test.cjs.js",
   "module": "dist/util-data-test.esm.js",
   "types": "index.d.ts",
   "scripts": {

@@ -3,10 +3,10 @@
   "version": "0.3.5",
   "private": false,
   "description": "React component tied to devise for sign_in, sign_up and password recovery ",
-  "main": "dist/devise.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/authentication/devise",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/devise.cjs.js",
   "module": "dist/devise.esm.js",
   "types": "dist/devise.cjs.d.ts",
   "dependencies": {

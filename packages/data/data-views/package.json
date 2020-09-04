@@ -3,9 +3,9 @@
   "version": "0.3.4",
   "private": false,
   "description": "Data view declarations and custom forms",
-  "main": "dist/data-views.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
   "license": "MIT",
+  "main": "dist/data-views.cjs.js",
   "module": "dist/data-views.esm.js",
   "types": "index.d.ts",
   "dependencies": {

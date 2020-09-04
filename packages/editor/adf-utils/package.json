@@ -2,11 +2,11 @@
   "name": "@uidu/adf-utils",
   "version": "0.5.3",
   "description": "Set of utilities to traverse, modify and create ADF documents.",
-  "main": "dist/adf-utils.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/adf-utils",
   "license": "Apache-2.0",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/adf-utils.cjs.js",
   "module": "dist/adf-utils.esm.js",
   "types": "index.d.ts",
   "scripts": {

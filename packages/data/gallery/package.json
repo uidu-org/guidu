@@ -3,10 +3,10 @@
   "version": "0.1.47",
   "private": false,
   "description": "React component to show data items as gallery card",
-  "main": "dist/gallery.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/gallery",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/gallery.cjs.js",
   "module": "dist/gallery.esm.js",
   "types": "index.d.ts",
   "dependencies": {

@@ -3,10 +3,10 @@
   "version": "0.2.5",
   "private": false,
   "description": "Message renderer",
-  "main": "dist/message-renderer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-renderer",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/message-renderer.cjs.js",
   "module": "dist/message-renderer.esm.js",
   "types": "index.d.ts",
   "dependencies": {

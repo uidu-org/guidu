@@ -2,11 +2,11 @@
   "name": "@uidu/task-decision",
   "version": "0.2.4",
   "description": "Tasks and decisions react components",
-  "main": "dist/task-decision.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/task-decision",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "sideEffects": false,
+  "main": "dist/task-decision.cjs.js",
   "module": "dist/task-decision.esm.js",
   "types": "index.d.ts",
   "config": {

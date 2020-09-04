@@ -8021,7 +8021,7 @@ codepage@~1.14.0:
     commander "~2.14.1"
     exit-on-epipe "~1.0.1"
 
-codesandboxer@^1.0.1, codesandboxer@^1.0.3:
+codesandboxer@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/codesandboxer/-/codesandboxer-1.0.3.tgz#a2530a15eb9395f2c6f25e4b8064063dfb7b12f9"
   integrity sha512-LRBGbQ707AsaC8cPEMEr5K5y2EGskg7T5K4RIC30wzgr1LKeLEtB2exy4P+QwUrQKwJOgxmiq1yKPLnKzXWJ+w==
@@ -21364,7 +21364,7 @@ react-switch@^5.0.0:
   dependencies:
     prop-types "^15.6.2"
 
-react-syntax-highlighter@^13.0.0:
+react-syntax-highlighter@^13.5.3:
   version "13.5.3"
   resolved "https://registry.yarnpkg.com/react-syntax-highlighter/-/react-syntax-highlighter-13.5.3.tgz#9712850f883a3e19eb858cf93fad7bb357eea9c6"
   integrity sha512-crPaF+QGPeHNIblxxCdf2Lg936NAHKhNhuMzRL3F9ct6aYXL3NcZtCL0Rms9+qVo6Y1EQLdXGypBNSbPL/r+qg==

@@ -2,7 +2,6 @@
   "name": "@uidu/status",
   "version": "0.2.4",
   "description": "Fabric Status React Components",
-  "main": "dist/status.cjs.js",
   "keywords": [
     "date",
     "editor",
@@ -12,6 +11,7 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/status",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
+  "main": "dist/status.cjs.js",
   "module": "dist/status.esm.js",
   "types": "index.d.ts",
   "scripts": {

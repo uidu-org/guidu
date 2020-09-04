@@ -3,10 +3,10 @@
   "version": "0.1.41",
   "private": false,
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
-  "main": "dist/data-fields.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-fields",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/data-fields.cjs.js",
   "module": "dist/data-fields.esm.js",
   "types": "index.d.ts",
   "dependencies": {

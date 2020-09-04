@@ -1,0 +1,56 @@
+---
+'@uidu/docs': patch
+'@uidu/webpack-config': patch
+'@uidu/devise': patch
+'@uidu/code': patch
+'@uidu/board': patch
+'@uidu/calendar': patch
+'@uidu/dashboard-controls': patch
+'@uidu/dashboard-manager': patch
+'@uidu/dashlet-controls': patch
+'@uidu/dashlets': patch
+'@uidu/dashlets-form': patch
+'@uidu/data-controls': patch
+'@uidu/data-fields': patch
+'@uidu/data-manager': patch
+'@uidu/data-views': patch
+'@uidu/gallery': patch
+'@uidu/list': patch
+'@uidu/table': patch
+'@uidu/payment-sources': patch
+'@uidu/payments': patch
+'@uidu/stripe-accounts': patch
+'@uidu/adf-schema': patch
+'@uidu/adf-utils': patch
+'@uidu/editor-common': patch
+'@uidu/editor-core': patch
+'@uidu/editor-json-transformer': patch
+'@uidu/editor-markdown-transformer': patch
+'@uidu/renderer': patch
+'@uidu/analytics-gas-types': patch
+'@uidu/analytics-listeners': patch
+'@uidu/analytics-namespaced-context': patch
+'@uidu/analytics-viewer': patch
+'@uidu/date': patch
+'@uidu/elements-test-helpers': patch
+'@uidu/emoji': patch
+'@uidu/mentions': patch
+'@uidu/reactions': patch
+'@uidu/status': patch
+'@uidu/task-decision': patch
+'@uidu/util-data-test': patch
+'@uidu/media-card': patch
+'@uidu/media-core': patch
+'@uidu/media-filmstrip': patch
+'@uidu/media-picker': patch
+'@uidu/media-viewer': patch
+'@uidu/chat-room': patch
+'@uidu/chat-window': patch
+'@uidu/link-preview': patch
+'@uidu/message': patch
+'@uidu/message-form': patch
+'@uidu/message-renderer': patch
+'@uidu/guidu-website': patch
+---
+
+Bump dependencies and sort package json

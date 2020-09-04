@@ -2,11 +2,11 @@
   "name": "@uidu/mentions",
   "version": "0.1.25",
   "description": "A React component that renders a message",
-  "main": "dist/mentions.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/mentions",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/mentions.cjs.js",
   "module": "dist/mentions.esm.js",
   "types": "index.d.ts",
   "dependencies": {

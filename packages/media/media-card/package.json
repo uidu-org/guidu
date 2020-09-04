@@ -2,10 +2,10 @@
   "name": "@uidu/media-card",
   "version": "0.3.4",
   "description": "Includes all media card related components, CardView, CardViewSmall, Card...",
-  "main": "dist/media-card.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-card",
   "license": "ISC",
   "author": "uidu",
+  "main": "dist/media-card.cjs.js",
   "module": "dist/media-card.esm.js",
   "types": "index.d.ts",
   "dependencies": {

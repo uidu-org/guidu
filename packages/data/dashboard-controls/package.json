@@ -3,10 +3,10 @@
   "version": "0.3.9",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "main": "dist/dashboard-controls.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashboard-controls",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/dashboard-controls.cjs.js",
   "module": "dist/dashboard-controls.esm.js",
   "types": "index.d.ts",
   "dependencies": {

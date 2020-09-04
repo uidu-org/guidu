@@ -2,11 +2,11 @@
   "name": "@uidu/renderer",
   "version": "0.2.4",
   "description": "Renderer component",
-  "main": "dist/renderer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/renderer",
   "license": "MIT",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
+  "main": "dist/renderer.cjs.js",
   "module": "dist/renderer.esm.js",
   "types": "index.d.ts",
   "dependencies": {

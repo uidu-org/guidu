@@ -3,10 +3,10 @@
   "version": "0.3.3",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
-  "main": "dist/data-manager.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/data-manager.cjs.js",
   "module": "dist/data-manager.esm.js",
   "types": "index.d.ts",
   "dependencies": {

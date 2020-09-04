@@ -3,10 +3,10 @@
   "version": "0.2.23",
   "private": false,
   "description": "Trello-like Kanban boards",
-  "main": "dist/board.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/board",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/board.cjs.js",
   "module": "dist/board.esm.js",
   "types": "index.d.ts",
   "dependencies": {

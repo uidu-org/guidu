@@ -2,11 +2,11 @@
   "name": "@uidu/message",
   "version": "0.2.5",
   "description": "A React component that renders a message",
-  "main": "dist/message.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/message.cjs.js",
   "module": "dist/message.esm.js",
   "types": "dist/message.cjs.d.ts",
   "dependencies": {

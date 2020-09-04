@@ -3,10 +3,10 @@
   "version": "0.2.3",
   "private": true,
   "description": "common test helpers",
-  "main": "dist/elements-test-helpers.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/elements-test-helpers",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
+  "main": "dist/elements-test-helpers.cjs.js",
   "module": "dist/elements-test-helpers.esm.js",
   "types": "index.d.ts",
   "dependencies": {

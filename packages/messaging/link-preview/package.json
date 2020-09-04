@@ -2,10 +2,10 @@
   "name": "@uidu/link-preview",
   "version": "0.1.21",
   "description": "A link preview regex and rendering",
-  "main": "dist/link-preview.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/link-preview",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/link-preview.cjs.js",
   "module": "dist/link-preview.esm.js",
   "types": "index.d.ts",
   "dependencies": {

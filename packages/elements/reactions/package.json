@@ -2,11 +2,11 @@
   "name": "@uidu/reactions",
   "version": "0.1.14",
   "description": "A React component that renders a message",
-  "main": "dist/reactions.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/reactions",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/reactions.cjs.js",
   "module": "dist/reactions.esm.js",
   "dependencies": {
     "tslib": "^2.0.1"

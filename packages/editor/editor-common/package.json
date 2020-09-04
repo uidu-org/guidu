@@ -2,11 +2,11 @@
   "name": "@uidu/editor-common",
   "version": "0.3.8",
   "description": "A package that contains common classes and components for editor and renderer",
-  "main": "dist/editor-common.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-common",
   "license": "Apache-2.0",
   "author": "uidu",
   "sideEffects": false,
+  "main": "dist/editor-common.cjs.js",
   "module": "dist/editor-common.esm.js",
   "types": "index.d.ts",
   "dependencies": {

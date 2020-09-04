@@ -15,7 +15,7 @@
   "dependencies": {
     "@uidu/theme": "^0.4.4",
     "memoize-one": "^5.1.1",
-    "react-syntax-highlighter": "^13.0.0",
+    "react-syntax-highlighter": "^13.5.3",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

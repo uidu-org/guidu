@@ -2,10 +2,10 @@
   "name": "@uidu/analytics-viewer",
   "version": "0.2.4",
   "description": "Analytics viewer for the examples",
-  "main": "dist/analytics-viewer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
+  "main": "dist/analytics-viewer.cjs.js",
   "module": "dist/analytics-viewer.esm.js",
   "types": "index.d.ts",
   "config": {

@@ -2,7 +2,6 @@
   "name": "@uidu/analytics-gas-types",
   "version": "0.1.14",
   "description": "Shared analytics functions/components for Fabric Elements",
-  "main": "dist/analytics-gas-types.cjs.js",
   "keywords": [
     "fabric",
     "ui"
@@ -10,6 +9,7 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-gas-types",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
+  "main": "dist/analytics-gas-types.cjs.js",
   "module": "dist/analytics-gas-types.esm.js",
   "types": "index.d.ts",
   "config": {

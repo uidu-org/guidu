@@ -2,11 +2,11 @@
   "name": "@uidu/editor-json-transformer",
   "version": "0.2.4",
   "description": "JSON transformer",
-  "main": "dist/editor-json-transformer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-json-transformer",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
+  "main": "dist/editor-json-transformer.cjs.js",
   "module": "dist/editor-json-transformer.esm.js",
   "types": "index.d.ts",
   "dependencies": {

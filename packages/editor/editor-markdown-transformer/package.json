@@ -2,11 +2,11 @@
   "name": "@uidu/editor-markdown-transformer",
   "version": "0.2.4",
   "description": "Editor Markdown transformer",
-  "main": "dist/editor-markdown-transformer.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-markdown-transformer",
   "license": "MIT",
   "author": "Atlassian Pty. Ltd",
   "sideEffects": false,
+  "main": "dist/editor-markdown-transformer.cjs.js",
   "module": "dist/editor-markdown-transformer.esm.js",
   "types": "index.d.ts",
   "dependencies": {

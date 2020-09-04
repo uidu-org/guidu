@@ -2,7 +2,6 @@
   "name": "@uidu/date",
   "version": "0.2.4",
   "description": "Fabric Date React Components",
-  "main": "dist/date.cjs.js",
   "keywords": [
     "date",
     "fabric",
@@ -12,6 +11,7 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/date",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
+  "main": "dist/date.cjs.js",
   "module": "dist/date.esm.js",
   "types": "index.d.ts",
   "config": {

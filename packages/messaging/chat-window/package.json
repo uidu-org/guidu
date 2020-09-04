@@ -3,10 +3,10 @@
   "version": "0.2.3",
   "private": false,
   "description": "Downshift React component",
-  "main": "dist/chat-window.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-window",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/chat-window.cjs.js",
   "module": "dist/chat-window.esm.js",
   "types": "index.d.ts",
   "dependencies": {

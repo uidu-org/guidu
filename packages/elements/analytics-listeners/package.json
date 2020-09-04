@@ -2,10 +2,10 @@
   "name": "@uidu/analytics-listeners",
   "version": "0.2.3",
   "description": "Fabric analytics listeners to be used by the products",
-  "main": "dist/analytics-listeners.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-listeners",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
+  "main": "dist/analytics-listeners.cjs.js",
   "module": "dist/analytics-listeners.esm.js",
   "types": "index.d.ts",
   "config": {

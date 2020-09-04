@@ -3,10 +3,10 @@
   "version": "0.1.29",
   "private": false,
   "description": "React component to show data items as calendar",
-  "main": "dist/list.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/list",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/list.cjs.js",
   "module": "dist/list.esm.js",
   "types": "index.d.ts",
   "dependencies": {

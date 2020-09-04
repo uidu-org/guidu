@@ -3,10 +3,10 @@
   "version": "0.2.3",
   "private": false,
   "description": "A video-chat room",
-  "main": "dist/chat-room.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-room",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/chat-room.cjs.js",
   "module": "dist/chat-room.esm.js",
   "types": "index.d.ts",
   "dependencies": {

@@ -3,10 +3,10 @@
   "version": "0.2.5",
   "private": false,
   "description": "Message form",
-  "main": "dist/message-form.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-form",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/message-form.cjs.js",
   "module": "dist/message-form.esm.js",
   "types": "dist/message-form.d.ts",
   "dependencies": {

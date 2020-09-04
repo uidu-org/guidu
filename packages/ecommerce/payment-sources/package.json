@@ -3,10 +3,10 @@
   "version": "0.1.20",
   "private": false,
   "description": "Payment form using Stripe",
-  "main": "dist/payment-sources.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/ecommerce/payment-sources",
   "license": "MIT",
   "author": "uidu",
+  "main": "dist/payment-sources.cjs.js",
   "module": "dist/payment-sources.esm.js",
   "types": "index.d.ts",
   "dependencies": {
