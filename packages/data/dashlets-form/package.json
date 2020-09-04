@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets-form",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "main": "dist/dashlets-form.cjs.js",
@@ -14,7 +14,7 @@
     "@cubejs-client/core": "^0.20.0",
     "@cubejs-client/react": "^0.20.0",
     "@uidu/accordion": "^0.3.5",
-    "@uidu/dashlets": "^0.6.3",
+    "@uidu/dashlets": "^0.6.4",
     "@uidu/field-downshift": "^0.4.4",
     "@uidu/field-toggle": "^0.3.4",
     "@uidu/form": "^0.3.4",

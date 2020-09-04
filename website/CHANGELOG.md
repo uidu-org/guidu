@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.6
+
+### Patch Changes
+
+- 458e9cc: Fix counter results rendering
+
 ## 0.2.5
 
 ### Patch Changes

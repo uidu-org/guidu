@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.4
+
+### Patch Changes
+
+- 458e9cc: Fix counter results rendering
+
 ## 0.6.3
 
 ### Patch Changes
