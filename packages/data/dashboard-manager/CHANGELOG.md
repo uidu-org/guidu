@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.7.4
+
+### Patch Changes
+
+- 458e9cc: Fix counter results rendering
+- Updated dependencies [458e9cc]
+  - @uidu/dashlets@0.6.4
+
 ## 0.7.3
 
 ### Patch Changes

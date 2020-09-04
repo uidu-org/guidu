@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 0.1.8
+
+### Patch Changes
+
+- 458e9cc: Fix counter results rendering
+- Updated dependencies [458e9cc]
+  - @uidu/dashlets@0.6.4
+
 ## 0.1.7
 
 ### Patch Changes
