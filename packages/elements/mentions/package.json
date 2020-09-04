@@ -1,6 +1,6 @@
 {
   "name": "@uidu/mentions",
-  "version": "0.1.24",
+  "version": "0.1.25",
   "description": "A React component that renders a message",
   "main": "dist/mentions.cjs.js",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/mentions",
@@ -19,7 +19,7 @@
     "@uidu/button": "^0.3.5",
     "@uidu/lozenge": "^0.3.4",
     "@uidu/theme": "^0.4.4",
-    "@uidu/tooltip": "^0.3.4",
+    "@uidu/tooltip": "^0.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-intl": "^5.8.0",
@@ -28,7 +28,7 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.4",
+    "@uidu/docs": "^0.2.5",
     "faker": "^5.1.0"
   },
   "publishConfig": {

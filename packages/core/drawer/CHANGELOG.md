@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.4.6
+
+### Patch Changes
+
+- fabc5c1: Small fixes for (maybe) better build
+- Updated dependencies [fabc5c1]
+  - @uidu/docs@0.2.5
+
 ## 0.4.5
 
 ### Patch Changes
