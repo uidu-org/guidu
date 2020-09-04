@@ -35,5 +35,5 @@
     "access": "public"
   },
   "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
-  "uidu:src": "index.ts"
+  "uidu:src": "src/index.ts"
 }

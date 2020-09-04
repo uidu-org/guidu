@@ -1,5 +1,5 @@
 {
-  "include": ["./packages/**/*"],
+  "include": ["./packages/**/*", "./build/docs"],
   "exclude": ["./packages/**/examples", "./packages/**/examples-utils"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */

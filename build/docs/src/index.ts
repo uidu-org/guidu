@@ -12,7 +12,8 @@ const customMd = defaultMd.customize({
     //     },
     //     props.children,
     //   ),
-    list: props => React.createElement('ul', { className: '' }, props.children),
+    list: (props) =>
+      React.createElement('ul', { className: '' }, props.children),
   },
 });
 
