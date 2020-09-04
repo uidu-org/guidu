@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.7
+
+### Patch Changes
+
+- 8f18baf: Should be build properly now
+
 ## 0.2.6
 
 ### Patch Changes
