@@ -44,7 +44,7 @@
     "start:navigation": "                    dotenv yarn run website:start **/packages/navigation/**",
     "start:uidu": "                          dotenv yarn run website:start **/packages/uidu/**",
     "typecheck": "                           yarn run typecheck:typescript",
-    "typecheck:typescript": "                tsc --noEmit --project ./tsconfig.typecheck.json",
+    "typecheck:typescript": "                tsc --noEmit",
     "website:start": "                       cd website && yarn start",
     "design-system:start": "                 cd apps/design-system && yarn dev"
   },

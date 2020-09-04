@@ -1,4 +1,6 @@
 {
+  "include": ["./packages/**/*"],
+  "exclude": ["./packages/**/examples", "./packages/**/examples-utils"],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
@@ -16,7 +18,7 @@
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     // "outDir": "./",                        /* Redirect output structure to the directory. */
     // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-    "composite": true /* Enable project compilation */,
+    // "composite": true                      /* Enable project compilation */,
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
     // "removeComments": true,                /* Do not emit comments to output. */
     "noEmit": true /* Do not emit outputs. */,
