@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Select Component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/select",
   "license": "MIT",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@uidu/button": "^0.3.5",
-    "@uidu/docs": "^0.2.4",
+    "@uidu/docs": "^0.2.8",
     "@uidu/modal-dialog": "^0.3.4",
     "faker": "^5.1.0",
     "react": "^16.13.1",

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.8
+
+### Patch Changes
+
+- 35ece73: Bump dependencies, fixed webpack config for other projects
+
 ## 0.2.7
 
 ### Patch Changes

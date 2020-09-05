@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.5.5
+
+### Patch Changes
+
+- 35ece73: Bump dependencies, fixed webpack config for other projects
+
 ## 0.5.4
 
 ### Patch Changes

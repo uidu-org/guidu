@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.3.5
+
+### Patch Changes
+
+- 35ece73: Bump dependencies, fixed webpack config for other projects
+
 ## 0.3.4
 
 ### Patch Changes
