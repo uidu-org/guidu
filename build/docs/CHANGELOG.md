@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.7
+
+### Patch Changes
+
+- 5af1e80: Should properly build docs now as well
+
 ## 0.2.6
 
 ### Patch Changes
