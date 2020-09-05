@@ -103,8 +103,6 @@ const runDevServer = async ({
     websiteOptions,
   });
 
-  console.log(config);
-
   const compiler = webpack(config);
 
   //

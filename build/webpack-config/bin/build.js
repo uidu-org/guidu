@@ -23,8 +23,6 @@ async function runBuild(webpackOptions = {}, websiteOptions = {}) {
     websiteOptions,
   });
 
-  console.log(config);
-
   const compiler = webpack(config);
 
   //

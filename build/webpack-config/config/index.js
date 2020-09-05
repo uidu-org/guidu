@@ -9,11 +9,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const { createDefaultGlob } = require('./utils');
 const statsOptions = require('./statsOptions');
 
-const baseCacheDir = path.resolve(
-  __dirname,
-  '../../../node_modules/.cache/cache-loader',
-);
-
 module.exports = async function createWebpackConfig(
   {
     globs = createDefaultGlob(),
@@ -116,32 +111,17 @@ module.exports = async function createWebpackConfig(
         },
         {
           test: /\.mdx$/,
-          use: [
-            {
-              loader: require.resolve('babel-loader'),
-            },
-            {
-              loader: require.resolve('@mdx-js/loader'),
-            },
-          ],
+          use: ['babel-loader', '@mdx-js/loader'],
         },
         {
           test: /\.(js|jsx|mjs)$/,
           exclude: /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
           use: [
+            'thread-loader',
             {
-              loader: 'thread-loader',
+              loader: require.resolve('babel-loader'),
               options: {
-                name: 'babel-pool',
-              },
-            },
-            {
-              loader: 'babel-loader',
-              options: {
-                configFile: '../babel.config.js',
                 rootMode: 'upward',
-                envName: 'production:esm',
-                cacheDirectory: path.resolve(baseCacheDir, 'babel'),
               },
             },
           ],
@@ -150,19 +130,11 @@ module.exports = async function createWebpackConfig(
           test: /\.(ts|tsx)?$/,
           exclude: /node_modules/,
           use: [
-            {
-              loader: 'cache-loader',
-              options: {
-                cacheDirectory: path.resolve(baseCacheDir, 'ts'),
-              },
-            },
+            'cache-loader',
             {
               loader: require.resolve('babel-loader'),
               options: {
-                configFile: '../babel.config.js',
                 rootMode: 'upward',
-                envName: 'production:esm',
-                cacheDirectory: path.resolve(baseCacheDir, 'babel'),
               },
             },
           ],
@@ -213,10 +185,7 @@ module.exports = async function createWebpackConfig(
                 ],
               },
             },
-            {
-              loader: 'sass-loader',
-              options: {},
-            },
+            'sass-loader',
           ],
         },
         {
@@ -265,25 +234,19 @@ module.exports = async function createWebpackConfig(
             },
           },
         },
-        {
-          test: /\.less$/,
-          use: ['style-loader', 'css-loader', 'less-loader'],
-        },
       ],
     },
     resolve: {
       mainFields: ['uidu:src', 'module', 'browser', 'main'],
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
       alias: {
         'react-native$': 'react-native-web',
       },
       ...(webpackOptions ? webpackOptions.resolve : {}),
     },
-    resolveLoader: {
-      modules: [
-        path.join(__dirname, '..', '..'), // resolve custom loaders from `build/` dir
-        'node_modules',
-      ],
+    node: {
+      fs: 'empty',
+      module: 'empty',
     },
     plugins: getPlugins({
       websiteDir,

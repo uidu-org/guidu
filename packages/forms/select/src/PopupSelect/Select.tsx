@@ -1,5 +1,5 @@
 import { colors } from '@uidu/theme';
-import focusTrap from 'focus-trap';
+import { focusTrap } from 'focus-trap';
 import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
 import NodeResolver from 'react-node-resolver';
@@ -50,7 +50,7 @@ type State = {
 // ==============================
 
 const defaultStyles = {
-  groupHeading: provided => ({ ...provided, color: colors.N80 }),
+  groupHeading: (provided) => ({ ...provided, color: colors.N80 }),
 };
 
 const defaultPopperProps: any = {
@@ -58,7 +58,7 @@ const defaultPopperProps: any = {
   placement: 'bottom-start',
 };
 
-const isEmpty = obj => Object.keys(obj).length === 0;
+const isEmpty = (obj) => Object.keys(obj).length === 0;
 
 export default class PopupSelect extends PureComponent<Props, State> {
   focusTrap: Object;
