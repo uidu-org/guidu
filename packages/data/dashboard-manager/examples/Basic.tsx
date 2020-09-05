@@ -9,7 +9,7 @@ import {
 import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';
 import { UserCheck } from 'react-feather';
-import DashboardManager from '../';
+import DashboardManager from '../src';
 
 export default class Basic extends Component<any, any> {
   constructor(props) {

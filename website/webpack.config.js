@@ -1,4 +1,3 @@
-const fs = require('fs');
 const runDevServer = require('@uidu/webpack-config/bin/dev.js');
 
 runDevServer({
@@ -13,7 +12,9 @@ runDevServer({
   },
   webpackOptions: {
     resolve: {
-      mainFields: ['uidu:src', 'module', 'atlaskit:src', 'browser', 'main'],
+      alias: {
+        'react-native$': 'react-native-web',
+      },
     },
   },
 }).catch((err) => {

@@ -95,7 +95,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@babel/register": "^7.0.0",
-    "@changesets/cli": "2.7.2",
+    "@changesets/cli": "^2.10.2",
     "@cubejs-client/core": "^0.20.0",
     "@cubejs-client/react": "^0.20.0",
     "@emotion/core": "^10.0.34",

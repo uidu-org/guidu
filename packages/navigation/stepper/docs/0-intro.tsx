@@ -26,7 +26,7 @@ export default md`
 
   ${(
     <Props
-      heading="Step Props"
+      heading="Props"
       props={require('!!extract-react-types-loader!../src/components/Step')}
     />
   )}

@@ -10,11 +10,11 @@ export default md`
   Button also exports a chat-window-group component to make it easy to display
   multiple chat-windows together.
 
-  ${code`import Stepper, { Step } from '@uidu/stepper';`}
+  ${code`import DashboardManager from '@uidu/dashboard-manager';`}
 
   ${(
     <Example
-      packageName="@uidu/stepper"
+      packageName="@uidu/dashboard-manager"
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic').default}
@@ -23,7 +23,7 @@ export default md`
 
   ${(
     <Props
-      heading="Step Props"
+      heading="Props"
       props={require('!!extract-react-types-loader!../src/components/DashboardManager')}
     />
   )}
