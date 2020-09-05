@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.79
+
+### Patch Changes
+
+- 504595a: Edit webpack config, less opinionated
+
 ## 0.1.78
 
 ### Patch Changes
