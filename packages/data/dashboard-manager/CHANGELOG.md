@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.7.6
+
+### Patch Changes
+
+- e468c4a: Remove some dependencies
+
 ## 0.7.5
 
 ### Patch Changes

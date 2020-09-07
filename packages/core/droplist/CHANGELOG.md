@@ -1,5 +1,11 @@
 # @uidu/droplist
 
+## 0.3.5
+
+### Patch Changes
+
+- e468c4a: Remove some dependencies
+
 ## 0.3.4
 
 ### Patch Changes

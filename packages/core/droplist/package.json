@@ -1,6 +1,6 @@
 {
   "name": "@uidu/droplist",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Droplist component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/droplist",
   "license": "ISC",
