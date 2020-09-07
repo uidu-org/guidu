@@ -265,15 +265,11 @@ module.exports = async function createWebpackConfig(
             },
           },
         },
-        {
-          test: /\.less$/,
-          use: ['style-loader', 'css-loader', 'less-loader'],
-        },
       ],
     },
     resolve: {
       mainFields: ['uidu:src', 'module', 'main'],
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.less'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
       alias: {
         'react-native$': 'react-native-web',
       },

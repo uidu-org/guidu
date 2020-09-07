@@ -34,7 +34,6 @@
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-intl": "^5.8.0",
-    "react-powerplug": "^1.0.0",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },

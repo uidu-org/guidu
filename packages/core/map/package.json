@@ -12,7 +12,6 @@
   "dependencies": {
     "@uidu/theme": "^0.4.4",
     "google-map-react": "^2.0.4",
-    "recompose": "^0.30.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

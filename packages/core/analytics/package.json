@@ -20,8 +20,7 @@
     "@uidu/form": "^0.3.4",
     "lodash.isequal": "^4.5.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "redux": "^4.0.1"
+    "react-dom": "^16.13.1"
   },
   "peerDependencies": {
     "react": "^16.8.3"
