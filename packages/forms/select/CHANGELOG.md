@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.5.6
+
+### Patch Changes
+
+- e468c4a: Remove some dependencies
+
 ## 0.5.5
 
 ### Patch Changes

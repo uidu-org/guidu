@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.2.6
+
+### Patch Changes
+
+- e468c4a: Remove some dependencies
+
 ## 0.2.5
 
 ### Patch Changes

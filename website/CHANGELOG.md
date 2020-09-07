@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.8
+
+### Patch Changes
+
+- e468c4a: Remove some dependencies
+- Updated dependencies [e468c4a]
+  - @uidu/select@0.5.6
+
 ## 0.2.7
 
 ### Patch Changes

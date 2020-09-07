@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.80
+
+### Patch Changes
+
+- e468c4a: Remove some dependencies
+
 ## 0.1.79
 
 ### Patch Changes
