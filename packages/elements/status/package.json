@@ -2,12 +2,6 @@
   "name": "@uidu/status",
   "version": "0.2.5",
   "description": "Fabric Status React Components",
-  "keywords": [
-    "date",
-    "editor",
-    "fabric",
-    "ui"
-  ],
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/status",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",

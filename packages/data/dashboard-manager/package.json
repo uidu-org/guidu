@@ -12,7 +12,7 @@
   "dependencies": {
     "@cubejs-client/core": "^0.20.0",
     "@cubejs-client/react": "^0.20.0",
-    "@types/react-grid-layout": "^0.17.0",
+    "@types/react-grid-layout": "^1.1.0",
     "@uidu/dashboard-controls": "^0.3.10",
     "@uidu/dashlets": "^0.6.5",
     "d3-collection": "^1.0.7",

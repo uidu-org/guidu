@@ -1,5 +1,5 @@
 import { colors } from '@uidu/theme';
-import { focusTrap } from 'focus-trap';
+import { createFocusTrap } from 'focus-trap';
 import React, { PureComponent } from 'react';
 import { createPortal } from 'react-dom';
 import NodeResolver from 'react-node-resolver';
@@ -175,7 +175,7 @@ export default class PopupSelect extends PureComponent<Props, State> {
       fallbackFocus: this.menuRef,
       returnFocusOnDeactivate: true,
     };
-    this.focusTrap = focusTrap(this.menuRef, trapConfig);
+    this.focusTrap = createFocusTrap(this.menuRef, trapConfig);
 
     // allow time for the HTMLElement to render
     setTimeout(() => (this.focusTrap as any).activate(), 1);

@@ -29,7 +29,6 @@
     "extract-react-types-loader": "^0.3.1",
     "file-loader": "^6.0.0",
     "gray-matter-loader": "^0.0.10",
-    "happypack": "^5.0.1",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.2",
     "less-loader": "^7.0.0",
