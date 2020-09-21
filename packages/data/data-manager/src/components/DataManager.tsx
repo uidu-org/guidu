@@ -46,8 +46,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   static whyDidYouRender = true;
 
   static defaultProps = {
-    onGridReady: _params => {},
-    onFirstDataRendered: _params => {},
+    onGridReady: (_params) => {},
+    onFirstDataRendered: (_params) => {},
   };
 
   constructor(props) {
@@ -74,7 +74,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   private gridApi = null;
   private gridColumnApi = null;
 
-  onGridReady = params => {
+  onGridReady = (params) => {
     const { api, columnApi } = params;
     const { onGridReady, currentView } = this.props;
     this.gridApi = api;
@@ -90,7 +90,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     });
   };
 
-  onFirstDataRendered = params => {
+  onFirstDataRendered = (params) => {
     const { onFirstDataRendered } = this.props;
     this.setState({ savingEnabled: true }, () => onFirstDataRendered(params));
   };
@@ -107,7 +107,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
   //   }
   // }
 
-  updateView = props => {
+  updateView = (props) => {
     const { updateView, currentView } = this.props;
     const { savingEnabled } = this.state;
     if (savingEnabled) {
@@ -147,8 +147,8 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     const fields = this.gridColumnApi.getAllColumns();
     this.updateView({
       fields: fields
-        .filter(c => c.colId !== 'addField' && c.visible)
-        .map(c => c.colId),
+        .filter((c) => c.colId !== 'addField' && c.visible)
+        .map((c) => c.colId),
     });
     // this.setState(
     //   prevState => ({
@@ -176,7 +176,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * @memberof DataManager
    * OnSortChanged is called everytime a sort is added or removed
    */
-  onSortChanged = ({ api }) => {
+  onSortChanged = ({ api, columnApi }) => {
     const sorters = api.getSortModel();
     this.updateView({ sorters });
     // this.setState(
@@ -223,7 +223,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnColumnVisible reacts to ag-grid callback, and updates columns state
    */
   onColumnRowGroupChanged = ({ columns }) => {
-    const groupers = columns.map(c => ({
+    const groupers = columns.map((c) => ({
       colId: c.colId,
     }));
     this.updateView({ groupers });
@@ -245,7 +245,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * @memberof DataManager
    * OnColumnMoved reacts to ag-grid callback, and updates columns state
    */
-  onDragStopped = params => {
+  onDragStopped = (params) => {
     this.updateView({});
     // this.updateView();
     // const columns = reorder(this.state.columns, oldIndex, newIndex);
@@ -259,7 +259,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * Column Resize: UI
    * @memberof DataManager
    */
-  onColumnResized = params => {
+  onColumnResized = (params) => {
     // console.log(params);
     // this.setState({
     //   isAutoSaving: 'in-progress',
@@ -274,7 +274,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * Row Group Opened/Clodes: UI
    * @memberof DataManager
    */
-  onRowGroupOpened = params => {
+  onRowGroupOpened = (params) => {
     // console.log(params);
     // this.setState({
     //   isAutoSaving: 'in-progress',
@@ -292,18 +292,18 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     // });
   };
 
-  setSearch = e => {
+  setSearch = (e) => {
     this.gridApi.setQuickFilter(e.target.value);
   };
 
-  setRowHeight = rowHeight => {
+  setRowHeight = (rowHeight) => {
     const { currentView } = this.props;
     this.updateView({
       preferences: { ...currentView.preferences, rowHeight },
     }).then(() => this.gridApi.resetRowHeights());
   };
 
-  setColumnCount = columnCount => {
+  setColumnCount = (columnCount) => {
     const { currentView } = this.props;
     this.updateView({
       preferences: { ...currentView.preferences, columnCount },
@@ -325,7 +325,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
         return (
           <>
             <p>List of events</p>
-            {data.map(datum => (
+            {data.map((datum) => (
               <p>
                 {datum.data
                   ? `${datum.data.createdAt} - ${datum.data.id}`
@@ -379,7 +379,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     const columns = this.gridColumnApi
       ? this.gridColumnApi
           .getAllGridColumns()
-          .map(c => ({ ...c.colDef, hide: !c.visible }))
+          .map((c) => ({ ...c.colDef, hide: !c.visible }))
       : [];
     const data = this.gridApi ? this.gridApi.getModel().rowsToDisplay : [];
     const {
@@ -441,7 +441,7 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
     const columns = this.gridColumnApi
       ? this.gridColumnApi
           .getAllGridColumns()
-          .map(c => ({ ...c.colDef, hide: !c.visible }))
+          .map((c) => ({ ...c.colDef, hide: !c.visible }))
       : [];
     const {
       rowHeight,

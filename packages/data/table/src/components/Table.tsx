@@ -62,9 +62,9 @@ const Table = ({
 
         //   return +valueA.momentObj - +valueB.momentObj;
         // }}
-        columnDefs={columnDefs.map(columnDef => ({
+        columnDefs={columnDefs.map((columnDef) => ({
           ...columnDef,
-          cellStyle: params => {
+          cellStyle: (params) => {
             return {
               ...columnDef.cellStyle,
               // account for borders
@@ -77,21 +77,22 @@ const Table = ({
           },
           cellClassRules: {
             ...columnDef.cellClassRules,
-            'ag-cell-sorter-active': params => {
-              return params.api
-                .getSortModel()
-                .map(s => s.colId)
+            'ag-cell-sorter-active': (params) => {
+              return params.columnApi
+                .getColumnState()
+                .filter((s) => !!s.sort)
+                .map((s) => s.colId)
                 .includes(params.colDef.colId);
             },
-            'ag-cell-filter-active': params => {
+            'ag-cell-filter-active': (params) => {
               return Object.keys(params.api.getFilterModel()).includes(
                 params.colDef.colId,
               );
             },
-            'ag-cell-grouper-active': params => {
+            'ag-cell-grouper-active': (params) => {
               return params.columnApi
                 .getRowGroupColumns()
-                .map(g => g.colId)
+                .map((g) => g.colId)
                 .includes(params.colDef.colId);
             },
           },
@@ -101,7 +102,7 @@ const Table = ({
         enableCellChangeFlash
         suppressContextMenu
         getMainMenuItems={getMainMenuItems}
-        getRowHeight={params => {
+        getRowHeight={(params) => {
           if (params.node.group) {
             return rowHeight * groupRowHeightIncrementRatio;
           } else {
