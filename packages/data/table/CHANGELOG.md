@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.1.120
+
+### Patch Changes
+
+- 16319c1: Bump dependencies
+
 ## 0.1.119
 
 ### Patch Changes
