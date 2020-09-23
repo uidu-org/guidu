@@ -14,19 +14,23 @@ export default class SorterForm extends PureComponent<SorterProps> {
 
   private form = React.createRef();
 
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     this.sortBy(model.sorters || []);
   };
 
-  sortBy = sorters => {
-    const { gridApi } = this.props;
-    gridApi.setSortModel(sorters || []);
+  sortBy = (sorters) => {
+    const { gridColumnApi } = this.props;
+    gridColumnApi.applyColumnState({
+      state: sorters,
+    });
   };
 
   render() {
     const { sorters, columnDefs, gridApi } = this.props;
 
-    const sortableColumnDefs = columnDefs.filter(f => !f.hide && !!f.sortable);
+    const sortableColumnDefs = columnDefs.filter(
+      (f) => !f.hide && !!f.sortable,
+    );
 
     return (
       <Form
@@ -53,10 +57,10 @@ export default class SorterForm extends PureComponent<SorterProps> {
                     <button
                       type="button"
                       className="btn btn-sm p-0 ml-auto d-flex align-items-center"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.preventDefault();
                         gridApi.setSortModel(
-                          sorters.filter(s => s.colId !== sorter.colId),
+                          sorters.filter((s) => s.colId !== sorter.colId),
                         );
                       }}
                     >
@@ -70,7 +74,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                         isClearable={false}
                         name={`sorters[${index}][colId]`}
                         value={sorter.colId}
-                        options={sortableColumnDefs.map(columnDef => ({
+                        options={sortableColumnDefs.map((columnDef) => ({
                           id: columnDef.colId,
                           name: columnDef.headerName,
                           ...(columnDef.headerComponentParams
@@ -131,7 +135,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                 />
               )
             }
-            onClick={columnDef => {
+            onClick={(columnDef) => {
               this.sortBy([
                 ...sorters,
                 {
@@ -142,7 +146,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
             }}
             isDefaultOpen={sorters.length === 0}
             columnDefs={sortableColumnDefs.filter(
-              f => sorters.map(s => s.colId).indexOf(f.colId) < 0,
+              (f) => sorters.map((s) => s.colId).indexOf(f.colId) < 0,
             )}
           />
         </div>

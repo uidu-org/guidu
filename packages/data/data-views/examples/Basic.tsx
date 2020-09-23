@@ -2,8 +2,8 @@ import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
 import { IntlProvider } from 'react-intl';
-import dataViews from '../src';
 import { formDefaultProps } from '../../../forms/form/examples-utils';
+import dataViews from '../src';
 
 export default class Basic extends PureComponent<any, any> {
   constructor(props) {

@@ -95,6 +95,7 @@ export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
   return columns.map(({ primary, dataField, dataFieldParams, ...column }) => {
     return {
       fieldGroup,
+      accessor: column.colId,
       ...(dataField
         ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
         : {}),
@@ -151,14 +152,14 @@ export const valueRenderer = (data, column) => {
   return valueFormatter ? valueFormatter({ value }) : value;
 };
 
-export const getPrimary = columnDefs =>
-  columnDefs.filter(column => column.viewType === 'primary')[0];
+export const getPrimary = (columnDefs) =>
+  columnDefs.filter((column) => column.viewType === 'primary')[0];
 
-export const getCover = columnDefs =>
-  columnDefs.filter(column => column.viewType === 'cover')[0];
+export const getCover = (columnDefs) =>
+  columnDefs.filter((column) => column.viewType === 'cover')[0];
 
-export const getAvatar = columnDefs =>
-  columnDefs.filter(column => column.viewType === 'avatar')[0];
+export const getAvatar = (columnDefs) =>
+  columnDefs.filter((column) => column.viewType === 'avatar')[0];
 
 export const numericComparator = (number1, number2) => {
   const numericNumber1 = numeral(number1).value();
@@ -187,6 +188,6 @@ export const numericComparator = (number1, number2) => {
 };
 
 export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
-  columnDefs.filter(c => c.colId === filterOrGrouperOrSorter.colId)[0];
+  columnDefs.filter((c) => c.colId === filterOrGrouperOrSorter.colId)[0];
 
-export const getFieldFromColumnDef = columnDef => byName[columnDef.viewType];
+export const getFieldFromColumnDef = (columnDef) => byName[columnDef.viewType];

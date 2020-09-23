@@ -23,7 +23,7 @@ export const initializeDataView = async ({
 
   // handle state
   if (state) {
-    gridColumnApi.setColumnState(state);
+    gridColumnApi.applyColumnState(state);
     // column visibility and order stays into column state
   }
 
@@ -34,12 +34,20 @@ export const initializeDataView = async ({
   gridColumnApi.setColumnsVisible(fields as any, true);
 
   // handle sorters
-  gridApi.setSortModel(sorters);
+  // console.log(sorters);
+  // gridColumnApi.applyColumnState({
+  //   state: [
+  //     { colId: 'country', sort: 'asc', sortIndex: 0 },
+  //     { colId: 'sport', sort: 'asc', sortIndex: 1 },
+  //   ],
+  //   defaultState: { sort: null },
+  // });
+  // gridApi.setSortModel(sorters);
   // handle filters
   gridApi.setFilterModel(filterModel);
   // handle groupers
   if (groupers.length > 0) {
-    gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
+    gridColumnApi.setRowGroupColumns(groupers.map((g) => g.colId));
   } else {
     gridColumnApi.setRowGroupColumns([]);
   }

@@ -2,7 +2,7 @@ module.exports = function (api) {
   api.cache(true);
 
   const plugins = [
-    // '@loadable/babel-plugin',
+    '@loadable/babel-plugin',
     [
       'babel-plugin-styled-components',
       { ssr: true, displayName: true, preprocess: false },
@@ -26,40 +26,6 @@ module.exports = function (api) {
   ];
 
   return {
-    // env: {
-    //   'production:cjs': {
-    //     plugins: [
-    //       ['babel-plugin-styled-components', { minify: false }],
-    //       '@babel/transform-runtime',
-    //       'transform-dynamic-import',
-    //     ],
-    //     presets: [['@babel/env', { modules: 'commonjs' }]],
-    //     ignore: [
-    //       '**/__mocks__',
-    //       '**/__tests__',
-    //       '**/__fixtures__',
-    //       'node_modules',
-    //     ],
-    //   },
-    //   'production:esm': {
-    //     plugins: [
-    //       ['babel-plugin-styled-components', { minify: false }],
-    //       '@babel/transform-runtime',
-    //     ],
-    //     presets: [['@babel/env', { modules: false }]],
-    //     ignore: [
-    //       '**/__mocks__',
-    //       '**/__tests__',
-    //       '**/__fixtures__',
-    //       'node_modules',
-    //     ],
-    //   },
-    //   test: {
-    //     presets: ['@babel/env'],
-    //     // There is no @babel/ scoped transform for this plugin
-    //     plugins: ['transform-dynamic-import'],
-    //   },
-    // },
     plugins,
     presets,
   };

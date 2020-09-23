@@ -12,8 +12,8 @@ const LoadablePie = loadable(() => import(`./Dashlets/Pie/Pie`));
 const LoadableRadar = loadable(() => import(`./Dashlets/Radar/Radar`));
 const LoadableTreemap = loadable(() => import(`./Dashlets/Treemap/Treemap`));
 const LoadableXY = loadable(() => import(`./Dashlets/XY/XY`));
-const LoadableHorizontalRule = loadable(() =>
-  import(`./Dashlets/HorizontalRule`),
+const LoadableHorizontalRule = loadable(
+  () => import(`./Dashlets/HorizontalRule`),
 );
 const LoadableVerticalRule = loadable(() => import(`./Dashlets/VerticalRule`));
 

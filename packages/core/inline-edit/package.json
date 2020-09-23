@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
-    "@loadable/component": "^5.13.1",
+    "@loadable/component": "5.13.1",
     "@uidu/analytics": "^0.3.3",
     "@uidu/button": "^0.3.5",
     "@uidu/field": "^0.2.7",

@@ -55,6 +55,8 @@ export default function Dashlet({
 
   const { resultSet, isLoading, error } = useCubeQuery(dashlet.query);
 
+  console.log(resultSet);
+
   return (
     <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
       {showHeader && (

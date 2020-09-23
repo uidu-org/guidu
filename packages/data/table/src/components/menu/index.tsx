@@ -50,7 +50,7 @@ const aggFuncs = [
   },
 ];
 
-export const getMainMenuItems = params => {
+export const getMainMenuItems = (params) => {
   const { api, columnApi, column } = params;
   const { colId } = column;
   console.log(params);
@@ -60,7 +60,7 @@ export const getMainMenuItems = params => {
           {
             name: 'Aggregation function',
             icon: renderToStaticMarkup(<CornerLeftDown size={14} />),
-            subMenu: aggFuncs.map(aggFunc => ({
+            subMenu: aggFuncs.map((aggFunc) => ({
               name: aggFunc.name,
               action: () => {
                 columnApi.setColumnAggFunc(column, aggFunc.id);
@@ -95,7 +95,7 @@ export const getMainMenuItems = params => {
       name: 'Autosize all columns',
       action: () => {
         const allColumnIds = [];
-        columnApi.getAllColumns().forEach(column => {
+        columnApi.getAllColumns().forEach((column) => {
           allColumnIds.push(column.colId);
         });
         columnApi.autoSizeColumns(allColumnIds);
@@ -105,14 +105,14 @@ export const getMainMenuItems = params => {
     {
       name: 'Sort First-Last',
       action: () => {
-        api.setSortModel([...api.getSortModel(), { colId, sort: 'asc' }]);
+        columnApi.applyColumnState({ state: [{ colId, sort: 'asc' }] });
       },
       icon: renderToStaticMarkup(<ChevronsDown size={14} />),
     },
     {
       name: 'Sort Last-First',
       action: () => {
-        api.setSortModel([...api.getSortModel(), { colId, sort: 'desc' }]);
+        columnApi.applyColumnState({ state: [{ colId, sort: 'desc' }] });
       },
       icon: renderToStaticMarkup(<ChevronsUp size={14} />),
     },
@@ -131,7 +131,7 @@ export const getMainMenuItems = params => {
               // columnApi.setColumnVisible(colId, false);
               api.showLoadingOverlay();
               columnApi.setRowGroupColumns([
-                ...columnApi.getRowGroupColumns().map(g => g.colId),
+                ...columnApi.getRowGroupColumns().map((g) => g.colId),
                 colId,
               ]);
               setTimeout(() => {

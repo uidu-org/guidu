@@ -40,10 +40,10 @@ export default class WithControls extends Component<any, any> {
   private gridColumnApi = null;
 
   componentDidMount() {
-    fetchContacts().then(rowData => this.setState({ rowData }));
+    fetchContacts().then((rowData) => this.setState({ rowData }));
   }
 
-  onGridReady = params => {
+  onGridReady = (params) => {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
   };
@@ -51,7 +51,7 @@ export default class WithControls extends Component<any, any> {
   toggleColumn = (name, active) => {
     this.gridColumnApi.setColumnVisible(name, active);
     this.setState({
-      columnDefs: this.state.columnDefs.map(columnDef => {
+      columnDefs: this.state.columnDefs.map((columnDef) => {
         if (columnDef.field === name) {
           return {
             ...columnDef,
@@ -73,27 +73,26 @@ export default class WithControls extends Component<any, any> {
 
   setFilters = console.log;
 
-  setGroupers = groupers => {
+  setGroupers = (groupers) => {
     this.setState({ groupers });
   };
 
   onSortChanged = ({ api, columnApi }) => {
-    const sortModel = api.getSortModel();
-    // this.setState({ sorters: sortModel });
+    const sorters = columnApi
+      .getColumnState()
+      .filter((s) => s.sort != null)
+      .map((s) => ({ colId: s.colId, sort: s.sort, sortIndex: s.sortIndex }));
+    this.setState({ sorters });
   };
 
   onFilterChanged = ({ api, columnApi }) => {};
 
-  setSorters = sorters => {
+  setSorters = (sorters) => {
     this.setState({ sorters });
-    const sortModel = sorters.map(sorter => ({
-      sort: sorter.sort.id,
-      colId: sorter.colId.colId,
-    }));
-    this.gridApi.setSortModel(sortModel);
+    this.gridColumnApi.applyColumnState({ state: sorters });
   };
 
-  setSearch = e => {
+  setSearch = (e) => {
     this.gridApi.setQuickFilter(e.target.value);
   };
 

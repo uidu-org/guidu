@@ -177,7 +177,10 @@ export default class DataManager extends PureComponent<DataManagerProps, any> {
    * OnSortChanged is called everytime a sort is added or removed
    */
   onSortChanged = ({ api, columnApi }) => {
-    const sorters = api.getSortModel();
+    const sorters = columnApi
+      .getColumnState()
+      .filter((s) => s.sort != null)
+      .map((s) => ({ colId: s.colId, sort: s.sort, sortIndex: s.sortIndex }));
     this.updateView({ sorters });
     // this.setState(
     //   {

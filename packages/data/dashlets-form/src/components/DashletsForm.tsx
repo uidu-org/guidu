@@ -76,6 +76,7 @@ export default function DashletsForm({
           updateChartType,
           validatedQuery,
         }) => {
+          console.log(availableMeasures);
           return (
             <Form
               handleSubmit={async (model) => console.log(model)}

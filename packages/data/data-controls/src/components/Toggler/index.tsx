@@ -3,7 +3,7 @@ import ColumnGroup from './ColumnGroup';
 import { TogglerProps } from './types';
 
 export default class TogglerForm extends PureComponent<TogglerProps> {
-  onDragEnd = result => {
+  onDragEnd = (result) => {
     // dropped outside the list
     if (!result.destination) {
       return;
@@ -18,11 +18,13 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
 
   render() {
     const { columnDefs, gridColumnApi } = this.props;
-    const columnGroups = [...new Set(columnDefs.map(cd => cd.fieldGroup.kind))];
+    const columnGroups = [
+      ...new Set(columnDefs.map((cd) => cd.fieldGroup.kind)),
+    ];
 
-    return columnGroups.map(columnGroup => {
+    return columnGroups.map((columnGroup) => {
       const columns = columnDefs.filter(
-        column =>
+        (column) =>
           column.fieldGroup.kind === columnGroup &&
           ['uid', 'cover', 'avatar', 'addField'].indexOf(column.viewType) < 0 &&
           !column.lockVisible,
@@ -32,8 +34,8 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
       }
       const columnGroupObj = columns[0].fieldGroup;
       const isGroupChecked =
-        columns.filter(c => !c.hide).length === columns.length;
-      const checkedColumnsCount = columns.filter(c => !c.hide).length;
+        columns.filter((c) => !c.hide).length === columns.length;
+      const checkedColumnsCount = columns.filter((c) => !c.hide).length;
       return (
         <ColumnGroup
           gridColumnApi={gridColumnApi}

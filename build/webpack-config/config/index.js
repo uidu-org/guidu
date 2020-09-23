@@ -129,12 +129,12 @@ module.exports = async function createWebpackConfig(
           test: /\.(js|jsx|mjs)$/,
           exclude: /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
           use: [
-            {
-              loader: 'thread-loader',
-              options: {
-                name: 'babel-pool',
-              },
-            },
+            // {
+            //   loader: 'thread-loader',
+            //   options: {
+            //     name: 'babel-pool',
+            //   },
+            // },
             {
               loader: 'babel-loader',
               options: {
@@ -175,18 +175,18 @@ module.exports = async function createWebpackConfig(
             {
               loader: 'postcss-loader',
               options: {
-                // Necessary for external CSS imports to work
-                // https://github.com/facebook/create-react-app/issues/2677
-                ident: 'postcss',
-                plugins: () => [
-                  require('postcss-flexbugs-fixes'),
-                  require('postcss-preset-env')({
-                    autoprefixer: {
-                      flexbox: 'no-2009',
-                    },
-                    stage: 3,
-                  }),
-                ],
+                postcssOptions: {
+                  ident: 'postcss',
+                  plugins: [
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: {
+                        flexbox: 'no-2009',
+                      },
+                      stage: 3,
+                    }),
+                  ],
+                },
               },
             },
           ],
@@ -199,18 +199,18 @@ module.exports = async function createWebpackConfig(
             {
               loader: 'postcss-loader',
               options: {
-                // Necessary for external CSS imports to work
-                // https://github.com/facebook/create-react-app/issues/2677
-                ident: 'postcss',
-                plugins: () => [
-                  require('postcss-flexbugs-fixes'),
-                  require('postcss-preset-env')({
-                    autoprefixer: {
-                      flexbox: 'no-2009',
-                    },
-                    stage: 3,
-                  }),
-                ],
+                postcssOptions: {
+                  ident: 'postcss',
+                  plugins: [
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: {
+                        flexbox: 'no-2009',
+                      },
+                      stage: 3,
+                    }),
+                  ],
+                },
               },
             },
             {
@@ -227,18 +227,18 @@ module.exports = async function createWebpackConfig(
             {
               loader: 'postcss-loader',
               options: {
-                // Necessary for external CSS imports to work
-                // https://github.com/facebook/create-react-app/issues/2677
-                ident: 'postcss',
-                plugins: () => [
-                  require('postcss-flexbugs-fixes'),
-                  require('postcss-preset-env')({
-                    autoprefixer: {
-                      flexbox: 'no-2009',
-                    },
-                    stage: 3,
-                  }),
-                ],
+                postcssOptions: {
+                  ident: 'postcss',
+                  plugins: [
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: {
+                        flexbox: 'no-2009',
+                      },
+                      stage: 3,
+                    }),
+                  ],
+                },
               },
             },
             {

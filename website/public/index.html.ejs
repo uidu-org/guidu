@@ -7,7 +7,10 @@
     <link rel="manifest" href="/manifest.json" />
     <title><%= htmlWebpackPlugin.options.title %></title>
     <!-- Polyfills -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Object.values,es6,Array.prototype.includes,fetch"></script>
+    <script
+      crossorigin="anonymous"
+      src="https://polyfill.io/v3/polyfill.min.js?features=default,fetch&flags=gated"
+    ></script>
     <script id="stripe-js" src="https://js.stripe.com/v3/" async></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGuHPnhVQ2TDiGxId0I11r3PPBp_t3dwY&libraries=places"></script>
