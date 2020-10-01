@@ -12,6 +12,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
     avatar,
     sorters,
     filterModel,
+    tableInstance,
   } = data;
   const item = items[rowIndex] && items[rowIndex][columnIndex];
 
@@ -23,7 +24,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
     <div
       onClick={(e) => {
         e.preventDefault();
-        onItemClick({ data: item.data });
+        onItemClick({ data: item });
       }}
       style={{
         position: 'absolute',
@@ -34,7 +35,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
         transition: 'transform 300ms ease, height 300ms ease',
         willChange: 'transform',
       }}
-      key={item.data.id}
+      key={item.id}
     >
       <div
         className="card bg-white"
@@ -44,6 +45,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
         }}
       >
         <Item
+          tableInstance={tableInstance}
           item={item}
           columnDefs={columnDefs}
           primary={primary}

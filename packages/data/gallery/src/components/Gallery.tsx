@@ -23,6 +23,7 @@ const createItemData = memoize(
     sorters,
     groupers,
     filterModel,
+    tableInstance,
   ) => ({
     items,
     columnDefs,
@@ -35,6 +36,7 @@ const createItemData = memoize(
     sorters,
     groupers,
     filterModel,
+    tableInstance,
   }),
 );
 
@@ -79,20 +81,28 @@ export default class Gallery extends PureComponent<GalleryProps> {
       sorters,
       groupers,
       filterModel,
+      tableInstance,
     } = this.props;
 
     const visibleColumnDefs = columnDefs.filter(
-      c => !c.hide && !c.pinned && !c.rowGroup,
+      (c) => !c.hide && !c.pinned && !c.rowGroup,
     );
 
-    const items = this.chunkData(
-      rowData.filter(d => !!d.data),
-      columnCount,
-    );
+    const items = this.chunkData(rowData, columnCount);
 
     const primary = getPrimary(columnDefs);
     const cover = getCover(visibleColumnDefs);
     const avatar = getAvatar(visibleColumnDefs);
+
+    const {
+      getTableBodyProps,
+      headerGroups,
+      rows,
+      prepareRow,
+      state,
+      footerGroups,
+      totalColumnsWidth,
+    } = tableInstance;
 
     const itemData = createItemData(
       items,
@@ -106,6 +116,7 @@ export default class Gallery extends PureComponent<GalleryProps> {
       sorters,
       groupers,
       filterModel,
+      tableInstance,
     );
 
     return (
@@ -132,7 +143,7 @@ export default class Gallery extends PureComponent<GalleryProps> {
                   ITEM_HEADER_HEIGHT +
                   ITEM_COLUMN_ROW *
                     visibleColumnDefs.filter(
-                      column =>
+                      (column) =>
                         column.viewType !== 'cover' &&
                         column.viewType !== 'primary' &&
                         column.viewType !== 'avatar' &&

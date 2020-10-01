@@ -12,10 +12,10 @@ export default class ItemHeader extends PureComponent<any> {
           <span className="text-truncate">
             {primary.valueGetter
               ? primary.valueGetter({
-                  data: item.data,
-                  value: item.data[primary.field],
+                  data: item,
+                  value: item[primary.field],
                 })
-              : item.data[primary.field]}
+              : item[primary.field]}
           </span>
         </div>
       );

@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 
 export default class Configurator extends PureComponent<any> {
   render() {
-    const { gridColumnApi, columnDefs, onDragEnd } = this.props;
+    const { columnDefs, onDragEnd } = this.props;
     return (
       <>
         <div className="list-group">
@@ -15,7 +15,6 @@ export default class Configurator extends PureComponent<any> {
           {...this.props}
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          gridColumnApi={gridColumnApi}
         />
       </>
     );

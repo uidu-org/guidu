@@ -1,7 +1,7 @@
 import { uidField } from '@uidu/data-fields';
 import Renderer from './renderer';
 
-export default field => ({
+export default (field) => ({
   type: uidField.kind,
   viewType: uidField.kind,
   headerComponentParams: { menuIcon: uidField.icon },
@@ -16,6 +16,7 @@ export default field => ({
   minWidth: 84,
   width: 84,
   maxWidth: 84,
+  disableResizing: true,
   suppressMenu: true,
   sortable: false,
   cellStyle: {

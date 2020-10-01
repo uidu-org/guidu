@@ -1,5 +1,5 @@
 import Drawer from '@uidu/drawer';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Sliders } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { Trigger } from '../../styled';
@@ -11,68 +11,57 @@ import { SorterProps } from './types';
 // example:
 // [{ colId: 'country', sort: 'asc' }, { colId: 'sport', sort: 'desc' }];
 
-export default class Sorter extends Component<SorterProps, any> {
-  static defaultProps = {
-    onChange: console.log,
-    sorters: [],
-  };
+export default function Sorter({ tableInstance }: SorterProps) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const {
+    state: { sortBy },
+  } = tableInstance;
 
-  constructor(props) {
-    super(props);
+  const sortersCount = sortBy.length;
 
-    this.state = {
-      dialogOpen: false,
-    };
-  }
-
-  render() {
-    const { sorters } = this.props;
-    const sortersCount = sorters.length;
-
-    return (
-      <>
-        <Trigger
-          activeBg="#fee2d5"
-          className="btn mr-2"
-          active={!!sortersCount}
-          onClick={() => this.setState({ dialogOpen: true })}
+  return (
+    <>
+      <Trigger
+        activeBg="#fee2d5"
+        className="btn mr-2"
+        active={!!sortersCount}
+        onClick={() => setIsDialogOpen(true)}
+      >
+        <Sliders strokeWidth={2} size={14} className="mr-xl-2" />
+        <span
+          style={{ textTransform: 'initial' }}
+          className="d-none d-xl-block"
         >
-          <Sliders strokeWidth={2} size={14} className="mr-xl-2" />
-          <span
-            style={{ textTransform: 'initial' }}
-            className="d-none d-xl-block"
-          >
-            <FormattedMessage
-              id="guidu.data_controls.sorter.label"
-              defaultMessage={`{sortersCount, plural,
+          <FormattedMessage
+            id="guidu.data_controls.sorter.label"
+            defaultMessage={`{sortersCount, plural,
                   =0 {Sort}
                   one {Sorted by 1 field}
                   other {Sorted by {sortersCount, number} fields}
                 }`}
-              values={{ sortersCount }}
+            values={{ sortersCount }}
+          />
+        </span>
+      </Trigger>
+      <Drawer
+        isOpen={isDialogOpen}
+        onClose={() => {
+          setIsDialogOpen(false);
+        }}
+        origin="right"
+        size="medium"
+      >
+        <DrawerLayout
+          name={
+            <FormattedMessage
+              id="guidu.data_controls.sorter.label"
+              defaultMessage="Sort"
             />
-          </span>
-        </Trigger>
-        <Drawer
-          isOpen={this.state.dialogOpen}
-          onClose={() => {
-            this.setState({ dialogOpen: false });
-          }}
-          origin="right"
-          size="medium"
+          }
         >
-          <DrawerLayout
-            name={
-              <FormattedMessage
-                id="guidu.data_controls.sorter.label"
-                defaultMessage="Sort"
-              />
-            }
-          >
-            <SorterForm {...this.props} />
-          </DrawerLayout>
-        </Drawer>
-      </>
-    );
-  }
+          <SorterForm tableInstance={tableInstance} sorters={sortBy} />
+        </DrawerLayout>
+      </Drawer>
+    </>
+  );
 }

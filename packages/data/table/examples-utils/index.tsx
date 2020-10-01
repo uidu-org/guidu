@@ -6,34 +6,36 @@ export const availableColumns = [
     dataField: 'uid',
     colId: 'id',
     field: 'id',
-    dataFieldParams: { onItemClick: params => console.log(params) },
+    dataFieldParams: { onItemClick: (params) => console.log(params) },
   },
-  {
-    dataField: 'cover',
-    colId: 'cover',
-    field: 'cover',
-    headerName: 'Cover',
-  },
-  {
-    dataField: 'avatar',
-    colId: 'avatar',
-    field: 'avatar',
-    headerName: 'Avatar',
-  },
+  // {
+  //   dataField: 'cover',
+  //   colId: 'cover',
+  //   field: 'cover',
+  //   headerName: 'Cover',
+  // },
+  // {
+  //   dataField: 'avatar',
+  //   colId: 'avatar',
+  //   field: 'avatar',
+  //   headerName: 'Avatar',
+  // },
   {
     dataField: 'contact',
     dataFieldParams: {
-      avatar: data => (data ? data.avatar : null),
+      avatar: (data) => (data ? data.avatar : null),
     },
     colId: 'member',
+    accessor: (data) => data.member.email,
     primary: true,
     headerName: 'Donor',
     headerClass: 'ag-header-cell-primary-with-uid',
     field: 'member',
     pinned: 'left',
-    valueGetter: props => {
+    valueGetter: (props) => {
       return props.data ? props.data.member.email : null;
     },
+    width: 340,
   },
   {
     dataField: 'string',
@@ -65,7 +67,7 @@ export const availableColumns = [
     colId: 'percent',
     field: 'percent',
     headerName: 'Percentuale',
-    // valueGetter: ({ data }) => numeral(data.percent / 100).format('% 0'),
+    valueGetter: ({ value }) => numeral(value / 100).format('% 0'),
   },
   {
     dataField: 'date',
@@ -110,7 +112,8 @@ export const availableColumns = [
     field: 'donationCampaign',
     headerName: 'Donation Campaign',
     enableRowGroup: true,
-    keyCreator: function(params) {
+    accessor: (data) => data.donationCampaign.name,
+    keyCreator: function (params) {
       return params.value.name;
     },
   },
@@ -210,7 +213,7 @@ export const fetchContacts = () => {
     let wait = setTimeout(() => {
       clearTimeout(wait);
       resolve(
-        Array.from(Array(132).keys()).map(i => ({
+        Array.from(Array(100).keys()).map((i) => ({
           id: faker.random.uuid(),
           avatar: faker.image.avatar(),
           email: faker.internet.email(),
@@ -226,8 +229,8 @@ export const fetchContacts = () => {
           amount: parseInt(faker.commerce.price(), 10),
           country: faker.address.countryCode(),
           percent: faker.random.number(),
-          createdAt: faker.date.past(),
-          updatedAt: faker.date.recent(),
+          createdAt: faker.date.past().toString(),
+          updatedAt: `${faker.date.recent().toString()}`,
           firstName: faker.name.firstName(),
           lastName: faker.name.lastName(),
           age: faker.random.number(),

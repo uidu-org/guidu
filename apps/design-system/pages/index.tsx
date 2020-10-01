@@ -1,8 +1,8 @@
 import Button from '@uidu/button';
 import Head from 'next/head';
+import Link from 'next/link';
 import React from 'react';
 import styles from '../styles/Home.module.css';
-import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -14,15 +14,16 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <Link href="/doc"><a>Next.js!</a></Link>
+          Welcome to{' '}
+          <Link href="/doc">
+            <a>Next.js!</a>
+          </Link>
           <Button appearance="primary">Test</Button>
         </h1>
-
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
-
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Documentation &rarr;</h3>

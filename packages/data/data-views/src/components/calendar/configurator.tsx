@@ -4,7 +4,7 @@ import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
 
 export default class Configurator extends PureComponent<any> {
-  handleSubmit = async model => console.log(model);
+  handleSubmit = async (model) => console.log(model);
 
   render() {
     const {
@@ -12,7 +12,6 @@ export default class Configurator extends PureComponent<any> {
       rowHeight,
       columnDefs,
       onDragEnd,
-      gridColumnApi,
       currentView,
       updateView,
       startDateField,
@@ -28,10 +27,10 @@ export default class Configurator extends PureComponent<any> {
               <Select
                 name="foo"
                 options={columnDefs
-                  .filter(column => {
+                  .filter((column) => {
                     return ['date'].includes(column.viewType);
                   })
-                  .map(column => ({
+                  .map((column) => ({
                     id: column.colId,
                     name: column.headerName,
                     ...(column.headerComponentParams
@@ -63,7 +62,6 @@ export default class Configurator extends PureComponent<any> {
           {...this.props}
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          gridColumnApi={gridColumnApi}
         />
       </>
     );

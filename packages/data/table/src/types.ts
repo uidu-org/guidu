@@ -1,4 +1,3 @@
-import { AgGridColumnProps } from '@ag-grid-community/react';
 import { Field } from '@uidu/data-fields';
 
 export type ColumnGroupIdentifier = {
@@ -10,7 +9,7 @@ export type ColumnGroup = ColumnGroupIdentifier & {
   columns: Column[];
 };
 
-export type Column = AgGridColumnProps & {
+export type Column = {
   dataField?: Field['kind'];
   dataFieldParams?: any;
   primary?: boolean;

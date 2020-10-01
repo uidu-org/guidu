@@ -60,7 +60,7 @@ export default class DataView extends PureComponent<any> {
   renderResponsiveView = ({ mobileView, desktopView }) => {
     return (
       <Media query={{ maxWidth: 768 }}>
-        {matches => {
+        {(matches) => {
           if (matches) {
             return mobileView;
           }
@@ -70,11 +70,6 @@ export default class DataView extends PureComponent<any> {
       </Media>
     );
   };
-
-  componentWillUnmount() {
-    const { gridApi } = this.props;
-    gridApi && gridApi.destroy();
-  }
 
   render() {
     const {
@@ -109,7 +104,11 @@ export default class DataView extends PureComponent<any> {
       primaryField,
       startDateField,
       endDateField,
+      tableInstance,
+      setAggregation,
     } = this.props;
+
+    console.log(this.props);
 
     if (!rowData) {
       return <ShellBodyWithSpinner />;
@@ -117,6 +116,8 @@ export default class DataView extends PureComponent<any> {
 
     const table = (
       <Table
+        setAggregation={setAggregation}
+        tableInstance={tableInstance}
         rowDoubleClicked={() => null}
         rowSelection="multiple"
         suppressRowClickSelection
@@ -172,17 +173,15 @@ export default class DataView extends PureComponent<any> {
                   <Calendar
                     {...viewProps.calendar}
                     onItemClick={onItemClick}
-                    events={data.map(datum => datum.data)}
-                    startAccessor={item =>
+                    events={data}
+                    startAccessor={(item) =>
                       moment(item[startDateField]).toDate()
                     }
-                    titleAccessor={item => item.email}
-                    endAccessor={item =>
+                    titleAccessor={(item) => item.email}
+                    endAccessor={(item) =>
                       endDateField
                         ? moment(item[endDateField].toDate())
-                        : moment(item[startDateField])
-                            .add(3, 'hour')
-                            .toDate()
+                        : moment(item[startDateField]).add(3, 'hour').toDate()
                     }
                     columnDefs={columns}
                     components={{
@@ -192,7 +191,6 @@ export default class DataView extends PureComponent<any> {
                 );
               }}
             </LoadableCalendar>
-            <div className="d-none">{table}</div>
           </>
         );
         break;
@@ -227,7 +225,6 @@ export default class DataView extends PureComponent<any> {
                 );
               }}
             </LoadableBoard>
-            <div className="d-none">{table}</div>
           </>
         );
         break;
@@ -239,14 +236,13 @@ export default class DataView extends PureComponent<any> {
                 <List
                   {...viewProps.list}
                   onItemClick={onItemClick}
-                  rowData={data.map(datum => ({
+                  rowData={data.map((datum) => ({
                     data: datum.data,
                   }))}
                   columnDefs={columns}
                 />
               )}
             </LoadableList>
-            <div className="d-none">{table}</div>
           </>
         );
         desktopView = (
@@ -255,18 +251,16 @@ export default class DataView extends PureComponent<any> {
               {({ default: Gallery }) => (
                 <Gallery
                   {...viewProps.gallery}
+                  tableInstance={tableInstance}
                   columnCount={columnCount}
                   onItemClick={onItemClick}
-                  rowData={data.map(datum => ({
-                    data: datum.data,
-                  }))}
+                  rowData={data}
                   columnDefs={columns}
                   sorters={sorters}
                   filterModel={filterModel || {}}
                 />
               )}
             </LoadableGallery>
-            <div className="d-none">{table}</div>
           </>
         );
         break;
@@ -298,14 +292,13 @@ export default class DataView extends PureComponent<any> {
                 <List
                   {...viewProps.list}
                   onItemClick={onItemClick}
-                  rowData={data.map(datum => ({
+                  rowData={data.map((datum) => ({
                     data: datum.data,
                   }))}
                   columnDefs={columns}
                 />
               )}
             </LoadableList>
-            <div className="d-none">{table}</div>
           </>
         );
         break;

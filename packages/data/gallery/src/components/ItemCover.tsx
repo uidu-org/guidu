@@ -27,8 +27,8 @@ const Cover = ({
       className="card-img-top"
       height={cover && cover.width ? (cover.width * 3) / 2 : 200}
       cover={
-        cover && valueRenderer(item.data, cover)
-          ? `url(${valueRenderer(item.data, cover)})`
+        cover && valueRenderer(item, cover)
+          ? `url(${valueRenderer(item, cover)})`
           : null
       }
     >
@@ -40,7 +40,7 @@ const Cover = ({
 const Avatar = ({ avatar, item }) => {
   return (
     <img
-      src={valueRenderer(item.data, avatar)}
+      src={valueRenderer(item, avatar)}
       style={{ borderRadius: '100%', width: '7rem' }}
     />
   );

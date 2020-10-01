@@ -19,18 +19,19 @@ export default class SorterForm extends PureComponent<SorterProps> {
   };
 
   sortBy = (sorters) => {
-    const { gridColumnApi } = this.props;
-    gridColumnApi.applyColumnState({
-      state: sorters,
-    });
+    const { tableInstance } = this.props;
+    const { setSortBy } = tableInstance;
+    setSortBy([...sorters]);
   };
 
   render() {
-    const { sorters, columnDefs, gridApi } = this.props;
+    const { tableInstance, sorters } = this.props;
+    const {
+      columns,
+      state: { sortBy },
+    } = tableInstance;
 
-    const sortableColumnDefs = columnDefs.filter(
-      (f) => !f.hide && !!f.sortable,
-    );
+    const sortableColumnDefs = columns.filter((f) => !f.hide);
 
     return (
       <Form
@@ -39,9 +40,9 @@ export default class SorterForm extends PureComponent<SorterProps> {
         handleSubmit={this.handleSubmit}
       >
         <div className="list-group">
-          {sorters.map((sorter: any, index: number) => {
+          {sortBy.map((sorter: any, index: number) => {
             return (
-              <div className="list-group-item px-3 px-xl-4" key={sorter.colId}>
+              <div className="list-group-item px-3 px-xl-4" key={sorter.id}>
                 <div className="form-group mb-0">
                   <label htmlFor="" className="d-flex align-items-center">
                     <FormattedMessage
@@ -59,9 +60,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
                       className="btn btn-sm p-0 ml-auto d-flex align-items-center"
                       onClick={(e) => {
                         e.preventDefault();
-                        gridApi.setSortModel(
-                          sorters.filter((s) => s.colId !== sorter.colId),
-                        );
+                        this.sortBy(sortBy.filter((s) => s.id !== sorter.id));
                       }}
                     >
                       <X size={13} />
@@ -72,8 +71,8 @@ export default class SorterForm extends PureComponent<SorterProps> {
                       <Select
                         layout="elementOnly"
                         isClearable={false}
-                        name={`sorters[${index}][colId]`}
-                        value={sorter.colId}
+                        name={`sorters[${index}][id]`}
+                        value={sorter.id}
                         options={sortableColumnDefs.map((columnDef) => ({
                           id: columnDef.colId,
                           name: columnDef.headerName,
@@ -95,16 +94,16 @@ export default class SorterForm extends PureComponent<SorterProps> {
                       <Select
                         layout="elementOnly"
                         isClearable={false}
-                        name={`sorters[${index}][sort]`}
-                        value={sorter.sort}
+                        name={`sorters[${index}][desc]`}
+                        value={sorter.desc}
                         options={[
                           {
-                            id: 'desc',
+                            id: true,
                             name: 'desc',
                             before: <ArrowDown size={16} />,
                           },
                           {
-                            id: 'asc',
+                            id: false,
                             name: 'asc',
                             before: <ArrowUp size={16} />,
                           },
@@ -123,7 +122,7 @@ export default class SorterForm extends PureComponent<SorterProps> {
           })}
           <PickField
             label={
-              sorters.length ? (
+              sortBy.length ? (
                 <FormattedMessage
                   id="guidu.data_controls.sorter.pick"
                   defaultMessage="Pick another field to sort by"
@@ -137,16 +136,16 @@ export default class SorterForm extends PureComponent<SorterProps> {
             }
             onClick={(columnDef) => {
               this.sortBy([
-                ...sorters,
+                ...sortBy,
                 {
-                  colId: columnDef.colId,
-                  sort: 'desc',
+                  id: columnDef.id,
+                  desc: false,
                 },
               ]);
             }}
-            isDefaultOpen={sorters.length === 0}
+            isDefaultOpen={sortBy.length === 0}
             columnDefs={sortableColumnDefs.filter(
-              (f) => sorters.map((s) => s.colId).indexOf(f.colId) < 0,
+              (f) => sortBy.map((s) => s.id).indexOf(f.id) < 0,
             )}
           />
         </div>

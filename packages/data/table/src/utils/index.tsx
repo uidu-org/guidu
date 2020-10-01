@@ -96,6 +96,15 @@ export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
     return {
       fieldGroup,
       accessor: column.colId,
+      id: column.colId,
+      ...(dataField &&
+      getColumnType(dataField, { ...dataFieldParams, ...column }) &&
+      getColumnType(dataField, { ...dataFieldParams, ...column }).cellRenderer
+        ? {
+            Cell: getColumnType(dataField, { ...dataFieldParams, ...column })
+              .cellRenderer,
+          }
+        : {}),
       ...(dataField
         ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
         : {}),
@@ -120,6 +129,8 @@ export const valueRenderer = (data, column) => {
     valueFormatter,
     valueGetter,
   } = column;
+  console.log(column);
+
   let value = data[field];
 
   if (valueGetter) {
@@ -188,6 +199,6 @@ export const numericComparator = (number1, number2) => {
 };
 
 export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
-  columnDefs.filter((c) => c.colId === filterOrGrouperOrSorter.colId)[0];
+  columnDefs.filter((c) => c.id === filterOrGrouperOrSorter.id)[0];
 
 export const getFieldFromColumnDef = (columnDef) => byName[columnDef.viewType];

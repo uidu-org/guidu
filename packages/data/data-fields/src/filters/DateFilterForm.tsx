@@ -27,8 +27,8 @@ function DateFilterForm({
         <div className="col-8">
           <FieldDate
             layout="elementOnly"
-            name={`filters[${index}][filter]`}
-            value={filter.filter}
+            name={`filters[${index}][value]`}
+            value={filter.value}
             // onChange={(name, value) => {
             //   console.log(value);
             //   if (value !== '') {

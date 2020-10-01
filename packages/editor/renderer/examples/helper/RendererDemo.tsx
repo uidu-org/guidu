@@ -10,7 +10,7 @@ import {
 } from '@uidu/editor-common';
 import { profilecard as profilecardUtils } from '@uidu/util-data-test';
 import * as React from 'react';
-import * as Clock from 'react-live-clock';
+import Clock from 'react-live-clock';
 import { renderDocument, TextSerializer } from '../../src';
 import {
   default as Renderer,

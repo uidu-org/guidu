@@ -7,10 +7,15 @@ export const groupRenderer = ({ api, value, node }) => {
     return null;
   }
 
+  console.log(value);
+
+  return value;
+
   const eDiv = document.createElement('div');
   eDiv.innerHTML = `
-    <div class="d-flex justify-content-between" style="padding-left: ${node.level *
-      1}rem;">
+    <div class="d-flex justify-content-between" style="padding-left: ${
+      node.level * 1
+    }rem;">
       <span style="line-height: initial; display: flex; align-items: center; flex-grow: 1; white-space: normal; min-width: 0;">
         <span class="d-flex flex-column justify-content-center" style="line-height: initial; min-width: 0;">
           <span class="small text-muted text-truncate">${

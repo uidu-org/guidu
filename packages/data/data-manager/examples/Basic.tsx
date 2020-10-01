@@ -19,7 +19,6 @@ import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Transition } from 'react-transition-group';
 import DataManager from '../';
 import '../../calendar/themes/uidu.scss';
 import { byName } from '../../data-views/src';
@@ -470,36 +469,27 @@ export default class Basic extends Component<any, any> {
 
                 <ShellBody>
                   {!loaded ? (
-                    <ShellBodyWithSpinner></ShellBodyWithSpinner>
+                    <ShellBodyWithSpinner />
                   ) : (
                     <>
                       <ShellMain>
-                        <Transition in={this.state.rendered} timeout={duration}>
-                          {(state) => (
-                            <div
-                              style={{
-                                ...defaultStyle,
-                                ...transitionStyles[state],
-                              }}
-                            >
-                              {renderView({
-                                viewProps: {
-                                  gallery: {
-                                    gutterSize: 24,
-                                  },
-                                  list: {
-                                    rowHeight: 96,
-                                  },
-                                  board: {},
-                                  table: {
-                                    headerHeight: 48,
-                                    rowHeight: 56,
-                                  },
-                                },
-                              })}
-                            </div>
-                          )}
-                        </Transition>
+                        <div className="container h-100 py-5">
+                          {renderView({
+                            viewProps: {
+                              gallery: {
+                                gutterSize: 24,
+                              },
+                              list: {
+                                rowHeight: 96,
+                              },
+                              board: {},
+                              table: {
+                                headerHeight: 48,
+                                rowHeight: 56,
+                              },
+                            },
+                          })}
+                        </div>
                       </ShellMain>
                       {renderSidebar() && (
                         <ShellSidebar>

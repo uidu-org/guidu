@@ -65,9 +65,9 @@ export default function ItemField({ sorters, filterModel, column, item }) {
   return (
     <StyledItemField
       className="px-3 px-xl-4"
-      isSorterActive={sorters.map(s => s.colId).includes(column.colId)}
+      isSorterActive={sorters.map((s) => s.colId).includes(column.colId)}
       isFilterActive={!!filterModel[column.colId]}
-      key={`${item.data.id}-${column.field}-name`}
+      key={`${item.id}-${column.field}-name`}
     >
       <dt className="small text-muted text-truncate mb-1">
         {column.headerComponentParams &&
@@ -76,7 +76,7 @@ export default function ItemField({ sorters, filterModel, column, item }) {
         ) : null}
         {column.headerName}
       </dt>
-      <dd className="mb-0 text-truncate">{valueRenderer(item.data, column)}</dd>
+      <dd className="mb-0 text-truncate">{valueRenderer(item, column)}</dd>
     </StyledItemField>
   );
 }

@@ -14,7 +14,7 @@ export default class Filterer extends Component<
   }
 > {
   static defaultProps = {
-    onChange: async model => console.log(model),
+    onChange: async (model) => console.log(model),
     filterModel: {},
   };
 
@@ -27,8 +27,11 @@ export default class Filterer extends Component<
   }
 
   render() {
-    const { filterModel } = this.props;
-    const filtersCount = Object.keys(filterModel).length;
+    const { filterModel, tableInstance } = this.props;
+    const {
+      state: { filters },
+    } = tableInstance;
+    const filtersCount = filters.length;
 
     return (
       <>
@@ -72,6 +75,7 @@ export default class Filterer extends Component<
           >
             <FiltererForm
               {...this.props}
+              filters={filters}
               filtersCount={filtersCount}
               filterModel={filterModel}
             />

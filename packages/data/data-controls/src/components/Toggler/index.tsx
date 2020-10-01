@@ -17,13 +17,13 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
   };
 
   render() {
-    const { columnDefs, gridColumnApi } = this.props;
+    const { columnDefs, tableInstance } = this.props;
     const columnGroups = [
       ...new Set(columnDefs.map((cd) => cd.fieldGroup.kind)),
     ];
 
     return columnGroups.map((columnGroup) => {
-      const columns = columnDefs.filter(
+      const columns = tableInstance.columns.filter(
         (column) =>
           column.fieldGroup.kind === columnGroup &&
           ['uid', 'cover', 'avatar', 'addField'].indexOf(column.viewType) < 0 &&
@@ -36,9 +36,9 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
       const isGroupChecked =
         columns.filter((c) => !c.hide).length === columns.length;
       const checkedColumnsCount = columns.filter((c) => !c.hide).length;
+      console.log(columns);
       return (
         <ColumnGroup
-          gridColumnApi={gridColumnApi}
           key={columnGroup}
           checkedColumnsCount={checkedColumnsCount}
           columnGroupObj={columnGroupObj}

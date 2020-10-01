@@ -1,35 +1,69 @@
-import React, { PureComponent } from 'react';
-import { ChevronDown } from 'react-feather';
+import DropdownMenu, {
+  DropdownItem,
+  DropdownItemGroup,
+} from '@uidu/dropdown-menu';
+import React from 'react';
 
-export default class CustomHeader extends PureComponent<any> {
-  private button: React.RefObject<HTMLButtonElement> = React.createRef();
-
-  render() {
-    const { enableMenu, displayName, menuIcon, showColumnMenu } = this.props;
-    return (
-      <div
-        className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
-        style={{ minWidth: 0 }}
-      >
-        <div className="customHeaderLabel flex-grow-1 text-truncate">
-          {menuIcon && (
-            <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
-              {menuIcon}
-            </span>
-          )}
-          {displayName}
-        </div>
-        {!!enableMenu && (
-          <button
-            type="button"
-            className="btn btn-sm p-1"
-            ref={this.button}
-            onClick={() => showColumnMenu(this.button.current)}
-          >
-            <ChevronDown size={12} />
-          </button>
+export default function Header({
+  column,
+  setHiddenColumns,
+  setSortBy,
+  state,
+  setGroupBy,
+}) {
+  return (
+    <div
+      className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
+      style={{ minWidth: 0 }}
+    >
+      <div className="customHeaderLabel flex-grow-1 text-truncate">
+        {column?.headerComponentParams?.menuIcon && (
+          <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
+            {column.headerComponentParams.menuIcon}
+          </span>
         )}
+        {column.headerName}
       </div>
-    );
-  }
+      {!column.suppressMenu && (
+        <div className="ml-3">
+          <DropdownMenu triggerType="button" position="bottom right">
+            <DropdownItemGroup>
+              <DropdownItem onClick={console.log}>
+                Autosize this column
+              </DropdownItem>
+              <DropdownItem onClick={console.log}>
+                Autosize all columns
+              </DropdownItem>
+              <DropdownItem
+                onClick={(e) =>
+                  setSortBy([...state.sortBy, { id: column.id, desc: false }])
+                }
+              >
+                Sort First-Last
+              </DropdownItem>
+              <DropdownItem
+                onClick={(e) =>
+                  setSortBy([...state.sortBy, { id: column.id, desc: true }])
+                }
+              >
+                Sort Last-First
+              </DropdownItem>
+              <DropdownItem
+                onClick={(e) => setGroupBy([...state.groupBy, column.id])}
+              >
+                Group by this field
+              </DropdownItem>
+              <DropdownItem
+                onClick={(e) =>
+                  setHiddenColumns([...state.hiddenColumns, column.id])
+                }
+              >
+                Hide this column
+              </DropdownItem>
+            </DropdownItemGroup>
+          </DropdownMenu>
+        </div>
+      )}
+    </div>
+  );
 }

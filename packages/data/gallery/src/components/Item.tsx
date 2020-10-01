@@ -23,6 +23,7 @@ export default class Item extends PureComponent<any> {
       avatar,
       sorters,
       filterModel,
+      tableInstance,
     } = this.props;
 
     if (!item) {
@@ -30,7 +31,7 @@ export default class Item extends PureComponent<any> {
     }
 
     const visibleColumns = columnDefs.filter(
-      column =>
+      (column) =>
         column.viewType !== 'cover' &&
         column.viewType !== 'primary' &&
         column.viewType !== 'avatar' &&
@@ -44,13 +45,13 @@ export default class Item extends PureComponent<any> {
           <ItemHeader primary={primary} item={item} />
           {visibleColumns.length > 0 && (
             <ItemFields>
-              {visibleColumns.map(column => (
+              {visibleColumns.map((column) => (
                 <ItemField
                   column={column}
                   sorters={sorters}
                   filterModel={filterModel}
                   item={item}
-                  key={`${item.data.id}-${column.field}-name`}
+                  key={`${item.id}-${column.field}-name`}
                 />
               ))}
             </ItemFields>

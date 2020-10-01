@@ -58,24 +58,23 @@ export default function Viewer({
   onDownload,
   columnCount,
   onSetColumnCount,
-  gridApi,
-  gridColumnApi,
   isAutoSaving,
   startDateField,
   endDateField,
   primaryField,
+  tableInstance,
 }: ViewerProps) {
   const node: React.RefObject<HTMLDivElement> = useRef();
   const [editingName, setEditingName] = useState(false);
   const { icon: Icon, color } = byName[currentView.kind];
-  const handleSubmit = async model => {
+  const handleSubmit = async (model) => {
     updateView(currentView, {
       ...model,
     });
     setEditingName(false);
   };
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     if (node.current.contains(e.target)) {
       // inside click
       return;
@@ -116,9 +115,8 @@ export default function Viewer({
         )}
       </div>
       <Configurator
+        tableInstance={tableInstance}
         isConfiguratorOpen={isConfiguratorOpen}
-        gridApi={gridApi}
-        gridColumnApi={gridColumnApi}
         currentView={currentView}
         columnDefs={columnDefs}
         groupers={groupers}

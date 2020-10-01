@@ -1,4 +1,3 @@
-import { ColumnApi, GridApi } from '@ag-grid-community/core';
 import { Column } from '@uidu/table';
 
 export type Group = {
@@ -7,8 +6,7 @@ export type Group = {
 };
 
 export type GrouperProps = {
-  gridApi: GridApi;
-  gridColumnApi: ColumnApi;
-  groupers: Array<Group>;
-  columnDefs: Column[];
+  tableInstance: any;
+  groupers?: Array<Group>;
+  columnDefs?: Column[];
 };

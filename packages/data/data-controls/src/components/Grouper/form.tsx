@@ -1,6 +1,5 @@
 import { Form } from '@uidu/form';
 import Select from '@uidu/select';
-import { getColumnDef, getFieldFromColumnDef } from '@uidu/table';
 import React, { Component } from 'react';
 import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
@@ -18,26 +17,26 @@ export default class Grouper extends Component<GrouperProps> {
 
   private form = React.createRef();
 
-  groupBy = groupers => {
-    const { gridApi, gridColumnApi, columnDefs } = this.props;
-    gridApi.showLoadingOverlay();
-
-    setTimeout(() => {
-      gridColumnApi.setRowGroupColumns(groupers.map(g => g.colId));
-      gridApi.refreshCells({ force: true });
-      gridApi.hideOverlay();
-    }, 300);
+  groupBy = (groupers) => {
+    const { tableInstance } = this.props;
+    const { setGroupBy } = tableInstance;
+    setGroupBy(groupers);
   };
 
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     this.groupBy(model.groupers || []);
   };
 
   render() {
-    const { groupers, columnDefs } = this.props;
+    const { tableInstance } = this.props;
+    const {
+      setGroupBy,
+      columns,
+      state: { groupBy },
+    } = tableInstance;
 
-    const groupableColumnDefs = columnDefs.filter(
-      c => !c.hide && c.enableRowGroup,
+    const groupableColumnDefs = columns.filter(
+      (c) => !c.hide && c.enableRowGroup,
     );
 
     return (
@@ -47,13 +46,13 @@ export default class Grouper extends Component<GrouperProps> {
         handleSubmit={this.handleSubmit}
       >
         <div className="list-group">
-          {groupers.map((grouper: any, index: number) => {
-            const columnDef = getColumnDef(groupableColumnDefs, grouper);
-            const field = getFieldFromColumnDef(columnDef);
-            const { grouperForm: FieldGrouperForm } = field;
+          {groupBy.map((grouper: any, index: number) => {
+            // const columnDef = getColumnDef(groupableColumnDefs, grouper);
+            // const field = getFieldFromColumnDef(columnDef);
+            // const { grouperForm: FieldGrouperForm } = field;
 
             return (
-              <div className="list-group-item px-3 px-xl-4" key={grouper.colId}>
+              <div className="list-group-item px-3 px-xl-4" key={grouper}>
                 <div className="form-group mb-0">
                   <label htmlFor="" className="d-flex align-items-center">
                     <FormattedMessage
@@ -69,11 +68,9 @@ export default class Grouper extends Component<GrouperProps> {
                     <button
                       type="button"
                       className="btn btn-sm p-0 ml-auto d-flex align-items-center"
-                      onClick={e => {
+                      onClick={(e) => {
                         e.preventDefault();
-                        this.groupBy(
-                          groupers.filter(g => g.colId !== grouper.colId),
-                        );
+                        this.groupBy(groupBy.filter((g) => g !== grouper));
                       }}
                     >
                       <X size={13} />
@@ -83,9 +80,9 @@ export default class Grouper extends Component<GrouperProps> {
                 <Select
                   layout="elementOnly"
                   isClearable={false}
-                  name={`groupers[${index}][colId]`}
-                  value={grouper.colId}
-                  options={groupableColumnDefs.map(columnDef => ({
+                  name={`groupers[${index}]`}
+                  value={grouper}
+                  options={groupableColumnDefs.map((columnDef) => ({
                     id: columnDef.colId,
                     name: columnDef.headerName,
                     ...(columnDef.headerComponentParams
@@ -106,7 +103,7 @@ export default class Grouper extends Component<GrouperProps> {
                   .map(columnDef => (
                     <p >{columnDef.headerName}</p>
                   ))} */}
-                {FieldGrouperForm && (
+                {/* {FieldGrouperForm && (
                   <FieldGrouperForm
                     index={index}
                     grouper={grouper}
@@ -118,13 +115,13 @@ export default class Grouper extends Component<GrouperProps> {
                       }, 300)
                     }
                   />
-                )}
+                )} */}
               </div>
             );
           })}
           <PickField
             label={
-              groupers.length ? (
+              groupBy.length ? (
                 <FormattedMessage
                   id="guidu.data_controls.grouper.pick"
                   defaultMessage="Pick a field to group by"
@@ -136,12 +133,12 @@ export default class Grouper extends Component<GrouperProps> {
                 />
               )
             }
-            onClick={columnDef => {
-              this.groupBy([...groupers, { colId: columnDef.colId }]);
+            onClick={(columnDef) => {
+              this.groupBy([...groupBy, columnDef.colId]);
             }}
-            isDefaultOpen={groupers.length === 0}
+            isDefaultOpen={groupBy.length === 0}
             columnDefs={groupableColumnDefs.filter(
-              f => groupers.map(s => s.colId).indexOf(f.colId) < 0,
+              (f) => groupBy.indexOf(f) < 0,
             )}
           />
         </div>

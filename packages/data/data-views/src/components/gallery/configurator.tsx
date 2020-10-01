@@ -6,16 +6,10 @@ import { FormattedMessage } from 'react-intl';
 import CardTypes from '../utils/CardTypes';
 
 export default class Configurator extends PureComponent<any> {
-  handleSubmit = async model => console.log(model);
+  handleSubmit = async (model) => console.log(model);
 
   render() {
-    const {
-      columnDefs,
-      onDragEnd,
-      gridColumnApi,
-      columnCount,
-      onSetColumnCount,
-    } = this.props;
+    const { columnDefs, onDragEnd, columnCount, onSetColumnCount } = this.props;
 
     return (
       <>
@@ -43,10 +37,7 @@ export default class Configurator extends PureComponent<any> {
                   />
                 </div>
                 <div className="col-6">
-                  <CardTypes
-                    columnDefs={columnDefs}
-                    gridColumnApi={gridColumnApi}
-                  />
+                  <CardTypes columnDefs={columnDefs} />
                 </div>
               </div>
             </Form>
@@ -61,7 +52,6 @@ export default class Configurator extends PureComponent<any> {
           {...this.props}
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          gridColumnApi={gridColumnApi}
         />
       </>
     );

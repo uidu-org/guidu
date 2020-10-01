@@ -26,7 +26,7 @@ function StringFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
         <div className="col-8">
           <FieldText
             layout="elementOnly"
-            name={`filters[${index}][filter]`}
+            name={`filters[${index}][value]`}
             // value={filter.filter}
             onChange={(name, value) => {
               if (value !== '') {

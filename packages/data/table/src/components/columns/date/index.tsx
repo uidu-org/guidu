@@ -1,8 +1,9 @@
 import { dateField } from '@uidu/data-fields';
 import moment from 'moment';
+import React from 'react';
 import Editor from './editor';
 
-export default field => ({
+export default (field) => ({
   type: dateField.kind,
   viewType: dateField.kind,
   cellEditorFramework: Editor,
@@ -18,7 +19,7 @@ export default field => ({
 
     return +valueA.momentObj - +valueB.momentObj;
   },
-  valueGetter: params => {
+  valueGetter: (params) => {
     if (!params.data) {
       return null;
     }
@@ -32,14 +33,10 @@ export default field => ({
       momentObj,
     };
   },
-  keyCreator: params => {
+  keyCreator: (params) => {
     return params.value.month;
     return params.value.momentObj.format('LLL');
   },
-  cellRenderer: params =>
-    params.value
-      ? `<div class="text-truncate">${params.value.momentObj.format(
-          field.format,
-        )}</div>`
-      : null,
+  cellRenderer: (params) =>
+    params.value ? <div className="text-truncate">{params.value}</div> : null,
 });

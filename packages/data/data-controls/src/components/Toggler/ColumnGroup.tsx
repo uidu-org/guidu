@@ -7,7 +7,6 @@ export default function ColumnGroup({
   columnGroupObj,
   columns,
   checkedColumnsCount,
-  gridColumnApi,
   isGroupChecked,
 }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -21,12 +20,12 @@ export default function ColumnGroup({
           <div className="small">
             <a
               href="#"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
-                gridColumnApi.setColumnsVisible(
-                  columns.map(c => c.colId),
-                  !isGroupChecked,
-                );
+                // gridColumnApi.setColumnsVisible(
+                //   columns.map((column) => column.id),
+                //   !isGroupChecked,
+                // );
               }}
             >
               {isGroupChecked ? (
@@ -44,7 +43,7 @@ export default function ColumnGroup({
             &middot;{' '}
             <a
               href="#"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 setIsOpen(!isOpen);
               }}
@@ -63,35 +62,22 @@ export default function ColumnGroup({
         //   console.log('TODO: focus password field');
         // }}
       >
-        {columns.map((columnDef, index) => (
+        {columns.map((column, index) => (
           <a
             href="#"
-            key={columnDef.colId}
+            key={column.id}
             className="list-group-item list-group-item-action px-3 px-xl-4 border-0 py-2"
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
-              gridColumnApi.setColumnVisible(columnDef.colId, !!columnDef.hide);
+              column.toggleHidden(!!column.isVisible);
             }}
           >
             <div className="d-flex align-items-center justify-content-between">
               <span className="mr-1">
-                <CheckboxStateless checked={!columnDef.hide} />
+                <CheckboxStateless checked={column.isVisible} />
               </span>
               <div className="text-truncate flex-grow-1">
-                {/* {columnDef.headerComponentParams && (
-                  <span
-                    style={{
-                      width: 22,
-                      display: 'inline-block',
-                      textAlign: 'center',
-                      opacity: 0.4,
-                    }}
-                    className="mr-2"
-                  >
-                    {columnDef.headerComponentParams.menuIcon}
-                  </span>
-                )} */}
-                {columnDef.headerName}
+                {column.headerName}
               </div>
             </div>
           </a>

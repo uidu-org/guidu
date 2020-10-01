@@ -1,4 +1,3 @@
-import { ColumnApi, GridApi } from '@ag-grid-community/core';
 import { DataView } from '@uidu/data-views';
 import { Column } from '@uidu/table';
 import { GrouperProps } from '../Grouper/types';
@@ -17,6 +16,4 @@ export type ConfiguratorProps = GrouperProps &
     primaryField?: string;
     isConfiguratorOpen?: boolean;
     columnCount?: number;
-    gridApi: GridApi;
-    gridColumnApi: ColumnApi;
   };

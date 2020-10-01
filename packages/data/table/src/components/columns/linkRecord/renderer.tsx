@@ -29,7 +29,7 @@ function LinkRecordRenderer({ history, value }) {
 
   const cell = useRef(null);
 
-  const onClick = e => {
+  const onClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     history.push(value.path);

@@ -29,9 +29,9 @@ function SelectFilterForm({
         <div className="col-8">
           <Select
             layout="elementOnly"
-            name={`filters[${index}][filter]`}
+            name={`filters[${index}][value]`}
             options={options}
-            value={filter.filter || options[0].id}
+            value={filter.value || options[0].id}
             onChange={(name, value, { option }) => {
               if (value !== '') {
                 onChange(name, value);

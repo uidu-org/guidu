@@ -4,7 +4,7 @@ import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
 
 export default class Configurator extends PureComponent<any> {
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     const { currentView, updateView } = this.props;
     updateView({
       ...currentView,
@@ -17,7 +17,6 @@ export default class Configurator extends PureComponent<any> {
       updateView,
       columnDefs,
       onDragEnd,
-      gridColumnApi,
       currentView,
       primaryField,
     } = this.props;
@@ -33,7 +32,7 @@ export default class Configurator extends PureComponent<any> {
                 name="primaryField"
                 value={primaryField}
                 options={columnDefs
-                  .filter(column => {
+                  .filter((column) => {
                     return [
                       'singleSelect',
                       'country',
@@ -42,7 +41,7 @@ export default class Configurator extends PureComponent<any> {
                       'linkRecord',
                     ].includes(column.viewType);
                   })
-                  .map(column => ({
+                  .map((column) => ({
                     id: column.colId,
                     name: column.headerName,
                     ...(column.headerComponentParams
@@ -66,7 +65,6 @@ export default class Configurator extends PureComponent<any> {
           {...this.props}
           columnDefs={columnDefs}
           onDragEnd={onDragEnd}
-          gridColumnApi={gridColumnApi}
         />
       </>
     );
