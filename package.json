@@ -347,7 +347,7 @@
     "react-images": "^1.1.0-beta.0",
     "react-intersection-observer": "^8.24.1",
     "react-intl": "^5.8.0",
-    "react-live-clock": "^5.0.3",
+    "react-live-clock": "^4.0.0",
     "react-loadable": "^5.5.0",
     "react-lorem-component": "^0.13.0",
     "react-markdown": "^4.0.6",
