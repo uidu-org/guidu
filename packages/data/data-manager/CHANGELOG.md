@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.3.5
+
+### Patch Changes
+
+- 16319c1: Bump dependencies
+- Updated dependencies [16319c1]
+  - @uidu/calendar@0.1.34
+  - @uidu/data-controls@0.4.7
+  - @uidu/table@0.1.120
+
 ## 0.3.4
 
 ### Patch Changes

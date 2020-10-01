@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.4.7
+
+### Patch Changes
+
+- 16319c1: Bump dependencies
+- Updated dependencies [16319c1]
+  - @uidu/table@0.1.120
+
 ## 0.4.6
 
 ### Patch Changes

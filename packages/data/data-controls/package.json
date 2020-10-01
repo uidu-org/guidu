@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
@@ -24,7 +24,7 @@
     "@uidu/select": "^0.5.4",
     "@uidu/shell": "^1.0.7",
     "@uidu/spinner": "^0.3.4",
-    "@uidu/table": "^0.1.119",
+    "@uidu/table": "^0.1.120",
     "@uidu/tooltip": "^0.3.4",
     "lodash": "^4.17.4",
     "react": "^16.13.1",

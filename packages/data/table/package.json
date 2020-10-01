@@ -1,6 +1,6 @@
 {
   "name": "@uidu/table",
-  "version": "0.1.119",
+  "version": "0.1.120",
   "private": false,
   "description": "React ag-datagrid wrapper with default configurations",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/table",
@@ -40,7 +40,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/data-controls": "^0.4.6",
+    "@uidu/data-controls": "^0.4.7",
     "@uidu/docs": "^0.2.6",
     "faker": "^5.1.0"
   },
