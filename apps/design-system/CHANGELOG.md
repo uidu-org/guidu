@@ -1,5 +1,11 @@
 # design-system
 
+## 0.1.5
+
+### Patch Changes
+
+- 35c8bfd: Drop ag-grid in favour of react-table, still WIP
+
 ## 0.1.4
 
 ### Patch Changes

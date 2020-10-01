@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.31
+
+### Patch Changes
+
+- 35c8bfd: Drop ag-grid in favour of react-table, still WIP
+- Updated dependencies [35c8bfd]
+  - @uidu/table@0.2.0
+
 ## 0.1.30
 
 ### Patch Changes
