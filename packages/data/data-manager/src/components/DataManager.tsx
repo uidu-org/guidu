@@ -1,7 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Filterer, Finder, Grouper, Sorter, Viewer } from '@uidu/data-controls';
 import Spinner from '@uidu/spinner';
-import { Aggregated, Header } from '@uidu/table';
+import {
+  Aggregated,
+  AggregatedSelection,
+  Header,
+  HeaderSelection,
+  RowSelection,
+} from '@uidu/table';
 import React, { useMemo, useState } from 'react';
 import {
   useExpanded,
@@ -9,7 +15,9 @@ import {
   useFlexLayout,
   useGlobalFilter,
   useGroupBy,
+  usePagination,
   useResizeColumns,
+  useRowSelect,
   useSortBy,
   useTable,
 } from 'react-table';
@@ -57,14 +65,23 @@ export default function DataManager({
   rowData = [],
   columnDefs,
   currentView,
+  updateView: onViewUpdate,
 }) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
   const data = useMemo(() => rowData, [rowData]);
   const columns = useMemo(() => columnDefinitions, [columnDefinitions]);
 
+  const setColumnCount = (columnCount) => {
+    updateView({
+      preferences: { ...currentView.preferences, columnCount },
+    }).then(() => {
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+    });
+  };
+
   const defaultColumn = React.useMemo(
     () => ({
-      minWidth: 30,
+      minWidth: 80,
       width: 200,
       maxWidth: 400,
       Header,
@@ -84,6 +101,9 @@ export default function DataManager({
       columns,
       data,
       defaultColumn,
+      initialState: {
+        pageSize: 100,
+      },
       useControlledState: (state) => {
         return React.useMemo(
           () => ({
@@ -101,9 +121,45 @@ export default function DataManager({
     useSortBy,
     useResizeColumns,
     useExpanded,
+    usePagination,
+    useRowSelect,
+    (hooks) => {
+      hooks.visibleColumns.push((columns) => [
+        // Let's make a column for selection
+        {
+          id: 'selection',
+          disableResizing: true,
+          minWidth: 56,
+          width: 56,
+          maxWidth: 56,
+          pinned: 'left',
+          groupByBoundary: true,
+          // The header can use the table's getToggleAllRowsSelectedProps method
+          // to render a checkbox
+          Header: HeaderSelection,
+          // The cell can use the individual row's getToggleRowSelectedProps method
+          // to the render a checkbox
+          Cell: RowSelection,
+          Aggregated: AggregatedSelection,
+          Footer: (info) => {
+            // Only calculate total visits if rows change
+
+            return <>Total: {info.rows.length}</>;
+          },
+        },
+        ...columns,
+      ]);
+    },
   );
 
   const { state, setGlobalFilter, globalFilter } = tableInstance;
+
+  const updateView = (props) => {
+    return onViewUpdate(currentView, {
+      ...props,
+      state,
+    });
+  };
 
   const setAggregation = (column, aggregate) => {
     const index = columnDefinitions.findIndex(({ id }) => id === column.id);
@@ -171,8 +227,6 @@ export default function DataManager({
         // sorters={sorters}
         // filterModel={filterModel}
         // methods
-        // onGridReady={this.onGridReady}
-        // onFirstDataRendered={this.onFirstDataRendered}
         // onFilterChanged={this.onFilterChanged}
         // onSortChanged={this.onSortChanged}
         // onColumnVisible={this.onColumnVisible}
@@ -249,7 +303,7 @@ export default function DataManager({
             rowHeight={rowHeight}
             // onDownload={() => this.gridApi.exportDataAsCsv()}
             // columnCount={columnCount}
-            // onSetColumnCount={this.setColumnCount}
+            onSetColumnCount={setColumnCount}
             actions={availableControls.more.actions}
             // isAutoSaving={isAutoSaving}
             startDateField={startDateField}

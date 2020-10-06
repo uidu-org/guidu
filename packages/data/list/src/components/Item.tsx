@@ -27,10 +27,10 @@ export default class Item extends PureComponent<any> {
 
     return (
       <StyledItem
-        key={item.data.id}
-        onClick={e => {
+        key={item.id}
+        onClick={(e) => {
           e.preventDefault();
-          onItemClick({ data: item.data });
+          onItemClick({ data: item });
         }}
         style={{
           ...style,
@@ -51,7 +51,7 @@ export default class Item extends PureComponent<any> {
               width: cover.width || '138px',
               backgroundSize: 'cover',
               backgroundPosition: '50% 50%',
-              backgroundImage: `url(${valueRenderer(item.data, cover)})`,
+              backgroundImage: `url(${valueRenderer(item, cover)})`,
               height: '100%',
               flexShrink: 0,
             }}
@@ -70,18 +70,19 @@ export default class Item extends PureComponent<any> {
                 maxWidth: `calc('100vw - 100px')`,
               }}
             >
-              {valueRenderer(item.data, primary)}
+              {valueRenderer(item, primary)}
             </div>
           )}
           <div className="d-flex">
             {columnDefs
               .filter(
-                column => column.type !== 'cover' && column.type !== 'primary',
+                (column) =>
+                  column.type !== 'cover' && column.type !== 'primary',
               )
-              .map(column => {
+              .map((column) => {
                 return (
                   <div
-                    key={`${item.data.id}-${column.colId}-value`}
+                    key={`${item.id}-${column.colId}-value`}
                     className="text-truncate data-list-cell px-3 px-xl-4"
                     style={{
                       width: column.width || '150px',
@@ -89,7 +90,7 @@ export default class Item extends PureComponent<any> {
                       maxWidth: column.maxWidth || 'auto',
                     }}
                   >
-                    {valueRenderer(item.data, column)}
+                    {valueRenderer(item, column)}
                   </div>
                 );
               })}

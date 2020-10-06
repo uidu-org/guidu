@@ -22,7 +22,6 @@ const createItemData = memoize(
     avatar,
     sorters,
     groupers,
-    filterModel,
     tableInstance,
   ) => ({
     items,
@@ -35,7 +34,6 @@ const createItemData = memoize(
     avatar,
     sorters,
     groupers,
-    filterModel,
     tableInstance,
   }),
 );
@@ -74,25 +72,13 @@ export default class Gallery extends PureComponent<GalleryProps> {
   render() {
     const {
       rowData,
-      columnDefs,
       columnCount,
       gutterSize,
       onItemClick,
       sorters,
       groupers,
-      filterModel,
       tableInstance,
     } = this.props;
-
-    const visibleColumnDefs = columnDefs.filter(
-      (c) => !c.hide && !c.pinned && !c.rowGroup,
-    );
-
-    const items = this.chunkData(rowData, columnCount);
-
-    const primary = getPrimary(columnDefs);
-    const cover = getCover(visibleColumnDefs);
-    const avatar = getAvatar(visibleColumnDefs);
 
     const {
       getTableBodyProps,
@@ -102,11 +88,20 @@ export default class Gallery extends PureComponent<GalleryProps> {
       state,
       footerGroups,
       totalColumnsWidth,
+      state: { filterBy },
+      columns,
+      visibleColumns,
     } = tableInstance;
+
+    const items = this.chunkData(rowData, columnCount);
+
+    const primary = getPrimary(columns);
+    const cover = getCover(columns);
+    const avatar = getAvatar(columns);
 
     const itemData = createItemData(
       items,
-      visibleColumnDefs,
+      visibleColumns,
       gutterSize,
       columnCount,
       onItemClick,
@@ -115,7 +110,6 @@ export default class Gallery extends PureComponent<GalleryProps> {
       avatar,
       sorters,
       groupers,
-      filterModel,
       tableInstance,
     );
 
@@ -142,8 +136,10 @@ export default class Gallery extends PureComponent<GalleryProps> {
                   this.getGutterSize({ avatar, cover }) +
                   ITEM_HEADER_HEIGHT +
                   ITEM_COLUMN_ROW *
-                    visibleColumnDefs.filter(
+                    visibleColumns.filter(
                       (column) =>
+                        column.viewType !== 'uid' &&
+                        column.id !== 'selection' &&
                         column.viewType !== 'cover' &&
                         column.viewType !== 'primary' &&
                         column.viewType !== 'avatar' &&

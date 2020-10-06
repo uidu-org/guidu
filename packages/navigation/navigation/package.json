@@ -17,7 +17,7 @@
     "@uidu/theme": "^0.4.4",
     "@uidu/tooltip": "^0.3.4",
     "hoverintent": "^2.2.1",
-    "polished": "^3.0.3",
+    "polished": "^4.0.1",
     "react": "^16.13.1",
     "react-animate-height": "^2.0.23",
     "react-beautiful-dnd": "^13.0.0",

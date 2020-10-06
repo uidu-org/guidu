@@ -11,7 +11,7 @@
   "dependencies": {
     "@uidu/avatar": "^0.5.4",
     "@uidu/theme": "^0.4.4",
-    "polished": "^3.0.3",
+    "polished": "^4.0.1",
     "prop-types": "^15.7.2",
     "react-addons-text-content": "^0.0.4",
     "tslib": "^2.0.1",

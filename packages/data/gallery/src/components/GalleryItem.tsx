@@ -20,6 +20,10 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
     return null;
   }
 
+  const { prepareRow, rows } = tableInstance;
+  const row = rows.find((r) => r.values.id === item.id);
+  prepareRow(row);
+
   return (
     <div
       onClick={(e) => {
@@ -46,6 +50,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
       >
         <Item
           tableInstance={tableInstance}
+          row={row}
           item={item}
           columnDefs={columnDefs}
           primary={primary}

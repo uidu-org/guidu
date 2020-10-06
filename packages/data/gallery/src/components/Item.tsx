@@ -15,27 +15,20 @@ const ItemFields = styled.dl`
 
 export default class Item extends PureComponent<any> {
   render() {
-    const {
-      item,
-      columnDefs,
-      primary,
-      cover,
-      avatar,
-      sorters,
-      filterModel,
-      tableInstance,
-    } = this.props;
+    const { item, primary, cover, avatar, row } = this.props;
 
     if (!item) {
       return null;
     }
 
-    const visibleColumns = columnDefs.filter(
-      (column) =>
-        column.viewType !== 'cover' &&
-        column.viewType !== 'primary' &&
-        column.viewType !== 'avatar' &&
-        column.viewType !== 'addField',
+    const visibleCells = row.cells.filter(
+      (cell) =>
+        cell.column.viewType !== 'uid' &&
+        cell.column.id !== 'selection' &&
+        cell.column.viewType !== 'cover' &&
+        cell.column.viewType !== 'primary' &&
+        cell.column.viewType !== 'avatar' &&
+        cell.column.viewType !== 'addField',
     );
 
     return (
@@ -43,19 +36,34 @@ export default class Item extends PureComponent<any> {
         <ItemCover cover={cover} avatar={avatar} item={item} />
         <ItemWrapper>
           <ItemHeader primary={primary} item={item} />
-          {visibleColumns.length > 0 && (
+          <ItemFields>
+            {visibleCells.map((cell) => {
+              return (
+                <ItemField
+                  cell={cell}
+                  // column={column}
+                  // sorters={sorters}
+                  // filterModel={filterModel}
+                  // item={row}
+                  // key={`${item.id}-${column.field}-name`}
+                />
+              );
+            })}
+          </ItemFields>
+          {/* {visibleColumns.length > 0 && (
             <ItemFields>
               {visibleColumns.map((column) => (
                 <ItemField
+                  cell={cell}
                   column={column}
                   sorters={sorters}
                   filterModel={filterModel}
-                  item={item}
+                  item={row}
                   key={`${item.id}-${column.field}-name`}
                 />
               ))}
             </ItemFields>
-          )}
+          )} */}
         </ItemWrapper>
       </>
     );

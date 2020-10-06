@@ -128,6 +128,7 @@ export const valueRenderer = (data, column) => {
     cellRendererFramework: RendererFramework,
     valueFormatter,
     valueGetter,
+    Cell,
   } = column;
   console.log(column);
 
@@ -139,6 +140,10 @@ export const valueRenderer = (data, column) => {
 
   if (!value) {
     return '-';
+  }
+
+  if (Cell) {
+    return <Cell {...column} />;
   }
 
   if (Renderer) {

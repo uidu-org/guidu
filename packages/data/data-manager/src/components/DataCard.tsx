@@ -23,7 +23,7 @@ export default class Item extends PureComponent<any> {
     }
 
     const visibleColumns = columnDefs.filter(
-      column =>
+      (column) =>
         column.viewType !== 'cover' &&
         column.viewType !== 'primary' &&
         column.viewType !== 'avatar',
@@ -31,7 +31,7 @@ export default class Item extends PureComponent<any> {
 
     return (
       <div
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           // onItemClick({ data: item.data});
         }}
@@ -49,7 +49,7 @@ export default class Item extends PureComponent<any> {
           )} */}
           <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
             <dl className="mb-0">
-              {visibleColumns.map(column => (
+              {visibleColumns.map((column) => (
                 <>
                   <dt
                     className="small text-muted text-truncate mt-3"

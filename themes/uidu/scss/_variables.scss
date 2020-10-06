@@ -49,10 +49,11 @@ $social-twitter: #1da1f2;
 $social-whatsapp: #25d366;
 
 // Body
-$body-bg: #fff; // rgba(226, 235, 225, 0.05);
-$body-color: rgb(76, 86, 106);
+$body-bg: $gray-100;
+$body-color: $gray-900;
 
 $theme-colors: (
+  body-color: $body-color,
   body-bg: $body-bg,
   primary: $primary,
   calls: $calls,

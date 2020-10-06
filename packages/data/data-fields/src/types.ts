@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type Field = {
   kind: string;
   name: string | React.ReactNode;

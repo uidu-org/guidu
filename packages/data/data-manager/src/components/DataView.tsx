@@ -46,7 +46,7 @@ const Item = ({ item, provided, ...rest }) => {
   return (
     <a
       // to={item.data.id}
-      onClick={() => history.push(`/apps/calls/proposals/${item.data.id}`)}
+      onClick={() => history.push(`/apps/calls/proposals/${item.id}`)}
       className="card bg-white mb-2"
       ref={provided.innerRef}
       {...rest}
@@ -81,11 +81,9 @@ export default class DataView extends PureComponent<any> {
         table: {},
       },
       columnDefs,
-      onGridReady,
       rowData,
       onItemClick,
       currentView,
-      onFirstDataRendered,
       onAddField,
       data,
       columns,
@@ -124,8 +122,6 @@ export default class DataView extends PureComponent<any> {
         // stopEditingWhenGridLosesFocus
         {...viewProps.table}
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
-        onGridReady={onGridReady}
-        onFirstDataRendered={onFirstDataRendered}
         // use columnDefs from props to avoid flickering on toggling/reordering columns
         columnDefs={columnDefs}
         loadingOverlayComponentFramework={() => (
@@ -264,25 +260,22 @@ export default class DataView extends PureComponent<any> {
           </>
         );
         break;
-      // case 'list':
-      //   desktopView = mobileView = (
-      //     <>
-      //       <LoadableList fallback={<ShellBodyWithSpinner />}>
-      //         {({ default: List }) => (
-      //           <List
-      //             {...viewProps.list}
-      //             onItemClick={onItemClick}
-      //             rowData={data.map(datum => ({
-      //               data: datum.data,
-      //             }))}
-      //             columnDefs={columns}
-      //           />
-      //         )}
-      //       </LoadableList>
-      //       <div className="d-none">{table}</div>
-      //     </>
-      //   );
-      //   break;
+      case 'list':
+        desktopView = mobileView = (
+          <>
+            <LoadableList fallback={<ShellBodyWithSpinner />}>
+              {({ default: List }) => (
+                <List
+                  {...viewProps.list}
+                  onItemClick={onItemClick}
+                  rowData={data}
+                  columnDefs={columns}
+                />
+              )}
+            </LoadableList>
+          </>
+        );
+        break;
       default:
         desktopView = table;
         mobileView = (
@@ -292,9 +285,7 @@ export default class DataView extends PureComponent<any> {
                 <List
                   {...viewProps.list}
                   onItemClick={onItemClick}
-                  rowData={data.map((datum) => ({
-                    data: datum.data,
-                  }))}
+                  rowData={data}
                   columnDefs={columns}
                 />
               )}

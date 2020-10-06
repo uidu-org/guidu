@@ -8,7 +8,7 @@ export default class Navigation extends PureComponent<NavigationProps> {
     position: 'absolute',
   };
   render() {
-    const { schema, children, position } = this.props;
+    const { schema, children, className, position } = this.props;
 
     if (!schema && !children) {
       throw 'Navigation needs either a schema or children to render';
@@ -16,7 +16,7 @@ export default class Navigation extends PureComponent<NavigationProps> {
 
     if (schema) {
       return (
-        <ShellHeader className="px-4">
+        <ShellHeader className={`px-4 ${className}`}>
           <ItemsRenderer items={schema} />
         </ShellHeader>
       );

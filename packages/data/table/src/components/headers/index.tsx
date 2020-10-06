@@ -3,6 +3,7 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import React from 'react';
+import { ArrowRight } from 'react-feather';
 
 export default function Header({
   column,
@@ -26,7 +27,13 @@ export default function Header({
       </div>
       {!column.suppressMenu && (
         <div className="ml-3">
-          <DropdownMenu triggerType="button" position="bottom right">
+          <DropdownMenu
+            triggerType="button"
+            position="bottom right"
+            triggerButtonProps={{
+              appearance: 'subtle',
+            }}
+          >
             <DropdownItemGroup>
               <DropdownItem onClick={console.log}>
                 Autosize this column
@@ -39,14 +46,14 @@ export default function Header({
                   setSortBy([...state.sortBy, { id: column.id, desc: false }])
                 }
               >
-                Sort First-Last
+                Sort A <ArrowRight size={14} /> Z
               </DropdownItem>
               <DropdownItem
                 onClick={(e) =>
                   setSortBy([...state.sortBy, { id: column.id, desc: true }])
                 }
               >
-                Sort Last-First
+                Sort Z <ArrowRight size={14} /> A
               </DropdownItem>
               <DropdownItem
                 onClick={(e) => setGroupBy([...state.groupBy, column.id])}

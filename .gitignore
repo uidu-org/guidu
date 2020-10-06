@@ -45,3 +45,5 @@ dists/
 
 # allow using .envrc to automate local environment, exclude from CVS
 .envrc
+
+lu-01.md

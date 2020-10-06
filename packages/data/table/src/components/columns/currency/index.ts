@@ -6,6 +6,7 @@ export default () => ({
   viewType: currencyField.kind,
   filter: 'agNumberColumnFilter',
   aggregate: 'sum',
+  cellStyle: { textAlign: 'right' },
   // valueFormatter: ({ value }) => value,
   headerComponentParams: { menuIcon: currencyField.icon },
   comparator: numericComparator,

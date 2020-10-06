@@ -8,7 +8,5 @@ export type DataManagerProps = {
   columnDefs: Array<ColumnGroup>;
   rowData: Array<any>;
   onAddField?: () => void;
-  onGridReady?: (params) => void;
-  onFirstDataRendered?: (params) => void;
   onItemClick?: ({ data }: { data: any }) => void;
 };

@@ -3,16 +3,21 @@
 import React, { useState } from 'react';
 import { useVirtual } from 'react-virtual';
 import styled, { css } from 'styled-components';
+import Footer from './Footer';
+import Resizer from './Resizer';
 
-const Td = styled.div<{ height: number }>`
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+const Td = styled.div<{ height: number; pinned?: boolean }>`
+  padding-left: 1rem;
+  padding-right: 1rem;
   white-space: nowrap;
   height: ${({ height }) => `${height}px`};
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f2f2f3;
+  border-right: 1px solid transparent;
+  background: #fff;
+
   ${({ pinned }) =>
     pinned
       ? css`
@@ -22,20 +27,22 @@ const Td = styled.div<{ height: number }>`
           background: #fff;
           border-right: 1px solid #f2f2f3;
         `
-      : null}
+      : null};
 `;
 
 const Th = styled.div<{ height: number }>`
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   white-space: nowrap;
   height: ${({ height }) => `${height - 8}px`};
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   border-bottom: 1px solid #f2f2f3;
+  border-right: 1px solid #f2f2f3;
   display: flex;
   align-items: center;
   font-weight: 500;
   position: relative;
+  background: #fff;
 `;
 
 const Table = ({
@@ -59,7 +66,28 @@ const Table = ({
     className += ' ag-scrolled-top';
   }
 
-  const { getTableBodyProps, headerGroups, rows, prepareRow } = tableInstance;
+  const {
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    footerGroups,
+    page, // Instead of using 'rows', we'll use page,
+    // which has only the rows for the active page
+
+    // The rest of these things are super handy, too ;)
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    pageCount,
+    gotoPage,
+    nextPage,
+    previousPage,
+    setPageSize,
+    state: { pageIndex, pageSize },
+  } = tableInstance;
+
+  console.log(page);
 
   const RenderRow = React.useCallback(
     ({ index, style }) => {
@@ -109,17 +137,14 @@ const Table = ({
   const parentRef = React.useRef();
 
   const rowVirtualizer = useVirtual({
-    size: rows.length,
+    size: page.length,
     parentRef,
     overscan: 5,
-    estimateSize: React.useCallback((i) => 56, []),
+    estimateSize: React.useCallback((i) => rowHeight, []),
   });
 
   return (
-    <div
-      className={`ag-theme-${theme} h-100${className} border rounded`}
-      role="table"
-    >
+    <div className={`ag-theme-${theme} h-100${className}`} role="table">
       <div
         {...getTableBodyProps()}
         ref={parentRef}
@@ -152,10 +177,12 @@ const Table = ({
                   pinned={index === 0}
                   style={{
                     width: column.width,
-                    ...(index === 0
+                    maxWidth: column.maxWidth,
+                    minWidth: column.minWidth,
+                    ...(column.pinned
                       ? {
                           position: 'sticky',
-                          left: 0,
+                          left: index === 0 ? 0 : '56px',
                           zIndex: 2,
                           background: '#fff',
                           borderRight: '1px solid #f2f2f3',
@@ -164,26 +191,7 @@ const Table = ({
                   }}
                 >
                   {column.render('Header')}
-                  {/* {!!column.getResizerProps && (
-                    <div
-                      {...column.getResizerProps({
-                        style: {
-                          display: 'inline-block',
-                          background: 'blue',
-                          width: '2px',
-                          height: '100%',
-                          position: 'absolute',
-                          right: 0,
-                          top: 0,
-                          transform: 'translateX(50%)',
-                          zIndex: 1,
-                        },
-                      })}
-                      className={`resizer ${
-                        column.isResizing ? 'isResizing' : ''
-                      }`}
-                    />
-                  )} */}
+                  {!!column.getResizerProps && <Resizer column={column} />}
                 </Th>
               ))}
             </div>
@@ -192,12 +200,14 @@ const Table = ({
         <div
           style={{
             height: `${rowVirtualizer.totalSize}px`,
+            minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
             width: '100%',
             position: 'relative',
+            background: 'white',
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = rows[virtualRow.index];
+            const row = page[virtualRow.index];
             prepareRow(row);
             return (
               <div
@@ -216,8 +226,13 @@ const Table = ({
               >
                 {row.cells.map((cell, index) => (
                   <Td
-                    {...cell.getCellProps()}
-                    pinned={index === 0}
+                    {...cell.getCellProps({
+                      style: {
+                        left: index === 0 ? 0 : '56px',
+                        ...cell.column.cellStyle,
+                      },
+                    })}
+                    pinned={cell.column.pinned}
                     height={rowHeight}
                     className={
                       cell.column.isSorted ? 'ag-cell-sorter-active' : null
@@ -249,163 +264,36 @@ const Table = ({
             );
           })}
         </div>
-        {/* <div
-          style={{
-            position: 'sticky',
-            bottom: 0,
-            background: 'red',
-            width: 'fit-content',
-          }}
-        >
-          {footerGroups.map((group) => (
-            <tr {...group.getFooterGroupProps()}>
-              {group.headers.map((column) => (
-                <td {...column.getFooterProps()}>{column.render('Footer')}</td>
-              ))}
-            </tr>
-          ))}
-        </div> */}
+        <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
+        <div className="pagination">
+          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+            {'<'}
+          </button>{' '}
+          <button onClick={() => nextPage()} disabled={!canNextPage}>
+            {'>'}
+          </button>{' '}
+          <span>
+            Page{' '}
+            <strong>
+              {pageIndex + 1} of {pageOptions.length}
+            </strong>{' '}
+          </span>
+          <span>
+            | Go to page:{' '}
+            <input
+              type="number"
+              defaultValue={pageIndex + 1}
+              onChange={(e) => {
+                const page = e.target.value ? Number(e.target.value) - 1 : 0;
+                gotoPage(page);
+              }}
+              style={{ width: '100px' }}
+            />
+          </span>{' '}
+        </div>
       </div>
-      {/* <div {...getTableBodyProps()}>
-        <FixedSizeList
-          useIsScrolling
-          height={400}
-          itemCount={rows.length}
-          itemSize={rowHeight}
-          width={totalColumnsWidth}
-        >
-          {RenderRow}
-        </FixedSizeList>
-      </div> */}
     </div>
   );
-
-  // return (
-  //   <div className={`ag-theme-${theme} h-100${className}`}>
-  //     <AgGridReact
-  //       suppressMaxRenderedRowRestriction
-  //       modules={[
-  //         ClientSideRowModelModule,
-  //         RowGroupingModule,
-  //         MenuModule,
-  //         CsvExportModule,
-  //         StatusBarModule,
-  //         RangeSelectionModule,
-  //       ]}
-  //       // ref={innerRef}
-  //       // enterprise features
-  //       // groupDefaultExpanded={-1}
-  //       // groupUseEntireRow
-  //       // groupIncludeFooter
-  //       groupSuppressBlankHeader
-  //       // suppressAggFuncInHeader
-  //       groupSuppressAutoColumn
-  //       // community features
-  //       componentWrappingElement="span"
-  //       // defaultGroupSortComparator={(valueA, valueB) => {
-  //       //   console.log(valueA);
-  //       //   if (valueA === null) {
-  //       //     return -1;
-  //       //   }
-  //       //   if (valueB === null) {
-  //       //     return 1;
-  //       //   }
-
-  //       //   console.log(valueA);
-
-  //       //   return +valueA.momentObj - +valueB.momentObj;
-  //       // }}
-  //       columnDefs={columnDefs.map((columnDef) => ({
-  //         ...columnDef,
-  //         cellStyle: (params) => {
-  //           return {
-  //             ...columnDef.cellStyle,
-  //             // account for borders
-  //             lineHeight: `${
-  //               params.node.group
-  //                 ? rowHeight * groupRowHeightIncrementRatio - 2
-  //                 : rowHeight - 2
-  //             }px`,
-  //           };
-  //         },
-  //         cellClassRules: {
-  //           ...columnDef.cellClassRules,
-  //           'ag-cell-sorter-active': (params) => {
-  //             return params.columnApi
-  //               .getColumnState()
-  //               .filter((s) => !!s.sort)
-  //               .map((s) => s.colId)
-  //               .includes(params.colDef.colId);
-  //           },
-  //           'ag-cell-filter-active': (params) => {
-  //             return Object.keys(params.api.getFilterModel()).includes(
-  //               params.colDef.colId,
-  //             );
-  //           },
-  //           'ag-cell-grouper-active': (params) => {
-  //             return params.columnApi
-  //               .getRowGroupColumns()
-  //               .map((g) => g.colId)
-  //               .includes(params.colDef.colId);
-  //           },
-  //         },
-  //       }))}
-  //       rowData={rowData}
-  //       animateRows
-  //       enableCellChangeFlash
-  //       suppressContextMenu
-  //       getMainMenuItems={getMainMenuItems}
-  //       getRowHeight={(params) => {
-  //         if (params.node.group) {
-  //           return rowHeight * groupRowHeightIncrementRatio;
-  //         } else {
-  //           return rowHeight;
-  //         }
-  //       }}
-  //       defaultColDef={{
-  //         resizable: true,
-  //         sortable: true,
-  //         editable: false,
-  //         suppressMenu: false,
-  //         headerComponentFramework: CustomHeader,
-  //         minWidth: 140,
-  //       }}
-  //       columnTypes={{
-  //         avatar: {},
-  //         addField: {},
-  //         address: {},
-  //         attachments: {},
-  //         checkbox: {},
-  //         contact: {},
-  //         country: {},
-  //         cover: {},
-  //         currency: {},
-  //         date: {},
-  //         default: {},
-  //         email: {},
-  //         linkRecord: {},
-  //         member: {},
-  //         multipleSelect: {},
-  //         number: {},
-  //         paymentMethod: {},
-  //         percent: {},
-  //         phone: {},
-  //         primary: {},
-  //         progress: {},
-  //         rating: {},
-  //         singleSelect: {},
-  //         string: {},
-  //         text: {},
-  //         uid: {},
-  //         url: {},
-  //         vote: {},
-  //       }}
-  //       rowHeight={rowHeight}
-  //       onBodyScroll={({ left, top }) => setScrolled({ left, top })}
-  //       {...otherProps}
-  //     />
-  //   </div>
-  // );
 };
 
 export default Table;

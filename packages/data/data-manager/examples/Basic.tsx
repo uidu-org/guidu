@@ -6,6 +6,7 @@ import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
+import Navigation from '@uidu/navigation';
 import {
   ShellBody,
   ShellBodyWithSpinner,
@@ -13,6 +14,7 @@ import {
   ShellMain,
   ShellSidebar,
 } from '@uidu/shell';
+import SideNavigation from '@uidu/side-navigation';
 import { buildColumns } from '@uidu/table';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles';
@@ -242,7 +244,7 @@ const dataViews = [
   },
   {
     id: 3,
-    name: 'Galleria contatti',
+    name: 'Lista contatti',
     kind: 'gallery',
     fields: ['avatar', 'member', 'amount'],
     sorters: [{ colId: 'amount', sort: 'desc' }],
@@ -348,6 +350,34 @@ export default class Basic extends Component<any, any> {
       isAutoSaving,
     } = this.state;
 
+    const schema = [
+      {
+        type: 'NavigationHeader',
+        text: 'Contacts',
+      },
+      {
+        type: 'NavigationSection',
+        items: [
+          {
+            type: 'NavigationGroup',
+            separator: true,
+            items: dataViews.map((dataView) => {
+              const d = byName[dataView.kind];
+              const { icon: Icon, color } = d;
+              return {
+                exact: true,
+                text: dataView.name,
+                before: <Icon size={14} color={color} />,
+                as: 'a',
+                onClick: () => this.toggleView(dataView),
+                type: 'NavigationItem',
+              };
+            }),
+          },
+        ],
+      },
+    ];
+
     return (
       <IntlProvider locale="en">
         <Router>
@@ -391,114 +421,181 @@ export default class Basic extends Component<any, any> {
             rowData={rowData}
             currentView={currentView}
             updateView={this.updateView}
-            onFirstDataRendered={() => this.setState({ rendered: true })}
             // onGridReady={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
               <ShellMain>
-                <ShellHeader className="px-3 px-xl-4">
-                  {renderControls({
-                    controls: {
-                      viewer: {
-                        visible: true,
-                      },
-                      finder: {
-                        visible: true,
-                      },
-                      more: {
-                        visible: true,
-                        actions: [
-                          {
-                            name: 'Rename',
-                            rename: true,
-                          },
-                        ],
-                      },
+                {/* <div
+                  style={{
+                    background: '#ff000024',
+                    height: '17rem',
+                    position: 'absolute',
+                    width: '100%',
+                  }}
+                ></div> */}
+                <Navigation
+                  className="bg-donations"
+                  schema={[
+                    {
+                      type: 'NavigationHeader',
+                      text: 'Team',
                     },
-                  })}
-                  <DropdownMenu
-                    trigger={
-                      <button className="btn btn-primary">Switch view</button>
-                    }
-                    position="bottom right"
-                  >
-                    <DropdownItemGroup>
-                      {dataViews.map((dataView) => {
-                        const d = byName[dataView.kind];
-                        const { icon: Icon, color } = d;
-                        return (
-                          <DropdownItem
-                            onClick={() => this.toggleView(dataView)}
-                            elemBefore={<Icon size={14} color={color} />}
-                          >
-                            {dataView.name}
-                          </DropdownItem>
-                        );
+                    {
+                      type: 'PrimarySection',
+                      items: [
+                        {
+                          path: `/`,
+                          text: 'Riepilogo',
+                          type: 'NavigationItem',
+                        },
+                        {
+                          path: `/orders`,
+                          text: 'Ordini',
+                          type: 'NavigationItem',
+                          isSortable: true,
+                        },
+                        {
+                          path: `/attendances`,
+                          text: 'Partecipanti',
+                          type: 'NavigationItem',
+                        },
+                        {
+                          path: `/messages`,
+                          text: 'Messaggi agli iscritti',
+                          type: 'NavigationItem',
+                        },
+                      ],
+                    },
+                    {
+                      type: 'SecondarySection',
+                      items: [
+                        {
+                          path: `/`,
+                          type: 'InlineComponent',
+                          component: () => (
+                            <DropdownMenu
+                              trigger={
+                                <button className="btn btn-primary">
+                                  Add a view
+                                </button>
+                              }
+                              position="bottom right"
+                            >
+                              <DropdownItemGroup title="Create new">
+                                {[
+                                  { id: 0, kind: 'table', name: 'Table' },
+                                  {
+                                    id: 1,
+                                    kind: 'gallery',
+                                    name: 'Griglia',
+                                  },
+                                  {
+                                    id: 2,
+                                    kind: 'calendar',
+                                    name: 'Calendario',
+                                  },
+                                  { id: 3, kind: 'board', name: 'Kanban' },
+                                  {
+                                    id: 4,
+                                    kind: 'timeline',
+                                    name: 'Timeline',
+                                  },
+                                ].map((view) => (
+                                  <DropdownItem
+                                    onClick={() => this.addView(view)}
+                                    elemBefore={<PlusCircle size={14} />}
+                                  >
+                                    Add a {view.kind} view
+                                  </DropdownItem>
+                                ))}
+                              </DropdownItemGroup>
+                            </DropdownMenu>
+                          ),
+                          icon: (
+                            <img
+                              src="https://via.placeholder.com/24x24"
+                              className="rounded-circle"
+                            />
+                          ),
+                        },
+                      ],
+                    },
+                  ]}
+                />
+                {!loaded ? (
+                  <ShellBodyWithSpinner />
+                ) : (
+                  <>
+                    <ShellHeader
+                      className="px-3 px-xl-4 bg-white border-bottom"
+                      style={{ height: '4rem' }}
+                    >
+                      {renderControls({
+                        controls: {
+                          viewer: {
+                            visible: true,
+                          },
+                          finder: {
+                            visible: true,
+                          },
+                          more: {
+                            visible: true,
+                            actions: [
+                              {
+                                name: 'Rename',
+                                rename: true,
+                              },
+                            ],
+                          },
+                        },
                       })}
-                    </DropdownItemGroup>
-                    <DropdownItemGroup title="Create new">
-                      {[
-                        { id: 0, kind: 'table', name: 'Table' },
-                        {
-                          id: 1,
-                          kind: 'gallery',
-                          name: 'Griglia',
-                        },
-                        {
-                          id: 2,
-                          kind: 'calendar',
-                          name: 'Calendario',
-                        },
-                        { id: 3, kind: 'board', name: 'Kanban' },
-                        {
-                          id: 4,
-                          kind: 'timeline',
-                          name: 'Timeline',
-                        },
-                      ].map((view) => (
-                        <DropdownItem
-                          onClick={() => this.addView(view)}
-                          elemBefore={<PlusCircle size={14} />}
-                        >
-                          Add a {view.kind} view
-                        </DropdownItem>
-                      ))}
-                    </DropdownItemGroup>
-                  </DropdownMenu>
-                </ShellHeader>
-
-                <ShellBody>
-                  {!loaded ? (
-                    <ShellBodyWithSpinner />
-                  ) : (
-                    <>
-                      <ShellMain>
-                        <div className="container h-100 py-5">
-                          {renderView({
-                            viewProps: {
-                              gallery: {
-                                gutterSize: 24,
-                              },
-                              list: {
-                                rowHeight: 96,
-                              },
-                              board: {},
-                              table: {
-                                headerHeight: 48,
-                                rowHeight: 56,
-                              },
-                            },
-                          })}
-                        </div>
-                      </ShellMain>
-                      {renderSidebar() && (
-                        <ShellSidebar>
-                          <div className="col-sm-3">{renderSidebar({})}</div>
-                        </ShellSidebar>
+                    </ShellHeader>
+                    <ShellBody>
+                      {!loaded ? (
+                        <ShellBodyWithSpinner />
+                      ) : (
+                        <>
+                          <ShellSidebar
+                            style={{
+                              width: '20%',
+                              background: '#fff',
+                            }}
+                            className="border-right"
+                          >
+                            <SideNavigation schema={schema} />
+                          </ShellSidebar>
+                          <ShellMain>
+                            <div className="h-100">
+                              {renderView({
+                                viewProps: {
+                                  gallery: {
+                                    gutterSize: 24,
+                                  },
+                                  list: {
+                                    rowHeight: 96,
+                                  },
+                                  board: {},
+                                  table: {
+                                    headerHeight: 48,
+                                    rowHeight: 48,
+                                  },
+                                },
+                              })}
+                            </div>
+                          </ShellMain>
+                          {renderSidebar() && (
+                            <ShellSidebar
+                              style={{ width: '20%' }}
+                              className="border-left"
+                            >
+                              {renderSidebar({})}
+                            </ShellSidebar>
+                          )}
+                        </>
                       )}
-                    </>
-                  )}
-                </ShellBody>
+                    </ShellBody>
+                  </>
+                )}
               </ShellMain>
             )}
           </DataManager>

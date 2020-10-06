@@ -1,4 +1,3 @@
-import { valueRenderer } from '@uidu/table';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -11,6 +10,7 @@ const StyledItemField = styled.div<{
   flex-direction: column;
   justify-content: center;
   position: relative;
+  font-size: 0.9375rem;
 
   ${({ isSorterActive, isFilterActive }) => {
     if (isSorterActive) {
@@ -61,22 +61,24 @@ const StyledItemField = styled.div<{
   }}
 `;
 
-export default function ItemField({ sorters, filterModel, column, item }) {
+export default function ItemField({ cell }) {
   return (
     <StyledItemField
       className="px-3 px-xl-4"
-      isSorterActive={sorters.map((s) => s.colId).includes(column.colId)}
-      isFilterActive={!!filterModel[column.colId]}
-      key={`${item.id}-${column.field}-name`}
+      // isSorterActive={sorters.map((s) => s.colId).includes(column.colId)}
+      // isFilterActive={!!filterModel[column.colId]}
     >
       <dt className="small text-muted text-truncate mb-1">
-        {column.headerComponentParams &&
-        column.headerComponentParams.menuIcon ? (
-          <span className="mr-2">{column.headerComponentParams.menuIcon}</span>
-        ) : null}
-        {column.headerName}
+        <div className="customHeaderLabel flex-grow-1 text-truncate">
+          {cell.column.headerComponentParams?.menuIcon && (
+            <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
+              {cell.column.headerComponentParams.menuIcon}
+            </span>
+          )}
+          {cell.column.headerName}
+        </div>
       </dt>
-      <dd className="mb-0 text-truncate">{valueRenderer(item, column)}</dd>
+      <dd className="mb-0 text-truncate">{cell.render('Cell')}</dd>
     </StyledItemField>
   );
 }

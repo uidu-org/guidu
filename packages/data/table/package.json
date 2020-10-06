@@ -17,6 +17,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "@loadable/component": "5.13.1",
+    "@uidu/checkbox": "^0.2.8",
     "@uidu/data-fields": "^0.1.42",
     "@uidu/dropdown-menu": "^0.3.4",
     "@uidu/form": "^0.3.4",
