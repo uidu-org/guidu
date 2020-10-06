@@ -1,6 +1,6 @@
 {
   "name": "@uidu/code",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Renders inline code snippets and code blocks",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/code",
   "license": "ISC",
@@ -19,7 +19,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.6",
+    "@uidu/docs": "^0.2.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1"

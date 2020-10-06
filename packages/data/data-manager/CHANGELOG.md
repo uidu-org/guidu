@@ -1,5 +1,18 @@
 # @uidu/data-manager
 
+## 0.5.0
+
+### Minor Changes
+
+- c9cffa3: Data manager now uses a different layout, fix some grouping issues, added pagination to table, fixed gallery
+
+### Patch Changes
+
+- Updated dependencies [c9cffa3]
+  - @uidu/gallery@0.1.50
+  - @uidu/list@0.1.32
+  - @uidu/table@0.2.1
+
 ## 0.4.0
 
 ### Minor Changes
