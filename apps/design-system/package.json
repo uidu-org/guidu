@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "repository": "https://github.com/uidu-org/guidu/tree/master/apps/design-system",
   "scripts": {

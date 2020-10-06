@@ -1,5 +1,18 @@
 # @uidu/data-controls
 
+## 0.5.0
+
+### Minor Changes
+
+- 35c8bfd: Drop ag-grid in favour of react-table, still WIP
+
+### Patch Changes
+
+- Updated dependencies [35c8bfd]
+  - @uidu/data-fields@0.2.0
+  - @uidu/data-views@0.4.0
+  - @uidu/table@0.2.0
+
 ## 0.4.7
 
 ### Patch Changes

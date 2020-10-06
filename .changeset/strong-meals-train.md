@@ -1,5 +1,0 @@
----
-'@uidu/renderer': patch
----
-
-Rebuild

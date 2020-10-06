@@ -1,5 +1,12 @@
 # @uidu/renderer
 
+## 0.2.6
+
+### Patch Changes
+
+- 35c8bfd: Drop ag-grid in favour of react-table, still WIP
+- b816ffa: Rebuild
+
 ## 0.2.5
 
 ### Patch Changes

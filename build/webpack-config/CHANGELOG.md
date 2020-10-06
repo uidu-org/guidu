@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.82
+
+### Patch Changes
+
+- 35c8bfd: Drop ag-grid in favour of react-table, still WIP
+
 ## 0.1.81
 
 ### Patch Changes
