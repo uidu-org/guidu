@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.4.4
+
+### Patch Changes
+
+- c9cffa3: Data manager now uses a different layout, fix some grouping issues, added pagination to table, fixed gallery
+
 ## 0.4.3
 
 ### Patch Changes

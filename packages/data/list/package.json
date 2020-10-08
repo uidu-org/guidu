@@ -1,6 +1,6 @@
 {
   "name": "@uidu/list",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "private": false,
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/list",
@@ -10,7 +10,7 @@
   "module": "dist/list.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@uidu/table": "^0.2.0",
+    "@uidu/table": "^0.2.1",
     "memoize-one": "^5.1.1",
     "react": "^16.13.1",
     "react-virtualized-auto-sizer": "^1.0.2",
@@ -19,7 +19,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.6"
+    "@uidu/docs": "^0.2.9"
   },
   "uidu:src": "src/index.ts"
 }
