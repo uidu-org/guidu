@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type MoreAction = {
   onClick: () => void;
   icon: React.FC<any>;

@@ -1,6 +1,12 @@
 import { Column } from '@uidu/table';
 
 export type FiltererProps = {
-  filters: Array<any>;
+  tableInstance: any;
   columnDefs: Column[];
+};
+
+export type FiltererFormProps = {
+  tableInstance: any;
+  filters: Array<any>;
+  filtersCount: number;
 };

@@ -1,3 +1,5 @@
+import { ChangeEvent } from 'react';
+
 export type FinderProps = {
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };

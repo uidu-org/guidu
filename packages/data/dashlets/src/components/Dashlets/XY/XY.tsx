@@ -86,7 +86,7 @@ export default function XY({ resultSet, config }) {
     return () => {
       chart.current?.dispose();
     };
-  }, [resultSet]);
+  }, [resultSet, config]);
 
   useLayoutEffect(() => {
     if (chart.current) {

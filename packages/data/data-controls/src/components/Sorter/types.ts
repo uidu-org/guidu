@@ -6,6 +6,11 @@ export type Sort = {
 };
 
 export type SorterProps = {
+  tableInstance: any;
   sorters: Array<Sort>;
   columnDefs: Column[];
+};
+
+export type SorterFormProps = {
+  tableInstance: any;
 };

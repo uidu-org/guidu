@@ -7,10 +7,6 @@ import DrawerLayout from '../../utils/DrawerLayout';
 import SorterForm from './form';
 import { SorterProps } from './types';
 
-// this component should return an array of sorters https://www.ag-grid.com/javascript-grid-sorting/#sorting-api
-// example:
-// [{ colId: 'country', sort: 'asc' }, { colId: 'sport', sort: 'desc' }];
-
 export default function Sorter({ tableInstance }: SorterProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const {

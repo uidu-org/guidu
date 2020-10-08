@@ -10,3 +10,7 @@ export type GrouperProps = {
   groupers?: Array<Group>;
   columnDefs?: Column[];
 };
+
+export type GrouperFormProps = {
+  tableInstance: any;
+};

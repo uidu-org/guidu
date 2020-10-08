@@ -566,33 +566,35 @@ export default class Basic extends Component<any, any> {
                               })}
                             </ShellHeader>
                             <ShellBody>
-                              <div className="h-100 container">
-                                {renderView({
-                                  viewProps: {
-                                    gallery: {
-                                      gutterSize: 24,
+                              <ShellMain>
+                                <div className="h-100 container">
+                                  {renderView({
+                                    viewProps: {
+                                      gallery: {
+                                        gutterSize: 24,
+                                      },
+                                      list: {
+                                        rowHeight: 96,
+                                      },
+                                      board: {},
+                                      table: {
+                                        headerHeight: 48,
+                                        rowHeight: 48,
+                                      },
                                     },
-                                    list: {
-                                      rowHeight: 96,
-                                    },
-                                    board: {},
-                                    table: {
-                                      headerHeight: 48,
-                                      rowHeight: 48,
-                                    },
-                                  },
-                                })}
-                              </div>
+                                  })}
+                                </div>
+                              </ShellMain>
+                              {renderSidebar() && (
+                                <ShellSidebar
+                                  style={{ width: '20%' }}
+                                  className="border-left"
+                                >
+                                  {renderSidebar({})}
+                                </ShellSidebar>
+                              )}
                             </ShellBody>
                           </ShellMain>
-                          {renderSidebar() && (
-                            <ShellSidebar
-                              style={{ width: '20%' }}
-                              className="border-left"
-                            >
-                              {renderSidebar({})}
-                            </ShellSidebar>
-                          )}
                         </>
                       )}
                     </ShellBody>

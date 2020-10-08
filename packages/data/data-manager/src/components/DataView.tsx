@@ -183,7 +183,7 @@ export default class DataView extends PureComponent<any> {
                   <Board
                     {...viewProps.board}
                     tableInstance={tableInstance}
-                    columnDefs={columns}
+                    columnDefs={tableInstance.visibleColumns}
                     initial={rowData.reduce((res, item, index) => {
                       const key = item[primaryField];
                       if (res[key]) {

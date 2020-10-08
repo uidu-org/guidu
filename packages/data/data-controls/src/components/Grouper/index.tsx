@@ -8,7 +8,6 @@ import GrouperForm from './form';
 import { GrouperProps } from './types';
 
 export default function Grouper({
-  onChange,
   groupers = [],
   tableInstance,
   ...rest
