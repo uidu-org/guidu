@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.6
+
+### Patch Changes
+
+- 25eb092: Small fixes to data-controls
+
 ## 0.6.5
 
 ### Patch Changes

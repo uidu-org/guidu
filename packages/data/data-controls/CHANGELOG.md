@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.5.2
+
+### Patch Changes
+
+- 25eb092: Small fixes to data-controls
+
 ## 0.5.1
 
 ### Patch Changes

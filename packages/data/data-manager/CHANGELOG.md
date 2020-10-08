@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.5.2
+
+### Patch Changes
+
+- 25eb092: Small fixes to data-controls
+- Updated dependencies [25eb092]
+  - @uidu/data-controls@0.5.2
+
 ## 0.5.1
 
 ### Patch Changes
