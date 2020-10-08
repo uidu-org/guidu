@@ -18,7 +18,7 @@ type ItemListProps = {
 
 class InnerItemListComponent extends Component<ItemListProps> {
   render() {
-    const { items, components, columnDefs } = this.props;
+    const { items, components, columnDefs, tableInstance } = this.props;
     return items.map((item: ItemProps, index: number) => (
       <Draggable key={item.id} draggableId={item.id} index={index}>
         {(
@@ -26,6 +26,7 @@ class InnerItemListComponent extends Component<ItemListProps> {
           dragSnapshot: DraggableStateSnapshot,
         ) => (
           <Item
+            tableInstance={tableInstance}
             key={item.id}
             item={item}
             components={components}
@@ -50,7 +51,7 @@ type InnerListProps = {
 };
 
 function InnerList(props: InnerListProps) {
-  const { items, dropProvided, components, columnDefs } = props;
+  const { items, dropProvided, components, columnDefs, tableInstance } = props;
 
   const {
     innerListContainer: Container,
@@ -64,6 +65,7 @@ function InnerList(props: InnerListProps) {
           items={items}
           components={components}
           columnDefs={columnDefs}
+          tableInstance={tableInstance}
         />
         {dropProvided.placeholder}
       </DropZone>
@@ -86,6 +88,7 @@ export default function ItemList(props: ItemsListProps) {
     header,
     footer,
     columnDefs,
+    tableInstance,
   } = props;
 
   const {
@@ -120,6 +123,7 @@ export default function ItemList(props: ItemsListProps) {
                 components={components}
                 dropProvided={dropProvided}
                 columnDefs={columnDefs}
+                tableInstance={tableInstance}
               />
             </ItemsListScrollContainer>
           ) : (
@@ -128,6 +132,7 @@ export default function ItemList(props: ItemsListProps) {
               components={components}
               dropProvided={dropProvided}
               columnDefs={columnDefs}
+              tableInstance={tableInstance}
             />
           )}
           {footer}

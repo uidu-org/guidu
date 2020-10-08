@@ -26,6 +26,7 @@ function ItemItem(props: Props) {
     isGroupedOver,
     provided,
     columnDefs,
+    tableInstance,
   } = props;
 
   const { item: Item } = components;
@@ -37,6 +38,7 @@ function ItemItem(props: Props) {
       isDragging={isDragging}
       isGroupedOver={isGroupedOver}
       ref={provided.innerRef}
+      tableInstance={tableInstance}
       {...provided.draggableProps}
       {...provided.dragHandleProps}
       columnDefs={columnDefs}

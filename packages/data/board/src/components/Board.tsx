@@ -128,6 +128,7 @@ export default class Board extends Component<BoardProps, BoardState> {
       withScrollableColumns,
       withDraggableColumns,
       columnDefs,
+      tableInstance,
     } = this.props;
 
     const {
@@ -159,6 +160,7 @@ export default class Board extends Component<BoardProps, BoardState> {
                 isCombineEnabled={isCombineEnabled}
                 isDragDisabled={!withDraggableColumns}
                 columnDefs={columnDefs}
+                tableInstance={tableInstance}
               />
             ))}
             {provided.placeholder}

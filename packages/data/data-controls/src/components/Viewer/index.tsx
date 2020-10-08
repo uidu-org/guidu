@@ -7,7 +7,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { FormattedDate } from 'react-intl';
 import Configurator from '../Configurator';
 import More from '../More';
-import Starrer from '../Starrer';
 import { ViewerProps } from './types';
 
 const renderAutoSaving = ({ isAutoSaving, icon }) => {
@@ -93,7 +92,7 @@ export default function Viewer({
   }, []);
 
   return (
-    <div className="d-flex align-items-center mr-auto" ref={node}>
+    <div className="d-flex align-items-center flex-shrink-0" ref={node}>
       <div className="d-flex align-items-center mr-4">
         <span className="mr-2 d-flex align-items-center">
           {renderAutoSaving({
@@ -130,7 +129,7 @@ export default function Viewer({
         endDateField={endDateField}
         primaryField={primaryField}
       />
-      <Starrer onToggle={updateView} currentView={currentView} />
+      {/* <Starrer onToggle={updateView} currentView={currentView} /> */}
       {availableControls.more.visible && (
         <More
           onDownload={onDownload}

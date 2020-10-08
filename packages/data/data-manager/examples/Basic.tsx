@@ -267,7 +267,7 @@ const dataViews = [
   {
     id: 5,
     name: 'Trello contatti',
-    preferences: { primaryField: 'country' },
+    preferences: { primaryField: 'gender' },
     kind: 'board',
     fields: ['avatar', 'member', 'amount'],
   },
@@ -526,30 +526,6 @@ export default class Basic extends Component<any, any> {
                   <ShellBodyWithSpinner />
                 ) : (
                   <>
-                    <ShellHeader
-                      className="px-3 px-xl-4 bg-white border-bottom"
-                      style={{ height: '4rem' }}
-                    >
-                      {renderControls({
-                        controls: {
-                          viewer: {
-                            visible: true,
-                          },
-                          finder: {
-                            visible: true,
-                          },
-                          more: {
-                            visible: true,
-                            actions: [
-                              {
-                                name: 'Rename',
-                                rename: true,
-                              },
-                            ],
-                          },
-                        },
-                      })}
-                    </ShellHeader>
                     <ShellBody>
                       {!loaded ? (
                         <ShellBodyWithSpinner />
@@ -565,23 +541,49 @@ export default class Basic extends Component<any, any> {
                             <SideNavigation schema={schema} />
                           </ShellSidebar>
                           <ShellMain>
-                            <div className="h-100">
-                              {renderView({
-                                viewProps: {
-                                  gallery: {
-                                    gutterSize: 24,
+                            <ShellHeader
+                              className="px-3 px-xl-4 bg-white border-bottom"
+                              style={{ height: '4rem' }}
+                            >
+                              {renderControls({
+                                controls: {
+                                  viewer: {
+                                    visible: true,
                                   },
-                                  list: {
-                                    rowHeight: 96,
+                                  finder: {
+                                    visible: true,
                                   },
-                                  board: {},
-                                  table: {
-                                    headerHeight: 48,
-                                    rowHeight: 48,
+                                  more: {
+                                    visible: true,
+                                    actions: [
+                                      {
+                                        name: 'Rename',
+                                        rename: true,
+                                      },
+                                    ],
                                   },
                                 },
                               })}
-                            </div>
+                            </ShellHeader>
+                            <ShellBody>
+                              <div className="h-100 container">
+                                {renderView({
+                                  viewProps: {
+                                    gallery: {
+                                      gutterSize: 24,
+                                    },
+                                    list: {
+                                      rowHeight: 96,
+                                    },
+                                    board: {},
+                                    table: {
+                                      headerHeight: 48,
+                                      rowHeight: 48,
+                                    },
+                                  },
+                                })}
+                              </div>
+                            </ShellBody>
                           </ShellMain>
                           {renderSidebar() && (
                             <ShellSidebar

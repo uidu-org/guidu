@@ -27,9 +27,7 @@ const Cover = ({
       className="card-img-top"
       height={cover && cover.width ? (cover.width * 3) / 2 : 200}
       cover={
-        cover && valueRenderer(item, cover)
-          ? `url(${valueRenderer(item, cover)})`
-          : null
+        valueRenderer(item, cover) ? `url(${valueRenderer(item, cover)})` : null
       }
     >
       {children}

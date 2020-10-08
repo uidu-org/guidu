@@ -311,7 +311,7 @@ export default function DataManager({
             primaryField={primaryField}
           />
         )}
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center border-left ml-3 pl-3 flex-grow-1">
           {currentView.kind === 'calendar' &&
             availableControls.calendarToolbar.visible && (
               <div

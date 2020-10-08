@@ -17,6 +17,7 @@ export default class Column extends Component<ColumnProps> {
       index,
       isDragDisabled,
       columnDefs,
+      tableInstance,
     } = this.props;
     const {
       columnHeader: Header,
@@ -47,6 +48,7 @@ export default class Column extends Component<ColumnProps> {
               internalScroll={this.props.isScrollable}
               isCombineEnabled={Boolean(this.props.isCombineEnabled)}
               columnDefs={columnDefs}
+              tableInstance={tableInstance}
               header={
                 <Header
                   isDragging={snapshot.isDragging}

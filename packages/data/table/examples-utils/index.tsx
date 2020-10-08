@@ -8,12 +8,12 @@ export const availableColumns = [
     field: 'id',
     dataFieldParams: { onItemClick: (params) => console.log(params) },
   },
-  // {
-  //   dataField: 'cover',
-  //   colId: 'cover',
-  //   field: 'cover',
-  //   headerName: 'Cover',
-  // },
+  {
+    dataField: 'cover',
+    colId: 'cover',
+    field: 'cover',
+    headerName: 'Cover',
+  },
   // {
   //   dataField: 'avatar',
   //   colId: 'avatar',
@@ -213,7 +213,7 @@ export const fetchContacts = () => {
     let wait = setTimeout(() => {
       clearTimeout(wait);
       resolve(
-        Array.from(Array(430).keys()).map((i) => ({
+        Array.from(Array(100).keys()).map((i) => ({
           id: faker.random.uuid(),
           avatar: faker.image.avatar(),
           email: faker.internet.email(),

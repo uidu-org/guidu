@@ -106,8 +106,6 @@ export default class DataView extends PureComponent<any> {
       setAggregation,
     } = this.props;
 
-    console.log(this.props);
-
     if (!rowData) {
       return <ShellBodyWithSpinner />;
     }
@@ -116,9 +114,6 @@ export default class DataView extends PureComponent<any> {
       <Table
         setAggregation={setAggregation}
         tableInstance={tableInstance}
-        rowDoubleClicked={() => null}
-        rowSelection="multiple"
-        suppressRowClickSelection
         // stopEditingWhenGridLosesFocus
         {...viewProps.table}
         rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
@@ -139,20 +134,6 @@ export default class DataView extends PureComponent<any> {
         onColumnResized={onColumnResized}
         onRowGroupOpened={onRowGroupOpened}
         // onRowClicked={onItemClick}
-        accentedSort
-        suppressPropertyNamesCheck
-        enableRangeSelection
-        statusBar={{
-          statusPanels: [
-            {
-              statusPanel: 'agTotalAndFilteredRowCountComponent',
-              align: 'left',
-            },
-            { statusPanel: 'agFilteredRowCountComponent' },
-            { statusPanel: 'agSelectedRowCountComponent' },
-            { statusPanel: 'agAggregationComponent' },
-          ],
-        }}
       />
     );
 
@@ -201,6 +182,7 @@ export default class DataView extends PureComponent<any> {
                 return (
                   <Board
                     {...viewProps.board}
+                    tableInstance={tableInstance}
                     columnDefs={columns}
                     initial={rowData.reduce((res, item, index) => {
                       const key = item[primaryField];

@@ -1,10 +1,8 @@
-import { valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
 
-export default class Item extends PureComponent<any> {
+export default class DataCard extends PureComponent<any> {
   render() {
-    const { columnDefs, item, ...rest } = this.props;
-
+    const { columnDefs, item, tableInstance, ...rest } = this.props;
     // console.log(this.props);
     // const {
     //   items,
@@ -22,11 +20,18 @@ export default class Item extends PureComponent<any> {
       return null;
     }
 
-    const visibleColumns = columnDefs.filter(
-      (column) =>
-        column.viewType !== 'cover' &&
-        column.viewType !== 'primary' &&
-        column.viewType !== 'avatar',
+    const { prepareRow, rows } = tableInstance;
+    const row = rows.find((r) => r.values.id === item.id);
+    prepareRow(row);
+
+    const visibleCells = row.cells.filter(
+      (cell) =>
+        cell.column.viewType !== 'uid' &&
+        cell.column.id !== 'selection' &&
+        cell.column.viewType !== 'cover' &&
+        cell.column.viewType !== 'primary' &&
+        cell.column.viewType !== 'avatar' &&
+        cell.column.viewType !== 'addField',
     );
 
     return (
@@ -49,28 +54,24 @@ export default class Item extends PureComponent<any> {
           )} */}
           <div className={`${primary ? 'mt-n3' : ''} card-body pt-1`}>
             <dl className="mb-0">
-              {visibleColumns.map((column) => (
-                <>
-                  <dt
-                    className="small text-muted text-truncate mt-3"
-                    key={`${item.id}-${column.field}-name`}
-                  >
-                    {column.headerComponentParams &&
-                    column.headerComponentParams.menuIcon ? (
-                      <span className="mr-2">
-                        {column.headerComponentParams.menuIcon}
-                      </span>
-                    ) : null}
-                    {column.headerName}
-                  </dt>
-                  <dd
-                    className="mb-0 text-truncate"
-                    key={`${item.id}-${column.field}-value`}
-                  >
-                    {valueRenderer(item, column)}
-                  </dd>
-                </>
-              ))}
+              {visibleCells.map((cell) => {
+                return (
+                  <>
+                    <dt
+                      className="small text-muted text-truncate mt-3"
+                      key={`${item.id}-${cell.column.id}-name`}
+                    >
+                      {cell.render('Header')}
+                    </dt>
+                    <dd
+                      className="mb-0 text-truncate"
+                      key={`${item.id}-${cell.column.id}-value`}
+                    >
+                      {cell.render('Cell')}
+                    </dd>
+                  </>
+                );
+              })}
             </dl>
           </div>
         </div>

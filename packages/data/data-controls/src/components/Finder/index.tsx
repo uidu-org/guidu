@@ -29,7 +29,7 @@ export default function Finder({ onChange }: FinderProps) {
   }, []);
 
   return (
-    <div ref={node}>
+    <div ref={node} className="ml-auto">
       <InlineDialog
         content={
           <input

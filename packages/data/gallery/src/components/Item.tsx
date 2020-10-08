@@ -31,6 +31,8 @@ export default class Item extends PureComponent<any> {
         cell.column.viewType !== 'addField',
     );
 
+    console.log(cover);
+
     return (
       <>
         <ItemCover cover={cover} avatar={avatar} item={item} />
@@ -50,20 +52,6 @@ export default class Item extends PureComponent<any> {
               );
             })}
           </ItemFields>
-          {/* {visibleColumns.length > 0 && (
-            <ItemFields>
-              {visibleColumns.map((column) => (
-                <ItemField
-                  cell={cell}
-                  column={column}
-                  sorters={sorters}
-                  filterModel={filterModel}
-                  item={row}
-                  key={`${item.id}-${column.field}-name`}
-                />
-              ))}
-            </ItemFields>
-          )} */}
         </ItemWrapper>
       </>
     );

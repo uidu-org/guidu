@@ -140,11 +140,14 @@ const Table = ({
     size: page.length,
     parentRef,
     overscan: 5,
-    estimateSize: React.useCallback((i) => rowHeight, []),
+    estimateSize: React.useCallback((i) => rowHeight, [rowHeight]),
   });
 
   return (
-    <div className={`ag-theme-${theme} h-100${className}`} role="table">
+    <div
+      className={`ag-theme-${theme} h-100${className} border rounded`}
+      role="table"
+    >
       <div
         {...getTableBodyProps()}
         ref={parentRef}
