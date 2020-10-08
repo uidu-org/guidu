@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.51
+
+### Patch Changes
+
+- 4792804: Fix board
+- Updated dependencies [4792804]
+  - @uidu/data-controls@0.5.1
+  - @uidu/table@0.2.2
+
 ## 0.1.50
 
 ### Patch Changes

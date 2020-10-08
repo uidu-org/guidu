@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.5.1
+
+### Patch Changes
+
+- 4792804: Fix board
+- Updated dependencies [4792804]
+  - @uidu/table@0.2.2
+
 ## 0.5.0
 
 ### Minor Changes

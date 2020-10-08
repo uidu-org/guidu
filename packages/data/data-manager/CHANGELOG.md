@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 0.5.1
+
+### Patch Changes
+
+- 4792804: Fix board
+- Updated dependencies [4792804]
+  - @uidu/board@0.2.25
+  - @uidu/data-controls@0.5.1
+  - @uidu/gallery@0.1.51
+  - @uidu/table@0.2.2
+
 ## 0.5.0
 
 ### Minor Changes

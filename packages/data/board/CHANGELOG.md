@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.25
+
+### Patch Changes
+
+- 4792804: Fix board
+
 ## 0.2.24
 
 ### Patch Changes
