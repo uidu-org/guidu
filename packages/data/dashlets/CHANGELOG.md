@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.7
+
+### Patch Changes
+
+- e884058: Fixes to dashlets and dashlets form
+
 ## 0.6.6
 
 ### Patch Changes

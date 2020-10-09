@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.83
+
+### Patch Changes
+
+- e884058: Fixes to dashlets and dashlets form
+
 ## 0.1.82
 
 ### Patch Changes

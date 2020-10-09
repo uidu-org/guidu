@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.7.7
+
+### Patch Changes
+
+- e884058: Fixes to dashlets and dashlets form
+- Updated dependencies [e884058]
+  - @uidu/dashlets@0.6.7
+
 ## 0.7.6
 
 ### Patch Changes
