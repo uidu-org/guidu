@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.0
+
+### Minor Changes
+
+- f56dcb5: Fixed swiper build
+
 ## 1.4.4
 
 ### Patch Changes
