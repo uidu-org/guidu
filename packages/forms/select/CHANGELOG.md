@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.5.7
+
+### Patch Changes
+
+- e884058: Fixes to dashlets and dashlets form
+
 ## 0.5.6
 
 ### Patch Changes

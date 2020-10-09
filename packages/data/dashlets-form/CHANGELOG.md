@@ -1,5 +1,16 @@
 # @uidu/dashlets-form
 
+## 0.1.10
+
+### Patch Changes
+
+- e884058: Fixes to dashlets and dashlets form
+- b0a1f0e: Added depenencies
+- Updated dependencies [e884058]
+  - @uidu/dashlets@0.6.7
+  - @uidu/field-downshift@0.4.5
+  - @uidu/select@0.5.7
+
 ## 0.1.9
 
 ### Patch Changes
