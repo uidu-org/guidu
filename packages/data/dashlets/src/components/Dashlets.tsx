@@ -81,5 +81,5 @@ export function renderDashlet({ kind, showHeader = true, ...dashlet }) {
 }
 
 export default function Dashlets({ dashlets }: DashletsProps) {
-  return dashlets.map((dashlet) => renderDashlet(dashlet));
+  return dashlets.map(renderDashlet);
 }

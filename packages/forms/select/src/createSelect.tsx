@@ -185,7 +185,6 @@ const createSelect = <TOriginalProps extends {}>(
 
     onChange = (value, option, actionMeta) => {
       const { name, onSetValue, onChange } = this.props;
-      console.log(value);
       onSetValue(value);
       onChange(name, value, { option, actionMeta });
     };

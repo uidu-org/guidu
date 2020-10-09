@@ -10,8 +10,8 @@
   "module": "dist/dashboard-manager.esm.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@cubejs-client/core": "^0.20.10",
-    "@cubejs-client/react": "^0.20.10",
+    "@cubejs-client/core": "^0.21.0",
+    "@cubejs-client/react": "^0.21.0",
     "@types/react-grid-layout": "^1.1.0",
     "@uidu/dashboard-controls": "^0.3.10",
     "@uidu/dashlets": "^0.6.5",

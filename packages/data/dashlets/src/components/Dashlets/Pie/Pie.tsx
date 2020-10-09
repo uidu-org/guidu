@@ -12,11 +12,16 @@ export default function Pie({ resultSet, config }) {
   const chart = useRef(null);
   const id = useRef(uuid());
 
+  console.log(resultSet);
+  console.log(resultSet?.series());
+  console.log(resultSet?.chartPivot());
+
   useLayoutEffect(() => {
     if (resultSet) {
       let x = am4core.createFromConfig(
         {
           innerRadius: '40%',
+          ...config,
           series: resultSet.series().map((line) => ({
             type: 'PieSeries',
             dataFields: {
@@ -36,7 +41,6 @@ export default function Pie({ resultSet, config }) {
           })),
           numberFormat: '#a',
           data: resultSet.chartPivot(),
-          ...config,
         },
         id.current,
         am4charts.PieChart,
@@ -48,7 +52,7 @@ export default function Pie({ resultSet, config }) {
     return () => {
       chart.current?.dispose();
     };
-  }, [resultSet]);
+  }, [resultSet, config]);
 
   useLayoutEffect(() => {
     if (chart.current) {

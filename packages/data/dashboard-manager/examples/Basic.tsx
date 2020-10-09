@@ -66,7 +66,7 @@ export default class Basic extends Component<any, any> {
                                     {
                                       dimension: 'Donations.createdAt',
                                       granularity: 'month',
-                                      dateRange: 'This year',
+                                      // dateRange: 'This year',
                                     },
                                   ],
                                   filters: [],
@@ -180,6 +180,30 @@ export default class Basic extends Component<any, any> {
                                   ],
                                   filters: [],
                                 },
+                              },
+                              {
+                                label: 'Ma dove',
+                                kind: 'XY',
+                                query: {
+                                  measures: ['Donations.amount'],
+                                  timeDimensions: [
+                                    {
+                                      dimension: 'Donations.createdAt',
+                                      granularity: 'year',
+                                      // dateRange: 'Last year',
+                                    },
+                                  ],
+                                },
+                                // config: {
+                                //   legend: {
+                                //     position: 'right',
+                                //     disabled: false,
+                                //     fillOpacity: 0.3,
+                                //     fontSize: 14,
+                                //     type: 'Legend',
+                                //   },
+                                // },
+                                layout: { x: 0, y: 4, w: 8, h: 8 },
                               },
                               {
                                 kind: 'Pie',

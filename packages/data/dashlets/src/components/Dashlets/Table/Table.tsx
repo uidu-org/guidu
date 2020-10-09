@@ -10,6 +10,8 @@ export default class ListBlock extends PureComponent<any> {
       return <Loader />;
     }
 
+    console.log(resultSet.tableColumns());
+
     return (
       <>
         {/* <div className="card-header d-flex align-items-center">

@@ -6,6 +6,7 @@ import { v1 as uuid } from 'uuid';
 import Loader from '../../Loader';
 
 am4core.useTheme(am4themes_animated);
+am4core.options.queue = true;
 am4core.options.commercialLicense = true;
 
 export default function XY({ resultSet, config }) {
@@ -60,21 +61,23 @@ export default function XY({ resultSet, config }) {
               },
             },
           ],
-          // series: resultSet.series().map((line) => ({
-          //   type: 'LineSeries',
-          //   dataFields: {
-          //     valueY: line.key,
-          //     dateX: 'category',
-          //   },
-          //   strokeWidth: 1,
-          //   fillOpacity: 0.6,
-          //   tensionX: 0.8,
-          //   name: line.title,
-          //   tooltipText: `{dateX}\n[bold]{valueY}[/]`,
-          // })),
           numberFormat: '#a',
           data: resultSet.chartPivot(),
           ...config,
+          series:
+            config?.series ||
+            resultSet.series().map((line) => ({
+              type: 'StepLineSeries',
+              dataFields: {
+                valueY: line.key,
+                dateX: 'category',
+              },
+              strokeWidth: 1,
+              fillOpacity: 0.6,
+              tensionX: 0.8,
+              name: line.title,
+              tooltipText: `{dateX}\n[bold]{valueY}[/]`,
+            })),
         },
         id.current,
         am4charts.XYChart,
@@ -98,6 +101,9 @@ export default function XY({ resultSet, config }) {
   if (!resultSet) {
     return <Loader />;
   }
+
+  console.log(resultSet.chartPivot());
+  console.log(resultSet.series());
 
   return <div style={{ width: '100%', height: '100%' }} id={id.current} />;
 }

@@ -1,1 +1,1 @@
-export type DashletsFormProps = {};
+export type DashletsFormProps = any;

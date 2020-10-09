@@ -26,23 +26,25 @@ function FieldDownshift({
     if (value === undefined) return undefined;
 
     const cleanedValue = multiple
-      ? options.filter(o => value.includes(getOptionValue(o)))
-      : options.find(o => getOptionValue(o) === value);
+      ? options.filter((o) => value.includes(getOptionValue(o)))
+      : options.find((o) => getOptionValue(o) === value);
 
     return cleanedValue;
   };
 
-  const onSelect = selectedItem => {
+  const onSelect = (selectedItem) => {
     if (multiple) {
       if (value && value.indexOf(getOptionValue(selectedItem)) >= 0) {
-        const newValue = value.filter(v => v !== getOptionValue(selectedItem));
+        const newValue = value.filter(
+          (v) => v !== getOptionValue(selectedItem),
+        );
         onSetValue(newValue);
         onChange(name, newValue, { option: selectedItem });
       } else {
         // add item
         const newValue = [
           ...options
-            .filter(o => value.indexOf(getOptionValue(o)) >= 0)
+            .filter((o) => value.indexOf(getOptionValue(o)) >= 0)
             .map(getOptionValue),
           getOptionValue(selectedItem),
         ];
@@ -87,7 +89,7 @@ function FieldDownshift({
   return (
     <Downshift
       onSelect={onSelect}
-      itemToString={item => getOptionLabel({ item })}
+      itemToString={(item) => getOptionLabel({ item })}
       initialSelectedItem={selectedItem}
     >
       {({
@@ -107,7 +109,7 @@ function FieldDownshift({
             {input && input({ ...getInputProps() })}
             {menu({
               ...getMenuProps({}),
-              // selectedItem: value,
+              selectedItem,
               children: filterOptions({ options, inputValue, isOpen }).map(
                 (item, index) =>
                   renderItem({

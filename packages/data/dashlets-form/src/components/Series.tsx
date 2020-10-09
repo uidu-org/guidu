@@ -1,6 +1,20 @@
 import Select from '@uidu/select';
 import React from 'react';
 
+// series: [
+//   {
+//     dataFields: {
+//       valueY: measure.id,
+//       dateX: 'category',
+//     },
+//     strokeWidth: 1,
+//     fillOpacity: 0.6,
+//     tensionX: 0.8,
+//     name: measure.name,
+//     tooltipText: `{dateX}\n[bold]{valueY}[/]`,
+//   },
+// ],
+
 export default function Series({ measures, config, setConfig }) {
   return (
     <div className="form-group">
