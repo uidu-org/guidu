@@ -18,9 +18,11 @@ import Swiper, {
   Scrollbar,
   SwiperOptions,
 } from 'swiper';
-import 'swiper/swiper-bundle.css';
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
+
+// https://github.com/nolimits4web/swiper/issues/3708
+require('swiper/swiper-bundle.css');
 
 Swiper.use([
   Navigation,
