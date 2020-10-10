@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.2
+
+### Patch Changes
+
+- eb19376: Go back to module for swiper
+
 ## 1.5.1
 
 ### Patch Changes
