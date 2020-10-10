@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.4
+
+### Patch Changes
+
+- 93121df: Removed swiper css from @uidu/slider. Remember to import it where needed
+
 ## 1.5.3
 
 ### Patch Changes
