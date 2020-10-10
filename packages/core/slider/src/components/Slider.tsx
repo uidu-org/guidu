@@ -8,33 +8,34 @@ import React, {
   useImperativeHandle,
   useRef,
 } from 'react';
-import Swiper, {
-  A11y,
-  Autoplay,
-  History,
-  Keyboard,
-  Navigation,
-  Pagination,
-  Scrollbar,
-  SwiperOptions,
-} from 'swiper';
+// import Swiper, {
+//   A11y,
+//   Autoplay,
+//   History,
+//   Keyboard,
+//   Navigation,
+//   Pagination,
+//   Scrollbar,
+//   SwiperOptions,
+// } from 'swiper';
+import Swiper from 'swiper/bundle';
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
 
 // https://github.com/nolimits4web/swiper/issues/3708
 require('swiper/swiper-bundle.css');
 
-Swiper.use([
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  History,
-  Keyboard,
-  Autoplay,
-]);
+// Swiper.use([
+//   Navigation,
+//   Pagination,
+//   Scrollbar,
+//   A11y,
+//   History,
+//   Keyboard,
+//   Autoplay,
+// ]);
 
-const defaultSwiperOptions = (id: string): Partial<SwiperOptions> => ({
+const defaultSwiperOptions = (id: string): Partial<any> => ({
   direction: 'horizontal',
   initialSlide: 0,
   slidesPerView: 1,
