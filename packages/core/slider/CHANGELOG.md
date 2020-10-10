@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.1
+
+### Patch Changes
+
+- 39accd8: Try with swiper bundle
+
 ## 1.5.0
 
 ### Minor Changes
