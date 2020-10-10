@@ -1,5 +1,11 @@
 # @uidu/chat-window
 
+## 0.2.5
+
+### Patch Changes
+
+- 090552e: Bump dependencies, try restore classic swiper import
+
 ## 0.2.4
 
 ### Patch Changes

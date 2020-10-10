@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.3
+
+### Patch Changes
+
+- 090552e: Bump dependencies, try restore classic swiper import
+
 ## 1.5.2
 
 ### Patch Changes

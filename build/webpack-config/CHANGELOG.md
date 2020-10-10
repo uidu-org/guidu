@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.84
+
+### Patch Changes
+
+- 090552e: Bump dependencies, try restore classic swiper import
+
 ## 0.1.83
 
 ### Patch Changes
