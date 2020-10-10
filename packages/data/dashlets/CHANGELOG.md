@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.8
+
+### Patch Changes
+
+- f56dcb5: Fixed swiper build
+
 ## 0.6.7
 
 ### Patch Changes
