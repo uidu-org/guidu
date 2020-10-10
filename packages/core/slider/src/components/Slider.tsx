@@ -20,7 +20,8 @@ import Swiper, {
 } from 'swiper';
 // https://github.com/nolimits4web/swiper/issues/3708
 // require('swiper/swiper-bundle.css');
-import 'swiper/swiper-bundle.css';
+// https://github.com/nolimits4web/swiper/issues/3777
+// import 'swiper/swiper.scss';
 import { v1 as uuid } from 'uuid';
 import { SliderProps } from '../types';
 
