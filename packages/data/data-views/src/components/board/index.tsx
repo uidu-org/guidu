@@ -1,11 +1,13 @@
 import loadable from '@loadable/component';
+import { Configurator, Filterer, Sorter } from '@uidu/data-controls';
 import React from 'react';
-import { Trello } from 'react-feather';
+import { Settings, Trello } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import { DataViewKind } from '../../types';
 
-const Configurator = loadable(() => import('./configurator'));
+const ConfiguratorForm = loadable(() => import('./configurator'));
 
-export default {
+const Board: DataViewKind = {
   id: 'board',
   name: <FormattedMessage id="dataView.board.name" defaultMessage="Board" />,
   icon: Trello,
@@ -17,4 +19,27 @@ export default {
     />
   ),
   configurator: Configurator,
+  controls: ({ tableInstance, columnDefs, availableControls }) => (
+    <>
+      <p>Using field createdAt</p>
+      <Configurator
+        icon={Settings}
+        configurator={ConfiguratorForm}
+        tableInstance={tableInstance}
+        columnDefs={columnDefs}
+        name="Customize cards"
+      />
+      <Filterer
+        tableInstance={tableInstance}
+        columnDefs={columnDefs}
+        {...availableControls.filterer.props}
+      />
+      <Sorter
+        tableInstance={tableInstance}
+        {...availableControls.sorter.props}
+      />
+    </>
+  ),
 };
+
+export default Board;

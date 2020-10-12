@@ -1,4 +1,15 @@
 import { FilterModel, Group, Sort } from '@uidu/data-controls';
+import React, { ReactNode } from 'react';
+
+export type DataViewKind = {
+  id: string;
+  name: string | React.ReactNode;
+  icon: React.ReactNode;
+  color: string;
+  description?: React.ReactNode;
+  controls?: React.FC<any>;
+  configurator?: React.FC<any>;
+};
 
 export type DataViewPreferences = {
   // table
@@ -15,8 +26,8 @@ export type DataViewPreferences = {
 
 export type DataView = {
   id: string | number;
-  kind: string;
-  name: string | React.ReactNode;
+  kind: DataViewKind['id'];
+  name: string | ReactNode;
   fields: String[];
   sorters: Sort[];
   groupers: Group[];

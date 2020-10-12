@@ -2,10 +2,11 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { Shuffle } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import { DataViewKind } from '../../types';
 
 const Configurator = loadable(() => import('./configurator'));
 
-export default {
+const Comparator: DataViewKind = {
   id: 'comparator',
   name: (
     <FormattedMessage
@@ -23,3 +24,5 @@ export default {
   ),
   configurator: Configurator,
 };
+
+export default Comparator;

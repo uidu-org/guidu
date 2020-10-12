@@ -4,3 +4,5 @@ export type TogglerProps = {
   columnDefs: Column[];
   onDragEnd: (params) => void;
 };
+
+export type TogglerFormProps = {};

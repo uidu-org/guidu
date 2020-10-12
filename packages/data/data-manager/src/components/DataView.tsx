@@ -111,30 +111,32 @@ export default class DataView extends PureComponent<any> {
     }
 
     const table = (
-      <Table
-        setAggregation={setAggregation}
-        tableInstance={tableInstance}
-        // stopEditingWhenGridLosesFocus
-        {...viewProps.table}
-        rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
-        // use columnDefs from props to avoid flickering on toggling/reordering columns
-        columnDefs={columnDefs}
-        loadingOverlayComponentFramework={() => (
-          <div className="h-100 bg-white d-flex align-items-center justify-content-center w-100">
-            <Spinner />
-          </div>
-        )}
-        rowData={rowData}
-        onAddField={onAddField}
-        onSortChanged={onSortChanged}
-        onFilterChanged={onFilterChanged}
-        onColumnRowGroupChanged={onColumnRowGroupChanged}
-        onColumnVisible={onColumnVisible}
-        onDragStopped={onDragStopped}
-        onColumnResized={onColumnResized}
-        onRowGroupOpened={onRowGroupOpened}
-        // onRowClicked={onItemClick}
-      />
+      <div className="container h-100 py-3">
+        <Table
+          setAggregation={setAggregation}
+          tableInstance={tableInstance}
+          // stopEditingWhenGridLosesFocus
+          {...viewProps.table}
+          rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
+          // use columnDefs from props to avoid flickering on toggling/reordering columns
+          columnDefs={columnDefs}
+          loadingOverlayComponentFramework={() => (
+            <div className="h-100 bg-white d-flex align-items-center justify-content-center w-100">
+              <Spinner />
+            </div>
+          )}
+          rowData={rowData}
+          onAddField={onAddField}
+          onSortChanged={onSortChanged}
+          onFilterChanged={onFilterChanged}
+          onColumnRowGroupChanged={onColumnRowGroupChanged}
+          onColumnVisible={onColumnVisible}
+          onDragStopped={onDragStopped}
+          onColumnResized={onColumnResized}
+          onRowGroupOpened={onRowGroupOpened}
+          // onRowClicked={onItemClick}
+        />
+      </div>
     );
 
     let desktopView = null;
@@ -147,24 +149,26 @@ export default class DataView extends PureComponent<any> {
             <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
               {({ default: Calendar }) => {
                 return (
-                  <Calendar
-                    {...viewProps.calendar}
-                    onItemClick={onItemClick}
-                    events={data}
-                    startAccessor={(item) =>
-                      moment(item[startDateField]).toDate()
-                    }
-                    titleAccessor={(item) => item.email}
-                    endAccessor={(item) =>
-                      endDateField
-                        ? moment(item[endDateField].toDate())
-                        : moment(item[startDateField]).add(3, 'hour').toDate()
-                    }
-                    columnDefs={columns}
-                    components={{
-                      toolbar: CalendarToolbar,
-                    }}
-                  />
+                  <div className="container h-100 py-3">
+                    <Calendar
+                      {...viewProps.calendar}
+                      onItemClick={onItemClick}
+                      events={data}
+                      startAccessor={(item) =>
+                        moment(item[startDateField]).toDate()
+                      }
+                      titleAccessor={(item) => item.email}
+                      endAccessor={(item) =>
+                        endDateField
+                          ? moment(item[endDateField].toDate())
+                          : moment(item[startDateField]).add(3, 'hour').toDate()
+                      }
+                      columnDefs={columns}
+                      components={{
+                        toolbar: CalendarToolbar,
+                      }}
+                    />
+                  </div>
                 );
               }}
             </LoadableCalendar>
@@ -225,20 +229,22 @@ export default class DataView extends PureComponent<any> {
         );
         desktopView = (
           <>
-            <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-              {({ default: Gallery }) => (
-                <Gallery
-                  {...viewProps.gallery}
-                  tableInstance={tableInstance}
-                  columnCount={columnCount}
-                  onItemClick={onItemClick}
-                  rowData={data}
-                  columnDefs={columns}
-                  sorters={sorters}
-                  filterModel={filterModel || {}}
-                />
-              )}
-            </LoadableGallery>
+            <div className="container h-100 px-0">
+              <LoadableGallery fallback={<ShellBodyWithSpinner />}>
+                {({ default: Gallery }) => (
+                  <Gallery
+                    {...viewProps.gallery}
+                    tableInstance={tableInstance}
+                    columnCount={columnCount}
+                    onItemClick={onItemClick}
+                    rowData={data}
+                    columnDefs={columns}
+                    sorters={sorters}
+                    filterModel={filterModel || {}}
+                  />
+                )}
+              </LoadableGallery>
+            </div>
           </>
         );
         break;

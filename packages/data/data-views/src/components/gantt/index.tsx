@@ -2,10 +2,11 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { Activity } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import { DataViewKind } from '../../types';
 
 const Configurator = loadable(() => import('./configurator'));
 
-export default {
+const Gantt: DataViewKind = {
   id: 'gantt',
   name: <FormattedMessage id="dataView.gantt.name" defaultMessage="Gantt" />,
   icon: Activity,
@@ -18,3 +19,5 @@ export default {
   ),
   configurator: Configurator,
 };
+
+export default Gantt;

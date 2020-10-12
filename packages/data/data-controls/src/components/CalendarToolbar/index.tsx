@@ -4,6 +4,7 @@ import CalendarNavigator from './CalendarNavigator';
 import CalendarView from './CalendarView';
 
 export default function CalendarToolbar(props) {
+  return null;
   return createPortal(
     <>
       <CalendarNavigator {...props} />

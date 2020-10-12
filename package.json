@@ -62,6 +62,7 @@
     "@atlaskit/logo": "^13.0.0",
     "@atlaskit/profilecard": "^13.0.4",
     "@atlaskit/progress-indicator": "^9.0.0",
+    "@atlaskit/tag": "^11.0.1",
     "@atlaskit/task-decision": "^17.0.0",
     "@atlaskit/type-helpers": "^4.1.6",
     "@atlaskit/util-service-support": "^6.0.1",

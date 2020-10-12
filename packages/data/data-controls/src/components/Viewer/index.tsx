@@ -5,7 +5,6 @@ import Spinner from '@uidu/spinner';
 import Tooltip from '@uidu/tooltip';
 import React, { useEffect, useRef, useState } from 'react';
 import { FormattedDate } from 'react-intl';
-import Configurator from '../Configurator';
 import More from '../More';
 import { ViewerProps } from './types';
 
@@ -93,7 +92,7 @@ export default function Viewer({
 
   return (
     <div className="d-flex align-items-center flex-shrink-0" ref={node}>
-      <div className="d-flex align-items-center mr-4">
+      <div className="d-flex align-items-center mr-3">
         <span className="mr-2 d-flex align-items-center">
           {renderAutoSaving({
             isAutoSaving,
@@ -113,22 +112,7 @@ export default function Viewer({
           <h6 className="m-0">{currentView.name}</h6>
         )}
       </div>
-      <Configurator
-        tableInstance={tableInstance}
-        isConfiguratorOpen={isConfiguratorOpen}
-        currentView={currentView}
-        columnDefs={columnDefs}
-        groupers={groupers}
-        onDragEnd={onDragEnd}
-        onResize={onResize}
-        rowHeight={rowHeight}
-        columnCount={columnCount}
-        onSetColumnCount={onSetColumnCount}
-        updateView={updateView}
-        startDateField={startDateField}
-        endDateField={endDateField}
-        primaryField={primaryField}
-      />
+
       {/* <Starrer onToggle={updateView} currentView={currentView} /> */}
       {availableControls.more.visible && (
         <More

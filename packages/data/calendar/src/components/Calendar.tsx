@@ -21,24 +21,26 @@ export default class Calendar extends PureComponent<any> {
       components,
       ...rest
     } = this.props;
-    console.log(events);
+
     return (
-      <BigCalendar
-        {...calendarProps({ events, onEventDrop, onEventResize })}
-        defaultView="month"
-        selectable={false}
-        resizable={false}
-        views={['month', 'week', 'day']}
-        components={{
-          toolbar: Toolbar,
-          event: Event,
-          month: {
+      <>
+        <BigCalendar
+          {...calendarProps({ events, onEventDrop, onEventResize })}
+          defaultView="month"
+          selectable={false}
+          resizable={false}
+          views={['month', 'week', 'day']}
+          components={{
+            toolbar: Toolbar,
             event: Event,
-          },
-          ...components,
-        }}
-        {...rest}
-      />
+            month: {
+              event: Event,
+            },
+            // ...components,
+          }}
+          {...rest}
+        />
+      </>
     );
   }
 }

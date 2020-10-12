@@ -2,10 +2,11 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { BookOpen } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import { DataViewKind } from '../../types';
 
 const Configurator = loadable(() => import('./configurator'));
 
-export default {
+const Timeline: DataViewKind = {
   id: 'timeline',
   name: (
     <FormattedMessage id="dataView.timeline.name" defaultMessage="Timeline" />
@@ -20,3 +21,5 @@ export default {
   ),
   configurator: Configurator,
 };
+
+export default Timeline;

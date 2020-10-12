@@ -33,7 +33,9 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
       style={{
         position: 'absolute',
         cursor: 'pointer',
-        transform: `translateX(${style.left}px) translateY(${style.top}px)`,
+        transform: `translateX(${style.left}px) translateY(${
+          style.top + gutterSize
+        }px)`,
         width: style.width,
         height: style.height - gutterSize,
         transition: 'transform 300ms ease, height 300ms ease',

@@ -10,7 +10,9 @@ export default function FieldPasswordStrength({
   const zxcvbn: React.RefObject<any> = useRef();
 
   const passwordStrength =
-    value && zxcvbn.current ? zxcvbn.current.default(value).score : null;
+    value && value !== '' && zxcvbn.current
+      ? zxcvbn.current.default(value).score
+      : null;
 
   return (
     <>

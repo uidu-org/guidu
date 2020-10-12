@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { Filterer, Finder, Grouper, Sorter, Viewer } from '@uidu/data-controls';
+import { Finder, Viewer } from '@uidu/data-controls';
+import { byName } from '@uidu/data-views';
 import Spinner from '@uidu/spinner';
 import {
   Aggregated,
@@ -287,6 +288,10 @@ export default function DataManager({
       ...controls,
     };
 
+    const { icon: Icon, color, controls: Controls = () => null } = byName[
+      currentView.kind
+    ];
+
     return (
       <>
         {availableControls.viewer.visible && (
@@ -312,33 +317,26 @@ export default function DataManager({
           />
         )}
         <div className="d-flex align-items-center border-left ml-3 pl-3 flex-grow-1">
-          {currentView.kind === 'calendar' &&
-            availableControls.calendarToolbar.visible && (
-              <div
-                id="calendar-toolbar"
-                className="d-flex align-items-center mr-2"
-              />
-            )}
-          {availableControls.filterer.visible && (
-            <Filterer
-              tableInstance={tableInstance}
-              columnDefs={columns}
-              {...availableControls.filterer.props}
-            />
-          )}
-          {availableControls.sorter.visible && (
-            <Sorter
-              tableInstance={tableInstance}
-              {...availableControls.sorter.props}
-            />
-          )}
-          {currentView.kind === 'table' &&
-            availableControls.grouper.visible && (
-              <Grouper
-                tableInstance={tableInstance}
-                {...availableControls.grouper.props}
-              />
-            )}
+          <Controls
+            tableInstance={tableInstance}
+            isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
+            availableControls={availableControls}
+            currentView={currentView}
+            // updateView={updateView}
+            columnDefs={columns}
+            groupers={groupers}
+            // onDragEnd={this.moveColumn}
+            // onResize={this.setRowHeight}
+            rowHeight={rowHeight}
+            // onDownload={() => this.gridApi.exportDataAsCsv()}
+            // columnCount={columnCount}
+            onSetColumnCount={setColumnCount}
+            actions={availableControls.more.actions}
+            // isAutoSaving={isAutoSaving}
+            startDateField={startDateField}
+            endDateField={endDateField}
+            primaryField={primaryField}
+          />
           {availableControls.finder.visible && (
             <Finder
               onChange={(e) => setGlobalFilter(e.target.value)}

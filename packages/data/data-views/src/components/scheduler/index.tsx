@@ -2,10 +2,11 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { Clock } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
+import { DataViewKind } from '../../types';
 
 const Configurator = loadable(() => import('./configurator'));
 
-export default {
+const Scheduler: DataViewKind = {
   id: 'scheduler',
   name: (
     <FormattedMessage id="dataView.scheduler.name" defaultMessage="Scheduler" />
@@ -20,3 +21,5 @@ export default {
   ),
   configurator: Configurator,
 };
+
+export default Scheduler;

@@ -367,7 +367,7 @@ export default class Basic extends Component<any, any> {
               return {
                 exact: true,
                 text: dataView.name,
-                before: <Icon size={14} color={color} />,
+                before: <Icon size={16} color={color} />,
                 as: 'a',
                 onClick: () => this.toggleView(dataView),
                 type: 'NavigationItem',
@@ -567,23 +567,21 @@ export default class Basic extends Component<any, any> {
                             </ShellHeader>
                             <ShellBody>
                               <ShellMain>
-                                <div className="h-100 container">
-                                  {renderView({
-                                    viewProps: {
-                                      gallery: {
-                                        gutterSize: 24,
-                                      },
-                                      list: {
-                                        rowHeight: 96,
-                                      },
-                                      board: {},
-                                      table: {
-                                        headerHeight: 48,
-                                        rowHeight: 48,
-                                      },
+                                {renderView({
+                                  viewProps: {
+                                    gallery: {
+                                      gutterSize: 16,
                                     },
-                                  })}
-                                </div>
+                                    list: {
+                                      rowHeight: 96,
+                                    },
+                                    board: {},
+                                    table: {
+                                      headerHeight: 48,
+                                      rowHeight: 48,
+                                    },
+                                  },
+                                })}
                               </ShellMain>
                               {renderSidebar() && (
                                 <ShellSidebar
