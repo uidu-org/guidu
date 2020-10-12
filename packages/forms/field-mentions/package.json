@@ -10,6 +10,7 @@
   "module": "dist/field-mentions.esm.js",
   "types": "dist/field-mentions.cjs.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.3",
     "@uidu/field-base": "^0.3.4",
     "@uidu/form": "^0.3.4",

@@ -12,6 +12,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.3",
     "@uidu/analytics-gas-types": "^0.1.15",
     "@uidu/analytics-namespaced-context": "^0.2.4",

@@ -10,6 +10,7 @@
   "module": "dist/stepper.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.4",
     "classnames": "^2.2.6",
     "query-string": "^6.13.1",

@@ -11,6 +11,7 @@
   "module": "dist/field.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@loadable/component": "5.13.1",
     "@uidu/checkbox": "^0.2.8",
     "@uidu/field-number": "^0.3.4",

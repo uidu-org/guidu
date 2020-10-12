@@ -10,6 +10,7 @@
   "module": "dist/gallery.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/data-controls": "^0.5.1",
     "@uidu/spinner": "^0.3.4",
     "@uidu/table": "^0.2.2",

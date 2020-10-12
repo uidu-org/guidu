@@ -10,6 +10,7 @@
   "module": "dist/portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.4",
     "exenv": "^1.2.2",
     "tiny-invariant": "^1.0.3",

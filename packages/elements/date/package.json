@@ -18,6 +18,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.4",
     "date-fns": "^2.16.1",
     "styled-components": "^5.1.1",

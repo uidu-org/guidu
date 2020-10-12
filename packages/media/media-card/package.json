@@ -9,6 +9,7 @@
   "module": "dist/media-card.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@fluentui/react": "^7.134.1",
     "@uidu/button": "^0.3.5",
     "@uidu/dropdown-menu": "^0.3.4",

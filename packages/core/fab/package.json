@@ -10,6 +10,7 @@
   "module": "dist/fab.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "react": "^16.13.1",
     "react-feather": "^2.0.8",
     "styled-components": "^5.1.1",

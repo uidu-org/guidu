@@ -10,6 +10,7 @@
   "module": "dist/avatar.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.3",
     "@uidu/theme": "^0.4.4",
     "@uidu/tooltip": "^0.3.4",

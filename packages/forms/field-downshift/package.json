@@ -11,6 +11,7 @@
   "module": "dist/field-downshift.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/droplist": "^0.3.4",
     "@uidu/field-base": "^0.3.4",
     "@uidu/field-text": "^0.3.4",

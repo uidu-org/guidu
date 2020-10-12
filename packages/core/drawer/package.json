@@ -9,6 +9,7 @@
   "module": "dist/drawer.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.3",
     "@uidu/blanket": "^0.3.4",
     "@uidu/docs": "^0.2.5",

@@ -9,6 +9,7 @@
   "main": "dist/spinner.cjs.js",
   "module": "dist/spinner.esm.js",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.4",
     "react-dom": "^16.13.1",
     "react-transition-group": "^4.0.0",

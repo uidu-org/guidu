@@ -10,6 +10,7 @@
   "module": "dist/popper.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@popperjs/core": "^2.1.1",
     "react-popper": "^2.2.3",
     "tslib": "^2.0.1"

@@ -10,6 +10,7 @@
   "module": "dist/editor-json-transformer.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/adf-schema": "^0.2.8",
     "prosemirror-model": "^1.7.1",
     "tslib": "^2.0.1"

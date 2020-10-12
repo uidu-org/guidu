@@ -8,6 +8,7 @@
   "module": "dist/analytics-namespaced-context.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.3",
     "tslib": "^2.0.1"
   },

@@ -10,6 +10,7 @@
   "module": "dist/board.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.4",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",

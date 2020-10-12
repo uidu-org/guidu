@@ -9,6 +9,7 @@
   "module": "dist/media-viewer.esm.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.4",
     "@uidu/button": "^0.3.5",
     "@uidu/comment": "^0.1.22",

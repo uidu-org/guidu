@@ -63,12 +63,12 @@ const getBackgroundColor = (
 };
 
 export const ItemsListWrapper = styled.div<any>`
-  background-color: ${props =>
+  background-color: ${(props) =>
     getBackgroundColor(props.isDraggingOver, props.isDraggingFrom)};
   display: flex;
   flex-direction: column;
   opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : 'inherit')};
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   border: 1rem;
   padding-bottom: 0;
   transition: background-color 0.2s ease, opacity 0.1s ease;
@@ -131,8 +131,8 @@ export const Item = styled.div<{
 }>`
   border-radius: ${borderRadius}px;
   border: 2px solid transparent;
-  border-color: ${props => getBorderColor(props.isDragging, props.colors)};
-  background-color: ${props =>
+  border-color: ${(props) => getBorderColor(props.isDragging, props.colors)};
+  background-color: ${(props) =>
     getItemBackgroundColor(props.isDragging, props.isGroupedOver)};
   box-shadow: ${({ isDragging }) =>
     isDragging ? `2px 2px 1px ${colors.N70}` : 'none'};
@@ -152,7 +152,7 @@ export const Item = styled.div<{
 
   &:focus {
     outline: none;
-    border-color: ${props => colors.N10};
+    border-color: ${(props) => colors.N10};
     box-shadow: none;
   }
 
