@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.2.10
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/button@0.3.6
+  - @uidu/code@0.3.7
+  - @uidu/section-message@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/tooltip@0.3.6
+
 ## 0.2.9
 
 ### Patch Changes

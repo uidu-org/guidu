@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.23
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+
 ## 0.1.22
 
 ### Patch Changes

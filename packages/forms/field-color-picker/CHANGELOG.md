@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.2.10
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/inline-dialog@0.3.5
+  - @uidu/field-base@0.3.5
+
 ## 0.2.9
 
 ### Patch Changes

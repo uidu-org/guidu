@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.2.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/button@0.3.6
+  - @uidu/code@0.3.7
+  - @uidu/spinner@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/tooltip@0.3.6
+  - @uidu/field-text@0.3.5
+
 ## 0.2.4
 
 ### Patch Changes

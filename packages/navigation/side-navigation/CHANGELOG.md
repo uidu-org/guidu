@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.1.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/avatar@0.5.5
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/inline-dialog@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/tooltip@0.3.6
+  - @uidu/shell@1.0.8
+
 ## 0.1.5
 
 ### Patch Changes

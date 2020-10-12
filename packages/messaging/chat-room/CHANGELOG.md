@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.2.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/shell@1.0.8
+
 ## 0.2.4
 
 ### Patch Changes

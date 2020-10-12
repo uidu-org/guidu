@@ -1,5 +1,17 @@
 # @uidu/gallery
 
+## 0.1.52
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+- Updated dependencies [9f3ffff]
+  - @uidu/spinner@0.3.5
+  - @uidu/data-controls@0.5.3
+  - @uidu/table@0.2.3
+
 ## 0.1.51
 
 ### Patch Changes

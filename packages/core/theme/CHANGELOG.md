@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.4.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+
 ## 0.4.4
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/dashboard-controls
 
+## 0.2.11
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/avatar@0.5.5
+  - @uidu/avatar-group@2.4.5
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/field-date-range@0.2.14
+
 ## 0.2.10
 
 ### Patch Changes

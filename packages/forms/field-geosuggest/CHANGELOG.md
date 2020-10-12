@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.2.17
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/spinner@0.3.5
+  - @uidu/field-base@0.3.5
+
 ## 0.2.16
 
 ### Patch Changes

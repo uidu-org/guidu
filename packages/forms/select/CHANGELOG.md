@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 0.5.8
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/spinner@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/tooltip@0.3.6
+  - @uidu/checkbox@0.2.9
+  - @uidu/field-base@0.3.5
+
 ## 0.5.7
 
 ### Patch Changes

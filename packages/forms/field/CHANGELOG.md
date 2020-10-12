@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.2.8
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/checkbox@0.2.9
+  - @uidu/field-number@0.3.5
+  - @uidu/field-text@0.3.5
+  - @uidu/field-textarea@0.2.9
+  - @uidu/select@0.5.8
+
 ## 0.2.7
 
 ### Patch Changes

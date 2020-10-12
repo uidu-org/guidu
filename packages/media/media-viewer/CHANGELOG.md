@@ -1,5 +1,17 @@
 # @uidu/media-viewer
 
+## 0.2.7
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/avatar@0.5.5
+  - @uidu/button@0.3.6
+  - @uidu/spinner@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/shell@1.0.8
+
 ## 0.2.6
 
 ### Patch Changes

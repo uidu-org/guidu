@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.4.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/avatar@0.5.5
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/item@0.3.7
+  - @uidu/theme@0.4.5
+  - @uidu/tooltip@0.3.6
+
 ## 2.4.4
 
 ### Patch Changes

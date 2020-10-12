@@ -1,5 +1,16 @@
 # @uidu/field-downshift
 
+## 0.4.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/droplist@0.3.6
+  - @uidu/item@0.3.7
+  - @uidu/field-base@0.3.5
+  - @uidu/field-text@0.3.5
+
 ## 0.4.5
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-textarea
 
+## 0.2.9
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/field-base@0.3.5
+
 ## 0.2.8
 
 ### Patch Changes

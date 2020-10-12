@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.3.7
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/field-base@0.3.5
+
 ## 0.3.6
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.1.4
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/button@0.3.6
+  - @uidu/inline-dialog@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/field@0.2.8
+  - @uidu/field-text@0.3.5
+
 ## 0.1.3
 
 ### Patch Changes

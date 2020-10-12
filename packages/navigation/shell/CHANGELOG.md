@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.0.8
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/spinner@0.3.5
+
 ## 1.0.7
 
 ### Patch Changes

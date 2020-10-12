@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.3.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/popper@0.3.5
+  - @uidu/portal@0.3.5
+  - @uidu/theme@0.4.5
+
 ## 0.3.5
 
 ### Patch Changes

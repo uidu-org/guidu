@@ -1,5 +1,14 @@
 # @uidu/field-range
 
+## 0.3.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/theme@0.4.5
+  - @uidu/field-base@0.3.5
+
 ## 0.3.4
 
 ### Patch Changes

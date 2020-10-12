@@ -1,5 +1,15 @@
 # @uidu/media-filmstrip
 
+## 0.2.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/theme@0.4.5
+  - @uidu/media-card@0.3.6
+  - @uidu/media-viewer@0.2.7
+
 ## 0.2.5
 
 ### Patch Changes

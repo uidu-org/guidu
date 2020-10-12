@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.2.7
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/theme@0.4.5
+
 ## 0.2.6
 
 ### Patch Changes

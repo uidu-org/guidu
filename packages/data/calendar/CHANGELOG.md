@@ -1,5 +1,15 @@
 # @uidu/calendar
 
+## 0.1.35
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/shell@1.0.8
+
 ## 0.1.34
 
 ### Patch Changes

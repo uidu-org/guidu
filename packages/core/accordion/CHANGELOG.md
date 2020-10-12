@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/docs@0.2.10
+
 ## 0.3.5
 
 ### Patch Changes

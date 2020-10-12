@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.2.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/adf-schema@0.2.9
+
 ## 0.2.5
 
 ### Patch Changes

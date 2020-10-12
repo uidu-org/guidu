@@ -1,6 +1,6 @@
 {
   "name": "@uidu/checkbox",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Checkbox component for use in forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/checkbox",
   "license": "MIT",
@@ -11,14 +11,14 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/analytics": "^0.3.3",
-    "@uidu/field-base": "^0.3.4",
+    "@uidu/analytics": "^0.3.4",
+    "@uidu/field-base": "^0.3.5",
     "formsy-react": "^2.1.0",
     "react": "^16.13.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.4",
+    "@uidu/docs": "^0.2.10",
     "@uidu/form": "^0.3.4"
   },
   "publishConfig": {

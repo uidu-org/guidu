@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.5.3
+
+### Patch Changes
+
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+- Updated dependencies [9f3ffff]
+  - @uidu/drawer@0.4.7
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/inline-dialog@0.3.5
+  - @uidu/item@0.3.7
+  - @uidu/spinner@0.3.5
+  - @uidu/tooltip@0.3.6
+  - @uidu/data-fields@0.2.2
+  - @uidu/checkbox@0.2.9
+  - @uidu/field-text@0.3.5
+  - @uidu/select@0.5.8
+  - @uidu/shell@1.0.8
+  - @uidu/data-views@0.4.1
+  - @uidu/table@0.2.3
+
 ## 0.5.2
 
 ### Patch Changes

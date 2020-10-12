@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.33
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [9f3ffff]
+  - @uidu/table@0.2.3
+
 ## 0.1.32
 
 ### Patch Changes

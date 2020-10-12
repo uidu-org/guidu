@@ -1,5 +1,15 @@
 # @uidu/field-date-range
 
+## 0.2.14
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/field-base@0.3.5
+  - @uidu/field-date@0.2.13
+
 ## 0.2.13
 
 ### Patch Changes

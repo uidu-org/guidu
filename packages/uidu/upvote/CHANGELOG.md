@@ -1,5 +1,11 @@
 # @uidu/upvote
 
+## 0.1.15
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+
 ## 0.1.14
 
 ### Patch Changes

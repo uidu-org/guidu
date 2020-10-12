@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.2.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/avatar-group@2.4.5
+  - @uidu/button@0.3.6
+  - @uidu/spinner@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/analytics-namespaced-context@0.2.5
+
 ## 0.2.5
 
 ### Patch Changes

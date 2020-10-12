@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.1.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/docs@0.2.10
+  - @uidu/analytics@0.3.4
+  - @uidu/theme@0.4.5
+
 ## 0.1.4
 
 ### Patch Changes

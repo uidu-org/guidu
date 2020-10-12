@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.26
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+
 ## 0.1.25
 
 ### Patch Changes

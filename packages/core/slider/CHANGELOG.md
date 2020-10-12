@@ -1,5 +1,12 @@
 # @uidu/slider
 
+## 1.5.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- 9f3ffff: Better data-controls for data-manager
+
 ## 1.5.4
 
 ### Patch Changes

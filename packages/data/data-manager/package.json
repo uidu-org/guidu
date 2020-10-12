@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
@@ -12,15 +12,15 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "5.13.1",
-    "@uidu/board": "^0.2.25",
-    "@uidu/calendar": "^0.1.34",
-    "@uidu/data-controls": "^0.5.2",
-    "@uidu/data-views": "^0.4.0",
-    "@uidu/gallery": "^0.1.51",
-    "@uidu/list": "^0.1.32",
-    "@uidu/shell": "^1.0.7",
-    "@uidu/spinner": "^0.3.4",
-    "@uidu/table": "^0.2.2",
+    "@uidu/board": "^0.2.26",
+    "@uidu/calendar": "^0.1.35",
+    "@uidu/data-controls": "^0.5.3",
+    "@uidu/data-views": "^0.4.1",
+    "@uidu/gallery": "^0.1.52",
+    "@uidu/list": "^0.1.33",
+    "@uidu/shell": "^1.0.8",
+    "@uidu/spinner": "^0.3.5",
+    "@uidu/table": "^0.2.3",
     "d3-array": "^2.2.0",
     "lodash": "^4.17.4",
     "moment": "^2.27.0",
@@ -31,11 +31,11 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.9",
-    "@uidu/dropdown-menu": "^0.3.4",
-    "@uidu/navigation": "^0.4.4",
+    "@uidu/docs": "^0.2.10",
+    "@uidu/dropdown-menu": "^0.3.5",
+    "@uidu/navigation": "^0.4.5",
     "@uidu/page-header": "^0.1.4",
-    "@uidu/side-navigation": "^0.1.5",
+    "@uidu/side-navigation": "^0.1.6",
     "react-intl": "^5.8.0"
   },
   "uidu:src": "src/index.ts"

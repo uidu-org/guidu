@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.2.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/message@0.2.7
+  - @uidu/message-renderer@0.2.7
+
 ## 0.2.5
 
 ### Patch Changes

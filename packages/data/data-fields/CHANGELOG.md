@@ -1,5 +1,19 @@
 # @uidu/data-fields
 
+## 0.2.2
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/field-color-picker@0.2.10
+  - @uidu/field-date@0.2.13
+  - @uidu/field-downshift@0.4.6
+  - @uidu/field-number@0.3.5
+  - @uidu/field-text@0.3.5
+  - @uidu/field-toggle@0.3.5
+  - @uidu/select@0.5.8
+
 ## 0.2.1
 
 ### Patch Changes

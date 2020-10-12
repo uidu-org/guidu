@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.3.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/item@0.3.7
+  - @uidu/layer@0.3.5
+  - @uidu/spinner@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/tooltip@0.3.6
+
 ## 0.3.5
 
 ### Patch Changes

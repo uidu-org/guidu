@@ -1,5 +1,20 @@
 # @uidu/table
 
+## 0.2.3
+
+### Patch Changes
+
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+  - @uidu/dropdown-menu@0.3.5
+  - @uidu/item@0.3.7
+  - @uidu/lozenge@0.3.5
+  - @uidu/tooltip@0.3.6
+  - @uidu/data-fields@0.2.2
+  - @uidu/checkbox@0.2.9
+  - @uidu/select@0.5.8
+  - @uidu/shell@1.0.8
+
 ## 0.2.2
 
 ### Patch Changes

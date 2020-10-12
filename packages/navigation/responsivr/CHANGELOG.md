@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.2.6
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+
 ## 0.2.5
 
 ### Patch Changes

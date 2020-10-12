@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.2.7
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/lozenge@0.3.5
+  - @uidu/theme@0.4.5
+  - @uidu/field-text@0.3.5
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.5.3
+
+### Patch Changes
+
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+- Updated dependencies [9f3ffff]
+  - @uidu/spinner@0.3.5
+  - @uidu/board@0.2.26
+  - @uidu/calendar@0.1.35
+  - @uidu/gallery@0.1.52
+  - @uidu/list@0.1.33
+  - @uidu/shell@1.0.8
+  - @uidu/data-controls@0.5.3
+  - @uidu/data-views@0.4.1
+  - @uidu/table@0.2.3
+
 ## 0.5.2
 
 ### Patch Changes

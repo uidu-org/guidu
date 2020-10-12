@@ -1,5 +1,15 @@
 # @uidu/util-data-test
 
+## 0.2.5
+
+### Patch Changes
+
+- 8b4c8be: Use babel-runtime helpers
+- Updated dependencies [8b4c8be]
+  - @uidu/analytics@0.3.4
+  - @uidu/emoji@0.2.5
+  - @uidu/task-decision@0.2.6
+
 ## 0.2.4
 
 ### Patch Changes

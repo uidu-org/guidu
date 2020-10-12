@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.4.1
+
+### Patch Changes
+
+- 9f3ffff: Better data-controls for data-manager
+- Updated dependencies [8b4c8be]
+- Updated dependencies [9f3ffff]
+  - @uidu/field-number@0.3.5
+  - @uidu/select@0.5.8
+  - @uidu/data-controls@0.5.3
+  - @uidu/table@0.2.3
+
 ## 0.4.0
 
 ### Minor Changes
