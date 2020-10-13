@@ -15,7 +15,7 @@ const ItemFields = styled.dl`
 
 export default class Item extends PureComponent<any> {
   render() {
-    const { item, primary, cover, avatar, row } = this.props;
+    const { item, primary, row } = this.props;
 
     if (!item) {
       return null;
@@ -31,7 +31,8 @@ export default class Item extends PureComponent<any> {
         cell.column.viewType !== 'addField',
     );
 
-    console.log(cover);
+    const cover = row.cells.find((cell) => cell.column.viewType === 'cover');
+    const avatar = row.cells.find((cell) => cell.column.viewType === 'avatar');
 
     return (
       <>
@@ -43,11 +44,7 @@ export default class Item extends PureComponent<any> {
               return (
                 <ItemField
                   cell={cell}
-                  // column={column}
-                  // sorters={sorters}
-                  // filterModel={filterModel}
-                  // item={row}
-                  // key={`${item.id}-${column.field}-name`}
+                  key={`${item.id}-${cell.column.id}-name`}
                 />
               );
             })}

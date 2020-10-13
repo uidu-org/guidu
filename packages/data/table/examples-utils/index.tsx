@@ -14,12 +14,12 @@ export const availableColumns = [
     field: 'cover',
     headerName: 'Cover',
   },
-  // {
-  //   dataField: 'avatar',
-  //   colId: 'avatar',
-  //   field: 'avatar',
-  //   headerName: 'Avatar',
-  // },
+  {
+    dataField: 'avatar',
+    colId: 'avatar',
+    field: 'avatar',
+    headerName: 'Avatar',
+  },
   {
     dataField: 'contact',
     dataFieldParams: {
@@ -218,8 +218,7 @@ export const fetchContacts = () => {
           avatar: faker.image.avatar(),
           email: faker.internet.email(),
           displayName: faker.name.findName(),
-          cover:
-            'https://images.unsplash.com/photo-1556912998-c57cc6b63cd7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
+          cover: faker.image.imageUrl(),
           donationCampaign: {
             id: faker.random.uuid(),
             name: faker.name.findName(),

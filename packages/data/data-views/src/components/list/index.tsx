@@ -1,7 +1,7 @@
 import loadable from '@loadable/component';
 import { Configurator, Filterer, Grouper, Sorter } from '@uidu/data-controls';
 import React from 'react';
-import { AlignJustify, EyeOff, List as ListIcon } from 'react-feather';
+import { EyeOff, List as ListIcon } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { DataViewKind } from '../../types';
 

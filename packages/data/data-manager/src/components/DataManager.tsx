@@ -104,6 +104,7 @@ export default function DataManager({
       defaultColumn,
       initialState: {
         pageSize: 100,
+        ...(currentView.state || {}),
       },
       useControlledState: (state) => {
         return React.useMemo(

@@ -9,12 +9,12 @@ export default class Toolbar extends PureComponent<any> {
     const { messages } = localizer;
 
     return (
-      <ShellHeader className="border-top justify-content-between px-3 px-xl-4">
+      <ShellHeader className="justify-content-between py-3 h-auto">
         <div className="d-flex align-items-center">
           <button
             type="button"
             className="btn btn-sm d-flex align-items-center btn-light"
-            onClick={e => {
+            onClick={(e) => {
               e.preventDefault();
               this.navigate('TODAY');
             }}
@@ -25,7 +25,7 @@ export default class Toolbar extends PureComponent<any> {
             <button
               type="button"
               className="btn btn-sm d-flex align-items-center px-2"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 this.navigate('PREV');
               }}
@@ -35,7 +35,7 @@ export default class Toolbar extends PureComponent<any> {
             <button
               type="button"
               className="btn btn-sm d-flex align-items-center px-2"
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 this.navigate('NEXT');
               }}
@@ -52,11 +52,11 @@ export default class Toolbar extends PureComponent<any> {
     );
   }
 
-  navigate = action => {
+  navigate = (action) => {
     this.props.onNavigate(action);
   };
 
-  view = view => {
+  view = (view) => {
     this.props.onView(view);
   };
 
@@ -71,7 +71,7 @@ export default class Toolbar extends PureComponent<any> {
           role="group"
           aria-label="Switch calendar view"
         >
-          {viewNames.map(name => (
+          {viewNames.map((name) => (
             <button
               className={classNames('btn btn-sm', {
                 'btn-light': view !== name,
@@ -79,7 +79,7 @@ export default class Toolbar extends PureComponent<any> {
               })}
               type="button"
               key={name}
-              onClick={e => {
+              onClick={(e) => {
                 e.preventDefault();
                 this.view(name);
               }}

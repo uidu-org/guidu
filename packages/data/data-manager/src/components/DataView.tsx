@@ -149,7 +149,7 @@ export default class DataView extends PureComponent<any> {
             <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
               {({ default: Calendar }) => {
                 return (
-                  <div className="container h-100 py-3">
+                  <div className="container h-100">
                     <Calendar
                       {...viewProps.calendar}
                       onItemClick={onItemClick}
@@ -219,9 +219,7 @@ export default class DataView extends PureComponent<any> {
                   {...viewProps.list}
                   tableInstance={tableInstance}
                   onItemClick={onItemClick}
-                  rowData={data.map((datum) => ({
-                    data: datum.data,
-                  }))}
+                  rowData={data}
                   columnDefs={columns}
                 />
               )}
@@ -240,8 +238,6 @@ export default class DataView extends PureComponent<any> {
                     onItemClick={onItemClick}
                     rowData={data}
                     columnDefs={columns}
-                    sorters={sorters}
-                    filterModel={filterModel || {}}
                   />
                 )}
               </LoadableGallery>

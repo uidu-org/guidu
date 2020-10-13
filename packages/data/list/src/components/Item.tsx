@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledItem = styled.div`
   transition: all 500ms ease-in-out;
   cursor: pointer;
+  font-size: 0.9rem;
 `;
 
 export default function Item({
@@ -14,9 +15,6 @@ export default function Item({
   cover,
   primary,
 }) {
-  console.log(cover);
-  console.log(primary);
-
   return (
     <StyledItem
       key={item.id}
@@ -66,7 +64,7 @@ export default function Item({
             {/* {primary.render('Cell')} */}
           </div>
         )}
-        <div className="d-flex">
+        <div className="d-flex align-items-center">
           {item.cells
             .filter(
               (cell) =>

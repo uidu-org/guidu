@@ -1,4 +1,3 @@
-import { valueRenderer } from '@uidu/table';
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 
@@ -6,7 +5,7 @@ const StyledCover = styled.div<{ height: number; cover: string }>`
   height: ${({ height }) => `${height}px`};
   background-size: cover;
   background-position: 50% 50%;
-  background-image: ${({ cover }) => cover};
+  background-image: url(${({ cover }) => cover});
   background-color: rgba(76, 86, 106, 0.025);
   display: flex;
   justify-content: center;
@@ -25,10 +24,8 @@ const Cover = ({
   return (
     <StyledCover
       className="card-img-top"
-      height={cover && cover.width ? (cover.width * 3) / 2 : 200}
-      cover={
-        valueRenderer(item, cover) ? `url(${valueRenderer(item, cover)})` : null
-      }
+      height={cover && cover.column.width ? (cover.column.width * 3) / 2 : 200}
+      cover={cover.value}
     >
       {children}
     </StyledCover>
@@ -37,10 +34,7 @@ const Cover = ({
 
 const Avatar = ({ avatar, item }) => {
   return (
-    <img
-      src={valueRenderer(item, avatar)}
-      style={{ borderRadius: '100%', width: '7rem' }}
-    />
+    <img src={avatar.value} style={{ borderRadius: '100%', width: '7rem' }} />
   );
 };
 

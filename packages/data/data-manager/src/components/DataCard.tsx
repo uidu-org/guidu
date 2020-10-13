@@ -43,7 +43,6 @@ export default class DataCard extends PureComponent<any> {
         key={item.id}
       >
         <div className="">
-          {/* <ItemHeader cover={cover} avatar={avatar} item={item} /> */}
           {/* {primary && (
             <div
               className="card-header text-truncate border-bottom-0"
