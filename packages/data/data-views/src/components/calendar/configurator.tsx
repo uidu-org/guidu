@@ -1,4 +1,3 @@
-import { Toggler } from '@uidu/data-controls';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import React, { PureComponent } from 'react';
@@ -53,16 +52,6 @@ export default class Configurator extends PureComponent<any> {
             <h6 className="m-0">Choose default view</h6>
           </div>
         </div>
-        <div className="list-group">
-          <div className="list-group-item px-3 px-xl-4 border-0">
-            <h6 className="m-0">Visible fields</h6>
-          </div>
-        </div>
-        <Toggler
-          {...this.props}
-          columnDefs={columnDefs}
-          onDragEnd={onDragEnd}
-        />
       </>
     );
   }

@@ -20,7 +20,6 @@ const Gallery: DataViewKind = {
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),
-  configurator: ConfiguratorForm,
   controls: ({
     tableInstance,
     columnDefs,

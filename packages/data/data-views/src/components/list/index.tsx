@@ -1,20 +1,20 @@
 import loadable from '@loadable/component';
 import { Configurator, Filterer, Grouper, Sorter } from '@uidu/data-controls';
 import React from 'react';
-import { AlignJustify, EyeOff } from 'react-feather';
+import { AlignJustify, EyeOff, List as ListIcon } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { DataViewKind } from '../../types';
 
 const ConfiguratorForm = loadable(() => import('./configurator'));
 
-const Table: DataViewKind = {
-  id: 'table',
-  name: <FormattedMessage id="dataView.table.name" defaultMessage="Table" />,
-  icon: AlignJustify,
-  color: '#BF616A',
+const List: DataViewKind = {
+  id: 'list',
+  name: <FormattedMessage id="dataView.list.name" defaultMessage="List" />,
+  icon: ListIcon,
+  color: '#E53E3E',
   description: (
     <FormattedMessage
-      id="dataView.table.description"
+      id="dataView.list.description"
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),
@@ -82,4 +82,4 @@ const Table: DataViewKind = {
   },
 };
 
-export default Table;
+export default List;

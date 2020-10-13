@@ -217,6 +217,7 @@ export default class DataView extends PureComponent<any> {
               {({ default: List }) => (
                 <List
                   {...viewProps.list}
+                  tableInstance={tableInstance}
                   onItemClick={onItemClick}
                   rowData={data.map((datum) => ({
                     data: datum.data,
@@ -255,6 +256,7 @@ export default class DataView extends PureComponent<any> {
               {({ default: List }) => (
                 <List
                   {...viewProps.list}
+                  tableInstance={tableInstance}
                   onItemClick={onItemClick}
                   rowData={data}
                   columnDefs={columns}
@@ -272,6 +274,7 @@ export default class DataView extends PureComponent<any> {
               {({ default: List }) => (
                 <List
                   {...viewProps.list}
+                  tableInstance={tableInstance}
                   onItemClick={onItemClick}
                   rowData={data}
                   columnDefs={columns}

@@ -1,5 +1,5 @@
 import loadable from '@loadable/component';
-import { Filterer, Sorter } from '@uidu/data-controls';
+import { Configurator, Filterer, Sorter } from '@uidu/data-controls';
 import React from 'react';
 import { Calendar } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
@@ -21,10 +21,15 @@ const CalendarView: DataViewKind = {
     />
   ),
 
-  configurator: ConfiguratorForm,
   controls: ({ tableInstance, columnDefs, availableControls }) => (
     <>
-      <p>Using field createdAt</p>
+      <Configurator
+        configurator={ConfiguratorForm}
+        name="Using field created at"
+        tableInstance={tableInstance}
+        icon={Calendar}
+        columnDefs={columnDefs}
+      />
       <Filterer
         tableInstance={tableInstance}
         columnDefs={columnDefs}

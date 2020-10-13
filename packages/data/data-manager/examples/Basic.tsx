@@ -500,6 +500,11 @@ export default class Basic extends Component<any, any> {
                                     kind: 'timeline',
                                     name: 'Timeline',
                                   },
+                                  {
+                                    id: 4,
+                                    kind: 'list',
+                                    name: 'List',
+                                  },
                                 ].map((view) => (
                                   <DropdownItem
                                     onClick={() => this.addView(view)}

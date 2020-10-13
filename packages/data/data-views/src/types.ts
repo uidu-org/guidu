@@ -8,7 +8,6 @@ export type DataViewKind = {
   color: string;
   description?: React.ReactNode;
   controls?: React.FC<any>;
-  configurator?: React.FC<any>;
 };
 
 export type DataViewPreferences = {

@@ -1,7 +1,7 @@
 import loadable from '@loadable/component';
 import { Configurator, Filterer, Sorter } from '@uidu/data-controls';
 import React from 'react';
-import { Settings, Trello } from 'react-feather';
+import { CheckSquare, Settings, Trello } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import { DataViewKind } from '../../types';
 
@@ -18,10 +18,15 @@ const Board: DataViewKind = {
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),
-  configurator: Configurator,
   controls: ({ tableInstance, columnDefs, availableControls }) => (
     <>
-      <p>Using field createdAt</p>
+      <Configurator
+        configurator={ConfiguratorForm}
+        name="Using field created at"
+        tableInstance={tableInstance}
+        icon={CheckSquare}
+        columnDefs={columnDefs}
+      />
       <Configurator
         icon={Settings}
         configurator={ConfiguratorForm}
