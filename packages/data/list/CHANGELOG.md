@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 0.1.34
+
+### Patch Changes
+
+- 0412e7f: Better list view
+
 ## 0.1.33
 
 ### Patch Changes
