@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.5.4
+
+### Patch Changes
+
+- 0412e7f: Better list view
+- Updated dependencies [0412e7f]
+  - @uidu/data-views@0.4.2
+  - @uidu/list@0.1.34
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.4.2
+
+### Patch Changes
+
+- 0412e7f: Better list view
+
 ## 0.4.1
 
 ### Patch Changes
