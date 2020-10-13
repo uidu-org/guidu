@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "private": false,
   "description": "Data view declarations and custom forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
@@ -15,7 +15,7 @@
     "@uidu/field-number": "^0.3.5",
     "@uidu/form": "^0.3.4",
     "@uidu/select": "^0.5.8",
-    "@uidu/table": "^0.2.3",
+    "@uidu/table": "^0.2.4",
     "react": "^16.13.1",
     "react-feather": "^2.0.8",
     "react-intl": "^5.8.0",

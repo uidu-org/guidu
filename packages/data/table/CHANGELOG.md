@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.2.4
+
+### Patch Changes
+
+- 48754d9: Small layout fixes to data
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.53
+
+### Patch Changes
+
+- 48754d9: Small layout fixes to data
+- Updated dependencies [48754d9]
+  - @uidu/table@0.2.4
+
 ## 0.1.52
 
 ### Patch Changes
