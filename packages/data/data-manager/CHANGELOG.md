@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.5.6
+
+### Patch Changes
+
+- 820c30c: Minor fixes to styling cells
+- Updated dependencies [820c30c]
+  - @uidu/gallery@0.1.54
+  - @uidu/table@0.2.5
+
 ## 0.5.5
 
 ### Patch Changes

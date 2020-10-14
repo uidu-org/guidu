@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.54
+
+### Patch Changes
+
+- 820c30c: Minor fixes to styling cells
+- Updated dependencies [820c30c]
+  - @uidu/table@0.2.5
+
 ## 0.1.53
 
 ### Patch Changes
