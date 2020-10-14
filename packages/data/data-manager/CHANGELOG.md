@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.5.7
+
+### Patch Changes
+
+- 73f1311: Full-width layouts for tables
+- Updated dependencies [73f1311]
+  - @uidu/table@0.2.6
+
 ## 0.5.6
 
 ### Patch Changes
