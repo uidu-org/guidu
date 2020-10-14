@@ -111,7 +111,7 @@ export default class DataView extends PureComponent<any> {
     }
 
     const table = (
-      <div className="container h-100 py-3">
+      <div className="h-100">
         <Table
           setAggregation={setAggregation}
           tableInstance={tableInstance}
@@ -149,7 +149,7 @@ export default class DataView extends PureComponent<any> {
             <LoadableCalendar fallback={<ShellBodyWithSpinner />}>
               {({ default: Calendar }) => {
                 return (
-                  <div className="container h-100">
+                  <div className="h-100">
                     <Calendar
                       {...viewProps.calendar}
                       onItemClick={onItemClick}

@@ -129,7 +129,7 @@ const Table = ({
   });
 
   return (
-    <div className={`ag-theme-${theme} h-100 border rounded`} role="table">
+    <div className={`ag-theme-${theme} h-100`} role="table">
       <div
         {...getTableBodyProps()}
         ref={parentRef}
