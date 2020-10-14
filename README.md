@@ -40,31 +40,24 @@ git clone https://github.com/uidu-org/guidu
 cd guidu
 ```
 
-Install bolt
-
-```
-yarn global add bolt
-bolt install
-```
-
 Start all packages (not reccommended)
 
 ```
-bolt start
+yarn start
 ```
 
 Start specific folders
 
 ```
-bolt start:forms
-bolt start:data
-bolt start:dashboards
+yarn start:forms
+yarn start:data
+yarn start:dashboards
 ```
 
 or specific packages
 
 ```
-bolt start modal-dialog field-geosuggest
+yarn start modal-dialog field-geosuggest
 ```
 
 ## Common pitfalls

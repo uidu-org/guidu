@@ -21,7 +21,7 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
   }
 
   const { prepareRow, rows } = tableInstance;
-  const row = rows.find((r) => r.values.id === item.id);
+  const row = rows.find((r) => r.original.id === item.id);
   prepareRow(row);
 
   return (

@@ -24,7 +24,6 @@ export default class Item extends PureComponent<any> {
     const visibleCells = row.cells.filter(
       (cell) =>
         cell.column.viewType !== 'uid' &&
-        cell.column.id !== 'selection' &&
         cell.column.viewType !== 'cover' &&
         cell.column.viewType !== 'primary' &&
         cell.column.viewType !== 'avatar' &&

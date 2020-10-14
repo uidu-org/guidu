@@ -2,12 +2,12 @@ import faker from 'faker';
 import numeral from 'numeral';
 
 export const availableColumns = [
-  {
-    dataField: 'uid',
-    colId: 'id',
-    field: 'id',
-    dataFieldParams: { onItemClick: (params) => console.log(params) },
-  },
+  // {
+  //   dataField: 'uid',
+  //   colId: 'id',
+  //   field: 'id',
+  //   dataFieldParams: { onItemClick: (params) => console.log(params) },
+  // },
   {
     dataField: 'cover',
     colId: 'cover',

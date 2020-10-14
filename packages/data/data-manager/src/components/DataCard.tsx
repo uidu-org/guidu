@@ -21,7 +21,7 @@ export default class DataCard extends PureComponent<any> {
     }
 
     const { prepareRow, rows } = tableInstance;
-    const row = rows.find((r) => r.values.id === item.id);
+    const row = rows.find((r) => r.original.id === item.id);
     prepareRow(row);
 
     const visibleCells = row.cells.filter(

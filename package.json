@@ -208,7 +208,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "copy-pkg": "^1.0.0",
     "css-color-names": "^1.0.1",
-    "css-loader": "^4.0.0",
+    "css-loader": "^5.0.0",
     "d3-array": "^2.2.0",
     "d3-collection": "^1.0.7",
     "d3-time": "^2.0.0",

@@ -129,13 +129,20 @@ export default function DataManager({
       hooks.visibleColumns.push((columns) => [
         // Let's make a column for selection
         {
-          id: 'selection',
+          id: 'uid',
+          dataField: 'uid',
+          viewType: 'uid',
+          colId: 'id',
+          field: 'id',
           disableResizing: true,
           minWidth: 56,
           width: 56,
           maxWidth: 56,
           pinned: 'left',
           groupByBoundary: true,
+          cellStyle: {
+            padding: 0,
+          },
           // The header can use the table's getToggleAllRowsSelectedProps method
           // to render a checkbox
           Header: HeaderSelection,

@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useVirtual } from 'react-virtual';
 import styled, { css } from 'styled-components';
 import Footer from './Footer';
@@ -48,24 +48,11 @@ const Th = styled.div<{ height: number }>`
 const Table = ({
   theme = 'uidu',
   setAggregation,
-  columnDefs,
-  rowData,
   onAddField = () => {},
   rowHeight = 32,
   groupRowHeightIncrementRatio = 1.2,
   tableInstance,
-  ...otherProps
 }) => {
-  const [scrolled, setScrolled] = useState({ left: 0, top: 0 });
-
-  let className = '';
-  if (scrolled.left > 0) {
-    className += ' ag-scrolled-left';
-  }
-  if (scrolled.top > 0) {
-    className += ' ag-scrolled-top';
-  }
-
   const {
     getTableBodyProps,
     headerGroups,
@@ -86,8 +73,6 @@ const Table = ({
     setPageSize,
     state: { pageIndex, pageSize },
   } = tableInstance;
-
-  console.log(page);
 
   const RenderRow = React.useCallback(
     ({ index, style }) => {
@@ -144,14 +129,10 @@ const Table = ({
   });
 
   return (
-    <div
-      className={`ag-theme-${theme} h-100${className} border rounded`}
-      role="table"
-    >
+    <div className={`ag-theme-${theme} h-100 border rounded`} role="table">
       <div
         {...getTableBodyProps()}
         ref={parentRef}
-        className="List"
         style={{
           height: '100%',
           width: '100%',
@@ -159,7 +140,6 @@ const Table = ({
         }}
       >
         <div
-          className="header"
           style={{
             position: 'sticky',
             top: 0,
@@ -171,7 +151,7 @@ const Table = ({
           }}
         >
           {headerGroups.map((headerGroup) => (
-            <div {...headerGroup.getHeaderGroupProps()} className="tr">
+            <div {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
                 <Th
                   {...column.getHeaderProps()}
@@ -225,7 +205,6 @@ const Table = ({
                     transform: `translateY(${virtualRow.start}px)`,
                   },
                 })}
-                className="tr"
               >
                 {row.cells.map((cell, index) => (
                   <Td
@@ -241,7 +220,10 @@ const Table = ({
                       cell.column.isSorted ? 'ag-cell-sorter-active' : null
                     }
                   >
-                    <div className="text-truncate w-100">
+                    <div
+                      className="text-truncate w-100 h-100"
+                      style={{ display: 'flex', alignItems: 'center' }}
+                    >
                       {cell.isGrouped ? (
                         // If it's a grouped cell, add an expander and row count
                         <>
