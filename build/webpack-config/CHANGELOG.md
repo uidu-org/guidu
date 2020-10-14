@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.85
+
+### Patch Changes
+
+- 820c30c: Minor fixes to styling cells
+
 ## 0.1.84
 
 ### Patch Changes

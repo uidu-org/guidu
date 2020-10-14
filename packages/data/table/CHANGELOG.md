@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.2.5
+
+### Patch Changes
+
+- 820c30c: Minor fixes to styling cells
+
 ## 0.2.4
 
 ### Patch Changes
