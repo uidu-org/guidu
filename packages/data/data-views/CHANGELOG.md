@@ -1,5 +1,13 @@
 # @uidu/data-views
 
+## 0.4.3
+
+### Patch Changes
+
+- 48754d9: Small layout fixes to data
+- Updated dependencies [48754d9]
+  - @uidu/table@0.2.4
+
 ## 0.4.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.36
+
+### Patch Changes
+
+- 48754d9: Small layout fixes to data
+
 ## 0.1.35
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.5.5
+
+### Patch Changes
+
+- 48754d9: Small layout fixes to data
+- Updated dependencies [48754d9]
+  - @uidu/calendar@0.1.36
+  - @uidu/data-views@0.4.3
+  - @uidu/gallery@0.1.53
+  - @uidu/list@0.1.35
+  - @uidu/table@0.2.4
+
 ## 0.5.4
 
 ### Patch Changes
