@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.2.7
+
+### Patch Changes
+
+- 2114224: Remove react-window
+
 ## 0.2.6
 
 ### Patch Changes
