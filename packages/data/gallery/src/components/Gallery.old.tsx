@@ -1,137 +1,14 @@
-import { getAvatar, getCover, getPrimary } from '@uidu/table';
-import React, { useCallback, useMemo, useRef } from 'react';
-import { useVirtual } from 'react-virtual';
-import { GalleryProps } from '../types';
-import GalleryItem from './GalleryItem';
+// import { getAvatar, getCover, getPrimary } from '@uidu/table';
+// import memoize from 'memoize-one';
+// import React, { PureComponent } from 'react';
+// import AutoSizer from 'react-virtualized-auto-sizer';
+// import { FixedSizeGrid as Grid } from 'react-window';
+// import { GalleryProps } from '../types';
+// import GalleryItem from './GalleryItem';
 
-const ITEM_HEADER_HEIGHT = 42;
-const ITEM_COLUMN_ROW = 64;
-const ITEM_PADDING = 32;
-
-const chunkData = (array, chunkSize) => {
-  return array.reduce((acc, _each, index, src) => {
-    if (!(index % chunkSize)) {
-      return [...acc, src.slice(index, index + chunkSize)];
-    }
-    return acc;
-  }, []);
-};
-
-export default function Gallery({
-  rowData,
-  columnCount,
-  tableInstance,
-  gutterSize = 8,
-}: GalleryProps) {
-  const parentRef = useRef();
-
-  console.log(tableInstance);
-
-  const { prepareRow, columns } = tableInstance;
-
-  const getGutterSize = ({ avatar, cover }) => {
-    if (cover) {
-      return cover.width ? (cover.width * 3) / 2 : 207;
-    }
-
-    if (avatar) {
-      return 207;
-    }
-
-    return 0;
-  };
-
-  const primary = getPrimary(columns);
-  const cover = getCover(columns);
-  const avatar = getAvatar(columns);
-
-  console.log(tableInstance);
-
-  const estimateSize = useCallback(() => {
-    return (
-      getGutterSize({ avatar, cover }) +
-      ITEM_HEADER_HEIGHT +
-      ITEM_COLUMN_ROW *
-        tableInstance.visibleColumns.filter(
-          (column) =>
-            column.viewType !== 'uid' &&
-            column.id !== 'selection' &&
-            column.viewType !== 'cover' &&
-            column.viewType !== 'primary' &&
-            column.viewType !== 'avatar' &&
-            column.viewType !== 'addField',
-        ).length +
-      // ITEM_PADDING +
-      gutterSize
-    );
-  }, [gutterSize, tableInstance.visibleColumns, avatar, cover]);
-
-  const items = useMemo(() => chunkData(tableInstance.rows, columnCount), [
-    tableInstance.rows,
-    columnCount,
-  ]);
-
-  const rowVirtualizer = useVirtual({
-    size: items.length,
-    parentRef,
-    estimateSize,
-    overscan: 5,
-  });
-
-  return (
-    <>
-      <div
-        ref={parentRef}
-        className="List"
-        style={{
-          height: '100%',
-          width: '100%',
-          overflow: 'auto',
-        }}
-      >
-        <div
-          style={{
-            height: `${rowVirtualizer.totalSize}px`,
-            width: '100%',
-            position: 'relative',
-          }}
-        >
-          {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = items[virtualRow.index];
-            return (
-              <div
-                key={virtualRow.index}
-                className="w-100"
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  margin: `${gutterSize}px 0`,
-                  height: `${virtualRow.size}px`,
-                  transform: `translateY(${virtualRow.start}px)`,
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                }}
-              >
-                {row.map((item) => {
-                  prepareRow(item);
-                  return (
-                    <GalleryItem
-                      rowIndex={virtualRow.index}
-                      item={item}
-                      data={{ tableInstance }}
-                      style={{}}
-                    />
-                  );
-                })}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </>
-  );
-}
+// const ITEM_HEADER_HEIGHT = 42;
+// const ITEM_COLUMN_ROW = 64;
+// const ITEM_PADDING = 32;
 
 // const createItemData = memoize(
 //   (

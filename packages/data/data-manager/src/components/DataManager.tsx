@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Finder, Viewer } from '@uidu/data-controls';
 import { byName } from '@uidu/data-views';
-import Spinner from '@uidu/spinner';
 import {
   Aggregated,
   AggregatedSelection,
@@ -23,6 +22,7 @@ import {
   useTable,
 } from 'react-table';
 import DataView from './DataView';
+import DataViewSidebar from './DataViewSidebar';
 
 const defaultAvailableControls = {
   calendarToolbar: {
@@ -183,9 +183,6 @@ export default function DataManager({
   };
 
   const {
-    sorters = [],
-    filters = [],
-    groupers = [],
     fields = [],
     preferences = {
       rowHeight: defaultRowHeight,
@@ -213,28 +210,10 @@ export default function DataManager({
       table: {},
     },
   }) => {
-    // const {
-    //   rowData,
-    //   onItemClick,
-    //   currentView,
-    //   onAddField,
-    //   columnDefs,
-    // } = this.props;
-
-    // const columns = this.gridColumnApi
-    //   ? this.gridColumnApi
-    //       .getAllGridColumns()
-    //       .map((c) => ({ ...c.colDef, hide: !c.visible }))
-    //   : [];
-    // const data = this.gridApi ? this.gridApi.getModel().rowsToDisplay : [];
     return (
       <DataView
         {...state}
         setAggregation={setAggregation}
-        // this.state
-        // groupers={groupers}
-        // sorters={sorters}
-        // filterModel={filterModel}
         // methods
         // onFilterChanged={this.onFilterChanged}
         // onSortChanged={this.onSortChanged}
@@ -263,31 +242,7 @@ export default function DataManager({
   };
 
   const renderSidebar = () => {
-    if (['calendar', 'map'].includes(currentView.kind)) {
-      if (!data) {
-        return <Spinner />;
-      }
-
-      if (currentView.kind === 'calendar') {
-        return (
-          <>
-            <p>List of events</p>
-            {data.map((datum) => (
-              <p>{datum ? `${datum.createdAt} - ${datum.id}` : 'Group'}</p>
-            ))}
-          </>
-        );
-      }
-
-      if (currentView.kind === 'map') {
-        return (
-          <>
-            <p>List of events</p>
-          </>
-        );
-      }
-    }
-    return null;
+    return <DataViewSidebar currentView={currentView} data={data} />;
   };
 
   const renderControls = ({ controls }) => {
@@ -308,14 +263,13 @@ export default function DataManager({
             isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
             availableControls={availableControls}
             currentView={currentView}
-            // updateView={updateView}
+            updateView={updateView}
             columnDefs={columns}
-            groupers={groupers}
             // onDragEnd={this.moveColumn}
             // onResize={this.setRowHeight}
             rowHeight={rowHeight}
             // onDownload={() => this.gridApi.exportDataAsCsv()}
-            // columnCount={columnCount}
+            columnCount={columnCount}
             onSetColumnCount={setColumnCount}
             actions={availableControls.more.actions}
             // isAutoSaving={isAutoSaving}
@@ -330,14 +284,13 @@ export default function DataManager({
             isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
             availableControls={availableControls}
             currentView={currentView}
-            // updateView={updateView}
+            updateView={updateView}
             columnDefs={columns}
-            groupers={groupers}
             // onDragEnd={this.moveColumn}
             // onResize={this.setRowHeight}
             rowHeight={rowHeight}
             // onDownload={() => this.gridApi.exportDataAsCsv()}
-            // columnCount={columnCount}
+            columnCount={columnCount}
             onSetColumnCount={setColumnCount}
             actions={availableControls.more.actions}
             // isAutoSaving={isAutoSaving}

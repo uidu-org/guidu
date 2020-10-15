@@ -36,7 +36,6 @@
     "react-router-dom": "^5.2.0",
     "react-table": "^7.5.1",
     "react-virtual": "^2.2.7",
-    "react-window": "^1.8.5",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },

@@ -1,5 +1,5 @@
 import { Toggler } from '@uidu/data-controls';
-import FieldNumber from '@uidu/field-number';
+import FieldCounter from '@uidu/field-counter';
 import Form from '@uidu/form';
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
@@ -9,7 +9,13 @@ export default class Configurator extends PureComponent<any> {
   handleSubmit = async (model) => console.log(model);
 
   render() {
-    const { columnDefs, onDragEnd, columnCount, onSetColumnCount } = this.props;
+    const {
+      columnDefs,
+      onDragEnd,
+      columnCount,
+      onSetColumnCount,
+      tableInstance,
+    } = this.props;
 
     return (
       <>
@@ -21,7 +27,7 @@ export default class Configurator extends PureComponent<any> {
             <Form handleSubmit={this.handleSubmit} footerRenderer={() => null}>
               <div className="row">
                 <div className="col-6">
-                  <FieldNumber
+                  <FieldCounter
                     name="columnCount"
                     label={
                       <FormattedMessage
@@ -37,7 +43,10 @@ export default class Configurator extends PureComponent<any> {
                   />
                 </div>
                 <div className="col-6">
-                  <CardTypes columnDefs={columnDefs} />
+                  <CardTypes
+                    columnDefs={columnDefs}
+                    tableInstance={tableInstance}
+                  />
                 </div>
               </div>
             </Form>

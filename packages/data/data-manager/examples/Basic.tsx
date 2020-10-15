@@ -438,14 +438,6 @@ export default class Basic extends Component<any, any> {
                                   },
                                 })}
                               </ShellMain>
-                              {renderSidebar() && (
-                                <ShellSidebar
-                                  style={{ width: '20%' }}
-                                  className="border-left"
-                                >
-                                  {renderSidebar({})}
-                                </ShellSidebar>
-                              )}
                             </ShellBody>
                           </ShellMain>
                         </>

@@ -17,8 +17,6 @@
     "memoize-one": "^5.1.1",
     "react": "^16.13.1",
     "react-virtual": "^2.2.7",
-    "react-virtualized-auto-sizer": "^1.0.2",
-    "react-window": "^1.8.5",
     "styled-components": "^5.1.1",
     "tslib": "^2.0.1"
   },

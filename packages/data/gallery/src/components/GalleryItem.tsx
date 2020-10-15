@@ -1,7 +1,13 @@
 import React from 'react';
 import Item from './Item';
 
-export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
+export default function GalleryItem({
+  item,
+  columnIndex,
+  rowIndex,
+  style,
+  data,
+}) {
   const {
     items,
     gutterSize,
@@ -14,15 +20,11 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
     filterModel,
     tableInstance,
   } = data;
-  const item = items[rowIndex] && items[rowIndex][columnIndex];
+  console.log(item);
 
   if (!item) {
     return null;
   }
-
-  const { prepareRow, rows } = tableInstance;
-  const row = rows.find((r) => r.original.id === item.id);
-  prepareRow(row);
 
   return (
     <div
@@ -31,15 +33,17 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
         onItemClick({ data: item });
       }}
       style={{
-        position: 'absolute',
-        cursor: 'pointer',
-        transform: `translateX(${style.left}px) translateY(${
-          style.top + gutterSize
-        }px)`,
-        width: style.width,
-        height: style.height - gutterSize,
-        transition: 'transform 300ms ease, height 300ms ease',
-        willChange: 'transform',
+        // position: 'absolute',
+        // cursor: 'pointer',
+        // transform: `translateX(${style.left}px) translateY(${
+        //   style.top + gutterSize
+        // }px)`,
+        // width: style.width,
+        // height: style.height - gutterSize,
+        // transition: 'transform 300ms ease, height 300ms ease',
+        // willChange: 'transform',
+        margin: '0 1rem',
+        flex: '1 0 auto',
       }}
       key={item.id}
     >
@@ -52,7 +56,8 @@ export default function GalleryItem({ columnIndex, rowIndex, style, data }) {
       >
         <Item
           tableInstance={tableInstance}
-          row={row}
+          state={tableInstance.state}
+          row={item}
           item={item}
           columnDefs={columnDefs}
           primary={primary}

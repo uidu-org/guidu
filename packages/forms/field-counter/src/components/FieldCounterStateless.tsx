@@ -43,7 +43,7 @@ function FieldCounter({
         },
         btn: {
           position: 'absolute',
-          right: 4,
+          right: 5,
           borderColor: 'rgba(0,0,0,.1)',
           borderStyle: 'solid',
           textAlign: 'center',

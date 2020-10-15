@@ -21,6 +21,8 @@ export default class Item extends PureComponent<any> {
       return null;
     }
 
+    console.log(row);
+
     const visibleCells = row.cells.filter(
       (cell) =>
         cell.column.viewType !== 'uid' &&

@@ -2,13 +2,16 @@ import Select from '@uidu/select';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function CardTypes({ columnDefs, gridColumnApi }) {
+export default function CardTypes({ columnDefs, tableInstance }) {
+  const { state, setHiddenColumns } = tableInstance;
+  console.log(state);
+
   const options = [{ id: 'basic', name: 'Basic' }];
   const coverField = columnDefs.filter(
-    column => column.viewType === 'cover',
+    (column) => column.viewType === 'cover',
   )[0];
   const avatarField = columnDefs.filter(
-    column => column.viewType === 'avatar',
+    (column) => column.viewType === 'avatar',
   )[0];
 
   if (avatarField) {
@@ -27,18 +30,30 @@ export default function CardTypes({ columnDefs, gridColumnApi }) {
   const handleChange = (_name, value) => {
     switch (value) {
       case 'with-avatar':
-        gridColumnApi.setColumnsVisible(['cover'], false);
-        gridColumnApi.setColumnsVisible(['avatar'], true);
+        setHiddenColumns([
+          ...state.hiddenColumns.filter((c) => c !== 'avatar'),
+          'cover',
+        ]);
+        // gridColumnApi.setColumnsVisible(['cover'], false);
+        // gridColumnApi.setColumnsVisible(['avatar'], true);
         break;
       case 'with-cover':
-        gridColumnApi.setColumnsVisible(['avatar'], false);
-        gridColumnApi.setColumnsVisible(['cover'], true);
+        setHiddenColumns([
+          ...state.hiddenColumns.filter((c) => c !== 'cover'),
+          'avatar',
+        ]);
+        // gridColumnApi.setColumnsVisible(['avatar'], false);
+        // gridColumnApi.setColumnsVisible(['cover'], true);
         break;
       case 'with-avatar-and-cover':
-        gridColumnApi.setColumnsVisible(['avatar', 'cover'], true);
+        setHiddenColumns([
+          ...state.hiddenColumns.filter((c) => ['avatar', 'cover'].includes(c)),
+        ]);
+        // gridColumnApi.setColumnsVisible(['avatar', 'cover'], true);
         break;
       default:
-        gridColumnApi.setColumnsVisible(['cover', 'avatar'], false);
+        setHiddenColumns([...state.hiddenColumns, 'avatar', 'cover']);
+        // gridColumnApi.setColumnsVisible(['cover', 'avatar'], false);
         break;
     }
   };
