@@ -1,5 +1,14 @@
 # @uidu/data-views
 
+## 0.4.4
+
+### Patch Changes
+
+- 2114224: Remove react-window
+- Updated dependencies [2114224]
+  - @uidu/table@0.2.7
+  - @uidu/field-counter@0.2.11
+
 ## 0.4.3
 
 ### Patch Changes

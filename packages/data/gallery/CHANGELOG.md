@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.55
+
+### Patch Changes
+
+- 2114224: Remove react-window
+- Updated dependencies [2114224]
+  - @uidu/table@0.2.7
+
 ## 0.1.54
 
 ### Patch Changes

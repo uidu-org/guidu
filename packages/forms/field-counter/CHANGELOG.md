@@ -1,5 +1,11 @@
 # @uidu/field-counter
 
+## 0.2.11
+
+### Patch Changes
+
+- 2114224: Remove react-window
+
 ## 0.2.10
 
 ### Patch Changes

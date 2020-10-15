@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.5.8
+
+### Patch Changes
+
+- 2114224: Remove react-window
+- Updated dependencies [2114224]
+  - @uidu/data-views@0.4.4
+  - @uidu/gallery@0.1.55
+  - @uidu/table@0.2.7
+
 ## 0.5.7
 
 ### Patch Changes
