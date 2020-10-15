@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.36
+
+### Patch Changes
+
+- b5f95b7: Removed colId, cleaning up data-manager WIP
+- Updated dependencies [b5f95b7]
+  - @uidu/table@0.2.8
+
 ## 0.1.35
 
 ### Patch Changes

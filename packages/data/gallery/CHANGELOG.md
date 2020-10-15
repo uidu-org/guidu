@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.56
+
+### Patch Changes
+
+- b5f95b7: Removed colId, cleaning up data-manager WIP
+- Updated dependencies [b5f95b7]
+  - @uidu/data-controls@0.5.4
+  - @uidu/table@0.2.8
+
 ## 0.1.55
 
 ### Patch Changes

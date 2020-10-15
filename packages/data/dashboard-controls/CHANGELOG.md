@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.3.12
+
+### Patch Changes
+
+- b5f95b7: Removed colId, cleaning up data-manager WIP
+
 ## 0.3.11
 
 ### Patch Changes
