@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.2.6
+
+### Patch Changes
+
+- 73f1311: Full-width layouts for tables
+
 ## 0.2.5
 
 ### Patch Changes
