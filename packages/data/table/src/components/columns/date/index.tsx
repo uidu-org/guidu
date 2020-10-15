@@ -24,7 +24,7 @@ export default (field) => ({
       return null;
     }
 
-    const momentObj = moment(params.data[field.colId]);
+    const momentObj = moment(params.data[field.id]);
 
     return {
       year: momentObj.format('YYYY'),
@@ -32,10 +32,6 @@ export default (field) => ({
       day: momentObj.format('DDD MM YYYY'),
       momentObj,
     };
-  },
-  keyCreator: (params) => {
-    return params.value.month;
-    return params.value.momentObj.format('LLL');
   },
   cellRenderer: (params) =>
     params.value ? <div className="text-truncate">{params.value}</div> : null,

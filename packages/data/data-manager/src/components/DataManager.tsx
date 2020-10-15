@@ -21,6 +21,7 @@ import {
   useSortBy,
   useTable,
 } from 'react-table';
+import { DataManagerProps } from '../types';
 import DataView from './DataView';
 import DataViewSidebar from './DataViewSidebar';
 
@@ -67,7 +68,7 @@ export default function DataManager({
   columnDefs,
   currentView,
   updateView: onViewUpdate,
-}) {
+}: DataManagerProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
   const data = useMemo(() => rowData, [rowData]);
   const columns = useMemo(() => columnDefinitions, [columnDefinitions]);
@@ -132,7 +133,6 @@ export default function DataManager({
           id: 'uid',
           dataField: 'uid',
           viewType: 'uid',
-          colId: 'id',
           field: 'id',
           disableResizing: true,
           minWidth: 56,
@@ -170,6 +170,18 @@ export default function DataManager({
     });
   };
 
+  const setColumnState = (column, newState = {}) => {
+    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
+    setColumnDefinitions([
+      ...columnDefinitions.slice(0, index),
+      {
+        ...columnDefinitions[index],
+        ...newState,
+      },
+      ...columnDefinitions.slice(index + 1),
+    ]);
+  };
+
   const setAggregation = (column, aggregate) => {
     const index = columnDefinitions.findIndex(({ id }) => id === column.id);
     setColumnDefinitions([
@@ -177,6 +189,18 @@ export default function DataManager({
       {
         ...columnDefinitions[index],
         aggregate,
+      },
+      ...columnDefinitions.slice(index + 1),
+    ]);
+  };
+
+  const setColumnWidth = (column, width: number) => {
+    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
+    setColumnDefinitions([
+      ...columnDefinitions.slice(0, index),
+      {
+        ...columnDefinitions[index],
+        width,
       },
       ...columnDefinitions.slice(index + 1),
     ]);
@@ -214,6 +238,7 @@ export default function DataManager({
       <DataView
         {...state}
         setAggregation={setAggregation}
+        setColumnWidth={setColumnWidth}
         // methods
         // onFilterChanged={this.onFilterChanged}
         // onSortChanged={this.onSortChanged}

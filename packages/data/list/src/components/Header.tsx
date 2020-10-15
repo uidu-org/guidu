@@ -42,11 +42,12 @@ export default class Header extends PureComponent<any> {
           <div className="d-flex">
             {columnDefs
               .filter(
-                column => column.type !== 'cover' && column.type !== 'primary',
+                (column) =>
+                  column.type !== 'cover' && column.type !== 'primary',
               )
               .map(
                 ({
-                  colId,
+                  id,
                   width,
                   minWidth,
                   maxWidth,
@@ -59,7 +60,7 @@ export default class Header extends PureComponent<any> {
                   }
                   return (
                     <div
-                      key={`${colId}-label`}
+                      key={`${id}-label`}
                       className="text-truncate data-list-header px-3 px-xl-4"
                       style={{
                         width: width || '150px',

@@ -6,6 +6,16 @@ import styled, { css } from 'styled-components';
 import Footer from './Footer';
 import Resizer from './Resizer';
 
+const Header = styled.div`
+  position: sticky;
+  top: 0;
+  background: white;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  z-index: 40;
+`;
+
 const Td = styled.div<{ height: number; pinned?: boolean }>`
   padding-left: 1rem;
   padding-right: 1rem;
@@ -48,6 +58,7 @@ const Th = styled.div<{ height: number }>`
 const Table = ({
   theme = 'uidu',
   setAggregation,
+  setColumnWidth,
   onAddField = () => {},
   rowHeight = 32,
   groupRowHeightIncrementRatio = 1.2,
@@ -71,8 +82,28 @@ const Table = ({
     nextPage,
     previousPage,
     setPageSize,
+    columns,
     state: { pageIndex, pageSize },
   } = tableInstance;
+
+  console.log(tableInstance);
+
+  const getColumnWidth = ({ id: accessor, headerName }) => {
+    let max = 0;
+
+    const maxWidth = 400;
+    const magicSpacing = 18;
+
+    for (var i = 0; i < page.length; i++) {
+      if (page[i] !== undefined && page[i].original[accessor] !== null) {
+        if ((page[i].original[accessor] || 'null').length > max) {
+          max = (page[i].original[accessor] || 'null').length;
+        }
+      }
+    }
+
+    return Math.min(maxWidth, Math.max(max, headerName.length) * magicSpacing);
+  };
 
   const RenderRow = React.useCallback(
     ({ index, style }) => {
@@ -139,17 +170,7 @@ const Table = ({
           overflow: 'auto',
         }}
       >
-        <div
-          style={{
-            position: 'sticky',
-            top: 0,
-            background: 'white',
-            width: 'fit-content',
-            display: 'flex',
-            alignItems: 'center',
-            zIndex: 40,
-          }}
-        >
+        <Header>
           {headerGroups.map((headerGroup) => (
             <div {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column, index) => (
@@ -173,13 +194,21 @@ const Table = ({
                       : {}),
                   }}
                 >
-                  {column.render('Header')}
+                  {column.render('Header', {
+                    setColumnWidth,
+                    getColumnWidth,
+                    autosizeAllColumns: () => {
+                      // columns.map((column) => {
+                      //   return setColumnWidth(column, getColumnWidth(column));
+                      // });
+                    },
+                  })}
                   {!!column.getResizerProps && <Resizer column={column} />}
                 </Th>
               ))}
             </div>
           ))}
-        </div>
+        </Header>
         <div
           style={{
             height: `${rowVirtualizer.totalSize}px`,

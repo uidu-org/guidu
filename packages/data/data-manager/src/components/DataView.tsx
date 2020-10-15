@@ -104,6 +104,7 @@ export default class DataView extends PureComponent<any> {
       endDateField,
       tableInstance,
       setAggregation,
+      setColumnWidth,
     } = this.props;
 
     if (!rowData) {
@@ -114,8 +115,8 @@ export default class DataView extends PureComponent<any> {
       <div className="h-100">
         <Table
           setAggregation={setAggregation}
+          setColumnWidth={setColumnWidth}
           tableInstance={tableInstance}
-          // stopEditingWhenGridLosesFocus
           {...viewProps.table}
           rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
           // use columnDefs from props to avoid flickering on toggling/reordering columns

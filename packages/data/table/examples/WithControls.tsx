@@ -81,7 +81,7 @@ export default class WithControls extends Component<any, any> {
     const sorters = columnApi
       .getColumnState()
       .filter((s) => s.sort != null)
-      .map((s) => ({ colId: s.colId, sort: s.sort, sortIndex: s.sortIndex }));
+      .map((s) => ({ id: s.id, sort: s.sort, sortIndex: s.sortIndex }));
     this.setState({ sorters });
   };
 

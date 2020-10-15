@@ -97,7 +97,7 @@ const dataViews = [
     name: 'Lista contatti',
     kind: 'gallery',
     fields: ['avatar', 'member', 'amount'],
-    sorters: [{ colId: 'amount', sort: 'desc' }],
+    sorters: [{ id: 'amount', desc: true }],
   },
   {
     id: 17,
@@ -105,7 +105,7 @@ const dataViews = [
     preferences: { columnCount: 5 },
     kind: 'gallery',
     fields: ['member', 'amount'],
-    sorters: [{ colId: 'amount', sort: 'desc' }],
+    sorters: [{ id: 'amount', desc: true }],
   },
   {
     id: 4,
@@ -247,7 +247,7 @@ export default class Basic extends Component<any, any> {
                 columns: [
                   {
                     dataField: 'string',
-                    colId: 'custom-field-1',
+                    id: 'custom-field-1',
                     field: 'custom-field-1',
                     headerName: 'custom field 1',
                   },
@@ -262,7 +262,7 @@ export default class Basic extends Component<any, any> {
                       onFieldAdd: () => window.alert('add a field'),
                     },
                     dataField: 'addField',
-                    colId: 'addField',
+                    id: 'addField',
                     headerName: 'Add field',
                   },
                 ],

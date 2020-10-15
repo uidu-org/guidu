@@ -2,7 +2,7 @@ import { singleSelectField } from '@uidu/data-fields';
 import SelectEditor from '../../editors/SelectEditor';
 import Renderer from './renderer';
 
-export default field => ({
+export default (field) => ({
   type: singleSelectField.kind,
   viewType: singleSelectField.kind,
   cellEditorFramework: SelectEditor,
@@ -17,10 +17,9 @@ export default field => ({
   headerComponentParams: {
     menuIcon: singleSelectField.icon,
   },
-  keyCreator: params => params.value.name,
-  filterValueGetter: params => params.data[field.colId],
+  filterValueGetter: (params) => params.data[field.id],
   valueGetter: ({ data }) =>
     data
-      ? field.options.filter(option => option.id === data[field.colId])[0]
+      ? field.options.filter((option) => option.id === data[field.id])[0]
       : null,
 });

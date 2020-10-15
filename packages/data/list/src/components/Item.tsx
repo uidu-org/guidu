@@ -73,7 +73,7 @@ export default function Item({
             .map((cell) => {
               return (
                 <div
-                  key={`${item.id}-${cell.column.colId}-value`}
+                  key={`${item.id}-${cell.column.id}-value`}
                   className="text-truncate data-list-cell px-3 px-xl-4"
                   style={{
                     width: cell.column.width || '150px',
@@ -168,7 +168,7 @@ export default function Item({
 //               .map((cell) => {
 //                 return (
 //                   <div
-//                     key={`${item.id}-${cell.column.colId}-value`}
+//                     key={`${item.id}-${cell.column.id}-value`}
 //                     className="text-truncate data-list-cell px-3 px-xl-4"
 //                     style={{
 //                       width: cell.column.width || '150px',

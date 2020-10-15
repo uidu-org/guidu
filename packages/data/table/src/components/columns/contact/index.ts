@@ -2,7 +2,7 @@ import { contactField } from '@uidu/data-fields';
 import Editor from './editor';
 import Renderer from './renderer';
 
-export default field => ({
+export default (field) => ({
   type: contactField.kind,
   viewType: contactField.kind,
   cellRenderer: Renderer,
@@ -15,5 +15,5 @@ export default field => ({
   headerComponentParams: {
     menuIcon: contactField.icon,
   },
-  // filterValueGetter: params => params.data[field.colId],
+  // filterValueGetter: params => params.data[field.id],
 });

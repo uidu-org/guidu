@@ -1,16 +1,15 @@
 import { paymentMethodField } from '@uidu/data-fields';
 import Renderer from './renderer';
 
-export default field => ({
+export default (field) => ({
   type: paymentMethodField.kind,
   viewType: paymentMethodField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: {
     menuIcon: paymentMethodField.icon,
   },
-  keyCreator: params => (params.value ? params.value.name : null),
-  getQuickFilterText: params => (params.value ? params.value.name : null),
-  filterValueGetter: params => params.data[field.colId],
+  getQuickFilterText: (params) => (params.value ? params.value.name : null),
+  filterValueGetter: (params) => params.data[field.id],
   cellRenderer: Renderer,
   cellRendererParams: {
     options: field.options,
@@ -20,6 +19,6 @@ export default field => ({
       return null;
     }
 
-    return field.options.filter(option => option.id === data[field.colId])[0];
+    return field.options.filter((option) => option.id === data[field.id])[0];
   },
 });

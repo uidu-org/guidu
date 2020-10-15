@@ -69,7 +69,7 @@ export default function FiltererForm({
                   }))}
                   onChange={(name, value) => {
                     console.log(name, value);
-                    // this.updateFilterModel(value, filter.colId);
+                    // this.updateFilterModel(value, filter.id);
                   }}
                 />
               </div>

@@ -2,7 +2,7 @@ import { memberField } from '@uidu/data-fields';
 import Editor from './editor';
 import Renderer from './renderer';
 
-export default field => ({
+export default (field) => ({
   type: memberField.kind,
   viewType: memberField.kind,
   cellRenderer: Renderer,
@@ -15,5 +15,5 @@ export default field => ({
   headerComponentParams: {
     menuIcon: memberField.icon,
   },
-  // filterValueGetter: params => params.data[field.colId],
+  // filterValueGetter: params => params.data[field.id],
 });

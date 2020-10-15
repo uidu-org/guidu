@@ -28,12 +28,12 @@ export default class PickField extends Component<any, any> {
           {label} <ChevronDown size={16} />
         </div>
         {(isDefaultOpen || isOpen) &&
-          columnDefs.map(columnDef => (
+          columnDefs.map((columnDef) => (
             <a
               href="#"
               className="list-group-item list-group-item-action px-3 px-xl-4 d-flex align-items-center"
-              key={columnDef.colId}
-              onClick={e => {
+              key={columnDef.id}
+              onClick={(e) => {
                 e.preventDefault();
                 this.setState({ isOpen: false }, () => onClick(columnDef));
               }}

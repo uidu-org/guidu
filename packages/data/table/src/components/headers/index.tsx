@@ -7,11 +7,32 @@ import { ArrowRight } from 'react-feather';
 
 export default function Header({
   column,
+  state,
   setHiddenColumns,
   setSortBy,
-  state,
   setGroupBy,
+  autosizeAllColumns,
+  setColumnWidth,
+  getColumnWidth,
 }) {
+  const updateSortBy = (columnId: string, desc: boolean) => {
+    if (state.sortBy.find((s) => s.id === columnId)) {
+      // update
+      return setSortBy(
+        state.sortBy.map((s) => {
+          if (s.id === columnId) {
+            return {
+              id: columnId,
+              desc,
+            };
+          }
+          return s;
+        }),
+      );
+    }
+    return setSortBy([...state.sortBy, { id: columnId, desc }]);
+  };
+
   return (
     <div
       className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
@@ -35,38 +56,63 @@ export default function Header({
             }}
           >
             <DropdownItemGroup>
-              <DropdownItem onClick={console.log}>
+              <DropdownItem
+                onClick={() => setColumnWidth(column, getColumnWidth(column))}
+              >
                 Autosize this column
               </DropdownItem>
-              <DropdownItem onClick={console.log}>
+              <DropdownItem onClick={() => autosizeAllColumns()}>
                 Autosize all columns
               </DropdownItem>
+            </DropdownItemGroup>
+            <DropdownItemGroup>
+              {column.isSorted && (
+                <DropdownItem
+                  onClick={(e) =>
+                    setSortBy(state.sortBy.filter((s) => s.id !== column.id))
+                  }
+                >
+                  Unsort
+                </DropdownItem>
+              )}
               <DropdownItem
-                onClick={(e) =>
-                  setSortBy([...state.sortBy, { id: column.id, desc: false }])
-                }
+                isDisabled={column.isSorted && !column.isSortedDesc}
+                onClick={(e) => updateSortBy(column.id, false)}
               >
                 Sort A <ArrowRight size={14} /> Z
               </DropdownItem>
               <DropdownItem
-                onClick={(e) =>
-                  setSortBy([...state.sortBy, { id: column.id, desc: true }])
-                }
+                isDisabled={column.isSorted && column.isSortedDesc}
+                onClick={(e) => updateSortBy(column.id, true)}
               >
                 Sort Z <ArrowRight size={14} /> A
               </DropdownItem>
-              <DropdownItem
-                onClick={(e) => setGroupBy([...state.groupBy, column.id])}
-              >
-                Group by this field
-              </DropdownItem>
-              <DropdownItem
-                onClick={(e) =>
-                  setHiddenColumns([...state.hiddenColumns, column.id])
-                }
-              >
-                Hide this column
-              </DropdownItem>
+              {column.isGrouped ? (
+                <DropdownItem
+                  onClick={(e) =>
+                    setGroupBy(state.groupBy.filter((g) => g !== column.id))
+                  }
+                >
+                  Remove grouping
+                </DropdownItem>
+              ) : (
+                <DropdownItem
+                  isDisabled={!column.canGroupBy}
+                  onClick={(e) => setGroupBy([...state.groupBy, column.id])}
+                >
+                  Group by this field
+                </DropdownItem>
+              )}
+
+              {column.isVisible && (
+                <DropdownItem
+                  onClick={(e) =>
+                    setHiddenColumns([...state.hiddenColumns, column.id])
+                  }
+                >
+                  Hide this column
+                </DropdownItem>
+              )}
             </DropdownItemGroup>
           </DropdownMenu>
         </div>

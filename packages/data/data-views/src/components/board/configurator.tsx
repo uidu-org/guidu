@@ -42,7 +42,7 @@ export default class Configurator extends PureComponent<any> {
                     ].includes(column.viewType);
                   })
                   .map((column) => ({
-                    id: column.colId,
+                    id: column.id,
                     name: column.headerName,
                     ...(column.headerComponentParams
                       ? { before: column.headerComponentParams.menuIcon }

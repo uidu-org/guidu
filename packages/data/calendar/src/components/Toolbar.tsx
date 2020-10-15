@@ -9,7 +9,7 @@ export default class Toolbar extends PureComponent<any> {
     const { messages } = localizer;
 
     return (
-      <ShellHeader className="justify-content-between py-3 h-auto">
+      <ShellHeader className="justify-content-between p-3 h-auto">
         <div className="d-flex align-items-center">
           <button
             type="button"

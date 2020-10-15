@@ -52,7 +52,7 @@ const aggFuncs = [
 
 export const getMainMenuItems = (params) => {
   const { api, columnApi, column } = params;
-  const { colId } = column;
+  const { id } = column;
   console.log(params);
   return [
     ...(params.defaultItems.includes('valueAggSubMenu')
@@ -88,7 +88,7 @@ export const getMainMenuItems = (params) => {
       : []),
     {
       name: 'Autosize this column',
-      action: () => columnApi.autoSizeColumn(colId),
+      action: () => columnApi.autoSizeColumn(id),
       icon: renderToStaticMarkup(<ChevronRight size={14} />),
     },
     {
@@ -96,7 +96,7 @@ export const getMainMenuItems = (params) => {
       action: () => {
         const allColumnIds = [];
         columnApi.getAllColumns().forEach((column) => {
-          allColumnIds.push(column.colId);
+          allColumnIds.push(column.id);
         });
         columnApi.autoSizeColumns(allColumnIds);
       },
@@ -105,14 +105,14 @@ export const getMainMenuItems = (params) => {
     {
       name: 'Sort First-Last',
       action: () => {
-        columnApi.applyColumnState({ state: [{ colId, sort: 'asc' }] });
+        columnApi.applyColumnState({ state: [{ id, sort: 'asc' }] });
       },
       icon: renderToStaticMarkup(<ChevronsDown size={14} />),
     },
     {
       name: 'Sort Last-First',
       action: () => {
-        columnApi.applyColumnState({ state: [{ colId, sort: 'desc' }] });
+        columnApi.applyColumnState({ state: [{ id, sort: 'desc' }] });
       },
       icon: renderToStaticMarkup(<ChevronsUp size={14} />),
     },
@@ -128,11 +128,11 @@ export const getMainMenuItems = (params) => {
           {
             name: 'Group by this field',
             action: () => {
-              // columnApi.setColumnVisible(colId, false);
+              // columnApi.setColumnVisible(id, false);
               api.showLoadingOverlay();
               columnApi.setRowGroupColumns([
-                ...columnApi.getRowGroupColumns().map((g) => g.colId),
-                colId,
+                ...columnApi.getRowGroupColumns().map((g) => g.id),
+                id,
               ]);
               setTimeout(() => {
                 api.refreshCells({ force: true });
@@ -145,7 +145,7 @@ export const getMainMenuItems = (params) => {
       : []),
     {
       name: 'Hide this field',
-      action: () => columnApi.setColumnVisible(colId, false),
+      action: () => columnApi.setColumnVisible(id, false),
       icon: renderToStaticMarkup(<EyeOff size={14} />),
     },
   ];

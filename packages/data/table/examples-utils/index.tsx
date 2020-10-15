@@ -4,19 +4,19 @@ import numeral from 'numeral';
 export const availableColumns = [
   // {
   //   dataField: 'uid',
-  //   colId: 'id',
+  //   id: 'id',
   //   field: 'id',
   //   dataFieldParams: { onItemClick: (params) => console.log(params) },
   // },
   {
     dataField: 'cover',
-    colId: 'cover',
+    id: 'cover',
     field: 'cover',
     headerName: 'Cover',
   },
   {
     dataField: 'avatar',
-    colId: 'avatar',
+    id: 'avatar',
     field: 'avatar',
     headerName: 'Avatar',
   },
@@ -25,7 +25,7 @@ export const availableColumns = [
     dataFieldParams: {
       avatar: (data) => (data ? data.avatar : null),
     },
-    colId: 'member',
+    id: 'member',
     accessor: (data) => data.member.email,
     primary: true,
     headerName: 'Donor',
@@ -39,13 +39,13 @@ export const availableColumns = [
   },
   {
     dataField: 'string',
-    colId: 'displayName',
+    id: 'displayName',
     field: 'displayName',
     headerName: 'FullName',
   },
   {
     dataField: 'currency',
-    colId: 'amount',
+    id: 'amount',
     field: 'amount',
     headerName: 'Donation amount',
     aggFunc: 'sum',
@@ -56,7 +56,7 @@ export const availableColumns = [
   },
   {
     dataField: 'country',
-    colId: 'country',
+    id: 'country',
     field: 'country',
     headerName: 'Country',
     enableRowGroup: true,
@@ -64,7 +64,7 @@ export const availableColumns = [
   },
   {
     dataField: 'percent',
-    colId: 'percent',
+    id: 'percent',
     field: 'percent',
     headerName: 'Percentuale',
     valueGetter: ({ value }) => numeral(value / 100).format('% 0'),
@@ -72,7 +72,7 @@ export const availableColumns = [
   {
     dataField: 'date',
     dataFieldParams: { format: 'l' },
-    colId: 'createdAt',
+    id: 'createdAt',
     field: 'createdAt',
     headerName: 'Data creazione',
     enableRowGroup: true,
@@ -81,7 +81,7 @@ export const availableColumns = [
   {
     dataField: 'date',
     dataFieldParams: { format: 'l' },
-    colId: 'updatedAt',
+    id: 'updatedAt',
     field: 'updatedAt',
     headerName: 'Ultimo aggiornamento',
   },
@@ -94,7 +94,7 @@ export const availableColumns = [
         { id: null, name: 'Unknown' },
       ],
     },
-    colId: 'gender',
+    id: 'gender',
     field: 'gender',
     headerName: 'Genere',
     enableRowGroup: true,
@@ -102,29 +102,26 @@ export const availableColumns = [
   },
   {
     dataField: 'string',
-    colId: 'firstName',
+    id: 'firstName',
     field: 'firstName',
     headerName: 'firstName',
   },
   {
     dataField: 'linkRecord',
-    colId: 'donationCampaign',
+    id: 'donationCampaign',
     field: 'donationCampaign',
     headerName: 'Donation Campaign',
     enableRowGroup: true,
     accessor: (data) => data.donationCampaign.name,
-    keyCreator: function (params) {
-      return params.value.name;
-    },
   },
   // {
-  //   colId: 'role',
+  //   id: 'role',
   //   field: 'role',
   //   headerName: 'Admin',
   //   ...checkboxColumn(),
   // },
   // {
-  //   colId: 'multiple-select',
+  //   id: 'multiple-select',
   //   field: 'scope',
   //   headerName: 'Tags',
   //   ...multipleSelectColumn({
@@ -135,7 +132,7 @@ export const availableColumns = [
   //   }),
   // },
   // {
-  //   colId: 'member',
+  //   id: 'member',
   //   field: 'member',
   //   headerName: 'Assignee',
 
@@ -148,14 +145,14 @@ export const availableColumns = [
   //   valueGetter: ({ data: { member } }) => member.email,
   // },
   // {
-  //   colId: 'address',
+  //   id: 'address',
   //   field: 'uid',
   //   headerName: 'Indirizzo',
   //   ...addressColumn(),
   // },
   {
     dataField: 'phone',
-    colId: 'phone',
+    id: 'phone',
     field: 'phone',
     headerName: 'Telefono',
   },
@@ -171,20 +168,20 @@ export const availableColumns = [
         { id: 3, name: 'Credit Card' },
       ],
     },
-    colId: 'paymentMethod',
+    id: 'paymentMethod',
     field: 'paymentMethod',
     headerName: 'Payment Method',
     enableRowGroup: true,
   },
 
   // {
-  //   colId: 'progress',
+  //   id: 'progress',
   //   field: 'progress',
   //   headerName: 'Progress',
   //   ...progressColumn(),
   // },
   // {
-  //   colId: 'files',
+  //   id: 'files',
   //   field: 'uid',
   //   headerName: 'Files',
   //   ...attachmentsColumn({
@@ -195,13 +192,13 @@ export const availableColumns = [
   //   }),
   // },
   // {
-  //   colId: 'votes',
+  //   id: 'votes',
   //   field: 'uid',
   //   headerName: 'Voto',
   //   ...ratingColumn(),
   // },
   // {
-  //   colId: 'assignee',
+  //   id: 'assignee',
   //   field: 'uid',
   //   headerName: 'Assignee',
   //   ...urlColumn(),

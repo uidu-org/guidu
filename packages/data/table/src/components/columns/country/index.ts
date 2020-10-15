@@ -3,7 +3,7 @@ import { allCountries } from '@uidu/select';
 import SelectEditor from '../../editors/SelectEditor';
 import Renderer from './renderer';
 
-export default field => ({
+export default (field) => ({
   type: countryField.kind,
   viewType: countryField.kind,
   filter: 'agTextColumnFilter',
@@ -16,10 +16,8 @@ export default field => ({
   cellEditorParams: {
     options: allCountries,
   },
-  // keyCreator: params => params.value.name,
   // getQuickFilterText: params => params.value.name,
-  filterValueGetter: params => params.data[field.colId],
-  // keyCreator: params => params.value,
+  filterValueGetter: (params) => params.data[field.id],
   // valueGetter: ({ data }) =>
-  //   allCountries.filter(option => option.id === data[field.colId])[0],
+  //   allCountries.filter(option => option.id === data[field.id])[0],
 });

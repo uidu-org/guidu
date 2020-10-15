@@ -65,8 +65,8 @@ export default function ItemField({ cell }) {
   return (
     <StyledItemField
       className="px-3 px-xl-4"
-      // isSorterActive={sorters.map((s) => s.colId).includes(column.colId)}
-      // isFilterActive={!!filterModel[column.colId]}
+      // isSorterActive={sorters.map((s) => s.id).includes(column.id)}
+      // isFilterActive={!!filterModel[column.id]}
     >
       <dt className="small text-muted text-truncate mb-1">
         <div className="customHeaderLabel flex-grow-1 text-truncate">

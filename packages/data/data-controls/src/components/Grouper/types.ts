@@ -1,7 +1,7 @@
 import { Column } from '@uidu/table';
 
 export type Group = {
-  colId: string;
+  id: string;
   index?: number;
 };
 

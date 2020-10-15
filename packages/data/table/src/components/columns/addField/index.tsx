@@ -3,7 +3,7 @@ import Tooltip from '@uidu/tooltip';
 import React from 'react';
 
 export default ({ onFieldAdd }) => ({
-  colId: 'add',
+  id: 'add',
   filter: false,
   viewType: addField.kind,
   type: 'addField',

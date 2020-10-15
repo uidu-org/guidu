@@ -1,6 +1,5 @@
 import { byName, Field } from '@uidu/data-fields';
 import numeral from 'numeral';
-import React from 'react';
 import {
   addFieldColumn,
   addressColumn,
@@ -95,8 +94,8 @@ export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
   return columns.map(({ primary, dataField, dataFieldParams, ...column }) => {
     return {
       fieldGroup,
-      accessor: column.colId,
-      id: column.colId,
+      accessor: column.id,
+      id: column.id,
       ...(dataField &&
       getColumnType(dataField, { ...dataFieldParams, ...column }) &&
       getColumnType(dataField, { ...dataFieldParams, ...column }).cellRenderer
@@ -118,54 +117,6 @@ export const buildColumns = (columns): Array<ColumnGroup> => {
   return columns.reduce((arr, item) => {
     return [...arr, ...buildColumn(item)];
   }, []);
-};
-
-export const valueRenderer = (data, column) => {
-  const {
-    field,
-    cellRenderer: Renderer,
-    cellRendererParams,
-    cellRendererFramework: RendererFramework,
-    valueFormatter,
-    valueGetter,
-    Cell,
-  } = column;
-  console.log(column);
-
-  let value = data[field];
-
-  if (valueGetter) {
-    value = valueGetter({ data, value });
-  }
-
-  if (!value) {
-    return '-';
-  }
-
-  if (Cell) {
-    return <Cell {...column} />;
-  }
-
-  if (Renderer) {
-    return (
-      <div
-        dangerouslySetInnerHTML={{
-          __html: Renderer({ value, data, ...cellRendererParams }),
-        }}
-      />
-    );
-  }
-
-  if (RendererFramework) {
-    return (
-      <RendererFramework
-        data={data}
-        value={valueFormatter ? valueFormatter({ value }) : value}
-        colDef={column}
-      />
-    );
-  }
-  return valueFormatter ? valueFormatter({ value }) : value;
 };
 
 export const getPrimary = (columnDefs) =>
