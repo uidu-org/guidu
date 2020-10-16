@@ -1,6 +1,6 @@
 export default () => ({
-  suppressMovable: true,
-  lockVisible: true,
+  canMove: false,
+  canHide: false,
   lockPinned: true,
   viewType: 'primary',
   showRowGroup: true,

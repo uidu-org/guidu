@@ -27,7 +27,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
         (column) =>
           column.fieldGroup.kind === columnGroup &&
           ['uid', 'cover', 'avatar', 'addField'].indexOf(column.viewType) < 0 &&
-          !column.lockVisible,
+          column.canHide,
       );
       if (columns.length === 0) {
         return null;
@@ -36,7 +36,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
       const isGroupChecked =
         columns.filter((c) => !c.hide).length === columns.length;
       const checkedColumnsCount = columns.filter((c) => !c.hide).length;
-      console.log(columns);
+
       return (
         <ColumnGroup
           key={columnGroup}

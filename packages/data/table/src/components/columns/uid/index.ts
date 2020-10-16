@@ -7,7 +7,7 @@ export default (field) => ({
   headerComponentParams: { menuIcon: uidField.icon },
   headerName: 'ID',
   pinned: 'left',
-  lockVisible: true,
+  canHide: false,
   lockPinned: true,
   lockPosition: true,
   resizable: false,

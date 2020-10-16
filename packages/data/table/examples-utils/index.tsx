@@ -59,7 +59,7 @@ export const availableColumns = [
     id: 'country',
     field: 'country',
     headerName: 'Country',
-    enableRowGroup: true,
+    canGroupBy: true,
     editable: true,
   },
   {
@@ -75,7 +75,7 @@ export const availableColumns = [
     id: 'createdAt',
     field: 'createdAt',
     headerName: 'Data creazione',
-    enableRowGroup: true,
+    canGroupBy: true,
     editable: true,
   },
   {
@@ -97,7 +97,7 @@ export const availableColumns = [
     id: 'gender',
     field: 'gender',
     headerName: 'Genere',
-    enableRowGroup: true,
+    canGroupBy: true,
     editable: true,
   },
   {
@@ -111,7 +111,7 @@ export const availableColumns = [
     id: 'donationCampaign',
     field: 'donationCampaign',
     headerName: 'Donation Campaign',
-    enableRowGroup: true,
+    canGroupBy: true,
     accessor: (data) => data.donationCampaign.name,
   },
   // {
@@ -171,7 +171,7 @@ export const availableColumns = [
     id: 'paymentMethod',
     field: 'paymentMethod',
     headerName: 'Payment Method',
-    enableRowGroup: true,
+    canGroupBy: true,
   },
 
   // {

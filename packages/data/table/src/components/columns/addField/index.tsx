@@ -9,7 +9,7 @@ export default ({ onFieldAdd }) => ({
   type: 'addField',
   suppressColumnsToolPanel: true,
   suppressFiltersToolPanel: true,
-  lockVisible: true,
+  canHide: false,
   sortable: false,
   resizable: false,
   rowDrag: false,

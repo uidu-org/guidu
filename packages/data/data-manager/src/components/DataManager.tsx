@@ -86,6 +86,8 @@ export default function DataManager({
       minWidth: 80,
       width: 200,
       maxWidth: 400,
+      canHide: true,
+      canGroupBy: false,
       Header,
       Aggregated,
       Cell: ({ column, value }) =>

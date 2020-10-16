@@ -3,7 +3,16 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import React from 'react';
-import { ArrowRight } from 'react-feather';
+import {
+  AlignJustify,
+  ArrowDownRight,
+  ArrowRight,
+  ArrowUpRight,
+  Edit2,
+  EyeOff,
+  Filter,
+  Server,
+} from 'react-feather';
 
 export default function Header({
   column,
@@ -47,7 +56,7 @@ export default function Header({
         {column.headerName}
       </div>
       {!column.suppressMenu && (
-        <div className="ml-3">
+        <div className="ml-3" style={{ fontWeight: 'initial' }}>
           <DropdownMenu
             triggerType="button"
             position="bottom right"
@@ -55,15 +64,26 @@ export default function Header({
               appearance: 'subtle',
             }}
           >
+            {column.canEdit && (
+              <DropdownItemGroup>
+                <DropdownItem
+                  onClick={() => console.log('Edit field')}
+                  elemBefore={<Edit2 size={14} />}
+                >
+                  Edit this column
+                </DropdownItem>
+              </DropdownItemGroup>
+            )}
             <DropdownItemGroup>
               <DropdownItem
                 onClick={() => setColumnWidth(column, getColumnWidth(column))}
+                elemBefore={<AlignJustify size={14} />}
               >
                 Autosize this column
               </DropdownItem>
-              <DropdownItem onClick={() => autosizeAllColumns()}>
+              {/* <DropdownItem onClick={() => autosizeAllColumns()}>
                 Autosize all columns
-              </DropdownItem>
+              </DropdownItem> */}
             </DropdownItemGroup>
             <DropdownItemGroup>
               {column.isSorted && (
@@ -71,6 +91,7 @@ export default function Header({
                   onClick={(e) =>
                     setSortBy(state.sortBy.filter((s) => s.id !== column.id))
                   }
+                  elemBefore={<ArrowRight size={14} />}
                 >
                   Unsort
                 </DropdownItem>
@@ -78,37 +99,52 @@ export default function Header({
               <DropdownItem
                 isDisabled={column.isSorted && !column.isSortedDesc}
                 onClick={(e) => updateSortBy(column.id, false)}
+                elemBefore={<ArrowDownRight size={14} />}
               >
                 Sort A <ArrowRight size={14} /> Z
               </DropdownItem>
               <DropdownItem
                 isDisabled={column.isSorted && column.isSortedDesc}
                 onClick={(e) => updateSortBy(column.id, true)}
+                elemBefore={<ArrowUpRight size={14} />}
               >
                 Sort Z <ArrowRight size={14} /> A
               </DropdownItem>
-              {column.isGrouped ? (
+              {column.canFilter && (
                 <DropdownItem
-                  onClick={(e) =>
-                    setGroupBy(state.groupBy.filter((g) => g !== column.id))
-                  }
+                  onClick={() => console.log('Add filter')}
+                  elemBefore={<Filter size={14} />}
                 >
-                  Remove grouping
-                </DropdownItem>
-              ) : (
-                <DropdownItem
-                  isDisabled={!column.canGroupBy}
-                  onClick={(e) => setGroupBy([...state.groupBy, column.id])}
-                >
-                  Group by this field
+                  Add filter
                 </DropdownItem>
               )}
-
-              {column.isVisible && (
+              {column.canGroupBy && (
+                <>
+                  {column.isGrouped ? (
+                    <DropdownItem
+                      onClick={() =>
+                        setGroupBy(state.groupBy.filter((g) => g !== column.id))
+                      }
+                      elemBefore={<Server size={14} />}
+                    >
+                      Remove grouping
+                    </DropdownItem>
+                  ) : (
+                    <DropdownItem
+                      onClick={() => setGroupBy([...state.groupBy, column.id])}
+                      elemBefore={<Server size={14} />}
+                    >
+                      Group by this field
+                    </DropdownItem>
+                  )}
+                </>
+              )}
+              {column.canHide && (
                 <DropdownItem
                   onClick={(e) =>
                     setHiddenColumns([...state.hiddenColumns, column.id])
                   }
+                  elemBefore={<EyeOff size={14} />}
                 >
                   Hide this column
                 </DropdownItem>
