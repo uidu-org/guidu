@@ -86,8 +86,6 @@ const Table = ({
     state: { pageIndex, pageSize },
   } = tableInstance;
 
-  console.log(tableInstance);
-
   // const getColumnWidth = (data, accessor, headerText) => {
   //   const cellLength = Math.max(
   //     ...data.map((row) => {

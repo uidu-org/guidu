@@ -6,5 +6,5 @@ export default () => ({
   viewType: linkRecordField.kind,
   filter: 'agTextColumnFilter',
   headerComponentParams: { menuIcon: linkRecordField.icon },
-  cellRenderer: Renderer,
+  Cell: Renderer,
 });

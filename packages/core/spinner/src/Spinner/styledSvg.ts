@@ -87,7 +87,6 @@ export const getStrokeColor = ({
 }: {
   invertColor?: boolean;
 }): string | number =>
-  // $FlowFixMe - theme is not found in props
   invertColor ? spinnerColorInverted(props) : spinnerColor(props);
 
 const getActiveAnimations = (props) => {

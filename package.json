@@ -149,7 +149,7 @@
     "@types/react-router": "^5.1.0",
     "@types/react-router-dom": "^5.1.0",
     "@types/react-select": "^3.0.2",
-    "@types/react-syntax-highlighter": "^11.0.0",
+    "@types/react-syntax-highlighter": "^13.5.0",
     "@types/react-transition-group": "^4.2.0",
     "@types/react-virtualized": "^9.18.12",
     "@types/semver": "^7.1.0",
