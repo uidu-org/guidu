@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.1.37
+
+### Patch Changes
+
+- b5f95b7: Removed colId, cleaning up data-manager WIP
+
 ## 0.1.36
 
 ### Patch Changes

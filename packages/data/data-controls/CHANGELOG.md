@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.5.4
+
+### Patch Changes
+
+- b5f95b7: Removed colId, cleaning up data-manager WIP
+- Updated dependencies [b5f95b7]
+  - @uidu/data-views@0.4.5
+  - @uidu/table@0.2.8
+
 ## 0.5.3
 
 ### Patch Changes
