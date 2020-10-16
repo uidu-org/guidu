@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.5.5
+
+### Patch Changes
+
+- 04a9141: Better table headers for data-manager
+- Updated dependencies [04a9141]
+  - @uidu/table@0.2.9
+
 ## 0.5.4
 
 ### Patch Changes

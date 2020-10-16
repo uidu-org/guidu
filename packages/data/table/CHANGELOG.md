@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.2.9
+
+### Patch Changes
+
+- 04a9141: Better table headers for data-manager
+
 ## 0.2.8
 
 ### Patch Changes
