@@ -1,4 +1,5 @@
 import { Field } from '@uidu/data-fields';
+import React from 'react';
 
 export type ColumnGroupIdentifier = {
   kind: string;

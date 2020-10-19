@@ -5,13 +5,17 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-const FilterForm = loadable(() => import('../../filters/NumberFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/NumberFilterForm'),
+);
 
-const Currency: Field = {
+const Currency: Partial<Field> = {
   kind: 'currency',
   name: <FormattedMessage id="field.currency.name" defaultMessage="Currency" />,
   icon: <FontAwesomeIcon icon={faEuroSign} />,
-  filterForm: FilterForm,
+  Filter,
+  cellStyle: { justifyContent: 'flex-end' },
+  aggregate: 'sum',
 };
 
 export default Currency;

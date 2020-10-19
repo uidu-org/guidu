@@ -6,7 +6,9 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 import Cell from './renderer';
 
-const FilterForm = loadable(() => import('../../filters/SelectFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/SelectFilterForm'),
+);
 
 const PaymentMethod: Field = {
   kind: 'paymentMethod',
@@ -23,7 +25,7 @@ const PaymentMethod: Field = {
       defaultMessage="Linked record fields contain blue tokens that represent links to other records."
     />
   ),
-  filterForm: FilterForm,
+  Filter,
   Cell,
   // getQuickFilterText: (params) => (params.value ? params.value.name : null),
   // filterValueGetter: (params) => params.data[field.id],

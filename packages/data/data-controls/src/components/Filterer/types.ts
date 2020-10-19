@@ -1,8 +1,8 @@
-import { Column } from '@uidu/table';
+import { Field } from '@uidu/data-fields';
 
 export type FiltererProps = {
   tableInstance: any;
-  columnDefs: Column[];
+  columnDefs: Field[];
 };
 
 export type FiltererFormProps = {

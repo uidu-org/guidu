@@ -6,7 +6,9 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 import Cell from './renderer';
 
-const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/TextFilterForm'),
+);
 
 const Phone: Field = {
   kind: 'phone',
@@ -18,7 +20,7 @@ const Phone: Field = {
       defaultMessage="A telephone number (e.g. (415) 555-9876)."
     />
   ),
-  filterForm: FilterForm,
+  Filter,
   Cell,
 };
 

@@ -5,7 +5,9 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/TextFilterForm'),
+);
 
 const Email: Field = {
   kind: 'email',
@@ -17,7 +19,7 @@ const Email: Field = {
       defaultMessage="A valid email address (e.g. andrew@example.com)."
     />
   ),
-  filterForm: FilterForm,
+  Filter,
 };
 
 export default Email;

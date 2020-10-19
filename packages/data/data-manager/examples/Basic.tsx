@@ -2,6 +2,7 @@ import '@fortawesome/fontawesome-free/scss/brands.scss';
 import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 import '@fortawesome/fontawesome-free/scss/regular.scss';
 import '@fortawesome/fontawesome-free/scss/solid.scss';
+import { buildColumns } from '@uidu/data-fields';
 import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
@@ -15,7 +16,6 @@ import {
   ShellSidebar,
 } from '@uidu/shell';
 import SideNavigation from '@uidu/side-navigation';
-import { buildColumns } from '@uidu/table';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';

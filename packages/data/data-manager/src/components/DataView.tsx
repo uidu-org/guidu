@@ -3,7 +3,7 @@ import { CalendarToolbar } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import Spinner from '@uidu/spinner';
 import Table from '@uidu/table';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React, { PureComponent } from 'react';
 import Media from 'react-media';
 import DataCard from './DataCard';
@@ -156,13 +156,13 @@ export default class DataView extends PureComponent<any> {
                       onItemClick={onItemClick}
                       events={data}
                       startAccessor={(item) =>
-                        moment(item[startDateField]).toDate()
+                        dayjs(item[startDateField]).toDate()
                       }
                       titleAccessor={(item) => item.email}
                       endAccessor={(item) =>
                         endDateField
-                          ? moment(item[endDateField].toDate())
-                          : moment(item[startDateField]).add(3, 'hour').toDate()
+                          ? dayjs(item[endDateField].toDate())
+                          : dayjs(item[startDateField]).add(3, 'hour').toDate()
                       }
                       columnDefs={columns}
                       components={{
@@ -220,7 +220,6 @@ export default class DataView extends PureComponent<any> {
                   {...viewProps.list}
                   tableInstance={tableInstance}
                   onItemClick={onItemClick}
-                  rowData={data}
                   columnDefs={columns}
                 />
               )}
@@ -237,7 +236,6 @@ export default class DataView extends PureComponent<any> {
                     tableInstance={tableInstance}
                     columnCount={columnCount}
                     onItemClick={onItemClick}
-                    rowData={data}
                     columnDefs={columns}
                   />
                 )}
@@ -255,7 +253,6 @@ export default class DataView extends PureComponent<any> {
                   {...viewProps.list}
                   tableInstance={tableInstance}
                   onItemClick={onItemClick}
-                  rowData={data}
                   columnDefs={columns}
                 />
               )}
@@ -273,7 +270,6 @@ export default class DataView extends PureComponent<any> {
                   {...viewProps.list}
                   tableInstance={tableInstance}
                   onItemClick={onItemClick}
-                  rowData={data}
                   columnDefs={columns}
                 />
               )}

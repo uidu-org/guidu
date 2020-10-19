@@ -5,7 +5,9 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/TextFilterForm'),
+);
 
 const Text: Field = {
   kind: 'text',
@@ -17,7 +19,7 @@ const Text: Field = {
       defaultMessage="A long text field that can span multiple lines."
     />
   ),
-  filterForm: FilterForm,
+  Filter,
 };
 
 export default Text;

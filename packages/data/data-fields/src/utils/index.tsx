@@ -1,3 +1,4 @@
+import numeral from 'numeral';
 import {
   addField,
   addressField,
@@ -27,8 +28,7 @@ import {
   uidField,
   urlField,
   voteField,
-} from '@uidu/data-fields';
-import numeral from 'numeral';
+} from '..';
 import { ColumnGroup } from '../types';
 
 const getColumnType = (kind: Field['kind'], dataFieldParams: any = {}) => {

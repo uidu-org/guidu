@@ -6,9 +6,11 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
 const GrouperForm = loadable(() => import('./GrouperForm'));
-const FilterForm = loadable(() => import('../../filters/DateFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/DateFilterForm'),
+);
 
-const Date: Field = {
+const Date: Partial<Field> = {
   kind: 'date',
   name: <FormattedMessage id="field.date.name" defaultMessage="Date" />,
   icon: <FontAwesomeIcon icon={faCalendarDay} />,
@@ -18,7 +20,7 @@ const Date: Field = {
       defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar."
     />
   ),
-  filterForm: FilterForm,
+  Filter,
   grouperForm: GrouperForm,
   // cellEditorFramework: Editor,
   // filter: 'agDateColumnFilter',

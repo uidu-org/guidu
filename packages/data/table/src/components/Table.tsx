@@ -4,7 +4,16 @@ import React from 'react';
 import { useVirtual } from 'react-virtual';
 import styled, { css } from 'styled-components';
 import Footer from './Footer';
+import Pagination from './Pagination';
 import Resizer from './Resizer';
+
+const Body = styled.div<{ height: number; verticalPadding: number }>`
+  height: ${({ height }) => `${height}px`};
+  min-height: ${({ verticalPadding }) => `calc(100% - ${verticalPadding}px)`};
+  width: 100%;
+  position: relative;
+  background: white;
+`;
 
 const Header = styled.div`
   position: sticky;
@@ -124,21 +133,21 @@ const Table = ({
     return Math.min(maxWidth, Math.max(max, name.length) * magicSpacing);
   };
 
-  const RenderRow = React.useCallback(
-    ({ virtualRow }) => {
-      const row = page[virtualRow.index];
+  const Row = React.useCallback(
+    ({ index, size, start }) => {
+      const row = page[index];
       prepareRow(row);
       return (
         <div
-          key={virtualRow.index}
+          key={index}
           {...row.getRowProps({
             style: {
               position: 'absolute',
               top: 0,
               left: 0,
               // width: '100%',
-              height: `${virtualRow.size}px`,
-              transform: `translateY(${virtualRow.start}px)`,
+              height: `${size}px`,
+              transform: `translateY(${start}px)`,
             },
           })}
         >
@@ -155,36 +164,31 @@ const Table = ({
               height={rowHeight}
               className={cell.column.isSorted ? 'ag-cell-sorter-active' : null}
             >
-              <div
-                className="text-truncate w-100 h-100"
-                style={{ display: 'flex', alignItems: 'center' }}
-              >
-                {cell.isGrouped ? (
-                  // If it's a grouped cell, add an expander and row count
-                  <>
-                    <span {...row.getToggleRowExpandedProps()}>
-                      {row.isExpanded ? '👇' : '👉'}
-                    </span>{' '}
-                    {cell.render('Cell', { ...cell.column.cellProps })} (
-                    {row.subRows.length})
-                  </>
-                ) : cell.isAggregated ? (
-                  // If the cell is aggregated, use the Aggregated
-                  // renderer for cell
-                  cell.render('Aggregated', {
-                    setAggregation,
-                  })
-                ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
-                  // Otherwise, just render the regular cell
-                  cell.render('Cell', { ...cell.column.cellProps })
-                )}
-              </div>
+              {cell.isGrouped ? (
+                // If it's a grouped cell, add an expander and row count
+                <>
+                  <span {...row.getToggleRowExpandedProps()}>
+                    {row.isExpanded ? '👇' : '👉'}
+                  </span>{' '}
+                  {cell.render('Cell', { ...cell.column.cellProps })} (
+                  {row.subRows.length})
+                </>
+              ) : cell.isAggregated ? (
+                // If the cell is aggregated, use the Aggregated
+                // renderer for cell
+                cell.render('Aggregated', {
+                  setAggregation,
+                })
+              ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
+                // Otherwise, just render the regular cell
+                cell.render('Cell', { ...cell.column.cellProps })
+              )}
             </Td>
           ))}
         </div>
       );
     },
-    [page, setAggregation, prepareRow, rowHeight],
+    [page, prepareRow, rowHeight, setAggregation],
   );
 
   const parentRef = React.useRef();
@@ -246,46 +250,24 @@ const Table = ({
             </div>
           ))}
         </Header>
-        <div
-          style={{
-            height: `${rowVirtualizer.totalSize}px`,
-            minHeight: `calc(100% - ${rowHeight * 2 - 8 - 16}px)`,
-            width: '100%',
-            position: 'relative',
-            background: 'white',
-          }}
+        <Body
+          height={rowVirtualizer.totalSize}
+          verticalPadding={rowHeight * 2 - 8 - 16}
         >
-          {rowVirtualizer.virtualItems.map((virtualRow) => {
-            return <RenderRow virtualRow={virtualRow} />;
-          })}
-        </div>
+          {rowVirtualizer.virtualItems.map(({ size, start, index }) => (
+            <Row size={size} start={start} index={index} />
+          ))}
+        </Body>
         <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
-        <div className="pagination">
-          <button onClick={() => previousPage()} disabled={!canPreviousPage}>
-            {'<'}
-          </button>{' '}
-          <button onClick={() => nextPage()} disabled={!canNextPage}>
-            {'>'}
-          </button>{' '}
-          <span>
-            Page{' '}
-            <strong>
-              {pageIndex + 1} of {pageOptions.length}
-            </strong>{' '}
-          </span>
-          <span>
-            | Go to page:{' '}
-            <input
-              type="number"
-              defaultValue={pageIndex + 1}
-              onChange={(e) => {
-                const page = e.target.value ? Number(e.target.value) - 1 : 0;
-                gotoPage(page);
-              }}
-              style={{ width: '100px' }}
-            />
-          </span>{' '}
-        </div>
+        <Pagination
+          previousPage={previousPage}
+          nextPage={nextPage}
+          canPreviousPage={canPreviousPage}
+          canNextPage={canNextPage}
+          pageIndex={pageIndex}
+          pageOptions={pageOptions}
+          gotoPage={gotoPage}
+        />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Column } from '@uidu/table';
+import { Field } from '@uidu/data-fields';
 
 export type Group = {
   id: string;
@@ -8,7 +8,7 @@ export type Group = {
 export type GrouperProps = {
   tableInstance: any;
   groupers?: Array<Group>;
-  columnDefs?: Column[];
+  columnDefs?: Field[];
 };
 
 export type GrouperFormProps = {

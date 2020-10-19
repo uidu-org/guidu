@@ -6,7 +6,9 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 import Cell from './renderer';
 
-const FilterForm = loadable(() => import('../../filters/SelectFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/SelectFilterForm'),
+);
 
 const Member: Field = {
   kind: 'member',
@@ -18,7 +20,7 @@ const Member: Field = {
       defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
     />
   ),
-  // filterForm: FilterForm,
+  // Filter
   Cell,
 };
 

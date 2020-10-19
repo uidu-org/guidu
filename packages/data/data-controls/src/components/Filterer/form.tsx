@@ -1,6 +1,6 @@
+import { getColumnDef, getFieldFromColumnDef } from '@uidu/data-fields';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
-import { getColumnDef, getFieldFromColumnDef } from '@uidu/table';
 import React, { useRef } from 'react';
 import { X } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
@@ -26,7 +26,7 @@ export default function FiltererForm({
         {filters.map((filter: any, index) => {
           const columnDef = getColumnDef(filterableColumnDefs, filter);
           const field = getFieldFromColumnDef(columnDef);
-          const { filterForm: FilterForm } = field;
+          const { Filter: FilterForm } = field;
           return (
             <div className="list-group-item px-3 px-xl-4" key={filter.id}>
               <div className="form-group mb-2">

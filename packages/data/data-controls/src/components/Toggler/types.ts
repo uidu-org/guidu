@@ -1,7 +1,7 @@
-import { Column } from '@uidu/table';
+import { Field } from '@uidu/data-fields';
 
 export type TogglerProps = {
-  columnDefs: Column[];
+  columnDefs: Field[];
   onDragEnd: (params) => void;
 };
 

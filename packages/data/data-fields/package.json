@@ -24,6 +24,7 @@
     "@uidu/form": "^0.3.4",
     "@uidu/item": "^0.3.7",
     "@uidu/select": "^0.5.8",
+    "numeral": "^2.0.6",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.8",

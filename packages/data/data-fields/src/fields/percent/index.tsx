@@ -8,9 +8,9 @@ const Percent: Field = {
   kind: 'percent',
   name: <FormattedMessage id="field.percent.name" defaultMessage="Percent" />,
   icon: <FontAwesomeIcon icon={faPercent} />,
-  cellStyle: { textAlign: 'right' },
   valueFormatter: ({ value }) => `${value}%`,
-  aggFunc: 'avg',
+  aggregate: 'average',
+  cellStyle: { justifyContent: 'flex-end' },
 };
 
 export default Percent;

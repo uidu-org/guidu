@@ -7,7 +7,9 @@ import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 import Cell from './renderer';
 
-const FilterForm = loadable(() => import('../../filters/SelectFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/SelectFilterForm'),
+);
 
 const Country: Field = {
   kind: 'country',
@@ -19,7 +21,7 @@ const Country: Field = {
       defaultMessage="Add a Country select list to your record"
     />
   ),
-  filterForm: FilterForm,
+  Filter,
   Cell,
   options: allCountries,
 };

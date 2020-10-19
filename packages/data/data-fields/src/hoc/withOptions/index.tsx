@@ -2,12 +2,14 @@ import loadable from '@loadable/component';
 import { Field } from '../../types';
 
 const WithOptionsForm = loadable(() => import('./form'));
-const FilterForm = loadable(() => import('../../filters/SelectFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/SelectFilterForm'),
+);
 
 const WithOptions = (props: Field): Field => ({
   ...props,
   form: WithOptionsForm,
-  filterForm: FilterForm,
+  Filter,
 });
 
 export default WithOptions;

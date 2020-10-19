@@ -1,4 +1,4 @@
-// import { getAvatar, getCover, getPrimary } from '@uidu/table';
+// import { getAvatar, getCover, getPrimary } from '@uidu/data-fields';
 // import memoize from 'memoize-one';
 // import React, { PureComponent } from 'react';
 // import AutoSizer from 'react-virtualized-auto-sizer';

@@ -5,7 +5,6 @@ import DropdownMenu, {
 import React from 'react';
 
 export default function Aggregated(params) {
-  console.log(params);
   const { setAggregation, column, value } = params;
 
   if (!column.aggregate) return null;

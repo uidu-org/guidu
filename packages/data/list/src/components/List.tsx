@@ -1,4 +1,4 @@
-import { getAvatar, getCover, getPrimary } from '@uidu/table';
+import { getAvatar, getCover, getPrimary } from '@uidu/data-fields';
 import React, { createContext, forwardRef, useCallback, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import Header from './Header';
@@ -26,28 +26,24 @@ const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
   </StickyListContext.Consumer>
 ));
 
-export default function List({
-  rowData,
-  rowHeight,
-  gutterSize = 8,
-  tableInstance,
-}) {
+export default function List({ rowHeight, gutterSize = 8, tableInstance }) {
   const parentRef = useRef();
 
-  const rowVirtualizer = useVirtual({
-    size: rowData.length,
-    parentRef,
-    estimateSize: useCallback(() => rowHeight, []),
-    overscan: 5,
-  });
-
   const {
+    rows,
     headerGroups,
     prepareRow,
     state: { filterBy },
     columns,
     page,
   } = tableInstance;
+
+  const rowVirtualizer = useVirtual({
+    size: rows.length,
+    parentRef,
+    estimateSize: useCallback(() => rowHeight, []),
+    overscan: 5,
+  });
 
   const primary = getPrimary(columns);
   const cover = getCover(columns);

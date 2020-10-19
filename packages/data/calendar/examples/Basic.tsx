@@ -13,18 +13,16 @@ export default class Basic extends Component<any, any> {
   }
 
   componentDidMount() {
-    fetchContacts().then(rowData => this.setState({ rowData }));
+    fetchContacts().then((rowData) => this.setState({ rowData }));
   }
 
   render() {
     return (
       <Calendar
         columnDefs={this.state.columnDefs}
-        events={(this.state.rowData || []).map(datum => ({
+        events={(this.state.rowData || []).map((datum) => ({
           start: moment(datum.createdAt).toDate(),
-          end: moment(datum.createdAt)
-            .add(1, 'hour')
-            .toDate(),
+          end: moment(datum.createdAt).add(1, 'hour').toDate(),
           title: datum.email,
         }))}
       />

@@ -66,7 +66,7 @@ export default class DataCard extends PureComponent<any> {
                       className="mb-0 text-truncate"
                       key={`${item.id}-${cell.column.id}-value`}
                     >
-                      {cell.render('Cell')}
+                      {cell.render('Cell', { ...cell.column.cellProps })}
                     </dd>
                   </>
                 );

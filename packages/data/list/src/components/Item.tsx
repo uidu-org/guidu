@@ -81,7 +81,7 @@ export default function Item({
                     maxWidth: cell.column.maxWidth || 'auto',
                   }}
                 >
-                  {cell.render('Cell')}
+                  {cell.render('Cell', { ...cell.column.cellProps })}
                 </div>
               );
             })}

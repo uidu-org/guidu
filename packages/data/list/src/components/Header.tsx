@@ -1,4 +1,4 @@
-import { getCover } from '@uidu/table';
+import { getCover } from '@uidu/data-fields';
 import React, { PureComponent } from 'react';
 
 export default class Header extends PureComponent<any> {

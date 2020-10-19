@@ -1,4 +1,4 @@
-import { getAvatar, getCover, getPrimary } from '@uidu/table';
+import { getAvatar, getCover, getPrimary } from '@uidu/data-fields';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import { GalleryProps } from '../types';
@@ -18,14 +18,11 @@ const chunkData = (array, chunkSize) => {
 };
 
 export default function Gallery({
-  rowData,
   columnCount,
   tableInstance,
   gutterSize = 8,
 }: GalleryProps) {
   const parentRef = useRef();
-
-  console.log(tableInstance);
 
   const { prepareRow, columns } = tableInstance;
 
@@ -44,8 +41,6 @@ export default function Gallery({
   const primary = getPrimary(columns);
   const cover = getCover(columns);
   const avatar = getAvatar(columns);
-
-  console.log(tableInstance);
 
   const estimateSize = useCallback(() => {
     return (

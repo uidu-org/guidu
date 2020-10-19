@@ -1,4 +1,4 @@
-import { Column } from '@uidu/table';
+import { Field } from '@uidu/data-fields';
 
 export type Sort = {
   id: string;
@@ -8,7 +8,7 @@ export type Sort = {
 export type SorterProps = {
   tableInstance: any;
   sorters: Array<Sort>;
-  columnDefs: Column[];
+  columnDefs: Field[];
 };
 
 export type SorterFormProps = {

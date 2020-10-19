@@ -14,7 +14,6 @@ const Address: Field = {
       defaultMessage="Allow geolocation of your records with Google Maps autocomplete help"
     />
   ),
-  filter: 'agTextColumnFilter',
 };
 
 export default Address;

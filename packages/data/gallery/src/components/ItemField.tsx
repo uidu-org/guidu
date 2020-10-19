@@ -78,7 +78,9 @@ export default function ItemField({ cell }) {
           {cell.column.name}
         </div>
       </dt>
-      <dd className="mb-0 text-truncate">{cell.render('Cell')}</dd>
+      <dd className="mb-0 text-truncate">
+        {cell.render('Cell', { ...cell.column.cellProps })}
+      </dd>
     </StyledItemField>
   );
 }

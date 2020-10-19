@@ -5,7 +5,9 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
+const Filter = loadable(
+  () => import('../../components/filters/TextFilterForm'),
+);
 
 const Url: Field = {
   kind: 'url',
@@ -17,7 +19,7 @@ const Url: Field = {
       defaultMessage="A valid URL (e.g. airtable.com or https://airtable.com/universe)."
     />
   ),
-  filterForm: FilterForm,
+  Filter,
 };
 
 export default Url;
