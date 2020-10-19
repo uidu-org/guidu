@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Field Mentions Component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-mentions",
   "license": "MIT",
@@ -12,9 +12,9 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.4",
-    "@uidu/field-base": "^0.3.5",
-    "@uidu/form": "^0.3.4",
-    "@uidu/theme": "^0.4.5",
+    "@uidu/field-base": "^0.3.6",
+    "@uidu/form": "^0.3.5",
+    "@uidu/theme": "^0.4.6",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
     "react": "^16.13.1",
@@ -22,8 +22,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.6",
-    "@uidu/docs": "^0.2.10",
+    "@uidu/button": "^0.3.7",
+    "@uidu/docs": "^0.2.11",
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.0"
   },

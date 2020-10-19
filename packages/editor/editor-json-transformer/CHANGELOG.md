@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.2.7
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+
 ## 0.2.6
 
 ### Patch Changes

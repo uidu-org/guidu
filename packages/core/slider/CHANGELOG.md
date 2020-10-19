@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.6
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+
 ## 1.5.5
 
 ### Patch Changes

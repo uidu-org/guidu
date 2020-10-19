@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.37
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/table@0.3.0
+
 ## 0.1.36
 
 ### Patch Changes

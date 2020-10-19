@@ -1,6 +1,6 @@
 {
   "name": "@uidu/date",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Fabric Date React Components",
   "keywords": [
     "date",
@@ -19,13 +19,13 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/theme": "^0.4.5",
+    "@uidu/theme": "^0.4.6",
     "date-fns": "^2.16.1",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.10",
+    "@uidu/docs": "^0.2.11",
     "@uidu/elements-test-helpers": "^0.2.4",
     "react": "^16.13.1"
   },

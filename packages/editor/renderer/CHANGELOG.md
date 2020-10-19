@@ -1,5 +1,22 @@
 # @uidu/renderer
 
+## 0.2.7
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/code@0.3.8
+  - @uidu/theme@0.4.6
+  - @uidu/tooltip@0.3.7
+  - @uidu/editor-common@0.3.10
+  - @uidu/editor-json-transformer@0.2.7
+  - @uidu/mentions@0.1.27
+  - @uidu/status@0.2.8
+  - @uidu/task-decision@0.2.7
+  - @uidu/media-card@0.3.7
+  - @uidu/media-filmstrip@0.2.7
+
 ## 0.2.6
 
 ### Patch Changes

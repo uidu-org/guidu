@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.6.10
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/spinner@0.3.6
+  - @uidu/tooltip@0.3.7
+  - @uidu/dashlet-controls@0.2.12
+
 ## 0.6.9
 
 ### Patch Changes

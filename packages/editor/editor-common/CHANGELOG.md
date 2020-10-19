@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 0.3.10
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/theme@0.4.6
+  - @uidu/mentions@0.1.27
+
 ## 0.3.9
 
 ### Patch Changes

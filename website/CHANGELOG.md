@@ -1,5 +1,29 @@
 # Change Log
 
+## 0.2.10
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/table@0.3.0
+  - @uidu/docs@0.2.11
+  - @uidu/badge@0.3.6
+  - @uidu/button@0.3.7
+  - @uidu/code@0.3.8
+  - @uidu/drawer@0.4.8
+  - @uidu/lozenge@0.3.6
+  - @uidu/modal-dialog@0.3.6
+  - @uidu/spinner@0.3.6
+  - @uidu/theme@0.4.6
+  - @uidu/tooltip@0.3.7
+  - @uidu/list@0.1.37
+  - @uidu/field-text@0.3.6
+  - @uidu/form@0.3.5
+  - @uidu/select@0.5.9
+  - @uidu/navigation@0.4.6
+  - @uidu/shell@1.0.9
+
 ## 0.2.9
 
 ### Patch Changes

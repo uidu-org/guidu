@@ -1,5 +1,16 @@
 # @uidu/dashboard-controls
 
+## 0.3.13
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/avatar@0.5.6
+  - @uidu/avatar-group@2.4.6
+  - @uidu/dropdown-menu@0.3.6
+  - @uidu/form@0.3.5
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/inline-edit
 
+## 0.1.5
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/button@0.3.7
+  - @uidu/inline-dialog@0.3.6
+  - @uidu/theme@0.4.6
+  - @uidu/field-text@0.3.6
+  - @uidu/form@0.3.5
+
 ## 0.1.4
 
 ### Patch Changes
