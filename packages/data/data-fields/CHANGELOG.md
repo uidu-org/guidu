@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.3.1
+
+### Patch Changes
+
+- 6b0a96a: Bump some dependencies for data-\* packages, perf some rendering with useCallback or useMemo
+
 ## 0.3.0
 
 ### Minor Changes
