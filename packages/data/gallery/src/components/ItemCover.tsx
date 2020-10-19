@@ -12,15 +12,7 @@ const StyledCover = styled.div<{ height: number; cover: string }>`
   align-items: center;
 `;
 
-const Cover = ({
-  cover,
-  item,
-  children,
-}: {
-  cover: any;
-  item: any;
-  children?: any;
-}) => {
+const Cover = ({ cover, children }: { cover: any; children?: any }) => {
   return (
     <StyledCover
       className="card-img-top"
@@ -32,7 +24,7 @@ const Cover = ({
   );
 };
 
-const Avatar = ({ avatar, item }) => {
+const Avatar = ({ avatar }) => {
   return (
     <img src={avatar.value} style={{ borderRadius: '100%', width: '7rem' }} />
   );
@@ -40,12 +32,10 @@ const Avatar = ({ avatar, item }) => {
 
 export default class ItemCover extends PureComponent<any> {
   render() {
-    const { item, cover, avatar } = this.props;
+    const { cover, avatar } = this.props;
     if (avatar || cover) {
       return (
-        <Cover cover={cover} item={item}>
-          {avatar && <Avatar avatar={avatar} item={item} />}
-        </Cover>
+        <Cover cover={cover}>{avatar && <Avatar avatar={avatar} />}</Cover>
       );
     }
 

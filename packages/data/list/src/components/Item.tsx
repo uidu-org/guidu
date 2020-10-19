@@ -68,7 +68,7 @@ export default function Item({
           {item.cells
             .filter(
               (cell) =>
-                cell.column.type !== 'cover' && cell.column.type !== 'primary',
+                cell.column.kind !== 'cover' && cell.column.kind !== 'primary',
             )
             .map((cell) => {
               return (

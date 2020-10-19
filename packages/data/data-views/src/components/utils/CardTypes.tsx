@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 
 export default function CardTypes({ columnDefs, tableInstance }) {
   const { state, setHiddenColumns } = tableInstance;
-  console.log(state);
 
   const options = [{ id: 'basic', name: 'Basic' }];
   const coverField = columnDefs.filter((column) => column.kind === 'cover')[0];

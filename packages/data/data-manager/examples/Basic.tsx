@@ -47,9 +47,6 @@ const dataViews = [
     id: 0,
     name: 'Tutti i contatti',
     kind: 'table',
-    state: {
-      hiddenColumns: ['cover', 'avatar'],
-    },
     fields: [
       'id',
       'member',

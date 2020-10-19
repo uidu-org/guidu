@@ -151,40 +151,47 @@ const Table = ({
             },
           })}
         >
-          {row.cells.map((cell, index) => (
-            <Td
-              {...cell.getCellProps({
-                style: {
-                  left: index === 0 ? 0 : '56px',
-                  ...cell.column.cellStyle,
-                },
-                ...cell.column.cellProps,
-              })}
-              pinned={cell.column.pinned}
-              height={rowHeight}
-              className={cell.column.isSorted ? 'ag-cell-sorter-active' : null}
-            >
-              {cell.isGrouped ? (
-                // If it's a grouped cell, add an expander and row count
-                <>
-                  <span {...row.getToggleRowExpandedProps()}>
-                    {row.isExpanded ? '👇' : '👉'}
-                  </span>{' '}
-                  {cell.render('Cell', { ...cell.column.cellProps })} (
-                  {row.subRows.length})
-                </>
-              ) : cell.isAggregated ? (
-                // If the cell is aggregated, use the Aggregated
-                // renderer for cell
-                cell.render('Aggregated', {
-                  setAggregation,
-                })
-              ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
-                // Otherwise, just render the regular cell
-                cell.render('Cell', { ...cell.column.cellProps })
-              )}
-            </Td>
-          ))}
+          {row.cells
+            .filter(
+              (cell) =>
+                cell.column.kind !== 'cover' && cell.column.kind !== 'avatar',
+            )
+            .map((cell, index) => (
+              <Td
+                {...cell.getCellProps({
+                  style: {
+                    left: index === 0 ? 0 : '56px',
+                    ...cell.column.cellStyle,
+                  },
+                  ...cell.column.cellProps,
+                })}
+                pinned={cell.column.pinned}
+                height={rowHeight}
+                className={
+                  cell.column.isSorted ? 'ag-cell-sorter-active' : null
+                }
+              >
+                {cell.isGrouped ? (
+                  // If it's a grouped cell, add an expander and row count
+                  <>
+                    <span {...row.getToggleRowExpandedProps()}>
+                      {row.isExpanded ? '👇' : '👉'}
+                    </span>{' '}
+                    {cell.render('Cell', { ...cell.column.cellProps })} (
+                    {row.subRows.length})
+                  </>
+                ) : cell.isAggregated ? (
+                  // If the cell is aggregated, use the Aggregated
+                  // renderer for cell
+                  cell.render('Aggregated', {
+                    setAggregation,
+                  })
+                ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
+                  // Otherwise, just render the regular cell
+                  cell.render('Cell', { ...cell.column.cellProps })
+                )}
+              </Td>
+            ))}
         </div>
       );
     },
@@ -214,39 +221,44 @@ const Table = ({
         <Header>
           {headerGroups.map((headerGroup) => (
             <div {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column, index) => (
-                <Th
-                  {...column.getHeaderProps()}
-                  className={column.isSorted ? 'ag-cell-sorter-active' : null}
-                  height={rowHeight}
-                  pinned={index === 0}
-                  style={{
-                    width: column.width,
-                    maxWidth: column.maxWidth,
-                    minWidth: column.minWidth,
-                    ...(column.pinned
-                      ? {
-                          position: 'sticky',
-                          left: index === 0 ? 0 : '56px',
-                          zIndex: 2,
-                          background: '#fff',
-                          borderRight: '1px solid #f2f2f3',
-                        }
-                      : {}),
-                  }}
-                >
-                  {column.render('Header', {
-                    setColumnWidth,
-                    getColumnWidth,
-                    autosizeAllColumns: () => {
-                      // columns.map((column) => {
-                      //   return setColumnWidth(column, getColumnWidth(column));
-                      // });
-                    },
-                  })}
-                  {!!column.getResizerProps && <Resizer column={column} />}
-                </Th>
-              ))}
+              {headerGroup.headers
+                .filter(
+                  (column) =>
+                    column.kind !== 'cover' && column.kind !== 'avatar',
+                )
+                .map((column, index) => (
+                  <Th
+                    {...column.getHeaderProps()}
+                    className={column.isSorted ? 'ag-cell-sorter-active' : null}
+                    height={rowHeight}
+                    pinned={index === 0}
+                    style={{
+                      width: column.width,
+                      maxWidth: column.maxWidth,
+                      minWidth: column.minWidth,
+                      ...(column.pinned
+                        ? {
+                            position: 'sticky',
+                            left: index === 0 ? 0 : '56px',
+                            zIndex: 2,
+                            background: '#fff',
+                            borderRight: '1px solid #f2f2f3',
+                          }
+                        : {}),
+                    }}
+                  >
+                    {column.render('Header', {
+                      setColumnWidth,
+                      getColumnWidth,
+                      autosizeAllColumns: () => {
+                        // columns.map((column) => {
+                        //   return setColumnWidth(column, getColumnWidth(column));
+                        // });
+                      },
+                    })}
+                    {!!column.getResizerProps && <Resizer column={column} />}
+                  </Th>
+                ))}
             </div>
           ))}
         </Header>

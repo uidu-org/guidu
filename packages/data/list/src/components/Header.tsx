@@ -43,7 +43,7 @@ export default class Header extends PureComponent<any> {
             {columnDefs
               .filter(
                 (column) =>
-                  column.type !== 'cover' && column.type !== 'primary',
+                  column.kind !== 'cover' && column.kind !== 'primary',
               )
               .map(({ id, width, minWidth, maxWidth, name, icon }) => {
                 return (

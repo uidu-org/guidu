@@ -12,7 +12,6 @@ import {
   currencyField,
   dateField,
   emailField,
-  Field,
   linkRecordField,
   memberField,
   multipleSelectField,
@@ -28,10 +27,10 @@ import {
   uidField,
   urlField,
   voteField,
-} from '..';
-import { ColumnGroup } from '../types';
+} from '../fields';
+import { Field, FieldGroup } from '../types';
 
-const getColumnType = (kind: Field['kind'], dataFieldParams: any = {}) => {
+const getColumnType = (kind: Field['kind']) => {
   switch (kind) {
     case 'addField':
       return { ...addField };
@@ -90,15 +89,13 @@ const getColumnType = (kind: Field['kind'], dataFieldParams: any = {}) => {
   }
 };
 
-export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
-  return columns.map(({ primary, kind, dataFieldParams, ...column }) => {
+export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) => {
+  return columns.map(({ primary, kind, ...column }) => {
     return {
       fieldGroup,
       id: column.id,
       accessor: column.id,
-      ...(kind
-        ? { ...getColumnType(kind, { ...dataFieldParams, ...column }) }
-        : {}),
+      ...(kind ? { ...getColumnType(kind, { ...column }) } : {}),
       ...(primary
         ? {
             canMove: false,
@@ -114,7 +111,7 @@ export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
   });
 };
 
-export const buildColumns = (columns): Array<ColumnGroup> => {
+export const buildColumns = (columns): Array<FieldGroup> => {
   return columns.reduce((arr, item) => {
     return [...arr, ...buildColumn(item)];
   }, []);

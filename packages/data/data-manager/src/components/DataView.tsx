@@ -1,13 +1,14 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import loadable from '@loadable/component';
 import { CalendarToolbar } from '@uidu/data-controls';
 import { ShellBodyWithSpinner } from '@uidu/shell';
-import Spinner from '@uidu/spinner';
-import Table from '@uidu/table';
 import dayjs from 'dayjs';
 import React, { PureComponent } from 'react';
 import Media from 'react-media';
 import DataCard from './DataCard';
 
+const LoadableTable = (loadable as any).lib(() => import('@uidu/table'));
 const LoadableBoard = (loadable as any).lib(() => import('@uidu/board'));
 const LoadableCalendar = (loadable as any).lib(() => import('@uidu/calendar'));
 const LoadableGallery = (loadable as any).lib(() => import('@uidu/gallery'));
@@ -110,35 +111,6 @@ export default class DataView extends PureComponent<any> {
     if (!rowData) {
       return <ShellBodyWithSpinner />;
     }
-
-    const table = (
-      <div className="h-100">
-        <Table
-          setAggregation={setAggregation}
-          setColumnWidth={setColumnWidth}
-          tableInstance={tableInstance}
-          {...viewProps.table}
-          rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
-          // use columnDefs from props to avoid flickering on toggling/reordering columns
-          columnDefs={columnDefs}
-          loadingOverlayComponentFramework={() => (
-            <div className="h-100 bg-white d-flex align-items-center justify-content-center w-100">
-              <Spinner />
-            </div>
-          )}
-          rowData={rowData}
-          onAddField={onAddField}
-          onSortChanged={onSortChanged}
-          onFilterChanged={onFilterChanged}
-          onColumnRowGroupChanged={onColumnRowGroupChanged}
-          onColumnVisible={onColumnVisible}
-          onDragStopped={onDragStopped}
-          onColumnResized={onColumnResized}
-          onRowGroupOpened={onRowGroupOpened}
-          // onRowClicked={onItemClick}
-        />
-      </div>
-    );
 
     let desktopView = null;
     let mobileView = null;
@@ -261,7 +233,33 @@ export default class DataView extends PureComponent<any> {
         );
         break;
       default:
-        desktopView = table;
+        desktopView = (
+          <LoadableTable fallback={<ShellBodyWithSpinner />}>
+            {({ default: Table }) => (
+              <div className="h-100">
+                <Table
+                  setAggregation={setAggregation}
+                  setColumnWidth={setColumnWidth}
+                  tableInstance={tableInstance}
+                  {...viewProps.table}
+                  rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
+                  // use columnDefs from props to avoid flickering on toggling/reordering columns
+                  columnDefs={columnDefs}
+                  rowData={rowData}
+                  onAddField={onAddField}
+                  onSortChanged={onSortChanged}
+                  onFilterChanged={onFilterChanged}
+                  onColumnRowGroupChanged={onColumnRowGroupChanged}
+                  onColumnVisible={onColumnVisible}
+                  onDragStopped={onDragStopped}
+                  onColumnResized={onColumnResized}
+                  onRowGroupOpened={onRowGroupOpened}
+                  // onRowClicked={onItemClick}
+                />
+              </div>
+            )}
+          </LoadableTable>
+        );
         mobileView = (
           <>
             <LoadableList fallback={<ShellBodyWithSpinner />}>
