@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.5.13
+
+### Patch Changes
+
+- c3ed0b8: Handle cover and avatar
+- Updated dependencies [c3ed0b8]
+  - @uidu/data-fields@0.3.2
+  - @uidu/data-views@0.4.8
+  - @uidu/gallery@0.1.59
+  - @uidu/list@0.1.39
+  - @uidu/table@0.3.2
+
 ## 0.5.12
 
 ### Patch Changes
