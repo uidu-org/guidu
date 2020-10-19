@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.5.7
+
+### Patch Changes
+
+- 6b0a96a: Bump some dependencies for data-\* packages, perf some rendering with useCallback or useMemo
+- Updated dependencies [6b0a96a]
+  - @uidu/data-fields@0.3.1
+  - @uidu/data-views@0.4.7
+
 ## 0.5.6
 
 ### Patch Changes

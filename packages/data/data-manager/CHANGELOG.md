@@ -1,5 +1,19 @@
 # @uidu/data-manager
 
+## 0.5.12
+
+### Patch Changes
+
+- 6b0a96a: Bump some dependencies for data-\* packages, perf some rendering with useCallback or useMemo
+- Updated dependencies [6b0a96a]
+  - @uidu/calendar@0.1.38
+  - @uidu/data-controls@0.5.7
+  - @uidu/data-fields@0.3.1
+  - @uidu/data-views@0.4.7
+  - @uidu/gallery@0.1.58
+  - @uidu/list@0.1.38
+  - @uidu/table@0.3.1
+
 ## 0.5.11
 
 ### Patch Changes
