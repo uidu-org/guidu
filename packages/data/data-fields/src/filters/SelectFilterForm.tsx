@@ -8,9 +8,7 @@ function SelectFilterForm({
   filter = {} as any,
   index = 0,
   intl,
-  columnDef: {
-    cellRendererParams: { options },
-  },
+  columnDef: { options },
   ...rest
 }) {
   const filters = filtersByType(intl, 'singleSelect');

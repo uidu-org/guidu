@@ -26,12 +26,12 @@ export default class DataCard extends PureComponent<any> {
 
     const visibleCells = row.cells.filter(
       (cell) =>
-        cell.column.viewType !== 'uid' &&
-        cell.column.id !== 'selection' &&
-        cell.column.viewType !== 'cover' &&
-        cell.column.viewType !== 'primary' &&
-        cell.column.viewType !== 'avatar' &&
-        cell.column.viewType !== 'addField',
+        cell.column.kind !== 'uid' &&
+        cell.column.kind !== 'selection' &&
+        cell.column.kind !== 'cover' &&
+        cell.column.kind !== 'primary' &&
+        cell.column.kind !== 'avatar' &&
+        cell.column.kind !== 'addField',
     );
 
     return (

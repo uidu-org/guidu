@@ -48,12 +48,12 @@ export default function Header({
       style={{ minWidth: 0 }}
     >
       <div className="customHeaderLabel flex-grow-1 text-truncate">
-        {column?.headerComponentParams?.menuIcon && (
+        {column?.icon && (
           <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
-            {column.headerComponentParams.menuIcon}
+            {column.icon}
           </span>
         )}
-        {column.headerName}
+        {column.name}
       </div>
       {!column.suppressMenu && (
         <div className="ml-3" style={{ fontWeight: 'initial' }}>

@@ -33,7 +33,7 @@ export default class Header extends PureComponent<any> {
             }}
           >
             <span className="mr-2" style={{ opacity: 0.4 }}>
-              {cover.headerComponentParams.menuIcon}
+              {cover.icon}
             </span>
             Cover
           </div>
@@ -45,39 +45,26 @@ export default class Header extends PureComponent<any> {
                 (column) =>
                   column.type !== 'cover' && column.type !== 'primary',
               )
-              .map(
-                ({
-                  id,
-                  width,
-                  minWidth,
-                  maxWidth,
-                  headerName,
-                  headerComponentParams,
-                }) => {
-                  let menuIcon;
-                  if (headerComponentParams) {
-                    menuIcon = headerComponentParams.menuIcon;
-                  }
-                  return (
-                    <div
-                      key={`${id}-label`}
-                      className="text-truncate data-list-header px-3 px-xl-4"
-                      style={{
-                        width: width || '150px',
-                        minWidth: minWidth || 'auto',
-                        maxWidth: maxWidth || 'auto',
-                      }}
-                    >
-                      {menuIcon && (
-                        <span className="mr-2" style={{ opacity: 0.4 }}>
-                          {menuIcon}
-                        </span>
-                      )}
-                      {headerName}
-                    </div>
-                  );
-                },
-              )}
+              .map(({ id, width, minWidth, maxWidth, name, icon }) => {
+                return (
+                  <div
+                    key={`${id}-label`}
+                    className="text-truncate data-list-header px-3 px-xl-4"
+                    style={{
+                      width: width || '150px',
+                      minWidth: minWidth || 'auto',
+                      maxWidth: maxWidth || 'auto',
+                    }}
+                  >
+                    {icon && (
+                      <span className="mr-2" style={{ opacity: 0.4 }}>
+                        {icon}
+                      </span>
+                    )}
+                    {name}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </div>

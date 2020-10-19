@@ -59,10 +59,10 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
                       value={sorter.id}
                       options={sortableColumnDefs.map((columnDef) => ({
                         id: columnDef.id,
-                        name: columnDef.headerName,
-                        ...(columnDef.headerComponentParams
+                        name: columnDef.name,
+                        ...(columnDef.icon
                           ? {
-                              before: columnDef.headerComponentParams.menuIcon,
+                              before: columnDef.icon,
                             }
                           : {}),
                       }))}

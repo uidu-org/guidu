@@ -16,6 +16,15 @@ const AddField: Field = {
   //     defaultMessage="Allow geolocation of your records with Google Maps autocomplete help"
   //   />
   // ),
+  filter: false,
+  type: 'addField',
+  canHide: false,
+  sortable: false,
+  resizable: false,
+  rowDrag: false,
+  editable: false,
+  headerClass: 'ag-add-field-header text-center',
+  cellClass: 'ag-add-field-cell',
 };
 
 export default AddField;

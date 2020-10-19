@@ -25,15 +25,15 @@ export default class Item extends PureComponent<any> {
 
     const visibleCells = row.cells.filter(
       (cell) =>
-        cell.column.viewType !== 'uid' &&
-        cell.column.viewType !== 'cover' &&
-        cell.column.viewType !== 'primary' &&
-        cell.column.viewType !== 'avatar' &&
-        cell.column.viewType !== 'addField',
+        cell.column.kind !== 'uid' &&
+        cell.column.kind !== 'cover' &&
+        cell.column.kind !== 'primary' &&
+        cell.column.kind !== 'avatar' &&
+        cell.column.kind !== 'addField',
     );
 
-    const cover = row.cells.find((cell) => cell.column.viewType === 'cover');
-    const avatar = row.cells.find((cell) => cell.column.viewType === 'avatar');
+    const cover = row.cells.find((cell) => cell.column.kind === 'cover');
+    const avatar = row.cells.find((cell) => cell.column.kind === 'avatar');
 
     return (
       <>

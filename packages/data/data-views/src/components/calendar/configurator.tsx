@@ -27,14 +27,12 @@ export default class Configurator extends PureComponent<any> {
                 name="foo"
                 options={columnDefs
                   .filter((column) => {
-                    return ['date'].includes(column.viewType);
+                    return ['date'].includes(column.kind);
                   })
                   .map((column) => ({
                     id: column.id,
-                    name: column.headerName,
-                    ...(column.headerComponentParams
-                      ? { before: column.headerComponentParams.menuIcon }
-                      : {}),
+                    name: column.name,
+                    ...(column.icon ? { before: column.icon } : {}),
                   }))}
                 value={startDateField}
                 layout="elementOnly"

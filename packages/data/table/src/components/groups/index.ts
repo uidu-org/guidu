@@ -19,7 +19,7 @@ export const groupRenderer = ({ api, value, node }) => {
       <span style="line-height: initial; display: flex; align-items: center; flex-grow: 1; white-space: normal; min-width: 0;">
         <span class="d-flex flex-column justify-content-center" style="line-height: initial; min-width: 0;">
           <span class="small text-muted text-truncate">${
-            node.rowGroupColumn.colDef.headerName
+            node.rowGroupColumn.colDef.name
           }</span>
           <span class="text-truncate">${value}</span>
         </span>

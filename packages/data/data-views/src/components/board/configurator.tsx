@@ -39,14 +39,12 @@ export default class Configurator extends PureComponent<any> {
                       'contact',
                       'member',
                       'linkRecord',
-                    ].includes(column.viewType);
+                    ].includes(column.kind);
                   })
                   .map((column) => ({
                     id: column.id,
-                    name: column.headerName,
-                    ...(column.headerComponentParams
-                      ? { before: column.headerComponentParams.menuIcon }
-                      : {}),
+                    name: column.name,
+                    ...(column.icon ? { before: column.icon } : {}),
                   }))}
                 onChange={(name, value) =>
                   updateView(currentView, { preferences: { [name]: value } })

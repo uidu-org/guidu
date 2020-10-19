@@ -22,11 +22,13 @@
     "@uidu/field-text": "^0.3.5",
     "@uidu/field-toggle": "^0.3.5",
     "@uidu/form": "^0.3.4",
+    "@uidu/item": "^0.3.7",
     "@uidu/select": "^0.5.8",
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.8",
     "react-intl": "^5.8.0",
+    "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -14,6 +14,7 @@ const Avatar: Field = {
       defaultMessage="Insert a rounded avatar for the record"
     />
   ),
+  canSortBy: false,
 };
 
 export default Avatar;

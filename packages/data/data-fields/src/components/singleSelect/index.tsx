@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import withOptions from '../../hoc/withOptions';
+import Cell from './renderer';
 
 export default withOptions({
   kind: 'singleSelect',
@@ -19,4 +20,5 @@ export default withOptions({
       defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
     />
   ),
+  Cell,
 });

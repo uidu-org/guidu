@@ -9,7 +9,7 @@ export default (params) => {
     return null;
   }
 
-  const value = params.column.cellRendererParams.options.filter(
+  const value = params.column.options.filter(
     (option) => option.id === params.value,
   )[0];
 

@@ -38,17 +38,15 @@ export default class PickField extends Component<any, any> {
                 this.setState({ isOpen: false }, () => onClick(columnDef));
               }}
             >
-              {columnDef.headerComponentParams && (
+              {columnDef.icon && (
                 <span
                   style={{ width: 22, display: 'inline-block' }}
                   className="mr-2"
                 >
-                  {columnDef.headerComponentParams.menuIcon}
+                  {columnDef.icon}
                 </span>
               )}
-              <div className="text-truncate flex-grow-1">
-                {columnDef.headerName}
-              </div>
+              <div className="text-truncate flex-grow-1">{columnDef.name}</div>
             </a>
           ))}
       </>

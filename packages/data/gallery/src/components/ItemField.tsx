@@ -70,12 +70,12 @@ export default function ItemField({ cell }) {
     >
       <dt className="small text-muted text-truncate mb-1">
         <div className="customHeaderLabel flex-grow-1 text-truncate">
-          {cell.column.headerComponentParams?.menuIcon && (
+          {cell.column.icon && (
             <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
-              {cell.column.headerComponentParams.menuIcon}
+              {cell.column.icon}
             </span>
           )}
-          {cell.column.headerName}
+          {cell.column.name}
         </div>
       </dt>
       <dd className="mb-0 text-truncate">{cell.render('Cell')}</dd>

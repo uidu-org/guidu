@@ -26,7 +26,7 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
       const columns = tableInstance.columns.filter(
         (column) =>
           column.fieldGroup.kind === columnGroup &&
-          ['uid', 'cover', 'avatar', 'addField'].indexOf(column.viewType) < 0 &&
+          ['uid', 'cover', 'avatar', 'addField'].indexOf(column.kind) < 0 &&
           column.canHide,
       );
       if (columns.length === 0) {

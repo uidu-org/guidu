@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledLinkRecord = styled.span`
@@ -22,21 +21,8 @@ const StyledLinkRecord = styled.span`
 `;
 
 function LinkRecordRenderer({ history, value }) {
-  useEffect(() => {
-    cell.current.addEventListener('click', onClick);
-    return () => cell.current.removeEventListener('click', onClick);
-  }, []);
-
-  const cell = useRef(null);
-
-  const onClick = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    history.push(value.path);
-  };
-
   return (
-    <div ref={cell}>
+    <div>
       {value ? (
         <StyledLinkRecord>
           <div className="text-truncate">{value}</div>
@@ -46,4 +32,4 @@ function LinkRecordRenderer({ history, value }) {
   );
 }
 
-export default withRouter(LinkRecordRenderer as any);
+export default LinkRecordRenderer;

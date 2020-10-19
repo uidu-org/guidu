@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+import Cell from './renderer';
 
 const LinkRecordField = loadable(() => import('./form'));
 const LinkRecord: Field = {
@@ -22,6 +23,7 @@ const LinkRecord: Field = {
     />
   ),
   form: LinkRecordField,
+  Cell,
 };
 
 export default LinkRecord;

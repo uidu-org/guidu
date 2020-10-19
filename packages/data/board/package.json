@@ -15,7 +15,7 @@
     "react": "^16.13.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.8",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

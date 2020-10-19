@@ -107,7 +107,7 @@ const Table = ({
   //   return cellLength * magicSpacing;
   // };
 
-  const getColumnWidth = ({ id: accessor, headerName }) => {
+  const getColumnWidth = ({ id: accessor, name }) => {
     let max = 0;
 
     const maxWidth = 400;
@@ -121,28 +121,43 @@ const Table = ({
       }
     }
 
-    return Math.min(maxWidth, Math.max(max, headerName.length) * magicSpacing);
+    return Math.min(maxWidth, Math.max(max, name.length) * magicSpacing);
   };
 
   const RenderRow = React.useCallback(
-    ({ index, style }) => {
-      const row = rows[index];
+    ({ virtualRow }) => {
+      const row = page[virtualRow.index];
       prepareRow(row);
       return (
         <div
+          key={virtualRow.index}
           {...row.getRowProps({
-            style,
+            style: {
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              // width: '100%',
+              height: `${virtualRow.size}px`,
+              transform: `translateY(${virtualRow.start}px)`,
+            },
           })}
-          className="tr"
         >
-          {row.cells.map((cell) => {
-            return (
-              <Td
-                {...cell.getCellProps()}
-                height={rowHeight}
-                className={
-                  cell.column.isSorted ? 'ag-cell-sorter-active' : null
-                }
+          {row.cells.map((cell, index) => (
+            <Td
+              {...cell.getCellProps({
+                style: {
+                  left: index === 0 ? 0 : '56px',
+                  ...cell.column.cellStyle,
+                },
+                ...cell.column.cellProps,
+              })}
+              pinned={cell.column.pinned}
+              height={rowHeight}
+              className={cell.column.isSorted ? 'ag-cell-sorter-active' : null}
+            >
+              <div
+                className="text-truncate w-100 h-100"
+                style={{ display: 'flex', alignItems: 'center' }}
               >
                 {cell.isGrouped ? (
                   // If it's a grouped cell, add an expander and row count
@@ -150,23 +165,26 @@ const Table = ({
                     <span {...row.getToggleRowExpandedProps()}>
                       {row.isExpanded ? '👇' : '👉'}
                     </span>{' '}
-                    {cell.render('Cell')} ({row.subRows.length})
+                    {cell.render('Cell', { ...cell.column.cellProps })} (
+                    {row.subRows.length})
                   </>
                 ) : cell.isAggregated ? (
                   // If the cell is aggregated, use the Aggregated
                   // renderer for cell
-                  cell.render('Aggregated')
+                  cell.render('Aggregated', {
+                    setAggregation,
+                  })
                 ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
                   // Otherwise, just render the regular cell
-                  cell.render('Cell')
+                  cell.render('Cell', { ...cell.column.cellProps })
                 )}
-              </Td>
-            );
-          })}
+              </div>
+            </Td>
+          ))}
         </div>
       );
     },
-    [prepareRow, rows, rowHeight],
+    [page, setAggregation, prepareRow, rowHeight],
   );
 
   const parentRef = React.useRef();
@@ -238,63 +256,7 @@ const Table = ({
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = page[virtualRow.index];
-            prepareRow(row);
-            return (
-              <div
-                key={virtualRow.index}
-                {...row.getRowProps({
-                  style: {
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    // width: '100%',
-                    height: `${virtualRow.size}px`,
-                    transform: `translateY(${virtualRow.start}px)`,
-                  },
-                })}
-              >
-                {row.cells.map((cell, index) => (
-                  <Td
-                    {...cell.getCellProps({
-                      style: {
-                        left: index === 0 ? 0 : '56px',
-                        ...cell.column.cellStyle,
-                      },
-                    })}
-                    pinned={cell.column.pinned}
-                    height={rowHeight}
-                    className={
-                      cell.column.isSorted ? 'ag-cell-sorter-active' : null
-                    }
-                  >
-                    <div
-                      className="text-truncate w-100 h-100"
-                      style={{ display: 'flex', alignItems: 'center' }}
-                    >
-                      {cell.isGrouped ? (
-                        // If it's a grouped cell, add an expander and row count
-                        <>
-                          <span {...row.getToggleRowExpandedProps()}>
-                            {row.isExpanded ? '👇' : '👉'}
-                          </span>{' '}
-                          {cell.render('Cell')} ({row.subRows.length})
-                        </>
-                      ) : cell.isAggregated ? (
-                        // If the cell is aggregated, use the Aggregated
-                        // renderer for cell
-                        cell.render('Aggregated', {
-                          setAggregation,
-                        })
-                      ) : cell.isPlaceholder ? null : ( // For cells with repeated values, render null
-                        // Otherwise, just render the regular cell
-                        cell.render('Cell')
-                      )}
-                    </div>
-                  </Td>
-                ))}
-              </div>
-            );
+            return <RenderRow virtualRow={virtualRow} />;
           })}
         </div>
         <Footer footerGroups={footerGroups} rowHeight={rowHeight} />

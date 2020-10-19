@@ -7,11 +7,9 @@ export default function CardTypes({ columnDefs, tableInstance }) {
   console.log(state);
 
   const options = [{ id: 'basic', name: 'Basic' }];
-  const coverField = columnDefs.filter(
-    (column) => column.viewType === 'cover',
-  )[0];
+  const coverField = columnDefs.filter((column) => column.kind === 'cover')[0];
   const avatarField = columnDefs.filter(
-    (column) => column.viewType === 'avatar',
+    (column) => column.kind === 'avatar',
   )[0];
 
   if (avatarField) {

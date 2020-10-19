@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+import Cell from './renderer';
 
 const FilterForm = loadable(() => import('../../filters/TextFilterForm'));
 
@@ -18,6 +19,7 @@ const Phone: Field = {
     />
   ),
   filterForm: FilterForm,
+  Cell,
 };
 
 export default Phone;

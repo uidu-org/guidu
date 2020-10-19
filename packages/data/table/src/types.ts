@@ -9,11 +9,9 @@ export type ColumnGroup = ColumnGroupIdentifier & {
   columns: Column[];
 };
 
-export type Column = {
-  dataField?: Field['kind'];
-  dataFieldParams?: any;
+export type Column = Field & {
+  cellProps?: any;
   primary?: boolean;
-  viewType?: string;
   fieldGroup?: ColumnGroupIdentifier;
 };
 

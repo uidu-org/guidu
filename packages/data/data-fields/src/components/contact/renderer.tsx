@@ -1,11 +1,9 @@
 import React from 'react';
-import { groupRenderer } from '../../groups';
 
 export default (params) => {
-  if (params.row.isGrouped) {
-    return groupRenderer(params);
-  }
-
+  // if (params.row.isGrouped) {
+  //   return groupRenderer(params);
+  // }
   const { value, row } = params;
 
   return (

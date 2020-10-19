@@ -60,10 +60,10 @@ export default function FiltererForm({
                   name={`filters[${index}][id]`}
                   options={filterableColumnDefs.map((columnDef) => ({
                     id: columnDef.id,
-                    name: columnDef.headerName,
-                    ...(columnDef.headerComponentParams
+                    name: columnDef.name,
+                    ...(columnDef.icon
                       ? {
-                          before: columnDef.headerComponentParams.menuIcon,
+                          before: columnDef.icon,
                         }
                       : {}),
                   }))}

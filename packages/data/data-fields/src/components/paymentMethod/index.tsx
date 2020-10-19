@@ -4,6 +4,7 @@ import loadable from '@loadable/component';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+import Cell from './renderer';
 
 const FilterForm = loadable(() => import('../../filters/SelectFilterForm'));
 
@@ -23,6 +24,17 @@ const PaymentMethod: Field = {
     />
   ),
   filterForm: FilterForm,
+  Cell,
+  // getQuickFilterText: (params) => (params.value ? params.value.name : null),
+  // filterValueGetter: (params) => params.data[field.id],
+  // options: field.options,
+  // valueGetter: ({ data }) => {
+  //   if (!data) {
+  //     return null;
+  //   }
+
+  //   return field.options.filter((option) => option.id === data[field.id])[0];
+  // },
 };
 
 export default PaymentMethod;

@@ -14,6 +14,25 @@ const Uid: Field = {
       defaultMessage="A unique identifier field"
     />
   ),
+  pinned: 'left',
+  canHide: false,
+  lockPinned: true,
+  lockPosition: true,
+  resizable: false,
+  // checkboxSelection: true,
+  // headerCheckboxSelection: true,
+  minWidth: 56,
+  width: 56,
+  maxWidth: 56,
+  disableResizing: true,
+  suppressMenu: true,
+  sortable: false,
+  cellStyle: {
+    padding: '0rem',
+    borderRight: 0,
+  },
+  headerClass: 'border-right-0 pr-0',
+  headerValueGetter: () => null,
 };
 
 export default Uid;

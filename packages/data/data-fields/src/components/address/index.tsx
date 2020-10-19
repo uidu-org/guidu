@@ -15,7 +15,6 @@ const Address: Field = {
     />
   ),
   filter: 'agTextColumnFilter',
-  viewType: 'address',
 };
 
 export default Address;

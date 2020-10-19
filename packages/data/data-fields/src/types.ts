@@ -9,4 +9,5 @@ export type Field = {
   filterForm?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */
   grouperForm?: React.FC<any>;
+  Cell?: React.FC<any>;
 };

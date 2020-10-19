@@ -246,10 +246,10 @@ export default class Basic extends Component<any, any> {
                 name: 'custom fields',
                 columns: [
                   {
-                    dataField: 'string',
+                    kind: 'string',
                     id: 'custom-field-1',
                     field: 'custom-field-1',
-                    headerName: 'custom field 1',
+                    name: 'custom field 1',
                   },
                 ],
               },
@@ -258,12 +258,12 @@ export default class Basic extends Component<any, any> {
                 name: 'System fields',
                 columns: [
                   {
-                    dataFieldParams: {
+                    cellProps: {
                       onFieldAdd: () => window.alert('add a field'),
                     },
-                    dataField: 'addField',
+                    kind: 'addField',
                     id: 'addField',
-                    headerName: 'Add field',
+                    name: 'Add field',
                   },
                 ],
               },

@@ -54,12 +54,12 @@ export default function Gallery({
       ITEM_COLUMN_ROW *
         tableInstance.visibleColumns.filter(
           (column) =>
-            column.viewType !== 'uid' &&
-            column.id !== 'selection' &&
-            column.viewType !== 'cover' &&
-            column.viewType !== 'primary' &&
-            column.viewType !== 'avatar' &&
-            column.viewType !== 'addField',
+            column.kind !== 'uid' &&
+            column.kind !== 'selection' &&
+            column.kind !== 'cover' &&
+            column.kind !== 'primary' &&
+            column.kind !== 'avatar' &&
+            column.kind !== 'addField',
         ).length +
       // ITEM_PADDING +
       gutterSize
@@ -261,12 +261,12 @@ export default function Gallery({
 //                   ITEM_COLUMN_ROW *
 //                     visibleColumns.filter(
 //                       (column) =>
-//                         column.viewType !== 'uid' &&
-//                         column.id !== 'selection' &&
-//                         column.viewType !== 'cover' &&
-//                         column.viewType !== 'primary' &&
-//                         column.viewType !== 'avatar' &&
-//                         column.viewType !== 'addField',
+//                         column.kind !== 'uid' &&
+//                         column.kind !== 'selection' &&
+//                         column.kind !== 'cover' &&
+//                         column.kind !== 'primary' &&
+//                         column.kind !== 'avatar' &&
+//                         column.kind !== 'addField',
 //                     ).length +
 //                   ITEM_PADDING +
 //                   gutterSize

@@ -76,9 +76,7 @@ export default function ColumnGroup({
               <span className="mr-1">
                 <CheckboxStateless checked={column.isVisible} />
               </span>
-              <div className="text-truncate flex-grow-1">
-                {column.headerName}
-              </div>
+              <div className="text-truncate flex-grow-1">{column.name}</div>
             </div>
           </a>
         ))}

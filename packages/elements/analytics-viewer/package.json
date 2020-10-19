@@ -14,7 +14,7 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.4",
-    "styled-components": "^5.1.1",
+    "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

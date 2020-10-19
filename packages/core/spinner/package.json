@@ -19,7 +19,7 @@
     "@uidu/button": "^0.3.6",
     "@uidu/docs": "^0.2.10",
     "react": "^16.13.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.2.0"
   },
   "peerDependencies": {
     "react": "^16.8.3",

@@ -1,113 +1,114 @@
-import { byName, Field } from '@uidu/data-fields';
-import numeral from 'numeral';
 import {
-  addFieldColumn,
-  addressColumn,
-  attachmentsColumn,
-  avatarColumn,
-  checkboxColumn,
-  contactColumn,
-  countryColumn,
-  coverColumn,
-  currencyColumn,
-  dateColumn,
-  emailColumn,
-  linkRecordColumn,
-  memberColumn,
-  multipleSelectColumn,
-  numberColumn,
-  paymentMethodColumn,
-  percentColumn,
-  phoneColumn,
-  primaryColumn,
-  progressColumn,
-  ratingColumn,
-  singleSelectColumn,
-  stringColumn,
-  textColumn,
-  uidColumn,
-  urlColumn,
-  voteColumn,
-} from '../components/columns';
+  addField,
+  addressField,
+  attachmentsField,
+  avatarField,
+  byName,
+  checkboxField,
+  contactField,
+  countryField,
+  coverField,
+  currencyField,
+  dateField,
+  emailField,
+  Field,
+  linkRecordField,
+  memberField,
+  multipleSelectField,
+  numberField,
+  paymentMethodField,
+  percentField,
+  phoneField,
+  progressField,
+  ratingField,
+  singleSelectField,
+  stringField,
+  textField,
+  uidField,
+  urlField,
+  voteField,
+} from '@uidu/data-fields';
+import numeral from 'numeral';
 import { ColumnGroup } from '../types';
 
-const getColumnType = (dataField: Field['kind'], dataFieldParams: any = {}) => {
-  switch (dataField) {
+const getColumnType = (kind: Field['kind'], dataFieldParams: any = {}) => {
+  switch (kind) {
     case 'addField':
-      return addFieldColumn(dataFieldParams);
+      return { ...addField };
     case 'address':
-      return addressColumn();
+      return { ...addressField };
     case 'attachments':
-      return attachmentsColumn();
+      return { ...attachmentsField };
     case 'avatar':
-      return avatarColumn();
+      return { ...avatarField };
     case 'checkbox':
-      return checkboxColumn();
+      return { ...checkboxField };
     case 'contact':
-      return contactColumn(dataFieldParams);
+      return { ...contactField };
     case 'country':
-      return countryColumn(dataFieldParams);
+      return { ...countryField };
     case 'cover':
-      return coverColumn();
+      return { ...coverField };
     case 'currency':
-      return currencyColumn();
+      return { ...currencyField };
     case 'date':
-      return dateColumn(dataFieldParams);
+      return { ...dateField };
     case 'email':
-      return emailColumn();
+      return { ...emailField };
     case 'linkRecord':
-      return linkRecordColumn();
+      return { ...linkRecordField };
     case 'member':
-      return memberColumn(dataFieldParams);
+      return { ...memberField };
     case 'multipleSelect':
-      return multipleSelectColumn(dataFieldParams);
+      return { ...multipleSelectField };
     case 'number':
-      return numberColumn();
+      return { ...numberField };
     case 'paymentMethod':
-      return paymentMethodColumn(dataFieldParams);
+      return { ...paymentMethodField };
     case 'percent':
-      return percentColumn();
+      return { ...percentField };
     case 'phone':
-      return phoneColumn();
+      return { ...phoneField };
     case 'progress':
-      return progressColumn();
+      return { ...progressField };
     case 'rating':
-      return ratingColumn();
+      return { ...ratingField };
     case 'singleSelect':
-      return singleSelectColumn(dataFieldParams);
+      return { ...singleSelectField };
     case 'string':
-      return stringColumn();
+      return { ...stringField };
     case 'text':
-      return textColumn();
+      return { ...textField };
     case 'uid':
-      return uidColumn(dataFieldParams);
+      return { ...uidField };
     case 'url':
-      return urlColumn();
+      return { ...urlField };
     case 'vote':
-      return voteColumn();
+      return { ...voteField };
     default:
       return {};
   }
 };
 
 export const buildColumn = ({ columns, ...fieldGroup }: ColumnGroup) => {
-  return columns.map(({ primary, dataField, dataFieldParams, ...column }) => {
+  return columns.map(({ primary, kind, dataFieldParams, ...column }) => {
     return {
       fieldGroup,
-      accessor: column.id,
       id: column.id,
-      ...(dataField &&
-      getColumnType(dataField, { ...dataFieldParams, ...column }) &&
-      getColumnType(dataField, { ...dataFieldParams, ...column }).cellRenderer
+      accessor: column.id,
+      ...(kind
+        ? { ...getColumnType(kind, { ...dataFieldParams, ...column }) }
+        : {}),
+      ...(primary
         ? {
-            Cell: getColumnType(dataField, { ...dataFieldParams, ...column })
-              .cellRenderer,
+            canMove: false,
+            canHide: false,
+            lockPinned: true,
+            isPrimary: true,
+            showRowGroup: true,
+            pinned: 'left',
           }
         : {}),
-      ...(dataField
-        ? { ...getColumnType(dataField, { ...dataFieldParams, ...column }) }
-        : {}),
-      ...(primary ? { ...primaryColumn() } : {}),
       ...column,
     };
   });
@@ -120,13 +121,13 @@ export const buildColumns = (columns): Array<ColumnGroup> => {
 };
 
 export const getPrimary = (columnDefs) =>
-  columnDefs.filter((column) => column.viewType === 'primary')[0];
+  columnDefs.filter((column) => column.isPrimary)[0];
 
 export const getCover = (columnDefs) =>
-  columnDefs.filter((column) => column.viewType === 'cover')[0];
+  columnDefs.filter((column) => column.kind === 'cover')[0];
 
 export const getAvatar = (columnDefs) =>
-  columnDefs.filter((column) => column.viewType === 'avatar')[0];
+  columnDefs.filter((column) => column.kind === 'avatar')[0];
 
 export const numericComparator = (number1, number2) => {
   const numericNumber1 = numeral(number1).value();
@@ -157,4 +158,4 @@ export const numericComparator = (number1, number2) => {
 export const getColumnDef = (columnDefs, filterOrGrouperOrSorter) =>
   columnDefs.filter((c) => c.id === filterOrGrouperOrSorter.id)[0];
 
-export const getFieldFromColumnDef = (columnDef) => byName[columnDef.viewType];
+export const getFieldFromColumnDef = (columnDef) => byName[columnDef.kind];

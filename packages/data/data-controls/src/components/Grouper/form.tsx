@@ -19,7 +19,7 @@ export default function GrouperForm({ tableInstance }: GrouperFormProps) {
   };
 
   const groupableColumnDefs = columns.filter(
-    (c) => !c.hide && c.enableRowGroup,
+    (c) => c.isVisible && c.canGroupBy,
   );
 
   return (
@@ -63,10 +63,10 @@ export default function GrouperForm({ tableInstance }: GrouperFormProps) {
                 value={grouper}
                 options={groupableColumnDefs.map((columnDef) => ({
                   id: columnDef.id,
-                  name: columnDef.headerName,
-                  ...(columnDef.headerComponentParams
+                  name: columnDef.name,
+                  ...(columnDef.icon
                     ? {
-                        before: columnDef.headerComponentParams.menuIcon,
+                        before: columnDef.icon,
                       }
                     : {}),
                 }))}
@@ -80,7 +80,7 @@ export default function GrouperForm({ tableInstance }: GrouperFormProps) {
                 {columnDefs
                   .filter(columnDef => !columnDef.hide && !!columnDef.aggFunc)
                   .map(columnDef => (
-                    <p >{columnDef.headerName}</p>
+                    <p >{columnDef.name}</p>
                   ))} */}
               {/* {FieldGrouperForm && (
                   <FieldGrouperForm

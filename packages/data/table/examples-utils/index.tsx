@@ -3,32 +3,32 @@ import numeral from 'numeral';
 
 export const availableColumns = [
   // {
-  //   dataField: 'uid',
+  //   kind: 'uid',
   //   id: 'id',
   //   field: 'id',
-  //   dataFieldParams: { onItemClick: (params) => console.log(params) },
+  //   cellProps: { onItemClick: (params) => console.log(params) },
   // },
   {
-    dataField: 'cover',
+    kind: 'cover',
     id: 'cover',
     field: 'cover',
-    headerName: 'Cover',
+    name: 'Cover',
   },
   {
-    dataField: 'avatar',
+    kind: 'avatar',
     id: 'avatar',
     field: 'avatar',
-    headerName: 'Avatar',
+    name: 'Avatar',
   },
   {
-    dataField: 'contact',
-    dataFieldParams: {
+    kind: 'contact',
+    cellProps: {
       avatar: (data) => (data ? data.avatar : null),
     },
     id: 'member',
     accessor: (data) => data.member.email,
     primary: true,
-    headerName: 'Donor',
+    name: 'Donor',
     headerClass: 'ag-header-cell-primary-with-uid',
     field: 'member',
     pinned: 'left',
@@ -38,56 +38,55 @@ export const availableColumns = [
     width: 340,
   },
   {
-    dataField: 'string',
+    kind: 'string',
     id: 'displayName',
     field: 'displayName',
-    headerName: 'FullName',
+    name: 'FullName',
   },
   {
-    dataField: 'currency',
+    kind: 'currency',
     id: 'amount',
     field: 'amount',
-    headerName: 'Donation amount',
+    name: 'Donation amount',
     aggFunc: 'sum',
-    enableValue: true,
     valueFormatter: ({ value, node, aggData, groupData, ...rest }) => {
       return numeral(value).format('$ 0,0.00');
     },
   },
   {
-    dataField: 'country',
+    kind: 'country',
     id: 'country',
     field: 'country',
-    headerName: 'Country',
+    name: 'Country',
     canGroupBy: true,
     editable: true,
   },
   {
-    dataField: 'percent',
+    kind: 'percent',
     id: 'percent',
     field: 'percent',
-    headerName: 'Percentuale',
+    name: 'Percentuale',
     valueGetter: ({ value }) => numeral(value / 100).format('% 0'),
   },
   {
-    dataField: 'date',
-    dataFieldParams: { format: 'l' },
+    kind: 'date',
+    cellProps: { format: 'l' },
     id: 'createdAt',
     field: 'createdAt',
-    headerName: 'Data creazione',
+    name: 'Data creazione',
     canGroupBy: true,
     editable: true,
   },
   {
-    dataField: 'date',
-    dataFieldParams: { format: 'l' },
+    kind: 'date',
+    cellProps: { format: 'l' },
     id: 'updatedAt',
     field: 'updatedAt',
-    headerName: 'Ultimo aggiornamento',
+    name: 'Ultimo aggiornamento',
   },
   {
-    dataField: 'singleSelect',
-    dataFieldParams: {
+    kind: 'singleSelect',
+    cellProps: {
       options: [
         { id: 'male', name: 'Maschio', color: 'turquoise' },
         { id: 'female', name: 'Femmina', color: 'yellow' },
@@ -96,34 +95,34 @@ export const availableColumns = [
     },
     id: 'gender',
     field: 'gender',
-    headerName: 'Genere',
+    name: 'Genere',
     canGroupBy: true,
     editable: true,
   },
   {
-    dataField: 'string',
+    kind: 'string',
     id: 'firstName',
     field: 'firstName',
-    headerName: 'firstName',
+    name: 'firstName',
   },
   {
-    dataField: 'linkRecord',
+    kind: 'linkRecord',
     id: 'donationCampaign',
     field: 'donationCampaign',
-    headerName: 'Donation Campaign',
+    name: 'Donation Campaign',
     canGroupBy: true,
     accessor: (data) => data.donationCampaign.name,
   },
   // {
   //   id: 'role',
   //   field: 'role',
-  //   headerName: 'Admin',
+  //   name: 'Admin',
   //   ...checkboxColumn(),
   // },
   // {
   //   id: 'multiple-select',
   //   field: 'scope',
-  //   headerName: 'Tags',
+  //   name: 'Tags',
   //   ...multipleSelectColumn({
   //     options: [
   //       { id: 'male', name: 'Maschio' },
@@ -134,7 +133,7 @@ export const availableColumns = [
   // {
   //   id: 'member',
   //   field: 'member',
-  //   headerName: 'Assignee',
+  //   name: 'Assignee',
 
   //   ...memberColumn({
   //     options: [
@@ -147,18 +146,18 @@ export const availableColumns = [
   // {
   //   id: 'address',
   //   field: 'uid',
-  //   headerName: 'Indirizzo',
+  //   name: 'Indirizzo',
   //   ...addressColumn(),
   // },
   {
-    dataField: 'phone',
+    kind: 'phone',
     id: 'phone',
     field: 'phone',
-    headerName: 'Telefono',
+    name: 'Telefono',
   },
   {
-    dataField: 'paymentMethod',
-    dataFieldParams: {
+    kind: 'paymentMethod',
+    cellProps: {
       options: [
         {
           id: 1,
@@ -170,20 +169,20 @@ export const availableColumns = [
     },
     id: 'paymentMethod',
     field: 'paymentMethod',
-    headerName: 'Payment Method',
+    name: 'Payment Method',
     canGroupBy: true,
   },
 
   // {
   //   id: 'progress',
   //   field: 'progress',
-  //   headerName: 'Progress',
+  //   name: 'Progress',
   //   ...progressColumn(),
   // },
   // {
   //   id: 'files',
   //   field: 'uid',
-  //   headerName: 'Files',
+  //   name: 'Files',
   //   ...attachmentsColumn({
   //     options: [
   //       { id: 'male', name: 'Maschio' },
@@ -194,13 +193,13 @@ export const availableColumns = [
   // {
   //   id: 'votes',
   //   field: 'uid',
-  //   headerName: 'Voto',
+  //   name: 'Voto',
   //   ...ratingColumn(),
   // },
   // {
   //   id: 'assignee',
   //   field: 'uid',
-  //   headerName: 'Assignee',
+  //   name: 'Assignee',
   //   ...urlColumn(),
   // },
 ];

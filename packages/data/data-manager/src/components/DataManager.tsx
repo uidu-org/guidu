@@ -87,6 +87,7 @@ export default function DataManager({
       width: 200,
       maxWidth: 400,
       canHide: true,
+      canSortBy: true,
       canGroupBy: false,
       Header,
       Aggregated,
@@ -133,8 +134,7 @@ export default function DataManager({
         // Let's make a column for selection
         {
           id: 'uid',
-          dataField: 'uid',
-          viewType: 'uid',
+          kind: 'uid',
           field: 'id',
           disableResizing: true,
           minWidth: 56,

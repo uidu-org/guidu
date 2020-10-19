@@ -1,10 +1,10 @@
 import React from 'react';
-import { groupRenderer } from '../../groups';
+// import { groupRenderer } from '../../groups';
 
 export default (params) => {
-  if (params.node && params.node.group) {
-    return groupRenderer(params);
-  }
+  // if (params.node && params.node.group) {
+  //   return groupRenderer(params);
+  // }
 
   const { value, row } = params;
   // create the cell

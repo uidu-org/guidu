@@ -1,11 +1,11 @@
 import React from 'react';
-import { groupRenderer } from '../../groups';
+// import { groupRenderer } from '../../groups';
 
 export default (params) => {
   // create the cell
-  if (params.row.isGrouped) {
-    return groupRenderer(params);
-  }
+  // if (params.row.isGrouped) {
+  //   return groupRenderer(params);
+  // }
 
   if (params.value) {
     // show option cell
