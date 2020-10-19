@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.7
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/docs@0.2.11
+
 ## 0.3.6
 
 ### Patch Changes

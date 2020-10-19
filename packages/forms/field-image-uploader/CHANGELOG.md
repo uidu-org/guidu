@@ -1,5 +1,15 @@
 # @uidu/field-image-uploader
 
+## 0.3.10
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/button@0.3.7
+  - @uidu/spinner@0.3.6
+  - @uidu/field-base@0.3.6
+
 ## 0.3.9
 
 ### Patch Changes

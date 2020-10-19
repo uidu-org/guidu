@@ -1,5 +1,19 @@
 # @uidu/devise
 
+## 0.3.7
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/avatar@0.5.6
+  - @uidu/slider@1.5.6
+  - @uidu/spinner@0.3.6
+  - @uidu/field-password@0.3.7
+  - @uidu/field-text@0.3.6
+  - @uidu/form@0.3.5
+  - @uidu/shell@1.0.9
+
 ## 0.3.6
 
 ### Patch Changes

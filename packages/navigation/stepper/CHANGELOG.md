@@ -1,5 +1,13 @@
 # @uidu/stepper
 
+## 0.2.8
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/theme@0.4.6
+
 ## 0.2.7
 
 ### Patch Changes

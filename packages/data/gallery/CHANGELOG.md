@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.1.57
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/table@0.3.0
+  - @uidu/spinner@0.3.6
+  - @uidu/data-controls@0.5.6
+
 ## 0.1.56
 
 ### Patch Changes

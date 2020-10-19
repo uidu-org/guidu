@@ -1,5 +1,17 @@
 # @uidu/field-text
 
+## 0.5.9
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/spinner@0.3.6
+  - @uidu/theme@0.4.6
+  - @uidu/tooltip@0.3.7
+  - @uidu/field-base@0.3.6
+  - @uidu/form@0.3.5
+
 ## 0.5.8
 
 ### Patch Changes

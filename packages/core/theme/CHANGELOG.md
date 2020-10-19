@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.4.6
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/form@0.3.5
+
 ## 0.4.5
 
 ### Patch Changes

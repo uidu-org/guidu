@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.0.9
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/spinner@0.3.6
+
 ## 1.0.8
 
 ### Patch Changes

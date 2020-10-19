@@ -1,5 +1,17 @@
 # @uidu/media-card
 
+## 0.3.7
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/button@0.3.7
+  - @uidu/dropdown-menu@0.3.6
+  - @uidu/spinner@0.3.6
+  - @uidu/theme@0.4.6
+  - @uidu/tooltip@0.3.7
+
 ## 0.3.6
 
 ### Patch Changes

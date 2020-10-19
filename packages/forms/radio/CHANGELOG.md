@@ -1,5 +1,13 @@
 # @uidu/radio
 
+## 0.4.12
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/field-base@0.3.6
+
 ## 0.4.11
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/donate
 
+## 0.2.23
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/modal-dialog@0.3.6
+  - @uidu/field-text@0.3.6
+  - @uidu/form@0.3.5
+  - @uidu/radio@0.4.12
+  - @uidu/select@0.5.9
+
 ## 0.2.22
 
 ### Patch Changes

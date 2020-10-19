@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.27
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+
 ## 0.1.26
 
 ### Patch Changes

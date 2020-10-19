@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.2.7
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/message@0.2.8
+  - @uidu/message-renderer@0.2.8
+
 ## 0.2.6
 
 ### Patch Changes

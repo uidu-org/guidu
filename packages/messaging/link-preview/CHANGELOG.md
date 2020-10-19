@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.24
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+
 ## 0.1.23
 
 ### Patch Changes

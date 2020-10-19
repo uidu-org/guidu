@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-number",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Field Number Component",
   "keywords": [
     "react",
@@ -17,17 +17,17 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.4",
-    "@uidu/field-base": "^0.3.5",
-    "@uidu/field-text": "^0.3.5",
-    "@uidu/form": "^0.3.4",
-    "@uidu/theme": "^0.4.5",
+    "@uidu/field-base": "^0.3.6",
+    "@uidu/field-text": "^0.3.6",
+    "@uidu/form": "^0.3.5",
+    "@uidu/theme": "^0.4.6",
     "formsy-react": "^2.1.0",
     "react-number-format": "^4.0.6",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.6",
-    "@uidu/docs": "^0.2.10",
+    "@uidu/button": "^0.3.7",
+    "@uidu/docs": "^0.2.11",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.2.0"

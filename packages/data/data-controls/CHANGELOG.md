@@ -1,5 +1,25 @@
 # @uidu/data-controls
 
+## 0.5.6
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/data-fields@0.3.0
+  - @uidu/table@0.3.0
+  - @uidu/drawer@0.4.8
+  - @uidu/dropdown-menu@0.3.6
+  - @uidu/inline-dialog@0.3.6
+  - @uidu/item@0.3.8
+  - @uidu/spinner@0.3.6
+  - @uidu/tooltip@0.3.7
+  - @uidu/data-views@0.4.6
+  - @uidu/field-text@0.3.6
+  - @uidu/form@0.3.5
+  - @uidu/select@0.5.9
+  - @uidu/shell@1.0.9
+
 ## 0.5.5
 
 ### Patch Changes

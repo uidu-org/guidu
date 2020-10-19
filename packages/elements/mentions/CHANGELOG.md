@@ -1,5 +1,17 @@
 # @uidu/mentions
 
+## 0.1.27
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/avatar@0.5.6
+  - @uidu/button@0.3.7
+  - @uidu/lozenge@0.3.6
+  - @uidu/theme@0.4.6
+  - @uidu/tooltip@0.3.7
+
 ## 0.1.26
 
 ### Patch Changes

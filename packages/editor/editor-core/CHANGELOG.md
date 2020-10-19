@@ -1,5 +1,31 @@
 # @uidu/editor-core
 
+## 0.6.6
+
+### Patch Changes
+
+- 948b48b: Data fields now contain renderers, moved out from table. Changed Field API
+- Updated dependencies [948b48b]
+  - @uidu/avatar@0.5.6
+  - @uidu/avatar-group@2.4.6
+  - @uidu/button@0.3.7
+  - @uidu/droplist@0.3.7
+  - @uidu/item@0.3.8
+  - @uidu/modal-dialog@0.3.6
+  - @uidu/spinner@0.3.6
+  - @uidu/theme@0.4.6
+  - @uidu/tooltip@0.3.7
+  - @uidu/editor-common@0.3.10
+  - @uidu/editor-json-transformer@0.2.7
+  - @uidu/editor-markdown-transformer@0.2.7
+  - @uidu/date@0.2.7
+  - @uidu/mentions@0.1.27
+  - @uidu/status@0.2.8
+  - @uidu/task-decision@0.2.7
+  - @uidu/select@0.5.9
+  - @uidu/media-card@0.3.7
+  - @uidu/media-filmstrip@0.2.7
+
 ## 0.6.5
 
 ### Patch Changes
