@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.4.8
+
+### Patch Changes
+
+- c3ed0b8: Handle cover and avatar
+
 ## 0.4.7
 
 ### Patch Changes
