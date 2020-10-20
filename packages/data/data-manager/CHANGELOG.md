@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.5.14
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+- Updated dependencies [cf70c9b]
+  - @uidu/data-controls@0.5.8
+  - @uidu/data-fields@0.3.3
+  - @uidu/data-views@0.4.9
+  - @uidu/gallery@0.1.60
+  - @uidu/table@0.3.3
+
 ## 0.5.13
 
 ### Patch Changes

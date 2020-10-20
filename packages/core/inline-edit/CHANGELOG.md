@@ -1,5 +1,13 @@
 # @uidu/inline-edit
 
+## 0.1.6
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+- Updated dependencies [cf70c9b]
+  - @uidu/field@0.2.9
+
 ## 0.1.5
 
 ### Patch Changes

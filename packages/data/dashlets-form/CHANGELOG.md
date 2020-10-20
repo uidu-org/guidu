@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 0.1.11
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+- Updated dependencies [cf70c9b]
+  - @uidu/dashlets@0.6.11
+
 ## 0.1.10
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.60
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+- Updated dependencies [cf70c9b]
+  - @uidu/data-controls@0.5.8
+  - @uidu/data-fields@0.3.3
+
 ## 0.1.59
 
 ### Patch Changes

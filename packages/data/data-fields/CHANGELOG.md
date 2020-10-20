@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.3.3
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+
 ## 0.3.2
 
 ### Patch Changes

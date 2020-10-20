@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 0.2.8
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+
 ## 0.2.7
 
 ### Patch Changes

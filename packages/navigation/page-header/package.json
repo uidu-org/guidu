@@ -19,7 +19,7 @@
     "@uidu/docs": "^0.2.11",
     "@uidu/field-text": "^0.3.6",
     "@uidu/form": "^0.3.5",
-    "@uidu/inline-edit": "0.1.5",
+    "@uidu/inline-edit": "0.1.6",
     "@uidu/select": "^0.5.9",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

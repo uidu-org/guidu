@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.3.8
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+
 ## 0.3.7
 
 ### Patch Changes

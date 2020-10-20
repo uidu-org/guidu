@@ -1,5 +1,14 @@
 # @uidu/data-controls
 
+## 0.5.8
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+- Updated dependencies [cf70c9b]
+  - @uidu/data-fields@0.3.3
+  - @uidu/data-views@0.4.9
+
 ## 0.5.7
 
 ### Patch Changes

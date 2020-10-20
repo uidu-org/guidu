@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.6.7
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+
 ## 0.6.6
 
 ### Patch Changes
