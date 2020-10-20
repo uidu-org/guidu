@@ -1,21 +1,17 @@
-import '@fortawesome/fontawesome-free/scss/brands.scss';
-import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
-import '@fortawesome/fontawesome-free/scss/regular.scss';
-import '@fortawesome/fontawesome-free/scss/solid.scss';
 import { buildColumns } from '@uidu/data-fields';
 import DropdownMenu, {
   DropdownItem,
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
+import Form from '@uidu/form';
 import Navigation from '@uidu/navigation';
+import Select from '@uidu/select';
 import {
   ShellBody,
   ShellBodyWithSpinner,
   ShellHeader,
   ShellMain,
-  ShellSidebar,
 } from '@uidu/shell';
-import SideNavigation from '@uidu/side-navigation';
 import React, { Component } from 'react';
 import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';
@@ -274,16 +270,8 @@ export default class Basic extends Component<any, any> {
           >
             {({ renderControls, renderView, renderSidebar }) => (
               <ShellMain>
-                {/* <div
-                  style={{
-                    background: '#ff000024',
-                    height: '17rem',
-                    position: 'absolute',
-                    width: '100%',
-                  }}
-                ></div> */}
                 <Navigation
-                  className="bg-donations"
+                  className="bg-white border-bottom"
                   schema={[
                     {
                       type: 'NavigationHeader',
@@ -385,7 +373,7 @@ export default class Basic extends Component<any, any> {
                         <ShellBodyWithSpinner />
                       ) : (
                         <>
-                          <ShellSidebar
+                          {/* <ShellSidebar
                             style={{
                               width: '20%',
                               background: '#fff',
@@ -393,16 +381,41 @@ export default class Basic extends Component<any, any> {
                             className="border-right"
                           >
                             <SideNavigation schema={schema} />
-                          </ShellSidebar>
+                          </ShellSidebar> */}
                           <ShellMain>
                             <ShellHeader
-                              className="px-3 px-xl-4 bg-white border-bottom"
-                              style={{ height: '4rem' }}
+                              className="px-3 bg-white border-bottom"
+                              style={{ zIndex: 30 }}
                             >
+                              <div style={{ width: 300 }}>
+                                <Form>
+                                  <Select
+                                    layout="elementOnly"
+                                    name="dataView"
+                                    isClearable={false}
+                                    value={currentView.id}
+                                    options={dataViews.map((dataView) => {
+                                      const d = byName[dataView.kind];
+                                      const { icon: Icon, color } = d;
+                                      return {
+                                        id: dataView.id,
+                                        name: dataView.name,
+                                        before: (
+                                          <Icon size={16} color={color} />
+                                        ),
+                                        ...dataView,
+                                      };
+                                    })}
+                                    onChange={(name, value, { option }) => {
+                                      this.toggleView(option);
+                                    }}
+                                  />
+                                </Form>
+                              </div>
                               {renderControls({
                                 controls: {
                                   viewer: {
-                                    visible: true,
+                                    visible: false,
                                   },
                                   finder: {
                                     visible: true,

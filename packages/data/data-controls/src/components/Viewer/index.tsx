@@ -112,8 +112,6 @@ export default function Viewer({
           <h6 className="m-0">{currentView.name}</h6>
         )}
       </div>
-
-      {/* <Starrer onToggle={updateView} currentView={currentView} /> */}
       {availableControls.more.visible && (
         <More
           onDownload={onDownload}

@@ -303,7 +303,7 @@ export default function DataManager({
             primaryField={primaryField}
           />
         )}
-        <div className="d-flex align-items-center border-left ml-3 pl-3 flex-grow-1">
+        <div className="d-flex align-items-center ml-3 flex-grow-1">
           <Controls
             tableInstance={tableInstance}
             isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}

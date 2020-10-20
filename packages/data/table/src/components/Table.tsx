@@ -22,7 +22,7 @@ const Header = styled.div`
   width: fit-content;
   display: flex;
   align-items: center;
-  z-index: 40;
+  z-index: 1;
 `;
 
 const Td = styled.div<{ height: number; pinned?: boolean }>`
