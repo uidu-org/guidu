@@ -102,8 +102,5 @@ export default function XY({ resultSet, config }) {
     return <Loader />;
   }
 
-  console.log(resultSet.chartPivot());
-  console.log(resultSet.series());
-
   return <div style={{ width: '100%', height: '100%' }} id={id.current} />;
 }

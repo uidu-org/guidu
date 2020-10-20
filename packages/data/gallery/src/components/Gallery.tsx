@@ -161,9 +161,6 @@ export default function Gallery({
 //     columnCount: 4,
 //     gutterSize: 8,
 //     onItemClick: ({ data }) => {},
-//     sorters: [],
-//     groupers: [],
-//     filterModel: {},
 //   };
 
 //   chunkData = (array, chunkSize) => {

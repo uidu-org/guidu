@@ -6,12 +6,16 @@ import { FormattedMessage } from 'react-intl';
 import { PickField } from '../../utils';
 import { SorterFormProps } from './types';
 
-export default function SorterForm({ tableInstance }: SorterFormProps) {
+export default function SorterForm({
+  tableInstance,
+  updateView,
+}: SorterFormProps) {
   const { setSortBy } = tableInstance;
   const form = useRef(null);
 
   const handleSubmit = async (model) => {
     setSortBy(model.sorters || []);
+    updateView({});
   };
 
   const {
@@ -19,7 +23,7 @@ export default function SorterForm({ tableInstance }: SorterFormProps) {
     state: { sortBy },
   } = tableInstance;
 
-  const sortableColumnDefs = columns.filter((f) => !f.hide);
+  const sortableColumnDefs = columns.filter((c) => c.isVisible && c.canSortBy);
 
   return (
     <Form ref={form} footerRenderer={() => null} handleSubmit={handleSubmit}>

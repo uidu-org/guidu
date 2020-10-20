@@ -163,7 +163,6 @@ const Table = ({
                     left: index === 0 ? 0 : '56px',
                     ...cell.column.cellStyle,
                   },
-                  ...cell.column.cellProps,
                 })}
                 pinned={cell.column.pinned}
                 height={rowHeight}

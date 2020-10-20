@@ -25,7 +25,6 @@ export default function MemberGroup({
           value,
           { actionMeta: { action, option, removedValue } },
         ) => {
-          console.log(name, value);
           return updateQuery({
             [name]: value === '' ? [] : value,
           });

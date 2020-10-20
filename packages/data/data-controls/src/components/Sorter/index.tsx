@@ -7,7 +7,7 @@ import DrawerLayout from '../../utils/DrawerLayout';
 import SorterForm from './form';
 import { SorterProps } from './types';
 
-export default function Sorter({ tableInstance }: SorterProps) {
+export default function Sorter({ tableInstance, updateView }: SorterProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const {
     state: { sortBy },
@@ -55,7 +55,11 @@ export default function Sorter({ tableInstance }: SorterProps) {
             />
           }
         >
-          <SorterForm tableInstance={tableInstance} sorters={sortBy} />
+          <SorterForm
+            tableInstance={tableInstance}
+            sorters={sortBy}
+            updateView={updateView}
+          />
         </DrawerLayout>
       </Drawer>
     </>

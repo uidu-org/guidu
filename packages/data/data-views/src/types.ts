@@ -1,4 +1,3 @@
-import { FilterModel, Group, Sort } from '@uidu/data-controls';
 import React, { ReactNode } from 'react';
 
 export type DataViewKind = {
@@ -28,9 +27,6 @@ export type DataView = {
   kind: DataViewKind['id'];
   name: string | ReactNode;
   fields: String[];
-  sorters: Sort[];
-  groupers: Group[];
-  filterModel: FilterModel;
   state: any;
   preferences?: DataViewPreferences;
 };

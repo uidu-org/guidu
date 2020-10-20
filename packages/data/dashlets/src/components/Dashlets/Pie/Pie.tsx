@@ -12,10 +12,6 @@ export default function Pie({ resultSet, config }) {
   const chart = useRef(null);
   const id = useRef(uuid());
 
-  console.log(resultSet);
-  console.log(resultSet?.series());
-  console.log(resultSet?.chartPivot());
-
   useLayoutEffect(() => {
     if (resultSet) {
       let x = am4core.createFromConfig(

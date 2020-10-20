@@ -67,14 +67,17 @@ const Table: DataViewKind = {
         <Filterer
           tableInstance={tableInstance}
           columnDefs={columnDefs}
+          updateView={updateView}
           {...availableControls.filterer.props}
         />
         <Sorter
           tableInstance={tableInstance}
+          updateView={updateView}
           {...availableControls.sorter.props}
         />
         <Grouper
           tableInstance={tableInstance}
+          updateView={updateView}
           {...availableControls.grouper.props}
         />
       </>

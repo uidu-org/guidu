@@ -8,6 +8,7 @@ export default function ColumnGroup({
   columns,
   checkedColumnsCount,
   isGroupChecked,
+  tableInstance,
 }) {
   const [isOpen, setIsOpen] = useState(true);
   return (
@@ -22,10 +23,15 @@ export default function ColumnGroup({
               href="#"
               onClick={(e) => {
                 e.preventDefault();
-                // gridColumnApi.setColumnsVisible(
-                //   columns.map((column) => column.id),
-                //   !isGroupChecked,
-                // );
+                const columnIds = columns.map((column) => column.id);
+                if (isGroupChecked) {
+                  return tableInstance.setHiddenColumns(columnIds);
+                }
+                return tableInstance.setHiddenColumns(
+                  tableInstance.state.hiddenColumns.filter(
+                    (c) => !columnIds.includes(c),
+                  ),
+                );
               }}
             >
               {isGroupChecked ? (
@@ -53,15 +59,7 @@ export default function ColumnGroup({
           </div>
         </div>
       </li>
-      <AnimateHeight
-        height={isOpen ? 'auto' : 0}
-        // onAnimationStart={({ newHeight }) => console.log(newHeight)}
-        // onAnimationEnd={() => {
-        //   this.slider.current.updateAutoHeight(300, false);
-        //   // this.slider.current.updateAutoHeight(500);
-        //   console.log('TODO: focus password field');
-        // }}
-      >
+      <AnimateHeight height={isOpen ? 'auto' : 0}>
         {columns.map((column, index) => (
           <a
             href="#"

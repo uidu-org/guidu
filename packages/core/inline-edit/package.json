@@ -11,7 +11,7 @@
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
-    "@loadable/component": "5.13.1",
+    "@loadable/component": "^5.14.0",
     "@uidu/analytics": "^0.3.4",
     "@uidu/button": "^0.3.7",
     "@uidu/field": "^0.2.8",

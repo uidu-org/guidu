@@ -11,7 +11,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@loadable/component": "5.13.1",
+    "@loadable/component": "^5.14.0",
     "@uidu/board": "^0.2.27",
     "@uidu/calendar": "^0.1.38",
     "@uidu/data-controls": "^0.5.7",

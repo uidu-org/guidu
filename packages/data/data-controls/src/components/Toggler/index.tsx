@@ -34,12 +34,13 @@ export default class TogglerForm extends PureComponent<TogglerProps> {
       }
       const columnGroupObj = columns[0].fieldGroup;
       const isGroupChecked =
-        columns.filter((c) => !c.hide).length === columns.length;
-      const checkedColumnsCount = columns.filter((c) => !c.hide).length;
+        columns.filter((c) => c.isVisible).length === columns.length;
+      const checkedColumnsCount = columns.filter((c) => c.isVisible).length;
 
       return (
         <ColumnGroup
           key={columnGroup}
+          tableInstance={tableInstance}
           checkedColumnsCount={checkedColumnsCount}
           columnGroupObj={columnGroupObj}
           isGroupChecked={isGroupChecked}

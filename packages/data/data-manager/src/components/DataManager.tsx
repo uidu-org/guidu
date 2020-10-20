@@ -114,6 +114,7 @@ export default function DataManager({
         return React.useMemo(
           () => ({
             ...state,
+            ...currentView.state,
             columnDefinitions,
           }),
           [state],
@@ -165,11 +166,8 @@ export default function DataManager({
 
   const { state, setGlobalFilter, globalFilter } = tableInstance;
 
-  const updateView = (props) => {
-    return onViewUpdate(currentView, {
-      ...props,
-      state,
-    });
+  const updateView = () => {
+    return onViewUpdate(currentView, state);
   };
 
   const setColumnState = (column, newState = {}) => {

@@ -67,8 +67,8 @@ const dataViews = [
     state: {
       hiddenColumns: ['cover'],
       sortBy: [{ id: 'amount', desc: true }],
+      filters: [{ amount: { type: 'greaterThan', filter: 100 } }],
     },
-    filterModel: { amount: { type: 'greaterThan', filter: 100 } },
   },
   {
     id: 2,
@@ -166,6 +166,8 @@ export default class Basic extends Component<any, any> {
   }
 
   updateView = async (currentView, props) => {
+    console.log(currentView);
+    console.log(props);
     this.setState({ isAutoSaving: 'in-progress' });
     const dataViews = this.state.dataViews.map((item) => {
       if (item.id !== currentView.id) {
@@ -173,12 +175,12 @@ export default class Basic extends Component<any, any> {
       }
       return {
         ...item,
-        ...props,
+        state: props,
       };
     });
     const updatedView = {
       ...currentView,
-      ...props,
+      state: props,
     };
     await this.setState({
       dataViews,

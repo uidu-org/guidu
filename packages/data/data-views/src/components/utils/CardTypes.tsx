@@ -31,26 +31,20 @@ export default function CardTypes({ columnDefs, tableInstance }) {
           ...state.hiddenColumns.filter((c) => c !== 'avatar'),
           'cover',
         ]);
-        // gridColumnApi.setColumnsVisible(['cover'], false);
-        // gridColumnApi.setColumnsVisible(['avatar'], true);
         break;
       case 'with-cover':
         setHiddenColumns([
           ...state.hiddenColumns.filter((c) => c !== 'cover'),
           'avatar',
         ]);
-        // gridColumnApi.setColumnsVisible(['avatar'], false);
-        // gridColumnApi.setColumnsVisible(['cover'], true);
         break;
       case 'with-avatar-and-cover':
         setHiddenColumns([
           ...state.hiddenColumns.filter((c) => ['avatar', 'cover'].includes(c)),
         ]);
-        // gridColumnApi.setColumnsVisible(['avatar', 'cover'], true);
         break;
       default:
         setHiddenColumns([...state.hiddenColumns, 'avatar', 'cover']);
-        // gridColumnApi.setColumnsVisible(['cover', 'avatar'], false);
         break;
     }
   };

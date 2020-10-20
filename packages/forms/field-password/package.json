@@ -16,7 +16,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@loadable/component": "5.13.1",
+    "@loadable/component": "^5.14.0",
     "@types/zxcvbn": "^4.4.0",
     "@uidu/analytics": "^0.3.4",
     "@uidu/field-base": "^0.3.6",

@@ -17,10 +17,8 @@ export default function GalleryItem({
     cover,
     avatar,
     sorters,
-    filterModel,
     tableInstance,
   } = data;
-  console.log(item);
 
   if (!item) {
     return null;
@@ -64,7 +62,6 @@ export default function GalleryItem({
           cover={cover}
           avatar={avatar}
           sorters={sorters}
-          filterModel={filterModel}
         />
       </div>
     </div>
