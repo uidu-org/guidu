@@ -1,5 +1,13 @@
 # @uidu/message
 
+## 0.2.9
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+- Updated dependencies [cf70c9b]
+  - @uidu/message-form@0.2.7
+
 ## 0.2.8
 
 ### Patch Changes

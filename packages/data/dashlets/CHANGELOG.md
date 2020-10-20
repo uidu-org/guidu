@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.11
+
+### Patch Changes
+
+- cf70c9b: Bump dependencies
+
 ## 0.6.10
 
 ### Patch Changes
