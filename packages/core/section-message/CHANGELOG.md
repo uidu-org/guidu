@@ -1,5 +1,14 @@
 # @uidu/section-message
 
+## 0.3.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/button@0.3.8
+  - @uidu/theme@0.4.7
+
 ## 0.3.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.0.10
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/spinner@0.3.7
+
 ## 1.0.9
 
 ### Patch Changes

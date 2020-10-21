@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 0.2.22
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/slider@1.5.7
+  - @uidu/form@0.3.6
+
 ## 0.2.21
 
 ### Patch Changes

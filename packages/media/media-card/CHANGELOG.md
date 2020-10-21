@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.3.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/button@0.3.8
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/spinner@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/media-core@0.3.6
+
 ## 0.3.7
 
 ### Patch Changes

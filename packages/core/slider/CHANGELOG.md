@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 1.5.6
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.5.10
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/spinner@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-base@0.3.7
+  - @uidu/form@0.3.6
+
 ## 0.5.9
 
 ### Patch Changes

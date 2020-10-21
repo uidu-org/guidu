@@ -1,5 +1,30 @@
 # Change Log
 
+## 0.2.11
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/docs@0.2.12
+  - @uidu/badge@0.3.7
+  - @uidu/button@0.3.8
+  - @uidu/code@0.3.9
+  - @uidu/drawer@0.4.9
+  - @uidu/lozenge@0.3.7
+  - @uidu/modal-dialog@0.3.7
+  - @uidu/spinner@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/list@0.1.38
+  - @uidu/table@0.3.5
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+  - @uidu/select@0.5.10
+  - @uidu/navigation@0.4.7
+  - @uidu/shell@1.0.10
+
 ## 0.2.10
 
 ### Patch Changes

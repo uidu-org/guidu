@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.1.19
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.1.18
 
 ### Patch Changes

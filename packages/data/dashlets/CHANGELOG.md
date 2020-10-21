@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.6.12
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/spinner@0.3.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/dashlet-controls@0.2.13
+
 ## 0.6.11
 
 ### Patch Changes

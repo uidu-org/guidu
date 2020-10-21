@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 0.3.5
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/data-fields@0.3.1
+  - @uidu/checkbox@0.2.10
+
 ## 0.3.4
 
 ### Patch Changes

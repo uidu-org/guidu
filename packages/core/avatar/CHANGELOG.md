@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.5.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+
 ## 0.5.6
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/status
 
+## 0.2.9
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/lozenge@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/field-text@0.3.7
+
 ## 0.2.8
 
 ### Patch Changes

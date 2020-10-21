@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.3.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/item@0.3.9
+  - @uidu/layer@0.3.7
+  - @uidu/spinner@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+
 ## 0.3.7
 
 ### Patch Changes

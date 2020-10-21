@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.3.9
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/theme@0.4.7
+
 ## 0.3.8
 
 ### Patch Changes

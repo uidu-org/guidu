@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.4.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/inline-dialog@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/shell@1.0.10
+
 ## 0.4.6
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/comment
 
+## 0.1.23
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/spinner@0.3.7
+  - @uidu/field-mentions@0.3.7
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+  - @uidu/message-renderer@0.2.9
+
 ## 0.1.22
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.2.11
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/inline-dialog@0.3.7
+  - @uidu/field-base@0.3.7
+
 ## 0.2.10
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.4.9
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/docs@0.2.12
+  - @uidu/analytics@0.3.5
+  - @uidu/blanket@0.3.6
+  - @uidu/item@0.3.9
+  - @uidu/theme@0.4.7
+
 ## 0.4.8
 
 ### Patch Changes

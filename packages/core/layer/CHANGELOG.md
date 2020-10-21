@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.3.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.3.6
 
 ### Patch Changes

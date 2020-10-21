@@ -1,5 +1,25 @@
 # @uidu/data-controls
 
+## 0.5.10
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/drawer@0.4.9
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/inline-dialog@0.3.7
+  - @uidu/item@0.3.9
+  - @uidu/spinner@0.3.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/data-fields@0.3.1
+  - @uidu/data-views@0.4.7
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+  - @uidu/select@0.5.10
+  - @uidu/shell@1.0.10
+
 ## 0.5.9
 
 ### Patch Changes

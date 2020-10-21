@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.4.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/item@0.3.9
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+
 ## 2.4.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/docs@0.2.12
+
 ## 0.3.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.25
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.1.24
 
 ### Patch Changes

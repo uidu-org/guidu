@@ -1,5 +1,20 @@
 # @uidu/tax-reminder
 
+## 0.1.30
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-date@0.2.14
+  - @uidu/field-text@0.3.7
+  - @uidu/field-textarea@0.2.10
+  - @uidu/form@0.3.6
+  - @uidu/select@0.5.10
+  - @uidu/contact@0.1.22
+  - @uidu/widgets@0.3.6
+
 ## 0.1.29
 
 ### Patch Changes

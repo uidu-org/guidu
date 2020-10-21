@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.38
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/data-fields@0.3.1
+
 ## 0.1.39
 
 ### Patch Changes

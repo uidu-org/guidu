@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.3.11
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/button@0.3.8
+  - @uidu/spinner@0.3.7
+  - @uidu/field-base@0.3.7
+  - @uidu/media-core@0.3.6
+
 ## 0.3.10
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.3.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/slider@1.5.7
+  - @uidu/spinner@0.3.7
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-password@0.3.9
+  - @uidu/field-phone@0.1.9
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+  - @uidu/shell@1.0.10
+
 ## 0.3.7
 
 ### Patch Changes

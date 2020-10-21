@@ -1,5 +1,26 @@
 # @uidu/renderer
 
+## 0.2.9
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/code@0.3.9
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/adf-utils@0.5.6
+  - @uidu/editor-common@0.3.11
+  - @uidu/editor-json-transformer@0.2.8
+  - @uidu/analytics-listeners@0.2.6
+  - @uidu/analytics-namespaced-context@0.2.6
+  - @uidu/mentions@0.1.28
+  - @uidu/status@0.2.9
+  - @uidu/task-decision@0.2.8
+  - @uidu/media-card@0.3.8
+  - @uidu/media-filmstrip@0.2.8
+
 ## 0.2.8
 
 ### Patch Changes

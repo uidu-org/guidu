@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 0.2.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/editor-common@0.3.11
+
 ## 0.2.7
 
 ### Patch Changes

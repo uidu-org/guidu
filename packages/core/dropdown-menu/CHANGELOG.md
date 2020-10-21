@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.3.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/button@0.3.8
+  - @uidu/droplist@0.3.8
+  - @uidu/item@0.3.9
+  - @uidu/theme@0.4.7
+
 ## 0.3.6
 
 ### Patch Changes

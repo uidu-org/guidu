@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.2.18
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/spinner@0.3.7
+  - @uidu/field-base@0.3.7
+
 ## 0.2.17
 
 ### Patch Changes

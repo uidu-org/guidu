@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.2.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/shell@1.0.10
+
 ## 0.2.6
 
 ### Patch Changes

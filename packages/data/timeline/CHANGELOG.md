@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.1.11
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.1.10
 
 ### Patch Changes

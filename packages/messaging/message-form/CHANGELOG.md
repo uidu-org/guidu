@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.2.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/spinner@0.3.7
+  - @uidu/field-mentions@0.3.7
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+  - @uidu/media-filmstrip@0.2.8
+  - @uidu/message@0.2.10
+
 ## 0.2.7
 
 ### Patch Changes

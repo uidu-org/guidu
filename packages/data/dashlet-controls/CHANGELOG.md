@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.2.13
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/avatar-group@2.4.7
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/field-date-range@0.2.15
+  - @uidu/form@0.3.6
+
 ## 0.2.12
 
 ### Patch Changes

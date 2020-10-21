@@ -1,5 +1,15 @@
 # @uidu/contact
 
+## 0.1.22
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+
 ## 0.1.21
 
 ### Patch Changes

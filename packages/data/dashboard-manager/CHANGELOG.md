@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.9
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/dashboard-controls@0.3.14
+  - @uidu/dashlets@0.6.12
+
 ## 0.7.8
 
 ### Patch Changes

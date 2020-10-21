@@ -1,5 +1,17 @@
 # @uidu/editor-common
 
+## 0.3.11
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/theme@0.4.7
+  - @uidu/analytics-namespaced-context@0.2.6
+  - @uidu/emoji@0.2.6
+  - @uidu/mentions@0.1.28
+
 ## 0.3.10
 
 ### Patch Changes

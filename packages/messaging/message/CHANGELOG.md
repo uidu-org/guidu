@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.2.10
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/avatar@0.5.7
+  - @uidu/drawer@0.4.9
+  - @uidu/dropdown-menu@0.3.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/media-card@0.3.8
+  - @uidu/media-core@0.3.6
+  - @uidu/media-viewer@0.2.9
+  - @uidu/message-form@0.2.8
+  - @uidu/message-renderer@0.2.9
+
 ## 0.2.9
 
 ### Patch Changes

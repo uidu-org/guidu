@@ -1,5 +1,38 @@
 # @uidu/editor-core
 
+## 0.6.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/avatar@0.5.7
+  - @uidu/avatar-group@2.4.7
+  - @uidu/button@0.3.8
+  - @uidu/droplist@0.3.8
+  - @uidu/item@0.3.9
+  - @uidu/modal-dialog@0.3.7
+  - @uidu/spinner@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/tooltip@0.3.8
+  - @uidu/adf-utils@0.5.6
+  - @uidu/editor-common@0.3.11
+  - @uidu/editor-json-transformer@0.2.8
+  - @uidu/editor-markdown-transformer@0.2.8
+  - @uidu/analytics-listeners@0.2.6
+  - @uidu/analytics-namespaced-context@0.2.6
+  - @uidu/date@0.2.8
+  - @uidu/emoji@0.2.6
+  - @uidu/mentions@0.1.28
+  - @uidu/status@0.2.9
+  - @uidu/task-decision@0.2.8
+  - @uidu/select@0.5.10
+  - @uidu/media-card@0.3.8
+  - @uidu/media-core@0.3.6
+  - @uidu/media-filmstrip@0.2.8
+  - @uidu/media-picker@0.3.7
+
 ## 0.6.7
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/data-fields
 
+## 0.3.1
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/item@0.3.9
+  - @uidu/field-color-picker@0.2.11
+  - @uidu/field-date@0.2.14
+  - @uidu/field-downshift@0.4.7
+  - @uidu/field-number@0.3.7
+  - @uidu/field-text@0.3.7
+  - @uidu/field-toggle@0.3.7
+  - @uidu/form@0.3.6
+  - @uidu/select@0.5.10
+
 ## 0.3.3
 
 ### Patch Changes

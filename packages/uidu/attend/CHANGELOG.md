@@ -1,5 +1,22 @@
 # @uidu/attend
 
+## 0.3.5
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/spinner@0.3.7
+  - @uidu/payments@0.2.22
+  - @uidu/field-counter@0.2.12
+  - @uidu/field-text@0.3.7
+  - @uidu/field-textarea@0.2.10
+  - @uidu/form@0.3.6
+  - @uidu/shell@1.0.10
+  - @uidu/stepper@0.2.9
+  - @uidu/contact@0.1.22
+  - @uidu/widgets@0.3.6
+
 ## 0.3.4
 
 ### Patch Changes

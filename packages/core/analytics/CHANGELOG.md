@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.3.5
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.3.4
 
 ### Patch Changes

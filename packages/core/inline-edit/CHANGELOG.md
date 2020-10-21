@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.1.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/button@0.3.8
+  - @uidu/inline-dialog@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/field@0.2.10
+  - @uidu/field-text@0.3.7
+  - @uidu/form@0.3.6
+
 ## 0.1.6
 
 ### Patch Changes

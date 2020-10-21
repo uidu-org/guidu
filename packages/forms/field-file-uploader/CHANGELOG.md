@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.3.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/field-base@0.3.7
+
 ## 0.3.7
 
 ### Patch Changes

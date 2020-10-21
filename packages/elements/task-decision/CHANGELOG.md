@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.2.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/avatar-group@2.4.7
+  - @uidu/button@0.3.8
+  - @uidu/spinner@0.3.7
+  - @uidu/theme@0.4.7
+  - @uidu/analytics-namespaced-context@0.2.6
+
 ## 0.2.7
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.5.16
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/spinner@0.3.7
+  - @uidu/board@0.2.28
+  - @uidu/calendar@0.1.39
+  - @uidu/data-controls@0.5.10
+  - @uidu/data-fields@0.3.1
+  - @uidu/data-views@0.4.7
+  - @uidu/gallery@0.1.61
+  - @uidu/list@0.1.38
+  - @uidu/table@0.3.5
+  - @uidu/shell@1.0.10
+
 ## 0.5.15
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.2.10
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/checkbox@0.2.10
+  - @uidu/field-number@0.3.7
+  - @uidu/field-text@0.3.7
+  - @uidu/field-textarea@0.2.10
+  - @uidu/select@0.5.10
+
 ## 0.2.9
 
 ### Patch Changes

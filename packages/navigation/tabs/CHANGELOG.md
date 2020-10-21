@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.1.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/docs@0.2.12
+  - @uidu/analytics@0.3.5
+  - @uidu/theme@0.4.7
+
 ## 0.1.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/upvote
 
+## 0.1.16
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.1.15
 
 ### Patch Changes

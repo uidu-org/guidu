@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.6
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.3.5
 
 ### Patch Changes

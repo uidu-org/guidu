@@ -1,5 +1,16 @@
 # @uidu/field-downshift
 
+## 0.4.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/droplist@0.3.8
+  - @uidu/item@0.3.9
+  - @uidu/field-base@0.3.7
+  - @uidu/field-text@0.3.7
+
 ## 0.4.6
 
 ### Patch Changes

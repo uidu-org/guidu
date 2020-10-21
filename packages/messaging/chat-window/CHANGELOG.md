@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.2.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/message@0.2.10
+  - @uidu/message-form@0.2.8
+  - @uidu/message-renderer@0.2.9
+
 ## 0.2.7
 
 ### Patch Changes

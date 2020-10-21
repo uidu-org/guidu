@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.2.6
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/analytics@0.3.5
+  - @uidu/emoji@0.2.6
+  - @uidu/mentions@0.1.28
+  - @uidu/task-decision@0.2.8
+
 ## 0.2.5
 
 ### Patch Changes

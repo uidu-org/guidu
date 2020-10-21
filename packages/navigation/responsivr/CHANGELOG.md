@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.2.7
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.2.6
 
 ### Patch Changes

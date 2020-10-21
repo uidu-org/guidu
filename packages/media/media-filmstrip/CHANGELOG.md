@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.2.8
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/theme@0.4.7
+  - @uidu/media-card@0.3.8
+  - @uidu/media-core@0.3.6
+  - @uidu/media-viewer@0.2.9
+
 ## 0.2.7
 
 ### Patch Changes

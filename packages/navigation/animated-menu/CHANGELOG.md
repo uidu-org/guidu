@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.28
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+
 ## 0.1.27
 
 ### Patch Changes

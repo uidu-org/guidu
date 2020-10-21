@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.1.6
+
+### Patch Changes
+
+- 67d073d: Bump react version to 17
+- Updated dependencies [67d073d]
+  - @uidu/theme@0.4.7
+  - @uidu/shell@1.0.10
+
 ## 0.1.5
 
 ### Patch Changes
