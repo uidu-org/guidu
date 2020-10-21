@@ -21,12 +21,12 @@
     "@uidu/docs": "^0.2.11",
     "@uidu/field-base": "^0.3.6",
     "@uidu/section-message": "^0.3.6",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "styled-components": "^5.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.3",
+    "react": "^17.0.0",
     "styled-components": "^5.0.0"
   },
   "publishConfig": {

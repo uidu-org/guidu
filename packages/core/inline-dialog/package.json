@@ -23,13 +23,13 @@
     "@uidu/docs": "^0.2.11",
     "@uidu/form": "^0.3.5",
     "@uidu/select": "^0.5.9",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.3",
+    "react": "^17.0.0",
     "styled-components": "^5.0.0"
   },
   "uidu:src": "src/index.ts"

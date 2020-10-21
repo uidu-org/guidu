@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.11.2",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-media": "^1.9.2",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.1"

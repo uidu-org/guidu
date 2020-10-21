@@ -14,7 +14,7 @@
     "@uidu/field-base": "^0.3.5",
     "autosize": "^4.0.2",
     "formsy-react": "^2.1.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -21,11 +21,11 @@
     "@uidu/editor-common": "^0.3.10",
     "@uidu/editor-core": "^0.6.6",
     "prosemirror-view": "^1.9.10",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "styled-components": "^5.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.3"
+    "react": "^17.0.0"
   },
   "uidu:src": "src/index.ts"
 }

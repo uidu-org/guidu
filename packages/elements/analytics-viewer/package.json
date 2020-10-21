@@ -18,10 +18,10 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "react": "^16.13.1"
+    "react": "^17.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8.3"
+    "react": "^17.0.0"
   },
   "uidu:src": "src/index.ts"
 }

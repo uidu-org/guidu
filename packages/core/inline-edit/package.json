@@ -28,11 +28,11 @@
     "@uidu/docs": "^0.2.11",
     "@uidu/field-textarea": "^0.2.9",
     "@uidu/select": "^0.5.9",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "styled-components": "^5.2.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0",
+    "react": "^17.0.0",
     "styled-components": "^5.1.1"
   },
   "uidu:src": "src/index.ts"

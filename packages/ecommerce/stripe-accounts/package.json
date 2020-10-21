@@ -20,7 +20,7 @@
     "@uidu/spinner": "^0.3.4",
     "@uidu/stepper": "^0.2.6",
     "moment": "^2.27.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-intl": "^5.8.0",
     "tslib": "^2.0.1"
   },

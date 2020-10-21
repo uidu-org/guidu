@@ -19,7 +19,7 @@
     "classnames": "^2.2.6",
     "downshift": "^6.0.0",
     "formsy-react": "^2.1.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-feather": "^2.0.8",
     "tslib": "^2.0.1"
   },

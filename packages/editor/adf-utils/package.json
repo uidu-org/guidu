@@ -20,7 +20,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.10",
     "@uidu/json-schema-generator": "^0.1.15",
-    "react": "^16.13.1"
+    "react": "^17.0.0"
   },
   "maintainers": [
     "Stanislav S"

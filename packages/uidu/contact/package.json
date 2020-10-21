@@ -14,7 +14,7 @@
     "@uidu/checkbox": "^0.2.8",
     "@uidu/field-text": "^0.3.4",
     "@uidu/form": "^0.3.4",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-intl": "^5.8.0",
     "react-recaptcha": "^2.3.10",
     "tslib": "^2.0.1"

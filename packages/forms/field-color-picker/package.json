@@ -14,7 +14,7 @@
     "@uidu/field-base": "^0.3.5",
     "@uidu/inline-dialog": "^0.3.5",
     "formsy-react": "^2.1.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-color": "^2.17.3",
     "tslib": "^2.0.1"
   },

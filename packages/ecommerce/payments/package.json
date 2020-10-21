@@ -16,7 +16,7 @@
     "@uidu/form": "^0.3.4",
     "@uidu/slider": "^1.4.4",
     "axios": "^0.20.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-feather": "^2.0.8",
     "react-intl": "^5.8.0",
     "tslib": "^2.0.1",

@@ -266,7 +266,7 @@ const Table = ({
           verticalPadding={rowHeight * 2 - 8 - 16}
         >
           {rowVirtualizer.virtualItems.map(({ size, start, index }) => (
-            <Row size={size} start={start} index={index} />
+            <Row key={index} size={size} start={start} index={index} />
           ))}
         </Body>
         <Footer footerGroups={footerGroups} rowHeight={rowHeight} />

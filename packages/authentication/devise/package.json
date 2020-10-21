@@ -21,7 +21,7 @@
     "@uidu/slider": "^1.5.6",
     "@uidu/spinner": "^0.3.6",
     "query-string": "^6.13.1",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-animate-height": "^2.0.23",
     "react-facebook": "^8.0.4",
     "react-feather": "^2.0.8",

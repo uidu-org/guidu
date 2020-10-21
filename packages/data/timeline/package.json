@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/timeline.cjs.js",
   "dependencies": {
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -24,7 +24,7 @@
     "@uppy/xhr-upload": "^1.0.1",
     "classnames": "^2.2.6",
     "formsy-react": "^2.1.0",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-avatar-editor": "^12.0.0-beta.0",
     "react-dropzone": "^11.0.1",
     "react-feather": "^2.0.8",

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.3.3",
+  "version": "0.3.0",
   "private": false,
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-fields",
@@ -25,7 +25,7 @@
     "@uidu/item": "^0.3.8",
     "@uidu/select": "^0.5.9",
     "numeral": "^2.0.6",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.8",
     "react-intl": "^5.8.0",

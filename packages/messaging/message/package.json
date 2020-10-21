@@ -27,7 +27,7 @@
     "emoji-regex": "^9.0.0",
     "moment": "^2.27.0",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
+    "react": "^17.0.0",
     "react-feather": "^2.0.8",
     "react-native": "^0.63.2",
     "react-spring": "^8.0.20",
