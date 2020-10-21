@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.3.4
+
+### Patch Changes
+
+- b1b8102: Data controls more flexible now
+
 ## 0.3.3
 
 ### Patch Changes

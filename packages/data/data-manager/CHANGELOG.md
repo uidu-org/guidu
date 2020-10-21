@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.5.15
+
+### Patch Changes
+
+- b1b8102: Data controls more flexible now
+- Updated dependencies [b1b8102]
+  - @uidu/data-controls@0.5.9
+  - @uidu/table@0.3.4
+
 ## 0.5.14
 
 ### Patch Changes

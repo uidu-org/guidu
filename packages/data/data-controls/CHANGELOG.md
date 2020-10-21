@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.5.9
+
+### Patch Changes
+
+- b1b8102: Data controls more flexible now
+
 ## 0.5.8
 
 ### Patch Changes
