@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.39
+
+### Patch Changes
+
+- 5c90166: Style fixes
+- Updated dependencies [5c90166]
+  - @uidu/data-fields@0.3.2
+
 ## 0.1.38
 
 ### Patch Changes
