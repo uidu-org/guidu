@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.9
+
+### Patch Changes
+
+- 911bb0b: Better sizing for global navigation
+
 ## 0.1.8
 
 ### Patch Changes
