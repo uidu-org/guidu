@@ -30,7 +30,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
   padding-right: 1rem;
   white-space: nowrap;
   height: ${({ height }) => `${height}px`};
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f2f2f3;
@@ -54,7 +54,7 @@ const Th = styled.div<{ height: number }>`
   padding-right: 1rem;
   white-space: nowrap;
   height: ${({ height }) => `${height - 8}px`};
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-bottom: 1px solid #f2f2f3;
   border-right: 1px solid #f2f2f3;
   display: flex;

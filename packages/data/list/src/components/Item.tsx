@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledItem = styled.div`
   transition: all 500ms ease-in-out;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 `;
 
 export default function Item({

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledLinkRecord = styled.span`
   min-width: 18px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   border-radius: 4px;
   padding-left: 0.5rem;
