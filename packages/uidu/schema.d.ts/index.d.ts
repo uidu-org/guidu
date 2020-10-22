@@ -172,7 +172,6 @@ export type AudienceAttributes = {
   color?: Maybe<Scalars['String']>;
   contactId?: Maybe<Scalars['Int']>;
   description?: Maybe<Scalars['String']>;
-  filterModel?: Maybe<Scalars['JSON']>;
   icon?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   organizationId?: Maybe<Scalars['Int']>;
@@ -1055,15 +1054,12 @@ export type DashletAttributes = {
 export type DataView = ActiveRecordTimestamp & Node & {
   createdAt: Scalars['ISO8601DateTime'];
   fields?: Maybe<Array<Scalars['String']>>;
-  filterModel?: Maybe<FilterModel>;
-  groupers?: Maybe<Array<Grouper>>;
   id: Scalars['ID'];
   kind: Scalars['String'];
   model?: Maybe<Scalars['String']>;
   name: Scalars['String'];
   position: Scalars['Int'];
   preferences?: Maybe<DataViewPreferences>;
-  sorters?: Maybe<Array<Sorter>>;
   state?: Maybe<Array<ColumnsState>>;
   updatedAt: Scalars['ISO8601DateTime'];
 };
@@ -1071,14 +1067,11 @@ export type DataView = ActiveRecordTimestamp & Node & {
 /** Attributes for creating or updating a data_view */
 export type DataViewAttributes = {
   fields?: Maybe<Array<Scalars['String']>>;
-  filterModel?: Maybe<FilterModelAttribute>;
-  groupers?: Maybe<Array<GrouperAttribute>>;
   kind?: Maybe<Scalars['String']>;
   model?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['Int']>;
   preferences?: Maybe<DataViewPreferencesAttribute>;
-  sorters?: Maybe<Array<SorterAttribute>>;
   state?: Maybe<Array<ColumnsStateAttribute>>;
 };
 
@@ -1661,18 +1654,6 @@ export type FieldAttributes = {
   preferences?: Maybe<Scalars['JSON']>;
 };
 
-export type FilterModel = {
-  filter: Scalars['String'];
-  filterTo: Scalars['String'];
-  type: Scalars['String'];
-};
-
-export type FilterModelAttribute = {
-  filter?: Maybe<Scalars['String']>;
-  filterTo?: Maybe<Scalars['String']>;
-  type?: Maybe<Scalars['String']>;
-};
-
 export type Folder = ActiveRecordTimestamp & Node & {
   context?: Maybe<Scalars['String']>;
   createdAt: Scalars['ISO8601DateTime'];
@@ -1726,14 +1707,6 @@ export type GraphqlSubscription = Node & {
 
 /** Objects can be applied to */
 export type Group = Contact | DonationCampaign;
-
-export type Grouper = {
-  colId: Scalars['String'];
-};
-
-export type GrouperAttribute = {
-  colId?: Maybe<Scalars['String']>;
-};
 
 
 
@@ -3027,16 +3000,6 @@ export type SkuAttributes = {
   price?: Maybe<Scalars['Int']>;
   productId?: Maybe<Scalars['ID']>;
   stripeAttributes?: Maybe<Scalars['JSON']>;
-};
-
-export type Sorter = {
-  colId: Scalars['String'];
-  sort: Scalars['String'];
-};
-
-export type SorterAttribute = {
-  colId?: Maybe<Scalars['String']>;
-  sort?: Maybe<Scalars['String']>;
 };
 
 export type Story = ActiveRecordTimestamp & Node & WithCover & WithOrganization & WithPost & WithPreferences & {

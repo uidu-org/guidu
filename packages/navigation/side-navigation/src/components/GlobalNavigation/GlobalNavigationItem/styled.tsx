@@ -9,8 +9,8 @@ export const StyledGlobalItemButton = styled.button`
   cursor: pointer;
   display: flex;
   line-height: 1;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   justify-content: center;
   margin-top: 0px;
   text-align: center;
@@ -34,8 +34,8 @@ export default styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   margin: 0px auto;
   background: none;
   border-width: initial;
