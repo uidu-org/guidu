@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.12
+
+### Patch Changes
+
+- 911bb0b: Better sizing for global navigation
+
 ## 0.1.11
 
 ### Patch Changes
