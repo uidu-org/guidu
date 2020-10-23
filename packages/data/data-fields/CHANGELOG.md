@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.3.2
+
+### Patch Changes
+
+- 5c90166: Style fixes
+
 ## 0.3.1
 
 ### Patch Changes
