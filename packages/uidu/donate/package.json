@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.2.24",
+  "version": "0.2.25",
   "private": false,
   "description": "Donate form",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/donate",

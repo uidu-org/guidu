@@ -1,5 +1,11 @@
 # @uidu/tax-reminder
 
+## 0.1.31
+
+### Patch Changes
+
+- c80ea0f: Rename member into contact
+
 ## 0.1.30
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/propose
 
+## 0.1.25
+
+### Patch Changes
+
+- c80ea0f: Rename member into contact
+
 ## 0.1.24
 
 ### Patch Changes
