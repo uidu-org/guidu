@@ -9,7 +9,7 @@ import {
 } from '../example-helpers';
 
 function Basic() {
-  const [currentMember, setCurrentMember] = useState({
+  const [currentContact, setCurrentContact] = useState({
     temporary: true,
     email: 'foo@uidu.org',
     firstName: 'Andrea',
@@ -24,7 +24,7 @@ function Basic() {
       baseUrl="/packages/uidu/donate"
       component={Donate}
       donation={donation}
-      currentMember={currentMember}
+      currentContact={currentContact}
       currentOrganization={{ name: 'Charity Water' }}
       donationCampaign={donationCampaign}
       onCreate={(_donation, token) => console.log(token)}
@@ -32,7 +32,7 @@ function Basic() {
       subscribeToPlan={subscribeToPlan}
       createDonation={async (model) => createDonation(model).then(setDonation)}
       updateDonation={updateDonation}
-      updateCurrentMember={async (model) => setCurrentMember(model)}
+      updateCurrentContact={async (model) => setCurrentContact(model)}
       currency="€"
     />
   );

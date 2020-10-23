@@ -17,7 +17,7 @@ export default class MessageList extends Component {
       fetchMessages,
       messageable,
       kind,
-      currentMember,
+      currentContact,
       conversation,
     } = this.props;
     if (!messages || messages.isFetching) {
@@ -55,7 +55,7 @@ export default class MessageList extends Component {
           className="h-100 px-4 pt-0 pb-4"
           flipped
         >
-          {groupByDay(messages.messages, null).map(messageGroup => {
+          {groupByDay(messages.messages, null).map((messageGroup) => {
             let unreadMessages = 0;
             const todayMessages = messageGroup.values;
             return (
@@ -117,8 +117,8 @@ export default class MessageList extends Component {
                       message={message}
                       index={index}
                       isSelf={
-                        currentMember &&
-                        message.messager.id === currentMember.id
+                        currentContact &&
+                        message.messager.id === currentContact.id
                       }
                       isNewMessager={isNewMessager}
                     />,

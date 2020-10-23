@@ -5,7 +5,11 @@ import { Form, FormFooter, FormSubmit } from '@uidu/form';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function Preferences({ handleSubmit, currentMember, donation }) {
+export default function Preferences({
+  handleSubmit,
+  currentContact,
+  donation,
+}) {
   const [isAnonymous, setIsAnonymous] = useState(false);
 
   const anonymize = (e) => {
@@ -73,7 +77,7 @@ export default function Preferences({ handleSubmit, currentMember, donation }) {
         <FieldText
           name="preferences[displayName]"
           layout="elementOnly"
-          value={isAnonymous ? '' : currentMember && currentMember.name}
+          value={isAnonymous ? '' : currentContact && currentContact.name}
           disabled={isAnonymous}
         />
       </div>

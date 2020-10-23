@@ -22,7 +22,7 @@ export default class ChatWindow extends PureComponent {
     const {
       conversation,
       fetchMessages,
-      currentMember,
+      currentContact,
       currentOrganization,
       createConversation,
     } = this.props;
@@ -30,10 +30,10 @@ export default class ChatWindow extends PureComponent {
       console.log('we have conversation');
       return fetchMessages(conversation, 'conversation');
     }
-    if (currentMember) {
-      console.log('we have currentMember');
+    if (currentContact) {
+      console.log('we have currentContact');
       return createConversation({
-        sender_id: currentMember.id,
+        sender_id: currentContact.id,
         sender_type: 'Contact',
         receiver_id: currentOrganization.id,
         receiver_type: 'Organization',
@@ -51,7 +51,7 @@ export default class ChatWindow extends PureComponent {
     const {
       createMessage,
       fetchMessages,
-      setCurrentMember,
+      setCurrentContact,
       currentUser,
       currentOrganization,
       createConversation,
@@ -59,7 +59,7 @@ export default class ChatWindow extends PureComponent {
     return apiCall('post', '/dashboard/apps/contacts/contacts', model).then(
       (response) => {
         const { contact } = response.data;
-        setCurrentMember(contact);
+        setCurrentContact(contact);
         return createConversation({
           sender_id: contact.id,
           sender_type: 'Contact',

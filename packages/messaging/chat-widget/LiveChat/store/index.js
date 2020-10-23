@@ -1,4 +1,4 @@
-import currentMember from 'ducks/organization/currentMember';
+import currentContact from 'ducks/organization/currentContact';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
@@ -8,7 +8,7 @@ const loggerMiddleware = createLogger();
 
 const Reducers = combineReducers({
   conversation,
-  currentMember,
+  currentContact,
 });
 
 export default createStore(

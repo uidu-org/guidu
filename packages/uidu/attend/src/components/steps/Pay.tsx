@@ -6,13 +6,13 @@ export default function Pay({
   event,
   order = null,
   currentOrganization,
-  currentMember = null,
+  currentContact = null,
   paymentIntent,
 }) {
   return (
     <Payments
       stripe={stripe}
-      stripeBillingDetails={currentMember?.stripeBillingDetails}
+      stripeBillingDetails={currentContact?.stripeBillingDetails}
       scope="events"
       amount={order.stripeAmount}
       clientSecret={paymentIntent?.client_secret}
@@ -36,17 +36,17 @@ export default function Pay({
               </dd>
             </dl>
           </div>
-          {currentMember && (
+          {currentContact && (
             <div className="card card-body mb-3 p-3">
               <dl className="mb-0">
                 <dt>Contatto</dt>
                 <dd className="mb-0 text-muted">
                   <address className="mb-0">
                     <span className="text-medium">
-                      Stai donando come {currentMember.name}
+                      Stai donando come {currentContact.name}
                     </span>
                     <br />
-                    {currentMember.email}
+                    {currentContact.email}
                   </address>
                 </dd>
               </dl>

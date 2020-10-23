@@ -32,7 +32,7 @@ function Basic({}) {
   const match = useRouteMatch();
   const { id } = useParams();
   console.log(id);
-  const [currentMember, setCurrentMember] = useState({
+  const [currentContact, setCurrentContact] = useState({
     temporary: true,
     email: 'foo@uidu.org',
     firstName: 'Andrea',
@@ -47,13 +47,13 @@ function Basic({}) {
       stripe={stripe}
       baseUrl={match.url}
       donation={donation}
-      currentMember={currentMember}
+      currentContact={currentContact}
       currentOrganization={{ name: 'Charity Water' }}
       donationCampaign={donationCampaign}
       onCreate={(_donation, token) => console.log(token)}
       providers={[{ id: 'card', name: 'Credit Card' }]}
       updateDonation={updateDonation}
-      updateCurrentMember={async (model) => setCurrentMember(model)}
+      updateCurrentContact={async (model) => setCurrentContact(model)}
       currency="€"
     />
   );

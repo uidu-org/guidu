@@ -8,8 +8,8 @@ import Reminder from './steps/Reminder';
 
 export default function TaxReminder({
   reminder,
-  currentMember,
-  updateCurrentMember,
+  currentContact,
+  updateCurrentContact,
   baseUrl,
   embedded,
   ...rest
@@ -54,9 +54,9 @@ export default function TaxReminder({
         <Contact
           {...rest}
           scope="tax-returns"
-          contact={currentMember}
+          contact={currentContact}
           handleSubmit={async (model) => {
-            return updateCurrentMember(model).then(() =>
+            return updateCurrentContact(model).then(() =>
               slider.current.slideNext(),
             );
           }}

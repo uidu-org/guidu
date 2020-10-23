@@ -14,8 +14,8 @@ export default function Attend({
   attendance,
   createOrder,
   createAttendance,
-  updateCurrentMember,
-  currentMember,
+  updateCurrentContact,
+  currentContact,
   currentOrganization,
   event,
   baseUrl,
@@ -77,9 +77,9 @@ export default function Attend({
       <Contact
         {...rest}
         scope="events"
-        contact={currentMember}
+        contact={currentContact}
         handleSubmit={async (model) => {
-          return updateCurrentMember(model).then(() =>
+          return updateCurrentContact(model).then(() =>
             setTimeout(() => slider.current.slideNext(), 500),
           );
         }}
@@ -106,7 +106,7 @@ export default function Attend({
       <Attendances
         {...rest}
         order={order}
-        currentMember={currentMember}
+        currentContact={currentContact}
         createAttendance={createAttendance}
         onSave={() => setTimeout(() => slider.current.slideNext(), 500)}
       />

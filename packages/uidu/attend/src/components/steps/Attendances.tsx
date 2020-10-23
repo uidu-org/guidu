@@ -5,7 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import Attendance from '../Attendance';
 
 export default function Attendances({
-  currentMember,
+  currentContact,
   order,
   createAttendance,
   onSave,

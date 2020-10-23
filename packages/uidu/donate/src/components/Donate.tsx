@@ -13,12 +13,12 @@ import Subscribe from './steps/Subscribe';
 export default function Donate({
   sliderOptions,
   donation,
-  currentMember,
+  currentContact,
   providers,
   baseUrl = '/',
   createDonation,
   updateDonation,
-  updateCurrentMember,
+  updateCurrentContact,
   embedded,
   ...rest
 }: DonateProps) {
@@ -70,7 +70,7 @@ export default function Donate({
     component: (
       <Preferences
         {...rest}
-        currentMember={currentMember}
+        currentContact={currentContact}
         donation={donation}
         handleSubmit={async (model) =>
           updateDonation(model).then(() => slider.current.slideNext())
@@ -95,9 +95,9 @@ export default function Donate({
       <Contact
         {...rest}
         scope="donations"
-        contact={currentMember}
+        contact={currentContact}
         handleSubmit={async (model) => {
-          return updateCurrentMember(model).then(() =>
+          return updateCurrentContact(model).then(() =>
             slider.current.slideNext(),
           );
         }}

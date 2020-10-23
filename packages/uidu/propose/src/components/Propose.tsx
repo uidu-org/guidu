@@ -22,7 +22,7 @@ export default class TaxReminder extends Component<any, any> {
     };
   }
 
-  createDonation = token => {
+  createDonation = (token) => {
     const { donationCampaign, onCreate } = this.props;
     const { donation } = this.state;
     console.log(token);
@@ -57,7 +57,7 @@ export default class TaxReminder extends Component<any, any> {
   };
 
   render() {
-    const { currentMember } = this.props;
+    const { currentContact } = this.props;
     const { proposal } = this.state;
 
     const slides = [
@@ -77,7 +77,7 @@ export default class TaxReminder extends Component<any, any> {
           <Proposal
             {...this.props}
             submitted
-            onSave={newDonation => {
+            onSave={(newDonation) => {
               this.setState(
                 {
                   ...newDonation,
@@ -96,7 +96,7 @@ export default class TaxReminder extends Component<any, any> {
               <a
                 href="#"
                 className="navbar-brand d-flex align-items-center"
-                onClick={e => {
+                onClick={(e) => {
                   window.alert('esci');
                 }}
               >
@@ -173,7 +173,7 @@ export default class TaxReminder extends Component<any, any> {
                   {...this.props}
                   // submitted={loadingSection !== 'contact'}
                   proposal={proposal}
-                  onSave={newContact => {
+                  onSave={(newContact) => {
                     this.setState({
                       contact: newContact,
                     });
@@ -187,7 +187,11 @@ export default class TaxReminder extends Component<any, any> {
     ];
 
     return (
-      <Shell slides={slides} currentMember={currentMember} ref={this.slider} />
+      <Shell
+        slides={slides}
+        currentContact={currentContact}
+        ref={this.slider}
+      />
     );
   }
 }

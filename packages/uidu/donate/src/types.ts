@@ -24,13 +24,13 @@ export type DonateProps = Pick<ShellProps, 'sliderOptions'> & {
   donation?: Partial<Donation>;
   donationCampaign?: Partial<DonationCampaign>;
   onCreate: (donation, token) => void;
-  currentMember?: any;
+  currentContact?: any;
   currentOrganization: any;
   providers: Array<PaymentProviderTypes>;
   createPaymentIntent: (model: any) => Promise<any>;
   createDonation: (model: any) => Promise<Partial<Donation>>;
   updateDonation: (model: any) => Promise<Partial<Donation>>;
-  updateCurrentMember: (model: any) => Promise<Partial<Contact>>;
+  updateCurrentContact: (model: any) => Promise<Partial<Contact>>;
   subscribeToPlan: (
     donation: Partial<Donation>,
     model: any,

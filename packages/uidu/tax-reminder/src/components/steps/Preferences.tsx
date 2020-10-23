@@ -13,7 +13,7 @@ export default class DonationPreferences extends Component<any, any> {
     };
   }
 
-  anonymize = e => {
+  anonymize = (e) => {
     e.preventDefault();
     const { anonymous } = this.state;
     this.setState({
@@ -21,13 +21,13 @@ export default class DonationPreferences extends Component<any, any> {
     });
   };
 
-  handleSubmit = async model => {
+  handleSubmit = async (model) => {
     const { donation } = this.props;
     // return apiCall('patch', donation.path, model);
   };
 
   render() {
-    const { currentMember } = this.props;
+    const { currentContact } = this.props;
     const { anonymous } = this.state;
     return (
       <Form
@@ -67,7 +67,7 @@ export default class DonationPreferences extends Component<any, any> {
             layout="elementOnly"
             name="donation[preferences][display_name]"
             id="donation-display-name"
-            value={anonymous ? '' : currentMember && currentMember.name}
+            value={anonymous ? '' : currentContact && currentContact.name}
             help={'activerecord.hints.donation.preferences.display_name'}
             disabled={anonymous}
           />
