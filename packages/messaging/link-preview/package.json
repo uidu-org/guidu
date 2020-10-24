@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "axios": "^0.20.0",
+    "axios": "^0.21.0",
     "get-urls": "^10.0.0",
     "nanoclamp": "^1.2.9",
     "react": "^17.0.0",

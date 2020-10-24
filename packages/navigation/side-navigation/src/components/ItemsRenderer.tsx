@@ -71,6 +71,7 @@ const NavigationGroup = ({
   after,
   withPadding,
   withMargin,
+  className,
   ...props
 }) =>
   items.length ? (
@@ -81,6 +82,7 @@ const NavigationGroup = ({
       separator={separator}
       withPadding={withPadding}
       withMargin={withMargin}
+      className={className}
     >
       <ItemsRenderer items={items} {...props} />
     </NavigationGroupComponent>

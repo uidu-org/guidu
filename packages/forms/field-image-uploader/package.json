@@ -34,7 +34,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/form": "^0.3.6",
-    "axios": "^0.20.0"
+    "axios": "^0.21.0"
   },
   "uidu:src": "src/index.ts"
 }

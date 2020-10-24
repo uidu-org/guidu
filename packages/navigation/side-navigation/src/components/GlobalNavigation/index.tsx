@@ -36,6 +36,7 @@ export default class GlobalNavigation extends PureComponent<
   GlobalNavigationState
 > {
   static defaultProps = {
+    className: null,
     backgroundColor: '#4C566A',
     isOpen: false,
     width: '4rem',
@@ -89,6 +90,7 @@ export default class GlobalNavigation extends PureComponent<
       navigationWidth,
       navigationMinWidth,
       showOverlay,
+      className,
     } = this.props;
     const { isOpen } = this.state;
 
@@ -101,6 +103,7 @@ export default class GlobalNavigation extends PureComponent<
             zIndex: 3,
             ...style,
           }}
+          className={className}
           // onMouseEnter={this.onMouseEnter}
         >
           <ShellHeader className="justify-content-center">

@@ -14,6 +14,7 @@ const Number: Field = {
   name: <FormattedMessage id="field.number.name" defaultMessage="Number" />,
   icon: <FontAwesomeIcon icon={faHashtag} />,
   Filter,
+  cellStyle: { justifyContent: 'flex-end' },
 };
 
 export default Number;
