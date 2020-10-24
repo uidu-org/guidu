@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.2.23
+
+### Patch Changes
+
+- 2e1992e: Bump dependencies, allow for globalNavigation className
+
 ## 0.2.22
 
 ### Patch Changes

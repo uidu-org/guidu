@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.11
+
+### Patch Changes
+
+- 2e1992e: Bump dependencies, allow for globalNavigation className
+
 ## 0.1.10
 
 ### Patch Changes
