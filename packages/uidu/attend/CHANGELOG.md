@@ -1,5 +1,11 @@
 # @uidu/attend
 
+## 0.3.6
+
+### Patch Changes
+
+- c80ea0f: Rename member into contact
+
 ## 0.3.5
 
 ### Patch Changes
