@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.3.3
+
+### Patch Changes
+
+- 2e1992e: Bump dependencies, allow for globalNavigation className
+
 ## 0.3.2
 
 ### Patch Changes

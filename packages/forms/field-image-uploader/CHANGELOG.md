@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.3.12
+
+### Patch Changes
+
+- 2e1992e: Bump dependencies, allow for globalNavigation className
+
 ## 0.3.11
 
 ### Patch Changes

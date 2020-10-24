@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.10
+
+### Patch Changes
+
+- 2e1992e: Bump dependencies, allow for globalNavigation className
+
 ## 0.2.9
 
 ### Patch Changes

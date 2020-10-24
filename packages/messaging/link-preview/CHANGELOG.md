@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.26
+
+### Patch Changes
+
+- 2e1992e: Bump dependencies, allow for globalNavigation className
+
 ## 0.1.25
 
 ### Patch Changes
