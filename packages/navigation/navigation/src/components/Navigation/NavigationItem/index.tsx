@@ -22,7 +22,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   cursor: pointer;
   display: flex;
   border-radius: 0.25rem;
-  color: #4c566a !important;
+  color: var(--body-color) !important;
   transition: background-color linear 300ms;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -33,7 +33,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   &:hover,
   &.active {
     background-color: rgba(76, 86, 106, 0.085);
-    color: #4c566a;
+    color: var(--body-color);
     transition: background-color linear 300ms;
   }
 
@@ -73,9 +73,7 @@ export default function NavigationItem({
           {!!before && (
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
           )}
-          <StyledNavigationText
-            isActionOpen={isActionOpen}
-          >
+          <StyledNavigationText isActionOpen={isActionOpen}>
             {text}
           </StyledNavigationText>
           {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}

@@ -35,7 +35,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
   align-items: center;
   border-bottom: 1px solid #f2f2f3;
   border-right: 1px solid transparent;
-  background: #fff;
+  background: var(--body-bg);
 
   ${({ pinned }) =>
     pinned
@@ -43,7 +43,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
           position: sticky;
           left: 0;
           z-index: 1;
-          background: #fff;
+          background: var(--body-bg);
           border-right: 1px solid #f2f2f3;
         `
       : null};
@@ -61,7 +61,7 @@ const Th = styled.div<{ height: number }>`
   align-items: center;
   font-weight: 500;
   position: relative;
-  background: #fff;
+  background: var(--body-bg);
 `;
 
 const Table = ({
@@ -240,7 +240,7 @@ const Table = ({
                             position: 'sticky',
                             left: index === 0 ? 0 : '56px',
                             zIndex: 2,
-                            background: '#fff',
+                            background: 'var(--body-bg)',
                             borderRight: '1px solid #f2f2f3',
                           }
                         : {}),

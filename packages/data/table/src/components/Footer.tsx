@@ -13,7 +13,7 @@ const Tf = styled.div<{ height: number }>`
   align-items: center;
   font-weight: 500;
   position: relative;
-  background: #fff;
+  background: var(--body-bg);
 `;
 
 export default function Footer({ footerGroups, rowHeight }) {

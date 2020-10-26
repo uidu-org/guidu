@@ -1,48 +1,39 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 import Tooltip from '@uidu/tooltip';
-import React, { PureComponent } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 import StyledGlobalItem, { StyledGlobalItemButton } from './styled';
 
-export default class GlobalItem extends PureComponent<any> {
-  static defaultProps = {
-    as: 'a',
-    badge: undefined,
-    tooltip: undefined,
-  };
+const StyledBadge = styled.div`
+  pointer-events: none;
+  position: absolute;
+  user-select: none;
+  left: 20px;
+  top: -4px;
+`;
 
-  render() {
-    const { badge, tooltip } = this.props;
-    const content = (
-      <StyledGlobalItem>
-        <StyledGlobalItemButton {...this.props} />
-        {!!badge && (
-          <div
-            style={{
-              pointerEvents: 'none',
-              position: 'absolute',
-              userSelect: 'none',
-              left: '20px',
-              top: '-4px',
-            }}
-          >
-            {badge}
-          </div>
-        )}
-      </StyledGlobalItem>
+export default function GlobalItem({ as = 'a', badge, tooltip, ...rest }: any) {
+  const content = (
+    <StyledGlobalItem>
+      <StyledGlobalItemButton as={as} {...rest} />
+      {!!badge && <StyledBadge>{badge}</StyledBadge>}
+    </StyledGlobalItem>
+  );
+
+  if (tooltip) {
+    return (
+      <Tooltip
+        delay={0}
+        content={tooltip}
+        position="right"
+        hideTooltipOnClick
+        hideTooltipOnMouseDown
+      >
+        {content}
+      </Tooltip>
     );
-
-    if (tooltip) {
-      return (
-        <Tooltip
-          delay={0}
-          content={tooltip}
-          position="right"
-          hideTooltipOnClick
-          hideTooltipOnMouseDown
-        >
-          {content}
-        </Tooltip>
-      );
-    }
-    return content;
   }
+
+  return content;
 }

@@ -101,7 +101,7 @@ export default class App extends React.Component<{}, State> {
               <Route>
                 <Shell>
                   <ShellSidebar
-                    className="d-lg-flex d-none shadow-sm"
+                    className="d-lg-flex d-none shadow-sm bg-white"
                     style={{
                       flex: '1 0 22%',
                       maxWidth: '18rem',

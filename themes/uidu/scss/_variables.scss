@@ -13,7 +13,7 @@ $gray-800: #343a40;
 $gray-900: #212529;
 
 $black: #000;
-$light: $gray-100;
+$light: #FDFDFD;
 $dark: $gray-800;
 
 // Color system
@@ -49,8 +49,8 @@ $social-twitter: #1da1f2;
 $social-whatsapp: #25d366;
 
 // Body
-$body-bg: $white;
-$body-color: $gray-900;
+$body-bg: $light;
+$body-color: $black;
 
 $theme-colors: (
   body-color: $body-color,
