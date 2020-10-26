@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.12
+
+### Patch Changes
+
+- 1e9f2ab: Small style fixes
+
 ## 0.1.11
 
 ### Patch Changes
