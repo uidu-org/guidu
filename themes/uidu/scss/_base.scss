@@ -23,7 +23,7 @@ body {
 body {
   -moz-font-feature-settings: 'liga' on;
   font-feature-settings: 'liga' on;
-  -moz-osx-font-smoothing: grayscale;
+  // -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   // letter-spacing: 0.03em;
   text-rendering: optimizeLegibility;
@@ -36,17 +36,9 @@ body {
 //   // -webkit-font-smoothing: subpixel-antialiased;
 // }
 
-.container {
-  @include media-breakpoint-up(xl) {
-    padding-left: $grid-gutter-width / 2;
-    padding-right: $grid-gutter-width / 2;
-  }
-
-  // padding: 0;
-}
 
 html {
-  font-size: 1rem;
+  font-size: 15px;
 }
 
 @include media-breakpoint-up(xl) {
