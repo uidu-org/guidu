@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.5
+
+### Patch Changes
+
+- 1e9f2ab: Small style fixes
+
 ## 0.3.4
 
 ### Patch Changes
