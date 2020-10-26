@@ -345,23 +345,23 @@ $scrolled-box-shadow: -3px 0 4px 7px rgba(0, 0, 0, 0.03);
 
   // interactions
   .ag-cell-sorter-active {
-    background-color: rgba(254, 226, 213, 0.1);
+    background-color: rgba(254, 226, 213, 0.25);
     &.ag-cell-filter-active,
     &.ag-header-cell-filtered {
       background: linear-gradient(
         90deg,
-        rgba(254, 226, 213, 0.1) 50%,
-        rgba(#d1f7c4, $alpha: 0.1) 50%
+        rgba(254, 226, 213, 0.25) 50%,
+        rgba(#d1f7c4, $alpha: 0.25) 50%
       );
     }
   }
 
   .ag-cell-filter-active {
-    background-color: rgba(#d1f7c4, $alpha: 0.1);
+    background-color: rgba(#d1f7c4, $alpha: 0.25);
   }
 
   .ag-cell-grouper-active {
-    background-color: rgba(#ede2fe, $alpha: 0.1);
+    background-color: rgba(#ede2fe, $alpha: 0.25);
   }
 
   .ag-overlay-wrapper {

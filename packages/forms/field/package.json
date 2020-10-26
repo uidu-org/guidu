@@ -12,7 +12,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@loadable/component": "^5.14.0",
+    "@loadable/component": "^5.14.1",
     "@uidu/checkbox": "^0.2.10",
     "@uidu/field-number": "^0.3.7",
     "@uidu/field-text": "^0.3.7",

@@ -1,10 +1,18 @@
+import loadable from '@loadable/component';
 import Observer from '@researchgate/react-intersection-observer';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
-import { OverlayScrollbarsComponent } from 'overlayscrollbars-react';
-import 'overlayscrollbars/css/OverlayScrollbars.css';
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+// import 'overlayscrollbars/css/OverlayScrollbars.css';
+import React, {
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import { ObserverComponent, Shadow, StyledScrollableContainer } from './styled';
 import { ShellBodyProps } from './types';
+
+const OverlayScrollbars = loadable.lib(() => import('overlayscrollbars-react'));
 
 function ScrollableContainer({
   id = null,
@@ -17,22 +25,23 @@ function ScrollableContainer({
 }: ShellBodyProps) {
   const [shadowedHeader, setShadowedHeader] = useState(false);
   const element: React.RefObject<any> = useRef();
+  const overlayScrollbar = useRef(null);
 
   useImperativeHandle(forwardedRef, () => element.current);
 
+  const getScrollable = useCallback(() => {
+    return enableCustomScrollbars && overlayScrollbar.current
+      ? element.current?.osInstance().getElements().viewport
+      : element.current;
+  }, [enableCustomScrollbars, overlayScrollbar]);
+
   useEffect(() => {
     const scrollableElement = getScrollable();
-    disableBodyScroll(scrollableElement);
+    if (scrollableElement) disableBodyScroll(scrollableElement);
     return () => {
       enableBodyScroll(scrollableElement);
     };
-  }, []);
-
-  const getScrollable = () => {
-    return enableCustomScrollbars
-      ? element.current?.osInstance().getElements().viewport
-      : element.current;
-  };
+  }, [getScrollable]);
 
   const handleHeader = (e) => {
     setShadowedHeader(!e.isIntersecting);
@@ -60,24 +69,48 @@ function ScrollableContainer({
 
   if (enableCustomScrollbars) {
     return (
-      <OverlayScrollbarsComponent
-        options={{
-          className: 'os-theme-dark',
-          scrollbars: { autoHide: 'leave', autoHideDelay: 300 },
-          ...customScrollbarProps,
-        }}
-        ref={element}
-      >
-        {content}
-      </OverlayScrollbarsComponent>
+      <OverlayScrollbars ref={overlayScrollbar}>
+        {({ OverlayScrollbarsComponent }) => (
+          <OverlayScrollbarsComponent
+            options={{
+              className: 'os-theme-dark',
+              scrollbars: { autoHide: 'leave', autoHideDelay: 300 },
+              ...customScrollbarProps,
+            }}
+            ref={element}
+          >
+            {content}
+          </OverlayScrollbarsComponent>
+        )}
+      </OverlayScrollbars>
     );
   }
 
   return content;
 }
 
-export default React.forwardRef((props: ShellBodyProps, ref: any) => {
-  return (
-    <ScrollableContainer {...(props as ShellBodyProps)} forwardedRef={ref} />
-  );
-});
+export default React.forwardRef(
+  (
+    {
+      id = undefined,
+      children,
+      shadowOnScroll = true,
+      className = null,
+      enableCustomScrollbars = false,
+      customScrollbarProps = {},
+    }: ShellBodyProps,
+    ref: any,
+  ) => {
+    return (
+      <ScrollableContainer
+        id={id}
+        children={children}
+        shadowOnScroll={shadowOnScroll}
+        className={className}
+        enableCustomScrollbars={enableCustomScrollbars}
+        customScrollbarProps={customScrollbarProps}
+        forwardedRef={ref}
+      />
+    );
+  },
+);

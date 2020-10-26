@@ -34,7 +34,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
   display: flex;
   align-items: center;
   border-bottom: 1px solid #f2f2f3;
-  border-right: 1px solid transparent;
+  border-right: 1px solid #f2f2f3;
   background: var(--body-bg);
 
   ${({ pinned }) =>
@@ -68,7 +68,6 @@ const Table = ({
   theme = 'uidu',
   setAggregation,
   setColumnWidth,
-  onAddField = () => {},
   rowHeight = 32,
   groupRowHeightIncrementRatio = 1.2,
   tableInstance,

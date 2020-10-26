@@ -11,7 +11,7 @@
   "types": "dist/message-form.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@loadable/component": "^5.14.0",
+    "@loadable/component": "^5.14.1",
     "@types/emoji-mart": "^3.0.0",
     "@types/react-mentions": "^3.0.0",
     "@uidu/dropdown-menu": "^0.3.7",

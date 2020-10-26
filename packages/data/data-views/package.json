@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@loadable/component": "^5.14.0",
+    "@loadable/component": "^5.14.1",
     "@uidu/data-controls": "^0.5.10",
     "@uidu/field-counter": "^0.2.12",
     "@uidu/field-number": "^0.3.7",

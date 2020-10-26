@@ -6,6 +6,7 @@ import {
   ShellHeader,
   ShellMain,
 } from '@uidu/shell';
+import 'overlayscrollbars/css/OverlayScrollbars.css';
 import React, { Fragment } from 'react';
 import {
   GitHub,
@@ -262,7 +263,7 @@ class Package extends React.Component<Props> {
         </ShellHeader>
         <ShellBody>
           <ShellMain>
-            <ScrollableContainer>
+            <ScrollableContainer enableCustomScrollbars>
               <div className="container my-3 my-sm-4">
                 <div className="row justify-content-center">
                   <div className="col-lg-10">
