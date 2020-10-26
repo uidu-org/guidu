@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.3.7
+
+### Patch Changes
+
+- 562d248: Styles and color fixes
+
 ## 0.3.6
 
 ### Patch Changes
