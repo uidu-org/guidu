@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.13
+
+### Patch Changes
+
+- 562d248: Styles and color fixes
+
 ## 0.1.12
 
 ### Patch Changes
