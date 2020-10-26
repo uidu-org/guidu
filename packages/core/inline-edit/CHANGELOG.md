@@ -1,5 +1,13 @@
 # @uidu/inline-edit
 
+## 0.1.8
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+- Updated dependencies [8607ebf]
+  - @uidu/field@0.2.11
+
 ## 0.1.7
 
 ### Patch Changes

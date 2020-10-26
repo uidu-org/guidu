@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.4.8
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+
 ## 0.4.7
 
 ### Patch Changes

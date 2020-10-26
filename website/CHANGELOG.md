@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.2.12
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+- Updated dependencies [8607ebf]
+  - @uidu/shell@1.1.0
+  - @uidu/table@0.3.8
+
 ## 0.2.11
 
 ### Patch Changes

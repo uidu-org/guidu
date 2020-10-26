@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 0.5.17
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+- Updated dependencies [8607ebf]
+  - @uidu/shell@1.1.0
+  - @uidu/data-fields@0.3.4
+  - @uidu/data-views@0.4.8
+  - @uidu/table@0.3.8
+
 ## 0.5.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.6.9
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+
 ## 0.6.8
 
 ### Patch Changes

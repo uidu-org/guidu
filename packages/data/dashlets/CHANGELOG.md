@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.13
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+
 ## 0.6.12
 
 ### Patch Changes

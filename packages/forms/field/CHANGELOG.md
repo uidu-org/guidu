@@ -1,5 +1,11 @@
 # @uidu/field
 
+## 0.2.11
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+
 ## 0.2.10
 
 ### Patch Changes

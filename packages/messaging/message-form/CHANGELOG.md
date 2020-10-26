@@ -1,5 +1,13 @@
 # @uidu/message-form
 
+## 0.2.9
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+- Updated dependencies [8607ebf]
+  - @uidu/message@0.2.11
+
 ## 0.2.8
 
 ### Patch Changes

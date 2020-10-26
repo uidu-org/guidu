@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.1.0
+
+### Minor Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+
 ## 1.0.11
 
 ### Patch Changes

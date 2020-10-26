@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 0.2.10
+
+### Patch Changes
+
+- 8607ebf: Make Shell overlayscrollbar optional
+
 ## 0.2.9
 
 ### Patch Changes
