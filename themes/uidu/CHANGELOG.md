@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.6
+
+### Patch Changes
+
+- 778ebbf: Fix light colors
+
 ## 0.3.5
 
 ### Patch Changes
