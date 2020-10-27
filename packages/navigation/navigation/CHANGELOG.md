@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.4.9
+
+### Patch Changes
+
+- 778ebbf: Fix light colors
+
 ## 0.4.8
 
 ### Patch Changes
