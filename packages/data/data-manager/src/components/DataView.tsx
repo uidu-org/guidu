@@ -197,19 +197,17 @@ export default class DataView extends PureComponent<any> {
         );
         desktopView = (
           <>
-            <div className="container h-100 px-0">
-              <LoadableGallery fallback={<ShellBodyWithSpinner />}>
-                {({ default: Gallery }) => (
-                  <Gallery
-                    {...viewProps.gallery}
-                    tableInstance={tableInstance}
-                    columnCount={columnCount}
-                    onItemClick={onItemClick}
-                    columnDefs={columns}
-                  />
-                )}
-              </LoadableGallery>
-            </div>
+            <LoadableGallery fallback={<ShellBodyWithSpinner />}>
+              {({ default: Gallery }) => (
+                <Gallery
+                  {...viewProps.gallery}
+                  tableInstance={tableInstance}
+                  columnCount={columnCount}
+                  onItemClick={onItemClick}
+                  columnDefs={columns}
+                />
+              )}
+            </LoadableGallery>
           </>
         );
         break;

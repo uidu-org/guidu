@@ -89,6 +89,7 @@ export default function Gallery({
         }}
       >
         <div
+          className="container px-0"
           style={{
             height: `${rowVirtualizer.totalSize}px`,
             width: '100%',
