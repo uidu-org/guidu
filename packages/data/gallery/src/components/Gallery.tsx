@@ -9,6 +9,7 @@ const ITEM_COLUMN_ROW = 64;
 const ITEM_PADDING = 32;
 
 const chunkData = (array, chunkSize) => {
+  console.log('cleanData', array);
   return array.reduce((acc, _each, index, src) => {
     if (!(index % chunkSize)) {
       return [...acc, src.slice(index, index + chunkSize)];
@@ -21,6 +22,7 @@ export default function Gallery({
   columnCount = 4,
   tableInstance,
   gutterSize = 8,
+  onItemClick,
 }: GalleryProps) {
   const parentRef = useRef();
 
@@ -66,6 +68,8 @@ export default function Gallery({
     columnCount,
   ]);
 
+  console.log('chunkedItems', items);
+
   const rowVirtualizer = useVirtual({
     size: items.length,
     parentRef,
@@ -108,14 +112,14 @@ export default function Gallery({
                   justifyContent: 'space-between',
                 }}
               >
-                {row.map((item) => {
+                {row.map((item, index) => {
                   prepareRow(item);
                   return (
                     <GalleryItem
-                      rowIndex={virtualRow.index}
+                      key={`${virtualRow.index}-${index}`}
+                      onItemClick={onItemClick}
                       item={item}
-                      data={{ tableInstance }}
-                      style={{}}
+                      tableInstance={tableInstance}
                     />
                   );
                 })}

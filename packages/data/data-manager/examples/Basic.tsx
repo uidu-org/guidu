@@ -437,7 +437,7 @@ export default class Basic extends Component<any, any> {
                                 {renderView({
                                   viewProps: {
                                     gallery: {
-                                      gutterSize: 16,
+                                      gutterSize: 8,
                                     },
                                     list: {
                                       rowHeight: 96,

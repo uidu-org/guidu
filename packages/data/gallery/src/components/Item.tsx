@@ -7,10 +7,12 @@ import ItemHeader from './ItemHeader';
 const ItemWrapper = styled.div`
   padding-top: 1rem;
   padding-bottom: 1rem;
+  display: grid;
 `;
 
 const ItemFields = styled.dl`
   margin-bottom: 0;
+  min-width: 0;
 `;
 
 export default class Item extends PureComponent<any> {
