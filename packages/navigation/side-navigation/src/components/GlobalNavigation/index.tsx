@@ -6,7 +6,7 @@ import {
   ShellMain,
   ShellSidebar,
 } from '@uidu/shell';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { Transition } from 'react-transition-group';
 import GlobalItem from './GlobalNavigationItem';
 import { FakeGlobalItemWrapper, FakeItemWrapper } from './styled';
@@ -34,40 +34,15 @@ const transitionStyles = {
 export default function GlobalNavigation({
   className = null,
   backgroundColor = '#4C566A',
-  isOpen: propIsOpen = false,
+  isOpen = false,
   width = '4rem',
   navigationWidth = 25,
-  showOverlay = true,
-  showAfter = 1000,
   footer = [],
   header = [],
   body = [],
   style,
   navigationMinWidth,
 }: GlobalNavigationProps) {
-  const timer = useRef(null);
-  const [isOpen, setIsOpen] = useState(propIsOpen);
-
-  const onMouseEnter = () => {
-    if (!showOverlay) {
-      return false;
-    }
-    timer.current = window.setTimeout(() => {
-      setIsOpen(true);
-    }, showAfter);
-    return true;
-  };
-
-  const onMouseLeave = () => {
-    if (!showOverlay) {
-      return false;
-    }
-    if (timer.current) {
-      clearTimeout(timer.current);
-    }
-    return setIsOpen(false);
-  };
-
   return (
     <>
       <ShellSidebar
@@ -78,7 +53,6 @@ export default function GlobalNavigation({
           ...style,
         }}
         className={className}
-        // onMouseEnter={onMouseEnter}
       >
         <ShellHeader className="justify-content-center">
           <GlobalItem {...header} />
@@ -118,64 +92,61 @@ export default function GlobalNavigation({
           </ShellFooter>
         )}
       </ShellSidebar>
-      {showOverlay && (
-        <Transition in={isOpen} timeout={300}>
-          {(state) => (
-            <ShellSidebar
-              style={{
-                ...defaultStyle,
-                ...{
-                  backgroundColor,
-                  width: `calc((100% - ${width}) * ${
-                    navigationWidth / 100
-                  } + ${width})`,
-                },
-                ...(navigationMinWidth && {
-                  minWidth: `calc(${navigationMinWidth} + ${width})`,
-                }),
-                ...transitionStyles[state],
-              }}
-              // onMouseLeave={onMouseLeave}
-            >
-              <ShellHeader>
-                <FakeGlobalItemWrapper style={{ width }}>
-                  <GlobalItem {...header} />
-                </FakeGlobalItemWrapper>
-                <h5 className="m-0 text-light">{header.name}</h5>
-              </ShellHeader>
-              {body.length > 0 && (
-                <ShellBody>
-                  <ShellMain>
-                    <ScrollableContainer>
-                      {body.map(({ children, name, ...otherProps }, index) => (
-                        <FakeItemWrapper
-                          key={`global-navigation-fake-body-${index}`}
-                          {...otherProps}
-                        >
-                          <FakeGlobalItemWrapper style={{ width }}>
-                            <GlobalItem as="span">{children}</GlobalItem>
-                          </FakeGlobalItemWrapper>
-                          {name}
-                        </FakeItemWrapper>
-                      ))}
-                    </ScrollableContainer>
-                  </ShellMain>
-                </ShellBody>
-              )}
-              {footer.length > 0 && (
-                <ShellFooter className="d-flex flex-column py-3">
-                  {footer.map(({ name, children, ...otherProps }, index) => (
-                    <FakeItemWrapper
-                      key={`global-navigation-fake-footer-${index}`}
-                      {...otherProps}
-                    >
-                      <FakeGlobalItemWrapper style={{ width }}>
-                        <GlobalItem>{children}</GlobalItem>
-                      </FakeGlobalItemWrapper>
-                      {name}
-                    </FakeItemWrapper>
-                  ))}
-                  {/* <FakeItemWrapper
+      <Transition in={isOpen} timeout={300}>
+        {(state) => (
+          <ShellSidebar
+            style={{
+              ...defaultStyle,
+              display: 'flex',
+              width: `calc((100% - ${width}) * ${
+                navigationWidth / 100
+              } + ${width})`,
+              ...(navigationMinWidth && {
+                minWidth: `calc(${navigationMinWidth} + ${width})`,
+              }),
+              ...style,
+              ...transitionStyles[state],
+            }}
+          >
+            <ShellHeader>
+              <FakeGlobalItemWrapper style={{ width }}>
+                <GlobalItem {...header} />
+              </FakeGlobalItemWrapper>
+              <h5 className="m-0 text-light">{header.name}</h5>
+            </ShellHeader>
+            {body.length > 0 && (
+              <ShellBody>
+                <ShellMain>
+                  <ScrollableContainer>
+                    {body.map(({ children, name, ...otherProps }, index) => (
+                      <FakeItemWrapper
+                        key={`global-navigation-fake-body-${index}`}
+                        {...otherProps}
+                      >
+                        <FakeGlobalItemWrapper style={{ width }}>
+                          <GlobalItem as="span">{children}</GlobalItem>
+                        </FakeGlobalItemWrapper>
+                        {name}
+                      </FakeItemWrapper>
+                    ))}
+                  </ScrollableContainer>
+                </ShellMain>
+              </ShellBody>
+            )}
+            {footer.length > 0 && (
+              <ShellFooter className="d-flex flex-column py-3">
+                {footer.map(({ name, children, ...otherProps }, index) => (
+                  <FakeItemWrapper
+                    key={`global-navigation-fake-footer-${index}`}
+                    {...otherProps}
+                  >
+                    <FakeGlobalItemWrapper style={{ width }}>
+                      <GlobalItem>{children}</GlobalItem>
+                    </FakeGlobalItemWrapper>
+                    {name}
+                  </FakeItemWrapper>
+                ))}
+                {/* <FakeItemWrapper
                       onClick={e => {
                         e.preventDefault();
                         this.setState({ isOpen: false });
@@ -187,12 +158,11 @@ export default function GlobalNavigation({
                         </GlobalItem>
                       </FakeGlobalItemWrapper>
                     </FakeItemWrapper> */}
-                </ShellFooter>
-              )}
-            </ShellSidebar>
-          )}
-        </Transition>
-      )}
+              </ShellFooter>
+            )}
+          </ShellSidebar>
+        )}
+      </Transition>
     </>
   );
 }

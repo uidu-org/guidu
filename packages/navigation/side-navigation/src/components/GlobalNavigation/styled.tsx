@@ -4,6 +4,7 @@ export const FakeGlobalItemWrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-shrink: 0;
+  height: 40px;
 
   & * {
     &:hover {
@@ -32,9 +33,9 @@ export const FakeItemWrapper = styled.div<any>`
       background: rgba(9, 30, 66, 0.42);
       /* width: 100%; */
       position: absolute;
-      height: 92%;
-      left: 12px;
-      right: 1rem;
+      height: 100%;
+      left: 8px;
+      right: 8px;
       border-radius: 0.25rem;
       z-index: -1;
     }

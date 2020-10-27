@@ -2,7 +2,7 @@ import Avatar from '@uidu/avatar';
 import Badge from '@uidu/badge';
 import Lozenge from '@uidu/lozenge';
 import Shell, { ShellMain, ShellResizer, ShellSidebar } from '@uidu/shell';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Activity, Bell, Grid, MoreHorizontal, Settings } from 'react-feather';
 import foo from '../examples-utils/assets/foo.svg';
 import Navigation, { GlobalNavigation, NavigationItem } from '../src';
@@ -11,7 +11,7 @@ const schema = [
   {
     type: 'NavigationHeader',
     text: 'Team',
-    before: <Avatar borderColor="transparent" />,
+    before: <Avatar />,
   },
   {
     type: 'NavigationSection',
@@ -155,112 +155,109 @@ const schema = [
   },
 ];
 
-export default class Basic extends Component<any, { isCollapsed: boolean }> {
-  state = {
-    isCollapsed: false,
-  };
-
-  render() {
-    const { isCollapsed } = this.state;
-    return (
-      <Shell>
-        <GlobalNavigation
-          navigationWidth={20}
-          navigationMinWidth="17rem"
-          header={{
-            children: <Avatar borderColor="transparent" />,
-            name: 'Joydeed',
+export default function Basic({}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+  return (
+    <Shell>
+      <GlobalNavigation
+        className="d-flex"
+        isOpen={isOpen}
+        style={{
+          background: 'green',
+        }}
+        navigationWidth={20}
+        navigationMinWidth="17rem"
+        header={{
+          children: <Avatar />,
+          name: 'Joydeed',
+          onClick: () => setIsOpen(!isOpen),
+        }}
+        body={[
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Team',
+          },
+          {
+            as: 'a',
+            children: <Avatar src={foo} size="small" />,
+            name: 'Anagrafica',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Donazioni',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Eventi',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Annunci',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'CercaBandi',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Tesseramenti',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Tasks',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Website',
+          },
+          {
+            as: 'a',
+            children: <Avatar size="small" />,
+            name: 'Moduli',
+          },
+        ]}
+        footer={[
+          { children: <Grid size={20} />, name: 'Applicazioni' },
+          {
+            children: <Bell size={20} />,
+            badge: <Badge appearance="important">{3}</Badge>,
+            name: 'Notifiche',
+          },
+          // { children: <Info size={20} />, name: 'Assistenza' },
+          {
+            children: <Avatar size="small" />,
+            name: 'Andrea Vanini',
+          },
+        ]}
+      />
+      <ShellSidebar
+        style={{
+          transition:
+            'width 300ms cubic-bezier(0.2, 0, 0, 1) 0s, min-width 300ms cubic-bezier(0.2, 0, 0, 1) 0s',
+          ...(isCollapsed
+            ? { width: '24px', minWidth: 0 }
+            : { width: '20%', minWidth: '17rem' }),
+        }}
+      >
+        <Navigation schema={schema} />
+        <ShellResizer
+          isCollapsed={isCollapsed}
+          onClick={() => {
+            console.log('clicked');
+            setIsCollapsed(!isCollapsed);
           }}
-          body={[
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Team',
-            },
-            {
-              as: 'a',
-              children: (
-                <Avatar src={foo} size="small" borderColor="transparent" />
-              ),
-              name: 'Anagrafica',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Donazioni',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Eventi',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Annunci',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'CercaBandi',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Tesseramenti',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Tasks',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Website',
-            },
-            {
-              as: 'a',
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Moduli',
-            },
-          ]}
-          footer={[
-            { children: <Grid size={20} />, name: 'Applicazioni' },
-            {
-              children: <Bell size={20} />,
-              badge: <Badge appearance="important">{3}</Badge>,
-              name: 'Notifiche',
-            },
-            // { children: <Info size={20} />, name: 'Assistenza' },
-            {
-              children: <Avatar size="small" borderColor="transparent" />,
-              name: 'Andrea Vanini',
-            },
-          ]}
         />
-        <ShellSidebar
-          style={{
-            transition:
-              'width 300ms cubic-bezier(0.2, 0, 0, 1) 0s, min-width 300ms cubic-bezier(0.2, 0, 0, 1) 0s',
-            ...(isCollapsed
-              ? { width: '24px', minWidth: 0 }
-              : { width: '20%', minWidth: '17rem' }),
-          }}
-        >
-          <Navigation schema={schema} />
-          <ShellResizer
-            isCollapsed={isCollapsed}
-            onClick={() => {
-              console.log('clicked');
-              this.setState((prevState) => ({
-                isCollapsed: !prevState.isCollapsed,
-              }));
-            }}
-          />
-        </ShellSidebar>
-        <ShellMain className="bg-light" />
-      </Shell>
-    );
-  }
+      </ShellSidebar>
+      <ShellMain className="bg-light" />
+    </Shell>
+  );
 }
