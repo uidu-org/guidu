@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/shell.cjs.js",
   "module": "dist/shell.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/shell.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const StyledGlobalItemButton = styled.button`
   -webkit-appearance: none;
-  color: rgb(222, 235, 255);
+  color: currentColor;
   background-color: transparent;
-  fill: rgb(7, 71, 166);
+  fill: currentColor;
   align-items: center;
   cursor: pointer;
   display: flex;
