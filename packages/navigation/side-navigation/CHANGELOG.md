@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.14
+
+### Patch Changes
+
+- a0d655a: Openable side-navigation
+
 ## 0.1.13
 
 ### Patch Changes
