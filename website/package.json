@@ -76,11 +76,6 @@
     "@uidu/nav-info-loader": "^0.1.37",
     "@uidu/webpack-config": "^0.1.82"
   },
-  "engines": {
-    "node": "^12.0.0",
-    "npm": "^6.1.0",
-    "yarn": "^1.9.2"
-  },
   "publishConfig": {
     "access": "public"
   },
