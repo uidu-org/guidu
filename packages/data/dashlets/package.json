@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/dashlets.cjs.js",
   "module": "dist/dashlets.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/dashlets.cjs.d.ts",
   "dependencies": {
     "@amcharts/amcharts4": "^4.7.14",
     "@amcharts/amcharts4-geodata": "^4.1.9",

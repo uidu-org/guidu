@@ -18,7 +18,7 @@ const chunkData = (array, chunkSize) => {
 };
 
 export default function Gallery({
-  columnCount,
+  columnCount = 4,
   tableInstance,
   gutterSize = 8,
 }: GalleryProps) {

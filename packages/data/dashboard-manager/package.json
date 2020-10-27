@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/dashboard-manager.cjs.js",
   "module": "dist/dashboard-manager.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/dashboard-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@cubejs-client/core": "^0.22.0",
