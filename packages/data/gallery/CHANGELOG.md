@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.63
+
+### Patch Changes
+
+- fe53abe: Better colors and gallery improvements"
+
 ## 0.1.62
 
 ### Patch Changes
