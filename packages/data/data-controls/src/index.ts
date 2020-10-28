@@ -2,6 +2,7 @@ export { default as CalendarToolbar } from './components/CalendarToolbar';
 export { default as CalendarNavigator } from './components/CalendarToolbar/CalendarNavigator';
 export { default as CalendarView } from './components/CalendarToolbar/CalendarView';
 export { default as Configurator } from './components/Configurator';
+export { default as ControlsSkeleton } from './components/ControlsSkeleton';
 export { default as Filterer } from './components/Filterer';
 export * from './components/Filterer/types';
 export { default as Finder } from './components/Finder';

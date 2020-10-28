@@ -6,19 +6,19 @@ export default function Example() {
     <div>
       <p>
         Added
-        <Badge appearance="added" max={99} testId="myBadgeAdded">
+        <Badge appearance="added" max={99}>
           {2}
         </Badge>
       </p>
       <p>
         default
-        <Badge appearance="default" max={99} testId="myBadgeDefault">
+        <Badge appearance="default" max={99}>
           {67}
         </Badge>
       </p>
       <p>
         important
-        <Badge appearance="important" max={99} testId="myBadgeImportant">
+        <Badge appearance="important" max={99} tes>
           {20}
         </Badge>
       </p>

@@ -3,19 +3,16 @@ import { Theme } from '../theme';
 import { AppearanceType, SizeType } from '../types';
 
 interface AvatarProps {
-  /** A `testId` prop is provided for specified elements, which is a unique string that appears as a data attribute `data-testid` in the rendered code, serving as a hook for automated tests */
-  testId?: string;
   size: SizeType;
   children: ReactNode;
   stackIndex?: number;
 }
 
-const Avatar: FC<AvatarProps> = props => (
+const Avatar: FC<AvatarProps> = (props) => (
   <Theme.Consumer {...props} includeBorderWidth>
     {({ dimensions }) => {
       return (
         <div
-          data-testid={props.testId}
           style={{
             display: 'inline-block',
             position: 'relative',
@@ -39,7 +36,7 @@ interface PresenceWrapperProps {
   children: ReactNode;
 }
 
-export const PresenceWrapper: FC<PresenceWrapperProps> = props => (
+export const PresenceWrapper: FC<PresenceWrapperProps> = (props) => (
   <Theme.Consumer {...props} includeBorderWidth>
     {({ presence }) => {
       return (
@@ -63,7 +60,7 @@ interface StatusWrapperProps {
   children: any;
 }
 
-export const StatusWrapper: FC<StatusWrapperProps> = props => (
+export const StatusWrapper: FC<StatusWrapperProps> = (props) => (
   <Theme.Consumer {...props} includeBorderWidth>
     {({ status }) => {
       return (

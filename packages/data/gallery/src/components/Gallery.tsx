@@ -20,10 +20,10 @@ function chunkArray(myArray, chunkSize) {
 }
 
 export default memo(function Gallery({
-  columnCount = 4,
   tableInstance,
-  gutterSize = 8,
   onItemClick,
+  columnCount = 4,
+  gutterSize = 8,
 }: GalleryProps) {
   const parentRef = useRef();
 

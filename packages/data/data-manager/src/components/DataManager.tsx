@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { Finder, Viewer } from '@uidu/data-controls';
+import { ControlsSkeleton, Finder } from '@uidu/data-controls';
 import { byName } from '@uidu/data-views';
+import { ShellBodyWithSpinner } from '@uidu/shell';
 import {
   Aggregated,
   AggregatedSelection,
@@ -66,6 +67,7 @@ export default function DataManager({
   children,
   rowData = [],
   columnDefs,
+  onItemClick,
   currentView,
   updateView: onViewUpdate,
 }: DataManagerProps) {
@@ -108,13 +110,13 @@ export default function DataManager({
       defaultColumn,
       initialState: {
         pageSize: 100,
-        ...(currentView.state || {}),
+        ...(currentView?.state || {}),
       },
       useControlledState: (state) => {
         return React.useMemo(
           () => ({
             ...state,
-            ...currentView.state,
+            ...currentView?.state,
             columnDefinitions,
           }),
           [state],
@@ -206,25 +208,6 @@ export default function DataManager({
     ]);
   };
 
-  const {
-    fields = [],
-    preferences = {
-      rowHeight: defaultRowHeight,
-      columnCount: defaultColumnCount,
-      startDateField: defaultStartDateField,
-      endDateField: defaultEndDateField,
-      primaryField: defaultPrimaryField,
-    },
-  } = currentView;
-
-  const {
-    rowHeight,
-    columnCount,
-    startDateField,
-    endDateField,
-    primaryField,
-  } = preferences;
-
   const renderView = ({
     viewProps = {
       board: {},
@@ -234,6 +217,28 @@ export default function DataManager({
       table: {},
     },
   }) => {
+    if (!currentView) {
+      return <ShellBodyWithSpinner />;
+    }
+
+    const {
+      preferences = {
+        rowHeight: defaultRowHeight,
+        columnCount: defaultColumnCount,
+        startDateField: defaultStartDateField,
+        endDateField: defaultEndDateField,
+        primaryField: defaultPrimaryField,
+      },
+    } = currentView;
+
+    const {
+      rowHeight,
+      columnCount,
+      startDateField,
+      endDateField,
+      primaryField,
+    } = preferences;
+
     return (
       <DataView
         {...state}
@@ -250,7 +255,7 @@ export default function DataManager({
         // props spreading
         columnDefs={columnDefs}
         rowData={rowData}
-        // onItemClick={onItemClick}
+        onItemClick={onItemClick}
         currentView={currentView}
         // onAddField={onAddField}
         viewProps={viewProps}
@@ -276,13 +281,35 @@ export default function DataManager({
       ...controls,
     };
 
+    if (!currentView) {
+      return <ControlsSkeleton />;
+    }
+
+    const {
+      preferences = {
+        rowHeight: defaultRowHeight,
+        columnCount: defaultColumnCount,
+        startDateField: defaultStartDateField,
+        endDateField: defaultEndDateField,
+        primaryField: defaultPrimaryField,
+      },
+    } = currentView;
+
+    const {
+      rowHeight,
+      columnCount,
+      startDateField,
+      endDateField,
+      primaryField,
+    } = preferences;
+
     const { icon: Icon, color, controls: Controls = () => null } = byName[
       currentView.kind
     ];
 
     return (
       <>
-        {availableControls.viewer.visible && (
+        {/* {availableControls.viewer.visible && (
           <Viewer
             tableInstance={tableInstance}
             isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
@@ -302,7 +329,7 @@ export default function DataManager({
             endDateField={endDateField}
             primaryField={primaryField}
           />
-        )}
+        )} */}
         <div className="d-flex align-items-center ml-3 flex-grow-1">
           <Controls
             tableInstance={tableInstance}
