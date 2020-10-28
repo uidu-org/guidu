@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.62
+
+### Patch Changes
+
+- 7812c2b: Container inside Gallery
+- 7812c2b: Bump dependencies, try fix GalleryItem
+- 7812c2b: Try build with node 12
+- 7812c2b: Fix gallery Item display?
+
 ## 0.1.61
 
 ### Patch Changes

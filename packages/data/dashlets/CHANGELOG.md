@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.14
+
+### Patch Changes
+
+- 7812c2b: Bump dependencies, try fix GalleryItem
+
 ## 0.6.13
 
 ### Patch Changes

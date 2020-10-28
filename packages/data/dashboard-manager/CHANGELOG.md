@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.7.10
+
+### Patch Changes
+
+- 7812c2b: Bump dependencies, try fix GalleryItem
+- Updated dependencies [7812c2b]
+  - @uidu/dashlets@0.6.14
+
 ## 0.7.9
 
 ### Patch Changes

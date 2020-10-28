@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.5.18
+
+### Patch Changes
+
+- 7812c2b: Container inside Gallery
+- 7812c2b: Fix gallery Item display?
+- Updated dependencies [7812c2b]
+- Updated dependencies [7812c2b]
+- Updated dependencies [7812c2b]
+- Updated dependencies [7812c2b]
+  - @uidu/gallery@0.1.62
+
 ## 0.5.17
 
 ### Patch Changes
