@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.4.10
+
+### Patch Changes
+
+- bb59a6c: Minor fixes, fix build
+- Updated dependencies [9888358]
+  - @uidu/avatar@0.5.8
+
 ## 0.4.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/badge
 
+## 0.3.8
+
+### Patch Changes
+
+- 9888358: Allow for null currentView in dataManager, showing cntrols
+
 ## 0.3.7
 
 ### Patch Changes

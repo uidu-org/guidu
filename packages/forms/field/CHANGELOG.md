@@ -1,5 +1,11 @@
 # @uidu/field
 
+## 0.2.12
+
+### Patch Changes
+
+- bb59a6c: Minor fixes, fix build
+
 ## 0.2.11
 
 ### Patch Changes

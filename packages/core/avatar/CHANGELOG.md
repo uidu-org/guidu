@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.5.8
+
+### Patch Changes
+
+- 9888358: Allow for null currentView in dataManager, showing cntrols
+
 ## 0.5.7
 
 ### Patch Changes
