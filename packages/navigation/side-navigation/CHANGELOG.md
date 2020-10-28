@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.15
+
+### Patch Changes
+
+- fe53abe: Better colors and gallery improvements"
+
 ## 0.1.14
 
 ### Patch Changes
