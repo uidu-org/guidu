@@ -88,7 +88,7 @@ const dataViews = [
   {
     id: 3,
     name: 'Lista contatti',
-    kind: 'gallery',
+    kind: 'list',
     fields: ['avatar', 'member', 'amount'],
     sorters: [{ id: 'amount', desc: true }],
   },
