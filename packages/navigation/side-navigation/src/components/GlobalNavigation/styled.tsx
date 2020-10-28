@@ -5,12 +5,6 @@ export const FakeGlobalItemWrapper = styled.div`
   justify-content: center;
   flex-shrink: 0;
   height: 40px;
-
-  & * {
-    &:hover {
-      background-color: transparent;
-    }
-  }
 `;
 
 export const FakeItemWrapper = styled.div<any>`

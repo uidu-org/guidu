@@ -69,8 +69,6 @@ export default memo(function Gallery({
     columnCount,
   ]);
 
-  console.log('chunkedItems', items);
-
   const rowVirtualizer = useVirtual({
     size: items.length,
     parentRef,
