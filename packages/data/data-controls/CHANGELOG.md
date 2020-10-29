@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.5.11
+
+### Patch Changes
+
+- 9888358: Allow for null currentView in dataManager, showing cntrols
+
 ## 0.5.10
 
 ### Patch Changes
