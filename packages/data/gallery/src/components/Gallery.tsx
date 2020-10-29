@@ -80,7 +80,7 @@ export default memo(function Gallery({
     <>
       <div
         ref={parentRef}
-        className="List"
+        className="container px-2 List"
         style={{
           height: '100%',
           width: '100%',
@@ -88,7 +88,6 @@ export default memo(function Gallery({
         }}
       >
         <div
-          className="container px-0"
           style={{
             height: `${rowVirtualizer.totalSize}px`,
             width: '100%',

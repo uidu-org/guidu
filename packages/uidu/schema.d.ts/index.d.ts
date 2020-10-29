@@ -20,6 +20,52 @@ export type Scalars = {
   JSON: any;
 };
 
+export type Account = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar & WithEnhancements & {
+  addresses: Array<Address>;
+  admin: Scalars['Boolean'];
+  avatar?: Maybe<Scalars['String']>;
+  bio?: Maybe<Scalars['String']>;
+  collections: Array<Maybe<Collection>>;
+  conversation: Conversation;
+  conversations: ConversationConnection;
+  createdAt: Scalars['ISO8601DateTime'];
+  email: Scalars['String'];
+  enhancements?: Maybe<Scalars['JSON']>;
+  experiences: Array<Maybe<Experience>>;
+  firstName?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  lastName?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  organizations: Array<Maybe<Organization>>;
+  path?: Maybe<Scalars['String']>;
+  stories: Array<Maybe<Story>>;
+  updatedAt: Scalars['ISO8601DateTime'];
+};
+
+
+export type AccountAddressesArgs = {
+  kind?: Maybe<Scalars['String']>;
+};
+
+
+export type AccountAvatarArgs = {
+  variant?: Maybe<Scalars['String']>;
+};
+
+
+export type AccountConversationArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type AccountConversationsArgs = {
+  after?: Maybe<Scalars['String']>;
+  before?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+  last?: Maybe<Scalars['Int']>;
+};
+
 /** ActiveRecord timestamps (created_at and updated_at) */
 export type ActiveRecordTimestamp = {
   createdAt: Scalars['ISO8601DateTime'];
@@ -214,7 +260,7 @@ export type Board = ActiveRecordTimestamp & Node & {
   updatedAt: Scalars['ISO8601DateTime'];
 };
 
-export type Call = ActiveRecordTimestamp & Node & WithAddresses & WithContact & WithCover & WithPost & WithWysiwyg & {
+export type Call = ActiveRecordTimestamp & Node & WithAddresses & WithContact & WithCover & WithOrganization & WithPost & WithWysiwyg & {
   addresses: Array<Address>;
   applications?: Maybe<Array<Application>>;
   body?: Maybe<Scalars['JSON']>;
@@ -224,6 +270,7 @@ export type Call = ActiveRecordTimestamp & Node & WithAddresses & WithContact & 
   expiresAt?: Maybe<Scalars['ISO8601DateTime']>;
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  organization?: Maybe<Organization>;
   post?: Maybe<Post>;
   type: Scalars['String'];
   updatedAt: Scalars['ISO8601DateTime'];
@@ -372,6 +419,7 @@ export type CommentAttributes = {
 };
 
 export type Contact = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar & WithEnhancements & {
+  account?: Maybe<Account>;
   addresses: Array<Address>;
   applicationsCount?: Maybe<Scalars['Int']>;
   attendancesCount?: Maybe<Scalars['Int']>;
@@ -390,7 +438,6 @@ export type Contact = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar 
   email?: Maybe<Scalars['String']>;
   enhancements?: Maybe<Scalars['JSON']>;
   existingOrganizationId?: Maybe<Scalars['Int']>;
-  existingUserId?: Maybe<Scalars['Int']>;
   firstName?: Maybe<Scalars['String']>;
   fullName?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -448,7 +495,6 @@ export type ContactAttributes = {
   donationsCount?: Maybe<Scalars['Int']>;
   email?: Maybe<Scalars['String']>;
   existingOrganizationId?: Maybe<Scalars['Int']>;
-  existingUserId?: Maybe<Scalars['Int']>;
   firstName?: Maybe<Scalars['String']>;
   importId?: Maybe<Scalars['ID']>;
   lastName?: Maybe<Scalars['String']>;
@@ -1522,6 +1568,11 @@ export type DonationCampaignCoverArgs = {
   variant?: Maybe<Scalars['String']>;
 };
 
+
+export type DonationCampaignDataViewsArgs = {
+  model?: Maybe<Scalars['String']>;
+};
+
 export type DonationCampaignAttributes = {
   abstract?: Maybe<Scalars['String']>;
   body?: Maybe<Scalars['JSON']>;
@@ -1625,7 +1676,7 @@ export type ExperienceAttributes = {
 };
 
 /** Objects which may be commented on */
-export type Exploreable = DonationCampaign | Event | Opportunity | Organization | Story | User;
+export type Exploreable = Account | Contact | DonationCampaign | Event | Opportunity | Organization | Story;
 
 export type Field = ActiveRecordTimestamp & Node & WithOrganization & WithPreferences & {
   colId?: Maybe<Scalars['String']>;
@@ -1660,6 +1711,18 @@ export type Folder = ActiveRecordTimestamp & Node & {
   description?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   name?: Maybe<Scalars['String']>;
+  updatedAt: Scalars['ISO8601DateTime'];
+};
+
+export type Form = ActiveRecordTimestamp & Node & WithOrganization & {
+  createdAt: Scalars['ISO8601DateTime'];
+  description?: Maybe<Scalars['String']>;
+  /** ID of the object. */
+  id: Scalars['ID'];
+  internalName?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  organization?: Maybe<Organization>;
+  questions?: Maybe<Array<Question>>;
   updatedAt: Scalars['ISO8601DateTime'];
 };
 
@@ -1791,7 +1854,7 @@ export type Member = ActiveRecordTimestamp & Node & {
 };
 
 /** Objects which may be commented on */
-export type MemberMember = Contact | Organization | User;
+export type MemberMember = Contact | Organization;
 
 export type Message = ActiveRecordTimestamp & Node & {
   attachments?: Maybe<Array<Attachment>>;
@@ -1842,7 +1905,7 @@ export type MessageItemable = Audit | Contact | Donation | Task;
 export type Messageable = Contact | Conversation | Team;
 
 /** Message rooms */
-export type Messager = Contact | Contact | User;
+export type Messager = Contact | Contact;
 
 export type Mutation = Node & {
   createApp?: Maybe<CreateAppPayload>;
@@ -1904,6 +1967,7 @@ export type Mutation = Node & {
   id: Scalars['ID'];
   publishablePublish?: Maybe<PublishablePublishPayload>;
   subscribeToPlan?: Maybe<SubscribeToPlanPayload>;
+  updateAccount?: Maybe<UpdateAccountPayload>;
   updateApp?: Maybe<UpdateAppPayload>;
   updateApplication?: Maybe<UpdateApplicationPayload>;
   updateAttendance?: Maybe<UpdateAttendancePayload>;
@@ -1929,7 +1993,6 @@ export type Mutation = Node & {
   updateStory?: Maybe<UpdateStoryPayload>;
   updateSubscription?: Maybe<UpdateSubscriptionPayload>;
   updateTask?: Maybe<UpdateTaskPayload>;
-  updateUser?: Maybe<UpdateUserPayload>;
 };
 
 
@@ -2218,6 +2281,11 @@ export type MutationSubscribeToPlanArgs = {
 };
 
 
+export type MutationUpdateAccountArgs = {
+  input: UpdateAccountInput;
+};
+
+
 export type MutationUpdateAppArgs = {
   input: UpdateAppInput;
 };
@@ -2342,11 +2410,6 @@ export type MutationUpdateTaskArgs = {
   input: UpdateTaskInput;
 };
 
-
-export type MutationUpdateUserArgs = {
-  input: UpdateUserInput;
-};
-
 /** An object with an ID. */
 export type Node = {
   /** ID of the object. */
@@ -2465,20 +2528,38 @@ export type OrderItemAttributes = {
 
 export type Organization = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar & WithPost & {
   addresses: Array<Address>;
+  admins?: Maybe<Array<Contact>>;
+  apps?: Maybe<Array<App>>;
   audiences?: Maybe<AudienceConnection>;
   avatar?: Maybe<Scalars['String']>;
   bio?: Maybe<Scalars['String']>;
+  calls?: Maybe<Array<Call>>;
+  campaigns?: Maybe<Array<Campaign>>;
+  contacts?: Maybe<Array<Contact>>;
   createdAt: Scalars['ISO8601DateTime'];
+  dataView?: Maybe<DataView>;
+  dataViews?: Maybe<Array<DataView>>;
   description?: Maybe<Scalars['String']>;
+  donationCampaign?: Maybe<DonationCampaign>;
+  donationCampaigns?: Maybe<Array<DonationCampaign>>;
+  events?: Maybe<Array<Event>>;
+  fields?: Maybe<Array<Field>>;
+  forms?: Maybe<Array<Form>>;
   id: Scalars['ID'];
   name: Scalars['String'];
+  organizationApp?: Maybe<OrganizationApp>;
+  organizationApps?: Maybe<Array<OrganizationApp>>;
   path: Scalars['String'];
+  plans?: Maybe<Array<Plan>>;
   post?: Maybe<Post>;
   products?: Maybe<Array<Product>>;
+  projects?: Maybe<Array<Project>>;
   related?: Maybe<Array<Organization>>;
   search?: Maybe<SearchResult>;
   services?: Maybe<Array<Service>>;
+  stories?: Maybe<Array<Story>>;
   subDomain?: Maybe<Scalars['String']>;
+  teams?: Maybe<Array<Team>>;
   updatedAt: Scalars['ISO8601DateTime'];
 };
 
@@ -2501,6 +2582,32 @@ export type OrganizationAvatarArgs = {
 };
 
 
+export type OrganizationDataViewArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type OrganizationDataViewsArgs = {
+  model: Scalars['String'];
+};
+
+
+export type OrganizationDonationCampaignArgs = {
+  id: Scalars['ID'];
+};
+
+
+export type OrganizationFieldsArgs = {
+  fieldableId: Scalars['ID'];
+  model: Scalars['String'];
+};
+
+
+export type OrganizationOrganizationAppArgs = {
+  id: Scalars['ID'];
+};
+
+
 export type OrganizationProductsArgs = {
   kind?: Maybe<Scalars['String']>;
 };
@@ -2518,8 +2625,14 @@ export type OrganizationApp = ActiveRecordTimestamp & Node & WithDataViews & Wit
   dataViews: Array<Maybe<DataView>>;
   id: Scalars['ID'];
   organization?: Maybe<Organization>;
+  position?: Maybe<Scalars['Int']>;
   preferences?: Maybe<Scalars['JSON']>;
   updatedAt: Scalars['ISO8601DateTime'];
+};
+
+
+export type OrganizationAppDataViewsArgs = {
+  model?: Maybe<Scalars['String']>;
 };
 
 /** Information about pagination in a connection. */
@@ -2662,6 +2775,8 @@ export type PublishablePublishPayload = {
 };
 
 export type Query = {
+  /** Find an user by id */
+  account: Account;
   /** Get all apps */
   apps: Array<App>;
   /** Find a board by ID */
@@ -2680,20 +2795,16 @@ export type Query = {
   contact: Contact;
   /** Get all organizations contacts */
   contacts: Array<Contact>;
+  /** Current account */
+  currentAccount?: Maybe<Account>;
+  /** Current contact */
+  currentContact?: Maybe<Contact>;
   /** Current organization */
   currentOrganization?: Maybe<Organization>;
-  /** Current user */
-  currentUser?: Maybe<User>;
-  /** Get current Data View */
-  dataView: DataView;
-  /** Get current object Data Views */
-  dataViews: Array<DataView>;
   /** Find a donation by ID */
   donation: Donation;
   /** Find a donation campaign by ID */
   donationCampaign?: Maybe<DonationCampaign>;
-  /** Get all organizations donations campaigns */
-  donationCampaigns: Array<DonationCampaign>;
   /** Get all organizations donations */
   donations: Array<Donation>;
   /** Find an event by ID */
@@ -2702,8 +2813,6 @@ export type Query = {
   events: Array<Event>;
   /** Explorer query respond to each kind of model exploration tabs */
   explorer: Array<Exploreable>;
-  /** Get all fields */
-  fields: Array<Field>;
   /** Find a grant by ID */
   grant: Grant;
   /** Get all grants */
@@ -2726,10 +2835,6 @@ export type Query = {
   orders: Array<Order>;
   /** Find an organization by id */
   organization: Organization;
-  /** Find an organization app by ID */
-  organizationApp: OrganizationApp;
-  /** Get all organizations apps */
-  organizationApps: Array<OrganizationApp>;
   /** Get all organizations */
   organizations: Array<Organization>;
   /** Find a plan by ID */
@@ -2756,16 +2861,19 @@ export type Query = {
   tags: Array<Tag>;
   /** Find a task by ID */
   task: Task;
-  /** Get all tasks for user(s) in this organization */
+  /** Get all tasks for account(s) in this organization */
   tasks: Array<Task>;
   /** Find a team by slug */
   team: Team;
   /** Get all organization's teams */
   teams: Array<Team>;
-  /** Find an user by id */
-  user: User;
   /** Get all organization's visits */
   visits: Array<Visit>;
+};
+
+
+export type QueryAccountArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -2801,16 +2909,6 @@ export type QueryContactArgs = {
 };
 
 
-export type QueryDataViewArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryDataViewsArgs = {
-  model: Scalars['String'];
-};
-
-
 export type QueryDonationArgs = {
   id: Scalars['ID'];
 };
@@ -2829,12 +2927,6 @@ export type QueryEventArgs = {
 export type QueryExplorerArgs = {
   kind: Scalars['String'];
   model?: Maybe<Scalars['String']>;
-};
-
-
-export type QueryFieldsArgs = {
-  fieldableId: Scalars['ID'];
-  model: Scalars['String'];
 };
 
 
@@ -2879,11 +2971,6 @@ export type QueryOpportunityArgs = {
 
 
 export type QueryOrganizationArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type QueryOrganizationAppArgs = {
   id: Scalars['ID'];
 };
 
@@ -2936,11 +3023,6 @@ export type QueryTeamArgs = {
   slug: Scalars['String'];
 };
 
-
-export type QueryUserArgs = {
-  id: Scalars['ID'];
-};
-
 export type Question = Node & {
   hint?: Maybe<Scalars['String']>;
   /** ID of the object. */
@@ -2960,7 +3042,7 @@ export type SearchResult = {
 };
 
 /** Objects which may be commented on */
-export type Sender = Organization | User;
+export type Sender = Account | Organization;
 
 export type Service = ActiveRecordTimestamp & Node & WithOrganization & {
   createdAt: Scalars['ISO8601DateTime'];
@@ -3025,7 +3107,7 @@ export type StoryCoverArgs = {
 };
 
 /** Objects which may be commented on */
-export type StoryOwner = Organization | User;
+export type StoryOwner = Account | Contact | Organization;
 
 /** Autogenerated input type of SubscribeToPlan */
 export type SubscribeToPlanInput = {
@@ -3187,6 +3269,19 @@ export type Trigger = Node & {
   organizationId?: Maybe<Scalars['Int']>;
   preferences?: Maybe<Scalars['JSON']>;
   updatedAt: Scalars['ISO8601DateTime'];
+};
+
+/** Autogenerated input type of UpdateAccount */
+export type UpdateAccountInput = {
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: Maybe<Scalars['String']>;
+};
+
+/** Autogenerated return type of UpdateAccount */
+export type UpdateAccountPayload = {
+  /** A unique identifier for the client performing the mutation. */
+  clientMutationId?: Maybe<Scalars['String']>;
+  errors: Array<Scalars['String']>;
 };
 
 /** Autogenerated input type of UpdateApp */
@@ -3588,64 +3683,6 @@ export type UpdateTaskPayload = {
   task?: Maybe<Task>;
 };
 
-/** Autogenerated input type of UpdateUser */
-export type UpdateUserInput = {
-  /** A unique identifier for the client performing the mutation. */
-  clientMutationId?: Maybe<Scalars['String']>;
-};
-
-/** Autogenerated return type of UpdateUser */
-export type UpdateUserPayload = {
-  /** A unique identifier for the client performing the mutation. */
-  clientMutationId?: Maybe<Scalars['String']>;
-  errors: Array<Scalars['String']>;
-};
-
-export type User = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar & WithEnhancements & {
-  addresses: Array<Address>;
-  admin: Scalars['Boolean'];
-  avatar?: Maybe<Scalars['String']>;
-  bio?: Maybe<Scalars['String']>;
-  collections: Array<Maybe<Collection>>;
-  conversation: Conversation;
-  conversations: ConversationConnection;
-  createdAt: Scalars['ISO8601DateTime'];
-  enhancements?: Maybe<Scalars['JSON']>;
-  experiences: Array<Maybe<Experience>>;
-  firstName?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  lastName?: Maybe<Scalars['String']>;
-  locale?: Maybe<Scalars['String']>;
-  name?: Maybe<Scalars['String']>;
-  organizations: Array<Maybe<Organization>>;
-  path?: Maybe<Scalars['String']>;
-  stories: Array<Maybe<Story>>;
-  updatedAt: Scalars['ISO8601DateTime'];
-};
-
-
-export type UserAddressesArgs = {
-  kind?: Maybe<Scalars['String']>;
-};
-
-
-export type UserAvatarArgs = {
-  variant?: Maybe<Scalars['String']>;
-};
-
-
-export type UserConversationArgs = {
-  id: Scalars['ID'];
-};
-
-
-export type UserConversationsArgs = {
-  after?: Maybe<Scalars['String']>;
-  before?: Maybe<Scalars['String']>;
-  first?: Maybe<Scalars['Int']>;
-  last?: Maybe<Scalars['Int']>;
-};
-
 export type Visit = ActiveRecordTimestamp & Node & {
   browser?: Maybe<Scalars['String']>;
   createdAt: Scalars['ISO8601DateTime'];
@@ -3705,6 +3742,12 @@ export type WithCoverCoverArgs = {
 /** Object with many data_views */
 export type WithDataViews = {
   dataViews: Array<Maybe<DataView>>;
+};
+
+
+/** Object with many data_views */
+export type WithDataViewsDataViewsArgs = {
+  model?: Maybe<Scalars['String']>;
 };
 
 /** Object with many additional fields */
