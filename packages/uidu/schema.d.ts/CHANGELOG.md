@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.13
+
+### Patch Changes
+
+- e58b025: Bump dependencies
+
 ## 0.1.12
 
 ### Patch Changes

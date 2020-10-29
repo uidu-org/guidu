@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 0.1.13
+
+### Patch Changes
+
+- e58b025: Bump dependencies
+- Updated dependencies [e58b025]
+  - @uidu/dashlets@0.6.15
+
 ## 0.1.12
 
 ### Patch Changes
