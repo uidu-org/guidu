@@ -268,7 +268,7 @@ module.exports = async function createWebpackConfig(
       ],
     },
     resolve: {
-      mainFields: ['module', 'browser', 'main'],
+      mainFields: ['uidu:src', 'browser', 'module', 'main'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
       alias: {
         'react-native$': 'react-native-web',

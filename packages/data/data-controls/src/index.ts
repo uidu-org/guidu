@@ -1,17 +1,33 @@
-export { default as CalendarToolbar } from './components/CalendarToolbar';
-export { default as CalendarNavigator } from './components/CalendarToolbar/CalendarNavigator';
-export { default as CalendarView } from './components/CalendarToolbar/CalendarView';
-export { default as Configurator } from './components/Configurator';
-export { default as ControlsSkeleton } from './components/ControlsSkeleton';
-export { default as Filterer } from './components/Filterer';
+import CalendarToolbar from './components/CalendarToolbar';
+import CalendarNavigator from './components/CalendarToolbar/CalendarNavigator';
+import CalendarView from './components/CalendarToolbar/CalendarView';
+import Configurator from './components/Configurator';
+import ControlsSkeleton from './components/ControlsSkeleton';
+import Filterer from './components/Filterer';
+import Finder from './components/Finder';
+import Grouper from './components/Grouper';
+import More from './components/More';
+import Resizer from './components/Resizer';
+import Sharer from './components/Sharer';
+import Sorter from './components/Sorter';
+import Toggler from './components/Toggler';
+import Viewer from './components/Viewer';
 export * from './components/Filterer/types';
-export { default as Finder } from './components/Finder';
-export { default as Grouper } from './components/Grouper';
 export * from './components/Grouper/types';
-export { default as More } from './components/More';
-export { default as Resizer } from './components/Resizer';
-export { default as Sharer } from './components/Sharer';
-export { default as Sorter } from './components/Sorter';
 export * from './components/Sorter/types';
-export { default as Toggler } from './components/Toggler';
-export { default as Viewer } from './components/Viewer';
+export {
+  CalendarToolbar,
+  CalendarNavigator,
+  CalendarView,
+  Configurator,
+  ControlsSkeleton,
+  Filterer,
+  Finder,
+  Grouper,
+  More,
+  Resizer,
+  Sharer,
+  Sorter,
+  Toggler,
+  Viewer,
+};

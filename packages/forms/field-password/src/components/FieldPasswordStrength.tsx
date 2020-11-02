@@ -1,6 +1,8 @@
+import loadable from '@loadable/component';
 import classNames from 'classnames';
 import React, { useRef } from 'react';
-import Zxcvbn from 'zxcvbn';
+
+const Zxcvbn = loadable.lib(() => import('zxcvbn'));
 
 export default function FieldPasswordStrength({
   passwordStrengths,
