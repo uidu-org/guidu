@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.2.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/adf-schema@0.2.11
+  - @uidu/editor-common@0.3.12
+
 ## 0.2.8
 
 ### Patch Changes

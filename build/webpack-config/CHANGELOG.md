@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.86
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.1.85
 
 ### Patch Changes

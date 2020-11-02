@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.1.1
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/spinner@0.3.8
+
 ## 1.1.0
 
 ### Minor Changes

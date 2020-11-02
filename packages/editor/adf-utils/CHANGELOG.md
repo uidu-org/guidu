@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.5.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/adf-schema@0.2.11
+
 ## 0.5.6
 
 ### Patch Changes

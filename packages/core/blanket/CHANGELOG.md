@@ -1,5 +1,14 @@
 # @uidu/blanket
 
+## 0.3.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/theme@0.4.8
+
 ## 0.3.6
 
 ### Patch Changes

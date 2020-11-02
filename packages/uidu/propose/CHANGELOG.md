@@ -1,5 +1,18 @@
 # @uidu/propose
 
+## 0.1.26
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/checkbox@0.2.11
+  - @uidu/field@0.2.13
+  - @uidu/field-text@0.3.8
+  - @uidu/field-textarea@0.2.11
+  - @uidu/form@0.3.7
+  - @uidu/widgets@0.3.7
+
 ## 0.1.25
 
 ### Patch Changes

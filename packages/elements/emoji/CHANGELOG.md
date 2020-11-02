@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.2.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/button@0.3.9
+  - @uidu/code@0.3.10
+  - @uidu/spinner@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/field-text@0.3.8
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.16
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.1.15
 
 ### Patch Changes

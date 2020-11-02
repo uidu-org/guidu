@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.5.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+
 ## 0.5.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.1.12
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.1.11
 
 ### Patch Changes

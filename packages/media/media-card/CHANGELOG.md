@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.3.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/button@0.3.9
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/spinner@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/media-core@0.3.7
+
 ## 0.3.8
 
 ### Patch Changes

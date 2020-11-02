@@ -1,5 +1,18 @@
 # @uidu/editor-common
 
+## 0.3.12
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/theme@0.4.8
+  - @uidu/adf-schema@0.2.11
+  - @uidu/analytics-namespaced-context@0.2.7
+  - @uidu/emoji@0.2.7
+  - @uidu/mentions@0.1.29
+
 ## 0.3.11
 
 ### Patch Changes

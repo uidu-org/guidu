@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.3.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/avatar@0.5.9
+  - @uidu/slider@1.5.8
+  - @uidu/spinner@0.3.8
+  - @uidu/checkbox@0.2.11
+  - @uidu/field-password@0.3.11
+  - @uidu/field-phone@0.1.10
+  - @uidu/field-text@0.3.8
+  - @uidu/form@0.3.7
+  - @uidu/shell@1.1.1
+
 ## 0.3.8
 
 ### Patch Changes

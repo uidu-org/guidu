@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.2.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+
 ## 0.2.6
 
 ### Patch Changes

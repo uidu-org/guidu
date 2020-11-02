@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.1.14
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/accordion@0.3.9
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/dashlets@0.6.16
+  - @uidu/field-downshift@0.4.8
+  - @uidu/field-toggle@0.3.8
+  - @uidu/form@0.3.7
+  - @uidu/select@0.5.11
+  - @uidu/shell@1.1.1
+
 ## 0.1.13
 
 ### Patch Changes

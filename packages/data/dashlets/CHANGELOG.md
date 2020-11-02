@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.6.16
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/spinner@0.3.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/dashlet-controls@0.2.14
+
 ## 0.6.15
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.4.10
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/docs@0.2.13
+  - @uidu/analytics@0.3.6
+  - @uidu/blanket@0.3.7
+  - @uidu/item@0.3.10
+  - @uidu/theme@0.4.8
+
 ## 0.4.9
 
 ### Patch Changes

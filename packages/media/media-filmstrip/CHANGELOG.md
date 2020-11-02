@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.2.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/theme@0.4.8
+  - @uidu/media-card@0.3.9
+  - @uidu/media-core@0.3.7
+  - @uidu/media-viewer@0.2.10
+
 ## 0.2.8
 
 ### Patch Changes

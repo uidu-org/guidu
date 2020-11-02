@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.2.19
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/spinner@0.3.8
+  - @uidu/field-base@0.3.8
+
 ## 0.2.18
 
 ### Patch Changes

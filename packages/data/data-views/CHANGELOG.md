@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.4.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/data-controls@0.5.12
+  - @uidu/field-counter@0.2.13
+  - @uidu/field-number@0.3.8
+  - @uidu/form@0.3.7
+  - @uidu/select@0.5.11
+
 ## 0.4.8
 
 ### Patch Changes

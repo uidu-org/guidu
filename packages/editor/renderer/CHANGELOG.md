@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.2.11
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/code@0.3.10
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/adf-schema@0.2.11
+  - @uidu/adf-utils@0.5.7
+  - @uidu/editor-common@0.3.12
+  - @uidu/editor-json-transformer@0.2.9
+  - @uidu/analytics-listeners@0.2.7
+  - @uidu/analytics-namespaced-context@0.2.7
+  - @uidu/mentions@0.1.29
+  - @uidu/status@0.2.10
+  - @uidu/task-decision@0.2.9
+  - @uidu/media-card@0.3.9
+  - @uidu/media-filmstrip@0.2.9
+
 ## 0.2.10
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.5.20
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/spinner@0.3.8
+  - @uidu/board@0.2.29
+  - @uidu/calendar@0.1.40
+  - @uidu/data-controls@0.5.12
+  - @uidu/data-fields@0.3.5
+  - @uidu/data-views@0.4.9
+  - @uidu/gallery@0.1.66
+  - @uidu/list@0.1.40
+  - @uidu/table@0.3.9
+  - @uidu/shell@1.1.1
+
 ## 0.5.19
 
 ### Patch Changes

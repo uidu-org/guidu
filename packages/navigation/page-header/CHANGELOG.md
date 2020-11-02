@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.1.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/theme@0.4.8
+  - @uidu/shell@1.1.1
+
 ## 0.1.6
 
 ### Patch Changes

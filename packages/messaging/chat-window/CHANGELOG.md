@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.2.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/message@0.2.12
+  - @uidu/message-form@0.2.10
+  - @uidu/message-renderer@0.2.10
+
 ## 0.2.8
 
 ### Patch Changes

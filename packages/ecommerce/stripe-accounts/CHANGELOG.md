@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.1.32
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/slider@1.5.8
+  - @uidu/spinner@0.3.8
+  - @uidu/payments@0.2.24
+  - @uidu/field-text@0.3.8
+  - @uidu/form@0.3.7
+  - @uidu/stepper@0.2.10
+
 ## 0.1.31
 
 ### Patch Changes

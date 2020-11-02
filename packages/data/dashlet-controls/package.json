@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlet-controls",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashlet-controls",
@@ -11,11 +11,11 @@
   "types": "dist/dashlet-controls.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/avatar": "^0.5.7",
-    "@uidu/avatar-group": "^2.4.7",
-    "@uidu/dropdown-menu": "^0.3.7",
-    "@uidu/field-date-range": "^0.2.15",
-    "@uidu/form": "^0.3.6",
+    "@uidu/avatar": "^0.5.9",
+    "@uidu/avatar-group": "^2.4.8",
+    "@uidu/dropdown-menu": "^0.3.8",
+    "@uidu/field-date-range": "^0.2.16",
+    "@uidu/form": "^0.3.7",
     "d3-time": "^2.0.0",
     "moment": "^2.27.0",
     "react": "^17.0.0",
@@ -25,6 +25,6 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.12"
+    "@uidu/docs": "^0.2.13"
   }
 }

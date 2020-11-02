@@ -1,5 +1,15 @@
 # @uidu/table
 
+## 0.3.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/data-fields@0.3.5
+  - @uidu/checkbox@0.2.11
+
 ## 0.3.8
 
 ### Patch Changes

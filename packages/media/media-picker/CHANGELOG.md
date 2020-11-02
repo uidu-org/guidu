@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.3.8
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/media-core@0.3.7
+
 ## 0.3.7
 
 ### Patch Changes

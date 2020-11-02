@@ -1,5 +1,25 @@
 # @uidu/data-controls
 
+## 0.5.12
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/drawer@0.4.10
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/inline-dialog@0.3.8
+  - @uidu/item@0.3.10
+  - @uidu/spinner@0.3.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/data-fields@0.3.5
+  - @uidu/data-views@0.4.9
+  - @uidu/checkbox@0.2.11
+  - @uidu/field-text@0.3.8
+  - @uidu/form@0.3.7
+  - @uidu/select@0.5.11
+  - @uidu/shell@1.1.1
+
 ## 0.5.11
 
 ### Patch Changes

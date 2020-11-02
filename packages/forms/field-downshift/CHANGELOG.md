@@ -1,5 +1,16 @@
 # @uidu/field-downshift
 
+## 0.4.8
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/droplist@0.3.9
+  - @uidu/item@0.3.10
+  - @uidu/field-base@0.3.8
+  - @uidu/field-text@0.3.8
+
 ## 0.4.7
 
 ### Patch Changes

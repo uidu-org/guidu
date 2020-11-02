@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.1.29
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/avatar@0.5.9
+  - @uidu/button@0.3.9
+  - @uidu/lozenge@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/analytics-gas-types@0.1.16
+
 ## 0.1.28
 
 ### Patch Changes

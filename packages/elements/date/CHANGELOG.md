@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.2.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/theme@0.4.8
+
 ## 0.2.8
 
 ### Patch Changes

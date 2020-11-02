@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.4.11
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/avatar@0.5.9
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/inline-dialog@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/shell@1.1.1
+
 ## 0.4.10
 
 ### Patch Changes

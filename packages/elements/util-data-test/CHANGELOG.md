@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.2.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/emoji@0.2.7
+  - @uidu/mentions@0.1.29
+  - @uidu/task-decision@0.2.9
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.1.66
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/spinner@0.3.8
+  - @uidu/data-controls@0.5.12
+  - @uidu/data-fields@0.3.5
+
 ## 0.1.65
 
 ### Patch Changes

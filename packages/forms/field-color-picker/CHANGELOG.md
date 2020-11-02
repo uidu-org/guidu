@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.2.12
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/inline-dialog@0.3.8
+  - @uidu/field-base@0.3.8
+
 ## 0.2.11
 
 ### Patch Changes

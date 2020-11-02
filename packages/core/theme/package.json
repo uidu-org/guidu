@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "The Guidu theme framework",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/theme",
   "license": "Apache-2.0",
@@ -11,17 +11,17 @@
   "types": "dist/theme.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/form": "^0.3.6",
+    "@uidu/form": "^0.3.7",
     "exenv": "^1.2.2",
     "prop-types": "^15.7.2",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.8",
-    "@uidu/docs": "^0.2.12",
-    "@uidu/field-date": "^0.2.14",
-    "@uidu/lozenge": "^0.3.7",
-    "@uidu/section-message": "^0.3.7",
+    "@uidu/button": "^0.3.9",
+    "@uidu/docs": "^0.2.13",
+    "@uidu/field-date": "^0.2.15",
+    "@uidu/lozenge": "^0.3.8",
+    "@uidu/section-message": "^0.3.8",
     "color": "^3.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

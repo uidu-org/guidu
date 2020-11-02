@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.3.15
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/avatar@0.5.9
+  - @uidu/avatar-group@2.4.8
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/field-date-range@0.2.16
+  - @uidu/form@0.3.7
+
 ## 0.3.14
 
 ### Patch Changes

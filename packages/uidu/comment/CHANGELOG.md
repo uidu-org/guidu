@@ -1,5 +1,18 @@
 # @uidu/comment
 
+## 0.1.24
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/avatar@0.5.9
+  - @uidu/spinner@0.3.8
+  - @uidu/field-mentions@0.3.8
+  - @uidu/field-text@0.3.8
+  - @uidu/form@0.3.7
+  - @uidu/message-renderer@0.2.10
+
 ## 0.1.23
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.2.6
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.2.5
 
 ### Patch Changes

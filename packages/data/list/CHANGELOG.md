@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.40
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/data-fields@0.3.5
+
 ## 0.1.39
 
 ### Patch Changes

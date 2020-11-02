@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.1.40
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/shell@1.1.1
+
 ## 0.1.39
 
 ### Patch Changes

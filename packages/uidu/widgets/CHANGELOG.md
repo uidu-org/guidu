@@ -1,5 +1,15 @@
 # @uidu/widgets
 
+## 0.3.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/slider@1.5.8
+  - @uidu/shell@1.1.1
+  - @uidu/contact@0.1.23
+
 ## 0.3.6
 
 ### Patch Changes

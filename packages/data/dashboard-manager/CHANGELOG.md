@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.12
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/dashboard-controls@0.3.15
+  - @uidu/dashlets@0.6.16
+
 ## 0.7.11
 
 ### Patch Changes

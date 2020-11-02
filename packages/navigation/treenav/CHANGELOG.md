@@ -1,5 +1,11 @@
 # @uidu/treenav
 
+## 0.1.20
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.1.19
 
 ### Patch Changes

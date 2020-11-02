@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.3.8
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.3.7
 
 ### Patch Changes

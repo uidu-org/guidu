@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.4.8
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/form@0.3.7
+
 ## 0.4.7
 
 ### Patch Changes

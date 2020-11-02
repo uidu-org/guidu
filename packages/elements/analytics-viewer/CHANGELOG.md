@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.2.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+
 ## 0.2.8
 
 ### Patch Changes

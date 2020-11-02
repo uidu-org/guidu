@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.1.27
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.1.26
 
 ### Patch Changes

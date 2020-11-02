@@ -1,6 +1,6 @@
 {
   "name": "@uidu/propose",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "private": false,
   "description": "Job/volunteer proposals",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/propose",
@@ -11,17 +11,17 @@
   "types": "dist/propose.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/checkbox": "^0.2.10",
-    "@uidu/field": "^0.2.10",
-    "@uidu/field-text": "^0.3.7",
-    "@uidu/field-textarea": "^0.2.10",
-    "@uidu/form": "^0.3.6",
-    "@uidu/widgets": "^0.3.6",
+    "@uidu/checkbox": "^0.2.11",
+    "@uidu/field": "^0.2.13",
+    "@uidu/field-text": "^0.3.8",
+    "@uidu/field-textarea": "^0.2.11",
+    "@uidu/form": "^0.3.7",
+    "@uidu/widgets": "^0.3.7",
     "react": "^17.0.0",
     "react-feather": "^2.0.8",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.12"
+    "@uidu/docs": "^0.2.13"
   }
 }

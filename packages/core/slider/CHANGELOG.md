@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.5.8
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 1.5.7
 
 ### Patch Changes

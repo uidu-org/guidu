@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.3.6
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.3.5
 
 ### Patch Changes

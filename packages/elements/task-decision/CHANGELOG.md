@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.2.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/avatar-group@2.4.8
+  - @uidu/button@0.3.9
+  - @uidu/spinner@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/analytics-namespaced-context@0.2.7
+
 ## 0.2.8
 
 ### Patch Changes

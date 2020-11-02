@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.5.11
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/spinner@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/checkbox@0.2.11
+  - @uidu/field-base@0.3.8
+  - @uidu/form@0.3.7
+
 ## 0.5.10
 
 ### Patch Changes

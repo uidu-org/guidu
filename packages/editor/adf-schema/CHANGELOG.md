@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.11
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.2.10
 
 ### Patch Changes

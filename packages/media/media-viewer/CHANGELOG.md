@@ -1,5 +1,19 @@
 # @uidu/media-viewer
 
+## 0.2.10
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/avatar@0.5.9
+  - @uidu/button@0.3.9
+  - @uidu/spinner@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/media-core@0.3.7
+  - @uidu/shell@1.1.1
+  - @uidu/comment@0.1.24
+
 ## 0.2.9
 
 ### Patch Changes

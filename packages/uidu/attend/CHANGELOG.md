@@ -1,5 +1,22 @@
 # @uidu/attend
 
+## 0.3.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/spinner@0.3.8
+  - @uidu/payments@0.2.24
+  - @uidu/field-counter@0.2.13
+  - @uidu/field-text@0.3.8
+  - @uidu/field-textarea@0.2.11
+  - @uidu/form@0.3.7
+  - @uidu/shell@1.1.1
+  - @uidu/stepper@0.2.10
+  - @uidu/contact@0.1.23
+  - @uidu/widgets@0.3.7
+
 ## 0.3.6
 
 ### Patch Changes

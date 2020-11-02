@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.3.13
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/analytics@0.3.6
+  - @uidu/button@0.3.9
+  - @uidu/spinner@0.3.8
+  - @uidu/field-base@0.3.8
+  - @uidu/media-core@0.3.7
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.1.29
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.1.28
 
 ### Patch Changes

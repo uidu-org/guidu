@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.2.12
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/avatar@0.5.9
+  - @uidu/drawer@0.4.10
+  - @uidu/dropdown-menu@0.3.8
+  - @uidu/tooltip@0.3.9
+  - @uidu/media-card@0.3.9
+  - @uidu/media-core@0.3.7
+  - @uidu/media-viewer@0.2.10
+  - @uidu/message-form@0.2.10
+  - @uidu/message-renderer@0.2.10
+
 ## 0.2.11
 
 ### Patch Changes

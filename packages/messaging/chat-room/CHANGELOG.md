@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.2.7
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/shell@1.1.1
+
 ## 0.2.6
 
 ### Patch Changes

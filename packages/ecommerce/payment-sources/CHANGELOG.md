@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.1.23
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/payments@0.2.24
+  - @uidu/form@0.3.7
+
 ## 0.1.22
 
 ### Patch Changes

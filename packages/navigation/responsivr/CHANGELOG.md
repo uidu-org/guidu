@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.2.8
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+
 ## 0.2.7
 
 ### Patch Changes

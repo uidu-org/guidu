@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.2.13
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/button@0.3.9
+  - @uidu/code@0.3.10
+  - @uidu/section-message@0.3.8
+  - @uidu/theme@0.4.8
+  - @uidu/tooltip@0.3.9
+
 ## 0.2.12
 
 ### Patch Changes

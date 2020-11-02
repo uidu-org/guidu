@@ -1,5 +1,15 @@
 # @uidu/contact
 
+## 0.1.23
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/checkbox@0.2.11
+  - @uidu/field-text@0.3.8
+  - @uidu/form@0.3.7
+
 ## 0.1.22
 
 ### Patch Changes

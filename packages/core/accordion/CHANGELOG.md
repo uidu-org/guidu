@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.9
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/docs@0.2.13
+
 ## 0.3.8
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/payments
 
+## 0.2.24
+
+### Patch Changes
+
+- 2080e56: Publish types properly and bump dependencies
+- Updated dependencies [2080e56]
+  - @uidu/slider@1.5.8
+  - @uidu/form@0.3.7
+
 ## 0.2.23
 
 ### Patch Changes
