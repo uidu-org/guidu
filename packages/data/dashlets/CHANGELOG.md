@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.15
+
+### Patch Changes
+
+- e58b025: Bump dependencies
+
 ## 0.6.14
 
 ### Patch Changes

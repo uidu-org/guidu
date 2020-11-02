@@ -1,5 +1,11 @@
 # @uidu/gallery
 
+## 0.1.65
+
+### Patch Changes
+
+- e58b025: Bump dependencies
+
 ## 0.1.64
 
 ### Patch Changes
