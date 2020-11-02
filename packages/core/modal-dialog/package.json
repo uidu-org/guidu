@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/modal-dialog.cjs.js",
   "module": "dist/modal-dialog.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/modal-dialog.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
@@ -47,6 +47,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

@@ -13,6 +13,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

@@ -7,7 +7,7 @@
   "sideEffects": false,
   "main": "dist/emoji.cjs.js",
   "module": "dist/emoji.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/emoji.cjs.d.ts",
   "scripts": {
     "i18n:pull": "i18n-tools pull --resource emoji . --type ts",
     "i18n:push": "i18n-tools push --resource emoji . --type ts"
@@ -60,6 +60,5 @@
       "resource",
       "types"
     ]
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

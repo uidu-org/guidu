@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/contact.cjs.js",
   "module": "dist/contact.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/contact.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.10",
@@ -21,6 +21,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

@@ -7,7 +7,7 @@
   "author": "uidu",
   "sideEffects": false,
   "main": "dist/page-header.cjs.js",
-  "types": "index.d.ts",
+  "types": "dist/page-header.cjs.d.ts",
   "dependencies": {
     "@uidu/shell": "^1.1.0",
     "@uidu/theme": "^0.4.7",
@@ -29,6 +29,5 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "styled-components": "^5.1.1"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

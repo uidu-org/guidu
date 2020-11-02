@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/treenav.cjs.js",
   "module": "dist/treenav.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/treenav.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "react": "^17.0.0",
@@ -20,6 +20,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/shell": "^1.0.10"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

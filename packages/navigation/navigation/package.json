@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/navigation.cjs.js",
   "module": "dist/navigation.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/navigation.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.8",
@@ -34,6 +34,5 @@
     "@uidu/docs": "^0.2.12",
     "@uidu/lozenge": "^0.3.7",
     "react-feather": "^2.0.8"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

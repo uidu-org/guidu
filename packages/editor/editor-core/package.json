@@ -5,7 +5,7 @@
   "license": "MIT",
   "main": "dist/editor-core.cjs.js",
   "module": "dist/editor-core.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/editor-core.cjs.d.ts",
   "dependencies": {
     "@atlaskit/calendar": "^10.0.0",
     "@atlaskit/icon": "^21.1.2",
@@ -75,6 +75,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/shell": "^1.1.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

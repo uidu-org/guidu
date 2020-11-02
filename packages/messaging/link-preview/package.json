@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/link-preview.cjs.js",
   "module": "dist/link-preview.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/link-preview.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "axios": "^0.21.0",
@@ -25,6 +25,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

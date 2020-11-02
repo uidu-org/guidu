@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/editor-common.cjs.js",
   "module": "dist/editor-common.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/editor-common.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@atlaskit/profilecard": "^13.0.4",
@@ -36,6 +36,5 @@
       ".",
       "provider-factory"
     ]
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

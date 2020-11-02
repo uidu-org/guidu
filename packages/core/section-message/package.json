@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/section-message.cjs.js",
   "module": "dist/section-message.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/section-message.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
@@ -30,6 +30,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

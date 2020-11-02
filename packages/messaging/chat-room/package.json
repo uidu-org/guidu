@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/chat-room.cjs.js",
   "module": "dist/chat-room.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/chat-rooom.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/shell": "^1.0.10",
@@ -17,6 +17,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

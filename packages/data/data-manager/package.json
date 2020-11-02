@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/data-manager.cjs.js",
   "module": "dist/data-manager.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/data-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",
@@ -38,6 +38,5 @@
     "@uidu/page-header": "^0.1.6",
     "@uidu/side-navigation": "^0.1.16",
     "react-intl": "^5.8.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

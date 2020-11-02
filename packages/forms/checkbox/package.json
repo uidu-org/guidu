@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/checkbox.cjs.js",
   "module": "dist/checkbox.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/checkbox.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.5",
@@ -24,6 +24,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
-  "uidu:src": "src/index.ts"
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

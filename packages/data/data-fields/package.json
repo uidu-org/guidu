@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/data-fields.cjs.js",
   "module": "dist/data-fields.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/data-fields.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",
@@ -34,6 +34,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

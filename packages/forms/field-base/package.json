@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/field-base.cjs.js",
   "module": "dist/field-base.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/field-base.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/form": "^0.3.6",
@@ -28,6 +28,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5",
-  "uidu:src": "src/index.ts"
+  "gitHead": "b7db529527c03f84030c3e712742ff4301bc72c5"
 }

@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/mentions.cjs.js",
   "module": "dist/mentions.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/mentions.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@atlaskit/util-service-support": "^6.0.1",
@@ -33,6 +33,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

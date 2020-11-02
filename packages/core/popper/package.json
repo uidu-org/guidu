@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/popper.cjs.js",
   "module": "dist/popper.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/popper.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@popperjs/core": "^2.1.1",
@@ -29,6 +29,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

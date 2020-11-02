@@ -7,7 +7,7 @@
   "author": "Atlassian Pty Ltd",
   "main": "dist/status.cjs.js",
   "module": "dist/status.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/status.cjs.d.ts",
   "scripts": {
     "i18n:pull": "i18n-tools pull --resource status . --type ts",
     "i18n:push": "i18n-tools push --resource status . --type ts"
@@ -43,6 +43,5 @@
       "element",
       "picker"
     ]
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

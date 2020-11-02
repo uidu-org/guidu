@@ -22,9 +22,10 @@
     "changeset": "                           changeset",
     "delete": "                              yarn run delete:build && yarn run delete:tmp && yarn run delete:modules",
     "delete:build": "                        manypkg exec rm -rf dist",
-    "delete:tmp": "                          manypkg exec rm -rf tmp",
     "delete:modules": "                      manypkg exec rm -rf node_modules && rm -rf node_modules",
+    "delete:tmp": "                          manypkg exec rm -rf tmp",
     "deploy": "                              cd website && yarn deploy",
+    "design-system:start": "                 cd apps/design-system && yarn dev",
     "postinstall": "                         manypkg check && preconstruct dev",
     "lint": "                                yarn run lint:eslint && yarn run lint:stylelint",
     "lint:checkPrettier": "                  eslint --print-config .eslintrc.json | eslint-config-prettier-check",
@@ -45,8 +46,11 @@
     "start:uidu": "                          dotenv yarn run website:start **/packages/uidu/**",
     "typecheck": "                           yarn run typecheck:typescript",
     "typecheck:typescript": "                tsc --noEmit",
-    "website:start": "                       cd website && yarn start",
-    "design-system:start": "                 cd apps/design-system && yarn dev"
+    "website:start": "                       cd website && yarn start"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   },
   "resolutions": {
     "styled-components": "^5.0.0"
@@ -270,7 +274,7 @@
     "markdown-it": "^11.0.0",
     "markdown-it-table": "^2.0.4",
     "memoize-one": "^5.1.1",
-    "meow": "^7.0.0",
+    "meow": "^8.0.0",
     "mini-css-extract-plugin": "^1.0.0",
     "minimatch": "^3.0.4",
     "mkdirp": "^1.0.3",
@@ -411,10 +415,6 @@
     "webpack-manifest-plugin": "^2.0.4",
     "zoid": "^9.0.43",
     "zxcvbn": "^4.4.2"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all"
   },
   "engines": {
     "node": "^12.0.0",

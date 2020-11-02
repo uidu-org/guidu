@@ -13,7 +13,7 @@
   "sideEffects": false,
   "main": "dist/field-range.cjs.js",
   "module": "dist/field-range.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/field-range.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/field-base": "^0.3.7",
@@ -34,6 +34,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

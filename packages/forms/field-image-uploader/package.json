@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/field-image-uploader.cjs.js",
   "module": "dist/field-image-uploader.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/field-image-uploader.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.5",
@@ -35,6 +35,5 @@
     "@uidu/docs": "^0.2.12",
     "@uidu/form": "^0.3.6",
     "axios": "^0.21.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

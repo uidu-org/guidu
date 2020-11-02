@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/media-core.cjs.js",
   "module": "dist/media-core.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/media-core.cjs.d.ts",
   "dependencies": {
     "@uidu/docs": "^0.2.12",
     "@uppy/aws-s3": "^1.6.4",
@@ -30,6 +30,5 @@
       ".",
       "types"
     ]
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

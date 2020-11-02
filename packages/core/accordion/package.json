@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/accordion.cjs.js",
   "module": "dist/accordion.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/accordion.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/docs": "^0.2.12",
@@ -23,6 +23,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

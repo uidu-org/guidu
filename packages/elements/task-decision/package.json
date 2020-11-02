@@ -5,10 +5,11 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/task-decision",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
+  "maintainers": [],
   "sideEffects": false,
   "main": "dist/task-decision.cjs.js",
   "module": "dist/task-decision.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/task-decision.cjs.d.ts",
   "config": {
     "access": "public"
   },
@@ -46,7 +47,5 @@
     "react-dom": "^17.0.0",
     "styled-components": "^5.0.0",
     "url-search-params": "^1.1.0"
-  },
-  "maintainers": [],
-  "uidu:src": "src/index.ts"
+  }
 }

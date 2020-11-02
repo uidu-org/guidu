@@ -7,7 +7,7 @@
   "author": "uidu",
   "sideEffects": false,
   "main": "dist/inline-edit.cjs.js",
-  "types": "index.d.ts",
+  "types": "dist/inline-edit.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
@@ -34,6 +34,5 @@
   "peerDependencies": {
     "react": "^17.0.0",
     "styled-components": "^5.1.1"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

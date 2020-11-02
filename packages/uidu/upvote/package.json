@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/upvote.cjs.js",
   "module": "dist/upvote.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/upvote.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "react": "^17.0.0",
@@ -16,6 +16,5 @@
   "devDependencies": {
     "@uidu/button": "^0.3.8",
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

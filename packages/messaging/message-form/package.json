@@ -32,6 +32,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/media-picker": "^0.3.7"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

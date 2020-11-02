@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/attend.cjs.js",
   "module": "dist/attend.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/attend.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/contact": "^0.1.22",
@@ -30,6 +30,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

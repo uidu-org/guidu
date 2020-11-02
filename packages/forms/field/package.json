@@ -9,7 +9,7 @@
   "sideEffects": false,
   "main": "dist/field.cjs.js",
   "module": "dist/field.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/field.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",
@@ -25,6 +25,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/form": "^0.3.6"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

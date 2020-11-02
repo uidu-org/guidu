@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/editor-json-transformer.cjs.js",
   "module": "dist/editor-json-transformer.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/editor-json-transformer.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/adf-schema": "^0.2.9",
@@ -26,6 +26,5 @@
   },
   "peerDependencies": {
     "react": "^17.0.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

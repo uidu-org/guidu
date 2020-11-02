@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/code.cjs.js",
   "module": "dist/code.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/code.cjs.d.ts",
   "config": {
     "access": "public"
   },
@@ -31,6 +31,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

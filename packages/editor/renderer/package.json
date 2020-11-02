@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/renderer.cjs.js",
   "module": "dist/renderer.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/renderer.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@atlaskit/type-helpers": "^4.1.6",
@@ -51,6 +51,5 @@
   "peerDependencies": {
     "react": "^17.0.0",
     "styled-components": "^5.0.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

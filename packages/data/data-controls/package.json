@@ -9,7 +9,7 @@
   "sideEffects": false,
   "main": "dist/data-controls.cjs.js",
   "module": "dist/data-controls.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/data-controls.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.10",
@@ -38,6 +38,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

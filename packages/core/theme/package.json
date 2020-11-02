@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/theme.cjs.js",
   "module": "dist/theme.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/theme.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/form": "^0.3.6",
@@ -42,6 +42,5 @@
       "typography",
       "math"
     ]
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

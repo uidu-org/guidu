@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/media-filmstrip.cjs.js",
   "module": "dist/media-filmstrip.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/media-filmstrip.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/media-card": "^0.3.8",
@@ -22,6 +22,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

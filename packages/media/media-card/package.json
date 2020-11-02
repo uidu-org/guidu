@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/media-card.cjs.js",
   "module": "dist/media-card.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/media-card.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@fluentui/react": "^7.134.1",
@@ -27,6 +27,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "faker": "^5.1.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

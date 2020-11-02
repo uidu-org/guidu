@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/adf-schema.cjs.js",
   "module": "dist/adf-schema.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/adf-schema.cjs.d.ts",
   "scripts": {
     "ak-postbuild": "yarn build:json-schema",
     "build:json-schema": "mkdir -p dist && cp -r json-schema dist",
@@ -34,6 +34,5 @@
     "axios": "^0.21.0",
     "json-schema-diff-validator": "^0.4.1",
     "prosemirror-state": "^1.2.3"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

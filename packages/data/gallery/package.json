@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/gallery.cjs.js",
   "module": "dist/gallery.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/gallery.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/data-controls": "^0.5.11",
@@ -24,6 +24,5 @@
     "@uidu/docs": "^0.2.12",
     "@uidu/shell": "^1.0.10",
     "react-router-dom": "^5.2.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

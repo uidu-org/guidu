@@ -28,7 +28,5 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  },
-  "module:es2019": "dist/es2019/index.js",
-  "uidu:src": "src/index.ts"
+  }
 }

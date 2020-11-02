@@ -7,7 +7,7 @@
   "sideEffects": false,
   "main": "dist/radio.cjs.js",
   "module": "dist/radio.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/radio.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.5",
@@ -20,6 +20,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/form": "^0.3.6"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

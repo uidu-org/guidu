@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/comment.cjs.js",
   "module": "dist/comment.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/comment.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.7",
@@ -25,6 +25,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

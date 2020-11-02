@@ -7,7 +7,7 @@
   "author": "uidu",
   "main": "dist/util-data-test.cjs.js",
   "module": "dist/util-data-test.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/util-data-test.cjs.d.ts",
   "scripts": {
     "ak-postbuild": "cp -r src/json-data dist/esm/json-data && cp -r src/json-data dist/cjs/json-data"
   },
@@ -33,6 +33,5 @@
     "js-search": "^2.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

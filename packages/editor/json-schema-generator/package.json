@@ -6,6 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/json-schema-generator",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
+  "maintainers": [
+    "Rifat Nabi"
+  ],
   "main": "bin.js",
   "bin": {
     "json-schema-generator": "bin.js"
@@ -18,14 +21,11 @@
     "@types/meow": "^5.0.0",
     "@types/mkdirp": "^1.0.0",
     "@types/prettier": "^2.0.0",
-    "meow": "^7.0.0",
+    "meow": "^8.0.0",
     "mkdirp": "^1.0.3",
     "prettier": "^2.0.0",
     "ts-node": "^9.0.0",
     "tslib": "^2.0.1",
     "typescript": "^4.0.2"
-  },
-  "maintainers": [
-    "Rifat Nabi"
-  ]
+  }
 }

@@ -7,7 +7,7 @@
   "author": "Atlassian Pty Ltd",
   "main": "dist/analytics-viewer.cjs.js",
   "module": "dist/analytics-viewer.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/analytics-viewer.cjs.d.ts",
   "config": {
     "access": "private"
   },
@@ -22,6 +22,5 @@
   },
   "peerDependencies": {
     "react": "^17.0.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

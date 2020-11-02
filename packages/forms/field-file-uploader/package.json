@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/field-file-uploader.cjs.js",
   "module": "dist/field-file-uploader.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/field-file-uploader.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/field-base": "^0.3.7",
@@ -23,6 +23,5 @@
   "devDependencies": {
     "@uidu/docs": "^0.2.12",
     "@uidu/form": "^0.3.6"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

@@ -13,7 +13,7 @@
   "author": "Atlassian Pty Ltd",
   "main": "dist/date.cjs.js",
   "module": "dist/date.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/date.cjs.d.ts",
   "config": {
     "access": "public"
   },
@@ -31,6 +31,5 @@
   },
   "peerDependencies": {
     "react": "^17.0.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

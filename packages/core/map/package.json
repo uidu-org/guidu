@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/map.cjs.js",
   "module": "dist/map.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/map.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.7",
@@ -27,6 +27,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

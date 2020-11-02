@@ -9,7 +9,7 @@
   "sideEffects": false,
   "main": "dist/flag.cjs.js",
   "module": "dist/flag.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/flag.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.5",
@@ -36,6 +36,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

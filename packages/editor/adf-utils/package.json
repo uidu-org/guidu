@@ -5,10 +5,13 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/adf-utils",
   "license": "Apache-2.0",
   "author": "uidu",
+  "maintainers": [
+    "Stanislav S"
+  ],
   "sideEffects": false,
   "main": "dist/adf-utils.cjs.js",
   "module": "dist/adf-utils.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/adf-utils.cjs.d.ts",
   "scripts": {
     "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
   },
@@ -21,9 +24,5 @@
     "@uidu/docs": "^0.2.12",
     "@uidu/json-schema-generator": "^0.1.15",
     "react": "^17.0.0"
-  },
-  "maintainers": [
-    "Stanislav S"
-  ],
-  "uidu:src": "src/index.ts"
+  }
 }

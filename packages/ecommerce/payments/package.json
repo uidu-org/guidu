@@ -8,7 +8,7 @@
   "author": "uidu",
   "main": "dist/payments.cjs.js",
   "module": "dist/payments.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/payments.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@stripe/react-stripe-js": "^1.0.3",
@@ -24,6 +24,5 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.2.12"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

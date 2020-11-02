@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/lozenge.cjs.js",
   "module": "dist/lozenge.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/lozenge.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.7",
@@ -26,6 +26,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

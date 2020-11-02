@@ -7,7 +7,7 @@
   "author": "Atlassian Pty. Ltd",
   "main": "dist/analytics-listeners.cjs.js",
   "module": "dist/analytics-listeners.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/analytics-listeners.cjs.d.ts",
   "config": {
     "access": "public"
   },
@@ -27,6 +27,5 @@
   },
   "peerDependencies": {
     "react": "^17.0.0"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }

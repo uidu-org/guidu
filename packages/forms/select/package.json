@@ -8,7 +8,7 @@
   "sideEffects": false,
   "main": "dist/select.cjs.js",
   "module": "dist/select.esm.js",
-  "types": "index.d.ts",
+  "types": "dist/select.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
@@ -46,6 +46,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "uidu:src": "src/index.ts"
+  }
 }
