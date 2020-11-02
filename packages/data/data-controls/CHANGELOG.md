@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.5.13
+
+### Patch Changes
+
+- 4ff86fa: Adding uidu:src back to webpack-config for some dev errors (to explore)
+
 ## 0.5.12
 
 ### Patch Changes
