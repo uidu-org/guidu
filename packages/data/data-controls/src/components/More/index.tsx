@@ -1,8 +1,6 @@
-import DropdownMenu, {
-  DropdownItem,
-  DropdownItemGroup,
-} from '@uidu/dropdown-menu';
-import React from 'react';
+import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
+import Popup from '@uidu/popup';
+import React, { useState } from 'react';
 import {
   Clipboard,
   Download,
@@ -20,6 +18,7 @@ export default function More({
   onRename,
   onDestroy,
 }: MoreProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const actions = [
     {
       text: 'Rename view',
@@ -49,26 +48,37 @@ export default function More({
   ];
 
   return (
-    <DropdownMenu
+    <Popup
       // className="mr-2"
-      trigger={
-        <Trigger activeBg="#fee2d5" className="btn" active={false}>
+      onClose={() => setIsOpen(false)}
+      isOpen={isOpen}
+      trigger={(triggerProps) => (
+        <Trigger
+          {...triggerProps}
+          onClick={() => setIsOpen(!isOpen)}
+          activeBg="#fee2d5"
+          className="btn"
+          active={false}
+        >
           <MoreHorizontal strokeWidth={2} size={14} />
         </Trigger>
-      }
-      position="bottom left"
-    >
-      <DropdownItemGroup>
-        {actions.map(({ onClick, text, icon: Icon }) => (
-          <DropdownItem
-            key={text}
-            onClick={onClick}
-            elemBefore={<Icon size={14} />}
-          >
-            {text}
-          </DropdownItem>
-        ))}
-      </DropdownItemGroup>
-    </DropdownMenu>
+      )}
+      content={() => (
+        <MenuGroup>
+          <Section>
+            {actions.map(({ onClick, text, icon: Icon }) => (
+              <ButtonItem
+                key={text}
+                onClick={onClick}
+                iconBefore={<Icon size={14} />}
+              >
+                {text}
+              </ButtonItem>
+            ))}
+          </Section>
+        </MenuGroup>
+      )}
+      placement="bottom-start"
+    />
   );
 }

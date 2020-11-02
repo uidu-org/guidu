@@ -1,3 +1,4 @@
+import { More } from '@uidu/data-controls';
 import { buildColumns } from '@uidu/data-fields';
 import DropdownMenu, {
   DropdownItem,
@@ -412,6 +413,7 @@ export default class Basic extends Component<any, any> {
                                   />
                                 </Form>
                               </div>
+                              <More />
                               {renderControls({
                                 controls: {
                                   viewer: {
