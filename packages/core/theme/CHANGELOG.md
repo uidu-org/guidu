@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.4.10
+
+### Patch Changes
+
+- 4ff86fa: Adding uidu:src back to webpack-config for some dev errors (to explore)
+
 ## 0.4.9
 
 ### Patch Changes

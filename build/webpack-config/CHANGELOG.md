@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.87
+
+### Patch Changes
+
+- 4ff86fa: Adding uidu:src back to webpack-config for some dev errors (to explore)
+
 ## 0.1.86
 
 ### Patch Changes

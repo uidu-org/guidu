@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 0.3.12
+
+### Patch Changes
+
+- 4ff86fa: Adding uidu:src back to webpack-config for some dev errors (to explore)
+- Updated dependencies [4ff86fa]
+  - @uidu/theme@0.4.10
+
 ## 0.3.11
 
 ### Patch Changes
