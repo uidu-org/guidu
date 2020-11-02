@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.3.10
+
+### Patch Changes
+
+- 6697810: Fix emotion core react jsx pragma
+- Updated dependencies [6697810]
+  - @uidu/theme@0.4.9
+
 ## 0.3.9
 
 ### Patch Changes
