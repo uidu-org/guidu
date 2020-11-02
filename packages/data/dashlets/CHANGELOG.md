@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.17
+
+### Patch Changes
+
+- 40371ba: Better counter and dashlet table rendering
+
 ## 0.6.16
 
 ### Patch Changes

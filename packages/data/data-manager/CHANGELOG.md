@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.5.21
+
+### Patch Changes
+
+- 84bb2d6: Fix more component to use popup
+- Updated dependencies [84bb2d6]
+  - @uidu/data-controls@0.5.14
+
 ## 0.5.20
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.5.14
+
+### Patch Changes
+
+- 84bb2d6: Fix more component to use popup
+- Updated dependencies [84bb2d6]
+  - @uidu/form@0.3.8
+
 ## 0.5.13
 
 ### Patch Changes
