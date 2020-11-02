@@ -10,6 +10,7 @@ export default class ListBlock extends PureComponent<any> {
       return <Loader />;
     }
 
+    console.log(resultSet);
     console.log(resultSet.tableColumns());
 
     return (
