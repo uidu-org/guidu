@@ -1,3 +1,10 @@
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+  ShellSidebar,
+} from '@uidu/shell';
 import * as React from 'react';
 import Options from './Options';
 import Playground from './Playground';
@@ -5,7 +12,8 @@ import Playground from './Playground';
 export type LayoutChoice = 'horizontal' | 'vertical' | 'elementOnly';
 
 const initialState = Object.freeze({
-  layout: 'horizontal' as LayoutChoice,
+  sectionLayout: 'vertical' as LayoutChoice,
+  layout: 'vertical' as LayoutChoice,
   showingOptions: true,
   validateBeforeSubmit: true,
   validatePristine: false,
@@ -45,33 +53,58 @@ class App extends React.Component<{}, State> {
   public render(): JSX.Element {
     const {
       layout,
+      sectionLayout,
       validateBeforeSubmit,
       validatePristine,
       showingOptions,
       disabled,
     } = this.state;
     return (
-      <div>
-        <h1 className="pb-2 mt-4 mb-3 border-bottom">Form Playground</h1>
-        <Options
-          layoutChoice={layout}
-          validateBeforeSubmitChoice={validateBeforeSubmit}
-          validatePristineChoice={validatePristine}
-          showing={showingOptions}
-          disabledChoice={disabled}
-          onChangeOption={this.handleChangeOption}
-          onToggle={this.handleToggleOptions}
-        />
-        <h2 className="pb-2 mt-4 mb-3 border-bottom">
-          Layout: <code>{layout}</code>
-        </h2>
-        <Playground
-          layoutChoice={layout}
-          validateBeforeSubmitChoice={validateBeforeSubmit}
-          validatePristineChoice={validatePristine}
-          disabledChoice={disabled}
-        />
-      </div>
+      <>
+        <ShellSidebar style={{ width: '20rem' }} className="border-right">
+          <Options
+            layoutChoice={layout}
+            sectionLayoutChoice={sectionLayout}
+            validateBeforeSubmitChoice={validateBeforeSubmit}
+            validatePristineChoice={validatePristine}
+            showing={showingOptions}
+            disabledChoice={disabled}
+            onChangeOption={this.handleChangeOption}
+            onToggle={this.handleToggleOptions}
+          />
+        </ShellSidebar>
+        <ShellMain>
+          <ShellHeader className="border-bottom px-4">
+            <h5 className="m-0">
+              Form Playground{' '}
+              <small>
+                <code>{layout}</code>
+              </small>
+            </h5>
+          </ShellHeader>
+          <ShellBody>
+            <ScrollableContainer>
+              <div className="container my-5">
+                <div className="row justify-content-center">
+                  <div className="col-sm-10">
+                    <Playground
+                      layoutChoice={layout}
+                      sectionLayoutChoice={sectionLayout}
+                      validateBeforeSubmitChoice={validateBeforeSubmit}
+                      validatePristineChoice={validatePristine}
+                      disabledChoice={disabled}
+                    />
+                  </div>
+                </div>
+              </div>
+            </ScrollableContainer>
+          </ShellBody>
+        </ShellMain>
+        <ShellSidebar
+          style={{ width: '20rem' }}
+          className="border-left"
+        ></ShellSidebar>
+      </>
     );
   }
 }

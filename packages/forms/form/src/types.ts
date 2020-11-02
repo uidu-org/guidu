@@ -1,11 +1,12 @@
 import { ClassValue } from 'classnames/types';
+import { ReactNode } from 'react';
 
 export type LayoutType = 'horizontal' | 'vertical' | 'elementOnly';
 
 export type FormHandleSubmit = (model, resetForm) => Promise<any>;
 
 export type FormProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   handleSubmit: FormHandleSubmit;
   footerRenderer: (
     { loading, canSubmit },
@@ -24,4 +25,14 @@ export type FormProps = {
   validateBeforeSubmit?: boolean;
   validatePristine?: boolean;
   disabled?: boolean;
+};
+
+export type FormSectionProps = {
+  children?: ReactNode;
+  name: string | ReactNode;
+  layout?: LayoutType;
+  description?: string | ReactNode;
+  isFirst?: boolean;
+  isLast?: boolean;
+  hideHelpers?: boolean;
 };

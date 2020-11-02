@@ -1,5 +1,5 @@
+import { localUploadOptions } from '@uidu/media-core';
 import * as React from 'react';
-import Form from '../src';
 import Checkbox, { CheckboxGroup } from '../../checkbox/src';
 import FieldColorPicker from '../../field-color-picker/src';
 import FieldCounter from '../../field-counter/src';
@@ -22,11 +22,13 @@ import FieldTextarea from '../../field-textarea/src';
 import FieldTime from '../../field-time/src';
 import { RadioGroup } from '../../radio/src';
 import Select from '../../select/src';
+import Form, { FormSection } from '../src';
 import { LayoutChoice } from './App';
 
 interface Props {
   disabledChoice: boolean;
   layoutChoice: LayoutChoice;
+  sectionLayoutChoice: LayoutChoice;
   validateBeforeSubmitChoice: boolean;
   validatePristineChoice: boolean;
 }
@@ -34,6 +36,7 @@ interface Props {
 const Playground: React.FunctionComponent<Props> = ({
   disabledChoice,
   layoutChoice,
+  sectionLayoutChoice,
   validateBeforeSubmitChoice,
   validatePristineChoice,
 }) => {
@@ -92,10 +95,6 @@ const Playground: React.FunctionComponent<Props> = ({
     ...selectOptions,
   ];
 
-  const legend = (str: string): JSX.Element => (
-    <legend className="pb-2 mt-4 mb-3 border-bottom">{str}</legend>
-  );
-
   return (
     <Form
       handleSubmit={submitForm}
@@ -106,8 +105,14 @@ const Playground: React.FunctionComponent<Props> = ({
       disabled={disabledChoice}
       ref={formRef}
     >
-      <fieldset>
-        {legend('FieldText types')}
+      <FormSection
+        name="FieldText types"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+        isFirst
+      >
         <FieldText name="secret" value="I'm hidden!" type="hidden" />
         <FieldText
           name="text1"
@@ -188,8 +193,20 @@ const Playground: React.FunctionComponent<Props> = ({
         <FieldCounter name="counter" label="Counter" />
         <FieldNumber name="number" label="Number" />
         <FieldGeosuggest name="geosuggest" label="Geosuggest" />
-        <FieldImageUploader name="image-uploader" label="Image" />
-        <FieldFileUploader name="file-uploader" label="File" />
+        <FieldImageUploader
+          uploadOptions={localUploadOptions({
+            url: 'https://uidufundraising.uidu.local:8443/upload',
+          })}
+          name="image-uploader"
+          label="Image"
+        />
+        <FieldFileUploader
+          uploadOptions={localUploadOptions({
+            url: 'https://uidufundraising.uidu.local:8443/upload',
+          })}
+          name="file-uploader"
+          label="File"
+        />
         <FieldMentions
           name="mentions"
           label="Mentions"
@@ -197,9 +214,12 @@ const Playground: React.FunctionComponent<Props> = ({
         />
         <FieldMonth name="month" label="Months" />
         <FieldTime name="time" label="Time" />
-      </fieldset>
-      <fieldset>
-        {legend('Textarea')}
+      </FormSection>
+      <FormSection
+        name="Textarea"
+        description={<p>This is a description of this form section</p>}
+        layout={sectionLayoutChoice}
+      >
         <FieldTextarea
           rows={3}
           cols={40}
@@ -212,9 +232,14 @@ const Playground: React.FunctionComponent<Props> = ({
             minLength: 'Please provide at least 10 characters.',
           }}
         />
-      </fieldset>
-      <fieldset>
-        {legend('Select')}
+      </FormSection>
+      <FormSection
+        name="Select"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+      >
         <Select
           name="select1"
           label="Select"
@@ -243,9 +268,14 @@ const Playground: React.FunctionComponent<Props> = ({
           option={DownshiftCheckbox}
           multiple
         />
-      </fieldset>
-      <fieldset>
-        {legend('Checkboxes')}
+      </FormSection>
+      <FormSection
+        name="Checkboxes"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+      >
         <Checkbox
           name="checkbox1"
           value
@@ -265,9 +295,14 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Checkbox group (inline)"
           options={radioOptions}
         />
-      </fieldset>
-      <fieldset>
-        {legend('Radio group')}
+      </FormSection>
+      <FormSection
+        name="RadioGroup"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+      >
         <RadioGroup
           name="radioGrp1"
           value="b"
@@ -290,9 +325,14 @@ const Playground: React.FunctionComponent<Props> = ({
           help="Here, “Option B” is disabled."
           options={radioOptionsDisabled}
         />
-      </fieldset>
-      <fieldset>
-        {legend('Layout tweaks')}
+      </FormSection>
+      <FormSection
+        name="Layout tweaks"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+      >
         <FieldText
           name="cssRowTweak"
           value=""
@@ -321,9 +361,14 @@ const Playground: React.FunctionComponent<Props> = ({
           placeholder="‘border border-primary’ is set on this input control."
           help="The className prop is passed through to the form control."
         />
-      </fieldset>
-      <fieldset>
-        {legend('Disabled')}
+      </FormSection>
+      <FormSection
+        name="disabled"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+      >
         <FieldText
           name="disabled"
           value="This field is always disabled."
@@ -332,9 +377,15 @@ const Playground: React.FunctionComponent<Props> = ({
           disabled
           help="The disabled prop on this component is set to true."
         />
-      </fieldset>
-      <fieldset>
-        {legend('FieldText groups')}
+      </FormSection>
+      <FormSection
+        name="FieldText groups"
+        description={
+          <p className="text-muted">This is a fieldset description</p>
+        }
+        layout={sectionLayoutChoice}
+        isLast
+      >
         <FieldText
           name="addon-before"
           value=""
@@ -371,21 +422,19 @@ const Playground: React.FunctionComponent<Props> = ({
             </button>
           }
         />
-      </fieldset>
-      <fieldset>
-        <input
-          className="btn btn-secondary"
-          onClick={resetForm}
-          type="reset"
-          defaultValue="Reset"
-        />{' '}
-        <input
-          className="btn btn-primary"
-          formNoValidate
-          type="submit"
-          defaultValue="Submit"
-        />
-      </fieldset>
+      </FormSection>
+      <input
+        className="btn btn-secondary"
+        onClick={resetForm}
+        type="reset"
+        defaultValue="Reset"
+      />{' '}
+      <input
+        className="btn btn-primary"
+        formNoValidate
+        type="submit"
+        defaultValue="Submit"
+      />
     </Form>
   );
 };

@@ -1,12 +1,14 @@
 /* eslint-env node, browser */
 
+import { ScrollableContainer, ShellBody, ShellHeader } from '@uidu/shell';
 import * as React from 'react';
-import Form from '../src';
 import { CheckboxGroup } from '../../checkbox/src';
 import { RadioGroup } from '../../radio/src';
+import Form from '../src';
 
 interface Props {
   disabledChoice: boolean;
+  sectionLayoutChoice: 'horizontal' | 'vertical' | 'elementOnly';
   layoutChoice: 'horizontal' | 'vertical' | 'elementOnly';
   showing: boolean;
   validateBeforeSubmitChoice: boolean;
@@ -17,6 +19,7 @@ interface Props {
 
 const Options = ({
   disabledChoice,
+  sectionLayoutChoice,
   layoutChoice,
   onChangeOption,
   onToggle,
@@ -30,6 +33,17 @@ const Options = ({
         name="layout"
         label="Layout"
         value={layoutChoice}
+        options={[
+          { id: 'horizontal', name: 'horizontal' },
+          { id: 'vertical', name: 'vertical' },
+          { id: 'elementOnly', name: 'elementOnly' },
+        ]}
+        onChange={onChangeOption}
+      />
+      <RadioGroup
+        name="sectionLayout"
+        label="Section Layout"
+        value={sectionLayoutChoice}
         options={[
           { id: 'horizontal', name: 'horizontal' },
           { id: 'vertical', name: 'vertical' },
@@ -61,18 +75,23 @@ const Options = ({
   );
 
   return (
-    <div className="card bg-light">
-      <div className="card-header">
+    <>
+      <ShellHeader className="border-bottom px-4 d-flex align-items-center">
+        <h5 className="m-0">Options</h5>
         <button
           type="button"
-          className="btn btn-outline-secondary"
+          className="btn btn-sm btn-outline-secondary ml-auto"
           onClick={onToggle}
         >
           {showing ? 'Hide options' : 'Show options'}
         </button>
-      </div>
-      {showing ? <div className="card-body">{optionsForm}</div> : null}
-    </div>
+      </ShellHeader>
+      <ShellBody>
+        <ScrollableContainer>
+          {showing ? <div className="card-body">{optionsForm}</div> : null}
+        </ScrollableContainer>
+      </ShellBody>
+    </>
   );
 };
 

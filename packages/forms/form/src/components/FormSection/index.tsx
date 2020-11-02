@@ -1,5 +1,6 @@
 import React from 'react';
 import Media from 'react-media';
+import { FormSectionProps } from '../../types';
 
 export default function FormSection({
   name,
@@ -7,26 +8,33 @@ export default function FormSection({
   children = null,
   isFirst = false,
   isLast = false,
-  hideDescriptionOnMobile = false,
-}) {
+  hideHelpers = false,
+  layout = 'vertical',
+}: FormSectionProps) {
   return (
     <Media query={{ maxWidth: 768 }}>
       {(matches) => {
-        if (matches && hideDescriptionOnMobile) {
+        if (matches && hideHelpers) {
           return children || null;
         }
         return (
-          <div
+          <fieldset
             className={`row justify-content-between${
               !isLast ? ' border-bottom' : ''
             }${isFirst ? ' pb-4' : ' py-5'}`}
           >
-            <div className={`col-sm-${children ? '4' : '12'} mt-1`}>
-              <h6>{name}</h6>
-              {description}
-            </div>
-            {children && <div className="col-sm-7">{children}</div>}
-          </div>
+            {layout !== 'elementOnly' && (
+              <div className={`col-sm-${layout === 'horizontal' ? 4 : 12}`}>
+                <legend className="h6">{name}</legend>
+                {description}
+              </div>
+            )}
+            {children && (
+              <div className={`col-sm-${layout === 'horizontal' ? 7 : 12}`}>
+                {children}
+              </div>
+            )}
+          </fieldset>
         );
       }}
     </Media>
