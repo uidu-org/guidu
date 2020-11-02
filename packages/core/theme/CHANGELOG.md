@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.4.9
+
+### Patch Changes
+
+- 6697810: Fix emotion core react jsx pragma
+
 ## 0.4.8
 
 ### Patch Changes
