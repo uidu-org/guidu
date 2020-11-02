@@ -1,15 +1,12 @@
-/** @jsx jsx */
-import { DragEventHandler, forwardRef, Ref } from 'react';
-
-import { CSSObject, jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import { CSSObject } from '@emotion/core';
+import React, { DragEventHandler, forwardRef, Ref } from 'react';
 import { LinkItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
-
 import BaseItem from './base-item';
 import { linkItemCSS } from './styles';
 
-const preventEvent: DragEventHandler = e => {
+const preventEvent: DragEventHandler = (e) => {
   e.preventDefault();
 };
 
@@ -39,7 +36,7 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
     const Container = isDisabled ? 'span' : 'a';
 
     return (
-      <Container
+      <span
         ref={ref as Ref<HTMLAnchorElement>}
         css={cssFn(linkItemCSS(isDisabled, isSelected), {
           isSelected,
@@ -62,7 +59,7 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
         >
           {children}
         </BaseItem>
-      </Container>
+      </span>
     );
   },
 );

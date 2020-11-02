@@ -1,8 +1,6 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import React from 'react';
 import { MenuGroupProps } from '../types';
-
 import MenuGroup from './menu-group';
 
 const PopupMenuGroup = ({

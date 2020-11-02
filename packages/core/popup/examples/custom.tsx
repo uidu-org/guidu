@@ -1,13 +1,9 @@
-/** @jsx jsx */
-import { forwardRef, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
-import Button from '@uidu/button';
+/** @jsxImportSource @emotion/core */
 import MoreIcon from '@atlaskit/icon/glyph/more';
+import Button from '@uidu/button';
 import { N700 } from '@uidu/theme/colors';
 import { borderRadius } from '@uidu/theme/constants';
-
+import React, { forwardRef, useState } from 'react';
 import Popup, { PopupComponentProps } from '../src';
 
 const CustomPopupContainer = forwardRef<HTMLDivElement, PopupComponentProps>(
@@ -45,7 +41,7 @@ export default () => {
           }}
         />
       )}
-      trigger={triggerProps => (
+      trigger={(triggerProps) => (
         <Button
           {...triggerProps}
           isSelected={isOpen}

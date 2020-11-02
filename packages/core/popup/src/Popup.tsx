@@ -1,12 +1,8 @@
-/** @jsx jsx */
-import { FC, forwardRef, memo, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
 import { Manager, Popper, Reference } from '@uidu/popper';
 import Portal from '@uidu/portal';
 import { layers } from '@uidu/theme/constants';
-
+import React, { FC, forwardRef, memo, useState } from 'react';
 import { RepositionOnUpdate } from './RepositionOnUpdate';
 import { popupCSS } from './styles';
 import { PopupComponentProps, PopupProps } from './types';

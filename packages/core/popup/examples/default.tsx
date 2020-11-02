@@ -1,11 +1,7 @@
-/** @jsx jsx */
-import { useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
-import Button from '@uidu/button';
+/** @jsxImportSource @emotion/core */
 import MediaServicesAddCommentIcon from '@atlaskit/icon/glyph/media-services/add-comment';
-
+import Button from '@uidu/button';
+import React, { useState } from 'react';
 import Popup from '../src';
 
 export default () => {
@@ -24,7 +20,7 @@ export default () => {
           }}
         />
       )}
-      trigger={triggerProps => (
+      trigger={(triggerProps) => (
         <Button
           {...triggerProps}
           isSelected={isOpen}

@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { CSSObject, jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import { CSSObject } from '@emotion/core';
+import React from 'react';
 import { SkeletonHeadingItemProps } from '../types';
-
 import { skeletonHeadingItemCSS } from './styles';
 
 const SkeletonHeadingItem = ({

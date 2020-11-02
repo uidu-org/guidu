@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-
 import { LinkItem, LinkItemProps } from '../src';
-
 import koala from './icons/koala.png';
 
 const ImgIcon = ({ src, alt }: { src: string; alt: string }) => (
@@ -37,7 +35,7 @@ export default () => {
   });
 
   return (
-    <div onClick={e => e.preventDefault()}>
+    <div onClick={(e) => e.preventDefault()}>
       <LinkItem {...getComputedProps({ href: '#link-item1' })}>
         Customer Feedback
       </LinkItem>

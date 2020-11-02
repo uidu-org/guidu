@@ -1,7 +1,7 @@
-/** @jsx jsx */
+/** @jsxImportSource @emotion/core */
 import Icon from '@atlaskit/icon';
-import { jsx } from '@emotion/core';
 import { B100 } from '@uidu/theme/colors';
+import React from 'react';
 import { CSSFn, CustomItem, CustomItemComponentProps } from '../src';
 import Slack from './icons/slack';
 

@@ -1,12 +1,10 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-
-import Button, { ButtonGroup } from '@uidu/button';
+/** @jsxImportSource @emotion/core */
 import AddItemIcon from '@atlaskit/icon/glyph/add-item';
 import JiraCaptureIcon from '@atlaskit/icon/glyph/jira/capture';
 import AddCommentIcon from '@atlaskit/icon/glyph/media-services/add-comment';
+import Button, { ButtonGroup } from '@uidu/button';
 import { B75 } from '@uidu/theme/colors';
-
+import React from 'react';
 import Popup from '../src';
 
 const HighlightPopup = (props: { children: React.ReactNode }) => (
@@ -22,7 +20,7 @@ const HighlightPopup = (props: { children: React.ReactNode }) => (
         </ButtonGroup>
       </div>
     )}
-    trigger={triggerProps => (
+    trigger={(triggerProps) => (
       <span
         css={{
           backgroundColor: B75,

@@ -1,11 +1,7 @@
-/** @jsx jsx */
-import { FC, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
 import Button from '@uidu/button';
 import { RadioGroup } from '@uidu/radio';
-
+import React, { FC, useState } from 'react';
 import Popup from '../src';
 
 const radioValues = [

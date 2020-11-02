@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+/** @jsxImportSource @emotion/core */
 import React from 'react';
 import { Theme } from '../theme';
 import { DefaultProgressBarProps, ThemeTokens } from '../types';

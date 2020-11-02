@@ -1,10 +1,6 @@
-/** @jsx jsx */
-import { FC, useCallback, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
 import Button from '@uidu/button';
-
+import React, { FC, useCallback, useState } from 'react';
 import Popup from '../src';
 
 const contentCSS = {
@@ -33,7 +29,7 @@ const PopupExample: FC<PopupExampleProps> = ({ name }) => {
       isOpen={isOpen}
       onClose={onClose}
       content={() => <div css={contentCSS}>content</div>}
-      trigger={triggerProps => (
+      trigger={(triggerProps) => (
         <Button {...triggerProps} onClick={onClick}>
           {isOpen ? 'Close' : 'Open'} {name} popup
         </Button>

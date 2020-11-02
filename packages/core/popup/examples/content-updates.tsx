@@ -1,10 +1,6 @@
-/** @jsx jsx */
-import { useEffect, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
 import Button, { ButtonGroup } from '@uidu/button';
-
+import React, { useEffect, useState } from 'react';
 import Popup from '../src';
 
 const noop = () => {};
@@ -22,7 +18,7 @@ const Quotes = ({ onUpdate }: { onUpdate: () => void }) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTextIndex(prevIndex => (prevIndex + 1) % data.length);
+      setTextIndex((prevIndex) => (prevIndex + 1) % data.length);
       onUpdate();
     }, 1000);
 
@@ -52,10 +48,10 @@ export default () => {
         <Popup
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}
-          content={props => (
+          content={(props) => (
             <Quotes onUpdate={isUpdateOn ? props.update : noop} />
           )}
-          trigger={triggerProps => (
+          trigger={(triggerProps) => (
             <Button
               {...triggerProps}
               isSelected={isOpen}
@@ -67,7 +63,7 @@ export default () => {
         />
         <Button
           isSelected={isUpdateOn}
-          onClick={() => setIsUpdateOn(prev => !prev)}
+          onClick={() => setIsUpdateOn((prev) => !prev)}
         >
           {isUpdateOn ? 'Will schedule update' : 'Will not schedule update'}
         </Button>

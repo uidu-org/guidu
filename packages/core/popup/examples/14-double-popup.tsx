@@ -1,10 +1,6 @@
-/** @jsx jsx */
-import { FC, Fragment, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
 import Button from '@uidu/button';
-
+import React, { FC, Fragment, useState } from 'react';
 import Popup from '../src';
 
 const spacerCSS = {
@@ -45,7 +41,7 @@ const PopupContent: FC = () => {
           </div>
         )}
         offset={[0, 12]}
-        trigger={triggerProps => (
+        trigger={(triggerProps) => (
           <a
             id="popup-trigger"
             {...triggerProps}
@@ -71,7 +67,7 @@ export default () => {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         content={() => <PopupContent />}
-        trigger={triggerProps => (
+        trigger={(triggerProps) => (
           <Button
             id="popup-trigger"
             {...triggerProps}

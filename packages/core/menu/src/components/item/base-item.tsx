@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { ClassNames, jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import { ClassNames } from '@emotion/core';
+import React from 'react';
 import { BaseItemProps, RenderFunction } from '../types';
-
 import {
   contentCSS,
   contentCSSWrapper,

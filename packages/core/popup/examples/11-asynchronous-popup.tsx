@@ -1,11 +1,7 @@
-/** @jsx jsx */
-import { FC, useEffect, useState } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
 import Button from '@uidu/button';
 import { Placement } from '@uidu/popper';
-
+import React, { FC, useEffect, useState } from 'react';
 import Popup from '../src';
 
 type PopupProps = {
@@ -144,7 +140,7 @@ export default () => {
             update={update}
           />
         )}
-        trigger={triggerProps => (
+        trigger={(triggerProps) => (
           <Button
             id="popup-trigger"
             {...triggerProps}

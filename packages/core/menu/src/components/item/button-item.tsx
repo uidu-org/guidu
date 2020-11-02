@@ -1,11 +1,8 @@
-/** @jsx jsx */
-import { forwardRef, Ref } from 'react';
-
-import { CSSObject, jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import { CSSObject } from '@emotion/core';
+import React, { forwardRef, Ref } from 'react';
 import { ButtonItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
-
 import BaseItem from './base-item';
 import { buttonItemCSS } from './styles';
 
@@ -32,10 +29,10 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
       return null;
     }
 
-    const Container = isDisabled ? 'span' : 'button';
+    const Container = 'span';
 
     return (
-      <Container
+      <span
         type={isDisabled ? undefined : 'button'}
         css={cssFn(buttonItemCSS(isDisabled, isSelected), {
           isSelected,
@@ -55,7 +52,7 @@ const ButtonItem = forwardRef<HTMLElement, ButtonItemProps>(
         >
           {children}
         </BaseItem>
-      </Container>
+      </span>
     );
   },
 );

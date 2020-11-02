@@ -1,6 +1,7 @@
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
-import { focusRing, colors } from '../src';
+/** @jsxImportSource @emotion/core */
+import { css } from '@emotion/core';
+import React from 'react';
+import { colors, focusRing } from '../src';
 
 const InteractiveElement = ({ color, outlineWidth, children }: any) => (
   <div

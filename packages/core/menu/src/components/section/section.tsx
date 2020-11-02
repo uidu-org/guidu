@@ -1,11 +1,7 @@
-/** @jsx jsx */
-import { forwardRef, Ref } from 'react';
-
-import { jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import React, { forwardRef, Ref } from 'react';
 import HeadingItem from '../item/heading-item';
 import { SectionBaseProps, SectionProps } from '../types';
-
 import { sectionCSS } from './styles';
 
 const Section = forwardRef<HTMLElement, SectionProps>(

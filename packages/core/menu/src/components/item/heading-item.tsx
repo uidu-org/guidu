@@ -1,8 +1,7 @@
-/** @jsx jsx */
-import { CSSObject, jsx } from '@emotion/core';
-
+/** @jsxImportSource @emotion/core */
+import { CSSObject } from '@emotion/core';
+import React from 'react';
 import { HeadingItemProps } from '../types';
-
 import { itemHeadingCSS } from './styles';
 
 const HeadingItem = ({
