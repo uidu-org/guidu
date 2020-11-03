@@ -1,11 +1,13 @@
 import * as am4charts from '@amcharts/amcharts4/charts';
 import * as am4core from '@amcharts/amcharts4/core';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
+import am4themes_kelly from '@amcharts/amcharts4/themes/kelly';
 import React, { useLayoutEffect, useRef } from 'react';
 import { v1 as uuid } from 'uuid';
 import Loader from '../../Loader';
 
 am4core.useTheme(am4themes_animated);
+am4core.useTheme(am4themes_kelly);
 am4core.options.queue = true;
 am4core.options.commercialLicense = true;
 
@@ -42,7 +44,7 @@ export default function XY({ resultSet, config }) {
                   strokeOpacity: 0.04,
                 },
               },
-              fontSize: 14,
+              fontSize: 12,
               fillOpacity: 0.3,
               cursorTooltipEnabled: false,
             },
@@ -50,7 +52,7 @@ export default function XY({ resultSet, config }) {
           yAxes: [
             {
               type: 'ValueAxis',
-              fontSize: 14,
+              fontSize: 12,
               fillOpacity: 0.3,
               cursorTooltipEnabled: false,
               min: 0,

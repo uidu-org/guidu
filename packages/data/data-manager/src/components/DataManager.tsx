@@ -330,33 +330,31 @@ export default function DataManager({
             primaryField={primaryField}
           />
         )} */}
-        <div className="d-flex align-items-center ml-3 flex-grow-1">
-          <Controls
-            tableInstance={tableInstance}
-            isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
-            availableControls={availableControls}
-            currentView={currentView}
-            updateView={updateView}
-            columnDefs={columns}
-            // onDragEnd={this.moveColumn}
-            // onResize={this.setRowHeight}
-            rowHeight={rowHeight}
-            // onDownload={() => this.gridApi.exportDataAsCsv()}
-            columnCount={columnCount}
-            onSetColumnCount={setColumnCount}
-            actions={availableControls.more.actions}
-            // isAutoSaving={isAutoSaving}
-            startDateField={startDateField}
-            endDateField={endDateField}
-            primaryField={primaryField}
+        <Controls
+          tableInstance={tableInstance}
+          isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
+          availableControls={availableControls}
+          currentView={currentView}
+          updateView={updateView}
+          columnDefs={columns}
+          // onDragEnd={this.moveColumn}
+          // onResize={this.setRowHeight}
+          rowHeight={rowHeight}
+          // onDownload={() => this.gridApi.exportDataAsCsv()}
+          columnCount={columnCount}
+          onSetColumnCount={setColumnCount}
+          actions={availableControls.more.actions}
+          // isAutoSaving={isAutoSaving}
+          startDateField={startDateField}
+          endDateField={endDateField}
+          primaryField={primaryField}
+        />
+        {availableControls.finder.visible && (
+          <Finder
+            onChange={(e) => setGlobalFilter(e.target.value)}
+            {...availableControls.finder.props}
           />
-          {availableControls.finder.visible && (
-            <Finder
-              onChange={(e) => setGlobalFilter(e.target.value)}
-              {...availableControls.finder.props}
-            />
-          )}
-        </div>
+        )}
       </>
     );
   };

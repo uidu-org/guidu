@@ -27,7 +27,7 @@ export default class Item extends PureComponent<any> {
       (cell) =>
         cell.column.kind !== 'uid' &&
         cell.column.kind !== 'cover' &&
-        cell.column.kind !== 'primary' &&
+        !cell.column.isPrimary &&
         cell.column.kind !== 'avatar' &&
         cell.column.kind !== 'addField',
     );

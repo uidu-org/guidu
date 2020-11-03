@@ -33,57 +33,57 @@ import { Field, FieldGroup } from '../types';
 const getColumnType = (kind: Field['kind']) => {
   switch (kind) {
     case 'addField':
-      return { ...addField };
+      return addField;
     case 'address':
-      return { ...addressField };
+      return addressField;
     case 'attachments':
-      return { ...attachmentsField };
+      return attachmentsField;
     case 'avatar':
-      return { ...avatarField };
+      return avatarField;
     case 'checkbox':
-      return { ...checkboxField };
+      return checkboxField;
     case 'contact':
-      return { ...contactField };
+      return contactField;
     case 'country':
-      return { ...countryField };
+      return countryField;
     case 'cover':
-      return { ...coverField };
+      return coverField;
     case 'currency':
-      return { ...currencyField };
+      return currencyField;
     case 'date':
-      return { ...dateField };
+      return dateField;
     case 'email':
-      return { ...emailField };
+      return emailField;
     case 'linkRecord':
-      return { ...linkRecordField };
+      return linkRecordField;
     case 'member':
-      return { ...memberField };
+      return memberField;
     case 'multipleSelect':
-      return { ...multipleSelectField };
+      return multipleSelectField;
     case 'number':
-      return { ...numberField };
+      return numberField;
     case 'paymentMethod':
-      return { ...paymentMethodField };
+      return paymentMethodField;
     case 'percent':
-      return { ...percentField };
+      return percentField;
     case 'phone':
-      return { ...phoneField };
+      return phoneField;
     case 'progress':
-      return { ...progressField };
+      return progressField;
     case 'rating':
-      return { ...ratingField };
+      return ratingField;
     case 'singleSelect':
-      return { ...singleSelectField };
+      return singleSelectField;
     case 'string':
-      return { ...stringField };
+      return stringField;
     case 'text':
-      return { ...textField };
+      return textField;
     case 'uid':
-      return { ...uidField };
+      return uidField;
     case 'url':
-      return { ...urlField };
+      return urlField;
     case 'vote':
-      return { ...voteField };
+      return voteField;
     default:
       return {};
   }
@@ -95,7 +95,7 @@ export const buildColumn = ({ columns, ...fieldGroup }: FieldGroup) => {
       fieldGroup,
       id: column.id,
       accessor: column.id,
-      ...(kind ? { ...getColumnType(kind, { ...column }) } : {}),
+      ...(kind ? { ...getColumnType(kind) } : {}),
       ...(primary
         ? {
             canMove: false,

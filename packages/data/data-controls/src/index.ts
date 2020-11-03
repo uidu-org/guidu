@@ -10,6 +10,7 @@ import More from './components/More';
 import Resizer from './components/Resizer';
 import Sharer from './components/Sharer';
 import Sorter from './components/Sorter';
+import Starrer from './components/Starrer';
 import Toggler from './components/Toggler';
 import Viewer from './components/Viewer';
 export * from './components/Filterer/types';
@@ -27,6 +28,7 @@ export {
   More,
   Resizer,
   Sharer,
+  Starrer,
   Sorter,
   Toggler,
   Viewer,

@@ -67,8 +67,7 @@ export default function Item({
         <div className="d-flex align-items-center">
           {item.cells
             .filter(
-              (cell) =>
-                cell.column.kind !== 'cover' && cell.column.kind !== 'primary',
+              (cell) => cell.column.kind !== 'cover' && !cell.column.isPrimary,
             )
             .map((cell) => {
               return (

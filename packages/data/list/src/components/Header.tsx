@@ -41,10 +41,7 @@ export default class Header extends PureComponent<any> {
         <div className="d-flex flex-column">
           <div className="d-flex">
             {columnDefs
-              .filter(
-                (column) =>
-                  column.kind !== 'cover' && column.kind !== 'primary',
-              )
+              .filter((column) => column.kind !== 'cover' && !column.isPrimary)
               .map(({ id, width, minWidth, maxWidth, name, icon }) => {
                 return (
                   <div

@@ -1,4 +1,4 @@
-import { getAvatar, getCover, getPrimary } from '@uidu/data-fields';
+import { getAvatar, getCover } from '@uidu/data-fields';
 import React, { memo, useCallback, useMemo, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import { GalleryProps } from '../types';
@@ -41,7 +41,6 @@ export default memo(function Gallery({
     return 0;
   };
 
-  const primary = getPrimary(columns);
   const cover = getCover(columns);
   const avatar = getAvatar(columns);
 
@@ -55,7 +54,7 @@ export default memo(function Gallery({
             column.kind !== 'uid' &&
             column.kind !== 'selection' &&
             column.kind !== 'cover' &&
-            column.kind !== 'primary' &&
+            !column.isPrimary &&
             column.kind !== 'avatar' &&
             column.kind !== 'addField',
         ).length +
