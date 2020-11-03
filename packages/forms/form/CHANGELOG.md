@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.8
+
+### Patch Changes
+
+- 84bb2d6: Flexible FormSection
+
 ## 0.3.7
 
 ### Patch Changes
