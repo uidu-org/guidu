@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.9
+
+### Patch Changes
+
+- 90ae59b: Changed formwrapper sizes
+
 ## 0.3.8
 
 ### Patch Changes
