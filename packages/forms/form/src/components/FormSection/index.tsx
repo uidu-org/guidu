@@ -24,13 +24,13 @@ export default function FormSection({
             }${isFirst ? ' pb-4' : ' py-5'}`}
           >
             {layout !== 'elementOnly' && (
-              <div className={`col-sm-${layout === 'horizontal' ? 4 : 12}`}>
+              <div className={`col-md-${layout === 'horizontal' ? 4 : 12}`}>
                 <legend className="h6">{name}</legend>
                 {description}
               </div>
             )}
             {children && (
-              <div className={`col-sm-${layout === 'horizontal' ? 7 : 12}`}>
+              <div className={`col-md-${layout === 'horizontal' ? 7 : 12}`}>
                 {children}
               </div>
             )}
