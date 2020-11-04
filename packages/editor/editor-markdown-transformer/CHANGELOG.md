@@ -1,5 +1,11 @@
 # @uidu/editor-markdown-transformer
 
+## 0.2.10
+
+### Patch Changes
+
+- 17226ce: Small fixes
+
 ## 0.2.9
 
 ### Patch Changes

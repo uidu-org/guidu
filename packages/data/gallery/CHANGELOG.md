@@ -1,5 +1,14 @@
 # @uidu/gallery
 
+## 0.1.67
+
+### Patch Changes
+
+- 17226ce: Small fixes
+- Updated dependencies [17226ce]
+  - @uidu/data-controls@0.5.15
+  - @uidu/data-fields@0.3.6
+
 ## 0.1.66
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.5.15
+
+### Patch Changes
+
+- 17226ce: Small fixes
+- Updated dependencies [17226ce]
+  - @uidu/data-fields@0.3.6
+
 ## 0.5.14
 
 ### Patch Changes

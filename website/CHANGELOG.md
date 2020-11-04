@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.13
+
+### Patch Changes
+
+- 17226ce: Small fixes
+- Updated dependencies [17226ce]
+  - @uidu/list@0.1.41
+
 ## 0.2.12
 
 ### Patch Changes

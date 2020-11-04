@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.18
+
+### Patch Changes
+
+- 17226ce: Small fixes
+
 ## 0.6.17
 
 ### Patch Changes

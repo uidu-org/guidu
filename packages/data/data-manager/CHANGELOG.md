@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 0.5.22
+
+### Patch Changes
+
+- 17226ce: Small fixes
+- Updated dependencies [17226ce]
+  - @uidu/data-controls@0.5.15
+  - @uidu/data-fields@0.3.6
+  - @uidu/gallery@0.1.67
+  - @uidu/list@0.1.41
+
 ## 0.5.21
 
 ### Patch Changes

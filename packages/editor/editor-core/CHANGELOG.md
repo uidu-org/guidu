@@ -1,5 +1,13 @@
 # @uidu/editor-core
 
+## 0.6.11
+
+### Patch Changes
+
+- 17226ce: Small fixes
+- Updated dependencies [17226ce]
+  - @uidu/editor-markdown-transformer@0.2.10
+
 ## 0.6.10
 
 ### Patch Changes
