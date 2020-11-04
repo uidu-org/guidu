@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.1.41
+
+### Patch Changes
+
+- 17226ce: Small fixes
+- Updated dependencies [17226ce]
+  - @uidu/data-fields@0.3.6
+
 ## 0.1.40
 
 ### Patch Changes

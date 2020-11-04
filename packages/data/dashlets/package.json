@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dashlets",
-  "version": "0.6.17",
+  "version": "0.6.18",
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashlets",
   "license": "MIT",
