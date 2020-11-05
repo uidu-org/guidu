@@ -26,7 +26,7 @@ const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
   </StickyListContext.Consumer>
 ));
 
-export default function List({ rowHeight, gutterSize = 8, tableInstance }) {
+export default function List({ rowHeight, gutterSize = 16, tableInstance }) {
   const parentRef = useRef();
 
   const {
@@ -53,7 +53,7 @@ export default function List({ rowHeight, gutterSize = 8, tableInstance }) {
     <div className="h-100">
       <div
         ref={parentRef}
-        className="List"
+        className="List px-xl-4 px-3"
         style={{
           height: '100%',
           width: '100%',
@@ -80,7 +80,7 @@ export default function List({ rowHeight, gutterSize = 8, tableInstance }) {
                   left: 0,
                   background: 'white',
                   margin: `${gutterSize}px 0`,
-                  height: `${virtualRow.size - gutterSize * 2}px`,
+                  height: `${virtualRow.size - gutterSize}px`,
                   transform: `translateY(${virtualRow.start}px)`,
                   display: 'flex',
                 }}
