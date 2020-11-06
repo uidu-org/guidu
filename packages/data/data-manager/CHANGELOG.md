@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.5.23
+
+### Patch Changes
+
+- b8b0f2e: Data-controls style fixes, List now has headers and proper column rendering
+- Updated dependencies [b8b0f2e]
+  - @uidu/data-controls@0.5.16
+  - @uidu/gallery@0.1.68
+  - @uidu/list@0.1.43
+
 ## 0.5.22
 
 ### Patch Changes
