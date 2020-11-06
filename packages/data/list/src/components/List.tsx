@@ -1,4 +1,3 @@
-import { getAvatar, getCover, getPrimary } from '@uidu/data-fields';
 import React, { createContext, forwardRef, useCallback, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import Header from './Header';
@@ -26,7 +25,12 @@ const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
   </StickyListContext.Consumer>
 ));
 
-export default function List({ rowHeight, gutterSize = 16, tableInstance }) {
+export default function List({
+  rowHeight,
+  gutterSize = 16,
+  tableInstance,
+  onItemClick,
+}) {
   const parentRef = useRef();
 
   const {
@@ -45,9 +49,9 @@ export default function List({ rowHeight, gutterSize = 16, tableInstance }) {
     overscan: 5,
   });
 
-  const primary = getPrimary(columns);
-  const cover = getCover(columns);
-  const avatar = getAvatar(columns);
+  // const primary = getPrimary(columns);
+  // const cover = getCover(columns);
+  // const avatar = getAvatar(columns);
 
   return (
     <div className="h-100">
@@ -60,6 +64,7 @@ export default function List({ rowHeight, gutterSize = 16, tableInstance }) {
           overflow: 'auto',
         }}
       >
+        <Header headerGroups={headerGroups} />
         <div
           style={{
             height: `${rowVirtualizer.totalSize}px`,
@@ -85,7 +90,7 @@ export default function List({ rowHeight, gutterSize = 16, tableInstance }) {
                   display: 'flex',
                 }}
               >
-                <Item row={row} primary={primary} cover={cover} />
+                <Item row={row} onItemClick={onItemClick} />
               </div>
             );
           })}

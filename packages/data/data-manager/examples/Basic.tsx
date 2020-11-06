@@ -442,7 +442,7 @@ export default class Basic extends Component<any, any> {
                                       gutterSize: 24,
                                     },
                                     list: {
-                                      rowHeight: 96,
+                                      rowHeight: 104,
                                     },
                                     board: {},
                                     table: {

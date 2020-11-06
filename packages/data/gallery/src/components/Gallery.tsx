@@ -1,5 +1,5 @@
 import { getAvatar, getCover } from '@uidu/data-fields';
-import React, { memo, useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import { GalleryProps } from '../types';
 import GalleryItem from './GalleryItem';
@@ -19,7 +19,7 @@ function chunkArray(myArray, chunkSize) {
   return results;
 }
 
-export default memo(function Gallery({
+export default function Gallery({
   tableInstance,
   onItemClick,
   columnCount = 4,
@@ -128,4 +128,4 @@ export default memo(function Gallery({
       </div>
     </>
   );
-});
+}

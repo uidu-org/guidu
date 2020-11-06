@@ -12,15 +12,17 @@ export default function Item({
   gutterSize = 32,
   onItemClick,
   style = {},
-  cover,
-  primary,
 }) {
+  const primary = item.cells.find((cell) => cell.column.isPrimary);
+  const cover = item.cells.find((cell) => cell.column.kind === 'cover');
+  const uid = item.cells.find((cell) => cell.column.kind === 'uid');
+
   return (
     <StyledItem
       key={item.id}
       onClick={(e) => {
         e.preventDefault();
-        onItemClick({ data: item });
+        onItemClick(item);
       }}
       style={{
         ...style,
@@ -35,6 +37,11 @@ export default function Item({
       }}
       className="d-flex flex-row align-items-center w-auto"
     >
+      {uid && (
+        <div className="text-truncate data-list-cell px-3 px-xl-4 h-100 border-right">
+          {uid.render('Cell')}
+        </div>
+      )}
       {/* {cover && (
         <div
           style={{
@@ -55,19 +62,23 @@ export default function Item({
             }`}
             style={{
               position: 'sticky',
-              left: '1rem',
+              left: '-1.5rem',
               width: 'fit-content',
               maxWidth: `calc('100vw - 100px')`,
+              fontWeight: 500,
             }}
           >
-            <b>Nome e cognome</b>
-            {/* {primary.render('Cell')} */}
+            {primary.render('Cell', { ...primary.column.cellProps })}
           </div>
         )}
         <div className="d-flex align-items-center">
           {item.cells
             .filter(
-              (cell) => cell.column.kind !== 'cover' && !cell.column.isPrimary,
+              (cell) =>
+                cell.column.kind !== 'cover' &&
+                cell.column.kind !== 'avatar' &&
+                cell.column.kind !== 'uid' &&
+                !cell.column.isPrimary,
             )
             .map((cell) => {
               return (
