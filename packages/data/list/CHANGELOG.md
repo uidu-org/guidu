@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 0.1.42
+
+### Patch Changes
+
+- 6d9c54d: Style fixes for List
+
 ## 0.1.41
 
 ### Patch Changes
