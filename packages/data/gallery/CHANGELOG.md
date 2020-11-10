@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.1.68
+
+### Patch Changes
+
+- b8b0f2e: Data-controls style fixes, List now has headers and proper column rendering
+- Updated dependencies [b8b0f2e]
+  - @uidu/data-controls@0.5.16
+
 ## 0.1.67
 
 ### Patch Changes

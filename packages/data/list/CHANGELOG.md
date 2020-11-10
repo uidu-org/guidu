@@ -1,5 +1,11 @@
 # @uidu/list
 
+## 0.1.43
+
+### Patch Changes
+
+- b8b0f2e: Data-controls style fixes, List now has headers and proper column rendering
+
 ## 0.1.42
 
 ### Patch Changes
