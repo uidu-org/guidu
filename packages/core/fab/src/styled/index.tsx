@@ -11,7 +11,7 @@ export const StyledMainButton = styled.button`
   position: relative;
   border: none;
   border-radius: 50%;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28); */
   cursor: pointer;
   outline: none;
   padding: 0;
@@ -19,6 +19,10 @@ export const StyledMainButton = styled.button`
   font-weight: bold;
   color: #f1f1f1;
   font-size: 18px;
+
+  &:focus {
+    outline: none;
+  }
 
   > * {
     transition: ease-in-out transform 0.2s;
@@ -137,6 +141,10 @@ export const StyledAction = styled.button`
   margin-right: 2px;
   font-size: 1rem;
   z-index: 10000;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const StyledFab = styled.ul<{ isOpen: boolean }>`
