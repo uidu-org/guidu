@@ -1,5 +1,13 @@
 # @uidu/popup
 
+## 0.3.11
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+- Updated dependencies [e21bf74]
+  - @uidu/theme@0.4.11
+
 ## 0.3.10
 
 ### Patch Changes

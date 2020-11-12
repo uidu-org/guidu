@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.7
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+
 ## 0.3.6
 
 ### Patch Changes

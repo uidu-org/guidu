@@ -1,6 +1,6 @@
 {
   "name": "@uidu/theme",
-  "version": "0.4.10",
+  "version": "0.4.11",
   "description": "The Guidu theme framework",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/theme",
   "license": "Apache-2.0",

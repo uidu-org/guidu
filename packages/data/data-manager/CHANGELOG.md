@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.5.24
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+
 ## 0.5.23
 
 ### Patch Changes

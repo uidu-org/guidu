@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.4.11
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+
 ## 0.4.10
 
 ### Patch Changes
