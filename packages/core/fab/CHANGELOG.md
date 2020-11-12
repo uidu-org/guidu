@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.3.10
+
+### Patch Changes
+
+- 4583416: Styling fixes
+
 ## 0.3.9
 
 ### Patch Changes
