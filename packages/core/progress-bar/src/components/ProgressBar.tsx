@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { Theme } from '../theme';
 import { DefaultProgressBarProps, ThemeTokens } from '../types';

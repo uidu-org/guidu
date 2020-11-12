@@ -1,7 +1,7 @@
+import { ThemeProvider } from '@emotion/react';
 import styled from '@emotion/styled';
 import FieldDate from '@uidu/field-date';
 import Form from '@uidu/form';
-import { ThemeProvider } from 'emotion-theming';
 import React from 'react';
 import { colors, gridSize } from '../src';
 

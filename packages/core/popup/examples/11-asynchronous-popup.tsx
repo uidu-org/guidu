@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import Button from '@uidu/button';
 import { Placement } from '@uidu/popper';
 import React, { FC, useEffect, useState } from 'react';

@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import Button, { ButtonGroup } from '@uidu/button';
 import React, { useEffect, useState } from 'react';
 import Popup from '../src';

@@ -7,10 +7,10 @@ const NavigationItemLoader = ({ hasBefore }) => (
   <ContentLoader
     style={{
       width: 'auto',
-      height: 22,
+      height: 20,
       // marginRight: '3rem',
     }}
-    height={22}
+    height={20}
     width={244}
     speed={2}
     backgroundColor="rgb(76, 86, 106)"
@@ -25,7 +25,7 @@ const NavigationItemLoader = ({ hasBefore }) => (
       rx="3"
       ry="3"
       width={`${(Math.random() * (0.85 - 0.45) + 0.3) * 100}%`}
-      height="22"
+      height="20"
     />
   </ContentLoader>
 );

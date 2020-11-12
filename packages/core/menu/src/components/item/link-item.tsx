@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import { CSSObject } from '@emotion/core';
+/** @jsxImportSource @emotion/react */
+import { CSSObject } from '@emotion/react';
 import React, { DragEventHandler, forwardRef, Ref } from 'react';
 import { LinkItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';

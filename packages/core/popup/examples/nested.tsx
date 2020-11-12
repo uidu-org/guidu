@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import ArrowRight from '@atlaskit/icon/glyph/arrow-right';
 import MenuIcon from '@atlaskit/icon/glyph/menu';
 import Button from '@uidu/button';

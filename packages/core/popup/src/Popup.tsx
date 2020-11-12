@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import { Manager, Popper, Reference } from '@uidu/popper';
 import Portal from '@uidu/portal';
 import { layers } from '@uidu/theme/constants';

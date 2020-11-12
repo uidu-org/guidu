@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { MenuGroupProps } from '../types';
 import { menuGroupCSS } from './styles';

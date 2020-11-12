@@ -1,4 +1,4 @@
-import { CSSObject, keyframes } from '@emotion/core';
+import { CSSObject, keyframes } from '@emotion/react';
 import {
   B100,
   N20,

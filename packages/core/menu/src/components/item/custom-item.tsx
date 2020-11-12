@@ -1,14 +1,11 @@
+import { ClassNames, CSSObject } from '@emotion/react';
 import React, { DragEventHandler, forwardRef } from 'react';
-
-import { ClassNames, CSSObject } from '@emotion/core';
-
 import { CustomItemComponentProps, CustomItemProps } from '../types';
 import { useBlurOnMouseDown } from '../utils/use-blur-on-mouse-down';
-
 import BaseItem from './base-item';
 import { customItemCSS } from './styles';
 
-const preventEvent: DragEventHandler = e => {
+const preventEvent: DragEventHandler = (e) => {
   e.preventDefault();
 };
 

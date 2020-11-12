@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import MoreIcon from '@atlaskit/icon/glyph/more';
 import Button from '@uidu/button';
 import { N700 } from '@uidu/theme/colors';

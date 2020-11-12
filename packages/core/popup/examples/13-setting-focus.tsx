@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import Button from '@uidu/button';
 import { RadioGroup } from '@uidu/radio';
 import React, { FC, useState } from 'react';

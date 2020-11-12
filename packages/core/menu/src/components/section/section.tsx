@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import React, { forwardRef, Ref } from 'react';
 import HeadingItem from '../item/heading-item';
 import { SectionBaseProps, SectionProps } from '../types';

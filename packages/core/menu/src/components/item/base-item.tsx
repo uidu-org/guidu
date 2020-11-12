@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import { ClassNames } from '@emotion/core';
+/** @jsxImportSource @emotion/react */
+import { ClassNames } from '@emotion/react';
 import React from 'react';
 import { BaseItemProps, RenderFunction } from '../types';
 import {

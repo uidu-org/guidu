@@ -11,6 +11,7 @@
   "types": "dist/theme.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@emotion/react": "^11.0.0",
     "@uidu/form": "^0.3.7",
     "exenv": "^1.2.2",
     "prop-types": "^15.7.2",

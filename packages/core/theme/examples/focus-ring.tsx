@@ -1,5 +1,5 @@
-/** @jsxImportSource @emotion/core */
-import { css } from '@emotion/core';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import React from 'react';
 import { colors, focusRing } from '../src';
 

@@ -1,4 +1,4 @@
-import { CSSObject } from '@emotion/core';
+import { CSSObject } from '@emotion/react';
 import { N30A } from '@uidu/theme/colors';
 import { gridSize as gridSizeFn } from '@uidu/theme/constants';
 import { headingSizes } from '@uidu/theme/typography';

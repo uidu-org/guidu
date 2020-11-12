@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import Button from '@uidu/button';
 import React, { FC, useCallback, useState } from 'react';
 import Popup from '../src';

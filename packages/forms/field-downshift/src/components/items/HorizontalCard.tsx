@@ -17,7 +17,7 @@ export default function HorizontalCard({
       className={classNames('card mb-3', {
         [`border-${scope}`]: isSelected,
       })}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
@@ -44,7 +44,7 @@ export default function HorizontalCard({
       </div>
       <div className="card-body p-3 p-md-4">
         <div className="d-flex align-items-center">
-          {item.before && <div className="mr-3">{item.before}</div>}
+          {item.before && <div className="mr-3 d-flex">{item.before}</div>}
           <div>
             <h6 className="m-0">{item.name}</h6>
             {item.description && (

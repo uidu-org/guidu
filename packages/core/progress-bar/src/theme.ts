@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 import { N40A, N500 } from '@uidu/theme/colors';
 import { createTheme } from '@uidu/theme/components';
 import { ThemeProps, ThemeTokens } from './types';

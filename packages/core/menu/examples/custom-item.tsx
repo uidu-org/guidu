@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import Icon from '@atlaskit/icon';
 import { B100 } from '@uidu/theme/colors';
 import React from 'react';

@@ -1,4 +1,4 @@
-/** @jsxImportSource @emotion/core */
+/** @jsxImportSource @emotion/react */
 import MediaServicesAddCommentIcon from '@atlaskit/icon/glyph/media-services/add-comment';
 import Button from '@uidu/button';
 import Select from '@uidu/select';
