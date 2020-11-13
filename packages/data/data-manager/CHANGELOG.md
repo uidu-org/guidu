@@ -1,5 +1,16 @@
 # @uidu/data-manager
 
+## 0.6.0
+
+### Minor Changes
+
+- 3c33d09: Table and data-manager without pagination, added hover to rows and item click, small fixes to side-navigation styling
+
+### Patch Changes
+
+- Updated dependencies [3c33d09]
+  - @uidu/table@0.4.0
+
 ## 0.5.24
 
 ### Patch Changes
