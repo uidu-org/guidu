@@ -9,4 +9,16 @@ export type DataManagerProps = {
   rowData: Array<any>;
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
+  children: ({}) => any;
+};
+
+export type DataManagerNextProps = {
+  currentView?: DataView;
+  updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
+  isAutoSaving: string;
+  columnDefs: Array<FieldGroup>;
+  resultSet: any;
+  onAddField?: () => void;
+  onItemClick?: ({ data }: { data: any }) => void;
+  children: ({}) => any;
 };

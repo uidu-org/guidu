@@ -1,5 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
+
+import { useCubeQuery } from '@cubejs-client/react';
 import { ControlsSkeleton, Finder } from '@uidu/data-controls';
+import { buildColumns } from '@uidu/data-fields';
 import { byName } from '@uidu/data-views';
 import { ShellBodyWithSpinner } from '@uidu/shell';
 import {
@@ -21,7 +24,7 @@ import {
   useSortBy,
   useTable,
 } from 'react-table';
-import { DataManagerProps } from '../types';
+import { DataManagerNextProps } from '../types';
 import DataView from './DataView';
 import DataViewSidebar from './DataViewSidebar';
 
@@ -62,17 +65,37 @@ const defaultStartDateField = 'createdAt';
 const defaultEndDateField = null;
 const defaultPrimaryField = null;
 
-export default function DataManager({
+function DataManagerComponent({
   children,
-  rowData = [],
   columnDefs,
   onItemClick,
   currentView,
   updateView: onViewUpdate,
-}: DataManagerProps) {
+  resultSet,
+}: DataManagerNextProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
-  const data = useMemo(() => rowData, [rowData]);
-  const columns = useMemo(() => columnDefinitions, [columnDefinitions]);
+
+  const columns = useMemo(
+    () =>
+      buildColumns([
+        {
+          kind: 'default',
+          name: 'Default fields',
+          columns: resultSet.tableColumns().map((c) => ({
+            ...c,
+            field: c.key,
+            id: c.key,
+            accessor: (row) => row[c.key],
+            name: c.title,
+            kind: c.meta ? c.meta.kind : 'string',
+            fieldGroup: 'default',
+          })),
+        },
+      ]),
+    [resultSet],
+  );
+
+  const data = useMemo(() => resultSet.tablePivot(), [resultSet]);
 
   const setColumnCount = (columnCount) => {
     updateView({
@@ -251,7 +274,7 @@ export default function DataManager({
         // onRowGroupOpened={this.onRowGroupOpened}
         // props spreading
         columnDefs={columnDefs}
-        rowData={rowData}
+        rowData={data}
         onItemClick={onItemClick}
         currentView={currentView}
         // onAddField={onAddField}
@@ -361,4 +384,34 @@ export default function DataManager({
     renderView,
     renderSidebar,
   });
+}
+
+export default function DataManager({
+  query,
+  currentView,
+  cubejsApi,
+  children,
+}) {
+  console.log(query);
+  const { resultSet, error, isLoading } = useCubeQuery(query, { cubejsApi });
+  if (error) {
+    console.log(error);
+    return <p>error</p>;
+  }
+  if (isLoading) {
+    return <div>Loading</div>;
+  }
+  console.log(resultSet);
+
+  if (!resultSet) {
+    return <p>Query is invalid</p>;
+  }
+
+  return (
+    <DataManagerComponent
+      resultSet={resultSet}
+      children={children}
+      currentView={currentView}
+    />
+  );
 }

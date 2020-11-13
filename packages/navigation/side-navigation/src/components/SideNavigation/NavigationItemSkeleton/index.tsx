@@ -18,7 +18,7 @@ const NavigationItemLoader = ({ hasBefore }) => (
     foregroundColor="rgb(76, 86, 106)"
     foregroundOpacity={0.385}
   >
-    {hasBefore && <circle cx="11" cy="11" r="11" />}
+    {hasBefore && <circle cx="9" cy="9" r="9" />}
     <rect
       x={hasBefore ? 30 : 0}
       y="0"

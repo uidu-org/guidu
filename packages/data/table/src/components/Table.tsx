@@ -4,7 +4,6 @@ import React from 'react';
 import { useVirtual } from 'react-virtual';
 import styled, { css } from 'styled-components';
 import Footer from './Footer';
-import Pagination from './Pagination';
 import Resizer from './Resizer';
 
 const Body = styled.div<{ height: number; verticalPadding: number }>`
@@ -35,7 +34,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
   align-items: center;
   border-bottom: 1px solid #f2f2f3;
   border-right: 1px solid #f2f2f3;
-  background: var(--body-bg);
+  background: transparent;
 
   ${({ pinned }) =>
     pinned
@@ -43,7 +42,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
           position: sticky;
           left: 0;
           z-index: 1;
-          background: var(--body-bg);
+          background: transparent;
           border-right: 1px solid #f2f2f3;
         `
       : null};
@@ -61,7 +60,22 @@ const Th = styled.div<{ height: number }>`
   align-items: center;
   font-weight: 500;
   position: relative;
+  background: transparent;
+`;
+
+const StyledRow = styled.div<{ size: number; start: number }>`
+  position: absolute;
+  top: 0;
+  left: 0;
+  // width: '100%';
+  height: ${({ size }) => `${size}px`};
+  transform: ${({ start }) => `translateY(${start}px)`};
+  cursor: pointer;
   background: var(--body-bg);
+
+  &:hover {
+    background: var(--light);
+  }
 `;
 
 const Table = ({
@@ -71,6 +85,7 @@ const Table = ({
   rowHeight = 32,
   groupRowHeightIncrementRatio = 1.2,
   tableInstance,
+  onItemClick,
 }) => {
   const {
     getTableBodyProps,
@@ -78,20 +93,7 @@ const Table = ({
     rows,
     prepareRow,
     footerGroups,
-    page, // Instead of using 'rows', we'll use page,
-    // which has only the rows for the active page
-
-    // The rest of these things are super handy, too ;)
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
-    setPageSize,
     columns,
-    state: { pageIndex, pageSize },
   } = tableInstance;
 
   // const getColumnWidth = (data, accessor, headerText) => {
@@ -121,10 +123,10 @@ const Table = ({
     const maxWidth = 400;
     const magicSpacing = 18;
 
-    for (var i = 0; i < page.length; i++) {
-      if (page[i] !== undefined && page[i].original[accessor] !== null) {
-        if ((page[i].original[accessor] || 'null').length > max) {
-          max = (page[i].original[accessor] || 'null').length;
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i] !== undefined && rows[i].original[accessor] !== null) {
+        if ((rows[i].original[accessor] || 'null').length > max) {
+          max = (rows[i].original[accessor] || 'null').length;
         }
       }
     }
@@ -134,21 +136,18 @@ const Table = ({
 
   const Row = React.useCallback(
     ({ index, size, start }) => {
-      const row = page[index];
+      const row = rows[index];
       prepareRow(row);
       return (
-        <div
+        <StyledRow
           key={index}
-          {...row.getRowProps({
-            style: {
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              // width: '100%',
-              height: `${size}px`,
-              transform: `translateY(${start}px)`,
-            },
-          })}
+          {...row.getRowProps()}
+          size={size}
+          start={start}
+          onClick={(e) => {
+            e.preventDefault();
+            onItemClick(row);
+          }}
         >
           {row.cells
             .filter(
@@ -190,16 +189,16 @@ const Table = ({
                 )}
               </Td>
             ))}
-        </div>
+        </StyledRow>
       );
     },
-    [page, prepareRow, rowHeight, setAggregation],
+    [rows, prepareRow, rowHeight, setAggregation],
   );
 
   const parentRef = React.useRef();
 
   const rowVirtualizer = useVirtual({
-    size: page.length,
+    size: rows.length,
     parentRef,
     overscan: 5,
     estimateSize: React.useCallback((i) => rowHeight, [rowHeight]),
@@ -269,15 +268,6 @@ const Table = ({
           ))}
         </Body>
         <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
-        <Pagination
-          previousPage={previousPage}
-          nextPage={nextPage}
-          canPreviousPage={canPreviousPage}
-          canNextPage={canNextPage}
-          pageIndex={pageIndex}
-          pageOptions={pageOptions}
-          gotoPage={gotoPage}
-        />
       </div>
     </div>
   );

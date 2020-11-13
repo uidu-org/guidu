@@ -1,3 +1,5 @@
+import cubejs from '@cubejs-client/core';
+import { CubeProvider } from '@cubejs-client/react';
 import { More } from '@uidu/data-controls';
 import { buildColumns } from '@uidu/data-fields';
 import DropdownMenu, {
@@ -124,6 +126,53 @@ const dataViews = [
   },
 ];
 
+const API_URL = 'http://localhost:4000';
+const CUBEJS_TOKEN =
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDI3NzI0NTUsImV4cCI6MTYwMjg1ODg1NX0.wbsfpkQUIYev_s83VanR4f1YRWUCmUIST3SHd22o5Ug';
+const cubejsApi = cubejs(CUBEJS_TOKEN, {
+  apiUrl: `${API_URL}/cubejs-api/v1`,
+});
+
+const query = {
+  timeDimensions: [
+    {
+      dimension: 'Orders.createdAt',
+      // dateRange: [startDate, finishDate],
+      granularity: 'day',
+    },
+  ],
+  // order: {
+  //   [`${sorting[0]}`]: sorting[1],
+  // },
+  dimensions: [
+    'Users.id',
+    'Orders.id',
+    'Orders.size',
+    'Users.fullName',
+    'Users.city',
+    'Orders.price',
+    'Orders.status',
+    'Orders.createdAt',
+  ],
+  // filters: [
+  //   {
+  //     dimension: 'Orders.status',
+  //     operator: tabs[statusFilter] !== 'All' ? 'equals' : 'set',
+  //     values: [`${tabs[statusFilter].toLowerCase()}`],
+  //   },
+  //   {
+  //     dimension: 'Orders.price',
+  //     operator: 'gt',
+  //     values: [`${priceFilter[0]}`],
+  //   },
+  //   {
+  //     dimension: 'Orders.price',
+  //     operator: 'lt',
+  //     values: [`${priceFilter[1]}`],
+  //   },
+  // ],
+};
+
 export default class Basic extends Component<any, any> {
   constructor(props) {
     super(props);
@@ -225,156 +274,158 @@ export default class Basic extends Component<any, any> {
     ];
 
     return (
-      <IntlProvider locale="en">
-        <Router>
-          <DataManager
-            isAutoSaving={isAutoSaving}
-            key={`table-for-${this.state.currentView.id}`}
-            onItemClick={console.log}
-            columnDefs={buildColumns([
-              {
-                kind: 'default',
-                name: 'Default fields',
-                columns: availableColumns,
-              },
-              {
-                kind: 'custom',
-                name: 'custom fields',
-                columns: [
-                  {
-                    kind: 'string',
-                    id: 'custom-field-1',
-                    field: 'custom-field-1',
-                    name: 'custom field 1',
-                  },
-                ],
-              },
-              {
-                kind: 'system',
-                name: 'System fields',
-                columns: [
-                  {
-                    cellProps: {
-                      onFieldAdd: () => window.alert('add a field'),
-                    },
-                    kind: 'addField',
-                    id: 'addField',
-                    name: 'Add field',
-                  },
-                ],
-              },
-            ])}
-            rowData={rowData}
-            currentView={currentView}
-            updateView={this.updateView}
-            // onGridReady={() => this.setState({ rendered: true })}
-          >
-            {({ renderControls, renderView, renderSidebar }) => (
-              <ShellMain>
-                <Navigation
-                  className="bg-white border-bottom"
-                  schema={[
+      <CubeProvider cubejsApi={cubejsApi}>
+        <IntlProvider locale="en">
+          <Router>
+            <DataManager
+              query={query}
+              isAutoSaving={isAutoSaving}
+              key={`table-for-${this.state.currentView.id}`}
+              onItemClick={console.log}
+              columnDefs={buildColumns([
+                {
+                  kind: 'default',
+                  name: 'Default fields',
+                  columns: availableColumns,
+                },
+                {
+                  kind: 'custom',
+                  name: 'custom fields',
+                  columns: [
                     {
-                      type: 'NavigationHeader',
-                      text: 'Team',
+                      kind: 'string',
+                      id: 'custom-field-1',
+                      field: 'custom-field-1',
+                      name: 'custom field 1',
                     },
+                  ],
+                },
+                {
+                  kind: 'system',
+                  name: 'System fields',
+                  columns: [
                     {
-                      type: 'PrimarySection',
-                      items: [
-                        {
-                          path: `/`,
-                          text: 'Riepilogo',
-                          type: 'NavigationItem',
-                        },
-                        {
-                          path: `/orders`,
-                          text: 'Ordini',
-                          type: 'NavigationItem',
-                          isSortable: true,
-                        },
-                        {
-                          path: `/attendances`,
-                          text: 'Partecipanti',
-                          type: 'NavigationItem',
-                        },
-                        {
-                          path: `/messages`,
-                          text: 'Messaggi agli iscritti',
-                          type: 'NavigationItem',
-                        },
-                      ],
+                      cellProps: {
+                        onFieldAdd: () => window.alert('add a field'),
+                      },
+                      kind: 'addField',
+                      id: 'addField',
+                      name: 'Add field',
                     },
-                    {
-                      type: 'SecondarySection',
-                      items: [
-                        {
-                          path: `/`,
-                          type: 'InlineComponent',
-                          component: () => (
-                            <DropdownMenu
-                              trigger={
-                                <button className="btn btn-primary">
-                                  Add a view
-                                </button>
-                              }
-                              position="bottom right"
-                            >
-                              <DropdownItemGroup title="Create new">
-                                {[
-                                  { id: 0, kind: 'table', name: 'Table' },
-                                  {
-                                    id: 1,
-                                    kind: 'gallery',
-                                    name: 'Griglia',
-                                  },
-                                  {
-                                    id: 2,
-                                    kind: 'calendar',
-                                    name: 'Calendario',
-                                  },
-                                  { id: 3, kind: 'board', name: 'Kanban' },
-                                  {
-                                    id: 4,
-                                    kind: 'timeline',
-                                    name: 'Timeline',
-                                  },
-                                  {
-                                    id: 4,
-                                    kind: 'list',
-                                    name: 'List',
-                                  },
-                                ].map((view) => (
-                                  <DropdownItem
-                                    onClick={() => this.addView(view)}
-                                    elemBefore={<PlusCircle size={14} />}
-                                  >
-                                    Add a {view.kind} view
-                                  </DropdownItem>
-                                ))}
-                              </DropdownItemGroup>
-                            </DropdownMenu>
-                          ),
-                          icon: (
-                            <img
-                              src="https://via.placeholder.com/24x24"
-                              className="rounded-circle"
-                            />
-                          ),
-                        },
-                      ],
-                    },
-                  ]}
-                />
-                {!loaded ? (
-                  <ShellBodyWithSpinner />
-                ) : (
-                  <>
-                    <ShellBody>
-                      {!loaded ? (
-                        <ShellBodyWithSpinner />
-                      ) : (
-                        <>
-                          {/* <ShellSidebar
+                  ],
+                },
+              ])}
+              rowData={rowData}
+              currentView={currentView}
+              updateView={this.updateView}
+              // onGridReady={() => this.setState({ rendered: true })}
+            >
+              {({ renderControls, renderView, renderSidebar }) => (
+                <ShellMain>
+                  <Navigation
+                    className="bg-white border-bottom"
+                    schema={[
+                      {
+                        type: 'NavigationHeader',
+                        text: 'Team',
+                      },
+                      {
+                        type: 'PrimarySection',
+                        items: [
+                          {
+                            path: `/`,
+                            text: 'Riepilogo',
+                            type: 'NavigationItem',
+                          },
+                          {
+                            path: `/orders`,
+                            text: 'Ordini',
+                            type: 'NavigationItem',
+                            isSortable: true,
+                          },
+                          {
+                            path: `/attendances`,
+                            text: 'Partecipanti',
+                            type: 'NavigationItem',
+                          },
+                          {
+                            path: `/messages`,
+                            text: 'Messaggi agli iscritti',
+                            type: 'NavigationItem',
+                          },
+                        ],
+                      },
+                      {
+                        type: 'SecondarySection',
+                        items: [
+                          {
+                            path: `/`,
+                            type: 'InlineComponent',
+                            component: () => (
+                              <DropdownMenu
+                                trigger={
+                                  <button className="btn btn-primary">
+                                    Add a view
+                                  </button>
+                                }
+                                position="bottom right"
+                              >
+                                <DropdownItemGroup title="Create new">
+                                  {[
+                                    { id: 0, kind: 'table', name: 'Table' },
+                                    {
+                                      id: 1,
+                                      kind: 'gallery',
+                                      name: 'Griglia',
+                                    },
+                                    {
+                                      id: 2,
+                                      kind: 'calendar',
+                                      name: 'Calendario',
+                                    },
+                                    { id: 3, kind: 'board', name: 'Kanban' },
+                                    {
+                                      id: 4,
+                                      kind: 'timeline',
+                                      name: 'Timeline',
+                                    },
+                                    {
+                                      id: 4,
+                                      kind: 'list',
+                                      name: 'List',
+                                    },
+                                  ].map((view) => (
+                                    <DropdownItem
+                                      onClick={() => this.addView(view)}
+                                      elemBefore={<PlusCircle size={14} />}
+                                    >
+                                      Add a {view.kind} view
+                                    </DropdownItem>
+                                  ))}
+                                </DropdownItemGroup>
+                              </DropdownMenu>
+                            ),
+                            icon: (
+                              <img
+                                src="https://via.placeholder.com/24x24"
+                                className="rounded-circle"
+                              />
+                            ),
+                          },
+                        ],
+                      },
+                    ]}
+                  />
+                  {!loaded ? (
+                    <ShellBodyWithSpinner />
+                  ) : (
+                    <>
+                      <ShellBody>
+                        {!loaded ? (
+                          <ShellBodyWithSpinner />
+                        ) : (
+                          <>
+                            {/* <ShellSidebar
                             style={{
                               width: '20%',
                               background: '#fff',
@@ -383,87 +434,88 @@ export default class Basic extends Component<any, any> {
                           >
                             <SideNavigation schema={schema} />
                           </ShellSidebar> */}
-                          <ShellMain>
-                            <ShellHeader
-                              className="px-3 bg-white border-bottom"
-                              style={{ zIndex: 30 }}
-                            >
-                              <div style={{ width: 300 }}>
-                                <Form>
-                                  <Select
-                                    layout="elementOnly"
-                                    name="dataView"
-                                    isClearable={false}
-                                    value={currentView.id}
-                                    options={dataViews.map((dataView) => {
-                                      const d = byName[dataView.kind];
-                                      const { icon: Icon, color } = d;
-                                      return {
-                                        id: dataView.id,
-                                        name: dataView.name,
-                                        before: (
-                                          <Icon size={16} color={color} />
-                                        ),
-                                        ...dataView,
-                                      };
-                                    })}
-                                    onChange={(name, value, { option }) => {
-                                      this.toggleView(option);
-                                    }}
-                                  />
-                                </Form>
-                              </div>
-                              <More />
-                              {renderControls({
-                                controls: {
-                                  viewer: {
-                                    visible: false,
-                                  },
-                                  finder: {
-                                    visible: true,
-                                  },
-                                  more: {
-                                    visible: true,
-                                    actions: [
-                                      {
-                                        name: 'Rename',
-                                        rename: true,
-                                      },
-                                    ],
-                                  },
-                                },
-                              })}
-                            </ShellHeader>
-                            <ShellBody>
-                              <ShellMain>
-                                {renderView({
-                                  viewProps: {
-                                    gallery: {
-                                      gutterSize: 24,
+                            <ShellMain>
+                              <ShellHeader
+                                className="px-3 bg-white border-bottom"
+                                style={{ zIndex: 30 }}
+                              >
+                                <div style={{ width: 300 }}>
+                                  <Form>
+                                    <Select
+                                      layout="elementOnly"
+                                      name="dataView"
+                                      isClearable={false}
+                                      value={currentView.id}
+                                      options={dataViews.map((dataView) => {
+                                        const d = byName[dataView.kind];
+                                        const { icon: Icon, color } = d;
+                                        return {
+                                          id: dataView.id,
+                                          name: dataView.name,
+                                          before: (
+                                            <Icon size={16} color={color} />
+                                          ),
+                                          ...dataView,
+                                        };
+                                      })}
+                                      onChange={(name, value, { option }) => {
+                                        this.toggleView(option);
+                                      }}
+                                    />
+                                  </Form>
+                                </div>
+                                <More />
+                                {renderControls({
+                                  controls: {
+                                    viewer: {
+                                      visible: false,
                                     },
-                                    list: {
-                                      rowHeight: 104,
+                                    finder: {
+                                      visible: true,
                                     },
-                                    board: {},
-                                    table: {
-                                      headerHeight: 48,
-                                      rowHeight: 48,
+                                    more: {
+                                      visible: true,
+                                      actions: [
+                                        {
+                                          name: 'Rename',
+                                          rename: true,
+                                        },
+                                      ],
                                     },
                                   },
                                 })}
-                              </ShellMain>
-                            </ShellBody>
-                          </ShellMain>
-                        </>
-                      )}
-                    </ShellBody>
-                  </>
-                )}
-              </ShellMain>
-            )}
-          </DataManager>
-        </Router>
-      </IntlProvider>
+                              </ShellHeader>
+                              <ShellBody>
+                                <ShellMain>
+                                  {renderView({
+                                    viewProps: {
+                                      gallery: {
+                                        gutterSize: 24,
+                                      },
+                                      list: {
+                                        rowHeight: 104,
+                                      },
+                                      board: {},
+                                      table: {
+                                        headerHeight: 48,
+                                        rowHeight: 48,
+                                      },
+                                    },
+                                  })}
+                                </ShellMain>
+                              </ShellBody>
+                            </ShellMain>
+                          </>
+                        )}
+                      </ShellBody>
+                    </>
+                  )}
+                </ShellMain>
+              )}
+            </DataManager>
+          </Router>
+        </IntlProvider>
+      </CubeProvider>
     );
   }
 }

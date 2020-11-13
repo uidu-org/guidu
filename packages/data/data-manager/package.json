@@ -11,6 +11,8 @@
   "types": "dist/data-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@cubejs-client/core": "^0.23.6",
+    "@cubejs-client/react": "^0.23.10",
     "@loadable/component": "^5.14.1",
     "@uidu/board": "^0.2.29",
     "@uidu/calendar": "^0.1.40",
