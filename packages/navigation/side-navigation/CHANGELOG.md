@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.1.18
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+- Updated dependencies [e21bf74]
+  - @uidu/theme@0.4.11
+
 ## 0.1.17
 
 ### Patch Changes

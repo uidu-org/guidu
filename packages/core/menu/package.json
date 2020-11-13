@@ -1,6 +1,6 @@
 {
   "name": "@uidu/menu",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "A collection of composable menu components that can be used anywhere.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/menu",
   "license": "ISC",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@emotion/react": "^11.0.0",
-    "@uidu/theme": "^0.4.9",
+    "@uidu/theme": "^0.4.11",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },

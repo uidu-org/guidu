@@ -1,5 +1,11 @@
 # @uidu/field-downshift
 
+## 0.4.9
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+
 ## 0.4.8
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashlets-form
 
+## 0.1.15
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+- Updated dependencies [e21bf74]
+  - @uidu/dashlets@0.6.19
+  - @uidu/field-downshift@0.4.9
+
 ## 0.1.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.6.19
+
+### Patch Changes
+
+- e21bf74: Bump dependencies, style fixes
+
 ## 0.6.18
 
 ### Patch Changes
