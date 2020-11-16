@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.4.0
+
+### Minor Changes
+
+- 3c33d09: Table and data-manager without pagination, added hover to rows and item click, small fixes to side-navigation styling
+
 ## 0.3.9
 
 ### Patch Changes
