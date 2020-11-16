@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.0
+
+### Minor Changes
+
+- cb6a94b: Required fields do not have indicator, optional fields are expressed
+
 ## 0.3.8
 
 ### Patch Changes

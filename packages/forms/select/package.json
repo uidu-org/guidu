@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.5.11",
+  "version": "0.5.12",
   "description": "Select Component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/select",
   "license": "MIT",
@@ -13,8 +13,8 @@
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",
-    "@uidu/checkbox": "^0.2.11",
-    "@uidu/field-base": "^0.3.8",
+    "@uidu/checkbox": "^0.2.12",
+    "@uidu/field-base": "^0.4.0",
     "@uidu/form": "^0.3.7",
     "@uidu/spinner": "^0.3.8",
     "@uidu/theme": "^0.4.8",

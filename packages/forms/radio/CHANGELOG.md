@@ -1,5 +1,12 @@
 # @uidu/radio
 
+## 0.4.15
+
+### Patch Changes
+
+- Updated dependencies [cb6a94b]
+  - @uidu/field-base@0.4.0
+
 ## 0.4.14
 
 ### Patch Changes

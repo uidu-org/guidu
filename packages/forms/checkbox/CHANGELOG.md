@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.2.12
+
+### Patch Changes
+
+- Updated dependencies [cb6a94b]
+  - @uidu/field-base@0.4.0
+
 ## 0.2.11
 
 ### Patch Changes
