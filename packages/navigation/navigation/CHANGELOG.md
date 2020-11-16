@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.4.12
+
+### Patch Changes
+
+- 36ecbbf: Cleanup some React warnings
+
 ## 0.4.11
 
 ### Patch Changes
