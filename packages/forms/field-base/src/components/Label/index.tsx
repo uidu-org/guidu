@@ -11,8 +11,7 @@ const Label = (props: LabelProps) => {
   }
 
   const labelClassNames = classNames([
-    'mb-2',
-    layout === 'horizontal' ? 'col-sm-2 col-form-label' : '',
+    layout === 'horizontal' ? 'col-sm-3 col-form-label' : 'mb-2',
     labelClassName,
   ]);
 
