@@ -66,6 +66,7 @@ function FieldGeosuggest({
   } = usePlacesAutocomplete({
     requestOptions,
     debounce: 300,
+    defaultValue: propValue,
   });
 
   const [isGeolocationAvailable, setIsGeolocationAvailable] = useState(false);
@@ -83,12 +84,7 @@ function FieldGeosuggest({
       }
     }
     return () => null;
-  }, []);
-
-  useEffect(() => {
-    setValue(propValue, false);
-    return () => null;
-  }, [propValue]);
+  }, [geolocationEnabled]);
 
   const activateSuggestion = (direction: string) => {
     const suggestsCount = data.length - 1;
@@ -177,7 +173,9 @@ function FieldGeosuggest({
 
   return (
     <Wrapper
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...(isGeolocationAvailable
         ? {
             addonAfter: (
@@ -209,11 +207,12 @@ function FieldGeosuggest({
           <ul className="dropdown-menu show">
             {data.filter(filterOption).map((suggestion) => {
               const isActive =
-                activeSuggestion && suggestion.id === activeSuggestion.id;
+                activeSuggestion &&
+                suggestion.reference === activeSuggestion.reference;
 
               return (
                 <OptionRenderer
-                  key={suggestion.id}
+                  key={suggestion.reference}
                   suggestion={suggestion}
                   isActive={isActive}
                   onClick={selectSuggestion}
@@ -228,5 +227,6 @@ function FieldGeosuggest({
 }
 
 export default forwardRef((props: FieldGeosuggestProps, ref) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
   <FieldGeosuggest {...props} forwardedRef={ref} />
 ));
