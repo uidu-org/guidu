@@ -9,12 +9,12 @@ import {
 } from '../../../styled';
 import NavigationActions from '../NavigationActions';
 
-const StyledNavigationActions = styled.div<{ isActionOpen: boolean }>`
+const StyledNavigationActions = styled.div<{ $isActionOpen: boolean }>`
   position: absolute;
   right: 0.25rem;
   display: flex;
   /* transition: opacity linear 300ms; */
-  opacity: ${({ isActionOpen }) => (isActionOpen ? 1 : 0)};
+  opacity: ${({ $isActionOpen }) => ($isActionOpen ? 1 : 0)};
 `;
 
 export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
@@ -68,7 +68,7 @@ export default function NavigationSubItem({
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
           )}
           <StyledNavigationText
-            isActionOpen={isActionOpen}
+            $isActionOpen={isActionOpen}
             actionsCount={actions.length}
           >
             {text}
@@ -76,7 +76,7 @@ export default function NavigationSubItem({
           {actions.length > 0 && (
             <StyledNavigationActions
               onClick={(e) => e.stopPropagation()}
-              isActionOpen={isActionOpen}
+              $isActionOpen={isActionOpen}
             >
               <NavigationActions
                 actions={actions}

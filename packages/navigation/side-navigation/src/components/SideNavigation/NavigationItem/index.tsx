@@ -11,17 +11,17 @@ import {
 import NavigationActions from '../NavigationActions';
 import SortableNavigationSubItems from '../NavigationSubItem/SortableNavigationSubItems';
 
-const StyledNavigationActions = styled.div<{ isActionOpen: boolean }>`
+const StyledNavigationActions = styled.div<{ $isActionOpen: boolean }>`
   position: absolute;
   right: 0.25rem;
   display: flex;
   transition: opacity linear 300ms;
-  opacity: ${({ isActionOpen }) => (isActionOpen ? 1 : 0)};
+  opacity: ${({ $isActionOpen }) => ($isActionOpen ? 1 : 0)};
 `;
 
 export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   className: `nav-link${className ? ` ${className}` : ''}`,
-}))<{ actionsCount: number }>`
+}))<{ $actionsCount: number }>`
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -47,7 +47,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   }
 
   &:hover ${StyledNavigationText} {
-    padding-right: ${({ actionsCount }) => `${actionsCount * 2}rem`};
+    padding-right: ${({ $actionsCount }) => `${$actionsCount * 2}rem`};
   }
 `;
 
@@ -102,22 +102,22 @@ export default function NavigationItem({
                 },
               }
             : {})}
-          actionsCount={actions.length}
+          $actionsCount={actions.length}
           {...otherProps}
         >
           {!!before && (
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
           )}
           <StyledNavigationText
-            isActionOpen={isActionOpen}
-            actionsCount={actions.length}
+            $isActionOpen={isActionOpen}
+            $actionsCount={actions.length}
           >
             {text}
           </StyledNavigationText>
           {actions.length > 0 && (
             <StyledNavigationActions
               onClick={(e) => e.stopPropagation()}
-              isActionOpen={isActionOpen}
+              $isActionOpen={isActionOpen}
             >
               <NavigationActions
                 actions={actions}

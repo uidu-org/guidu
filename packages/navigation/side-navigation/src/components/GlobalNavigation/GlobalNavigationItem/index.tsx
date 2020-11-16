@@ -13,7 +13,12 @@ const StyledBadge = styled.div`
   top: -4px;
 `;
 
-export default function GlobalItem({ as = 'a', badge, tooltip, ...rest }: any) {
+export default function GlobalItem({
+  as = 'button',
+  badge,
+  tooltip,
+  ...rest
+}: any) {
   const content = (
     <StyledGlobalItem>
       <StyledGlobalItemButton as={as} {...rest} />

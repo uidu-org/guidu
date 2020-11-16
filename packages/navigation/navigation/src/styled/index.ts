@@ -16,7 +16,7 @@ export const StyledNavigationBefore = styled.div`
 `;
 
 export const StyledNavigationText = styled.div<{
-  isActionOpen: boolean;
+  $isActionOpen: boolean;
 }>`
   flex-grow: 1;
   overflow: hidden;
