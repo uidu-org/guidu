@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 0.2.20
+
+### Patch Changes
+
+- 2a2ac41: Fix controlled-vs-uncontrolled input
+
 ## 0.2.19
 
 ### Patch Changes
