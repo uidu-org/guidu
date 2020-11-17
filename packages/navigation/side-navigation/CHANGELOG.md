@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.21
+
+### Patch Changes
+
+- cb6768b: Bug fixing
+
 ## 0.1.20
 
 ### Patch Changes

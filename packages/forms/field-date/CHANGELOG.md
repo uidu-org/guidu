@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 0.2.17
+
+### Patch Changes
+
+- cb6768b: Bug fixing
+
 ## 0.2.16
 
 ### Patch Changes
