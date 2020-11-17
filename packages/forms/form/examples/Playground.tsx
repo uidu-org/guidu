@@ -1,5 +1,6 @@
 import { localUploadOptions } from '@uidu/media-core';
 import * as React from 'react';
+import { Calendar } from 'react-feather';
 import Checkbox, { CheckboxGroup } from '../../checkbox/src';
 import FieldColorPicker from '../../field-color-picker/src';
 import FieldCounter from '../../field-counter/src';
@@ -110,6 +111,7 @@ const Playground: React.FunctionComponent<Props> = ({
         description={
           <p className="text-muted">This is a fieldset description</p>
         }
+        icon={Calendar}
         layout={sectionLayoutChoice}
         isFirst
       >

@@ -5,6 +5,7 @@ import { FormSectionProps } from '../../types';
 export default function FormSection({
   name,
   description,
+  icon: Icon = null,
   children = null,
   isFirst = false,
   isLast = false,
@@ -24,8 +25,13 @@ export default function FormSection({
             }${isFirst ? ' pb-4' : ' py-5'}`}
           >
             {layout !== 'elementOnly' && (
-              <div className={`col-md-${layout === 'horizontal' ? 4 : 12}`}>
-                <legend className="h6">{name}</legend>
+              <div
+                className={`mb-2 col-md-${layout === 'horizontal' ? 4 : 12}`}
+              >
+                <legend className="h4 font-weight-bold d-flex align-items-center">
+                  {Icon && <Icon size={24} className="mr-2" />}
+                  {name}
+                </legend>
                 {description}
               </div>
             )}

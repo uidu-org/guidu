@@ -17,7 +17,7 @@
     "@uidu/slider": "^1.5.8",
     "axios": "^0.21.0",
     "react": "^17.0.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.9",
     "react-intl": "^5.8.0",
     "tslib": "^2.0.1",
     "uuid": "^8.3.0"

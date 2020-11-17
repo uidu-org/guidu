@@ -173,6 +173,7 @@ function FieldGeosuggest({
 
   return (
     <Wrapper
+      rowClassName={classNames('position-relative', rest.rowClassName)}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
       // eslint-disable-next-line react/jsx-props-no-spreading
@@ -186,42 +187,40 @@ function FieldGeosuggest({
       required={required}
       id={id}
     >
-      <div className="position-relative flex-grow-1">
-        <input
-          className={classNames('form-control', className)}
-          disabled={!ready || disabled}
-          name={name}
-          ref={element}
-          type="search"
-          id={id}
-          value={value}
-          autoComplete="off"
-          autoFocus={autoFocus}
-          placeholder={placeholder as string}
-          onFocus={onInputFocus}
-          onKeyDown={onInputKeyDown}
-          onChange={onInputChange}
-          required={required}
-        />
-        {status === 'OK' && (
-          <ul className="dropdown-menu show">
-            {data.filter(filterOption).map((suggestion) => {
-              const isActive =
-                activeSuggestion &&
-                suggestion.reference === activeSuggestion.reference;
+      <input
+        className={classNames('form-control', className)}
+        disabled={!ready || disabled}
+        name={name}
+        ref={element}
+        type="search"
+        id={id}
+        value={value}
+        autoComplete="off"
+        autoFocus={autoFocus}
+        placeholder={placeholder as string}
+        onFocus={onInputFocus}
+        onKeyDown={onInputKeyDown}
+        onChange={onInputChange}
+        required={required}
+      />
+      {status === 'OK' && (
+        <ul className="dropdown-menu show">
+          {data.filter(filterOption).map((suggestion) => {
+            const isActive =
+              activeSuggestion &&
+              suggestion.reference === activeSuggestion.reference;
 
-              return (
-                <OptionRenderer
-                  key={suggestion.reference}
-                  suggestion={suggestion}
-                  isActive={isActive}
-                  onClick={selectSuggestion}
-                />
-              );
-            })}
-          </ul>
-        )}
-      </div>
+            return (
+              <OptionRenderer
+                key={suggestion.reference}
+                suggestion={suggestion}
+                isActive={isActive}
+                onClick={selectSuggestion}
+              />
+            );
+          })}
+        </ul>
+      )}
     </Wrapper>
   );
 }

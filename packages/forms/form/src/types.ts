@@ -1,5 +1,6 @@
 import { ClassValue } from 'classnames/types';
-import { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
+import { IconProps } from 'react-feather';
 
 export type LayoutType = 'horizontal' | 'vertical' | 'elementOnly';
 
@@ -30,6 +31,7 @@ export type FormProps = {
 export type FormSectionProps = {
   children?: ReactNode;
   name: string | ReactNode;
+  icon: FC<IconProps>;
   layout?: LayoutType;
   description?: string | ReactNode;
   isFirst?: boolean;

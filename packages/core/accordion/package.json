@@ -14,7 +14,7 @@
     "@uidu/docs": "^0.2.13",
     "react": "^17.0.0",
     "react-accessible-accordion": "^3.0.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.9",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },

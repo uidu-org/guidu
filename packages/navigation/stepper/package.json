@@ -15,7 +15,7 @@
     "classnames": "^2.2.6",
     "query-string": "^6.13.1",
     "react": "^17.0.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.9",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.1",
     "styled-components": "^5.2.0",

@@ -35,6 +35,7 @@ function FieldDate({
   return (
     <DayPickerInput
       component={(props) => <input {...props} ref={element} id={id} />}
+      ref={element}
       classNames={{
         container: `DayPickerInput d-block${
           containerClassName ? ` ${containerClassName}` : ''

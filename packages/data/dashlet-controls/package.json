@@ -19,7 +19,7 @@
     "d3-time": "^2.0.0",
     "moment": "^2.27.0",
     "react": "^17.0.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.9",
     "react-intl": "^5.8.0",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.1"

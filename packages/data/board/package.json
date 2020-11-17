@@ -14,7 +14,7 @@
     "@uidu/theme": "^0.4.8",
     "react": "^17.0.0",
     "react-beautiful-dnd": "^13.0.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.9",
     "styled-components": "^5.2.0",
     "tslib": "^2.0.1"
   },

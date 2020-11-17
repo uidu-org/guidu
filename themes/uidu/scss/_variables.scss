@@ -17,6 +17,7 @@ $light: #E9ECF0;
 $dark: $gray-800;
 
 // Color system
+$border-color: #f2f3f3; // better for inputs $gray-200; // #f2f2f3;
 // groups: #3891a6
 // contacts: #aba9b4
 // events: #f7cd6b
@@ -55,6 +56,7 @@ $body-color: #16161D;
 $theme-colors: (
   body-color: $body-color,
   body-bg: $body-bg,
+  border: $border-color,
   light: $light,
   primary: $primary,
   calls: $calls,
@@ -126,7 +128,7 @@ $grid-breakpoints: (
 $grid-gutter-width: $spacer * 2;
 
 $border-width: 1px !default;
-$border-color: #f2f3f3; // better for inputs $gray-200; // #f2f2f3;
+
 
 $hr-border-color: $border-color;
 $hr-margin-y: 0.75rem;

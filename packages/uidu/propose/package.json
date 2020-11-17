@@ -18,7 +18,7 @@
     "@uidu/form": "^0.3.7",
     "@uidu/widgets": "^0.3.7",
     "react": "^17.0.0",
-    "react-feather": "^2.0.8",
+    "react-feather": "^2.0.9",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

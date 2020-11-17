@@ -11,7 +11,7 @@ const Separator = styled.div`
   flex-shrink: 0;
   padding: 0 ${gridSize}px;
   text-align: center;
-  width: ${gridSize}px;
+  width: ${gridSize * 3}px;
 `;
 
 Separator.displayName = 'Separator';

@@ -57,12 +57,12 @@ export default function baseStyles(validationState, isCompact) {
       ...base,
       backgroundColor: '#fff',
       borderRadius: '.25rem',
-      borderColor: state.isFocused ? '#f8d1bb' : '#f2f2f3',
+      borderColor: state.isFocused ? 'var(--primary)' : 'var(--border)',
       boxShadow: state.isFocused
         ? '0 0 0 0.2rem rgba(236, 132, 71, 0.25)'
-        : '0 1px 0 rgba(0, 0, 0, 0.06)',
+        : 'none',
       '&:hover': {
-        borderColor: state.isFocused ? '#f8d1bb' : '#f2f2f3',
+        borderColor: state.isFocused ? 'var(--primary)' : 'var(--border)',
       },
     }),
     // valueContainer: css => ({
@@ -74,10 +74,10 @@ export default function baseStyles(validationState, isCompact) {
       ...base,
       padding:
         state.isMulti && state.hasValue
-          ? 'calc(.625rem - 3px) .5rem'
-          : '.625rem 1rem',
+          ? 'calc(.75rem - 2px) .5rem'
+          : '.75rem 1rem',
     }),
-    clearIndicator: css => ({
+    clearIndicator: (css) => ({
       ...css,
       color: colors.N70,
       paddingLeft: '2px',
@@ -88,7 +88,7 @@ export default function baseStyles(validationState, isCompact) {
         color: colors.N500,
       },
     }),
-    loadingIndicator: css => ({
+    loadingIndicator: (css) => ({
       ...css,
       paddingBottom: isCompact ? 0 : 6,
       paddingTop: isCompact ? 0 : 6,
@@ -138,7 +138,7 @@ export default function baseStyles(validationState, isCompact) {
     //   paddingTop: gridSize(),
     //   paddingBottom: gridSize(),
     // }),
-    multiValue: css => ({
+    multiValue: (css) => ({
       ...css,
       borderRadius: '2px',
       backgroundColor: colors.N20,
@@ -162,21 +162,21 @@ export default function baseStyles(validationState, isCompact) {
     //     backgroundColor: colors.R75,
     //   },
     // }),
-    indicatorSeparator: base => ({
+    indicatorSeparator: (base) => ({
       ...base,
       margin: '.75rem 0',
       backgroundColor: '#ced4da',
     }),
-    indicatorsContainer: base => ({
+    indicatorsContainer: (base) => ({
       ...base,
       marginLeft: '1rem',
     }),
-    menu: base => ({
+    menu: (base) => ({
       ...base,
       boxShadow: 'none',
       border: '1px solid #ced4da',
     }),
-    menuList: base => ({
+    menuList: (base) => ({
       ...base,
       padding: 0,
     }),

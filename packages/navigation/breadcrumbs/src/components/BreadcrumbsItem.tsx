@@ -4,7 +4,7 @@ import {
   WithAnalyticsEventsProps,
 } from '@uidu/analytics';
 import AKTooltip from '@uidu/tooltip';
-import React from 'react';
+import React, { ReactElement } from 'react';
 import ReactDOM from 'react-dom';
 import ItemWrapper from '../styled/BreadcrumbsItem';
 import Button from '../styled/Button';
@@ -23,7 +23,7 @@ interface IProps extends WithAnalyticsEventsProps {
   /** Handler to be called on click. **/
   onClick?: (event: React.MouseEvent) => void;
   /** The text to appear within the breadcrumb as a link. */
-  text: string;
+  text: string | ReactElement;
   /** The maximum width in pixels that an item can have before it is truncated.
   If this is not set, truncation will only occur when it cannot fit alone on a
   line. If there is no truncationWidth, tooltips are not provided on truncation. */
