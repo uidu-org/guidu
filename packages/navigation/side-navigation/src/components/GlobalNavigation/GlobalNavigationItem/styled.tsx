@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledGlobalItemButton = styled.button`
+export const StyledGlobalItemButton = styled.button<{ activeColor?: string }>`
   -webkit-appearance: none;
   color: currentColor;
   background-color: transparent;

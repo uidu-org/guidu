@@ -34,18 +34,17 @@ export default function List({
   const parentRef = useRef();
 
   const {
-    rows,
     headerGroups,
     prepareRow,
     state: { filterBy },
     columns,
-    page,
+    rows,
   } = tableInstance;
 
   const rowVirtualizer = useVirtual({
     size: rows.length,
     parentRef,
-    estimateSize: useCallback(() => rowHeight, []),
+    estimateSize: useCallback(() => rowHeight, [rowHeight]),
     overscan: 5,
   });
 
@@ -73,7 +72,7 @@ export default function List({
           }}
         >
           {rowVirtualizer.virtualItems.map((virtualRow) => {
-            const row = page[virtualRow.index];
+            const row = rows[virtualRow.index];
             prepareRow(row);
             return (
               <div
@@ -99,62 +98,3 @@ export default function List({
     </div>
   );
 }
-
-// export default class List extends PureComponent<any> {
-//   static defaultProps = {
-//     gutterSize: 0,
-//     headerHeight: 48,
-//     itemSize: 96,
-//   };
-
-//   render() {
-//     const {
-//       rowData,
-//       columnDefs,
-//       gutterSize,
-//       rowHeight,
-//       headerHeight,
-//       onItemClick,
-//       tableInstance,
-//     } = this.props;
-//     const visibleColumnDefs = columnDefs.filter((c) => !c.hide && !c.pinned);
-
-//     const primary = getPrimary(columnDefs);
-//     const cover = getCover(visibleColumnDefs);
-//     const avatar = getAvatar(visibleColumnDefs);
-
-//     const itemData = createItemData(
-//       rowData,
-//       visibleColumnDefs,
-//       gutterSize,
-//       onItemClick,
-//       primary,
-//       cover,
-//       avatar,
-//       tableInstance,
-//     );
-
-//     return (
-//       <AutoSizer>
-//         {({ height, width }) => {
-//           return (
-//             <StickyList
-//               useIsScrolling
-//               height={height}
-//               itemCount={rowData.length}
-//               itemSize={(index) => (index === 0 ? headerHeight : rowHeight)}
-//               headerHeight={headerHeight}
-//               stickyIndices={[0]}
-//               itemData={itemData}
-//               tableInstance={tableInstance}
-//               innerElementType={innerElementType}
-//               width={width}
-//             >
-//               {Item}
-//             </StickyList>
-//           );
-//         }}
-//       </AutoSizer>
-//     );
-//   }
-// }
