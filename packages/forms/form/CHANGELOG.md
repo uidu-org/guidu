@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.11
+
+### Patch Changes
+
+- 406d487: Skeleton fixes
+
 ## 0.3.10
 
 ### Patch Changes
