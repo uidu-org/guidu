@@ -1926,10 +1926,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@cubejs-client/core@^0.23.11", "@cubejs-client/core@^0.23.6":
-  version "0.23.11"
-  resolved "https://registry.yarnpkg.com/@cubejs-client/core/-/core-0.23.11.tgz#8f9309d73e843afa3590262cabfaee228dff0c48"
-  integrity sha512-YWm8Rf1HpRAFota+GNyuNxFGU14d7ChB4/rLJKSX7ZX7zT4Cf+afWa+Vgd2t+4efJil5koXju1QXzf9TLTCu5g==
+"@cubejs-client/core@^0.23.12", "@cubejs-client/core@^0.23.6":
+  version "0.23.12"
+  resolved "https://registry.yarnpkg.com/@cubejs-client/core/-/core-0.23.12.tgz#71aed4034a8cd3d630d670ea842eb4d1aac05450"
+  integrity sha512-HgjqnrGPVXpJSxwU/SxgffOPMewkSFVSZVnoVLeyF1dDOsxfc+dN7Yw5uuFMZNyQOipubbpxk0KZ0WRhmhlN3w==
   dependencies:
     "@babel/runtime" "^7.1.2"
     core-js "^3.6.5"
@@ -1941,12 +1941,12 @@
     uuid "^3.4.0"
 
 "@cubejs-client/react@^0.23.10":
-  version "0.23.11"
-  resolved "https://registry.yarnpkg.com/@cubejs-client/react/-/react-0.23.11.tgz#db1521382cded5ae1afe082e31e23a41dfbad6e7"
-  integrity sha512-UyM9j+r2QbAes4BMEK/GFWvtm5Hxs2STIHt8fwfgvbWBrAm51Q0uulmj/hA1xVO+y/UYfn6XiVPYOfQ1rn7FyQ==
+  version "0.23.12"
+  resolved "https://registry.yarnpkg.com/@cubejs-client/react/-/react-0.23.12.tgz#77f8e7fc92f7137902f290a280c9d58555ca4973"
+  integrity sha512-qThM5+/TlrPOh7LaLeCjuXHdPU50lkSvqDu/QT56stB6oIQqmJBDbyaeHeRYJ22tHUdHuOuC3HZ/9qeui8G3eg==
   dependencies:
     "@babel/runtime" "^7.1.2"
-    "@cubejs-client/core" "^0.23.11"
+    "@cubejs-client/core" "^0.23.12"
     core-js "^3.6.5"
     ramda "^0.27.0"
 
@@ -2323,9 +2323,9 @@
     prop-types "^15.7.2"
 
 "@googlemaps/js-api-loader@^1.7.0":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.11.0.tgz#a66da4d6d49e864f7da9eccad2e3968685b2a7ba"
-  integrity sha512-+UYJj1msr1k2G3rPFp74pJx1auUr4jvLiua2L0qERbH8OkQkmGAcH6XmbqH7i81EBRRZ+Ex6Eud7rKyF02SNQA==
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.11.1.tgz#b7f02c04d8d8602fb4bd873b03685fccefce1c6f"
+  integrity sha512-2ug4uBu0onRXTAo7Yxkay5N7pdNIz3XpTElMTLdCtEfQDxikbjeR6GS8atVhblX+ubFBNlXvDzz7VtuXv0vMRQ==
   dependencies:
     fast-deep-equal "^3.1.3"
 
@@ -3131,9 +3131,9 @@
   integrity sha512-ZpKr+WTb8zsajqgDkvCEWgp6d5eJT6Q63Ng2neTbzBO76Lbe91vX/iVIW9dikq+Fs3yEo+ls4cxeXABD2LtcbQ==
 
 "@preconstruct/cli@^1.1.25":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@preconstruct/cli/-/cli-1.2.0.tgz#67e0f62ec854cb30531f415cb725f9b909695823"
-  integrity sha512-KSLDdkzUwUcSLPuWceK9VUvrXQUG6grXFRPLzL5WANH/yGzB5yghhKkwFK1JIatgqTqtmJMZOn8w0zvgOV9NAw==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@preconstruct/cli/-/cli-1.2.1.tgz#ab5250f5d9feec728dfb7052f7197313bb87b494"
+  integrity sha512-eEUZANj7iwCXSswWf8iMk3xNZsvJTN18fjZ8GK+rbjbSv1RonWgtpbacKQo4lj2qANSStm+LotHtdzHEnEI2IQ==
   dependencies:
     "@babel/code-frame" "^7.5.5"
     "@babel/core" "^7.7.7"
@@ -5416,9 +5416,9 @@ avataaars@^1.2.1:
     prop-types "^15.6.0"
 
 aws-sdk@^2.689.0:
-  version "2.793.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.793.0.tgz#17f40a630fcbb37c6703701d73f92a2d3213e411"
-  integrity sha512-zBrDkYAUadS59+GVhhVT8f7medKv2FO/3sX3QDfgHt0ySUYi4umBwp3fXjoJU2oRG70IZ74Wclx4T4tynA+Gjg==
+  version "2.794.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.794.0.tgz#7eb1f2fa277a91731253c2e9fee57b6096230d15"
+  integrity sha512-Qqz8v0WfeGveaZTPo9+52nNUep/CTuo18OcdCwF4WrnNBv7bAxExUOwN9XkqhoxLjBDk/LuMmHGhOXRljFQgRw==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -9211,9 +9211,9 @@ ejs@^3.1.5:
     jake "^10.6.1"
 
 electron-to-chromium@^1.3.488, electron-to-chromium@^1.3.591:
-  version "1.3.597"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.597.tgz#0d30fd4c0f5437149c28a6044c4e119357ae56aa"
-  integrity sha512-VJI21MucKaqyFw0oe3j9BIg+nDF4MHzUZAmUwZzrxho+s8zPCD13Fds07Rgu+MTtAadO4tYTKFdAUksKYUyIJw==
+  version "1.3.598"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.598.tgz#8f757018902ab6190323a8c5f6124d854893a35b"
+  integrity sha512-G5Ztk23/ubLYVPxPXnB1uu105uzIPd4xB/D8ld8x1GaSC9+vU9NZL16nYZya8H77/7CCKKN7dArzJL3pBs8N7A==
 
 elf-tools@^1.1.1:
   version "1.1.2"

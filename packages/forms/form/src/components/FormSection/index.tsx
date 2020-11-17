@@ -26,7 +26,7 @@ export default function FormSection({
           >
             {layout !== 'elementOnly' && (
               <div
-                className={`mb-2 col-md-${layout === 'horizontal' ? 4 : 12}`}
+                className={`mb-3 col-md-${layout === 'horizontal' ? 4 : 12}`}
               >
                 <legend className="h4 font-weight-bold d-flex align-items-center">
                   {Icon && <Icon size={24} className="mr-2" />}

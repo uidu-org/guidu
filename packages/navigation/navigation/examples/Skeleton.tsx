@@ -31,7 +31,7 @@ export default class Basic extends Component<any> {
       <>
         <ShellSidebar
           style={{ display: 'flex', flex: '0 1 25%' }}
-          className="bg-light border-right"
+          className="border-right"
         >
           <Navigation schema={schema} />
         </ShellSidebar>

@@ -11,10 +11,10 @@ const ControlLoader = () => (
     height={24}
     width={244}
     speed={2}
-    backgroundColor="#E9ECF0"
-    backgroundOpacity={0.5}
-    foregroundColor="#E9ECF0"
-    foregroundOpacity={1}
+    backgroundColor="var(--light)"
+    backgroundOpacity={1}
+    foregroundColor="var(--light)"
+    foregroundOpacity={0.6}
   >
     <rect width="100%" x={0} y="0" rx="12" ry="12" height="24" />
   </ContentLoader>
