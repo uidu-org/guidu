@@ -1,5 +1,14 @@
 # @uidu/field-text
 
+## 0.5.13
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/field-base@0.4.1
+  - @uidu/form@0.3.10
+
 ## 0.5.12
 
 ### Patch Changes

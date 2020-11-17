@@ -1,5 +1,14 @@
 # @uidu/message-form
 
+## 0.2.11
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/form@0.3.10
+  - @uidu/message@0.2.13
+
 ## 0.2.10
 
 ### Patch Changes

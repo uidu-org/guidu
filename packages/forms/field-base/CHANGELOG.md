@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.4.1
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/form@0.3.10
+
 ## 0.4.0
 
 ### Minor Changes

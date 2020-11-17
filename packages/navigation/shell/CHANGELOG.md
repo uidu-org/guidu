@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.1.2
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+
 ## 1.1.1
 
 ### Patch Changes

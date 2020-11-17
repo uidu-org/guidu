@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/flag",
@@ -22,8 +22,8 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.13",
-    "@uidu/form": "^0.3.7",
+    "@uidu/docs": "^0.2.14",
+    "@uidu/form": "^0.3.10",
     "@uidu/radio": "^0.4.14",
     "@uidu/spinner": "^0.3.8",
     "react": "^17.0.0",

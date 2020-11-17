@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 0.2.18
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/field-base@0.4.1
+
 ## 0.2.17
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/attend
 
+## 0.3.8
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/payments@0.2.25
+  - @uidu/form@0.3.10
+  - @uidu/shell@1.1.2
+  - @uidu/stepper@0.2.11
+  - @uidu/widgets@0.3.8
+
 ## 0.3.7
 
 ### Patch Changes

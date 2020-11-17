@@ -1,5 +1,17 @@
 # @uidu/donate
 
+## 0.2.27
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/payments@0.2.25
+  - @uidu/field-downshift@0.4.11
+  - @uidu/form@0.3.10
+  - @uidu/select@0.5.13
+  - @uidu/widgets@0.3.8
+
 ## 0.2.26
 
 ### Patch Changes

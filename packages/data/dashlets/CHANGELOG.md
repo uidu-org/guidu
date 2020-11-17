@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.6.20
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/dashlet-controls@0.2.15
+
 ## 0.6.19
 
 ### Patch Changes

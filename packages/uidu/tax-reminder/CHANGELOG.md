@@ -1,5 +1,16 @@
 # @uidu/tax-reminder
 
+## 0.1.33
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/field-date@0.2.18
+  - @uidu/form@0.3.10
+  - @uidu/select@0.5.13
+  - @uidu/widgets@0.3.8
+
 ## 0.1.32
 
 ### Patch Changes

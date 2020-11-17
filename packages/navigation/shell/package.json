@@ -1,6 +1,6 @@
 {
   "name": "@uidu/shell",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/shell",
@@ -26,8 +26,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.13",
-    "@uidu/navigation": "^0.4.11",
+    "@uidu/docs": "^0.2.14",
+    "@uidu/navigation": "^0.4.13",
     "faker": "^5.1.0",
     "react-router-dom": "^5.2.0",
     "react-scroll": "^1.8.1"

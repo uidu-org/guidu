@@ -1,5 +1,14 @@
 # @uidu/propose
 
+## 0.1.27
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/form@0.3.10
+  - @uidu/widgets@0.3.8
+
 ## 0.1.26
 
 ### Patch Changes

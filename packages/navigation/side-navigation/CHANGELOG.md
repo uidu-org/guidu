@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.1.22
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/shell@1.1.2
+
 ## 0.1.21
 
 ### Patch Changes

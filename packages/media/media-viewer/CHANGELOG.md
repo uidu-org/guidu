@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.2.11
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/shell@1.1.2
+
 ## 0.2.10
 
 ### Patch Changes

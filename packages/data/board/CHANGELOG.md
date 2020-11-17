@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.2.30
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+
 ## 0.2.29
 
 ### Patch Changes

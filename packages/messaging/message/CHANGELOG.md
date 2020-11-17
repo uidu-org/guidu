@@ -1,5 +1,17 @@
 # @uidu/message
 
+## 0.2.13
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/drawer@0.4.11
+  - @uidu/media-card@0.3.10
+  - @uidu/media-viewer@0.2.11
+  - @uidu/message-form@0.2.11
+  - @uidu/message-renderer@0.2.11
+
 ## 0.2.12
 
 ### Patch Changes
