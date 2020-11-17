@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 0.4.10
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/data-controls@0.5.17
+  - @uidu/form@0.3.10
+  - @uidu/select@0.5.13
+
 ## 0.4.9
 
 ### Patch Changes

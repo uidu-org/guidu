@@ -1,5 +1,14 @@
 # @uidu/dashboard-controls
 
+## 0.2.15
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/field-date-range@0.2.18
+  - @uidu/form@0.3.10
+
 ## 0.2.14
 
 ### Patch Changes

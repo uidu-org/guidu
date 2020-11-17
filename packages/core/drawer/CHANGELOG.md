@@ -1,5 +1,13 @@
 # @uidu/drawer
 
+## 0.4.11
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/docs@0.2.14
+
 ## 0.4.10
 
 ### Patch Changes

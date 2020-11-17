@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.3.11
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+
 ## 0.3.10
 
 ### Patch Changes

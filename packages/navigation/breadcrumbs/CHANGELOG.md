@@ -1,5 +1,11 @@
 # @uidu/breadcrumbs
 
+## 0.1.8
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+
 ## 0.1.7
 
 ### Patch Changes

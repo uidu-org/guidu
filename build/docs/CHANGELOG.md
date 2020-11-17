@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.14
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+
 ## 0.2.13
 
 ### Patch Changes

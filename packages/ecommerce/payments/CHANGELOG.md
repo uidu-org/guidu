@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 0.2.25
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/form@0.3.10
+
 ## 0.2.24
 
 ### Patch Changes

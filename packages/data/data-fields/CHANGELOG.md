@@ -1,5 +1,16 @@
 # @uidu/data-fields
 
+## 0.3.7
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/field-date@0.2.18
+  - @uidu/field-downshift@0.4.11
+  - @uidu/form@0.3.10
+  - @uidu/select@0.5.13
+
 ## 0.3.6
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/propose",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "private": false,
   "description": "Job/volunteer proposals",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/propose",
@@ -15,13 +15,13 @@
     "@uidu/field": "^0.2.13",
     "@uidu/field-text": "^0.3.8",
     "@uidu/field-textarea": "^0.2.11",
-    "@uidu/form": "^0.3.7",
-    "@uidu/widgets": "^0.3.7",
+    "@uidu/form": "^0.3.10",
+    "@uidu/widgets": "^0.3.8",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.13"
+    "@uidu/docs": "^0.2.14"
   }
 }

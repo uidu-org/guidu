@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.5.16",
+  "version": "0.5.17",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
@@ -13,18 +13,18 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.11",
-    "@uidu/data-fields": "^0.3.6",
-    "@uidu/data-views": "^0.4.9",
-    "@uidu/drawer": "^0.4.10",
+    "@uidu/data-fields": "^0.3.7",
+    "@uidu/data-views": "^0.4.10",
+    "@uidu/drawer": "^0.4.11",
     "@uidu/dropdown-menu": "^0.3.8",
     "@uidu/field-text": "^0.3.8",
-    "@uidu/form": "^0.3.8",
+    "@uidu/form": "^0.3.10",
     "@uidu/inline-dialog": "^0.3.8",
     "@uidu/item": "^0.3.10",
     "@uidu/menu": "^0.3.11",
     "@uidu/popup": "^0.3.10",
-    "@uidu/select": "^0.5.11",
-    "@uidu/shell": "^1.1.1",
+    "@uidu/select": "^0.5.13",
+    "@uidu/shell": "^1.1.2",
     "@uidu/spinner": "^0.3.8",
     "@uidu/tooltip": "^0.3.9",
     "lodash": "^4.17.4",
@@ -39,7 +39,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.13"
+    "@uidu/docs": "^0.2.14"
   },
   "uidu:src": "src/index.ts"
 }

@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.3.10
+
+### Patch Changes
+
+- 2d4ea65: Bump dependencies
+- Updated dependencies [2d4ea65]
+  - @uidu/docs@0.2.14
+
 ## 0.3.9
 
 ### Patch Changes
