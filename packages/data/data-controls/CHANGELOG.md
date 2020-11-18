@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.5.18
+
+### Patch Changes
+
+- 406d487: Skeleton fixes
+- Updated dependencies [406d487]
+  - @uidu/form@0.3.11
+
 ## 0.5.17
 
 ### Patch Changes

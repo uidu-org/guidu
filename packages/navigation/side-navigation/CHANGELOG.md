@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.23
+
+### Patch Changes
+
+- 406d487: Skeleton fixes
+
 ## 0.1.22
 
 ### Patch Changes
