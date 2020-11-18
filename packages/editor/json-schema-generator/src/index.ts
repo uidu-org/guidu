@@ -72,9 +72,9 @@ export default (
           JSON.stringify(jsonSchema, null, 2) + '\n',
         );
       } else {
-        prettier.resolveConfig(process.cwd()).then(resolvedConfig => {
+        prettier.resolveConfig(process.cwd()).then((resolvedConfig) => {
           const options = {
-            parser: 'babylon',
+            parser: 'babel',
             ...resolvedConfig,
           } as prettier.Options;
 
@@ -107,7 +107,7 @@ export default (
     .catch(console.error);
 
   function waitForTicks() {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       const waitForTick = () => {
         process.nextTick(() => {
           ticks--;
@@ -182,21 +182,21 @@ export default (
     } else if (isNumberType(type)) {
       return new PrimitiveSchemaNode('number', validators);
     } else if (isUnionType(type)) {
-      const isEnum = type.types.every(t => isStringLiteralType(t));
+      const isEnum = type.types.every((t) => isStringLiteralType(t));
       if (isEnum) {
         return new EnumSchemaNode(
-          type.types.map(t => (t as LiteralType).value),
+          type.types.map((t) => (t as LiteralType).value),
         );
       } else {
         return new AnyOfSchemaNode(
-          type.types.map(t => getSchemaNodeFromType(t)!).filter(Boolean),
+          type.types.map((t) => getSchemaNodeFromType(t)!).filter(Boolean),
         );
       }
     } else if (isIntersectionType(type)) {
       return new AllOfSchemaNode(
         type.types
           .map(
-            t =>
+            (t) =>
               getSchemaNodeFromType(t, getTags(t.getSymbol()!.getJsDocTags()))!,
           )
           .filter(Boolean),
@@ -229,7 +229,7 @@ export default (
         node.push(
           types.length === 1 && isAnyType(types[0]) // Array<any>
             ? []
-            : types.map(t => getSchemaNodeFromType(t)!).filter(Boolean),
+            : types.map((t) => getSchemaNodeFromType(t)!).filter(Boolean),
         );
       }
       return node;
@@ -242,7 +242,7 @@ export default (
       process.nextTick(() => {
         ticks++;
         const props = checker.getPropertiesOfType(type);
-        props.forEach(prop => {
+        props.forEach((prop) => {
           const name = prop.getName();
           // Drop private properties __fileName, __fileType, etc
           if ((name[0] !== '_' || name[1] !== '_') && prop.valueDeclaration) {

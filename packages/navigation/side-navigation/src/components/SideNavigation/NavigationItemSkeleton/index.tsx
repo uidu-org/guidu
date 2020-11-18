@@ -27,7 +27,7 @@ const NavigationItemLoader = ({ hasBefore, hasAfter, width }) => (
       width={`${width || `${(Math.random() * (0.85 - 0.45) + 0.3) * 100}%`}`}
       height="18"
     />
-    {hasAfter && <circle cx="95%" cy="10" r="10" />}
+    {hasAfter && <circle cx="94%" cy="10" r="10" />}
   </ContentLoader>
 );
 

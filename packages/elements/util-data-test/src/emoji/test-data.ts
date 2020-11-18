@@ -173,7 +173,7 @@ export const siteServiceEmojis = () => ({
 });
 
 export const filterToSearchable = (emojis: EmojiDescription[]) => {
-  return emojis.filter(emoji => emoji.searchable);
+  return emojis.filter((emoji) => emoji.searchable);
 };
 
 // EmojiDescription[]

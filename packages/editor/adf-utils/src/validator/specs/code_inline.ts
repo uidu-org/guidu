@@ -4,7 +4,7 @@ export default [
     props: {
       marks: {
         type: 'array',
-        items: [['code', 'link', 'annotation']],
+        items: [['annotation', 'code', 'link']],
         optional: true,
       },
     },

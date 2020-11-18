@@ -8,9 +8,9 @@ export default {
         layout: {
           type: 'enum',
           values: [
+            'center',
             'wide',
             'full-width',
-            'center',
             'wrap-right',
             'wrap-left',
             'align-end',

@@ -6,14 +6,14 @@ export default [
         type: 'array',
         items: [
           [
+            'annotation',
             'em',
+            'link',
             'strike',
             'strong',
-            'underline',
-            'link',
             'subsup',
             'textColor',
-            'annotation',
+            'underline',
           ],
         ],
         optional: true,
