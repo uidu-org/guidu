@@ -1,5 +1,11 @@
 # @uidu/breadcrumbs
 
+## 0.1.9
+
+### Patch Changes
+
+- 437f392: Style fixes
+
 ## 0.1.8
 
 ### Patch Changes
