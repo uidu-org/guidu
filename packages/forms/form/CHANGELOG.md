@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.12
+
+### Patch Changes
+
+- 437f392: Style fixes
+
 ## 0.3.11
 
 ### Patch Changes
