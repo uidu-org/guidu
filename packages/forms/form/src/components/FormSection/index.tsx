@@ -25,11 +25,19 @@ export default function FormSection({
             }${isFirst ? ' pb-4' : ' py-5'}`}
           >
             {layout !== 'elementOnly' && (
-              <div
-                className={`mb-3 col-md-${layout === 'horizontal' ? 4 : 12}`}
-              >
-                <legend className="h4 font-weight-bold d-flex align-items-center">
-                  {Icon && <Icon size={24} className="mr-2" />}
+              <div className={`mb-3 col-md-${layout === 'horizontal' ? 4 : 9}`}>
+                <legend
+                  className={`${
+                    layout === 'horizontal' ? 'h5' : 'h4'
+                  } font-weight-bold d-flex align-items-center`}
+                >
+                  {Icon && (
+                    <Icon
+                      size={30}
+                      className="ml-n5 mr-3"
+                      style={{ opacity: 0.15 }}
+                    />
+                  )}
                   {name}
                 </legend>
                 {description}

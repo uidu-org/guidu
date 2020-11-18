@@ -9,9 +9,9 @@ const ThemeColor = {
 const Separator = styled.div`
   color: ${ThemeColor.text};
   flex-shrink: 0;
-  padding: 0 ${gridSize}px;
+  padding: 0 ${gridSize() / 2}px;
   text-align: center;
-  width: ${gridSize * 3}px;
+  width: auto;
 `;
 
 Separator.displayName = 'Separator';
