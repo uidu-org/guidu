@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.1.3
+
+### Patch Changes
+
+- b3993dc: Allow for innerClassName customizations
+
 ## 1.1.2
 
 ### Patch Changes
