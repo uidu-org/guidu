@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.2.12
+
+### Patch Changes
+
+- dc154b6: Try fix adf-utils
+
 ## 0.2.11
 
 ### Patch Changes

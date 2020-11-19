@@ -1,5 +1,11 @@
 # @uidu/util-data-test
 
+## 0.2.8
+
+### Patch Changes
+
+- dc154b6: Try fix adf-utils
+
 ## 0.2.7
 
 ### Patch Changes

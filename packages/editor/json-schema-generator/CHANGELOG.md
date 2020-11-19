@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.17
+
+### Patch Changes
+
+- dc154b6: Try fix adf-utils
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.24
+
+### Patch Changes
+
+- dc154b6: Try fix adf-utils
+
 ## 0.1.23
 
 ### Patch Changes
