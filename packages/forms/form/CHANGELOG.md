@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.13
+
+### Patch Changes
+
+- 244f0a7: Fixes to FormSection layout
+
 ## 0.3.12
 
 ### Patch Changes
