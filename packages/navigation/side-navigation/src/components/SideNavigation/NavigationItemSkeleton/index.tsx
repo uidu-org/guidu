@@ -7,10 +7,10 @@ const NavigationItemLoader = ({ hasBefore, hasAfter, width }) => (
   <ContentLoader
     style={{
       width: '100%',
-      height: 20,
+      height: 21,
       // marginRight: '3rem',
     }}
-    height={20}
+    height={21}
     width={width}
     speed={2}
     backgroundColor="var(--light)"
@@ -21,13 +21,13 @@ const NavigationItemLoader = ({ hasBefore, hasAfter, width }) => (
     {hasBefore && <circle cx="10" cy="10" r="10" />}
     <rect
       x={hasBefore ? 30 : 0}
-      y="1"
+      y="0"
       rx="3"
       ry="3"
       width={`${width || `${(Math.random() * (0.85 - 0.45) + 0.3) * 100}%`}`}
-      height="18"
+      height="21"
     />
-    {hasAfter && <circle cx="94%" cy="10" r="10" />}
+    {hasAfter && <circle cx="calc(100% - 9px)" cy="9.5" r="9.375" />}
   </ContentLoader>
 );
 

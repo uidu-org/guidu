@@ -1,10 +1,5 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import BreadcrumbsStateless from './BreadcrumbsStateless';
-
-interface IState {
-  isExpanded?: boolean;
-}
 
 interface IProps {
   /** Set the maximum number of breadcrumbs to display. When there are more
@@ -17,18 +12,14 @@ interface IProps {
   testId?: string;
 }
 
-export default class Breadcrumbs extends React.Component<IProps, IState> {
-  state = { isExpanded: false };
-
-  expand = () => this.setState({ isExpanded: true });
-
-  render() {
-    return (
-      <BreadcrumbsStateless
-        {...this.props}
-        isExpanded={this.state.isExpanded}
-        onExpand={this.expand}
-      />
-    );
-  }
+export default function Breadcrumbs(props: IProps) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const expand = () => setIsExpanded(true);
+  return (
+    <BreadcrumbsStateless
+      {...props}
+      isExpanded={isExpanded}
+      onExpand={expand}
+    />
+  );
 }

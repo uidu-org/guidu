@@ -4,7 +4,7 @@ import {
   withAnalyticsEvents,
   WithAnalyticsEventsProps,
 } from '@uidu/analytics';
-import React from 'react';
+import React, { useCallback } from 'react';
 import Container from '../styled/BreadcrumbsContainer';
 import pkg from '../version.json';
 import EllipsisItem from './EllipsisItem';
@@ -35,35 +35,31 @@ export interface BreadcrumbsStatelessProps extends WithAnalyticsEventsProps {
   testId?: string;
 }
 
-class BreadcrumbsStateless extends React.Component<
-  BreadcrumbsStatelessProps,
-  {}
-> {
-  static defaultProps = {
-    isExpanded: false,
-    maxItems: defaultMaxItems,
-    itemsBeforeCollapse: 1,
-    itemsAfterCollapse: 1,
-  };
-
-  renderAllItems(): Array<React.ReactNode> {
-    const allNonEmptyItems = toArray(this.props.children);
+function BreadcrumbsStateless({
+  isExpanded = false,
+  maxItems = defaultMaxItems,
+  itemsBeforeCollapse = 1,
+  itemsAfterCollapse = 1,
+  onExpand,
+  children,
+  testId,
+}: BreadcrumbsStatelessProps) {
+  const renderAllItems = useCallback((): Array<React.ReactNode> => {
+    const allNonEmptyItems = toArray(children);
     return allNonEmptyItems.map((child, index) =>
       React.cloneElement(child as React.ReactElement, {
         hasSeparator: index < allNonEmptyItems.length - 1,
       }),
     );
-  }
+  }, [children]);
 
-  renderItemsBeforeAndAfter() {
-    const { itemsBeforeCollapse, itemsAfterCollapse, testId } = this.props;
-
+  const renderItemsBeforeAndAfter = useCallback(() => {
     // Not a chance this will trigger, but TS is complaining about items* possibly being undefined.
     if (itemsBeforeCollapse === undefined || itemsAfterCollapse === undefined) {
       return undefined;
     }
 
-    const allItems = this.renderAllItems();
+    const allItems = renderAllItems();
     // This defends against someone passing weird data, to ensure that if all
     // items would be shown anyway, we just show all items without the EllipsisItem
     if (itemsBeforeCollapse + itemsAfterCollapse >= allItems.length) {
@@ -82,25 +78,28 @@ class BreadcrumbsStateless extends React.Component<
         hasSeparator={itemsAfterCollapse > 0}
         key="ellipsis"
         testId={testId && `${testId}--breadcrumb-ellipsis`}
-        onClick={this.props.onExpand}
+        onClick={onExpand}
       />,
       ...afterItems,
     ];
-  }
+  }, [
+    onExpand,
+    itemsAfterCollapse,
+    itemsBeforeCollapse,
+    renderAllItems,
+    testId,
+  ]);
 
-  render() {
-    const { children, isExpanded, maxItems, testId } = this.props;
-    if (!children) {
-      return <Container />;
-    }
-    return (
-      <Container data-testid={testId}>
-        {isExpanded || (maxItems && toArray(children).length <= maxItems)
-          ? this.renderAllItems()
-          : this.renderItemsBeforeAndAfter()}
-      </Container>
-    );
+  if (!children) {
+    return <Container />;
   }
+  return (
+    <Container data-testid={testId}>
+      {isExpanded || (maxItems && toArray(children).length <= maxItems)
+        ? renderAllItems()
+        : renderItemsBeforeAndAfter()}
+    </Container>
+  );
 }
 
 export { BreadcrumbsStateless as BreadcrumbsStatelessWithoutAnalytics };

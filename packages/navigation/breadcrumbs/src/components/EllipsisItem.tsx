@@ -10,27 +10,22 @@ interface IProps {
   testId?: string;
 }
 
-export default class EllipsisItem extends React.Component<IProps, {}> {
-  static defaultProps: IProps = {
-    hasSeparator: false,
-    onClick: () => {},
-  };
-
-  render() {
-    const { testId } = this.props;
-    return (
-      <ItemWrapper>
-        <Button
-          appearance="subtle-link"
-          spacing="none"
-          testId={testId}
-          onClick={this.props.onClick}
-        >
-          &hellip;
-        </Button>
-        {this.props.hasSeparator ? <Separator>/</Separator> : null}
-      </ItemWrapper>
-    );
-  }
+export default function EllipsisItem({
+  hasSeparator = false,
+  onClick = () => {},
+  testId,
+}: IProps) {
+  return (
+    <ItemWrapper>
+      <Button
+        appearance="subtle-link"
+        spacing="none"
+        testId={testId}
+        onClick={onClick}
+      >
+        &hellip;
+      </Button>
+      {hasSeparator ? <Separator>/</Separator> : null}
+    </ItemWrapper>
+  );
 }
-/* eslint-enable react/prefer-stateless-function */

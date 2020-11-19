@@ -4,8 +4,7 @@ import {
   WithAnalyticsEventsProps,
 } from '@uidu/analytics';
 import AKTooltip from '@uidu/tooltip';
-import React, { ReactElement } from 'react';
-import ReactDOM from 'react-dom';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import ItemWrapper from '../styled/BreadcrumbsItem';
 import Button from '../styled/Button';
 import Separator from '../styled/Separator';
@@ -37,72 +36,37 @@ interface IProps extends WithAnalyticsEventsProps {
   testId?: string;
 }
 
-interface IState {
-  hasOverflow: boolean;
-}
+function BreadcrumbsItem({
+  hasSeparator = false,
+  href = '#',
+  truncationWidth = 0,
+  onClick = () => {},
+  iconAfter,
+  iconBefore,
+  target,
+  text,
+  component,
+  testId,
+}: IProps) {
+  const [hasOverflow, setHasOverflow] = useState(false);
+  const button = useRef(null);
 
-class BreadcrumbsItem extends React.Component<IProps, IState> {
-  // eslint-disable-line react/sort-comp
-  button: any = null;
+  useEffect(() => {
+    updateOverflow();
+  }, []);
 
-  static defaultProps = {
-    hasSeparator: false,
-    href: '#',
-    truncationWidth: 0,
-    onClick: () => {},
-  };
-
-  state = { hasOverflow: false };
-
-  componentDidMount() {
-    this.updateOverflow();
-  }
-
-  UNSAFE_componentWillReceiveProps() {
-    // Reset the state
-    this.setState({ hasOverflow: false });
-  }
-
-  componentDidUpdate() {
-    this.updateOverflow();
-  }
-
-  updateOverflow() {
-    const { truncationWidth } = this.props;
-    const { button } = this;
-    if (truncationWidth && button) {
-      // We need to find the DOM node for the button component in order to measure its size.
-      const el = ReactDOM.findDOMNode(button); // eslint-disable-line react/no-find-dom-node
-      if (!el || !(el instanceof HTMLElement)) {
-        // eslint-disable-next-line no-console
-        console.warn(
-          'Could not find button included in breadcrumb when calculating overflow',
-        );
-        return false;
-      }
-      const overflow = el.clientWidth >= truncationWidth;
-      if (overflow !== this.state.hasOverflow) {
-        this.setState({ hasOverflow: overflow });
+  const updateOverflow = () => {
+    if (truncationWidth && button.current) {
+      const overflow = button.current.clientWidth >= truncationWidth;
+      if (overflow !== hasOverflow) {
+        setHasOverflow(overflow);
       }
       return overflow;
     }
     return false;
-  }
+  };
 
-  renderButton = () => {
-    const {
-      href,
-      iconAfter,
-      iconBefore,
-      onClick,
-      target,
-      text,
-      truncationWidth,
-      component,
-      testId,
-    } = this.props;
-    const { hasOverflow } = this.state;
-
+  const renderButton = () => {
     return (
       <Button
         truncationWidth={truncationWidth}
@@ -113,9 +77,7 @@ class BreadcrumbsItem extends React.Component<IProps, IState> {
         spacing="none"
         href={href}
         target={target}
-        ref={(el) => {
-          this.button = el;
-        }}
+        ref={button}
         component={component}
         // @ts-ignore - 31052019 VBZ - this shouldn't exist right?
         analyticsContext={{
@@ -130,25 +92,20 @@ class BreadcrumbsItem extends React.Component<IProps, IState> {
     );
   };
 
-  renderButtonWithTooltip = () => (
-    <AKTooltip content={this.props.text} position="bottom">
-      {this.renderButton()}
+  const renderButtonWithTooltip = () => (
+    <AKTooltip content={text} position="bottom">
+      {renderButton()}
     </AKTooltip>
   );
 
-  render() {
-    const { hasSeparator, truncationWidth } = this.props;
-    const { hasOverflow } = this.state;
-
-    return (
-      <ItemWrapper>
-        {hasOverflow && truncationWidth
-          ? this.renderButtonWithTooltip()
-          : this.renderButton()}
-        {hasSeparator ? <Separator>/</Separator> : null}
-      </ItemWrapper>
-    );
-  }
+  return (
+    <ItemWrapper>
+      {hasOverflow && truncationWidth
+        ? renderButtonWithTooltip()
+        : renderButton()}
+      {hasSeparator ? <Separator>/</Separator> : null}
+    </ItemWrapper>
+  );
 }
 
 export { BreadcrumbsItem as BreadcrumbsItemWithoutAnalytics };
