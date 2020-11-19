@@ -20,6 +20,7 @@ function ScrollableContainer({
   children,
   shadowOnScroll = true,
   className = null,
+  innerClassName = null,
   enableCustomScrollbars = false,
   customScrollbarProps = {},
 }: ShellBodyProps) {
@@ -63,7 +64,7 @@ function ScrollableContainer({
           />
         </>
       )}
-      <div>{children}</div>
+      <div className={innerClassName}>{children}</div>
     </StyledScrollableContainer>
   );
 
