@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.1.25
+
+### Patch Changes
+
+- 087a5a1: Move to FC, fix truncatioWidth
+
 ## 0.1.24
 
 ### Patch Changes
