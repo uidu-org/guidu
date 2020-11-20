@@ -112,10 +112,9 @@ function FieldGeosuggest({
   };
 
   const selectSuggestion = (suggestion: Suggestion) => {
-    const {
-      description,
-      structured_formatting: { main_text, main_text_matched_substrings },
-    } = suggestion;
+    if (!suggestion) return null;
+
+    const { description } = suggestion;
     let value = description;
     if (valueGetter) {
       value = valueGetter(suggestion);

@@ -193,7 +193,7 @@ const Table = ({
         </StyledRow>
       );
     },
-    [rows, prepareRow, rowHeight, setAggregation],
+    [rows, prepareRow, rowHeight, setAggregation, onItemClick],
   );
 
   const parentRef = React.useRef();

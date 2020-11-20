@@ -17,6 +17,17 @@ import Progress from './Progress';
 import Prompt from './Prompt';
 import Toolbar from './Toolbar';
 
+export function debounce(func: Function, timeout?: number) {
+  let timer: number | undefined;
+  return (...args: any[]) => {
+    const next = () => func(...args);
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(next, timeout > 0 ? timeout : 300);
+  };
+}
+
 function FieldImageUploader({
   toolbar: ToolbarComponent = Toolbar,
   existing: ExistingComponent = Existing,
@@ -31,8 +42,8 @@ function FieldImageUploader({
   dropzoneProps = {
     multiple: false,
   },
-  defaultValue,
   name,
+  defaultValue,
   value,
   onChange,
   onSetValue,
@@ -44,19 +55,17 @@ function FieldImageUploader({
 
   const handleMouseOut = () => setIsHovered(false);
   const handleMouseOver = () => setIsHovered(true);
-  const calculateWidth = useCallback(() => canvas.current?.offsetWidth, [
-    canvas.current,
-  ]);
-  const calculateHeight = useCallback(() => canvas.current?.offsetHeight, [
-    canvas.current,
-  ]);
+  const calculateWidth = useCallback(() => canvas.current?.offsetWidth, []);
+  const calculateHeight = useCallback(() => canvas.current?.offsetHeight, []);
+
+  const [controlledValue, setControlledValue] = useState(value);
 
   const [isLoading, setIsLoading] = useState(false);
   const [scale, setScale] = useState(1);
-  const [position, setPosition] = useState({});
+  const [crop, setCrop] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const [data, setData] = useState([]);
-  const [imageUrl, setImageUrl] = useState(defaultValue);
+  const [imageUrl, setImageUrl] = useState(value);
   const [errors, setErrors] = useState([]);
   const [progress, setProgress] = useState(null);
 
@@ -84,43 +93,46 @@ function FieldImageUploader({
       })
 
       .on('complete', (result) => {
-        console.log(result);
         setProgress(null);
-        const value = result.successful.map(uploadOptions.responseHandler)[0];
-        const valueWithMetadata = mergeValueWithMetadata(value);
-        onSetValue(valueWithMetadata);
-        onChange(name, valueWithMetadata);
+        const response = result.successful.map(
+          uploadOptions.responseHandler,
+        )[0];
+        setControlledValue(response);
+        onSetValue(response);
+        onChange(name, response);
       });
-  }, []);
+  }, [
+    calculateWidth,
+    name,
+    onChange,
+    onSetValue,
+    uploadOptions.module,
+    uploadOptions.responseHandler,
+    uploadOptions.options,
+  ]);
 
   useEffect(() => {
     return () => uppy.close();
-  }, []);
+  }, [uppy]);
 
   useEffect(() => {
     uppy.getPlugin('ThumbnailGenerator').setOptions({
       thumbnailWidth: calculateWidth() * 2, // max scale
     });
     return () => null;
-  }, [canvas.current]);
+  }, [uppy, calculateWidth]);
 
-  const handleChange = () => {
-    if (value) {
-      const valueWithMetadata = mergeValueWithMetadata(value);
-      onSetValue(valueWithMetadata);
-      onChange(name, valueWithMetadata);
+  const mergeValueWithMetadata = useCallback(() => {
+    if (controlledValue) {
+      return {
+        ...controlledValue,
+        metadata: {
+          ...controlledValue.metadata,
+          crop,
+        },
+      };
     }
-  };
-
-  const mergeValueWithMetadata = (value) => {
-    return {
-      ...value,
-      metadata: {
-        ...value.metadata,
-        crop: editor.current?.getCroppingRect(),
-      },
-    };
-  };
+  }, [crop, controlledValue]);
 
   const handleDrop = (files) => {
     setIsLoading(true);
@@ -156,14 +168,28 @@ function FieldImageUploader({
     });
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedChange = useCallback(
+    debounce((v) => {
+      onChange(name, v);
+      onSetValue(v);
+    }, 300),
+    [name, onSetValue, onChange],
+  );
+
+  useEffect(() => {
+    debouncedChange(controlledValue);
+  }, [controlledValue, debouncedChange]);
+
   const handleScale = (e) => {
     setScale(parseFloat(e.currentTarget.value));
+    setCrop(editor.current?.getCroppingRect());
+    setControlledValue(mergeValueWithMetadata());
   };
 
-  const handlePositionChange = (coordinates) => {
-    console.log(editor.current.getCroppingRect());
-    console.log(editor.current.getImage());
-    setPosition(coordinates);
+  const handlePositionChange = () => {
+    setCrop(editor.current?.getCroppingRect());
+    setControlledValue(mergeValueWithMetadata);
   };
 
   const dismiss = (e) => {
@@ -171,24 +197,33 @@ function FieldImageUploader({
     e.stopPropagation();
     setData([]);
     setScale(1);
-    setImageUrl(data.length > 0 ? defaultValue : '');
-    // delayedOnChange(data.length > 0 ? defaultValue : '');
+    onSetValue(defaultValue || null);
+    onChange(name, defaultValue || null);
+    setImageUrl(defaultValue);
+  };
+
+  const destroy = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onSetValue(null);
+    onChange(name, null);
+    setImageUrl(null);
   };
 
   let control = null;
 
   if (data.length === 0) {
-    if (defaultValue) {
+    if (value) {
       control = (
         <ExistingComponent
-          defaultValue={defaultValue}
+          value={imageUrl}
           borderRadius={borderRadius}
           onDrop={handleDrop}
         >
           <ToolbarComponent
-            confirm={handleChange}
-            dismiss={dismiss}
+            dismiss={destroy}
             isHovered={isHovered}
+            label="Edit image"
           />
         </ExistingComponent>
       );
@@ -222,7 +257,6 @@ function FieldImageUploader({
           />
           <ToolbarComponent
             handleScale={handleScale}
-            confirm={handleChange}
             dismiss={dismiss}
             isHovered={isHovered}
           />
@@ -247,29 +281,5 @@ function FieldImageUploader({
     </Wrapper>
   );
 }
-
-// class FieldImageUploader extends PureComponent<FieldImageUploaderProps, any> {
-
-// handleChange = debounce(() => {
-//   const { name, onChange, onSetValue, toBase64, defaultValue } = this.props;
-//   const { data, imageMime } = this.state;
-// if (data.length === 0) {
-//   onSetValue(defaultValue);
-//   return onChange(name, defaultValue);
-// }
-
-// const canvas = this.editor.current.getImage();
-
-// if (toBase64) {
-//   onSetValue(canvas.toDataURL(imageMime));
-//   return onChange(name, canvas.toDataURL(imageMime));
-// }
-
-// return canvas.toBlob(blob => {
-//   onSetValue(blob);
-//   onChange(name, blob);
-// }, imageMime);
-// }, 300);
-// }
 
 export default FieldImageUploader;

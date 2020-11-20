@@ -9,7 +9,7 @@ export type DataManagerProps = {
   rowData: Array<any>;
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
-  children: ({}) => any;
+  children: ({ renderControls, renderView, renderSidebar }) => any;
 };
 
 export type DataManagerNextProps = {
@@ -20,5 +20,5 @@ export type DataManagerNextProps = {
   resultSet: any;
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
-  children: ({}) => any;
+  children: ({ renderControls, renderView, renderSidebar }) => any;
 };

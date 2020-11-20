@@ -25,7 +25,9 @@ export default function FormSection({
             }${isFirst ? ' pb-4' : ' pt-5 pb-4'}`}
           >
             {layout !== 'elementOnly' && (
-              <div className={`mb-3 col-md-${layout === 'horizontal' ? 4 : 9}`}>
+              <div
+                className={`mb-3 col-md-${layout === 'horizontal' ? 4 : 10}`}
+              >
                 <legend
                   className={`${
                     layout === 'horizontal' ? 'h5' : 'h5'

@@ -3,7 +3,13 @@ import React from 'react';
 import { Trash, ZoomIn } from 'react-feather';
 import StyledToolbar from './styled';
 
-export default function Toolbar({ handleScale, confirm, dismiss, isHovered }) {
+export default function Toolbar({
+  handleScale,
+  confirm,
+  dismiss,
+  isHovered,
+  label,
+}) {
   return (
     <StyledToolbar
       className="card card-body flex-row shadow-lg"
@@ -24,16 +30,18 @@ export default function Toolbar({ handleScale, confirm, dismiss, isHovered }) {
           />
         </div>
       )}
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center ml-auto">
         <ButtonGroup>
           <Button
             onClick={dismiss}
             iconBefore={<Trash size={16} />}
-            className="mr-2"
+            className={label && 'mr-2'}
           />
-          <Button onClick={confirm} appearance="primary">
-            Confirm
-          </Button>
+          {label && (
+            <Button onClick={confirm} appearance="primary">
+              {label}
+            </Button>
+          )}
         </ButtonGroup>
       </div>
     </StyledToolbar>

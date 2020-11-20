@@ -4,7 +4,7 @@ import { useDropzone } from 'react-dropzone';
 
 export default function Existing({
   cropClassName,
-  defaultValue,
+  value,
   className,
   borderRadius,
   children,
@@ -15,13 +15,16 @@ export default function Existing({
   });
   return (
     <div
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...(getRootProps() as any)}
       className="image-uploader h-100"
       style={{
         borderRadius,
       }}
     >
-      <input {...(getInputProps() as any)} />
+      <input // eslint-disable-next-line react/jsx-props-no-spreading
+        {...(getInputProps() as any)}
+      />
       <div
         className={classNames(
           'crop d-flex align-items-center justify-content-center h-100',
@@ -29,13 +32,13 @@ export default function Existing({
         )}
       >
         <img
-          alt={defaultValue}
+          alt={value}
           className={className}
           style={{
             width: '100%',
             // height: '100%',
           }}
-          src={defaultValue}
+          src={value}
         />
       </div>
       {children}

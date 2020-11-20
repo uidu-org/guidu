@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export default styled.div<{ isHovered: boolean }>`
+const StyledToolbar = styled.div<{ isHovered: boolean }>`
   position: absolute;
   top: 50%;
   width: 50%;
@@ -12,3 +12,5 @@ export default styled.div<{ isHovered: boolean }>`
   opacity: ${({ isHovered }) => (isHovered ? 1 : 0)};
   transition: opacity 300ms ease-in;
 `;
+
+export default StyledToolbar;
