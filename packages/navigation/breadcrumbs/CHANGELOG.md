@@ -1,5 +1,11 @@
 # @uidu/breadcrumbs
 
+## 0.1.10
+
+### Patch Changes
+
+- 087a5a1: Move to FC, fix truncatioWidth
+
 ## 0.1.9
 
 ### Patch Changes
