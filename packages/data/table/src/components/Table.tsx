@@ -34,7 +34,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
   align-items: center;
   border-bottom: 1px solid #f2f2f3;
   border-right: 1px solid #f2f2f3;
-  background: transparent;
+  background: var(--body-bg);
 
   ${({ pinned }) =>
     pinned
@@ -42,7 +42,7 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
           position: sticky;
           left: 0;
           z-index: 1;
-          background: transparent;
+          background: var(--body-bg);
           border-right: 1px solid #f2f2f3;
         `
       : null};
@@ -60,7 +60,7 @@ const Th = styled.div<{ height: number }>`
   align-items: center;
   font-weight: 500;
   position: relative;
-  background: transparent;
+  background: var(--body-bg);
 `;
 
 const StyledRow = styled.div<{ size: number; start: number }>`
@@ -71,10 +71,11 @@ const StyledRow = styled.div<{ size: number; start: number }>`
   height: ${({ size }) => `${size}px`};
   transform: ${({ start }) => `translateY(${start}px)`};
   cursor: pointer;
-  background: var(--body-bg);
 
   &:hover {
-    background: var(--light);
+    ${Th}, ${Td} {
+      background: var(--light);
+    }
   }
 `;
 

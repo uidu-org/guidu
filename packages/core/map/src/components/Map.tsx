@@ -1,5 +1,5 @@
 import GoogleMapReact, { Props } from 'google-map-react';
-import React, { Component } from 'react';
+import React, { ReactNode } from 'react';
 import { mapOptions } from '../utils';
 
 type LocationProps = {
@@ -10,24 +10,23 @@ type LocationProps = {
 type MapProps = {
   bootstrapURLKeys?: object;
   location: LocationProps;
+  children: ReactNode;
 } & Props;
 
-export default class Map extends Component<MapProps> {
-  static defaultProps = {
-    defaultZoom: 8,
-  };
-
-  render() {
-    const { defaultZoom, location, children, ...otherProps } = this.props;
-    return (
-      <GoogleMapReact
-        defaultZoom={defaultZoom}
-        defaultCenter={{ lat: location.lat, lng: location.lng }}
-        options={mapOptions}
-        {...otherProps}
-      >
-        {children}
-      </GoogleMapReact>
-    );
-  }
+export default function Map({
+  defaultZoom = 8,
+  location,
+  children,
+  ...otherProps
+}: MapProps) {
+  return (
+    <GoogleMapReact
+      defaultZoom={defaultZoom}
+      defaultCenter={{ lat: location.lat, lng: location.lng }}
+      options={mapOptions}
+      {...otherProps}
+    >
+      {children}
+    </GoogleMapReact>
+  );
 }

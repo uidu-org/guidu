@@ -2,8 +2,8 @@ import { ChildComponentProps } from 'google-map-react';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const K_WIDTH = 32;
-const K_HEIGHT = 32;
+const K_WIDTH = 24;
+const K_HEIGHT = 24;
 
 const StyledMarker = styled.div<{ isHover?: boolean }>`
   position: absolute;
@@ -31,10 +31,10 @@ const StyledMarker = styled.div<{ isHover?: boolean }>`
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.3) translate(-50%, 50%) rotate(-45deg);
+    transform: scale(1.1) translate(-50%, 50%) rotate(-45deg);
     transform-origin: left;
     transition: background-color 0.15s transform 0.15s ease-out 0s;
-    background-color: #3d64ff;
+    background-color: var(--primary);
   }
 
   ${({ isHover }) => {
