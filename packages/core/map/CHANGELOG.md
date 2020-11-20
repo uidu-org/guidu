@@ -1,5 +1,11 @@
 # @uidu/map
 
+## 0.4.9
+
+### Patch Changes
+
+- 77f26f7: Fix map styling and Table hover background
+
 ## 0.4.8
 
 ### Patch Changes
