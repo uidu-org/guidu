@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.6.1
+
+### Patch Changes
+
+- bf31a45: Fix field image uploader default value and reset, huge pain
+- Updated dependencies [bf31a45]
+  - @uidu/table@0.4.2
+
 ## 0.6.0
 
 ### Minor Changes

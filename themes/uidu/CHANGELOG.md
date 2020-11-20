@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.9
+
+### Patch Changes
+
+- bf31a45: Fix field image uploader default value and reset, huge pain
+
 ## 0.3.8
 
 ### Patch Changes

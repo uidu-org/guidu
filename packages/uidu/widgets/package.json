@@ -1,6 +1,6 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "Widgets components with zoid",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",

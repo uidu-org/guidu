@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.3.16
+
+### Patch Changes
+
+- bf31a45: Fix field image uploader default value and reset, huge pain
+
 ## 0.3.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field-geosuggest
 
+## 0.2.23
+
+### Patch Changes
+
+- bf31a45: Fix field image uploader default value and reset, huge pain
+
 ## 0.2.22
 
 ### Patch Changes

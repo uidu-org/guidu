@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.2.28
+
+### Patch Changes
+
+- bf31a45: Fix field image uploader default value and reset, huge pain
+- Updated dependencies [bf31a45]
+  - @uidu/form@0.3.14
+  - @uidu/widgets@0.3.9
+
 ## 0.2.27
 
 ### Patch Changes
