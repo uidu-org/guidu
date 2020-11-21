@@ -17,10 +17,11 @@ export default function HorizontalCard({
       className={classNames('card mb-3', {
         [`border-${scope}`]: isSelected,
       })}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <div className="card-header position-absolute w-100 bg-transparent border-0 text-right p-2">
@@ -48,9 +49,9 @@ export default function HorizontalCard({
             <div className="mr-3 mb-0 mb-md-3 mr-md-0">{item.before}</div>
           )}
           <div>
-            <h6 className="m-0">{item.name}</h6>
+            <div className="h6 m-0">{item.name}</div>
             {item.description && (
-              <p className="mb-0 text-muted mt-2">{item.description}</p>
+              <div className="mb-0 text-muted mt-2">{item.description}</div>
             )}
           </div>
         </div>

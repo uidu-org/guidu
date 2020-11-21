@@ -1,13 +1,16 @@
-import { ADFEntity, ValidationError, validator } from '@uidu/adf-utils';
-import { ProviderFactory, Transformer } from '@uidu/editor-common';
+import { ADFEntity } from '@uidu/adf-utils';
+import {
+  findAndTrackUnsupportedContentNodes,
+  ProviderFactory,
+  Transformer,
+  validateADFEntity,
+} from '@uidu/editor-common';
 import { JSONDocNode } from '@uidu/editor-json-transformer';
 import { Node, ResolvedPos, Schema } from 'prosemirror-model';
 import { EditorState, TextSelection, Transaction } from 'prosemirror-state';
 import { ContentNodeWithPos } from 'prosemirror-utils';
-import { analyticsService } from '../analytics';
+import { DispatchAnalyticsEvent } from '../plugins/analytics/types/dispatch-analytics-event';
 import { sanitizeNodeForPrivacy } from '../utils/filter/privacy-filter';
-
-const FALSE_POSITIVE_MARKS = ['code', 'alignment', 'indentation'];
 
 /**
  * Checks if node is an empty paragraph.
@@ -134,44 +137,23 @@ export function bracketTyped(state: EditorState) {
   return false;
 }
 
-function wrapWithUnsupported(
-  originalValue: ADFEntity,
-  type: 'block' | 'inline' = 'block',
-) {
-  return {
-    type: `unsupported${type === 'block' ? 'Block' : 'Inline'}`,
-    attrs: { originalValue },
-  };
-}
-
-function fireAnalyticsEvent(
-  entity: ADFEntity,
-  error: ValidationError,
-  type: 'block' | 'inline' | 'mark' = 'block',
-) {
-  const { code, meta } = error;
-  analyticsService.trackEvent('atlassian.editor.unsupported', {
-    name: entity.type || 'unknown',
-    type,
-    errorCode: code,
-    meta: meta && JSON.stringify(meta),
-  });
-}
-
 export function processRawValue(
   schema: Schema,
   value?: string | object,
   providerFactory?: ProviderFactory,
   sanitizePrivateContent?: boolean,
   contentTransformer?: Transformer<string>,
+  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
 ): Node | undefined {
   if (!value) {
-    return undefined;
+    return;
   }
 
-  let node: {
+  interface NodeType {
     [key: string]: any;
-  };
+  }
+
+  let node: NodeType | ADFEntity;
 
   if (typeof value === 'string') {
     try {
@@ -184,7 +166,7 @@ export function processRawValue(
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(`Error processing value: ${value} isn't a valid JSON`);
-      return undefined;
+      return;
     }
   } else {
     node = value;
@@ -195,7 +177,7 @@ export function processRawValue(
     console.error(
       `Error processing value: ${node} is an array, but it must be an object.`,
     );
-    return undefined;
+    return;
   }
   try {
     // ProseMirror always require a child under doc
@@ -216,55 +198,10 @@ export function processRawValue(
       return Node.fromJSON(schema, node);
     }
 
-    const nodes = Object.keys(schema.nodes);
-    const marks = Object.keys(schema.marks);
-    const validate = validator(nodes, marks, { allowPrivateAttributes: true });
-    const emptyDoc: ADFEntity = { type: 'doc', content: [] };
-
-    const { entity = emptyDoc } = validate(
+    const entity: ADFEntity = validateADFEntity(
+      schema,
       node as ADFEntity,
-      (entity, error, options) => {
-        // Remove any invalid marks
-        if (marks.indexOf(entity.type) > -1) {
-          if (
-            !(
-              error.code === 'INVALID_TYPE' &&
-              FALSE_POSITIVE_MARKS.indexOf(entity.type) > -1
-            )
-          ) {
-            fireAnalyticsEvent(entity, error, 'mark');
-          }
-          return undefined;
-        }
-
-        /**
-         * There's a inconsistency between ProseMirror and ADF.
-         * `content` is actually optional in ProseMirror.
-         * And, also empty `text` node is not valid.
-         */
-        if (
-          error.code === 'MISSING_PROPERTIES' &&
-          entity.type === 'paragraph'
-        ) {
-          return { type: 'paragraph', content: [] };
-        }
-
-        // Can't fix it by wrapping
-        // TODO: We can repair missing content like `panel` without a `paragraph`.
-        if (error.code === 'INVALID_CONTENT_LENGTH') {
-          return entity;
-        }
-
-        if (options.allowUnsupportedBlock) {
-          fireAnalyticsEvent(entity, error);
-          return wrapWithUnsupported(entity);
-        } else if (options.allowUnsupportedInline) {
-          fireAnalyticsEvent(entity, error, 'inline');
-          return wrapWithUnsupported(entity, 'inline');
-        }
-
-        return entity;
-      },
+      dispatchAnalyticsEvent,
     );
 
     let newEntity = maySanitizePrivateContent(
@@ -278,6 +215,14 @@ export function processRawValue(
     // throws an error if the document is invalid
     parsedDoc.check();
 
+    if (dispatchAnalyticsEvent) {
+      findAndTrackUnsupportedContentNodes(
+        parsedDoc,
+        schema,
+        dispatchAnalyticsEvent,
+      );
+    }
+
     return parsedDoc;
   } catch (e) {
     // eslint-disable-next-line no-console
@@ -285,7 +230,7 @@ export function processRawValue(
       `Error processing document:\n${e.message}\n\n`,
       JSON.stringify(node),
     );
-    return undefined;
+    return;
   }
 }
 
@@ -359,7 +304,7 @@ export function nodesBetweenChanged(
 ) {
   const stepRange = getStepRange(tr);
   if (!stepRange) {
-    return undefined;
+    return;
   }
 
   tr.doc.nodesBetween(stepRange.from, stepRange.to, f, startPos);

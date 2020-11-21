@@ -1,13 +1,8 @@
 import ExpandIcon from '@atlaskit/icon/glyph/chevron-down';
 import TextStyleIcon from '@atlaskit/icon/glyph/editor/text-style';
 import { akEditorMenuZIndex } from '@uidu/editor-common';
-import React, { createElement } from 'react';
-import {
-  defineMessages,
-  FormattedMessage,
-  injectIntl,
-  WrappedComponentProps,
-} from 'react-intl';
+import React, { createElement, useState } from 'react';
+import { defineMessages, FormattedMessage, useIntl } from 'react-intl';
 import { analyticsService as analytics } from '../../../../analytics';
 import { findKeymapByDescription, tooltip } from '../../../../keymaps';
 import DropdownMenu from '../../../../ui/DropdownMenu';
@@ -52,128 +47,78 @@ export interface State {
   active: boolean;
 }
 
-class ToolbarBlockType extends React.PureComponent<
-  Props & WrappedComponentProps,
-  State
-> {
-  state = {
-    active: false,
-  };
+export default function ToolbarBlockType({
+  popupsMountPoint,
+  popupsBoundariesElement,
+  popupsScrollableElement,
+  isSmall,
+  isReducedSpacing,
+  setBlockType,
+  isDisabled,
+  pluginState: { currentBlockType, blockTypesDisabled, availableBlockTypes },
+}: Props) {
+  const [active, setActive] = useState(false);
+  const { formatMessage } = useIntl();
 
-  private onOpenChange = (attrs: any) => {
-    this.setState({ active: attrs.isOpen });
-  };
+  const isHeadingDisabled = !availableBlockTypes.some(
+    (blockType) => blockType.nodeName === 'heading',
+  );
 
-  render() {
-    const { active } = this.state;
-    const {
-      popupsMountPoint,
-      popupsBoundariesElement,
-      popupsScrollableElement,
-      isSmall,
-      isReducedSpacing,
-      pluginState: {
-        currentBlockType,
-        blockTypesDisabled,
-        availableBlockTypes,
-      },
-      intl: { formatMessage },
-    } = this.props;
-
-    const isHeadingDisabled = !availableBlockTypes.some(
-      (blockType) => blockType.nodeName === 'heading',
-    );
-
-    if (isHeadingDisabled) {
-      return null;
-    }
-
-    const blockTypeTitles = availableBlockTypes
-      .filter((blockType) => blockType.name === currentBlockType.name)
-      .map((blockType) => blockType.title);
-
-    const longestDropdownMenuItem = [
-      NORMAL_TEXT,
-      ...availableBlockTypes,
-    ].reduce((longest, item) => {
-      const itemTitle = formatMessage(item.title);
-      return itemTitle.length >= longest.length ? itemTitle : longest;
-    }, '');
-
-    const toolbarButtonFactory = (disabled: boolean) => {
-      const labelTextStyles = formatMessage(messages.textStyles);
-      return (
-        <ToolbarButton
-          spacing={isReducedSpacing ? 'none' : 'default'}
-          selected={active}
-          className="block-type-btn"
-          disabled={disabled}
-          onClick={this.handleTriggerClick}
-          title={labelTextStyles}
-          aria-label="Font style"
-          iconAfter={
-            <Wrapper isSmall={isSmall}>
-              {isSmall && <TextStyleIcon label={labelTextStyles} />}
-              <ExpandIconWrapper>
-                <ExpandIcon label={labelTextStyles} />
-              </ExpandIconWrapper>
-            </Wrapper>
-          }
-        >
-          {!isSmall && (
-            <ButtonContent>
-              <FormattedMessage
-                {...(blockTypeTitles[0] || NORMAL_TEXT.title)}
-              />
-              <div style={{ overflow: 'hidden', height: 0 }}>
-                {longestDropdownMenuItem}
-              </div>
-            </ButtonContent>
-          )}
-        </ToolbarButton>
-      );
-    };
-
-    if (!this.props.isDisabled && !blockTypesDisabled) {
-      const items = this.createItems();
-      return (
-        <MenuWrapper>
-          <DropdownMenu
-            items={items}
-            onOpenChange={this.onOpenChange}
-            onItemActivated={this.handleSelectBlockType}
-            isOpen={active}
-            mountTo={popupsMountPoint}
-            boundariesElement={popupsBoundariesElement}
-            scrollableElement={popupsScrollableElement}
-            zIndex={akEditorMenuZIndex}
-            fitHeight={360}
-            fitWidth={106}
-          >
-            {toolbarButtonFactory(false)}
-          </DropdownMenu>
-          <Separator />
-        </MenuWrapper>
-      );
-    }
-
-    return (
-      <Wrapper>
-        {toolbarButtonFactory(true)}
-        <Separator />
-      </Wrapper>
-    );
+  if (isHeadingDisabled) {
+    return null;
   }
 
-  private handleTriggerClick = () => {
-    this.onOpenChange({ isOpen: !this.state.active });
+  const blockTypeTitles = availableBlockTypes
+    .filter((blockType) => blockType.name === currentBlockType.name)
+    .map((blockType) => blockType.title);
+
+  const longestDropdownMenuItem = [NORMAL_TEXT, ...availableBlockTypes].reduce(
+    (longest, item) => {
+      const itemTitle = formatMessage(item.title);
+      return itemTitle.length >= longest.length ? itemTitle : longest;
+    },
+    '',
+  );
+
+  const toolbarButtonFactory = (disabled: boolean) => {
+    const labelTextStyles = formatMessage(messages.textStyles);
+    return (
+      <ToolbarButton
+        spacing={isReducedSpacing ? 'none' : 'default'}
+        selected={active}
+        className="block-type-btn"
+        disabled={disabled}
+        onClick={() => setActive((prevActive) => !prevActive)}
+        title={labelTextStyles}
+        aria-label="Font style"
+        iconAfter={
+          <Wrapper isSmall={isSmall}>
+            {isSmall && <TextStyleIcon label={labelTextStyles} />}
+            <ExpandIconWrapper>
+              <ExpandIcon label={labelTextStyles} />
+            </ExpandIconWrapper>
+          </Wrapper>
+        }
+      >
+        {!isSmall && (
+          <ButtonContent>
+            <FormattedMessage // eslint-disable-next-line react/jsx-props-no-spreading
+              {...(blockTypeTitles[0] || NORMAL_TEXT.title)}
+            />
+            <div style={{ overflow: 'hidden', height: 0 }}>
+              {longestDropdownMenuItem}
+            </div>
+          </ButtonContent>
+        )}
+      </ToolbarButton>
+    );
   };
 
-  private createItems = () => {
-    const {
-      intl: { formatMessage },
-    } = this.props;
-    const { currentBlockType, availableBlockTypes } = this.props.pluginState;
+  const handleTriggerClick = () => {
+    setActive((prevActive) => !prevActive);
+  };
+
+  const createItems = () => {
     const items = availableBlockTypes.reduce((acc, blockType, blockTypeNo) => {
       const isActive = currentBlockType === blockType;
       const tagName = blockType.tagName || 'p';
@@ -197,13 +142,41 @@ class ToolbarBlockType extends React.PureComponent<
     return [{ items }];
   };
 
-  private handleSelectBlockType = ({ item }: { item: DropdownItem }) => {
+  const handleSelectBlockType = ({ item }: { item: DropdownItem }) => {
     const blockType = item.value;
-    this.props.setBlockType(blockType.name);
-    this.setState({ active: false });
+    setBlockType(blockType.name);
+    setActive(false);
 
     analytics.trackEvent(`atlassian.editor.format.${blockType.name}.button`);
   };
-}
 
-export default injectIntl(ToolbarBlockType);
+  if (!isDisabled && !blockTypesDisabled) {
+    const items = createItems();
+    return (
+      <MenuWrapper>
+        <DropdownMenu
+          items={items}
+          // onOpenChange={() => setActive((prevActive) => !prevActive)}
+          onItemActivated={handleSelectBlockType}
+          isOpen={active}
+          mountTo={popupsMountPoint}
+          boundariesElement={popupsBoundariesElement}
+          scrollableElement={popupsScrollableElement}
+          zIndex={akEditorMenuZIndex}
+          fitHeight={360}
+          fitWidth={106}
+        >
+          {toolbarButtonFactory(false)}
+        </DropdownMenu>
+        <Separator />
+      </MenuWrapper>
+    );
+  }
+
+  return (
+    <Wrapper>
+      {toolbarButtonFactory(true)}
+      <Separator />
+    </Wrapper>
+  );
+}

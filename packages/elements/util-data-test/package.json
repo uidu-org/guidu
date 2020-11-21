@@ -9,7 +9,7 @@
   "module": "dist/util-data-test.esm.js",
   "types": "dist/util-data-test.cjs.d.ts",
   "scripts": {
-    "ak-postbuild": "cp -r src/json-data dist/json-data && cp -r src/json-data dist/json-data"
+    "postbuild": "cp -r src/json-data json-data"
   },
   "dependencies": {
     "@atlaskit/util-service-support": "^6.0.1",

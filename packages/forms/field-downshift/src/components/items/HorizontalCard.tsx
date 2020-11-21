@@ -21,6 +21,7 @@ export default function HorizontalCard({
         e.preventDefault();
         onClick(e);
       }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       <div className="card-header position-absolute w-100 bg-transparent border-0 text-right p-2">
@@ -46,9 +47,9 @@ export default function HorizontalCard({
         <div className="d-flex align-items-center">
           {item.before && <div className="mr-3 d-flex">{item.before}</div>}
           <div>
-            <h6 className="m-0">{item.name}</h6>
+            <div className="h6 m-0">{item.name}</div>
             {item.description && (
-              <p className="mb-0 mt-2 text-muted">{item.description}</p>
+              <div className="mb-0 mt-2 text-muted">{item.description}</div>
             )}
           </div>
         </div>

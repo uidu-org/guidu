@@ -1,17 +1,17 @@
 // DO NOT MODIFY THIS FILE, USE `yarn generate:spec`
-export { default as alignment } from './alignment';
-export { default as annotation } from './annotation';
-export { default as breakout } from './breakout';
-export { default as code } from './code';
-export { default as inline_comment_marker } from './inline_comment_marker';
 export { default as em } from './em';
-export { default as indentation } from './indentation';
-export { default as link } from './link';
+export { default as code } from './code';
 export { default as strike } from './strike';
 export { default as strong } from './strong';
+export { default as underline } from './underline';
+export { default as link } from './link';
 export { default as subsup } from './subsup';
 export { default as textColor } from './textColor';
-export { default as underline } from './underline';
+export { default as inline_comment_marker } from './inline_comment_marker';
+export { default as breakout } from './breakout';
+export { default as alignment } from './alignment';
+export { default as indentation } from './indentation';
+export { default as annotation } from './annotation';
 export { default as blockCard } from './blockCard';
 export { default as date } from './date';
 export { default as emoji } from './emoji';

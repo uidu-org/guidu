@@ -8,7 +8,7 @@ import Loader from '../../Loader';
 
 am4core.useTheme(am4themes_animated);
 am4core.useTheme(am4themes_kelly);
-am4core.options.queue = true;
+// am4core.options.queue = true;
 am4core.options.commercialLicense = true;
 
 export default function XY({ resultSet, config }) {

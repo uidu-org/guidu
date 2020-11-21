@@ -107,7 +107,7 @@ export default (
     .catch(console.error);
 
   function waitForTicks() {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       const waitForTick = () => {
         process.nextTick(() => {
           ticks--;

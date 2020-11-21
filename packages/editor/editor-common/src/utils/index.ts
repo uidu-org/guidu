@@ -39,6 +39,7 @@ export {
   convertProsemirrorTableNodeToArrayOfRows,
   hasMergedCell,
 } from './table';
+export { findAndTrackUnsupportedContentNodes } from './track-unsupported-content';
 export { default as ADFTraversor } from './traversor';
 export type { Diff } from './types';
 export {

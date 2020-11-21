@@ -1,2 +1,2 @@
 // Entry-point for extracting specs
-export { DocNode } from '@uidu/adf-schema';
+export type { DocNode } from '@uidu/adf-schema';

@@ -211,6 +211,7 @@ export {
   convertProsemirrorTableNodeToArrayOfRows,
   createCompareNodes,
   ErrorReporter,
+  findAndTrackUnsupportedContentNodes,
   getAnalyticsAppearance,
   getExtensionLozengeData,
   getExtensionRenderer,
@@ -253,3 +254,4 @@ export type {
   ImageStatus,
   Params,
 } from './utils';
+export { validateADFEntity } from './utils/validate-using-spec';

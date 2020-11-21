@@ -13,6 +13,7 @@ export default function Checkbox({ item, index, isSelected, getItemProps }) {
           'bg-primary text-white': !!isSelected,
         },
       )}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...getItemProps({ item, index })}
     >
       {isSelected ? (

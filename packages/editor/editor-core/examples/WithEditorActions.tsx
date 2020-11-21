@@ -1,7 +1,7 @@
 import { ShellBody, ShellHeader } from '@uidu/shell';
-import React, { Fragment, PureComponent } from 'react';
-import { Editor, EditorContext, WithEditorActions } from '../src';
+import React, { PureComponent } from 'react';
 import { DevTools } from '../examples-utils/DevTools';
+import { Editor, EditorContext, WithEditorActions } from '../src';
 
 export default class Basic extends PureComponent<any, any> {
   state = {
@@ -32,7 +32,7 @@ export default class Basic extends PureComponent<any, any> {
                 analyticsHandler={console.log}
               >
                 {({ renderToolbar, renderEditor }) => (
-                  <Fragment>
+                  <>
                     <ShellHeader className="border-bottom px-xl-4 px-3">
                       {renderToolbar({})}
                     </ShellHeader>
@@ -43,7 +43,7 @@ export default class Basic extends PureComponent<any, any> {
                     >
                       {renderEditor({})}
                     </ShellBody>
-                  </Fragment>
+                  </>
                 )}
               </Editor>
             )}

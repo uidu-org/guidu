@@ -143,11 +143,7 @@ export default class GuiduThemeProvider extends Component<
       using the old provider along side components that may still be using the
       old theming API. */
       <Theme.Provider value={this.getThemeMode}>
-        <ThemeProvider theme={theme}>
-          <LegacyReset background={this.props.background}>
-            {children}
-          </LegacyReset>
-        </ThemeProvider>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </Theme.Provider>
     );
   }

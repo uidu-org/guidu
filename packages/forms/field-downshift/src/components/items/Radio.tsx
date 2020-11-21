@@ -14,10 +14,11 @@ export default function Checkbox({ item, index, isSelected, getItemProps }) {
           'bg-primary text-white': isSelected,
         },
       )}
-      onClick={e => {
+      onClick={(e) => {
         e.preventDefault();
         onClick(e);
       }}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
     >
       {isSelected ? (

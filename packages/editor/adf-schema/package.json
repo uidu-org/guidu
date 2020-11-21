@@ -24,7 +24,7 @@
     "@types/prosemirror-view": "^1.3.0",
     "css-color-names": "^1.0.1",
     "linkify-it": "^3.0.2",
-    "prosemirror-model": "^1.7.1",
+    "prosemirror-model": "^1.12.0",
     "prosemirror-view": "^1.9.10",
     "tslib": "^2.0.1"
   },

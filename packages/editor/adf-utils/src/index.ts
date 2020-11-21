@@ -62,13 +62,14 @@ export {
 export { getEmptyADF } from './empty-adf';
 export { filter, map, reduce, traverse } from './traverse';
 export type { ADFEntity, ADFEntityMark } from './types';
-export { validateAttrs, validator } from './validator';
 export type {
   Content,
   ErrorCallback,
+  ErrorCallbackOptions,
   Output,
   ValidationError,
   ValidationErrorType,
   ValidationMode,
   ValidationOptions,
-} from './validator';
+} from './types/validatorTypes';
+export { validateAttrs, validator } from './validator';
