@@ -30,7 +30,7 @@ export default function Preferences({
               />
             }
             canSubmit={canSubmit}
-            className="px-5 btn-donations"
+            className="px-5 btn-primary"
           />
         </FormFooter>
       )}

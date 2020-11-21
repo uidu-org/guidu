@@ -17,21 +17,20 @@ $light: #E9ECF0;
 $dark: $gray-800;
 
 // Color system
-$border-color: #f2f3f3; // better for inputs $gray-200; // #f2f2f3;
 // groups: #3891a6
 // contacts: #aba9b4
 // events: #f7cd6b
-$primary: #ec8447;
+$primary: #1DD189; // #ec8447;
 $secondary: rgb(76, 86, 106);
 // $primary: rgb(76, 86, 106);
-$calls: #00cfd2;
-$contacts: #8e8e93;
-$donations: #26a69a;
-$events: #fbaa1f;
-$grants: #f7928e;
+$calls: #F36324;
+$contacts: #009845;
+$donations: #C42039;
+$events: #F3AD20;
+$grants: #44C7F5;
 $forms: #fe7044;
-$stories: #ef4e6d;
-$memberships: #b169cf;
+$stories: #944FA0;
+$memberships: #33CC7F;
 $tax-returns: #6495ed;
 $conversations: #5ac8fa;
 $tasks: #5ac8fa;
@@ -50,14 +49,14 @@ $social-twitter: #1da1f2;
 $social-whatsapp: #25d366;
 
 // Body
-$body-bg: #FDFDFD;
+$body-bg: #FDFDFD; // rgb(253, 253, 253); // #fff;
 $body-color: #16161D;
+$border-color: #E9ECF0; // #f2f3f3; // better for inputs $gray-200; // #f2f2f3;
 
 $theme-colors: (
   body-color: $body-color,
   body-bg: $body-bg,
   border: $border-color,
-  light: $light,
   primary: $primary,
   calls: $calls,
   campaigns: $campaigns,

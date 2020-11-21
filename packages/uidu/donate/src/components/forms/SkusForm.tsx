@@ -23,7 +23,7 @@ function CustomSkuForm({ sku, handleSubmit }) {
             }
             loading={loading}
             canSubmit={canSubmit}
-            className="px-5 btn-donations"
+            className="px-5 btn-primary"
           />
         </div>
       )}
@@ -82,7 +82,7 @@ function SkuForm({ sku, handleSubmit }) {
             }
             loading={loading}
             canSubmit={canSubmit}
-            className="px-5 btn-donations"
+            className="px-5 btn-primary"
           />
         </div>
       )}

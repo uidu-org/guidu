@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Donate from '../';
 import { WidgetsExampleScaffold } from '../../widgets/example-utils';
 import {
@@ -40,8 +40,8 @@ function Basic() {
 
 export default (props) => (
   <Router>
-    <Route path="/">
-      <Basic {...props}></Basic>
+    <Route>
+      <Basic {...props} />
     </Route>
   </Router>
 );

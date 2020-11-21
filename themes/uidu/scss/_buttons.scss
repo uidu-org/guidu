@@ -4,15 +4,17 @@
   //   0 2px 5px 0 rgba(50, 50, 93, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
   //   0 1px 2px 0 rgba(0, 0, 0, 0.08);
   //   0 1px 0 rgba(255, 255, 255, 0.3) inset;
-  appearance: none;
   cursor: default;
-  font-size: 0.8rem;
-  line-height: normal; // test it or remove it
-  opacity: 0.99;
+  font-size: 0.9rem;
+  line-height: 1 !important; // test it or remove it
   // overflow: initial;
-  position: relative;
-  text-transform: uppercase;
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  // position: relative;
+  // text-transform: uppercase;
+  transition: background-color 0.15s ease;
+
+  white-space: nowrap;
+
+  border-radius: 40px;
 
   // padding: $padding-base-vertical $padding-base-horizontal;
   // @include btn-styles($text-color);
@@ -21,7 +23,6 @@
   //   &:hover,
   //   &:focus {
   //     // @extend .btn-fill;
-  //     @include md-box-shadow(2);
   //   }
   // }
 
@@ -37,11 +38,10 @@
     border-radius: 40px;
   }
 
-  &:hover:enabled {
+  &:hover {
     // box-shadow: 0 0 0 1px rgba(50, 50, 93, 0.1),
     //   0 2px 5px 0 rgba(50, 50, 93, 0.1), 0 3px 9px 0 rgba(50, 50, 93, 0.08),
     //   0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-    opacity: 1;
     // transform: translateY(-1px);
   }
 }
@@ -53,15 +53,10 @@
 // .btn-warning { @include btn-styles($brand-warning); }
 // .btn-danger  { @include btn-styles($brand-danger); }
 
-// @each $app, $color in $apps {
-//   .btn-#{$app} { @include btn-styles($color); }
-// }
-
 // .btn-muted  { @include btn-styles($oc-gray-5); }
 // .btn-super-muted  { @include btn-styles($oc-gray-3); }
 
 // .btn-raised {
-//   @include md-box-shadow(2);
 // }
 
 // .btn-neutral {
@@ -90,10 +85,10 @@
 //   &:disabled,
 //   &[disabled],
 //   &.disabled{
-//     @include opacity(.5);
+//     opacity: .5;
 //     &:hover, &:active {
 //       @include box-shadow(none);
-//       @include opacity(.5);
+//       opacity: .5;
 //     }
 //   }
 // }
@@ -314,3 +309,15 @@
 //     margin: 4px;
 //   }
 // }
+
+.btn-rounded-circle {
+  width: 40px;
+  height: 40px;
+  /* text-align: center; */
+  padding: 6px;
+  /* line-height: 1.428571429; */
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

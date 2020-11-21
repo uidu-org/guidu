@@ -1,4 +1,9 @@
-import { ShellBody, ShellHeader, ShellMain, ScrollableContainer } from '@uidu/shell';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+} from '@uidu/shell';
 import Slider, { Slide } from '@uidu/slider';
 import React, {
   forwardRef,
@@ -59,7 +64,7 @@ function Shell({
               <li className="nav-item" key={slide.key}>
                 <a
                   className={`nav-link px-1 ${
-                    index === activeSlide ? `text-${scope}` : 'text-muted'
+                    index === activeSlide ? `text-primary ` : 'text-muted'
                   }`}
                 >
                   {index === activeSlide ? (
@@ -80,41 +85,40 @@ function Shell({
       <ShellBody>
         <ShellMain>
           <ScrollableContainer ref={container}>
+            <Slider
+              options={{
+                slidesPerView: 1,
+                allowTouchMove: false,
+                simulateTouch: false,
+                autoHeight: true,
 
-        <Slider
-          options={{
-            slidesPerView: 1,
-            allowTouchMove: false,
-            simulateTouch: false,
-            autoHeight: true,
-
-            history: {
-              key: baseUrl,
-            },
-            on: {
-              slideChange: () => {
-                if (slider.current) {
-                  setActiveSlide(slider.current.activeIndex);
-                  container.current.scrollTop = 0;
-                }
-              },
-            },
-            ...sliderOptions,
-          }}
-          ref={slider}
-        >
-          {slides.map((slide) => (
-            <Slide key={slide.key} data-history={slide['data-history']}>
-              {slide.unwrapped ? (
-                slide.component
-                ) : (
-                  <ShellSlideWrapper embedded={embedded}>
-                  {slide.component}
-                </ShellSlideWrapper>
-              )}
-            </Slide>
-          ))}
-        </Slider>
+                history: {
+                  key: baseUrl,
+                },
+                on: {
+                  slideChange: () => {
+                    if (slider.current) {
+                      setActiveSlide(slider.current.activeIndex);
+                      container.current.scrollTop = 0;
+                    }
+                  },
+                },
+                ...sliderOptions,
+              }}
+              ref={slider}
+            >
+              {slides.map((slide) => (
+                <Slide key={slide.key} data-history={slide['data-history']}>
+                  {slide.unwrapped ? (
+                    slide.component
+                  ) : (
+                    <ShellSlideWrapper embedded={embedded}>
+                      {slide.component}
+                    </ShellSlideWrapper>
+                  )}
+                </Slide>
+              ))}
+            </Slider>
           </ScrollableContainer>
         </ShellMain>
       </ShellBody>

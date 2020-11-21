@@ -39,7 +39,7 @@ export default function Pay({
     return () => {
       setPaymentIntent(null);
     };
-  }, []);
+  }, [donation, createPaymentIntent]);
 
   return (
     <Payments

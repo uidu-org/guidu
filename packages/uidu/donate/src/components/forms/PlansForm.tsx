@@ -27,7 +27,7 @@ function CustomPlanForm({ plan, handleSubmit, recurrence }) {
             }
             loading={loading}
             canSubmit={canSubmit}
-            className="px-5 btn-donations"
+            className="px-5 btn-primary"
           />
         </div>
       )}
@@ -100,7 +100,7 @@ function PlanForm({ plan, handleSubmit, recurrence }) {
             }
             loading={loading}
             canSubmit={canSubmit}
-            className="px-5 btn-donations"
+            className="px-5 btn-primary"
           />
         </div>
       )}

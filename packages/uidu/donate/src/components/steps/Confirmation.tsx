@@ -4,7 +4,7 @@ import React from 'react';
 export default function DonationConfirmation({ donation }) {
   return (
     <div className="w-100">
-      <div className="p-3 p-xl-4 bg-donations">
+      <div className="p-3 p-xl-4 bg-primary">
         <div className="media align-items-center">
           {/* <AnimatedCheck
                     className="mr-3 text-white"
