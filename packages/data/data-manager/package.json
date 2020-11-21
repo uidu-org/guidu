@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
@@ -23,7 +23,7 @@
     "@uidu/list": "^0.1.43",
     "@uidu/shell": "^1.1.1",
     "@uidu/spinner": "^0.3.8",
-    "@uidu/table": "^0.4.0",
+    "@uidu/table": "^0.4.2",
     "d3-array": "^2.2.0",
     "dayjs": "^1.9.3",
     "lodash": "^4.17.4",

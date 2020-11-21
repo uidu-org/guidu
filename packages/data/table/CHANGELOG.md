@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.4.2
+
+### Patch Changes
+
+- bf31a45: Fix field image uploader default value and reset, huge pain
+
 ## 0.4.1
 
 ### Patch Changes
