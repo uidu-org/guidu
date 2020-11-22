@@ -1,4 +1,3 @@
-// @ts-ignore: unused variable
 import { typography } from '@uidu/theme';
 import { css } from 'styled-components';
 

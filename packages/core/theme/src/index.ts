@@ -11,7 +11,6 @@ export { default as Appearance } from './components/Appearance';
 export * from './components/Reset';
 export { default } from './components/Theme';
 export {
-  assistive,
   borderRadius,
   CHANNEL,
   codeFontFamily,

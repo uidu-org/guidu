@@ -33,10 +33,8 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
       return null;
     }
 
-    const Container = isDisabled ? 'span' : 'a';
-
     return (
-      <span
+      <a
         ref={ref as Ref<HTMLAnchorElement>}
         css={cssFn(linkItemCSS(isDisabled, isSelected), {
           isSelected,
@@ -59,7 +57,7 @@ const LinkItem = forwardRef<HTMLElement, LinkItemProps>(
         >
           {children}
         </BaseItem>
-      </span>
+      </a>
     );
   },
 );
