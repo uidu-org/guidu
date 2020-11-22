@@ -1,5 +1,19 @@
 # @uidu/field-downshift
 
+## 0.5.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/droplist@0.4.0
+  - @uidu/item@0.4.0
+  - @uidu/field-base@0.5.0
+  - @uidu/field-text@0.4.0
+
 ## 0.4.12
 
 ### Patch Changes

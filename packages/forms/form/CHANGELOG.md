@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
 ## 0.3.14
 
 ### Patch Changes

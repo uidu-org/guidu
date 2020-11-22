@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.7.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/avatar@0.6.0
+  - @uidu/avatar-group@2.5.0
+  - @uidu/button@0.4.0
+  - @uidu/droplist@0.4.0
+  - @uidu/item@0.4.0
+  - @uidu/modal-dialog@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/adf-schema@0.3.0
+  - @uidu/adf-utils@0.6.0
+  - @uidu/editor-common@0.4.0
+  - @uidu/editor-json-transformer@0.3.0
+  - @uidu/editor-markdown-transformer@0.3.0
+  - @uidu/analytics-gas-types@0.2.0
+  - @uidu/analytics-listeners@0.3.0
+  - @uidu/analytics-namespaced-context@0.3.0
+  - @uidu/date@0.3.0
+  - @uidu/emoji@0.3.0
+  - @uidu/mentions@0.2.0
+  - @uidu/status@0.3.0
+  - @uidu/task-decision@0.3.0
+  - @uidu/select@0.6.0
+  - @uidu/media-card@0.4.0
+  - @uidu/media-core@0.4.0
+  - @uidu/media-filmstrip@0.3.0
+  - @uidu/media-picker@0.4.0
+
 ## 0.6.12
 
 ### Patch Changes

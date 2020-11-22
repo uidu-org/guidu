@@ -1,5 +1,18 @@
 # @uidu/table
 
+## 0.5.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/data-fields@0.4.0
+  - @uidu/checkbox@0.3.0
+
 ## 0.4.2
 
 ### Patch Changes

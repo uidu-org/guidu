@@ -1,5 +1,18 @@
 # @uidu/tabs
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/docs@0.3.0
+  - @uidu/analytics@0.4.0
+  - @uidu/theme@0.5.0
+
 ## 0.1.7
 
 ### Patch Changes

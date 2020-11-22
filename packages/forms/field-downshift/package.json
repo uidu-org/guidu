@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-downshift",
-  "version": "0.4.12",
+  "version": "0.5.0",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-downshift",
@@ -12,8 +12,8 @@
   "types": "dist/uidu-field-downshift.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/field-base": "^0.4.1",
-    "@uidu/field-text": "^0.3.9",
+    "@uidu/field-base": "^0.5.0",
+    "@uidu/field-text": "^0.4.0",
     "classnames": "^2.2.6",
     "downshift": "^6.0.0",
     "formsy-react": "^2.1.0",
@@ -22,13 +22,13 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.14",
-    "@uidu/dropdown-menu": "^0.3.8",
-    "@uidu/field-counter": "^0.2.14",
-    "@uidu/field-date": "^0.2.18",
-    "@uidu/field-time": "^0.3.9",
-    "@uidu/form": "^0.3.10",
-    "@uidu/radio": "^0.4.15",
-    "@uidu/shell": "^1.1.2"
+    "@uidu/docs": "^0.3.0",
+    "@uidu/dropdown-menu": "^0.4.0",
+    "@uidu/field-counter": "^0.3.0",
+    "@uidu/field-date": "^0.3.0",
+    "@uidu/field-time": "^0.4.0",
+    "@uidu/form": "^0.4.0",
+    "@uidu/radio": "^0.5.0",
+    "@uidu/shell": "^1.2.0"
   }
 }

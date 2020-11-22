@@ -1,5 +1,18 @@
 # @uidu/gallery
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/spinner@0.4.0
+  - @uidu/data-controls@0.6.0
+  - @uidu/data-fields@0.4.0
+
 ## 0.1.68
 
 ### Patch Changes

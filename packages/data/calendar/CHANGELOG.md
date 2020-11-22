@@ -1,5 +1,17 @@
 # @uidu/calendar
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/shell@1.2.0
+
 ## 0.1.41
 
 ### Patch Changes

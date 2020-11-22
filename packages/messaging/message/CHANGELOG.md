@@ -1,5 +1,24 @@
 # @uidu/message
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/drawer@0.5.0
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/media-card@0.4.0
+  - @uidu/media-core@0.4.0
+  - @uidu/media-viewer@0.3.0
+  - @uidu/message-form@0.3.0
+  - @uidu/message-renderer@0.3.0
+
 ## 0.2.13
 
 ### Patch Changes

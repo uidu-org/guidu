@@ -1,5 +1,18 @@
 # @uidu/chat-window
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/message@0.3.0
+  - @uidu/message-form@0.3.0
+  - @uidu/message-renderer@0.3.0
+
 ## 0.2.9
 
 ### Patch Changes

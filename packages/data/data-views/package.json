@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.4.10",
+  "version": "0.5.0",
   "private": false,
   "description": "Data view declarations and custom forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
@@ -11,17 +11,17 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",
-    "@uidu/data-controls": "^0.5.17",
-    "@uidu/field-counter": "^0.2.13",
-    "@uidu/field-number": "^0.3.8",
-    "@uidu/form": "^0.3.10",
-    "@uidu/select": "^0.5.13",
+    "@uidu/data-controls": "^0.6.0",
+    "@uidu/field-counter": "^0.3.0",
+    "@uidu/field-number": "^0.4.0",
+    "@uidu/form": "^0.4.0",
+    "@uidu/select": "^0.6.0",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
     "react-intl": "^5.8.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.2.14"
+    "@uidu/docs": "^0.3.0"
   }
 }

@@ -1,5 +1,22 @@
 # @uidu/media-viewer
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/button@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/media-core@0.4.0
+  - @uidu/shell@1.2.0
+  - @uidu/comment@0.2.0
+
 ## 0.2.11
 
 ### Patch Changes

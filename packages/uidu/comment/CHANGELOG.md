@@ -1,5 +1,21 @@
 # @uidu/comment
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/spinner@0.4.0
+  - @uidu/field-mentions@0.4.0
+  - @uidu/field-text@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/message-renderer@0.3.0
+
 ## 0.1.24
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/inline-edit
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/button@0.4.0
+  - @uidu/inline-dialog@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/field@0.3.0
+  - @uidu/field-text@0.4.0
+  - @uidu/form@0.4.0
+
 ## 0.1.9
 
 ### Patch Changes

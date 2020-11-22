@@ -1,5 +1,17 @@
 # @uidu/item
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/theme@0.5.0
+
 ## 0.3.11
 
 ### Patch Changes

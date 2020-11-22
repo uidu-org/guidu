@@ -1,5 +1,20 @@
 # @uidu/field-image-uploader
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/button@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/field-base@0.5.0
+  - @uidu/media-core@0.4.0
+
 ## 0.3.16
 
 ### Patch Changes

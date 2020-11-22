@@ -1,5 +1,26 @@
 # @uidu/donate
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/modal-dialog@0.4.0
+  - @uidu/payments@0.3.0
+  - @uidu/checkbox@0.3.0
+  - @uidu/field-downshift@0.5.0
+  - @uidu/field-text@0.4.0
+  - @uidu/field-textarea@0.3.0
+  - @uidu/form@0.4.0
+  - @uidu/radio@0.5.0
+  - @uidu/select@0.6.0
+  - @uidu/contact@0.2.0
+  - @uidu/widgets@0.4.0
+
 ## 0.2.28
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/select",
-  "version": "0.5.13",
+  "version": "0.6.0",
   "description": "Select Component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/select",
   "license": "MIT",
@@ -12,13 +12,13 @@
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
-    "@uidu/analytics": "^0.3.6",
-    "@uidu/checkbox": "^0.2.12",
-    "@uidu/field-base": "^0.4.1",
-    "@uidu/form": "^0.3.10",
-    "@uidu/spinner": "^0.3.8",
-    "@uidu/theme": "^0.4.8",
-    "@uidu/tooltip": "^0.3.9",
+    "@uidu/analytics": "^0.4.0",
+    "@uidu/checkbox": "^0.3.0",
+    "@uidu/field-base": "^0.5.0",
+    "@uidu/form": "^0.4.0",
+    "@uidu/spinner": "^0.4.0",
+    "@uidu/theme": "^0.5.0",
+    "@uidu/tooltip": "^0.4.0",
     "focus-trap": "^6.0.1",
     "formsy-react": "^2.1.0",
     "memoize-one": "^5.1.1",
@@ -33,9 +33,9 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.3.9",
-    "@uidu/docs": "^0.2.14",
-    "@uidu/modal-dialog": "^0.3.8",
+    "@uidu/button": "^0.4.0",
+    "@uidu/docs": "^0.3.0",
+    "@uidu/modal-dialog": "^0.4.0",
     "faker": "^5.1.0",
     "react": "^17.0.0",
     "styled-components": "^5.2.0"

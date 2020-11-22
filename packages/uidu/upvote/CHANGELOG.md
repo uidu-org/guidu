@@ -1,5 +1,11 @@
 # @uidu/upvote
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
 ## 0.1.17
 
 ### Patch Changes

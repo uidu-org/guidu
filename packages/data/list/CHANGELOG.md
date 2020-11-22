@@ -1,5 +1,16 @@
 # @uidu/list
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/data-fields@0.4.0
+
 ## 0.1.44
 
 ### Patch Changes

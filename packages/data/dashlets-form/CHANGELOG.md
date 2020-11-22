@@ -1,5 +1,23 @@
 # @uidu/dashlets-form
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/accordion@0.4.0
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/dashlets@0.7.0
+  - @uidu/field-downshift@0.5.0
+  - @uidu/field-toggle@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/select@0.6.0
+  - @uidu/shell@1.2.0
+
 ## 0.1.15
 
 ### Patch Changes

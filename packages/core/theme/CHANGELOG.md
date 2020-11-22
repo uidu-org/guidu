@@ -1,5 +1,16 @@
 # @uidu/theme
 
+## 0.5.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/form@0.4.0
+
 ## 0.4.12
 
 ### Patch Changes

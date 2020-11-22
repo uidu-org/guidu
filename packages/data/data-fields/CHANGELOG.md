@@ -1,5 +1,24 @@
 # @uidu/data-fields
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/item@0.4.0
+  - @uidu/field-color-picker@0.3.0
+  - @uidu/field-date@0.3.0
+  - @uidu/field-downshift@0.5.0
+  - @uidu/field-number@0.4.0
+  - @uidu/field-text@0.4.0
+  - @uidu/field-toggle@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/select@0.6.0
+
 ## 0.3.7
 
 ### Patch Changes

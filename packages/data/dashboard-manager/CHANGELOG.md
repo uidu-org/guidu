@@ -1,5 +1,17 @@
 # @uidu/dashboard-manager
 
+## 0.8.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/dashboard-controls@0.4.0
+  - @uidu/dashlets@0.7.0
+
 ## 0.7.14
 
 ### Patch Changes

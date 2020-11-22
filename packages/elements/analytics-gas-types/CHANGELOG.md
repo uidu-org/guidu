@@ -1,5 +1,16 @@
 # @uidu/analytics-gas-types
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+
 ## 0.1.16
 
 ### Patch Changes

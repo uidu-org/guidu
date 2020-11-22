@@ -1,5 +1,16 @@
 # @uidu/media-core
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/docs@0.3.0
+
 ## 0.3.7
 
 ### Patch Changes

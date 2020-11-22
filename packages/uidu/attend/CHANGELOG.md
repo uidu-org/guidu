@@ -1,5 +1,25 @@
 # @uidu/attend
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/spinner@0.4.0
+  - @uidu/payments@0.3.0
+  - @uidu/field-counter@0.3.0
+  - @uidu/field-text@0.4.0
+  - @uidu/field-textarea@0.3.0
+  - @uidu/form@0.4.0
+  - @uidu/shell@1.2.0
+  - @uidu/stepper@0.3.0
+  - @uidu/contact@0.2.0
+  - @uidu/widgets@0.4.0
+
 ## 0.3.8
 
 ### Patch Changes

@@ -1,5 +1,22 @@
 # @uidu/emoji
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/button@0.4.0
+  - @uidu/code@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/field-text@0.4.0
+
 ## 0.2.7
 
 ### Patch Changes

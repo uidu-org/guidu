@@ -1,5 +1,17 @@
 # @uidu/editor-markdown-transformer
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/adf-schema@0.3.0
+  - @uidu/editor-common@0.4.0
+
 ## 0.2.11
 
 ### Patch Changes

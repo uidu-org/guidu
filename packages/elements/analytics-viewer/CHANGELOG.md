@@ -1,5 +1,16 @@
 # @uidu/analytics-viewer
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+
 ## 0.2.9
 
 ### Patch Changes

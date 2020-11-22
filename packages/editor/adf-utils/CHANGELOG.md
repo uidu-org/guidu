@@ -1,5 +1,16 @@
 # @uidu/adf-utils
 
+## 0.6.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/adf-schema@0.3.0
+
 ## 0.5.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
 ## 0.2.8
 
 ### Patch Changes

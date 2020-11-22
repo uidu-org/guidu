@@ -1,5 +1,24 @@
 # @uidu/devise
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/slider@1.6.0
+  - @uidu/spinner@0.4.0
+  - @uidu/checkbox@0.3.0
+  - @uidu/field-password@0.4.0
+  - @uidu/field-phone@0.2.0
+  - @uidu/field-text@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/shell@1.2.0
+
 ## 0.3.10
 
 ### Patch Changes
