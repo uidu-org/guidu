@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-downshift",
-  "version": "0.4.11",
+  "version": "0.4.12",
   "private": false,
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-downshift",
@@ -15,7 +15,7 @@
     "@uidu/droplist": "^0.3.9",
     "@uidu/field-base": "^0.4.1",
     "@uidu/field-text": "^0.3.9",
-    "@uidu/item": "^0.3.10",
+    "@uidu/item": "^0.3.11",
     "classnames": "^2.2.6",
     "downshift": "^6.0.0",
     "formsy-react": "^2.1.0",

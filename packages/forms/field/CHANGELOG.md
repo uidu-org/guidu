@@ -1,5 +1,11 @@
 # @uidu/field
 
+## 0.2.14
+
+### Patch Changes
+
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+
 ## 0.2.13
 
 ### Patch Changes

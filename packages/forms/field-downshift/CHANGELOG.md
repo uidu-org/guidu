@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 0.4.12
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- Updated dependencies [4f963a3]
+  - @uidu/item@0.3.11
+
 ## 0.4.11
 
 ### Patch Changes

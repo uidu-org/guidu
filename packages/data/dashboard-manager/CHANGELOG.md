@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.7.14
+
+### Patch Changes
+
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+- Updated dependencies [4f963a3]
+- Updated dependencies [4f963a3]
+  - @uidu/dashlets@0.6.21
+
 ## 0.7.13
 
 ### Patch Changes
