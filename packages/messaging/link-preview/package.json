@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/link-preview",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/link-preview.cjs.js",
-  "module": "dist/link-preview.esm.js",
-  "types": "dist/link-preview.cjs.d.ts",
+  "main": "dist/uidu-link-preview.cjs.js",
+  "module": "dist/uidu-link-preview.esm.js",
+  "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "axios": "^0.21.0",

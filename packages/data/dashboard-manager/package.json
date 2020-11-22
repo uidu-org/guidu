@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashboard-manager",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/dashboard-manager.cjs.js",
-  "module": "dist/dashboard-manager.esm.js",
-  "types": "dist/dashboard-manager.cjs.d.ts",
+  "main": "dist/uidu-dashboard-manager.cjs.js",
+  "module": "dist/uidu-dashboard-manager.esm.js",
+  "types": "dist/uidu-dashboard-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@cubejs-client/core": "^0.23.6",

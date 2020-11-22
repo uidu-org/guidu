@@ -6,9 +6,9 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
-  "main": "dist/popup.cjs.js",
-  "module": "dist/popup.esm.js",
-  "types": "dist/popup.cjs.d.ts",
+  "main": "dist/uidu-popup.cjs.js",
+  "module": "dist/uidu-popup.esm.js",
+  "types": "dist/uidu-popup.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@emotion/react": "^11.0.0",

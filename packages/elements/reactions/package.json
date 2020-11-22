@@ -6,8 +6,8 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/reactions.cjs.js",
-  "module": "dist/reactions.esm.js",
+  "main": "dist/uidu-reactions.cjs.js",
+  "module": "dist/uidu-reactions.esm.js",
   "dependencies": {
     "tslib": "^2.0.1"
   },

@@ -6,9 +6,9 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "types": "dist/theme.cjs.d.ts",
+  "main": "dist/uidu-theme.cjs.js",
+  "module": "dist/uidu-theme.esm.js",
+  "types": "dist/uidu-theme.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@emotion/react": "^11.0.0",
@@ -33,15 +33,14 @@
     "styled-components": "^5.0.0"
   },
   "preconstruct": {
-    "source": "src/index.ts",
     "entrypoints": [
-      ".",
-      "colors",
-      "components",
-      "constants",
-      "elevation",
-      "typography",
-      "math"
+      "index.ts",
+      "colors.ts",
+      "components.ts",
+      "constants.ts",
+      "elevation.ts",
+      "typography.ts",
+      "math.ts"
     ]
   }
 }

@@ -6,9 +6,9 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/modal-dialog.cjs.js",
-  "module": "dist/modal-dialog.esm.js",
-  "types": "dist/modal-dialog.cjs.d.ts",
+  "main": "dist/uidu-modal-dialog.cjs.js",
+  "module": "dist/uidu-modal-dialog.esm.js",
+  "types": "dist/uidu-modal-dialog.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",

@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/side-navigation",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/side-navigation.cjs.js",
-  "module": "dist/side-navigation.esm.js",
-  "types": "dist/side-navigation.cjs.d.ts",
+  "main": "dist/uidu-side-navigation.cjs.js",
+  "module": "dist/uidu-side-navigation.esm.js",
+  "types": "dist/uidu-side-navigation.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.9",

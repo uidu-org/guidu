@@ -1,7 +1,5 @@
 {
-  "main": "dist/emoji.cjs.js",
-  "module": "dist/emoji.esm.js",
-  "preconstruct": {
-    "source": "../src/resource.ts"
-  }
+  "main": "dist/uidu-emoji-resource.cjs.js",
+  "module": "dist/uidu-emoji-resource.esm.js",
+  "types": "dist/uidu-emoji-resource.cjs.d.ts"
 }

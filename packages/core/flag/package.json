@@ -7,9 +7,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/flag.cjs.js",
-  "module": "dist/flag.esm.js",
-  "types": "dist/flag.cjs.d.ts",
+  "main": "dist/uidu-flag.cjs.js",
+  "module": "dist/uidu-flag.esm.js",
+  "types": "dist/uidu-flag.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

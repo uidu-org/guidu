@@ -5,9 +5,9 @@
   "description": "Data view declarations and custom forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
   "license": "MIT",
-  "main": "dist/data-views.cjs.js",
-  "module": "dist/data-views.esm.js",
-  "types": "dist/data-views.cjs.d.ts",
+  "main": "dist/uidu-data-views.cjs.js",
+  "module": "dist/uidu-data-views.esm.js",
+  "types": "dist/uidu-data-views.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

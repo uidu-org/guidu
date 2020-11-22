@@ -1,7 +1,5 @@
 {
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "preconstruct": {
-    "source": "../src/constants.ts"
-  }
+  "main": "dist/uidu-theme-constants.cjs.js",
+  "module": "dist/uidu-theme-constants.esm.js",
+  "types": "dist/uidu-theme-constants.cjs.d.ts"
 }

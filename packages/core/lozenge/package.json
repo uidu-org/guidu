@@ -6,9 +6,9 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/lozenge.cjs.js",
-  "module": "dist/lozenge.esm.js",
-  "types": "dist/lozenge.cjs.d.ts",
+  "main": "dist/uidu-lozenge.cjs.js",
+  "module": "dist/uidu-lozenge.esm.js",
+  "types": "dist/uidu-lozenge.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.8",

@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/data-manager.cjs.js",
-  "module": "dist/data-manager.esm.js",
-  "types": "dist/data-manager.cjs.d.ts",
+  "main": "dist/uidu-data-manager.cjs.js",
+  "module": "dist/uidu-data-manager.esm.js",
+  "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@cubejs-client/core": "^0.23.6",

@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
-  "main": "dist/renderer.cjs.js",
-  "module": "dist/renderer.esm.js",
-  "types": "dist/renderer.cjs.d.ts",
+  "main": "dist/uidu-renderer.cjs.js",
+  "module": "dist/uidu-renderer.esm.js",
+  "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@atlaskit/type-helpers": "^4.1.6",

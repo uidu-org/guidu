@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/calendar",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/calendar.cjs.js",
-  "module": "dist/calendar.esm.js",
-  "types": "dist/calendar.cjs.d.ts",
+  "main": "dist/uidu-calendar.cjs.js",
+  "module": "dist/uidu-calendar.esm.js",
+  "types": "dist/uidu-calendar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/dropdown-menu": "^0.3.8",

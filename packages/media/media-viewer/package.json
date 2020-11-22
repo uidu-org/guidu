@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-viewer",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/media-viewer.cjs.js",
-  "module": "dist/media-viewer.esm.js",
-  "types": "dist/media-viewer.cjs.d.ts",
+  "main": "dist/uidu-media-viewer.cjs.js",
+  "module": "dist/uidu-media-viewer.esm.js",
+  "types": "dist/uidu-media-viewer.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.9",

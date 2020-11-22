@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/ecommerce/payment-sources",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/payment-sources.cjs.js",
-  "module": "dist/payment-sources.esm.js",
-  "types": "dist/payment-sources.cjs.d.ts",
+  "main": "dist/uidu-payment-sources.cjs.js",
+  "module": "dist/uidu-payment-sources.esm.js",
+  "types": "dist/uidu-payment-sources.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@stripe/react-stripe-js": "^1.0.3",

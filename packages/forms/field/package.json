@@ -7,9 +7,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field.cjs.js",
-  "module": "dist/field.esm.js",
-  "types": "dist/field.cjs.d.ts",
+  "main": "dist/uidu-field.cjs.js",
+  "module": "dist/uidu-field.esm.js",
+  "types": "dist/uidu-field.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-form",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/message-form.cjs.js",
-  "module": "dist/message-form.esm.js",
-  "types": "dist/message-form.d.ts",
+  "main": "dist/uidu-message-form.cjs.js",
+  "module": "dist/uidu-message-form.esm.js",
+  "types": "dist/uidu-message-form.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

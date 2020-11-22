@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-listeners",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
-  "main": "dist/analytics-listeners.cjs.js",
-  "module": "dist/analytics-listeners.esm.js",
-  "types": "dist/analytics-listeners.cjs.d.ts",
+  "main": "dist/uidu-analytics-listeners.cjs.js",
+  "module": "dist/uidu-analytics-listeners.esm.js",
+  "types": "dist/uidu-analytics-listeners.cjs.d.ts",
   "config": {
     "access": "public"
   },

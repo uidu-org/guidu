@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/animated-menu",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/animated-menu.cjs.js",
-  "module": "dist/animated-menu.esm.js",
-  "types": "dist/animated-menu.cjs.d.ts",
+  "main": "dist/uidu-animated-menu.cjs.js",
+  "module": "dist/uidu-animated-menu.esm.js",
+  "types": "dist/uidu-animated-menu.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "classnames": "^2.2.6",

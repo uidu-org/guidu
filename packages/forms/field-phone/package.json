@@ -4,9 +4,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-phone",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/field-phone.cjs.js",
-  "module": "dist/field-phone.esm.js",
-  "types": "dist/field-phone.cjs.d.ts",
+  "main": "dist/uidu-field-phone.cjs.js",
+  "module": "dist/uidu-field-phone.esm.js",
+  "types": "dist/uidu-field-phone.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

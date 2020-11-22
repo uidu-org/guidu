@@ -6,9 +6,9 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
-  "main": "dist/progress-bar.cjs.js",
-  "module": "dist/progress-bar.esm.js",
-  "types": "dist/progress-bar.cjs.d.ts",
+  "main": "dist/uidu-progress-bar.cjs.js",
+  "module": "dist/uidu-progress-bar.esm.js",
+  "types": "dist/uidu-progress-bar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@emotion/react": "^11.0.0",

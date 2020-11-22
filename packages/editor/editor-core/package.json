@@ -3,9 +3,9 @@
   "version": "0.6.11",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-core",
   "license": "MIT",
-  "main": "dist/editor-core.cjs.js",
-  "module": "dist/editor-core.esm.js",
-  "types": "dist/editor-core.cjs.d.ts",
+  "main": "dist/uidu-editor-core.cjs.js",
+  "module": "dist/uidu-editor-core.esm.js",
+  "types": "dist/uidu-editor-core.cjs.d.ts",
   "dependencies": {
     "@atlaskit/calendar": "^10.0.0",
     "@atlaskit/icon": "^21.1.2",

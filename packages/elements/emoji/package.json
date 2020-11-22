@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/emoji",
   "license": "Apache-2.0",
   "sideEffects": false,
-  "main": "dist/emoji.cjs.js",
-  "module": "dist/emoji.esm.js",
-  "types": "dist/emoji.cjs.d.ts",
+  "main": "dist/uidu-emoji.cjs.js",
+  "module": "dist/uidu-emoji.esm.js",
+  "types": "dist/uidu-emoji.cjs.d.ts",
   "scripts": {
     "i18n:pull": "i18n-tools pull --resource emoji . --type ts",
     "i18n:push": "i18n-tools push --resource emoji . --type ts"
@@ -52,13 +52,12 @@
     "react-intl": "^5.2.1"
   },
   "preconstruct": {
-    "source": "src/index.ts",
     "entrypoints": [
-      ".",
-      "element",
-      "picker",
-      "resource",
-      "types"
+      "index.ts",
+      "element.ts",
+      "picker.ts",
+      "resource.ts",
+      "types.ts"
     ]
   }
 }

@@ -7,9 +7,9 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "maintainers": [],
-  "main": "dist/elements-test-helpers.cjs.js",
-  "module": "dist/elements-test-helpers.esm.js",
-  "types": "dist/elements-test-helpers.cjs.d.ts",
+  "main": "dist/uidu-elements-test-helpers.cjs.js",
+  "module": "dist/uidu-elements-test-helpers.esm.js",
+  "types": "dist/uidu-elements-test-helpers.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "exenv": "^1.2.2",

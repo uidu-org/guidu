@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/upvote",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/upvote.cjs.js",
-  "module": "dist/upvote.esm.js",
-  "types": "dist/upvote.cjs.d.ts",
+  "main": "dist/uidu-upvote.cjs.js",
+  "module": "dist/uidu-upvote.esm.js",
+  "types": "dist/uidu-upvote.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "react": "^17.0.0",

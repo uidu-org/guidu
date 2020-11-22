@@ -6,8 +6,8 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/breadcrumbs.cjs.js",
-  "types": "dist/breadcrumbs.cjs.d.ts",
+  "main": "dist/uidu-breadcrumbs.cjs.js",
+  "types": "dist/uidu-breadcrumbs.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

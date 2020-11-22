@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/propose",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/propose.cjs.js",
-  "module": "dist/propose.esm.js",
-  "types": "dist/propose.cjs.d.ts",
+  "main": "dist/uidu-propose.cjs.js",
+  "module": "dist/uidu-propose.esm.js",
+  "types": "dist/uidu-propose.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.11",

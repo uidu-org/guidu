@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/shell",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/shell.cjs.js",
-  "module": "dist/shell.esm.js",
-  "types": "dist/shell.cjs.d.ts",
+  "main": "dist/uidu-shell.cjs.js",
+  "module": "dist/uidu-shell.esm.js",
+  "types": "dist/uidu-shell.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

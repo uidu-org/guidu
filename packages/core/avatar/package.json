@@ -6,9 +6,9 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/avatar.cjs.js",
-  "module": "dist/avatar.esm.js",
-  "types": "dist/avatar.cjs.d.ts",
+  "main": "dist/uidu-avatar.cjs.js",
+  "module": "dist/uidu-avatar.esm.js",
+  "types": "dist/uidu-avatar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

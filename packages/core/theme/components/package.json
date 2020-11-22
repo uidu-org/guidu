@@ -1,7 +1,5 @@
 {
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "preconstruct": {
-    "source": "../src/components.ts"
-  }
+  "main": "dist/uidu-theme-components.cjs.js",
+  "module": "dist/uidu-theme-components.esm.js",
+  "types": "dist/uidu-theme-components.cjs.d.ts"
 }

@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/list",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/list.cjs.js",
-  "module": "dist/list.esm.js",
-  "types": "dist/list.cjs.d.ts",
+  "main": "dist/uidu-list.cjs.js",
+  "module": "dist/uidu-list.esm.js",
+  "types": "dist/uidu-list.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/data-fields": "^0.3.6",

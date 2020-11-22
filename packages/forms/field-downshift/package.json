@@ -7,9 +7,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field-downshift.cjs.js",
-  "module": "dist/field-downshift.esm.js",
-  "types": "dist/field-downshift.cjs.d.ts",
+  "main": "dist/uidu-field-downshift.cjs.js",
+  "module": "dist/uidu-field-downshift.esm.js",
+  "types": "dist/uidu-field-downshift.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/droplist": "^0.3.9",

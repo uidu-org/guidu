@@ -11,9 +11,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/date",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
-  "main": "dist/date.cjs.js",
-  "module": "dist/date.esm.js",
-  "types": "dist/date.cjs.d.ts",
+  "main": "dist/uidu-date.cjs.js",
+  "module": "dist/uidu-date.esm.js",
+  "types": "dist/uidu-date.cjs.d.ts",
   "config": {
     "access": "public"
   },

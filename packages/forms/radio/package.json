@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/radio",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/radio.cjs.js",
-  "module": "dist/radio.esm.js",
-  "types": "dist/radio.cjs.d.ts",
+  "main": "dist/uidu-radio.cjs.js",
+  "module": "dist/uidu-radio.esm.js",
+  "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/checkbox.cjs.js",
-  "module": "dist/checkbox.esm.js",
-  "types": "dist/checkbox.cjs.d.ts",
+  "main": "dist/uidu-checkbox.cjs.js",
+  "module": "dist/uidu-checkbox.esm.js",
+  "types": "dist/uidu-checkbox.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

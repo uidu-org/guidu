@@ -10,9 +10,9 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "maintainers": [],
-  "main": "dist/analytics-gas-types.cjs.js",
-  "module": "dist/analytics-gas-types.esm.js",
-  "types": "dist/analytics-gas-types.cjs.d.ts",
+  "main": "dist/uidu-analytics-gas-types.cjs.js",
+  "module": "dist/uidu-analytics-gas-types.esm.js",
+  "types": "dist/uidu-analytics-gas-types.cjs.d.ts",
   "config": {
     "access": "public"
   },

@@ -5,8 +5,8 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/dropdown-menu",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/dropdown-menu.cjs.js",
-  "module": "dist/dropdown-menu.esm.js",
+  "main": "dist/uidu-dropdown-menu.cjs.js",
+  "module": "dist/uidu-dropdown-menu.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",

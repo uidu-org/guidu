@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/gallery",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/gallery.cjs.js",
-  "module": "dist/gallery.esm.js",
-  "types": "dist/gallery.cjs.d.ts",
+  "main": "dist/uidu-gallery.cjs.js",
+  "module": "dist/uidu-gallery.esm.js",
+  "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/data-controls": "^0.5.16",

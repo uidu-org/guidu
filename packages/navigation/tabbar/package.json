@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/tabbar",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/tabbar.cjs.js",
-  "module": "dist/tabbar.esm.js",
-  "types": "dist/tabbar.cjs.d.ts",
+  "main": "dist/uidu-tabbar.cjs.js",
+  "module": "dist/uidu-tabbar.esm.js",
+  "types": "dist/uidu-tabbar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/shell": "^1.1.1",

@@ -1,7 +1,5 @@
 {
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "preconstruct": {
-    "source": "../src/elevation.ts"
-  }
+  "main": "dist/uidu-theme-elevation.cjs.js",
+  "module": "dist/uidu-theme-elevation.esm.js",
+  "types": "dist/uidu-theme-elevation.cjs.d.ts"
 }

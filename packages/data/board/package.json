@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/board",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/board.cjs.js",
-  "module": "dist/board.esm.js",
-  "types": "dist/board.cjs.d.ts",
+  "main": "dist/uidu-board.cjs.js",
+  "module": "dist/uidu-board.esm.js",
+  "types": "dist/uidu-board.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.8",

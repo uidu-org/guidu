@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/util-data-test.cjs.js",
-  "module": "dist/util-data-test.esm.js",
-  "types": "dist/util-data-test.cjs.d.ts",
+  "main": "dist/uidu-util-data-test.cjs.js",
+  "module": "dist/uidu-util-data-test.esm.js",
+  "types": "dist/uidu-util-data-test.cjs.d.ts",
   "scripts": {
     "postbuild": "cp -r src/json-data json-data"
   },

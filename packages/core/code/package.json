@@ -6,9 +6,9 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/code.cjs.js",
-  "module": "dist/code.esm.js",
-  "types": "dist/code.cjs.d.ts",
+  "main": "dist/uidu-code.cjs.js",
+  "module": "dist/uidu-code.esm.js",
+  "types": "dist/uidu-code.cjs.d.ts",
   "config": {
     "access": "public"
   },

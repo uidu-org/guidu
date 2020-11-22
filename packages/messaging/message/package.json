@@ -6,9 +6,9 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/message.cjs.js",
-  "module": "dist/message.esm.js",
-  "types": "dist/message.cjs.d.ts",
+  "main": "dist/uidu-message.cjs.js",
+  "module": "dist/uidu-message.esm.js",
+  "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@fluentui/react": "^7.134.1",

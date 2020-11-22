@@ -1,7 +1,5 @@
 {
-  "main": "dist/media-core.cjs.js",
-  "module": "dist/media-core.esm.js",
-  "preconstruct": {
-    "source": "../src/types.ts"
-  }
+  "main": "dist/uidu-media-core-types.cjs.js",
+  "module": "dist/uidu-media-core-types.esm.js",
+  "types": "dist/uidu-media-core-types.cjs.d.ts"
 }

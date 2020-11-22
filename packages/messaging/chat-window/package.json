@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-window",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/chat-window.cjs.js",
-  "module": "dist/chat-window.esm.js",
-  "types": "dist/chat-window.cjs.d.ts",
+  "main": "dist/uidu-chat-window.cjs.js",
+  "module": "dist/uidu-chat-window.esm.js",
+  "types": "dist/uidu-chat-window.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/message": "^0.2.12",

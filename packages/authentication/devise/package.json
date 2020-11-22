@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/authentication/devise",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/devise.cjs.js",
-  "module": "dist/devise.esm.js",
-  "types": "dist/devise.cjs.d.ts",
+  "main": "dist/uidu-devise.cjs.js",
+  "module": "dist/uidu-devise.esm.js",
+  "types": "dist/uidu-devise.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.9",

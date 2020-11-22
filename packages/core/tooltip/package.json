@@ -6,8 +6,8 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/tooltip.cjs.js",
-  "module": "dist/tooltip.esm.js",
+  "main": "dist/uidu-tooltip.cjs.js",
+  "module": "dist/uidu-tooltip.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",

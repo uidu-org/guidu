@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/tax-reminder",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/tax-reminder.cjs.js",
-  "module": "dist/tax-reminder.esm.js",
-  "types": "dist/tax-reminder.cjs.d.ts",
+  "main": "dist/uidu-tax-reminder.cjs.js",
+  "module": "dist/uidu-tax-reminder.esm.js",
+  "types": "dist/uidu-tax-reminder.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.11",

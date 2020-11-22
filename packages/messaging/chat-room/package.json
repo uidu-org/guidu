@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-room",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/chat-room.cjs.js",
-  "module": "dist/chat-room.esm.js",
-  "types": "dist/chat-rooom.cjs.d.ts",
+  "main": "dist/uidu-chat-room.cjs.js",
+  "module": "dist/uidu-chat-room.esm.js",
+  "types": "dist/uidu-chat-rooom.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/shell": "^1.1.1",

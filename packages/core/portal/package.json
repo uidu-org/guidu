@@ -6,8 +6,8 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/portal.cjs.js",
-  "module": "dist/portal.esm.js",
+  "main": "dist/uidu-portal.cjs.js",
+  "module": "dist/uidu-portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",

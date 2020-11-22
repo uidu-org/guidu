@@ -5,8 +5,8 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/button",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/button.cjs.js",
-  "module": "dist/button.esm.js",
+  "main": "dist/uidu-button.cjs.js",
+  "module": "dist/uidu-button.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

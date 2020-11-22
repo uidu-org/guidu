@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field-base.cjs.js",
-  "module": "dist/field-base.esm.js",
-  "types": "dist/field-base.cjs.d.ts",
+  "main": "dist/uidu-field-base.cjs.js",
+  "module": "dist/uidu-field-base.esm.js",
+  "types": "dist/uidu-field-base.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/form": "^0.3.10",

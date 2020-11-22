@@ -5,8 +5,8 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/build/docs",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/docs.cjs.js",
-  "module": "dist/docs.esm.js",
+  "main": "dist/uidu-docs.cjs.js",
+  "module": "dist/uidu-docs.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/button": "^0.3.9",

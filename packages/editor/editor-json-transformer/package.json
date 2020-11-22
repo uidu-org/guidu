@@ -6,9 +6,9 @@
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
-  "main": "dist/editor-json-transformer.cjs.js",
-  "module": "dist/editor-json-transformer.esm.js",
-  "types": "dist/editor-json-transformer.cjs.d.ts",
+  "main": "dist/uidu-editor-json-transformer.cjs.js",
+  "module": "dist/uidu-editor-json-transformer.esm.js",
+  "types": "dist/uidu-editor-json-transformer.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/adf-schema": "^0.2.11",

@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/select.cjs.js",
-  "module": "dist/select.esm.js",
-  "types": "dist/select.cjs.d.ts",
+  "main": "dist/uidu-select.cjs.js",
+  "module": "dist/uidu-select.esm.js",
+  "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",

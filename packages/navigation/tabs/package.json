@@ -6,7 +6,7 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/tabs",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/tabs.cjs.js",
+  "main": "dist/uidu-tabs.cjs.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.5",

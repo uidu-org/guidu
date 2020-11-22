@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
-  "main": "dist/analytics-viewer.cjs.js",
-  "module": "dist/analytics-viewer.esm.js",
-  "types": "dist/analytics-viewer.cjs.d.ts",
+  "main": "dist/uidu-analytics-viewer.cjs.js",
+  "module": "dist/uidu-analytics-viewer.esm.js",
+  "types": "dist/uidu-analytics-viewer.cjs.d.ts",
   "config": {
     "access": "private"
   },

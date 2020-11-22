@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-picker",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/media-picker.cjs.js",
-  "module": "dist/media-picker.esm.js",
-  "types": "dist/media-picker.cjs.d.ts",
+  "main": "dist/uidu-media-picker.cjs.js",
+  "module": "dist/uidu-media-picker.esm.js",
+  "types": "dist/uidu-media-picker.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/media-core": "^0.3.7",

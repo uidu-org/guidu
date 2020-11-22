@@ -6,9 +6,9 @@
   "license": "Apache-2.0",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/editor-common.cjs.js",
-  "module": "dist/editor-common.esm.js",
-  "types": "dist/editor-common.cjs.d.ts",
+  "main": "dist/uidu-editor-common.cjs.js",
+  "module": "dist/uidu-editor-common.esm.js",
+  "types": "dist/uidu-editor-common.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@atlaskit/profilecard": "^13.0.4",
@@ -33,10 +33,9 @@
     "tslib": "^2.0.1"
   },
   "preconstruct": {
-    "source": "src/index.ts",
     "entrypoints": [
-      ".",
-      "provider-factory"
+      "index.ts",
+      "provider-factory.ts"
     ]
   }
 }

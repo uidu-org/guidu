@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashboard-controls",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/dashboard-controls.cjs.js",
-  "module": "dist/dashboard-controls.esm.js",
-  "types": "dist/dashboard-controls.cjs.d.ts",
+  "main": "dist/uidu-dashboard-controls.cjs.js",
+  "module": "dist/uidu-dashboard-controls.esm.js",
+  "types": "dist/uidu-dashboard-controls.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.9",

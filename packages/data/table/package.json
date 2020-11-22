@@ -7,9 +7,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/table.cjs.js",
-  "module": "dist/table.esm.js",
-  "types": "dist/table.cjs.d.ts",
+  "main": "dist/uidu-table.cjs.js",
+  "module": "dist/uidu-table.esm.js",
+  "types": "dist/uidu-table.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.2.11",

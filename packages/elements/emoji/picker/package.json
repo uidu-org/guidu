@@ -1,7 +1,5 @@
 {
-  "main": "dist/emoji.cjs.js",
-  "module": "dist/emoji.esm.js",
-  "preconstruct": {
-    "source": "../src/picker.ts"
-  }
+  "main": "dist/uidu-emoji-picker.cjs.js",
+  "module": "dist/uidu-emoji-picker.esm.js",
+  "types": "dist/uidu-emoji-picker.cjs.d.ts"
 }

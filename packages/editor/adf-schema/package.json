@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/adf-schema.cjs.js",
-  "module": "dist/adf-schema.esm.js",
-  "types": "dist/adf-schema.cjs.d.ts",
+  "main": "dist/uidu-adf-schema.cjs.js",
+  "module": "dist/uidu-adf-schema.esm.js",
+  "types": "dist/uidu-adf-schema.cjs.d.ts",
   "scripts": {
     "postbuild": "yarn build:json-schema",
     "build:json-schema": "mkdir -p dist && cp -r json-schema dist",

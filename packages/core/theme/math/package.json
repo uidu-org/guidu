@@ -1,7 +1,5 @@
 {
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "preconstruct": {
-    "source": "../src/math.ts"
-  }
+  "main": "dist/uidu-theme-math.cjs.js",
+  "module": "dist/uidu-theme-math.esm.js",
+  "types": "dist/uidu-theme-math.cjs.d.ts"
 }

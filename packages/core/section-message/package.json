@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/section-message.cjs.js",
-  "module": "dist/section-message.esm.js",
-  "types": "dist/section-message.cjs.d.ts",
+  "main": "dist/uidu-section-message.cjs.js",
+  "module": "dist/uidu-section-message.esm.js",
+  "types": "dist/uidu-section-message.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",

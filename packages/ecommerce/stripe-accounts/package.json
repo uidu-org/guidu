@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/ecommerce/stripe-accounts",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/stripe-accounts.cjs.js",
-  "module": "dist/stripe-accounts.esm.js",
-  "types": "dist/stripe-accounts.cjs.d.ts",
+  "main": "dist/uidu-stripe-accounts.cjs.js",
+  "module": "dist/uidu-stripe-accounts.esm.js",
+  "types": "dist/uidu-stripe-accounts.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@stripe/react-stripe-js": "^1.0.3",

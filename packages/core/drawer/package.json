@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/drawer",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/drawer.cjs.js",
-  "module": "dist/drawer.esm.js",
-  "types": "dist/drawer.cjs.d.ts",
+  "main": "dist/uidu-drawer.cjs.js",
+  "module": "dist/uidu-drawer.esm.js",
+  "types": "dist/uidu-drawer.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

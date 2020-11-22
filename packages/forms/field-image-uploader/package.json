@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-image-uploader",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/field-image-uploader.cjs.js",
-  "module": "dist/field-image-uploader.esm.js",
-  "types": "dist/field-image-uploader.cjs.d.ts",
+  "main": "dist/uidu-field-image-uploader.cjs.js",
+  "module": "dist/uidu-field-image-uploader.esm.js",
+  "types": "dist/uidu-field-image-uploader.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

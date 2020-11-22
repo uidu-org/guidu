@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field-time.cjs.js",
-  "module": "dist/field-time.esm.js",
-  "types": "dist/field-time.cjs.d.ts",
+  "main": "dist/uidu-field-time.cjs.js",
+  "module": "dist/uidu-field-time.esm.js",
+  "types": "dist/uidu-field-time.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

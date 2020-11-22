@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-card",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/media-card.cjs.js",
-  "module": "dist/media-card.esm.js",
-  "types": "dist/media-card.cjs.d.ts",
+  "main": "dist/uidu-media-card.cjs.js",
+  "module": "dist/uidu-media-card.esm.js",
+  "types": "dist/uidu-media-card.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@fluentui/react": "^7.134.1",

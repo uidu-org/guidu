@@ -11,9 +11,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field-password.cjs.js",
-  "module": "dist/field-password.esm.js",
-  "types": "dist/field-password.cjs.d.ts",
+  "main": "dist/uidu-field-password.cjs.js",
+  "module": "dist/uidu-field-password.esm.js",
+  "types": "dist/uidu-field-password.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

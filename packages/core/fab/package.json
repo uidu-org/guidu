@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/fab",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/fab.cjs.js",
-  "module": "dist/fab.esm.js",
-  "types": "dist/fab.cjs.d.ts",
+  "main": "dist/uidu-fab.cjs.js",
+  "module": "dist/uidu-fab.esm.js",
+  "types": "dist/uidu-fab.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "react": "^17.0.0",

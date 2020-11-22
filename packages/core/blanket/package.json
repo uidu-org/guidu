@@ -6,8 +6,8 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/blanket.cjs.js",
-  "module": "dist/blanket.esm.js",
+  "main": "dist/uidu-blanket.cjs.js",
+  "module": "dist/uidu-blanket.esm.js",
   "dependencies": {
     "@uidu/analytics": "^0.3.6",
     "@uidu/theme": "^0.4.8",

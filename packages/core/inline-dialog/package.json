@@ -6,9 +6,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/inline-dialog.cjs.js",
-  "module": "dist/inline-dialog.esm.js",
-  "types": "dist/inline-dialog.cjs.d.ts",
+  "main": "dist/uidu-inline-dialog.cjs.js",
+  "module": "dist/uidu-inline-dialog.esm.js",
+  "types": "dist/uidu-inline-dialog.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

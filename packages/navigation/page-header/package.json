@@ -6,8 +6,8 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/page-header.cjs.js",
-  "types": "dist/page-header.cjs.d.ts",
+  "main": "dist/uidu-page-header.cjs.js",
+  "types": "dist/uidu-page-header.cjs.d.ts",
   "dependencies": {
     "@uidu/shell": "^1.1.1",
     "@uidu/theme": "^0.4.8",

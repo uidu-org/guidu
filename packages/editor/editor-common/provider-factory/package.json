@@ -1,7 +1,4 @@
 {
-  "main": "dist/editor-common.cjs.js",
-  "module": "dist/editor-common.esm.js",
-  "preconstruct": {
-    "source": "../src/provider-factory.ts"
-  }
+  "main": "dist/uidu-editor-common-provider-factory.cjs.js",
+  "module": "dist/uidu-editor-common-provider-factory.esm.js"
 }

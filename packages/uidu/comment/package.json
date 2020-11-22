@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/comment",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/comment.cjs.js",
-  "module": "dist/comment.esm.js",
-  "types": "dist/comment.cjs.d.ts",
+  "main": "dist/uidu-comment.cjs.js",
+  "module": "dist/uidu-comment.esm.js",
+  "types": "dist/uidu-comment.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.9",

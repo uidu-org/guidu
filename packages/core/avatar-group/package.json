@@ -6,8 +6,8 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/avatar-group.cjs.js",
-  "module": "dist/avatar-group.esm.js",
+  "main": "dist/uidu-avatar-group.cjs.js",
+  "module": "dist/uidu-avatar-group.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/avatar": "^0.5.9",

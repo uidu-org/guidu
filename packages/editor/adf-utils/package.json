@@ -9,9 +9,9 @@
     "Stanislav S"
   ],
   "sideEffects": false,
-  "main": "dist/adf-utils.cjs.js",
-  "module": "dist/adf-utils.esm.js",
-  "types": "dist/adf-utils.cjs.d.ts",
+  "main": "dist/uidu-adf-utils.cjs.js",
+  "module": "dist/uidu-adf-utils.esm.js",
+  "types": "dist/uidu-adf-utils.cjs.d.ts",
   "scripts": {
     "generate:spec": "rm -rf ./src/validator/specs/ && ../json-schema-generator/bin.js --outDir=./src/validator/specs/ --mode=Spec --stage=0 ./src/validator/entry.ts"
   },

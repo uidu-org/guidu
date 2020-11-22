@@ -1,7 +1,5 @@
 {
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "preconstruct": {
-    "source": "../src/colors.ts"
-  }
+  "main": "dist/uidu-theme-colors.cjs.js",
+  "module": "dist/uidu-theme-colors.esm.js",
+  "types": "dist/uidu-theme-colors.cjs.d.ts"
 }

@@ -6,8 +6,8 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/layer.cjs.js",
-  "module": "dist/layer.esm.js",
+  "main": "dist/uidu-layer.cjs.js",
+  "module": "dist/uidu-layer.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "popper.js": "^1.16.1",

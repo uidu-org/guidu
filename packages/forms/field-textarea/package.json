@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-textarea",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/field-textarea.cjs.js",
-  "module": "dist/field-textarea.esm.js",
-  "types": "dist/field-textarea.cjs.d.ts",
+  "main": "dist/uidu-field-textarea.cjs.js",
+  "module": "dist/uidu-field-textarea.esm.js",
+  "types": "dist/uidu-field-textarea.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

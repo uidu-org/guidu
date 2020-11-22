@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/donate",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/donate.cjs.js",
-  "module": "dist/donate.esm.js",
-  "types": "dist/donate.cjs.d.ts",
+  "main": "dist/uidu-donate.cjs.js",
+  "module": "dist/uidu-donate.esm.js",
+  "types": "dist/uidu-donate.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

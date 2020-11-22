@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/banner",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/banner.cjs.js",
-  "module": "dist/banner.esm.js",
-  "types": "dist/banner.cjs.d.ts",
+  "main": "dist/uidu-banner.cjs.js",
+  "module": "dist/uidu-banner.esm.js",
+  "types": "dist/uidu-banner.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.8",

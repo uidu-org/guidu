@@ -4,9 +4,9 @@
   "description": "Widgets components with zoid",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",
-  "main": "dist/widgets.cjs.js",
-  "module": "dist/widgets.esm.js",
-  "types": "dist/widgets.cjs.d.ts",
+  "main": "dist/uidu-widgets.cjs.js",
+  "module": "dist/uidu-widgets.esm.js",
+  "types": "dist/uidu-widgets.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/contact": "^0.1.23",

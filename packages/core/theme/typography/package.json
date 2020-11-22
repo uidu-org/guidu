@@ -1,7 +1,5 @@
 {
-  "main": "dist/theme.cjs.js",
-  "module": "dist/theme.esm.js",
-  "preconstruct": {
-    "source": "../src/typography.ts"
-  }
+  "main": "dist/uidu-theme-typography.cjs.js",
+  "module": "dist/uidu-theme-typography.esm.js",
+  "types": "dist/uidu-theme-typography.cjs.d.ts"
 }

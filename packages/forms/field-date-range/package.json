@@ -4,9 +4,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date-range",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/field-date-range.cjs.js",
-  "module": "dist/field-date-range.esm.js",
-  "types": "dist/field-date-range.cjs.d.ts",
+  "main": "dist/uidu-field-date-range.cjs.js",
+  "module": "dist/uidu-field-date-range.esm.js",
+  "types": "dist/uidu-field-date-range.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

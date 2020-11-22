@@ -7,9 +7,9 @@
   "author": "Atlassian Pty. Ltd",
   "maintainers": [],
   "sideEffects": false,
-  "main": "dist/task-decision.cjs.js",
-  "module": "dist/task-decision.esm.js",
-  "types": "dist/task-decision.cjs.d.ts",
+  "main": "dist/uidu-task-decision.cjs.js",
+  "module": "dist/uidu-task-decision.esm.js",
+  "types": "dist/uidu-task-decision.cjs.d.ts",
   "config": {
     "access": "public"
   },

@@ -5,9 +5,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/status",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
-  "main": "dist/status.cjs.js",
-  "module": "dist/status.esm.js",
-  "types": "dist/status.cjs.d.ts",
+  "main": "dist/uidu-status.cjs.js",
+  "module": "dist/uidu-status.esm.js",
+  "types": "dist/uidu-status.cjs.d.ts",
   "scripts": {
     "i18n:pull": "i18n-tools pull --resource status . --type ts",
     "i18n:push": "i18n-tools push --resource status . --type ts"
@@ -37,11 +37,10 @@
     "react-intl": "^5.2.1"
   },
   "preconstruct": {
-    "source": "src/index.ts",
     "entrypoints": [
-      ".",
-      "element",
-      "picker"
+      "index.ts",
+      "element.ts",
+      "picker.ts"
     ]
   }
 }

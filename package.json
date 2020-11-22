@@ -108,7 +108,7 @@
     "@mdx-js/mdx": "^1.6.16",
     "@next/mdx": "^10.0.0",
     "@popperjs/core": "^2.1.1",
-    "@preconstruct/cli": "^1.1.25",
+    "@preconstruct/cli": "^2.0.0",
     "@preconstruct/next": "^2.0.0",
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@stripe/react-stripe-js": "^1.0.3",

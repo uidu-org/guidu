@@ -11,9 +11,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field-month.cjs.js",
-  "module": "dist/field-month.esm.js",
-  "types": "dist/field-month.cjs.d.ts",
+  "main": "dist/uidu-field-month.cjs.js",
+  "module": "dist/uidu-field-month.esm.js",
+  "types": "dist/uidu-field-month.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

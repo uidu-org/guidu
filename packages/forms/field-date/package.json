@@ -4,9 +4,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
-  "main": "dist/field-date.cjs.js",
-  "module": "dist/field-date.esm.js",
-  "types": "dist/field-date.cjs.d.ts",
+  "main": "dist/uidu-field-date.cjs.js",
+  "module": "dist/uidu-field-date.esm.js",
+  "types": "dist/uidu-field-date.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

@@ -5,8 +5,8 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/droplist",
   "license": "ISC",
   "author": "uidu",
-  "main": "dist/droplist.cjs.js",
-  "module": "dist/droplist.esm.js",
+  "main": "dist/uidu-droplist.cjs.js",
+  "module": "dist/uidu-droplist.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",

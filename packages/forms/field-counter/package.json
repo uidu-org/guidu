@@ -7,9 +7,9 @@
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/field-counter.cjs.js",
-  "module": "dist/field-counter.esm.js",
-  "types": "dist/field-counter.cjs.d.ts",
+  "main": "dist/uidu-field-counter.cjs.js",
+  "module": "dist/uidu-field-counter.esm.js",
+  "types": "dist/uidu-field-counter.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.3.6",

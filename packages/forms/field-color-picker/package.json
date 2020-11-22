@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-color-picker",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/field-color-picker.cjs.js",
-  "module": "dist/field-color-picker.esm.js",
-  "types": "dist/field-color-picker.cjs.d.ts",
+  "main": "dist/uidu-field-color-picker.cjs.js",
+  "module": "dist/uidu-field-color-picker.esm.js",
+  "types": "dist/uidu-field-color-picker.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/field-base": "^0.4.0",

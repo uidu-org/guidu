@@ -1,7 +1,5 @@
 {
-  "main": "dist/status.cjs.js",
-  "module": "dist/status.esm.js",
-  "preconstruct": {
-    "source": "../src/picker.ts"
-  }
+  "main": "dist/uidu-status-picker.cjs.js",
+  "module": "dist/uidu-status-picker.esm.js",
+  "types": "dist/uidu-status-picker.cjs.d.ts"
 }

@@ -6,9 +6,9 @@
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/treenav",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/treenav.cjs.js",
-  "module": "dist/treenav.esm.js",
-  "types": "dist/treenav.cjs.d.ts",
+  "main": "dist/uidu-treenav.cjs.js",
+  "module": "dist/uidu-treenav.esm.js",
+  "types": "dist/uidu-treenav.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "react": "^17.0.0",

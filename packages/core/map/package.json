@@ -6,9 +6,9 @@
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,
-  "main": "dist/map.cjs.js",
-  "module": "dist/map.esm.js",
-  "types": "dist/map.cjs.d.ts",
+  "main": "dist/uidu-map.cjs.js",
+  "module": "dist/uidu-map.esm.js",
+  "types": "dist/uidu-map.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/theme": "^0.4.8",
