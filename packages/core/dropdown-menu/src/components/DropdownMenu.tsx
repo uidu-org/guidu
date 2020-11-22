@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
-
-import {
-  DeprecatedItemGroup,
-  DropdownMenuStatefulProps,
-  OnItemActivatedArgs,
-  OnOpenChangeArgs,
-} from '../types';
-
+import { DropdownMenuStatefulProps, OnOpenChangeArgs } from '../types';
 import StatelessMenu from './DropdownMenuStateless';
 
 interface State {
   isOpen: boolean;
-  items: Array<DeprecatedItemGroup>;
 }
 
 export default class DropdownMenu extends Component<
@@ -24,12 +16,9 @@ export default class DropdownMenu extends Component<
     defaultOpen: false,
     isLoading: false,
     isOpen: false,
-    items: [],
-    onItemActivated: () => {},
     onOpenChange: () => {},
     position: 'bottom left',
     isMenuFixed: false,
-    shouldAllowMultilineItems: false,
     shouldFitContainer: false,
     shouldFlip: true,
     triggerType: 'default',
@@ -38,50 +27,13 @@ export default class DropdownMenu extends Component<
 
   state = {
     isOpen: this.props.defaultOpen,
-    items: [...this.props.items],
   };
 
   UNSAFE_componentWillReceiveProps(nextProps: DropdownMenuStatefulProps) {
-    if (nextProps.items !== this.state.items) {
-      this.setState({ items: [...nextProps.items] });
-    }
     if (nextProps.isOpen !== this.props.isOpen) {
       this.setState({ isOpen: nextProps.isOpen });
     }
   }
-
-  findActivatedGroup = (item: Object) =>
-    this.state.items.filter(group => group.items.indexOf(item) > -1)[0]; // eslint-disable-line
-
-  handleItemActivation = (attrs: OnItemActivatedArgs) => {
-    const activatedItem = attrs.item;
-    const activatedGroup = this.findActivatedGroup(activatedItem);
-    const items = [...this.state.items];
-
-    switch (activatedItem.type) {
-      case 'checkbox':
-        activatedItem.isChecked = !activatedItem.isChecked;
-        this.props.onItemActivated({ item: activatedItem });
-        this.setState({ items });
-        break;
-      case 'radio':
-        activatedGroup.items.forEach(i => {
-          if (i === activatedItem) {
-            i.isChecked = true; // eslint-disable-line no-param-reassign
-          } else {
-            i.isChecked = false; // eslint-disable-line no-param-reassign
-          }
-        });
-        this.props.onItemActivated({ item: activatedItem });
-        this.setState({ items });
-        break;
-      case 'link':
-      default:
-        this.props.onItemActivated({ item: activatedItem });
-        this.close();
-        break;
-    }
-  };
 
   handleOpenChange = (attrs: OnOpenChangeArgs, ...args: Array<any>) => {
     if (this.state.isOpen === attrs.isOpen) {
@@ -107,10 +59,8 @@ export default class DropdownMenu extends Component<
       boundariesElement,
       children,
       isLoading,
-      items,
       position,
       isMenuFixed,
-      shouldAllowMultilineItems,
       shouldFitContainer,
       shouldFlip,
       testId,
@@ -126,12 +76,9 @@ export default class DropdownMenu extends Component<
         boundariesElement={boundariesElement}
         isOpen={isOpen}
         isLoading={isLoading}
-        items={items}
-        onItemActivated={this.handleItemActivation}
         onOpenChange={this.handleOpenChange}
         position={position}
         isMenuFixed={isMenuFixed}
-        shouldAllowMultilineItems={shouldAllowMultilineItems}
         shouldFitContainer={shouldFitContainer}
         shouldFlip={shouldFlip}
         trigger={trigger}

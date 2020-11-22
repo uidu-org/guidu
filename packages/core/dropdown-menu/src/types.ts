@@ -58,19 +58,11 @@ interface DropdownMenuBaseProps {
   isLoading: boolean;
   /** Controls the open state of the dropdown. */
   isOpen: boolean;
-  /** Deprecated. An array of groups. Every group must contain an array of items */
-  items: Array<DeprecatedItemGroup>;
-  /** Deprecated. Called when an item is activated. Receives an object with the activated item. */
-  onItemActivated: (args: OnItemActivatedArgs) => void;
   /** Position of the menu. See the documentation of @uidu/layer for more details. */
   position: string;
   /** Determines if the dropdown menu should be positioned fixed. Useful for breaking out of overflow scroll/hidden containers, however, extra layout
    management will be required to control scroll behaviour when this property is enabled as the menu will not update position with the target on scroll. */
   isMenuFixed: boolean;
-  /** Deprecated. Option to display multiline items when content is too long.
-   * Instead of ellipsing the overflown text it causes item to flow over multiple lines.
-   */
-  shouldAllowMultilineItems: boolean;
   /** Option to fit dropdown menu width to its parent width */
   shouldFitContainer: boolean;
   /** Allows the dropdown menu to be placed on the opposite side of its trigger if it does not

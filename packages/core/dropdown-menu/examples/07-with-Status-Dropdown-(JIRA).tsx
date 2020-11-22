@@ -11,15 +11,7 @@ const JiraItem = styled.div`
 `;
 
 export default () => (
-  <DropdownMenu
-    defaultOpen
-    triggerType="button"
-    trigger="To do"
-    onItemActivated={(item) => {
-      // you can do allthethings here!
-      console.log(item);
-    }}
-  >
+  <DropdownMenu defaultOpen triggerType="button" trigger="To do">
     <DropdownItemGroup>
       <DropdownItem
         elemAfter={

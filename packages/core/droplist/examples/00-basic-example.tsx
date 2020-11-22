@@ -33,11 +33,6 @@ export default class BasicExample extends PureComponent<void, State> {
       isOpen: false,
     });
   };
-  onItemActivated = () => {
-    this.setState({
-      eventResult: 'Item onActivated called',
-    });
-  };
 
   render() {
     return (
@@ -70,7 +65,7 @@ export default class BasicExample extends PureComponent<void, State> {
             </Item>
             <Item isHidden>Hidden item</Item>
             <Item isDisabled>Brisbane</Item>
-            <Item onActivated={this.onItemActivated}>Melbourne</Item>
+            <Item>Melbourne</Item>
           </ItemGroup>
         </DropList>
       </div>

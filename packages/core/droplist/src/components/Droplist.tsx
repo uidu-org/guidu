@@ -6,7 +6,6 @@ import {
 import Layer from '@uidu/layer';
 import Spinner from '@uidu/spinner';
 import { gridSize } from '@uidu/theme/constants';
-import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Wrapper, {
@@ -39,7 +38,6 @@ class Droplist extends Component<any> {
     onOpenChange: () => {},
     position: 'bottom left',
     isMenuFixed: false,
-    shouldAllowMultilineItems: false,
     shouldFitContainer: false,
     shouldFlip: true,
     trigger: null,
@@ -48,14 +46,6 @@ class Droplist extends Component<any> {
 
   dropContentRef;
   triggerRef;
-
-  static childContextTypes = {
-    shouldAllowMultilineItems: PropTypes.bool,
-  };
-
-  getChildContext() {
-    return { shouldAllowMultilineItems: this.props.shouldAllowMultilineItems };
-  }
 
   componentDidMount = () => {
     this.setContentWidth();

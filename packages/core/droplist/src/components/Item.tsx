@@ -7,7 +7,6 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import Tooltip from '@uidu/tooltip';
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import {
   After,
@@ -49,10 +48,6 @@ class Item extends PureComponent<any> {
   state = {
     isHovered: false,
     isPressed: false,
-  };
-
-  static contextTypes = {
-    shouldAllowMultilineItems: PropTypes.bool,
   };
 
   componentDidMount = () =>
@@ -131,9 +126,7 @@ class Item extends PureComponent<any> {
         )}
         {!!props.elemBefore && <Before>{props.elemBefore}</Before>}
         <ContentWrapper>
-          <Content allowMultiline={this.context.shouldAllowMultilineItems}>
-            {props.children}
-          </Content>
+          <Content>{props.children}</Content>
           {!!props.description && (
             <Description>{props.description}</Description>
           )}

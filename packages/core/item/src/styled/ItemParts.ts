@@ -65,13 +65,12 @@ export const ContentWrapper = styled.span`
   }
 `;
 
-export const Content = styled.span<{ allowMultiline: boolean }>`
+export const Content = styled.span`
   display: block;
   flex: 1 1 auto;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: ${({ allowMultiline }) =>
-    allowMultiline ? 'normal' : 'nowrap'};
+  white-space: nowrap;
   line-height: ${16 / fontSize()};
   /* Fix windows line-height issue */
   padding-bottom: 1px;

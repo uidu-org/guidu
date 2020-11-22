@@ -6,17 +6,12 @@ import {
   withAnalyticsEvents,
 } from '@uidu/analytics';
 import Button from '@uidu/button';
-import Droplist, { Group, Item } from '@uidu/droplist';
+import Droplist from '@uidu/droplist';
 import React, { Component, KeyboardEvent, MouseEvent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { uid } from 'react-uid';
 import WidthConstrainer from '../styled/WidthConstrainer';
-import {
-  DeprecatedItem,
-  DeprecatedItemGroup,
-  DropdownMenuStatelessProps,
-  OnOpenChangeArgs,
-} from '../types';
+import { DropdownMenuStatelessProps, OnOpenChangeArgs } from '../types';
 import { KEY_DOWN, KEY_ENTER, KEY_SPACE } from '../util/keys';
 import pkg from '../version.json';
 import DropdownItemClickManager from './context/DropdownItemClickManager';
@@ -52,12 +47,9 @@ export class DropdownMenuStateless extends Component<
     boundariesElement: 'viewport',
     isLoading: false,
     isOpen: false,
-    items: [],
-    onItemActivated: () => {},
     onOpenChange: () => {},
     position: 'bottom left',
     isMenuFixed: false,
-    shouldAllowMultilineItems: false,
     shouldFitContainer: false,
     shouldFlip: true,
     triggerType: 'default',
@@ -69,27 +61,8 @@ export class DropdownMenuStateless extends Component<
     autoFocusDropdownItems: false,
   };
 
-  componentDidMount = () => {
-    if (this.isUsingDeprecatedAPI()) {
-      if (
-        process.env.NODE_ENV !== 'test' &&
-        process.env.NODE_ENV !== 'production' &&
-        !process.env.CI
-      ) {
-        // eslint-disable-next-line no-console
-        console.log(
-          'DropdownMenu.items is deprecated. Please switch to the declarative API.',
-        );
-      }
-
-      if (this.domItemsList) {
-        this.focusFirstItem();
-      }
-    }
-  };
-
   componentDidUpdate = (prevProp: DropdownMenuStatelessProps) => {
-    if (this.isUsingDeprecatedAPI() && this.props.isOpen && !prevProp.isOpen) {
+    if (this.props.isOpen && !prevProp.isOpen) {
       this.focusFirstItem();
     }
   };
@@ -243,26 +216,9 @@ export class DropdownMenuStateless extends Component<
 
   domMenuContainer: HTMLElement | null = null;
 
-  handleClickDeprecated(event: MouseEvent) {
-    const menuContainer = this.domMenuContainer;
-
-    if (
-      !menuContainer ||
-      (menuContainer && !menuContainer.contains(event.target as HTMLElement))
-    ) {
-      this.toggle({ source: 'click', event });
-    }
-  }
-
-  isUsingDeprecatedAPI = () => Boolean(this.props.items.length);
-
   handleClick(event: MouseEvent) {
     // For any clicks we don't want autofocus
     this.setState({ autoFocusDropdownItems: false });
-    if (this.isUsingDeprecatedAPI()) {
-      this.handleClickDeprecated(event);
-      return;
-    }
 
     if (
       this.triggerContainer &&
@@ -288,9 +244,7 @@ export class DropdownMenuStateless extends Component<
       triggerType,
       testId,
     } = this.props;
-    const insideTriggerContent = this.isUsingDeprecatedAPI()
-      ? children
-      : trigger;
+    const insideTriggerContent = trigger;
 
     if (triggerType !== 'button') {
       return insideTriggerContent;
@@ -347,60 +301,13 @@ export class DropdownMenuStateless extends Component<
 
   renderTrigger = () => {
     const triggerContent = this.triggerContent();
-    return this.isUsingDeprecatedAPI() ? (
-      triggerContent
-    ) : (
+    return (
       <div
         ref={(ref) => {
           this.triggerContainer = ref as HTMLElement;
         }}
       >
         {triggerContent}
-      </div>
-    );
-  };
-
-  renderItems = (items: DeprecatedItem[]) =>
-    items.map((item: DeprecatedItem, itemIndex: number) => (
-      <Item
-        {...item}
-        key={itemIndex}
-        onActivate={({ event }: { event: Event }) => {
-          this.props.onItemActivated({ item, event });
-        }}
-      >
-        {item.content}
-      </Item>
-    ));
-
-  renderGroups = (groups: DeprecatedItemGroup[]) =>
-    groups.map((group, groupIndex) => (
-      <Group
-        heading={group.heading}
-        elemAfter={group.elemAfter}
-        key={groupIndex}
-      >
-        {this.renderItems(group.items)}
-      </Group>
-    ));
-
-  renderDeprecated = () => {
-    const { items, shouldFitContainer } = this.props;
-    const { id } = this.state;
-
-    return (
-      <div
-        id={id}
-        ref={(ref) => {
-          this.domMenuContainer = ref;
-          this.domItemsList = ref
-            ? ref.querySelectorAll('[data-role="droplistItem"]')
-            : null;
-        }}
-        role="menu"
-        style={shouldFitContainer ? undefined : { maxWidth: 300 }}
-      >
-        {this.renderGroups(items)}
       </div>
     );
   };
@@ -442,22 +349,12 @@ export class DropdownMenuStateless extends Component<
       onOpenChange,
       position,
       isMenuFixed,
-      shouldAllowMultilineItems,
       shouldFitContainer,
       shouldFlip,
       testId,
     } = this.props;
     const { id } = this.state;
-    const isDeprecated = this.isUsingDeprecatedAPI();
 
-    const deprecatedProps = isDeprecated
-      ? {
-          onKeyDown: this.handleKeyboardInteractionsDeprecated,
-          shouldAllowMultilineItems,
-        }
-      : {
-          onKeyDown: this.handleKeyboardInteractionForClosed,
-        };
     return (
       <DropdownItemSelectionCache>
         <Droplist
@@ -473,7 +370,6 @@ export class DropdownMenuStateless extends Component<
           shouldFlip={shouldFlip}
           trigger={this.renderTrigger()}
           onPositioned={this.onDroplistPositioned}
-          {...deprecatedProps}
           analyticsContext={{
             componentName: 'dropdownMenu',
             packageName: pkg.name,
@@ -481,23 +377,19 @@ export class DropdownMenuStateless extends Component<
           }}
           testId={testId}
         >
-          {isDeprecated ? (
-            this.renderDeprecated()
-          ) : (
-            <WidthConstrainer
-              id={id}
-              role="menu"
-              shouldFitContainer={shouldFitContainer}
+          <WidthConstrainer
+            id={id}
+            role="menu"
+            shouldFitContainer={shouldFitContainer}
+          >
+            <DropdownItemClickManager
+              onItemClicked={(event: MouseEvent | KeyboardEvent) =>
+                onOpenChange({ isOpen: false, event })
+              }
             >
-              <DropdownItemClickManager
-                onItemClicked={(event: MouseEvent | KeyboardEvent) =>
-                  onOpenChange({ isOpen: false, event })
-                }
-              >
-                {this.renderDropdownItems()}
-              </DropdownItemClickManager>
-            </WidthConstrainer>
-          )}
+              {this.renderDropdownItems()}
+            </DropdownItemClickManager>
+          </WidthConstrainer>
         </Droplist>
       </DropdownItemSelectionCache>
     );

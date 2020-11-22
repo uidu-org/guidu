@@ -51,9 +51,9 @@ const primaryStyles = css`
 const sharedStyles = (props) => css`
   align-items: center;
   box-sizing: border-box;
-  color: ${
-    props.isDisabled ? disabledPrimaryTextColor : defaultPrimaryTextColor
-  };
+  color: ${props.isDisabled
+    ? disabledPrimaryTextColor
+    : defaultPrimaryTextColor};
   cursor: ${props.isDisabled ? 'not-allowed' : 'pointer'};
   display: ${props.isHidden ? 'none' : 'flex'};
   flex-wrap: nowrap;
@@ -64,9 +64,9 @@ const sharedStyles = (props) => css`
 
   &:hover {
     background-color: ${!props.isDisabled && hoverBackgroundColor};
-    color: ${
-      props.isDisabled ? disabledPrimaryTextColor : defaultPrimaryTextColor
-    };
+    color: ${props.isDisabled
+      ? disabledPrimaryTextColor
+      : defaultPrimaryTextColor};
     text-decoration: none;
 
     ${props.isPrimary && primaryStyles};
@@ -81,9 +81,8 @@ const sharedStyles = (props) => css`
     ${focusedStyles};
   }
 
-  ${props.isFocused && focusedStyles} ${props.isActive && activeStyles} ${
-  props.isPrimary && primaryStyles
-};
+  ${props.isFocused && focusedStyles} ${props.isActive &&
+  activeStyles} ${props.isPrimary && primaryStyles};
 `;
 
 export const Anchor = styled.a`
@@ -120,16 +119,11 @@ export const ContentWrapper = styled.span`
     margin: 0;
   }
 `;
-export const Content = styled.span<{ allowMultiline: boolean }>`
+export const Content = styled.span`
   flex: 1 1 auto;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  ${(props) =>
-    props.allowMultiline &&
-    css`
-      white-space: normal;
-    `};
 `;
 
 // Description is a block element below the children, like a subtitle

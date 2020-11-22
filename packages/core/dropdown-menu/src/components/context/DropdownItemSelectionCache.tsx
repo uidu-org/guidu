@@ -1,8 +1,6 @@
-import React, { Component, ReactNode } from 'react';
-
 import find from 'array-find';
 import PropTypes from 'prop-types';
-
+import React, { Component, ReactNode } from 'react';
 import { CachedItem, GroupId, ItemId } from '../../types';
 import { selectionCacheContext } from '../../util/contextNamespace';
 
@@ -20,7 +18,7 @@ const isItemInList = (
   groupId: GroupId,
 ) =>
   Boolean(
-    find(itemList, item => item.id === itemId && item.groupId === groupId),
+    find(itemList, (item) => item.id === itemId && item.groupId === groupId),
   );
 
 export default class DropdownItemSelectionCache extends Component<
@@ -82,7 +80,7 @@ export default class DropdownItemSelectionCache extends Component<
     newGroupSelections: Array<CachedItem>,
   ): void => {
     const newSelectedItems: Array<CachedItem> = [
-      ...this.selectedItems.filter(item => item.groupId !== groupId),
+      ...this.selectedItems.filter((item) => item.groupId !== groupId),
       ...newGroupSelections,
     ];
 
@@ -96,6 +94,6 @@ export default class DropdownItemSelectionCache extends Component<
   };
 
   render() {
-    return <div>{this.props.children}</div>;
+    return <>{this.props.children}</>;
   }
 }

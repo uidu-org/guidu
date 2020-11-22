@@ -1,7 +1,5 @@
-import React, { Component, ReactNode } from 'react';
-
 import PropTypes from 'prop-types';
-
+import React, { Component, ReactNode } from 'react';
 import { Behaviors, CachedItem, ItemId } from '../../types';
 import {
   selectionCacheContext,
@@ -90,7 +88,7 @@ export default class DropdownItemSelectionManager extends Component<Props> {
       ]);
     } else if (!isSelected && isAlreadySelected) {
       const withoutCurrentItem = alreadySelected.filter(
-        item => item.id !== itemId,
+        (item) => item.id !== itemId,
       );
       this.updateCacheContextWithSelections(withoutCurrentItem);
     }
@@ -138,7 +136,7 @@ export default class DropdownItemSelectionManager extends Component<Props> {
       this.props.groupId,
       clickedItemId,
     )
-      ? itemsInGroup.filter(item => item.id !== clickedItemId)
+      ? itemsInGroup.filter((item) => item.id !== clickedItemId)
       : [...itemsInGroup, { id: clickedItemId, groupId: this.props.groupId }];
 
     this.updateCacheContextWithSelections(newSelections);
@@ -158,6 +156,6 @@ export default class DropdownItemSelectionManager extends Component<Props> {
   };
 
   render() {
-    return <div>{this.props.children}</div>;
+    return <>{this.props.children}</>;
   }
 }

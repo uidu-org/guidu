@@ -29,11 +29,6 @@ export default class TallExample extends PureComponent<void, State> {
       eventResult: 'onOpenChange called',
     });
   };
-  onItemActivated = () => {
-    this.setState({
-      eventResult: 'Item onActivated called',
-    });
-  };
 
   render() {
     return (
@@ -69,7 +64,7 @@ export default class TallExample extends PureComponent<void, State> {
             <Item>Hobart</Item>
             <Item isHidden>Hidden item</Item>
             <Item isDisabled>Brisbane</Item>
-            <Item onActivated={this.onItemActivated}>Melbourne</Item>
+            <Item>Melbourne</Item>
           </ItemGroup>
           <ItemGroup title="Brazil">
             <Item>Porto Alegre</Item>
