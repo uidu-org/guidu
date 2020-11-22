@@ -1,5 +1,20 @@
 # @uidu/editor-core
 
+## 0.6.12
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- Updated dependencies [4f963a3]
+- Updated dependencies [4f963a3]
+  - @uidu/item@0.3.11
+  - @uidu/theme@0.4.12
+  - @uidu/adf-schema@0.2.13
+  - @uidu/adf-utils@0.5.9
+  - @uidu/editor-common@0.3.13
+  - @uidu/editor-json-transformer@0.2.10
+  - @uidu/editor-markdown-transformer@0.2.11
+
 ## 0.6.11
 
 ### Patch Changes

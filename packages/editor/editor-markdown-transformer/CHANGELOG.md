@@ -1,5 +1,15 @@
 # @uidu/editor-markdown-transformer
 
+## 0.2.11
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- Updated dependencies [4f963a3]
+- Updated dependencies [4f963a3]
+  - @uidu/adf-schema@0.2.13
+  - @uidu/editor-common@0.3.13
+
 ## 0.2.10
 
 ### Patch Changes

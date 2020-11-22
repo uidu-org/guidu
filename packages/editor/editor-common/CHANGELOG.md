@@ -1,5 +1,16 @@
 # @uidu/editor-common
 
+## 0.3.13
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+- Updated dependencies [4f963a3]
+  - @uidu/theme@0.4.12
+  - @uidu/adf-schema@0.2.13
+  - @uidu/adf-utils@0.5.9
+
 ## 0.3.12
 
 ### Patch Changes

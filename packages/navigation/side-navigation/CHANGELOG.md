@@ -1,5 +1,13 @@
 # @uidu/navigation
 
+## 0.1.26
+
+### Patch Changes
+
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+- Updated dependencies [4f963a3]
+  - @uidu/theme@0.4.12
+
 ## 0.1.25
 
 ### Patch Changes

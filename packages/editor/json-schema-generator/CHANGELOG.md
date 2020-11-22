@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.18
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+
 ## 0.1.17
 
 ### Patch Changes

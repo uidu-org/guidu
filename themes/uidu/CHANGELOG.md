@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.10
+
+### Patch Changes
+
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+
 ## 0.3.9
 
 ### Patch Changes

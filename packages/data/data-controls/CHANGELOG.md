@@ -1,5 +1,13 @@
 # @uidu/data-controls
 
+## 0.5.19
+
+### Patch Changes
+
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+- Updated dependencies [4f963a3]
+  - @uidu/item@0.3.11
+
 ## 0.5.18
 
 ### Patch Changes

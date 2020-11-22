@@ -1,5 +1,12 @@
 # @uidu/blocks
 
+## 0.6.21
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- 4f963a3: Dashlet XY fixes for in styling, fix buil
+
 ## 0.6.20
 
 ### Patch Changes

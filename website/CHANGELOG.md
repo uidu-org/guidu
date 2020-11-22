@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.2.15
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- Updated dependencies [4f963a3]
+- Updated dependencies [4f963a3]
+  - @uidu/theme@0.4.12
+  - @uidu/navigation@0.4.15
+  - @uidu/themes-uidu@0.3.10
+
 ## 0.2.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/util-data-test
 
+## 0.2.9
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+
 ## 0.2.8
 
 ### Patch Changes

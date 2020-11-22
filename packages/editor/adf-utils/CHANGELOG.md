@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.5.9
+
+### Patch Changes
+
+- 4f963a3: Editor fixes to menu block-type choosing, and trying to fix rendering our own schema
+- Updated dependencies [4f963a3]
+  - @uidu/adf-schema@0.2.13
+
 ## 0.5.8
 
 ### Patch Changes
