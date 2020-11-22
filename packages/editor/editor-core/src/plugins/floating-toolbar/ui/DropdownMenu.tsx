@@ -1,8 +1,8 @@
 import EditorDoneIcon from '@atlaskit/icon/glyph/editor/done';
-import Item, { itemThemeNamespace } from '@uidu/item';
+import { ButtonItem } from '@uidu/menu';
 import { colors, gridSize } from '@uidu/theme';
 import React, { Component } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { DropdownOptionT } from './types';
 
 export const menuItemDimensions = {
@@ -20,26 +20,7 @@ const MenuContainer = styled.div`
   min-width: ${menuItemDimensions.width}px;
 `;
 
-const padding = gridSize();
 export const itemSpacing = gridSize() / 2;
-
-const editorItemTheme = {
-  borderRadius: 0,
-  beforeItemSpacing: {
-    compact: itemSpacing,
-  },
-  padding: {
-    compact: {
-      bottom: padding,
-      left: padding,
-      right: padding,
-      top: padding,
-    },
-  },
-  height: {
-    compact: menuItemDimensions.height,
-  },
-};
 
 export interface Props {
   hide: Function;
@@ -51,26 +32,24 @@ export default class Dropdown extends Component<Props> {
   render() {
     const { hide, dispatchCommand, items } = this.props;
     return (
-      <ThemeProvider theme={{ [itemThemeNamespace]: editorItemTheme }}>
-        <MenuContainer>
-          {items
-            .filter((item) => !item.hidden)
-            .map((item, idx) => (
-              <Item
-                key={idx}
-                isCompact={true}
-                elemBefore={this.renderSelected(item)}
-                onClick={() => {
-                  hide();
-                  dispatchCommand(item.onClick);
-                }}
-                isDisabled={item.disabled}
-              >
-                {item.title}
-              </Item>
-            ))}
-        </MenuContainer>
-      </ThemeProvider>
+      <MenuContainer>
+        {items
+          .filter((item) => !item.hidden)
+          .map((item, idx) => (
+            <ButtonItem
+              key={idx}
+              isCompact={true}
+              iconBefore={this.renderSelected(item)}
+              onClick={() => {
+                hide();
+                dispatchCommand(item.onClick);
+              }}
+              isDisabled={item.disabled}
+            >
+              {item.title}
+            </ButtonItem>
+          ))}
+      </MenuContainer>
     );
   }
 

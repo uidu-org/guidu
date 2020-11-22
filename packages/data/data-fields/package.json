@@ -22,7 +22,7 @@
     "@uidu/field-text": "^0.3.8",
     "@uidu/field-toggle": "^0.3.8",
     "@uidu/form": "^0.3.10",
-    "@uidu/item": "^0.3.10",
+    "@uidu/menu": "^0.3.12",
     "@uidu/select": "^0.5.13",
     "numeral": "^2.0.6",
     "react": "^17.0.0",

@@ -5,7 +5,6 @@ import {
   getInnerStyles,
   SizeType,
 } from '@uidu/avatar';
-// @ts-ignore
 import { colors, themed, withTheme } from '@uidu/theme';
 import styled from 'styled-components';
 
@@ -37,7 +36,7 @@ export const Inner = withTheme(styled.span<InnerProps>`
   border-radius: ${getBorderRadius};
   align-items: center;
   box-shadow: 0 0 0
-    ${props =>
+    ${(props) =>
       props.isFocus && !props.isActive ? `${BORDER_WIDTH[props.size]}px` : 0}
     ${B200};
   color: ${themed({ light: N500, dark: DN400 })};
@@ -45,7 +44,7 @@ export const Inner = withTheme(styled.span<InnerProps>`
   display: flex;
   flex-basis: 100%;
   flex-grow: 1;
-  font-size: ${props => EXCESS_INDICATOR_FONT_SIZE[props.size || 'medium']}px;
+  font-size: ${(props) => EXCESS_INDICATOR_FONT_SIZE[props.size || 'medium']}px;
   justify-content: center;
   transition: box-shadow 200ms;
 `);

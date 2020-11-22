@@ -1,37 +1,10 @@
-import Item, { ItemGroup, itemThemeNamespace } from '@uidu/item';
-import { borderRadius, colors, themed } from '@uidu/theme';
-import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
+import { borderRadius } from '@uidu/theme';
+import React, { useCallback, useEffect, useRef } from 'react';
+import styled from 'styled-components';
 import { Shortcut } from '../../../ui/styles';
 import IconFallback from '../../quick-insert/assets/fallback';
 import { TypeAheadItem } from '../types';
-
-const itemTheme = {
-  [itemThemeNamespace]: {
-    padding: {
-      default: {
-        bottom: 12,
-        left: 12,
-        right: 12,
-        top: 12,
-      },
-    },
-    beforeItemSpacing: {
-      default: () => 12,
-    },
-    borderRadius: () => 0,
-    hover: {
-      // background: colors.transparent, transparent is not a thing
-      text: colors.text,
-      secondaryText: colors.N200,
-    },
-    selected: {
-      background: themed({ light: colors.N20, dark: colors.DN70 }),
-      text: themed({ light: colors.N800, dark: colors.DN600 }),
-      secondaryText: themed({ light: colors.N200, dark: colors.DN300 }),
-    },
-  },
-};
 
 export const ItemIcon = styled.div`
   width: 40px;
@@ -49,27 +22,6 @@ export const ItemIcon = styled.div`
     width: 40px;
     height: 40px;
   }
-`;
-
-const ItemBody = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  line-height: 1.4;
-`;
-
-const ItemText = styled.div`
-  white-space: initial;
-  .item-description {
-    font-size: 11.67px;
-    color: ${colors.N200};
-    margin-top: 4px;
-  }
-`;
-
-const ItemAfter = styled.div`
-  flex: 0 0 auto;
 `;
 
 const fallbackIcon = (label: string) => {
@@ -117,20 +69,18 @@ export function TypeAheadItemsList({
   }
 
   return (
-    <ThemeProvider theme={itemTheme}>
-      <ItemGroup>
-        {items.map((item, index) => (
-          <TypeAheadItemComponent
-            key={item.key || item.title}
-            item={item}
-            index={index}
-            currentIndex={currentIndex}
-            insertByIndex={insertByIndex}
-            setCurrentIndex={setCurrentIndex}
-          />
-        ))}
-      </ItemGroup>
-    </ThemeProvider>
+    <MenuGroup>
+      {items.map((item, index) => (
+        <TypeAheadItemComponent
+          key={item.key || item.title}
+          item={item}
+          index={index}
+          currentIndex={currentIndex}
+          insertByIndex={insertByIndex}
+          setCurrentIndex={setCurrentIndex}
+        />
+      ))}
+    </MenuGroup>
   );
 }
 
@@ -142,84 +92,59 @@ export type TypeAheadItemComponentProps = {
   setCurrentIndex: (index: number) => void;
 };
 
-export class TypeAheadItemComponent extends React.Component<
-  TypeAheadItemComponentProps,
-  { ref: HTMLElement | null }
-> {
-  state = { ref: null };
+export function TypeAheadItemComponent({
+  setCurrentIndex: setCurrentIndexProp,
+  insertByIndex: inserByIndexProp,
+  currentIndex,
+  index,
+  item,
+}: TypeAheadItemComponentProps) {
+  const ref = useRef(null);
 
-  shouldComponentUpdate(nextProps: TypeAheadItemComponentProps) {
-    return (
-      nextProps.item !== this.props.item ||
-      this.isSelected(this.props) !== this.isSelected(nextProps)
-    );
-  }
+  const isSelected = useCallback(() => {
+    return index === currentIndex;
+  }, [index, currentIndex]);
 
-  isSelected(props: TypeAheadItemComponentProps) {
-    return props.index === props.currentIndex;
-  }
-
-  insertByIndex = () => {
-    this.props.insertByIndex(this.props.index);
+  const insertByIndex = () => {
+    inserByIndexProp(index);
   };
 
-  setCurrentIndex = () => {
-    if (!this.isSelected(this.props)) {
-      this.props.setCurrentIndex(this.props.index);
+  const setCurrentIndex = () => {
+    if (!isSelected()) {
+      setCurrentIndexProp(index);
     }
   };
 
-  handleRef = (ref: HTMLElement | null) => {
-    let hasRef = (ref: any): ref is { ref: HTMLElement } => ref && ref.ref;
-    this.setState({ ref: hasRef(ref) ? ref.ref : ref });
-  };
-
-  componentDidUpdate() {
-    const ref = this.state.ref;
-    if (this.props.index === this.props.currentIndex && ref) {
-      scrollIntoViewIfNeeded(ref);
+  useEffect(() => {
+    if (index === currentIndex && ref.current) {
+      scrollIntoViewIfNeeded(ref.current);
     }
-  }
+  }, [ref, currentIndex, index]);
 
-  render() {
-    const { item } = this.props;
-    return item.render ? (
-      <div
-        onMouseMove={this.setCurrentIndex}
-        ref={this.handleRef}
-        style={{ overflow: 'hidden' }}
-      >
-        <item.render
-          onClick={this.insertByIndex}
-          onHover={this.setCurrentIndex}
-          isSelected={this.isSelected(this.props)}
-        />
-      </div>
-    ) : (
-      <Item
-        onClick={this.insertByIndex}
-        onMouseMove={this.setCurrentIndex}
-        elemBefore={
-          <ItemIcon>
-            {item.icon ? item.icon() : fallbackIcon(item.title)}
-          </ItemIcon>
-        }
-        isSelected={this.isSelected(this.props)}
-        aria-describedby={item.title}
-        ref={this.handleRef}
-      >
-        <ItemBody>
-          <ItemText>
-            <div className="item-title">{item.title}</div>
-            {item.description && (
-              <div className="item-description">{item.description}</div>
-            )}
-          </ItemText>
-          <ItemAfter>
-            {item.keyshortcut && <Shortcut>{item.keyshortcut}</Shortcut>}
-          </ItemAfter>
-        </ItemBody>
-      </Item>
-    );
-  }
+  return item.render ? (
+    <div onMouseMove={setCurrentIndex} ref={ref} style={{ overflow: 'hidden' }}>
+      <item.render
+        onClick={insertByIndex}
+        onHover={setCurrentIndex}
+        isSelected={isSelected()}
+      />
+    </div>
+  ) : (
+    <ButtonItem
+      onClick={insertByIndex}
+      onMouseDown={setCurrentIndex}
+      iconBefore={
+        <ItemIcon>
+          {item.icon ? item.icon() : fallbackIcon(item.title)}
+        </ItemIcon>
+      }
+      iconAfter={item.keyshortcut && <Shortcut>{item.keyshortcut}</Shortcut>}
+      description={item.description}
+      isSelected={isSelected()}
+      aria-describedby={item.title}
+      ref={ref}
+    >
+      {item.title}
+    </ButtonItem>
+  );
 }

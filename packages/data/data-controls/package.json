@@ -20,7 +20,6 @@
     "@uidu/field-text": "^0.3.8",
     "@uidu/form": "^0.3.11",
     "@uidu/inline-dialog": "^0.3.8",
-    "@uidu/item": "^0.3.11",
     "@uidu/menu": "^0.3.11",
     "@uidu/popup": "^0.3.10",
     "@uidu/select": "^0.5.13",

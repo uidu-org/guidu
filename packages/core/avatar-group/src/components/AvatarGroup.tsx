@@ -5,9 +5,7 @@ import Avatar, {
 } from '@uidu/avatar';
 import DropdownMenu, { DropdownItemGroup } from '@uidu/dropdown-menu';
 import React, { Component, ElementType } from 'react';
-import { ThemeProvider } from 'styled-components';
 import { Grid, Stack } from '../styled/AvatarGroup';
-import itemTheme from '../theme/itemTheme';
 import AvatarGroupItem from './AvatarGroupItem';
 import MoreIndicator, { MoreIndicatorProps } from './MoreIndicator';
 
@@ -110,9 +108,7 @@ export default class AvatarGroup extends Component<Props> {
         boundariesElement={boundariesElement}
         shouldFlip
       >
-        <ThemeProvider theme={itemTheme}>
-          <DropdownItemGroup>{items}</DropdownItemGroup>
-        </ThemeProvider>
+        <DropdownItemGroup>{items}</DropdownItemGroup>
       </DropdownMenu>
     );
   }

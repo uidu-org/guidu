@@ -1,5 +1,6 @@
+import { ButtonItemProps } from '@uidu/menu';
+import { PositionType } from '@uidu/tooltip';
 import React from 'react';
-import EditorActions from '../../actions';
 
 export interface Props {
   mountTo?: HTMLElement;
@@ -19,22 +20,17 @@ export interface Props {
   }>;
 }
 
-export interface MenuItem {
+export interface MenuItem extends ButtonItemProps {
   key?: string;
   content: string | React.ReactChild | React.ReactFragment;
   value: {
     name: string;
   };
   shortcut?: string;
-  elemBefore?: React.ReactElement<any>;
-  elemAfter?: React.ReactElement<any>;
   tooltipDescription?: string;
-  tooltipPosition?: string;
-  isActive?: boolean;
+  tooltipPosition?: PositionType;
   isDisabled?: boolean;
   handleRef?: any;
-  className?: string;
-  onClick?: (editorActions: EditorActions) => void;
 }
 
 export interface State {

@@ -1,4 +1,4 @@
-import Item, { ItemGroup } from '@uidu/item';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import React, { Component } from 'react';
 
 export default class SingleSelect extends Component<any, any> {
@@ -40,13 +40,13 @@ export default class SingleSelect extends Component<any, any> {
         tabIndex={1} // important - without this the keypresses wont be caught
         style={{ width: actualWidth }}
       >
-        <ItemGroup>
-          {options.map(option => (
-            <Item onClick={e => this.onChange(e, option.name)}>
+        <MenuGroup>
+          {options.map((option) => (
+            <ButtonItem onClick={(e) => this.onChange(e, option.name)}>
               {option.name}
-            </Item>
+            </ButtonItem>
           ))}
-        </ItemGroup>
+        </MenuGroup>
       </div>
     );
   }

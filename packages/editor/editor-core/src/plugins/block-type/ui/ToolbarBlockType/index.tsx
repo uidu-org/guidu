@@ -120,22 +120,22 @@ export default function ToolbarBlockType({
 
   const createItems = () => {
     const items = availableBlockTypes.reduce((acc, blockType, blockTypeNo) => {
-      const isActive = currentBlockType === blockType;
+      const isSelected = currentBlockType === blockType;
       const tagName = blockType.tagName || 'p';
       acc.push({
         content: (
-          <BlockTypeMenuItem tagName={tagName} selected={isActive}>
+          <BlockTypeMenuItem>
             {createElement(tagName, {}, formatMessage(blockType.title))}
           </BlockTypeMenuItem>
         ),
         value: blockType,
         key: `${blockType.name}-${blockTypeNo}`,
-        elemAfter: (
-          <KeyboardShortcut selected={isActive}>
+        iconAfter: (
+          <KeyboardShortcut selected={isSelected}>
             {tooltip(findKeymapByDescription(blockType.title.defaultMessage))}
           </KeyboardShortcut>
         ),
-        isActive,
+        isSelected,
       });
       return acc;
     }, [] as Array<DropdownItem>);

@@ -1,14 +1,11 @@
 import { headingsSharedStyles } from '@uidu/editor-common';
-import { colors } from '@uidu/theme';
 import styled from 'styled-components';
 import { Shortcut } from '../../../../ui/styles';
 
-export const BlockTypeMenuItem = styled.div<{
-  tagName: string;
-  selected?: boolean;
-}>`
+export const BlockTypeMenuItem = styled.div`
   ${headingsSharedStyles};
   > {
+    p,
     h1,
     h2,
     h3,
@@ -16,14 +13,13 @@ export const BlockTypeMenuItem = styled.div<{
     h5,
     h6 {
       margin-top: 0;
+      margin-bottom: 0;
     }
   }
-  ${(props) => (props.selected ? `${props.tagName} { color: white }` : '')};
 `;
 
 export const KeyboardShortcut = styled(Shortcut)<{
   selected?: boolean;
 }>`
-  ${(props) => (props.selected ? `color: ${colors.N400};` : '')}
-  margin-left: 16px;
+  ${(props) => (props.selected ? `color: var(--primary);` : '')}
 `;

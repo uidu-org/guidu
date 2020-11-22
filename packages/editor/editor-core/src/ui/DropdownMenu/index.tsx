@@ -1,31 +1,17 @@
 import DropList from '@uidu/droplist';
 import { akEditorFloatingPanelZIndex, Popup } from '@uidu/editor-common';
-import Item, { ItemGroup } from '@uidu/item';
+import { ButtonItem, MenuGroup } from '@uidu/menu';
 import Tooltip from '@uidu/tooltip';
-import React, { PureComponent } from 'react';
+import React, { Fragment, PureComponent } from 'react';
 import styled from 'styled-components';
 import withOuterListeners from '../with-outer-listeners';
-import { Props, State } from './types';
+import { MenuItem, Props, State } from './types';
 
 const Wrapper = styled.div`
   line-height: 0;
 `;
 
 const DropListWithOutsideListeners: any = withOuterListeners(DropList);
-
-/**
- * Hack for item to imitate old dropdown-menu selected styles
- */
-const ItemWrapper: any = styled.div`
-  ${(props: any) =>
-    props.isSelected
-      ? '&& > span, && > span:hover { background: #6c798f; color: #fff; }'
-      : ''};
-`;
-
-const ItemContentWrapper: any = styled.span`
-  ${(props: any) => (props.hasElemBefore ? 'margin-left: 8px;' : '')};
-`;
 
 /**
  * Wrapper around @uidu/droplist which uses Popup and Portal to render
@@ -52,8 +38,8 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
     }
   };
 
-  private renderItem(item: typeof Item) {
-    const { onItemActivated, onMouseEnter, onMouseLeave } = this.props;
+  private renderItem(item: MenuItem) {
+    const { onItemActivated } = this.props;
 
     // onClick and value.name are the action indicators in the handlers
     // If neither are present, don't wrap in an Item.
@@ -62,27 +48,23 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
     }
 
     const dropListItem = (
-      <ItemWrapper key={item.key || item.content} isSelected={item.isActive}>
-        <Item
-          elemBefore={item.elemBefore}
-          elemAfter={item.elemAfter}
+      <Fragment key={item.key}>
+        <ButtonItem
+          iconBefore={item.iconBefore}
+          iconAfter={item.iconAfter}
           isDisabled={item.isDisabled}
+          isSelected={item.isSelected}
           onClick={() => onItemActivated && onItemActivated({ item })}
-          onMouseEnter={() => onMouseEnter && onMouseEnter({ item })}
-          onMouseLeave={() => onMouseLeave && onMouseLeave({ item })}
-          className={item.className}
         >
-          <ItemContentWrapper hasElemBefore={!!item.elemBefore}>
-            {item.content}
-          </ItemContentWrapper>
-        </Item>
-      </ItemWrapper>
+          {item.content}
+        </ButtonItem>
+      </Fragment>
     );
 
     if (item.tooltipDescription) {
       return (
         <Tooltip
-          key={item.key || item.content}
+          key={item.key}
           content={item.tooltipDescription}
           position={item.tooltipPosition}
         >
@@ -132,9 +114,9 @@ export default class DropdownMenuWrapper extends PureComponent<Props, State> {
         >
           <div style={{ height: 0, minWidth: fitWidth || 0 }} />
           {items.map((group, index) => (
-            <ItemGroup key={index}>
+            <MenuGroup key={index}>
               {group.items.map((item) => this.renderItem(item))}
-            </ItemGroup>
+            </MenuGroup>
           ))}
         </DropListWithOutsideListeners>
       </Popup>
