@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 0.7.1
+
+### Patch Changes
+
+- 5e821c6: Fix build
+- 8733b78: "Use @uidu/menu in lieu of @uidu/item, fixing some editor behaviours"
+- 8733b78: More cleanup on dropdowns
+- Updated dependencies [5e821c6]
+- Updated dependencies [8733b78]
+- Updated dependencies [8733b78]
+  - @uidu/menu@0.4.1
+  - @uidu/theme@0.5.1
+  - @uidu/editor-common@0.4.1
+  - @uidu/avatar-group@2.5.1
+  - @uidu/droplist@0.4.1
+
 ## 0.7.0
 
 ### Minor Changes
