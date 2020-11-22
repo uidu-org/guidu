@@ -1,5 +1,18 @@
 # Change Log
 
+## 0.6.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+
 ## 0.5.9
 
 ### Patch Changes

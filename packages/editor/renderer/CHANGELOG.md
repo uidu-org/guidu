@@ -1,5 +1,30 @@
 # @uidu/renderer
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/code@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/adf-schema@0.3.0
+  - @uidu/adf-utils@0.6.0
+  - @uidu/editor-common@0.4.0
+  - @uidu/editor-json-transformer@0.3.0
+  - @uidu/analytics-listeners@0.3.0
+  - @uidu/analytics-namespaced-context@0.3.0
+  - @uidu/mentions@0.2.0
+  - @uidu/status@0.3.0
+  - @uidu/task-decision@0.3.0
+  - @uidu/media-card@0.4.0
+  - @uidu/media-filmstrip@0.3.0
+
 ## 0.2.12
 
 ### Patch Changes

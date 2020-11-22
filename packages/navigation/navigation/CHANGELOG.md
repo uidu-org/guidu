@@ -1,5 +1,21 @@
 # @uidu/navigation
 
+## 0.5.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/inline-dialog@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/shell@1.2.0
+
 ## 0.4.15
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/analytics-listeners
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/analytics-gas-types@0.2.0
+  - @uidu/analytics-namespaced-context@0.3.0
+
 ## 0.2.7
 
 ### Patch Changes

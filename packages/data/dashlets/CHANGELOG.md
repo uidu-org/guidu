@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 0.7.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/spinner@0.4.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/dashlet-controls@0.3.0
+
 ## 0.6.21
 
 ### Patch Changes

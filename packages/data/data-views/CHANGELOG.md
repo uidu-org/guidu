@@ -1,5 +1,20 @@
 # @uidu/data-views
 
+## 0.5.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/data-controls@0.6.0
+  - @uidu/field-counter@0.3.0
+  - @uidu/field-number@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/select@0.6.0
+
 ## 0.4.10
 
 ### Patch Changes

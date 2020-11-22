@@ -1,5 +1,16 @@
 # @uidu/field-file-uploader
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/field-base@0.5.0
+
 ## 0.3.10
 
 ### Patch Changes

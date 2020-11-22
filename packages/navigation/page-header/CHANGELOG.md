@@ -1,5 +1,17 @@
 # @uidu/page-header
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/theme@0.5.0
+  - @uidu/shell@1.2.0
+
 ## 0.1.7
 
 ### Patch Changes

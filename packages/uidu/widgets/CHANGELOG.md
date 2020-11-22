@@ -1,5 +1,18 @@
 # @uidu/widgets
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/slider@1.6.0
+  - @uidu/shell@1.2.0
+  - @uidu/contact@0.2.0
+
 ## 0.3.9
 
 ### Patch Changes

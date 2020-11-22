@@ -1,5 +1,19 @@
 # @uidu/breadcrumbs
 
+## 0.2.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/analytics@0.4.0
+  - @uidu/button@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+
 ## 0.1.11
 
 ### Patch Changes

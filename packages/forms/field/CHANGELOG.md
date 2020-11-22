@@ -1,5 +1,20 @@
 # @uidu/field
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/checkbox@0.3.0
+  - @uidu/field-number@0.4.0
+  - @uidu/field-text@0.4.0
+  - @uidu/field-textarea@0.3.0
+  - @uidu/select@0.6.0
+
 ## 0.2.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
 ## 0.3.6
 
 ### Patch Changes

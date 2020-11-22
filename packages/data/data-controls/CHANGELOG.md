@@ -1,5 +1,30 @@
 # @uidu/data-controls
 
+## 0.6.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/drawer@0.5.0
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/inline-dialog@0.4.0
+  - @uidu/item@0.4.0
+  - @uidu/menu@0.4.0
+  - @uidu/popup@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/data-fields@0.4.0
+  - @uidu/data-views@0.5.0
+  - @uidu/checkbox@0.3.0
+  - @uidu/field-text@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/select@0.6.0
+  - @uidu/shell@1.2.0
+
 ## 0.5.19
 
 ### Patch Changes

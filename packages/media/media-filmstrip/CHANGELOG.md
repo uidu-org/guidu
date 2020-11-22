@@ -1,5 +1,19 @@
 # @uidu/media-filmstrip
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/theme@0.5.0
+  - @uidu/media-card@0.4.0
+  - @uidu/media-core@0.4.0
+  - @uidu/media-viewer@0.3.0
+
 ## 0.2.9
 
 ### Patch Changes

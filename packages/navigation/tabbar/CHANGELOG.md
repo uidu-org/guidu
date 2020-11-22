@@ -1,5 +1,16 @@
 # @uidu/tabbar
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/shell@1.2.0
+
 ## 0.2.8
 
 ### Patch Changes

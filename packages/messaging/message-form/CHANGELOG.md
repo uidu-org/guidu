@@ -1,5 +1,22 @@
 # @uidu/message-form
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/field-mentions@0.4.0
+  - @uidu/field-text@0.4.0
+  - @uidu/form@0.4.0
+  - @uidu/media-filmstrip@0.3.0
+  - @uidu/message@0.3.0
+
 ## 0.2.11
 
 ### Patch Changes

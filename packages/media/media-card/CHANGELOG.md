@@ -1,5 +1,21 @@
 # @uidu/media-card
 
+## 0.4.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/button@0.4.0
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/spinner@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+  - @uidu/media-core@0.4.0
+
 ## 0.3.10
 
 ### Patch Changes

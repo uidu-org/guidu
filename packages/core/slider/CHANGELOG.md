@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
 ## 1.5.8
 
 ### Patch Changes

@@ -1,5 +1,25 @@
 # @uidu/data-manager
 
+## 0.7.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/spinner@0.4.0
+  - @uidu/board@0.3.0
+  - @uidu/calendar@0.2.0
+  - @uidu/data-controls@0.6.0
+  - @uidu/data-fields@0.4.0
+  - @uidu/data-views@0.5.0
+  - @uidu/gallery@0.2.0
+  - @uidu/list@0.2.0
+  - @uidu/table@0.5.0
+  - @uidu/shell@1.2.0
+
 ## 0.6.1
 
 ### Patch Changes

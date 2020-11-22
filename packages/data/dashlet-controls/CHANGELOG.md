@@ -1,5 +1,20 @@
 # @uidu/dashboard-controls
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/avatar@0.6.0
+  - @uidu/avatar-group@2.5.0
+  - @uidu/dropdown-menu@0.4.0
+  - @uidu/field-date-range@0.3.0
+  - @uidu/form@0.4.0
+
 ## 0.2.15
 
 ### Patch Changes

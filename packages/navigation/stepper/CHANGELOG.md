@@ -1,5 +1,16 @@
 # @uidu/stepper
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/theme@0.5.0
+
 ## 0.2.11
 
 ### Patch Changes

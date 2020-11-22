@@ -1,5 +1,17 @@
 # @uidu/field-geosuggest
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/spinner@0.4.0
+  - @uidu/field-base@0.5.0
+
 ## 0.2.23
 
 ### Patch Changes

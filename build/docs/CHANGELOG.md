@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.3.0
+
+### Minor Changes
+
+- db36adf: Updated preconstruct build
+
+### Patch Changes
+
+- Updated dependencies [db36adf]
+  - @uidu/button@0.4.0
+  - @uidu/code@0.4.0
+  - @uidu/section-message@0.4.0
+  - @uidu/theme@0.5.0
+  - @uidu/tooltip@0.4.0
+
 ## 0.2.14
 
 ### Patch Changes
