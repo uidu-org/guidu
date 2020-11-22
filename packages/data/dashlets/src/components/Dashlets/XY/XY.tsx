@@ -19,10 +19,10 @@ export default function XY({ resultSet, config }) {
     if (resultSet) {
       let x = am4core.createFromConfig(
         {
-          paddingBottom: 24,
-          paddingLeft: 24,
-          paddingRight: 24,
-          paddingTop: 32,
+          paddingBottom: 15,
+          paddingLeft: 0,
+          paddingRight: 0,
+          paddingTop: 0,
           cursor: {
             lineY: {
               disabled: true,
@@ -40,6 +40,9 @@ export default function XY({ resultSet, config }) {
                 },
               ],
               renderer: {
+                line: {
+                  disabled: true,
+                },
                 grid: {
                   strokeOpacity: 0.04,
                 },
@@ -57,6 +60,14 @@ export default function XY({ resultSet, config }) {
               cursorTooltipEnabled: false,
               min: 0,
               renderer: {
+                inside: true,
+                maxLabelPosition: 0.99,
+                labels: {
+                  template: {
+                    dy: -20,
+                    dx: 15,
+                  },
+                },
                 grid: {
                   strokeOpacity: 0.04,
                 },

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { fetchDonations } from '../../dashboard-manager/examples-utils';
 import { Counter, List, Pie } from '../src';
 
 export default class Basic extends Component<any> {
@@ -11,17 +10,6 @@ export default class Basic extends Component<any> {
       },
       loaded: false,
     };
-  }
-
-  componentDidMount() {
-    fetchDonations().then(response =>
-      this.setState({
-        rowData: {
-          donations: response,
-        },
-        loaded: true,
-      }),
-    );
   }
 
   render() {

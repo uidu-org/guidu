@@ -1,8 +1,27 @@
 import { useCubeQuery } from '@cubejs-client/react';
 import { Groupers } from '@uidu/dashlet-controls';
 import React from 'react';
+import ContentLoader from 'react-content-loader';
+import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import DashletHeader from './DashletHeader';
+
+const MyLoader = (props) => (
+  <ContentLoader
+    speed={2}
+    style={{
+      width: '100%',
+      height: '100%',
+    }}
+    backgroundColor="#F5F7F8"
+    backgroundOpacity={1}
+    foregroundColor="#F5F7F8"
+    foregroundOpacity={0.6}
+    {...props}
+  >
+    <rect x="0" y="0" rx="4" ry="4" width="100%" height="100%" />
+  </ContentLoader>
+);
 
 const TimeDimensionControls = styled.div`
   position: absolute;
@@ -54,6 +73,31 @@ export default function Dashlet({
   // );
 
   const { resultSet, isLoading, error } = useCubeQuery(dashlet.query);
+
+  if (isLoading) {
+    return (
+      <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
+        <MyLoader />
+      </div>
+    );
+  }
+
+  if (error) {
+    console.log(error);
+    return (
+      <div
+        className={`h-100${
+          isCard ? ' card' : ' d-flex flex-column'
+        } align-items-center justify-content-center`}
+      >
+        <FormattedMessage
+          defaultMessage="Error loading {name}"
+          id="guidu.dashlets.loading.error"
+          values={{ name: dashlet.label }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>

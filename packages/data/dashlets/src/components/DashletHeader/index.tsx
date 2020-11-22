@@ -4,7 +4,7 @@ import { DashletHeaderProps } from './types';
 export default function DashletHeader(props: DashletHeaderProps) {
   const { name, description, isCard, children } = props;
 
-  const className = isCard ? 'card-header ' : 'py-3 ';
+  const className = isCard ? 'card-header border-bottom-0 py-4 ' : 'py-3 ';
   return (
     <div
       className={`${className}d-flex align-items-center justify-content-between`}
