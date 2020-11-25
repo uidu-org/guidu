@@ -1,19 +1,17 @@
-.form-control,
-.Select-control,
-.md-RichEditor-root,
-.input-group-text {
-  box-shadow: $input-box-shadow;
+.form-loader {
+  background: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
 }
 
 .form-group {
   & > label {
     font-size: 90%;
-    color: $text-muted;
+    // color: $text-muted;
   }
-}
-
-.custom-control {
-  min-height: 1.8rem;
 }
 
 [placeholder] {

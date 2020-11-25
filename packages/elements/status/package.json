@@ -23,7 +23,7 @@
     "@uidu/field-text": "^0.4.0",
     "@uidu/lozenge": "^0.4.0",
     "@uidu/theme": "^0.5.0",
-    "styled-components": "^5.2.0",
+    "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

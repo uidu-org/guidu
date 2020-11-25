@@ -29,7 +29,7 @@
     "react-intl": "^5.8.0",
     "react-recaptcha": "^2.3.10",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.0"

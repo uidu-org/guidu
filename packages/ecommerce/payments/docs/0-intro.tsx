@@ -12,7 +12,7 @@ export default md`
 
   ## Usage
 
-  ${code`import { Payments, Subscription, PayWithCard, PayWithBank } from '@uidu/payments';`}
+  ${code`import { SinglePayment, RecurringPayment, PayWithCard, PayWithBank } from '@uidu/payments';`}
 
   ${(
     <Example
@@ -35,9 +35,9 @@ export default md`
   ${(
     <Example
       packageName="@uidu/payments"
-      Component={require('../examples/Subscription').default}
-      title="Subscription"
-      source={require('!!raw-loader!../examples/Subscription').default}
+      Component={require('../examples/RecurringPayment').default}
+      title="RecurringPayment"
+      source={require('!!raw-loader!../examples/RecurringPayment').default}
     />
   )}
 
@@ -45,14 +45,14 @@ export default md`
   ${(
     <Props
       heading="PaymentProps"
-      props={require('!!extract-react-types-loader!../src/components/Payments')}
+      props={require('!!extract-react-types-loader!../src/components/SinglePayment')}
     />
   )}
 
   ${(
     <Props
-      heading="SubscriptionProps"
-      props={require('!!extract-react-types-loader!../src/components/Subscription')}
+      heading="RecurringPaymentProps"
+      props={require('!!extract-react-types-loader!../src/components/RecurringPayment')}
     />
   )}
 `;

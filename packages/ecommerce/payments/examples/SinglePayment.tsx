@@ -1,7 +1,13 @@
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellMain,
+  ShellSidebar,
+} from '@uidu/shell';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import { Payments, PayWithBank, PayWithCard } from '../src';
+import { PaymentMethods, SinglePayment } from '../src';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
@@ -11,7 +17,7 @@ const createPaymentIntent = (amount: number) => {
       amount,
       description: 'Donation to Organization',
     })
-    .then(res => res.data);
+    .then((res) => res.data);
 };
 
 export default function Basic({}) {
@@ -26,59 +32,39 @@ export default function Basic({}) {
 
   return (
     <IntlProvider locale="en">
-      <div className="container my-5">
-        <h5>Buying a single product or donate once with amount of 30 €</h5>
-        <p>
-          This form should receive paymentIntent['client_secret'] and handle
-          payment and errors.
-        </p>
-        <ul className="nav nav-pills mb-3">
-          {['card', 'bank_account'].map(p => (
-            <li className="nav-item">
-              <a
-                href="#"
-                className={`nav-link${provider === p ? ' active' : ''}`}
-                onClick={e => {
-                  e.preventDefault();
-                  setProvider(p);
-                }}
-              >
-                Pay with {p}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <Payments
-          stripe={stripe}
-          label="Test"
-          amount={3000}
-          onSave={console.log}
-          clientSecret={paymentIntent?.client_secret}
-          provider={{ id: provider }}
-        >
-          {paymentProps => {
-            if (provider === 'bank_account') {
-              return (
-                <PayWithBank
-                  {...paymentProps}
-                  provider={{ name: 'Credit card', id: 'card' }}
-                  providerProps={{ hidePostalCode: true }}
-                  scope="donations"
-                />
-              );
-            }
-
-            return (
-              <PayWithCard
-                {...paymentProps}
-                provider={{ name: 'Credit card', id: 'card' }}
-                providerProps={{ hidePostalCode: true }}
-                scope="donations"
-              />
-            );
-          }}
-        </Payments>
-      </div>
+      <ShellSidebar className="d-flex border-right align-items-center justify-content-center p-5">
+        <div>
+          <h5>Buying a single product or donate once with amount of 30 €</h5>
+          <p>
+            This form should receive paymentIntent['client_secret'] and handle
+            payment and errors.
+          </p>
+        </div>
+      </ShellSidebar>
+      <ShellMain>
+        <ShellBody>
+          <ScrollableContainer>
+            <div className="container p-5 my-5">
+              <div className="row justify-content-center">
+                <div className="col-9">
+                  <SinglePayment
+                    stripe={stripe}
+                    label="Test"
+                    amount={3000}
+                    onSave={console.log}
+                    clientSecret={paymentIntent?.client_secret}
+                    providers={['credit_card']}
+                  >
+                    {(paymentProps) => {
+                      return <PaymentMethods {...paymentProps} />;
+                    }}
+                  </SinglePayment>
+                </div>
+              </div>
+            </div>
+          </ScrollableContainer>
+        </ShellBody>
+      </ShellMain>
     </IntlProvider>
   );
 }

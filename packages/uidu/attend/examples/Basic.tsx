@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Attend from '../src';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { WidgetsExampleScaffold } from '../../widgets/example-utils';
+import Attend from '../src';
 
 function Basic() {
   const [order, setOrder] = useState({});

@@ -1,17 +1,17 @@
 import FieldText from '@uidu/field-text';
-import { Form, FormSubmit } from '@uidu/form';
+import { Form, FormSectionSubmit } from '@uidu/form';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { isCustomPlan } from '../../utils';
 
-function CustomPlanForm({ plan, handleSubmit, recurrence }) {
-  const [customAmount, setCustomAmount] = useState(null);
+function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
+  const [customAmount, setCustomAmount] = useState(donation.amount);
   return (
     <Form
       handleSubmit={handleSubmit}
       footerRenderer={({ canSubmit, loading }) => (
         <div className="mt-3">
-          <FormSubmit
+          <FormSectionSubmit
             label={
               <FormattedMessage
                 id="guidu.donate.donation.submit"
@@ -27,7 +27,7 @@ function CustomPlanForm({ plan, handleSubmit, recurrence }) {
             }
             loading={loading}
             canSubmit={canSubmit}
-            className="px-5 btn-primary"
+            scope="primary"
           />
         </div>
       )}
@@ -84,7 +84,7 @@ function PlanForm({ plan, handleSubmit, recurrence }) {
       handleSubmit={handleSubmit}
       footerRenderer={({ canSubmit, loading }) => (
         <div className="mt-3">
-          <FormSubmit
+          <FormSectionSubmit
             label={
               <FormattedMessage
                 id="guidu.donate.donation.submit"
@@ -100,7 +100,7 @@ function PlanForm({ plan, handleSubmit, recurrence }) {
             }
             loading={loading}
             canSubmit={canSubmit}
-            className="px-5 btn-primary"
+            scope="primary"
           />
         </div>
       )}
@@ -120,6 +120,7 @@ function PlanForm({ plan, handleSubmit, recurrence }) {
 }
 
 export default function PlansForm({
+  donation,
   plan,
   isSelected,
   handleSubmit,
@@ -131,6 +132,7 @@ export default function PlansForm({
         <h6 className="mb-0 font-weight-bold">{plan.name}</h6>
         {isSelected && (
           <CustomPlanForm
+            donation={donation}
             plan={plan}
             handleSubmit={handleSubmit}
             recurrence={recurrence}

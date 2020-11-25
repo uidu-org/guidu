@@ -1,5 +1,5 @@
 import { IbanElement } from '@stripe/react-stripe-js';
-import { FormSubmit } from '@uidu/form';
+import { FormSectionSubmit } from '@uidu/form';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { createIbanElementOptions } from '../../utils';
@@ -46,10 +46,10 @@ export default function Bank({
             />
           </div>
         </div>
-        <FormSubmit
+        <FormSectionSubmit
           loading={loading}
           canSubmit={canSubmit}
-          className={`btn btn-${scope} px-5`}
+          scope={scope}
           label={
             <FormattedMessage
               defaultMessage="Submit payment"

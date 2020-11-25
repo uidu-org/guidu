@@ -6,12 +6,13 @@ import {
   useStripe,
 } from '@stripe/react-stripe-js';
 import React, { useState } from 'react';
-import { PaymentsProps } from '../types';
+import usePaymentRequest from '../hooks/usePaymentRequest';
+import { SinglePaymentProps } from '../types';
 
 // https://stripe.com/docs/payments/save-during-payment#web
 // https://github.com/stripe/react-stripe-js/blob/master/examples/hooks/1-Card-Detailed.js
 
-function Payments({
+function SinglePayment({
   scope = 'primary',
   children,
   provider,
@@ -20,13 +21,55 @@ function Payments({
   onSuccess,
   stripeBillingDetails,
   ...rest
-}: PaymentsProps) {
+}: SinglePaymentProps) {
   const stripe = useStripe();
   const elements = useElements();
+  const paymentRequest = usePaymentRequest({
+    amount,
+    label: 'test',
+    ...rest,
+  });
 
   const [error, setError] = useState(null);
   const [cardComplete, setCardComplete] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  if (paymentRequest) {
+    paymentRequest.on('paymentMethod', async (ev) => {
+      const {
+        error: confirmError,
+        paymentIntent,
+      } = await stripe.confirmPaymentIntent(
+        clientSecret,
+        {
+          payment_method: ev.paymentMethod.id,
+        },
+        { handleActions: false },
+      );
+      if (confirmError) {
+        // Report to the browser that the payment failed, prompting it to
+        // re-show the payment interface, or show an error message and close
+        // the payment interface.
+        ev.complete('fail');
+      } else {
+        // Report to the browser that the confirmation was successful, prompting
+        // it to close the browser payment method collection interface.
+        ev.complete('success');
+        // Let Stripe.js handle the rest of the payment flow.
+        if (paymentIntent.status === 'requires_action') {
+          // Let Stripe.js handle the rest of the payment flow.
+          const { error } = await stripe.confirmCardPayment(clientSecret);
+          if (error) {
+            // The payment failed -- ask your customer for a new payment method.
+          } else {
+            // The payment has succeeded.
+          }
+        } else {
+          // The payment has succeeded.
+        }
+      }
+    });
+  }
 
   const handleCardPayment = async (formData) => {
     const cardElement = elements.getElement(CardElement);
@@ -125,18 +168,23 @@ function Payments({
     error,
     canSubmit: !!stripe && !loading,
     onChange,
+    paymentRequest,
     ...rest,
   });
 }
 
-export default ({ stripe, stripeOptions = {}, ...rest }: PaymentsProps) => (
+export default ({
+  stripe,
+  stripeOptions = {},
+  ...rest
+}: SinglePaymentProps) => (
   <Elements
     stripe={stripe}
     options={{
-      fonts: [{ cssSrc: 'https://fonts.googleapis.com/css?family=Muli' }],
+      fonts: [{ cssSrc: 'https://fonts.googleapis.com/css?family=Rubik' }],
       ...stripeOptions,
     }}
   >
-    <Payments {...(rest as PaymentsProps)} />
+    <SinglePayment {...(rest as SinglePaymentProps)} />
   </Elements>
 );

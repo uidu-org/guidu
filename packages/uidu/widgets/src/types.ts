@@ -1,25 +1,18 @@
-import { SwiperOptions } from 'swiper';
+import { FC, ReactNode } from 'react';
 
-export type ShellSlide = {
-  header: {
-    to: 'back' | string;
-    name: React.ReactNode;
-  };
-  component: any;
-  key: any;
-  'data-history': any;
+export type ShellStep = {
+  component: FC<any>;
+  relativePath: string;
+  name: ReactNode;
+  isDisabled?: boolean;
+  isCompleted?: boolean;
+  nextStepRelativePath?: string;
   unwrapped?: boolean;
 };
 
 export type ShellProps = {
   baseUrl: string;
-  slides: Array<ShellSlide>;
-  sliderOptions?: Partial<SwiperOptions>;
+  steps: Array<ShellStep>;
   scope: string;
-  forwardedRef: React.RefObject<any>;
   embedded?: boolean;
-};
-
-export type ShellState = {
-  activeSlide: number;
 };

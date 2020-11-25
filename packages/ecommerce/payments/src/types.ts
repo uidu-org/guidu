@@ -4,10 +4,14 @@ import {
   Stripe,
   StripeElementsOptions,
 } from '@stripe/stripe-js';
+import { FC, ReactNode } from 'react';
+import { IconProps } from 'react-feather';
 
 export type PaymentProviderTypes = {
-  id: 'card' | 'bank_account';
-  name?: string | React.ReactNode;
+  id: 'credit_card' | 'bank_account';
+  name?: string | ReactNode;
+  component: FC<any>;
+  icon?: FC<IconProps>;
 };
 
 export interface SharedPaymentProps {
@@ -18,20 +22,20 @@ export interface SharedPaymentProps {
   scope?: string;
 }
 
-export type PaymentsProps = SharedPaymentProps & {
+export type SinglePaymentProps = SharedPaymentProps & {
   amount: number;
   onSuccess: (paymentIntent: PaymentIntent) => void;
   clientSecret: PaymentIntent['client_secret'];
   children: (paymentProps: any) => any;
 };
 
-export type SubscriptionProps = SharedPaymentProps & {
+export type RecurringPaymentProps = SharedPaymentProps & {
   createSubscription: any;
   onSuccess: (paymentIntent: PaymentIntent) => void;
   children: (paymentProps: any) => any;
 };
 
-export type PayWithProps = {
+export type PaymentMethodsProps = {
   label: string;
   amount: number;
   handleCharge: () => void;

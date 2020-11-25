@@ -1,24 +1,24 @@
 import FieldText from '@uidu/field-text';
-import { Form, FormSubmit } from '@uidu/form';
+import { Form } from '@uidu/form';
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
 export default function Attendance({ order, attendance, handleSubmit }) {
   return (
     <Form
       handleSubmit={handleSubmit}
-      footerRenderer={({ canSubmit }) => (
-        <FormSubmit
-          className="btn-events px-5"
-          canSubmit={canSubmit}
-          label={
-            <FormattedMessage
-              defaultMessage="Confirm"
-              id="guidu.attend.attendance.submit"
-            />
-          }
-        />
-      )}
+      footerRenderer={({ canSubmit }) =>
+        null
+        // <FormSubmit
+        //   className="btn-events px-5"
+        //   canSubmit={canSubmit}
+        //   label={
+        //     <FormattedMessage
+        //       defaultMessage="Confirm"
+        //       id="guidu.attend.attendance.submit"
+        //     />
+        //   }
+        // />
+      }
     >
       <FieldText type="hidden" name="orderId" value={order.id} />
       <FieldText type="hidden" name="skuId" value={attendance.skuId} />

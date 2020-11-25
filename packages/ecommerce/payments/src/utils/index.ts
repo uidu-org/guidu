@@ -9,9 +9,9 @@ const defaultOptions = {
   },
   style: {
     base: {
-      fontSize: '16px',
-      color: '#495057',
-      fontFamily: 'Muli',
+      fontSize: '15px',
+      color: 'var(--body-color)',
+      fontFamily: 'Rubik',
       '::placeholder': {
         color: '#868e96',
       },

@@ -14,7 +14,6 @@ export default function Plan({
     (p) => p.stripeKind === 'service',
   ).plans;
   const customPlan = plans.find(isCustomPlan);
-  const predefinedPlans = plans.filter((plan) => !isCustomPlan(plan));
 
   return (
     <Downshift
@@ -30,25 +29,7 @@ export default function Plan({
       }) => (
         <div {...getRootProps({ refKey: 'ref' }, { suppressRefError: true })}>
           <div {...getMenuProps()}>
-            <OptionScaffold
-              key={customPlan.id}
-              item={customPlan}
-              index={0}
-              getItemProps={getItemProps}
-              isSelected={selectedItem?.id === customPlan.id}
-              highlightedIndex={highlightedIndex}
-            >
-              <PlansForm
-                plan={customPlan}
-                isSelected={selectedItem?.id === customPlan.id}
-                recurrence={recurrence}
-                handleSubmit={handleSubmit}
-              />
-            </OptionScaffold>
-            <h6 className="my-4 text-center font-weight-bold">
-              Or choose your impact
-            </h6>
-            {predefinedPlans.map((plan, index) => {
+            {plans.map((plan, index) => {
               const isSelected = selectedItem?.id === plan.id;
               return (
                 <OptionScaffold
@@ -60,6 +41,7 @@ export default function Plan({
                   highlightedIndex={highlightedIndex}
                 >
                   <PlansForm
+                    donation={donation}
                     plan={plan}
                     isSelected={isSelected}
                     recurrence={recurrence}

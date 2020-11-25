@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import { PayWithBank, PayWithCard, Subscription } from '../src';
+import { PayWithBank, PayWithCard, RecurringPayment } from '../src';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
@@ -14,7 +14,7 @@ const createSubscription = (payload) => {
     .then((res) => res.data);
 };
 
-export default function SubscriptionExample({}) {
+export default function RecurringPaymentExample({}) {
   const [provider, setProvider] = useState('card');
 
   return (
@@ -41,7 +41,7 @@ export default function SubscriptionExample({}) {
             </li>
           ))}
         </ul>
-        <Subscription
+        <RecurringPayment
           stripe={stripe}
           label="Test"
           amount={3000}
@@ -73,7 +73,7 @@ export default function SubscriptionExample({}) {
               />
             );
           }}
-        </Subscription>
+        </RecurringPayment>
       </div>
     </IntlProvider>
   );

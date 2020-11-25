@@ -15,6 +15,7 @@
     "@stripe/stripe-js": "^1.0.2",
     "@uidu/form": "^0.4.0",
     "@uidu/slider": "^1.6.0",
+    "@uidu/theme": "^0.5.0",
     "axios": "^0.21.0",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",

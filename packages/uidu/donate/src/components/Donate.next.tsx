@@ -1,6 +1,6 @@
 import loadable from '@loadable/component';
 import Contact from '@uidu/contact';
-import { Shell, ShellSlide } from '@uidu/widgets';
+import { Shell, ShellStep } from '@uidu/widgets';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { useHistory, useRouteMatch } from 'react-router';
@@ -13,6 +13,7 @@ const Preferences = loadable(() => import('./steps/Preferences'));
 const Subscribe = loadable(() => import('./steps/Subscribe'));
 
 export default function Donate({
+  donationCampaign,
   donation,
   currentContact,
   providers,
@@ -26,143 +27,133 @@ export default function Donate({
   const history = useHistory();
   const match = useRouteMatch();
 
-  console.log(match);
-  console.log(history);
+  console.log(donation);
 
-  const slides: ShellSlide[] = [
+  const steps: ShellStep[] = [
     {
-      key: 'donation',
-      'data-history': match.url,
-      header: {
-        to: baseUrl,
-        name: (
-          <FormattedMessage
-            defaultMessage="Donate now"
-            id="guidu.donate.donation.name"
-          />
-        ),
-      },
-      component: (
+      relativePath: 'donation',
+      name: (
+        <FormattedMessage
+          defaultMessage="Funding option"
+          id="guidu.donate.donation.name"
+        />
+      ),
+      component: () => (
         <Donation
-          {...rest}
+          donation={donation}
+          donationCampaign={donationCampaign}
           providers={providers}
           handleSubmit={async (model) => {
             return createDonation(model).then(() => {
-              history.push(`${match.url}preferences`);
+              history.push(`${match.url}/preferences`);
             });
           }}
         />
       ),
+      nextStepRelativePath: 'preferences',
+      isCompleted: !!donation?.amount,
     },
   ];
 
-  slides.push({
-    'data-history': 'preferences',
-    key: 'preferences',
-    header: {
-      to: 'back',
-      name: (
-        <>
-          <h5 className="m-0">
-            {donation.amount ? donation.amount / 100 : null}
-          </h5>
-          <FormattedMessage
-            defaultMessage="Customize"
-            id="guidu.donate.preferences.title"
-          />
-        </>
-      ),
-    },
-    component: (
+  steps.push({
+    relativePath: 'preferences',
+    name: (
+      <FormattedMessage
+        defaultMessage="Customize"
+        id="guidu.donate.preferences.title"
+      />
+    ),
+    component: () => (
       <Preferences
-        {...rest}
         currentContact={currentContact}
         donation={donation}
         handleSubmit={async (model) =>
           updateDonation(model).then(() => {
-            history.push(`${match.url}contact`);
+            history.push(`${match.url}/contact`);
           })
         }
       />
     ),
+    nextStepRelativePath: 'contact',
   });
 
-  slides.push({
-    key: 'contact',
-    'data-history': 'contact',
-    header: {
-      to: 'back',
-      name: (
-        <FormattedMessage
-          defaultMessage="Contact information"
-          id="guidu.donate.donation.contact"
-        />
-      ),
-    },
-    component: (
+  steps.push({
+    relativePath: 'contact',
+    name: (
+      <FormattedMessage
+        defaultMessage="Contact info"
+        id="guidu.donate.donation.contact"
+      />
+    ),
+    component: () => (
       <Contact
-        {...rest}
         scope="primary"
         contact={currentContact}
         handleSubmit={async (model) => {
           return updateCurrentContact(model).then(() =>
-            history.push(`${match.url}payments`),
+            history.push(`${match.url}/payments`),
           );
         }}
       />
     ),
+    nextStepRelativePath: 'payments',
+    isDisabled: !donation.amount,
+    isCompleted: !!currentContact?.id,
   });
 
-  slides.push({
-    key: 'pay',
-    'data-history': 'payments',
-    header: {
-      to: 'back',
-      name: (
-        <FormattedMessage
-          defaultMessage="Donate now"
-          id="guidu.donate.donation.payment"
-        />
-      ),
+  steps.push({
+    relativePath: 'payments',
+    name: (
+      <FormattedMessage
+        defaultMessage="Payment info"
+        id="guidu.donate.donation.payment"
+      />
+    ),
+    component: () => {
+      if (donation.amount) {
+        return (
+          <>
+            {donation.subscriptionItem ? (
+              <Subscribe
+                {...rest}
+                donationCampaign={donationCampaign}
+                donation={donation}
+                onSuccess={() => history.push(`${match.url}/done`)}
+              />
+            ) : (
+              <Pay
+                {...rest}
+                donationCampaign={donationCampaign}
+                provider={{ id: 'card' }}
+                donation={donation}
+                onSuccess={() => history.push(`${match.url}/done`)}
+              />
+            )}
+          </>
+        );
+      }
+      return null;
     },
-    component: donation.amount ? (
-      <>
-        {donation.subscriptionItem ? (
-          <Subscribe
-            {...rest}
-            donation={donation}
-            onSuccess={() => history.push(`${match.url}done`)}
-          />
-        ) : (
-          <Pay
-            {...rest}
-            provider={{ id: 'card' }}
-            donation={donation}
-            onSuccess={() => history.push(`${match.url}done`)}
-          />
-        )}
-      </>
-    ) : null,
+    isDisabled: !donation.amount,
+    nextStepRelativePath: 'done',
   });
 
-  slides.push({
-    key: 'confirmation',
-    'data-history': 'done',
-    header: {
-      to: baseUrl,
-      name: (
-        <FormattedMessage
-          defaultMessage="Done!"
-          id="guidu.donate.donation.done"
-        />
-      ),
-    },
-    component: <Confirmation {...rest} donation={donation} />,
+  steps.push({
+    relativePath: 'done',
+    name: (
+      <FormattedMessage
+        defaultMessage="Done!"
+        id="guidu.donate.donation.done"
+      />
+    ),
+    component: () => <Confirmation {...rest} donation={donation} />,
+    isDisabled: !donation.amount,
   });
 
   return (
     <Shell
-      slides={slides}
+      name={donationCampaign.name}
+      steps={steps}
       baseUrl={baseUrl}
       scope="primary"
       embedded={embedded}

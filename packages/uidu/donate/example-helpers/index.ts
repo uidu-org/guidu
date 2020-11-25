@@ -70,8 +70,10 @@ export const createDonation = async (model) => {
       },
       subscriptionItem: {
         id: 'test-subscription-item',
-        planId,
-        quantity,
+        plan: {
+          quantity,
+          id: planId,
+        },
       },
     };
   }
@@ -85,8 +87,10 @@ export const createDonation = async (model) => {
     amount,
     orderItem: {
       id: 'test-order-item',
-      planId: model.orderAttributes.itemsAttributes[0].skuId,
-      quantity: model.orderAttributes.itemsAttributes[0].quantity,
+      sku: {
+        quantity: model.orderAttributes.itemsAttributes[0].quantity,
+        id: model.orderAttributes.itemsAttributes[0].skuId,
+      },
     },
   };
 };

@@ -12,7 +12,9 @@ export default class Elements extends Component<any> {
         <StripeElements
           stripe={stripe}
           options={{
-            fonts: [{ cssSrc: 'https://fonts.googleapis.com/css?family=Muli' }],
+            fonts: [
+              { cssSrc: 'https://fonts.googleapis.com/css?family=Rubik' },
+            ],
           }}
         >
           <>

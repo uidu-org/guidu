@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { isCustomSku } from '../../utils';
 
-function CustomSkuForm({ sku, handleSubmit }) {
-  const [customAmount, setCustomAmount] = useState(null);
+function CustomSkuForm({ donation, sku, handleSubmit }) {
+  const [customAmount, setCustomAmount] = useState(donation.amount);
   return (
     <Form
       handleSubmit={handleSubmit}
@@ -101,12 +101,23 @@ function SkuForm({ sku, handleSubmit }) {
   );
 }
 
-export default function SkuRenderer({ sku, handleSubmit, isSelected }) {
+export default function SkuRenderer({
+  donation,
+  sku,
+  handleSubmit,
+  isSelected,
+}) {
   if (isCustomSku(sku)) {
     return (
       <>
         <h6 className="mb-0 font-weight-bold">{sku.stripeAttributes?.name}</h6>
-        {isSelected && <CustomSkuForm sku={sku} handleSubmit={handleSubmit} />}
+        {isSelected && (
+          <CustomSkuForm
+            donation={donation}
+            sku={sku}
+            handleSubmit={handleSubmit}
+          />
+        )}
       </>
     );
   }

@@ -1,13 +1,18 @@
 import Downshift from 'downshift';
 import React from 'react';
 import { OptionScaffold } from '.';
+import { isCustomSku } from '../../../utils';
 import SkusForm from '../../forms/SkusForm';
 
 export default function Sku({ donation, donationCampaign, handleSubmit }) {
+  const skus = donationCampaign.products.find((p) => p.stripeKind === 'good')
+    .skus;
+  const customSku = skus.find(isCustomSku);
+
   return (
     <Downshift
       itemToString={(item) => item.id}
-      initialSelectedItem={donation?.orderItem?.sku}
+      initialSelectedItem={donation?.orderItem?.sku || customSku}
     >
       {({
         getItemProps,
@@ -32,6 +37,7 @@ export default function Sku({ donation, donationCampaign, handleSubmit }) {
                     highlightedIndex={highlightedIndex}
                   >
                     <SkusForm
+                      donation={donation}
                       sku={item}
                       isSelected={isSelected}
                       handleSubmit={handleSubmit}

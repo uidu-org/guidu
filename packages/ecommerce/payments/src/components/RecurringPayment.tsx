@@ -6,19 +6,25 @@ import {
   useStripe,
 } from '@stripe/react-stripe-js';
 import React, { useState } from 'react';
-import { SubscriptionProps } from '../types';
+import usePaymentRequest from '../hooks/usePaymentRequest';
+import { RecurringPaymentProps } from '../types';
 
-function Subscription({
+function RecurringPayment({
   scope = 'primary',
   children,
   provider,
   onSuccess,
+  amount,
   createSubscription,
   stripeBillingDetails,
   ...rest
-}: SubscriptionProps) {
+}: RecurringPaymentProps) {
   const stripe = useStripe();
   const elements = useElements();
+  const paymentRequest = usePaymentRequest({
+    amount,
+    ...rest,
+  });
 
   const [error, setError] = useState(null);
   const [cardComplete, setCardComplete] = useState(false);
@@ -130,18 +136,23 @@ function Subscription({
     error,
     canSubmit: !!stripe,
     onChange,
+    paymentRequest,
     ...rest,
   });
 }
 
-export default ({ stripe, stripeOptions = {}, ...rest }: SubscriptionProps) => (
+export default ({
+  stripe,
+  stripeOptions = {},
+  ...rest
+}: RecurringPaymentProps) => (
   <Elements
     stripe={stripe}
     options={{
-      fonts: [{ cssSrc: 'https://fonts.googleapis.com/css?family=Muli' }],
+      fonts: [{ cssSrc: 'https://fonts.googleapis.com/css?family=Rubik' }],
       ...stripeOptions,
     }}
   >
-    <Subscription {...(rest as SubscriptionProps)} />
+    <RecurringPayment {...(rest as RecurringPaymentProps)} />
   </Elements>
 );

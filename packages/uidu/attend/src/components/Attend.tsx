@@ -1,8 +1,9 @@
 import Contact from '@uidu/contact';
-import { Shell, ShellSlide } from '@uidu/widgets';
+import { Shell, ShellStep } from '@uidu/widgets';
 import React, { useRef } from 'react';
 import Countdown from 'react-countdown';
 import { FormattedMessage } from 'react-intl';
+import { useHistory, useRouteMatch } from 'react-router';
 import Swiper from 'swiper';
 import Attendances from './steps/Attendances';
 import Confirmation from './steps/Confirmation';
@@ -23,6 +24,8 @@ export default function Attend({
   paymentIntent,
   ...rest
 }) {
+  const history = useHistory();
+  const match = useRouteMatch();
   const slider: React.RefObject<Swiper> = useRef(null);
 
   const countdown = (
@@ -31,26 +34,23 @@ export default function Attend({
     </div>
   );
 
-  const slides: ShellSlide[] = [
+  const slides: ShellStep[] = [
     {
-      key: 'order',
-      'data-history': 'order',
-      header: {
-        to: baseUrl,
-        name: (
-          <FormattedMessage
-            id="guidu.attend.order.name"
-            defaultMessage="Tickets"
-          />
-        ),
-      },
-      component: (
+      relativePath: 'order',
+      name: (
+        <FormattedMessage
+          id="guidu.attend.order.name"
+          defaultMessage="Tickets"
+        />
+      ),
+
+      component: () => (
         <Order
           {...rest}
           event={event}
           handleSubmit={async (model) =>
             createOrder(model).then(() => {
-              slider.current.slideNext();
+              history.push(`${match.url}/contact`);
             })
           }
         />
@@ -59,21 +59,17 @@ export default function Attend({
   ];
 
   slides.push({
-    key: 'contact',
-    'data-history': 'contact',
-    header: {
-      to: 'back',
-      name: (
-        <>
-          <FormattedMessage
-            defaultMessage="Contact information"
-            id="guidu.donate.donation.contact"
-          />
-          {countdown}
-        </>
-      ),
-    },
-    component: (
+    relativePath: 'contact',
+    name: (
+      <>
+        <FormattedMessage
+          defaultMessage="Contact information"
+          id="guidu.donate.donation.contact"
+        />
+        {countdown}
+      </>
+    ),
+    component: () => (
       <Contact
         {...rest}
         scope="events"
@@ -88,21 +84,17 @@ export default function Attend({
   });
 
   slides.push({
-    key: 'attendance',
-    'data-history': 'attendances',
-    header: {
-      to: `back`,
-      name: (
-        <>
-          <FormattedMessage
-            id="guidu.attend.attendance.name"
-            defaultMessage="Tickets"
-          />
-          {countdown}
-        </>
-      ),
-    },
-    component: (
+    relativePath: 'attendance',
+    name: (
+      <>
+        <FormattedMessage
+          id="guidu.attend.attendance.name"
+          defaultMessage="Tickets"
+        />
+        {countdown}
+      </>
+    ),
+    component: () => (
       <Attendances
         {...rest}
         order={order}
@@ -115,13 +107,9 @@ export default function Attend({
 
   if (order && order.stripeAmount > 0) {
     slides.push({
-      key: 'pay',
-      'data-history': 'payments',
-      header: {
-        to: 'back',
-        name: 'pay',
-      },
-      component: (
+      relativePath: 'pay',
+      name: 'pay',
+      component: () => (
         <Pay
           {...rest}
           stripe={stripe}
@@ -135,21 +123,17 @@ export default function Attend({
   }
 
   slides.push({
-    key: 'confirmation',
-    'data-history': 'confirmation',
-    header: {
-      to: baseUrl,
-      name: (
-        <FormattedMessage
-          defaultMessage="Done!"
-          id="guidu.donate.donation.done"
-        />
-      ),
-    },
-    component: <Confirmation {...rest} order={order} />,
+    relativePath: 'confirmation',
+    name: (
+      <FormattedMessage
+        defaultMessage="Done!"
+        id="guidu.donate.donation.done"
+      />
+    ),
+    component: () => <Confirmation {...rest} order={order} />,
   });
 
   return (
-    <Shell slides={slides} ref={slider} baseUrl={baseUrl} scope="events" />
+    <Shell name={event.name} steps={slides} baseUrl={baseUrl} scope="events" />
   );
 }

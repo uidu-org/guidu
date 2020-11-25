@@ -31,12 +31,30 @@ export default function Card({
               options={createCardElementOptions({ ...providerProps })}
             />
           </div>
+          <div className="form-group">
+            <label htmlFor="credit-card">
+              <FormattedMessage
+                defaultMessage="Insert your credit / debit card details"
+                id="guidu.payments.card.label"
+              />
+            </label>
+            <input type="text" className="form-control" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="credit-card">
+              <FormattedMessage
+                defaultMessage="Insert your credit / debit card details"
+                id="guidu.payments.card.label"
+              />
+            </label>
+            <input type="text" className="form-control" />
+          </div>
         </div>
         {error && <div className="alert alert-warning">{error.message}</div>}
         <FormSubmit
           loading={loading}
           canSubmit={canSubmit}
-          className={`btn btn-${scope} px-5`}
+          className="btn btn-primary btn-block"
           label={
             <FormattedMessage
               defaultMessage="Submit payment"

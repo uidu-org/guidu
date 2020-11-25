@@ -1,123 +1,91 @@
-import {
-  ElementsConsumer,
-  PaymentRequestButtonElement,
-} from '@stripe/react-stripe-js';
-import React, { PureComponent } from 'react';
-import { CreditCard, Server } from 'react-feather';
-import { PayWithProps } from '../types';
+import { ElementsConsumer } from '@stripe/react-stripe-js';
+import React, { useCallback, useState } from 'react';
+import styled from 'styled-components';
+import { PaymentMethodsProps } from '../types';
+import { paymentProviders } from './Providers';
+import PaymentRequest from './Providers/PaymentRequest';
 
-class PayWith extends PureComponent<PayWithProps, any> {
-  constructor(props) {
-    super(props);
-    console.log(props);
-    const { label, amount, stripe, paymentIntent } = props;
-    const paymentRequest = stripe.paymentRequest({
-      country: 'IT',
-      currency: 'eur',
-      total: {
-        label,
-        amount,
-      },
-      requestPayerName: true,
-      requestPayerEmail: true,
-      requestPayerPhone: true,
-    });
+const Separator = styled.div`
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--gray);
 
-    paymentRequest.on('paymentMethod', async (ev) => {
-      const {
-        error: confirmError,
-        // paymentIntent,
-      } = await stripe.confirmPaymentIntent(paymentIntent, {
-        payment_method: ev.paymentMethod.id,
-      });
-      if (confirmError) {
-        // Report to the browser that the payment failed, prompting it to
-        // re-show the payment interface, or show an error message and close
-        // the payment interface.
-        ev.complete('fail');
-      } else {
-        // Report to the browser that the confirmation was successful, prompting
-        // it to close the browser payment method collection interface.
-        ev.complete('success');
-        // Let Stripe.js handle the rest of the payment flow.
-        const { error } = await stripe.handleCardPayment(paymentIntent);
-        if (error) {
-          // The payment failed -- ask your customer for a new payment method.
-        } else {
-          // The payment has succeeded.
-        }
-      }
-    });
-
-    paymentRequest
-      .canMakePayment()
-      .then((result) => this.setState({ canMakePayment: !!result }));
-
-    this.state = {
-      canMakePayment: false,
-      paymentRequest,
-      loading: false,
-    };
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border);
   }
+  &::before {
+    margin-right: 1rem;
+  }
+  &::after {
+    margin-left: 1rem;
+  }
+`;
 
-  select = (e, provider) => {
-    const { onChange } = this.props;
-    e.preventDefault();
-    onChange({ id: provider, name: provider });
-  };
+function PaymentMethods({
+  onChange,
+  providers = ['credit_card', 'bank_account'],
+  paymentRequest,
+  ...rest
+}: PaymentMethodsProps) {
+  const availableProviders = useCallback(
+    () =>
+      paymentProviders.filter((provider) => providers.includes(provider.id)),
+    [providers],
+  );
+  const [currentProvider, setCurrentProvider] = useState(
+    availableProviders()[0],
+  );
 
-  render() {
-    const { canMakePayment, paymentRequest } = this.state;
+  const { component: CurrentProvider } = currentProvider;
 
-    return (
-      <div>
-        {canMakePayment && (
-          <PaymentRequestButtonElement
-            options={{
-              paymentRequest,
-              style: {
-                paymentRequestButton: {
-                  theme: 'dark',
-                  height: '48',
-                },
-              },
-            }}
-            className="PaymentRequestButton mb-3"
-          />
-        )}
-        <a
-          className="card card-body p-3 mb-3"
-          href="#"
-          onClick={(e) => this.select(e, 'card')}
-        >
-          <div className="d-flex w-100 justify-content-start align-items-center">
-            <CreditCard className="mr-2" size={18} />
-            <div className="mr-auto">
-              <h6 className="mb-0">Inserisci i dati della tua carta</h6>
-            </div>
-          </div>
-        </a>
-        <a
-          className="card card-body p-3 mb-3"
-          href="#"
-          onClick={(e) => this.select(e, 'bank_account')}
-        >
-          <div className="d-flex w-100 justify-content-start align-items-center">
-            <Server className="mr-2" size={18} />
-            <div className="mr-auto">
-              <h6 className="mb-0">Utilizza l'IBAN</h6>
-            </div>
-          </div>
-        </a>
+  return (
+    <div>
+      <div style={{ height: 48 }}>
+        {paymentRequest && <PaymentRequest paymentRequest={paymentRequest} />}
       </div>
-    );
-  }
+      <Separator className="my-4">Or</Separator>
+
+      {availableProviders().length > 1 && (
+        <div className="d-flex mb-3">
+          {availableProviders().map((provider) => {
+            const { id, name, icon: Icon } = provider;
+            return (
+              <div key={id} className="mr-2" style={{ width: 96 }}>
+                <a
+                  className="card card-body p-3 mb-3"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setCurrentProvider(provider);
+                  }}
+                >
+                  <div className="d-flex flex-column align-items-start">
+                    <div className="bg-light px-2 py-2 mb-3 rounded d-flex">
+                      <Icon className="flex-shrink-0" size={18} />
+                    </div>
+                    <div className="mr-auto text-nowrap">
+                      <h6 className="mb-0">{name}</h6>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <CurrentProvider {...rest} />
+    </div>
+  );
 }
 
 export default (rest) => (
   <ElementsConsumer>
     {({ stripe, elements }) => (
-      <PayWith stripe={stripe} elements={elements} {...rest} />
+      <PaymentMethods stripe={stripe} elements={elements} {...rest} />
     )}
   </ElementsConsumer>
 );

@@ -1,5 +1,4 @@
 import Modal, { ModalTransition } from '@uidu/modal-dialog';
-import { ShellMain } from '@uidu/shell/src';
 import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import 'swiper/swiper-bundle.css';
@@ -10,7 +9,7 @@ export function WidgetsExampleScaffold({ component: Component, ...rest }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <ShellMain>
+    <>
       <IntlProvider locale="en">
         <Component {...rest} stripe={stripe} />
 
@@ -34,6 +33,6 @@ export function WidgetsExampleScaffold({ component: Component, ...rest }) {
           )}
         </ModalTransition>
       </IntlProvider>
-    </ShellMain>
+    </>
   );
 }

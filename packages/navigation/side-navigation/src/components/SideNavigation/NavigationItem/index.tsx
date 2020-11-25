@@ -26,7 +26,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   cursor: pointer;
   display: flex;
   border-radius: 0.25rem;
-  color: var(--body-color) !important;
+  color: var(--body-color);
   transition: background-color linear 300ms;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -59,6 +59,7 @@ export default function NavigationItem({
   items = [],
   isSortable = false,
   isOpen: isDefaultOpen = false,
+  isDisabled = false,
   onDragEnd,
   ...otherProps
 }) {
@@ -103,6 +104,15 @@ export default function NavigationItem({
               }
             : {})}
           $actionsCount={actions.length}
+          {...(isDisabled
+            ? {
+                tabIndex: -1,
+                'aria-disabled': true,
+                className: otherProps.className
+                  ? `${otherProps.className} disabled`
+                  : 'disabled',
+              }
+            : {})}
           {...otherProps}
         >
           {!!before && (

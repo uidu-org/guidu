@@ -21,7 +21,7 @@
     "react-chatview": "^0.2.5",
     "react-media": "^1.9.2",
     "react-native-web": "^0.14.0",
-    "styled-components": "^5.2.0",
+    "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

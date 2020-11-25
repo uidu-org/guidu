@@ -22,7 +22,7 @@
     "@uidu/editor-core": "^0.7.0",
     "prosemirror-view": "^1.9.10",
     "react": "^17.0.0",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.1"
   },
   "peerDependencies": {
     "react": "^17.0.0"
