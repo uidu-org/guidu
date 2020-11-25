@@ -1,5 +1,16 @@
 # @uidu/data-fields
 
+## 0.4.1
+
+### Patch Changes
+
+- 8733b78: "Use @uidu/menu in lieu of @uidu/item, fixing some editor behaviours"
+- Updated dependencies [5e821c6]
+- Updated dependencies [8733b78]
+- Updated dependencies [8733b78]
+  - @uidu/menu@0.4.1
+  - @uidu/field-downshift@0.5.1
+
 ## 0.4.0
 
 ### Minor Changes

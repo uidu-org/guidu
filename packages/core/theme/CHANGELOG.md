@@ -1,5 +1,11 @@
 # @uidu/theme
 
+## 0.5.1
+
+### Patch Changes
+
+- 5e821c6: Fix build
+
 ## 0.5.0
 
 ### Minor Changes

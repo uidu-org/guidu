@@ -1,5 +1,12 @@
 # @uidu/field-downshift
 
+## 0.5.1
+
+### Patch Changes
+
+- 8733b78: "Use @uidu/menu in lieu of @uidu/item, fixing some editor behaviours"
+- 8733b78: More cleanup on dropdowns
+
 ## 0.5.0
 
 ### Minor Changes

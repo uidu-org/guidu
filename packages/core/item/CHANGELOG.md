@@ -1,5 +1,13 @@
 # @uidu/item
 
+## 0.4.1
+
+### Patch Changes
+
+- 8733b78: More cleanup on dropdowns
+- Updated dependencies [5e821c6]
+  - @uidu/theme@0.5.1
+
 ## 0.4.0
 
 ### Minor Changes
