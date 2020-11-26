@@ -26,6 +26,7 @@
     "react-countdown": "^2.2.0",
     "react-feather": "^2.0.9",
     "react-intl": "^5.8.0",
+    "react-router": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

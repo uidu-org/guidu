@@ -13,6 +13,7 @@
     "@uidu/shell": "^1.2.0",
     "@uidu/side-navigation": "^0.2.0",
     "@uidu/slider": "^1.6.0",
+    "@uidu/theme": "^0.5.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-feather": "^2.0.9",
