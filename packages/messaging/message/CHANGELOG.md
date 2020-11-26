@@ -1,5 +1,19 @@
 # @uidu/message
 
+## 0.3.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/avatar@0.6.1
+  - @uidu/drawer@0.5.1
+  - @uidu/dropdown-menu@0.4.2
+  - @uidu/tooltip@0.4.1
+  - @uidu/media-card@0.4.1
+  - @uidu/media-viewer@0.3.1
+  - @uidu/message-renderer@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

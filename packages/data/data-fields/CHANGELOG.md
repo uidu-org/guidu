@@ -1,5 +1,18 @@
 # @uidu/data-fields
 
+## 0.4.2
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/menu@0.4.2
+  - @uidu/field-number@0.4.1
+  - @uidu/field-text@0.4.1
+  - @uidu/field-toggle@0.4.1
+  - @uidu/form@0.4.1
+  - @uidu/select@0.6.1
+
 ## 0.4.1
 
 ### Patch Changes

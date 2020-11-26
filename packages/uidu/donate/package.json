@@ -1,6 +1,6 @@
 {
   "name": "@uidu/donate",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": false,
   "description": "Donate form",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/donate",
@@ -13,18 +13,18 @@
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",
     "@uidu/checkbox": "^0.3.0",
-    "@uidu/contact": "^0.2.0",
+    "@uidu/contact": "^0.2.1",
     "@uidu/field-downshift": "^0.5.0",
-    "@uidu/field-text": "^0.4.0",
+    "@uidu/field-text": "^0.4.1",
     "@uidu/field-textarea": "^0.3.0",
-    "@uidu/form": "^0.4.0",
-    "@uidu/modal-dialog": "^0.4.0",
-    "@uidu/payments": "^0.3.0",
-    "@uidu/radio": "^0.5.0",
+    "@uidu/form": "^0.4.1",
+    "@uidu/modal-dialog": "^0.4.1",
+    "@uidu/payments": "^0.3.1",
+    "@uidu/radio": "^0.5.1",
     "@uidu/schema.d.ts": "^0.1.11",
-    "@uidu/select": "^0.6.0",
-    "@uidu/shell": "^1.2.0",
-    "@uidu/widgets": "^0.4.0",
+    "@uidu/select": "^0.6.1",
+    "@uidu/shell": "^1.2.1",
+    "@uidu/widgets": "^0.4.1",
     "classnames": "^2.2.6",
     "downshift": "^6.0.0",
     "react": "^17.0.0",
@@ -36,6 +36,6 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.0"
+    "@uidu/docs": "^0.3.1"
   }
 }

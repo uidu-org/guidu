@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+
 ## 1.6.0
 
 ### Minor Changes

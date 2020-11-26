@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.5.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/theme@0.5.2
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Widgets components with zoid",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",
@@ -9,11 +9,11 @@
   "types": "dist/uidu-widgets.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/contact": "^0.2.0",
-    "@uidu/shell": "^1.2.0",
-    "@uidu/side-navigation": "^0.2.0",
-    "@uidu/slider": "^1.6.0",
-    "@uidu/theme": "^0.5.1",
+    "@uidu/contact": "^0.2.1",
+    "@uidu/shell": "^1.2.1",
+    "@uidu/side-navigation": "^0.2.1",
+    "@uidu/slider": "^1.6.1",
+    "@uidu/theme": "^0.5.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-feather": "^2.0.9",
@@ -24,7 +24,7 @@
     "zoid": "^9.0.43"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.0",
-    "@uidu/modal-dialog": "^0.4.0"
+    "@uidu/docs": "^0.3.1",
+    "@uidu/modal-dialog": "^0.4.1"
   }
 }

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.11
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+
 ## 0.3.10
 
 ### Patch Changes

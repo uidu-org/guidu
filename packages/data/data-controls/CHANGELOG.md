@@ -1,5 +1,24 @@
 # @uidu/data-controls
 
+## 0.6.2
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/drawer@0.5.1
+  - @uidu/dropdown-menu@0.4.2
+  - @uidu/inline-dialog@0.4.1
+  - @uidu/menu@0.4.2
+  - @uidu/popup@0.4.1
+  - @uidu/spinner@0.4.1
+  - @uidu/tooltip@0.4.1
+  - @uidu/data-fields@0.4.2
+  - @uidu/field-text@0.4.1
+  - @uidu/form@0.4.1
+  - @uidu/select@0.6.1
+  - @uidu/shell@1.2.1
+
 ## 0.6.1
 
 ### Patch Changes

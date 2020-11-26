@@ -1,5 +1,16 @@
 # @uidu/task-decision
 
+## 0.3.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/avatar-group@2.5.2
+  - @uidu/button@0.4.1
+  - @uidu/spinner@0.4.1
+  - @uidu/theme@0.5.2
+
 ## 0.3.0
 
 ### Minor Changes

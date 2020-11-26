@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/spinner@0.4.1
+
 ## 1.2.0
 
 ### Minor Changes

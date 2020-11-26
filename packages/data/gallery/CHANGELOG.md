@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.2.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/spinner@0.4.1
+  - @uidu/data-controls@0.6.2
+  - @uidu/data-fields@0.4.2
+
 ## 0.2.0
 
 ### Minor Changes
