@@ -165,6 +165,7 @@ export default function Shell({
   position: absolute;
   width: 100%;
   height: 100%;
+  display: flex;
 }`}</style>
       {!embedded && (
         <>

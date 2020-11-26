@@ -11,11 +11,11 @@ export default md`
 
   ## Usage
 
-  ${code`import Propose from '@uidu/propose';`}
+  ${code`import Apply from '@uidu/apply';`}
 
   ${(
     <Example
-      packageName="@uidu/propose"
+      packageName="@uidu/apply"
       Component={require('../examples/Basic').default}
       title="Basic"
       source={require('!!raw-loader!../examples/Basic').default}
@@ -25,7 +25,7 @@ export default md`
   ${(
     <Props
       heading="Props"
-      props={require('!!extract-react-types-loader!../src/components/Propose')}
+      props={require('!!extract-react-types-loader!../src/components/Apply')}
     />
   )}
   `;

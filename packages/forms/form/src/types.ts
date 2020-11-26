@@ -31,7 +31,7 @@ export type FormProps = {
 export type FormSectionProps = {
   children?: ReactNode;
   name: string | ReactNode;
-  icon: FC<IconProps>;
+  icon?: FC<IconProps>;
   layout?: LayoutType;
   description?: string | ReactNode;
   isFirst?: boolean;

@@ -168,84 +168,32 @@ module.exports = async function createWebpackConfig(
           ],
         },
         {
-          test: /\.css$/i,
+          test: /\.((c|sa|sc)ss)$/i,
           use: [
             'style-loader',
-            'css-loader',
             {
-              loader: 'postcss-loader',
+              loader: 'css-loader',
               options: {
-                postcssOptions: {
-                  ident: 'postcss',
-                  plugins: [
-                    require('postcss-flexbugs-fixes'),
-                    require('postcss-preset-env')({
-                      autoprefixer: {
-                        flexbox: 'no-2009',
-                      },
-                      stage: 3,
-                    }),
-                  ],
-                },
+                // Run `postcss-loader` on each CSS `@import`, do not forget that `sass-loader` compile non CSS `@import`'s into a single file
+                // If you need run `sass-loader` and `postcss-loader` on each CSS `@import` please set it to `2`
+                importLoaders: 2,
+                // Automatically enable css modules for files satisfying `/\.module\.\w+$/i` RegExp.
+                modules: { auto: true },
               },
             },
-          ],
-        },
-        {
-          test: /\.s[ac]ss$/i,
-          use: [
-            'style-loader',
-            'css-loader',
             {
               loader: 'postcss-loader',
               options: {
                 postcssOptions: {
-                  ident: 'postcss',
                   plugins: [
                     require('postcss-flexbugs-fixes'),
-                    require('postcss-preset-env')({
-                      autoprefixer: {
-                        flexbox: 'no-2009',
-                      },
-                      stage: 3,
-                    }),
+                    require('postcss-preset-env'),
                   ],
                 },
               },
             },
             {
               loader: 'sass-loader',
-              options: {},
-            },
-          ],
-        },
-        {
-          test: /\module.s[ac]ss$/i,
-          use: [
-            'style-loader',
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                postcssOptions: {
-                  ident: 'postcss',
-                  plugins: [
-                    require('postcss-flexbugs-fixes'),
-                    require('postcss-preset-env')({
-                      autoprefixer: {
-                        flexbox: 'no-2009',
-                      },
-                      stage: 3,
-                    }),
-                  ],
-                },
-              },
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                modules: true,
-              },
             },
           ],
         },
@@ -269,9 +217,12 @@ module.exports = async function createWebpackConfig(
     },
     resolve: {
       mainFields: ['uidu:src', 'browser', 'module', 'main'],
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', 'module.scss'],
       alias: {
         'react-native$': 'react-native-web',
+      },
+      fallback: {
+        path: false,
       },
       ...(webpackOptions ? webpackOptions.resolve : {}),
     },
@@ -325,6 +276,11 @@ function getPlugins(
       WEBSITE_ENV: `"${websiteEnv}"`,
       BASE_TITLE: `"GUIdu by uidu ${!isProduction ? '- DEV' : ''}"`,
       DEFAULT_META_DESCRIPTION: `"GUIdu is the official component library for uidu's Design System."`,
+      // process: 'process/browser',
+    }),
+
+    new webpack.ProvidePlugin({
+      process: 'process/browser',
     }),
   ];
 
@@ -415,7 +371,7 @@ function getOptimizations({ isProduction, noMinimizeFlag }) {
       // The default value of 5 causes the webpack process to crash, reason currently unknown
       maxAsyncRequests: Infinity,
       cacheGroups: {
-        vendors: {
+        defaultVendors: {
           name: 'vendors',
           enforce: true,
           chunks: 'all',

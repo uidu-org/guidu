@@ -1,8 +1,7 @@
-import { FormSection, FormWrapper } from '@uidu/form';
+import Form, { FormSection, FormSectionSubmit, FormWrapper } from '@uidu/form';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Form, { FormSectionSubmit } from '../../../../../forms/form/src';
 import Attendance from '../Attendance';
 
 export default function Attendances({

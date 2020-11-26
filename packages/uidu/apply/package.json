@@ -1,14 +1,14 @@
 {
-  "name": "@uidu/propose",
+  "name": "@uidu/apply",
   "version": "0.2.0",
   "private": false,
   "description": "Job/volunteer proposals",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/propose",
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/apply",
   "license": "MIT",
   "author": "uidu",
-  "main": "dist/uidu-propose.cjs.js",
-  "module": "dist/uidu-propose.esm.js",
-  "types": "dist/uidu-propose.cjs.d.ts",
+  "main": "dist/uidu-apply.cjs.js",
+  "module": "dist/uidu-apply.esm.js",
+  "types": "dist/uidu-apply.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.3.0",
@@ -16,9 +16,12 @@
     "@uidu/field-text": "^0.4.0",
     "@uidu/field-textarea": "^0.3.0",
     "@uidu/form": "^0.4.0",
+    "@uidu/shell": "^1.2.1",
     "@uidu/widgets": "^0.4.0",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@
   "types": "dist/uidu-tax-reminder.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@uidu/calendar": "^0.2.0",
     "@uidu/checkbox": "^0.3.0",
     "@uidu/contact": "^0.2.0",
     "@uidu/field-date": "^0.3.0",
@@ -17,11 +18,14 @@
     "@uidu/field-textarea": "^0.3.0",
     "@uidu/form": "^0.4.0",
     "@uidu/select": "^0.6.0",
+    "@uidu/shell": "^1.2.1",
     "@uidu/widgets": "^0.4.0",
     "moment": "^2.27.0",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
     "react-intl": "^5.8.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
