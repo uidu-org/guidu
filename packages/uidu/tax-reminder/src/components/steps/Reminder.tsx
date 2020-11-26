@@ -26,12 +26,7 @@ export default function Reminder({ handleSubmit }) {
               <FormSection
                 isFirst
                 isLast
-                name={
-                  <FormattedMessage
-                    defaultMessage="Set your reminder"
-                    id="guidu.taxReminder.reminder.title"
-                  />
-                }
+                name={<FormattedMessage defaultMessage="Set your reminder" />}
                 description={
                   <p className="text-muted">
                     Quando hai in programma la dichiarazione dei redditi? Ti

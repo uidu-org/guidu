@@ -31,12 +31,7 @@ export default function Preferences({
                 <FormSectionSubmit
                   canSubmit={canSubmit}
                   scope="primary"
-                  label={
-                    <FormattedMessage
-                      defaultMessage="Next"
-                      id="guidu.donate.preferences.submit"
-                    />
-                  }
+                  label={<FormattedMessage defaultMessage="Next" />}
                 />
               )}
             >
@@ -57,10 +52,7 @@ export default function Preferences({
                   label={
                     <div>
                       <h6 className="mb-1">
-                        <FormattedMessage
-                          defaultMessage="Donate anonymously"
-                          id="guidu.donate.preferences.anonymous"
-                        />
+                        <FormattedMessage defaultMessage="Donate anonymously" />
                       </h6>
                       <p className="small text-muted text-form">
                         When you donate anonymously, your name will never appear
@@ -78,10 +70,7 @@ export default function Preferences({
                     label={
                       <div>
                         <h6 className="mb-1">
-                          <FormattedMessage
-                            defaultMessage="Dedicate this donation"
-                            id="guidu.donate.preferences.dedicated"
-                          />
+                          <FormattedMessage defaultMessage="Dedicate this donation" />
                         </h6>
                         <p className="small text-muted text-form">
                           You can dedicate your donation to someone special. If
@@ -108,10 +97,7 @@ export default function Preferences({
                     label={
                       <div>
                         <h6 className="mb-1">
-                          <FormattedMessage
-                            defaultMessage="Leave a message"
-                            id="guidu.donate.preferences.leaveAMessage"
-                          />
+                          <FormattedMessage defaultMessage="Leave a message" />
                         </h6>
                         <p className="small text-muted text-form">
                           You can choose whether your message is public or
@@ -128,10 +114,7 @@ export default function Preferences({
                           layout="elementOnly"
                           rows={3}
                           label={
-                            <FormattedMessage
-                              defaultMessage="Leave a message"
-                              id="guidu.donate.preferences.submit"
-                            />
+                            <FormattedMessage defaultMessage="Leave a message" />
                           }
                           name="body"
                           className="form-control form-control-autosize"

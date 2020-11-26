@@ -92,7 +92,6 @@ export default function Dashlet({
       >
         <FormattedMessage
           defaultMessage="Error loading {name}"
-          id="guidu.dashlets.loading.error"
           values={{ name: dashlet.label }}
         />
       </div>

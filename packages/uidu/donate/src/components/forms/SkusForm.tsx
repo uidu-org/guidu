@@ -6,7 +6,7 @@ import { isCustomSku } from '../../utils';
 
 function CustomSkuForm({ donation, sku, handleSubmit }) {
   const [customAmount, setCustomAmount] = useState(
-    donation.amount ? donation.amount / 100 : null,
+    donation?.amount ? donation.amount / 100 : null,
   );
   return (
     <Form
@@ -20,7 +20,7 @@ function CustomSkuForm({ donation, sku, handleSubmit }) {
                   defaultMessage={`Donate {customAmount} {currency}`}
                   values={{
                     currency: sku.currency,
-                    customAmount: donation.amount
+                    customAmount: donation?.amount
                       ? donation.amount / 100
                       : customAmount / 100,
                   }}
@@ -40,10 +40,7 @@ function CustomSkuForm({ donation, sku, handleSubmit }) {
         value={sku.id}
       />
       <div className="mt-3">
-        <FormattedMessage
-          defaultMessage="Choose your donation amount"
-          id="guidu.donate.amount.custom"
-        >
+        <FormattedMessage defaultMessage="Choose your donation amount">
           {(placeholder) => (
             <FieldText
               addonBefore={
@@ -54,12 +51,7 @@ function CustomSkuForm({ donation, sku, handleSubmit }) {
               type="number"
               placeholder={placeholder}
               name="orderAttributes[itemsAttributes][0][quantity]"
-              label={
-                <FormattedMessage
-                  id="guidu.donate.sku.custom.label"
-                  defaultMessage="Donation amount"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Donation amount" />}
               rowClassName="mb-0"
               onChange={(_name, value) => setCustomAmount(value * 100)}
               value={customAmount}

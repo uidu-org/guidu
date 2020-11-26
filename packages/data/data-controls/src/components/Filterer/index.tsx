@@ -31,7 +31,6 @@ export default function Filterer({
           className="d-none d-xl-block"
         >
           <FormattedMessage
-            id="guidu.data_controls.sorter.label"
             defaultMessage={`{filtersCount, plural,
                   =0 {Filter}
                   one {Filtered by 1 field}
@@ -47,14 +46,7 @@ export default function Filterer({
         origin="right"
         size="medium"
       >
-        <DrawerLayout
-          name={
-            <FormattedMessage
-              id="guidu.data_controls.filterer.label"
-              defaultMessage="Filter"
-            />
-          }
-        >
+        <DrawerLayout name={<FormattedMessage defaultMessage="Filter" />}>
           <FiltererForm
             tableInstance={tableInstance}
             filters={filters}

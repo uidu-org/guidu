@@ -39,12 +39,7 @@ export default function Order({ event, handleSubmit }) {
                     scope="primary"
                     canSubmit={canSubmit}
                     loading={loading}
-                    label={
-                      <FormattedMessage
-                        defaultMessage="Proceed"
-                        id="guidu.attend.order.submit"
-                      />
-                    }
+                    label={<FormattedMessage defaultMessage="Proceed" />}
                   />
                 )}
               >

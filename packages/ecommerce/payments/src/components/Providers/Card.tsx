@@ -20,10 +20,7 @@ export default function Card({
         <div style={{ position: 'relative' }}>
           <div className="form-group">
             <label htmlFor="credit-card">
-              <FormattedMessage
-                defaultMessage="Insert your credit / debit card details"
-                id="guidu.payments.card.label"
-              />
+              <FormattedMessage defaultMessage="Insert your credit / debit card details" />
             </label>
             <CardElement
               id="credit-card"
@@ -33,19 +30,13 @@ export default function Card({
           </div>
           <div className="form-group">
             <label htmlFor="credit-card">
-              <FormattedMessage
-                defaultMessage="Insert your credit / debit card details"
-                id="guidu.payments.card.label"
-              />
+              <FormattedMessage defaultMessage="Insert your credit / debit card details" />
             </label>
             <input type="text" className="form-control" />
           </div>
           <div className="form-group">
             <label htmlFor="credit-card">
-              <FormattedMessage
-                defaultMessage="Insert your credit / debit card details"
-                id="guidu.payments.card.label"
-              />
+              <FormattedMessage defaultMessage="Insert your credit / debit card details" />
             </label>
             <input type="text" className="form-control" />
           </div>
@@ -55,12 +46,7 @@ export default function Card({
           loading={loading}
           canSubmit={canSubmit}
           scope="primary"
-          label={
-            <FormattedMessage
-              defaultMessage="Submit payment"
-              id="guidu.payments.card.pay"
-            />
-          }
+          label={<FormattedMessage defaultMessage="Submit payment" />}
         />
       </form>
     </>

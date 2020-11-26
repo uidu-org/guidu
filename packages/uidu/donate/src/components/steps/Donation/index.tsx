@@ -95,21 +95,11 @@ export function OptionScaffold({
 const recurrences = [
   {
     id: 'once',
-    name: (
-      <FormattedMessage
-        defaultMessage="Once"
-        id="guidu.donate.recurrence.once"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Once" />,
   },
   {
     id: 'month',
-    name: (
-      <FormattedMessage
-        defaultMessage="Recurring"
-        id="guidu.donate.recurrence.monthly"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Recurring" />,
   },
 ];
 
@@ -122,11 +112,9 @@ export default function Donation({
     donation?.orderItem ? 'once' : 'month',
   );
 
-  console.log(donation);
-
   useEffect(() => {
-    setRecurrence(donation.orderItem ? 'once' : 'month');
-  }, [donation.orderItem]);
+    setRecurrence(donation?.orderItem ? 'once' : 'month');
+  }, [donation?.orderItem]);
 
   return (
     <ShellMain>

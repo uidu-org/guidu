@@ -40,18 +40,10 @@ export default class Contact extends PureComponent<any> {
               <FormSection
                 isFirst
                 isLast
-                name={
-                  <FormattedMessage
-                    id="guidu.contact.title"
-                    defaultMessage="Contact info"
-                  />
-                }
+                name={<FormattedMessage defaultMessage="Contact info" />}
                 description={
                   <p className="text-muted">
-                    <FormattedMessage
-                      defaultMessage="Insert your contact details"
-                      id="guidu.contact.description"
-                    />
+                    <FormattedMessage defaultMessage="Insert your contact details" />
                   </p>
                 }
               >
@@ -71,12 +63,7 @@ export default class Contact extends PureComponent<any> {
                     <div className="col">
                       <FieldText
                         type="text"
-                        label={
-                          <FormattedMessage
-                            defaultMessage="First name"
-                            id="guidu.contact.firstName"
-                          />
-                        }
+                        label={<FormattedMessage defaultMessage="First name" />}
                         name="contact[first_name]"
                         autoComplete="given-name"
                         required
@@ -85,12 +72,7 @@ export default class Contact extends PureComponent<any> {
                     <div className="col">
                       <FieldText
                         type="text"
-                        label={
-                          <FormattedMessage
-                            defaultMessage="Last name"
-                            id="guidu.contact.lastName"
-                          />
-                        }
+                        label={<FormattedMessage defaultMessage="Last name" />}
                         name="contact[last_name]"
                         autoComplete="family-name"
                         required
@@ -100,12 +82,7 @@ export default class Contact extends PureComponent<any> {
 
                   <FieldText
                     type="text"
-                    label={
-                      <FormattedMessage
-                        defaultMessage="Email"
-                        id="guidu.contact.email"
-                      />
-                    }
+                    label={<FormattedMessage defaultMessage="Email" />}
                     name="contact[email]"
                     autoComplete="email"
                     required
@@ -114,10 +91,7 @@ export default class Contact extends PureComponent<any> {
                     <Checkbox
                       name="contact[privacy]"
                       label={
-                        <FormattedMessage
-                          defaultMessage="I accept the terms of service and have read the privacy policy. I agree that Eventbrite may share my information with the event organizer."
-                          id="guidu.contact.lastName"
-                        />
+                        <FormattedMessage defaultMessage="I accept the terms of service and have read the privacy policy. I agree that Eventbrite may share my information with the event organizer." />
                       }
                       layout="elementOnly"
                       required

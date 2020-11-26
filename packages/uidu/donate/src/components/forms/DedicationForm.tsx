@@ -7,30 +7,15 @@ import { FormattedMessage } from 'react-intl';
 const dedicationTypes = [
   {
     id: 'inHonorOf',
-    name: (
-      <FormattedMessage
-        defaultMessage="In honor of"
-        id="guidu.donate.dedicationKinds.inHonorOf"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="In honor of" />,
   },
   {
     id: 'inMemoryOf',
-    name: (
-      <FormattedMessage
-        defaultMessage="In memory of"
-        id="guidu.donate.dedicationKinds.inMemoryOf"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="In memory of" />,
   },
   {
     id: 'inspiredBy',
-    name: (
-      <FormattedMessage
-        defaultMessage="Inspired by"
-        id="guidu.donate.dedicationKinds.inspiredBy"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Inspired by" />,
   },
 ];
 
@@ -40,42 +25,22 @@ export default function DedicationForm({ dedication }) {
       <Select
         name="dedication[kind]"
         options={dedicationTypes}
-        label={
-          <FormattedMessage
-            defaultMessage="Dedication kind"
-            id="guidu.donate.dedication.kind"
-          />
-        }
+        label={<FormattedMessage defaultMessage="Dedication kind" />}
         required
       />
       <FieldText
         name="dedication[name]"
-        label={
-          <FormattedMessage
-            defaultMessage="Dedication name"
-            id="guidu.donate.dedication.name"
-          />
-        }
+        label={<FormattedMessage defaultMessage="Dedication name" />}
         required
       />
       <FieldText
         type="email"
         name="dedication[email]"
-        label={
-          <FormattedMessage
-            defaultMessage="Dedication email"
-            id="guidu.donate.dedication.email"
-          />
-        }
+        label={<FormattedMessage defaultMessage="Dedication email" />}
       />
       <FieldTextarea
         name="dedication[message]"
-        label={
-          <FormattedMessage
-            defaultMessage="Dedication message"
-            id="guidu.donate.dedication.message"
-          />
-        }
+        label={<FormattedMessage defaultMessage="Dedication message" />}
       />
     </>
   );

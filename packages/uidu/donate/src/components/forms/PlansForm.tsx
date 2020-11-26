@@ -6,7 +6,7 @@ import { isCustomPlan } from '../../utils';
 
 function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
   const [customAmount, setCustomAmount] = useState(
-    donation.amount ? donation.amount / 100 : null,
+    donation?.amount ? donation.amount / 100 : null,
   );
   return (
     <Form
@@ -24,7 +24,7 @@ function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
                   values={{
                     currency: plan.currency,
                     recurrence,
-                    customAmount: donation.amount
+                    customAmount: donation?.amount
                       ? donation.amount / 100
                       : customAmount / 100,
                   }}
@@ -44,10 +44,7 @@ function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
         value={plan.id}
       />
       <div className="mt-3">
-        <FormattedMessage
-          defaultMessage="Choose your donation amount"
-          id="guidu.donate.amount.custom"
-        >
+        <FormattedMessage defaultMessage="Choose your donation amount">
           {(placeholder) => (
             <FieldText
               addonBefore={
@@ -66,10 +63,7 @@ function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
               required
               addonAfter={
                 <span className="input-group-text">
-                  <FormattedMessage
-                    defaultMessage="Monthly"
-                    id="guidu.donate.recurrence.monthly"
-                  />
+                  <FormattedMessage defaultMessage="Monthly" />
                 </span>
               }
             />

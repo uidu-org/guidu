@@ -18,10 +18,7 @@ export default function Resizer({ onResize, rowHeight }: ResizerProps) {
             }
           : null)}
       >
-        <FormattedMessage
-          id="guidu.data_controls.resizer.compact"
-          defaultMessage="Compact"
-        />
+        <FormattedMessage defaultMessage="Compact" />
       </DropdownItem>
       <DropdownItem
         onClick={(e) => {
@@ -34,10 +31,7 @@ export default function Resizer({ onResize, rowHeight }: ResizerProps) {
             }
           : null)}
       >
-        <FormattedMessage
-          id="guidu.data_controls.resizer.default"
-          defaultMessage="Default"
-        />
+        <FormattedMessage defaultMessage="Default" />
       </DropdownItem>
       <DropdownItem
         onClick={(e) => {
@@ -50,10 +44,7 @@ export default function Resizer({ onResize, rowHeight }: ResizerProps) {
             }
           : null)}
       >
-        <FormattedMessage
-          id="guidu.data_controls.resizer.normal"
-          defaultMessage="Normal"
-        />
+        <FormattedMessage defaultMessage="Normal" />
       </DropdownItem>
       <DropdownItem
         onClick={(e) => {
@@ -66,10 +57,7 @@ export default function Resizer({ onResize, rowHeight }: ResizerProps) {
             }
           : null)}
       >
-        <FormattedMessage
-          id="guidu.data_controls.resizer.extra"
-          defaultMessage="Extra"
-        />
+        <FormattedMessage defaultMessage="Extra" />
       </DropdownItem>
     </DropdownItemGroup>
   );

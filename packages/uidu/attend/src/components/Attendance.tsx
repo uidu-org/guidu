@@ -14,7 +14,6 @@ export default function Attendance({ order, attendance, handleSubmit }) {
         //   label={
         //     <FormattedMessage
         //       defaultMessage="Confirm"
-        //       id="guidu.attend.attendance.submit"
         //     />
         //   }
         // />

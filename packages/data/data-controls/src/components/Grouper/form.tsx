@@ -35,7 +35,6 @@ export default function GrouperForm({ tableInstance }: GrouperFormProps) {
               <div className="form-group mb-0">
                 <label htmlFor="" className="d-flex align-items-center">
                   <FormattedMessage
-                    id="guidu.data_controls.grouper.grouped_by"
                     defaultMessage={`{index, plural,
                       =0 {Group by}
                       other {Then by}
@@ -101,15 +100,9 @@ export default function GrouperForm({ tableInstance }: GrouperFormProps) {
         <PickField
           label={
             groupBy.length ? (
-              <FormattedMessage
-                id="guidu.data_controls.grouper.pick"
-                defaultMessage="Pick a field to group by"
-              />
+              <FormattedMessage defaultMessage="Pick a field to group by" />
             ) : (
-              <FormattedMessage
-                id="guidu.data_controls.grouper.no_groupers"
-                defaultMessage="No selected fields to group by. Pick one"
-              />
+              <FormattedMessage defaultMessage="No selected fields to group by. Pick one" />
             )
           }
           onClick={(columnDef) => {

@@ -29,12 +29,7 @@ export default function Attendances({
                   scope="primary"
                   canSubmit={canSubmit}
                   loading={loading}
-                  label={
-                    <FormattedMessage
-                      defaultMessage="Proceed"
-                      id="guidu.attend.order.submit"
-                    />
-                  }
+                  label={<FormattedMessage defaultMessage="Proceed" />}
                 />
               )}
             >
@@ -45,7 +40,6 @@ export default function Attendances({
                   name={
                     <FormattedMessage
                       defaultMessage="Participant {index}"
-                      id="guidu.attend.attendance.step.label"
                       values={{
                         index: index + 1,
                       }}

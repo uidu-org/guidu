@@ -32,7 +32,6 @@ export default function Grouper({
           className="d-none d-xl-block"
         >
           <FormattedMessage
-            id="guidu.data_controls.sorter.label"
             defaultMessage={`{groupersCount, plural,
                   =0 {Group by}
                   one {Grouped by 1 field}
@@ -50,14 +49,7 @@ export default function Grouper({
         origin="right"
         size="medium"
       >
-        <DrawerLayout
-          name={
-            <FormattedMessage
-              id="guidu.data_controls.grouper.label"
-              defaultMessage="Group by"
-            />
-          }
-        >
+        <DrawerLayout name={<FormattedMessage defaultMessage="Group by" />}>
           <GrouperForm tableInstance={tableInstance} />
         </DrawerLayout>
       </Drawer>

@@ -19,12 +19,7 @@ export default function Application({ call, application, onSave }) {
                   scope="primary"
                   canSubmit={canSubmit}
                   loading={loading}
-                  label={
-                    <FormattedMessage
-                      defaultMessage="Next"
-                      id="guidu.apply.next"
-                    />
-                  }
+                  label={<FormattedMessage defaultMessage="Next" />}
                 />
               )}
             >
@@ -32,17 +27,11 @@ export default function Application({ call, application, onSave }) {
                 isFirst
                 isLast
                 name={
-                  <FormattedMessage
-                    defaultMessage="Submit your application"
-                    id="guidu.apply.application.name"
-                  />
+                  <FormattedMessage defaultMessage="Submit your application" />
                 }
                 description={
                   <p className="text-muted">
-                    <FormattedMessage
-                      defaultMessage=""
-                      id="guidu.apply.application.description"
-                    />
+                    <FormattedMessage defaultMessage="Fill the form to send your application" />
                   </p>
                 }
               >

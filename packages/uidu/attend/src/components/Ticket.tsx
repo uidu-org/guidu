@@ -13,7 +13,6 @@ export default function Ticket({ ticket, index, handleCounterChange }) {
               <p className="font-weight-bold mb-0">{ticket.name}</p>
               <p className="mb-0 text-muted d-flex align-items-center">
                 <FormattedMessage
-                  id="guidu.attend.order.ticket.left"
                   defaultMessage="{tickets} left"
                   values={{
                     tickets:

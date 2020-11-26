@@ -38,7 +38,6 @@ const Table: DataViewKind = {
           icon={EyeOff}
           name={
             <FormattedMessage
-              id="guidu.data_controls.configurator.label"
               defaultMessage={`{hiddenCount, plural,
                   =0 {Hide fields}
                   one {1 hidden field}

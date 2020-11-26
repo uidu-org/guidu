@@ -21,12 +21,7 @@ export default function TaxReminder({
   const steps: ShellStep[] = [
     {
       relativePath: 'reminder',
-      name: (
-        <FormattedMessage
-          defaultMessage="Set your reminder"
-          id="guidu.tax-reminder.reminder"
-        />
-      ),
+      name: <FormattedMessage defaultMessage="Set your reminder" />,
       component: () => (
         <Reminder
           {...rest}
@@ -38,12 +33,7 @@ export default function TaxReminder({
     },
     {
       relativePath: 'contact',
-      name: (
-        <FormattedMessage
-          defaultMessage="Contact information"
-          id="guidu.donate.donation.contact"
-        />
-      ),
+      name: <FormattedMessage defaultMessage="Contact information" />,
       component: () => (
         <Contact
           {...rest}

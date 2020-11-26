@@ -29,7 +29,6 @@ export default function Sorter({ tableInstance, updateView }: SorterProps) {
           className="d-none d-xl-block"
         >
           <FormattedMessage
-            id="guidu.data_controls.sorter.label"
             defaultMessage={`{sortersCount, plural,
                   =0 {Sort}
                   one {Sorted by 1 field}
@@ -47,14 +46,7 @@ export default function Sorter({ tableInstance, updateView }: SorterProps) {
         origin="right"
         size="medium"
       >
-        <DrawerLayout
-          name={
-            <FormattedMessage
-              id="guidu.data_controls.sorter.label"
-              defaultMessage="Sort"
-            />
-          }
-        >
+        <DrawerLayout name={<FormattedMessage defaultMessage="Sort" />}>
           <SorterForm
             tableInstance={tableInstance}
             sorters={sortBy}

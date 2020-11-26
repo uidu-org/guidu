@@ -19,12 +19,7 @@ export default class Address extends PureComponent<AddressProps> {
           <div className="col-sm-8">
             <FieldText
               type="text"
-              label={
-                <FormattedMessage
-                  id={`guidu.stripeAccounts.${scope}.address`}
-                  defaultMessage="Primary address"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Primary address" />}
               name={`stripe_account[${prefix}_address]`}
               value={stripeAccount[`${prefix}_address`] || ''}
               required
@@ -33,12 +28,7 @@ export default class Address extends PureComponent<AddressProps> {
           <div className="col-sm-4">
             <FieldText
               type="text"
-              label={
-                <FormattedMessage
-                  id={`guidu.stripeAccounts.${scope}.postalCode`}
-                  defaultMessage="Postal code"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Postal code" />}
               name={`stripe_account[${prefix}_postal_code]`}
               value={stripeAccount[`${prefix}_postal_code`] || ''}
               // validations={{
@@ -55,12 +45,7 @@ export default class Address extends PureComponent<AddressProps> {
           <div className="col-sm-4">
             <FieldText
               type="text"
-              label={
-                <FormattedMessage
-                  id={`guidu.stripeAccounts.${scope}.city`}
-                  defaultMessage="City"
-                />
-              }
+              label={<FormattedMessage defaultMessage="City" />}
               name={`stripe_account[${prefix}_city]`}
               value={stripeAccount[`${prefix}_city`] || ''}
               required
@@ -69,12 +54,7 @@ export default class Address extends PureComponent<AddressProps> {
           <div className="col-sm-4">
             <FieldText
               type="text"
-              label={
-                <FormattedMessage
-                  id={`guidu.stripeAccounts.${scope}.state`}
-                  defaultMessage="State"
-                />
-              }
+              label={<FormattedMessage defaultMessage="State" />}
               name={`stripe_account[${prefix}_state]`}
               value={stripeAccount[`${prefix}_state`] || ''}
               // validations={{
@@ -89,12 +69,7 @@ export default class Address extends PureComponent<AddressProps> {
           <div className="col-sm-4">
             <FieldText
               type="text"
-              label={
-                <FormattedMessage
-                  id={`guidu.stripeAccounts.${scope}.country`}
-                  defaultMessage="Country"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Country" />}
               name={`stripe_account[${prefix}_country]`}
               value={stripeAccount[`${prefix}_country`] || ''}
               autoCapitalize="characters"

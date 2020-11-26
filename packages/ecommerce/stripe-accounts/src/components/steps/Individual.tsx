@@ -7,16 +7,11 @@ import Address from './Address';
 export default function LegalEntity({ onSave, stripeAccount }) {
   return (
     <Form
-      handleSubmit={async model => onSave(model)}
+      handleSubmit={async (model) => onSave(model)}
       autoComplete="off"
       footerRenderer={({ loading, canSubmit }) => (
         <FormSubmit
-          label={
-            <FormattedMessage
-              id="guidu.stripeAccounts.next"
-              defaultMessage="Next"
-            />
-          }
+          label={<FormattedMessage defaultMessage="Next" />}
           canSubmit={canSubmit}
           loading={loading}
         />
@@ -26,12 +21,7 @@ export default function LegalEntity({ onSave, stripeAccount }) {
         <div className="col-sm-6">
           <FieldText
             type="text"
-            label={
-              <FormattedMessage
-                id="guidu.stripeAccounts.individual.firstName"
-                defaultMessage="Name"
-              />
-            }
+            label={<FormattedMessage defaultMessage="Name" />}
             name="stripe_account[individual_first_name]"
             value={stripeAccount.individual_first_name || ''}
             required
@@ -40,12 +30,7 @@ export default function LegalEntity({ onSave, stripeAccount }) {
         <div className="col-sm-6">
           <FieldText
             type="text"
-            label={
-              <FormattedMessage
-                id="guidu.stripeAccounts.individual.lastName"
-                defaultMessage="Last name"
-              />
-            }
+            label={<FormattedMessage defaultMessage="Last name" />}
             name="stripe_account[individual_last_name]"
             value={stripeAccount.individual_last_name || ''}
             required
@@ -56,10 +41,7 @@ export default function LegalEntity({ onSave, stripeAccount }) {
       <FieldText
         type="text"
         label={
-          <FormattedMessage
-            id="guidu.stripeAccounts.individual.document"
-            defaultMessage="Personal identification document"
-          />
+          <FormattedMessage defaultMessage="Personal identification document" />
         }
         name="stripe_account[individual_personal_id]"
         required

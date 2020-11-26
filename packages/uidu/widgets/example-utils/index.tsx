@@ -14,12 +14,12 @@ export function WidgetsExampleScaffold({
   const [messages, setMessages] = useState(null);
 
   useEffect(() => {
-    loadLocaleData(locale).then(setMessages);
+    if (loadLocaleData) loadLocaleData(locale).then(setMessages);
   }, [locale, loadLocaleData]);
 
-  if (!messages) {
-    return null;
-  }
+  // if (!messages) {
+  //   return null;
+  // }
 
   return (
     <>
@@ -27,7 +27,8 @@ export function WidgetsExampleScaffold({
         key={locale}
         locale={locale}
         defaultLocale="en"
-        messages={messages.default}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...(messages ? { messages: messages.default } : {})}
       >
         <Component {...rest} stripe={stripe} />
 

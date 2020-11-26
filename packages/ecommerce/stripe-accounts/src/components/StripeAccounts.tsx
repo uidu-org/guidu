@@ -24,12 +24,12 @@ class StripeAccounts extends PureComponent<any, any> {
     };
   }
 
-  cleanDate = date => {
+  cleanDate = (date) => {
     const comps = date.split('/');
     return `${comps[2]}-${comps[1]}-${comps[0]}`;
   };
 
-  handleSubmit = model => {
+  handleSubmit = (model) => {
     this.updateStripeAccount(model, false);
     const { stripe } = this.props;
     const {
@@ -50,7 +50,7 @@ class StripeAccounts extends PureComponent<any, any> {
       .then(this.stripeResponseHandler);
   };
 
-  stripeResponseHandler = response => {
+  stripeResponseHandler = (response) => {
     const { stripeAccount } = this.state;
     if (response.error) {
       this.setState({
@@ -194,7 +194,7 @@ class StripeAccounts extends PureComponent<any, any> {
 
   updateStripeAccount = (model, callback) => {
     this.setState(
-      prevState => ({
+      (prevState) => ({
         stripeAccount: {
           ...prevState.stripeAccount,
           ...model.stripe_account,
@@ -218,18 +218,13 @@ class StripeAccounts extends PureComponent<any, any> {
             <Step
               {...getStepProps()}
               name="business"
-              label={
-                <FormattedMessage
-                  id="guidu.stripeAccounts.business.title"
-                  defaultMessage="Business's data"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Business's data" />}
               scope="teams"
               number={1}
             >
               <Business
                 stripeAccount={stripeAccount}
-                onSave={newStripeAccount =>
+                onSave={(newStripeAccount) =>
                   this.updateStripeAccount(newStripeAccount, () => {
                     jumpToStep('individual');
                   })
@@ -239,18 +234,13 @@ class StripeAccounts extends PureComponent<any, any> {
             <Step
               {...getStepProps()}
               name="individual"
-              label={
-                <FormattedMessage
-                  id="guidu.stripeAccounts.individual.title"
-                  defaultMessage="Individual"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Individual" />}
               scope="teams"
               number={2}
             >
               <Individual
                 stripeAccount={stripeAccount}
-                onSave={newStripeAccount =>
+                onSave={(newStripeAccount) =>
                   this.updateStripeAccount(newStripeAccount, () => {
                     jumpToStep('bank');
                   })
@@ -260,12 +250,7 @@ class StripeAccounts extends PureComponent<any, any> {
             <Step
               {...getStepProps()}
               name="bank"
-              label={
-                <FormattedMessage
-                  id="guidu.stripeAccounts.externalAccount.title"
-                  defaultMessage="Bank Account"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Bank Account" />}
               scope="teams"
               number={3}
             >

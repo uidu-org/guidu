@@ -16,12 +16,7 @@ export default class BankAccount extends PureComponent<any> {
           autoComplete="off"
           footerRenderer={({ loading, canSubmit }) => (
             <FormSubmit
-              label={
-                <FormattedMessage
-                  id="guidu.stripeAccounts.Save"
-                  defaultMessage="Save"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Save" />}
               canSubmit={canSubmit}
               loading={loading}
             />
@@ -30,10 +25,7 @@ export default class BankAccount extends PureComponent<any> {
           <div style={{ position: 'relative' }}>
             <div className="form-group">
               <label htmlFor="credit-card">
-                <FormattedMessage
-                  id="guidu.stripeAccounts.bankAccount.iban"
-                  defaultMessage="IBAN"
-                />
+                <FormattedMessage defaultMessage="IBAN" />
               </label>
               <IbanElement
                 id="iban-element"
@@ -46,12 +38,7 @@ export default class BankAccount extends PureComponent<any> {
           {error && <div className="alert alert-danger">{error.message}</div>}
           <FieldText
             type="text"
-            label={
-              <FormattedMessage
-                id="guidu.stripeAccounts.bankAccount.holder"
-                defaultMessage="Account owner"
-              />
-            }
+            label={<FormattedMessage defaultMessage="Account owner" />}
             name="stripe_account[bank_account_account_holder_name]"
             required
           />

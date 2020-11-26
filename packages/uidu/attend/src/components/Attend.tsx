@@ -29,12 +29,7 @@ export default function Attend({
   const steps: ShellStep[] = [
     {
       relativePath: 'order',
-      name: (
-        <FormattedMessage
-          id="guidu.attend.order.name"
-          defaultMessage="Tickets"
-        />
-      ),
+      name: <FormattedMessage defaultMessage="Tickets" />,
       component: () => (
         <Order
           {...rest}
@@ -53,10 +48,7 @@ export default function Attend({
     relativePath: 'contact',
     name: (
       <>
-        <FormattedMessage
-          defaultMessage="Contact information"
-          id="guidu.donate.donation.contact"
-        />
+        <FormattedMessage defaultMessage="Contact information" />
       </>
     ),
     component: () => (
@@ -77,10 +69,7 @@ export default function Attend({
     relativePath: 'attendance',
     name: (
       <>
-        <FormattedMessage
-          id="guidu.attend.attendance.name"
-          defaultMessage="Tickets"
-        />
+        <FormattedMessage defaultMessage="Tickets" />
       </>
     ),
     component: () => (
@@ -119,12 +108,7 @@ export default function Attend({
 
   steps.push({
     relativePath: 'confirmation',
-    name: (
-      <FormattedMessage
-        defaultMessage="Done!"
-        id="guidu.donate.donation.done"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Done!" />,
     component: () => <Confirmation {...rest} order={order} />,
   });
 

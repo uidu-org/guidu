@@ -33,7 +33,6 @@ export default function FiltererForm({
                 <div className="form-group mb-0">
                   <label htmlFor="" className="d-flex align-items-center">
                     <FormattedMessage
-                      id="guidu.data_controls.filterer.where"
                       defaultMessage={`{index, plural,
                       =0 {Where}
                       other {Then where}
@@ -92,15 +91,9 @@ export default function FiltererForm({
         <PickField
           label={
             filtersCount > 0 ? (
-              <FormattedMessage
-                id="guidu.data_controls.filterer.no_filters"
-                defaultMessage="Add another filter"
-              />
+              <FormattedMessage defaultMessage="Add another filter" />
             ) : (
-              <FormattedMessage
-                id="guidu.data_controls.filterer.no_filters"
-                defaultMessage="No filters applied. Pick a field"
-              />
+              <FormattedMessage defaultMessage="No filters applied. Pick a field" />
             )
           }
           onClick={(columnDef) => {

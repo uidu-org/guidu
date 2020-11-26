@@ -34,7 +34,6 @@ export default function SorterForm({
               <div className="form-group mb-0">
                 <label htmlFor="" className="d-flex align-items-center">
                   <FormattedMessage
-                    id="guidu.data_controls.sorter.sorted_by"
                     defaultMessage={`{index, plural,
                         =0 {Sort by}
                         other {Then by}
@@ -110,15 +109,9 @@ export default function SorterForm({
         <PickField
           label={
             sortBy.length ? (
-              <FormattedMessage
-                id="guidu.data_controls.sorter.pick"
-                defaultMessage="Pick another field to sort by"
-              />
+              <FormattedMessage defaultMessage="Pick another field to sort by" />
             ) : (
-              <FormattedMessage
-                id="guidu.data_controls.sorter.no_sorters"
-                defaultMessage="No selected fields to sort by. Pick one"
-              />
+              <FormattedMessage defaultMessage="No selected fields to sort by. Pick one" />
             )
           }
           onClick={(columnDef) => {

@@ -32,12 +32,7 @@ export default function Donate({
   const steps: ShellStep[] = [
     {
       relativePath: 'donation',
-      name: (
-        <FormattedMessage
-          defaultMessage="Funding option"
-          id="guidu.donate.donation.name"
-        />
-      ),
+      name: <FormattedMessage defaultMessage="Funding option" />,
       component: () => (
         <Donation
           donation={donation}
@@ -57,12 +52,7 @@ export default function Donate({
 
   steps.push({
     relativePath: 'preferences',
-    name: (
-      <FormattedMessage
-        defaultMessage="Customize"
-        id="guidu.donate.preferences.title"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Customize" />,
     component: () => (
       <Preferences
         currentContact={currentContact}
@@ -79,12 +69,7 @@ export default function Donate({
 
   steps.push({
     relativePath: 'contact',
-    name: (
-      <FormattedMessage
-        defaultMessage="Contact info"
-        id="guidu.donate.donation.contact"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Contact info" />,
     component: () => (
       <Contact
         scope="primary"
@@ -97,20 +82,15 @@ export default function Donate({
       />
     ),
     nextStepRelativePath: 'payments',
-    isDisabled: !donation.amount,
+    isDisabled: !donation?.amount,
     isCompleted: !!currentContact?.id,
   });
 
   steps.push({
     relativePath: 'payments',
-    name: (
-      <FormattedMessage
-        defaultMessage="Payment info"
-        id="guidu.donate.donation.payment"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Payment info" />,
     component: () => {
-      if (donation.amount) {
+      if (donation?.amount) {
         return (
           <>
             {donation.subscriptionItem ? (
@@ -140,12 +120,7 @@ export default function Donate({
 
   steps.push({
     relativePath: 'done',
-    name: (
-      <FormattedMessage
-        defaultMessage="Done!"
-        id="guidu.donate.donation.done"
-      />
-    ),
+    name: <FormattedMessage defaultMessage="Done!" />,
     component: () => <Confirmation {...rest} donation={donation} />,
     isDisabled: !donation.amount,
   });
