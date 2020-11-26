@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+
 ## 0.2.0
 
 ### Minor Changes

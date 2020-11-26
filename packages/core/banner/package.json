@@ -1,6 +1,6 @@
 {
   "name": "@uidu/banner",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "React component that displays a prominent banner message and icon",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/banner",
   "license": "MIT",
@@ -10,12 +10,12 @@
   "types": "dist/uidu-banner.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/theme": "^0.5.0",
+    "@uidu/theme": "^0.5.2",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.4.0",
-    "@uidu/docs": "^0.3.0",
+    "@uidu/button": "^0.4.1",
+    "@uidu/docs": "^0.3.1",
     "react": "^17.0.0",
     "styled-components": "^5.2.1"
   },

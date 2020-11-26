@@ -1,5 +1,19 @@
 # @uidu/devise
 
+## 0.4.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/avatar@0.6.1
+  - @uidu/slider@1.6.1
+  - @uidu/spinner@0.4.1
+  - @uidu/field-password@0.4.1
+  - @uidu/field-text@0.4.1
+  - @uidu/form@0.4.1
+  - @uidu/shell@1.2.1
+
 ## 0.4.0
 
 ### Minor Changes

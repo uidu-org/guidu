@@ -1,5 +1,31 @@
 # @uidu/editor-core
 
+## 0.7.2
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/avatar@0.6.1
+  - @uidu/avatar-group@2.5.2
+  - @uidu/button@0.4.1
+  - @uidu/droplist@0.4.2
+  - @uidu/menu@0.4.2
+  - @uidu/modal-dialog@0.4.1
+  - @uidu/spinner@0.4.1
+  - @uidu/theme@0.5.2
+  - @uidu/tooltip@0.4.1
+  - @uidu/editor-common@0.4.2
+  - @uidu/editor-json-transformer@0.3.1
+  - @uidu/editor-markdown-transformer@0.3.1
+  - @uidu/date@0.3.1
+  - @uidu/mentions@0.2.1
+  - @uidu/status@0.3.1
+  - @uidu/task-decision@0.3.1
+  - @uidu/select@0.6.1
+  - @uidu/media-card@0.4.1
+  - @uidu/media-filmstrip@0.3.1
+
 ## 0.7.1
 
 ### Patch Changes

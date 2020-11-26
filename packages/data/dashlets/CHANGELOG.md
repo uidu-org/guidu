@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/spinner@0.4.1
+  - @uidu/tooltip@0.4.1
+  - @uidu/dashlet-controls@0.3.1
+
 ## 0.7.0
 
 ### Minor Changes

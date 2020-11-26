@@ -1,5 +1,22 @@
 # @uidu/renderer
 
+## 0.3.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/code@0.4.1
+  - @uidu/theme@0.5.2
+  - @uidu/tooltip@0.4.1
+  - @uidu/editor-common@0.4.2
+  - @uidu/editor-json-transformer@0.3.1
+  - @uidu/mentions@0.2.1
+  - @uidu/status@0.3.1
+  - @uidu/task-decision@0.3.1
+  - @uidu/media-card@0.4.1
+  - @uidu/media-filmstrip@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

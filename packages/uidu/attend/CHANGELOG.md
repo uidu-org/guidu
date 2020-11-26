@@ -1,5 +1,20 @@
 # @uidu/attend
 
+## 0.4.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/spinner@0.4.1
+  - @uidu/payments@0.3.1
+  - @uidu/field-text@0.4.1
+  - @uidu/form@0.4.1
+  - @uidu/shell@1.2.1
+  - @uidu/stepper@0.3.1
+  - @uidu/contact@0.2.1
+  - @uidu/widgets@0.4.1
+
 ## 0.4.0
 
 ### Minor Changes

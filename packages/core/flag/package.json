@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/flag",
@@ -13,19 +13,19 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.4.0",
-    "@uidu/button": "^0.4.0",
-    "@uidu/portal": "^0.4.0",
-    "@uidu/theme": "^0.5.0",
+    "@uidu/button": "^0.4.1",
+    "@uidu/portal": "^0.4.1",
+    "@uidu/theme": "^0.5.2",
     "react-feather": "^2.0.9",
     "react-transition-group": "^4.0.0",
     "tslib": "^2.0.1",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.0",
-    "@uidu/form": "^0.4.0",
-    "@uidu/radio": "^0.5.0",
-    "@uidu/spinner": "^0.4.0",
+    "@uidu/docs": "^0.3.1",
+    "@uidu/form": "^0.4.1",
+    "@uidu/radio": "^0.5.1",
+    "@uidu/spinner": "^0.4.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "styled-components": "^5.2.1"

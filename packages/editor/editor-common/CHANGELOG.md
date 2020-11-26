@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 0.4.2
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/theme@0.5.2
+  - @uidu/mentions@0.2.1
+
 ## 0.4.1
 
 ### Patch Changes

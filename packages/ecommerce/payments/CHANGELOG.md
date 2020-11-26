@@ -1,5 +1,15 @@
 # @uidu/payments
 
+## 0.3.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/slider@1.6.1
+  - @uidu/theme@0.5.2
+  - @uidu/form@0.4.1
+
 ## 0.3.0
 
 ### Minor Changes

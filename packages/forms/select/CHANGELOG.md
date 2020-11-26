@@ -1,5 +1,17 @@
 # @uidu/field-text
 
+## 0.6.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/spinner@0.4.1
+  - @uidu/theme@0.5.2
+  - @uidu/tooltip@0.4.1
+  - @uidu/field-base@0.5.1
+  - @uidu/form@0.4.1
+
 ## 0.6.0
 
 ### Minor Changes

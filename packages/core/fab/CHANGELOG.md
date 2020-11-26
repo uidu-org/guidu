@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+
 ## 0.4.0
 
 ### Minor Changes

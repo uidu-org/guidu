@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.3.1
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/message@0.3.1
+  - @uidu/message-renderer@0.3.1
+
 ## 0.3.0
 
 ### Minor Changes

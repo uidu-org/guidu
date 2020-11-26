@@ -1,5 +1,30 @@
 # Change Log
 
+## 0.2.17
+
+### Patch Changes
+
+- 8a049c8: Payments update to PaymentMethod and different naming
+- Updated dependencies [8a049c8]
+  - @uidu/docs@0.3.1
+  - @uidu/badge@0.4.1
+  - @uidu/button@0.4.1
+  - @uidu/code@0.4.1
+  - @uidu/drawer@0.5.1
+  - @uidu/lozenge@0.4.1
+  - @uidu/modal-dialog@0.4.1
+  - @uidu/spinner@0.4.1
+  - @uidu/theme@0.5.2
+  - @uidu/tooltip@0.4.1
+  - @uidu/list@0.2.1
+  - @uidu/table@0.5.1
+  - @uidu/field-text@0.4.1
+  - @uidu/form@0.4.1
+  - @uidu/select@0.6.1
+  - @uidu/navigation@0.5.1
+  - @uidu/shell@1.2.1
+  - @uidu/themes-uidu@0.3.11
+
 ## 0.2.16
 
 ### Patch Changes
