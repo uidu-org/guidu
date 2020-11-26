@@ -1,8 +1,9 @@
 import { ShellSidebar } from '@uidu/shell';
 import React, { Component } from 'react';
 import Navigation, { GlobalNavigationSkeleton } from '../src';
+import { SideNavigationSchema } from '../src/components/SideNavigation/types';
 
-const schema = [
+const schema: SideNavigationSchema[] = [
   { type: 'NavigationHeaderSkeleton', text: 'Skeleton' },
   {
     type: 'NavigationSection',

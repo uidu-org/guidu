@@ -11,6 +11,7 @@ import React, { PureComponent } from 'react';
 import NavigationGroupComponent from './SideNavigation/NavigationGroup';
 import NavigationGroupHeadingComponent from './SideNavigation/NavigationGroup/NavigationGroupHeading';
 import NavigationHeaderComponent from './SideNavigation/NavigationHeader';
+import NavigationHeaderMultilineComponent from './SideNavigation/NavigationHeaderMultiline';
 import NavigationHeaderSkeletonComponent from './SideNavigation/NavigationHeaderSkeleton';
 import NavigationIconItem from './SideNavigation/NavigationIconItem';
 import NavigationItem from './SideNavigation/NavigationItem';
@@ -26,6 +27,12 @@ const NavigationHeader = ({ text, after, before }) => (
   <ShellHeader>
     <NavigationHeaderComponent text={text} after={after} before={before} />
   </ShellHeader>
+);
+
+const NavigationHeaderMultiline = ({ children }) => (
+  <NavigationHeaderMultilineComponent>
+    {children}
+  </NavigationHeaderMultilineComponent>
 );
 
 const NavigationHeaderSkeleton = ({ text, after, before }) => (
@@ -103,6 +110,7 @@ const Debug = (props: any) => (
 
 const itemComponents = {
   NavigationHeader,
+  NavigationHeaderMultiline,
   NavigationIconItem,
   NavigationItem,
   NavigationSubItem,
@@ -144,6 +152,9 @@ const renderItemComponent = (props: any, key: string, index: number) => {
   } else if (props.type === 'NavigationHeader') {
     const { type, id, ...compProps } = props;
     element = <NavigationHeader key={key} {...compProps} />;
+  } else if (props.type === 'NavigationHeaderMultiline') {
+    const { type, id, ...compProps } = props;
+    element = <NavigationHeaderMultiline key={key} {...compProps} />;
   } else if (props.type === 'NavigationItemSkeleton') {
     const { type, ...compProps } = props;
     element = <NavigationItemSkeleton key={key} {...compProps} />;

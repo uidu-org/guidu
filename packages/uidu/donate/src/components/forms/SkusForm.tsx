@@ -5,28 +5,35 @@ import { FormattedMessage } from 'react-intl';
 import { isCustomSku } from '../../utils';
 
 function CustomSkuForm({ donation, sku, handleSubmit }) {
-  const [customAmount, setCustomAmount] = useState(donation.amount);
+  const [customAmount, setCustomAmount] = useState(
+    donation.amount ? donation.amount / 100 : null,
+  );
   return (
     <Form
       handleSubmit={handleSubmit}
-      footerRenderer={({ canSubmit, loading }) => (
-        <div className="mt-3">
-          <FormSubmit
-            label={
-              <FormattedMessage
-                id="guidu.donate.donation.submit"
-                defaultMessage={`Donate {customAmount}`}
-                values={{
-                  customAmount: customAmount ? customAmount / 100 : null,
-                }}
-              />
-            }
-            loading={loading}
-            canSubmit={canSubmit}
-            className="px-5 btn-primary"
-          />
-        </div>
-      )}
+      footerRenderer={({ canSubmit, loading }) =>
+        canSubmit && (
+          <div className="mt-3">
+            <FormSubmit
+              label={
+                <FormattedMessage
+                  id="guidu.donate.donation.submit"
+                  defaultMessage={`Donate {customAmount} {currency}`}
+                  values={{
+                    currency: sku.currency,
+                    customAmount: donation.amount
+                      ? donation.amount / 100
+                      : customAmount / 100,
+                  }}
+                />
+              }
+              loading={loading}
+              canSubmit={canSubmit}
+              className="px-5 btn-primary"
+            />
+          </div>
+        )
+      }
     >
       <FieldText
         type="hidden"
@@ -54,6 +61,7 @@ function CustomSkuForm({ donation, sku, handleSubmit }) {
                   defaultMessage="Donation amount"
                 />
               }
+              rowClassName="mb-0"
               onChange={(_name, value) => setCustomAmount(value * 100)}
               value={customAmount}
               min={5}

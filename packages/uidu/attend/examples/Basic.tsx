@@ -10,7 +10,6 @@ function Basic() {
       component={Attend}
       baseUrl="/packages/uidu/attend"
       currentOrganization={{ name: 'Charity Water' }}
-      donationCampaign={{ name: 'The Spring' }}
       onCreate={(_donation, token) => console.log(token)}
       event={{
         name: 'Pitch your failure - Berlin',
@@ -63,7 +62,7 @@ function Basic() {
 
 export default (props) => (
   <Router>
-    <Route path="/">
+    <Route>
       <Basic {...props}></Basic>
     </Route>
   </Router>

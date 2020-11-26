@@ -7,6 +7,7 @@ import {
   RecurringPaymentProps,
 } from '@uidu/payments';
 import { Donation } from '@uidu/schema.d.ts';
+import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import React, { useState } from 'react';
 
 export type SubscribeProps = {
@@ -25,22 +26,28 @@ export default function Subscribe({
   const [provider, setProvider] = useState<PaymentProviderTypes['id']>('card');
 
   return (
-    <FormWrapper>
-      <FormSection isFirst isLast>
-        <RecurringPayment
-          stripe={stripe}
-          stripeBillingDetails={donation.contact?.stripeBillingDetails}
-          provider={{ id: provider, name: provider }}
-          amount={donation.amount}
-          createSubscription={async (payload) =>
-            subscribeToPlan(donation, payload)
-          }
-          label="Recurring donation"
-          onSuccess={onSuccess}
-        >
-          {(paymentProps) => <PaymentMethods {...paymentProps} />}
-        </RecurringPayment>
-      </FormSection>
-    </FormWrapper>
+    <ShellMain>
+      <ShellBody>
+        <ScrollableContainer>
+          <FormWrapper>
+            <FormSection isFirst isLast>
+              <RecurringPayment
+                stripe={stripe}
+                stripeBillingDetails={donation.contact?.stripeBillingDetails}
+                provider={{ id: provider, name: provider }}
+                amount={donation.amount}
+                createSubscription={async (payload) =>
+                  subscribeToPlan(donation, payload)
+                }
+                label="Recurring donation"
+                onSuccess={onSuccess}
+              >
+                {(paymentProps) => <PaymentMethods {...paymentProps} />}
+              </RecurringPayment>
+            </FormSection>
+          </FormWrapper>
+        </ScrollableContainer>
+      </ShellBody>
+    </ShellMain>
   );
 }

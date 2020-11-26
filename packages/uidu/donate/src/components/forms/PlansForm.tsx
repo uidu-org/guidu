@@ -5,32 +5,39 @@ import { FormattedMessage } from 'react-intl';
 import { isCustomPlan } from '../../utils';
 
 function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
-  const [customAmount, setCustomAmount] = useState(donation.amount);
+  const [customAmount, setCustomAmount] = useState(
+    donation.amount ? donation.amount / 100 : null,
+  );
   return (
     <Form
       handleSubmit={handleSubmit}
-      footerRenderer={({ canSubmit, loading }) => (
-        <div className="mt-3">
-          <FormSectionSubmit
-            label={
-              <FormattedMessage
-                id="guidu.donate.donation.submit"
-                defaultMessage={`Donate {customAmount} {recurrence, select,
+      footerRenderer={({ canSubmit, loading }) =>
+        canSubmit && (
+          <div className="mt-3">
+            <FormSectionSubmit
+              label={
+                <FormattedMessage
+                  id="guidu.donate.donation.submit"
+                  defaultMessage={`Donate {customAmount} {currency} {recurrence, select,
                   once {}
                   month {each month}
                 }`}
-                values={{
-                  recurrence,
-                  customAmount: customAmount ? customAmount / 100 : null,
-                }}
-              />
-            }
-            loading={loading}
-            canSubmit={canSubmit}
-            scope="primary"
-          />
-        </div>
-      )}
+                  values={{
+                    currency: plan.currency,
+                    recurrence,
+                    customAmount: donation.amount
+                      ? donation.amount / 100
+                      : customAmount / 100,
+                  }}
+                />
+              }
+              loading={loading}
+              canSubmit={canSubmit}
+              scope="primary"
+            />
+          </div>
+        )
+      }
     >
       <FieldText
         type="hidden"
@@ -58,6 +65,7 @@ function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
                   defaultMessage="Donation amount"
                 />
               }
+              rowClassName="mb-0"
               value={customAmount}
               onChange={(_name, value) => setCustomAmount(value * 100)}
               min={5}

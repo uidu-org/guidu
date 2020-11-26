@@ -1,2 +1,2 @@
-export { default } from './components/Donate.next';
+export { default } from './components/Donate';
 export * from './components/steps';

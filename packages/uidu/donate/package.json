@@ -17,6 +17,7 @@
     "@uidu/field-downshift": "^0.5.0",
     "@uidu/field-text": "^0.4.0",
     "@uidu/field-textarea": "^0.3.0",
+    "@uidu/field-toggle": "^0.4.0",
     "@uidu/form": "^0.4.0",
     "@uidu/modal-dialog": "^0.4.0",
     "@uidu/payments": "^0.3.0",

@@ -1,10 +1,9 @@
 import Contact from '@uidu/contact';
 import { Shell, ShellStep } from '@uidu/widgets';
-import React, { useRef } from 'react';
+import React from 'react';
 import Countdown from 'react-countdown';
 import { FormattedMessage } from 'react-intl';
 import { useHistory, useRouteMatch } from 'react-router';
-import Swiper from 'swiper';
 import Attendances from './steps/Attendances';
 import Confirmation from './steps/Confirmation';
 import Order from './steps/Order';
@@ -26,15 +25,8 @@ export default function Attend({
 }) {
   const history = useHistory();
   const match = useRouteMatch();
-  const slider: React.RefObject<Swiper> = useRef(null);
 
-  const countdown = (
-    <div className="text-center small text-muted">
-      <Countdown date={Date.now() + 100000} />
-    </div>
-  );
-
-  const slides: ShellStep[] = [
+  const steps: ShellStep[] = [
     {
       relativePath: 'order',
       name: (
@@ -43,7 +35,6 @@ export default function Attend({
           defaultMessage="Tickets"
         />
       ),
-
       component: () => (
         <Order
           {...rest}
@@ -58,7 +49,7 @@ export default function Attend({
     },
   ];
 
-  slides.push({
+  steps.push({
     relativePath: 'contact',
     name: (
       <>
@@ -66,7 +57,6 @@ export default function Attend({
           defaultMessage="Contact information"
           id="guidu.donate.donation.contact"
         />
-        {countdown}
       </>
     ),
     component: () => (
@@ -76,14 +66,14 @@ export default function Attend({
         contact={currentContact}
         handleSubmit={async (model) => {
           return updateCurrentContact(model).then(() =>
-            setTimeout(() => slider.current.slideNext(), 500),
+            history.push(`${match.url}/attendance`),
           );
         }}
       />
     ),
   });
 
-  slides.push({
+  steps.push({
     relativePath: 'attendance',
     name: (
       <>
@@ -91,7 +81,6 @@ export default function Attend({
           id="guidu.attend.attendance.name"
           defaultMessage="Tickets"
         />
-        {countdown}
       </>
     ),
     component: () => (
@@ -100,13 +89,19 @@ export default function Attend({
         order={order}
         currentContact={currentContact}
         createAttendance={createAttendance}
-        onSave={() => setTimeout(() => slider.current.slideNext(), 500)}
+        onSave={() =>
+          history.push(
+            `${match.url}/${
+              order && order.stripeAmount > 0 ? 'pay' : 'confirmation'
+            }`,
+          )
+        }
       />
     ),
   });
 
   if (order && order.stripeAmount > 0) {
-    slides.push({
+    steps.push({
       relativePath: 'pay',
       name: 'pay',
       component: () => (
@@ -122,7 +117,7 @@ export default function Attend({
     });
   }
 
-  slides.push({
+  steps.push({
     relativePath: 'confirmation',
     name: (
       <FormattedMessage
@@ -134,6 +129,23 @@ export default function Attend({
   });
 
   return (
-    <Shell name={event.name} steps={slides} baseUrl={baseUrl} scope="events" />
+    <Shell
+      name={event.name}
+      steps={steps}
+      baseUrl={baseUrl}
+      scope="events"
+      sidebarFooterAdditionalItems={[
+        {
+          type: 'InlineComponent',
+          component: () => (
+            <div className="p-3 alert alert-warning mx-4">
+              <div className="text-center small">
+                <Countdown date={Date.now() + 100000} />
+              </div>
+            </div>
+          ),
+        },
+      ]}
+    />
   );
 }

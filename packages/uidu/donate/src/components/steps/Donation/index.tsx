@@ -13,7 +13,6 @@ import Sku from './Sku';
 const Option = styled.div`
   cursor: pointer;
   transition: all 100ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  *zoom: 1;
 
   &:hover,
   &.active {
@@ -53,9 +52,7 @@ export function OptionScaffold({
   return (
     <Option
       key={index}
-      className={classNames('card mb-3', {
-        'border-primary active': isHighlighted || isSelected,
-      })}
+      className={classNames('card mb-3', {})}
       {...(!isSelected && {
         onMouseDown,
         onClick: (e) => {
@@ -64,6 +61,11 @@ export function OptionScaffold({
           onClick(e);
         },
       })}
+      style={{
+        ...(isSelected || isHighlighted
+          ? { boxShadow: '1px 1px 1px var(--light)' }
+          : {}),
+      }}
       {...rest}
     >
       <span

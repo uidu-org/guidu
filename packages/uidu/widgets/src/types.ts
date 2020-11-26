@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { SideNavigationSchema } from '../../../navigation/side-navigation/src/components/SideNavigation/types';
 
 export type ShellStep = {
   component: FC<any>;
@@ -11,8 +12,10 @@ export type ShellStep = {
 };
 
 export type ShellProps = {
+  name: string | ReactNode;
   baseUrl: string;
   steps: Array<ShellStep>;
   scope: string;
   embedded?: boolean;
+  sidebarFooterAdditionalItems: Partial<SideNavigationSchema[]>;
 };

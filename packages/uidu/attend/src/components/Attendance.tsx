@@ -6,8 +6,8 @@ export default function Attendance({ order, attendance, handleSubmit }) {
   return (
     <Form
       handleSubmit={handleSubmit}
-      footerRenderer={({ canSubmit }) =>
-        null
+      footerRenderer={
+        ({ canSubmit }) => null
         // <FormSubmit
         //   className="btn-events px-5"
         //   canSubmit={canSubmit}
@@ -28,6 +28,7 @@ export default function Attendance({ order, attendance, handleSubmit }) {
             type="text"
             label="Nome"
             name={`enhancements[first_name]`}
+            required
           />
         </div>
         <div className="col-sm-6">
@@ -35,10 +36,16 @@ export default function Attendance({ order, attendance, handleSubmit }) {
             type="text"
             label="Cognome"
             name={`enhancements[last_name]`}
+            required
           />
         </div>
       </div>
-      <FieldText type="email" label="Email" name={`enhancements[email]`} />
+      <FieldText
+        type="email"
+        label="Email"
+        name={`enhancements[email]`}
+        required
+      />
     </Form>
   );
 }

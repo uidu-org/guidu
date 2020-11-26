@@ -5,8 +5,8 @@ import { FormattedMessage } from 'react-intl';
 
 export default function Ticket({ ticket, index, handleCounterChange }) {
   return (
-    <div className="card mb-2" key={index}>
-      <div className="card-body">
+    <div className="mb-4 border-bottom pb-4" key={index}>
+      <div className="">
         <div className="d-flex align-items-center">
           <div className="d-flex flex-grow-1 justify-content-between align-items-center">
             <div className="mb-3 mb-md-0">
@@ -26,7 +26,7 @@ export default function Ticket({ ticket, index, handleCounterChange }) {
               <span className="mx-3">{ticket.price / 100} €</span>
             ) : null}
           </div>
-          <div style={{ flex: '0 0 30%' }} className="flex-shrink-0">
+          <div style={{ flex: '0 0 20%' }} className="flex-shrink-0">
             <FieldText
               type="hidden"
               name={`items[${index}][id]`}

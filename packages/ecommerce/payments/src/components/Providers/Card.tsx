@@ -1,5 +1,5 @@
 import { CardElement } from '@stripe/react-stripe-js';
-import { FormSubmit } from '@uidu/form';
+import { FormSectionSubmit } from '@uidu/form';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { createCardElementOptions } from '../../utils';
@@ -51,10 +51,10 @@ export default function Card({
           </div>
         </div>
         {error && <div className="alert alert-warning">{error.message}</div>}
-        <FormSubmit
+        <FormSectionSubmit
           loading={loading}
           canSubmit={canSubmit}
-          className="btn btn-primary btn-block"
+          scope="primary"
           label={
             <FormattedMessage
               defaultMessage="Submit payment"

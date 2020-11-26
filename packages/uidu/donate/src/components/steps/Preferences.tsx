@@ -1,10 +1,10 @@
-import { Checkbox } from '@uidu/checkbox';
-import FieldText from '@uidu/field-text';
 import FieldTextarea from '@uidu/field-textarea';
+import FieldToggle from '@uidu/field-toggle';
 import { Form, FormSection, FormSectionSubmit, FormWrapper } from '@uidu/form';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
+import DedicationForm from '../forms/DedicationForm';
 
 export default function Preferences({
   handleSubmit,
@@ -12,6 +12,8 @@ export default function Preferences({
   donation,
 }) {
   const [isAnonymous, setIsAnonymous] = useState(false);
+  const [leaveAMessage, setLeaveAMessage] = useState(!!donation.body);
+  const [isDedicated, setIsDedicated] = useState(!!donation.dedication);
 
   const anonymize = (e) => {
     e.preventDefault();
@@ -49,50 +51,95 @@ export default function Preferences({
                 isFirst
                 isLast
               >
-                <FieldTextarea
-                  rows={3}
+                <FieldToggle
+                  className="py-3 mb-2"
+                  name="preferences[isAnonymous]"
                   label={
-                    <FormattedMessage
-                      defaultMessage="Leave a message"
-                      id="guidu.donate.preferences.submit"
-                    />
-                  }
-                  name="body"
-                  className="form-control form-control-autosize"
-                  value={donation?.body}
-                />
-                <div className="form-group">
-                  <label
-                    htmlFor="preferences_displayName"
-                    className="w-100 mb-2 d-flex align-items-center justify-content-between"
-                  >
-                    <span>
-                      <FormattedMessage
-                        id="guidu.donate.preferences.displayName"
-                        defaultMessage="Display name"
-                      />
-                    </span>
-                    <Checkbox
-                      layout="elementOnly"
-                      name="preferences[isAnonymous]"
-                      value={isAnonymous}
-                      onChange={(_name, value) => setIsAnonymous(value)}
-                      label={
+                    <div>
+                      <h6 className="mb-1">
                         <FormattedMessage
-                          id="guidu.donate.preferences.isAnonymous"
-                          defaultMessage="Anonymous"
+                          defaultMessage="Donate anonymously"
+                          id="guidu.donate.preferences.anonymous"
                         />
-                      }
-                    />
-                  </label>
-                  <FieldText
-                    name="preferences[displayName]"
-                    layout="elementOnly"
-                    value={
-                      isAnonymous ? '' : currentContact && currentContact.name
+                      </h6>
+                      <p className="small text-muted text-form">
+                        When you donate anonymously, your name will never appear
+                        in public as a donor. But, your name will be recorded so
+                        that we can send a tax donation receipt.
+                      </p>
+                    </div>
+                  }
+                />
+                <div>
+                  <FieldToggle
+                    className="py-3 mb-2"
+                    name="preferences[isDedicated]"
+                    onChange={(_name, value) => setIsDedicated(value)}
+                    label={
+                      <div>
+                        <h6 className="mb-1">
+                          <FormattedMessage
+                            defaultMessage="Dedicate this donation"
+                            id="guidu.donate.preferences.dedicated"
+                          />
+                        </h6>
+                        <p className="small text-muted text-form">
+                          You can dedicate your donation to someone special. If
+                          you would like to notify the person or someone else of
+                          your dedication, add their email to the field that
+                          says "Email address for notification." Your message
+                          and information about your donation will be sent to
+                          that email address.
+                        </p>
+                      </div>
                     }
-                    disabled={isAnonymous}
                   />
+                  {isDedicated && (
+                    <DedicationForm dedication={donation.dedication} />
+                  )}
+                </div>
+                <div>
+                  <FieldToggle
+                    className="py-3 mb-2"
+                    name="preferences[leaveAMessage]"
+                    onChange={(_name, value) => {
+                      setLeaveAMessage(value);
+                    }}
+                    label={
+                      <div>
+                        <h6 className="mb-1">
+                          <FormattedMessage
+                            defaultMessage="Leave a message"
+                            id="guidu.donate.preferences.leaveAMessage"
+                          />
+                        </h6>
+                        <p className="small text-muted text-form">
+                          You can choose whether your message is public or
+                          private
+                        </p>
+                      </div>
+                    }
+                  />
+                  {leaveAMessage && (
+                    <>
+                      <div className="mb-3">
+                        <FieldTextarea
+                          autoFocus
+                          layout="elementOnly"
+                          rows={3}
+                          label={
+                            <FormattedMessage
+                              defaultMessage="Leave a message"
+                              id="guidu.donate.preferences.submit"
+                            />
+                          }
+                          name="body"
+                          className="form-control form-control-autosize"
+                          value={donation?.body}
+                        />
+                      </div>
+                    </>
+                  )}
                 </div>
               </FormSection>
             </Form>
