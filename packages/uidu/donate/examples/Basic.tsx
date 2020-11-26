@@ -8,6 +8,10 @@ import {
   subscribeToPlan,
 } from '../example-helpers';
 
+function loadLocaleData(locale: string) {
+  return import(`../dist/lang/${locale}.json`);
+}
+
 function Basic() {
   const [currentContact, setCurrentContact] = useState({
     temporary: true,
@@ -21,6 +25,7 @@ function Basic() {
 
   return (
     <WidgetsExampleScaffold
+      loadLocaleData={loadLocaleData}
       baseUrl="/packages/uidu/donate"
       component={Donate}
       donation={donation}

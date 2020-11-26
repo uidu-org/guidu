@@ -17,7 +17,6 @@ function CustomSkuForm({ donation, sku, handleSubmit }) {
             <FormSubmit
               label={
                 <FormattedMessage
-                  id="guidu.donate.donation.submit"
                   defaultMessage={`Donate {customAmount} {currency}`}
                   values={{
                     currency: sku.currency,
@@ -81,13 +80,7 @@ function SkuForm({ sku, handleSubmit }) {
       footerRenderer={({ canSubmit, loading }) => (
         <div className="mt-3">
           <FormSubmit
-            label={
-              <FormattedMessage
-                id="guidu.donate.donation.submit"
-                defaultMessage={`Donate`}
-                values={{}}
-              />
-            }
+            label={<FormattedMessage defaultMessage={`Donate`} values={{}} />}
             loading={loading}
             canSubmit={canSubmit}
             className="px-5 btn-primary"

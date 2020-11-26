@@ -1,25 +1,50 @@
 import Modal, { ModalTransition } from '@uidu/modal-dialog';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import 'swiper/swiper-bundle.css';
 
 const stripe = window.Stripe('pk_test_gxaXiVZYxYA1u1ZzqjVr71c5');
 
-export function WidgetsExampleScaffold({ component: Component, ...rest }) {
+export function WidgetsExampleScaffold({
+  component: Component,
+  loadLocaleData,
+  ...rest
+}) {
   const [isOpen, setIsOpen] = useState(false);
+  const [locale, setLocale] = useState('en');
+  const [messages, setMessages] = useState(null);
+
+  useEffect(() => {
+    loadLocaleData(locale).then(setMessages);
+  }, [locale, loadLocaleData]);
+
+  if (!messages) {
+    return null;
+  }
 
   return (
     <>
-      <IntlProvider locale="en">
+      <IntlProvider
+        key={locale}
+        locale={locale}
+        defaultLocale="en"
+        messages={messages.default}
+      >
         <Component {...rest} stripe={stripe} />
 
-        <button
-          className="btn btn-primary"
-          onClick={() => setIsOpen(true)}
-          style={{ position: 'fixed', right: 32, bottom: 32 }}
-        >
-          Modal view
-        </button>
+        <div style={{ position: 'fixed', right: 32, bottom: 32 }}>
+          <button
+            className="btn btn-light mr-2"
+            onClick={(e) => {
+              e.preventDefault();
+              setLocale('it');
+            }}
+          >
+            IT
+          </button>
+          <button className="btn btn-primary" onClick={() => setIsOpen(true)}>
+            Modal view
+          </button>
+        </div>
         <ModalTransition>
           {isOpen && (
             <Modal

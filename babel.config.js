@@ -4,6 +4,14 @@ module.exports = function (api) {
   const plugins = [
     // '@loadable/babel-plugin',
     [
+      'react-intl',
+      {
+        idInterpolationPattern: '[sha512:contenthash:base64:6]',
+        extractFromFormatMessageCall: true,
+        ast: true,
+      },
+    ],
+    [
       'babel-plugin-styled-components',
       { ssr: true, displayName: true, preprocess: false },
     ],

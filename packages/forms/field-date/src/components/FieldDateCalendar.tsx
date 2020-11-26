@@ -6,7 +6,6 @@ import {
 import moment from 'moment';
 import React, { forwardRef } from 'react';
 import DayPicker from 'react-day-picker';
-import styles from '../index.module.scss';
 import { FieldDateCalendarStatelessProps } from '../types';
 import pkg from '../version.json';
 
@@ -18,7 +17,6 @@ function FieldDateCalendar({
   return (
     <DayPicker
       {...dayPickerProps}
-      classNames={styles}
       onDayClick={onDayChange}
       selectedDays={value && value !== '' && moment(value).toDate()}
       modifiers={{

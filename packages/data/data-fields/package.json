@@ -28,7 +28,7 @@
     "react": "^17.0.0",
     "react-beautiful-dnd": "^13.0.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.8.0",
+    "react-intl": "^5.10.5",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },

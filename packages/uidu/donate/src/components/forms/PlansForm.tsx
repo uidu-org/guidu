@@ -17,7 +17,6 @@ function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
             <FormSectionSubmit
               label={
                 <FormattedMessage
-                  id="guidu.donate.donation.submit"
                   defaultMessage={`Donate {customAmount} {currency} {recurrence, select,
                   once {}
                   month {each month}
@@ -59,12 +58,7 @@ function CustomPlanForm({ donation, plan, handleSubmit, recurrence }) {
               type="number"
               placeholder={placeholder}
               name="subscriptionAttributes[itemsAttributes][0][quantity]"
-              label={
-                <FormattedMessage
-                  id="guidu.donate.plan.custom.label"
-                  defaultMessage="Donation amount"
-                />
-              }
+              label={<FormattedMessage defaultMessage="Donation amount" />}
               rowClassName="mb-0"
               value={customAmount}
               onChange={(_name, value) => setCustomAmount(value * 100)}
@@ -95,7 +89,6 @@ function PlanForm({ plan, handleSubmit, recurrence }) {
           <FormSectionSubmit
             label={
               <FormattedMessage
-                id="guidu.donate.donation.submit"
                 defaultMessage={`Donate {amount} {recurrence, select,
                   once {}
                   month {each month}

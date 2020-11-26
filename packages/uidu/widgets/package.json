@@ -9,6 +9,7 @@
   "types": "dist/uidu-widgets.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
+    "@loadable/component": "^5.14.1",
     "@uidu/contact": "^0.2.1",
     "@uidu/shell": "^1.2.1",
     "@uidu/side-navigation": "^0.2.1",
@@ -17,7 +18,7 @@
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.8.0",
+    "react-intl": "^5.10.5",
     "react-router-dom": "^5.2.0",
     "react-router-transition": "^2.0.0",
     "styled-components": "^5.2.1",
