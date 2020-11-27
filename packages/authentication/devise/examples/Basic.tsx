@@ -7,16 +7,11 @@ import { DeviseSimple, DeviseWrapper } from '../src';
 
 export default function App() {
   return (
-    <IntlProvider
-      locale="en"
-      messages={{
-        'guidu.devise.email_registrations_email_title': 'Funziona?',
-      }}
-    >
+    <IntlProvider locale="en">
       <Router>
         <Route
           path="/"
-          render={routeProps => (
+          render={(routeProps) => (
             <DeviseWrapper
               header={
                 <div className="d-flex justify-content-center w-100 mb-4">
@@ -75,7 +70,7 @@ export default function App() {
             >
               <DeviseSimple
                 {...routeProps}
-                signUp={model => {
+                signUp={(model) => {
                   return new Promise((resolve, reject) => {
                     let wait = setTimeout(() => {
                       clearTimeout(wait);
@@ -85,9 +80,9 @@ export default function App() {
                     }, 400);
                   });
                 }}
-                recoverPassword={model => Promise.resolve(console.log(model))}
-                resetPassword={model => Promise.resolve(console.log(model))}
-                signIn={model => {
+                recoverPassword={(model) => Promise.resolve(console.log(model))}
+                resetPassword={(model) => Promise.resolve(console.log(model))}
+                signIn={(model) => {
                   return new Promise((resolve, reject) => {
                     let wait = setTimeout(() => {
                       clearTimeout(wait);

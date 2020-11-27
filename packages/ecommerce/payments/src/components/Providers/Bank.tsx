@@ -7,7 +7,6 @@ import { createIbanElementOptions } from '../../utils';
 export default function Bank({
   mandate = (
     <FormattedMessage
-      id="guidu.payments.bank.mandate"
       defaultMessage="By providing your IBAN and confirming this payment, you are
           authorizing Rocketship Inc. and Stripe, our payment service provider,
           to send instructions to your bank to debit your account and your bank
@@ -32,10 +31,7 @@ export default function Bank({
         <div style={{ position: 'relative' }}>
           <div className="form-group">
             <label htmlFor="credit-card">
-              <FormattedMessage
-                defaultMessage="Insert your bank details"
-                id="guidu.payments.bank.label"
-              />
+              <FormattedMessage defaultMessage="Insert your bank details" />
             </label>
             <IbanElement
               id="credit-card"
@@ -50,12 +46,7 @@ export default function Bank({
           loading={loading}
           canSubmit={canSubmit}
           scope={scope}
-          label={
-            <FormattedMessage
-              defaultMessage="Submit payment"
-              id="guidu.payments.bank.pay"
-            />
-          }
+          label={<FormattedMessage defaultMessage="Submit payment" />}
         />
         <div id="mandate-acceptance" className="mt-3 small text-muted">
           {mandate}

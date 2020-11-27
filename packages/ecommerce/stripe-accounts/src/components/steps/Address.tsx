@@ -85,12 +85,7 @@ export default class Address extends PureComponent<AddressProps> {
         </div>
         <FieldText
           type="text"
-          label={
-            <FormattedMessage
-              id={`guidu.stripeAccounts.${scope}.dob`}
-              defaultMessage="Date of birth"
-            />
-          }
+          label={<FormattedMessage defaultMessage="Date of birth" />}
           name={`stripe_account[${prefix}_birthdate]`}
           value={stripeAccount[`${prefix}_birthdate`] || ''}
           mask="99/99/9999"

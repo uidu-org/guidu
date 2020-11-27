@@ -7,67 +7,54 @@ import { Link } from 'react-router-dom';
 
 export const messages = defineMessages({
   phone_sessions_phone_title: {
-    id: 'guidu.devise.phone_sessions_phone_title',
     defaultMessage: 'Sign in with your phone',
     description: 'phone_sessions_phone_title',
   },
   phone_sessions_phone_description: {
-    id: 'guidu.devise.phone_sessions_phone_description',
     defaultMessage: 'Use your favourite phone account',
     description: 'phone_sessions_phone_description',
   },
   phone_sessions_info_title: {
-    id: 'guidu.devise.phone_sessions_info_title',
     defaultMessage: 'Fill your data to sign in',
     description: 'phone_sessions_info_title',
   },
   phone_sessions_info_description: {
-    id: 'guidu.devise.phone_sessions_info_description',
     defaultMessage: 'phone_sessions_info_description',
     description: 'phone_sessions_info_description',
   },
   phone_sessions_password_title: {
-    id: 'guidu.devise.phone_sessions_password_title',
     defaultMessage: 'Insert your password',
     description: 'phone_sessions_password_title',
   },
   phone_sessions_password_description: {
-    id: 'guidu.devise.phone_sessions_password_description',
     defaultMessage: 'phone_sessions_password_description',
     description: 'phone_sessions_password_description',
   },
   phone_registrations_phone_title: {
-    id: 'guidu.devise.phone_registrations_phone_title',
     defaultMessage: 'Sign up with your phone',
     description: 'phone_registrations_phone_title',
   },
   phone_registrations_phone_description: {
-    id: 'guidu.devise.phone_registrations_phone_description',
     defaultMessage: 'Use a valid phone address',
     description: 'phone_registrations_phone_description',
   },
   phone_registrations_info_title: {
-    id: 'guidu.devise.phone_registrations_info_title',
     defaultMessage: 'phone_registrations_info_title',
     description: 'phone_registrations_info_title',
   },
   phone_registrations_info_description: {
-    id: 'guidu.devise.phone_registrations_info_description',
     defaultMessage: 'phone_registrations_info_description',
     description: 'phone_registrations_info_description',
   },
   phone_registrations_password_title: {
-    id: 'guidu.devise.phone_registrations_password_title',
     defaultMessage: 'phone_registrations_password_title',
     description: 'phone_registrations_password_title',
   },
   phone_registrations_password_description: {
-    id: 'guidu.devise.phone_registrations_password_description',
     defaultMessage: 'phone_registrations_password_description',
     description: 'phone_registrations_password_description',
   },
   phone_registrations_phone_cta: {
-    id: 'guidu.devise.phone_registrations_phone_cta',
     defaultMessage: 'Sign up',
     description: 'phone_registrations_phone_cta',
   },

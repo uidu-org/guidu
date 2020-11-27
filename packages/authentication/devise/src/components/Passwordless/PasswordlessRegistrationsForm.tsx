@@ -5,22 +5,18 @@ import { defineMessages, FormattedMessage } from 'react-intl';
 
 const messages = defineMessages({
   passwordless_registrations_title: {
-    id: 'guidu.devise.passwordless_registrations_title',
     defaultMessage: 'Sign up',
     description: 'passwordless_registrations_title',
   },
   passwordless_registrations_description: {
-    id: 'guidu.devise.passwordless_registrations_description',
     defaultMessage: 'Sign up with to discover stories and make impact',
     description: 'passwordless_registrations_description',
   },
   passwordless_registrations_primary_cta: {
-    id: 'guidu.devise.passwordless_registrations_primary_cta',
     defaultMessage: 'Sign up',
     description: 'passwordless_registrations_primary_cta',
   },
   passwordless_registrations_email_label: {
-    id: 'guidu.devise.passwordless_registrations_email_label',
     defaultMessage: 'Insert your email',
     description: 'passwordless_registrations_email_label',
   },

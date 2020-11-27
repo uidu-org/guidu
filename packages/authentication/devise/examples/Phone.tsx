@@ -23,12 +23,7 @@ export default function App() {
   const currentUser = null;
 
   return (
-    <IntlProvider
-      locale="en"
-      messages={{
-        'guidu.devise.email_registrations_email_title': 'Funziona?',
-      }}
-    >
+    <IntlProvider locale="en">
       <FacebookProvider appId="1490192927662498">
         <Router>
           <Route
