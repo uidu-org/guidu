@@ -18,10 +18,11 @@ export default function Donate({
   currentContact,
   providers,
   baseUrl = '/',
+  createDonation,
   updateDonation,
   updateCurrentContact,
   embedded,
-  ...rest
+  stripe,
 }: DonateProps) {
   const history = useHistory();
   const match = useRouteMatch();
@@ -36,7 +37,11 @@ export default function Donate({
           donationCampaign={donationCampaign}
           providers={providers}
           handleSubmit={async (model) => {
-            return updateDonation(model).then(() => {
+            const createOrUpdate = donation.id
+              ? updateDonation
+              : createDonation;
+            console.log(donation);
+            return createOrUpdate(model).then(() => {
               history.push(`${match.url}/preferences`);
             });
           }}
@@ -70,7 +75,6 @@ export default function Donate({
     name: <FormattedMessage defaultMessage="Contact info" />,
     component: () => (
       <Contact
-        scope="primary"
         contact={currentContact}
         handleSubmit={async (model) => {
           return updateCurrentContact(model).then(() =>
@@ -93,14 +97,16 @@ export default function Donate({
           <>
             {donation.subscriptionItem ? (
               <Subscribe
-                {...rest}
+                stripe={stripe}
+                currentContact={currentContact}
                 donationCampaign={donationCampaign}
                 donation={donation}
                 onSuccess={() => history.push(`${match.url}/done`)}
               />
             ) : (
               <Pay
-                {...rest}
+                stripe={stripe}
+                currentContact={currentContact}
                 donationCampaign={donationCampaign}
                 provider={{ id: 'card' }}
                 donation={donation}
@@ -123,7 +129,7 @@ export default function Donate({
   steps.push({
     relativePath: 'done',
     name: <FormattedMessage defaultMessage="Done!" />,
-    component: () => <Confirmation {...rest} donation={donation} />,
+    component: () => <Confirmation donation={donation} />,
     isDisabled:
       !donation.amount || !donation.contact || !donation.contact.email,
   });

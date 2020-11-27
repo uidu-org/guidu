@@ -12,6 +12,7 @@ import Pay from './steps/Pay';
 export default function Attend({
   order,
   attendance,
+  createOrder,
   updateOrder,
   createAttendance,
   updateCurrentContact,
@@ -21,7 +22,6 @@ export default function Attend({
   baseUrl,
   stripe,
   paymentIntent,
-  ...rest
 }) {
   const history = useHistory();
   const match = useRouteMatch();
@@ -32,13 +32,14 @@ export default function Attend({
       name: <FormattedMessage defaultMessage="Tickets" />,
       component: () => (
         <Order
-          {...rest}
+          order={order}
           event={event}
-          handleSubmit={async (model) =>
-            updateOrder(model).then(() => {
+          handleSubmit={async (model) => {
+            const createOrUpdate = order.id ? updateOrder : createOrder;
+            return createOrUpdate(model).then(() => {
               history.push(`${match.url}/contact`);
-            })
-          }
+            });
+          }}
         />
       ),
     },
@@ -53,8 +54,6 @@ export default function Attend({
     ),
     component: () => (
       <Contact
-        {...rest}
-        scope="events"
         contact={currentContact}
         handleSubmit={async (model) => {
           return updateCurrentContact(model).then(() =>
@@ -74,7 +73,6 @@ export default function Attend({
     ),
     component: () => (
       <Attendances
-        {...rest}
         order={order}
         currentContact={currentContact}
         createAttendance={createAttendance}
@@ -95,11 +93,11 @@ export default function Attend({
       name: 'pay',
       component: () => (
         <Pay
-          {...rest}
+          order={order}
           stripe={stripe}
           paymentIntent={paymentIntent}
-          order={order}
           event={event}
+          currentContact={currentContact}
           currentOrganization={currentOrganization}
         />
       ),
@@ -109,7 +107,7 @@ export default function Attend({
   steps.push({
     relativePath: 'confirmation',
     name: <FormattedMessage defaultMessage="Done!" />,
-    component: () => <Confirmation {...rest} order={order} />,
+    component: () => <Confirmation order={order} />,
   });
 
   return (

@@ -10,8 +10,6 @@ import {
 import { FormattedMessage } from 'react-intl';
 
 function Contact({ contact, handleSubmit }) {
-  // private recaptchaInstance = React.createRef();
-  // private form = React.createRef();
   const form = useRef(null);
 
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -118,11 +116,12 @@ function Contact({ contact, handleSubmit }) {
 
 export default function ContactWithRecaptcha({
   reCaptchaKey = '6LdLkqgUAAAAAPNT6KJn0Emp5bgJw3N9CQ-n27Dg',
-  ...rest
+  contact,
+  handleSubmit,
 }) {
   return (
     <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
-      <Contact {...rest} />
+      <Contact contact={contact} handleSubmit={handleSubmit} />
     </GoogleReCaptchaProvider>
   );
 }

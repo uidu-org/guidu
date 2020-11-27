@@ -56,14 +56,13 @@ export const subscribeToPlan = (donation, payload) => {
     .then((res) => res.data);
 };
 
-export const createDonation = async (model) => {
-  console.log(model);
+export const updateDonation = async (donation, model) => {
   if (model.subscriptionAttributes) {
     const quantity = model.subscriptionAttributes.itemsAttributes[0].quantity;
     const planId = model.subscriptionAttributes.itemsAttributes[0].planId;
     const amount = plans.find((plan) => plan.id === planId)?.amount * quantity;
     return {
-      id: 'newly-created',
+      ...donation,
       amount,
       contact: {
         id: 'ref',
@@ -76,21 +75,37 @@ export const createDonation = async (model) => {
         },
       },
     };
-  }
+  } else if (model.orderAttributes) {
+    const quantity = model.orderAttributes.itemsAttributes[0].quantity;
+    const skuId = model.orderAttributes.itemsAttributes[0].skuId;
+    const amount = skus.find((sku) => sku.id === skuId)?.price * quantity;
 
-  const quantity = model.orderAttributes.itemsAttributes[0].quantity;
-  const skuId = model.orderAttributes.itemsAttributes[0].skuId;
-  const amount = skus.find((sku) => sku.id === skuId)?.price * quantity;
-
-  return {
-    id: 'newly-created',
-    amount,
-    orderItem: {
-      id: 'test-order-item',
-      sku: {
-        quantity: model.orderAttributes.itemsAttributes[0].quantity,
-        id: model.orderAttributes.itemsAttributes[0].skuId,
+    return {
+      ...donation,
+      amount,
+      orderItem: {
+        id: 'test-order-item',
+        sku: {
+          quantity: model.orderAttributes.itemsAttributes[0].quantity,
+          id: model.orderAttributes.itemsAttributes[0].skuId,
+        },
       },
+    };
+  }
+  return {
+    ...donation,
+    ...model,
+  };
+};
+
+export const createDonation = async (model) => {
+  return {
+    id: 'new',
+    contact: {
+      id: 'foo',
+    },
+    donationCampaign: {
+      name: 'text',
     },
   };
 };

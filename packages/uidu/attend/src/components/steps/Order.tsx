@@ -6,7 +6,7 @@ import { FormattedMessage } from 'react-intl';
 import { calculateTotals } from '../../utils';
 import Ticket from '../Ticket';
 
-export default function Order({ event, handleSubmit }) {
+export default function Order({ order, event, handleSubmit }) {
   const [cart, setCart] = useState({});
 
   const handleCounterChange = (ticket, value) => {

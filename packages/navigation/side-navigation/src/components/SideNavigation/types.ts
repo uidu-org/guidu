@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
 
 export type SideNavigationGroupItems = {
   type: 'NavigationItem' | 'NavigationItemSkeleton' | 'InlineComponent';
+  component?: FC<any>;
 };
 
 export type SideNavigationGroup = {
@@ -21,6 +22,7 @@ export type SideNavigationItems = {
 export type SideNavigationSchema = {
   type:
     | 'NavigationHeader'
+    | 'InlineComponent'
     | 'NavigationHeaderSkeleton'
     | 'NavigationSection'
     | 'NavigationFooter';
@@ -29,6 +31,7 @@ export type SideNavigationSchema = {
   before?: ReactNode;
   after?: ReactNode;
   items?: SideNavigationGroup[] | SideNavigationItems[];
+  component?: FC<any>;
 };
 
 export type NavigationProps = {

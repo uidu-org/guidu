@@ -8,7 +8,7 @@ export default function Pay({
   event,
   order = null,
   currentOrganization,
-  currentContact = null,
+  currentContact,
   paymentIntent,
 }) {
   return (

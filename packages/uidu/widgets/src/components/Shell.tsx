@@ -180,7 +180,7 @@ export default function Shell({
             }}
             header={{
               as: Link,
-              to: '',
+              to: baseUrl,
               exact: true,
               children: <ArrowLeft size={18} color="currentColor" />,
             }}

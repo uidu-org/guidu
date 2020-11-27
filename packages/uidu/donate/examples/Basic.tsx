@@ -6,6 +6,7 @@ import {
   createDonation,
   donationCampaign,
   subscribeToPlan,
+  updateDonation,
 } from '../example-helpers';
 
 function loadLocaleData(locale: string) {
@@ -21,7 +22,10 @@ function Basic() {
   const [donation, setDonation] = useState(null);
 
   useEffect(() => {
-    createDonation(setDonation);
+    async function loadDonation() {
+      await createDonation({}).then(setDonation);
+    }
+    loadDonation();
   }, []);
 
   useEffect(() => {
@@ -31,12 +35,11 @@ function Basic() {
     }));
   }, [currentContact]);
 
-  const updateDonation = async (model) =>
-    setDonation({ ...donation, ...model });
-
   if (!donation) {
     return <div>Loading...</div>;
   }
+
+  console.log(donation);
 
   return (
     <WidgetsExampleScaffold
@@ -50,7 +53,10 @@ function Basic() {
       onCreate={(_donation, token) => console.log(token)}
       providers={[{ id: 'card', name: 'Credit Card' }]}
       subscribeToPlan={subscribeToPlan}
-      updateDonation={updateDonation}
+      createDonation={createDonation}
+      updateDonation={async (model) =>
+        updateDonation(donation, model).then(setDonation)
+      }
       updateCurrentContact={async (model) => setCurrentContact(model.contact)}
       currency="€"
     />

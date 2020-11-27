@@ -25,6 +25,7 @@ export type DonateProps = {
   currentOrganization: any;
   providers: Array<PaymentProviderTypes>;
   createPaymentIntent: (model: any) => Promise<any>;
+  createDonation: (model: any) => Promise<Partial<Donation>>;
   updateDonation: (model: any) => Promise<Partial<Donation>>;
   updateCurrentContact: (model: any) => Promise<Partial<Contact>>;
   subscribeToPlan: (
