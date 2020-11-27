@@ -244,14 +244,18 @@ export default function Shell({
                   className: 'route-wrapper',
                 })}
           >
-            {steps.map(({ relativePath, component: Component }) => {
+            {steps.map(({ isDisabled, relativePath, component: Component }) => {
               return (
                 <Route
                   path={`${match.path}/${relativePath}`}
                   key={relativePath}
                   exact
                 >
-                  <Component />
+                  {isDisabled ? (
+                    <Redirect to={`${match.url}/${steps[0].relativePath}`} />
+                  ) : (
+                    <Component />
+                  )}
                 </Route>
               );
             })}

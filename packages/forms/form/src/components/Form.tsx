@@ -1,6 +1,6 @@
 import { ClassValue } from 'classnames/types';
 import Formsy from 'formsy-react';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FormProps, LayoutType } from '../types';
 import FormContext from './FormContext';
@@ -17,7 +17,7 @@ const Loading = styled.div<{ isLoading: boolean }>`
 
 function Form({
   footerRenderer = () => {},
-  handleSubmit = async model => {},
+  handleSubmit = async (model) => {},
   inputsWrapperProps = {},
   withLoader = true,
   children,
@@ -34,8 +34,16 @@ function Form({
   ...rest
 }: FormProps & { forwardedRef: React.Ref<any> }) {
   const form: React.RefObject<Formsy> = useRef(null);
+  const isMounted = useRef(false);
   const [canSubmit, setCanSubmit] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    isMounted.current = true;
+    return function cleanup(): void {
+      isMounted.current = false;
+    };
+  }, []);
 
   const enableButton = () => setCanSubmit(true);
 
@@ -44,7 +52,9 @@ function Form({
   const onValidSubmit = (model, resetForm) => {
     setIsLoading(true);
     handleSubmit(model, resetForm).then(() => {
-      setIsLoading(false);
+      if (isMounted.current) {
+        setIsLoading(false);
+      }
     });
   };
 

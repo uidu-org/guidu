@@ -16,8 +16,8 @@
     "@uidu/form": "^0.4.1",
     "@uidu/shell": "^1.2.1",
     "react": "^17.0.0",
+    "react-google-recaptcha-v3": "^1.7.0",
     "react-intl": "^5.10.5",
-    "react-recaptcha": "^2.3.10",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

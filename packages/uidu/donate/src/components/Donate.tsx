@@ -27,8 +27,6 @@ export default function Donate({
   const history = useHistory();
   const match = useRouteMatch();
 
-  console.log(donation);
-
   const steps: ShellStep[] = [
     {
       relativePath: 'donation',
@@ -64,6 +62,7 @@ export default function Donate({
         }
       />
     ),
+    isDisabled: !donation?.amount,
     nextStepRelativePath: 'contact',
   });
 
@@ -83,7 +82,7 @@ export default function Donate({
     ),
     nextStepRelativePath: 'payments',
     isDisabled: !donation?.amount,
-    isCompleted: !!currentContact?.id,
+    isCompleted: !!currentContact.email,
   });
 
   steps.push({
@@ -114,15 +113,21 @@ export default function Donate({
       }
       return null;
     },
-    isDisabled: !donation.amount,
+    isDisabled:
+      !donation.amount ||
+      !donation.contact ||
+      (donation.contact && !donation.contact.email),
     nextStepRelativePath: 'done',
   });
+
+  console.log(donation?.contact?.email);
 
   steps.push({
     relativePath: 'done',
     name: <FormattedMessage defaultMessage="Done!" />,
     component: () => <Confirmation {...rest} donation={donation} />,
-    isDisabled: !donation.amount,
+    isDisabled:
+      !donation.amount || !donation.contact || !donation.contact.email,
   });
 
   return (

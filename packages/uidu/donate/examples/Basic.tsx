@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import Donate from '../';
 import { WidgetsExampleScaffold } from '../../widgets/example-utils';
@@ -15,10 +15,17 @@ function loadLocaleData(locale: string) {
 function Basic() {
   const [currentContact, setCurrentContact] = useState({
     temporary: true,
-    email: 'foo@uidu.org',
-    firstName: 'Andrea',
+    // email: 'foo@uidu.org',
+    // firstName: 'Andrea',
   });
   const [donation, setDonation] = useState({});
+
+  useEffect(() => {
+    setDonation((prevDonation) => ({
+      ...prevDonation,
+      contact: currentContact,
+    }));
+  }, [currentContact]);
 
   const updateDonation = async (model) =>
     setDonation({ ...donation, ...model });
@@ -37,7 +44,7 @@ function Basic() {
       subscribeToPlan={subscribeToPlan}
       createDonation={async (model) => createDonation(model).then(setDonation)}
       updateDonation={updateDonation}
-      updateCurrentContact={async (model) => setCurrentContact(model)}
+      updateCurrentContact={async (model) => setCurrentContact(model.contact)}
       currency="€"
     />
   );

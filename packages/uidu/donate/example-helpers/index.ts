@@ -66,7 +66,7 @@ export const createDonation = async (model) => {
       id: 'newly-created',
       amount,
       contact: {
-        email: 'andrea.vanini@uidu.org',
+        id: 'ref',
       },
       subscriptionItem: {
         id: 'test-subscription-item',
