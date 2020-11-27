@@ -1,6 +1,6 @@
 {
   "name": "@uidu/attend",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "private": false,
   "description": "React component to attend to an event",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/attend",
@@ -11,7 +11,7 @@
   "types": "dist/uidu-attend.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/contact": "^0.2.2",
+    "@uidu/contact": "^0.2.4",
     "@uidu/field-counter": "^0.3.0",
     "@uidu/field-text": "^0.4.1",
     "@uidu/field-textarea": "^0.3.0",
@@ -20,7 +20,7 @@
     "@uidu/shell": "^1.2.1",
     "@uidu/spinner": "^0.4.1",
     "@uidu/stepper": "^0.3.1",
-    "@uidu/widgets": "^0.4.2",
+    "@uidu/widgets": "^0.4.4",
     "moment": "^2.27.0",
     "react": "^17.0.0",
     "react-countdown": "^2.2.0",

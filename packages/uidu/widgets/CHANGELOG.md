@@ -1,5 +1,14 @@
 # @uidu/widgets
 
+## 0.4.4
+
+### Patch Changes
+
+- 0138ded: Smarter donation
+- Updated dependencies [0138ded]
+  - @uidu/side-navigation@0.2.3
+  - @uidu/contact@0.2.4
+
 ## 0.4.3
 
 ### Patch Changes

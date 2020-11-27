@@ -1,5 +1,11 @@
 # @uidu/contact
 
+## 0.2.4
+
+### Patch Changes
+
+- 0138ded: Smarter donation
+
 ## 0.2.3
 
 ### Patch Changes

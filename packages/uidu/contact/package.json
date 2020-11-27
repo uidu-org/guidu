@@ -1,6 +1,6 @@
 {
   "name": "@uidu/contact",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": false,
   "description": "Basic contact form info",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/contact",

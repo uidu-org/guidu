@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.3.5
+
+### Patch Changes
+
+- 0138ded: Smarter donation
+- Updated dependencies [0138ded]
+  - @uidu/contact@0.2.4
+  - @uidu/widgets@0.4.4
+
 ## 0.3.4
 
 ### Patch Changes
