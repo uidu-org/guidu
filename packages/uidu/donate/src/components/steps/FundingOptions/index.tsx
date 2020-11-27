@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Check } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import { DonationProps } from '../../../types';
+import { FundingOptionsProps } from '../../../types';
 import Plan from './Plan';
 import Sku from './Sku';
 
@@ -103,11 +103,67 @@ const recurrences = [
   },
 ];
 
-export default function Donation({
+export function PureFundingOptions({
+  recurrence,
+  setRecurrence,
   donationCampaign,
   donation,
   handleSubmit,
-}: DonationProps) {
+}) {
+  return (
+    <>
+      <Downshift
+        onChange={(selection) => {
+          setRecurrence(selection.id);
+        }}
+        itemToString={(item) => (item ? item.id : '')}
+        initialSelectedItem={recurrences.find((r) => r.id === recurrence)}
+      >
+        {({ getItemProps, getMenuProps, selectedItem, getRootProps }) => (
+          <div
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...getRootProps({ refKey: 'ref' }, { suppressRefError: true })}
+          >
+            <div className="form-group">
+              {/* <label htmlFor="">Choose your donation recurrence</label> */}
+              <div className="d-flex align-items-center" {...getMenuProps()}>
+                {recurrences.map((item, index) => (
+                  <RecurrenceOption
+                    key={item.id}
+                    isSelected={selectedItem?.id === item.id}
+                    index={index}
+                    item={item}
+                    getItemProps={getItemProps}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Downshift>
+      {recurrence === 'month' ? (
+        <Plan
+          donation={donation}
+          donationCampaign={donationCampaign}
+          handleSubmit={handleSubmit}
+          recurrence={recurrence}
+        />
+      ) : (
+        <Sku
+          donation={donation}
+          donationCampaign={donationCampaign}
+          handleSubmit={handleSubmit}
+        />
+      )}
+    </>
+  );
+}
+
+export default function FundingOptions({
+  donationCampaign,
+  donation,
+  handleSubmit,
+}: FundingOptionsProps) {
   const [recurrence, setRecurrence] = useState(
     donation?.orderItem ? 'once' : 'month',
   );
@@ -132,62 +188,13 @@ export default function Donation({
               isLast
               isFirst
             >
-              <Downshift
-                onChange={(selection) => {
-                  setRecurrence(selection.id);
-                }}
-                itemToString={(item) => (item ? item.id : '')}
-                initialSelectedItem={recurrences.find(
-                  (r) => r.id === recurrence,
-                )}
-              >
-                {({
-                  getItemProps,
-                  getMenuProps,
-                  selectedItem,
-                  getRootProps,
-                }) => (
-                  <div
-                    // eslint-disable-next-line react/jsx-props-no-spreading
-                    {...getRootProps(
-                      { refKey: 'ref' },
-                      { suppressRefError: true },
-                    )}
-                  >
-                    <div className="form-group">
-                      {/* <label htmlFor="">Choose your donation recurrence</label> */}
-                      <div
-                        className="d-flex align-items-center"
-                        {...getMenuProps()}
-                      >
-                        {recurrences.map((item, index) => (
-                          <RecurrenceOption
-                            key={item.id}
-                            isSelected={selectedItem?.id === item.id}
-                            index={index}
-                            item={item}
-                            getItemProps={getItemProps}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </Downshift>
-              {recurrence === 'month' ? (
-                <Plan
-                  donation={donation}
-                  donationCampaign={donationCampaign}
-                  handleSubmit={handleSubmit}
-                  recurrence={recurrence}
-                />
-              ) : (
-                <Sku
-                  donation={donation}
-                  donationCampaign={donationCampaign}
-                  handleSubmit={handleSubmit}
-                />
-              )}
+              <PureFundingOptions
+                setRecurrence={setRecurrence}
+                recurrence={recurrence}
+                donationCampaign={donationCampaign}
+                donation={donation}
+                handleSubmit={handleSubmit}
+              />
             </FormSection>
           </FormWrapper>
         </ScrollableContainer>

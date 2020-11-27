@@ -7,7 +7,7 @@ import { useHistory, useRouteMatch } from 'react-router';
 import { DonateProps } from '../types';
 
 const Confirmation = loadable(() => import('./steps/Confirmation'));
-const Donation = loadable(() => import('./steps/Donation'));
+const FundingOptions = loadable(() => import('./steps/FundingOptions'));
 const Pay = loadable(() => import('./steps/Pay'));
 const Preferences = loadable(() => import('./steps/Preferences'));
 const Subscribe = loadable(() => import('./steps/Subscribe'));
@@ -32,7 +32,7 @@ export default function Donate({
       relativePath: 'donation',
       name: <FormattedMessage defaultMessage="Funding option" />,
       component: () => (
-        <Donation
+        <FundingOptions
           donation={donation}
           donationCampaign={donationCampaign}
           providers={providers}

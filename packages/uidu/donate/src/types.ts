@@ -7,11 +7,10 @@ import {
   Subscription,
 } from '@uidu/schema.d.ts';
 
-export type DonationProps = {
+export type FundingOptionsProps = {
   donation?: Partial<Donation>;
   donationCampaign?: Partial<DonationCampaign>;
   handleSubmit?: any;
-  providers: Array<PaymentProviderTypes>;
 };
 
 export type DonateProps = {
