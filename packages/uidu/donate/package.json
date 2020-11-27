@@ -9,11 +9,10 @@
   "main": "dist/uidu-donate.cjs.js",
   "module": "dist/uidu-donate.esm.js",
   "types": "dist/uidu-donate.cjs.d.ts",
-  "scripts": {
-    "lang:extract": "formatjs extract",
-    "lang:compile": "formatjs compile-folder ./lang ./dist/lang",
-    "postbuild": "yarn lang:compile"
-  },
+  "supportedLocales": [
+    "it",
+    "en"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",

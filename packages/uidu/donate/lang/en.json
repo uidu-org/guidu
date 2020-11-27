@@ -2,67 +2,76 @@
   "1g2QYh": {
     "defaultMessage": "Donation amount"
   },
-  "guidu.donate.amount.custom": {
-    "defaultMessage": "Choose your donation amount"
-  },
-  "guidu.donate.dedication.email": {
-    "defaultMessage": "Dedication email"
-  },
-  "guidu.donate.dedication.kind": {
-    "defaultMessage": "Dedication kind"
-  },
-  "guidu.donate.dedication.message": {
-    "defaultMessage": "Dedication message"
-  },
-  "guidu.donate.dedication.name": {
-    "defaultMessage": "Dedication name"
-  },
-  "guidu.donate.dedicationKinds.inHonorOf": {
-    "defaultMessage": "In honor of"
-  },
-  "guidu.donate.dedicationKinds.inMemoryOf": {
-    "defaultMessage": "In memory of"
-  },
-  "guidu.donate.dedicationKinds.inspiredBy": {
-    "defaultMessage": "Inspired by"
-  },
-  "guidu.donate.donation.contact": {
-    "defaultMessage": "Contact info"
-  },
-  "guidu.donate.donation.done": {
-    "defaultMessage": "Done!"
-  },
-  "guidu.donate.donation.name": {
-    "defaultMessage": "Funding option"
-  },
-  "guidu.donate.donation.payment": {
-    "defaultMessage": "Payment info"
-  },
-  "guidu.donate.donation.submit": {
+  "2IFGap": {
     "defaultMessage": "Donate"
   },
-  "guidu.donate.preferences.anonymous": {
-    "defaultMessage": "Donate anonymously"
+  "6VUPro": {
+    "defaultMessage": "In honor of"
   },
-  "guidu.donate.preferences.dedicated": {
-    "defaultMessage": "Dedicate this donation"
+  "7sWUed": {
+    "defaultMessage": "Dedication email"
   },
-  "guidu.donate.preferences.leaveAMessage": {
-    "defaultMessage": "Leave a message"
+  "9+Ddtu": {
+    "defaultMessage": "Next"
   },
-  "guidu.donate.preferences.submit": {
-    "defaultMessage": "Leave a message"
+  "9buGBZ": {
+    "defaultMessage": "In memory of"
   },
-  "guidu.donate.preferences.title": {
-    "defaultMessage": "Customize"
+  "BjBR3Q": {
+    "defaultMessage": "Choose your donation amount"
   },
-  "guidu.donate.recurrence.monthly": {
-    "defaultMessage": "Recurring"
-  },
-  "guidu.donate.recurrence.once": {
+  "DqTQOp": {
     "defaultMessage": "Once"
   },
-  "guidu.donate.sku.custom.label": {
-    "defaultMessage": "Donation amount"
+  "E08HG7": {
+    "defaultMessage": "Dedicate this donation"
+  },
+  "FS3b54": {
+    "defaultMessage": "Done!"
+  },
+  "FXllxZ": {
+    "defaultMessage": "Donate {customAmount} {currency}"
+  },
+  "I23sfi": {
+    "defaultMessage": "Leave a message"
+  },
+  "QwYpgS": {
+    "defaultMessage": "Dedication message"
+  },
+  "S1ITu4": {
+    "defaultMessage": "Funding option"
+  },
+  "SstaXJ": {
+    "defaultMessage": "Donate {amount} {recurrence, select, once {} month {each month} }"
+  },
+  "TXpOBi": {
+    "defaultMessage": "Customize"
+  },
+  "WMUyrN": {
+    "defaultMessage": "Donate {customAmount} {currency} {recurrence, select, once {} month {each month} }"
+  },
+  "d2MRtj": {
+    "defaultMessage": "Dedication kind"
+  },
+  "dkRj0v": {
+    "defaultMessage": "Inspired by"
+  },
+  "k0/U6g": {
+    "defaultMessage": "Donate anonymously"
+  },
+  "qBePk/": {
+    "defaultMessage": "Payment info"
+  },
+  "qN0sJX": {
+    "defaultMessage": "Dedication name"
+  },
+  "v84fNv": {
+    "defaultMessage": "Recurring"
+  },
+  "wGdQdU": {
+    "defaultMessage": "Contact info"
+  },
+  "wYsv4Z": {
+    "defaultMessage": "Monthly"
   }
 }
