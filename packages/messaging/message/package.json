@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message",
   "license": "ISC",

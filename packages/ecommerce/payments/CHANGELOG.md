@@ -1,5 +1,15 @@
 # @uidu/payments
 
+## 0.3.2
+
+### Patch Changes
+
+- 7a68856: Remove deprecated id from FormattedMessage
+- 7a68856: Donation and Attendances WIP
+- 7a68856: Devise langs
+- Updated dependencies [7a68856]
+  - @uidu/form@0.4.2
+
 ## 0.3.1
 
 ### Patch Changes
