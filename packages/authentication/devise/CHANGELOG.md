@@ -1,5 +1,16 @@
 # @uidu/devise
 
+## 0.5.0
+
+### Minor Changes
+
+- 7a68856: Devise langs
+
+### Patch Changes
+
+- Updated dependencies [7a68856]
+  - @uidu/form@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes

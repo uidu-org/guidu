@@ -1,5 +1,15 @@
 # @uidu/data-views
 
+## 0.5.1
+
+### Patch Changes
+
+- 7a68856: Remove deprecated id from FormattedMessage
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+  - @uidu/data-controls@0.6.3
+  - @uidu/form@0.4.2
+
 ## 0.5.0
 
 ### Minor Changes

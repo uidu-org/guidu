@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.12
+
+### Patch Changes
+
+- 7a68856: Donation and Attendances WIP
+
 ## 0.3.11
 
 ### Patch Changes

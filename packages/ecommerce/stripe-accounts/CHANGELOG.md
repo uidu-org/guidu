@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.1
+
+### Patch Changes
+
+- 7a68856: Remove deprecated id from FormattedMessage
+- 7a68856: Devise langs
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+  - @uidu/payments@0.3.2
+  - @uidu/form@0.4.2
+
 ## 0.2.0
 
 ### Minor Changes

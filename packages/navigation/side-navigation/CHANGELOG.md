@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.2
+
+### Patch Changes
+
+- 7a68856: Donation and Attendances WIP
+
 ## 0.2.1
 
 ### Patch Changes

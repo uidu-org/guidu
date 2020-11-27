@@ -1,5 +1,18 @@
 # @uidu/propose
 
+## 0.2.1
+
+### Patch Changes
+
+- 7a68856: Remove deprecated id from FormattedMessage
+- 7a68856: Migrate to webpack 5, added exposed FieldDate with calendar, more on uidu interaction components
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+- Updated dependencies [7a68856]
+  - @uidu/widgets@0.4.2
+  - @uidu/form@0.4.2
+
 ## 0.2.0
 
 ### Minor Changes

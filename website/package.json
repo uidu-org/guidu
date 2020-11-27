@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "repository": "https://github.com/uidu-org/guidu/tree/master/website",
   "license": "MIT",
   "scripts": {
@@ -27,7 +27,7 @@
     "@uidu/docs": "^0.3.1",
     "@uidu/drawer": "^0.5.1",
     "@uidu/field-text": "^0.4.1",
-    "@uidu/form": "^0.4.1",
+    "@uidu/form": "^0.4.2",
     "@uidu/list": "^0.2.1",
     "@uidu/lozenge": "^0.4.1",
     "@uidu/modal-dialog": "^0.4.1",
@@ -37,7 +37,7 @@
     "@uidu/spinner": "^0.4.1",
     "@uidu/table": "^0.5.1",
     "@uidu/theme": "^0.5.2",
-    "@uidu/themes-uidu": "^0.3.11",
+    "@uidu/themes-uidu": "^0.3.12",
     "@uidu/tooltip": "^0.4.1",
     "avataaars": "^1.2.1",
     "codesandboxer": "^1.0.3",
@@ -74,7 +74,7 @@
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.36",
     "@uidu/nav-info-loader": "^0.1.37",
-    "@uidu/webpack-config": "^0.1.82"
+    "@uidu/webpack-config": "^0.1.89"
   },
   "publishConfig": {
     "access": "public"

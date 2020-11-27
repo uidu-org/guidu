@@ -1,6 +1,6 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Widgets components with zoid",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",
@@ -10,9 +10,9 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",
-    "@uidu/contact": "^0.2.1",
+    "@uidu/contact": "^0.2.2",
     "@uidu/shell": "^1.2.1",
-    "@uidu/side-navigation": "^0.2.1",
+    "@uidu/side-navigation": "^0.2.2",
     "@uidu/slider": "^1.6.1",
     "@uidu/theme": "^0.5.2",
     "react": "^17.0.0",

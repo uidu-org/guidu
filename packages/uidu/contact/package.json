@@ -1,6 +1,6 @@
 {
   "name": "@uidu/contact",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "Basic contact form info",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/contact",
@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.3.0",
     "@uidu/field-text": "^0.4.1",
-    "@uidu/form": "^0.4.1",
+    "@uidu/form": "^0.4.2",
     "@uidu/shell": "^1.2.1",
     "react": "^17.0.0",
     "react-intl": "^5.10.5",

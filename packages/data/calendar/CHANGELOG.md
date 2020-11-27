@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.2.1
+
+### Patch Changes
+
+- 7a68856: Migrate to webpack 5, added exposed FieldDate with calendar, more on uidu interaction components
+
 ## 0.2.0
 
 ### Minor Changes
