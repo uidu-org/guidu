@@ -44,7 +44,7 @@ function Basic() {
       }}
       order={order}
       attendance={{}}
-      createOrder={async (model) => {
+      updateOrder={async (model) => {
         setOrder({
           ...model,
           attendances: model.items

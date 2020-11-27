@@ -18,7 +18,6 @@ export default function Donate({
   currentContact,
   providers,
   baseUrl = '/',
-  createDonation,
   updateDonation,
   updateCurrentContact,
   embedded,
@@ -37,7 +36,7 @@ export default function Donate({
           donationCampaign={donationCampaign}
           providers={providers}
           handleSubmit={async (model) => {
-            return createDonation(model).then(() => {
+            return updateDonation(model).then(() => {
               history.push(`${match.url}/preferences`);
             });
           }}
@@ -114,13 +113,12 @@ export default function Donate({
       return null;
     },
     isDisabled:
+      !donation ||
       !donation.amount ||
       !donation.contact ||
       (donation.contact && !donation.contact.email),
     nextStepRelativePath: 'done',
   });
-
-  console.log(donation?.contact?.email);
 
   steps.push({
     relativePath: 'done',

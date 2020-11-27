@@ -24,7 +24,7 @@ function NewDonation({}) {
           history.push(`/donations/${donation.donation.id}/preferences`),
         )
       }
-    ></DonateDonation>
+    />
   );
 }
 

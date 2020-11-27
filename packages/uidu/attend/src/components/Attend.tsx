@@ -12,7 +12,7 @@ import Pay from './steps/Pay';
 export default function Attend({
   order,
   attendance,
-  createOrder,
+  updateOrder,
   createAttendance,
   updateCurrentContact,
   currentContact,
@@ -35,7 +35,7 @@ export default function Attend({
           {...rest}
           event={event}
           handleSubmit={async (model) =>
-            createOrder(model).then(() => {
+            updateOrder(model).then(() => {
               history.push(`${match.url}/contact`);
             })
           }

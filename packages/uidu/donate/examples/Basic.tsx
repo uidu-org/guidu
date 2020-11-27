@@ -18,7 +18,11 @@ function Basic() {
     // email: 'foo@uidu.org',
     // firstName: 'Andrea',
   });
-  const [donation, setDonation] = useState({});
+  const [donation, setDonation] = useState(null);
+
+  useEffect(() => {
+    createDonation(setDonation);
+  }, []);
 
   useEffect(() => {
     setDonation((prevDonation) => ({
@@ -29,6 +33,10 @@ function Basic() {
 
   const updateDonation = async (model) =>
     setDonation({ ...donation, ...model });
+
+  if (!donation) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <WidgetsExampleScaffold
@@ -42,7 +50,6 @@ function Basic() {
       onCreate={(_donation, token) => console.log(token)}
       providers={[{ id: 'card', name: 'Credit Card' }]}
       subscribeToPlan={subscribeToPlan}
-      createDonation={async (model) => createDonation(model).then(setDonation)}
       updateDonation={updateDonation}
       updateCurrentContact={async (model) => setCurrentContact(model.contact)}
       currency="€"

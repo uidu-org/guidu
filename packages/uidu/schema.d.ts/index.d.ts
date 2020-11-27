@@ -417,6 +417,8 @@ export type Contact = ActiveRecordTimestamp & Node & WithAddresses & WithAvatar 
   currentSignInAt?: Maybe<Scalars['ISO8601DateTime']>;
   currentSignInIp?: Maybe<Scalars['String']>;
   displayName?: Maybe<Scalars['String']>;
+  donation?: Maybe<Donation>;
+  donations?: Maybe<Array<Donation>>;
   donationsCount?: Maybe<Scalars['Int']>;
   email?: Maybe<Scalars['String']>;
   enhancements?: Maybe<Scalars['JSON']>;
@@ -454,6 +456,11 @@ export type ContactAddressesArgs = {
 
 export type ContactAvatarArgs = {
   variant?: Maybe<Scalars['String']>;
+};
+
+
+export type ContactDonationArgs = {
+  id: Scalars['ID'];
 };
 
 
@@ -1077,6 +1084,7 @@ export type DataView = ActiveRecordTimestamp & Node & {
   name: Scalars['String'];
   position: Scalars['Int'];
   preferences?: Maybe<DataViewPreferences>;
+  query?: Maybe<Scalars['JSON']>;
   state?: Maybe<Scalars['JSON']>;
   updatedAt: Scalars['ISO8601DateTime'];
 };
@@ -1089,6 +1097,7 @@ export type DataViewAttributes = {
   name?: Maybe<Scalars['String']>;
   position?: Maybe<Scalars['Int']>;
   preferences?: Maybe<DataViewPreferencesAttribute>;
+  query?: Maybe<ColumnsStateAttribute>;
   state?: Maybe<ColumnsStateAttribute>;
 };
 
