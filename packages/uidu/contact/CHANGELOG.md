@@ -1,5 +1,13 @@
 # @uidu/contact
 
+## 0.2.3
+
+### Patch Changes
+
+- f17eb07: Adding check for ismounted for forms, donation steps
+- Updated dependencies [f17eb07]
+  - @uidu/form@0.4.3
+
 ## 0.2.2
 
 ### Patch Changes
