@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.14
+
+### Patch Changes
+
+- 157068a: Fix createDonation
+
 ## 0.1.13
 
 ### Patch Changes
