@@ -1,4 +1,5 @@
 import FieldDate from '@uidu/field-date';
+import styles from '@uidu/field-date/index.module.scss';
 import { Form, FormSection, FormSectionSubmit, FormWrapper } from '@uidu/form';
 import Select from '@uidu/select';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
@@ -48,6 +49,12 @@ export default function Reminder({ handleSubmit }) {
                           required
                           layout="elementOnly"
                           withCalendar
+                          dayPickerProps={{
+                            classNames: styles,
+                            modifiers: {
+                              [styles.selected]: moment().toDate(),
+                            },
+                          }}
                         />
                       </div>
                     </div>

@@ -19,13 +19,13 @@ function FieldDateCalendar({
       {...dayPickerProps}
       onDayClick={onDayChange}
       selectedDays={value && value !== '' && moment(value).toDate()}
-      modifiers={{
-        ...(value && value !== ''
-          ? {
-              [styles.selected]: moment(value).toDate(),
-            }
-          : null),
-      }}
+      // modifiers={{
+      //   ...(value && value !== ''
+      //     ? {
+      //         [styles.selected]: moment(value).toDate(),
+      //       }
+      //     : null),
+      // }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...dayPickerProps}
     />

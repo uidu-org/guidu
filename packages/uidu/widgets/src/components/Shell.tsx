@@ -81,9 +81,10 @@ const StyledStepNumber = styled.div<{
 
 export default function Shell({
   name,
-  baseUrl,
+  baseUrl = '/',
   steps,
   embedded,
+  whiteLabel,
   sidebarFooterAdditionalItems = [],
 }: ShellProps) {
   const match = useRouteMatch();
@@ -135,20 +136,22 @@ export default function Shell({
       type: 'NavigationFooter',
       items: [
         ...sidebarFooterAdditionalItems,
-        {
-          type: 'InlineComponent',
-          component: () => (
-            <>
-              <div className="mt-3 py-3 border-top">
-                <div className="px-4 small text-center">
-                  Powered by <b>uidu</b>
-                  <br />
-                  Terms Privacy
+        ...(!whiteLabel && [
+          {
+            type: 'InlineComponent',
+            component: () => (
+              <>
+                <div className="mt-3 py-3 border-top">
+                  <div className="px-4 small text-center">
+                    Powered by <b>uidu</b>
+                    <br />
+                    Terms Privacy
+                  </div>
                 </div>
-              </div>
-            </>
-          ),
-        },
+              </>
+            ),
+          },
+        ]),
       ],
     },
   ];

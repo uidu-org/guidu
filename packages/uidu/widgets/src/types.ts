@@ -17,5 +17,6 @@ export type ShellProps = {
   steps: Array<ShellStep>;
   scope: string;
   embedded?: boolean;
+  whiteLabel?: boolean;
   sidebarFooterAdditionalItems?: Partial<SideNavigationSchema[]>;
 };

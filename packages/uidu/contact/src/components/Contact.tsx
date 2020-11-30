@@ -63,7 +63,7 @@ function Contact({ contact, handleSubmit }) {
                           }
                           name="contact[firstName]"
                           autoComplete="given-name"
-                          value={contact.firstName}
+                          value={contact?.firstName}
                           required
                         />
                         <FieldText
@@ -73,7 +73,7 @@ function Contact({ contact, handleSubmit }) {
                           }
                           name="contact[lastName]"
                           autoComplete="family-name"
-                          value={contact.lastName}
+                          value={contact?.lastName}
                           required
                         />
 
@@ -82,7 +82,7 @@ function Contact({ contact, handleSubmit }) {
                           label={<FormattedMessage defaultMessage="Email" />}
                           name="contact[email]"
                           autoComplete="email"
-                          value={contact.email}
+                          value={contact?.email}
                           required
                         />
                         <div className="form-group">
@@ -93,7 +93,7 @@ function Contact({ contact, handleSubmit }) {
                             }
                             layout="elementOnly"
                             required
-                            value={contact.privacy}
+                            value={contact?.privacy}
                           />
                         </div>
                       </Form>

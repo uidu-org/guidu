@@ -1,0 +1,37 @@
+{
+  "name": "@uidu/book",
+  "version": "0.1.0",
+  "private": false,
+  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/book",
+  "license": "MIT",
+  "author": "uidu",
+  "main": "dist/uidu-book.cjs.js",
+  "module": "dist/uidu-book.esm.js",
+  "types": "dist/uidu-book.cjs.d.ts",
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "@uidu/calendar": "^0.2.1",
+    "@uidu/checkbox": "^0.3.0",
+    "@uidu/contact": "^0.2.2",
+    "@uidu/field-date": "^0.3.1",
+    "@uidu/field-downshift": "^0.5.1",
+    "@uidu/field-text": "^0.4.0",
+    "@uidu/field-textarea": "^0.3.0",
+    "@uidu/form": "^0.4.2",
+    "@uidu/select": "^0.6.0",
+    "@uidu/shell": "^1.2.1",
+    "@uidu/spinner": "^0.4.1",
+    "@uidu/widgets": "^0.4.2",
+    "moment": "^2.27.0",
+    "react": "^17.0.0",
+    "react-feather": "^2.0.9",
+    "react-intl": "^5.10.5",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.1",
+    "tslib": "^2.0.1"
+  },
+  "devDependencies": {
+    "@uidu/docs": "^0.3.0"
+  }
+}
