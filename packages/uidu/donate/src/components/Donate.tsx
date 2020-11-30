@@ -13,6 +13,7 @@ const Preferences = loadable(() => import('./steps/Preferences'));
 const Subscribe = loadable(() => import('./steps/Subscribe'));
 
 export default function Donate({
+  currentOrganization,
   donationCampaign,
   donation,
   currentContact,
@@ -40,7 +41,6 @@ export default function Donate({
             const createOrUpdate = donation.id
               ? updateDonation
               : createDonation;
-            console.log(donation);
             return createOrUpdate(model).then(() => {
               history.push(`${match.url}/preferences`);
             });
@@ -99,6 +99,7 @@ export default function Donate({
               <Subscribe
                 stripe={stripe}
                 currentContact={currentContact}
+                currentOrganization={currentOrganization}
                 donationCampaign={donationCampaign}
                 donation={donation}
                 onSuccess={() => history.push(`${match.url}/done`)}
@@ -107,6 +108,7 @@ export default function Donate({
               <Pay
                 stripe={stripe}
                 currentContact={currentContact}
+                currentOrganization={currentOrganization}
                 donationCampaign={donationCampaign}
                 provider={{ id: 'card' }}
                 donation={donation}
