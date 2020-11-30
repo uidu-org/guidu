@@ -1,5 +1,11 @@
 # @uidu/donate
 
+## 0.3.8
+
+### Patch Changes
+
+- c7b19f8: Fix currentOrganization in donation
+
 ## 0.3.7
 
 ### Patch Changes
