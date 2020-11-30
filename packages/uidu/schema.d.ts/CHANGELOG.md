@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.15
+
+### Patch Changes
+
+- 33ca6a7: Pass down createPaymentIntent and Shell innerClassName
+
 ## 0.1.14
 
 ### Patch Changes
