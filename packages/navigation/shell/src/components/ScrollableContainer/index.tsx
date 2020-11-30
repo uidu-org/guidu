@@ -97,6 +97,7 @@ export default React.forwardRef(
       children,
       shadowOnScroll = true,
       className = null,
+      innerClassName = null,
       enableCustomScrollbars = false,
       customScrollbarProps = {},
     }: ShellBodyProps,
@@ -108,6 +109,7 @@ export default React.forwardRef(
         children={children}
         shadowOnScroll={shadowOnScroll}
         className={className}
+        innerClassName={innerClassName}
         enableCustomScrollbars={enableCustomScrollbars}
         customScrollbarProps={customScrollbarProps}
         forwardedRef={ref}

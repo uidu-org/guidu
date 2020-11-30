@@ -23,6 +23,7 @@ export default function Donate({
   updateDonation,
   updateCurrentContact,
   embedded,
+  createPaymentIntent,
   stripe,
 }: DonateProps) {
   const history = useHistory();
@@ -98,6 +99,7 @@ export default function Donate({
             {donation.subscriptionItem ? (
               <Subscribe
                 stripe={stripe}
+                createPaymentIntent={createPaymentIntent}
                 currentContact={currentContact}
                 currentOrganization={currentOrganization}
                 donationCampaign={donationCampaign}
@@ -107,6 +109,7 @@ export default function Donate({
             ) : (
               <Pay
                 stripe={stripe}
+                createPaymentIntent={createPaymentIntent}
                 currentContact={currentContact}
                 currentOrganization={currentOrganization}
                 donationCampaign={donationCampaign}
