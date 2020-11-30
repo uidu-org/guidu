@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.3.7
+
+### Patch Changes
+
+- 060f4ae: Minor fixes to book and field date calendar
+- Updated dependencies [060f4ae]
+  - @uidu/contact@0.2.5
+  - @uidu/widgets@0.4.5
+
 ## 0.3.6
 
 ### Patch Changes

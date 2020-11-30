@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 0.3.2
+
+### Patch Changes
+
+- 060f4ae: Minor fixes to book and field date calendar
+
 ## 0.3.1
 
 ### Patch Changes

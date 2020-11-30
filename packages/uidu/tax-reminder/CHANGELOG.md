@@ -1,5 +1,15 @@
 # @uidu/tax-reminder
 
+## 0.2.2
+
+### Patch Changes
+
+- 060f4ae: Minor fixes to book and field date calendar
+- Updated dependencies [060f4ae]
+  - @uidu/field-date@0.3.2
+  - @uidu/contact@0.2.5
+  - @uidu/widgets@0.4.5
+
 ## 0.2.1
 
 ### Patch Changes
