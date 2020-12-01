@@ -6,14 +6,12 @@ import { Field } from '../../types';
 
 const Avatar: Field = {
   kind: 'avatar',
-  name: <FormattedMessage id="field.avatar.name" defaultMessage="Avatar" />,
-  icon: <FontAwesomeIcon icon={faUserCircle} />,
+  name: <FormattedMessage defaultMessage="Avatar" />,
+  icon: <FontAwesomeIcon icon={faUserCircle} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.avatar.description"
-      defaultMessage="Insert a rounded avatar for the record"
-    />
+    <FormattedMessage defaultMessage="Insert a rounded avatar for the record" />
   ),
+  color: 'teal',
   canSortBy: false,
 };
 

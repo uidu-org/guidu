@@ -12,14 +12,12 @@ const Filter = loadable(
 
 const String: Field = {
   kind: 'string',
-  name: <FormattedMessage id="field.string.name" defaultMessage="String" />,
-  icon: <FontAwesomeIcon icon={faFont} />,
+  name: <FormattedMessage defaultMessage="String" />,
+  icon: <FontAwesomeIcon icon={faFont} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.string.description"
-      defaultMessage="A single line of text. You can optionally prefill each new cell with a default value"
-    />
+    <FormattedMessage defaultMessage="A single line of text. You can optionally prefill each new cell with a default value" />
   ),
+  color: '#E4BA3F',
   form: StringForm,
   Filter,
 };

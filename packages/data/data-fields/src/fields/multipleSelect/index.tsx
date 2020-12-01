@@ -12,11 +12,12 @@ export default withOptions({
       defaultMessage="MultipleSelect"
     />
   ),
-  icon: <FontAwesomeIcon icon={faListUl} />,
+  icon: <FontAwesomeIcon icon={faListUl} color="#fff" />,
   description: (
     <FormattedMessage
       id="field.singleSelect.description"
       defaultMessage="Multiple select allows you to select one or more predefined options listed below."
     />
   ),
+  color: '#73BEC8',
 });

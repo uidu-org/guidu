@@ -7,16 +7,9 @@ const Chart = loadable(() => import('./Radar'));
 
 export default {
   id: 'radar',
-  name: (
-    <FormattedMessage id="dashlets.radar.name" defaultMessage="Radar chart" />
-  ),
+  name: <FormattedMessage defaultMessage="Radar chart" />,
   icon: Sun,
   color: '#D08770',
-  description: (
-    <FormattedMessage
-      id="dashlets.radar.description"
-      defaultMessage="Radar chart."
-    />
-  ),
+  description: <FormattedMessage defaultMessage="Radar chart." />,
   chart: Chart,
 };

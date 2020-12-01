@@ -6,7 +6,7 @@ import { Field } from '../../types';
 
 const Vote: Field = {
   kind: 'vote',
-  name: <FormattedMessage id="field.vote.name" defaultMessage="Vote" />,
+  name: <FormattedMessage defaultMessage="Vote" />,
   icon: <FontAwesomeIcon icon={faPoll} />,
 };
 

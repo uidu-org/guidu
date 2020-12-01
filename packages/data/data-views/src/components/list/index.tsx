@@ -9,14 +9,11 @@ const ConfiguratorForm = loadable(() => import('./configurator'));
 
 const List: DataViewKind = {
   id: 'list',
-  name: <FormattedMessage id="dataView.list.name" defaultMessage="List" />,
+  name: <FormattedMessage defaultMessage="List" />,
   icon: ListIcon,
   color: '#E53E3E',
   description: (
-    <FormattedMessage
-      id="dataView.list.description"
-      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
-    />
+    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),
   controls: ({
     tableInstance,

@@ -15,7 +15,8 @@ const LinkRecord: Field = {
       defaultMessage="Link to a record"
     />
   ),
-  icon: <FontAwesomeIcon icon={faStream} />,
+  icon: <FontAwesomeIcon icon={faStream} color="#fff" />,
+  color: 'orchid',
   description: (
     <FormattedMessage
       id="field.linkRecord.description"

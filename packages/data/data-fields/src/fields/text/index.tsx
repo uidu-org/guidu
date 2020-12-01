@@ -11,14 +11,15 @@ const Filter = loadable(
 
 const Text: Field = {
   kind: 'text',
-  name: <FormattedMessage id="field.text.name" defaultMessage="Text" />,
-  icon: <FontAwesomeIcon icon={faParagraph} />,
+  name: <FormattedMessage defaultMessage="Text" />,
+  icon: <FontAwesomeIcon icon={faParagraph} color="#fff" />,
   description: (
     <FormattedMessage
       id="field.text.description"
       defaultMessage="A long text field that can span multiple lines."
     />
   ),
+  color: '#CB732B',
   Filter,
 };
 

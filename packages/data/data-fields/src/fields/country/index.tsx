@@ -13,14 +13,12 @@ const Filter = loadable(
 
 const Country: Field = {
   kind: 'country',
-  name: <FormattedMessage id="field.country.name" defaultMessage="Country" />,
-  icon: <FontAwesomeIcon icon={faGlobe} />,
+  name: <FormattedMessage defaultMessage="Country" />,
+  icon: <FontAwesomeIcon icon={faGlobe} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.country.description"
-      defaultMessage="Add a Country select list to your record"
-    />
+    <FormattedMessage defaultMessage="Add a Country select list to your record" />
   ),
+  color: 'tan',
   Filter,
   Cell,
   options: allCountries,

@@ -7,14 +7,12 @@ import Renderer from './renderer';
 
 const Checkbox: Field = {
   kind: 'checkbox',
-  name: <FormattedMessage id="field.checkbox.name" defaultMessage="Checkbox" />,
-  icon: <FontAwesomeIcon icon={faCheckSquare} />,
+  name: <FormattedMessage defaultMessage="Checkbox" />,
+  icon: <FontAwesomeIcon icon={faCheckSquare} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.checkbox.description"
-      defaultMessage="A single checkbox that can be checked or unchecked."
-    />
+    <FormattedMessage defaultMessage="A single checkbox that can be checked or unchecked." />
   ),
+  color: '#C75875',
   Cell: Renderer,
 };
 

@@ -26,20 +26,32 @@ export default md`
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Description</th>
           </tr>
         </thead>
         <tbody>
           {fields.map((field: any) => (
             <tr>
-              <td className="text-nowrap">
-                <code>{field.id}</code>
+              <td className="text-nowrap" style={{ verticalAlign: 'middle' }}>
+                <code>{field.kind}</code>
               </td>
-              <td className="text-nowrap">
-                <span className="mr-3">{field.icon}</span>
-                {field.name}
+              <td className="">
+                <div className="d-flex align-items-center">
+                  <span
+                    className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
+                    style={{
+                      backgroundColor: field.color,
+                      width: 28,
+                      height: 28,
+                    }}
+                  >
+                    {field.icon}
+                  </span>
+                  <div className="">
+                    <p className="mb-0">{field.name}</p>
+                    <p className="mb-0 text-muted small">{field.description}</p>
+                  </div>
+                </div>
               </td>
-              <td>{field.description}</td>
             </tr>
           ))}
         </tbody>

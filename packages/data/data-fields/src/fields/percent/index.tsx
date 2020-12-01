@@ -6,8 +6,9 @@ import { Field } from '../../types';
 
 const Percent: Field = {
   kind: 'percent',
-  name: <FormattedMessage id="field.percent.name" defaultMessage="Percent" />,
-  icon: <FontAwesomeIcon icon={faPercent} />,
+  name: <FormattedMessage defaultMessage="Percent" />,
+  icon: <FontAwesomeIcon icon={faPercent} color="#fff" />,
+  color: 'darkkhaki',
   valueFormatter: ({ value }) => `${value}%`,
   aggregate: 'average',
   cellStyle: { justifyContent: 'flex-end' },

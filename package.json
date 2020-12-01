@@ -126,7 +126,7 @@
     "@types/google-map-react": "^2.1.0",
     "@types/googlemaps": "^3.30.19",
     "@types/js-search": "^1.4.0",
-    "@types/linkify-it": "^2.0.4",
+    "@types/linkify-it": "^3.0.0",
     "@types/lodash.chunk": "^4.2.6",
     "@types/lodash.debounce": "^4.0.4",
     "@types/lodash.sample": "^4.2.4",

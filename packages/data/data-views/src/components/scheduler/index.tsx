@@ -8,16 +8,11 @@ const Configurator = loadable(() => import('./configurator'));
 
 const Scheduler: DataViewKind = {
   id: 'scheduler',
-  name: (
-    <FormattedMessage id="dataView.scheduler.name" defaultMessage="Scheduler" />
-  ),
+  name: <FormattedMessage defaultMessage="Scheduler" />,
   icon: Clock,
   color: '#BF616A',
   description: (
-    <FormattedMessage
-      id="dataView.scheduler.description"
-      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
-    />
+    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),
   configurator: Configurator,
 };

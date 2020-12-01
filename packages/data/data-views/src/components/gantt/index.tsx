@@ -8,14 +8,11 @@ const Configurator = loadable(() => import('./configurator'));
 
 const Gantt: DataViewKind = {
   id: 'gantt',
-  name: <FormattedMessage id="dataView.gantt.name" defaultMessage="Gantt" />,
+  name: <FormattedMessage defaultMessage="Gantt" />,
   icon: Activity,
   color: '#BF616A',
   description: (
-    <FormattedMessage
-      id="dataView.gantt.description"
-      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
-    />
+    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),
   configurator: Configurator,
 };

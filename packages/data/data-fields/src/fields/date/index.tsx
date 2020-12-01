@@ -12,14 +12,12 @@ const Filter = loadable(
 
 const Date: Partial<Field> = {
   kind: 'date',
-  name: <FormattedMessage id="field.date.name" defaultMessage="Date" />,
-  icon: <FontAwesomeIcon icon={faCalendarDay} />,
+  name: <FormattedMessage defaultMessage="Date" />,
+  icon: <FontAwesomeIcon icon={faCalendarDay} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.date.description"
-      defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar."
-    />
+    <FormattedMessage defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar." />
   ),
+  color: '#EF8A78',
   Filter,
   grouperForm: GrouperForm,
   // cellEditorFramework: Editor,

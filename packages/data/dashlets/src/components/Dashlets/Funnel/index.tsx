@@ -7,16 +7,9 @@ const Chart = loadable(() => import('./Funnel'));
 
 export default {
   id: 'funnel',
-  name: (
-    <FormattedMessage id="dashlets.funnel.name" defaultMessage="Funnel chart" />
-  ),
+  name: <FormattedMessage defaultMessage="Funnel chart" />,
   icon: Zap,
   color: '#D08770',
-  description: (
-    <FormattedMessage
-      id="dashlets.funnel.description"
-      defaultMessage="Funnel chart."
-    />
-  ),
+  description: <FormattedMessage defaultMessage="Funnel chart." />,
   chart: Chart,
 };

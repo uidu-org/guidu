@@ -11,14 +11,12 @@ const Filter = loadable(
 
 const Email: Field = {
   kind: 'email',
-  name: <FormattedMessage id="field.email.name" defaultMessage="Email" />,
-  icon: <FontAwesomeIcon icon={faAt} />,
+  name: <FormattedMessage defaultMessage="Email" />,
+  icon: <FontAwesomeIcon icon={faAt} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.email.description"
-      defaultMessage="A valid email address (e.g. andrew@example.com)."
-    />
+    <FormattedMessage defaultMessage="A valid email address (e.g. andrew@example.com)." />
   ),
+  color: '#5AAA8F',
   Filter,
 };
 

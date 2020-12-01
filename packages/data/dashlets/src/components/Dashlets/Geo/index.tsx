@@ -7,14 +7,9 @@ const Chart = loadable(() => import('./Geo'));
 
 export default {
   id: 'geo',
-  name: <FormattedMessage id="dashlets.geo.name" defaultMessage="Geo chart" />,
+  name: <FormattedMessage defaultMessage="Geo chart" />,
   icon: Globe,
   color: '#D08770',
-  description: (
-    <FormattedMessage
-      id="dashlets.geo.description"
-      defaultMessage="Geo chart."
-    />
-  ),
+  description: <FormattedMessage defaultMessage="Geo chart." />,
   chart: Chart,
 };

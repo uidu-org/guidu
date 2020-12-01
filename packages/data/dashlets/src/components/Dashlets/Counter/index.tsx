@@ -7,16 +7,9 @@ const Chart = loadable(() => import('./Counter'));
 
 export default {
   id: 'counter',
-  name: (
-    <FormattedMessage id="dashlets.counter.name" defaultMessage="Counter" />
-  ),
+  name: <FormattedMessage defaultMessage="Counter" />,
   icon: Hash,
   color: '#D08770',
-  description: (
-    <FormattedMessage
-      id="dashlets.counter.description"
-      defaultMessage="Counter"
-    />
-  ),
+  description: <FormattedMessage defaultMessage="Counter" />,
   chart: Chart,
 };

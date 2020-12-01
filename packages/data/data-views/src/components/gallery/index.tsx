@@ -9,16 +9,11 @@ const ConfiguratorForm = loadable(() => import('./configurator'));
 
 const Gallery: DataViewKind = {
   id: 'gallery',
-  name: (
-    <FormattedMessage id="dataView.gallery.name" defaultMessage="Gallery" />
-  ),
+  name: <FormattedMessage defaultMessage="Gallery" />,
   icon: Grid,
   color: '#EBCB8B',
   description: (
-    <FormattedMessage
-      id="dataView.gallery.description"
-      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
-    />
+    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),
   controls: ({
     tableInstance,

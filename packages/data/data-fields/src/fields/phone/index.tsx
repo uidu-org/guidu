@@ -12,13 +12,11 @@ const Filter = loadable(
 
 const Phone: Field = {
   kind: 'phone',
-  name: <FormattedMessage id="field.phone.name" defaultMessage="Phone" />,
-  icon: <FontAwesomeIcon icon={faPhone} />,
+  name: <FormattedMessage defaultMessage="Phone" />,
+  icon: <FontAwesomeIcon icon={faPhone} color="#fff" />,
+  color: '#CB732B',
   description: (
-    <FormattedMessage
-      id="field.phone.description"
-      defaultMessage="A telephone number (e.g. (415) 555-9876)."
-    />
+    <FormattedMessage defaultMessage="A telephone number (e.g. (415) 555-9876)." />
   ),
   Filter,
   Cell,

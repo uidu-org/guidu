@@ -6,10 +6,9 @@ import { Field } from '../../types';
 
 const AddField: Field = {
   kind: 'addField',
-  name: (
-    <FormattedMessage id="field.addField.name" defaultMessage="Add field" />
-  ),
+  name: <FormattedMessage defaultMessage="Add field" />,
   icon: <FontAwesomeIcon icon={faPlus} />,
+  color: 'var(--light)',
   // description: (
   //   <FormattedMessage
   //     id="field.address.description"

@@ -11,8 +11,9 @@ const Filter = loadable(
 
 const Url: Field = {
   kind: 'url',
-  name: <FormattedMessage id="field.url.name" defaultMessage="Url" />,
-  icon: <FontAwesomeIcon icon={faExternalLinkAlt} />,
+  name: <FormattedMessage defaultMessage="Url" />,
+  icon: <FontAwesomeIcon icon={faExternalLinkAlt} color="#fff" />,
+  color: '#B0B480',
   description: (
     <FormattedMessage
       id="field.url.description"

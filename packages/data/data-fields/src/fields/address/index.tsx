@@ -6,14 +6,12 @@ import { Field } from '../../types';
 
 const Address: Field = {
   kind: 'address',
-  name: <FormattedMessage id="field.address.name" defaultMessage="Address" />,
-  icon: <FontAwesomeIcon icon={faMapMarkerAlt} />,
+  name: <FormattedMessage defaultMessage="Address" />,
+  icon: <FontAwesomeIcon icon={faMapMarkerAlt} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.address.description"
-      defaultMessage="Allow geolocation of your records with Google Maps autocomplete help"
-    />
+    <FormattedMessage defaultMessage="Allow geolocation of your records with Google Maps autocomplete help" />
   ),
+  color: '#C384C5',
 };
 
 export default Address;

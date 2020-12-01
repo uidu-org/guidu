@@ -7,11 +7,9 @@ const Chart = loadable(() => import('./XY'));
 
 export default {
   id: 'xy',
-  name: <FormattedMessage id="dashlets.xy.name" defaultMessage="XY chart" />,
+  name: <FormattedMessage defaultMessage="XY chart" />,
   icon: BarChart2,
   color: '#D08770',
-  description: (
-    <FormattedMessage id="dashlets.xy.description" defaultMessage="XY chart." />
-  ),
+  description: <FormattedMessage defaultMessage="XY chart." />,
   chart: Chart,
 };

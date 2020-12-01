@@ -12,13 +12,11 @@ const Filter = loadable(
 
 const Contact: Field = {
   kind: 'contact',
-  name: <FormattedMessage id="field.contact.name" defaultMessage="Contact" />,
-  icon: <FontAwesomeIcon icon={faUsers} />,
+  name: <FormattedMessage defaultMessage="Contact" />,
+  icon: <FontAwesomeIcon icon={faUsers} color="#fff" />,
+  color: '#0AC29A',
   description: (
-    <FormattedMessage
-      id="field.contact.description"
-      defaultMessage="A contact field represents a person or an organization - a contact"
-    />
+    <FormattedMessage defaultMessage="A contact field represents a person or an organization - a contact" />
   ),
   Filter,
   Cell,

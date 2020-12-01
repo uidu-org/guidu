@@ -9,16 +9,11 @@ const ConfiguratorForm = loadable(() => import('./configurator'));
 
 const CalendarView: DataViewKind = {
   id: 'calendar',
-  name: (
-    <FormattedMessage id="dataView.calendar.name" defaultMessage="Calendar" />
-  ),
+  name: <FormattedMessage defaultMessage="Calendar" />,
   icon: Calendar,
   color: '#A3BE8C',
   description: (
-    <FormattedMessage
-      id="dataView.calendar.description"
-      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
-    />
+    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),
 
   controls: ({ tableInstance, columnDefs, availableControls }) => (

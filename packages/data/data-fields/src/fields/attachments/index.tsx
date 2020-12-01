@@ -6,14 +6,12 @@ import { Field } from '../../types';
 
 const Attachments: Field = {
   kind: 'attachments',
-  name: <FormattedMessage id="field.attachments.name" defaultMessage="Files" />,
-  icon: <FontAwesomeIcon icon={faFile} />,
+  name: <FormattedMessage defaultMessage="Files" />,
+  icon: <FontAwesomeIcon icon={faFile} color="#fff" />,
   description: (
-    <FormattedMessage
-      id="field.attachments.description"
-      defaultMessage="Attachments allow you to add images, documents, or other files which can then be viewed or downloaded."
-    />
+    <FormattedMessage defaultMessage="Attachments allow you to add images, documents, or other files which can then be viewed or downloaded." />
   ),
+  color: '#8093A6',
 };
 
 export default Attachments;

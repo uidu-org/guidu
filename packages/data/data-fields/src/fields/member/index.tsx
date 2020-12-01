@@ -12,13 +12,11 @@ const Filter = loadable(
 
 const Member: Field = {
   kind: 'member',
-  name: <FormattedMessage id="field.member.name" defaultMessage="Member" />,
-  icon: <FontAwesomeIcon icon={faUsers} />,
+  name: <FormattedMessage defaultMessage="Member" />,
+  icon: <FontAwesomeIcon icon={faUsers} color="#fff" />,
+  color: 'hotpink',
   description: (
-    <FormattedMessage
-      id="field.member.description"
-      defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
-    />
+    <FormattedMessage defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added." />
   ),
   // Filter
   Cell,

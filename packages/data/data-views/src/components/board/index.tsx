@@ -9,14 +9,11 @@ const ConfiguratorForm = loadable(() => import('./configurator'));
 
 const Board: DataViewKind = {
   id: 'board',
-  name: <FormattedMessage id="dataView.board.name" defaultMessage="Board" />,
+  name: <FormattedMessage defaultMessage="Board" />,
   icon: Trello,
   color: '#D08770',
   description: (
-    <FormattedMessage
-      id="dataView.board.description"
-      defaultMessage="Single select allows you to select a single option from predefined options in a dropdown."
-    />
+    <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),
   controls: ({ tableInstance, columnDefs, availableControls }) => (
     <>

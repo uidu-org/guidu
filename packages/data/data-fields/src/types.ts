@@ -5,6 +5,7 @@ export type Field = {
   kind: string;
   name: string | React.ReactNode;
   icon: React.ReactNode;
+  color?: string;
   description?: React.ReactNode;
   form?: React.FC<any>;
   /** Grouper form allow for specifying grouping behavior for this field */
