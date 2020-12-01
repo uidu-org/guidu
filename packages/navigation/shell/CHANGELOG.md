@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.2.2
+
+### Patch Changes
+
+- 33ca6a7: Pass down createPaymentIntent and Shell innerClassName
+
 ## 1.2.1
 
 ### Patch Changes

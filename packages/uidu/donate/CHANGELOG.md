@@ -1,5 +1,14 @@
 # @uidu/donate
 
+## 0.3.9
+
+### Patch Changes
+
+- 33ca6a7: Pass down createPaymentIntent and Shell innerClassName
+- Updated dependencies [33ca6a7]
+  - @uidu/shell@1.2.2
+  - @uidu/schema.d.ts@0.1.15
+
 ## 0.3.8
 
 ### Patch Changes
