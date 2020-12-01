@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.7.3
+
+### Patch Changes
+
+- 877da76: Added color to data-fields, cleanup formattedmessages
+
 ## 0.7.2
 
 ### Patch Changes

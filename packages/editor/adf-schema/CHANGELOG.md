@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.3.1
+
+### Patch Changes
+
+- 877da76: Added color to data-fields, cleanup formattedmessages
+
 ## 0.3.0
 
 ### Minor Changes

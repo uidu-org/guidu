@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.5.2
+
+### Patch Changes
+
+- 877da76: Added color to data-fields, cleanup formattedmessages
+
 ## 0.5.1
 
 ### Patch Changes
