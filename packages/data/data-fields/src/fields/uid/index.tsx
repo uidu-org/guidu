@@ -7,7 +7,7 @@ import { Field } from '../../types';
 const Uid: Field = {
   kind: 'uid',
   name: <FormattedMessage defaultMessage="ID" />,
-  icon: <FontAwesomeIcon icon={faIdBadge} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faIdBadge} />,
   description: <FormattedMessage defaultMessage="A unique identifier field" />,
   color: 'cornflowerblue',
   pinned: 'left',

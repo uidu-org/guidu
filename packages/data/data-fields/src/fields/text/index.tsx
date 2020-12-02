@@ -12,7 +12,7 @@ const Filter = loadable(
 const Text: Field = {
   kind: 'text',
   name: <FormattedMessage defaultMessage="Text" />,
-  icon: <FontAwesomeIcon icon={faParagraph} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faParagraph} />,
   description: (
     <FormattedMessage
       id="field.text.description"

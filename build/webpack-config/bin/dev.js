@@ -33,7 +33,7 @@ const createConfig = require('../config');
 const utils = require('../config/utils');
 const { print, devServerBanner, errorMsg } = require('../banner');
 
-let HOST = '0.0.0.0';
+let HOST = 'localhost';
 let disableHostCheck = false;
 
 if (process.env.VISUAL_REGRESSION) {
@@ -84,6 +84,7 @@ const runDevServer = async ({
     devServerBanner({
       workspaces: filteredWorkspaces,
       workspacesGlob: workspaceGlobs.toString(),
+      ssl: serverOptions ? serverOptions.https : false,
       port: PORT,
       host: HOST,
       isAll: !(workspaceGlobs.length > 0),

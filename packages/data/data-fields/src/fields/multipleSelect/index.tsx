@@ -12,7 +12,7 @@ export default withOptions({
       defaultMessage="MultipleSelect"
     />
   ),
-  icon: <FontAwesomeIcon icon={faListUl} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faListUl} />,
   description: (
     <FormattedMessage
       id="field.singleSelect.description"

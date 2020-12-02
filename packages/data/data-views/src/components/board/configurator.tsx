@@ -38,7 +38,6 @@ export default class Configurator extends PureComponent<any> {
                       'country',
                       'contact',
                       'member',
-                      'linkRecord',
                     ].includes(column.kind);
                   })
                   .map((column) => ({

@@ -13,7 +13,7 @@ const Filter = loadable(
 const Date: Partial<Field> = {
   kind: 'date',
   name: <FormattedMessage defaultMessage="Date" />,
-  icon: <FontAwesomeIcon icon={faCalendarDay} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faCalendarDay} />,
   description: (
     <FormattedMessage defaultMessage="Enter a date (e.g. 11/12/2013) or pick one from a calendar." />
   ),

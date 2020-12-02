@@ -16,7 +16,8 @@ function devServerBanner(
     isAll,
     port,
     host,
-  } /*: { workspaces: Array<{ name: string, dir: string }>, workspacesGlob: string, isAll: boolean, port: number, host: string } */,
+    ssl,
+  } /*: { workspaces: Array<{ name: string, dir: string }>, workspacesGlob: string, isAll: boolean, port: number, host: string, ssl: boolean } */,
 ) {
   const msg /*: Array<any> */ = [''];
   const wsNamePadLength = workspaces.reduce(
@@ -24,7 +25,7 @@ function devServerBanner(
     0,
   );
 
-  const serverUrl = `http://${host}:${port}`;
+  const serverUrl = `http${ssl ? 's' : ''}://${host}:${port}`;
   msg.push(chalk.bold(`> Open ${chalk.yellow(serverUrl)}`), '');
 
   if (isAll) {
@@ -40,9 +41,11 @@ function devServerBanner(
       ),
       '',
       ...workspaces.map(
-        ws =>
+        (ws) =>
           `– ${ws.name.padEnd(wsNamePadLength, ' ')}   ${chalk.dim(
-            `[http://${host}:${port}/packages${ws.dir.split('packages')[1]}]`,
+            `[http${ssl ? 's' : ''}://${host}:${port}/packages${
+              ws.dir.split('packages')[1]
+            }]`,
           )}`,
       ),
     );

@@ -1,5 +1,6 @@
 import addField from './addField';
 import addressField from './address';
+import appointmentField from './appointment';
 import attachmentsField from './attachments';
 import avatarField from './avatar';
 import checkboxField from './checkbox';
@@ -9,7 +10,6 @@ import coverField from './cover';
 import currencyField from './currency';
 import dateField from './date';
 import emailField from './email';
-import linkRecordField from './linkRecord';
 import memberField from './member';
 import multipleSelectField from './multipleSelect';
 import numberField from './number';
@@ -27,6 +27,7 @@ import voteField from './vote';
 
 export { default as addField } from './addField';
 export { default as addressField } from './address';
+export { default as appointmentField } from './appointment';
 export { default as attachmentsField } from './attachments';
 export { default as avatarField } from './avatar';
 export { default as checkboxField } from './checkbox';
@@ -36,7 +37,6 @@ export { default as coverField } from './cover';
 export { default as currencyField } from './currency';
 export { default as dateField } from './date';
 export { default as emailField } from './email';
-export { default as linkRecordField } from './linkRecord';
 export { default as memberField } from './member';
 export { default as multipleSelectField } from './multipleSelect';
 export { default as numberField } from './number';
@@ -55,6 +55,7 @@ export { default as voteField } from './vote';
 export const byName = {
   addField: addField,
   address: addressField,
+  appointment: appointmentField,
   attachments: attachmentsField,
   avatar: avatarField,
   checkbox: checkboxField,
@@ -64,7 +65,6 @@ export const byName = {
   currency: currencyField,
   date: dateField,
   email: emailField,
-  linkRecord: linkRecordField,
   member: memberField,
   multipleSelect: multipleSelectField,
   number: numberField,
@@ -84,6 +84,7 @@ export const byName = {
 export default [
   addField,
   addressField,
+  appointmentField,
   attachmentsField,
   avatarField,
   checkboxField,
@@ -93,7 +94,6 @@ export default [
   currencyField,
   dateField,
   emailField,
-  linkRecordField,
   memberField,
   multipleSelectField,
   numberField,

@@ -106,7 +106,7 @@ export const availableColumns = [
     name: 'firstName',
   },
   {
-    kind: 'linkRecord',
+    kind: 'string',
     id: 'donationCampaign',
     field: 'donationCampaign',
     name: 'Donation Campaign',

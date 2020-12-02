@@ -13,7 +13,7 @@ const Filter = loadable(
 const Member: Field = {
   kind: 'member',
   name: <FormattedMessage defaultMessage="Member" />,
-  icon: <FontAwesomeIcon icon={faUsers} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faUsers} />,
   color: 'hotpink',
   description: (
     <FormattedMessage defaultMessage="A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added." />

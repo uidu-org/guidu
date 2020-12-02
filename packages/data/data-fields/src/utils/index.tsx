@@ -12,7 +12,6 @@ import {
   currencyField,
   dateField,
   emailField,
-  linkRecordField,
   memberField,
   multipleSelectField,
   numberField,
@@ -54,8 +53,6 @@ const getColumnType = (kind: Field['kind']) => {
       return dateField;
     case 'email':
       return emailField;
-    case 'linkRecord':
-      return linkRecordField;
     case 'member':
       return memberField;
     case 'multipleSelect':

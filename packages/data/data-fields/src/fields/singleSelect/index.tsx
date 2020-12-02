@@ -8,7 +8,7 @@ import Cell from './renderer';
 export default withOptions({
   kind: 'singleSelect',
   name: <FormattedMessage defaultMessage="SingleSelect" />,
-  icon: <FontAwesomeIcon icon={faChevronCircleDown} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faChevronCircleDown} />,
   description: (
     <FormattedMessage defaultMessage="Single select allows you to select a single option from predefined options in a dropdown." />
   ),

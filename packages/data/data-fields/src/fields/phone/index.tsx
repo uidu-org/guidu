@@ -13,7 +13,7 @@ const Filter = loadable(
 const Phone: Field = {
   kind: 'phone',
   name: <FormattedMessage defaultMessage="Phone" />,
-  icon: <FontAwesomeIcon icon={faPhone} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faPhone} />,
   color: '#CB732B',
   description: (
     <FormattedMessage defaultMessage="A telephone number (e.g. (415) 555-9876)." />

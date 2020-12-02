@@ -13,7 +13,7 @@ const Filter = loadable(
 const String: Field = {
   kind: 'string',
   name: <FormattedMessage defaultMessage="String" />,
-  icon: <FontAwesomeIcon icon={faFont} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faFont} />,
   description: (
     <FormattedMessage defaultMessage="A single line of text. You can optionally prefill each new cell with a default value" />
   ),

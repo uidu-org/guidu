@@ -12,7 +12,7 @@ const Filter = loadable(
 const Number: Field = {
   kind: 'number',
   name: <FormattedMessage defaultMessage="Number" />,
-  icon: <FontAwesomeIcon icon={faHashtag} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faHashtag} />,
   color: '#9291D0',
   Filter,
   cellStyle: { justifyContent: 'flex-end' },

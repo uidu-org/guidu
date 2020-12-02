@@ -7,7 +7,7 @@ import { Field } from '../../types';
 const Rating: Field = {
   kind: 'rating',
   name: <FormattedMessage defaultMessage="Rating" />,
-  icon: <FontAwesomeIcon icon={faStar} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faStar} />,
   color: 'burlywood',
 };
 

@@ -40,6 +40,7 @@ export default md`
                     className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
                     style={{
                       backgroundColor: field.color,
+                      color: '#fff',
                       width: 28,
                       height: 28,
                     }}

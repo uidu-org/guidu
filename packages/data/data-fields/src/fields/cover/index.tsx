@@ -7,7 +7,7 @@ import { Field } from '../../types';
 const Cover: Field = {
   kind: 'cover',
   name: <FormattedMessage defaultMessage="Cover" />,
-  icon: <FontAwesomeIcon icon={faImage} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faImage} />,
   description: (
     <FormattedMessage defaultMessage="Add a cover image to your record" />
   ),

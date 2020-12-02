@@ -12,7 +12,7 @@ const Filter = loadable(
 const Currency: Partial<Field> = {
   kind: 'currency',
   name: <FormattedMessage defaultMessage="Currency" />,
-  icon: <FontAwesomeIcon icon={faEuroSign} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faEuroSign} />,
   color: 'sandybrown',
   Filter,
   cellStyle: { justifyContent: 'flex-end' },

@@ -8,7 +8,7 @@ import Cell from './renderer';
 const Progress: Field = {
   kind: 'progress',
   name: <FormattedMessage defaultMessage="Progress" />,
-  icon: <FontAwesomeIcon icon={faTasks} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faTasks} />,
   color: 'darkseagreen',
   Cell,
 };

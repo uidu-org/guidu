@@ -18,7 +18,7 @@ const heights = {
 };
 
 const positionAndSizes = (size, origin) => {
-  if (origin == 'left' || origin == 'right') {
+  if (origin === 'left' || origin === 'right') {
     return css`
       ${[origin]}: 0;
       top: 0;

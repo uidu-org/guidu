@@ -13,7 +13,7 @@ const Filter = loadable(
 const Contact: Field = {
   kind: 'contact',
   name: <FormattedMessage defaultMessage="Contact" />,
-  icon: <FontAwesomeIcon icon={faUsers} color="#fff" />,
+  icon: <FontAwesomeIcon icon={faUsers} />,
   color: '#0AC29A',
   description: (
     <FormattedMessage defaultMessage="A contact field represents a person or an organization - a contact" />
