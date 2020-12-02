@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.5.2
+
+### Patch Changes
+
+- 64e0483: Fixes to data-fields
+- Updated dependencies [64e0483]
+  - @uidu/data-fields@0.4.4
+
 ## 0.5.1
 
 ### Patch Changes

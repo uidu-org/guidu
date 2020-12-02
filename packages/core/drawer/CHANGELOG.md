@@ -1,5 +1,11 @@
 # @uidu/drawer
 
+## 0.5.2
+
+### Patch Changes
+
+- 64e0483: Fixes to data-fields
+
 ## 0.5.1
 
 ### Patch Changes

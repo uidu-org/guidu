@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.4.4
+
+### Patch Changes
+
+- 64e0483: Fixes to data-fields
+
 ## 0.4.3
 
 ### Patch Changes
