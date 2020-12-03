@@ -3,9 +3,12 @@ import styles from '@uidu/field-date/index.module.scss';
 import { Form, FormSection, FormSectionSubmit, FormWrapper } from '@uidu/form';
 import Select from '@uidu/select';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
-import moment from 'moment';
+import dayjs from 'dayjs';
+import localeData from 'dayjs/plugin/localeData';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+
+dayjs.extend(localeData);
 
 export default function Reminder({ handleSubmit }) {
   return (
@@ -45,14 +48,14 @@ export default function Reminder({ handleSubmit }) {
                         <FieldDate
                           name="day"
                           selectMonths
-                          value={moment().toDate()}
+                          value={dayjs().toDate()}
                           required
                           layout="elementOnly"
                           withCalendar
                           dayPickerProps={{
                             classNames: styles,
                             modifiers: {
-                              [styles.selected]: moment().toDate(),
+                              [styles.selected]: dayjs().toDate(),
                             },
                           }}
                         />
@@ -61,8 +64,7 @@ export default function Reminder({ handleSubmit }) {
                   </div>
                   <div className="col">
                     <Select
-                      options={moment()
-                        .localeData()
+                      options={dayjs()
                         .months()
                         .map((item, index) => ({
                           id: index + 1,

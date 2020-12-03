@@ -19,7 +19,6 @@
     "@uidu/spinner": "^0.4.1",
     "@uidu/tooltip": "^0.4.1",
     "d3-array": "^2.2.0",
-    "d3-time": "^2.0.0",
     "lodash": "^4.17.4",
     "numeral": "^2.0.6",
     "react": "^17.0.0",

@@ -1,5 +1,5 @@
 import FieldText from '@uidu/field-text';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React, { PureComponent } from 'react';
 import { FormattedMessage } from 'react-intl';
 
@@ -89,7 +89,7 @@ export default class Address extends PureComponent<AddressProps> {
           name={`stripe_account[${prefix}_birthdate]`}
           value={stripeAccount[`${prefix}_birthdate`] || ''}
           mask="99/99/9999"
-          help={`GG/MM/AAAA - Es: ${moment().format('DD/MM/YYYY')}`}
+          help={`GG/MM/AAAA - Es: ${dayjs().format('DD/MM/YYYY')}`}
           required
         />
       </>

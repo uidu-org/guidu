@@ -22,30 +22,6 @@ const Date: Partial<Field> = {
   grouperForm: GrouperForm,
   // cellEditorFramework: Editor,
   // filter: 'agDateColumnFilter',
-  // comparator: (valueA, valueB) => {
-  //   if (valueA === null) {
-  //     return -1;
-  //   }
-  //   if (valueB === null) {
-  //     return 1;
-  //   }
-
-  //   return +valueA.momentObj - +valueB.momentObj;
-  // },
-  // valueGetter: (params) => {
-  //   if (!params.data) {
-  //     return null;
-  //   }
-
-  //   const momentObj = moment(params.data[field.id]);
-
-  //   return {
-  //     year: momentObj.format('YYYY'),
-  //     month: momentObj.format('MMM YYYY'),
-  //     day: momentObj.format('DDD MM YYYY'),
-  //     momentObj,
-  //   };
-  // },
   Cell: (params) =>
     params.value ? <div className="text-truncate">{params.value}</div> : null,
 };

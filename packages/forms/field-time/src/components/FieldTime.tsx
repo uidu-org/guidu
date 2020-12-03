@@ -10,7 +10,7 @@ function FieldTime({
   forwardedRef,
   ...rest
 }: FieldTimeProps) {
-  const handleChange = e => {
+  const handleChange = (e) => {
     onSetValue(e.target.value);
     onChange(name, e.target.value);
   };

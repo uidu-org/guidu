@@ -21,7 +21,6 @@
     "@uidu/spinner": "^0.4.1",
     "@uidu/stepper": "^0.3.1",
     "@uidu/widgets": "^0.4.4",
-    "moment": "^2.27.0",
     "react": "^17.0.0",
     "react-countdown": "^2.2.0",
     "react-feather": "^2.0.9",

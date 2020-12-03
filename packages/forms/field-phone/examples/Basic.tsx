@@ -1,13 +1,9 @@
 import { Form } from '@uidu/form';
-import moment from 'moment';
 import React, { Component } from 'react';
-import 'react-day-picker/lib/style.css';
-import FieldPhone from '../src';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
-
-moment.locale('it');
-
+import FieldPhone from '../src';
+import FieldPhone from '../src';
 export default class Basic extends Component<any, any> {
   state = {
     eventResult:

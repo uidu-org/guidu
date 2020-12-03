@@ -1,5 +1,5 @@
 import FieldDownshift, { DownshiftHorizontalCard } from '@uidu/field-downshift';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
@@ -25,8 +25,8 @@ export default function Slots({
         scope="primary"
         name="beginsAt"
         options={slotsByDay.map((slot) => ({
-          id: moment(slot.split(' - ')[0]).format(),
-          name: moment(slot.split(' - ')[0]).format('HH:mm'),
+          id: dayjs(slot.split(' - ')[0]).format(),
+          name: dayjs(slot.split(' - ')[0]).format('HH:mm'),
         }))}
         option={DownshiftHorizontalCard}
         required

@@ -1,13 +1,21 @@
 import { Wrapper } from '@uidu/field-base';
-import InlineDialog from '@uidu/inline-dialog';
+import Popup from '@uidu/popup';
 import React, { forwardRef, useState } from 'react';
-import { EditableInput, Swatch } from 'react-color/lib/components/common';
-import color from 'react-color/lib/helpers/color';
+import { HexColorInput, HexColorPicker } from 'react-colorful';
+import 'react-colorful/dist/index.css';
+import styled from 'styled-components';
 import { FieldColorPickerProps } from '../types';
 
-function DefaultTrigger({ toggleDialog, value, forwardedRef }) {
+const Swatch = styled.div<{ color: string }>`
+  background-color: ${({ color }) => color};
+  width: 100%;
+  height: 100%;
+`;
+
+function DefaultTrigger({ triggerProps, toggleDialog, value, forwardedRef }) {
   return (
     <button
+      {...triggerProps}
       className="btn btn-sm border p-0 d-block"
       type="button"
       onClick={toggleDialog}
@@ -51,83 +59,71 @@ function FieldColorPicker({
   const handleChange = ({ hex }) => {
     onSetValue(hex);
     onChange(name, hex);
-    setDialogOpen(!dialogOpen);
   };
 
-  const handleClick = (hexcode, _e) =>
-    color.isValidHex(hexcode) &&
-    handleChange({
-      hex: hexcode.startsWith('#') ? hexcode : `#${hexcode}`,
-    });
-
   const content = (
-    <div style={{ width: 276, marginTop: 6 }}>
-      {colors.map((color, index) => (
-        <Swatch
-          key={index}
-          color={color}
-          hex={color}
-          onClick={handleClick}
-          style={{
-            width: '30px',
-            height: '30px',
-            float: 'left',
-            borderRadius: '4px',
-            margin: '0 6px 6px 0',
-          }}
-        />
-      ))}
+    <div style={{ width: 208, padding: 4 }}>
+      <HexColorPicker
+        color={value}
+        onChange={(c) => handleChange({ hex: c })}
+      />
       <div
         style={{
-          background: '#F0F0F0',
-          height: '30px',
-          width: '30px',
-          borderRadius: '4px 0 0 4px',
-          float: 'left',
-          color: '#98A1A4',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: 'grid',
+          gridGap: '4px',
+          gridTemplateColumns: '1fr 1fr 1fr 1fr',
+          gridTemplateRows: 'auto',
+          margin: '4px 0',
+          height: '90px',
         }}
       >
-        #
+        {colors.map((color, index) => (
+          <Swatch
+            key={index}
+            color={color}
+            onClick={() => handleChange({ hex: color })}
+          />
+        ))}
       </div>
-      <EditableInput
-        label={null}
+      <div
         style={{
-          input: {
-            width: '100px',
-            fontSize: '14px',
-            color: '#666',
-            border: '0px',
-            outline: 'none',
-            height: '28px',
-            boxShadow: 'inset 0 0 0 1px #F0F0F0',
-            boxSizing: 'content-box',
-            borderRadius: '0 4px 4px 0',
-            float: 'left',
-            paddingLeft: '8px',
-          },
+          padding: '4px 0 0',
+          margin: '4px 0 0',
+          borderTop: '1px solid var(--border)',
         }}
-        value={value ? value.replace('#', '') : ''}
-        onChange={handleClick}
-      />
+      >
+        <div className="input-group input-group-sm">
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="inputGroup-sizing-sm">
+              #
+            </span>
+          </div>
+
+          <HexColorInput
+            className="form-control"
+            color={value}
+            onChange={(c) => handleChange({ hex: c })}
+          />
+        </div>
+      </div>
     </div>
   );
 
   return (
     <Wrapper {...rest}>
-      <InlineDialog
-        onClose={() => setDialogOpen(false)}
-        content={content}
+      <Popup
         isOpen={dialogOpen}
-      >
-        <Trigger
-          toggleDialog={() => setDialogOpen(!dialogOpen)}
-          value={value}
-          forwardedRef={forwardedRef}
-        />
-      </InlineDialog>
+        onClose={() => setDialogOpen(false)}
+        content={() => <>{content}</>}
+        trigger={(triggerProps) => (
+          <Trigger
+            triggerProps={triggerProps}
+            value={value}
+            forwardedRef={forwardedRef}
+            toggleDialog={() => setDialogOpen(!dialogOpen)}
+          />
+        )}
+      />
     </Wrapper>
   );
 }

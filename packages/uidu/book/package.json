@@ -22,6 +22,7 @@
     "@uidu/shell": "^1.2.1",
     "@uidu/spinner": "^0.4.1",
     "@uidu/widgets": "^0.4.5",
+    "dayjs": "^1.9.6",
     "moment": "^2.27.0",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",

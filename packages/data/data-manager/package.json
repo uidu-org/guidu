@@ -25,7 +25,7 @@
     "@uidu/spinner": "^0.4.0",
     "@uidu/table": "^0.5.0",
     "d3-array": "^2.2.0",
-    "dayjs": "^1.9.3",
+    "dayjs": "^1.9.6",
     "lodash": "^4.17.4",
     "react": "^17.0.0",
     "react-media": "^1.9.2",

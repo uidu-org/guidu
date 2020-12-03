@@ -3,7 +3,7 @@ import styles from '@uidu/field-date/index.module.scss';
 import { Form, FormSection, FormSectionSubmit, FormWrapper } from '@uidu/form';
 import { ScrollableContainer, ShellBody, ShellMain } from '@uidu/shell';
 import Spinner from '@uidu/spinner';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
@@ -40,9 +40,9 @@ export default function Reminder({ bookable, handleSubmit }) {
                   <p className="mt-3 small text-muted">
                     {selectedDay && (
                       <>
-                        {moment(selectedDay).format('LL')}
+                        {dayjs(selectedDay).format('LL')}
                         {selectedSlot && (
-                          <> {moment(selectedSlot).format('HH:mm')}</>
+                          <> {dayjs(selectedSlot).format('HH:mm')}</>
                         )}
                         <br />
                       </>
@@ -75,14 +75,14 @@ export default function Reminder({ bookable, handleSubmit }) {
                         <FieldDate
                           name="day"
                           selectMonths
-                          value={moment().toDate()}
+                          value={dayjs().toDate()}
                           required
                           layout="elementOnly"
                           withCalendar
                           dayPickerProps={{
                             classNames: styles,
                             modifiers: {
-                              [styles.selected]: moment().toDate(),
+                              [styles.selected]: dayjs().toDate(),
                             },
                           }}
                           onChange={(name, value) => setSelectedDay(value)}
@@ -93,7 +93,7 @@ export default function Reminder({ bookable, handleSubmit }) {
                   {selectedDay && (
                     <div className="col-md-5">
                       <div className="px-4">
-                        <p>{moment(selectedDay).format('LL')}</p>
+                        <p>{dayjs(selectedDay).format('LL')}</p>
                         <Slots
                           fallback={
                             <SlotsFallback>

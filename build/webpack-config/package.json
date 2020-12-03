@@ -21,7 +21,7 @@
     "babel-loader": "^8.0.4",
     "bolt": "^0.24.3",
     "chalk": "^4.0.0",
-    "compression-webpack-plugin": "^6.0.1",
+    "compression-webpack-plugin": "^7.0.0",
     "connect-history-api-fallback": "^1.6.0",
     "css-loader": "^5.0.0",
     "eslint-loader": "^4.0.0",
@@ -46,7 +46,7 @@
     "webpack": "^5.7.0",
     "webpack-bundle-analyzer": "^4.1.0",
     "webpack-dev-server": "^3.2.1",
-    "webpack-manifest-plugin": "^2.0.4"
+    "webpack-manifest-plugin": "^3.0.0"
   },
   "publishConfig": {
     "access": "public"

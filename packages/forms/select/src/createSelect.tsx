@@ -1,8 +1,6 @@
 import { WithAnalyticsEventsProps } from '@uidu/analytics';
 import { FieldBaseProps, Wrapper } from '@uidu/field-base';
-import memoizeOne from 'memoize-one';
 import React from 'react';
-import isEqual from 'react-fast-compare';
 import { mergeStyles } from 'react-select';
 import makeAnimated from 'react-select/animated';
 import * as defaultComponents from './components';
@@ -121,17 +119,9 @@ const createSelect = <TOriginalProps extends {}>(
     components: {};
     select: any;
 
-    constructor(props: ResultProps) {
-      super(props);
-      this.cacheComponents = memoizeOne(this.cacheComponents, isEqual).bind(
-        this,
-      );
-      this.cacheComponents(props.components, props.enableAnimation);
-    }
-
     static defaultProps = {
       onClickPreventDefault: true,
-      tabSelectsValue: false,
+      tabSelectsValue: true,
       isClearable: true,
       isSearchable: true,
       getOptionLabel: ({ name }) => name,
@@ -142,24 +132,6 @@ const createSelect = <TOriginalProps extends {}>(
         SingleValue,
         MultiValueLabel,
       },
-    };
-
-    UNSAFE_componentWillReceiveProps(nextProps: ResultProps) {
-      this.cacheComponents(nextProps.enableAnimation, nextProps.components);
-    }
-
-    cacheComponents = (enableAnimation: boolean, components?: {}) => {
-      if (enableAnimation) {
-        this.components = makeAnimated({
-          ...defaultComponents,
-          ...components,
-        });
-      } else {
-        this.components = {
-          ...defaultComponents,
-          ...components,
-        };
-      }
     };
 
     focus() {
@@ -226,6 +198,7 @@ const createSelect = <TOriginalProps extends {}>(
         getOptionLabel,
         getOptionValue,
         componentRef,
+        components,
         ...props
       } = this.props; // eslint-disable-line
 
@@ -247,8 +220,12 @@ const createSelect = <TOriginalProps extends {}>(
               name: optionLabel,
               __isNew__: true,
             })}
+            // eslint-disable-next-line react/jsx-props-no-spreading
             {...(props as ResultProps)}
-            components={this.components}
+            components={makeAnimated({
+              ...defaultComponents,
+              ...components,
+            })}
             styles={mergeStyles(baseStyles(validationState, isCompact), styles)}
             onChange={(option, actionMeta) => {
               if (multiple) {

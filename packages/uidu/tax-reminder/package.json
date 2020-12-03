@@ -20,7 +20,7 @@
     "@uidu/select": "^0.6.0",
     "@uidu/shell": "^1.2.1",
     "@uidu/widgets": "^0.4.5",
-    "moment": "^2.27.0",
+    "dayjs": "^1.9.6",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
     "react-intl": "^5.10.5",
