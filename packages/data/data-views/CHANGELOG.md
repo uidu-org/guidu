@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.5.3
+
+### Patch Changes
+
+- 64e0483: Fixes to data-fields
+
 ## 0.5.2
 
 ### Patch Changes

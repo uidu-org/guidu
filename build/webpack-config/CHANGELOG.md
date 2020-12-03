@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.90
+
+### Patch Changes
+
+- 64e0483: Fixes to data-fields
+
 ## 0.1.89
 
 ### Patch Changes
