@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.7.4
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+- Updated dependencies [43756bf]
+  - @uidu/dashlet-controls@0.3.2
+
 ## 0.7.3
 
 ### Patch Changes

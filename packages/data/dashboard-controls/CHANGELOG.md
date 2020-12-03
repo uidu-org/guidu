@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.4.2
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+
 ## 0.4.1
 
 ### Patch Changes

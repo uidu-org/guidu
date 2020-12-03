@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.7.2
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+- Updated dependencies [43756bf]
+  - @uidu/data-fields@0.4.5
+
 ## 0.7.1
 
 ### Patch Changes

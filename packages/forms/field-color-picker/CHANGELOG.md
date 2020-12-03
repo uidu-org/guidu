@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 0.3.1
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+
 ## 0.3.0
 
 ### Minor Changes

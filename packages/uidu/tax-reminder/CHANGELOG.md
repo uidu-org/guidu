@@ -1,5 +1,13 @@
 # @uidu/tax-reminder
 
+## 0.2.3
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+- Updated dependencies [43756bf]
+  - @uidu/select@0.6.2
+
 ## 0.2.2
 
 ### Patch Changes

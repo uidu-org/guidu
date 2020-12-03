@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.8.2
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+- Updated dependencies [43756bf]
+  - @uidu/dashboard-controls@0.4.2
+  - @uidu/dashlets@0.7.4
+
 ## 0.8.1
 
 ### Patch Changes
