@@ -1,5 +1,11 @@
 # @uidu/field-date
 
+## 0.2.1
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+
 ## 0.2.0
 
 ### Minor Changes

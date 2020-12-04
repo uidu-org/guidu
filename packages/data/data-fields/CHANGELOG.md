@@ -1,5 +1,15 @@
 # @uidu/data-fields
 
+## 0.4.5
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+- Updated dependencies [43756bf]
+  - @uidu/field-color-picker@0.3.1
+  - @uidu/field-time@0.4.2
+  - @uidu/select@0.6.2
+
 ## 0.4.4
 
 ### Patch Changes

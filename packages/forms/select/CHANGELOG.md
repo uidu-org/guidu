@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.6.2
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+
 ## 0.6.1
 
 ### Patch Changes

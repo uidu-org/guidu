@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.91
+
+### Patch Changes
+
+- 43756bf: Bump some dependencies, fixed fieldTime, rmeoved some moment usages (replaced with dayjs)
+
 ## 0.1.90
 
 ### Patch Changes

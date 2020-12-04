@@ -1,6 +1,6 @@
 {
   "name": "@uidu/attend",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "private": false,
   "description": "React component to attend to an event",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/attend",
