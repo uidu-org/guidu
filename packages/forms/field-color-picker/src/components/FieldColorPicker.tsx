@@ -62,7 +62,7 @@ function FieldColorPicker({
   };
 
   const content = (
-    <div style={{ width: 208, padding: 4 }}>
+    <div style={{ width: 208, padding: 4 }} className="ignore-onclickoutside">
       <HexColorPicker
         color={value}
         onChange={(c) => handleChange({ hex: c })}

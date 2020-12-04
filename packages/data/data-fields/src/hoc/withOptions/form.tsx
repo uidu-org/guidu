@@ -11,7 +11,7 @@ const Trigger = ({ triggerProps, toggleDialog, value }) => (
     {...triggerProps}
     style={{ backgroundColor: value, width: 30, height: 20 }}
     onClick={toggleDialog}
-    className="border rounded"
+    className="border rounded ignore-onclickoutside"
   />
 );
 
@@ -127,7 +127,6 @@ export default function WithOptionsForm({
                         })}
                         required
                         value={option.name}
-                        autoFocus
                         className="border-0"
                       />
                       <div className="ml-3">
