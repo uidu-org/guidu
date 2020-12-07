@@ -1,5 +1,11 @@
 # @uidu/schema.d.ts
 
+## 0.1.16
+
+### Patch Changes
+
+- 88fe13a: Bump schema
+
 ## 0.1.15
 
 ### Patch Changes
