@@ -43,7 +43,7 @@ function FieldImageUploader({
     multiple: false,
   },
   name,
-  defaultValue,
+  defaultImageUrl,
   value,
   onChange,
   onSetValue,
@@ -52,6 +52,7 @@ function FieldImageUploader({
 }: FieldImageUploaderProps) {
   const canvas: React.RefObject<HTMLDivElement> = useRef(null);
   const editor: React.RefObject<AvatarEditor> = useRef(null);
+  const defaultValue = useRef(value);
 
   const handleMouseOut = () => setIsHovered(false);
   const handleMouseOver = () => setIsHovered(true);
@@ -65,7 +66,7 @@ function FieldImageUploader({
   const [crop, setCrop] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
   const [data, setData] = useState([]);
-  const [imageUrl, setImageUrl] = useState(value);
+  const [imageUrl, setImageUrl] = useState(defaultImageUrl);
   const [errors, setErrors] = useState([]);
   const [progress, setProgress] = useState(null);
 
@@ -197,9 +198,9 @@ function FieldImageUploader({
     e.stopPropagation();
     setData([]);
     setScale(1);
-    onSetValue(defaultValue || null);
-    onChange(name, defaultValue || null);
-    setImageUrl(defaultValue);
+    onSetValue(defaultValue.current || null);
+    onChange(name, defaultValue.current || null);
+    setImageUrl(defaultImageUrl);
   };
 
   const destroy = (e) => {

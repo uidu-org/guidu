@@ -1,17 +1,17 @@
 import { FieldBaseProps } from '@uidu/field-base';
 import { MediaUploadOptions } from '@uidu/media-core';
+import { FC } from 'react';
 
 export type FieldImageUploaderProps = FieldBaseProps & {
   uploadOptions: MediaUploadOptions;
-  toolbar?: React.FC<any>;
-  existing?: React.FC<any>;
-  empty?: React.FC<any>;
-  prompt?: React.FC<any>;
-  progress?: React.FC<any>;
+  toolbar?: FC<any>;
+  existing?: FC<any>;
+  empty?: FC<any>;
+  prompt?: FC<any>;
+  progress?: FC<any>;
   borderRadius?: number;
   max?: number;
   ratio: string;
   dropzoneProps?: any;
-
-  defaultValue?: string;
+  defaultImageUrl?: string;
 };
