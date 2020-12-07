@@ -1,5 +1,11 @@
 # @uidu/field-image-uploader
 
+## 0.4.2
+
+### Patch Changes
+
+- 67d4cd9: Fix defailt Value for field image uploader
+
 ## 0.4.1
 
 ### Patch Changes
