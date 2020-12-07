@@ -413,7 +413,7 @@
     "use-places-autocomplete": "^1.0.2",
     "uuid": "^8.3.0",
     "w3c-keyname": "^2.1.0",
-    "webpack": "^5",
+    "webpack": "^5.7.0",
     "webpack-bundle-analyzer": "^4.1.0",
     "webpack-dev-server": "^3.2.1",
     "webpack-manifest-plugin": "^3.0.0",
