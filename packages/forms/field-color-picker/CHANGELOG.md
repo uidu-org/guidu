@@ -1,5 +1,11 @@
 # @uidu/field-color-picker
 
+## 0.3.2
+
+### Patch Changes
+
+- 1eb5d62: Fixeds for onclickoutside
+
 ## 0.3.1
 
 ### Patch Changes

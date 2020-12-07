@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 0.4.6
+
+### Patch Changes
+
+- 1eb5d62: Fixeds for onclickoutside
+- Updated dependencies [1eb5d62]
+  - @uidu/field-color-picker@0.3.2
+
 ## 0.4.5
 
 ### Patch Changes

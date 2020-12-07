@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-color-picker",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "description": "A color picker React Component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-color-picker",
