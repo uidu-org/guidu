@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.7.4
+
+### Patch Changes
+
+- 99061fb: Default actions
+
 ## 0.7.3
 
 ### Patch Changes
