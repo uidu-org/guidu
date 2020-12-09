@@ -9,6 +9,10 @@
   "main": "dist/uidu-data-fields.cjs.js",
   "module": "dist/uidu-data-fields.esm.js",
   "types": "dist/uidu-data-fields.cjs.d.ts",
+  "supportedLocales": [
+    "it",
+    "en"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.18",

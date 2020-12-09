@@ -3442,9 +3442,9 @@
     "@types/googlemaps" "*"
 
 "@types/googlemaps@*", "@types/googlemaps@^3.30.19":
-  version "3.40.3"
-  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.40.3.tgz#04420bba5b60ca599a9b7d7a49e38c4242fd5a69"
-  integrity sha512-ivlG5S0LlnQgpgPnQCUNAs7kjBtO367ZwDmuK+ggsQfW+w4N0RyWbxWZ6vPwegDe50Du3Xbb5+QVwJuB/U1XpA==
+  version "3.40.4"
+  resolved "https://registry.yarnpkg.com/@types/googlemaps/-/googlemaps-3.40.4.tgz#3fe3d9d8eeb2b318679fabf0f540cab963c27dda"
+  integrity sha512-8dtcijQrU1vkvBHAfmtJZKfut2WXwLJH5EBRJfSISlv4xWptnCsiE9cVbw4FZWMRbweMMPxE6PzDV55NWiNlQQ==
 
 "@types/got@^8":
   version "8.3.5"
@@ -4127,9 +4127,9 @@
     eslint-visitor-keys "^2.0.0"
 
 "@uifabric/file-type-icons@^7.0.3":
-  version "7.6.22"
-  resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.6.22.tgz#7e5e1411a0b30d6e64383fad2c9a935ee9fe905f"
-  integrity sha512-otFPUGvYeEw3wSEwVgBMErN48P7g7DpDMUdBt7XYm6H+Ne2IBG/4Lu6B96CpAME5WtyNVNr3GbLURYvXyUKrmg==
+  version "7.6.23"
+  resolved "https://registry.yarnpkg.com/@uifabric/file-type-icons/-/file-type-icons-7.6.23.tgz#515a29b60d6558ecce69d8761996868142ade897"
+  integrity sha512-HPBk7fWI9w85XMMhsTjjC3O4XUrm0yJTDkWniRn3XzCDdciV+bhvyqQ9VngsCvxEXEav6n++VjVDK+AxLMfJig==
   dependencies:
     "@uifabric/set-version" "^7.0.23"
     "@uifabric/styling" "^7.16.18"
@@ -11948,10 +11948,10 @@ inline-style-prefixer@^5.1.0:
   dependencies:
     css-in-js-utils "^2.0.0"
 
-input-format@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/input-format/-/input-format-0.3.0.tgz#f662b1667b6d067769f44c717bcfcc92554bee75"
-  integrity sha512-7ipaXJ5Hnd2o62IxLRTCMcl7AOPzxU2PTfDunPDIaaAjq+Q8DcjI4/nmPo3fXJUvdTCX97BlW8d+7ArUhVTxAA==
+input-format@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/input-format/-/input-format-0.3.1.tgz#9697481ecb5c8c1f870505f762cf17759ca5b18e"
+  integrity sha512-5o0uzSsX+2YBfNlcSazC0hy6N4MEZj8cZpQiH84kNXvU0ggsY3Sz5RZFbNnAsAG0fEj2glQMp9OTZWCiRz1jyA==
   dependencies:
     prop-types "^15.7.2"
 
@@ -13209,7 +13209,7 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-libphonenumber-js@^1.9.5:
+libphonenumber-js@^1.9.6:
   version "1.9.6"
   resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.9.6.tgz#cdab0552a6705c5a5c1d69db15be9562b248591e"
   integrity sha512-Ob419L88HxP3iVXPMI1Z/146izHrUPcV70ClnoP9WyNBgdy6mtlkCxx4ewMDmCzsdY5D4diDOUz8kboqLdKBoQ==
@@ -14453,9 +14453,9 @@ micro-memoize@^2.1.1:
   integrity sha512-COjNutiFgnDHXZEIM/jYuZPwq2h8zMUeScf6Sh6so98a+REqdlpaNS7Cb2ffGfK5I+xfgoA3Rx49NGuNJTJq3w==
 
 micromark@~2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/micromark/-/micromark-2.11.0.tgz#7e2e572d36eae96e13b7d21468cc68f1e15a1543"
-  integrity sha512-dB7wxG0MkGm25xOMUXfHgQy7c4f4Cuuv5PQ7npi5EKc3CvCkaVAZE8AgraqkJT+7YDv1DOQL0NVrZd9WZ0d99A==
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/micromark/-/micromark-2.11.2.tgz#e8b6a05f54697d2d3d27fc89600c6bc40dd05f35"
+  integrity sha512-IXuP76p2uj8uMg4FQc1cRE7lPCLsfAXuEfdjtdO55VRiFO1asrCSQ5g43NmPqFtRwzEnEhafRVzn2jg0UiKArQ==
   dependencies:
     debug "^4.0.0"
     parse-entities "^2.0.0"
@@ -16825,9 +16825,9 @@ postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2, postcss@^7.0.26, postcss@^7.0.
     supports-color "^6.1.0"
 
 postcss@^8.1.0, postcss@^8.1.10, postcss@^8.1.4:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.0.tgz#214be4eda36db762eb8a89d7c7362b9341156eb5"
-  integrity sha512-vZ8cb6AlN53hHlnPvR+oj7fA46LU05Ysv7O7sNh1ixQrCbtx+d8/h+5tDER9XAccVhkf3aYskAiWmh0DdjNLbw==
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.1.tgz#eabc5557c4558059b9d9e5b15bce7ffa9089c2a8"
+  integrity sha512-RhsqOOAQzTgh1UB/IZdca7F9WDb7SUCR2Vnv1x7DbvuuggQIpoDwjK+q0rzoPffhYvWNKX5JSwS4so4K3UC6vA==
   dependencies:
     colorette "^1.2.1"
     nanoid "^3.1.20"
@@ -18013,14 +18013,14 @@ react-overlays@^4.1.1:
     warning "^4.0.3"
 
 react-phone-number-input@^3.0.23:
-  version "3.1.7"
-  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-3.1.7.tgz#1db96c145f6e19229c2d308cddc19e62af78617e"
-  integrity sha512-b1ZbTPkqr3ER5uYjCh+Ew0A2asQ3VrXz/2s7UUJz5QaPaVtzofGfPm4alXoCLdoC3I+L6/hAjeSZw3/fMttHUQ==
+  version "3.1.8"
+  resolved "https://registry.yarnpkg.com/react-phone-number-input/-/react-phone-number-input-3.1.8.tgz#8c9d01483e80c0d67ad12d81fee68079fd3aa0e3"
+  integrity sha512-wZMYW69JgxHWvbwx3ZZfvWFVav41ujT27k47fPGSVDw3zexTxkIG8ZUP5bYPLdEWUA1YnIVnm7ymvS7FqWRG9w==
   dependencies:
     classnames "^2.2.5"
     country-flag-icons "^1.0.2"
-    input-format "^0.3.0"
-    libphonenumber-js "^1.9.5"
+    input-format "^0.3.1"
+    libphonenumber-js "^1.9.6"
     prop-types "^15.7.2"
 
 react-popper@^2.2.3:
@@ -20512,9 +20512,9 @@ svg-url-loader@^7.0.0:
     loader-utils "~2.0.0"
 
 swiper@^6.3.5:
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.4.0.tgz#17ad4aa16c8bc47d7f47b149b183f9f06db02f45"
-  integrity sha512-hZu+/d/elnIIwNWa9pDCTrSrp7S0uNR84KfkG4MM1sEj3vSQ1cbbFkX79syGfYnfCXRnv0DBh0pQit0K9823qw==
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-6.4.1.tgz#6d4e9252ed4226821d4005e77924e929848de8af"
+  integrity sha512-bozab28fXhuMnTIb/oY2eF6Vif1K9hLz0wz5cPTQAnZzjtm/VsRod3jHi2s6UmWVufmlpAEOrprNheDS2YIfmA==
   dependencies:
     dom7 "^3.0.0"
     ssr-window "^3.0.0"
@@ -20858,9 +20858,9 @@ tinyqueue@^2.0.3:
   integrity sha512-ppJZNDuKGgxzkHihX8v9v9G5f+18gzaTfrukGrq6ueg0lmH4nqVnA2IPG0AEH3jKEk2GRJCUhDoqpoiw3PHLBA==
 
 tlds@^1.209.0:
-  version "1.214.0"
-  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.214.0.tgz#a20191443eec26fd3339a3bd98e87a0b4f3f0d89"
-  integrity sha512-+i48KYsrCkkIZnsj31cTIj9cu5NtFxKo7xlNIB7jg8kXi//b4Ertl5qaHgqFF+y+g0nFwt/k+eph2uUNQJgfwg==
+  version "1.215.0"
+  resolved "https://registry.yarnpkg.com/tlds/-/tlds-1.215.0.tgz#9f7c32d9c575fe7342c97be35b452b89c55c74a2"
+  integrity sha512-rmYrP3jM99ILMAXbcCu4ckWKi+K4AgSSN+0G1efJa/Nwjv/TFpBTA9kXC4Tm+o/zaQnX5kDTVoqFGtFTmokA8Q==
 
 tmp-promise@^3.0.2:
   version "3.0.2"
