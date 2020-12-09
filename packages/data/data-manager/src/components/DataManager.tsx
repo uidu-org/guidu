@@ -161,21 +161,25 @@ export default function DataManager({
           },
         },
         ...columns,
-        {
-          id: 'actions',
-          kind: 'actions',
-          suppressMenu: true,
-          disableResizing: true,
-          minWidth: 56,
-          width: 56,
-          maxWidth: 56,
-          pinned: 'right',
-          Cell: (foo) => <RowActions {...foo} actions={actions} />,
-          groupByBoundary: true,
-          cellStyle: {
-            padding: 0,
-          },
-        },
+        ...(actions.length > 0
+          ? [
+              {
+                id: 'actions',
+                kind: 'actions',
+                suppressMenu: true,
+                disableResizing: true,
+                minWidth: 56,
+                width: 56,
+                maxWidth: 56,
+                pinned: 'right',
+                Cell: (foo) => <RowActions {...foo} actions={actions} />,
+                groupByBoundary: true,
+                cellStyle: {
+                  padding: 0,
+                },
+              },
+            ]
+          : [{}]),
       ]);
     },
   );
