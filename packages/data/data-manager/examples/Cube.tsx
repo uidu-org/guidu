@@ -15,7 +15,7 @@ import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
-import DataManager from '../';
+import { DataManagerNext } from '../';
 import '../../calendar/themes/uidu.scss';
 import { byName } from '../../data-views/src';
 import { availableColumns } from '../../table/examples-utils';
@@ -197,7 +197,7 @@ function CubeExample() {
   const currentView = dataViews[0];
 
   return (
-    <DataManager
+    <DataManagerNext
       query={query}
       // isAutoSaving={isAutoSaving}
       key={`table-for-${currentView.id}`}
@@ -423,7 +423,7 @@ function CubeExample() {
           </>
         </ShellMain>
       )}
-    </DataManager>
+    </DataManagerNext>
   );
 }
 

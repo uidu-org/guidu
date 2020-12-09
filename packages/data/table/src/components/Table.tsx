@@ -24,7 +24,28 @@ const Header = styled.div`
   z-index: 1;
 `;
 
-const Td = styled.div<{ height: number; pinned?: boolean }>`
+function getPinnedStyled({ pinned = 'left', index }) {
+  if (pinned === 'left') {
+    return css`
+      position: sticky;
+      left: ${index === 0 ? 0 : '56px'};
+      z-index: 2;
+      background: var(--body-bg);
+      border-right: 1px solid #f2f2f3;
+    `;
+  }
+  if (pinned === 'right') {
+    return css`
+      position: sticky;
+      right: ${index === 0 ? 0 : 0};
+      z-index: 2;
+      background: var(--body-bg);
+      border-left: 1px solid #f2f2f3;
+    `;
+  }
+}
+
+const Td = styled.div<{ height: number; pinned?: string; index: number }>`
   padding-left: 1rem;
   padding-right: 1rem;
   white-space: nowrap;
@@ -36,31 +57,26 @@ const Td = styled.div<{ height: number; pinned?: boolean }>`
   border-right: 1px solid #f2f2f3;
   background: var(--body-bg);
 
-  ${({ pinned }) =>
-    pinned
-      ? css`
-          position: sticky;
-          left: 0;
-          z-index: 1;
-          background: var(--body-bg);
-          border-right: 1px solid #f2f2f3;
-        `
-      : null};
+  ${({ pinned, index }) =>
+    !!pinned ? getPinnedStyled({ pinned, index }) : null};
 `;
 
-const Th = styled.div<{ height: number }>`
+const Th = styled.div<{ height: number; pinned?: string; index: number }>`
   padding-left: 1rem;
   padding-right: 1rem;
   white-space: nowrap;
-  height: ${({ height }) => `${height - 8}px`};
+  height: ${({ height }) => `${height}px`};
   font-size: 0.95rem;
   border-bottom: 1px solid #f2f2f3;
   border-right: 1px solid #f2f2f3;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  /* font-weight: 500; */
   position: relative;
   background: var(--body-bg);
+
+  ${({ pinned, index }) =>
+    !!pinned ? getPinnedStyled({ pinned, index }) : null};
 `;
 
 const StyledRow = styled.div<{ size: number; start: number }>`
@@ -74,7 +90,7 @@ const StyledRow = styled.div<{ size: number; start: number }>`
 
   &:hover {
     ${Th}, ${Td} {
-      background: var(--light);
+      background: var(--light) !important;
     }
   }
 `;
@@ -84,6 +100,7 @@ const Table = ({
   setAggregation,
   setColumnWidth,
   rowHeight = 32,
+  headerHeight = 48,
   groupRowHeightIncrementRatio = 1.2,
   tableInstance,
   onItemClick,
@@ -160,14 +177,15 @@ const Table = ({
                 {...cell.getCellProps({
                   style: {
                     left: index === 0 ? 0 : '56px',
+                    ...(cell.column.isSorted
+                      ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
+                      : {}),
                     ...cell.column.cellStyle,
                   },
                 })}
                 pinned={cell.column.pinned}
+                index={index}
                 height={rowHeight}
-                className={
-                  cell.column.isSorted ? 'ag-cell-sorter-active' : null
-                }
               >
                 {cell.isGrouped ? (
                   // If it's a grouped cell, add an expander and row count
@@ -227,21 +245,15 @@ const Table = ({
                 .map((column, index) => (
                   <Th
                     {...column.getHeaderProps()}
-                    className={column.isSorted ? 'ag-cell-sorter-active' : null}
-                    height={rowHeight}
-                    pinned={index === 0}
+                    height={headerHeight}
+                    pinned={column.pinned}
+                    index={index}
                     style={{
                       width: column.width,
                       maxWidth: column.maxWidth,
                       minWidth: column.minWidth,
-                      ...(column.pinned
-                        ? {
-                            position: 'sticky',
-                            left: index === 0 ? 0 : '56px',
-                            zIndex: 2,
-                            background: 'var(--body-bg)',
-                            borderRight: '1px solid #f2f2f3',
-                          }
+                      ...(column.isSorted
+                        ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
                         : {}),
                     }}
                   >

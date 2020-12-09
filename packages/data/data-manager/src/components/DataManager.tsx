@@ -7,6 +7,7 @@ import {
   AggregatedSelection,
   Header,
   HeaderSelection,
+  RowActions,
   RowSelection,
 } from '@uidu/table';
 import React, { useMemo, useState } from 'react';
@@ -69,6 +70,7 @@ export default function DataManager({
   onItemClick,
   currentView,
   updateView: onViewUpdate,
+  actions,
 }: DataManagerProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
   const data = useMemo(() => rowData, [rowData]);
@@ -159,6 +161,21 @@ export default function DataManager({
           },
         },
         ...columns,
+        {
+          id: 'actions',
+          kind: 'actions',
+          suppressMenu: true,
+          disableResizing: true,
+          minWidth: 56,
+          width: 56,
+          maxWidth: 56,
+          pinned: 'right',
+          Cell: (foo) => <RowActions {...foo} actions={actions} />,
+          groupByBoundary: true,
+          cellStyle: {
+            padding: 0,
+          },
+        },
       ]);
     },
   );

@@ -15,6 +15,8 @@
     "@uidu/checkbox": "^0.3.0",
     "@uidu/data-fields": "^0.4.4",
     "@uidu/dropdown-menu": "^0.4.2",
+    "@uidu/menu": "^0.4.2",
+    "@uidu/popup": "^0.4.1",
     "numeral": "^2.0.6",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

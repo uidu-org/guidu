@@ -279,6 +279,21 @@ export default class Basic extends Component<any, any> {
           <Router>
             <DataManager
               query={query}
+              actions={[
+                {
+                  name: 'Default actions',
+                  items: [
+                    {
+                      children: 'text',
+                      onClick: () => window.alert('onClick row'),
+                    },
+                    {
+                      children: 'text',
+                      onClick: () => window.alert('onClick row'),
+                    },
+                  ],
+                },
+              ]}
               isAutoSaving={isAutoSaving}
               key={`table-for-${this.state.currentView.id}`}
               onItemClick={console.log}
@@ -498,7 +513,7 @@ export default class Basic extends Component<any, any> {
                                       board: {},
                                       table: {
                                         headerHeight: 48,
-                                        rowHeight: 48,
+                                        rowHeight: 40,
                                       },
                                     },
                                   })}

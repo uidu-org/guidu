@@ -1,6 +1,11 @@
 import { FieldGroup } from '@uidu/data-fields';
 import { DataView } from '@uidu/data-views';
 
+export type RowAction = {
+  children: any;
+  onClick: any;
+};
+
 export type DataManagerProps = {
   currentView?: DataView;
   updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
@@ -10,6 +15,7 @@ export type DataManagerProps = {
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
   children: ({ renderControls, renderView, renderSidebar }) => any;
+  actions?: RowAction[];
 };
 
 export type DataManagerNextProps = {
@@ -21,4 +27,5 @@ export type DataManagerNextProps = {
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
   children: ({ renderControls, renderView, renderSidebar }) => any;
+  actions?: RowAction[];
 };

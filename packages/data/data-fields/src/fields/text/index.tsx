@@ -21,6 +21,7 @@ const Text: Field = {
   ),
   color: '#CB732B',
   Filter,
+  Cell: (params) => <div className="text-truncate">{params.value}</div>,
 };
 
 export default Text;

@@ -1,9 +1,13 @@
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import loadable from '@loadable/component';
+import dayjs from 'dayjs';
+import LocalizedFormat from 'dayjs/plugin/localizedFormat';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
+
+dayjs.extend(LocalizedFormat);
 
 const GrouperForm = loadable(() => import('./GrouperForm'));
 const Filter = loadable(
@@ -23,7 +27,12 @@ const Date: Partial<Field> = {
   // cellEditorFramework: Editor,
   // filter: 'agDateColumnFilter',
   Cell: (params) =>
-    params.value ? <div className="text-truncate">{params.value}</div> : null,
+    params.value ? (
+      <div className="d-flex w-100 justify-content-between">
+        {dayjs(params.value).format('L')}
+        <span>{dayjs(params.value).format('LT')}</span>
+      </div>
+    ) : null,
 };
 
 export default Date;

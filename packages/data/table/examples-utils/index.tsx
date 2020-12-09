@@ -156,6 +156,12 @@ export const availableColumns = [
     name: 'Telefono',
   },
   {
+    kind: 'text',
+    id: 'text',
+    field: 'text',
+    name: 'Long text',
+  },
+  {
     kind: 'paymentMethod',
     cellProps: {
       options: [
@@ -221,6 +227,7 @@ export const fetchContacts = () => {
             path: '/foo/bar',
             scope: 'donations',
           },
+          text: faker.lorem.paragraphs(),
           amount: parseInt(faker.commerce.price(), 10),
           country: faker.address.countryCode(),
           percent: faker.random.number(),

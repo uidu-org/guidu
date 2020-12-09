@@ -44,7 +44,7 @@ export default function Header({
 
   return (
     <div
-      className="ag-header-component d-flex align-items-center justify-content-center flex-grow-1"
+      className="d-flex align-items-center justify-content-center flex-grow-1"
       style={{ minWidth: 0 }}
     >
       <div className="customHeaderLabel flex-grow-1 text-truncate">
