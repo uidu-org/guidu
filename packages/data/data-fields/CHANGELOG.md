@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.4.9
+
+### Patch Changes
+
+- de08835: Output intl.formatMessage calls
+
 ## 0.4.8
 
 ### Patch Changes
