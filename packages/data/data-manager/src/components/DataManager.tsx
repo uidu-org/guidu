@@ -70,7 +70,7 @@ export default function DataManager({
   onItemClick,
   currentView,
   updateView: onViewUpdate,
-  actions,
+  actions = [],
 }: DataManagerProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
   const data = useMemo(() => rowData, [rowData]);

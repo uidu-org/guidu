@@ -73,7 +73,7 @@ function DataManagerComponent({
   currentView,
   updateView: onViewUpdate,
   resultSet,
-  actions,
+  actions = [],
 }: DataManagerNextProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
 
