@@ -10,7 +10,7 @@ export default function Attendances({
   createAttendance,
   onSave,
 }) {
-  if (!order || !order.items) {
+  if (!order || !order.attendances) {
     return null;
   }
   const { attendances } = order;
@@ -35,6 +35,7 @@ export default function Attendances({
             >
               {attendances.map((attendance, index) => (
                 <FormSection
+                  key={attendance.id}
                   isFirst={index === 0}
                   isLast={index === attendances.length - 1}
                   name={
@@ -46,15 +47,7 @@ export default function Attendances({
                     />
                   }
                 >
-                  <Attendance
-                    order={order}
-                    attendance={attendance}
-                    handleSubmit={async (model) =>
-                      createAttendance(model).then(() => {
-                        jumpToStep(`attendance-${index + 2}`);
-                      })
-                    }
-                  />
+                  <Attendance index={index} attendance={attendance} />
                 </FormSection>
               ))}
             </Form>

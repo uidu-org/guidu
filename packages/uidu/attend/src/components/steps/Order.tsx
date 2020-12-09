@@ -27,7 +27,7 @@ export default function Order({ order, event, handleSubmit }) {
         <ScrollableContainer>
           <FormWrapper>
             <FormSection
-              name="Choose your tickets"
+              name={<FormattedMessage defaultMessage="Choose your tickets" />}
               description={<p className="text-muted">Choose your tickets</p>}
               isFirst
               isLast

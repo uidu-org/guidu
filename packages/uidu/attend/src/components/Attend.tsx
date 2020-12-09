@@ -22,6 +22,7 @@ export default function Attend({
   baseUrl,
   stripe,
   paymentIntent,
+  embedded,
 }) {
   const history = useHistory();
   const match = useRouteMatch();
@@ -68,7 +69,7 @@ export default function Attend({
     relativePath: 'attendance',
     name: (
       <>
-        <FormattedMessage defaultMessage="Tickets" />
+        <FormattedMessage defaultMessage="Participants" />
       </>
     ),
     component: () => (
@@ -90,7 +91,7 @@ export default function Attend({
   if (order && order.stripeAmount > 0) {
     steps.push({
       relativePath: 'pay',
-      name: 'pay',
+      name: <FormattedMessage defaultMessage="Payment info" />,
       component: () => (
         <Pay
           order={order}
@@ -116,6 +117,7 @@ export default function Attend({
       steps={steps}
       baseUrl={baseUrl}
       scope="events"
+      embedded={embedded}
       sidebarFooterAdditionalItems={[
         {
           type: 'InlineComponent',

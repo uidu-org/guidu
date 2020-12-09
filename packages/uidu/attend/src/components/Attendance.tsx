@@ -1,32 +1,20 @@
 import FieldText from '@uidu/field-text';
-import { Form } from '@uidu/form';
 import React from 'react';
 
-export default function Attendance({ order, attendance, handleSubmit }) {
+export default function Attendance({ attendance, index }) {
   return (
-    <Form
-      handleSubmit={handleSubmit}
-      footerRenderer={
-        ({ canSubmit }) => null
-        // <FormSubmit
-        //   className="btn-events px-5"
-        //   canSubmit={canSubmit}
-        //   label={
-        //     <FormattedMessage
-        //       defaultMessage="Confirm"
-        //     />
-        //   }
-        // />
-      }
-    >
-      <FieldText type="hidden" name="orderId" value={order.id} />
-      <FieldText type="hidden" name="skuId" value={attendance.skuId} />
+    <>
+      <FieldText
+        type="hidden"
+        name={`attendancesAttributes[${index}][orderItemId]`}
+        value={attendance.orderItemId}
+      />
       <div className="row">
         <div className="col-sm-6">
           <FieldText
             type="text"
             label="Nome"
-            name={`enhancements[first_name]`}
+            name={`attendancesAttributes[${index}][attenderAttributes][firstName]`}
             required
           />
         </div>
@@ -34,7 +22,7 @@ export default function Attendance({ order, attendance, handleSubmit }) {
           <FieldText
             type="text"
             label="Cognome"
-            name={`enhancements[last_name]`}
+            name={`attendancesAttributes[${index}][attenderAttributes][lastName]`}
             required
           />
         </div>
@@ -42,9 +30,9 @@ export default function Attendance({ order, attendance, handleSubmit }) {
       <FieldText
         type="email"
         label="Email"
-        name={`enhancements[email]`}
+        name={`attendancesAttributes[${index}][attenderAttributes][email]`}
         required
       />
-    </Form>
+    </>
   );
 }

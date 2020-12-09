@@ -9,6 +9,10 @@
   "main": "dist/uidu-attend.cjs.js",
   "module": "dist/uidu-attend.esm.js",
   "types": "dist/uidu-attend.cjs.d.ts",
+  "supportedLocales": [
+    "it",
+    "en"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/contact": "^0.2.4",

@@ -36,6 +36,11 @@ export default function Ticket({ ticket, index, handleCounterChange }) {
               name={`items[${index}][stripeKind]`}
               value="sku"
             />
+            <FieldText
+              type="hidden"
+              name={`items[${index}][price]`}
+              value={ticket.price}
+            />
             <FieldCounter
               name={`items[${index}][quantity]`}
               layout="elementOnly"

@@ -156,6 +156,8 @@ export default function Shell({
     },
   ];
 
+  const WhichSwitch = embedded ? Switch : AnimatedSwitch;
+
   return (
     <>
       <style>{`.route-wrapper {
@@ -235,7 +237,7 @@ export default function Shell({
           </ShellHeader>
         )}
         <ShellBody>
-          <AnimatedSwitch
+          <WhichSwitch
             // eslint-disable-next-line react/jsx-props-no-spreading
             {...(embedded
               ? {}
@@ -263,7 +265,7 @@ export default function Shell({
               );
             })}
             <Redirect to={`${match.url}/${steps[0].relativePath}`} />
-          </AnimatedSwitch>
+          </WhichSwitch>
         </ShellBody>
       </ShellMain>
     </>
