@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.7.5
+
+### Patch Changes
+
+- bf71fc9: Publish locales for data-fields
+- Updated dependencies [bf71fc9]
+  - @uidu/data-fields@0.4.8
+
 ## 0.7.4
 
 ### Patch Changes
