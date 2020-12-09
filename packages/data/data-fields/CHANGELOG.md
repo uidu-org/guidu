@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.4.8
+
+### Patch Changes
+
+- bf71fc9: Publish locales for data-fields
+
 ## 0.4.7
 
 ### Patch Changes
