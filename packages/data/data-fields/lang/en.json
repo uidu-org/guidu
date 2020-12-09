@@ -2,6 +2,9 @@
   "0+Cz5N": {
     "defaultMessage": "Allow geolocation of your records with Google Maps autocomplete help"
   },
+  "142pwE": {
+    "defaultMessage": "Insert option name"
+  },
   "55hdQy": {
     "defaultMessage": "Currency"
   },
@@ -119,6 +122,9 @@
   "field.url.description": {
     "defaultMessage": "A valid URL (e.g. airtable.com or https://airtable.com/universe)."
   },
+  "filters.notEqual": {
+    "defaultMessage": "Not Equals"
+  },
   "fkWU2P": {
     "defaultMessage": "Add a Country select list to your record"
   },
@@ -148,6 +154,9 @@
   },
   "qlcuNQ": {
     "defaultMessage": "ID"
+  },
+  "rAMgEh": {
+    "defaultMessage": "Add option"
   },
   "sIMS7i": {
     "defaultMessage": "Progress"

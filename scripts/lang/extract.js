@@ -19,6 +19,7 @@ async function extractTranslation() {
         await formatjs.extractAndWrite(files, {
           outFile: `${relativePath}/lang/${locale}.json`,
           idInterpolationPattern: '[sha512:contenthash:base64:6]',
+          extractFromFormatMessageCall: true,
         });
       });
     }
