@@ -1,5 +1,15 @@
 # @uidu/data-manager
 
+## 0.7.3
+
+### Patch Changes
+
+- ee6ebcd: Added rowActions to datamanager
+- Updated dependencies [ee6ebcd]
+  - @uidu/calendar@0.2.2
+  - @uidu/data-fields@0.4.7
+  - @uidu/table@0.5.3
+
 ## 0.7.2
 
 ### Patch Changes

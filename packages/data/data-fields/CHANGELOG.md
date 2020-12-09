@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.4.7
+
+### Patch Changes
+
+- ee6ebcd: Added rowActions to datamanager
+
 ## 0.4.6
 
 ### Patch Changes
