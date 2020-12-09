@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
