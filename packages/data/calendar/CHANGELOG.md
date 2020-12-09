@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.2.2
+
+### Patch Changes
+
+- ee6ebcd: Added rowActions to datamanager
+
 ## 0.2.1
 
 ### Patch Changes
