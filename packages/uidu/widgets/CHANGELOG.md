@@ -1,5 +1,11 @@
 # @uidu/widgets
 
+## 0.4.6
+
+### Patch Changes
+
+- 75a555a: Small fizìxes to uidu components
+
 ## 0.4.5
 
 ### Patch Changes

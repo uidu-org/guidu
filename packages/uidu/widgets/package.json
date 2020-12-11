@@ -1,6 +1,6 @@
 {
   "name": "@uidu/widgets",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Widgets components with zoid",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/uidu/widgets",
   "license": "MIT",
@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.1",
-    "@uidu/modal-dialog": "^0.4.1"
+    "@uidu/modal-dialog": "^0.4.2"
   }
 }

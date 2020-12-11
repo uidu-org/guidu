@@ -1,5 +1,14 @@
 # @uidu/attend
 
+## 0.4.6
+
+### Patch Changes
+
+- 5859ea4: Added locale to uidu/table
+- 75a555a: Small fizìxes to uidu components
+- Updated dependencies [75a555a]
+  - @uidu/widgets@0.4.6
+
 ## 0.4.5
 
 ### Patch Changes

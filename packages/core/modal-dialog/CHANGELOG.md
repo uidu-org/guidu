@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.4.2
+
+### Patch Changes
+
+- 75a555a: Small fizìxes to uidu components
+
 ## 0.4.1
 
 ### Patch Changes
