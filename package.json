@@ -213,7 +213,7 @@
     "classnames": "^2.2.6",
     "codesandboxer": "^1.0.3",
     "color": "^3.1.0",
-    "commonmark": "0.29.1",
+    "commonmark": "^0.29.3",
     "commonmark-react-renderer": "^4.3.4",
     "compression-webpack-plugin": "^7.0.0",
     "connect-history-api-fallback": "^1.6.0",

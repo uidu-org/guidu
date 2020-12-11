@@ -22,7 +22,7 @@ export default function Footer({ footerGroups, rowHeight }) {
       style={{
         position: 'sticky',
         bottom: 0,
-        background: 'red',
+        background: 'var(--body-bg)',
         width: 'fit-content',
       }}
     >

@@ -10,6 +10,10 @@
   "main": "dist/uidu-table.cjs.js",
   "module": "dist/uidu-table.esm.js",
   "types": "dist/uidu-table.cjs.d.ts",
+  "supportedLocales": [
+    "it",
+    "en"
+  ],
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.3.0",

@@ -13,6 +13,7 @@ import {
   Filter,
   Server,
 } from 'react-feather';
+import { FormattedMessage } from 'react-intl';
 
 export default function Header({
   column,
@@ -70,7 +71,7 @@ export default function Header({
                   onClick={() => console.log('Edit field')}
                   elemBefore={<Edit2 size={14} />}
                 >
-                  Edit this column
+                  <FormattedMessage defaultMessage="Edit this column" />
                 </DropdownItem>
               </DropdownItemGroup>
             )}
@@ -79,7 +80,7 @@ export default function Header({
                 onClick={() => setColumnWidth(column, getColumnWidth(column))}
                 elemBefore={<AlignJustify size={14} />}
               >
-                Autosize this column
+                <FormattedMessage defaultMessage="Autosize this column" />
               </DropdownItem>
               {/* <DropdownItem onClick={() => autosizeAllColumns()}>
                 Autosize all columns
@@ -93,7 +94,7 @@ export default function Header({
                   }
                   elemBefore={<ArrowRight size={14} />}
                 >
-                  Unsort
+                  <FormattedMessage defaultMessage="Unsort" />
                 </DropdownItem>
               )}
               <DropdownItem
@@ -101,21 +102,27 @@ export default function Header({
                 onClick={(e) => updateSortBy(column.id, false)}
                 elemBefore={<ArrowDownRight size={14} />}
               >
-                Sort A <ArrowRight size={14} /> Z
+                <FormattedMessage
+                  defaultMessage="Sort A {icon} Z"
+                  values={{ icon: () => <ArrowRight size={14} /> }}
+                />
               </DropdownItem>
               <DropdownItem
                 isDisabled={column.isSorted && column.isSortedDesc}
                 onClick={(e) => updateSortBy(column.id, true)}
                 elemBefore={<ArrowUpRight size={14} />}
               >
-                Sort Z <ArrowRight size={14} /> A
+                <FormattedMessage
+                  defaultMessage="Sort Z {icon} A"
+                  values={{ icon: () => <ArrowRight size={14} /> }}
+                />
               </DropdownItem>
               {column.canFilter && (
                 <DropdownItem
                   onClick={() => console.log('Add filter')}
                   elemBefore={<Filter size={14} />}
                 >
-                  Add filter
+                  <FormattedMessage defaultMessage="Add filter" />
                 </DropdownItem>
               )}
               {column.canGroupBy && (
@@ -127,14 +134,14 @@ export default function Header({
                       }
                       elemBefore={<Server size={14} />}
                     >
-                      Remove grouping
+                      <FormattedMessage defaultMessage="Remove grouping" />
                     </DropdownItem>
                   ) : (
                     <DropdownItem
                       onClick={() => setGroupBy([...state.groupBy, column.id])}
                       elemBefore={<Server size={14} />}
                     >
-                      Group by this field
+                      <FormattedMessage defaultMessage="Group by this field" />
                     </DropdownItem>
                   )}
                 </>
@@ -146,7 +153,7 @@ export default function Header({
                   }
                   elemBefore={<EyeOff size={14} />}
                 >
-                  Hide this column
+                  <FormattedMessage defaultMessage="Hide this column" />
                 </DropdownItem>
               )}
             </DropdownItemGroup>
