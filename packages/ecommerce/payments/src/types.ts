@@ -4,6 +4,7 @@ import {
   Stripe,
   StripeElementsOptions,
 } from '@stripe/stripe-js';
+import { FormProps } from '@uidu/form';
 import { FC, ReactNode } from 'react';
 import { IconProps } from 'react-feather';
 
@@ -15,23 +16,23 @@ export type PaymentProviderTypes = {
 };
 
 export interface SharedPaymentProps {
-  provider: PaymentProviderTypes;
   stripe?: Stripe | Promise<Stripe | null>;
   stripeOptions?: StripeElementsOptions;
   stripeBillingDetails: PaymentMethod['billing_details'];
   scope?: string;
+  footerRenderer: FormProps['footerRenderer'];
 }
 
 export type SinglePaymentProps = SharedPaymentProps & {
   amount: number;
-  onSuccess: (paymentIntent: PaymentIntent) => void;
+  onSave: (paymentIntent: PaymentIntent, model: any) => Promise<any>;
   clientSecret: PaymentIntent['client_secret'];
   children: (paymentProps: any) => any;
 };
 
 export type RecurringPaymentProps = SharedPaymentProps & {
   createSubscription: any;
-  onSuccess: (paymentIntent: PaymentIntent) => void;
+  onSave: (paymentIntent: PaymentIntent) => void;
   children: (paymentProps: any) => any;
 };
 

@@ -12,8 +12,7 @@ import { RecurringPaymentProps } from '../types';
 function RecurringPayment({
   scope = 'primary',
   children,
-  provider,
-  onSuccess,
+  onSave,
   amount,
   createSubscription,
   stripeBillingDetails,
@@ -50,13 +49,13 @@ function RecurringPayment({
         } else {
           // Show a success message to your customer
           // setLoading(false);
-          onSuccess(paymentIntent);
+          onSave(paymentIntent);
         }
       } else {
         // No additional information was needed
         // Show a success message to your customer
         // setLoading(false);
-        onSuccess(payment_intent);
+        onSave(payment_intent);
       }
     }
   };

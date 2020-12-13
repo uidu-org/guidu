@@ -1,8 +1,7 @@
-import { IbanElement } from '@stripe/react-stripe-js';
-import { FormSectionSubmit } from '@uidu/form';
-import React from 'react';
+import Form from '@uidu/form';
+import React, { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { createIbanElementOptions } from '../../utils';
+import FieldBank from '../Fields/FieldBank';
 
 export default function Bank({
   mandate = (
@@ -17,41 +16,43 @@ export default function Bank({
     />
   ),
   handleSubmit,
-  onChange,
+  footerRenderer,
   loading = false,
   canSubmit = false,
-  error,
+  provider,
   providerProps = {},
-  scope = 'primary',
+  children,
 }) {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <>
-      <style>{`#credit-card { display: flex; flex-direction: column; justify-content: center; }`}</style>
-      <form onSubmit={handleSubmit}>
-        <div style={{ position: 'relative' }}>
-          <div className="form-group">
-            <label htmlFor="credit-card">
+      <style>{`#iban-element { display: flex; flex-direction: column; justify-content: center; }`}</style>
+      <Form
+        handleSubmit={async (model) => handleSubmit(provider, model)}
+        footerRenderer={() => footerRenderer({ loading, canSubmit })}
+      >
+        <div
+          style={{
+            position: 'relative',
+            visibility: isLoading ? 'hidden' : 'visible',
+          }}
+        >
+          <FieldBank
+            label={
               <FormattedMessage defaultMessage="Insert your bank details" />
-            </label>
-            <IbanElement
-              id="credit-card"
-              options={createIbanElementOptions({
-                supportedCountries: ['SEPA'],
-                ...providerProps,
-              })}
-            />
-          </div>
+            }
+            name="iban-element"
+            id="iban-element"
+            onReady={() => setIsLoading(false)}
+            providerProps={providerProps}
+            required
+          />
         </div>
-        <FormSectionSubmit
-          loading={loading}
-          canSubmit={canSubmit}
-          scope={scope}
-          label={<FormattedMessage defaultMessage="Submit payment" />}
-        />
-        <div id="mandate-acceptance" className="mt-3 small text-muted">
-          {mandate}
-        </div>
-      </form>
+        {children}
+      </Form>
+      <div id="mandate-acceptance" className="mt-3 small text-muted">
+        {mandate}
+      </div>
     </>
   );
 }

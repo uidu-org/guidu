@@ -47,7 +47,7 @@ export default function RecurringPaymentExample({}) {
           amount={3000}
           provider={{ id: provider }}
           createSubscription={(payload) => createSubscription(payload)}
-          onSuccess={(payload) => {
+          onSave={(payload) => {
             console.log(payload);
             window.alert('success');
           }}

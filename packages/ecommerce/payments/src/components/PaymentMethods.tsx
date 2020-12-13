@@ -26,7 +26,6 @@ const Separator = styled.div`
 `;
 
 function PaymentMethods({
-  onChange,
   providers = ['credit_card', 'bank_account'],
   paymentRequest,
   ...rest
@@ -77,7 +76,7 @@ function PaymentMethods({
           })}
         </div>
       )}
-      <CurrentProvider {...rest} />
+      <CurrentProvider {...rest} provider={currentProvider} />
     </div>
   );
 }

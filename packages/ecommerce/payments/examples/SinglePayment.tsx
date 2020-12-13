@@ -1,3 +1,5 @@
+import FieldText from '@uidu/field-text';
+import { FormSectionSubmit } from '@uidu/form';
 import {
   ScrollableContainer,
   ShellBody,
@@ -22,7 +24,7 @@ const createPaymentIntent = (amount: number) => {
 
 export default function Basic({}) {
   const [paymentIntent, setPaymentIntent] = useState(null);
-  const [provider, setProvider] = useState('card');
+
   useEffect(() => {
     createPaymentIntent(3000).then(setPaymentIntent);
     return () => {
@@ -51,12 +53,25 @@ export default function Basic({}) {
                     stripe={stripe}
                     label="Test"
                     amount={3000}
-                    onSave={console.log}
+                    onSave={async (paymentIntent, model) => {
+                      await console.log(paymentIntent);
+                    }}
                     clientSecret={paymentIntent?.client_secret}
-                    providers={['credit_card']}
+                    providers={['credit_card', 'bank_account']}
+                    footerRenderer={(props) => (
+                      <FormSectionSubmit
+                        {...props}
+                        label="Donate 30"
+                        scope="primary"
+                      />
+                    )}
                   >
                     {(paymentProps) => {
-                      return <PaymentMethods {...paymentProps} />;
+                      return (
+                        <PaymentMethods {...paymentProps}>
+                          <FieldText name="otherField" label="other field" />
+                        </PaymentMethods>
+                      );
                     }}
                   </SinglePayment>
                 </div>

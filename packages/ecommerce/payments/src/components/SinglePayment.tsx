@@ -5,6 +5,7 @@ import {
   useElements,
   useStripe,
 } from '@stripe/react-stripe-js';
+import { PaymentIntent } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 import usePaymentRequest from '../hooks/usePaymentRequest';
 import { SinglePaymentProps } from '../types';
@@ -15,10 +16,9 @@ import { SinglePaymentProps } from '../types';
 function SinglePayment({
   scope = 'primary',
   children,
-  provider,
   amount,
   clientSecret,
-  onSuccess,
+  onSave = (paymentIntent: PaymentIntent, model: any) => Promise.resolve(),
   stripeBillingDetails,
   ...rest
 }: SinglePaymentProps) {
@@ -71,7 +71,7 @@ function SinglePayment({
     });
   }
 
-  const handleCardPayment = async (formData) => {
+  const handleCardPayment = async (model) => {
     const cardElement = elements.getElement(CardElement);
 
     if (error) {
@@ -108,13 +108,14 @@ function SinglePayment({
         // Set up a webhook or plugin to listen for the payment_intent.succeeded event
         // to save the card to a Customer
         // The PaymentMethod ID can be found on result.paymentIntent.payment_method
-        onSuccess(paymentIntent);
-        // setLoading(false);
+        onSave(paymentIntent, model).then(() => {
+          setLoading(false);
+        });
       }
     }
   };
 
-  const handleBankPayment = async (formData) => {
+  const handleBankPayment = async (model) => {
     const iban = elements.getElement(IbanElement);
 
     setLoading(true);
@@ -138,28 +139,24 @@ function SinglePayment({
       // The PaymentIntent is in the 'processing' state.
       // SEPA Direct Debit payments are asynchronous,
       // so funds are not immediately available.
-      onSuccess(paymentIntent);
+      onSave(paymentIntent, model);
       // setLoading(false);
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-
-    if (provider.id === 'card') {
-      handleCardPayment(formData);
+  const handleSubmit = async (provider, model) => {
+    if (provider.id === 'credit_card') {
+      handleCardPayment(model);
     } else if (provider.id === 'bank_account') {
-      handleBankPayment(formData);
+      handleBankPayment(model);
     } else {
-      console.log('not supported');
+      throw 'not supported';
     }
   };
 
-  const onChange = (e) => {
-    setError(e.error);
-    setCardComplete(e.complete);
+  const onChange = (name, value) => {
+    setError(value.error);
+    setCardComplete(value.complete);
   };
 
   return (children as any)({

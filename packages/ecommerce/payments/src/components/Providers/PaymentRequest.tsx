@@ -2,22 +2,27 @@ import {
   ElementsConsumer,
   PaymentRequestButtonElement,
 } from '@stripe/react-stripe-js';
-import React from 'react';
+import React, { useState } from 'react';
 
 function PaymentRequest({ paymentRequest }) {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <PaymentRequestButtonElement
-      options={{
-        paymentRequest,
-        style: {
-          paymentRequestButton: {
-            theme: 'dark',
-            height: '48px',
+    <div style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+      <PaymentRequestButtonElement
+        options={{
+          paymentRequest,
+          style: {
+            paymentRequestButton: {
+              theme: 'dark',
+              height: '48px',
+            },
           },
-        },
-      }}
-      className="PaymentRequestButton"
-    />
+        }}
+        className="PaymentRequestButton"
+        onReady={() => setIsLoading(false)}
+      />
+    </div>
   );
 }
 
