@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.2.19
+
+### Patch Changes
+
+- 5859ea4: Added locale to uidu/table
+- Updated dependencies [5859ea4]
+- Updated dependencies [75a555a]
+  - @uidu/table@0.5.4
+  - @uidu/modal-dialog@0.4.2
+
 ## 0.2.18
 
 ### Patch Changes

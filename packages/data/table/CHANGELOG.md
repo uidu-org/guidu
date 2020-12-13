@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.5.4
+
+### Patch Changes
+
+- 5859ea4: Added locale to uidu/table
+
 ## 0.5.3
 
 ### Patch Changes
