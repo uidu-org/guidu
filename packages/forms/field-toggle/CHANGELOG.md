@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 0.4.2
+
+### Patch Changes
+
+- 9b22d91: Remove uidu packages, fix field toggle colors
+
 ## 0.4.1
 
 ### Patch Changes
