@@ -46,7 +46,6 @@
     "start:media": "                         dotenv yarn run website:start **/packages/media/**",
     "start:messaging": "                     dotenv yarn run website:start **/packages/messaging/**",
     "start:navigation": "                    dotenv yarn run website:start **/packages/navigation/**",
-    "start:uidu": "                          dotenv yarn run website:start **/packages/uidu/**",
     "typecheck": "                           yarn run typecheck:typescript",
     "typecheck:typescript": "                tsc --noEmit",
     "website:start": "                       cd website && yarn start"

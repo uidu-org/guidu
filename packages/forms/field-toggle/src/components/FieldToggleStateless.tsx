@@ -13,8 +13,8 @@ function FieldToggle({
   checked,
   onChange,
   size,
-  onColor = '#28a745',
-  offColor = '#ededed',
+  onColor = '#1DD189',
+  offColor = '#E9ECF0',
   forwardedRef,
 }: FieldToggleStatelessProps & { forwardedRef?: any }) {
   const element = useRef(null);
@@ -63,7 +63,7 @@ const createAndFireEventOnGuidu = createAndFireEvent('uidu');
 export default withAnalyticsContext({
   componentName: 'toggle',
   packageName: pkg.name,
-        packageVersion: pkg.version,
+  packageVersion: pkg.version,
 })(
   withAnalyticsEvents({
     onBlur: createAndFireEventOnGuidu({

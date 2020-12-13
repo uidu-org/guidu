@@ -1,10 +1,12 @@
 import { Form } from '@uidu/form';
-import React from 'react';
+import React, { useRef } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldToggle from '../src';
 
 export default function Basic() {
+  const ref = useRef();
+
   return (
     <Form {...formDefaultProps}>
       <FieldToggle
