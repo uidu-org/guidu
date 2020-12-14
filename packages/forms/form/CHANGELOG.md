@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.4
+
+### Patch Changes
+
+- ea5335f: Bump dependencis, fix country select
+
 ## 0.4.3
 
 ### Patch Changes

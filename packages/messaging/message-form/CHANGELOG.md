@@ -1,5 +1,15 @@
 # @uidu/message-form
 
+## 0.3.1
+
+### Patch Changes
+
+- ea5335f: Bump dependencis, fix country select
+- Updated dependencies [ea5335f]
+  - @uidu/field-mentions@0.4.2
+  - @uidu/field-text@0.4.2
+  - @uidu/form@0.4.4
+
 ## 0.3.0
 
 ### Minor Changes
