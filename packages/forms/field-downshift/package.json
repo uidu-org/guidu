@@ -16,7 +16,7 @@
     "@uidu/field-text": "^0.4.0",
     "classnames": "^2.2.6",
     "downshift": "^6.0.0",
-    "formsy-react": "^2.1.0",
+    "formsy-react": "^2.2.1",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
     "tslib": "^2.0.1"

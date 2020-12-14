@@ -13,7 +13,7 @@
     "@uidu/analytics": "^0.4.0",
     "@uidu/field-base": "^0.5.0",
     "autosize": "^4.0.2",
-    "formsy-react": "^2.1.0",
+    "formsy-react": "^2.2.1",
     "react": "^17.0.0",
     "tslib": "^2.0.1"
   },

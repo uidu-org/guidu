@@ -2,6 +2,7 @@ import { Form } from '@uidu/form';
 import React from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
+import { selectDefaultProps } from '../examples-utils';
 import Select from '../src';
 import { cities } from './common/data';
 
@@ -10,9 +11,10 @@ const MultiExample = () => (
   <Form {...formDefaultProps}>
     <Select
       {...inputDefaultProps}
+      {...selectDefaultProps}
       className="multi-select"
       classNamePrefix="react-select"
-      options={cities}
+      // options={cities}
       multiple
       isSearchable={false}
       placeholder="Choose a City"

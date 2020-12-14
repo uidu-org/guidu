@@ -15,7 +15,7 @@
     "@uidu/field-base": "^0.5.0",
     "@uidu/spinner": "^0.4.0",
     "classnames": "^2.2.6",
-    "formsy-react": "^2.1.0",
+    "formsy-react": "^2.2.1",
     "react": "^17.0.0",
     "react-feather": "^2.0.9",
     "tslib": "^2.0.1",

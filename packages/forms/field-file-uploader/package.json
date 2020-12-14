@@ -16,7 +16,7 @@
     "@uppy/dashboard": "^1.12.5",
     "@uppy/react": "^1.0.1",
     "@uppy/xhr-upload": "^1.0.1",
-    "formsy-react": "^2.1.0",
+    "formsy-react": "^2.2.1",
     "react": "^17.0.0",
     "tslib": "^2.0.1"
   },

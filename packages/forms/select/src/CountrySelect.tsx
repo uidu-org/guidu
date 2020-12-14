@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from './';
+import Option from './components/Option';
 import { groupedCountries } from './data/countries';
 
 // flow stuff
@@ -62,31 +63,36 @@ const SingleValue = ({ innerProps, data, getStyles, ...otherProps }) => {
           {data.before}
         </div>
       )}
+      {data.name}
     </div>
   );
 };
 
 // put it all together
-const CountrySelect = ({ components, ...otherProps }) => (
-  // @ts-ignore
-  <Select
-    {...otherProps}
-    isClearable={false}
-    // formatOptionLabel={formatOptionLabel}
-    getOptionLabel={getOptionLabel}
-    getOptionValue={getOptionValue}
-    // isMulti={false}
-    options={groupedCountries}
-    styles={{
-      container: css => ({ ...css }),
-      dropdownIndicator: css => ({ ...css, paddingLeft: 0 }),
-      menu: css => ({ ...css, width: 300 }),
-    }}
-    components={{
-      ...components,
-      SingleValue: SingleValue,
-    }}
-  />
-);
+function CountrySelect({ components, ...otherProps }) {
+  console.log(components);
+  return (
+    // @ts-ignore
+    <Select
+      {...otherProps}
+      isClearable={false}
+      // formatOptionLabel={formatOptionLabel}
+      getOptionLabel={getOptionLabel}
+      getOptionValue={getOptionValue}
+      // isMulti={false}
+      options={groupedCountries}
+      styles={{
+        container: (css) => ({ ...css }),
+        dropdownIndicator: (css) => ({ ...css, paddingLeft: 0 }),
+        menu: (css) => ({ ...css, width: 300 }),
+      }}
+      components={{
+        ...components,
+        Option,
+        SingleValue: SingleValue,
+      }}
+    />
+  );
+}
 
 export default CountrySelect;

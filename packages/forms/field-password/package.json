@@ -25,7 +25,7 @@
     "@uidu/theme": "^0.5.2",
     "@uidu/tooltip": "^0.4.1",
     "classnames": "^2.2.6",
-    "formsy-react": "^2.1.0",
+    "formsy-react": "^2.2.1",
     "react-feather": "^2.0.9",
     "tslib": "^2.0.1",
     "zxcvbn": "^4.4.2"
