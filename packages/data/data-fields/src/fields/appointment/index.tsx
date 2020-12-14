@@ -7,11 +7,13 @@ import { Field } from '../../types';
 
 const Form = loadable(() => import('./form'));
 
-const Appointment: Field = {
+const Appointment: Partial<Field> = {
   kind: 'appointment',
   name: <FormattedMessage defaultMessage="Appointment" />,
   icon: <FontAwesomeIcon icon={faIdBadge} />,
-  description: <FormattedMessage defaultMessage="A unique identifier field" />,
+  description: (
+    <FormattedMessage defaultMessage="Allow booking an appointment for this record, based on your of your availabilities" />
+  ),
   color: 'cornflowerblue',
   form: Form,
 };

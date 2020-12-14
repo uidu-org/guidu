@@ -7,6 +7,7 @@ import { Field } from '../../types';
 const Percent: Field = {
   kind: 'percent',
   name: <FormattedMessage defaultMessage="Percent" />,
+  description: <FormattedMessage defaultMessage="Format a percentage" />,
   icon: <FontAwesomeIcon icon={faPercent} />,
   color: 'darkkhaki',
   valueFormatter: ({ value }) => `${value}%`,

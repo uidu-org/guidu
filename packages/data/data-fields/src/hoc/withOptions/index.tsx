@@ -6,7 +6,7 @@ const Filter = loadable(
   () => import('../../components/filters/SelectFilterForm'),
 );
 
-const WithOptions = (props: Field): Field => ({
+const WithOptions = (props: Partial<Field>): Partial<Field> => ({
   ...props,
   form: WithOptionsForm,
   Filter,

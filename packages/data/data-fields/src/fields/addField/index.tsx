@@ -4,19 +4,15 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Field } from '../../types';
 
-const AddField: Field = {
+const AddField: Partial<Field> = {
   kind: 'addField',
   name: <FormattedMessage defaultMessage="Add field" />,
   icon: <FontAwesomeIcon icon={faPlus} />,
   color: 'var(--light)',
-  // description: (
-  //   <FormattedMessage
-  //     id="field.address.description"
-  //     defaultMessage="Allow geolocation of your records with Google Maps autocomplete help"
-  //   />
-  // ),
+  description: (
+    <FormattedMessage defaultMessage="Add a custom field to your model" />
+  ),
   filter: false,
-  type: 'addField',
   canHide: false,
   sortable: false,
   resizable: false,

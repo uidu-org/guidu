@@ -48,30 +48,29 @@ export interface ExternalProps {
 // the form, while retaining the ability to override the prop on a per-component
 // basis.
 const withFRC = <TOriginalProps extends {}>(
-  Component: React.ComponentType<TOriginalProps>,
+  Component: React.ComponentType<TOriginalProps> | React.FC<TOriginalProps>,
 ) => {
   type ResultProps = TOriginalProps &
     FormsyInjectedProps<TOriginalProps> &
     RequiredFromOriginalComponentProps;
 
   const result = class FrcWrapper extends React.PureComponent<ResultProps, {}> {
-    public static displayName = `withFRC(${getDisplayName(Component)})`;
-    public static contextType = FormContext;
+    static get displayName() {
+      return `withFRC(${getDisplayName(Component)})`;
+    }
+    static get contextType() {
+      return FormContext;
+    }
 
     id: string = null;
 
-    static defaultProps = {
-      onChange: () => {},
-      // layout: 'vertical' as FieldBaseLayout,
-    };
-
-    public constructor(props: ResultProps) {
+    constructor(props: ResultProps) {
       super(props);
       const { id } = props;
       this.id = id || shortid.generate();
     }
 
-    public render(): JSX.Element {
+    render() {
       const {
         layout: contextLayout,
         validateBeforeSubmit: contextValidateBeforeSubmit,
@@ -142,9 +141,15 @@ const withFRC = <TOriginalProps extends {}>(
         ...(help ? { ariaDescribedBy: `${this.id}-desc` } : {}),
       };
 
+      // eslint-disable-next-line react/jsx-props-no-spreading
       return <Component {...(props as TOriginalProps)} {...newProps} />;
     }
   };
+
+  result.defaultProps = {
+    onChange: () => null,
+  };
+
   return result;
 };
 

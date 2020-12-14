@@ -1,10 +1,15 @@
 import FieldNumber from '@uidu/field-number';
 import Select from '@uidu/select';
 import React from 'react';
-import { injectIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { filtersByType } from './utils';
 
-function NumberFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
+export default function NumberFilterForm({
+  onChange,
+  filter = {} as any,
+  index = 0,
+}) {
+  const intl = useIntl();
   const filters = filtersByType(intl, 'number');
   return (
     <>
@@ -45,5 +50,3 @@ function NumberFilterForm({ onChange, filter = {} as any, index = 0, intl }) {
     </>
   );
 }
-
-export default injectIntl(NumberFilterForm);

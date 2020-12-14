@@ -1,3 +1,4 @@
+import { FormSectionSubmit } from '@uidu/form';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
@@ -51,6 +52,9 @@ export default function RecurringPaymentExample({}) {
             console.log(payload);
             window.alert('success');
           }}
+          footerRenderer={(props) => (
+            <FormSectionSubmit {...props} label="Donate 30" scope="primary" />
+          )}
         >
           {(paymentProps) => {
             if (provider === 'bank_account') {

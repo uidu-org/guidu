@@ -2,6 +2,7 @@ import {
   CardElement,
   Elements,
   IbanElement,
+  PaymentIntent,
   useElements,
   useStripe,
 } from '@stripe/react-stripe-js';
@@ -12,7 +13,7 @@ import { RecurringPaymentProps } from '../types';
 function RecurringPayment({
   scope = 'primary',
   children,
-  onSave,
+  onSave = (paymentIntent: PaymentIntent, model: any) => Promise.resolve(),
   amount,
   createSubscription,
   stripeBillingDetails,
@@ -30,10 +31,14 @@ function RecurringPayment({
   const [loading, setLoading] = useState(false);
 
   const stripePaymentIntentHandler = async (subscription) => {
+    // eslint-disable-next-line camelcase
     const { latest_invoice } = subscription;
+    // eslint-disable-next-line camelcase
     const { payment_intent } = latest_invoice;
 
+    // eslint-disable-next-line camelcase
     if (payment_intent) {
+      // eslint-disable-next-line camelcase
       const { client_secret, status } = payment_intent;
 
       if (status === 'requires_action') {
@@ -60,13 +65,13 @@ function RecurringPayment({
     }
   };
 
-  const stripePaymentMethodHandler = (payload) => {
+  const stripePaymentMethodHandler = (payload, model) => {
     if (payload.error) {
       // Show error in payment form
       setError(payload.error);
       setLoading(false);
     } else {
-      createSubscription(payload)
+      createSubscription({ ...payload, ...model })
         .then(stripePaymentIntentHandler)
         .catch((error) => {
           setLoading(false);
@@ -75,7 +80,7 @@ function RecurringPayment({
     }
   };
 
-  const handleCardPayment = async (formData) => {
+  const handleCardPayment = async (model) => {
     const cardElement = elements.getElement(CardElement);
 
     if (error) {
@@ -95,10 +100,10 @@ function RecurringPayment({
       card: cardElement,
       type: 'card',
     });
-    stripePaymentMethodHandler(payload);
+    stripePaymentMethodHandler(payload, model);
   };
 
-  const handleBankPayment = async (formData) => {
+  const handleBankPayment = async (model) => {
     const iban = elements.getElement(IbanElement);
 
     setLoading(true);
@@ -108,32 +113,29 @@ function RecurringPayment({
       type: 'sepa_debit',
       billing_details: stripeBillingDetails,
     });
-    stripePaymentMethodHandler(payload);
+    stripePaymentMethodHandler(payload, model);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-
+  const handleSubmit = async (model, provider) => {
     if (provider.id === 'card') {
-      handleCardPayment(formData);
+      handleCardPayment(model);
     } else if (provider.id === 'bank_account') {
-      handleBankPayment(formData);
+      handleBankPayment(model);
     } else {
-      console.log('not supported');
+      throw 'not supported';
     }
   };
 
-  const onChange = (e) => {
-    setError(e.error);
-    setCardComplete(e.complete);
+  const onChange = (_name, value) => {
+    setError(value.error);
+    setCardComplete(value.complete);
   };
 
   return (children as any)({
     handleSubmit,
     loading,
     error,
-    canSubmit: !!stripe,
+    canSubmit: !!stripe && !loading,
     onChange,
     paymentRequest,
     ...rest,
@@ -148,7 +150,12 @@ export default ({
   <Elements
     stripe={stripe}
     options={{
-      fonts: [{ cssSrc: 'https://fonts.googleapis.com/css?family=Rubik' }],
+      fonts: [
+        {
+          cssSrc:
+            'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap',
+        },
+      ],
       ...stripeOptions,
     }}
   >

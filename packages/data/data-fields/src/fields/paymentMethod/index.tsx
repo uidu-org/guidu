@@ -10,20 +10,13 @@ const Filter = loadable(
   () => import('../../components/filters/SelectFilterForm'),
 );
 
-const PaymentMethod: Field = {
+const PaymentMethod: Partial<Field> = {
   kind: 'paymentMethod',
-  name: (
-    <FormattedMessage
-      id="field.paymentMethod.name"
-      defaultMessage="Link to a record"
-    />
-  ),
+  name: <FormattedMessage defaultMessage="Payment method" />,
   icon: <FontAwesomeIcon icon={faCashRegister} />,
+  color: 'darkmagenta',
   description: (
-    <FormattedMessage
-      id="field.paymentMethod.description"
-      defaultMessage="Linked record fields contain blue tokens that represent links to other records."
-    />
+    <FormattedMessage defaultMessage="Payment method (Credit Card, or others)" />
   ),
   Filter,
   Cell,

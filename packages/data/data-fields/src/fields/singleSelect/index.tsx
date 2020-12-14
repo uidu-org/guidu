@@ -14,4 +14,11 @@ export default withOptions({
   ),
   color: '#76AEBD',
   Cell,
+  mocks: {
+    value: 'foo',
+    options: [
+      { id: 'foo', name: 'foo' },
+      { id: 'bar', name: 'bar' },
+    ],
+  },
 });

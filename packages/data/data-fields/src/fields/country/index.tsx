@@ -22,6 +22,10 @@ const Country: Field = {
   Filter,
   Cell,
   options: allCountries,
+  mocks: {
+    value: 'IT',
+    options: allCountries,
+  },
 };
 
 export default Country;

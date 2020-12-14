@@ -1,124 +1,154 @@
 import Form from '@uidu/form';
-import React, { PureComponent } from 'react';
+import { ButtonItem, MenuGroup, Section } from '@uidu/menu';
+import {
+  ScrollableContainer,
+  ShellBody,
+  ShellHeader,
+  ShellMain,
+  ShellSidebar,
+} from '@uidu/shell';
+import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
 import { formDefaultProps } from '../../../forms/form/examples-utils';
-import {
-  appointmentField,
-  multipleSelectField,
-  singleSelectField,
-  stringField,
-} from '../src';
+import fields from '../src';
 
-const { form: SingleSelectForm } = singleSelectField;
-const { form: MultipleSelectForm } = multipleSelectField;
-const { form: StringForm } = stringField;
-const { form: AppointmentForm } = appointmentField;
+export default function Basic({}) {
+  const [currentField, setCurrentField] = useState(fields[0]);
+  const { form: AdditionalForm, Cell, valueFormatter, Filter } = currentField;
 
-export default class Basic extends PureComponent {
-  render() {
-    return (
-      <IntlProvider locale="en">
-        <div className="d-flex align-items-center mb-4">
-          <span
-            className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
-            style={{
-              backgroundColor: singleSelectField.color,
-              color: '#fff',
-              width: 28,
-              height: 28,
-            }}
-          >
-            {singleSelectField.icon}
-          </span>
-          <div className="">
-            <p className="mb-0">{singleSelectField.name}</p>
-            <p className="mb-0 text-muted small">
-              {singleSelectField.description}
-            </p>
-          </div>
-        </div>
-        <Form {...formDefaultProps}>
-          <SingleSelectForm onSave={console.log} />
-        </Form>
-        <hr />
-        <div className="d-flex align-items-center mb-4">
-          <span
-            className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
-            style={{
-              backgroundColor: multipleSelectField.color,
-              color: '#fff',
-              width: 28,
-              height: 28,
-            }}
-          >
-            {multipleSelectField.icon}
-          </span>
-          <div className="">
-            <p className="mb-0">{multipleSelectField.name}</p>
-            <p className="mb-0 text-muted small">
-              {multipleSelectField.description}
-            </p>
-          </div>
-        </div>
-        <Form {...formDefaultProps}>
-          <MultipleSelectForm
-            onSave={console.log}
-            options={[
-              { id: 1, color: 'black', name: 'text' },
-              { id: 2, color: '#ccc', name: 'Test' },
-            ]}
-          />
-        </Form>
-        <hr />
-        <div className="d-flex align-items-center mb-4">
-          <span
-            className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
-            style={{
-              backgroundColor: stringField.color,
-              color: '#fff',
-              width: 28,
-              height: 28,
-            }}
-          >
-            {stringField.icon}
-          </span>
-          <div className="">
-            <p className="mb-0">{stringField.name}</p>
-            <p className="mb-0 text-muted small">{stringField.description}</p>
-          </div>
-        </div>
-        <Form
-          footerRenderer={() => {}}
-          handleSubmit={async (model) => console.log(model)}
-        >
-          <StringForm onSave={console.log} />
-        </Form>
-        <div className="d-flex align-items-center mb-4">
-          <span
-            className="mr-3 d-flex justify-content-center align-items-center rounded flex-shrink-0"
-            style={{
-              backgroundColor: appointmentField.color,
-              color: '#fff',
-              width: 28,
-              height: 28,
-            }}
-          >
-            {appointmentField.icon}
-          </span>
-          <div className="">
-            <p className="mb-0">{appointmentField.name}</p>
-            <p className="mb-0 text-muted small">
-              {appointmentField.description}
-            </p>
-          </div>
-        </div>
-        <Form
-          footerRenderer={() => {}}
-          handleSubmit={async (model) => console.log(model)}
-        >
-          <AppointmentForm onSave={console.log} />
-        </Form>
-      </IntlProvider>
-    );
-  }
+  console.log(currentField);
+
+  return (
+    <IntlProvider locale="en">
+      <ShellSidebar className="border-right" style={{ width: '25%' }}>
+        <ShellBody>
+          <ScrollableContainer>
+            <div className="py-4">
+              <MenuGroup>
+                <Section>
+                  {fields.map((field) => (
+                    <ButtonItem
+                      key={field.kind}
+                      onClick={() => setCurrentField(field)}
+                      iconBefore={
+                        <span
+                          className="d-flex justify-content-center align-items-center rounded flex-shrink-0"
+                          style={{
+                            backgroundColor: field.color,
+                            color: '#fff',
+                            width: 28,
+                            height: 28,
+                          }}
+                        >
+                          {field.icon}
+                        </span>
+                      }
+                      description={field.description}
+                    >
+                      {field.name}
+                    </ButtonItem>
+                  ))}
+                </Section>
+              </MenuGroup>
+            </div>
+          </ScrollableContainer>
+        </ShellBody>
+      </ShellSidebar>
+      <ShellMain>
+        <ShellHeader className="px-4 border-bottom">
+          {currentField.name}
+        </ShellHeader>
+        <ShellBody>
+          <ScrollableContainer>
+            <div className="container my-5">
+              <div className="row justify-content-center">
+                <div className="col-lg-8">
+                  <div className="card mb-3">
+                    <div className="card-header">
+                      <div className="card-title mb-0">Cell renderer</div>
+                      <p className="small text-muted mb-0">
+                        This is how this field is rendered in dataviews
+                      </p>
+                    </div>
+                    <div className="card-body">
+                      {Cell ? (
+                        <Cell
+                          value={
+                            currentField.mocks
+                              ? currentField.mocks.value
+                              : 'foo'
+                          }
+                          options={
+                            currentField.mocks
+                              ? currentField.mocks.options
+                              : [{ id: 'foo', name: 'foo' }]
+                          }
+                        />
+                      ) : valueFormatter ? (
+                        valueFormatter('Foo')
+                      ) : (
+                        'Foo'
+                      )}
+                    </div>
+                  </div>
+                  <div className="card mb-3">
+                    <div className="card-header">
+                      <div className="card-title mb-0">Filter Form</div>
+                      <p className="small text-muted mb-0">
+                        This form shows up when one wants to filter for this
+                        field
+                      </p>
+                    </div>
+                    <div className="card-body">
+                      {Filter ? (
+                        <Form {...formDefaultProps}>
+                          <div className="form-group">
+                            <Filter options={currentField.mocks?.options} />
+                          </div>
+                        </Form>
+                      ) : (
+                        'N/A'
+                      )}
+                    </div>
+                  </div>
+                  <div className="card mb-3">
+                    <div className="card-header">
+                      <div className="card-title mb-0">Settings Mode</div>
+                      <p className="small text-muted mb-0">
+                        This is shown for additional field settings, such as
+                        formatting preferences
+                      </p>
+                    </div>
+                    <div className="card-body"></div>
+                  </div>
+                  <div className="card mb-3">
+                    <div className="card-header">
+                      <div className="card-title mb-0">Fill Field Form</div>
+                      <p className="small text-muted mb-0">
+                        This is shown when one wants to fill field value (It's
+                        the corresponding question)
+                      </p>
+                    </div>
+                    <div className="card-body"></div>
+                  </div>
+                  <div className="card mb-3">
+                    <div className="card-header">Edit Field Form</div>
+                    <div className="card-body">
+                      {AdditionalForm ? (
+                        <Form {...formDefaultProps}>
+                          <AdditionalForm />
+                        </Form>
+                      ) : (
+                        'N/A'
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollableContainer>
+        </ShellBody>
+      </ShellMain>
+    </IntlProvider>
+  );
 }

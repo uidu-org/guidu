@@ -79,6 +79,15 @@ function Modal({
   );
   const dialog: React.RefObject<HTMLDivElement> = useRef(null);
 
+  /* Prevent window from being scrolled programatically so that the modal is positioned correctly
+   * and to prevent scrollIntoView from scrolling the window.
+   */
+  const handleWindowScroll = useCallback(() => {
+    if (getScrollDistance() !== scrollDistance) {
+      window.scrollTo(window.pageXOffset, scrollDistance);
+    }
+  }, [scrollDistance]);
+
   useEffect(() => {
     const newScrollDistance = getScrollDistance();
     if (getScrollDistance() !== scrollDistance) {
@@ -89,16 +98,7 @@ function Modal({
     return () => {
       window.removeEventListener('scroll', handleWindowScroll);
     };
-  }, []);
-
-  /* Prevent window from being scrolled programatically so that the modal is positioned correctly
-   * and to prevent scrollIntoView from scrolling the window.
-   */
-  const handleWindowScroll = () => {
-    if (getScrollDistance() !== scrollDistance) {
-      window.scrollTo(window.pageXOffset, scrollDistance);
-    }
-  };
+  }, [handleWindowScroll, scrollDistance]);
 
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (shouldCloseOnOverlayClick) {
@@ -117,13 +117,13 @@ function Modal({
     : undefined;
   const widthValue = widthName ? undefined : width;
 
-  const hasOverflow = () => {
+  const hasOverflow = useCallback(() => {
     return (
       dialog.current &&
       dialog.current.scrollHeight > document.documentElement.clientHeight &&
       scrollBehavior === 'outside'
     );
-  };
+  }, [scrollBehavior]);
 
   const getPaddingRight = useCallback(() => {
     if (hasOverflow) {

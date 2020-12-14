@@ -7,6 +7,9 @@ import { Field } from '../../types';
 const Rating: Field = {
   kind: 'rating',
   name: <FormattedMessage defaultMessage="Rating" />,
+  description: (
+    <FormattedMessage defaultMessage="Insert a rating for the column" />
+  ),
   icon: <FontAwesomeIcon icon={faStar} />,
   color: 'burlywood',
 };

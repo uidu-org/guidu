@@ -20,4 +20,11 @@ export default withOptions({
     />
   ),
   color: '#73BEC8',
+  mocks: {
+    value: ['foo'],
+    options: [
+      { id: 'foo', name: 'foo' },
+      { id: 'bar', name: 'bar' },
+    ],
+  },
 });

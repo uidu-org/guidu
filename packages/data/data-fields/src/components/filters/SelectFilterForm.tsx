@@ -1,16 +1,16 @@
 import Select from '@uidu/select';
 import React from 'react';
-import { injectIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { filtersByType } from './utils';
 
-function SelectFilterForm({
+export default function SelectFilterForm({
   onChange,
   filter = {} as any,
   index = 0,
-  intl,
-  columnDef: { options },
+  options,
   ...rest
 }) {
+  const intl = useIntl();
   const filters = filtersByType(intl, 'singleSelect');
   return (
     <>
@@ -35,12 +35,10 @@ function SelectFilterForm({
                 onChange(name, value);
               }
             }}
-            autoFocus
+            multiple
           />
         </div>
       </div>
     </>
   );
 }
-
-export default injectIntl(SelectFilterForm);

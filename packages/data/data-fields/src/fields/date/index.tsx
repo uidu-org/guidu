@@ -33,6 +33,9 @@ const Date: Partial<Field> = {
         <span>{dayjs(params.value).format('LT')}</span>
       </div>
     ) : null,
+  mocks: {
+    value: dayjs().toString(),
+  },
 };
 
 export default Date;

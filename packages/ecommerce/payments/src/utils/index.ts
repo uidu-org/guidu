@@ -14,6 +14,7 @@ const defaultOptions = {
       fontFamily: 'Rubik',
       '::placeholder': {
         color: '#868e96',
+        fontWeight: 400,
       },
     },
     invalid: {

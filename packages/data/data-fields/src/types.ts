@@ -1,8 +1,38 @@
 import React from 'react';
 
+export type FieldKind =
+  | 'addField'
+  | 'address'
+  | 'appointment'
+  | 'attachments'
+  | 'avatar'
+  | 'checkbox'
+  | 'contact'
+  | 'country'
+  | 'cover'
+  | 'currency'
+  | 'date'
+  | 'email'
+  | 'member'
+  | 'multipleSelect'
+  | 'number'
+  | 'paymentMethod'
+  | 'percent'
+  | 'phone'
+  | 'progress'
+  | 'rating'
+  | 'singleSelect'
+  | 'string'
+  | 'text'
+  | 'uid'
+  | 'url'
+  | 'vote';
+
+export type FieldDefinition = {};
+
 export type Field = {
   accessor: String | ((originalRow: any, rowIndex: number) => any);
-  kind: string;
+  kind: FieldKind;
   name: string | React.ReactNode;
   icon: React.ReactNode;
   color?: string;
@@ -19,6 +49,10 @@ export type Field = {
   primary?: boolean;
   fieldGroup?: FieldGroupIdentifier;
   aggregate?: string;
+  mocks?: {
+    value: string;
+    options?: Array<{ id: string | number; name: string }>;
+  };
 };
 
 export type FieldGroupIdentifier = {

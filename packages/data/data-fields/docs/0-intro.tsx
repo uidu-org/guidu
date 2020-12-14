@@ -30,7 +30,7 @@ export default md`
         </thead>
         <tbody>
           {fields.map((field: any) => (
-            <tr>
+            <tr key={field.kind}>
               <td className="text-nowrap" style={{ verticalAlign: 'middle' }}>
                 <code>{field.kind}</code>
               </td>

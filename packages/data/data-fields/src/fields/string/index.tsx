@@ -10,7 +10,7 @@ const Filter = loadable(
   () => import('../../components/filters/TextFilterForm'),
 );
 
-const String: Field = {
+const String: Partial<Field> = {
   kind: 'string',
   name: <FormattedMessage defaultMessage="String" />,
   icon: <FontAwesomeIcon icon={faFont} />,

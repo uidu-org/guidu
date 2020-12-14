@@ -21,6 +21,8 @@ export interface SharedPaymentProps {
   stripeBillingDetails: PaymentMethod['billing_details'];
   scope?: string;
   footerRenderer: FormProps['footerRenderer'];
+  /** Label is printed in Payment Request */
+  label: string;
 }
 
 export type SinglePaymentProps = SharedPaymentProps & {
@@ -31,6 +33,7 @@ export type SinglePaymentProps = SharedPaymentProps & {
 };
 
 export type RecurringPaymentProps = SharedPaymentProps & {
+  amount: number;
   createSubscription: any;
   onSave: (paymentIntent: PaymentIntent) => void;
   children: (paymentProps: any) => any;

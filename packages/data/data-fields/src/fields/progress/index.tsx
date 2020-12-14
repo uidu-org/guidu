@@ -8,6 +8,9 @@ import Cell from './renderer';
 const Progress: Field = {
   kind: 'progress',
   name: <FormattedMessage defaultMessage="Progress" />,
+  description: (
+    <FormattedMessage defaultMessage="Show a progress bar with progress value" />
+  ),
   icon: <FontAwesomeIcon icon={faTasks} />,
   color: 'darkseagreen',
   Cell,

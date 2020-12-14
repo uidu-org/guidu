@@ -97,7 +97,10 @@ export default function AppointmentForm() {
                   </div>
                   <div className="list-group list-group-flush">
                     {dayjs.weekdaysShort().map((weekday) => (
-                      <div className="list-group-item d-flex align-items-center justify-content-between">
+                      <div
+                        key={weekday}
+                        className="list-group-item d-flex align-items-center justify-content-between"
+                      >
                         <div className="d-flex align-items-center mr-5">
                           <div
                             className="tex-nowrap flex-shrink-0 mr-3"

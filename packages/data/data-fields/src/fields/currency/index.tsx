@@ -12,6 +12,9 @@ const Filter = loadable(
 const Currency: Partial<Field> = {
   kind: 'currency',
   name: <FormattedMessage defaultMessage="Currency" />,
+  description: (
+    <FormattedMessage defaultMessage="Format a number with a currency" />
+  ),
   icon: <FontAwesomeIcon icon={faEuroSign} />,
   color: 'sandybrown',
   Filter,
