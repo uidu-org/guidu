@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
@@ -15,8 +15,8 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.4.0",
-    "@uidu/field-base": "^0.5.0",
-    "@uidu/field-text": "^0.4.0",
+    "@uidu/field-base": "^0.5.2",
+    "@uidu/field-text": "^0.4.2",
     "formsy-react": "^2.2.1",
     "moment": "^2.27.0",
     "react": "^17.0.0",
@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.0",
-    "@uidu/form": "^0.4.2"
+    "@uidu/form": "^0.4.4"
   }
 }

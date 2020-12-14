@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.2
+
+### Patch Changes
+
+- ea5335f: Bump dependencis, fix country select
+- Updated dependencies [ea5335f]
+  - @uidu/form@0.4.4
+
 ## 0.5.1
 
 ### Patch Changes

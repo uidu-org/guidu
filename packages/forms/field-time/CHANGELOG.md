@@ -1,5 +1,16 @@
 # @uidu/field-text
 
+## 0.4.3
+
+### Patch Changes
+
+- ea5335f: Bump dependencis, fix country select
+- Updated dependencies [ea5335f]
+  - @uidu/field-base@0.5.2
+  - @uidu/field-text@0.4.2
+  - @uidu/form@0.4.4
+  - @uidu/select@0.6.3
+
 ## 0.4.2
 
 ### Patch Changes

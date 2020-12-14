@@ -1,5 +1,17 @@
 # @uidu/payments
 
+## 0.4.0
+
+### Minor Changes
+
+- 628f5ce: Changed apis and added possibility to customize further inputs and buttons
+
+### Patch Changes
+
+- Updated dependencies [ea5335f]
+  - @uidu/field-base@0.5.2
+  - @uidu/form@0.4.4
+
 ## 0.3.2
 
 ### Patch Changes

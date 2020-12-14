@@ -1,5 +1,14 @@
 # @uidu/field-date-range
 
+## 0.3.1
+
+### Patch Changes
+
+- ea5335f: Bump dependencis, fix country select
+- Updated dependencies [ea5335f]
+  - @uidu/field-base@0.5.2
+  - @uidu/field-date@0.3.3
+
 ## 0.3.0
 
 ### Minor Changes
