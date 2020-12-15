@@ -1,6 +1,6 @@
 {
   "name": "@uidu/menu",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "A collection of composable menu components that can be used anywhere.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/menu",
   "license": "ISC",

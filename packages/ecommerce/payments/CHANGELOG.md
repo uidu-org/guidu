@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.4.2
+
+### Patch Changes
+
+- 4f05b19: Fix RecurringPayment
+
 ## 0.4.1
 
 ### Patch Changes
