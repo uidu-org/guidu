@@ -16,16 +16,8 @@ function FieldDateCalendar({
 }: FieldDateCalendarStatelessProps) {
   return (
     <DayPicker
-      {...dayPickerProps}
       onDayClick={onDayChange}
       selectedDays={value && value !== '' && moment(value).toDate()}
-      // modifiers={{
-      //   ...(value && value !== ''
-      //     ? {
-      //         [styles.selected]: moment(value).toDate(),
-      //       }
-      //     : null),
-      // }}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...dayPickerProps}
     />
@@ -34,7 +26,11 @@ function FieldDateCalendar({
 
 const FieldDateCalendarStateless = forwardRef(
   (props: FieldDateCalendarStatelessProps, ref: any) => (
-    <FieldDateCalendar {...props} forwardedRef={ref} />
+    <FieldDateCalendar
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+      forwardedRef={ref}
+    />
   ),
 );
 

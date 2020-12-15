@@ -11,10 +11,17 @@ function FieldDate({
   onChange,
   forwardedRef,
   withCalendar = false,
+  name,
   ...rest
 }: FieldDateProps & { forwardedRef: any }) {
-  const handleChange = (date: any) => {
-    console.log(date);
+  const handleFallbackChange = (date: any) => {
+    const value = date ? moment(date).format(formatSubmit) : '';
+    onSetValue(value);
+    onChange(name, value);
+  };
+
+  const handleChange = (e) => {
+    const date = e.target.value;
     const value = date ? moment(date).format(formatSubmit) : '';
     onSetValue(value);
     onChange(name, value);
@@ -24,7 +31,13 @@ function FieldDate({
 
   return (
     <Wrapper {...rest}>
-      <InputControl {...rest} onDayChange={handleChange} ref={forwardedRef} />
+      <InputControl
+        {...rest}
+        name={name}
+        onDayChange={handleFallbackChange}
+        onChange={handleChange}
+        ref={forwardedRef}
+      />
     </Wrapper>
   );
 }

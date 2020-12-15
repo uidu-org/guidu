@@ -1,4 +1,3 @@
-import { Omit } from '@atlaskit/type-helpers';
 import React from 'react';
 import AnalyticsContextConsumer from './AnalyticsContextConsumer';
 import { CreateEventMap, CreateUIAnalyticsEvent } from './types';
@@ -43,8 +42,9 @@ const withAnalyticsEvents = (createEventMap?: CreateEventMap) => <
   );
 
   // @ts-ignore
-  WithAnalyticsEvents.displayName = `WithAnalyticsEvents(${WrappedComponent.displayName ||
-    WrappedComponent.name})`;
+  WithAnalyticsEvents.displayName = `WithAnalyticsEvents(${
+    WrappedComponent.displayName || WrappedComponent.name
+  })`;
 
   return WithAnalyticsEvents;
 };

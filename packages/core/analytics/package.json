@@ -9,7 +9,6 @@
   "module": "dist/uidu-analytics.esm.js",
   "types": "dist/uidu-analytics.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/type-helpers": "^4.1.6",
     "@babel/runtime": "^7.11.2",
     "prop-types": "^15.7.2",
     "tslib": "^2.0.1"

@@ -117,7 +117,7 @@ function RecurringPayment({
   };
 
   const handleSubmit = async (provider, model) => {
-    if (provider.id === 'card') {
+    if (provider.id === 'credit_card') {
       handleCardPayment(model);
     } else if (provider.id === 'bank_account') {
       handleBankPayment(model);

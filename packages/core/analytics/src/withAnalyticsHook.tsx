@@ -3,7 +3,6 @@
  * to make the major bump to solely use hooks and new React context API. For now it let's
  * us test the hook logic to make sure that it accomplishes the expected behavior.
  */
-import { Omit } from '@atlaskit/type-helpers';
 import React from 'react';
 import { CreateEventMap, CreateUIAnalyticsEvent } from './types';
 import { useAnalyticsEvents } from './useAnalyticsEvents';
@@ -50,8 +49,9 @@ const withAnalyticsHook = (createEventMap?: CreateEventMap) => <
   );
 
   // @ts-ignore
-  WithAnalyticsHook.displayName = `WithAnalyticsHook(${WrappedComponent.displayName ||
-    WrappedComponent.name})`;
+  WithAnalyticsHook.displayName = `WithAnalyticsHook(${
+    WrappedComponent.displayName || WrappedComponent.name
+  })`;
 
   return WithAnalyticsHook;
 };

@@ -23,20 +23,17 @@ export interface SharedPaymentProps {
   footerRenderer: FormProps['footerRenderer'];
   /** Label is printed in Payment Request */
   label: string;
+  onSave: (paymentIntent: PaymentIntent, model: any) => Promise<any>;
+  children: (paymentProps: any) => any;
+  amount: number;
 }
 
 export type SinglePaymentProps = SharedPaymentProps & {
-  amount: number;
-  onSave: (paymentIntent: PaymentIntent, model: any) => Promise<any>;
   clientSecret: PaymentIntent['client_secret'];
-  children: (paymentProps: any) => any;
 };
 
 export type RecurringPaymentProps = SharedPaymentProps & {
-  amount: number;
   createSubscription: any;
-  onSave: (paymentIntent: PaymentIntent) => void;
-  children: (paymentProps: any) => any;
 };
 
 export type PaymentMethodsProps = {

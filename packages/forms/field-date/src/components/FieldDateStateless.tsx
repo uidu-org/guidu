@@ -7,8 +7,10 @@ import moment from 'moment';
 import React, {
   forwardRef,
   RefObject,
+  useEffect,
   useImperativeHandle,
   useRef,
+  useState,
 } from 'react';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import MomentLocaleUtils from 'react-day-picker/moment';
@@ -21,46 +23,78 @@ function FieldDate({
   displayFormat = 'LL',
   placeholder = `${moment().format('LL')}`,
   inputClassName = 'form-control',
-  value,
   containerClassName,
   wrapperClassName,
   dayPickerProps,
   forwardedRef,
   onDayChange,
+  value = '',
+  name,
+  className = 'form-control',
+  onChange,
+  required,
+  min,
+  max,
 }: FieldDateStatelessProps) {
+  const [isFallback, setIsFallback] = useState(false);
   const element: RefObject<DayPickerInput> = useRef();
+
+  useEffect(() => {
+    const test = document.createElement('input');
+
+    try {
+      test.type = 'date';
+    } catch (e) {
+      setIsFallback(true);
+    }
+  }, []);
 
   useImperativeHandle(forwardedRef, () => element.current);
 
+  if (isFallback) {
+    return (
+      <DayPickerInput
+        component={(props) => <input {...props} ref={element} id={id} />}
+        ref={element}
+        classNames={{
+          container: `DayPickerInput d-block${
+            containerClassName ? ` ${containerClassName}` : ''
+          }`,
+          overlayWrapper: `DayPickerInput-OverlayWrapper${
+            wrapperClassName ? ` ${wrapperClassName}` : ''
+          }`,
+          overlay: 'DayPickerInput-Overlay',
+        }}
+        value={value && value !== '' ? moment(value).format(displayFormat) : ''}
+        onDayChange={onDayChange}
+        format={displayFormat}
+        placeholder={placeholder}
+        dayPickerProps={{
+          locale,
+          localeUtils: MomentLocaleUtils,
+          showOutsideDays: true,
+          enableOutsideDaysClick: true,
+          todayButton: 'Go to Today',
+          ...dayPickerProps,
+        }}
+        inputProps={{
+          className: inputClassName,
+        }}
+      />
+    );
+  }
+
   return (
-    <DayPickerInput
-      component={(props) => <input {...props} ref={element} id={id} />}
+    <input
+      value={value}
       ref={element}
-      classNames={{
-        container: `DayPickerInput d-block${
-          containerClassName ? ` ${containerClassName}` : ''
-        }`,
-        overlayWrapper: `DayPickerInput-OverlayWrapper${
-          wrapperClassName ? ` ${wrapperClassName}` : ''
-        }`,
-        overlay: 'DayPickerInput-Overlay',
-      }}
-      value={value && value !== '' ? moment(value).format(displayFormat) : ''}
-      onDayChange={onDayChange}
-      format={displayFormat}
-      placeholder={placeholder}
-      dayPickerProps={{
-        locale,
-        // @ts-ignore
-        localeUtils: MomentLocaleUtils,
-        showOutsideDays: true,
-        enableOutsideDaysClick: true,
-        todayButton: 'Go to Today',
-        ...dayPickerProps,
-      }}
-      inputProps={{
-        className: inputClassName,
-      }}
+      type="date"
+      name={name}
+      className={className}
+      onChange={onChange}
+      required={required}
+      min={min}
+      max={max}
     />
   );
 }
