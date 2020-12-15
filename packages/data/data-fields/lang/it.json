@@ -2,6 +2,9 @@
   "0+Cz5N": {
     "defaultMessage": "Allow geolocation of your records with Google Maps autocomplete help"
   },
+  "0ho2lW": {
+    "defaultMessage": "Show a progress bar with progress value"
+  },
   "142pwE": {
     "defaultMessage": "Insert option name"
   },
@@ -23,8 +26,14 @@
   "AnqXgH": {
     "defaultMessage": "A collaborator field lets you add collaborators to your records. Collaborators can optionally be notified when they're added."
   },
+  "B8Of+8": {
+    "defaultMessage": "Add a custom field to your model"
+  },
   "BOPFCf": {
     "defaultMessage": "A contact field represents a person or an organization - a contact"
+  },
+  "BVTni9": {
+    "defaultMessage": "Payment method"
   },
   "BkqnkQ": {
     "defaultMessage": "A single line of text. You can optionally prefill each new cell with a default value"
@@ -68,6 +77,9 @@
   "Q4HS24": {
     "defaultMessage": "SingleSelect"
   },
+  "TBjBZW": {
+    "defaultMessage": "Allow booking an appointment for this record, based on your of your availabilities"
+  },
   "TpzCEx": {
     "defaultMessage": "Url"
   },
@@ -92,20 +104,20 @@
   "e6Ph5+": {
     "defaultMessage": "Address"
   },
+  "eG6ZPK": {
+    "defaultMessage": "Format a percentage"
+  },
   "eSYQTy": {
     "defaultMessage": "Add field"
   },
   "fQDEtG": {
     "defaultMessage": "Set the weekly hours you're typically available for events"
   },
+  "fSKy7V": {
+    "defaultMessage": "Insert a rating for the column"
+  },
   "field.multipleselect.name": {
     "defaultMessage": "MultipleSelect"
-  },
-  "field.paymentMethod.description": {
-    "defaultMessage": "Linked record fields contain blue tokens that represent links to other records."
-  },
-  "field.paymentMethod.name": {
-    "defaultMessage": "Link to a record"
   },
   "field.singleSelect.description": {
     "defaultMessage": "Multiple select allows you to select one or more predefined options listed below."
@@ -143,6 +155,9 @@
   "kFkPWB": {
     "defaultMessage": "Number"
   },
+  "kU1wCA": {
+    "defaultMessage": "Integer or decimal number"
+  },
   "loSPNM": {
     "defaultMessage": "Add a cover image to your record"
   },
@@ -164,6 +179,9 @@
   "sy+pv5": {
     "defaultMessage": "Email"
   },
+  "tNgoex": {
+    "defaultMessage": "Format a number with a currency"
+  },
   "tygEJX": {
     "defaultMessage": "Date range"
   },
@@ -175,5 +193,8 @@
   },
   "zFegDD": {
     "defaultMessage": "Contact"
+  },
+  "zff+Cr": {
+    "defaultMessage": "Payment method (Credit Card, or others)"
   }
 }
