@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.5.5
+
+### Patch Changes
+
+- 4f05b19: Fix RecurringPayment
+- Updated dependencies [4f05b19]
+  - @uidu/menu@0.4.3
+
 ## 0.5.4
 
 ### Patch Changes
