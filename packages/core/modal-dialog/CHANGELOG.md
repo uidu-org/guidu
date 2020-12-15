@@ -1,5 +1,11 @@
 # @uidu/modal-dialog
 
+## 0.4.3
+
+### Patch Changes
+
+- c175996: Fix payment subscribe, field types (maybe) and some refresh to modals and tables
+
 ## 0.4.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.13
+
+### Patch Changes
+
+- c175996: Fix payment subscribe, field types (maybe) and some refresh to modals and tables
+
 ## 0.3.12
 
 ### Patch Changes

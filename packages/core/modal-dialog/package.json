@@ -1,6 +1,6 @@
 {
   "name": "@uidu/modal-dialog",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "A React component that displays content in a layer blocking the interaction with the page.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/modal-dialog",
   "license": "ISC",

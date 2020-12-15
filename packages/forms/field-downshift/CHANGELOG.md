@@ -1,5 +1,13 @@
 # @uidu/field-downshift
 
+## 0.5.3
+
+### Patch Changes
+
+- c175996: Fix payment subscribe, field types (maybe) and some refresh to modals and tables
+- Updated dependencies [c175996]
+  - @uidu/field-base@0.5.3
+
 ## 0.5.2
 
 ### Patch Changes
