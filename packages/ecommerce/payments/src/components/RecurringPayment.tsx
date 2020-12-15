@@ -2,10 +2,10 @@ import {
   CardElement,
   Elements,
   IbanElement,
-  PaymentIntent,
   useElements,
   useStripe,
 } from '@stripe/react-stripe-js';
+import { PaymentIntent } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 import usePaymentRequest from '../hooks/usePaymentRequest';
 import { RecurringPaymentProps } from '../types';
@@ -116,7 +116,7 @@ function RecurringPayment({
     stripePaymentMethodHandler(payload, model);
   };
 
-  const handleSubmit = async (model, provider) => {
+  const handleSubmit = async (provider, model) => {
     if (provider.id === 'card') {
       handleCardPayment(model);
     } else if (provider.id === 'bank_account') {

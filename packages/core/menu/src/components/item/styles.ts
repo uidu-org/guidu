@@ -78,7 +78,7 @@ const baseItemCSS = (
   // IE11 fix - wrapping container needs to be flex as well for vertical centering to work.
   display: 'flex',
   boxSizing: 'border-box',
-  color: N800,
+  color: 'var(--body-color)',
   userSelect: 'none',
 
   '&:visited': {

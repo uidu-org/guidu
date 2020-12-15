@@ -10,14 +10,14 @@ export default function Actions({ actions = [], ...rest }) {
       <Popup
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        // position="bottom left"
+        placement="bottom-end"
         trigger={(triggerProps) => (
           <button
             {...triggerProps}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              setIsOpen(true);
+              setIsOpen((prevIsOpen) => !prevIsOpen);
             }}
             type="button"
             className="btn btn-sm d-flex align-items-center px-2 justify-content-between"

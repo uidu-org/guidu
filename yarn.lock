@@ -20061,9 +20061,9 @@ stream-buffers@~2.2.0:
   integrity sha1-kdX1Ew0c75bc+n9yaUUYh0HQnuQ=
 
 stream-transform@^2.0.1:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/stream-transform/-/stream-transform-2.0.3.tgz#e3f6bac78b7d81a1452bf84bee9f340a1786bd60"
-  integrity sha512-HgNXs2rNG9pKC2gK4owtMPMKfto81S/TWZw0Ybsx6Wp23klnN0YctnMXYe0PmzzhB/zIBEB+0Urf+PMorE4d/A==
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/stream-transform/-/stream-transform-2.0.4.tgz#911ff7556d1e25c237e95d783f6739d9e0b4a61c"
+  integrity sha512-LQXH1pUksoef5Ijo6+2ihnjLLZtZuoqu1vhut6a7xZ77nrLA/shbbx2FAzVC/nkb6wwrPzOO98700mv4HDQcWg==
   dependencies:
     mixme "^0.4.0"
 
@@ -21952,9 +21952,9 @@ webpack-sources@^2.1.1, webpack-sources@^2.2.0:
     source-map "^0.6.1"
 
 webpack@4.44.1, webpack@^5, webpack@^5.7.0:
-  version "5.10.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.10.1.tgz#81d1853d34bef5d6e5bfa119b98a43764b26c100"
-  integrity sha512-mHu4iM2mW7d/8R91VPPNtUCNd1D8k51TTb4e0XjylapIR6WEmW8XUTBZq8TqmShj9XYxVXJn6AzKlWnrlty6DA==
+  version "5.10.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.10.2.tgz#990ad134b8a6406b5e40e63da1870e0de40215dc"
+  integrity sha512-KpYTJerfb2KGxcOJNA1SMWXAf8/dxCDaQOhPIrfoV5rYceqet7OY/h3941/kuapx0noMcpTiVoNN3EHXsTYlsg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.45"
