@@ -1,5 +1,13 @@
 # @uidu/payments
 
+## 0.4.1
+
+### Patch Changes
+
+- c175996: Fix payment subscribe, field types (maybe) and some refresh to modals and tables
+- Updated dependencies [c175996]
+  - @uidu/field-base@0.5.3
+
 ## 0.4.0
 
 ### Minor Changes
