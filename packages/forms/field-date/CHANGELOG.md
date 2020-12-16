@@ -1,5 +1,13 @@
 # @uidu/field-date
 
+## 0.3.4
+
+### Patch Changes
+
+- 516f3c5: Clean dependencies, field date now has calendar as a fallback, default to native implementation, fixed RecurringPayment
+- Updated dependencies [516f3c5]
+  - @uidu/analytics@0.4.1
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.4.3
+
+### Patch Changes
+
+- 516f3c5: Clean dependencies, field date now has calendar as a fallback, default to native implementation, fixed RecurringPayment
+
 ## 0.4.2
 
 ### Patch Changes
