@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.92
+
+### Patch Changes
+
+- 516f3c5: Clean dependencies, field date now has calendar as a fallback, default to native implementation, fixed RecurringPayment
+
 ## 0.1.91
 
 ### Patch Changes
