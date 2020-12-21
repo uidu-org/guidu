@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.2.1
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/avatar@0.6.2
+  - @uidu/slider@1.6.2
+  - @uidu/spinner@0.4.2
+  - @uidu/checkbox@0.3.2
+  - @uidu/field-password@0.4.3
+  - @uidu/field-phone@0.2.3
+  - @uidu/field-text@0.4.3
+  - @uidu/form@0.4.5
+  - @uidu/shell@1.2.4
+
 ## 0.5.1
 
 ### Patch Changes

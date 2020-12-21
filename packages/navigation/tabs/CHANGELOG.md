@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.2.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/docs@0.3.2
+  - @uidu/analytics@0.4.2
+  - @uidu/theme@0.5.3
+
 ## 0.2.1
 
 ### Patch Changes

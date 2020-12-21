@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.6.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/drawer@0.5.3
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/inline-dialog@0.4.2
+  - @uidu/menu@0.4.4
+  - @uidu/popup@0.4.2
+  - @uidu/spinner@0.4.2
+  - @uidu/tooltip@0.4.2
+  - @uidu/data-fields@0.4.11
+  - @uidu/data-views@0.5.4
+  - @uidu/checkbox@0.3.2
+  - @uidu/field-text@0.4.3
+  - @uidu/form@0.4.5
+  - @uidu/select@0.6.4
+  - @uidu/shell@1.2.4
+
 ## 0.6.3
 
 ### Patch Changes

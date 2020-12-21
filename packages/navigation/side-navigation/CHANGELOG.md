@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.2.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/avatar@0.6.2
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/inline-dialog@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/shell@1.2.4
+
 ## 0.2.3
 
 ### Patch Changes

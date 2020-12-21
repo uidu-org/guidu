@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/spinner@0.4.2
+  - @uidu/field-mentions@0.4.3
+  - @uidu/field-text@0.4.3
+  - @uidu/form@0.4.5
+  - @uidu/media-filmstrip@0.3.2
+  - @uidu/message@0.3.3
+
 ## 0.3.1
 
 ### Patch Changes

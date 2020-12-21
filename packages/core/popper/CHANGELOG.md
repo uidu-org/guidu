@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.4.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+
 ## 0.4.1
 
 ### Patch Changes

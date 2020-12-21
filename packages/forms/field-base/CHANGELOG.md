@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/form@0.4.5
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.93
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/changelog-loader@0.1.24
+  - @uidu/fs-loader@0.1.37
+  - @uidu/nav-info-loader@0.1.38
+
 ## 0.1.92
 
 ### Patch Changes

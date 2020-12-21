@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.4.3
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/avatar@0.6.2
+  - @uidu/avatar-group@2.5.3
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/field-date-range@0.3.2
+  - @uidu/form@0.4.5
+
 ## 0.4.2
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/slider@1.6.2
+  - @uidu/spinner@0.4.2
+  - @uidu/payments@0.4.4
+  - @uidu/field-text@0.4.3
+  - @uidu/form@0.4.5
+  - @uidu/stepper@0.3.2
+
 ## 0.2.3
 
 ### Patch Changes

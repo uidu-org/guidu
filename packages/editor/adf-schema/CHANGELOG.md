@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+
 ## 0.3.1
 
 ### Patch Changes

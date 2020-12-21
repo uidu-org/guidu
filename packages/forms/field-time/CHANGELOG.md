@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 0.4.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/field-base@0.5.4
+  - @uidu/field-text@0.4.3
+  - @uidu/form@0.4.5
+  - @uidu/select@0.6.4
+
 ## 0.4.3
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.2.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/avatar@0.6.2
+  - @uidu/button@0.4.2
+  - @uidu/lozenge@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/analytics-gas-types@0.2.1
+
 ## 0.2.1
 
 ### Patch Changes

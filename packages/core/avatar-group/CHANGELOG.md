@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.3
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/avatar@0.6.2
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+
 ## 2.5.2
 
 ### Patch Changes

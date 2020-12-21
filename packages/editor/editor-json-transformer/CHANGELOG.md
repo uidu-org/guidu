@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/adf-schema@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

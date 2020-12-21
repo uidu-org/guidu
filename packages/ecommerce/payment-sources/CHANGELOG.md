@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/payments@0.4.4
+  - @uidu/form@0.4.5
+
 ## 0.2.1
 
 ### Patch Changes

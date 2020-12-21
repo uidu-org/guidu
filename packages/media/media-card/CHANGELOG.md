@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/button@0.4.2
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/media-core@0.4.1
+
 ## 0.4.1
 
 ### Patch Changes

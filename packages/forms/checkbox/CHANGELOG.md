@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/field-base@0.5.4
+
 ## 0.3.1
 
 ### Patch Changes

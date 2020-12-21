@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.4.1
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/docs@0.3.2
+
 ## 0.4.0
 
 ### Minor Changes

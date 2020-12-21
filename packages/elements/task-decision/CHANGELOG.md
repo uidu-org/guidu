@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/avatar-group@2.5.3
+  - @uidu/button@0.4.2
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/analytics-namespaced-context@0.3.1
+
 ## 0.3.1
 
 ### Patch Changes

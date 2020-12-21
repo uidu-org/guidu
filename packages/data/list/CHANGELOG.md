@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/data-fields@0.4.11
+
 ## 0.2.1
 
 ### Patch Changes

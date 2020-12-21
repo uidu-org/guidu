@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.3.1
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/button@0.4.2
+  - @uidu/code@0.4.2
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/field-text@0.4.3
+
 ## 0.3.0
 
 ### Minor Changes

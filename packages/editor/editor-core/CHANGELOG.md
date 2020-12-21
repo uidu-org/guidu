@@ -1,5 +1,40 @@
 # @uidu/editor-core
 
+## 0.7.3
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/avatar@0.6.2
+  - @uidu/avatar-group@2.5.3
+  - @uidu/button@0.4.2
+  - @uidu/droplist@0.4.3
+  - @uidu/menu@0.4.4
+  - @uidu/modal-dialog@0.4.4
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/adf-schema@0.3.2
+  - @uidu/adf-utils@0.6.1
+  - @uidu/editor-common@0.4.3
+  - @uidu/editor-json-transformer@0.3.2
+  - @uidu/editor-markdown-transformer@0.3.2
+  - @uidu/analytics-gas-types@0.2.1
+  - @uidu/analytics-listeners@0.3.1
+  - @uidu/analytics-namespaced-context@0.3.1
+  - @uidu/date@0.3.2
+  - @uidu/emoji@0.3.1
+  - @uidu/mentions@0.2.2
+  - @uidu/status@0.3.2
+  - @uidu/task-decision@0.3.2
+  - @uidu/select@0.6.4
+  - @uidu/media-card@0.4.2
+  - @uidu/media-core@0.4.1
+  - @uidu/media-filmstrip@0.3.2
+  - @uidu/media-picker@0.4.1
+
 ## 0.7.2
 
 ### Patch Changes

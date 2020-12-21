@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.3
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/dropdown-menu@0.4.3
+  - @uidu/shell@1.2.4
+
 ## 0.2.2
 
 ### Patch Changes

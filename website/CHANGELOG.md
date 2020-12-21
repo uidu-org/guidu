@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.20
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/docs@0.3.2
+  - @uidu/badge@0.4.2
+  - @uidu/button@0.4.2
+  - @uidu/code@0.4.2
+  - @uidu/drawer@0.5.3
+  - @uidu/lozenge@0.4.2
+  - @uidu/modal-dialog@0.4.4
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/list@0.2.2
+  - @uidu/table@0.5.6
+  - @uidu/checkbox@0.3.2
+  - @uidu/field-text@0.4.3
+  - @uidu/form@0.4.5
+  - @uidu/select@0.6.4
+  - @uidu/navigation@0.5.2
+  - @uidu/shell@1.2.4
+  - @uidu/themes-uidu@0.3.14
+
 ## 0.2.19
 
 ### Patch Changes

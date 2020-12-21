@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.3.1
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/shell@1.2.4
+
 ## 0.3.0
 
 ### Minor Changes

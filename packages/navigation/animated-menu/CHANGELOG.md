@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.2.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+
 ## 0.2.1
 
 ### Patch Changes

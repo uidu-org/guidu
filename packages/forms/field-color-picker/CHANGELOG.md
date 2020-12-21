@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.3.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/popup@0.4.2
+  - @uidu/field-base@0.5.4
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/avatar@0.6.2
+  - @uidu/button@0.4.2
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/media-core@0.4.1
+  - @uidu/shell@1.2.4
+
 ## 0.3.1
 
 ### Patch Changes

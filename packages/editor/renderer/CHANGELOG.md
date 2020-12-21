@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.3.4
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/code@0.4.2
+  - @uidu/theme@0.5.3
+  - @uidu/tooltip@0.4.2
+  - @uidu/adf-schema@0.3.2
+  - @uidu/adf-utils@0.6.1
+  - @uidu/editor-common@0.4.3
+  - @uidu/editor-json-transformer@0.3.2
+  - @uidu/analytics-listeners@0.3.1
+  - @uidu/analytics-namespaced-context@0.3.1
+  - @uidu/mentions@0.2.2
+  - @uidu/status@0.3.2
+  - @uidu/task-decision@0.3.2
+  - @uidu/media-card@0.4.2
+  - @uidu/media-filmstrip@0.3.2
+
 ## 0.3.3
 
 ### Patch Changes

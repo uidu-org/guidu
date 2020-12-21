@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/theme@0.5.3
+  - @uidu/media-card@0.4.2
+  - @uidu/media-core@0.4.1
+  - @uidu/media-viewer@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

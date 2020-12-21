@@ -1,5 +1,15 @@
 # @uidu/button
 
+## 0.4.2
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/analytics@0.4.2
+  - @uidu/spinner@0.4.2
+  - @uidu/theme@0.5.3
+
 ## 0.4.1
 
 ### Patch Changes

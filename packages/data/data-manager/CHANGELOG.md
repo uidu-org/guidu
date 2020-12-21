@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.7.6
+
+### Patch Changes
+
+- 61561e3: npmignore to all packages
+- Updated dependencies [61561e3]
+  - @uidu/spinner@0.4.2
+  - @uidu/board@0.3.2
+  - @uidu/calendar@0.2.3
+  - @uidu/data-controls@0.6.4
+  - @uidu/data-fields@0.4.11
+  - @uidu/data-views@0.5.4
+  - @uidu/gallery@0.2.2
+  - @uidu/list@0.2.2
+  - @uidu/table@0.5.6
+  - @uidu/shell@1.2.4
+
 ## 0.7.5
 
 ### Patch Changes
