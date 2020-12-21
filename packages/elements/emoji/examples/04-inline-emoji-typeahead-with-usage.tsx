@@ -6,16 +6,16 @@ import {
   lorem,
   onClose,
   onOpen,
-} from '../example-helpers';
+} from '../examples-utils';
 import {
   UsageShowAndClearComponent,
   UsagingShowingProps,
-} from '../example-helpers/demo-emoji-usage-components';
-import SearchTextInput from '../example-helpers/demo-search-text-input';
+} from '../examples-utils/demo-emoji-usage-components';
+import SearchTextInput from '../examples-utils/demo-search-text-input';
 import {
   TypeaheadProps,
   TypeaheadState,
-} from '../example-helpers/typeahead-props';
+} from '../examples-utils/typeahead-props';
 import { EmojiProvider } from '../src/resource';
 import { EmojiTypeAhead } from '../src/typeahead';
 import { EmojiId, OptionalEmojiDescription } from '../src/types';

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
-import { generateMentionItem, onSelection } from '../example-helpers';
+import { generateMentionItem, onSelection } from '../examples-utils';
 import MentionItem from '../src/components/MentionItem';
 
 export default function Example() {

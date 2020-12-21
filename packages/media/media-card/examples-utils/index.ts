@@ -1,5 +1,5 @@
 import faker from 'faker';
-import { FileType } from '../../media-core';
+import { FileType } from '../../media-core/dist/uidu-media-core.cjs';
 
 export const fakeImage = () => ({
   id: faker.random.uuid(),

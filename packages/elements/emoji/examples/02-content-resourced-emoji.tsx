@@ -1,8 +1,7 @@
 import * as React from 'react';
-
-import { EmojiProvider } from '../src/resource';
+import { getEmojiResource, lorem } from '../examples-utils';
 import { ResourcedEmoji } from '../src/element';
-import { getEmojiResource, lorem } from '../example-helpers';
+import { EmojiProvider } from '../src/resource';
 
 interface SampleEmojiProps {
   emojiProvider?: Promise<EmojiProvider>;

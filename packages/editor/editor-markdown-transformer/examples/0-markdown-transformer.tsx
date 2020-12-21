@@ -1,7 +1,7 @@
 import { Editor, EditorContext, WithEditorActions } from '@uidu/editor-core';
 import * as React from 'react';
 import styled from 'styled-components';
-import exampleMarkdown from '../example-helpers/exampleMarkdown';
+import exampleMarkdown from '../examples-utils/exampleMarkdown';
 import { MarkdownTransformer } from '../src';
 
 const Container = styled.div`
@@ -63,7 +63,9 @@ class Example extends React.PureComponent<Props, State> {
           media={{
             allowMediaSingle: true,
           }}
-          contentTransformerProvider={schema => new MarkdownTransformer(schema)}
+          contentTransformerProvider={(schema) =>
+            new MarkdownTransformer(schema)
+          }
           // taskDecisionProvider={Promise.resolve(
           //   taskDecision.getMockTaskDecisionResource(),
           // )}
@@ -77,6 +79,6 @@ class Example extends React.PureComponent<Props, State> {
 
 export default () => (
   <EditorContext>
-    <WithEditorActions render={actions => <Example actions={actions} />} />
+    <WithEditorActions render={(actions) => <Example actions={actions} />} />
   </EditorContext>
 );

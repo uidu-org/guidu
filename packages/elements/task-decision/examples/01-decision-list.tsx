@@ -1,9 +1,8 @@
-import * as React from 'react';
 import { ReactRenderer as Renderer } from '@uidu/renderer';
-
-import DecisionList from '../src/components/DecisionList';
+import * as React from 'react';
+import { document, dumpRef } from '../examples-utils/story-utils';
 import DecisionItem from '../src/components/DecisionItem';
-import { dumpRef, document } from '../example-helpers/story-utils';
+import DecisionList from '../src/components/DecisionList';
 
 export default () => (
   <div>

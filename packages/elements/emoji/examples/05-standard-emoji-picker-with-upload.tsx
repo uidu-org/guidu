@@ -1,14 +1,13 @@
-import * as React from 'react';
 import Layer from '@uidu/layer';
-import { EmojiPicker } from '../src/picker';
-
+import * as React from 'react';
 import {
   getEmojiResource,
   getEmojiResourceWithStandardAndAtlassianEmojis,
   loggedUser,
   lorem,
-} from '../example-helpers';
-import { onSelection } from '../example-helpers/index';
+} from '../examples-utils';
+import { onSelection } from '../examples-utils/index';
+import { EmojiPicker } from '../src/picker';
 import { EmojiProvider } from '../src/resource';
 
 export interface EmojiState {

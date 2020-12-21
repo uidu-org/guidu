@@ -1,6 +1,6 @@
 import MediaCard from '@uidu/media-card';
 import React, { Fragment, PureComponent } from 'react';
-import { fetchAttachments } from '../../media-card/example-helpers';
+import { fetchAttachments } from '../../media-card/examples-utils';
 import { ModalMediaViewer } from '../src';
 
 export default class Basic extends PureComponent {

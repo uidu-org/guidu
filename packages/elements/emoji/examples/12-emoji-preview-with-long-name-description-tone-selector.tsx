@@ -1,9 +1,6 @@
 import * as React from 'react';
-
-import { getEmojis } from '../example-helpers';
-
+import { getEmojis } from '../examples-utils';
 import EmojiPreview from '../src/components/common/EmojiPreview';
-
 import { emojiPickerWidth } from '../src/util/constants';
 import filters from '../src/util/filters';
 
@@ -16,9 +13,7 @@ const tongueEmoji = filters.byShortName(
 const longTongueEmoji = {
   ...tongueEmoji,
   name: `${tongueEmoji.name} ${tongueEmoji.name} ${tongueEmoji.name}`,
-  shortName: `${tongueEmoji.shortName}_${tongueEmoji.shortName}_${
-    tongueEmoji.shortName
-  }`,
+  shortName: `${tongueEmoji.shortName}_${tongueEmoji.shortName}_${tongueEmoji.shortName}`,
 };
 
 const toneEmoji = filters.toneEmoji(emojis);

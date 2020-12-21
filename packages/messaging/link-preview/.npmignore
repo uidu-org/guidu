@@ -1,4 +1,6 @@
 src/
+docs/
 examples/
-example-helpers/
+examples-utils/
 index.ts
+lang

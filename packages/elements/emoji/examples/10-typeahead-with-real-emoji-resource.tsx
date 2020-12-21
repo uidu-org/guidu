@@ -1,19 +1,19 @@
 import { layers } from '@uidu/theme';
 import * as React from 'react';
 import { Component } from 'react';
-import { onClose, onOpen, onSelection } from '../example-helpers';
+import { onClose, onOpen, onSelection } from '../examples-utils';
 import ResourcedEmojiControl, {
   getEmojiConfig,
   getRealEmojiResource,
-} from '../example-helpers/demo-resource-control';
-import SearchTextInput from '../example-helpers/demo-search-text-input';
+} from '../examples-utils/demo-resource-control';
+import SearchTextInput from '../examples-utils/demo-search-text-input';
 import {
   TypeaheadProps,
   TypeaheadState,
-} from '../example-helpers/typeahead-props';
+} from '../examples-utils/typeahead-props';
 import { EmojiTypeAhead } from '../src/typeahead';
-import { emojiTypeAheadMaxHeight } from '../src/util/shared-styles';
 import { EmojiId, OptionalEmojiDescription } from '../src/types';
+import { emojiTypeAheadMaxHeight } from '../src/util/shared-styles';
 
 class EmojiTypeAheadTextInput extends Component<
   TypeaheadProps,

@@ -1,7 +1,7 @@
 import moment from 'moment';
 import React, { useEffect, useRef, useState } from 'react';
 import { useClipboard } from 'use-clipboard-copy';
-import { fetchMessages } from '../example-utils';
+import { fetchMessages } from '../examples-utils';
 import ChatWindow from '../src';
 
 interface GitHubJSONResponse {

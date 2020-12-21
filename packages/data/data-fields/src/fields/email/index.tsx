@@ -18,6 +18,7 @@ const Email: Field = {
   ),
   color: '#5AAA8F',
   Filter,
+  Cell: ({ value }) => <div className="text-truncate">{value}</div>,
 };
 
 export default Email;

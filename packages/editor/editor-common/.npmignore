@@ -1,6 +1,6 @@
 src/
+docs/
 examples/
-example-helpers/
-__tests-karma__/
-__tests-karma__/
+examples-utils/
 index.ts
+lang

@@ -1,10 +1,9 @@
-import * as React from 'react';
 import { ReactRenderer as Renderer } from '@uidu/renderer';
 // @ts-ignore
 import { GuiduThemeProvider } from '@uidu/theme';
-
+import * as React from 'react';
+import { action, document, dumpRef } from '../examples-utils/story-utils';
 import TaskItem from '../src/components/TaskItem';
-import { dumpRef, action, document } from '../example-helpers/story-utils';
 
 export default () => (
   <GuiduThemeProvider mode={'dark'}>

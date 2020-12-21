@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IntlProvider } from 'react-intl';
-import { onSelection, randomMentions } from '../example-helpers';
+import { onSelection, randomMentions } from '../examples-utils';
 import MentionList from '../src/components/MentionList';
 import { MentionDescription } from '../src/types';
 

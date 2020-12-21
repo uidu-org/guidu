@@ -1,5 +1,5 @@
 import * as React from 'react';
-import ManagedStatusPicker from '../example-helpers/ManagedStatusPicker';
+import ManagedStatusPicker from '../examples-utils/ManagedStatusPicker';
 
 export default () => (
   <ManagedStatusPicker

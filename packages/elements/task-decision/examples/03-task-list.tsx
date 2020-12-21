@@ -1,12 +1,12 @@
-import * as React from 'react';
 import { ReactRenderer as Renderer } from '@uidu/renderer';
-import TaskList from '../src/components/TaskList';
-import TaskItem from '../src/components/TaskItem';
+import * as React from 'react';
 import {
-  dumpRef,
   document,
+  dumpRef,
   TaskStateManager,
-} from '../example-helpers/story-utils';
+} from '../examples-utils/story-utils';
+import TaskItem from '../src/components/TaskItem';
+import TaskList from '../src/components/TaskList';
 
 export default () => (
   <div>

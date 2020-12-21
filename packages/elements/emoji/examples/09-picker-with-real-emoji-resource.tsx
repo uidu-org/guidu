@@ -1,11 +1,11 @@
-import * as React from 'react';
 import Layer from '@uidu/layer';
-import { EmojiPicker } from '../src/picker';
+import * as React from 'react';
+import { onSelection } from '../examples-utils';
 import ResourcedEmojiControl, {
   getEmojiConfig,
   getRealEmojiResource,
-} from '../example-helpers/demo-resource-control';
-import { onSelection } from '../example-helpers';
+} from '../examples-utils/demo-resource-control';
+import { EmojiPicker } from '../src/picker';
 import { emojiPickerHeight } from '../src/util/constants';
 
 const getPicker = () => (

@@ -18,7 +18,7 @@ export const generateMentionItem = (
 );
 
 export const randomMentions = () =>
-  Array.from(Array(10)).map(x => ({
+  Array.from(Array(10)).map((x) => ({
     ...faker.helpers.userCard(),
   }));
 

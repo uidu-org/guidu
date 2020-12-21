@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { fetchAttachments } from '../../media-card/example-helpers';
+import { fetchAttachments } from '../../media-card/examples-utils';
 import MediaViewer from '../src';
 
 export default class Basic extends PureComponent {

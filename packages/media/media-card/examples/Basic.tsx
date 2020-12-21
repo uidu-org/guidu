@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { fakeFile, fakeImage, fakeLink, fakeVideo } from '../example-helpers';
+import { fakeFile, fakeImage, fakeLink, fakeVideo } from '../examples-utils';
 import MediaCard from '../src';
 
 export default class Basic extends PureComponent {

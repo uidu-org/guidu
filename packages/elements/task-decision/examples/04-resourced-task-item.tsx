@@ -1,11 +1,10 @@
 import * as React from 'react';
-
-import ResourcedTaskItem from '../src/components/ResourcedTaskItem';
 import {
+  getMockTaskDecisionResource,
   Grid,
   Item,
-  getMockTaskDecisionResource,
-} from '../example-helpers/story-utils';
+} from '../examples-utils/story-utils';
+import ResourcedTaskItem from '../src/components/ResourcedTaskItem';
 
 const mockTaskDecisionProvider = Promise.resolve(
   getMockTaskDecisionResource({ lag: 1000 }),

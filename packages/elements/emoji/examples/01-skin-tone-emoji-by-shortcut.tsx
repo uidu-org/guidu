@@ -1,9 +1,7 @@
 import * as React from 'react';
-
-import { EmojiProvider } from '../src/resource';
+import { getEmojiResource } from '../examples-utils';
 import { ResourcedEmoji } from '../src/element';
-
-import { getEmojiResource } from '../example-helpers';
+import { EmojiProvider } from '../src/resource';
 
 export default function Example() {
   return (

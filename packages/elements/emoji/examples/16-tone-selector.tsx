@@ -1,7 +1,7 @@
 import * as React from 'react';
+import { getEmojis, onToneSelected } from '../examples-utils';
 import ToneSelector from '../src/components/common/ToneSelector';
 import filters from '../src/util/filters';
-import { onToneSelected, getEmojis } from '../example-helpers';
 
 const toneEmoji = filters.toneEmoji(getEmojis());
 

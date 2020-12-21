@@ -7,12 +7,12 @@ import {
   onClose,
   onOpen,
   onSelection,
-} from '../example-helpers';
-import SearchTextInput from '../example-helpers/demo-search-text-input';
+} from '../examples-utils';
+import SearchTextInput from '../examples-utils/demo-search-text-input';
 import {
   TypeaheadProps,
   TypeaheadState,
-} from '../example-helpers/typeahead-props';
+} from '../examples-utils/typeahead-props';
 import { EmojiTypeAhead } from '../src/typeahead';
 import { EmojiId, OptionalEmojiDescription } from '../src/types';
 import debug from '../src/util/logger';

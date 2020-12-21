@@ -15,19 +15,21 @@ export default (params) => {
   }
 
   return (
-    <span
-      style={{
-        borderRadius: '9999px',
-        paddingLeft: '.5rem',
-        paddingRight: '.5rem',
-        paddingTop: '.15rem',
-        paddingBottom: '.15rem',
-        backgroundColor: value.color || '#f1f3f5',
-        display: 'inline-flex',
-        lineHeight: 'normal',
-      }}
-    >
-      <div className="text-truncate">{value.name}</div>
-    </span>
+    <div className="text-truncate">
+      <span
+        style={{
+          borderRadius: '9999px',
+          paddingLeft: '.5rem',
+          paddingRight: '.5rem',
+          paddingTop: '.15rem',
+          paddingBottom: '.15rem',
+          backgroundColor: value.color || '#f1f3f5',
+          display: 'inline-flex',
+          lineHeight: 'normal',
+        }}
+      >
+        <div className="text-truncate">{value.name}</div>
+      </span>
+    </div>
   );
 };

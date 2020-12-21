@@ -1,9 +1,6 @@
 src/
-examples-utils/
-examples/
-index.ts
-constellation/
 docs/
-build/
-tsconfig.json
-git
+examples/
+examples-utils/
+index.ts
+lang
