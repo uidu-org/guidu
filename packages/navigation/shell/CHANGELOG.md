@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.2.3
+
+### Patch Changes
+
+- 562b032: Bump dependencies
+
 ## 1.2.2
 
 ### Patch Changes
