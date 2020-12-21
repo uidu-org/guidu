@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.4.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/button@0.4.3
+  - @uidu/droplist@0.4.4
+  - @uidu/item@0.4.4
+  - @uidu/theme@0.5.4
+
 ## 0.4.3
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/theme@0.5.4
+  - @uidu/media-card@0.4.3
+  - @uidu/media-core@0.4.2
+  - @uidu/media-viewer@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes

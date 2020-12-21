@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.5.7
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/dropdown-menu@0.4.4
+  - @uidu/menu@0.4.5
+  - @uidu/popup@0.4.3
+  - @uidu/data-fields@0.4.12
+  - @uidu/checkbox@0.3.3
+
 ## 0.5.6
 
 ### Patch Changes

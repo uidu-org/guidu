@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.4.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/docs@0.3.3
+
 ## 0.4.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.8.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/dashboard-controls@0.4.4
+  - @uidu/dashlets@0.7.6
+
 ## 0.8.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.5.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/theme@0.5.4
+
 ## 0.5.2
 
 ### Patch Changes

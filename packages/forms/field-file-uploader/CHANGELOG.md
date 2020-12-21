@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.4.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/field-base@0.5.5
+
 ## 0.4.2
 
 ### Patch Changes

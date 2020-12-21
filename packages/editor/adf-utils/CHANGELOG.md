@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.6.2
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/adf-schema@0.3.3
+
 ## 0.6.1
 
 ### Patch Changes

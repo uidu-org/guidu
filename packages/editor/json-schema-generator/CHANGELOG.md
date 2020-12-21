@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.20
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 0.1.19
 
 ### Patch Changes

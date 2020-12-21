@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.6
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/spinner@0.4.3
+  - @uidu/tooltip@0.4.3
+  - @uidu/dashlet-controls@0.3.4
+
 ## 0.7.5
 
 ### Patch Changes

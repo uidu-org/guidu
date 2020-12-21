@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.4.2
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/media-core@0.4.2
+
 ## 0.4.1
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 0.4.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/tooltip@0.4.3
+  - @uidu/field-base@0.5.5
+  - @uidu/field-text@0.4.4
+  - @uidu/form@0.4.6
+
 ## 0.4.3
 
 ### Patch Changes

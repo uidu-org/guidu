@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.7.7
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/spinner@0.4.3
+  - @uidu/board@0.3.3
+  - @uidu/calendar@0.2.4
+  - @uidu/data-controls@0.6.5
+  - @uidu/data-fields@0.4.12
+  - @uidu/data-views@0.5.5
+  - @uidu/gallery@0.2.3
+  - @uidu/list@0.2.3
+  - @uidu/table@0.5.7
+  - @uidu/shell@1.2.5
+
 ## 0.7.6
 
 ### Patch Changes

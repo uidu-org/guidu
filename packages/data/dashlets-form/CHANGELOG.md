@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/accordion@0.4.3
+  - @uidu/dropdown-menu@0.4.4
+  - @uidu/dashlets@0.7.6
+  - @uidu/field-downshift@0.5.5
+  - @uidu/field-toggle@0.4.5
+  - @uidu/form@0.4.6
+  - @uidu/select@0.6.5
+  - @uidu/shell@1.2.5
+
 ## 0.2.2
 
 ### Patch Changes

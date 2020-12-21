@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/field-base@0.5.5
+  - @uidu/field-text@0.4.4
+
 ## 0.5.4
 
 ### Patch Changes

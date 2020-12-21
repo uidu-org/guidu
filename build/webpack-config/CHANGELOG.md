@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.94
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/changelog-loader@0.1.25
+  - @uidu/fs-loader@0.1.38
+  - @uidu/nav-info-loader@0.1.39
+
 ## 0.1.93
 
 ### Patch Changes

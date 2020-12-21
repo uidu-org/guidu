@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.3.2
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/shell@1.2.5
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/message@0.3.4
+  - @uidu/message-form@0.3.3
+  - @uidu/message-renderer@0.3.3
+
 ## 0.3.2
 
 ### Patch Changes

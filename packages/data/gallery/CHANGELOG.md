@@ -1,5 +1,15 @@
 # @uidu/gallery
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/spinner@0.4.3
+  - @uidu/data-controls@0.6.5
+  - @uidu/data-fields@0.4.12
+
 ## 0.2.2
 
 ### Patch Changes

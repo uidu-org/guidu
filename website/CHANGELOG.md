@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.21
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/docs@0.3.3
+  - @uidu/badge@0.4.3
+  - @uidu/button@0.4.3
+  - @uidu/code@0.4.3
+  - @uidu/drawer@0.5.4
+  - @uidu/lozenge@0.4.3
+  - @uidu/modal-dialog@0.4.5
+  - @uidu/spinner@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/tooltip@0.4.3
+  - @uidu/list@0.2.3
+  - @uidu/table@0.5.7
+  - @uidu/checkbox@0.3.3
+  - @uidu/field-text@0.4.4
+  - @uidu/form@0.4.6
+  - @uidu/select@0.6.5
+  - @uidu/navigation@0.5.3
+  - @uidu/shell@1.2.5
+  - @uidu/themes-uidu@0.3.15
+
 ## 0.2.20
 
 ### Patch Changes

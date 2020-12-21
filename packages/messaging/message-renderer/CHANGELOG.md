@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.3.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/dropdown-menu@0.4.4
+  - @uidu/theme@0.5.4
+
 ## 0.3.2
 
 ### Patch Changes

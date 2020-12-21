@@ -1,6 +1,6 @@
 {
   "name": "@uidu/avatar",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "A component that represents a user",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/avatar",
   "license": "ISC",
@@ -11,16 +11,16 @@
   "types": "dist/uidu-avatar.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/analytics": "^0.4.2",
-    "@uidu/theme": "^0.5.3",
-    "@uidu/tooltip": "^0.4.2",
+    "@uidu/analytics": "^0.4.3",
+    "@uidu/theme": "^0.5.4",
+    "@uidu/tooltip": "^0.4.3",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.4.2",
-    "@uidu/docs": "^0.3.2",
-    "@uidu/field-base": "^0.5.4",
-    "@uidu/section-message": "^0.4.2",
+    "@uidu/button": "^0.4.3",
+    "@uidu/docs": "^0.3.3",
+    "@uidu/field-base": "^0.5.5",
+    "@uidu/section-message": "^0.4.3",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "styled-components": "^5.2.1"

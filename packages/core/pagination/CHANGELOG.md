@@ -1,5 +1,15 @@
 # @uidu/pagination
 
+## 0.4.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/button@0.4.3
+  - @uidu/theme@0.5.4
+
 ## 0.4.2
 
 ### Patch Changes

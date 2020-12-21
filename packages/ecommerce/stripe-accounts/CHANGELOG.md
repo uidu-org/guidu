@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/slider@1.6.3
+  - @uidu/spinner@0.4.3
+  - @uidu/payments@0.4.5
+  - @uidu/field-text@0.4.4
+  - @uidu/form@0.4.6
+  - @uidu/stepper@0.3.3
+
 ## 0.2.4
 
 ### Patch Changes

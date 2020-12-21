@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/data-controls@0.6.5
+  - @uidu/field-counter@0.3.3
+  - @uidu/field-number@0.4.4
+  - @uidu/form@0.4.6
+  - @uidu/select@0.6.5
+
 ## 0.5.4
 
 ### Patch Changes

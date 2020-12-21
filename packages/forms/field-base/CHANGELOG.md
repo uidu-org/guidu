@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/form@0.4.6
+
 ## 0.5.4
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 0.4.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/slider@1.6.3
+  - @uidu/theme@0.5.4
+  - @uidu/field-base@0.5.5
+  - @uidu/form@0.4.6
+
 ## 0.4.4
 
 ### Patch Changes

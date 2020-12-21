@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/docs@0.3.3
+  - @uidu/analytics@0.4.3
+  - @uidu/theme@0.5.4
+
 ## 0.2.2
 
 ### Patch Changes

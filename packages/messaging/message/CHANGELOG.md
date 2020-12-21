@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.3.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/avatar@0.6.3
+  - @uidu/drawer@0.5.4
+  - @uidu/dropdown-menu@0.4.4
+  - @uidu/tooltip@0.4.3
+  - @uidu/media-card@0.4.3
+  - @uidu/media-core@0.4.2
+  - @uidu/media-viewer@0.3.3
+  - @uidu/message-form@0.3.3
+  - @uidu/message-renderer@0.3.3
+
 ## 0.3.3
 
 ### Patch Changes

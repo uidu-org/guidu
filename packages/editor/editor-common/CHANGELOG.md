@@ -1,5 +1,19 @@
 # @uidu/editor-common
 
+## 0.4.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/adf-schema@0.3.3
+  - @uidu/adf-utils@0.6.2
+  - @uidu/analytics-namespaced-context@0.3.2
+  - @uidu/emoji@0.3.2
+  - @uidu/mentions@0.2.3
+
 ## 0.4.3
 
 ### Patch Changes

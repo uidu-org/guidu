@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.3.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/code@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/tooltip@0.4.3
+  - @uidu/adf-schema@0.3.3
+  - @uidu/adf-utils@0.6.2
+  - @uidu/editor-common@0.4.4
+  - @uidu/editor-json-transformer@0.3.3
+  - @uidu/analytics-listeners@0.3.2
+  - @uidu/analytics-namespaced-context@0.3.2
+  - @uidu/mentions@0.2.3
+  - @uidu/status@0.3.3
+  - @uidu/task-decision@0.3.3
+  - @uidu/media-card@0.4.3
+  - @uidu/media-filmstrip@0.3.3
+
 ## 0.3.4
 
 ### Patch Changes

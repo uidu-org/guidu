@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.3.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/avatar@0.6.3
+  - @uidu/button@0.4.3
+  - @uidu/spinner@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/media-core@0.4.2
+  - @uidu/shell@1.2.5
+
 ## 0.3.2
 
 ### Patch Changes

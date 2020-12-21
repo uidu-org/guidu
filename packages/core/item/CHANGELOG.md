@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.4.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/avatar@0.6.3
+  - @uidu/theme@0.5.4
+
 ## 0.4.3
 
 ### Patch Changes

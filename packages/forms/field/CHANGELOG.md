@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.2
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/checkbox@0.3.3
+  - @uidu/field-number@0.4.4
+  - @uidu/field-text@0.4.4
+  - @uidu/field-textarea@0.3.3
+  - @uidu/select@0.6.5
+
 ## 0.3.1
 
 ### Patch Changes

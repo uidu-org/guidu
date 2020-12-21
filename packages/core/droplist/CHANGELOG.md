@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.4.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/item@0.4.4
+  - @uidu/layer@0.4.3
+  - @uidu/spinner@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/tooltip@0.4.3
+
 ## 0.4.3
 
 ### Patch Changes

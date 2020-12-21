@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/button@0.4.3
+  - @uidu/inline-dialog@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/field@0.3.2
+  - @uidu/field-text@0.4.4
+  - @uidu/form@0.4.6
+
 ## 0.2.2
 
 ### Patch Changes

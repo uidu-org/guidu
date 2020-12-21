@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.3.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 0.3.2
 
 ### Patch Changes

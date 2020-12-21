@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 1.6.2
 
 ### Patch Changes

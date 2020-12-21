@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 0.2.2
 
 ### Patch Changes

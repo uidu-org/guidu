@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.3.6
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/field-base@0.5.5
+  - @uidu/field-text@0.4.4
+
 ## 0.3.5
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.5.4
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/docs@0.3.3
+  - @uidu/analytics@0.4.3
+  - @uidu/blanket@0.4.3
+  - @uidu/item@0.4.4
+  - @uidu/theme@0.5.4
+
 ## 0.5.3
 
 ### Patch Changes

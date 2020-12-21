@@ -1,6 +1,6 @@
 {
   "name": "@uidu/link-preview",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A link preview regex and rendering",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/link-preview",
   "license": "MIT",
@@ -18,9 +18,9 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.2",
-    "@uidu/field-text": "^0.4.3",
-    "@uidu/form": "^0.4.5",
+    "@uidu/docs": "^0.3.3",
+    "@uidu/field-text": "^0.4.4",
+    "@uidu/form": "^0.4.6",
     "lodash": "^4.17.4"
   },
   "publishConfig": {

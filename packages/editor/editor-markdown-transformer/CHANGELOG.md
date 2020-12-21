@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.3.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/adf-schema@0.3.3
+  - @uidu/editor-common@0.4.4
+
 ## 0.3.2
 
 ### Patch Changes

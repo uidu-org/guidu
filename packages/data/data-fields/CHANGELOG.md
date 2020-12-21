@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.4.12
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/menu@0.4.5
+  - @uidu/field-color-picker@0.3.5
+  - @uidu/field-date@0.3.6
+  - @uidu/field-downshift@0.5.5
+  - @uidu/field-number@0.4.4
+  - @uidu/field-text@0.4.4
+  - @uidu/field-time@0.4.5
+  - @uidu/field-toggle@0.4.5
+  - @uidu/form@0.4.6
+  - @uidu/select@0.6.5
+
 ## 0.4.11
 
 ### Patch Changes

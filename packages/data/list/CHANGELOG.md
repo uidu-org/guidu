@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/data-fields@0.4.12
+
 ## 0.2.2
 
 ### Patch Changes

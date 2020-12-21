@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/avatar@0.6.3
+  - @uidu/button@0.4.3
+  - @uidu/lozenge@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/tooltip@0.4.3
+  - @uidu/analytics-gas-types@0.2.2
+
 ## 0.2.2
 
 ### Patch Changes

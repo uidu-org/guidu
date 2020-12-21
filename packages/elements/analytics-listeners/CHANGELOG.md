@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.3.2
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/analytics-gas-types@0.2.2
+  - @uidu/analytics-namespaced-context@0.3.2
+
 ## 0.3.1
 
 ### Patch Changes

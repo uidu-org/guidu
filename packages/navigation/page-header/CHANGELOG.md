@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.2.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/theme@0.5.4
+  - @uidu/shell@1.2.5
+
 ## 0.2.2
 
 ### Patch Changes

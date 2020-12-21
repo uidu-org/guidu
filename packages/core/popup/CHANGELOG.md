@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.4.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/popper@0.4.3
+  - @uidu/portal@0.4.3
+  - @uidu/theme@0.5.4
+
 ## 0.4.2
 
 ### Patch Changes

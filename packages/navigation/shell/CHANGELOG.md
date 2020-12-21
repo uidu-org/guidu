@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/spinner@0.4.3
+
 ## 1.2.4
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-gas-types",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Shared analytics functions/components for Fabric Elements",
   "keywords": [
     "fabric",
@@ -17,10 +17,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@uidu/analytics": "^0.4.2",
+    "@uidu/analytics": "^0.4.3",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.2"
+    "@uidu/docs": "^0.3.3"
   }
 }

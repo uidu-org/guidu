@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.6
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 0.4.5
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/toggle
 
+## 0.4.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/theme@0.5.4
+  - @uidu/field-base@0.5.5
+
 ## 0.4.4
 
 ### Patch Changes

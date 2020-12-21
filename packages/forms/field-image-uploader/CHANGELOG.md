@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.5
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+- Updated dependencies [542b03a]
+  - @uidu/analytics@0.4.3
+  - @uidu/button@0.4.3
+  - @uidu/spinner@0.4.3
+  - @uidu/field-base@0.5.5
+  - @uidu/media-core@0.4.2
+
 ## 0.4.4
 
 ### Patch Changes

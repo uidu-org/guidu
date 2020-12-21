@@ -1,5 +1,11 @@
 # @uidu/analytics
 
+## 0.4.3
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 0.4.2
 
 ### Patch Changes

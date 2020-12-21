@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.2
+
+### Patch Changes
+
+- 542b03a: Fix npmignore
+
 ## 0.3.1
 
 ### Patch Changes
