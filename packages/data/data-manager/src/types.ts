@@ -8,6 +8,7 @@ export type RowAction = {
 
 export type DataManagerProps = {
   currentView?: DataView;
+  onViewUpdate: (state: any) => void;
   updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
   isAutoSaving: string;
   columnDefs: Array<FieldGroup>;
@@ -20,6 +21,7 @@ export type DataManagerProps = {
 
 export type DataManagerNextProps = {
   currentView?: DataView;
+  onViewUpdate: (state: any) => void;
   updateView?: (dataView: DataView, props: keyof DataView) => Promise<any>;
   isAutoSaving: string;
   columnDefs: Array<FieldGroup>;

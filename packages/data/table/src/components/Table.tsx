@@ -101,6 +101,7 @@ const Table = ({
   setColumnWidth,
   rowHeight = 32,
   headerHeight = 48,
+  headerIcons = true,
   groupRowHeightIncrementRatio = 1.2,
   tableInstance,
   onItemClick,
@@ -260,6 +261,7 @@ const Table = ({
                     {column.render('Header', {
                       setColumnWidth,
                       getColumnWidth,
+                      headerIcons,
                       autosizeAllColumns: () => {
                         // columns.map((column) => {
                         //   return setColumnWidth(column, getColumnWidth(column));

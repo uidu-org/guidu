@@ -24,6 +24,7 @@ export default function Header({
   autosizeAllColumns,
   setColumnWidth,
   getColumnWidth,
+  headerIcons,
 }) {
   const updateSortBy = (columnId: string, desc: boolean) => {
     if (state.sortBy.find((s) => s.id === columnId)) {
@@ -49,7 +50,7 @@ export default function Header({
       style={{ minWidth: 0 }}
     >
       <div className="customHeaderLabel flex-grow-1 text-truncate">
-        {column?.icon && (
+        {headerIcons && column?.icon && (
           <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
             {column.icon}
           </span>

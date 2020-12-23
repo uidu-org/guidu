@@ -21,7 +21,9 @@ const Country: Field = {
   color: 'tan',
   Filter,
   Cell,
-  options: allCountries,
+  cellProps: {
+    options: allCountries,
+  },
   mocks: {
     value: 'IT',
     options: allCountries,

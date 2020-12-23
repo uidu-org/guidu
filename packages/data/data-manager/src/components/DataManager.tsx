@@ -10,7 +10,12 @@ import {
   RowActions,
   RowSelection,
 } from '@uidu/table';
-import React, { useMemo, useState } from 'react';
+import React, {
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useState,
+} from 'react';
 import {
   useExpanded,
   useFilters,
@@ -22,6 +27,7 @@ import {
   useSortBy,
   useTable,
 } from 'react-table';
+import { useExportData } from 'react-table-plugins';
 import { DataManagerProps } from '../types';
 import DataView from './DataView';
 import DataViewSidebar from './DataViewSidebar';
@@ -69,15 +75,18 @@ export default function DataManager({
   columnDefs,
   onItemClick,
   currentView,
-  updateView: onViewUpdate,
+  updateView,
+  onViewUpdate,
   actions = [],
+  forwardedRef,
+  getExportFileBlob,
 }: DataManagerProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
   const data = useMemo(() => rowData, [rowData]);
   const columns = useMemo(() => columnDefinitions, [columnDefinitions]);
 
   const setColumnCount = (columnCount) => {
-    updateView({
+    updateView(currentView, {
       preferences: { ...currentView.preferences, columnCount },
     }).then(() => {
       setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
@@ -116,12 +125,12 @@ export default function DataManager({
         return React.useMemo(
           () => ({
             ...state,
-            ...currentView?.state,
             columnDefinitions,
           }),
           [state],
         );
       },
+      getExportFileBlob,
     },
     useFlexLayout,
     useFilters,
@@ -131,6 +140,7 @@ export default function DataManager({
     useResizeColumns,
     useExpanded,
     useRowSelect,
+    useExportData,
     (hooks) => {
       hooks.visibleColumns.push((columns) => [
         // Let's make a column for selection
@@ -184,11 +194,13 @@ export default function DataManager({
     },
   );
 
+  useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
+
   const { state, setGlobalFilter, globalFilter } = tableInstance;
 
-  const updateView = () => {
-    return onViewUpdate(currentView, state);
-  };
+  useEffect(() => {
+    onViewUpdate(tableInstance.state);
+  }, [tableInstance.state, onViewUpdate]);
 
   const setColumnState = (column, newState = {}) => {
     const index = columnDefinitions.findIndex(({ id }) => id === column.id);
@@ -327,27 +339,6 @@ export default function DataManager({
 
     return (
       <>
-        {/* {availableControls.viewer.visible && (
-          <Viewer
-            tableInstance={tableInstance}
-            isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
-            availableControls={availableControls}
-            currentView={currentView}
-            updateView={updateView}
-            columnDefs={columns}
-            // onDragEnd={this.moveColumn}
-            // onResize={this.setRowHeight}
-            rowHeight={rowHeight}
-            // onDownload={() => this.gridApi.exportDataAsCsv()}
-            columnCount={columnCount}
-            onSetColumnCount={setColumnCount}
-            actions={availableControls.more.actions}
-            // isAutoSaving={isAutoSaving}
-            startDateField={startDateField}
-            endDateField={endDateField}
-            primaryField={primaryField}
-          />
-        )} */}
         <Controls
           tableInstance={tableInstance}
           isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}

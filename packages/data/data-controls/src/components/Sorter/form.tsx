@@ -6,16 +6,12 @@ import { FormattedMessage } from 'react-intl';
 import { PickField } from '../../utils';
 import { SorterFormProps } from './types';
 
-export default function SorterForm({
-  tableInstance,
-  updateView,
-}: SorterFormProps) {
+export default function SorterForm({ tableInstance }: SorterFormProps) {
   const { setSortBy } = tableInstance;
   const form = useRef(null);
 
   const handleSubmit = async (model) => {
     setSortBy(model.sorters || []);
-    updateView({});
   };
 
   const {

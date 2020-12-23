@@ -186,34 +186,6 @@ export default class Basic extends Component<any, any> {
       isAutoSaving,
     } = this.state;
 
-    const schema = [
-      {
-        type: 'NavigationHeader',
-        text: 'Contacts',
-      },
-      {
-        type: 'NavigationSection',
-        items: [
-          {
-            type: 'NavigationGroup',
-            separator: true,
-            items: dataViews.map((dataView) => {
-              const d = byName[dataView.kind];
-              const { icon: Icon, color } = d;
-              return {
-                exact: true,
-                text: dataView.name,
-                before: <Icon size={16} color={color} />,
-                as: 'a',
-                onClick: () => this.toggleView(dataView),
-                type: 'NavigationItem',
-              };
-            }),
-          },
-        ],
-      },
-    ];
-
     return (
       <IntlProvider locale="en">
         <Router>
