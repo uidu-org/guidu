@@ -199,7 +199,7 @@ export default function DataManager({
   const { state, setGlobalFilter, globalFilter } = tableInstance;
 
   useEffect(() => {
-    onViewUpdate(tableInstance.state);
+    onViewUpdate && onViewUpdate(tableInstance.state);
   }, [tableInstance.state, onViewUpdate]);
 
   const setColumnState = (column, newState = {}) => {

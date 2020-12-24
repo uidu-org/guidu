@@ -7,8 +7,9 @@ export default function SelectFilterForm({
   onChange,
   filter = {} as any,
   index = 0,
-  options,
-  ...rest
+  columnDef: {
+    cellProps: { options },
+  },
 }) {
   const intl = useIntl();
   const filters = filtersByType(intl, 'singleSelect');
@@ -35,7 +36,7 @@ export default function SelectFilterForm({
                 onChange(name, value);
               }
             }}
-            multiple
+            // multiple
           />
         </div>
       </div>

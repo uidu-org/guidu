@@ -27,11 +27,11 @@ const allFilters = ({ intl }) => [
 ];
 
 export const pickFilters = (intl, list: String[]) =>
-  allFilters({ intl }).filter(filter => list.indexOf(filter.id) >= 0);
+  allFilters({ intl }).filter((filter) => list.indexOf(filter.id) >= 0);
 
 export const filtersByType = (intl, type: FilterType) =>
   allFilters({ intl })
-    .filter(filter => filter.kinds.includes(type))
+    .filter((filter) => filter.kinds.includes(type))
     .map(({ id, name }) => ({ id, name }));
 
 export default allFilters;

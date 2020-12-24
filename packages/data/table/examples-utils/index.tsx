@@ -98,6 +98,7 @@ export const availableColumns = [
     name: 'Genere',
     canGroupBy: true,
     editable: true,
+    filter: 'exact',
   },
   {
     kind: 'string',
