@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 0.2.4
+
+### Patch Changes
+
+- e452ede: Fix to select filtrs, onViewUpdate on DataManager
+- Updated dependencies [e452ede]
+  - @uidu/dashlets@0.7.7
+
 ## 0.2.3
 
 ### Patch Changes

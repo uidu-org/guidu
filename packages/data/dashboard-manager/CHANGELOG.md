@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.8.5
+
+### Patch Changes
+
+- e452ede: Fix to select filtrs, onViewUpdate on DataManager
+- Updated dependencies [e452ede]
+  - @uidu/dashlets@0.7.7
+
 ## 0.8.4
 
 ### Patch Changes
