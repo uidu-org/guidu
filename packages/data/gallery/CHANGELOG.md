@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies [d3df8a4]
+  - @uidu/data-controls@0.7.0
+  - @uidu/data-fields@0.5.0
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "private": false,
   "description": "Data view declarations and custom forms",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@loadable/component": "^5.14.1",
-    "@uidu/data-controls": "^0.6.5",
+    "@uidu/data-controls": "^0.7.0",
     "@uidu/field-counter": "^0.3.3",
     "@uidu/field-number": "^0.4.4",
     "@uidu/form": "^0.4.6",

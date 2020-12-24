@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 0.7.0
+
+### Minor Changes
+
+- d3df8a4: Change state management for DataManager react-table instance, allow for external state manipulation
+
+### Patch Changes
+
+- Updated dependencies [d3df8a4]
+  - @uidu/data-fields@0.5.0
+  - @uidu/data-views@0.5.6
+
 ## 0.6.5
 
 ### Patch Changes

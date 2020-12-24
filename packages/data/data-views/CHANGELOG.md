@@ -1,5 +1,12 @@
 # @uidu/data-views
 
+## 0.5.6
+
+### Patch Changes
+
+- Updated dependencies [d3df8a4]
+  - @uidu/data-controls@0.7.0
+
 ## 0.5.5
 
 ### Patch Changes
