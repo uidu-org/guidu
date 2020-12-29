@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.6.3
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+
 ## 0.6.2
 
 ### Patch Changes

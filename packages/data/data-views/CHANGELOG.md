@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.7
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/data-controls@0.7.1
+  - @uidu/field-counter@0.3.4
+  - @uidu/field-number@0.4.5
+  - @uidu/form@0.4.7
+  - @uidu/select@0.6.6
+
 ## 0.5.6
 
 ### Patch Changes

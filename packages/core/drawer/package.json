@@ -1,6 +1,6 @@
 {
   "name": "@uidu/drawer",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "React component the renders a Drawer from the left of the screen",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/drawer",
   "license": "ISC",
@@ -10,11 +10,11 @@
   "types": "dist/uidu-drawer.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/analytics": "^0.4.3",
-    "@uidu/blanket": "^0.4.3",
-    "@uidu/docs": "^0.3.3",
-    "@uidu/item": "^0.4.4",
-    "@uidu/theme": "^0.5.4",
+    "@uidu/analytics": "^0.4.4",
+    "@uidu/blanket": "^0.4.4",
+    "@uidu/docs": "^0.3.4",
+    "@uidu/item": "^0.4.5",
+    "@uidu/theme": "^0.5.5",
     "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
     "react-dom": "^17.0.1",
@@ -23,9 +23,9 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/button": "^0.4.3",
-    "@uidu/dropdown-menu": "^0.4.4",
-    "@uidu/shell": "^1.2.5",
+    "@uidu/button": "^0.4.4",
+    "@uidu/dropdown-menu": "^0.4.5",
+    "@uidu/shell": "^1.2.6",
     "react": "^17.0.1",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.2.1"

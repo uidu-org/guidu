@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/theme@0.5.5
+  - @uidu/media-card@0.4.4
+  - @uidu/media-core@0.4.3
+  - @uidu/media-viewer@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/form@0.4.7
+
 ## 0.5.5
 
 ### Patch Changes

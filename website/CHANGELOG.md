@@ -1,5 +1,30 @@
 # Change Log
 
+## 0.2.23
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/docs@0.3.4
+  - @uidu/badge@0.4.4
+  - @uidu/button@0.4.4
+  - @uidu/code@0.4.4
+  - @uidu/drawer@0.5.5
+  - @uidu/lozenge@0.4.4
+  - @uidu/modal-dialog@0.4.6
+  - @uidu/spinner@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/list@0.2.5
+  - @uidu/table@0.6.2
+  - @uidu/checkbox@0.3.4
+  - @uidu/field-text@0.4.5
+  - @uidu/form@0.4.7
+  - @uidu/select@0.6.6
+  - @uidu/navigation@0.5.4
+  - @uidu/shell@1.2.6
+
 ## 0.2.22
 
 ### Patch Changes

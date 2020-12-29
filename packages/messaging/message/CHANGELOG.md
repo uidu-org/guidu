@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.3.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/avatar@0.6.4
+  - @uidu/drawer@0.5.5
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/media-card@0.4.4
+  - @uidu/media-core@0.4.3
+  - @uidu/media-viewer@0.3.4
+  - @uidu/message-form@0.3.4
+  - @uidu/message-renderer@0.3.4
+
 ## 0.3.4
 
 ### Patch Changes

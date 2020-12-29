@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.3.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/popup@0.4.4
+  - @uidu/field-base@0.5.6
+
 ## 0.3.5
 
 ### Patch Changes

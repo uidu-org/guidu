@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/button@0.4.4
+  - @uidu/spinner@0.4.4
+  - @uidu/field-base@0.5.6
+  - @uidu/media-core@0.4.3
+
 ## 0.4.5
 
 ### Patch Changes

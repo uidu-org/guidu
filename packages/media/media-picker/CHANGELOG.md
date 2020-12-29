@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.4.3
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/media-core@0.4.3
+
 ## 0.4.2
 
 ### Patch Changes

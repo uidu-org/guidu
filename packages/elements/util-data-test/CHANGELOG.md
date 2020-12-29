@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.3.3
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/emoji@0.3.3
+  - @uidu/mentions@0.2.4
+  - @uidu/task-decision@0.3.4
+
 ## 0.3.2
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.2.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/accordion@0.4.4
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/dashlets@0.7.8
+  - @uidu/field-downshift@0.5.6
+  - @uidu/field-toggle@0.4.6
+  - @uidu/form@0.4.7
+  - @uidu/select@0.6.6
+  - @uidu/shell@1.2.6
+
 ## 0.2.4
 
 ### Patch Changes

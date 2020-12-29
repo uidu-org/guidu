@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.8.2
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/spinner@0.4.4
+  - @uidu/board@0.3.4
+  - @uidu/calendar@0.2.5
+  - @uidu/data-controls@0.7.1
+  - @uidu/data-fields@0.5.2
+  - @uidu/data-views@0.5.7
+  - @uidu/gallery@0.2.5
+  - @uidu/list@0.2.5
+  - @uidu/table@0.6.2
+  - @uidu/shell@1.2.6
+
 ## 0.8.1
 
 ### Patch Changes

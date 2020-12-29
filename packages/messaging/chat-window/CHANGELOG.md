@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/message@0.3.5
+  - @uidu/message-form@0.3.4
+  - @uidu/message-renderer@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

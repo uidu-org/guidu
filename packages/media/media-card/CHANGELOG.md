@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/button@0.4.4
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/spinner@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/media-core@0.4.3
+
 ## 0.4.3
 
 ### Patch Changes

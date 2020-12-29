@@ -1,5 +1,41 @@
 # @uidu/editor-core
 
+## 0.7.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/avatar@0.6.4
+  - @uidu/avatar-group@2.5.5
+  - @uidu/button@0.4.4
+  - @uidu/droplist@0.4.5
+  - @uidu/menu@0.4.6
+  - @uidu/modal-dialog@0.4.6
+  - @uidu/spinner@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/adf-utils@0.6.3
+  - @uidu/editor-common@0.4.5
+  - @uidu/editor-json-transformer@0.3.4
+  - @uidu/editor-markdown-transformer@0.3.4
+  - @uidu/analytics-listeners@0.3.3
+  - @uidu/analytics-namespaced-context@0.3.3
+  - @uidu/date@0.3.4
+  - @uidu/emoji@0.3.3
+  - @uidu/mentions@0.2.4
+  - @uidu/profilecard@0.1.1
+  - @uidu/status@0.3.4
+  - @uidu/task-decision@0.3.4
+  - @uidu/field-date@0.3.7
+  - @uidu/form@0.4.7
+  - @uidu/select@0.6.6
+  - @uidu/media-card@0.4.4
+  - @uidu/media-core@0.4.3
+  - @uidu/media-filmstrip@0.3.4
+  - @uidu/media-picker@0.4.3
+
 ## 0.7.4
 
 ### Patch Changes

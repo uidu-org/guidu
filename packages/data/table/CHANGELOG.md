@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.6.2
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/menu@0.4.6
+  - @uidu/popup@0.4.4
+  - @uidu/data-fields@0.5.2
+  - @uidu/checkbox@0.3.4
+
 ## 0.6.1
 
 ### Patch Changes

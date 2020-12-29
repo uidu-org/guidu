@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/spinner@0.4.4
+  - @uidu/field-mentions@0.4.5
+  - @uidu/field-text@0.4.5
+  - @uidu/form@0.4.7
+  - @uidu/media-filmstrip@0.3.4
+  - @uidu/message@0.3.5
+
 ## 0.3.3
 
 ### Patch Changes
