@@ -23,8 +23,8 @@
     "@uidu/docs": "^0.3.3",
     "@uidu/form": "^0.4.6",
     "@uidu/select": "^0.6.5",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.2.1"
   },

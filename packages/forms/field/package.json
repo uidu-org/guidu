@@ -18,7 +18,7 @@
     "@uidu/field-text": "^0.4.4",
     "@uidu/field-textarea": "^0.3.3",
     "@uidu/select": "^0.6.5",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "react-content-loader": "^5.1.4",
     "tslib": "^2.0.1"
   },

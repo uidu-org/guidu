@@ -17,7 +17,7 @@
     "body-scroll-lock": "^3.0.1",
     "d3-collection": "^1.0.7",
     "moment": "^2.27.0",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "react-chatview": "^0.2.5",
     "react-media": "^1.9.2",
     "react-native-web": "^0.14.0",

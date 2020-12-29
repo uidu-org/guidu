@@ -21,7 +21,7 @@
     "@uidu/form": "^0.4.6",
     "@uidu/select": "^0.6.5",
     "@uidu/shell": "^1.2.5",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -42,9 +42,9 @@
     "@uidu/section-message": "^0.4.3",
     "@uidu/util-data-test": "^0.3.2",
     "p-wait-for": "^3.1.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "react-intl": "^5.10.5"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-intl": "^5.10.9"
   },
   "peerDependencies": {
     "react": "^17.0.0",

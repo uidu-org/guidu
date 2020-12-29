@@ -163,29 +163,31 @@ export default function Basic({}) {
     });
   }, []);
 
-  const onViewUpdate = useCallback((state) => {
-    console.log(state);
-    setIsAutoSaving('in-progress');
-    // const dataViews = dataViews.map((item) => {
-    //   if (item.id !== currentView.id) {
-    //     return item;
-    //   }
-    //   return {
-    //     ...item,
-    //     state: props,
-    //   };
-    // });
-    // const updatedView = {
-    //   ...currentView,
-    //   state: props,
-    // };
-    // await this.setState({
-    //   dataViews,
-    //   isAutoSaving: 'done',
-    //   currentView: updatedView,
-    // });
-    // return updatedView;
-  }, []);
+  const onViewUpdate = useCallback(
+    (state) => {
+      console.log(state);
+      setIsAutoSaving('in-progress');
+      const updatedView = {
+        ...currentView,
+        state,
+      };
+      setDataViews((prevDataViews) =>
+        prevDataViews.map((item) => {
+          if (item.id !== currentView.id) {
+            return item;
+          }
+          return {
+            ...item,
+            state,
+          };
+        }),
+      );
+      setCurrentView(updatedView);
+      setIsAutoSaving('done');
+      return updatedView;
+    },
+    [currentView],
+  );
 
   console.log(tableInstance.current);
 

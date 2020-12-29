@@ -27,8 +27,8 @@
     "@uidu/radio": "^0.5.4",
     "@uidu/select": "^0.6.5",
     "@uidu/spinner": "^0.4.3",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "peerDependencies": {
     "react": "^17.0.0",

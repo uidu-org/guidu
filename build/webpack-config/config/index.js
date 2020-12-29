@@ -223,6 +223,7 @@ module.exports = async function createWebpackConfig(
       },
       fallback: {
         path: false,
+        assert: false,
       },
       ...(webpackOptions ? webpackOptions.resolve : {}),
     },

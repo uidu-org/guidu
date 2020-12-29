@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import { modifyResponse, ProfileClient } from '@atlaskit/profilecard';
 import { defaultSchema } from '@uidu/adf-schema';
 import Button from '@uidu/button';
 import {
@@ -8,9 +7,9 @@ import {
   ExtensionHandlers,
   ProviderFactory,
 } from '@uidu/editor-common';
+import { modifyResponse, ProfileClient } from '@uidu/profilecard';
 import { profilecard as profilecardUtils } from '@uidu/util-data-test';
 import * as React from 'react';
-import Clock from 'react-live-clock';
 import { renderDocument, TextSerializer } from '../../src';
 import {
   default as Renderer,
@@ -73,7 +72,9 @@ const extensionHandlers: ExtensionHandlers = {
     switch (extensionKey) {
       case 'clock':
         return (
-          <Clock format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'} />
+          <p format={'HH:mm:ss'} ticking={true} timezone={'US/Pacific'}>
+            Test
+          </p>
         );
       case 'mention':
         return [

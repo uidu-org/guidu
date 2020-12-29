@@ -13,7 +13,7 @@
     "@uidu/field-base": "^0.5.5",
     "@uidu/field-text": "^0.4.4",
     "formsy-react": "^2.2.1",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "react-phone-number-input": "^3.0.23",
     "tslib": "^2.0.1"
   },

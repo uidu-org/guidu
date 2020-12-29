@@ -17,7 +17,7 @@
     "@uidu/theme": "^0.5.4",
     "chromatism": "^3.0.0",
     "exenv": "^1.2.2",
-    "react-dom": "^17.0.0",
+    "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
     "react-transition-group": "^4.0.0",
     "tslib": "^2.0.1"
@@ -26,7 +26,7 @@
     "@uidu/button": "^0.4.3",
     "@uidu/dropdown-menu": "^0.4.4",
     "@uidu/shell": "^1.2.5",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "react-lorem-component": "^0.13.0",
     "styled-components": "^5.2.1"
   },

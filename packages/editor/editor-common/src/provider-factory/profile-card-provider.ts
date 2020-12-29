@@ -1,4 +1,4 @@
-import { ProfileCardAction, ProfileClient } from '@atlaskit/profilecard';
+import { ProfileCardAction, ProfileClient } from '@uidu/profilecard';
 
 export interface ProfilecardProvider {
   cloudId: string;

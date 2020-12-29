@@ -16,7 +16,7 @@
     "@uidu/form": "^0.4.6",
     "@uidu/payments": "^0.4.5",
     "classnames": "^2.2.6",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "react-scroll": "^1.8.1",
     "tslib": "^2.0.1"
   },

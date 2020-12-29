@@ -20,8 +20,8 @@
     "@uidu/code": "^0.4.3",
     "@uidu/docs": "^0.3.3",
     "@uidu/field-range": "^0.4.4",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
   },
   "peerDependencies": {

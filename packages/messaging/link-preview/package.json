@@ -13,7 +13,7 @@
     "axios": "^0.21.0",
     "get-urls": "^10.0.0",
     "nanoclamp": "^1.2.9",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },
@@ -21,7 +21,7 @@
     "@uidu/docs": "^0.3.3",
     "@uidu/field-text": "^0.4.4",
     "@uidu/form": "^0.4.6",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.14"
   },
   "publishConfig": {
     "access": "public"

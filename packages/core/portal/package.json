@@ -25,8 +25,8 @@
     "@uidu/modal-dialog": "^0.4.5",
     "@uidu/onboarding": "^0.4.3",
     "@uidu/tooltip": "^0.4.3",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
   },
   "peerDependencies": {

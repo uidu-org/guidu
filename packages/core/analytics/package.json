@@ -19,8 +19,8 @@
     "@uidu/field-text": "^0.4.4",
     "@uidu/form": "^0.4.6",
     "lodash.isequal": "^4.5.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "peerDependencies": {
     "react": "^17.0.0"

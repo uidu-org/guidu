@@ -21,8 +21,8 @@
     "@uppy/webcam": "^1.0.1",
     "@uppy/xhr-upload": "^1.0.1",
     "exenv": "^1.2.2",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

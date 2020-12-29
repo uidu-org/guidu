@@ -24,8 +24,8 @@
     "@uidu/lozenge": "^0.4.3",
     "@uidu/section-message": "^0.4.3",
     "color": "^3.1.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
   },
   "peerDependencies": {

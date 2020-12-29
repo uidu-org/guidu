@@ -1,10 +1,11 @@
-import Calendar from '@atlaskit/calendar';
 import {
   akEditorFloatingDialogZIndex,
   Popup,
   timestampToIsoFormat,
   timestampToUTCDate,
 } from '@uidu/editor-common';
+import FieldDate from '@uidu/field-date';
+import Form from '@uidu/form';
 import { borderRadius, colors } from '@uidu/theme';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -72,13 +73,17 @@ export default class DatePicker extends React.Component<Props, State> {
         handleEscapeKeydown={closeDatePicker}
         zIndex={akEditorFloatingDialogZIndex}
       >
-        <Calendar
-          onChange={this.handleChange}
-          onSelect={onSelect}
-          {...this.state}
-          ref={this.handleRef}
-          innerProps={{ style: calendarStyle }}
-        />
+        <Form>
+          <FieldDate
+            withCalendar
+            name="date"
+            onChange={this.handleChange}
+            onSelect={onSelect}
+            {...this.state}
+            ref={this.handleRef}
+            innerProps={{ style: calendarStyle }}
+          />
+        </Form>
       </PopupWithListeners>
     );
   }

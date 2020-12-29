@@ -1,6 +1,6 @@
-import ProfileCard, { ProfileCardAction } from '@atlaskit/profilecard';
 import { MentionUserType as UserType } from '@uidu/adf-schema';
 import { MentionProvider, ResourcedMention } from '@uidu/mentions';
+import ProfileCard, { ProfileCardAction } from '@uidu/profilecard';
 import React, { PureComponent, ReactInstance, SyntheticEvent } from 'react';
 import { findDOMNode } from 'react-dom';
 import { ProfilecardProvider } from '../../provider-factory/profile-card-provider';

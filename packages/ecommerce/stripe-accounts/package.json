@@ -20,8 +20,8 @@
     "@uidu/spinner": "^0.4.3",
     "@uidu/stepper": "^0.3.3",
     "dayjs": "^1.9.6",
-    "react": "^17.0.0",
-    "react-intl": "^5.10.5",
+    "react": "^17.0.1",
+    "react-intl": "^5.10.9",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

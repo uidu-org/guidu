@@ -15,7 +15,7 @@
   "devDependencies": {
     "@uidu/analytics-listeners": "^0.3.2",
     "@uidu/docs": "^0.3.3",
-    "react": "^17.0.0"
+    "react": "^17.0.1"
   },
   "peerDependencies": {
     "react": "^17.0.0"

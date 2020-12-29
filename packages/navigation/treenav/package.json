@@ -11,7 +11,7 @@
   "types": "dist/uidu-treenav.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "react": "^17.0.0",
+    "react": "^17.0.1",
     "react-feather": "^2.0.9",
     "react-media": "^1.9.2",
     "react-router-dom": "^5.2.0",
