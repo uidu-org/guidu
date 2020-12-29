@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.5.1
+
+### Patch Changes
+
+- e452ede: Fix to select filtrs, onViewUpdate on DataManager
+
 ## 0.5.0
 
 ### Minor Changes

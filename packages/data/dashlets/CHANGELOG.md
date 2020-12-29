@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.7.7
+
+### Patch Changes
+
+- e452ede: Fix to select filtrs, onViewUpdate on DataManager
+
 ## 0.7.6
 
 ### Patch Changes

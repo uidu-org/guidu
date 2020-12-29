@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.6.1
+
+### Patch Changes
+
+- e452ede: Fix to select filtrs, onViewUpdate on DataManager
+- Updated dependencies [e452ede]
+  - @uidu/data-fields@0.5.1
+
 ## 0.6.0
 
 ### Minor Changes
