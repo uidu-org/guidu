@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.8
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/spinner@0.4.4
+  - @uidu/tooltip@0.4.4
+  - @uidu/dashlet-controls@0.3.5
+
 ## 0.7.7
 
 ### Patch Changes

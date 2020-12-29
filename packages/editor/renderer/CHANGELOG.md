@@ -1,5 +1,26 @@
 # @uidu/renderer
 
+## 0.3.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/code@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/adf-utils@0.6.3
+  - @uidu/editor-common@0.4.5
+  - @uidu/editor-json-transformer@0.3.4
+  - @uidu/analytics-listeners@0.3.3
+  - @uidu/analytics-namespaced-context@0.3.3
+  - @uidu/mentions@0.2.4
+  - @uidu/status@0.3.4
+  - @uidu/task-decision@0.3.4
+  - @uidu/media-card@0.4.4
+  - @uidu/media-filmstrip@0.3.4
+
 ## 0.3.5
 
 ### Patch Changes

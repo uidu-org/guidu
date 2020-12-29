@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/shell@1.2.6
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.6.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/spinner@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/checkbox@0.3.4
+  - @uidu/field-base@0.5.6
+  - @uidu/form@0.4.7
+
 ## 0.6.5
 
 ### Patch Changes

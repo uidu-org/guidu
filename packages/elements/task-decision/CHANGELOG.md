@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/avatar-group@2.5.5
+  - @uidu/button@0.4.4
+  - @uidu/spinner@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/analytics-namespaced-context@0.3.3
+
 ## 0.3.3
 
 ### Patch Changes

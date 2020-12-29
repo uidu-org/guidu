@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.2.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+
 ## 0.2.3
 
 ### Patch Changes

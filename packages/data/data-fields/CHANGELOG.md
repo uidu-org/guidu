@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.5.2
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/menu@0.4.6
+  - @uidu/field-color-picker@0.3.6
+  - @uidu/field-date@0.3.7
+  - @uidu/field-downshift@0.5.6
+  - @uidu/field-number@0.4.5
+  - @uidu/field-text@0.4.5
+  - @uidu/field-time@0.4.6
+  - @uidu/field-toggle@0.4.6
+  - @uidu/form@0.4.7
+  - @uidu/select@0.6.6
+
 ## 0.5.1
 
 ### Patch Changes

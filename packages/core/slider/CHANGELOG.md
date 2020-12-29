@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+
 ## 1.6.3
 
 ### Patch Changes

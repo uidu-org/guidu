@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+
 ## 0.4.3
 
 ### Patch Changes

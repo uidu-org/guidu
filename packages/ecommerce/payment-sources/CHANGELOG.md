@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/payments@0.4.6
+  - @uidu/form@0.4.7
+
 ## 0.2.3
 
 ### Patch Changes

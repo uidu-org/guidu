@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/field-base@0.5.6
+  - @uidu/field-text@0.4.5
+
 ## 0.5.5
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.5.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/avatar@0.6.4
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/inline-dialog@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/tooltip@0.4.4
+  - @uidu/shell@1.2.6
+
 ## 0.5.3
 
 ### Patch Changes

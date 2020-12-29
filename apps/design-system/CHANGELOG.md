@@ -1,5 +1,15 @@
 # design-system
 
+## 0.1.7
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/button@0.4.4
+  - @uidu/theme@0.5.5
+
 ## 0.1.6
 
 ### Patch Changes

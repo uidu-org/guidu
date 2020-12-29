@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.3
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/checkbox@0.3.4
+  - @uidu/field-number@0.4.5
+  - @uidu/field-text@0.4.5
+  - @uidu/field-textarea@0.3.4
+  - @uidu/select@0.6.6
+
 ## 0.3.2
 
 ### Patch Changes

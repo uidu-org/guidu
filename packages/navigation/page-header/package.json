@@ -1,6 +1,6 @@
 {
   "name": "@uidu/page-header",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A React component that represents Header of an application page",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/page-header",
   "license": "MIT",
@@ -9,18 +9,18 @@
   "main": "dist/uidu-page-header.cjs.js",
   "types": "dist/uidu-page-header.cjs.d.ts",
   "dependencies": {
-    "@uidu/shell": "^1.2.5",
-    "@uidu/theme": "^0.5.4",
+    "@uidu/shell": "^1.2.6",
+    "@uidu/theme": "^0.5.5",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/breadcrumbs": "^0.2.3",
-    "@uidu/button": "^0.4.3",
-    "@uidu/docs": "^0.3.3",
-    "@uidu/field-text": "^0.4.4",
-    "@uidu/form": "^0.4.6",
-    "@uidu/inline-edit": "0.2.3",
-    "@uidu/select": "^0.6.5",
+    "@uidu/breadcrumbs": "^0.2.4",
+    "@uidu/button": "^0.4.4",
+    "@uidu/docs": "^0.3.4",
+    "@uidu/field-text": "^0.4.5",
+    "@uidu/form": "^0.4.7",
+    "@uidu/inline-edit": "0.2.4",
+    "@uidu/select": "^0.6.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"

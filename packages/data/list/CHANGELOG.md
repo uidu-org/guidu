@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/data-fields@0.5.2
+
 ## 0.2.4
 
 ### Patch Changes

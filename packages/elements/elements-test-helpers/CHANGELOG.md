@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.3
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+
 ## 0.3.2
 
 ### Patch Changes

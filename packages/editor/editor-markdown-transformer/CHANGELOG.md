@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 0.3.4
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/editor-common@0.4.5
+
 ## 0.3.3
 
 ### Patch Changes

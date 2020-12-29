@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.4.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/avatar@0.6.4
+  - @uidu/avatar-group@2.5.5
+  - @uidu/dropdown-menu@0.4.5
+  - @uidu/field-date-range@0.3.4
+  - @uidu/form@0.4.7
+
 ## 0.4.4
 
 ### Patch Changes

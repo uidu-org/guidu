@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.5.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/docs@0.3.4
+  - @uidu/analytics@0.4.4
+  - @uidu/blanket@0.4.4
+  - @uidu/item@0.4.5
+  - @uidu/theme@0.5.5
+
 ## 0.5.4
 
 ### Patch Changes

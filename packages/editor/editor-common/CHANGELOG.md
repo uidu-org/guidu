@@ -1,5 +1,19 @@
 # @uidu/editor-common
 
+## 0.4.5
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/analytics@0.4.4
+  - @uidu/theme@0.5.5
+  - @uidu/adf-utils@0.6.3
+  - @uidu/analytics-namespaced-context@0.3.3
+  - @uidu/emoji@0.3.3
+  - @uidu/mentions@0.2.4
+  - @uidu/profilecard@0.1.1
+
 ## 0.4.4
 
 ### Patch Changes

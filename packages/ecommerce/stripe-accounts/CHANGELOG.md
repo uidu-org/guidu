@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.6
+
+### Patch Changes
+
+- 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
+- Updated dependencies [0330b3d]
+  - @uidu/slider@1.6.4
+  - @uidu/spinner@0.4.4
+  - @uidu/payments@0.4.6
+  - @uidu/field-text@0.4.5
+  - @uidu/form@0.4.7
+  - @uidu/stepper@0.3.4
+
 ## 0.2.5
 
 ### Patch Changes
