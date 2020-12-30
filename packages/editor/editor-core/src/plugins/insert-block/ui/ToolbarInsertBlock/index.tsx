@@ -215,7 +215,9 @@ class ToolbarInsertBlock extends React.PureComponent<
       case 'codeblock':
         return '```';
       default:
-        return tooltip(findKeymapByDescription(blockType.title.defaultMessage));
+        return tooltip(
+          findKeymapByDescription(blockType.title.defaultMessage[0].value),
+        );
     }
   };
 
@@ -276,8 +278,7 @@ class ToolbarInsertBlock extends React.PureComponent<
     const dropdownItems = this.sortMenuItems(items.slice(numberOfButtons));
     this.sanitizeProductMenuItems(dropdownItems);
     const labelInsertMenu = formatMessage(messages.insertMenu);
-
-    findShortcutByDescription(messages.insertMenu.description);
+    findShortcutByDescription(messages.insertMenu.defaultMessage[0].value);
 
     const toolbarButtonFactory = (disabled: boolean, items: Array<any>) => (
       <ToolbarButton

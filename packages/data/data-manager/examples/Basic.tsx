@@ -15,6 +15,7 @@ import {
   ShellHeader,
   ShellMain,
 } from '@uidu/shell';
+import { isEqual } from 'lodash';
 import Papa from 'papaparse';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import 'react-big-calendar/lib/sass/styles';
@@ -166,25 +167,27 @@ export default function Basic({}) {
   const onViewUpdate = useCallback(
     (state) => {
       console.log(state);
-      setIsAutoSaving('in-progress');
-      const updatedView = {
-        ...currentView,
-        state,
-      };
-      setDataViews((prevDataViews) =>
-        prevDataViews.map((item) => {
-          if (item.id !== currentView.id) {
-            return item;
-          }
-          return {
-            ...item,
-            state,
-          };
-        }),
-      );
-      setCurrentView(updatedView);
-      setIsAutoSaving('done');
-      return updatedView;
+      if (!isEqual(currentView.state, state)) {
+        setIsAutoSaving('in-progress');
+        const updatedView = {
+          ...currentView,
+          state,
+        };
+        setDataViews((prevDataViews) =>
+          prevDataViews.map((item) => {
+            if (item.id !== currentView.id) {
+              return item;
+            }
+            return {
+              ...item,
+              state,
+            };
+          }),
+        );
+        setCurrentView(updatedView);
+        setIsAutoSaving('done');
+        return updatedView;
+      }
     },
     [currentView],
   );

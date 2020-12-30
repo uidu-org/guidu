@@ -1,4 +1,5 @@
 import { getAvatar, getCover } from '@uidu/data-fields';
+import { ScrollableContainer, ShellBody } from '@uidu/shell';
 import React, { useCallback, useMemo, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import { GalleryProps } from '../types';
@@ -76,16 +77,8 @@ export default function Gallery({
   });
 
   return (
-    <>
-      <div
-        ref={parentRef}
-        className="container px-2 List"
-        style={{
-          height: '100%',
-          width: '100%',
-          overflow: 'auto',
-        }}
-      >
+    <ShellBody>
+      <ScrollableContainer ref={parentRef}>
         <div
           style={{
             height: `${rowVirtualizer.totalSize}px`,
@@ -125,7 +118,7 @@ export default function Gallery({
             );
           })}
         </div>
-      </div>
-    </>
+      </ScrollableContainer>
+    </ShellBody>
   );
 }

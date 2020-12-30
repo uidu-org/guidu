@@ -132,7 +132,9 @@ export default function ToolbarBlockType({
         key: `${blockType.name}-${blockTypeNo}`,
         iconAfter: (
           <KeyboardShortcut selected={isSelected}>
-            {tooltip(findKeymapByDescription(blockType.title.defaultMessage))}
+            {tooltip(
+              findKeymapByDescription(blockType.title.defaultMessage[0].value),
+            )}
           </KeyboardShortcut>
         ),
         isSelected,

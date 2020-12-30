@@ -1,29 +1,10 @@
-import React, { createContext, forwardRef, useCallback, useRef } from 'react';
+import React, { createContext, useCallback, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import Header from './Header';
 import Item from './Item';
 
 const StickyListContext = createContext(null);
 StickyListContext.displayName = 'StickyListContext';
-
-const innerElementType = forwardRef(({ children, ...rest }, ref: any) => (
-  <StickyListContext.Consumer>
-    {({ stickyIndices, columnDefs, gutterSize, headerHeight, onItemClick }) => (
-      <div ref={ref} {...rest}>
-        {stickyIndices.map((index) => (
-          <Header
-            index={index}
-            key={index}
-            style={{ height: headerHeight }}
-            data={{ columnDefs, gutterSize, onItemClick }}
-          />
-        ))}
-
-        {children}
-      </div>
-    )}
-  </StickyListContext.Consumer>
-));
 
 export default function List({
   rowHeight,
