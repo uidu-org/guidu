@@ -13,6 +13,7 @@
     "@babel/runtime": "^7.11.2",
     "@uidu/data-controls": "^0.7.1",
     "@uidu/data-fields": "^0.5.2",
+    "@uidu/shell": "^1.2.6",
     "@uidu/spinner": "^0.4.4",
     "memoize-one": "^5.1.1",
     "react": "^17.0.1",
