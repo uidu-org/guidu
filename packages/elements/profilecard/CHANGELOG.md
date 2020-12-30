@@ -1,6 +1,13 @@
 # @uidu/profilecard
 
+## 0.1.2
+
+### Patch Changes
+
+- 5f6de72: Bump dependencies
+
 ## 0.1.1
+
 ### Patch Changes
 
 - 0330b3d: Broken profilecard to fix broken webpack 5 atlaskit dependencies, now stripped out
