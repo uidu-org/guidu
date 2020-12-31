@@ -1,10 +1,7 @@
-import React, { createContext, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { useVirtual } from 'react-virtual';
 import Header from './Header';
 import Item from './Item';
-
-const StickyListContext = createContext(null);
-StickyListContext.displayName = 'StickyListContext';
 
 export default function List({
   rowHeight,

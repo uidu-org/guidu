@@ -23,7 +23,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.4",
-    "@uidu/shell": "^1.2.6",
     "react-router-dom": "^5.2.0"
   }
 }
