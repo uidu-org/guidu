@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.5.5
+
+### Patch Changes
+
+- 66a32ff: Fix editor-core react-intl defaultmessage bug, Gallery view has now shadows on scroll"
+
 ## 0.5.4
 
 ### Patch Changes

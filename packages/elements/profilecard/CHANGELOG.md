@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.1.3
+
+### Patch Changes
+
+- 66a32ff: Fix editor-core react-intl defaultmessage bug, Gallery view has now shadows on scroll"
+
 ## 0.1.2
 
 ### Patch Changes
