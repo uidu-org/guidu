@@ -1,5 +1,14 @@
 # @uidu/data-manager
 
+## 0.8.3
+
+### Patch Changes
+
+- 66a32ff: Fix editor-core react-intl defaultmessage bug, Gallery view has now shadows on scroll"
+- Updated dependencies [66a32ff]
+  - @uidu/gallery@0.2.6
+  - @uidu/list@0.2.6
+
 ## 0.8.2
 
 ### Patch Changes
