@@ -21,7 +21,7 @@
     "@uidu/data-views": "^0.5.7",
     "@uidu/gallery": "^0.2.6",
     "@uidu/list": "^0.2.6",
-    "@uidu/shell": "^1.2.6",
+    "@uidu/shell": "^1.2.7",
     "@uidu/spinner": "^0.4.4",
     "@uidu/table": "^0.6.2",
     "d3-array": "^2.2.0",
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.3.4",
     "@uidu/dropdown-menu": "^0.4.5",
-    "@uidu/navigation": "^0.5.5",
+    "@uidu/navigation": "^0.6.0",
     "@uidu/page-header": "^0.2.4",
     "@uidu/side-navigation": "^0.2.6",
     "react-intl": "^5.10.9"

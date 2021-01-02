@@ -1,5 +1,17 @@
 # @uidu/navigation
 
+## 0.6.0
+
+### Minor Changes
+
+- b36dcc8: Navigation is more flexible and allow for animated menu as items
+
+### Patch Changes
+
+- Updated dependencies [b36dcc8]
+  - @uidu/animated-menu@0.3.0
+  - @uidu/shell@1.2.7
+
 ## 0.5.5
 
 ### Patch Changes

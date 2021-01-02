@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.24
+
+### Patch Changes
+
+- Updated dependencies [b36dcc8]
+  - @uidu/navigation@0.6.0
+  - @uidu/shell@1.2.7
+
 ## 0.2.23
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.2.7
+
+### Patch Changes
+
+- b36dcc8: Navigation is more flexible and allow for animated menu as items
+
 ## 1.2.6
 
 ### Patch Changes

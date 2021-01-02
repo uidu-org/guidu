@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.0
+
+### Minor Changes
+
+- b36dcc8: Navigation is more flexible and allow for animated menu as items
+
 ## 0.2.4
 
 ### Patch Changes
