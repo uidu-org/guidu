@@ -9,7 +9,7 @@ export default function AnimatedMenu({
   navbarConfig,
   className,
 }: AnimatedMenuProps) {
-  const [activeIndices, setActiveIndices] = useState([1]);
+  const [activeIndices, setActiveIndices] = useState([0]);
   const [animatingOut, setAnimatingOut] = useState(false);
   const animatingOutTimeout = useRef(null);
 
@@ -73,6 +73,7 @@ export default function AnimatedMenu({
             key={path || to}
             className={nClassName}
             path={path || to}
+            to={path || to}
             index={index}
             onMouseEnter={(e) => {
               onMouseEnter(index);
