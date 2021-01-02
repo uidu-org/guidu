@@ -22,7 +22,4 @@ export default styled.div.attrs(({ className }) => ({
 }))`
   align-items: center;
   display: flex;
-  padding-right: 16px;
-  margin-right: 4px;
-  border-right: 1px solid rgba(107, 119, 140, 0.3);
 `;

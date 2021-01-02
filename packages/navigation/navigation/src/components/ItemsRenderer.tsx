@@ -1,7 +1,7 @@
 // based on schema type we render different components
 import { gridSize } from '@uidu/theme';
 import React, { PureComponent } from 'react';
-import NavigationGroupComponent from './Navigation/NavigationGroup';
+import NavigationGroup from './Navigation/NavigationGroup';
 import NavigationHeaderComponent from './Navigation/NavigationHeader';
 import NavigationHeaderSkeletonComponent from './Navigation/NavigationHeaderSkeleton';
 import NavigationIconItem from './Navigation/NavigationIconItem';
@@ -29,9 +29,9 @@ const NavigationHeaderSkeleton = ({ text, after, before }) => (
 
 // Section
 const PrimarySection = ({ items, ...props }) => (
-  <PrimaryActions>
+  <PrimaryActions {...props}>
     <ItemsRenderer items={items} />
-    <div
+    {/* <div
       style={{
         width: '100%',
         position: 'relative',
@@ -47,7 +47,7 @@ const PrimarySection = ({ items, ...props }) => (
         // style="display: block; position: absolute; top: 0px; left: 0px; height: 0px; width: 100%; opacity: 0; overflow: hidden; pointer-events: none; z-index: -1;"
         data="about:blank"
       ></object>
-    </div>
+    </div> */}
   </PrimaryActions>
 );
 
@@ -56,30 +56,6 @@ const SecondarySection = ({ items, ...props }) => (
     <ItemsRenderer items={items} />
   </SecondaryActions>
 );
-// Group
-
-const NavigationGroup = ({
-  heading,
-  separator,
-  items,
-  before,
-  after,
-  withPadding,
-  withMargin,
-  ...props
-}) =>
-  items.length ? (
-    <NavigationGroupComponent
-      heading={heading}
-      before={before}
-      after={after}
-      separator={separator}
-      withPadding={withPadding}
-      withMargin={withMargin}
-    >
-      <ItemsRenderer items={items} {...props} />
-    </NavigationGroupComponent>
-  ) : null;
 
 const Debug = (props: any) => (
   <pre

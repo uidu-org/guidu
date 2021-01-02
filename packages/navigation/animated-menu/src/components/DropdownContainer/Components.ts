@@ -1,15 +1,15 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const getDropdownRootKeyFrame = ({ animatingOut, direction }) => {
   if (!animatingOut && direction) return null;
   return keyframes`
   from {
     transform: ${animatingOut ? 'rotateX(0)' : 'rotateX(-15deg)'};
-    opacity: ${animatingOut ? 1 : 0};
+    /* opacity: ${animatingOut ? 1 : 0}; */
   }
   to {
     transform: ${animatingOut ? 'rotateX(-15deg)' : 'rotateX(0)'};
-    opacity: ${animatingOut ? 0 : 1};
+    /* opacity: ${animatingOut ? 0 : 1}; */
   }
 `;
 };
@@ -25,7 +25,7 @@ export const DropdownRoot = styled.div<{
 }>`
   transform-origin: 0 0;
   animation-name: ${getAnimationName};
-  animation-duration: ${props => props.duration}ms;
+  animation-duration: ${(props) => props.duration}ms;
   /* use 'forwards' to prevent flicker on leave animation */
   animation-fill-mode: forwards;
   /* flex styles will center the caret child component */
@@ -70,11 +70,11 @@ export const AltBackground = styled.div<{ duration: number }>`
   left: -100%;
   transform-origin: 0 0;
   z-index: 0;
-  transition: transform ${props => props.duration}ms;
+  transition: transform ${(props) => props.duration}ms;
 `;
 
 export const InvertedDiv = styled.div<{ absolute?: boolean }>`
-  position: ${props => (props.absolute ? 'absolute' : 'relative')};
+  position: ${(props) => (props.absolute ? 'absolute' : 'relative')};
   top: 0;
   left: 0;
   &:first-of-type {

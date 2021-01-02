@@ -48,17 +48,6 @@ export default md`
     />
   )}
 
-  ${(
-    <Example
-      packageName="@uidu/navigation"
-      Component={require('../examples/Full').default}
-      title="Kitchen Sink"
-      source={require('!!raw-loader!../examples/Full').default}
-      overflowHidden
-      fullWidth
-    />
-  )}
-
 
   ${(
     <Example

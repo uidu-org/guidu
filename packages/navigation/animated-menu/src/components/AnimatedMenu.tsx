@@ -1,110 +1,100 @@
-import React, { Component } from 'react';
+import React, { useRef, useState } from 'react';
 import { Flipper } from 'react-flip-toolkit';
-
-import Navbar from './Navbar';
-import NavbarItem from './Navbar/NavbarItem';
+import { AnimatedMenuProps } from '../types';
 import DropdownContainer from './DropdownContainer';
-import { AnimatedMenuProps, AnimatedMenuState } from '../types';
+import NavbarItem from './Navbar/NavbarItem';
 
-export default class AnimatedMenu extends Component<
-  AnimatedMenuProps,
-  AnimatedMenuState
-> {
-  public readonly state: Readonly<AnimatedMenuState> = {
-    activeIndices: [],
-    animatingOut: false,
+export default function AnimatedMenu({
+  duration = 300,
+  navbarConfig,
+  className,
+}: AnimatedMenuProps) {
+  const [activeIndices, setActiveIndices] = useState([1]);
+  const [animatingOut, setAnimatingOut] = useState(false);
+  const animatingOutTimeout = useRef(null);
+
+  const resetDropdownState = (i) => {
+    setActiveIndices(typeof i === 'number' ? [i] : []);
+    setAnimatingOut(false);
+    // animatingOutTimeout = null;
   };
 
-  animatingOutTimeout = null;
-
-  resetDropdownState = i => {
-    this.setState({
-      activeIndices: typeof i === 'number' ? [i] : [],
-      animatingOut: false,
-    });
-    delete this.animatingOutTimeout;
-  };
-
-  onMouseEnter = i => {
-    const { activeIndices } = this.state;
-    if (this.animatingOutTimeout) {
-      clearTimeout(this.animatingOutTimeout);
-      this.resetDropdownState(i);
+  const onMouseEnter = (i) => {
+    if (animatingOutTimeout) {
+      clearTimeout(animatingOutTimeout.current);
+      resetDropdownState(i);
       return;
     }
     if (activeIndices[activeIndices.length - 1] === i) return;
-
-    this.setState(prevState => ({
-      activeIndices: prevState.activeIndices.concat(i),
-      animatingOut: false,
-    }));
+    setActiveIndices((prevActiveIndices) => prevActiveIndices.concat(i));
+    setAnimatingOut(false);
   };
 
-  onMouseLeave = () => {
-    const { duration } = this.props;
-    this.setState({
-      animatingOut: true,
-    });
-    this.animatingOutTimeout = setTimeout(this.resetDropdownState, duration);
+  const onMouseLeave = () => {
+    setAnimatingOut(true);
+    animatingOutTimeout.current = setTimeout(resetDropdownState, duration);
   };
 
-  render() {
-    const { duration, navbarConfig, ...otherProps } = this.props;
-    const { activeIndices, animatingOut } = this.state;
-    let CurrentDropdown;
-    let PrevDropdown;
-    let direction;
+  let CurrentDropdown;
+  let PrevDropdown;
+  let direction;
 
-    const currentIndex = activeIndices[activeIndices.length - 1];
-    const prevIndex =
-      activeIndices.length > 1 && activeIndices[activeIndices.length - 2];
+  const currentIndex = activeIndices[activeIndices.length - 1];
+  const prevIndex =
+    activeIndices.length > 1 && activeIndices[activeIndices.length - 2];
 
-    if (typeof currentIndex === 'number') {
-      CurrentDropdown = navbarConfig[currentIndex].dropdown;
-    }
-    if (typeof prevIndex === 'number') {
-      PrevDropdown = navbarConfig[prevIndex].dropdown;
-      direction = currentIndex > prevIndex ? 'right' : 'left';
-    }
+  if (typeof currentIndex === 'number')
+    CurrentDropdown = navbarConfig[currentIndex].dropdown;
+  if (typeof prevIndex === 'number') {
+    PrevDropdown = navbarConfig[prevIndex].dropdown;
+    direction = currentIndex > prevIndex ? 'right' : 'left';
+  }
 
-    return (
-      <Flipper
-        flipKey={currentIndex}
-        spring={duration === 300 ? 'noWobble' : { stiffness: 10, damping: 10 }}
-      >
-        <Navbar onMouseLeave={this.onMouseLeave}>
-          {navbarConfig.map((n, index) => (
-            <NavbarItem
-              key={n.path}
-              className={n.className}
-              name={n.name}
-              path={n.path}
-              index={index}
-              onMouseEnter={this.onMouseEnter}
-              onMouseLeave={this.onMouseLeave}
-            >
-              {currentIndex === index && (
+  return (
+    <Flipper
+      flipKey={currentIndex}
+      spring={duration === 300 ? 'noWobble' : { stiffness: 10, damping: 10 }}
+      className={className}
+    >
+      {navbarConfig.map(
+        (
+          {
+            path,
+            to,
+            className: nClassName,
+            component: Component = NavbarItem,
+            items = [],
+            dropdown,
+            ...rest
+          },
+          index,
+        ) => (
+          <Component
+            key={path || to}
+            className={nClassName}
+            path={path || to}
+            index={index}
+            onMouseEnter={(e) => {
+              onMouseEnter(index);
+            }}
+            // onMouseLeave={onMouseLeave}
+            {...rest}
+          >
+            {currentIndex === index &&
+              CurrentDropdown &&
+              (dropdown || items.length > 0) && (
                 <DropdownContainer
                   direction={direction}
                   animatingOut={animatingOut}
                   duration={duration}
                 >
-                  <CurrentDropdown
-                    onMouseLeave={this.onMouseLeave}
-                    {...otherProps}
-                  />
-                  {PrevDropdown && (
-                    <PrevDropdown
-                      onMouseLeave={this.onMouseLeave}
-                      {...otherProps}
-                    />
-                  )}
+                  <CurrentDropdown items={items} />
+                  {PrevDropdown && <PrevDropdown />}
                 </DropdownContainer>
               )}
-            </NavbarItem>
-          ))}
-        </Navbar>
-      </Flipper>
-    );
-  }
+          </Component>
+        ),
+      )}
+    </Flipper>
+  );
 }

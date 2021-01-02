@@ -1,15 +1,14 @@
-import React, { Component, Children } from 'react';
+import React, { Children, useRef } from 'react';
 import { Flipped } from 'react-flip-toolkit';
 import {
-  DropdownRoot,
   Caret,
   DropdownBackground,
-  AltBackground,
+  DropdownRoot,
   InvertedDiv,
 } from './Components';
 import FadeContents from './FadeContents';
 
-const getFirstDropdownSectionHeight = el => {
+const getFirstDropdownSectionHeight = (el) => {
   if (
     !el ||
     !el.querySelector ||
@@ -54,65 +53,67 @@ export type DropdownContainerProps = {
   duration?: number;
 };
 
-class DropdownContainer extends Component<DropdownContainerProps> {
-  private altBackgroundEl: React.RefObject<any> = React.createRef();
-  private prevDropdownEl: React.RefObject<any> = React.createRef();
-  private currentDropdownEl: React.RefObject<any> = React.createRef();
+function DropdownContainer({
+  children,
+  direction,
+  animatingOut,
+  duration,
+}: DropdownContainerProps) {
+  const altBackgroundEl = useRef(null);
+  const prevDropdownEl = useRef(null);
+  const currentDropdownEl = useRef(null);
 
-  componentDidMount() {
-    updateAltBackground({
-      altBackground: this.altBackgroundEl.current,
-      prevDropdown: this.prevDropdownEl.current,
-      currentDropdown: this.currentDropdownEl.current,
-    });
-  }
+  // useEffect(() => {
+  //   updateAltBackground({
+  //     altBackground: altBackgroundEl.current,
+  //     prevDropdown: prevDropdownEl.current,
+  //     currentDropdown: currentDropdownEl.current,
+  //   });
+  // }, []);
 
-  render() {
-    const { children, direction, animatingOut, duration } = this.props;
-    const [currentDropdown, prevDropdown] = Children.toArray(children);
-    return (
-      <DropdownRoot
-        direction={direction}
-        animatingOut={animatingOut}
-        duration={duration}
-      >
-        <Flipped flipId="dropdown-caret">
-          <Caret />
-        </Flipped>
-        <Flipped flipId="dropdown">
-          <DropdownBackground>
-            <Flipped inverseFlipId="dropdown">
-              <InvertedDiv>
-                <AltBackground ref={this.altBackgroundEl} duration={duration} />
+  const [currentDropdown, prevDropdown] = Children.toArray(children);
+  return (
+    <DropdownRoot
+      direction={direction}
+      animatingOut={animatingOut}
+      duration={duration}
+    >
+      <Flipped flipId="dropdown-caret">
+        <Caret />
+      </Flipped>
+      <Flipped flipId="dropdown">
+        <DropdownBackground>
+          <Flipped inverseFlipId="dropdown">
+            <InvertedDiv>
+              {/* <AltBackground ref={altBackgroundEl} duration={duration} /> */}
+              <FadeContents
+                direction={direction}
+                duration={duration}
+                ref={currentDropdownEl}
+              >
+                {currentDropdown}
+              </FadeContents>
+            </InvertedDiv>
+          </Flipped>
+
+          <Flipped inverseFlipId="dropdown" scale>
+            <InvertedDiv absolute>
+              {prevDropdown && (
                 <FadeContents
+                  animatingOut
                   direction={direction}
                   duration={duration}
-                  ref={this.currentDropdownEl}
+                  ref={prevDropdownEl}
                 >
-                  {currentDropdown}
+                  {prevDropdown}
                 </FadeContents>
-              </InvertedDiv>
-            </Flipped>
-
-            <Flipped inverseFlipId="dropdown" scale>
-              <InvertedDiv absolute>
-                {prevDropdown && (
-                  <FadeContents
-                    animatingOut
-                    direction={direction}
-                    duration={duration}
-                    ref={this.prevDropdownEl}
-                  >
-                    {prevDropdown}
-                  </FadeContents>
-                )}
-              </InvertedDiv>
-            </Flipped>
-          </DropdownBackground>
-        </Flipped>
-      </DropdownRoot>
-    );
-  }
+              )}
+            </InvertedDiv>
+          </Flipped>
+        </DropdownBackground>
+      </Flipped>
+    </DropdownRoot>
+  );
 }
 
 export default DropdownContainer;

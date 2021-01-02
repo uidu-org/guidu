@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import {
   StyledNavigationAfter,
@@ -6,6 +6,16 @@ import {
   StyledNavigationItem,
   StyledNavigationText,
 } from '../../../styled';
+
+const DropdownSlot = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  perspective: 1500px;
+  margin-top: 0.5rem;
+  // width: 50vw;
+  z-index: 20;
+`;
 
 const StyledNavigationActions = styled.div<{ $isActionOpen: boolean }>`
   position: absolute;
@@ -22,24 +32,19 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   cursor: pointer;
   display: flex;
   border-radius: 0.25rem;
-  color: var(--body-color) !important;
+  color: currentColor;
   transition: background-color linear 300ms;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   position: relative;
+  font-weight: 500;
 
   &:hover,
   &.active {
-    background-color: var(--light);
-    color: var(--body-color);
-    transition: background-color linear 300ms;
-  }
-
-  &:hover ${StyledNavigationActions} {
-    transition: opacity linear 300ms;
-    opacity: 1;
+    color: currentColor;
+    /* color: var(--body-color); */
   }
 `;
 
@@ -47,39 +52,21 @@ export default function NavigationItem({
   text,
   before = null,
   after = null,
-  actions = [],
-  items = [],
-  isSortable = false,
-  isOpen: isDefaultOpen = false,
-  onDragEnd,
+  children,
   ...otherProps
 }) {
-  const [isOpen, setIsOpen] = useState(isDefaultOpen);
-  const [isActionOpen, setIsActionOpen] = useState(false);
-
   return (
     <>
       <StyledNavigationItem>
-        <StyledNavigationLink
-          {...(items.length > 0
-            ? {
-                onClick: (e) => {
-                  setIsOpen(!isOpen);
-                },
-              }
-            : {})}
-          {...otherProps}
-        >
+        <StyledNavigationLink {...otherProps}>
           {!!before && (
             <StyledNavigationBefore>{before}</StyledNavigationBefore>
           )}
-          <StyledNavigationText $isActionOpen={isActionOpen}>
-            {text}
-          </StyledNavigationText>
+          <StyledNavigationText>{text}</StyledNavigationText>
           {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
         </StyledNavigationLink>
+        <DropdownSlot>{children}</DropdownSlot>
       </StyledNavigationItem>
-      {/* {items.length > 0 && renderSubItems()} */}
     </>
   );
 }

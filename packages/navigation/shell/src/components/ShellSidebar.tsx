@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 export const ShellSidebar = styled.aside`
@@ -9,6 +9,6 @@ export const ShellSidebar = styled.aside`
   /* flex-grow: 1; */
 `;
 
-export default function ({ ...rest }) {
-  return <ShellSidebar {...rest} />;
+export default function (props: HTMLAttributes<HTMLDivElement>) {
+  return <ShellSidebar {...props} />;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 export const ShellHeader = styled.header`
@@ -12,6 +12,6 @@ export const ShellHeader = styled.header`
   flex-shrink: 0;
 `;
 
-export default function (props) {
+export default function (props: HTMLAttributes<HTMLDivElement>) {
   return <ShellHeader {...props} />;
 }

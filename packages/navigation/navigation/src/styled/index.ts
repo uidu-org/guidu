@@ -1,12 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledNavigationItem = styled.div`
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 100%;
+  align-items: center; */
+  align-self: center;
   position: relative;
+
+  &:hover,
+  &.active {
+    color: var(--primary);
+    /* color: var(--body-color); */
+    transition: color linear 100ms;
+  }
 `;
 
 export const StyledNavigationBefore = styled.div`
