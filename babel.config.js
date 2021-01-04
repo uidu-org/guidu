@@ -4,10 +4,9 @@ module.exports = function (api) {
   const plugins = [
     // '@loadable/babel-plugin',
     [
-      'react-intl',
+      'formatjs',
       {
         idInterpolationPattern: '[sha512:contenthash:base64:6]',
-        extractFromFormatMessageCall: true,
         ast: true,
       },
     ],

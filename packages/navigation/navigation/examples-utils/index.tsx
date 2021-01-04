@@ -1,7 +1,7 @@
 import Avatar from '@uidu/avatar';
 import React from 'react';
 import { Bell, MoreHorizontal, Settings } from 'react-feather';
-import { Link } from 'react-router-dom';
+import { NavLink as Link } from 'react-router-dom';
 
 const items = [
   {
@@ -76,17 +76,20 @@ export const schemaGenerator = ({ align, animated }) => {
               to: `/`,
               text: 'Riepilogo',
               type: 'NavigationItem',
+              as: Link,
             },
             {
               to: `/orders`,
               text: 'Ordini',
               type: 'NavigationItem',
+              as: Link,
               items: items,
             },
             {
               to: `/attendances`,
               text: 'Partecipanti',
               type: 'NavigationItem',
+              as: Link,
               dropdown: () => <div className="bg-danger p-5">Aiuto</div>,
             },
             {
