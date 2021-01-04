@@ -9,7 +9,7 @@ export default function AnimatedMenu({
   navbarConfig,
   className,
 }: AnimatedMenuProps) {
-  const [activeIndices, setActiveIndices] = useState([0]);
+  const [activeIndices, setActiveIndices] = useState([]);
   const [animatingOut, setAnimatingOut] = useState(false);
   const animatingOutTimeout = useRef(null);
 
@@ -49,6 +49,8 @@ export default function AnimatedMenu({
     PrevDropdown = navbarConfig[prevIndex].dropdown;
     direction = currentIndex > prevIndex ? 'right' : 'left';
   }
+
+  console.log(navbarConfig);
 
   return (
     <Flipper

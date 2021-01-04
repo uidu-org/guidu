@@ -1,7 +1,7 @@
 import React from 'react';
 import FormSubmit from '../FormSubmit';
 
-export default function FormSectioSubmit({ scope, ...otherProps }) {
+export default function FormSectionSubmit({ scope, ...otherProps }) {
   return (
     <div className="row">
       <div className="col-sm-6 col-lg-4">
