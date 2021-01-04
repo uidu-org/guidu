@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.8
+
+### Patch Changes
+
+- 46c1577: Debug navigation item, fix formSection typo
+
 ## 0.4.7
 
 ### Patch Changes

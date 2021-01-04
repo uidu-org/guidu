@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.2
+
+### Patch Changes
+
+- 46c1577: Debug navigation item, fix formSection typo
+
 ## 0.3.1
 
 ### Patch Changes
