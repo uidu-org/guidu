@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.1
+
+### Patch Changes
+
+- a8441f8: Fix initialState
+
 ## 0.3.0
 
 ### Minor Changes
