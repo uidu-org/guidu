@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.2.25
+
+### Patch Changes
+
+- Updated dependencies [d795c2f]
+  - @uidu/navigation@0.7.0
+
 ## 0.2.24
 
 ### Patch Changes

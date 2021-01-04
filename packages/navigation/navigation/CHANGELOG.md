@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.7.0
+
+### Minor Changes
+
+- d795c2f: Fix navigation dependency on animated menu
+
 ## 0.6.0
 
 ### Minor Changes

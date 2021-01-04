@@ -38,7 +38,7 @@
   "devDependencies": {
     "@uidu/docs": "^0.3.4",
     "@uidu/dropdown-menu": "^0.4.5",
-    "@uidu/navigation": "^0.6.0",
+    "@uidu/navigation": "^0.7.0",
     "@uidu/page-header": "^0.2.4",
     "@uidu/side-navigation": "^0.2.6",
     "react-intl": "^5.10.9"
