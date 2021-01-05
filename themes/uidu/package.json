@@ -7,6 +7,7 @@
   "author": "",
   "main": "index.scss",
   "files": [
+    "scss",
     "index.scss"
   ],
   "dependencies": {

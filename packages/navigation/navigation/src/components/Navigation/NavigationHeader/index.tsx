@@ -5,9 +5,9 @@ import StyledNavigationHeader, {
   StyledNavigationHeaderText,
 } from './styled';
 
-export default function NavigationHeader({ before, after, text }) {
+export default function NavigationHeader({ before, after, text, ...rest }) {
   return (
-    <StyledNavigationHeader>
+    <StyledNavigationHeader {...rest}>
       {!!before && (
         <StyledNavigationHeaderBefore>{before}</StyledNavigationHeaderBefore>
       )}
