@@ -1,5 +1,15 @@
 # @uidu/tabs
 
+## 0.2.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/docs@0.3.5
+  - @uidu/analytics@0.4.5
+  - @uidu/theme@0.5.6
+
 ## 0.2.4
 
 ### Patch Changes

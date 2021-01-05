@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.2.3
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.2.2
 
 ### Patch Changes

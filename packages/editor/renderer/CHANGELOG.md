@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.3.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/code@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+  - @uidu/adf-schema@0.3.4
+  - @uidu/adf-utils@0.6.4
+  - @uidu/editor-common@0.4.6
+  - @uidu/editor-json-transformer@0.3.5
+  - @uidu/analytics-listeners@0.3.4
+  - @uidu/analytics-namespaced-context@0.3.4
+  - @uidu/mentions@0.2.5
+  - @uidu/status@0.3.5
+  - @uidu/task-decision@0.3.5
+  - @uidu/media-card@0.4.5
+  - @uidu/media-filmstrip@0.3.5
+
 ## 0.3.6
 
 ### Patch Changes

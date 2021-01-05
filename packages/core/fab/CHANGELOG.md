@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.4.4
 
 ### Patch Changes

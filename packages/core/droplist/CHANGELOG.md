@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.4.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/item@0.4.6
+  - @uidu/layer@0.4.5
+  - @uidu/spinner@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+
 ## 0.4.5
 
 ### Patch Changes

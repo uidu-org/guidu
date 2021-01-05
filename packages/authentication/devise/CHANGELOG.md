@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/avatar@0.6.5
+  - @uidu/slider@1.6.5
+  - @uidu/spinner@0.4.5
+  - @uidu/checkbox@0.3.5
+  - @uidu/field-password@0.4.6
+  - @uidu/field-phone@0.2.6
+  - @uidu/field-text@0.4.6
+  - @uidu/form@0.4.9
+  - @uidu/shell@1.2.8
+
 ## 0.5.4
 
 ### Patch Changes

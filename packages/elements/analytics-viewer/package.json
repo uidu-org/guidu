@@ -1,6 +1,6 @@
 {
   "name": "@uidu/analytics-viewer",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Analytics viewer for the examples",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
   "license": "Apache-2.0",
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/analytics": "^0.4.4",
+    "@uidu/analytics": "^0.4.5",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },

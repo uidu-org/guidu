@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.4
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/checkbox@0.3.5
+  - @uidu/field-number@0.4.6
+  - @uidu/field-text@0.4.6
+  - @uidu/field-textarea@0.3.5
+  - @uidu/select@0.6.7
+
 ## 0.3.3
 
 ### Patch Changes

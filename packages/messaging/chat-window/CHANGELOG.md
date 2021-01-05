@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/message@0.3.6
+  - @uidu/message-form@0.3.5
+  - @uidu/message-renderer@0.3.5
+
 ## 0.3.4
 
 ### Patch Changes

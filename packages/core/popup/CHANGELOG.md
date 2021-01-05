@@ -1,5 +1,15 @@
 # @uidu/popup
 
+## 0.4.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/popper@0.4.5
+  - @uidu/portal@0.4.5
+  - @uidu/theme@0.5.6
+
 ## 0.4.4
 
 ### Patch Changes

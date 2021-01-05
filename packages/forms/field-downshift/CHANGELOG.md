@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/field-base@0.5.7
+  - @uidu/field-text@0.4.6
+
 ## 0.5.6
 
 ### Patch Changes

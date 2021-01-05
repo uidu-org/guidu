@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/button@0.4.5
+  - @uidu/spinner@0.4.5
+  - @uidu/field-base@0.5.7
+  - @uidu/media-core@0.4.4
+
 ## 0.4.6
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.2.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/spinner@0.4.5
+  - @uidu/data-controls@0.7.2
+  - @uidu/data-fields@0.5.3
+  - @uidu/shell@1.2.8
+
 ## 0.2.6
 
 ### Patch Changes

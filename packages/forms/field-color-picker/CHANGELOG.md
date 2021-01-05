@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.3.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/popup@0.4.5
+  - @uidu/field-base@0.5.7
+
 ## 0.3.6
 
 ### Patch Changes

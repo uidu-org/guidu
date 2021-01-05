@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.3.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/button@0.4.5
+  - @uidu/code@0.4.5
+  - @uidu/section-message@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+
 ## 0.3.4
 
 ### Patch Changes

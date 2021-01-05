@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/avatar-group@2.5.6
+  - @uidu/button@0.4.5
+  - @uidu/spinner@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/analytics-namespaced-context@0.3.4
+
 ## 0.3.4
 
 ### Patch Changes

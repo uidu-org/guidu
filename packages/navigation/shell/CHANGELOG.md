@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.8
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/spinner@0.4.5
+
 ## 1.2.7
 
 ### Patch Changes

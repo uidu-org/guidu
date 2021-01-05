@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.2.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/theme@0.5.6
+  - @uidu/shell@1.2.8
+
 ## 0.2.4
 
 ### Patch Changes

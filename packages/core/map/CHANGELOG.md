@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.5.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/theme@0.5.6
+
 ## 0.5.4
 
 ### Patch Changes

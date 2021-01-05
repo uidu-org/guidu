@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.8.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/dashboard-controls@0.4.6
+  - @uidu/dashlets@0.7.9
+
 ## 0.8.6
 
 ### Patch Changes

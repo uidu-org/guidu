@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.2.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/accordion@0.4.5
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/dashlets@0.7.9
+  - @uidu/field-downshift@0.5.7
+  - @uidu/field-toggle@0.4.7
+  - @uidu/form@0.4.9
+  - @uidu/select@0.6.7
+  - @uidu/shell@1.2.8
+
 ## 0.2.5
 
 ### Patch Changes

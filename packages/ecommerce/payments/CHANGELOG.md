@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 0.4.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/slider@1.6.5
+  - @uidu/theme@0.5.6
+  - @uidu/field-base@0.5.7
+  - @uidu/form@0.4.9
+
 ## 0.4.6
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/payments@0.4.7
+  - @uidu/form@0.4.9
+
 ## 0.2.4
 
 ### Patch Changes

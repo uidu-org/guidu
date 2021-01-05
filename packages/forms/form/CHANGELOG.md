@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.9
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.4.8
 
 ### Patch Changes

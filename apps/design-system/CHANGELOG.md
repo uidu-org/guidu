@@ -1,5 +1,15 @@
 # design-system
 
+## 0.1.8
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/button@0.4.5
+  - @uidu/theme@0.5.6
+
 ## 0.1.7
 
 ### Patch Changes

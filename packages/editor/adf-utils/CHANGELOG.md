@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.6.4
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/adf-schema@0.3.4
+
 ## 0.6.3
 
 ### Patch Changes

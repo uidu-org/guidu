@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/theme@0.5.6
+  - @uidu/media-card@0.4.5
+  - @uidu/media-core@0.4.4
+  - @uidu/media-viewer@0.3.5
+
 ## 0.3.4
 
 ### Patch Changes

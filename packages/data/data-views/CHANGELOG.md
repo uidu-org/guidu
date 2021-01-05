@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.8
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/data-controls@0.7.2
+  - @uidu/field-counter@0.3.5
+  - @uidu/field-number@0.4.6
+  - @uidu/form@0.4.9
+  - @uidu/select@0.6.7
+
 ## 0.5.7
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.9
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/spinner@0.4.5
+  - @uidu/tooltip@0.4.5
+  - @uidu/dashlet-controls@0.3.6
+
 ## 0.7.8
 
 ### Patch Changes

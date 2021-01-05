@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/button@0.4.5
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/spinner@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+  - @uidu/media-core@0.4.4
+
 ## 0.4.4
 
 ### Patch Changes
