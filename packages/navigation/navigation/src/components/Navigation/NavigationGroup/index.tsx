@@ -9,7 +9,7 @@ function DefaultDropdown(props) {
     return null;
   }
   return (
-    <div style={{ width: '300px' }}>
+    <div style={{ width: '300px' }} data-first-dropdown-section>
       <MenuGroup>
         {(props.items || []).map((c) => (
           <ButtonItem key={c.text}>{c.text}</ButtonItem>

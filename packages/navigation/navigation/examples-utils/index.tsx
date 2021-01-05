@@ -90,7 +90,11 @@ export const schemaGenerator = ({ align, animated }) => {
               text: 'Partecipanti',
               type: 'NavigationItem',
               as: Link,
-              dropdown: () => <div className="bg-danger p-5">Aiuto</div>,
+              dropdown: () => (
+                <div className="bg-danger p-5">
+                  <div className="container">Aiuto</div>
+                </div>
+              ),
             },
             {
               to: `/messages`,

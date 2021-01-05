@@ -1,22 +1,18 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const getDropdownRootKeyFrame = ({ animatingOut, direction }) => {
   if (!animatingOut && direction) return null;
   return keyframes`
   from {
     transform: ${animatingOut ? 'rotateX(0)' : 'rotateX(-15deg)'};
-    /* opacity: ${animatingOut ? 1 : 0}; */
+    opacity: ${animatingOut ? 1 : 0};
   }
   to {
     transform: ${animatingOut ? 'rotateX(-15deg)' : 'rotateX(0)'};
-    /* opacity: ${animatingOut ? 0 : 1}; */
+    opacity: ${animatingOut ? 0 : 1};
   }
 `;
 };
-
-const getAnimationName = css`
-  ${getDropdownRootKeyFrame};
-`;
 
 export const DropdownRoot = styled.div<{
   duration?: number;
@@ -24,7 +20,7 @@ export const DropdownRoot = styled.div<{
   animatingOut: boolean;
 }>`
   transform-origin: 0 0;
-  animation-name: ${getAnimationName};
+  animation-name: ${getDropdownRootKeyFrame};
   animation-duration: ${(props) => props.duration}ms;
   /* use 'forwards' to prevent flicker on leave animation */
   animation-fill-mode: forwards;

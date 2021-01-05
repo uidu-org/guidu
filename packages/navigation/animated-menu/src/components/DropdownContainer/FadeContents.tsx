@@ -6,7 +6,7 @@ const getFadeContainerKeyFrame = ({ animatingOut, direction }) => {
   return keyframes`
   to {
     transform: translateX(0px);
-    /* opacity: ${animatingOut ? 0 : 1}; */
+    opacity: ${animatingOut ? 0 : 1};
   }
 `;
 };
@@ -20,7 +20,7 @@ const FadeContainer = styled.div<{
   animation-name: ${getFadeContainerKeyFrame};
   animation-duration: ${(props) => props.duration}ms;
   animation-fill-mode: forwards;
-  // opacity: ${(props) => (props.direction && !props.animatingOut ? 0 : 1)};
+  opacity: ${(props) => (props.direction && !props.animatingOut ? 0 : 1)};
   top: 0;
   left: 0;
 `;

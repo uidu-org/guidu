@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import classNames from 'classnames';
+import React from 'react';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-import classNames from 'classnames';
 
 const NavbarItemTitle = styled(Link)`
   display: flex;
@@ -29,7 +28,6 @@ const DropdownSlot = styled.div`
   transform: translateX(-50%);
   perspective: 1500px;
   margin-top: 0.5rem;
-  // width: 50vw;
 `;
 
 export type NavbarItemProps = {
@@ -42,30 +40,30 @@ export type NavbarItemProps = {
   children?: React.ReactNode;
 };
 
-export default class NavbarItem extends Component<NavbarItemProps> {
-  onMouseEnter = () => {
-    const { onMouseEnter, index } = this.props;
-    onMouseEnter(index);
+export default function NavbarItem({
+  onMouseEnter: propOnMouseEnter,
+  index,
+  name,
+  path,
+  onMouseLeave,
+  children,
+  className,
+}: NavbarItemProps) {
+  const onMouseEnter = () => {
+    propOnMouseEnter(index);
   };
-
-  render() {
-    const { name, path, onMouseLeave, children, className } = this.props;
-    return (
-      <NavbarItemEl
-        onMouseEnter={this.onMouseEnter}
-        onFocus={this.onMouseEnter}
+  return (
+    <NavbarItemEl onMouseEnter={onMouseEnter} onFocus={onMouseEnter}>
+      <NavbarItemTitle
+        to={path}
+        className={classNames('nav-link py-3', className)}
+        // onMouseEnter={onMouseEnter}
+        // onClick={onMouseLeave}
+        // onFocus={onMouseEnter}
       >
-        <NavbarItemTitle
-          to={path}
-          className={classNames('nav-link py-3', className)}
-          onMouseEnter={this.onMouseEnter}
-          onClick={onMouseLeave}
-          onFocus={this.onMouseEnter}
-        >
-          {name}
-        </NavbarItemTitle>
-        <DropdownSlot>{children}</DropdownSlot>
-      </NavbarItemEl>
-    );
-  }
+        {name}
+      </NavbarItemTitle>
+      <DropdownSlot>{children}</DropdownSlot>
+    </NavbarItemEl>
+  );
 }

@@ -1,23 +1,17 @@
-import React from 'react';
-
-import { HashRouter, Link } from 'react-router-dom';
-
 import EmojiCustomIcon from '@atlaskit/icon/glyph/emoji/custom';
 import StarIcon from '@atlaskit/icon/glyph/star';
-
+import React from 'react';
+import { HashRouter } from 'react-router-dom';
 import {
   ButtonItem,
   CustomItem,
   CustomItemComponentProps,
   HeadingItem,
   LinkItem,
+  RouterItem,
   SkeletonHeadingItem,
   SkeletonItem,
 } from '../src';
-
-const RouterLink = (props: CustomItemComponentProps) => (
-  <Link to="/my-route" {...props} />
-);
 
 const Emphasis = (props: CustomItemComponentProps) => <em {...props} />;
 const Star = <StarIcon label="" />;
@@ -105,8 +99,8 @@ const ItemVariants = () => {
         Disabled custom element using em tag
       </CustomItem>
       <HashRouter>
-        <CustomItem
-          component={RouterLink}
+        <RouterItem
+          to="/"
           testId="item-custom-router"
           description="some custom text"
           isSelected
@@ -114,7 +108,7 @@ const ItemVariants = () => {
           iconBefore={<EmojiCustomIcon label="icon before" />}
         >
           I'm a react-router link rendered using CustomItem
-        </CustomItem>
+        </RouterItem>
       </HashRouter>
       <SkeletonHeadingItem testId="skeleton-heading-item" />
       <SkeletonItem testId="skeleton-item" />

@@ -1,6 +1,7 @@
-import React, { Children, useRef } from 'react';
+import React, { Children, useEffect, useRef } from 'react';
 import { Flipped } from 'react-flip-toolkit';
 import {
+  AltBackground,
   Caret,
   DropdownBackground,
   DropdownRoot,
@@ -63,13 +64,13 @@ function DropdownContainer({
   const prevDropdownEl = useRef(null);
   const currentDropdownEl = useRef(null);
 
-  // useEffect(() => {
-  //   updateAltBackground({
-  //     altBackground: altBackgroundEl.current,
-  //     prevDropdown: prevDropdownEl.current,
-  //     currentDropdown: currentDropdownEl.current,
-  //   });
-  // }, []);
+  useEffect(() => {
+    updateAltBackground({
+      altBackground: altBackgroundEl.current,
+      prevDropdown: prevDropdownEl.current,
+      currentDropdown: currentDropdownEl.current,
+    });
+  }, []);
 
   const [currentDropdown, prevDropdown] = Children.toArray(children);
   return (
@@ -85,7 +86,7 @@ function DropdownContainer({
         <DropdownBackground>
           <Flipped inverseFlipId="dropdown">
             <InvertedDiv>
-              {/* <AltBackground ref={altBackgroundEl} duration={duration} /> */}
+              <AltBackground ref={altBackgroundEl} duration={duration} />
               <FadeContents
                 direction={direction}
                 duration={duration}

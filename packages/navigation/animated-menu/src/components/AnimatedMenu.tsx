@@ -16,18 +16,18 @@ export default function AnimatedMenu({
   const resetDropdownState = (i) => {
     setActiveIndices(typeof i === 'number' ? [i] : []);
     setAnimatingOut(false);
-    // animatingOutTimeout = null;
+    animatingOutTimeout.current = null;
   };
 
   const onMouseEnter = (i) => {
-    if (animatingOutTimeout) {
+    if (animatingOutTimeout.current) {
       clearTimeout(animatingOutTimeout.current);
       resetDropdownState(i);
       return;
     }
     if (activeIndices[activeIndices.length - 1] === i) return;
-    setActiveIndices((prevActiveIndices) => prevActiveIndices.concat(i));
     setAnimatingOut(false);
+    setActiveIndices((prevActiveIndices) => prevActiveIndices.concat(i));
   };
 
   const onMouseLeave = () => {
@@ -41,7 +41,7 @@ export default function AnimatedMenu({
 
   const currentIndex = activeIndices[activeIndices.length - 1];
   const prevIndex =
-    activeIndices.length > 1 && activeIndices[activeIndices.length - 2];
+    activeIndices.length > 1 ? activeIndices[activeIndices.length - 2] : null;
 
   if (typeof currentIndex === 'number')
     CurrentDropdown = navbarConfig[currentIndex].dropdown;
@@ -50,42 +50,39 @@ export default function AnimatedMenu({
     direction = currentIndex > prevIndex ? 'right' : 'left';
   }
 
-  console.log(navbarConfig);
-
   return (
     <Flipper
       flipKey={currentIndex}
       spring={duration === 300 ? 'noWobble' : { stiffness: 10, damping: 10 }}
-      className={className}
+      className="d-flex"
     >
-      {navbarConfig.map(
-        (
-          {
-            path,
-            to,
-            className: nClassName,
-            component: Component = NavbarItem,
-            items = [],
-            dropdown,
-            ...rest
-          },
-          index,
-        ) => (
-          <Component
-            key={path || to}
-            className={nClassName}
-            path={path || to}
-            to={path || to}
-            index={index}
-            onMouseEnter={(e) => {
-              onMouseEnter(index);
-            }}
-            // onMouseLeave={onMouseLeave}
-            {...rest}
-          >
-            {currentIndex === index &&
-              CurrentDropdown &&
-              (dropdown || items.length > 0) && (
+      <div onMouseLeave={onMouseLeave} className={className}>
+        {navbarConfig.map(
+          (
+            {
+              path,
+              to,
+              className: nClassName,
+              component: Component = NavbarItem,
+              items = [],
+              dropdown,
+              ...rest
+            },
+            index,
+          ) => (
+            <Component
+              key={path || to}
+              className={nClassName}
+              path={path || to}
+              to={path || to}
+              index={index}
+              onMouseEnter={(e) => {
+                onMouseEnter(index);
+              }}
+              // onMouseLeave={onMouseLeave}
+              {...rest}
+            >
+              {currentIndex === index && (dropdown || items.length > 0) && (
                 <DropdownContainer
                   direction={direction}
                   animatingOut={animatingOut}
@@ -95,9 +92,10 @@ export default function AnimatedMenu({
                   {PrevDropdown && <PrevDropdown />}
                 </DropdownContainer>
               )}
-          </Component>
-        ),
-      )}
+            </Component>
+          ),
+        )}
+      </div>
     </Flipper>
   );
 }
