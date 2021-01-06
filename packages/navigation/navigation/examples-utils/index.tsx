@@ -63,6 +63,8 @@ export const schemaGenerator = ({ align, animated }) => {
       type: 'NavigationHeader',
       text: 'Team',
       before: <Avatar borderColor="transparent" />,
+      as: Link,
+      to: '/',
     },
     {
       type: 'PrimarySection',

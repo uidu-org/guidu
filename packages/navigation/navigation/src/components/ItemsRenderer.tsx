@@ -2,7 +2,7 @@
 import { gridSize } from '@uidu/theme';
 import React, { PureComponent } from 'react';
 import NavigationGroup from './Navigation/NavigationGroup';
-import NavigationHeaderComponent from './Navigation/NavigationHeader';
+import NavigationHeader from './Navigation/NavigationHeader';
 import NavigationHeaderSkeletonComponent from './Navigation/NavigationHeaderSkeleton';
 import NavigationIconItem from './Navigation/NavigationIconItem';
 import NavigationItem from './Navigation/NavigationItem';
@@ -15,10 +15,6 @@ import SecondaryActions from './Navigation/SecondaryActions';
  */
 
 // Header
-const NavigationHeader = ({ text, after, before }) => (
-  <NavigationHeaderComponent text={text} after={after} before={before} />
-);
-
 const NavigationHeaderSkeleton = ({ text, after, before }) => (
   <NavigationHeaderSkeletonComponent
     text={text}

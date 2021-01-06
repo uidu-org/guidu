@@ -22,4 +22,11 @@ export default styled.div.attrs(({ className }) => ({
 }))`
   align-items: center;
   display: flex;
+  text-decoration: none;
+  color: var(--body-color);
+
+  &:hover {
+    text-decoration: none;
+    color: var(--body-color);
+  }
 `;
