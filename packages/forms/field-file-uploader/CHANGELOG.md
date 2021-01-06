@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.4.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/field-base@0.5.7
+
 ## 0.4.4
 
 ### Patch Changes

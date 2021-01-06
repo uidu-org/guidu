@@ -1,5 +1,12 @@
 # @uidu/animated-menu
 
+## 0.3.3
+
+### Patch Changes
+
+- 3aa1e19: Better animated menu and dropdown, added routeritem to @uidu/menu
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.3.2
 
 ### Patch Changes

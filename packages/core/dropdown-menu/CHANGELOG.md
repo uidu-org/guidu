@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.4.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/button@0.4.5
+  - @uidu/droplist@0.4.6
+  - @uidu/item@0.4.6
+  - @uidu/theme@0.5.6
+
 ## 0.4.5
 
 ### Patch Changes

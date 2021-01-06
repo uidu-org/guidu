@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.5.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/form@0.4.9
+
 ## 0.5.5
 
 ### Patch Changes

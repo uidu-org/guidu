@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/slider@1.6.5
+  - @uidu/spinner@0.4.5
+  - @uidu/payments@0.4.7
+  - @uidu/field-text@0.4.6
+  - @uidu/form@0.4.9
+  - @uidu/stepper@0.3.5
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.3.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/avatar@0.6.5
+  - @uidu/avatar-group@2.5.6
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/field-date-range@0.3.5
+  - @uidu/form@0.4.9
+
 ## 0.3.5
 
 ### Patch Changes

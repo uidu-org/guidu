@@ -1,5 +1,33 @@
 # Change Log
 
+## 0.2.26
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [3aa1e19]
+- Updated dependencies [ec6fdfd]
+- Updated dependencies [3aa1e19]
+  - @uidu/navigation@0.7.1
+  - @uidu/docs@0.3.5
+  - @uidu/badge@0.4.5
+  - @uidu/button@0.4.5
+  - @uidu/code@0.4.5
+  - @uidu/drawer@0.5.6
+  - @uidu/lozenge@0.4.5
+  - @uidu/modal-dialog@0.4.7
+  - @uidu/spinner@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+  - @uidu/list@0.2.7
+  - @uidu/table@0.6.3
+  - @uidu/checkbox@0.3.5
+  - @uidu/field-text@0.4.6
+  - @uidu/form@0.4.9
+  - @uidu/select@0.6.7
+  - @uidu/shell@1.2.8
+  - @uidu/themes-uidu@0.3.16
+
 ## 0.2.25
 
 ### Patch Changes

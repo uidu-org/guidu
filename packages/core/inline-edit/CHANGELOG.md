@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.2.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/button@0.4.5
+  - @uidu/inline-dialog@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/field@0.3.4
+  - @uidu/field-text@0.4.6
+  - @uidu/form@0.4.9
+
 ## 0.2.4
 
 ### Patch Changes

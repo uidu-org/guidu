@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/data-fields@0.5.3
+
 ## 0.2.6
 
 ### Patch Changes

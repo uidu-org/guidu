@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.26
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.1.25
 
 ### Patch Changes

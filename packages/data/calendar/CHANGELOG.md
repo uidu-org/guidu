@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/shell@1.2.8
+
 ## 0.2.5
 
 ### Patch Changes

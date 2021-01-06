@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.96
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/changelog-loader@0.1.26
+  - @uidu/fs-loader@0.1.39
+  - @uidu/nav-info-loader@0.1.40
+
 ## 0.1.95
 
 ### Patch Changes

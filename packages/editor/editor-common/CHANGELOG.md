@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/adf-schema@0.3.4
+  - @uidu/adf-utils@0.6.4
+  - @uidu/analytics-namespaced-context@0.3.4
+  - @uidu/emoji@0.3.4
+  - @uidu/mentions@0.2.5
+  - @uidu/profilecard@0.1.4
+
 ## 0.4.5
 
 ### Patch Changes

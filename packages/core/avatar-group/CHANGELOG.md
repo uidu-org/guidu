@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/avatar@0.6.5
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+
 ## 2.5.5
 
 ### Patch Changes

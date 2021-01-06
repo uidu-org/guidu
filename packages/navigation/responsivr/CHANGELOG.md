@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.3.4
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.3.3
 
 ### Patch Changes

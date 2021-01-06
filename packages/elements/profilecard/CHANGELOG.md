@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.1.4
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/avatar@0.6.5
+  - @uidu/button@0.4.5
+  - @uidu/lozenge@0.4.5
+  - @uidu/popup@0.4.5
+  - @uidu/spinner@0.4.5
+  - @uidu/theme@0.5.6
+
 ## 0.1.3
 
 ### Patch Changes

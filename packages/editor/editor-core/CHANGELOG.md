@@ -1,5 +1,44 @@
 # @uidu/editor-core
 
+## 0.7.7
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [3aa1e19]
+- Updated dependencies [ec6fdfd]
+  - @uidu/menu@0.4.7
+  - @uidu/analytics@0.4.5
+  - @uidu/avatar@0.6.5
+  - @uidu/avatar-group@2.5.6
+  - @uidu/button@0.4.5
+  - @uidu/droplist@0.4.6
+  - @uidu/modal-dialog@0.4.7
+  - @uidu/spinner@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+  - @uidu/adf-schema@0.3.4
+  - @uidu/adf-utils@0.6.4
+  - @uidu/editor-common@0.4.6
+  - @uidu/editor-json-transformer@0.3.5
+  - @uidu/editor-markdown-transformer@0.3.5
+  - @uidu/analytics-gas-types@0.2.3
+  - @uidu/analytics-listeners@0.3.4
+  - @uidu/analytics-namespaced-context@0.3.4
+  - @uidu/date@0.3.5
+  - @uidu/emoji@0.3.4
+  - @uidu/mentions@0.2.5
+  - @uidu/profilecard@0.1.4
+  - @uidu/status@0.3.5
+  - @uidu/task-decision@0.3.5
+  - @uidu/field-date@0.3.8
+  - @uidu/form@0.4.9
+  - @uidu/select@0.6.7
+  - @uidu/media-card@0.4.5
+  - @uidu/media-core@0.4.4
+  - @uidu/media-filmstrip@0.3.5
+  - @uidu/media-picker@0.4.4
+
 ## 0.7.6
 
 ### Patch Changes

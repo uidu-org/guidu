@@ -1,5 +1,23 @@
 # @uidu/navigation
 
+## 0.7.1
+
+### Patch Changes
+
+- 3aa1e19: Better animated menu and dropdown, added routeritem to @uidu/menu
+- ec6fdfd: Fix build, bump react-intl
+- 3aa1e19: Allow for uidu/theme usage from extarnal libs
+- Updated dependencies [3aa1e19]
+- Updated dependencies [ec6fdfd]
+  - @uidu/menu@0.4.7
+  - @uidu/animated-menu@0.3.3
+  - @uidu/avatar@0.6.5
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/inline-dialog@0.4.5
+  - @uidu/theme@0.5.6
+  - @uidu/tooltip@0.4.5
+  - @uidu/shell@1.2.8
+
 ## 0.7.0
 
 ### Minor Changes

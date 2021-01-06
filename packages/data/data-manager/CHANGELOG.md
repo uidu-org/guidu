@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.8.4
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/spinner@0.4.5
+  - @uidu/board@0.3.5
+  - @uidu/calendar@0.2.6
+  - @uidu/data-controls@0.7.2
+  - @uidu/data-fields@0.5.3
+  - @uidu/data-views@0.5.8
+  - @uidu/gallery@0.2.7
+  - @uidu/list@0.2.7
+  - @uidu/table@0.6.3
+  - @uidu/shell@1.2.8
+
 ## 0.8.3
 
 ### Patch Changes

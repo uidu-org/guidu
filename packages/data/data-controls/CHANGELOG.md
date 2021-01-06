@@ -1,5 +1,27 @@
 # @uidu/data-controls
 
+## 0.7.2
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [3aa1e19]
+- Updated dependencies [ec6fdfd]
+  - @uidu/menu@0.4.7
+  - @uidu/drawer@0.5.6
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/inline-dialog@0.4.5
+  - @uidu/popup@0.4.5
+  - @uidu/spinner@0.4.5
+  - @uidu/tooltip@0.4.5
+  - @uidu/data-fields@0.5.3
+  - @uidu/data-views@0.5.8
+  - @uidu/checkbox@0.3.5
+  - @uidu/field-text@0.4.6
+  - @uidu/form@0.4.9
+  - @uidu/select@0.6.7
+  - @uidu/shell@1.2.8
+
 ## 0.7.1
 
 ### Patch Changes

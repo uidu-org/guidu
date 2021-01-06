@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.3.4
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/analytics@0.4.5
+  - @uidu/analytics-gas-types@0.2.3
+  - @uidu/analytics-namespaced-context@0.3.4
+
 ## 0.3.3
 
 ### Patch Changes

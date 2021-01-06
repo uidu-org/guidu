@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 1.6.4
 
 ### Patch Changes

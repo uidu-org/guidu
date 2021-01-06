@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/dropdown-menu@0.4.6
+  - @uidu/spinner@0.4.5
+  - @uidu/field-mentions@0.4.6
+  - @uidu/field-text@0.4.6
+  - @uidu/form@0.4.9
+  - @uidu/media-filmstrip@0.3.5
+  - @uidu/message@0.3.6
+
 ## 0.3.4
 
 ### Patch Changes

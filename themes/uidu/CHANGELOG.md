@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.3.16
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- 3aa1e19: Allow for uidu/theme usage from extarnal libs
+
 ## 0.3.15
 
 ### Patch Changes

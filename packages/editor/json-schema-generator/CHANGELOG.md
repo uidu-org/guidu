@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.21
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.1.20
 
 ### Patch Changes

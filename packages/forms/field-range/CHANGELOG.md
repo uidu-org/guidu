@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 0.4.6
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+- Updated dependencies [ec6fdfd]
+  - @uidu/theme@0.5.6
+  - @uidu/field-base@0.5.7
+  - @uidu/form@0.4.9
+
 ## 0.4.5
 
 ### Patch Changes

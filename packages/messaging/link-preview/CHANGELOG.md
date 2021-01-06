@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.5
+
+### Patch Changes
+
+- ec6fdfd: Fix build, bump react-intl
+
 ## 0.2.4
 
 ### Patch Changes
