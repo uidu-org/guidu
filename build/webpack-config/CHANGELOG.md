@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.97
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/changelog-loader@0.1.27
+  - @uidu/fs-loader@0.1.40
+  - @uidu/nav-info-loader@0.1.41
+
 ## 0.1.96
 
 ### Patch Changes

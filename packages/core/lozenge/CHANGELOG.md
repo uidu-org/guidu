@@ -1,5 +1,13 @@
 # @uidu/lozenge
 
+## 0.4.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/theme@0.5.7
+
 ## 0.4.5
 
 ### Patch Changes

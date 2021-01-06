@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.3.5
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/shell@1.2.9
+
 ## 0.3.4
 
 ### Patch Changes

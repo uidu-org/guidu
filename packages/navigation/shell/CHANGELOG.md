@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.9
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/spinner@0.4.6
+
 ## 1.2.8
 
 ### Patch Changes

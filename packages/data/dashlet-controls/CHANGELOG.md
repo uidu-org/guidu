@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.3.7
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/avatar@0.6.6
+  - @uidu/avatar-group@2.5.7
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/field-date-range@0.3.6
+  - @uidu/form@0.4.10
+
 ## 0.3.6
 
 ### Patch Changes

@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.7.3
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/drawer@0.5.7
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/inline-dialog@0.4.6
+  - @uidu/menu@0.4.8
+  - @uidu/popup@0.4.6
+  - @uidu/spinner@0.4.6
+  - @uidu/tooltip@0.4.6
+  - @uidu/data-fields@0.5.4
+  - @uidu/data-views@0.5.9
+  - @uidu/checkbox@0.3.6
+  - @uidu/field-text@0.4.7
+  - @uidu/form@0.4.10
+  - @uidu/select@0.6.8
+  - @uidu/shell@1.2.9
+
 ## 0.7.2
 
 ### Patch Changes

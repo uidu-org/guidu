@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.9
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/data-controls@0.7.3
+  - @uidu/field-counter@0.3.6
+  - @uidu/field-number@0.4.7
+  - @uidu/form@0.4.10
+  - @uidu/select@0.6.8
+
 ## 0.5.8
 
 ### Patch Changes

@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.27
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/navigation@0.7.2
+  - @uidu/docs@0.3.6
+  - @uidu/badge@0.4.6
+  - @uidu/button@0.4.6
+  - @uidu/code@0.4.6
+  - @uidu/drawer@0.5.7
+  - @uidu/lozenge@0.4.6
+  - @uidu/modal-dialog@0.4.8
+  - @uidu/spinner@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+  - @uidu/list@0.2.8
+  - @uidu/table@0.6.4
+  - @uidu/checkbox@0.3.6
+  - @uidu/field-text@0.4.7
+  - @uidu/form@0.4.10
+  - @uidu/select@0.6.8
+  - @uidu/shell@1.2.9
+  - @uidu/themes-uidu@0.3.17
+
 ## 0.2.26
 
 ### Patch Changes

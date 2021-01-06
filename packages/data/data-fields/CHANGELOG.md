@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.5.4
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/menu@0.4.8
+  - @uidu/field-color-picker@0.3.8
+  - @uidu/field-date@0.3.9
+  - @uidu/field-downshift@0.5.8
+  - @uidu/field-number@0.4.7
+  - @uidu/field-text@0.4.7
+  - @uidu/field-time@0.4.8
+  - @uidu/field-toggle@0.4.8
+  - @uidu/form@0.4.10
+  - @uidu/select@0.6.8
+
 ## 0.5.3
 
 ### Patch Changes

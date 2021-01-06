@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+
 ## 1.6.5
 
 ### Patch Changes

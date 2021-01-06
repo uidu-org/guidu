@@ -1,5 +1,16 @@
 # @uidu/tooltip
 
+## 0.4.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/popper@0.4.6
+  - @uidu/portal@0.4.6
+  - @uidu/theme@0.5.7
+
 ## 0.4.5
 
 ### Patch Changes

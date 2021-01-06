@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.5
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/checkbox@0.3.6
+  - @uidu/field-number@0.4.7
+  - @uidu/field-text@0.4.7
+  - @uidu/field-textarea@0.3.6
+  - @uidu/select@0.6.8
+
 ## 0.3.4
 
 ### Patch Changes

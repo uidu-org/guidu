@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.4.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/field-base@0.5.8
+
 ## 0.4.5
 
 ### Patch Changes

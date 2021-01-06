@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.2.4
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+
 ## 0.2.3
 
 ### Patch Changes

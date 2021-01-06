@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/slider@1.6.6
+  - @uidu/spinner@0.4.6
+  - @uidu/payments@0.4.8
+  - @uidu/field-text@0.4.7
+  - @uidu/form@0.4.10
+  - @uidu/stepper@0.3.6
+
 ## 0.2.7
 
 ### Patch Changes

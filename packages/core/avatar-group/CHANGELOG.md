@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.7
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/avatar@0.6.6
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+
 ## 2.5.6
 
 ### Patch Changes

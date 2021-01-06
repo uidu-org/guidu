@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.8.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/dashboard-controls@0.4.7
+  - @uidu/dashlets@0.7.10
+
 ## 0.8.7
 
 ### Patch Changes

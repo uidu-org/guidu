@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.2.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/spinner@0.4.6
+  - @uidu/data-controls@0.7.3
+  - @uidu/data-fields@0.5.4
+  - @uidu/shell@1.2.9
+
 ## 0.2.7
 
 ### Patch Changes

@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.7.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/avatar@0.6.6
+  - @uidu/avatar-group@2.5.7
+  - @uidu/button@0.4.6
+  - @uidu/droplist@0.4.7
+  - @uidu/menu@0.4.8
+  - @uidu/modal-dialog@0.4.8
+  - @uidu/spinner@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+  - @uidu/adf-schema@0.3.5
+  - @uidu/adf-utils@0.6.5
+  - @uidu/editor-common@0.4.7
+  - @uidu/editor-json-transformer@0.3.6
+  - @uidu/editor-markdown-transformer@0.3.6
+  - @uidu/analytics-gas-types@0.2.4
+  - @uidu/analytics-listeners@0.3.5
+  - @uidu/analytics-namespaced-context@0.3.5
+  - @uidu/date@0.3.6
+  - @uidu/emoji@0.3.5
+  - @uidu/mentions@0.2.6
+  - @uidu/profilecard@0.1.5
+  - @uidu/status@0.3.6
+  - @uidu/task-decision@0.3.6
+  - @uidu/field-date@0.3.9
+  - @uidu/form@0.4.10
+  - @uidu/select@0.6.8
+  - @uidu/media-card@0.4.6
+  - @uidu/media-core@0.4.5
+  - @uidu/media-filmstrip@0.3.6
+  - @uidu/media-picker@0.4.5
+
 ## 0.7.7
 
 ### Patch Changes

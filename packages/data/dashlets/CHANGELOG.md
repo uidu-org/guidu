@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.10
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/spinner@0.4.6
+  - @uidu/tooltip@0.4.6
+  - @uidu/dashlet-controls@0.3.7
+
 ## 0.7.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.41
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+
 ## 0.1.40
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/avatar-group@2.5.7
+  - @uidu/button@0.4.6
+  - @uidu/spinner@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/analytics-namespaced-context@0.3.5
+
 ## 0.3.5
 
 ### Patch Changes
