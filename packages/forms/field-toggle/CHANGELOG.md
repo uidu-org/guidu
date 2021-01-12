@@ -1,5 +1,11 @@
 # @uidu/toggle
 
+## 0.4.9
+
+### Patch Changes
+
+- fa4f41b: Bump dependencies
+
 ## 0.4.8
 
 ### Patch Changes

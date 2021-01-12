@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.28
+
+### Patch Changes
+
+- fa4f41b: Bump dependencies
+
 ## 0.2.27
 
 ### Patch Changes
