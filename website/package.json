@@ -46,7 +46,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "extract-react-types-loader": "^0.3.1",
     "lodash.debounce": "^4.0.8",
-    "netlify-cli": "^2.8.1",
+    "netlify-cli": "^3.0.0",
     "node-fetch": "^2.6.1",
     "prismjs": "^1.15.0",
     "query-string": "^6.13.1",
