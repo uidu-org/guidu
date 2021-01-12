@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.7
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/adf-schema@0.3.5
+  - @uidu/adf-utils@0.6.5
+  - @uidu/analytics-namespaced-context@0.3.5
+  - @uidu/emoji@0.3.5
+  - @uidu/mentions@0.2.6
+  - @uidu/profilecard@0.1.5
+
 ## 0.4.6
 
 ### Patch Changes

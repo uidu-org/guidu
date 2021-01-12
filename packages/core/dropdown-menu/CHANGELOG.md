@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.4.7
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/button@0.4.6
+  - @uidu/droplist@0.4.7
+  - @uidu/item@0.4.7
+  - @uidu/theme@0.5.7
+
 ## 0.4.6
 
 ### Patch Changes

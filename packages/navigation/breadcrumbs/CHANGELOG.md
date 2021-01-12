@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 0.2.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/button@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+
 ## 0.2.5
 
 ### Patch Changes

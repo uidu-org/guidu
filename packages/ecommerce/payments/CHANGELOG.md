@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 0.4.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/slider@1.6.6
+  - @uidu/theme@0.5.7
+  - @uidu/field-base@0.5.8
+  - @uidu/form@0.4.10
+
 ## 0.4.7
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.6.4
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/menu@0.4.8
+  - @uidu/popup@0.4.6
+  - @uidu/data-fields@0.5.4
+  - @uidu/checkbox@0.3.6
+
 ## 0.6.3
 
 ### Patch Changes

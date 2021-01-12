@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 0.7.2
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/avatar@0.6.6
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/inline-dialog@0.4.6
+  - @uidu/menu@0.4.8
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+  - @uidu/animated-menu@0.3.4
+  - @uidu/shell@1.2.9
+
 ## 0.7.1
 
 ### Patch Changes

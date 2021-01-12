@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.6.5
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/adf-schema@0.3.5
+
 ## 0.6.4
 
 ### Patch Changes

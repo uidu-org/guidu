@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.3.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/adf-schema@0.3.5
+  - @uidu/editor-common@0.4.7
+
 ## 0.3.5
 
 ### Patch Changes

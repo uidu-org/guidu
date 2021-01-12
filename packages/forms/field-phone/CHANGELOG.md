@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.2.7
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/field-base@0.5.8
+  - @uidu/field-text@0.4.7
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.3.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/code@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+  - @uidu/adf-schema@0.3.5
+  - @uidu/adf-utils@0.6.5
+  - @uidu/editor-common@0.4.7
+  - @uidu/editor-json-transformer@0.3.6
+  - @uidu/analytics-listeners@0.3.5
+  - @uidu/analytics-namespaced-context@0.3.5
+  - @uidu/mentions@0.2.6
+  - @uidu/status@0.3.6
+  - @uidu/task-decision@0.3.6
+  - @uidu/media-card@0.4.6
+  - @uidu/media-filmstrip@0.3.6
+
 ## 0.3.7
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/spinner@0.4.6
+  - @uidu/field-mentions@0.4.7
+  - @uidu/field-text@0.4.7
+  - @uidu/form@0.4.10
+  - @uidu/media-filmstrip@0.3.6
+  - @uidu/message@0.3.7
+
 ## 0.3.5
 
 ### Patch Changes

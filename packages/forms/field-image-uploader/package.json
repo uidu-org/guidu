@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-image-uploader",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "private": false,
   "description": "An image uploader with preview",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-image-uploader",
@@ -11,11 +11,11 @@
   "types": "dist/uidu-field-image-uploader.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/analytics": "^0.4.5",
-    "@uidu/button": "^0.4.5",
-    "@uidu/field-base": "^0.5.7",
-    "@uidu/media-core": "^0.4.4",
-    "@uidu/spinner": "^0.4.5",
+    "@uidu/analytics": "^0.4.6",
+    "@uidu/button": "^0.4.6",
+    "@uidu/field-base": "^0.5.8",
+    "@uidu/media-core": "^0.4.5",
+    "@uidu/spinner": "^0.4.6",
     "@uppy/aws-s3": "^1.6.4",
     "@uppy/core": "^1.0.1",
     "@uppy/drag-drop": "^1.0.1",
@@ -32,8 +32,8 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.5",
-    "@uidu/form": "^0.4.9",
+    "@uidu/docs": "^0.3.6",
+    "@uidu/form": "^0.4.10",
     "axios": "^0.21.0"
   }
 }

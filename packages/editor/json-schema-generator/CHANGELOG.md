@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.22
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+
 ## 0.1.21
 
 ### Patch Changes

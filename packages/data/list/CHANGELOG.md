@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.8
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/data-fields@0.5.4
+
 ## 0.2.7
 
 ### Patch Changes

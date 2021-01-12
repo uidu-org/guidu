@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.4
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+
 ## 0.3.3
 
 ### Patch Changes

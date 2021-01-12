@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/theme@0.5.7
+  - @uidu/media-card@0.4.6
+  - @uidu/media-core@0.4.5
+  - @uidu/media-viewer@0.3.6
+
 ## 0.3.5
 
 ### Patch Changes

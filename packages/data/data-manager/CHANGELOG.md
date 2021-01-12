@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.8.5
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/spinner@0.4.6
+  - @uidu/board@0.3.6
+  - @uidu/calendar@0.2.7
+  - @uidu/data-controls@0.7.3
+  - @uidu/data-fields@0.5.4
+  - @uidu/data-views@0.5.9
+  - @uidu/gallery@0.2.8
+  - @uidu/list@0.2.8
+  - @uidu/table@0.6.4
+  - @uidu/shell@1.2.9
+
 ## 0.8.4
 
 ### Patch Changes

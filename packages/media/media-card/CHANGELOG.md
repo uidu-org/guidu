@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.6
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/button@0.4.6
+  - @uidu/dropdown-menu@0.4.7
+  - @uidu/spinner@0.4.6
+  - @uidu/theme@0.5.7
+  - @uidu/tooltip@0.4.6
+  - @uidu/media-core@0.4.5
+
 ## 0.4.5
 
 ### Patch Changes

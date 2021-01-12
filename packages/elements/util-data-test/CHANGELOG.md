@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.3.5
+
+### Patch Changes
+
+- 53cc17b: Header navigation can now be passed more props, bumped react-intl and tslib to all packages
+- Updated dependencies [53cc17b]
+  - @uidu/analytics@0.4.6
+  - @uidu/emoji@0.3.5
+  - @uidu/mentions@0.2.6
+  - @uidu/task-decision@0.3.6
+
 ## 0.3.4
 
 ### Patch Changes
