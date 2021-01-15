@@ -23,7 +23,7 @@
     "numeral": "^2.0.6",
     "react": "^17.0.1",
     "react-animated-number": "^0.4.4",
-    "react-content-loader": "^5.1.4",
+    "react-content-loader": "^6.0.0",
     "react-countup": "^4.2.2",
     "react-feather": "^2.0.9",
     "react-intl": "^5.10.9",

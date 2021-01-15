@@ -19,7 +19,7 @@
     "@uidu/field-textarea": "^0.3.6",
     "@uidu/select": "^0.6.8",
     "react": "^17.0.1",
-    "react-content-loader": "^5.1.4",
+    "react-content-loader": "^6.0.0",
     "tslib": "^2.0.1"
   },
   "devDependencies": {
