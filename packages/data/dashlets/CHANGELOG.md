@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.7.11
+
+### Patch Changes
+
+- 97b85a2: Bump dependencies
+
 ## 0.7.10
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/field
 
+## 0.3.6
+
+### Patch Changes
+
+- 97b85a2: Bump dependencies
+
 ## 0.3.5
 
 ### Patch Changes

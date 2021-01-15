@@ -1,5 +1,11 @@
 # @uidu/field-mentions
 
+## 0.4.8
+
+### Patch Changes
+
+- 97b85a2: Bump dependencies
+
 ## 0.4.7
 
 ### Patch Changes

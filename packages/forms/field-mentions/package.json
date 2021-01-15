@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-mentions",
-  "version": "0.4.7",
+  "version": "0.4.8",
   "description": "Field Mentions Component",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-mentions",
   "license": "MIT",

@@ -1,5 +1,11 @@
 # @uidu/data-controls
 
+## 0.7.4
+
+### Patch Changes
+
+- 97b85a2: Bump dependencies
+
 ## 0.7.3
 
 ### Patch Changes
