@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-geosuggest",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "private": false,
   "description": "Suggest addresses with google autocompletge",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-geosuggest",
@@ -12,7 +12,7 @@
   "types": "dist/uidu-field-geosuggest.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/field-base": "^0.5.8",
+    "@uidu/field-base": "^0.5.9",
     "@uidu/spinner": "^0.4.6",
     "classnames": "^2.2.6",
     "formsy-react": "^2.2.1",
@@ -23,6 +23,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.6",
-    "@uidu/form": "^0.4.10"
+    "@uidu/form": "^0.4.11"
   }
 }
