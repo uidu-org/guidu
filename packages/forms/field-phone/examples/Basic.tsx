@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { inputDefaultProps } from '../../field-base/examples-utils';
 import { formDefaultProps } from '../../form/examples-utils';
 import FieldPhone from '../src';
-import FieldPhone from '../src';
+
 export default class Basic extends Component<any, any> {
   state = {
     eventResult:
