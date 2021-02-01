@@ -82,7 +82,6 @@ export default function DataManager({
   getExportFileBlob,
 }: DataManagerProps) {
   const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
-  const data = useMemo(() => rowData, [rowData]);
   const columns = useMemo(() => columnDefinitions, [columnDefinitions]);
 
   const setColumnCount = (columnCount) => {
@@ -116,7 +115,7 @@ export default function DataManager({
   const tableInstance = useTable(
     {
       columns,
-      data,
+      data: rowData,
       defaultColumn,
       initialState: {
         ...(currentView?.state || {}),
@@ -290,7 +289,7 @@ export default function DataManager({
         // onAddField={onAddField}
         viewProps={viewProps}
         tableInstance={tableInstance}
-        data={data}
+        data={rowData}
         columns={columns}
         rowHeight={rowHeight}
         columnCount={columnCount}
@@ -302,7 +301,7 @@ export default function DataManager({
   };
 
   const renderSidebar = () => {
-    return <DataViewSidebar currentView={currentView} data={data} />;
+    return <DataViewSidebar currentView={currentView} data={rowData} />;
   };
 
   const renderControls = ({ controls }) => {

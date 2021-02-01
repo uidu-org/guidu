@@ -17,7 +17,13 @@ import {
 } from '@uidu/shell';
 import { isEqual } from 'lodash';
 import Papa from 'papaparse';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import 'react-big-calendar/lib/sass/styles';
 import { PlusCircle } from 'react-feather';
 import { IntlProvider } from 'react-intl';
@@ -194,6 +200,8 @@ export default function Basic({}) {
 
   console.log(tableInstance.current);
 
+  const data = useMemo(() => rowData, [rowData]);
+
   return (
     <CubeProvider cubejsApi={cubejsApi}>
       <IntlProvider locale="en">
@@ -252,7 +260,7 @@ export default function Basic({}) {
                 ],
               },
             ])}
-            rowData={rowData}
+            rowData={data}
             currentView={currentView}
             onViewUpdate={onViewUpdate}
             getExportFileBlob={getExportFileBlob}
