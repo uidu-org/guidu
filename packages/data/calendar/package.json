@@ -1,6 +1,6 @@
 {
   "name": "@uidu/calendar",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "private": false,
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/calendar",
