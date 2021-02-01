@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.9
+
+### Patch Changes
+
+- 3555e20: Bump dependencies
+- Updated dependencies [3555e20]
+  - @uidu/form@0.4.11
+
 ## 0.5.8
 
 ### Patch Changes

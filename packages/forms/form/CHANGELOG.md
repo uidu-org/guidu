@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.11
+
+### Patch Changes
+
+- 3555e20: Bump dependencies
+
 ## 0.4.10
 
 ### Patch Changes

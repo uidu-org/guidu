@@ -1,5 +1,16 @@
 # @uidu/field
 
+## 0.3.7
+
+### Patch Changes
+
+- 3555e20: Bump dependencies
+- Updated dependencies [3555e20]
+  - @uidu/field-number@0.4.8
+  - @uidu/field-text@0.4.8
+  - @uidu/field-textarea@0.3.7
+  - @uidu/select@0.6.9
+
 ## 0.3.6
 
 ### Patch Changes
