@@ -1,5 +1,13 @@
 # @uidu/dashlets-form
 
+## 0.2.8
+
+### Patch Changes
+
+- 4227d36: DataManager now requires rowData to be memoized on parent component. This allows for greater flexibility when fetching new or updated data
+- Updated dependencies [4227d36]
+  - @uidu/dashlets@0.7.12
+
 ## 0.2.7
 
 ### Patch Changes

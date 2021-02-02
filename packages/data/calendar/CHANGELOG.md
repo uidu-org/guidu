@@ -1,5 +1,11 @@
 # @uidu/calendar
 
+## 0.2.8
+
+### Patch Changes
+
+- 4227d36: DataManager now requires rowData to be memoized on parent component. This allows for greater flexibility when fetching new or updated data
+
 ## 0.2.7
 
 ### Patch Changes

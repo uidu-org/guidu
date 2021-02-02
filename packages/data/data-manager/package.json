@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-manager",
-  "version": "0.8.5",
+  "version": "0.9.0",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
@@ -15,7 +15,7 @@
     "@cubejs-client/react": "^0.26.0",
     "@loadable/component": "^5.14.1",
     "@uidu/board": "^0.3.6",
-    "@uidu/calendar": "^0.2.7",
+    "@uidu/calendar": "^0.2.8",
     "@uidu/data-controls": "^0.7.3",
     "@uidu/data-fields": "^0.5.4",
     "@uidu/data-views": "^0.5.9",
