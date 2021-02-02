@@ -1,10 +1,10 @@
 import React from 'react';
-import { getAdorableAvatar, RANDOM_USERS } from '../examples-util/data';
-import { ExampleGroup } from '../examples-util/helpers';
+import { getAdorableAvatar, RANDOM_USERS } from '../examples-utils/data';
+import { ExampleGroup } from '../examples-utils/helpers';
 import AvatarGroup from '../src';
 
 export default () => {
-  const data = RANDOM_USERS.map(d => ({
+  const data = RANDOM_USERS.map((d) => ({
     email: d.email,
     key: d.email,
     name: d.name,

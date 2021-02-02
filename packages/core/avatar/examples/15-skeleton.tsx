@@ -1,6 +1,6 @@
 import { colors } from '@uidu/theme';
 import React from 'react';
-import { Block, Gap } from '../examples-util/helpers';
+import { Block, Gap } from '../examples-utils/helpers';
 import { Skeleton } from '../src';
 
 export default () => (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Note } from '../examples-util/helpers';
+import { Note } from '../examples-utils/helpers';
 import { Presence } from '../src';
 
 type State = {

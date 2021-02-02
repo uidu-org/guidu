@@ -4,8 +4,8 @@ import { Label } from '@uidu/field-base';
 import { FieldToggleStateless } from '@uidu/field-toggle';
 import React, { Component } from 'react';
 import { ArrowDown, ArrowUp } from 'react-feather';
-import { avatarUrl } from '../examples-util/data';
-import { Code, Note } from '../examples-util/helpers';
+import { avatarUrl } from '../examples-utils/data';
+import { Code, Note } from '../examples-utils/helpers';
 import AvatarGroup from '../src';
 
 type State = {
@@ -139,7 +139,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
         <input
           min="200"
           max="500"
-          onChange={e =>
+          onChange={(e) =>
             this.setState({ gridWidth: parseInt(e.target.value, 10) })
           }
           step="10"
@@ -151,7 +151,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
           <AvatarGroup
             appearance="grid"
             onAvatarClick={console.log}
-            data={stackSourceURLs.map(i => ({
+            data={stackSourceURLs.map((i) => ({
               key: i,
               appearance: 'circle',
               enableTooltip: true,
@@ -182,7 +182,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
         <Note>Total {stackSourceURLs.length} / Max 5</Note>
         <AvatarGroup
           onAvatarClick={console.log}
-          data={stackSourceURLs.map(i => ({
+          data={stackSourceURLs.map((i) => ({
             key: i,
             href: '#',
             name: `Stack Avatar ${i + 1}`,
@@ -205,7 +205,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
             onMoreClick={() => this.setState({ mode: 'grid' })}
             appearance={mode}
             maxCount={mode === 'grid' ? avatarCount : 0}
-            data={stackSourceURLs.map(i => ({
+            data={stackSourceURLs.map((i) => ({
               key: i,
               href: '#',
               name: `Stack Avatar ${i + 1}`,
@@ -233,7 +233,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
           <AvatarGroup
             appearance="stack"
             maxCount={5}
-            data={stackSourceURLs.map(i => ({
+            data={stackSourceURLs.map((i) => ({
               appearance: 'circle',
               enableTooltip: true,
               href: '#',
@@ -265,7 +265,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
               <AvatarGroup
                 boundariesElement="scrollParent"
                 onAvatarClick={console.log}
-                data={stackSourceURLs.slice(0, 6).map(i => ({
+                data={stackSourceURLs.slice(0, 6).map((i) => ({
                   href: '#',
                   key: i,
                   name: `Stack Avatar ${i + 1}`,
@@ -287,7 +287,7 @@ export default class AvatarGroupExample extends Component<{}, State> {
             onChange={this.toggleTooltips}
           />
           <AvatarGroup
-            data={stackSourceURLs.map(i => ({
+            data={stackSourceURLs.map((i) => ({
               href: '#',
               key: i,
               name: `Stack Avatar ${i + 1}`,

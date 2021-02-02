@@ -1,5 +1,5 @@
-import { avatarUrl } from '../examples-util/data';
-import fullAvatarExample from '../examples-util/fullAvatarExample';
+import { avatarUrl } from '../examples-utils/data';
+import fullAvatarExample from '../examples-utils/fullAvatarExample';
 
 export default () =>
   fullAvatarExample({

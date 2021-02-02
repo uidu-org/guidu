@@ -1,7 +1,7 @@
 import Button from '@uidu/button';
 import { gridSize } from '@uidu/theme';
 import React, { Component } from 'react';
-import { Note } from '../examples-util/helpers';
+import { Note } from '../examples-utils/helpers';
 import Avatar from '../src';
 
 const Btn = (props) => (

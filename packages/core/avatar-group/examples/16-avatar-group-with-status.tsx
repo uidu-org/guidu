@@ -1,7 +1,6 @@
 import { FieldToggleStateless } from '@uidu/field-toggle';
-import { GuiduThemeProvider } from '@uidu/theme';
 import React, { Component } from 'react';
-import { getAdorableAvatar, RANDOM_USERS } from '../examples-util/data';
+import { getAdorableAvatar, RANDOM_USERS } from '../examples-utils/data';
 import AvatarGroup from '../src';
 
 function getStatus() {

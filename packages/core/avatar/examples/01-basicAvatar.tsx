@@ -1,5 +1,5 @@
 import React from 'react';
-import { Block, Gap } from '../examples-util/helpers';
+import { Block, Gap } from '../examples-utils/helpers';
 import Avatar from '../src';
 
 export default () => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Block, ShrinkWrap } from '../examples-util/helpers';
+import { Block, ShrinkWrap } from '../examples-utils/helpers';
 import { Presence } from '../src';
 
 export default () => (

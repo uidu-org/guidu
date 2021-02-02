@@ -267,7 +267,6 @@ module.exports = {
       files: [
         'packages/*/*/examples/**',
         'packages/**/examples-utils/**',
-        'packages/**/examples-helpers/**',
         'packages/monorepo-tooling/**',
       ],
       rules: {

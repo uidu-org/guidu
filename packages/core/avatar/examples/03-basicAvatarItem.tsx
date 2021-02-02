@@ -1,5 +1,5 @@
 import React from 'react';
-import { getAdorableAvatar, RANDOM_USERS } from '../examples-util/data';
+import { getAdorableAvatar, RANDOM_USERS } from '../examples-utils/data';
 import Avatar, { AvatarItem } from '../src';
 
 function getPresence() {
@@ -17,14 +17,14 @@ function getPresence() {
 }
 
 export default () => {
-  const data = RANDOM_USERS.slice(0, 10).map(user => ({
+  const data = RANDOM_USERS.slice(0, 10).map((user) => ({
     ...user,
     src: getAdorableAvatar(user.email),
   }));
 
   return (
     <div style={{ maxWidth: 270 }}>
-      {data.map(user => (
+      {data.map((user) => (
         <AvatarItem
           avatar={<Avatar src={user.src} presence={getPresence()} />}
           key={user.email}

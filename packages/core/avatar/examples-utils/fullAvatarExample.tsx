@@ -1,6 +1,6 @@
 import { gridSize } from '@uidu/theme';
 import React from 'react';
-import { Block, Code, Note } from '../examples-util/helpers';
+import { Block, Code, Note } from '../examples-utils/helpers';
 import Avatar from '../src';
 import { AppearanceType } from '../src/types';
 

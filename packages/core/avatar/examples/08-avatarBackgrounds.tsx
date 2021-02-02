@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 import { colors } from '@uidu/theme';
 import React from 'react';
-import { avatarUrl } from '../examples-util/data';
-import { Code, Note } from '../examples-util/helpers';
-import nucleusImage from '../examples-util/nucleus.png';
+import { avatarUrl } from '../examples-utils/data';
+import { Code, Note } from '../examples-utils/helpers';
+import nucleusImage from '../examples-utils/nucleus.png';
 import Avatar from '../src';
 import { PresenceType, StatusType } from '../src/types';
 

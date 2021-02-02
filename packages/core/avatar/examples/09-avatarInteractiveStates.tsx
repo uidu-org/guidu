@@ -1,6 +1,6 @@
 import React, { Node } from 'react';
-import { avatarUrl } from '../examples-util/data';
-import { Code, Note } from '../examples-util/helpers';
+import { avatarUrl } from '../examples-utils/data';
+import { Code, Note } from '../examples-utils/helpers';
 import Avatar from '../src';
 
 const stackSourceURLs = [];

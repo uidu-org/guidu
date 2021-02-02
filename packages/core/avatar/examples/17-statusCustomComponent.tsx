@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Block } from '../examples-util/helpers';
+import { Block } from '../examples-utils/helpers';
 import Avatar from '../src';
 
 const DivPresence = styled.div`
