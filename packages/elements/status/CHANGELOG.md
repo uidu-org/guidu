@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.3.7
+
+### Patch Changes
+
+- e8e587d: Fix folder names
+
 ## 0.3.6
 
 ### Patch Changes

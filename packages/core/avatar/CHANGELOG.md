@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.7
+
+### Patch Changes
+
+- e8e587d: Fix folder names
+
 ## 0.6.6
 
 ### Patch Changes

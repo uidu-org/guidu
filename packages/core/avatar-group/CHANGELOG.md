@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.5.8
+
+### Patch Changes
+
+- e8e587d: Fix folder names
+- Updated dependencies [e8e587d]
+  - @uidu/avatar@0.6.7
+
 ## 2.5.7
 
 ### Patch Changes
