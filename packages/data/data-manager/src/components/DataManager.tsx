@@ -201,18 +201,6 @@ export default function DataManager({
     onViewUpdate && onViewUpdate(tableInstance.state);
   }, [tableInstance.state, onViewUpdate]);
 
-  const setColumnState = (column, newState = {}) => {
-    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    setColumnDefinitions([
-      ...columnDefinitions.slice(0, index),
-      {
-        ...columnDefinitions[index],
-        ...newState,
-      },
-      ...columnDefinitions.slice(index + 1),
-    ]);
-  };
-
   const setAggregation = (column, aggregate) => {
     const index = columnDefinitions.findIndex(({ id }) => id === column.id);
     setColumnDefinitions([
@@ -273,14 +261,6 @@ export default function DataManager({
         {...state}
         setAggregation={setAggregation}
         setColumnWidth={setColumnWidth}
-        // methods
-        // onFilterChanged={this.onFilterChanged}
-        // onSortChanged={this.onSortChanged}
-        // onColumnVisible={this.onColumnVisible}
-        // onColumnRowGroupChanged={this.onColumnRowGroupChanged}
-        // onDragStopped={this.onDragStopped}
-        // onColumnResized={this.onColumnResized}
-        // onRowGroupOpened={this.onRowGroupOpened}
         // props spreading
         columnDefs={columnDefs}
         rowData={rowData}

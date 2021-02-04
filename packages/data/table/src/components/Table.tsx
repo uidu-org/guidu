@@ -22,12 +22,13 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   z-index: 1;
+  flex-direction: column;
 `;
 
 function getPinnedStyled({ pinned = 'left', index }) {
   if (pinned === 'left') {
     return css`
-      position: sticky;
+      position: sticky !important;
       left: ${index === 0 ? 0 : '56px'};
       z-index: 2;
       background: var(--body-bg);
@@ -36,7 +37,7 @@ function getPinnedStyled({ pinned = 'left', index }) {
   }
   if (pinned === 'right') {
     return css`
-      position: sticky;
+      position: sticky !important;
       right: ${index === 0 ? 0 : 0};
       z-index: 2;
       background: var(--body-bg);
@@ -99,6 +100,7 @@ const Table = ({
   theme = 'uidu',
   setAggregation,
   setColumnWidth,
+  includeFooter = true,
   rowHeight = 32,
   headerHeight = 48,
   headerIcons = true,
@@ -175,15 +177,17 @@ const Table = ({
             )
             .map((cell, index) => (
               <Td
-                {...cell.getCellProps({
-                  style: {
-                    left: index === 0 ? 0 : '56px',
-                    ...(cell.column.isSorted
-                      ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
-                      : {}),
-                    ...cell.column.cellStyle,
+                {...cell.getCellProps([
+                  {
+                    style: {
+                      left: index === 0 ? 0 : '56px',
+                      ...(cell.column.isSorted
+                        ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
+                        : {}),
+                      ...cell.column.cellStyle,
+                    },
                   },
-                })}
+                ])}
                 pinned={cell.column.pinned}
                 index={index}
                 height={rowHeight}
@@ -245,18 +249,22 @@ const Table = ({
                 )
                 .map((column, index) => (
                   <Th
-                    {...column.getHeaderProps()}
                     height={headerHeight}
                     pinned={column.pinned}
                     index={index}
-                    style={{
-                      width: column.width,
-                      maxWidth: column.maxWidth,
-                      minWidth: column.minWidth,
-                      ...(column.isSorted
-                        ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
-                        : {}),
-                    }}
+                    {...column.getHeaderProps([
+                      {
+                        style: {
+                          ...column.style,
+                          // width: column.width,
+                          // maxWidth: column.maxWidth,
+                          // minWidth: column.minWidth,
+                          ...(column.isSorted
+                            ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
+                            : {}),
+                        },
+                      },
+                    ])}
                   >
                     {column.render('Header', {
                       setColumnWidth,
@@ -282,7 +290,9 @@ const Table = ({
             <Row key={index} size={size} start={start} index={index} />
           ))}
         </Body>
-        <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
+        {includeFooter ? (
+          <Footer footerGroups={footerGroups} rowHeight={rowHeight} />
+        ) : null}
       </div>
     </div>
   );
