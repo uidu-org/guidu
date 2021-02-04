@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.6.5
+
+### Patch Changes
+
+- f9af6e0: Allow for column groups - DataManager Table
+
 ## 0.6.4
 
 ### Patch Changes

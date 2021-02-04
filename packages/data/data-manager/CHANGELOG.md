@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.9.1
+
+### Patch Changes
+
+- f9af6e0: Allow for column groups - DataManager Table
+- Updated dependencies [f9af6e0]
+  - @uidu/table@0.6.5
+
 ## 0.9.0
 
 ### Minor Changes
