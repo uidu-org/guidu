@@ -1,5 +1,13 @@
 # @uidu/mentions
 
+## 0.2.7
+
+### Patch Changes
+
+- e8e587d: Fix folder names
+- Updated dependencies [e8e587d]
+  - @uidu/avatar@0.6.7
+
 ## 0.2.6
 
 ### Patch Changes

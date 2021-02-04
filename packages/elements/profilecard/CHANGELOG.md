@@ -1,5 +1,13 @@
 # @uidu/profilecard
 
+## 0.1.6
+
+### Patch Changes
+
+- e8e587d: Fix folder names
+- Updated dependencies [e8e587d]
+  - @uidu/avatar@0.6.7
+
 ## 0.1.5
 
 ### Patch Changes
