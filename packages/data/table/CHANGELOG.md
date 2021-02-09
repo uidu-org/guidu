@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.6.6
+
+### Patch Changes
+
+- 960cd05: Added header style, fix selection when using more than 1 headerGroup, fix opacity on sorted by columns
+
 ## 0.6.5
 
 ### Patch Changes

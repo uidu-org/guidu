@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.9.2
+
+### Patch Changes
+
+- 960cd05: Added header style, fix selection when using more than 1 headerGroup, fix opacity on sorted by columns
+- Updated dependencies [960cd05]
+  - @uidu/table@0.6.6
+
 ## 0.9.1
 
 ### Patch Changes
