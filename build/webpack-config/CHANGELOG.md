@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.98
+
+### Patch Changes
+
+- f9af6e0: Allow for column groups - DataManager Table
+
 ## 0.1.97
 
 ### Patch Changes
