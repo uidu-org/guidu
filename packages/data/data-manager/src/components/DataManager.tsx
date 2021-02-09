@@ -158,7 +158,8 @@ export default function DataManager({
           },
           // The header can use the table's getToggleAllRowsSelectedProps method
           // to render a checkbox
-          Header: HeaderSelection,
+          Header: (props) =>
+            props.headerGroups.length > 1 ? null : HeaderSelection,
           // The cell can use the individual row's getToggleRowSelectedProps method
           // to the render a checkbox
           Cell: RowSelection,

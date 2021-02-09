@@ -182,7 +182,7 @@ const Table = ({
                     style: {
                       left: index === 0 ? 0 : '56px',
                       ...(cell.column.isSorted
-                        ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
+                        ? { backgroundColor: 'rgb(254, 248, 244)' }
                         : {}),
                       ...cell.column.cellStyle,
                     },
@@ -260,8 +260,9 @@ const Table = ({
                           // maxWidth: column.maxWidth,
                           // minWidth: column.minWidth,
                           ...(column.isSorted
-                            ? { backgroundColor: 'rgba(254, 226, 213, 0.25)' }
+                            ? { backgroundColor: 'rgb(254, 248, 244)' }
                             : {}),
+                          ...column.headerStyle,
                         },
                       },
                     ])}
