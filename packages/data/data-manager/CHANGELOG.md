@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.9.4
+
+### Patch Changes
+
+- 9ee9fc5: Fix columns for datamanager
+
 ## 0.9.3
 
 ### Patch Changes
