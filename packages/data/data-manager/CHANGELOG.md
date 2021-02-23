@@ -1,5 +1,13 @@
 # @uidu/data-manager
 
+## 0.9.3
+
+### Patch Changes
+
+- 14c52d1: Adding more options to datamanager
+- Updated dependencies [14c52d1]
+  - @uidu/table@0.6.7
+
 ## 0.9.2
 
 ### Patch Changes
