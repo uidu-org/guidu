@@ -10,7 +10,7 @@ import {
   RowActions,
   RowSelection,
 } from '@uidu/table';
-import React, { useEffect, useImperativeHandle, useMemo } from 'react';
+import React, { useEffect, useImperativeHandle } from 'react';
 import {
   useExpanded,
   useFilters,
@@ -67,7 +67,7 @@ const defaultPrimaryField = null;
 export default function DataManager({
   children,
   rowData = [],
-  columnDefs,
+  columnDefs: columns,
   onItemClick,
   currentView,
   updateView,
@@ -77,7 +77,6 @@ export default function DataManager({
   forwardedRef,
   getExportFileBlob,
 }: DataManagerProps) {
-  const columns = useMemo(() => columnDefs, [columnDefs]);
   const setColumnCount = (columnCount) => {
     updateView(currentView, {
       preferences: { ...currentView.preferences, columnCount },
@@ -170,7 +169,7 @@ export default function DataManager({
               },
             ]
           : []),
-        ...columnDefs,
+        ...columns,
         ...(actions.length > 0
           ? [
               {
@@ -265,7 +264,6 @@ export default function DataManager({
         setAggregation={setAggregation}
         setColumnWidth={setColumnWidth}
         // props spreading
-        columnDefs={columnDefs}
         rowData={rowData}
         onItemClick={onItemClick}
         currentView={currentView}

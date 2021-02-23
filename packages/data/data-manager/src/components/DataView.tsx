@@ -239,8 +239,7 @@ export default class DataView extends PureComponent<any> {
                   {...viewProps.table}
                   rowHeight={(viewProps.table || {}).rowHeight || rowHeight}
                   onItemClick={onItemClick}
-                  // use columnDefs from props to avoid flickering on toggling/reordering columns
-                  columnDefs={columnDefs}
+                  columnDefs={columns}
                   rowData={rowData}
                   onAddField={onAddField}
                   onSortChanged={onSortChanged}
