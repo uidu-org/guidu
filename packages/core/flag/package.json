@@ -1,6 +1,6 @@
 {
   "name": "@uidu/flag",
-  "version": "0.4.6",
+  "version": "0.4.7",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/flag",

@@ -1,5 +1,11 @@
 # @uidu/flag
 
+## 0.4.7
+
+### Patch Changes
+
+- f28de6a: Added delay to AutoDismissFlag
+
 ## 0.4.6
 
 ### Patch Changes
