@@ -1,5 +1,11 @@
 # @uidu/table
 
+## 0.6.7
+
+### Patch Changes
+
+- 14c52d1: Adding more options to datamanager
+
 ## 0.6.6
 
 ### Patch Changes
