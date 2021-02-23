@@ -10,12 +10,7 @@ import {
   RowActions,
   RowSelection,
 } from '@uidu/table';
-import React, {
-  useEffect,
-  useImperativeHandle,
-  useMemo,
-  useState,
-} from 'react';
+import React, { useEffect, useImperativeHandle, useMemo } from 'react';
 import {
   useExpanded,
   useFilters,
@@ -78,12 +73,11 @@ export default function DataManager({
   updateView,
   onViewUpdate,
   actions = [],
+  canSelectRows = true,
   forwardedRef,
   getExportFileBlob,
 }: DataManagerProps) {
-  const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
-  const columns = useMemo(() => columnDefinitions, [columnDefinitions]);
-
+  const columns = useMemo(() => columnDefs, [columnDefs]);
   const setColumnCount = (columnCount) => {
     updateView(currentView, {
       preferences: { ...currentView.preferences, columnCount },
@@ -120,15 +114,15 @@ export default function DataManager({
       initialState: {
         ...(currentView?.state || {}),
       },
-      useControlledState: (state) => {
-        return React.useMemo(
-          () => ({
-            ...state,
-            columnDefinitions,
-          }),
-          [state],
-        );
-      },
+      // useControlledState: (state) => {
+      //   return React.useMemo(
+      //     () => ({
+      //       ...state,
+      //       columnDefinitions,
+      //     }),
+      //     [state],
+      //   );
+      // },
       getExportFileBlob,
     },
     useFlexLayout,
@@ -143,34 +137,40 @@ export default function DataManager({
     (hooks) => {
       hooks.visibleColumns.push((columns) => [
         // Let's make a column for selection
-        {
-          id: 'uid',
-          kind: 'uid',
-          field: 'id',
-          disableResizing: true,
-          minWidth: 56,
-          width: 56,
-          maxWidth: 56,
-          pinned: 'left',
-          groupByBoundary: true,
-          cellStyle: {
-            padding: 0,
-          },
-          // The header can use the table's getToggleAllRowsSelectedProps method
-          // to render a checkbox
-          Header: (props) =>
-            props.headerGroups.length > 1 ? null : HeaderSelection,
-          // The cell can use the individual row's getToggleRowSelectedProps method
-          // to the render a checkbox
-          Cell: RowSelection,
-          Aggregated: AggregatedSelection,
-          Footer: (info) => {
-            // Only calculate total visits if rows change
+        ...(canSelectRows
+          ? [
+              {
+                id: 'uid',
+                kind: 'uid',
+                field: 'id',
+                disableResizing: true,
+                minWidth: 56,
+                width: 56,
+                maxWidth: 56,
+                pinned: 'left',
+                groupByBoundary: true,
+                cellStyle: {
+                  padding: 0,
+                },
+                // The header can use the table's getToggleAllRowsSelectedProps method
+                // to render a checkbox
+                Header: (props) =>
+                  props.headerGroups.length > 1 ? null : (
+                    <HeaderSelection {...props} />
+                  ),
+                // The cell can use the individual row's getToggleRowSelectedProps method
+                // to the render a checkbox
+                Cell: RowSelection,
+                Aggregated: AggregatedSelection,
+                Footer: (info) => {
+                  // Only calculate total visits if rows change
 
-            return <>Total: {info.rows.length}</>;
-          },
-        },
-        ...columns,
+                  return <>Total: {info.rows.length}</>;
+                },
+              },
+            ]
+          : []),
+        ...columnDefs,
         ...(actions.length > 0
           ? [
               {
@@ -203,27 +203,29 @@ export default function DataManager({
   }, [tableInstance.state, onViewUpdate]);
 
   const setAggregation = (column, aggregate) => {
-    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    setColumnDefinitions([
-      ...columnDefinitions.slice(0, index),
-      {
-        ...columnDefinitions[index],
-        aggregate,
-      },
-      ...columnDefinitions.slice(index + 1),
-    ]);
+    console.log(column);
+    // const index = columnDefinitions.findIndex(({ id }) => id === column.id);
+    // setColumnDefinitions([
+    //   ...columnDefinitions.slice(0, index),
+    //   {
+    //     ...columnDefinitions[index],
+    //     aggregate,
+    //   },
+    //   ...columnDefinitions.slice(index + 1),
+    // ]);
   };
 
   const setColumnWidth = (column, width: number) => {
-    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    setColumnDefinitions([
-      ...columnDefinitions.slice(0, index),
-      {
-        ...columnDefinitions[index],
-        width,
-      },
-      ...columnDefinitions.slice(index + 1),
-    ]);
+    console.log(column);
+    // const index = columnDefinitions.findIndex(({ id }) => id === column.id);
+    // setColumnDefinitions([
+    //   ...columnDefinitions.slice(0, index),
+    //   {
+    //     ...columnDefinitions[index],
+    //     width,
+    //   },
+    //   ...columnDefinitions.slice(index + 1),
+    // ]);
   };
 
   const renderView = ({

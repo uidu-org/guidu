@@ -1,6 +1,45 @@
 import faker from 'faker';
 import numeral from 'numeral';
 
+export const withGroupColumns = [
+  {
+    Header: 'Name',
+    id: 'noome',
+    columns: [
+      {
+        Header: 'First Name',
+        accessor: 'firstName',
+      },
+      {
+        Header: 'Last Name',
+        accessor: 'lastName',
+      },
+    ],
+  },
+  {
+    Header: 'Info',
+    id: 'infoo',
+    columns: [
+      {
+        Header: 'Age',
+        accessor: 'age',
+      },
+      {
+        Header: 'Visits',
+        accessor: 'visits',
+      },
+      {
+        Header: 'Status',
+        accessor: 'status',
+      },
+      {
+        Header: 'Profile Progress',
+        accessor: 'progress',
+      },
+    ],
+  },
+];
+
 export const availableColumns = [
   // {
   //   kind: 'uid',
