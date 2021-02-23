@@ -40,6 +40,10 @@ export type AutoDismissFlagProps = {
    * dismiss button.
    */
   appearance?: AppearanceTypes;
+  /** Milliseconds before disappear
+   *
+   */
+  delay?: number;
   /** The secondary content shown below the flag title */
   description?: ReactNode;
   /** The icon displayed in the top-left of the flag. Should be an instance of react-feather.

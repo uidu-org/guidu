@@ -15,7 +15,7 @@ type Props = {
 export default class FlagActions extends Component<Props, {}> {
   // eslint-disable-line react/sort-comp
   static defaultProps = {
-    appearance: DEFAULT_APPEARANCE,
+    appearance: 'DEFAULT_APPEARANCE',
     actions: [],
   };
 

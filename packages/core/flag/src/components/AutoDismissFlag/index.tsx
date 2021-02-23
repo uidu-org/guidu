@@ -1,80 +1,77 @@
-import React, { Component } from 'react';
-import Flag from '../Flag';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { AutoDismissFlagProps } from '../../types';
+import Flag from '../Flag';
 
 export const AUTO_DISMISS_SECONDS = 8;
 
-export default class AutoDismissFlag extends Component<
-  AutoDismissFlagProps,
-  {}
-> {
-  autoDismissTimer?: number | null;
+export default function AutoDismissFlag(props: AutoDismissFlagProps) {
+  const { delay = 4800, onDismissed, isDismissAllowed, id } = props;
+  const autoDismissTimer = useRef(null);
 
-  componentDidMount() {
-    this.startAutoDismissTimer();
-  }
+  const isAutoDismissAllowed = useCallback(
+    () => isDismissAllowed && onDismissed,
+    [isDismissAllowed, onDismissed],
+  );
 
-  componentWillUnmount() {
-    this.stopAutoDismissTimer();
-  }
-
-  componentDidUpdate(prevProps: AutoDismissFlagProps) {
-    if (this.props.isDismissAllowed && !prevProps.isDismissAllowed) {
-      this.startAutoDismissTimer();
-    } else if (!this.props.isDismissAllowed && prevProps.isDismissAllowed) {
-      this.stopAutoDismissTimer();
+  const dismissFlag = useCallback(() => {
+    if (isAutoDismissAllowed() && onDismissed) {
+      onDismissed(id);
     }
-  }
+  }, [isAutoDismissAllowed, onDismissed, id]);
 
-  startAutoDismissTimer = () => {
-    if (!this.isAutoDismissAllowed()) {
+  const handleAutoDismissTimerEnd = useCallback(() => dismissFlag(), [
+    dismissFlag,
+  ]);
+
+  const startAutoDismissTimer = useCallback(() => {
+    if (!isAutoDismissAllowed()) {
       return;
     }
 
-    this.stopAutoDismissTimer();
-    this.autoDismissTimer = window.setTimeout(
-      this.handleAutoDismissTimerEnd,
-      AUTO_DISMISS_SECONDS * 1000,
+    stopAutoDismissTimer();
+    autoDismissTimer.current = window.setTimeout(
+      handleAutoDismissTimerEnd,
+      delay,
     );
-  };
+  }, [isAutoDismissAllowed, handleAutoDismissTimerEnd, delay]);
 
-  stopAutoDismissTimer = () => {
-    if (this.autoDismissTimer) {
-      clearTimeout(this.autoDismissTimer);
-      this.autoDismissTimer = null;
+  useEffect(() => {
+    startAutoDismissTimer();
+    return () => {
+      stopAutoDismissTimer();
+    };
+  }, [startAutoDismissTimer]);
+
+  // componentDidUpdate(prevProps: AutoDismissFlagProps) {
+  //   if (this.props.isDismissAllowed && !prevProps.isDismissAllowed) {
+  //     this.startAutoDismissTimer();
+  //   } else if (!this.props.isDismissAllowed && prevProps.isDismissAllowed) {
+  //     this.stopAutoDismissTimer();
+  //   }
+  // }
+
+  const stopAutoDismissTimer = () => {
+    if (autoDismissTimer.current) {
+      clearTimeout(autoDismissTimer.current);
+      autoDismissTimer.current = null;
     }
   };
 
-  dismissFlag = () => {
-    if (this.isAutoDismissAllowed() && this.props.onDismissed) {
-      this.props.onDismissed(this.props.id);
-    }
+  const handleInteractionStart = () => {
+    stopAutoDismissTimer();
   };
 
-  handleAutoDismissTimerEnd = () => {
-    this.dismissFlag();
+  const handleInteractionEnd = () => {
+    startAutoDismissTimer();
   };
 
-  handleInteractionStart = () => {
-    this.stopAutoDismissTimer();
-  };
-
-  isAutoDismissAllowed = () =>
-    this.props.isDismissAllowed && this.props.onDismissed;
-
-  handleInteractionEnd = () => {
-    this.startAutoDismissTimer();
-  };
-
-  render() {
-    return (
-      <Flag
-        onMouseOver={this.handleInteractionStart}
-        onFocus={this.handleInteractionStart}
-        onMouseOut={this.handleInteractionEnd}
-        onBlur={this.handleInteractionEnd}
-        {...this.props}
-      />
-    );
-  }
+  return (
+    <Flag
+      onMouseOver={handleInteractionStart}
+      onFocus={handleInteractionStart}
+      onMouseOut={handleInteractionEnd}
+      onBlur={handleInteractionEnd}
+      {...props}
+    />
+  );
 }

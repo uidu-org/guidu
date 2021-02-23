@@ -34,7 +34,7 @@ export default class AutoDismissExample extends Component<void, State> {
   }
 
   handleDismiss = () => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       flags: prevState.flags.slice(1),
     }));
   };
@@ -56,10 +56,11 @@ export default class AutoDismissExample extends Component<void, State> {
           </Button>
         </p>
         <FlagGroup onDismissed={this.handleDismiss}>
-          {this.state.flags.map(flagId => {
+          {this.state.flags.map((flagId) => {
             const appearance = appearances[flagId % appearances.length];
             return (
               <AutoDismissFlag
+                delay={1800}
                 appearance={appearance}
                 id={flagId}
                 icon={<CheckCircle color={color[appearance]} />}
