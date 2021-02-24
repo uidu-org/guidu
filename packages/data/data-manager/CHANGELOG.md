@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.9.5
+
+### Patch Changes
+
+- 8de0a01: Added hooks for itemSelect and debounce state changes
+
 ## 0.9.4
 
 ### Patch Changes
