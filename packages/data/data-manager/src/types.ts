@@ -15,6 +15,9 @@ export type DataManagerProps = {
   rowData: Array<any>;
   onAddField?: () => void;
   onItemClick?: ({ data }: { data: any }) => void;
+  onItemSelect?: ({ data }: { data: any }) => void;
+  canSelectRows?: boolean;
+  getExportFileBlob?: any;
   children: ({ renderControls, renderView, renderSidebar }) => any;
   actions?: RowAction[];
 };

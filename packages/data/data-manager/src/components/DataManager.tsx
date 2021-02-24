@@ -12,6 +12,7 @@ import {
 } from '@uidu/table';
 import React, { useEffect, useImperativeHandle } from 'react';
 import {
+  useAsyncDebounce,
   useExpanded,
   useFilters,
   useFlexLayout,
@@ -69,9 +70,10 @@ export default function DataManager({
   rowData = [],
   columnDefs: columns,
   onItemClick,
+  onItemSelect = () => {},
+  onViewUpdate = () => {},
   currentView,
   updateView,
-  onViewUpdate,
   actions = [],
   canSelectRows = true,
   forwardedRef,
@@ -195,11 +197,23 @@ export default function DataManager({
 
   useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
 
-  const { state, setGlobalFilter, globalFilter } = tableInstance;
+  const {
+    state,
+    setGlobalFilter,
+    globalFilter,
+    selectedFlatRows,
+  } = tableInstance;
+
+  const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
+  const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
 
   useEffect(() => {
-    onViewUpdate && onViewUpdate(tableInstance.state);
-  }, [tableInstance.state, onViewUpdate]);
+    onViewUpdateDebounce(state);
+  }, [state, onViewUpdateDebounce]);
+
+  useEffect(() => {
+    onItemSelectDebounce(selectedFlatRows);
+  }, [selectedFlatRows, onItemSelectDebounce]);
 
   const setAggregation = (column, aggregate) => {
     console.log(column);

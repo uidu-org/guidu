@@ -164,7 +164,6 @@ export default function Basic({}) {
 
   useEffect(() => {
     fetchContacts().then((response) => {
-      console.log(response);
       setLoaded(true);
       setRowData(response);
     });
@@ -198,9 +197,11 @@ export default function Basic({}) {
     [currentView],
   );
 
-  console.log(tableInstance.current);
-
   const data = useMemo(() => rowData, [rowData]);
+
+  const onItemSelect = useCallback((rows) => {
+    console.log(rows);
+  }, []);
 
   return (
     <CubeProvider cubejsApi={cubejsApi}>
@@ -226,6 +227,7 @@ export default function Basic({}) {
             ]}
             isAutoSaving={isAutoSaving}
             key={`table-for-${currentView.id}`}
+            onItemSelect={onItemSelect}
             onItemClick={console.log}
             columnDefs={buildColumns([
               {
@@ -264,6 +266,7 @@ export default function Basic({}) {
             currentView={currentView}
             onViewUpdate={onViewUpdate}
             getExportFileBlob={getExportFileBlob}
+
             // onGridReady={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
