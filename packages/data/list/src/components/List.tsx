@@ -5,6 +5,7 @@ import Item from './Item';
 
 export default function List({
   rowHeight,
+  headerIcons,
   gutterSize = 16,
   tableInstance,
   onItemClick,
@@ -41,7 +42,7 @@ export default function List({
           overflow: 'auto',
         }}
       >
-        <Header headerGroups={headerGroups} />
+        <Header headerIcons={headerIcons} headerGroups={headerGroups} />
         <div
           style={{
             height: `${rowVirtualizer.totalSize}px`,
