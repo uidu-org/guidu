@@ -1,5 +1,11 @@
 # @uidu/editor-core
 
+## 0.7.9
+
+### Patch Changes
+
+- 261b5a8: Fix broken icon import for editor-core
+
 ## 0.7.8
 
 ### Patch Changes
