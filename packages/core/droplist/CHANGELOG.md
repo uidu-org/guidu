@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.4.8
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/analytics@0.4.7
+  - @uidu/item@0.4.8
+  - @uidu/layer@0.4.7
+  - @uidu/spinner@0.4.7
+  - @uidu/theme@0.5.8
+  - @uidu/tooltip@0.4.7
+
 ## 0.4.7
 
 ### Patch Changes

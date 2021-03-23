@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.10
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/data-fields@0.5.5
+
 ## 0.2.9
 
 ### Patch Changes

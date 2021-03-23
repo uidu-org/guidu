@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.3.7
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/button@0.4.7
+  - @uidu/code@0.4.7
+  - @uidu/section-message@0.4.7
+  - @uidu/theme@0.5.8
+  - @uidu/tooltip@0.4.7
+
 ## 0.3.6
 
 ### Patch Changes

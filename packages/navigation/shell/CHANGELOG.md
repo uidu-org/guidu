@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.10
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/spinner@0.4.7
+
 ## 1.2.9
 
 ### Patch Changes

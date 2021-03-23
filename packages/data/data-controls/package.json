@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
@@ -12,20 +12,20 @@
   "types": "dist/uidu-data-controls.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/checkbox": "^0.3.6",
-    "@uidu/data-fields": "^0.5.4",
-    "@uidu/data-views": "^0.5.9",
-    "@uidu/drawer": "^0.5.7",
-    "@uidu/dropdown-menu": "^0.4.7",
-    "@uidu/field-text": "^0.4.7",
-    "@uidu/form": "^0.4.10",
-    "@uidu/inline-dialog": "^0.4.6",
-    "@uidu/menu": "^0.4.8",
-    "@uidu/popup": "^0.4.6",
-    "@uidu/select": "^0.6.8",
-    "@uidu/shell": "^1.2.9",
-    "@uidu/spinner": "^0.4.6",
-    "@uidu/tooltip": "^0.4.6",
+    "@uidu/checkbox": "^0.3.7",
+    "@uidu/data-fields": "^0.5.5",
+    "@uidu/data-views": "^0.5.10",
+    "@uidu/drawer": "^0.5.8",
+    "@uidu/dropdown-menu": "^0.4.8",
+    "@uidu/field-text": "^0.4.9",
+    "@uidu/form": "^0.4.12",
+    "@uidu/inline-dialog": "^0.4.7",
+    "@uidu/menu": "^0.4.9",
+    "@uidu/popup": "^0.4.7",
+    "@uidu/select": "^0.6.10",
+    "@uidu/shell": "^1.2.10",
+    "@uidu/spinner": "^0.4.7",
+    "@uidu/tooltip": "^0.4.7",
     "lodash": "^4.17.14",
     "react": "^17.0.1",
     "react-animate-height": "^2.0.23",
@@ -38,7 +38,7 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.6"
+    "@uidu/docs": "^0.3.7"
   },
   "uidu:src": "src/index.ts"
 }

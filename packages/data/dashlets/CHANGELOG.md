@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.13
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/spinner@0.4.7
+  - @uidu/tooltip@0.4.7
+  - @uidu/dashlet-controls@0.3.8
+
 ## 0.7.12
 
 ### Patch Changes

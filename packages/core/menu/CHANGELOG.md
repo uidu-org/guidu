@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.4.9
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/theme@0.5.8
+
 ## 0.4.8
 
 ### Patch Changes

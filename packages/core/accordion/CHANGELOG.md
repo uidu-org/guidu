@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.4.7
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/docs@0.3.7
+
 ## 0.4.6
 
 ### Patch Changes

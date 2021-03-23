@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.7
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+
 ## 0.4.6
 
 ### Patch Changes

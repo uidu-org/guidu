@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.9.6
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/calendar@0.2.9
+  - @uidu/spinner@0.4.7
+  - @uidu/board@0.3.7
+  - @uidu/data-controls@0.7.5
+  - @uidu/data-fields@0.5.5
+  - @uidu/data-views@0.5.10
+  - @uidu/gallery@0.2.9
+  - @uidu/list@0.2.10
+  - @uidu/table@0.6.8
+  - @uidu/shell@1.2.10
+
 ## 0.9.5
 
 ### Patch Changes
