@@ -4,7 +4,7 @@ const prettierTsRules = require('eslint-config-prettier/@typescript-eslint')
   .rules;
 
 module.exports = {
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier'],
   parser: 'babel-eslint',
   plugins: ['prettier', 'react-hooks', 'formatjs'],
   rules: {

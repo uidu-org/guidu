@@ -2,7 +2,7 @@ import { Wrapper } from '@uidu/field-base';
 import Popup from '@uidu/popup';
 import React, { forwardRef, useState } from 'react';
 import { HexColorInput, HexColorPicker } from 'react-colorful';
-import 'react-colorful/dist/index.css';
+// import 'react-colorful/dist/index.css';
 import styled from 'styled-components';
 import { FieldColorPickerProps } from '../types';
 

@@ -15,7 +15,7 @@
     "@uidu/popup": "^0.4.6",
     "formsy-react": "^2.2.1",
     "react": "^17.0.1",
-    "react-colorful": "^4.4.3",
+    "react-colorful": "^5.0.1",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },
