@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.10.0
+
+### Minor Changes
+
+- df149c7: CubejsProvider should be placed on top of container applications
+
 ## 0.9.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/dashboard-manager
 
+## 0.9.0
+
+### Minor Changes
+
+- df149c7: CubejsProvider should be placed on top of container applications
+
 ## 0.8.10
 
 ### Patch Changes
