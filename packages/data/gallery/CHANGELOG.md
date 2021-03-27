@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.2.9
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/spinner@0.4.7
+  - @uidu/data-controls@0.7.5
+  - @uidu/data-fields@0.5.5
+  - @uidu/shell@1.2.10
+
 ## 0.2.8
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/webpack-config",
-  "version": "0.1.98",
+  "version": "0.1.99",
   "description": "Configurations for webpack used in Guidu",
   "repository": "https://github.com/uidu-org/guidu/tree/master/build/webpack-config",
   "license": "ISC",
@@ -15,9 +15,9 @@
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.16",
-    "@uidu/changelog-loader": "^0.1.27",
-    "@uidu/fs-loader": "^0.1.40",
-    "@uidu/nav-info-loader": "^0.1.41",
+    "@uidu/changelog-loader": "^0.1.28",
+    "@uidu/fs-loader": "^0.1.41",
+    "@uidu/nav-info-loader": "^0.1.42",
     "babel-loader": "^8.0.4",
     "bolt": "^0.24.3",
     "chalk": "^4.0.0",

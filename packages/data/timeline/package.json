@@ -1,6 +1,6 @@
 {
   "name": "@uidu/timeline",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": false,
   "description": "Timeline view for data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/timeline",
@@ -12,6 +12,6 @@
     "tslib": "^2.0.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.6"
+    "@uidu/docs": "^0.3.7"
   }
 }

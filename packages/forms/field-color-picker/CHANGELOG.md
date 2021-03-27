@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.3.10
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/popup@0.4.7
+  - @uidu/field-base@0.5.10
+
 ## 0.3.9
 
 ### Patch Changes

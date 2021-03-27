@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.3.8
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/analytics@0.4.7
+  - @uidu/lozenge@0.4.7
+  - @uidu/theme@0.5.8
+  - @uidu/analytics-gas-types@0.2.5
+  - @uidu/field-text@0.4.9
+
 ## 0.3.7
 
 ### Patch Changes

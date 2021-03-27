@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.2.29
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/select@0.6.10
+  - @uidu/docs@0.3.7
+  - @uidu/badge@0.4.7
+  - @uidu/button@0.4.7
+  - @uidu/code@0.4.7
+  - @uidu/drawer@0.5.8
+  - @uidu/lozenge@0.4.7
+  - @uidu/modal-dialog@0.4.9
+  - @uidu/spinner@0.4.7
+  - @uidu/theme@0.5.8
+  - @uidu/tooltip@0.4.7
+  - @uidu/list@0.2.10
+  - @uidu/table@0.6.8
+  - @uidu/checkbox@0.3.7
+  - @uidu/field-text@0.4.9
+  - @uidu/form@0.4.12
+  - @uidu/navigation@0.7.4
+  - @uidu/shell@1.2.10
+  - @uidu/themes-uidu@0.3.18
+
 ## 0.2.28
 
 ### Patch Changes

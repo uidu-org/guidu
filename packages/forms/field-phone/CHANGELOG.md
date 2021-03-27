@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.2.9
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/analytics@0.4.7
+  - @uidu/field-base@0.5.10
+  - @uidu/field-text@0.4.9
+
 ## 0.2.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/portal
 
+## 0.4.7
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/theme@0.5.8
+
 ## 0.4.6
 
 ### Patch Changes

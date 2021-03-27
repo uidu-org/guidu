@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.5.10
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/form@0.4.12
+
 ## 0.5.9
 
 ### Patch Changes

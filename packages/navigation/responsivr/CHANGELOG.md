@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.3.6
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+
 ## 0.3.5
 
 ### Patch Changes

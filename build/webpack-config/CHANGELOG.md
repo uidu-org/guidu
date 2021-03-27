@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.99
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/changelog-loader@0.1.28
+  - @uidu/fs-loader@0.1.41
+  - @uidu/nav-info-loader@0.1.42
+
 ## 0.1.98
 
 ### Patch Changes

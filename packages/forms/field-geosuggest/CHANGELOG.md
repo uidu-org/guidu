@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.3.8
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/spinner@0.4.7
+  - @uidu/field-base@0.5.10
+
 ## 0.3.7
 
 ### Patch Changes

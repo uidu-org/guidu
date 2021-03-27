@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.3.6
+
+### Patch Changes
+
+- 41b1690: Bump dependencies
+- Updated dependencies [41b1690]
+  - @uidu/analytics@0.4.7
+  - @uidu/analytics-gas-types@0.2.5
+  - @uidu/analytics-namespaced-context@0.3.6
+
 ## 0.3.5
 
 ### Patch Changes
