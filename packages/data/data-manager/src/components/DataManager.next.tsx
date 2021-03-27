@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
-import { useCubeQuery } from '@cubejs-client/react';
+import { CubeContext, useCubeQuery } from '@cubejs-client/react';
 import { ControlsSkeleton, Finder } from '@uidu/data-controls';
 import { buildColumns } from '@uidu/data-fields';
 import { byName } from '@uidu/data-views';
@@ -13,7 +13,7 @@ import {
   RowActions,
   RowSelection,
 } from '@uidu/table';
-import React, { useMemo, useState } from 'react';
+import React, { useContext, useMemo, useState } from 'react';
 import {
   useExpanded,
   useFilters,
@@ -407,13 +407,9 @@ function DataManagerComponent({
   });
 }
 
-export default function DataManager({
-  query,
-  currentView,
-  cubejsApi,
-  children,
-}) {
-  console.log(query);
+export default function DataManager({ query, currentView, children }) {
+  const { cubejsApi } = useContext(CubeContext);
+
   const { resultSet, error, isLoading } = useCubeQuery(query, { cubejsApi });
   if (error) {
     console.log(error);
