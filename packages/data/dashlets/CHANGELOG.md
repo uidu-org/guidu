@@ -1,5 +1,13 @@
 # @uidu/blocks
 
+## 0.7.14
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/dashlet-controls@0.3.9
+
 ## 0.7.13
 
 ### Patch Changes

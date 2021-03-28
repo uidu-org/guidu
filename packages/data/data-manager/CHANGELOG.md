@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.10.1
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/data-controls@0.7.6
+  - @uidu/data-fields@0.5.6
+  - @uidu/data-views@0.5.11
+  - @uidu/table@0.6.9
+  - @uidu/shell@1.2.11
+
 ## 0.10.0
 
 ### Minor Changes

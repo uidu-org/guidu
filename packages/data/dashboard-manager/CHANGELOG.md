@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.9.1
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/dashboard-controls@0.4.9
+  - @uidu/dashlets@0.7.14
+
 ## 0.9.0
 
 ### Minor Changes

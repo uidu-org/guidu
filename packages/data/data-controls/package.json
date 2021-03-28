@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-controls",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "private": false,
   "description": "Elements to filter, sort, group data",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
@@ -13,8 +13,8 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/checkbox": "^0.3.7",
-    "@uidu/data-fields": "^0.5.5",
-    "@uidu/data-views": "^0.5.10",
+    "@uidu/data-fields": "^0.5.6",
+    "@uidu/data-views": "^0.5.11",
     "@uidu/drawer": "^0.5.8",
     "@uidu/dropdown-menu": "^0.4.8",
     "@uidu/field-text": "^0.4.9",
@@ -23,7 +23,7 @@
     "@uidu/menu": "^0.4.9",
     "@uidu/popup": "^0.4.7",
     "@uidu/select": "^0.6.10",
-    "@uidu/shell": "^1.2.10",
+    "@uidu/shell": "^1.2.11",
     "@uidu/spinner": "^0.4.7",
     "@uidu/tooltip": "^0.4.7",
     "lodash": "^4.17.14",

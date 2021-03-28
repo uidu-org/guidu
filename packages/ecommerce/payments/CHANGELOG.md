@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.4.10
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+
 ## 0.4.9
 
 ### Patch Changes

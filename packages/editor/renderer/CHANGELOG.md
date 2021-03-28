@@ -1,5 +1,15 @@
 # @uidu/renderer
 
+## 0.3.10
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/editor-common@0.4.9
+  - @uidu/mentions@0.2.9
+  - @uidu/status@0.3.9
+
 ## 0.3.9
 
 ### Patch Changes

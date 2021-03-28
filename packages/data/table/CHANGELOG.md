@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.6.9
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/data-fields@0.5.6
+
 ## 0.6.8
 
 ### Patch Changes

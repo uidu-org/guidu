@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.2.11
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+
 ## 1.2.10
 
 ### Patch Changes

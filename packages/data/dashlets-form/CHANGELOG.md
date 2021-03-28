@@ -1,5 +1,14 @@
 # @uidu/dashlets-form
 
+## 0.3.1
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/dashlets@0.7.14
+  - @uidu/shell@1.2.11
+
 ## 0.3.0
 
 ### Minor Changes

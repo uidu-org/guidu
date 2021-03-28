@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.3.9
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+
 ## 0.3.8
 
 ### Patch Changes
