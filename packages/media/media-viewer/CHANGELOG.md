@@ -1,5 +1,13 @@
 # @uidu/media-viewer
 
+## 0.3.8
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+- Updated dependencies [2f97684]
+  - @uidu/shell@1.2.11
+
 ## 0.3.7
 
 ### Patch Changes

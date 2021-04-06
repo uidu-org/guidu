@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.3.7
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+
 ## 0.3.6
 
 ### Patch Changes

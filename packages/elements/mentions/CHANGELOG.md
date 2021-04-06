@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.2.9
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+
 ## 0.2.8
 
 ### Patch Changes

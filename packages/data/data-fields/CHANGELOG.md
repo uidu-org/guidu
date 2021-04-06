@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.5.6
+
+### Patch Changes
+
+- 2f97684: Bump react-intl
+
 ## 0.5.5
 
 ### Patch Changes
