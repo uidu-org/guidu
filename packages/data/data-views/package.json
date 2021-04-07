@@ -18,7 +18,7 @@
     "@uidu/select": "^0.6.10",
     "react": "^17.0.1",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.15.3",
+    "react-intl": "^5.15.7",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

@@ -346,7 +346,7 @@
     "react-helmet": "^6.0.0",
     "react-images": "^1.1.0-beta.0",
     "react-intersection-observer": "^8.24.1",
-    "react-intl": "^5.15.3",
+    "react-intl": "^5.15.7",
     "react-loadable": "^5.5.0",
     "react-lorem-component": "^0.13.0",
     "react-markdown": "^5.0.2",
