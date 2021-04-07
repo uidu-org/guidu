@@ -1,5 +1,17 @@
 # @uidu/editor-core
 
+## 0.7.13
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+- Updated dependencies [437e611]
+  - @uidu/editor-common@0.4.11
+  - @uidu/emoji@0.3.9
+  - @uidu/mentions@0.2.11
+  - @uidu/profilecard@0.1.10
+  - @uidu/status@0.3.11
+
 ## 0.7.12
 
 ### Patch Changes

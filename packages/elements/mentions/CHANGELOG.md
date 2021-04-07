@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.2.11
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 0.2.10
 
 ### Patch Changes

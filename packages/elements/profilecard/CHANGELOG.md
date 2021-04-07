@@ -1,5 +1,11 @@
 # @uidu/profilecard
 
+## 0.1.10
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 0.1.9
 
 ### Patch Changes

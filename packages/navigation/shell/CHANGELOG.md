@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.2.13
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 1.2.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.5.8
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 0.5.7
 
 ### Patch Changes

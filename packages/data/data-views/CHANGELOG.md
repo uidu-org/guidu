@@ -1,5 +1,13 @@
 # @uidu/data-views
 
+## 0.5.13
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+- Updated dependencies [437e611]
+  - @uidu/data-controls@0.7.8
+
 ## 0.5.12
 
 ### Patch Changes

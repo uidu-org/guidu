@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.9
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 0.3.8
 
 ### Patch Changes

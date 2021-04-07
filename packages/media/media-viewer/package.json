@@ -1,6 +1,6 @@
 {
   "name": "@uidu/media-viewer",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "description": "MediaViewer is Atlassian's powerful solution for viewing files on the web. It's both powerful and extendable yet easy-to-integrate",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-viewer",
   "license": "ISC",
@@ -14,7 +14,7 @@
     "@uidu/button": "^0.4.8",
     "@uidu/comment": "^0.2.0",
     "@uidu/media-core": "^0.4.7",
-    "@uidu/shell": "^1.2.12",
+    "@uidu/shell": "^1.2.13",
     "@uidu/spinner": "^0.4.8",
     "@uidu/theme": "^0.5.9",
     "raf-schd": "^4.0.2",
