@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.1.100
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/changelog-loader@0.1.29
+  - @uidu/fs-loader@0.1.42
+  - @uidu/nav-info-loader@0.1.43
+
 ## 0.1.99
 
 ### Patch Changes

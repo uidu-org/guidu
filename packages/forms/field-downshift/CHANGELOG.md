@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.11
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/field-base@0.5.11
+  - @uidu/field-text@0.4.10
+
 ## 0.5.10
 
 ### Patch Changes

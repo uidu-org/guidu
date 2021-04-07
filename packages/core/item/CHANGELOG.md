@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.4.9
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/avatar@0.6.9
+  - @uidu/theme@0.5.9
+
 ## 0.4.8
 
 ### Patch Changes

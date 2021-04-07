@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/payments@0.4.11
+  - @uidu/form@0.4.13
+
 ## 0.2.7
 
 ### Patch Changes

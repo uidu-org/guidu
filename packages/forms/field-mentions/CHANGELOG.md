@@ -1,5 +1,16 @@
 # @uidu/field-mentions
 
+## 0.4.11
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/field-base@0.5.11
+  - @uidu/form@0.4.13
+
 ## 0.4.10
 
 ### Patch Changes

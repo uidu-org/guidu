@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.9
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/tooltip@0.4.8
+
 ## 0.6.8
 
 ### Patch Changes

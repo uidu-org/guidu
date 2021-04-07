@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.6.10
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/dropdown-menu@0.4.9
+  - @uidu/menu@0.4.10
+  - @uidu/popup@0.4.8
+  - @uidu/data-fields@0.5.7
+  - @uidu/checkbox@0.3.8
+
 ## 0.6.9
 
 ### Patch Changes

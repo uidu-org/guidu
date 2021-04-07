@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.3.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/theme@0.5.9
+
 ## 0.3.7
 
 ### Patch Changes

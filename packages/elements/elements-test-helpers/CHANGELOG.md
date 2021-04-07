@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.3.7
 
 ### Patch Changes

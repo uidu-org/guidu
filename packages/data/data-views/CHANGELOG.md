@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.12
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/data-controls@0.7.7
+  - @uidu/field-counter@0.3.9
+  - @uidu/field-number@0.4.10
+  - @uidu/form@0.4.13
+  - @uidu/select@0.6.11
+
 ## 0.5.11
 
 ### Patch Changes

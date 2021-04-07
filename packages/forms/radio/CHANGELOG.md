@@ -1,5 +1,14 @@
 # @uidu/radio
 
+## 0.5.10
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/field-base@0.5.11
+
 ## 0.5.9
 
 ### Patch Changes

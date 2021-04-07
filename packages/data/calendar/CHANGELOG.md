@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.10
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/dropdown-menu@0.4.9
+  - @uidu/shell@1.2.12
+
 ## 0.2.9
 
 ### Patch Changes

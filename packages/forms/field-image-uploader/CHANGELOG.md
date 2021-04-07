@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.11
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/button@0.4.8
+  - @uidu/spinner@0.4.8
+  - @uidu/field-base@0.5.11
+  - @uidu/media-core@0.4.7
+
 ## 0.4.10
 
 ### Patch Changes

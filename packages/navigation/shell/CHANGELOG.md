@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.12
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/spinner@0.4.8
+
 ## 1.2.11
 
 ### Patch Changes

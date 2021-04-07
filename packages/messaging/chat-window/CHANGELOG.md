@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/message@0.3.9
+  - @uidu/message-form@0.3.9
+  - @uidu/message-renderer@0.3.8
+
 ## 0.3.7
 
 ### Patch Changes

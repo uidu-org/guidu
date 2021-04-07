@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.15
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/spinner@0.4.8
+  - @uidu/tooltip@0.4.8
+  - @uidu/dashlet-controls@0.3.10
+
 ## 0.7.14
 
 ### Patch Changes

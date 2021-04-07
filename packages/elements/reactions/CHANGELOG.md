@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.2.6
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.2.5
 
 ### Patch Changes

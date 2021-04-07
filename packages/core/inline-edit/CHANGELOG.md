@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.2.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/button@0.4.8
+  - @uidu/inline-dialog@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/field@0.3.9
+  - @uidu/field-text@0.4.10
+  - @uidu/form@0.4.13
+
 ## 0.2.7
 
 ### Patch Changes

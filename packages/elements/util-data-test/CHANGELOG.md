@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.3.7
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/emoji@0.3.8
+  - @uidu/mentions@0.2.10
+  - @uidu/task-decision@0.3.8
+
 ## 0.3.6
 
 ### Patch Changes

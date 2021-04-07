@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.2.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/theme@0.5.9
+  - @uidu/shell@1.2.12
+
 ## 0.2.7
 
 ### Patch Changes

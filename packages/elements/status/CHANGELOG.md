@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.3.10
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/lozenge@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/analytics-gas-types@0.2.6
+  - @uidu/field-text@0.4.10
+
 ## 0.3.9
 
 ### Patch Changes

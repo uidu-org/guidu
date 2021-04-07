@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.3.2
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/accordion@0.4.8
+  - @uidu/dropdown-menu@0.4.9
+  - @uidu/dashlets@0.7.15
+  - @uidu/field-downshift@0.5.11
+  - @uidu/field-toggle@0.4.12
+  - @uidu/form@0.4.13
+  - @uidu/select@0.6.11
+  - @uidu/shell@1.2.12
+
 ## 0.3.1
 
 ### Patch Changes
