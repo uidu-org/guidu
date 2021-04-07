@@ -1,5 +1,11 @@
 # @uidu/popper
 
+## 0.4.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.4.7
 
 ### Patch Changes

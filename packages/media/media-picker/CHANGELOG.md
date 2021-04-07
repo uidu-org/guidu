@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.4.7
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/media-core@0.4.7
+
 ## 0.4.6
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.6
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.3.5
 
 ### Patch Changes

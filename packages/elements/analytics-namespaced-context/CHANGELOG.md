@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.3.7
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+
 ## 0.3.6
 
 ### Patch Changes

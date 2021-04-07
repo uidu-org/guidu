@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.3.9
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/avatar@0.6.9
+  - @uidu/drawer@0.5.9
+  - @uidu/dropdown-menu@0.4.9
+  - @uidu/tooltip@0.4.8
+  - @uidu/media-card@0.4.8
+  - @uidu/media-core@0.4.7
+  - @uidu/media-viewer@0.3.9
+  - @uidu/message-form@0.3.9
+  - @uidu/message-renderer@0.3.8
+
 ## 0.3.8
 
 ### Patch Changes

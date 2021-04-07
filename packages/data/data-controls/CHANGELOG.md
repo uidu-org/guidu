@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.7.7
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/drawer@0.5.9
+  - @uidu/dropdown-menu@0.4.9
+  - @uidu/inline-dialog@0.4.8
+  - @uidu/menu@0.4.10
+  - @uidu/popup@0.4.8
+  - @uidu/spinner@0.4.8
+  - @uidu/tooltip@0.4.8
+  - @uidu/data-fields@0.5.7
+  - @uidu/data-views@0.5.12
+  - @uidu/checkbox@0.3.8
+  - @uidu/field-text@0.4.10
+  - @uidu/form@0.4.13
+  - @uidu/select@0.6.11
+  - @uidu/shell@1.2.12
+
 ## 0.7.6
 
 ### Patch Changes

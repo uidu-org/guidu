@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.5.9
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/docs@0.3.8
+  - @uidu/analytics@0.4.8
+  - @uidu/blanket@0.4.8
+  - @uidu/item@0.4.9
+  - @uidu/theme@0.5.9
+
 ## 0.5.8
 
 ### Patch Changes

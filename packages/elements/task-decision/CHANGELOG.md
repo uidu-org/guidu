@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/avatar-group@2.5.10
+  - @uidu/button@0.4.8
+  - @uidu/spinner@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/analytics-namespaced-context@0.3.7
+
 ## 0.3.7
 
 ### Patch Changes

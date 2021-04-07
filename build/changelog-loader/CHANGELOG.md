@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.29
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.1.28
 
 ### Patch Changes

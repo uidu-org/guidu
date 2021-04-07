@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.5.9
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/form@0.4.13
+
 ## 0.5.8
 
 ### Patch Changes

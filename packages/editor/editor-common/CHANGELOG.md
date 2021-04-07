@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.10
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/analytics@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/adf-schema@0.3.7
+  - @uidu/adf-utils@0.6.7
+  - @uidu/analytics-namespaced-context@0.3.7
+  - @uidu/emoji@0.3.8
+  - @uidu/mentions@0.2.10
+  - @uidu/profilecard@0.1.9
+
 ## 0.4.9
 
 ### Patch Changes

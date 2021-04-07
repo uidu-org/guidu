@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.10.2
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/spinner@0.4.8
+  - @uidu/board@0.3.8
+  - @uidu/calendar@0.2.10
+  - @uidu/data-controls@0.7.7
+  - @uidu/data-fields@0.5.7
+  - @uidu/data-views@0.5.12
+  - @uidu/gallery@0.2.10
+  - @uidu/list@0.2.11
+  - @uidu/table@0.6.10
+  - @uidu/shell@1.2.12
+
 ## 0.10.1
 
 ### Patch Changes

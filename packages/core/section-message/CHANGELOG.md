@@ -1,5 +1,14 @@
 # @uidu/section-message
 
+## 0.4.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/button@0.4.8
+  - @uidu/theme@0.5.9
+
 ## 0.4.7
 
 ### Patch Changes

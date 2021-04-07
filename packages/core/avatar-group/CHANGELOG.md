@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.10
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/avatar@0.6.9
+  - @uidu/dropdown-menu@0.4.9
+  - @uidu/theme@0.5.9
+  - @uidu/tooltip@0.4.8
+
 ## 2.5.9
 
 ### Patch Changes

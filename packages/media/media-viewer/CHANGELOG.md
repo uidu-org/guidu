@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.3.9
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/avatar@0.6.9
+  - @uidu/button@0.4.8
+  - @uidu/spinner@0.4.8
+  - @uidu/theme@0.5.9
+  - @uidu/media-core@0.4.7
+  - @uidu/shell@1.2.12
+
 ## 0.3.8
 
 ### Patch Changes

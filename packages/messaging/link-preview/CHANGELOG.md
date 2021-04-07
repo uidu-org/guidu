@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.2.7
 
 ### Patch Changes

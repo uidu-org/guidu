@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.3.8
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/adf-schema@0.3.7
+  - @uidu/editor-common@0.4.10
+
 ## 0.3.7
 
 ### Patch Changes

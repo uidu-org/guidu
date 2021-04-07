@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.25
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+
 ## 0.1.24
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.3.7
+
+### Patch Changes
+
+- d3e2a60: Bump react-intl and other dependencies
+- Updated dependencies [d3e2a60]
+  - @uidu/shell@1.2.12
+
 ## 0.3.6
 
 ### Patch Changes
