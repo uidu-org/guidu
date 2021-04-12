@@ -37,8 +37,8 @@
     "@uidu/elements-test-helpers": "^0.3.8",
     "@uidu/renderer": "^0.3.11",
     "@uidu/util-data-test": "^0.3.7",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "styled-components": "^5.2.1",
     "url-search-params": "^1.1.0"
   },

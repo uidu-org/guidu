@@ -13,7 +13,7 @@
     "axios": "^0.21.0",
     "get-urls": "^10.0.0",
     "nanoclamp": "^1.2.9",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },

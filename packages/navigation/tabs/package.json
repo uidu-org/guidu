@@ -12,7 +12,7 @@
     "@uidu/analytics": "^0.4.8",
     "@uidu/docs": "^0.3.8",
     "@uidu/theme": "^0.5.9",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   }

@@ -19,7 +19,7 @@
     "@uidu/field-text": "^0.4.10",
     "formsy-react": "^2.2.1",
     "moment": "^2.27.0",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-day-picker": "^7.4.5",
     "tslib": "^2.0.1"
   },

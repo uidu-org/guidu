@@ -29,8 +29,8 @@
   "devDependencies": {
     "@uidu/docs": "^0.3.8",
     "@uidu/elements-test-helpers": "^0.3.8",
-    "react": "^17.0.1",
-    "react-intl": "^5.15.7"
+    "react": "^17.0.2",
+    "react-intl": "^5.15.8"
   },
   "peerDependencies": {
     "react": "^17.0.0",

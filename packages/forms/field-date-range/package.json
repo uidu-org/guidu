@@ -14,7 +14,7 @@
     "@uidu/field-date": "^0.3.12",
     "formsy-react": "^2.2.1",
     "moment": "^2.27.0",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-day-picker": "^7.4.5",
     "react-feather": "^2.0.9",
     "react-helmet": "^6.0.0",

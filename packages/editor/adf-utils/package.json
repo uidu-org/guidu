@@ -23,6 +23,6 @@
   "devDependencies": {
     "@uidu/docs": "^0.3.8",
     "@uidu/json-schema-generator": "^0.1.25",
-    "react": "^17.0.1"
+    "react": "^17.0.2"
   }
 }

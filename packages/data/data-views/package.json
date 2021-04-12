@@ -16,9 +16,9 @@
     "@uidu/field-number": "^0.4.10",
     "@uidu/form": "^0.4.13",
     "@uidu/select": "^0.6.11",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.15.7",
+    "react-intl": "^5.15.8",
     "tslib": "^2.0.1"
   },
   "devDependencies": {

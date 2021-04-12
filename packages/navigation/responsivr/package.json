@@ -9,7 +9,7 @@
   "module": "dist/uidu-responsivr.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-media": "^1.9.2",
     "tslib": "^2.0.1"
   },

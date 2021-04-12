@@ -19,9 +19,9 @@
     "hoverintent": "^2.2.1",
     "overlayscrollbars": "^1.11.0",
     "overlayscrollbars-react": "^0.2.1",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.15.7",
+    "react-intl": "^5.15.8",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1"
   },
