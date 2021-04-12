@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.5.10
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+- Updated dependencies [437e611]
+  - @uidu/shell@1.2.13
+
 ## 0.5.9
 
 ### Patch Changes

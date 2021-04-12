@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.4.12
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 0.4.11
 
 ### Patch Changes

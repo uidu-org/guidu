@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.6.11
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+- Updated dependencies [437e611]
+  - @uidu/data-fields@0.5.8
+
 ## 0.6.10
 
 ### Patch Changes

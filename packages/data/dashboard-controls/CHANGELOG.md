@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.4.11
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+
 ## 0.4.10
 
 ### Patch Changes

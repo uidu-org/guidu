@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.2.12
+
+### Patch Changes
+
+- 437e611: Bump react-intl to latest version
+- Updated dependencies [437e611]
+  - @uidu/payments@0.4.12
+
 ## 0.2.11
 
 ### Patch Changes
