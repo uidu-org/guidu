@@ -1,5 +1,19 @@
 # @uidu/editor-common
 
+## 0.4.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/adf-utils@0.6.8
+  - @uidu/analytics-namespaced-context@0.3.8
+  - @uidu/emoji@0.3.10
+  - @uidu/mentions@0.2.12
+  - @uidu/profilecard@0.1.11
+
 ## 0.4.11
 
 ### Patch Changes

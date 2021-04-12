@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.10.4
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/spinner@0.4.9
+  - @uidu/board@0.3.9
+  - @uidu/calendar@0.2.11
+  - @uidu/data-controls@0.7.9
+  - @uidu/data-fields@0.5.9
+  - @uidu/data-views@0.5.14
+  - @uidu/gallery@0.2.11
+  - @uidu/list@0.2.12
+  - @uidu/table@0.6.12
+  - @uidu/shell@1.2.14
+
 ## 0.10.3
 
 ### Patch Changes

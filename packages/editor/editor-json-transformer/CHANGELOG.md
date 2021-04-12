@@ -1,5 +1,11 @@
 # @uidu/editor-json-transformer
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 0.3.8
 
 ### Patch Changes

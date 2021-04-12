@@ -1,5 +1,13 @@
 # @uidu/editor-markdown-transformer
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/editor-common@0.4.12
+
 ## 0.3.8
 
 ### Patch Changes

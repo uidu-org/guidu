@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.7.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/drawer@0.5.10
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/inline-dialog@0.4.9
+  - @uidu/menu@0.4.11
+  - @uidu/popup@0.4.9
+  - @uidu/spinner@0.4.9
+  - @uidu/tooltip@0.4.9
+  - @uidu/data-fields@0.5.9
+  - @uidu/data-views@0.5.14
+  - @uidu/checkbox@0.3.9
+  - @uidu/field-text@0.4.11
+  - @uidu/form@0.4.14
+  - @uidu/select@0.6.12
+  - @uidu/shell@1.2.14
+
 ## 0.7.8
 
 ### Patch Changes

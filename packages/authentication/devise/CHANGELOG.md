@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.11
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/slider@1.6.9
+  - @uidu/spinner@0.4.9
+  - @uidu/checkbox@0.3.9
+  - @uidu/field-password@0.4.11
+  - @uidu/field-phone@0.2.11
+  - @uidu/field-text@0.4.11
+  - @uidu/form@0.4.14
+  - @uidu/shell@1.2.14
+
 ## 0.5.10
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/field-base@0.5.12
+
 ## 0.3.8
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/field-base@0.5.12
+  - @uidu/field-text@0.4.11
+
 ## 0.5.11
 
 ### Patch Changes

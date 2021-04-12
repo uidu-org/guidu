@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.4.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/docs@0.3.9
+
 ## 0.4.8
 
 ### Patch Changes

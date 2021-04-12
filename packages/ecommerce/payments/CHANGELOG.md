@@ -1,5 +1,16 @@
 # @uidu/payments
 
+## 0.4.13
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/slider@1.6.9
+  - @uidu/theme@0.5.10
+  - @uidu/field-base@0.5.12
+  - @uidu/form@0.4.14
+
 ## 0.4.12
 
 ### Patch Changes

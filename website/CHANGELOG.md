@@ -1,5 +1,30 @@
 # Change Log
 
+## 0.2.31
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/docs@0.3.9
+  - @uidu/badge@0.4.9
+  - @uidu/button@0.4.9
+  - @uidu/code@0.4.9
+  - @uidu/drawer@0.5.10
+  - @uidu/lozenge@0.4.9
+  - @uidu/modal-dialog@0.4.11
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/list@0.2.12
+  - @uidu/table@0.6.12
+  - @uidu/checkbox@0.3.9
+  - @uidu/field-text@0.4.11
+  - @uidu/form@0.4.14
+  - @uidu/select@0.6.12
+  - @uidu/navigation@0.7.6
+  - @uidu/shell@1.2.14
+
 ## 0.2.30
 
 ### Patch Changes

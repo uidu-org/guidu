@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.3.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/drawer@0.5.10
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/media-card@0.4.9
+  - @uidu/media-core@0.4.8
+  - @uidu/media-viewer@0.3.11
+  - @uidu/message-form@0.3.10
+  - @uidu/message-renderer@0.3.9
+
 ## 0.3.9
 
 ### Patch Changes

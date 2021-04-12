@@ -1,6 +1,6 @@
 {
   "name": "@uidu/item",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "A generic item component to be used within other components",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/item",
   "license": "ISC",
@@ -10,8 +10,8 @@
   "module": "dist/uidu-item.esm.js",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
-    "@uidu/avatar": "^0.6.9",
-    "@uidu/theme": "^0.5.9",
+    "@uidu/avatar": "^0.6.10",
+    "@uidu/theme": "^0.5.10",
     "polished": "^4.0.1",
     "prop-types": "^15.7.2",
     "react-addons-text-content": "^0.0.4",
@@ -19,9 +19,9 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.8",
-    "@uidu/lozenge": "^0.4.8",
-    "@uidu/tooltip": "^0.4.8",
+    "@uidu/docs": "^0.3.9",
+    "@uidu/lozenge": "^0.4.9",
+    "@uidu/tooltip": "^0.4.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^5.2.0",

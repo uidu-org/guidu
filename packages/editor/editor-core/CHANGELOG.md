@@ -1,5 +1,41 @@
 # @uidu/editor-core
 
+## 0.7.14
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/avatar@0.6.10
+  - @uidu/avatar-group@2.5.11
+  - @uidu/button@0.4.9
+  - @uidu/droplist@0.4.10
+  - @uidu/menu@0.4.11
+  - @uidu/modal-dialog@0.4.11
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/adf-utils@0.6.8
+  - @uidu/editor-common@0.4.12
+  - @uidu/editor-json-transformer@0.3.9
+  - @uidu/editor-markdown-transformer@0.3.9
+  - @uidu/analytics-listeners@0.3.8
+  - @uidu/analytics-namespaced-context@0.3.8
+  - @uidu/date@0.3.9
+  - @uidu/emoji@0.3.10
+  - @uidu/mentions@0.2.12
+  - @uidu/profilecard@0.1.11
+  - @uidu/status@0.3.12
+  - @uidu/task-decision@0.3.9
+  - @uidu/field-date@0.3.13
+  - @uidu/form@0.4.14
+  - @uidu/select@0.6.12
+  - @uidu/media-card@0.4.9
+  - @uidu/media-core@0.4.8
+  - @uidu/media-filmstrip@0.3.9
+  - @uidu/media-picker@0.4.8
+
 ## 0.7.13
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.13
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/slider@1.6.9
+  - @uidu/spinner@0.4.9
+  - @uidu/payments@0.4.13
+  - @uidu/field-text@0.4.11
+  - @uidu/form@0.4.14
+  - @uidu/stepper@0.3.9
+
 ## 0.2.12
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.4.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/theme@0.5.10
+
 ## 0.4.9
 
 ### Patch Changes

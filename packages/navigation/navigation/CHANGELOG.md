@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 0.7.6
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/inline-dialog@0.4.9
+  - @uidu/menu@0.4.11
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/animated-menu@0.3.7
+  - @uidu/shell@1.2.14
+
 ## 0.7.5
 
 ### Patch Changes

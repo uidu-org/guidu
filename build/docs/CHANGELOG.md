@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/button@0.4.9
+  - @uidu/code@0.4.9
+  - @uidu/section-message@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+
 ## 0.3.8
 
 ### Patch Changes

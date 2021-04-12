@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/theme@0.5.10
+
 ## 0.3.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.14
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/spinner@0.4.9
+
 ## 1.2.13
 
 ### Patch Changes

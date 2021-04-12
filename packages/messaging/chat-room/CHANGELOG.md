@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.3.8
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/shell@1.2.14
+
 ## 0.3.7
 
 ### Patch Changes

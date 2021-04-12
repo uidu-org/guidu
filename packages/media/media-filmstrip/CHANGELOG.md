@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/theme@0.5.10
+  - @uidu/media-card@0.4.9
+  - @uidu/media-core@0.4.8
+  - @uidu/media-viewer@0.3.11
+
 ## 0.3.8
 
 ### Patch Changes

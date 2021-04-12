@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.3.13
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/field-base@0.5.12
+  - @uidu/field-text@0.4.11
+
 ## 0.3.12
 
 ### Patch Changes

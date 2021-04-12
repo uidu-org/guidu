@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.14
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/data-controls@0.7.9
+  - @uidu/field-counter@0.3.10
+  - @uidu/field-number@0.4.11
+  - @uidu/form@0.4.14
+  - @uidu/select@0.6.12
+
 ## 0.5.13
 
 ### Patch Changes

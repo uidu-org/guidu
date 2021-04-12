@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/payments@0.4.13
+  - @uidu/form@0.4.14
+
 ## 0.2.8
 
 ### Patch Changes

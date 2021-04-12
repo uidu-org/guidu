@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.6.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/menu@0.4.11
+  - @uidu/popup@0.4.9
+  - @uidu/data-fields@0.5.9
+  - @uidu/checkbox@0.3.9
+
 ## 0.6.11
 
 ### Patch Changes

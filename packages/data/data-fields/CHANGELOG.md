@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.5.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/menu@0.4.11
+  - @uidu/field-color-picker@0.3.12
+  - @uidu/field-date@0.3.13
+  - @uidu/field-downshift@0.5.12
+  - @uidu/field-number@0.4.11
+  - @uidu/field-text@0.4.11
+  - @uidu/field-time@0.4.12
+  - @uidu/field-toggle@0.4.13
+  - @uidu/form@0.4.14
+  - @uidu/select@0.6.12
+
 ## 0.5.8
 
 ### Patch Changes

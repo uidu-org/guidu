@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.3.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/popup@0.4.9
+  - @uidu/field-base@0.5.12
+
 ## 0.3.11
 
 ### Patch Changes

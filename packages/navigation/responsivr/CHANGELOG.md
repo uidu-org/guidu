@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.3.8
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 0.3.7
 
 ### Patch Changes

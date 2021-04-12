@@ -1,6 +1,6 @@
 {
   "name": "@uidu/slider",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "Inputs using Formsy",
   "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/slider",
   "license": "MIT",
@@ -19,7 +19,7 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.8"
+    "@uidu/docs": "^0.3.9"
   },
   "publishConfig": {
     "access": "public"
