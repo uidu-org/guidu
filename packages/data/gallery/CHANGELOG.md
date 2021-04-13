@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.2.12
+
+### Patch Changes
+
+- f81be8b: DataManager with cube should have same API that Classic DataManager
+- Updated dependencies [f81be8b]
+  - @uidu/data-fields@0.5.10
+
 ## 0.2.11
 
 ### Patch Changes
