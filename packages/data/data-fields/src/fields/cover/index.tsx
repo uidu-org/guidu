@@ -12,6 +12,7 @@ const Cover: Field = {
     <FormattedMessage defaultMessage="Add a cover image to your record" />
   ),
   canSortBy: false,
+  isPrivate: true,
   color: 'skyblue',
 };
 

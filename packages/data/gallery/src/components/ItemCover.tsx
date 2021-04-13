@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledCover = styled.div<{ height: number; cover: string }>`
+const StyledCover = styled.div<{ height: number; cover?: string }>`
   height: ${({ height }) => `${height}px`};
   background-size: cover;
   background-position: 50% 50%;
@@ -14,7 +14,11 @@ const StyledCover = styled.div<{ height: number; cover: string }>`
 
 const Cover = ({ cover, children }: { cover: any; children?: any }) => {
   if (!cover) {
-    return null;
+    return (
+      <StyledCover className="card-img-top" height={207}>
+        {children}
+      </StyledCover>
+    );
   }
 
   return (
@@ -35,9 +39,5 @@ const Avatar = ({ avatar }) => {
 };
 
 export default function ItemCover({ cover, avatar }) {
-  if (avatar || cover) {
-    return <Cover cover={cover}>{avatar && <Avatar avatar={avatar} />}</Cover>;
-  }
-
-  return null;
+  return <Cover cover={cover}>{avatar && <Avatar avatar={avatar} />}</Cover>;
 }

@@ -42,7 +42,7 @@ export const withGroupColumns = [
 
 export const columnDefsNext = {
   'Users.id': {
-    isVisible: false,
+    isPrivate: true,
   },
   'Users.firstName': {
     name: 'First name',

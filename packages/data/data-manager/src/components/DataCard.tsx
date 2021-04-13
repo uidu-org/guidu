@@ -28,9 +28,8 @@ export default class DataCard extends PureComponent<any> {
       (cell) =>
         cell.column.kind !== 'uid' &&
         cell.column.kind !== 'selection' &&
-        cell.column.kind !== 'cover' &&
         cell.column.kind !== 'primary' &&
-        cell.column.kind !== 'avatar' &&
+        !cell.column.isPrivate &&
         cell.column.kind !== 'addField',
     );
 

@@ -54,15 +54,16 @@ export default function Gallery({
           (column) =>
             column.kind !== 'uid' &&
             column.kind !== 'selection' &&
-            column.kind !== 'cover' &&
+            !column.isPrivate &&
             !column.isPrimary &&
-            column.kind !== 'avatar' &&
             column.kind !== 'addField',
         ).length +
       // ITEM_PADDING +
       gutterSize
     );
   }, [gutterSize, tableInstance.visibleColumns, avatar, cover]);
+
+  console.log(columnCount);
 
   const items = useMemo(() => chunkArray(tableInstance.rows, columnCount), [
     tableInstance.rows,
@@ -99,8 +100,10 @@ export default function Gallery({
                   margin: `${gutterSize}px 0`,
                   height: `${virtualRow.size}px`,
                   transform: `translateY(${virtualRow.start}px)`,
-                  display: 'flex',
-                  justifyContent: 'space-between',
+                  display: 'grid',
+                  gridTemplateColumns: Array.from({ length: columnCount })
+                    .map((i) => `${100 / columnCount}%`)
+                    .join(' '),
                 }}
               >
                 {row.map((item, index) => {

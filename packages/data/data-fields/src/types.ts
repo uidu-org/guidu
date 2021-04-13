@@ -53,6 +53,8 @@ export type Field = {
     value: string;
     options?: Array<{ id: string | number; name: string }>;
   };
+  /** Private fields are not editable via interface nor visible to column lists */
+  isPrivate?: boolean;
 };
 
 export type FieldGroupIdentifier = {

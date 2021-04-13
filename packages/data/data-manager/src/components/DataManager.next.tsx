@@ -117,11 +117,12 @@ function DataManagerComponent({
   const data = useMemo(() => resultSet.tablePivot(), [resultSet]);
 
   const setColumnCount = (columnCount) => {
-    updateView({
+    onViewUpdate({
       preferences: { ...currentView.preferences, columnCount },
-    }).then(() => {
-      setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
     });
+    // .then(() => {
+    //   setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+    // });
   };
 
   const defaultColumn = React.useMemo(
@@ -233,11 +234,11 @@ function DataManagerComponent({
   const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
 
   useEffect(() => {
-    onViewUpdateDebounce(state);
+    onViewUpdateDebounce({ state });
   }, [state, onViewUpdateDebounce]);
 
   useEffect(() => {
-    onItemSelectDebounce(selectedFlatRows);
+    onItemSelectDebounce({ state: { ...state, selectedFlatRows } });
   }, [selectedFlatRows, onItemSelectDebounce]);
 
   const setAggregation = (column, aggregate) => {};

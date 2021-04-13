@@ -26,9 +26,8 @@ export default class Item extends PureComponent<any> {
     const visibleCells = row.cells.filter(
       (cell) =>
         cell.column.kind !== 'uid' &&
-        cell.column.kind !== 'cover' &&
         !cell.column.isPrimary &&
-        cell.column.kind !== 'avatar' &&
+        !cell.column.isPrivate &&
         cell.column.kind !== 'addField',
     );
 
@@ -37,7 +36,7 @@ export default class Item extends PureComponent<any> {
 
     return (
       <>
-        <ItemCover cover={cover} avatar={avatar} item={item} />
+        <ItemCover cover={cover} avatar={avatar} />
         <ItemWrapper>
           <ItemHeader primary={primary} item={item} />
           <ItemFields>

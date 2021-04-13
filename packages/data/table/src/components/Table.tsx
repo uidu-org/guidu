@@ -171,10 +171,7 @@ const Table = ({
           }}
         >
           {row.cells
-            .filter(
-              (cell) =>
-                cell.column.kind !== 'cover' && cell.column.kind !== 'avatar',
-            )
+            .filter((cell) => !cell.column.isPrivate)
             .map((cell, index) => (
               <Td
                 {...cell.getCellProps([
@@ -243,10 +240,7 @@ const Table = ({
           {headerGroups.map((headerGroup) => (
             <div {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers
-                .filter(
-                  (column) =>
-                    column.kind !== 'cover' && column.kind !== 'avatar',
-                )
+                .filter((column) => !column.isPrivate)
                 .map((column, index) => (
                   <Th
                     height={headerHeight}

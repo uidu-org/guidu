@@ -13,6 +13,7 @@ const Avatar: Field = {
   ),
   color: 'teal',
   canSortBy: false,
+  isPrivate: true,
 };
 
 export default Avatar;

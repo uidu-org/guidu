@@ -81,7 +81,6 @@ export default class DataView extends PureComponent<any> {
         list: {},
         table: {},
       },
-      columnDefs,
       rowData,
       onItemClick,
       currentView,

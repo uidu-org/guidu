@@ -80,7 +80,7 @@ export default function DataManager({
   getExportFileBlob,
 }: DataManagerProps) {
   const setColumnCount = (columnCount) => {
-    updateView(currentView, {
+    onViewUpdate(currentView, {
       preferences: { ...currentView.preferences, columnCount },
     }).then(() => {
       setTimeout(() => window.dispatchEvent(new Event('resize')), 300);

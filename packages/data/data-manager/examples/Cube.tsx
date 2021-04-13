@@ -4,7 +4,8 @@ import { More } from '@uidu/data-controls';
 import Form from '@uidu/form';
 import Select from '@uidu/select';
 import { ShellBody, ShellHeader, ShellMain } from '@uidu/shell';
-import React, { useRef, useState } from 'react';
+import { isEqual } from 'lodash';
+import React, { useCallback, useRef, useState } from 'react';
 import 'react-big-calendar/lib/sass/styles';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -141,48 +142,44 @@ function CubeExample() {
     }
   };
 
-  const addView = (dataview) => {
-    const newView = {
-      id: dataViews.length + 1,
-      kind: dataview.kind,
-      name: `New ${dataview.name}`,
-      fields: [],
-    };
-    setDataViews((prevDataViews) => [...prevDataViews, newView]);
-    setCurrentView(newView);
-  };
-
-  const updateView = async (currentView, props) => {
-    setIsAutoSaving('in-progress');
-    const dataViews = this.state.dataViews.map((item) => {
-      if (item.id !== currentView.id) {
-        return item;
+  const onViewUpdate = useCallback(
+    (state) => {
+      console.log(state);
+      if (!isEqual(currentView.state, state)) {
+        setIsAutoSaving('in-progress');
+        const updatedView = {
+          ...currentView,
+          ...state,
+        };
+        setDataViews((prevDataViews) =>
+          prevDataViews.map((item) => {
+            if (item.id !== currentView.id) {
+              return item;
+            }
+            return {
+              ...item,
+              state,
+            };
+          }),
+        );
+        setCurrentView(updatedView);
+        setIsAutoSaving('done');
+        return updatedView;
       }
-      return {
-        ...item,
-        state: props,
-      };
-    });
-    const updatedView = {
-      ...currentView,
-      state: props,
-    };
-    await this.setState({
-      dataViews,
-      isAutoSaving: 'done',
-      currentView: updatedView,
-    });
-    return updatedView;
-  };
+    },
+    [currentView],
+  );
+
+  console.log(currentView);
 
   return (
     <DataManagerNext
       // isAutoSaving={isAutoSaving}
       key={`table-for-${currentView.id}`}
-      onItemClick={console.log}
       columnDefs={columnDefsNext}
       currentView={currentView}
-      updateView={updateView}
+      onItemClick={console.log}
+      onViewUpdate={onViewUpdate}
     >
       {({ renderControls, renderView, renderSidebar }) => (
         <ShellMain>

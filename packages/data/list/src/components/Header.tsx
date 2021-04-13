@@ -43,12 +43,7 @@ export default function Header({
           <div className="d-flex flex-column">
             <div className="d-flex">
               {headerGroup.headers
-                .filter(
-                  (column) =>
-                    column.kind !== 'cover' &&
-                    column.kind !== 'avatar' &&
-                    !column.isPrimary,
-                )
+                .filter((column) => !column.isPrivate && !column.isPrimary)
                 .map((column) => {
                   const { id, width, minWidth, maxWidth, name, icon } = column;
                   return (

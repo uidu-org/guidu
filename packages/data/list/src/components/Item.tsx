@@ -75,9 +75,8 @@ export default function Item({
           {item.cells
             .filter(
               (cell) =>
-                cell.column.kind !== 'cover' &&
-                cell.column.kind !== 'avatar' &&
                 cell.column.kind !== 'uid' &&
+                !cell.column.isPrivate &&
                 !cell.column.isPrimary,
             )
             .map((cell) => {

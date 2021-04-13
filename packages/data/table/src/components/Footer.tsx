@@ -29,9 +29,7 @@ export default function Footer({ footerGroups, rowHeight }) {
       {footerGroups.map((group) => (
         <div {...group.getFooterGroupProps()}>
           {group.headers
-            .filter(
-              (column) => column.kind !== 'cover' && column.kind !== 'avatar',
-            )
+            .filter((column) => !column.isPrivate)
             .map((column) => (
               <Tf height={rowHeight} {...column.getFooterProps()}>
                 {column.render('Footer')}
