@@ -1,5 +1,13 @@
 # @uidu/table
 
+## 0.6.14
+
+### Patch Changes
+
+- 559a68f: Added isPrivate fields and Gallery as display grid
+- Updated dependencies [559a68f]
+  - @uidu/data-fields@0.5.11
+
 ## 0.6.13
 
 ### Patch Changes
