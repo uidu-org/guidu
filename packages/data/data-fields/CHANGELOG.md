@@ -1,5 +1,11 @@
 # @uidu/data-fields
 
+## 0.5.10
+
+### Patch Changes
+
+- f81be8b: DataManager with cube should have same API that Classic DataManager
+
 ## 0.5.9
 
 ### Patch Changes
