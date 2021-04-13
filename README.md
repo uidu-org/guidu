@@ -17,28 +17,22 @@ TODO: Fill out this long description.
 ## Install
 
 ```
-
+git clone https://github.com/uidu-org/guidu.git
+cd guidu
+yarn install
 ```
 
 ## Usage
 
-```
-
-```
+Documentation is package specific, browse https://uidu.design to see all the packages in action.
 
 ## Maintainers
 
 [@uidu-org](https://github.com/uidu-org)
 [@apuntovanini](https://github.com/apuntovanini)
+[@fsansalvadore](https://github.com/fsansalvadore)
 
 ## Contributing
-
-Clone the repository
-
-```
-git clone https://github.com/uidu-org/guidu
-cd guidu
-```
 
 Start all packages (not reccommended)
 
@@ -60,11 +54,9 @@ or specific packages
 yarn start modal-dialog field-geosuggest
 ```
 
+Pull requests are more than welcome, we're currently making this repo more contributors-friendly.
+
 ## Common pitfalls
-
-Missing packageId
-
-App keep reloading
 
 ## License
 
