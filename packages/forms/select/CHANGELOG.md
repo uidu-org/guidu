@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.6.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/checkbox@0.3.9
+  - @uidu/field-base@0.5.12
+  - @uidu/form@0.4.14
+
 ## 0.6.11
 
 ### Patch Changes

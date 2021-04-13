@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.4.8
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/media-core@0.4.8
+
 ## 0.4.7
 
 ### Patch Changes

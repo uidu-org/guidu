@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 0.4.11
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/theme@0.5.10
+  - @uidu/field-base@0.5.12
+  - @uidu/form@0.4.14
+
 ## 0.4.10
 
 ### Patch Changes

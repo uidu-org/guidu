@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.5.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/form@0.4.14
+
 ## 0.5.9
 
 ### Patch Changes

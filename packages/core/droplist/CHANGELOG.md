@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.4.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/item@0.4.10
+  - @uidu/layer@0.4.9
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+
 ## 0.4.9
 
 ### Patch Changes

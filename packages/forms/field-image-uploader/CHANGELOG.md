@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/button@0.4.9
+  - @uidu/spinner@0.4.9
+  - @uidu/field-base@0.5.12
+  - @uidu/media-core@0.4.8
+
 ## 0.4.11
 
 ### Patch Changes

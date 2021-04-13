@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.5.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/docs@0.3.9
+  - @uidu/analytics@0.4.9
+  - @uidu/blanket@0.4.9
+  - @uidu/item@0.4.10
+  - @uidu/theme@0.5.10
+
 ## 0.5.9
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.11
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/shell@1.2.14
+
 ## 0.2.10
 
 ### Patch Changes

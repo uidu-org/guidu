@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.2.11
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/spinner@0.4.9
+  - @uidu/data-controls@0.7.9
+  - @uidu/data-fields@0.5.9
+  - @uidu/shell@1.2.14
+
 ## 0.2.10
 
 ### Patch Changes

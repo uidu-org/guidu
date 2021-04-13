@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.3.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/avatar-group@2.5.11
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/field-date-range@0.3.10
+  - @uidu/form@0.4.14
+
 ## 0.3.11
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @uidu/toggle
 
+## 0.4.13
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/field-base@0.5.12
+
 ## 0.4.12
 
 ### Patch Changes

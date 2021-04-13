@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 1.6.8
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.7
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 0.3.6
 
 ### Patch Changes

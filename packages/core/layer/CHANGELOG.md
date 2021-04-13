@@ -1,5 +1,11 @@
 # @uidu/layer
 
+## 0.4.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 0.4.8
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/avatar-group@2.5.11
+  - @uidu/button@0.4.9
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/analytics-namespaced-context@0.3.8
+
 ## 0.3.8
 
 ### Patch Changes

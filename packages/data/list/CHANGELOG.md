@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.12
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/data-fields@0.5.9
+
 ## 0.2.11
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.11
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+
 ## 2.5.10
 
 ### Patch Changes

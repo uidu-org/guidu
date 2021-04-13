@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/checkbox@0.3.9
+  - @uidu/field-number@0.4.11
+  - @uidu/field-text@0.4.11
+  - @uidu/field-textarea@0.3.10
+  - @uidu/select@0.6.12
+
 ## 0.3.9
 
 ### Patch Changes

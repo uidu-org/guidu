@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.2.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/theme@0.5.10
+  - @uidu/shell@1.2.14
+
 ## 0.2.8
 
 ### Patch Changes

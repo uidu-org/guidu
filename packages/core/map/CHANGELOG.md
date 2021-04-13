@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.5.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/theme@0.5.10
+
 ## 0.5.8
 
 ### Patch Changes

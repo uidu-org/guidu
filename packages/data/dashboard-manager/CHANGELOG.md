@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.9.3
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/dashboard-controls@0.4.12
+  - @uidu/dashlets@0.7.17
+
 ## 0.9.2
 
 ### Patch Changes

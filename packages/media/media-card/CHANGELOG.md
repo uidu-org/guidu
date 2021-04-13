@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/button@0.4.9
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/media-core@0.4.8
+
 ## 0.4.8
 
 ### Patch Changes

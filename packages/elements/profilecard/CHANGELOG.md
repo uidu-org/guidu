@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.1.11
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/avatar@0.6.10
+  - @uidu/button@0.4.9
+  - @uidu/lozenge@0.4.9
+  - @uidu/popup@0.4.9
+  - @uidu/spinner@0.4.9
+  - @uidu/theme@0.5.10
+
 ## 0.1.10
 
 ### Patch Changes

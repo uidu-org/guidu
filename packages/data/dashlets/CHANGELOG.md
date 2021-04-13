@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.7.17
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/spinner@0.4.9
+  - @uidu/tooltip@0.4.9
+  - @uidu/dashlet-controls@0.3.12
+
 ## 0.7.16
 
 ### Patch Changes

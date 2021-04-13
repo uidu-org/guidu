@@ -1,5 +1,26 @@
 # @uidu/renderer
 
+## 0.3.13
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/analytics@0.4.9
+  - @uidu/code@0.4.9
+  - @uidu/theme@0.5.10
+  - @uidu/tooltip@0.4.9
+  - @uidu/adf-utils@0.6.8
+  - @uidu/editor-common@0.4.12
+  - @uidu/editor-json-transformer@0.3.9
+  - @uidu/analytics-listeners@0.3.8
+  - @uidu/analytics-namespaced-context@0.3.8
+  - @uidu/mentions@0.2.12
+  - @uidu/status@0.3.12
+  - @uidu/task-decision@0.3.9
+  - @uidu/media-card@0.4.9
+  - @uidu/media-filmstrip@0.3.9
+
 ## 0.3.12
 
 ### Patch Changes

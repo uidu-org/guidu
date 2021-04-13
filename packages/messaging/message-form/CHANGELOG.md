@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/dropdown-menu@0.4.10
+  - @uidu/spinner@0.4.9
+  - @uidu/field-mentions@0.4.12
+  - @uidu/field-text@0.4.11
+  - @uidu/form@0.4.14
+  - @uidu/media-filmstrip@0.3.9
+  - @uidu/message@0.3.10
+
 ## 0.3.9
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.10
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 0.3.9
 
 ### Patch Changes

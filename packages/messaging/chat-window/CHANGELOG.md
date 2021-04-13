@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+- Updated dependencies [bada352]
+  - @uidu/message@0.3.10
+  - @uidu/message-form@0.3.10
+  - @uidu/message-renderer@0.3.9
+
 ## 0.3.8
 
 ### Patch Changes

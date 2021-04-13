@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.9
+
+### Patch Changes
+
+- bada352: Bump dependencies
+
 ## 0.2.8
 
 ### Patch Changes
