@@ -13,8 +13,14 @@ import {
   RowActions,
   RowSelection,
 } from '@uidu/table';
-import React, { useContext, useMemo, useState } from 'react';
+import React, {
+  useContext,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+} from 'react';
 import {
+  useAsyncDebounce,
   useExpanded,
   useFilters,
   useFlexLayout,
@@ -25,6 +31,7 @@ import {
   useSortBy,
   useTable,
 } from 'react-table';
+import { useExportData } from 'react-table-plugins';
 import { DataManagerNextProps } from '../types';
 import DataView from './DataView';
 import DataViewSidebar from './DataViewSidebar';
@@ -68,34 +75,44 @@ const defaultPrimaryField = null;
 
 function DataManagerComponent({
   children,
+  resultSet,
   columnDefs,
   onItemClick,
+  onItemSelect = () => {},
+  onViewUpdate = () => {},
   currentView,
-  updateView: onViewUpdate,
-  resultSet,
+  updateView,
   actions = [],
+  canSelectRows = true,
+  forwardedRef,
+  getExportFileBlob,
 }: DataManagerNextProps) {
-  const [columnDefinitions, setColumnDefinitions] = useState(columnDefs);
-
   const columns = useMemo(
     () =>
       buildColumns([
         {
           kind: 'default',
           name: 'Default fields',
-          columns: resultSet.tableColumns().map((c) => ({
-            ...c,
-            field: c.key,
-            id: c.key,
-            accessor: (row) => row[c.key],
-            name: c.title,
-            kind: c.meta ? c.meta.kind : 'string',
-            fieldGroup: 'default',
-          })),
+          columns: resultSet.tableColumns().map((c) => {
+            console.log(c.key);
+            console.log(columnDefs[c.key]);
+            return {
+              ...c,
+              field: c.key,
+              id: c.key,
+              accessor: (row) => row[c.key],
+              name: c.title,
+              kind: c.meta ? c.meta.kind : 'string',
+              fieldGroup: 'default',
+              ...columnDefs[c.key],
+            };
+          }),
         },
       ]),
     [resultSet],
   );
+
+  console.log(columns);
 
   const data = useMemo(() => resultSet.tablePivot(), [resultSet]);
 
@@ -135,16 +152,7 @@ function DataManagerComponent({
       initialState: {
         ...(currentView?.state || {}),
       },
-      useControlledState: (state) => {
-        return React.useMemo(
-          () => ({
-            ...state,
-            ...currentView?.state,
-            columnDefinitions,
-          }),
-          [state],
-        );
-      },
+      getExportFileBlob,
     },
     useFlexLayout,
     useFilters,
@@ -154,35 +162,40 @@ function DataManagerComponent({
     useResizeColumns,
     useExpanded,
     useRowSelect,
+    useExportData,
     (hooks) => {
       hooks.visibleColumns.push((columns) => [
         // Let's make a column for selection
-        {
-          id: 'uid',
-          kind: 'uid',
-          field: 'id',
-          disableResizing: true,
-          minWidth: 56,
-          width: 56,
-          maxWidth: 56,
-          pinned: 'left',
-          groupByBoundary: true,
-          cellStyle: {
-            padding: 0,
-          },
-          // The header can use the table's getToggleAllRowsSelectedProps method
-          // to render a checkbox
-          Header: HeaderSelection,
-          // The cell can use the individual row's getToggleRowSelectedProps method
-          // to the render a checkbox
-          Cell: RowSelection,
-          Aggregated: AggregatedSelection,
-          Footer: (info) => {
-            // Only calculate total visits if rows change
+        ...(canSelectRows
+          ? [
+              {
+                id: 'uid',
+                kind: 'uid',
+                field: 'id',
+                disableResizing: true,
+                minWidth: 56,
+                width: 56,
+                maxWidth: 56,
+                pinned: 'left',
+                groupByBoundary: true,
+                cellStyle: {
+                  padding: 0,
+                },
+                // The header can use the table's getToggleAllRowsSelectedProps method
+                // to render a checkbox
+                Header: HeaderSelection,
+                // The cell can use the individual row's getToggleRowSelectedProps method
+                // to the render a checkbox
+                Cell: RowSelection,
+                Aggregated: AggregatedSelection,
+                Footer: (info) => {
+                  // Only calculate total visits if rows change
 
-            return <>Total: {info.rows.length}</>;
-          },
-        },
+                  return <>Total: {info.rows.length}</>;
+                },
+              },
+            ]
+          : []),
         ...columns,
         ...(actions.length > 0
           ? [
@@ -207,47 +220,29 @@ function DataManagerComponent({
     },
   );
 
-  const { state, setGlobalFilter, globalFilter } = tableInstance;
+  useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
 
-  const updateView = () => {
-    return onViewUpdate(currentView, state);
-  };
+  const {
+    state,
+    setGlobalFilter,
+    globalFilter,
+    selectedFlatRows,
+  } = tableInstance;
 
-  const setColumnState = (column, newState = {}) => {
-    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    setColumnDefinitions([
-      ...columnDefinitions.slice(0, index),
-      {
-        ...columnDefinitions[index],
-        ...newState,
-      },
-      ...columnDefinitions.slice(index + 1),
-    ]);
-  };
+  const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
+  const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
 
-  const setAggregation = (column, aggregate) => {
-    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    setColumnDefinitions([
-      ...columnDefinitions.slice(0, index),
-      {
-        ...columnDefinitions[index],
-        aggregate,
-      },
-      ...columnDefinitions.slice(index + 1),
-    ]);
-  };
+  useEffect(() => {
+    onViewUpdateDebounce(state);
+  }, [state, onViewUpdateDebounce]);
 
-  const setColumnWidth = (column, width: number) => {
-    const index = columnDefinitions.findIndex(({ id }) => id === column.id);
-    setColumnDefinitions([
-      ...columnDefinitions.slice(0, index),
-      {
-        ...columnDefinitions[index],
-        width,
-      },
-      ...columnDefinitions.slice(index + 1),
-    ]);
-  };
+  useEffect(() => {
+    onItemSelectDebounce(selectedFlatRows);
+  }, [selectedFlatRows, onItemSelectDebounce]);
+
+  const setAggregation = (column, aggregate) => {};
+
+  const setColumnWidth = (column, width: number) => {};
 
   const renderView = ({
     viewProps = {
@@ -350,27 +345,6 @@ function DataManagerComponent({
 
     return (
       <>
-        {/* {availableControls.viewer.visible && (
-          <Viewer
-            tableInstance={tableInstance}
-            isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
-            availableControls={availableControls}
-            currentView={currentView}
-            updateView={updateView}
-            columnDefs={columns}
-            // onDragEnd={this.moveColumn}
-            // onResize={this.setRowHeight}
-            rowHeight={rowHeight}
-            // onDownload={() => this.gridApi.exportDataAsCsv()}
-            columnCount={columnCount}
-            onSetColumnCount={setColumnCount}
-            actions={availableControls.more.actions}
-            // isAutoSaving={isAutoSaving}
-            startDateField={startDateField}
-            endDateField={endDateField}
-            primaryField={primaryField}
-          />
-        )} */}
         <Controls
           tableInstance={tableInstance}
           isConfiguratorOpen={availableControls.viewer.isConfiguratorOpen}
@@ -407,28 +381,34 @@ function DataManagerComponent({
   });
 }
 
-export default function DataManager({ query, currentView, children }) {
+export default function DataManager({
+  columnDefs,
+  currentView,
+  children,
+  onViewUpdate,
+  isAutoSaving,
+}) {
   const { cubejsApi } = useContext(CubeContext);
+  const { query } = currentView;
 
   const { resultSet, error, isLoading } = useCubeQuery(query, { cubejsApi });
   if (error) {
-    console.log(error);
-    return <p>error</p>;
+    return <p>Query is invalid</p>;
   }
-  if (isLoading) {
-    return <div>Loading</div>;
-  }
-  console.log(resultSet);
 
   if (!resultSet) {
-    return <p>Query is invalid</p>;
+    return null;
   }
 
   return (
     <DataManagerComponent
+      isLoading={isLoading}
       resultSet={resultSet}
+      columnDefs={columnDefs}
       children={children}
       currentView={currentView}
+      onViewUpdate={onViewUpdate}
+      isAutoSaving={isAutoSaving}
     />
   );
 }

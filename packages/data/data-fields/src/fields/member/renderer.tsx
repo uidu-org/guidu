@@ -7,14 +7,15 @@ export default (params) => {
   // }
 
   const { value, row } = params;
+
   // create the cell
   return (
     <div style={{ minWidth: 0 }}>
       <span className="d-flex align-items-center">
         <img
-          className="rounded-circle mr-2"
+          className="rounded-circle mr-2 border"
           style={{ width: 24 }}
-          src={row.original.avatar}
+          src={params.avatar(params)}
         />
         <span className="text-truncate">{value}</span>
       </span>

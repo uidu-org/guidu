@@ -27,6 +27,7 @@ export type DataView = {
   kind: DataViewKind['id'];
   name: string | ReactNode;
   fields: String[];
+  query: any;
   state: any;
   preferences?: DataViewPreferences;
 };

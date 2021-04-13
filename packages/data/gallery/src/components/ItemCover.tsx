@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledCover = styled.div<{ height: number; cover: string }>`
@@ -13,6 +13,10 @@ const StyledCover = styled.div<{ height: number; cover: string }>`
 `;
 
 const Cover = ({ cover, children }: { cover: any; children?: any }) => {
+  if (!cover) {
+    return null;
+  }
+
   return (
     <StyledCover
       className="card-img-top"
@@ -30,15 +34,10 @@ const Avatar = ({ avatar }) => {
   );
 };
 
-export default class ItemCover extends PureComponent<any> {
-  render() {
-    const { cover, avatar } = this.props;
-    if (avatar || cover) {
-      return (
-        <Cover cover={cover}>{avatar && <Avatar avatar={avatar} />}</Cover>
-      );
-    }
-
-    return null;
+export default function ItemCover({ cover, avatar }) {
+  if (avatar || cover) {
+    return <Cover cover={cover}>{avatar && <Avatar avatar={avatar} />}</Cover>;
   }
+
+  return null;
 }

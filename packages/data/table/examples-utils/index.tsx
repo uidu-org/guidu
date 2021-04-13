@@ -40,6 +40,27 @@ export const withGroupColumns = [
   },
 ];
 
+export const columnDefsNext = {
+  'Users.id': {
+    isVisible: false,
+  },
+  'Users.firstName': {
+    name: 'First name',
+  },
+  'Users.email': {
+    cellProps: {
+      avatar: ({ row }) => {
+        return row.values['Users.avatar'];
+      },
+    },
+    primary: true,
+    name: 'Email',
+    pinned: 'left',
+    kind: 'member',
+    width: 340,
+  },
+};
+
 export const availableColumns = [
   // {
   //   kind: 'uid',
