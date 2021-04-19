@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.10.7
+
+### Patch Changes
+
+- bc88d0c: DataManager next passes down props
+
 ## 0.10.6
 
 ### Patch Changes
