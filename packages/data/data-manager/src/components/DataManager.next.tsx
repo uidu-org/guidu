@@ -112,8 +112,6 @@ function DataManagerComponent({
     [resultSet],
   );
 
-  console.log(columns);
-
   const data = useMemo(() => resultSet.tablePivot(), [resultSet]);
 
   const setColumnCount = (columnCount) => {
@@ -388,6 +386,7 @@ export default function DataManager({
   children,
   onViewUpdate,
   isAutoSaving,
+  ...rest
 }) {
   const { cubejsApi } = useContext(CubeContext);
   const { query } = currentView;
@@ -403,6 +402,7 @@ export default function DataManager({
 
   return (
     <DataManagerComponent
+      {...rest}
       isLoading={isLoading}
       resultSet={resultSet}
       columnDefs={columnDefs}
