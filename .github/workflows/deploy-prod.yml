@@ -1,0 +1,33 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
+
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
+
+      - name: Build Content
+        run: bash ./build-setup.sh
+      - name: Release Content
+        run: bash ./release-setup.sh
