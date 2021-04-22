@@ -23,7 +23,7 @@ jobs:
 
       - uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: install install --pure-lockfile
+          cmd: install --pure-lockfile
 
       - uses: borales/actions-yarn@v2.0.0
         with:
