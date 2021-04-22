@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.7.7
+
+### Patch Changes
+
+- 5c4f2f0: Allow for custom link component
+
 ## 0.7.6
 
 ### Patch Changes
