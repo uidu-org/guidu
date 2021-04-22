@@ -59,11 +59,13 @@ export default function NavigationItem({
     <>
       <StyledNavigationItem>
         <StyledNavigationLink {...otherProps}>
-          {!!before && (
-            <StyledNavigationBefore>{before}</StyledNavigationBefore>
-          )}
-          <StyledNavigationText>{text}</StyledNavigationText>
-          {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
+          <>
+            {!!before && (
+              <StyledNavigationBefore>{before}</StyledNavigationBefore>
+            )}
+            <StyledNavigationText>{text}</StyledNavigationText>
+            {!!after && <StyledNavigationAfter>{after}</StyledNavigationAfter>}
+          </>
         </StyledNavigationLink>
         <DropdownSlot>{children}</DropdownSlot>
       </StyledNavigationItem>
