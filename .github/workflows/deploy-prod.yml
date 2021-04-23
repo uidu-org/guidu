@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '10', '14' ]
+    name: Node ${{ matrix.node }} sample
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v2
@@ -16,7 +20,7 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          node-version: '10.x'
+          node-version: ${{ matrix.node }}
 
       - uses: borales/actions-yarn@v2.0.0
         with:
