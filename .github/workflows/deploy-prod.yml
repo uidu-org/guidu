@@ -8,19 +8,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [ '10', '14' ]
-    name: Node ${{ matrix.node }} sample
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
 
-      - uses: actions/setup-node@v2
+      - name: Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+
+      - name: Use Node.js (.nvmrc)
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
 
       - uses: borales/actions-yarn@v2.0.0
         with:
