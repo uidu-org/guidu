@@ -429,6 +429,9 @@
       "website"
     ]
   },
+  "manypkg": {
+    "defaultBranch": "main"
+  },
   "preconstruct": {
     "packages": [
       "build/docs",

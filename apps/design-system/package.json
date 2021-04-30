@@ -2,7 +2,7 @@
   "name": "design-system",
   "version": "0.1.10",
   "private": true,
-  "repository": "https://github.com/uidu-org/guidu/tree/master/apps/design-system",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/apps/design-system",
   "scripts": {
     "build": "next build",
     "dev": "next dev",

@@ -2,7 +2,7 @@
   "name": "@uidu/popup",
   "version": "0.4.9",
   "description": "A portalled popup primitive that is tied to a trigger element.",
-  "repository": "https://github.com/uidu-org/guidu/tree/mainackages/core/popup",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/popup",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,
