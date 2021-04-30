@@ -3,7 +3,7 @@
   "version": "0.3.8",
   "private": false,
   "description": "A video-chat room",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/chat-room",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/chat-room",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-chat-room.cjs.js",

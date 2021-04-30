@@ -3,7 +3,7 @@
   "version": "0.1.25",
   "private": true,
   "description": "A CLI tool for generating JSON Schema from typescript",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/json-schema-generator",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/json-schema-generator",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "maintainers": [

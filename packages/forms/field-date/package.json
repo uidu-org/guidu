@@ -1,7 +1,7 @@
 {
   "name": "@uidu/field-date",
   "version": "0.3.13",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-date",
   "license": "MIT",
   "sideEffects": false,
   "main": "dist/uidu-field-date.cjs.js",

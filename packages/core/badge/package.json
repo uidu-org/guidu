@@ -2,7 +2,7 @@
   "name": "@uidu/badge",
   "version": "0.4.9",
   "description": "A React component that indicates values",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/badge",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/badge",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

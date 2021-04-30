@@ -2,7 +2,7 @@
   "name": "@uidu/field-mentions",
   "version": "0.4.12",
   "description": "Field Mentions Component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-mentions",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-mentions",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

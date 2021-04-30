@@ -3,7 +3,7 @@
   "version": "0.2.13",
   "private": false,
   "description": "React component to show data items as gallery card",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/gallery",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/gallery",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-gallery.cjs.js",

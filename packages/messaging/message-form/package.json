@@ -3,7 +3,7 @@
   "version": "0.3.10",
   "private": false,
   "description": "Message form",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/messaging/message-form",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message-form",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-message-form.cjs.js",

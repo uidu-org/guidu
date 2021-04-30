@@ -2,7 +2,7 @@
   "name": "@uidu/analytics",
   "version": "0.4.9",
   "description": "The uidu component analytics framework",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/analytics",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/analytics",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-analytics.cjs.js",

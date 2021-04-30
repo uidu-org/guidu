@@ -2,7 +2,7 @@
   "name": "@uidu/radio",
   "version": "0.5.11",
   "description": "Radio component for forms",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/radio",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/radio",
   "license": "MIT",
   "sideEffects": false,
   "main": "dist/uidu-radio.cjs.js",

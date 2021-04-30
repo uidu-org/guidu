@@ -7,7 +7,7 @@
     "ui",
     "uidu"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-text",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-text",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

@@ -2,7 +2,7 @@
   "name": "@uidu/status",
   "version": "0.3.12",
   "description": "Fabric Status React Components",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/status",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/status",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "main": "dist/uidu-status.cjs.js",

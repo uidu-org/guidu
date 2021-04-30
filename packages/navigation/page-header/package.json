@@ -2,7 +2,7 @@
   "name": "@uidu/page-header",
   "version": "0.2.9",
   "description": "A React component that represents Header of an application page",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/page-header",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/page-header",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

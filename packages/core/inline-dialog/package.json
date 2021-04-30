@@ -2,7 +2,7 @@
   "name": "@uidu/inline-dialog",
   "version": "0.4.9",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/inline-dialog",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/inline-dialog",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

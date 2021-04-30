@@ -2,7 +2,7 @@
   "name": "@uidu/media-picker",
   "version": "0.4.8",
   "description": "uidu media picker, using Uppy",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-picker",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-picker",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-media-picker.cjs.js",

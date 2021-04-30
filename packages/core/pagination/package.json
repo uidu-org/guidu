@@ -2,7 +2,7 @@
   "name": "@uidu/pagination",
   "version": "0.4.9",
   "description": "A react component to be used for pagination in components like tables.",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/pagination",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/pagination",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

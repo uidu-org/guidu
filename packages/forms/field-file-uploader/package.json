@@ -3,7 +3,7 @@
   "version": "0.4.10",
   "private": false,
   "description": "A file uploader",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-file-uploader",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-file-uploader",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-field-file-uploader.cjs.js",

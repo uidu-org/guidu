@@ -8,7 +8,7 @@
     "teams",
     "ui"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/date",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/date",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "main": "dist/uidu-date.cjs.js",

@@ -3,7 +3,7 @@
   "version": "0.5.15",
   "private": false,
   "description": "Data view declarations and custom forms",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-views",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-views",
   "license": "MIT",
   "main": "dist/uidu-data-views.cjs.js",
   "module": "dist/uidu-data-views.esm.js",

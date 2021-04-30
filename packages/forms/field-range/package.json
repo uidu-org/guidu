@@ -7,7 +7,7 @@
     "ui",
     "uidu"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-range",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-range",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

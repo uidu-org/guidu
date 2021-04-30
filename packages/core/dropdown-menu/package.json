@@ -2,7 +2,7 @@
   "name": "@uidu/dropdown-menu",
   "version": "0.4.10",
   "description": "Creates a dropdown menu, with optional groups, headings, icons, checkbox items, radio group items and disabled items.",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/dropdown-menu",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/dropdown-menu",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-dropdown-menu.cjs.js",

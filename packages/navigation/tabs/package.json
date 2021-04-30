@@ -3,7 +3,7 @@
   "version": "0.2.9",
   "private": false,
   "description": "A tabs component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/tabs",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/tabs",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-tabs.cjs.js",

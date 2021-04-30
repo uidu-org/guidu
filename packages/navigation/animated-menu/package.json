@@ -3,7 +3,7 @@
   "version": "0.3.7",
   "private": false,
   "description": "Animated menu like Stripe",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/animated-menu",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/animated-menu",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-animated-menu.cjs.js",

@@ -2,7 +2,7 @@
   "name": "@uidu/progress-bar",
   "version": "0.4.9",
   "description": "A React component that is a progress bar",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/progress-bar",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/progress-bar",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,

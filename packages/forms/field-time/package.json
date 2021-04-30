@@ -2,7 +2,7 @@
   "name": "@uidu/field-time",
   "version": "0.4.12",
   "description": "Field Time Component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-time",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-time",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

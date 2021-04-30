@@ -2,7 +2,7 @@
   "name": "@uidu/analytics-viewer",
   "version": "0.3.9",
   "description": "Analytics viewer for the examples",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-viewer",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/analytics-viewer",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "main": "dist/uidu-analytics-viewer.cjs.js",

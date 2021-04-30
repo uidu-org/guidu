@@ -2,7 +2,7 @@
   "name": "@uidu/code",
   "version": "0.4.9",
   "description": "Renders inline code snippets and code blocks",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/code",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/code",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

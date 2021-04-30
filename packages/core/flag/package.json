@@ -3,7 +3,7 @@
   "version": "0.4.10",
   "private": false,
   "description": "Flags are used for confirmations, alerts, and acknowledgments that require minimal user interaction.",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/flag",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/flag",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

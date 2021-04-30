@@ -2,7 +2,7 @@
   "name": "@uidu/form",
   "version": "0.4.14",
   "description": "Forms using Formsy",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/form",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/form",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

@@ -2,7 +2,7 @@
   "name": "@uidu/inline-edit",
   "version": "0.2.9",
   "description": "A base component used to build inline-editable components that match the Atlassian Design Guidelines",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/inline-edit",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/inline-edit",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

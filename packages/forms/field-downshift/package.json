@@ -3,7 +3,7 @@
   "version": "0.5.12",
   "private": false,
   "description": "Downshift React component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-downshift",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-downshift",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

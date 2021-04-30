@@ -3,7 +3,7 @@
   "version": "0.2.9",
   "private": false,
   "description": "Payment form using Stripe",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/ecommerce/payment-sources",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/payment-sources",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-payment-sources.cjs.js",

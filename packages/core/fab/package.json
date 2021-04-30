@@ -3,7 +3,7 @@
   "version": "0.4.9",
   "private": false,
   "description": "Floating action buttons",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/fab",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/fab",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-fab.cjs.js",

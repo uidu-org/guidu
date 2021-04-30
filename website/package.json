@@ -1,7 +1,7 @@
 {
   "name": "@uidu/guidu-website",
   "version": "0.2.31",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/website",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/website",
   "license": "MIT",
   "scripts": {
     "prebuild": "rm -rf dist",

@@ -6,7 +6,7 @@
     "fabric",
     "ui"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-gas-types",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/analytics-gas-types",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "maintainers": [],

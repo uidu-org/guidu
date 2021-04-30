@@ -3,7 +3,7 @@
   "version": "0.2.8",
   "private": false,
   "description": "Timeline view for data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/timeline",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/timeline",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-timeline.cjs.js",

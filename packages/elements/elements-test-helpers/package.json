@@ -3,7 +3,7 @@
   "version": "0.3.10",
   "private": true,
   "description": "common test helpers",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/elements-test-helpers",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/elements-test-helpers",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "maintainers": [],

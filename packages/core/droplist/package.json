@@ -2,7 +2,7 @@
   "name": "@uidu/droplist",
   "version": "0.4.10",
   "description": "Droplist component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/droplist",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/droplist",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-droplist.cjs.js",

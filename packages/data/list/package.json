@@ -3,7 +3,7 @@
   "version": "0.2.13",
   "private": false,
   "description": "React component to show data items as calendar",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/list",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/list",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-list.cjs.js",

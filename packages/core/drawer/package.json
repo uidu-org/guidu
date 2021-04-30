@@ -2,7 +2,7 @@
   "name": "@uidu/drawer",
   "version": "0.5.10",
   "description": "React component the renders a Drawer from the left of the screen",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/drawer",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/drawer",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-drawer.cjs.js",

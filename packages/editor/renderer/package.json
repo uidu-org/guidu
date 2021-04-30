@@ -2,7 +2,7 @@
   "name": "@uidu/renderer",
   "version": "0.3.13",
   "description": "Renderer component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/renderer",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/renderer",
   "license": "MIT",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,

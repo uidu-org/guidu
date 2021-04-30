@@ -2,7 +2,7 @@
   "name": "@uidu/media-core",
   "version": "0.4.8",
   "description": "It holds shared code between MediaComponents like models, providers, interfaces and utilities",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/media/media-core",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/media/media-core",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-media-core.cjs.js",

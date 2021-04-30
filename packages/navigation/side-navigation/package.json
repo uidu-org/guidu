@@ -3,7 +3,7 @@
   "version": "0.2.12",
   "private": false,
   "description": "Downshift React component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/side-navigation",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/side-navigation",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-side-navigation.cjs.js",

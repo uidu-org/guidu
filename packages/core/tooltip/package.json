@@ -2,7 +2,7 @@
   "name": "@uidu/tooltip",
   "version": "0.4.9",
   "description": "A React Component for displaying Tooltips",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/tooltip",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/tooltip",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

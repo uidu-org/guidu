@@ -2,7 +2,7 @@
   "name": "@uidu/editor-markdown-transformer",
   "version": "0.3.9",
   "description": "Editor Markdown transformer",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/editor/editor-markdown-transformer",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-markdown-transformer",
   "license": "MIT",
   "author": "Atlassian Pty. Ltd",
   "sideEffects": false,

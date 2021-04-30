@@ -228,7 +228,7 @@ class Package extends React.Component<Props> {
                             target="_blank"
                           />
                           <Button
-                            href={`https://github.com/uidu-org/guidu/blob/master/packages/${groupId}/${pkgId}`}
+                            href={`https://github.com/uidu-org/guidu/blob/main/packages/${groupId}/${pkgId}`}
                             label="Source"
                             summary="Github"
                             iconBefore={<GitHub size={16} />}

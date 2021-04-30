@@ -2,7 +2,7 @@
   "name": "@uidu/emoji",
   "version": "0.3.10",
   "description": "Fabric emoji React components",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/emoji",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/emoji",
   "license": "Apache-2.0",
   "sideEffects": false,
   "main": "dist/uidu-emoji.cjs.js",

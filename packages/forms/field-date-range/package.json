@@ -1,7 +1,7 @@
 {
   "name": "@uidu/field-date-range",
   "version": "0.3.10",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-date-range",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-date-range",
   "license": "MIT",
   "sideEffects": false,
   "main": "dist/uidu-field-date-range.cjs.js",

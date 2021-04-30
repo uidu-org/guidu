@@ -3,7 +3,7 @@
   "version": "0.3.12",
   "private": false,
   "description": "A color picker React Component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-color-picker",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-color-picker",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-field-color-picker.cjs.js",

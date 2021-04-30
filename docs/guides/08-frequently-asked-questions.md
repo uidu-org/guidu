@@ -42,7 +42,7 @@ No (most likely). Unfortunately the default behaviour of rebasing is to remove e
 One solution is to not make empty changeset commits (**reccomended**) or to use the `--keep-empty` flag when rebasing.
 
 ```
-git rebase -i --keep-empty origin/master
+git rebase -i --keep-empty origin/main
 ```
 
 ### I'm getting a failure in CI during the `build` step that has nothing to do with my changes. Is this normal?
@@ -55,7 +55,7 @@ In the meantime, simply rerunning should solve the issue (eventually...).
 
 ## Master has gone red suddenly and is complaining about not depending on the latest version of an internal package. What gives?
 
-There are a couple of ways this can happen. At it's core, the issue is when a branch is merged that was not up to date with master.
+There are a couple of ways this can happen. At it's core, the issue is when a branch is merged that was not up to date with main.
 
 For example:
 
@@ -63,8 +63,8 @@ For example:
 -> pkg-a is released at 1.2.0 (all dependents are updated to ^1.2.0)
 -> new branch is created to introduce pkg-b
 -> pkg-a is bumped to 2.0.0 (all dependents are bumped to ^2.0.0)
--> pkg-b branch is merged (without rebasing on master)
--> master is now red because pkg-b still depends on pkg-a@^1.2.0
+-> pkg-b branch is merged (without rebasing on main)
+-> main is now red because pkg-b still depends on pkg-a@^1.2.0
 ```
 
 This can be avoided by keeping branches as up to date as possible and will be mitigated completely with the introduction of `Landkid` (see [AK-4053](https://ecosystem.atlassian.net/browse/AK-4053)).

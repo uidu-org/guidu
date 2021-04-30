@@ -3,7 +3,7 @@
   "version": "0.3.9",
   "private": false,
   "description": "Animated menu like Stripe",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/stepper",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/stepper",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-stepper.cjs.js",

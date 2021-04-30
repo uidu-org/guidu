@@ -3,7 +3,7 @@
   "version": "0.3.10",
   "private": false,
   "description": "Load field-* based on field kind",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

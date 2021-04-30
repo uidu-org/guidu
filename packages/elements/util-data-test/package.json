@@ -2,7 +2,7 @@
   "name": "@uidu/util-data-test",
   "version": "0.3.8",
   "description": "Shared test and story data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/util-data-test",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/util-data-test",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-util-data-test.cjs.js",

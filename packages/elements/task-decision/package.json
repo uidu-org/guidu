@@ -2,7 +2,7 @@
   "name": "@uidu/task-decision",
   "version": "0.3.9",
   "description": "Tasks and decisions react components",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/task-decision",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/task-decision",
   "license": "Apache-2.0",
   "author": "Atlassian Pty. Ltd",
   "maintainers": [],

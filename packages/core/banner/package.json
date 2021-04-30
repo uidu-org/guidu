@@ -2,7 +2,7 @@
   "name": "@uidu/banner",
   "version": "0.4.9",
   "description": "React component that displays a prominent banner message and icon",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/banner",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/banner",
   "license": "MIT",
   "sideEffects": false,
   "main": "dist/uidu-banner.cjs.js",

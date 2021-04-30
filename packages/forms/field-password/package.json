@@ -7,7 +7,7 @@
     "ui",
     "uidu"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-password",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-password",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

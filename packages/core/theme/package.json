@@ -2,7 +2,7 @@
   "name": "@uidu/theme",
   "version": "0.5.10",
   "description": "The Guidu theme framework",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/theme",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/theme",
   "license": "Apache-2.0",
   "author": "Atlassian Pty Ltd",
   "sideEffects": false,

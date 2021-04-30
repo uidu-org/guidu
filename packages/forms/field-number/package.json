@@ -7,7 +7,7 @@
     "ui",
     "uidu"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-number",
+  "repository": "https://github.com/uidu-org/guidu/tree/mainackages/forms/field-number",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

@@ -3,7 +3,7 @@
   "version": "0.7.9",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-controls",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-controls",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

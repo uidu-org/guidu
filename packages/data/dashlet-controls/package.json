@@ -3,7 +3,7 @@
   "version": "0.3.12",
   "private": false,
   "description": "Elements to filter, sort, group data",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/dashlet-controls",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/dashlet-controls",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-dashlet-controls.cjs.js",

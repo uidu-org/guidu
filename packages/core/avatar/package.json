@@ -2,7 +2,7 @@
   "name": "@uidu/avatar",
   "version": "0.6.10",
   "description": "A component that represents a user",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/avatar",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/avatar",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

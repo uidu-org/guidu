@@ -2,7 +2,7 @@
   "name": "@uidu/analytics-namespaced-context",
   "version": "0.3.8",
   "description": "Provides a namespace for AnalyticsContext data (@uidu/analytics)",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/elements/analytics-namespaced-context",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/analytics-namespaced-context",
   "license": "Apache-2.0",
   "main": "dist/uidu-analytics-namespaced-context.cjs.js",
   "module": "dist/uidu-analytics-namespaced-context.esm.js",

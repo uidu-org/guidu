@@ -2,7 +2,7 @@
   "name": "@uidu/button",
   "version": "0.4.9",
   "description": "Button component for use in forms",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/button",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/button",
   "license": "ISC",
   "author": "uidu",
   "main": "dist/uidu-button.cjs.js",

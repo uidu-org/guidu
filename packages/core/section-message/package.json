@@ -2,7 +2,7 @@
   "name": "@uidu/section-message",
   "version": "0.4.9",
   "description": "A react component used to alert users of a particular screen area that needs user action",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/section-message",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/section-message",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

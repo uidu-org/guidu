@@ -3,7 +3,7 @@
   "version": "0.3.8",
   "private": false,
   "description": "Downshift React component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/navigation/tabbar",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/tabbar",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-tabbar.cjs.js",

@@ -7,7 +7,7 @@
     "ui",
     "uidu"
   ],
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/forms/field-month",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-month",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,

@@ -3,7 +3,7 @@
   "version": "0.10.7",
   "private": false,
   "description": "Data manager with different views, filter and sorts",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/data/data-manager",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-manager",
   "license": "MIT",
   "author": "uidu",
   "main": "dist/uidu-data-manager.cjs.js",

@@ -2,7 +2,7 @@
   "name": "@uidu/map",
   "version": "0.5.9",
   "description": "A React component for maps",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/map",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/map",
   "license": "ISC",
   "author": "uidu",
   "sideEffects": false,

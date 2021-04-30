@@ -2,7 +2,7 @@
   "name": "@uidu/accordion",
   "version": "0.4.9",
   "description": "React accessible accordion component",
-  "repository": "https://github.com/uidu-org/guidu/tree/master/packages/core/accordion",
+  "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/accordion",
   "license": "MIT",
   "author": "uidu",
   "sideEffects": false,
