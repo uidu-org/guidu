@@ -34,3 +34,5 @@ jobs:
 
       - name: Release Content
         run: bash ./release-setup.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
