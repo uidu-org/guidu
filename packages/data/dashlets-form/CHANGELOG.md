@@ -1,5 +1,15 @@
 # @uidu/dashlets-form
 
+## 0.4.1
+
+### Patch Changes
+
+- Updated dependencies [e9d66eef5]
+- Updated dependencies [ded377857]
+- Updated dependencies [050f2e717]
+- Updated dependencies [8f0253d3e]
+  - @uidu/dashlets@0.9.0
+
 ## 0.4.0
 
 ### Minor Changes
