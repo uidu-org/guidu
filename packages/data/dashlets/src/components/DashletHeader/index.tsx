@@ -1,22 +1,27 @@
 import React from 'react';
-import 'twin.macro';
+import tw from 'twin.macro';
 import { DashletHeaderProps } from './types';
+
+const HeaderWrapper = tw.div`bg-white px-4 py-5 border-b border-gray-200 border-opacity-50 sm:px-6`;
+const HeaderInnerWrapper = tw.div`-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap`;
+const HeaderLabelWrapper = tw.div`ml-4 mt-4`;
+const HeaderLabelName = tw.h3`text-lg leading-6 font-medium text-gray-900`;
+const HeaderLabelDescription = tw.p`mt-1 text-sm text-gray-500`;
+const HeaderChildrenWrapper = tw.div`"ml-4 mt-4 flex-shrink-0"`;
 
 export default function DashletHeader(props: DashletHeaderProps) {
   const { name, description, isCard, children } = props;
 
-  const className = isCard ? 'card-header py-4 ' : 'py-3 ';
-
   return (
-    <div tw="bg-white px-4 py-5 border-b border-gray-200 border-opacity-50 sm:px-6">
-      <div tw="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
-        <div tw="ml-4 mt-4">
-          <h3 tw="text-lg leading-6 font-medium text-gray-900">{name}</h3>
+    <HeaderWrapper>
+      <HeaderInnerWrapper>
+        <HeaderLabelWrapper>
+          <HeaderLabelName>{name}</HeaderLabelName>
           {description ? (
-            <p tw="mt-1 text-sm text-gray-500">{description}</p>
+            <HeaderLabelDescription>{description}</HeaderLabelDescription>
           ) : null}
-        </div>
-        <div tw="ml-4 mt-4 flex-shrink-0">
+        </HeaderLabelWrapper>
+        <HeaderChildrenWrapper>
           {children}
           {/* <button
             type="button"
@@ -24,19 +29,8 @@ export default function DashletHeader(props: DashletHeaderProps) {
           >
             Create new job
           </button> */}
-        </div>
-      </div>
-    </div>
-  );
-  return (
-    <div
-      className={`${className}d-flex align-items-center justify-content-between`}
-    >
-      <div>
-        <h5 className="card-title h6 m-0">{name}</h5>
-        {description && <p className="text-muted mb-0">{description}</p>}
-      </div>
-      {children}
-    </div>
+        </HeaderChildrenWrapper>
+      </HeaderInnerWrapper>
+    </HeaderWrapper>
   );
 }

@@ -4,7 +4,7 @@ import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
-import 'twin.macro';
+import tw from 'twin.macro';
 import DashletHeader from './DashletHeader';
 
 const MyLoader = (props) => (
@@ -52,6 +52,10 @@ const availableGroupers: Array<Groupers> = [
   { name: 'year', title: 'Annuale' },
 ];
 
+const Card = tw.div`
+bg-white shadow rounded-lg overflow-hidden h-full flex-col flex
+`;
+
 export default function Dashlet({
   dashlet,
   component: DashletContent,
@@ -77,26 +81,26 @@ export default function Dashlet({
 
   if (isLoading) {
     return (
-      <div tw="bg-white shadow rounded-lg overflow-hidden h-full flex-col flex">
+      <Card>
         <MyLoader />
-      </div>
+      </Card>
     );
   }
 
   if (error) {
     console.log(error);
     return (
-      <div tw="bg-white shadow rounded-lg overflow-hidden h-full flex-col flex">
+      <Card>
         <FormattedMessage
           defaultMessage="Error loading {name}"
           values={{ name: dashlet.label }}
         />
-      </div>
+      </Card>
     );
   }
 
   return (
-    <div tw="bg-white shadow rounded-lg overflow-hidden h-full flex-col flex">
+    <Card>
       {showHeader && (
         <DashletHeader
           name={dashlet.label}
@@ -134,6 +138,6 @@ export default function Dashlet({
         </DashletHeader>
       )}
       <DashletContent {...rest} {...dashlet} resultSet={resultSet} />
-    </div>
+    </Card>
   );
 }
