@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 0.8.0
+
+### Minor Changes
+
+- bdf96605e: Added some tailwind to dashlets, added columnDefs context to DashboardManager
+
+### Patch Changes
+
+- d30b408b4: fix(dashlets): Use twin.macro styled instead of tw prop
+- Updated dependencies [bdf96605e]
+  - @uidu/dashboard-manager@0.10.0
+
 ## 0.7.17
 
 ### Patch Changes
