@@ -13,7 +13,7 @@ jobs:
       - name: Check-out repository
         uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -22,9 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --pure-lockfile
-
-      - name: Bundle app
-        run: yarn build
 
       - name: Create Release Pull Request
         uses: changesets/action@master
