@@ -12,7 +12,6 @@ import Sharer from './components/Sharer';
 import Sorter from './components/Sorter';
 import Starrer from './components/Starrer';
 import Toggler from './components/Toggler';
-import Viewer from './components/Viewer';
 export * from './components/Filterer/types';
 export * from './components/Grouper/types';
 export * from './components/Sorter/types';
@@ -31,5 +30,4 @@ export {
   Starrer,
   Sorter,
   Toggler,
-  Viewer,
 };

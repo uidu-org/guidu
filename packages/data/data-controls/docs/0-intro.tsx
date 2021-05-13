@@ -71,11 +71,5 @@ export default md`
       props={require('!!extract-react-types-loader!../src/components/Toggler')}
     />
   )}
-  ${(
-    <Props
-      heading="Viewer"
-      props={require('!!extract-react-types-loader!../src/components/Viewer')}
-    />
-  )}
 
 `;

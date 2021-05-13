@@ -212,6 +212,7 @@
     "chalk": "^4.0.0",
     "chromatism": "^3.0.0",
     "chunkinator": "^2.0.5",
+    "circular-dependency-plugin": "^5.2.2",
     "classnames": "^2.2.6",
     "codesandboxer": "^1.0.3",
     "color": "^3.1.0",
