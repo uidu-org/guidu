@@ -12,8 +12,8 @@
     "@amcharts/amcharts4": "^4.7.14",
     "@amcharts/amcharts4-geodata": "^4.1.9",
     "@babel/runtime": "^7.11.2",
-    "@cubejs-client/core": "^0.26.90",
-    "@cubejs-client/react": "^0.26.90",
+    "@cubejs-client/core": "^0.27.13",
+    "@cubejs-client/react": "^0.27.13",
     "@loadable/component": "^5.14.1",
     "@uidu/dashlet-controls": "^0.3.12",
     "@uidu/spinner": "^0.4.9",
@@ -27,8 +27,10 @@
     "react-countup": "^4.2.2",
     "react-feather": "^2.0.9",
     "react-intl": "^5.15.8",
+    "react-table": "^7.7.0",
     "styled-components": "^5.2.1",
     "tslib": "^2.0.1",
+    "twin.macro": "^2.4.1",
     "uuid": "^8.3.0"
   },
   "devDependencies": {

@@ -1,1 +1,5 @@
-export { default } from './components/DashboardManager';
+export {
+  ColumnDefsContext,
+  default,
+  useColumnDefs,
+} from './components/DashboardManager';

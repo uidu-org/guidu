@@ -94,8 +94,6 @@ function DataManagerComponent({
           kind: 'default',
           name: 'Default fields',
           columns: resultSet.tableColumns().map((c) => {
-            console.log(c.key);
-            console.log(columnDefs[c.key]);
             return {
               ...c,
               field: c.key,

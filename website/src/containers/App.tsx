@@ -5,6 +5,7 @@ import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
+import { GlobalStyles as BaseStyles } from 'twin.macro';
 import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
 import ChangeLogExplorer from '../pages/ChangeLogExplorer';
 import Document from '../pages/Document';
@@ -87,6 +88,7 @@ export default class App extends React.Component<{}, State> {
   render() {
     return (
       <GlobalTheme.Provider value={() => ({ mode: this.state.mode })}>
+        <BaseStyles />
         <GlobalStyle />
         <BrowserRouter>
           <AnalyticsListeners>

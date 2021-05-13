@@ -10,6 +10,7 @@ import {
 import React, { Component } from 'react';
 import 'react-day-picker/lib/style.css';
 import { IntlProvider } from 'react-intl';
+import { columnDefsNext } from '../../table/examples-utils';
 import { dashlets } from '../examples-utils';
 import DashboardManager from '../src';
 
@@ -34,6 +35,7 @@ export default class Basic extends Component<any, any> {
               isResizable: isEditing,
               onLayoutChange: console.log,
             }}
+            columnDefs={columnDefsNext}
           >
             {({ renderControls, renderDashlets }) => (
               <>

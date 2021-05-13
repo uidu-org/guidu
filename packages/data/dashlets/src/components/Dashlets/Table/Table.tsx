@@ -1,21 +1,151 @@
-import React, { PureComponent } from 'react';
+import { buildColumns } from '@uidu/data-fields';
+import React, { useMemo } from 'react';
+import { useFlexLayout, useSortBy, useTable } from 'react-table';
+import { useColumnDefs } from '../../../../../dashboard-manager/src';
 import Loader from '../../Loader';
-import Items from './Items';
 
-export default class ListBlock extends PureComponent<any> {
-  render() {
-    const { formatter, datumRenderer, resultSet } = this.props;
+export default function Table({ resultSet }) {
+  const columnDefs = useColumnDefs();
+  console.log(columnDefs);
 
-    if (!resultSet) {
-      return <Loader />;
-    }
+  if (!resultSet) {
+    return <Loader />;
+  }
 
-    console.log(resultSet);
-    console.log(resultSet.tableColumns());
+  const defaultColumn = React.useMemo(
+    () => ({
+      minWidth: 80,
+      width: 200,
+      maxWidth: 400,
+      canHide: true,
+      canSortBy: true,
+      canGroupBy: false,
+      Header: ({ column }) => (
+        <div
+          className="d-flex align-items-center justify-content-center flex-grow-1"
+          style={{ minWidth: 0 }}
+        >
+          <div className="flex-grow-1 text-truncate">{column.name}</div>
+        </div>
+      ),
+      Cell: ({ column, value }) =>
+        column.valueFormatter ? (
+          <>{column.valueFormatter({ value })}</>
+        ) : (
+          value || null
+        ),
+    }),
+    [],
+  );
 
-    return (
-      <>
-        {/* <div className="card-header d-flex align-items-center">
+  console.log(resultSet);
+  console.log(resultSet.tableColumns());
+
+  const columns = useMemo(
+    () =>
+      buildColumns([
+        {
+          kind: 'default',
+          name: 'Default fields',
+          columns: resultSet.tableColumns().map((c) => {
+            return {
+              ...c,
+              field: c.key,
+              id: c.key,
+              accessor: (row) => row[c.key],
+              name: c.title,
+              kind: c.meta ? c.meta.kind : 'string',
+              fieldGroup: 'default',
+              ...columnDefs[c.key],
+            };
+          }),
+        },
+      ]),
+    [resultSet],
+  );
+
+  const data = useMemo(() => resultSet.tablePivot(), [resultSet]);
+
+  const tableInstance = useTable(
+    {
+      columns,
+      data,
+      defaultColumn,
+    },
+    useFlexLayout,
+    useSortBy,
+  );
+
+  console.log(tableInstance);
+
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = tableInstance;
+
+  return (
+    <>
+      <div {...getTableProps([{ style: { overflow: 'auto' } }])}>
+        <div
+          style={{
+            position: 'sticky',
+            top: 0,
+            backgroundColor: 'var(--body-bg)',
+          }}
+          className="border-bottom"
+        >
+          {headerGroups.map((headerGroup) => (
+            <div {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column) => (
+                <div
+                  {...column.getHeaderProps([
+                    {
+                      style: {
+                        ...column.style,
+                        ...column.headerStyle,
+                        padding: '.5rem 1.5rem',
+                        display: 'flex',
+                      },
+                    },
+                  ])}
+                >
+                  {column.render('Header')}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <div {...getTableBodyProps()}>
+          {rows.map((row, i) => {
+            prepareRow(row);
+            return (
+              <div {...row.getRowProps()}>
+                {row.cells.map((cell) => {
+                  return (
+                    <div
+                      {...cell.getCellProps([
+                        {
+                          style: {
+                            ...cell.column.cellStyle,
+                            padding: '.5rem 1.5rem',
+                            display: 'flex',
+                          },
+                        },
+                      ])}
+                    >
+                      {cell.render('Cell', { ...cell.column.cellProps })}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      {/* <div className="card-header d-flex align-items-center">
           <span className="text-truncate">{label}</span>
           {comparatorData && (
             <Switch
@@ -34,14 +164,12 @@ export default class ListBlock extends PureComponent<any> {
             />
           )}
         </div> */}
-        <Items
-          resultSet={resultSet}
-          tableColumns={resultSet.tableColumns()}
-          data={resultSet.loadResponse.results}
-          datumRenderer={datumRenderer}
-          formatter={formatter}
-        />
-      </>
-    );
-  }
+      {/* <Items
+        resultSet={resultSet}
+        tableColumns={resultSet.tableColumns()}
+        data={resultSet.loadResponse.results}
+        tableInstance={tableInstance}
+      /> */}
+    </>
+  );
 }

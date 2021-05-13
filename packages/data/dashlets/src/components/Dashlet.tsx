@@ -4,6 +4,7 @@ import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
+import 'twin.macro';
 import DashletHeader from './DashletHeader';
 
 const MyLoader = (props) => (
@@ -76,7 +77,7 @@ export default function Dashlet({
 
   if (isLoading) {
     return (
-      <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
+      <div tw="bg-white shadow rounded-lg overflow-hidden h-full flex-col flex">
         <MyLoader />
       </div>
     );
@@ -85,11 +86,7 @@ export default function Dashlet({
   if (error) {
     console.log(error);
     return (
-      <div
-        className={`h-100${
-          isCard ? ' card' : ' d-flex flex-column'
-        } align-items-center justify-content-center`}
-      >
+      <div tw="bg-white shadow rounded-lg overflow-hidden h-full flex-col flex">
         <FormattedMessage
           defaultMessage="Error loading {name}"
           values={{ name: dashlet.label }}
@@ -99,7 +96,7 @@ export default function Dashlet({
   }
 
   return (
-    <div className={`h-100${isCard ? ' card' : ' d-flex flex-column'}`}>
+    <div tw="bg-white shadow rounded-lg overflow-hidden h-full flex-col flex">
       {showHeader && (
         <DashletHeader
           name={dashlet.label}

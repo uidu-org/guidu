@@ -1,6 +1,7 @@
 import { colors } from '@uidu/dashlets';
 import React from 'react';
 import { UserCheck } from 'react-feather';
+import 'twin.macro';
 
 export const dashlets = [
   {
@@ -32,20 +33,17 @@ export const dashlets = [
             valueY: 'Donations.totalAmount',
             dateX: 'category',
           },
-          fillOpacity: 0.04,
+          fillOpacity: 0.1,
           fill: {
             type: 'LinearGradient',
             stops: [
               {
-                color: 'red',
+                color: '#6366F1',
               },
               {
-                color: 'white',
+                color: '#A5B4FC',
               },
             ],
-          },
-          renderer: {
-            grid: {},
           },
           name: 'Total amount donations received',
         },
@@ -140,7 +138,7 @@ export const dashlets = [
       x: 0,
       y: 2,
       w: 4,
-      h: 4,
+      h: 2.5,
     },
     query: {
       measures: ['DonationCampaigns.count'],
@@ -154,9 +152,9 @@ export const dashlets = [
   },
   {
     kind: 'Counter',
-    itemBefore: <UserCheck />,
+    itemBefore: <UserCheck tw="h-6 w-6 text-white" />,
     label: 'counter',
-    layout: { x: 4, y: 2, w: 4, h: 4 },
+    layout: { x: 4, y: 2, w: 4, h: 2.5 },
     query: {
       measures: ['Donations.count'],
       timeDimensions: [
@@ -170,7 +168,7 @@ export const dashlets = [
   {
     kind: 'Counter',
     label: 'counter',
-    layout: { x: 8, y: 2, w: 4, h: 4 },
+    layout: { x: 8, y: 2, w: 4, h: 2.5 },
     query: {
       measures: ['DonationCampaigns.count'],
       timeDimensions: [

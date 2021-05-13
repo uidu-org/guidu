@@ -10,4 +10,5 @@ export type DashboardManagerProps = {
     renderDashlets: ({ dashlets }: { dashlets: DashletProps[] }) => any;
   }) => any;
   gridProps?: ReactGridLayoutProps;
+  columnDefs?: any;
 };

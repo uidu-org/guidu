@@ -3,6 +3,7 @@ module.exports = function (api) {
 
   const plugins = [
     // '@loadable/babel-plugin',
+    'babel-plugin-macros',
     [
       'formatjs',
       {

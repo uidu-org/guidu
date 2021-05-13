@@ -59,6 +59,12 @@
     "styled-components": "^5.0.0",
     "webpack": "^5.7.0"
   },
+  "babelMacros": {
+    "twin": {
+      "config": "./tailwind.config.js",
+      "preset": "styled-components"
+    }
+  },
   "dependencies": {
     "@amcharts/amcharts4": "^4.7.14",
     "@amcharts/amcharts4-geodata": "^4.1.9",
@@ -91,8 +97,8 @@
     "@babel/register": "^7.0.0",
     "@babel/runtime": "^7.11.2",
     "@changesets/cli": "^2.10.2",
-    "@cubejs-client/core": "^0.26.90",
-    "@cubejs-client/react": "^0.26.90",
+    "@cubejs-client/core": "^0.27.13",
+    "@cubejs-client/react": "^0.27.13",
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@fluentui/react": "^8.5.1",
@@ -182,6 +188,7 @@
     "abortcontroller-polyfill": "^1.2.9",
     "add": "^2.0.6",
     "array-find": "^1.0.0",
+    "autoprefixer": "^10.2.5",
     "autosize": "^4.0.2",
     "avataaars": "^1.2.1",
     "axios": "^0.21.0",
@@ -191,6 +198,7 @@
     "babel-plugin-formatjs": "^10.2.1",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-macros": "^3.1.0",
     "babel-plugin-named-asset-import": "^0.3.0",
     "babel-plugin-styled-components": "^1.10.0",
     "babel-plugin-transform-dynamic-import": "^2.1.0",
@@ -391,6 +399,7 @@
     "svg-inline-react": "^3.1.0",
     "svg-url-loader": "^7.0.0",
     "swiper": "^6.3.5",
+    "tailwindcss": "^2.1.2",
     "terser-webpack-plugin": "^5.0.3",
     "thread-loader": "^3.0.0",
     "tiny-invariant": "^1.0.3",

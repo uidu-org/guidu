@@ -29,7 +29,7 @@ export function renderDashlet({ kind, showHeader = true, ...dashlet }) {
       break;
     case 'Counter':
       content = LoadableCounter;
-      // showHeader = false;
+      showHeader = false;
       break;
     case 'Funnel':
       content = LoadableFunnel;

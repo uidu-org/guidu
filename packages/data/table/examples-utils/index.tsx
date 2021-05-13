@@ -59,6 +59,27 @@ export const columnDefsNext = {
     kind: 'member',
     width: 340,
   },
+  'Donations.average': {
+    name: 'Average donations',
+    kind: 'currency',
+    valueFormatter: ({ value }) => {
+      return numeral(value).format('$ 0,0.00');
+    },
+  },
+  'Donations.max': {
+    name: 'Amount',
+    kind: 'currency',
+    valueFormatter: ({ value }) => {
+      return numeral(value).format('$ 0,0.00');
+    },
+  },
+  'Donations.amount': {
+    name: 'Donations amount',
+    kind: 'currency',
+    valueFormatter: ({ value }) => {
+      return numeral(value).format('$ 0,0.00');
+    },
+  },
 };
 
 export const availableColumns = [
