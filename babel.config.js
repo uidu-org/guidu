@@ -3,7 +3,14 @@ module.exports = function (api) {
 
   const plugins = [
     // '@loadable/babel-plugin',
-    'babel-plugin-macros',
+    [
+      'babel-plugin-macros',
+      {
+        isMacrosName: (v) => {
+          v == 'twin.macro';
+        },
+      },
+    ],
     [
       'formatjs',
       {
