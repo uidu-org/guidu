@@ -460,5 +460,6 @@
       "packages/uidu/*",
       "!packages/uidu/schema.d.ts"
     ]
-  }
+  },
+  "version": "0.0.0"
 }
