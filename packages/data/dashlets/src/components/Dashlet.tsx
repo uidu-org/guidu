@@ -1,5 +1,4 @@
 import { useCubeQuery } from '@cubejs-client/react';
-import { Groupers } from '@uidu/dashlet-controls';
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { FormattedMessage } from 'react-intl';
@@ -39,12 +38,12 @@ const DateRanges = [
   { name: 'Last year', title: 'Last year' },
 ];
 
-const availableGroupers: Array<Groupers> = [
-  { name: 'day', title: 'Giornaliero' },
-  { name: 'week', title: 'Settimanale' },
-  { name: 'month', title: 'Mensile' },
-  { name: 'year', title: 'Annuale' },
-];
+// const availableGroupers: Array<Groupers> = [
+//   { name: 'day', title: 'Giornaliero' },
+//   { name: 'week', title: 'Settimanale' },
+//   { name: 'month', title: 'Mensile' },
+//   { name: 'year', title: 'Annuale' },
+// ];
 
 const Card = tw.div`
 bg-white shadow rounded-lg overflow-hidden h-full flex-col flex
