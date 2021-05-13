@@ -15,6 +15,7 @@
     "@cubejs-client/core": "^0.27.13",
     "@cubejs-client/react": "^0.27.13",
     "@loadable/component": "^5.14.1",
+    "@uidu/dashboard-manager": "^0.9.3",
     "@uidu/dashlet-controls": "^0.3.12",
     "@uidu/spinner": "^0.4.9",
     "@uidu/tooltip": "^0.4.9",

@@ -26,7 +26,7 @@
     "delete:tmp": "                          manypkg exec rm -rf tmp",
     "deploy": "                              cd website && yarn deploy",
     "design-system:start": "                 cd apps/design-system && yarn dev",
-    "postinstall": "                         manypkg check && preconstruct dev && yarn lang:build",
+    "postinstall": "                         manypkg check && preconstruct dev",
     "lang:build": "                          yarn lang:extract && yarn lang:compile",
     "lang:extract": "                        node ./scripts/lang/extract.js",
     "lang:compile": "                        node ./scripts/lang/compile.js",

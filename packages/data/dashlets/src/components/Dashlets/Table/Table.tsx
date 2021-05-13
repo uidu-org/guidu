@@ -1,7 +1,7 @@
+import { useColumnDefs } from '@uidu/dashboard-manager';
 import { buildColumns } from '@uidu/data-fields';
 import React, { useMemo } from 'react';
 import { useFlexLayout, useSortBy, useTable } from 'react-table';
-import { useColumnDefs } from '../../../../../dashboard-manager/src';
 import Loader from '../../Loader';
 
 export default function Table({ resultSet }) {
