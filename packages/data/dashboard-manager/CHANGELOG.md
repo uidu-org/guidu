@@ -1,5 +1,17 @@
 # @uidu/dashboard-manager
 
+## 0.10.0
+
+### Minor Changes
+
+- bdf96605e: Added some tailwind to dashlets, added columnDefs context to DashboardManager
+
+### Patch Changes
+
+- Updated dependencies [bdf96605e]
+- Updated dependencies [d30b408b4]
+  - @uidu/dashlets@0.8.0
+
 ## 0.9.3
 
 ### Patch Changes
