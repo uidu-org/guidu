@@ -18,10 +18,7 @@ module.exports = function (api) {
         ast: true,
       },
     ],
-    [
-      'babel-plugin-styled-components',
-      { ssr: true, displayName: true, preprocess: false },
-    ],
+    ['babel-plugin-styled-components', { ssr: true }],
     '@babel/plugin-transform-destructuring',
     '@babel/plugin-transform-runtime',
     '@babel/plugin-transform-regenerator',
