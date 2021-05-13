@@ -31,6 +31,8 @@ jobs:
 
       - name: Build Content
         run: bash ./build-setup.sh
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Release Content
         run: bash ./release-setup.sh
