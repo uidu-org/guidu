@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 0.9.0
+
+### Minor Changes
+
+- e9d66eef5: Force version update
+- ded377857: fix(dashlets): Remove unused code
+- 050f2e717: Test again
+- 8f0253d3e: Try force a dahslets release
+
+### Patch Changes
+
+- @uidu/dashboard-manager@0.10.1
+
 ## 0.8.0
 
 ### Minor Changes
