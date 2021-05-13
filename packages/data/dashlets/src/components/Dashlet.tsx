@@ -3,7 +3,6 @@ import { Groupers } from '@uidu/dashlet-controls';
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { FormattedMessage } from 'react-intl';
-import styled from 'styled-components';
 import tw from 'twin.macro';
 import DashletHeader from './DashletHeader';
 
@@ -23,11 +22,6 @@ const MyLoader = (props) => (
     <rect x="0" y="0" rx="4" ry="4" width="100%" height="100%" />
   </ContentLoader>
 );
-
-const TimeDimensionControls = styled.div`
-  position: absolute;
-  right: 1rem;
-`;
 
 const DateRanges = [
   { name: undefined, title: 'All time' },
