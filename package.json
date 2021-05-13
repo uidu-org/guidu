@@ -35,6 +35,7 @@
     "lint:eslint": "                         eslint '**/*.{js,ts,tsx}'",
     "lint:stylelint": "                      stylelint '**/*.{js,ts,tsx}'",
     "pkg:sort": "                            npx sort-package-json package.json && yarn manypkg exec npx sort-package-json package.json",
+    "release": "                             yarn build:pkg && yarn changeset publish",
     "start": "                               dotenv yarn run website:start",
     "start:authentication": "                dotenv yarn run website:start **/packages/authentication/**",
     "start:core": "                          dotenv yarn run website:start **/packages/core/**",

@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   deploy:
@@ -29,12 +26,21 @@ jobs:
       - name: Bundle app
         run: yarn build
 
-      - name: Build Content
-        run: bash ./build-setup.sh
+      - name: Create Release Pull Request
+        uses: changesets/action@master
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: yarn release
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Release Content
-        run: bash ./release-setup.sh
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Build Content
+      #   run: bash ./build-setup.sh
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # - name: Release Content
+      #   run: bash ./release-setup.sh
+      #   env:
+      #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
