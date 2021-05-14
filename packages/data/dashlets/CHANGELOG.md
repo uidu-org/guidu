@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.10.1
+
+### Patch Changes
+
+- 913f0ec15: More padding to dahslet table
+
 ## 0.10.0
 
 ### Minor Changes
