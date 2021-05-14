@@ -1,13 +1,26 @@
 import React from 'react';
+import styled from 'styled-components';
 import tw from 'twin.macro';
 import { DashletHeaderProps } from './types';
 
-const HeaderWrapper = tw.div`bg-white px-4 py-5 border-b border-gray-200 border-opacity-50 sm:px-6`;
-const HeaderInnerWrapper = tw.div`-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap`;
-const HeaderLabelWrapper = tw.div`ml-4 mt-4`;
-const HeaderLabelName = tw.h3`text-lg leading-6 font-medium text-gray-900`;
-const HeaderLabelDescription = tw.p`mt-1 text-sm text-gray-500`;
-const HeaderChildrenWrapper = tw.div`"ml-4 mt-4 flex-shrink-0"`;
+const HeaderWrapper = styled.div`
+  ${tw`bg-white px-4 py-5 border-b border-gray-200 border-opacity-50 sm:px-6`}
+`;
+const HeaderInnerWrapper = styled.div`
+  ${tw`-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap`}
+`;
+const HeaderLabelWrapper = styled.div`
+  ${tw`ml-4 mt-4`}
+`;
+const HeaderLabelName = styled.h3`
+  ${tw`text-lg leading-6 font-medium text-gray-900`}
+`;
+const HeaderLabelDescription = styled.p`
+  ${tw`mt-1 text-sm text-gray-500`}
+`;
+const HeaderChildrenWrapper = styled.div`
+  ${tw`ml-4 mt-4 flex-shrink-0`}
+`;
 
 export default function DashletHeader(props: DashletHeaderProps) {
   const { name, description, isCard, children } = props;

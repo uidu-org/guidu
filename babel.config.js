@@ -7,7 +7,7 @@ module.exports = function (api) {
       'babel-plugin-macros',
       {
         isMacrosName: (v) => {
-          v == 'twin.macro';
+          return v === 'twin.macro';
         },
       },
     ],
@@ -18,7 +18,10 @@ module.exports = function (api) {
         ast: true,
       },
     ],
-    ['babel-plugin-styled-components', { ssr: true }],
+    [
+      'babel-plugin-styled-components',
+      { ssr: true, displayName: true, preprocess: false },
+    ],
     '@babel/plugin-transform-destructuring',
     '@babel/plugin-transform-runtime',
     '@babel/plugin-transform-regenerator',

@@ -2,6 +2,7 @@ import { useCubeQuery } from '@cubejs-client/react';
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { FormattedMessage } from 'react-intl';
+import styled from 'styled-components';
 import tw from 'twin.macro';
 import DashletHeader from './DashletHeader';
 
@@ -45,8 +46,8 @@ const DateRanges = [
 //   { name: 'year', title: 'Annuale' },
 // ];
 
-const Card = tw.div`
-bg-white shadow rounded-lg overflow-hidden h-full flex-col flex
+const Card = styled.div`
+  ${tw`bg-white shadow rounded-lg overflow-hidden h-full flex-col flex`}
 `;
 
 export default function Dashlet({
