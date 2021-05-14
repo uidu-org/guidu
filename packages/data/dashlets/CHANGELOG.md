@@ -1,5 +1,15 @@
 # @uidu/blocks
 
+## 0.10.0
+
+### Minor Changes
+
+- be36abce2: Fix twin styling
+
+### Patch Changes
+
+- @uidu/dashboard-manager@0.10.2
+
 ## 0.9.0
 
 ### Minor Changes

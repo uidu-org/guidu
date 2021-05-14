@@ -1,5 +1,12 @@
 # @uidu/dashboard-manager
 
+## 0.10.2
+
+### Patch Changes
+
+- Updated dependencies [be36abce2]
+  - @uidu/dashlets@0.10.0
+
 ## 0.10.1
 
 ### Patch Changes
