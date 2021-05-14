@@ -6,7 +6,6 @@ import Loader from '../../Loader';
 
 export default function Table({ resultSet }) {
   const columnDefs = useColumnDefs();
-  console.log(columnDefs);
 
   if (!resultSet) {
     return <Loader />;
@@ -78,13 +77,8 @@ export default function Table({ resultSet }) {
 
   console.log(tableInstance);
 
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = tableInstance;
+  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
+    tableInstance;
 
   return (
     <>
@@ -106,7 +100,7 @@ export default function Table({ resultSet }) {
                       style: {
                         ...column.style,
                         ...column.headerStyle,
-                        padding: '.5rem 1.5rem',
+                        padding: '1rem 1.5rem',
                         display: 'flex',
                       },
                     },
@@ -130,7 +124,7 @@ export default function Table({ resultSet }) {
                         {
                           style: {
                             ...cell.column.cellStyle,
-                            padding: '.5rem 1.5rem',
+                            padding: '1rem 1.5rem',
                             display: 'flex',
                           },
                         },
