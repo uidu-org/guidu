@@ -1,5 +1,11 @@
 # @uidu/data-manager
 
+## 0.11.1
+
+### Patch Changes
+
+- b5346d039: Better styling and callbacks for dashboard-manager
+
 ## 0.11.0
 
 ### Minor Changes

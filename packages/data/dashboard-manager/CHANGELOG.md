@@ -1,5 +1,13 @@
 # @uidu/dashboard-manager
 
+## 0.10.3
+
+### Patch Changes
+
+- b5346d039: Better styling and callbacks for dashboard-manager
+- Updated dependencies [b5346d039]
+  - @uidu/dashlets@0.10.2
+
 ## 0.10.2
 
 ### Patch Changes
