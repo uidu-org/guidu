@@ -219,12 +219,8 @@ function DataManagerComponent({
 
   useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
 
-  const {
-    state,
-    setGlobalFilter,
-    globalFilter,
-    selectedFlatRows,
-  } = tableInstance;
+  const { state, setGlobalFilter, globalFilter, selectedFlatRows } =
+    tableInstance;
 
   const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
   const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
@@ -336,9 +332,11 @@ function DataManagerComponent({
       primaryField,
     } = preferences;
 
-    const { icon: Icon, color, controls: Controls = () => null } = byName[
-      currentView.kind
-    ];
+    const {
+      icon: Icon,
+      color,
+      controls: Controls = () => null,
+    } = byName[currentView.kind];
 
     return (
       <>
@@ -384,12 +382,22 @@ export default function DataManager({
   children,
   onViewUpdate,
   isAutoSaving,
+  onReady = (resultSet: any) => {},
+  subscribe = false,
   ...rest
 }) {
   const { cubejsApi } = useContext(CubeContext);
   const { query } = currentView;
 
-  const { resultSet, error, isLoading } = useCubeQuery(query, { cubejsApi });
+  const { refetch, resultSet, error, isLoading } = useCubeQuery(query, {
+    cubejsApi,
+    subscribe,
+  });
+
+  useEffect(() => {
+    onReady({ refetch, resultSet });
+  }, [resultSet, refetch]);
+
   if (error) {
     return <p>Query is invalid</p>;
   }

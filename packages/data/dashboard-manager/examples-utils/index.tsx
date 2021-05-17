@@ -250,9 +250,9 @@ export const dashlets = [
   {
     label: 'Top donations',
     kind: 'List',
-    layout: { x: 0, y: 4, w: 6, h: 4 },
+    layout: { x: 0, y: 4, w: 6, h: 10 },
     query: {
-      dimensions: ['Contacts.email'],
+      dimensions: ['Users.email', 'Users.id', 'Users.avatar'],
       timeDimensions: [
         {
           dimension: 'Donations.createdAt',
@@ -262,6 +262,7 @@ export const dashlets = [
       filters: [],
       limit: 10,
     },
+    onItemClick: (row) => console.log(row),
   },
   {
     label: 'Average donations',

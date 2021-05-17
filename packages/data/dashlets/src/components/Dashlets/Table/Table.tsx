@@ -4,7 +4,7 @@ import React, { useMemo } from 'react';
 import { useFlexLayout, useSortBy, useTable } from 'react-table';
 import Loader from '../../Loader';
 
-export default function Table({ resultSet }) {
+export default function Table({ resultSet, onItemClick }) {
   const columnDefs = useColumnDefs();
 
   if (!resultSet) {
@@ -14,8 +14,8 @@ export default function Table({ resultSet }) {
   const defaultColumn = React.useMemo(
     () => ({
       minWidth: 80,
-      width: 200,
-      maxWidth: 400,
+      width: 150,
+      maxWidth: 250,
       canHide: true,
       canSortBy: true,
       canGroupBy: false,
@@ -36,9 +36,6 @@ export default function Table({ resultSet }) {
     }),
     [],
   );
-
-  console.log(resultSet);
-  console.log(resultSet.tableColumns());
 
   const columns = useMemo(
     () =>
@@ -75,8 +72,6 @@ export default function Table({ resultSet }) {
     useSortBy,
   );
 
-  console.log(tableInstance);
-
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     tableInstance;
 
@@ -93,22 +88,24 @@ export default function Table({ resultSet }) {
         >
           {headerGroups.map((headerGroup) => (
             <div {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <div
-                  {...column.getHeaderProps([
-                    {
-                      style: {
-                        ...column.style,
-                        ...column.headerStyle,
-                        padding: '1rem 1.5rem',
-                        display: 'flex',
+              {headerGroup.headers
+                .filter((column) => !column.isPrivate)
+                .map((column) => (
+                  <div
+                    {...column.getHeaderProps([
+                      {
+                        style: {
+                          ...column.style,
+                          ...column.headerStyle,
+                          padding: '1rem 1.5rem',
+                          display: 'flex',
+                        },
                       },
-                    },
-                  ])}
-                >
-                  {column.render('Header')}
-                </div>
-              ))}
+                    ])}
+                  >
+                    {column.render('Header')}
+                  </div>
+                ))}
             </div>
           ))}
         </div>
@@ -116,24 +113,32 @@ export default function Table({ resultSet }) {
           {rows.map((row, i) => {
             prepareRow(row);
             return (
-              <div {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <div
-                      {...cell.getCellProps([
-                        {
-                          style: {
-                            ...cell.column.cellStyle,
-                            padding: '1rem 1.5rem',
-                            display: 'flex',
+              <div
+                {...row.getRowProps()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onItemClick(row);
+                }}
+              >
+                {row.cells
+                  .filter((cell) => !cell.column.isPrivate)
+                  .map((cell) => {
+                    return (
+                      <div
+                        {...cell.getCellProps([
+                          {
+                            style: {
+                              ...cell.column.cellStyle,
+                              padding: '1rem 1.5rem',
+                              display: 'flex',
+                            },
                           },
-                        },
-                      ])}
-                    >
-                      {cell.render('Cell', { ...cell.column.cellProps })}
-                    </div>
-                  );
-                })}
+                        ])}
+                      >
+                        {cell.render('Cell', { ...cell.column.cellProps })}
+                      </div>
+                    );
+                  })}
               </div>
             );
           })}

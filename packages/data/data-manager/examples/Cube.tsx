@@ -13,6 +13,7 @@ import { DataManagerNext } from '../';
 import '../../calendar/themes/uidu.scss';
 import { byName } from '../../data-views/src';
 import { columnDefsNext } from '../../table/examples-utils';
+
 // import '../../table/themes/uidu.scss';
 
 const defaultQuery = {
@@ -127,7 +128,7 @@ const cubejsApi = cubejs(CUBEJS_TOKEN, {
 });
 
 function CubeExample() {
-  const tableInstance = useRef(null);
+  const resultSet = useRef(null);
   const [dataViews, setDataViews] = useState(defaultDataViews);
   const [currentView, setCurrentView] = useState(defaultDataViews[0]);
   const [rowData, setRowData] = useState([]);
@@ -171,6 +172,7 @@ function CubeExample() {
   );
 
   console.log(currentView);
+  console.log(resultSet);
 
   return (
     <DataManagerNext
@@ -180,6 +182,10 @@ function CubeExample() {
       currentView={currentView}
       onItemClick={console.log}
       onViewUpdate={onViewUpdate}
+      onReady={(result) => {
+        console.log(result);
+        resultSet.current = result;
+      }}
     >
       {({ renderControls, renderView, renderSidebar }) => (
         <ShellMain>
@@ -243,6 +249,11 @@ function CubeExample() {
                         },
                       },
                     })}
+                    <div>
+                      <button onClick={() => resultSet.current.refetch()}>
+                        Refetch
+                      </button>
+                    </div>
                   </ShellHeader>
                   <ShellBody>
                     <ShellMain>
