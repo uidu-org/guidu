@@ -1,5 +1,11 @@
 # @uidu/renderer
 
+## 0.3.14
+
+### Patch Changes
+
+- a532235ef: feat(dataviews): Calendar is now a bit more flexbile
+
 ## 0.3.13
 
 ### Patch Changes
