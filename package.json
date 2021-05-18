@@ -120,6 +120,7 @@
     "@researchgate/react-intersection-observer": "^1.0.1",
     "@stripe/react-stripe-js": "^1.0.3",
     "@stripe/stripe-js": "^1.0.2",
+    "@tailwindcss/typography": "^0.4.0",
     "@types/classnames": "^2.2.7",
     "@types/commonmark": "^0.27.1",
     "@types/debounce": "^1.2.0",

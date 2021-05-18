@@ -213,7 +213,7 @@ export const Wrapper = styled.div<RendererWrapperProps & HTMLAttributes<{}>>`
   ${panelSharedStyles};
   ${ruleSharedStyles};
   ${paragraphSharedStyles};
-  ${listsSharedStyles};
+  /* ${listsSharedStyles}; */
   ${indentationSharedStyles};
   ${blockMarksSharedStyles};
   ${codeMarkSharedStyles};

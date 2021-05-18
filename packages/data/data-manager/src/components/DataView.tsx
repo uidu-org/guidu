@@ -123,15 +123,15 @@ export default class DataView extends PureComponent<any> {
                       {...viewProps.calendar}
                       onItemClick={onItemClick}
                       events={data}
-                      startAccessor={(item) =>
-                        dayjs(item[startDateField]).toDate()
-                      }
-                      titleAccessor={(item) => item.email}
-                      endAccessor={(item) =>
-                        endDateField
-                          ? dayjs(item[endDateField].toDate())
-                          : dayjs(item[startDateField]).add(3, 'hour').toDate()
-                      }
+                      startAccessor={(item) => {
+                        return dayjs(item[startDateField]).toDate();
+                      }}
+                      titleAccessor={(item) => item[primaryField]}
+                      endAccessor={(item) => {
+                        return endDateField
+                          ? dayjs(item[endDateField]).toDate()
+                          : dayjs(item[startDateField]).add(3, 'hour').toDate();
+                      }}
                       columnDefs={columns}
                       components={{
                         toolbar: CalendarToolbar,

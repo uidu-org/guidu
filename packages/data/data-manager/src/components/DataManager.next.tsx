@@ -251,22 +251,26 @@ function DataManagerComponent({
     }
 
     const {
-      preferences = {
-        rowHeight: defaultRowHeight,
-        columnCount: defaultColumnCount,
-        startDateField: defaultStartDateField,
-        endDateField: defaultEndDateField,
-        primaryField: defaultPrimaryField,
-      },
-    } = currentView;
+      rowHeight = defaultRowHeight,
+      columnCount = defaultColumnCount,
+      startDateField = defaultStartDateField,
+      endDateField = defaultEndDateField,
+      primaryField = defaultPrimaryField,
+    } = currentView.preferences || {};
 
-    const {
-      rowHeight,
-      columnCount,
-      startDateField,
-      endDateField,
-      primaryField,
-    } = preferences;
+    // const {
+    //   rowHeight,
+    //   columnCount,
+    //   startDateField,
+    //   endDateField,
+    //   primaryField,
+    // } = preferences;
+
+    console.log('rowHeight', rowHeight);
+    console.log('columnCount', columnCount);
+    console.log('startDateField', startDateField);
+    console.log('endDateField', endDateField);
+    console.log('primaryField', primaryField);
 
     return (
       <DataView
