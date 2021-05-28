@@ -1,5 +1,12 @@
 # @uidu/field-image-uploader
 
+## 0.4.13
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/field-base@0.6.0
+
 ## 0.4.12
 
 ### Patch Changes

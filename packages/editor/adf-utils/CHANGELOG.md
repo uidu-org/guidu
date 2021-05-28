@@ -1,5 +1,12 @@
 # @uidu/adf-utils
 
+## 0.6.9
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/adf-schema@0.4.0
+
 ## 0.6.8
 
 ### Patch Changes

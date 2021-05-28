@@ -23,7 +23,7 @@
     "@uidu/flag": "^0.4.10",
     "@uidu/inline-dialog": "^0.4.9",
     "@uidu/modal-dialog": "^0.4.11",
-    "@uidu/onboarding": "^0.4.9",
+    "@uidu/onboarding": "^0.5.0",
     "@uidu/tooltip": "^0.4.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

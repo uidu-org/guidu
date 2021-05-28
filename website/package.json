@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "repository": "https://github.com/uidu-org/guidu/tree/main/website",
   "license": "MIT",
   "scripts": {
@@ -22,20 +22,20 @@
   "dependencies": {
     "@uidu/badge": "^0.4.9",
     "@uidu/button": "^0.4.9",
-    "@uidu/checkbox": "^0.3.9",
+    "@uidu/checkbox": "^0.4.0",
     "@uidu/code": "^0.4.9",
     "@uidu/docs": "^0.3.9",
     "@uidu/drawer": "^0.5.10",
-    "@uidu/field-text": "^0.4.11",
+    "@uidu/field-text": "^0.5.0",
     "@uidu/form": "^0.4.14",
     "@uidu/list": "^0.2.12",
     "@uidu/lozenge": "^0.4.9",
     "@uidu/modal-dialog": "^0.4.11",
-    "@uidu/navigation": "^0.7.6",
-    "@uidu/select": "^0.6.12",
+    "@uidu/navigation": "^0.7.8",
+    "@uidu/select": "^0.6.13",
     "@uidu/shell": "^1.2.14",
     "@uidu/spinner": "^0.4.9",
-    "@uidu/table": "^0.7.0",
+    "@uidu/table": "^0.7.1",
     "@uidu/theme": "^0.5.10",
     "@uidu/themes-uidu": "^0.3.19",
     "@uidu/tooltip": "^0.4.9",
@@ -74,7 +74,7 @@
   "devDependencies": {
     "@uidu/fs-loader": "^0.1.42",
     "@uidu/nav-info-loader": "^0.1.43",
-    "@uidu/webpack-config": "^0.1.100"
+    "@uidu/webpack-config": "^0.2.0"
   },
   "publishConfig": {
     "access": "public"

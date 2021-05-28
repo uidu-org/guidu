@@ -1,5 +1,16 @@
 # @uidu/emoji
 
+## 0.4.0
+
+### Minor Changes
+
+- 4a3268183: Removed some dependencies, fix field-date default value, editor is now more flexible
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/field-text@0.5.0
+
 ## 0.3.10
 
 ### Patch Changes

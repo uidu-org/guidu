@@ -1,5 +1,14 @@
 # @uidu/dashboard-controls
 
+## 0.4.13
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+  - @uidu/avatar-group@2.5.12
+  - @uidu/field-date-range@0.3.11
+
 ## 0.4.12
 
 ### Patch Changes

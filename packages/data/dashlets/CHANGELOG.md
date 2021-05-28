@@ -1,5 +1,14 @@
 # @uidu/blocks
 
+## 0.10.3
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dashboard-manager@0.11.0
+  - @uidu/dashlet-controls@0.3.13
+  - @uidu/data-fields@0.5.12
+
 ## 0.10.2
 
 ### Patch Changes

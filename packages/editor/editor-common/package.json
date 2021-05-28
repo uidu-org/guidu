@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-common",
-  "version": "0.4.12",
+  "version": "0.4.13",
   "description": "A package that contains common classes and components for editor and renderer",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-common",
   "license": "Apache-2.0",
@@ -12,11 +12,11 @@
   "dependencies": {
     "@atlaskit/icon": "^21.1.2",
     "@babel/runtime": "^7.11.2",
-    "@uidu/adf-schema": "^0.3.7",
-    "@uidu/adf-utils": "^0.6.8",
+    "@uidu/adf-schema": "^0.4.0",
+    "@uidu/adf-utils": "^0.6.9",
     "@uidu/analytics": "^0.4.9",
     "@uidu/analytics-namespaced-context": "^0.3.8",
-    "@uidu/emoji": "^0.3.10",
+    "@uidu/emoji": "^0.4.0",
     "@uidu/mentions": "^0.2.12",
     "@uidu/profilecard": "^0.1.11",
     "@uidu/theme": "^0.5.10",

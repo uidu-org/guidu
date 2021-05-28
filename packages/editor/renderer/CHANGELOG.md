@@ -1,5 +1,21 @@
 # @uidu/renderer
 
+## 0.4.0
+
+### Minor Changes
+
+- 4a3268183: Removed some dependencies, fix field-date default value, editor is now more flexible
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/adf-schema@0.4.0
+  - @uidu/media-card@0.4.10
+  - @uidu/adf-utils@0.6.9
+  - @uidu/editor-common@0.4.13
+  - @uidu/editor-json-transformer@0.3.10
+  - @uidu/status@0.3.13
+
 ## 0.3.14
 
 ### Patch Changes

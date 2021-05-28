@@ -1,5 +1,17 @@
 # @uidu/editor-markdown-transformer
 
+## 0.4.0
+
+### Minor Changes
+
+- 4a3268183: Removed some dependencies, fix field-date default value, editor is now more flexible
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/adf-schema@0.4.0
+  - @uidu/editor-common@0.4.13
+
 ## 0.3.9
 
 ### Patch Changes
