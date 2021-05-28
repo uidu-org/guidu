@@ -32,12 +32,13 @@ function FieldDate({
   name,
   className = 'form-control',
   onChange,
+  disabled,
   required,
   min,
   max,
 }: FieldDateStatelessProps) {
   const [isFallback, setIsFallback] = useState(false);
-  const element: RefObject<DayPickerInput> = useRef();
+  const element: RefObject<DayPickerInput | HTMLInputElement> = useRef();
 
   useEffect(() => {
     const test = document.createElement('input');
@@ -84,9 +85,12 @@ function FieldDate({
     );
   }
 
+  console.log(value && value !== '' ? moment(value).format('YYYY-MM-DD') : '');
+
   return (
     <input
-      value={value}
+      id={id}
+      value={value && value !== '' ? moment(value).format('YYYY-MM-DD') : ''}
       ref={element}
       type="date"
       name={name}
@@ -95,6 +99,7 @@ function FieldDate({
       required={required}
       min={min}
       max={max}
+      disabled={disabled}
     />
   );
 }

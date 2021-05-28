@@ -1,3 +1,4 @@
+import { traverse } from '@uidu/adf-utils';
 import { ShellBody, ShellHeader, ShellMain } from '@uidu/shell';
 import { GuiduThemeProvider } from '@uidu/theme';
 import React, { PureComponent } from 'react';
@@ -19,6 +20,26 @@ export default class Basic extends PureComponent<any, any> {
     console.log(actions);
     actions.getValue().then((value) => {
       console.log(value);
+      traverse(value, {
+        // emoji visitor, matches all nodes with type === 'emoji'
+        emoji: (node, parent) => {
+          // do something with the node
+          console.log(node);
+        },
+
+        mention: (node, parent) => {
+          // do something with mention
+          console.log(node);
+        },
+        media: (node, parent) => {
+          // do something with mention
+          console.log(node);
+        },
+
+        taskList: (node, parent) => {
+          // do something with taskList
+        },
+      });
     });
   };
 

@@ -1,4 +1,3 @@
-import { defaultProps as defaultButtonProps } from '@uidu/button';
 import React from 'react';
 import DropdownMenu, { DropdownItem, DropdownItemGroup } from '../src';
 
@@ -6,7 +5,7 @@ export default () => (
   <DropdownMenu
     trigger="Disabled trigger"
     triggerType="button"
-    triggerButtonProps={{ ...defaultButtonProps, isDisabled: true }}
+    triggerButtonProps={{ isDisabled: true }}
   >
     <DropdownItemGroup>
       <DropdownItem>Sydney</DropdownItem>

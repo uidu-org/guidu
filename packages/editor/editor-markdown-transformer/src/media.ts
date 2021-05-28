@@ -60,7 +60,10 @@ function createRule() {
     const createMediaTokens = (url: string) => {
       const mediaSingleOpen = new State.Token('media_single_open', '', 1);
       const media = new State.Token('media', '', 0);
-      media.attrs = [['url', getUrl(url)], ['type', 'external']];
+      media.attrs = [
+        ['url', getUrl(url)],
+        ['type', 'external'],
+      ];
       const mediaSingleClose = new State.Token('media_single_close', '', -1);
 
       return [mediaSingleOpen, media, mediaSingleClose];
@@ -109,7 +112,7 @@ function createRule() {
 
           const closingTokens = openingTokens
             .map(
-              token =>
+              (token) =>
                 new State.Token(
                   token.type.replace('_open', '_close'),
                   token.tag,
@@ -120,7 +123,7 @@ function createRule() {
 
           const matches = token.content.match(regx)!;
           let inlineContentStack = token.content;
-          matches.forEach(match => {
+          matches.forEach((match) => {
             const start = inlineContentStack.indexOf(match);
             const contentBefore = inlineContentStack.substr(0, start);
             inlineContentStack = inlineContentStack.substr(
@@ -151,7 +154,7 @@ function createRule() {
 
           processedTokens = [
             ...processedTokens,
-            ...closingTokens.map(c => c.type),
+            ...closingTokens.map((c) => c.type),
           ];
 
           tokens = [...tokens.slice(0, cursor), ...subTree];

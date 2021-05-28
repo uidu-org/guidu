@@ -1,10 +1,10 @@
 import React from 'react';
 import {
-  FieldRefTester,
+  FieldExampleRefs,
   inputDefaultProps,
 } from '../../field-base/examples-utils';
 import Checkbox from '../src';
 
 export default function TestRef() {
-  return <FieldRefTester {...inputDefaultProps} component={Checkbox} />;
+  return <FieldExampleRefs {...inputDefaultProps} component={Checkbox} />;
 }

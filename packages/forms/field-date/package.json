@@ -17,6 +17,7 @@
     "@uidu/analytics": "^0.4.9",
     "@uidu/field-base": "^0.5.12",
     "@uidu/field-text": "^0.4.11",
+    "dayjs": "^1.10.5",
     "formsy-react": "^2.2.1",
     "moment": "^2.27.0",
     "react": "^17.0.2",

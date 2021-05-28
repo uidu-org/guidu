@@ -98,7 +98,8 @@ export function FieldExampleRefs({ component: Component, ...rest }) {
       <Component {...inputDefaultProps} componentRef={ref} />
       <div>
         <button
-          onClick={e => {
+          className="btn"
+          onClick={(e) => {
             e.preventDefault();
             console.log(ref);
             ref.current.focus();
@@ -123,7 +124,11 @@ export function FieldExampleScaffold({ component, defaultValue, ...rest }) {
   return (
     <>
       <FieldExampleBlock name="With Event">
-        <FieldExampleEvents component={component} {...rest} />
+        <FieldExampleEvents
+          component={component}
+          defaultValue={defaultValue}
+          {...rest}
+        />
       </FieldExampleBlock>
       <FieldExampleBlock name="Appearance">
         <FieldExampleAppearance

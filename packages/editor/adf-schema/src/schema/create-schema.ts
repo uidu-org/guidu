@@ -15,6 +15,8 @@ import {
   textColor,
   typeAheadQuery,
   underline,
+  unsupportedMark,
+  unsupportedNodeAttribute,
 } from './marks';
 import {
   blockCard,
@@ -190,6 +192,8 @@ const marksInOrder: SchemaBuiltInItem[] = [
   ...markGroupDeclarations,
   { name: 'breakout', spec: breakout },
   { name: 'indentation', spec: indentation },
+  { name: 'unsupportedMark', spec: unsupportedMark },
+  { name: 'unsupportedNodeAttribute', spec: unsupportedNodeAttribute },
 ];
 
 /**

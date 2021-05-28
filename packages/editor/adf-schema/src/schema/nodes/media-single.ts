@@ -43,8 +43,9 @@ export const mediaSingle: NodeSpec = {
   group: 'block',
   selectable: true,
   atom: true,
-  content: 'media',
+  content: 'media | media unsupportedBlock',
   attrs: defaultAttrs,
+  marks: 'unsupportedMark unsupportedNodeAttribute link',
   parseDOM: [
     {
       tag: 'div[data-node-type="mediaSingle"]',

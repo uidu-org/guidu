@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { PureComponent, ReactElement } from 'react';
 import {
-  EmojiResource,
   EmojiProvider,
+  EmojiResource,
   EmojiResourceConfig,
 } from '../src/resource';
 
 export function getEmojiConfig() {
   let emojiConfig;
   try {
-    emojiConfig = require('../local-config')['default'];
+    emojiConfig = require('../local-config-example')['default'];
   } catch (e) {
     emojiConfig = require('../local-config-example')['default'];
   }
@@ -35,7 +35,7 @@ const toJavascriptString = (obj: any): string => {
       return arrString;
     }
     let objString = '{\n';
-    Object.keys(obj).forEach(key => {
+    Object.keys(obj).forEach((key) => {
       objString += `  ${key}: ${toJavascriptString(obj[key])},\n`;
     });
     objString += '}';

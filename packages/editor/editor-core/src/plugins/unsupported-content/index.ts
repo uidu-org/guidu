@@ -3,6 +3,8 @@ import {
   confluenceUnsupportedInline,
   unsupportedBlock,
   unsupportedInline,
+  unsupportedMark,
+  unsupportedNodeAttribute,
 } from '@uidu/adf-schema';
 import { EditorState, Plugin, PluginKey } from 'prosemirror-state';
 import { ReactNodeView } from '../../nodeviews';
@@ -49,6 +51,13 @@ const createPlugin: PMPluginFactory = ({ schema, portalProviderAPI }) => {
 
 const unsupportedContentPlugin = (): EditorPlugin => ({
   name: 'unsupportedContent',
+
+  marks() {
+    return [
+      { name: 'unsupportedMark', mark: unsupportedMark },
+      { name: 'unsupportedNodeAttribute', mark: unsupportedNodeAttribute },
+    ];
+  },
 
   nodes() {
     return [

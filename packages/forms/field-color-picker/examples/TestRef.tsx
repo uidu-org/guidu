@@ -1,10 +1,12 @@
 import React from 'react';
 import {
-  FieldRefTester,
+  FieldExampleRefs,
   inputDefaultProps,
 } from '../../field-base/examples-utils';
 import FieldColorPicker from '../src';
 
 export default function TestRef() {
-  return <FieldRefTester {...inputDefaultProps} component={FieldColorPicker} />;
+  return (
+    <FieldExampleRefs {...inputDefaultProps} component={FieldColorPicker} />
+  );
 }

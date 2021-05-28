@@ -35,3 +35,5 @@ export type { TextColorAttributes, TextColorDefinition } from './text-color';
 export { typeAheadQuery } from './type-ahead-query';
 export { underline } from './underline';
 export type { UnderlineDefinition } from './underline';
+export { unsupportedMark } from './unsupported-mark';
+export { unsupportedNodeAttribute } from './unsupported-node-attributes';

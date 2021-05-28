@@ -1,4 +1,4 @@
-import { ProgressDots } from '@atlaskit/progress-indicator';
+import { ProgressIndicator } from '@atlaskit/progress-indicator';
 import Button from '@uidu/button';
 import { gridSize } from '@uidu/theme';
 import React from 'react';
@@ -34,7 +34,7 @@ class NewUser extends React.Component<{}> {
         <div>
           <Heading>
             <h2>Welcome to Jira</h2>
-            <ProgressDots values={[1, 2, 3]} selectedIndex={0} />
+            <ProgressIndicator values={[1, 2, 3]} selectedIndex={0} />
           </Heading>
           <Tagline>
             Tell us about your team so we can personalise your project for you

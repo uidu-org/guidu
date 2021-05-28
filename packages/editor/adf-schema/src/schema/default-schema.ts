@@ -62,6 +62,8 @@ export const defaultSchemaConfig: SchemaConfig = {
     'alignment',
     'indentation',
     'annotation',
+    'unsupportedMark',
+    'unsupportedNodeAttribute',
   ],
 };
 

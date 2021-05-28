@@ -6,7 +6,7 @@ const { print, buildBanner } = require('../banner');
 
 async function runBuild(webpackOptions = {}, websiteOptions = {}) {
   const mode = 'production';
-  const websiteEnv = process.env.WEBSITE_ENV || 'local';
+  const websiteEnv = process.env.WEBSITE_ENV || 'production';
   const noMinimize = !!process.argv.find((arg) =>
     arg.startsWith('--no-minimize'),
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  FieldRefTester,
+  FieldExampleRefs,
   inputDefaultProps,
 } from '../../field-base/examples-utils';
 import { users } from '../examples-utils';
@@ -8,7 +8,7 @@ import FieldMentions from '../src';
 
 export default function TestRef() {
   return (
-    <FieldRefTester
+    <FieldExampleRefs
       {...inputDefaultProps}
       component={FieldMentions}
       items={[

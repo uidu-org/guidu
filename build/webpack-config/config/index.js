@@ -3,8 +3,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const { createDefaultGlob } = require('./utils');
@@ -128,7 +128,8 @@ module.exports = async function createWebpackConfig(
         },
         {
           test: /\.(js|jsx|mjs)$/,
-          exclude: /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
+          exclude:
+            /node_modules|packages\/media\/media-editor\/src\/engine\/core\/binaries\/mediaEditor.js/,
           use: [
             // {
             //   loader: 'thread-loader',
@@ -275,9 +276,13 @@ function getPlugins(
     }),
 
     new webpack.DefinePlugin({
-      WEBSITE_ENV: `"${websiteEnv}"`,
-      BASE_TITLE: `"GUIdu by uidu ${!isProduction ? '- DEV' : ''}"`,
-      DEFAULT_META_DESCRIPTION: `"GUIdu is the official component library for uidu's Design System."`,
+      WEBSITE_ENV: JSON.stringify(websiteEnv),
+      BASE_TITLE: JSON.stringify(
+        `GUIdu by uidu ${!isProduction ? '- DEV' : ''}`,
+      ),
+      DEFAULT_META_DESCRIPTION: JSON.stringify(
+        `GUIdu is the official component library for uidu's Design System.`,
+      ),
       // process: 'process/browser',
     }),
 
@@ -296,17 +301,17 @@ function getPlugins(
       defaultSizes: 'gzip',
     }),
 
-    new CircularDependencyPlugin({
-      // exclude detection of files based on a RegExp
-      exclude: /node_modules/,
-      // add errors to webpack instead of warnings
-      failOnError: false,
-      // allow import cycles that include an asyncronous import,
-      // e.g. via import(/* webpackMode: "weak" */ './file.js')
-      allowAsyncCycles: false,
-      // set the current working directory for displaying module paths
-      cwd: process.cwd(),
-    }),
+    // new CircularDependencyPlugin({
+    //   // exclude detection of files based on a RegExp
+    //   exclude: /node_modules/,
+    //   // add errors to webpack instead of warnings
+    //   failOnError: false,
+    //   // allow import cycles that include an asyncronous import,
+    //   // e.g. via import(/* webpackMode: "weak" */ './file.js')
+    //   allowAsyncCycles: false,
+    //   // set the current working directory for displaying module paths
+    //   cwd: process.cwd(),
+    // }),
   );
 
   return plugins;

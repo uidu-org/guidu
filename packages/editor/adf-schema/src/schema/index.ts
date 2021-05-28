@@ -44,6 +44,8 @@ export {
   textColor,
   typeAheadQuery,
   underline,
+  unsupportedMark,
+  unsupportedNodeAttribute,
 } from './marks';
 export type {
   AlignmentAttributes,
