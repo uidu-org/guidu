@@ -1,5 +1,11 @@
 # @uidu/onboarding
 
+## 0.5.0
+
+### Minor Changes
+
+- 4a3268183: Removed some dependencies, fix field-date default value, editor is now more flexible
+
 ## 0.4.9
 
 ### Patch Changes

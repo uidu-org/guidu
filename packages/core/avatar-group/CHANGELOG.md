@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.5.12
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+
 ## 2.5.11
 
 ### Patch Changes

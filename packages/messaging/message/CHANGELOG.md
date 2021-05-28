@@ -1,5 +1,15 @@
 # @uidu/message
 
+## 0.3.11
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+  - @uidu/media-card@0.4.10
+  - @uidu/message-form@0.3.11
+  - @uidu/message-renderer@0.3.10
+
 ## 0.3.10
 
 ### Patch Changes

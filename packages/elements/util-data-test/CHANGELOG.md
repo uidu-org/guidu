@@ -1,5 +1,12 @@
 # @uidu/util-data-test
 
+## 0.3.9
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/emoji@0.4.0
+
 ## 0.3.8
 
 ### Patch Changes

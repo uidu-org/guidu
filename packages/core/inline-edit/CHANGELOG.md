@@ -1,5 +1,13 @@
 # @uidu/inline-edit
 
+## 0.2.10
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/field-text@0.5.0
+  - @uidu/field@0.3.11
+
 ## 0.2.9
 
 ### Patch Changes

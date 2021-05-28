@@ -1,5 +1,14 @@
 # @uidu/editor-common
 
+## 0.4.13
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/adf-schema@0.4.0
+  - @uidu/emoji@0.4.0
+  - @uidu/adf-utils@0.6.9
+
 ## 0.4.12
 
 ### Patch Changes

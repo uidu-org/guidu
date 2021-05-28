@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-textarea",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "description": "Simple Textarea component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-textarea",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.4.9",
-    "@uidu/field-base": "^0.5.12",
+    "@uidu/field-base": "^0.6.0",
     "autosize": "^4.0.2",
     "formsy-react": "^2.2.1",
     "react": "^17.0.2",

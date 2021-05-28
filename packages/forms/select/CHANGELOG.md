@@ -1,5 +1,13 @@
 # @uidu/field-text
 
+## 0.6.13
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/checkbox@0.4.0
+  - @uidu/field-base@0.6.0
+
 ## 0.6.12
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/field-date-range",
-  "version": "0.3.10",
+  "version": "0.3.11",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/field-date-range",
   "license": "MIT",
   "sideEffects": false,
@@ -10,8 +10,8 @@
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@uidu/analytics": "^0.4.9",
-    "@uidu/field-base": "^0.5.12",
-    "@uidu/field-date": "^0.3.13",
+    "@uidu/field-base": "^0.6.0",
+    "@uidu/field-date": "^0.4.0",
     "formsy-react": "^2.2.1",
     "moment": "^2.27.0",
     "react": "^17.0.2",

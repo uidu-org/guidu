@@ -1,5 +1,15 @@
 # @uidu/devise
 
+## 0.5.12
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/checkbox@0.4.0
+  - @uidu/field-text@0.5.0
+  - @uidu/field-password@0.4.12
+  - @uidu/field-phone@0.2.12
+
 ## 0.5.11
 
 ### Patch Changes

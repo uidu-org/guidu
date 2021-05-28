@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.2.14
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/field-text@0.5.0
+  - @uidu/payments@0.4.14
+
 ## 0.2.13
 
 ### Patch Changes

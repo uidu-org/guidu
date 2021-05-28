@@ -1,5 +1,12 @@
 # @uidu/media-card
 
+## 0.4.10
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+
 ## 0.4.9
 
 ### Patch Changes

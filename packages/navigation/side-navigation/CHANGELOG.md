@@ -1,5 +1,12 @@
 # @uidu/navigation
 
+## 0.2.13
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+
 ## 0.2.12
 
 ### Patch Changes

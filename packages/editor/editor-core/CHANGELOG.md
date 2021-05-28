@@ -1,5 +1,26 @@
 # @uidu/editor-core
 
+## 0.8.0
+
+### Minor Changes
+
+- 4a3268183: Removed some dependencies, fix field-date default value, editor is now more flexible
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/adf-schema@0.4.0
+  - @uidu/editor-markdown-transformer@0.4.0
+  - @uidu/emoji@0.4.0
+  - @uidu/field-date@0.4.0
+  - @uidu/avatar-group@2.5.12
+  - @uidu/media-card@0.4.10
+  - @uidu/adf-utils@0.6.9
+  - @uidu/editor-common@0.4.13
+  - @uidu/editor-json-transformer@0.3.10
+  - @uidu/select@0.6.13
+  - @uidu/status@0.3.13
+
 ## 0.7.14
 
 ### Patch Changes

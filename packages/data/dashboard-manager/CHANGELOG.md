@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.11.0
+
+### Minor Changes
+
+- 4a3268183: Removed some dependencies, fix field-date default value, editor is now more flexible
+
+### Patch Changes
+
+- @uidu/dashboard-controls@0.4.13
+- @uidu/dashlets@0.10.3
+
 ## 0.10.3
 
 ### Patch Changes

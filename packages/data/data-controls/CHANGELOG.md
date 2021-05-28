@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 0.7.10
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+  - @uidu/checkbox@0.4.0
+  - @uidu/field-text@0.5.0
+  - @uidu/select@0.6.13
+  - @uidu/data-fields@0.5.12
+  - @uidu/data-views@0.5.16
+
 ## 0.7.9
 
 ### Patch Changes

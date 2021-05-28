@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [4a3268183]
+  - @uidu/dropdown-menu@0.5.0
+  - @uidu/checkbox@0.4.0
+  - @uidu/data-fields@0.5.12
+
 ## 0.7.0
 
 ### Minor Changes
