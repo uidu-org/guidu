@@ -1,5 +1,15 @@
 # @uidu/inline-dialog
 
+## 0.4.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/popper@0.4.10
+  - @uidu/theme@0.5.11
+
 ## 0.4.9
 
 ### Patch Changes

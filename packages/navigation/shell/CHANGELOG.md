@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.15
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/spinner@0.4.10
+
 ## 1.2.14
 
 ### Patch Changes

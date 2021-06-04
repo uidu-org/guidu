@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.15
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.4.14
 
 ### Patch Changes

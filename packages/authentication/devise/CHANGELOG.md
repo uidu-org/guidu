@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.13
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/avatar@0.6.11
+  - @uidu/slider@1.6.10
+  - @uidu/spinner@0.4.10
+  - @uidu/checkbox@0.4.1
+  - @uidu/field-password@0.4.13
+  - @uidu/field-phone@0.2.13
+  - @uidu/field-text@0.5.1
+  - @uidu/form@0.4.15
+  - @uidu/shell@1.2.15
+
 ## 0.5.12
 
 ### Patch Changes

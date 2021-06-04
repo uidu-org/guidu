@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/adf-schema@0.4.1
+  - @uidu/adf-utils@0.6.10
+  - @uidu/analytics-namespaced-context@0.3.9
+  - @uidu/emoji@0.4.1
+  - @uidu/mentions@0.2.13
+  - @uidu/profilecard@0.1.12
+
 ## 0.4.13
 
 ### Patch Changes

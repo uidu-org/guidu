@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.3.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/button@0.4.10
+  - @uidu/code@0.4.10
+  - @uidu/section-message@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+
 ## 0.3.9
 
 ### Patch Changes

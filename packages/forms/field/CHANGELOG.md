@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.12
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/checkbox@0.4.1
+  - @uidu/field-number@0.4.13
+  - @uidu/field-text@0.5.1
+  - @uidu/field-textarea@0.3.12
+  - @uidu/select@0.6.14
+
 ## 0.3.11
 
 ### Patch Changes

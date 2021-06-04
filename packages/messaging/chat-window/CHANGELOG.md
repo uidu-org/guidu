@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/message@0.3.12
+  - @uidu/message-form@0.3.12
+  - @uidu/message-renderer@0.3.11
+
 ## 0.3.9
 
 ### Patch Changes

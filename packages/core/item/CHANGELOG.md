@@ -1,5 +1,14 @@
 # @uidu/item
 
+## 0.4.11
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/avatar@0.6.11
+  - @uidu/theme@0.5.11
+
 ## 0.4.10
 
 ### Patch Changes

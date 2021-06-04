@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.4.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/avatar@0.6.11
+  - @uidu/avatar-group@2.5.13
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/field-date-range@0.3.12
+  - @uidu/form@0.4.15
+
 ## 0.4.13
 
 ### Patch Changes

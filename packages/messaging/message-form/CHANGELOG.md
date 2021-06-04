@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.12
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/spinner@0.4.10
+  - @uidu/field-mentions@0.5.1
+  - @uidu/field-text@0.5.1
+  - @uidu/form@0.4.15
+  - @uidu/media-filmstrip@0.3.10
+  - @uidu/message@0.3.12
+
 ## 0.3.11
 
 ### Patch Changes

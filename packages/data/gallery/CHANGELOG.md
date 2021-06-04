@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.2.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/spinner@0.4.10
+  - @uidu/data-controls@0.7.11
+  - @uidu/data-fields@0.5.13
+  - @uidu/shell@1.2.15
+
 ## 0.2.13
 
 ### Patch Changes

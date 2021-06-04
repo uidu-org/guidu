@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.3.11
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/adf-schema@0.4.1
+
 ## 0.3.10
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/avatar-group@2.5.13
+  - @uidu/button@0.4.10
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/analytics-namespaced-context@0.3.9
+
 ## 0.3.9
 
 ### Patch Changes

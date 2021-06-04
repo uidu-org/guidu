@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 0.10.4
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/spinner@0.4.10
+  - @uidu/tooltip@0.4.10
+  - @uidu/dashboard-manager@0.11.1
+  - @uidu/dashlet-controls@0.3.14
+  - @uidu/data-fields@0.5.13
+
 ## 0.10.3
 
 ### Patch Changes

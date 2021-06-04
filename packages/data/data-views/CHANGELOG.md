@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.17
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/data-controls@0.7.11
+  - @uidu/field-counter@0.4.1
+  - @uidu/field-number@0.4.13
+  - @uidu/form@0.4.15
+  - @uidu/select@0.6.14
+
 ## 0.5.16
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/button@0.4.10
+  - @uidu/spinner@0.4.10
+  - @uidu/field-base@0.6.1
+  - @uidu/media-core@0.4.9
+
 ## 0.4.13
 
 ### Patch Changes

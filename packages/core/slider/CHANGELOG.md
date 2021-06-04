@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 1.6.9
 
 ### Patch Changes

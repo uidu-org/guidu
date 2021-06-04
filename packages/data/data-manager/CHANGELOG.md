@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.11.3
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/spinner@0.4.10
+  - @uidu/board@0.3.10
+  - @uidu/calendar@0.2.13
+  - @uidu/data-controls@0.7.11
+  - @uidu/data-fields@0.5.13
+  - @uidu/data-views@0.5.17
+  - @uidu/gallery@0.2.14
+  - @uidu/list@0.2.14
+  - @uidu/table@0.7.2
+  - @uidu/shell@1.2.15
+
 ## 0.11.2
 
 ### Patch Changes

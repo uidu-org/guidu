@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/theme@0.5.11
+  - @uidu/media-card@0.4.11
+  - @uidu/media-core@0.4.9
+  - @uidu/media-viewer@0.3.12
+
 ## 0.3.9
 
 ### Patch Changes

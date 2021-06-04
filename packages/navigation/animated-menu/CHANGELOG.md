@@ -1,5 +1,11 @@
 # @uidu/animated-menu
 
+## 0.3.8
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.3.7
 
 ### Patch Changes

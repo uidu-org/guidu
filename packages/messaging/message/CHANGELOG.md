@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.3.12
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/avatar@0.6.11
+  - @uidu/drawer@0.5.11
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/tooltip@0.4.10
+  - @uidu/media-card@0.4.11
+  - @uidu/media-core@0.4.9
+  - @uidu/media-viewer@0.3.12
+  - @uidu/message-form@0.3.12
+  - @uidu/message-renderer@0.3.11
+
 ## 0.3.11
 
 ### Patch Changes

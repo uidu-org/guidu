@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.7.2
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/menu@0.4.12
+  - @uidu/popup@0.4.10
+  - @uidu/data-fields@0.5.13
+  - @uidu/checkbox@0.4.1
+
 ## 0.7.1
 
 ### Patch Changes

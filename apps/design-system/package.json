@@ -1,6 +1,6 @@
 {
   "name": "design-system",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": true,
   "repository": "https://github.com/uidu-org/guidu/tree/main/apps/design-system",
   "scripts": {
@@ -14,9 +14,9 @@
     "@mdx-js/mdx": "^1.6.22",
     "@next/mdx": "^10.2.3",
     "@preconstruct/next": "^2.0.2",
-    "@uidu/analytics": "^0.4.9",
-    "@uidu/button": "^0.4.9",
-    "@uidu/theme": "^0.5.10",
+    "@uidu/analytics": "^0.4.10",
+    "@uidu/button": "^0.4.10",
+    "@uidu/theme": "^0.5.11",
     "next": "^10.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

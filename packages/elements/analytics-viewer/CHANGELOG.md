@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.3.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+
 ## 0.3.9
 
 ### Patch Changes

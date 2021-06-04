@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.4.9
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/media-core@0.4.9
+
 ## 0.4.8
 
 ### Patch Changes
