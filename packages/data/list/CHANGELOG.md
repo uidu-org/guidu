@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/data-fields@0.5.13
+
 ## 0.2.13
 
 ### Patch Changes

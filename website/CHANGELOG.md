@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.3.2
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/docs@0.3.10
+  - @uidu/badge@0.4.10
+  - @uidu/button@0.4.10
+  - @uidu/code@0.4.10
+  - @uidu/drawer@0.5.11
+  - @uidu/lozenge@0.4.10
+  - @uidu/modal-dialog@0.4.12
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/list@0.2.14
+  - @uidu/table@0.7.2
+  - @uidu/checkbox@0.4.1
+  - @uidu/field-text@0.5.1
+  - @uidu/form@0.4.15
+  - @uidu/select@0.6.14
+  - @uidu/navigation@0.7.9
+  - @uidu/shell@1.2.15
+  - @uidu/themes-uidu@0.3.20
+
 ## 0.3.1
 
 ### Patch Changes

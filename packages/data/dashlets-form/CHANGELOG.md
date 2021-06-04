@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.4.4
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/accordion@0.4.10
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/dashlets@0.10.4
+  - @uidu/field-downshift@0.5.14
+  - @uidu/field-toggle@0.4.15
+  - @uidu/form@0.4.15
+  - @uidu/select@0.6.14
+  - @uidu/shell@1.2.15
+
 ## 0.4.3
 
 ### Patch Changes

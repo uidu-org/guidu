@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.4.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/code@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/adf-schema@0.4.1
+  - @uidu/adf-utils@0.6.10
+  - @uidu/editor-common@0.4.14
+  - @uidu/editor-json-transformer@0.3.11
+  - @uidu/analytics-listeners@0.3.9
+  - @uidu/analytics-namespaced-context@0.3.9
+  - @uidu/mentions@0.2.13
+  - @uidu/status@0.3.14
+  - @uidu/task-decision@0.3.10
+  - @uidu/media-card@0.4.11
+  - @uidu/media-filmstrip@0.3.10
+
 ## 0.4.0
 
 ### Minor Changes

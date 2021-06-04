@@ -1,5 +1,20 @@
 # @uidu/navigation
 
+## 0.7.9
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/avatar@0.6.11
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/inline-dialog@0.4.10
+  - @uidu/menu@0.4.12
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/animated-menu@0.3.8
+  - @uidu/shell@1.2.15
+
 ## 0.7.8
 
 ### Patch Changes

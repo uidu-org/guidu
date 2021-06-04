@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.26
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.1.25
 
 ### Patch Changes

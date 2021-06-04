@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.6.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.6.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/fs-loader@0.1.43
+  - @uidu/nav-info-loader@0.1.44
+
 ## 0.2.0
 
 ### Minor Changes

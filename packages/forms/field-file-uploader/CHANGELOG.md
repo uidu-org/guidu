@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.4.12
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/field-base@0.6.1
+
 ## 0.4.11
 
 ### Patch Changes

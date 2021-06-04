@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/payments@0.4.15
+  - @uidu/form@0.4.15
+
 ## 0.2.9
 
 ### Patch Changes

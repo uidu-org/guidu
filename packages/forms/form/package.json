@@ -1,6 +1,6 @@
 {
   "name": "@uidu/form",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "description": "Forms using Formsy",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/forms/form",
   "license": "MIT",
@@ -22,7 +22,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.9",
+    "@uidu/docs": "^0.3.10",
     "styled-components": "^5.3.0"
   },
   "publishConfig": {

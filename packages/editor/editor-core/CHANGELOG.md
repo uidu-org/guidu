@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.8.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/avatar@0.6.11
+  - @uidu/avatar-group@2.5.13
+  - @uidu/button@0.4.10
+  - @uidu/droplist@0.4.11
+  - @uidu/menu@0.4.12
+  - @uidu/modal-dialog@0.4.12
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/adf-schema@0.4.1
+  - @uidu/adf-utils@0.6.10
+  - @uidu/editor-common@0.4.14
+  - @uidu/editor-json-transformer@0.3.11
+  - @uidu/editor-markdown-transformer@0.4.1
+  - @uidu/analytics-gas-types@0.2.7
+  - @uidu/analytics-listeners@0.3.9
+  - @uidu/analytics-namespaced-context@0.3.9
+  - @uidu/date@0.3.10
+  - @uidu/emoji@0.4.1
+  - @uidu/mentions@0.2.13
+  - @uidu/profilecard@0.1.12
+  - @uidu/status@0.3.14
+  - @uidu/task-decision@0.3.10
+  - @uidu/field-date@0.4.1
+  - @uidu/form@0.4.15
+  - @uidu/select@0.6.14
+  - @uidu/media-card@0.4.11
+  - @uidu/media-core@0.4.9
+  - @uidu/media-filmstrip@0.3.10
+  - @uidu/media-picker@0.4.9
+
 ## 0.8.0
 
 ### Minor Changes

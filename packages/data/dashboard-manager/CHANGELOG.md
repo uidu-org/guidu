@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.11.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/dashboard-controls@0.4.14
+  - @uidu/dashlets@0.10.4
+
 ## 0.11.0
 
 ### Minor Changes

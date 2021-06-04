@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.15
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/slider@1.6.10
+  - @uidu/spinner@0.4.10
+  - @uidu/payments@0.4.15
+  - @uidu/field-text@0.5.1
+  - @uidu/form@0.4.15
+  - @uidu/stepper@0.3.10
+
 ## 0.2.14
 
 ### Patch Changes

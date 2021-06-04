@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.4.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/popup@0.4.10
+  - @uidu/field-base@0.6.1
+
 ## 0.4.0
 
 ### Minor Changes

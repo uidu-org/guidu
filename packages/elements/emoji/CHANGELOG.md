@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.4.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/button@0.4.10
+  - @uidu/code@0.4.10
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/field-text@0.5.1
+
 ## 0.4.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.2.7
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.2.6
 
 ### Patch Changes

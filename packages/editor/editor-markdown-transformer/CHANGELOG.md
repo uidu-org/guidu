@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.4.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/adf-schema@0.4.1
+  - @uidu/editor-common@0.4.14
+
 ## 0.4.0
 
 ### Minor Changes

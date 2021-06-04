@@ -1,5 +1,13 @@
 # @uidu/theme
 
+## 0.5.11
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/form@0.4.15
+
 ## 0.5.10
 
 ### Patch Changes

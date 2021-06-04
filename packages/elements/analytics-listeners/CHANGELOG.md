@@ -1,5 +1,15 @@
 # @uidu/analytics-listeners
 
+## 0.3.9
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/analytics-gas-types@0.2.7
+  - @uidu/analytics-namespaced-context@0.3.9
+
 ## 0.3.8
 
 ### Patch Changes

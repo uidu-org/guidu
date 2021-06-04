@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.5.13
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/menu@0.4.12
+  - @uidu/field-color-picker@0.4.1
+  - @uidu/field-date@0.4.1
+  - @uidu/field-downshift@0.5.14
+  - @uidu/field-number@0.4.13
+  - @uidu/field-text@0.5.1
+  - @uidu/field-time@0.4.14
+  - @uidu/field-toggle@0.4.15
+  - @uidu/form@0.4.15
+  - @uidu/select@0.6.14
+
 ## 0.5.12
 
 ### Patch Changes

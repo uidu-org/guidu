@@ -1,5 +1,14 @@
 # @uidu/radio
 
+## 0.5.13
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/field-base@0.6.1
+
 ## 0.5.12
 
 ### Patch Changes
