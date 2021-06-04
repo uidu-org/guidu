@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.16
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 0.4.15
 
 ### Patch Changes

@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.8.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/avatar@0.6.12
+  - @uidu/avatar-group@2.5.14
+  - @uidu/button@0.4.11
+  - @uidu/droplist@0.4.12
+  - @uidu/menu@0.4.13
+  - @uidu/modal-dialog@0.4.13
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/adf-schema@0.4.2
+  - @uidu/adf-utils@0.6.11
+  - @uidu/editor-common@0.4.15
+  - @uidu/editor-json-transformer@0.3.12
+  - @uidu/editor-markdown-transformer@0.4.2
+  - @uidu/analytics-gas-types@0.2.8
+  - @uidu/analytics-listeners@0.3.10
+  - @uidu/analytics-namespaced-context@0.3.10
+  - @uidu/date@0.3.11
+  - @uidu/emoji@0.4.2
+  - @uidu/mentions@0.2.14
+  - @uidu/profilecard@0.1.13
+  - @uidu/status@0.3.15
+  - @uidu/task-decision@0.3.11
+  - @uidu/field-date@0.4.2
+  - @uidu/form@0.4.16
+  - @uidu/select@0.6.15
+  - @uidu/media-card@0.4.12
+  - @uidu/media-core@0.4.10
+  - @uidu/media-filmstrip@0.3.11
+  - @uidu/media-picker@0.4.10
+
 ## 0.8.1
 
 ### Patch Changes

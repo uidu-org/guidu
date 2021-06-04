@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.2.8
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 0.2.7
 
 ### Patch Changes

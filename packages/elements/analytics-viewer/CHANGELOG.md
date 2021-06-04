@@ -1,5 +1,13 @@
 # @uidu/analytics-viewer
 
+## 0.3.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+
 ## 0.3.10
 
 ### Patch Changes

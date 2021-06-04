@@ -1,5 +1,13 @@
 # @uidu/menu
 
+## 0.4.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/theme@0.5.12
+
 ## 0.4.12
 
 ### Patch Changes

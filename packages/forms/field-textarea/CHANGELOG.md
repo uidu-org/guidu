@@ -1,5 +1,14 @@
 # @uidu/field-textarea
 
+## 0.3.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/field-base@0.6.2
+
 ## 0.3.12
 
 ### Patch Changes

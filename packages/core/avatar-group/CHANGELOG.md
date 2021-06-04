@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.14
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/avatar@0.6.12
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+
 ## 2.5.13
 
 ### Patch Changes

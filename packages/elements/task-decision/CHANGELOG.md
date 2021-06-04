@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/avatar-group@2.5.14
+  - @uidu/button@0.4.11
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/analytics-namespaced-context@0.3.10
+
 ## 0.3.10
 
 ### Patch Changes

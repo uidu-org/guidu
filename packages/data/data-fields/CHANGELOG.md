@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.5.14
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/menu@0.4.13
+  - @uidu/field-color-picker@0.4.2
+  - @uidu/field-date@0.4.2
+  - @uidu/field-downshift@0.5.15
+  - @uidu/field-number@0.4.14
+  - @uidu/field-text@0.5.2
+  - @uidu/field-time@0.4.15
+  - @uidu/field-toggle@0.4.16
+  - @uidu/form@0.4.16
+  - @uidu/select@0.6.15
+
 ## 0.5.13
 
 ### Patch Changes

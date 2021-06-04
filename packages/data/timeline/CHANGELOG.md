@@ -1,5 +1,11 @@
 # @uidu/timeline
 
+## 0.2.10
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 0.2.9
 
 ### Patch Changes

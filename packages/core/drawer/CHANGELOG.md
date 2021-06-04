@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.5.12
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/docs@0.3.11
+  - @uidu/analytics@0.4.11
+  - @uidu/blanket@0.4.11
+  - @uidu/item@0.4.12
+  - @uidu/theme@0.5.12
+
 ## 0.5.11
 
 ### Patch Changes

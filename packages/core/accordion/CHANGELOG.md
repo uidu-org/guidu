@@ -1,5 +1,13 @@
 # @uidu/accordion
 
+## 0.4.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/docs@0.3.11
+
 ## 0.4.10
 
 ### Patch Changes

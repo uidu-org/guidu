@@ -1,5 +1,18 @@
 # @uidu/onboarding
 
+## 0.5.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/modal-dialog@0.4.13
+  - @uidu/popper@0.4.11
+  - @uidu/portal@0.4.11
+  - @uidu/theme@0.5.12
+
 ## 0.5.1
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.2.15
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/avatar@0.6.12
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/inline-dialog@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/shell@1.2.16
+
 ## 0.2.14
 
 ### Patch Changes

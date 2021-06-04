@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.16
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/slider@1.6.11
+  - @uidu/spinner@0.4.11
+  - @uidu/payments@0.4.16
+  - @uidu/field-text@0.5.2
+  - @uidu/form@0.4.16
+  - @uidu/stepper@0.3.11
+
 ## 0.2.15
 
 ### Patch Changes

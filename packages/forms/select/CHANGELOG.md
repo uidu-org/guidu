@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.6.15
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/checkbox@0.4.2
+  - @uidu/field-base@0.6.2
+  - @uidu/form@0.4.16
+
 ## 0.6.14
 
 ### Patch Changes

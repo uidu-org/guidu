@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.18
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/data-controls@0.7.12
+  - @uidu/field-counter@0.4.2
+  - @uidu/field-number@0.4.14
+  - @uidu/form@0.4.16
+  - @uidu/select@0.6.15
+
 ## 0.5.17
 
 ### Patch Changes

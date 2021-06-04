@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.15
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/spinner@0.4.11
+  - @uidu/field-base@0.6.2
+  - @uidu/media-core@0.4.10
+
 ## 0.4.14
 
 ### Patch Changes

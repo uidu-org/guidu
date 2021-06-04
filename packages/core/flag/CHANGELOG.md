@@ -1,5 +1,16 @@
 # @uidu/flag
 
+## 0.4.12
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/portal@0.4.11
+  - @uidu/theme@0.5.12
+
 ## 0.4.11
 
 ### Patch Changes

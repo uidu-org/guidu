@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.14
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/avatar@0.6.12
+  - @uidu/slider@1.6.11
+  - @uidu/spinner@0.4.11
+  - @uidu/checkbox@0.4.2
+  - @uidu/field-password@0.4.14
+  - @uidu/field-phone@0.2.14
+  - @uidu/field-text@0.5.2
+  - @uidu/form@0.4.16
+  - @uidu/shell@1.2.16
+
 ## 0.5.13
 
 ### Patch Changes

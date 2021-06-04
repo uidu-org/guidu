@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.4.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/code@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/adf-schema@0.4.2
+  - @uidu/adf-utils@0.6.11
+  - @uidu/editor-common@0.4.15
+  - @uidu/editor-json-transformer@0.3.12
+  - @uidu/analytics-listeners@0.3.10
+  - @uidu/analytics-namespaced-context@0.3.10
+  - @uidu/mentions@0.2.14
+  - @uidu/status@0.3.15
+  - @uidu/task-decision@0.3.11
+  - @uidu/media-card@0.4.12
+  - @uidu/media-filmstrip@0.3.11
+
 ## 0.4.1
 
 ### Patch Changes
