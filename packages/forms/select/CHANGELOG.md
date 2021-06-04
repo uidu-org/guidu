@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.6.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/checkbox@0.4.1
+  - @uidu/field-base@0.6.1
+  - @uidu/form@0.4.15
+
 ## 0.6.13
 
 ### Patch Changes

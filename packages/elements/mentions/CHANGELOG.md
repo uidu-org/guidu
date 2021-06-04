@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.2.13
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/avatar@0.6.11
+  - @uidu/button@0.4.10
+  - @uidu/lozenge@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/analytics-gas-types@0.2.7
+
 ## 0.2.12
 
 ### Patch Changes

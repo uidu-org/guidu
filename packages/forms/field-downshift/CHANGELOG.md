@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/field-base@0.6.1
+  - @uidu/field-text@0.5.1
+
 ## 0.5.13
 
 ### Patch Changes

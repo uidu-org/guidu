@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.5.1
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/button@0.4.10
+  - @uidu/droplist@0.4.11
+  - @uidu/item@0.4.11
+  - @uidu/theme@0.5.11
+
 ## 0.5.0
 
 ### Minor Changes

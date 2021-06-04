@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.1.12
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/avatar@0.6.11
+  - @uidu/button@0.4.10
+  - @uidu/lozenge@0.4.10
+  - @uidu/popup@0.4.10
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+
 ## 0.1.11
 
 ### Patch Changes

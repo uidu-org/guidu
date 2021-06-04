@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.11
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+
 ## 0.6.10
 
 ### Patch Changes

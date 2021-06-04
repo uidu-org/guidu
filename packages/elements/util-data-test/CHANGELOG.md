@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.3.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/emoji@0.4.1
+  - @uidu/mentions@0.2.13
+  - @uidu/task-decision@0.3.10
+
 ## 0.3.9
 
 ### Patch Changes

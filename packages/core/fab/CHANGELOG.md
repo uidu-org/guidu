@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.4.9
 
 ### Patch Changes

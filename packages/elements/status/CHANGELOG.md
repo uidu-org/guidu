@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.3.14
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/analytics@0.4.10
+  - @uidu/lozenge@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/analytics-gas-types@0.2.7
+  - @uidu/field-text@0.5.1
+
 ## 0.3.13
 
 ### Patch Changes

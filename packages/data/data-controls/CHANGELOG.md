@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.7.11
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/drawer@0.5.11
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/inline-dialog@0.4.10
+  - @uidu/menu@0.4.12
+  - @uidu/popup@0.4.10
+  - @uidu/spinner@0.4.10
+  - @uidu/tooltip@0.4.10
+  - @uidu/data-fields@0.5.13
+  - @uidu/data-views@0.5.17
+  - @uidu/checkbox@0.4.1
+  - @uidu/field-text@0.5.1
+  - @uidu/form@0.4.15
+  - @uidu/select@0.6.14
+  - @uidu/shell@1.2.15
+
 ## 0.7.10
 
 ### Patch Changes

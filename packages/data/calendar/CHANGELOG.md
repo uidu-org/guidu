@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.13
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/shell@1.2.15
+
 ## 0.2.12
 
 ### Patch Changes

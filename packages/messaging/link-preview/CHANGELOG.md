@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.10
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+
 ## 0.2.9
 
 ### Patch Changes

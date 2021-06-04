@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.11
+
+### Patch Changes
+
+- 992c21388: Bump dependencies and migrate to yarn2
+- Updated dependencies [992c21388]
+  - @uidu/button@0.4.10
+  - @uidu/dropdown-menu@0.5.1
+  - @uidu/spinner@0.4.10
+  - @uidu/theme@0.5.11
+  - @uidu/tooltip@0.4.10
+  - @uidu/media-core@0.4.9
+
 ## 0.4.10
 
 ### Patch Changes
