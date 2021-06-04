@@ -1,7 +1,6 @@
 {
   "name": "@uidu/data-manager",
   "version": "0.11.2",
-  "private": false,
   "description": "Data manager with different views, filter and sorts",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-manager",
   "license": "MIT",
@@ -10,11 +9,11 @@
   "module": "dist/uidu-data-manager.esm.js",
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@cubejs-client/core": "^0.27.13",
-    "@cubejs-client/react": "^0.27.13",
-    "@cubejs-client/ws-transport": "^0.27.14",
-    "@loadable/component": "^5.14.1",
+    "@babel/runtime": "^7.14.0",
+    "@cubejs-client/core": "^0.27.26",
+    "@cubejs-client/react": "^0.27.26",
+    "@cubejs-client/ws-transport": "^0.27.26",
+    "@loadable/component": "^5.15.0",
     "@uidu/board": "^0.3.9",
     "@uidu/calendar": "^0.2.12",
     "@uidu/data-controls": "^0.7.10",
@@ -25,16 +24,16 @@
     "@uidu/shell": "^1.2.14",
     "@uidu/spinner": "^0.4.9",
     "@uidu/table": "^0.7.1",
-    "d3-array": "^2.2.0",
+    "d3-array": "^2.12.1",
     "dayjs": "^1.10.5",
-    "lodash": "^4.17.14",
-    "papaparse": "^5.3.0",
+    "lodash": "^4.17.21",
+    "papaparse": "^5.3.1",
     "react": "^17.0.2",
-    "react-media": "^1.9.2",
+    "react-media": "^1.10.0",
     "react-table": "^7.7.0",
     "react-table-plugins": "^1.3.1",
-    "react-transition-group": "^4.0.0",
-    "tslib": "^2.0.1"
+    "react-transition-group": "^4.4.2",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9",
@@ -42,6 +41,6 @@
     "@uidu/navigation": "^0.7.8",
     "@uidu/page-header": "^0.2.9",
     "@uidu/side-navigation": "^0.2.13",
-    "react-intl": "^5.15.8"
+    "react-intl": "^5.19.0"
   }
 }

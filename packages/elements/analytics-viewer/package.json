@@ -12,10 +12,10 @@
     "access": "private"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.14.0",
     "@uidu/analytics": "^0.4.9",
-    "styled-components": "^5.2.1",
-    "tslib": "^2.0.1"
+    "styled-components": "^5.3.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "react": "^17.0.2"

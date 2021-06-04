@@ -10,9 +10,9 @@
   "module": "dist/uidu-message.esm.js",
   "types": "dist/uidu-message.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@fluentui/react": "^8.5.1",
-    "@loadable/component": "^5.14.1",
+    "@babel/runtime": "^7.14.0",
+    "@fluentui/react": "^8.17.0",
+    "@loadable/component": "^5.15.0",
     "@uidu/avatar": "^0.6.10",
     "@uidu/drawer": "^0.5.10",
     "@uidu/dropdown-menu": "^0.5.0",
@@ -22,23 +22,23 @@
     "@uidu/message-form": "^0.3.11",
     "@uidu/message-renderer": "^0.3.10",
     "@uidu/tooltip": "^0.4.9",
-    "@uifabric/file-type-icons": "^7.0.3",
-    "classnames": "^2.2.6",
-    "emoji-regex": "^9.0.0",
-    "moment": "^2.27.0",
+    "@uifabric/file-type-icons": "^7.6.30",
+    "classnames": "^2.3.1",
+    "emoji-regex": "^9.2.2",
+    "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-native": "^0.64.0",
-    "react-spring": "^8.0.20",
+    "react-native": "^0.64.2",
+    "react-spring": "^8.0.27",
     "react-use-gesture": "^8.0.1",
-    "styled-components": "^5.2.1",
-    "tslib": "^2.0.1"
+    "styled-components": "^5.3.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9",
     "@uidu/shell": "^1.2.14",
-    "faker": "^5.1.0"
+    "faker": "^5.5.3"
   },
   "publishConfig": {
     "access": "public"

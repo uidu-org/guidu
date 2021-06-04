@@ -10,22 +10,22 @@
   "module": "dist/uidu-field-time.esm.js",
   "types": "dist/uidu-field-time.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.14.0",
     "@uidu/analytics": "^0.4.9",
     "@uidu/field-base": "^0.6.0",
     "@uidu/field-text": "^0.5.0",
     "@uidu/form": "^0.4.14",
     "@uidu/select": "^0.6.13",
     "@uidu/theme": "^0.5.10",
-    "formsy-react": "^2.2.1",
+    "formsy-react": "^2.2.5",
     "react": "^17.0.2",
-    "tslib": "^2.0.1"
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.9",
     "@uidu/docs": "^0.3.9",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.3.0"
   },
   "publishConfig": {
     "access": "public"

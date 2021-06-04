@@ -10,8 +10,8 @@
   "module": "dist/uidu-select.esm.js",
   "types": "dist/uidu-select.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.1.2",
-    "@babel/runtime": "^7.11.2",
+    "@atlaskit/icon": "^21.6.0",
+    "@babel/runtime": "^7.14.0",
     "@uidu/analytics": "^0.4.9",
     "@uidu/checkbox": "^0.4.0",
     "@uidu/field-base": "^0.6.0",
@@ -19,30 +19,29 @@
     "@uidu/spinner": "^0.4.9",
     "@uidu/theme": "^0.5.10",
     "@uidu/tooltip": "^0.4.9",
-    "focus-trap": "^6.0.1",
-    "formsy-react": "^2.2.1",
-    "memoize-one": "^5.1.1",
+    "focus-trap": "^6.4.0",
+    "formsy-react": "^2.2.5",
+    "memoize-one": "^5.2.1",
     "react-dom": "^17.0.2",
-    "react-fast-compare": "^3.0.1",
+    "react-fast-compare": "^3.2.0",
     "react-feather": "^2.0.9",
     "react-node-resolver": "^2.0.1",
-    "react-number-format": "^4.0.6",
-    "react-popper": "^2.2.3",
-    "react-select": "^4.3.0",
+    "react-number-format": "^4.6.0",
+    "react-popper": "^2.2.5",
+    "react-select": "^4.3.1",
     "shallow-equal": "^1.2.1",
-    "tslib": "^2.0.1"
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.9",
     "@uidu/docs": "^0.3.9",
     "@uidu/modal-dialog": "^0.4.11",
-    "faker": "^5.1.0",
+    "faker": "^5.5.3",
     "react": "^17.0.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.3.0"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "styled-components": "^5.0.0"
+    "react": "^17.0.0"
   },
   "publishConfig": {
     "access": "public"

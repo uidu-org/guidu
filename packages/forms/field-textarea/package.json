@@ -9,13 +9,13 @@
   "module": "dist/uidu-field-textarea.esm.js",
   "types": "dist/uidu-field-textarea.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.14.0",
     "@uidu/analytics": "^0.4.9",
     "@uidu/field-base": "^0.6.0",
-    "autosize": "^4.0.2",
-    "formsy-react": "^2.2.1",
+    "autosize": "^4.0.4",
+    "formsy-react": "^2.2.5",
     "react": "^17.0.2",
-    "tslib": "^2.0.1"
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9",

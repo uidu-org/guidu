@@ -49,3 +49,10 @@ dists/
 lu-01.md
 lu-02.md
 lu-03.md
+
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions

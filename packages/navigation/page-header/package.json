@@ -11,7 +11,7 @@
   "dependencies": {
     "@uidu/shell": "^1.2.14",
     "@uidu/theme": "^0.5.10",
-    "tslib": "^2.0.1"
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/breadcrumbs": "^0.2.9",
@@ -23,7 +23,7 @@
     "@uidu/select": "^0.6.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.3.0"
   },
   "peerDependencies": {
     "react": "^17.0.0",

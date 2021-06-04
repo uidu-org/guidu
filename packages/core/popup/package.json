@@ -10,22 +10,22 @@
   "module": "dist/uidu-popup.esm.js",
   "types": "dist/uidu-popup.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@emotion/react": "^11.0.0",
+    "@babel/runtime": "^7.14.0",
+    "@emotion/react": "^11.4.0",
     "@uidu/popper": "^0.4.9",
     "@uidu/portal": "^0.4.9",
     "@uidu/theme": "^0.5.10",
-    "focus-trap": "^6.0.1",
-    "styled-components": "^5.2.1",
-    "tslib": "^2.0.1"
+    "focus-trap": "^6.4.0",
+    "styled-components": "^5.3.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.1.2",
+    "@atlaskit/icon": "^21.6.0",
     "@uidu/button": "^0.4.9",
     "@uidu/docs": "^0.3.9",
     "@uidu/menu": "^0.4.11",
-    "@uidu/radio": "^0.5.11",
-    "@uidu/select": "^0.6.12",
+    "@uidu/radio": "^0.5.12",
+    "@uidu/select": "^0.6.13",
     "@uidu/spinner": "^0.4.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

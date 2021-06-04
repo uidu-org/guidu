@@ -1,7 +1,6 @@
 {
   "name": "@uidu/stripe-accounts",
   "version": "0.2.14",
-  "private": false,
   "description": "Payment form using Stripe",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/ecommerce/stripe-accounts",
   "license": "MIT",
@@ -10,9 +9,9 @@
   "module": "dist/uidu-stripe-accounts.esm.js",
   "types": "dist/uidu-stripe-accounts.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@stripe/react-stripe-js": "^1.0.3",
-    "@stripe/stripe-js": "^1.0.2",
+    "@babel/runtime": "^7.14.0",
+    "@stripe/react-stripe-js": "^1.4.1",
+    "@stripe/stripe-js": "^1.15.0",
     "@uidu/field-text": "^0.5.0",
     "@uidu/form": "^0.4.14",
     "@uidu/payments": "^0.4.14",
@@ -21,8 +20,8 @@
     "@uidu/stepper": "^0.3.9",
     "dayjs": "^1.10.5",
     "react": "^17.0.2",
-    "react-intl": "^5.15.8",
-    "tslib": "^2.0.1"
+    "react-intl": "^5.19.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9",

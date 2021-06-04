@@ -1,7 +1,6 @@
 {
   "name": "@uidu/timeline",
   "version": "0.2.8",
-  "private": false,
   "description": "Timeline view for data",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/timeline",
   "license": "MIT",
@@ -9,7 +8,7 @@
   "main": "dist/uidu-timeline.cjs.js",
   "dependencies": {
     "react": "^17.0.2",
-    "tslib": "^2.0.1"
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9"

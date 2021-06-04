@@ -13,9 +13,9 @@
     "i18n:push": "i18n-tools push --resource emoji . --type ts"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.1.2",
-    "@atlaskit/util-service-support": "^6.0.1",
-    "@babel/runtime": "^7.11.2",
+    "@atlaskit/icon": "^21.6.0",
+    "@atlaskit/util-service-support": "^6.0.5",
+    "@babel/runtime": "^7.14.0",
     "@uidu/analytics": "^0.4.9",
     "@uidu/button": "^0.4.9",
     "@uidu/code": "^0.4.9",
@@ -23,28 +23,28 @@
     "@uidu/spinner": "^0.4.9",
     "@uidu/theme": "^0.5.10",
     "@uidu/tooltip": "^0.4.9",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "js-search": "^2.0.0",
     "lru-fast": "^0.2.2",
     "prop-types": "^15.7.2",
-    "react-virtualized": "^9.21.1",
-    "tslib": "^2.0.1",
-    "typestyle": "^2.0.4",
+    "react-virtualized": "^9.22.3",
+    "tslib": "^2.2.0",
+    "typestyle": "^2.1.0",
     "url": "^0.11.0",
-    "uuid": "^8.3.0"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/js-search": "^1.4.0",
-    "@types/react-virtualized": "^9.18.12",
+    "@types/react-virtualized": "^9.21.11",
     "@uidu/docs": "^0.3.9",
     "@uidu/elements-test-helpers": "^0.3.10",
     "@uidu/layer": "^0.4.9",
     "@uidu/section-message": "^0.4.9",
     "@uidu/util-data-test": "^0.3.9",
-    "p-wait-for": "^3.1.0",
+    "p-wait-for": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.15.8"
+    "react-intl": "^5.19.0"
   },
   "peerDependencies": {
     "react": "^17.0.0",

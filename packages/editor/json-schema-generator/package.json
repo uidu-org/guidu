@@ -10,22 +10,20 @@
     "Rifat Nabi"
   ],
   "main": "bin.js",
-  "bin": {
-    "json-schema-generator": "bin.js"
-  },
+  "bin": "bin.js",
   "files": [
     "src",
     "bin.js"
   ],
   "dependencies": {
-    "@types/meow": "^5.0.0",
-    "@types/mkdirp": "^1.0.0",
-    "@types/prettier": "^2.0.0",
+    "@types/meow": "^6.0.0",
+    "@types/mkdirp": "^1.0.1",
+    "@types/prettier": "^2.2.3",
     "meow": "^9.0.0",
-    "mkdirp": "^1.0.3",
-    "prettier": "^2.0.0",
-    "ts-node": "^9.0.0",
-    "tslib": "^2.0.1",
-    "typescript": "^4.0.2"
+    "mkdirp": "^1.0.4",
+    "prettier": "^2.3.0",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.2"
   }
 }

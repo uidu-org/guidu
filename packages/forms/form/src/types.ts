@@ -1,4 +1,4 @@
-import { ClassValue } from 'classnames/types';
+import { Value } from 'classnames';
 import { FC, ReactNode } from 'react';
 import { IconProps } from 'react-feather';
 
@@ -17,12 +17,12 @@ export type FormProps = {
   withLoader?: boolean;
   inputsWrapperProps?: any;
   autoComplete?: string;
-  className?: ClassValue;
+  className?: Value;
   // formsy
-  elementWrapperClassName?: ClassValue;
-  labelClassName?: ClassValue;
+  elementWrapperClassName?: Value;
+  labelClassName?: Value;
   layout?: LayoutType;
-  rowClassName?: ClassValue;
+  rowClassName?: Value;
   validateBeforeSubmit?: boolean;
   validatePristine?: boolean;
   disabled?: boolean;

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import {
   AccordionItem,
   AccordionItemHeading,
@@ -10,27 +10,26 @@ import StyledAccordionItemBody from '../styled/AccordionItemBody';
 import StyledAccordionItemButton from '../styled/AccordionItemButton';
 import { AccordionPropTypes } from '../types';
 
-export default class Accordion extends PureComponent<AccordionPropTypes> {
-  static defaultProps = {
-    arrows: {
-      default: {
-        default: ChevronLeft,
-        expanded: ChevronDown,
-      },
-      reverse: {
-        default: ChevronRight,
-        expanded: ChevronDown,
-      },
+export default function Accordion({
+  arrows = {
+    default: {
+      default: ChevronLeft,
+      expanded: ChevronDown,
     },
-    accordion: true,
-    items: [],
-    allowMultipleExpanded: true,
-    allowZeroExpanded: true,
-    // enableTooltip: true,
-  };
-
-  renderTitle = (item, expanded) => {
-    const { reverse, arrows } = this.props;
+    reverse: {
+      default: ChevronRight,
+      expanded: ChevronDown,
+    },
+  },
+  items = [],
+  allowMultipleExpanded = true,
+  allowZeroExpanded = true,
+  reverse,
+  preExpanded,
+  onChange,
+}: // enableTooltip: true,
+AccordionPropTypes) {
+  const renderTitle = (item, expanded) => {
     if (reverse) {
       const {
         reverse: { default: Default, expanded: Expanded },
@@ -59,35 +58,25 @@ export default class Accordion extends PureComponent<AccordionPropTypes> {
     );
   };
 
-  render() {
-    const {
-      items,
-      allowMultipleExpanded,
-      allowZeroExpanded,
-      preExpanded,
-      onChange,
-    } = this.props;
-
-    return (
-      <StyledAccordion
-        allowMultipleExpanded={allowMultipleExpanded}
-        allowZeroExpanded={allowZeroExpanded}
-        preExpanded={preExpanded}
-        onChange={onChange}
-      >
-        {items.map((item, index) => (
-          <AccordionItem uuid={item.uuid} key={index} {...item.props}>
-            <AccordionItemHeading>
-              <AccordionItemState>
-                {({ expanded }) => this.renderTitle(item, expanded)}
-              </AccordionItemState>
-            </AccordionItemHeading>
-            <StyledAccordionItemBody {...item.bodyProps}>
-              {item.body}
-            </StyledAccordionItemBody>
-          </AccordionItem>
-        ))}
-      </StyledAccordion>
-    );
-  }
+  return (
+    <StyledAccordion
+      allowMultipleExpanded={allowMultipleExpanded}
+      allowZeroExpanded={allowZeroExpanded}
+      preExpanded={preExpanded}
+      onChange={onChange}
+    >
+      {items.map((item, index) => (
+        <AccordionItem uuid={item.uuid} key={index} {...item.props}>
+          <AccordionItemHeading>
+            <AccordionItemState>
+              {({ expanded }) => renderTitle(item, expanded)}
+            </AccordionItemState>
+          </AccordionItemHeading>
+          <StyledAccordionItemBody {...item.bodyProps}>
+            {item.body}
+          </StyledAccordionItemBody>
+        </AccordionItem>
+      ))}
+    </StyledAccordion>
+  );
 }

@@ -6,8 +6,8 @@
   "author": "uidu",
   "main": "index.js",
   "dependencies": {
-    "bolt": "^0.24.3",
-    "globby": "^11.0.0",
+    "bolt": "^0.24.9",
+    "globby": "^11.0.3",
     "loader-utils": "^2.0.0"
   },
   "publishConfig": {

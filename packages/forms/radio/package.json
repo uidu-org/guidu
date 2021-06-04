@@ -9,13 +9,13 @@
   "module": "dist/uidu-radio.esm.js",
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.14.0",
     "@uidu/analytics": "^0.4.9",
     "@uidu/field-base": "^0.6.0",
-    "formsy-react": "^2.2.1",
+    "formsy-react": "^2.2.5",
     "react": "^17.0.2",
-    "styled-components": "^5.2.1",
-    "tslib": "^2.0.1"
+    "styled-components": "^5.3.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9",

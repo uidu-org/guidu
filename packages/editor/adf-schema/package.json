@@ -17,22 +17,22 @@
     "generate:json-schema:stage-0": "json-schema-generator --outDir=./json-schema/v1/ --stage=0 ./src/schema/nodes/doc.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@types/linkify-it": "^3.0.0",
-    "@types/prosemirror-model": "^1.5.0",
-    "@types/prosemirror-state": "^1.2.0",
-    "@types/prosemirror-view": "^1.3.0",
+    "@babel/runtime": "^7.14.0",
+    "@types/linkify-it": "^3.0.1",
+    "@types/prosemirror-model": "^1.13.0",
+    "@types/prosemirror-state": "^1.2.6",
+    "@types/prosemirror-view": "^1.17.1",
     "css-color-names": "^1.0.1",
     "linkify-it": "^3.0.2",
-    "prosemirror-model": "^1.12.0",
-    "prosemirror-view": "^1.9.10",
-    "tslib": "^2.0.1"
+    "prosemirror-model": "^1.14.1",
+    "prosemirror-view": "^1.18.7",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/editor-json-transformer": "^0.3.10",
     "@uidu/json-schema-generator": "^0.1.25",
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "json-schema-diff-validator": "^0.4.1",
-    "prosemirror-state": "^1.2.3"
+    "prosemirror-state": "^1.3.4"
   }
 }

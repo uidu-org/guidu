@@ -1,7 +1,6 @@
 {
   "name": "@uidu/fab",
   "version": "0.4.9",
-  "private": false,
   "description": "Floating action buttons",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/fab",
   "license": "MIT",
@@ -10,11 +9,11 @@
   "module": "dist/uidu-fab.esm.js",
   "types": "dist/uidu-fab.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
+    "@babel/runtime": "^7.14.0",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "styled-components": "^5.2.1",
-    "tslib": "^2.0.1"
+    "styled-components": "^5.3.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.9"

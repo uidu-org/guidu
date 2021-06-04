@@ -10,16 +10,16 @@
   "module": "dist/uidu-progress-bar.esm.js",
   "types": "dist/uidu-progress-bar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.11.2",
-    "@emotion/react": "^11.0.0",
+    "@babel/runtime": "^7.14.0",
+    "@emotion/react": "^11.4.0",
     "@uidu/theme": "^0.5.10",
-    "styled-components": "^5.2.1",
-    "tslib": "^2.0.1"
+    "styled-components": "^5.3.0",
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.9",
     "@uidu/docs": "^0.3.9",
-    "enzyme": "^3.10.0",
+    "enzyme": "^3.11.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
