@@ -1,6 +1,6 @@
 {
   "name": "@uidu/message",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "description": "A React component that renders a message",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/messaging/message",
   "license": "ISC",
@@ -13,15 +13,15 @@
     "@babel/runtime": "^7.14.0",
     "@fluentui/react": "^8.17.0",
     "@loadable/component": "^5.15.0",
-    "@uidu/avatar": "^0.6.11",
-    "@uidu/drawer": "^0.5.11",
-    "@uidu/dropdown-menu": "^0.5.1",
-    "@uidu/media-card": "^0.4.11",
-    "@uidu/media-core": "^0.4.9",
-    "@uidu/media-viewer": "^0.3.12",
-    "@uidu/message-form": "^0.3.12",
-    "@uidu/message-renderer": "^0.3.11",
-    "@uidu/tooltip": "^0.4.10",
+    "@uidu/avatar": "^0.6.12",
+    "@uidu/drawer": "^0.5.12",
+    "@uidu/dropdown-menu": "^0.5.2",
+    "@uidu/media-card": "^0.4.12",
+    "@uidu/media-core": "^0.4.10",
+    "@uidu/media-viewer": "^0.3.13",
+    "@uidu/message-form": "^0.3.13",
+    "@uidu/message-renderer": "^0.3.12",
+    "@uidu/tooltip": "^0.4.11",
     "@uifabric/file-type-icons": "^7.6.30",
     "classnames": "^2.3.1",
     "emoji-regex": "^9.2.2",
@@ -36,8 +36,8 @@
     "tslib": "^2.2.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.10",
-    "@uidu/shell": "^1.2.15",
+    "@uidu/docs": "^0.3.11",
+    "@uidu/shell": "^1.2.16",
     "faker": "^5.5.3"
   },
   "publishConfig": {

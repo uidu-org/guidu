@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.2.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/theme@0.5.12
+  - @uidu/shell@1.2.16
+
 ## 0.2.10
 
 ### Patch Changes

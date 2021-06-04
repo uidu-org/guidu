@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.1.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/avatar@0.6.12
+  - @uidu/button@0.4.11
+  - @uidu/lozenge@0.4.11
+  - @uidu/popup@0.4.11
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+
 ## 0.1.12
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.2.12
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/inline-dialog@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/field@0.3.13
+  - @uidu/field-text@0.5.2
+  - @uidu/form@0.4.16
+
 ## 0.2.11
 
 ### Patch Changes

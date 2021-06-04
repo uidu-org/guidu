@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.3.3
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/docs@0.3.11
+  - @uidu/badge@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/code@0.4.11
+  - @uidu/drawer@0.5.12
+  - @uidu/lozenge@0.4.11
+  - @uidu/modal-dialog@0.4.13
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/list@0.2.15
+  - @uidu/table@0.7.3
+  - @uidu/checkbox@0.4.2
+  - @uidu/field-text@0.5.2
+  - @uidu/form@0.4.16
+  - @uidu/select@0.6.15
+  - @uidu/navigation@0.7.10
+  - @uidu/shell@1.2.16
+  - @uidu/themes-uidu@0.3.21
+
 ## 0.3.2
 
 ### Patch Changes

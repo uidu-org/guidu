@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 1.6.10
 
 ### Patch Changes

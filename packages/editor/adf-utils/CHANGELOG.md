@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.6.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/adf-schema@0.4.2
+
 ## 0.6.10
 
 ### Patch Changes

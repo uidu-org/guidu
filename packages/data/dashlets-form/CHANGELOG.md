@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.4.5
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/accordion@0.4.11
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/dashlets@0.10.5
+  - @uidu/field-downshift@0.5.15
+  - @uidu/field-toggle@0.4.16
+  - @uidu/form@0.4.16
+  - @uidu/select@0.6.15
+  - @uidu/shell@1.2.16
+
 ## 0.4.4
 
 ### Patch Changes

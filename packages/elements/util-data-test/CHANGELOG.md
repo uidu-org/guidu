@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.3.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/emoji@0.4.2
+  - @uidu/mentions@0.2.14
+  - @uidu/task-decision@0.3.11
+
 ## 0.3.10
 
 ### Patch Changes

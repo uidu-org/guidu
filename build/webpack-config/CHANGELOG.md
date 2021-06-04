@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.2.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/changelog-loader@0.1.30
+  - @uidu/fs-loader@0.1.44
+  - @uidu/nav-info-loader@0.1.45
+
 ## 0.2.1
 
 ### Patch Changes

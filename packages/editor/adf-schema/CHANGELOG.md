@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.4.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 0.4.1
 
 ### Patch Changes

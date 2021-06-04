@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/spinner@0.4.11
+  - @uidu/field-mentions@0.5.2
+  - @uidu/field-text@0.5.2
+  - @uidu/form@0.4.16
+  - @uidu/media-filmstrip@0.3.11
+  - @uidu/message@0.3.13
+
 ## 0.3.12
 
 ### Patch Changes

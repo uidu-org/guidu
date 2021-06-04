@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.27
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 0.1.26
 
 ### Patch Changes

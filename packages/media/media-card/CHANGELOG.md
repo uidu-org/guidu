@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.12
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/button@0.4.11
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/media-core@0.4.10
+
 ## 0.4.11
 
 ### Patch Changes

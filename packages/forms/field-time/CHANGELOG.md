@@ -1,5 +1,18 @@
 # @uidu/field-text
 
+## 0.4.15
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/field-base@0.6.2
+  - @uidu/field-text@0.5.2
+  - @uidu/form@0.4.16
+  - @uidu/select@0.6.15
+
 ## 0.4.14
 
 ### Patch Changes

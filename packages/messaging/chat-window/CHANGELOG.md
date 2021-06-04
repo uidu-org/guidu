@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.11
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/message@0.3.13
+  - @uidu/message-form@0.3.13
+  - @uidu/message-renderer@0.3.12
+
 ## 0.3.10
 
 ### Patch Changes

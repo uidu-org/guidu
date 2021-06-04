@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.15
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/adf-schema@0.4.2
+  - @uidu/adf-utils@0.6.11
+  - @uidu/analytics-namespaced-context@0.3.10
+  - @uidu/emoji@0.4.2
+  - @uidu/mentions@0.2.14
+  - @uidu/profilecard@0.1.13
+
 ## 0.4.14
 
 ### Patch Changes

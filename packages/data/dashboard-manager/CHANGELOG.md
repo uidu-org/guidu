@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.11.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/dashboard-controls@0.4.15
+  - @uidu/dashlets@0.10.5
+
 ## 0.11.1
 
 ### Patch Changes
