@@ -1,5 +1,13 @@
 # @uidu/field-file-uploader
 
+## 0.4.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/field-base@0.6.2
+
 ## 0.4.12
 
 ### Patch Changes

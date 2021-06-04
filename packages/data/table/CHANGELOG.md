@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.7.3
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/menu@0.4.13
+  - @uidu/popup@0.4.11
+  - @uidu/data-fields@0.5.14
+  - @uidu/checkbox@0.4.2
+
 ## 0.7.2
 
 ### Patch Changes

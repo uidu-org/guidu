@@ -1,5 +1,17 @@
 # @uidu/dropdown-menu
 
+## 0.5.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/droplist@0.4.12
+  - @uidu/item@0.4.12
+  - @uidu/theme@0.5.12
+
 ## 0.5.1
 
 ### Patch Changes

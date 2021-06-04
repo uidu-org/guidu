@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.2.14
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/avatar@0.6.12
+  - @uidu/button@0.4.11
+  - @uidu/lozenge@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/analytics-gas-types@0.2.8
+
 ## 0.2.13
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/emoji
 
+## 0.4.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/button@0.4.11
+  - @uidu/code@0.4.11
+  - @uidu/spinner@0.4.11
+  - @uidu/theme@0.5.12
+  - @uidu/tooltip@0.4.11
+  - @uidu/field-text@0.5.2
+
 ## 0.4.1
 
 ### Patch Changes

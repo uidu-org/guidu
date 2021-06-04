@@ -1,5 +1,13 @@
 # @uidu/media-picker
 
+## 0.4.10
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/media-core@0.4.10
+
 ## 0.4.9
 
 ### Patch Changes

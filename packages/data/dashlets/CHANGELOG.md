@@ -1,5 +1,17 @@
 # @uidu/blocks
 
+## 0.10.5
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/spinner@0.4.11
+  - @uidu/tooltip@0.4.11
+  - @uidu/dashboard-manager@0.11.2
+  - @uidu/dashlet-controls@0.3.15
+  - @uidu/data-fields@0.5.14
+
 ## 0.10.4
 
 ### Patch Changes

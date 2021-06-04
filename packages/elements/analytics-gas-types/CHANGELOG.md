@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.2.8
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+
 ## 0.2.7
 
 ### Patch Changes

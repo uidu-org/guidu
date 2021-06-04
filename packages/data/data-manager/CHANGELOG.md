@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.11.4
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/spinner@0.4.11
+  - @uidu/board@0.3.11
+  - @uidu/calendar@0.2.14
+  - @uidu/data-controls@0.7.12
+  - @uidu/data-fields@0.5.14
+  - @uidu/data-views@0.5.18
+  - @uidu/gallery@0.2.15
+  - @uidu/list@0.2.15
+  - @uidu/table@0.7.3
+  - @uidu/shell@1.2.16
+
 ## 0.11.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.12
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+
 ## 0.3.11
 
 ### Patch Changes

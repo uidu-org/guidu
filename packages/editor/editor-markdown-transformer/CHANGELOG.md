@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.4.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/adf-schema@0.4.2
+  - @uidu/editor-common@0.4.15
+
 ## 0.4.1
 
 ### Patch Changes

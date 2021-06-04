@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.16
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/spinner@0.4.11
+
 ## 1.2.15
 
 ### Patch Changes

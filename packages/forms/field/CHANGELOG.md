@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/checkbox@0.4.2
+  - @uidu/field-number@0.4.14
+  - @uidu/field-text@0.5.2
+  - @uidu/field-textarea@0.3.13
+  - @uidu/select@0.6.15
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @uidu/message
 
+## 0.3.13
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/avatar@0.6.12
+  - @uidu/drawer@0.5.12
+  - @uidu/dropdown-menu@0.5.2
+  - @uidu/tooltip@0.4.11
+  - @uidu/media-card@0.4.12
+  - @uidu/media-core@0.4.10
+  - @uidu/media-viewer@0.3.13
+  - @uidu/message-form@0.3.13
+  - @uidu/message-renderer@0.3.12
+
 ## 0.3.12
 
 ### Patch Changes

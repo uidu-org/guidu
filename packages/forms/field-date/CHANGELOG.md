@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.4.2
+
+### Patch Changes
+
+- a09ab80e9: Publish all packages
+- Updated dependencies [a09ab80e9]
+  - @uidu/analytics@0.4.11
+  - @uidu/field-base@0.6.2
+  - @uidu/field-text@0.5.2
+
 ## 0.4.1
 
 ### Patch Changes
