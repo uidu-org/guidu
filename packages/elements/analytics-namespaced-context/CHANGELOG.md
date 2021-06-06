@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.3.11
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/analytics@0.4.12
+
 ## 0.3.10
 
 ### Patch Changes

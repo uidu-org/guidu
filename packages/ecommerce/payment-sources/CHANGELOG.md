@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.12
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/payments@0.4.17
+  - @uidu/form@0.4.17
+
 ## 0.2.11
 
 ### Patch Changes

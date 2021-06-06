@@ -1,5 +1,20 @@
 # @uidu/blocks
 
+## 0.11.0
+
+### Minor Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+
+### Patch Changes
+
+- Updated dependencies [355815581]
+  - @uidu/dashboard-manager@0.12.0
+  - @uidu/spinner@0.4.12
+  - @uidu/tooltip@0.4.12
+  - @uidu/dashlet-controls@0.3.16
+  - @uidu/data-fields@0.5.15
+
 ## 0.10.5
 
 ### Patch Changes

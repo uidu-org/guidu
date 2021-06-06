@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.16
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/analytics@0.4.12
+  - @uidu/theme@0.5.13
+  - @uidu/adf-schema@0.4.3
+  - @uidu/adf-utils@0.6.12
+  - @uidu/analytics-namespaced-context@0.3.11
+  - @uidu/emoji@0.4.3
+  - @uidu/mentions@0.2.15
+  - @uidu/profilecard@0.1.14
+
 ## 0.4.15
 
 ### Patch Changes

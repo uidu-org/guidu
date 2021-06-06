@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.6.12
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/adf-schema@0.4.3
+
 ## 0.6.11
 
 ### Patch Changes

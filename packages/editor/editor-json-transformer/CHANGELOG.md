@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.3.13
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/adf-schema@0.4.3
+
 ## 0.3.12
 
 ### Patch Changes
