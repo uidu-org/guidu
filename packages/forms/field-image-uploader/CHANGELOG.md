@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.16
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/analytics@0.4.12
+  - @uidu/button@0.4.12
+  - @uidu/spinner@0.4.12
+  - @uidu/field-base@0.6.3
+  - @uidu/media-core@0.4.11
+
 ## 0.4.15
 
 ### Patch Changes

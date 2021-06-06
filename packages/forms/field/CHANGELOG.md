@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.14
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/checkbox@0.4.3
+  - @uidu/field-number@0.4.15
+  - @uidu/field-text@0.5.3
+  - @uidu/field-textarea@0.3.14
+  - @uidu/select@0.6.16
+
 ## 0.3.13
 
 ### Patch Changes

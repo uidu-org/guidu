@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.12
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+
 ## 1.6.11
 
 ### Patch Changes

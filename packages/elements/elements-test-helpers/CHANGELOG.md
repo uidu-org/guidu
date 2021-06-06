@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.13
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+
 ## 0.3.12
 
 ### Patch Changes

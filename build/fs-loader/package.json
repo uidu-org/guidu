@@ -1,6 +1,6 @@
 {
   "name": "@uidu/fs-loader",
-  "version": "0.1.44",
+  "version": "0.1.45",
   "repository": "https://github.com/uidu-org/guidu/tree/main/build/fs-loader",
   "license": "ISC",
   "author": "uidu",

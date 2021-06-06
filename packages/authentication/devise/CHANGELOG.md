@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.15
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/avatar@0.6.13
+  - @uidu/slider@1.6.12
+  - @uidu/spinner@0.4.12
+  - @uidu/checkbox@0.4.3
+  - @uidu/field-password@0.4.15
+  - @uidu/field-phone@0.2.15
+  - @uidu/field-text@0.5.3
+  - @uidu/form@0.4.17
+  - @uidu/shell@1.2.17
+
 ## 0.5.14
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.4.6
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/dashlets@0.11.0
+  - @uidu/accordion@0.4.12
+  - @uidu/dropdown-menu@0.5.3
+  - @uidu/field-downshift@0.5.16
+  - @uidu/field-toggle@0.4.17
+  - @uidu/form@0.4.17
+  - @uidu/select@0.6.16
+  - @uidu/shell@1.2.17
+
 ## 0.4.5
 
 ### Patch Changes

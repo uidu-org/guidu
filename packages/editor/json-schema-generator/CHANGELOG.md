@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.28
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+
 ## 0.1.27
 
 ### Patch Changes

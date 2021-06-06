@@ -1,5 +1,18 @@
 # @uidu/droplist
 
+## 0.4.13
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/analytics@0.4.12
+  - @uidu/item@0.4.13
+  - @uidu/layer@0.4.12
+  - @uidu/spinner@0.4.12
+  - @uidu/theme@0.5.13
+  - @uidu/tooltip@0.4.12
+
 ## 0.4.12
 
 ### Patch Changes

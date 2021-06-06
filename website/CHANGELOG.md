@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.3.4
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/table@0.8.0
+  - @uidu/docs@0.3.12
+  - @uidu/badge@0.4.12
+  - @uidu/button@0.4.12
+  - @uidu/code@0.4.12
+  - @uidu/drawer@0.5.13
+  - @uidu/lozenge@0.4.12
+  - @uidu/modal-dialog@0.4.14
+  - @uidu/spinner@0.4.12
+  - @uidu/theme@0.5.13
+  - @uidu/tooltip@0.4.12
+  - @uidu/list@0.2.16
+  - @uidu/checkbox@0.4.3
+  - @uidu/field-text@0.5.3
+  - @uidu/form@0.4.17
+  - @uidu/select@0.6.16
+  - @uidu/navigation@0.7.11
+  - @uidu/shell@1.2.17
+  - @uidu/themes-uidu@0.3.22
+
 ## 0.3.3
 
 ### Patch Changes

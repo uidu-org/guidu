@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.8.3
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/analytics@0.4.12
+  - @uidu/avatar@0.6.13
+  - @uidu/avatar-group@2.5.15
+  - @uidu/button@0.4.12
+  - @uidu/droplist@0.4.13
+  - @uidu/menu@0.4.14
+  - @uidu/modal-dialog@0.4.14
+  - @uidu/spinner@0.4.12
+  - @uidu/theme@0.5.13
+  - @uidu/tooltip@0.4.12
+  - @uidu/adf-schema@0.4.3
+  - @uidu/adf-utils@0.6.12
+  - @uidu/editor-common@0.4.16
+  - @uidu/editor-json-transformer@0.3.13
+  - @uidu/editor-markdown-transformer@0.4.3
+  - @uidu/analytics-gas-types@0.2.9
+  - @uidu/analytics-listeners@0.3.11
+  - @uidu/analytics-namespaced-context@0.3.11
+  - @uidu/date@0.3.12
+  - @uidu/emoji@0.4.3
+  - @uidu/mentions@0.2.15
+  - @uidu/profilecard@0.1.14
+  - @uidu/status@0.3.16
+  - @uidu/task-decision@0.3.12
+  - @uidu/field-date@0.4.3
+  - @uidu/form@0.4.17
+  - @uidu/select@0.6.16
+  - @uidu/media-card@0.4.13
+  - @uidu/media-core@0.4.11
+  - @uidu/media-filmstrip@0.3.12
+  - @uidu/media-picker@0.4.11
+
 ## 0.8.2
 
 ### Patch Changes

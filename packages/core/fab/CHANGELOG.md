@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.12
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+
 ## 0.4.11
 
 ### Patch Changes

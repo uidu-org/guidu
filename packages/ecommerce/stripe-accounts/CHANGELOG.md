@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.17
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/slider@1.6.12
+  - @uidu/spinner@0.4.12
+  - @uidu/payments@0.4.17
+  - @uidu/field-text@0.5.3
+  - @uidu/form@0.4.17
+  - @uidu/stepper@0.3.12
+
 ## 0.2.16
 
 ### Patch Changes
