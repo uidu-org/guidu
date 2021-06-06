@@ -6128,6 +6128,7 @@ __metadata:
     "@uidu/data-fields": ^0.5.14
     "@uidu/docs": ^0.3.11
     "@uidu/spinner": ^0.4.11
+    "@uidu/table": "workspace:packages/data/table"
     "@uidu/tooltip": ^0.4.11
     d3-array: ^2.12.1
     lodash: ^4.17.21

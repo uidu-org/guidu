@@ -19,6 +19,7 @@
     "@uidu/dashlet-controls": "^0.3.15",
     "@uidu/data-fields": "^0.5.14",
     "@uidu/spinner": "^0.4.11",
+    "@uidu/table": "0.7.3",
     "@uidu/tooltip": "^0.4.11",
     "d3-array": "^2.12.1",
     "lodash": "^4.17.21",

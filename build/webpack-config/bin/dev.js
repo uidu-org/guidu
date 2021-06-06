@@ -49,6 +49,7 @@ const runDevServer = async ({
   webpackOptions = {},
   websiteOptions = {},
 }) => {
+  console.log('process', process.argv);
   const workspaceGlobs = process.argv
     .slice(2)
     .filter((arg) => !arg.startsWith('--')) // in case we ever pass other flags to this script
