@@ -1,5 +1,15 @@
 # @uidu/field-date
 
+## 0.2.15
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/analytics@0.4.12
+  - @uidu/field-base@0.6.3
+  - @uidu/field-text@0.5.3
+
 ## 0.2.14
 
 ### Patch Changes

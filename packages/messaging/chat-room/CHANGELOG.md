@@ -1,5 +1,13 @@
 # @uidu/chat-room
 
+## 0.3.11
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/shell@1.2.17
+
 ## 0.3.10
 
 ### Patch Changes

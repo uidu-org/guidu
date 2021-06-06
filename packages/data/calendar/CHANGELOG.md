@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.15
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/dropdown-menu@0.5.3
+  - @uidu/shell@1.2.17
+
 ## 0.2.14
 
 ### Patch Changes

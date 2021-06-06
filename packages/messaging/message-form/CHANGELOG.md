@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.14
+
+### Patch Changes
+
+- 355815581: Able to add fake data to dashboard manager dashlets, use @uidu/table inside Table dashlet, fix table styling (tailwind)
+- Updated dependencies [355815581]
+  - @uidu/dropdown-menu@0.5.3
+  - @uidu/spinner@0.4.12
+  - @uidu/field-mentions@0.5.3
+  - @uidu/field-text@0.5.3
+  - @uidu/form@0.4.17
+  - @uidu/media-filmstrip@0.3.12
+  - @uidu/message@0.3.14
+
 ## 0.3.13
 
 ### Patch Changes
