@@ -4,6 +4,7 @@ import { Hash } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 
 const Chart = loadable(() => import('./Counter'));
+const ChartStateless = loadable(() => import('./CounterStateless'));
 
 export default {
   id: 'counter',
@@ -12,4 +13,5 @@ export default {
   color: '#D08770',
   description: <FormattedMessage defaultMessage="Counter" />,
   chart: Chart,
+  chartStateless: ChartStateless,
 };

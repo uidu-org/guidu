@@ -23,7 +23,8 @@ export default function Footer({ footerGroups, rowHeight }) {
         position: 'sticky',
         bottom: 0,
         background: 'var(--body-bg)',
-        width: 'fit-content',
+        width: 'max-content',
+        minWidth: '100%',
       }}
     >
       {footerGroups.map((group) => (

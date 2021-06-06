@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Counter, List, Pie } from '../src';
+import { Counter } from '../src';
+
+const { chartStateless: CounterStateless } = Counter;
 
 export default class Basic extends Component<any> {
   constructor(props) {
@@ -17,15 +19,15 @@ export default class Basic extends Component<any> {
       <>
         <div className="p-3">
           <h6>List</h6>
-          <List data={[{ key: 'foo', value: 'test' }]} loaded label="List" />
+          {/* <List data={[{ key: 'foo', value: 'test' }]} loaded label="List" /> */}
         </div>
         <div className="p-3">
           <h6>Pie</h6>
-          <Pie />
+          {/* <Pie /> */}
         </div>
         <div className="p-3">
           <h6>Counter</h6>
-          <Counter label="This is mandatory" loaded data={134} />
+          <CounterStateless label="This is mandatory" loaded value={134} />
         </div>
       </>
     );

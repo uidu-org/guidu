@@ -49,7 +49,7 @@ export default function Header({
       className="d-flex align-items-center justify-content-center flex-grow-1"
       style={{ minWidth: 0 }}
     >
-      <div className="customHeaderLabel flex-grow-1 text-truncate">
+      <div className="flex-grow-1 text-truncate">
         {headerIcons && column?.icon && (
           <span className="mr-2 text-muted" style={{ opacity: 0.4 }}>
             {column.icon}

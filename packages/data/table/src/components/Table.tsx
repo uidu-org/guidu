@@ -3,59 +3,36 @@
 import React from 'react';
 import { useVirtual } from 'react-virtual';
 import styled, { css } from 'styled-components';
+import tw, { theme } from 'twin.macro';
 import Footer from './Footer';
 import Resizer from './Resizer';
 
 const Body = styled.div<{ height: number; verticalPadding: number }>`
   height: ${({ height }) => `${height}px`};
   min-height: ${({ verticalPadding }) => `calc(100% - ${verticalPadding}px)`};
-  width: 100%;
-  position: relative;
-  background: white;
-`;
-
-const Header = styled.div`
-  position: sticky;
-  top: 0;
-  background: white;
-  width: fit-content;
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  flex-direction: column;
+  background: var(--body-bg);
 `;
 
 function getPinnedStyled({ pinned = 'left', index }) {
   if (pinned === 'left') {
     return css`
-      position: sticky !important;
       left: ${index === 0 ? 0 : '56px'};
-      z-index: 2;
       background: var(--body-bg);
-      border-right: 1px solid #f2f2f3;
+      ${tw`border-r border-gray-200 border-opacity-50 z-10 sticky!`}
     `;
   }
   if (pinned === 'right') {
     return css`
-      position: sticky !important;
       right: ${index === 0 ? 0 : 0};
-      z-index: 2;
       background: var(--body-bg);
-      border-left: 1px solid #f2f2f3;
+      ${tw`border-l border-gray-200 border-opacity-50 z-10 sticky!`}
     `;
   }
 }
 
 const Td = styled.div<{ height: number; pinned?: string; index: number }>`
-  padding-left: 1rem;
-  padding-right: 1rem;
-  white-space: nowrap;
   height: ${({ height }) => `${height}px`};
   font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid #f2f2f3;
-  border-right: 1px solid #f2f2f3;
   background: var(--body-bg);
 
   ${({ pinned, index }) =>
@@ -63,17 +40,7 @@ const Td = styled.div<{ height: number; pinned?: string; index: number }>`
 `;
 
 const Th = styled.div<{ height: number; pinned?: string; index: number }>`
-  padding-left: 1rem;
-  padding-right: 1rem;
-  white-space: nowrap;
   height: ${({ height }) => `${height}px`};
-  font-size: 0.95rem;
-  border-bottom: 1px solid #f2f2f3;
-  border-right: 1px solid #f2f2f3;
-  display: flex;
-  align-items: center;
-  /* font-weight: 500; */
-  position: relative;
   background: var(--body-bg);
 
   ${({ pinned, index }) =>
@@ -81,23 +48,17 @@ const Th = styled.div<{ height: number; pinned?: string; index: number }>`
 `;
 
 const StyledRow = styled.div<{ size: number; start: number }>`
-  position: absolute;
-  top: 0;
-  left: 0;
-  // width: '100%';
   height: ${({ size }) => `${size}px`};
   transform: ${({ start }) => `translateY(${start}px)`};
-  cursor: pointer;
 
   &:hover {
     ${Th}, ${Td} {
-      background: var(--light) !important;
+      background: ${theme`colors.gray.100`};
     }
   }
 `;
 
 const Table = ({
-  theme = 'uidu',
   setAggregation,
   setColumnWidth,
   includeFooter = true,
@@ -162,7 +123,8 @@ const Table = ({
       return (
         <StyledRow
           key={index}
-          {...row.getRowProps()}
+          tw="absolute top-0 left-0 cursor-pointer"
+          {...row.getRowProps([{ style: { minWidth: '100%' } }])}
           size={size}
           start={start}
           onClick={(e) => {
@@ -174,12 +136,13 @@ const Table = ({
             .filter((cell) => !cell.column.isPrivate)
             .map((cell, index) => (
               <Td
+                tw="px-6 flex items-center border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
                 {...cell.getCellProps([
                   {
                     style: {
                       left: index === 0 ? 0 : '56px',
                       ...(cell.column.isSorted
-                        ? { backgroundColor: 'rgb(254, 248, 244)' }
+                        ? { backgroundColor: theme`colors.yellow.50` }
                         : {}),
                       ...cell.column.cellStyle,
                     },
@@ -226,19 +189,19 @@ const Table = ({
   });
 
   return (
-    <div className={`ag-theme-${theme} h-100`} role="table">
+    <div tw="h-full" role="table">
       <div
         {...getTableBodyProps()}
         ref={parentRef}
-        style={{
-          height: '100%',
-          width: '100%',
-          overflow: 'auto',
-        }}
+        tw="h-full w-full overflow-auto"
       >
-        <Header>
+        <div tw="bg-gray-50 flex items-center flex-col min-w-full top-0 sticky z-10 w-max">
           {headerGroups.map((headerGroup) => (
-            <div {...headerGroup.getHeaderGroupProps()}>
+            <div
+              {...headerGroup.getHeaderGroupProps([
+                { style: { minWidth: '100%' } },
+              ])}
+            >
               {headerGroup.headers
                 .filter((column) => !column.isPrivate)
                 .map((column, index) => (
@@ -246,6 +209,7 @@ const Table = ({
                     height={headerHeight}
                     pinned={column.pinned}
                     index={index}
+                    tw="relative flex items-center px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
                     {...column.getHeaderProps([
                       {
                         style: {
@@ -254,7 +218,7 @@ const Table = ({
                           // maxWidth: column.maxWidth,
                           // minWidth: column.minWidth,
                           ...(column.isSorted
-                            ? { backgroundColor: 'rgb(254, 248, 244)' }
+                            ? { backgroundColor: theme`colors.yellow.50` }
                             : {}),
                           ...column.headerStyle,
                         },
@@ -276,10 +240,11 @@ const Table = ({
                 ))}
             </div>
           ))}
-        </Header>
+        </div>
         <Body
           height={rowVirtualizer.totalSize}
           verticalPadding={rowHeight * 2 - 8 - 16}
+          tw="w-full relative"
         >
           {rowVirtualizer.virtualItems.map(({ size, start, index }) => (
             <Row key={index} size={size} start={start} index={index} />

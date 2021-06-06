@@ -4,6 +4,7 @@ import { BarChart2 } from 'react-feather';
 import { FormattedMessage } from 'react-intl';
 
 const Chart = loadable(() => import('./XY'));
+const StatelessChart = loadable(() => import('./XYStateless'));
 
 export default {
   id: 'xy',
@@ -12,4 +13,5 @@ export default {
   color: '#D08770',
   description: <FormattedMessage defaultMessage="XY chart." />,
   chart: Chart,
+  chartStateless: StatelessChart,
 };
