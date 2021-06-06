@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $card-img-width: 67%;
 
 a {
@@ -126,7 +128,7 @@ $card-avatar-size: $grid-gutter-width;
 .card-organization {
   .card-content.no-bio {
     .card-name {
-      margin: ($grid-gutter-width / 2) 0 ($grid-gutter-width / 4);
+      margin: math.div($grid-gutter-width, 2) 0 math.div($grid-gutter-width, 4);
     }
   }
 }
@@ -137,10 +139,10 @@ $card-avatar-size: $grid-gutter-width;
   //   padding-top: $increment-default;
   // }
   .card-avatar {
-    margin-bottom: $grid-gutter-width / 2;
+    margin-bottom: math.div($grid-gutter-width, 2);
   }
   .card-cta {
-    margin-top: $grid-gutter-width / 2;
+    margin-top: math.div($grid-gutter-width, 2);
   }
 }
 // Event
@@ -191,14 +193,14 @@ $card-avatar-size: $grid-gutter-width;
     position: relative;
     bottom: $grid-gutter-width;
     left: 0;
-    padding: 0 $grid-gutter-width / 2;
+    padding: 0 math.div($grid-gutter-width, 2);
     .media-left {
-      padding-right: $grid-gutter-width / 4;
+      padding-right: math.div($grid-gutter-width, 4);
     }
   }
   .card-content {
-    padding: $grid-gutter-width / 4 * 3 $grid-gutter-width / 2
-      $grid-gutter-width / 2;
+    padding: math.div($grid-gutter-width, 4) * 3 math.div($grid-gutter-width, 2)
+      math.div($grid-gutter-width, 2);
   }
 }
 .look_for {
@@ -223,7 +225,7 @@ $card-avatar-size: $grid-gutter-width;
   // background-color: whitesmoke;
   // color: #fff;
   // font-size: $font-size-large - 2;
-  padding: $grid-gutter-width * 1.5 ($grid-gutter-width / 2) $grid-gutter-width;
+  padding: $grid-gutter-width * 1.5 math.div($grid-gutter-width, 2) $grid-gutter-width;
   // height: $card-height - $increment-default - 2;
   // text-align: center;
   // margin-top: $grid-gutter-width;
@@ -274,9 +276,9 @@ $card-avatar-size: $grid-gutter-width;
   }
 
   .card-author {
-    margin-top: $grid-gutter-width / 2;
+    margin-top: math.div($grid-gutter-width, 2);
     .media-left {
-      padding-right: $grid-gutter-width / 4;
+      padding-right: math.div($grid-gutter-width, 4);
     }
   }
 }
@@ -316,7 +318,7 @@ $card-avatar-size: $grid-gutter-width;
   height: auto;
   // padding: $grid-gutter-width / 2 $grid-gutter-width;
   .card-image {
-    height: $card-height / 2;
+    height: math.div($card-height, 2);
     // max-height: $card-height / 2;
     @include border-radius(($border-radius - 1) ($border-radius - 1) 0 0);
     // & + .card-content {
@@ -331,12 +333,12 @@ $card-avatar-size: $grid-gutter-width;
 // list of media cards
 .media-card-list {
   .media-card {
-    padding: $grid-gutter-width / 2;
+    padding: math.div($grid-gutter-width, 2);
     // @media (min-width: $screen-sm-min) {
     //   padding: $grid-gutter-width / 2 ($grid-gutter-width / 4 * 3);
     // }
     // border-bottom: 1px solid $input-border;
-    padding-bottom: $grid-gutter-width / 2;
+    padding-bottom: math.div($grid-gutter-width, 2);
     margin: 0;
     // margin-right: -1px;
     &:hover,
@@ -360,11 +362,11 @@ $card-avatar-size: $grid-gutter-width;
     position: absolute;
     width: 0;
     height: 0;
-    top: $grid-gutter-width / 8;
-    right: $grid-gutter-width / 8;
+    top: math.div($grid-gutter-width, 8);
+    right: math.div($grid-gutter-width, 8);
     // border-top: $grid-gutter-width / 8 solid $brand-primary;
-    border-bottom: $grid-gutter-width / 8 solid transparent;
-    border-left: $grid-gutter-width / 8 solid transparent;
+    border-bottom: math.div($grid-gutter-width, 8) solid transparent;
+    border-left: math.div($grid-gutter-width, 8) solid transparent;
     // border-right: $grid-gutter-width / 8 solid $brand-primary;
     content: '';
     z-index: 1;
@@ -375,7 +377,7 @@ $card-avatar-size: $grid-gutter-width;
 .card.card-cta {
   height: auto;
   .card-content {
-    padding: $grid-gutter-width $grid-gutter-width / 2;
+    padding: $grid-gutter-width math.div($grid-gutter-width, 2);
   }
   .card-image {
     height: $increment-default * 3;
@@ -403,11 +405,11 @@ $card-avatar-size: $grid-gutter-width;
   // @extend .bg-color-contacts;
 }
 .feed-post-avatar.contact-avatar {
-  line-height: $card-avatar-size / 2;
+  line-height: math.div($card-avatar-size, 2);
 }
 .card-sm {
   .contact-avatar {
-    line-height: $card-avatar-size / 2;
+    line-height: math.div($card-avatar-size, 2);
   }
 }
 
@@ -442,7 +444,7 @@ $tax_return_campaigns_cover_width: 40%;
   .card-content {
     padding-top: 20%;
     position: relative;
-    padding-bottom: $grid-gutter-width / 4;
+    padding-bottom: math.div($grid-gutter-width, 4);
   }
   .card-image {
     position: absolute;

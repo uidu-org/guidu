@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 // Variables
@@ -165,7 +167,7 @@ $text-muted: $gray-500;
 
 // Tables
 $table-cell-padding: $spacer $spacer * $line-height-base;
-$table-cell-padding-sm: $spacer / 2;
+$table-cell-padding-sm: math.div($spacer, 2);
 $table-hover-bg: $gray-100;
 
 // Buttons
