@@ -90,7 +90,7 @@ export default function DataManager({
   const defaultColumn = React.useMemo(
     () => ({
       minWidth: 80,
-      width: 200,
+      width: 240,
       maxWidth: 400,
       canHide: true,
       canSortBy: true,
@@ -197,12 +197,8 @@ export default function DataManager({
 
   useImperativeHandle(forwardedRef, () => tableInstance, [tableInstance]);
 
-  const {
-    state,
-    setGlobalFilter,
-    globalFilter,
-    selectedFlatRows,
-  } = tableInstance;
+  const { state, setGlobalFilter, globalFilter, selectedFlatRows } =
+    tableInstance;
 
   const onViewUpdateDebounce = useAsyncDebounce(onViewUpdate, 100);
   const onItemSelectDebounce = useAsyncDebounce(onItemSelect, 100);
@@ -327,9 +323,11 @@ export default function DataManager({
       primaryField,
     } = preferences;
 
-    const { icon: Icon, color, controls: Controls = () => null } = byName[
-      currentView.kind
-    ];
+    const {
+      icon: Icon,
+      color,
+      controls: Controls = () => null,
+    } = byName[currentView.kind];
 
     return (
       <>

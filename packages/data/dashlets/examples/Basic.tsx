@@ -18,20 +18,11 @@ export default class Basic extends Component<any> {
         <Dashlets
           dashlets={[
             {
-              kind: 'Geo',
-              label: 'Donors by country',
-              namespace: 'donations',
-              rollup: ['count', 'id'],
-            },
-            {
-              kind: 'List',
-              namespace: 'donations',
-              rollup: ['count', 'id'],
-              label: 'List',
+              kind: 'Counter',
+              label: 'Counter',
+              value: 12,
             },
           ]}
-          rowData={this.state.rowData}
-          loaded={this.state.loaded}
         />
       </div>
     );

@@ -1,6 +1,7 @@
 import Shell from '@uidu/shell';
 import qs from 'query-string';
 import * as React from 'react';
+import { GlobalStyles as BaseStyles } from 'twin.macro';
 import {
   initializeGA,
   observePerformanceMetrics,
@@ -106,8 +107,11 @@ function ExampleLoader(props: ExampleLoaderProps) {
   });
 
   return (
-    <Shell>
-      <ExampleComponent />
-    </Shell>
+    <>
+      <BaseStyles />
+      <Shell>
+        <ExampleComponent />
+      </Shell>
+    </>
   );
 }

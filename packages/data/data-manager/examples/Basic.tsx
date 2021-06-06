@@ -465,7 +465,7 @@ export default function Basic({}) {
                                     table: {
                                       includeFooter: false,
                                       headerHeight: 48,
-                                      rowHeight: 40,
+                                      rowHeight: 48,
                                     },
                                   },
                                 })}

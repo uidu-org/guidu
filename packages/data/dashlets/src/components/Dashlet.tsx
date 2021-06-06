@@ -46,7 +46,7 @@ const DateRanges = [
 //   { name: 'year', title: 'Annuale' },
 // ];
 
-const Card = styled.div`
+export const Card = styled.div`
   ${tw`bg-white shadow rounded-lg overflow-hidden h-full flex-col flex`}
 `;
 
@@ -55,83 +55,57 @@ export default function Dashlet({
   component: DashletContent,
   showHeader = true,
   isCard = true,
-  rowData,
   ...rest
 }: any) {
-  // const [query, setQuery] = useState(
-  //   dashlet.query || {
-  //     measures: ['Donations.amount'],
-  //     timeDimensions: [
-  //       {
-  //         dimension: 'Donations.createdAt',
-  //         granularity: 'month',
-  //       },
-  //     ],
-  //     filters: [],
-  //   },
-  // );
-
-  const { resultSet, isLoading, error } = useCubeQuery(dashlet.query);
-
-  if (isLoading) {
+  // this dashlet passes data without query
+  const { data } = dashlet;
+  if (data) {
     return (
       <Card>
-        <MyLoader />
+        {showHeader && (
+          <DashletHeader
+            name={dashlet.label}
+            description={dashlet.description}
+            isCard={isCard}
+          />
+        )}
+        <DashletContent {...rest} {...dashlet} data={data} />
+      </Card>
+    );
+  } else {
+    const { resultSet, isLoading, error } = useCubeQuery(dashlet.query);
+
+    if (isLoading) {
+      return (
+        <Card>
+          <MyLoader />
+        </Card>
+      );
+    }
+
+    if (error) {
+      console.log(error);
+      return (
+        <Card>
+          <FormattedMessage
+            defaultMessage="Error loading {name}"
+            values={{ name: dashlet.label }}
+          />
+        </Card>
+      );
+    }
+
+    return (
+      <Card>
+        {showHeader && (
+          <DashletHeader
+            name={dashlet.label}
+            description={dashlet.description}
+            isCard={isCard}
+          />
+        )}
+        <DashletContent {...rest} {...dashlet} resultSet={resultSet} />
       </Card>
     );
   }
-
-  if (error) {
-    console.log(error);
-    return (
-      <Card>
-        <FormattedMessage
-          defaultMessage="Error loading {name}"
-          values={{ name: dashlet.label }}
-        />
-      </Card>
-    );
-  }
-
-  return (
-    <Card>
-      {showHeader && (
-        <DashletHeader
-          name={dashlet.label}
-          description={dashlet.description}
-          isCard={isCard}
-        >
-          {/* {false && (
-            <TimeDimensionControls>
-              {timeDimension && (
-                <TimeFrame
-                  activeTimeFrame={timeDimension.dateRange}
-                  onChange={(name) => {
-                    updateTimeDimensions.update(timeDimension, {
-                      ...timeDimension,
-                      dateRange: name,
-                    });
-                  }}
-                  timeframes={DateRanges}
-                />
-              )}
-              {timeDimension && (
-                <TimeFrameGrouper
-                  groupers={timeDimension.dimension.granularities}
-                  activeGrouper={timeDimension.granularity}
-                  onChange={(name) => {
-                    updateTimeDimensions.update(timeDimension, {
-                      ...timeDimension,
-                      granularity: name,
-                    });
-                  }}
-                />
-              )}
-            </TimeDimensionControls>
-          )} */}
-        </DashletHeader>
-      )}
-      <DashletContent {...rest} {...dashlet} resultSet={resultSet} />
-    </Card>
-  );
 }

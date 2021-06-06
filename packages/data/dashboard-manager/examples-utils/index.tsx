@@ -9,10 +9,10 @@ export const dashlets = [
     label: 'Raccolta',
     description: 'Donations amount by time',
     query: {
-      measures: ['Donations.totalAmount'],
+      measures: ['Contacts.count'],
       timeDimensions: [
         {
-          dimension: 'Donations.createdAt',
+          dimension: 'Contacts.createdAt',
           granularity: 'year',
           // dateRange: 'This year',
         },
@@ -25,12 +25,36 @@ export const dashlets = [
       w: 12,
       h: 10,
     },
+    // data: {
+    //   values: [
+    //     {
+    //       category: '2017-01-01T00:00:00.000',
+    //       'Contacts.count': 88,
+    //     },
+    //     {
+    //       category: '2018-01-01T00:00:00.000',
+    //       'Contacts.count': 48,
+    //     },
+    //     {
+    //       category: '2019-01-01T00:00:00.000',
+    //       'Contacts.count': 77,
+    //     },
+    //     {
+    //       category: '2020-01-01T00:00:00.000',
+    //       'Contacts.count': 126,
+    //     },
+    //     {
+    //       category: '2021-01-01T00:00:00.000',
+    //       'Contacts.count': 59,
+    //     },
+    //   ],
+    // },
     config: {
       series: [
         {
           type: 'LineSeries',
           dataFields: {
-            valueY: 'Donations.totalAmount',
+            valueY: 'Contacts.count',
             dateX: 'category',
           },
           fillOpacity: 0.1,
@@ -149,6 +173,9 @@ export const dashlets = [
       ],
       filters: [],
     },
+    data: {
+      value: 32,
+    },
   },
   {
     kind: 'Counter',
@@ -183,7 +210,7 @@ export const dashlets = [
     label: 'Ma dove',
     kind: 'XY',
     query: {
-      measures: ['Donations.amount'],
+      measures: ['Donations.totalAmount'],
       timeDimensions: [
         {
           dimension: 'Donations.createdAt',
@@ -252,17 +279,97 @@ export const dashlets = [
     kind: 'List',
     layout: { x: 0, y: 4, w: 6, h: 10 },
     query: {
-      dimensions: ['Users.email', 'Users.id', 'Users.avatar'],
-      timeDimensions: [
-        {
-          dimension: 'Donations.createdAt',
-        },
+      dimensions: [
+        'Users.email',
+        'Users.createdAt',
+        'Users.id',
+        'Users.avatar',
+        'Users.firstName',
+        'Users.lastName',
       ],
-      measures: ['Donations.max'],
       filters: [],
+      order: {
+        'Users.createdAt': 'desc',
+      },
+      segments: ['Users.people'],
       limit: 10,
     },
     onItemClick: (row) => console.log(row),
+    data: {
+      keys: [
+        { key: 'Users.id', title: 'id' },
+        { key: 'Users.email', title: 'email' },
+        { key: 'Users.createdAt', title: 'createdAt' },
+        { key: 'Users.firstName', title: 'first name' },
+      ],
+      values: [
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+        {
+          'Users.email': 'test12',
+          'Users.createdAt': new Date().toISOString(),
+          'Users.firstName': 'Andrea',
+        },
+      ],
+    },
   },
   {
     label: 'Average donations',
@@ -274,56 +381,6 @@ export const dashlets = [
       filters: [],
       limit: 10,
     },
-  },
-  {
-    label: 'Top donors',
-    kind: 'List',
-    layout: { x: 2, y: 4, w: 6, h: 4 },
-    groupBy: 'contact.id',
-    rollup: ['sum', 'amount'],
-    formatter: 'currency',
-  },
-  {
-    label: 'Top donations',
-    namespace: 'donations',
-    kind: 'List',
-    layout: { x: 0, y: 7, w: 6, h: 3 },
-    rollup: ['max', 'amount'],
-    formatter: 'currency',
-  },
-  {
-    kind: 'Bar',
-    namespace: 'donations',
-    layout: { x: 0, y: 11, w: 12, h: 3 },
-    groupBy: 'donationCampaignId',
-    bars: [
-      {
-        label: 'Raccolta',
-        name: 'donationsAmount',
-        rollup: ['sum', 'amount'],
-        formatter: 'currency',
-        xAxisId: 'right',
-      },
-      {
-        label: 'Donazioni',
-        name: 'donationsCount',
-        rollup: ['count', 'id'],
-        formatter: 'integer',
-      },
-      {
-        label: 'Donatori',
-        name: 'donorsCount',
-        rollup: ['count', 'contact.id'],
-        formatter: 'integer',
-      },
-      {
-        label: 'Media donazione',
-        name: 'donationsAverage',
-        rollup: ['mean', 'amount'],
-        formatter: 'currency',
-        xAxisId: 'right',
-      },
-    ],
   },
   {
     kind: 'Radar',
