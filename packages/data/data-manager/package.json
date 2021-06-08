@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.14.0",
     "@cubejs-client/core": "^0.27.26",
-    "@cubejs-client/react": "^0.27.26",
+    "@cubejs-client/react": "^0.27.30",
     "@cubejs-client/ws-transport": "^0.27.26",
     "@loadable/component": "^5.15.0",
     "@uidu/board": "^0.3.12",
@@ -41,6 +41,6 @@
     "@uidu/navigation": "^0.7.11",
     "@uidu/page-header": "^0.2.12",
     "@uidu/side-navigation": "^0.2.16",
-    "react-intl": "^5.19.0"
+    "react-intl": "^5.20.1"
   }
 }

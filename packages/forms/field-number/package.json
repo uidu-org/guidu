@@ -22,7 +22,7 @@
     "@uidu/form": "^0.4.17",
     "@uidu/theme": "^0.5.13",
     "formsy-react": "^2.2.5",
-    "react-number-format": "^4.6.0",
+    "react-number-format": "^4.6.1",
     "tslib": "^2.2.0"
   },
   "devDependencies": {

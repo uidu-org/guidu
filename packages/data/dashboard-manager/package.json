@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.14.0",
     "@cubejs-client/core": "^0.27.26",
-    "@cubejs-client/react": "^0.27.26",
+    "@cubejs-client/react": "^0.27.30",
     "@types/react-grid-layout": "^1.1.1",
     "@uidu/dashboard-controls": "^0.4.16",
     "@uidu/dashlets": "^0.11.0",

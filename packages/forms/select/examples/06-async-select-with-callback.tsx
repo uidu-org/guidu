@@ -7,7 +7,7 @@ import { cities } from './common/data';
 
 // you control how the options are filtered
 const filter = (inputValue: string) =>
-  cities.filter(i => i.name.toLowerCase().includes(inputValue.toLowerCase()));
+  cities.filter((i) => i.name.toLowerCase().includes(inputValue.toLowerCase()));
 
 // async load function using callback (promises also supported)
 const loadOptions = (inputValue, callback) => {
@@ -24,7 +24,8 @@ const AsyncExample = () => (
       classNamePrefix="react-select"
       // defaultOptions
       loadOptions={loadOptions}
-      options={cities}
+      // options={cities}
+      value={cities[0].id}
       placeholder="Choose a City"
     />
   </Form>

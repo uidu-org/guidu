@@ -13,11 +13,11 @@ const MultiExample = () => (
       {...inputDefaultProps}
       {...selectDefaultProps}
       className="multi-select"
-      classNamePrefix="react-select"
       // options={cities}
       multiple
       isSearchable={false}
       placeholder="Choose a City"
+      options={cities}
       value={[cities[0].id]}
     />
   </Form>

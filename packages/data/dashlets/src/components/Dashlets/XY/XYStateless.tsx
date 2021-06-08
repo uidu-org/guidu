@@ -8,10 +8,10 @@ function am4themes_myTheme(target) {
   if (target instanceof am4core.ColorSet) {
     target.list = [
       am4core.color('#6366F1'),
-      am4core.color('#3B82F6'),
+      // am4core.color('#3B82F6'),
       am4core.color('#10B981'),
       am4core.color('#F59E0B'),
-      am4core.color('#EF4444'),
+      // am4core.color('#EF4444'),
       am4core.color('#6B7280'),
     ];
   }

@@ -13,7 +13,7 @@ export const dashlets = [
       timeDimensions: [
         {
           dimension: 'Contacts.createdAt',
-          granularity: 'year',
+          granularity: 'month',
           // dateRange: 'This year',
         },
       ],
@@ -52,23 +52,28 @@ export const dashlets = [
     config: {
       series: [
         {
-          type: 'LineSeries',
+          type: 'ColumnSeries',
           dataFields: {
             valueY: 'Contacts.count',
             dateX: 'category',
           },
-          fillOpacity: 0.1,
-          fill: {
-            type: 'LinearGradient',
-            stops: [
-              {
-                color: '#6366F1',
-              },
-              {
-                color: '#A5B4FC',
-              },
-            ],
+          columns: {
+            width: '30%',
+            column: { cornerRadiusTopLeft: 4, cornerRadiusTopRight: 4 },
           },
+
+          // fillOpacity: 0.1,
+          // fill: {
+          //   type: 'LinearGradient',
+          //   stops: [
+          //     {
+          //       color: '#6366F1',
+          //     },
+          //     {
+          //       color: '#A5B4FC',
+          //     },
+          //   ],
+          // },
           name: 'Total amount donations received',
         },
       ],
