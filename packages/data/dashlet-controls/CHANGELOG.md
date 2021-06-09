@@ -1,5 +1,12 @@
 # @uidu/dashboard-controls
 
+## 0.3.17
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+
 ## 0.3.16
 
 ### Patch Changes

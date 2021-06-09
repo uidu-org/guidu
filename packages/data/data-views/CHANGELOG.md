@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.20
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/data-controls@0.7.14
+  - @uidu/field-number@0.4.16
+  - @uidu/select@0.6.17
+
 ## 0.5.19
 
 ### Patch Changes

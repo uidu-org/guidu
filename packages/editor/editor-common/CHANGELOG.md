@@ -1,5 +1,17 @@
 # @uidu/editor-common
 
+## 0.4.17
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/emoji@0.4.4
+  - @uidu/mentions@0.2.16
+  - @uidu/profilecard@0.1.15
+
 ## 0.4.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.4.13
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+
 ## 0.4.12
 
 ### Patch Changes

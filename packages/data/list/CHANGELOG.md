@@ -1,5 +1,14 @@
 # @uidu/list
 
+## 0.2.17
+
+### Patch Changes
+
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/data-fields@0.5.16
+
 ## 0.2.16
 
 ### Patch Changes

@@ -1,5 +1,12 @@
 # @uidu/emoji
 
+## 0.4.4
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+
 ## 0.4.3
 
 ### Patch Changes
