@@ -54,25 +54,27 @@ export default function GlobalNavigation({
         }}
         className={className}
       >
-        <ShellHeader className="justify-content-center">
+        <ShellHeader tw="justify-center">
           <GlobalItem {...header} />
         </ShellHeader>
         {body.length > 0 && (
           <ShellBody>
             <ShellMain>
               <ScrollableContainer>
-                {body.map((bodyItem, index) => (
-                  <GlobalItem
-                    key={`global-navigation-body-${index}`}
-                    {...bodyItem}
-                  />
-                ))}
+                <div tw="space-y-1">
+                  {body.map((bodyItem, index) => (
+                    <GlobalItem
+                      key={`global-navigation-body-${index}`}
+                      {...bodyItem}
+                    />
+                  ))}
+                </div>
               </ScrollableContainer>
             </ShellMain>
           </ShellBody>
         )}
         {footer.length > 0 && (
-          <ShellFooter className="d-flex flex-column align-items-center py-3">
+          <ShellFooter tw="space-y-1 flex flex-col items-center py-4">
             {footer.map((footerItem, index) => (
               <GlobalItem
                 key={`global-navigation-footer-${index}`}
@@ -119,23 +121,27 @@ export default function GlobalNavigation({
                 <ShellBody>
                   <ShellMain>
                     <ScrollableContainer>
-                      {body.map(({ children, name, ...otherProps }, index) => (
-                        <FakeItemWrapper
-                          key={`global-navigation-fake-body-${index}`}
-                          {...otherProps}
-                        >
-                          <FakeGlobalItemWrapper style={{ width }}>
-                            <GlobalItem as="span">{children}</GlobalItem>
-                          </FakeGlobalItemWrapper>
-                          {name}
-                        </FakeItemWrapper>
-                      ))}
+                      <div tw="space-y-1">
+                        {body.map(
+                          ({ children, name, ...otherProps }, index) => (
+                            <FakeItemWrapper
+                              key={`global-navigation-fake-body-${index}`}
+                              {...otherProps}
+                            >
+                              <FakeGlobalItemWrapper style={{ width }}>
+                                <GlobalItem as="span">{children}</GlobalItem>
+                              </FakeGlobalItemWrapper>
+                              {name}
+                            </FakeItemWrapper>
+                          ),
+                        )}
+                      </div>
                     </ScrollableContainer>
                   </ShellMain>
                 </ShellBody>
               )}
               {footer.length > 0 && (
-                <ShellFooter className="d-flex flex-column py-3">
+                <ShellFooter tw="space-y-1 flex flex-col items-center py-4">
                   {footer.map(({ name, children, ...otherProps }, index) => (
                     <FakeItemWrapper
                       key={`global-navigation-fake-footer-${index}`}

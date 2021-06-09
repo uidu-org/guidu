@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import tw from 'twin.macro';
 
 export const StyledNavigationItem = styled.li.attrs(({ className }) => ({
   className: `nav-item${className ? ` ${className}` : ''}`,
@@ -9,7 +10,8 @@ export const StyledNavigationItem = styled.li.attrs(({ className }) => ({
 export const StyledNavigationBefore = styled.div`
   align-items: center;
   display: flex;
-  margin-right: 0.5rem;
+  margin-right: 0.75rem;
+  ${tw`mr-3`}
 `;
 
 export const StyledNavigationText = styled.div<{

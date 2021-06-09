@@ -25,20 +25,15 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   align-items: center;
   cursor: pointer;
   display: flex;
-  border-radius: 0.25rem;
+  border-radius: 0.375rem;
   color: var(--body-color);
-  transition: background-color linear 300ms;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding: 0.5rem;
   position: relative;
 
   &:hover,
   &.active {
     background-color: var(--light);
     color: var(--body-color);
-    transition: background-color linear 300ms;
   }
 
   &:hover ${StyledNavigationActions} {

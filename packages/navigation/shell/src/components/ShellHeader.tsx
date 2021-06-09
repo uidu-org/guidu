@@ -5,10 +5,6 @@ export const ShellHeader = styled.header`
   display: flex;
   align-items: center;
   height: 4.5rem;
-
-  @media (min-width: 700px) {
-    height: 5rem;
-  }
   flex-shrink: 0;
 `;
 

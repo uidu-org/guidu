@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledItem = styled.div`
-  transition: all 500ms ease-in-out;
   cursor: pointer;
   font-size: 0.95rem;
 `;
@@ -32,7 +31,6 @@ export default function Item({
         top: 0,
         transform: `translate3d(0px,${style.top}px, 0px)`,
         willChange: 'transform',
-        transition: '300ms transform',
         height: style.height,
       }}
       className="d-flex flex-row align-items-center w-auto"

@@ -25,9 +25,6 @@ export default styled.li.attrs(({ className }) => ({
   color: #bfc3c6;
   font-size: 80%;
   letter-spacing: 0.1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  padding: 0.5rem;
   text-transform: uppercase;
 `;

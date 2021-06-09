@@ -24,12 +24,12 @@ export default class NavigationGroup extends PureComponent<any> {
       className += ' mb-3';
     }
     if (withPadding) {
-      className += ' px-4';
+      className += ' px-3';
     }
 
     return (
       <>
-        <ul className={className}>
+        <ul className={className} tw="space-y-1">
           {heading && (
             <NavigationGroupHeading
               before={before}
@@ -39,7 +39,7 @@ export default class NavigationGroup extends PureComponent<any> {
           )}
           {children}
         </ul>
-        {separator && <hr className="mx-4" />}
+        {separator && <hr className="mx-3" />}
       </>
     );
   }

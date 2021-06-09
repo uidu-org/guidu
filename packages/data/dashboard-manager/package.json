@@ -19,7 +19,7 @@
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-grid-layout": "^1.2.5",
-    "react-resizable": "^3.0.1",
+    "react-resizable": "^3.0.2",
     "tslib": "^2.2.0"
   },
   "devDependencies": {

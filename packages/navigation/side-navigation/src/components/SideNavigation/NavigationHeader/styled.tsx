@@ -21,7 +21,7 @@ export const StyledNavigationHeaderAfter = styled.div`
 export default styled.div.attrs(({ className }) => ({
   className: `${className ? ` ${className}` : ''}`,
 }))`
-  padding: 0 2.25rem;
+  padding: 0 1.75rem;
   align-items: center;
   display: flex;
   height: 100%;

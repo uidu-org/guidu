@@ -33,7 +33,6 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   display: flex;
   border-radius: 0.25rem;
   color: currentColor;
-  transition: background-color linear 300ms;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
