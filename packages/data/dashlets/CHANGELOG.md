@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 0.11.1
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/dashboard-manager@0.12.1
+  - @uidu/dashlet-controls@0.3.17
+  - @uidu/data-fields@0.5.16
+  - @uidu/table@0.8.1
+
 ## 0.11.0
 
 ### Minor Changes

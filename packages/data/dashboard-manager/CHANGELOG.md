@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.12.1
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/dashboard-controls@0.4.17
+  - @uidu/dashlets@0.11.1
+
 ## 0.12.0
 
 ### Minor Changes

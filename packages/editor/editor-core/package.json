@@ -1,6 +1,6 @@
 {
   "name": "@uidu/editor-core",
-  "version": "0.8.3",
+  "version": "0.8.4",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/editor-core",
   "license": "MIT",
   "main": "dist/uidu-editor-core.cjs.js",
@@ -23,23 +23,23 @@
     "@uidu/button": "^0.4.12",
     "@uidu/date": "^0.3.12",
     "@uidu/droplist": "^0.4.13",
-    "@uidu/editor-common": "^0.4.16",
+    "@uidu/editor-common": "^0.4.17",
     "@uidu/editor-json-transformer": "^0.3.13",
     "@uidu/editor-markdown-transformer": "^0.4.3",
-    "@uidu/emoji": "^0.4.3",
+    "@uidu/emoji": "^0.4.4",
     "@uidu/field-date": "^0.4.3",
     "@uidu/form": "^0.4.17",
-    "@uidu/media-card": "^0.4.13",
+    "@uidu/media-card": "^0.4.14",
     "@uidu/media-core": "^0.4.11",
     "@uidu/media-filmstrip": "^0.3.12",
     "@uidu/media-picker": "^0.4.11",
-    "@uidu/mentions": "^0.2.15",
+    "@uidu/mentions": "^0.2.16",
     "@uidu/menu": "^0.4.14",
     "@uidu/modal-dialog": "^0.4.14",
-    "@uidu/profilecard": "^0.1.14",
-    "@uidu/select": "^0.6.16",
+    "@uidu/profilecard": "^0.1.15",
+    "@uidu/select": "^0.6.17",
     "@uidu/spinner": "^0.4.12",
-    "@uidu/status": "^0.3.16",
+    "@uidu/status": "^0.3.17",
     "@uidu/task-decision": "^0.3.12",
     "@uidu/theme": "^0.5.13",
     "@uidu/tooltip": "^0.4.12",
@@ -76,6 +76,6 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.12",
-    "@uidu/shell": "^1.2.17"
+    "@uidu/shell": "^1.2.18"
   }
 }

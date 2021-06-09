@@ -1,5 +1,16 @@
 # @uidu/data-fields
 
+## 0.5.16
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/field-number@0.4.16
+  - @uidu/select@0.6.17
+
 ## 0.5.15
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.3.23
+
+### Patch Changes
+
+- 3f355aa1c: Removed some css transitions and bump dependencies
+
 ## 0.3.22
 
 ### Patch Changes

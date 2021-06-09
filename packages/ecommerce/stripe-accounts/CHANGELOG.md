@@ -1,5 +1,15 @@
 # @uidu/stripe-accounts
 
+## 0.2.18
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/payments@0.4.18
+
 ## 0.2.17
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/profilecard
 
+## 0.1.15
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+  - @uidu/popup@0.4.13
+
 ## 0.1.14
 
 ### Patch Changes
