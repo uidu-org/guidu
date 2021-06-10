@@ -1,5 +1,11 @@
 # @uidu/blocks
 
+## 0.11.2
+
+### Patch Changes
+
+- ed66448c9: Smaller card headers
+
 ## 0.11.1
 
 ### Patch Changes
