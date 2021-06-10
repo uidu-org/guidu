@@ -13,7 +13,7 @@ const HeaderLabelWrapper = styled.div`
   ${tw`ml-4 mt-4`}
 `;
 const HeaderLabelName = styled.h3`
-  ${tw`font-medium text-gray-900`}
+  ${tw`text-base font-medium text-gray-900`}
 `;
 const HeaderLabelDescription = styled.p`
   ${tw`mt-1 text-sm text-gray-500`}
