@@ -25,11 +25,11 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   display: flex;
   border-radius: 0.25rem;
   color: ${`${lighten(0.2, '#000')} !important`};
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-  padding-left: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 2.5rem;
   padding-right: 0.75rem;
-  font-size: 0.935rem;
+  /* font-size: 0.935rem; */
   position: relative;
 
   &:hover,
