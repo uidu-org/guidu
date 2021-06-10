@@ -27,7 +27,7 @@ export const StyledNavigationLink = styled.a.attrs(({ className }) => ({
   display: flex;
   border-radius: 0.375rem;
   color: var(--body-color);
-  padding: 0.5rem;
+  padding: 0.5rem 0.75rem;
   position: relative;
 
   &:hover,
