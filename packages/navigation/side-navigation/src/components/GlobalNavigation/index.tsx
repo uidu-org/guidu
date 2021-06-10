@@ -61,7 +61,7 @@ export default function GlobalNavigation({
           <ShellBody>
             <ShellMain>
               <ScrollableContainer>
-                <div tw="space-y-1">
+                <div tw="space-y-0.5">
                   {body.map((bodyItem, index) => (
                     <GlobalItem
                       key={`global-navigation-body-${index}`}
@@ -74,7 +74,7 @@ export default function GlobalNavigation({
           </ShellBody>
         )}
         {footer.length > 0 && (
-          <ShellFooter tw="space-y-1 flex flex-col items-center py-4">
+          <ShellFooter tw="space-y-0.5 flex flex-col items-center py-4">
             {footer.map((footerItem, index) => (
               <GlobalItem
                 key={`global-navigation-footer-${index}`}
@@ -121,7 +121,7 @@ export default function GlobalNavigation({
                 <ShellBody>
                   <ShellMain>
                     <ScrollableContainer>
-                      <div tw="space-y-1">
+                      <div tw="space-y-0.5">
                         {body.map(
                           ({ children, name, ...otherProps }, index) => (
                             <FakeItemWrapper
@@ -141,7 +141,7 @@ export default function GlobalNavigation({
                 </ShellBody>
               )}
               {footer.length > 0 && (
-                <ShellFooter tw="space-y-1 flex flex-col items-center py-4">
+                <ShellFooter tw="space-y-0.5 flex flex-col items-center py-4">
                   {footer.map(({ name, children, ...otherProps }, index) => (
                     <FakeItemWrapper
                       key={`global-navigation-fake-footer-${index}`}

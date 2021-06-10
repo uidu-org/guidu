@@ -29,7 +29,7 @@ export default class NavigationGroup extends PureComponent<any> {
 
     return (
       <>
-        <ul className={className} tw="space-y-1">
+        <ul className={className} tw="space-y-0.5">
           {heading && (
             <NavigationGroupHeading
               before={before}
