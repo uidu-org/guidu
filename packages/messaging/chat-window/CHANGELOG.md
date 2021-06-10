@@ -1,5 +1,14 @@
 # @uidu/chat-window
 
+## 0.3.13
+
+### Patch Changes
+
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/message@0.3.15
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/data-manager
 
+## 0.12.1
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/data-controls@0.7.14
+  - @uidu/data-fields@0.5.16
+  - @uidu/data-views@0.5.20
+  - @uidu/table@0.8.1
+  - @uidu/shell@1.2.18
+  - @uidu/list@0.2.17
+
 ## 0.12.0
 
 ### Minor Changes

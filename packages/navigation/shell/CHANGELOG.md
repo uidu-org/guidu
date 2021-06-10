@@ -1,5 +1,12 @@
 # @uidu/shell
 
+## 1.2.18
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+
 ## 1.2.17
 
 ### Patch Changes

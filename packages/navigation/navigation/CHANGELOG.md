@@ -1,5 +1,14 @@
 # @uidu/navigation
 
+## 0.7.12
+
+### Patch Changes
+
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/shell@1.2.18
+
 ## 0.7.11
 
 ### Patch Changes

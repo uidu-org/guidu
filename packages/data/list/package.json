@@ -1,6 +1,6 @@
 {
   "name": "@uidu/list",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "description": "React component to show data items as calendar",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/list",
   "license": "MIT",
@@ -10,7 +10,7 @@
   "types": "dist/uidu-list.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.14.0",
-    "@uidu/data-fields": "^0.5.15",
+    "@uidu/data-fields": "^0.5.16",
     "react": "^17.0.2",
     "react-virtual": "^2.7.1",
     "styled-components": "^5.3.0",

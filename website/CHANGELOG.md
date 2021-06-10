@@ -1,5 +1,20 @@
 # Change Log
 
+## 0.3.5
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/table@0.8.1
+  - @uidu/select@0.6.17
+  - @uidu/shell@1.2.18
+  - @uidu/list@0.2.17
+  - @uidu/navigation@0.7.12
+  - @uidu/themes-uidu@0.3.23
+
 ## 0.3.4
 
 ### Patch Changes

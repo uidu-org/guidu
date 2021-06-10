@@ -1,5 +1,16 @@
 # @uidu/table
 
+## 0.8.1
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/popup@0.4.13
+  - @uidu/data-fields@0.5.16
+
 ## 0.8.0
 
 ### Minor Changes

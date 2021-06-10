@@ -1,5 +1,21 @@
 # @uidu/editor-core
 
+## 0.8.4
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/editor-common@0.4.17
+  - @uidu/emoji@0.4.4
+  - @uidu/mentions@0.2.16
+  - @uidu/profilecard@0.1.15
+  - @uidu/status@0.3.17
+  - @uidu/select@0.6.17
+  - @uidu/media-card@0.4.14
+
 ## 0.8.3
 
 ### Patch Changes

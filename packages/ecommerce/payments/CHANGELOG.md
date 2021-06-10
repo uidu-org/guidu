@@ -1,5 +1,12 @@
 # @uidu/payments
 
+## 0.4.18
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+
 ## 0.4.17
 
 ### Patch Changes

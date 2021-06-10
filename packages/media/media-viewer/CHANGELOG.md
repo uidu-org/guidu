@@ -1,5 +1,15 @@
 # @uidu/media-viewer
 
+## 0.3.15
+
+### Patch Changes
+
+- ca01a0f67: Bump dependencies
+- 3f355aa1c: Removed some css transitions and bump dependencies
+- Updated dependencies [ca01a0f67]
+- Updated dependencies [3f355aa1c]
+  - @uidu/shell@1.2.18
+
 ## 0.3.14
 
 ### Patch Changes
