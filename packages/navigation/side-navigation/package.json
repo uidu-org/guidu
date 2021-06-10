@@ -1,6 +1,6 @@
 {
   "name": "@uidu/side-navigation",
-  "version": "0.2.18",
+  "version": "0.2.19",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/side-navigation",
   "license": "MIT",

@@ -1,5 +1,11 @@
 # @uidu/navigation
 
+## 0.2.19
+
+### Patch Changes
+
+- 668ea2e45: Fix vertical spacing
+
 ## 0.2.18
 
 ### Patch Changes
