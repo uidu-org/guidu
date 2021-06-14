@@ -14,6 +14,7 @@ export const Container = styled.div`
   min-width: 100%;
   min-height: 100%;
   display: inline-flex;
+  margin: 0 0 0 1rem;
 `;
 
 export const ColumnContainer = styled.div`
@@ -68,7 +69,7 @@ export const ItemsListWrapper = styled.div<any>`
   display: flex;
   flex-direction: column;
   opacity: ${({ isDropDisabled }) => (isDropDisabled ? 0.5 : 'inherit')};
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   border: 1rem;
   padding-bottom: 0;
   transition: background-color 0.2s ease, opacity 0.1s ease;
@@ -76,6 +77,9 @@ export const ItemsListWrapper = styled.div<any>`
   width: 22rem;
   min-width: 0;
   min-height: 0;
+  margin: 1rem 1rem 0 0;
+  background: var(--light);
+  border-radius: 0.375rem;
   /* height: 100%; */
 `;
 

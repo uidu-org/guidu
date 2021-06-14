@@ -65,10 +65,10 @@ export default function Gallery({
 
   console.log(columnCount);
 
-  const items = useMemo(() => chunkArray(tableInstance.rows, columnCount), [
-    tableInstance.rows,
-    columnCount,
-  ]);
+  const items = useMemo(
+    () => chunkArray(tableInstance.rows, columnCount),
+    [tableInstance.rows, columnCount],
+  );
 
   const rowVirtualizer = useVirtual({
     size: items.length,
@@ -97,12 +97,14 @@ export default function Gallery({
                   position: 'absolute',
                   top: 0,
                   left: 0,
-                  margin: `${gutterSize}px 0`,
+                  padding: `${gutterSize}px`,
                   height: `${virtualRow.size}px`,
                   transform: `translateY(${virtualRow.start}px)`,
                   display: 'grid',
+                  gridColumnGap: `${gutterSize}px`,
+                  gridRowGap: `${gutterSize}px`,
                   gridTemplateColumns: Array.from({ length: columnCount })
-                    .map((i) => `${100 / columnCount}%`)
+                    .map((i) => `1fr`)
                     .join(' '),
                 }}
               >

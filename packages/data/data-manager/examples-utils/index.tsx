@@ -54,8 +54,8 @@ export const defaultDataViews = [
   },
   {
     id: 17,
-    name: 'Galleria contatti x5',
-    preferences: { columnCount: 5 },
+    name: 'Galleria contatti x3',
+    preferences: { columnCount: 3 },
     kind: 'gallery',
     fields: ['member', 'amount'],
     sorters: [{ id: 'amount', desc: true }],

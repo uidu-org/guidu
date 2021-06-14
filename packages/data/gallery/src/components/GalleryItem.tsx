@@ -12,7 +12,6 @@ export default function GalleryItem({ item, tableInstance, onItemClick }) {
         e.preventDefault();
         onItemClick(item);
       }}
-      className="col"
       key={item.id}
     >
       <div className="card bg-white">

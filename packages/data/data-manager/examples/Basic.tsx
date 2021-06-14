@@ -7,14 +7,15 @@ import DropdownMenu, {
   DropdownItemGroup,
 } from '@uidu/dropdown-menu';
 import Form from '@uidu/form';
-import Navigation from '@uidu/navigation';
 import Select from '@uidu/select';
 import {
   ShellBody,
   ShellBodyWithSpinner,
   ShellHeader,
   ShellMain,
+  ShellSidebar,
 } from '@uidu/shell';
+import Navigation from '@uidu/side-navigation';
 import { isEqual } from 'lodash';
 import Papa from 'papaparse';
 import React, {
@@ -270,111 +271,114 @@ export default function Basic({}) {
             // onGridReady={() => this.setState({ rendered: true })}
           >
             {({ renderControls, renderView, renderSidebar }) => (
-              <ShellMain>
-                <Navigation
-                  className="bg-white border-bottom"
-                  schema={[
-                    {
-                      type: 'NavigationHeader',
-                      text: 'Team',
-                    },
-                    {
-                      type: 'PrimarySection',
-                      items: [
-                        {
-                          path: `/`,
-                          text: 'Riepilogo',
-                          type: 'NavigationItem',
-                        },
-                        {
-                          path: `/orders`,
-                          text: 'Ordini',
-                          type: 'NavigationItem',
-                          isSortable: true,
-                        },
-                        {
-                          path: `/attendances`,
-                          text: 'Partecipanti',
-                          type: 'NavigationItem',
-                        },
-                        {
-                          path: `/messages`,
-                          text: 'Messaggi agli iscritti',
-                          type: 'NavigationItem',
-                        },
-                      ],
-                    },
-                    {
-                      type: 'SecondarySection',
-                      items: [
-                        {
-                          path: `/`,
-                          type: 'InlineComponent',
-                          component: () => (
-                            <DropdownMenu
-                              trigger={
-                                <button className="btn btn-primary">
-                                  Add a view
-                                </button>
-                              }
-                              position="bottom right"
-                            >
-                              <DropdownItemGroup title="Create new">
-                                {[
-                                  { id: 0, kind: 'table', name: 'Table' },
-                                  {
-                                    id: 1,
-                                    kind: 'gallery',
-                                    name: 'Griglia',
-                                  },
-                                  {
-                                    id: 2,
-                                    kind: 'calendar',
-                                    name: 'Calendario',
-                                  },
-                                  { id: 3, kind: 'board', name: 'Kanban' },
-                                  {
-                                    id: 4,
-                                    kind: 'timeline',
-                                    name: 'Timeline',
-                                  },
-                                  {
-                                    id: 4,
-                                    kind: 'list',
-                                    name: 'List',
-                                  },
-                                ].map((view) => (
-                                  <DropdownItem
-                                    onClick={() => addView(view)}
-                                    elemBefore={<PlusCircle size={14} />}
-                                  >
-                                    Add a {view.kind} view
-                                  </DropdownItem>
-                                ))}
-                              </DropdownItemGroup>
-                            </DropdownMenu>
-                          ),
-                          icon: (
-                            <img
-                              src="https://via.placeholder.com/24x24"
-                              className="rounded-circle"
-                            />
-                          ),
-                        },
-                      ],
-                    },
-                  ]}
-                />
-                {!loaded ? (
-                  <ShellBodyWithSpinner />
-                ) : (
-                  <>
-                    <ShellBody>
-                      {!loaded ? (
-                        <ShellBodyWithSpinner />
-                      ) : (
-                        <>
-                          {/* <ShellSidebar
+              <>
+                <ShellSidebar tw="w-80 border-r">
+                  <Navigation
+                    className="bg-white border-bottom"
+                    schema={[
+                      {
+                        type: 'NavigationHeader',
+                        text: 'Team',
+                      },
+                      {
+                        type: 'NavigationSection',
+                        items: [
+                          {
+                            type: 'NavigationGroup',
+                            items: [
+                              ...dataViews.map((dataView) => {
+                                const d = byName[dataView.kind];
+                                const { icon: Icon, color } = d;
+                                return {
+                                  id: dataView.id,
+                                  text: dataView.name,
+                                  before: (
+                                    <div
+                                      style={{ background: color }}
+                                      tw="p-0.5 rounded flex items-center justify-center flex-grow"
+                                    >
+                                      <Icon size={12} color="#fff" />
+                                    </div>
+                                  ),
+                                  onClick: () => toggleView(dataView),
+                                  type: 'NavigationItem',
+                                  ...(currentView.id === dataView.id
+                                    ? { className: 'active' }
+                                    : {}),
+                                };
+                              }),
+                            ],
+                          },
+                          {
+                            path: `/`,
+                            type: 'InlineComponent',
+                            component: () => (
+                              <DropdownMenu
+                                trigger={
+                                  <button className="btn btn-primary">
+                                    Add a view
+                                  </button>
+                                }
+                                position="bottom right"
+                              >
+                                <DropdownItemGroup title="Create new">
+                                  {[
+                                    { id: 0, kind: 'table', name: 'Table' },
+                                    {
+                                      id: 1,
+                                      kind: 'gallery',
+                                      name: 'Griglia',
+                                    },
+                                    {
+                                      id: 2,
+                                      kind: 'calendar',
+                                      name: 'Calendario',
+                                    },
+                                    { id: 3, kind: 'board', name: 'Kanban' },
+                                    {
+                                      id: 4,
+                                      kind: 'timeline',
+                                      name: 'Timeline',
+                                    },
+                                    {
+                                      id: 4,
+                                      kind: 'list',
+                                      name: 'List',
+                                    },
+                                  ].map((view) => (
+                                    <DropdownItem
+                                      onClick={() => addView(view)}
+                                      elemBefore={<PlusCircle size={14} />}
+                                    >
+                                      Add a {view.kind} view
+                                    </DropdownItem>
+                                  ))}
+                                </DropdownItemGroup>
+                              </DropdownMenu>
+                            ),
+                            icon: (
+                              <img
+                                src="https://via.placeholder.com/24x24"
+                                className="rounded-circle"
+                              />
+                            ),
+                          },
+                        ],
+                      },
+                    ]}
+                  />
+                </ShellSidebar>
+                <ShellMain>
+                  {!loaded ? (
+                    <ShellBodyWithSpinner />
+                  ) : (
+                    <>
+                      <ShellBody>
+                        {!loaded ? (
+                          <ShellBodyWithSpinner />
+                        ) : (
+                          <>
+                            {/* <ShellSidebar
                             style={{
                               width: '20%',
                               background: '#fff',
@@ -383,101 +387,107 @@ export default function Basic({}) {
                           >
                             <SideNavigation schema={schema} />
                           </ShellSidebar> */}
-                          <ShellMain>
-                            <ShellHeader
-                              className="px-3 bg-white border-bottom"
-                              style={{ zIndex: 30 }}
-                            >
-                              <input
-                                type="search"
-                                className="form-control mr-2"
-                                placeholder="Search"
-                                onChange={(e) =>
-                                  tableInstance.current.setGlobalFilter(
-                                    e.target.value,
-                                  )
-                                }
-                              />
-                              <button
-                                onClick={() => {
-                                  tableInstance.current.exportData('csv', true);
-                                }}
+                            <ShellMain>
+                              <ShellHeader
+                                className="px-3 bg-white border-bottom"
+                                style={{ zIndex: 30 }}
                               >
-                                Export All as CSV
-                              </button>
-                              <div style={{ width: 300, flexShrink: 0 }}>
-                                <Form>
-                                  <Select
-                                    layout="elementOnly"
-                                    name="dataView"
-                                    isClearable={false}
-                                    value={currentView.id}
-                                    options={dataViews.map((dataView) => {
-                                      const d = byName[dataView.kind];
-                                      const { icon: Icon, color } = d;
-                                      return {
-                                        id: dataView.id,
-                                        name: dataView.name,
-                                        before: (
-                                          <Icon size={16} color={color} />
-                                        ),
-                                        ...dataView,
-                                      };
-                                    })}
-                                    onChange={(name, value, { option }) => {
-                                      toggleView(option);
-                                    }}
-                                  />
-                                </Form>
-                              </div>
-                              <More />
-                              {renderControls({
-                                controls: {
-                                  viewer: {
-                                    visible: false,
-                                  },
-                                  finder: {
-                                    visible: true,
-                                  },
-                                  more: {
-                                    visible: true,
-                                    actions: [
-                                      {
-                                        name: 'Rename',
-                                        rename: true,
-                                      },
-                                    ],
-                                  },
-                                },
-                              })}
-                            </ShellHeader>
-                            <ShellBody>
-                              <ShellMain>
-                                {renderView({
-                                  viewProps: {
-                                    gallery: {
-                                      gutterSize: 24,
+                                {/* <input
+                                  type="search"
+                                  className="form-control mr-2"
+                                  placeholder="Search"
+                                  onChange={(e) =>
+                                    tableInstance.current.setGlobalFilter(
+                                      e.target.value,
+                                    )
+                                  }
+                                /> */}
+                                {/* <button
+                                  onClick={() => {
+                                    tableInstance.current.exportData(
+                                      'csv',
+                                      true,
+                                    );
+                                  }}
+                                >
+                                  Export All as CSV
+                                </button> */}
+                                <div style={{ width: 300, flexShrink: 0 }}>
+                                  <Form>
+                                    <Select
+                                      layout="elementOnly"
+                                      name="dataView"
+                                      isClearable={false}
+                                      value={currentView.id}
+                                      options={dataViews.map((dataView) => {
+                                        const d = byName[dataView.kind];
+                                        const { icon: Icon, color } = d;
+                                        return {
+                                          id: dataView.id,
+                                          name: dataView.name,
+                                          before: (
+                                            <div
+                                              style={{ background: color }}
+                                              tw="p-0.5 rounded flex items-center justify-center flex-grow"
+                                            >
+                                              <Icon size={12} color="#fff" />
+                                            </div>
+                                          ),
+                                          ...dataView,
+                                        };
+                                      })}
+                                      onChange={(name, value, { option }) => {
+                                        toggleView(option);
+                                      }}
+                                    />
+                                  </Form>
+                                </div>
+                                <More />
+                                {renderControls({
+                                  controls: {
+                                    viewer: {
+                                      visible: false,
                                     },
-                                    list: {
-                                      rowHeight: 104,
-                                    },
-                                    board: {},
-                                    table: {
-                                      includeFooter: false,
-                                      headerHeight: 48,
-                                      rowHeight: 48,
+                                    more: {
+                                      visible: true,
+                                      actions: [
+                                        {
+                                          name: 'Rename',
+                                          rename: true,
+                                        },
+                                      ],
                                     },
                                   },
                                 })}
-                              </ShellMain>
-                            </ShellBody>
-                          </ShellMain>
-                        </>
-                      )}
-                    </ShellBody>
-                  </>
-                )}
-              </ShellMain>
+                              </ShellHeader>
+                              <ShellBody>
+                                <ShellMain>
+                                  {renderView({
+                                    viewProps: {
+                                      gallery: {
+                                        gutterSize: 24,
+                                      },
+                                      list: {
+                                        rowHeight: 104,
+                                      },
+                                      board: {},
+                                      table: {
+                                        includeFooter: false,
+                                        headerHeight: 48,
+                                        rowHeight: 48,
+                                      },
+                                    },
+                                  })}
+                                </ShellMain>
+                              </ShellBody>
+                            </ShellMain>
+                          </>
+                        )}
+                      </ShellBody>
+                    </>
+                  )}
+                </ShellMain>
+              </>
             )}
           </DataManager>
         </Router>

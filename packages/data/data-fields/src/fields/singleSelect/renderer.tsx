@@ -17,14 +17,9 @@ export default (params) => {
   return (
     <div className="text-truncate">
       <span
+        tw="rounded px-2 py-1 inline-flex text-sm"
         style={{
-          borderRadius: '9999px',
-          paddingLeft: '.5rem',
-          paddingRight: '.5rem',
-          paddingTop: '.15rem',
-          paddingBottom: '.15rem',
           backgroundColor: value.color || '#f1f3f5',
-          display: 'inline-flex',
           lineHeight: 'normal',
         }}
       >

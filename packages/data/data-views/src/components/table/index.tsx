@@ -60,22 +60,28 @@ const Table: DataViewKind = {
           // endDateField={endDateField}
           // primaryField={primaryField}
         />
-        <Filterer
-          tableInstance={tableInstance}
-          columnDefs={columnDefs}
-          updateView={updateView}
-          {...availableControls.filterer.props}
-        />
-        <Sorter
-          tableInstance={tableInstance}
-          updateView={updateView}
-          {...availableControls.sorter.props}
-        />
-        <Grouper
-          tableInstance={tableInstance}
-          updateView={updateView}
-          {...availableControls.grouper.props}
-        />
+        {availableControls.filterer.visible && (
+          <Filterer
+            tableInstance={tableInstance}
+            columnDefs={columnDefs}
+            updateView={updateView}
+            {...availableControls.filterer.props}
+          />
+        )}
+        {availableControls.sorter.visible && (
+          <Sorter
+            tableInstance={tableInstance}
+            updateView={updateView}
+            {...availableControls.sorter.props}
+          />
+        )}
+        {availableControls.grouper.visible && (
+          <Grouper
+            tableInstance={tableInstance}
+            updateView={updateView}
+            {...availableControls.grouper.props}
+          />
+        )}
       </>
     );
   },

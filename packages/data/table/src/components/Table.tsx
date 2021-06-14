@@ -136,7 +136,7 @@ const Table = ({
             .filter((cell) => !cell.column.isPrivate)
             .map((cell, index) => (
               <Td
-                tw="px-6 flex items-center border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
+                tw="px-4 flex items-center border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
                 {...cell.getCellProps([
                   {
                     style: {
@@ -209,7 +209,7 @@ const Table = ({
                     height={headerHeight}
                     pinned={column.pinned}
                     index={index}
-                    tw="relative flex items-center px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
+                    tw="relative flex items-center px-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-r border-gray-200 border-opacity-50 whitespace-nowrap"
                     {...column.getHeaderProps([
                       {
                         style: {
