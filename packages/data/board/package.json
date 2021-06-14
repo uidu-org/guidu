@@ -1,6 +1,6 @@
 {
   "name": "@uidu/board",
-  "version": "0.3.12",
+  "version": "0.3.13",
   "description": "Trello-like Kanban boards",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/board",
   "license": "MIT",

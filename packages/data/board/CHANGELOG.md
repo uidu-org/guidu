@@ -1,5 +1,11 @@
 # @uidu/board
 
+## 0.3.13
+
+### Patch Changes
+
+- 922a9aa6e: Data-controls are now configurable for tables, fix some gallery layout issues about spacing and margins"
+
 ## 0.3.12
 
 ### Patch Changes
