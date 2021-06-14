@@ -1,5 +1,11 @@
 # @uidu/data-views
 
+## 0.5.21
+
+### Patch Changes
+
+- 922a9aa6e: Data-controls are now configurable for tables, fix some gallery layout issues about spacing and margins"
+
 ## 0.5.20
 
 ### Patch Changes
