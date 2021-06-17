@@ -9,9 +9,9 @@
   "module": "dist/uidu-dashboard-manager.esm.js",
   "types": "dist/uidu-dashboard-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
-    "@cubejs-client/core": "^0.27.26",
-    "@cubejs-client/react": "^0.27.30",
+    "@babel/runtime": "^7.14.6",
+    "@cubejs-client/core": "^0.27.32",
+    "@cubejs-client/react": "^0.27.32",
     "@types/react-grid-layout": "^1.1.1",
     "@uidu/dashboard-controls": "^0.4.17",
     "@uidu/dashlets": "^0.11.1",
@@ -19,8 +19,8 @@
     "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-grid-layout": "^1.2.5",
-    "react-resizable": "^3.0.2",
-    "tslib": "^2.2.0"
+    "react-resizable": "^3.0.4",
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.12",

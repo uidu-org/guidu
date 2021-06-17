@@ -11,10 +11,10 @@
   "types": "dist/uidu-section-message.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.6.0",
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/button": "^0.4.12",
     "@uidu/theme": "^0.5.13",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@uidu/code": "^0.4.12",

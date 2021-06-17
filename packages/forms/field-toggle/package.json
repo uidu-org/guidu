@@ -10,13 +10,13 @@
   "module": "dist/uidu-field-toggle.esm.js",
   "types": "dist/uidu-field-toggle.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/analytics": "^0.4.12",
     "@uidu/field-base": "^0.6.3",
     "@uidu/theme": "^0.5.13",
     "formsy-react": "^2.2.5",
     "react-switch": "^6.0.0",
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

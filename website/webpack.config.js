@@ -27,13 +27,6 @@ runDevServer({
         },
       }
     : {}),
-  webpackOptions: {
-    resolve: {
-      alias: {
-        'react-native$': 'react-native-web',
-      },
-    },
-  },
 }).catch((err) => {
   console.log(err);
   process.exit(err);

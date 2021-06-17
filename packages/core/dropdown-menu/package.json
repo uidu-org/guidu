@@ -9,7 +9,7 @@
   "module": "dist/uidu-dropdown-menu.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.6.0",
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/analytics": "^0.4.12",
     "@uidu/button": "^0.4.12",
     "@uidu/droplist": "^0.4.13",
@@ -18,7 +18,7 @@
     "array-find": "^1.0.0",
     "prop-types": "^15.7.2",
     "react-uid": "^2.3.1",
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

@@ -9,7 +9,7 @@
   "module": "dist/uidu-droplist.esm.js",
   "dependencies": {
     "@atlaskit/icon": "^21.6.0",
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/analytics": "^0.4.12",
     "@uidu/item": "^0.4.13",
     "@uidu/layer": "^0.4.12",
@@ -18,7 +18,7 @@
     "@uidu/tooltip": "^0.4.12",
     "classnames": "^2.3.1",
     "prop-types": "^15.7.2",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.12",

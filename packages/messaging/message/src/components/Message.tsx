@@ -12,7 +12,6 @@ import { isOnlyEmojis } from '../utils';
 
 const MessagesAttachments = loadable(() => import('./MessageAttachments'));
 const MessageReactions = loadable(() => import('./MessageReactions'));
-const MobileViewMessage = loadable(() => import('./MobileView/Message'));
 
 const MESSAGE_WRAPPER_MAX_WIDTH = 66;
 const MESSAGE_BODY_MAX_WIDTH = 55;
@@ -62,83 +61,69 @@ export default function Message({
     );
   }
 
-  if (mobileView) {
-    return (
-      <MobileViewMessage
-        message={message}
-        reverse={reverse}
-        showAttachments={showAttachments}
-        scrollable={scrollable}
-        {...rest}
+  return (
+    <>
+      <StyledMessage
+        className="message mt-1 position-relative"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(isDropdownOpen)}
       >
-        {children}
-      </MobileViewMessage>
-    );
-  } else {
-    return (
-      <>
-        <StyledMessage
-          className="message mt-1 position-relative"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(isDropdownOpen)}
+        <Tooltip
+          tag={MessageWrapper}
+          content={moment(message.createdAt).format('LL HH:mm')}
+          position="left"
+          delay={0}
         >
-          <Tooltip
-            tag={MessageWrapper}
-            content={moment(message.createdAt).format('LL HH:mm')}
-            position="left"
-            delay={0}
-          >
-            <>
-              {editing ? (
-                <MessageForm
-                  {...rest}
-                  attachments={message.attachments}
-                  message={message}
-                  onDismiss={() => setEditing(false)}
-                  onSubmit={() => setEditing(false)}
-                />
-              ) : (
-                <>
-                  <MessageBodyWrapper reverse={reverse}>
-                    <div className="mb-0">
-                      {message.replyTo && (
-                        <MessageReplyToWrapper className="small text-muted">
-                          {message.replyTo.body}
-                        </MessageReplyToWrapper>
-                      )}
-                      <MessageRenderer
-                        tagName="fragment"
-                        content={message.body}
-                      />
-                    </div>
-                  </MessageBodyWrapper>
-                  {message.itemable && <Itemable itemable={Itemable} />}
-                  {(message.attachments || []).length > 0 && showAttachments && (
-                    <MessagesAttachments
-                      scrollable={scrollable}
-                      attachments={message.attachments.map((attachment) => ({
-                        ...attachment,
-                        author: message.messager,
-                      }))}
+          <>
+            {editing ? (
+              <MessageForm
+                {...rest}
+                attachments={message.attachments}
+                message={message}
+                onDismiss={() => setEditing(false)}
+                onSubmit={() => setEditing(false)}
+              />
+            ) : (
+              <>
+                <MessageBodyWrapper reverse={reverse}>
+                  <div className="mb-0">
+                    {message.replyTo && (
+                      <MessageReplyToWrapper className="small text-muted">
+                        {message.replyTo.body}
+                      </MessageReplyToWrapper>
+                    )}
+                    <MessageRenderer
+                      tagName="fragment"
+                      content={message.body}
                     />
-                  )}
-                </>
-              )}
-              {message.reactions && (
-                <MessageReactions reactions={message.reactions} />
-              )}
-            </>
-          </Tooltip>
-          {!editing &&
-            children &&
-            children({
-              editing,
-              hovered,
-              onDropdownChange: keepActionsVisible,
-              setEditing: setEditing,
-            })}
-        </StyledMessage>
-      </>
-    );
-  }
+                  </div>
+                </MessageBodyWrapper>
+                {message.itemable && <Itemable itemable={Itemable} />}
+                {(message.attachments || []).length > 0 && showAttachments && (
+                  <MessagesAttachments
+                    scrollable={scrollable}
+                    attachments={message.attachments.map((attachment) => ({
+                      ...attachment,
+                      author: message.messager,
+                    }))}
+                  />
+                )}
+              </>
+            )}
+            {message.reactions && (
+              <MessageReactions reactions={message.reactions} />
+            )}
+          </>
+        </Tooltip>
+        {!editing &&
+          children &&
+          children({
+            editing,
+            hovered,
+            onDropdownChange: keepActionsVisible,
+            setEditing: setEditing,
+          })}
+      </StyledMessage>
+    </>
+  );
 }

@@ -10,12 +10,12 @@
   "module": "dist/uidu-checkbox.esm.js",
   "types": "dist/uidu-checkbox.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/analytics": "^0.4.12",
     "@uidu/field-base": "^0.6.3",
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.12",

@@ -14,7 +14,7 @@
     "en"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/checkbox": "^0.4.3",
     "@uidu/data-fields": "^0.5.16",
     "@uidu/dropdown-menu": "^0.5.3",
@@ -28,7 +28,7 @@
     "react-table": "^7.7.0",
     "react-virtual": "^2.7.1",
     "styled-components": "^5.3.0",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",

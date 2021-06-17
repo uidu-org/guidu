@@ -10,7 +10,7 @@
   "types": "dist/uidu-inline-edit.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.6.0",
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@loadable/component": "^5.15.0",
     "@uidu/analytics": "^0.4.12",
     "@uidu/button": "^0.4.12",
@@ -20,7 +20,7 @@
     "@uidu/inline-dialog": "^0.4.12",
     "@uidu/theme": "^0.5.13",
     "react-loadable": "^5.5.0",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@atlaskit/tag": "^11.1.0",

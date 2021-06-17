@@ -11,7 +11,7 @@
   "types": "dist/uidu-renderer.cjs.d.ts",
   "dependencies": {
     "@atlaskit/icon": "^21.6.0",
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@loadable/component": "^5.15.0",
     "@uidu/adf-schema": "^0.4.3",
     "@uidu/adf-utils": "^0.6.12",
@@ -28,10 +28,10 @@
     "@uidu/task-decision": "^0.3.12",
     "@uidu/theme": "^0.5.13",
     "@uidu/tooltip": "^0.4.12",
-    "prosemirror-model": "^1.14.1",
+    "prosemirror-model": "^1.14.2",
     "raf-schd": "^4.0.3",
     "react-intl": "^5.20.2",
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.0",
     "url-parse": "^1.5.1"
   },
   "devDependencies": {

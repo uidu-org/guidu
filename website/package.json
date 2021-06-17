@@ -46,7 +46,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "extract-react-types-loader": "^0.3.17",
     "lodash.debounce": "^4.0.8",
-    "netlify-cli": "^3.37.6",
+    "netlify-cli": "^3.37.37",
     "node-fetch": "^2.6.1",
     "prismjs": "^1.23.0",
     "query-string": "^7.0.0",
@@ -67,7 +67,7 @@
     "sentence-case": "^3.0.4",
     "snake-case": "^3.0.4",
     "styled-components": "^5.3.0",
-    "tslib": "^2.2.0",
+    "tslib": "^2.3.0",
     "tti-polyfill": "^0.2.2",
     "uuid": "^8.3.2"
   },

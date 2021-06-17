@@ -9,12 +9,12 @@
   "main": "dist/uidu-avatar-group.cjs.js",
   "module": "dist/uidu-avatar-group.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/avatar": "^0.6.13",
     "@uidu/dropdown-menu": "^0.5.3",
     "@uidu/theme": "^0.5.13",
     "@uidu/tooltip": "^0.4.12",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.12",

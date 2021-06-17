@@ -11,7 +11,7 @@
   "types": "dist/uidu-onboarding.cjs.d.ts",
   "dependencies": {
     "@atlaskit/progress-indicator": "^9.0.4",
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/analytics": "^0.4.12",
     "@uidu/button": "^0.4.12",
     "@uidu/modal-dialog": "^0.4.14",
@@ -25,7 +25,7 @@
     "react-scrolllock": "^5.0.1",
     "react-transition-group": "^4.4.2",
     "scroll-into-view-if-needed": "^2.2.28",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.12",

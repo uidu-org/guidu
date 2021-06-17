@@ -65,9 +65,10 @@ function ChatWindow({
   //   );
   // }
 
-  const groupedByDay = useMemo(() => groupByDay(sortByDay(messages)), [
-    messages,
-  ]);
+  const groupedByDay = useMemo(
+    () => groupByDay(sortByDay(messages)),
+    [messages],
+  );
 
   return (
     <Media query={{ maxWidth: 768 }}>

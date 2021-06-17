@@ -9,12 +9,12 @@
   "main": "dist/uidu-breadcrumbs.cjs.js",
   "types": "dist/uidu-breadcrumbs.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.0",
+    "@babel/runtime": "^7.14.6",
     "@uidu/analytics": "^0.4.12",
     "@uidu/button": "^0.4.12",
     "@uidu/theme": "^0.5.13",
     "@uidu/tooltip": "^0.4.12",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@atlaskit/logo": "^13.4.1",
