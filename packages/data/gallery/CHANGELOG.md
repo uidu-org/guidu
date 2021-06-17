@@ -1,5 +1,13 @@
 # @uidu/gallery
 
+## 0.2.17
+
+### Patch Changes
+
+- 922a9aa6e: Data-controls are now configurable for tables, fix some gallery layout issues about spacing and margins"
+- Updated dependencies [922a9aa6e]
+  - @uidu/data-fields@0.5.17
+
 ## 0.2.16
 
 ### Patch Changes

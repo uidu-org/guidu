@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-views",
-  "version": "0.5.20",
+  "version": "0.5.21",
   "description": "Data view declarations and custom forms",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-views",
   "license": "MIT",
