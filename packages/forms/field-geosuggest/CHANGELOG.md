@@ -1,5 +1,14 @@
 # @uidu/field-geosuggest
 
+## 0.3.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/spinner@0.4.13
+  - @uidu/field-base@0.6.4
+
 ## 0.3.14
 
 ### Patch Changes

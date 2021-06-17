@@ -1,5 +1,43 @@
 # @uidu/editor-core
 
+## 0.8.5
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/avatar@0.6.14
+  - @uidu/avatar-group@2.5.16
+  - @uidu/button@0.4.13
+  - @uidu/droplist@0.4.14
+  - @uidu/menu@0.4.15
+  - @uidu/modal-dialog@0.4.15
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+  - @uidu/adf-schema@0.4.4
+  - @uidu/adf-utils@0.6.13
+  - @uidu/editor-common@0.4.18
+  - @uidu/editor-json-transformer@0.3.14
+  - @uidu/editor-markdown-transformer@0.4.4
+  - @uidu/analytics-gas-types@0.2.10
+  - @uidu/analytics-listeners@0.3.12
+  - @uidu/analytics-namespaced-context@0.3.12
+  - @uidu/date@0.3.13
+  - @uidu/emoji@0.4.5
+  - @uidu/mentions@0.2.17
+  - @uidu/profilecard@0.1.16
+  - @uidu/status@0.3.18
+  - @uidu/task-decision@0.3.13
+  - @uidu/field-date@0.4.4
+  - @uidu/form@0.4.18
+  - @uidu/select@0.6.18
+  - @uidu/media-card@0.4.15
+  - @uidu/media-core@0.4.12
+  - @uidu/media-filmstrip@0.3.13
+  - @uidu/media-picker@0.4.12
+
 ## 0.8.4
 
 ### Patch Changes

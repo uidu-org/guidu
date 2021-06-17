@@ -1,5 +1,22 @@
 # @uidu/data-manager
 
+## 0.12.3
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/spinner@0.4.13
+  - @uidu/board@0.3.14
+  - @uidu/calendar@0.2.16
+  - @uidu/data-controls@0.7.15
+  - @uidu/data-fields@0.5.18
+  - @uidu/data-views@0.5.22
+  - @uidu/gallery@0.2.18
+  - @uidu/list@0.2.18
+  - @uidu/table@0.8.3
+  - @uidu/shell@1.2.19
+
 ## 0.12.2
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/page-header
 
+## 0.2.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/theme@0.5.14
+  - @uidu/shell@1.2.19
+
 ## 0.2.12
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @uidu/dashlets-form
 
+## 0.4.8
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/accordion@0.4.13
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/dashlets@0.11.4
+  - @uidu/field-downshift@0.5.17
+  - @uidu/field-toggle@0.4.18
+  - @uidu/form@0.4.18
+  - @uidu/select@0.6.18
+  - @uidu/shell@1.2.19
+
 ## 0.4.7
 
 ### Patch Changes

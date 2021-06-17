@@ -1,5 +1,14 @@
 # @uidu/editor-markdown-transformer
 
+## 0.4.4
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/adf-schema@0.4.4
+  - @uidu/editor-common@0.4.18
+
 ## 0.4.3
 
 ### Patch Changes

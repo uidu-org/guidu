@@ -1,5 +1,20 @@
 # @uidu/editor-common
 
+## 0.4.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/adf-schema@0.4.4
+  - @uidu/adf-utils@0.6.13
+  - @uidu/analytics-namespaced-context@0.3.12
+  - @uidu/emoji@0.4.5
+  - @uidu/mentions@0.2.17
+  - @uidu/profilecard@0.1.16
+
 ## 0.4.17
 
 ### Patch Changes

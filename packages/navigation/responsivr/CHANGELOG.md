@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.3.12
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.3.11
 
 ### Patch Changes

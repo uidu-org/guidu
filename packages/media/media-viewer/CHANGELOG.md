@@ -1,5 +1,18 @@
 # @uidu/media-viewer
 
+## 0.3.16
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/avatar@0.6.14
+  - @uidu/button@0.4.13
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/media-core@0.4.12
+  - @uidu/shell@1.2.19
+
 ## 0.3.15
 
 ### Patch Changes

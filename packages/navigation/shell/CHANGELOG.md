@@ -1,5 +1,13 @@
 # @uidu/shell
 
+## 1.2.19
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/spinner@0.4.13
+
 ## 1.2.18
 
 ### Patch Changes

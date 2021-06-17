@@ -1,5 +1,11 @@
 # @uidu/adf-schema
 
+## 0.4.4
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.4.3
 
 ### Patch Changes

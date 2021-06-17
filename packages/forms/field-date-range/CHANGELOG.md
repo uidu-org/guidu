@@ -1,5 +1,15 @@
 # @uidu/field-date-range
 
+## 0.3.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/field-base@0.6.4
+  - @uidu/field-date@0.4.4
+
 ## 0.3.14
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @uidu/message-renderer
 
+## 0.3.14
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/theme@0.5.14
+
 ## 0.3.13
 
 ### Patch Changes

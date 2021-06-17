@@ -1,5 +1,13 @@
 # @uidu/editor-json-transformer
 
+## 0.3.14
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/adf-schema@0.4.4
+
 ## 0.3.13
 
 ### Patch Changes

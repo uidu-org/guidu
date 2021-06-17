@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.4
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/form@0.4.18
+
 ## 0.6.3
 
 ### Patch Changes

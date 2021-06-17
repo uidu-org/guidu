@@ -1,5 +1,22 @@
 # @uidu/data-fields
 
+## 0.5.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/menu@0.4.15
+  - @uidu/field-color-picker@0.4.4
+  - @uidu/field-date@0.4.4
+  - @uidu/field-downshift@0.5.17
+  - @uidu/field-number@0.4.17
+  - @uidu/field-text@0.5.4
+  - @uidu/field-time@0.4.17
+  - @uidu/field-toggle@0.4.18
+  - @uidu/form@0.4.18
+  - @uidu/select@0.6.18
+
 ## 0.5.17
 
 ### Patch Changes

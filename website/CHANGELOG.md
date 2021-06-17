@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.3.6
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/docs@0.3.13
+  - @uidu/badge@0.4.13
+  - @uidu/button@0.4.13
+  - @uidu/code@0.4.13
+  - @uidu/drawer@0.5.14
+  - @uidu/lozenge@0.4.13
+  - @uidu/modal-dialog@0.4.15
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+  - @uidu/list@0.2.18
+  - @uidu/table@0.8.3
+  - @uidu/checkbox@0.4.4
+  - @uidu/field-text@0.5.4
+  - @uidu/form@0.4.18
+  - @uidu/select@0.6.18
+  - @uidu/navigation@0.7.13
+  - @uidu/shell@1.2.19
+  - @uidu/themes-uidu@0.3.24
+
 ## 0.3.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @uidu/slider
 
+## 1.6.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 1.6.12
 
 ### Patch Changes

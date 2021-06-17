@@ -1,5 +1,14 @@
 # Change Log
 
+## 0.2.4
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/fs-loader@0.1.46
+  - @uidu/nav-info-loader@0.1.47
+
 ## 0.2.3
 
 ### Patch Changes

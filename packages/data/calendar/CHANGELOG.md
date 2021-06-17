@@ -1,5 +1,14 @@
 # @uidu/calendar
 
+## 0.2.16
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/shell@1.2.19
+
 ## 0.2.15
 
 ### Patch Changes

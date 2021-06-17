@@ -1,5 +1,17 @@
 # @uidu/status
 
+## 0.3.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/lozenge@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/analytics-gas-types@0.2.10
+  - @uidu/field-text@0.5.4
+
 ## 0.3.17
 
 ### Patch Changes
