@@ -1,6 +1,6 @@
 {
   "name": "@uidu/side-navigation",
-  "version": "0.2.19",
+  "version": "0.2.20",
   "description": "Downshift React component",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/navigation/side-navigation",
   "license": "MIT",
@@ -10,12 +10,12 @@
   "types": "dist/uidu-side-navigation.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.14.6",
-    "@uidu/avatar": "^0.6.13",
-    "@uidu/dropdown-menu": "^0.5.3",
-    "@uidu/inline-dialog": "^0.4.12",
-    "@uidu/shell": "^1.2.18",
-    "@uidu/theme": "^0.5.13",
-    "@uidu/tooltip": "^0.4.12",
+    "@uidu/avatar": "^0.6.14",
+    "@uidu/dropdown-menu": "^0.5.4",
+    "@uidu/inline-dialog": "^0.4.13",
+    "@uidu/shell": "^1.2.19",
+    "@uidu/theme": "^0.5.14",
+    "@uidu/tooltip": "^0.4.13",
     "hoverintent": "^2.2.1",
     "polished": "^4.1.3",
     "react": "^17.0.2",
@@ -29,9 +29,9 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@uidu/badge": "^0.4.12",
-    "@uidu/docs": "^0.3.12",
-    "@uidu/lozenge": "^0.4.12",
+    "@uidu/badge": "^0.4.13",
+    "@uidu/docs": "^0.3.13",
+    "@uidu/lozenge": "^0.4.13",
     "react-feather": "^2.0.9"
   }
 }

@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.3.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/theme@0.5.14
+
 ## 0.3.12
 
 ### Patch Changes

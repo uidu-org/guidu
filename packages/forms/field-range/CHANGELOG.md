@@ -1,5 +1,15 @@
 # @uidu/field-range
 
+## 0.4.16
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/theme@0.5.14
+  - @uidu/field-base@0.6.4
+  - @uidu/form@0.4.18
+
 ## 0.4.15
 
 ### Patch Changes

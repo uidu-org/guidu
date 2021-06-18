@@ -1,5 +1,18 @@
 # @uidu/profilecard
 
+## 0.1.16
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/avatar@0.6.14
+  - @uidu/button@0.4.13
+  - @uidu/lozenge@0.4.13
+  - @uidu/popup@0.4.14
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+
 ## 0.1.15
 
 ### Patch Changes

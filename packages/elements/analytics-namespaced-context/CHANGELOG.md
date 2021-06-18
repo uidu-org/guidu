@@ -1,5 +1,13 @@
 # @uidu/analytics-namespaced-context
 
+## 0.3.12
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+
 ## 0.3.11
 
 ### Patch Changes

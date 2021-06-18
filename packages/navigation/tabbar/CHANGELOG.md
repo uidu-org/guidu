@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.3.12
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/shell@1.2.19
+
 ## 0.3.11
 
 ### Patch Changes

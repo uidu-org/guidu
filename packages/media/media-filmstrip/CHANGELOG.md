@@ -1,5 +1,16 @@
 # @uidu/media-filmstrip
 
+## 0.3.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/theme@0.5.14
+  - @uidu/media-card@0.4.15
+  - @uidu/media-core@0.4.12
+  - @uidu/media-viewer@0.3.16
+
 ## 0.3.12
 
 ### Patch Changes

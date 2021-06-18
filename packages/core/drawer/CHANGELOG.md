@@ -1,5 +1,17 @@
 # @uidu/drawer
 
+## 0.5.14
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/docs@0.3.13
+  - @uidu/analytics@0.4.13
+  - @uidu/blanket@0.4.13
+  - @uidu/item@0.4.14
+  - @uidu/theme@0.5.14
+
 ## 0.5.13
 
 ### Patch Changes

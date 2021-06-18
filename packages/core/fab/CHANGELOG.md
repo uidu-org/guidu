@@ -1,5 +1,11 @@
 # @uidu/fab
 
+## 0.4.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.4.12
 
 ### Patch Changes

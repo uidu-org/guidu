@@ -1,5 +1,17 @@
 # @uidu/field
 
+## 0.3.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/checkbox@0.4.4
+  - @uidu/field-number@0.4.17
+  - @uidu/field-text@0.5.4
+  - @uidu/field-textarea@0.3.15
+  - @uidu/select@0.6.18
+
 ## 0.3.14
 
 ### Patch Changes

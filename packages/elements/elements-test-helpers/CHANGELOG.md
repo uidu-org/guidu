@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.3.14
 
 ### Patch Changes

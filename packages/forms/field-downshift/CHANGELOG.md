@@ -1,5 +1,14 @@
 # @uidu/field-downshift
 
+## 0.5.17
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/field-base@0.6.4
+  - @uidu/field-text@0.5.4
+
 ## 0.5.16
 
 ### Patch Changes

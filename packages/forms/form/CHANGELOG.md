@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.4.17
 
 ### Patch Changes

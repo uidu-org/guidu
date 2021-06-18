@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.46
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.1.45
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # Change Log
 
+## 0.3.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/button@0.4.13
+  - @uidu/code@0.4.13
+  - @uidu/section-message@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+
 ## 0.3.12
 
 ### Patch Changes

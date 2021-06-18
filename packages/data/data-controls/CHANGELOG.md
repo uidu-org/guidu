@@ -1,5 +1,26 @@
 # @uidu/data-controls
 
+## 0.7.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/drawer@0.5.14
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/inline-dialog@0.4.13
+  - @uidu/menu@0.4.15
+  - @uidu/popup@0.4.14
+  - @uidu/spinner@0.4.13
+  - @uidu/tooltip@0.4.13
+  - @uidu/data-fields@0.5.18
+  - @uidu/data-views@0.5.22
+  - @uidu/checkbox@0.4.4
+  - @uidu/field-text@0.5.4
+  - @uidu/form@0.4.18
+  - @uidu/select@0.6.18
+  - @uidu/shell@1.2.19
+
 ## 0.7.14
 
 ### Patch Changes

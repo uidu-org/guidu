@@ -1,5 +1,18 @@
 # @uidu/modal-dialog
 
+## 0.4.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/blanket@0.4.13
+  - @uidu/button@0.4.13
+  - @uidu/portal@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/form@0.4.18
+
 ## 0.4.14
 
 ### Patch Changes

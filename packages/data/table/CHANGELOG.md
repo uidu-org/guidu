@@ -1,5 +1,17 @@
 # @uidu/table
 
+## 0.8.3
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/menu@0.4.15
+  - @uidu/popup@0.4.14
+  - @uidu/data-fields@0.5.18
+  - @uidu/checkbox@0.4.4
+
 ## 0.8.2
 
 ### Patch Changes

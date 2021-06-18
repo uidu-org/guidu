@@ -1,5 +1,13 @@
 # @uidu/list
 
+## 0.2.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/data-fields@0.5.18
+
 ## 0.2.17
 
 ### Patch Changes

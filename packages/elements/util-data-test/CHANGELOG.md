@@ -1,5 +1,16 @@
 # @uidu/util-data-test
 
+## 0.3.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/emoji@0.4.5
+  - @uidu/mentions@0.2.17
+  - @uidu/task-decision@0.3.13
+
 ## 0.3.12
 
 ### Patch Changes

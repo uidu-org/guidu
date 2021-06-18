@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.12.2
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/dashboard-controls@0.4.18
+  - @uidu/dashlets@0.11.4
+
 ## 0.12.1
 
 ### Patch Changes
