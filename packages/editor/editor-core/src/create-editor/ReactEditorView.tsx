@@ -372,10 +372,8 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
     );
     const schema = createSchema(this.config);
 
-    const {
-      contentTransformerProvider,
-      defaultValue,
-    } = options.props.editorProps;
+    const { contentTransformerProvider, defaultValue } =
+      options.props.editorProps;
 
     const plugins = createPMPlugins({
       schema,
@@ -398,15 +396,13 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
 
     let doc;
     if (options.replaceDoc) {
-      doc =
-        this.contentTransformer && typeof defaultValue === 'string'
-          ? this.contentTransformer.parse(defaultValue)
-          : processRawValue(
-              schema,
-              defaultValue,
-              options.props.providerFactory,
-              options.props.editorProps.sanitizePrivateContent,
-            );
+      doc = processRawValue(
+        schema,
+        defaultValue,
+        options.props.providerFactory,
+        options.props.editorProps.sanitizePrivateContent,
+        this.contentTransformer,
+      );
     }
     let selection: Selection | undefined;
     if (doc) {
@@ -497,9 +493,8 @@ class ReactEditorView<T = {}> extends React.Component<EditorViewProps & T> {
         actionSubject: ACTION_SUBJECT.EDITOR,
         eventType: EVENT_TYPE.OPERATIONAL,
         attributes: {
-          analyticsEventPayloads: getAnalyticsEventsFromTransaction(
-            transaction,
-          ),
+          analyticsEventPayloads:
+            getAnalyticsEventsFromTransaction(transaction),
           invalidNodes,
         },
       });

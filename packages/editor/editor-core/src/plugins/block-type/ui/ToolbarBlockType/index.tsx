@@ -154,7 +154,6 @@ export default function ToolbarBlockType({
 
   if (!isDisabled && !blockTypesDisabled) {
     const items = createItems();
-    console.log(toolbarButtonFactory(false));
     return (
       <MenuWrapper>
         <DropdownMenu

@@ -127,10 +127,15 @@ class Task extends ReactNodeView<Props> {
     return this.isContentEmpty(this.node) && !!nextNode.content.childCount;
   }
 
-  update(node: PMNode, decorations: Decoration[]) {
+  update(
+    node: PMNode,
+    decorations: Decoration[],
+    innerDecorations: DecorationSource,
+  ) {
     return super.update(
       node,
       decorations,
+      innerDecorations,
       (currentNode: PMNode, newNode: PMNode) =>
         // Toggle the placeholder based on whether user input exists
         !this.isContentEmpty(newNode) &&

@@ -6,7 +6,7 @@ export function getCSSUnitValue(value: number | string): string {
 }
 
 export const Overlay = styled.div<{ kind: string }>`
-  background-color: rgba(10, 10, 10, .2);
+  background-color: rgba(10, 10, 10, 0.2);
   border-radius: 0.1rem;
   position: absolute;
   top: 0;
@@ -93,6 +93,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
       img {
         border-radius: 0.25rem;
+        margin: 0;
       }
     }
   }

@@ -15,7 +15,8 @@ export type ForwardRef = (node: HTMLElement | null) => void;
 export type shouldUpdate = (nextNode: PMNode) => boolean;
 
 export default class ReactNodeView<P = ReactComponentProps>
-  implements NodeView {
+  implements NodeView
+{
   private domRef?: HTMLElement;
   private contentDOMWrapper?: Node;
   private reactComponent?: React.ComponentType<any>;
@@ -132,12 +133,13 @@ export default class ReactNodeView<P = ReactComponentProps>
     ) : null;
   }
 
+  // @see https://github.com/ProseMirror/prosemirror-view/blob/670cf3d8c98db82e24feb851d01d22c19fb30bb3/src/viewdesc.js
   update(
     node: PMNode,
-    _decorations: Array<Decoration>,
+    _decorations: Decoration[],
+    _innerDecorations: DecorationSource,
     validUpdate: (currentNode: PMNode, newNode: PMNode) => boolean = () => true,
   ) {
-    // @see https://github.com/ProseMirror/prosemirror/issues/648
     const isValidUpdate =
       this.node.type === node.type && validUpdate(this.node, node);
 
@@ -240,7 +242,7 @@ export default class ReactNodeView<P = ReactComponentProps>
  * }```
  */
 export class SelectionBasedNodeView<
-  P = ReactComponentProps
+  P = ReactComponentProps,
 > extends ReactNodeView<P> {
   private oldSelection: Selection;
   private selectionChangeState: ReactNodeViewState;

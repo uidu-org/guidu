@@ -363,7 +363,7 @@ export default class Editor extends PureComponent<EditorProps> {
               <PortalRenderer portalProviderAPI={portalProviderAPI} />
             </>
           )}
-        ></PortalProvider>
+        />
       </EditorContext>
     );
   }

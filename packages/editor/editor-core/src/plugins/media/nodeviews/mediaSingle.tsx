@@ -363,14 +363,14 @@ class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProp
   update(
     node: PMNode,
     decorations: Decoration[],
+    innerDecorations: DecorationSource,
     isValidUpdate?: (currentNode: PMNode, newNode: PMNode) => boolean,
   ) {
-    console.log('isValidUpdate', isValidUpdate);
     if (!isValidUpdate) {
       isValidUpdate = (currentNode, newNode) =>
         this.getNodeMediaId(currentNode) === this.getNodeMediaId(newNode);
     }
-    return super.update(node, decorations, isValidUpdate);
+    return super.update(node, decorations, innerDecorations, isValidUpdate);
   }
 
   render() {

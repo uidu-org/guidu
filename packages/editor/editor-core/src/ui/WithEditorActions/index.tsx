@@ -1,5 +1,5 @@
-import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import React from 'react';
 import EditorActions from '../../actions';
 
 export interface WithEditorActionsProps {

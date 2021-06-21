@@ -42,20 +42,23 @@ class Decision extends ReactNodeView {
     return this.isContentEmpty(this.node) && !!nextNode.content.childCount;
   }
 
-  update(node: PMNode, decorations: Decoration[]) {
+  update(
+    node: PMNode,
+    decorations: Decoration[],
+    innerDecorations: DecorationSource,
+  ) {
     return super.update(
       node,
       decorations,
+      innerDecorations,
       // Toggle the placeholder based on whether user input exists.
       (_currentNode, _newNode) => !this.isContentEmpty(_newNode),
     );
   }
 }
 
-export const decisionItemNodeView = (portalProviderAPI: PortalProviderAPI) => (
-  node: any,
-  view: any,
-  getPos: getPosHandler,
-): NodeView => {
-  return new Decision(node, view, getPos, portalProviderAPI, {}).init();
-};
+export const decisionItemNodeView =
+  (portalProviderAPI: PortalProviderAPI) =>
+  (node: any, view: any, getPos: getPosHandler): NodeView => {
+    return new Decision(node, view, getPos, portalProviderAPI, {}).init();
+  };

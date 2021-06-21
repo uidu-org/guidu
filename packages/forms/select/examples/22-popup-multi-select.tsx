@@ -39,7 +39,8 @@ class MultiPopupSelectExample extends Component<any, State> {
     placeholder: 'Choose value...',
     controlShouldRenderValue: false,
   };
-  componentWillMount() {
+
+  UNSAFE_componentWillMount() {
     this.setState((state) => ({
       valuesString: state.values.map((v) => v.label).join(', '),
     }));
@@ -58,12 +59,8 @@ class MultiPopupSelectExample extends Component<any, State> {
   };
 
   render() {
-    const {
-      placeholder,
-      valuesString,
-      values,
-      controlShouldRenderValue,
-    } = this.state;
+    const { placeholder, valuesString, values, controlShouldRenderValue } =
+      this.state;
     return (
       <Form {...formDefaultProps}>
         <Checkbox

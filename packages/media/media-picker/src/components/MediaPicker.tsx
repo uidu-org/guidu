@@ -23,7 +23,6 @@ export default class MediaPicker extends PureComponent<any> {
   constructor(props) {
     super(props);
     const { onComplete, uploadOptions } = props;
-    console.log(props);
     this.uppy = Uppy({
       debug: true,
       allowMultipleUploads: true,
@@ -59,7 +58,6 @@ export default class MediaPicker extends PureComponent<any> {
   }
 
   render() {
-    console.log(this.props);
     return (
       <DashboardModal
         uppy={this.uppy}
@@ -72,7 +70,7 @@ export default class MediaPicker extends PureComponent<any> {
         //   'ThumbnailGenerator',
         // ]}
         proudlyDisplayPoweredByUppy={false}
-        closeAfterFinish
+        // closeAfterFinish
         closeModalOnClickOutside
         {...this.props}
       />

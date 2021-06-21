@@ -345,6 +345,18 @@ export const document = {
   type: 'doc',
   content: [
     {
+      type: 'paragraph',
+      content: [
+        {
+          text: 'Ciao come stai?',
+          type: 'text',
+        },
+        {
+          type: 'hardBreak',
+        },
+      ],
+    },
+    {
       type: 'mediaSingle',
       attrs: {
         layout: 'center',
@@ -353,18 +365,18 @@ export const document = {
         {
           type: 'media',
           attrs: {
-            id: 'ee0fb2a473e42e83f3cfcd6fe94d9eaa.png',
+            id: '14b142104182a9961dcfbcb767f79d99.png',
             file: {
-              id: 'ee0fb2a473e42e83f3cfcd6fe94d9eaa.png',
-              url: 'https://uidu.local:8443/uploads/cache/ee0fb2a473e42e83f3cfcd6fe94d9eaa.png',
+              id: '14b142104182a9961dcfbcb767f79d99.png',
+              url: 'https://uidu.local:8443/uploads/cache/14b142104182a9961dcfbcb767f79d99.png',
               type: 'image',
-              width: 1773,
-              height: 656,
+              width: 2560,
+              height: 1354,
               metadata: {
-                size: 91091,
-                width: 1773,
-                height: 656,
-                filename: 'hero-fb.png',
+                size: 371929,
+                width: 2560,
+                height: 1354,
+                filename: 'cover-default.png',
                 mime_type: 'image/png',
               },
             },
@@ -373,9 +385,6 @@ export const document = {
         },
       ],
     },
-    {
-      type: 'paragraph',
-      content: [],
-    },
   ],
+  version: 1,
 };
