@@ -1,5 +1,11 @@
 # @uidu/shell
 
+## 1.2.20
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 1.2.19
 
 ### Patch Changes

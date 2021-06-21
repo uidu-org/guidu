@@ -1,5 +1,19 @@
 # @uidu/editor-core
 
+## 0.8.6
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/editor-common@0.4.19
+  - @uidu/emoji@0.4.6
+  - @uidu/mentions@0.2.18
+  - @uidu/profilecard@0.1.17
+  - @uidu/status@0.3.19
+  - @uidu/select@0.6.19
+  - @uidu/media-card@0.4.16
+
 ## 0.8.5
 
 ### Patch Changes

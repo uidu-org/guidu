@@ -1,5 +1,11 @@
 # @uidu/popup
 
+## 0.4.15
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.4.14
 
 ### Patch Changes

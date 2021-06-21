@@ -1,5 +1,13 @@
 # @uidu/profilecard
 
+## 0.1.17
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/popup@0.4.15
+
 ## 0.1.16
 
 ### Patch Changes

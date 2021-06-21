@@ -1,5 +1,11 @@
 # @uidu/elements-test-helpers
 
+## 0.3.16
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.3.15
 
 ### Patch Changes

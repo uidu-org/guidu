@@ -1,5 +1,17 @@
 # @uidu/data-controls
 
+## 0.7.16
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/popup@0.4.15
+  - @uidu/data-fields@0.5.19
+  - @uidu/data-views@0.5.23
+  - @uidu/select@0.6.19
+  - @uidu/shell@1.2.20
+
 ## 0.7.15
 
 ### Patch Changes

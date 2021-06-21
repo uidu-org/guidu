@@ -1,5 +1,13 @@
 # @uidu/data-fields
 
+## 0.5.19
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/select@0.6.19
+
 ## 0.5.18
 
 ### Patch Changes

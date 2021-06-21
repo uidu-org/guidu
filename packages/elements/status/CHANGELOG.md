@@ -1,5 +1,11 @@
 # @uidu/status
 
+## 0.3.19
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.3.18
 
 ### Patch Changes
