@@ -1,5 +1,14 @@
 # @uidu/renderer
 
+## 0.4.7
+
+### Patch Changes
+
+- c410211ea: Big fixes to edit-core
+- Updated dependencies [c410211ea]
+  - @uidu/adf-utils@0.6.14
+  - @uidu/media-card@0.4.17
+
 ## 0.4.6
 
 ### Patch Changes

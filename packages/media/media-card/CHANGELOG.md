@@ -1,5 +1,11 @@
 # @uidu/media-card
 
+## 0.4.17
+
+### Patch Changes
+
+- c410211ea: Big fixes to edit-core
+
 ## 0.4.16
 
 ### Patch Changes

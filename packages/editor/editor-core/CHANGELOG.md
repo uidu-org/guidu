@@ -1,5 +1,16 @@
 # @uidu/editor-core
 
+## 0.8.7
+
+### Patch Changes
+
+- c410211ea: Big fixes to edit-core
+- Updated dependencies [c410211ea]
+  - @uidu/adf-utils@0.6.14
+  - @uidu/select@0.6.20
+  - @uidu/media-card@0.4.17
+  - @uidu/media-picker@0.4.13
+
 ## 0.8.6
 
 ### Patch Changes
