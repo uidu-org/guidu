@@ -322,9 +322,7 @@ export default class MediaSingleNode extends Component<
   };
 }
 
-class MediaSingleNodeView extends SelectionBasedNodeView<
-  MediaSingleNodeViewProps
-> {
+class MediaSingleNodeView extends SelectionBasedNodeView<MediaSingleNodeViewProps> {
   lastOffsetLeft = 0;
   forceViewUpdate = false;
 
@@ -367,6 +365,7 @@ class MediaSingleNodeView extends SelectionBasedNodeView<
     decorations: Decoration[],
     isValidUpdate?: (currentNode: PMNode, newNode: PMNode) => boolean,
   ) {
+    console.log('isValidUpdate', isValidUpdate);
     if (!isValidUpdate) {
       isValidUpdate = (currentNode, newNode) =>
         this.getNodeMediaId(currentNode) === this.getNodeMediaId(newNode);
@@ -447,21 +446,23 @@ class MediaSingleNodeView extends SelectionBasedNodeView<
   }
 }
 
-export const ReactMediaSingleNode = (
-  portalProviderAPI: PortalProviderAPI,
-  eventDispatcher: EventDispatcher,
-  providerFactory: ProviderFactory,
-  mediaOptions: MediaOptions = {},
-  fullWidthMode?: boolean,
-  dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
-  isCopyPasteEnabled?: boolean,
-) => (node: PMNode, view: EditorView, getPos: getPosHandler) => {
-  return new MediaSingleNodeView(node, view, getPos, portalProviderAPI, {
-    eventDispatcher,
-    fullWidthMode,
-    providerFactory,
-    mediaOptions,
-    dispatchAnalyticsEvent,
-    isCopyPasteEnabled,
-  }).init();
-};
+export const ReactMediaSingleNode =
+  (
+    portalProviderAPI: PortalProviderAPI,
+    eventDispatcher: EventDispatcher,
+    providerFactory: ProviderFactory,
+    mediaOptions: MediaOptions = {},
+    fullWidthMode?: boolean,
+    dispatchAnalyticsEvent?: DispatchAnalyticsEvent,
+    isCopyPasteEnabled?: boolean,
+  ) =>
+  (node: PMNode, view: EditorView, getPos: getPosHandler) => {
+    return new MediaSingleNodeView(node, view, getPos, portalProviderAPI, {
+      eventDispatcher,
+      fullWidthMode,
+      providerFactory,
+      mediaOptions,
+      dispatchAnalyticsEvent,
+      isCopyPasteEnabled,
+    }).init();
+  };

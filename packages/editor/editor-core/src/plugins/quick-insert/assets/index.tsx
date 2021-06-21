@@ -30,10 +30,28 @@ type HeadingProps = IconProps & {
   level: HeadingLevels;
 };
 
-const Icon = loadable((props) => import(`./heading${props.level}`));
+const Heading1 = loadable(() => import(`./heading1`));
+const Heading2 = loadable(() => import(`./heading2`));
+const Heading3 = loadable(() => import(`./heading3`));
+const Heading4 = loadable(() => import(`./heading4`));
+const Heading5 = loadable(() => import(`./heading5`));
+const Heading6 = loadable(() => import(`./heading6`));
 
 export const IconHeading = ({ level, ...props }: HeadingProps) => {
-  return <Icon {...props} level={level} />;
+  switch (level) {
+    case 1:
+      return <Heading1 {...props} />;
+    case 2:
+      return <Heading2 {...props} />;
+    case 3:
+      return <Heading3 {...props} />;
+    case 4:
+      return <Heading4 {...props} />;
+    case 5:
+      return <Heading5 {...props} />;
+    default:
+      return <Heading6 {...props} />;
+  }
 };
 
 export const IconFeedback = loadable(() => import('./feedback'));

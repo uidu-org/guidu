@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/runtime": "^7.14.6",
     "@stripe/react-stripe-js": "^1.4.1",
-    "@stripe/stripe-js": "^1.15.0",
+    "@stripe/stripe-js": "^1.15.1",
     "@uidu/field-base": "^0.6.3",
     "@uidu/form": "^0.4.17",
     "@uidu/slider": "^1.6.12",
@@ -20,7 +20,7 @@
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.2",
+    "react-intl": "^5.20.3",
     "styled-components": "^5.3.0",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2"

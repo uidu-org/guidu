@@ -20,7 +20,7 @@
     "overlayscrollbars-react": "^0.2.2",
     "react": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.2",
+    "react-intl": "^5.20.3",
     "styled-components": "^5.3.0",
     "tslib": "^2.3.0"
   },

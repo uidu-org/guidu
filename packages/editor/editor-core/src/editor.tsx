@@ -7,7 +7,7 @@ import {
 } from '@uidu/editor-common';
 import { EditorView } from 'prosemirror-view';
 import React, { PureComponent } from 'react';
-import { IntlContext, IntlProvider, IntlShape } from 'react-intl';
+import { IntlContext, IntlShape } from 'react-intl';
 import styled from 'styled-components';
 import EditorActions from './actions';
 import { ReactEditorView } from './create-editor';
@@ -24,7 +24,6 @@ import {
   combineQuickInsertProviders,
   extensionProviderToQuickInsertProvider,
 } from './utils/extensions';
-import { nextMajorVersion } from './version-wrapper';
 
 export type {
   AllowedBlockTypes,
@@ -68,7 +67,7 @@ const ContentArea = styled(ContentStyles)`
   /** Hack for Bitbucket to ensure entire editorView gets drop event; see ED-3294 **/
   /** Hack for tables controlls. Otherwise marging collapse and controlls are misplaced. **/
   .ProseMirror {
-    margin: 12px ${CommentEditorMargin}px ${CommentEditorMargin}px;
+    margin: -1rem 0rem -1rem;
   }
 
   .gridParent {
@@ -100,7 +99,6 @@ export default class Editor extends PureComponent<EditorProps> {
   constructor(props: EditorProps, context: Context) {
     super(props);
     this.providerFactory = new ProviderFactory();
-    this.deprecationWarnings(props);
     this.onEditorCreated = this.onEditorCreated.bind(this);
     this.onEditorDestroyed = this.onEditorDestroyed.bind(this);
     this.editorActions = (context || {}).editorActions || new EditorActions();
@@ -136,66 +134,6 @@ export default class Editor extends PureComponent<EditorProps> {
     //    }
     //  }
   };
-
-  private deprecationWarnings(props: EditorProps) {
-    const nextVersion = nextMajorVersion();
-    const deprecatedProperties = {
-      allowTasksAndDecisions: {
-        message:
-          'To allow tasks and decisions use taskDecisionProvider – <Editor taskDecisionProvider={{ provider }} />',
-        type: 'removed',
-      },
-
-      allowConfluenceInlineComment: {
-        message:
-          'To integrate inline comments use experimental annotationProvider – <Editor annotationProvider={{ provider }} />',
-        type: 'removed',
-      },
-
-      allowUnsupportedContent: {
-        message: 'Deprecated. Defaults to true.',
-        type: 'removed',
-      },
-    };
-
-    (Object.keys(deprecatedProperties) as Array<
-      keyof typeof deprecatedProperties
-    >).forEach((property) => {
-      if (props.hasOwnProperty(property)) {
-        const meta: { type?: string; message?: string } =
-          deprecatedProperties[property];
-        const type = meta.type || 'enabled by default';
-
-        // eslint-disable-next-line no-console
-        console.warn(
-          `${property} property is deprecated. ${
-            meta.message || ''
-          } [Will be ${type} in editor-core@${nextVersion}]`,
-        );
-      }
-    });
-
-    if (
-      props.hasOwnProperty('quickInsert') &&
-      typeof props.quickInsert === 'boolean'
-    ) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `quickInsert property is deprecated. [Will be enabled by default in editor-core@${nextVersion}]`,
-      );
-    }
-
-    if (
-      props.hasOwnProperty('allowTables') &&
-      typeof props.allowTables !== 'boolean' &&
-      (!props.allowTables || !props.allowTables.advanced)
-    ) {
-      // eslint-disable-next-line no-console
-      console.warn(
-        `Advanced table options are deprecated (except isHeaderRowRequired) to continue using advanced table features use - <Editor allowTables={{ advanced: true }} /> [Will be changed in editor-core@${nextVersion}]`,
-      );
-    }
-  }
 
   onEditorDestroyed(_instance: {
     view: EditorView;
@@ -374,61 +312,59 @@ export default class Editor extends PureComponent<EditorProps> {
     const { children, ...otherProps } = this.props;
 
     return (
-      <IntlProvider locale="en">
-        <EditorContext editorActions={this.editorActions}>
-          <PortalProvider
-            render={(portalProviderAPI) => (
-              <>
-                <ReactEditorView
-                  editorProps={{
-                    appearance: 'full-page',
-                    allowTextAlignment: true,
-                    allowTextColor: true,
-                    allowTables: true,
-                    quickInsert: true,
-                    allowLayouts: true,
-                    allowIndentation: true,
-                    ...otherProps,
-                  }}
-                  // createAnalyticsEvent={createAnalyticsEvent}
-                  portalProviderAPI={portalProviderAPI}
-                  providerFactory={this.providerFactory}
-                  onEditorCreated={this.onEditorCreated}
-                  onEditorDestroyed={this.onEditorDestroyed}
-                  disabled={this.props.disabled}
-                  render={({
-                    editor,
-                    view,
-                    eventDispatcher,
-                    config,
-                    dispatchAnalyticsEvent,
-                  }) =>
-                    children({
-                      renderToolbar: (props) =>
-                        this.renderToolbar({
-                          view,
-                          config,
-                          eventDispatcher,
-                          ...props,
-                        }),
-                      renderEditor: (props) =>
-                        this.renderEditor({
-                          editor,
-                          view,
-                          eventDispatcher,
-                          dispatchAnalyticsEvent,
-                          config,
-                          ...props,
-                        }),
-                    })
-                  }
-                />
-                <PortalRenderer portalProviderAPI={portalProviderAPI} />
-              </>
-            )}
-          ></PortalProvider>
-        </EditorContext>
-      </IntlProvider>
+      <EditorContext editorActions={this.editorActions}>
+        <PortalProvider
+          render={(portalProviderAPI) => (
+            <>
+              <ReactEditorView
+                editorProps={{
+                  appearance: 'full-page',
+                  allowTextAlignment: true,
+                  allowTextColor: true,
+                  allowTables: true,
+                  quickInsert: true,
+                  allowLayouts: true,
+                  allowIndentation: true,
+                  ...otherProps,
+                }}
+                // createAnalyticsEvent={createAnalyticsEvent}
+                portalProviderAPI={portalProviderAPI}
+                providerFactory={this.providerFactory}
+                onEditorCreated={this.onEditorCreated}
+                onEditorDestroyed={this.onEditorDestroyed}
+                disabled={this.props.disabled}
+                render={({
+                  editor,
+                  view,
+                  eventDispatcher,
+                  config,
+                  dispatchAnalyticsEvent,
+                }) =>
+                  children({
+                    renderToolbar: (props) =>
+                      this.renderToolbar({
+                        view,
+                        config,
+                        eventDispatcher,
+                        ...props,
+                      }),
+                    renderEditor: (props) =>
+                      this.renderEditor({
+                        editor,
+                        view,
+                        eventDispatcher,
+                        dispatchAnalyticsEvent,
+                        config,
+                        ...props,
+                      }),
+                  })
+                }
+              />
+              <PortalRenderer portalProviderAPI={portalProviderAPI} />
+            </>
+          )}
+        ></PortalProvider>
+      </EditorContext>
     );
   }
 }
