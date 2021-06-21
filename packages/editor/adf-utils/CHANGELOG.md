@@ -1,5 +1,11 @@
 # @uidu/adf-utils
 
+## 0.6.14
+
+### Patch Changes
+
+- c410211ea: Big fixes to edit-core
+
 ## 0.6.13
 
 ### Patch Changes

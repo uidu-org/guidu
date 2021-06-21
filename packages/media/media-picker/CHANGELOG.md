@@ -1,5 +1,11 @@
 # @uidu/media-picker
 
+## 0.4.13
+
+### Patch Changes
+
+- c410211ea: Big fixes to edit-core
+
 ## 0.4.12
 
 ### Patch Changes

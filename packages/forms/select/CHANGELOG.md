@@ -1,5 +1,11 @@
 # @uidu/field-text
 
+## 0.6.20
+
+### Patch Changes
+
+- c410211ea: Big fixes to edit-core
+
 ## 0.6.19
 
 ### Patch Changes
