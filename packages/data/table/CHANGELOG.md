@@ -1,5 +1,14 @@
 # @uidu/table
 
+## 0.8.4
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/popup@0.4.15
+  - @uidu/data-fields@0.5.19
+
 ## 0.8.3
 
 ### Patch Changes

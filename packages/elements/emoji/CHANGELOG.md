@@ -1,5 +1,11 @@
 # @uidu/emoji
 
+## 0.4.6
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.4.5
 
 ### Patch Changes

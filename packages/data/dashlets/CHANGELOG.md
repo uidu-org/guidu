@@ -1,5 +1,16 @@
 # @uidu/blocks
 
+## 0.11.5
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/dashboard-manager@0.12.3
+  - @uidu/dashlet-controls@0.3.19
+  - @uidu/data-fields@0.5.19
+  - @uidu/table@0.8.4
+
 ## 0.11.4
 
 ### Patch Changes

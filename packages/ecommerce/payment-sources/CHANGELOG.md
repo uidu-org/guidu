@@ -1,5 +1,13 @@
 # @uidu/payment-sources
 
+## 0.2.14
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/payments@0.4.20
+
 ## 0.2.13
 
 ### Patch Changes

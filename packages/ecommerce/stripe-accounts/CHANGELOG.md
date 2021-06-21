@@ -1,5 +1,13 @@
 # @uidu/stripe-accounts
 
+## 0.2.20
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/payments@0.4.20
+
 ## 0.2.19
 
 ### Patch Changes

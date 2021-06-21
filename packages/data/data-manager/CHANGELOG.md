@@ -1,5 +1,17 @@
 # @uidu/data-manager
 
+## 0.12.4
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/data-controls@0.7.16
+  - @uidu/data-fields@0.5.19
+  - @uidu/data-views@0.5.23
+  - @uidu/table@0.8.4
+  - @uidu/shell@1.2.20
+
 ## 0.12.3
 
 ### Patch Changes

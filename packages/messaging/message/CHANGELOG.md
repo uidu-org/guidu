@@ -1,5 +1,14 @@
 # @uidu/message
 
+## 0.3.17
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/media-card@0.4.16
+  - @uidu/media-viewer@0.3.17
+
 ## 0.3.16
 
 ### Patch Changes

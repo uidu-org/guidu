@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.3.7
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/table@0.8.4
+  - @uidu/select@0.6.19
+  - @uidu/shell@1.2.20
+
 ## 0.3.6
 
 ### Patch Changes

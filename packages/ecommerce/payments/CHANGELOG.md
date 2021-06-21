@@ -1,5 +1,11 @@
 # @uidu/payments
 
+## 0.4.20
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.4.19
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@uidu/status",
-  "version": "0.3.18",
+  "version": "0.3.19",
   "description": "Fabric Status React Components",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/status",
   "license": "Apache-2.0",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.13",
-    "@uidu/elements-test-helpers": "^0.3.15",
+    "@uidu/elements-test-helpers": "^0.3.16",
     "react": "^17.0.2",
     "react-intl": "^5.20.3"
   },
