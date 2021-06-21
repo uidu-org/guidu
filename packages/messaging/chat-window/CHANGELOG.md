@@ -1,5 +1,15 @@
 # @uidu/chat-window
 
+## 0.3.14
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/message@0.3.16
+  - @uidu/message-form@0.3.15
+  - @uidu/message-renderer@0.3.14
+
 ## 0.3.13
 
 ### Patch Changes

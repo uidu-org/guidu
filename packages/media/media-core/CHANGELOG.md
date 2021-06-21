@@ -1,5 +1,13 @@
 # @uidu/media-core
 
+## 0.4.12
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/docs@0.3.13
+
 ## 0.4.11
 
 ### Patch Changes

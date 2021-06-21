@@ -1,5 +1,17 @@
 # @uidu/dashboard-controls
 
+## 0.3.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/avatar@0.6.14
+  - @uidu/avatar-group@2.5.16
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/field-date-range@0.3.15
+  - @uidu/form@0.4.18
+
 ## 0.3.17
 
 ### Patch Changes

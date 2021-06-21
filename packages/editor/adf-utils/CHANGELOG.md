@@ -1,5 +1,13 @@
 # @uidu/adf-utils
 
+## 0.6.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/adf-schema@0.4.4
+
 ## 0.6.12
 
 ### Patch Changes

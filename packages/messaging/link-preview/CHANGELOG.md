@@ -1,5 +1,11 @@
 # @uidu/link-preview
 
+## 0.2.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.2.12
 
 ### Patch Changes

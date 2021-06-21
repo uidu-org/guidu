@@ -1,5 +1,11 @@
 # @uidu/json-schema-generator
 
+## 0.1.30
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.1.29
 
 ### Patch Changes

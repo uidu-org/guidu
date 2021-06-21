@@ -1,5 +1,13 @@
 # @uidu/analytics-gas-types
 
+## 0.2.10
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+
 ## 0.2.9
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/breadcrumbs
 
+## 0.2.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/button@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+
 ## 0.2.12
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/message-form
 
+## 0.3.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/spinner@0.4.13
+  - @uidu/field-mentions@0.5.4
+  - @uidu/field-text@0.5.4
+  - @uidu/form@0.4.18
+  - @uidu/media-filmstrip@0.3.13
+  - @uidu/message@0.3.16
+
 ## 0.3.14
 
 ### Patch Changes

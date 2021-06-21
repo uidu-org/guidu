@@ -1,5 +1,21 @@
 # @uidu/devise
 
+## 0.5.17
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/avatar@0.6.14
+  - @uidu/slider@1.6.13
+  - @uidu/spinner@0.4.13
+  - @uidu/checkbox@0.4.4
+  - @uidu/field-password@0.4.16
+  - @uidu/field-phone@0.2.16
+  - @uidu/field-text@0.5.4
+  - @uidu/form@0.4.18
+  - @uidu/shell@1.2.19
+
 ## 0.5.16
 
 ### Patch Changes

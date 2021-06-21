@@ -1,5 +1,17 @@
 # @uidu/field-image-uploader
 
+## 0.4.17
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/button@0.4.13
+  - @uidu/spinner@0.4.13
+  - @uidu/field-base@0.6.4
+  - @uidu/media-core@0.4.12
+
 ## 0.4.16
 
 ### Patch Changes

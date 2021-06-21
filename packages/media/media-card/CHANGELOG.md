@@ -1,5 +1,18 @@
 # @uidu/media-card
 
+## 0.4.15
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/button@0.4.13
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+  - @uidu/media-core@0.4.12
+
 ## 0.4.14
 
 ### Patch Changes

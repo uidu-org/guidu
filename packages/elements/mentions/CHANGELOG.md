@@ -1,5 +1,19 @@
 # @uidu/mentions
 
+## 0.2.17
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/avatar@0.6.14
+  - @uidu/button@0.4.13
+  - @uidu/lozenge@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+  - @uidu/analytics-gas-types@0.2.10
+
 ## 0.2.16
 
 ### Patch Changes

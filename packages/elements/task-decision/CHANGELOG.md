@@ -1,5 +1,18 @@
 # @uidu/task-decision
 
+## 0.3.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/avatar-group@2.5.16
+  - @uidu/button@0.4.13
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/analytics-namespaced-context@0.3.12
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @uidu/blocks
 
+## 0.11.4
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/spinner@0.4.13
+  - @uidu/tooltip@0.4.13
+  - @uidu/dashboard-manager@0.12.2
+  - @uidu/dashlet-controls@0.3.18
+  - @uidu/data-fields@0.5.18
+  - @uidu/table@0.8.3
+
 ## 0.11.3
 
 ### Patch Changes

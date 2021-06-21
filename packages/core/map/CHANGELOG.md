@@ -1,5 +1,13 @@
 # @uidu/map
 
+## 0.5.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/theme@0.5.14
+
 ## 0.5.12
 
 ### Patch Changes

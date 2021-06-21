@@ -1,5 +1,16 @@
 # Change Log
 
+## 2.5.16
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/avatar@0.6.14
+  - @uidu/dropdown-menu@0.5.4
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+
 ## 2.5.15
 
 ### Patch Changes

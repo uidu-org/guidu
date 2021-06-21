@@ -1,5 +1,14 @@
 # @uidu/field-color-picker
 
+## 0.4.4
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/popup@0.4.14
+  - @uidu/field-base@0.6.4
+
 ## 0.4.3
 
 ### Patch Changes

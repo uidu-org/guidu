@@ -1,5 +1,16 @@
 # @uidu/gallery
 
+## 0.2.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/spinner@0.4.13
+  - @uidu/data-controls@0.7.15
+  - @uidu/data-fields@0.5.18
+  - @uidu/shell@1.2.19
+
 ## 0.2.17
 
 ### Patch Changes

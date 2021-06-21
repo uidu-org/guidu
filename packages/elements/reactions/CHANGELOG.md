@@ -1,5 +1,11 @@
 # @uidu/reactions
 
+## 0.2.10
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+
 ## 0.2.9
 
 ### Patch Changes

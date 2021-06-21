@@ -1,5 +1,14 @@
 # @uidu/payment-sources
 
+## 0.2.13
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/payments@0.4.19
+  - @uidu/form@0.4.18
+
 ## 0.2.12
 
 ### Patch Changes

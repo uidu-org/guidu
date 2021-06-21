@@ -1,5 +1,18 @@
 # @uidu/stripe-accounts
 
+## 0.2.19
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/slider@1.6.13
+  - @uidu/spinner@0.4.13
+  - @uidu/payments@0.4.19
+  - @uidu/field-text@0.5.4
+  - @uidu/form@0.4.18
+  - @uidu/stepper@0.3.13
+
 ## 0.2.18
 
 ### Patch Changes

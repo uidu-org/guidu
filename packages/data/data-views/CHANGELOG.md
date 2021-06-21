@@ -1,5 +1,17 @@
 # @uidu/data-views
 
+## 0.5.22
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/data-controls@0.7.15
+  - @uidu/field-counter@0.4.4
+  - @uidu/field-number@0.4.17
+  - @uidu/form@0.4.18
+  - @uidu/select@0.6.18
+
 ## 0.5.21
 
 ### Patch Changes

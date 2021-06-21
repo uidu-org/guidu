@@ -1,6 +1,6 @@
 {
   "name": "@uidu/guidu-website",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "repository": "https://github.com/uidu-org/guidu/tree/main/website",
   "license": "MIT",
   "scripts": {
@@ -20,25 +20,25 @@
     "not op_mini all"
   ],
   "dependencies": {
-    "@uidu/badge": "^0.4.12",
-    "@uidu/button": "^0.4.12",
-    "@uidu/checkbox": "^0.4.3",
-    "@uidu/code": "^0.4.12",
-    "@uidu/docs": "^0.3.12",
-    "@uidu/drawer": "^0.5.13",
-    "@uidu/field-text": "^0.5.3",
-    "@uidu/form": "^0.4.17",
-    "@uidu/list": "^0.2.17",
-    "@uidu/lozenge": "^0.4.12",
-    "@uidu/modal-dialog": "^0.4.14",
-    "@uidu/navigation": "^0.7.12",
-    "@uidu/select": "^0.6.17",
-    "@uidu/shell": "^1.2.18",
-    "@uidu/spinner": "^0.4.12",
-    "@uidu/table": "^0.8.1",
-    "@uidu/theme": "^0.5.13",
-    "@uidu/themes-uidu": "^0.3.23",
-    "@uidu/tooltip": "^0.4.12",
+    "@uidu/badge": "^0.4.13",
+    "@uidu/button": "^0.4.13",
+    "@uidu/checkbox": "^0.4.4",
+    "@uidu/code": "^0.4.13",
+    "@uidu/docs": "^0.3.13",
+    "@uidu/drawer": "^0.5.14",
+    "@uidu/field-text": "^0.5.4",
+    "@uidu/form": "^0.4.18",
+    "@uidu/list": "^0.2.18",
+    "@uidu/lozenge": "^0.4.13",
+    "@uidu/modal-dialog": "^0.4.15",
+    "@uidu/navigation": "^0.7.13",
+    "@uidu/select": "^0.6.18",
+    "@uidu/shell": "^1.2.19",
+    "@uidu/spinner": "^0.4.13",
+    "@uidu/table": "^0.8.3",
+    "@uidu/theme": "^0.5.14",
+    "@uidu/themes-uidu": "^0.3.24",
+    "@uidu/tooltip": "^0.4.13",
     "avataaars": "^1.2.2",
     "codesandboxer": "^1.0.3",
     "commonmark": "^0.30.0",
@@ -72,9 +72,9 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/fs-loader": "^0.1.45",
-    "@uidu/nav-info-loader": "^0.1.46",
-    "@uidu/webpack-config": "^0.2.3"
+    "@uidu/fs-loader": "^0.1.46",
+    "@uidu/nav-info-loader": "^0.1.47",
+    "@uidu/webpack-config": "^0.2.4"
   },
   "publishConfig": {
     "access": "public"

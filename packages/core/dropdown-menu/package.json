@@ -1,6 +1,6 @@
 {
   "name": "@uidu/dropdown-menu",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Creates a dropdown menu, with optional groups, headings, icons, checkbox items, radio group items and disabled items.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/dropdown-menu",
   "license": "ISC",
@@ -10,11 +10,11 @@
   "dependencies": {
     "@atlaskit/icon": "^21.6.0",
     "@babel/runtime": "^7.14.6",
-    "@uidu/analytics": "^0.4.12",
-    "@uidu/button": "^0.4.12",
-    "@uidu/droplist": "^0.4.13",
-    "@uidu/item": "^0.4.13",
-    "@uidu/theme": "^0.5.13",
+    "@uidu/analytics": "^0.4.13",
+    "@uidu/button": "^0.4.13",
+    "@uidu/droplist": "^0.4.14",
+    "@uidu/item": "^0.4.14",
+    "@uidu/theme": "^0.5.14",
     "array-find": "^1.0.0",
     "prop-types": "^15.7.2",
     "react-uid": "^2.3.1",
@@ -22,10 +22,10 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@uidu/avatar": "^0.6.13",
-    "@uidu/docs": "^0.3.12",
-    "@uidu/lozenge": "^0.4.12",
-    "@uidu/tooltip": "^0.4.12",
+    "@uidu/avatar": "^0.6.14",
+    "@uidu/docs": "^0.3.13",
+    "@uidu/lozenge": "^0.4.13",
+    "@uidu/tooltip": "^0.4.13",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.0"

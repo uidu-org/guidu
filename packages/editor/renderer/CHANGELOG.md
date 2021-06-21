@@ -1,5 +1,27 @@
 # @uidu/renderer
 
+## 0.4.5
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/code@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+  - @uidu/adf-schema@0.4.4
+  - @uidu/adf-utils@0.6.13
+  - @uidu/editor-common@0.4.18
+  - @uidu/editor-json-transformer@0.3.14
+  - @uidu/analytics-listeners@0.3.12
+  - @uidu/analytics-namespaced-context@0.3.12
+  - @uidu/mentions@0.2.17
+  - @uidu/status@0.3.18
+  - @uidu/task-decision@0.3.13
+  - @uidu/media-card@0.4.15
+  - @uidu/media-filmstrip@0.3.13
+
 ## 0.4.4
 
 ### Patch Changes

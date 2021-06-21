@@ -1,5 +1,19 @@
 # @uidu/field-text
 
+## 0.6.18
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/spinner@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+  - @uidu/checkbox@0.4.4
+  - @uidu/field-base@0.6.4
+  - @uidu/form@0.4.18
+
 ## 0.6.17
 
 ### Patch Changes

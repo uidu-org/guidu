@@ -1,5 +1,15 @@
 # Change Log
 
+## 0.6.14
+
+### Patch Changes
+
+- d4a62100d: Removed react-native dependencies
+- Updated dependencies [d4a62100d]
+  - @uidu/analytics@0.4.13
+  - @uidu/theme@0.5.14
+  - @uidu/tooltip@0.4.13
+
 ## 0.6.13
 
 ### Patch Changes
