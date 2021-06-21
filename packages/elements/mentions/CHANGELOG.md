@@ -1,5 +1,11 @@
 # @uidu/mentions
 
+## 0.2.18
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.2.17
 
 ### Patch Changes

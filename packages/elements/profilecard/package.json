@@ -1,6 +1,6 @@
 {
   "name": "@uidu/profilecard",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "A React component to display a card with user information.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/elements/profilecard",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "@uidu/avatar": "^0.6.14",
     "@uidu/button": "^0.4.13",
     "@uidu/lozenge": "^0.4.13",
-    "@uidu/popup": "^0.4.14",
+    "@uidu/popup": "^0.4.15",
     "@uidu/spinner": "^0.4.13",
     "@uidu/theme": "^0.5.14",
     "date-fns": "^2.22.1",

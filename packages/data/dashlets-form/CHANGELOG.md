@@ -1,5 +1,15 @@
 # @uidu/dashlets-form
 
+## 0.4.9
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/dashlets@0.11.5
+  - @uidu/select@0.6.19
+  - @uidu/shell@1.2.20
+
 ## 0.4.8
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/devise
 
+## 0.5.18
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/shell@1.2.20
+
 ## 0.5.17
 
 ### Patch Changes

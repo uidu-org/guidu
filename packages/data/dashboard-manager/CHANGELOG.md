@@ -1,5 +1,14 @@
 # @uidu/dashboard-manager
 
+## 0.12.3
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+- Updated dependencies [6ed6b9a4d]
+  - @uidu/dashboard-controls@0.4.19
+  - @uidu/dashlets@0.11.5
+
 ## 0.12.2
 
 ### Patch Changes

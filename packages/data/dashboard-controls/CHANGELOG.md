@@ -1,5 +1,11 @@
 # @uidu/dashboard-controls
 
+## 0.4.19
+
+### Patch Changes
+
+- 6ed6b9a4d: Bump dependencies. FIx editor-core quick-actions
+
 ## 0.4.18
 
 ### Patch Changes
