@@ -19,7 +19,7 @@
     "@uidu/shell": "^1.2.20",
     "@uidu/slider": "^1.6.13",
     "@uidu/spinner": "^0.4.13",
-    "query-string": "^7.0.0",
+    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-animate-height": "^2.0.23",
     "react-facebook": "^8.1.4",

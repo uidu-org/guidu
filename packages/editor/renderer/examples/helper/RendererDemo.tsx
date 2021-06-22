@@ -16,7 +16,7 @@ import {
   Props as RendererProps,
 } from '../../src/ui/Renderer';
 import { RendererAppearance } from '../../src/ui/Renderer/types';
-import { document as storyDataDocument } from './story-data';
+import { story as storyDataDocument } from './story-data';
 
 const { getMockProfileClient: getMockProfileClientUtil } = profilecardUtils;
 const MockProfileClient = getMockProfileClientUtil(
@@ -83,8 +83,7 @@ const extensionHandlers: ExtensionHandlers = {
             content: [
               {
                 type: 'text',
-                text:
-                  'Hi, my name is... My name is... My name is... My name is ',
+                text: 'Hi, my name is... My name is... My name is... My name is ',
               },
               {
                 type: 'mention',

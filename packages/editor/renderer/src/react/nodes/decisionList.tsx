@@ -1,7 +1,6 @@
-import * as React from 'react';
-import { PureComponent, Children } from 'react';
-
 import { DecisionList as AkDecisionList } from '@uidu/task-decision';
+import * as React from 'react';
+import { Children, PureComponent } from 'react';
 
 export interface Props {
   children?: JSX.Element | JSX.Element[];

@@ -40,10 +40,40 @@ export const story = {
       attrs: { level: 3 },
       content: [{ type: 'text', text: 'Il Progetto' }],
     },
+
     {
       type: 'paragraph',
       content: [
         { type: 'text', text: 'ITA - ENG', marks: [{ type: 'strong' }] },
+      ],
+    },
+    {
+      type: 'mediaSingle',
+      attrs: {
+        layout: 'center',
+      },
+      content: [
+        {
+          type: 'media',
+          attrs: {
+            id: '14b142104182a9961dcfbcb767f79d99.png',
+            file: {
+              id: '14b142104182a9961dcfbcb767f79d99.png',
+              url: 'https://uidu.local:8443/uploads/cache/14b142104182a9961dcfbcb767f79d99.png',
+              type: 'image',
+              width: 2560,
+              height: 1354,
+              metadata: {
+                size: 371929,
+                width: 2560,
+                height: 1354,
+                filename: 'cover-default.png',
+                mime_type: 'image/png',
+              },
+            },
+            type: 'file',
+          },
+        },
       ],
     },
     {

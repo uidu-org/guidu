@@ -13,8 +13,9 @@ export default class EmojiItem extends PureComponent<EmojiProps, {}> {
     const { id, providers, shortName, text, fitToHeight } = this.props;
 
     return (
-      // @ts-ignore
       <Emoji
+        // @ts-ignore
+        shortname={shortName}
         allowTextFallback={true}
         providers={providers}
         fitToHeight={fitToHeight}

@@ -64,7 +64,7 @@ export default class EditorActions implements EditorActionsOptions {
 
     if (!this.editorView && editorView) {
       this.editorView = editorView;
-      this.listeners.forEach(cb => cb(editorView, eventDispatcher));
+      this.listeners.forEach((cb) => cb(editorView, eventDispatcher));
     } else if (this.editorView !== editorView) {
       throw new Error(
         "Editor has already been registered! It's not allowed to re-register editor with the new Editor instance.",
@@ -97,7 +97,7 @@ export default class EditorActions implements EditorActionsOptions {
   }
 
   _privateUnsubscribe(cb: ContextUpdateHandler): void {
-    this.listeners = this.listeners.filter(c => c !== cb);
+    this.listeners = this.listeners.filter((c) => c !== cb);
   }
 
   focus(): boolean {
@@ -143,7 +143,7 @@ export default class EditorActions implements EditorActionsOptions {
     }
 
     return compose(
-      doc =>
+      (doc) =>
         this.contentEncode
           ? this.contentEncode(
               Node.fromJSON(this.editorView!.state.schema, doc),
@@ -166,11 +166,13 @@ export default class EditorActions implements EditorActionsOptions {
     const { state } = this.editorView;
     const { schema } = state;
 
-    const transformedDoc = this.contentTransformer
-      ? this.contentTransformer.parse(rawValue).toJSON()
-      : rawValue;
-
-    const content = processRawValue(schema, transformedDoc);
+    const content = processRawValue(
+      schema,
+      rawValue,
+      undefined,
+      undefined,
+      this.contentTransformer as Transformer<any>,
+    );
 
     if (!content) {
       return false;

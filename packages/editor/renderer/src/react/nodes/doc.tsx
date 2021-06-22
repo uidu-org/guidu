@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { RendererCssClassName } from '../../consts';
 
-export default function Doc(props: React.Props<any>) {
+export default function Doc(props) {
   return <div className={RendererCssClassName.DOCUMENT}>{props.children}</div>;
 }

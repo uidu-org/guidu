@@ -1,8 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 
-export default function LayoutSection(
-  props: { width?: number } & React.Props<any>,
-) {
+export default function LayoutSection(props: { width?: number; children }) {
   return (
     <div
       data-layout-column

@@ -41,7 +41,7 @@
     "@uidu/layer": "^0.4.13",
     "@uidu/section-message": "^0.4.13",
     "@uidu/util-data-test": "^0.3.13",
-    "p-wait-for": "^3.2.0",
+    "p-wait-for": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intl": "^5.20.3"

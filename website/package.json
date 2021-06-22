@@ -49,7 +49,7 @@
     "netlify-cli": "^3.37.37",
     "node-fetch": "^2.6.1",
     "prismjs": "^1.23.0",
-    "query-string": "^7.0.0",
+    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-addons-text-content": "^0.0.4",
     "react-codesandboxer": "^3.1.5",
