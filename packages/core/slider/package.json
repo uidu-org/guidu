@@ -10,11 +10,11 @@
   "module": "dist/uidu-slider.esm.js",
   "types": "dist/uidu-slider.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "classnames": "^2.3.1",
     "react": "^17.0.2",
     "styled-components": "^5.3.0",
-    "swiper": "^6.7.0",
+    "swiper": "^6.8.0",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2"
   },

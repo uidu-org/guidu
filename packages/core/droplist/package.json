@@ -8,8 +8,8 @@
   "main": "dist/uidu-droplist.cjs.js",
   "module": "dist/uidu-droplist.esm.js",
   "dependencies": {
-    "@atlaskit/icon": "^21.6.0",
-    "@babel/runtime": "^7.14.6",
+    "@atlaskit/icon": "^21.7.2",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/item": "^0.4.14",
     "@uidu/layer": "^0.4.13",

@@ -9,7 +9,7 @@
   "main": "dist/uidu-breadcrumbs.cjs.js",
   "types": "dist/uidu-breadcrumbs.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/button": "^0.4.13",
     "@uidu/theme": "^0.5.14",
@@ -17,7 +17,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@atlaskit/logo": "^13.4.1",
+    "@atlaskit/logo": "^13.5.1",
     "@uidu/docs": "^0.3.13",
     "@uidu/select": "^0.6.18",
     "react": "^17.0.2",

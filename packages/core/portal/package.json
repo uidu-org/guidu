@@ -10,14 +10,14 @@
   "module": "dist/uidu-portal.esm.js",
   "types": "index.td.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/theme": "^0.5.14",
     "exenv": "^1.2.2",
     "tiny-invariant": "^1.1.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.6.0",
+    "@atlaskit/icon": "^21.7.2",
     "@uidu/button": "^0.4.13",
     "@uidu/docs": "^0.3.13",
     "@uidu/flag": "^0.4.14",

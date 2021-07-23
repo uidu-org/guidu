@@ -13,9 +13,9 @@
     "i18n:push": "i18n-tools push --resource emoji . --type ts"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.6.0",
+    "@atlaskit/icon": "^21.7.2",
     "@atlaskit/util-service-support": "^6.0.5",
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/button": "^0.4.13",
     "@uidu/code": "^0.4.13",
@@ -35,16 +35,16 @@
   },
   "devDependencies": {
     "@types/js-search": "^1.4.0",
-    "@types/react-virtualized": "^9.21.11",
+    "@types/react-virtualized": "^9.21.12",
     "@uidu/docs": "^0.3.13",
     "@uidu/elements-test-helpers": "^0.3.16",
     "@uidu/layer": "^0.4.13",
     "@uidu/section-message": "^0.4.13",
     "@uidu/util-data-test": "^0.3.13",
-    "p-wait-for": "^4.0.0",
+    "p-wait-for": "^4.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-intl": "^5.20.3"
+    "react-intl": "^5.20.5"
   },
   "peerDependencies": {
     "react": "^17.0.0",

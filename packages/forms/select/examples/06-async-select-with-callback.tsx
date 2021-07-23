@@ -24,7 +24,7 @@ const AsyncExample = () => (
       classNamePrefix="react-select"
       // defaultOptions
       loadOptions={loadOptions}
-      // options={cities}
+      options={cities}
       value={cities[0].id}
       placeholder="Choose a City"
     />

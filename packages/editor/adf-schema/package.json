@@ -17,15 +17,15 @@
     "generate:json-schema:stage-0": "json-schema-generator --outDir=./json-schema/v1/ --stage=0 ./src/schema/nodes/doc.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
-    "@types/linkify-it": "^3.0.1",
-    "@types/prosemirror-model": "^1.13.0",
-    "@types/prosemirror-state": "^1.2.6",
-    "@types/prosemirror-view": "^1.17.1",
+    "@babel/runtime": "^7.14.8",
+    "@types/linkify-it": "^3.0.2",
+    "@types/prosemirror-model": "^1.13.1",
+    "@types/prosemirror-state": "^1.2.7",
+    "@types/prosemirror-view": "^1.18.0",
     "css-color-names": "^1.0.1",
     "linkify-it": "^3.0.2",
-    "prosemirror-model": "^1.14.2",
-    "prosemirror-view": "^1.18.7",
+    "prosemirror-model": "^1.14.3",
+    "prosemirror-view": "^1.18.11",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

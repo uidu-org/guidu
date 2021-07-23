@@ -9,7 +9,7 @@
   "module": "dist/uidu-radio.esm.js",
   "types": "dist/uidu-radio.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/field-base": "^0.6.4",
     "formsy-react": "^2.2.5",

@@ -13,11 +13,11 @@
   ],
   "style": "index.module.scss",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/field-base": "^0.6.4",
     "@uidu/field-text": "^0.5.4",
-    "dayjs": "^1.10.5",
+    "dayjs": "^1.10.6",
     "formsy-react": "^2.2.5",
     "moment": "^2.29.1",
     "react": "^17.0.2",

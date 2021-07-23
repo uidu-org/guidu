@@ -10,7 +10,7 @@
   "module": "dist/uidu-inline-dialog.esm.js",
   "types": "dist/uidu-inline-dialog.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/popper": "^0.4.13",
     "@uidu/theme": "^0.5.14",
@@ -18,7 +18,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@atlaskit/icon": "^21.6.0",
+    "@atlaskit/icon": "^21.7.2",
     "@uidu/button": "^0.4.13",
     "@uidu/docs": "^0.3.13",
     "@uidu/form": "^0.4.18",

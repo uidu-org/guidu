@@ -14,16 +14,16 @@
     "access": "public"
   },
   "dependencies": {
-    "@atlaskit/icon": "^21.6.0",
+    "@atlaskit/icon": "^21.7.2",
     "@atlaskit/util-service-support": "^6.0.5",
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/analytics-namespaced-context": "^0.3.12",
     "@uidu/avatar-group": "^2.5.16",
     "@uidu/button": "^0.4.13",
     "@uidu/spinner": "^0.4.13",
     "@uidu/theme": "^0.5.14",
-    "date-fns": "^2.22.1",
+    "date-fns": "^2.23.0",
     "lodash.debounce": "^4.0.8",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2"

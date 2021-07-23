@@ -9,12 +9,12 @@
   "module": "dist/uidu-field-file-uploader.esm.js",
   "types": "dist/uidu-field-file-uploader.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/field-base": "^0.6.4",
-    "@uppy/core": "^1.19.1",
-    "@uppy/dashboard": "^1.20.1",
-    "@uppy/react": "^1.11.10",
-    "@uppy/xhr-upload": "^1.7.4",
+    "@uppy/core": "^1.19.2",
+    "@uppy/dashboard": "^1.20.2",
+    "@uppy/react": "^1.12.0",
+    "@uppy/xhr-upload": "^1.7.5",
     "formsy-react": "^2.2.5",
     "react": "^17.0.2",
     "tslib": "^2.3.0"

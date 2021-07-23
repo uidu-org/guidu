@@ -15,7 +15,7 @@
   "module": "dist/uidu-field-range.esm.js",
   "types": "dist/uidu-field-range.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/field-base": "^0.6.4",
     "@uidu/form": "^0.4.18",
     "@uidu/theme": "^0.5.14",

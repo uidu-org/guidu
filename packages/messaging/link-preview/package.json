@@ -9,7 +9,7 @@
   "module": "dist/uidu-link-preview.esm.js",
   "types": "dist/uidu-link-preview.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "axios": "^0.21.1",
     "get-urls": "^10.0.0",
     "nanoclamp": "^1.4.1",

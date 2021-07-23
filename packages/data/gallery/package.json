@@ -9,14 +9,14 @@
   "module": "dist/uidu-gallery.esm.js",
   "types": "dist/uidu-gallery.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/data-controls": "^0.7.15",
     "@uidu/data-fields": "^0.5.18",
     "@uidu/shell": "^1.2.19",
     "@uidu/spinner": "^0.4.13",
     "memoize-one": "^5.2.1",
     "react": "^17.0.2",
-    "react-virtual": "^2.7.1",
+    "react-virtual": "^2.8.0",
     "styled-components": "^5.3.0",
     "tslib": "^2.3.0"
   },

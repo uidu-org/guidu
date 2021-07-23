@@ -9,7 +9,7 @@
   "main": "dist/uidu-item.cjs.js",
   "module": "dist/uidu-item.esm.js",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/avatar": "^0.6.14",
     "@uidu/theme": "^0.5.14",
     "polished": "^4.1.3",

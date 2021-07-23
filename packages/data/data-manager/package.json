@@ -9,10 +9,10 @@
   "module": "dist/uidu-data-manager.esm.js",
   "types": "dist/uidu-data-manager.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
-    "@cubejs-client/core": "^0.27.35",
-    "@cubejs-client/react": "^0.27.36",
-    "@cubejs-client/ws-transport": "^0.27.35",
+    "@babel/runtime": "^7.14.8",
+    "@cubejs-client/core": "^0.27.51",
+    "@cubejs-client/react": "^0.27.51",
+    "@cubejs-client/ws-transport": "^0.27.51",
     "@loadable/component": "^5.15.0",
     "@uidu/board": "^0.3.14",
     "@uidu/calendar": "^0.2.16",
@@ -24,8 +24,8 @@
     "@uidu/shell": "^1.2.20",
     "@uidu/spinner": "^0.4.13",
     "@uidu/table": "^0.8.4",
-    "d3-array": "^2.12.1",
-    "dayjs": "^1.10.5",
+    "d3-array": "^3.0.1",
+    "dayjs": "^1.10.6",
     "lodash": "^4.17.21",
     "papaparse": "^5.3.1",
     "react": "^17.0.2",
@@ -41,6 +41,6 @@
     "@uidu/navigation": "^0.7.13",
     "@uidu/page-header": "^0.2.13",
     "@uidu/side-navigation": "0.2.20",
-    "react-intl": "^5.20.3"
+    "react-intl": "^5.20.5"
   }
 }

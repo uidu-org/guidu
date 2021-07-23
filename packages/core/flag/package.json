@@ -10,7 +10,7 @@
   "module": "dist/uidu-flag.esm.js",
   "types": "dist/uidu-flag.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/button": "^0.4.13",
     "@uidu/portal": "^0.4.13",

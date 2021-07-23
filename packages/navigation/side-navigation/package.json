@@ -9,7 +9,7 @@
   "module": "dist/uidu-side-navigation.esm.js",
   "types": "dist/uidu-side-navigation.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/avatar": "^0.6.14",
     "@uidu/dropdown-menu": "^0.5.4",
     "@uidu/inline-dialog": "^0.4.13",

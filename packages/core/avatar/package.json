@@ -10,7 +10,7 @@
   "module": "dist/uidu-avatar.esm.js",
   "types": "dist/uidu-avatar.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/analytics": "^0.4.13",
     "@uidu/theme": "^0.5.14",
     "@uidu/tooltip": "^0.4.13",

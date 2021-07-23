@@ -9,18 +9,18 @@
   "module": "dist/uidu-stripe-accounts.esm.js",
   "types": "dist/uidu-stripe-accounts.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@stripe/react-stripe-js": "^1.4.1",
-    "@stripe/stripe-js": "^1.15.1",
+    "@stripe/stripe-js": "^1.16.0",
     "@uidu/field-text": "^0.5.4",
     "@uidu/form": "^0.4.18",
     "@uidu/payments": "^0.4.20",
     "@uidu/slider": "^1.6.13",
     "@uidu/spinner": "^0.4.13",
     "@uidu/stepper": "^0.3.13",
-    "dayjs": "^1.10.5",
+    "dayjs": "^1.10.6",
     "react": "^17.0.2",
-    "react-intl": "^5.20.3",
+    "react-intl": "^5.20.5",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

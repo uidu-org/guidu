@@ -14,7 +14,7 @@
     "en"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.14.6",
+    "@babel/runtime": "^7.14.8",
     "@uidu/checkbox": "^0.4.4",
     "@uidu/data-fields": "^0.5.19",
     "@uidu/dropdown-menu": "^0.5.4",
@@ -24,9 +24,9 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.3",
+    "react-intl": "^5.20.5",
     "react-table": "^7.7.0",
-    "react-virtual": "^2.7.1",
+    "react-virtual": "^2.8.0",
     "styled-components": "^5.3.0",
     "tslib": "^2.3.0"
   },
