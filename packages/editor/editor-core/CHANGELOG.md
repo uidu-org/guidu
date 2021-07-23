@@ -1,5 +1,44 @@
 # @uidu/editor-core
 
+## 0.8.8
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+- Updated dependencies [fcd0ec49a]
+  - @uidu/analytics@0.4.14
+  - @uidu/avatar@0.6.15
+  - @uidu/avatar-group@2.5.17
+  - @uidu/button@0.4.14
+  - @uidu/droplist@0.4.15
+  - @uidu/menu@0.4.16
+  - @uidu/modal-dialog@0.4.16
+  - @uidu/spinner@0.4.14
+  - @uidu/theme@0.5.15
+  - @uidu/tooltip@0.4.14
+  - @uidu/adf-schema@0.4.5
+  - @uidu/adf-utils@0.6.15
+  - @uidu/editor-common@0.4.20
+  - @uidu/editor-json-transformer@0.3.15
+  - @uidu/editor-markdown-transformer@0.4.5
+  - @uidu/analytics-listeners@0.3.13
+  - @uidu/analytics-namespaced-context@0.3.13
+  - @uidu/date@0.3.14
+  - @uidu/emoji@0.4.7
+  - @uidu/mentions@0.2.19
+  - @uidu/profilecard@0.1.18
+  - @uidu/status@0.3.20
+  - @uidu/task-decision@0.3.14
+  - @uidu/field-date@0.4.5
+  - @uidu/form@0.4.19
+  - @uidu/select@0.6.21
+  - @uidu/media-card@0.4.18
+  - @uidu/media-core@0.4.13
+  - @uidu/media-filmstrip@0.3.14
+  - @uidu/media-picker@0.4.14
+
 ## 0.8.7
 
 ### Patch Changes

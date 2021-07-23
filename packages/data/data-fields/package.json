@@ -1,6 +1,6 @@
 {
   "name": "@uidu/data-fields",
-  "version": "0.5.19",
+  "version": "0.5.20",
   "description": "Data-fields contain all informations to render, edit and customize fields for custom entities",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/data/data-fields",
   "license": "MIT",
@@ -18,16 +18,16 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@loadable/component": "^5.15.0",
-    "@uidu/field-color-picker": "^0.4.4",
-    "@uidu/field-date": "^0.4.4",
-    "@uidu/field-downshift": "^0.5.17",
-    "@uidu/field-number": "^0.4.17",
-    "@uidu/field-text": "^0.5.4",
-    "@uidu/field-time": "^0.4.17",
-    "@uidu/field-toggle": "^0.4.18",
-    "@uidu/form": "^0.4.18",
-    "@uidu/menu": "^0.4.15",
-    "@uidu/select": "^0.6.19",
+    "@uidu/field-color-picker": "^0.4.5",
+    "@uidu/field-date": "^0.4.5",
+    "@uidu/field-downshift": "^0.5.18",
+    "@uidu/field-number": "^0.4.18",
+    "@uidu/field-text": "^0.5.5",
+    "@uidu/field-time": "^0.4.18",
+    "@uidu/field-toggle": "^0.4.19",
+    "@uidu/form": "^0.4.19",
+    "@uidu/menu": "^0.4.16",
+    "@uidu/select": "^0.6.21",
     "dayjs": "^1.10.6",
     "numeral": "^2.0.6",
     "react": "^17.0.2",
@@ -38,6 +38,6 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.13"
+    "@uidu/docs": "^0.3.14"
   }
 }

@@ -1,5 +1,20 @@
 # @uidu/blocks
 
+## 0.11.6
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+- Updated dependencies [fcd0ec49a]
+  - @uidu/spinner@0.4.14
+  - @uidu/tooltip@0.4.14
+  - @uidu/dashboard-manager@0.12.4
+  - @uidu/dashlet-controls@0.3.20
+  - @uidu/data-fields@0.5.20
+  - @uidu/table@0.8.5
+
 ## 0.11.5
 
 ### Patch Changes

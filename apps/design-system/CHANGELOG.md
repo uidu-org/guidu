@@ -1,5 +1,16 @@
 # design-system
 
+## 0.1.14
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/analytics@0.4.14
+  - @uidu/button@0.4.14
+  - @uidu/theme@0.5.15
+
 ## 0.1.13
 
 ### Patch Changes

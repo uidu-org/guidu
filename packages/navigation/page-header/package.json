@@ -9,18 +9,18 @@
   "main": "dist/uidu-page-header.cjs.js",
   "types": "dist/uidu-page-header.cjs.d.ts",
   "dependencies": {
-    "@uidu/shell": "^1.2.19",
-    "@uidu/theme": "^0.5.14",
+    "@uidu/shell": "^1.2.21",
+    "@uidu/theme": "^0.5.15",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@uidu/breadcrumbs": "^0.2.13",
-    "@uidu/button": "^0.4.13",
-    "@uidu/docs": "^0.3.13",
-    "@uidu/field-text": "^0.5.4",
-    "@uidu/form": "^0.4.18",
-    "@uidu/inline-edit": "0.2.14",
-    "@uidu/select": "^0.6.18",
+    "@uidu/breadcrumbs": "^0.2.14",
+    "@uidu/button": "^0.4.14",
+    "@uidu/docs": "^0.3.14",
+    "@uidu/field-text": "^0.5.5",
+    "@uidu/form": "^0.4.19",
+    "@uidu/inline-edit": "0.2.15",
+    "@uidu/select": "^0.6.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "styled-components": "^5.3.0"

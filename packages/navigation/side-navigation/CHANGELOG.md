@@ -1,5 +1,18 @@
 # @uidu/navigation
 
+## 0.2.21
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- Updated dependencies [e98319f67]
+  - @uidu/avatar@0.6.15
+  - @uidu/dropdown-menu@0.5.5
+  - @uidu/inline-dialog@0.4.14
+  - @uidu/theme@0.5.15
+  - @uidu/tooltip@0.4.14
+  - @uidu/shell@1.2.21
+
 ## 0.2.20
 
 ### Patch Changes

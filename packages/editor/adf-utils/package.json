@@ -1,6 +1,6 @@
 {
   "name": "@uidu/adf-utils",
-  "version": "0.6.14",
+  "version": "0.6.15",
   "description": "Set of utilities to traverse, modify and create ADF documents.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/editor/adf-utils",
   "license": "Apache-2.0",
@@ -17,12 +17,12 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@uidu/adf-schema": "^0.4.4",
+    "@uidu/adf-schema": "^0.4.5",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.13",
-    "@uidu/json-schema-generator": "^0.1.30",
+    "@uidu/docs": "^0.3.14",
+    "@uidu/json-schema-generator": "^0.1.31",
     "react": "^17.0.2"
   }
 }

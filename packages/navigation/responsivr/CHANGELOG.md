@@ -1,5 +1,11 @@
 # @uidu/responsivr
 
+## 0.3.13
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+
 ## 0.3.12
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @uidu/tabbar
 
+## 0.3.13
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- Updated dependencies [e98319f67]
+  - @uidu/shell@1.2.21
+
 ## 0.3.12
 
 ### Patch Changes

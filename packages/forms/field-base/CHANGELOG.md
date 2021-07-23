@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.6.5
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- Updated dependencies [e98319f67]
+  - @uidu/form@0.4.19
+
 ## 0.6.4
 
 ### Patch Changes

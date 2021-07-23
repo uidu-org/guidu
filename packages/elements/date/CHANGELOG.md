@@ -1,5 +1,13 @@
 # @uidu/date
 
+## 0.3.14
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- Updated dependencies [e98319f67]
+  - @uidu/theme@0.5.15
+
 ## 0.3.13
 
 ### Patch Changes

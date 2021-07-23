@@ -1,5 +1,23 @@
 # @uidu/data-manager
 
+## 0.12.5
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/spinner@0.4.14
+  - @uidu/board@0.3.15
+  - @uidu/calendar@0.2.17
+  - @uidu/data-controls@0.7.17
+  - @uidu/data-fields@0.5.20
+  - @uidu/data-views@0.5.24
+  - @uidu/gallery@0.2.19
+  - @uidu/list@0.2.19
+  - @uidu/table@0.8.5
+  - @uidu/shell@1.2.21
+
 ## 0.12.4
 
 ### Patch Changes
