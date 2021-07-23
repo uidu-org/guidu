@@ -1,6 +1,6 @@
 {
   "name": "@uidu/onboarding",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Highlight elements of the UI to the user and display a complementary dialog.",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/onboarding",
   "license": "MIT",
@@ -12,12 +12,12 @@
   "dependencies": {
     "@atlaskit/progress-indicator": "^9.0.5",
     "@babel/runtime": "^7.14.8",
-    "@uidu/analytics": "^0.4.13",
-    "@uidu/button": "^0.4.13",
-    "@uidu/modal-dialog": "^0.4.15",
-    "@uidu/popper": "^0.4.13",
-    "@uidu/portal": "^0.4.13",
-    "@uidu/theme": "^0.5.14",
+    "@uidu/analytics": "^0.4.14",
+    "@uidu/button": "^0.4.14",
+    "@uidu/modal-dialog": "^0.4.16",
+    "@uidu/popper": "^0.4.14",
+    "@uidu/portal": "^0.4.14",
+    "@uidu/theme": "^0.5.15",
     "exenv": "^1.2.2",
     "memoize-one": "^5.2.1",
     "react-focus-lock": "^2.5.2",
@@ -28,7 +28,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
-    "@uidu/docs": "^0.3.13",
+    "@uidu/docs": "^0.3.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",

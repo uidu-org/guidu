@@ -1,5 +1,31 @@
 # Change Log
 
+## 0.3.8
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/docs@0.3.14
+  - @uidu/badge@0.4.14
+  - @uidu/button@0.4.14
+  - @uidu/code@0.4.14
+  - @uidu/drawer@0.5.15
+  - @uidu/lozenge@0.4.14
+  - @uidu/modal-dialog@0.4.16
+  - @uidu/spinner@0.4.14
+  - @uidu/theme@0.5.15
+  - @uidu/tooltip@0.4.14
+  - @uidu/list@0.2.19
+  - @uidu/table@0.8.5
+  - @uidu/checkbox@0.4.5
+  - @uidu/field-text@0.5.5
+  - @uidu/form@0.4.19
+  - @uidu/select@0.6.21
+  - @uidu/navigation@0.7.14
+  - @uidu/shell@1.2.21
+
 ## 0.3.7
 
 ### Patch Changes

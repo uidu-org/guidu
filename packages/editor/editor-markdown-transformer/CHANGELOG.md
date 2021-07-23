@@ -1,5 +1,15 @@
 # @uidu/editor-markdown-transformer
 
+## 0.4.5
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/adf-schema@0.4.5
+  - @uidu/editor-common@0.4.20
+
 ## 0.4.4
 
 ### Patch Changes

@@ -1,5 +1,16 @@
 # @uidu/dashboard-manager
 
+## 0.12.4
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+- Updated dependencies [fcd0ec49a]
+  - @uidu/dashboard-controls@0.4.20
+  - @uidu/dashlets@0.11.6
+
 ## 0.12.3
 
 ### Patch Changes

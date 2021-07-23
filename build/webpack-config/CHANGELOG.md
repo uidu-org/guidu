@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.2.5
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+
 ## 0.2.4
 
 ### Patch Changes

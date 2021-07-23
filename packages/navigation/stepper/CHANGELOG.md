@@ -1,5 +1,14 @@
 # @uidu/stepper
 
+## 0.3.14
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/theme@0.5.15
+
 ## 0.3.13
 
 ### Patch Changes

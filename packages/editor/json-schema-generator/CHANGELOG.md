@@ -1,5 +1,12 @@
 # @uidu/json-schema-generator
 
+## 0.1.31
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+
 ## 0.1.30
 
 ### Patch Changes

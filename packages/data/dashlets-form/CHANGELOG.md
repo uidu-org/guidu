@@ -1,5 +1,22 @@
 # @uidu/dashlets-form
 
+## 0.4.10
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+- Updated dependencies [fcd0ec49a]
+  - @uidu/accordion@0.4.14
+  - @uidu/dropdown-menu@0.5.5
+  - @uidu/dashlets@0.11.6
+  - @uidu/field-downshift@0.5.18
+  - @uidu/field-toggle@0.4.19
+  - @uidu/form@0.4.19
+  - @uidu/select@0.6.21
+  - @uidu/shell@1.2.21
+
 ## 0.4.9
 
 ### Patch Changes

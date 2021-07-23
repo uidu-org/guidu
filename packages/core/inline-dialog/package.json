@@ -1,6 +1,6 @@
 {
   "name": "@uidu/inline-dialog",
-  "version": "0.4.13",
+  "version": "0.4.14",
   "description": "An inline dialog React component for secondary content and controls that are displayed on user request",
   "repository": "https://github.com/uidu-org/guidu/tree/main/packages/core/inline-dialog",
   "license": "MIT",
@@ -11,18 +11,18 @@
   "types": "dist/uidu-inline-dialog.cjs.d.ts",
   "dependencies": {
     "@babel/runtime": "^7.14.8",
-    "@uidu/analytics": "^0.4.13",
-    "@uidu/popper": "^0.4.13",
-    "@uidu/theme": "^0.5.14",
+    "@uidu/analytics": "^0.4.14",
+    "@uidu/popper": "^0.4.14",
+    "@uidu/theme": "^0.5.15",
     "react-node-resolver": "^2.0.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@atlaskit/icon": "^21.7.2",
-    "@uidu/button": "^0.4.13",
-    "@uidu/docs": "^0.3.13",
-    "@uidu/form": "^0.4.18",
-    "@uidu/select": "^0.6.18",
+    "@uidu/button": "^0.4.14",
+    "@uidu/docs": "^0.3.14",
+    "@uidu/form": "^0.4.19",
+    "@uidu/select": "^0.6.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-lorem-component": "^0.13.0",

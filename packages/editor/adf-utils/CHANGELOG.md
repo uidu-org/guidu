@@ -1,5 +1,14 @@
 # @uidu/adf-utils
 
+## 0.6.15
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/adf-schema@0.4.5
+
 ## 0.6.14
 
 ### Patch Changes

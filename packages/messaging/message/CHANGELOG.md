@@ -1,5 +1,23 @@
 # @uidu/message
 
+## 0.3.18
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+- Updated dependencies [fcd0ec49a]
+  - @uidu/avatar@0.6.15
+  - @uidu/drawer@0.5.15
+  - @uidu/dropdown-menu@0.5.5
+  - @uidu/tooltip@0.4.14
+  - @uidu/media-card@0.4.18
+  - @uidu/media-core@0.4.13
+  - @uidu/media-viewer@0.3.18
+  - @uidu/message-form@0.3.16
+  - @uidu/message-renderer@0.3.15
+
 ## 0.3.17
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @uidu/inline-edit
 
+## 0.2.15
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- Updated dependencies [e98319f67]
+  - @uidu/analytics@0.4.14
+  - @uidu/button@0.4.14
+  - @uidu/inline-dialog@0.4.14
+  - @uidu/theme@0.5.15
+  - @uidu/field@0.3.16
+  - @uidu/field-text@0.5.5
+  - @uidu/form@0.4.19
+
 ## 0.2.14
 
 ### Patch Changes

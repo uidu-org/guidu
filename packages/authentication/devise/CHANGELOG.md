@@ -1,5 +1,22 @@
 # @uidu/devise
 
+## 0.5.19
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- fcd0ec49a: Fix media validation (editor-core), more features to editor demo
+- Updated dependencies [e98319f67]
+  - @uidu/avatar@0.6.15
+  - @uidu/slider@1.6.14
+  - @uidu/spinner@0.4.14
+  - @uidu/checkbox@0.4.5
+  - @uidu/field-password@0.4.17
+  - @uidu/field-phone@0.2.17
+  - @uidu/field-text@0.5.5
+  - @uidu/form@0.4.19
+  - @uidu/shell@1.2.21
+
 ## 0.5.18
 
 ### Patch Changes

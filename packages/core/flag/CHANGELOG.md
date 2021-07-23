@@ -1,5 +1,16 @@
 # @uidu/flag
 
+## 0.4.15
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+- Updated dependencies [e98319f67]
+  - @uidu/analytics@0.4.14
+  - @uidu/button@0.4.14
+  - @uidu/portal@0.4.14
+  - @uidu/theme@0.5.15
+
 ## 0.4.14
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.4.19
+
+### Patch Changes
+
+- e98319f67: Bump dependencies
+
 ## 0.4.18
 
 ### Patch Changes
