@@ -16,10 +16,7 @@ export default class SideNavigation extends PureComponent<NavigationProps> {
 
     if (schema) {
       return (
-        <div
-          className={`position-${position} w-100 d-flex flex-column h-100`}
-          style={{ overflow: 'hidden' }}
-        >
+        <div tw="overflow-hidden flex flex-col w-full h-full absolute">
           <ItemsRenderer items={schema} />
         </div>
       );

@@ -40,18 +40,9 @@ body {
 
 
 html {
-  font-size: 15px;
+  font-size: 14px;
 }
 
-@include media-breakpoint-up(xl) {
-  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    html {
-      // font-size: 1.0625rem;
-      // font-size: 1.125rem;
-    }
-    // }
-  }
-}
 
 // @include media-breakpoint-up(xl) {
 //   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

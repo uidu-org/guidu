@@ -1,6 +1,5 @@
-import { gridSize } from '@uidu/theme';
 import * as React from 'react';
-import { getLoadingStyle } from './utils';
+import tw from 'twin.macro';
 
 interface Props {
   followsIcon: boolean;
@@ -17,17 +16,12 @@ export default ({
   ...rest
 }: Props) => (
   <span
-    style={{
-      alignItems: followsIcon ? 'baseline' : 'center',
-      alignSelf: followsIcon ? 'baseline' : 'center',
-      flex: '1 1 auto',
-      margin: spacing === 'none' ? 0 : `0 ${gridSize() / 2}px`,
-      maxWidth: '100%',
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-      ...getLoadingStyle(isLoading),
-    }}
+    css={[
+      tw`flex-auto max-w-full truncate transition-opacity`,
+      followsIcon ? tw`items-baseline` : tw`items-center`,
+      spacing === 'none' ? tw`m-0` : tw`mx-1`,
+      isLoading ? tw`opacity-0` : tw`opacity-100`,
+    ]}
     {...rest}
   >
     {children}

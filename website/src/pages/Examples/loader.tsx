@@ -1,7 +1,6 @@
 import Shell from '@uidu/shell';
 import qs from 'query-string';
 import * as React from 'react';
-import { GlobalStyles as BaseStyles } from 'twin.macro';
 import {
   initializeGA,
   observePerformanceMetrics,
@@ -9,9 +8,11 @@ import {
 } from '../../components/Analytics/GoogleAnalyticsListener';
 import Loading from '../../components/Loading';
 import Loadable from '../../components/WrappedLoader';
+import GlobalStyles from '../../GlobalStyles';
 import * as fs from '../../utils/fs';
 import packageResolver from '../../utils/packageResolver';
-export default class ExamplesIFrame extends React.Component<{}, State> {
+
+export default class ExamplesIFrame extends React.Component {
   state = {
     packageId: '',
     groupId: '',
@@ -108,7 +109,7 @@ function ExampleLoader(props: ExampleLoaderProps) {
 
   return (
     <>
-      <BaseStyles />
+      <GlobalStyles />
       <Shell>
         <ExampleComponent />
       </Shell>

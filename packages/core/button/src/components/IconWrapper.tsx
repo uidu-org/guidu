@@ -1,6 +1,5 @@
-import { gridSize } from '@uidu/theme';
 import React from 'react';
-import { getLoadingStyle } from './utils';
+import tw from 'twin.macro';
 
 interface Props {
   icon: React.ReactChild;
@@ -11,21 +10,11 @@ interface Props {
 
 export default ({ spacing, icon, isOnlyChild, isLoading, ...rest }: Props) => (
   <span
-    style={{
-      alignSelf: 'center',
-      display: 'flex',
-      flexShrink: 0,
-      lineHeight: 0,
-      fontSize: 0,
-      userSelect: 'none',
-      margin:
-        spacing === 'none'
-          ? 0
-          : isOnlyChild
-          ? `0 -${gridSize() / 4}px`
-          : `0 ${gridSize() / 2}px`,
-      ...getLoadingStyle(isLoading),
-    }}
+    css={[
+      tw`self-center flex flex-shrink-0 line-height[0] user-select[none] font-size[0] transition-opacity`,
+      isLoading ? tw`opacity-0` : tw`opacity-100`,
+      spacing === 'none' ? tw`m-0` : isOnlyChild ? tw`-mx-1` : tw`mx-1`,
+    ]}
     {...rest}
   >
     {icon}

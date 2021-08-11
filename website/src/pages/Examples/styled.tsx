@@ -1,8 +1,8 @@
+import { colors } from '@uidu/theme';
 import * as React from 'react';
+import { Transition } from 'react-transition-group';
 import styled, { css } from 'styled-components';
 import { Link } from '../../components/WrappedLink';
-import { Transition } from 'react-transition-group';
-import { colors } from '@uidu/theme';
 
 const NAVBAR_HEIGHT = '48px';
 
@@ -89,7 +89,7 @@ export const CodeContainer = ({
     appear
     timeout={transitionDuration}
   >
-    {status => {
+    {(status) => {
       if (status === 'exited') return null;
 
       return <CodeBox status={status}>{children}</CodeBox>;
@@ -105,7 +105,6 @@ export const Nav = styled.nav`
   box-shadow: 0 1px 0 ${colors.N30A};
   display: flex;
   flex-direction: row;
-  height: ${NAVBAR_HEIGHT};
   justify-content: space-between;
   top: 0;
   width: 100%;
@@ -123,9 +122,9 @@ const navButtonStyles = css`
     p.isSelected ? colors.primary : 'transparent'};
   border-radius: 50%;
   border: 1px solid;
-  border-color: ${p => (p.isSelected ? colors.primary : colors.N80)};
+  border-color: ${(p) => (p.isSelected ? colors.primary : colors.N80)};
   box-sizing: border-box;
-  color: ${p => (p.isSelected ? colors.N0 : colors.N80)};
+  color: ${(p) => (p.isSelected ? colors.N0 : colors.N80)};
   display: flex;
   font-size: inherit;
   height: 32px;
@@ -136,8 +135,8 @@ const navButtonStyles = css`
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    border-color: ${p => (p.isSelected ? colors.primary : colors.B200)};
-    color: ${p => (p.isSelected ? colors.N0 : colors.B200)};
+    border-color: ${(p) => (p.isSelected ? colors.primary : colors.B200)};
+    color: ${(p) => (p.isSelected ? colors.N0 : colors.B200)};
     cursor: pointer;
     outline: 0;
     text-decoration: none;
@@ -147,9 +146,9 @@ const navButtonStyles = css`
 export const NavButton = styled.button`
   ${navButtonStyles};
 `;
-export const NavLink = (styled(Link)`
+export const NavLink = styled(Link)`
   ${navButtonStyles};
-` as any) as typeof Link;
+` as any as typeof Link;
 
 // Misc.
 // ==============================

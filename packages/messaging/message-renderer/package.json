@@ -9,7 +9,7 @@
   "module": "dist/uidu-message-renderer.esm.js",
   "types": "dist/uidu-message-renderer.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/dropdown-menu": "^0.5.5",
     "@uidu/theme": "^0.5.15",
     "interweave": "^12.8.0",

@@ -1,12 +1,10 @@
 import { ModalTransition } from '@uidu/modal-dialog';
 import Shell, { ShellMain, ShellSidebar } from '@uidu/shell';
-import GlobalTheme from '@uidu/theme';
 import * as React from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components';
-import { GlobalStyles as BaseStyles } from 'twin.macro';
 import AnalyticsListeners from '../components/Analytics/AnalyticsListeners';
+import GlobalStyles from '../GlobalStyles';
 import ChangeLogExplorer from '../pages/ChangeLogExplorer';
 import Document from '../pages/Document';
 import FullscreenExamples from '../pages/Examples';
@@ -18,15 +16,6 @@ import ExamplesModal from '../pages/Package/ExamplesModal';
 import PackageDocument from '../pages/PackageDocument';
 import PackagesList from '../pages/PackagesList';
 import Nav from './Nav';
-
-// eslint-disable-next-line
-const GlobalStyle = createGlobalStyle`
-  #app {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-`;
 
 type ScrollToTopProps = RouteComponentProps<any>;
 
@@ -87,9 +76,8 @@ export default class App extends React.Component<{}, State> {
   };
   render() {
     return (
-      <GlobalTheme.Provider value={() => ({ mode: this.state.mode })}>
-        <BaseStyles />
-        <GlobalStyle />
+      <>
+        <GlobalStyles />
         <BrowserRouter>
           <AnalyticsListeners>
             <Route>
@@ -103,11 +91,10 @@ export default class App extends React.Component<{}, State> {
               <Route>
                 <Shell>
                   <ShellSidebar
-                    className="d-lg-flex d-none shadow-sm bg-white"
+                    tw="lg:flex hidden bg-white border-r"
                     style={{
-                      flex: '1 0 22%',
-                      maxWidth: '18rem',
-                      minWidth: 'fit-content',
+                      flex: '1 0 18%',
+                      minWidth: '18rem',
                     }}
                   >
                     <Nav />
@@ -166,7 +153,7 @@ export default class App extends React.Component<{}, State> {
             </Switch>
           </AnalyticsListeners>
         </BrowserRouter>
-      </GlobalTheme.Provider>
+      </>
     );
   }
 }

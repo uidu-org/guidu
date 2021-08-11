@@ -6,7 +6,7 @@ import ErrorMessage from './ErrorMessage';
 import LoadingState from './LoadingState';
 import ProfileCard from './ProfileCard';
 
-export default class ProfileCardResourced extends React.PureComponent {
+export default class ProfileCardResourced extends React.PureComponent<{}> {
   constructor() {
     super(...arguments);
     this._isMounted = false;

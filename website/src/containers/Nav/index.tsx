@@ -38,7 +38,7 @@ export default class Nav extends React.Component<{}, State> {
               {
                 type: 'InlineComponent',
                 component: () => (
-                  <ShellHeader className="px-3 px-xl-4 py-3 h-auto">
+                  <ShellHeader tw="px-3 xl:px-4 py-3 h-auto">
                     <Avatar
                       style={{ width: '96px', height: '96px' }}
                       avatarStyle="Circle"
@@ -69,7 +69,7 @@ export default class Nav extends React.Component<{}, State> {
                   {
                     type: 'InlineComponent',
                     component: () => (
-                      <div className="px-3 px-xl-4 mb-4">
+                      <div tw="px-3 md:px-4 mb-4">
                         <input
                           type="search"
                           className="form-control shadow-none mb-4"

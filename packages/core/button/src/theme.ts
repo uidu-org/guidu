@@ -1,4 +1,5 @@
 import { colors, createTheme } from '@uidu/theme';
+import tw from 'twin.macro';
 import { getButtonStyles, getSpinnerStyles } from './components/getStyles';
 import { hex2rgba } from './components/utils';
 import { ThemeFallbacks, ThemeMode, ThemeProps, ThemeTokens } from './types';
@@ -21,12 +22,12 @@ export const baseTheme = {
       focusSelected: { light: colors.N700, dark: colors.DN0 },
     },
     primary: {
-      default: { light: colors.B400, dark: colors.B100 },
+      default: { light: 'var(--primary)', dark: colors.B100 },
       hover: { light: colors.B300, dark: colors.B75 },
       active: { light: colors.B500, dark: colors.B200 },
       disabled: { light: colors.N20A, dark: colors.DN70 },
-      selected: { light: colors.N700, dark: colors.DN0 },
-      focusSelected: { light: colors.N700, dark: colors.DN0 },
+      selected: { light: 'var(--primary)', dark: colors.DN0 },
+      focusSelected: { light: 'var(--primary)', dark: colors.DN0 },
     },
     warning: {
       default: { light: colors.Y300, dark: colors.Y300 },
@@ -199,7 +200,11 @@ export function applyPropertyStyle(
   return stateStyles[mode] || appearanceStyles.default[mode];
 }
 
-export const Theme = createTheme<ThemeTokens, ThemeProps>(themeProps => ({
+export const Theme = createTheme<ThemeTokens, ThemeProps>((themeProps) => ({
   buttonStyles: getButtonStyles(themeProps),
   spinnerStyles: getSpinnerStyles(),
 }));
+
+export const buttonVariants = {
+  primary: tw`bg-indigo-300 text-white`,
+};

@@ -74,7 +74,7 @@ export default function GlobalNavigation({
           </ShellBody>
         )}
         {footer.length > 0 && (
-          <ShellFooter tw="space-y-0.5 flex flex-col items-center py-4">
+          <ShellFooter tw="space-y-0.5 flex flex-col py-4">
             {footer.map((footerItem, index) => (
               <GlobalItem
                 key={`global-navigation-footer-${index}`}

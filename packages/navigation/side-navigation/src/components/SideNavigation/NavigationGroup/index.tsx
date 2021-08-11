@@ -19,7 +19,7 @@ export default class NavigationGroup extends PureComponent<any> {
       withMargin,
       children,
     } = this.props;
-    let className = 'nav flex-column';
+    let className = '';
     if (withMargin) {
       className += ' mb-3';
     }
@@ -29,7 +29,7 @@ export default class NavigationGroup extends PureComponent<any> {
 
     return (
       <>
-        <ul className={className} tw="space-y-0.5">
+        <ul className={className} tw="flex flex-col space-y-0.5 px-4">
           {heading && (
             <NavigationGroupHeading
               before={before}
@@ -39,7 +39,7 @@ export default class NavigationGroup extends PureComponent<any> {
           )}
           {children}
         </ul>
-        {separator && <hr className="mx-3" />}
+        {separator && <hr tw="mx-4" />}
       </>
     );
   }

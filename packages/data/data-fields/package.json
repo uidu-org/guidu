@@ -13,10 +13,10 @@
     "en"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@babel/runtime": "^7.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@loadable/component": "^5.15.0",
     "@uidu/field-color-picker": "^0.4.5",
     "@uidu/field-date": "^0.4.5",
@@ -33,7 +33,7 @@
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
     "react-feather": "^2.0.9",
-    "react-intl": "^5.20.5",
+    "react-intl": "^5.20.7",
     "styled-components": "^5.3.0",
     "tslib": "^2.3.0"
   },

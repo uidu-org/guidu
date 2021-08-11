@@ -11,5 +11,5 @@ export const ShellNavigation = styled.aside`
 `;
 
 export default function (props) {
-  return <ShellNavigation className="d-none d-lg-flex" {...props} />;
+  return <ShellNavigation tw="hidden md:flex" {...props} />;
 }

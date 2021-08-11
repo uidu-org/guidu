@@ -39,8 +39,8 @@ function PackageSelector(props) {
       label: fs.titleize(id),
       options: fs.getDirectories(children).map((pkg) => {
         const item = {
-          label: fs.titleize(pkg.id),
-          value: `${id}/${pkg.id}`,
+          name: fs.titleize(pkg.id),
+          id: `${id}/${pkg.id}`,
         };
 
         if (props.groupId === id && props.packageId === pkg.id) {
@@ -54,7 +54,7 @@ function PackageSelector(props) {
 
   return (
     <Control>
-      <Form>
+      <Form tw="w-full">
         <Select
           name="foo"
           styles={{
@@ -64,7 +64,6 @@ function PackageSelector(props) {
             }),
             control: (styles) => ({
               ...styles,
-              backgroundColor: '#fff',
             }),
           }}
           options={packagesSelectOptions}
@@ -82,29 +81,26 @@ function PackageSelector(props) {
 function ExampleSelector(props) {
   let selectedExampleItem;
 
-  const examplesSelectItems = [
-    {
-      label: 'Examples',
-      options: props.examples
-        ? fs.flatMap(props.examples, (file, filePath) => {
-            const item = {
-              label: fs.titleize(file.id),
-              value: fs.normalize(filePath.replace('examples/', '')),
-            };
+  const examplesSelectItems = props.examples
+    ? fs.flatMap(props.examples, (file, filePath) => {
+        const item = {
+          name: fs.titleize(file.id),
+          id: fs.normalize(filePath.replace('examples/', '')),
+        };
 
-            if (file.id === props.exampleId) {
-              selectedExampleItem = item;
-            }
+        if (file.id === props.exampleId) {
+          selectedExampleItem = item;
+        }
 
-            return item;
-          })
-        : [],
-    },
-  ];
+        return item;
+      })
+    : [];
+
+  console.log(examplesSelectItems);
 
   return (
     <Control>
-      <Form>
+      <Form tw="w-full">
         <Select
           name="foo"
           styles={{
@@ -119,9 +115,11 @@ function ExampleSelector(props) {
           }}
           options={examplesSelectItems}
           placeholder="Select Example"
-          onChange={(value, { action }) =>
-            action === 'select-option' && props.onSelected(value)
-          }
+          onChange={(name, value, { actionMeta: { action } }) => {
+            console.log(name, value);
+            console.log(props);
+            action === 'select-option' && props.onSelected(value);
+          }}
           value={selectedExampleItem}
         />
       </Form>
@@ -131,9 +129,9 @@ function ExampleSelector(props) {
 
 // TODO: Type correct once codesandbox is typed
 export type ExampleNavigationProps = {
-  onExampleSelected?: (selected: { value: string }) => void;
+  onExampleSelected?: (selected: string) => void;
   examples?: any;
-  onPackageSelected?: (selected: { value: string }) => void;
+  onPackageSelected?: (selected: string) => void;
   exampleId?: string;
   groupId: string;
   loaderUrl?: string | null;
@@ -164,7 +162,7 @@ class ExampleNavigation extends React.Component<ExampleNavigationProps> {
       examples && examples.children.find((e) => e.id === exampleId);
 
     return (
-      <Nav>
+      <Nav tw="py-6">
         <NavSection style={{ marginLeft: 8 }}>
           <Tooltip content="Back to docs" position="right">
             <NavLink to={packageUrl(groupId, packageId)}>
@@ -256,16 +254,16 @@ class Examples extends React.Component<Props, State> {
     router: PropTypes.object.isRequired,
   };
 
-  onPackageSelected = (selected: { value: string }) => {
-    const [groupId, packageId] = selected.value.split('/');
+  onPackageSelected = (selected: string) => {
+    const [groupId, packageId] = selected.split('/');
     this.updateSelected(groupId, packageId);
   };
 
-  onExampleSelected = (selected: { value: string }) => {
+  onExampleSelected = (selected: string) => {
     this.updateSelected(
       this.props.match.params.groupId,
       this.props.match.params.pkgId,
-      selected.value,
+      selected,
     );
   };
 
@@ -326,17 +324,12 @@ class Examples extends React.Component<Props, State> {
   };
 
   render() {
-    const {
-      hasChanged,
-      examples,
-      packageId,
-      groupId,
-      exampleId,
-    } = packageResolver(
-      this.props.match.params.groupId,
-      this.props.match.params.pkgId,
-      this.props.match.params.exampleId,
-    );
+    const { hasChanged, examples, packageId, groupId, exampleId } =
+      packageResolver(
+        this.props.match.params.groupId,
+        this.props.match.params.pkgId,
+        this.props.match.params.exampleId,
+      );
 
     const loaderUrl = getLoaderUrl(
       groupId,

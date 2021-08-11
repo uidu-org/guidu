@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import tw from 'twin.macro';
 interface Props {
   onClick?: React.MouseEventHandler;
   fit: boolean;
@@ -8,15 +8,10 @@ interface Props {
 
 export default ({ fit, children, ...rest }: Props) => (
   <span
-    style={{
-      alignSelf: 'center',
-      display: 'inline-flex',
-      flexWrap: 'nowrap',
-      maxWidth: '100%',
-      position: 'relative',
-      ...(fit && { width: '100%' }),
-      ...(fit && { justifyContent: 'center' }),
-    }}
+    css={[
+      tw`self-center inline-flex flex-nowrap max-w-full relative`,
+      fit && tw`w-full justify-center`,
+    ]}
     {...rest}
   >
     {children}

@@ -1,5 +1,7 @@
+import { BreadcrumbsItem, BreadcrumbsStateless } from '@uidu/breadcrumbs';
 import Button, { ButtonGroup } from '@uidu/button';
 import Drawer from '@uidu/drawer';
+import PageHeader from '@uidu/page-header';
 import {
   ScrollableContainer,
   ShellBody,
@@ -11,7 +13,6 @@ import React, { Fragment } from 'react';
 import {
   GitHub,
   List,
-  Menu,
   MoreVertical,
   Package as PackageIcon,
 } from 'react-feather';
@@ -130,15 +131,8 @@ class Package extends React.Component<Props> {
   };
 
   render() {
-    const {
-      urlIsExactMatch,
-      groupId,
-      pkgId,
-      pkg,
-      doc,
-      changelog,
-      examples,
-    } = this.props;
+    const { urlIsExactMatch, groupId, pkgId, pkg, doc, changelog, examples } =
+      this.props;
     const { examplePath, exampleModalPath } = getExamplesPaths(
       groupId,
       pkgId,
@@ -172,105 +166,107 @@ class Package extends React.Component<Props> {
             </title>
           </Helmet>
         )}
-        <ShellHeader className="">
-          <div className="container my-3 my-sm-5">
-            <div className="row justify-content-center">
-              <div className="col-lg-10 d-flex justify-content-between align-content-center">
-                <h1 className="h5 m-0 d-flex align-items-center">
-                  <Button
-                    type="button"
-                    onClick={this.openDrawer}
-                    appearance="subtle"
-                    iconBefore={<Menu size={18} />}
-                    className="mr-3 d-lg-none"
-                  ></Button>
-                  <small>
-                    <code>{pkg.name}</code>
-                  </small>
-                </h1>
-                {examplePath && (
-                  <Media query={{ maxWidth: 768 }}>
-                    {(matches) => {
-                      if (matches) {
-                        return (
-                          <ButtonGroup>
-                            <Button
-                              type="button"
-                              onClick={this.openOptionsDrawer}
-                              appearance="subtle"
-                              iconBefore={<MoreVertical size={18} />}
-                            ></Button>
-                            <Button
-                              component={React.forwardRef(
-                                ({ children, ...rest }, ref: any) => (
-                                  <Link
-                                    {...rest}
-                                    to={exampleModalPath}
-                                    ref={ref}
-                                  >
-                                    {children}
-                                  </Link>
-                                ),
-                              )}
-                            >
-                              Examples
-                            </Button>
-                          </ButtonGroup>
-                        );
-                      }
-                      return (
-                        <ButtonGroup>
-                          <Button
-                            href={`https://www.npmjs.com/package/${pkg.name}`}
-                            label="npm"
-                            summary={pkg.name}
-                            iconBefore={<PackageIcon size={16} />}
-                            target="_blank"
-                          />
-                          <Button
-                            href={`https://github.com/uidu-org/guidu/blob/main/packages/${groupId}/${pkgId}`}
-                            label="Source"
-                            summary="Github"
-                            iconBefore={<GitHub size={16} />}
-                            target="_blank"
-                          />
-                          <Button
-                            component={Link as any}
-                            to={`/packages/${groupId}/${pkgId}/changelog`}
-                            iconBefore={<List size={16} />}
-                          >
-                            Changelog
-                          </Button>
-                          <Button
-                            component={React.forwardRef(
-                              ({ children, ...rest }, ref: any) => (
-                                <Link {...rest} to={exampleModalPath} ref={ref}>
-                                  {children}
-                                </Link>
-                              ),
-                            )}
-                          >
-                            Examples
-                          </Button>
-                        </ButtonGroup>
-                      );
-                    }}
-                  </Media>
-                )}
-              </div>
-            </div>
-          </div>
-        </ShellHeader>
+
         <ShellBody>
           <ShellMain>
             <ScrollableContainer enableCustomScrollbars>
-              <div className="container my-3 my-sm-4">
-                <div className="row justify-content-center">
-                  <div className="col-lg-10">
-                    {doc || <NoDocs name={pkgId} />}
-                  </div>
-                </div>
-              </div>
+              <ShellHeader tw="h-auto">
+                <PageHeader
+                  tw="px-4 md:px-16 mx-auto py-8"
+                  actions={
+                    examplePath && (
+                      <Media query={{ maxWidth: 768 }}>
+                        {(matches) => {
+                          if (matches) {
+                            return (
+                              <ButtonGroup>
+                                <Button
+                                  type="button"
+                                  onClick={this.openOptionsDrawer}
+                                  appearance="subtle"
+                                  iconBefore={<MoreVertical size={18} />}
+                                ></Button>
+                                <Button
+                                  component={React.forwardRef(
+                                    ({ children, ...rest }, ref: any) => (
+                                      <Link
+                                        {...rest}
+                                        to={exampleModalPath}
+                                        ref={ref}
+                                      >
+                                        {children}
+                                      </Link>
+                                    ),
+                                  )}
+                                >
+                                  Examples
+                                </Button>
+                              </ButtonGroup>
+                            );
+                          }
+                          return (
+                            <ButtonGroup>
+                              <Button
+                                href={`https://www.npmjs.com/package/${pkg.name}`}
+                                label="npm"
+                                summary={pkg.name}
+                                iconBefore={<PackageIcon size={16} />}
+                                target="_blank"
+                              />
+                              <Button
+                                href={`https://github.com/uidu-org/guidu/blob/main/packages/${groupId}/${pkgId}`}
+                                label="Source"
+                                summary="Github"
+                                iconBefore={<GitHub size={16} />}
+                                target="_blank"
+                              />
+                              <Button
+                                component={Link as any}
+                                to={`/packages/${groupId}/${pkgId}/changelog`}
+                                iconBefore={<List size={16} />}
+                              >
+                                Changelog
+                              </Button>
+                              <Button
+                                component={React.forwardRef(
+                                  ({ children, ...rest }, ref: any) => (
+                                    <Link
+                                      {...rest}
+                                      to={exampleModalPath}
+                                      ref={ref}
+                                    >
+                                      {children}
+                                    </Link>
+                                  ),
+                                )}
+                              >
+                                Examples
+                              </Button>
+                            </ButtonGroup>
+                          );
+                        }}
+                      </Media>
+                    )
+                  }
+                  breadcrumbs={
+                    <BreadcrumbsStateless onExpand={() => {}}>
+                      <BreadcrumbsItem text="Packages" key="Some project" />
+                      <BreadcrumbsItem text="Core" key="Parent page" />
+                    </BreadcrumbsStateless>
+                  }
+                  // disableTitleStyles
+                >
+                  {/* <Button
+              type="button"
+              onClick={this.openDrawer}
+              appearance="subtle"
+              iconBefore={<Menu size={18} />}
+              tw="mr-3 md:hidden"
+            ></Button> */}
+                  {title}
+                </PageHeader>
+              </ShellHeader>
+              <div tw="px-4 md:px-16">{doc || <NoDocs name={pkgId} />}</div>
             </ScrollableContainer>
           </ShellMain>
         </ShellBody>

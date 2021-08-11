@@ -54,9 +54,9 @@ export default function AnimatedMenu({
     <Flipper
       flipKey={currentIndex}
       spring={duration === 300 ? 'noWobble' : { stiffness: 10, damping: 10 }}
-      className="d-flex"
+      tw="flex"
     >
-      <div onMouseLeave={onMouseLeave} className={className}>
+      <ul onMouseLeave={onMouseLeave} className={className} tw="flex">
         {navbarConfig.map(
           (
             {
@@ -95,7 +95,7 @@ export default function AnimatedMenu({
             </Component>
           ),
         )}
-      </div>
+      </ul>
     </Flipper>
   );
 }

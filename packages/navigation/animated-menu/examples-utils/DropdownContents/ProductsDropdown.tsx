@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Icon, DropdownSection, Heading } from './Components';
+import { DropdownSection, Heading } from './Components';
 
 const ProductsDropdownEl = styled.div`
   width: 30rem;

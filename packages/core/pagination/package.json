@@ -10,7 +10,7 @@
   "module": "dist/uidu-pagination.esm.js",
   "types": "dist/uidu-pagination.cjs.d.ts",
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
+    "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
     "@uidu/button": "^0.4.14",
     "@uidu/theme": "^0.5.15",

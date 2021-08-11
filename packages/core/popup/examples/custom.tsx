@@ -9,7 +9,7 @@ import Popup, { PopupComponentProps } from '../src';
 const CustomPopupContainer = forwardRef<HTMLDivElement, PopupComponentProps>(
   ({ children, ...props }, ref) => (
     <div
-      css={{
+      style={{
         backgroundColor: N700,
         borderRadius: borderRadius(),
         ':focus': {
@@ -35,7 +35,7 @@ export default () => {
       popupComponent={CustomPopupContainer}
       content={() => (
         <div
-          css={{
+          style={{
             width: 175,
             height: 250,
           }}

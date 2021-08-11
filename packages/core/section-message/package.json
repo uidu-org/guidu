@@ -10,8 +10,8 @@
   "module": "dist/uidu-section-message.esm.js",
   "types": "dist/uidu-section-message.cjs.d.ts",
   "dependencies": {
-    "@atlaskit/icon": "^21.7.2",
-    "@babel/runtime": "^7.14.8",
+    "@atlaskit/icon": "^21.7.3",
+    "@babel/runtime": "^7.15.3",
     "@uidu/button": "^0.4.14",
     "@uidu/theme": "^0.5.15",
     "tslib": "^2.3.0"

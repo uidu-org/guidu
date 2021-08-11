@@ -2,8 +2,8 @@ import { borderRadius, fontSize, gridSize } from '@uidu/theme';
 import { applyPropertyStyle, baseTheme } from '../theme';
 import { ThemeProps } from '../types';
 
-const compactButtonHeight = `${(gridSize() * 3) / fontSize()}em`;
-const buttonHeight = `${(gridSize() * 4) / fontSize()}em`;
+const compactButtonHeight = `${(gridSize() * 4) / fontSize()}em`;
+const buttonHeight = `${(gridSize() * 5) / fontSize()}em`;
 
 /** Background */
 const getBackground = (props: ThemeProps) =>
@@ -45,7 +45,7 @@ const getLineHeight = ({ spacing = 'default' }: ThemeProps) =>
 
 /** Padding */
 const getPadding = ({ spacing = 'default' }: ThemeProps) =>
-  spacing === 'none' ? 0 : `0 ${gridSize()}px`;
+  spacing === 'none' ? 0 : `6px 8px`;
 
 /** Text Decoration */
 const getTextDecoration = ({
@@ -77,7 +77,8 @@ const getWidth = ({ shouldFitContainer }: ThemeProps) =>
 /** Base styles */
 const staticStyles = {
   alignItems: 'baseline',
-  borderWidth: 0,
+  borderWidth: '1px',
+  borderColor: 'transparent',
   boxSizing: 'border-box',
   display: 'inline-flex',
   fontSize: 'inherit',
@@ -100,8 +101,8 @@ export const getButtonStyles = (props: ThemeProps) => ({
   boxShadow: getBoxShadow(props),
   color: `${getColor(props)}`, // !important`,
   cursor: getCursor(props),
-  height: getHeight(props),
-  lineHeight: getLineHeight(props),
+  // height: getHeight(props),
+  // lineHeight: getLineHeight(props),
   padding: getPadding(props),
   transition: getTransition(props),
   // transitionDuration: getTransitionDuration(props),
