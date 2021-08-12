@@ -23,7 +23,7 @@ import FieldTextarea from '../../field-textarea/src';
 import FieldTime from '../../field-time/src';
 import { RadioGroup } from '../../radio/src';
 import Select from '../../select/src';
-import Form, { FormSection } from '../src';
+import Form, { FormSection, FormSubmit } from '../src';
 import { LayoutChoice } from './App';
 
 interface Props {
@@ -103,8 +103,11 @@ const Playground: React.FunctionComponent<Props> = ({
       className="custom-classname-is-rendered"
       validateBeforeSubmit={validateBeforeSubmitChoice}
       validatePristine={validatePristineChoice}
-      disabled={disabledChoice}
+      // disabled={disabledChoice}
       ref={formRef}
+      footerRenderer={(props) => (
+        <FormSubmit {...props} canSubmit label="Submit" />
+      )}
     >
       <FormSection
         name="FieldText types"
@@ -124,7 +127,6 @@ const Playground: React.FunctionComponent<Props> = ({
           type="text"
           placeholder="Here is a text input."
           help="This is a required text input."
-          required
         />
         <FieldText
           name="email"
@@ -138,7 +140,6 @@ const Playground: React.FunctionComponent<Props> = ({
           validationErrors={{
             isEmail: 'This doesn’t look like a valid email address.',
           }}
-          required
         />
         <FieldPassword
           name="password1"
@@ -182,7 +183,6 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Date"
           type="date"
           placeholder="This is a date input."
-          required
         />
         <FieldDateRange
           name="date"
@@ -247,7 +247,6 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Select"
           help="This is a required select element."
           options={singleSelectOptions}
-          required
         />
         <Select
           name="select2"
@@ -318,7 +317,6 @@ const Playground: React.FunctionComponent<Props> = ({
           label="Radio group (inline)"
           help="This is a required radio group."
           options={radioOptions}
-          required
         />
         <RadioGroup
           name="radioGrp3"
@@ -425,18 +423,6 @@ const Playground: React.FunctionComponent<Props> = ({
           }
         />
       </FormSection>
-      <input
-        className="btn btn-secondary"
-        onClick={resetForm}
-        type="reset"
-        defaultValue="Reset"
-      />{' '}
-      <input
-        className="btn btn-primary"
-        formNoValidate
-        type="submit"
-        defaultValue="Submit"
-      />
     </Form>
   );
 };

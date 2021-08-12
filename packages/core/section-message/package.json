@@ -14,7 +14,7 @@
     "@babel/runtime": "^7.15.3",
     "@uidu/button": "^0.4.14",
     "@uidu/theme": "^0.5.15",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/code": "^0.4.14",

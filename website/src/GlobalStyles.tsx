@@ -39,6 +39,7 @@ const CustomStyles = createGlobalStyle`
     --body-color: #000000;
     --light: #ececec;
     --primary: #1DD189;
+    --border: #E9ECF0;
   }
 `;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Media from 'react-media';
+import tw from 'twin.macro';
 import { FormSectionProps } from '../../types';
 
 export default function FormSection({
@@ -19,27 +20,26 @@ export default function FormSection({
           return children || null;
         }
         return (
-          <fieldset
-            className={`row justify-content-between${
-              !isLast ? ' border-bottom' : ''
-            }${isFirst ? ' pb-4' : ' pt-5 pb-4'}`}
+          <div
+            css={[
+              tw`flex justify-between flex-col`,
+              !isLast && tw`border-b`,
+              isFirst ? tw`pb-4` : tw`pt-5 pb-4`,
+              layout === 'horizontal' ? tw`flex-row` : tw`flex-col`,
+            ]}
           >
             {layout !== 'elementOnly' && (
               <div
-                className={`mb-3 col-md-${layout === 'horizontal' ? 4 : 10}`}
+                css={[
+                  tw`mb-3`,
+                  layout === 'horizontal' ? tw`w-4/12` : tw`w-10/12`,
+                ]}
               >
-                <legend
-                  className={`${
-                    layout === 'horizontal' ? 'h5' : 'h5'
-                  } font-weight-bold d-flex align-items-center`}
-                >
+                <legend css={[tw`text-xl font-bold flex items-center`]}>
                   {Icon && (
-                    <Icon
-                      size={30}
-                      className="ml-n5 mr-3"
-                      style={{ opacity: 0.15 }}
-                      strokeWidth={1}
-                    />
+                    <div tw="-ml-5 mr-3 opacity-20">
+                      <Icon size={30} strokeWidth={1} />
+                    </div>
                   )}
                   {name}
                 </legend>
@@ -47,11 +47,11 @@ export default function FormSection({
               </div>
             )}
             {children && (
-              <div className={`col-md-${layout === 'horizontal' ? 7 : 12}`}>
+              <div css={[layout === 'horizontal' ? tw`w-7/12` : tw`w-10/12`]}>
                 {children}
               </div>
             )}
-          </fieldset>
+          </div>
         );
       }}
     </Media>

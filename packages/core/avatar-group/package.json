@@ -14,7 +14,7 @@
     "@uidu/dropdown-menu": "^0.5.5",
     "@uidu/theme": "^0.5.15",
     "@uidu/tooltip": "^0.4.14",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/button": "^0.4.14",

@@ -3,9 +3,9 @@ module.exports = function (api) {
 
   const plugins = [
     // '@loadable/babel-plugin',
-    'babel-plugin-twin',
+    ['babel-plugin-twin', { debug: true }],
     [
-      'babel-plugin-macros',
+      'macros',
       {
         isMacrosName: (v) => {
           return v === 'twin.macro';

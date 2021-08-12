@@ -20,7 +20,7 @@
     "@uidu/inline-dialog": "^0.4.14",
     "@uidu/theme": "^0.5.15",
     "react-loadable": "^5.5.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@atlaskit/tag": "^11.1.2",

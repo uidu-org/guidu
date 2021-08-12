@@ -1,7 +1,8 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
+console.log('config is used');
+
 module.exports = {
-  purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -13,6 +14,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],

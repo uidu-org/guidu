@@ -10,7 +10,7 @@
   "dependencies": {
     "@babel/runtime": "^7.15.3",
     "@uidu/analytics": "^0.4.14",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/analytics-listeners": "^0.3.13",

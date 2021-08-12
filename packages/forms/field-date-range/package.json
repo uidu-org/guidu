@@ -18,7 +18,7 @@
     "react-day-picker": "^7.4.10",
     "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14",

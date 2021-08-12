@@ -26,7 +26,7 @@
     "linkify-it": "^3.0.2",
     "prosemirror-model": "^1.14.3",
     "prosemirror-view": "^1.18.11",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/editor-json-transformer": "^0.3.15",

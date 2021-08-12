@@ -13,7 +13,7 @@
     "@babel/runtime": "^7.15.3",
     "@uidu/theme": "^0.5.15",
     "google-map-react": "^2.1.10",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
     "@uidu/docs": "^0.3.14",

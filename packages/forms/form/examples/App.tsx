@@ -84,17 +84,15 @@ class App extends React.Component<{}, State> {
           </ShellHeader>
           <ShellBody>
             <ScrollableContainer>
-              <div className="container my-5">
-                <div className="row justify-content-center">
-                  <div className="col-sm-10">
-                    <Playground
-                      layoutChoice={layout}
-                      sectionLayoutChoice={sectionLayout}
-                      validateBeforeSubmitChoice={validateBeforeSubmit}
-                      validatePristineChoice={validatePristine}
-                      disabledChoice={disabled}
-                    />
-                  </div>
+              <div tw="my-5">
+                <div tw="mx-auto max-w-6xl">
+                  <Playground
+                    layoutChoice={layout}
+                    sectionLayoutChoice={sectionLayout}
+                    validateBeforeSubmitChoice={validateBeforeSubmit}
+                    validatePristineChoice={validatePristine}
+                    disabledChoice={disabled}
+                  />
                 </div>
               </div>
             </ScrollableContainer>

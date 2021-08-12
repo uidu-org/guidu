@@ -63,7 +63,7 @@ export default class Row extends PureComponent<RowProps> {
     cssClasses.row.push(rowClassName);
 
     return (
-      <div className={classNames(cssClasses.row)}>
+      <div tw="mb-4" className={classNames(cssClasses.row)}>
         {shouldRenderLabel ? <Label {...this.props} /> : null}
         {element}
       </div>

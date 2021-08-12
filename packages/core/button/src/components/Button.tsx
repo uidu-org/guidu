@@ -18,15 +18,19 @@ import Content from './Content';
 import IconWrapper from './IconWrapper';
 import InnerWrapper from './InnerWrapper';
 import LoadingSpinner from './LoadingSpinner';
-import { composeRefs, mapAttributesToState } from './utils';
+import { composeRefs, filterProps, mapAttributesToState } from './utils';
 
 export type ButtonState = {
-  isHover?: boolean;
   isActive?: boolean;
   isFocus?: boolean;
+  isHover?: boolean;
 };
 
-const initialState = { isActive: false, isFocus: false, isHover: false };
+const initialState: ButtonState = {
+  isActive: false,
+  isFocus: false,
+  isHover: false,
+};
 
 function reducer(state, action) {
   switch (action.type) {
@@ -169,8 +173,16 @@ function Button(props: ButtonProps) {
         {({ buttonStyles, spinnerStyles }) => {
           return (
             <StyledButton
-              // {...filterProps(rest, StyledButton)}
+              {...filterProps(
+                {
+                  type,
+                  href,
+                  ...rest,
+                },
+                StyledButton,
+              )}
               href={href}
+              type={type}
               ref={getComposedRefs(button, consumerRef)}
               onMouseEnter={_onMouseEnter}
               onMouseLeave={_onMouseLeave}

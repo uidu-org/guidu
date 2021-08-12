@@ -83,6 +83,7 @@ class FieldTextStateless extends Component<any> {
         as={as}
         autoComplete={autoComplete}
         autoFocus={autoFocus}
+        tw="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full border border-color[var(--border)] rounded"
         className={classNames('form-control', className, {
           // 'is-valid': !showErrors,
           'is-invalid': showErrors,
